@@ -121,7 +121,7 @@ On a narrow screen, the user would have to move the whole page left and right to
  tab: 'result'
 } %}
 
-<figcaption class="w-figcaption">Open <a href="https://codepen.io/adactio/full/WNOKexX">the liquid layout example</a> 
+<figcaption class="w-figcaption">Open <a href="https://codepen.io/web-dot-dev/pen/YzxEzpE">the liquid layout example</a> 
 in a new browser window to see how changing the size of the window stretches the design.</figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ But given the variety of device sizes, chances are the layout will look less tha
  theme: 'dark',
  tab: 'result'
 } %}
-<figcaption class="w-figcaption">Open <a href="https://codepen.io/adactio/full/jOwpNgX">the adaptive layout example</a> 
+<figcaption class="w-figcaption">Open <a href="https://codepen.io/web-dot-dev/pen/oNeoNYw">the adaptive layout example</a> 
 in a new browser window to see how changing the size of the window causes the design to jump between layouts.</figcaption>
 </figure>
 
@@ -188,7 +188,7 @@ If adaptive layouts are a mashup of media queries and fixed-width layouts, respo
  theme: 'dark',
  tab: 'result'
 } %}
-<figcaption class="w-figcaption">Open <a href="https://codepen.io/adactio/full/VwWBKPV">the responsive design example</a> 
+<figcaption class="w-figcaption">Open <a href="https://codepen.io/web-dot-dev/pen/JjyOjbE">the responsive design example</a> 
 in a new browser window to see how changing the size of the window causes the design to fluidly change layout.</figcaption>
 </figure>
 
