@@ -10,25 +10,27 @@ layout: default-next
   </div> #}
 
   {# Hero starts #}
-  <header class="region">
+  <header class="region bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
-        <h1 class="headline__title">{{ title }}</h1>
+        <h2 class="headline__title">{{ title }}</h2>
         <p>{{ description }}</p>
       </div>
     </div>
   </header>
   {# Hero ends #}
 
-  {# Shows start #}
-  <div class="wrapper flow">
-    <div class="auto-grid gap-top-size-2">
+  <div class="region">
+    {# Shows start #}
+    <div class="wrapper auto-grid">
       {% for show in paged.elements %}
         {{ showsCard(show) }}
       {% endfor %}
     </div>
-  </div>
-  {# Shows end #}
+    {# Shows end #}
 
-  {% include 'pagination-next.njk' %}
+    <div class="wrapper gap-top-size-3">
+      {% include "partials/pagination-next.njk" %}
+    </div>
+  </div>
 </div>

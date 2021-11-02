@@ -4,31 +4,33 @@ layout: default-next
 {% from 'macros/tag-card.njk' import tagCard with context %}
 
 <div class="tags">
-{# @TODO fix subscribe button #}
- {# <div class="w-actions">
+  {# @TODO fix subscribe button #}
+  {# <div class="w-actions">
     {% include 'partials/subscribe-action.njk' %}
   </div> #}
 
   {# Hero starts #}
-  <header class="region">
+  <header class="region bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
-        <h1 class="headline__title">{{ title }}</h1>
+        <h2 class="headline__title">{{ title }}</h2>
         <p>{{ description }}</p>
       </div>
     </div>
   </header>
   {# Hero ends #}
 
-  {# Tags start #}
-  <div class="wrapper flow">
-    <div class="auto-grid gap-top-size-2">
+  <div class="region">
+    {# Tags start #}
+    <div class="wrapper auto-grid">
       {% for tag in paged.elements %}
         {{ tagCard(tag) }}
       {% endfor %}
     </div>
-  </div>
-  {# Tags end #}
+    {# Tags end #}
 
-  {% include 'pagination-next.njk' %}
+    <div class="wrapper gap-top-size-3">
+      {% include "partials/pagination-next.njk" %}
+    </div>
+  </div>
 </div>

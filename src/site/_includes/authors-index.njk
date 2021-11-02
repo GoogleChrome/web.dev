@@ -4,31 +4,33 @@ layout: default-next
 {% from 'macros/author-card.njk' import authorCard with context %}
 
 <div class="authors">
-{# @TODO fix subscribe button #}
+ {# @TODO fix subscribe button #}
  {# <div class="w-actions">
     {% include 'partials/subscribe-action.njk' %}
   </div> #}
 
   {# Hero starts #}
-  <header class="region">
+  <header class="region bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
-        <h1 class="headline__title">{{ title }}</h1>
+        <h2 class="headline__title">{{ title }}</h2>
         <p>{{ description }}</p>
       </div>
     </div>
   </header>
   {# Hero ends #}
 
-  {# Authors start #}
-  <div class="wrapper flow">
-    <div class="auto-grid gap-top-size-2">
+  <div class="region">
+    {# Authors start #}
+    <div class="wrapper auto-grid">
       {% for author in paged.elements %}
         {{ authorCard(author) }}
       {% endfor %}
     </div>
-  </div>
-  {# Authors end #}
+    {# Authors end #}
 
-  {% include 'pagination-next.njk' %}
+    <div class="wrapper gap-top-size-3">
+      {% include "partials/pagination-next.njk" %}
+    </div>
+  </div>
 </div>

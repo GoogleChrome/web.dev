@@ -3,6 +3,7 @@ layout: default-next
 ---
 
 {% from 'macros/icon.njk' import icon with context %}
+{% from 'macros/tag-pills.njk' import tagPills with context %}
 
 <div class="landing-page">
   {# Hero starts #}
@@ -20,7 +21,7 @@ layout: default-next
     </div>
   </header>
   {# Hero ends #}
-  
+
   <div class="region">
     <div class="wrapper auto-grid">
       {% for item in paged.elements %}
@@ -43,14 +44,8 @@ layout: default-next
           <div class="gap-top-size-1">
             {% AuthorsDate authors=authors, date=item.date, updated=item.data.updated, locale=data.locale %}
           </div>
-          <div class="card__tags cluster gap-top-base" aria-label="tags for this case study">
-            {% for tagKey in item.data.tags or [] %}
-              {% if tagKey in collections.tags %}
-                {% set tag = collections.tags[tagKey] %}
-                <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
-              {% endif %}
-            {% endfor %}
-          </div>
+
+          {{ tagPills(item.data.tags) }}
         </article>
       {% endfor %}
     </div>
