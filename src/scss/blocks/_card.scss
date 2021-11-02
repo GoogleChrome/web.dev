@@ -15,7 +15,9 @@
 .card__content {
   flex: auto;
 
-  @include apply-utility('gap-top', 'size-1');
+  &:not(:first-child) {
+    @include apply-utility('gap-top', 'size-1');
+  }
 
   a:not([class]) {
     color: currentColor;
@@ -63,12 +65,6 @@
 
   padding: 0;
   flex: auto;
-
-  // All hover styles are reset on .card:hover,
-  // but we want these to behave independently
-  a:hover {
-    text-decoration: underline;
-  }
 }
 
 .card__meta {
