@@ -185,7 +185,7 @@ Below is a list of some pseudo-classes and events that can trigger state changes
 * [`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible): matches if the element is focused.
 * [`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible ) : matches if the element or any of its descendants are
     focused.
-* [`:target`](/learn/css/pseudo-classes/#:target): matches when the current URL's [fragment](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment) matches the element's id.
+* [`:target`](/learn/css/pseudo-classes/#:target): matches when the current URL's [fragment](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#fragment) matches the element's id.
 * [`:active`](/learn/css/pseudo-classes/#:active):  matches when the element is being activated (typically when the
     mouse is pressed over it).
 * `class` change from JavaScript: when an element's CSS `class` changes via
