@@ -208,7 +208,7 @@ is complete, the main thread paint update has no visual change to offer anyway. 
 suggested a frame drop to 0, but _visually_, a user wouldn't be able to notice a
 difference!
 
-As you can see, for animation frames, the story is just not that simple.
+For animation frames, the story is not that simple.
 
 {% Aside %}
 There are many reasons why long tasks are bad—and these are captured
