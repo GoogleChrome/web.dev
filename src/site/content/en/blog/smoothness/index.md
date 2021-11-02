@@ -203,8 +203,8 @@ driven entirely by the compositor.
 
 This is an example that simultaneously contains many dropped frames on the main
 thread, yet still has many successfully-delivered frames of scrolling on the
-compositor thread. What's more, the main thread paint update, once the long task
-is complete, actually has no visual change to offer anyway. rAF polling
+compositor thread. Once the long task
+is complete, the main thread paint update has no visual change to offer anyway. rAF polling
 suggested a frame drop to 0, but _visually_, a user wouldn't be able to notice a
 difference!
 
