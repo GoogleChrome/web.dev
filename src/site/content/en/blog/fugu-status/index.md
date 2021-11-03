@@ -61,8 +61,8 @@ change.
 ## Capabilities that are started {: #started }
 
 Work on these APIs has just started. There is not much to see yet,
-but interested developers may want to start the relevant Chromium bugs
-to stay updated as progress is being made.
+but interested developers may want to star the relevant Chromium bugs
+to stay updated as progress that is being made.
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Started">
   All APIs on which work has started
