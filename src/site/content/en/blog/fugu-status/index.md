@@ -16,7 +16,7 @@ security, privacy, trust, and other core tenets of the web.
 You can see the full list of new and potential capabilities at
 the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
+{% Img style="float: left;" src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
 
 ## Capabilities available in stable {: #in-stable }
 
