@@ -69,6 +69,11 @@ You can find out more on our collaboration with JavaScript frameworks in our pos
 [Introducing Aurora](https://web.dev/introducing-aurora/).
 {% endAside %}
 
+Also announced is an updated version of [PageSpeed Insights](/whats-new-pagespeed-insights/), 
+a new [Recorder Panel for Chrome DevTools](https://developer.chrome.com/docs/devtools/recorder/), currently available in Canary, 
+and a new [user flow API for Lighthouse](/lighthouse-user-flows/).
+
+
 ## Enable new web platform features
 
 RenderingNG is an ambitious refactoring of Chromium's rendering engine, 
