@@ -169,7 +169,7 @@ will both be available in the lab data section.
 
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dnIsJA35tj7vs6qgybRM.png", alt="newly expanded view with a drill-down for field data metrics", width="800", height="444" %}
 
-For up to date product documentation, please visit
+For up to date product documentation, visit
 [https://developers.google.com/speed/docs/insights/.](https://developers.google.com/speed/docs/insights/v5/about)
 
 ## Updates to web.dev/measure
