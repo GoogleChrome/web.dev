@@ -20,15 +20,15 @@ Lighthouse is a fantastic tool for testing performance and best practices during
 - Pages with an activated Service Worker
 - Accounting for potential user interactions
 
-This means that Lighthouse can miss vital information. Core Web Vitals are based on _all_ page loads, not just those with an empty cache. Additionally, metrics like Cumulative Layout Shift (CLS) are measurable for the entire time a page is open.
+This means that Lighthouse can miss vital information. The [Core Web Vitals](/vitals/#core-web-vitals) are based on _all_ page loads, not just those with an empty cache. Additionally, metrics like [Cumulative Layout Shift (CLS)](/cls/) are measurable for the entire time a page is open.
 
-Lighthouse has a new user flow API that allows lab testing at any point within a page's lifespan. [Puppeteer](https://github.com/puppeteer/puppeteer) is used to script page loads and trigger synthetic user interactions, and Lighthouse can be invoked in multiple ways to capture key insights during those interactions. This means that performance can be measured during page load and during interactions with the page. Accessibility checks can be run in CI not just on the initial view, but deep within your checkout flow to make sure nothing regresses.
+Lighthouse has a new user flow API that allows lab testing at any point within a page's lifespan. [Puppeteer](https://github.com/puppeteer/puppeteer) is used to script page loads and trigger synthetic user interactions, and Lighthouse can be invoked in multiple ways to capture key insights during those interactions. This means that performance can be measured during page load *and* during interactions with the page. Accessibility checks can be run in CI, not just on the initial view but deep within your checkout flow to make sure nothing regresses.
 
 Almost any Puppeteer script written to ensure a working user flow can now have Lighthouse inserted at any point to measure performance and best practices throughout. This tutorial will walk through the new Lighthouse modes that can measure different parts of user flows: navigations, snapshots, and timespans.
 
 ## Setup
 
-The user flow APIs are still in preview, but they are available in Lighthouse today. To try out the demos below, you'll need Node version 14 or later. Create an empty directory and in it run
+The user flow APIs are still in preview, but they are available in Lighthouse today. To try out the demos below, you'll need Node version 14 or later. Create an empty directory and in it run:
 
 ```shell
 # Default to ES modules.
@@ -42,18 +42,18 @@ npm install lighthouse puppeteer open
 ```
 
 {% Aside 'gotchas' %}
-Without the `{"type": "module"}` line, `npm init -y` will default to CommonJS instead of modules. The following code can still be used, but will have to switch to `require()` instead of `import` to bring in dependencies.
+Without the `{"type": "module"}` line, `npm init -y` will default to CommonJS instead of modules. The following code can still be used, but you will have to switch to `require()` instead of `import` to bring in dependencies.
 {% endAside %}
 
 ## Navigations
 
-The new Lighthouse "navigation" mode is actually giving a name for the (up until now) standard Lighthouse behavior: analyze the cold load of a page. This is the mode to use to monitor page load performance, but user flows also open up the possibility of new insights.
+The new Lighthouse "navigation" mode is actually giving a name to the (up until now) standard Lighthouse behavior: analyze the cold load of a page. This is the mode to use to monitor page load performance, but user flows also open up the possibility of new insights.
 
 To script Lighthouse capturing a page load:
 
-- use puppeteer to open the browser
-- start a Lighthouse user flow
-- navigate to the target URL
+1. Use puppeteer to open the browser.
+2. Start a Lighthouse user flow.
+3. Navigate to the target URL.
 
 ```js
 import fs from 'fs';
@@ -85,7 +85,7 @@ This is the simplest flow. When opened, the report shows a summary view with onl
   <figcaption class="w-figcaption"><a href="https://chalk-confused-roundworm.glitch.me">See the report live</a></figcaption>
 </figure>
 
-As is typical with Lighthouse, this is a page load with any cache or local storage cleared, but real users visiting a site will have a mixture of visits with cold and warm caches, and there can be a large performance difference between a cold load like this and a user returning to the page with a still-warm cache.
+As is typical with Lighthouse, this page is loaded with any cache or local storage cleared first, but real users visiting a site will have a mixture of visits with cold and warm caches, and there can be a large performance difference between a cold load like this and a user returning to the page with a still-warm cache.
 
 ### Capturing a warm load
 
@@ -129,7 +129,7 @@ The combination of cold and warm loads offers a fuller picture of what real user
 
 ## Snapshots
 
-Snapshots are a new mode that runs Lighthouse audits at a single point in time. Unlike a normal Lighthouse run, the page is not reloaded. This unlocks the ability to set up a page and test it in an exact state: with a drop-down open or a form partially filled in, for example.
+Snapshots are a new mode that runs Lighthouse audits at a single point in time. Unlike a normal Lighthouse run, the page is not reloaded. This unlocks the ability to set up a page and test it in its exact state: with a drop-down open or a form partially filled in, for example.
 
 {% Aside %}
 Not all Lighthouse audits can be run in this mode. Many of the performance metrics are currently defined as beginning with a page load and so are not applicable in a snapshot, but the accessibility audits and many of the performance best practices can still yield important checks.
@@ -210,7 +210,7 @@ async function captureReport() {
 
   const testUrl = 'https://pie-charmed-treatment.glitch.me/';
   const flow = await startFlow(page, {name: 'CLS during navigation and on scroll'});
-  
+
   // Regular Lighthouse navigation.
   await flow.navigate(testUrl, {stepName: 'Navigate only'});
 
@@ -258,7 +258,7 @@ However the "Navigate and scroll" step tells a different story. Currently only T
 {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/8tCyVELstYqtDFX3TunI.png", alt="The Lighthouse report covering page navigation and scrolling with a failing CLS", width="400", height="305", class="w-screenshot" %}
 </figure>
 
-Formerly Lighthouse would not be able to identify this problematic CLS behavior, though it would almost certainly show up in the experience of real users. Performance testing over scripted interactions improves lab fidelity significantly.
+Formerly, Lighthouse would not be able to identify this problematic CLS behavior, though it would almost certainly show up in the experience of real users. Performance testing over scripted interactions improves lab fidelity significantly.
 
 ## Looking for feedback
 
