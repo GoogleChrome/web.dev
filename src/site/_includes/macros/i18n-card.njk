@@ -12,13 +12,13 @@
 
 <article class="card">
   {% if thumbnail %}
-    {% if thumbnail %}
+    {% if isAuthor %}
       <a href="{{ url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
         {% Img src=thumbnail, alt=title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
       </a>
     {% else %}
       <a href="{{ url }}" aria-hidden="true">
-        {% Img src=thumbnail, alt=title, width="570", height="330", class="card__hero", params={fit: 'center', h: '330', w: '570'} %}
+        {% Img src=thumbnail, alt=title, width="570", height="330", class="card__hero" %}
       </a>
     {% endif %}
   {% endif %}

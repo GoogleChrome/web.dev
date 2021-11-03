@@ -4,7 +4,7 @@ layout: default-next
 {% from 'macros/i18n-card.njk' import i18nCard with context %}
 
 <div class="landing-page">
-{# @TODO fix subscribe button #}
+ {# @TODO fix subscribe button #}
  {# <div class="w-actions">
     {% include 'partials/subscribe-action.njk' %}
   </div> #}
@@ -21,13 +21,13 @@ layout: default-next
   {# Hero ends #}
 
   <div class="region">
-    {# Shows start #}
+    {# Elements start #}
     <div class="wrapper auto-grid">
-      {% for show in paged.elements %}
-        {{ i18nCard(show) }}
+      {% for element in paged.elements %}
+        {{ i18nCard(element, isAuthor ) }}
       {% endfor %}
     </div>
-    {# Shows end #}
+    {# Elements end #}
 
     <div class="wrapper gap-top-size-3">
       {% include "partials/pagination-next.njk" %}
