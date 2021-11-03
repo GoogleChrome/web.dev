@@ -57,7 +57,6 @@ class LighthouseViewer extends BaseStateElement {
   onStateChanged() {
     const {lighthouseResult, lighthouseError} = store.getState();
     if (lighthouseResult && lighthouseResult.run) {
-      console.log(lighthouseResult.run)
       this.generateReport(lighthouseResult.run, this.container);
     }
     this.lighthouseError = lighthouseError;
