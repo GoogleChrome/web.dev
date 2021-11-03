@@ -1,7 +1,7 @@
 ---
 layout: default-next
 ---
-{% from 'macros/author-card.njk' import authorCard with context %}
+{% from 'macros/i18n-card.njk' import i18nCard with context %}
 
 <div>
  {# @TODO fix subscribe button #}
@@ -24,7 +24,7 @@ layout: default-next
     {# Authors start #}
     <div class="wrapper auto-grid">
       {% for author in paged.elements %}
-        {{ authorCard(author) }}
+        {{ i18nCard(author, true) }}
       {% endfor %}
     </div>
     {# Authors end #}

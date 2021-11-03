@@ -1,7 +1,7 @@
 ---
 layout: default-next
 ---
-{% from 'macros/shows-card.njk' import showsCard with context %}
+{% from 'macros/i18n-card.njk' import i18nCard with context %}
 
 <div>
 {# @TODO fix subscribe button #}
@@ -24,7 +24,7 @@ layout: default-next
     {# Shows start #}
     <div class="wrapper auto-grid">
       {% for show in paged.elements %}
-        {{ showsCard(show) }}
+        {{ i18nCard(show) }}
       {% endfor %}
     </div>
     {# Shows end #}

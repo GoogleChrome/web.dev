@@ -1,7 +1,7 @@
 ---
 layout: default-next
 ---
-{% from 'macros/tag-card.njk' import tagCard with context %}
+{% from 'macros/i18n-card.njk' import i18nCard with context %}
 
 <div>
   {# @TODO fix subscribe button #}
@@ -24,7 +24,7 @@ layout: default-next
     {# Tags start #}
     <div class="wrapper auto-grid">
       {% for tag in paged.elements %}
-        {{ tagCard(tag) }}
+        {{ i18nCard(tag) }}
       {% endfor %}
     </div>
     {# Tags end #}
