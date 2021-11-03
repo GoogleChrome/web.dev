@@ -21,12 +21,14 @@ security, privacy, trust, and other core tenets of the web.
 You can see the full list of new and potential capabilities at
 the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
 
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
+
 ## Capabilities available in stable {: #in-stable }
 
 The following APIs have graduated from origin trial and are available in the
 latest version of Chrome, and in many cases other Chromium based browsers.
 
-<a class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Oct%2019%2C%202021)-,shipped%20%23,-Web%20Bluetooth%20API">
+<a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Oct%2019%2C%202021)-,shipped%20%23,-Web%20Bluetooth%20API">
   See all already shipped APIs
 </a>
 
@@ -42,7 +44,7 @@ your beta testing users can try for the duration of the trial without requiring
 them to flip any special flags in their browser. There's more info on origin
 trials in the [Origin Trials Guide for Web Developers][ot-guide].
 
-<a class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=origin%20trial%20(details)">
+<a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=origin%20trial%20(details)">
   See all APIs currently in origin trial
 </a>
 
@@ -53,7 +55,7 @@ under development. They are not ready for use in production. There's a good
 chance there are bugs, that these APIs will break, or the API surface will
 change.
 
-<a class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=developer%20trial%20-%20behind%20a%20flag">
+<a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=developer%20trial%20-%20behind%20a%20flag">
   See all APIs currently behind a flag
 </a>
 
@@ -63,7 +65,7 @@ Work on these APIs has just started. There is not much to see yet,
 but interested developers may want to start the relevant Chromium bugs
 to stay updated as progress is being made.
 
-<a class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Started">
+<a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Started">
   See all APIs on which work has started
 </a>
 
@@ -73,7 +75,7 @@ This is the backlog of APIs and ideas we have not gotten to yet.
 It is worthwhile to star the relevant Chromium bugs to cast your vote
 for a feature, and to be informed once work starts.
 
-<a class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=under%20consideration%20(star%20and%20comment%20the%20bug)">
+<a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=under%20consideration%20(star%20and%20comment%20the%20bug)">
   See all APIs under consideration
 </a>
 
