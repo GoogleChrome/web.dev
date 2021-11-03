@@ -14,6 +14,7 @@ The [capabilities project][capabilities-project] is a cross-company effort with 
 making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
 capabilities of these platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
+
 This work, among many other examples, allowed
 [Adobe to bring Photoshop to the web](/ps-on-the-web/),
 [Excalidraw to deprecate their Electron app](/deprecating-excalidraw-electron/), and
@@ -38,10 +39,12 @@ trials provide an opportunity for Chrome to validate experimental features and
 APIs, and make it possible for you to provide feedback on their usability
 and effectiveness in broader deployment.
 
-Opting into an origin trial allows you to build demos and prototypes that
-your beta testing users can try for the duration of the trial without requiring
-them to flip any special flags in their browser. There's more info on origin
-trials in the [Origin Trials Guide for Web Developers][ot-guide].
+Opting into an origin trial allows you to build demos and prototypes that your
+beta testing users can try for the duration of the trial without requiring them
+to flip any flags in their browser. Although typically more stable than features
+available behind a flag (see below) it's still possible for an API surface to
+change based on your feedback. There's more info on origin trials in the [Origin
+Trials Guide for Web Developers][ot-guide].
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=origin%20trial%20(details)">
   All APIs currently in origin trial
@@ -61,8 +64,8 @@ change.
 ## Capabilities that are started {: #started }
 
 Work on these APIs has just started. There is not much to see yet,
-but interested developers may want to start the relevant Chromium bugs
-to stay updated as progress is being made.
+but interested developers may want to star the relevant Chromium bugs
+to stay updated on progress that is being made.
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Started">
   All APIs on which work has started
