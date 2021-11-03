@@ -139,7 +139,7 @@ Or using separate stylesheets:
  tab: 'result'
 } %}
 
-{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/gtBzPVsBu5mtnX8RuSqJ.mp4" %}
+{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/gtBzPVsBu5mtnX8RuSqJ.mp4", autoplay=true, controls=true, loop=true %}
 
 While using separate stylesheets for different media _types_—like `print`—might be okay, 
 it's probably not a good idea to use a separate stylesheet for every media _query_. Use `@media` at-rules instead.
@@ -191,7 +191,7 @@ Use the word `and` to combine your media queries:
  tab: 'result'
 } %}
 
-{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/eDf5v1QMwLX19pcJAgYE.mp4" %}
+{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/eDf5v1QMwLX19pcJAgYE.mp4", autoplay=true, controls=true, loop=true %}
 
 ## Choose breakpoints based on the content
 
@@ -218,6 +218,8 @@ Using the `column-count` property, the text is divided into two columns from tha
  theme: 'dark',
  tab: 'result'
 } %}
+
+{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/mrQlcyih7IcZxswI1lMx.mp4", autoplay=true, controls=true, loop=true %}
 
 ## Combinations
 
@@ -246,6 +248,8 @@ Those breakpoints were chosen based on the amount of content.
  theme: 'dark',
  tab: 'result'
 } %}
+
+{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/oKRBxhrHzAzebYwxptsv.mp4", autoplay=true, controls=true, loop=true %}
 
 These examples show how media queries can be used to adapt designs to the form factor of a user's device, 
 but these just scratch the surface of possibilities. Media queries can go far beyond width and height, 
