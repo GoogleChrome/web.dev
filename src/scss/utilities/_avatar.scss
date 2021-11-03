@@ -8,3 +8,14 @@
   flex: none;
   border-radius: 50%;
 }
+
+.avatar-xl,
+.avatar-xl > img {
+  width: 192px;
+  height: 192px;
+  object-fit: cover;
+  flex: none;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}

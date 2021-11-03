@@ -1,0 +1,13 @@
+{% from 'macros/post-card.njk' import postCard with context %}
+
+<div class="region">
+  <div class="wrapper auto-grid">
+    {% for post in paged.elements %}
+      {{ postCard(post) }}
+    {% endfor %}
+  </div>
+
+  <div class="wrapper gap-top-size-3">
+    {% include "partials/pagination-next.njk" %}
+  </div>
+</div>

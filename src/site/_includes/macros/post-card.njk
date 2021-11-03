@@ -1,4 +1,4 @@
-{% from 'macros/tag-chips.njk' import tagChips with context %}
+{% from 'macros/tag-pills.njk' import tagPills with context %}
 
 {#
   @typedef {EleventyCollectionItem} post - The post to display in card format.
@@ -14,38 +14,23 @@
 {% set isDraft = 'w-card--draft' if data.draft %}
 {% set authors = data.authors or [] %}
 
-<div class="w-card {{className}} {{isDraft}}" role="listitem">
-  <article class="w-card-base {{ 'w-card-base--featured' if featured }} {{ 'w-card-base__with--cover' if thumbnail }}">
-    {% if thumbnail %}
-      <div class="w-card-base__cover">
-      {#
-        We intentionally hide the thumbnail image from screen readers because it appears out of context
-        from the rest of the article content and may be confusing. Since the link for the article is duplicated
-        in the heading down below, this might be an OK tradeoff.
-      #}
-        <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
-          <figure class="w-card-base__figure">
-            {% Img src=thumbnail, alt=alt, width="354", height="240", class="w-card-base__image", params={fit: 'crop', h: '240', w: '354'} %}
-          </figure>
-        </a>
-      </div>
-    {% endif %}
-    <div class="w-card-base__blurb">
-      <a href="{{url}}" class="w-card-base__link">
-        <h2 class="{{ 'w-card-base__headline--with-image' if thumbnail else 'w-card-base__headline' }}">{{data.title}}</h2>
-      </a>
-      {% AuthorsDate authors=authors, date=post.date, updated=data.updated, locale=data.locale %}
-      <div class="w-card-base__desc {{ className+'__desc' if className }}">
-        {% if data.subhead %}
-          <a class="w-card-base__link" tabindex="-1" href="{{url}}">
-            <p class="w-card-base__subhead">{{data.subhead}}</p>
-          </a>
-        {% endif %}
+<article class="card {{isDraft}}">
+  {% if thumbnail %}
+    <a href="{{ url }}" aria-hidden="true">
+      {% Img src=thumbnail, alt=alt, width="570", height="330", class="card__hero" %}
+    </a>
+  {% endif %}
+  <div class="card__content flow">
+    <h2 class="card__heading text-size-3">
+      <a href="{{ url }}">{{ data.title }}</a>
+    </h2>
+    <p>{{ data.subhead }}</p>
+  </div>
 
-        {{ tagChips(data.tags, 'w-card__chips') }}
+  <div class="gap-top-size-1">
+    {% AuthorsDate authors=authors, date=post.date, updated=data.updated, locale=data.locale %}
+  </div>
 
-      </div>
-    </div>
-  </article>
-</div>
+  {{ tagPills(data.tags) }}
+</article>
 {% endmacro %}

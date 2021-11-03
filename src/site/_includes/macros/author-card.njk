@@ -11,7 +11,7 @@
 
 <article class="card">
   {% if image %}
-    <a href="{{ url }}" aria-hidden="true">
+    <a href="{{ url }}" aria-hidden="true" class="avatar-xl">
       {% Img src=image, alt=title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
     </a>
   {% endif %}

@@ -22,35 +22,5 @@ layout: default-next
   </header>
   {# Hero ends #}
 
-  <div class="region">
-    <div class="wrapper auto-grid">
-      {% for item in paged.elements %}
-        {% set image = item.data.thumbnail or item.data.hero or null %}
-       {% set authors = item.data.authors or [] %}
-
-        <article class="card">
-          {% if image %}
-            <a href="{{ item.url }}" aria-hidden="true">
-              {% Img src=image, alt="", width="570", height="330", class="card__hero" %}
-            </a>
-          {% endif %}
-          <div class="card__content flow">
-            <h2 class="card__heading text-size-3">
-              <a href="{{ item.url }}">{{ item.data.title }}</a>
-            </h2>
-            <p>{{ item.data.subhead }}</p>
-          </div>
-
-          <div class="gap-top-size-1">
-            {% AuthorsDate authors=authors, date=item.date, updated=item.data.updated, locale=data.locale %}
-          </div>
-
-          {{ tagPills(item.data.tags) }}
-        </article>
-      {% endfor %}
-    </div>
-    <div class="wrapper gap-top-size-3">
-      {% include "partials/pagination-next.njk" %}
-    </div>
-  </div>
+  {% include 'partials/paged-next.njk' %}
 </div>
