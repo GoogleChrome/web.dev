@@ -8,7 +8,7 @@ tags:
   - capabilities
 ---
 
-{% Img style="float: right; margin-inline: 10px;" src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
+{% Img style="float: right; margin-inline: 10px;", src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
 
 The [capabilities project][capabilities-project] is a cross-company effort with the objective of
 making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
