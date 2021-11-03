@@ -164,27 +164,21 @@ will both be available in the lab data section.
 For up to date product documentation, visit
 [https://developers.google.com/speed/docs/insights/.](https://developers.google.com/speed/docs/insights/v5/about)
 
-## Updates to web.dev/measure
+## Updates to web.dev/measure 
 
-To reduce variance between the different tools in our performance toolbox, we
-are also introducing an updated version of
-[web.dev/measure](/measure). As a reminder, PageSpeed Insights is
-a tool for measuring the performance and Core Web Vitals of a page (with lab and
-field data), while web.dev/measure measures page quality more broadly and only
-provides lab data. In the future, Measure will be directly powered by the
-[PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started).
+To reduce inconsistency between the different tools in our performance toolbox, 
+we are also updating [web.dev/measure](/measure) to be directly powered by the [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started).
 
-Previously, developers would run reports via both the PSI tool and
-[web.dev/measure](/measure) and see different Lighthouse numbers.
-One of the main reasons for differences was because
-[web.dev/measure](/measure) originated all tests from the U.S. 
+Previously, developers would run reports via both the PSI tool and /measure 
+and see different Lighthouse numbers. One of the main reasons for differences 
+was because /measure originated all tests from the U.S. (due to it previously 
+having a cloud backend that was US-based).
 
-With [web.dev/measure](/measure) using the same API as the PSI UI,
-developers will get a consistent experience when using PSI or
-[web.dev/measure](/measure). We have also made a few tweaks to /measure
-based on how users use the tool. As a result, the signed-in experience for
-/measure will be going away, but the most often used part—seeing multiple
-categories—will stay. 
+With /measure calling the same API directly as the PSI UI, developers will get
+ a more consistent experience when using PSI and /measure. We have also made 
+ a few tweaks to /measure based on how users use the tool. This means that the 
+ signed-in experience for /measure will be going away, but the most used 
+ functionality—seeing multiple categories—will still be available for use.
 
 
 <figure class="w-figure">
@@ -271,3 +265,7 @@ insights included in it.
 For more details on performance tooling updates, watch the keynote for [Chrome
 Dev Summit 2021](https://developer.chrome.com/devsummit/schedule/keynote/). 
 We will keep you posted on the release date for PSI and the changes to web.dev/measure.
+
+*With thanks to Milica Mihajlija, Philip Walton, Brendan Kenny and 
+Ewa Gasperowicz for their feedback on this article*
+
