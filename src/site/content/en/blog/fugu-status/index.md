@@ -8,15 +8,19 @@ tags:
   - capabilities
 ---
 
+{% Img style="float: left;" src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
+
 The [capabilities project][capabilities-project] is a cross-company effort with the objective of
 making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
 capabilities of these platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
+This work, among many other examples, allowed
+[Adobe to bring Photoshop to the web](/ps-on-the-web/),
+[Excalidraw to deprecate their Electron app](/deprecating-excalidraw-electron/), and
+[Betty Crocker to increase purchase intent indicators by 300%](/betty-crocker/).
 
 You can see the full list of new and potential capabilities at
 the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
-
-{% Img style="float: left;" src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}
 
 ## Capabilities available in stable {: #in-stable }
 
