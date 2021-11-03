@@ -188,26 +188,20 @@ based on how users use the tool. As a result, the signed-in experience for
 categories—will stay. 
 
 
-<table>
-<thead>
-<tr>
-<th><p>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/KFZmLMU2iSxkPDph7FTV.png", alt="the outgoing (at time of writing) version of the measure page", width="800", height="377" %}
-</p>
+<figure class="w-figure">
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/KFZmLMU2iSxkPDph7FTV.png", alt="The old version of the measure page.", width="800", height="377", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    web.dev/measure before
+  </figcaption>
+</figure>
 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/C04zQEkxtSQqPEQedNN7.png", alt="the refreshed version of the measure tool focusing on offering page quality measurement", width="800", height="696" %}
-</p>
+<figure class="w-figure">
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/C04zQEkxtSQqPEQedNN7.png", alt="The refreshed version of the measure tool focusing on offering page quality measurement.", width="800", height="696", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    web.dev/measure after
+  </figcaption>
+</figure>
 
-</td>
-</tr>
-</tbody>
-</table>
 
 ## PSI today
 
