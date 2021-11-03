@@ -170,13 +170,7 @@ case-study:
     ru: Разбор конкретного случая
     zh: 案例研究
   description:
-    en: Our latest news, updates, and stories about case studies.
-    es: Consulte nuestras últimas noticias, actualizaciones e historias publicadas sobre los estudios de caso.
-    ja: ケーススタディに関する最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: 사례 연구에 관한 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias sobre estudos de caso.
-    ru: Последние новости и статьи с разборами конкретных случаев.
-    zh: 我们关于案例研究的最新资讯、动态和故事。
+    en: Learn why and how other developers have used the web to create amazing web experiences for their users.
 
 cast:
   title:
