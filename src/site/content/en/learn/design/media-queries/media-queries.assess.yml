@@ -3,7 +3,7 @@ tabLabel: question
 questions:
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "0"
+    correctAnswers: "1"
     stem: Media queries only exist for screen size?
     options:
       - content: "true"
