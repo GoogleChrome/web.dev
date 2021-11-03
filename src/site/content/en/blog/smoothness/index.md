@@ -7,6 +7,7 @@ authors:
   - behdadb
   - jonross
 date: 2021-11-03
+updated: 2021-11-03
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/Q32j8dRRdKSaxYaAYiNP.jpeg
 alt: A silky smooth surface
 tags:
@@ -18,7 +19,7 @@ tags:
 You've probably experienced pages that "stutter" or "freeze" during scrolling or
 animations. We like to say that these experiences are not _smooth_. To address
 these types of issues, the Chrome team has been working on adding more support
-to our lab tooling for animation detection, as well making steady improvements
+to our lab tooling for animation detection, as well as making steady improvements
 to the rendering pipeline diagnostics within Chromium.
 
 We'd like to share some recent progress, offer concrete tooling guidance, and
@@ -41,6 +42,9 @@ But poorly implemented animations, or just adding too many animations, can
 degrade the experience and make it decidedly not fun at all. We've probably all
 interacted with an interface which just added too many "helpful" transition
 effects, which actually become hostile to experience when they perform poorly.
+Some users therefore actually might
+[prefer reduced motion](/prefers-reduced-motion/), a user preference
+that you should honor.
 
 {% Aside %}
 Learn more about [animations](/animations/), including how to
@@ -101,7 +105,7 @@ user's display.
 Displays update on some interval, so visual updates are batched. Many displays
 update on a fixed interval of time, such as 60 times a second (that is
 60&nbsp;Hz). Some more modern displays can offer higher refresh rates
-(90-120&nbsp;Hz are becoming common). Often these displays can actively adapt
+(90–120&nbsp;Hz are becoming common). Often these displays can actively adapt
 between refresh rates as needed, or even offer fully variable frame rates.
 
 The goal for any application, like a game or a browser, is to process all these
@@ -129,7 +133,7 @@ efficiently render and present visual updates!
 
 Some examples:
 
-- Using content that is too large or resource intensive to decode quickly on the
+- Using content that is too large or resource-intensive to decode quickly on the
   target device.
 - [Using too many
   layers](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
@@ -170,11 +174,12 @@ Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
 - Every script has to set up its own polling loop.
 - It can block the critical path.
-- Even if the rAF polling is fast, it can prevent `requestIdleCallback()` from
-  being able to schedule long idle blocks when used continuously (blocks that
+- Even if the rAF polling is fast, it can prevent
+  [`requestIdleCallback()`](https://developer.mozilla.org/docs/Web/API/window/requestIdleCallback)
+  from being able to schedule long idle blocks when used continuously (blocks that
   exceed a single frame).
-- Similarly, lack of long idle-blocks prevents the browser from scheduling other
-  long running tasks (such as longer garbage collection and other background or
+- Similarly, lack of long idle blocks prevents the browser from scheduling other
+  long-running tasks (such as longer garbage collection and other background or
   speculative work).
 - If polling is toggled on and off, then you'll miss cases where frame budget
   has been exceeded.
@@ -185,8 +190,8 @@ Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
 Too much work on the main thread can impact the ability to see animation frames.
 Check out the [Jank
-Sample](https://googlechrome.github.io/devtools-samples/jank/) to see how a rAF
-driven animation, once there is too much work on the main thread (such as
+Sample](https://googlechrome.github.io/devtools-samples/jank/) to see how a
+rAF-driven animation, once there is too much work on the main thread (such as
 layout), will lead to dropped frames and fewer rAF callbacks, and lower FPS.
 
 When the main thread becomes bogged down, visual updates begin to stutter.
@@ -361,7 +366,7 @@ Because frames may be partially presented, or dropped frames may happen in ways
 that do not affect smoothness, we have begun to think of each frame as having a
 completeness or smoothness score.
 
-Here are the spectrum of ways in which we interpret the state of a single
+Here is the spectrum of ways in which we interpret the state of a single
 animation frame, ordered from best to worst case:
 
 <div class="w-table-wrapper">
@@ -370,69 +375,69 @@ animation frame, ordered from best to worst case:
       <td style="width:12em"><strong style="background:#BCD5AC;padding:0.25em;">
         No Update Desired</strong>
       </td>
-      <td>Idle time, repeat of the previous frame</td>
+      <td>Idle time, repeat of the previous frame.</td>
     </tr>
     <tr>
       <td><strong style="background:#BCD5AC;padding:0.25em;">
         Fully presented</strong>
       </td>
       <td>The main thread update was either committed within deadline, or no
-      main thread update was desired</td>
+      main thread update was desired.</td>
     </tr>
     <tr>
       <td><strong style="background:#BCD5AC;padding:0.25em;">
         Partially presented</strong>
       </td>
       <td>Compositor only; the delayed main thread update had no visual
-      change</td>
+      change.</td>
     </tr>
     <tr>
       <td><strong style="background:#DCE9D5;padding:0.25em;">
         Partially presented</strong>
       </td>
       <td>Compositor only; the main thread had a visual update, but that
-      update did not include an animation that affects smoothness</td>
+      update did not include an animation that affects smoothness.</td>
     </tr>
     <tr>
       <td><strong style="background:#E9ECC2;padding:0.25em;">
         Partially presented</strong>
       </td>
       <td>Compositor only; the main thread had a visual update that affects
-      smoothness, but a previously stale frame arrived and was used instead</td>
+      smoothness, but a previously stale frame arrived and was used instead.</td>
     </tr>
     <tr>
       <td><strong style="background:#FDF2D0;padding:0.25em;">
         Partially presented</strong>
       </td>
       <td>Compositor only; without the desired main update, and the
-      compositor update has an animation that affects smoothness</td>
+      compositor update has an animation that affects smoothness.</td>
     </tr>
     <tr>
       <td><strong style="background:#EECDCD;padding:0.25em;">
         Partially presented</strong>
       </td>
       <td>Compositor only but the compositor update does not have an
-      animation that affects smoothness</td>
+      animation that affects smoothness.</td>
     </tr>
     <tr>
       <td><strong style="background:#EECDCD;padding:0.25em;">
         Dropped frame</strong>
       </td>
       <td>No update. There was no compositor update desired, and main was
-      delayed</td>
+      delayed.</td>
     </tr>
     <tr>
       <td><strong style="background:#DE9D9B;padding:0.25em;">
         Dropped frame</strong>
       </td>
-      <td>A compositor update was desired, but it was delayed</td>
+      <td>A compositor update was desired, but it was delayed.</td>
     </tr>
     <tr>
       <td><strong style="background:#DE9D9B;padding:0.25em;">
         Stale frame</strong>
       </td>
       <td>An update was desired, it was produced by the renderer, but the
-      GPU still did not present it before the vsync deadline</td>
+      GPU still did not present it before the vsync deadline.</td>
     </tr>
   </table>
 </div>
@@ -499,7 +504,7 @@ alt="Performance HUD", width="800", height="441" %}
 [Enable "Frame Rendering
 Stats"](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps-meter)
 in DevTools via Rendering settings to see a live view of new animation frames,
-which are color coded to differentiate partial updates from fully-dropped frame
+which are color-coded to differentiate partial updates from fully-dropped frame
 updates. The reported fps is for fully-presented frames only.
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/xazCKFNCWwjviBGS9JO6.png",
@@ -507,7 +512,7 @@ alt="Frame rendering stats", width="398", height="372" %}
 
 ### Frame Viewer in DevTools performance profile recordings
 
-The [DevTools performance
+The [DevTools Performance
 panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) has
 long had a [Frames
 viewer](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#frames).
@@ -516,7 +521,7 @@ actually works. There has been plenty of recent improvement, even in the latest
 Chrome Canary, which we think will greatly ease debugging animation issues.
 
 Today you will find that frames in the frames viewer are better aligned with
-vsync boundaries, and color coded based on status. There is still not full
+vsync boundaries, and color-coded based on status. There is still not full
 visualization for all the nuances outlined above, but we're planning to add more
 in the near future.
 
@@ -525,9 +530,9 @@ alt="Frame viewer in Chrome DevTools", width="800", height="148" %}
 
 ### Chrome tracing
 
-Finally, with Chrome Tracing, the stalwart tool for diving deep into details,
+Finally, with Chrome Tracing, the tool of choice for diving deep into details,
 you can record a "Web content rendering" trace via the new [Perfetto
-UI](https://ui.perfetto.dev/) (or `chrome:tracing`), and dig deep into Chrome's
+UI](https://ui.perfetto.dev/) (or `about:tracing`), and dig deep into Chrome's
 graphics pipeline. It can be a daunting task, but there are a few things
 recently added to Chromium to make it easier. You can get an overview of what is
 available in the [Life of a
@@ -537,11 +542,11 @@ document.
 Through trace events you can definitively determine:
 
 - Which animations are running (using events named `TrackerValidation`).
-- Getting the exact timeline of animation frame (using events named
+- Getting the exact timeline of animation frames (using events named
   `PipelineReporter`).
 - For janky animation updates, figure out exactly what is blocking your
   animation from running faster (using the event breakdowns within
-  "PipelineReporter" events).
+  `PipelineReporter` events).
 - For input-driven animations, see how long it takes to get a visual update
   (using events named `EventLatency`).
 
