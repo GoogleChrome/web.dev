@@ -42,3 +42,7 @@ Here's what you'll learn:
 {% include 'partials/course-index.njk' %}
 
 So, are you ready to learn PWA? 
+
+{% Aside %}
+This course was written by [Maximiliano Firtman](https://twitter.com/firt), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), [Adriana Jara](https://twitter.com/tropicadri), and [Pete LePage](https://twitter.com/petele).
+{% endAside %}
