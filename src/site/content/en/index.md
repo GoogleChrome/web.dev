@@ -20,8 +20,8 @@ featureCard:
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
-  primaryButtonUrl: 'https://events.withgoogle.com/chrome-dev-summit-2021/registrations/new/details/'
-  primaryButtonText: 'Request an invite'
+  primaryButtonUrl: 'https://developer.chrome.com/devsummit/'
+  primaryButtonText: 'Watch now'
   secondaryButtonUrl: 'https://developer.chrome.com/devsummit/schedule/'
   secondaryButtonText: 'View schedule'
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/KwS4L954TzN3KK3pWmtA.svg'
