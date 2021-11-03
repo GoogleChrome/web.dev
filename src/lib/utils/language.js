@@ -14,7 +14,7 @@ const languageNames = {
   es: 'Español',
   ko: '한국어',
   zh: '中文',
-  ru: 'Rусский',
+  ru: 'Русский',
   pt: 'Português',
   ja: '日本語',
 };
@@ -40,7 +40,7 @@ function isValidLanguage(lang) {
   return supportedLanguages.indexOf(lang) > -1;
 }
 
-export default {
+module.exports = {
   languageNames,
   defaultLanguage,
   isValidLanguage,
