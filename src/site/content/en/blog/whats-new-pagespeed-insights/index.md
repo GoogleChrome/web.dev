@@ -67,20 +67,19 @@ about the origin of the score.
 out the [explainer on web.dev](/how-to-measure-speed/).)
 
 <figure class="w-figure">
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jM0GYMrQZcPymVXdLOLP.png", alt="discover what your real users are experiencing", width="800", height="436" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jM0GYMrQZcPymVXdLOLP.png", alt="discover what your real users are experiencing", width="800", height="436", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Section for field data
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/wQ9RGcJAcBBc4SUDK7Dz.png", alt="Diagnose performance issues", width="800", height="355" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/wQ9RGcJAcBBc4SUDK7Dz.png", alt="Diagnose performance issues", width="800", height="355", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Section for lab data
   </figcaption>
 </figure>
 
-Section for lab data
 
 ### Core Web Vitals assessment
 
@@ -104,28 +103,20 @@ desktop centrally on the report page. The links are now easily visible and
 distinctly indicate the platform for which the data is being shown. Doing this
 also helped make the navigation bar cleaner.
 
-<table>
-<thead>
-<tr>
-<th><strong>Before</strong><br>
-<p>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hEv5XuTeVV98Z3AS59bQ.png", alt="older (at time of writing) version of PageSpeed Insights", width="800", height="97" %}
-</p>
+<figure class="w-figure">
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hEv5XuTeVV98Z3AS59bQ.png", alt="Older (at the time of writing) version of PageSpeed Insights", width="800", height="97", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    Before
+  </figcaption>
+</figure>
 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>After</strong><br>
-<p>
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vi5j7ouZtmWwqN9BRsUD.png", alt="Newer version of navigation bar", width="800", height="149" %}
-</p>
+<figure class="w-figure">
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vi5j7ouZtmWwqN9BRsUD.png", alt="Newer version of the navigation bar", width="800", height="149", class="w-screenshot" %}
+  <figcaption class="w-figcaption">
+    After
+  </figcaption>
+</figure>
 
-</td>
-</tr>
-</tbody>
-</table>
 
 ### Origin Summary
 
@@ -133,7 +124,7 @@ The Origin Summary, which provides the aggregated CrUX score for all pages from
 the origin, currently appears on click of a checkbox. We have moved this report
 section to a new tab, "Origin", under the Field Data section.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/5Kn5meWq0sWwCLT69lMb.png", alt="origin summary for the new PageSpeed Insights refresh", width="800", height="381" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/5Kn5meWq0sWwCLT69lMb.png", alt="Origin summary for the new PageSpeed Insights refresh.", width="800", height="381", class="w-screenshot" %}
 
 ### Additional helpful information
 
@@ -151,7 +142,7 @@ This information should enhance the distinction between lab and field data and
 help users who have previously been uncertain how the two data sources (lab and
 field) might differ. 
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jVxqisC0x6I5viUGgjAD.png", alt="enhanced section of information sharing data about field and lab sampling and configuration data", width="800", height="368" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jVxqisC0x6I5viUGgjAD.png", alt="Enhanced section of information sharing data about field and lab sampling and configuration data", width="800", height="368", class="w-screenshot" %}
 
 ### Expand view
 
@@ -159,7 +150,7 @@ We have a new "Expand view" feature that adds a drill-down function to the field
 data section and allows you to view granular details for the Core Web Vitals
 metrics. 
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/UFVgoK1gJBYk5DLhFwIn.png", alt="ALT_TEXT_HERE", width="800", height="515" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/UFVgoK1gJBYk5DLhFwIn.png", alt="Newly expanded view with a drill-down for field data metrics.", width="800", height="515" %}
 
 ### Page image
 
@@ -167,7 +158,7 @@ We have removed the image of the loaded page, which appears right next to the
 field data. The image and thumbnails of the page displaying the loading sequence
 will both be available in the lab data section.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dnIsJA35tj7vs6qgybRM.png", alt="newly expanded view with a drill-down for field data metrics", width="800", height="444" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dnIsJA35tj7vs6qgybRM.png", alt="Loaded page image next to the lab data.", width="800", height="444", class="w-screenshot" %}
 
 For up to date product documentation, visit
 [https://developers.google.com/speed/docs/insights/.](https://developers.google.com/speed/docs/insights/v5/about)
