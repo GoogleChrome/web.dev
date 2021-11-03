@@ -67,7 +67,7 @@ to stay updated as progress is being made.
   See all APIs on which work has started
 </a>
 
-## Capabilities that are started {: #started }
+## Capabilities that are under consideration {: #under-consideration }
 
 This is the backlog of APIs and ideas we have not gotten to yet.
 It is worthwhile to star the relevant Chromium bugs to cast your vote
