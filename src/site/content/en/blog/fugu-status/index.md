@@ -14,6 +14,7 @@ The [capabilities project][capabilities-project] is a cross-company effort with 
 making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
 capabilities of these platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
+
 This work, among many other examples, allowed
 [Adobe to bring Photoshop to the web](/ps-on-the-web/),
 [Excalidraw to deprecate their Electron app](/deprecating-excalidraw-electron/), and
