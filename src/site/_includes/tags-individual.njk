@@ -1,7 +1,7 @@
 ---
 layout: default-next
 ---
-<div class="tags-individual">
+<div>
   {# @TODO fix subscribe button #}
   {# <div class="w-actions">
     {% include 'partials/subscribe-action.njk' %}
@@ -23,12 +23,10 @@ layout: default-next
         {% endif %}
         <h1 class="headline__title">{{ renderData.title }}</h1>
         <p>{{ renderData.description | safe }}</p>
-        <div class="cluster all-center">
-          <div>
-            <a href="{{ renderData.rss }}" target="_blank">
-              <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
-            </a>
-          </div>
+        <div class="cluster flex-justify-center">
+          <a href="{{ renderData.rss }}" target="_blank">
+            <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+          </a>
         </div>
       </div>
     </div>
@@ -39,12 +37,10 @@ layout: default-next
 
   <div class="region">
     <div class="wrapper">
-      <div class="cluster all-center">
-        <div>
-          <a class="button" href="/tags">
-            {{ 'i18n.paths.tags.see_more' | i18n(locale) }}
-          </a>
-        </div>
+      <div class="cluster flex-justify-center">
+        <a class="button" href="/tags">
+          {{ 'i18n.paths.tags.see_more' | i18n(locale) }}
+        </a>
       </div>
     </div>
   </div>

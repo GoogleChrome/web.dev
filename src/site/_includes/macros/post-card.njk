@@ -11,10 +11,15 @@
 {% set data = post.data %}
 {% set thumbnail = data.thumbnail or data.hero or null %}
 {% set alt = data.alt or '' %}
-{% set isDraft = 'w-card--draft' if data.draft %}
+{% set isDraft = data.draft %}
 {% set authors = data.authors or [] %}
 
-<article class="card {{isDraft}}">
+<article class="card">
+  {% if isDraft %}
+    <div class="card__header cluster flex-justify-end">
+      <p class="pill">DRAFT</p>
+    </div>
+  {% endif %}
   {% if thumbnail %}
     <a href="{{ url }}" aria-hidden="true">
       {% Img src=thumbnail, alt=alt, width="570", height="330", class="card__hero" %}
@@ -31,6 +36,8 @@
     {% AuthorsDate authors=authors, date=post.date, updated=data.updated, locale=data.locale %}
   </div>
 
-  {{ tagPills(data.tags) }}
+  <div class="card__tags cluster gap-top-base" aria-label="tags for this post">
+    {{ tagPills(data.tags) }}
+  </div>
 </article>
 {% endmacro %}

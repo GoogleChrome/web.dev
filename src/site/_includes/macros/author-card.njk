@@ -7,12 +7,12 @@
 {% set description = author.description | i18n(locale) %}
 {% set url = author.url %}
 {% set data = author.data %}
-{% set image = data.thumbnail or data.hero or null %}
+{% set thumbnail = data.thumbnail or data.hero or null %}
 
 <article class="card">
-  {% if image %}
-    <a href="{{ url }}" aria-hidden="true" class="avatar-xl">
-      {% Img src=image, alt=title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
+  {% if thumbnail %}
+    <a href="{{ url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
+      {% Img src=thumbnail, alt=title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
     </a>
   {% endif %}
   <div class="card__content flow">

@@ -1,7 +1,7 @@
 ---
 layout: default-next
 ---
-<div class="authors-individual">
+<div>
   {# @TODO fix subscribe button #}
   {# <div class="w-actions">
     {% include 'partials/subscribe-action.njk' %}
@@ -12,52 +12,43 @@ layout: default-next
     <div class="wrapper">
       <div class="headline all-center flow">
         {% if paged.data.hero %}
-          {% Img
-            src=paged.data.hero,
-            alt=renderData.title,
-            height="192",
-            width="192",
-            class="avatar-xl",
-            sizes="(min-width: 481px) 192px, 128px",
-            options={minWidth: 128}
-          %}
+          <div class="avatar gap-inline-auto" data-size="large">
+            {% Img
+              src=paged.data.hero,
+              alt=renderData.title,
+              height="192",
+              width="192",
+              sizes="(min-width: 481px) 192px, 128px",
+              options={minWidth: 128}
+            %}
+          </div>
         {% endif %}
         <h1 class="headline__title">{{ renderData.title }}</h1>
         <p>{{ renderData.description | safe }}</p>
-        <div class="cluster all-center">
+        <div class="cluster flex-justify-center">
           {% if paged.homepage %}
-            <div>
-              <a href="{{ paged.homepage }}" target="_blank">
-                <img src="/images/icons/language.svg" alt="Homepage" width="32" height="32">
-              </a>
-            </div>
+            <a href="{{ paged.homepage }}" target="_blank">
+              <img src="/images/icons/language.svg" alt="Homepage" width="32" height="32">
+            </a>
           {% endif %}
           {% if paged.twitter %}
-            <div>
-              <a href="https://twitter.com/{{ paged.twitter }}" target="_blank">
-                <img src="/images/icons/twitter.svg" alt="Twitter" width="32" height="32">
-              </a>
-            </div>
+            <a href="https://twitter.com/{{ paged.twitter }}" target="_blank">
+              <img src="/images/icons/twitter.svg" alt="Twitter" width="32" height="32">
+            </a>
           {% endif %}
           {% if paged.github %}
-            <div>
-              <a href="https://github.com/{{ paged.github }}" target="_blank">
-                <img src="/images/icons/github.svg" alt="GitHub" width="32" height="32">
-              </a>
-            </div>
+            <a href="https://github.com/{{ paged.github }}" target="_blank">
+              <img src="/images/icons/github.svg" alt="GitHub" width="32" height="32">
+            </a>
           {% endif %}
           {% if paged.glitch %}
-            <div>
-              <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank">
-                <img src="/images/icons/glitch.svg" alt="Glitch" width="32" height="32">
-              </a>
-            </div>
-          {% endif %}
-          <div>
-            <a href="{{ renderData.rss }}" target="_blank">
-              <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+            <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank">
+              <img src="/images/icons/glitch.svg" alt="Glitch" width="32" height="32">
             </a>
-          </div>
+          {% endif %}
+          <a href="{{ renderData.rss }}" target="_blank">
+            <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+          </a>
         </div>
       </div>
     </div>
@@ -68,12 +59,10 @@ layout: default-next
 
   <div class="region">
     <div class="wrapper">
-      <div class="cluster all-center">
-        <div>
-          <a class="button" href="/authors">
-            {{ 'i18n.paths.authors.see_more' | i18n(locale) }}
-          </a>
-        </div>
+      <div class="cluster flex-justify-center">
+        <a class="button" href="/authors">
+          {{ 'i18n.paths.authors.see_more' | i18n(locale) }}
+        </a>
       </div>
     </div>
   </div>
