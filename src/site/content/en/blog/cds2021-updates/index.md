@@ -23,9 +23,9 @@ Web compatibility is one of the biggest challenges for web developers,
 and so Google has been working with other browser vendors to fix the top five compatibility pain points:  
 [flexbox](/learn/css/flexbox/), 
 [grid](/learn/css/grid/), 
-position: sticky, 
-[aspect-ratio](/aspect-ratio/), 
-and [transforms](/learn/css/transforms/).
+`position: sticky`, 
+[`aspect-ratio`](/aspect-ratio/), 
+and [transforms](/learn/css/transitions/#transform).
 
 The work has already led to improvements in these key areas. 
 You can read about those in the [Compat 2021 mid-year update](https://web.dev/compat2021-midyear/).
@@ -39,15 +39,15 @@ You can read about their work in the post
 ## Allow new classes of applications to run on the web
 
 [Project Fugu](/fugu-status/) is an effort that aims to allow new classes of applications to the web. 
-You can keep up to date with progress on the Fugu APIs at [fugu-tracker.web.app](https://fugu-tracker.web.app/)
+You can keep up to date with progress on the Fugu APIs at [fugu-tracker.web.app](https://fugu-tracker.web.app/).
 
 Adobe recently announced that they are bringing Photoshop to the web, 
 a feat made possible by collaboration between Adobe, Google, and web standards organizations. 
-Find out more in the post [Photoshop's Journey to the web](/ps-on-the-web/).
+Find out more in the post [Photoshop's journey to the web](/ps-on-the-web/).
 
 ## Ensure privacy
 
-It's difficult for developers to meet the growing need for privacy when many applications were developed using third-party cookies and solutions that weren't designed with privacy in mind.
+Many common web functions rely on third-party cookies and other cross-site tracking mechanisms that weren’t designed with privacy in mind, making it difficult for developers to meet the growing need for privacy.
 
 We are working with the web community and industry stakeholders to develop new privacy-preserving technologies to support the ecosystem, 
 with the aim to phase out third-party cookies and reduce covert tracking and browser fingerprinting.
@@ -97,7 +97,7 @@ You can learn how to create modern responsive sites in our course
 The first five modules launch today, the rest will be posted over the coming weeks.
 
 New CSS properties have landed in Chrome and other browsers this year to make creating beautiful experiences easier. 
-Find out more about [accent-color](/accent-color/) and  [size-adjust](/css-size-adjust/).
+Find out more about [`accent-color`](/accent-color/) and [`size-adjust`](/css-size-adjust/).
 
 To help you quickly take advantage of new CSS, we have launched a set of [layout patterns](/patterns/layout/). 
 These will give you a robust starting point for many common interface patterns.
