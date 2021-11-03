@@ -8,11 +8,6 @@ tags:
   - capabilities
 ---
 
-{% Aside %}
-This is a living document and will be updated as features move between
-states.
-{% endAside %}
-
 The [capabilities project][capabilities-project] is a cross-company effort with the objective of
 making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
 capabilities of these platforms to the web platform, while maintaining user
@@ -29,7 +24,7 @@ The following APIs have graduated from origin trial and are available in the
 latest version of Chrome, and in many cases other Chromium based browsers.
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Oct%2019%2C%202021)-,shipped%20%23,-Web%20Bluetooth%20API">
-  See all already shipped APIs
+  All already shipped APIs
 </a>
 
 ## Capabilities available as an origin trial {: #origin-trial }
@@ -45,7 +40,7 @@ them to flip any special flags in their browser. There's more info on origin
 trials in the [Origin Trials Guide for Web Developers][ot-guide].
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=origin%20trial%20(details)">
-  See all APIs currently in origin trial
+  All APIs currently in origin trial
 </a>
 
 ## Capabilities available behind a flag {: #flag }
@@ -56,7 +51,7 @@ chance there are bugs, that these APIs will break, or the API surface will
 change.
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=developer%20trial%20-%20behind%20a%20flag">
-  See all APIs currently behind a flag
+  All APIs currently behind a flag
 </a>
 
 ## Capabilities that are started {: #started }
@@ -66,7 +61,7 @@ but interested developers may want to start the relevant Chromium bugs
 to stay updated as progress is being made.
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=Started">
-  See all APIs on which work has started
+  All APIs on which work has started
 </a>
 
 ## Capabilities that are under consideration {: #under-consideration }
@@ -76,7 +71,7 @@ It is worthwhile to star the relevant Chromium bugs to cast your vote
 for a feature, and to be informed once work starts.
 
 <a style="text-decoration: none;" class="w-button w-button--primary" href="https://fugu-tracker.web.app/#:~:text=under%20consideration%20(star%20and%20comment%20the%20bug)">
-  See all APIs under consideration
+  All APIs under consideration
 </a>
 
 ## Suggest a new capability {: #suggest-new }
