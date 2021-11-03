@@ -108,14 +108,14 @@ also helped make the navigation bar cleaner.
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hEv5XuTeVV98Z3AS59bQ.png", alt="Older (at the time of writing) version of PageSpeed Insights", width="800", height="97", class="w-screenshot" %}
   <figcaption class="w-figcaption">
-    Before
+    PSI mobile and desktop labels before
   </figcaption>
 </figure>
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vi5j7ouZtmWwqN9BRsUD.png", alt="Newer version of the navigation bar", width="800", height="149", class="w-screenshot" %}
   <figcaption class="w-figcaption">
-    After
+        PSI mobile and desktop labels after
   </figcaption>
 </figure>
 
@@ -233,7 +233,7 @@ users in the CrUX dataset. Scores are calculated for the last 28 days and are
 not available for new pages where sufficient real-user data may not be
 available.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/A7xrSBFuqf9puSgBJH4l.png", alt="breakdown of different sections of data in the current PageSpeed Insight report", width="800", height="497" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/A7xrSBFuqf9puSgBJH4l.png", alt="breakdown of different sections of data in the current PageSpeed Insight report", width="800", height="497", class="w-screenshot" %}
 
 **Origin Summary:** Users can click on the _Show Origin Summary_ checkbox to
 view the aggregated score for the metrics for all pages served from the same
