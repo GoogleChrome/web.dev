@@ -7,11 +7,12 @@ authors:
 description: Learn about the latest in PageSpeed Insights and other performance tooling updates to help you better measure and optimize your page and site quality.
 subhead: Learn about the latest in PageSpeed Insights and other performance tooling updates to help you better measure and optimize your page and site quality.
 date: 2021-11-03
-hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WqBkrvs5LRwPIfrSOQyz.jpg
-alt: A photo of a brown wooden plank fence, with a signboard attached to it. The signboard reads "this way", with an arrow pointing to the right.
+hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6zX4bWZp46B9dGbMHhb4.jpeg
+alt: A photo of a Chevrolet Corvette Speedometer.
 tags:
   - performance
-  - tooling
+  - web-vitals
+  - lighthouse
   - blog
 ---
 
@@ -29,7 +30,7 @@ diagnostics to provide insights that help improve the performance of your
 website. 
 
 Today, we are excited to announce an updated version of PSI! While it is a
-critical element in our [speed tooling suite](https://web.dev/vitals-tools/),
+critical element in our [speed tooling suite](/vitals-tools/),
 the PSI code base was ten years old, contained a lot of legacy code, and was due
 for a redesign. We used this as an opportunity to address interface-related
 issues in PSI which have sometimes made it difficult for users to navigate the
@@ -38,15 +39,14 @@ report. Our primary goals were to:
 +   Make the UI more intuitive by clearly differentiating between data
     derived from a synthetic environment and data collected from users in the
     field.  
-+   Clearly communicate how the [Core Web Vitals](https://web.dev/vitals/)
-    (CWV) assessment is calculated in the UI.
-+   Modernize the look and feel of PSI, leveraging Material Design.
++   Clearly communicate how the [Core Web Vitals](/vitals/) assessment is calculated in the UI.
++   Modernize the look and feel of PSI, leveraging [Material Design](https://material.io/design).
 
 This post introduces the new features in PSI which will be released later this
 year. We will also discuss how PSI will now converge with another popular speed
-tool—[web.dev/measure](https://web.dev/measure/). 
+tool—[web.dev/measure](/measure/). 
 
-## What's new!
+## What's new?
 
 The PSI UI redesign aims to improve the presentation of the report data and add
 clarity and granularity to the data available in the report. The new UI is aimed
@@ -64,13 +64,21 @@ shown at the top, has been moved down to the Lab data section to avoid ambiguity
 about the origin of the score.
 
 (If you don't know the difference between lab and field data, be sure to check
-out the [explainer on web.dev](https://web.dev/how-to-measure-speed/).)
+out the [explainer on web.dev](/how-to-measure-speed/).)
 
-![image](whatsnewinpage--1gkq4w97o0b.png)
+<figure class="w-figure">
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jM0GYMrQZcPymVXdLOLP.png", alt="discover what your real users are experiencing", width="800", height="436" %}
+  <figcaption class="w-figcaption">
+    Section for field data
+  </figcaption>
+</figure>
 
-Section for Field data
-
-![image](whatsnewinpage--r5ug52qo53g.png)
+<figure class="w-figure">
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/wQ9RGcJAcBBc4SUDK7Dz.png", alt="Diagnose performance issues", width="800", height="355" %}
+  <figcaption class="w-figcaption">
+    Section for lab data
+  </figcaption>
+</figure>
 
 Section for lab data
 
@@ -78,7 +86,7 @@ Section for lab data
 
 The Core Web Vitals assessment result, which earlier appeared as a single word
 "passed" or "failed" in Field Data, now stands out as a separate subsection with
-a distinct CWV icon. 
+a distinct icon. 
 
 Note that there is no change in the assessment process for Core Web Vitals. The
 Core Web Vitals metrics FID, LCP, and CLS, may be aggregated at either the page
@@ -100,7 +108,9 @@ also helped make the navigation bar cleaner.
 <thead>
 <tr>
 <th><strong>Before</strong><br>
-<p><img src="whatsnewinpage--5hhiuu67hmc.png"></p>
+<p>
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hEv5XuTeVV98Z3AS59bQ.png", alt="older (at time of writing) version of PageSpeed Insights", width="800", height="97" %}
+</p>
 
 </th>
 </tr>
@@ -108,7 +118,9 @@ also helped make the navigation bar cleaner.
 <tbody>
 <tr>
 <td><strong>After</strong><br>
-<p><img src="whatsnewinpage--f8hk8xyb9st.png"></p>
+<p>
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vi5j7ouZtmWwqN9BRsUD.png", alt="Newer version of navigation bar", width="800", height="149" %}
+</p>
 
 </td>
 </tr>
@@ -121,7 +133,7 @@ The Origin Summary, which provides the aggregated CrUX score for all pages from
 the origin, currently appears on click of a checkbox. We have moved this report
 section to a new tab, "Origin", under the Field Data section.
 
-![image](whatsnewinpage--y3don2ryst.png)
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/5Kn5meWq0sWwCLT69lMb.png", alt="origin summary for the new PageSpeed Insights refresh", width="800", height="381" %}
 
 ### Additional helpful information
 
@@ -139,7 +151,7 @@ This information should enhance the distinction between lab and field data and
 help users who have previously been uncertain how the two data sources (lab and
 field) might differ. 
 
-![image](whatsnewinpage--nj1q75w4va.png)
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jVxqisC0x6I5viUGgjAD.png", alt="enhanced section of information sharing data about field and lab sampling and configuration data", width="800", height="368" %}
 
 ### Expand view
 
@@ -147,7 +159,7 @@ We have a new "Expand view" feature that adds a drill-down function to the field
 data section and allows you to view granular details for the Core Web Vitals
 metrics. 
 
-![image](whatsnewinpage--28vca5899na.png)
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/UFVgoK1gJBYk5DLhFwIn.png", alt="ALT_TEXT_HERE", width="800", height="515" %}
 
 ### Page image
 
@@ -155,7 +167,7 @@ We have removed the image of the loaded page, which appears right next to the
 field data. The image and thumbnails of the page displaying the loading sequence
 will both be available in the lab data section.
 
-![image](whatsnewinpage--mpgoptmipwp.png)
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dnIsJA35tj7vs6qgybRM.png", alt="newly expanded view with a drill-down for field data metrics", width="800", height="444" %}
 
 For up to date product documentation, please visit
 [https://developers.google.com/speed/docs/insights/.](https://developers.google.com/speed/docs/insights/v5/about)
@@ -187,21 +199,25 @@ web.dev/measure - current vs planned
 <table>
 <thead>
 <tr>
-<th><p><img src="whatsnewinpage--86cjil8mmdg.png"></p>
+<th><p>
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/KFZmLMU2iSxkPDph7FTV.png", alt="the outgoing (at time of writing) version of the measure page", width="800", height="377" %}
+</p>
 
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><p><img src="whatsnewinpage--uk2hc5ixn6d.png"></p>
+<td><p>
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/C04zQEkxtSQqPEQedNN7.png", alt="the refreshed version of the measure tool focusing on offering page quality measurement", width="800", height="696" %}
+</p>
 
 </td>
 </tr>
 </tbody>
 </table>
 
-PSI today
+## PSI today
 
 Taking a step back, let's look at what the current PageSpeed Insights report
 offers. The PSI report includes performance data for both mobile and desktop
@@ -220,16 +236,18 @@ below 50 is poor.
 **Field Data:** Field data, sourced from the
 [CrUX report](https://developers.google.com/web/tools/chrome-user-experience-report)
 dataset, provides insights into the real-world user experience. The data
-includes metrics such as [First Contentful Paint](https://web.dev/fcp/) (FCP),
-and measures Core Web Vitals  ([First Input Delay](https://web.dev/fid/) (FID),
-[Largest Contentful Paint](https://web.dev/lcp/) (LCP), and [Cumulative Layout
-Shift](https://web.dev/cls/) (CLS)). Along with the metric values, you can also
+includes metrics such as [First Contentful Paint](/fcp/) (FCP),
+and measures Core Web Vitals  ([First Input Delay](/fid/) (FID),
+[Largest Contentful Paint](/lcp/) (LCP), and [Cumulative Layout
+Shift](/cls/) (CLS)). Along with the metric values, you can also
 see the distribution of pages where the value of a particular metric was Good,
 Needs Improvement, or Poor, indicated by green, amber, and red bars,
 respectively. The distribution and scores are shown based on page loads for
 users who opted into CrUX. Scores are calculated for the last 28 days and are
 not available for new pages where sufficient actual user data may not be
-available.![image](whatsnewinpage--48cpk1t8bad.png)
+available.
+
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/A7xrSBFuqf9puSgBJH4l.png", alt="breakdown of different sections of data in the current PageSpeed Insight report", width="800", height="497" %}
 
 **Origin Summary:** Users can click on the _Show Origin Summary_ checkbox to
 view the aggregated score for the metrics for all pages served from the same
@@ -238,12 +256,12 @@ origin over the last 28 days.
 **Lab Data:** Lab performance score, calculated using Lighthouse, helps debug
 performance issues, as it is collected in a controlled environment. The report
 shows the performance using metrics like[First Contentful
-Paint](https://web.dev/fcp/), [Largest Contentful Paint](https://web.dev/lcp/),
-[Speed Index](https://web.dev/speed-index/), [Cumulative Layout
-Shift](https://web.dev/cls/), [Time to
-Interactive](https://web.dev/interactive/), and [Total Blocking
-Time](https://web.dev/tbt/). Each metric is
-[scored](https://web.dev/performance-scoring/) and labeled with an icon
+Paint](/fcp/), [Largest Contentful Paint](/lcp/),
+[Speed Index](/speed-index/), [Cumulative Layout
+Shift](/cls/), [Time to
+Interactive](/interactive/), and [Total Blocking
+Time](/tbt/). Each metric is
+[scored](/performance-scoring/) and labeled with an icon
 indicating Good, Needs improvement, or Poor. This section provides a good
 indication of performance bottlenecks pre-release and can help to diagnose
 problems, but does not capture real-world issues.   
@@ -265,6 +283,6 @@ insights included in it.
 
 ## Learn more
 
-For more details on performance tooling updates, watch the keynote for Chrome
-Dev Summit 2021. We will keep you posted on the release date for PSI and the
-changes to web.dev/measure.
+For more details on performance tooling updates, watch the keynote for [Chrome
+Dev Summit 2021](https://developer.chrome.com/devsummit/schedule/keynote/). 
+We will keep you posted on the release date for PSI and the changes to web.dev/measure.
