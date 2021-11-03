@@ -1,11 +1,11 @@
 ---
-title: What's new in PageSpeed Insights and web.dev/measure
+title: What's new in PageSpeed Insights
 authors:
   - leenasohoni
   - addyosmani
   - egsweeny
-description: Learn about the latest in PageSpeed Insights and other performance tooling updates to help you better measure and optimize your page and site quality.
-subhead: Learn about the latest in PageSpeed Insights and other performance tooling updates to help you better measure and optimize your page and site quality.
+description: Learn about the latest in PageSpeed Insights to help you better measure and optimize your page and site quality.
+subhead: Learn about the latest in PageSpeed Insights to help you better measure and optimize your page and site quality.
 date: 2021-11-03
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6zX4bWZp46B9dGbMHhb4.jpeg
 alt: A photo of a Chevrolet Corvette Speedometer.
@@ -43,8 +43,7 @@ report. Our primary goals were to:
 +   Modernize the look and feel of PSI, leveraging [Material Design](https://material.io/design).
 
 This post introduces the new features in PSI which will be released later this
-year. We will also discuss how PSI will now converge with another popular speed
-tool—[web.dev/measure](/measure/). 
+year. 
 
 ## What's new?
 
