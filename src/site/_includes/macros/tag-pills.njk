@@ -1,6 +1,6 @@
 {#
-  @typedef {string[]} tags - An array of tag keys to display.
-  @property {string} [className] - A space separated list of classes to apply.
+  @param {string[]} tags - An array of tag keys to display.
+  @param {string} [className] - A space separated list of classes to apply.
 #}
 {% macro tagPills(tags, className = '') %}
 <div class="card__tags cluster gap-top-base {{className}}" aria-label="tags for this post">
