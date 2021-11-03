@@ -793,4 +793,4 @@ to the community remixes section below!
 
 ## Community remixes
 
-*Nothing to see here yet.*
+- [Codepen](https://codepen.io/joosts/pen/BadJxXo) by [Joost van der Schee](https://twitter.com/jhvanderschee)
