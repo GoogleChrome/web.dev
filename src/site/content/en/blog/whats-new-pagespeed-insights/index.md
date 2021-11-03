@@ -63,8 +63,10 @@ to the top. The traditional lab-based performance score, which is currently
 shown at the top, has been moved down to the Lab data section to avoid ambiguity
 about the origin of the score.
 
-(If you don't know the difference between lab and field data, be sure to check
-out the [explainer on web.dev](/how-to-measure-speed/).)
+{% Aside %}
+If you don't know the difference between lab and field data, check
+out the [explainer on web.dev](/how-to-measure-speed/).
+{% endAside %}
 
 <figure class="w-figure">
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jM0GYMrQZcPymVXdLOLP.png", alt="discover what your real users are experiencing", width="800", height="436", class="w-screenshot" %}
@@ -129,7 +131,7 @@ section to a new tab, "Origin", under the Field Data section.
 ### Additional helpful information
 
 The report now includes a new information section at the bottom of each field
-and lab card sharing the following details about the sampled data.
+and lab card sharing the following details about the sampled data:
 
 +   Data collection period
 +   Visit durations
@@ -167,25 +169,24 @@ For up to date product documentation, visit
 
 To reduce variance between the different tools in our performance toolbox, we
 are also introducing an updated version of
-[web.dev/measure](http://web.dev/measure). As a reminder, PageSpeed Insights is
+[web.dev/measure](/measure). As a reminder, PageSpeed Insights is
 a tool for measuring the performance and Core Web Vitals of a page (with lab and
 field data), while web.dev/measure measures page quality more broadly and only
 provides lab data. In the future, Measure will be directly powered by the
 [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started).
 
 Previously, developers would run reports via both the PSI tool and
-[web.dev/measure](http://web.dev/measure) and see different Lighthouse numbers.
+[web.dev/measure](/measure) and see different Lighthouse numbers.
 One of the main reasons for differences was because
-[/measure](http://web.dev/measure) originated all tests from the U.S. 
+[web.dev/measure](/measure) originated all tests from the U.S. 
 
-With [web.dev/measure](http://web.dev/measure) using the same API as the PSI UI,
+With [web.dev/measure](/measure) using the same API as the PSI UI,
 developers will get a consistent experience when using PSI or
-/[measure](http://web.dev/measure). We have also made a few tweaks to /measure
+[web.dev/measure](/measure). We have also made a few tweaks to /measure
 based on how users use the tool. As a result, the signed-in experience for
 /measure will be going away, but the most often used part—seeing multiple
 categories—will stay. 
 
-web.dev/measure - current vs planned
 
 <table>
 <thead>
