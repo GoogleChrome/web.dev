@@ -76,6 +76,13 @@ web-url-chooser {
     padding: 6px 36px 2px;
     height: 50px;
     line-height: 40px;
+    display: grid;
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .lh-running web-progress-bar {
