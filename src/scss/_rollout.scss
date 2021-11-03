@@ -111,6 +111,7 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
     border: 1px solid get-utility-value('color', 'stroke');
     border-radius: $global-radius-base;
     padding: 0;
+    z-index: 99;
 
     a {
       color: currentColor;
