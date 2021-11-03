@@ -35,7 +35,9 @@ class UrlChooser extends BaseElement {
         class="lh-report-header-enterurl ${this.disabled ? 'lh-running' : ''}"
       >
         <div class="lh-enterurl lh-enterurl--selected">
-          <div class="lh-enterurl__url">${this.url}</div>
+          <div class="lh-enterurl__url">
+            <p>${this.url}</p>
+          </div>
           <web-progress-bar></web-progress-bar>
         </div>
         <div class="lh-enterurl lh-enterurl--switch">
