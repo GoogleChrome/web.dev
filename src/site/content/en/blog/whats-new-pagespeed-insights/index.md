@@ -243,8 +243,8 @@ Shift](/cls/) (CLS)). Along with the metric values, you can also
 see the distribution of pages where the value of a particular metric was Good,
 Needs Improvement, or Poor, indicated by green, amber, and red bars,
 respectively. The distribution and scores are shown based on page loads for
-users who opted into CrUX. Scores are calculated for the last 28 days and are
-not available for new pages where sufficient actual user data may not be
+users in the CrUX dataset. Scores are calculated for the last 28 days and are
+not available for new pages where sufficient real-user data may not be
 available.
 
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/A7xrSBFuqf9puSgBJH4l.png", alt="breakdown of different sections of data in the current PageSpeed Insight report", width="800", height="497" %}
@@ -264,7 +264,7 @@ Time](/tbt/). Each metric is
 [scored](/performance-scoring/) and labeled with an icon
 indicating Good, Needs improvement, or Poor. This section provides a good
 indication of performance bottlenecks pre-release and can help to diagnose
-problems, but does not capture real-world issues.   
+problems, but may not capture real-world issues.   
 
 **Audits:** This section lists all the audits run by Lighthouse and lists down
 the passed audits along with opportunities for improvement and additional
