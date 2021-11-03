@@ -81,7 +81,7 @@ for a feature, and to be informed once work starts.
 
 Do you have a suggestion for a capability you think Chromium should consider?
 Tell us about it by filing a [new feature request](https://goo.gl/qWhHXU).
-Please be sure to include as much detail as you can, such as
+Be sure to include as much detail as you can, such as
 the problem you're trying to solve, suggested use cases, and anything else
 that might be helpful.
 
