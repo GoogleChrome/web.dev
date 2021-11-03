@@ -1,12 +1,12 @@
 ---
 title: 'Lighthouse user flows'
-subhead: Try out a new Lighthouse API to measure throughout a user flow.
-description: Try out a new Lighthouse API to measure throughout a user flow.
+subhead: Try out a new Lighthouse API to measure performance and best practices throughout a user flow.
+description: Try out a new Lighthouse API to measure performance and best practices throughout a user flow.
 authors:
   - bckenny
 date: 2021-11-03
 hero: image/MtjnObpuceYe3ijODN3a79WrxLU2/NbfbZ81Sx2ZlFvRwTiBV.png
-alt: A Lighthouse flow report summary
+alt: A Lighthouse user-flow-report summary
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
