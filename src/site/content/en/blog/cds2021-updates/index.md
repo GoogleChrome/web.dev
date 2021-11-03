@@ -13,7 +13,7 @@ tags:
   - blog
 ---
 
-TO DO: add recap video
+{% YouTube "n57U2_-3NLQ" %}
 
 This post rounds up all the key announcements from the 2021 Chrome Dev Summit, with the links you need to find out more.
 
