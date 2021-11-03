@@ -96,7 +96,7 @@ async function captureReport() {
   const browser = await puppeteer.launch({headless: false});
   const page = await browser.newPage();
 
-  const testUrl = 'https://pptr.dev/';
+  const testUrl = 'https://web.dev/performance-scoring/';
   const flow = await startFlow(page, {name: 'Cold and warm navigations'});
   await flow.navigate(testUrl, {
     stepName: 'Cold navigation'
