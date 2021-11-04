@@ -297,7 +297,7 @@ new PerformanceObserver((entries) => {
 
 ## Feedback
 
-We want to encourage developers to try out these new layout shift metrics on
+We want to encourage developers to try out these new responsiveness metrics on
 their sites, and let us know if you discover any issue.
 
 Please also email any general feedback on the approaches outlined here to the
