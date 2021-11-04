@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="headline all-center flow">
       <h2 class="headline__title">{{ subscribeTitle | default('Developer Newsletter', false) }}</h2>
-      <p>{{ subscribeNotes | default('Get the latest news, techniques and updates straight to your inbox.', false) }}</p>
+      <p class="subscribe__message">{{ subscribeNotes | default('Get the latest news, techniques and updates straight to your inbox.', false) }}</p>
     </div>
     <form class="flow gap-top-size-2" action="{{ site.subscribeForm }}" method="post">
       <div class="switcher">
@@ -66,6 +66,11 @@
       </div>
     </form>
     <div class="gap-top-size-2">
+      <div class="subscribe__error hidden-yes">
+        {% Aside 'warning' %}
+          <p class="subscribe__error__message"></p>
+        {% endAside %}
+      </div>
       <noscript>{% Aside 'warning' %}{{ 'i18n.subscribe.no_javascript' | i18n(locale) }}{% endAside %}</noscript>
     </div>
   </div>
