@@ -25,11 +25,11 @@
   {% if param.thumbnail %}
     {% if param.isAuthor %}
       <a href="{{ param.url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
-        {% Img src=param.thumbnail, alt=param.title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
+        {% Img src=param.thumbnail, alt=param.alt, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
       </a>
     {% else %}
       <a href="{{ param.url }}" aria-hidden="true">
-        {% Img src=param.thumbnail, alt=param.title, width="570", height="330", class="card__hero" %}
+        {% Img src=param.thumbnail, alt=param.alt, width="570", height="330", class="card__hero" %}
       </a>
     {% endif %}
   {% endif %}
