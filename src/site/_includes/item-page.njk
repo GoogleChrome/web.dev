@@ -16,7 +16,7 @@ layout: default-next
             <div class="avatar gap-inline-auto" data-size="large">
               {% Img
                 src=paged.data.hero,
-                alt=renderData.title,
+                alt=renderData.title or title,
                 height="192",
                 width="192",
                 sizes="(min-width: 481px) 192px, 128px",
@@ -26,7 +26,7 @@ layout: default-next
           {% else %}
             {% Img
               src=paged.data.hero,
-              alt=renderData.title,
+              alt=renderData.title or title,
               height="192",
               width="192",
               sizes="(min-width: 481px) 192px, 128px",
@@ -34,8 +34,10 @@ layout: default-next
             %}
           {% endif %}
         {% endif %}
-        <h1 class="headline__title">{{ renderData.title }}</h1>
-        <p>{{ renderData.description | safe }}</p>
+
+        <h1 class="headline__title">{{ renderData.title or title }}</h1>
+        <p>{{ renderData.description | safe or description | safe }}</p>
+
         <div class="cluster flex-justify-center">
           {% if paged.homepage %}
             <a href="{{ paged.homepage }}" target="_blank">
@@ -57,9 +59,11 @@ layout: default-next
               <img src="/images/icons/glitch.svg" alt="Glitch" width="32" height="32">
             </a>
           {% endif %}
-          <a href="{{ renderData.rss }}" target="_blank">
-            <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
-          </a>
+          {% if renderData.rss %}
+            <a href="{{ renderData.rss }}" target="_blank">
+              <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -68,13 +72,15 @@ layout: default-next
 
   {% include 'partials/paged-next.njk' %}
 
-  <div class="region">
-    <div class="wrapper">
-      <div class="cluster flex-justify-center">
-        <a class="button" href="/{{path}}">
-          {{ ('i18n.paths.'+path+'.see_more') | i18n(locale) }}
-        </a>
+  {% if path %}
+    <div class="region">
+      <div class="wrapper">
+        <div class="cluster flex-justify-center">
+          <a class="button" href="/{{path}}">
+            {{ ('i18n.paths.'+path+'.see_more') | i18n(locale) }}
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 </div>
