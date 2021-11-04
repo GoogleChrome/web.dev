@@ -1,7 +1,7 @@
 ---
 layout: default-next
 ---
-{% from 'macros/i18n-card.njk' import i18nCard with context %}
+{% from 'macros/post-card.njk' import postCard with context %}
 
 <div class="landing-page">
  {# @TODO fix subscribe button #}
@@ -24,7 +24,21 @@ layout: default-next
     {# Elements start #}
     <div class="wrapper auto-grid">
       {% for element in paged.elements %}
-        {{ i18nCard(element, isAuthor ) }}
+        {% set data = element.data %}
+
+        {{ postCard(
+          element.overrideTitle or element.title | i18n(locale),
+          element.description | i18n(locale),
+          element.url,
+          data.thumbnail or data.hero or null,
+          element.overrideTitle or element.title | i18n(locale),
+          null,
+          null,
+          null,
+          null,
+          isAuthor,
+          false
+        ) }}
       {% endfor %}
     </div>
     {# Elements end #}

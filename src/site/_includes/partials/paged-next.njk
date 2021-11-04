@@ -2,8 +2,22 @@
 
 <div class="region">
   <div class="wrapper auto-grid">
-    {% for post in paged.elements %}
-      {{ postCard(post) }}
+    {% for element in paged.elements %}
+      {% set data = element.data %}
+
+      {{ postCard(
+        data.title,
+        data.subhead,
+        element.url,
+        data.thumbnail or data.hero or null,
+        data.alt or data.title or '',
+        data.authors,
+        data.tags,
+        element.date or null,
+        data.updated or null,
+        false,
+        data.draft or false
+      ) }}
     {% endfor %}
   </div>
 
