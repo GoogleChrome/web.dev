@@ -1,59 +1,59 @@
 {% from 'macros/tag-pills.njk' import tagPills with context %}
 
 {#
-  @typedef {string} title - The title of the card, like a show's name or a post's title.
-  @typedef {string} subhead - A description or short summary.
-  @typedef {string} url - The url for the page the card is previewing.
-  @typedef {string|null} thumbnail - An relevant image to be displayed in the card.
-  @typedef {string|null} alt - Alt text for image. If no thumbnail is provided, this can be null.
-  @typedef {string[]|null} authors - An array of author ids for the authors who wrote the post.
-  @typedef {string[]|null} tags - An array of tag ids for the tags relevant to the post.
-  @typedef {Date|null} date - Date for when a post was created.
-  @typedef {Date|null} updated - Date for when a post was updated.
-  @typedef {boolean|null} isAuthor - Conditional if the card is for an author. This requires a different image.
-  @typedef {boolean|null} isDraft - Conditional if the card is for a draft post. This puts a pill on the card that says "DRAFT".
+  @typedef {string} param.title - The title of the card, like a show's name or a post's title.
+  @typedef {string} param.subhead - A description or short summary.
+  @typedef {string} param.url - The url for the page the card is previewing.
+  @typedef {string|null} param.thumbnail - An relevant image to be displayed in the card.
+  @typedef {string|null} param.alt - Alt text for image. If no thumbnail is provided, this can be null.
+  @typedef {string[]|null} param.authors - An array of author ids for the authors who wrote the post.
+  @typedef {string[]|null} param.tags - An array of tag ids for the tags relevant to the post.
+  @typedef {Date|null} param.date - Date for when a post was created.
+  @typedef {Date|null} param.updated - Date for when a post was updated.
+  @typedef {boolean|null} param.isAuthor - Conditional if the card is for an author. This requires a different image.
+  @typedef {boolean|null} param.isDraft - Conditional if the card is for a draft post. This puts a pill on the card that says "DRAFT".
 #}
-{% macro postCard(title, subhead, url, thumbnail, alt, authors, tags, date, updated, isAuthor, isDraft) %}
+{% macro postCard(param) %}
 
 <article class="card">
-  {% if isDraft %}
+  {% if param.isDraft %}
     <div class="card__header cluster flex-justify-end">
       <p class="pill">DRAFT</p>
     </div>
   {% endif %}
 
-  {% if thumbnail %}
-    {% if isAuthor %}
-      <a href="{{ url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
-        {% Img src=thumbnail, alt=title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
+  {% if param.thumbnail %}
+    {% if param.isAuthor %}
+      <a href="{{ param.url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
+        {% Img src=param.thumbnail, alt=param.title, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
       </a>
     {% else %}
-      <a href="{{ url }}" aria-hidden="true">
-        {% Img src=thumbnail, alt=title, width="570", height="330", class="card__hero" %}
+      <a href="{{ param.url }}" aria-hidden="true">
+        {% Img src=param.thumbnail, alt=param.title, width="570", height="330", class="card__hero" %}
       </a>
     {% endif %}
   {% endif %}
 
   <div class="card__content flow">
     <h2 class="card__heading text-size-3">
-      <a href="{{ url }}">{{ title }}</a>
+      <a href="{{ param.url }}">{{ param.title }}</a>
     </h2>
-    <p>{{ subhead }}</p>
+    <p>{{ param.subhead }}</p>
   </div>
 
-  {% if authors %}
+  {% if param.authors %}
     <div class="gap-top-size-1">
-      {% if date %}
-        {% AuthorsDate authors=authors, date=date, updated=updated, locale=locale %}
+      {% if param.date %}
+        {% AuthorsDate authors=param.authors, date=param.date, updated=param.updated, locale=locale %}
       {% else %}
-        {% AuthorsDate authors=authors, locale=locale %}
+        {% AuthorsDate authors=param.authors, locale=locale %}
       {% endif %}
     </div>
   {% endif %}
 
-  {% if tags %}
+  {% if param.tags %}
     <div class="card__tags cluster gap-top-base" aria-label="tags for this post">
-      {{ tagPills(tags) }}
+      {{ tagPills(param.tags) }}
     </div>
   {% endif %}
 </article>
