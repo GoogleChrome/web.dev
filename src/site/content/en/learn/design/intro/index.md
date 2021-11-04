@@ -74,7 +74,7 @@ then your content won't fit horizontally.
 The browser generates a crawlbar—the horizontal equivalent of a scrollbar—and the user has to move the whole page left and right to see all the content.
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/WdalzblHtt4HStoB1sUD.png", alt="A website that appears cut-off to the right due to being too wide for the viewport.", width="420", height="640" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/bnh7fDiGjFhdBHTD5CJ8.png", alt="A website that appears cut-off to the right due to being too wide for the viewport.", width="420", height="640" %}
 <figcaption class="w-figcaption">The Yahoo website from the early 2000s as experienced in a browser that's narrower than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
@@ -98,7 +98,7 @@ On a wide screen the layout looks stretched.
 On a narrow screen the layout looks squashed. Both scenarios aren't ideal.
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/1AIGYImuw4OZcjqXUWYg.png", alt="A layout that is squashed into a narrow window.", width="420", height="640" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/oBAbgP2JCt2zVENHVCnc.png", alt="A layout that is squashed into a narrow window.", width="420", height="640" %}
 <figcaption class="w-figcaption">Wikipedia's liquid layout from the mid 2000s as experienced in a narrow browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 ​​
