@@ -79,7 +79,7 @@ Our [module on CSS Animation](/learn/css/animations/#animation-timing-function) 
 
 You can use [DevTools](https://developer.chrome.com/docs/devtools/css/animations/) to experiment with different timing functions in real-time.
 
-{% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/G06SHV4Dra1HqTAL9d6t.png", alt="Chrome DevTools visual transition timing editor.", width="264", height="359" %}
+{% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/dRwKg0RIsy5wWVzkUFUA.png", alt="Chrome DevTools visual transition timing editor.", width="800", height="418" %}
 
 ### transition-delay
 
