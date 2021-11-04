@@ -73,6 +73,16 @@ To meet this challenge, Adobe turned to [Web Components](https://developer.mozil
 
 What's more, the entire Photoshop app is built using Lit-based Web Components. Leaning on the browser's built-in component model and Shadow DOM encapsulation, the team found it easy to cleanly integrate a few "islands" of React code provided by other Adobe teams.
 
+## Service worker caching with Workbox
+
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) act as a programmable, local proxy, intercepting network requests and responding with data from the network, long-lived caches, or a mixture of both.
+
+As part of the [V8](https://v8.dev/) team's efforts to improve performance, when JavaScript or WebAssembly code is cached by a service worker during its [`install` step](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install), an [optimized, precompiled version of the script](https://v8.dev/blog/code-caching-for-devs#use-service-worker-caches) is written to disk. When that script resource is later referenced by a web app, it can be executed directly from that long-lived cache, with minimal runtime overhead.
+
+Photoshop on the web takes advantage of this by deploying a service worker that precaches many of its JavaScript and WebAssembly scripts. Because the URLs for these scripts are generated at build time, and because the logic of keeping caches up to date can be complex, they turned to a set libraries called [Workbox](https://developers.google.com/web/tools/workbox/) to generate their service worker as part of their build process.
+
+While Photoshop on the web does not currently offer a full offline experience, service workers, Workbox, and the V8 engine's script caching led to measurable online performance improvements.
+
 ## What's next for Adobe on the web
 
 The launch of the Photoshop beta is just the beginning, and we've got several performance and feature improvements already underway as Photoshop tracks towards their full launch after this beta. Adobe isn't stopping with Photoshop and plans to aggressively expand [Creative Cloud](https://www.adobe.com/creativecloud.html) to the web, making it a primary platform for both creative content creation and collaboration. This will enable millions of first-time creators to tell their story and benefit from innovative workflows on the web.
