@@ -9,7 +9,7 @@ updated: 2021-11-05
 
 ---
 
-## A Solid Foundation
+## A solid foundation
 
  A solid foundation is the base requirement for building great PWAs. 
  To implement this foundation you need to design and code for the constraints of the web using a couple of principles:
@@ -116,7 +116,7 @@ There are countless combinations of screen sizes, capabilities, devices, and con
 Instead of thinking about your web experiences as a fixed thing, 
 think of it as a set of recommendations that the user's device will use to build the best experience for their current context. To do so, progressive enhancement needs to be embraced. 
 
-### Progressive Enhancement
+### Progressive enhancement
 
 Progressive Enhancement is a pattern that lets us write code that runs everywhere, starting from standard HTML, CSS, and JavaScript, and adding layers of capabilities on top of that with proper fallbacks when an API is not available.
 
@@ -135,7 +135,7 @@ You can even combine multiple forms of feature detection to create your enhanced
 The P in PWA comes from Progressive, and it emphasizes the idea of adding features and abilities progressively, and using Feature Detection is key for that goal.
 {% endAside %}
 
-#### Avoid Device-Detection
+#### Avoid device detection
 
 You should directly test for feature support instead of making support assumptions based on the User-Agent string. 
 
@@ -193,7 +193,7 @@ Web performance involves several steps:
 Web performance metrics today measure how fast your content appears on the screen, 
 but also how interactive your website is and how users perceive the experience.
 
-### Web vitals
+### Web Vitals
 
 During the past decade, we've been dealing with different metrics to measure success in web performance. 
 Today, a set of recommended metrics are grouped under the project [Web Vitals](/vitals/). 
@@ -208,7 +208,7 @@ Web Vitals focus metrics in three key areas affecting web performance and percep
 
 With Core Web Vitals, you can see at a glance, how good or bad is your PWA in web performance and user experience.
 
-## PWA Foundations
+## PWA foundations
 It's important that your PWA has a solid foundation in responsive design, mobile and everything first, intrinsic design, and web performance as a foundation for a great experience for all your users.
 
 ##  Resources
