@@ -160,9 +160,9 @@ That can then be enhanced with JavaScript and fetch requests to update the table
 
 ## Intrinsic design
 
-1. Mobile as a focusing constraint for user experience.
-2. Emphasizing content and core functionality in the design process.
-3. Progressively enhancing with advanced functionality where available.
+- Mobile as a focusing constraint for user experience.
+- Emphasizing content and core functionality in the design process.
+- Progressively enhancing with advanced functionality where available.
 
 These principles combine to give us something new: _intrinsic design_.
 In her talk [Designing Intrinsic Layouts](https://www.youtube.com/watch?v=AMPKmh98XLY), Jen Simmons talks about using modern CSS tools, like Grid, Flexbox, flow layout, and writing modes, to design and build user interfaces. With these tools, she says:
