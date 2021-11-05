@@ -1,6 +1,8 @@
 ---
-layout: shows-individual
-title: Shows
+layout: item-page
+path: 'tags'
+showHero: true
+title: Tags
 permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
 renderData:
@@ -9,7 +11,7 @@ renderData:
   rss: "{{ paged.href }}feed.xml"
   hero: "{{ paged.data.hero }}"
 pagination:
-  data: collections.shows
+  data: collections.tags
   size: 1
   alias: paged
   resolve: values

@@ -42,6 +42,7 @@ can be cleaned up with the following:
  * @param {string} locale
  * @param {Date} date
  * @param {Date} [updated]
+ * @param {boolean} [isDesignSystem]
  * @returns {string}
  */
 const renderDate = (locale, date, updated, isDesignSystem) => {
@@ -78,7 +79,8 @@ const renderDate = (locale, date, updated, isDesignSystem) => {
  *
  * @param {number} limit
  * @param {Array<TODO>} pairs
- * @returns {string}
+ * @param {boolean} [isDesignSystem]
+ * @returns {string|string[]}
  */
 const renderAuthorImages = (limit, pairs, isDesignSystem) => {
   if (!pairs.length || pairs.length > limit) {
