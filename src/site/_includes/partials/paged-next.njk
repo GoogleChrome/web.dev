@@ -5,6 +5,8 @@
     {% for element in paged.elements %}
       {% set data = element.data %}
 
+      {# The `alt` property fallsback onto the element's
+      title in cases like authors or tags which do not have an alt. #}
       {{ postCard({
         title: data.title,
         subhead: data.subhead,
