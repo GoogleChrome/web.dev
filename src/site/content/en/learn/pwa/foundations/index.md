@@ -5,6 +5,8 @@ description: >
 authors:
   - firt
 date: 2021-11-03
+updated: 2021-11-05
+
 ---
 
 ## A Solid Foundation
@@ -69,7 +71,7 @@ a window can get really small; smaller than a browser's window, smaller than a m
 This is something new on the web: we can support a mini-mode, a window that can be as small as 200x100 CSS pixels. 
 
 When creating a PWA these days, it's a good idea to think about what to offer in mini-mode, 
-thanks to Responsive Web Design, such as just control buttons on a music player, dashboard information, or quick actions.
+thanks to responsive web design, such as just control buttons on a music player, dashboard information, or quick actions.
 
 {% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/hPR7t2kr42boNc4MfSGQ.mp4", alt="On desktop, a PWA can be rendered in a smaller window than the smallest window you've ever designed for the browser. It adds a new breakpoint for your responsive web design: the mini-mode.", autoplay="true", loop="true", muted="true" %}
 
