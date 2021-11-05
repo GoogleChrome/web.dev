@@ -12,7 +12,7 @@ layout: default-next
     <div class="wrapper">
       <div class="headline all-center flow">
         {% if paged.data.hero and showHero %}
-          {% if isAuthor %}
+          {% if imageType == 'round' %}
             <div class="avatar gap-inline-auto" data-size="large">
               {% Img
                 src=paged.data.hero,

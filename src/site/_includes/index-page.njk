@@ -26,14 +26,16 @@ layout: default-next
       {% for element in paged.elements %}
         {% set data = element.data %}
 
-        {{ postCard({
-          title: element.overrideTitle or element.title | i18n(locale),
-          subhead: element.description | i18n(locale),
-          url: element.url,
-          thumbnail: data.thumbnail or data.hero or null,
-          alt: element.overrideTitle or element.title | i18n(locale),
-          isAuthor: isAuthor
-        }) }}
+        {{ postCard(
+          {
+            title: element.overrideTitle or element.title | i18n(locale),
+            subhead: element.description | i18n(locale),
+            url: element.url,
+            thumbnail: data.thumbnail or data.hero or null,
+            alt: element.overrideTitle or element.title | i18n(locale)
+          },
+          imageType
+        ) }}
       {% endfor %}
     </div>
     {# Elements end #}

@@ -10,20 +10,20 @@
   @typedef {string[]|null} param.tags - An array of tag ids for the tags relevant to the post.
   @typedef {Date|null} param.date - Date for when a post was created.
   @typedef {Date|null} param.updated - Date for when a post was updated.
-  @typedef {boolean|null} param.isAuthor - Conditional if the card is for an author. This requires a different image.
-  @typedef {boolean|null} param.isDraft - Conditional if the card is for a draft post. This puts a pill on the card that says "DRAFT".
+  @typedef {boolean|null} param.draft - Conditional if the card is for a draft post. This puts a pill on the card that says "DRAFT".
+  @typedef {'round'|'square'} [imageType] - Defines shape of page's hero. Defailts to 'square'.
 #}
-{% macro postCard(param) %}
+{% macro postCard(param, imageType = 'square') %}
 
 <article class="card">
-  {% if param.isDraft %}
+  {% if param.draft %}
     <div class="card__header cluster flex-justify-end">
       <p class="pill">DRAFT</p>
     </div>
   {% endif %}
 
   {% if param.thumbnail %}
-    {% if param.isAuthor %}
+    {% if imageType == 'round' %}
       <a href="{{ param.url }}" aria-hidden="true" class="avatar gap-inline-auto" data-size="large">
         {% Img src=param.thumbnail, alt=param.alt, width="192", height="192", params={fit: 'crop', h: '192', w: '192'} %}
       </a>
