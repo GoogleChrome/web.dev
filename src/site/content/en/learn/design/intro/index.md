@@ -31,7 +31,7 @@ not like the flat liquid crystal displays we have now.
 <figure class="w-figure">
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/0a8vHe4LgChVZvaZQfYs.png", 
 alt="The Microsoft website with two simple columns of text plus a navbar.", 
-width="640", height="480" %}
+width="640", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">The Microsoft website in the late 90s designed for a width of 640 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ Before long, most screens had dimensions of 800 by 600 pixels.
 Web designs changed accordingly. Designers and developers started assuming that 800 pixels was a safe default.
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/C88van0yWyvbz5l746pB.png", alt="The Microsoft website using a three-column, mostly text-based design.", width="800", height="600" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/C88van0yWyvbz5l746pB.png", alt="The Microsoft website using a three-column, mostly text-based design.", width="800", height="600", class="w-screenshot" %}
 <figcaption class="w-figcaption">The Microsoft website in the learly 2000s designed for a width of 800 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ Then the screens got bigger again. 1024 by 768 became the default.
 It felt like an arms race between web designers and hardware manufacturers.
 
 ​​<figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/nuHSqBVgInTvLti73Qz2.png", alt="The Microsoft website with a more complex design using images as well as text.", width="800", height="600" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/nuHSqBVgInTvLti73Qz2.png", alt="The Microsoft website with a more complex design using images as well as text.", width="800", height="600", class="w-screenshot" %}
 <figcaption class="w-figcaption">The Microsoft website in the mid 2000s designed for a width of 1024 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ You can center the content of your pages to distribute that space more evenly
 (instead of having empty space on one side) but you still wouldn't be taking full advantage of the available space.
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/t0Zd1eGEJeeqMO8ItsqK.png", alt="A narrow layour with a lot of white space around it.", width="800", height="320" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/t0Zd1eGEJeeqMO8ItsqK.png", alt="A narrow layour with a lot of white space around it.", width="800", height="320", class="w-screenshot" %}
 <figcaption class="w-figcaption">The Yahoo website from the early 2000s as experienced in a browser that's wider than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ then your content won't fit horizontally.
 The browser generates a crawlbar—the horizontal equivalent of a scrollbar—and the user has to move the whole page left and right to see all the content.
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/bnh7fDiGjFhdBHTD5CJ8.png", alt="A website that appears cut-off to the right due to being too wide for the viewport.", width="420", height="640" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/bnh7fDiGjFhdBHTD5CJ8.png", alt="A website that appears cut-off to the right due to being too wide for the viewport.", width="420", height="640", class="w-screenshot" %}
 <figcaption class="w-figcaption">The Yahoo website from the early 2000s as experienced in a browser that's narrower than the site's 800 pixel wide design. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
@@ -98,12 +98,12 @@ On a wide screen the layout looks stretched.
 On a narrow screen the layout looks squashed. Both scenarios aren't ideal.
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/oBAbgP2JCt2zVENHVCnc.png", alt="A layout that is squashed into a narrow window.", width="420", height="640" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/oBAbgP2JCt2zVENHVCnc.png", alt="A layout that is squashed into a narrow window.", width="420", height="640", class="w-screenshot" %}
 <figcaption class="w-figcaption">Wikipedia's liquid layout from the mid 2000s as experienced in a narrow browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 ​​
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/zRBSmS1xCgYPTueUBMd9.png", alt="A layout stretched horizontally with very long line lengths.", width="800", height="320" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/zRBSmS1xCgYPTueUBMd9.png", alt="A layout stretched horizontally with very long line lengths.", width="800", height="320", class="w-screenshot" %}
 <figcaption class="w-figcaption">Wikipedia's liquid layout from the mid 2000s as experienced in a wide browser window. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 

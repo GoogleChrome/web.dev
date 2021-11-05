@@ -63,7 +63,7 @@ Likewise, in a language like English where the text is written from top to botto
 `block-start` corresponds to "top" and `block-end` corresponds to "bottom."
 
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/9EcUvMxy9T10EzY4U95b.webp", 
-alt="Latin, Hebrew and Japanese are shown rendering placeholder text within a device frame. Arrows and colors follow the text to help associate the 2 directions of block and inline.", width="800", height="577" %}
+alt="Latin, Hebrew and Japanese are shown rendering placeholder text within a device frame. Arrows and colors follow the text to help associate the 2 directions of block and inline.", width="800", height="577", class="w-screenshot" %}
 
 If you use logical properties in your CSS, you can use the same stylesheet for translations of your pages. 
 Even if your pages are translated into languages written from right to left or bottom to top, your design will adjust accordingly. 

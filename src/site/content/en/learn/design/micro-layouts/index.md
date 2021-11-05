@@ -60,8 +60,8 @@ h1::after {
 } %}
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/mNjoV2ri3HmsPeRoTpTh.png", alt="Developer tools in Firefox showing a grid overlay.", width="800", height="644" %}
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/7A1UYerc4KNuuWmp3IMJ.png", alt="Developer tools in Chrome showing a grid overlay.", width="800", height="644" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/mNjoV2ri3HmsPeRoTpTh.png", alt="Developer tools in Firefox showing a grid overlay.", width="800", height="644", class="w-screenshot" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/7A1UYerc4KNuuWmp3IMJ.png", alt="Developer tools in Chrome showing a grid overlay.", width="800", height="644", class="w-screenshot" %}
  <figcaption class="w-figcaption">
    Desktop browsers like Firefox and Chrome have developer tools that can show you grid lines and areas overlaid on your design. 
  </figcaption>
@@ -101,8 +101,8 @@ But the image never gets larger than 200 pixels.
 } %}
 
 <figure class="w-figure">
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/9xyxPbFU4EUtnPGsKdQI.png", alt="Developer tools in Firefox showing a flexbox overlay.", width="800", height="644" %}
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/R7Ucm4OvYLbXGD0I3rw2.png", alt="Developer tools in Chrome showing a flexbox overlay.", width="800", height="644" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/9xyxPbFU4EUtnPGsKdQI.png", alt="Developer tools in Firefox showing a flexbox overlay.", width="800", height="644", class="w-screenshot" %}
+{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/R7Ucm4OvYLbXGD0I3rw2.png", alt="Developer tools in Chrome showing a flexbox overlay.", width="800", height="644", class="w-screenshot" %}
  <figcaption class="w-figcaption">
    The developer tools in Firefox and Chrome can help you visualize the shape of your flexbox components. 
  </figcaption>
