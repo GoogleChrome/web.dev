@@ -68,10 +68,15 @@ class Snackbar extends BaseElement {
       <div class="web-snackbar__actions">
         <a
           href="https://policies.google.com/technologies/cookies"
-          class="w-button web-snackbar__action"
+          class="w-button web-snackbar__action button"
+          data-type="clear"
           >More details</a
         >
-        <button @click=${this.action} class="w-button web-snackbar__action">
+        <button
+          @click=${this.action}
+          class="w-button web-snackbar__action button"
+          data-type="clear"
+        >
           OK
         </button>
       </div>
