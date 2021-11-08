@@ -18,9 +18,6 @@ tags:
   - case-study
 ---
 
-{% Aside %}
-  This case study was authored by Denis Stasyev from the Mail.ru infrastructure team.
-{% endAside %}
  
 ## Where we started
  
