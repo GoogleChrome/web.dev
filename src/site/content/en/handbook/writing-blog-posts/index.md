@@ -85,8 +85,8 @@ Also, see the tips below and consider whether you are over-explaining basic conc
 ### Article content
 
 Your article should follow a standard rhetorical structure.
-The introduction should introduce the concepts to be discussed, establish the context of your article, and alude to required background knowledge.
-The body should epxlain the most import aspects of you subject.
+The introduction should introduce the concepts to be discussed, establish the context of your article, and allude to required background knowledge.
+The body should explain the most import aspects of you subject.
 Conclusions vary, but the may include a recapitulation of your subject, calls to action, or requests for feedback.
 
 ## Working with an editor
