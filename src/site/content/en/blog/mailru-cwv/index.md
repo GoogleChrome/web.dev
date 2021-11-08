@@ -284,7 +284,7 @@ The most unexpected result we got was a 17.4% increase in the Click-Through Rate
 An unintended consequence of our work was that we saw a decrease in the conversion rate of some sections on the page. The search section in particular saw a decrease of 6.7%. Our team associates this with a change in the rendering of the page, as earlier on, this component was one of the first to render. We were able to reverse this decrease by introducing new product features into this section.
 {% endAside %}
  
-However, after analyzing the rest of the sections on the page, we see a significant increase in the vast majority of blocks. In particular, even for such sections as Weather and Coronavirus - which are not key on our page - we see an increase in conversion by 9.6% and 9.5%, respectively.
+After analyzing the rest of the sections on the page, we noticed significant performance improvement in the vast majority of them. Even for sections such as Weather and Coronavirus&mdash;which are not key on our page&mdash;we see an increase in conversion by 9.6% and 9.5%, respectively.
 
 ## Conclusion
  
