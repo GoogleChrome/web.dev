@@ -1,7 +1,7 @@
 {% from 'macros/tag-chips.njk' import tagChips with context %}
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-<div class="guide-landing-page">
+<div class="guide-landing-page special">
   {% if path === undefined  %}
     {% set postPaths = page | getPaths %}
     {# Use first found path as a default path. #}
@@ -103,7 +103,11 @@
       </div>
     {% endif %}
 
+    <div class="prose">
+
     {{ content | safe }}
+
+    </div>
 
     {% if stack_overflow_tag %}
       {% StackOverflow stack_overflow_tag %}
