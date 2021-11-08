@@ -95,7 +95,7 @@ The dashboard's CWV monitoring showed the following metrics for users (mean valu
 </div>
  
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ZL7y3ZCpbMcqlOv9mLpV.png", alt="Web Vitals values before the improvements.", width="800", height="479" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ZL7y3ZCpbMcqlOv9mLpV.png", alt="CWV metrics before optimization show roughly 1/3 of users in the poor bucket.", width="800", height="479" %}
   <figcaption>Web Vitals values before the improvements.</figcaption>
 </figure> 
 
@@ -131,12 +131,12 @@ After implementing SSR, the cause of regression in CLS metrics was discovered th
 Although Chrome's DevTools showed Layout Shift events, we couldn't find the reason for it at first. Though SSR itself wasn't the problem, it helped in discovering the solution later on. Fixing the code responsible for the painting delay improved layout stability of the news component.
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Finding the news painting problem with JavaScript disabled.", width="800", height="443" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Active JavaScript just shows an empty page in the news section, hidding the layout jumps.", width="800", height="443" %}
   <figcaption>Finding the news painting problem with JavaScript disabled.</figcaption>
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Fixing the news painting problem with JavaScript disabled.", width="800", height="448" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448" %}
   <figcaption>Fixing the news painting problem with JavaScript disabled.</figcaption>
 </figure> 
 
@@ -215,7 +215,7 @@ After the optimization effort, we observed the mean values for the week of 24–
 </div>
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7FIE2St8w6EEowUIqV9K.png", alt="Comparison of Web Vitals before and after (change in 'good' group is shown in brackets).", width="800", height="376" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7FIE2St8w6EEowUIqV9K.png", alt="All metrics in the good bucket improved by at least 1%. CLS even by 60%.", width="800", height="376" %}
   <figcaption>Comparison of Web Vitals before and after (change in 'good' group is shown in brackets).</figcaption>
 </figure> 
 
@@ -227,34 +227,34 @@ The graphs below show changes in web page performance metrics values according t
 The decrease in values from May 1 to May 10 is due to May holidays in Russia.
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/8wq9d0uj3EJp5vK6kI49.png", alt="LCP CWV graph in 'Platform': 16 March to 1 June 2021.", width="800", height="344" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/8wq9d0uj3EJp5vK6kI49.png", alt="LCP from March to 1 June 2021 showing small improvments over time.", width="800", height="344" %}
   <figcaption>LCP CWV graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/bxANzHIw78TvdS1RFyWG.png", alt="FID CWV graph in 'Platform': 16 March to 1 June 2021.", width="800", height="345" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/bxANzHIw78TvdS1RFyWG.png", alt="FID from 16 March to 1 June 2021 showing tiny improvements on a high level.", width="800", height="345" %}
   <figcaption>FID CWV graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7woJXpiHLZU3l7PCdspi.png", alt="CLS CWV graph in 'Platform': 16 March to 1 June 2021.", width="800", height="344" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7woJXpiHLZU3l7PCdspi.png", alt="CLS from 16 March to 1 June 2021 showing huge improvements starting at April 23rd.", width="800", height="344" %}
   <figcaption>CLS CWV graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure> 
 
 CWV results obtained using the "Platform" are in line with the growth of metric values in [Chrome UX Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/41Czys52EyEMyYv3fI2w.png", alt="LCP metric change in CrUX in 2021.", width="800", height="499" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/41Czys52EyEMyYv3fI2w.png", alt="LCP metric from CrUX showing increase from 51% to 58% in the good bucket.", width="800", height="499" %}
   <figcaption>LCP metric change in CrUX in 2021.</figcaption>
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/c8LWvsC52Q58uvKOIZXc.png", alt="FID metric change in CrUX in 2021.", width="800", height="498" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/c8LWvsC52Q58uvKOIZXc.png", alt="FID metric from CrUX showing slight improvment in FID from 91% to 93% in good bucket.", width="800", height="498" %}
   <figcaption>FID metric change in CrUX in 2021.</figcaption>
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ilAn6vKt93uh4ioqGKj1.png", alt="CLS metric change in CrUX in 2021.", width="800", height="492" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ilAn6vKt93uh4ioqGKj1.png", alt="CLS metric in CrUX showing hugh improvements from 46% to 98% in the good bucket.", width="800", height="492" %}
   <figcaption>CLS metric change in CrUX in 2021.</figcaption>
 </figure>
  
