@@ -147,7 +147,7 @@ Another effect SSR can have on CLS is the movement components before and after h
 
 ## Code splitting and unused polyfills
 
-To improve the perceived page load speed, work was required to decrease LCP and FID values. One way to achieve this is through [code splitting](https://web.dev/codelab-code-splitting/). Our team, in addition to the Mail.ru home page itself, is developing a widget for portal navigation. It is currently embedded in [a large number of VK projects](https://vk.company/en/projects/).
+To improve the perceived page load speed, work was required to decrease LCP and FID values. One way to achieve this is through [code splitting](https://web.dev/codelab-code-splitting/). In addition to the Mail.ru home page itself, our team is developing a widget for portal navigation. It is currently embedded in [many of our company's projects](https://vk.company/en/projects/).
  
 For historical reasons, the widget is inserted at the very beginning of the page as a synchronously loading script. The share of polyfills in this script grew over time. To limit the negative performance effects of loading these polyfills, we implemented code splitting for both modern and legacy browsers.
 
