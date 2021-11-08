@@ -104,7 +104,7 @@ The dashboard's CWV monitoring showed the following metrics for users (mean valu
 
 ## Improving CWV
 
-While plenty of guidance exists for improving CWV, every project is unique in its requirements and challenges. For the Mail.ru home page, the following opportunities were identified:
+While plenty of guidance exists for improving CWV, every project has unique challenges. For the Mail.ru home page, the following opportunities were identified:
 
 - Implementing placeholders for ad banners to reduce CLS.
 - Use Server-Side Rendering (SSR) to reduce [Largest Contentful Paint (LCP](https://web.dev/lcp/)).
