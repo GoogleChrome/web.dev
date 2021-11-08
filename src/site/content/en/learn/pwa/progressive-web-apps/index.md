@@ -258,7 +258,7 @@ Android
 : Firefox, Google Chrome, Samsung Internet, Microsoft Edge, Opera, Brave, Huawei Browser, Baidu, UCWeb, Play Store (from version 72 with Google Chrome installed, or browsers compatible with TWA), Galaxy Store, Managed Play iframe for enterprise distribution.
 
 {% Aside 'caution' %}
-On iOS and iPadOS, PWAs are only installable if the user is using Safari. That means that users won't install PWAs if they use different browser apps, such as Google Chrome, Firefox, or Microsoft Edge. On both Android and iOS, users can't install PWAs from many In-App browsers, such as Facebook Mobile Browser, Instagram, Google Search App, or Gmail.
+On iOS and iPadOS, PWAs are only installable if the user is using Safari. That means that users won't install PWAs if they use different browser apps, such as Google Chrome, Firefox, or Microsoft Edge. On both Android and iOS, users can't install PWAs from many in-app browsers, such as Facebook Mobile Browser, Instagram, Google Search App, or Gmail.
 {% endAside %}
 
 In the following video the user installs a PWA from the browser on a mobile device using the browser dialog, and also using the **Add to Home screen** menu.
