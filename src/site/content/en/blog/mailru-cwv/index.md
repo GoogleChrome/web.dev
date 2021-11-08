@@ -24,7 +24,7 @@ tags:
  
 ## Where we started
  
-Mail.ru is one of the leading e-mail services on the Russian-speaking Internet and is [in the top 5 sites in Russia in terms of traffic](https://www.alexa.com/topsites/countries/RU). The Mail.ru home page is an important resource for a large number of people. It serves over several hundred million visits per month and is a portal from where people can access email, news, social media, performance internet searches and more.
+Mail.ru is one of the leading e-mail services on the Russian-speaking Internet and is [in the top 5 sites in Russia in terms of traffic](https://www.alexa.com/topsites/countries/RU). Mail.ru is an important resource for many people. It receives several hundred million visits per month, and is a portal from where people can access email, news, social media, performance internet searches and more.
  
 Mail.ru wanted to provide its visitors with a high quality user experience, so work began to improve CWV. Before discussing Mail.ru's CWV optimizations, some technical details of the Mail.ru home page should first be noted.
  
