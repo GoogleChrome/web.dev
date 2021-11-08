@@ -280,7 +280,7 @@ A comparison of mean user session duration values a week before the roll-out of 
  
 The most unexpected result we got was a 17.4% increase in the Click-Through Rate (CTR) of the marketing banner (its rendering time was significantly reduced by the introduction of SSR and preload tags).
  
-{% Aside 'caution' %}
+{% Aside %}
 To be honest, the conversion rate of some sections decreased after our optimization efforts. The search section in particular saw a decrease of 6.7%. Our team associates this with a change in the rendering of the page (earlier this component was one of the first to appear). The problem was solved by introducing new product features into this section.
 {% endAside %}
  
