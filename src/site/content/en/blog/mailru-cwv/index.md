@@ -129,7 +129,7 @@ To ease the transition from Fest to Svelte, we incrementally rewrote the existin
 SSR was not used for the entire application, as [it can be an expensive process](https://malloc.fi/performance-cost-of-server-side-rendered-react-node-js) that can delay [Time to First Byte (TTFB)](https://web.dev/ttfb/), which [may affect LCP](https://web.dev/optimize-lcp/#optimize-your-server). We decided to use SSR for crucial content that the user will see on initial render, and offload rendering of hidden content on the client. At the moment, Mail.ru is experimenting with [Islands Architecture](https://jasonformat.com/islands-architecture/) to see if further performance gains can be had.
 {% endAside %}
 
-After implementing SSR, the cause of regression in CLS metrics was discovered that initially went unnoticed: the news block was not inserted at the moment of rendering the first content on the page. There was a delay between the initial painting of the page and the insertion of news. This behaviour resulted in an ad skeleton shift, which worsened CLS metrics.
+After implementing SSR, the cause of regression in CLS metrics was discovered that initially went unnoticed: the news section was not inserted at the moment of rendering the first content on the page. There was a delay between the initial painting of the page markup provided by the server and the insertion of news section on the client. This behaviour resulted in an ad skeleton shift, which worsened CLS metrics.
  
 Although Chrome's DevTools showed Layout Shift events, we couldn't find the reason for it at first. Though SSR itself wasn't the problem, it helped in discovering the solution later on. Fixing the code responsible for the painting delay improved layout stability of the news component.
 
