@@ -7,6 +7,7 @@ authors:
 description: A foundational overview of how to build a responsive, adaptive, and accessible 3D game menu.
 date: 2021-11-10
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/IjOV7KRfEzEj7I1ZVJA5.png
+alt: A screenshot of the vibrant 3D game menu component, rotated in space, with the continue button focused which demonstrates the z-space effect.
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/1yLFCkKYvDtrJSepc7A0.png
 tags:
   - blog
@@ -33,7 +34,7 @@ In this post I want to share thinking on a way to build a 3D game menu component
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'x0aCdLDZ8BM' %}
+{% YouTube 'HCsV8u-KYUw' %}
 
 ## Overview
 
