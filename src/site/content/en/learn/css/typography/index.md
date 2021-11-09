@@ -214,7 +214,7 @@ Use [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) 
 
 ## Control white-space
 
-The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-space) is used to specify how whitespace in an element should be handled. For more details, check out the [`white-space` article on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space).
+The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-space) is used to specify how whitespace in an element should be handled. For more details, check out the [`white-space` article on MDN](https://developer.mozilla.org/docs/Web/CSS/white-space).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -262,7 +262,7 @@ Use [`text-align`](https://developer.mozilla.org/docs/Web/CSS/text-align) to spe
 Use [`direction`](https://developer.mozilla.org/docs/Web/CSS/direction) to set the direction of your text, either `ltr` (left to right, the default) or `rtl` (right to left). Some languages like Arabic, Hebrew, or Persian are written right to left, so `direction: rtl` should be used. For English and all other left-to-right languages, use `direction: ltr`.
 
 {% Aside 'caution' %}
-Generally, you should favor using the [HTML attribute `dir`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir) instead of `direction`. Check out [this StackOverflow discussion](https://stackoverflow.com/a/5375907) for more details.
+Generally, you should favor using the [HTML attribute `dir`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/dir) instead of `direction`. Check out [this StackOverflow discussion](https://stackoverflow.com/a/5375907) for more details.
 {% endAside %}
 
 ## Change the flow of text
