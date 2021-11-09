@@ -160,7 +160,7 @@ In addition to bundle size reduction and positive effects on CWV, code splitting
 
 ## Results
 
-After the optimization effort, we observed the mean values for the week of 24–30 May 2021 in our field data:
+After the optimization effort, we observed the mean values for the week of 24-30 May 2021 in our field data:
 
 <div class="w-table-wrapper">
   <table>
