@@ -40,7 +40,7 @@ Before optimizing Core Web Vitals, it's helpful to [evaluate performance in the 
 
 Our metrics collection script was modified to collect Core Web Vitals and transmit them to our performance dashboard for visualization. In line with Google's recommendations, our script uses [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) to obtain metrics, which is part of [our universal frontend "Platform"](https://github.com/mail-core) inside Mail.ru.
 
-The dashboard's CWV monitoring showed the following metrics for users (mean values for the week of 15–21 March 2021):
+The dashboard displayed the following metrics for users (mean values for the week of 15-21 March 2021):
 
 <div class="w-table-wrapper">
   <table>
