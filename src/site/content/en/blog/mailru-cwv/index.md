@@ -38,7 +38,7 @@ Svelte implements reactivity in a way that [doesn't use Virtual DOM](https://sve
 
 Before optimizing Core Web Vitals, it's helpful to [evaluate performance in the field](https://web.dev/vitals-field-measurement-best-practices/). Prior to the introduction of Core Web Vitals, other metrics such as [First Contentful Paint (FCP)](https://web.dev/fcp/) were monitored and presented in our internal performance dashboard.
 
-Our metrics collection script was modified to collect CWV values and transmit them to our performance dashboard for visualization. In line with Google's recommendations, our script uses [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) to obtain metrics, which is part of [our universal frontend "Platform"](https://github.com/mail-core) inside Mail.ru.
+Our metrics collection script was modified to collect Core Web Vitals and transmit them to our performance dashboard for visualization. In line with Google's recommendations, our script uses [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) to obtain metrics, which is part of [our universal frontend "Platform"](https://github.com/mail-core) inside Mail.ru.
 
 The dashboard's CWV monitoring showed the following metrics for users (mean values for the week of 15–21 March 2021):
 
