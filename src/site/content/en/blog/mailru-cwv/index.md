@@ -101,7 +101,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
 
 ## Improving Core Web Vitals
 
-While plenty of guidance exists for improving CWV, every project has unique challenges. For the Mail.ru home page, the following opportunities were identified:
+While plenty of guidance exists for improving Core Web Vitals, every project has unique challenges. For the Mail.ru home page, the following opportunities were identified:
 
 - Implementing placeholders for ad banners to reduce CLS.
 - Use Server-Side Rendering (SSR) to reduce [Largest Contentful Paint (LCP](https://web.dev/lcp/)).
