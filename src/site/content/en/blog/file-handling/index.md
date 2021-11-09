@@ -7,15 +7,13 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-09-23
+updated: 2021-11-09
 tags:
   - blog
   - capabilities
   # - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
 ---
 
 {% Aside %} The File Handling API is part of the [capabilities project](/fugu-status/) and is
@@ -45,7 +43,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | **[In progress][ot]**    |
+| 4. Origin trial                          | Complete                 |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -56,17 +54,6 @@ Examples of sites that may use this API include:
 
 To experiment with the File Handling API locally, without an origin trial token, enable the
 `#file-handling-api` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chromium&nbsp;92, the File Handling API will be available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Progressive enhancement
 
@@ -334,4 +321,3 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
