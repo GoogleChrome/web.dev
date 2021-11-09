@@ -62,7 +62,6 @@ const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist
 const authors = require('./src/site/_collections/authors');
 const blogPostsDescending = require('./src/site/_collections/blog-posts-descending');
 const newsletters = require('./src/site/_collections/newsletters');
-const pages = require('./src/site/_collections/pages');
 const {
   postsWithLighthouse,
 } = require('./src/site/_collections/posts-with-lighthouse');
@@ -75,6 +74,8 @@ const {i18n} = require('./src/site/_filters/i18n');
 const {getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
+const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
+const algoliaItem = require('./src/site/_filters/algolia-item');
 const containsTag = require('./src/site/_filters/contains-tag');
 const expandAuthors = require('./src/site/_filters/expand-authors');
 const githubLink = require('./src/site/_filters/github-link');
@@ -88,6 +89,7 @@ const postsLighthouseJson = require('./src/site/_filters/posts-lighthouse-json')
 const prettyDate = require('./src/site/_filters/pretty-date');
 const removeDrafts = require('./src/site/_filters/remove-drafts');
 const slugify = require('./src/site/_filters/slugify');
+const stringify = require('./src/site/_filters/stringify');
 const strip = require('./src/site/_filters/strip');
 const stripBlog = require('./src/site/_filters/strip-blog');
 const getPaths = require('./src/site/_filters/get-paths');
@@ -147,7 +149,6 @@ module.exports = function (config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
-  config.addCollection('pages', pages);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('shows', shows);
   config.addCollection('tags', tags);
@@ -179,6 +180,8 @@ module.exports = function (config) {
   config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('pathSlug', pathSlug);
+  config.addFilter('algoliaIndexable', algoliaIndexable);
+  config.addFilter('algoliaItem', algoliaItem);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandAuthors', expandAuthors);
   config.addFilter('githubLink', githubLink);
@@ -195,6 +198,7 @@ module.exports = function (config) {
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('slugify', slugify);
+  config.addFilter('stringify', stringify);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);

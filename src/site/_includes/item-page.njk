@@ -1,5 +1,7 @@
 ---
 layout: default-next
+eleventyComputed:
+  noindex: "{{ paged.index > 0 }}"
 ---
 <div class="landing-page">
   {# Temporary disable #}

@@ -13,32 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const {createHash} = require('crypto');
 
-declare global {
-  export interface AlgoliaItem {
-    content?: string;
-    createdOn?: Date;
-    description?: string;
-    image?: string;
-    /**
-     * Date of index, only available after indexed. Basically can only be used by search.
-     */
-    indexedOn?: number;
-    locale: string;
-    locales: string[];
-    /**
-     * ID of item used to update existing entry.
-     */
-    objectID: string;
-    tags: string[];
-    /**
-     * Title of a post.
-     */
-     title: string;
-     updatedOn?: Date;
-     url: string;
-  }
-}
+const md5 = (i) => createHash('md5').update(i).digest('hex');
 
-// empty export to keep file a module
-export {};
+module.exports = md5;
