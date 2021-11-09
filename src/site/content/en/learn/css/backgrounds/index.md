@@ -1,14 +1,14 @@
 ---
 title: Backgrounds
 description: >
-  In this module learn the ways you can style backgrounds of CSS boxes using CSS
+  In this module learn the ways you can style backgrounds of boxes using CSS
 audio:
-  title: The CSS Podcast - 053: Background
+  title: "The CSS Podcast - 053: Background"
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP052_v1.mp3?dest-id=1891556
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
  - lozandier
-date: 2021-9-15
+date: 2021-11-09
 
 ---
 
@@ -24,7 +24,7 @@ Background layers are furthest from the user, rendered behind the contents of a 
   tab: 'result'
 } %}
 
-## Background Color
+## Background color
 
 One of the simplest effects you can apply to a background layer is setting the [color](/learn/css/color/). The initial value of `background-color` is `transparent`, which allows the contents of a parent to be visible. A valid color set on a background layer sits behind other things painted on that element.
 
@@ -34,14 +34,15 @@ One of the simplest effects you can apply to a background layer is setting the [
   tab: 'result'
 } %}
 
-## Background Image
+## Background images
 
 On top of the `background-color` layer, you can add a background image, using the `background-image` property. A `background-image` accepts the following:
 
-* An image URL or [data URI](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) using the `url` CSS function.
+* An image URL or [data URI](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) using the `url` CSS function.
 * An image dynamically created by a gradient CSS function.
 
 ### Setting a background-image with the `url` CSS function.
+
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjJNNro',
@@ -60,7 +61,7 @@ Regardless of which gradient function is used, the resulting image is [intrinsic
 Demo showing example of applying a background-image using Gradient functions:
 {% Codepen {user: 'web-dot-dev', id: 'oNeLZWa', tab: 'css,result' } %}
 
-## Background Repeat
+## Repeating background images
 
 By default, background images repeat horizontally and vertically to fill the entire space of the background layer.
 
@@ -68,7 +69,7 @@ Change this by using the `background-repeat` property with one of the following 
 
 `repeat`: the image repeats within the space available, cropping as necessary.
 `round`: the image repeats horizontally and vertically to fit as many instances into the space available, without cropping, compressing, or stretching it.
-`space`: the image repeats horizontally and vertically to fit as many instances within the space available without cropping—spacing out instances of the image as needed. Repeating images touch the edges of the space a background layer occupies, with white space evenly distributed between them:
+`space`: the image repeats horizontally and vertically to fit as many instances within the space available without cropping—spacing out instances of the image as needed. Repeating images touch the edges of the space a background layer occupies, with white space evenly distributed between them.
 
 The `background-repeat` property allows you to set the behavior for the x and y axis independently. The first parameter sets the horizontal repeat behavior, and the second parameter sets the vertical repeat behavior.
 
@@ -76,7 +77,7 @@ If you use a single value, it will be applied to both the horizontal and vertica
 
 The shorthand also has convenient one-word options to make your intent clearer.
 
-`repeat-x`  repeats an image only horizontally; this is equivalent to `repeat no-repeat`.
+`repeat-x` repeats an image only horizontally; this is equivalent to `repeat no-repeat`.
 
 The following demo demonstrates these capabilities of the `background-repeat` property
 
@@ -86,20 +87,17 @@ The following demo demonstrates these capabilities of the `background-repeat` pr
   tab: 'result'
 } %}
 
-## Background Position
+## Background position
 
 You may have noticed when some images on the Web are styled with a `background-repeat: no-repeat` declaration, such images are displayed top left of their container.
 
-The initial position of background images is top left. . The `background-position` allows you to change this behavior by offsetting the image position.
+The initial position of background images is top left. The `background-position`  property allows you to change this behavior by offsetting the image position.
 
 As with `background-repeat`,  the `background-position` property allows you to position images along the x and y axis independently with two values by default.
 
 When CSS lengths and percentages are used, the first parameter corresponds to the horizontal axis while the second parameter corresponds to the vertical axis.
 
 When keywords are only used the order of the keywords does not matter:
-
-
-
 {% Compare ‘better’}
 ```
 background-position: left 50%
@@ -173,7 +171,7 @@ background-position: right bottom 88%;
 background-position: 88% bottom right;
 ```
 {% CompareCaption %}
-CSS length value must be preceded by the 'top', 'right', 'bottom', or 'left keywords when using 3 or more parameters
+CSS length value must be preceded by the 'top', 'right', 'bottom', or 'left keywords when using 3 or more parameters.
 {% endCompareCaption %}
 {% endCompare %}
 
@@ -217,9 +215,9 @@ The following demo demonstrates this behavior:
 
 Here are more examples of using the `background-position` property using a mix of CSS and keyword values:
 
-{% Callout ‘definition %}
-TODO: Decide to link to W3C spec or MDN To learn more about the nuances related to positioning backgrounds, check out MDN’s guide on the property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
-{% endCallout %}
+{% Aside %}
+To learn more about the nuances related to positioning backgrounds, check out [`background-position` on MDN](https://developer.mozilla.org/docs/Web/CSS/background-position).
+{% endAside %}
 ## Background Size
 The `background-size` property sets the size of background images; By default background images are sized based on their intrinsic (actual) width, height, and aspect ratio.
 
@@ -246,12 +244,13 @@ Demo demonstrating applying these keywords to `background-size`:
   tab: 'result'
 } %}
 
-## Background Attachment
+## Background attachment
+
 The `background-attachment` property enables you to modify the fixed position behavior of background images (images part of a background layer) once the layer is visible on a screen.
 
 It accepts 3 keywords: `scroll`, `fixed`, and `local`.
 
-* `scroll`: The default behavior of the `background-attachment` property. When more space is needed, the images move with that space within the background layer determined by the bounds of the CSS box.
+The default behavior of the `background-attachment` property is the initial value of `scroll`. When more space is needed, the images move with that space within the background layer determined by the bounds of the CSS box.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -259,7 +258,7 @@ It accepts 3 keywords: `scroll`, `fixed`, and `local`.
   tab: 'result'
 } %}
 
-* `fixed`: fixes the position of background images to the viewport.
+Using the value `fixed` fixes the position of background images to the viewport.
 
 Once the space of the background layer images originally takes up needs to be scrolled (or rendered) offscreen, images within the background layer stay fixed in the original position the background layer enabled them to be until the entire layer is scrolled off screen by the viewport.
 
@@ -269,7 +268,7 @@ Once the space of the background layer images originally takes up needs to be sc
   tab: 'result'
 } %}
 
-`local` : The use of this keyboard enables the position of background images to be fixed relative to the element’s contents. Background images now move along the space they occupy as that space renders inside and outside the bounds of the CSS box (usually due to scrolling, 2D, or 3D transformations).
+The `local` keyword enables the position of background images to be fixed relative to the element’s contents. Background images now move along the space they occupy as that space renders inside and outside the bounds of the CSS box (usually due to scrolling, 2D, or 3D transformations).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -277,7 +276,7 @@ Once the space of the background layer images originally takes up needs to be sc
   tab: 'result'
 } %}
 
-## Background Origin
+## Background origin
 The `background-origin` property enables you to modify the area of backgrounds associated with a particular box. The values the property accepts correspond to the `border-box` , `padding-box`, and `content-box` regions of a box .
 
 Try these options out using the following demo:
@@ -288,7 +287,8 @@ Try these options out using the following demo:
   tab: 'result'
 } %}
 
-## Background Clip
+## Background clip
+
 The `background-clip` property controls what is visually seen from a background layer regardless of the bounds created by the `background-origin` property.
 
 
@@ -315,7 +315,8 @@ It should be also noted this property is not compatible with `background-clip: t
 {% endAside %}
 
 
-## Multiple Backgrounds
+## Multiple backgrounds
+
 As mentioned at the beginning of the module, the background layer allows multiple sublayers to be defined. For brevity, I’ll refer to these sublayers as backgrounds.
 
 Multiple backgrounds are defined top to bottom; The first background is the closest to the user, while the last background is the furthest from the user.
@@ -345,7 +346,7 @@ background-image: url("https://assets.codepen.io/7518/pngaaa.com-1272986.png"),
   tab: 'result,css'
 } %}
 
-## Background Shorthand
+## The background shorthand
 
 To make it easier to style the background layer of a box
 -especially when multiple background layers are desired–there is a shorthand that follows the following specific pattern:
