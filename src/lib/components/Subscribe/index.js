@@ -6,6 +6,9 @@ import {BaseElement} from '../BaseElement';
 import {trackError, trackEvent} from '../../analytics';
 import './_styles.scss';
 
+const pTagSelector = '.subscribe__error__message';
+const hiddenClass = 'hidden-yes';
+
 /**
  * Element that renders newsletter subscription form.
  *
@@ -34,10 +37,10 @@ class Subscribe extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
     /** @type {HTMLFormElement} */
-    this.form = this.querySelector('.w-subscribe__form');
+    this.form = this.querySelector('form');
     /** @type HTMLElement */
-    this.subscribeError = this.querySelector('.w-subscribe__error');
-    this.subscribeMessage = this.querySelector('.w-subscribe__message');
+    this.subscribeError = this.querySelector('.subscribe__error');
+    this.subscribeMessage = this.querySelector('.subscribe__message');
     this.submissionUrl = this.form.action;
     if (!this.submissionUrl) {
       console.warn(`No submission URL found for subscribe element.`);
@@ -84,15 +87,12 @@ class Subscribe extends BaseElement {
       return;
     }
 
-    const pTag = document.createElement('p');
     const defaultError = new Error('Could not submit, please try again.');
-    this.subscribeError.textContent = '';
-
-    pTag.textContent = useDefault
+    this.subscribeError.querySelector(pTagSelector).textContent = useDefault
       ? defaultError.message
       : (error || defaultError).message;
 
-    this.subscribeError.appendChild(pTag);
+    this.subscribeError.classList.toggle(hiddenClass, false);
 
     trackError(error, 'Email form failed to submit because');
   }
@@ -129,7 +129,8 @@ class Subscribe extends BaseElement {
 
   onSuccess(isRobot = false) {
     this.submitted = true;
-    this.subscribeError.textContent = '';
+    this.subscribeError.classList.toggle(hiddenClass, true);
+    this.subscribeError.querySelector(pTagSelector).textContent = '';
     this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);

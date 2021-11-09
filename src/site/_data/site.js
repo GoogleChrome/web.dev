@@ -34,8 +34,7 @@ module.exports = {
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: true,
   banner:
-    'The countdown to Chrome Dev Summit 2021 is on! Visit [goo.gle/cds2021](https://goo.gle/cds2021) and request an invite to participate in workshops, learning lounges and office hours.',
-  areCoursesEnabled: true,
+    'We want to hear from you! We are looking for web developers to participate in user research, product testing, discussion groups and more. <a href="https://www.brandinvitation.com/wix/p3779724.aspx?said=X53R0YU7&pcid=CLCS&aud=na&cid=na&enpt=lp&lang=9&l=9&udv=wdb" target="_blank">Apply now</a> to join our WebDev Insights Community.',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',

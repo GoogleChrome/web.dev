@@ -88,6 +88,14 @@ $gorko-config: (
     'output': 'responsive',
     'property': 'justify-content',
   ),
+  'flex-wrap': (
+    'items': (
+      'yes': 'wrap',
+      'no': 'nowrap'
+    ),
+    'output': 'responsive',
+    'property': 'flex-wrap'
+  ),
   'flow-space': (
     'items': $gorko-space-scale,
     'output': 'standard',
@@ -97,6 +105,17 @@ $gorko-config: (
     'items': $gorko-fonts,
     'output': 'standard',
     'property': 'font-family',
+  ),
+  'gap-inline': (
+    'items':
+      map-merge(
+        $gorko-space-scale,
+        (
+          'auto': 'auto',
+        )
+      ),
+    'output': 'standard',
+    'property': 'margin-inline',
   ),
   'gap-top': (
     'items': $gorko-space-scale,

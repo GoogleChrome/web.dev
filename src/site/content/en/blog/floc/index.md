@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-08-20
+updated: 2021-10-29
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -16,6 +16,13 @@ tags:
 feedback:
   - api
 ---
+
+{% Aside %}
+This post outlines the API design implemented in Chrome for the first origin trial of FLoC. 
+
+Future iterations of an API to enable interest-based advertising without third-party cookies 
+or other cross-site tracking mechanisms are currently in development.
+{% endAside %}
 
 FLoC provides a privacy-preserving mechanism for interest-based ad selection.
 

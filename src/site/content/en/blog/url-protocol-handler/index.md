@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2021-07-02
+updated: 2021-11-02
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -16,8 +16,6 @@ alt: A metal chain used as the symbol for links.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-origin_trial:
-  - url: https://developer.chrome.com/origintrials/#/view_trial/1136033006004207617
 ---
 
 {% Aside %} URL protocol handler registration for PWAs is part of the
@@ -103,31 +101,15 @@ allowing the possibility for complementary user-experiences:
 
 <div class="w-table-wrapper">
 
-| Step                                     | Status                       |
-| ---------------------------------------- | ---------------------------- |
-| 1. Create explainer                      | [Complete][explainer]        |
-| 2. Create initial draft of specification | [In progress][specification] |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)     |
-| 4. **Origin trial**                      | **[In progress][ot]**        |
-| 5. Launch                                | Not started                  |
+| Step                                     | Status                                       |
+| ---------------------------------------- | -------------------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]                        |
+| 2. Create initial draft of specification | [In progress][specification]                 |
+| 3. Gather feedback & iterate on design   | Complete                                     |
+| 4. Origin trial.                         | Complete                                     |
+| 5. **Launch**                            | Complete<br/>Chromium&nbsp;96 (desktop only) |
 
 </div>
-
-### Enabling via about://flags or edge://flags
-
-To experiment with URL protocol handler registration for PWAs locally, without an origin trial
-token, enable the `#enable-desktop-pwas-protocol-handling` flag in `about://flags` or `edge://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chromium&nbsp;92, the File Handling API will be available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## How to use URL protocol handler registration for PWAs
 
@@ -212,19 +194,14 @@ as the URL of an iframe.
 Just like with `registerProtocolHandler()` there is an allowlist of protocols that apps can register
 to handle.
 
-### Default protocol handlers
-
-Registration of PWA protocol handlers will not take over the default handler for a protocol.
-Instead, the next time the protocol is invoked, an operating system disambiguation dialog will
-prompt the user to either keep using the default handler or select the newly registered handler.
-
 ### Consent prompt
 
 On the first launch of the PWA due to an invoked protocol, the user will be presented with a
 permission dialog. This dialog will display the app name and origin of the app, and ask the user if
 the app is allowed to handle links from the protocol. If a user rejects the permission dialog, the
 registered protocol handler will be ignored by the operating system. To unregister the protocol
-handler, the user needs to uninstall the PWA that registered it.
+handler, the user needs to uninstall the PWA that registered it. The browser will also unregister
+the protocol handler if the user selects "Remember my choice" and selects "Disallow".
 
 ## Feedback
 
@@ -283,4 +260,3 @@ was reviewed by [Joe Medley](https://github.com/jpmedley) and Fabio Rocha. Hero 
 [wicg-discourse]:
   https://discourse.wicg.io/t/proposal-url-protocol-handler-registration-for-pwas/4276
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/1136033006004207617

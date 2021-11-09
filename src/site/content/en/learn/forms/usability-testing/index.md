@@ -1,10 +1,10 @@
 ---
 title: How to test forms for usability
 description: >
-  In this module, you learn about usability testing and how to ensure your form works well for all your users.
+  Discover how to do usability testing and ensure your form works well for all your users.
 authors:
   - michaelscharnagl
-date: 2021-10-06
+date: 2021-11-03
 ---
 
 ## What is usability testing?
@@ -25,8 +25,8 @@ First, you need to find people who can test your form.
 Ask family members, friends, and colleagues to test your form. 
 
 {% Aside %}
-Testing doesn't have to be complex. 
-To improve your forms you don't need a usability lab and complex reporting methodologies!
+Testing doesn't have to be difficult. To improve your forms you don't need a usability lab and 
+complex reporting methodologies!
 
 Testing with one single other person is likely to help you improve your forms. 
 Testing with two or more is even better. Take simple notes and make changes accordingly.

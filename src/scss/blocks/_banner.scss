@@ -3,11 +3,12 @@
 .banner {
   --gutter: 0.5rem;
 
-  padding: $global-gutter;
+  padding: 1.5em $global-gutter;
   display: flex;
   gap: 0 $global-gutter;
   flex-wrap: wrap;
   align-items: flex-start;
+  font-size: get-size('size-0');
 }
 
 .banner__content {

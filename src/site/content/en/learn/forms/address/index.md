@@ -4,7 +4,7 @@ description: >
   Help users fill out address forms quickly and easily.
 authors:
   - michaelscharnagl
-date: 2021-10-11
+date: 2021-11-03
 ---
 
 Filling in an address can be time-consuming and frustrating. 
@@ -26,7 +26,7 @@ so how should they fill in the surname field? Use a single `<input>` for the nam
 Learn more about [handling different name formats](/learn/forms/internationalization/#ensure-your-form-can-handle-different-name-formats).
 
 {% Aside 'caution' %}  
-Never restrict the allowed characters to 
+Never restrict the allowed characters for names to 
 [Latin-only](https://en.wikipedia.org/wiki/Latin_alphabet). 
 Allow [Unicode characters](/payment-and-address-form-best-practices/#unicode-matching) 
 for the name `<input>` to ensure everybody can fill in their name.  
@@ -34,7 +34,7 @@ for the name `<input>` to ensure everybody can fill in their name.
 
 Also use a single `<input>` for the street address–not every address has a street number.
 
-{% Aside 'caution' %}  
+{% Aside %}  
 According to [research](https://baymard.com/blog/address-line-2), 
 **Address line 2** can be confusing for users. 
 Consider using a `<textarea>` for the whole address, 
@@ -52,21 +52,24 @@ You can use services like
 [Place Autocomplete](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform) or 
 [Loqate](https://www.loqate.com/en-us/) to help users look up addresses. 
 Consider [avoiding postcode address lookup](/payment-and-address-form-best-practices/#postal-code-address-lookup), 
-and only provide address lookup as an extra option: don't force users to use it.  
+and only provide address lookup as an extra option: don't force people to use it.  
 {% endAside %}
 
 ## Help users enter their address
 
-Use the `autocomplete` attribute to help users re-enter their address. 
-Use `autcomplete="name"` for the name field, `autocomplete="street-address"` for the street field, 
-`autocomplete="postal-code"` for the postal code field, 
-`autocomplete="address-level2"` for the city field, and 
-`autocomplete="country"` for the country field.
+The `autocomplete` attribute can help users re-enter their address: 
+* `autocomplete="name"`
+* `autocomplete="street-address"`
+* `autocomplete="postal-code"`
+* `autocomplete="country"`
 
 {% Aside %}  
-There are two possible `autocomplete` values for the country. 
+There are two possible `autocomplete` values for the country: 
+* `country`: country or territory code
+* `country-name`: country or territory name 
+
 Use `autocomplete="country"` for `<select>` where the `value` for the `<option>` is the country code. 
-Want to use an `<input>` for the country? Use `autocomplete="country-name"`.  
+Want to use an `<input>` for the country name? Use `autocomplete="country-name"`.  
 {% endAside %}
 
 You can define multiple values separated by a space for `autocomplete`. 

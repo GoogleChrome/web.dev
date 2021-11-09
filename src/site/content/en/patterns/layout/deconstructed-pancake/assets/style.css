@@ -1,0 +1,13 @@
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  /*  Stretching: */
+  flex: 1 1 150px; 
+  margin: 5px;
+  background: red;
+  gap: 1rem;
+}

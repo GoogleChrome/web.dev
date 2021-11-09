@@ -93,6 +93,7 @@ const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
+const {siteRender} = require('./src/site/_filters/site-render');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
@@ -186,6 +187,7 @@ module.exports = function (config) {
   config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
+  config.addNunjucksAsyncFilter('siteRender', siteRender);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -211,7 +213,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
-  config.addNunjucksAsyncShortcode('BrowserCompat', BrowserCompat);
+  config.addNunjucksShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addShortcode('CodePattern', CodePattern);

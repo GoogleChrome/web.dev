@@ -15,5 +15,9 @@ logo: '/images/courses/css/logo.svg'
 background: '/images/courses/css/background.svg'
 # This provides the cover image for the card on /learn/
 card: '/images/courses/css/card.svg'
+# Abstract decorative image that's used in some card contexts
+decor: '/images/courses/css/card-decor.svg'
 # This is used for the social media thumbnail.
 thumbnail: 'image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png'
+# This is used to color the card module count
+highlight: 'purple'

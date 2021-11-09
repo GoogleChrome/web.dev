@@ -225,7 +225,7 @@ Learn more about the Securitum research on the DOMPurify vulnerability: [Mutatio
 HTML also needs **context** to be parsed. For example, `<td>` makes sense in `<table>`, but not in `<div>`. Since `DOMPurify.sanitize()` only takes a string as an argument, the parsing context had to be guessed.
 
 {% Aside %}
-Learn more about how the Sanitizer API parses strings and determines context in the [Sanitizer API explainer](https://github.com/otherdaniel/purification/blob/strings-explainer/explainer-strings.md).
+Learn more about how the Sanitizer API parses strings and determines context in the [Sanitizer API explainer](https://github.com/WICG/sanitizer-api/blob/main/explainer-strings.md).
 {% endAside %}
 
 The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOMPurify approach and is designed to eliminate the need for double parsing and to clarify the parsing context.

@@ -1,0 +1,4 @@
+<div class="counter {{ data.utilities }}" {% if data.layout %}data-layout="{{ data.layout }}"{% endif %}>
+  <span class="counter__count">{{ data.count }}</span>
+  {% include data.icon %}
+</div>
