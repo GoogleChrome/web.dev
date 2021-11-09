@@ -692,7 +692,7 @@ rachelandrew:
     ru: Rachel Andrew
     zh: Rachel Andrew
   description:
-    en: Freelance writer and editor. CSS Working Group Invited Expert.
+    en: Technical writer at Google. Content lead for web.dev.
     es: Escritor y editor independiente. Es un especialista invitado en el grupo de trabajo de CSS.
     ja: フリーランスのライター兼編集者。CSS ワーキンググループ招待エキスパート。
     ko: 프리랜서 작가이자 편집자. CSS 작업 그룹에 초대된 전문가.
@@ -1005,6 +1005,12 @@ adamargyle:
     pt: Developer Advocate para o Chrome
     ru: Developer Advocate по вопросам Chrome
     zh: 负责 Chrome 的开发技术推广工程师
+
+emmatwersky:
+  title:
+    en: Emma Twersky
+  description:
+    en: Developer Relations Engineer for Angular
 
 lunalu:
   title:
@@ -1707,6 +1713,24 @@ syg:
     pt: Nossas últimas notícias, atualizações e histórias por Shu-yu Guo.
     ru: Последние новости и статьи от Shu-yu Guo.
     zh: Shu-yu Guo 撰写我们的最新资讯、动态和故事。
+
+nabeelalshamma:
+  title:
+    en: Nabeel Al-Shamma
+    es: Nabeel Al-Shamma
+    ja: Nabeel Al-Shamma
+    ko: Nabeel Al-Shamma
+    pt: Nabeel Al-Shamma
+    ru: Nabeel Al-Shamma
+    zh: Nabeel Al-Shamma
+  description:
+    en: Principal Scientist at Adobe
+    es: Principal Scientist at Adobe
+    ja: Principal Scientist at Adobe
+    ko: Principal Scientist at Adobe
+    pt: Principal Scientist at Adobe
+    ru: Principal Scientist at Adobe
+    zh: Principal Scientist at Adobe
 
 nattestad:
   title:
@@ -3327,6 +3351,12 @@ dandclark:
     pt: Desenvolvedor na equipe de plataforma web do Microsoft Edge
     ru: Разработчик в команде веб-платформы Microsoft Edge
     zh: Microsoft Edge 网络平台团队的开发者
+    
+cambickel:
+  title:
+    en: Camden Bickel
+  description:
+    en: Software Engineer at Google
 
 michaelscharnagl:
   title:
@@ -3405,8 +3435,130 @@ cédricbazureau:
     en: Cédric Bazureau
   description:
     en: Cédric Bazureau is a lead developer at Renault.
+
 lozandier:
   title:
     en: Kevin Lozandier
   description:
     en: User Experience Engineer at Google part of the responsible innovation team.
+
+adactio:
+  title:
+    en: Jeremy Keith
+  description:
+    en: An Irish web developer living in Brighton, England, working with Clearleft.
+
+patmeenan:
+  title:
+    en: Patrick Meenan
+    es: Patrick Meenan
+    ja: Patrick Meenan
+    ko: Patrick Meenan
+    pt: Patrick Meenan
+    ru: Patrick Meenan
+    zh: Patrick Meenan
+  description:
+    en: Our latest news, updates, and stories by Patrick Meenan.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Patrick Meenan.
+    ja: Patrick Meenan による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Patrick Meenan 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Patrick Meenan.
+    ru: Последние новости и статьи от Patrick Meenan.
+    zh: Patrick Meenan 撰写我们的最新资讯、动态和故事。
+
+firt:
+  title:
+    en: Maximiliano Firtman
+  description:
+    en:  Author of Hacking Web Performance from O'Reilly
+
+patrickbrosset:
+  title:
+    en: Patrick Brosset
+    es: Patrick Brosset
+    ja: Patrick Brosset
+    ko: Patrick Brosset
+    pt: Patrick Brosset
+    ru: Patrick Brosset
+    zh: Patrick Brosset
+  description:
+    en: Our latest news, updates, and stories by Patrick Brosset.
+    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Patrick Brosset.
+    ja: Patrick Brosset による最新のニュース、アップデート情報、記事などをご紹介します。
+    ko: Patrick Brosset 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas últimas notícias, atualizações e histórias por Patrick Brosset.
+    ru: Последние новости и статьи от Patrick Brosset.
+    zh: Patrick Brosset 撰写我们的最新资讯、动态和故事。
+
+karaerickson:
+  title:
+    en: Kara Erickson
+    es: Kara Erickson
+    ja: Kara Erickson
+    ko: Kara Erickson
+    pt: Kara Erickson
+    ru: Kara Erickson
+    zh: Kara Erickson
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniera de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+
+alexcastle:
+  title:
+    en: Alex Castle
+    es: Alex Castle
+    ja: Alex Castle
+    ko: Alex Castle
+    pt: Alex Castle
+    ru: Alex Castle
+    zh: Alex Castle
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniero de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师
+
+behdadb:
+  title:
+    en: Behdad Bakhshinategh
+  description:
+    en: Software Engineer
+
+jonross:
+  title:
+    en: Jonathan Ross
+  description:
+    en: Software Engineer
+
+bckenny:
+  title:
+    en: Brendan Kenny
+  description:
+    en: Lighthouse lens polisher
+    
+alexandrawhite:
+   title: 
+      en: Alexandra White
+      es: Alexandra White
+      ja: Alexandra White
+      ko: Alexandra White
+      pt: Alexandra White
+      ru: Alexandra White
+      zh: Alexandra White
+   description:
+      en: Technical Writer at Google.
+      es: Escritor técnico en Google
+      ja: Google のテクニカルライター
+      ko: Google 테크니컬라이터
+      pt: Escritora técnica na empresa Google
+      ru: Технический писатель в компании Google
+      zh: Google 的技术撰稿人
+      

@@ -144,3 +144,13 @@ share:
 
 sign_in:
   en: Sign in
+
+all:
+  en: All
+  es: Todos
+
+see_all:
+  en: See all
+
+more: 
+  en: More

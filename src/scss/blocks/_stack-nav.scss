@@ -70,6 +70,11 @@
   }
 }
 
+// Smaller font size for placeholder meta
+.is-placeholder .stack-nav__meta {
+  font-size: 0.7em;
+}
+
 .stack-nav__heading {
   font-size: get-size('size-2');
   padding-inline-start: $global-gutter-narrow;

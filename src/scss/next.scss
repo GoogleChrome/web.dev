@@ -26,6 +26,7 @@ $global-prose-element-max-width: 50rem;
 
 /// MIXINS
 @import 'mixins/button-base-styles';
+@import 'mixins/card-base-styles';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
@@ -88,7 +89,7 @@ li {
 h1,
 h2,
 h3 {
-  max-width: 25ch;
+  max-width: 30ch;
 }
 
 /// Lists
@@ -177,7 +178,7 @@ dd + dt {
 /// Blockquotes
 
 blockquote {
-  font-size: get-size('size-4');
+  font-size: get-size('size-3');
   text-align: center;
 
   @include apply-utility('font', 'brand');
@@ -201,11 +202,11 @@ blockquote {
 
 /// <q> elements are ideal, but we need to make sure
 /// any element is styled as a quote
-blockquote > *::before {
+blockquote > *:not(:last-child)::before {
   content: open-quote;
 }
 
-blockquote > *::after {
+blockquote > *:not(:last-child)::after {
   content: close-quote;
 }
 
@@ -393,6 +394,7 @@ details summary {
   font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
+  padding-right: get-space('size-1'); // Prevent overlap with ::before element
 
   @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'regular');
@@ -564,6 +566,12 @@ input[type='radio'] {
   }
 }
 
+/// Optical adjustment helps align labels
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+  transform: translateY(-0.5ex);
+}
+
 input[type='checkbox'] {
   width: min(1.13em, 18px);
   height: min(1.13em, 18px);
@@ -640,6 +648,7 @@ web-copy-code {
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/cluster';
+@import 'compositions/reel';
 @import 'compositions/repel';
 @import 'compositions/sidebar';
 @import 'compositions/switcher';
@@ -654,14 +663,20 @@ web-copy-code {
 @import 'blocks/browser-compat';
 @import 'blocks/button';
 @import 'blocks/card';
+@import 'blocks/carousel';
 @import 'blocks/compare';
+@import 'blocks/counter';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
+@import 'blocks/feature-card';
+@import 'blocks/headline';
+@import 'blocks/hero';
 @import 'blocks/icon-button';
 @import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
 @import 'blocks/pagination';
+@import 'blocks/pill';
 @import 'blocks/preview-pagination';
 @import 'blocks/prose';
 @import 'blocks/site-footer';
@@ -680,6 +695,7 @@ web-copy-code {
 @import 'web-components/web-audio-fab';
 @import 'web-components/web-copy-code';
 @import 'web-components/web-navigation-drawer';
+@import 'web-components/web-subscribe';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
@@ -692,8 +708,13 @@ web-copy-code {
 @import 'utilities/wrapper';
 
 /// PAGES
+@import 'pages/about';
 @import 'pages/course';
 @import 'pages/design-system';
+@import 'pages/homepage';
+@import 'pages/landing-page';
+@import 'pages/learn';
+@import 'pages/measure';
 
 // The prototype file is for temporary prototyping
 @import 'prototype';

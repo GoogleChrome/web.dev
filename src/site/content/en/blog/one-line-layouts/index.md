@@ -265,7 +265,7 @@ This sets an absolute min and max size, and an actual size. With values, that ca
 
 ```css/1
 .parent {
-  width: clamp(23ch, 50%, 46ch);
+  width: clamp(23ch, 60%, 46ch);
 }
 ```
 

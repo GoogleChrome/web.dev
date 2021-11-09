@@ -24,20 +24,18 @@ const glob = require('fast-glob');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
-const md = require('markdown-it')();
 
 const stripDot = /^\./;
 const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
 
-/** @type CodePatternSets */
+/** @type {CodePatternSets} */
 const allPatternSets = {};
 
-/** @type CodePatterns */
+/** @type {CodePatterns} */
 const allPatterns = files.reduce((patterns, file) => {
   const id = path.relative(basePath, path.dirname(file));
   const fileContents = matter(fs.readFileSync(file, 'utf-8'));
-  const content = md.render(fileContents.content);
   const suite = path.dirname(id);
 
   // This only reads front-matter from files, and doesn't inherit any data
@@ -48,11 +46,11 @@ const allPatterns = files.reduce((patterns, file) => {
       title: fileContents.data.title,
       description: fileContents.data.description,
       hero: fileContents.data.hero,
-      draft: fileContents.data.draft,
-      content,
+      draft: Boolean(fileContents.data.draft),
+      rawContent: fileContents.content,
       suite: suite !== '.' ? suite : null,
     };
-    /** @type CodePatternSet */
+    /** @type {CodePatternSet} */
     allPatternSets[id] = set;
   }
 
@@ -61,7 +59,7 @@ const allPatterns = files.reduce((patterns, file) => {
   }
 
   const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
-  /** @type CodePatternAssets */
+  /** @type {CodePatternAssets} */
   const assets = assetsPaths.reduce((out, assetPath) => {
     const basename = path.basename(assetPath);
     const type = path.extname(assetPath).replace(stripDot, '');
@@ -78,17 +76,16 @@ const allPatterns = files.reduce((patterns, file) => {
   const demo =
     fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
   const set = path.dirname(id);
-  /** @type CodePattern */
-  patterns[id] = {
+  patterns[id] = /** @type {CodePattern} */ ({
     id,
     ...fileContents.data,
-    content,
+    rawContent: fileContents.content,
     assets,
     demo,
     set,
-  };
+  });
   return patterns;
-}, {});
+}, /** @type {CodePatterns} */ ({}));
 
 module.exports = {
   patterns: function () {

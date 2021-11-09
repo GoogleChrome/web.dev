@@ -4,7 +4,7 @@ description: >
   Make it more convenient for users to fill out forms.
 authors:
   - michaelscharnagl
-date: 2021-10-18
+date: 2021-11-03
 ---
 
 After learning about the
@@ -69,7 +69,8 @@ You can help here by using the `autocomplete` attribute.
 {% Codepen {
   user: 'web-dot-dev',
   id: '9a2262c52b978968f6ce181f32357f31',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 Have you entered a name before in the browser you're using?

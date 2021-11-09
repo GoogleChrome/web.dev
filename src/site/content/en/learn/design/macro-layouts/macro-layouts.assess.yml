@@ -1,0 +1,25 @@
+setLeader: Test your knowledge of macro layouts.
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: Which sentence best describes macro layouts?
+    options:
+      - content: "Layouts that contain other layouts."
+        rationale: "Try again! Most layouts contain other layouts."
+      - content: "When a design uses flexbox or grid."
+        rationale: "Try again! Neither flexbox or grid have anything specific to macro layouts."
+      - content: "Low level layouts which cover small amounts of the screen."
+        rationale: "Try again!"
+      - content: "High level layouts which cover large amounts of the screen."
+        rationale: "🎉 Macro layouts are foundational layouts for a page, spanning large amounts of visual area, and often are adjusted with page size media queries."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Macro layouts always use media queries to adapt to different screen sizes?
+    options:
+      - content: "True"
+        rationale: "Try again! A macro layout is not defined by it's usage of media queries."
+      - content: "False"
+        rationale: "🎉 Macro layouts may adapt to fit content, fill available space, and more, without a media query."

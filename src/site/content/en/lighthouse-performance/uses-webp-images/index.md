@@ -23,7 +23,7 @@ showing potential savings gained by serving AVIF versions of those images:
 
 AVIF and WebP are image formats that have superior compression and quality characteristics compared to their older JPEG and PNG counterparts. Encoding your images in these formats rather than JPEG or PNG means that they will load faster and consume less cellular data.
 
-AVIF is supported in Chrome and Opera and offers smaller file sizes compared to other formats with the same quality settings.
+AVIF is supported in Chrome, Firefox, and Opera and offers smaller file sizes compared to other formats with the same quality settings.
 See [Serving AVIF Images Codelab](https://codelabs.developers.google.com/codelabs/avif) for more on AVIF.
 
 WebP is supported in the latest versions of Chrome, Firefox, Safari, Edge, and Opera and provides better lossy and lossless compression for images on the web.

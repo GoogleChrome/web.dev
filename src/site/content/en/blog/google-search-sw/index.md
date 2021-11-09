@@ -4,6 +4,7 @@ subhead: The story of what shipped, how the impact was measured, and the tradeof
 authors:
   - jeffposnick
 date: 2019-06-20
+updated: 2021-10-29
 hero: image/admin/SEsw9jtfge6PSYNqTkUl.jpg
 alt: An illustration of a service worker interacting with a cache.
 description: |
@@ -466,3 +467,5 @@ service worker implementation, and for sharing the background material that went
 into writing this article. Particular thanks goes to Philippe Golle, Rajesh
 Jagannathan, R. Samuel Klatchko, Andy Martone, Leonardo Peña, Rachel Shearer,
 Greg Terrono, and Clay Woolam.
+
+_Update (Oct. 2021): Since this article was originally published, the Google Search team has reevaluated the benefits and tradeoffs of their current service worker architecture. The service worker described above is being retired. As the Google Search web infrastructure evolves, the team may revisit their service worker design._

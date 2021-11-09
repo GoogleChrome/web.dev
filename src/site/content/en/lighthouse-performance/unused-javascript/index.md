@@ -87,6 +87,9 @@ bundles](/code-splitting-suspense/) with `React.lazy()`.
 Otherwise, code-split using a third-party library such as
 [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/).
 
+### Vue
+If you are not server-side rendering and using the [Vue router](https://next.router.vuejs.org), split the bundles by [lazy loading routes](https://next.router.vuejs.org/guide/advanced/lazy-loading.html).
+
 ### WordPress
 
 Consider reducing, or switching, the number of [WordPress

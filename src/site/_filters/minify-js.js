@@ -21,24 +21,27 @@ const {minify} = require('terser');
  * Nunjucks supports async filters (yay!) but they have to use ugly callback
  * syntax (boo...).
  * https://www.11ty.dev/docs/quicktips/inline-js/
+ *
+ * This never errors, it just logs an error in production if we can't minify.
+ *
  * @param {string} code
+ * @param {(err: Error, ret: string) => void} callback
  */
-async function minifyJs(code, callback) {
+function minifyJs(code, callback) {
   if (process.env.ELEVENTY_ENV !== 'prod') {
     callback(null, code);
     return;
   }
 
-  try {
-    const minified = await minify(code);
-    callback(null, minified.code);
-    return;
-  } catch (err) {
-    console.error('Terser error: ', err);
-    // Fail gracefully.
-    callback(null, code);
-    return;
-  }
+  minify(code)
+    .then((result) => {
+      callback(null, result.code);
+    })
+    .catch((err) => {
+      console.error('Terser error: ', err);
+      // Fail gracefully.
+      callback(null, code);
+    });
 }
 
 module.exports = {minifyJs};

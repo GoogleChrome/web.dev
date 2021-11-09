@@ -70,6 +70,10 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
   @extend .button;
 }
 
+[state='completed'] .web-question__cta::before {
+  display: none;
+}
+
 .web-tabs__text-label {
   color: get-utility-value('color', 'core-text') !important;
 }
@@ -107,6 +111,7 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
     border: 1px solid get-utility-value('color', 'stroke');
     border-radius: $global-radius-base;
     padding: 0;
+    z-index: 99;
 
     a {
       color: currentColor;
@@ -176,5 +181,39 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
 
   web-profile-switcher-container {
     margin-left: 0 !important;
+  }
+}
+
+web-url-chooser {
+  /// Temporary button styles, as the class "button" cannot be safely added as it used by the old css.
+  .w-button {
+    text-transform: uppercase;
+    letter-spacing: 0.03ch;
+    border-radius: 3px;
+    padding: 1.4em 1em;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-action-bg);
+    color: var(--color-action-text);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .w-button[data-type='primary'] {
+    border-color: var(--color-action-bg-primary);
+    background: var(--color-action-bg-primary);
+    color: var(--color-action-text-primary);
+  }
+
+  .w-button[disabled] {
+    filter: invert(0.2) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed !important;
   }
 }
