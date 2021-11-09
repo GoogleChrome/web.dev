@@ -75,7 +75,9 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 The [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) properties set the overflow based on the document direction and writing mode. 
 
-{​% BrowserCompat 'css.properties.overflow-inline' %}
+{% Aside %}
+`overflow-inline` is currently only supported in Firefox 69+. See the support table on [MDN](https://developer.mozilla.org/docs/Web/CSS/overflow-inline#browser_compatibility).
+{% endAside %}
 
 ### The `overflow` shorthand
 
