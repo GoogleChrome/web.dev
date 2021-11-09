@@ -59,17 +59,9 @@ You can think of the overflow in two parts. The parent element has a firmly cons
   tab: 'result'
 } %}
 
-### Scrolling on the vertical axis
+### Scrolling on the vertical and horizontal axis
 
 The `overflow-y` property controls physical overflow along the vertical axis of the device viewport, therefore scrolling up and down.
-
-{% Codepen {
-  user: 'web-dot-dev',
-  id: 'qBjLBKW',
-  tab: 'css,result'
-} %}
-
-### Scrolling on the horizontal axis
 
 The `overflow-x` property controls overflow along the horizontal axis of the device viewport, therefore scrolling left and right.
 
@@ -82,12 +74,6 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 ### Logical properties for scroll direction
 
 The [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) properties set the overflow based on the document direction and writing mode. 
-
-{% Codepen {
-  user: 'web-dot-dev',
-  id: 'gORZVmx',
-  tab: 'css,result'
-} %}
 
 {​% BrowserCompat 'css.properties.overflow-inline' %}
 
@@ -130,7 +116,7 @@ Let's take a closer look at the [values and keywords](https://developer.mozilla.
 Using the `overflow` property with a value other than `visible` creates a [block formatting context](https://developer.mozilla.org/docs/Web/Guide/CSS/Block_formatting_context).
 {% endAside %}
 
-## More on scrolling
+## Scrolling and Overflow
 
 Many of these `overflow` behaviors introduce a scrollbar, but there’s a few specific scroll behaviors and properties that can help you control scrolling on your overflow container.
 
