@@ -37,7 +37,7 @@ If you prefer video, here's a YouTube version of this post:
 
 ## Overview
 
-Video games often present users with a menu that is super different, animated
+Video games often present users with a creative and unusual menu, animated
 and in 3D space. It's popular in new AR/VR games to make the menu appear to be
 floating in space. Today we'll be recreating the essentials of this effect but
 with the added flair of an adaptive color scheme and accommodations for users
@@ -83,14 +83,14 @@ Styling the button list breaks down into the following high level steps:
 
 ### Overview of custom properties
 
-A fair number of custom properties help disambiguate values by giving meaningful
+Custom properties help disambiguate values by giving meaningful
 names to otherwise random-looking values, avoiding repeated code and sharing
 values amongst children.
 
 Below are media queries saved as CSS variables, also known as [custom
 media](https://www.w3.org/TR/mediaqueries-5/#custom-mq). These are global and
 will be used throughout various selectors to keep code concise and legible. The
-game menu component is interested in [motion
+game menu component uses [motion
 preferences](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion),
 system [color
 scheme](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme),
@@ -104,12 +104,12 @@ display.
 @custom-media --HDcolor (dynamic-range: high);
 ```
 
-Below are custom properties that manage the color scheme and hold mouse
+The following custom properties manage the color scheme and hold mouse
 positional values for making the game menu interactive to hover. Naming custom
 properties helps code legibility as it reveals the use case for the value or a
 friendly name for the result of the value.
 
-{% Aside %} The below variable naming convention uses strategies described in
+{% Aside %} The following variable naming convention uses strategies described in
 [this post](https://lea.verou.me/2021/10/custom-properties-with-defaults/) by
 [Lea Verou](https://twitter.com/LeaVerou). {% endAside %}
 
@@ -173,7 +173,7 @@ html {
     muted="true"
   %}
   <figcaption class="w-figure">
-    Demonstration of background changing between light and dark color preferences
+    Demonstration of background changing between light and dark color preferences.
   </figcaption>
 </figure>
 
@@ -312,7 +312,7 @@ position. It's a great way to articulate infinite alternating animations.
 
 Each list item (`<li>`) contains the button and its border elements. The
 `display` style is changed so the item doesn't show a
-[`::marker`](https://web.dev/css-marker-pseudo-element/). The `position` style
+[`::marker`](/css-marker-pseudo-element/). The `position` style
 is set to `relative` so the upcoming button pseudo-elements can position
 themselves within the full area the button consumes.
 
@@ -579,7 +579,7 @@ It can be fun when elements are hyper aware of the pointer.
 
 Since this is a small extra feature, we'll put the interaction behind a query of
 the user's motion preference. Also, as part of setup, store the button list
-component into memory with `querySelector` and cache the element’s bounds into
+component into memory with `querySelector` and cache the element's bounds into
 `menuRect`. Use these bounds to determine the rotate offset applied to the card
 based on mouse position.
 
