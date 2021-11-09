@@ -90,7 +90,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
         <td>32%</td>
       </tr>
     </tbody>
-    <caption>CWV metrics for the week of 15–21 March 2021</caption>
+    <caption>Metrics for the week of 15-21 March 2021</caption>
   </table>
 </div>
  
