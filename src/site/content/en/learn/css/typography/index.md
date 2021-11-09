@@ -1,7 +1,7 @@
 ---
 title: Text & Typography
 description: >
-  TODO  
+  In this module, learn how to style text on the web.
 audio:
   title: 'The CSS Podcast - 036: Text & Typography'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP036_v2.mp3?dest-id=1891556
