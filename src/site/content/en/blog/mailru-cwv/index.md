@@ -233,7 +233,7 @@ The decrease in values from May 1 to May 10 is due to May holidays in Russia.
 
 <figure class="w-figure">
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/bxANzHIw78TvdS1RFyWG.png", alt="FID from 16 March to 1 June 2021 showing tiny improvements on a high level.", width="800", height="345" %}
-  <figcaption>FID CWV graph in 'Platform': 16 March to 1 June 2021.</figcaption>
+  <figcaption>FID graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure> 
 
 <figure class="w-figure">
