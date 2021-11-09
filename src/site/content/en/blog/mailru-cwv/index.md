@@ -182,7 +182,7 @@ After the optimization effort, we observed the mean values for the week of 24-30
         <td>TTI</td>
       </tr>
       <tr>
-        <td rowspan="3">Share of users in accordance with CWV thresholds</td>
+        <td rowspan="3">Share of users in accordance with Core Web Vitals thresholds</td>
         <td>good</td>
         <td>58% (+6%)</td>
         <td>93% (+1%)</td>
