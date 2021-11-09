@@ -118,7 +118,7 @@ Let's take a closer look at the [values and keywords](https://developer.mozilla.
 Using the `overflow` property with a value other than `visible` creates a [block formatting context](https://developer.mozilla.org/docs/Web/Guide/CSS/Block_formatting_context).
 {% endAside %}
 
-## Scrolling and Overflow
+## Scrolling and overflow
 
 Many of these `overflow` behaviors introduce a scrollbar, but there’s a few specific scroll behaviors and properties that can help you control scrolling on your overflow container.
 
