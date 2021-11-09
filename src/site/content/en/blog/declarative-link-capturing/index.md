@@ -114,7 +114,7 @@ Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2
 
 {% Aside %}
 While you can still sign up for the origin trial, the engineering team has decided already
-that Declarative Link Capturing will _not_ launch in the present shape. Interested parties
+that Declarative Link Capturing will _not_ launch with the current design. Interested parties
 can check out and provide early feedback on the likely replacement feature called
 [Web App Launch Handling](https://github.com/WICG/sw-launch/blob/main/launch_handler.md).
 {% endAside %}
