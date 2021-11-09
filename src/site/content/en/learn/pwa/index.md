@@ -44,5 +44,5 @@ Here's what you'll learn:
 So, are you ready to learn PWA? 
 
 {% Aside %}
-This course was written by [Maximiliano Firtman](https://twitter.com/firt), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), [Adriana Jara](https://twitter.com/tropicadri), and [Pete LePage](https://twitter.com/petele).
+This course was written by [Maximiliano Firtman](https://twitter.com/firt), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), [Adriana Jara](https://twitter.com/tropicadri), [Pete LePage](https://twitter.com/petele), and [Sam Richard](https://twitter.com/snugug).
 {% endAside %}

@@ -1,5 +1,5 @@
 ---
-layout: tags-index
+layout: index-page
 title: Tags
 permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers

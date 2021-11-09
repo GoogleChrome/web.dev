@@ -19,6 +19,7 @@ export async function runPsi(url) {
     'SEO',
   ];
   const params = new URLSearchParams();
+  params.append('strategy', 'MOBILE');
   params.append('url', url);
   params.append('key', API_KEY);
   for (const category of categories) {

@@ -88,7 +88,7 @@ The optimal Progressive Web App checklist is about making your PWA feel capable 
 By allowing users to use your PWA while offline, you'll create an authentic app-like experience for them. Do this by identifying those features that don't require connectivity, so that users can access at least some functionality.
 
 {% Aside 'gotchas' %}
-When we say that the PWA should provide an offline experience, it doesn't mean that all the services and content should be available on that network condition. For example a note taking app, can't sync their notes when there is no connectivity, but they can allow the users to write the note and sync new changes when they are back online. At the very least you should render the app's user interface with a proper message if your app needs a live connection.
+When we say that the PWA should provide an offline experience, it doesn't mean that all the services and content should be available on that network condition. For example a note taking app can't sync its notes when there is no connectivity, but it can allow the users to write the note and sync new changes when they are back online. At the very least you should render the app's user interface with a proper message if your app needs a live connection.
 {% endAside %}
 
 #### Is fully accessible
@@ -119,8 +119,8 @@ Keeping your application up-to-date and your codebase healthy makes it easier fo
 While the PWA Checklist has a set of best practices for all developers, 
 some browsers also have a _PWA Criteria_. 
 
-The PWA Criteria is a set of technical requirements that your website must comply with to be treated as a PWA. Your PWA will receive special treatment when that happens, such as firing new events you can handle, rendering an Install badge or dialog, or adding a new Install menu within the browser.{% endAside %}
+The PWA criteria is a set of technical requirements that your website must comply with to be treated as a PWA. Your PWA will receive special treatment when that happens, such as firing new events you can handle, rendering an Install badge or dialog, or adding a new Install menu within the browser.{% endAside %}
 
 ## Resources
 
-- [PWA Checklist](/pwa-checklist/)
+- [PWA checklist](/pwa-checklist/)

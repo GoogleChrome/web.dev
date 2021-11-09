@@ -5,9 +5,11 @@ description: >
 authors:
   - firt
 date: 2021-11-03
+updated: 2021-11-05
+
 ---
 
-## A Solid Foundation
+## A solid foundation
 
  A solid foundation is the base requirement for building great PWAs. 
  To implement this foundation you need to design and code for the constraints of the web using a couple of principles:
@@ -69,7 +71,7 @@ a window can get really small; smaller than a browser's window, smaller than a m
 This is something new on the web: we can support a mini-mode, a window that can be as small as 200x100 CSS pixels. 
 
 When creating a PWA these days, it's a good idea to think about what to offer in mini-mode, 
-thanks to Responsive Web Design, such as just control buttons on a music player, dashboard information, or quick actions.
+thanks to responsive web design, such as just control buttons on a music player, dashboard information, or quick actions.
 
 {% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/hPR7t2kr42boNc4MfSGQ.mp4", alt="On desktop, a PWA can be rendered in a smaller window than the smallest window you've ever designed for the browser. It adds a new breakpoint for your responsive web design: the mini-mode.", autoplay="true", loop="true", muted="true" %}
 
@@ -114,7 +116,7 @@ There are countless combinations of screen sizes, capabilities, devices, and con
 Instead of thinking about your web experiences as a fixed thing, 
 think of it as a set of recommendations that the user's device will use to build the best experience for their current context. To do so, progressive enhancement needs to be embraced. 
 
-### Progressive Enhancement
+### Progressive enhancement
 
 Progressive Enhancement is a pattern that lets us write code that runs everywhere, starting from standard HTML, CSS, and JavaScript, and adding layers of capabilities on top of that with proper fallbacks when an API is not available.
 
@@ -133,7 +135,7 @@ You can even combine multiple forms of feature detection to create your enhanced
 The P in PWA comes from Progressive, and it emphasizes the idea of adding features and abilities progressively, and using Feature Detection is key for that goal.
 {% endAside %}
 
-#### Avoid Device-Detection
+#### Avoid device detection
 
 You should directly test for feature support instead of making support assumptions based on the User-Agent string. 
 
@@ -158,9 +160,9 @@ That can then be enhanced with JavaScript and fetch requests to update the table
 
 ## Intrinsic design
 
-1. Mobile as a focusing constraint for user experience.
-2. Emphasizing content and core functionality in the design process.
-3. Progressively enhancing with advanced functionality where available.
+- Mobile as a focusing constraint for user experience.
+- Emphasizing content and core functionality in the design process.
+- Progressively enhancing with advanced functionality where available.
 
 These principles combine to give us something new: _intrinsic design_.
 In her talk [Designing Intrinsic Layouts](https://www.youtube.com/watch?v=AMPKmh98XLY), Jen Simmons talks about using modern CSS tools, like Grid, Flexbox, flow layout, and writing modes, to design and build user interfaces. With these tools, she says:
@@ -191,7 +193,7 @@ Web performance involves several steps:
 Web performance metrics today measure how fast your content appears on the screen, 
 but also how interactive your website is and how users perceive the experience.
 
-### Web vitals
+### Web Vitals
 
 During the past decade, we've been dealing with different metrics to measure success in web performance. 
 Today, a set of recommended metrics are grouped under the project [Web Vitals](/vitals/). 
@@ -206,7 +208,7 @@ Web Vitals focus metrics in three key areas affecting web performance and percep
 
 With Core Web Vitals, you can see at a glance, how good or bad is your PWA in web performance and user experience.
 
-## PWA Foundations
+## PWA foundations
 It's important that your PWA has a solid foundation in responsive design, mobile and everything first, intrinsic design, and web performance as a foundation for a great experience for all your users.
 
 ##  Resources

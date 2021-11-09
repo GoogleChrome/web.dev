@@ -162,7 +162,7 @@ However, Apple's implementation of the PWA specs misses many features when compa
 in particular when compared to browsers powered by the Chromium engine. 
 
 In the middle, we also have Firefox and its Gecko engine with implementations including more PWA specs on Android, 
-and fewer installation abilities on desktop.
+and fewer installation capabilities on desktop.
 
 Limitations include the lack of push notifications, integration APIs (such as Web Bluetooth or WebNFC), 
 and installation promotion techniques that help users know they can install the current website to get an app experience. 
@@ -191,14 +191,14 @@ You need to remember that a Progressive Web App is just a web app,
 so content and services are running on top of standard specs and protocols. 
 Therefore, a PWA technically runs everywhere the Web runs; you don't need the platform to be compatible with any "PWA spec." 
 
-However, when we are talking about PWA and compatibility, typically, we are thinking about the abilities to cross the boundaries of the browser and online-only contexts: icon installation and offline support.
+However, when we are talking about PWA and compatibility, typically, we are thinking about the capabilities to cross the boundaries of the browser and online-only contexts: icon installation and offline support.
 
 {% Aside %}
-A PWA should work everywhere, even when the icon installation or the offline support abilities are unavailable. 
+A PWA should work everywhere, even when the icon installation or the offline support capabilities are unavailable. 
 Always plan your PWA to work without capabilities offering fallback solutions and checking support.
 {% endAside %}
 
-On top of the classic web platform support, let's check the support for basic app functionality, such as icon installation and offline abilities.
+On top of the classic web platform support, let's check the support for basic app functionality, such as icon installation and offline capabilities.
 
 <ul class="stats auto-grid bg-state-good-bg color-state-good-text">
   <div class="stats__item flow">
@@ -224,7 +224,7 @@ _Data sourced from StatCounter and Can I Use._
 In a world of multifactor devices, 
 it's challenging to know what a desktop device is anymore. 
 Still, at least from an operating system point of view, 
-these browsers and stores are compatible with PWA installation and offline abilities:
+these browsers and stores are compatible with PWA installation and offline capabilities:
 
 Windows 10 and 11
 : Google Chrome (from version 73), Microsoft Edge (from version 79), Microsoft Store 
@@ -242,14 +242,14 @@ and then accesses it like any other app with its standalone window.
 
 {% Aside 'caution' %}
 On desktop, Safari and Firefox do not support PWA installation. 
-They do support offline abilities, but the experience will always start within the browser user interface. 
+They do support offline capabilities, but the experience will always start within the browser user interface. 
 It may get fullscreen, but never a standalone window on desktop.
 {% endAside %}
 
 ### Mobile devices
 
 Talking about mobile phones and tablets, 
-a Progressive Web App is installable with offline abilities using the following browsers and app stores:
+a Progressive Web App is installable with offline capabilities using the following browsers and app stores:
 
 iOS and iPadOS
 : Safari (since iOS 11.3), AppStore (since iOS/iPadOS 14, with some limitations), Mobile Configuration for enterprise distribution.
@@ -258,7 +258,7 @@ Android
 : Firefox, Google Chrome, Samsung Internet, Microsoft Edge, Opera, Brave, Huawei Browser, Baidu, UCWeb, Play Store (from version 72 with Google Chrome installed, or browsers compatible with TWA), Galaxy Store, Managed Play iframe for enterprise distribution.
 
 {% Aside 'caution' %}
-On iOS and iPadOS, PWAs are only installable if the user is using Safari. That means that users won't install PWAs if they use different browser apps, such as Google Chrome, Firefox, or Microsoft Edge. On both Android and iOS, users can't install pWAs from many In-App browsers, such as Facebook Mobile Browser, Instagram, Google Search App, or Gmail.
+On iOS and iPadOS, PWAs are only installable if the user is using Safari. That means that users won't install PWAs if they use different browser apps, such as Google Chrome, Firefox, or Microsoft Edge. On both Android and iOS, users can't install PWAs from many in-app browsers, such as Facebook Mobile Browser, Instagram, Google Search App, or Gmail.
 {% endAside %}
 
 In the following video the user installs a PWA from the browser on a mobile device using the browser dialog, and also using the **Add to Home screen** menu.
