@@ -210,7 +210,7 @@ After the optimization effort, we observed the mean values for the week of 24-30
         <td>25%</td>
       </tr>
     </tbody>
-    <caption>CWV metrics for the week of 24–30 March 2021</caption>
+    <caption>Metrics for the week of 24-30 March 2021</caption>
   </table>
 </div>
 
