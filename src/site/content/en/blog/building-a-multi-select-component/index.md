@@ -7,6 +7,7 @@ authors:
 description: A foundational overview of how to build a responsive, adaptive, and accessible, multiselect component for sort and filter user experiences.
 date: 2021-10-13
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/MR7sBNM1PeMduYtNWkeg.png
+alt: A screenshot of the vibrant 3D game menu component, rotated in space, with the continue button focused which demonstrates the z-space effect.
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Tqo3cnDl6Kr44qXkFqIG.png
 tags:
   - blog
