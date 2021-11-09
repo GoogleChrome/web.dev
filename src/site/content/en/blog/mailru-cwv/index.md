@@ -228,7 +228,7 @@ The decrease in values from May 1 to May 10 is due to May holidays in Russia.
 
 <figure class="w-figure">
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/8wq9d0uj3EJp5vK6kI49.png", alt="LCP from March to 1 June 2021 showing small improvments over time.", width="800", height="344" %}
-  <figcaption>LCP CWV graph in 'Platform': 16 March to 1 June 2021.</figcaption>
+  <figcaption>LCP graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure> 
 
 <figure class="w-figure">
