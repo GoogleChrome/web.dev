@@ -19,7 +19,7 @@ However, text will likely make up the majority of your website, so it’s worthw
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'WNEJWGy'
 } %}
 
 In this module, we’ll first look at some fundamental CSS font properties like `font-family`, `font-style`, `font-weight`, and `font-size`. Then, we’ll dive into properties that affect paragraphs of text, such as `text-indent` and `word-spacing`. The module finishes with some more advanced topics such as variable fonts and text rendering.
@@ -36,7 +36,7 @@ When using `font-family`, you should specify at least one generic font family in
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'yLojraG'
 } %}
 
 ## Use italic and oblique fonts
@@ -49,7 +49,7 @@ A: In fonts that support it, `font-style: italic` is typically a cursive version
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'MWvGRjx'
 } %}
 
 ## Make text bold
@@ -63,8 +63,11 @@ The keywords `lighter` and `bolder` are calculated relative to the parent elemen
 Most fonts, especially the [“web-safe” ones}(#font-family), only support the weights `400` (`normal`) and `700` (`bold`). When importing fonts using `@font-face` or `@import`, you can choose specific weights you want to pull in. Still, non-variable fonts only support numeric values for `font-weight` in the 100s, e.g. `100`, `200`, `300`, etc. If you want to use `font-weight: 321` (for example), you’ll have to use a [Variable Font](#variable-fonts).
 {% endAside %}
 
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'gOxKxNz'
+} %}
 
-DEMO https://screenshot.googleplex.com/7iAVbHYwAaxKBqC 
 ## Change the size of text
 Use [`font-size`](https://developer.mozilla.org/docs/Web/CSS/font-size) to control the size of your text elements. This property accepts length values, percentages, and a handful of keyword values.
 
@@ -78,12 +81,12 @@ A: In CSS, `em` represents the `font-size` inherited from the element’s parent
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'eYEroda'
 } %}
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'ZEJoZpZ'
 } %}
 
 ## Change the space between lines
@@ -91,12 +94,12 @@ Use [`line-height`](https://developer.mozilla.org/docs/Web/CSS/line-height) to s
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'XWaqQjv'
 } %}
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'ExvLJNx'
 } %}
 
 ## Change the space between characters
@@ -106,7 +109,7 @@ Note that the specified value *increases* the amount of natural space between ch
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'abyGxBz'
 } %}
 
 ## Change the space between words
@@ -114,7 +117,7 @@ Use [`word-spacing`](https://developer.mozilla.org/docs/Web/CSS/word-spacing) to
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'xxLjeRG'
 } %}
 
 ## `font` shorthand
@@ -124,7 +127,7 @@ Check out [MDN’s `font` article](https://developer.mozilla.org/docs/Web/CSS/fo
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'JjyvVbY'
 } %}
 
 ## Change the case of text
@@ -132,7 +135,7 @@ Use [`text-transform`](https://developer.mozilla.org/docs/Web/CSS/text-transform
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'qBXYwqb'
 } %}
 
 ## Add underlines, overlines, and through-lines to text
@@ -144,47 +147,48 @@ Use [`text-decoration`](https://developer.mozilla.org/docs/Web/CSS/text-decorati
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'LYjmvbN'
 } %}
 
 [`text-decoration-color`](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) sets the color of all decorations from `text-decoration-line`.
 	
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'oNedOYL'
 } %}
 
 [`text-decoration-style`](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) accepts the keywords `solid`, `double`, `dotted`, `dashed`, and `wavy`.
 	
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'dyzeLOp'
 } %}
 
 [`text-decoration-thickness`](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) accepts any length values and sets the stroke width of all decorations from `text-decoration-line`.
 	
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'VwzxNmm'
 } %}
 
 `text-decoration` is shorthand for all the above properties.  
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'YzxLMpN'
 } %}
 
 
 {% Aside %}
 Use [`text-underline-position`](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) to offset the underline of a `text-decoration: underline` by the specified amount. This property doesn’t work for `overline` or `line-through`.
 {% endAside %}
+
 ## Add an indent to your text
 Use [`text-indent`](https://developer.mozilla.org/docs/Web/CSS/text-indent) to add an indent to your blocks of text. This property takes either a length (e.g. `10px`, `2em`) or a percentage of the containing block’s width.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'RwZyOoV'
 } %}
 
 ## Deal with overflowing or hidden content
@@ -192,7 +196,7 @@ Use [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'GRvdLNv'
 } %}
 
 ## Control white-space
@@ -200,7 +204,7 @@ The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-sp
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'PoKegbO'
 } %}
 
 
@@ -208,7 +212,7 @@ The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-sp
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'OJjZGbz'
 } %}
 
 ## Control how words break
@@ -216,7 +220,7 @@ Use [`word-break`](https://developer.mozilla.org/docs/Web/CSS/word-break) to cha
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'BadxEQY'
 } %}
 
 
@@ -234,7 +238,7 @@ Use [`text-align`](https://developer.mozilla.org/docs/Web/CSS/text-align) to spe
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'bGrMJBM'
 } %}
 
 ## Change the direction of text
@@ -243,12 +247,13 @@ Use [`direction`](https://developer.mozilla.org/docs/Web/CSS/direction) to set t
 {% Aside 'caution' %}
 Generally, you should favor using the [HTML attribute `dir`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir) instead of `direction`. Check out [this StackOverflow discussion](https://stackoverflow.com/a/5375907) for more details.
 {% endAside %}
+
 ## Change the flow of text
 Use [`writing-mode`](https://developer.mozilla.org/docs/Web/CSS/writing-mode) to change the way text flows and is arranged. The default is `horizontal-tb`, but you can also set `writing-mode` to `vertical-lr` or `vertical-rl` for text that you want to flow horizontally.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'WNEJWoK'
 } %}
 
 ## Change the orientation of text
@@ -256,7 +261,7 @@ Use [`text-orientation`](https://developer.mozilla.org/docs/Web/CSS/text-orienta
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'QWMrPGV'
 } %}
 
 ## Add a shadow to text
@@ -264,27 +269,36 @@ Use [`text-shadow`](https://developer.mozilla.org/docs/Web/CSS/text-shadow) to a
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'jOLxRVe'
 } %}
 
-
 Check out [the `text-shadow` section of our module on Shadows](/learn/css/shadows/#text-shadow) to learn more. 
+
 ## Variable fonts
 Typically, “normal” fonts require importing different files for different versions of the typeface, e.g. bold, italic, or condensed. Variable fonts are fonts that can contain many different variants of a typeface in one file. 
 
-VIDEO: hotlink this mp4 from the Variable Fonts article
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-dance.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    Roboto Flex in random combinations of Width and Weight
+  </figcaption>
+</figure>
 
 Check out [our article on Variable Fonts](/variable-fonts/) for more details.
+
 ## Pseudo-elements
 {% Aside 'key-term' %}
 A *pseudo-element* is a part of an element that you can target via CSS keywords without having to add more HTML. Check out [our module on pseudo-elements](/learn/css/pseudo-elements) for a deep-dive into this subject!
 {% endAside %}
+
 ## `::first-letter` and `::first-line` pseudo-elements
 [`::first-letter`](https://developer.mozilla.org/docs/Web/CSS/::first-letter) and [`::first-line`](https://developer.mozilla.org/docs/Web/CSS/::first-line) are pseudo-elements that target a text element’s first letter and first line respectively.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'KKvRYNr'
 } %}
 
 ## `::selection` pseudo-element
@@ -294,7 +308,7 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'MWvGRbx'
 } %}
 
 ## font-variant
@@ -302,7 +316,7 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx'
+  id: 'eYEroBa'
 } %}
 
 ## Read more
