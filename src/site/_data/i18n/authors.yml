@@ -3547,7 +3547,7 @@ alexandrawhite:
       pt: Alexandra White
       ru: Alexandra White
       zh: Alexandra White
-   description:
+  description:
       en: Technical Writer at Google.
       es: Escritor técnico en Google
       ja: Google のテクニカルライター
@@ -3559,6 +3559,7 @@ alexandrawhite:
 svenmay:
   title: 
       en: Sven May
+
 dstasyev:
   title: 
       en: Denis Stasyev
