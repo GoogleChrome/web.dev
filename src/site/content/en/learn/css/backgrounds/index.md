@@ -41,7 +41,7 @@ On top of the `background-color` layer, you can add a background image, using th
 * An image URL or [data URI](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) using the `url` CSS function.
 * An image dynamically created by a gradient CSS function.
 
-### Setting a background-image with the `url` CSS function.
+### Setting a background-image with the `url` CSS function
 
 {% Codepen {
   user: 'web-dot-dev',
