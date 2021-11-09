@@ -95,7 +95,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
 </div>
  
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ZL7y3ZCpbMcqlOv9mLpV.png", alt="CWV metrics before optimization show roughly 1/3 of users in the poor bucket.", width="800", height="479" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ZL7y3ZCpbMcqlOv9mLpV.png", alt="Core Web Vitals before optimization show roughly 1/3 of users in the poor bucket.", width="800", height="479" %}
   <figcaption>Web Vitals values before the improvements.</figcaption>
 </figure> 
 
