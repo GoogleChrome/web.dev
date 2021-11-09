@@ -99,7 +99,8 @@ When CSS lengths and percentages are used, the first parameter corresponds to th
 
 When keywords are only used the order of the keywords does not matter:
 {% Compare 'better'}
-```
+
+```css
 background-position: left 50%
 ```
 {% endCompare%}
@@ -110,9 +111,9 @@ background-position: top left;
 
 
 {% Compare 'better' %}
-```
+
+```css
 background-position: left top;
-```
 {% CompareCaption %}
 Order does not matter for keywords associated with different axes of position
 {% endCompareCaption
@@ -120,18 +121,17 @@ Order does not matter for keywords associated with different axes of position
 
 
 {% Compare 'Worse' %}
-```
+
+```css
   background-position: 50% left;
-```
 {% CompareCaption %}
 When CSS values are used alongside keywords, it must be preceded by a keyword.
 {% endCompareCaption %}
 {% endCompare%}
 
 {% Compare 'Worse' %}
-```
+```css
   background-position: left right;
-```
 {% CompareCaption %}
 You cannot use keywords associated with the same axis simultaneously.
 {% endCompareCaption %}
