@@ -99,7 +99,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
   <figcaption>Web Vitals values before the improvements.</figcaption>
 </figure> 
 
-## Improving CWV
+## Improving Core Web Vitals
 
 While plenty of guidance exists for improving CWV, every project has unique challenges. For the Mail.ru home page, the following opportunities were identified:
 
