@@ -113,7 +113,7 @@ To make images responsive across devices, developers must set the `srcset` and `
 2. `imageSizes` property: This is also a configurable property used to get the image sizes corresponding to device size breakpoints.
 3. `layout` attribute in each image: This is used to indicate how to use the `deviceSizes` and `imageSizes` properties for each image. The supported values for layout mode are `fixed`, `fill`, `intrinsic` and `responsive`
 
-When an image is requested with layout modes _responsive_ or _fill, _Next.js identifies the image to be served based on the size of the device requesting the page and sets the `srcset` and `sizes` in the image appropriately.
+When an image is requested with layout modes _responsive_ or _fill_, Next.js identifies the image to be served based on the size of the device requesting the page and sets the `srcset` and `sizes` in the image appropriately.
 
 The following comparison shows how the layout mode can be used to control the size of the image on different screens. We have used a [demo image](https://image-component.nextjs.gallery/layout-intrinsic) shared in the Next.js docs, viewed on a phone and a standard laptop.
 
