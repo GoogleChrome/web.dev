@@ -241,7 +241,7 @@ The decrease in values from May 1 to May 10 is due to May holidays in Russia.
   <figcaption>CLS graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure> 
 
-CWV results obtained using the "Platform" are in line with the growth of metric values in [Chrome UX Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
+Results obtained using the "Platform" are in line with the growth of metric values in [Chrome UX Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
 
 <figure class="w-figure">
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/41Czys52EyEMyYv3fI2w.png", alt="LCP metric from CrUX showing increase from 51% to 58% in the good bucket.", width="800", height="499" %}
