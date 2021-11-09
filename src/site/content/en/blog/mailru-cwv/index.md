@@ -285,6 +285,6 @@ After analyzing the rest of the sections on the page, we noticed significant per
 
 ## Conclusion
  
-Improving CWV is challenging in that the work involved may be prolonged. You should regularly monitor changes in metrics over time and ensure that all new product features don't cause regressions in CWV metrics. To achieve this, we applied CWV metrics in our [performance budget](https://web.dev/performance-budgets-101/). 
+Improving performance is challenging in that the work involved may be prolonged. You should regularly monitor changes in metrics over time and ensure that all new product features don't cause regressions in Core Web Vitals. To achieve this, we monitor changes in Core Web Vitals in our [performance budget](https://web.dev/performance-budgets-101/). 
  
 Most important, we stressed the importance of CWV with all members of our product team, from managers and designers to testers and QA. Each team member should be aware of performance metrics and be empowered to improve them. We also incorporate CWV optimization objectives into our business processes in a regular cadence. Success by providing a high-quality user experience is only possible through a cooperative effort by all team members.
