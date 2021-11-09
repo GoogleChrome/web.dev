@@ -2,7 +2,7 @@
 layout: post
 title: Improving Core Web Vitals on the Mail.ru home page resulted in an average 10% increase in conversion rates
 subhead: |
-  Several months of work to improve Core Web Vitals (CWV) metrics on the home page of Mail.ru resulted in a 60% increase in the 75th percentile in Cumulative Layout Shift (CLS), boosting average session time by 2.7% and conversion rates of core sections by more than 10%.
+  Several months of work to improve Core Web Vitals on the home page of Mail.ru resulted in a 60% increase in the 75th percentile in Cumulative Layout Shift (CLS), boosting average session time by 2.7% and conversion rates of core sections by more than 10%.
 description: |
   Several months of work to improve Core Web Vitals (CWV) metrics on the home page of Mail.ru resulted in a 60% increase in the 75th percentile in Cumulative Layout Shift (CLS), boosting average session time by 2.7% and conversion rates of core sections by more than 10%.
 authors:
