@@ -3539,7 +3539,7 @@ bckenny:
     en: Lighthouse lens polisher
     
 alexandrawhite:
-   title: 
+  title: 
       en: Alexandra White
       es: Alexandra White
       ja: Alexandra White
@@ -3555,3 +3555,11 @@ alexandrawhite:
       pt: Escritora técnica na empresa Google
       ru: Технический писатель в компании Google
       zh: Google 的技术撰稿人
+
+svenmay:
+  title: 
+      en: Sven May
+dstasyev:
+  title: 
+      en: Denis Stasyev
+
