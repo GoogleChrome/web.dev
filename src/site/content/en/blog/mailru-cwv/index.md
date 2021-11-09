@@ -222,7 +222,7 @@ After the optimization effort, we observed the mean values for the week of 24-30
 The graphs below show changes in web page performance metrics values according to the "Platform". Note the two important dates on the graphs:
  
 - 23 March 2021: the release of iteration with the last page sections migrated to Svelte;
-- 19 April 2021: the release of iteration with returned SSR and layout modified to correct CLS CWV.
+- 19 April 2021: the release of iteration with returned SSR and layout modified to correct CLS regressions.
 
 The decrease in values from May 1 to May 10 is due to May holidays in Russia.
 
