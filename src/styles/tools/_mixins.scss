@@ -121,7 +121,7 @@
   justify-content: center;
   letter-spacing: 1px;
   outline: 0;
-  padding: 0 16px !important;
+  padding: 0 16px !important; // `.button` from new design system removes padding, this keeps it.
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
