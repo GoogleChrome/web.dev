@@ -130,7 +130,7 @@ Use [`word-spacing`](https://developer.mozilla.org/docs/Web/CSS/word-spacing) to
 
 ## `font` shorthand
 
-You can use the shorthand [`font`](https://developer.mozilla.org/docs/Web/CSS/font) property to set many font-related properties at once. The list of possible properties are [`font-family`](#font-family), [`font-size`](#font-size), [`font-stretch`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch), [`font-style`](#font-style), [`font-variant`](#font-variant), [`font-weight`](#font-weight), and [`line-height`](#line-height).
+You can use the shorthand [`font`](https://developer.mozilla.org/docs/Web/CSS/font) property to set many font-related properties at once. The list of possible properties are [`font-family`](#font-family), [`font-size`](#font-size), [`font-stretch`](https://developer.mozilla.org/docs/Web/CSS/font-stretch), [`font-style`](#font-style), [`font-variant`](#font-variant), [`font-weight`](#font-weight), and [`line-height`](#line-height).
 
 Check out [MDN’s `font` article](https://developer.mozilla.org/docs/Web/CSS/font#syntax) for the specifics of how to order these properties.
 
