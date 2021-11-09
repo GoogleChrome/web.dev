@@ -62,7 +62,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
         <td>TTI</td>
       </tr>
       <tr>
-        <td rowspan="3">Share of users in accordance with CWV thresholds</td>
+        <td rowspan="3">Share of users in accordance with Core Web Vitals thresholds</td>
         <td>good</td>
         <td>52%</td>
         <td>92%</td>
