@@ -1,10 +1,10 @@
 ---
-title: Typography
+title: Text & Typography
 description: >
   TODO  
 audio:
-  title: 'TODO'
-  src: TODO
+  title: 'The CSS Podcast - 036: Text & Typography'
+  src: https://traffic.libsyn.com/secure/thecsspodcast/TCP036_v2.mp3?dest-id=1891556
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - cambickel
@@ -23,7 +23,9 @@ However, text will likely make up the majority of your website, so it’s worthw
 } %}
 
 In this module, we’ll first look at some fundamental CSS font properties like `font-family`, `font-style`, `font-weight`, and `font-size`. Then, we’ll dive into properties that affect paragraphs of text, such as `text-indent` and `word-spacing`. The module finishes with some more advanced topics such as variable fonts and text rendering.
+
 ## Change the typeface
+
 Use [`font-family`](https://developer.mozilla.org/docs/Web/CSS/font-family) to change the typeface of your text. 
 
 `font-family` accepts a comma-separated list of strings, either referring to *specific* or *generic* font families. Specific font families are quoted strings, such as “Helvetica”, “EB Garamond”, or “Times New Roman”. Generic font families are keywords such as `serif`, `sans-serif`, and `monospace` (find the [full list of options on MDN](https://developer.mozilla.org/docs/Web/CSS/font-family#values). The browser will display the first available typeface from the provided list. 
@@ -40,6 +42,7 @@ When using `font-family`, you should specify at least one generic font family in
 } %}
 
 ## Use italic and oblique fonts
+
 Use [`font-style`](https://developer.mozilla.org/docs/Web/CSS/font-style) to set whether text should be italic or not. `font-style` accepts one of the following keywords: `normal`, `italic`, and `oblique`.
 
 {% Aside %}
@@ -53,6 +56,7 @@ A: In fonts that support it, `font-style: italic` is typically a cursive version
 } %}
 
 ## Make text bold
+
 Use [`font-weight`](https://developer.mozilla.org/docs/Web/CSS/font-weight) to set the “boldness” of text. This property accepts keyword values (`normal`, `bold`), relative keyword values (`lighter`, `bolder`), and numeric values (`100` to `900`).
 
 The keywords `normal` and `bold` are equivalent to the numeric values `400` and `700`, respectively. 
@@ -69,6 +73,7 @@ Most fonts, especially the [“web-safe” ones}(#font-family), only support the
 } %}
 
 ## Change the size of text
+
 Use [`font-size`](https://developer.mozilla.org/docs/Web/CSS/font-size) to control the size of your text elements. This property accepts length values, percentages, and a handful of keyword values.
 
 In addition to length and percentage values, `font-size` accepts some *absolute* keyword values (`xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`) and a couple of *relative* keyword values (`smaller`, `larger`). The relative values are relative to the parent element’s `font-size`.
@@ -90,6 +95,7 @@ A: In CSS, `em` represents the `font-size` inherited from the element’s parent
 } %}
 
 ## Change the space between lines
+
 Use [`line-height`](https://developer.mozilla.org/docs/Web/CSS/line-height) to specify the height of each line in an element. This property accepts either a number, length, percentage, or the keyword `normal`. Generally, it’s recommended to use a number instead of a length or percentage to avoid issues with inheritance. 
 
 {% Codepen {
@@ -103,6 +109,7 @@ Use [`line-height`](https://developer.mozilla.org/docs/Web/CSS/line-height) to s
 } %}
 
 ## Change the space between characters
+
 Use [`letter-spacing`](https://developer.mozilla.org/docs/Web/CSS/letter-spacing) to control the amount of horizontal space between characters in your text. This property accepts length values such as `em`, `px`, `rem`, etc.
 
 Note that the specified value *increases* the amount of natural space between characters. In the demo below, try selecting an individual letter to see the size of its letterbox and how it changes with `letter-spacing`.
@@ -113,6 +120,7 @@ Note that the specified value *increases* the amount of natural space between ch
 } %}
 
 ## Change the space between words
+
 Use [`word-spacing`](https://developer.mozilla.org/docs/Web/CSS/word-spacing) to increase or decrease the length of space between each word in your text. This property accepts length values such as `em`, `px`, `rem`, etc. Note that the length you specify is for *extra* space in addition to the normal spacing. This means that `word-spacing: 0` is equivalent to `word-spacing: normal`. 
 
 {% Codepen {
@@ -121,6 +129,7 @@ Use [`word-spacing`](https://developer.mozilla.org/docs/Web/CSS/word-spacing) to
 } %}
 
 ## `font` shorthand
+
 You can use the shorthand [`font`](https://developer.mozilla.org/docs/Web/CSS/font) property to set many font-related properties at once. The list of possible properties are [`font-family`](#font-family), [`font-size`](#font-size), [`font-stretch`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch), [`font-style`](#font-style), [`font-variant`](#font-variant), [`font-weight`](#font-weight), and [`line-height`](#line-height).
 
 Check out [MDN’s `font` article](https://developer.mozilla.org/docs/Web/CSS/font#syntax) for the specifics of how to order these properties.
@@ -131,6 +140,7 @@ Check out [MDN’s `font` article](https://developer.mozilla.org/docs/Web/CSS/fo
 } %}
 
 ## Change the case of text
+
 Use [`text-transform`](https://developer.mozilla.org/docs/Web/CSS/text-transform) to modify the capitalization of your text without needing to change the underlying HTML. This property accepts the following keyword values: `uppercase`, `lowercase`, and `capitalize`.
 
 {% Codepen {
@@ -139,6 +149,7 @@ Use [`text-transform`](https://developer.mozilla.org/docs/Web/CSS/text-transform
 } %}
 
 ## Add underlines, overlines, and through-lines to text
+
 Use [`text-decoration`](https://developer.mozilla.org/docs/Web/CSS/text-decoration) to add lines to your text. Underlines are most commonly used, but it’s possible to add lines above your text or right through it!
 
 `text-decoration` is actually shorthand for more specific properties detailed below.
@@ -184,6 +195,7 @@ Use [`text-underline-position`](https://developer.mozilla.org/docs/Web/CSS/text-
 {% endAside %}
 
 ## Add an indent to your text
+
 Use [`text-indent`](https://developer.mozilla.org/docs/Web/CSS/text-indent) to add an indent to your blocks of text. This property takes either a length (e.g. `10px`, `2em`) or a percentage of the containing block’s width.
 
 {% Codepen {
@@ -192,6 +204,7 @@ Use [`text-indent`](https://developer.mozilla.org/docs/Web/CSS/text-indent) to a
 } %}
 
 ## Deal with overflowing or hidden content
+
 Use [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) to specify how hidden content is represented. There are two options: `clip` (the default), which truncates the text at the point of overflow; and `ellipsis`, which displays an ellipsis (…) at the point of overflow.
 
 {% Codepen {
@@ -200,6 +213,7 @@ Use [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) 
 } %}
 
 ## Control white-space
+
 The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-space) is used to specify how whitespace in an element should be handled. For more details, check out the [`white-space` article on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space).
 
 {% Codepen {
@@ -216,6 +230,7 @@ The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-sp
 } %}
 
 ## Control how words break
+
 Use [`word-break`](https://developer.mozilla.org/docs/Web/CSS/word-break) to change how words should be “broken” when they would overflow the line. By default, the browser will not split words. Using the keyword value `break-all` for `word-break` will instruct the browser to break words at individual characters if necessary.
 
 {% Codepen {
@@ -225,6 +240,7 @@ Use [`word-break`](https://developer.mozilla.org/docs/Web/CSS/word-break) to cha
 
 
 ## Change text alignment
+
 Use [`text-align`](https://developer.mozilla.org/docs/Web/CSS/text-align) to specify the horizontal alignment of text in a block or table-cell element. This property accepts the keyword values `left`, `right`, `start`, `end`, `center`, `justify`, and `match-parent`.
 
 `left` and `right` align the text to the left and right sides of the block, respectively.
@@ -242,6 +258,7 @@ Use [`text-align`](https://developer.mozilla.org/docs/Web/CSS/text-align) to spe
 } %}
 
 ## Change the direction of text
+
 Use [`direction`](https://developer.mozilla.org/docs/Web/CSS/direction) to set the direction of your text, either `ltr` (left to right, the default) or `rtl` (right to left). Some languages like Arabic, Hebrew, or Persian are written right to left, so `direction: rtl` should be used. For English and all other left-to-right languages, use `direction: ltr`.
 
 {% Aside 'caution' %}
@@ -249,6 +266,7 @@ Generally, you should favor using the [HTML attribute `dir`](https://developer.m
 {% endAside %}
 
 ## Change the flow of text
+
 Use [`writing-mode`](https://developer.mozilla.org/docs/Web/CSS/writing-mode) to change the way text flows and is arranged. The default is `horizontal-tb`, but you can also set `writing-mode` to `vertical-lr` or `vertical-rl` for text that you want to flow horizontally.
 
 {% Codepen {
@@ -257,6 +275,7 @@ Use [`writing-mode`](https://developer.mozilla.org/docs/Web/CSS/writing-mode) to
 } %}
 
 ## Change the orientation of text
+
 Use [`text-orientation`](https://developer.mozilla.org/docs/Web/CSS/text-orientation) to specify the orientation of characters in your text. The valid values for this property are `mixed` and `upright`. This property is only relevant when [`writing-mode`](#writing-mode) is set to something other than `horizontal-tb`. 
 
 {% Codepen {
@@ -265,6 +284,7 @@ Use [`text-orientation`](https://developer.mozilla.org/docs/Web/CSS/text-orienta
 } %}
 
 ## Add a shadow to text
+
 Use [`text-shadow`](https://developer.mozilla.org/docs/Web/CSS/text-shadow) to add a shadow to your text. This property expects three lengths (`x-offset`, `y-offset`, and `blur-radius`) and a color.
 
 {% Codepen {
@@ -275,6 +295,7 @@ Use [`text-shadow`](https://developer.mozilla.org/docs/Web/CSS/text-shadow) to a
 Check out [the `text-shadow` section of our module on Shadows](/learn/css/shadows/#text-shadow) to learn more. 
 
 ## Variable fonts
+
 Typically, “normal” fonts require importing different files for different versions of the typeface, e.g. bold, italic, or condensed. Variable fonts are fonts that can contain many different variants of a typeface in one file. 
 
 <figure class="w-figure">
@@ -289,11 +310,13 @@ Typically, “normal” fonts require importing different files for different ve
 Check out [our article on Variable Fonts](/variable-fonts/) for more details.
 
 ## Pseudo-elements
+
 {% Aside 'key-term' %}
 A *pseudo-element* is a part of an element that you can target via CSS keywords without having to add more HTML. Check out [our module on pseudo-elements](/learn/css/pseudo-elements) for a deep-dive into this subject!
 {% endAside %}
 
 ## `::first-letter` and `::first-line` pseudo-elements
+
 [`::first-letter`](https://developer.mozilla.org/docs/Web/CSS/::first-letter) and [`::first-line`](https://developer.mozilla.org/docs/Web/CSS/::first-line) are pseudo-elements that target a text element’s first letter and first line respectively.
 
 {% Codepen {
@@ -302,6 +325,7 @@ A *pseudo-element* is a part of an element that you can target via CSS keywords 
 } %}
 
 ## `::selection` pseudo-element
+
 Use the [`::selection`](https://developer.mozilla.org/docs/Web/CSS/::selection) pseudo-element to change the appearance of user-selected text.
 
 When using this pseudo-element, only certain CSS properties can be used: `color`, `background-color`, `text-decoration`, `text-shadow`, `stroke-color`, `fill-color`, `stroke-width`.
@@ -312,6 +336,7 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 } %}
 
 ## font-variant
+
 [`font-variant`](https://developer.mozilla.org/docs/Web/CSS/font-variant) is a shorthand for a number of CSS properties that let you choose font variants like `small-caps` and `slashed-zero`. The CSS properties this shorthand includes are [`font-variant-alternates`](https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates), [`font-variant-caps`](https://developer.mozilla.org/docs/Web/CSS/font-variant-caps), [`font-variant-east-asian`](https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian), [`font-variant-ligatures`](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures), and [`font-variant-numeric`](https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric). Check out the links on each property for more details about its usage.
 
 {% Codepen {
@@ -320,5 +345,5 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 } %}
 
 ## Read more
-/font-best-practices/
-This article discusses importing fonts, rendering fonts, and other best practices for using fonts on the web
+
+[This article on web.dev](/font-best-practices/) discusses importing fonts, rendering fonts, and other best practices for using fonts on the web
