@@ -23,7 +23,7 @@ tags:
  
 Mail.ru is one of the leading e-mail services on the Russian-speaking Internet and is [in the top 5 sites in Russia in terms of traffic](https://www.alexa.com/topsites/countries/RU). Mail.ru is an important resource for many people. It receives several hundred million visits per month, and is a portal from where people can access email, news, social media, performance internet searches and more.
  
-Mail.ru wanted to provide its visitors with a high quality user experience, so work began to improve Core Web Vitals (CWV). Before discussing our optimization strategy, a few technical details of the Mail.ru home page should first be noted.
+Mail.ru wanted to provide its visitors with a high quality user experience, so work began to improve Core Web Vitals. Before discussing our optimization strategy, a few technical details of the Mail.ru home page should first be noted.
  
 Though the project had long been developed using our in-house templating engine [Fest](https://github.com/mailru/fest), we began to migrate to [Svelte 3](https://svelte.dev/) in 2019.
 
