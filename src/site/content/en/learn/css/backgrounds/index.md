@@ -98,18 +98,18 @@ As with `background-repeat`,  the `background-position` property allows you to p
 When CSS lengths and percentages are used, the first parameter corresponds to the horizontal axis while the second parameter corresponds to the vertical axis.
 
 When keywords are only used the order of the keywords does not matter:
-{% Compare ‘better’}
+{% Compare 'better'}
 ```
 background-position: left 50%
 ```
 {% endCompare%}
 
-{% Compare ‘better’ %}
+{% Compare 'better' %}
 background-position: top left;
 {% endCompare %}
 
 
-{% Compare ‘better’ %}
+{% Compare 'better' %}
 ```
 background-position: left top;
 ```
@@ -119,7 +119,7 @@ Order does not matter for keywords associated with different axes of position
 {% endCompare %}
 
 
-{% Compare ‘Worse’ %}
+{% Compare 'Worse' %}
 ```
   background-position: 50% left;
 ```
@@ -128,7 +128,7 @@ When CSS values are used alongside keywords, it must be preceded by a keyword.
 {% endCompareCaption %}
 {% endCompare%}
 
-{% Compare ‘Worse’ %}
+{% Compare 'Worse' %}
 ```
   background-position: left right;
 ```
@@ -138,7 +138,7 @@ You cannot use keywords associated with the same axis simultaneously.
 {% endCompare%}
 
 
-The `background-position` property also has a convenient one value shorthand; the omitted value resolves to `50%`.  Here’s an example that demonstrates this using the keywords the `background-position` property accepts:
+The `background-position` property also has a convenient one value shorthand; the omitted value resolves to `50%`.  Here's an example that demonstrates this using the keywords the `background-position` property accepts:
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -154,19 +154,19 @@ When three parameters are used, a CSS length or value can be the second or third
 
 
 
-{% Compare ‘better’ %}
+{% Compare 'better' %}
 ```css
 background-position: bottom 88% right;
 ```
 {% endCompare %}
 
-{% Compare ‘better’ %}
+{% Compare 'better' %}
 ```css
 background-position: right bottom 88%;
 ```
 {% endCompare %}
 
-{% Compare ‘better %}
+{% Compare 'better %}
 ```css
 background-position: 88% bottom right;
 ```
@@ -175,21 +175,21 @@ CSS length value must be preceded by the 'top', 'right', 'bottom', or 'left keyw
 {% endCompareCaption %}
 {% endCompare %}
 
-{% Compare ‘better’ %}
+{% Compare 'better' %}
 ```css
 background-position: bottom 88% right 33%;
 ```
 {% endCompare %}
 
 
-{% Compare ‘better %}
+{% Compare 'better %}
 ```css
 background-position: right 33% bottom 88%;
 ```
 {% endCompare %}
 
 
-{% Compare ‘better’ %}
+{% Compare 'better' %}
 ```css
 background-position: 88% 33% bottom left;
 ```
@@ -268,7 +268,7 @@ Once the space of the background layer images originally takes up needs to be sc
   tab: 'result'
 } %}
 
-The `local` keyword enables the position of background images to be fixed relative to the element’s contents. Background images now move along the space they occupy as that space renders inside and outside the bounds of the CSS box (usually due to scrolling, 2D, or 3D transformations).
+The `local` keyword enables the position of background images to be fixed relative to the element's contents. Background images now move along the space they occupy as that space renders inside and outside the bounds of the CSS box (usually due to scrolling, 2D, or 3D transformations).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -317,7 +317,7 @@ It should be also noted this property is not compatible with `background-clip: t
 
 ## Multiple backgrounds
 
-As mentioned at the beginning of the module, the background layer allows multiple sublayers to be defined. For brevity, I’ll refer to these sublayers as backgrounds.
+As mentioned at the beginning of the module, the background layer allows multiple sublayers to be defined. For brevity, I'll refer to these sublayers as backgrounds.
 
 Multiple backgrounds are defined top to bottom; The first background is the closest to the user, while the last background is the furthest from the user.
 
