@@ -167,7 +167,7 @@ After the optimization effort, we observed the mean values for the week of 24-30
     <thead>
       <tr>
         <th colspan="2" width="40%">Metrics group name</th>
-        <th colspan="3" width="30%">CWV</th>
+        <th colspan="3" width="30%">Core Web Vitals</th>
         <th colspan="3" width="30%">Other Web Vitals</th>
       </tr>
     </thead>
