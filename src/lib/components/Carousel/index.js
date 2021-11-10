@@ -17,35 +17,23 @@
 import {BaseElement} from '../BaseElement';
 
 class Carousel extends BaseElement {
-  static get properties() {
-    return {
-      // Allows for the carousel to automatically transition between slides when a `interval` is set.
-      interval: {type: Number},
-    };
-  }
-
   constructor() {
     super();
 
     /** @type {HTMLElement} */
     this._carouselTrack = undefined;
     /** @type {number} */
-    this._index = 0;
-    /** @type {number} */
-    this.interval = 0;
+    this._index = -1;
     /** @type {HTMLElement[]} */
     this._items = [];
     /** @type {HTMLButtonElement} */
     this._nextButton = undefined;
     /** @type {HTMLButtonElement} */
     this._previousButton = undefined;
-    /** @type {number} */
-    this._timeout = undefined;
 
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
+    this._next = this._next.bind(this);
     this._onKeyup = this._onKeyup.bind(this);
-    this._onScroll = this._onScroll.bind(this);
+    this._previous = this._previous.bind(this);
   }
 
   connectedCallback() {
@@ -62,72 +50,51 @@ class Carousel extends BaseElement {
     ]);
 
     this._previousButton = this.querySelector('button[data-direction="prev"]');
-    this._previousButton.addEventListener('click', this.previous);
+    this._previousButton.addEventListener('click', this._previous);
+
     this._nextButton = this.querySelector('button[data-direction="next"]');
-    this._nextButton.addEventListener('click', this.next);
+    this._nextButton.addEventListener('click', this._next);
 
     this._items.forEach((e, i) =>
-      e.addEventListener('focusin', () => this.moveSlide(i - this._index)),
+      e.addEventListener('focusin', () => this._moveSlide(i - this._index)),
     );
-
     this._carouselTrack.addEventListener('keyup', this._onKeyup);
-    this._carouselTrack.addEventListener('touchmove', this._onScroll);
-    this._carouselTrack.addEventListener('wheel', this._onScroll);
-    this.moveSlide(0, false);
+
+    this._moveSlide(0);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this._previousButton?.removeEventListener('click', this.previous);
-    this._nextButton?.removeEventListener('click', this.next);
-    window.clearTimeout(this._timeout);
+    this._previousButton?.removeEventListener('click', this._previous);
+    this._nextButton?.removeEventListener('click', this._next);
     this._items.forEach((e) => e.removeChild(e));
     this._carouselTrack?.removeEventListener('keyup', this._onKeyup);
-    this._carouselTrack?.removeEventListener('touchmove', this._onScroll);
-    this._carouselTrack?.removeEventListener('wheel', this._onScroll);
   }
 
   /**
-   * Sets the new current slide index and scrolls to it if necessary.
+   * Sets the new current slide index and scrolls to it.
    *
-   * @param {number} increment How many items to move by
-   * @param {boolean} scroll Whether to move the user's viewport.
+   * @param {number} increment How many items to move by.
    */
-  moveSlide(increment, scroll = true) {
-    const elementCount = this._items.length;
-    let newIndex = this._index + increment;
+  _moveSlide(increment) {
+    this._index = this._index + increment;
 
-    if (newIndex < 0) {
-      newIndex = elementCount - 1;
-    } else if (newIndex >= elementCount) {
-      newIndex = 0;
+    if (this._index < 0) {
+      this._index = 0;
+    } else if (this._index >= this._items.length) {
+      this._index = this._items.length - 1;
     }
 
-    if (newIndex === this._index) {
-      return;
-    }
-    if (this._timeout) clearTimeout(this._timeout);
-
-    this._items.forEach((e, i) => e.classList.toggle('active', i === newIndex));
-    this._index = newIndex;
     const active = this._items[this._index];
-    if (this.interval === 0) {
-      active.focus({preventScroll: true});
-    } else {
-      this._timeout = window.setTimeout(this.next, this.interval);
-    }
-
-    if (scroll) {
-      this._carouselTrack.scrollTo(active.offsetLeft, 0);
-    }
+    active.focus({preventScroll: true});
+    this._carouselTrack.scrollTo(active.offsetLeft, 0);
   }
 
-  next() {
-    this.moveSlide(1);
-  }
-
-  previous() {
-    this.moveSlide(-1);
+  /**
+   * Event listener function for next button.
+   */
+  _next() {
+    this._scroll(true);
   }
 
   /**
@@ -138,18 +105,22 @@ class Carousel extends BaseElement {
   _onKeyup(e) {
     switch (e.key) {
       case 'ArrowLeft':
-        return this.previous();
+        return this._moveSlide(-1);
       case 'ArrowRight':
-        return this.next();
+        return this._moveSlide(1);
       default:
         break;
     }
   }
 
   /**
-   * Event listener function that determines which element a user has scrolled to.
+   * Event listener function for previous button.
    */
-  _onScroll() {
+  _previous() {
+    this._scroll(false);
+  }
+
+  _scroll(forward = true) {
     for (let i = 0; i < this._items.length; i++) {
       const item = this._items[i];
       const overflow =
@@ -159,7 +130,17 @@ class Carousel extends BaseElement {
         this._carouselTrack.scrollLeft + overflow <=
         item.offsetLeft + item.offsetWidth
       ) {
-        return this.moveSlide(i - this._index, false);
+        let index = i + (forward ? 1 : -1);
+
+        if (index < 0) {
+          index = 0;
+        } else if (index >= this._items.length) {
+          index = this._items.length - 1;
+        }
+
+        const scrollTo = this._items[index];
+
+        return this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
       }
     }
   }
