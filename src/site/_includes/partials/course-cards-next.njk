@@ -5,7 +5,7 @@
     <button class="icon-button" data-direction="prev" aria-label="back">
       {% include "icons/carat-back.svg" %}
     </button>
-    <div class="carousel__track reel" data-scroll="snap" aria-label="available courses">
+    <div class="carousel__track reel scrollbar" data-scroll="snap" aria-label="available courses">
       {# Convert the courses object into an array of objects. #}
       {% set coursesArr = helpers.values(courses) %}
       {# Sort courses by descending date order (most recent comes first) #}
