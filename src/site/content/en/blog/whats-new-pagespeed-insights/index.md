@@ -218,7 +218,7 @@ dataset, provides insights into the real-world user experience. The data
 includes metrics such as [First Contentful Paint](/fcp/) (FCP),
 and measures Core Web Vitals  ([First Input Delay](/fid/) (FID),
 [Largest Contentful Paint](/lcp/) (LCP), and [Cumulative Layout
-Shift](/cls/) (CLS)). Along with the metric values, you can also
+Shift](/cls/) (CLS). Along with the metric values, you can also
 see the distribution of pages where the value of a particular metric was Good,
 Needs Improvement, or Poor, indicated by green, amber, and red bars,
 respectively. The distribution and scores are shown based on page loads for
