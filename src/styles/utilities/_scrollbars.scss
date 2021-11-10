@@ -1,3 +1,5 @@
+@import '../tools/mixins';
+
 %scrollbar,
 .scrollbar {
   @include scrollbars(6px, $GREY_500);
