@@ -193,7 +193,7 @@ Now that I know that the current setup is multi-screen, I can obtain more inform
 second screen using `Window.getScreenDetails()`. Calling this function will show a permission prompt that
 asks me whether the site may open and place windows on my screen. The function returns a promise
 that resolves with a `ScreenDetailed` object. On my MacBook Pro 13 with a connected iPad,
-this includes a field `screens` with two `ScreenDetailed` objects:
+this includes a `screens` field with two `ScreenDetailed` objects:
 
 ```js
 await window.getScreenDetails();
