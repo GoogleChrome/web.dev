@@ -1,7 +1,7 @@
 import {html} from 'lit-element';
 import {store} from '../../store';
 import {BaseStateElement} from '../BaseStateElement';
-import {DOM, ReportRenderer, ReportUIFeatures} from 'lighthouse-viewer';
+import {renderReport} from 'lighthouse/renderer';
 import './_styles.scss';
 
 /**
@@ -45,13 +45,12 @@ class LighthouseViewer extends BaseStateElement {
    * @param {Element} container Html element where the report will be rendered.
    */
   generateReport = (lighthouseReport, container) => {
-    const dom = new DOM(document);
-    const renderer = new ReportRenderer(dom);
-    renderer.renderReport(lighthouseReport, container);
-    const features = new ReportUIFeatures(dom);
-    features.initFeatures(lighthouseReport);
-    // Force remove dark theme support untill whole of web.dev supports it.
-    this.varsEl.classList.remove('dark');
+    for (const child of container.children) child.remove();
+    const reportRootEl = renderReport(lighthouseReport, {
+      disableAutoDarkModeAndFireworks: true,
+      omitTopbar: true,
+    });
+    container.append(reportRootEl);
   };
 
   onStateChanged() {

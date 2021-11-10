@@ -10,11 +10,6 @@ web-lighthouse-viewer {
     --score-icon-size: 12px;
   }
 
-  .lh-topbar,
-  .lh-sticky-header {
-    display: none;
-  }
-
   .lh-error-msg {
     color: $RED_600;
     max-width: 100%;
