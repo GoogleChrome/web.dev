@@ -151,7 +151,7 @@ property which will be <code>true</code> if the page was restored from bfcache
 to distinguish regular page loads from bfcache restores. For example:
 
 ```js
-window.addEventListener('pageshow', function(event) {
+window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
     console.log('This page was restored from the bfcache.');
   } else {
@@ -188,7 +188,7 @@ It means that the browser _intends_ to cache the page, but there may be factors
 that make it impossible to cache.
 
 ```js
-window.addEventListener('pagehide', function(event) {
+window.addEventListener('pagehide', (event) => {
   if (event.persisted === true) {
    console.log('This page *might* be entering the bfcache.');
   } else {
@@ -490,7 +490,7 @@ should be similar for other analytics tools:
 // Send a pageview when the page is first loaded.
 gtag('event', 'page_view')
 
-window.addEventListener('pageshow', function(event) {
+window.addEventListener('pageshow', (event) => {
   if (event.persisted === true) {
     // Send another pageview if the page is restored from bfcache.
     gtag('event', 'page_view')
