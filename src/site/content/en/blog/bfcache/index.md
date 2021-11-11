@@ -190,7 +190,7 @@ that make it impossible to cache.
 ```js
 window.addEventListener('pagehide', (event) => {
   if (event.persisted === true) {
-   console.log('This page *might* be entering the bfcache.');
+    console.log('This page *might* be entering the bfcache.');
   } else {
     console.log('This page will unload normally and be discarded.');
   }
@@ -378,7 +378,7 @@ function openDB() {
 }
 
 // Close the connection to the database when the user is leaving.
-addEventListener('pagehide', () => {
+window.addEventListener('pagehide', () => {
   if (dbPromise) {
     dbPromise.then(db => db.close());
     dbPromise = null;
@@ -386,7 +386,7 @@ addEventListener('pagehide', () => {
 });
 
 // Open the connection when the page is loaded or restored from bfcache.
-addEventListener('pageshow', () => openDB());
+window.addEventListener('pageshow', () => openDB());
 ```
 
 ### Update stale or sensitive data after bfcache restore
@@ -409,7 +409,7 @@ The following code checks for the presence of a site-specific cookie in the
 `pageshow` event and reloads if the cookie is not found:
 
 ```js
-addEventListener('pageshow', (event) => {
+window.addEventListener('pageshow', (event) => {
   if (event.persisted && !document.cookie.match(/my-cookie/)) {
     // Force a reload if the user has logged out.
     location.reload();
@@ -459,13 +459,13 @@ for bfcache. You can fix that by switching from `unload` to using `pagehide` ins
 
 {% Compare 'worse' %}
 ```js
-addEventListener('unload', ...);
+window.addEventListener('unload', ...);
 ```
 {% endCompare %}
 
 {% Compare 'better' %}
 ```js
-addEventListener('pagehide', ...);
+window.addEventListener('pagehide', ...);
 ```
 {% endCompare %}
 
@@ -488,12 +488,12 @@ should be similar for other analytics tools:
 
 ```js
 // Send a pageview when the page is first loaded.
-gtag('event', 'page_view')
+gtag('event', 'page_view');
 
 window.addEventListener('pageshow', (event) => {
   if (event.persisted === true) {
     // Send another pageview if the page is restored from bfcache.
-    gtag('event', 'page_view')
+    gtag('event', 'page_view');
   }
 });
 ```
