@@ -109,7 +109,7 @@ While plenty of guidance exists for improving Core Web Vitals, every project has
  
 ## Skeletons for CLS improvement
 
-CLS was one of the worst performing field metrics for the Mail.ru home page. Subsequent profiling of this page in the [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) of Chrome's DevTools revealed that ads were the source of the problem. To improve layout stability, our team decided to use placeholders to reserve space for ads before they load.
+CLS was one of the worst performing field metrics for the Mail.ru home page. Subsequent profiling of this page in the [**Performance** panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) of Chrome's DevTools revealed that ads were the source of the problem. To improve layout stability, our team decided to use placeholders to reserve space for ads before they load.
 
 When implementing placeholders, the first step is to determine the dimensions of the content that will replace them. Luckily, the desktop version of Mail.ru home page has strictly documented sizes for ads. After talking with the design team, SVG-animated UI skeletons were used as placeholders as [they reduce the perceived load time of the content](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a).
  
