@@ -156,7 +156,7 @@ The [Browserslist Useragent](https://github.com/browserslist/browserslist-userag
  
 Once browsers could be identified in the backend, we implemented code splitting for modern and legacy browsers. The result was a 43.3% reduction in size of the synchronously-loaded JavaScript widget for modern browsers. This practice has been applied to some other portal scripts as well.
 
-In addition to bundle size reduction and positive effects on Core Web Vitals, code splitting improves the developer experience, as a 3.5% share of our users use legacy browsers. Since this share of users is on a downward trend, our team decided to rebuild the process of implementation of new features in the widget. This allows developers to use the latest browser APIs despite the bloat that polyfills introduce for users of legacy browsers.
+In addition to bundle size reduction and positive effects on Core Web Vitals, code splitting improves the developer experience as well. Only 3.5% of our users use legacy browsers and that share is on a downward trend, so implementing code-splitting allowed our developers to use the latest browser APIs without introducing the polyfill bloat necessary for legacy browsers to all users.
 
 ## Results
 
