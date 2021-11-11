@@ -136,7 +136,7 @@ Although Chrome's DevTools showed Layout Shift events, we couldn't find the reas
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448", class="w-screenshot" %}
   <figcaption>Fixing the news painting problem with JavaScript disabled.</figcaption>
 </figure> 
 
