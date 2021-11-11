@@ -30,11 +30,11 @@ bfcache has been supported in both
 and [Safari](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/) for
 many years, across desktop and mobile.
 
-Starting in version 86, Chrome has enabled bfcache for
+Starting in version 86, Chrome enabled bfcache for
 [cross-site](/same-site-same-origin/) navigations on Android for a small
-percentage of users. In Chrome 87, bfcache support will be rolled out to all
-Android users for cross-site navigation, with the intent to support
-[same-site](/same-site-same-origin/) navigation as well in the near future.
+percentage of users. In subsequent releases, additional support slowly rolled
+out. Since version 96, bfcache is enabled for all Chrome users across desktop
+and mobile.
 
 ## bfcache basics
 
@@ -228,16 +228,11 @@ time](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-u
 So browsers are faced with a dilemma, they have to choose between something that
 can improve the user experience—but might also risk breaking the page.
 
-Firefox has chosen to make pages ineligible for bfcache if they add an `unload`
+Chrome and Firefox have chosen to make pages ineligible for bfcache if they add an `unload`
 listener, which is less risky but also disqualifies _a lot_ of pages. Safari
 will attempt to cache some pages with an `unload` event listener, but to reduce
 potential breakage it will not run the `unload` event when a user is navigating
-away.
-
-Since [65% of
-pages](https://www.chromestatus.com/metrics/feature/popularity#DocumentUnloadRegistered)
-in Chrome register an `unload` event listener, to be able to cache as many pages
-as possible, Chrome chose to align implementation with Safari.
+away, which makes the event very unreliable.
 
 Instead of using the `unload` event, use the `pagehide` event. The `pagehide`
 event fires in all cases where the `unload` event currently fires, and it
@@ -255,7 +250,6 @@ third-party libraries) adds an <code>unload</code> event listener.
   Adding an `unload` event listener will make your site slower in Firefox, and
   the code won't even run most of the time in Chrome and Safari.
 {% endAside %}
-
 
 #### Only add `beforeunload` listeners conditionally
 
@@ -301,8 +295,8 @@ onAllChangesSaved(() => {
 });
 ```
 {% CompareCaption %}
-  The code above only adds the `beforeunload` listener when it's needed (and removes it
-  when it's not).
+  The code above only adds the `beforeunload` listener when it's needed (and
+  removes it when it's not).
 {% endCompareCaption %}
 {% endCompare %}
 
@@ -344,11 +338,11 @@ other pages in the same origin (for example: IndexedDB, Web Locks, WebSockets,
 etc.) this can be problematic because pausing these tasks may prevent code in
 other tabs from running.
 
-As a result, most browsers will not attempt to put a page in bfcache in the
+As a result, some browsers will not attempt to put a page in bfcache in the
 following scenarios:
 
-*   Pages with an unfinished [IndexedDB
-    transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
+*   Pages with an open [IndexedDB
+    connection](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
 *   Pages with in-progress
     [fetch()](https://developer.mozilla.org/docs/Web/API/Fetch_API) or
     [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
@@ -365,41 +359,87 @@ other open tabs.
 Then, if the page is restored from the bfcache, you can re-open or re-connect to
 those APIs (in the `pageshow` or `resume` event).
 
-{% Aside %}
-  Using the APIs listed above does not disqualify a page from being stored in
-  bfcache, as long as they are not actively in use before the user navigates
-  away. However, there are APIs (Embedded Plugins, Workers,
-  Broadcast Channel, and [several
-  others](https://source.chromium.org/chromium/chromium/src/+/master:content/browser/frame_host/back_forward_cache_impl.cc;l=124;drc=e790fb2272990696f1d16a465832692f25506925?originalUrl=https:%2F%2Fcs.chromium.org%2F))
-  where usage currently does disqualify a page from being cached. While Chrome
-  is intentionally being conservative in its initial release of bfcache, the
-  long-term goal is to make bfcache work with as many APIs as possible.
-{% endAside %}
+The following example shows how to ensure your pages are eligible for bfcache
+when using IndexedDB by closing an open connection in the `pagehide` event
+listener:
+
+```js
+let dbPromise;
+function openDB() {
+  if (!dbPromise) {
+    dbPromise = new Promise((resolve, reject) => {
+      const req = indexedDB.open('my-db', 1);
+      req.onupgradeneeded = () => req.result.createObjectStore('keyval');
+      req.onerror = () => reject(req.error);
+      req.onsuccess = () => resolve(req.result);
+    });
+  }
+  return dbPromise;
+}
+
+// Close the connection to the database when the user is leaving.
+addEventListener('pagehide', () => {
+  if (dbPromise) {
+    dbPromise.then(db => db.close());
+    dbPromise = null;
+  }
+});
+
+// Open the connection when the page is loaded or restored from bfcache.
+addEventListener('pageshow', () => openDB());
+```
 
 ### Test to ensure your pages are cacheable
 
-While there's no way to determine whether a page was put into the cache as it's
-unloading, it is possible to assert that a back or forward navigation did
-restore a page from the cache.
+Chrome DevTools includes an experimental feature to help you identify issues
+that are preventing your pages from being eligible for bfcache.
 
-Currently, in Chrome, a page can remain in the bfcache for up to three minutes,
-which should be enough time to run a test (using a tool like
-[Puppeteer](https://github.com/puppeteer/puppeteer) or
-[WebDriver](https://www.w3.org/TR/webdriver/)) to ensure that the `persisted`
-property of a `pageshow` event is `true` after navigating away from a page and
-then clicking the back button.
+You can enable the feature from the **Experiments** page within the
+[Settings](https://developer.chrome.com/docs/devtools/customize/#settings) menu
+in DevTools:
 
-Note that, while under normal conditions a page should remain in the cache for
-long enough to run a test, it _can_ be evicted silently at any time (for
-example, if the system is under memory pressure). A failing test doesn't
-necessarily mean your pages are not cacheable, so you need to configure your
-test or build failure criteria accordingly.
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/oAsci30EW2CwfQM49Zfc.png",
+alt="Enable back/forward cache debugging via the DevTools experimental settings
+menu", width="800", height="511" %}
 
-{% Aside 'gotchas' %}
-  In Chrome, bfcache is currently only enabled on mobile. To test bfcache on
-  desktop you need to [enable the `#back-forward-cache`
-  flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
-{% endAside %}
+Once enabled, navigate to the page you want to test and in DevTools go to
+**Application** > **Back-forward Cache**. Next click the **Run Test** button and
+DevTools will attempt to navigate away and back to determine whether the page
+could be restored from bfcache.
+
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png",
+alt="Back-forward cache panel in DevTools", width="800", height="313",
+class="w-screenshot" %}
+
+If successful, the panel will report "Restored from back-forward cache":
+
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png",
+alt="DevTools reporting a page was successfully restored from bfcache",
+width="800", height="313", class="w-screenshot" %}
+
+If unsuccessful, the panel will indicate the page was not restored and list the
+reason why. If the reason is something you as a developer can address, that
+will also be indicated:
+
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png",
+alt="DevTools reporting failure to restore a page from bfcache", width="800",
+height="313", class="w-screenshot" %}
+
+In the screenshot above, the use of an `unload` event listener is
+[preventing](/bfcache/#never-use-the-unload-event) the page from being eligible
+for bfcache. You can fix that by switching from `unload` to using `pagehide` instead:
+
+{% Compare 'worse' %}
+```js
+addEventListener('unload', ...);
+```
+{% endCompare %}
+
+{% Compare 'better' %}
+```js
+addEventListener('pagehide', ...);
+```
+{% endCompare %}
 
 ### Ways to opt out of bfcache
 
