@@ -6,12 +6,12 @@ subhead: |
 description: |
   Several months of work to improve Core Web Vitals on the home page of Mail.ru resulted in a 60% increase in the 75th percentile in Cumulative Layout Shift (CLS), boosting average session time by 2.7% and conversion rates of core sections by more than 10%.
 authors:
-  - dstasyev
+  - denisstasyev
   - svenmay
 date: 2021-11-15
-hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/D3aV6VLiccC31BJIwo3z.jpg
+hero: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/rhX18pRJWKzMdDNFzxr7.PNG
 alt: Google Core Web Vitals + Mail.ru Home Page.
-thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/CWMTBHzJ9UCpZ89fNcxJ.jpg
+thumbnail: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/8aHuxnfdkyezzB7NsBcS.PNG
 tags:
   - blog
   - web-vitals
