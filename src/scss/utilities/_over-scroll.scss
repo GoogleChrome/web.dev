@@ -1,0 +1,10 @@
+/// OVER-SCROLL UTILITY
+/// Info: https://web.dev/design-system/css-utilities/#over-scroll
+
+.over-scroll {
+  flex: auto;
+  overflow: auto;
+  // sass-lint:disable no-misspelled-properties
+  overscroll-behavior: contain;
+  position: relative;
+}
