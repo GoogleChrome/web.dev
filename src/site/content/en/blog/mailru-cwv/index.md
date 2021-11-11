@@ -154,7 +154,7 @@ We decided against the [`module`/`nomodule` pattern](https://philipwalton.com/ar
 The [Browserslist Useragent](https://github.com/browserslist/browserslist-useragent) package is a publicly available alternative to custom tooling for comparing a project's `.browserslistrc` to the User-Agent string in an application backend. However, our team strongly recommends considering using [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#differential-serving) (for example, [Sec-CH-UA header](/user-agent-client-hints/#user-agent-response-and-request-headers), as Mail.ru does in our in-house tool.
 {% endAside %}
  
-Once browsers could be identified in the backend, we could implement code splitting for modern and legacy browsers. This resulted in a 43.3% reduction of the synchronously-loaded JavaScript widget for modern browsers. Also, this practice has been applied to some other portal scripts.
+Once browsers could be identified in the backend, we implemented code splitting for modern and legacy browsers. The result was a 43.3% reduction in size of the synchronously-loaded JavaScript widget for modern browsers. This practice has been applied to some other portal scripts as well.
 
 In addition to bundle size reduction and positive effects on Core Web Vitals, code splitting improves the developer experience, as a 3.5% share of our users use legacy browsers. Since this share of users is on a downward trend, our team decided to rebuild the process of implementation of new features in the widget. This allows developers to use the latest browser APIs despite the bloat that polyfills introduce for users of legacy browsers.
 
