@@ -22,6 +22,8 @@
 .toc__list li {
   padding-block: calc(var(--toc-vert-space) / 2);
   position: relative;
+
+  @include apply-utility('weight', 'medium');
 }
 
 .toc__list .toc__list {
@@ -31,6 +33,8 @@
 .toc__list .toc__list li {
   padding-inline-start: $global-gutter-narrow;
   border-inline-start: 1px solid get-utility-value('color', 'stroke');
+
+  @include apply-utility('weight', 'regular');
 
   /// Removes the space as negative margin to prevent double spacing
   &:last-of-type {
