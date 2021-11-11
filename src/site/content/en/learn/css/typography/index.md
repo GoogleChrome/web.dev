@@ -169,35 +169,45 @@ Use [`text-decoration`](https://developer.mozilla.org/docs/Web/CSS/text-decorati
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'LYjmvbN'
+  id: 'LYjmvbN',
+  height: 460,
+  tab: 'css,result'
 } %}
 
 [`text-decoration-color`](https://developer.mozilla.org/docs/Web/CSS/text-decoration-color) sets the color of all decorations from `text-decoration-line`.
 	
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'oNedOYL'
+  id: 'oNedOYL',
+  height: 460,
+  tab: 'css,result'
 } %}
 
 [`text-decoration-style`](https://developer.mozilla.org/docs/Web/CSS/text-decoration-style) accepts the keywords `solid`, `double`, `dotted`, `dashed`, and `wavy`.
 	
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'dyzeLOp'
+  id: 'dyzeLOp',
+  height: 460,
+  tab: 'css,result'
 } %}
 
 [`text-decoration-thickness`](https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness) accepts any length values and sets the stroke width of all decorations from `text-decoration-line`.
 	
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwzxNmm'
+  id: 'VwzxNmm',
+  height: 460,
+  tab: 'css,result'
 } %}
 
 `text-decoration` is shorthand for all the above properties.  
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzxLMpN'
+  id: 'YzxLMpN',
+  height: 460,
+  tab: 'css,result'
 } %}
 
 
@@ -211,7 +221,8 @@ Use [`text-indent`](https://developer.mozilla.org/docs/Web/CSS/text-indent) to a
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'RwZyOoV'
+  id: 'RwZyOoV',
+  height: 300
 } %}
 
 ## Deal with overflowing or hidden content
@@ -220,7 +231,9 @@ Use [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'GRvdLNv'
+  id: 'GRvdLNv',
+  height: 250,
+  tab: 'css,result'
 } %}
 
 ## Control white-space
@@ -229,7 +242,8 @@ The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-sp
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'PoKegbO'
+  id: 'PoKegbO',
+  height: 970
 } %}
 
 
@@ -237,7 +251,8 @@ The property [`white-space`](https://developer.mozilla.org/docs/Web/CSS/white-sp
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'OJjZGbz'
+  id: 'OJjZGbz',
+  height: 440
 } %}
 
 ## Control how words break
@@ -265,7 +280,8 @@ Use [`text-align`](https://developer.mozilla.org/docs/Web/CSS/text-align) to spe
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGrMJBM'
+  id: 'bGrMJBM',
+  height: 570
 } %}
 
 ## Change the direction of text
@@ -282,7 +298,8 @@ Use [`writing-mode`](https://developer.mozilla.org/docs/Web/CSS/writing-mode) to
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNEJWoK'
+  id: 'WNEJWoK',
+  height: 680
 } %}
 
 ## Change the orientation of text
@@ -291,7 +308,8 @@ Use [`text-orientation`](https://developer.mozilla.org/docs/Web/CSS/text-orienta
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWMrPGV'
+  id: 'QWMrPGV',
+  height: 660
 } %}
 
 ## Add a shadow to text
@@ -300,7 +318,8 @@ Use [`text-shadow`](https://developer.mozilla.org/docs/Web/CSS/text-shadow) to a
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'jOLxRVe'
+  id: 'jOLxRVe',
+  height: 530
 } %}
 
 Check out [the `text-shadow` section of our module on Shadows](/learn/css/shadows/#text-shadow) to learn more. 
@@ -332,7 +351,8 @@ A *pseudo-element* is a part of an element that you can target via CSS keywords 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'KKvRYNr'
+  id: 'KKvRYNr',
+  height: 270
 } %}
 
 ## `::selection` pseudo-element
@@ -343,7 +363,8 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'MWvGRbx'
+  id: 'MWvGRbx',
+  height: 390
 } %}
 
 ## font-variant
@@ -352,7 +373,8 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'eYEroBa'
+  id: 'eYEroBa',
+  height: 260
 } %}
 
 ## Read more
