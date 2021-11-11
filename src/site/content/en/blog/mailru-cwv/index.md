@@ -140,7 +140,7 @@ Although Chrome's DevTools showed Layout Shift events, we couldn't find the reas
   <figcaption>Fixing the news painting problem with JavaScript disabled.</figcaption>
 </figure> 
 
-Another effect SSR can have on CLS is the movement components before and after hydration. We encountered this on the mobile version in particular, which led to further layout shifts and negative impacts on CLS, which required special attention to be paid to hydrated component markup. One recurring solution to this problem was to transfer as much display logic from JavaScript to CSS whenever possible.
+Another effect SSR can have on CLS is the movement of components before and after hydration, which can lead to further layout shifts. We encountered this on the mobile version in particular and it required paying special attention to the hydrated component markup. A good solution to this problem was transferring as much display logic from JavaScript to CSS when possible.
 
 ## Code splitting and unused polyfills
 
