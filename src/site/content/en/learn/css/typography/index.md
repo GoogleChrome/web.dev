@@ -40,7 +40,8 @@ When using `font-family`, you should specify at least one generic font family in
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLojraG',
-  height: 470
+  height: 470,
+  tab: 'css,result'
 } %}
 
 ## Use italic and oblique fonts
@@ -364,7 +365,8 @@ When using this pseudo-element, only certain CSS properties can be used: `color`
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWvGRbx',
-  height: 390
+  height: 390,
+  tab: 'css,result'
 } %}
 
 ## font-variant
