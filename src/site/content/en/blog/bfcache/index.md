@@ -389,6 +389,34 @@ addEventListener('pagehide', () => {
 addEventListener('pageshow', () => openDB());
 ```
 
+### Update stale or sensitive data after bfcache restore
+
+If your site keeps user state—especially any sensitive user information—that
+data needs to be updated or cleared after a page is restored from bfcache.
+
+For example, if a user navigates to a checkout page and then updates their
+shopping cart, a back navigation could potentially surface out-of-date
+information if a stale page is restored from bfcache.
+
+Another, more critical example is if a user signs out of a site on a public
+computer and the next user clicks the back button. This could potentially expose
+private data that the user assumed was cleared when they logged out.
+
+To avoid situations like this, it's good to always update the page after a
+`pageshow` event if `event.persisted` is `true`.
+
+The following code checks for the presence of a site-specific cookie in the
+`pageshow` event and reloads if the cookie is not found:
+
+```js
+addEventListener('pageshow', (event) => {
+  if (event.persisted && !document.cookie.match(/my-cookie/)) {
+    // Force a reload if the user has logged out.
+    location.reload();
+  }
+});
+```
+
 ### Test to ensure your pages are cacheable
 
 Chrome DevTools includes an experimental feature to help you identify issues
@@ -440,38 +468,6 @@ addEventListener('unload', ...);
 addEventListener('pagehide', ...);
 ```
 {% endCompare %}
-
-### Ways to opt out of bfcache
-
-If you do not want a page to be stored in the bfcache you can ensure it's not
-cached by setting the `Cache-Control` header on the top-level page response to
-`no-store`:
-
-```http
-Cache-Control: no-store
-```
-
-All other caching directives (including `no-cache` or even `no-store` on a
-subframe) will not affect a page's eligibility for bfcache.
-
-While this method is effective and works across browsers, it has other caching
-and performance implications that may be undesirable. To address that, there's a
-proposal to [add a more explicit opt-out
-mechanism](https://github.com/whatwg/html/issues/5744), including a mechanism to
-clear the bfcache if needed (for example, when a user logs out of a website on a
-shared device).
-
-Also, in Chrome, user-level opt-out is currently possible via [the
-`#back-forward-cache`
-flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags), as
-well an [enterprise policy-based
-opt-out](https://cloud.google.com/docs/chrome-enterprise/policies).
-
-{% Aside 'caution' %}
-  Given the significantly better user experience that bfcache delivers, it is
-  not recommended to opt-out unless absolutely necessary for privacy reasons,
-  for example if a user logs out of a website on a shared device.
-{% endAside %}
 
 ## How bfcache affects analytics and performance measurement
 
