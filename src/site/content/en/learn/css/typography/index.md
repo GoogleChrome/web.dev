@@ -19,7 +19,8 @@ However, text will likely make up the majority of your website, so it’s worthw
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNEJWGy'
+  id: 'WNEJWGy',
+  height: 570
 } %}
 
 In this module, we’ll first look at some fundamental CSS font properties like `font-family`, `font-style`, `font-weight`, and `font-size`. Then, we’ll dive into properties that affect paragraphs of text, such as `text-indent` and `word-spacing`. The module finishes with some more advanced topics such as variable fonts and text rendering.
@@ -38,7 +39,8 @@ When using `font-family`, you should specify at least one generic font family in
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLojraG'
+  id: 'yLojraG',
+  height: 470
 } %}
 
 ## Use italic and oblique fonts
@@ -52,7 +54,8 @@ A: In fonts that support it, `font-style: italic` is typically a cursive version
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'MWvGRjx'
+  id: 'MWvGRjx',
+  height: 280
 } %}
 
 ## Make text bold
@@ -69,7 +72,8 @@ Most fonts, especially the [“web-safe” ones}(#font-family), only support the
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'gOxKxNz'
+  id: 'gOxKxNz',
+  height: 580
 } %}
 
 ## Change the size of text
@@ -86,7 +90,8 @@ A: In CSS, `em` represents the `font-size` inherited from the element’s parent
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'eYEroda'
+  id: 'eYEroda',
+  height: 370
 } %}
 
 {% Codepen {
@@ -100,12 +105,14 @@ Use [`line-height`](https://developer.mozilla.org/docs/Web/CSS/line-height) to s
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWaqQjv'
+  id: 'XWaqQjv',
+  height: 600
 } %}
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'ExvLJNx'
+  id: 'ExvLJNx',
+  height: 820
 } %}
 
 ## Change the space between characters
@@ -116,7 +123,8 @@ Note that the specified value *increases* the amount of natural space between ch
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abyGxBz'
+  id: 'abyGxBz',
+  height: 560
 } %}
 
 ## Change the space between words
@@ -125,7 +133,8 @@ Use [`word-spacing`](https://developer.mozilla.org/docs/Web/CSS/word-spacing) to
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxLjeRG'
+  id: 'xxLjeRG',
+  height: 280
 } %}
 
 ## `font` shorthand
@@ -136,7 +145,8 @@ Check out [MDN’s `font` article](https://developer.mozilla.org/docs/Web/CSS/fo
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjyvVbY'
+  id: 'JjyvVbY',
+  height: 270
 } %}
 
 ## Change the case of text
@@ -145,7 +155,8 @@ Use [`text-transform`](https://developer.mozilla.org/docs/Web/CSS/text-transform
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBXYwqb'
+  id: 'qBXYwqb',
+  height: 450
 } %}
 
 ## Add underlines, overlines, and through-lines to text
