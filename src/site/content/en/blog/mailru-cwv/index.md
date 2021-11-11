@@ -104,7 +104,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
 While plenty of guidance exists for improving Core Web Vitals, every project has unique challenges. For the Mail.ru home page, the following opportunities were identified:
 
 - Implementing placeholders for ad banners to reduce [CLS](/cls/).
-- Use Server-Side Rendering (SSR) to reduce [Largest Contentful Paint (LCP)](/lcp/).
+- Using server-side rendering (SSR) to reduce [Largest Contentful Paint (LCP)](/lcp/).
 - Code splitting to reduce LCP and [First Input Delay (FID)](/fid/).
  
 ## Skeletons for CLS improvement
