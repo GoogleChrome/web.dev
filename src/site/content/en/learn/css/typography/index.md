@@ -20,7 +20,7 @@ However, text will likely make up the majority of your website, so it’s worthw
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNEJWGy',
-  height: 580
+  height: 590
 } %}
 
 In this module, we’ll first look at some fundamental CSS font properties like `font-family`, `font-style`, `font-weight`, and `font-size`. Then, we’ll dive into properties that affect paragraphs of text, such as `text-indent` and `word-spacing`. The module finishes with some more advanced topics such as variable fonts and text rendering.
