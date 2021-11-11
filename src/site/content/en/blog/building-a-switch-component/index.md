@@ -885,7 +885,8 @@ to the community remixes section below!
 
 ### Community remixes
 
-- [@KonstantinRouda](https://twitter.com/KonstantinRouda) as their custom element: [demo](https://konrud.github.io/switch-web-component/Index.html) and [code](https://github.com/Konrud/switch-web-component)
+- [@KonstantinRouda](https://twitter.com/KonstantinRouda) with a custom element: [demo](https://konrud.github.io/switch-web-component/Index.html) and [code](https://github.com/Konrud/switch-web-component).
+- [@jhvanderschee](https://twitter.com/jhvanderschee) with a button: [Codepen](https://codepen.io/joosts/pen/MWvXxKm).
 
 ### Resources
 
