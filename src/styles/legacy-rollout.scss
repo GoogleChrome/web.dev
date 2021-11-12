@@ -1,0 +1,10 @@
+/// LEGACY ROLLOUT
+/// This is a temporary stylesheet to let old components
+/// interact with the new design system, to assist with the
+/// complete rollout of the design system
+
+@import 'fonts/material-icons';
+
+.legacy-rollout {
+  @import 'components/code-pattern';
+}

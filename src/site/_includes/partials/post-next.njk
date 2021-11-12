@@ -32,7 +32,11 @@
  
   <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
     {% include 'partials/toc-side.njk' %}
-    <article class="prose">
+    {# 
+      TODO: The legacy rollout task can be removed 
+      when the design system has been full rolled-out across the site 
+    #}
+    <article class="prose legacy-rollout">
       <header class="flow">
         {% if 'blog' in tags %}
           {# Display blog breadcrumbs #}
