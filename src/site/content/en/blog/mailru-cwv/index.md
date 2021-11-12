@@ -36,9 +36,9 @@ Svelte implements reactivity in a way that [doesn't use Virtual DOM](https://sve
 
 ## Tracking performance metrics
 
-Before optimizing Core Web Vitals, it's helpful to [evaluate performance in the field](/vitals-field-measurement-best-practices/). Prior to the introduction of Core Web Vitals, other metrics such as [First Contentful Paint (FCP)](/fcp/) were monitored and presented in our internal performance dashboard.
+Before optimizing Core Web Vitals, it's helpful to [evaluate performance in the field](/vitals-field-measurement-best-practices/). Before Core Web Vitals, we tracked other metrics, such as [First Contentful Paint (FCP)](/fcp/), in our internal performance dashboard.
 
-Our metrics collection script was modified to collect Core Web Vitals and transmit them to our performance dashboard for visualization. In line with Google's recommendations, our script uses [PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to obtain metrics, which is part of [our universal frontend "Platform"](https://github.com/mail-core) inside Mail.ru.
+Our metrics collection script was modified to collect Core Web Vitals and transmit them to our performance dashboard for visualization. In line with Google's recommendations, our script uses [PerformanceObserver API](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to obtain metrics, which is part of [the universal frontend "Platform"](https://github.com/mail-core) inside Mail.ru.
 
 The dashboard displayed the following metrics for users (mean values for the week of 15-21 March 2021):
 
@@ -104,12 +104,12 @@ The dashboard displayed the following metrics for users (mean values for the wee
 While plenty of guidance exists for improving Core Web Vitals, every project has unique challenges. For the Mail.ru home page, the following opportunities were identified:
 
 - Implementing placeholders for ad banners to reduce [CLS](/cls/).
-- Use Server-Side Rendering (SSR) to reduce [Largest Contentful Paint (LCP)](/lcp/).
+- Using server-side rendering (SSR) to reduce [Largest Contentful Paint (LCP)](/lcp/).
 - Code splitting to reduce LCP and [First Input Delay (FID)](/fid/).
  
 ## Skeletons for CLS improvement
 
-CLS was one of the worst performing field metrics for the Mail.ru home page. Subsequent profiling of this page in the [Performance panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) of Chrome's DevTools revealed that ads were the source of the problem. To improve layout stability, our team decided to use placeholders to reserve space for ads before they load.
+CLS was one of the worst performing field metrics for the Mail.ru home page. Subsequent profiling of this page in the [**Performance** panel](https://developer.chrome.com/docs/devtools/evaluate-performance/) of Chrome's DevTools revealed that ads were the source of the problem. To improve layout stability, our team decided to use placeholders to reserve space for ads before they load.
 
 When implementing placeholders, the first step is to determine the dimensions of the content that will replace them. Luckily, the desktop version of Mail.ru home page has strictly documented sizes for ads. After talking with the design team, SVG-animated UI skeletons were used as placeholders as [they reduce the perceived load time of the content](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a).
  
@@ -126,21 +126,21 @@ To ease the transition from Fest to Svelte, we incrementally rewrote the existin
 SSR was not used for the entire application, as [it can be an expensive process](https://malloc.fi/performance-cost-of-server-side-rendered-react-node-js) that can delay [Time to First Byte (TTFB)](/ttfb/), which [may affect LCP](/optimize-lcp/#optimize-your-server). We decided to use SSR for crucial content that the user will see on initial render, and offload rendering of hidden content on the client. At the moment, Mail.ru is experimenting with [Islands Architecture](https://jasonformat.com/islands-architecture/) to see if further performance gains can be had.
 {% endAside %}
 
-After implementing SSR, the cause of regression in CLS metrics was discovered that initially went unnoticed: the news section was not inserted at the moment of rendering the first content on the page. There was a delay between the initial painting of the page markup provided by the server and the insertion of news section on the client. This behaviour resulted in an ad skeleton shift, which worsened CLS metrics.
+After implementing SSR, the team discovered the cause of CLS regression that initially went unnoticed: the news section was not inserted at the moment of rendering the first content on the page. There was a delay between the initial painting of the page markup provided by the server and the insertion of news section on the client. This behaviour resulted in an ad skeleton shift, which worsened CLS.
  
 Although Chrome's DevTools showed Layout Shift events, we couldn't find the reason for it at first. Though SSR itself wasn't the problem, it helped in discovering the solution later on. Fixing the code responsible for the painting delay improved layout stability of the news component.
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Active JavaScript just shows an empty page in the news section, hidding the layout jumps.", width="800", height="443" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Active JavaScript just shows an empty page in the news section, hidding the layout jumps.", width="800", height="443", class="w-screenshot" %}
   <figcaption>Finding the news painting problem with JavaScript disabled.</figcaption>
 </figure> 
 
 <figure class="w-figure">
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448", class="w-screenshot" %}
   <figcaption>Fixing the news painting problem with JavaScript disabled.</figcaption>
 </figure> 
 
-Another effect SSR can have on CLS is the movement components before and after hydration. We encountered this on the mobile version in particular, which led to further layout shifts and negative impacts on CLS, which required special attention to be paid to hydrated component markup. One recurring solution to this problem was to transfer as much display logic from JavaScript to CSS whenever possible.
+Another effect SSR can have on CLS is the movement of components before and after hydration, which can lead to further layout shifts. We encountered this on the mobile version in particular and it required paying special attention to the hydrated component markup. A good solution to this problem was transferring as much display logic from JavaScript to CSS when possible.
 
 ## Code splitting and unused polyfills
 
@@ -154,9 +154,9 @@ We decided against the [`module`/`nomodule` pattern](https://philipwalton.com/ar
 The [Browserslist Useragent](https://github.com/browserslist/browserslist-useragent) package is a publicly available alternative to custom tooling for comparing a project's `.browserslistrc` to the User-Agent string in an application backend. However, our team strongly recommends considering using [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#differential-serving) (for example, [Sec-CH-UA header](/user-agent-client-hints/#user-agent-response-and-request-headers), as Mail.ru does in our in-house tool.
 {% endAside %}
  
-Once browsers could be identified in the backend, we could implement code splitting for modern and legacy browsers. This resulted in a 43.3% reduction of the synchronously-loaded JavaScript widget for modern browsers. Also, this practice has been applied to some other portal scripts.
+Once browsers could be identified in the backend, we implemented code splitting for modern and legacy browsers. The result was a 43.3% reduction in size of the synchronously-loaded JavaScript widget for modern browsers. This practice has been applied to some other portal scripts as well.
 
-In addition to bundle size reduction and positive effects on Core Web Vitals, code splitting improves the developer experience, as a 3.5% share of our users use legacy browsers. Since this share of users is on a downward trend, our team decided to rebuild the process of implementation of new features in the widget. This allows developers to use the latest browser APIs despite the bloat that polyfills introduce for users of legacy browsers.
+In addition to bundle size reduction and positive effects on Core Web Vitals, code splitting improves the developer experience as well. Only 3.5% of our users use legacy browsers and that share is on a downward trend, so implementing code-splitting allowed our developers to use the latest browser APIs without introducing the polyfill bloat necessary for legacy browsers to all users.
 
 ## Results
 
@@ -287,4 +287,4 @@ After analyzing the rest of the sections on the page, we noticed significant per
  
 Improving performance is challenging in that the work involved may be prolonged. You should regularly monitor changes in metrics over time and ensure that all new product features don't cause regressions in Core Web Vitals. To achieve this, we monitor changes in Core Web Vitals in our [performance budget](/performance-budgets-101/). 
  
-Most important, we stressed the importance of Core Web Vitals with all members of our product team, from managers and designers to testers and QA. Each team member should be aware of performance metrics and be empowered to improve them. We also incorporate performance optimization objectives into our business processes in a regular cadence. Success by providing a high-quality user experience is only possible through a cooperative effort by all team members.
+Most importantly, we stressed the importance of Core Web Vitals to all members of our product team, from managers and designers to testers and QA. Each team member should be aware of performance metrics and be empowered to improve them. We also incorporate performance optimization objectives into our business processes on a regular cadence. Successfully providing a high-quality user experience is only possible through a joint effort by all team members.
