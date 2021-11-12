@@ -13,7 +13,7 @@
   {{- content | courseToc | safe -}}
 {% endset %}
 
-<div class="post">
+<div class="post wrapper" data-flush>
   {% if path === undefined  %}
     {% set postPaths = page | getPaths %}
     {# Use first found path as a default path. #}
