@@ -11,7 +11,7 @@ authors:
 date: 2021-11-15
 hero: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/rhX18pRJWKzMdDNFzxr7.PNG
 alt: Google Core Web Vitals + Mail.ru Home Page.
-thumbnail: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/8aHuxnfdkyezzB7NsBcS.PNG
+thumbnail: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7lLVG6IeMKZYyhLanvXc.PNG
 tags:
   - blog
   - web-vitals
