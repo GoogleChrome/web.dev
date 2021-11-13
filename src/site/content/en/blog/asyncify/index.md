@@ -361,7 +361,7 @@ WebAssembly code. Again, in the C / C++ case this would be included by Emscripte
 custom JavaScript glue code that would handle arbitrary WebAssembly files. We've created a library
 just for that.
 
-You can find it on Github at
+You can find it on GitHub at
 [https://github.com/GoogleChromeLabs/asyncify](https://github.com/GoogleChromeLabs/asyncify) or npm
 under the name [`asyncify-wasm`](https://www.npmjs.com/package/asyncify-wasm).
 

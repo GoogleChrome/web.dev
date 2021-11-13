@@ -351,5 +351,5 @@ and optimizations and tooling integrations are actively being developed.
 If you have questions, comments, or feature requests,
 reach out on the
 [av1-discuss mailing list](https://groups.google.com/a/aomedia.org/g/av1-discuss),
-[AOM Github community](https://github.com/AOMediaCodec/community/wiki), and
+[AOM GitHub community](https://github.com/AOMediaCodec/community/wiki), and
 [AVIF wiki](https://github.com/AOMediaCodec/av1-avif/wiki).

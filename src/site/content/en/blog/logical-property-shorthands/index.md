@@ -464,7 +464,7 @@ to see which matches your toolchain and overall site strategy.
 
 ## What's next
 More of CSS will offer logical properties, it's not done yet! There's one big missing
-set of shorthands though, and a resolution is still pending in this [Github issue](https://github.com/w3c/csswg-drafts/issues/1282).
+set of shorthands though, and a resolution is still pending in this [GitHub issue](https://github.com/w3c/csswg-drafts/issues/1282).
 There is a temporary solution [in a draft](https://drafts.csswg.org/css-logical/#logical-shorthand-keyword). What if you want to style all
 logical sides of a box with a shorthand?
 

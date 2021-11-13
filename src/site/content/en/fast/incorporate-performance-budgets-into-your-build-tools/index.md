@@ -118,9 +118,9 @@ Bundlesize outputs color-coded test results in one line.
 You'll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request is not merged.** It works for pull requests on GitHub with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
 <figure class="w-figure">
-  {% Img src="image/admin/RKpNwfcXRoKZ34qDoxcO.jpg", alt="Bundlesize check status on Github", width="800", height="326", class="screenshot" %}
+  {% Img src="image/admin/RKpNwfcXRoKZ34qDoxcO.jpg", alt="Bundlesize check status on GitHub", width="800", height="326", class="screenshot" %}
   <figcaption class="w-figcaption">
-    Bundlesize check status on Github
+    Bundlesize check status on GitHub
   </figcaption>
 </figure>
 
@@ -158,9 +158,9 @@ after_success:
 If the scores for a pull request on GitHub fall below the threshold you've set, **Lighthouse Bot can prevent pull request from being merged**. ⛔
 
 <figure class="w-figure">
-  {% Img src="image/admin/nVDqJAA1DZDFqpOaQA9J.png", alt="Lighthouse Bot check status on Github", width="800", height="175", class="screenshot" %}
+  {% Img src="image/admin/nVDqJAA1DZDFqpOaQA9J.png", alt="Lighthouse Bot check status on GitHub", width="800", height="175", class="screenshot" %}
   <figcaption class="w-figcaption">
-    Lighthouse Bot check status on Github
+    Lighthouse Bot check status on GitHub
   </figcaption>
 </figure>
 

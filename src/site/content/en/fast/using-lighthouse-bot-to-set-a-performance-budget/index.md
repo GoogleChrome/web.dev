@@ -255,14 +255,14 @@ Travis log.
 To trigger the Lighthouse Bot test:
 
 1. Checkout a new branch
-2. Push it to Github
+2. Push it to GitHub
 3. Make a pull request
 
 Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤
 
 {% Img src="image/admin/SmWHb70YqVfagXI3f03D.png", alt="Passing Lighthouse scores", width="586", height="329", class="w-screenshot" %}
 
-{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing Github checks", width="462", height="189", class="w-screenshot" %}
+{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing GitHub checks", width="462", height="189", class="w-screenshot" %}
 
 The performance score is great, the app is under budget, and the check has passed!
 
