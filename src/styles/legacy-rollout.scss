@@ -3,8 +3,12 @@
 /// interact with the new design system, to assist with the
 /// complete rollout of the design system
 
+@import 'settings/dimensions';
+
 @import 'fonts/material-icons';
 
 .legacy-rollout {
+  @import 'components/browser-compat';
+  @import 'components/callouts';
   @import 'components/code-pattern';
 }

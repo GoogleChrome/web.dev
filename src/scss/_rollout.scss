@@ -217,3 +217,7 @@ web-url-chooser {
     cursor: not-allowed !important;
   }
 }
+
+.w-label + web-copy-code {
+  --flow-space: 0.5rem;
+}
