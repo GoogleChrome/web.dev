@@ -241,7 +241,8 @@ figcaption {
   text-align: center;
 
   @include apply-utility('measure', 'short');
-  @include apply-utility('gap-top', 'size-1');
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('gap-top', 'base');
 
   code {
     white-space: nowrap;
@@ -643,6 +644,13 @@ a:active {
 /// Misc web components that need to be blocks
 web-copy-code {
   display: block;
+}
+
+/// Video related elements
+video,
+.youtube {
+  position: relative;
+  aspect-ratio: 16/9;
 }
 
 /// COMPOSITIONS
