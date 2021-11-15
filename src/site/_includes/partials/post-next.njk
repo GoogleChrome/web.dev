@@ -134,10 +134,17 @@
       {% if stack_overflow_tag %}
         {% StackOverflow stack_overflow_tag %}
       {% endif %}
+      
+      <div class="cluster gutter-base flow-space-size-2" role="list" aria-label="tags">
+        {% for tagKey in tags or [] %}
+          {% if tagKey in collections.tags %}
+            {% set tag = collections.tags[tagKey] %}
+            <a class="pill" href="{{tag.url}}">{{tag.overrideTitle or tag.title | i18n(locale)}}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
 
-      {{ tagChips(tags) }}
-
-      <div class="flow">
+      <div class="text-size-0 color-mid-text">
         <span>
           {% if updated %}
           {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
@@ -145,6 +152,7 @@
           {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
           {% endif %}
         </span>
+        — 
         <a
           href="{{ page.inputPath | githubLink }}"
         >
@@ -153,13 +161,15 @@
       </div>
 
       {% if codelabs %}
-        {% CodelabsCallout codelabs, lang %}
+        <div class="flow-space-size-2">
+          {% CodelabsCallout codelabs, lang %}
+        </div>
       {% endif %}
 
       {% include 'partials/subscribe-action-next.njk' %}
     </article>
   </div>
-
+  
   {% if 'blog' in tags %}
     {# Find next blog post #}
     {% ArticleNavigation {
