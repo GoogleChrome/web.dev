@@ -133,6 +133,7 @@ $course-side-vert-space: 20px;
 .course__toc {
   position: sticky;
   top: get-space('size-1');
+  max-height: 90vh;
 }
 
 .course__intro {
