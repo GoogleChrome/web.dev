@@ -1,8 +1,6 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/breadcrumbs
 .breadcrumbs {
-  padding-inline: $global-gutter;
-
   a {
     color: currentColor;
     overflow: hidden; // Prevents the selected SVG from highlighting on click

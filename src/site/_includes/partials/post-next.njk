@@ -38,17 +38,49 @@
     #}
     <article class="prose legacy-rollout">
       <header class="flow gap-bottom-size-3">
-        {% if 'blog' in tags %}
-          {# Display blog breadcrumbs #}
-          <div class="breadcrumbs">
-            {% Breadcrumbs {title: 'All articles', slug: 'blog'} %}
-          </div>
-        {% elif crumbs %}
-          {# Display other breadcrumbs #}
-          {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
-          <div class="breadcrumbs">
-            {{ breadcrumbs(crumbs) }}
-          </div>
+        {% if 'blog' in tags or crumbs %}
+          <nav class="breadcrumbs" aria-label="breadcrumbs">
+            <ul class="breadcrumbs__list" role="list">
+              <li>
+                <a
+                  class="gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="post, home breadcrumb"
+                  data-action="click"
+                  href="/"
+                >
+                  {{site.titleVariation}}
+                </a>
+              </li>
+              {% if 'blog' in tags %}
+              <li>
+                <a
+                  class="gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="post, path breadcrumb"
+                  data-action="click"
+                  href="/blog"
+                >
+                  All articles
+                </a>
+              </li>
+              {% elif crumbs %}
+                {% for crumb in crumbs %}
+                  <li>
+                    <a
+                      class="gc-analytics-event"
+                      data-category="web.dev"
+                      data-label="post, path breadcrumb"
+                      data-action="click"
+                      href="{{crumb[1]}}"
+                    >
+                      {{crumb[0]}}
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </nav>
         {% endif %}
 
         <h1 id="{{ safeTitle | slugify }}">{{ safeTitle }}</h1>
