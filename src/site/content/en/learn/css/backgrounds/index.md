@@ -4,7 +4,7 @@ description: >
   In this module learn the ways you can style
    backgrounds of boxes using CSS
 audio:
-  title: "The CSS Podcast - 053: Background"
+  title: 'The CSS Podcast - 053: Background'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP052_v1.mp3?dest-id=1891556
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
@@ -105,7 +105,7 @@ When keywords are only used the order of the keywords does not matter:
 ```css
 background-position: left 50%
 ```
-{% endCompare%}
+{% endCompare %}
 
 {% Compare 'better' %}
 ```css
@@ -124,7 +124,7 @@ Order does not matter for keywords associated with different axes of position
 {% endCompare %}
 
 
-{% Compare 'Worse' %}
+{% Compare 'worse' %}
 
 ```css
   background-position: 50% left;
@@ -134,7 +134,7 @@ When CSS values are used alongside keywords, it must be preceded by a keyword.
 {% endCompareCaption %}
 {% endCompare%}
 
-{% Compare 'Worse' %}
+{% Compare 'worse' %}
 ```css
   background-position: left right;
 ```
