@@ -24,6 +24,6 @@ module.exports = (inputPath) => {
       'inputPath passed to githubLink filter was undefined or null.',
     );
   }
-  const branch = 'master';
+  const branch = 'main';
   return `${repo}/${path.join('blob', branch, inputPath)}`;
 };

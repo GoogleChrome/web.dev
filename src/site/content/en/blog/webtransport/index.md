@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2021-02-23
+updated: 2021-09-29
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
@@ -25,7 +25,7 @@ This proposal continues to change during the origin trial period. There
 may be a divergence between the browser implementation and the information in this 
 article.
 
-For the latest on this evolving proposal, please read refer to the
+For the latest on this evolving proposal, read the
 [editor's draft of WebTransport](https://w3c.github.io/webtransport/).
 
 Once the proposal stabilizes, we will update this article and associated code
@@ -76,7 +76,7 @@ WebTransport helps with similar use cases as QuicTransport, with the primary dif
 
 ### Is WebTransport a replacement for WebSockets?
 
-Maybe. There are use cases where either [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) or WebTransport might be valid communication protocols to use.
+Maybe. There are use cases where either [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) or WebTransport might be valid communication protocols to use.
 
 WebSockets communications are modeled around a single, reliable, ordered stream of messages, which is fine for some types of communication needs. If you need those characteristics, then WebTransport's streams APIs can provide them as well. In comparison, WebTransport's datagram APIs provide low-latency delivery, without guarantees about reliability or ordering, so they're not a direct replacement for WebSockets.
 
@@ -90,15 +90,15 @@ No. WebTransport is not a [UDP Socket API](https://www.w3.org/TR/raw-sockets/). 
 
 ### Is WebTransport an alternative to WebRTC data channels?
 
-Yes, for client-server connections. WebTransport shares many of the same properties as [WebRTC data channels](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel), although the underlying protocols are different.
+Yes, for client-server connections. WebTransport shares many of the same properties as [WebRTC data channels](https://developer.mozilla.org/docs/Web/API/RTCDataChannel), although the underlying protocols are different.
 
 {% Aside %}
 WebRTC data channels support peer-to-peer communications, but WebTransport only supports client-server connection. If you have multiple clients that need to talk directly to each other, then WebTransport isn't a viable alternative.
 {% endAside %}
 
-Generally, running a HTTP/3-compatible server requires less setup and configuration than maintaining a WebRTC server, which involves understanding multiple protocols ([ICE](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Connectivity#ICE_candidates), [DTLS](https://webrtc-security.github.io/#4.3.1.), and [SCTP](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport)) in order to get a working transport. WebRTC entails many more moving pieces that could lead to failed client/server negotiations.
+Generally, running a HTTP/3-compatible server requires less setup and configuration than maintaining a WebRTC server, which involves understanding multiple protocols ([ICE](https://developer.mozilla.org/docs/Web/API/WebRTC_API/Connectivity#ICE_candidates), [DTLS](https://webrtc-security.github.io/#4.3.1.), and [SCTP](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport)) in order to get a working transport. WebRTC entails many more moving pieces that could lead to failed client/server negotiations.
 
-The WebTransport API was designed with the web developer use cases in mind, and should feel more like writing modern web platform code than using WebRTC's data channel interfaces. [Unlike WebRTC](https://bugs.chromium.org/p/chromium/issues/detail?id=302019), WebTransport is supported inside of [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), which allows you to perform client-server communications independent of a given HTML page. Because WebTransport exposes a [Streams](https://streams.spec.whatwg.org/)-compliant interface, it supports optimizations around [backpressure](https://streams.spec.whatwg.org/#backpressure).
+The WebTransport API was designed with the web developer use cases in mind, and should feel more like writing modern web platform code than using WebRTC's data channel interfaces. [Unlike WebRTC](https://bugs.chromium.org/p/chromium/issues/detail?id=302019), WebTransport is supported inside of [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers), which allows you to perform client-server communications independent of a given HTML page. Because WebTransport exposes a [Streams](https://streams.spec.whatwg.org/)-compliant interface, it supports optimizations around [backpressure](https://streams.spec.whatwg.org/#backpressure).
 
 However, if you already have a working WebRTC client/server setup that you're happy with, switching to WebTransport may not offer many advantages.
 
@@ -108,7 +108,7 @@ The best way to experiment with WebTransport is to start up a compatible HTTP/3 
 
 ## Using the API
 
-WebTransport was designed on top of modern web platform primitives, like the [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). It relies heavily on [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), and works well with [<code>async</code> and <code>await</code>](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await).
+WebTransport was designed on top of modern web platform primitives, like the [Streams API](https://developer.mozilla.org/docs/Web/API/Streams_API). It relies heavily on [promises](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises), and works well with [<code>async</code> and <code>await</code>](https://developer.mozilla.org/docs/Learn/JavaScript/Asynchronous/Async_await).
 
 The WebTransport [origin trial](#register-for-ot) supports three distinct types of traffic: datagrams, as well as both unidirectional and bidirectional streams.
 
@@ -142,9 +142,9 @@ await transport.ready;
 
 Once you have a WebTransport instance that's connected to a server, you can use it to send and receive discrete bits of data, known as [datagrams](https://en.wikipedia.org/wiki/Datagram).
 
-The `writeable` getter returns a <code>[WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream)</code>, which a web client can use to send data to the server. The <code>readable</code> getter returns a <code>[ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)</code>, allowing you to listen for data from the server. Both streams are inherently unreliable, so it is possible that the data you write will not be received by the server, and vice versa.
+The `writeable` getter returns a <code>[WritableStream](https://developer.mozilla.org/docs/Web/API/WritableStream)</code>, which a web client can use to send data to the server. The <code>readable</code> getter returns a <code>[ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream)</code>, allowing you to listen for data from the server. Both streams are inherently unreliable, so it is possible that the data you write will not be received by the server, and vice versa.
 
-Both types of streams use <code>[Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)</code> instances for data transfer.
+Both types of streams use <code>[Uint8Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)</code> instances for data transfer.
 
 ```js
 // Send two datagrams to the server.
@@ -180,7 +180,7 @@ Each chunk of all streams is a `Uint8Array`. Unlike with the Datagram APIs, thes
 
 A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using the <code>createSendStream()</code> method of a `WebTransport` instance, which returns a promise for the <code>SendStream</code>.
 
-Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> to close the associated HTTP/3 connection. The browser tries to send all pending data before actually closing the associated connection.
+Use the <code>[close()](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)</code> to close the associated HTTP/3 connection. The browser tries to send all pending data before actually closing the associated connection.
 
 ```js
 // Send two Uint8Arrays to the server.
@@ -198,7 +198,7 @@ try {
 }
 ```
 
-Similarly, use the <code>[abort()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
+Similarly, use the <code>[abort()](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)</code> to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
 
 ```js
 const ws = await transport.createSendStream();
@@ -238,7 +238,7 @@ while (true) {
 }
 ```
 
-You can detect stream closure using the <code>[closed](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/closed)</code> promise of the <code>[ReadableStreamDefaultReader](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader)</code>. When the underlying HTTP/3 connection is [closed with the FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8), the <code>closed</code> promise is fulfilled after all the data is read. When the HTTP/3 connection is closed abruptly (for example, by <code>[STREAM_RESET](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4)</code>), then the <code>closed</code> promise rejects.
+You can detect stream closure using the <code>[closed](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/closed)</code> promise of the <code>[ReadableStreamDefaultReader](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)</code>. When the underlying HTTP/3 connection is [closed with the FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8), the <code>closed</code> promise is fulfilled after all the data is read. When the HTTP/3 connection is closed abruptly (for example, by <code>[STREAM_RESET](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4)</code>), then the <code>closed</code> promise rejects.
 
 ```js
 // Assume an active receiveStream
@@ -291,7 +291,7 @@ The [WebTransport draft specification](https://wicg.github.io/web-transport/) in
 
 ### WebTransport in Chrome's DevTools
 
-Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1069742) to be notified about updates on the DevTools interface.
+Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
 
 ## Privacy and security considerations
 
@@ -328,6 +328,6 @@ You can use the [web-transport-dev Google Group](https://groups.google.com/a/chr
 
 ## Acknowledgements
 
-This article incorporates information from the [WebTransport Explainer](https://github.com/wicg/web-transport/blob/master/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
+This article incorporates information from the [WebTransport Explainer](https://github.com/w3c/webtransport/blob/main/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
 
 _The hero image on this post is by [Robin Pierre](https://unsplash.com/photos/dPgPoiUIiXk) on Unsplash._

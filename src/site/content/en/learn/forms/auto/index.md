@@ -4,7 +4,7 @@ description: >
   Make it more convenient for users to fill out forms.
 authors:
   - michaelscharnagl
-date: 2021-09-06
+date: 2021-11-03
 ---
 
 After learning about the
@@ -49,7 +49,7 @@ Browsers can even offer to autofill an entire form.
 
 Let's see what you can do to help browsers offer the correct autofill options.
 
-### Use rational attributes
+### Use sensible attribute values
 
 As you learned, browsers can identify the data type by looking at the attributes of a form control.
 
@@ -69,7 +69,8 @@ You can help here by using the `autocomplete` attribute.
 {% Codepen {
   user: 'web-dot-dev',
   id: '9a2262c52b978968f6ce181f32357f31',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 Have you entered a name before in the browser you're using?
@@ -82,5 +83,5 @@ You can learn more about using
 
 ## Resources
 
-- The [autocomplete attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
-- [Autofill](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont): What web devs should know, but don't
+- [The autocomplete attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
+- [Autofill: What web devs should know, but don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont)

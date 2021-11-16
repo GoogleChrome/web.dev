@@ -36,11 +36,13 @@ async function run() {
       });
       core.info(`Succeeded to remove label: ${LABEL}`);
     } catch (e) {
-      core.notice(`Failed to remove label: ${LABEL}`);
+      core.warning(`Failed to remove label: ${LABEL}`);
     }
   } else {
-    core.setFailed(`Pull request does not have label: ${LABEL}`);
+    core.warning(`Pull request does not have label: ${LABEL}`);
   }
+
+  core.setOutput('isPresubmit', isPresubmit);
 }
 
 run();

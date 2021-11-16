@@ -14,7 +14,7 @@ tags:
 ---
 
 {% Banner 'info', 'body' %}
-  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for 
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
   implementations of common UX patterns optimized for Core Web Vitals.
 {% endBanner %}
 
@@ -321,7 +321,7 @@ These other Web Vitals often serve as proxy or supplemental metrics for the Core
 Web Vitals, to help capture a larger part of the experience or to aid in
 diagnosing a specific issue.
 
-For example, the metrics [Time to First Byte (TTFB)](/time-to-first-byte/) and
+For example, the metrics [Time to First Byte (TTFB)](/ttfb/) and
 [First Contentful Paint (FCP)](/fcp/) are both vital aspects of the _loading_
 experience, and are both useful in diagnosing issues with LCP (slow [server
 response times](/overloaded-server/) or [render-blocking

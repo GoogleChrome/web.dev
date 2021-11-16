@@ -4,7 +4,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "2"
-    stem: What does the start tag of the `<form>` element look like?
+    stem: What does the start tag of the form element look like?
     options:
       - content: "`</form>`"
         rationale: "Almost, this is the end tag of the `<form>` element."

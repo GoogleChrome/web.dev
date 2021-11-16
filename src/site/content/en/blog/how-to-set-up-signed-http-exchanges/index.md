@@ -8,8 +8,8 @@ description: How to generate a TLS certificate with SXG extensions, install tool
 date: 2020-03-11
 tags:
   - blog
-  - SXG
-  - nginx
+  # - SXG
+  # - nginx
 feedback:
   - api
 ---

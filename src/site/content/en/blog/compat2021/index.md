@@ -18,7 +18,7 @@ date: 2021-03-22
 updated: 2021-03-22
 tags:
   - blog
-  - CSS
+  - css
 ---
 
 
@@ -92,7 +92,7 @@ Here are the areas which are committed to being fixed in 2021.
 
 ### CSS flexbox
 
-[CSS flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+[CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout)
 is
 [widely used](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
 on the web and there are still some major challenges for developers. For example,
@@ -135,7 +135,7 @@ blog post dives deeper into these issues with many more examples.
 
 ### CSS Grid
 
-[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) is
+[CSS Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) is
 a core building block for modern web layouts, replacing many older techniques
 and workarounds. As adoption is growing, it needs to be rock solid, so that
 differences between browsers is never a reason to avoid it. One area that's
@@ -174,15 +174,15 @@ effects like this are made possible:
 
 {% Aside %}
 While a newer feature like
-[subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+[subgrid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
 is important for developers, it isn't a part of this specific effort. To follow
 along, see
-[Subgrid compat on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility).
+[Subgrid compat on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility).
 {% endAside %}
 
 ### CSS position: sticky
 
-[Sticky positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky_positioning)
+[Sticky positioning](https://developer.mozilla.org/docs/Web/CSS/position#sticky_positioning)
 allows content to stick to the edge of the viewport and is commonly used
 for headers that are always visible at the top of the viewport. While supported
 in all browsers, there are common use cases where it doesn't work as intended.
@@ -232,7 +232,7 @@ demo</a> by Rob Flack.
 ### CSS aspect-ratio property
 
 The new
-[`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
+[`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio)
 CSS property makes it easy to maintain a consistent width-to-height ratio for
 elements, removing the need for the well-known
 [`padding-top` hack](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
@@ -272,7 +272,7 @@ we want to make sure it's solid in all common scenarios and across browsers.
 
 ### CSS transforms
 
-[CSS transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+[CSS transforms](https://developer.mozilla.org/docs/Web/CSS/transform)
 have been supported in all browsers for many years and are widely used on the
 web. However, there still remain many areas where they don't work the same
 across browsers, notably with animations and 3D transforms. For example, a card

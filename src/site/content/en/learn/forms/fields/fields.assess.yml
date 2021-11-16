@@ -1,0 +1,29 @@
+setLeader: Test your knowledge of form fields
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Is it possible to upload multiple files with a form control?
+    options:
+      - content: "Yes, using `<input type=\"files\">`."
+        rationale: "Try again!"
+      - content: "Yes, using `<input type=\"file\" multiple>`."
+        rationale: "🎉"
+      - content: "No."
+        rationale: "Try again!"
+      - content: "Yes, using `<input type=\"multiple-files\">`."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What's the difference between `type="text"` and `type="password"`?
+    options:
+      - content: "There is no difference."
+        rationale: "Try again!"
+      - content: "An adapted on-screen keyboard for entering passwords is shown for `type=\"password\"`."
+        rationale: "Try again!"
+      - content: "When using `type=\"password\"` every character entered is obscured by an asterisk (`*`) or a dot (`•`)."
+        rationale: "🎉"
+      - content: "A custom interface for entering passwords is shown for `type=\"password\"`."
+        rationale: "Try again!"

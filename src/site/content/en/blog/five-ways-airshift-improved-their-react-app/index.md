@@ -120,7 +120,7 @@ But the AirSHIFT team found it easier to analyze application activity based
 on React's lifecycle.
 
 React 16 provides its performance trace via the
-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API),
+[User Timing API](https://developer.mozilla.org/docs/Web/API/User_Timing_API),
 which you can visualize from the
 [Timings section](https://developers.google.com/web/updates/2018/04/devtools#tabs)
 of Chrome DevTools. AirSHIFT used the Timings section to find
@@ -156,7 +156,7 @@ To improve this experience, AirSHIFT now uses [React.lazy and Suspense](/code-sp
 
 The AirSHIFT team also migrated some of the expensive business logic
 within the lazily loaded components to
-[web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+[web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers).
 This solved the user input jank problem by freeing up the main thread
 so that it could focus on responding to user input.
 

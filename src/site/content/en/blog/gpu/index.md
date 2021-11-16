@@ -7,7 +7,7 @@ authors:
   - beaufortfrancois
   - cwallez
 date: 2021-08-26
-updated: 2021-09-06
+updated: 2021-11-05
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
@@ -87,11 +87,7 @@ To experiment with WebGPU locally, without an origin trial token, enable the
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;94, WebGPU is available as an origin trial in Chrome. The
-origin trial is expected to end in Chrome&nbsp;97 (Jan 26, 2022).
-
-{% Aside 'caution' %}
-Server-side A/B testing will be used to progressively rollout WebGPU in Chrome.
-{% endAside %}
+origin trial is expected to end in Chrome&nbsp;101 (May 18, 2022).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -213,7 +209,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [Unsplash](https://unsplash.com/photos/ukOCJ09jpgc).
 
 [WebGPU]: https://gpuweb.github.io/gpuweb/
-[WebGL]: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
+[WebGL]: https://developer.mozilla.org/docs/Web/API/WebGL_API
 [W3C's "GPU for the Web" Community Group]: https://www.w3.org/community/gpu/
 [Babylon.js Playground]: https://playground.babylonjs.com/#XCNL7Y
 [Get started with GPU Compute on the web]: /gpu-compute/
@@ -225,7 +221,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [Safari]: https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/
 [Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 [Dawn]: https://dawn.googlesource.com/dawn
-[WebAssembly]: https://developer.mozilla.org/en-US/docs/WebAssembly
+[WebAssembly]: https://developer.mozilla.org/docs/WebAssembly
 [Emscripten]: https://emscripten.org/
 [Wgpu]: https://sotrh.github.io/learn-wgpu/#what-is-wgpu
 [Veloren]: https://veloren.net/devblog-125/

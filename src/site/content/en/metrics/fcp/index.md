@@ -79,7 +79,7 @@ available in the following tools:
 To measure FCP in JavaScript, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
 create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for a `paint` entry with the name `first-contentful-paint` and logs
 it to the console.
 
@@ -156,7 +156,7 @@ performance guides:
 - [Minify CSS](/unminified-css/)
 - [Remove unused CSS](/unused-css-rules/)
 - [Preconnect to required origins](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
+- [Reduce server response times (TTFB)](/ttfb/)
 - [Avoid multiple page redirects](/redirects/)
 - [Preload key requests](/uses-rel-preload/)
 - [Avoid enormous network payloads](/total-byte-weight/)

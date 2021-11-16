@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column-reverse;
 
+  & > :first-child {
+    flex: auto;
+  }
+
   p {
     @include w-body-text();
   }

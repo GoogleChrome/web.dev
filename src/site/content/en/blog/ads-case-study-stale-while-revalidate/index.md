@@ -16,7 +16,7 @@ tags:
   - blog
   - case-study
   - performance
-  - ads
+  # - ads
 ---
 
 This case study highlights how improving the performance of third-party resources can boost business metrics. While a [previous study](/fast-ads-matter/#fast-ads-make-you-more-money) measured the cost of added ads latency, this study demonstrates the value of a real-world performance improvement:

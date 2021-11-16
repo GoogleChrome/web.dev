@@ -12,7 +12,7 @@ description: |
 tags:
   - blog
   - performance
-  - e-commerce
+  # - e-commerce
 ---
 
 In our other e-commerce guides you have learned about [what you should measure

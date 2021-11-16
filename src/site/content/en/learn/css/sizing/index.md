@@ -465,6 +465,6 @@ such as Retina displays in a media query and serving up a higher resolution imag
 ## Resources
 
 - [CSS Spec Values and Units Level 4](https://www.w3.org/TR/css-values-4)
-- [Sizing and Units on MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+- [Sizing and Units on MDN](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [All About Ems](https://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/)
 - [A percentages explainer](https://wattenberger.com/blog/css-percents)

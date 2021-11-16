@@ -33,7 +33,7 @@ is called the **tab order**.
 Interactive HTML elements like text fields, buttons, and select lists are
 **implicitly focusable**: they are automatically inserted into the tab order
 based on their position in the
-[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).
+[DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model).
 These interactive elements also have built-in keyboard event handling. Elements
 such as paragraphs and divs are not implicitly focusable because users typically
 do not need to interact with them.

@@ -29,7 +29,7 @@ you need to understand z-index and stacking contexts.
 
 ## Z-index
 
-The [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+The [`z-index`](https://developer.mozilla.org/docs/Web/CSS/z-index)
 property explicitly sets a layer order for HTML based on the 3D space of the browser—the Z axis.
 This is the axis which shows which layers are closer to and further from you.
 The vertical axis on the web is the Y axis and the horizontal axis is the X axis.
@@ -147,11 +147,11 @@ You can put stuff behind the `<body>` until you create a stacking context with i
 ## Creating a stacking context
 
 You don't need to apply `z-index` and `position` to create a new
-[stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
+[stacking context](https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
 You can create a new stacking context by adding a value for properties which create a new composite layer
 such as `opacity`, `will-change` and `transform`.
 You can
-[see a full list of properties here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
+[see a full list of properties here](https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
 
 To explain what a composite layer is, imagine a web page is a canvas.
 A browser takes your HTML and CSS and uses these to work out how big to make the canvas.

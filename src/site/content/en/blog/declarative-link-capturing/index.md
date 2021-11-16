@@ -112,6 +112,13 @@ Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2
 
 ### Register for the origin trial {: #register-for-ot }
 
+{% Aside %}
+While you can still sign up for the origin trial, the engineering team has decided already
+that Declarative Link Capturing will _not_ launch with the current design. Interested parties
+can check out and provide early feedback on the likely replacement feature called
+[Web App Launch Handling](https://github.com/WICG/sw-launch/blob/main/launch_handler.md).
+{% endAside %}
+
 {% include 'content/origin-trial-register.njk' %}
 
 ## How to use Declarative Link Capturing? {: #use }
@@ -130,7 +137,7 @@ defaulting to `"none"`. The following values are supported:
   arbitrarily navigated away from. Sites should be aware that they are opting into such behavior by
   choosing this option. This option works best for "read-only" sites that do not hold user data in
   memory, such as music players. If the page being navigated away from has a
-  [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload),
+  [`beforeunload` event](https://developer.mozilla.org/docs/Web/API/WindowEventHandlers/onbeforeunload),
   the user would see the prompt before the navigation completes.
 
 {% Aside %} There is discussion about adding options that do not open

@@ -141,8 +141,8 @@ experience for returning users.
 
 For caching on the web, there are quite a few
 [different approaches](https://dev.to/jonchen/service-worker-caching-and-http-caching-p82). The team
-is using a mix of the [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) and
-the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) for caching assets on the
+is using a mix of the [HTTP cache](https://developer.mozilla.org/docs/Web/HTTP/Caching) and
+the [Cache API](https://developer.mozilla.org/docs/Web/API/Cache) for caching assets on the
 client side.
 
 The Cache API gives Mainline Menswear finer control over the cached assets, allowing them to apply

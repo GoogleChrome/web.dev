@@ -12,8 +12,8 @@ description: |
   thread while keeping the ergonomic and performance benefits of standard JavaScript modules.
 tags:
   - blog
-  - web-workers
-  - javascript-modules
+  # - web-workers
+  # - javascript-modules
   - modules
 feedback:
   - api
@@ -26,7 +26,7 @@ complex applications are delivered on the web, there's an increased need for mul
 processing.
 
 On the web platform, the main primitive for threading and parallelism is the [Web
-Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+Workers API](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers).
 Workers are a lightweight abstraction on top of [operating system
 threads](https://en.wikipedia.org/wiki/Thread_%28computing%29) that expose a message passing API
 for inter-thread communication. This can be immensely useful when performing costly computations or
@@ -153,7 +153,7 @@ export function sayHello() {
 
 To ensure great performance, the old `importScripts()` method is not available within module
 workers. Switching workers to use JavaScript modules means all code is loaded in [strict
-mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode). Another
+mode](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode). Another
 notable change is that the value of `this` in the top-level scope of a JavaScript module is
 `undefined`, whereas in classic workers the value is the worker's global scope. Fortunately, there
 has always been a `self` global that provides a reference to the global scope. It's available in

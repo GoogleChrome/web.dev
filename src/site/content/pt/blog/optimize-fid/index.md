@@ -80,7 +80,7 @@ Abaixo estão as pontuações de TBT antes e depois de otimizar o carregamento d
 
 ## Use um web worker
 
-Uma thread principal bloqueada é uma das principais causas do atraso de entrada. Os [Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Worker) possibilitam a execução de JavaScript numa thread em segundo plano. Mover operações não relacionadas à interface do usuário para uma thread de trabalho separada pode reduzir o tempo de bloqueio da thread principal e, conseqüentemente, melhorar a FID.
+Uma thread principal bloqueada é uma das principais causas do atraso de entrada. Os [Web workers](https://developer.mozilla.org/docs/Web/API/Worker) possibilitam a execução de JavaScript numa thread em segundo plano. Mover operações não relacionadas à interface do usuário para uma thread de trabalho separada pode reduzir o tempo de bloqueio da thread principal e, conseqüentemente, melhorar a FID.
 
 Considere o uso das seguintes bibliotecas para facilitar o uso de web workers em seu site:
 

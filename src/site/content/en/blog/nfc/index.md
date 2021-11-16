@@ -811,8 +811,8 @@ contributors deserve special recognition!
 [cr-status]: https://www.chromestatus.com/feature/6261030015467520
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/master/docs/security/permissions-for-powerful-web-platform-features.md
 [Permissions API]: https://www.w3.org/TR/permissions/
-[AbortController]: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
-[Page Visibility API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+[AbortController]: https://developer.mozilla.org/docs/Web/API/AbortController
+[Page Visibility API]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
 [user may be prompted]: #security-and-permissions
 [permission]: https://w3c.github.io/permissions/
 [folks at Intel]: https://github.com/w3c/web-nfc/graphs/contributors
@@ -827,4 +827,4 @@ contributors deserve special recognition!
 [material.io]: https://material.io/resources/icons/?icon=nfc&style=baseline
 [appropriately]: https://w3c.github.io/web-nfc/#data-mapping
 [custom local type records]: https://w3c.github.io/web-nfc/#smart-poster-record
-[DataView]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[DataView]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView

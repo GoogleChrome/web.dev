@@ -36,6 +36,7 @@ guidance about how to use them effectively.
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Tabs](#tabs)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
@@ -234,7 +235,7 @@ With the `BrowserCompat` shortcode, you can embed an
 [MDN - Browser Compatibility Data](https://github.com/mdn/browser-compat-data/)
 widget in your post. You have to pass in the dot-separated feature ID,
 as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
-[Web/API/BackgroundFetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent)
+[Web/API/BackgroundFetchEvent](https://developer.mozilla.org/docs/Web/API/BackgroundFetchEvent)
 the ID is `api.BackgroundFetchEvent`:
 
 
@@ -343,7 +344,7 @@ A component that displays a demo and code snippets side by side,
 organized in tabs.
 
 Component height is determined by the code snippet with the most
-code lines. 
+code lines.
 
 To change the component height, specify the height value in pixels
 in the shortcode.
@@ -1300,6 +1301,48 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
+
+## Tabs
+
+Use `web-tabs` web component to display content that refers to different
+platforms or languages.
+Each child of the `web-tabs` component will become a separate tab.
+Use `data-label` attribute to set the tab's title. You can use markdown inside
+the tab, e.g. the code blocks.
+
+```html
+{% raw %}
+<web-tabs>
+  <div data-label="html">
+    ```html
+    <p> I'm html</p>
+    ```
+  </div>
+  <div data-label="css">
+    ```css
+    .class { border: 0; }
+    ```
+  </div>
+</web-tabs>
+{% endraw %}
+```
+
+<web-tabs>
+  <div data-label="html" title="t">
+
+  ```html
+  <p> I'm html</p>
+  ```
+
+  </div>
+  <div data-label="css">
+
+  ```css
+  .class { border: 0; }
+  ```
+
+  </div>
+</web-tabs>
 
 ## Tooltips
 

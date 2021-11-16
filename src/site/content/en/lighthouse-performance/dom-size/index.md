@@ -44,9 +44,8 @@ and its maximum child elements:
 
 Lighthouse flags pages with DOM trees that:
 
-- Have more than 1,500&nbsp;nodes total.
-- Have a depth greater than 32&nbsp;nodes.
-- Have a parent node with more than 60&nbsp;child nodes.
+- Warns when the body element has more than ~800&nbsp;nodes.
+- Errors when the body element has more than ~1,400&nbsp;nodes.
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

@@ -74,16 +74,16 @@ The simplest way to implement `prefetch` is adding a `<link>` tag to the `<head>
 
 ```
 
-The `as` attribute is not mandatory, but it's recommended. It helps the browser set the right headers, and determine whether the resource is already in the cache. Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
+The `as` attribute is not mandatory, but it's recommended. It helps the browser set the right headers, and determine whether the resource is already in the cache. Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes).
 
-You can also initiate prefetching via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
+You can also initiate prefetching via the [`Link` HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link):
 
 `Link: </css/style.css>; rel=prefetch`
 
 A benefit of specifying a prefetch hint in the HTTP Header is that the browser doesn't need to parse the document to find the resource hint, which can offer small improvements in some cases.
 
 {% Aside %}
-`prefetch` is supported in [all modern browsers except Safari](https://caniuse.com/#search=prefetch). You can implement a fallback technique for Safari with [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) requests or the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+`prefetch` is supported in [all modern browsers except Safari](https://caniuse.com/#search=prefetch). You can implement a fallback technique for Safari with [XHR](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) requests or the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API).
 {% endAside %}
 
 ### Prefetching JavaScript modules with webpack magic comments
@@ -124,10 +124,10 @@ This tells webpack to inject the `<link rel="prefetch">` tag into the HTML docum
 
 You can also implement smarter prefetching with libraries that use `prefetch` under the hood:
 
-- [quicklink](https://github.com/GoogleChromeLabs/quicklink) uses [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to detect when links come into the viewport and prefetches linked resources during [idle time](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback). Bonus: quicklink weighs less than 1 KB!
+- [quicklink](https://github.com/GoogleChromeLabs/quicklink) uses [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API) to detect when links come into the viewport and prefetches linked resources during [idle time](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback). Bonus: quicklink weighs less than 1 KB!
 - [Guess.js](https://github.com/guess-js) uses analytics reports to build a predictive model that is used to [smartly prefetch](/predictive-prefetching/) only what the user is likely to need.
 
-Both quicklink and Guess.js use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to avoid prefetching if a user is on a slow network or has [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) turned on.
+Both quicklink and Guess.js use the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to avoid prefetching if a user is on a slow network or has [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data) turned on.
 
 {% Aside %}
 A wine company Jabong implemented prefetching with quicklink and achieved 2.7 s faster Time To Interactive on future pages.
@@ -137,11 +137,11 @@ A wine company Jabong implemented prefetching with quicklink and achieved 2.7 s 
 
 Resource hints are not mandatory instructions and it's up to the browser to decide if, and when, they get executed.
 
-You can use prefetch multiple times in the same page. The browser queues up all hints and requests each resource when it's [idle](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#How_is_browser_idle_time_determined.3F). In Chrome, if a prefetch has not finished loading and the user navigates to the destined prefetch resource, the in-flight load is picked up as the navigation by the browser (other browser vendors might implement this differently).
+You can use prefetch multiple times in the same page. The browser queues up all hints and requests each resource when it's [idle](https://developer.mozilla.org/docs/Web/HTTP/Link_prefetching_FAQ#How_is_browser_idle_time_determined.3F). In Chrome, if a prefetch has not finished loading and the user navigates to the destined prefetch resource, the in-flight load is picked up as the navigation by the browser (other browser vendors might implement this differently).
 
 Prefetching takes place at the ['Lowest' priority](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit), so prefetched resources do not compete for bandwidth with the resources required in the current page.
 
-Prefetched files are stored in the [HTTP Cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching), or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, in Chrome resources are kept around for five minutes, after which the normal cache-control rules for the resource apply.
+Prefetched files are stored in the [HTTP Cache](https://developer.mozilla.org/docs/Web/HTTP/Caching), or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, in Chrome resources are kept around for five minutes, after which the normal cache-control rules for the resource apply.
 
 ## Conclusion
 

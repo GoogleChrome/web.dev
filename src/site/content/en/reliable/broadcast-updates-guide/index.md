@@ -71,8 +71,8 @@ toast, letting the user know about the feature:
 `workbox-window` provides a straightforward interface to listen to [important service worker lifecycle
 events](https://developers.google.com/web/tools/workbox/modules/workbox-window#important_service_worker_lifecycle_moments).
 Under the hood, the library uses client-side APIs like
-[`updatefound`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
-and [statechange](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
+[`updatefound`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
+and [statechange](https://developer.mozilla.org/docs/Web/API/ServiceWorker/onstatechange)
 and provides higher level event listeners in the `workbox-window` object, making it easier for the
 user to consume these events.
 
@@ -143,7 +143,7 @@ APIs to implement **"broadcast updates"**:
 ### Broadcast Channel API {: #broadcast-channel-api }
 
 The service worker creates a [BroadcastChannel
-object](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) and starts sending
+object](https://developer.mozilla.org/docs/Web/API/BroadcastChannel) and starts sending
 messages to it. Any context (e.g. page) interested in receiving these messages can instantiate a
 `BroadcastChannel` object and implement a message handler to receive messages.
 
@@ -177,9 +177,9 @@ This is a simple technique, but its limitation is browser support: at the moment
 
 ### Client API {: #client-api }
 
-The [Client API](https://developer.mozilla.org/en-US/docs/Web/API/Client) provides a straightforward
+The [Client API](https://developer.mozilla.org/docs/Web/API/Client) provides a straightforward
 way of communicating with multiple clients from the service worker by iterating over an array of
-[`Client`](https://developer.mozilla.org/en-US/docs/Web/API/Client) objects.
+[`Client`](https://developer.mozilla.org/docs/Web/API/Client) objects.
 
 Use the following service worker code to send a message to the last focused tab:
 
@@ -210,7 +210,7 @@ using it.
 
 ### Message Channel {: #message-channel }
 
-[Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) requires
+[Message Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API) requires
 an initial configuration step, by passing a port from the page to the service worker, to establish a
 communication channel between them. The page instantiates a `MessageChannel` object and passes a
 port to the service worker, via the `postMessage()` interface:

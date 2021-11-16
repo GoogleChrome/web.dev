@@ -6,6 +6,14 @@
   .sidebar > nav {
     outline: 1px solid var(--color-stroke);
   }
+
+  nav.cluster {
+    gap: 0.5rem $global-gutter;
+  }
+
+  details {
+    max-width: 50rem;
+  }
 }
 
 .design-system__swatch {
@@ -16,7 +24,7 @@
 
 .design-system__preview-frame {
   width: 100%;
-  min-height: 300px;
+  min-height: 500px;
   border: 1px solid var(--color-stroke);
   resize: both;
 

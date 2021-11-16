@@ -30,7 +30,7 @@ feedback:
 
 ## Referer y Referrer-Policy 101
 
-Las solicitudes HTTP pueden incluir el [encabezado `Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) de forma opcional, que indica el origen o la URL de la página web desde la que se realizó la solicitud. El [encabezado `Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) define qué datos están disponibles en el encabezado `Referer`.
+Las solicitudes HTTP pueden incluir el [encabezado `Referer`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer) de forma opcional, que indica el origen o la URL de la página web desde la que se realizó la solicitud. El [encabezado `Referrer-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) define qué datos están disponibles en el encabezado `Referer`.
 
 En el siguiente ejemplo, el encabezado `Referer` incluye la URL completa de la página en `site-one` desde la que se realizó la solicitud.
 
@@ -71,7 +71,7 @@ Aquí se muestra una descripción general de cómo las Referrer Policies restrin
 
 <figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Diferentes Referrer Policies and their behaviour, según la seguridad y el contexto de origen cruzado", width="800", height="537" %}</figure>
 
-MDN proporciona una [lista completa de políticas y ejemplos de comportamiento](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
+MDN proporciona una [lista completa de políticas y ejemplos de comportamiento](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
 Cosas a tener en cuenta:
 
@@ -133,7 +133,7 @@ Cosas a tener en cuenta:
 Hay diferentes maneras de establecer Referrer Policies en su sitio:
 
 - Como un encabezado HTTP
-- Dentro de su [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
+- Dentro de su [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
 - Desde JavaScript a las [bases de las solicitudes](https://javascript.info/fetch-api#referrer-referrerpolicy)
 
 Puede establecer diferentes políticas para diferentes páginas, solicitudes o elementos.
@@ -266,7 +266,7 @@ Para definir las alternativas, analice primero qué parte de referrer está util
 **Si solo necesita el origen ( `https://site-one.example` ):**
 
 - Si está utilizando el referrer en un script que tiene acceso de nivel superior a la página, `window.location.origin` es una alternativa.
-- Si están disponibles, los encabezados como [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) y [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) le dan el `Origin` o describen si la solicitud es de origen cruzado, que puede ser exactamente lo que necesita.
+- Si están disponibles, los encabezados como [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) y [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) le dan el `Origin` o describen si la solicitud es de origen cruzado, que puede ser exactamente lo que necesita.
 
 **Si necesita otros elementos de la URL (ruta, parámetros de consulta…):**
 
@@ -282,13 +282,13 @@ Para definir las alternativas, analice primero qué parte de referrer está util
 
 Tenga en cuenta que un emisor de solicitudes siempre puede decidir no enviar el referrer estableciendo una política `no-referrer` (y un actor malintencionado podría incluso falsificar el referrer).
 
-Utilice [Tokens CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) como protección principal. Para una protección adicional, utilice [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites) y en lugar de `Referer`, utilice encabezados como [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (disponible en solicitudes POST y CORS) y [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (si está disponible).
+Utilice [Tokens CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) como protección principal. Para una protección adicional, utilice [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites) y en lugar de `Referer`, utilice encabezados como [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) (disponible en solicitudes POST y CORS) y [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) (si está disponible).
 
 ### Registro de datos
 
 Asegúrese de proteger los datos personales o confidenciales de los usuarios que puedan estar en el `Referer`.
 
-Si solo está utilizando el origen, verifique si el [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) podría ser una alternativa. Esto puede brindarle la información que necesita para fines de depuración de una manera más simple y sin necesidad de analizar al Referrer.
+Si solo está utilizando el origen, verifique si el [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) podría ser una alternativa. Esto puede brindarle la información que necesita para fines de depuración de una manera más simple y sin necesidad de analizar al Referrer.
 
 ### Pagos
 
@@ -335,8 +335,8 @@ Para obtener más información sobre las diferentes técnicas para proteger a su
 
 - [Entender "mismo sitio" y "mismo origen"](/same-site-same-origin/)
 - [Un nuevo encabezado de seguridad: Referrer Policy (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- [Referrer Policy en MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- [Encabezado del referer: preocupaciones de privacidad y seguridad en MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+- [Referrer Policy en MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
+- [Encabezado del referer: preocupaciones de privacidad y seguridad en MDN](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Cambio de Chrome: intento de implementación de Blink](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Cambio de Chrome: intención de envío de Blink](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
 - [Cambio de Chrome: entrada de estado](https://www.chromestatus.com/feature/6251880185331712)

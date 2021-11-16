@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-09
-updated: 2021-01-15
+updated: 2021-09-29
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: image/admin/dbYeeV2PCRZNY6RRvQd2.jpg
 thumbnail: image/admin/jy8z8lRuLmmnyytD5xwl.jpg
@@ -121,7 +121,7 @@ If you have more than one page component for user input, make sure to put each i
 
 #### Use `<label>` to label elements {: #html-label}
 
-To label an `<input>`, `<select>`, or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+To label an `<input>`, `<select>`, or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/docs/Web/HTML/Element/label).
 
 Associate a label with an input by giving the label's `for` attribute the same value as
 the input's `id`.
@@ -145,7 +145,7 @@ problematic for users on phones, particularly if they're distracted or feeling s
 
 #### Make buttons helpful {: #html-button}
 
-Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+Use [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button)
 for buttons! You can also use `<input type="submit">`, but don't use a `div` or some
 other random element acting as a button. Button elements provide accessible behaviour, built-in
 form submission functionality, and can easily be styled.
@@ -169,19 +169,33 @@ and what to do to fix it. This is particularly important on mobile, where data e
 difficult and missing or invalid form data may not be visible on the user's screen by the time they
 attempt to submit a form.
 
+{% Aside 'caution' %}
+The default type for a button in a form is `submit`. If you want to add another button in a form 
+(for **Show password**, for example) add `type="button"`. Otherwise clicking or tapping on the 
+button will submit the form. 
+
+Pressing the `Enter` key while any form field has focus simulates a click on the first `submit` 
+button in the form. If you include a button in your form before the **Submit** button, and don't 
+specify the type, that button will have the default type for buttons in a form (`submit`) and 
+receive the click event before the form is submitted. For an example of this, see our 
+[demo](https://enter-button.glitch.me/): fill in the form, then press `Enter`.
+{% endAside %}
+
 ### Make the most of HTML attributes {: #html-attributes}
 
 #### Make it easy for users to enter data
 
 {: #type-attribute}
 
-Use the appropriate input [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email)
+Use the appropriate input [`type` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/input/email)
 to provide the right keyboard on mobile and enable basic built-in validation by the browser.
 
 For example, use `type="email"` for email addresses and `type="tel"` for phone numbers.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of Android phones, showing a keyboard appropriate for entering an email addresss (using type=email) and for entering a telephone number (with type=tel).", width="800", height="683" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of 
+  Android phones, showing a keyboard appropriate for entering an email address (using type=email) 
+  and for entering a telephone number (with type=tel).", width="800", height="683" %}
   <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
 </figure>
 
@@ -210,7 +224,7 @@ to ensure the right keyboard on mobile and add validation and format hints with 
 placeholder to make sure the user enters data in the appropriate format.
 
 {% Aside %}
-The [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables
+The [`datalist`](https://developer.mozilla.org/docs/Web/HTML/Element/datalist) element enables
 a user to select from a list of available options and provides matching suggestions as the user enters text.
 Try out `datalist` for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
 For birth year input, you can compare a `select` with an `input` and `datalist` at [datalist-select.glitch.me](https://datalist-select.glitch.me).
@@ -222,7 +236,7 @@ Using appropriate `autocomplete` values enables browsers to help users by secure
 autofilling `input`, `select`, and `textarea` values. This is particularly important on mobile, and
 crucial for avoiding [high form abandonment rates](https://www.zuko.io/blog/8-surprising-insights-from-zukos-benchmarking-data). Autocomplete also provides [multiple accessibility benefits](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html).
 
-If an appropriate autocomplete value is available for a form field, you should use it. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) has a full list of values and explanations of how to use
+If an appropriate autocomplete value is available for a form field, you should use it. [MDN web docs](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) has a full list of values and explanations of how to use
 them correctly.
 
 {: #stable-name-id}
@@ -261,8 +275,8 @@ forms more quickly and easily by helping them fix problems as they happen. Throu
 customers are trying to give your company money for a product or service—your job is to assist them,
 not to punish them!
 
-You can add [constraint attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to form elements to specify acceptable
-values, including `min`, `max`, and `pattern`. The [validity state](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
+You can add [constraint attributes](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to form elements to specify acceptable
+values, including `min`, `max`, and `pattern`. The [validity state](https://developer.mozilla.org/docs/Web/API/ValidityState)
 of the element is set automatically depending on whether the element's value is valid, as are the
 `:valid` and `:invalid` CSS pseudo-classes which can be used to style elements with valid or invalid
 values.
@@ -329,7 +343,7 @@ malicious. Find out more in [OWASP Input Validation Cheat Sheet](https://cheatsh
 
 #### Help users avoid missing required data {: #required}
 
-Use the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required)
+Use the [`required` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)
 on inputs for mandatory values.
 
 When a form is submitted [modern browsers](https://caniuse.com/mdn-api_htmlinputelement_required)
@@ -667,7 +681,7 @@ number.
 
 ### Avoid using custom elements for payment card dates
 
-If not properly designed, [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
+If not properly designed, [custom elements](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements)
 can interrupt payment flow by breaking autofill, and won't work on older browsers. If all other
 payment card details are available from autocomplete but a user is forced to find their physical
 payment card to look up an expiry date because autofill didn't work for a custom element, you're

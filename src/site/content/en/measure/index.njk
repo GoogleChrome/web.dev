@@ -1,166 +1,101 @@
 ---
-layout: default
-title: Measure
+layout: default-next
+title: Measure page quality
 description: |
-  See how well your website performs. Then, get tips to improve your user
-  experience.
-date: 2018-11-05
+  Test your pages in a lab environment powered by PageSpeed Insights.
+  Then get tips and recommendations to improve your user experience.
+  For field performance, see the
+  [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+  tool.
+date: 2021-10-13
 pageScripts:
   - '/js/measure.js'
 ---
-{# *-landing-page classes are a holdover from devsite. #} {# It would be great
-to remove them as part of the v1 migration. #}
-<div class="profile-landing-page">
+<section class="bg-mid-bg">
+  <header class="flow all-center bg-mid-bg wrapper region">
+    <h1 class="text-size-4">
+      <svg width="53" height="53" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.625 9.938a3.313 3.313 0 0 1 3.313-3.313h33.124a3.313 3.313 0 0 1 3.313 3.313V39.44a.31.31 0 0 1-.31.31H6.934a.31.31 0 0 1-.31-.31V9.938Z" fill="#DEF"/><path d="M6.625 9.938a3.313 3.313 0 0 1 3.313-3.313h33.124a3.313 3.313 0 0 1 3.313 3.313v3.312H6.625V9.937Z" fill="#BDF"/><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="6" width="41" height="34"><path d="M6.625 9.938a3.313 3.313 0 0 1 3.313-3.313h33.124a3.313 3.313 0 0 1 3.313 3.313V39.44a.31.31 0 0 1-.31.31H6.934a.31.31 0 0 1-.31-.31V9.938Z" fill="#DEF"/></mask><g mask="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5 53c7.318 0 13.25-5.932 13.25-13.25S33.818 26.5 26.5 26.5s-13.25 5.932-13.25 13.25S19.182 53 26.5 53Zm0 6.625c10.977 0 19.875-8.898 19.875-19.875S37.477 19.875 26.5 19.875 6.625 28.773 6.625 39.75 15.523 59.625 26.5 59.625Z" fill="#06F"/><mask id="b" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="6" y="19" width="41" height="41"><path d="m6.625 59.625 39.75-39.75v39.75H6.625Z" fill="#C4C4C4"/></mask><g mask="url(#b)"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5 53c7.318 0 13.25-5.932 13.25-13.25S33.818 26.5 26.5 26.5s-13.25 5.932-13.25 13.25S19.182 53 26.5 53Zm0 6.625c10.977 0 19.875-8.898 19.875-19.875S37.477 19.875 26.5 19.875 6.625 28.773 6.625 39.75 15.523 59.625 26.5 59.625Z" fill="#C6F"/></g><path d="M32.74 41.983a6.625 6.625 0 1 1-8.473-8.473l13.657-6.003a.621.621 0 0 1 .819.819L32.74 41.983Z" fill="#6CF"/><path d="M24.158 42.092a3.313 3.313 0 1 0 4.684-4.684 3.313 3.313 0 0 0-4.684 4.684Z" fill="#06F"/></g></svg>
+      <br>
+      {{ title }}
+    </h1>
+    {% if description %}
+      <p class="flow-space-base color-mid-text">{{ description | md | safe }}</p>
+    {% endif %}
+  </header>
+</section>
 
-  <div class="w-layout-container--large w-mb--std">
-    <header class="w-page-header">
-      <h1 class="w-page-header__headline">{{ title }}</h1>
-      <p class="w-page-header__copy">
-        See how well your website performs. Then, get tips to improve your user
-        experience.
-        <span data-lh-signin="hide">
-          Sign in to track your progress over time.
-        </span>
-      </p>
-      <div class="w-measure-signing-button" data-lh-signin='hide'>
-        <web-signin-button></web-signin-button>
-        <p class="w-page-header__copy w-unsupported-notice">
-          Sorry, the measure tool does not work with legacy browsers or with
-          JavaScript disabled. Please try again using an up-to-date version of
-          Edge, Firefox, Safari, or Chrome.
-        </p>
-      </div>
-    </header>
+<section class="bg-mid-bg measure-tool">
+  <div class="wrapper region" data-size="narrow">
+    <web-url-chooser-container should-run-psi></web-url-chooser-container>
+    <web-lighthouse-viewer></web-lighthouse-viewer>
   </div>
-
-  <div class="w-measure-results">
-    <div class="w-layout-container">
-      <web-url-chooser-container></web-url-chooser-container>
-      <web-lighthouse-scores-container></web-lighthouse-scores-container>
+</section>
+<div class="region">
+  <section class="measure-steps numbered-headers wrapper gap-top-size-2" data-size="narrow">
+    <div class="numbered-headers__step">
+      <div class="numbered-headers__heading 1">
+        <h3 class="text-size-3">Run tests on your site</h3>
+      </div>
+      <p>Enter your site's URL to see how well it performs across all audits.</p>
     </div>
-  </div>
-
-  <div class="w-layout-container w-mt--std">
-    <section class="w-numbered-headers">
-      <div class="w-measure-steps">
-        <div class="w-measure-step">
-          <h3 class="w-numbered-header w-numbered-header--vertical">
-            Run tests on your site
-          </h3>
-          <div>
-            Enter your site's URL to see how well it performs across all audits.
-          </div>
-        </div>
-
-        <div class="w-measure-step">
-          <h3 class="w-numbered-header w-numbered-header--vertical">
-            Look at what matters
-          </h3>
-          <div>
-            See your site's performance across the areas you care about.
-          </div>
-        </div>
-
-        <div class="w-measure-step">
-          <h3 class="w-numbered-header w-numbered-header--vertical">
-            Get tips for improving
-          </h3>
-          <div>
-            Each test comes with helpful steps to improve your site's results.
-          </div>
-        </div>
+    <div class="numbered-headers__step">
+      <div class="numbered-headers__heading 2">
+        <h3 class="text-size-3">Look at what matters</h3>
       </div>
-    </section>
-  </div>
-
-  <div class="w-layout-container">
-    <section class="w-text--center">
-      <h2 class="no-link w-headline--two w-font-weight--medium">
-        How your site is measured
-      </h2>
-      <div class="w-mb--l">
-        When you measure your site, web.dev uses
-        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>,
-        an open-source, automated tool for improving the quality of web pages.
-        Lighthouse will audit your site in the following categories:
+      <p>See your site's performance across the areas you care about.</p>
+    </div>
+    <div class="numbered-headers__step">
+      <div class="numbered-headers__heading 2">
+        <h3 class="text-size-3">Get tips for improving</h3>
       </div>
+      <p>Each test comes with helpful steps to improve your site's results.</p>
+    </div>
+  </section>
 
-      <div class="w-measure-categories w-mb--xl">
-        <!-- PERFORMANCE -->
-        <div class="w-measure-category">
-          <img
-            src="/images/icons/performance.svg"
-            aria-describedby="lh-category-performance-title"
-          />
-          <div
-            class="w-headline--three w-mt--std"
-            id="lh-category-performance-title"
-          >
-            Performance
-          </div>
-          <div>
-            Audits for metrics like first paint and time to interactive to
-            determine lag.
-          </div>
-        </div>
+  <section class="flow all-center wrapper gap-top-size-4" data-size="narrow">
+    <h2 class="no-link w-headline--two w-font-weight--medium">
+      How your site is measured
+    </h2>
+    <p class="color-mid-text">
+      When you measure your site, web.dev uses
+      <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>,
+      an open-source, automated tool for improving the quality of web pages.
+      Lighthouse will audit your site in the following categories:
+    </p>
+  </section>
 
-        <!-- BEST PRACTICES -->
-        <div class="w-measure-category">
-          <img
-            src="/images/icons/best_practices.svg"
-            aria-describedby="lh-category-best-practices-title"
-          />
-          <div
-            class="w-headline--three w-mt--std"
-            id="lh-category-best-practices-title"
-          >
-            Best Practices
-          </div>
-          <div>
-            Looks for everything from HTTPS usage to correct image aspect
-            ratios.
-          </div>
-        </div>
+  <section class="wrapper region measure-faq" class="bg-mid-bg" data-size="narrow">
+    <details class="bg-mid-bg">
+      <summary>
+        What is the data source powering the web.dev/measure tool?
+      </summary>
+      <p>
+        web.dev/measure uses Lighthouse data from the PageSpeed Insights API.
+        Learn more about PageSpeed Insights in the
+        <a href="https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq)">
+        official FAQs</a>
+      </p>
+    </details>
+    <details class="bg-mid-bg">
+      <summary>
+        How does web.dev/measure differ from PageSpeed Insights?
+      </summary>
+      <p>
+        web.dev/measure measures the overall quality of a web page in a
+        <a href="/lab-and-field-data-differences/">lab
+        environment</a> (using Lighthouse). It gives insights about multiple
+        quality categories from Lighthouse, including Performance, Accessibility
+        and SEO. PageSpeed Insights (PSI) is performance focused,
+        using both lab (Lighthouse) and field (Chrome UX Report) data
+        to provide a summary of performance.
+        Furthermore, PSI provides origin level insights in the field,
+        whereas web.dev/measure is intended to deep-dive into a single
+        URL in the lab.
+      </p>
+      <p>
+        Use PSI when you want to measure and optimize your Core Web Vitals, and use web.dev/measure when optimizing a broader set of quality signals about a page.
+      </p>
+    </details>
 
-        <!-- SEO -->
-        <div class="w-measure-category">
-          <img src="/images/icons/seo.svg" aria-describedby="lh-category-seo-title" />
-          <div class="w-headline--three w-mt--std" id="lh-category-seo-title">
-            SEO
-          </div>
-          <div>
-            Checks for best practices to ensure your site is discoverable.
-          </div>
-        </div>
-
-        <!-- ACCESSIBILITY -->
-        <div class="w-measure-category">
-          <img
-            src="/images/icons/a11y.svg"
-            aria-describedby="lh-category-accessibility-title"
-          />
-          <div
-            class="w-headline--three w-mt--std"
-            id="lh-category-accessibility-title"
-          >
-            Accessibility
-          </div>
-          <div>
-            Checks for common issues that may prevent users from accessing your
-            content.
-          </div>
-        </div>
-      </div>
-
-      <div>
-        All tests are run using a simulated mobile device, throttled to a fast
-        3G network &amp; 4x CPU slowdown.
-      </div>
-    </section>
-  </div>
-
+  </section>
 </div>
-
-<code id="guide-audit-mapping" style="display: none;">
-  {{ collections.postsWithLighthouse | postsLighthouseJson | dump | safe }}
-</code>

@@ -11,9 +11,9 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
-  - reliability
+  # - reliability
 feedback:
   - api
 ---

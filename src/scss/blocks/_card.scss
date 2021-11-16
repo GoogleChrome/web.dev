@@ -1,58 +1,23 @@
 /// PATTERN LIBRARY LOCATION
 /// https://web.dev/design-system/pattern/card
 .card {
-  /// Flex layout allows the content to grow so where you have a grid
-  /// of cards, the actions will all be aligned
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  padding: $global-gutter;
-  border: 1px solid get-utility-value('color', 'stroke');
-  border-radius: $global-radius-base;
-  max-width: 40rem;
-  text-decoration: none;
-
-  // This lets text keep its selectable state
-  a:not([class*='action']),
-  p,
-  h2,
-  h3,
-  h4 {
-    position: relative;
-    z-index: 1;
-  }
+  @include card-base-styles();
 
   &:hover {
-    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
-      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
-    transition: transform $global-transition-movement,
-      box-shadow $global-transition-movement, background $global-transition-fade;
-
     @include apply-utility('bg', 'mid-bg');
-
-    /// Because the card has a whole-card hover state, we want to kick out
-    /// individual hover styles
-    a {
-      text-decoration: none;
-      background: none;
-    }
   }
 
-  &:link {
-    @include apply-utility('color', 'core-text');
-  }
-
-  img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    margin-inline: auto;
+  &:link:hover {
+    @include apply-utility('bg', 'highlight-interact-bg');
   }
 }
 
 .card__content {
   flex: auto;
-  @include apply-utility('gap-top', 'size-1');
+
+  &:not(:first-child) {
+    @include apply-utility('gap-top', 'size-1');
+  }
 
   a:not([class]) {
     color: currentColor;
@@ -89,12 +54,10 @@
 
 .card__avatars {
   --gutter: 0.5rem;
+  --flow-space: 0.5rem;
+  --avatar-size: 2rem;
 
-  img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-  }
+  font-size: get-size('size-0');
 }
 
 .card__authors {
@@ -102,12 +65,6 @@
 
   padding: 0;
   flex: auto;
-
-  // All hover styles are reset on .card:hover,
-  // but we want these to behave independently
-  a:hover {
-    text-decoration: underline;
-  }
 }
 
 .card__meta {
@@ -126,6 +83,7 @@
     display: block;
   }
 
+  /// Adds a little line above the first item
   li:first-of-type {
     position: relative;
 
@@ -137,7 +95,46 @@
       height: 2px;
       background: get-utility-value('color', 'highlight-text');
       position: absolute;
-      inset: -1ex 0 0 0;
+      inset: -0.5ex 0 0 0;
     }
+  }
+}
+
+.card__header {
+  width: 100%;
+  margin-bottom: get-space('size-1');
+}
+
+.card__hero {
+  width: 100%;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  border-radius: $global-radius-base;
+}
+
+.card__tags {
+  --gutter: 0.5rem;
+  margin-block-start: get-space('base');
+}
+
+/// EXCEPTIONS
+.card[data-style='branded'] {
+  max-width: 25rem;
+  min-width: 22rem;
+
+  > img {
+    height: unset;
+  }
+
+  &:hover {
+    @include apply-utility('bg', 'core-bg');
+  }
+}
+
+/// These cards are way too wide and tall for really small screens
+/// so these little adjustments help that, without affecting other screens
+@include media-query('xs') {
+  .card[data-style='branded'] {
+    min-width: 16rem;
   }
 }

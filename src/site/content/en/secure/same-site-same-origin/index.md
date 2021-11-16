@@ -23,13 +23,13 @@ iframes.
 {% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Origin", width="680", height="100" %}
 
 "Origin" is a combination of a
-[scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
+[scheme](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
 (also known as the
-[protocol](https://developer.mozilla.org/en-US/docs/Glossary/Protocol), for
-example [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) or
-[HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)),
+[protocol](https://developer.mozilla.org/docs/Glossary/Protocol), for
+example [HTTP](https://developer.mozilla.org/docs/Glossary/HTTP) or
+[HTTPS](https://developer.mozilla.org/docs/Glossary/HTTPS)),
 [hostname](https://en.wikipedia.org/wiki/Hostname), and
-[port](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port)
+[port](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port)
 (if specified). For example, given a URL of `https://www.example.com:443/foo` ,
 the "origin" is `https://www.example.com:443`.
 

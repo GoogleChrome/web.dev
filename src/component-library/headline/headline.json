@@ -1,34 +1,26 @@
 {
   "title": "Headline",
-  "summary": "A pattern to help you maintain semantic hierarchy and appropriate aesthetic for headings.",
-  "sort": "source",
   "context": {
-    "text": "A headline is just a heading tag with utility classes",
-    "utilities": "text-size-6"
+    "title": "Tempus natoque facilisi habitant ante elementum platea sed",
+    "summary": "Habitant sodales hendrerit nisl dui conubia est hac nostra interdum ad libero mattis mi risus tempor integer sapien velit fames"
   },
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_headline.scss"
+    }
+  ],
   "variants": [
     {
-      "name": "H2 styles",
+      "name": "with-action",
+      "title": "With Action",
       "context": {
-        "utilities": "text-size-5"
-      }
-    },
-    {
-      "name": "H3 styles",
-      "context": {
-        "utilities": "text-size-4"
-      }
-    },
-    {
-      "name": "H4 styles",
-      "context": {
-        "utilities": "text-size-3"
-      }
-    },
-    {
-      "name": "Utility overriding look and feel",
-      "context": {
-        "utilities": "tt-upper color-highlight-text"
+        "title": "Tempus natoque facilisi habitant ante elementum platea sed",
+        "summary": "Habitant sodales hendrerit nisl dui conubia est hac nostra interdum ad libero mattis mi risus tempor integer sapien velit fames",
+        "action": {
+          "url": "#",
+          "text": "See all"
+        }
       }
     }
   ]

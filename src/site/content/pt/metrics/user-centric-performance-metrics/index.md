@@ -24,7 +24,7 @@ Mas só porque uma métrica é baseada em critérios objetivos e pode ser medida
 
 ## Definindo métricas
 
-Historicamente, o desempenho da web tem sido medido com o evento <code>[load](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)</code>. No entanto, embora o <code>load</code> seja um momento bem definido no ciclo de vida de uma página, esse momento não corresponde necessariamente a algo com que o usuário se importe.
+Historicamente, o desempenho da web tem sido medido com o evento <code>[load](https://developer.mozilla.org/docs/Web/API/Window/load_event)</code>. No entanto, embora o <code>load</code> seja um momento bem definido no ciclo de vida de uma página, esse momento não corresponde necessariamente a algo com que o usuário se importe.
 
 Por exemplo, um servidor pode responder com uma página mínima que "carrega" imediatamente, mas adia a busca de conteúdo e a exibição de qualquer coisa na página até vários segundos após o evento `load`. Embora tal página possa tecnicamente ter um tempo de carregamento rápido, esse tempo não corresponderia à forma como o usuário realmente percebe o carregamento da página.
 

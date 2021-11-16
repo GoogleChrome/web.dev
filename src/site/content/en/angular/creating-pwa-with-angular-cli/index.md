@@ -11,8 +11,8 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
-  - pwa
+  # - angular
+  - progressive-web-apps
 feedback:
   - api
 ---

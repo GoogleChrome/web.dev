@@ -13,10 +13,10 @@ hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/8O1JKZ6YxdA0IIuYtECB.jpg
 alt: Sun and moon
 tags:
   - blog
-  - dark-mode
-  - dark-theme
-  - prefers-color-scheme
-  - color-scheme
+  # - dark-mode
+  # - dark-theme
+  # - prefers-color-scheme
+  # - color-scheme
   - css
 ---
 

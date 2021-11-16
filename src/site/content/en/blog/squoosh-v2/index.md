@@ -53,7 +53,7 @@ quality of an image as much as possible without degrading the visual fidelity
 (using the [Butteraugli metric](https://github.com/google/butteraugli)). 
 
 With the Squoosh CLI you can compress the images in your web app to multiple formats and use the 
-[`<picture>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) 
+[`<picture>` element](https://developer.mozilla.org/docs/Web/HTML/Element/picture) 
 to let the browser choose the best version. We also plan to build 
 plugins for Webpack, Rollup, and other build tools to make image compression
 an automatic part of your build process.

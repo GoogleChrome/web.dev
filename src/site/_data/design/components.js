@@ -20,6 +20,7 @@ const nunjucksEnv = new nunjucks.Environment(
   new nunjucks.FileSystemLoader(
     path.join(__basedir, 'src', 'site', '_includes'),
   ),
+  {autoescape: false},
 );
 
 nunjucksEnv.addFilter('md', md);

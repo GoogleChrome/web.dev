@@ -13,7 +13,7 @@ description:
 tags:
   - blog
   - augmented-reality
-  - hit-test
+  # - hit-test
   - virtual-reality
   - webxr
 ---

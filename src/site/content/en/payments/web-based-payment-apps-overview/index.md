@@ -6,6 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-07-17
+updated: 2021-09-14
 description: |
   Learn how to adapt your web-based payment app to work with Web Payments and provide a better user experience for customers.
 tags:
@@ -118,7 +119,7 @@ development](https://bugs.chromium.org/p/chromium/issues/detail?id=1052383).
 
 ### WebOTP support
 
-[The Web OTP API](/web-otp/) helps you programmatically obtain an
+[The WebOTP API](/web-otp/) helps you programmatically obtain an
 OTP from an SMS message and verify a phone number for the user more easily. It's
 planned to be enabled in Chrome, but still [under
 development](https://bugs.chromium.org/p/chromium/issues/detail?id=1051930).

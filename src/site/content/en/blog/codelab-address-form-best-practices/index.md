@@ -8,7 +8,7 @@ date: 2020-12-09
 updated: 2020-12-09
 description: Learn best practices for address forms.
 tags:
-  - ecommerce
+  # - ecommerce
   - forms
   - identity
   - layout
@@ -60,7 +60,7 @@ announce label text when the label or the label's input gets focus.
 
 What about `name="name"`? This is the name (which happens to be 'name'!) associated with the data
 from this input which is sent to the server when the form is submitted. Including a `name` attribute
-also means that the data from this element can be accessed by the [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects).
+also means that the data from this element can be accessed by the [FormData API](https://developer.mozilla.org/docs/Web/API/FormData/Using_FormData_Objects).
 
 ## Step 2: Add attributes to help users enter data
 
@@ -99,7 +99,7 @@ If an [appropriate autocomplete value](/payment-and-address-form-best-practices/
 is available for an `input`, `select` or `textarea`, you should use it!
 {% endAside %}
 
-Now add [constraint validation attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation)
+Now add [constraint validation attributes](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5/Constraint_validation)
 `maxlength`, `pattern` and `required` so your input code looks like this:
 
 ```html/2

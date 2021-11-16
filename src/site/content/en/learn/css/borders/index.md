@@ -34,7 +34,7 @@ The individual `border` properties provide a way to style the various parts of a
 
 For a border to appear,
 you have to define the
-[`border-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style).
+[`border-style`](https://developer.mozilla.org/docs/Web/CSS/border-style).
 There's a few options to choose from:
 
 {% Codepen {
@@ -65,17 +65,17 @@ height="489" %}
 
 To set border style on each side of your box,
 you can use
-[`border-top-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-style),
-[`border-right-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style),
-[`border-left-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style),
-and [`border-bottom-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-style).
+[`border-top-style`](https://developer.mozilla.org/docs/Web/CSS/border-top-style),
+[`border-right-style`](https://developer.mozilla.org/docs/Web/CSS/border-right-style),
+[`border-left-style`](https://developer.mozilla.org/docs/Web/CSS/border-left-style),
+and [`border-bottom-style`](https://developer.mozilla.org/docs/Web/CSS/border-bottom-style).
 
 
 ### Shorthand
 
 As with `margin` and `padding`,
 you can use the
-[`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+[`border`](https://developer.mozilla.org/docs/Web/CSS/border)
 shorthand property to define all the parts of your border in one declaration.
 
 ```css
@@ -90,7 +90,7 @@ The order of values in the `border` shorthand are `border-width`,
 ### Color
 
 You can set color on all sides of your box or on each individual side with
-[`border-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color).
+[`border-color`](https://developer.mozilla.org/docs/Web/CSS/border-color).
 By default, it uses the box's current text color: `currentColor`.
 This means that if you only declare border properties,
 like width,
@@ -116,10 +116,10 @@ the color will be that computed value unless you explicitly set it.
 
 To set a border color on each side of your box,
 use
-[`border-top-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color),
-[`border-right-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color),
-[`border-left-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color) and
-[`border-bottom-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color).
+[`border-top-color`](https://developer.mozilla.org/docs/Web/CSS/border-top-color),
+[`border-right-color`](https://developer.mozilla.org/docs/Web/CSS/border-right-color),
+[`border-left-color`](https://developer.mozilla.org/docs/Web/CSS/border-left-color) and
+[`border-bottom-color`](https://developer.mozilla.org/docs/Web/CSS/border-bottom-color).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -129,7 +129,7 @@ use
 ### Width
 
 The width of a border is how thick the line is, and is controlled by
-[`border-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-width).
+[`border-width`](https://developer.mozilla.org/docs/Web/CSS/border-width).
 The default border width is `medium`.
 This won't be visible unless you define a style, though.
 You can use other named widths such as `thin` and `thick`.
@@ -142,10 +142,10 @@ You can use other named widths such as `thin` and `thick`.
 The `border-width` properties also accept a length unit such as
 `px`, `em`, `rem` or `%`.
 To set border width on each side of your box, use
-[`border-top-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width),
-[`border-right-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-width),
-[`border-left-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-width) and
-[`border-bottom-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width).
+[`border-top-width`](https://developer.mozilla.org/docs/Web/CSS/border-top-width),
+[`border-right-width`](https://developer.mozilla.org/docs/Web/CSS/border-right-width),
+[`border-left-width`](https://developer.mozilla.org/docs/Web/CSS/border-left-width) and
+[`border-bottom-width`](https://developer.mozilla.org/docs/Web/CSS/border-bottom-width).
 
 ## Logical properties
 
@@ -181,7 +181,7 @@ so make sure you check support before using.
 ## Border radius
 
 To give a box rounded corners use the
-[`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) property.
+[`border-radius`](https://developer.mozilla.org/docs/Web/CSS/border-radius) property.
 
 ```css
 .my-element {
@@ -197,10 +197,10 @@ To give a box rounded corners use the
 This shorthand adds a consistent border to each corner of your box.
 As with the other border properties,
 you can define the border radius for each side with
-[`border-top-left-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius),
-[`border-top-right-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius),
-[`border-bottom-right-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius) and
-[`border-bottom-left-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius).
+[`border-top-left-radius`](https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius),
+[`border-top-right-radius`](https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius),
+[`border-bottom-right-radius`](https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius) and
+[`border-bottom-left-radius`](https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius).
 
 You can also specify each corner's radius in the shorthand,
 which follows the order: top left, top right, bottom right then bottom left.
@@ -260,7 +260,7 @@ This enables you to get creative and make some complex shapes.
 
 You don't just have to use a stroke-based border in CSS.
 You can also use any type of image, using
-[`border-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image).
+[`border-image`](https://developer.mozilla.org/docs/Web/CSS/border-image).
 This shorthand property allows you to set the source image,
 how that image is sliced, the image width,
 how far the border is outset from the edge and how it should repeat.
@@ -280,15 +280,15 @@ how far the border is outset from the edge and how it should repeat.
   id: 'zYNdWNX'
 } %}
 
-The [`border-image-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width)
+The [`border-image-width`](https://developer.mozilla.org/docs/Web/CSS/border-image-width)
 property is like `border-width`:
 it is how you set the width of your border image.
-The [`border-image-outset`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset)
+The [`border-image-outset`](https://developer.mozilla.org/docs/Web/CSS/border-image-outset)
 property lets you set the distance between your border image and the box that it wraps around.
 
 ### `border-image-source`
 
- The [`border-image-source`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source)
+ The [`border-image-source`](https://developer.mozilla.org/docs/Web/CSS/border-image-source)
  (source of the border image) can be a `url` for any valid image, which includes CSS gradients.
 
 ```css
@@ -303,7 +303,7 @@ property lets you set the distance between your border image and the box that it
 
 ### `border-image-slice`
 
-The [`border-image-slice`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice)
+The [`border-image-slice`](https://developer.mozilla.org/docs/Web/CSS/border-image-slice)
 property is a useful property that allows you to slice an image into 9 parts, made up of 4 split lines.
 It works like the `margin` shorthand where you define the top, right, bottom and left **offset value**.
 
@@ -324,16 +324,16 @@ With the offset values defined,
 you now have 9 sections of the image: 4 corners, 4 edges and a middle section.
 The corners are applied to the corners of the element with the border image.
 The edges are applied to the edges of that element.
-The [`border-image-repeat`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat)
+The [`border-image-repeat`](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat)
 property defines how those edges fill their space and the
-[`border-image-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width)
+[`border-image-width`](https://developer.mozilla.org/docs/Web/CSS/border-image-width)
 property controls the size of the slices.
 
 Lastly, the `fill` keyword determines whether the middle section, left by the slicing, is used as the element's background image or not.
 
 ### `border-image-repeat`
 
-[`border-image-repeat`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat)
+[`border-image-repeat`](https://developer.mozilla.org/docs/Web/CSS/border-image-repeat)
 is how you instruct CSS how you would like your border image to repeat.
 It works the same as `background-repeat`.
 

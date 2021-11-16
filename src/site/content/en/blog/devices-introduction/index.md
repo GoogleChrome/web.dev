@@ -173,29 +173,29 @@ Thanks to [Reilly Grant], [Thomas Steiner], and [Kayce Basques] for reviewing th
 Photo by [Darya Tryfanava] on [Unsplash].
 
 
-[Keyboard]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
-[Pointer]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
+[Keyboard]: https://developer.mozilla.org/docs/Web/API/KeyboardEvent
+[Pointer]: https://developer.mozilla.org/docs/Web/API/Pointer_events
 [Gamepad API]: /gamepad/
-[MediaDevices.getUserMedia()]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+[MediaDevices.getUserMedia()]: https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia
 [capturing audio and video]: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 [control the camera's pan, tilt, and zoom]: /camera-pan-tilt-zoom/
 [brightness and contrast]: https://developers.google.com/web/updates/2016/12/imagecapture
 [take still images]: https://beaufortfrancois.github.io/sandbox/image-capture/playground
-[Web Audio]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+[Web Audio]: https://developer.mozilla.org/docs/Web/API/Web_Audio_API
 [how to profile the performance of Web Audio apps]: /profiling-web-audio-apps-in-chrome/
-[window.print()]: https://developer.mozilla.org/en-US/docs/Web/API/Window/print
+[window.print()]: https://developer.mozilla.org/docs/Web/API/Window/print
 [WebAuthn]: https://webauthn.io/
 [Build your first WebAuthn app]: https://codelabs.developers.google.com/codelabs/webauthn-reauth/
 [File System Access API]: /file-system-access/
-[File API]: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+[File API]: https://developer.mozilla.org/docs/Web/API/File/Using_files_from_web_applications
 [Generic Sensor API]: /generic-sensor/
 [DeviceMotion and DeviceOrientation]: https://developers.google.com/web/fundamentals/native-hardware/device-orientation
 [Geolocation API]: https://developers.google.com/web/fundamentals/native-hardware/user-location
-[Battery API]: https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
+[Battery API]: https://developer.mozilla.org/docs/Web/API/Battery_Status_API
 [Remote Playback API]: https://www.chromestatus.com/feature/5778318691401728
 [Presentation API]: https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays
-[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-[WebSockets]: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+[Fetch API]: https://developer.mozilla.org/docs/Web/API/Fetch_API
+[WebSockets]: https://developer.mozilla.org/docs/Web/API/WebSockets_API
 [WebTransport]: /webtransport/
 [WebRTC]: /webrtc-standard-announcement/
 [Web NFC]: /nfc

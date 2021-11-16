@@ -12,7 +12,7 @@ authors:
   - mohamedzamakhan
   - mgechev
 tags:
-  - angular
+  # - angular
   - accessibility
 feedback:
   - api

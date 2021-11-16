@@ -48,6 +48,7 @@ const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
 const Label = require('./src/site/_includes/components/Label');
+const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
@@ -55,6 +56,7 @@ const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const Tooltip = require('./src/site/_includes/components/Tooltip');
 const {Video} = require('./src/site/_includes/components/Video');
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
+const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
 // Collections
 const authors = require('./src/site/_collections/authors');
@@ -91,6 +93,7 @@ const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
+const {siteRender} = require('./src/site/_filters/site-render');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
@@ -124,7 +127,7 @@ module.exports = function (config) {
     wrapper: 'div',
     wrapperClass: 'w-toc__list',
     ul: true,
-    flat: true,
+    flat: false,
   });
 
   // ----------------------------------------------------------------------------
@@ -153,6 +156,20 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
 
+  // Filters through all collection items and finds content that has
+  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
+  // are in a design system context or a legacy context
+  config.addCollection('designSystemGlobals', (collection) => {
+    global.__designSystemPaths = new Set(
+      collection
+        .getAll()
+        .filter(({data}) => data.CSS_ORIGIN === 'next')
+        .map(({filePathStem}) => filePathStem),
+    );
+
+    return global.__designSystemPaths;
+  });
+
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
@@ -170,6 +187,7 @@ module.exports = function (config) {
   config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
+  config.addNunjucksAsyncFilter('siteRender', siteRender);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -195,7 +213,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
-  config.addNunjucksAsyncShortcode('BrowserCompat', BrowserCompat);
+  config.addNunjucksShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addShortcode('CodePattern', CodePattern);
@@ -209,6 +227,7 @@ module.exports = function (config) {
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
+  config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('SignPosts', SignPosts);
@@ -216,6 +235,7 @@ module.exports = function (config) {
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
 
   // This table is used for the web.dev/LIVE event, and should be taken down

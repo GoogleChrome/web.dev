@@ -21,6 +21,9 @@ const siteData = require('../../src/site/_data/site');
 
 module.exports = rule('remark-lint:bad-urls', checkURL);
 
+// Based on this Stack Overflow answer: https://bit.ly/3ELKYq3
+const locale = /^\/[a-z]{2,3}-[a-z0-9]{2,4}(-[a-z]{2})?/i;
+
 /**
  * Walk the AST for the markdown file and find any bad URLs.
  * @param {*} tree An AST of the markdown file.
@@ -41,6 +44,18 @@ function checkURL(tree, file) {
     // "developer.mozilla.org".
     if (parsed.hostname === 'wiki.developer.mozilla.org') {
       const reason = 'Change URL hostname to "developer.mozilla.org".';
+      file.message(reason, node);
+    }
+
+    // If the URL is to MDN and contains localization info (e.g., en-US), warn
+    // to remove the localization part of the URL.
+    if (
+      parsed.hostname === 'developer.mozilla.org' &&
+      locale.test(parsed.pathname) === true
+    ) {
+      const [matchedLocale] = parsed.pathname.match(locale);
+      const reason = `An MDN link contains a locale (${matchedLocale}). Please remove the locale from the link.`;
+
       file.message(reason, node);
     }
   }

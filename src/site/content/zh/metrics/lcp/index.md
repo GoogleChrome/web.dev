@@ -15,7 +15,7 @@ tags:
 
 长久以来，对于网页开发者来说，测量网页主要内容的加载速度和内容对用户的显示速度一直是一个挑战。
 
-诸如[load（加载）](https://developer.mozilla.org/en-US/docs/Web/Events/load)或[DOMContentLoaded（DOM 内容加载完毕）](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)这样的旧有指标并不是很好，因为这些指标不一定与用户在屏幕上看到的内容相对应。而像[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)这类以用户为中心的较新性能指标只会捕获加载体验最开始的部分。如果某个页面显示的是一段启动画面或加载指示，那么这些时刻与用户的关联性并不大。
+诸如[load（加载）](https://developer.mozilla.org/docs/Web/Events/load)或[DOMContentLoaded（DOM 内容加载完毕）](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded)这样的旧有指标并不是很好，因为这些指标不一定与用户在屏幕上看到的内容相对应。而像[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)这类以用户为中心的较新性能指标只会捕获加载体验最开始的部分。如果某个页面显示的是一段启动画面或加载指示，那么这些时刻与用户的关联性并不大。
 
 我们以往推荐过一些性能指标，例如[First Meaningful Paint 首次有效绘制 (FMP)](/first-meaningful-paint/)和[Speed Index 速度指数 (SI)](/speed-index/) （两个指标都包含在灯塔工具中），这些指标有助于捕获到更多初始绘制后的加载体验，但这些指标十分复杂、难以解释，而且常常出错，也就意味着这些指标仍然无法识别出页面主要内容加载完毕的时间点。
 
@@ -43,32 +43,32 @@ tags:
 - `<img>`元素
 - 内嵌在`<svg>`元素内的`<image>`元素
 - `<video>`元素（使用封面图像）
-- 通过[`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url())函数（而非使用[CSS 渐变](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)）加载的带有背景图像的元素
-- 包含文本节点或其他行内级文本元素子元素的[块级元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)。
+- 通过[`url()`](https://developer.mozilla.org/docs/Web/CSS/url())函数（而非使用[CSS 渐变](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients)）加载的带有背景图像的元素
+- 包含文本节点或其他行内级文本元素子元素的[块级元素](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)。
 
 请注意，为了在初始阶段保持简洁，我们有意将元素限制在这几个有限的类型中。随着研究的深入，未来可能会添加其他元素（例如`<svg>` 、 `<video>`）。
 
 ### 如何确定一个元素的大小？
 
-报告给最大内容绘制的元素大小通常是用户在可视区域内可见的大小。如果有元素延伸到可视区域之外，或者任何元素被剪裁或包含不可见的[溢出](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)，则这些部分不计入元素大小。
+报告给最大内容绘制的元素大小通常是用户在可视区域内可见的大小。如果有元素延伸到可视区域之外，或者任何元素被剪裁或包含不可见的[溢出](https://developer.mozilla.org/docs/Web/CSS/overflow)，则这些部分不计入元素大小。
 
-对于在[原始尺寸](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)之上经过调整的图像元素，报告给指标的元素大小为可见尺寸或原始尺寸，以尺寸较小者为准。例如，远小于其原始尺寸的缩小图像将仅报告图像的显示尺寸，而拉伸或放大成更大尺寸的图像将仅报告图像的原始尺寸。
+对于在[原始尺寸](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)之上经过调整的图像元素，报告给指标的元素大小为可见尺寸或原始尺寸，以尺寸较小者为准。例如，远小于其原始尺寸的缩小图像将仅报告图像的显示尺寸，而拉伸或放大成更大尺寸的图像将仅报告图像的原始尺寸。
 
 对于文本元素，指标仅考量其文本节点的大小（包含所有文本节点的最小矩形）。
 
 对于所有元素，通过 CSS 设置的任何边距、填充或边框都不在考量范围内。
 
-{% Aside %} 确定哪些文本节点属于哪些元素有时会很棘手，尤其是对于子元素既包括行内元素和纯文本节点，又包括块级元素的一部分元素。关键点在于每个文本节点都属于（且仅属于）其最近的块级祖先元素。用[规范术语](https://wicg.github.io/element-timing/#set-of-owned-text-nodes)来解释：每个文本节点都属于生成其[包含块](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block)的对应元素。 {% endAside %}
+{% Aside %} 确定哪些文本节点属于哪些元素有时会很棘手，尤其是对于子元素既包括行内元素和纯文本节点，又包括块级元素的一部分元素。关键点在于每个文本节点都属于（且仅属于）其最近的块级祖先元素。用[规范术语](https://wicg.github.io/element-timing/#set-of-owned-text-nodes)来解释：每个文本节点都属于生成其[包含块](https://developer.mozilla.org/docs/Web/CSS/Containing_block)的对应元素。 {% endAside %}
 
 ### 何时报告最大内容绘制？
 
 网页通常是分阶段加载的，因此，页面上的最大元素也可能会发生变化。
 
-为了应对这种潜在的变化，浏览器会在绘制第一帧后立即分发一个`largest-contentful-paint`类型的[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)，用于识别最大内容元素。但是，在渲染后续帧之后，浏览器会在最大内容元素发生变化时分发另一个[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)。
+为了应对这种潜在的变化，浏览器会在绘制第一帧后立即分发一个`largest-contentful-paint`类型的[`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)，用于识别最大内容元素。但是，在渲染后续帧之后，浏览器会在最大内容元素发生变化时分发另一个[`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)。
 
 例如，在一个带有文本和首图的网页上，浏览器最初可能只渲染文本部分，并在此期间分发一个`largest-contentful-paint`条目，其`element`属性通常会引用一个`<p>`或`<h1>` 。随后，一旦首图完成加载，浏览器就会分发第二个`largest-contentful-paint`条目，其`element`属性将引用`<img>` 。
 
-需要注意的是，一个元素只有在渲染完成并且对用户可见后才能被视为最大内容元素。尚未加载的图像不会被视为"渲染完成"。 在[字体阻塞期](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline)使用网页字体的文本节点亦是如此。在这种情况下，较小的元素可能会被报告为最大内容元素，但一旦更大的元素完成渲染，就会通过另一个`PerformanceEntry`对象进行报告。
+需要注意的是，一个元素只有在渲染完成并且对用户可见后才能被视为最大内容元素。尚未加载的图像不会被视为"渲染完成"。 在[字体阻塞期](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#The_font_display_timeline)使用网页字体的文本节点亦是如此。在这种情况下，较小的元素可能会被报告为最大内容元素，但一旦更大的元素完成渲染，就会通过另一个`PerformanceEntry`对象进行报告。
 
 除了延迟加载图像和字体之外，页面可能会在新内容可用时向 DOM 添加新元素。如果有任意一个新元素大于先前的最大内容元素，则浏览器还将报告一个新的`PerformanceEntry`。
 
@@ -84,9 +84,9 @@ tags:
 
 #### 加载时间 vs. 渲染时间
 
-出于安全考虑，对于缺少[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)标头的跨域图像来说，图像的渲染时间戳不会得到公开。相反，只有图像的加载时间会得到公开（因为加载时间已经通过其他许多网页 API 得到了公开）。
+出于安全考虑，对于缺少[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)标头的跨域图像来说，图像的渲染时间戳不会得到公开。相反，只有图像的加载时间会得到公开（因为加载时间已经通过其他许多网页 API 得到了公开）。
 
-下方的[使用示例](#measure-lcp-in-javascript)说明了如何处理渲染时间不可用的元素。但是，我们始终建议您在可能的情况下设置好[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)标头，从而使您的指标更加准确。
+下方的[使用示例](#measure-lcp-in-javascript)说明了如何处理渲染时间不可用的元素。但是，我们始终建议您在可能的情况下设置好[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)标头，从而使您的指标更加准确。
 
 ### 如何处理元素布局和元素大小更改？
 
@@ -133,7 +133,7 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 在 JavaScript 中测量 LCP
 
-要在 JavaScript 中测量 LCP，您可以使用[最大内容绘制 API](https://wicg.github.io/largest-contentful-paint/) 。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)来侦听`largest-contentful-paint`条目并记录在控制台中。
+要在 JavaScript 中测量 LCP，您可以使用[最大内容绘制 API](https://wicg.github.io/largest-contentful-paint/) 。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听`largest-contentful-paint`条目并记录在控制台中。
 
 ```js
 new PerformanceObserver((entryList) => {

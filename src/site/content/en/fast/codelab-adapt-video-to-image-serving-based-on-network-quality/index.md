@@ -20,7 +20,7 @@ quality. This page's background video will load only when users are on a fast
 network. On slower networks, an image will load instead.
 
 The
-[Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)
+[Network Information API](https://developer.mozilla.org/docs/Web/API/NetworkInformation)
 enables you to access information about the user's connection quality. You will
 use its `effectiveType` property to decide when to serve a video and when to
 serve an image. `effectiveType` can be `'slow-2g'`, `'2g'`, `'3g'`, or `'4g'`.
@@ -85,7 +85,7 @@ Here's how the video loading code works: the `<video>` tag doesn't download or d
 <video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>
 ```
 
-[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. A data element can be named anything, as long as it starts with "data-".
+[Data attributes](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. A data element can be named anything, as long as it starts with "data-".
 
 To actually display the video on the page, you need to get the value from `data-src` and set it as the video element's `src` attribute.
 

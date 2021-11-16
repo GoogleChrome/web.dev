@@ -51,7 +51,7 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### JavaScript を使用して FCP を測定する
 
-JavaScript を使用した FCP の測定には、[Paint Timing API](https://w3c.github.io/paint-timing/) を使用することができます。以下の例では、`first-contentful-paint` という名前の `paint` エントリをリッスンし、コンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) の作成方法を示しています。
+JavaScript を使用した FCP の測定には、[Paint Timing API](https://w3c.github.io/paint-timing/) を使用することができます。以下の例では、`first-contentful-paint` という名前の `paint` エントリをリッスンし、コンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 
 ```js
 new PerformanceObserver((entryList) => {
@@ -100,7 +100,7 @@ FCP の (あらゆるサイトに共通する) 一般的な改善方法につい
 - [CSS を圧縮する](/unminified-css/)
 - [使用されていない CSS を削除する](/unused-css-rules/)
 - [必要なオリジンに事前接続する](/uses-rel-preconnect/)
-- [サーバーの応答時間 (TTFB) を短縮する](/time-to-first-byte/)
+- [サーバーの応答時間 (TTFB) を短縮する](/ttfb/)
 - [複数のページ リダイレクトを避ける](/redirects/)
 - [キー リクエストを事前に読み込む](/uses-rel-preload/)
 - [過大なネットワーク ペイロードを回避する](/total-byte-weight/)
