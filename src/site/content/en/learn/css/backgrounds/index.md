@@ -59,7 +59,7 @@ Several [gradient](/learn/css/gradients) CSS functions exist to allow you to gen
 
 Regardless of which gradient function is used, the resulting image is [intrinsically sized](/learn/css/box-model/#content-and-sizing) to match the amount of space available.
 
-Demo showing example of applying a background-image using Gradient functions:
+Demo showing example of applying a background-image using gradient functions:
 
 {% Codepen {
   user: 'web-dot-dev',
