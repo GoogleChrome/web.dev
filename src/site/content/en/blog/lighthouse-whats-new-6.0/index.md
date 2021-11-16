@@ -314,7 +314,7 @@ At [CDS last November](/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-relea
 we announced [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), the open source Node
 CLI and server that tracks Lighthouse results on every commit in your continuous integration
 pipeline, and we've come a long way since the alpha release. Lighthouse CI now has support
-for numerous CI providers including Travis, Circle, GitLab, and Github Actions. Ready-to-deploy
+for numerous CI providers including Travis, Circle, GitLab, and GitHub Actions. Ready-to-deploy
 [docker images](https://github.com/GoogleChrome/lighthouse-ci/tree/master/docs/recipes) make setup a
 breeze, and a comprehensive dashboard redesign now reveals trends across every category and metric
 in Lighthouse for detailed analysis.

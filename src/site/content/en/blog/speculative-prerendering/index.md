@@ -439,7 +439,7 @@ to a more sophisticated prerendering journey. Sign-up for
 the prerendering
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/1325184190353768449)
 and see how well it works for your specific use cases. If you have any feedback on the trial, submit an issue
-[to the Github repo](https://github.com/jeremyroman/alternate-loading-modes/issues).
+[to the GitHub repo](https://github.com/jeremyroman/alternate-loading-modes/issues).
 
 There is also an ongoing trial for using
 [Speculation Rules for Prefetch](https://developer.chrome.com/origintrials/#/view_trial/4576783121315266561).

@@ -174,7 +174,7 @@ priority, so breaking changes will be avoided until version 2.0 is released.
 `<model-viewer>` version 1.0 includes the most-requested capabilities, but the
 team is not done yet. More features will be added, as will improvements in
 performance, stability, documentation, and tooling. If you have suggestions,
-file an [issue in Github](https://github.com/google/model-viewer/issues); also,
+file an [issue in GitHub](https://github.com/google/model-viewer/issues); also,
 PRs are always welcome. You can stay connected by following [`<model-viewer>` on
 Twitter](https://twitter.com/modelviewer) and checking out the [community chat
 on Spectrum](https://spectrum.chat/model-viewer?tab=posts).
