@@ -21,7 +21,9 @@
   }
 
   /// Add more space to elements that follow figures etc
+  pre,
   pre + *,
+  figure,
   figure + *,
   h2,
   h3,
@@ -57,6 +59,12 @@
     > * {
       width: 100%;
     }
+  }
+
+  figure {
+    border: 1px solid var(--color-stroke);
+    padding: 1em;
+    border-radius: $global-radius-base;
   }
 
   figcaption {
