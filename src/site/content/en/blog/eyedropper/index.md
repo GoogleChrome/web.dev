@@ -61,6 +61,8 @@ The EyeDropper API fills this gap by providing a way to sample colors from the s
 | 4. Origin trial                          | Complete                 |
 | 5. **Launch**                            | **Chromium&nbsp;95**<br/>(Desktop only.)             |
 
+</div>
+
 ## How to use the EyeDropper API {: #use }
 
 ### Feature detection and browser support
