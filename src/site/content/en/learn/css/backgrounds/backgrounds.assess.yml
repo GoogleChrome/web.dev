@@ -49,7 +49,7 @@ questions:
     stem: What would be the steps to render a background like this against its content?
     options:
       - rationale: |
-          1. Use `background-clip: text`. [https://caniuse.com/background-clip-text](https://caniuse.com/background-clip-text).
+          1. Use `background-clip: text`. [Check if the property is supported in the browsers you need to support](https://caniuse.com/background-clip-text).
           1. Use `background-image: url(/texture.jpg)`.
           1. Use `-webkit-text-fill-color: transparent` or semi-transparent for the the background image to be seen within the text.
 
