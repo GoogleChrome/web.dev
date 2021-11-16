@@ -56,7 +56,7 @@
                   data-action="click"
                   href="/blog"
                 >
-                  All articles
+                  {{ 'i18n.search.all_articles' | i18n(locale) }}
                 </a>
               </li>
               {% elif crumbs %}
@@ -79,14 +79,14 @@
         {% endif %}
 
         <h1 id="{{ safeTitle | slugify }}">{{ safeTitle }}</h1>
-        {% if subhead %}
+        {% if subhead | length %}
           <p class="color-mid-text flow-space-base">
             {{ subhead | md | safe }}
           </p>
         {% endif %}
 
         {% if date %}
-          <div>
+          <div class="flow-space-size-1 color-mid-text text-size-0">
             <time>{{date | prettyDate}}</time>
             {% if updated %} — {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
           </div>
@@ -102,7 +102,7 @@
         {% SignPosts page.fileSlug %}
 
         {% if authors %}
-          <div class="cluster">
+          <div class="cluster flow-space-size-2">
             {% for author in authors %}
               {% Author {
                 id: authorKey,
@@ -160,22 +160,25 @@
           {% CodelabsCallout codelabs, lang %}
         </div>
       {% endif %}
+      
+      {% if 'blog' in tags %}
+        {% set backUrl = '/blog' %}
+        {% set backLabel = 'Return to all articles' %}
+      {% elif path %}
+        {% set backUrl = '/' + path.slug %}
+        {% set backLabel = 'Return to all articles' %}
+      {% endif %}
+
+      {% if backLabel and backUrl %}
+        <div class="flow-space-size-2">
+          <a href="{{ backUrl }}" class="button" data-type="secondary">
+            {% include 'icons/arrow-back.svg' %} 
+            <span>{{ backLabel }}</span>
+          </a>
+        </div>
+      {% endif %}
 
       {% include 'partials/subscribe-action-next.njk' %}
     </article>
   </div>
-  
-  {% if 'blog' in tags %}
-    {# Find next blog post #}
-    {% ArticleNavigation {
-      back: '/blog',
-      backLabel: 'Return to all articles'
-    } %}
-  {% elif path %}
-    {# Find next item in this learning path #}
-    {% ArticleNavigation {
-      back: '/' + path.slug,
-      backLabel: 'Return to all articles'
-    } %}
-  {% endif %}
 </div>

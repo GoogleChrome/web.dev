@@ -76,4 +76,14 @@
   :is(h2, h3, h4, h5, h6) a[href^='#']:focus {
     @include apply-utility('color', 'mid-text');
   }
+
+  /// Misc elements that need adjusting in this context
+  .banner {
+    font-size: get-size('base');
+  }
+
+  .banner,
+  .banner + * {
+    --flow-space: #{get-space('size-2')};
+  }
 }

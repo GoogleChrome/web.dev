@@ -236,9 +236,9 @@ blockquote cite {
 
 caption,
 figcaption {
-  margin-inline: auto;
   font-style: italic;
-  text-align: center;
+  text-align: start;
+  font-size: get-size('size-0');
 
   @include apply-utility('measure', 'short');
   @include apply-utility('color', 'mid-text');
