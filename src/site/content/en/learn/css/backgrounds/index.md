@@ -80,7 +80,7 @@ The shorthand also has convenient one-word options to make your intent clearer.
 
 The value `repeat-x` repeats an image only horizontally; this is equivalent to `repeat no-repeat`.
 
-The following demo demonstrates these capabilities of the `background-repeat` property
+The following demo demonstrates these capabilities of the `background-repeat` property:
 
 {% Codepen {
   user: 'web-dot-dev',
