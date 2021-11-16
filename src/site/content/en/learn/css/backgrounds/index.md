@@ -120,7 +120,7 @@ background-position: left top;
 ```
 {% CompareCaption %}
 Order does not matter for keywords associated with different axes of position
-{% endCompareCaption
+{% endCompareCaption %}
 {% endCompare %}
 
 
@@ -172,7 +172,7 @@ background-position: right bottom 88%;
 ```
 {% endCompare %}
 
-{% Compare 'better %}
+{% Compare 'better' %}
 ```css
 background-position: 88% bottom right;
 ```
@@ -188,7 +188,7 @@ background-position: bottom 88% right 33%;
 {% endCompare %}
 
 
-{% Compare 'better %}
+{% Compare 'better' %}
 ```css
 background-position: right 33% bottom 88%;
 ```
