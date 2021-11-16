@@ -29,7 +29,7 @@ In this module, we’ll first look at some fundamental CSS font properties like 
 
 Use [`font-family`](https://developer.mozilla.org/docs/Web/CSS/font-family) to change the typeface of your text. 
 
-The `font-family` property accepts a comma-separated list of strings, either referring to *specific* or *generic* font families. Specific font families are quoted strings, such as “Helvetica”, “EB Garamond”, or “Times New Roman”. Generic font families are keywords such as `serif`, `sans-serif`, and `monospace` (find the [full list of options on MDN](https://developer.mozilla.org/docs/Web/CSS/font-family#values). The browser will display the first available typeface from the provided list. 
+The `font-family` property accepts a comma-separated list of strings, either referring to *specific* or *generic* font families. Specific font families are quoted strings, such as “Helvetica”, “EB Garamond”, or “Times New Roman”. Generic font families are keywords such as `serif`, `sans-serif`, and `monospace` (find the [full list of options on MDN](https://developer.mozilla.org/docs/Web/CSS/font-family#values)). The browser will display the first available typeface from the provided list. 
 
 {% Aside %}
 When the browser chooses which font to display from your `font-family` declaration, it doesn’t stop at the first available font in the list. Instead, it selects fonts one character at a time. If a particular character isn’t available in the first font in the list, it moves on to the next, and so on.
