@@ -6,7 +6,6 @@
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {env} from 'webdev_config';
-import './_styles.scss';
 
 /**
  * Render codelab instructions and Glitch
