@@ -1,8 +1,7 @@
 ---
 title: Backgrounds
 description: >
-  In this module learn the ways you can style
-   backgrounds of boxes using CSS.
+  In this module learn the ways you can style backgrounds of boxes using CSS.
 audio:
   title: 'The CSS Podcast - 053: Background'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP052_v1.mp3?dest-id=1891556
