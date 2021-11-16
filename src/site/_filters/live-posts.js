@@ -49,7 +49,7 @@ function isScheduledForTheFuture(post, now = new Date()) {
  * @param {object} post An eleventy post object.
  * @return {boolean} Whether or not the post should go live.
  */
-function livePosts(post) {
+function isLive(post) {
   if (!post.date) {
     throw new Error(`${post.inputPath} did not specify a date.`);
   }
@@ -84,4 +84,12 @@ function livePosts(post) {
   return !post.data.draft;
 }
 
-module.exports = {livePosts, isScheduledForTheFuture};
+/**
+ * Filters out 11ty post objects that are not live.
+ *
+ * @param {object[]} posts An array of 11ty post objects.
+ * @return {object[]} An array of 11ty post objects that are live.
+ */
+const livePosts = (posts) => posts.filter(isLive);
+
+module.exports = {livePosts, isLive, isScheduledForTheFuture};

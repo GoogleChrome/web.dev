@@ -16,7 +16,7 @@ const proxyquire = require('proxyquire');
 describe('live-posts', function () {
   let siteStub;
   let post;
-  let livePosts;
+  let isLive;
   const {
     isScheduledForTheFuture,
   } = require('../../../../../src/site/_filters/live-posts');
@@ -24,37 +24,37 @@ describe('live-posts', function () {
   beforeEach(function () {
     post = {date: new Date(), data: {}, inputPath: '/path/to/file.md'};
     siteStub = {env: 'prod'};
-    livePosts = proxyquire('../../../../../src/site/_filters/live-posts', {
+    isLive = proxyquire('../../../../../src/site/_filters/live-posts', {
       '../_data/site': siteStub,
-    }).livePosts;
+    }).isLive;
   });
 
   afterEach(function () {
     post = null;
     siteStub = null;
-    livePosts = null;
+    isLive = null;
   });
 
   it('should throw if the post does not have a date', function () {
     post.date = null;
     // nb. to test throws in mocha you have to call the fn within another fn.
-    assert.throws(() => livePosts(post), /did not specify a date/);
+    assert.throws(() => isLive(post), /did not specify a date/);
   });
 
   it('should throw if the post does not have a data object', function () {
     post.data = null;
     // nb. to test throws in mocha you have to call the fn within another fn.
-    assert.throws(() => livePosts(post), /does not have a data object/);
+    assert.throws(() => isLive(post), /does not have a data object/);
   });
 
   it('should always return true in the dev environment', function () {
     post.data.draft = true;
     siteStub.env = 'dev';
     // nb. to update a destructured property you have to run proxyquire again.
-    livePosts = proxyquire('../../../../../src/site/_filters/live-posts', {
+    isLive = proxyquire('../../../../../src/site/_filters/live-posts', {
       '../_data/site': siteStub,
-    }).livePosts;
-    const actual = livePosts(post);
+    }).isLive;
+    const actual = isLive(post);
     assert.strictEqual(actual, true);
   });
 
@@ -62,7 +62,7 @@ describe('live-posts', function () {
     // set the post date to 1 day in the future.
     post.date.setDate(post.date.getDate() + 1);
     post.data.scheduled = true;
-    const actual = livePosts(post);
+    const actual = isLive(post);
     assert.strictEqual(actual, false);
   });
 
@@ -70,18 +70,18 @@ describe('live-posts', function () {
     // set the post date to 1 day in the past.
     post.date.setDate(post.date.getDate() - 1);
     post.data.scheduled = true;
-    const actual = livePosts(post);
+    const actual = isLive(post);
     assert.strictEqual(actual, true);
   });
 
   it('should return false if the post is a draft', function () {
     post.data.draft = true;
-    const actual = livePosts(post);
+    const actual = isLive(post);
     assert.strictEqual(actual, false);
   });
 
   it('should return true if the post is not a draft', function () {
-    const actual = livePosts(post);
+    const actual = isLive(post);
     assert.strictEqual(actual, true);
   });
 
@@ -90,7 +90,7 @@ describe('live-posts', function () {
     post.date.setDate(post.date.getDate() - 1);
     post.data.scheduled = true;
     post.data.draft = true;
-    const actual = livePosts(post);
+    const actual = isLive(post);
     assert.strictEqual(actual, false);
   });
 
