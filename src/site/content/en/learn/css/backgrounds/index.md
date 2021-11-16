@@ -20,6 +20,8 @@ Background layers are furthest from the user, rendered behind the contents of a 
 {% Codepen {
   user: 'argyleink',
   id: 'BaLedvd',
+  theme: 'dark',
+  height: 700,
   tab: 'result'
 } %}
 
@@ -30,6 +32,8 @@ One of the simplest effects you can apply to a background layer is setting the [
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRvqQZZ',
+  theme: 'dark',
+  height: 850,
   tab: 'result'
 } %}
 
@@ -45,6 +49,8 @@ On top of the `background-color` layer, you can add a background image, using th
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjJNNro',
+  theme: 'dark',
+  height: 525,
   tab: 'result'
 } %}
 
@@ -59,6 +65,8 @@ Demo showing example of applying a background-image using Gradient functions:
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNeLZWa',
+  theme: 'dark',
+  height: 600,
   tab: 'result'
 } %}
 
@@ -85,6 +93,8 @@ The following demo demonstrates these capabilities of the `background-repeat` pr
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKvMmjb',
+  theme: 'dark',
+  height: 1100,
   tab: 'result'
 } %}
 
@@ -165,6 +175,8 @@ The `background-position` property also has a convenient one value shorthand; th
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzxWQqx',
+  theme: 'dark',
+  height: 950,
   tab: 'result'
 } %}
 
@@ -244,13 +256,14 @@ The following demo demonstrates this behavior:
 {% Codepen {
   user: 'web-dot-dev',
   id: 'porbwrM',
+  theme: 'dark',
   tab: 'result'
 } %}
 
 Here are more examples of using the `background-position` property using a mix of CSS and keyword values:
 
 {% Aside %}
-To learn more about the nuances related to positioning backgrounds, 
+To learn more about the nuances related to positioning backgrounds,
 check out [`background-position` on MDN](https://developer.mozilla.org/docs/Web/CSS/background-position).
 {% endAside %}
 
@@ -275,6 +288,8 @@ Demo demonstrating applying these keywords to `background-size`:
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzxWQYY',
+  theme: 'dark',
+  height: 700,
   tab: 'result'
 } %}
 
@@ -289,6 +304,8 @@ The default behavior of the `background-attachment` property is the initial valu
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdwwzOe',
+  theme: 'dark',
+  height: 1000,
   tab: 'result'
 } %}
 
@@ -299,6 +316,8 @@ Once the space of the background layer images originally takes up needs to be sc
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWoozvN',
+  theme: 'dark',
+  height: 1000,
   tab: 'result'
 } %}
 
@@ -307,6 +326,8 @@ The `local` keyword enables the position of background images to be fixed relati
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNExZmK',
+  theme: 'dark',
+  height: 1000,
   tab: 'result'
 } %}
 
@@ -318,6 +339,8 @@ Try these options out using the following demo:
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExvyXeZ',
+  theme: 'dark',
+  height: 650,
   tab: 'result'
 } %}
 
@@ -331,6 +354,8 @@ Like `background-origin` the regions that can be specified are `border-box`, `pa
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYJKZba',
+  theme: 'dark',
+  height: 650,
   tab: 'result'
 } %}
 
@@ -341,6 +366,8 @@ A relatively new property, at the time of this writing, Chrome and most browsers
 {% Codepen {
   user: 'web-dot-dev',
   id: 'qBjjweL',
+  theme: 'dark',
+  height: 650,
   tab: 'result,css'
 } %}
 
@@ -377,7 +404,9 @@ background-image: url("https://assets.codepen.io/7518/pngaaa.com-1272986.png"),
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyRzQBz',
-  tab: 'result,css'
+  theme: 'dark',
+  height: 650,
+  tab: 'css'
 } %}
 
 ## The background shorthand
