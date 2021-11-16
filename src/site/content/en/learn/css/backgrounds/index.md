@@ -2,7 +2,7 @@
 title: Backgrounds
 description: >
   In this module learn the ways you can style
-   backgrounds of boxes using CSS
+   backgrounds of boxes using CSS.
 audio:
   title: 'The CSS Podcast - 053: Background'
   src: https://traffic.libsyn.com/secure/thecsspodcast/TCP052_v1.mp3?dest-id=1891556
@@ -11,7 +11,6 @@ authors:
   - lozandier
 date: 2021-11-15
 ---
-
 ## Backgrounds
 
 Behind every CSS box is a specialized layer called the background layer. CSS provides a variety of ways to make meaningful changes to it–including allowing multiple backgrounds.
@@ -49,19 +48,18 @@ On top of the `background-color` layer, you can add a background image, using th
   tab: 'result'
 } %}
 
-
 ### CSS gradient backgrounds
 
 Several [gradient](/learn/css/gradients) CSS functions exist to allow you to generate a background-image, when passed two or more colors.
 
-
-
 Regardless of which gradient function is used, the resulting image is [intrinsically sized](/learn/css/box-model/#content-and-sizing) to match the amount of space available.
 
 Demo showing example of applying a background-image using Gradient functions:
+
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNeLZWa',
+  tab: 'result'
 } %}
 
 ## Repeating background images
@@ -70,9 +68,9 @@ By default, background images repeat horizontally and vertically to fill the ent
 
 Change this by using the `background-repeat` property with one of the following values:
 
-`repeat`: the image repeats within the space available, cropping as necessary.
-`round`: the image repeats horizontally and vertically to fit as many instances into the space available, without cropping, compressing, or stretching it.
-`space`: the image repeats horizontally and vertically to fit as many instances within the space available without cropping—spacing out instances of the image as needed. Repeating images touch the edges of the space a background layer occupies, with white space evenly distributed between them.
+* `repeat`: The image repeats within the space available, cropping as necessary.
+* `round`: The image repeats horizontally and vertically to fit as many instances into the space available, without cropping, compressing, or stretching it.
+* `space`: The image repeats horizontally and vertically to fit as many instances within the space available without cropping—spacing out instances of the image as needed. Repeating images touch the edges of the space a background layer occupies, with white space evenly distributed between them.
 
 The `background-repeat` property allows you to set the behavior for the x and y axis independently. The first parameter sets the horizontal repeat behavior, and the second parameter sets the vertical repeat behavior.
 
@@ -80,13 +78,14 @@ If you use a single value, it will be applied to both the horizontal and vertica
 
 The shorthand also has convenient one-word options to make your intent clearer.
 
-`repeat-x` repeats an image only horizontally; this is equivalent to `repeat no-repeat`.
+The value `repeat-x` repeats an image only horizontally; this is equivalent to `repeat no-repeat`.
 
 The following demo demonstrates these capabilities of the `background-repeat` property
 
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKvMmjb',
+  tab: 'result'
 } %}
 
 ## Background position
@@ -101,26 +100,35 @@ When CSS lengths and percentages are used, the first parameter corresponds to th
 
 When keywords are only used the order of the keywords does not matter:
 
-{% Compare 'better'}
+{% Compare 'better' %}
+
 ```css
-background-position: left 50%
+background-position: left 50%;
 ```
+
 {% endCompare %}
 
 {% Compare 'better' %}
+
 ```css
 background-position: top left;
 ```
+
 {% endCompare %}
 
 
 {% Compare 'better' %}
+
 ```css
 background-position: left top;
 ```
+
 {% CompareCaption %}
-Order does not matter for keywords associated with different axes of position
+
+Order does not matter for keywords associated with different axes of position.
+
 {% endCompareCaption %}
+
 {% endCompare %}
 
 
@@ -129,19 +137,27 @@ Order does not matter for keywords associated with different axes of position
 ```css
   background-position: 50% left;
 ```
+
 {% CompareCaption %}
+
 When CSS values are used alongside keywords, it must be preceded by a keyword.
 {% endCompareCaption %}
+
 {% endCompare%}
 
 {% Compare 'worse' %}
+
 ```css
   background-position: left right;
 ```
+
 {% CompareCaption %}
+
 You cannot use keywords associated with the same axis simultaneously.
+
 {% endCompareCaption %}
-{% endCompare%}
+
+{% endCompare %}
 
 
 The `background-position` property also has a convenient one value shorthand; the omitted value resolves to `50%`.  Here's an example that demonstrates this using the keywords the `background-position` property accepts:
@@ -161,58 +177,70 @@ When three parameters are used, a CSS length or value can be the second or third
 
 
 {% Compare 'better' %}
+
 ```css
 background-position: bottom 88% right;
 ```
+
 {% endCompare %}
 
 {% Compare 'better' %}
+
 ```css
 background-position: right bottom 88%;
 ```
+
 {% endCompare %}
 
 {% Compare 'better' %}
+
 ```css
 background-position: 88% bottom right;
 ```
+
 {% CompareCaption %}
-CSS length value must be preceded by the 'top', 'right', 'bottom', or 'left keywords when using 3 or more parameters.
+CSS length value must be preceded by the `top`, `right`, `bottom`, or `left` keywords when using three or more parameters.
 {% endCompareCaption %}
 {% endCompare %}
 
 {% Compare 'better' %}
+
 ```css
 background-position: bottom 88% right 33%;
 ```
+
 {% endCompare %}
 
 
 {% Compare 'better' %}
+
 ```css
 background-position: right 33% bottom 88%;
 ```
+
 {% endCompare %}
 
 
 {% Compare 'better' %}
+
 ```css
 background-position: 88% 33% bottom left;
 ```
+
 {% CompareCaption%}
- CSS length value must be preceded by the 'top', 'right', 'bottom', or 'left keywords when using 3 or more parameters
+CSS length value must be preceded by the `top`, `right`, `bottom`, or `left` keywords when using three or more parameters.
 {% endCompareCaption %}
 {% endCompare %}
 
 
 If `background-position: top left 20%`is applied to a CSS background image, the image is placed at the top of the box, the `20%` value represents a 20% offset from the left of the box (on the x axis).
 
- If `background-position: top 20% left` is applied to a CSS background image, the 20% value represents a 20% offset from the top of the CSS box (on the y axis), and the image is placed at the left of the box.
-
+If `background-position: top 20% left` is applied to a CSS background image, the 20% value represents a 20% offset from the top of the CSS box (on the y axis), and the image is placed at the left of the box.
 
 When four parameters are used, the two keywords are paired with two values corresponding to an offset against the origins of each keyword specified. If `background-position: bottom 20% right 30%` is applied to a background-image, the background-image is positioned 20% from the bottom, and 30% from the right of the CSS box.
 
 The following demo demonstrates this behavior:
+
 {% Codepen {
   user: 'web-dot-dev',
   id: 'porbwrM',
@@ -222,28 +250,28 @@ The following demo demonstrates this behavior:
 Here are more examples of using the `background-position` property using a mix of CSS and keyword values:
 
 {% Aside %}
-To learn more about the nuances related to positioning backgrounds, check out [`background-position` on MDN](https://developer.mozilla.org/docs/Web/CSS/background-position).
+To learn more about the nuances related to positioning backgrounds, 
+check out [`background-position` on MDN](https://developer.mozilla.org/docs/Web/CSS/background-position).
 {% endAside %}
+
 ## Background Size
+
 The `background-size` property sets the size of background images; By default background images are sized based on their intrinsic (actual) width, height, and aspect ratio.
 
 The `background-size` property uses CSS length and percentage values or specific keywords.  The property accepts up to two parameters corresponding to allowing you to change width and height of a background independently.
+
 The `background-size` property accepts the following keywords:
 
-
-* `auto`: When used independently, the background image is sized based on its intrinsic width and height; when `auto` is used alongside another CSS value for the width (first parameter) or height (second parameter), the dimension set to `auto` is sized as needed to maintain the natural aspect ratio of the image. This is the default behavior of the `background-size` property
-
+* `auto`: When used independently, the background image is sized based on its intrinsic width and height; when `auto` is used alongside another CSS value for the width (first parameter) or height (second parameter), the dimension set to `auto` is sized as needed to maintain the natural aspect ratio of the image. This is the default behavior of the `background-size` property.
 * `cover`: Covers the entire area of the background layer. This may mean the image is stretched or cropped.
-
-
 * `contain`:  Sizes the image to fill the space  without stretching or cropping. As a result, empty space can remain that will cause the image to repeat, unless `background-repeat` is set to `no-repeat`.
 
 The latter 2 are intended to be used in a standalone fashion without another parameter.
 
-
 The following demo demonstrates these keywords in action:
 
 Demo demonstrating applying these keywords to `background-size`:
+
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzxWQYY',
@@ -354,8 +382,7 @@ background-image: url("https://assets.codepen.io/7518/pngaaa.com-1272986.png"),
 
 ## The background shorthand
 
-To make it easier to style the background layer of a box
--especially when multiple background layers are desired–there is a shorthand that follows the following specific pattern:
+To make it easier to style the background layer of a box-especially when multiple background layers are desired–there is a shorthand that follows the following specific pattern:
 
 ```css
 background:
@@ -368,7 +395,7 @@ background:
   <background-color>?
 ```
 
-{% Aside 'gotchas'}
+{% Aside 'gotchas' %}
 It's important to note that any background properties omitted in the shorthand are set to their initial values.
 {% endAside %}
 
