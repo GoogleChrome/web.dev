@@ -1,11 +1,11 @@
 import {html} from 'lit-element';
 import {store} from '../../store';
 import {BaseStateElement} from '../BaseStateElement';
-import {renderReport} from 'lighthouse/renderer';
+import {renderReport} from 'lighthouse/dist/report/bundle.esm.js';
 import './_styles.scss';
 
 /**
- * Element for displaying Lighthouse results using LH Viewer.
+ * Element for displaying Lighthouse results using LH Report Renderer.
  */
 class LighthouseViewer extends BaseStateElement {
   static get properties() {
@@ -29,7 +29,6 @@ class LighthouseViewer extends BaseStateElement {
           />
         </svg>`
       : '';
-    // Classes lh-root, lh-vars come from 'lighthouse-viewer' package.
     return html`
       <div class="lh-error-msg text-size-0">
         ${errorIcon}${this.lighthouseError}
