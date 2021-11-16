@@ -43,7 +43,7 @@ another URL.
 
 {% Aside %}
 If you're
-[using Github Pages to host a single-page app](https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/),
+[using GitHub Pages to host a single-page app](https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/),
 you'll likely need to serve valid content with a 404 status code.
 {% endAside %}
 

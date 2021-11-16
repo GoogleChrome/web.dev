@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'dark'
-  title: 'Explore structured learning paths to learn new skills'
-  eyebrow: 'Learn'
-  url: '/learn'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg'
+  title: 'Welcome to Google Chrome Dev Summit 2021'
+  eyebrow: 'Event'
+  url: 'https://developer.chrome.com/devsummit/schedule/'
+  background: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/v6J407myhxv2V4uwzF0u.png?auto=format'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
@@ -31,16 +31,16 @@ pickedCaseStudyUrl: '/mainline-mensware/'
 pickedCaseStudyTheme: 'light'
 pageSpeed:
   eyebrow: 'PageSpeed Insights'
-  title: 'Measure page quality with PageSpeed Insights'
+  title: 'Measure performance with PageSpeed Insights'
   summary: |
-    See how well your website performs. Then, get tips to improve your user experience.
+    PageSpeed Insights is a tool for measuring the performance and Core Web Vitals of a page with lab and field data.
   image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/6Ye3EKc6quNaopPrigno.png'
   imageWidth: '546'
   imageHeight: '421'
   primaryButtonText: 'Try PageSpeed Insights'
-  primaryButtonUrl: '/measure'
+  primaryButtonUrl: 'https://pagespeed.web.dev/'
   secondaryButtonText: 'Learn more'
-  secondaryButtonUrl: '#'
+  secondaryButtonUrl: 'https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq'
 courses:
   title: 'Featured courses'
   summary: 'Explore our structured learning paths to discover everything you need to know about building for the modern web.'

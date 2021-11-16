@@ -21,6 +21,10 @@ Many sites use third-party embeds to create an engaging user experience by deleg
 
 Third-party content can impact the performance of a page in many ways. It can be render-blocking, contend with other critical resources for network and bandwidth, or affect the Core Web Vitals metrics. Third-party embeds may also cause layout shifts as they load. This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques, and the Layout Shift Terminator tool that helps reduce layout shifts for popular embeds.
 
+{% Aside %}
+It's best to use the techniques described in this post to load only offscreen or non-primary page content. This ensures that all the critical content gets indexed by [search engines](https://developers.google.com/search/docs/advanced/javascript/lazy-loading).
+{% endAside %}
+
 ## What is an embed
 
 A third-party embed is any content displayed on your site that is: 

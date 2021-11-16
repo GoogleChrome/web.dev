@@ -94,7 +94,7 @@ YouTube videos are typically going to be your best free option.
 
 ## Video.js
 
-According tho their website, [Video.js] is built from the
+According to their website, [Video.js] is built from the
 ground up for an HTML5 world. It supports HTML5 video and modern streaming
 formats such as DASH and HLS, as well as YouTube, and Vimeo. It supports
 video playback on desktop and mobile devices and looks good everywhere with

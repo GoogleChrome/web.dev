@@ -188,7 +188,7 @@ alt="Two containers of different sizes.", width="800", height="624" %}
 
 You can use media queries for the page layout, and container queries for the components within the page.
 
-Here the overall structure of the page has a `main` element` and an `aside` element. 
+Here the overall structure of the page has a `main` element and an `aside` element. 
 There are media objects within both elements.
 
 ```html
