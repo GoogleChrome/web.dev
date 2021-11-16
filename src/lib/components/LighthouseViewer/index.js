@@ -47,7 +47,6 @@ class LighthouseViewer extends BaseStateElement {
     for (const child of container.children) child.remove();
     const reportRootEl = renderReport(lighthouseReport, {
       disableAutoDarkModeAndFireworks: true,
-      omitTopbar: true,
     });
     container.append(reportRootEl);
   };
