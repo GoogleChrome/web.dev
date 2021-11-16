@@ -34,6 +34,7 @@ GDDSGWL, use the spelling that you see here.
 * referer (so spelled when referring to [the HTTP header](https://tools.ietf.org/html/rfc7231#section-5.5.2))
 * round trip (noun)
 * round-trip (adj)
+* service workers
 * web
 * web app manifest
 * web page
