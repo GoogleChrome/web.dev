@@ -6,7 +6,7 @@ description: |
 authors:
   - philipwalton
 date: 2020-11-10
-updated: 2020-11-10
+updated: 2021-11-15
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -419,18 +419,11 @@ window.addEventListener('pageshow', (event) => {
 
 ### Test to ensure your pages are cacheable
 
-Chrome DevTools includes an experimental feature to help you identify issues
-that are preventing your pages from being eligible for bfcache.
+Chrome DevTools can help you test your pages to ensure they're optimized for
+bfcache, and identify any issues that may be preventing them from being
+eligible.
 
-You can enable the feature from the **Experiments** page within the
-[Settings](https://developer.chrome.com/docs/devtools/customize/#settings) menu
-in DevTools:
-
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/oAsci30EW2CwfQM49Zfc.png",
-alt="Enable back/forward cache debugging via the DevTools experimental settings
-menu", width="800", height="511" %}
-
-Once enabled, navigate to the page you want to test and in DevTools go to
+To test a particular page, navigate to it in Chrome and then in DevTools go to
 **Application** > **Back-forward Cache**. Next click the **Run Test** button and
 DevTools will attempt to navigate away and back to determine whether the page
 could be restored from bfcache.
@@ -438,6 +431,13 @@ could be restored from bfcache.
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png",
 alt="Back-forward cache panel in DevTools", width="800", height="313",
 class="w-screenshot" %}
+
+{% Aside %}
+  The Back/forward Cache feature in DevTools is currently in active development.
+  We strongly encourage developers to test their pages in Chrome Canary to
+  ensure they're running the latest version of DevTools and getting the most
+  up-to-date bfcache recommendations.
+{% endAside %}
 
 If successful, the panel will report "Restored from back-forward cache":
 
