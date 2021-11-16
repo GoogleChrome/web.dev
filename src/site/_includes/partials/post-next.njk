@@ -13,6 +13,10 @@
   {{- content | courseToc | safe -}}
 {% endset %}
 
+{% if hero %}
+  {% Img src=hero, alt=alt or '', loading=false, class='hero-image', height='480', width='1600', sizes='100vw' %}
+{% endif %}
+
 <div class="post wrapper" data-flush>
   {% if path === undefined  %}
     {% set postPaths = page | getPaths %}
@@ -21,15 +25,6 @@
   {% endif %}
   {% set safeTitle = title | trim | md | safe %}
 
-  {% if hero %}
-    {% Hero {
-      hero: hero,
-      alt: alt,
-      heroPosition: hero_position,
-      heroFit: hero_fit
-    } %}
-  {% endif %}
- 
   <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
     {% include 'partials/toc-side.njk' %}
     {# 
