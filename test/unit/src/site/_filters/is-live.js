@@ -1,7 +1,7 @@
 /**
- * @fileoverview Tests for the live-posts filter.
+ * @fileoverview Tests for the is-live filter.
  *
- * These tests use proxyquire to stub out the site.env object that live-posts
+ * These tests use proxyquire to stub out the site.env object that is-live
  * relies on.
  *
  * Note that even though we write our dates as `date: 2020-01-02` in our YAML
@@ -13,18 +13,18 @@
 const assert = require('assert');
 const proxyquire = require('proxyquire');
 
-describe('live-posts', function () {
+describe('is-live', function () {
   let siteStub;
   let post;
   let isLive;
   const {
     isScheduledForTheFuture,
-  } = require('../../../../../src/site/_filters/live-posts');
+  } = require('../../../../../src/site/_filters/is-live');
 
   beforeEach(function () {
     post = {date: new Date(), data: {}, inputPath: '/path/to/file.md'};
     siteStub = {env: 'prod'};
-    isLive = proxyquire('../../../../../src/site/_filters/live-posts', {
+    isLive = proxyquire('../../../../../src/site/_filters/is-live', {
       '../_data/site': siteStub,
     }).isLive;
   });
@@ -51,7 +51,7 @@ describe('live-posts', function () {
     post.data.draft = true;
     siteStub.env = 'dev';
     // nb. to update a destructured property you have to run proxyquire again.
-    isLive = proxyquire('../../../../../src/site/_filters/live-posts', {
+    isLive = proxyquire('../../../../../src/site/_filters/is-live', {
       '../_data/site': siteStub,
     }).isLive;
     const actual = isLive(post);

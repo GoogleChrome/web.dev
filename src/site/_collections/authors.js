@@ -25,7 +25,7 @@ const authorsYaml = yaml.safeLoad(
     'utf-8',
   ),
 );
-const {isLive} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Authors */

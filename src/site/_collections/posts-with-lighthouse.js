@@ -20,7 +20,7 @@
  * These posts will be displayed in the user's TODO list on the /measure page.
  */
 
-const {isLive} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 
 /**
  * Filter out posts that aren't related to LH audits.

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {isLive} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 
 /**
  * @param {EleventyCollectionObject} collection
