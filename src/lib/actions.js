@@ -1,6 +1,6 @@
 import {store} from './store';
 import {saveUserUrl} from './fb';
-import {runLighthouse, fetchReports} from './lighthouse-service';
+import {fetchReports} from './lighthouse-service';
 import {runPsi} from './psi-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
