@@ -11,7 +11,17 @@ class LighthouseViewer extends BaseStateElement {
   static get properties() {
     return {
       lighthouseError: {type: String},
+      auditedOn: {type: String},
+      encodedUrl: {type: String},
+      metaHidden: {type: Boolean},
     };
+  }
+
+  constructor() {
+    super();
+    this.metaHidden = true;
+    this.auditedOn = '';
+    this.aencodedUrl = '';
   }
 
   render() {
@@ -30,8 +40,23 @@ class LighthouseViewer extends BaseStateElement {
         </svg>`
       : '';
     return html`
-      <div class="lh-error-msg text-size-0">
-        ${errorIcon}${this.lighthouseError}
+      <div class="text-size-0">
+        <span ?hidden="${this.metaHidden}">
+          <span>Audited on:</span> <span>${this.auditedOn}</span>
+          <a
+            title="View latest Lighthouse report"
+            href="#"
+            class="gap-inline-size-1 gc-analytics-event"
+            data-category="web.dev"
+            data-label="view lighthouse report"
+            data-action="click"
+            target="_blank"
+            role="button"
+            @click="${this.onOpenViewer}""
+            >View Report</a
+          >
+        </span>
+        <span class="lh-error-msg">${errorIcon}${this.lighthouseError}</span>
       </div>
       <div class="lh-root lh-vars">
         <div class="lighthouse-viewer region"></div>
@@ -55,8 +80,24 @@ class LighthouseViewer extends BaseStateElement {
   onStateChanged() {
     const {lighthouseResult, lighthouseError} = store.getState();
     if (lighthouseResult && lighthouseResult.run) {
+      this.lighthouseResult = lighthouseResult;
+      this.encodedUrl = encodeURIComponent(lighthouseResult.run.requestedUrl);
+      const auditedOn = new Date(lighthouseResult.run.fetchTime);
+      const opts = {
+        day: 'numeric',
+        month: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+      };
+      this.auditedOn = new Intl.DateTimeFormat('en-US', opts).format(auditedOn);
       this.generateReport(lighthouseResult.run, this.container);
+    } else {
+      this.lighthouseResult = null;
+      this.encodedUrl = '';
+      this.auditedOn = '';
+      this.container && (this.container.innerHTML = '');
     }
+    this.metaHidden = !(this.auditedOn && this.encodedUrl);
     this.lighthouseError = lighthouseError;
     return;
   }
@@ -64,6 +105,31 @@ class LighthouseViewer extends BaseStateElement {
   firstUpdated() {
     this.container = this.querySelector('.lighthouse-viewer');
     this.varsEl = this.querySelector('.lh-vars');
+  }
+
+  onOpenViewer(e) {
+    e.preventDefault();
+    this.openTabAndSendData({lhr: this.lighthouseResult.run});
+  }
+
+  openTabAndSendData(data) {
+    const url = 'https://googlechrome.github.io/lighthouse/viewer/';
+    const origin = new URL(url).origin;
+    const windowName = `Lighhouse-Viewer-${data.lhr.fetchTime}`;
+    // Chrome doesn't allow us to immediately postMessage to a popup right
+    // after it's created. Normally, we could also listen for the popup window's
+    // load event, however it is cross-domain and won't fire. Instead, listen
+    // for a message from the target app saying "I'm open".
+    window.addEventListener('message', function msgHandler(messageEvent) {
+      if (messageEvent.origin !== origin) {
+        return;
+      }
+      if (popup && messageEvent.data.opened) {
+        popup.postMessage(data, origin);
+        window.removeEventListener('message', msgHandler);
+      }
+    });
+    const popup = window.open(url, windowName);
   }
 }
 
