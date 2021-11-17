@@ -1,11 +1,11 @@
 import {html} from 'lit-element';
 import {store} from '../../store';
 import {BaseStateElement} from '../BaseStateElement';
-import {DOM, ReportRenderer, ReportUIFeatures} from 'lighthouse-viewer';
+import {renderReport} from 'lighthouse/dist/report/bundle.esm.js';
 import './_styles.scss';
 
 /**
- * Element for displaying Lighthouse results using LH Viewer.
+ * Element for displaying Lighthouse results using LH Report Renderer.
  */
 class LighthouseViewer extends BaseStateElement {
   static get properties() {
@@ -29,7 +29,6 @@ class LighthouseViewer extends BaseStateElement {
           />
         </svg>`
       : '';
-    // Classes lh-root, lh-vars come from 'lighthouse-viewer' package.
     return html`
       <div class="lh-error-msg text-size-0">
         ${errorIcon}${this.lighthouseError}
@@ -45,13 +44,12 @@ class LighthouseViewer extends BaseStateElement {
    * @param {Element} container Html element where the report will be rendered.
    */
   generateReport = (lighthouseReport, container) => {
-    const dom = new DOM(document);
-    const renderer = new ReportRenderer(dom);
-    renderer.renderReport(lighthouseReport, container);
-    const features = new ReportUIFeatures(dom);
-    features.initFeatures(lighthouseReport);
-    // Force remove dark theme support untill whole of web.dev supports it.
-    this.varsEl.classList.remove('dark');
+    for (const child of container.children) child.remove();
+    const reportRootEl = renderReport(lighthouseReport, {
+      disableAutoDarkModeAndFireworks: true,
+      omitTopbar: true,
+    });
+    container.append(reportRootEl);
   };
 
   onStateChanged() {
