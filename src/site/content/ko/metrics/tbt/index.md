@@ -84,7 +84,7 @@ TTI는 메인 스레드에 최소 5초 동안 긴 작업이 없는 경우 페이
 
 ## TBT 측정 방법
 
-TBT는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 측정해야 하는메트릭입니다. TBT를 측정하는 가장 좋은 방법은 사이트에서 Lighthouse 성능 감사를 실행하는 것입니다. 사용법에 대한 자세한 내용은 [TBT에 대한 Lighthouse 문서](/lighthouse-total-blocking-time)를 참조하세요.
+TBT는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 측정해야 하는 메트릭입니다. TBT를 측정하는 가장 좋은 방법은 사이트에서 Lighthouse 성능 감사를 실행하는 것입니다. 사용법에 대한 자세한 내용은 [TBT에 대한 Lighthouse 문서](/lighthouse-total-blocking-time)를 참조하세요.
 
 ### 실험실 도구
 
