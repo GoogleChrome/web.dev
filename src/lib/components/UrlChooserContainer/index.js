@@ -1,10 +1,6 @@
 import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
-import {
-  requestRunLighthouse,
-  requestRunPSI,
-  setLighthouseError,
-} from '../../actions';
+import {requestRunPSI, setLighthouseError} from '../../actions';
 import '../UrlChooser';
 
 /**
@@ -18,15 +14,11 @@ class UrlChooserContainer extends BaseStateElement {
       url: {type: String},
       active: {type: Boolean},
       hasError: {type: Boolean},
-      // TODO: Temporary field. Remove when we stop supporting both LH and PSI.
-      shouldRunPsi: {type: Boolean, attribute: 'should-run-psi'},
     };
   }
 
   constructor() {
     super();
-
-    this.shouldRunPsi = false;
     this.url = null; // when signed out or waiting for Firestore, this is null
     this.active = false;
   }
@@ -57,11 +49,7 @@ class UrlChooserContainer extends BaseStateElement {
 
   runAudit(e) {
     const url = e.detail;
-    if (this.shouldRunPsi) {
-      requestRunPSI(url);
-    } else {
-      requestRunLighthouse(url);
-    }
+    requestRunPSI(url);
   }
 
   onError(e) {
