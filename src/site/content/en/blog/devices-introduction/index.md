@@ -7,7 +7,7 @@ description: |
 authors:
   - beaufortfrancois
 date: 2021-02-12
-updated: 2021-02-12
+updated: 2021-11-16
 hero: image/admin/vAnNpGQruw5EUXxob47V.jpg
 alt: A woman sitting in front of a wooden desk photo.
 tags:
@@ -185,7 +185,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [how to profile the performance of Web Audio apps]: /profiling-web-audio-apps-in-chrome/
 [window.print()]: https://developer.mozilla.org/docs/Web/API/Window/print
 [WebAuthn]: https://webauthn.io/
-[Build your first WebAuthn app]: https://codelabs.developers.google.com/codelabs/webauthn-reauth/
+[Build your first WebAuthn app]: https://developers.google.com/codelabs/webauthn-reauth
 [File System Access API]: /file-system-access/
 [File API]: https://developer.mozilla.org/docs/Web/API/File/Using_files_from_web_applications
 [Generic Sensor API]: /generic-sensor/
