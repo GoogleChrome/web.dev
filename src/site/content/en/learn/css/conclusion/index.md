@@ -11,6 +11,7 @@ authors:
   - kaycebasques
   - jiwoong
   - emmatwersky
+  - lozandier
 date: 2021-05-04
 ---
 
