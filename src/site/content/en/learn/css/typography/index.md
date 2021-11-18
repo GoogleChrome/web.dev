@@ -383,4 +383,5 @@ The [`font-variant`](https://developer.mozilla.org/docs/Web/CSS/font-variant) pr
 
 ## Resources
 
-[Font best practices](/font-best-practices/) discusses importing fonts, rendering fonts, and other best practices for using fonts on the web.
+* [Font best practices](/font-best-practices/) discusses importing fonts, rendering fonts, and other best practices for using fonts on the web.
+* [MDN Fundamental text and font styling](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
