@@ -15,8 +15,7 @@ questions:
       - content: "`sci-fi`"
         rationale: "Try again. `fantasy` is a valid generic fallback for `font-family`, though."
       - content: "`sans-serif`"
-        rationale: "This is not a hex value, it's only 5 numbers and includes an
-        Z, making it invalid."
+        rationale: "Correct!"
       - content: "`helvetica`"
         rationale: "Try again. `\"Helvetica\"` is not a generic keyword, but instead refers to a specific font family."
   - type: multiple-choice
