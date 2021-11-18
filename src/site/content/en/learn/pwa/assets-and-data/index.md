@@ -129,7 +129,7 @@ It's not as flexible as for platform-specific apps, but it's typically good enou
 Assets can be evicted based on storage pressure, or after some weeks of inactivity, if the user is using your PWA in the browser. On some platforms, if the user installs your PWA, eviction won't happen. Where available, our code can request persistent storage through an API to avoid that eviction.
 
 {% Aside %}
-If storage eviction happens for any reason and the user installed your PWA, the PWA will still work if you have a network connection. When you open that app again, the browser will start the Service Worker lifecycle again, loading your app from the network..
+If storage eviction happens for any reason and the user installed your PWA, the PWA will still work if you have a network connection. When you open that app again, the browser will start the Service Worker lifecycle again, loading your app from the network.
 {% endAside %}
 
 ##  Resources

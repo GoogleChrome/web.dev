@@ -211,7 +211,7 @@ Some devices do not have unobstructed rectangular screens; instead, their screen
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/hKWqUXIbvvH05WHQEccm.png", alt="A notch-based device in landscape with a standard viewport at the top showing unrendered areas at the sides, and another one with full viewport access thanks to viewport-fit=cover.", width="800", height="1006" %}
 
-If you want to have full access to the screen, even the invisible area, to render your color or image, include `viewport-fit=cover` in the content of your `<meta name=”viewport”>` tag. Then use the `safe-area-inset-*` environment variables to extend your content safely into those areas. 
+If you want to have full access to the screen, even the invisible area, to render your color or image, include `viewport-fit=cover` in the content of your `<meta name="viewport">` tag. Then use the `safe-area-inset-*` environment variables to extend your content safely into those areas. 
 
 {% Aside 'caution' %}
 When you apply `viewport-fit=cover`, remember that you can now render pixels behind rounded corners and notches, so you should always use safe margins or paddings for the critical content and interactive elements.
