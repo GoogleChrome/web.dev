@@ -379,6 +379,8 @@ The [`font-variant`](https://developer.mozilla.org/docs/Web/CSS/font-variant) pr
   height: 260
 } %}
 
-## Read more
+{% Assessment 'typography' %}
+
+## Resources
 
 [Font best practices](/font-best-practices/) discusses importing fonts, rendering fonts, and other best practices for using fonts on the web.
