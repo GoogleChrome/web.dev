@@ -25,7 +25,7 @@ const authorsYaml = yaml.safeLoad(
     'utf-8',
   ),
 );
-const {livePosts} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Authors */
@@ -59,7 +59,7 @@ module.exports = (collections) => {
         .getFilteredByGlob('**/*.md')
         .filter(
           (item) =>
-            livePosts(item) &&
+            isLive(item) &&
             !item.data.excludeFromAuthors &&
             (item.data.authors || []).includes(key),
         )

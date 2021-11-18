@@ -81,6 +81,7 @@ const githubLink = require('./src/site/_filters/github-link');
 const gitlocalizeLink = require('./src/site/_filters/gitlocalize-link');
 const htmlDateString = require('./src/site/_filters/html-date-string');
 const isNewContent = require('./src/site/_filters/is-new-content');
+const livePosts = require('./src/site/_filters/live-posts');
 const md = require('./src/site/_filters/md');
 const pagedNavigation = require('./src/site/_filters/paged-navigation');
 const postsLighthouseJson = require('./src/site/_filters/posts-lighthouse-json');
@@ -185,6 +186,7 @@ module.exports = function (config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('imgix', generateImgixSrc);
   config.addFilter('isNewContent', isNewContent);
+  config.addFilter('livePosts', livePosts);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addNunjucksAsyncFilter('siteRender', siteRender);

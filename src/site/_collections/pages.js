@@ -27,7 +27,7 @@ const stripcomments = require('strip-comments');
 const removeMarkdown = require('remove-markdown');
 
 const {defaultLocale} = require('../_data/site');
-const {livePosts} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 const {getDefaultUrl} = require('../_filters/urls');
 const {generateImgixSrc} = require('../_includes/components/Img');
 const {supportedLocales} = require('../../../shared/locale');
@@ -99,7 +99,7 @@ module.exports = (collections) => {
 
   // All posts
   const allSorted = collections.getAllSorted().filter((item) => {
-    return item.data.title && item.data.page.url && livePosts(item);
+    return item.data.title && item.data.page.url && isLive(item);
   });
 
   for (const item of allSorted) {

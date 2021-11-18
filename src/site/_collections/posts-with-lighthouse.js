@@ -20,7 +20,7 @@
  * These posts will be displayed in the user's TODO list on the /measure page.
  */
 
-const {livePosts} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 
 /**
  * Filter out posts that aren't related to LH audits.
@@ -43,7 +43,7 @@ function hasLighthouseAudit(post) {
 function postsWithLighthouse(collection) {
   return collection
     .getFilteredByTag('post')
-    .filter(livePosts)
+    .filter(isLive)
     .filter(hasLighthouseAudit);
 }
 
