@@ -75,13 +75,13 @@ What's more, the entire Photoshop app is built using Lit-based Web Components. L
 
 ## Service worker caching with Workbox
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) act as a programmable, local proxy, intercepting network requests and responding with data from the network, long-lived caches, or a mixture of both.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) act as a programmable local proxy, intercepting network requests and responding with data from the network, long-lived caches, or a mixture of both.
 
-As part of the [V8](https://v8.dev/) team's efforts to improve performance, when JavaScript or WebAssembly code is cached by a service worker during its [`install` step](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install), an [optimized, precompiled version of the script](https://v8.dev/blog/code-caching-for-devs#use-service-worker-caches) is written to disk. When that script resource is later referenced by a web app, it can be executed directly from that long-lived cache, with minimal runtime overhead.
+As part of the [V8](https://v8.dev/) team's efforts to improve performance, the first time a service worker responds with a cached WebAssembly response, Chrome generates and stores an optimized version of the code—even for multi-megabyte WebAssembly scripts, which are common in the Photoshop codebase. A similar precompilation takes place when [JavaScript is cached](https://v8.dev/blog/code-caching-for-devs#use-service-worker-caches) by a service worker during its [`install` step](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install). In both cases, Chrome is able to load and execute the optimized versions of cached scripts with minimal runtime overhead.
 
-Photoshop on the web takes advantage of this by deploying a service worker that precaches many of its JavaScript and WebAssembly scripts. Because the URLs for these scripts are generated at build time, and because the logic of keeping caches up to date can be complex, they turned to a set libraries called [Workbox](https://developers.google.com/web/tools/workbox/) to generate their service worker as part of their build process.
+Photoshop on the web takes advantage of this by deploying a service worker that precaches many of its JavaScript and WebAssembly scripts. Because the URLs for these scripts are generated at build time, and because the logic of keeping caches up to date can be complex, they turned to a set of libraries maintained by Google called [Workbox](https://developers.google.com/web/tools/workbox/) to generate their service worker as part of their build process.
 
-While Photoshop on the web does not currently offer a full offline experience, service workers, Workbox, and the V8 engine's script caching led to measurable online performance improvements.
+A Workbox-based service worker along with the V8 engine's script caching led to measurable performance improvements. The specific numbers vary based on the device executing the code, but the team estimates these optimizations decreased the time spent on code initialization by 75%.
 
 ## What's next for Adobe on the web
 
