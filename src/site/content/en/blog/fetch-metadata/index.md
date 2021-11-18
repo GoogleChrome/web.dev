@@ -27,8 +27,9 @@ It is common for resources exposed by a given web application to only be loaded 
 
 ## Browser compatibility {: #compatibility }
 
-Fetch Metadata request headers are supported as of Chrome 76 and in other Chromium-based browsers, and as of Firefox 90.
-See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site#Browser_compatibility) for up-to-date browser support information.
+Fetch Metadata request headers are supported as of Firefox 90 and as of Chrome 76 in all Chromium-based browsers.
+
+{% BrowserCompat 'http.sec-fetch-site' %}
 
 ## Background
 
