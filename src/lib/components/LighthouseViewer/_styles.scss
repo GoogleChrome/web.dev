@@ -20,7 +20,7 @@ web-lighthouse-viewer {
       --gauge-circle-size-big: 112px;
       --gauge-label-font-size: 20px;
       --gauge-label-font-size-big: 28px;
-      --gauge-label-line-height: 26px;
+      --gauge-label-line-height: 46px;
       --gauge-label-line-height-big: 36px;
       --gauge-wrapper-width: 148px;
       --metric-value-font-size: var(--font-size);
@@ -31,7 +31,6 @@ web-lighthouse-viewer {
 
   .lh-audit-group__header {
     color: var(--report-text-color);
-    font-weight: var(--font-weight-heavy);
   }
 
   .lh-audit-group__title {
