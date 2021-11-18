@@ -3,7 +3,7 @@ tabLabel: question
 questions:
   - type: multiple-choice
     cardinality: "1+"
-    correctAnswers: "1,2,5"
+    correctAnswers: "0,1,4"
     stem: Which of the following keywords can be used as a `font-family` generic fallback?
     options:
       - content: "`serif`"
@@ -20,7 +20,7 @@ questions:
         rationale: "Try again. `\"Helvetica\"` is not a generic keyword, but instead refers to a specific font family."
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "3"
+    correctAnswers: "2"
     stem: Which statement is used to convert the first letter of each word to uppercase? e.g. `This is a sentence.` ➡ `This Is A Sentence.`
     options:
       - content: "`text-capitalize: true;`"
@@ -35,7 +35,7 @@ questions:
         rationale: "Try again."
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "2"
+    correctAnswers: "1"
     stem: "True or False: Use `text-orientation` to align text to the left, right, or center."
     options:
       - content: "True"
@@ -44,7 +44,7 @@ questions:
         rationale: "Correct! [`text-orientation`](#text-orientation) changes the rotation of letters in a line. Use `text-align` to align text to the left, right, or center (and [more!](#text-align))."
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "4"
+    correctAnswers: "3"
     stem: Which CSS property can be used to change the space between lines of text?
     options:
       - content: "`line-spacing`"
