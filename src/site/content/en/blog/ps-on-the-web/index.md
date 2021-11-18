@@ -75,7 +75,7 @@ What's more, the entire Photoshop app is built using Lit-based Web Components. L
 
 ## Service worker caching with Workbox
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) act as a programmable local proxy, intercepting network requests and responding with data from the network, long-lived caches, or a mixture of both.
+[Service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) act as a programmable local proxy, intercepting network requests and responding with data from the network, long-lived caches, or a mixture of both.
 
 As part of the [V8](https://v8.dev/) team's efforts to improve performance, the first time a service worker responds with a cached WebAssembly response, Chrome generates and stores an optimized version of the code—even for multi-megabyte WebAssembly scripts, which are common in the Photoshop codebase. A similar precompilation takes place when [JavaScript is cached](https://v8.dev/blog/code-caching-for-devs#use-service-worker-caches) by a service worker during its [`install` step](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install). In both cases, Chrome is able to load and execute the optimized versions of cached scripts with minimal runtime overhead.
 
