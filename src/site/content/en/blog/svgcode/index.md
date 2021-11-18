@@ -20,6 +20,10 @@ tags:
   - blog
 ---
 
+(If you prefer watching over reading, this article is also available as a video.)
+
+{% YouTube "kcvfyQh6J-0" %}
+
 ## From raster to vector
 
 Have you ever scaled up or down an image and the result was pixelated and not very satisfactory? If
