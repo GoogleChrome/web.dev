@@ -39,9 +39,9 @@ questions:
     stem: "True or False: Use `text-orientation` to align text to the left, right, or center."
     options:
       - content: "True"
-        rationale: "Try again. [`text-orientation`](#text-orientation) changes the rotation of letters in a line."
+        rationale: "Try again. [`text-orientation`](#change-the-orientation-of-text) changes the rotation of letters in a line."
       - content: "False"
-        rationale: "Correct! [`text-orientation`](#text-orientation) changes the rotation of letters in a line. Use `text-align` to align text to the left, right, or center (and [more!](#text-align))."
+        rationale: "Correct! [`text-orientation`](#change-the-orientation-of-text) changes the rotation of letters in a line. Use `text-align` to align text to the left, right, or center (and [more!](#change-text-alignment))."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "3"
