@@ -60,6 +60,11 @@
     border: 1px solid get-utility-value('color', 'stroke');
   }
 
+  &[data-type='clear'] {
+    border: none;
+    background: none;
+  }
+
   /// DISABLED STATE
   /// All properties are !important because this
   /// state has to take priority in all cases
