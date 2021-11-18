@@ -48,8 +48,6 @@
         "samesite-cookie-recipes",
         "referrer-best-practices",
         "trust-tokens",
-        "conversion-measurement",
-        "using-conversion-measurement",
         "user-agent-client-hints",
         "schemeful-samesite",
         "floc"

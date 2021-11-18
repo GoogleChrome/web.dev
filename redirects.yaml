@@ -214,7 +214,7 @@ redirects:
   - source: /image-size-responsive
     destination: /image-aspect-ratio
 
-# Redirect for misconfigured Lighthouse report
+  # Redirect for misconfigured Lighthouse report
 
   # Redirects for Handbook refactors
 
@@ -300,3 +300,9 @@ redirects:
   # Design system
   - source: /design-system/component/action
     destination: /design-system/component/fab
+
+  # Redirect for Attribution Reporting API content (ex-conversion measurement) moved to dcc
+  - source: /conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /using-conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
