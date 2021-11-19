@@ -13,7 +13,7 @@ description: >
   monochrome vector images (SVG).
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/lqecVwtwI01kJ7n52Sqp.jpg
 alt: SVGcode logo
-date: 2021-11-18
+date: 2021-11-19
 tags:
   - capabilities
   - progressive-web-apps
@@ -60,7 +60,12 @@ shoulders of a command line tool called [Potrace](http://potrace.sourceforge.net
 [converted to Web Assembly](https://www.npmjs.com/package/esm-potrace-wasm), so it can be used in a
 Web app.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xMosQFxacBsz116CcFwy.png", alt="SVGcode application screenshot.", width="800", height="483" %}
+<figure class="w-figure">
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xMosQFxacBsz116CcFwy.png", alt="SVGcode application screenshot.", width="800", height="483" %}
+  <figcaption class="w-figcaption">
+    The [SVGcode](https://svgco.de/) app.
+  </figcaption>
+</figure>
 
 ### Using SVGcode
 
