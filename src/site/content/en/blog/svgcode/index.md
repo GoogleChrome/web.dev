@@ -63,7 +63,7 @@ Web app.
 <figure class="w-figure">
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xMosQFxacBsz116CcFwy.png", alt="SVGcode application screenshot.", width="800", height="483" %}
   <figcaption class="w-figcaption">
-    The [SVGcode](https://svgco.de/) app.
+    The <a href="https://svgco.de/">SVGcode</a> app.
   </figcaption>
 </figure>
 
