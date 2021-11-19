@@ -15,6 +15,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
+import {debounce} from '../../utils/debounce';
 import './_styles.scss';
 
 /**
@@ -41,6 +42,7 @@ export class BaseResponseElement extends BaseElement {
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
     this.reset = this.reset.bind(this);
+    this.scrollToOption = debounce(this.scrollToOption.bind(this), 100);
   }
 
   /**
@@ -172,10 +174,24 @@ export class BaseResponseElement extends BaseElement {
     return correctAnswersArr.every((val) => selections.includes(val));
   }
 
+  /**
+   * @param {HTMLElement} option HTML ELement to scroll to.
+   */
+  scrollToOption(option) {
+    const {top, height} = option.getBoundingClientRect();
+
+    this.parentElement.scrollTo({
+      top: top - height * 2.5,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
   // Updates option states when response component is submitted.
   // NOTE: Assumes client components have a deselectOption() method.
   // (Necessary because selection mechanisms will vary by response type.)
   submitResponse() {
+    /** @type {NodeListOf<HTMLElement>} */
     const options = this.querySelectorAll('[data-role=option]');
 
     for (const option of options) {
@@ -199,6 +215,7 @@ export class BaseResponseElement extends BaseElement {
       } else if (this.state === 'answeredCorrectly') {
         this.disableOption(option);
         if (isSelected) {
+          this.scrollToOption(option);
           option.setAttribute('data-submitted', '');
         }
       }
