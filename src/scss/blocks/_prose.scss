@@ -85,12 +85,13 @@
   /// skip link, so it needs to be visually hidden
   /// until focused or hovered
   :is(h2, h3, h4, h5, h6) a[href^='#'] {
-    font-size: 0.7em;
+    font-size: 0.9em;
     text-decoration: none;
     color: transparent;
+    transform: translateY(-0.2ex);
   }
 
-  :is(h2, h3, h4, h5, h6) :hover a[href^='#'],
+  :is(h2, h3, h4, h5, h6):hover a[href^='#'],
   :is(h2, h3, h4, h5, h6) a[href^='#']:focus {
     @include apply-utility('color', 'mid-text');
   }
