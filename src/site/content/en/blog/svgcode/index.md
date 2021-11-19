@@ -287,3 +287,7 @@ SVGcode is available at [svgco.de](https://svgco.de/). See what I did there? You
 [review its source code on GitHub](https://github.com/tomayac/SVGcode). Note that since Potrace is
 GPL-licensed, so is SVGcode. And with that, happy vectorizing! I hope SVGcode will be useful, and
 some of its features can inspire your next app.
+
+## Acknowledgements
+
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
