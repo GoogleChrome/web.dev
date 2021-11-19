@@ -71,6 +71,16 @@
     max-width: 60ch;
   }
 
+  ul > li {
+    @extend .flow;
+
+    line-height: unset;
+
+    &::before {
+      inset: 1.2ex 0 0 0;
+    }
+  }
+
   /// An anchor that starts with a hash is a
   /// skip link, so it needs to be visually hidden
   /// until focused or hovered
