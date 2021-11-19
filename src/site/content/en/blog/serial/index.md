@@ -99,7 +99,7 @@ To open a serial port, first access a `SerialPort` object. For this, you can
 either prompt the user to select a single serial port by calling
 `navigator.serial.requestPort()` in response to a user gesture such as touch
 or mouse click, or pick one from `navigator.serial.getPorts()` which returns
-a list of serial ports the website has been granted access to previously.
+a list of serial ports the website has been granted access to.
 
 ```js
 document.querySelector('button').addEventListener('click', async () => {
