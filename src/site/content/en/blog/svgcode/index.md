@@ -20,29 +20,36 @@ tags:
   - blog
 ---
 
-(If you prefer watching over reading, this article is also available as a video.)
-
-{% YouTube "kcvfyQh6J-0" %}
+<figure class="w-figure">
+  {% YouTube "kcvfyQh6J-0" %}
+  <figcaption class="w-figcaption">
+    (If you prefer watching over reading, this article is also available as a video.)
+  </figcaption>
+</figure>
 
 ## From raster to vector
 
 Have you ever scaled an image and the result was pixelated and unsatisfactory? If
 so, you have probably dealt with a raster image format such as WebP, PNG, or JPG.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/bIiC6vyZLqgGWPuFF9od.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/bIiC6vyZLqgGWPuFF9od.mp4" %}
+  <figcaption class="w-figcaption">
+    Scaling up a raster image makes it look pixelated.
+  </figcaption>
+</figure>
 
 In contrast, vector graphics are images that are defined by points in a coordinate system. These
 points are connected by lines and curves to form polygons and other shapes. Vector graphics have an
 advantage over raster graphics in that they may be scaled up or down to any resolution
 without pixelation.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/yM32DfKFp8ooBAshjlUE.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/yM32DfKFp8ooBAshjlUE.mp4" %}
+  <figcaption class="w-figcaption">
+    Scaling up a vector image with no loss of quality.
+  </figcaption>
+</figure>
 
 ## Introducing SVGcode
 
@@ -53,7 +60,7 @@ shoulders of a command line tool called [Potrace](http://potrace.sourceforge.net
 [converted to Web Assembly](https://www.npmjs.com/package/esm-potrace-wasm), so it can be used in a
 Web app.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xMosQFxacBsz116CcFwy.png", alt="ALT_TEXT_HERE", width="800", height="483" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xMosQFxacBsz116CcFwy.png", alt="SVGcode application screenshot.", width="800", height="483" %}
 
 ### Using SVGcode
 
@@ -65,10 +72,12 @@ the edges stay sharp. But zooming in on the Chrome logo, you can see that the tr
 perfect, and especially the outlines of the logo look a bit speckled. I can improve the result by
 de-speckling the tracing by suppressing speckles of up to, say, five pixels.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/WvmYtNTHAbINP3ec1h1w.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/WvmYtNTHAbINP3ec1h1w.mp4" %}
+  <figcaption class="w-figcaption">
+    Converting a dropped image to SVG.
+  </figcaption>
+</figure>
 
 ### Posterization in SVGcode
 
@@ -77,10 +86,12 @@ image to reduce the number of colors. SVGcode allows me to do this per color cha
 resulting SVG as I make changes. When I'm happy with the result, I can save the SVG to my hard disk
 and use it wherever I like.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/BzcR6yPyuQ0TIgzwYbLy.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/BzcR6yPyuQ0TIgzwYbLy.mp4" %}
+  <figcaption class="w-figcaption">
+    Posterizing an image to reduce the number of colors.
+  </figcaption>
+</figure>
 
 ## APIs used in SVGcode
 
@@ -104,10 +115,12 @@ To maximize the available screen real estate, SVGcode uses
 [Window Controls Overlay](/window-controls-overlay/) customization by moving its main menu up into
 the titlebar area. You can see this get activated at the end of the install flow.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/aDk3LFxexL6g2NbH4RCA.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/aDk3LFxexL6g2NbH4RCA.mp4" %}
+  <figcaption class="w-figcaption">
+    Installing SVGcode and activating the Window Controls Overlay customization.
+  </figcaption>
+</figure>
 
 ### File System Access API
 
@@ -185,18 +198,22 @@ SVGcode is also fully integrated with the operating system's clipboard via the A
 You can paste images from the operating system's file explorer into the app either by clicking the
 paste image button or by pressing command or control plus v on your keyboard.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/9wHL0Uc7eHFEFF99anaB.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/9wHL0Uc7eHFEFF99anaB.mp4" %}
+  <figcaption class="w-figcaption">
+    Pasting an image from the file explorer into SVGcode.
+  </figcaption>
+</figure>
 
 The Async Clipboard API has recently gained the ability to deal with SVG images as well, so you can
 also copy an SVG image and paste it into another application for further processing.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/KiGt5UHOvZZEvPhtwIny.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/KiGt5UHOvZZEvPhtwIny.mp4" %}
+  <figcaption class="w-figcaption">
+    Copying an image from SVGcode into SVGOMG.
+  </figcaption>
+</figure>
 
 ```js
 copyButton.addEventListener('click', async () => {
@@ -226,10 +243,12 @@ means that when I'm in the Finder on my macOS machine, I can right-click an imag
 SVGcode. This feature is called File Handling and works based on the file_handlers property in the
 Web App Manifest and the launch queue, which allows the app to consume the passed file.
 
-{% Video autoplay=true,
-              muted=true,
-              loop=true,
-              playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/DEQLkm1vrt226xsAoysI.mp4" %}
+<figure class="w-figure">
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/DEQLkm1vrt226xsAoysI.mp4" %}
+  <figcaption class="w-figcaption">
+    Opening a file from the desktop with installed SVGcode app.
+  </figcaption>
+</figure>
 
 ```js
 window.launchQueue.setConsumer(async (launchParams) => {
