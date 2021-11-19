@@ -23,7 +23,7 @@ tags:
 <figure class="w-figure">
   {% YouTube "kcvfyQh6J-0" %}
   <figcaption class="w-figcaption">
-    (If you prefer watching over reading, this article is also available as a video.)
+    (If you prefer watching over reading, this article is also available as a <a href="https://youtu.be/kcvfyQh6J-0">video</a>.)
   </figcaption>
 </figure>
 
