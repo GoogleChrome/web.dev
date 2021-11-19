@@ -1,10 +1,10 @@
 ---
 layout: post
-title: SVGcode—A PWA to convert raster images to SVG vector graphics
+title: "SVGcode: a PWA to convert raster images to SVG vector graphics"
 subhead: >
   SVGcode is a Progressive Web App that lets you convert raster images like JPG, PNG, GIF, WebP,
   AVIF, etc. to vector graphics in SVG format. It uses the File System Access API, the Async
-  Clipboard API, and the File Handling API, and makes also use of Window Controls Overlay
+  Clipboard API, the File Handling API, and Window Controls Overlay
   customization.
 authors:
   - thomassteiner
@@ -26,7 +26,7 @@ tags:
 
 ## From raster to vector
 
-Have you ever scaled up or down an image and the result was pixelated and not very satisfactory? If
+Have you ever scaled an image and the result was pixelated and unsatisfactory? If
 so, you have probably dealt with a raster image format such as WebP, PNG, or JPG.
 
 {% Video autoplay=true,
@@ -35,9 +35,9 @@ so, you have probably dealt with a raster image format such as WebP, PNG, or JPG
               playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/bIiC6vyZLqgGWPuFF9od.mp4" %}
 
 In contrast, vector graphics are images that are defined by points in a coordinate system. These
-points are connected by lines and curves to form polygons and other shapes. Vector graphics have the
-unique advantage over raster graphics in that they may be scaled up or down to any resolution
-without getting pixelated.
+points are connected by lines and curves to form polygons and other shapes. Vector graphics have an
+advantage over raster graphics in that they may be scaled up or down to any resolution
+without pixelation.
 
 {% Video autoplay=true,
               muted=true,
@@ -58,12 +58,12 @@ Web app.
 ### Using SVGcode
 
 First, I want to show you how to use the app. I start with the teaser image for Chrome Dev Summit
-that I have downloaded from the ChromiumDev Twitter channel. This is a PNG raster image that I then
-drag onto the SVGcode app. When I drop the file, the app starts tracing the image color by color,
+that I downloaded from the ChromiumDev Twitter channel. This is a PNG raster image that I then
+drag onto the SVGcode app. When I drop the file, the app traces the image color by color,
 until a vectorized version of the input appears. I can now zoom into the image, and as you can see,
 the edges stay sharp. But zooming in on the Chrome logo, you can see that the tracing wasn't
 perfect, and especially the outlines of the logo look a bit speckled. I can improve the result by
-de-speckling the tracing by suppressing speckles of up to, say, 5 pixels.
+de-speckling the tracing by suppressing speckles of up to, say, five pixels.
 
 {% Video autoplay=true,
               muted=true,
@@ -74,7 +74,7 @@ de-speckling the tracing by suppressing speckles of up to, say, 5 pixels.
 
 An important step for vectorization, especially for photographic images, is posterizing the input
 image to reduce the number of colors. SVGcode allows me to do this per color channel, and see the
-resulting SVG as I make changes. When I'm happy with the result, I can save the SVG to my harddisk
+resulting SVG as I make changes. When I'm happy with the result, I can save the SVG to my hard disk
 and use it wherever I like.
 
 {% Video autoplay=true,
@@ -100,7 +100,7 @@ may not necessarily work for all apps, but for SVGcode's use case it's great.
 
 #### Window Controls Overlay
 
-To maximize the available screen real estate, SVGcode makes use of
+To maximize the available screen real estate, SVGcode uses
 [Window Controls Overlay](/window-controls-overlay/) customization by moving its main menu up into
 the titlebar area. You can see this get activated at the end of the install flow.
 
@@ -113,7 +113,7 @@ the titlebar area. You can see this get activated at the end of the install flow
 
 To open input image files and save the resulting SVGs, I use the
 [File System Access API](/file-system-access/). This allows me to keep a reference to previously
-opened files around and continue where I left off, even after an app reload. Whenever an image gets
+opened files and to continue where I left off, even after an app reload. Whenever an image gets
 saved, it is optimized via the [svgo](https://github.com/svg/svgo) library, which may take a moment,
 depending on the complexity of the SVG. Showing the file save dialog requires a user gesture. It is
 therefore important to obtain the file handle before the SVG optimization happens, so the user
@@ -145,7 +145,7 @@ try {
 
 For opening an input image, I can either use the file open feature, or, as you have seen above, just
 drag and drop an image file onto the app. The file open feature is pretty straightforward, more
-interesting is the drag and drop case. What's particularly nice about this is the fact that you can
+interesting is the drag and drop case. What's particularly nice about this is that you can
 get a file system handle from the data transfer item via the
 [`getAsFileSystemHandle()`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsFileSystemHandle)
 method. As mentioned before, I can persist this handle, so it's ready when the app gets reloaded.
@@ -190,7 +190,7 @@ paste image button or by pressing command or control plus v on your keyboard.
               loop=true,
               playsinline=true,  src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/9wHL0Uc7eHFEFF99anaB.mp4" %}
 
-The Async Clipboard API recently has gained the ability to deal with SVG images as well, so you can
+The Async Clipboard API has recently gained the ability to deal with SVG images as well, so you can
 also copy an SVG image and paste it into another application for further processing.
 
 {% Video autoplay=true,
@@ -255,16 +255,16 @@ window.launchQueue.setConsumer(async (launchParams) => {
 });
 ```
 
-Read up all the details on [file handling](/file-handling/) in article, and view the source code in
+For more information, see [Let installed web applications be file handlers](/file-handling/), and view the source code in
 [`src/js/filehandling.js`](https://github.com/tomayac/SVGcode/blob/main/src/js/filehandling.js).
 
 ## Conclusion
 
 Alright, this was a quick tour through some of the advanced app features in SVGcode. I hope this app
-can become an essential tool for your image processing needs, alongside other amazing apps like
+can become an essential tool for your image processing needs alongside other amazing apps like
 [Squoosh](https://squoosh.app/) or [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
-SVGcode is available at [svgco.de](https://svgco.de/), see what I did there? You can
+SVGcode is available at [svgco.de](https://svgco.de/). See what I did there? You can
 [review its source code on GitHub](https://github.com/tomayac/SVGcode). Note that since Potrace is
 GPL-licensed, so is SVGcode. And with that, happy vectorizing! I hope SVGcode will be useful, and
 some of its features can inspire your next app.
