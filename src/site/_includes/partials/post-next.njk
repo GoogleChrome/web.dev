@@ -23,13 +23,13 @@
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
-  {% set safeTitle = title | trim | md | safe %}
+  {% set safeTitle = title | trim | md({linkify: false}) | safe %}
 
   <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
     {% include 'partials/toc-side.njk' %}
-    {# 
-      TODO: The legacy rollout task can be removed 
-      when the design system has been full rolled-out across the site 
+    {#
+      TODO: The legacy rollout task can be removed
+      when the design system has been full rolled-out across the site
     #}
     <article class="prose legacy-rollout">
       <header class="flow gap-bottom-size-3">
@@ -121,15 +121,15 @@
           <p><strong>{{ 'i18n.post.is_draft' | i18n(locale) }}</strong></p>
         </div>
       {% endif %}
-      
+
       {% include 'partials/toc-inner.njk' %}
-      
+
       {{ content | safe }}
 
       {% if stack_overflow_tag %}
         {% StackOverflow stack_overflow_tag %}
       {% endif %}
-      
+
       <div class="cluster gutter-base flow-space-size-2" role="list" aria-label="tags">
         {% for tagKey in tags or [] %}
           {% if tagKey in collections.tags %}
@@ -147,7 +147,7 @@
           {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
           {% endif %}
         </span>
-        — 
+        —
         <a
           href="{{ page.inputPath | githubLink }}"
         >
@@ -160,7 +160,7 @@
           {% CodelabsCallout codelabs, lang %}
         </div>
       {% endif %}
-      
+
       {% if 'blog' in tags %}
         {% set backUrl = '/blog' %}
         {% set backLabel = 'Return to all articles' %}
@@ -172,7 +172,7 @@
       {% if backLabel and backUrl %}
         <div class="flow-space-size-2">
           <a href="{{ backUrl }}" class="button" data-type="secondary">
-            {% include 'icons/arrow-back.svg' %} 
+            {% include 'icons/arrow-back.svg' %}
             <span>{{ backLabel }}</span>
           </a>
         </div>
