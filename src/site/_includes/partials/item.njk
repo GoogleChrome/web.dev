@@ -19,7 +19,7 @@
           class="w-path-link"
           href="{{ item.url }}"
         >
-          {{ item.data.title | trim | md | safe }}
+          {{ item.data.title | trim | md({linkify: false}) | safe }}
         </a>
       </li>
     {% endif %}
