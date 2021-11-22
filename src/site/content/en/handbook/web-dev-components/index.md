@@ -944,6 +944,7 @@ Second Term
 : This is another definition of the second term.
 
 ## Stats
+
 Use the Stats component to call out important statistics
 about a product or service discussed in a post.
 (Stats are primarily used in case studies.)
@@ -951,65 +952,83 @@ about a product or service discussed in a post.
 Include no more than four statistics in a single Stats component
 to avoid layout issues.
 
+[Detailed specification](/design-system/component/stats/)
+
 ```html
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 ```
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 
+Stats component with applied utility class `bg-state-good-bg color-state-good-text`:
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats bg-state-good-bg color-state-good-text">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-</div>
-
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 
 ## Tables
 
@@ -1335,7 +1354,76 @@ by wrapping them in a `<div class="w-columns">` element:
 At smaller viewport sizes,
 elements in a two-column layout will shift to a stacked arrangement.
 
-## W-Tables
+## w-stats
+
+Use the Stats component to call out important statistics
+about a product or service discussed in a post.
+(Stats are primarily used in case studies.)
+
+Include no more than four statistics in a single Stats component
+to avoid layout issues.
+
+```html
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher CTR</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
+    <p class="w-stat__desc">Faster load times</p>
+  </div>
+</div>
+```
+
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher CTR</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
+    <p class="w-stat__desc">Faster load times</p>
+  </div>
+</div>
+
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
+laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
+corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
+
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher CTR</p>
+  </div>
+</div>
+
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
+laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
+corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
+
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+</div>
+
+## w-tables
 
 Use the markup below to create a table.
 Do _not_ use Markdown syntax;
