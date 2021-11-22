@@ -42,7 +42,9 @@ guidance about how to use them effectively.
 
 ## Deprecated components
 
+1. [w-button](#w-button)
 1. [w-columns](#w-columns)
+1. [w-stats](#w-stats)
 1. [w-tables](#w-tables)
 
 ## Asides
@@ -255,33 +257,36 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
+[Detailed specification](design-system/component/icon-button/)
+
 ### Text buttons
 
 <div>
-  <button class="w-button">
+  <button class="button">
     Text button
   </button>
-  <button class="w-button w-button--with-icon" data-icon="file_download">
+  <button class="button">
+    {% include "icons/" ~ 'plus.svg' %}
     Text button with icon
   </button>
 </div>
-<br>
 
 <div>
-  <button class="w-button w-button--primary">
+  <button class="button" data-type="primary">
     Primary button
   </button>
-  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+  <button class="button" data-type="primary">
+    {% include "icons/" ~ 'plus.svg' %}
     Primary button with icon
   </button>
 </div>
-<br>
 
 <div>
-  <button class="w-button w-button--secondary">
+  <button class="button" data-type="secondary">
     Secondary button
   </button>
-  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+  <button class="button" data-type="secondary">
+    {% include "icons/" ~ 'plus.svg' %}
     Secondary button with icon
   </button>
 </div>
@@ -290,23 +295,17 @@ These buttons are shown for reference.
 
 A default icon button:
 
-<div>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    <span role="tooltip" class="w-tooltip">
-      Justify
-    </span>
-  </button>
-</div>
+<button class="icon-button" aria-label="Close">
+  {% include "icons/close.svg" %}
+</button>
 
-A round icon button:
+An icon button with tooltip:
 
-<div>
-  <button class="w-button--icon w-button--round" data-icon="close">
-    <span role="tooltip" class="w-tooltip">
-      Close
-    </span>
-  </button>
-</div>
+<button class="icon-button tooltip" aria-labelledby="icon-button-toolip">
+  {% include "icons/close.svg" %}
+  <span class="tooltip__content" id="icon-button-toolip">Close</span>
+</button>
+
 
 ## Callouts
 
@@ -1313,6 +1312,64 @@ by adding a `left` or `right` argument to the shortcode:
 See the [Images and video](/handbook/markup-media) post.
 
 # Deprecated components
+
+## w-buttons
+
+In general, you shouldn't need to add buttons to your posts.
+These buttons are shown for reference.
+
+### Text buttons
+
+<div>
+  <button class="w-button">
+    Text button
+  </button>
+  <button class="w-button w-button--with-icon" data-icon="file_download">
+    Text button with icon
+  </button>
+</div>
+<br>
+
+<div>
+  <button class="w-button w-button--primary">
+    Primary button
+  </button>
+  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+    Primary button with icon
+  </button>
+</div>
+<br>
+
+<div>
+  <button class="w-button w-button--secondary">
+    Secondary button
+  </button>
+  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+    Secondary button with icon
+  </button>
+</div>
+
+### Icon buttons
+
+A default icon button:
+
+<div>
+  <button class="w-button--icon" data-icon="format_align_justify">
+    <span role="tooltip" class="w-tooltip">
+      Justify
+    </span>
+  </button>
+</div>
+
+A round icon button:
+
+<div>
+  <button class="w-button--icon w-button--round" data-icon="close">
+    <span role="tooltip" class="w-tooltip">
+      Close
+    </span>
+  </button>
+</div>
 
 ## w-columns
 
