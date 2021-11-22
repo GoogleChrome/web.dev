@@ -15,29 +15,30 @@
  */
 require('dotenv').config();
 const algoliasearch = require('algoliasearch');
+const byteof = require('byteof');
 const fs = require('fs');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
-const maxItemSizeInBytes = 10000; // 10,000
+const maxItemSizeInBytes = 7000; // 7,000
 const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 /**
- * Trim text of Algoia Collection Item.
+ * Trim byte size of Algoia Collection Item.
  *
  * @param {AlgoliaItem} item
  * @return {AlgoliaItem}
  */
-const trimText = (item) => {
-  const currentSizeInBytes = JSON.stringify(item).length;
-  const textLength = item.content.length;
+const trimBytes = (item) => {
+  const currentSizeInBytes = byteof(item);
   // Calculate how many characters needs to be removed to get to right size
-  const charactersToRemove = currentSizeInBytes - maxItemSizeInBytes;
+  const bytesToRemove = currentSizeInBytes - maxItemSizeInBytes;
+  const contentBytes = byteof(item.content);
   // Calculate what percentage of description can stay in order to get it to right size
-  const percentageToRemove = (textLength - charactersToRemove) / textLength;
-  // Trim content
+  const percentageToRemove = (contentBytes - bytesToRemove) / contentBytes;
+
   item.content = item.content.slice(
     0,
-    Math.floor(textLength * percentageToRemove),
+    Math.floor(item.content.length * percentageToRemove),
   );
 
   return item;
@@ -54,8 +55,9 @@ const chunkAlgolia = (arr) => {
   let tempSizeInBytes = 0;
   let temp = [];
   for (const arrItem of arr) {
-    const current = trimText(arrItem);
-    const currentSizeInBytes = JSON.stringify(current).length;
+    const current = trimBytes(arrItem);
+    const currentSizeInBytes = byteof(current);
+
     if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
       temp.push(current);
       tempSizeInBytes += currentSizeInBytes;
