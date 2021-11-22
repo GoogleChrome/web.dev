@@ -14,31 +14,21 @@
  * limitations under the License.
  */
 
-declare global {
-  export interface AlgoliaItem {
-    content?: string;
-    createdOn?: Date;
-    description?: string;
-    image?: string;
-    /**
-     * Date of index, only available after indexed. Basically can only be used by search.
-     */
-    indexedOn?: number;
-    locale: string;
-    locales: string[];
-    /**
-     * ID of item used to update existing entry.
-     */
-    objectID: string;
-    tags: string[];
-    /**
-     * Title of a post.
-     */
-     title: string;
-     updatedOn?: Date;
-     url: string;
-  }
+/**
+ * @fileoverview Filter eleventy collection of posts that should not be in algolia.
+ */
+
+/**
+ * @param {EleventyCollectionItem[]} posts An array of 11ty post objects.
+ * @return {EleventyCollectionItem[]} The posts that should go be searchable in algolia.
+ */
+function algoliaIndexable(posts) {
+  return posts.filter(
+    (post) =>
+      post.url &&
+      post.data.title &&
+      !(post.data.noindex === true || post.data.noindex === 'true'),
+  );
 }
 
-// empty export to keep file a module
-export {};
+module.exports = algoliaIndexable;

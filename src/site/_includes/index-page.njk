@@ -1,5 +1,7 @@
 ---
 layout: default-next
+eleventyComputed:
+  noindex: "{{ paged.index > 0 }}"
 ---
 {% from 'macros/post-card.njk' import postCard with context %}
 

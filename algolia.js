@@ -19,6 +19,7 @@ const fs = require('fs');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
 const maxItemSizeInBytes = 10000; // 10,000
+const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 /**
  * Trim text of Algoia Collection Item.
@@ -28,17 +29,7 @@ const maxItemSizeInBytes = 10000; // 10,000
  */
 const trimText = (item) => {
   const currentSizeInBytes = JSON.stringify(item).length;
-  let textLength = 0;
-  if (currentSizeInBytes < maxItemSizeInBytes) {
-    // Check if item is small enough, if it is, return it
-    return item;
-  } else if (item.default_content) {
-    // Since it is not, check if there is a `default_content` then get the length of the contents
-    textLength = item.default_content.length + item.content.length;
-  } else {
-    // Get the length of the content
-    textLength = item.content.length;
-  }
+  const textLength = item.content.length;
   // Calculate how many characters needs to be removed to get to right size
   const charactersToRemove = currentSizeInBytes - maxItemSizeInBytes;
   // Calculate what percentage of description can stay in order to get it to right size
@@ -46,14 +37,9 @@ const trimText = (item) => {
   // Trim content
   item.content = item.content.slice(
     0,
-    Math.floor(item.content.length * percentageToRemove),
+    Math.floor(textLength * percentageToRemove),
   );
-  if (item.default_content) {
-    item.default_content = item.content.slice(
-      0,
-      Math.floor(item.default_content.length * percentageToRemove),
-    );
-  }
+
   return item;
 };
 
@@ -93,10 +79,31 @@ async function index() {
 
   const raw = fs.readFileSync('dist/pages.json', 'utf-8');
   /** @type {AlgoliaItem[]} */
-  const algoliaData = JSON.parse(raw).map((e) => {
-    // Set date of when object is being added to algolia.
-    e.indexedOn = indexedOn.getTime();
-    return e;
+  const pagesData = JSON.parse(raw);
+
+  /** @type {{ [url: string]: string[]}} */
+  const urlToLocale = pagesData.reduce((urlLocalesDict, {url, locale}) => {
+    if (urlLocalesDict[url]) {
+      urlLocalesDict[url].push(locale);
+    } else {
+      urlLocalesDict[url] = [locale];
+    }
+
+    return urlLocalesDict;
+  }, {});
+
+  const algoliaData = pagesData.map((/** @type {AlgoliaItem} */ item) => {
+    if (item.locale === defaultLocale) {
+      const locales = urlToLocale[item.url];
+      item.locales = [
+        item.locale,
+        ...supportedLocales.filter((i) => locales.indexOf(i) === -1),
+      ];
+    } else {
+      item.locales = [item.locale];
+    }
+    item.indexedOn = indexedOn.getTime();
+    return item;
   });
 
   const chunkedAlgoliaData = chunkAlgolia(algoliaData);
