@@ -358,20 +358,20 @@ isolated.
 The [Reporting API](/reporting-api) is another mechanism through which you can
 detect various issues. You can configure the Reporting API to instruct your
 users' browser to send a report whenever COEP blocks the loading of a resource
-or COOP isolates a popup window. Chrome has supported the
+or COOP isolates a pop-up window. Chrome has supported the
 [`Report-To`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
 header since version 69 for a variety of uses including COEP and COOP.
 
 {% Aside %}
 
 Are you already using the Reporting API with the `Report-To` header? Chrome is
-transitioning to a new version of the Reporting API, based on
-`Reporting-Endpoints`; consider migrating to this new version. Head over
+transitioning to a new version of the Reporting API, which replaces `Report-to` with
+`Reporting-Endpoints`; consider migrating to the new version. Check out
 [Migrate to Reporting API v1](/reporting-api-migration) for details.
 
 {% endAside %}
 
-Learn how to set up a server to receive reports at [Decide where reports should
+To learn how to set up a server to receive reports, see [Decide where reports should
 be sent](/reporting-api/#decide-where-reports-should-be-sent).
 
 #### Example COEP report
@@ -405,7 +405,7 @@ eventually](https://github.com/whatwg/html/pull/5848).
 
 An example [COOP
 report](https://html.spec.whatwg.org/multipage/origin.html#reporting) payload
-when a popup window is opened isolated looks like this:
+when a pop-up window is opened isolated looks like this:
 
 ```json
 [{
