@@ -6,13 +6,40 @@ web-lighthouse-viewer {
   min-height: 45px;
 
   .lh-root {
+    --font-size-small: 14px;
+    --font-size: 16px;
+    --font-weight-heavy: 700;
+
+    --link-color: var(--color-informative);
+    --metric-value-font-size: var(--font-size-small);
     --report-background-color: transparent;
-    --score-icon-size: 12px;
+    --report-font-size-secondary: var(--font-size-small);
+
+    @media screen and (min-width: 464px) {
+      --gauge-circle-size: 80px;
+      --gauge-circle-size-big: 112px;
+      --gauge-label-font-size: 20px;
+      --gauge-label-font-size-big: 28px;
+      --gauge-label-line-height: 46px;
+      --gauge-label-line-height-big: 36px;
+      --gauge-wrapper-width: 148px;
+      --metric-value-font-size: var(--font-size);
+      --report-font-size: var(--font-size);
+      --report-font-size-secondary: var(--font-size);
+    }
   }
 
-  .lh-topbar,
-  .lh-sticky-header {
-    display: none;
+  .lh-audit-group__header {
+    color: var(--report-text-color);
+  }
+
+  .lh-audit-group__title {
+    font-weight: var(--font-weight-heavy);
+    text-transform: none;
+  }
+
+  .lh-category-header__description {
+    color: var(--report-text-color);
   }
 
   .lh-error-msg {
@@ -35,6 +62,7 @@ web-lighthouse-viewer {
     padding: 0;
   }
 
+  /* reapply styles overridden by higher specificity `a:link` */
   .lh-gauge__wrapper--average {
     color: var(--color-average);
   }
@@ -45,6 +73,20 @@ web-lighthouse-viewer {
     color: var(--color-pass);
   }
 
+  .lh-metric__description {
+    flex-grow: 0;
+  }
+
+  .lh-metric__innerwrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .lh-metric__title {
+    font-weight: var(--font-weight-heavy);
+  }
+
+  /* unset a bunch of general styles applied by next.css */
   .lh-metricfilter__radio {
     width: 0;
   }
@@ -57,23 +99,21 @@ web-lighthouse-viewer {
   summary {
     color: inherit;
     font-size: inherit;
+    padding-right: unset;
+    line-height: unset;
 
     &::before,
-      &::after {
+    &::after {
       display: none;
     }
   }
 
+  details > * + * {
+    margin-top: 0;
+  }
+
   code {
     border: 0;
-  }
-
-  .lh-audit--fail {
-    --score-icon-size: 12px;
-  }
-
-  .lh-audit--informative {
-    --score-icon-size: 12px;
   }
 
   details.lh-clump {

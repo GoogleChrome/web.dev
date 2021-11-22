@@ -28,6 +28,14 @@
       }
     },
     {
+      "name": "clear",
+      "title": "Clear",
+      "context": {
+        "text": "A clear button",
+        "type": "clear"
+      }
+    },
+    {
       "name": "disabled",
       "title": "Disabled",
       "context": {

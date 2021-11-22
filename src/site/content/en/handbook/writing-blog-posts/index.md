@@ -40,7 +40,7 @@ There are some technical differences in terms of components you have access to w
 
 Use Google docs initially, and write in Markdown. 
 Make a copy of this [template](https://docs.google.com/document/d/1lgaNIEnXZf-RB8_p9RK22QEgpXJqnu77pLWVWVy4nuw/edit?usp=sharing) as a starting point. 
-Your initial reviews will take place in the document as it is an easier place for structural changes than Github. 
+Your initial reviews will take place in the document as it is an easier place for structural changes than GitHub. 
 You can also share your document with any members of your team who need to sign off on the content before publication.
 
 ## The general procedure

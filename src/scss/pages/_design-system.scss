@@ -14,6 +14,12 @@
   details {
     max-width: 50rem;
   }
+
+  .prose {
+    iframe {
+      max-width: unset;
+    }
+  }
 }
 
 .design-system__swatch {
@@ -30,5 +36,13 @@
 
   &[data-size='tall'] {
     min-height: 800px;
+  }
+}
+
+.design-system__components-section {
+  max-width: unset;
+
+  details {
+    margin-inline: auto;
   }
 }

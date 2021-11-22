@@ -891,4 +891,4 @@ to the community remixes section below!
 ### Resources
 
 Find the `.gui-switch` [source code on
-  Github](https://github.com/argyleink/gui-challenges).
+  GitHub](https://github.com/argyleink/gui-challenges).

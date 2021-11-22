@@ -15,7 +15,7 @@ authors:
 hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg"
 alt: "A puzzle with a missing piece."
 date: 2021-03-22
-updated: 2021-03-22
+updated: 2021-11-16
 tags:
   - blog
   - css
@@ -318,9 +318,17 @@ There will be regular updates about the progress here on web.dev and you can
 also follow the progress for each focus area in the [Compat 2021
 Dashboard](https://wpt.fyi/compat2021).
 
+<figure class="w-figure">
 <a href="https://wpt.fyi/compat2021">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9E5bMCRuPdQlGbFHZmuz.png", alt="Compat 2021 dashboard", width="800", height="778", class="w-screenshot" %}
+{% Img 
+src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", 
+alt="Compat 2021 Dashboard", 
+width="800", 
+height="942", 
+class="w-screenshot" %}
 </a>
+<figcaption class="w-figcaption">The Compat 2021 Dashboard (screenshot taken 16 November, 2021).</figcaption>
+</figure>
 
 We hope this concerted effort among browser vendors to improve reliability and
 interoperability will help you go build amazing things on the web!
