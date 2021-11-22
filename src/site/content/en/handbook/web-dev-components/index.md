@@ -297,17 +297,20 @@ A default icon button:
 
 [Detailed specification](design-system/component/icon-button/)
 
-<button class="icon-button" aria-label="Close">
-  {% include "icons/close.svg" %}
-</button>
+<div>
+  <button class="icon-button" aria-label="Close">
+    {% include "icons/close.svg" %}
+  </button>
+</div>
 
 An icon button with tooltip:
 
-<button class="icon-button tooltip" aria-labelledby="icon-button-toolip">
-  {% include "icons/close.svg" %}
-  <span class="tooltip__content" id="icon-button-toolip">Close</span>
-</button>
-
+<div>
+  <button class="icon-button tooltip" aria-labelledby="icon-button-toolip">
+    {% include "icons/close.svg" %}
+    <span class="tooltip__content" id="icon-button-toolip">Close</span>
+  </button>
+</div>
 
 ## Callouts
 
