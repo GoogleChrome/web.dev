@@ -229,3 +229,7 @@ web-url-chooser {
 .w-label + web-copy-code {
   --flow-space: 0.5rem;
 }
+
+share-action.fab {
+  gap: unset;
+}
