@@ -236,12 +236,13 @@ blockquote cite {
 
 caption,
 figcaption {
-  margin-inline: auto;
   font-style: italic;
-  text-align: center;
+  text-align: start;
+  font-size: get-size('size-0');
 
   @include apply-utility('measure', 'short');
-  @include apply-utility('gap-top', 'size-1');
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('gap-top', 'base');
 
   code {
     white-space: nowrap;
@@ -645,6 +646,13 @@ web-copy-code {
   display: block;
 }
 
+/// Video related elements
+video,
+.youtube {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/cluster';
@@ -695,6 +703,7 @@ web-copy-code {
 
 /// WEB COMPONENTS
 @import 'web-components/web-audio-fab';
+@import 'web-components/web-codelab';
 @import 'web-components/web-copy-code';
 @import 'web-components/web-navigation-drawer';
 @import 'web-components/web-subscribe';
@@ -702,6 +711,7 @@ web-copy-code {
 /// UTILITY CLASSES
 @import 'utilities/all-center';
 @import 'utilities/avatar';
+@import 'utilities/docked-actions';
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
@@ -724,6 +734,25 @@ web-copy-code {
 
 // Temporary rollout patches
 @import 'rollout';
+
+/// LEGACY EXTENSIONS
+/// These elements are everywhere and to replace them site-wide would be
+/// a massive project, so they use @extend to pick up new styles
+.w-visually-hidden {
+  @extend .visually-hidden;
+}
+
+.w-table-wrapper {
+  @extend .table-wrapper;
+}
+
+.w-screenshot {
+  @extend .fixed-width-img;
+}
+
+.w-columns {
+  @extend .switcher;
+}
 
 // Render gorko utilities
 @include generate-utility-classes();

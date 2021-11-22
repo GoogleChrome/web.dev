@@ -2,17 +2,6 @@
 /// These styles must be removed when the rollout is complete.
 /// They tweak existing, difficult to change, elements but should
 /// be completely useless once those elements have been changed
-.w-visually-hidden {
-  @extend .visually-hidden;
-}
-
-.w-table-wrapper {
-  @extend .table-wrapper;
-}
-
-.w-screenshot {
-  @extend .fixed-width-img;
-}
 
 .w-callout {
   max-width: $global-prose-element-max-width;
@@ -220,4 +209,12 @@ web-url-chooser {
     transform: none !important;
     cursor: not-allowed !important;
   }
+}
+
+.w-label + web-copy-code {
+  --flow-space: 0.5rem;
+}
+
+share-action.fab {
+  gap: unset;
 }

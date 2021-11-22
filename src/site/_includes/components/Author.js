@@ -19,13 +19,17 @@ const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
 const {i18n} = require('../../_filters/i18n');
 
-module.exports = ({
-  id,
-  author,
-  locale,
-  showSocialMedia = false,
-  small = false,
-}) => {
+const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
+
+/* NOTE: This component is in a transition period to support both new design system contexts
+and the existing system. Once the new design system has been *fully* rolled out, this component
+can be cleaned up with the following:
+
+1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
+2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
+*/
+
+function Author({id, author, locale, showSocialMedia = false, small = false}) {
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +
@@ -55,10 +59,37 @@ module.exports = ({
       w: '64',
     },
   });
+
+  if (isDesignSystemContext(this.page ? this.page.filePathStem : '')) {
+    return html`
+      <div class="author">
+        <a class="avatar" href="${author.href}"> ${img} </a>
+        <div class="flow">
+          <cite class="author__name">
+            <a href="${author.href}">${title}</a>
+          </cite>
+          ${showSocialMedia &&
+          html` <div class="author__links cluster">
+            ${author.twitter &&
+            `<a href="https://twitter.com/${author.twitter}">Twitter</a>`}
+            ${author.github &&
+            `<a href="https://github.com/${author.github}">GitHub</a>`}
+            ${author.glitch &&
+            `<a href="https://glitch.com/@${author.glitch}">Glitch</a>`}
+            ${author.homepage && `<a href="${author.homepage}">Homepage</a>`}
+          </div>`}
+        </div>
+      </div>
+    `;
+  }
+
+  /// DELETE BELOW THIS LINE
   return html`
     <div class="w-author">
       <a href="${author.href}">${img}</a>
       ${AuthorInfo({author, title, showSocialMedia})}
     </div>
   `;
-};
+}
+
+module.exports = Author;

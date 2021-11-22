@@ -91,10 +91,10 @@ $gorko-config: (
   'flex-wrap': (
     'items': (
       'yes': 'wrap',
-      'no': 'nowrap'
+      'no': 'nowrap',
     ),
     'output': 'responsive',
-    'property': 'flex-wrap'
+    'property': 'flex-wrap',
   ),
   'flow-space': (
     'items': $gorko-space-scale,
@@ -121,6 +121,11 @@ $gorko-config: (
     'items': $gorko-space-scale,
     'output': 'standard',
     'property': 'margin-top',
+  ),
+  'gap-bottom': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'margin-bottom',
   ),
   'gutter': (
     'items': $gorko-space-scale,

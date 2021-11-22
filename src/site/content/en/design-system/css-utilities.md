@@ -179,3 +179,9 @@ width and **no gutter**.
 ```html
 <div class="wrapper" data-size="narrow">I am a reduced width wrapper</div>
 ```
+
+You can also remove inline padding by adding `data-flush`.
+
+```html
+<div class="wrapper" data-flush>I am a flush wrapper</div>
+```

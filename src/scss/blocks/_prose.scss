@@ -21,7 +21,9 @@
   }
 
   /// Add more space to elements that follow figures etc
+  pre,
   pre + *,
+  figure,
   figure + *,
   h2,
   h3,
@@ -59,21 +61,48 @@
     }
   }
 
+  figure {
+    border: 1px solid var(--color-stroke);
+    padding: 1em;
+    border-radius: $global-radius-base;
+  }
+
   figcaption {
     max-width: 60ch;
+  }
+
+  ul > li {
+    @extend .flow;
+
+    line-height: unset;
+
+    &::before {
+      inset: 1.2ex 0 0 0;
+    }
   }
 
   /// An anchor that starts with a hash is a
   /// skip link, so it needs to be visually hidden
   /// until focused or hovered
   :is(h2, h3, h4, h5, h6) a[href^='#'] {
-    font-size: 0.7em;
+    font-size: 0.9em;
     text-decoration: none;
     color: transparent;
+    transform: translateY(-0.2ex);
   }
 
-  :is(h2, h3, h4, h5, h6) :hover a[href^='#'],
+  :is(h2, h3, h4, h5, h6):hover a[href^='#'],
   :is(h2, h3, h4, h5, h6) a[href^='#']:focus {
     @include apply-utility('color', 'mid-text');
+  }
+
+  /// Misc elements that need adjusting in this context
+  .banner {
+    font-size: get-size('base');
+  }
+
+  .banner,
+  .banner + * {
+    --flow-space: #{get-space('size-2')};
   }
 }

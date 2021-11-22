@@ -53,3 +53,8 @@
 .prose > .compare + *:not(.compare) {
   margin-block-start: get-space('size-3');
 }
+
+.prose figure.compare {
+  border: none;
+  padding: 0;
+}
