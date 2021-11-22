@@ -23,7 +23,7 @@ class Carousel extends BaseElement {
     /** @type {HTMLElement} */
     this._carouselTrack = undefined;
     /** @type {number} */
-    this._index = -1;
+    this._index = 0;
     /** @type {HTMLElement[]} */
     this._items = [];
     /** @type {HTMLButtonElement} */
@@ -56,11 +56,9 @@ class Carousel extends BaseElement {
     this._nextButton.addEventListener('click', this._next);
 
     this._items.forEach((e, i) =>
-      e.addEventListener('focusin', () => this._moveSlide(i - this._index)),
+      e.addEventListener('focusin', () => this._setIndex(i - this._index)),
     );
     this._carouselTrack.addEventListener('keyup', this._onKeyup);
-
-    this._moveSlide(0);
   }
 
   disconnectedCallback() {
@@ -69,25 +67,6 @@ class Carousel extends BaseElement {
     this._nextButton?.removeEventListener('click', this._next);
     this._items.forEach((e) => e.removeChild(e));
     this._carouselTrack?.removeEventListener('keyup', this._onKeyup);
-  }
-
-  /**
-   * Sets the new current slide index and scrolls to it.
-   *
-   * @param {number} increment How many items to move by.
-   */
-  _moveSlide(increment) {
-    this._index = this._index + increment;
-
-    if (this._index < 0) {
-      this._index = 0;
-    } else if (this._index >= this._items.length) {
-      this._index = this._items.length - 1;
-    }
-
-    const active = this._items[this._index];
-    active.focus({preventScroll: true});
-    this._carouselTrack.scrollTo(active.offsetLeft, 0);
   }
 
   /**
@@ -105,9 +84,9 @@ class Carousel extends BaseElement {
   _onKeyup(e) {
     switch (e.key) {
       case 'ArrowLeft':
-        return this._moveSlide(-1);
+        return this._setIndex(-1);
       case 'ArrowRight':
-        return this._moveSlide(1);
+        return this._setIndex(1);
       default:
         break;
     }
@@ -143,6 +122,25 @@ class Carousel extends BaseElement {
         return this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
       }
     }
+  }
+
+  /**
+   * Sets the new current slide index and scrolls to it.
+   *
+   * @param {number} increment How many items to move by.
+   */
+  _setIndex(increment) {
+    this._index = this._index + increment;
+
+    if (this._index < 0) {
+      this._index = 0;
+    } else if (this._index >= this._items.length) {
+      this._index = this._items.length - 1;
+    }
+
+    const active = this._items[this._index];
+    active.focus({preventScroll: true});
+    this._carouselTrack.scrollTo(active.offsetLeft, 0);
   }
 }
 
