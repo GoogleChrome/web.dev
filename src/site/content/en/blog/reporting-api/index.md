@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Monitor your web application with the Reporting API
 subhead: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.

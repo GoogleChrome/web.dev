@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web app manifest does not meet the installability requirements
 description: |
   Learn how to make your Progressive Web App installable.

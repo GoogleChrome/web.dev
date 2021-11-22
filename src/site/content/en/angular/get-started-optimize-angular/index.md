@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'Get started: optimize an Angular application'
 subhead: |
   Want to make your Angular site as fast and accessible as possible? You've come to the right place!

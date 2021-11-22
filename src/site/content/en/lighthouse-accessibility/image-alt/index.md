@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Image elements do not have `[alt]` attributes"
 description: |
   Learn how to make sure assistive technology users can access your web page's

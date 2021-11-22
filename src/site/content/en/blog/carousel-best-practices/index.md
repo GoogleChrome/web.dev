@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Best practices for carousels
 subhead: Optimize carousels for performance and usability.
 authors:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: SMS OTP form best practices
 subhead: Learn how to optimize your SMS OTP form and improve user experience.
 authors:

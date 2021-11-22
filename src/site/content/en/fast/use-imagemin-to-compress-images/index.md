@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use Imagemin to compress images
 authors:
   - katiehempenius

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Serve images in modern formats
 description: |
   Learn about the uses-webp-images audit.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use lazy-loading to improve loading speed
 authors:
   - jlwagner

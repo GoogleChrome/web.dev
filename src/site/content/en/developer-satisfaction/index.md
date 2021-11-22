@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web Developer Satisfaction
 description:
   Web Developer Satisfaction is a Google project to gather information about

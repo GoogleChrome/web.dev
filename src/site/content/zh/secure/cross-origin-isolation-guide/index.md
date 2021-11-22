@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 跨域隔离的启用指南
 authors:
   - agektmr

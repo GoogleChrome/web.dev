@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Verify phone numbers on the web with the WebOTP API
 subhead: Help users with OTPs received through SMS
 authors:

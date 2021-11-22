@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: A guide to enable cross-origin isolation
 authors:
   - agektmr
@@ -31,17 +31,17 @@ have on other cross-origin resources on your website, such as ad placements.
 {% DetailsSummary %}
 Determine where in your website `SharedArrayBuffer` is used
 
-Starting in Chrome 92, functionalities that use `SharedArrayBuffer` will no longer 
-work without cross-origin isolation. If you landed on this page due to a 
-`SharedArrayBuffer` deprecation message, it's likely either your website or one of 
-the resources embedded on it is using `SharedArrayBuffer`. To ensure nothing breaks 
+Starting in Chrome 92, functionalities that use `SharedArrayBuffer` will no longer
+work without cross-origin isolation. If you landed on this page due to a
+`SharedArrayBuffer` deprecation message, it's likely either your website or one of
+the resources embedded on it is using `SharedArrayBuffer`. To ensure nothing breaks
 on your website due to deprecation, start by identifying where it's used.
 
 {% endDetailsSummary %}
 
 {% Aside 'objective' %}
 * Turn on cross-origin isolation to keep using `SharedArrayBuffer`.
-* If you rely on third-party code that uses `SharedArrayBuffer`, notify the third-party 
+* If you rely on third-party code that uses `SharedArrayBuffer`, notify the third-party
   provider to take action.
 {% endAside %}
 
@@ -51,13 +51,13 @@ two ways find out:
 * Using Chrome DevTools
 * (Advanced) Using Deprecation Reporting
 
-If you already know where you are using `SharedArrayBuffer`, skip to 
+If you already know where you are using `SharedArrayBuffer`, skip to
 [Analyze the impact of cross-origin isolation](#analysis).
 
 ### Using Chrome DevTools
 
 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
-allows developers to inspect websites. 
+allows developers to inspect websites.
 
 1. [Open the Chrome
    DevTools](https://developers.google.com/web/tools/chrome-devtools/open) on
@@ -67,9 +67,9 @@ allows developers to inspect websites.
       ```text
       [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M92, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
       ```
-4. The filename and the line number at the end of the message (for example, `common-bundle.js:535`) 
-   indicate where the `SharedArrayBuffer` is coming from. If it's a third-party library, 
-   contact the developer to fix the issue. If it's implemented as part of your website, follow 
+4. The filename and the line number at the end of the message (for example, `common-bundle.js:535`)
+   indicate where the `SharedArrayBuffer` is coming from. If it's a third-party library,
+   contact the developer to fix the issue. If it's implemented as part of your website, follow
    the guide below to enable cross-origin isolation.
 
 <figure class="w-figure">
@@ -105,7 +105,7 @@ See an example implementation here:
 Wouldn't it be great if you could assess the impact that enabling cross-origin
 isolation would have on your site without actually breaking anything? The
 [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) and
-[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 
+[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy)
 HTTP headers allow you to do just that.
 
 1. Set [`Cross-Origin-Opener-Policy-Report-Only:
@@ -174,7 +174,7 @@ cross-origin resources:
    resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
    `<img src="example.jpg" crossorigin>`).
 4. If you want to use powerful features such as `SharedArrayBuffer` inside a
-   loaded iframe, append `allow="cross-origin-isolated"` to the `<iframe>`. 
+   loaded iframe, append `allow="cross-origin-isolated"` to the `<iframe>`.
 4. If cross-origin resources loaded into iframes involve another layer of
    iframes, recursively apply steps described in this section before moving
    forward.

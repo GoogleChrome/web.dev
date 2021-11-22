@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Ensure CSP is effective against XSS attacks
 description: |
   Learn about preventing cross-site scripting (XSS) attacks with a strict Content Security Policy (CSP).

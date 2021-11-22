@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` do not have data cells they describe"
 description: |
   Learn how to make tables on your web page more accessible to assistive

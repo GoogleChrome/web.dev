@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Charset declaration is missing or occurs too late in the HTML
 description: |
   Learn how to add a character encoding declaration to your HTML.
@@ -12,7 +12,7 @@ Servers and browsers communicate with each other by sending bytes of data over t
 internet. If the server doesn't specify which [character encoding format][format] it's
 using when it sends an HTML file, the browser won't know what character each byte represents.
 The [character encoding declaration](https://html.spec.whatwg.org/multipage/semantics.html#charset)
-specification solves this problem. 
+specification solves this problem.
 
 {% Aside %}
   Theoretically, a late `<meta charset>` element (one that is not fully contained in

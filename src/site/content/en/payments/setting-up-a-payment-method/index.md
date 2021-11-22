@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Setting up a payment method
 subhead: |
   A payment transaction using Web Payments starts with the discovery of your

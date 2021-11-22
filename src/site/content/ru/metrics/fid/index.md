@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Время ожидания до первого взаимодействия с контентом (FID)
 authors:
   - philipwalton

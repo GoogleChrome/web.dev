@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Content reordering
 authors:
   - rachelandrew

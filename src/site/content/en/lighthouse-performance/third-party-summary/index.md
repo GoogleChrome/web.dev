@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Reduce the impact of third-party code
 description: |
   Learn how third-party code, like advertising networks and analytics services, affects page load performance,

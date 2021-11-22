@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How Mercado Libre optimized for Web Vitals (TBT/FID)
 subhead: Optimizing interactivity of product details pages for a 90% reduction in Max Potential FID in Lighthouse and a 9% improvement in FID in Chrome User Experience Report.
 authors:

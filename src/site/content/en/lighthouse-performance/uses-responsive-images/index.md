@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Properly size images
 description: |
   Learn about the uses-responsive-images audit.

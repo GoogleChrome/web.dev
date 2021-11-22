@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid an excessive DOM size
 description: |
   Learn how a large DOM can reduce your web page's performance and how you

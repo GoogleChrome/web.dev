@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: What is network reliability and how do you measure it?
 authors:
   - jeffposnick

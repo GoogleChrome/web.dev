@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document uses plugins
 description: |
   Learn about the "Document uses plugins" Lighthouse audit.

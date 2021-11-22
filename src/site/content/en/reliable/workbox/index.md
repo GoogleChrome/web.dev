@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Workbox: your high-level service worker toolkit"
 authors:
   - jeffposnick

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`[lang]` attributes do not have a valid value"
 description: |
   Learn how to improve the accessibility of your web page for international

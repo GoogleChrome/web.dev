@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: What does it take to be installable?
 authors:
   - petelepage

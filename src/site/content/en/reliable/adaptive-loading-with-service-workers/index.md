@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Adaptive loading with service workers
 subhead: >
   Modifying the assets that you serve to users based on their device and

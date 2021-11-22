@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Extract critical CSS
 subhead: Learn how to improve render times with critical CSS technique.
 authors:

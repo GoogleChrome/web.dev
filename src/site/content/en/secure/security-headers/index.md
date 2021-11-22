@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Security headers quick reference
 subhead: Learn more about headers that can keep your site safe and quickly look up the most important details.
 authors:
@@ -43,12 +43,12 @@ Security headers for websites with advanced capabilities:
 
 Known threats on the web
 
-Before diving into security headers, learn about known threats on the web 
+Before diving into security headers, learn about known threats on the web
 and why you'd want to use these security headers.
 
 {% endDetailsSummary %}
 
-Before diving into security headers, learn about known threats on the web 
+Before diving into security headers, learn about known threats on the web
 and why you'd want to use these security headers.
 
 ### Protect your site from injection vulnerabilities
@@ -102,10 +102,10 @@ script inclusion](https://www.scip.ch/en/?labs.20160414) (XSSI), and various
 * Use [Cross-Origin Opener Policy (COOP)](#coop) to protect your website's
   windows from interactions by malicious websites.
 * Use [Cross-Origin Resource Sharing (CORS)](#cors) to control access to your
-  website's resources from cross-origin documents. 
+  website's resources from cross-origin documents.
 
 [Post-Spectre Web
-Development](https://www.w3.org/TR/post-spectre-webdev/) is a great read 
+Development](https://www.w3.org/TR/post-spectre-webdev/) is a great read
 if you are interested in these headers.
 
 ### Build a powerful website securely
@@ -289,7 +289,7 @@ compatibilities](https://developer.mozilla.org/docs/Web/HTTP/CSP#browser_compati
   become less relevant: nowadays, most browsers block
   [mixed-content](/what-is-mixed-content/).
 * You can also set a CSP in [report-only
-  mode](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts). 
+  mode](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts).
 * If you can't set a CSP as a header server-side, you can also set it as a meta
   tag. Note that you can't use **report-only** mode for meta tags (though
   [this may change](https://github.com/w3c/webappsec-csp/issues/277)).
@@ -443,7 +443,7 @@ See [more compatibilities](https://caniuse.com/?search=trusted%20types).
   MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types)
 * [Trusted Types demo](https://www.compass-demo.com/trusted-types/)—open DevTools Inspector and see
   what is happening
- 
+
 {% endDetails %}
 
 ## X-Content-Type-Options {: #xcto}
@@ -625,7 +625,7 @@ iframe** or **Reload the image** button to see the effect.
 
 #### Allow resources to be loaded `cross-origin`
 
-It's recommended that CDN-like services apply `cross-origin` to resources 
+It's recommended that CDN-like services apply `cross-origin` to resources
 (since they are usually loaded by cross-origin pages), unless they are already served
 through [CORS](#cors) which has a similar effect.
 
@@ -897,7 +897,7 @@ button to see the effect.
 #### Preflighted requests
 
 A preflighted request is preceded with an `OPTIONS` request to check if the
-subsequent request is allowed to be sent. 
+subsequent request is allowed to be sent.
 
 {% Label %}Example request header{% endLabel %}
 
@@ -979,7 +979,7 @@ How to use COEP
 
 COEP takes a single value of `require-corp`. By sending this header, you can
 instruct the browser to block loading resources that do not opt-in via
-[CORS](#cors) or [CORP](#corp). 
+[CORS](#cors) or [CORP](#corp).
 
 {% Img src="image/admin/MAhaVZdShm8tRntWieU4.png", alt="How COEP works",
 width="800", height="410" %}

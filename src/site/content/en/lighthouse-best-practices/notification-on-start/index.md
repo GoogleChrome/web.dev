@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Requests the notification permission on page load
 description: |
   Learn how to responsibly request notification permission in a way that provides

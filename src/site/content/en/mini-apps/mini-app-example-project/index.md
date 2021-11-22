@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Applying the mini app programming principles to an example project
 authors:
   - thomassteiner

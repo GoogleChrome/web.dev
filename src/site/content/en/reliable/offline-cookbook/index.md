@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: The Offline Cookbook
 description: Some common recipes for making your app work offline.
 authors:

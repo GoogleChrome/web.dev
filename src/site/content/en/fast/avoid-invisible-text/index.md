@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid invisible text during font loading
 authors:
   - katiehempenius

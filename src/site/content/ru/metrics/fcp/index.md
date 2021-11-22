@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton

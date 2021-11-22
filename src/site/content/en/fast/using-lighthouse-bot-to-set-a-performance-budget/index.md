@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Using Lighthouse Bot to set a performance budget
 authors:
   - mihajlija

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to distribute Signed HTTP Exchanges (SXG) using nginx
 subhead: How to get and serve SXG files using nginx, and the challenges of subresource prefetching.
 authors:

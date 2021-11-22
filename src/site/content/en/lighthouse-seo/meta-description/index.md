@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document does not have a meta description
 description: |
   Learn about the "Document does not have a meta description" Lighthouse audit.
@@ -70,7 +70,7 @@ Too vague.
 {% Compare 'better' %}
 ```html
 <meta
-  name="description"           
+  name="description"
   content="Mary's simple recipe for maple bacon donuts
            makes a sticky, sweet treat with just a hint
            of salt that you'll keep coming back for.">

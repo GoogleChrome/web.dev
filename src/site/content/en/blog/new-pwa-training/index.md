@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: New Progressive Web App training now available
 subhead: Get started with Progressive Web Apps with our new six-part training, complete with new codelabs.
 authors:

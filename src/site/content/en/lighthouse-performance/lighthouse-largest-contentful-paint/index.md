@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Largest Contentful Paint
 description: |
   Learn about Lighthouse's Largest Contentful Paint metric and

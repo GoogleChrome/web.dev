@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Add a web app manifest with Create React App
 subhead: |
   A web app manifest is included into Create React App by default and allows anyone to install your React application on their device.

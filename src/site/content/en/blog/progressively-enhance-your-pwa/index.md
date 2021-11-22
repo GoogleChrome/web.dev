@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Progressively enhance your Progressive Web App
 subhead: Building for modern browsers and progressively enhancing like it's 2003
 authors:

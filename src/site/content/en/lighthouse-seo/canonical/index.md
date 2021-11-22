@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document does not have a valid `rel=canonical`
 description: |
   Learn about the "Document does not have a valid rel=canonical" Lighthouse

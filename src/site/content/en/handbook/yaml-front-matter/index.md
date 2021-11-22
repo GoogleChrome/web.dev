@@ -165,14 +165,14 @@ See [Hero images](/handbook/markup-media/#hero).
 ```yaml/11-13
 ---
 …
-layout: post|codelab
+layout: post-old|codelab
 …
 ---
 ```
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zkPy8m0ZBVWoCf5qs0EZ.jpg", alt="A screenshot of a page using the post layout.", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
-  <figcaption>An example of <code>layout: post</code>.</figcaption>
+  <figcaption>An example of <code>layout: post-old</code>.</figcaption>
 </figure>
 
 <figure class="w-figure">

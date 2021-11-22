@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Cumulative Layout Shift(누적 레이아웃 이동, CLS)
 authors:
   - philipwalton
@@ -60,7 +60,7 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="양호한 CLS 값은 0.1 미만이고 불량한 값은 0.25보다 크며 그 사이에는 개선이 필요합니다", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
-</picture>  
+</picture>
 
 {% Aside %} 이러한 권장 사항의 기반이 되는 연구 및 방법론에 대해 자세히 알아보려면 [Core Web Vitals 메트릭 임계값 정의](/defining-core-web-vitals-thresholds/)를 참조하시기 바랍니다. {% endAside %}
 

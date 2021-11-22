@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Optimize CSS background images with media queries
 authors:
   - demianrenzulli

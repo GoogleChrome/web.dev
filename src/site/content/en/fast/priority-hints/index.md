@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Optimizing resource loading with Priority Hints
 authors:
   - leenasohoni
@@ -34,9 +34,9 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 - Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <code>&lt;link rel="preload"&gt;</code> for the `async` script).
 - Decrease the priority of late-body scripts to allow for better sequencing with images.
 
-Historically, developers have had some, but limited, influence over resource priority using [preload](/uses-rel-preload/) and [preconnect](/uses-rel-preconnect/). Priority Hints complement these [Resource Hints](https://www.w3.org/TR/resource-hints/), but it's essential to understand where they all fit in. Preload lets you tell the browser about critical resources you want to load early before they are discovered naturally. This is especially useful for not easily discoverable resources, such as fonts included in stylesheets, background images, or resources loaded from a script. Preconnect helps warm up connections to cross-origin servers and can help improve metrics like [Time-to-first-byte](/ttfb/) and is useful when you know an origin but not necessarily the exact URL of a resource that will be needed.  
+Historically, developers have had some, but limited, influence over resource priority using [preload](/uses-rel-preload/) and [preconnect](/uses-rel-preconnect/). Priority Hints complement these [Resource Hints](https://www.w3.org/TR/resource-hints/), but it's essential to understand where they all fit in. Preload lets you tell the browser about critical resources you want to load early before they are discovered naturally. This is especially useful for not easily discoverable resources, such as fonts included in stylesheets, background images, or resources loaded from a script. Preconnect helps warm up connections to cross-origin servers and can help improve metrics like [Time-to-first-byte](/ttfb/) and is useful when you know an origin but not necessarily the exact URL of a resource that will be needed.
 
-Priority hints are a markup-based signal (available through the `importance` attribute) that developers can use to indicate the importance of a particular resource. You can also use these hints via JavaScript and the [Fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) to influence the priority of resource fetches made for data. Priority hints can also complement preload. Take a Largest Contentful Paint image, which, when preloaded, will still get a low priority. If it is pushed back by other early low-priority resources, using Priority Hints can still help how soon the image gets loaded.  
+Priority hints are a markup-based signal (available through the `importance` attribute) that developers can use to indicate the importance of a particular resource. You can also use these hints via JavaScript and the [Fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) to influence the priority of resource fetches made for data. Priority hints can also complement preload. Take a Largest Contentful Paint image, which, when preloaded, will still get a low priority. If it is pushed back by other early low-priority resources, using Priority Hints can still help how soon the image gets loaded.
 
 Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [origin trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801) in Chrome 96+ (Chrome Beta at the time of writing, Chrome Stable in four weeks). We hope that developers will try it and provide their feedback. The feature being able to stick around depends on developer feedback. You can also try out Priority Hints via a flag in Chrome.
 
@@ -228,7 +228,7 @@ Sometimes these handles may not be enough to prioritize resources optimally for 
 
 ## The `importance` attribute
 
-With the experimental feature for priority hints available as an Origin Trial, you can provide a priority hint using the `importance` attribute. You can use the attribute with `link`, `img`, `script`, and `iframe` tags. The attribute allows you to specify the priority for resource types such as CSS, fonts, scripts, images, and iframe when downloaded using the supported tags.   
+With the experimental feature for priority hints available as an Origin Trial, you can provide a priority hint using the `importance` attribute. You can use the attribute with `link`, `img`, `script`, and `iframe` tags. The attribute allows you to specify the priority for resource types such as CSS, fonts, scripts, images, and iframe when downloaded using the supported tags.
 The importance attribute accepts one of three values:
 
 - `high`: You consider the resource a high priority and want the browser to prioritize it as long as the browser's heuristics don't prevent that from happening.
@@ -452,8 +452,8 @@ You can apply the `importance` attribute to different resources as shown in the 
 
 \*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a "late" priority.
 
-◉: `importance="auto"`  
-⬆: `importance="high"`  
+◉: `importance="auto"`
+⬆: `importance="high"`
 ⬇: `importance="low"`
 
 Images within the viewport start at low priority and then at layout time are boosted to high. By tagging it in markup using `importance`, it can start at high immediately and load much faster.
@@ -548,7 +548,7 @@ Priority hints can improve performance in specific use cases, as discussed above
   Priority hints can complement preloads by increasing the granularity of prioritization. If you had already specified a preload at the top of the page for an LCP image, then a "high" priority hint may not result in significant gains. However, if the preload was after other less important resources, then a high-priority hint can boost the LCP. If a critical image is a CSS background image, you should preload it with `importance = "high"`.
 - The noticeable gains due to prioritization will be more relevant in environments where more resources contend for the available network bandwidth. This is possible for HTTP/1.x connections where parallel downloads are not possible or in low bandwidth HTTP/2 connections. Prioritization can resolve bottlenecks in these conditions.
 - CDNs do [not uniformly implement HTTP/2 prioritization](https://github.com/andydavies/http2-prioritization-issues#cdns--cloud-hosting-services). Even if the browser communicates the priority suggested using priority hints; the CDN may not reprioritize resources in the required order. This makes testing of priority hints difficult. The priorities are applied both internally within the browser and with protocols that support prioritization (HTTP/2 and HTTP/3) so it is still worth using even for just the internal browser prioritization independent of CDN or origin support.
-- It may not be possible to introduce priority hints as a best practice in your initial design. It is an optimization that you can apply later in the development cycle. You can check the priorities being assigned to different resources on the page, and if they do not match your expectations, you could introduce priority hints for further optimization.  
+- It may not be possible to introduce priority hints as a best practice in your initial design. It is an optimization that you can apply later in the development cycle. You can check the priorities being assigned to different resources on the page, and if they do not match your expectations, you could introduce priority hints for further optimization.
 
 ### Using Preload after Chrome 95
 

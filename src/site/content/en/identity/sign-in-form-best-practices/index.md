@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Sign-in form best practices
 subhead: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 authors:
@@ -191,12 +191,12 @@ click on the disabled button.
 {% Aside 'caution' %}
 The default type for a button in a form is `submit`. If you want to add another
 button in a form (for **Show password**, for example) add `type="button"`.
-Otherwise clicking or tapping on the button will submit the form. 
+Otherwise clicking or tapping on the button will submit the form.
 
-Pressing the `Enter` key while any form field has focus simulates a click on the first `submit` 
-button in the form. If you include a button in your form before the **Submit** button, and don't 
-specify the type, that button will have the default type for buttons in a form (`submit`) and 
-receive the click event before the form is submitted. For an example of this, see our 
+Pressing the `Enter` key while any form field has focus simulates a click on the first `submit`
+button in the form. If you include a button in your form before the **Submit** button, and don't
+specify the type, that button will have the default type for buttons in a form (`submit`) and
+receive the click event before the form is submitted. For an example of this, see our
 [demo](https://enter-button.glitch.me/): fill in the form, then press `Enter`.
 {% endAside %}
 

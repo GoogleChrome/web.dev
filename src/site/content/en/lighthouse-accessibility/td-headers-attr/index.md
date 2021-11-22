@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Cells in a `<table>` element that use the `[headers]` attribute refer to an element ID not found within the same table"
 description: |
   Learn how to improve the accessibility of tables on your web page by making

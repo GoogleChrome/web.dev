@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Capture Keys with the Keyboard Lock API
 subhead: Provide an immersive, full screen experience for a variety of use cases including interactive websites, games, and remote desktop or application streaming.
 tags:
@@ -79,7 +79,7 @@ await navigator.keyboard.lock([
 ]);
 ```
 
-You can respond to captured key presses using keyboard events. 
+You can respond to captured key presses using keyboard events.
 For example this code uses the `onkeydown` event:
 
 ```js

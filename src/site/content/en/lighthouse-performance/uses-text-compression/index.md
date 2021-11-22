@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Enable text compression
 description: |
   Learn about how enabling text compression can improve your webpage load performance.

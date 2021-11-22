@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: web.dev LIVE wrap-up
 subhead: >
   A summary of the major news and updates that were announced during our

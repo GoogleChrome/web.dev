@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Migrate to Reporting API v1
 subhead: |
   A new version of the Reporting API is available. It's more private and more likely to be supported across browsers.
@@ -178,10 +178,10 @@ All differences between v0 and v1
       </tr>
       <tr>
         <td>Report scope</td>
-        <td>Origin.<br/> A document's <code>Report-To</code> header affects other documents (pages) from that origin. 
+        <td>Origin.<br/> A document's <code>Report-To</code> header affects other documents (pages) from that origin.
         The <code>url</code> field of a report still varies per-document.
         </td>
-        <td>Document.<br/> A document's <code>Reporting-Endpoints</code> header only affects that document. 
+        <td>Document.<br/> A document's <code>Reporting-Endpoints</code> header only affects that document.
         The <code>url</code> field of a report still varies per-document.
       </tr>
       <tr>

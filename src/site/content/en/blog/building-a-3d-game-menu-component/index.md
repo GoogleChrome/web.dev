@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a 3D game menu component
 subhead: A foundational overview of how to build a responsive, adaptive, and accessible 3D game menu.
 authors:
@@ -76,7 +76,7 @@ height="437" %}
 
 ## CSS
 
-Styling the button list breaks down into the following high level steps: 
+Styling the button list breaks down into the following high level steps:
 1. Setting up custom properties.
 1. A flexbox layout.
 1. A custom button with decorative pseudo-elements.
@@ -160,7 +160,7 @@ html {
   background: conic-gradient(at -10% 50%, deeppink, cyan);
 
   @media (--dark) {
-    background: conic-gradient(at -10% 50%, #212529, 50%, #495057, #212529);    
+    background: conic-gradient(at -10% 50%, #212529, 50%, #495057, #212529);
   }
 }
 ```
@@ -242,23 +242,23 @@ interaction later.
 ```css
 .threeD-button-set {
   …
-  
+
   /* create 3D space context */
   transform-style: preserve-3d;
 
   /* clamped menu rotation to not be too extreme */
-  transform: 
+  transform:
     rotateY(
       clamp(
-        calc(var(--_max-rotateY) * -1), 
-        var(--y), 
+        calc(var(--_max-rotateY) * -1),
+        var(--y),
         var(--_max-rotateY)
       )
-    ) 
+    )
     rotateX(
       clamp(
-        calc(var(--_max-rotateX) * -1), 
-        var(--x), 
+        calc(var(--_max-rotateX) * -1),
+        var(--x),
         var(--_max-rotateX)
       )
     )
@@ -326,7 +326,7 @@ themselves within the full area the button consumes.
   position: relative;
 
   /* create 3D space context */
-  transform-style: preserve-3d; 
+  transform-style: preserve-3d;
 }
 ```
 
@@ -350,7 +350,7 @@ Below are the foundational styles that will support the other states.
   appearance: none;
   outline: none;
   border: none;
-  
+
   /* bring in brand styles via props */
   background-color: var(--_btn-bg);
   color: var(--_btn-text);
@@ -381,7 +381,7 @@ alt="Screenshot of Chrome Devtools Elements panel with a button shown having
 These elements are crucial in showcasing the 3D perspective that's been
 established. One of these pseudo-elements will be pushed away from the button,
 and one will be pulled closer to the user. The effect is most noticeable in the
-top and bottom buttons. 
+top and bottom buttons.
 
 ```css
 .threeD-button button {
@@ -401,7 +401,7 @@ top and bottom buttons.
     border: 1px solid var(--theme);
     border-radius: 5px 20px;
   }
-  
+
   /* exceptions for one of the pseudo elements */
   /* this will be pushed back (3x) and have a thicker border */
   &::before {
@@ -409,8 +409,8 @@ top and bottom buttons.
 
     /* in dark mode, it glows! */
     @media (--dark) {
-      box-shadow: 
-        0 0 25px var(--theme), 
+      box-shadow:
+        0 0 25px var(--theme),
         inset 0 0 25px var(--theme);
     }
   }
@@ -422,7 +422,7 @@ top and bottom buttons.
 Below `transform-style` is set to `preserve-3d` so the children can space
 themselves out on the `z` axis. The `transform` is set to the `--distance`
 custom property, which will be increased on [hover and
-focus](#hover-and-focus-interaction-styles). 
+focus](#hover-and-focus-interaction-styles).
 
 ```css
 .threeD-button-set button {
@@ -435,7 +435,7 @@ focus](#hover-and-focus-interaction-styles).
     /* pull forward in Z space with a 3x multiplier */
     transform: translateZ(calc(var(--distance) / 3));
   }
-  
+
   &::before {
     /* push back in Z space with a 3x multiplier */
     transform: translateZ(calc(var(--distance) / 3 * -1));
@@ -461,17 +461,17 @@ duration, I felt it made for a nice subtle staggered effect.
 ```css
 .threeD-button-set button {
   …
-  
+
   @media (--motionOK) {
     will-change: transform;
-    transition: 
+    transition:
       transform .2s ease,
       background-color .5s ease
     ;
-    
+
     &::before,
     &::after {
-      transition: transform .1s ease-out;  
+      transition: transform .1s ease-out;
     }
 
     &::after    { transition-duration: .5s }
@@ -487,12 +487,12 @@ flat appearing button. Accomplish this by setting the `--distance` variable,
 initially to `1px`. The selector shown in the following code example checks to
 see if the button is being hovered or focused by a device that should see a
 focus indicator, and not being activated. If so it applies CSS to do the
-following: 
+following:
 
-- Apply the hover background color. 
+- Apply the hover background color.
 - Increase the distance .
-- Add a bounce ease effect. 
-- Stagger the pseudo-element transitions. 
+- Add a bounce ease effect.
+- Stagger the pseudo-element transitions.
 
 {% Aside %} The varying `transition-duration` values are only on hover,
 staggering the animation only for hover. When hover or focus are removed, each
@@ -600,11 +600,11 @@ delta is returned from the function.
 
 ```js
 const getAngles = (clientX, clientY) => {
-  const { x, y, width, height } = menuRect 
-  
+  const { x, y, width, height } = menuRect
+
   const dx = clientX - (x + 0.5 * width)
   const dy = clientY - (y + 0.5 * height)
-  
+
   return {dx,dy}
 }
 ```
@@ -614,7 +614,7 @@ and use the delta values as custom property styles. I divided by 20 to pad the
 delta and make it less twitchy, there may be a better way to do that. If you
 remember from the beginning, we put the `--x` and `--y` props in the middle of a
 `clamp()` function, this prevents the mouse position from overly rotating the
-card into an illegible position. 
+card into an illegible position.
 
 ```js
 if (motionOK) {
@@ -644,7 +644,7 @@ languages.
 agent stylesheet. This meant the game menu HTML needed to change to accommodate
 the desired design. Changing the button list to a list of links enables logical
 properties to change the menu direction, as `<a>` elements don't have a browser
-supplied `!important` style. 
+supplied `!important` style.
 
 ## Conclusion
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Does not provide fallback content when JavaScript is not available
 description: |
   Learn how to make sure users can view at least some content on your web page

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Efficiently load third-party JavaScript
 subhead: Avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 authors:

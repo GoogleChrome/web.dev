@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Remove unused CSS
 description: |
   Learn about the unused-css-rules audit.

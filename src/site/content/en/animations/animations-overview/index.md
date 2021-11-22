@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Why are some animations slow?
 authors:
   - rachelandrew

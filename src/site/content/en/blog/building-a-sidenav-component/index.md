@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a sidenav component
 subhead: A foundational overview of how to build a responsive slide out sidenav
 authors:

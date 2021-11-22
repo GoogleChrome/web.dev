@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Labels and text alternatives
 authors:
   - robdodson

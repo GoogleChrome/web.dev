@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Links do not have descriptive text
 description: |
   Learn about the "Links do not have descriptive text" Lighthouse audit.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First Meaningful Paint
 description: |
   Learn about Lighthouse's First Meaningful Paint metric and

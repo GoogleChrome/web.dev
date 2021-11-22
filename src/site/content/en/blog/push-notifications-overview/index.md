@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Push notifications overview
 subhead: >
   An overview of what push notifications are, why you might use them,

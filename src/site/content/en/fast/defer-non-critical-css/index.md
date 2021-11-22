@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Defer non-critical CSS
 authors:
   - demianrenzulli

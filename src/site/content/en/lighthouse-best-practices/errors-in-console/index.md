@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Browser errors were logged to the console
 description: |
   Learn how to identify and fix browser errors.

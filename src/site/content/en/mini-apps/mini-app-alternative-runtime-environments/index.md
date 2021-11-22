@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Other mini app runtime environments
 authors:
   - thomassteiner

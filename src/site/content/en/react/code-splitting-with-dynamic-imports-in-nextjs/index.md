@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Code splitting with dynamic imports in Next.js
 authors:
   - mihajlija

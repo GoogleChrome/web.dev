@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Apply instant loading with the PRPL pattern
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Site works cross-browser
 description: |
   Learn how to use Workbox to make sure your web page works across browsers.

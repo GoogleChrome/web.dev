@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a Settings component
 subhead: A foundational overview of how to build a settings component of sliders and checkboxes.
 authors:

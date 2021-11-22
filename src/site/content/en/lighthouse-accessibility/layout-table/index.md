@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute"
 description: |
   Learn how to make presentational tables more accessible for assistive

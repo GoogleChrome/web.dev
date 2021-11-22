@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'Get started: optimize your React app'
 subhead: |
   Want to make your React site as fast and accessible as possible? You've come to the right place!

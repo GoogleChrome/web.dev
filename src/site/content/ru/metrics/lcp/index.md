@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Скорость загрузки основного контента (LCP)
 authors:
   - philipwalton

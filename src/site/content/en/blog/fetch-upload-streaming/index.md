@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Streaming requests with the fetch API
 authors:
   - jakearchibald

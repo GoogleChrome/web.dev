@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 2021 Scroll Survey Report
 subhead: Get the 2021 Scroll Survey Report plus words from the Chrome team about how this impacts priorities and plans for Chromium and the web.
 authors:
@@ -27,7 +27,7 @@ The [2021 Scroll Survey
 Report](https://storage.googleapis.com/web-dev-uploads/file/vS06HQ1YTsbMKSFTIPl2iogUQP73/QZopyELSk8T7IpsgOnRU.pdf)
 is ready, and the Chrome team would like to share some thoughts and action items
 we've gleaned from the survey results. We hope these results will help browser
-vendors and standards groups understand how to improve web scrolling. 
+vendors and standards groups understand how to improve web scrolling.
 
 **View the [2021 Scroll Survey
 Report](https://storage.googleapis.com/web-dev-uploads/file/vS06HQ1YTsbMKSFTIPl2iogUQP73/QZopyELSk8T7IpsgOnRU.pdf).**
@@ -35,7 +35,7 @@ Report](https://storage.googleapis.com/web-dev-uploads/file/vS06HQ1YTsbMKSFTIPl2
 ## Noteworthy results
 
 The survey anonymously collected 880 submissions, with 366 answering every
-question. 
+question.
 
 While getting started with scrolling is one line of CSS, like `overflow-x:
 scroll;`, the surface area of scroll APIs and options is large, spanning JavaScript to
@@ -59,7 +59,7 @@ encountering.
 This question was placed near the end of the survey intentionally, after
 questions on 26 scroll use cases and features. From the response, it's clear that
 the web community struggles with scroll. Almost half of the respondents report a
-level of overall dissatisfaction. 
+level of overall dissatisfaction.
 
 We believe overall sentiment about working with scroll should not be this low.
 This metric needs to be changed; it's a clear signal there's work to be done.
@@ -132,7 +132,7 @@ high-quality touch interaction.
 Scrolling includes navigation methods such as keyboard arrows, tab keys,
 spacebar presses, and gamepads, and it can be difficult to include these when doing
 custom scroll work. Almost half of the respondents report it's
-somewhat or extremely difficult to include these inputs. 
+somewhat or extremely difficult to include these inputs.
 
 ### Learning `touch-action`
 
@@ -183,7 +183,7 @@ interact within scroll.
   </figcaption>
 </figure>
 
-Those numbers are high for a scrolling feature with little or no support provided by the web platform. 
+Those numbers are high for a scrolling feature with little or no support provided by the web platform.
 The feature often incurs high amounts of technical
 debt because of this, with duplication or JavaScript injected to force the
 effect. It's popular for product carousels and when selecting time in seconds or minutes to
@@ -210,7 +210,7 @@ offer cyclical scrolling.
   </div>
 </div>
 
-Respondents felt strongly about the importance of scrollable areas, 
+Respondents felt strongly about the importance of scrollable areas,
 giving another signal about the struggles required to deliver high-quality scrolling.
 
 ### Carousels
@@ -265,7 +265,7 @@ high difficulty, which indicates to us an area needing attention.
 While [`content-visibility`](/content-visibility/) and
 `contain-intrinsic-size` can be combined to reduce render costs for long
 scrollable areas, it doesn't seem to be helping with "load more" infinite scroll
-UX. 
+UX.
 
 ### Scroll-linked or scroll-triggered animations
 
@@ -317,7 +317,7 @@ scroll-linked animations, programmatic interfaces, voice integration, scroll
 hints, and pull-to-refresh APIs.
 
 Just half of the respondents felt it was only sometimes possible to match the
-experience of built-in scrolling. 
+experience of built-in scrolling.
 
 ### Overall satisfaction building scroll interactions on the web
 
@@ -330,10 +330,10 @@ satisfied, 23.4% somewhat satisfied, 28.8% neither satisfied nor dissatisfied,
 
 ## Survey Takeaways
 
-The survey results are segmented into four categories: 
-[compatibility](#compatibility), 
+The survey results are segmented into four categories:
+[compatibility](#compatibility),
 [education](#education),
-[APIs](#apis), 
+[APIs](#apis),
 and [features](#features).
 
 ### Compatibility

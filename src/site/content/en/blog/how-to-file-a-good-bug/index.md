@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to file a good browser bug
 subhead: |
   Telling browser vendors about issues you find in their browser
@@ -97,7 +97,7 @@ bug getting fixed.
 
 Here are a few tips for minimizing a test case:
 
-* Download the web page, add 
+* Download the web page, add
   [`<base href="https://original.url">`](https://developer.mozilla.org/docs/Web/HTML/Element/base)
   and verify that the bug exists locally. This may require a live HTTPS server if the
   URL uses HTTPS.

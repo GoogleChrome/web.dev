@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Preloading responsive images
 subhead: Starting in Chrome 73, link rel="preload" and responsive images can be combined in order to load images faster.
 authors:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'Prevent unnecessary network requests with the HTTP Cache'
 authors:
   - jeffposnick
@@ -18,11 +18,11 @@ feedback:
   - api
 ---
 
-Fetching resources over the network is both slow and expensive: 
+Fetching resources over the network is both slow and expensive:
 
 * Large responses require many roundtrips between the browser and the server.
 * Your page won't load until all of its [critical resources][crp] have downloaded completely.
-* If a person is accessing your site with a limited mobile data plan, every unnecessary 
+* If a person is accessing your site with a limited mobile data plan, every unnecessary
   network request is a waste of their money.
 
 How can you avoid unnecessary network requests? The browser's HTTP Cache is your
@@ -93,7 +93,7 @@ into effective caching behavior:
   long, the browser and other intermediate caches should cache the individual
   response.
 * [`ETag`][etag]. When
-  the browser finds an expired cached response, it can send a small token 
+  the browser finds an expired cached response, it can send a small token
   (usually a hash of the file's contents) to the server to check if the file has
   changed. If the server returns the same token, then the file is the same, and there's
   no need to re-download it.
@@ -135,7 +135,7 @@ web server's response headers.
   {% DetailsSummary 'h4' %}
     How versioned URLs can help your caching strategy
     Versioned URLs are a good practice because they make it easier to invalidate
-    cached responses. 
+    cached responses.
   {% endDetailsSummary %}
   Suppose your server instructs browsers to cache a CSS file
   for 1 year (<code>Cache-Control: max-age=31536000</code>) but your designer just made an
@@ -233,7 +233,7 @@ that has expired. `ETag` is the recommended approach because it's more accurate.
   the file. The browser doesn't need to know how the fingerprint is generated; it
   only needs to send it to the server on the next request. If the fingerprint is
   still the same, then the resource hasn't changed and the browser can skip the
-  download. 
+  download.
 {% endDetails %}
 
 By setting `ETag` or `Last-Modified`, you'll end up making the
@@ -320,14 +320,14 @@ If you have more time, here are further ways that you can optimize your usage of
       <tr>
         <td><code>max-age=86400</code></td>
         <td>
-          The response can be cached by browsers and intermediary caches for 
+          The response can be cached by browsers and intermediary caches for
           up to 1 day (60 seconds x 60 minutes x 24 hours).
         </td>
       </tr>
       <tr>
         <td><code>private, max-age=600</code></td>
         <td>
-          The response can be cached by the browser (but not intermediary caches) for up to 10 
+          The response can be cached by the browser (but not intermediary caches) for up to 10
           minutes (60 seconds x 10 minutes).
         </td>
       </tr>

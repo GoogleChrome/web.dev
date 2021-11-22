@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Identify resources loaded from the network
 authors:
   - jeffposnick
@@ -119,4 +119,4 @@ browser can request multiple subresources at the same time, and that's
 represented by the overlapping bars in the Waterfall column for `main.css` and
 `logo.svg`. Finally, you can see from the screenshot that `main.js` starts
 loading last, and it finishes loading after the other three URLs have completed
-as well. 
+as well.

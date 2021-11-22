@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Is not configured for a custom splash screen
 description: |
   Learn how to create a custom splash screen for your Progressive Web App.

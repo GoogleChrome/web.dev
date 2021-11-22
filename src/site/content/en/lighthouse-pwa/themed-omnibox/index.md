@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Does not set a theme color for the address bar
 description: |
   Learn how to set an address bar theme color for your Progressive Web App.

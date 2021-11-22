@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid multiple page redirects
 description: |
   Learn why page redirects slow down your web page's load speed and

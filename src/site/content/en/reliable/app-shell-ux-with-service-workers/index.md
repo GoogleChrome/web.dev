@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: App shell UX with service workers and streams
 subhead: >
   Achieving a SPA-like architecture in multi-page apps by combining

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Media encryption
 authors:
   - derekherman

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Руководство по включению межсайтовой изоляции
 authors:
   - agektmr

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Same-origin policy
 authors:
   - kosamari

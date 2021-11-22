@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: The value of speed
 subhead: Show stakeholders how site speed improvements can increase revenue.
 authors:

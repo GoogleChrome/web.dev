@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Minify CSS
 description: |
   Learn about the unminified-css audit.

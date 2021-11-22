@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Project structure, lifecycle, and bundling
 authors:
   - thomassteiner

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Customize the window controls overlay of your PWA's title bar
 subhead: |
   Make use of the title bar area next to the window controls to make your PWA feel more like an app.

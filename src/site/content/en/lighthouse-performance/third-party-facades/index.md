@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Lazy load third-party resources with facades
 description: |
   Learn about the opportunities to lazy load third-party resources with facades.

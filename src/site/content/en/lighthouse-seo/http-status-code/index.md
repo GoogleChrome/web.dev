@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Page has unsuccessful HTTP status code
 description: |
   Learn about the "Page has unsuccessful HTTP status code" Lighthouse audit.

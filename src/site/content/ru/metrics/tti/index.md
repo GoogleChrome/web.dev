@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Время до интерактивности (TTI)
 authors:
   - philipwalton

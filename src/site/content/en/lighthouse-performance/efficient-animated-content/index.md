@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use video formats for animated content
 description: |
   Learn about the efficient-animated-content audit.
@@ -32,7 +32,7 @@ There are a number of ways to convert GIFs to video.
 To use FFmpeg to convert the GIF, `my-animation.gif` to an MP4 video,
 run the following command in your console:
 
-`ffmpeg -i my-animation.gif my-animation.mp4`  
+`ffmpeg -i my-animation.gif my-animation.mp4`
 
 This tells FFmpeg to take `my-animation.gif` as the input,
 signified by the `-i` flag,
@@ -59,10 +59,10 @@ Animated GIFs have three key traits that a video needs to replicate:
 Luckily, you can recreate these behaviors using the `<video>` element.
 
 ```html
-<video autoplay loop muted playsinline>  
-  <source src="my-animation.webm" type="video/webm">  
-  <source src="my-animation.mp4" type="video/mp4">  
-</video>  
+<video autoplay loop muted playsinline>
+  <source src="my-animation.webm" type="video/webm">
+  <source src="my-animation.mp4" type="video/mp4">
+</video>
 ```
 
 ## Use a service that converts GIFs to HTML5 videos

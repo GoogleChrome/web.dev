@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web 指标
 description: 优秀网站的关键指标
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png

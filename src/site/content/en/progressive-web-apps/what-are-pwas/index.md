@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: What are Progressive Web Apps?
 authors:
   - samrichard

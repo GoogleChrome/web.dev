@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Cumulative Layout Shift 累积布局偏移 (CLS)
 authors:
   - philipwalton

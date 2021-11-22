@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Heading elements are not in a sequentially-descending order
 description: |
   Learn how to make sure assistive technology users can easily navigate your

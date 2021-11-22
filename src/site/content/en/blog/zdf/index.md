@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How ZDF created a video PWA with offline and dark mode
 subhead: >
   Learn how ZDF created a progressive web app (PWA) with modern

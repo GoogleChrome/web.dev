@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Make your PWA feel more like an app
 subhead: Make your Progressive Web App not feel like a website, but like a "real" app
 authors:

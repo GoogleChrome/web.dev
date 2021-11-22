@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'Precaching with the Angular service worker'
 subhead: |
   Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity.

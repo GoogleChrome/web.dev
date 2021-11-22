@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "[Audit name in fail state]"
 description: |
   Learn how to [fix the problem identified by the audit].

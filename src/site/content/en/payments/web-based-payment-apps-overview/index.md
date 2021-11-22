@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web-based payment apps overview
 subhead: |
   How to integrate your web-based payment app with Web Payments and provide a better user experience for customers.

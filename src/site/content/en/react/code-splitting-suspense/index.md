@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Code splitting with React.lazy and Suspense
 subhead: |
   You never need to ship more code than necessary to your users, so split your bundles to make sure this never happens!

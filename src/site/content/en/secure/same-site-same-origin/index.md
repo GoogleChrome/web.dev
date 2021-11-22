@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Understanding "same-site" and "same-origin"
 authors:
   - agektmr

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Picking colors of any pixel on the screen with the EyeDropper API
 subhead: >
   The EyeDropper API enables authors to use a browser-supplied eyedropper in the construction of
