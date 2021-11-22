@@ -10,7 +10,7 @@ permalink: "/pages.json"
 
 [
   {% for post in posts %}
-    {{ post | algoliaItem | stringify | safe }}
+    {{ post | algoliaItem | dump | safe }}
     {{ "" if loop.last else "," }}
   {% endfor %}
 ]

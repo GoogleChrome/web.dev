@@ -89,7 +89,6 @@ const postsLighthouseJson = require('./src/site/_filters/posts-lighthouse-json')
 const prettyDate = require('./src/site/_filters/pretty-date');
 const removeDrafts = require('./src/site/_filters/remove-drafts');
 const slugify = require('./src/site/_filters/slugify');
-const stringify = require('./src/site/_filters/stringify');
 const strip = require('./src/site/_filters/strip');
 const stripBlog = require('./src/site/_filters/strip-blog');
 const getPaths = require('./src/site/_filters/get-paths');
@@ -198,7 +197,6 @@ module.exports = function (config) {
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('slugify', slugify);
-  config.addFilter('stringify', stringify);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
