@@ -735,5 +735,24 @@ video,
 // Temporary rollout patches
 @import 'rollout';
 
+/// LEGACY EXTENSIONS
+/// These elements are everywhere and to replace them site-wide would be
+/// a massive project, so they use @extend to pick up new styles
+.w-visually-hidden {
+  @extend .visually-hidden;
+}
+
+.w-table-wrapper {
+  @extend .table-wrapper;
+}
+
+.w-screenshot {
+  @extend .fixed-width-img;
+}
+
+.w-columns {
+  @extend .switcher;
+}
+
 // Render gorko utilities
 @include generate-utility-classes();

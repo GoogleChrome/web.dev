@@ -2,21 +2,6 @@
 /// These styles must be removed when the rollout is complete.
 /// They tweak existing, difficult to change, elements but should
 /// be completely useless once those elements have been changed
-.w-visually-hidden {
-  @extend .visually-hidden;
-}
-
-.w-table-wrapper {
-  @extend .table-wrapper;
-}
-
-.w-screenshot {
-  @extend .fixed-width-img;
-}
-
-.w-columns {
-  @extend .switcher;
-}
 
 .w-callout {
   max-width: $global-prose-element-max-width;
