@@ -257,7 +257,7 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
-[Detailed specification](design-system/component/icon-button/)
+[Detailed specification](design-system/component/button/)
 
 ### Text buttons
 
@@ -294,6 +294,8 @@ These buttons are shown for reference.
 ### Icon buttons
 
 A default icon button:
+
+[Detailed specification](design-system/component/icon-button/)
 
 <button class="icon-button" aria-label="Close">
   {% include "icons/close.svg" %}
@@ -1260,53 +1262,39 @@ the tab, e.g. the code blocks.
 ## Tooltips
 
 Use tooltips to provide information about UI controls
-that are too small to have a label:
+that are too small to have a label
+
+[Detailed specification](https://web.dev/design-system/component/tooltips/)
 
 ```html
-<button class="w-button--icon" data-icon="format_align_left">
-  {% raw %}{% Tooltip 'Left align' %}{% endraw %}
-</button>
+<div class="tooltip" data-alignment="">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% raw %}{% include "icons/plus.svg" %}{% endraw %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Standard alignment</span
+  >
+</div>
 ```
 
-<div>
-  <button class="w-button--icon" data-icon="format_align_left">
-    {% Tooltip 'Left align' %}
+<div class="tooltip" data-alignment="right">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% include "icons/plus.svg" %}
   </button>
-  <button class="w-button--icon" data-icon="format_align_center">
-    {% Tooltip 'Center align' %}
-  </button>
-  <button class="w-button--icon" data-icon="format_align_right">
-    {% Tooltip 'Right align' %}
-  </button>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    {% Tooltip 'Justify' %}
-  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Right alignment</span
+  >
 </div>
 
-You can left- or right-align a tooltip to its parent
-by adding a `left` or `right` argument to the shortcode:
+<div class="tooltip" data-alignment="">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% include "icons/plus.svg" %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Standard alignment</span
+  >
+</div>
 
-```html
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
-</button>
-```
-
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse', 'left' %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse' %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse', 'right' %}
-</button>
 
 ## Video / YouTube {: #video }
 See the [Images and video](/handbook/markup-media) post.
