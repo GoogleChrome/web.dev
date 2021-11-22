@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-Este guia mostra como habilitar o isolamento de origem cruzada. O isolamento de origem cruzada é necessário se você deseja usar [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [cronômetro de alta resolução com melhor precisão](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) ou a API JS Self-Profiling.
+Este guia mostra como habilitar o isolamento de origem cruzada. O isolamento de origem cruzada é necessário se você deseja usar [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) ou [cronômetro de alta resolução com melhor precisão](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/).
 
 Se você pretende ativar o isolamento de origem cruzada, avalie o impacto que isso terá em outros recursos de origem cruzada em seu site, como canais de anúncios.
 

@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-本篇指南将向您展示跨域隔离的启用方式。如果您想使用[`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)、[`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)、[更精确的高精度计时器](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)或 JS Self-Profiling API，就会需要跨域隔离。
+本篇指南将向您展示跨域隔离的启用方式。如果您想使用[`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)、[`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)或 [更精确的高精度计时器](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)，就会需要跨域隔离。
 
 如果您打算启用跨域隔离，请评估这对您网站上的其他跨域资源（例如广告展示位置）将产生的影响。
 

@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-Esta guía le muestra cómo habilitar el aislamiento de origen cruzado. Se requiere aislamiento de origen cruzado si desea utilizar [`SharedArrayBuffer`](/monitor-total-page-memory-usage/), [`performance.measureUserAgentSpecificMemory()`](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/), [high resolution timer with better precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/), o la API de autoperfilado de JS.
+Esta guía le muestra cómo habilitar el aislamiento de origen cruzado. Se requiere aislamiento de origen cruzado si desea utilizar [`SharedArrayBuffer`](/monitor-total-page-memory-usage/), [`performance.measureUserAgentSpecificMemory()`](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) o [high resolution timer with better precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/).
 
 Si tiene la intención de habilitar el aislamiento de origen cruzado, evalúe el impacto que esto tendrá en otros recursos de origen cruzado en su sitio web, como la ubicación de anuncios.
 

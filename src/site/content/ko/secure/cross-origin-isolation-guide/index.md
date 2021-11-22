@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-이 가이드에서는 출처 간 격리를 이용하는 방법을 보여줍니다. [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [높은 정밀도의 고해상도 타이머](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) 또는 JS Self-Profiling API를 사용하려면 출처 간 격리가 필요합니다.
+이 가이드에서는 출처 간 격리를 이용하는 방법을 보여줍니다. [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) 또는 [높은 정밀도의 고해상도 타이머](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)를 사용하려면 출처 간 격리가 필요합니다.
 
 출처 간 격리를 이용하려는 경우, 이것이 광고 배치와 같은 웹사이트의 다른 출처 간 리소스에 미치는 영향을 평가하세요.
 
