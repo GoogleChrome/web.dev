@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-06-18
+updated: 2021-11-22
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -22,13 +22,15 @@ tags:
   - progressive-web-apps
   - web-app-manifest
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
 ---
 
-{% Aside %} Declarative Link Capturing is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
+{% Aside 'caution' %} Declarative Link Capturing was part of the
+[capabilities project](/fugu-status/).
+The engineering team has decided that Declarative Link Capturing will _not_
+launch with the current design. Interested parties
+can check out and provide early feedback on the likely replacement feature called
+[Web App Launch Handling](https://github.com/WICG/sw-launch/blob/main/launch_handler.md).
+{% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
 
@@ -90,7 +92,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]                |
 | 2. Create initial draft of specification | [In Progress][spec]                  |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback)             |
-| **4. Origin trial**                      | **[In progress][ot]** (on Chrome OS) |
+| 4. Origin trial                          | Complete                             |
 | 5. Launch                                | Not started                          |
 
 </div>
@@ -99,27 +101,6 @@ Examples of sites that may use this API include:
 
 To experiment with Declarative Link Capturing locally, without an origin trial token, enable the
 `#enable-desktop-pwas-link-capturing ` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chromium&nbsp;91, Declarative Link Capturing will be available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
-
-{% Aside 'caution' %} The origin trial is initially limited to Chrome&nbsp;OS.
-{% endAside %}
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% Aside %}
-While you can still sign up for the origin trial, the engineering team has decided already
-that Declarative Link Capturing will _not_ launch with the current design. Interested parties
-can check out and provide early feedback on the likely replacement feature called
-[Web App Launch Handling](https://github.com/WICG/sw-launch/blob/main/launch_handler.md).
-{% endAside %}
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## How to use Declarative Link Capturing? {: #use }
 
@@ -220,7 +201,6 @@ Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md
 [issues]: https://github.com/WICG/sw-launch/issues/
 [spec]: https://github.com/w3c/manifest/issues/764
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
