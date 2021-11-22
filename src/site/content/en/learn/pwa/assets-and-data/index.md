@@ -1,7 +1,7 @@
 ---
 title: Assets and data
 description: >
-  A Progressive Web App is a website; all its assets are the same that we are used to on the web, but we also have new tools to make those assets load fast when online and available when offline.
+  A Progressive Web App is a website; all its assets are the same as on the web, but with new tools to make those assets load fast when online and available when offline.
 authors:
   - firt
 date: 2021-11-18
@@ -13,7 +13,7 @@ date: 2021-11-18
 Developing an application typically involves several assets and resources, 
 from the logic and code (compiled or not) to the user interface elements such as screen designs, images, logos, and fonts.
 
-A Progressive Web App is a website, so all its assets are the same that you are used to on the web:
+A Progressive Web App is a website, so all its assets are the same as on the web:
 
 - HTML for content and initial page rendering.
 - JavaScript for logic, including the ability to run WebAssembly modules (compiled code) and render 2D and 3D hardware-optimized graphics.
@@ -28,11 +28,11 @@ By default, websites download assets over the network,
 and continuing to the rest of the resources.	
 
 Managing those resources to load fast and be available offline has been a challenge for the web. 
-Nowadays, PWAs rely on a set of capabilities that allow developers to provide such features that have been associated only with platform-specific apps.
+Nowadays, PWAs use capabilities previously associated only with platform-specific apps.
 
 ### Platform-specific apps vs. PWA
 
-When you install a platform-specific app you are typically downloading a package that includes all the app's assets—code, images, fonts, videos, and so on. 
+When you install a platform-specific app you are typically downloading a package that includes all the app's assets: code, images, fonts, videos, and so on. 
 Therefore, all these resources are available, from your device storage, even when the app is offline.
 
 On the other hand, a classic website needs a network connection to download the assets when required. 
@@ -47,12 +47,12 @@ An app that is available offline will always render a basic user interface inste
 ## Caches and storage
 
 Since the beginning of the web, developers have not had complete control of how a resource is cached. 
-The browser is in charge of the HTTP cache and it may or may not cache and serve resources from that based on different policies. 
+The browser is in charge of the HTTP cache and it may or may not cache and serve resources based on different policies. 
 Other storage options like Web Storage and IndexedDB were meant to save simple data and objects.
 
 PWAs don't need to rely on those policies alone for their content. 
 Instead, we have solutions today to gain better control over when and how to cache resources and when and how to deliver them locally: the Cache Storage API.
-On the web platform, we have a couple of client-side storage solutions available:
+The web has a few of client-side storage solutions available:
 
 * **Web storage**: Includes `localStorage` and `sessionStorage`. These APIs store simple key/value string pairs. Web storage is limited, and has a synchronous API, so it should be avoided whenever possible.
 * **IndexedDB (IDB)**: An object-based database (No-SQL) with an asynchronous API that is good for web performance. We can store structured and binary data client-side using. [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API), and it's the API, it's typically what you will use to store data like what you'd get from or send as an API request. It's also useful to save data locally immediately and later on sync it to the server.
@@ -71,7 +71,7 @@ With a service worker, you can serve assets without going to the network, send n
 
 ## Offline-ready
 
-Users expect  your application to offer a fast and always-ready experience. 
+Users expect your application to offer a fast and always-ready experience. 
 That means your app should work offline. 
 
 Being offline-ready doesn't mean that all your content or services should be available without a network connection. 
@@ -81,7 +81,7 @@ In some browsers this is a must-have feature to pass the PWA installation criter
 Displaying your PWA's user interface, along with cached content, is better. 
 Letting users continue using your whole PWA and syncing server changes when they're back online is the gold standard for working offline.
 
-To make your app available offline, you will need to cache the assets necessary for your offline experience and make your service worker serve them later. Make sure to add the offline assets to your cache before you need them, this is a particular case where you can not cache them when requested.
+To make your app available offline, you will need to cache the assets necessary for your offline experience and make your service worker serve them later. Make sure to add the offline assets to your cache before you need them. This is a particular case where you cannot cache them when requested.
 
 {% Aside %}
 Asset caching happens independently from PWA installation, 
@@ -93,12 +93,12 @@ and will work even from a browser tab, allowing for faster asset delivery and an
 In your PWA, you are in charge of all the decisions. You can choose the best approach to cache or install assets based on your needs.
 Some decisions to make are:
 
-* Precaching: pick the assets you'd like to install on the first load; those should include the HTML and the minimal assets to render the app. When using precache keep in mind you are using user device's space and network,be conscious and responsible when downloading assets and caching them. 
-* Cache as needed: used to add assets to the cache when they are requested. Typical these are assets that can change independently of your app version, like images or content. See the [caching](learn/pwa/caching) section for different strategies on how to cache as needed.
+* Precaching: pick the assets you'd like to install on the first load; those should include the HTML and the minimal assets to render the app. When using precache keep in mind you are using the device's space and network. Be conscious and responsible when downloading assets and caching them. 
+* Cache as needed: used to add assets to the cache when they are requested. Typicaly these are assets that can change independently of your app version, like images or content. See the [caching](learn/pwa/caching) section for different strategies on how to cache as needed.
 * APIs and web services: API calls can be cached; or, instead of caching the API responses, you can store their data in IndexedDB.  
 
 {% Aside 'gotchas' %}
-With platform-specific apps, the most common pattern is to include all the app's assets in its package; that's why it's common these apps are larger than 500MB. On the other hand, A PWA can initially install only the minimum set of resources to offer an offline and fast experience and download the rest later, with PWAs using considerably less storage on installation. 
+With platform-specific apps, the most common pattern is to include all the app's assets in its package; that's why these apps are commonly larger than 500 MB. On the other hand, A PWA can initially install only the minimum set of resources to offer an offline and fast experience and download the rest later, with PWAs using considerably less storage on installation. 
 {% endAside %}
 
 ### Updating assets
@@ -116,17 +116,17 @@ When caching assets, you need to decide on a cache swap or clean up policy that 
 
 ## Size and Lifespan
 
-Usually platform-specific apps don't deal with size limits; at installation, apps can be gigabytes or more in size, as long as the device has the capacity the installation will be allowed. Also, while the app is installed, it will use that total amount of storage no matter if you use the app or not.
+Usually platform-specific apps don't deal with size limits; at installation, apps can be gigabytes or more in size. As long as the device has the capacity the installation will be allowed. Also, while the app is installed, it will use that total amount of storage no matter if you use the app or not.
 Storage is handled differently for PWAs. The browser will store your assets based on policies that you define in your PWA's logic. 
 
 {% Aside %}
-The users are always in control, and they can delete the assets at any time. For PWAs, that manual eviction happens via the browser's settings. 
+The users are always in control, and they can delete the assets at any time. For PWAs, manual eviction happens via the browser's settings. 
 {% endAside %}
 
-In terms of size limits, it depends on the browser. 
+Size limits depend on the browser. 
 It's not as flexible as for platform-specific apps, but it's typically good enough for most web apps. You can find the specific limitations by browser in [this article](/storage-for-the-web/#how-much).
 
-Assets can be evicted based on storage pressure, or after some weeks of inactivity, if the user is using your PWA in the browser. On some platforms, if the user installs your PWA, eviction won't happen. Where available, our code can request persistent storage through an API to avoid that eviction.
+Browsers can evict assets based on storage pressure, or after some weeks of inactivity, if the user is using your PWA in the browser. On some platforms, if the user installs your PWA, eviction won't happen. Where available, code can request persistent storage through an API to avoid that eviction.
 
 {% Aside %}
 If storage eviction happens for any reason and the user installed your PWA, the PWA will still work if you have a network connection. When you open that app again, the browser will start the Service Worker lifecycle again, loading your app from the network.
