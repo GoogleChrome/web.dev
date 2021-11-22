@@ -25,7 +25,7 @@ tags:
 ---
 
 {% Aside 'caution' %} Declarative Link Capturing was part of the
-[capabilities project](https://web.dev/fugu-status/).
+[capabilities project](/fugu-status/).
 The engineering team has decided that Declarative Link Capturing will _not_
 launch with the current design. Interested parties
 can check out and provide early feedback on the likely replacement feature called
