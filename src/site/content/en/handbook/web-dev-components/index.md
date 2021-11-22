@@ -42,6 +42,7 @@ guidance about how to use them effectively.
 
 ## Deprecated components
 
+1. [w-columns](#w-columns)
 1. [w-tables](#w-tables)
 
 ## Asides
@@ -398,19 +399,23 @@ the tech writing team to get access to the login and password.
 ## Columns
 
 Any elements can be placed in a two-column layout
-by wrapping them in a `<div class="w-columns">` element:
+by wrapping them in a `<div class="switcher">` element.
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.
+
+[Detailed specification](/design-system/css-compositions/#switcher)
 
 ```html
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
@@ -418,22 +423,19 @@ by wrapping them in a `<div class="w-columns">` element:
 ```
 
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
 </div>
-
-At smaller viewport sizes,
-elements in a two-column layout will shift to a stacked arrangement.
 
 ## Code
 
@@ -1292,6 +1294,46 @@ by adding a `left` or `right` argument to the shortcode:
 See the [Images and video](/handbook/markup-media) post.
 
 # Deprecated components
+
+## w-columns
+
+Any elements can be placed in a two-column layout
+by wrapping them in a `<div class="w-columns">` element:
+
+```html
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+</div>
+```
+
+<div class="w-columns">
+  <figure class="w-figure">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+</div>
+
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.
 
 ## W-Tables
 
