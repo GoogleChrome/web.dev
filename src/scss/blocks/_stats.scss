@@ -8,6 +8,9 @@
 
   padding: 2em 2em 3em 2em;
 
+  @include apply-utility('bg', 'state-good-bg');
+  @include apply-utility('color', 'state-good-text');
+
   &__item {
     @extend .flow;
 

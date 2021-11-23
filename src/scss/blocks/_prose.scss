@@ -105,4 +105,9 @@
   .banner + * {
     --flow-space: #{get-space('size-2')};
   }
+
+  .stats {
+    --auto-grid-min-item-size: 12rem;
+    padding: 1em;
+  }
 }

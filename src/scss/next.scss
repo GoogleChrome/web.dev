@@ -754,5 +754,17 @@ video,
   @extend .switcher;
 }
 
+.w-stats {
+  @extend .stats;
+}
+
+.w-stat {
+  @extend .stats__item;
+}
+
+.w-stat__figure {
+  @extend .stats__figure;
+}
+
 // Render gorko utilities
 @include generate-utility-classes();
