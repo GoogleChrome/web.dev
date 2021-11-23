@@ -40,6 +40,13 @@ guidance about how to use them effectively.
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
+## Deprecated components
+
+1. [w-button](#w-button)
+1. [w-columns](#w-columns)
+1. [w-stats](#w-stats)
+1. [w-tables](#w-tables)
+
 ## Asides
 Use asides to provide information that's related to but distinct from the
 content in the body of the post or codelab. Asides should generally be short—no
@@ -250,33 +257,36 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
+[Detailed specification](design-system/component/button/)
+
 ### Text buttons
 
 <div>
-  <button class="w-button">
+  <button class="button">
     Text button
   </button>
-  <button class="w-button w-button--with-icon" data-icon="file_download">
+  <button class="button">
+    {% include "icons/" ~ 'plus.svg' %}
     Text button with icon
   </button>
 </div>
-<br>
 
 <div>
-  <button class="w-button w-button--primary">
+  <button class="button" data-type="primary">
     Primary button
   </button>
-  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+  <button class="button" data-type="primary">
+    {% include "icons/" ~ 'plus.svg' %}
     Primary button with icon
   </button>
 </div>
-<br>
 
 <div>
-  <button class="w-button w-button--secondary">
+  <button class="button" data-type="secondary">
     Secondary button
   </button>
-  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+  <button class="button" data-type="secondary">
+    {% include "icons/" ~ 'plus.svg' %}
     Secondary button with icon
   </button>
 </div>
@@ -285,21 +295,20 @@ These buttons are shown for reference.
 
 A default icon button:
 
+[Detailed specification](design-system/component/icon-button/)
+
 <div>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    <span role="tooltip" class="w-tooltip">
-      Justify
-    </span>
+  <button class="icon-button" aria-label="Close">
+    {% include "icons/close.svg" %}
   </button>
 </div>
 
-A round icon button:
+An icon button with tooltip:
 
 <div>
-  <button class="w-button--icon w-button--round" data-icon="close">
-    <span role="tooltip" class="w-tooltip">
-      Close
-    </span>
+  <button class="icon-button tooltip" aria-labelledby="icon-button-toolip">
+    {% include "icons/close.svg" %}
+    <span class="tooltip__content" id="icon-button-toolip">Close</span>
   </button>
 </div>
 
@@ -320,23 +329,22 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 
 ## Checkbox
 
-The [Newsletter](/newsletter) page uses a new material styled checkbox.
-You can use it simply and easily by just adding the class `w-chechbox`
-to an `input[type=checkbox]` element. However to align a label to to the
-checkbox you'll want to wrap the label and checkbox in a `div.w-display--inline-flex`
-element, and add the `w-ml--l` class to the label. See below:
+To align a label to the checkbox wrap the label and checkbox in an element with
+a `cluster gutter-base flex-align-start` class.
 
-<div class="w-display--inline-flex">
-  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
-</div>
+[Detailed specification](https://web.dev/design-system/component/form-fields/#checkbox)
 
 ```html
-<div class="w-display--inline-flex">
-  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
+<div class="cluster gutter-base flex-align-start">
+  <input id="myCheckbox" type="checkbox" />
+  <label for="myCheckbox">Lorem ipsum dolor sit amet</label>
 </div>
 ```
+
+<div class="cluster gutter-base flex-align-start">
+  <input id="myCheckbox" type="checkbox" />
+  <label for="myCheckbox">Lorem ipsum dolor sit amet</label>
+</div>
 
 ## Code pattern {: #codepattern }
 
@@ -394,42 +402,43 @@ the tech writing team to get access to the login and password.
 ## Columns
 
 Any elements can be placed in a two-column layout
-by wrapping them in a `<div class="w-columns">` element:
+by wrapping them in a `<div class="switcher">` element.
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.
+
+[Detailed specification](/design-system/css-compositions/#switcher)
 
 ```html
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
 </div>
 ```
 
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
 </div>
-
-At smaller viewport sizes,
-elements in a two-column layout will shift to a stacked arrangement.
 
 ## Code
 
@@ -542,7 +551,7 @@ at.
 ### Compare in columns
 
 ````html
-<div class="w-columns">
+<div class="switcher">
 {% raw %}{% Compare 'worse' %}
 ```text
 Bad code example
@@ -567,7 +576,7 @@ Explanation of why `example` is good.
 </div>
 ````
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 ```text
 Bad code example
@@ -938,6 +947,462 @@ Second Term
 : This is another definition of the second term.
 
 ## Stats
+
+Use the Stats component to call out important statistics
+about a product or service discussed in a post.
+(Stats are primarily used in case studies.)
+
+Include no more than four statistics in a single Stats component
+to avoid layout issues.
+
+[Detailed specification](/design-system/component/stats/)
+
+```html
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
+  </div>
+</ul>
+```
+
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
+  </div>
+</ul>
+
+Stats component with applied utility class `bg-state-good-bg color-state-good-text`:
+
+<ul class="stats bg-state-good-bg color-state-good-text">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
+  </div>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
+  </div>
+</ul>
+
+## Tables
+
+Use the markup below to create a table.
+Do _not_ use Markdown syntax;
+it doesn't include the wrapper element needed
+to ensure correct whitespace around the table.
+
+[Detailed specification](/design-system/component/tables/)
+
+```html
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Image Format</th>
+        <th>Lossy Plugin(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><a href="#">imagemin-mozjpeg</a></td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td><a href="#">imagemin-pngquant</a></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><a href="#">imagemin-giflossy</a></td>
+      </tr>
+    </tbody>
+    <caption>
+      Imagemin plugins for filetypes.
+    </caption>
+  </table>
+</div>
+```
+
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Image Format</th>
+        <th>Lossy Plugin(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><a href="#">imagemin-mozjpeg</a></td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td><a href="#">imagemin-pngquant</a></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><a href="#">imagemin-giflossy</a></td>
+      </tr>
+    </tbody>
+    <caption>
+      Imagemin plugins for filetypes.
+    </caption>
+  </table>
+</div>
+
+<div class="table-wrapper scrollbar">
+  <table data-alignment="top">
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lighthouse</td>
+        <td>
+          <ul>
+            <li>
+              Budgets for different types of resources based on their size or
+              count
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>webpack</td>
+        <td>
+          <ul>
+            <li>Budgets based on sizes of assets generated by webpack</li>
+            <li>Checks uncompressed sizes</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+    <caption>
+      A table with the cell content vertically aligned by data-alignment="top" exception.
+    </caption>
+  </table>
+</div>
+
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Option 1</th>
+        <th>Option 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>@font-face {
+  font-family: Helvetica;
+}
+</code>
+        </td>
+        <td><code>@font-face {
+  font-family: Helvetica;
+  <strong>font-display: swap;</strong>
+}
+</code>
+        </td>
+      </tr>
+    </tbody>
+    <caption>
+      Table using a `code` element.
+    </caption>
+  </table>
+</div>
+
+<div class="table-wrapper">
+  <table>
+    <tbody>
+      <tr>
+        <th>Network</th>
+        <th>Device</th>
+        <th>JS</th>
+        <th>Images</th>
+        <th>CSS</th>
+        <th>HTML</th>
+        <th>Fonts</th>
+        <th>Total</th>
+        <th>Time to Interactive budget</th>
+      </tr>
+      <tr>
+        <td>Slow 3G</td>
+        <td>Moto G4</td>
+        <td>100</td>
+        <td>30</td>
+        <td>10</td>
+        <td>10</td>
+        <td>20</td>
+        <td>~170 KB</td>
+        <td>5s</td>
+      </tr>
+      <tr>
+        <td>Slow 4G</td>
+        <td>Moto G4</td>
+        <td>200</td>
+        <td>50</td>
+        <td>35</td>
+        <td>30</td>
+        <td>30</td>
+        <td>~345 KB</td>
+        <td>3s</td>
+      </tr>
+      <tr>
+        <td>WiFi</td>
+        <td>Desktop</td>
+        <td>300</td>
+        <td>250</td>
+        <td>50</td>
+        <td>50</td>
+        <td>100</td>
+        <td>~750 KB</td>
+        <td>2s</td>
+      </tr>
+    </tbody>
+    <caption>
+      Tables scroll when their width is larger than that of the content column.
+    </caption>
+  </table>
+</div>
+
+## Tabs
+
+Use `web-tabs` web component to display content that refers to different
+platforms or languages.
+Each child of the `web-tabs` component will become a separate tab.
+Use `data-label` attribute to set the tab's title. You can use markdown inside
+the tab, e.g. the code blocks.
+
+```html
+{% raw %}
+<web-tabs>
+  <div data-label="html">
+    ```html
+    <p> I'm html</p>
+    ```
+  </div>
+  <div data-label="css">
+    ```css
+    .class { border: 0; }
+    ```
+  </div>
+</web-tabs>
+{% endraw %}
+```
+
+<web-tabs>
+  <div data-label="html" title="t">
+
+  ```html
+  <p> I'm html</p>
+  ```
+
+  </div>
+  <div data-label="css">
+
+  ```css
+  .class { border: 0; }
+  ```
+
+  </div>
+</web-tabs>
+
+## Tooltips
+
+Use tooltips to provide information about UI controls
+that are too small to have a label
+
+[Detailed specification](https://web.dev/design-system/component/tooltips/)
+
+```html
+<div class="tooltip" data-alignment="">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% raw %}{% include "icons/plus.svg" %}{% endraw %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Standard alignment</span
+  >
+</div>
+```
+
+<div class="tooltip" data-alignment="right">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% include "icons/plus.svg" %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Right alignment</span
+  >
+</div>
+
+<div class="tooltip" data-alignment="">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% include "icons/plus.svg" %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Standard alignment</span
+  >
+</div>
+
+
+## Video / YouTube {: #video }
+See the [Images and video](/handbook/markup-media) post.
+
+# Deprecated components
+
+## w-buttons
+
+In general, you shouldn't need to add buttons to your posts.
+These buttons are shown for reference.
+
+### Text buttons
+
+<div>
+  <button class="w-button">
+    Text button
+  </button>
+  <button class="w-button w-button--with-icon" data-icon="file_download">
+    Text button with icon
+  </button>
+</div>
+<br>
+
+<div>
+  <button class="w-button w-button--primary">
+    Primary button
+  </button>
+  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+    Primary button with icon
+  </button>
+</div>
+<br>
+
+<div>
+  <button class="w-button w-button--secondary">
+    Secondary button
+  </button>
+  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+    Secondary button with icon
+  </button>
+</div>
+
+### Icon buttons
+
+A default icon button:
+
+<div>
+  <button class="w-button--icon" data-icon="format_align_justify">
+    <span role="tooltip" class="w-tooltip">
+      Justify
+    </span>
+  </button>
+</div>
+
+A round icon button:
+
+<div>
+  <button class="w-button--icon w-button--round" data-icon="close">
+    <span role="tooltip" class="w-tooltip">
+      Close
+    </span>
+  </button>
+</div>
+
+## w-columns
+
+Any elements can be placed in a two-column layout
+by wrapping them in a `<div class="w-columns">` element:
+
+```html
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+</div>
+```
+
+<div class="w-columns">
+  <figure class="w-figure">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+</div>
+
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.
+
+## w-stats
+
 Use the Stats component to call out important statistics
 about a product or service discussed in a post.
 (Stats are primarily used in case studies.)
@@ -1005,7 +1470,7 @@ corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
   </div>
 </div>
 
-## Tables
+## w-tables
 
 Use the markup below to create a table.
 Do _not_ use Markdown syntax;
@@ -1301,99 +1766,3 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
-
-## Tabs
-
-Use `web-tabs` web component to display content that refers to different
-platforms or languages.
-Each child of the `web-tabs` component will become a separate tab.
-Use `data-label` attribute to set the tab's title. You can use markdown inside
-the tab, e.g. the code blocks.
-
-```html
-{% raw %}
-<web-tabs>
-  <div data-label="html">
-    ```html
-    <p> I'm html</p>
-    ```
-  </div>
-  <div data-label="css">
-    ```css
-    .class { border: 0; }
-    ```
-  </div>
-</web-tabs>
-{% endraw %}
-```
-
-<web-tabs>
-  <div data-label="html" title="t">
-
-  ```html
-  <p> I'm html</p>
-  ```
-
-  </div>
-  <div data-label="css">
-
-  ```css
-  .class { border: 0; }
-  ```
-
-  </div>
-</web-tabs>
-
-## Tooltips
-
-Use tooltips to provide information about UI controls
-that are too small to have a label:
-
-```html
-<button class="w-button--icon" data-icon="format_align_left">
-  {% raw %}{% Tooltip 'Left align' %}{% endraw %}
-</button>
-```
-
-<div>
-  <button class="w-button--icon" data-icon="format_align_left">
-    {% Tooltip 'Left align' %}
-  </button>
-  <button class="w-button--icon" data-icon="format_align_center">
-    {% Tooltip 'Center align' %}
-  </button>
-  <button class="w-button--icon" data-icon="format_align_right">
-    {% Tooltip 'Right align' %}
-  </button>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    {% Tooltip 'Justify' %}
-  </button>
-</div>
-
-You can left- or right-align a tooltip to its parent
-by adding a `left` or `right` argument to the shortcode:
-
-```html
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
-</button>
-```
-
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse', 'left' %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse' %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse', 'right' %}
-</button>
-
-## Video / YouTube {: #video }
-See the [Images and video](/handbook/markup-media) post.
