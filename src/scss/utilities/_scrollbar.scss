@@ -6,7 +6,7 @@
 }
 
 .scrollbar::-webkit-scrollbar {
-  height: 4px;
+  height: 8px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -15,5 +15,9 @@
 
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  @include apply-utility('bg', 'stroke');
+  @include apply-utility('bg', 'highlight-interact-bg');
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  @include apply-utility('bg', 'action-bg-hover');
 }
