@@ -8,7 +8,7 @@ audio:
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - cambickel
-date: 2021-11-09
+date: 2021-11-23
 ---
 
 Text is one of the core building blocks of the web. 
