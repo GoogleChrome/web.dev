@@ -255,13 +255,11 @@ table {
   max-width: 100%;
   min-width: 50%;
   border-spacing: 0;
-
-  @include rounded-border();
 }
 
 th,
 td {
-  padding: 0.5em;
+  padding: 0.8em 0.5em;
   text-align: left;
   border-collapse: collapse;
 }
@@ -281,6 +279,13 @@ caption {
 table ul:not([class]),
 table ol:not([class]) {
   margin: 0;
+}
+
+/// Code in tables
+table code {
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /// Cell alignment

@@ -26,6 +26,7 @@
   aspect-ratio: 1/1;
   width: 3rem;
   border: 1px solid var(--color-stroke);
+  flex-shrink: 0;
 }
 
 .design-system__preview-frame {
