@@ -329,23 +329,22 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 
 ## Checkbox
 
-The [Newsletter](/newsletter) page uses a new material styled checkbox.
-You can use it simply and easily by just adding the class `w-chechbox`
-to an `input[type=checkbox]` element. However to align a label to to the
-checkbox you'll want to wrap the label and checkbox in a `div.w-display--inline-flex`
-element, and add the `w-ml--l` class to the label. See below:
+To align a label to the checkbox wrap the label and checkbox in an element with
+a `cluster gutter-base flex-align-start` class.
 
-<div class="w-display--inline-flex">
-  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
-</div>
+[Detailed specification](https://web.dev/design-system/component/form-fields/#checkbox)
 
 ```html
-<div class="w-display--inline-flex">
-  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
+<div class="cluster gutter-base flex-align-start">
+  <input id="myCheckbox" type="checkbox" />
+  <label for="myCheckbox">Lorem ipsum dolor sit amet</label>
 </div>
 ```
+
+<div class="cluster gutter-base flex-align-start">
+  <input id="myCheckbox" type="checkbox" />
+  <label for="myCheckbox">Lorem ipsum dolor sit amet</label>
+</div>
 
 ## Code pattern {: #codepattern }
 
@@ -426,7 +425,7 @@ elements in a two-column layout will shift to a stacked arrangement.
 </div>
 ```
 
-<div class="w-columns">
+<div class="switcher">
   <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption>
@@ -552,7 +551,7 @@ at.
 ### Compare in columns
 
 ````html
-<div class="w-columns">
+<div class="switcher">
 {% raw %}{% Compare 'worse' %}
 ```text
 Bad code example
@@ -577,7 +576,7 @@ Explanation of why `example` is good.
 </div>
 ````
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 ```text
 Bad code example
