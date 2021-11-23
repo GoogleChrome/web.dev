@@ -26,7 +26,7 @@
     margin-inline: auto;
   }
 
-  a:link,
+  a,
   a:visited {
     @include apply-utility('font', 'brand');
     @include apply-utility('color', 'action-text');
@@ -74,7 +74,7 @@
     padding-block-start: get-space('size-1');
   }
 
-  a:link,
+  a,
   a:visited {
     font-weight: normal;
     @include apply-utility('font', 'brand');
