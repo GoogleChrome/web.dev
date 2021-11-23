@@ -47,3 +47,10 @@
   /// A slightly lighter background, regardless of current color
   background: rgba(255, 255, 255, 0.5);
 }
+
+/// Hides banner in print mode
+@media print {
+  .banner {
+    display: none !important;
+  }
+}
