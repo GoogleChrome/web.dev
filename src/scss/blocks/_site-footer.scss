@@ -9,7 +9,7 @@
     padding: 0;
   }
 
-  li a:link,
+  li a,
   li a:visited {
     font-size: get-size('size-0');
     @include apply-utility('color', 'mid-text');
