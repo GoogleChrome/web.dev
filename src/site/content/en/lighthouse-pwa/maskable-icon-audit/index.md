@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Manifest doesn't have a maskable icon
 description: |
   Learn how to add maskable icon support to your PWA.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Using bundlesize with Travis CI
 authors:
   - mihajlija

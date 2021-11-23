@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How Progressive Web Apps can drive business success
 authors:
   - sfourault

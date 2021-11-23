@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Cross-Origin Resource Sharing (CORS)
 subhead: Share cross-origin resources safely
 authors:

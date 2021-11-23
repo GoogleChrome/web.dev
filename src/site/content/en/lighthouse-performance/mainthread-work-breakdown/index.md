@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Minimize main thread work
 description: |
   Learn about the browser's main thread and how you can optimize your web page

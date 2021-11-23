@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Fast playback with audio and video preload
 subhead: How to accelerate your media playback by actively preloading resources.
 authors:

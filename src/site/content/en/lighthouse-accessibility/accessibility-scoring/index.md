@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Lighthouse accessibility scoring"
 description: |
   Learn how Lighthouse generates the accessibility score for your page.

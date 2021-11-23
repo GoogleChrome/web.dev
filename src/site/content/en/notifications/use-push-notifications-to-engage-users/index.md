@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use push notifications to engage and re-engage users
 authors:
   - katejeffreys

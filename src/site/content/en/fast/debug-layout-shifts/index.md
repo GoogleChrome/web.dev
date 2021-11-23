@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Debug layout shifts
 subhead: |
   Learn how to identify and fix layout shifts.

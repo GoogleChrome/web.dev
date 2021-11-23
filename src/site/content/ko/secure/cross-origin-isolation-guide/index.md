@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 출처 간 격리를 이용하기 위한 가이드
 authors:
   - agektmr

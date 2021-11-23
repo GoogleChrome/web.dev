@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Resilient search experiences
 subhead: >
   Using a service worker to save a search query when a user goes offline

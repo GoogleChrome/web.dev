@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Help users change passwords easily by adding a well-known URL for changing passwords
 subhead: Redirect a request to `/.well-known/change-password` to the change-passwords URL
 authors:

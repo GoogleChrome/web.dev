@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Preparing for the display modes of tomorrow
 subhead: PWAs can use the "display_override" property to deal with special display modes.
 authors:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Using a PWA in your Android app
 authors:
   - andreban

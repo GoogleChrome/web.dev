@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Precaching with Workbox
 authors:
   - jeffposnick

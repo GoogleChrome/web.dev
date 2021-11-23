@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Does not use HTTP/2 for all of its resources
 description: |
   Learn why HTTP/2 is important for your page's load time and how to enable

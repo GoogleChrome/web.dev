@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Ensure text remains visible during webfont load
 description: |
   Learn how to use the font-display API to make sure your web page text

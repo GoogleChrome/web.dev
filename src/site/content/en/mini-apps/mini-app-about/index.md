@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: What are mini apps?
 authors:
   - thomassteiner

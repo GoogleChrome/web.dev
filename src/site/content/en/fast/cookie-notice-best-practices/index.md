@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Best practices for cookie notices
 subhead: |
   Optimize cookie notices for performance and usability.

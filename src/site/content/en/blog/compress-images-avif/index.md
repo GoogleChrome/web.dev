@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Using AVIF to compress images on your site
 authors:
   - jaikk

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Efficiently encode images
 description: |
   Learn about the uses-optimized-images audit.

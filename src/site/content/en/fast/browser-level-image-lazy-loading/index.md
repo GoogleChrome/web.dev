@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Browser-level image lazy-loading for the web
 subhead: Built-in lazy-loading is finally here!
 authors:

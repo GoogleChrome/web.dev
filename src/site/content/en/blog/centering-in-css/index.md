@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Centering in CSS
 subhead: Follow 5 centering techniques as they go through a series of tests to see which one is the most resilient to change.
 authors:

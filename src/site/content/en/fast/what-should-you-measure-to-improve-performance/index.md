@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: What should you measure to improve performance?
 subhead: Strategies to measure performance at each stage in the purchase funnel.
 authors:

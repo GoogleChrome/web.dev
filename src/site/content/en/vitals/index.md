@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web Vitals
 description: Essential metrics for a healthy site
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png

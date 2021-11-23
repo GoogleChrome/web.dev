@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Remove unused JavaScript
 description: |
   Learn how to pass Lighthouse's "Remove unused JavaScript" audit.

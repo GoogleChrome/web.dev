@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web Vitals
 description: Métricas esenciales para un sitio saludable
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png

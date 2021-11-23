@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Best practices for tags and tag managers
 subhead: Optimize tags and tag managers for Core Web Vitals.
 hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/aIZgX5qHUBalZz0dUNqN.jpg
@@ -214,7 +214,7 @@ providers). The
 and [`fetch()
 keepalive`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
 APIs are designed to address this same use case but are arguably more reliable
-than pixels. 
+than pixels.
 
 {% Aside %}
 
@@ -249,7 +249,7 @@ const data = JSON.stringify({
 
 navigator.sendBeacon(url, data);
 
-``` 
+```
 
 `sendBeacon()` has a limited API: it only supports making POST requests and does
 not support setting custom headers. It is
@@ -285,7 +285,7 @@ keepalive`.
 When choosing between `fetch() keepalive` and `sendBeacon()`, it's important to
 consider the features and browser support that you need. The fetch() API is
 significantly more flexible; however, `keepalive` has less browser
-[support](https://caniuse.com/?search=keepalive) than `sendBeacon()`. 
+[support](https://caniuse.com/?search=keepalive) than `sendBeacon()`.
 
 
 ### Get clarification
@@ -410,7 +410,7 @@ Although Google Tag Manager can be used without the data layer, its use is
 strongly recommended. The data layer provides a way to consolidate the data
 being accessed by third-party scripts into a single place thereby providing
 better visibility into its usage. Amongst other things, this can help reduce
-redundant variable calculations and script execution. 
+redundant variable calculations and script execution.
 
 {% Aside %}
 
@@ -578,7 +578,7 @@ shifts)—however it can make it easier to isolate and measure the impact of the
 tag on things like script execution. Check out how [Telegraph uses this
 isolation approach to improve
 performance](https://medium.com/the-telegraph-engineering/improving-third-party-web-performance-at-the-telegraph-a0a1000be5)
-of third-party code. 
+of third-party code.
 
 
 ### Monitor tag performance

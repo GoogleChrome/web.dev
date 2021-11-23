@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Orchestrating payment transactions with a service worker
 subhead: |
   How to adapt your web-based payment app to Web Payments and provide a better user experience for customers.
@@ -184,7 +184,7 @@ class PromiseResolver {
       this.reject_ = reject;
     })
   }
-  get promise() { return this.promise_ } 
+  get promise() { return this.promise_ }
   get resolve() { return this.resolve_ }
   get reject() { return this.reject_ }
 }

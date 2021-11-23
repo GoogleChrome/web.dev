@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a split-button component
 subhead: A foundational overview of how to build an accessible split-button component.
 authors:
@@ -49,7 +49,7 @@ A common split button can be found in your email application. The primary action
 is send, but perhaps you can send later or save a draft instead:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/7D9MI9GmPhYAtFs83DDI.png",
-alt="An example split button as seen in an email application.", 
+alt="An example split button as seen in an email application.",
 width="800", height="517", class="w-screenshot" %}
 
 The shared action area is nice, since the user doesn't need to look around. They
@@ -101,7 +101,7 @@ alt="The inspector showing the CSS rules for the class gui-popup-button.", width
 
 This is a floating card child to its anchor
 [`.gui-popup-button`](#the-popup-toggle-button), positioned absolute and
-semantically wrapping the button list. 
+semantically wrapping the button list.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LSeLIFhe7yuG9QoR1VM9.png",
 alt="The inspector showing the CSS rules for the class gui-popup", width="800", height="629", class="w-screenshot" %}
@@ -160,13 +160,13 @@ media queries](https://www.w3.org/TR/mediaqueries-5/#custom-mq) are used with
 
 ### Markup
 
-The element begins as a `<div>` with a custom class name. 
+The element begins as a `<div>` with a custom class name.
 
 ```html
 <div class="gui-split-button"></div>
 ```
 
-Add the primary button and the `.gui-popup-button` elements. 
+Add the primary button and the `.gui-popup-button` elements.
 
 ```html/1-2
 <div class="gui-split-button">
@@ -179,7 +179,7 @@ Notice the aria attributes `aria-haspopup` and `aria-expanded`. These cues are
 critical for screen readers to be aware of the capability and state of split
 button experience. The `title` attribute is helpful for everyone.
 
-Add an `<svg>` icon and the `.gui-popup` container element. 
+Add an `<svg>` icon and the `.gui-popup` container element.
 
 ```html/3-6
 <div class="gui-split-button">
@@ -265,7 +265,7 @@ With HTML and content in place, styles are ready to provide color and layout.
 #### Styling the split button container
 
 An `inline-flex` display type works well for this wrapping component as it
-should fit inline with other split buttons, actions or elements. 
+should fit inline with other split buttons, actions or elements.
 
 ```css
 .gui-split-button {
@@ -291,7 +291,7 @@ undo or replace browser default styles, but you'll also need to enforce some
 inheritance, add interaction states and adapt to various user preferences and
 input types. Button styles add up quickly.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/psxWs3LOw3uRceD2FzFi.mp4",
   class="w-screenshot",
   autoplay="true",
@@ -301,7 +301,7 @@ input types. Button styles add up quickly.
 
 These buttons are different from regular buttons because they share a background
 with a parent element. Usually, a button owns its background and text color.
-These, though, share it, and only apply their own background on interaction. 
+These, though, share it, and only apply their own background on interaction.
 
 ```css
 .gui-split-button button {
@@ -332,12 +332,12 @@ Add interaction states with a few CSS
 [pseudo-classes](/learn/css/pseudo-classes/) and use of matching
 custom properties for the state:
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/llQwSgee5Y2PtoiteLAx.mp4",
   class="w-screenshot",
   autoplay="true",
   loop="true",
-  muted="true" 
+  muted="true"
 %}
 
 ```css
@@ -362,7 +362,7 @@ custom properties for the state:
 
 The primary button needs a few special styles to complete the design effect:
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q05zCTFPNQ5QDCR6R1q2.mp4",
   class="w-screenshot",
   autoplay="true",
@@ -385,7 +385,7 @@ The primary button needs a few special styles to complete the design effect:
 Lastly, for some flair, the light theme button and icon get a
 [shadow](/learn/css/shadows/):
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/8qkrdaVnJowC5Uvuqncw.mp4",
   class="w-screenshot",
   autoplay="true",
@@ -408,24 +408,24 @@ Lastly, for some flair, the light theme button and icon get a
 }
 ```
 
-A great button has paid attention to the microinteractions and tiny details. 
+A great button has paid attention to the microinteractions and tiny details.
 
 ##### A note about `:focus-visible`
 
 Notice how the button styles use `:focus-visible` instead of `:focus`. `:focus`
 is a crucial touch to making an accessible user interface but it does have one
 downfall: it's not intelligent about whether or not the user needs to see it or
-not, it'll apply for any focus. 
+not, it'll apply for any focus.
 
 The video below attempts to break this microinteraction down, to show how
 `:focus-visible` is an intelligent alternative.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D2AqjpvafPAPB3CMXkhd.mp4",
   class="w-screenshot",
   autoplay="true",
   loop="true",
-  muted="true" 
+  muted="true"
 %}
 
 #### Styling the popup button
@@ -481,7 +481,7 @@ and `pointer-events`, on the icon and popup.
 ```css
 .gui-popup-button {
   …
-  
+
   &:focus-within {
     & > svg {
       transition-duration: var(--in-speed);
@@ -511,7 +511,7 @@ transition transforms** depending on the user's motion preference:
     & > .gui-popup {
       transform: translateY(5px);
 
-      transition: 
+      transition:
         opacity var(--out-speed) ease,
         transform var(--out-speed) ease;
     }
@@ -520,9 +520,9 @@ transition transforms** depending on the user's motion preference:
 ```
 
 A keen eye on the code would notice **opacity is still transitioned** for users
-who prefer reduced motion. 
+who prefer reduced motion.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bsOaOSHe8ZZl0vnZAtmr.mp4",
   class="w-screenshot",
   autoplay="true",
@@ -556,7 +556,7 @@ alt="A floating card element.", width="448", height="422", class="w-screenshot" 
   position: absolute;
   bottom: 80%;
   left: -1.5ch;
-  
+
   list-style-type: none;
   background: var(--popupbg);
   color: var(--theme-text);
@@ -648,7 +648,7 @@ smooth.
 }
 ```
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2vJRCeIhxVitT79q78RR.mp4",
   class="w-screenshot",
   autoplay="true",
@@ -669,7 +669,7 @@ Here's the list of logical properties used:
 - `inline-size` rather than `width` ensures the size isn't tied to physical dimensions.
 - `border-inline-start` adds a border to the start, which might be on the right or the left depending on script direction.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/lNn1KXfw1GprPJa9RFHO.mp4",
   class="w-screenshot",
   autoplay="true",
@@ -677,7 +677,7 @@ Here's the list of logical properties used:
   muted="true"
 %}
 
-{% Aside 'gotchas' %} 
+{% Aside 'gotchas' %}
 The popup element is positioned with `left` and `top` and
 would need to be adjusted for writing modes like
 [`vertical-rl`](https://developer.mozilla.org/docs/Web/CSS/writing-mode).
@@ -711,19 +711,19 @@ forward the focus into the first (or most recently focused) button in the
 parameters.
 
 ```js
-popupButtons.forEach(element => 
+popupButtons.forEach(element =>
   rovingIndex({
     element,
     target: 'button',
   }))
 ```
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nlLgOPtwb4igmNEWxbg1.mp4",
   class="w-screenshot",
   autoplay="true",
   loop="true",
-  muted="true" 
+  muted="true"
 %}
 
 The element now passes focus to the target `<button>` children and enables
@@ -775,7 +775,7 @@ splitButtons.on('click', event => {
 })
 ```
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gpHoUsZLgIRlDBA2127n.mp4",
   class="w-screenshot",
   autoplay="true",

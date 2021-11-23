@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document doesn't use legible font sizes
 description: |
   Learn about the "Document doesn't use legible font sizes" Lighthouse audit.

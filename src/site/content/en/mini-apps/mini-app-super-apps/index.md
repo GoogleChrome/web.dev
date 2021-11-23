@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Mini apps and super apps
 authors:
   - thomassteiner

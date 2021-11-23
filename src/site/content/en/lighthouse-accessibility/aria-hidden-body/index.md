@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`[aria-hidden=\"true\"]` is present on the document `<body>`"
 description: |
   Learn how to make sure your web page is accessible to assistive technology

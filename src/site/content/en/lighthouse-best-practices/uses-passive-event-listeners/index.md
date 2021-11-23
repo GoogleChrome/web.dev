@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use passive listeners to improve scrolling performance
 description: |
   Learn how to improve your page's scrolling responsiveness by avoiding

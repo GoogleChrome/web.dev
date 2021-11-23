@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web Vitals
 description: Основные показатели работоспособного сайта
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png

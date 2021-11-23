@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: HTML5 landmark elements are used to improve navigation
 description: |
   Learn how to improve the accessibility of your web page by providing

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid enormous network payloads
 description: |
   Learn how to improve your web page's load time by reducing the total file

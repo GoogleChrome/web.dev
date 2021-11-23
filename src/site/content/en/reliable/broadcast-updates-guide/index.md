@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Broadcast updates to pages with service workers"
 authors:
   - demianrenzulli

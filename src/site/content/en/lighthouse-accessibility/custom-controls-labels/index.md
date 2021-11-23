@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Custom controls have associated labels
 description: |
   Learn how to improve your web page's accessibility by making sure that

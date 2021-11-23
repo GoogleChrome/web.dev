@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Prepare media files for the web
 authors:
   - joemedley

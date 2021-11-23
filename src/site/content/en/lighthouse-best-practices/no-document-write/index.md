@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Uses document.write()
 description: |
   Learn how to speed up your page's load time by avoiding  document.write().

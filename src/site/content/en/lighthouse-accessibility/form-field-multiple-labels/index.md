@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Form fields have multiple labels"
 description: |
   Learn how to make sure assistive technologies announce your web page's form

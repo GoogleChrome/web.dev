@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: URL protocol handler registration for PWAs
 subhead: |
   Let installed PWAs handle links that use a specific protocol for a more integrated experience.

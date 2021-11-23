@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Largest Contentful Paint 最大内容绘制 (LCP)
 authors:
   - philipwalton

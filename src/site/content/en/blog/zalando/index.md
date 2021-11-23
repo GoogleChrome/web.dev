@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How Zalando reduced performance feedback time from 1 day to 15 minutes with Lighthouse CI
 subhead: |
   The web team at Zalando found that integrating Lighthouse CI enabled a proactive approach to performance,

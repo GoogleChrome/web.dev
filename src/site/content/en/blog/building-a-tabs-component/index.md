@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a Tabs component
 subhead: A foundational overview of how to build a tabs component similar to those found in iOS and Android apps.
 authors:

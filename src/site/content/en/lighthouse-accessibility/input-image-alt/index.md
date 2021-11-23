@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`<input type=\"image\">` elements do not have `[alt]` text"
 description: |
   Learn how to make sure assistive technology users can access your web page's

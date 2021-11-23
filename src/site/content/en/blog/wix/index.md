@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How Wix improved website performance by evolving their infrastructure
 subhead: >
   A case study of some major changes introduced at Wix to improve website loading

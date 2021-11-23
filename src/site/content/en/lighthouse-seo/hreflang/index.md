@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document doesn't have a valid `hreflang`
 description: |
   Learn about the "Document doesn't have a valid hreflang" Lighthouse audit.

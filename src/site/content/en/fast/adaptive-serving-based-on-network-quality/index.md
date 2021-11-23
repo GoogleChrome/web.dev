@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Adaptive serving based on network quality
 date: 2019-05-06
 authors:

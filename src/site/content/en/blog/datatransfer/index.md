@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Breaking down barriers using the DataTransfer API
 subhead: "Enable the user to share data beyond the browser window."
 authors:
@@ -112,7 +112,7 @@ the `dataTransfer` property is named `clipboardData` for clipboard events.
 // Listen to copy-paste events on the document.
 document.addEventListener('copy', (event) => {
   const copySource = document.querySelector('#copySource');
-  // Only copy when the `activeElement` (i.e., focused element) is, 
+  // Only copy when the `activeElement` (i.e., focused element) is,
   // or is within, the `copySource` element.
   if (copySource.contains(document.activeElement)) {
     event.clipboardData.setData('text/plain', 'Foo bar');

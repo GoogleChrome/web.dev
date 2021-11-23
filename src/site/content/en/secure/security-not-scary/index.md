@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Security should not be so scary!
 authors:
   - kosamari

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements"
 description: |
   Learn how to structure definition lists on your web page so that

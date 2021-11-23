@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How Payment Request API works
 subhead: |
   Learn how the Payment Request API works at a high level.
@@ -38,12 +38,12 @@ Let's look at how each parameter is built and used.
 
 The first parameter, _paymentMethods_, is a list of supported payment methods in
 an array variable. Each element in the array comprises two components,
-`supportedMethods` and, optionally, `data`. 
+`supportedMethods` and, optionally, `data`.
 
 For `supportedMethods`, the merchant needs to specify a [Payment Method
 Identifier](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier)
 such as `https://bobpay.xyz/pay`. The existence and content of `data` depends on
-the content of `supportedMethods` and payment app provider's design. 
+the content of `supportedMethods` and payment app provider's design.
 
 Both pieces of information should be provided by the payment app provider.
 

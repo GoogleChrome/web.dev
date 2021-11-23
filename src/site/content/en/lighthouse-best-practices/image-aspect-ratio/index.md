@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Displays images with incorrect aspect ratio
 description: |
   Learn how to display responsive images with the correct aspect ratio.

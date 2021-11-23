@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to create high-performance CSS animations
 authors:
   - rachelandrew

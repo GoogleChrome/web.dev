@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'The new responsive: Web design in a component-driven world'
 subhead: 'Controlling macro and micro layout in a new era of responsive web design.'
 authors:

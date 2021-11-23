@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Speed Index
 description: |
   Learn about Lighthouse's Speed Index metric and how to optimize it.

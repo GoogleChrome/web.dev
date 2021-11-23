@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Registering a web-based payment app
 subhead: |
   Learn how to configure a web-based payment app during registration.

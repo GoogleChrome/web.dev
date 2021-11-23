@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How search works
 authors:
   - ekharvey

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Serve static assets with an efficient cache policy
 description: |
   Learn how caching your web page's static resources can improve performance

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Includes front-end JavaScript libraries with known security vulnerabilities
 description: |
   Learn how to make your page more secure by replacing JavaScript libraries

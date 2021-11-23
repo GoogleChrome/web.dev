@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Speed up navigations in React with Quicklink
 subhead: |
   Automatically prefetch in-viewport links with quicklink for React single page applications.

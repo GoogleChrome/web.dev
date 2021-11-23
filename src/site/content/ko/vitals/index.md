@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web Vitals
 description: 정상적인 사이트를 위한 필수 메트릭
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png

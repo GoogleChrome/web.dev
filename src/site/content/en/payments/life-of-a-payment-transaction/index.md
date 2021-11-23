@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Life of a payment transaction
 subhead: |
   Learn how merchants integrate payment apps and how payment transactions work

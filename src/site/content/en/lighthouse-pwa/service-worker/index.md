@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Does not register a service worker that controls page and `start_url`"
 description: |
   Learn how to register a service worker that supports Progressive Web App

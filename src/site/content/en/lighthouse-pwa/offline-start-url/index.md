@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`start_url` does not respond with a 200 when offline"
 description: |
   Learn how to configure your Progressive Web App's start_url so your app is

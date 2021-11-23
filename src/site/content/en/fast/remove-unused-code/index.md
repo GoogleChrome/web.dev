@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Remove unused code
 subhead: |
   npm makes adding code to your project a breeze. But are you really using all

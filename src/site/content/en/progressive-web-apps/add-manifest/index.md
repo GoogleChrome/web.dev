@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Add a web app manifest
 authors:
   - petelepage

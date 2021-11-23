@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Handling optional payment information with a service worker
 subhead: |
   How to adapt your web-based payment app to Web Payments and provide a better user experience for customers.

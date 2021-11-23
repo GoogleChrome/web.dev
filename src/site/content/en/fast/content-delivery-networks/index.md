@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Content delivery networks (CDNs)
 authors:
   - katiehempenius

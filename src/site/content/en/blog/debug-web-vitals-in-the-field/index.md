@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Debug Web Vitals in the field
 subhead: |
   Learn how to attribute your Web Vitals data with debug information

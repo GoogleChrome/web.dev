@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First Input Delay 首次输入延迟 (FID)
 authors:
   - philipwalton

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)
 authors:
   - philipwalton

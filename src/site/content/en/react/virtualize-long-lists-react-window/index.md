@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Virtualize large lists with react-window
 subhead: |
   Super large tables and lists can slow down your site's performance signficantly. Virtualization can help!

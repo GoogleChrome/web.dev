@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Estimated Input Latency
 description: |
   Learn about Lighthouse's Estimated Input Latency metric and

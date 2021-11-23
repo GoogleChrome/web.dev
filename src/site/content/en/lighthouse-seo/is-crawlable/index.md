@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Page is blocked from indexing
 description: |
   Learn about the "Page is blocked from indexing" Lighthouse audit.

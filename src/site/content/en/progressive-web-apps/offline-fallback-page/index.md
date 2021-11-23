@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Create an offline fallback page
 authors:
   - thomassteiner

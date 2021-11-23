@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Third-party JavaScript performance
 subhead: Find out how third-party JavaScript can affect performance and what you can do to keep it from slowing down your sites.
 authors:

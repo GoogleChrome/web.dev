@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a Stories component
 # TODO(kayce): Rename URL to match the title
 subhead: A foundational overview of how to build an experience similar to Instagram Stories on the web.

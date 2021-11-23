@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Requesting performance isolation with the Origin-Agent-Cluster header
 subhead: >
   A new HTTP response header to limit domain-wide scripting and request dedicated resources from the

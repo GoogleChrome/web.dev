@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Add media to a web page
 authors:
   - joemedley

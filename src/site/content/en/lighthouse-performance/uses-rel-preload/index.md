@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Preload key requests
 description: |
   Learn about the uses-rel-preload audit.

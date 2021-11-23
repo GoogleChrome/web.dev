@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Current page does not respond with a 200 when offline
 description: |
   Learn how to make your Progressive Web App work offline.

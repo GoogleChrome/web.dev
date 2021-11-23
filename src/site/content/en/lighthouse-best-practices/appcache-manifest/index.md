@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Uses Application Cache
 description: |
   Learn how to migrate your web page from the deprecated Application Cache to

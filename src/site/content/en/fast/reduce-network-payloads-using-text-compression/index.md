@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Minify and compress network payloads
 authors:
   - houssein

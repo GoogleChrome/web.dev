@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Optimizing Web Vitals using Lighthouse
 subhead: Finding opportunities to improve user-experience with Chrome's web tooling.
 authors:

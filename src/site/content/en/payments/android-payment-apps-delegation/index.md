@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Support payment method change from an Android payment app
 subhead: |
   How to update your Android payment app to support payment method change with Web Payments APIs.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Pre-render routes with react-snap
 subhead: |
   Not server-side rendering but still want to speed up the performance of your React site? Try pre-rendering!

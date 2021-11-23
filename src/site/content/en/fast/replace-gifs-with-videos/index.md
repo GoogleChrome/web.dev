@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Replace animated GIFs with video for faster page loads
 authors:
   - houssein

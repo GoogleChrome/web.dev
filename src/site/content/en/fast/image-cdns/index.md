@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use image CDNs to optimize images
 authors:
   - katiehempenius

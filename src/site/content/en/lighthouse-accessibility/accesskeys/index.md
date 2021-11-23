@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`[accesskey]` values are not unique"
 description: |
   Learn how to improve your web page's accessibility for keyboard users by

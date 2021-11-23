@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web Vitals
 description: サイトの健全性を判断するための重要な指標
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png

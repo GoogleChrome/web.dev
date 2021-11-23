@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Accessible tap targets
 authors:
   - dgash

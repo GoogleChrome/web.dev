@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Performance as a default with Next.js
 authors:
   - houssein

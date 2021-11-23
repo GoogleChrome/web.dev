@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Signed Exchanges (SXGs)
 subhead: |
   An SXG is a delivery mechanism that makes it possible to authenticate the
@@ -326,7 +326,7 @@ and displayed using its canonical URL, rather than its AMP URL.
 
 All of the concepts described in this document still apply to the AMP use case,
 however, AMP has its own separate
-[tooling](https://github.com/ampproject/amppackager) for generating SXGs. 
+[tooling](https://github.com/ampproject/amppackager) for generating SXGs.
 
 {% Aside%}
 Learn how to serve AMP using signed exchanges on

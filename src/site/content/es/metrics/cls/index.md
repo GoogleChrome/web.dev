@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Cumulative Layout Shift (CLS)
 authors:
   - philipwalton
@@ -17,7 +17,7 @@ tags:
 {% Banner 'caution', 'body' %} **1 de junio de 2021:** la implementación de CLS cambió. Para obtener más información sobre las razones detrás del cambio, consulte [Evolución de la métrica CLS](/evolving-cls) . {% endBanner %}
 
 {% Banner 'info', 'body' %}
-  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for 
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
   implementations of common UX patterns optimized for Core Web Vitals.
 {% endBanner %}
 

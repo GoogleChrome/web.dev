@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Prevents users from pasting into password fields
 description: |
   Learn how to improve the user experience of your site's login screen by

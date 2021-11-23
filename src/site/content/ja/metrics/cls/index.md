@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Cumulative Layout Shift (CLS)
 authors:
   - philipwalton

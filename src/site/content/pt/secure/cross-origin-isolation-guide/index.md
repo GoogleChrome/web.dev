@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Um guia para permitir o isolamento da origem cruzada
 authors:
   - agektmr

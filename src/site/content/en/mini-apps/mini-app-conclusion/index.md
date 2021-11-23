@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Concluding thoughts about mini apps from a web developer
 authors:
   - thomassteiner

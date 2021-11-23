@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Empowering payment apps with Web Payments
 subhead: New web standards for frictionless payment experience on the web.
 authors:

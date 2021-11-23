@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Defer offscreen images
 description: |
   Learn about the offscreen-images audit.

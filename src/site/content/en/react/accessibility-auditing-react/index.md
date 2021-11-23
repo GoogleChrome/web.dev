@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Accessibility auditing with react-axe and eslint-plugin-jsx-a11y
 hero: image/admin/CYDdWUK4iah3Xe8yEfoR.jpg
 subhead: |

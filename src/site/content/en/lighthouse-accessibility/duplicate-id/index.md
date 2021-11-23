@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`[id]` attributes on the page are not unique"
 description: |
   Learn how to make sure that all elements on your page are announced correctly

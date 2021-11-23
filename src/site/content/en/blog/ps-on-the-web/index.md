@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Photoshop's journey to the web
 authors:
   - nattestad

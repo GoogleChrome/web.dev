@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Background and foreground colors do not have a sufficient contrast ratio
 description: |
   Learn how to improve your web page's accessibility by making sure that

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First Contentful Paint 首次内容绘制 (FCP)
 authors:
   - philipwalton
