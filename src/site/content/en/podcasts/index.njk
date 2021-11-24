@@ -9,10 +9,10 @@ description: |
 date: 2020-04-06
 ---
 
-<div class="wide-card-index region">
+<div class="wide-card-index">
 
   {# Hero starts #}
-  <header>
+  <header class="region bg-mid-bg">
     <div class="wrapper">
       <div class="headline all-center flow">
         <h1 class="headline__title">{{ title }}</h1>
@@ -23,25 +23,26 @@ date: 2020-04-06
   {# Hero ends #}
 
   {# Cards #}
-  <nav class="wrapper auto-grid gap-top-size-2" aria-label="podcasts" data-size="narrow">
-    {% for podcast in podcasts %}
-      <a
-        href="{{ podcast.url }}"
-        class="card"
-        data-category="web.dev"
-        data-label="Podcasts: {{podcast.title}}"
-        data-action="click"
-        role="listitem"
-      >
-        <img src="{{ podcast.thumbnail }}" alt="" loading="lazy" width="100%" height="240" />
-        <div class="card__content flow">
-          <h3 class="card__heading text-size-2">{{ podcast.title }}</h2>
-          <p class="text-size-0">{{ podcast.description }}</p>
-        </div>
-      </a>
-    {% endfor %}
-  </nav>
+  <div class="region wrapper" data-size="narrow">
+    <nav class="auto-grid" aria-label="podcasts">
+      {% for podcast in podcasts %}
+        <a
+          href="{{ podcast.url }}"
+          class="card"
+          data-category="web.dev"
+          data-label="Podcasts: {{podcast.title}}"
+          data-action="click"
+          role="listitem"
+        >
+          <img src="{{ podcast.thumbnail }}" alt="" loading="lazy" width="100%" height="240" />
+          <div class="card__content flow">
+            <h2 class="card__heading text-size-2">{{ podcast.title }}</h2>
+            <p class="text-size-0">{{ podcast.description }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
   {# Cards end #}
-
 
 </div>
