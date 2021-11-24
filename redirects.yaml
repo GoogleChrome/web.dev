@@ -292,6 +292,10 @@ redirects:
     destination: https://developer.chrome.com/blog/origin-trials/
   - source: /third-party-origin-trials/
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
+  - source: /conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /using-conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
 
   # Redirect for Aurora
   - source: /aurora
@@ -300,9 +304,3 @@ redirects:
   # Design system
   - source: /design-system/component/action
     destination: /design-system/component/fab
-
-  # Redirect for Attribution Reporting API content (ex-conversion measurement) moved to dcc
-  - source: /conversion-measurement/
-    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
-  - source: /using-conversion-measurement/
-    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
