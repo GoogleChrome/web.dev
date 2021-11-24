@@ -11,15 +11,15 @@ This chapter focuses on some critical aspects of rendering content outside of th
 
 ## The window
 
-Different operating systems have different ideas about what an application window is. 
-For example, on iPhones, an application always takes up 100% of the screen. 
-In contrast, on a desktop device, an application can have more than one instance open at a time. 
-It shares the available screen real estate with all other open applications. 
-An instance can be resized and positioned anywhere on the screen, even overlapping other applications. While on Android devices and iPads applications run often in fullscreen, it is possible to share the screen between two apps, but one installed PWA will have only one instance at a time.
+Different operating systems have different ideas about what an application window is.
+For example, on iPhones, an application always takes up 100% of the screen. On Android an iPads applications usually run fullscreen but it is possible to share the screen between two apps, but there is only one app instance open at a time.
+In contrast, on a desktop device, an application can have more than one instance open at a time.
+It shares the available screen real estate with all other open applications.
+Each application instance can be resized and positioned anywhere on the screen, even overlapping other applications.
 
 ## The icon
 
-We recognize apps by their icon. That icon appears when you search for apps, in settings, wherever you launch apps, and where you see running apps. 
+We recognize apps by their icon. That icon appears when you search for apps, in settings, wherever you launch apps, and where you see running apps.
 
 These include:
 
@@ -28,8 +28,8 @@ These include:
 - Start Menu or App Menu (Windows, ChromeOS, Linux).
 - Dock, TaskBar, or Multi-task panels (all operating systems).
 
-When creating your Progressive Web App, you choose your app's icon. 
-Make sure your icon is platform-agnostic, as each operating system can render icons and apply different shape masks to them.
+When creating the icon for your Progressive Web App
+make sure its icon is platform-agnostic, as each operating system can render icons and apply different shape masks to them, like the ones in the image below.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/geo6MZwaWvNDRFJe6cvF.png", alt="PWA icons in different shapes for different platforms.", width="800", height="207" %}
 
@@ -37,7 +37,7 @@ Make sure your icon is platform-agnostic, as each operating system can render ic
 
 There are a number of ways you can customize app styling in your PWA's, including:
 
-* Theme color: defines the color of the window's title bar on the desktop and the color of the status bar on mobile devices. Using a meta tag, you can have options for different schemes, such as dark or light mode and they will be used based on the user's preference. 
+* Theme color: defines the color of the window's title bar on the desktop and the color of the status bar on mobile devices. Using a meta tag, you can have options for different schemes, such as dark or light mode and they will be used based on the user's preference.
 * Background color: defines the color of the window before the app and its CSS are loaded.
 * Accent color: defines the color of built-in browser components, such as form controls.
 
@@ -47,9 +47,8 @@ There are a number of ways you can customize app styling in your PWA's, includin
 </figure>
 {% Aside %}
 
-When planning your Progressive Web App user interface, it's best to pick colors without transparency, 
-such as using the `rgb` or `hsl` colors, hex codes, or named colors. 
-You can't use images, or gradients for your theme, just plain colors. 
+When planning your Progressive Web App user interface, beware that you can't use images, or gradients for your theme, just plain colors. It's best to pick colors without transparency,
+and  use the `rgb` or `hsl` colors, hex codes, or named colors.
 Theming your app may also affect browser theming even without installing the app, such as when using the [`<meta name="theme-color">`](/add-manifest/#theme-color) element.
 {% endAside %}
 
@@ -89,17 +88,17 @@ The title bar may also show permissions and hardware usage replacing the omnibox
   <figcaption class="w-figcaption">The images above show how a PWA displays in standalone mode on the desktop in Microsoft Edge, and Chrome.</figcaption>
 </figure>
 
-On mobile devices, a standalone PWA experience will create a standard screen that keeps the status bar visible, so the user can still see notifications, time, and battery level. It often does not have any browser-controlled menu like desktop standalone experiences may include. 
+On mobile devices, a standalone PWA experience will create a standard screen that keeps the status bar visible, so the user can still see notifications, time, and battery level. It often does not have any browser-controlled menu like desktop standalone experiences may include.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/sNa6aVY2ZayRqPZhpfIl.png", alt="An iOS device rendering a standalone app.", width="800", height="476" %}
 
 Some browsers on Android create a fixed and silent notification while the PWA is in the foreground that lets the user copy the current URL or other options.
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/iE1jwkZq1VWMJC8RZxJs.png", alt="An Android notification rendered by Chrome showing some actions over the current active PWA.", width="730", height="428" %} 
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/iE1jwkZq1VWMJC8RZxJs.png", alt="An Android notification rendered by Chrome showing some actions over the current active PWA.", width="730", height="428" %}
 
 ### Minimal user interface
 
-This mode is available for Progressive Web Apps on Android and desktop operating systems. 
+This mode is available for Progressive Web Apps on Android and desktop operating systems.
 When you use it, the browser rendering your PWA will show a minimal user interface to help the user navigate within the application.
 
 On Android, you will get a title bar that renders the current `<title>` element and the origin with a small drop-down menu available. On desktop, you will get a set of buttons in the title bar to help with navigation, including a back button and a control that swaps between a stop and a reload action, based on the current loading status.
@@ -114,7 +113,7 @@ Safari on iOS and iPadOS doesn't support Minimal UI mode for PWAs. Instead, a br
 
 ## Optimizing design for desktop
 
-When you design a Progressive Web App to work on a desktop, 
+When you design a Progressive Web App to work on a desktop,
 you need to think about the endless possibilities for window size as compared to being in the browser's tab or as an app in a mobile operating system.
 
 In [Chapter 3](/learn/pwa/foundations/), we mentioned mini-mode: a desktop app can be as small as 200 by 100 pixels. This window will use the `<title>` element's content in your HTML as the title of the window. That content is also rendered when you **alt-tab**"** between apps and in other places.
@@ -137,7 +136,7 @@ Remember that CSS only defines styles for the content of the PWA; later in this 
 
 The first [media query](/learn/design/media-queries/) that you can take advantage of in your PWA is the `display-mode` property accepting the values `browser`, `standalone`, `minimal-ui`, or `fullscreen`.
 
-This media query applies different styles to each mode. 
+This media query applies different styles to each mode.
 For example, you could render an [installation invitation](/learn/pwa/installation/) only when in browser mode, or render one particular piece of information only when the user uses your app from the system icon. This might include adding a back button to use when your app launches in standalone mode.
 
 ```css
@@ -180,7 +179,7 @@ User selection is a vital feature of every web app for usability and accessibili
 
 ### Accent color
 
-In your PWA, you can define a color to match your brand within HTML form controls using the property [`accent-color`](/accent-color/). 
+In your PWA, you can define a color to match your brand within HTML form controls using the property [`accent-color`](/accent-color/).
 
 ### System fonts
 
@@ -188,9 +187,9 @@ If you want an element, like dialogs or messages, to match the user's default pl
 
 ```css
 selector {
-  font-family: -apple-system, BlinkMacSystemFont, 
-    "Segoe UI", system-ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    "Helvetica Neue", sans-serif; 
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", system-ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
 }
 ```
 
@@ -214,7 +213,7 @@ Some devices do not have unobstructed rectangular screens; instead, their screen
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/hKWqUXIbvvH05WHQEccm.png", alt="At top, a notch-based device in landscape with a standard viewport showing unrendered areas at the sides; at bottom, a device with full viewport access thanks to viewport-fit=cover.", width="800", height="1006" %}
 
-If you want full access to the screen, even the invisible area, to render your color or image, include `viewport-fit=cover` in the content of your `<meta name="viewport">` tag. Then use the `safe-area-inset-*` environment variables to extend your content safely into those areas. 
+If you want full access to the screen, even the invisible area, to render your color or image, include `viewport-fit=cover` in the content of your `<meta name="viewport">` tag. Then use the `safe-area-inset-*` environment variables to extend your content safely into those areas.
 
 {% Aside 'caution' %}
 When you apply `viewport-fit=cover`, remember that you can now render pixels behind rounded corners and notches, so you should always use safe margins or paddings for the critical content and interactive elements.
