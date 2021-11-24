@@ -12,7 +12,7 @@ This chapter focuses on some critical aspects of rendering content outside of th
 ## The window
 
 Different operating systems have different ideas about what an application window is.
-For example, on iPhones, an application always takes up 100% of the screen. On Android an iPads applications usually run fullscreen but it is possible to share the screen between two apps, but there is only one app instance open at a time.
+For example, on iPhones, an application always takes up 100% of the screen. On Android and iPads applications usually run fullscreen but it is possible to share the screen between two apps, however there is only one app instance open at a time.
 In contrast, on a desktop device, an application can have more than one instance open at a time.
 It shares the available screen real estate with all other open applications.
 Each application instance can be resized and positioned anywhere on the screen, even overlapping other applications.
