@@ -14,7 +14,9 @@
   }
 }
 
-.callout__title {
+/// We add the .callout because this often finds itself in contexts
+/// such as prose, so we need a quick specificity boost
+.callout .callout__title {
   --flow-space: #{get-space('base')};
   font-size: get-size('size-3');
 }
@@ -67,4 +69,9 @@
 
 .callout__branding {
   @include apply-utility('font', 'brand');
+
+  svg {
+    flex-shrink: 0;
+    transform: translateY(-0.2ex); // Optical adjustment
+  }
 }
