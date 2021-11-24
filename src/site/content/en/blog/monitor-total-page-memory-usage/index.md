@@ -12,7 +12,7 @@ hero: image/admin/Ne2U4cUtHG6bJ0YeIkt5.jpg
 alt: >
   Green RAM stick. Photo by Harrison Broadbent on Unsplash.
 origin_trial:
-    url: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
+  url: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 tags:
   - blog
   - memory
@@ -46,7 +46,7 @@ then the browser can safely reclaim the object. The difference between these
 two notions leads to memory leaks as illustrated by the following example.
 
 ```javascript
-const object = { a: new Array(1000), b: new Array(2000) };
+const object = {a: new Array(1000), b: new Array(2000)};
 setInterval(() => console.log(object.a), 1000);
 ```
 
@@ -82,7 +82,6 @@ garbage collection. This reduces the noise in the results, but it may take a
 while until the results are produced. Note that other browsers may decide to
 implement the new API without relying on garbage collection.
 
-
 ## Suggested use cases {: #use-cases }
 
 Memory usage of a web page depends on the timing of events, user actions, and
@@ -90,10 +89,10 @@ garbage collections. That is why the memory measurement API is intended for
 aggregating memory usage data from production. The results of individual calls
 are less useful. Example use cases:
 
-* Regression detection during rollout of a new version of the web page to catch new memory leaks.
-* A/B testing a new feature to evaluate its memory impact and detect memory leaks.
-* Correlating memory usage with session duration to verify presence or absence of memory leaks.
-* Correlating memory usage with user metrics to understand the overall impact of memory usage.
+- Regression detection during rollout of a new version of the web page to catch new memory leaks.
+- A/B testing a new feature to evaluate its memory impact and detect memory leaks.
+- Correlating memory usage with session duration to verify presence or absence of memory leaks.
+- Correlating memory usage with user metrics to understand the overall impact of memory usage.
 
 ## Browser compatibility {: #compatibility }
 
@@ -147,17 +146,6 @@ results for the same browser.
 To experiment with `performance.measureUserAgentSpecificMemory()` without an origin trial
 token, enable the `#experimental-web-platform-features` flag in `about://flags`.
 
-### Enabling support during the origin trial phase
-
-The `performance.measureUserAgentSpecificMemory()` API is available as an origin trial starting in
-Chrome 83. The origin trial is expected to end in Chrome 86, in early November 2020.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
 ### Feature detection
 
 The `performance.measureUserAgentSpecificMemory()` function may fail with a
@@ -174,9 +162,8 @@ if (performance.measureUserAgentSpecificMemory) {
   try {
     result = await performance.measureUserAgentSpecificMemory();
   } catch (error) {
-    if (error instanceof DOMException &&
-        error.name === "SecurityError") {
-      console.log("The context is not secure.");
+    if (error instanceof DOMException && error.name === 'SecurityError') {
+      console.log('The context is not secure.');
     } else {
       throw error;
     }
@@ -212,19 +199,24 @@ page load on the main window.
 ```javascript
 function scheduleMeasurement() {
   if (!performance.measureUserAgentSpecificMemory) {
-    console.log("performance.measureUserAgentSpecificMemory() is not available.");
+    console.log(
+      'performance.measureUserAgentSpecificMemory() is not available.',
+    );
     return;
   }
   const interval = measurementInterval();
-  console.log("Scheduling memory measurement in " +
-      Math.round(interval / 1000) + " seconds.");
+  console.log(
+    'Scheduling memory measurement in ' +
+      Math.round(interval / 1000) +
+      ' seconds.',
+  );
   setTimeout(performMeasurement, interval);
 }
 
 // Start measurements after page load on the main window.
 window.onload = function () {
   scheduleMeasurement();
-}
+};
 ```
 
 The `measurementInterval()` function computes a random interval in milliseconds
@@ -248,22 +240,22 @@ async function performMeasurement() {
   try {
     result = await performance.measureUserAgentSpecificMemory();
   } catch (error) {
-    if (error instanceof DOMException &&
-        error.name === "SecurityError") {
-      console.log("The context is not secure.");
+    if (error instanceof DOMException && error.name === 'SecurityError') {
+      console.log('The context is not secure.');
       return;
     }
     // Rethrow other errors.
     throw error;
   }
   // 2. Record the result.
-  console.log("Memory usage:", result);
+  console.log('Memory usage:', result);
   // 3. Schedule the next measurement.
   scheduleMeasurement();
 }
 ```
 
 The result may look as follows:
+
 ```javascript
 // Console output:
 {
@@ -353,13 +345,14 @@ where and how you're using it.
 
 ## Helpful links {: #helpful }
 
-* [Explainer][explainer]
-* [Demo][demo] | [Demo source][demo-source]
-* [Origin Trial][ot]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
+- [Explainer][explainer]
+- [Demo][demo] | [Demo source][demo-source]
+- [Origin Trial][ot]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
 
 ## Acknowledgements
+
 Big thanks to Domenic Denicola, Yoav Weiss, Mathias Bynens for API design reviews,
 and Dominik Inführ, Hannes Payer, Kentaro Hara, Michael Lippautz for code reviews
 in Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew

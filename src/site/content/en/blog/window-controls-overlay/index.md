@@ -76,7 +76,7 @@ To experiment with Window Controls Overlay locally, without an origin trial toke
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;93, Window Controls Overlay will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome&nbsp;95 (expected in November 10, 2021).
+The origin trial is expected to end in Chrome&nbsp;96 (expected in December 8, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -211,7 +211,7 @@ API on the `navigator.windowControlsOverlay` property.
 
 ```js
 if ('windowControlsOverlay' in navigator) {
-  const { x } = navigator.windowControlsOverlay.getBoundingClientRect();
+  const {x} = navigator.windowControlsOverlay.getBoundingClientRect();
   // Window controls are on the right (like on Windows).
   // Chrome menu is left of the window controls.
   // [ windowControlsOverlay___________________ […] [_] [■] [X] ]
