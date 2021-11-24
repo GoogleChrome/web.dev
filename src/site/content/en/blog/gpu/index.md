@@ -7,7 +7,7 @@ authors:
   - beaufortfrancois
   - cwallez
 date: 2021-08-26
-updated: 2021-11-05
+updated: 2021-11-24
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
@@ -121,6 +121,7 @@ WebGPU.
 - [WebGPU for Metal Developers, Part One]
 - [Learn what key data structures and types are needed to draw in WebGPU]
 - [WebGPU Explainer]
+- [WebGPU Best Practices]
 
 ## Browser support {: #browser-support }
 
@@ -217,6 +218,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [WebGPU for Metal Developers, Part One]: https://metalbyexample.com/webgpu-part-one/
 [Learn what key data structures and types are needed to draw in WebGPU]: https://alain.xyz/blog/raw-webgpu
 [WebGPU Explainer]: https://gpuweb.github.io/gpuweb/explainer/
+[WebGPU Best Practices]: https://toji.github.io/webgpu-best-practices/
 [Origin Trial Caveats document]: https://hackmd.io/QcdsK_g7RVKRCIIBqgs5Hw
 [Safari]: https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/
 [Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
