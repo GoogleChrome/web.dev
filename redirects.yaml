@@ -214,7 +214,7 @@ redirects:
   - source: /image-size-responsive
     destination: /image-aspect-ratio
 
-# Redirect for misconfigured Lighthouse report
+  # Redirect for misconfigured Lighthouse report
 
   # Redirects for Handbook refactors
 
@@ -292,6 +292,10 @@ redirects:
     destination: https://developer.chrome.com/blog/origin-trials/
   - source: /third-party-origin-trials/
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
+  - source: /conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /using-conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
 
   # Redirect for Aurora
   - source: /aurora
