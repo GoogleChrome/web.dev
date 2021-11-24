@@ -1,0 +1,10 @@
+/// WIDE CARD INDEX
+/// A little helper composition that lets cards grow wide in an
+/// auto grid at larger viewports
+@include media-query('md') {
+  .wide-card-index {
+    .auto-grid {
+      --auto-grid-min-item-size: 22rem;
+    }
+  }
+}
