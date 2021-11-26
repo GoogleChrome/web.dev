@@ -365,7 +365,7 @@ header since version 69 for a variety of uses including COEP and COOP.
 {% Aside %}
 
 Are you already using the Reporting API with the `Report-To` header? Chrome is
-transitioning to a new version of the Reporting API, which replaces `Report-to` with
+transitioning to a new version of the Reporting API, which replaces `Report-To` with
 `Reporting-Endpoints`; consider migrating to the new version. Check out
 [Migrate to Reporting API v1](/reporting-api-migration) for details.
 
