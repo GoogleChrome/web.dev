@@ -17,7 +17,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-11-22
+updated: 2021-11-26
 tags:
   - blog
   - security
@@ -358,9 +358,8 @@ isolated.
 The [Reporting API](/reporting-api) is another mechanism through which you can
 detect various issues. You can configure the Reporting API to instruct your
 users' browser to send a report whenever COEP blocks the loading of a resource
-or COOP isolates a pop-up window. Chrome has supported the
-[`Report-To`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
-header since version 69 for a variety of uses including COEP and COOP.
+or COOP isolates a pop-up window. Chrome has supported the Reporting API since
+version 69 for a variety of uses including COEP and COOP.
 
 {% Aside %}
 
@@ -371,8 +370,9 @@ transitioning to a new version of the Reporting API, which replaces `Report-To` 
 
 {% endAside %}
 
-To learn how to set up a server to receive reports, see [Decide where reports should
-be sent](/reporting-api/#decide-where-reports-should-be-sent).
+To learn how to configure the Reporting API and set up a server to receive
+reports, head over to [Using the Reporting
+API](/reporting-api/#using-the-reporting-api).
 
 #### Example COEP report
 
