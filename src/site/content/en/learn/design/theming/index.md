@@ -300,6 +300,7 @@ html {
     accent-color: pink;
   }
 }
+```
 
 It makes sense to use a custom property for this so you can keep all your color declarations in one place.
 
