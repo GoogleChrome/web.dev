@@ -140,7 +140,7 @@ The web is not print, but we can learn lessons from the world of print and apply
 
 In his classic book [*The Elements of Typographic Style*](http://webtypography.net/2.1.2), Robert Bringhurst had this to say on line length (or measure):
 
-> Anything from 45 to 75 characters is widely regarded as a satisfactory line lengthfor a single-column page set in a serifed text face in a text size. The 66-character line (counting both letters and spaces) is widely regarded as ideal. For multiple column work, a better average is 40 to 50 characters.
+> Anything from 45 to 75 characters is widely regarded as a satisfactory line length for a single-column page set in a serifed text face in a text size. The 66-character line (counting both letters and spaces) is widely regarded as ideal. For multiple column work, a better average is 40 to 50 characters.
 
 You can't set a line length directly in CSS. There is no `line-length` property. But you can stop text from getting too wide by limiting how wide the container can be. The [`max-inline-size`](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) property is perfect for this.
 
