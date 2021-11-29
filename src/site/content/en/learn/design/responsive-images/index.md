@@ -270,7 +270,7 @@ This means that the biggest image won't necessarily be used for the widest scree
 
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/MkUAq5XQyjlUXLvkT4jL.mp4", controls=true, loop=true %}
 
-## Pixel density descriptor
+### Pixel density descriptor
 
 There's another situation where you might want to provide multiple versions of the same image.
 
