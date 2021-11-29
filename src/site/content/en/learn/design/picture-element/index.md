@@ -61,7 +61,7 @@ As well as switching between image formats, you can switch between image sizes. 
 </picture>
 ```
 
-Here you're telling the browser that if the viewport width is wider than `64em` it must use the large image. Between `40em` and `75em` the browser must use the medium image. Below `40em` the browser must use the small image.
+Here you're telling the browser that if the viewport width is wider than `75em` it must use the large image. Between `40em` and `75em` the browser must use the medium image. Below `40em` the browser must use the small image.
 
 {% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/tXME65OZikEMwvPAEgX2.mp4", controls=true, loop=true %}
 
@@ -91,8 +91,6 @@ In that example you're still telling the browser what to do at different breakpo
 ## Cropping
 
 If you only need to serve differently sized versions of the same image, `srcset` is your best option. But if an image doesn't look good at smaller sizes, you can try making a cropped version of the image instead.
-
-{% Video src="video/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/WZLJGIUHqlP1j9s9aJaj.mp4", controls=true, loop=true %}
 
 The different images might have different width and height ratios to suit their context better. For example, on a mobile browser you may want to serve a crop that's narrow and tall, whereas on a desktop browser, you might want to serve a crop that's wide and short.
 
