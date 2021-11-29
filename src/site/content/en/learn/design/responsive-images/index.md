@@ -228,7 +228,7 @@ The browser won't download the larger images unless they're needed. That saves b
 
 ### Sizes
 
-If you're using the width descriptor, you must also use the [`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes) attribute to give the browser more information. This tells the browser what size you expect the image to be displayed under different conditions. Those conditions are specified in a media query.
+If you're using the width descriptor, you must also use the [`sizes`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-sizes) attribute to give the browser more information. This tells the browser what size you expect the image to be displayed under different conditions. Those conditions are specified in a media query.
 
 The `sizes` attribute takes a comma-separated list of media queries and image widths.
 
