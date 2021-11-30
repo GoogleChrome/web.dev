@@ -2,7 +2,7 @@
 layout: post
 title: How Terra improved user engagement thanks to Dark Mode
 subhead: |
-  By displaying a dark theme to users that prefer dark mode on their devices, Terra reduced the bounce rate by 60% and increased pages read per session by 170%.
+  By displaying a dark theme to users that prefer dark mode on their devices, Terra reduced the bounce rate by 60% and increased the pages read per session by 170%.
 description: |
   In this article, we'll analyze Terra's journey from identifying the size of the "dark mode" cohort, to applying a custom dark theme, and finally measuring the impact of this implementation on their main KPIs.
 authors:
@@ -19,7 +19,7 @@ tags:
   - css
 ---
 
-Terra, one of Brazil's largest media companies with 75 million monthly users, reduced the bounce rate by 60% and increased pages read per session by 170% on desktop for users that prefer dark mode by providing a custom dark theme.
+Terra, one of Brazil's largest media companies with 75 million monthly users, reduced the bounce rate by 60% and increased the pages read per session by 170% on desktop for users that prefer dark mode by providing a custom dark theme.
 
 In this article, we'll analyze Terra's journey from identifying the size of the "dark mode" cohort, to applying a custom dark theme, and finally measuring the impact of this implementation on their main KPIs.
 
