@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-09-24
+updated: 2021-11-30
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -112,7 +112,7 @@ updated once a decision has been reached. For more background on the tradeoffs, 
 [Explainer](https://github.com/WICG/storage-foundation-api-explainer#sync-vs-async). {% endAside %}
 
 - `storageFoundation.open(name)`: Opens the file with the given name if it exists and otherwise
-  creates a new file. Returns a promise that resolves with the the opened file.
+  creates a new file. Returns a promise that resolves with the opened file.
 
 {% Aside 'warning' %} File names are restricted to lowercase alphanumeric characters and underscore
 (`a-z`, `0-9`, `_`). {% endAside %}
@@ -165,7 +165,7 @@ faster, less reliable variant would be useful. {% endAside %}
   bytes.
 - `NativeIOFile.read(buffer, offset)`: Reads the contents of the file at the given offset through a
   buffer that is the result of transferring the given buffer, which is then left detached. Returns a
-  `NativeIOReadResult` with the transferred buffer and the the number of bytes that were
+  `NativeIOReadResult` with the transferred buffer and the number of bytes that were
   successfully read.
 
   A `NativeIOReadResult` is an object that consists of two entries:
