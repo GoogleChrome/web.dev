@@ -12,8 +12,6 @@ alt: A pressure gauge and pipes.
 tags:
   - blog
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/1838594547874004993
 ---
 
 {% Aside %}
@@ -233,28 +231,17 @@ will display an ongoing readout of your device's CPU utilization and speed.
 
 <div class="w-table-wrapper">
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete](https://github.com/oyiptong/compute-pressure/blob/main/README.md)    |
-| 2. Create initial draft of specification | [In Progress](https://github.com/WICG/compute-pressure/)      |
-| 3. Gather feedback & iterate on design   | In progress |
-| 4. **Origin trial**                      | [In progress](#ot)    |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                                                                       |
+| ---------------------------------------- | ---------------------------------------------------------------------------- |
+| 1. Create explainer                      | [Complete](https://github.com/oyiptong/compute-pressure/blob/main/README.md) |
+| 2. Create initial draft of specification | [In Progress](https://github.com/WICG/compute-pressure/)                     |
+| 3. Gather feedback and iterate on design   | In progress                                                                  |
+| 4. Origin trial                          | Complete                                                                     |
+| 5. Launch                                | Not started                                                                  |
 
 </div>
 
 ## API Availability
-
-### Enabling support during the origin trial phase {: #ot }
-
-Starting in Chrome 92, the Compute Pressure API can be used as part of an origin
-trial.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Enabling via about://flags
 

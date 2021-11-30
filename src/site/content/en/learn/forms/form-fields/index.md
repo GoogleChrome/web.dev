@@ -97,7 +97,7 @@ different validation rules, and more. Let's see how to change the type.
 
 By using `type="checkbox"` the browser now renders a checkbox instead of a text field.
 The checkbox also comes with additional attributes.
-You can set the `selected` attribute, to show it as selected.
+You can set the `checked` attribute, to show it as checked.
 
 {% Aside %}
 The default value for `type` is `text`. This means that if you simply want a text `<input>`, you can 

@@ -59,7 +59,7 @@ there's a corresponding logical property. Where once we had `margin-left` now we
 In a language like English where text flows from left to right, 
 `inline-start` corresponds to "left" and `inline-end` corresponds to "right".
 
-Likewise, in a language like Japanese where the text is written from top to bottom, 
+Likewise, in a language like English where the text is written from top to bottom, 
 `block-start` corresponds to "top" and `block-end` corresponds to "bottom."
 
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/9EcUvMxy9T10EzY4U95b.webp", 
