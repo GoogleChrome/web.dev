@@ -228,7 +228,7 @@ To experiment with the Storage Foundation API locally, without an origin trial t
 ### Enabling support during the origin trial phase
 
 Starting in Chromium&nbsp;90, the Storage Foundation API is available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;95 (November 10, 2021).
+Chromium. The origin trial is expected to end in Chromium&nbsp;98 (February 23, 2022).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -377,6 +377,5 @@ Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on
 [cr-status]: https://chromestatus.com/feature/5670244905385984
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EStorage
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot]: https://developer.chrome.com/origintrials/#/view_trial/2916080758722396161
