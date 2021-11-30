@@ -235,7 +235,7 @@ will display an ongoing readout of your device's CPU utilization and speed.
 | ---------------------------------------- | ---------------------------------------------------------------------------- |
 | 1. Create explainer                      | [Complete](https://github.com/oyiptong/compute-pressure/blob/main/README.md) |
 | 2. Create initial draft of specification | [In Progress](https://github.com/WICG/compute-pressure/)                     |
-| 3. Gather feedback & iterate on design   | In progress                                                                  |
+| 3. Gather feedback and iterate on design   | In progress                                                                  |
 | 4. Origin trial                          | Complete                                                                     |
 | 5. Launch                                | Not started                                                                  |
 
