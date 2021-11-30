@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How Terra improved user engagement thanks to Dark Mode
 subhead: |
   By displaying a dark theme to users that prefer dark mode on their devices, Terra reduced the bounce rate by 60% and pages read per session by 170%.
@@ -23,26 +23,26 @@ Terra, one of Brazil's largest media companies with 75 million monthly users, re
 
 In this article, we'll analyze Terra's journey from identifying the size of the "dark mode" cohort, to applying a custom dark theme, and finally measuring the impact of this implementation on their main KPIs.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">60<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Reduction in Bounce Rates</p>
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">60<sub>%</sub></p>
+    <p>Reduction in Bounce Rates</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">170<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">More pages per session</p>
+  <div class="stats__item">
+    <p class="stats__figure">170<sub>%</sub></p>
+    <p>More pages per session</p>
   </div>
-</div>
+</ul>
 
 ## What is dark mode?
 
 Historically user interfaces in devices are displayed in "light mode", which usually means displaying black text on top of light interfaces. The alternative is "dark mode", with light text on a dark background, such as gray or black.
 
-Dark Mode has [benefits](https://web.dev/prefers-color-scheme/#why-dark-mode) for user experience. Some people prefer it for aesthetic or accessibility reasons. It has  other advantages, such as preserving battery life in devices. Users can express that they prefer dark mode via a setting in their devices, [which depends on the operating system](https://web.dev/prefers-color-scheme/#activating-dark-mode-in-the-operating-system). For example, the following screenshot shows what the **Dark Theme** configuration option looks like in devices that run **Android Q**:
+Dark Mode has [benefits](/prefers-color-scheme/#why-dark-mode) for user experience. Some people prefer it for aesthetic or accessibility reasons. It has  other advantages, such as preserving battery life in devices. Users can express that they prefer dark mode via a setting in their devices, [which depends on the operating system](/prefers-color-scheme/#activating-dark-mode-in-the-operating-system). For example, the following screenshot shows what the **Dark Theme** configuration option looks like in devices that run **Android Q**:
 
-<figure class="w-figure">
-  {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings", width="218", height="250" %}
-  <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
+<figure>
+  {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings.", width="218", height="250" %}
+  <figcaption>Android&nbsp;Q dark theme settings.</figcaption>
 </figure>
 
 To offer a better experience to users who prefer "dark mode", you can use the [`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) media query, with a value of `light` or `dark`. This media query reflects the user's choice in their device. You can then load a [custom dark theme](https://web.dev/prefers-color-scheme/#dark-mode-in-practice) for those that prefer dark. For example, by loading a "dark" CSS file, and changing values such as font and background colors. The following code shows an example of that:
@@ -60,7 +60,7 @@ To offer a better experience to users who prefer "dark mode", you can use the [`
 {% BrowserCompat 'css.at-rules.media.prefers-color-scheme' %}
 
 {% Aside %}
-This article will only cover the technique of applying a custom dark theme, provided by the developer. Chrome 96 has introduced an [origin trial](https://developer.chrome.com/blog/auto-dark-theme/#sign-up-for-the-origin-trial) for "Auto Dark Themes" on Android, for which the browser applies an automatically generated dark theme to light themed sites, when the user has opted into dark themes in the operating system, without requiring the developer to provide styles for it. For more information about &"Chrome Auto Dark Mode", check out [this article](https://developer.chrome.com/blog/auto-dark-theme/).
+This article will only cover the technique of applying a custom dark theme, provided by the developer. Chrome 96 has introduced an [origin trial](https://developer.chrome.com/blog/auto-dark-theme/#sign-up-for-the-origin-trial) for "Auto Dark Themes" on Android, for which the browser applies an automatically generated dark theme to light themed sites, when the user has opted into dark themes in the operating system, without requiring the developer to provide styles for it. For more information about "Chrome Auto Dark Mode", check out [this article](https://developer.chrome.com/blog/auto-dark-theme/).
 {% endAside %}
 
 ## Identifying the "prefers light" vs "dark" user cohorts
@@ -110,23 +110,23 @@ Most websites implement a dark theme by using the simple strategy shown previous
 
 Terra decided to give more control to the user: when they detect that they have the "prefer dark" setting turned on in their devices (via the media query), they show them a prompt to ask them if they want to navigate in "night mode". As long as the user doesn't deny the prompt (by clicking on the "Ignore" button), they honor the user's OS-setting, and apply a custom dark theme:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/TRqfCAmBe025456JyX1b.png", alt="Screenshot of Terra's light theme prompting the user to accept dark mode.", width="266", height="146" %}
-  <figcaption class="w-figcaption">Terra shows a prompt to the user asking if they want to navigate in dark mode after detecting that they prefer dark in their devices.</figcaption>
+  <figcaption>Terra shows a prompt to the user asking if they want to navigate in dark mode after detecting that they prefer dark in their devices.</figcaption>
 </figure>
 
-As a complement of this strategy they provide additional configuration options in the "settings" screen, where the user can decide if they explicitly prefer "light", "dark" or just rely on the underlying device settings:
+As a complement of this strategy they provide additional configuration options in the "settings" screen, where the user can decide if they explicitly prefer "light", "dark", or want to rely on the underlying device settings.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/B7g0uvq2QB0eWVjnuMAl.png", alt="Screenshots of Terra's configuration screen to opt in and out of dark mode.", width="480", height="417" %}
-  <figcaption class="w-figcaption">Terra's themes configurations allow users to choose between "Dark" and "Light" themes or rely on the device's settings.</figcaption>
+  <figcaption>Terra's themes configurations allow users to choose between "Dark" and "Light" themes or rely on the device's settings.</figcaption>
 </figure>
 
 This is how Terra's "Night Mode" looks like:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/QRW06FYeMghUI8obAQWC.png", alt="Screenshot of Terra's dark theme.", width="286", height="468" %}
-  <figcaption class="w-figcaption">Therra's dark theme, "Night Mode".</figcaption>
+  <figcaption>Terra's dark theme, "Night Mode".</figcaption>
 </figure>
 
 {% Aside %}
@@ -141,27 +141,31 @@ Here are the results for mobile (Android) and desktop (Windows):
 {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/eKI3Hj1ZXh2WxNPTOoay.png", alt="Terra stats after applying a dark theme showing how bounce rates and pages per session improved for users that prefer dark.", width="800", height="438" %}
 
 
-- **Mobile (Android):** While bounce rates remained similar, pages and sessions almost doubled (from 2.47 to 5.24) when users were exposed to a dark theme.
+### Mobile (Android
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">2<sub class="w-stat__sub">X</sub></p>
-    <p class="w-stat__desc">More pages per session</p>
-  </div>
-</div>
+While bounce rates remained similar, pages and sessions almost doubled (from 2.47 to 5.24) when users were exposed to a dark theme.
 
-- **Desktop (Windows):** Both metrics improved when showing a dark theme: bounce rates went from 27.25% to 10.82% and pages per session almost tripled (from 3.7 to 9.99).
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">2<sub>X</sub></p>
+    <p>More pages per session</p>
+  </div>
+</ul>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">60<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Reduction in Bounce Rates</p>
+### Desktop (Windows)
+
+Both metrics improved when showing a dark theme: bounce rates went from 27.25% to 10.82% and pages per session almost tripled (from 3.7 to 9.99).
+
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats_figure"><sub>60%</sub></p>
+    <p>Reduction in Bounce Rates</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">170<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">More pages per session</p>
+  <div class="stats__item">
+    <p class="stats__figure">170<sub>%</sub></p>
+    <p>More pages per session</p>
   </div>
-</div>
+</ul>
 
 Based on this data, Terra could confirm the benefits for the users from implementing a dark theme, and has decided to continue maintaining it as a core feature of the site.
 
