@@ -96,9 +96,61 @@ Terra implemented this code in their site and compared the behavior of both grou
 Knowing this can inform decisions, for example: if it's necessary to provide a custom dark theme.
 These are the results Terra obtained after testing for 14 days:
 
-{% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/GgIQwi6dGOQKHFSPc6Mp.png", alt="Terra stats before applying a dark theme showing worse bounce rates and pages per session for users that prefer dark.", width="800", height="438" %}
+### Mobile (Android)
 
-Mobile (Android) stats didn't show big differences between the groups, but in the case of desktop (Windows), the group of users that preferred "dark" stayed much less on the site: they had almost **twice the bounce rate and read a little more than half of the pages** than those users that preferred "light".
+In the case of mobile (Android) the numbers for bounce rate and pages per session didn't show big differences between the users that prefer "light", compared to those that prefer "dark":
+
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Display Mode</th>
+        <th>Bounce Rate</th>
+        <th>Pages Per Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prefers Light</td>
+        <td>25.84%</td>
+        <td>3.96</td>
+      </tr>
+      <tr>
+        <td>Prefers Dark</td>
+        <td>26.10%</td>
+        <td>3.75</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Desktop (Windows)
+
+In the case of desktop (Windows), the group of users that preferred "dark" stayed much less on the site: they had almost **twice the bounce rate and read a little more than half of the pages** than those users that preferred "light":
+
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Display Mode</th>
+        <th>Bounce Rate</th>
+        <th>Pages Per Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prefers Light</td>
+        <td>13.20%</td>
+        <td>7.42</td>
+      </tr>
+      <tr>
+        <td>Prefers Dark</td>
+        <td>24.12%</td>
+        <td>4.68</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Based on this data, Terra hypothesized that users who prefer "dark" stay less in desktop devices, due to the lack of support of a dark theme in their site.
 
@@ -138,12 +190,33 @@ We have used mobile screenshots for simplicity, but Terra has applied the same s
 To measure the impact of the dark theme, Terra took the group of users that have the "Prefer Dark" setting turned on in their devices and compared engagement metrics when showing a "Light" vs. a "DarK" theme.
 Here are the results for mobile (Android) and desktop (Windows):
 
-{% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/eKI3Hj1ZXh2WxNPTOoay.png", alt="Terra stats after applying a dark theme showing how bounce rates and pages per session improved for users that prefer dark.", width="800", height="438" %}
+### Mobile (Android)
 
+While bounce rates remained similar, pages and sessions almost doubled (from 2.47 to 5.24) when users were exposed to a dark theme:
 
-### Mobile (Android
-
-While bounce rates remained similar, pages and sessions almost doubled (from 2.47 to 5.24) when users were exposed to a dark theme.
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Display Mode</th>
+        <th>Bounce Rate</th>
+        <th>Pages Per Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prefers Light</td>
+        <td>26.91%</td>
+        <td>2.47</td>
+      </tr>
+      <tr>
+        <td>Prefers Dark</td>
+        <td>23.91%</td>
+        <td>5.24</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <ul class="stats">
   <div class="stats__item">
@@ -155,6 +228,30 @@ While bounce rates remained similar, pages and sessions almost doubled (from 2.4
 ### Desktop (Windows)
 
 Both metrics improved when showing a dark theme: bounce rates went from 27.25% to 10.82% and pages per session almost tripled (from 3.7 to 9.99).
+
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Display Mode</th>
+        <th>Bounce Rate</th>
+        <th>Pages Per Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prefers Light</td>
+        <td>27.5%</td>
+        <td>3.7</td>
+      </tr>
+      <tr>
+        <td>Prefers Dark</td>
+        <td>10.82%</td>
+        <td>9.99</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <ul class="stats">
   <div class="stats__item">
