@@ -15,7 +15,7 @@
         <a class="feature-card" href="{{ item.url }}" data-theme="{{ item.theme }}">
           <span class="feature-card__eyebrow">{{ item.eyebrow }}</span>
           <h3 class="{{ 'visually-hidden' if item.hiddenTitle else 'feature-card__title' }}">{{ item.title }}</h3>
-          <img class="feature-card__background" loading="lazy" alt="" aria-hidden="true" src="{{ item.background }}" />
+          <img class="feature-card__background" alt="" aria-hidden="true" src="{{ item.background }}" />
         </a>
         {% endfor %}
       </div>
