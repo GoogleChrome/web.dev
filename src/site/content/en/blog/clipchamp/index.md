@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Clipchamp's video editor PWA installs see a 97% monthly growth
 subhead: >
   How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
@@ -18,18 +19,18 @@ authors:
   - sorenbalko
 ---
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">97<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Monthly growth in PWA installations</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">97<sub>%</sub></p>
+    <p>Monthly growth in PWA installations</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">2.3<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">Performance improvement</p>
+  <div class="stats__item">
+    <p class="stats__figure">2.3<sub>x</sub></p>
+    <p>Performance improvement</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">9<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher retention in PWA users</p>
+  <div class="stats__item">
+    <p class="stats__figure">9<sub>%</sub></p>
+    <p>Higher retention in PWA users</p>
   </div>
 </div>
 
@@ -126,9 +127,9 @@ Installation of the PWA has been massive, increasing at a rate of 97% a month
 since we launched five months ago. And, as mentioned before, the WebAssembly
 SIMD enhancements improved performance 2.3x.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MR7YUGQ4r99r3oG4w0Jx.png", alt="June 2020: ~1K installs. July 2020: ~5K installs. August 2020: ~12K installs. September 2020: ~20K installs. October 2020: ~30K installs.", width="800", height="266", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MR7YUGQ4r99r3oG4w0Jx.png", alt="June 2020: ~1K installs. July 2020: ~5K installs. August 2020: ~12K installs. September 2020: ~20K installs. October 2020: ~30K installs.", width="800", height="266" %}
+  <figcaption>
     Clipchamp PWA installs over the last 6 months.
   </figcaption>
 </figure>

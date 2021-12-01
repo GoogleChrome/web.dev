@@ -1,4 +1,5 @@
 ---
+layout: post
 title: How committing to Core Web Vitals increased Netzwelt's advertising revenues by 18%
 subhead: The relaunched website also sees ad viewability of over 75%, bounce rates reduced by 50%, and page views up by 27%.
 authors:
@@ -26,18 +27,18 @@ for optimizing engagement and ad revenues hand in hand,
 with page views up by 27%, ad viewability over 75%, and advertising revenues improving by 18%.
 
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">27<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in page views</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">27<sub>%</sub></p>
+    <p>Increase in page views</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">18<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in ad revenue</p>
+  <div class="stats__item">
+    <p class="stats__figure">18<sub>%</sub></p>
+    <p>Increase in ad revenue</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">75<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Ad viewability</p>
+  <div class="stats__item">
+    <p class="stats__figure">75<sub>%</sub></p>
+    <p>Ad viewability</p>
   </div>
 </div>
 
@@ -215,7 +216,7 @@ to avoid additional latencies and layout shifts during future navigation.
 The results of Netzwelt's optimizations speak for themselves.
 Their PageSpeed Insights score is unrivaled within news publishers worldwide:
 
-<figure class="w-figure w-screenshot">
+<figure>
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/ErZNqWVYCAkOmEu1r7pd.png",
 alt="Screenshot of PageSpeed Insights for the Netzwelt.de site, showing a score of 100.",

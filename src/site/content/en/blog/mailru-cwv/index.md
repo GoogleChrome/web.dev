@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Improving Core Web Vitals on the Mail.ru home page resulted in an average 10% increase in conversion rates
 subhead: |
   Several months of work to improve Core Web Vitals on the home page of Mail.ru resulted in a 60% increase in the 75th percentile in Cumulative Layout Shift (CLS), boosting average session time by 2.7% and conversion rates of core sections by more than 10%.
@@ -42,7 +42,7 @@ Our metrics collection script was modified to collect Core Web Vitals and transm
 
 The dashboard displayed the following metrics for users (mean values for the week of 15-21 March 2021):
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -94,7 +94,7 @@ The dashboard displayed the following metrics for users (mean values for the wee
   </table>
 </div>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ZL7y3ZCpbMcqlOv9mLpV.png", alt="Core Web Vitals before optimization show roughly 1/3 of users in the poor bucket.", width="800", height="479" %}
   <figcaption>Web Vitals values before the improvements.</figcaption>
 </figure>
@@ -130,12 +130,12 @@ After implementing SSR, the team discovered the cause of CLS regression that ini
 
 Although Chrome's DevTools showed Layout Shift events, we couldn't find the reason for it at first. Though SSR itself wasn't the problem, it helped in discovering the solution later on. Fixing the code responsible for the painting delay improved layout stability of the news component.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Active JavaScript just shows an empty page in the news section, hidding the layout jumps.", width="800", height="443", class="w-screenshot" %}
   <figcaption>Finding the news painting problem with JavaScript disabled.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448", class="w-screenshot" %}
   <figcaption>Fixing the news painting problem with JavaScript disabled.</figcaption>
 </figure>
@@ -214,7 +214,7 @@ After the optimization effort, we observed the mean values for the week of 24-30
   </table>
 </div>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7FIE2St8w6EEowUIqV9K.png", alt="All metrics in the good bucket improved by at least 1%. CLS even by 60%.", width="800", height="376" %}
   <figcaption>Comparison of Web Vitals before and after (change in 'good' group is shown in brackets).</figcaption>
 </figure>
@@ -226,52 +226,52 @@ The graphs below show changes in web page performance metrics values according t
 
 The decrease in values from May 1 to May 10 is due to May holidays in Russia.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/8wq9d0uj3EJp5vK6kI49.png", alt="LCP from March to 1 June 2021 showing small improvments over time.", width="800", height="344" %}
   <figcaption>LCP graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/bxANzHIw78TvdS1RFyWG.png", alt="FID from 16 March to 1 June 2021 showing tiny improvements on a high level.", width="800", height="345" %}
   <figcaption>FID graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7woJXpiHLZU3l7PCdspi.png", alt="CLS from 16 March to 1 June 2021 showing huge improvements starting at April 23rd.", width="800", height="344" %}
   <figcaption>CLS graph in 'Platform': 16 March to 1 June 2021.</figcaption>
 </figure>
 
 Results obtained using the "Platform" are in line with the growth of metric values in [Chrome UX Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/41Czys52EyEMyYv3fI2w.png", alt="LCP metric from CrUX showing increase from 51% to 58% in the good bucket.", width="800", height="499" %}
   <figcaption>LCP metric change in CrUX in 2021.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/c8LWvsC52Q58uvKOIZXc.png", alt="FID metric from CrUX showing slight improvment in FID from 91% to 93% in good bucket.", width="800", height="498" %}
   <figcaption>FID metric change in CrUX in 2021.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/ilAn6vKt93uh4ioqGKj1.png", alt="CLS metric in CrUX showing hugh improvements from 46% to 98% in the good bucket.", width="800", height="492" %}
   <figcaption>CLS metric change in CrUX in 2021.</figcaption>
 </figure>
 
 A comparison of mean user session duration values a week before the roll-out of initial improvements and a week after the roll-out shows 2.7% growth. Moreover, there is an overall significant increase in conversion in most sections of the page. In particular, conversions to the Mail.ru email app increased by 11.6%, the conversion of the news section increased by 13.5%.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">181<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Boost of share of good CLS threshold</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">181<sub>%</sub></p>
+    <p>Boost of share of good CLS threshold</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">2.7<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher mean session duration</p>
+  <div class="stats__item">
+    <p class="stats__figure">2.7<sub>%</sub></p>
+    <p>Higher mean session duration</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13.5<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase of news section conversion rate</p>
+  <div class="stats__item">
+    <p class="stats__figure">13.5<sub>%</sub></p>
+    <p>Increase of news section conversion rate</p>
   </div>
 </div>
 

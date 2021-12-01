@@ -98,9 +98,9 @@ the load abandonment rate on product detail pages dropped 76%, from 3.8% to
 0.9%:
 
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2lMYiXdjh5aLr4UIMVJF.png", alt="A graph showing load abandonment rate decrease of 76% on the product details page after performance optimizations.", width="800", height="461" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Load abandonment rate trend on product detail page.
   </figcaption>
 </figure>
