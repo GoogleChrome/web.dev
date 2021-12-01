@@ -13,11 +13,11 @@ Cache storage is a powerful tool. It makes our apps less dependent on network co
 When installing platform-specific apps, the device stores the icon and other app assets in the operating system, in one step. For PWAs, the process has two separate steps. A PWA  can store assets on your device any time after the first visit in the browser, even without installation. Install is a separate action that is covered later in this course.
 {% endAside %}
 
-The Cache Storage API is available from different contexts: 
+The Cache Storage API is available from different contexts:
 
 - The window context (your PWA's main thread).
 - The service worker.
-- Any other workers you use. 
+- Any other workers you use.
 
 One advantage of managing your cache using service workers is that its lifecycle is not tied to the window, which means you are not blocking the main thread. But be aware that to use the Cache Storage API most of these contexts have to be under a TLS connection.
 
@@ -49,10 +49,10 @@ Your PWA should not render a browser's error message saying that the web renderi
 If you [publish your PWA to Google Play Store](https://chromeos.dev/en/publish/pwa-in-play), your PWA should never render an HTTP error message from the browser to avoid penalizations within the store listings. Check [Changes to Quality Criteria for PWAs]( https://blog.chromium.org/2020/06/changes-to-quality-criteria-for-pwas.html) for more information.
 {% endAside %}
 
-There are many different caching strategies you could use depending on the needs of your PWA. That's why it is important to design your cache usage to provide a fast and reliable experience. For example if all your app assets will download fast, don't consume a lot of space, and don't need to be updated in every request, caching all your assets would be a valid strategy. If on the other hand you have resources that need to be the latest version you might want to consider not caching those assets at all. 
+There are many different caching strategies you could use depending on the needs of your PWA. That's why it is important to design your cache usage to provide a fast and reliable experience. For example if all your app assets will download fast, don't consume a lot of space, and don't need to be updated in every request, caching all your assets would be a valid strategy. If on the other hand you have resources that need to be the latest version you might want to consider not caching those assets at all.
 
 {% Aside 'caution' %}
-The cache storage content and eviction rules are set per origin and not per PWA, since it's possible to have more than one in a single origin. If you share your origin for many PWAs, it's a good idea to add a prefix to your cache names to avoid collision problems between each PWA's data storage. 
+The cache storage content and eviction rules are set per origin and not per PWA, since it's possible to have more than one in a single origin. If you share your origin for many PWAs, it's a good idea to add a prefix to your cache names to avoid collision problems between each PWA's data storage.
 {% endAside %}
 
 ## Using the API
@@ -88,7 +88,7 @@ To download and store the assets, you must specify all the URLs explicitly. Othe
 
 ### When to cache
 
-In your PWA, you are in charge of deciding when to cache files. While one approach is to store as many assets as possible when the service worker is installed, it is usually not the best idea. Caching unnecessary resources wastes bandwidth and storage space and could cause your app to serve unintended outdated resources.  
+In your PWA, you are in charge of deciding when to cache files. While one approach is to store as many assets as possible when the service worker is installed, it is usually not the best idea. Caching unnecessary resources wastes bandwidth and storage space and could cause your app to serve unintended outdated resources.
 
 You don't need to cache all the assets at once, you can cache assets many times during the lifecycle of your PWA, such as:
 
@@ -97,13 +97,13 @@ You don't need to cache all the assets at once, you can cache assets many times 
 - When the user navigates to a section or route.
 - When the network is idle.
 
-You can request caching new files in the main thread or within the service worker context. 
+You can request caching new files in the main thread or within the service worker context.
 
 ### Caching assets in a service worker
 
-One of the most common scenarios is to cache a minimum set of assets when the service worker is installed. To do that, you can use the cache storage interface within the `install` event in the service worker. 
+One of the most common scenarios is to cache a minimum set of assets when the service worker is installed. To do that, you can use the cache storage interface within the `install` event in the service worker.
 
-Because the service worker thread can be stopped at any time, you can request the browser to wait for the `addAll` promise to finish to increase the opportunity of storing all the assets and keeping the app consistent. The following example demonstrates how to do this, using the  `waitUntil` method of the event argument received in the service worker event listener. 
+Because the service worker thread can be stopped at any time, you can request the browser to wait for the `addAll` promise to finish to increase the opportunity of storing all the assets and keeping the app consistent. The following example demonstrates how to do this, using the  `waitUntil` method of the event argument received in the service worker event listener.
 
 ```js/3,5
 const urlsToCache = ["/", "app.js", "styles.css", "logo.svg"];
@@ -134,7 +134,7 @@ self.addEventListener("install", (event) => {
 
 Your PWA can download and cache assets from your origin and cross-domains, such as content from third-party CDNs. With a cross-domain app, the cache interaction is very similar to same-origin requests, the request is executed and a copy of the response is stored in your cache. As with other cached assets it is only available to be used in your app's origin.
 
-The asset will be stored as an [opaque response](https://fetch.spec.whatwg.org/#concept-filtered-response-opaque), which means your code won't be able to see or modify the contents or headers of that response. Also, opaque responses don't expose their actual size in the storage API, affecting quotas. Some browsers expose large sizes, such as 7Mb no matter if the file is just 1Kb. 
+The asset will be stored as an [opaque response](https://fetch.spec.whatwg.org/#concept-filtered-response-opaque), which means your code won't be able to see or modify the contents or headers of that response. Also, opaque responses don't expose their actual size in the storage API, affecting quotas. Some browsers expose large sizes, such as 7Mb no matter if the file is just 1Kb.
 
 {% Aside 'caution' %}
 Remember that when you cache opaque responses from cross-domains, `cache.add` and `cache.addAll` will fail if those responses don't return with a 2xx status code. Therefore, if one CDN or cross-domain fails, all the assets you are downloading will be discarded, even successful downloads in the same operation.
@@ -142,7 +142,7 @@ Remember that when you cache opaque responses from cross-domains, `cache.add` an
 
 ### Updating and deleting assets
 
-You can update assets using `cache.put(request, response)` and delete assets with `delete(request)`. 
+You can update assets using `cache.put(request, response)` and delete assets with `delete(request)`.
 
 {% Aside 'caution' %}
 The Cache Storage API doesn't update your assets if you change them on your server nor does it delete assets. Your code should manage both situations, and for that, there are different design patterns. You'll learn about a library to help with these situations in the [Workbox chapter](/learn/pwa/workbox).
@@ -150,7 +150,7 @@ The Cache Storage API doesn't update your assets if you change them on your serv
 
 Check the [Cache object documentation](https://developer.mozilla.org/docs/Web/API/Cache) for more details.
 
-{% Glitch 'learn-pwa-service-worker-registration' %}
+{% Glitch 'learn-pwa-caching-assets' %}
 
 ## Debugging Cache Storage
 Many browsers offer a way to debug the contents of cache storage within the Application tab. There, you will be able to see the contents of every cache within your current origin. We'll cover more about these tools in the [Tools and Debug chapter](/learn/pwa/tools-and-debug/).

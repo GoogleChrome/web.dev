@@ -7,13 +7,13 @@ authors:
 date: 2021-12-03
 ---
 
-Users expect apps to start on slow or flaky network connections, or even when offline. 
+Users expect apps to start on slow or flaky network connections, or even when offline.
 They expect the content they've most recently interacted with, such as media tracks or tickets and itineraries, to be available and usable.
 When a request isn't possible, they expect to be told there's trouble instead of silently failing or crashing. And users wish to do it all quickly, as we can see in this study [Milliseconds make millions](/milliseconds-make-millions/), even a 0.1 second improvement in load times can improve conversion by up to 10%. In summary: users expect PWAs to be reliable and that's why we have service workers.
 
 ## Hello service workers
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/iKWO7c2WNobLt30VZx9C.png", 
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/iKWO7c2WNobLt30VZx9C.png",
 alt="A service worker as a middleware proxy, running device-side, between your PWA and servers, including your server and cross-domain servers.", width="800", height="354" %}
 
 When a request covered by the service worker's scope is made, including when a user is offline, the service worker intercepts the request, acting as a network proxy. It can then decide if it should serve the resource from the cache via the Cache Storage API, from the network as normally would happen without a service worker, or synthesize it from a local algorithm. Because of this, you can provide a similar experience to platform apps, including working entirely offline!
@@ -24,7 +24,7 @@ Not all browsers support service workers, and your service worker won't be avail
 
 ## Registering a service worker
 
-Before a service worker takes control of your page, it  must be registered for your PWA. That means the first time a user comes to your PWA, network requests will go directly to your server because the service worker is not yet in control of your pages. 
+Before a service worker takes control of your page, it  must be registered for your PWA. That means the first time a user comes to your PWA, network requests will go directly to your server because the service worker is not yet in control of your pages.
 
 After checking if the browser supports the Service Workers API, your PWA can register a service worker. When loaded, the service worker sets up shop between your PWA and the network, intercepting requests and serving the corresponding responses.
 
@@ -34,7 +34,7 @@ if ('serviceWorker' in navigator) {
 }
 ```
 
-{% Glitch 'learn-pwa-caching-assets' %}
+{% Glitch 'learn-pwa-service-worker-registration' %}
 
 {% Aside %}
 There is only one service worker per PWA, but that doesn't mean you need to place the code only in one file. A service worker can include other files using [`importScripts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) in every browser or using [ECMAScript module imports](/es-modules-in-sw/) in some modern browsers.
@@ -66,9 +66,9 @@ You can remotely inspect a phone or tablet from your desktop browser when you wa
 
 ### Scope
 
-The folder your service worker sits in determines its scope. A service worker that lives at `example.com/my-pwa/sw.js` can control any navigation at the *my-pwa* path or below, such as `example.com/my-pwa/demos/`. Service workers can only control items (pages, workers, collectively "clients") in their scope. Scope applies to browser tabs and PWA windows. 
+The folder your service worker sits in determines its scope. A service worker that lives at `example.com/my-pwa/sw.js` can control any navigation at the *my-pwa* path or below, such as `example.com/my-pwa/demos/`. Service workers can only control items (pages, workers, collectively "clients") in their scope. Scope applies to browser tabs and PWA windows.
 
-Only *one* service worker per scope is allowed. When active and running, only one instance typically is available no matter how many clients are in memory (such as PWA windows or browser tabs). 
+Only *one* service worker per scope is allowed. When active and running, only one instance typically is available no matter how many clients are in memory (such as PWA windows or browser tabs).
 
 {% Aside 'warning' %}
 You should set the scope of your service worker as close to the root of your app as possible. This is the most common setup as it gives the service worker the ability to intercept all the requests related to your PWA. Don't put it inside, for instance, a JavaScript folder or have it loaded from a CDN. {% endAside %}
@@ -104,14 +104,14 @@ self.addEventListener("activate", event => {
 
 ### Updating a service worker
 
-Service workers get updated when the browser detects that the service worker currently controlling the client and the live (from your server) version of the same file are byte-different. 
+Service workers get updated when the browser detects that the service worker currently controlling the client and the live (from your server) version of the same file are byte-different.
 
 {% Aside 'warning' %}
-When updating your service worker, do so without renaming it, including adding file hashes to the filename. Otherwise, the browser will never get the new version of your service worker! 
+When updating your service worker, do so without renaming it, including adding file hashes to the filename. Otherwise, the browser will never get the new version of your service worker!
 {% endAside %}
 
-After a successful installation, the new service worker will wait to activate until the existing (old) service worker no longer controls any clients. This state is called "waiting", and it's how the browser ensures that only one version of your service worker is running at a time. 
-Refreshing a page or reopening the PWA won't have the new service worker take effect. You need to close or navigate away from all tabs and windows using the current service worker and then navigate back for the new service worker to take control. 
+After a successful installation, the new service worker will wait to activate until the existing (old) service worker no longer controls any clients. This state is called "waiting", and it's how the browser ensures that only one version of your service worker is running at a time.
+Refreshing a page or reopening the PWA won't have the new service worker take effect. You need to close or navigate away from all tabs and windows using the current service worker and then navigate back for the new service worker to take control.
 Visit this [service worker lifecycle article](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) for more information.
 
 ## Service worker lifespan
