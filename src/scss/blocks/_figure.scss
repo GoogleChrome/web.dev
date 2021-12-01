@@ -1,0 +1,28 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/figure
+figure {
+  border: 1px solid var(--color-stroke);
+  padding: 1em;
+  border-radius: $global-radius-base;
+}
+
+figure[data-float="left"] {
+  max-width: calc(#{$global-prose-element-max-width} / 2);
+  float: left;
+  margin-right: 1em;
+}
+
+/// Keeps figures and embeds at a reasonable size and
+/// makes sure their content fills them
+figure,
+iframe {
+  max-width: $global-prose-element-max-width;
+
+  > * {
+    width: 100%;
+  }
+}
+
+figcaption {
+  max-width: 60ch;
+}
