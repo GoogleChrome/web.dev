@@ -51,7 +51,7 @@ questions:
       - rationale: |
           1. Use `background-clip: text`. [Check if the property is supported in the browsers you need to support](https://caniuse.com/background-clip-text).
           1. Use `background-image: url(/texture.jpg)`.
-          1. Use `-webkit-text-fill-color: transparent` or semi-transparent for the the background image to be seen within the text.
+          1. Use `-webkit-text-fill-color: transparent` or semi-transparent for the background image to be seen within the text.
 
 
   - type: multiple-choice
