@@ -1,6 +1,9 @@
-version: 1
+version: 2
 snapshot:
-  widths: [375, 865, 1280]
+  widths:
+    - 375
+    - 865
+    - 1280
   percy-css: |
     iframe {
       display: none !important;
@@ -11,8 +14,7 @@ snapshot:
     video {
       visibility: hidden !important;
     }
-agent:
-  asset-discovery:
-    network-idle-timeout: 250 # ms
-    page-pool-size-min: 5 # pages
-    page-pool-size-max: 20 # pages
+discovery:
+  network-idle-timeout: 250
+  disable-cache: true
+  concurrency: 20
