@@ -88,23 +88,21 @@ const renderAuthorImages = (limit, pairs, isDesignSystem) => {
   }
 
   if (isDesignSystem) {
-    return pairs
-      .map(({info}) => {
-        const img = Img({
-          src: info.image,
-          alt: info.title,
-          width: '40',
-          height: '40',
-          class: '',
-          params: {
-            fit: 'crop',
-            h: '40',
-            w: '40',
-          },
-        });
-        return html` <a class="avatar" href="${info.href}">${img}</a> `;
-      })
-      .reverse();
+    return pairs.map(({info}) => {
+      const img = Img({
+        src: info.image,
+        alt: info.title,
+        width: '40',
+        height: '40',
+        class: '',
+        params: {
+          fit: 'crop',
+          h: '40',
+          w: '40',
+        },
+      });
+      return html` <a class="avatar" href="${info.href}">${img}</a> `;
+    });
   }
 
   /// DELETE BELOW THIS LINE
