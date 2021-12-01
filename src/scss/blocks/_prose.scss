@@ -50,27 +50,6 @@
     --flow-space: #{get-space('size-1')};
   }
 
-  /// Keeps figures and embeds at a reasonable size and
-  /// makes sure their content fills them
-  figure,
-  iframe {
-    max-width: $global-prose-element-max-width;
-
-    > * {
-      width: 100%;
-    }
-  }
-
-  figure {
-    border: 1px solid var(--color-stroke);
-    padding: 1em;
-    border-radius: $global-radius-base;
-  }
-
-  figcaption {
-    max-width: 60ch;
-  }
-
   ul > li {
     @extend .flow;
 
