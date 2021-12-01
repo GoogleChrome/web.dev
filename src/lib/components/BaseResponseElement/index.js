@@ -178,10 +178,12 @@ export class BaseResponseElement extends BaseElement {
    * @param {HTMLElement} option HTML ELement to scroll to.
    */
   scrollToOption(option) {
-    const {top, height} = option.getBoundingClientRect();
-
+    const paddingTop = parseFloat(
+      window.getComputedStyle(option, null).getPropertyValue('padding-top'),
+    );
     this.parentElement.scrollTo({
-      top: top - height * 2.5,
+      // Deduct offset of parent from top from element's offset and add padding.
+      top: option.offsetTop - this.parentElement.offsetTop - paddingTop,
       left: 0,
       behavior: 'smooth',
     });
