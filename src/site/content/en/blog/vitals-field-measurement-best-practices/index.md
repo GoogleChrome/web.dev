@@ -73,7 +73,7 @@ function sendToAnalytics({name, value, id}) {
   const body = JSON.stringify({name, value, id});
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
-    fetch('/analytics', {body, method: 'POST', keepalive: true});
+      fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
 getCLS(sendToAnalytics);
