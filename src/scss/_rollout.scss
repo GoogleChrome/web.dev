@@ -20,17 +20,9 @@ web-response-mc {
 /// These overly specific selectors are unfortunately going to have to
 /// stay until we can either: rip the CSS out of the web components or
 /// get into the web component CSS safely and refactor
-.web-assessment__lockup,
-web-tabs .web-tabs__tab[aria-selected='true'] {
-  color: #{get-utility-value('color', 'state-good-text')} !important;
-}
-
-web-tabs .web-tabs__tab[aria-selected='true']::after {
-  background: #{get-utility-value('color', 'state-good-text')} !important;
-}
 
 .web-question__content {
-  padding: $global-gutter !important;
+  padding: $global-gutter;
 
   [data-role='stimulus'] {
     @extend .flow;

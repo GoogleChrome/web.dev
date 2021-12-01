@@ -17,7 +17,6 @@
 import {html} from 'lit-element';
 import {render} from 'lit-html';
 import {BaseModalElement} from '../BaseModalElement';
-import './_styles.scss';
 
 /**
  * Element that renders a self-assessment callout.
@@ -64,10 +63,8 @@ export class Assessment extends BaseModalElement {
     }
 
     return html`
-      <div class="w-callout__header web-assessment__header">
-        <h2 class="w-callout__lockup web-assessment__lockup">
-          Check your understanding
-        </h2>
+      <div class="web-assessment__header">
+        <h2 class="web-assessment__lockup">Check your understanding</h2>
         ${this.setLeader}
         <button
           @click="${this.onCloseClick}"
@@ -127,13 +124,9 @@ export class Assessment extends BaseModalElement {
   renderLauncher() {
     const launcher = document.createElement('div');
     const contentTemplate = (setLeader) => html`
-      <div class="w-callout__header web-assessment__header">
-        <h2 class="w-callout__lockup web-assessment__lockup">
-          Check your understanding
-        </h2>
-        <div class="w-callout__blurb web-assessment__set-leader">
-          ${setLeader}
-        </div>
+      <div class="web-assessment__header">
+        <h2 class="web-assessment__lockup">Check your understanding</h2>
+        <div class="web-assessment__set-leader">${setLeader}</div>
       </div>
       <button
         @click="${this.onOpenClick}"
