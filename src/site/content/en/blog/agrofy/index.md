@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Agrofy: A 70% improvement in LCP correlated to a 76% reduction in load abandonment"
 subhead: By using real user monitoring tools and focusing on improving Core Web Vitals in refactoring their app, they also improved CLS by 72%, as well as application responsiveness.
 authors:
@@ -25,14 +26,14 @@ the [Core Web Vitals](/vitals/#core-web-vitals). These
 performance optimizations led to a 70% improvement in LCP, which correlated to a
 76% reduction in load abandonment (from 3.8% to 0.9%).
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">70<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower LCP</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">70<sub>%</sub></p>
+    <p>Lower LCP</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">76<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower load abandonment</p>
+  <div class="stats__item">
+    <p class="stats__figure">76<sub>%</sub></p>
+    <p>Lower load abandonment</p>
   </div>
 </div>
 
