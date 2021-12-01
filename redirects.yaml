@@ -304,3 +304,7 @@ redirects:
   # Design system
   - source: /design-system/component/action
     destination: /design-system/component/fab
+
+  # web.dev LIVE 2020 event
+  - source: /live
+    destination: /shows/web-dev-live-day-1

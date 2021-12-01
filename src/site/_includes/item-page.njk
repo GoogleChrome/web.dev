@@ -36,7 +36,7 @@ eleventyComputed:
         {% endif %}
 
         <h1 class="headline__title">{{ renderData.title or title }}</h1>
-        <p>{{ renderData.description | safe or description | safe }}</p>
+        <p>{{ renderData.description | md | safe or description | md | safe }}</p>
 
         <div class="cluster flex-justify-center">
           {% if paged.homepage %}
