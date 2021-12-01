@@ -47,7 +47,7 @@ In the early days of tinkering with the web, one simply was the "webmaster" and 
 
 Attending conferences such as [Fronteers Conference](https://fronteers.nl/congres) and [CSS Day](https://cssday.nl/) helped me to write in-depth frontend posts. For example, seeing [Tab Atkins-Bittner talk about CSS Custom Properties in 2013](https://vimeo.com/69531455)—years before they even were an official thing—or [you (Rachel Andrew) explaining Grid to us in 2015](https://rachelandrew.co.uk/archives/2015/07/17/css-grid-layout-at-css-day/) were events that directly led me to write about them. At the time, I was a lecturer in web and mobile development at a technical university, so I had a very good reason to pay attention, as later on I'd be teaching my own students about those subjects.
 
-In 2019 I started to closely monitor the CSSWG and [participate in discussions](https://github.com/w3c/csswg-drafts/issues). Browsers working on features behind feature flags meant that I was able to experiment with the things I read about, even before they shipped. This was then reflected through the contents of my blog.
+In 2019, I started to closely monitor the CSSWG and [participate in discussions](https://github.com/w3c/csswg-drafts/issues). Browsers working on features behind feature flags meant that I was able to experiment with the things I read about, even before they shipped. This was then reflected through the contents of my blog.
 
 ## Advice for new writers
 
