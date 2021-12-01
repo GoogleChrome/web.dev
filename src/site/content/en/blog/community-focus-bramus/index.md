@@ -10,7 +10,7 @@ date: 2021-12-04
 
 _This post is part of [Designcember](https://designcember.com/). A celebration of web design, brought to you by web.dev._
 
-Bramus Van Damme is a web developer from Belgium. From the moment he discovered [view-source](https://www.bram.us/#view-source) at the age of 14 (way back in 1997), he fell in love with the web and has been tinkering with it ever since. Bramus has written a number of recent posts about new features coming to CSS. I caught up with him to learn about his journey in web development, and to find out what he thinks is exciting in CSS today.
+Bramus Van Damme is a web developer from Belgium. From the moment he discovered [`view-source`](https://www.bram.us/#view-source) at the age of 14 (way back in 1997), he fell in love with the web and has been tinkering with it ever since. Bramus has written a number of recent posts about new features coming to CSS. I caught up with him to learn about his journey in web development, and to find out what he thinks is exciting in CSS today.
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/6tkSbZYOqxtgJM9s5ovw.jpg", alt="Bramus on stage in from of a large screen showing slides.", width="800", height="533" %}
