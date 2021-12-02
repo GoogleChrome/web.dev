@@ -16,7 +16,7 @@ When a request isn't possible, they expect the app to tell them instead of silen
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/iKWO7c2WNobLt30VZx9C.png",
 alt="A service worker as a middleware proxy, running device-side, between your PWA and servers, which includes both your own servers and cross-domain servers.", width="800", height="354" %}
 
-When an app requests a resource covered by the service worker's scope, including when a user is offline, the service worker intercepts the request, acting as a network proxy. It can then decide if it should serve the resource from the cache via the Cache Storage API, from the network as normally would happen without a service worker, or synthesize it from a local algorithm. This lets you provide a similar experience to that provided by a platform app. It can even work entirely off line.
+When an app requests a resource covered by the service worker's scope, including when a user is offline, the service worker intercepts the request, acting as a network proxy. It can then decide if it should serve the resource from the cache via the Cache Storage API, from the network as normally would happen without a service worker, or create it from a local algorithm. This lets you provide a similar experience to that provided by a platform app. It can even work entirely off line.
 
 {% Aside 'gotchas' %}
 Not all browsers support service workers. Even when present your service worker won't be available on first load or while it's waiting to activate. Therefore, treat it as optional and do not require it for core functionality.
