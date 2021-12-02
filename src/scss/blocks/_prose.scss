@@ -6,10 +6,7 @@
 
   --flow-space: #{get-space('size-1')};
 
-  > * {
-    margin-inline: auto;
-    max-width: $global-prose-element-max-width;
-  }
+  max-width: $global-prose-element-max-width;
 
   p:empty {
     display: none;

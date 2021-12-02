@@ -6,18 +6,25 @@ figure {
   border-radius: $global-radius-base;
 }
 
-figure[data-float="left"] {
+figure[data-float] {
   max-width: calc(#{$global-prose-element-max-width} / 2);
+  margin-bottom: var(--flow-space, 1em);
+}
+
+figure[data-float="left"] {
   float: left;
-  margin-right: 1em;
+  margin-right: var(--flow-space, 1em);
+}
+
+figure[data-float="right"] {
+  float: right;
+  margin-left: var(--flow-space, 1em);
 }
 
 /// Keeps figures and embeds at a reasonable size and
 /// makes sure their content fills them
 figure,
 iframe {
-  max-width: $global-prose-element-max-width;
-
   > * {
     width: 100%;
   }
