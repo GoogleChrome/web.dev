@@ -1,7 +1,7 @@
 ---
 title: Service workers
 description: >
-  Service workers are a fundamental part of a PWA and they allow capabilities such as fast loading regardless of the network, offline access, push notifications, and more.
+  Service workers are a fundamental part of a PWA. They enable fast loading (regardless of the network), offline access, push notifications, and other capabilities.
 authors:
   - firt
 date: 2021-12-03
