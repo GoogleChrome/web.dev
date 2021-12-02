@@ -62,9 +62,6 @@ const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist
 const authors = require('./src/site/_collections/authors');
 const blogPostsDescending = require('./src/site/_collections/blog-posts-descending');
 const newsletters = require('./src/site/_collections/newsletters');
-const {
-  postsWithLighthouse,
-} = require('./src/site/_collections/posts-with-lighthouse');
 const shows = require('./src/site/_collections/shows');
 const tags = require('./src/site/_collections/tags');
 
@@ -148,7 +145,6 @@ module.exports = function (config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
-  config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('shows', shows);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
