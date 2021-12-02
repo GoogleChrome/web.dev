@@ -116,7 +116,7 @@ Visit this [service worker lifecycle article](https://developers.google.com/web/
 
 ## Service worker lifespan
 
-Once installed and registered, a service worker can manage all network requests within its scope. It runs on its  own thread, with activation and termination controlled by the browser. This lets it work even before or after your PWA is open! While service workers run on their own thread, there is no guarantee that in-memory state will persist between runs of a service worker, so make sure anything you want to reuse on each run is available either in IndexedDB or some other persistent storage.
+Once installed and registered, a service worker can manage all network requests within its scope. It runs on its  own thread, with activation and termination controlled by the browser. This lets it work even before or after your PWA is open. While service workers run on their own thread, there is no guarantee that in-memory state will persist between runs of a service worker, so make sure anything you want to reuse on each run is available either in IndexedDB or some other persistent storage.
 
 If not already running, a service worker will start whenever a network request in its scope is asked for, or when a triggering event, like periodic background sync or a push message, is received.
 
