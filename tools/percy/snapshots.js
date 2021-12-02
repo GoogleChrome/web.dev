@@ -75,23 +75,6 @@ const pagesToTest = [
   },
 ];
 
-async function waitForNavUpdate(pageToTest, page) {
-  try {
-    pageToTest.navPage &&
-      (await page.waitFor(
-        (url) => {
-          const activeLink = document.querySelector('a[active=""]');
-
-          return activeLink && activeLink.getAttribute('href') === url;
-        },
-        {polling: 15, timeout: 5000},
-        pageToTest.url,
-      ));
-  } catch (err) {
-    console.log(`Couldn't find active link for ${pageToTest.url}`);
-  }
-}
-
 // A script to navigate our app and take snapshots with Percy.
 (async () => {
   const browser = await puppeteer.launch({
@@ -104,8 +87,6 @@ async function waitForNavUpdate(pageToTest, page) {
     const url = new URL(pageToTest.url, 'http://localhost:8080').href;
     await page.goto(url, {waitUntil: 'networkidle0'});
     await page.evaluate(scrollToBottom);
-    // Wait for the SPA to update the active link in the top nav.
-    await waitForNavUpdate(pageToTest, page);
     await percySnapshot(page, `${pageToTest.name}`);
     await page.close();
   }
