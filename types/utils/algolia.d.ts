@@ -30,6 +30,7 @@ declare global {
      * ID of item used to update existing entry.
      */
     objectID: string;
+    priority: number;
     tags: string[];
     /**
      * Title of a post.
