@@ -97,3 +97,6 @@ designing-in-the-browser:
     pt: 'O design no navegador explora a interseção entre design e o desenvolvimento front-end, ensinando você a construir belas interfaces do usuário de acordo com os mais modernos padrões da web.'
     ru: 'Шоу «Дизайн в браузере» рассматривает проблемы на пересечении дизайна и фронтенд-разработки и учит создавать красивые интерфейсы с использованием современных веб-стандартов.'
     zh: '《在浏览器中进行设计》探索了设计和前端开发的交叉点，会教您如何构建符合现代网络标准的美观界面。'
+
+all_episodes:
+  en: 'Back to all episodes'
