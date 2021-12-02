@@ -55,15 +55,14 @@ const chunkAlgolia = (arr) => {
   let tempSizeInBytes = 0;
   let temp = [];
   for (const arrItem of arr) {
-    const current = trimBytes(arrItem);
-    const currentSizeInBytes = byteof(current);
+    const currentSizeInBytes = byteof(arrItem);
 
     if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
-      temp.push(current);
+      temp.push(arrItem);
       tempSizeInBytes += currentSizeInBytes;
     } else {
       chunked.push(temp);
-      temp = [current];
+      temp = [arrItem];
       tempSizeInBytes = currentSizeInBytes;
     }
   }
@@ -73,11 +72,6 @@ const chunkAlgolia = (arr) => {
 
 async function index() {
   const indexedOn = new Date();
-
-  if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
-    console.warn('Missing Algolia environment variables, skipping indexing.');
-    return;
-  }
 
   const raw = fs.readFileSync('dist/pages.json', 'utf-8');
   /** @type {AlgoliaItem[]} */
@@ -105,49 +99,58 @@ async function index() {
       item.locales = [item.locale];
     }
     item.indexedOn = indexedOn.getTime();
-    return item;
+    return trimBytes(item);
   });
 
-  const chunkedAlgoliaData = chunkAlgolia(algoliaData);
-  const postsCount = algoliaData.length;
+  // This exports the parsed data for a test
+  if (process.env.ELEVENTY_ENV === 'test') {
+    if (!fs.existsSync('.tmp')) {
+      fs.mkdirSync('.tmp');
+    }
+    fs.writeFileSync('.tmp/algolia.json', JSON.stringify(algoliaData));
+    // If it's not a test then check if anv keys are there
+  } else if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
+    console.warn('Missing Algolia environment variables, skipping indexing.');
+    // Ok, not a test, we got the keys, DO IT!
+  } else {
+    const chunkedAlgoliaData = chunkAlgolia(algoliaData);
+    const postsCount = algoliaData.length;
 
-  // @ts-ignore
-  const client = algoliasearch(
-    process.env.ALGOLIA_APP_ID,
-    process.env.ALGOLIA_API_KEY,
-  );
-  const index = client.initIndex('prod_web_dev');
+    // @ts-ignore
+    const client = algoliasearch(
+      process.env.ALGOLIA_APP_ID,
+      process.env.ALGOLIA_API_KEY,
+    );
+    const index = client.initIndex('prod_web_dev');
 
-  console.log(
-    `Indexing ${postsCount} articles amongst ${chunkedAlgoliaData.length} chunk(s).`,
-  );
+    console.log(
+      `Indexing ${postsCount} articles amongst ${chunkedAlgoliaData.length} chunk(s).`,
+    );
 
-  // When indexing data we mark these two fields as fields that can be filtered by.
-  await index.setSettings({
-    searchableAttributes: ['title', 'content', 'description'],
-    attributesForFaceting: ['locales', 'tags'],
-    customRanking: ['desc(priority)'],
-  });
-
-  // Update algolia index with new data
-  for (let i = 0; i < chunkedAlgoliaData.length; i++) {
-    await index.saveObjects(chunkedAlgoliaData[i], {
-      autoGenerateObjectIDIfNotExist: true,
+    // When indexing data we mark these two fields as fields that can be filtered by.
+    await index.setSettings({
+      searchableAttributes: ['title', 'content', 'description'],
+      attributesForFaceting: ['locales', 'tags'],
+      customRanking: ['desc(priority)'],
     });
+
+    // Update algolia index with new data
+    for (let i = 0; i < chunkedAlgoliaData.length; i++) {
+      await index.saveObjects(chunkedAlgoliaData[i], {
+        autoGenerateObjectIDIfNotExist: true,
+      });
+    }
+
+    console.log('Updated algolia data.');
+
+    console.log('Deleting old data no longer in algolia.json.');
+    await index.deleteBy({
+      filters: `indexedOn < ${indexedOn.getTime()}`,
+    });
+    console.log('Deleted old data.');
   }
-
-  console.log('Updated algolia data.');
-
-  console.log('Deleting old data no longer in algolia.json.');
-  await index.deleteBy({
-    filters: `indexedOn < ${indexedOn.getTime()}`,
-  });
-  console.log('Deleted old data.');
 
   console.log('Done!');
 }
 
-index().catch((err) => {
-  console.error(err);
-  throw err;
-});
+module.exports = {index, maxItemSizeInBytes};
