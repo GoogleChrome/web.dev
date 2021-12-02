@@ -27,7 +27,7 @@ The first question you may have about caching is what to cache. While there is n
 
 That should include:
 
-- The main entry point HTML (your app's start_url).
+- The main page HTML (your app's start_url).
 - Key CSS stylesheets.
 - Images from the user interface.
 - JavaScript files you need to render the user interface.
