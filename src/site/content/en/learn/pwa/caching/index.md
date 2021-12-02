@@ -19,7 +19,7 @@ The Cache Storage API is available from different contexts:
 - The service worker.
 - Any other workers you use.
 
-One advantage of managing your cache using service workers is that its lifecycle is not tied to the window, which means you are not blocking the main thread. But be aware that to use the Cache Storage API most of these contexts have to be under a TLS connection.
+One advantage of managing your cache using service workers is that its lifecycle is not tied to the window, which means you are not blocking the main thread. Be aware that to use the Cache Storage API most of these contexts have to be under a TLS connection.
 
 ## What to cache
 
