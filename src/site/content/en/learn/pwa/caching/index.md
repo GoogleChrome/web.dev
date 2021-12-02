@@ -32,7 +32,7 @@ That should include:
 - Images from the user interface.
 - JavaScript files you need to render the user interface.
 - Data you need to render a basic experience, such as a JSON file.
-- Web Fonts.
+- Web fonts.
 - On a multi-page application, other HTML documents that you want to serve fast or while offline.
 
 {% Aside 'warning' %}
