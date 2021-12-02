@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Vodafone: A 31% improvement in LCP increased sales by 8%"
 subhead: >
   By running an A/B test specifically focused on optimizing Web Vitals,
@@ -31,22 +32,22 @@ score in the
 than version B), Vodafone determined that optimizing for Web Vitals generated 8%
 more sales.
 
-<div class="w-stats">
- <div class="w-stat">
-   <p class="w-stat__figure">31<sub class="w-stat__sub">%</sub></p>
-   <p class="w-stat__desc">A 31% improvement in LCP led to…</p>
+<div class="stats">
+ <div class="stats__item">
+   <p class="stats__figure">31<sub>%</sub></p>
+   <p>A 31% improvement in LCP led to…</p>
  </div>
- <div class="w-stat">
-   <p class="w-stat__figure"><sub class="w-stat__sub">+</sub>8<sub class="w-stat__sub">%</sub></p>
-   <p class="w-stat__desc">Increase in total sales</p>
+ <div class="stats__item">
+   <p class="stats__figure"><sub>+</sub>8<sub>%</sub></p>
+   <p>Increase in total sales</p>
  </div>
- <div class="w-stat">
-   <p class="w-stat__figure"><sub class="w-stat__sub">+</sub>15<sub class="w-stat__sub">%</sub></p>
-   <p class="w-stat__desc">Uplift in the lead to visit rate</p>
+ <div class="stats__item">
+   <p class="stats__figure"><sub>+</sub>15<sub>%</sub></p>
+   <p>Uplift in the lead to visit rate</p>
  </div>
- <div class="w-stat">
-   <p class="w-stat__figure"><sub class="w-stat__sub">+</sub>11<sub class="w-stat__sub">%</sub></p>
-   <p class="w-stat__desc">Uplift in the cart to visit rate</p>
+ <div class="stats__item">
+   <p class="stats__figure"><sub>+</sub>11<sub>%</sub></p>
+   <p>Uplift in the cart to visit rate</p>
  </div>
 </div>
 
@@ -56,7 +57,7 @@ Vodafone knew that faster websites generally correlate to improved business metr
 interested in optimizing their Web Vitals scores as a potential strategy for increasing sales, but
 they needed to determine exactly what kind of ROI they would get.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/3OKAembHLoX5QAdP1vya.png", alt="Two screenshots of the Vodafone website.", width="800", height="751" %}
   <figcaption>
     Some example screenshots of Vodafone's website. Note that these are <b>not</b> version
@@ -95,7 +96,7 @@ Vodafone made the following changes on the optimized page (version A):
 
 ## Overall business results {: #results }
 
-<div class="w-columns">
+<div class="switcher">
   <div>
     <p>
       After optimizing version A for Web Vitals and comparing it to the
@@ -113,7 +114,7 @@ Vodafone made the following changes on the optimized page (version A):
       </li>
     </ul>
   </div>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/ADfHPOlQ19oaiuRrzmWZ.png", alt="An illustration that reiterates the business results.", width="800", height="1175" %}
   </figure>
 </div>

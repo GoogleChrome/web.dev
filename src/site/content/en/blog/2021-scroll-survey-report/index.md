@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 2021 Scroll Survey Report
 subhead: Get the 2021 Scroll Survey Report plus words from the Chrome team about how this impacts priorities and plans for Chromium and the web.
 authors:
@@ -46,10 +46,10 @@ encountering.
 
 <small>Question 27</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">45<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">45<sub>%</sub></p>
+    <p>
       are <b>somewhat</b> or <b>extremely dissatisfied overall</b> <br>
       with <b>web scrolling</b>.
     </p>
@@ -68,10 +68,10 @@ This metric needs to be changed; it's a clear signal there's work to be done.
 
 <small>Question 2</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">43<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">43<sub>%</sub></p>
+    <p>
       reported it's <b>somewhat</b> or <br>
       <b>extremely difficult <br>
       to  work with scrolling</b>.
@@ -97,10 +97,10 @@ keyboard, and gamepads, make all of these things harder.
 
 <small>Question 3</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">51<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">51<sub>%</sub></p>
+    <p>
       report <b>touch interactions</b> as <br>
       <b>very</b> or <b>extremely important</b> <br>
       to their work.
@@ -119,10 +119,10 @@ high-quality touch interaction.
 
 <small>Question 5a</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">44<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">44<sub>%</sub></p>
+    <p>
       report <b>somewhat</b> or <b>extremely difficult</b> <br>
       to do <b>gamepad</b> and <b>tab navigation</b>.
     </p>
@@ -138,10 +138,10 @@ somewhat or extremely difficult to include these inputs.
 
 <small>Question 9</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">50<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">50<sub>%</sub></p>
+    <p>
       report <b>learning</b> about <br>
       <b>`touch-action: manipulation`</b> <br>
       from the survey.
@@ -159,17 +159,17 @@ interact within scroll.
 
 <small>Question 27</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">58<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">58<sub>%</sub></p>
+    <p>
       report <b>sometimes, often</b> or on <b>every project</b> <br>
       using <b>cyclical scrolling</b>.
     </p>
   </div>
 </div>
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/xLwqQ6xGBIdI0uxFx566.mp4",
     autoplay="true",
@@ -177,7 +177,7 @@ interact within scroll.
     width="380",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     The video shows cyclical seconds scrolling, <br>
     after 60 seconds it begins at 0 again.
   </figcaption>
@@ -193,17 +193,17 @@ offer cyclical scrolling.
 
 <small>Question 2</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">55<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">55<sub>%</sub></p>
+    <p>
       <b>very</b> or <br>
       <b>extremely important</b>
     </p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">16<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+  <div class="stats__item">
+    <p class="stats__figure">16<sub>%</sub></p>
+    <p>
       report <b>not at all</b> <br>
       or <b>slightly important</b>
     </p>
@@ -217,16 +217,16 @@ giving another signal about the struggles required to deliver high-quality scrol
 
 <small>Question 20</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">87<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">87<sub>%</sub></p>
+    <p>
       <b>have used</b> carousels.
     </p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">24<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+  <div class="stats__item">
+    <p class="stats__figure">24<sub>%</sub></p>
+    <p>
       report they're <br>
       <b>easy</b> to manage.
     </p>
@@ -241,17 +241,17 @@ research, but this statistic surprised us, as it doesn't sound very solved.
 
 <small>Question 22</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">65<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">65<sub>%</sub></p>
+    <p>
       use it <b>sometimes</b> <br>
       to <b>every project</b>
     </p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">60<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+  <div class="stats__item">
+    <p class="stats__figure">60<sub>%</sub></p>
+    <p>
       <b>somewhat</b> or <br>
       <b>extremely difficult</b>.
     </p>
@@ -271,17 +271,17 @@ UX.
 
 <small>Question 24</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">47<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">47<sub>%</sub></p>
+    <p>
       use it <b>sometimes</b><br>
       to <b>every project</b>
     </p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">56<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+  <div class="stats__item">
+    <p class="stats__figure">56<sub>%</sub></p>
+    <p>
       report <b>somewhat</b> or <br>
       <b>extremely difficult</b>
     </p>
@@ -295,17 +295,17 @@ respondents find it difficult, once again linking high usage with difficulty.
 
 <small>Question 26</small>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">32<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">32<sub>%</sub></p>
+    <p>
       <b>always</b> or <br>
       <b>most of the time</b>
     </p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">50<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">
+  <div class="stats__item">
+    <p class="stats__figure">50<sub>%</sub></p>
+    <p>
       <b>sometimes</b>
     </p>
   </div>

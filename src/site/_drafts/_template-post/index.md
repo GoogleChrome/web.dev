@@ -486,18 +486,18 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">30<sub>%</sub></p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">13<sub>%</sub></p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">4<sub>x</sub></p>
+    <p>Faster load times</p>
   </div>
 </div>
 
