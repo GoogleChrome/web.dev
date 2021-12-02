@@ -31,7 +31,7 @@ Those resources should include:
 - Key CSS stylesheets.
 - Images used in the user interface.
 - JavaScript files required to render the user interface.
-- Data, such as a JSON file, that you need to render a basic experience.
+- Data, such as a JSON file, required to render a basic experience.
 - Web fonts.
 - On a multi-page application, other HTML documents that you want to serve fast or while offline.
 
