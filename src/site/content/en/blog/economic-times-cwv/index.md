@@ -128,7 +128,7 @@ Before beginning the optimization project, the team benchmarked their CLS score 
 
 ## What is First Input Delay (FID) and how did we improve it?
 
-[First Input Delay](https://web.dev/fid/) is the metric that tracks a website's responsiveness to user input. The primary cause of a poor FID score is heavy javascript work that keeps the browser's main thread busy, which can delay user interactions. We improved FID in the following ways.
+[First Input Delay](/fid/) is the metric that tracks a website's responsiveness to user input. The primary cause of a poor FID score is heavy javascript work that keeps the browser's main thread busy, which can delay user interactions. We improved FID in the following ways.
 
 ### Break up long Javascript tasks
 
