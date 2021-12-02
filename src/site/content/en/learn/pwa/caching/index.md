@@ -1,7 +1,7 @@
 ---
 title: Caching
 description: >
-  With the Cache Storage API, you can ask the browser to download, store, delete or update assets on the device. The engine can then serve these assets on the device without needing a network request.
+  You can use the Cache Storage API to download, store, delete or update assets on the device. Then these assets can be served on the device without needing a network request.
 authors:
   - firt
 date: 2021-12-03
