@@ -29,7 +29,7 @@ Those resources should include:
 
 - The main page HTML (your app's start_url).
 - Key CSS stylesheets.
-- Images from the user interface.
+- Images used in the user interface.
 - JavaScript files required to render the user interface.
 - Data, such as a JSON file, that you need to render a basic experience.
 - Web fonts.
