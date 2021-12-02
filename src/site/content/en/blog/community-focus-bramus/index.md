@@ -1,16 +1,22 @@
 ---
 layout: post
-title: 'Community focus: Bramus Van Damme'
+title: 'Community highlight: Bramus Van Damme'
 authors: 
   - rachelandrew
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/kKhOZkehYIQ49GQOXrsw.png
+alt: 'Designcember'
+thumbnail: image/kheDArv5csY6rvQUJDbWRscckLr1/qRLa7xFsolDUbEfyugoW.png
+subhead: >
+  Bramus Van Damme is a web developer from Belgium. From the moment he discovered view-source at the age of 14 (way back in 1997), he fell in love with the web and has been tinkering with it ever since. I caught up with him to learn about his journey in web development, and to find out what he thinks is exciting in CSS today.
 description: >
   'One of a series of interviews with people from the web development community who are doing interesting things with CSS. This time I speak to prolific writer Bramus Van Damme.'
 date: 2021-12-04
+tags:
+  - blog
+  - css
 ---
 
 _This post is part of [Designcember](https://designcember.com/). A celebration of web design, brought to you by web.dev._
-
-Bramus Van Damme is a web developer from Belgium. From the moment he discovered [`view-source`](https://www.bram.us/#view-source) at the age of 14 (way back in 1997), he fell in love with the web and has been tinkering with it ever since. Bramus has written a number of recent posts about new features coming to CSS. I caught up with him to learn about his journey in web development, and to find out what he thinks is exciting in CSS today.
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/6tkSbZYOqxtgJM9s5ovw.jpg", alt="Bramus on stage in from of a large screen showing slides.", width="800", height="533" %}
@@ -29,7 +35,7 @@ and [Container Relative Lengths](https://www.bram.us/2021/09/21/css-container-qu
 
 When we got a computer at home—an unusual device to own in the 1990s—I soon traded in the physical toys with computer games. I wasn't an avid gamer though; I don't think I ever finished a game entirely. Instead of finishing the games, I found myself modding them. 
 
-In 1997, while looking up information about those games and tools, I also discovered `view-source`. Curious to know how things were built, I started collecting HTML-snippets of the sites that I visited. Combining those snippets with Frontpage Express (an application that came with Internet Explorer 4 and 5), I soon created my very first web pages with info about myself. Those pages never got published, they only existed on one of the floppy disks I carried around.
+In 1997, while looking up information about those games and tools, I also discovered [`view-source`](https://www.bram.us/#view-source). Curious to know how things were built, I started collecting HTML-snippets of the sites that I visited. Combining those snippets with Frontpage Express (an application that came with Internet Explorer 4 and 5), I soon created my very first web pages with info about myself. Those pages never got published, they only existed on one of the floppy disks I carried around.
 
 From that time on I continued to become more interested in computers and the web. This interest led me to flunk a year in high school on purpose, so that I could switch major from economics to IT—I knew I wanted to pursue a career in IT. By 2002 I was in college, where I properly learned HTML and took my first steps into CSS and JavaScript. During those three years I realized that the web was my true passion, and in 2005, fresh out of college, I took on my first job as a professional web developer.
 
