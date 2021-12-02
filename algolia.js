@@ -108,7 +108,7 @@ async function index() {
       fs.mkdirSync('.tmp');
     }
     fs.writeFileSync('.tmp/algolia.json', JSON.stringify(algoliaData));
-    // If it's not a test then check if anv keys are there
+    // If it's not a test then check if env keys exist
   } else if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
     console.warn('Missing Algolia environment variables, skipping indexing.');
     // Ok, not a test, we got the keys, DO IT!
