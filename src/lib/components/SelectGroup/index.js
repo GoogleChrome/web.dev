@@ -2,7 +2,6 @@ import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {generateIdSalt} from '../../utils/generate-salt';
 import 'focus-visible';
-import './_styles.scss';
 
 /**
  * Element that renders a radio group or checkbox group.
@@ -44,7 +43,7 @@ class SelectGroup extends BaseElement {
 
     return html`
       <fieldset
-        class="web-select-group ${this.prefix}"
+        class="web-select-group flow ${this.prefix}"
         ?columns="${this.columns}"
       >
         <div class="web-select-group__options-wrapper">${this.selectors}</div>

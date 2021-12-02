@@ -1,0 +1,32 @@
+.web-select-group {
+  border: none;
+  padding: 0;
+}
+
+.web-select-group__options-wrapper {
+  padding: get-space('base') 0;
+}
+
+.web-select-group__option {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  code {
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+.web-select-group__option + .web-select-group__option {
+  margin-top: 0.5rem;
+}
+
+.web-response-mc__selector::after {
+  display: none;
+}
+
+.web-response__correctness-flag {
+  transform: translateY(-0.25ex);
+}

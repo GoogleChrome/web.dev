@@ -17,65 +17,6 @@ web-response-mc {
   margin-block-start: get-size('base');
 }
 
-/// These overly specific selectors are unfortunately going to have to
-/// stay until we can either: rip the CSS out of the web components or
-/// get into the web component CSS safely and refactor
-
-.web-question__content {
-  padding: $global-gutter;
-
-  [data-role='stimulus'] {
-    @extend .flow;
-  }
-}
-
-.web-assessment__launcher {
-  padding: $global-gutter-narrow;
-  @include apply-utility('bg', 'mid-bg');
-
-  .web-assessment__open {
-    @extend .button;
-
-    width: max-content;
-    margin-block-start: get-space('base');
-
-    &:hover {
-      @include apply-utility('bg', 'accent-bg');
-    }
-  }
-}
-
-.web-assessment__close {
-  @extend .button;
-
-  padding: 0.5rem;
-}
-
-.web-assessment__button {
-  @extend .button;
-}
-
-[state='completed'] .web-question__cta::before {
-  display: none;
-}
-
-.web-tabs__text-label {
-  color: get-utility-value('color', 'core-text') !important;
-}
-
-/// The assesment component recreates inputs, so we need to pull that out
-.web-select-group__input {
-  opacity: 1 !important;
-}
-
-.web-select-group__selector {
-  display: none !important;
-}
-
-.web-select-group__option-content {
-  padding-inline-start: $global-gutter-narrow;
-}
-
 /// SITE HEADER SEARCH OVERRIDES
 .site-header__search {
   .web-search__input-wrapper,
