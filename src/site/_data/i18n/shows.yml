@@ -115,3 +115,6 @@ web-dev-live-day-3:
     en: web.dev LIVE Day 3
   description:
     en: Missed web.dev LIVE? We’ve got you covered. Watch the talks from the web.dev LIVE 2020 event on Youtube ([Day 1](/shows/web-dev-live-day-1), [Day 2](/shows/web-dev-live-day-2))
+
+all_episodes:
+  en: 'Back to all episodes'
