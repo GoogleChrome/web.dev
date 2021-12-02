@@ -40,7 +40,6 @@ const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
 const Details = require('./src/site/_includes/components/Details');
 const DetailsSummary = require('./src/site/_includes/components/DetailsSummary');
-const EventTable = require('./src/site/_includes/components/EventTable');
 const Glitch = require('./src/site/_includes/components/Glitch');
 const Hero = require('./src/site/_includes/components/Hero');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
@@ -237,10 +236,6 @@ module.exports = function (config) {
   config.addShortcode('YouTube', YouTube);
   config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
-
-  // This table is used for the web.dev/LIVE event, and should be taken down
-  // when the event is over or we no longer use it.
-  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS
