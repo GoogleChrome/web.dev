@@ -107,7 +107,7 @@ self.addEventListener("activate", event => {
 Service workers get updated when the browser detects that the service worker currently controlling the client and the live (from your server) version of the same file are byte-different.
 
 {% Aside 'warning' %}
-When updating your service worker, do so without renaming it, including adding file hashes to the filename. Otherwise, the browser will never get the new version of your service worker!
+When updating your service worker, do so without renaming it. Do not even add file hashes to the filename. Otherwise, the browser will never get the new version of your service worker!
 {% endAside %}
 
 After a successful installation, the new service worker will wait to activate until the existing (old) service worker no longer controls any clients. This state is called "waiting", and it's how the browser ensures that only one version of your service worker is running at a time.
