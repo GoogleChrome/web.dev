@@ -203,7 +203,7 @@ background-position: right bottom 88%;
 
 {% endCompare %}
 
-{% Compare 'better' %}
+{% Compare 'worse' %}
 
 ```css
 background-position: 88% bottom right;
@@ -232,7 +232,7 @@ background-position: right 33% bottom 88%;
 {% endCompare %}
 
 
-{% Compare 'better' %}
+{% Compare 'worse' %}
 
 ```css
 background-position: 88% 33% bottom left;
