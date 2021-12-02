@@ -34,7 +34,7 @@ if ('serviceWorker' in navigator) {
 }
 ```
 
-{% Glitch 'learn-pwa-service-worker-registration' %}
+{% Glitch 'learn-pwa-sw-registration' %}
 
 {% Aside %}
 There is only one service worker per PWA, but that doesn't mean you need to place the code only in one file. A service worker can include other files using [`importScripts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) in every browser or using [ECMAScript module imports](/es-modules-in-sw/) in some modern browsers.
@@ -42,7 +42,7 @@ There is only one service worker per PWA, but that doesn't mean you need to plac
 
 ### Verify if a service worker is registered
 
-To verify if a service worker is registered, use developer tools in your favorite browser. 
+To verify if a service worker is registered, use developer tools in your favorite browser.
 
 In Firefox and Chromium-based browsers (Microsoft Edge, Google Chrome, or Samsung Internet):
 

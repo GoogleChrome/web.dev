@@ -153,7 +153,7 @@ The Cache Storage API doesn't update your assets if you change them on your serv
 
 Check the [Cache object documentation](https://developer.mozilla.org/docs/Web/API/Cache) for more details.
 
-{% Glitch 'learn-pwa-caching-assets' %}
+{% Glitch 'learn-pwa-asset-caching' %}
 
 ## Debugging Cache Storage
 Many browsers offer a way to debug the contents of cache storage within their DevTools Application tab. There, you can see the contents of every cache within the current origin. We'll cover more about these tools in the [Tools and Debug chapter](/learn/pwa/tools-and-debug/).
