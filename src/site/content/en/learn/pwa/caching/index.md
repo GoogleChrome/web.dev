@@ -28,7 +28,7 @@ The first question you may have about caching is what to cache. While there is n
 Those resources should include:
 
 - The main page HTML (your app's start_url).
-- Key CSS stylesheets.
+- CSS stylesheets needed for the main user interface.
 - Images used in the user interface.
 - JavaScript files required to render the user interface.
 - Data, such as a JSON file, required to render a basic experience.
