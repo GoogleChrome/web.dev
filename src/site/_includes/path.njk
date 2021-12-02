@@ -1,6 +1,7 @@
 ---
 layout: default
-renderData:
+algolia_priority: 1.1
+eleventyComputed:
   title: "{{paths[pathName].title | i18n(locale)}}"
   description: "{{paths[pathName].description | i18n(locale)}}"
   hero: "{{paths[pathName].cover}}"

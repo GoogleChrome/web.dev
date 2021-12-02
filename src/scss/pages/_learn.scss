@@ -5,20 +5,10 @@
   }
 
   .auto-grid {
-    --gutter: #{get-space('size-2')};
-
     padding-block-end: get-space('size-2');
   }
 
   .pill {
     min-width: 4rem;
-  }
-}
-
-@include media-query('md') {
-  .learn {
-    .auto-grid {
-      --auto-grid-min-item-size: 22rem;
-    }
   }
 }

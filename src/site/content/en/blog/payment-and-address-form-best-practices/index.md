@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-09
-updated: 2021-09-29
+updated: 2021-11-30
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: image/admin/dbYeeV2PCRZNY6RRvQd2.jpg
 thumbnail: image/admin/jy8z8lRuLmmnyytD5xwl.jpg
@@ -170,14 +170,14 @@ difficult and missing or invalid form data may not be visible on the user's scre
 attempt to submit a form.
 
 {% Aside 'caution' %}
-The default type for a button in a form is `submit`. If you want to add another button in a form 
-(for **Show password**, for example) add `type="button"`. Otherwise clicking or tapping on the 
-button will submit the form. 
+The default type for a button in a form is `submit`. If you want to add another button in a form
+(for **Show password**, for example) add `type="button"`. Otherwise clicking or tapping on the
+button will submit the form.
 
-Pressing the `Enter` key while any form field has focus simulates a click on the first `submit` 
-button in the form. If you include a button in your form before the **Submit** button, and don't 
-specify the type, that button will have the default type for buttons in a form (`submit`) and 
-receive the click event before the form is submitted. For an example of this, see our 
+Pressing the `Enter` key while any form field has focus simulates a click on the first `submit`
+button in the form. If you include a button in your form before the **Submit** button, and don't
+specify the type, that button will have the default type for buttons in a form (`submit`) and
+receive the click event before the form is submitted. For an example of this, see our
 [demo](https://enter-button.glitch.me/): fill in the form, then press `Enter`.
 {% endAside %}
 
@@ -193,8 +193,8 @@ to provide the right keyboard on mobile and enable basic built-in validation by 
 For example, use `type="email"` for email addresses and `type="tel"` for phone numbers.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of 
-  Android phones, showing a keyboard appropriate for entering an email address (using type=email) 
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of
+  Android phones, showing a keyboard appropriate for entering an email address (using type=email)
   and for entering a telephone number (with type=tel).", width="800", height="683" %}
   <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
 </figure>
@@ -483,7 +483,7 @@ Use `name` for a full name:
 <input autocomplete="name" ...>
 ```
 
-If you really do have a good reason to split out name parts, make sure to to use appropriate
+If you really do have a good reason to split out name parts, make sure to use appropriate
 autocomplete values:
 
 * `honorific-prefix`

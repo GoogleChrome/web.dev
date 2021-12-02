@@ -14,6 +14,8 @@
 
 .card__content {
   flex: auto;
+  max-width: 100%;
+  overflow-wrap: break-word;
 
   &:not(:first-child) {
     @include apply-utility('gap-top', 'size-1');
