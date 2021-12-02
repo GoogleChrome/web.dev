@@ -9,24 +9,24 @@ date: 2021-12-03
 
 Users expect apps to start on slow or flaky network connections, or even when offline.
 They expect the content they've most recently interacted with, such as media tracks or tickets and itineraries, to be available and usable.
-When a request isn't possible, they expect to be told there's trouble instead of silently failing or crashing. And users wish to do it all quickly, as we can see in this study [Milliseconds make millions](/milliseconds-make-millions/), even a 0.1 second improvement in load times can improve conversion by up to 10%. In summary: users expect PWAs to be reliable and that's why we have service workers.
+When a request isn't possible, they expect the app to tell them instead of silently failing or crashing. And users wish to do it all quickly. As we can see in this study [Milliseconds make millions](/milliseconds-make-millions/), even a 0.1 second improvement in load times can improve conversion by up to 10%. In summary: users expect PWAs to be reliable and that's why we have service workers.
 
 ## Hello service workers
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/iKWO7c2WNobLt30VZx9C.png",
-alt="A service worker as a middleware proxy, running device-side, between your PWA and servers, including your server and cross-domain servers.", width="800", height="354" %}
+alt="A service worker as a middleware proxy, running device-side, between your PWA and servers, which includes both your own servers and cross-domain servers.", width="800", height="354" %}
 
-When a request covered by the service worker's scope is made, including when a user is offline, the service worker intercepts the request, acting as a network proxy. It can then decide if it should serve the resource from the cache via the Cache Storage API, from the network as normally would happen without a service worker, or synthesize it from a local algorithm. Because of this, you can provide a similar experience to platform apps, including working entirely offline!
+When an app requests a resource covered by the service worker's scope, including when a user is offline, the service worker intercepts the request, acting as a network proxy. It can then decide if it should serve the resource from the cache via the Cache Storage API, from the network as normally would happen without a service worker, or synthesize it from a local algorithm. This lets you provide a similar experience to that provided by a platform app. It can even work entirely off line.
 
 {% Aside 'gotchas' %}
-Not all browsers support service workers, and your service worker won't be available on first load or while it's waiting to activate. Therefore, you should treat it as optional and not require it for core functionality of your PWA.
+Not all browsers support service workers. Even when present your service worker won't be available on first load or while it's waiting to activate. Therefore, treat it as optional and do not require it for core functionality.
 {% endAside %}
 
 ## Registering a service worker
 
 Before a service worker takes control of your page, it  must be registered for your PWA. That means the first time a user comes to your PWA, network requests will go directly to your server because the service worker is not yet in control of your pages.
 
-After checking if the browser supports the Service Workers API, your PWA can register a service worker. When loaded, the service worker sets up shop between your PWA and the network, intercepting requests and serving the corresponding responses.
+After checking if the browser supports the Service Worker API, your PWA can register a service worker. When loaded, the service worker sets up shop between your PWA and the network, intercepting requests and serving the corresponding responses.
 
 ```js
 if ('serviceWorker' in navigator) {
@@ -42,18 +42,18 @@ There is only one service worker per PWA, but that doesn't mean you need to plac
 
 ### Verify if a service worker is registered
 
-To verify if a service worker is registered, use developer tools in your favorite browser.
+To verify if a service worker is registered, use developer tools in your favorite browser. 
 
-Using DevTools on Chromium-based browsers, such as Microsoft Edge, Google Chrome, or Samsung Internet, and also on Firefox:
+In Firefox and Chromium-based browsers (Microsoft Edge, Google Chrome, or Samsung Internet):
 
-1. In the **Application** category, in the left pane, select **Service Workers**
-1. Check that the service worker's script URL appears with the status "Activated"(You'll learn what this status means in the lifecycle section in this chapter). On Firefox the status that is shown could be "Running" or "Stopped"
+1. Open developer tools, then click the **Application** tab.
+1. In the left pane, select **Service Workers**.
+1. Check that the service worker's script URL appears with the status "Activated". (You'll learn what this status means in the lifecycle section in this chapter). On Firefox the status can be "Running" or "Stopped".
 
 In Safari:
 
-1. Open the **Develop** menu
-1. Open the **Service Workers** submenu
-1. Check that an entry in the submenu appears with your current origin that opens an inspector over the service worker's context
+1. Click the **Develop** menu then the **Service Workers** submenu.
+1. Check that an entry with the current origin appears in the submenu. It opens an inspector over the service worker's context.
 
 <figure>
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/QMsYbKeQ6OJSm0FeqFxG.png", alt="Service Worker developer tools on Chrome, Firefox and Safari.", width="800", height="296" %}
@@ -61,29 +61,29 @@ In Safari:
 </figure>
 
 {% Aside %}
-You can remotely inspect a phone or tablet from your desktop browser when you want to check service worker registration status over a mobile device. You will see details on how to do that in the [Tools and Debug chapter](/tools-and-debug)
+You can remotely inspect a phone or tablet from your desktop browser when you want to check service worker registration status over a mobile device. You will see details on how to do that in the [Tools and Debug chapter](/learn/pwa/tools-and-debug)
 {% endAside %}
 
 ### Scope
 
 The folder your service worker sits in determines its scope. A service worker that lives at `example.com/my-pwa/sw.js` can control any navigation at the *my-pwa* path or below, such as `example.com/my-pwa/demos/`. Service workers can only control items (pages, workers, collectively "clients") in their scope. Scope applies to browser tabs and PWA windows.
 
-Only *one* service worker per scope is allowed. When active and running, only one instance typically is available no matter how many clients are in memory (such as PWA windows or browser tabs).
+Only *one* service worker per scope is allowed. When active and running, only one instance is typically available no matter how many clients are in memory (such as PWA windows or browser tabs).
 
 {% Aside 'warning' %}
-You should set the scope of your service worker as close to the root of your app as possible. This is the most common setup as it gives the service worker the ability to intercept all the requests related to your PWA. Don't put it inside, for instance, a JavaScript folder or have it loaded from a CDN. {% endAside %}
+You should set the scope of your service worker as close to the root of your app as possible. This is the most common setup as it lets the service worker intercept all the requests related to your PWA. Don't put it inside, for instance, a JavaScript folder or have it loaded from a CDN. {% endAside %}
 
 Safari has more complex scope management, known as partitions, affecting how scopes work if you have cross-domain iframes. To read more about WebKit's implementation, read [their blog post](https://webkit.org/blog/8090/workers-at-your-service/).
 
 ## Lifecycle
 
 Service workers have a lifecycle that dictates how they are installed, this is separate from your PWA installation.
-The service worker lifecycle starts with registering the service worker. The browser attempts to download and parse the file registered as your service worker and, if successful, it is installed and the `install` event fires. The `install` event only fires once.
+The service worker lifecycle starts with registering the service worker. The browser then attempts to download and parse the service worker file. If parsing succeeds, it's `install` event is fired. The `install` event only fires once.
 
 Service worker installation happens silently, without requiring user permission, even if the user doesn't install the PWA. The Service Worker API is even available on platforms that do not support PWA installation, such as Safari and Firefox on desktop devices.
 
 {% Aside 'gotchas' %}
-Service worker *registration* and *installation*, while related, are different events. Registration happens when a page requests it with the `register` function detailed previously. Installation happens when a registered service worker exists, can be parsed as JavaScript, and doesn't throw any errors during its first execution.
+Service worker *registration* and *installation*, while related, are different events. Registration happens when a page requests a service worker by calling `register()` as described previously. Installation happens when a registered service worker exists, can be parsed as JavaScript, and doesn't throw any errors during its first execution.
 {% endAside %}
 
 After the installation, the service worker is not yet in control of its clients, including your PWA. It needs to be activated first. When the service worker is ready to control its clients, the `activate` event will fire. This doesn't mean, though, that the page that registered the service worker will be managed. By default, the service worker will not take control until the next time you navigate to that page, either due to reloading the page or re-opening the PWA.
@@ -104,7 +104,7 @@ self.addEventListener("activate", event => {
 
 ### Updating a service worker
 
-Service workers get updated when the browser detects that the service worker currently controlling the client and the live (from your server) version of the same file are byte-different.
+Service workers get updated when the browser detects that the service worker currently controlling the client and the new (from your server) version of the same file are byte-different.
 
 {% Aside 'warning' %}
 When updating your service worker, do so without renaming it. Do not even add file hashes to the filename. Otherwise, the browser will never get the new version of your service worker!

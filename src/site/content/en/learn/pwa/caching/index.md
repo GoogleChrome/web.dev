@@ -25,18 +25,18 @@ One advantage of managing your cache using service workers is that its lifecycle
 
 The first question you may have about caching is what to cache. While there is no single answer to that question, you can start with all the minimum resources that you need to render the user interface.
 
-That should include:
+Those resources should include:
 
 - The main page HTML (your app's start_url).
 - Key CSS stylesheets.
 - Images from the user interface.
-- JavaScript files you need to render the user interface.
-- Data you need to render a basic experience, such as a JSON file.
+- JavaScript files required to render the user interface.
+- Data, such as a JSON file, that you need to render a basic experience.
 - Web fonts.
 - On a multi-page application, other HTML documents that you want to serve fast or while offline.
 
 {% Aside 'warning' %}
-Remember that you are downloading and storing assets on users devices, so use that space and bandwidth responsibly. You need to find the balance between having enough on-device assets to render a fast or offline experience without consuming too much data.
+Remember that you are downloading and storing assets on users' devices, so use that space and bandwidth responsibly. You need to find the balance between having enough on-device assets to render a fast or offline experience without consuming too much data.
 {% endAside %}
 
 ### Offline-ready
@@ -60,7 +60,8 @@ The cache storage content and eviction rules are set per origin and not per PWA,
 Use the Cache Storage API to define a set of caches within your origin, each identified with a string name you can define. Access the API through the `caches` object, and the `open` method enables the creation, or opening of an already created cache. The open method returns a promise for the cache object.
 
 ```js
-caches.open("pwa-assets").then(cache => {
+caches.open("pwa-assets")
+.then(cache => {
   // you can download and store, delete or update resources with cache arguments
 });
 ```
@@ -70,17 +71,18 @@ caches.open("pwa-assets").then(cache => {
 To ask the browser to download and store the assets use the `add` or `addAll` methods. The `add` method makes a request and stores one HTTP response, and `addAll` a group of HTTP responses as a transaction based on an array of requests or URLs.
 
 ```js
-caches.open("pwa-assets").then(cache => {
+caches.open("pwa-assets")
+.then(cache => {
   cache.add("styles.css"); // it stores only one resource
   cache.addAll(["styles.css", "app.js"]); // it stores two resources
 });
 ```
 
 {% Aside %}
-Both `add` and `addAll` return a promise with no arguments; if it's fulfilled, you know the assets were downloaded and cached, and if it fails, the API couldn't download one or more resources, and it didn't modify the cache.
+Both `add()` and `addAll()` return a promise with no arguments; if it's fulfilled, you know the assets were downloaded and cached, and if it fails, the API couldn't download one or more resources, and it didn't modify the cache.
 {% endAside %}
 
-The Cache Storage interface stores in the device not just the body of the HTTP response but the whole response, including all the headers, and you can retrieve it later using an HTTP request or a URL as a key. You will see how to do that in [the Serving chapter](/learn/pwa/serving).
+The cache storage interface stores the entirety of a response including all the headers and the body. Consequently, you can retrieve it later using an HTTP request or a URL as a key. You will see how to do that in [the Serving chapter](/learn/pwa/serving).
 
 {% Aside %}
 To download and store the assets, you must specify all the URLs explicitly. Otherwise the API cannot know all the assets you need or want to cache.
@@ -93,7 +95,7 @@ In your PWA, you are in charge of deciding when to cache files. While one approa
 You don't need to cache all the assets at once, you can cache assets many times during the lifecycle of your PWA, such as:
 
 - On installation of the service worker.
-- After the first load.
+- After the first page load.
 - When the user navigates to a section or route.
 - When the network is idle.
 
@@ -109,16 +111,17 @@ Because the service worker thread can be stopped at any time, you can request th
 const urlsToCache = ["/", "app.js", "styles.css", "logo.svg"];
 self.addEventListener("install", event => {
    event.waitUntil(
-      caches.open("pwa-assets").then(cache => {
+      caches.open("pwa-assets")
+      .then(cache => {
          return cache.addAll(urlsToCache);
       });
    );
 });
 ```
 
-The [WaitUntil method](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil) receives a promise and asks the browser to wait for the task in the promise to finish (fulfilled or failed) before terminating the service worker process. You may need to chain promises and return the `add` or `addAll` calls so that a single result gets to the `waitUntil` method.
+The [`waitUntil()` method](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil) receives a promise and asks the browser to wait for the task in the promise to resolve (fulfilled or failed) before terminating the service worker process. You may need to chain promises and return the `add()` or `addAll()` calls so that a single result gets to the `waitUntil()` method.
 
-You can also handle promises using the async/await syntax. In that case, `waitUntil` needs a promise-based function as an argument, so you need to create a function that returns the promise to make it work, as in the following example:
+You can also handle promises using the async/await syntax. In that case, `waitUntil()` needs a promise-based function as an argument, so you need to create a function that returns the promise to make it work, as in the following example:
 
 ```js/3
 const urlsToCache = ["/", "app.js", "styles.css", "logo.svg"];
@@ -132,12 +135,12 @@ self.addEventListener("install", (event) => {
 
 ### Cross-domain requests and opaque responses
 
-Your PWA can download and cache assets from your origin and cross-domains, such as content from third-party CDNs. With a cross-domain app, the cache interaction is very similar to same-origin requests, the request is executed and a copy of the response is stored in your cache. As with other cached assets it is only available to be used in your app's origin.
+Your PWA can download and cache assets from your origin and cross-domains, such as content from third-party CDNs. With a cross-domain app, the cache interaction is very similar to same-origin requests. The request is executed and a copy of the response is stored in your cache. As with other cached assets it is only available to be used in your app's origin.
 
 The asset will be stored as an [opaque response](https://fetch.spec.whatwg.org/#concept-filtered-response-opaque), which means your code won't be able to see or modify the contents or headers of that response. Also, opaque responses don't expose their actual size in the storage API, affecting quotas. Some browsers expose large sizes, such as 7Mb no matter if the file is just 1Kb.
 
 {% Aside 'caution' %}
-Remember that when you cache opaque responses from cross-domains, `cache.add` and `cache.addAll` will fail if those responses don't return with a 2xx status code. Therefore, if one CDN or cross-domain fails, all the assets you are downloading will be discarded, even successful downloads in the same operation.
+Remember that when you cache opaque responses from cross-domains, `cache.add()` and `cache.addAll()` will fail if those responses don't return with a 2xx status code. Therefore, if one CDN or cross-domain fails, all the assets you are downloading will be discarded, even successful downloads in the same operation.
 {% endAside %}
 
 ### Updating and deleting assets
@@ -145,7 +148,7 @@ Remember that when you cache opaque responses from cross-domains, `cache.add` an
 You can update assets using `cache.put(request, response)` and delete assets with `delete(request)`.
 
 {% Aside 'caution' %}
-The Cache Storage API doesn't update your assets if you change them on your server nor does it delete assets. Your code should manage both situations, and for that, there are different design patterns. You'll learn about a library to help with these situations in the [Workbox chapter](/learn/pwa/workbox).
+The Cache Storage API doesn't update your assets if you change them on your server nor does it delete them. Your code should manage both situations, and for that, there are different design patterns. You'll learn about a library to help with these situations in the [Workbox chapter](/learn/pwa/workbox).
 {% endAside %}
 
 Check the [Cache object documentation](https://developer.mozilla.org/docs/Web/API/Cache) for more details.
@@ -153,7 +156,7 @@ Check the [Cache object documentation](https://developer.mozilla.org/docs/Web/AP
 {% Glitch 'learn-pwa-caching-assets' %}
 
 ## Debugging Cache Storage
-Many browsers offer a way to debug the contents of cache storage within the Application tab. There, you will be able to see the contents of every cache within your current origin. We'll cover more about these tools in the [Tools and Debug chapter](/learn/pwa/tools-and-debug/).
+Many browsers offer a way to debug the contents of cache storage within their DevTools Application tab. There, you can see the contents of every cache within the current origin. We'll cover more about these tools in the [Tools and Debug chapter](/learn/pwa/tools-and-debug/).
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/wY3mk9ILrGxlM9xEbfHh.png", alt="Chrome DevTools debugging Cache Storage contents.", width="800", height="506" %}
 
