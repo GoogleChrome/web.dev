@@ -23,7 +23,7 @@ One advantage of managing your cache using service workers is that its lifecycle
 
 ## What to cache
 
-The first question you may have when you know you can cache or install assets on a user's device for later usage is what to cache. While there is no single answer to that question, you can start with all the minimum resources that you need to render the user interface.
+The first question you may have about caching is what to cache. While there is no single answer to that question, you can start with all the minimum resources that you need to render the user interface.
 
 That should include:
 
