@@ -80,10 +80,11 @@ const pagesToTest = [
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
-  await browser.setViewport({height: 1024, width: 1280});
 
   for (const pageToTest of pagesToTest) {
     const page = await browser.newPage();
+    await page.setViewport({height: 1024, width: 1280});
+
     const url = new URL(pageToTest.url, 'http://localhost:8080').href;
     await page.goto(url, {waitUntil: 'networkidle0'});
     await page.evaluate(scrollToBottom);
