@@ -1,7 +1,7 @@
 ---
 layout: post
 title: |
-  GEDI case study: GEDI Digital improve mobile bounce rate by 8%
+  GEDI Digital reduced mobile bounce rate by 8% with Core Web Vitals
 subhead: |
   By focusing development effort on performance improvement and applying the
   latest web technologies and techniques, GEDI Digital has created one of the
@@ -98,7 +98,7 @@ La Stampa and La Repubblica.
      26
      <sub>%</sub>
    </p>
-   <p>Faster Largest Contentful Paint</p>
+   <p>Faster LCP</p>
  </div>
  <div class="stats__item">
    <p class="stats__figure">
@@ -112,12 +112,11 @@ La Stampa and La Repubblica.
 And, the benefits were measurable: on the La Repubblica mobile site, for
 example, they measured a 77% reduction in [Cumulative Layout Shift](/cls/)
 (CLS) and a 26%  improvement in time to [Largest Contentful Paint](/lcp/)
-(LCP). Overall, the team found they reduced on La Repubblica's mobile bounce
+(LCP). Overall, the team found they reduced La Repubblica's mobile bounce
 rate by 8%.
 
-The next step is to improve cumulative layout shift by minimizing the impact of
-ads on site layout stability. Giuseppe considers this to be a big challenge
+GEDI's next step is to improve cumulative layout shift by reducing the impact
+of ads on site layout stability. Giuseppe considers this to be a big challenge
 because they often deliver multi-site ad formats. Finding the right space to
-serve is a challenge, a challenge that they are addressing by A/B testing
+serve ads is a challenge, a challenge that they’re addressing by A/B testing
 various solutions.  
-
