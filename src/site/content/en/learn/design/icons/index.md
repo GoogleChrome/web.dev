@@ -250,3 +250,5 @@ button:focus rect {
 * If you're using a graphic design tool to export SVGs, use [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimize the output.
 
 Icons are an important part of your site's branding. Next you'll find out how to make other aspects of your branding responsive through the power of [theming](/learn/design/theming).
+
+{% Assessment 'icons' %}
