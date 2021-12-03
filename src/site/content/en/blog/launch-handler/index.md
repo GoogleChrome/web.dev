@@ -97,7 +97,7 @@ To declaratively specify the launch behavior of your app, add the `launch_handle
 
 ```json
 "launch_handler": {
-  "route_to": "new_client",
+  "route_to": "new-client",
   "navigate_existing_client": "always"
 }
 ```
@@ -107,9 +107,9 @@ The allowed values for the sub-fields are as follows:
 
 - `route_to`:
 
-  - `new_client`: A new browsing context is created in a web app window to load the launch's target URL.
-  - `existing_client`: The most recently interacted with browsing context in a web app window for the app being launched is chosen to handle the launch. How the launch is handled within that browsing context depends on `navigate_existing_client`.
-  - `auto`: The behavior is up to the user agent to decide what works best for the platform. For example, mobile devices only support single clients and would use `existing_client`, while desktop devices support multiple windows and would use `new_client` to avoid data loss.
+  - `new-client`: A new browsing context is created in a web app window to load the launch's target URL.
+  - `existing-client`: The most recently interacted with browsing context in a web app window for the app being launched is chosen to handle the launch. How the launch is handled within that browsing context depends on `navigate_existing_client`.
+  - `auto`: The behavior is up to the user agent to decide what works best for the platform. For example, mobile devices only support single clients and would use `existing-client`, while desktop devices support multiple windows and would use `new-client` to avoid data loss.
 
 - `navigate_existing_client`:
   - `always`: Existing browsing contexts chosen for launch will navigate the browsing context to the launch's target URL.
@@ -117,11 +117,11 @@ The allowed values for the sub-fields are as follows:
 
 Both `route_to` and `navigate_existing_client` also accept a list (array) of values, where the first valid value will be used. This is to allow new values to be added to the spec without breaking backwards compatibility with old implementations.
 
-For example, if `"matching_url_client"` were added, sites would specify `"route_to": ["matching_url_client", "existing_client"]` to continue to control the behavior of older browsers that did not support `"matching_url_client"`.
+For example, if `"matching-url-client"` were added, sites would specify `"route_to": ["matching-url-client", "existing-client"]` to continue to control the behavior of older browsers that did not support `"matching-url-client"`.
 
 ### The `window.launchQueue` interface
 
-If the app has declared that it wants to handle launches in an existing client (by specifying `"route_to": "existing_client"`), it needs to imperatively do something with incoming launch URLs. This is where the `launchQueue` comes into play. To access launch target URLs, a site needs to specify a consumer for the `window.launchQueue` object, which is then passed the target URLs via the `launchParams.targetURL` field. Launches are queued until they are handled by the specified consumer, which is invoked exactly once for each launch. In this manner, every launch is handled, regardless of when the consumer was specified.
+If the app has declared that it wants to handle launches in an existing client (by specifying `"route_to": "existing-client"`), it needs to imperatively do something with incoming launch URLs. This is where the `launchQueue` comes into play. To access launch target URLs, a site needs to specify a consumer for the `window.launchQueue` object, which is then passed the target URLs via the `launchParams.targetURL` field. Launches are queued until they are handled by the specified consumer, which is invoked exactly once for each launch. In this manner, every launch is handled, regardless of when the consumer was specified.
 The code snippet below shows a fictive audio player PWA that extract a song ID from a target URL that it is potentially passed upon launch.
 
 ```js
@@ -160,7 +160,7 @@ Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag [`#LaunchHandle
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
-- [TODO API Demo][demo] | [TODO API Demo source][demo-source]
+- [Launch Handler API Demo][demo] | [launch Handler API Demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`Blink>AppManifest`][blink-component]
@@ -172,8 +172,8 @@ Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag [`#LaunchHandle
 Hero image by [SpaceX](https://unsplash.com/@spacex) on [Unsplash](https://unsplash.com/photos/-p-KCm6xB9I).
 
 [issues]: https://github.com/WICG/sw-launch/issues
-[demo]: TODO
-[demo-source]: TODO
+[demo]: https://launch-handler.glitch.me/
+[demo-source]: https://glitch.com/edit/#!/launch-handler
 [explainer]: https://github.com/WICG/sw-launch/blob/main/launch_handler.md
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1231886
 [cr-status]: https://www.chromestatus.com/feature/5722383233056768
