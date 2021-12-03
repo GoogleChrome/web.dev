@@ -2,7 +2,7 @@
 layout: post
 title: Control how your app is launched
 subhead: |
-  Launch handler lets you control how your app is launched, e.g., whether it uses an existing
+  Launch handler lets you control how your app is launched, for example, whether it uses an existing or a new
   window and whether the chosen window is navigated to the launch URL. This also enqueues a
   `LaunchParams` object in the launched page's `window.launchQueue`, similar to the File
   Handling API.
@@ -11,7 +11,7 @@ authors:
 date: 2021-11-29
 # updated: 2021-08-06
 description: |
-  Launch handler lets you control how your app is launched, e.g., whether it uses an existing
+  Launch handler lets you control how your app is launched, for example, whether it uses an existing
   window and whether the chosen window is navigated to the launch URL.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/xw3fQotYBLeA8AUZAh5O.jpg
 alt: Cape Caneveral rocket launch.
@@ -23,6 +23,161 @@ tags:
   - capabilities
 ---
 
+{% Aside %}
+The Launch Handler API is part of the [capabilities project](/fugu-status/) and is currently in development. This post will be updated as the implementation progresses.
+{% endAside %}
+
+## What is the Launch Handler API? {: #what }
+
+There are many ways to launch a Progressive Web App. Probably the most common is via the icon on the home screen
+or the app drawer of the device. But when you think about it, there are many other ways a launch can happen:
+
+- The app can
+  be launched as the result of a share action when it is a [share target](/web-share-target/).
+- A user may have clicked a file in their file explorer
+  and decided to open it with the PWA, which acts as a [file handler](/file-handling/).
+- If the PWA has registered as a [protocol handler](/protocol-handling/),
+  the PWA may launch as a result of a matching protocol.
+- The PWA may also be launched as a result of a click on a [push notification](/push-notifications-overview/) or an [app icon shortcut](/app-shortcuts/).
+
+There are even more ways, but you get the idea…
+Given the manyfold possibilities for launching PWAs, what was missing so far is a way to let apps customize their launch behavior across all types of app launch triggers. The `launch_handler` manifest member together with the `window.launchQueue` interface enables PWAs to do just that.
+
+### Suggested use cases for the Launch Handler API {: #use-cases }
+
+Examples of sites that may use this API include:
+
+- Apps that prefer to only have a single instance of themselves open at any time, with new navigations focusing the existing instance.
+  Examples include apps like music players or games, where it generally makes sense to only have one instance of the app open at any time.
+- Apps that enable multi-document management, but within their own single instance, for example, an HTML-implemented tab strip, floating sub-windows, or apps using [tabbed application mode](/tabbed-application-mode/).
+
+## Current status {: #status }
+
+<div class="w-table-wrapper">
+
+| Step                                     | Status                   |
+| ---------------------------------------- | ------------------------ |
+| 1. Create explainer                      | [Complete][explainer]    |
+| 2. Create initial draft of specification | Not started              |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 4. **Origin trial**                      | [**Started**][ot]        |
+| 5. Launch                                | Not started              |
+
+</div>
+
+## How to use the Launch Handler API {: #use }
+
+### Enabling via about://flags
+
+To experiment with the Launch Handler API locally, without an origin trial token, enable the `#enable-desktop-pwas-launch-handler` flag in `about://flags`.
+
+### Enabling support during the origin trial phase
+
+Starting in Chromium&nbsp;98, the Launch Handler API will be available as an origin trial in Chromium. The origin trial is expected to end in Chromium&nbsp;102 (June&nbsp;15, 2022).
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
+### Feature detection
+
+To check if the Launch Handler API is supported, use:
+
+```javascript
+if ('launchQueue' in window && 'targetURL' in LaunchParams.prototype) {
+  // The Launch Handler API is supported.
+}
+```
+
+### The `launch_handler` manifest member
+
+To declaratively specify the launch behavior of your app, add the `launch_handler` manifest member to your manifest. It has two sub-fields, `route_to` and `navigate_existing_client`. The former lets you control whether a new or an existing client should be launched, and the latter how and if this client should be navigated. The code snippet below shows an excerpt of a Web App Manifest file with exemplary values that would always route all launches to a new client.
+
+```json
+"launch_handler": {
+  "route_to": "new_client",
+  "navigate_existing_client": "always"
+}
+```
+
+If unspecified, `launch_handler` defaults to `{"route_to": "auto", "navigate_existing_client": "always"}`.
+The allowed values for the sub-fields are as follows:
+
+- `route_to`:
+
+  - `new_client`: A new browsing context is created in a web app window to load the launch's target URL.
+  - `existing_client`: The most recently interacted with browsing context in a web app window for the app being launched is chosen to handle the launch. How the launch is handled within that browsing context depends on `navigate_existing_client`.
+  - `auto`: The behavior is up to the user agent to decide what works best for the platform. For example, mobile devices only support single clients and would use `existing_client`, while desktop devices support multiple windows and would use `new_client` to avoid data loss.
+
+- `navigate_existing_client`:
+  - `always`: Existing browsing contexts chosen for launch will navigate the browsing context to the launch's target URL.
+  - `never`: Existing browsing contexts chosen for launch will not be navigated and instead have `targetURL` in the enqueued `LaunchParams` set to the launch's target URL.
+
+Both `route_to` and `navigate_existing_client` also accept a list (array) of values, where the first valid value will be used. This is to allow new values to be added to the spec without breaking backwards compatibility with old implementations.
+
+For example, if `"matching_url_client"` were added, sites would specify `"route_to": ["matching_url_client", "existing_client"]` to continue to control the behavior of older browsers that did not support `"matching_url_client"`.
+
+### The `window.launchQueue` interface
+
+If the app has declared that it wants to handle launches in an existing client (by specifying `"route_to": "existing_client"`), it needs to imperatively do something with incoming launch URLs. This is where the `launchQueue` comes into play. To access launch target URLs, a site needs to specify a consumer for the `window.launchQueue` object, which is then passed the target URLs via the `launchParams.targetURL` field. Launches are queued until they are handled by the specified consumer, which is invoked exactly once for each launch. In this manner, every launch is handled, regardless of when the consumer was specified.
+The code snippet below shows a fictive audio player PWA that extract a song ID from a target URL that it is potentially passed upon launch.
+
+```js
+launchQueue.setConsumer((launchParams) => {
+  const songID = extractSongId(launchParams.targetURL);
+  if (songID) {
+    playSong(songID);
+  }
+});
+```
+
+## Security and permissions
+
+The Chromium team has designed and implemented the Launch Handler API using the core principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control, transparency, and ergonomics.
+
+## Feedback {: #feedback }
+
+The Chromium team wants to hear about your experiences with the Launch Handler API.
+
+### Tell us about the API design
+
+Is there something about the API that does not work like you expected? Or are there missing methods or properties that you need to implement your idea? Have a question or comment on the security model?
+File a spec issue on the corresponding [GitHub repo][issues], or add your thoughts to an existing issue.
+
+### Report a problem with the implementation
+
+Did you find a bug with Chromium's implementation? Or is the implementation different from the spec?
+File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you can, simple instructions for reproducing, and enter `Blink>AppManifest` in the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
+
+### Show support for the API
+
+Are you planning to use the Launch Handler API? Your public support helps the Chromium team prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag [`#LaunchHandler`](https://twitter.com/search?q=%23LaunchHandler&src=recent_search_click&f=live) and let us know where and how you are using it.
+
+## Helpful links {: #helpful }
+
+- [Public explainer][explainer]
+- [TODO API Demo][demo] | [TODO API Demo source][demo-source]
+- [Chromium tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: [`Blink>AppManifest`][blink-component]
+- [TAG Review](https://github.com/w3ctag/design-reviews/issues/683)
+- [Intent to Prototype](https://groups.google.com/a/chromium.org/g/blink-dev/c/8tNe2jrJ78A)
+
 ## Acknowledgements
 
 Hero image by [SpaceX](https://unsplash.com/@spacex) on [Unsplash](https://unsplash.com/photos/-p-KCm6xB9I).
+
+[issues]: https://github.com/WICG/sw-launch/issues
+[demo]: TODO
+[demo-source]: TODO
+[explainer]: https://github.com/WICG/sw-launch/blob/main/launch_handler.md
+[cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1231886
+[cr-status]: https://www.chromestatus.com/feature/5722383233056768
+[blink-component]: https://bugs.chromium.org/p/chromium/issues/list?q=component:Blink%3EAppManifest
+[cr-dev-twitter]: https://twitter.com/ChromiumDev
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/2978005253598740481
