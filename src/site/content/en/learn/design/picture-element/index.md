@@ -119,3 +119,5 @@ Remember that you can't change the `alt` attribute depending on the image source
 You probably won't need to use the `picture` element for most of your responsive images—the `srcset` and `sizes` attributes on the `img` element cover a lot of use cases. But for those situations when you need more fine-grained control, the `picture` element is a powerful tool.
 
 There's one kind of image where you might not need either solution: icons. [That's what's next](/learn/design/icons/).
+
+{% Assessment 'picture' %}
