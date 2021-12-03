@@ -9,7 +9,7 @@ thumbnail: image/kheDArv5csY6rvQUJDbWRscckLr1/qRLa7xFsolDUbEfyugoW.png
 subhead: >
   Bramus Van Damme is a web developer from Belgium. From the moment he discovered view-source at the age of 14 (way back in 1997), he fell in love with the web and has been tinkering with it ever since. I caught up with him to learn about his journey in web development, and to find out what he thinks is exciting in CSS today.
 description: >
-  'One of a series of interviews with people from the web development community who are doing interesting things with CSS. This time I speak to prolific writer Bramus Van Damme.'
+  One of a series of interviews with people from the web development community who are doing interesting things with CSS. This time I speak to prolific writer Bramus Van Damme.
 date: 2021-12-04
 tags:
   - blog
@@ -59,7 +59,7 @@ In 2019, I started to closely monitor the CSSWG and [participate in discussions]
 
 **Rachel:** What would be your advice to someone who wants to start writing about tech?
 
-**Bramus:** Don't hesitate and simply do it. Even when it's about a single line of CSS, or if it's 1 post per year, or if you "only" have 5 subscribers: do it. Scratch your own itch, and write the article you wanted to find yourself. Through writing on my blog I not only challenged myself to learn about technologies in finer detail, but also opened doors along the way — both personally and professionally.
+**Bramus:** Don't hesitate and simply do it. Even when it's about a single line of CSS, or if it's 1 post per year, or if you "only" have 5 subscribers: do it. Scratch your own itch, and write the article you wanted to find yourself. Through writing on my blog I not only challenged myself to learn about technologies in finer detail, but also opened doors along the way—both personally and professionally.
 
 Don't overly rely on external services such as Medium or Twitter, but try and have your own place on the web. In the long run it'll pay off. You don't need any fancy CMS, build pipelines, or comments system, to get started. All you need is a text editor and some time to spare. HTML, combined with a simple stylesheet, can get you a long way.
 
@@ -70,14 +70,14 @@ Don't overly rely on external services such as Medium or Twitter, but try and ha
 **Bramus:** Along with many developers I'm pretty excited about CSS Container Queries. Other upcoming features—such as [Cascade Layers](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/) and [Scroll-linked Animations](https://www.bram.us/2021/02/23/the-future-of-css-scroll-linked-animations-part-1/)—also excite me, but Container Queries will definitely have the biggest impact. They will allow us to transition from responsive pages to responsive components.
 
 {% Aside %}
-To do: link to Una's day 3 CQ video.
+Learn about container queries in this [Designing in the Browser](https://www.youtube.com/watch?v=gCNMyYr7F6w) episode.
 {% endAside %}
 
 **Rachel:** What feature or functionality would you love to see added to CSS?
 
 **Bramus:** Scroll-linked Animations is one of the features that I would like to see move forward. Right now it's only an Editor's Draft. Being able to define hardware-accelerated scrolling without relying on JavaScript is something that totally fits into my mental model of progressive enhancement and the [rule of least power](https://en.wikipedia.org/wiki/Rule_of_least_power).
 
-CSS Nesting is also my radar. It took more than two years since it's first Editor's Draft, but I was very glad to see its First Public Working Draft get released last summer.
+CSS Nesting is also my radar. It took more than two years since its first Editor's Draft, but I was very glad to see its First Public Working Draft get released last summer.
 
 Apart from these bigger features, I can definitely appreciate smaller tweaks and additions. Things like [accent-color](/accent-color/) definitely put a smile on my face, as they make my life as a developer easier.
 
@@ -85,7 +85,7 @@ Apart from these bigger features, I can definitely appreciate smaller tweaks and
 
 **Rachel:** Who else is doing really interesting, fun, or creative work on the web right now?
 
-**Bramus:** That's a very difficult question to answer, so many people are producing content that amazes and inspires me. For example, [Adam Argyle](https://twitter.com/argyleink) and his GUI challenges, the projects from [Stephanie Eckles](https://twitter.com/5t3ph), blog posts by [Michelle Barker](https://twitter.com/michebarks), videos from [Kevin J. Powell](https://twitter.com/KevinJPowell), the work [Miriam Suzanne](https://twitter.com/TerribleMia) is doing in the CSS Working Group, podcasts from [Una Kravets](https://twitter.com/Una), articles by [Jake Archibald](https://twitter.com/jaffathecake), Jake and Surma's HTTP 203, [George Francis](https://twitter.com/georgedoescode)' Houdini work, and [Temani Afif](https://twitter.com/ChallengesCss)'s posts. These people and their projects, and the many others that I'm forgetting right now, have my respect and admiration.
+**Bramus:** That's a very difficult question to answer, so many people are producing content that amazes and inspires me. For example, [Adam Argyle](https://twitter.com/argyleink) and his GUI challenges, the projects from [Stephanie Eckles](https://twitter.com/5t3ph), blog posts by [Michelle Barker](https://twitter.com/michebarks), videos from [Kevin J. Powell](https://twitter.com/KevinJPowell), the work [Miriam Suzanne](https://twitter.com/TerribleMia) is doing in the CSS Working Group, podcasts from [Una Kravets](https://twitter.com/Una), articles by [Jake Archibald](https://twitter.com/jaffathecake), Jake and Surma's [HTTP 203](https://http203.libsyn.com/), [George Francis](https://twitter.com/georgedoescode)' Houdini work, and [Temani Afif](https://twitter.com/ChallengesCss)'s posts. These people and their projects, and the many others that I'm forgetting right now, have my respect and admiration.
 
 I think the most influential person throughout my career was [Jeremy Keith](https://adactio.com/). His teaching us about semantic HTML, progressive enhancement, and resilience were eye-opening moments to me. It's a message I gave to my own students, and still like to spread today. In times where JavaScript is eating the world and junior developers somehow seem to have skipped out on the fundamentals of the web, his posts and talks are more relevant than they ever were before.
 
