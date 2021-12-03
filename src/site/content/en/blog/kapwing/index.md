@@ -125,13 +125,17 @@ export async function getAsset(
 
 We have our own data structure, `idbCache`, that is used to minimize indexedDB accesses. While indexedDB is fast, accessing local memory is faster. We recommend this approach so long as you manage the size of the cache.
 
-Also note the 'subscribers' array, which is used to prevent simultaneous accesses to indexedDB, which otherwise would be common on load.
+Also note the `subscribers` array, which is used to prevent simultaneous accesses to indexedDB, which otherwise would be common on load.
 
 ### Web Audio API
 
 Audio visualization is incredibly important for video editing. To understand why, take a look at a screenshot from the editor:
 
-{% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/6MqSyhNqFl23wN3GWKbP.png", alt="Kapwing editor has several templates and capabilities.", width="800", height="397" %}
+{% Img 
+   src="image/VbsHyyQopiec0718rMq2kTE1hke2/6MqSyhNqFl23wN3GWKbP.png", 
+   alt="Kapwing editor has several templates and capabilities",
+   width="800", height="397"
+%}
 
 This is a YouTube style video, which is common in our app. The user does not move very much throughout the clip, so the timelines visual thumbnails are not as useful for navigating between sections. On the other hand, the audio [waveform](https://en.wikipedia.org/wiki/Waveform) shows peaks and valleys, with the valleys typically corresponding to dead time in the recording. Were you to zoom in on the timeline you would see more fine grained audio information, with valleys corresponding to stutters and pauses.
 
@@ -198,9 +202,9 @@ For certain videos the track thumbnails are more useful for timeline navigation 
 
 We cannot cache every potential thumbnail on load, so quick decode on timeline pan/zoom is critical to a performant and responsive application. The bottleneck to achieving smooth frame drawing is decoding frames, which until recently we did using an HTML5 video player. The performance of that approach was not reliable and we often saw degraded app responsiveness during frame rendering.
 
-Recently we have moved over to web codecs, which can be used in web workers. This should enhance our ability to draw thumbnails for large amounts of layers without impacting main thread performance. While the web worker implementation is still in progress, we give an outline below of our existing main thread implementation. A video file contains multiple streams: video, audio, subtitles and so on. that are 'muxed' together.
+Recently we have moved over to web codecs, which can be used in web workers. This should enhance our ability to draw thumbnails for large amounts of layers without impacting main thread performance. While the web worker implementation is still in progress, we give an outline below of our existing main thread implementation.
 
-To use WebCodecs, we first need to have a demuxed video stream. We demux mp4s with the mp4box library, as shown here:
+A video file contains multiple streams: video, audio, subtitles and so on. that are 'muxed' together. To use WebCodecs, we first need to have a demuxed video stream. We demux mp4s with the mp4box library, as shown here:
 
 ```javascript
 async function create(demuxer: any) {
