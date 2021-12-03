@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-next
 algolia_priority: 1.1
 eleventyComputed:
   title: "{{paths[pathName].title | i18n(locale)}}"
@@ -10,62 +10,66 @@ eleventyComputed:
 {% set path = paths[pathName] %}
 {% set topics = path.topics | removeDrafts %}
 
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
-<div class="path-landing-page">
-  <header class="w-masthead-path">
-    <div class="w-masthead-path__container">
-      <div class="w-masthead-path__left">
-        <h1 class="w-masthead-path__headline no-link">{{path.title | i18n(locale)}}</h1>
-        <p class="w-masthead-path__description">{{path.description | i18n(locale)}}</p>
+<header class="hero">
+  <div class="wrapper">
+    <div class="hero__columns switcher">
+      <div>
+        <div class="hero__content flow">
+          <h1 class="hero__title">{{path.title | i18n(locale)}}</h1>
+          {{path.description | i18n(locale)}}
+        </div>
       </div>
-      <div class="w-masthead-path__right">
-        {% if path.cover %}
+      {% if path.cover %}
+        <div class="flow all-center">
           {% Img
             height=220,
             width=330,
             src=path.cover,
             alt="Collection cover image",
-            class="w-masthead-path__image"
+            class="hero__decor"
           %}
-        {% endif %}
-      </div>
-    </div>
-  </header>
-
-  {% if path.draft and site.env === 'dev' %}
-    <div class="w-banner w-banner--warning w-banner--body">
-      🚨 This path is a draft! 🚨
-    </div>
-  {% endif %}
-
-  <section class="w-layout-container w-path-intro">
-    <div class="w-path-intro__overview">
-      <h2 class="w-headline--three no-link">Overview</h2>
-      <div class="w-path-intro__overview-text">{{path.overview | i18n(locale)}}</div>
-      {% if path.youtubeId %}
-        <figure class="w-figure">
-          {% YouTube path.youtubeId %}
-        </figure>
+        </div>
       {% endif %}
     </div>
-    <div class="w-path-intro__learn">
-      <h2 class="w-headline--three no-link">Table of Contents</h2>
-      <ul class="w-icon-list">
-        {% for topic in topics %}
-          <li class="w-icon-list__item w-icon-list__item--check">
-            <a class="w-path-link" href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
-          </li>
-	      {% endfor %}
-      </ul>
+  </div>
+</header>
+
+{% if path.draft and site.env === 'dev' %}
+  <div class="banner bg-state-bad-bg color-core-text" role="banner">
+    <div class="banner__content flow">
+      🚨 This path is a draft! 🚨
     </div>
-  </section>
+  </div>
+{% endif %}
 
-  <hr>
+<div class="wrapper pad-block-size-1">
+  <div class="sidebar" data-direction="rtl">
+    <div class="pad-size-1 flow">
+      <h2 class="text-size-2">Overview</h2>
+      <p>{{path.overview | i18n(locale)}}</p>
+      {% if path.youtubeId %}
+        {% YouTube path.youtubeId %}
+      {% endif %}
+    </div>
+    <div class="pad-size-1">
+      <div class="toc">
+        <div class="toc__content">
+          <h2 class="toc__header">Table of Contents</h2>
+          <ul class="toc__list">
+            {% for topic in topics %}
+              <li>
+                <a href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <section class="w-layout-container">
-    {% for topic in topics %}
-      {% include 'partials/topic.njk' %}
-    {% endfor %}
-  </section>
+<div class="learn__path-topics">
+  {% for topic in topics %}
+    {% include 'partials/topic.njk' %}
+  {% endfor %}
 </div>

@@ -1,0 +1,11 @@
+.learn__path-topics {
+  .learn__path-topic:first-child {
+    border-block-start: 1px solid var(--color-stroke);
+  }
+
+  .learn__path-topic:not(:first-child) {
+    div {
+      border-block-start: 1px solid var(--color-core-primary);
+    }
+  }
+}

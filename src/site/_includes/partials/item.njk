@@ -11,7 +11,7 @@
   {% if pathItem.url %}
     <li class="w-path-listitem">
       <a
-        class="w-path-link w-path-link--external"
+        class="color-core-text"
         href="{{ pathItem.url }}"
       >
         {{ pathItem.title | trim }}
@@ -23,7 +23,7 @@
     {% else %}
       <li class="w-path-listitem">
         <a
-          class="w-path-link"
+          class="color-core-text"
           href="{{ item.url }}"
         >
           {{ item.data.title | trim | md({linkify: false}) | safe }}
