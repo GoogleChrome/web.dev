@@ -66,6 +66,8 @@ In general, video embeds, social button widgets, and chat widgets can all employ
 
 * [Daugilas/lazyYT](https://github.com/Daugilas/lazyYT)
 
+* Free [YouTube WordPress plugin](https://wordpress.org/plugins/youtube-embed-plus/) with facade mode (see demo on a [WordPress page with YouTube embed](https://youtube-wordpress-plugin.embedplus.com/youtube-embed-with-facade/))
+
 ### Vimeo embedded player
 
 * [luwes/lite-vimeo-embed](https://github.com/luwes/lite-vimeo-embed)
