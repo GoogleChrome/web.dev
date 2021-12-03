@@ -7,7 +7,7 @@ subhead: |
   latest web technologies and techniques, GEDI Digital has created one of the
   fastest newspaper sites.
 authors:
-  - areege
+  - maurizioparadisi
 date: 2021-12-10
 description: |
   By focusing development effort on performance improvement and applying the
@@ -81,6 +81,30 @@ example, reserving space for images based on their aspect ratio.
 
 The new site became one of the fastest GEDI newspaper sites based on the key
 metrics such as time to first byte and first content full paint.
+
+<ul class="stats">
+ <div class="stats__item">
+   <p class="stats__figure">
+     77
+     <sub>%</sub>
+   </p>
+   <p>Reduction in CLS</p>
+ </div>
+ <div class="stats__item">
+   <p class="stats__figure">
+     26
+     <sub>%</sub>
+   </p>
+   <p>Faster LCP</p>
+ </div>
+ <div class="stats__item">
+   <p class="stats__figure">
+     8
+     <sub>%</sub>
+   </p>
+   <p>Improved mobile bounce rate</p>
+ </div>
+</ul>
 
 The team used what they learned to scale this innovation to other high-traffic
 sites, such as La Stampa and La Repubblica. And, the benefits were measurable:
