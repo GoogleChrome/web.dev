@@ -300,3 +300,5 @@ If you're styling elements using the `system-ui` value for `font-face` property,
 Good typography on the web isn't just about the type choices that you make as a designer. Responsive typography is also about respecting the user's device and network connection. The end result is a design that feels right no matter how it's being viewed.
 
 Now that you've mastered responsive text, it's time to dive into [responsive images](/learn/design/responsive-images).
+
+{% Assessment 'typography' %}
