@@ -8,17 +8,17 @@ figure {
 
 figure[data-float] {
   max-width: calc(#{$global-prose-element-max-width} / 2);
-  margin-bottom: var(--flow-space, 1em);
+  margin-bottom: get-space('size-1');
 }
 
 figure[data-float="left"] {
   float: left;
-  margin-right: var(--flow-space, 1em);
+  margin-inline-end: get-space('size-1');
 }
 
 figure[data-float="right"] {
   float: right;
-  margin-left: var(--flow-space, 1em);
+  margin-inline-start: get-space('size-1');
 }
 
 /// Keeps figures and embeds at a reasonable size and
