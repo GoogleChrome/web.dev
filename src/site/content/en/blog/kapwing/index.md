@@ -1,3 +1,4 @@
+---
 title: Kapwing's performant APIs create first-class online video editing
 subhead: Creators can now edit high-quality video content on the web, thanks to Kapwing.
 authors:
@@ -71,7 +72,7 @@ Note that we pass a version and define an upgrade function. This is used for ini
 
 We also pass error handling callbacks blocked and blocking, which we have found useful in preventing issues for users with unstable systems. Finally, note our definition of a primary key `keyPath`. In our case this is a unique id we call `mediaLibraryID`. When a user adds a piece of media to our system, whether via our uploader or a third party extension, we add the media to our media library with the code below:
 
-```javascript
+```js
 export async function addAsset(mediaLibraryID: string, file: File) {
   return runWithAssetMutex(mediaLibraryID, async () => {
     const assetAlreadyInStore = await (await openIdb).get(
@@ -93,7 +94,7 @@ export async function addAsset(mediaLibraryID: string, file: File) {
 
 Now let's take a look at how we access files. Below is our `getAsset` function:
 
-```javascript
+```js
 export async function getAsset(
   mediaLibraryID: string,
   source: LayerSource | null | undefined,
@@ -143,7 +144,7 @@ Our user research shows that creators are often guided by these waveforms as the
 
 The snippet below demonstrates how we do this:
 
-```javascript
+```js
 const getDownsampledBuffer = (idbAsset: IdbAsset) =>
   decodeMutex.runExclusive(
     async (): Promise<Float32Array> => {
@@ -206,7 +207,7 @@ Recently we have moved over to web codecs, which can be used in web workers. Thi
 
 A video file contains multiple streams: video, audio, subtitles and so on. that are 'muxed' together. To use WebCodecs, we first need to have a demuxed video stream. We demux mp4s with the mp4box library, as shown here:
 
-```javascript
+```js
 async function create(demuxer: any) {
   demuxer.file = (await MP4Box).createFile();
   demuxer.file.onReady = (info: any) => {
@@ -246,7 +247,7 @@ This snippet refers to a demuxer class, which we use to encapsulate the interfac
 
 Here's how we decode a video frame:
 
-```javascript
+```js
 const getFrameFromVideoDecoder = async (demuxer: any): Promise<any> => {
   let desiredSampleIndex = demuxer.getFrameIndexForTimestamp(this.frameTime);
   let timestampToMatch: number;
