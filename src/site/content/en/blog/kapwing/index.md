@@ -37,13 +37,13 @@ To this end we use a variety of web APIs to achieve our performance and feature 
 
 ### IndexedDB
 
-High performance editing requires that all of our users' content live on the client, avoiding the network whenever possible. Unlike a streaming service, where users typically access a piece of content once, our customers reuse their assets frequently, days and even months after upload. 
+High performance editing requires that all of our users' content live on the client, avoiding the network whenever possible. Unlike a streaming service, where users typically access a piece of content once, our customers reuse their assets frequently, days and even months after upload.
 
 IndexedDB allows us to provide persistent file system-like storage to our users. The result is that over 90% of media requests in the app are fulfilled locally. Integrating indexedDB into our system was very straightforward.
 
-Below is some boiler plate initialization code that runs on app load:
+Here is some boiler plate initialization code that runs on app load:
 
-```sql
+```js
 import { DBSchema, openDB, deleteDB, IDBPDatabase } from "idb";
 let openIdb: Promise<IDBPDatabase<Schema>>;
 const db =
@@ -68,7 +68,7 @@ const db =
 });
 ```
 
-Note that we pass a version and define an upgrade function. This is used for initialization or to update our schema when necessary.
+We pass a version and define an upgrade function. This is used for initialization or to update our schema when necessary.
 
 We also pass error handling callbacks blocked and blocking, which we have found useful in preventing issues for users with unstable systems. Finally, note our definition of a primary key `keyPath`. In our case this is a unique id we call `mediaLibraryID`. When a user adds a piece of media to our system, whether via our uploader or a third party extension, we add the media to our media library with the code below:
 
@@ -138,7 +138,7 @@ Audio visualization is incredibly important for video editing. To understand why
    width="800", height="397"
 %}
 
-This is a YouTube style video, which is common in our app. The user does not move very much throughout the clip, so the timelines visual thumbnails are not as useful for navigating between sections. On the other hand, the audio [waveform](https://en.wikipedia.org/wiki/Waveform) shows peaks and valleys, with the valleys typically corresponding to dead time in the recording. Were you to zoom in on the timeline you would see more fine grained audio information, with valleys corresponding to stutters and pauses.
+This is a YouTube style video, which is common in our app. The user does not move very much throughout the clip, so the timelines visual thumbnails are not as useful for navigating between sections. On the other hand, the audio [waveform](https://en.wikipedia.org/wiki/Waveform) shows peaks and valleys, with the valleys typically corresponding to dead time in the recording. If you zoom in on the timeline, you'd see more fine grained audio information with valleys corresponding to stutters and pauses.
 
 Our user research shows that creators are often guided by these waveforms as they splice their content. The web audio API allows us to present this information performantly and to update quickly on a zoom or pan of the timeline.
 
@@ -193,7 +193,7 @@ const getDownsampledBuffer = (idbAsset: IdbAsset) =>
 
 We pass this helper the asset that is stored in indexedDB. Upon completion we will update the asset in indexedDB as well as our own cache.
 
-We gather data about the audioBuffer with the AudioContext constructor, but because we are not rendering to the device hardware we use the `OfflineAudioContext` to render to an `ArrayBuffer` where we will store amplitude data.
+We gather data about the audioBuffer with the AudioContext constructor, but because we aren't rendering to the device hardware we use the `OfflineAudioContext` to render to an `ArrayBuffer` where we will store amplitude data.
 
 The API itself returns data at a sample rate much higher than needed for effective visualization. That's why we manually downsample to 200 Hz, which we found to be enough for useful, visually appealing waveforms. 
 
@@ -243,7 +243,7 @@ const loadMetadata = async () => {
 };
 ```
 
-This snippet refers to a demuxer class, which we use to encapsulate the interface to mp4box. We once again access the asset from indexedDB. Note that the segments are not necessarily stored in byte order, and that the appendBuffer method returns the offset of the next chunk.
+This snippet refers to a demuxer class, which we use to encapsulate the interface to mp4box. We once again access the asset from indexedDB. These segments are not necessarily stored in byte order, and that the `appendBuffer` method returns the offset of the next chunk.
 
 Here's how we decode a video frame:
 
@@ -306,7 +306,7 @@ const getFrameFromVideoDecoder = async (demuxer: any): Promise<any> => {
 };
 ```
 
-The structure of the demuxer is quite complex and beyond the scope of this article. It stores each frame in an array titled 'samples'. We use the demuxer to find the closest preceding key frame to our desired timestamp, which is where we must begin video decode.
+The structure of the demuxer is quite complex and beyond the scope of this article. It stores each frame in an array titled `samples`. We use the demuxer to find the closest preceding key frame to our desired timestamp, which is where we must begin video decode.
 
 Videos are composed of full frames known as key or i-frames as well as much smaller delta frames, often referred to as p- or b-frames. Decode must always begin at a key frame. 
 
@@ -314,8 +314,8 @@ The application decodes frames by:
 
 1. Instantiating the decoder with a frame output callback.
 1. Configuring the decoder for the specific codec and input resolution.
-1. Creating an encodedVideoChunk using data from the demuxer
-1. Calling the decodeEncodedFrame method
+1. Creating an `encodedVideoChunk` using data from the demuxer
+1. Calling the `decodeEncodedFrame` method
 
 We do this until we reach the frame with the desired timestamp.
 
@@ -323,10 +323,10 @@ We do this until we reach the frame with the desired timestamp.
 
 We define scale on our frontend as the ability to maintain precise and performant playback as projects get larger and more complex. One way to scale performance is to mount as few videos as possible at once, however when we do this we risk slow and choppy transitions. While we have developed internal systems to cache video components for reuse, there are limitations to how much control HTML5 video tags can provide.
 
-In the future we may attempt to play all media using web codecs. This could allow us to be very precise about what data we buffer which should help scale performance.
+In the future, we may attempt to play all media using WebCodecs. This could allow us to be very precise about what data we buffer which should help scale performance.
 
 We can also do a better job of offloading large trackpad computations to web workers, and can be more intelligent about pre-fetching files and pre-generating frames. We see large opportunities to optimize our overall application performance, and to extend functionality with tools like webGL.
 
 We would also like to continue our investment in tensorflow.js, which we currently use for intelligent background removal, and which we plan to leverage for other sophisticated tasks such as object detection, feature extraction, style transfer and so on.
 
-We are excited about the promise of native like performance and functionality on a free and open web. 
+We're excited about the promise of native like performance and functionality on a free and open web. 
