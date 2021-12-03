@@ -42,7 +42,7 @@ IndexedDB allows us to provide persistent file system-like storage to our users.
 
 Below is some boiler plate initialization code that runs on app load:
 
-```indexDB
+```sql
 import { DBSchema, openDB, deleteDB, IDBPDatabase } from "idb";
 let openIdb: Promise<IDBPDatabase<Schema>>;
 const db =
