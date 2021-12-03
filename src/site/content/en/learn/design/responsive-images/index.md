@@ -356,3 +356,4 @@ It's worth spending the time to get images right. Poor image strategies are resp
 
 There's one more HTML element in your toolkit to help you exercise more control over your images: [the `picture` element](/learn/design/picture-element/).
 
+{% Assessment 'images' %}
