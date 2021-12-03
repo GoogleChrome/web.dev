@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-11-09
+updated: 2021-12-03
 tags:
   - blog
   - capabilities
@@ -70,7 +70,7 @@ app, however, can be achieved through two other means:
 To check if the File Handling API is supported, use:
 
 ```javascript
-if ('launchQueue' in window) {
+if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
   // The File Handling API is supported.
 }
 ```
@@ -160,7 +160,7 @@ exactly once for each launch. In this manner, every launch is handled, regardles
 consumer was specified.
 
 ```js
-if ('launchQueue' in window) {
+if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
   launchQueue.setConsumer((launchParams) => {
     // Nothing to do when the queue is empty.
     if (!launchParams.files.length) {
