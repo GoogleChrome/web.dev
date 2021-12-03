@@ -9,6 +9,7 @@ subhead: |
 authors:
   - maurizioparadisi
 date: 2021-12-10
+hero: image/VbsHyyQopiec0718rMq2kTE1hke2/qg8rHQ5qlKK9t4Z6qTH2.jpeg
 description: |
   By focusing development effort on performance improvement and applying the
   latest web technologies and techniques, GEDI Digital has created one of the
@@ -80,7 +81,9 @@ example, reserving space for images based on their aspect ratio.
 ## Results 
 
 The new site became one of the fastest GEDI newspaper sites based on the key
-metrics such as time to first byte and first content full paint.
+metrics such as time to first byte and first content full paint. The team used
+what they learned to scale this innovation to other high-traffic sites, such as
+La Stampa and La Repubblica. 
 
 <ul class="stats">
  <div class="stats__item">
@@ -95,7 +98,7 @@ metrics such as time to first byte and first content full paint.
      26
      <sub>%</sub>
    </p>
-   <p>Faster LCP</p>
+   <p>Faster Largest Contentful Paint</p>
  </div>
  <div class="stats__item">
    <p class="stats__figure">
@@ -106,12 +109,11 @@ metrics such as time to first byte and first content full paint.
  </div>
 </ul>
 
-The team used what they learned to scale this innovation to other high-traffic
-sites, such as La Stampa and La Repubblica. And, the benefits were measurable:
-on the La Repubblica mobile site, for example, they measured a 77% reduction
-in [Cumulative Layout Shift](/cls/) (CLS) and a 26%  improvement in time to
-[Largest Contentful Paint](/lcp/) (LCP). Overall, the team found they reduced
-the mobile bounce rate by 8%.
+And, the benefits were measurable: on the La Repubblica mobile site, for
+example, they measured a 77% reduction in [Cumulative Layout Shift](/cls/)
+(CLS) and a 26%  improvement in time to [Largest Contentful Paint](/lcp/)
+(LCP). Overall, the team found they reduced on La Repubblica's mobile bounce
+rate by 8%.
 
 The next step is to improve cumulative layout shift by minimizing the impact of
 ads on site layout stability. Giuseppe considers this to be a big challenge
