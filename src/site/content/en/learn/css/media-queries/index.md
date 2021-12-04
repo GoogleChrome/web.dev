@@ -365,7 +365,7 @@ The following demo leverages `min-width` and `max-width` to arbitrarily classify
 {% YouTube 'SY7H4liaUEU' %}
 
 {% Aside 'warning' %}
-Regardless of Web design approach you elect to use media queries for, note that viewport-based queries on  **small viewport devices such as phones likely won’t render your conditional layout styles as you expect without overriding their default viewport settings.** When seminal mobile devices entered the market, sites designed with fixed-layouts and much larger screen in mind were prevalent. To counter-act this to provide a more useful default browsing the Web for their users, such devices out of necessity scaled Web sites at a particular width and scale the Web sites rendered at those particular widths to the actual width of the device.
+Regardless of Web design approach you elect to use media queries for, note that viewport-based queries on  **small viewport devices such as phones likely won’t render your conditional layout styles as you expect without overriding their default viewport settings.** When seminal mobile devices entered the market, sites designed with fixed-layouts and much larger screen in mind were prevalent. To counteract this to provide a more useful default browsing the Web for their users, such devices out of necessity scaled Web sites at a particular width and scale the Web sites rendered at those particular widths to the actual width of the device.
 
 This became an industry standard that still is common today. To counteract this, the following HTML typically suffices to undo the scaling of such portable devices:
 
@@ -408,11 +408,11 @@ The media query more tersely written with *relational operatiors*
 {% endCompare %}
 
 {% Aside 'caution' %}
-An emerging capability for range type media features, it is recommended to periodically reference [CanIUse.com’s dedicated page on the support of the feature](https://caniuse.com/mdn-css_at-rules_media_range_syntax) prior to extensively using it to account for its limited or missing support in the browsers you need to accomodate with your sytles.
+An emerging capability for range type media features, it is recommended to periodically reference [CanIUse.com’s dedicated page on the support of the feature](https://caniuse.com/mdn-css_at-rules_media_range_syntax) prior to extensively using it to account for its limited or missing support in the browsers you need to accommodate with your styles.
 {% endAside %}
 
 {% Aside %}
-Many more media features exist than the ones mentioned thus far to audit whether or not a medium supports them to meaningfully enhance a document.  [Check out CSS Trick’ s complete guide to media queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/) and the [MDN’s list of media features](https://developer.mozilla.org/docs/Web/CSS/@media#media_features) on learn more about the most supported and meaningful media features you can query against in CSS.
+Many more media features exist than the ones mentioned thus far to audit whether or not a medium supports them to meaningfully enhance a document.  [Check out CSS Trick’ s complete guide to media queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/) and the [MDN’s list of media features](https://developer.mozilla.org/docs/Web/CSS/@media#media_features) to learn more about the most supported and meaningful media features you can query against in CSS.
 {% endAside %}
 
 #### Querying that a medium has a particular media feature
@@ -470,7 +470,7 @@ Similarly, you can conditionally apply styles if the medium doesn’t have a poi
 
 {% endCompare %}
 
-`pointer`, being a discrete media feature, can be simultaneously more granularly conditionally apply styles regarding the capabilities of a medium’s pointer device.
+`pointer`, being a discrete media feature, can simultaneously be more granularly used to conditionally apply styles regarding the capabilities of a medium’s pointer device.
 
 To conditionally apply styles if the media’s pointing device is considered to be limited in functionality (i.e. to adjust UI accordingly), you could use the following media query
 
@@ -492,7 +492,7 @@ You can also use the following media query if a medium’s pointer device is acc
 ```
 {% endCompare %}
 
-Because this possibility for some media features that may need to be checked with specific media types; you can think of parenthesizes being required for media features as a reliable way for media types and media features be distinguishable from another for browsers and humans.
+Because of this possibility for some media features that may need to be checked with specific media types; you can think of parentheses being required for media features as a reliable way for media types and media features to be distinguishable from another for browsers and humans.
 
  For example, the following snippet demonstrates the pointer  media feature alongside the speech media
 
@@ -517,7 +517,7 @@ For more understanding of the media queries that can be used in this way, check 
 
 #### Associating a particular media type with a media feature together using the logical operator keyword `and`
 
-When you need to conditionally apply styles with a particular media type and a media feature in mind simulataneously represented as one media query, a media type and media feature must be paired with one another using the `and` logic operator keyword:
+When you need to conditionally apply styles with a particular media type and a media feature in mind simultaneously represented as one media query, a media type and media feature must be paired with one another using the `and` logic operator keyword:
 
 {% Compare 'better' %}
 ```css
@@ -558,7 +558,7 @@ The requirement that a media type and a media feature are always joined by `and`
 @media not screen or (orientation: portrait) {}
 ```
 {% CompareCaption %}
-`or` is explictly not allowed between a media type and a media feature because the ambiguity
+`or` is explicitly not allowed between a media type and a media feature because the ambiguity
 {% endCompareCaption %}
 {% endCompare %}
 
@@ -567,7 +567,7 @@ The requirement that a media type and a media feature are always joined by `and`
 @media not screen or all and (orientation: portrait) {}
 ```
 {% CompareCaption %}
-Example of the ambiguity caused by the invalid use of `or` to join a media feature and a media featue. It's ambigious the criteria to conditionally apply the styles within the media block
+Example of the ambiguity caused by the invalid use of `or` to join a media feature and a media feature. It's ambiguous the criteria to conditionally apply the styles within the media block
 * Not on a screen-based medium but the medium is portrait-oriented?
 * The device isn't a screen-based device and not a portrait device?
 *
@@ -582,7 +582,7 @@ As mentioned earlier in this module, the default media type associated with a me
 
 This makes sense because documents and the styles we add to them are always rendered on a medium; it's impossible for a document to not be on a medium and it's impossible to style a document without a medium being a factor.
 
-It is an all (pun intended) or anothing affair.
+It is an all (pun intended) or nothing affair.
 
 Typical blocks of style we can write in CSS such as the following
 ```css
@@ -604,7 +604,7 @@ Can accordingly be alternatively be written the following way to fully embrace h
 Ultimately type of media is always a factor with media queries, with `all` being an all-encompassing media type that makes it a sensible default.  Its usage implicitly and explicitly communicates styles are applicable to any type of media that the document can be rendered on followed by zero or more media features we specify relevant to our conditional styling needs.
 {% endAside %}
 
-#### Combining media feaures using the `and`/`or` logical operator keywords
+#### Combining media feautures using the `and`/`or` logical operator keywords
 
 To conditionally apply styles based on multiple media features to represent a single expression, you use either the
 
@@ -765,7 +765,7 @@ In the first example of this module, you could do the following if you wanted to
 }
 ```
 
-Similarly, you could have more granualarly only loaded a stylesheet containing these styles dependent on a browser's ability to support CSS grids with the following code:
+Similarly, you could have more granularly only loaded a stylesheet containing these styles dependent on a browser's ability to support CSS grids with the following code:
 ```css
 @import "css-grid-styles.css" supports(display: grid);
 ```
