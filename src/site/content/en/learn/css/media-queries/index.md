@@ -412,7 +412,7 @@ An emerging capability for range type media features, it is recommended to perio
 {% endAside %}
 
 {% Aside %}
-Many more media features exist than the ones mentioned thus far to audit whether or not a medium supports them to meaningfully enhance a document.  [Check out CSS Trick’ s complete guide to media queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/) and the [MDN’s list of media features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) on learn more about the most supported and meaningful media features you can query against in CSS.
+Many more media features exist than the ones mentioned thus far to audit whether or not a medium supports them to meaningfully enhance a document.  [Check out CSS Trick’ s complete guide to media queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/) and the [MDN’s list of media features](https://developer.mozilla.org/docs/Web/CSS/@media#media_features) on learn more about the most supported and meaningful media features you can query against in CSS.
 {% endAside %}
 
 #### Querying that a medium has a particular media feature
@@ -515,7 +515,7 @@ Without the requirement of media features needing parenthesis, it would be uncle
 For more understanding of the media queries that can be used in this way, check out the [“Evaluating Media Features in a Boolean context” section of the latest specification for Media queries](https://www.w3.org/TR/mediaqueries-5/#mq-boolean-context) when this article was published.
 {% endAside %}
 
-#### Associating a particular media type with a media feature together using the logical operator keyword `and`.
+#### Associating a particular media type with a media feature together using the logical operator keyword `and`
 
 When you need to conditionally apply styles with a particular media type and a media feature in mind simulataneously represented as one media query, a media type and media feature must be paired with one another using the `and` logic operator keyword:
 
