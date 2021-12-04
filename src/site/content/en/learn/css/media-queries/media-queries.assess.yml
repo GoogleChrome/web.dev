@@ -1,0 +1,119 @@
+setLeader: Test your knowledge of CSS Backgrounds
+tabLabel: question
+height: unset
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: the default media type used for media queries is `screen`
+    options:
+      - content: "True"
+        rationale: |
+          `screen` is too specific of a media query to set as the default for most media queries.
+      - content: "False"
+        rationale: Correct!
+
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      @media screen or (min-width: 12.5em) {}
+      ```
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      Is the media query above valid?
+    options:
+      - content: "True"
+        rationale: |
+          The `or` logical operator keyword cannot be used to pair a *media type* and a *media feature* in the same expression
+      - content: "False"
+        rationale: Correct!
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,2,3"
+    stem: Which of the following `background-position` declarations are valid?
+    options:
+      - content: 'HTML Elements'
+        rationale: |
+          Elements such as `<link>` and `<style>` accept media queries typically via a `media` attribute.
+      - content: 'Stylesheets'
+        rationale: |
+          Media queries can be used with in CSS using the `@media` or `@import` [at-rules](https://thecsspodcast.libsyn.com/031-rules)
+      - content: 'JavaScript'
+        rationale: |
+          JavaScript has APIs like `matchMedia` intended to be used with media queries.
+      - content: '`@import`'
+        rationale: |
+          `@import` is one of the two [at-rules](https://thecsspodcast.libsyn.com/031-rules) in CSS that allows you to use Media Queries meaningfully in CSS.
+
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stimulus: |
+      ```css
+        @media (min-width: 31.25em) {}
+      ````
+      ```css
+        @media all and (min-width: 31.25em) {}
+      ```
+    stem: |
+      These two media queries are equivalent in functionality
+    options:
+      - content: "True"
+        rationale: |
+          Correct!
+      - content: "False"
+        rationale: |
+          `all` is the default media type for all media queries; it can be explicitly used to not effect to existing queries that didn't depend on a different media type for their purpose.
+
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stimulus: |
+      ```css
+        @media not screen and (orientation: portrait), print {}
+      ```
+      ```css
+        @media not screen and (orientation: portrait), not print {}
+      ```
+    stem: |
+      These two media queries are equivalent in function
+    options:
+      - content: "True"
+        rationale: |
+          `not` keyword only works on one media query at a time.
+      - content: "False"
+        rationale: Correct!
+
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stimulus: |
+      ```css
+      @media (orientaton: landscape) {
+        body {
+          background: blue
+        }
+      }
+      ````
+      ```css
+        @media all {
+          @media (orientation: landscape)  {
+            body {
+              background: blue;
+            }
+          }
+        }
+      ```
+    stem: |
+      These two media queries are equivalent in functionality
+    options:
+      - content: "True"
+        rationale: |
+          Correct!
+      - content: "False"
+        rationale: |
+          Yes, [Nesting media queries](https://css-tricks.com/nested-media-queries/). Media queries with a *media condition* only consisting of media features have  `all` as their default media type. Accordingly both queries will work with any medium that is landscape oriented to conditionally style the background of the document blue.
+
+
+
