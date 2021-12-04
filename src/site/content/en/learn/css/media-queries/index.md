@@ -772,4 +772,15 @@ Similarly, you could have more granualarly only loaded a stylesheet containing t
 
 To learn more about feature queries, check out MDN’s documentation on `@support` or [CSSTricks.com’s deep-dive on how they work](https://css-tricks.com/how-supports-works/) or MDN's documentation about them.
 
+## Resources
+* [Web.dev’s Learn Responsive Web Design Course](https://web.dev/learn/design/)
+
+*  [MDN’s Beginner’s guide to using Media Queries]([Beginner’s guide to media queries - Learn web development | MDN](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Media_queries)
+
+* [A Complete Guide to CSS Media Queries - CSS-Tricks](https://css-tricks.com/a-complete-guide-to-css-media-queries/)
+
+* [Media Queries for Standard Devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+
+* [Mediaquerie.es (Collection of inspirational websites using media queries and responsive Web design)](https://mediaqueri.es/)
+
 {% Assessment 'media-queries' %}
