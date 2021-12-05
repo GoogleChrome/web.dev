@@ -93,4 +93,4 @@ I think the most influential person throughout my career was [Jeremy Keith](http
 Jeremy Keith has created our new [responsive design course](/learn/design/) here on web.dev.
 {% endAside %}
 
-**Rachel:** You can [follow Bramus on Twitter](​​https://twitter.com/bramus), and on his blog at [bram.us](https://www.bram.us/).
+**Rachel:** You can [follow Bramus on Twitter](https://twitter.com/bramus), and on his blog at [bram.us](https://www.bram.us/).
