@@ -1,5 +1,5 @@
 ---
-title: Kapwing: Powerful video editing for the web
+title: 'Kapwing: Powerful video editing for the web'
 subhead: Creators can now edit high-quality video content on the web, thanks to Kapwing.
 authors:
   - mihajlija
