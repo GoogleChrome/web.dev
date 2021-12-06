@@ -19,6 +19,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
+      // Wether to show iframe or not because of percy test.
+      percymode: {type: Boolean},
       // Whether we are a desktop-sized browser or not.
       _isDesktop: {type: Boolean},
     };
@@ -34,6 +36,7 @@ class Codelab extends BaseElement {
 
     this._mql = window.matchMedia('(min-width: 865px)');
     this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
+    this.percymode = false;
   }
 
   connectedCallback() {
@@ -109,7 +112,10 @@ class Codelab extends BaseElement {
     }
 
     return html`
-      <div class="web-codelab__glitch-container">
+      <div
+        class="web-codelab__glitch-container
+        ${this.percymode ? 'web-codelab__glitch-percy' : ''}"
+      >
         <iframe
           allow="geolocation; microphone; camera; midi; encrypted-media"
           alt="Embedded glitch ${this.glitch}"

@@ -47,6 +47,14 @@ web-codelab {
         position: sticky;
         top: $WEB_HEADER_HEIGHT + 16px;
         height: calc(100vh - #{$WEB_HEADER_HEIGHT + 32px});
+
+        &.web-codelab__glitch-percy {
+          background-color: red;
+
+          iframe {
+            display: none;
+          }
+        }
       }
     }
   }
