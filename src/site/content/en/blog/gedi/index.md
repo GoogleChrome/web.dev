@@ -81,7 +81,7 @@ example, reserving space for images based on their aspect ratio.
 ## Results 
 
 The new site became one of the fastest GEDI newspaper sites based on the key
-metrics such as time to first byte and first content full paint. The team used
+metrics such as [Time to First Byte](/ttfb/) (TTFB) and [First Contentful Paint](/fcp/) (FCP). The team used
 what they learned to scale this innovation to other high-traffic sites, such as
 La Stampa and La Repubblica. 
 
