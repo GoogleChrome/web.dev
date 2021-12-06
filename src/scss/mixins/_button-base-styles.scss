@@ -10,9 +10,12 @@
   position: relative;
   overflow: hidden;
 
+  /// It's really important line-height is flat
+  /// so to prevent cascade issues, we make it important
+  line-height: 1 !important;
+
   @include apply-utility('bg', 'action-bg');
   @include apply-utility('weight', 'medium');
-  @include apply-utility('leading', 'flat');
   @include apply-utility('font', 'brand');
   @include vertically-align-label();
 
