@@ -59,11 +59,11 @@ on the first in-viewport images.
 
 <figure>
 {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/h2MYvRTJMxFS4VrFRYTA.png",
-   alt="26% improvement in time for LCP from March 1 through July 5",
+   alt="Google Data Studio shows a 26% improvement in time for Largest Contentful Paint from March 1 through July 5, 2021",
    width="800", height="390"
 %}
   <figcaption>
-    Largest contentful paint (LCP) improvement trend
+    Largest Contentful Paint (LCP) improvement trend for La Repubblica
   </figcaption>
 </figure>
 
@@ -73,11 +73,11 @@ example, reserving space for images based on their aspect ratio.
 <figure>
 {% 
    Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/f5ZizQnDMyeFMDUJzmMj.png",
-   alt="77% reduction in Cumulative Layout Shift. A step decline occurs between October 20, 2020 to December 7, 2020, and it continues to decline slightly until November 8, 2021.",
+   alt="There was a 77% reduction in Cumulative Layout Shift as shown on Google Data Studio. A step decline occurs between October 20, 2020 to December 7, 2020, and it continues to decline slightly until November 8, 2021.",
    width="800", height="390"
 %}
   <figcaption>
-    Cumulative Layout Shift improvement trend (first improvement by reserving space for Top Ads in Nov 2020, second improvement by reserving space for Mid page Ads by August 2021).
+    Cumulative Layout Shift improvement trend. The first improvement came from reserving space for ads at the top of the page in November 2020, and the second improvement from reserving space for mid-page Ads in August 2021.
   </figcaption>
 </figure>
 
