@@ -136,26 +136,32 @@ export async function getAsset(
   let asset: IdbAsset | undefined;
   const { idbCache } = window;
   const assetInCache = idbCache[mediaLibraryID];
-  if (assetInCache && assetInCache.status === "complete") {
+
+  if (assetInCache && assetInCache.status === 'complete') {
     asset = assetInCache.asset;
-  } else if (assetInCache && assetInCache.status === "pending") {
+  } else if (assetInCache && assetInCache.status === 'pending') {
     asset = await new Promise((res) => {
       assetInCache.subscribers.push(res);
     }); 
   } else {
-    idbCache[mediaLibraryID] = { subscribers: [], status: "pending" };
-    asset = (await openIdb).get("assets", mediaLibraryID);
+    idbCache[mediaLibraryID] = { subscribers: [], status: 'pending' };
+    asset = (await openIdb).get('assets', mediaLibraryID);
+
     idbCache[mediaLibraryID].asset = asset;
     idbCache[mediaLibraryID].subscribers.forEach((res: any) => {
       res(asset);
     });
+
     delete (idbCache[mediaLibraryID] as any).subscribers;
-    if (asset) idbCache[mediaLibraryID].status = "complete";
-    else idbCache[mediaLibraryID].status = "failed";
+
+    if (asset) {
+      idbCache[mediaLibraryID].status = 'complete';
+    } else {
+      idbCache[mediaLibraryID].status = 'failed';
+    }
   } 
   return asset;
 } 
-```
 
 We have our own data structure, `idbCache`, that is used to minimize IndexedDB
 accesses. While IndexedDB is fast, accessing local memory is faster. We
