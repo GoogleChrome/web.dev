@@ -171,7 +171,7 @@ button {
 {% Codepen {
  user: 'web-dot-dev',
  id: 'qBPWzrj',
- height: 400,
+ height: 440,
  theme: 'dark',
  tab: 'css,result'
 } %}
