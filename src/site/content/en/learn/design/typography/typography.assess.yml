@@ -22,7 +22,7 @@ questions:
         rationale: "While this is true, it's not a good reason to use `clamp()` for typography."
       - content: "It allows locking the font size between sensible minimums and maximums while also providing a scalable middle value."
         rationale: "Exactly, prevent too small or too large text, while also providing a smooth scaling font size."
-      - content: "It makes the math easy"
+      - content: "It makes the math easy."
         rationale: "Try again."
   - type: multiple-choice
     cardinality: "1"
@@ -30,7 +30,7 @@ questions:
     stem: "Which type of `line-height` values were recommended in this guide?"
     options:
       - content: "`24px`"
-        rationale: "The post explicitly says don't use pixel values for `line-height`"
+        rationale: "The post explicitly says don't use pixel values for `line-height`."
       - content: "`2rem`"
         rationale: "While rems are relative values, they can still create too small or too large line-heights."
       - content: "`1.5`"
@@ -47,6 +47,6 @@ questions:
       - content: "Allows setting the font to `block` or `inline-block`."
         rationale: "Fonts do not have display types."
       - content: "Changes if the font is hidden or not."
-        rationale: "Fonts cannot be hidden"
+        rationale: "Fonts cannot be hidden."
       - content: "Provides control for timing the user experience of loading remote fonts."
         rationale: "Helps authors tailor the loading experience of custom fonts."

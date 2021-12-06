@@ -33,5 +33,5 @@ questions:
         rationale: "This signals from CSS that the form inputs should match the system color scheme."
       - content: 'Add `<meta name="supported-color-schemes" content="light dark">` to your HTML `<head>` tag.'
         rationale: "This signals from HTML that the form inputs should match the system color scheme."
-      - content: "Write a bunch of CSS to change all the defaults of the input"
-        rationale: "This work too, but is a bit harder."
+      - content: "Write a bunch of CSS to change all the defaults of the input."
+        rationale: "This works too, but is a bit harder."

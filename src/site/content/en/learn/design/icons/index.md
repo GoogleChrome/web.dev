@@ -28,7 +28,7 @@ PNGs (and JPGs, WebP, and AVIF) are bitmap images. Bitmap images store informati
 {% Codepen {
  user: 'web-dot-dev',
  id: 'YzrKoWY',
- height: 300,
+ height: 360,
  theme: 'dark',
  tab: 'html,result'
 } %}
