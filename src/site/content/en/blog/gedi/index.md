@@ -31,7 +31,7 @@ and 15 news sites. Their stable of publications includes
 While GEDI is present in traditional publishing and broadcasting, its content
 is increasingly being consumed on the web, and web is now contributing
 significantly to their advertising revenue. Therefore, user retention and user
-experience on the web are vital to the company’s overall prosperity.
+experience on the web are vital to the company's overall prosperity.
 
 ## Challenge
 
@@ -118,5 +118,5 @@ rate by 8%.
 GEDI's next step is to improve cumulative layout shift by reducing the impact
 of ads on site layout stability. Giuseppe considers this to be a big challenge
 because they often deliver multi-site ad formats. Finding the right space to
-serve ads is a challenge, a challenge that they’re addressing by A/B testing
+serve ads is a challenge, a challenge that they're addressing by A/B testing
 various solutions.  
