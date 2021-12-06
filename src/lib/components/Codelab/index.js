@@ -88,6 +88,14 @@ class Codelab extends BaseElement {
       return html``;
     }
     const isTest = env === 'test';
+    const iframe = html`<iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      alt="Embedded glitch ${this.glitch}"
+      title="Embedded glitch ${this.glitch}"
+      src="${this.glitchSrc(true)}"
+      style="height: 100%; width: 100%; border: 0;"
+    >
+    </iframe>`;
 
     // If this is a test, always show the warning. Percy snapshots our DOM at a
     // low resolution before resizing it, so we can't rely on _isDesktop being
@@ -116,14 +124,7 @@ class Codelab extends BaseElement {
         class="web-codelab__glitch-container
         ${this.percymode ? 'web-codelab__glitch-percy' : ''}"
       >
-        <iframe
-          allow="geolocation; microphone; camera; midi; encrypted-media"
-          alt="Embedded glitch ${this.glitch}"
-          title="Embedded glitch ${this.glitch}"
-          src="${this.glitchSrc(true)}"
-          style="height: 100%; width: 100%; border: 0;"
-        >
-        </iframe>
+        ${this.percymode ? '' : iframe}
       </div>
     `;
   }
