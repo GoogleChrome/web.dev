@@ -356,7 +356,7 @@ const getFrameFromVideoDecoder = async (demuxer: any): Promise<any> => {
       sample.size
     );  
 
-    const sampleType = sample.is_sync ? "key" : "delta";
+    const sampleType = sample.is_sync ? 'key' : 'delta';
     const encodedFrame = new EncodedVideoChunk({
       sampleType,
       timestamp: sample.cts,
