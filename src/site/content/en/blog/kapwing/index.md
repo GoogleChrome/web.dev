@@ -240,7 +240,7 @@ const getDownsampledBuffer = (idbAsset: IdbAsset) =>
 We pass this helper the asset that is stored in indexedDB. Upon completion we 
 will update the asset in IndexedDB as well as our own cache.
 
-We gather data about the audioBuffer with the AudioContext constructor, but 
+We gather data about the `audioBuffer` with the `AudioContext` constructor, but 
 because we aren't rendering to the device hardware we use the 
 `OfflineAudioContext` to render to an `ArrayBuffer` where we will store 
 amplitude data.
