@@ -96,6 +96,10 @@
     padding: get-space('size-1');
 
     @include apply-utility('bg', 'mid-bg');
+
+    img {
+      background-color: transparent;
+    }
   }
 }
 

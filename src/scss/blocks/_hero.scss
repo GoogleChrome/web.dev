@@ -28,6 +28,12 @@
   }
 }
 
+/// Overrides a global masking for transparent images
+.hero__decor[src$='.svg'],
+.hero__decor[src$='.png'] {
+  background-color: transparent;
+}
+
 .hero__columns {
   --switcher-target-container-width: 50rem;
   --gutter: #{get-space('size-3')} #{get-space('size-2')};
