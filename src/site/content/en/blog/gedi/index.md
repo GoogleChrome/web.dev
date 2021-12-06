@@ -9,7 +9,8 @@ subhead: |
 authors:
   - maurizioparadisi
 date: 2021-12-10
-hero: image/VbsHyyQopiec0718rMq2kTE1hke2/qg8rHQ5qlKK9t4Z6qTH2.jpeg
+hero: image/VbsHyyQopiec0718rMq2kTE1hke2/IY9FEuclK1ky89V6zwaP.jpg
+alt: GEDI logo
 description: |
   By focusing development effort on performance improvement and applying the
   latest web technologies and techniques, GEDI Digital has created one of the
