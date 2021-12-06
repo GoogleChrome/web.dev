@@ -6,7 +6,7 @@ authors:
 description: A foundational overview of how to build an adaptive and accessible toast component.
 date: 2021-12-08
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kVA6GT6GamdvCskUpLme.png
-alt: Shows a few toast examples like 'In cart' and 'Added to Playlist'
+alt: A few toast examples like 'In cart' and 'Added to Playlist'.
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KvDOz8UzG3yLfDkkqqsI.png
 tags:
   - blog
