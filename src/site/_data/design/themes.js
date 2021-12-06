@@ -197,6 +197,12 @@ module.exports = {
         tokens: this.getDark(),
       },
       {
+        name: 'dark',
+        key: 'prefers-color-scheme',
+        value: 'dark',
+        tokens: this.getDark(),
+      },
+      {
         name: 'light-toggle',
         key: 'prefix',
         value: '[data-user-theme="light"]',
