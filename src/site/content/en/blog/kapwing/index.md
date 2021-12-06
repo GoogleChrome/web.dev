@@ -157,8 +157,8 @@ export async function getAsset(
 } 
 ```
 
-We have our own data structure, `idbCache`, that is used to minimize indexedDB
-accesses. While indexedDB is fast, accessing local memory is faster. We
+We have our own data structure, `idbCache`, that is used to minimize IndexedDB
+accesses. While IndexedDB is fast, accessing local memory is faster. We
 recommend this approach so long as you manage the size of the cache.
 
 Also note the `subscribers` array, which is used to prevent simultaneous
