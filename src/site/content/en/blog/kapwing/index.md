@@ -179,7 +179,7 @@ why, take a look at a screenshot from the editor:
 
 {% Img 
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/6MqSyhNqFl23wN3GWKbP.png", 
-   alt="Kapwing's editor has a menu for media, including several templates and custom elements; a timeline which separates video, audio, and animation; canvas editor with export quality options; a preview of the video; and more capabilities.",
+   alt="Kapwing's editor has a menu for media, including several templates and custom elements, including some templates which are specific to certain platforms like LinkedIn; a timeline which separates video, audio, and animation; canvas editor with export quality options; a preview of the video; and more capabilities.",
    width="800", height="397"
 %}
 
