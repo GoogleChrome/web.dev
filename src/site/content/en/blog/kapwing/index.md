@@ -107,7 +107,7 @@ media library with the code below:
 export async function addAsset(mediaLibraryID: string, file: File) {
   return runWithAssetMutex(mediaLibraryID, async () => {
     const assetAlreadyInStore = await (await openIdb).get(
-      "assets",
+      'assets',
       mediaLibraryID
     );    
     if (assetAlreadyInStore) return;
@@ -117,9 +117,9 @@ export async function addAsset(mediaLibraryID: string, file: File) {
       mediaLibraryID,
     };
 
-    await (await openIdb).add("assets", idbVideo);
+    await (await openIdb).add('assets', idbVideo);
   });
-```
+}
 
 `runWithAssetMutex` is our own internally defined function that serializes
 indexedDB access. This is required for any read-modify-write type operations,
