@@ -59,7 +59,7 @@ their assets frequently, days and even months after upload.
 
 IndexedDB allows us to provide persistent file system-like storage to our
 users. The result is that over 90% of media requests in the app are fulfilled
-locally. Integrating indexedDB into our system was very straightforward.
+locally. Integrating IndexedDB into our system was very straightforward.
 
 Here is some boiler plate initialization code that runs on app load:
 
@@ -122,7 +122,7 @@ export async function addAsset(mediaLibraryID: string, file: File) {
 }
 
 `runWithAssetMutex` is our own internally defined function that serializes
-indexedDB access. This is required for any read-modify-write type operations,
+IndexedDB access. This is required for any read-modify-write type operations,
 as the IndexedDB API is asynchronous. 
 
 Now let's take a look at how we access files. Below is our `getAsset` function:
@@ -162,7 +162,7 @@ accesses. While IndexedDB is fast, accessing local memory is faster. We
 recommend this approach so long as you manage the size of the cache.
 
 Also note the `subscribers` array, which is used to prevent simultaneous
-accesses to indexedDB, which otherwise would be common on load.
+accesses to IndexedDB, which otherwise would be common on load.
 
 ### Web Audio API
 
@@ -238,7 +238,7 @@ const getDownsampledBuffer = (idbAsset: IdbAsset) =>
 ```
 
 We pass this helper the asset that is stored in indexedDB. Upon completion we 
-will update the asset in indexedDB as well as our own cache.
+will update the asset in IndexedDB as well as our own cache.
 
 We gather data about the audioBuffer with the AudioContext constructor, but 
 because we aren't rendering to the device hardware we use the 
