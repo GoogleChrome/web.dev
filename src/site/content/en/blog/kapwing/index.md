@@ -65,29 +65,34 @@ locally. Integrating indexedDB into our system was very straightforward.
 Here is some boiler plate initialization code that runs on app load:
 
 ```js
-import { DBSchema, openDB, deleteDB, IDBPDatabase } from "idb";
-let openIdb: Promise<IDBPDatabase<Schema>>;
+import {DBSchema, openDB, deleteDB, IDBPDatabase} from 'idb';
+
+let openIdb: Promise <IDBPDatabase<Schema>>;
+
 const db =
   (await openDB) <
   Schema >
-  ("kapwing",
-  version,
-  {
-    upgrade(db, oldVersion) {
-      if (oldVersion >= 1) {
-        // assets store schema changed, need to recreate
-        db.deleteObjectStore("assets");
-      }   
-      db.createObjectStore("assets", { keyPath: "mediaLibraryID" }); 
-    },  
-    async blocked() {
-      await deleteDB("kapwing");
-    },  
-    async blocking() {
-      await deleteDB("kapwing");
-  },
-});
-```
+  (
+    'kapwing',
+    version, {
+      upgrade(db, oldVersion) {
+        if (oldVersion >= 1) {
+          // assets store schema changed, need to recreate
+          db.deleteObjectStore('assets');
+        }
+
+        db.createObjectStore('assets', {
+          keyPath: 'mediaLibraryID'
+        });
+      },
+      async blocked() {
+        await deleteDB('kapwing');
+      },
+      async blocking() {
+        await deleteDB('kapwing');
+      },
+    }
+  );
 
 We pass a version and define an upgrade function. This is used for
 initialization or to update our schema when necessary.
