@@ -38,13 +38,13 @@ class Codelab extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this._mql.addListener(this._toggleDesktop);
+    this._mql.addEventListener('change', this._toggleDesktop);
     this._toggleDesktop();
   }
 
   disconnectedCallback() {
     super.connectedCallback();
-    this._mql.removeListener(this._toggleDesktop);
+    this._mql.removeEventListener('change', this._toggleDesktop);
   }
 
   /**
@@ -95,7 +95,7 @@ class Codelab extends BaseElement {
         ? `This Glitch isn't loaded in a test environment`
         : `This Glitch isn't available on small screens`;
       return html`
-        <div class="w-sizer ${isTest ? 'w-test' : ''}">
+        <div class="${isTest ? 'w-test' : ''}">
           <div class="w-aside w-aside--warning">
             <p>
               <strong>Warning:</strong> ${message},
@@ -109,7 +109,7 @@ class Codelab extends BaseElement {
     }
 
     return html`
-      <div class="w-sizer">
+      <div class="web-codelab__glitch-container">
         <iframe
           allow="geolocation; microphone; camera; midi; encrypted-media"
           alt="Embedded glitch ${this.glitch}"
