@@ -92,16 +92,16 @@ const db =
       },
     }
   );
+```
 
 We pass a version and define an upgrade function. This is used for
-initialization or to update our schema when necessary.
+initialization or to update our schema when necessary. We also pass error
+handling callbacks blocked and blocking, which we have found useful in
+preventing issues for users with unstable systems. 
 
-We also pass error handling callbacks blocked and blocking, which we have
-found useful in preventing issues for users with unstable systems. Finally,
-note our definition of a primary key `keyPath`. In our case this is a unique
-ID we call `mediaLibraryID`. When a user adds a piece of media to our system,
-whether via our uploader or a third party extension, we add the media to our
-media library with the code below:
+Finally, note our definition of a primary key `keyPath`. In our case, this is a
+unique ID we call `mediaLibraryID`. When a user adds a piece of media to our system, whether via our uploader or a third party extension, we add the media
+to our media library with the following code:
 
 ```js
 export async function addAsset(mediaLibraryID: string, file: File) {
@@ -120,6 +120,7 @@ export async function addAsset(mediaLibraryID: string, file: File) {
     await (await openIdb).add('assets', idbVideo);
   });
 }
+```
 
 `runWithAssetMutex` is our own internally defined function that serializes
 IndexedDB access. This is required for any read-modify-write type operations,
@@ -161,14 +162,15 @@ export async function getAsset(
     }
   } 
   return asset;
-} 
+}
+```
 
 We have our own data structure, `idbCache`, that is used to minimize IndexedDB
 accesses. While IndexedDB is fast, accessing local memory is faster. We
 recommend this approach so long as you manage the size of the cache.
 
-Also note the `subscribers` array, which is used to prevent simultaneous
-accesses to IndexedDB, which otherwise would be common on load.
+The `subscribers` array, which is used to prevent simultaneous accesses to
+IndexedDB, would otherwise be common on load.
 
 ### Web Audio API
 
@@ -177,12 +179,12 @@ why, take a look at a screenshot from the editor:
 
 {% Img 
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/6MqSyhNqFl23wN3GWKbP.png", 
-   alt="Kapwing editor has several templates and capabilities",
+   alt="Kapwing's editor has several templates and capabilities",
    width="800", height="397"
 %}
 
-This is a YouTube style video, which is common in our app. The user does not
-move very much throughout the clip, so the timelines visual thumbnails are not
+This is a YouTube style video, which is common in our app. The user doesn't
+move very much throughout the clip, so the timelines visual thumbnails aren't
 as useful for navigating between sections. On the other hand, the audio
 [waveform](https://en.wikipedia.org/wiki/Waveform) shows peaks and valleys,
 with the valleys typically corresponding to dead time in the recording. If you
@@ -246,8 +248,8 @@ const getDownsampledBuffer = (idbAsset: IdbAsset) =>
 We pass this helper the asset that is stored in IndexedDB. Upon completion we 
 will update the asset in IndexedDB as well as our own cache.
 
-We gather data about the `audioBuffer` with the `AudioContext` constructor, but 
-because we aren't rendering to the device hardware we use the 
+We gather data about the `audioBuffer` with the `AudioContext` constructor,
+but because we aren't rendering to the device hardware we use the 
 `OfflineAudioContext` to render to an `ArrayBuffer` where we will store 
 amplitude data.
 
