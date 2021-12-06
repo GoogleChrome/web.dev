@@ -15,11 +15,7 @@
   -webkit-appearance: none;
 
   @include apply-utility('font', 'brand');
-
-  &:link,
-  &:visited {
-    @include apply-utility('color', 'core-text');
-  }
+  @include apply-utility('color', 'core-text');
 
   &:hover,
   &[data-state='active'],
