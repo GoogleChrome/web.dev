@@ -261,11 +261,11 @@ For certain videos the track thumbnails are more useful for timeline
 navigation than the waveforms. However, generating thumbnails is more resource 
 intensive than generating waveforms.
 
-We cannot cache every potential thumbnail on load, so quick decode on timeline 
+We can't cache every potential thumbnail on load, so quick decode on timeline 
 pan/zoom is critical to a performant and responsive application. The 
 bottleneck to achieving smooth frame drawing is decoding frames, which until 
 recently we did using an HTML5 video player. The performance of that approach 
-was not reliable and we often saw degraded app responsiveness during frame 
+wasn't reliable and we often saw degraded app responsiveness during frame 
 rendering.
 
 Recently we have moved over to [WebCodecs](https://web.dev/webcodecs/), which
@@ -316,7 +316,7 @@ const loadMetadata = async () => {
 
 This snippet refers to a `demuxer` class, which we use to encapsulate the 
 interface to `MP4Box`. We once again access the asset from IndexedDB. These 
-segments are not necessarily stored in byte order, and that the `appendBuffer` 
+segments aren't necessarily stored in byte order, and that the `appendBuffer` 
 method returns the offset of the next chunk.
 
 Here's how we decode a video frame:
