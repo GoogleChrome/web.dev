@@ -308,8 +308,8 @@ const loadMetadata = async () => {
 };
 ```
 
-This snippet refers to a demuxer class, which we use to encapsulate the 
-interface to mp4box. We once again access the asset from indexedDB. These 
+This snippet refers to a `demuxer` class, which we use to encapsulate the 
+interface to `MP4Box`. We once again access the asset from IndexedDB. These 
 segments are not necessarily stored in byte order, and that the `appendBuffer` 
 method returns the offset of the next chunk.
 
