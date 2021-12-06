@@ -370,7 +370,7 @@ const getFrameFromVideoDecoder = async (demuxer: any): Promise<any> => {
   }
   await decoder.flush();
 
-  return { type: "value", value: decodedSample };
+  return { type: 'value', value: decodedSample };
 };
 ```
 
