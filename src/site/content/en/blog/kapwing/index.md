@@ -262,11 +262,11 @@ recently we did using an HTML5 video player. The performance of that approach
 was not reliable and we often saw degraded app responsiveness during frame 
 rendering.
 
-Recently we have moved over to web codecs, which can be used in web workers. 
-This should enhance our ability to draw thumbnails for large amounts of layers 
-without impacting main thread performance. While the web worker implementation 
-is still in progress, we give an outline below of our existing main thread 
-implementation.
+Recently we have moved over to [WebCodecs](https://web.dev/webcodecs/), which
+can be used in web workers. This should enhance our ability to draw thumbnails
+for large amounts of layers  without impacting main thread performance. While
+the web worker implementation  is still in progress, we give an outline below
+of our existing main thread implementation.
 
 A video file contains multiple streams: video, audio, subtitles and so on that 
 are 'muxed' together. To use WebCodecs, we first need to have a demuxed video 
