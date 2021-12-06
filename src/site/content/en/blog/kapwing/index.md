@@ -243,7 +243,7 @@ const getDownsampledBuffer = (idbAsset: IdbAsset) =>
   );
 ```
 
-We pass this helper the asset that is stored in indexedDB. Upon completion we 
+We pass this helper the asset that is stored in IndexedDB. Upon completion we 
 will update the asset in IndexedDB as well as our own cache.
 
 We gather data about the `audioBuffer` with the `AudioContext` constructor, but 
