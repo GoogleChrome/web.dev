@@ -48,8 +48,8 @@ performance-related objectives.
 
 ## Optimizations
 
-To address performance, the team first applied critical rendering path
-optimization, making sure there was no CSS or JavaScript that could slow down
+To address performance, the team first applied [critical rendering path
+optimization](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path), making sure there was no CSS or JavaScript that could slow down
 the rendering time of editorial content.  This included deferring third-party
 scripts and non-critical CSS, inlining critical CSS, and avoiding JavaScript
 lazy loading on the first in-viewport images.
