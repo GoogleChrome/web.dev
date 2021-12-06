@@ -111,7 +111,7 @@ La Stampa and La Repubblica.
 
 And, the benefits were measurable: on the La Repubblica mobile site, for
 example, they measured a 77% reduction in [Cumulative Layout Shift](/cls/)
-(CLS) and a 26%  improvement in time to [Largest Contentful Paint](/lcp/)
+(CLS) and a 26% improvement in time to [Largest Contentful Paint](/lcp/)
 (LCP). Overall, the team found they reduced La Repubblica's mobile bounce
 rate by 8%.
 
