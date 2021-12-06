@@ -109,7 +109,10 @@
         </a>
       </li>
     </ul>
-    <web-language-select current="{{ lang }}"></web-language-select>
+    <div class="cluster">
+      {% include "partials/standard-theme-toggle.njk" %}
+      <web-language-select current="{{ lang }}"></web-language-select>
+    </div>
   </nav>
   <nav class="site-footer__misc-links" aria-label="terms and policies">
     <ul class="cluster" role="list">
