@@ -47,8 +47,7 @@ subtitles, transcribe videos, and upload background music.
 While the web provides unique advantages, it also presents distinct
 challenges. Kapwing needs to deliver smooth and precise playback of complex,
 multi-layered projects across a wide range of devices and network conditions.
-
-To this end we use a variety of web APIs to achieve our performance and
+To achieve this, we use a variety of web APIs to achieve our performance and
 feature goals.
 
 ### IndexedDB
