@@ -8,8 +8,8 @@ subhead: |
   Handling API.
 authors:
   - thomassteiner
-date: 2021-11-29
-# updated: 2021-08-06
+date: 2021-12-06
+# updated: 2021-12-06
 description: |
   Launch handler lets you control how your app is launched, for example, whether it uses an existing
   window and whether the chosen window is navigated to the launch URL.
