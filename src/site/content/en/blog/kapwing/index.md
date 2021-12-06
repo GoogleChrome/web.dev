@@ -39,7 +39,7 @@ navigating to an app store and downloading an app. The web makes it simple for
 people to search for precisely what task they need help with, and then do it.
 
 After that first click, Kapwing users can easily do a whole lot more.
-They can explore free templates; add new layers of free stock videos, insert
+They can explore free templates, add new layers of free stock videos, insert
 subtitles, transcribe videos, and upload background music. 
 
 ## How Kapwing brings real-time editing and collaboration to the web
