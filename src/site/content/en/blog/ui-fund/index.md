@@ -72,7 +72,7 @@ Create a GitHub issue or document describing the project, if one doesn't already
 
 For new ideas and research proposals, create a document that explains the project, your interest and experience in the area, and the impact that you believe this project can have on the CSS ecosystem.
 
-[Complete the form](https://docs.google.com/forms/d/1QW5M0joXnx2cmp1r6GWsmWCoxWznD-JTwNec9qZUffE/edit?ts=61a7b1b2&resourcekey=0-NWk6XEWxFwVuoGACoVITNg) to make your initial application.
+[Complete the form](https://forms.gle/7knaw5FvFtGVEthV7) to make your initial application.
 
 After applying we'll be in touch, perhaps initially to discuss the idea and find out more before making a decision. We are so excited to read your ideas, and to help you be a part of improving the CSS ecosystem.
 
