@@ -15,6 +15,8 @@
  */
 
 const {html} = require('common-tags');
+const {i18n} = require('../../_filters/i18n');
+const {defaultLocale} = require('../../../../shared/locale');
 const capitalize = require('../../_filters/capitalize');
 
 /**
@@ -25,7 +27,7 @@ const capitalize = require('../../_filters/capitalize');
  * @param {string} listStyle The list style to use. Defaults to 'ul'.
  * @return {string} A list of instructions.
  */
-module.exports = (type, listStyle = 'ul') => {
+module.exports = (type, listStyle = 'ul', locale = defaultLocale) => {
   let instruction;
   let substitution;
   let bullet;
@@ -51,7 +53,7 @@ module.exports = (type, listStyle = 'ul') => {
 
   // Common phrases shared across multiple instructions.
   const shared = {
-    devtools: `${bullet}Press \`Control+Shift+J\` (or \`Command+Option+J\` on Mac) to open DevTools.`,
+    devtools: `${bullet}${i18n('i18n.instruction.devtools_shared', locale)}`,
   };
 
   switch (type) {
@@ -99,7 +101,10 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'disable-cache':
-      instruction = html`${bullet}Select the **Disable cache** checkbox.`;
+      instruction = html`${bullet}${i18n(
+        'i18n.instruction.disable_cache',
+        locale,
+      )}`;
       break;
 
     case 'reload-app':
@@ -107,7 +112,10 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'reload-page':
-      instruction = html`${bullet}Reload the page.`;
+      instruction = html`${bullet}${i18n(
+        'i18n.instruction.reload_page',
+        locale,
+      )}`;
       break;
 
     case 'start-profiling':
@@ -141,10 +149,15 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`${shared.devtools}`;
       substitution = type.substring('devtools-'.length);
       if (substitution) {
+        const tab = i18n(`i18n.instruction.${substitution}`, locale);
+        const step = i18n('i18n.instruction.devtools_click', locale).replace(
+          '$0',
+          `${tab}`,
+        );
         // prettier-ignore
         instruction = html`
           ${instruction}
-          ${bullet}Click the **${capitalize(substitution)}** tab.
+          ${bullet}${step}
         `;
       }
       break;
