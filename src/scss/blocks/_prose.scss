@@ -39,6 +39,12 @@
     --flow-space: 1rem;
   }
 
+  /// Stacked headings need to maintain larger spacing, however
+  h2 + h3,
+  h3 + h4 {
+    --flow-space: #{get-space('size-1')};
+  }
+
   /// Details gets more surrounding space, but the inner elements
   /// should all be equal
   details,
