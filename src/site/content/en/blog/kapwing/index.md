@@ -94,7 +94,7 @@ const db =
   );
 ```
 
-We pass a version and define an upgrade function. This is used for
+We pass a version and define an `upgrade` function. This is used for
 initialization or to update our schema when necessary. We also pass error
 handling callbacks blocked and blocking, which we have found useful in
 preventing issues for users with unstable systems. 
