@@ -12,7 +12,7 @@ pageScripts:
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
-  <web-codelab class="web-codelab" glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.percy === 'true' %}percymode{% endif %}>
+  <web-codelab class="web-codelab" glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.percy === 'true' %}snapshot{% endif %}>
     <div class="web-codelab__instructions">
       {#
         TODO: The legacy rollout task can be removed

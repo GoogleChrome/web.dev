@@ -5,7 +5,6 @@
 
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
-import {env} from 'webdev_config';
 
 /**
  * Render codelab instructions and Glitch
@@ -19,8 +18,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
-      // Wether to show iframe or not because of percy test.
-      percymode: {type: Boolean},
+      // Wether to show iframe or not because of a snapshot test.
+      snapshot: {type: Boolean},
       // Whether we are a desktop-sized browser or not.
       _isDesktop: {type: Boolean},
     };
@@ -36,7 +35,7 @@ class Codelab extends BaseElement {
 
     this._mql = window.matchMedia('(min-width: 865px)');
     this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
-    this.percymode = false;
+    this.snapshot = false;
   }
 
   connectedCallback() {
@@ -87,29 +86,14 @@ class Codelab extends BaseElement {
     if (!this.glitch) {
       return html``;
     }
-    const isTest = env === 'test';
-    const iframe = html`<iframe
-      allow="geolocation; microphone; camera; midi; encrypted-media"
-      alt="Embedded glitch ${this.glitch}"
-      title="Embedded glitch ${this.glitch}"
-      src="${this.glitchSrc(true)}"
-      style="height: 100%; width: 100%; border: 0;"
-    >
-    </iframe>`;
 
-    // If this is a test, always show the warning. Percy snapshots our DOM at a
-    // low resolution before resizing it, so we can't rely on _isDesktop being
-    // different for smaller or larger tests. The `w-test` ensures we test the
-    // sticky behavior of this element.
-    if (!this._isDesktop || isTest) {
-      const message = isTest
-        ? `This Glitch isn't loaded in a test environment`
-        : `This Glitch isn't available on small screens`;
+    if (!this._isDesktop) {
       return html`
-        <div class="${isTest ? 'w-test' : ''}">
+        <div>
           <div class="w-aside w-aside--warning">
             <p>
-              <strong>Warning:</strong> ${message},
+              <strong>Warning:</strong> This Glitch isn't available on small
+              screens,
               <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
                 open it in a new tab.</a
               >
@@ -119,14 +103,20 @@ class Codelab extends BaseElement {
       `;
     }
 
-    return html`
-      <div
-        class="web-codelab__glitch-container
-        ${this.percymode ? 'web-codelab__glitch-percy' : ''}"
-      >
-        ${this.percymode ? '' : iframe}
-      </div>
-    `;
+    const iframe = this.snapshot
+      ? html`<div
+          class="web-codelab__glitch-iframe web-codelab__glitch-snapshot"
+        ></div>`
+      : html`<iframe
+          allow="geolocation; microphone; camera; midi; encrypted-media"
+          alt="Embedded glitch ${this.glitch}"
+          class="web-codelab__glitch-iframe"
+          title="Embedded glitch ${this.glitch}"
+          src="${this.glitchSrc(true)}"
+        >
+        </iframe>`;
+
+    return html` <div class="web-codelab__glitch-container">${iframe}</div> `;
   }
 }
 
