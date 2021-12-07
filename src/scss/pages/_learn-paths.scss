@@ -1,11 +1,34 @@
-.learn__path-topics {
-  .learn__path-topic:first-child {
-    border-block-start: 1px solid var(--color-stroke);
+@media (min-width: 865px) {
+  .learn__path-hero {
+    height: auto;
+    max-width: initial;
+    width: 420px;
   }
+}
 
-  .learn__path-topic:not(:first-child) {
-    div {
-      border-block-start: 1px solid var(--color-core-primary);
-    }
+.learn-header {
+  display: block;
+  text-align: center;
+
+  @media (min-width: 865px) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: initial;
+  }
+}
+
+.headline-link {
+  a {
+    display: none;
+    margin-left: 4px;
+  }
+}
+
+.headline-link:hover,
+.headline-link:focus {
+  a {
+    display: inline;
+    color: inherit;
   }
 }

@@ -175,6 +175,18 @@ dd + dt {
   margin-top: 0.5em;
 }
 
+ul.checkmark {
+ li {
+    list-style: none;
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg aria-label='done' role='img' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon' fill='%233740ff'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'%3E%3C/path%3E%3C/svg%3E");      background-repeat: no-repeat;
+      padding-right: 30px;
+      content: '';
+    }
+ }
+}
+
 /// Blockquotes
 
 blockquote {

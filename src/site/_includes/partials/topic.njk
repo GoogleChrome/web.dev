@@ -1,8 +1,8 @@
 <div class="learn__path-topic">
   <div class="wrapper pad-block-size-2">
-    <h2 id="{{ topic.title | i18n(locale) | slug }}" class="text-size-2 t-color-core-primary">
-      {{ topic.title | i18n(locale)}}
-      <a href="#{{ topic.title | i18n(locale) | slug }}" aria-hidden="true" class="t-color-core-primary">#</a>
+    <h2 id="{{ topic.title | i18n(locale) | slug }}" class="text-size-2 headline-link">
+      {{ topic.title | i18n(locale) }}
+      <a href="#{{ topic.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
     </h2>
     <ul>
       {% if topic.pathItems %}
@@ -12,9 +12,9 @@
     </ul>
     {% if topic.subtopics %}
       {% for section in topic.subtopics %}
-        <h3 id="{{ section.title | i18n(locale) | slug }}" class="text-size-1 t-color-core-primary">
+        <h3 id="{{ section.title | i18n(locale) | slug }}" class="text-size-1 headline-link">
           {{ section.title | i18n(locale) }}
-          <a href="#{{ section.title | i18n(locale) | slug }}" aria-hidden="true" class="t-color-core-primary">#</a>
+          <a href="#{{ section.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
         </h3>
         <ul>
           {% include 'partials/item.njk' %}

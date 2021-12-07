@@ -12,21 +12,19 @@ eleventyComputed:
 
 <header class="hero">
   <div class="wrapper">
-    <div class="hero__columns switcher">
+    <div class="learn-header">
       <div>
-        <div class="hero__content flow">
-          <h1 class="hero__title">{{path.title | i18n(locale)}}</h1>
-          {{path.description | i18n(locale)}}
-        </div>
+        <h1 class="text-size-6">{{path.title | i18n(locale)}}</h1>
+        {{path.description | i18n(locale)}}
       </div>
       {% if path.cover %}
-        <div class="flow all-center">
+        <div class="all-center">
           {% Img
             height=220,
             width=330,
             src=path.cover,
             alt="Collection cover image",
-            class="hero__decor"
+            class="learn__path-hero"
           %}
         </div>
       {% endif %}
@@ -44,18 +42,18 @@ eleventyComputed:
 
 <div class="wrapper pad-block-size-1">
   <div class="sidebar" data-direction="rtl">
-    <div class="pad-size-1 flow">
+    <div class="pad-block-size-1 flow">
       <h2 class="text-size-2">Overview</h2>
       <p>{{path.overview | i18n(locale)}}</p>
       {% if path.youtubeId %}
         {% YouTube path.youtubeId %}
       {% endif %}
     </div>
-    <div class="pad-size-1">
+    <div class="pad-block-size-1">
       <div class="toc">
         <div class="toc__content">
           <h2 class="toc__header">Table of Contents</h2>
-          <ul class="toc__list">
+          <ul class="toc__list checkmark">
             {% for topic in topics %}
               <li>
                 <a href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
