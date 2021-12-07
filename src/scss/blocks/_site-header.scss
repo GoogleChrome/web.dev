@@ -63,10 +63,43 @@
 .site-header__search {
   position: relative;
   min-width: 2.5rem;
+  z-index: 99;
 
-  /// ALL STYLES RELATED TO THE SEARCH WEB COMPONENTS
-  /// ARE CURRENTLY IN scss/_rollout.scss UNTIL FULL
-  /// ROLLOUT IS COMPLETE
+  .web-search__input-wrapper:not([aria-expanded='true']) {
+    display: none;
+  }
+
+  .web-search__input-wrapper {
+    position: absolute;
+    inset: -0.8rem 0 auto auto;
+
+    input {
+      padding-block: 0.5rem;
+    }
+  }
+
+  web-search-results {
+    position: absolute;
+    inset: 2rem 1rem auto auto;
+  }
+
+  .web-search-popout {
+    height: unset;
+    line-height: 1.4;
+    border: 1px solid get-utility-value('color', 'stroke');
+    border-radius: $global-radius-base;
+    padding: 0;
+    z-index: 99;
+
+    a {
+      color: currentColor;
+    }
+  }
+}
+
+.site-header web-search[expanded] .web-search__input-wrapper,
+.site-header web-search-results {
+  width: clamp(16rem, 40vw, 25rem);
 }
 
 .site-header .cluster {

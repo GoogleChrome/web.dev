@@ -7,7 +7,6 @@ import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseElement} from '../BaseElement';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
-import './_styles.scss';
 
 /**
  * An Algolia search box.
@@ -164,8 +163,7 @@ export class SearchResults extends BaseElement {
 
     return html`
       <div class="web-search-popout">
-        <div class="web-search-popout__heading">Results</div>
-        <ul id="${this.id}-list" class="web-search-popout__list" role="listbox">
+        <ul id="${this.id}-list" class="stack-nav" aria-label="search results">
           ${this.itemsTemplate}
         </ul>
       </div>
@@ -185,12 +183,9 @@ export class SearchResults extends BaseElement {
 
       const title = this.formatAlgoliaValue(hit._highlightResult.title.value);
       return html`
-        <li class="web-search-popout__item">
+        <li>
           <a
             id="${this.id}-link-${idx}"
-            class="web-search-popout__link ${idx === this.cursor
-              ? 'web-search-popout__link--active'
-              : ''}"
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"

@@ -1,5 +1,5 @@
 $course-header-height: 144px;
-$course-search-height: 48px;
+$course-search-height: 58px;
 $course-side-vert-space: 20px;
 
 .course {
@@ -188,10 +188,16 @@ web-search.course__search {
 
 .web-search-popout {
   height: 100%;
-  padding-top: 0;
+  padding-top: 0.5rem;
 }
 
 .course {
+  /// Search is always visible so this doesn't need to show
+  .web-search__open-btn,
+  .web-search__search-icon {
+    display: none;
+  }
+
   .web-search-popout {
     position: absolute;
 
@@ -205,36 +211,12 @@ web-search.course__search {
     bottom: 0;
     width: 100%;
 
-    @include apply-utility('bg', 'mid-bg');
-  }
-
-  .web-search-popout__list {
-    max-height: 100%;
-    padding: 0;
-    margin: 0;
-
-    li + li {
-      margin-top: get-space('base');
-    }
-  }
-
-  .web-search-popout__link {
-    --flow-space: 0.5rem;
-
-    text-decoration: none;
-
-    @include apply-utility('color', 'core-text');
-  }
-
-  .web-search-popout__snippet {
-    font-size: get-size('size-0');
-    margin: 0;
-
-    @include apply-utility('color', 'mid-text');
+    @include apply-utility('bg', 'core-bg');
   }
 
   .web-course-search__no-results {
     text-align: center;
+    padding-top: get-space('size-3');
   }
 
   /// Responsive adjustments for navigation drawer
