@@ -80,7 +80,7 @@
 
   web-search-results {
     position: absolute;
-    inset: 2rem 1rem auto auto;
+    inset: 3.1rem 1rem auto auto;
   }
 
   .web-search-popout {
@@ -93,6 +93,12 @@
 
     a {
       color: currentColor;
+    }
+
+    .web-search-popout__heading {
+      padding: $global-gutter-narrow;
+
+      @include apply-utility('bg', 'core-bg');
     }
   }
 }
