@@ -12,8 +12,8 @@ description: |
 tags:
   - blog
   - case-study
-  - web-vitals
-  - performance
+  - capabilities
+  - progressive-web-apps
 ---
 
 Online video consumption has grown rapidly since the start of the pandemic.
