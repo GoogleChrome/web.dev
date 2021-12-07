@@ -1,5 +1,5 @@
 <div class="learn__path-topic">
-  <div class="wrapper pad-block-size-2">
+  <div class="wrapper pad-block-size-{{"2" if loop.first else "1"}}">
     <h2 id="{{ topic.title | i18n(locale) | slug }}" class="text-size-2 headline-link">
       {{ topic.title | i18n(locale) }}
       <a href="#{{ topic.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>

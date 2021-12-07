@@ -15,7 +15,7 @@ eleventyComputed:
     <div class="learn-header">
       <div>
         <h1 class="text-size-6">{{path.title | i18n(locale)}}</h1>
-        {{path.description | i18n(locale)}}
+        <p>{{path.description | i18n(locale)}}</p>
       </div>
       {% if path.cover %}
         <div class="all-center">
@@ -43,7 +43,7 @@ eleventyComputed:
 <div class="wrapper pad-block-size-1">
   <div class="sidebar" data-direction="rtl">
     <div class="pad-block-size-1 flow">
-      <h2 class="text-size-2">Overview</h2>
+      <h2>Overview</h2>
       <p>{{path.overview | i18n(locale)}}</p>
       {% if path.youtubeId %}
         {% YouTube path.youtubeId %}
@@ -65,6 +65,8 @@ eleventyComputed:
     </div>
   </div>
 </div>
+
+<div class="wrapper"><hr/></div>
 
 <div class="learn__path-topics">
   {% for topic in topics %}
