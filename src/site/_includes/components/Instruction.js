@@ -15,19 +15,21 @@
  */
 
 const {html} = require('common-tags');
-const {i18n} = require('../../_filters/i18n');
-const {defaultLocale} = require('../../../../shared/locale');
+const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 const capitalize = require('../../_filters/capitalize');
 
 /**
  * A component to help DRY up common lists of instructions.
  * This helps ensure consistency in our docs and makes it easy
  * to respond when Glitch changes their UI.
+ * @this {EleventyPage}
  * @param {string} type The type of instruction to print.
  * @param {string} listStyle The list style to use. Defaults to 'ul'.
  * @return {string} A list of instructions.
  */
-module.exports = (type, listStyle = 'ul', locale = defaultLocale) => {
+module.exports = function (type, listStyle = 'ul') {
+  const locale = getLocaleFromPath(this.page && this.page.filePathStem);
+
   let instruction;
   let substitution;
   let bullet;
