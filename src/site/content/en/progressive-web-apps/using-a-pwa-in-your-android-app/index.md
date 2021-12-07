@@ -4,7 +4,7 @@ title: Using a PWA in your Android app
 authors:
   - andreban
 date: 2020-03-19
-updated: 2020-04-30
+updated: 2021-12-06
 description: |
   How to open a Progressive Web App in an Android app.
 tags:
@@ -14,7 +14,7 @@ tags:
 ## Start a PWA in an Android app
 
 [Progressive Web Apps][1] (PWA) are web applications that use app-like features to create
-high quality experiences that are fast, reliable and engaging.
+high quality experiences that are fast, reliable, and engaging.
 
 The web has incredible reach and offers powerful ways for users to discover new experiences. But
 users are also used to searching for applications in their operating system store. Those users are,
