@@ -33,7 +33,7 @@ In this post I want to share thinking on how to build a toast component. Try the
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'HCsV8u-KYUw' %}
+{% YouTube 'R75ZVW4LW5o' %}
 
 ## Overview
 
