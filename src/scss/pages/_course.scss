@@ -210,8 +210,15 @@ web-search.course__search {
     left: 0;
     bottom: 0;
     width: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
     @include apply-utility('bg', 'core-bg');
+
+    /// Adds space to the bottom of the last item, to assist with overscroll behaviour
+    .stack-nav li:last-child {
+      margin-bottom: get-space('size-3');
+    }
   }
 
   .web-course-search__no-results {

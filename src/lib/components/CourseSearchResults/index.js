@@ -81,9 +81,7 @@ class CourseSearchResults extends SearchResults {
             href="${hit.url}"
           >
             <div class="flow flow-space-size-0">
-              <h3 class="text-size-1 color-action-text">
-                ${unsafeHTML(title)}
-              </h3>
+              <h3 class="text-size-1">${unsafeHTML(title)}</h3>
               <p class="text-size-0 color-mid-text">${unsafeHTML(snippet)}</p>
             </div>
           </a>
