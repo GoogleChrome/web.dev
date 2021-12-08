@@ -283,11 +283,11 @@ recently we did using an HTML5 video player. The performance of that approach
 wasn't reliable and we often saw degraded app responsiveness during frame 
 rendering.
 
-Recently we have moved over to [WebCodecs](https://web.dev/webcodecs/), which
-can be used in web workers. This should enhance our ability to draw thumbnails
-for large amounts of layers  without impacting main thread performance. While
-the web worker implementation  is still in progress, we give an outline below
-of our existing main thread implementation.
+Recently we have moved over to [WebCodecs](/webcodecs/), which can be used in
+web workers. This should enhance our ability to draw thumbnails for large
+amounts of layers  without impacting main thread performance. While the web
+worker implementation  is still in progress, we give an outline below of our
+existing main thread implementation.
 
 A video file contains multiple streams: video, audio, subtitles and so on that 
 are 'muxed' together. To use WebCodecs, we first need to have a demuxed video 
@@ -408,8 +408,8 @@ The application decodes frames by:
 
 1. Instantiating the decoder with a frame output callback.
 1. Configuring the decoder for the specific codec and input resolution.
-1. Creating an `encodedVideoChunk` using data from the demuxer
-1. Calling the `decodeEncodedFrame` method
+1. Creating an `encodedVideoChunk` using data from the demuxer.
+1. Calling the `decodeEncodedFrame` method.
 
 We do this until we reach the frame with the desired timestamp.
 
@@ -418,7 +418,7 @@ We do this until we reach the frame with the desired timestamp.
 We define scale on our frontend as the ability to maintain precise and 
 performant playback as projects get larger and more complex. One way to scale 
 performance is to mount as few videos as possible at once, however when we do 
-this we risk slow and choppy transitions. While we have developed internal 
+this, we risk slow and choppy transitions. While we have developed internal 
 systems to cache video components for reuse, there are limitations to how much 
 control HTML5 video tags can provide.
 
