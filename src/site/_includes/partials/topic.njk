@@ -1,5 +1,5 @@
-<div class="learn__path-topic">
-  <div class="wrapper pad-block-size-{{"2" if loop.first else "1"}}">
+<div class="wrapper pad-block-size-{{"2" if loop.first else "1"}}">
+  <div class="prose">
     <h2 id="{{ topic.title | i18n(locale) | slug }}" class="text-size-2 headline-link">
       {{ topic.title | i18n(locale) }}
       <a href="#{{ topic.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
@@ -10,8 +10,10 @@
         {% include 'partials/item.njk' %}
       {% endif %}
     </ul>
-    {% if topic.subtopics %}
-      {% for section in topic.subtopics %}
+  </div>
+  {% if topic.subtopics %}
+    {% for section in topic.subtopics %}
+      <div class="prose">
         <h3 id="{{ section.title | i18n(locale) | slug }}" class="text-size-1 headline-link">
           {{ section.title | i18n(locale) }}
           <a href="#{{ section.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
@@ -19,7 +21,7 @@
         <ul>
           {% include 'partials/item.njk' %}
         </ul>
-      {% endfor %}
-    {% endif %}
-  </div>
+      </div>
+    {% endfor %}
+  {% endif %}
 </div>
