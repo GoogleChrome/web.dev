@@ -429,7 +429,7 @@ performance.
 We can also do a better job of offloading large trackpad computations to web 
 workers, and can be more intelligent about pre-fetching files and 
 pre-generating frames. We see large opportunities to optimize our overall 
-application performance, and to extend functionality with tools like webGL.
+application performance, and to extend functionality with tools like WebGL.
 
 We would also like to continue our investment in tensorflow.js, which we 
 currently use for intelligent background removal, and which we plan to 
