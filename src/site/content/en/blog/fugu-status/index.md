@@ -20,8 +20,11 @@ This work, among many other examples, allowed
 [Excalidraw to deprecate their Electron app](/deprecating-excalidraw-electron/), and
 [Betty Crocker to increase purchase intent indicators by 300%](/betty-crocker/).
 
-You can see the full list of new and potential capabilities at
-the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
+You can see the full list of new and potential capabilities and the stage each proposal
+is in on the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
+It is worth noting that many ideas never make it past the explainer or origin trial stage.
+The goal of the process is to ship the right features. That means we need to learn and
+iterate quickly. Not shipping a feature because it does not solve the developer need is OK.
 
 ## Capabilities available in stable {: #in-stable }
 
