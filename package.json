@@ -2,7 +2,7 @@
   "name": "web.dev",
   "version": "3.0.0",
   "scripts": {
-    "algolia": "node -e \"require('./algolia.js').index()\"",
+    "algolia": "node ./run-algolia.js",
     "build": "npm-run-all clean gulp ignore rollup eleventy gulp:default-locale firebase-config",
     "clean": "rimraf dist",
     "cloud-secrets": "node ./cloud-secrets.js",

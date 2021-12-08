@@ -112,7 +112,9 @@ async function index() {
   });
 
   if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
-    console.warn('Missing Algolia environment variables, skipping indexing.');
+    throw new Error(
+      'Missing Algolia environment variables, skipping indexing.',
+    );
     // Ok, not a test, we got the keys, DO IT!
   } else {
     const chunkedAlgoliaData = chunkAlgolia(algoliaData);
@@ -150,9 +152,8 @@ async function index() {
       filters: `indexedOn < ${indexedOn.getTime()}`,
     });
     console.log('Deleted old data.');
+    console.log('Done!');
   }
-
-  console.log('Done!');
 }
 
 module.exports = {
