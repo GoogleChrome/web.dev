@@ -23,7 +23,7 @@ This work, among many other examples, allowed
 You can see the full list of new and potential capabilities and the stage each proposal
 is in on the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
 It is worth noting that many ideas never make it past the explainer or origin trial stage.
-The goal of the process is to ship the right feature. That means we need to learn and
+The goal of the process is to ship the right features. That means we need to learn and
 iterate quickly. Not shipping a feature because it does not solve the developer need is OK.
 
 ## Capabilities available in stable {: #in-stable }
