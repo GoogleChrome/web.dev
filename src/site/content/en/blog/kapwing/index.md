@@ -16,6 +16,10 @@ tags:
   - progressive-web-apps
 ---
 
+{% Aside %}
+Joshua is the Chief Technology Officer at [Kapwing](https://www.kapwing.com/).
+{% endAside %}
+
 Online video consumption has grown rapidly since the start of the pandemic.
 People are spending more time consuming endless high-quality video on
 platforms such as TikTok, Instagram, and YouTube. Creatives and small business
