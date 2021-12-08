@@ -70,9 +70,10 @@ client, avoiding the network whenever possible. Unlike a streaming service,
 where users typically access a piece of content once, our customers reuse
 their assets frequently, days and even months after upload.
 
-IndexedDB allows us to provide persistent file system-like storage to our
-users. The result is that over 90% of media requests in the app are fulfilled
-locally. Integrating IndexedDB into our system was very straightforward.
+[IndexedDB](/storage-for-the-web/) allows us to provide persistent file
+system-like storage to our users. The result is that over 90% of media
+requests in the app are fulfilled locally. Integrating IndexedDB into our
+system was very straightforward.
 
 Here is some boiler plate initialization code that runs on app load:
 
