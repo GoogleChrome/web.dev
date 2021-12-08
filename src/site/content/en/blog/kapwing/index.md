@@ -109,8 +109,8 @@ const db =
 ```
 
 We pass a version and define an `upgrade` function. This is used for
-initialization or to update our schema when necessary. We also pass error
-handling callbacks blocked and blocking, which we have found useful in
+initialization or to update our schema when necessary. We pass error-handling
+callbacks, `blocked` and `blocking`, which we've found useful in
 preventing issues for users with unstable systems. 
 
 Finally, note our definition of a primary key `keyPath`. In our case, this is a
@@ -419,7 +419,7 @@ We do this until we reach the frame with the desired timestamp.
 We define scale on our frontend as the ability to maintain precise and 
 performant playback as projects get larger and more complex. One way to scale 
 performance is to mount as few videos as possible at once, however when we do 
-this, we risk slow and choppy transitions. While we have developed internal 
+this, we risk slow and choppy transitions. While we've developed internal 
 systems to cache video components for reuse, there are limitations to how much 
 control HTML5 video tags can provide.
 
@@ -427,15 +427,16 @@ In the future, we may attempt to play all media using WebCodecs. This could
 allow us to be very precise about what data we buffer which should help scale 
 performance.
 
-We can also do a better job of offloading large trackpad computations to web 
-workers, and can be more intelligent about pre-fetching files and 
-pre-generating frames. We see large opportunities to optimize our overall 
-application performance, and to extend functionality with tools like WebGL.
+We can also do a better job of offloading large trackpad computations to 
+[web workers](/off-main-thread/), and we can be smarter about pre-fetching
+files and pre-generating frames. We see large opportunities to optimize our
+overall application performance and to extend functionality with tools like
+[WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
 
-We would also like to continue our investment in tensorflow.js, which we 
-currently use for intelligent background removal, and which we plan to 
-leverage for other sophisticated tasks such as object detection, feature 
-extraction, style transfer and so on.
+We would like to continue our investment in
+[TensorFlow.js](https://www.tensorflow.org/js), which we currently use for
+intelligent background removal. We plan to leverage TensorFlow.js for other
+sophisticated tasks such as object detection, feature extraction, style transfer, and so on.
 
-We're excited about the promise of native like performance and functionality 
-on a free and open web. 
+We're excited for the promise of native-like performance and functionality 
+on a free and open web.
