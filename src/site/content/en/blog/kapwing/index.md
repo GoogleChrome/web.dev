@@ -183,7 +183,7 @@ We have our own data structure, `idbCache`, that is used to minimize IndexedDB
 accesses. While IndexedDB is fast, accessing local memory is faster. We
 recommend this approach so long as you manage the size of the cache.
 
-The `subscribers` array, which is used to prevent simultaneous accesses to
+The `subscribers` array, which is used to prevent simultaneous access to
 IndexedDB, would otherwise be common on load.
 
 ### Web Audio API
@@ -259,29 +259,29 @@ const getDownsampledBuffer = (idbAsset: IdbAsset) =>
   );
 ```
 
-We pass this helper the asset that is stored in IndexedDB. Upon completion we 
+We pass this helper the asset that is stored in IndexedDB. Upon completion we
 will update the asset in IndexedDB as well as our own cache.
 
 We gather data about the `audioBuffer` with the `AudioContext` constructor,
-but because we aren't rendering to the device hardware we use the 
-`OfflineAudioContext` to render to an `ArrayBuffer` where we will store 
+but because we aren't rendering to the device hardware we use the
+`OfflineAudioContext` to render to an `ArrayBuffer` where we will store
 amplitude data.
 
-The API itself returns data at a sample rate much higher than needed for 
-effective visualization. That's why we manually downsample to 200 Hz, which we 
-found to be enough for useful, visually appealing waveforms. 
+The API itself returns data at a sample rate much higher than needed for
+effective visualization. That's why we manually downsample to 200 Hz, which we
+found to be enough for useful, visually appealing waveforms.
 
 ### WebCodecs
 
-For certain videos the track thumbnails are more useful for timeline 
-navigation than the waveforms. However, generating thumbnails is more resource 
+For certain videos the track thumbnails are more useful for timeline
+navigation than the waveforms. However, generating thumbnails is more resource
 intensive than generating waveforms.
 
-We can't cache every potential thumbnail on load, so quick decode on timeline 
-pan/zoom is critical to a performant and responsive application. The 
-bottleneck to achieving smooth frame drawing is decoding frames, which until 
-recently we did using an HTML5 video player. The performance of that approach 
-wasn't reliable and we often saw degraded app responsiveness during frame 
+We can't cache every potential thumbnail on load, so quick decode on timeline
+pan/zoom is critical to a performant and responsive application. The
+bottleneck to achieving smooth frame drawing is decoding frames, which until
+recently we did using an HTML5 video player. The performance of that approach
+wasn't reliable and we often saw degraded app responsiveness during frame
 rendering.
 
 Recently we have moved over to [WebCodecs](/webcodecs/), which can be used in
@@ -290,8 +290,8 @@ amounts of layers  without impacting main thread performance. While the web
 worker implementation  is still in progress, we give an outline below of our
 existing main thread implementation.
 
-A video file contains multiple streams: video, audio, subtitles and so on that 
-are 'muxed' together. To use WebCodecs, we first need to have a demuxed video 
+A video file contains multiple streams: video, audio, subtitles and so on that
+are 'muxed' together. To use WebCodecs, we first need to have a demuxed video
 stream. We demux mp4s with the mp4box library, as shown here:
 
 ```js
@@ -330,9 +330,9 @@ const loadMetadata = async () => {
 };
 ```
 
-This snippet refers to a `demuxer` class, which we use to encapsulate the 
-interface to `MP4Box`. We once again access the asset from IndexedDB. These 
-segments aren't necessarily stored in byte order, and that the `appendBuffer` 
+This snippet refers to a `demuxer` class, which we use to encapsulate the
+interface to `MP4Box`. We once again access the asset from IndexedDB. These
+segments aren't necessarily stored in byte order, and that the `appendBuffer`
 method returns the offset of the next chunk.
 
 Here's how we decode a video frame:
@@ -396,13 +396,13 @@ const getFrameFromVideoDecoder = async (demuxer: any): Promise<any> => {
 };
 ```
 
-The structure of the demuxer is quite complex and beyond the scope of this 
-article. It stores each frame in an array titled `samples`. We use the demuxer 
-to find the closest preceding key frame to our desired timestamp, which is 
+The structure of the demuxer is quite complex and beyond the scope of this
+article. It stores each frame in an array titled `samples`. We use the demuxer
+to find the closest preceding key frame to our desired timestamp, which is
 where we must begin video decode.
 
-Videos are composed of full frames known as key or i-frames as well as much 
-smaller delta frames, often referred to as p- or b-frames. Decode must always 
+Videos are composed of full frames, known as key or i-frames, as well as much
+smaller delta frames, often referred to as p- or b-frames. Decode must always
 begin at a key frame. 
 
 The application decodes frames by:
@@ -416,18 +416,18 @@ We do this until we reach the frame with the desired timestamp.
 
 ## What's next?
 
-We define scale on our frontend as the ability to maintain precise and 
-performant playback as projects get larger and more complex. One way to scale 
-performance is to mount as few videos as possible at once, however when we do 
-this, we risk slow and choppy transitions. While we've developed internal 
-systems to cache video components for reuse, there are limitations to how much 
+We define scale on our frontend as the ability to maintain precise and
+performant playback as projects get larger and more complex. One way to scale
+performance is to mount as few videos as possible at once, however when we do
+this, we risk slow and choppy transitions. While we've developed internal
+systems to cache video components for reuse, there are limitations to how much
 control HTML5 video tags can provide.
 
-In the future, we may attempt to play all media using WebCodecs. This could 
-allow us to be very precise about what data we buffer which should help scale 
+In the future, we may attempt to play all media using WebCodecs. This could
+allow us to be very precise about what data we buffer which should help scale
 performance.
 
-We can also do a better job of offloading large trackpad computations to 
+We can also do a better job of offloading large trackpad computations to
 [web workers](/off-main-thread/), and we can be smarter about pre-fetching
 files and pre-generating frames. We see large opportunities to optimize our
 overall application performance and to extend functionality with tools like
@@ -438,5 +438,5 @@ We would like to continue our investment in
 intelligent background removal. We plan to leverage TensorFlow.js for other
 sophisticated tasks such as object detection, feature extraction, style transfer, and so on.
 
-We're excited for the promise of native-like performance and functionality 
-on a free and open web.
+Ultimately, we're excited to continue builing our product with native-like
+performance and functionality on a free and open web.
