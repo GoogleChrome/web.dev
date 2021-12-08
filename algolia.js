@@ -17,10 +17,12 @@ require('dotenv').config();
 const algoliasearch = require('algoliasearch');
 const byteof = require('byteof');
 const fs = require('fs');
+const path = require('path');
+
+const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
 const maxItemSizeInBytes = 7000; // 7,000
-const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 /**
  * Trim byte size of Algoia Collection Item.
@@ -57,7 +59,14 @@ const chunkAlgolia = (arr) => {
   for (const arrItem of arr) {
     const currentSizeInBytes = byteof(arrItem);
 
-    if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
+    if (currentSizeInBytes >= maxChunkSizeInBytes) {
+      throw new Error(
+        `${path.join(
+          arrItem.locale || '',
+          arrItem.url || '',
+        )} is >= than 10 MB`,
+      );
+    } else if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
       temp.push(arrItem);
       tempSizeInBytes += currentSizeInBytes;
     } else {
@@ -102,14 +111,7 @@ async function index() {
     return trimBytes(item);
   });
 
-  // This exports the parsed data for a test
-  if (process.env.ELEVENTY_ENV === 'test') {
-    if (!fs.existsSync('.tmp')) {
-      fs.mkdirSync('.tmp');
-    }
-    fs.writeFileSync('.tmp/algolia.json', JSON.stringify(algoliaData));
-    // If it's not a test then check if env keys exist
-  } else if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
+  if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
     console.warn('Missing Algolia environment variables, skipping indexing.');
     // Ok, not a test, we got the keys, DO IT!
   } else {
@@ -153,4 +155,10 @@ async function index() {
   console.log('Done!');
 }
 
-module.exports = {index, maxItemSizeInBytes};
+module.exports = {
+  chunkAlgolia,
+  index,
+  maxChunkSizeInBytes,
+  maxItemSizeInBytes,
+  trimBytes,
+};
