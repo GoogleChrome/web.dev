@@ -21,10 +21,6 @@
   ],
   "cssLinks": [
     {
-      "text": "Methodology",
-      "url": "/design-system/css-methodology/"
-    },
-    {
       "text": "Utilities",
       "url": "/design-system/css-utilities/"
     },
