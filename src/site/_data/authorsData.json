@@ -1119,8 +1119,13 @@
   },
   "maurizioparadisi": {
     "country": "IT",
-    "linkedin": "maurizio-paradisi-74422a79",
+    "linkedin": "https://www.linkedin.com/in/maurizio-paradisi-74422a79",
     "image": "image/JsqezhaeRldmuGd4UREN7n3ydds2/sv3bdC9e1dS95RsYAk2Y.jpg"
+  }, 
+  "joshuagrossberg": {
+    "country": "US",
+    "linkedin": "https://www.linkedin.com/in/joshua-grossberg-148b7a14",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/ghjO05jRwr6p0GPCA8sQ.jpg"
   },
   "nsull": {
     "country": "US",
