@@ -25,6 +25,8 @@ content.
 Companies like Kapwing make it possible to create all this video content right
 on the web, by using the latest in powerful APIs and performance tools.
 
+{% YouTube id="Df2U9-R-OJs", startTime="974" %}
+
 ## About Kapwing
 
 Kapwing is a web-based collaborative video editor designed mainly for casual
@@ -49,6 +51,13 @@ challenges. Kapwing needs to deliver smooth and precise playback of complex,
 multi-layered projects across a wide range of devices and network conditions.
 To achieve this, we use a variety of web APIs to achieve our performance and
 feature goals.
+
+{% Aside %}
+Kapwing's work was featured at Chrome Developer Summit in November 2021.
+[Watch the keynote](https://www.youtube.com/watch?v=Df2U9-R-OJs&t=974s) for
+an overview of Kapwing's work, and keep reading to take a closer look at the
+technical implementation.
+{% endAside %}
 
 ### IndexedDB
 
