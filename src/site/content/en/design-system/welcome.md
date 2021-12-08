@@ -72,7 +72,7 @@ Lastly, the whole design system is **theme-driven**. This means that tokens are 
 
 The structure is as follows:
 
-```
+```plaintext
 src
 └── scss
     ├── blocks
@@ -126,7 +126,7 @@ npm run patterns:create -- -p my-pattern -n my-pattern -t My\ Pattern
 
 This will create the following folder and file structure:
 
-```
+```plaintext
 web.dev
 └── src/
     └── component-library/
@@ -144,7 +144,7 @@ npm run patterns:create -- -p my-pattern/variants -n my-pattern-primary -t Prima
 
 It'll result in this structure:
 
-```
+```plaintext
 web.dev
 └── src/
     └── components/
