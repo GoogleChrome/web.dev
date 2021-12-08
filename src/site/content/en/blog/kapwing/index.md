@@ -431,7 +431,7 @@ We can also do a better job of offloading large trackpad computations to
 [web workers](/off-main-thread/), and we can be smarter about pre-fetching
 files and pre-generating frames. We see large opportunities to optimize our
 overall application performance and to extend functionality with tools like
-[WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API).
+[WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API).
 
 We would like to continue our investment in
 [TensorFlow.js](https://www.tensorflow.org/js), which we currently use for
