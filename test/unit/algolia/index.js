@@ -6,7 +6,7 @@ const {
   maxChunkSizeInBytes,
   maxItemSizeInBytes,
   trimBytes,
-} = require('../../algolia');
+} = require('../../../algolia');
 
 /**
  * Very simple to mock dummy object, only accepts even byte sizes.
@@ -24,7 +24,7 @@ const createAlgoliaItem = (length) => {
 
 describe('algolia', function () {
   describe('trimBytes', function () {
-    it('`trimBytes` trims content if bytes twice `maxItemSizeInBytes`', function () {
+    it('trims content if bytes twice `maxItemSizeInBytes`', function () {
       const dummyItemSize = maxItemSizeInBytes * 2;
       const dummyItem = createAlgoliaItem(dummyItemSize);
       expect(byteof(dummyItem)).to.equal(dummyItemSize);
@@ -33,7 +33,7 @@ describe('algolia', function () {
       expect(byteof(trimmedItem)).to.equal(maxItemSizeInBytes);
     });
 
-    it('`trimBytes` trims content if bytes equal to `maxItemSizeInBytes`', function () {
+    it('trims content if bytes equal to `maxItemSizeInBytes`', function () {
       const dummyItem = createAlgoliaItem(maxItemSizeInBytes);
       expect(byteof(dummyItem)).to.equal(maxItemSizeInBytes);
 
@@ -41,7 +41,7 @@ describe('algolia', function () {
       expect(byteof(trimmedItem)).to.equal(maxItemSizeInBytes);
     });
 
-    it("`trimBytes` doesn't modify content if bytes under `maxItemSizeInBytes`", function () {
+    it("doesn't modify content if bytes under `maxItemSizeInBytes`", function () {
       const dummyItemSize = maxItemSizeInBytes - 2;
       const dummyItem = createAlgoliaItem(dummyItemSize);
       expect(byteof(dummyItem)).to.equal(dummyItemSize);
@@ -53,7 +53,7 @@ describe('algolia', function () {
   });
 
   describe('chunkAlgolia', function () {
-    it('`chunkAlgolia` returns more than one array if bytes twice `maxItemSizeInBytes`', function () {
+    it('returns more than one array if bytes twice `maxItemSizeInBytes`', function () {
       const length = Math.ceil((maxChunkSizeInBytes * 2) / maxItemSizeInBytes);
       const dummyItems = Array.from({length}, () =>
         createAlgoliaItem(maxItemSizeInBytes),
@@ -62,14 +62,19 @@ describe('algolia', function () {
       expect(chunkedDummyItems.length).to.be.above(1);
     });
 
-    it('`chunkAlgolia` returns one array if less than `maxItemSizeInBytes`', function () {
+    it('returns one array if less than `maxItemSizeInBytes`', function () {
       const dummyItems = [createAlgoliaItem(maxChunkSizeInBytes - 2)];
       const chunkedDummyItems = chunkAlgolia(dummyItems);
       expect(chunkedDummyItems.length).to.be.equal(1);
     });
 
-    it('`chunkAlgolia` throws error if an element is equal to `maxItemSizeInBytes`', function () {
+    it('throws error if an element is equal to `maxItemSizeInBytes`', function () {
       const dummyItems = [createAlgoliaItem(maxChunkSizeInBytes)];
+      expect(() => chunkAlgolia(dummyItems)).to.throw();
+    });
+
+    it('throws error if an element is larger than `maxItemSizeInBytes`', function () {
+      const dummyItems = [createAlgoliaItem(maxChunkSizeInBytes * 2)];
       expect(() => chunkAlgolia(dummyItems)).to.throw();
     });
   });
