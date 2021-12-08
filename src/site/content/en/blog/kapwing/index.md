@@ -23,7 +23,7 @@ owners all over the world need quick and easy-to-use tools to make video
 content. 
 
 Companies like Kapwing make it possible to create all this video content right
-on the web, by using the latest in powerful APIs and performance tools. 
+on the web, by using the latest in powerful APIs and performance tools.
 
 ## About Kapwing
 
@@ -38,9 +38,9 @@ they searched for with just one click&mdash;without the added friction of
 navigating to an app store and downloading an app. The web makes it simple for
 people to search for precisely what task they need help with, and then do it.
 
-After that first click, Kapwing users can easily do a whole lot more.
-They can explore free templates, add new layers of free stock videos, insert
-subtitles, transcribe videos, and upload background music. 
+After that first click, Kapwing users can do a whole lot more. They can
+explore free templates, add new layers of free stock videos, insert
+subtitles, transcribe videos, and upload background music.
 
 ## How Kapwing brings real-time editing and collaboration to the web
 
