@@ -3,7 +3,7 @@ title: 'Kapwing: Powerful video editing for the web'
 subhead: |
    Creators can now edit high-quality video content on the web with Kapwing, thanks to powerful APIs (like IndexedDB and WebCodecs) and performance tools.
 authors:
-  - mihajlija
+  - joshuagrossberg
 date: 2021-12-06
 hero: image/VbsHyyQopiec0718rMq2kTE1hke2/to1mQCrluLRKhX5k97lc.jpeg
 alt: Kapwing logo
