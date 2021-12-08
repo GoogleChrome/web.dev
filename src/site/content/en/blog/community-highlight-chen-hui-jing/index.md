@@ -23,7 +23,7 @@ _This post is part of [Designcember](https://designcember.com/). A celebration o
 
 Chen Hui Jing is a self-taught designer and developer living in Singapore, with an inordinate love for CSS, as evidenced by her blog (which is mostly about CSS) and her tweets (which are largely about typography and the web). She used to play basketball full-time and launched her web career during downtime between training sessions, and hopes to be able to climb outdoors one day. I talked to her about CSS, and in particular non-English writing systems.
 
-**Rachel** What was your route into web design and development?
+**Rachel:** What was your route into web design and development?
 
 **Hui Jing:** When I was living in the dorms while playing basketball full-time, I had a bit more experience with computers than my peers, and my coach (bless him) thought that I could do something about our association website that hadn't been updated in years. I had zero idea what web development was, but I thought I had enough spare time to figure it out. It was more enjoyable than I expected and many years later, I'm still here.
 
