@@ -427,7 +427,7 @@ butDir.addEventListener('click', async () => {
 ```
 
 If you additionally need to access each file via `getFile()` to, for example, obtain the individual file sizes,
-do not `await` each result sequentially, but rather process all files in parallel, for example,
+do not use `await` on each result sequentially, but rather process all files in parallel, for example,
 via `Promise.all()`.
   
 ```js
