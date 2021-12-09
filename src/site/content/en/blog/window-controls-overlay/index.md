@@ -7,7 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-08-06
+updated: 2021-12-09
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -206,12 +206,11 @@ position, too, based on the platform. This means that the linear gradient backgr
 be dynamically adapted to run from `#131313`→`maroon` or `maroon`→`#131313`→`maroon`, so that it
 blends in with the title bar's `maroon` background color that is determined by
 `<meta name="theme-color" content="maroon">`. This can be achieved by querying the
-[`getBoundingClientRect()`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
-API on the `navigator.windowControlsOverlay` property.
+`getTitlebarAreaRect()` API on the `navigator.windowControlsOverlay` property.
 
 ```js
 if ('windowControlsOverlay' in navigator) {
-  const {x} = navigator.windowControlsOverlay.getBoundingClientRect();
+  const {x} = navigator.windowControlsOverlay.getTitlebarAreaRect();
   // Window controls are on the right (like on Windows).
   // Chrome menu is left of the window controls.
   // [ windowControlsOverlay___________________ […] [_] [■] [X] ]
@@ -265,7 +264,7 @@ window controls overlay would still report `true`. {% endAside %}
 
 ### Being notified of geometry changes
 
-Querying the window controls overlay area with `getBoundingClientRect()` can suffice for one-off
+Querying the window controls overlay area with `getTitlebarAreaRect()` can suffice for one-off
 things like setting the correct background image based on where the window controls are, but in
 other cases, more fine-grained control is necessary. For example, a possible use case could be to
 adapt the window controls overlay based on the available space and to add a joke right in the window
@@ -379,7 +378,7 @@ text to prevent a malicious website from appending the unsafe origin with a trus
 Enabling the window controls overlay and draggable regions do not pose considerable privacy concerns
 other than feature detection. However, due to differing sizes and positions of the window controls
 buttons across operating systems, the JavaScript API for
-<code>navigator.<wbr>windowControlsOverlay.<wbr>getBoundingClientRect()</code> will return a
+<code>navigator.<wbr>windowControlsOverlay.<wbr>getTitlebarAreaRect()</code> will return a
 [`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions
 will reveal information about the operating system upon which the browser is running. Currently,
 developers can already discover the OS from the user agent string, but due to fingerprinting
