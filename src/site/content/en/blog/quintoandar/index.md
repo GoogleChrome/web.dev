@@ -42,11 +42,11 @@ However, there were challenges when it came to the performance and user experien
 
 - Their performance as measured by [Core Web Vitals](/vitals/) was not optimized, and there were known issues regarding slow page loads, slow responsiveness to user input, and layout instability.
 - Their [bounce rates](https://en.wikipedia.org/wiki/Bounce_rate) were high, even if we expected them to be higher than in other parts of the app.
-- The [page experience update in Google Search](https://developers.google.com/search/blog/2020/11/timing-for-page-experience) — which, at that time, was not yet released — would include Core Web Vitals into the ranking algorithm, meaning page performance could affect how search results were going to be displayed.
+- The [page experience update in Google Search](https://developers.google.com/search/blog/2020/11/timing-for-page-experience)&mdash;which, at that time, was not yet released&mdash;would include Core Web Vitals into the ranking algorithm, which meant page performance could affect how search results were going to be displayed.
 
 At the same time, we identified some developer experience opportunities that could unlock gains in other projects across the company:
 
-- Our server-side rendering logic — which renders all high-traffic pages, including condominium pages — was created in-house, and became too complex to maintain and onboard new hires.
+- Our server-side rendering logic&mdash;which renders all high-traffic pages, including condominium pages&mdash;was created in-house, and became too complex to maintain and onboard new hires.
 - Essential features to achieve good app performance, such as [code splitting](https://developer.mozilla.org/docs/Glossary/Code_splitting), also required a custom setup plus manual work from the developers.
 - QuintoAndar has over 30 [React](https://reactjs.org) web applications. Delivering updates to these applications and maintaining them in accordance to best practices is an arduous task.
 
@@ -60,7 +60,7 @@ The new version of the condominium page was implemented with [Next.js](http://ne
 
 A hard requirement was to ensure pages remained crawlable by search engines. Next.js meets this requirement by supporting server-side rendering out-of-the-box, and removes the need for a custom setup. The documentation makes it much easier to share knowledge on how to do tasks such as [data fetching](https://nextjs.org/docs/basic-features/data-fetching) on the server and onboard new developers. Server-side rendering is also known to [improve performance](https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering) metrics such as [First Contentful Paint](/fcp/) (FCP).
 
-The framework provides other performance-friendly features such as automatic [code splitting](/reduce-javascript-payloads-with-code-splitting/) and [prefetching](/link-prefetch/). Even though the existing structure already provided such features, the additional work required from developers stalled their adoption — for example, code splitting at page or component-level had to be done manually.
+The framework provides other performance-friendly features such as automatic [code splitting](/reduce-javascript-payloads-with-code-splitting/) and [prefetching](/link-prefetch/). Even though the existing structure already provided such features, the additional work required from developers stalled their adoption. For example, code splitting at page or component-level had to be done manually.
 
 ### Optimizing JavaScript resources
 
@@ -102,7 +102,7 @@ The [Next.js built-in image component](https://nextjs.org/docs/basic-features/im
 
 ### Reducing layout shift
 
-The condominium page had a few issues with [Cumulative Layout Shift](/cls/) (CLS). The elements responsible for the layout shifts were rendered only in the client — for instance, hydrating server-side markup with client-rendered components, or images without defined `width` and `height` attributes.
+The condominium page had a few issues with [Cumulative Layout Shift](/cls/) (CLS). The elements responsible for the layout shifts were rendered only in the client&mdash;for instance, hydrating server-side markup with client-rendered components, or images without defined `width` and `height` attributes.
 
 To solve these problems, we set exact dimensions for these elements when possible, or estimated values with `min-height`. There are more options, such as using the [`aspect-ratio` CSS property](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio). We also created placeholders to prevent dynamically rendered components from causing layout shifts.
 
@@ -183,7 +183,7 @@ We also wanted to check the impact on our real users. Using field data collected
   </figcaption>
 </figure>
 
-[PageSpeed Insights](https://pagespeed.web.dev/) provides a field data report for the last 28 days. [The most accessed condominium page](https://www.quintoandar.com.br/condominio/ed-copan-centro-historico-de-sao-paulo-sao-paulo-ndv7sq7j2d) alone had enough data to generate a report for mobile users. As of November 2021, all Core Web Vitals are in the “good” bucket.
+[PageSpeed Insights](https://pagespeed.web.dev/) provides a field data report for the last 28 days. [The most accessed condominium page](https://www.quintoandar.com.br/condominio/ed-copan-centro-historico-de-sao-paulo-sao-paulo-ndv7sq7j2d) alone had enough data to generate a report for mobile users. As of November 2021, all Core Web Vitals are in the "good" bucket.
 
 <figure class="w-figure">
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/83nulYFqSAAWNLLPHXut.png", alt="A screenshot of the PageSpeed Insights report focusing on the Field Data section. All Core Web Vitals metrics (FCP, FID, LCP, CLS) are in the good bucket.", width="800", height="483" %}
