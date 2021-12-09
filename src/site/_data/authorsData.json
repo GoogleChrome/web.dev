@@ -1121,7 +1121,7 @@
     "country": "IT",
     "linkedin": "https://www.linkedin.com/in/maurizio-paradisi-74422a79",
     "image": "image/JsqezhaeRldmuGd4UREN7n3ydds2/sv3bdC9e1dS95RsYAk2Y.jpg"
-  }, 
+  },
   "joshuagrossberg": {
     "country": "US",
     "linkedin": "https://www.linkedin.com/in/joshua-grossberg-148b7a14",
@@ -1131,5 +1131,11 @@
     "country": "US",
     "twitter": "stubbornella",
     "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/gjyoj6pRzTfjLXfU7589.jpeg"
+  },
+  "danielasy": {
+    "country": "BR",
+    "github": "danielasy",
+    "linkedin": "https://www.linkedin.com/in/danielayassuda/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/GglXoaMdqB9PTnUieTSH.jpg"
   }
 }

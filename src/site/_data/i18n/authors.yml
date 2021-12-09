@@ -3351,7 +3351,7 @@ dandclark:
     pt: Desenvolvedor na equipe de plataforma web do Microsoft Edge
     ru: Разработчик в команде веб-платформы Microsoft Edge
     zh: Microsoft Edge 网络平台团队的开发者
-    
+
 cambickel:
   title:
     en: Camden Bickel
@@ -3537,9 +3537,9 @@ bckenny:
     en: Brendan Kenny
   description:
     en: Lighthouse lens polisher
-    
+
 alexandrawhite:
-  title: 
+  title:
     en: Alexandra White
     es: Alexandra White
     ja: Alexandra White
@@ -3557,23 +3557,23 @@ alexandrawhite:
     zh: Google 的技术撰稿人
 
 svenmay:
-  title: 
+  title:
       en: Sven May
   description:
       en: Privacy Web Ecosystem Consultant at Google
 
 denisstasyev:
-  title: 
+  title:
       en: Denis Stasyev
   description:
-      en: Software Engineer 
+      en: Software Engineer
 
 lozandier:
   title:
     en: Kevin Lozandier
   description:
     en: User Experience Engineer on the Google Responsible Innovation team
-    
+
 maurizioparadisi:
   title:
     en: Maurizio Paradisi
@@ -3605,3 +3605,9 @@ nsull:
     en: Nicole Sullivan
   description:
     en: Product manager on the Chrome team.
+
+danielasy:
+  title:
+    en: Daniela Sayuri Yassuda
+  description:
+    en: Staff Software Engineer at QuintoAndar
