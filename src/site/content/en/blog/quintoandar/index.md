@@ -218,6 +218,7 @@ As for the impact in business metrics, we analyzed conversion rates for transact
 </figure>
 
 ## Conclusion
+
 This project is the first part of a long-term migration effort from framework-less React to Next.js. The teams who worked on the condominium page since then gave positive feedback about the improved developer experience. Other teams who had to bootstrap new web apps have already done so with Next.js. We believe Next.js will simplify maintenance efforts and establish a common ground between different apps.
 
 Overall, the condominium content hub has been continuously growing in terms of absolute number of users and transactions. In the long-term analysis, there are many factors contributing to this, like the expansion of QuintoAndar’s operation and SEO initiatives such as improved page indexing. During this project, we have seen that page performance is also one of these factors with great potential for positive conversion impact.
