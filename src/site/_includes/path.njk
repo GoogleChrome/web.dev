@@ -1,13 +1,14 @@
 ---
 layout: default
-renderData:
+algolia_priority: 1.1
+eleventyComputed:
   title: "{{paths[pathName].title | i18n(locale)}}"
   description: "{{paths[pathName].description | i18n(locale)}}"
   hero: "{{paths[pathName].cover}}"
 ---
 
 {% set path = paths[pathName] %}
-{% set topics = path.topics | removeDrafts(lang) %}
+{% set topics = path.topics | removeDrafts %}
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}

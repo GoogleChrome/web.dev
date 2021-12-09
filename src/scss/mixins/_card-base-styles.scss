@@ -13,6 +13,7 @@
   border-radius: $global-radius-large;
   max-width: 37rem;
   text-decoration: none;
+  word-break: break-word;
 
   @include apply-utility('bg', 'core-bg');
 

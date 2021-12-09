@@ -40,7 +40,6 @@ const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
 const Details = require('./src/site/_includes/components/Details');
 const DetailsSummary = require('./src/site/_includes/components/DetailsSummary');
-const EventTable = require('./src/site/_includes/components/EventTable');
 const Glitch = require('./src/site/_includes/components/Glitch');
 const Hero = require('./src/site/_includes/components/Hero');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
@@ -62,9 +61,6 @@ const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist
 const authors = require('./src/site/_collections/authors');
 const blogPostsDescending = require('./src/site/_collections/blog-posts-descending');
 const newsletters = require('./src/site/_collections/newsletters');
-const {
-  postsWithLighthouse,
-} = require('./src/site/_collections/posts-with-lighthouse');
 const shows = require('./src/site/_collections/shows');
 const tags = require('./src/site/_collections/tags');
 
@@ -148,7 +144,6 @@ module.exports = function (config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
-  config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('shows', shows);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
@@ -241,10 +236,6 @@ module.exports = function (config) {
   config.addShortcode('YouTube', YouTube);
   config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
-
-  // This table is used for the web.dev/LIVE event, and should be taken down
-  // when the event is over or we no longer use it.
-  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS

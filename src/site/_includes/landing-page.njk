@@ -1,7 +1,5 @@
 ---
 layout: default-next
-eleventyComputed:
-  noindex: "{{ paged.index > 0 }}"
 ---
 <div class="landing-page">
   {# Hero starts #}
@@ -20,5 +18,5 @@ eleventyComputed:
   </header>
   {# Hero ends #}
 
-  {% include 'partials/paged-next.njk' %}
+  {{ content | safe }}
 </div>
