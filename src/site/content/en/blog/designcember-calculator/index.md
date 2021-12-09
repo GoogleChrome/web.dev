@@ -227,7 +227,7 @@ JavaScript.
 ```
 
 To detect if enough light is available for the calculator to work, I use the
-[`AmbientLightSensor`](https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor) API. For
+[`AmbientLightSensor`](https://developer.mozilla.org/docs/Web/API/AmbientLightSensor) API. For
 this API to be available, I needed to set the `#enable-generic-sensor-extra-classes` flag in
 `about:flags` and request the `'ambient-light-sensor'` permission. As before, I use progressive
 enhancement to only load the relevant code when the API is supported.
