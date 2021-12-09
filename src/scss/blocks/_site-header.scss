@@ -85,11 +85,14 @@
 
   .web-search-popout {
     height: unset;
+    max-height: 16rem;
     line-height: 1.4;
     border: 1px solid get-utility-value('color', 'stroke');
     border-radius: $global-radius-base;
     padding: 0;
     z-index: 99;
+
+    @include apply-utility('bg', 'core-bg');
 
     a {
       color: currentColor;

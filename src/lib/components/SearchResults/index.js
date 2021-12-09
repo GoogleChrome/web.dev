@@ -162,7 +162,7 @@ export class SearchResults extends BaseElement {
     }
 
     return html`
-      <div class="web-search-popout">
+      <div class="web-search-popout over-scroll">
         <ul id="${this.id}-list" class="stack-nav" aria-label="search results">
           ${this.itemsTemplate}
         </ul>
