@@ -1,5 +1,5 @@
 ---
-title: How QuintoAndar increased conversion rates and pages per session by improving page performances
+title: How QuintoAndar increased conversion rates and pages per session by improving page performance
 subhead: A project focused on optimizing Core Web Vitals and migrating to Next.js resulted in a 5% increase in conversion rates and a 87% increase in pages per session.
 authors:
   - danielasy
@@ -88,12 +88,12 @@ Other JS optimizations were already in place, such as [static compression with B
 
 ### Optimizing image resources
 
-There is a hero image occupying most of the area above the fold in the mobile version. It also happens to be the [Largest Contentful Paint](//lcp/) (LCP) of the page.
+There is a hero image occupying most of the area above the fold in the mobile version. It also happens to be the [Largest Contentful Paint](/lcp/) (LCP) of the page.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/W7koRinBm3QXErIzwGP8.png", alt="The condominium page for Edifício Copan (São Paulo, Brazil). A photo taken from the ground level shows the curves of the building structure.", width="800", height="1422" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/W7koRinBm3QXErIzwGP8.png", alt="The condominium page for Edifício Copan (São Paulo, Brazil). A photo taken from the ground level shows the curves of the building structure.", width="360", height="640" %}
   <figcaption>
-    Caption: The hero image of a condominium page.
+    The hero image of a condominium page.
   </figcaption>
 </figure>
 
