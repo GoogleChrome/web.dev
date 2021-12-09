@@ -40,6 +40,11 @@
 
   td,
   th {
-    white-space: nowrap;
+    min-width: 8rem;
+  }
+
+  [colspan],
+  [rowspan] {
+    min-width: 15rem;
   }
 }

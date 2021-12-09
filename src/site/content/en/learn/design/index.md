@@ -26,7 +26,7 @@ If you’re completely new to making websites, there's an
 [introduction to HTML](https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML) 
 and another course to help you [learn CSS](/learn/css/).
 
-**The first five modules are available now**, with the rest to follow soon.
+**The first ten modules are available now**, with the rest to follow soon.
 
 Here's what you'll learn:
 

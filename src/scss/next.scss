@@ -684,6 +684,7 @@ video,
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/feature-card';
+@import 'blocks/figure';
 @import 'blocks/fixed-width-img';
 @import 'blocks/headline';
 @import 'blocks/hero';
@@ -735,9 +736,6 @@ video,
 @import 'pages/landing-page';
 @import 'pages/learn';
 @import 'pages/measure';
-
-// The prototype file is for temporary prototyping
-@import 'prototype';
 
 // Temporary rollout patches
 @import 'rollout';

@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2021-05-28
+updated: 2021-12-03
 hero: image/admin/6ZuVN2HFiIqTVrmjN5XC.jpg
 hero_position: center
 tags:
@@ -20,9 +20,18 @@ feedback:
   - api
 ---
 
-{% Aside %} The development of Notification Triggers API, part of Google's
-[capabilities project](https://developers.google.com/web/updates/capabilities), is currently in
-development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'warning' %} The development of Notification Triggers API, part of Google's
+[capabilities project](https://developers.google.com/web/updates/capabilities), is no longer
+pursued. The notification landscape across operating systems is moving fairly quickly, and it is not
+clear that we would be able to provide a solid, consistent, and reliable experience across
+platforms.
+
+On top of that, in order to create a good experience, there needs to be a mechanism for being able
+to prune stale or invalidated scheduled notifications, for example, canceled calendar events,
+without relying on the tab being open. We have heard feedback that the candence at which
+<a href="/periodic-background-sync/">Periodic Background Sync</a> can be used is not sufficient for
+this, and that, by virtue of being required to show a notification, the Push API is not a good
+solution either. {% endAside %}
 
 ## What are Notification Triggers? {: #what }
 
