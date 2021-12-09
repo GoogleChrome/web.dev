@@ -89,7 +89,7 @@ window.
 
 ## Current status
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |

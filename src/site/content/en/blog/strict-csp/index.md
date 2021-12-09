@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP)
 subhead: How to deploy a CSP based on script nonces or hashes as a defense-in-depth against cross-site scripting.
 description: |
@@ -74,7 +75,7 @@ This makes allowlist CSPs generally ineffective at preventing attackers from
 exploiting XSS. That's why it's recommended to use a strict CSP based on
 cryptographic nonces or hashes, which avoids the pitfalls outlined above.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Allowlist CSP' %}
 - Doesn't effectively protect your site. ❌
 - Must be highly customized. 😓
@@ -183,7 +184,7 @@ There are two types of strict CSPs, nonce- and hash-based. Here's how they work:
 
 Criteria for choosing a strict CSP approach:
 
-<div class="w-table-wrapper">
+<div>
   <table>
       <caption>Criteria for choosing a strict CSP approach</caption>
       <thead>

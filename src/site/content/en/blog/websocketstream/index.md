@@ -115,7 +115,7 @@ Examples of sites that can use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |

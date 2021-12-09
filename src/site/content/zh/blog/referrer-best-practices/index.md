@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 引荐来源 (Referer) 和引荐来源政策 (Referrer-Policy) 最佳实践
 subhead: 设置引荐来源政策并在传入请求中使用引荐来源的最佳实践。
 authors:
@@ -33,7 +34,7 @@ HTTP 请求可能包含可选的[`Referer`标头](https://developer.mozilla.org/
 
 在下方的示例中，`Referer`标头包含发出请求的`site-one`上页面的完整 URL。
 
-<figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="包括一个引荐来源标头的 HTTP 请求。", width="800", height="573" %}</figure>
+<figure>{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="包括一个引荐来源标头的 HTTP 请求。", width="800", height="573" %}</figure>
 
 `Referer`标头可能出现在不同类型的请求中：
 
@@ -46,7 +47,7 @@ HTTP 请求可能包含可选的[`Referer`标头](https://developer.mozilla.org/
 
 但是当包含路径和查询字符串的完整 URL 在`Referer`中被**跨域**发送时，就可能会**有碍隐私**并带来**安全风险**。请看下列这些网址：
 
-<figure class="w-figure">{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="带有路径的 URL 映射到不同的隐私和安全风险。", width="800", height="370" %}</figure>
+<figure>{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="带有路径的 URL 映射到不同的隐私和安全风险。", width="800", height="370" %}</figure>
 
 URL #1 到 #5 包含私人信息，有时甚至是识别信息或敏感信息。在不知不觉中跨域泄露这些信息可能会危及网络用户的隐私安全。
 
@@ -62,13 +63,13 @@ URL #6 是一个[功能性 URL](https://www.w3.org/TR/capability-urls/)。不要
 - 只有[域](/same-site-same-origin/#origin)
 - 完整 URL：域、路径和查询字符串
 
-<figure class="w-figure">{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="引荐来源标头和 document.referrer 中可以包含的数据。", width="800", height="255" %}</figure>
+<figure>{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="引荐来源标头和 document.referrer 中可以包含的数据。", width="800", height="255" %}</figure>
 
 一些政策被设计为根据**上下文**的不同而采取不同行为：跨域或同域请求、安全性（无论请求目的地的安全性是否和域一样），或两者兼备。这对于限制跨域共享或限制向不太安全的域共享的信息量非常有用，同时也能够保持您自己的网站中引荐来源的丰富性。
 
 以下概览显示了引荐来源政策对于引荐来源标头和`document.referrer`中可用 URL 数据的限制方式：
 
-<figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="不同安全性和跨域上下文情况下的不同引荐来源政策及其行为。", width="800", height="537" %}</figure>
+<figure>{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="不同安全性和跨域上下文情况下的不同引荐来源政策及其行为。", width="800", height="537" %}</figure>
 
 MDN 提供了[完整的政策和行为示例列表](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives)。
 
@@ -83,7 +84,7 @@ MDN 提供了[完整的政策和行为示例列表](https://developer.mozilla.or
 
 **在未设置引荐来源政策的情况下将使用浏览器的默认政策。**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -160,7 +161,7 @@ HTTP 标头和元元素都是页面级的。确定一个元素的有效政策时
 
 您还可以使用 Chrome、Edge 或 Firefox 的开发者工具查看用于特定请求的引荐来源政策。在撰写本文时，Safari 未显示`Referrer-Policy`标头，但会显示已发送的`Referer`。
 
-<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Chrome 开发者工具的网络面板截图，显示了引荐来源和引荐来源政策。", width="800", height="416" %}<figcaption class="w-figcaption"> Chrome 开发者工具，<b>网络面板</b>中已选中一条请求。</figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Chrome 开发者工具的网络面板截图，显示了引荐来源和引荐来源政策。", width="800", height="416" %}<figcaption> Chrome 开发者工具，<b>网络面板</b>中已选中一条请求。</figcaption></figure>
 
 ## 您应该为您的网站设置哪种政策？
 

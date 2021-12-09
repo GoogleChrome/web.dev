@@ -162,7 +162,7 @@ In addition to bundle size reduction and positive effects on Core Web Vitals, co
 
 After the optimization effort, we observed the mean values for the week of 24-30 May 2021 in our field data:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

@@ -55,7 +55,7 @@ API to ensure that people can easily manage their files. See the
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                |
 | ---------------------------------------- | --------------------- |

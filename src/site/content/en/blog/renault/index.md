@@ -1,5 +1,6 @@
 ---
-title: How Renault improved its bounce and conversion rates by measuring and optimizing Largest Contentful Paint 
+layout: post
+title: How Renault improved its bounce and conversion rates by measuring and optimizing Largest Contentful Paint
 subhead: The team analyzed data from 10 million visits on its landing pages and found a strong correlation between Largest Contentful Paint and conversion rate.
 authors:
   - tcoustillac
@@ -45,7 +46,7 @@ This dataset not only shows the negative correlation between LCP and business me
 
 1 second LCP improvement can lead to a 14 percentage points (ppt) decrease in bounce rate and 13% increase in conversions.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -86,7 +87,7 @@ Here is how they've approached it.
 
 From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) and [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
 
-+   [Server side rendering (SSR)](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) to ensure a fast First Contentful Paint (FCP). 
++   [Server side rendering (SSR)](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) to ensure a fast First Contentful Paint (FCP).
 +   [Code splitting](/codelab-code-splitting/) to deliver only the JS and CSS chunks needed for the landing page (for better LCP and FID).
 +   [CDN](/content-delivery-networks/) with a high level of resource caching (including a [Lambda@Edge](https://aws.amazon.com/lambda/edge/) to sort and remove unnecessary query parameters). This helped avoid the drawbacks of SSR (slower TTFB due to server computation) and deliver content closer to the final user (for better TTFB and LCP).
 +   [Optimizing compression with brotli](/codelab-text-compression-brotli/) to reduce the code size.
