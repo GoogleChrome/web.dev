@@ -6,10 +6,8 @@
 
   --flow-space: #{get-space('size-1')};
 
-  > * {
-    margin-inline: auto;
-    max-width: $global-prose-element-max-width;
-  }
+  max-width: $global-prose-element-max-width;
+  display: flow-root;  // Clear floats
 
   p:empty {
     display: none;
@@ -55,28 +53,7 @@
   details > * {
     --flow-space: #{get-space('size-1')};
   }
-
-  /// Keeps figures and embeds at a reasonable size and
-  /// makes sure their content fills them
-  figure,
-  iframe {
-    max-width: $global-prose-element-max-width;
-
-    > * {
-      width: 100%;
-    }
-  }
-
-  figure {
-    border: 1px solid var(--color-stroke);
-    padding: 1em;
-    border-radius: $global-radius-base;
-  }
-
-  figcaption {
-    max-width: 60ch;
-  }
-
+    
   :not([class]) li {
     @extend .flow;
 
