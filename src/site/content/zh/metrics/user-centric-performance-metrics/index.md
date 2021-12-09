@@ -55,8 +55,8 @@ tags:
 
 性能指标一般通过以下两种方式来进行测量：
 
-- **在实验室中：**使用工具在稳定、受控的环境中模拟页面加载
-- **在实际情况中**：基于真实用户的实际页面加载与页面交互
+- **在实验室中：** 使用工具在稳定、受控的环境中模拟页面加载
+- **在实际情况中：** 基于真实用户的实际页面加载与页面交互
 
 这两个选项没有优劣之分，事实上，您通常会需要同时使用这两个方式来确保良好的性能。
 
@@ -78,22 +78,22 @@ tags:
 
 还有其他几种类型的指标也与用户对性能的感知相关。
 
-- **Perceived load speed 感知加载速度：**页面在屏幕上加载并渲染出所有视觉元素的速度。
-- **Load responsiveness 加载响应度：**为了使组件对用户交互作出快速响应，页面加载和执行任何所需 JavaScript 代码的速度。
-- **Runtime responsiveness 运行时响应度：**页面在加载后，对用户交互的响应速度。
-- **Visual stability 视觉稳定性：**页面上的元素是否会出现让用户感到意外的偏移，并对用户交互造成潜在的干扰？
-- **Smoothness 平滑度：**过渡和动画在页面状态切换的过程中是否具有稳定的帧速率和顺滑的流动性？
+- **Perceived load speed 感知加载速度：** 页面在屏幕上加载并渲染出所有视觉元素的速度。
+- **Load responsiveness 加载响应度：** 为了使组件对用户交互作出快速响应，页面加载和执行任何所需 JavaScript 代码的速度。
+- **Runtime responsiveness 运行时响应度：** 页面在加载后，对用户交互的响应速度。
+- **Visual stability 视觉稳定性：** 页面上的元素是否会出现让用户感到意外的偏移，并对用户交互造成潜在的干扰？
+- **Smoothness 平滑度：** 过渡和动画在页面状态切换的过程中是否具有稳定的帧速率和顺滑的流动性？
 
 鉴于上述所有类型的性能指标，我们希望能够清楚地表明，只用一项指标去捕获页面的所有性能特征是远远不够的。
 
 ## 需要测量的重要指标
 
-- **[First contentful paint 首次内容绘制 (FCP)](/fcp/)：**测量页面从开始加载到页面内容的任何部分在屏幕上完成渲染的时间。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
-- **[Largest contentful paint 最大内容绘制 (LCP)](/lcp/)：**测量页面从开始加载到最大文本块或图像元素在屏幕上完成渲染的时间。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
-- **[First input delay 首次输入延迟 (FID)](/fid/)：**测量从用户第一次与您的网站交互（例如当他们单击链接、点按按钮或使用由 JavaScript 驱动的自定义控件）直到浏览器实际能够对交互做出响应所经过的时间。*([实际](#in-the-field))*
-- **[Time to Interactive 可交互时间 (TTI)](/tti/)：**测量页面从开始加载到视觉上完成渲染、初始脚本（如果有的话）完成加载，并能够快速、可靠地响应用户输入所需的时间。*（[实验室](#in-the-lab)）*
-- **[Total blocking time 总阻塞时间 (TBT)](/tbt/)：**测量 FCP 与 TTI 之间的总时间，这期间，主线程被阻塞的时间过长，无法作出输入响应。*（[实验室](#in-the-lab)）*
-- **[Cumulative layout shift 累积布局偏移 (CLS)](/cls/)：**测量页面在开始加载和其[生命周期状态](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)变为隐藏期间发生的所有意外布局偏移的累积分数。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
+- **[First contentful paint 首次内容绘制 (FCP)](/fcp/)：** 测量页面从开始加载到页面内容的任何部分在屏幕上完成渲染的时间。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
+- **[Largest contentful paint 最大内容绘制 (LCP)](/lcp/)：** 测量页面从开始加载到最大文本块或图像元素在屏幕上完成渲染的时间。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
+- **[First input delay 首次输入延迟 (FID)](/fid/)：** 测量从用户第一次与您的网站交互（例如当他们单击链接、点按按钮或使用由 JavaScript 驱动的自定义控件）直到浏览器实际能够对交互做出响应所经过的时间。*([实际](#in-the-field))*
+- **[Time to Interactive 可交互时间 (TTI)](/tti/)：** 测量页面从开始加载到视觉上完成渲染、初始脚本（如果有的话）完成加载，并能够快速、可靠地响应用户输入所需的时间。*（[实验室](#in-the-lab)）*
+- **[Total blocking time 总阻塞时间 (TBT)](/tbt/)：** 测量 FCP 与 TTI 之间的总时间，这期间，主线程被阻塞的时间过长，无法作出输入响应。*（[实验室](#in-the-lab)）*
+- **[Cumulative layout shift 累积布局偏移 (CLS)](/cls/)：** 测量页面在开始加载和其[生命周期状态](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)变为隐藏期间发生的所有意外布局偏移的累积分数。*（[实验室](#in-the-lab)、[实际](#in-the-field)）*
 
 虽然此列表中包含的指标能够测量与用户相关的众多方面的性能，但该列表并不包括所有内容（例如，当前还未涵盖运行时响应度和平滑度）。
 
