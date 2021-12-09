@@ -16,18 +16,18 @@ tags:
 
 QuintoAndar is a Brazilian proptech company whose products offer digital end-to-end solutions for real estate. This year, we carried out a project focused on improving the performance of a content hub in our app, and had encouraging results in increasing user traffic and conversion metrics.
 
-<div class="stats">
- <div class="stats__item">
-   <p class="stats__figure">46<sub>%</sub></p>
-   <p>reduction in bounce rate</p>
+<div class="w-stats">
+ <div class="w-stat">
+   <p class="w-stat__figure">46<sub>%</sub></p>
+   <p class="w-stat__desc">reduction in bounce rate</p>
  </div>
- <div class="stats__item">
-   <p class="stats__figure">87<sub>%</sub></p>
-   <p>increase in pages per session</p>
+ <div class="w-stat">
+   <p class="w-stat__figure">87<sub>%</sub></p>
+   <p class="w-stat__desc">increase in pages per session</p>
  </div>
- <div class="stats__item">
-   <p class="stats__figure">5<sub>%</sub></p>
-   <p>improvement in conversion during validation phase</p>
+ <div class="w-stat">
+   <p class="w-stat__figure">5<sub>%</sub></p>
+   <p class="w-stat__desc">improvement in conversion during validation phase</p>
  </div>
 </div>
 
@@ -127,7 +127,7 @@ During this period, the engineering team continuously measured page performance 
 
 The team used [SpeedCurve](https://speedcurve.com) to continuously run [lab tests](/user-centric-performance-metrics/#how-metrics-are-measured) against the condominium page. These are the results for the mobile version:
 
-<div class="table-wrapper scrollbar">
+<div class="w-table-wrapper">
   <table>
     <thead>
       <tr>
