@@ -5,7 +5,7 @@ authors:
   - danielasy
 date: 2021-12-10
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/VQrzs5OoWZT2qS8yTzGW.jpg
-alt: A picture of a city skyline on a clear, sunny day. At left is a blue box with the QuintoAndar logo set within it in white.
+alt: A picture of a city skyline on a clear, sunny day. At center is the QuintoAndar logo in white.
 description: |
   A project focused on optimizing Core Web Vitals and migrating to Next.js resulted in a 5% increase in conversion rates and a 87% increase in pages per session.
 tags:
