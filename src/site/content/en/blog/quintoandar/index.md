@@ -16,29 +16,20 @@ tags:
 
 QuintoAndar is a Brazilian proptech company whose products offer digital end-to-end solutions for real estate. This year, we carried out a project focused on improving the performance of a content hub in our app, and had encouraging results in increasing user traffic and conversion metrics.
 
-<ul class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">
-      46
-      <sub>%</sub>
-    </p>
-    <p>reduction in bounce rate</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">
-      87
-      <sub>%</sub>
-    </p>
-    <p>increase in pages per session</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">
-      5
-      <sub>%</sub>
-    </p>
-    <p>improvement in conversion during validation phase</p>
-  </div>
-</ul>
+<div class="stats">
+ <div class="stats__item">
+   <p class="stats__figure">46<sub>%</sub></p>
+   <p>reduction in bounce rate</p>
+ </div>
+ <div class="stats__item">
+   <p class="stats__figure">87<sub>%</sub></p>
+   <p>increase in pages per session</p>
+ </div>
+ <div class="stats__item">
+   <p class="stats__figure">5<sub>%</sub></p>
+   <p>improvement in conversion during validation phase</p>
+ </div>
+</div>
 
 ## Challenges
 
@@ -186,8 +177,10 @@ We also wanted to check the impact on our real users. Using field data collected
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/QWkHnGHi4YTdBR6q17sw.png", alt="A line graph with FID values comparing the new and previous versions during the current and past month. The curve for the new version stays below 100ms most of the time, while in the curve for the previous version there are a few spikes crossing 250ms.
-Caption: Field metrics results collected with Instana.
 ", width="800", height="494" %}
+  <figcaption>
+    Field metrics results collected with Instana.
+  </figcaption>
 </figure>
 
 [PageSpeed Insights](https://pagespeed.web.dev/) provides a field data report for the last 28 days. [The most accessed condominium page](https://www.quintoandar.com.br/condominio/ed-copan-centro-historico-de-sao-paulo-sao-paulo-ndv7sq7j2d) alone had enough data to generate a report for mobile users. As of November 2021, all Core Web Vitals are in the “good” bucket.
