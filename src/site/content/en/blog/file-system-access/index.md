@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-10-18
+updated: 2021-12-09
 tags:
   - blog
   - capabilities
@@ -424,6 +424,23 @@ butDir.addEventListener('click', async () => {
     console.log(entry.kind, entry.name);
   }
 });
+```
+
+If you additionally need to access each file via `getFile()` to, for example, obtain the individual file sizes,
+do not `await` each result sequentially, but rather process all files in parallel, for example,
+via `Promise.all()`.
+  
+```js
+const dirHandle = await window.showDirectoryPicker();
+const promises = [];
+for await (const entry of dirHandle.values()) {
+  if (entry.kind !== 'file') {
+    break;
+  }    
+  promises.push(entry.getFile().then(file => `${file.name} (${file.size})`));
+}
+console.log(await Promise.all(promises));
+});  
 ```
 
 ### Creating or accessing files and folders in a directory
