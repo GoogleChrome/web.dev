@@ -43,7 +43,7 @@ This design system will help you to maintain consistency around the web.dev webs
 
 ## Quick start
 
-<div class="design-system__components-section">
+<div class="breakout">
 <div class="auto-grid gap-top-size-2">
   {% for item in quickLinks -%}
   <a class="card flow bg-mid-bg" href="{{ item.url }}">

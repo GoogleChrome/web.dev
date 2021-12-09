@@ -5,7 +5,7 @@
   /// there is now overflow content
   $table-wrapper-background: #{get-utility-value('bg', 'core-bg')};
 
-  width: 100%;
+  min-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
