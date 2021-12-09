@@ -178,7 +178,7 @@ class UrlChooser extends BaseElement {
       return;
     }
     if (!url.startsWith('https://') && !url.startsWith('http://')) {
-      url = `http://${url}`;
+      url = `https://${url}`;
     }
     if (url !== this._urlInput.value && this._urlInput) {
       this._urlInput.value = url;
