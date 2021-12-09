@@ -2,12 +2,12 @@
 title: How QuintoAndar increased conversion rates and pages per session by improving page performances
 subhead: A project focused on optimizing Core Web Vitals and migrating to Next.js resulted in a 5% increase in conversion rates and a 87% increase in pages per session.
 authors:
-  - jlwagner
-date: 2021-12-06
-hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/PHqBoMdg3WgcQWWIIkWj.jpg
+  - danielasy
+date: 2021-12-10
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/VQrzs5OoWZT2qS8yTzGW.jpg
 alt: A picture of a city skyline on a clear, sunny day. At left is a blue box with the QuintoAndar logo set within it in white.
 description: |
-  TODO
+  A project focused on optimizing Core Web Vitals and migrating to Next.js resulted in a 5% increase in conversion rates and a 87% increase in pages per session.
 tags:
   - blog
   - case-study
