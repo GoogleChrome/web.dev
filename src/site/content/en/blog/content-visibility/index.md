@@ -227,7 +227,7 @@ sizing. For example, if you specified `contain-intrinsic-size: auto 300px`, the
 element will start out with a `300px` intrinsic sizing in each dimension, but once
 the element's contents are rendered, it will retain the rendered intrinsic sizing.
 Any subsequent rendering resizes will also be remembered. This means that if you
-scroll a `content-visibilty:auto` element onscreen and then scroll it back
+scroll an element with `content-visibilty: auto` applied, and then scroll it back
 offscreen, it will automatically retain its ideal width and height, and not revert
 to the placeholder sizing. This feature is especially useful for infinite scrollers,
 which can now automatically improve sizing estimation over time as the user
