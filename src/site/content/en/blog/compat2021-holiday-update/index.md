@@ -10,7 +10,7 @@ date: 2021-12-10
 updated: 2021-12-10 
 tags:
   - blog
-  - CSS
+  - css
 ---
 
 The end of the year is near, and it's time for a final update on Compat 2021—an effort to eliminate 
