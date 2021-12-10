@@ -76,8 +76,8 @@ In Chromium, an [issue with flexbox sizing](https://bugs.chromium.org/p/chromium
 is fixed, matching the spec and Firefox’s behavior. And in Gecko, several 
 [issues affecting Compat 2021](https://bugzilla.mozilla.org/show_bug.cgi?id=1700745) are fixed, 
 including an [issue with percentage height on flex items](https://bugzilla.mozilla.org/show_bug.cgi?id=1611303). 
-Finally, in WebKit, support for more alignment property values ([left, right](https://trac.webkit.org/changeset/282078/webkit)
-, [self-start, self-end](https://trac.webkit.org/changeset/282267/webkit), [start, end](https://trac.webkit.org/changeset/281840/webkit)) 
+Finally, in WebKit, support for more alignment property values ([left, right](https://trac.webkit.org/changeset/282078/webkit),
+[self-start, self-end](https://trac.webkit.org/changeset/282267/webkit), [start, end](https://trac.webkit.org/changeset/281840/webkit)) 
 is now added, and a lot of improvements were made for [absolute positioning](https://trac.webkit.org/changeset/281995/webkit), 
 also improving the flexbox test results in Compat 2021.
 
