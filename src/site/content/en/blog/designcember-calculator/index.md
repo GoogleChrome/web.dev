@@ -21,7 +21,7 @@ tags:
 
 ## The challenge
 
-I am a kid of the 1980s. A thing that was all the rage back when I was in highschool were solar
+I'm a kid of the 1980s. A thing that was all the rage back when I was in high school were solar
 calculators. We were all given a
 [TI-30X SOLAR](https://en.wikipedia.org/wiki/TI-30#/media/File:TI-30X_SOLAR,_2.jpg) by the school,
 and I have fond memories of us benchmarking our calculators against each other by calculating the
@@ -79,8 +79,8 @@ self.addEventListener('fetch', (event) => {
 
 ## Blending in on mobile
 
-Now that the app is installable, the next step is to make it blend in as much as possible. On
-mobile, this can be done by setting the display mode to `fullscreen` in the Web App Manifest.
+Now that the app is installable, the next step is to make it blend in with the operating system apps as much as possible. On
+mobile, I can do this by setting the display mode to `fullscreen` in the Web App Manifest.
 
 ```json
 {
@@ -100,7 +100,7 @@ content covers the whole screen makes the app look gorgeous.
 
 ## Blending in on desktop
 
-On desktop, there is a cool feature I can make use of,
+On desktop, there is a cool feature I can use:
 [Window Controls Overlay](/window-controls-overlay/), which allows me to put content in the title
 bar of the app window. The first step is to override the display mode fallback sequence so it tries
 to use `window-controls-overlay` first when it is available.
@@ -113,7 +113,7 @@ to use `window-controls-overlay` first when it is available.
 
 This makes the title bar effectively go away and the content moves up into the title bar area as if
 the title bar were not there. My idea is to move the skeuomorphic solar cell up into the title bar
-and the rest of the calculator UI down accordingly, which I can do with some CSS that makes use of
+and the rest of the calculator UI down accordingly, which I can do with some CSS that uses
 the `titlebar-area-*` environment variables. You will notice that all the selectors carry a `wco`
 class, which will be relevant a couple of paragraphs down.
 
@@ -131,8 +131,8 @@ class, which will be relevant a couple of paragraphs down.
 }
 ```
 
-Up next, I need to decide which elements to make draggable, since the title bar that I would usually
-use for dragging is not available. In the style of a classic widget, I can even decide to make the
+Next, I need to decide which elements to make draggable, since the title bar that I would usually
+use for dragging is not available. In the style of a classic widget, I can even make the
 entire calculator draggable by applying `(-webkit-)app-region: drag`, apart from the buttons, which
 get `(-webkit-)app-region: no-drag` so they cannot be used to drag.
 
@@ -158,7 +158,7 @@ if ('windowControlsOverlay' in navigator) {
 }
 ```
 
-Whenever the window controls overlay geometry changes, I make some modifications to the app to make
+Whenever the window controls overlay geometry changes, I modify the app to make
 it look as natural as possible. It is a good idea to debounce this event, since it can be triggered
 frequently when the user resizes the window. Namely, I apply the `wco` class to some elements, so my
 CSS from above kicks in, and I also change the theme color. I can detect if the window controls
@@ -212,7 +212,7 @@ chevron in the upper right corner.
 
 For the ultimate geekery, I of course needed to make the solar cell actually work. The calculator
 should only be functioning if there is enough light. The way I modeled this is through setting the
-CSS `opacity` of the digits on the display via a CSS variable `--opacity` that I can control via
+CSS `opacity` of the digits on the display via a CSS variable `--opacity` that I control via
 JavaScript.
 
 ```css
@@ -241,8 +241,8 @@ if ('AmbientLightSensor' in window) {
 The sensor returns the ambient light in [lux](https://en.wikipedia.org/wiki/Lux) units whenever a
 new reading is available. Based on a
 [table of values](https://en.wikipedia.org/wiki/Lux#Illuminance) of typical light situations, I came
-up with a very simple formula to convert the lux value to a value between 0 and 1 that I then set
-programmatically for the `--opacity` variable.
+up with a very simple formula to convert the lux value to a value between 0 and 1 that I
+programmatically assign to the `--opacity` variable.
 
 ```js
 const luxToOpacity = (lux) => {
@@ -275,8 +275,8 @@ sensor.onerror = (event) => {
 ```
 
 In the video below you can see how the calculator starts working once I turn the room light up
-enough. And there you have it, a skeuomorphic solar calculator that is actually working. My good old
-time-tested TI-30X SOLAR has come a long way indeed…
+enough. And there you have it: a skeuomorphic solar calculator that actually works. My good old
+time-tested TI-30X SOLAR has come a long way indeed.
 
 {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/lXUTb872NtCdw7fqrQY3.mp4" %}
 
@@ -284,7 +284,7 @@ time-tested TI-30X SOLAR has come a long way indeed…
 
 Be sure to play with the [Designcember Calculator demo](https://designcember-calculator.glitch.me/)
 and check out the [source code on Glitch](https://glitch.com/edit/#!/designcember-calculator). (To
-install the app, you need to open it in its own window, the embedded version below will not trigger
+install the app, you need to open it in its own window. The embedded version below will not trigger
 the mini infobar.)
 
 <!-- Copy and Paste Me -->
