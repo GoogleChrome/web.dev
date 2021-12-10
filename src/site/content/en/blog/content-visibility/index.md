@@ -117,7 +117,7 @@ enables the rendering work to be done just in time to be seen by the user.
 The browser is only able to skip rendering work if you are also careful not to call any DOM API that [forces some of rendering
 to occur](https://gist.github.com/paulirish/5d52fb081b3570c81e3a#file-what-forces-layout-md) on one of the skipped subtrees.
 If you're using `content-visibility` to improve performance, audit your code to make sure these APIs are not getting called.
-To help find them, Chromium will print console warnings if you call one of these APIs for a subtree of an
+To help find them, Chromium will print console messages if you call one of these APIs for a subtree of an
 element with `content-visibility:hidden`. To see the warnings, [turn on verbose logging](https://developer.chrome.com/docs/devtools/console/log/).
 {% endAside %}
 
