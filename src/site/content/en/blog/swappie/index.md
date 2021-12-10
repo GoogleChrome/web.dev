@@ -24,14 +24,14 @@ noticed that business results on the mobile site were lagging behind the desktop
 version, a shift happened. They focused on optimizing performance and soon saw
 an uptick in mobile revenue.
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">42<sub>%</sub></p>
-    <p>Increase in revenue coming from mobile visitors</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">42<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in revenue coming from mobile visitors</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">10<sub>pp*</sub></p>
-    <p>*percentage point Rel mCvR increase</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">10<sub>pp*</sub></p>
+    <p class="w-stat__desc">*percentage point Rel mCvR increase</p>
   </div>
 </div>
 
@@ -67,22 +67,22 @@ After only three months of work, the impact was clear–Rel mCvR went from 24% t
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/CNuIW0SPMXYGlzMRUcds.png", alt="A graph showing the correlation between decreased average page load time and increased Rel mCVR.", width="800", height="502", class="screenshot" %}
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">23<sub>%</sub></p>
-    <p>Lower average page load time</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">23<sub>%</sub></p>
+    <p class="w-stat__desc">Lower average page load time</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">55<sub>%</sub></p>
-    <p>Lower LCP</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">55<sub>%</sub></p>
+    <p class="w-stat__desc">Lower LCP</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">91<sub>%</sub></p>
-    <p>Lower CLS</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">91<sub>%</sub></p>
+    <p class="w-stat__desc">Lower CLS</p>
   </div>
-    <div class="stats__item">
-    <p class="stats__figure">90<sub>%</sub></p>
-    <p>Lower FID</p>
+    <div class="w-stat">
+    <p class="w-stat__figure">90<sub>%</sub></p>
+    <p class="w-stat__desc">Lower FID</p>
   </div>
 </div>
 

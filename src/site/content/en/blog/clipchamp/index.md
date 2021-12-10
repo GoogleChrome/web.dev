@@ -19,18 +19,18 @@ authors:
   - sorenbalko
 ---
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">97<sub>%</sub></p>
-    <p>Monthly growth in PWA installations</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">97<sub>%</sub></p>
+    <p class="w-stat__desc>Monthly growth in PWA installations</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">2.3<sub>x</sub></p>
-    <p>Performance improvement</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">2.3<sub>x</sub></p>
+    <p class="w-stat__desc>Performance improvement</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">9<sub>%</sub></p>
-    <p>Higher retention in PWA users</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">9<sub>%</sub></p>
+    <p class="w-stat__desc>Higher retention in PWA users</p>
   </div>
 </div>
 

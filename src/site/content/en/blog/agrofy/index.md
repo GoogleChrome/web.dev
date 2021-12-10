@@ -26,14 +26,14 @@ the [Core Web Vitals](/vitals/#core-web-vitals). These
 performance optimizations led to a 70% improvement in LCP, which correlated to a
 76% reduction in load abandonment (from 3.8% to 0.9%).
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">70<sub>%</sub></p>
-    <p>Lower LCP</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">70<sub>%</sub></p>
+    <p class="w-stat__desc">Lower LCP</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">76<sub>%</sub></p>
-    <p>Lower load abandonment</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">76<sub>%</sub></p>
+    <p class="w-stat__desc">Lower load abandonment</p>
   </div>
 </div>
 
@@ -104,5 +104,3 @@ the load abandonment rate on product detail pages dropped 76%, from 3.8% to
     Load abandonment rate trend on product detail page.
   </figcaption>
 </figure>
-
-

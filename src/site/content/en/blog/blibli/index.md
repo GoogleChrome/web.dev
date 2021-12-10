@@ -26,18 +26,18 @@ With that insight, Blibli embarked on a journey to develop a better web
 experience and improve conversions. As a result, they were able to achieve some
 exceptional results:
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">42<sub>%</sub></p>
-    <p>Reduction in bounce rates</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">42<sub>%</sub></p>
+    <p class="w-stat__desc>Reduction in bounce rates</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">8<sub>x</sub></p>
-    <p>Better mCVR in installed PWA compared to browser mobile web</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">8<sub>x</sub></p>
+    <p class="w-stat__desc>Better mCVR in installed PWA compared to browser mobile web</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">2.5<sub>x</sub></p>
-    <p>More pages/sessions on installed PWA</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">2.5<sub>x</sub></p>
+    <p class="w-stat__desc>More pages/sessions on installed PWA</p>
   </div>
 </div>
 

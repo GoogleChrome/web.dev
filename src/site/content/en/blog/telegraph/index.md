@@ -51,14 +51,14 @@ user experience and a clear goal to strive to. This resulted in our 75th
 percentile CLS improving from 0.25 to 0.1 and our passing bucket growing from
 57% to 72%.
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">250<sub>%</sub></p>
-    <p>75th percentile CLS improvement</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">250<sub>%</sub></p>
+    <p class="w-stat__desc">75th percentile CLS improvement</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">15<sub>%</sub></p>
-    <p>More users with good CLS score</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">15<sub>%</sub></p>
+    <p class="w-stat__desc">More users with good CLS score</p>
   </div>
 </div>
 

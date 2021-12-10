@@ -27,14 +27,14 @@ Speed was a [company-wide initiative][cuts] for eBay in 2019, with many teams de
 site and apps as fast as possible for users. In fact, **for every 100 milliseconds improvement in
 search page loading time, eBay saw a 0.5% increase in "Add to Cart" count.**
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">100<sub>ms</sub></p>
-    <p>Improvement in load time</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">100<sub>ms</sub></p>
+    <p class="w-stat__desc">Improvement in load time</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">0.5<sub>%</sub></p>
-    <p>Increase in "Add to Cart" count</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">0.5<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in "Add to Cart" count</p>
   </div>
 </div>
 

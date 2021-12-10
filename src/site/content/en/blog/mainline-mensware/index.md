@@ -45,33 +45,33 @@ and enable them to take advantage of fast moving web technology.
 
 ## Results
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">139<sub>%</sub></p>
-    <p>More pages per session in PWA vs. web.</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">139<sub>%</sub></p>
+    <p class="w-stat__desc>More pages per session in PWA vs. web.</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">161<sub>%</sub></p>
-    <p>Longer session durations in PWA vs. web.</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">161<sub>%</sub></p>
+    <p class="w-stat__desc>Longer session durations in PWA vs. web.</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">10<sub>%</sub></p>
-    <p>Lower bounce rate in PWA vs. web</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">10<sub>%</sub></p>
+    <p class="w-stat__desc>Lower bounce rate in PWA vs. web</p>
   </div>
 </div>
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">12.5<sub>%</sub></p>
-    <p>Higher average order value in PWA vs. web</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">12.5<sub>%</sub></p>
+    <p class="w-stat__desc>Higher average order value in PWA vs. web</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">55<sub>%</sub></p>
-    <p>Higher conversion rate in PWA vs. web.</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">55<sub>%</sub></p>
+    <p class="w-stat__desc>Higher conversion rate in PWA vs. web.</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">243<sub>%</sub></p>
-    <p>Higher revenue per session in PWA vs. web.</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">243<sub>%</sub></p>
+    <p class="w-stat__desc>Higher revenue per session in PWA vs. web.</p>
   </div>
 </div>
 

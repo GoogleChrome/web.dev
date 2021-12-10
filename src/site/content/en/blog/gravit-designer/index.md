@@ -19,18 +19,18 @@ authors:
   - rezakazemi
 ---
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">+24<sub>%</sub></p>
-    <p>PWA users have 24% more active sessions than all other platforms</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">+24<sub>%</sub></p>
+    <p class="w-stat__desc>PWA users have 24% more active sessions than all other platforms</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">+31<sub>%</sub></p>
-    <p>PWA accounts for 31% more repeat users than all other platforms</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">+31<sub>%</sub></p>
+    <p class="w-stat__desc>PWA accounts for 31% more repeat users than all other platforms</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">2.5<sub>x</sub></p>
-    <p>PWA users are 2.5x more likely to purchase Gravit Designer PRO</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">2.5<sub>x</sub></p>
+    <p class="w-stat__desc>PWA users are 2.5x more likely to purchase Gravit Designer PRO</p>
   </div>
 </div>
 

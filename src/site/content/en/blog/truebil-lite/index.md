@@ -179,21 +179,21 @@ Because of these improvements, Truebil's conversion and engagement rates have gr
   <cite>Rakesh Raman, Co-Founder and Chief of Product & Data Science at Truebil</cite>
 </blockquote>
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">44<sub>%</sub></p>
-    <p>Improvement in loading time</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">44<sub>%</sub></p>
+    <p class="w-stat__desc">Improvement in loading time</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">26<sub>%</sub></p>
-    <p>Longer user sessions</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">26<sub>%</sub></p>
+    <p class="w-stat__desc">Longer user sessions</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">61<sub>%</sub></p>
-    <p>Increase in conversions</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">61<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in conversions</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">80<sub>%</sub></p>
-    <p>Increase in revenue-to-marketing spend</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">80<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in revenue-to-marketing spend</p>
   </div>
 </div>

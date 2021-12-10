@@ -27,18 +27,18 @@ for optimizing engagement and ad revenues hand in hand,
 with page views up by 27%, ad viewability over 75%, and advertising revenues improving by 18%.
 
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">27<sub>%</sub></p>
-    <p>Increase in page views</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">27<sub>%</sub></p>
+    <p class="w-stat__desc>Increase in page views</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">18<sub>%</sub></p>
-    <p>Increase in ad revenue</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">18<sub>%</sub></p>
+    <p class="w-stat__desc>Increase in ad revenue</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">75<sub>%</sub></p>
-    <p>Ad viewability</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">75<sub>%</sub></p>
+    <p class="w-stat__desc>Ad viewability</p>
   </div>
 </div>
 

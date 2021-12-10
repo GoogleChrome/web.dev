@@ -35,18 +35,18 @@ improved [Cumulative Layout Shift (CLS)](/cls) score with a 15%
 increase in page views per session and 13% increase in session duration.
 
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">0.2</p>
-    <p>CLS improvement</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">0.2</p>
+    <p class="w-stat__desc">CLS improvement</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">15.1<sub>%</sub></p>
-    <p>More page views per session</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">15.1<sub>%</sub></p>
+    <p class="w-stat__desc">More page views per session</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">13.3<sub>%</sub></p>
-    <p>Longer session duration</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">13.3<sub>%</sub></p>
+    <p class="w-stat__desc">Longer session duration</p>
   </div>
 </div>
 
@@ -177,18 +177,18 @@ Search Console doesn't reflect improvements in real-time.
 When Yahoo! JAPAN News compared user engagement metrics before and after CLS
 optimization, they saw multiple improvements:
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">15.1<sub>%</sub></p>
-    <p>More page views per session</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">15.1<sub>%</sub></p>
+    <p class="w-stat__desc">More page views per session</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">13.3<sub>%</sub></p>
-    <p>Longer session duration</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">13.3<sub>%</sub></p>
+    <p class="w-stat__desc">Longer session duration</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">1.72<sub>%*</sub></p>
-    <p>Lower bounce rate (*percentage points)</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">1.72<sub>%*</sub></p>
+    <p class="w-stat__desc">Lower bounce rate (*percentage points)</p>
   </div>
 </div>
 

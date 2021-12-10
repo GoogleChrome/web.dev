@@ -24,18 +24,18 @@ networks, 18M+ product listings, and 50M+ monthly visitors, the web team knew  t
 web performance was essential. By building a performance-first culture, they achieved a 35% increase
 in click-through rates (CTR) and an 8% increase in conversions (CVR).
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">35<sub>%</sub></p>
-    <p>Increase in CTR</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">35<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in CTR</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">8<sub>%</sub></p>
-    <p>Increase in CVR</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">8<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in CVR</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">4<sub>sec</sub></p>
-    <p>Improvement in TTI</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">4<sub>sec</sub></p>
+    <p class="w-stat__desc">Improvement in TTI</p>
   </div>
 </div>
 

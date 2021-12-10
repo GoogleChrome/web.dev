@@ -32,22 +32,22 @@ score in the
 than version B), Vodafone determined that optimizing for Web Vitals generated 8%
 more sales.
 
-<div class="stats">
- <div class="stats__item">
-   <p class="stats__figure">31<sub>%</sub></p>
-   <p>A 31% improvement in LCP led to…</p>
+<div class="w-stats">
+ <div class="w-stat">
+   <p class="w-stat__figure">31<sub>%</sub></p>
+   <p class="w-stat__desc">A 31% improvement in LCP led to…</p>
  </div>
- <div class="stats__item">
-   <p class="stats__figure"><sub>+</sub>8<sub>%</sub></p>
-   <p>Increase in total sales</p>
+ <div class="w-stat">
+   <p class="w-stat__figure"><sub>+</sub>8<sub>%</sub></p>
+   <p class="w-stat__desc">Increase in total sales</p>
  </div>
- <div class="stats__item">
-   <p class="stats__figure"><sub>+</sub>15<sub>%</sub></p>
-   <p>Uplift in the lead to visit rate</p>
+ <div class="w-stat">
+   <p class="w-stat__figure"><sub>+</sub>15<sub>%</sub></p>
+   <p class="w-stat__desc">Uplift in the lead to visit rate</p>
  </div>
- <div class="stats__item">
-   <p class="stats__figure"><sub>+</sub>11<sub>%</sub></p>
-   <p>Uplift in the cart to visit rate</p>
+ <div class="w-stat">
+   <p class="w-stat__figure"><sub>+</sub>11<sub>%</sub></p>
+   <p class="w-stat__desc">Uplift in the cart to visit rate</p>
  </div>
 </div>
 

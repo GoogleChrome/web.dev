@@ -22,14 +22,14 @@ tags:
 
 This case study highlights how improving the performance of third-party resources can boost business metrics. While a [previous study](/fast-ads-matter/#fast-ads-make-you-more-money) measured the cost of added ads latency, this study demonstrates the value of a real-world performance improvement:
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">0.5<sub>%</sub></p>
-    <p>Revenue lift for publishers</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">0.5<sub>%</sub></p>
+    <p class="w-stat__desc">Revenue lift for publishers</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">2<sub>%</sub></p>
-    <p>Increase in early ad script loads</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">2<sub>%</sub></p>
+    <p class="w-stat__desc">Increase in early ad script loads</p>
   </div>
 </div>
 

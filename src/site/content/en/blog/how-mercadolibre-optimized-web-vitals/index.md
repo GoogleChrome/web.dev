@@ -33,14 +33,14 @@ Burkhay](https://twitter.com/oburkhay) from Mercado Libre's frontend architectur
 one of the Core Web Vitals: [First Input Delay (FID)](/fid/) and its lab proxy,
 [Total Blocking Time (TBT)](/tbt/).
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">90<sub>%</sub></p>
-    <p>Reduction in Max Potential FID in Lighthouse</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">90<sub>%</sub></p>
+    <p class="w-stat__desc>Reduction in Max Potential FID in Lighthouse</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">9<sub>%</sub></p>
-    <p>More users perceiving FID as "Fast" in CrUX</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">9<sub>%</sub></p>
+    <p class="w-stat__desc>More users perceiving FID as "Fast" in CrUX</p>
   </div>
 </div>
 

@@ -38,14 +38,14 @@ conversion rates, and revenue per user.
 The results were clear.
 A 100 milliseconds page load time improvement led to increased engagement with lower bounce rate and a 0.7% uplift in revenue per session.
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">100<sub>ms</sub></p>
-    <p>Page load time improvement</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">100<sub>ms</sub></p>
+    <p class="w-stat__desc">Page load time improvement</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">0.7<sub>%</sub></p>
-    <p>Increased revenue per session</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">0.7<sub>%</sub></p>
+    <p class="w-stat__desc">Increased revenue per session</p>
   </div>
 </div>
 

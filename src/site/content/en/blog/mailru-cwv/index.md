@@ -260,18 +260,18 @@ Results obtained using the "Platform" are in line with the growth of metric valu
 
 A comparison of mean user session duration values a week before the roll-out of initial improvements and a week after the roll-out shows 2.7% growth. Moreover, there is an overall significant increase in conversion in most sections of the page. In particular, conversions to the Mail.ru email app increased by 11.6%, the conversion of the news section increased by 13.5%.
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">181<sub>%</sub></p>
-    <p>Boost of share of good CLS threshold</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">181<sub>%</sub></p>
+    <p class="w-stat__desc>Boost of share of good CLS threshold</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">2.7<sub>%</sub></p>
-    <p>Higher mean session duration</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">2.7<sub>%</sub></p>
+    <p class="w-stat__desc>Higher mean session duration</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">13.5<sub>%</sub></p>
-    <p>Increase of news section conversion rate</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">13.5<sub>%</sub></p>
+    <p class="w-stat__desc>Increase of news section conversion rate</p>
   </div>
 </div>
 

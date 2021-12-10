@@ -319,18 +319,18 @@ BettyCrocker.com reported the following metrics:
   than for those not using the wake lock feature.
 - Indicators of purchase intent were about 300% higher for wake lock users compared to all users.
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">3.1<sub>×</sub></p>
-    <p>Longer session duration</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">3.1<sub>×</sub></p>
+    <p class="w-stat__desc>Longer session duration</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">50<sub>%</sub></p>
-    <p>Lower bounce rate</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">50<sub>%</sub></p>
+    <p class="w-stat__desc>Lower bounce rate</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">300<sub>%</sub></p>
-    <p>Higher purchase intent indicators</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">300<sub>%</sub></p>
+    <p class="w-stat__desc>Higher purchase intent indicators</p>
   </div>
 </div>
 

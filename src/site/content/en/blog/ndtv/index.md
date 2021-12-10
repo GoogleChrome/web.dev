@@ -31,14 +31,14 @@ with a 50% reduction in bounce rates.
   the only cause of the bounce rate reduction.
 {% endAside %}
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">55<sub>%</sub></p>
-    <p>Improvement in LCP</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">55<sub>%</sub></p>
+    <p class="w-stat__desc">Improvement in LCP</p>
   </div>
-  <div class="stats__item">
-    <p class="stats__figure">50<sub>%</sub></p>
-    <p>Reduction in bounce rates</p>
+  <div class="w-stat">
+    <p class="w-stat__figure">50<sub>%</sub></p>
+    <p class="w-stat__desc">Reduction in bounce rates</p>
   </div>
 </div>
 
