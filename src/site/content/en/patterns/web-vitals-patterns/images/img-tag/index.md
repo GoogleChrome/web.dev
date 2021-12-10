@@ -13,7 +13,7 @@ allows the browser to reserve the correct amount of space for the image.
 
 * **Set the `width` and `height` attributes:** The values of these attributes should
   be set to match the dimensions of the image itself (that is, its [intrinsic
-  size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)) -
+  size](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)) -
   rather than dimensions that the image will be displayed at.
 
 * **Adjust image styling as needed:** Depending on the image's existing styling,

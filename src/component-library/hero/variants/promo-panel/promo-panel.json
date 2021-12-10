@@ -1,0 +1,15 @@
+{
+  "title": "Promo Panel",
+  "context": {
+    "eyebrow": "Event",
+    "title": "Chrome Dev Summit 2021",
+    "summary": "Join the Chrome team for our two-day summit on the latest techniques for building the modern Web.\n",
+    "image": "https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/k25FHfpYLo9LQLvYT413.png",
+    "imageWidth": "800",
+    "imageHeight": "728",
+    "primaryButtonText": "Request an invite",
+    "primaryButtonUrl": "#",
+    "secondaryButtonText": "Add to calendar",
+    "secondaryButtonUrl": "#"
+  }
+}

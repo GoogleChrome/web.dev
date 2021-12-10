@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Web on Android
 subhead: How different components can be used to render web content inside Android apps.
 authors:
@@ -11,7 +11,7 @@ alt: Android robot
 description: |
   Learn how different components can be used to render web content inside Android apps.
 tags:
-  - android
+  # - android
   - blog # blog is a required tag for the article to show up in the blog.
 feedback:
   - api

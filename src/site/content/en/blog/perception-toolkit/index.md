@@ -10,7 +10,7 @@ description: |
   Wouldn't it be great if users could search your site using their camera?
 tags:
   - blog
-  - visual-search
+  # - visual-search
 feedback:
   - api
 ---

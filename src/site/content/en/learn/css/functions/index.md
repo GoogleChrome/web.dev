@@ -21,7 +21,7 @@ In the [color](/learn/css/color) module,
 you were introduced to `rgb()`, and `hsl()`, which help you define colors.
 
 Like many other programming languages,
-[CSS has **a lot** of built-in functions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions)
+[CSS has **a lot** of built-in functions](https://developer.mozilla.org/docs/Web/CSS/CSS_Functions)
 that you can access whenever you need them.
 
 Every CSS function has a specific purpose,
@@ -65,8 +65,8 @@ We'll cover that in more detail, later in this module.
 You learned about functional selectors in the
 [pseudo-classes module](/learn/css/pseudo-classes)
 which detailed functions like
-[`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) and
-[`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not).
+[`:is()`](https://developer.mozilla.org/docs/Web/CSS/:is) and
+[`:not()`](https://developer.mozilla.org/docs/Web/CSS/:not).
 The arguments passed into these functions are CSS selectors,
 which are then evaluated.
 If there is a match with elements,
@@ -89,7 +89,7 @@ A custom property is a variable which allows you to tokenize values in your CSS 
 which means they can be contextually manipulated or redefined.
 A custom property must be prefixed with two dashes (`--`) and are case sensitive.
 
-The [`var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/var())
+The [`var()`](https://developer.mozilla.org/docs/Web/CSS/var())
 function takes one required argument:
 the custom property that you are trying to return as a value.
 In the above snippet, the `var()` function has `--base-color` passed as an argument.
@@ -116,8 +116,8 @@ the passed **declaration** will be used instead, which in this sample's case is 
 
 The `var()` function is just one of the CSS functions that return a value.
 Functions like
-[`attr()`](https://developer.mozilla.org/en-US/docs/Web/CSS/attr()) and
-[`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) follow a similar structure to `var()`—
+[`attr()`](https://developer.mozilla.org/docs/Web/CSS/attr()) and
+[`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) follow a similar structure to `var()`—
 you pass one or more arguments and use them on the **right side** of your CSS declaration.
 
 ```css
@@ -158,7 +158,7 @@ CSS provides useful mathematical functions to assist with various types of calcu
 
 ### calc()
 
-The [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc())
+The [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc())
 function takes a single mathematical expression as its parameter.
 This mathematical expression can be a mix of types,
 such as length, number, angle and frequency. Units can be mixed too.
@@ -193,9 +193,9 @@ You can also pass custom properties in a `var()` function as part of an expressi
 
 ### `min()` and `max()`
 
-The [`min()`](https://developer.mozilla.org/en-US/docs/Web/CSS/min())
+The [`min()`](https://developer.mozilla.org/docs/Web/CSS/min())
 function returns the smallest computed value of the one or more passed arguments.
-The [`max()`](https://developer.mozilla.org/en-US/docs/Web/CSS/max())
+The [`max()`](https://developer.mozilla.org/docs/Web/CSS/max())
 function does the opposite: get the largest value of the one or more passed arguments.
 
 ```css
@@ -217,7 +217,7 @@ We cover units like `vw` and `vh` in the [sizing](/learn/css/sizing) units modul
 
 ### clamp()
 
-The [`clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp())
+The [`clamp()`](https://developer.mozilla.org/docs/Web/CSS/clamp())
 function takes three arguments: the minimum size,
 the ideal size and the maximum.
 
@@ -239,19 +239,19 @@ You can learn more about the `min()`, `max()`, and `clamp`() functions in
 ## Shapes
 
 The
-[`clip-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path),
-[`offset-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path) and
-[`shape-outside`](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside)
+[`clip-path`](https://developer.mozilla.org/docs/Web/CSS/clip-path),
+[`offset-path`](https://developer.mozilla.org/docs/Web/CSS/offset-path) and
+[`shape-outside`](https://developer.mozilla.org/docs/Web/CSS/shape-outside)
 CSS properties use shapes to visually clip your box or provide a shape for content to flow around.
 
 There are shape functions that can be used with both of these properties.
 Simple shapes such as
-[`circle()`](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/circle()),
-[`ellipse()`](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/ellipse()) and
-[`inset()`](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/inset())
+[`circle()`](https://developer.mozilla.org/docs/Web/CSS/basic-shape/circle()),
+[`ellipse()`](https://developer.mozilla.org/docs/Web/CSS/basic-shape/ellipse()) and
+[`inset()`](https://developer.mozilla.org/docs/Web/CSS/basic-shape/inset())
 take configuration arguments to size them.
 More complex shapes, such as
-[`polygon()`](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/polygon())
+[`polygon()`](https://developer.mozilla.org/docs/Web/CSS/basic-shape/polygon())
 take comma separated pairs of X and Y axis values to create custom shapes.
 
 ```css
@@ -282,12 +282,12 @@ All of the following functions are used with the `transform` property.
 ### Rotation
 
 You can rotate an element using the
-[`rotate()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate())
+[`rotate()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate())
 function, which will rotate an element on its center axis.
 You can also use the
-[`rotateX()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateX()),
-[`rotateY()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY()) and
-[`rotateZ()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateZ())
+[`rotateX()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotateX()),
+[`rotateY()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotateY()) and
+[`rotateZ()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotateZ())
 functions to rotate an element on a specific axis instead.
 You can pass degree, turn and radian units to determine the level of rotation.
 
@@ -302,7 +302,7 @@ You can pass degree, turn and radian units to determine the level of rotation.
   id: 'MWJOWzP'
 } %}
 
-The [`rotate3d()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d())
+The [`rotate3d()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/rotate3d())
 function takes four arguments.
 The first 3 arguments are numbers, which define the X, Y and Z coordinates.
 The fourth argument is the rotation which,
@@ -322,15 +322,15 @@ like the other rotation functions, accepts degrees, angle and turns.
 ### Scale
 
 You can change the scaling of an element with `transform` and the
-[`scale()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()) function.
+[`scale()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scale()) function.
 The function accepts one or two numbers as a value which determine a positive or negative scaling.
 If you only define one number argument,
 both the X and Y axis will be scaled the same and defining both is a shorthand forX and Y.
 Just like `rotate()`,
 there are
-[`scaleX()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleX()),
-[`scaleY()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleY()) and
-[`scaleZ()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleZ())
+[`scaleX()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleX()),
+[`scaleY()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleY()) and
+[`scaleZ()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scaleZ())
 functions to scale an element on a specific axis instead.
 
 ```css
@@ -345,12 +345,12 @@ functions to scale an element on a specific axis instead.
 } %}
 
 Also like the `rotate` function, there is a
-[`scale3d()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d()) function.
+[`scale3d()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/scale3d()) function.
 This is similar to `scale()`, but it takes three arguments: the X, Y and Z scale factor.
 
 ### Translate
 
-The [`translate()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate())
+The [`translate()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translate())
 functions move an element while it maintains its position in the document flow.
 They accept length and percentage values as arguments.
 The `translate()` function translates an element along the X axis if one argument is defined,
@@ -369,24 +369,24 @@ and translates an element along the X and Y axis if both arguments are defined.
 
 You can—just like with other transform functions—use specific functions for a specific axis,
 using
-[`translateX`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX()),
-[`translateY`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY()) and
-[`translateZ`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ()).
+[`translateX`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translateX()),
+[`translateY`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translateY()) and
+[`translateZ`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translateZ()).
 You can also use
-[`translate3d`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d())
+[`translate3d`](https://developer.mozilla.org/docs/Web/CSS/transform-function/translate3d())
 which allows you to define the X, Y and Z translation in one function.
 
 ### Skewing
 
 You can skew an element, using the
-[`skew()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew())
+[`skew()`](https://developer.mozilla.org/docs/Web/CSS/transform-function/skew())
 functions which accept angles as arguments.
 The `skew()` function works in a very similar way to `translate()`.
 If you only define one argument, it will only affect the X axis and if you define both,
 it will affect the X and Y axis.
 You can also use
-[`skewX`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skewX()) and
-[`skewY`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skewY()) to affect each axis independently.
+[`skewX`](https://developer.mozilla.org/docs/Web/CSS/transform-function/skewX()) and
+[`skewY`](https://developer.mozilla.org/docs/Web/CSS/transform-function/skewY()) to affect each axis independently.
 
 ```css
 .my-element {
@@ -402,7 +402,7 @@ You can also use
 ### Perspective
 
 Lastly, you can use the
-[`perspective`](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective) property
+[`perspective`](https://developer.mozilla.org/docs/Web/CSS/perspective) property
 —which is part of the transform family of properties—to alter the distance between the user and the Z plane.
 This gives the feeling of distance and can be used to create a depth of field in your designs.
 

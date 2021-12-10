@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a Settings component
 subhead: A foundational overview of how to build a settings component of sliders and checkboxes.
 authors:
@@ -159,7 +159,7 @@ main {
 ```
 
 The main element is using `place-content: center` [alignment
-shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content) so
+shorthand](https://developer.mozilla.org/docs/Web/CSS/place-content) so
 that the children are centered vertically and horizontally in both one and two column layouts.
 
 {% Video
@@ -481,7 +481,7 @@ help give personality to the interaction by:
 - Providing UI feedback that a field is accepting input.
 
 To provide feedback when an element is being interacted with, CSS is using the
-[`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
+[`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within)
 pseudo class to change the appearance of various elements, let's break down the
 `.fieldset-item`, it's super interesting:
 

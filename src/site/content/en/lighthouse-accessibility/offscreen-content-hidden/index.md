@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Offscreen content is hidden from assistive technology
 description: |
   Learn how to improve your web page's accessibility for assistive technology

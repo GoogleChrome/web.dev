@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How Wix improved website performance by evolving their infrastructure
 subhead: >
   A case study of some major changes introduced at Wix to improve website loading
@@ -16,7 +16,7 @@ hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: "A fast train (source: https://unsplash.com/photos/60VrGk-bfeA)"
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
   - case-study
@@ -189,7 +189,7 @@ post is published/modified.
 #### Reducing complexities
 
 Implementing caching improved performance substantially, mostly on the
-[TTFB](/time-to-first-byte/) and [FCP](/fcp/) phases, and improved our
+[TTFB](/ttfb/) and [FCP](/fcp/) phases, and improved our
 reliability by serving the content from a location closer to the end user.
 
 However, the need to modify the HTML for each response introduced an unnecessary
@@ -224,7 +224,7 @@ validate that the content hasn't changed. This is done using [HTTP
 ETag](https://en.wikipedia.org/wiki/HTTP_ETag), which is basically an identifier
 assigned to a specific version of an HTML resource. If the content is still the
 same, a [304 Not
-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) response
+Modified](https://developer.mozilla.org/docs/Web/HTTP/Status/304) response
 is sent by our servers to the client, without a body.
 
 <figure class="w-figure">

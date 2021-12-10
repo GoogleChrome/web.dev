@@ -40,7 +40,6 @@ const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
 const Details = require('./src/site/_includes/components/Details');
 const DetailsSummary = require('./src/site/_includes/components/DetailsSummary');
-const EventTable = require('./src/site/_includes/components/EventTable');
 const Glitch = require('./src/site/_includes/components/Glitch');
 const Hero = require('./src/site/_includes/components/Hero');
 const includeRaw = require('./src/site/_includes/components/includeRaw');
@@ -48,6 +47,7 @@ const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
 const Label = require('./src/site/_includes/components/Label');
+const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
@@ -55,15 +55,12 @@ const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const Tooltip = require('./src/site/_includes/components/Tooltip');
 const {Video} = require('./src/site/_includes/components/Video');
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
+const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
 // Collections
 const authors = require('./src/site/_collections/authors');
 const blogPostsDescending = require('./src/site/_collections/blog-posts-descending');
 const newsletters = require('./src/site/_collections/newsletters');
-const pages = require('./src/site/_collections/pages');
-const {
-  postsWithLighthouse,
-} = require('./src/site/_collections/posts-with-lighthouse');
 const shows = require('./src/site/_collections/shows');
 const tags = require('./src/site/_collections/tags');
 
@@ -73,12 +70,15 @@ const {i18n} = require('./src/site/_filters/i18n');
 const {getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
+const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
+const algoliaItem = require('./src/site/_filters/algolia-item');
 const containsTag = require('./src/site/_filters/contains-tag');
 const expandAuthors = require('./src/site/_filters/expand-authors');
 const githubLink = require('./src/site/_filters/github-link');
 const gitlocalizeLink = require('./src/site/_filters/gitlocalize-link');
 const htmlDateString = require('./src/site/_filters/html-date-string');
 const isNewContent = require('./src/site/_filters/is-new-content');
+const livePosts = require('./src/site/_filters/live-posts');
 const md = require('./src/site/_filters/md');
 const pagedNavigation = require('./src/site/_filters/paged-navigation');
 const postsLighthouseJson = require('./src/site/_filters/posts-lighthouse-json');
@@ -91,6 +91,7 @@ const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
+const {siteRender} = require('./src/site/_filters/site-render');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
@@ -124,7 +125,7 @@ module.exports = function (config) {
     wrapper: 'div',
     wrapperClass: 'w-toc__list',
     ul: true,
-    flat: true,
+    flat: false,
   });
 
   // ----------------------------------------------------------------------------
@@ -143,14 +144,26 @@ module.exports = function (config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
-  config.addCollection('pages', pages);
-  config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('shows', shows);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
+  });
+
+  // Filters through all collection items and finds content that has
+  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
+  // are in a design system context or a legacy context
+  config.addCollection('designSystemGlobals', (collection) => {
+    global.__designSystemPaths = new Set(
+      collection
+        .getAll()
+        .filter(({data}) => data.CSS_ORIGIN === 'next')
+        .map(({filePathStem}) => filePathStem),
+    );
+
+    return global.__designSystemPaths;
   });
 
   // ----------------------------------------------------------------------------
@@ -161,6 +174,8 @@ module.exports = function (config) {
   config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('pathSlug', pathSlug);
+  config.addFilter('algoliaIndexable', algoliaIndexable);
+  config.addFilter('algoliaItem', algoliaItem);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandAuthors', expandAuthors);
   config.addFilter('githubLink', githubLink);
@@ -168,8 +183,10 @@ module.exports = function (config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('imgix', generateImgixSrc);
   config.addFilter('isNewContent', isNewContent);
+  config.addFilter('livePosts', livePosts);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
+  config.addNunjucksAsyncFilter('siteRender', siteRender);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -195,7 +212,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
-  config.addNunjucksAsyncShortcode('BrowserCompat', BrowserCompat);
+  config.addNunjucksShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addShortcode('CodePattern', CodePattern);
@@ -209,6 +226,7 @@ module.exports = function (config) {
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
+  config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('SignPosts', SignPosts);
@@ -216,11 +234,8 @@ module.exports = function (config) {
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
-
-  // This table is used for the web.dev/LIVE event, and should be taken down
-  // when the event is over or we no longer use it.
-  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS

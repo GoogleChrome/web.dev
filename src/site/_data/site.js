@@ -34,7 +34,6 @@ module.exports = {
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: false,
   banner: '',
-  areCoursesEnabled: true,
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',

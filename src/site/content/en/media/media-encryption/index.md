@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Media encryption
 authors:
   - derekherman
@@ -12,7 +12,7 @@ date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
   - audio
 ---
 

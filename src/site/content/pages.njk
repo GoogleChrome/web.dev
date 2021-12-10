@@ -2,4 +2,15 @@
 noindex: true
 permalink: "/pages.json"
 ---
-{{ collections.pages | dump(2) | safe }}
+{% if site.env === 'prod' %}
+  {% set posts = collections.all | livePosts | algoliaIndexable %}
+{% else %}
+  {% set posts = [] %}
+{% endif %}
+
+[
+  {% for post in posts %}
+    {{ post | algoliaItem | dump | safe }}
+    {{ "" if loop.last else "," }}
+  {% endfor %}
+]

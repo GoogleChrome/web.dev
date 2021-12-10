@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Eliminate render-blocking resources
 description: |
   Learn about the render-blocking-resources audit.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to set up Signed HTTP Exchanges (SXG) using nginx
 subhead: How to generate a TLS certificate with SXG extensions, install tools for generating SXG files, and configure nginx to serve SXG files.
 authors:
@@ -8,8 +8,8 @@ description: How to generate a TLS certificate with SXG extensions, install tool
 date: 2020-03-11
 tags:
   - blog
-  - SXG
-  - nginx
+  # - SXG
+  # - nginx
 feedback:
   - api
 ---

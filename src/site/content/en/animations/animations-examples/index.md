@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Examples of high-performance CSS animations
 authors:
   - rachelandrew

@@ -13,7 +13,11 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-gutter-narrow: 1.25rem;
 $global-stroke: 1px solid get-utility-value('color', 'stroke');
+
+/// Elements that feature in prose contexts need to have a consistent max width
+$global-prose-element-max-width: 50rem;
 
 // NOTE: there are more design token-led global variables in _tokens.scss
 
@@ -22,11 +26,12 @@ $global-stroke: 1px solid get-utility-value('color', 'stroke');
 
 /// MIXINS
 @import 'mixins/button-base-styles';
+@import 'mixins/card-base-styles';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
 /// GLOBAL CSS
-/// Core CSS that is applicable to every page.
+/// Core CSS that is applicable to every page
 /// https://cube.fyi/css.html
 
 body {
@@ -41,6 +46,10 @@ body {
   @include apply-utility('leading', 'regular');
 }
 
+main {
+  flex: auto;
+}
+
 h1,
 h2,
 h3,
@@ -53,21 +62,18 @@ h6 {
 }
 
 h1 {
-  font-size: get-size('size-6');
-}
-
-h2 {
   font-size: get-size('size-5');
 }
 
-h3 {
+h2 {
   font-size: get-size('size-4');
 }
 
-h4 {
+h3 {
   font-size: get-size('size-3');
 }
 
+h4,
 h5,
 h6 {
   font-size: get-size('size-2');
@@ -83,7 +89,7 @@ li {
 h1,
 h2,
 h3 {
-  max-width: 25ch;
+  max-width: 30ch;
 }
 
 /// Lists
@@ -118,8 +124,8 @@ ul:not([class]) {
     display: block;
     position: absolute;
     inset: 1ex 0 0 0;
-    width: 0.8ex;
-    height: 0.8ex;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: currentColor;
   }
@@ -172,7 +178,7 @@ dd + dt {
 /// Blockquotes
 
 blockquote {
-  font-size: get-size('size-4');
+  font-size: get-size('size-3');
   text-align: center;
 
   @include apply-utility('font', 'brand');
@@ -196,11 +202,11 @@ blockquote {
 
 /// <q> elements are ideal, but we need to make sure
 /// any element is styled as a quote
-blockquote > *::before {
+blockquote > *:not(:last-child)::before {
   content: open-quote;
 }
 
-blockquote > *::after {
+blockquote > *:not(:last-child)::after {
   content: close-quote;
 }
 
@@ -230,12 +236,17 @@ blockquote cite {
 
 caption,
 figcaption {
-  margin-inline: auto;
   font-style: italic;
-  text-align: center;
+  text-align: start;
+  font-size: get-size('size-0');
 
   @include apply-utility('measure', 'short');
-  @include apply-utility('gap-top', 'size-1');
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('gap-top', 'base');
+
+  code {
+    white-space: nowrap;
+  }
 }
 
 /// Tables
@@ -244,13 +255,11 @@ table {
   max-width: 100%;
   min-width: 50%;
   border-spacing: 0;
-
-  @include rounded-border();
 }
 
 th,
 td {
-  padding: 0.5em;
+  padding: 0.8em 0.5em;
   text-align: left;
   border-collapse: collapse;
 }
@@ -270,6 +279,13 @@ caption {
 table ul:not([class]),
 table ol:not([class]) {
   margin: 0;
+}
+
+/// Code in tables
+table code {
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /// Cell alignment
@@ -303,7 +319,7 @@ hr + * {
   --flow-space: #{get-size('size-6')};
 }
 
-/// Basic code
+/// Code
 
 code {
   padding: 0.125em 0.25em;
@@ -325,10 +341,31 @@ code {
 pre > code {
   display: block;
   padding: get-size('size-1');
-  max-width: 80ch;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+}
+
+// It's not uncommon to have code in markdown headings.
+// In these cases we should remove the border.
+// There is also a utility class, .unstyled-code, that can be used
+// if we're using <code> blocks in new contexts.
+// For example: <span class="unstyled-code">{{ description | md | safe }}</span>
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+.unstyled-code code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
 }
 
 /// Sub and sup
@@ -344,21 +381,26 @@ sup {
 }
 
 /// Details and summary
-details:not([class]) {
+details {
   @extend .flow;
 
   --flow-space: 0.5em;
 
-  max-width: 75ch;
   border-block: 1px solid get-utility-value('bg', 'stroke');
-  padding: 1.3rem 0.5rem 1.6rem 0.5rem;
+  padding: 1rem 0.5rem 1.2rem 0.5rem;
+  text-align: left;
 }
 
-details:not([class]) summary {
+details + details {
+  border-block-start: none;
+}
+
+details summary {
   position: relative;
-  font-size: get-size('size-3');
+  font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
+  padding-right: get-space('size-1'); // Prevent overlap with ::before element
 
   @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'regular');
@@ -378,8 +420,8 @@ details:not([class]) summary {
   }
 
   &::before {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: get-utility-value('bg', 'highlight-interact-bg');
     inset-inline-end: 0;
@@ -387,12 +429,12 @@ details:not([class]) summary {
   }
 
   &::after {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-bottom: 2px solid currentColor;
     border-right: 2px solid currentColor;
-    inset-block-start: 9px;
-    inset-inline-end: 12px;
+    inset-block-start: 7px;
+    inset-inline-end: 10px;
     transform: rotate(45deg);
   }
 
@@ -412,14 +454,20 @@ details:not([class]) summary {
   }
 }
 
-details[open]:not([class]) summary {
+/// Let a details element inherit a parent's font-size
+/// if it feature a font size utility class
+[class*='text-'] > details summary {
+  font-size: inherit;
+}
+
+details[open] summary {
   &::after {
     inset-block-start: 11px;
     transform: rotate(-135deg);
   }
 }
 
-details:not([class]) summary + * {
+details summary + * {
   @include apply-utility('flow-space', 'size-1');
 }
 
@@ -492,6 +540,7 @@ input[type='radio'] {
   cursor: pointer;
   margin: 0px;
   background-size: cover;
+  flex: none;
   appearance: none;
   -webkit-appearance: none;
 
@@ -523,6 +572,12 @@ input[type='radio'] {
   }
 }
 
+/// Optical adjustment helps align labels
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+  transform: translateY(-0.5ex);
+}
+
 input[type='checkbox'] {
   width: min(1.13em, 18px);
   height: min(1.13em, 18px);
@@ -545,9 +600,14 @@ input[type='radio']:checked {
   @include apply-utility('bg', 'radio-checked');
 }
 
+/// Media
+video {
+  max-width: 100%;
+}
+
 /// Links
 
-a:link {
+a {
   color: var(--color-highlight-text);
 }
 
@@ -581,57 +641,136 @@ a:active {
   background: var(--color-core-text);
 }
 
+/// If an element is [hidden] it needs to be max priority
+[hidden] {
+  display: none !important;
+}
+
 /// Misc web components that need to be blocks
 web-copy-code {
   display: block;
 }
 
+/// Video related elements
+video,
+.youtube {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/cluster';
+@import 'compositions/reel';
 @import 'compositions/repel';
 @import 'compositions/sidebar';
 @import 'compositions/switcher';
+@import 'compositions/wide-card-index';
 
 /// BLOCKS
 @import 'blocks/aside';
+@import 'blocks/audio-player';
 @import 'blocks/author';
 @import 'blocks/banner';
 @import 'blocks/brand';
+@import 'blocks/breadcrumbs';
 @import 'blocks/browser-compat';
 @import 'blocks/button';
+@import 'blocks/callout';
 @import 'blocks/card';
+@import 'blocks/carousel';
 @import 'blocks/compare';
+@import 'blocks/counter';
+@import 'blocks/eyebrow';
 @import 'blocks/fab';
+@import 'blocks/feature-card';
+@import 'blocks/figure';
+@import 'blocks/fixed-width-img';
+@import 'blocks/headline';
+@import 'blocks/hero';
+@import 'blocks/hero-image';
+@import 'blocks/icon-button';
 @import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
 @import 'blocks/pagination';
+@import 'blocks/pill';
+@import 'blocks/preview-pagination';
 @import 'blocks/prose';
+@import 'blocks/site-footer';
+@import 'blocks/site-header';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
 @import 'blocks/status-list';
 @import 'blocks/syntax-highlighting';
 @import 'blocks/table-wrapper';
+@import 'blocks/toc';
 @import 'blocks/toggle-switch';
 @import 'blocks/tooltip';
+
+/// WEB COMPONENTS
+@import 'web-components/web-audio-fab';
+@import 'web-components/web-codelab';
+@import 'web-components/web-copy-code';
+@import 'web-components/web-navigation-drawer';
+@import 'web-components/web-subscribe';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
 @import 'utilities/avatar';
+@import 'utilities/docked-actions';
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
+@import 'utilities/over-scroll';
 @import 'utilities/scrollbar';
 @import 'utilities/visually-hidden';
 @import 'utilities/wrapper';
 
 /// PAGES
+@import 'pages/about';
+@import 'pages/course';
 @import 'pages/design-system';
+@import 'pages/homepage';
+@import 'pages/landing-page';
+@import 'pages/learn';
+@import 'pages/measure';
+@import 'pages/path';
 
-// The prototype file is for temporary prototyping
-@import 'prototype';
+// Temporary rollout patches
+@import 'rollout';
+
+/// LEGACY EXTENSIONS
+/// These elements are everywhere and to replace them site-wide would be
+/// a massive project, so they use @extend to pick up new styles
+.w-visually-hidden {
+  @extend .visually-hidden;
+}
+
+.w-table-wrapper {
+  @extend .table-wrapper;
+}
+
+.w-screenshot {
+  @extend .fixed-width-img;
+}
+
+.w-columns {
+  @extend .switcher;
+}
+
+.w-stats {
+  @extend .stats;
+}
+
+.w-stat {
+  @extend .stats__item;
+}
+
+.w-stat__figure {
+  @extend .stats__figure;
+}
 
 // Render gorko utilities
 @include generate-utility-classes();

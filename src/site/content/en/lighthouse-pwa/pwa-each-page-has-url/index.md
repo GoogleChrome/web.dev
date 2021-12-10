@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Each page has a URL
 description: |
   Learn about the Lighthouse "Each page has a URL" audit.

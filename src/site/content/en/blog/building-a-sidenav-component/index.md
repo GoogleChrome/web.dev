@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a sidenav component
 subhead: A foundational overview of how to build a responsive slide out sidenav
 authors:
@@ -297,6 +297,19 @@ sidenav.addEventListener('keyup', event => {
   if (event.code === 'Escape') document.location.hash = '';
 });
 ```
+
+##### Browser history
+
+In order to prevent the open and close interaction from stacking multiple
+entries into the browser history, add the following JavaScript inline to
+the close button:
+
+```html
+<a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu" onchange="history.go(-1)"></a>
+```
+
+This will remove the URL history entry on close, making it as if the menu was
+never opened.
 
 ##### Focus UX
 

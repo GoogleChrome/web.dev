@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-08-18
+updated: 2021-11-18
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -97,13 +97,15 @@ received at any time, requiring a way to listen to it.
 
 To open a serial port, first access a `SerialPort` object. For this, you can
 either prompt the user to select a single serial port by calling
-`navigator.serial.requestPort()`, or pick one from `navigator.serial.getPorts()`
-which returns a list of serial ports the website has been granted access to
-previously.
+`navigator.serial.requestPort()` in response to a user gesture such as touch
+or mouse click, or pick one from `navigator.serial.getPorts()` which returns
+a list of serial ports the website has been granted access to.
 
 ```js
-// Prompt user to select any serial port.
-const port = await navigator.serial.requestPort();
+document.querySelector('button').addEventListener('click', async () => {
+  // Prompt user to select any serial port.
+  const port = await navigator.serial.requestPort();
+});
 ```
 
 ```js
@@ -168,7 +170,7 @@ Input and output streams in the Web Serial API are handled by the Streams API.
 
 {% Aside %}
 If streams are new to you, check out [Streams API
-concepts](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts).
+concepts](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts).
 This article barely scratches the surface of streams and stream handling.
 {% endAside %}
 

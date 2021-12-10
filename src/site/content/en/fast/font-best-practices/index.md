@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Best practices for fonts
 subhead: |
   Optimize web fonts for Core Web Vitals.
@@ -27,7 +27,7 @@ of ways in which web fonts impact performance:
 *   **Delayed text rendering:** If a web font has not loaded, browsers typically
     delay text rendering. In many situations, this delays [First Contentful
     Paint (FCP)](/fcp). In some situations, this delays [Largest
-    Contentful Paint (LCP)](/lcp/). 
+    Contentful Paint (LCP)](/lcp/).
 *   **Layout shifts:** The practice of font swapping has the potential to [cause
     layout
     shifts](/debug-layout-shifts/#identifying-the-cause-of-a-layout-shift).
@@ -41,10 +41,10 @@ lifecycle works and provides corresponding best practices.
 ## Font loading
 
 Before diving into best practices for font loading it's important to understand
-how [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+how [`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face)
 works and how this impacts font loading.
 
-The [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+The [`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face)
 declaration is an essential part of working with any web font. At a minimum, it
 declares the name that will be used to refer to the font and indicates the
 location of the corresponding font file.
@@ -79,7 +79,7 @@ the page contained a `<h1>` element.
 
 {% Aside %}
     Other ways of loading a font are the
-    [`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+    [`preload`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
     resource hint and the [Font Loading
     API](/optimize-webfont-loading/#the-font-loading-api).
 {% endAside %}
@@ -154,7 +154,7 @@ stylesheet to download.
 
 If your site loads fonts from a third-party site, it is highly recommended that
 you use the
-[`preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect)
+[`preconnect`](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect)
 resource hint to establish early connection(s) with the third-party origin.
 Resource hints should be placed in the `<head>` of the document. The resource
 hint below sets up a connection for loading the font stylesheet.
@@ -166,10 +166,10 @@ hint below sets up a connection for loading the font stylesheet.
 </head>
 ```
 
-To preconnect the connection that is used to download the font file, 
+To preconnect the connection that is used to download the font file,
 add a separate `preconnect` resource hint that uses the `crossorigin`
 attribute. Unlike stylesheets, font files must be sent over a [CORS
-connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#what_requests_use_cors).
+connection](https://developer.mozilla.org/docs/Web/HTTP/CORS#what_requests_use_cors).
 
 ```html
 <head>
@@ -205,11 +205,11 @@ early in the document as possible.
 #### Avoid using preload to load fonts
 
 Generally speaking, using the
-[`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+[`preload`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
 resource hint to load fonts should be avoided. Although `preload` is highly
 effective at making fonts discoverable early in the page load process, this
 comes at the cost of taking away browser resources from the loading of other
-resources. 
+resources.
 
 In most scenarios, inlining font declarations and adjusting stylesheets is
 a more effective approach. These adjustments come closer to addressing the root
@@ -270,7 +270,7 @@ particularly challenging.
 
 **Unicode-range and font subsetting:** `@font-face` is often used in
    conjunction with the
-   [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range)
+   [`unicode-range`](https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range)
    descriptor. `unicode-range` informs the browser which characters a font can
    be used for.
 
@@ -323,7 +323,7 @@ web fonts used on your site.
 A **system font** is the default font used by the user
 interface of a user's device. System fonts typically vary by operating system
 and version. Because the font is already installed, the font does not need to
-be downloaded. System fonts can work particularly well for body text. 
+be downloaded. System fonts can work particularly well for body text.
 
 
 To use the system font in your CSS, list `system-ui` as the font-family:
@@ -344,7 +344,7 @@ The idea behind **[variable
 
 We often refer to "Times New Roman" and "Helvetica" as fonts. However,
 technically speaking, these are font _families_. A family is composed of styles,
-which are particular variations of the typeface (for example, light, medium, 
+which are particular variations of the typeface (for example, light, medium,
 or bold italic). A font file contains a single style unless it is a variable font.
 A typeface is the underlying design, which can be expressed as digital fonts -
 and in physical type, like carved woodblocks or metal.
@@ -354,7 +354,7 @@ and in physical type, like carved woodblocks or metal.
 Not everyone will benefit from switching to variable fonts. [Variable
 fonts](/variable-fonts/) contain many styles, so typically have larger file
 sizes than individual non-variable fonts that only contain one style.
-Sites that will see the largest improvement from using variable fonts are 
+Sites that will see the largest improvement from using variable fonts are
 those that use (and need to use) a variety of font styles and weights.
 
 
@@ -380,7 +380,7 @@ impact LCP, FCP, and layout stability.
 
 #### Choose an appropriate `font-display` strategy
 
-[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+[`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 informs the browser how it should proceed with text rendering when the
 associated web font has not loaded. It is defined per font-face.
 

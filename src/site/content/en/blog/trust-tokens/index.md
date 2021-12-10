@@ -1,10 +1,10 @@
 ---
 title: Getting started with Trust Tokens
-subhead: Trust Tokens is a new API to help combat fraud and distinguish bots from real humans, without passive tracking.
+subhead: Trust Tokens is a new API to enable a website to convey a limited amount of information from one browsing context to another (for example, across sites) to help combat fraud, without passive tracking.
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2021-09-10
+updated: 2021-12-10
 hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
 thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
@@ -81,7 +81,7 @@ be used for fingerprinting.
 {% Aside 'key-term' %}
 **Fingerprinting** enables sites to identify and track individual users by getting data about their 
 device, operating system, and browser setup (such as language preferences,
-[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent), and available 
+[user agent](https://developer.mozilla.org/docs/Web/API/NavigatorID/userAgent), and available 
 fonts) or changes in device state. This may be done on the server by checking request headers or on 
 the client with JavaScript.
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Building a Tabs component
 subhead: A foundational overview of how to build a tabs component similar to those found in iOS and Android apps.
 authors:
@@ -942,4 +942,5 @@ section below.
 
 ## Community remixes
 
-- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), & [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs)
+- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), and [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs).
+- [@jhvanderschee](https://twitter.com/jhvanderschee) with buttons: [Codepen](https://codepen.io/joosts/pen/PoKdZYP).

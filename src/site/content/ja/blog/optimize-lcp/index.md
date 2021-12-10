@@ -73,7 +73,7 @@ HTML が静的なもので、リクエストのたびに変更する必要がな
 
 ### HTML ページをキャッシュファーストで配信する
 
-インストールされている場合は、[Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) がブラウザーのバックグラウンドで動作し、サーバーからのリクエストをインターセプトすることができます。このレベルのプログラマティック キャッシュ コントロールにより、HTML ページのコンテンツの一部または全部をキャッシュし、コンテンツが変更された場合にのみキャッシュを更新することができるようになります。
+インストールされている場合は、[Service Worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) がブラウザーのバックグラウンドで動作し、サーバーからのリクエストをインターセプトすることができます。このレベルのプログラマティック キャッシュ コントロールにより、HTML ページのコンテンツの一部または全部をキャッシュし、コンテンツが変更された場合にのみキャッシュを更新することができるようになります。
 
 このパターンを使用しているサイトで LCP の分布がどのように減少したかを、次の図に示します。
 
@@ -225,9 +225,9 @@ CSS や JavaScript によるブロック時間の増加はパフォーマンス�
 
 - `<img>` 要素
 - `<svg>` 要素内の `<image>` 要素
-- `<video>` 要素 ([ポスター](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster)画像が LCP の測定に使用されます)
-- ([CSS グラデーション](https://developer.mozilla.org/en-US/docs/Web/CSS/url())とは対照的に、) <a><code>url()</code></a> 関数を介して読み込まれた背景画像が含まれている要素
-- テキスト ノードやその他のインラインレベルのテキスト要素を含む[ブロックレベル](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)要素。
+- `<video>` 要素 ([ポスター](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster)画像が LCP の測定に使用されます)
+- ([CSS グラデーション](https://developer.mozilla.org/docs/Web/CSS/url())とは対照的に、) <a><code>url()</code></a> 関数を介して読み込まれた背景画像が含まれている要素
+- テキスト ノードやその他のインラインレベルのテキスト要素を含む[ブロックレベル](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)要素。
 
 これらの要素が Above the fold でレンダリングされた場合、その読み込みにかかる時間は LCP に直接影響を及ぼします。これらのファイルの読み込みを可能な限り高速化するには、以下のような方法があります。
 
@@ -265,7 +265,7 @@ CSS や JavaScript によるブロック時間の増加はパフォーマンス�
 
 たとえば、あるアプリケーションに含まれている数多くの CSS ファイルのいずれかの深い場所に記述されているフォントのように、特定の CSS ファイルや JavaScript ファイル内で宣言されている、または使用されている重要なリソースが意図したタイミングよりも遅れて取得される場合があります。
 
-特定のリソースを優先する必要があることが分かっている場合には、`<link rel="preload">` を使用してより早いタイミングでそのリソースを取得します。事前読み込みは[様々な種類のリソース](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)に対して行うことができますが、まずはフォント、Above the fold に配置されている画像や動画、クリティカル パス CSS、JavaScript などを含む[重要なアセットの事前読み込み](/preload-critical-assets/)に焦点を当てる必要があります。
+特定のリソースを優先する必要があることが分かっている場合には、`<link rel="preload">` を使用してより早いタイミングでそのリソースを取得します。事前読み込みは[様々な種類のリソース](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)に対して行うことができますが、まずはフォント、Above the fold に配置されている画像や動画、クリティカル パス CSS、JavaScript などを含む[重要なアセットの事前読み込み](/preload-critical-assets/)に焦点を当てる必要があります。
 
 ```html
 <link rel="preload" as="script" href="script.js" />

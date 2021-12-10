@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Total Blocking Time
 description: |
   Learn about Lighthouse's Total Blocking Time metric and
@@ -72,7 +72,7 @@ In general, the most common causes of long tasks are:
 
 * Unnecessary JavaScript loading, parsing, or execution. While analyzing your code in the Performance panel
   you might discover that the main thread is doing work that isn't really necessary to load the page.
-  [Reducing JavaScript payloads with code splitting][split], [removing unused code][unused], or 
+  [Reducing JavaScript payloads with code splitting][split], [removing unused code][unused], or
   [efficiently loading third-party JavaScript][3p] should improve your TBT score.
 * Inefficient JavaScript statements. For example, after analyzing your code in the Performance panel, suppose
   you see a call to `document.querySelectorAll('a')` that returns 2000 nodes. Refactoring your code to

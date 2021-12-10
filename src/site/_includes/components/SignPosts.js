@@ -41,7 +41,9 @@ function SignPosts(slug) {
 
   return html`
     <div class="w-layout-container--narrow w-post-signpost">
-      <span class="w-post-signpost__title">Appears in:</span>
+      <span class="w-post-signpost__title">
+        ${i18n('i18n.post.appears_in', locale)}:
+      </span>
       ${aTags}
     </div>
   `;

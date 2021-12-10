@@ -15,7 +15,7 @@ description: |
 tags:
   - blog
   - css
-  - backdrop-filter
+  # - backdrop-filter
 feedback:
   - api
 ---
@@ -75,11 +75,11 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 
 The image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies a blurring effect using `backdrop-filter`. Notice that it uses `opacity` in addition to `backdrop-filter`. Without `opacity`, there would be nothing to apply blurring to. It almost goes without saying that if `opacity` is set to `1` (fully opaque) there will be no effect on the background.
 
-The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
+The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
 
-When `backdrop-filter` is set to anything other than `none`, the browser creates a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html). A [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) may also be created, but only if the element has absolute and fixed position descendants.
+When `backdrop-filter` is set to anything other than `none`, the browser creates a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html). A [containing block](https://developer.mozilla.org/docs/Web/CSS/Containing_block) may also be created, but only if the element has absolute and fixed position descendants.
 
-You can combine filters for rich and clever effects, or use just one filter for more subtle or precise effects. You can even combine them with [SVG filters](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter).
+You can combine filters for rich and clever effects, or use just one filter for more subtle or precise effects. You can even combine them with [SVG filters](https://developer.mozilla.org/docs/Web/SVG/Element/filter).
 
 ## Feature detection and fallback
 
@@ -199,6 +199,6 @@ More than 560 of you have upvoted the [Chromium bug](https://crbug.com/497522) o
 ### Additional resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
 - [Chrome Platform Status](https://www.chromestatus.com/feature/5679432723333120)
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+- [MDN](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 - [`background-filter` at CSS Tricks](https://css-tricks.com/the-backdrop-filter-css-property/)
 - [Samples on Codepen](https://codepen.io/tag/backdrop-filter/#)

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Migrate to User-Agent Client Hints
 subhead: |
   Strategies to migrate your site from relying on the user-agent string to the
@@ -17,7 +17,7 @@ tags:
 ---
 
 The [User-Agent
-string](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) is
+string](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) is
 a significant [passive fingerprinting
 surface](https://w3c.github.io/fingerprinting-guidance/#passive) in browsers, as
 well as being difficult to process. However, there are all kinds of valid

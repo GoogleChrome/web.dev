@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Max Potential First Input Delay
 description: |
   Learn about Lighthouse's Max Potential First Input Delay metric and
@@ -85,7 +85,7 @@ Urgent](https://philipwalton.com/articles/idle-until-urgent/) strategy is one wa
 ## How to capture FID field data
 
 Lighthouse's measurement of Max Potential FID is [lab data][lab]. To capture real
-FID data as your users load your pages, use Google's 
+FID data as your users load your pages, use Google's
 [First Input Delay library](https://github.com/GoogleChromeLabs/first-input-delay).
 Once you're capturing FID data, you can report it as an event
 to your preferred analytics tool.

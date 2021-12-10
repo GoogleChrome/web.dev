@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Uses deprecated APIs
 description: |
   Learn how to remove and replace deprecated APIs from your web page.

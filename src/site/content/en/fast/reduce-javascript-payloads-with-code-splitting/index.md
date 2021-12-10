@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Reduce JavaScript payloads with code splitting
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Publish, ship, and install modern JavaScript for faster applications
 subhead: Improve performance by turning on modern JavaScript dependencies and output.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg

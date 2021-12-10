@@ -19,7 +19,7 @@ declare global {
     /**
      * When the first post was created.
      */
-    date: Date;
+    date?: Date;
     /**
      * Hero image of element.
      */
@@ -35,6 +35,7 @@ declare global {
     elements: EleventyCollectionItem[];
     href: string;
     key: string;
+    overrideTitle?: string;
     title: string;
     url: string;
   }

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Links to cross-origin destinations are unsafe
 description: |
   Learn how to safely link to resources on another host.

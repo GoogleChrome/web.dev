@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Interactive controls are keyboard focusable
 description: |
   Learn how to make custom controls on your web page focusable so keyboard users

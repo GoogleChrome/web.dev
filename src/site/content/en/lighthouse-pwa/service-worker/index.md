@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Does not register a service worker that controls page and `start_url`"
 description: |
   Learn how to register a service worker that supports Progressive Web App
@@ -22,7 +22,7 @@ Learn more in the [Service workers and the Cache Storage API](/service-workers-c
 ## Browser compatibility
 
 All major browsers except Internet Explorer support service workers. See
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Browser_compatibility).
+[Browser compatibility](https://developer.mozilla.org/docs/Web/API/ServiceWorker#Browser_compatibility).
 
 ## How the Lighthouse service worker audit fails
 

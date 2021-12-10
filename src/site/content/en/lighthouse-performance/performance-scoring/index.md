@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Lighthouse performance scoring
 description: |
   Learn how Lighthouse generates the overall Performance score for your page.

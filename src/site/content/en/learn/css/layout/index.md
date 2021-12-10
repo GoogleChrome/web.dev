@@ -60,7 +60,7 @@ The first thing it does is determine if the box it is applied to acts as inline 
 
 ```css
 .my-element {
-  display: inline
+  display: inline;
 }
 ```
 

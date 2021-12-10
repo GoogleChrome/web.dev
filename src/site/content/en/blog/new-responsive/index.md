@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'The new responsive: Web design in a component-driven world'
 subhead: 'Controlling macro and micro layout in a new era of responsive web design.'
 authors:
@@ -126,7 +126,7 @@ operating system, whether it's on desktop or mobile, users can set a preference
 for light, dark, or auto themes, which change depending on the time of day.
 
 If you set up your page using [CSS custom
-properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*), swapping
+properties](https://developer.mozilla.org/docs/Web/CSS/--*), swapping
 color values is made straightforward. You can quickly update your color theme
 values, such as `backgroundColor` and `textOnPrimary` to dynamically adjust to
 the new theme within the media query.

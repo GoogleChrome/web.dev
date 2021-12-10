@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Does not provide a valid apple-touch-icon
 description: |
   Learn how to specify what icon your Progressive Web App displays on iOS home screens.

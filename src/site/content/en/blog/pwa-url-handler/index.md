@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: PWAs as URL Handlers
 subhead: |
   Let installed PWAs handle URLs for a more integrated experience.

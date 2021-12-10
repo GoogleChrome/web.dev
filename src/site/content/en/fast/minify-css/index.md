@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Minify CSS
 authors:
   - demianrenzulli

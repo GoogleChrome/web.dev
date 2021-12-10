@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Identify slow third-party JavaScript
 subhead: Supercharge your performance detective skills with Lighthouse and Chrome DevTools.
 authors:

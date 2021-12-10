@@ -14,7 +14,7 @@
           </a>
           {% endfor %}
         </div>
-        <ul class="card__authors cluster" aria-label="authors" role="list">
+        <ul class="card__authors flow-space-base cluster" aria-label="authors" role="list">
           {% for author in data.authors %}
           <li>
             <a href="{{ author.url }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}

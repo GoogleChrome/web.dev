@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: post-old
 title: Why does speed matter?
 authors:
   - bojanpavic
   - ansteychris
-  - jeremywagner
+  - jlwagner
 description: |
   When it comes to user experience, speed matters. And delays caused by mobile
   speed aren't just frustrating, they can also have a negative impact on

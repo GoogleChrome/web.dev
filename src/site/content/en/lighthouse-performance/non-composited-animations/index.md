@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid non-composited animations
 description: How to pass the "Avoid non-composited animations" Lighthouse audit.
 date: 2020-08-12

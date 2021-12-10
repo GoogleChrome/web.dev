@@ -81,10 +81,6 @@ declare global {
       };
       collections: TODO;
       /**
-       * Tells Algolia not index this page.
-       */
-      disable_algolia?: boolean;
-      /**
        * Hero image of page.
        */
       hero?: string;
@@ -95,7 +91,7 @@ declare global {
       /**
        * Tells search engines not to index page (this includes algolia)
        */
-      noindex?: boolean;
+      noindex?: boolean|string;
       /**
        * When the post was last updated.
        */
@@ -112,6 +108,10 @@ declare global {
        * If the post should be excluded from /tags/ pages.
        */
       excludeFromTags?: boolean;
+      /**
+       * How Algolia should prioritize a page. 1 is average, higher is better.
+       */
+      algolia_priority: number;
     };
     /**
      * The rendered content of this template. This does not include layout wrappers.

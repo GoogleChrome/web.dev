@@ -178,4 +178,12 @@ web-table-of-contents-button {
       }
     }
   }
+
+  ol {
+    padding-left: 0;
+
+    a {
+      padding-left: 32px;
+    }
+  }
 }

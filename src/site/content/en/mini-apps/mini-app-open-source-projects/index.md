@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Mini app open source projects
 authors:
   - thomassteiner

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Does not provide fallback content when JavaScript is not available
 description: |
   Learn how to make sure users can view at least some content on your web page
@@ -56,7 +56,7 @@ when JavaScript is disabled, even if the content is just an alert to the user
 that JavaScript is required to use the page.
 
 For pages that absolutely must rely on JavaScript, one approach is to use a
-[`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
+[`<noscript>`](https://developer.mozilla.org/docs/Web/HTML/Element/noscript)
 element to alert the user that JavaScript is required for the page. This is
 better than a blank page because the blank page leaves users uncertain
 about whether there's a problem with the page, their browsers, or their

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Image elements do not have `[alt]` attributes"
 description: |
   Learn how to make sure assistive technology users can access your web page's
@@ -49,8 +49,8 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 You can also use ARIA labels to describe your images, for example,
 `<img aria-label="Audits set-up in Chrome DevTools" src="...">`
 See also
-[Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
-[Using the aria-labelledby attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
+[Using the aria-label attribute](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
+[Using the aria-labelledby attribute](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
 ## Tips for writing effective `alt` text

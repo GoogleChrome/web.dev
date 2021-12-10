@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Control focus with tabindex
 authors:
   - robdodson
@@ -28,7 +28,7 @@ some things can only be tested by a human.
 
 Try pressing the `Tab` key to navigate through your site. Are you able to reach
 all the interactive controls on the page? If not, you may need to use
-[`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
+[`tabindex`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/tabindex)
 to improve the focusability of those controls.
 
 {% Aside 'warning' %}

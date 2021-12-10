@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: It's time to lazy-load offscreen iframes!
 subhead: Browser-level built-in lazy-loading for iframes is here
 authors:
@@ -235,7 +235,7 @@ these users.
 
 Origins can detect what percentage of their traffic is coming from Lite Mode
 users by checking the `navigator.connection.saveData` property,
-which is part of the [`NetworkInformation` API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation).
+which is part of the [`NetworkInformation` API](https://developer.mozilla.org/docs/Web/API/NetworkInformation).
 
 ### Can I lazy-load iframes cross-browser? Yes
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Optimize Angular's change detection"
 subhead: |
   Implement faster change detection for better user experience.
@@ -11,7 +11,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api

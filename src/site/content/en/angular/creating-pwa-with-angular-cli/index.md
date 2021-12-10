@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Create a Progressive Web App with the Angular CLI"
 subhead: |
   You want to make your Angular app installable? Wait no more!
@@ -11,8 +11,8 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
-  - pwa
+  # - angular
+  - progressive-web-apps
 feedback:
   - api
 ---

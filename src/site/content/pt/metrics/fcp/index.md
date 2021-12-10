@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First Contentful Paint (FCP)
 authors:
   - philipwalton
@@ -51,7 +51,7 @@ A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Medição da FCP em JavaScript
 
-Para medir a FCP em JavaScript, você pode usar a [API Paint Timing](https://w3c.github.io/paint-timing/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que escuta uma entrada `paint` com o nome `first-contentful-paint` e a registra no console.
+Para medir a FCP em JavaScript, você pode usar a [API Paint Timing](https://w3c.github.io/paint-timing/). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta uma entrada `paint` com o nome `first-contentful-paint` e a registra no console.
 
 ```js
 new PerformanceObserver((entryList) => {
@@ -100,7 +100,7 @@ Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguin
 - [Minifique o CSS](/unminified-css/)
 - [Remova o CSS não utilizado](/unused-css-rules/)
 - [Pré-conecte a origens necessárias](/uses-rel-preconnect/)
-- [Reduza os tempos de resposta do servidor (TTFB)](/time-to-first-byte/)
+- [Reduza os tempos de resposta do servidor (TTFB)](/ttfb/)
 - [Evite múltiplos redirecionamentos de página](/redirects/)
 - [Pré-carregue solicitações importantes](/uses-rel-preload/)
 - [Evite enormes cargas de rede](/total-byte-weight/)

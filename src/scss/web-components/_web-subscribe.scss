@@ -1,0 +1,23 @@
+web-subscribe {
+  display: block;
+  padding: get-space('size-3') 0;
+  border-block-start: 1px solid var(--color-stroke);
+
+  .wrapper {
+    max-width: 50rem;
+  }
+
+  form .cluster {
+    flex-wrap: nowrap;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  textarea,
+  select {
+    max-width: unset;
+  }
+}

@@ -71,7 +71,7 @@ Error handling isn't mandatory, but it's an easy way to gauge the operation succ
 
 ### Configure Critical
 
-The table below contains some useful Critical options. You can check out all of the [available options on Github](https://github.com/addyosmani/critical#usage).
+The table below contains some useful Critical options. You can check out all of the [available options on GitHub](https://github.com/addyosmani/critical#usage).
 
 <table>
     <th>Option</th>

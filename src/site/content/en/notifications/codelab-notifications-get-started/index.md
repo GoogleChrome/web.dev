@@ -23,7 +23,7 @@ backup glitches:
 #}
 
 In this codelab, you'll use basic features of the
-[Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) to:
+[Notifications API](https://developer.mozilla.org/docs/Web/API/Notifications_API) to:
 
 * Request permission to send notifications
 * Send notifications
@@ -126,7 +126,7 @@ Notification.requestPermission().then((result) => {
 });
 ```
 
-See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for more information on how promises work.
+See the [`Promise` documentation on MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) for more information on how promises work.
 
 {% endAside %}
 
@@ -215,7 +215,7 @@ If the permission state is `granted`, your notification will be displayed.
     }
     ```
 
-    The `Notification` constructor takes two parameters: `title` and `options`. `options` is an object with properties representing visual settings and data you can include in a notification. See the [MDN documentation on notification parameters](https://developer.mozilla.org/en-US/docs/Web/API/notification/Notification#Parameters) for more information.
+    The `Notification` constructor takes two parameters: `title` and `options`. `options` is an object with properties representing visual settings and data you can include in a notification. See the [MDN documentation on notification parameters](https://developer.mozilla.org/docs/Web/API/notification/Notification#Parameters) for more information.
 
 1.  Refresh the Chrome tab in which you are viewing your live app
     and click the **Send notification** button.
@@ -266,7 +266,7 @@ You've also seen what impact user responses have on your app's ability to displa
 
 Now you can experiment with the many visual and data options available when creating a notification.
 The full set of available options is below.
-(See the [Notification documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Notification) for more information on these options.)
+(See the [Notification documentation on MDN](https://developer.mozilla.org/docs/Web/API/Notification) for more information on these options.)
 
 Note that browsers and devices implement these options differently,
 so it's worth testing your notifications on different platforms to see how they look.

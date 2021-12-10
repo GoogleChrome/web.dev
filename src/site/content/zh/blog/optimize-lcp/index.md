@@ -73,7 +73,7 @@ tags:
 
 ### 优先使用缓存提供 HTML 页面
 
-安装好的 [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) 会在浏览器后台运行，并可以拦截来自服务器的请求。此级别的程序化缓存控制使得缓存部分或全部 HTML 页面内容得以实现，并且只会在内容发生更改时更新缓存。
+安装好的 [Service Worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) 会在浏览器后台运行，并可以拦截来自服务器的请求。此级别的程序化缓存控制使得缓存部分或全部 HTML 页面内容得以实现，并且只会在内容发生更改时更新缓存。
 
 下方的图表显示使用该模式能够减少网站的 LCP 分布：
 
@@ -195,9 +195,9 @@ tags:
 
 - `<img>`元素
 - 内嵌在`<svg>`元素内的`<image>`元素
-- `<video>`元素（使用[封面](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster)图像测量 LCP）
-- 通过[`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url())函数（而非使用<a> CSS 渐变</a>）加载的带有背景图像的元素
-- 包含文本节点或其他行内级文本元素的[块级](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)元素
+- `<video>`元素（使用[封面](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster)图像测量 LCP）
+- 通过[`url()`](https://developer.mozilla.org/docs/Web/CSS/url())函数（而非使用<a> CSS 渐变</a>）加载的带有背景图像的元素
+- 包含文本节点或其他行内级文本元素的[块级](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)元素
 
 如果在首屏渲染，加载这些元素所需的时间将对 LCP 产生直接影响。有几种方法可以确保尽快加载这些文件：
 
@@ -227,7 +227,7 @@ tags:
 
 有时，在某个 CSS 或 JavaScript 文件中声明或使用的重要资源可能会比您所期望的要晚一点被获取，例如深藏在应用程序众多 CSS 文件中的某个字体。
 
-如果您知道某个特定资源应该被优先获取，请使用`<link rel="preload">`来更加及时地获取该资源。 [多种类型的资源](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)都可以进行预加载，但您应该首先侧重于[预加载关键资产](/preload-critical-assets/)，例如字体、首屏图像或视频，以及关键路径 CSS 或 JavaScript。
+如果您知道某个特定资源应该被优先获取，请使用`<link rel="preload">`来更加及时地获取该资源。 [多种类型的资源](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)都可以进行预加载，但您应该首先侧重于[预加载关键资产](/preload-critical-assets/)，例如字体、首屏图像或视频，以及关键路径 CSS 或 JavaScript。
 
 ```html
 <link rel="preload" as="script" href="script.js" />

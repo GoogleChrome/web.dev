@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Does not redirect HTTP traffic to HTTPS
 description: |
   Learn how to make your site more secure by redirecting all pages to HTTPS.

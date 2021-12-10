@@ -216,11 +216,3 @@
   text-transform: initial;
   letter-spacing: initial;
 }
-
-// A reset class that can be used to strip out the UA default button styles.
-.button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-}

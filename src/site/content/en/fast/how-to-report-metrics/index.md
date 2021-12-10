@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to report metrics and build a performance culture
 subhead: Understand why performance matters when it comes to conversion.
 authors:
@@ -12,7 +12,7 @@ description: |
 wf_blink_components: Blink>Performance
 tags:
   - blog
-  - e-commerce
+  # - e-commerce
   - performance
 ---
 
