@@ -7,6 +7,12 @@
     outline: 1px solid var(--color-stroke);
   }
 
+  // Optical adjustment
+  .sidebar theme-toggle {
+    display: block;
+    transform: translateY(3px);
+  }
+
   nav.cluster {
     gap: 0.5rem $global-gutter;
   }
