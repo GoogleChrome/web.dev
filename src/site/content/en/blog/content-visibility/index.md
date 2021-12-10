@@ -223,7 +223,7 @@ dimensions, ensuring that your unsized divs still occupy space.
 In Chromium 98 and onward, there is a new [`auto`](https://drafts.csswg.org/css-sizing-4/#valdef-contain-intrinsic-width-auto-length)
 keyword for `contain-intrinsic-size`. When specified, the browser will remember
 the last-rendered size, if any, and use that instead of the developer-provided placeholder
-sizing. For example, if you specified `contain-intrinsic-size: auto 300px`, the
+size. For example, if you specified `contain-intrinsic-size: auto 300px`, the
 element will start out with a `300px` intrinsic sizing in each dimension, but once
 the element's contents are rendered, it will retain the rendered intrinsic sizing.
 Any subsequent rendering resizes will also be remembered. This means that if you
