@@ -1,7 +1,7 @@
 ---
 title: "Compat 2021 Holiday Update: presents for developers before the end of the year"
 subhead:
-    "End of the year update on Compat2021 —an effort to eliminate browser compatibility problems in five key focus areas: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
+    "End of the year update on Compat 2021—an effort to eliminate browser compatibility problems in five key focus areas: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
   - kosamari 
@@ -46,7 +46,7 @@ interoperability of 5 focus areas.
 {% Aside 'caution' %}
 The graph does not correctly show the improvements in Safari Technology Preview between May and 
 November, as the version tested was [stuck](https://github.com/web-platform-tests/wpt/issues/31147) 
-at older versions. This is now resolved but the data between May and November remains incorrect.
+at an older version. This is now resolved but the data between May and November remains incorrect.
 {% endAside %}
 
 Contributions to browser engines are made not only by browser vendors, but also others in the web 
@@ -56,12 +56,11 @@ their continued work to improve the scores. Igalia has contributed to improving 
 areas of Compat 2021.
 
 On [wpt.fyi](https://wpt.fyi/), the test results dashboard, there’s now a 
-[filtered test results view](https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&q=label%3Ainterop-2021) 
+[filtered test results view](https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&q=label%3Ainterop-2021)
 ([permalink](https://wpt.fyi/results/?q=label%3Ainterop-2021&run_id=5629744973348864&run_id=5117500464300032&run_id=5734588178497536)) showing all of the tests included in Compat 2021, 
-and also views for [Chrome](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864)
-, [Firefox](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5644039006191616&run_id=5117500464300032)
-, and [Safari](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=5734588178497536) 
-comparing the results to our last update in July.
+and also views for [Chrome](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864), 
+[Firefox](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5644039006191616&run_id=5117500464300032), 
+and [Safari](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=5734588178497536) comparing the results to our last update in July.
 
 Let’s take a look at the improvements in each area!
 
@@ -76,11 +75,11 @@ supported by Firefox.)
 In Chromium, an [issue with flexbox sizing](https://bugs.chromium.org/p/chromium/issues/detail?id=961902) 
 is fixed, matching the spec and Firefox’s behavior. And in Gecko, several 
 [issues affecting Compat 2021](https://bugzilla.mozilla.org/show_bug.cgi?id=1700745) are fixed, 
-including an [issue with percentage height on flex items](https://bugzilla.mozilla.org/show_bug.cgi?id=1611303)
-. Finally, in WebKit, support for more alignment property values ([left, right](https://trac.webkit.org/changeset/282078/webkit)
-, [self-start, self-end](https://trac.webkit.org/changeset/282267/webkit), [start, end](https://trac.webkit.org/changeset/281840/webkit)
-) is now added, and a lot of improvements were made for [absolute positioning](https://trac.webkit.org/changeset/281995/webkit)
-, also improving the flexbox test results in Compat 2021.
+including an [issue with percentage height on flex items](https://bugzilla.mozilla.org/show_bug.cgi?id=1611303). 
+Finally, in WebKit, support for more alignment property values ([left, right](https://trac.webkit.org/changeset/282078/webkit)
+, [self-start, self-end](https://trac.webkit.org/changeset/282267/webkit), [start, end](https://trac.webkit.org/changeset/281840/webkit)) 
+is now added, and a lot of improvements were made for [absolute positioning](https://trac.webkit.org/changeset/281995/webkit), 
+also improving the flexbox test results in Compat 2021.
 
 
 ## CSS Grid
@@ -114,8 +113,8 @@ Cross-browser support for defining the aspect ratio (width-to-height ratio) of e
 continued to improve, with Compat 2021 scores reaching 99%, 97% and 95% for Chrome/Edge, Firefox 
 and Safari respectively. Most of the improvements are not with the `aspect-ratio` property itself, 
 but rather with how `width` and `height` attributes are [mapped to a default `aspect-ratio` value](https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping) 
-for elements. This was implemented for multiple elements in [WebKit](https://wpt.fyi/results/html/rendering/replaced-elements/attributes-for-embedded-content-and-images?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=6290692121821184)
-, and `&lt;canvas>` for [Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/3109968).
+for elements. This was implemented for multiple elements in [WebKit](https://wpt.fyi/results/html/rendering/replaced-elements/attributes-for-embedded-content-and-images?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=6290692121821184), 
+and `<canvas>` for [Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/3109968).
 
 
 ## CSS transforms
