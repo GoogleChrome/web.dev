@@ -113,7 +113,7 @@ were included in Safari 15.
 Cross-browser support for defining the aspect ratio (width-to-height ratio) of elements has 
 continued to improve, with Compat 2021 scores reaching 99%, 97% and 95% for Chrome/Edge, Firefox 
 and Safari respectively. Most of the improvements are not with the `aspect-ratio` property itself, 
-but rather with how `width` and `height` attributes are [mapped to a default `aspect-ratio` value](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping) 
+but rather with how `width` and `height` attributes are [mapped to a default `aspect-ratio` value](https://developer.mozilla.org/docs/Web/Media/images/aspect_ratio_mapping) 
 for elements. This was implemented for multiple elements in [WebKit](https://wpt.fyi/results/html/rendering/replaced-elements/attributes-for-embedded-content-and-images?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=6290692121821184)
 , and `&lt;canvas>` for [Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/3109968).
 
