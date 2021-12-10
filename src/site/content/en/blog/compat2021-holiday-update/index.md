@@ -1,6 +1,6 @@
 ---
 title: "Compat2021 Holiday Update: presents for developers before the end of the year"
-description:
+subhead:
     "End of the year update on Compat2021 —an effort to eliminate browser compatibility problems in five key focus areas: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
