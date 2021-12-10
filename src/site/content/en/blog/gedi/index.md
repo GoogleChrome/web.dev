@@ -67,8 +67,11 @@ on the first in-viewport images.
   </figcaption>
 </figure>
 
-The team then spent some time optimizing the site layout for stability by, for
-example, reserving space for images based on their aspect ratio.
+The team then spent some time optimizing the site layout for stability. For
+example, they reserved space for images based on their aspect ratio. They also
+reserved space for the top ad in the viewport and later for the mid-page ads.
+This ensured users can read an article without interruption from annoying
+content jumps.
 
 <figure>
 {% 
@@ -117,9 +120,3 @@ example, they measured a 77% reduction in [Cumulative Layout Shift](/cls/)
 (CLS) and a 26% improvement in time to [Largest Contentful Paint](/lcp/)
 (LCP). Overall, the team found they reduced La Repubblica's mobile bounce
 rate by 8%.
-
-GEDI's next step is to improve cumulative layout shift by reducing the impact
-of ads on site layout stability. Giuseppe considers this to be a big challenge
-because they often deliver multi-site ad formats. Finding the right space to
-serve ads is a challenge, a challenge that they're addressing by A/B testing
-various solutions.  
