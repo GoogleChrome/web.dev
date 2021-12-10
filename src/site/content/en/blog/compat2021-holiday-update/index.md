@@ -22,11 +22,11 @@ This effort is also known as Interop 2021, matching the name of
 this effort.
 {% endAside %}
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure"> >90<sub>%</sub></p>
-    <p>score in all browsers</p>
-  </div>
+<div class="w-stats">
+ <div class="w-stat">
+   <p class="w-stat__figure">>90<sub>%</sub></p>
+   <p class="w-stat__desc">score in all browsers</p>
+ </div>
 </div>
 
 Since our [last update](https://web.dev/compat2021-midyear/), we’ve continued to see improvements 
