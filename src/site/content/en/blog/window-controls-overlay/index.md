@@ -297,7 +297,7 @@ const debounce = (func, wait) => {
 
 if ('windowControlsOverlay' in navigator) {
   navigator.windowControlsOverlay.ongeometrychange = debounce((e) => {
-    span.hidden = e.boundingRect.width < 800;
+    span.hidden = e.titlebarAreaRect.width < 800;
   }, 250);
 }
 ```
@@ -310,7 +310,7 @@ Rather than assigning a function to `ongeometrychange`, you can also add an even
 navigator.windowControlsOverlay.addEventListener(
   'geometrychange',
   debounce((e) => {
-    span.hidden = e.boundingRect.width < 800;
+    span.hidden = e.titlebarAreaRect.width < 800;
   }, 250),
 );
 ```
