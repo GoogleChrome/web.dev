@@ -56,10 +56,11 @@ areas of Compat 2021.
 
 On [wpt.fyi](https://wpt.fyi/), the test results dashboard, there’s now a
 [filtered test results view](https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&q=label%3Ainterop-2021)
-([permalink](https://wpt.fyi/results/?q=label%3Ainterop-2021&run_id=5682110523244544&run_id=5717852704210944&run_id=5759777691926528)) showing all of the tests included in Compat 2021,
-and also views for [Chrome](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864),
-[Firefox](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5644039006191616&run_id=5117500464300032),
-and [Safari](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=5734588178497536) comparing the results to our last update in July.
+showing all of the tests included in Compat 2021, and also views for
+[Chrome](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5682110523244544),
+[Firefox](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5644039006191616&run_id=5717852704210944),
+and [Safari](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=5759777691926528)
+comparing the results to our last update in July.
 
 Let’s take a look at the improvements in each area!
 
