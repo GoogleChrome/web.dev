@@ -32,7 +32,7 @@ this effort.
 Since our [last update](https://web.dev/compat2021-midyear/), we’ve continued to see improvements 
 in all browsers. All browsers started with much lower test scores at the beginning of the year, but 
 now all browsers have surpassed 90%! This means the web platform has significantly improved 
-interoperability of 5 focus areas. 
+interoperability of the five focus areas. 
 
 <figure class="w-figure">
 {% Img src="image/Wd2sVnt4VLho4jgp7UtIyWFceE02/Kaz3ye7gFfow8ia7lWYW.png", alt="A snapshot of Compat 
@@ -52,13 +52,13 @@ at an older version. This is now resolved but the data between May and November 
 Contributions to browser engines are made not only by browser vendors, but also others in the web 
 community. For this project, we particularly want to thank Igalia for 
 [their involvement](https://www.igalia.com/2021/11/12/New-Interoperability-Milestones.html) and 
-their continued work to improve the scores. Igalia has contributed to improving all five focus 
+continued work to improve the scores. Igalia has contributed to improving all five focus 
 areas of Compat 2021.
 
 On [wpt.fyi](https://wpt.fyi/), the test results dashboard, there’s now a 
 [filtered test results view](https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&q=label%3Ainterop-2021)
 ([permalink](https://wpt.fyi/results/?q=label%3Ainterop-2021&run_id=5629744973348864&run_id=5117500464300032&run_id=5734588178497536)) showing all of the tests included in Compat 2021, 
-and also views for [Chrome](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864), 
+and also views for [Chrome/Edge](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864), 
 [Firefox](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5644039006191616&run_id=5117500464300032), 
 and [Safari](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=5734588178497536) comparing the results to our last update in July.
 
@@ -122,8 +122,8 @@ and `<canvas>` for [Chromium](https://chromium-review.googlesource.com/c/chromiu
 Support for `transform: perspective(none)` is now supported in 
 [Chromium](https://chromestatus.com/feature/5687325523705856), 
 [Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1725207) and 
-[WebKit](https://trac.webkit.org/changeset/285255/webkit). This will make it easier to do 
-animations between a perspective and no perspective.
+[WebKit](https://trac.webkit.org/changeset/285255/webkit). This will make it easier to 
+animate between a perspective and no perspective.
 
 In Chromium, `transform-style: preserve-3d` (which allows child elements to participate in the same 
 3D scene) and the `perspective` property (which applies a perspective transform to child elements) 
@@ -131,9 +131,9 @@ are now [aligned with the spec](https://chromestatus.com/feature/564054133938585
 apply only to child elements.
 
 The big increase in the [scores](https://wpt.fyi/compat2021?feature=css-transforms) for CSS 
-transforms for all browsers is mainly due to improvements to the test suite, where some incorrect 
+transforms for all browsers is mainly due to improvements to the test suite, where incorrect 
 tests have been fixed or removed. This makes it easier to understand the remaining interoperability 
-problems, and avoids regressions in the future.
+problems and avoid regressions in the future.
 
 
 ## Conclusion
