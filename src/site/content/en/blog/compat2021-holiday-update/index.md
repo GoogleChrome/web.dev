@@ -56,12 +56,18 @@ areas of Compat 2021.
 
 On [wpt.fyi](https://wpt.fyi/), the test results dashboard, there’s now a
 [filtered test results view](https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&q=label%3Ainterop-2021)
-([permalink](https://wpt.fyi/results/?q=label%3Ainterop-2021&run_id=5629744973348864&run_id=5117500464300032&run_id=5734588178497536)) showing all of the tests included in Compat 2021,
-and also views for [Chrome/Edge](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864),
+([permalink](https://wpt.fyi/results/?q=label%3Ainterop-2021&run_id=5682110523244544&run_id=5717852704210944&run_id=5759777691926528)) showing all of the tests included in Compat 2021,
+and also views for [Chrome](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5738932147847168&run_id=5629744973348864),
 [Firefox](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5644039006191616&run_id=5117500464300032),
 and [Safari](https://wpt.fyi/results/?diff&filter=ADC&q=label%3Ainterop-2021&run_id=5739124314079232&run_id=5734588178497536) comparing the results to our last update in July.
 
 Let’s take a look at the improvements in each area!
+
+{% Aside %}
+This post uses browser engine names when referencing specific improvements or bug fixes.
+**Chromium** is the engine used by Chrome and Edge, **Gecko** is used by Firefox, and
+**WebKit** is used by Safari.
+{% endAside %}
 
 
 ## CSS flexbox
@@ -69,10 +75,10 @@ Let’s take a look at the improvements in each area!
 `flex-basis: content` is now on its way to all browsers, with implementations landing in
 [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=470421) and
 [WebKit](https://trac.webkit.org/changeset/284440/webkit). (The `content` value was already
-supported by Firefox.)
+supported by Gecko.)
 
 In Chromium, an [issue with flexbox sizing](https://bugs.chromium.org/p/chromium/issues/detail?id=961902)
-is fixed, matching the spec and Firefox’s behavior. And in Gecko, several
+is fixed, matching the spec and Gecko’s behavior. And in Gecko, several
 [issues affecting Compat 2021](https://bugzilla.mozilla.org/show_bug.cgi?id=1700745) are fixed,
 including an [issue with percentage height on flex items](https://bugzilla.mozilla.org/show_bug.cgi?id=1611303).
 Finally, in WebKit, support for more alignment property values ([left, right](https://trac.webkit.org/changeset/282078/webkit),
