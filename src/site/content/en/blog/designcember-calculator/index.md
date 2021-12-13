@@ -77,7 +77,7 @@ self.addEventListener('fetch', (event) => {
 });
 ```
 
-## Blending in on mobile
+## Blending with mobile
 
 Now that the app is installable, the next step is to make it blend in with the operating system apps as much as possible. On
 mobile, I can do this by setting the display mode to `fullscreen` in the Web App Manifest.
@@ -98,7 +98,7 @@ content covers the whole screen makes the app look gorgeous.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/kEOrYPiDbg6DSTGHeB0C.jpg", alt="Designcember Calculator running fullscreen on a Pixel 6 Pro phone.", width="800", height="773" %}
 
-## Blending in on desktop
+## Blending with desktop
 
 On desktop, there is a cool feature I can use:
 [Window Controls Overlay](/window-controls-overlay/), which allows me to put content in the title
