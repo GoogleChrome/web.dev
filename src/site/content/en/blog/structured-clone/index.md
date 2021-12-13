@@ -84,7 +84,7 @@ That has now changed! The HTML spec was amended to expose a function called `str
 const myDeepCopy = structuredClone(myOriginal);
 ```
 
-That’s it! That’s the entire API! If you want to dive deeper into the details, take a look at the [MDN article][mdn structuredclone].
+That’s it! That’s the entire API. If you want to dive deeper into the details, take a look at the [MDN article][mdn structuredclone].
 
 ### Features and limitations
 
