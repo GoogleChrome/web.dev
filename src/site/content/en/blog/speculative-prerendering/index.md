@@ -182,7 +182,7 @@ that could improve prerendering.
     Since `prerender` requirements may change, the proposed solution should
     allow users to specify blanket triggers for links that match certain
     criteria. This has been made possible through the [speculation rules API
-    ](#heading=h.c1fz0wjl7am)discussed in detail later.
+    ](https://github.com/WICG/nav-speculation/blob/main/triggers.md#speculation-rules)discussed in detail later.
 
 +   **Cross-origin prerender**: When the target link of a prerender is on
     the same origin, there are not many additional checks required. However,
