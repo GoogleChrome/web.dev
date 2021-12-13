@@ -53,7 +53,7 @@ The expression `{...myOriginal}` iterates over the (enumerable) properties of `m
 
 
 {% Blockquote 'MDN — Primitive' %}
-In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 7 primitive data types: string, number, bigint, boolean, undefined, symbol, and null.
+In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are seven primitive data types: string, number, bigint, boolean, undefined, symbol, and null.
 {% endBlockquote %}
 
 Non-primitive values are handled as _references_, meaning that the act of copying the value is really just copying a reference to the same underlying object, resulting in the shallow copy behavior.
