@@ -86,7 +86,7 @@ const myDeepCopy = structuredClone(myOriginal);
 
 That’s it! That’s the entire API! If you want to dive deeper into the details, take a look at the [MDN article][mdn structuredclone].
 
-### Features & Limitations
+### Features and limitations
 
 Structured Cloning addresses many (although not all) shortcomings of the `JSON.stringifty()` technique. Structured Cloning can handle cyclical data structures, support many built-in data types and is generally more robust and often faster.
 
