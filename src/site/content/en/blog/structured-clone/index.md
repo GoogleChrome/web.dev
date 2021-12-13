@@ -23,6 +23,8 @@ At the time of writing, _all browsers_ have already implemented this API in thei
 
 Copying a value in JavaScript is almost always _shallow_, as opposed to _deep_.  That means that changes to deeply nested values will be visible in the copy as well as the original. 
 
+One way to create a shallow copy in JS using object spread operator `...`:
+
 ```js
 const myOriginal = {
   someProp: "with a string value",
@@ -32,25 +34,26 @@ const myOriginal = {
   }
 };
 
-// Object spread is one way to create a shallow copy in JS.
 const myShallowCopy = {...myOriginal};
+```
 
-// Adding or changing a property to the shallow copy...
+Adding or chaning a property directly on the shallow copy with only affect the copy, not the original:
+
+```js
 myShallowCopy.aNewProp = "a new value";
-// ... will only affect the copy
 console.log(myOriginal.aNewProp)
 // ^ logs `undefined`
+```
 
+However, adding or changing a deeply nested property affects _both_ the copy and the origina:
 
-// While adding or changing a deeply nested property...
+```js
 myShallowCopy.anotherProp.aNewProp = "a new value";
-// ... will affect the original as well
 console.log(myOriginal.anotherProp.aNewProp) 
 // ^ logs `a new value`
 ```
 
 The expression `{...myOriginal}` iterates over the (enumerable) properties of `myOriginal` using the [Spread Operator]. It uses the property name and value, and assigns them one by one to a freshly created, empty object. As such, the resulting object is identical in shape, but with its own copy of the list of properties and values. The values are copied, too, but so-called primitive values are handled differently by the JavaScript value than non-primitive values. To quote [MDN][MDN Primitive]:
-
 
 {% Blockquote 'MDN — Primitive' %}
 In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are seven primitive data types: string, number, bigint, boolean, undefined, symbol, and null.
