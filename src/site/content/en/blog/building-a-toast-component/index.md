@@ -480,4 +480,5 @@ to the community remixes section below!
 
 ## Community remixes
 
-*Nothing to see here yet!*
+- [@_developit](https://twitter.com/_developit) with HTML/CSS/JS: [demo & code](https://jsfiddle.net/developit/v293tnaj/)
+- [Joost van der Schee](https://twitter.com/jhvanderschee) with HTML/CSS/JS: [demo & code](https://codepen.io/joosts/pen/PoJzGpm)
