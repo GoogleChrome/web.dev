@@ -54,7 +54,7 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |

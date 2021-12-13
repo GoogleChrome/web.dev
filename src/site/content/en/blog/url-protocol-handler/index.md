@@ -99,7 +99,7 @@ allowing the possibility for complementary user-experiences:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                       |
 | ---------------------------------------- | -------------------------------------------- |

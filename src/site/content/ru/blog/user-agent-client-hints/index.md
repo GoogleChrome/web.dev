@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Повышение конфиденциальности пользователей и удобства разработчиков с помощью расширения User-Agent Client Hints
 subhead:
   User-Agent Client Hintsэто новое расширение API Client Hints, которое
@@ -113,11 +114,11 @@ Sec-CH-UA-Mobile: ?0
 ### Ответ User-Agent и заголовки запросов
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

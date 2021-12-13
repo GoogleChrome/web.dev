@@ -65,7 +65,7 @@ communication between the website and the device that it is controlling.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |

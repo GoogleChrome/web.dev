@@ -56,7 +56,7 @@ developers to place custom content in what was previously the browser-controlled
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |

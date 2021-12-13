@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Improving user privacy and developer experience with User-Agent Client Hints
 subhead:
   User-Agent Client Hints are a new expansion to the Client Hints API, that
@@ -177,11 +178,11 @@ are used for representing lists and booleans.
 ### User-Agent response and request headers
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: User-Agent Client Hints によるユーザーのプライバシーと開発者体験の改善
 subhead: User-Agent Client Hints は Client Hints API に新しく追加された拡張機能であり、プライバシーの保護が担保された、人間工学に基づいた方法を通して開発者がユーザーの使用ブラウザーに関する情報にアクセスできるようにします。
 authors:
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### User-Agent レスポンスとリクエスト ヘッダー
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

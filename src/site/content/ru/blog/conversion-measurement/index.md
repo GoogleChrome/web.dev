@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Event Conversion Measurement API - более конфиденциальный способ измерения конверсии рекламы
 subhead: >
   Новый веб-API, доступный в виде пробной версии источника, измеряет, когда клик на объявлении приводит к конверсии, без использования межсайтовых идентификаторов.
@@ -65,7 +66,7 @@ Chrome планирует [отказаться от поддержки стор
 
 ### Принцип работы
 
-<figure class="w-figure">{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Диаграмма: обзор этапов работы API измерения конверсии", width="800", height="496" %}</figure>
+<figure>{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Диаграмма: обзор этапов работы API измерения конверсии", width="800", height="496" %}</figure>
 
 Этот API можно использовать с двумя типами ссылок (элементов `<a>`) для рекламы:
 
@@ -124,7 +125,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 #### Со сторонними cookie
 
-<figure class="w-figure">{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Диаграмма: как сторонние cookie позволяют узнавать пользователей при их перемещении между сайтами", width="800", height="860" %}</figure>
+<figure>{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Диаграмма: как сторонние cookie позволяют узнавать пользователей при их перемещении между сайтами", width="800", height="860" %}</figure>
 
 `adtech.example` использует **сторонний файл cookie в качестве уникального межсайтового идентификатора** для **узнавания пользователя на разных сайтах**. Кроме того, `adtech.example` может получать доступ **одновременно** и к подробным данным о времени кликов или просмотров, и к подробным данным о времени конверсии, а также связывать эти данные между собой.
 
@@ -134,7 +135,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 #### С помощью Event Conversion Measurement API
 
-<figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Диаграмма: как API позволяет измерять конверсии без узнавания пользователей при их перемещении между сайтами", width="800", height="643" %}<figcaption class="w-figcaption"> «Идентификатор объявления» на диаграмме файлов cookie и «идентификатор клика»—это идентификаторы для привязки к подробным данным. На этой диаграмме используется название «идентификатор клика», потому что сейчас поддерживается только измерение конверсий по кликам.</figcaption></figure>
+<figure>{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Диаграмма: как API позволяет измерять конверсии без узнавания пользователей при их перемещении между сайтами", width="800", height="643" %}<figcaption> «Идентификатор объявления» на диаграмме файлов cookie и «идентификатор клика»—это идентификаторы для привязки к подробным данным. На этой диаграмме используется название «идентификатор клика», потому что сейчас поддерживается только измерение конверсий по кликам.</figcaption></figure>
 
 `adtech.example` не может использовать межсайтовый идентификатор и, следовательно, **не может узнавать пользователя на разных сайтах**.
 
@@ -161,8 +162,8 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 Вот краткий свод данных о кликах и конверсиях:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Данные</th>
@@ -197,8 +198,8 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 В Chrome планирование отправки отчетов работает так:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
@@ -253,7 +254,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
   </table>
 </div>
 
-<figure class="w-figure">{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Хронология и расписание отправки отчетов", width="800", height="462" %}</figure>
+<figure>{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Хронология и расписание отправки отчетов", width="800", height="462" %}</figure>
 
 Подробнее о расписании см. в разделе документации [«Отправка запланированных отчетов»](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports).
 
@@ -265,7 +266,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 ### Клик на объявлении (шаги с 1 по 5)
 
-<figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Диаграмма: клик на объявлении и хранилище кликов", width="800", height="694" %}</figure>
+<figure>{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Диаграмма: клик на объявлении и хранилище кликов", width="800", height="694" %}</figure>
 
 Элемент `<a>` загружается на сайт издателя в блок iframe с помощью `adtech.example`.
 
@@ -286,8 +287,8 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 Этот код определяет следующие атрибуты:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Атрибут</th>
@@ -360,7 +361,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 ### Конверсия и планирование отправки отчетов (шаги с 6 по 9)
 
-<figure class="w-figure">{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Диаграмма: конверсия и планирование отправки отчетов", width="800", height="639" %}</figure>
+<figure>{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Диаграмма: конверсия и планирование отправки отчетов", width="800", height="639" %}</figure>
 
 Сразу после клика на объявлении или позднее, например на следующий день, пользователь посещает `advertiser.example`, просматривает ассортимент спортивной обуви, выбирает себе пару кроссовок и переходит к оплате. В этом случае `advertiser.example` добавит пиксель на страницу оформления заказа:
 
@@ -406,7 +407,7 @@ app.get('/conversion', (req, res) => {
 
 ### Отправка отчета (шаги 10 и 11)
 
-<figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Диаграмма: браузер отправляет отчет", width="800", height="533" %}</figure>
+<figure>{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Диаграмма: браузер отправляет отчет", width="800", height="533" %}</figure>
 
 По достижении запланированного срока отправки отчета браузер отправляет **отчет** о конверсии, а именно высылает HTTP POST источнику отчета, указанному в элементе `<a>` (`adtech.example`), например:
 

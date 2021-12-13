@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Uma forma de medir as conversões de anúncios com mais privacidade, a Event Conversion Measurement API
 subhead: Uma nova API web disponível como teste de origem mede quando o clique num anúncio leva a uma conversão, sem usar identificadores entre sites (cross-site).
 authors:
@@ -64,7 +65,7 @@ Esta iteração da API só oferece suporte **à medição de conversões click-t
 
 ### Como funciona
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagrama: visão geral das etapas da API de medição de conversão", width="800", height="496" %}
 </figure>
 
@@ -125,7 +126,7 @@ Quanto `adtech.example` pode aprender sobre os usuários da web?
 
 #### Com cookies de terceiros
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagrama: como cookies de terceiros permitem o reconhecimento de usuário entre sites", width="800", height="860" %}
 </figure>
 
@@ -137,9 +138,9 @@ Como `adtech.example` está provavelmente presente num grande número de sites d
 
 #### Com a API Event Conversion Measurement
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagrama: como a API permite a medição de conversão sem reconhecimento de usuário entre sites", width="800", height="643" %}
-  <figcaption class="w-figcaption">"Ad ID" no diagrama de cookies e "Click ID" são ambos identificadores que permitem o mapeamento para dados detalhados. Neste diagrama, é chamado de "Click ID" porque ele suporta apenas a medição de conversão do tipo click-through.</figcaption>
+  <figcaption>"Ad ID" no diagrama de cookies e "Click ID" são ambos identificadores que permitem o mapeamento para dados detalhados. Neste diagrama, é chamado de "Click ID" porque ele suporta apenas a medição de conversão do tipo click-through.</figcaption>
 </figure>
 
 `adtech.example` não pode usar um identificador cross-site e, portanto, **não é capaz de reconhecer um usuário entre sites**.
@@ -167,8 +168,8 @@ Observe que é possível [recuperar a contagem de conversões verdadeira](/using
 
 A tabela a seguir resume os dados de clique (click-data) e de conversão (conversion-data):
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Dados</th>
@@ -204,8 +205,8 @@ Após a expiração (tempo de clique + `impressionexpiry`), nenhuma conversão �
 
 No Chrome, a programação de relatórios funciona da seguinte maneira:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
@@ -260,7 +261,7 @@ No Chrome, a programação de relatórios funciona da seguinte maneira:
   </table>
 </div>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Cronologia de quais relatórios são enviados quando", width="800", height="462" %}
 </figure>
 
@@ -274,7 +275,7 @@ Veja como a API registra e relata uma conversão. Observe que é dessa forma que
 
 ### Clique no anúncio (etapas 1 a 5)
 
-<figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagrama: clique no anúncio e armazenamento de cliques", width="800", height="694" %}</figure>
+<figure>{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagrama: clique no anúncio e armazenamento de cliques", width="800", height="694" %}</figure>
 
 Um elemento `<a>` de anúncio é carregado no site de um editor por `adtech.example` dentro de um iframe.
 
@@ -295,8 +296,8 @@ Os desenvolvedores da plataforma adtech configuraram o elemento `<a>` com atribu
 
 Este código especifica o seguinte:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Atributo</th>
@@ -370,7 +371,7 @@ Quando o usuário toca ou clica no anúncio, ele navega até o site do anunciant
 
 ### Conversão e programação de relatórios (etapas 6 a 9)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagrama: conversão e programação de relatório", width="800", height="639" %}
 </figure>
 
@@ -418,7 +419,7 @@ Para isto, o navegador programa o envio de um **relatório de conversão**, um b
 
 ### Enviando o relatório (etapas 10 e 11)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagrama: navegador enviando o relatório", width="800", height="533" %}
 </figure>
 

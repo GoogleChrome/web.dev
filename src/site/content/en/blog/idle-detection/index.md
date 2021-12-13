@@ -38,7 +38,7 @@ can limit these calculations to moments when the user interacts with their devic
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
