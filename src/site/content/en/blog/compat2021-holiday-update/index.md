@@ -139,10 +139,11 @@ problems and avoid regressions in the future.
 
 We are grateful for the work that everyone has put in to end the year with many improvements to the
 score as well as better testing infrastructure. `aspect-ratio` was a long requested feature from
-web developers and it is now supported in all browsers. Growth in use of flexbox and grid layout is
-better supported with a lot of improvements made during 2021.
+web developers and it is now supported in all browsers. Use of flexbox, grid and `position: sticky`
+are all growing, and these features are now better supported across browsers thanks to many
+improvements made during 2021.
 
-What's next? We are excited to continue collaborating with other bowser vendors and the wider
+What's next? We are excited to continue collaborating with other browser vendors and the wider
 community in the next iteration of this effort. We have started to research and discuss the focus
 areas for 2022. Please look out for an announcement coming soon.
 
