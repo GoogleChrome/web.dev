@@ -99,7 +99,7 @@ in Chromium’s bug tracker. Together with many smaller improvements that follow
 score for Grid in Chromium improved by 3% to 97%. This work was led by the Edge team at Microsoft.
 
 An [absolute positioning bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1707643) affecting Grid
-was fixed in Gecko, and [many fixes](https://bugs.webkit.org/buglist.cgi?bug_status=RESOLVED&email1=zsun%40igalia.com&emailassigned_to1=1&emailtype1=equals&list_id=7730965&query_format=advanced&resolution=FIXED&short_desc=grid&short_desc_type=allwordssubstr)
+was fixed in Gecko, and [many fixes](https://bugs.webkit.org/buglist.cgi?bug_status=RESOLVED&chfield=resolution&chfieldfrom=2021-01-01&chfieldto=2021-12-31&component=Accessibility&component=CSS&component=Layout%20and%20Rendering&component=New%20Bugs&f1=short_desc&f2=short_desc&f3=short_desc&list_id=7744283&o1=notsubstring&o2=notsubstring&o3=substring&query_format=advanced&resolution=FIXED&v1=Web%20Inspector&v2=%5BLFC%5D&v3=grid)
 have landed in WebKit, leading to a 1% improvement for Firefox and 3% improvement for Safari on
 the Grid tests.
 
@@ -107,7 +107,7 @@ the Grid tests.
 ## CSS `position: sticky`
 
 In our last update, we noted that `position: sticky` was the first area where any browser (in this
-case Chrome and Edge) reached 100% passing tests. Now, following a [number of fixes](https://bugs.webkit.org/buglist.cgi?bug_status=RESOLVED&email1=mrobinson%40webkit.org&emailassigned_to1=1&emailtype1=equals&list_id=7731158&query_format=advanced&resolution=FIXED&short_desc=sticky&short_desc_type=allwordssubstr)
+case Chrome and Edge) reached 100% passing tests. Now, following a [number of fixes](https://bugs.webkit.org/buglist.cgi?bug_status=RESOLVED&chfield=resolution&chfieldfrom=2021-01-01&chfieldto=2021-12-31&f1=short_desc&f2=short_desc&f3=short_desc&list_id=7744291&o1=notsubstring&o2=notsubstring&o3=substring&query_format=advanced&resolution=FIXED&v1=Web%20Inspector&v2=%5BLFC%5D&v3=sticky)
 in WebKit’s implementation, Safari also scores 100% for these tests.  Most of these improvements
 were included in Safari 15.
 
