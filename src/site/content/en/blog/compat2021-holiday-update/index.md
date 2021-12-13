@@ -28,15 +28,15 @@ this effort.
  </div>
 </div>
 
-Since our [last update](https://web.dev/compat2021-midyear/), we’ve continued to see improvements
+Since our [last update](/compat2021-midyear/), we’ve continued to see improvements
 in all browsers. All browsers started with much lower test scores at the beginning of the year, but
 now all browsers have surpassed 90%! This means the web platform has significantly improved
 interoperability of the five focus areas.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/Wd2sVnt4VLho4jgp7UtIyWFceE02/Kaz3ye7gFfow8ia7lWYW.png", alt="A snapshot of Compat
 2021 Dashboard (experimental browsers)", width="800", height="727" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A snapshot of <a href="https://wpt.fyi/compat2021">Compat 2021 Dashboard</a> (experimental
     browsers).
   </figcaption>
