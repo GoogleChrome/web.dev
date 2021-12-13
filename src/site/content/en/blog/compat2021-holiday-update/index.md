@@ -6,8 +6,7 @@ authors:
   - foolip
   - kosamari 
 hero: "image/Wd2sVnt4VLho4jgp7UtIyWFceE02/T4gzpGXXQ9sud6CEbHno.jpg" alt: "a hand holding a small box of presents with red ribbon." 
-date: 2021-12-10 
-updated: 2021-12-10 
+date: 2021-12-13
 tags:
   - blog
   - css
