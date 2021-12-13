@@ -88,7 +88,7 @@ That’s it! That’s the entire API! If you want to dive deeper into the detail
 
 ### Features and limitations
 
-Structured Cloning addresses many (although not all) shortcomings of the `JSON.stringifty()` technique. Structured Cloning can handle cyclical data structures, support many built-in data types and is generally more robust and often faster.
+Structured cloning addresses many (although not all) shortcomings of the `JSON.stringify()` technique. Structured cloning can handle cyclical data structures, support many built-in data types and is generally more robust and often faster.
 
 However, it still has some limitations that may catch you off-guard:
  
