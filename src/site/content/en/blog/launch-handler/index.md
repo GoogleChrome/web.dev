@@ -173,10 +173,10 @@ Handler API.
 
 1. Install the app on a Chrome OS device.
 1. Send yourself a link in a chat application of the form
-   <code>https://launch-handler.glitch.me?track=<strong>https://example.com/music.mp3</strong></code>.
+   <code>https%3a//launch-handler.glitch.me?track=<strong>https%3a//example.com/music.mp3</strong></code>.
    (You can customize
-   <code><strong>https://example.com/music.mp3</strong></code> for any URL pointing to an audio file, for example,
-   <a href="https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190"><code>https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190</code></a>).
+   <code><strong>https%3a//example.com/music.mp3</strong></code> for any URL pointing to an audio file, for example,
+   <a href="https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190"><code>https%3a//launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190</code></a>).
 1. Click the link in your chat app and notice how _Musicr 2.0_ opens and plays the track.
 1. Click the link in your chat app again and notice how always just one instance of Musicr 2.0 exists.
 
