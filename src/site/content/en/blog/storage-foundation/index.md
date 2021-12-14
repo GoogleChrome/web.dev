@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-11-30
+updated: 2021-12-14
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -305,7 +305,7 @@ changes. You can find the [source code][demo-source] of the demo on Glitch.
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the Storage Foundation API using the core principles
+The Chromium team designed and implemented the Storage Foundation API using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 

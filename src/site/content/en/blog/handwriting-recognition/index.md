@@ -7,7 +7,7 @@ authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-updated: 2021-12-08
+updated: 2021-12-14
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
@@ -369,7 +369,7 @@ application, [obtain it from npm](https://www.npmjs.com/package/handwriting-text
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the Handwriting Recognition API using the core
+The Chromium team designed and implemented the Handwriting Recognition API using the core
 principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control, transparency, and ergonomics.
 

@@ -7,7 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-12-09
+updated: 2021-12-14
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -354,7 +354,7 @@ The search feature in the window controls overlay is fully functional:
 
 ## Security considerations
 
-The Chromium team has designed and implemented the Window Controls Overlay API using the core
+The Chromium team designed and implemented the Window Controls Overlay API using the core
 principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control, transparency, and ergonomics.
 

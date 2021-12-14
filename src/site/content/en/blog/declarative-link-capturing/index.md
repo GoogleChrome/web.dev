@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-11-22
+updated: 2021-12-14
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -145,7 +145,7 @@ running in a tab or as an installed PWA, to see the difference in behavior.
 
 ## Security and permissions
 
-The Chromium team has designed and implemented Declarative Link Capturing using the core principles
+The Chromium team designed and implemented Declarative Link Capturing using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics. This API allows sites new additional control options. First,
 being able to automatically open installed apps in a window. This uses existing UI but makes it
