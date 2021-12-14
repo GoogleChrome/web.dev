@@ -1,11 +1,12 @@
 ---
+layout: post
 title: "Compat 2021 Holiday Update: presents for developers before the end of the year"
 subhead:
     "End of the year update on Compat 2021—an effort to eliminate browser compatibility problems in five key focus areas: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
   - kosamari
-hero: "image/Wd2sVnt4VLho4jgp7UtIyWFceE02/T4gzpGXXQ9sud6CEbHno.jpg" 
+hero: "image/Wd2sVnt4VLho4jgp7UtIyWFceE02/T4gzpGXXQ9sud6CEbHno.jpg"
 alt: "A hand holding a small box of presents with red ribbon."
 date: 2021-12-13
 tags:
@@ -22,10 +23,10 @@ This effort is also known as Interop 2021, matching the name of
 this effort.
 {% endAside %}
 
-<div class="w-stats">
- <div class="w-stat">
-   <p class="w-stat__figure">>90<sub>%</sub></p>
-   <p class="w-stat__desc">score in all browsers</p>
+<div class="stats">
+ <div class="stats__item">
+   <p class="stats__figure">>90<sub>%</sub></p>
+   <p>score in all browsers</p>
  </div>
 </div>
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Centering in CSS
 subhead: Follow 5 centering techniques as they go through a series of tests to see which one is the most resilient to change.
 authors:
@@ -105,7 +105,7 @@ it's a solid centering technique for groups of elements meant to be read.
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Content is centered even under constrained space and overflow
 - Centering edits and maintenance are all in one spot
@@ -156,7 +156,7 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Only handles alignment, direction, and distribution
 - Edits and maintenance are all in one spot
@@ -205,7 +205,7 @@ are styled with auto margins. There's something nostalgic and wonderful about
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Fun trick
 - Quick and dirty
@@ -248,7 +248,7 @@ border!?
 }
 ```
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Protects content
 - Atomic
@@ -288,7 +288,7 @@ plopping it on top of other stuff. It's a classic and handy overlay centering
 technique that's flexible and dynamic to content size. Sometimes you just need
 to plop UI on top of other UI.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Pros' %}
 - Useful
 - Reliable

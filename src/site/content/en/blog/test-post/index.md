@@ -497,10 +497,13 @@ quam sem.
   </div>
 </div>
 
-<div class="w-text--center">
-  <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
-    Download case study
-  </a>
+<div class="all-center">
+  <p>
+    <a href="https://example.com/some.pdf" class="button">
+      {% include "icons/download.svg" %}
+      Download case study
+    </a>
+  </p>
 </div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa

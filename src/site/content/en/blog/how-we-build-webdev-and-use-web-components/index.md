@@ -111,7 +111,7 @@ It will end up looking like this:
 But it's actually creating HTML that looks like this:
 
 ```html
-<div class="w-aside w-aside--note">
+<div class="aside color-state-info-text">
 <p><a href="/handbook/web-dev-components/#asides">See how Asides work in the web.dev codebase</a></p>
 </div>
 ```

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'New aspect-ratio CSS property supported in Chromium, Safari Technology Preview, and Firefox Nightly'
 subhead: The new CSS property that helps maintain spacing in responsive layouts.
 authors:
@@ -137,7 +138,7 @@ ratios is much more clear.
 With the same markup, we can replace: `padding-top: 56.25%` with `aspect-ratio: 16 / 9`, setting
 `aspect-ratio` to a specified ratio of `width` / `height`.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Using padding-top' %}
 ```css
 .container {

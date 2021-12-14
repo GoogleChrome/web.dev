@@ -1,4 +1,5 @@
 ---
+layout: post
 title: A contact picker for the web
 subhead: The Contact Picker API provides an easy way for users to share contacts from their contact list.
 authors:
@@ -192,8 +193,6 @@ to select only the contacts that they need to share for that particular
 website. Users can also control which properties are shared with the site
 by toggling the property button at the top of the picker.
 
-<div class="w-clearfix"></div>
-
 ### Transparency {: #security-transparency }
 
 To clarify which contact details are being shared, the picker always
@@ -203,7 +202,7 @@ all three properties will be shown in the picker. Alternatively,
 if a site only requests `tel`, the picker will show only the name, and
 telephone numbers.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Screen shot of picker for site requesting all properties.", width="800", height="639", class="w-screenshot" %}
     <figcaption class="w-figcaption">
@@ -219,8 +218,6 @@ telephone numbers.
   </figure>
 </div>
 
-<div class="w-clearfix"></div>
-
 <figure class="w-figure w-figure--inline-right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Screen shot of picker when a contact is long-pressed.", width="800", height="389",class="w-screenshot" %}
   <figcaption class="w-figcaption">
@@ -230,8 +227,6 @@ telephone numbers.
 
 A long press on a contact will show all of the information that will be
 shared if the contact is selected. (See the Cheshire Cat contact image.)
-
-<div class="w-clearfix"></div>
 
 ### No permission persistence {: #security-persistence }
 

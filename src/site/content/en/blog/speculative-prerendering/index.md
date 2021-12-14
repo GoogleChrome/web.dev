@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Bringing instant page-loads to the browser through speculative prerendering
 subhead: Learn more about speculative prerendering in the browser and how to participate in Chrome origin trial.
 date: 2021-09-24
@@ -413,7 +414,7 @@ You can also compare the transitions for each case by clicking on the link for
 the page.
 
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
       <figcaption class="w-figcaption">
 Timer.html with speculation rules

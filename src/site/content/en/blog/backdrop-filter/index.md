@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Create OS-style backgrounds with backdrop-filter"
 subhead: |
   Blurring and color shifting behind an element.
@@ -50,7 +51,7 @@ Historically, these techniques were difficult to implement on the web, requiring
 
 CSS `backdrop-filter` applies one or more effects to an element that is translucent or transparent. To understand that, consider the images below.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'No foreground transparency' %}
 {% Img src="image/admin/LOqxvB3qqVkbZBmxMmKS.png", alt="A triangle superimposed on a circle. The circle can't be seen through the triangle.", width="480", height="283" %}
 

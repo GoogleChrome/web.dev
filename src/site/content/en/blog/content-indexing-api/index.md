@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Indexing your offline-capable pages with the Content Indexing API
 subhead: Enabling service workers to tell browsers which pages work offline
 authors:
@@ -50,7 +51,7 @@ the browser. That enhancement is available in Chrome 84 and later.
 Once the index is populated with content from your PWA, as well as any other
 installed PWAs, it will be surfaced by the browser as shown below.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rJF9Cl75c7tcsBL6PQe0.png", alt="A screenshot of the Downloads menu item on Chrome's new tab page.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
     <figcaption class="w-figcaption">
