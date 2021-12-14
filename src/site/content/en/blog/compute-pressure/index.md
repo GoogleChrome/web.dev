@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Observing compute pressure
 subhead: An experimental API for reacting to changes in CPU use.
 authors:

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a 3D game menu component
 subhead: A foundational overview of how to build a responsive, adaptive, and accessible 3D game menu.
 authors:

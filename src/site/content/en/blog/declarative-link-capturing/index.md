@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Choose how in-scope links open your PWA with Declarative Link Capturing
 subhead: |
   Declarative Link Capturing is a proposal for a web app manifest property called

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Insertable streams for MediaStreamTrack
 subhead: |
   The content of a `MediaStreamTrack` is exposed as a stream that can be manipulated or used to

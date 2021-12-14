@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a switch component
 subhead: A foundational overview of how to build a responsive and accessible switch component.
 authors:

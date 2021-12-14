@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "web.dev engineering blog #1: How we build the site and use Web Components"
 date: 2020-04-09
 authors:
@@ -53,7 +53,7 @@ Here's an example:
 
 ```md
 ---
-layout: post-old
+layout: post
 title: What is network reliability and how do you measure it?
 authors:
   - jeffposnick
