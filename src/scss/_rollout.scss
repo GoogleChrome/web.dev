@@ -20,13 +20,8 @@ web-response-mc {
 /// These overly specific selectors are unfortunately going to have to
 /// stay until we can either: rip the CSS out of the web components or
 /// get into the web component CSS safely and refactor
-.web-assessment__lockup,
-web-tabs .web-tabs__tab[aria-selected='true'] {
+.web-assessment__lockup {
   color: #{get-utility-value('color', 'state-good-text')} !important;
-}
-
-web-tabs .web-tabs__tab[aria-selected='true']::after {
-  background: #{get-utility-value('color', 'state-good-text')} !important;
 }
 
 .web-question__content {
@@ -65,10 +60,6 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
 
 [state='completed'] .web-question__cta::before {
   display: none;
-}
-
-.web-tabs__text-label {
-  color: get-utility-value('color', 'core-text') !important;
 }
 
 /// The assesment component recreates inputs, so we need to pull that out

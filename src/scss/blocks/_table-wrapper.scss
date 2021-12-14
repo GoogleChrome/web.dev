@@ -1,37 +1,8 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/tables
 .table-wrapper {
-  /// This has to be a color and not transparent, or it won't conceal the shadow when
-  /// there is now overflow content
-  $table-wrapper-background: #{get-utility-value('bg', 'core-bg')};
+  @include overflow-shadow(#{get-utility-value('bg', 'core-bg')});
 
-  min-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-
-  /// Creates a shadow when there is overflow content to see on both inline sides
-  background: linear-gradient(
-      to right,
-      $table-wrapper-background 30%,
-      rgb(255 255 255 / 0%)
-    ),
-    linear-gradient(
-        to right,
-        rgb(255 255 255 / 0%),
-        $table-wrapper-background 70%
-      )
-      0 100%,
-    radial-gradient(farthest-side at 0% 50%, rgb(0 0 0 / 20%), rgb(0 0 0 / 0%)),
-    radial-gradient(
-        farthest-side at 100% 50%,
-        rgb(0 0 0 / 20%),
-        rgb(0 0 0 / 0%)
-      )
-      0 100%;
-  background-repeat: no-repeat;
-  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
-  background-position: 0 0, 100%, 0 0, 100%;
-  background-attachment: local, local, scroll, scroll;
 
   table {
     min-width: 30rem;

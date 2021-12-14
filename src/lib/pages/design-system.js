@@ -4,5 +4,5 @@
 
 import '../components/Carousel';
 import '../components/CopyCode';
-
+import '../components/Tabs';
 import '../components/base';

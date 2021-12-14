@@ -27,6 +27,7 @@ $global-prose-element-max-width: 50rem;
 /// MIXINS
 @import 'mixins/button-base-styles';
 @import 'mixins/card-base-styles';
+@import 'mixins/overflow-shadow';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
@@ -716,6 +717,7 @@ video,
 @import 'web-components/web-copy-code';
 @import 'web-components/web-navigation-drawer';
 @import 'web-components/web-subscribe';
+@import 'web-components/web-tabs';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
@@ -741,6 +743,9 @@ video,
 
 // Temporary rollout patches
 @import 'rollout';
+
+// Import unresolved states for lit-elements
+@import 'unresolved';
 
 /// LEGACY EXTENSIONS
 /// These elements are everywhere and to replace them site-wide would be
