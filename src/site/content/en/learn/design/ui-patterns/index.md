@@ -5,6 +5,7 @@ description: >
 authors:
   - adactio
 date: 2021-12-23
+placeholder: true
 ---
 
 A design viewed on a small screen shouldn't look like a shrunk-down version of a large-screen layout. Likewise, a design viewed on a large screen shouldn't look like a blown-up version of a small-screen layout. Instead, the design needs to be flexible enough to adapt to all screen sizes. A successful responsive design makes the most of every form factor.
@@ -105,7 +106,9 @@ Again, the `scroll-snap` properties ensure that the interaction feels smooth. Al
  tab: 'result'
 } %}
 
-You can read more about [building a media scroller component](/building-a-media-scroller-component/).
+{% Aside %} 
+The previous example shows a more complete demo, you can read more about it in the article [building a media scroller component](/building-a-media-scroller-component/).
+{% endAside %}
 
 With the addition of JavaScript, you can add interactive controls to a carousel. You could even make it automatically cycle through items. But think long and hard before doing that—autoplaying might work if the carousel is the only content on the page, but an autoplaying carousel is incredibly annoying if someone is trying to interact with other content (like reading text, for example). You can read more [carousel best practices](/carousel-best-practices/).
 
