@@ -21,14 +21,14 @@ tags:
 and reliable [Progressive Web App](/pwa) that matched the capabilities of their iOS and Android
 apps, Goibibo achieved a 60% increase in conversions (compared to their previous web flow).
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">60<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in conversions</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">60<sub>%</sub></p>
+    <p>Increase in conversions</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">20<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in logged-in users</p>
+  <div class="stats__item">
+    <p class="stats__figure">20<sub>%</sub></p>
+    <p>Increase in logged-in users</p>
   </div>
 </div>
 
