@@ -1,4 +1,4 @@
-<div class="wrapper pad-block-size-{{"2" if loop.first else "1"}}">
+<div class="wrapper pad-block-size-1">
   <div class="prose">
     <h2 id="{{ topic.title | i18n(locale) | slug }}" class="text-size-2">
       {{ topic.title | i18n(locale) }}
@@ -11,8 +11,10 @@
       {% endif %}
     </ul>
   </div>
-  {% if topic.subtopics %}
-    {% for section in topic.subtopics %}
+</div>
+{% if topic.subtopics %}
+  {% for section in topic.subtopics %}
+    <div class="wrapper pad-block-size-1">
       <div class="prose">
         <h3 id="{{ section.title | i18n(locale) | slug }}" class="text-size-1">
           {{ section.title | i18n(locale) }}
@@ -22,6 +24,6 @@
           {% include 'partials/item.njk' %}
         </ul>
       </div>
-    {% endfor %}
-  {% endif %}
-</div>
+    </div>
+  {% endfor %}
+{% endif %}
