@@ -8,8 +8,8 @@ subhead: |
   Handling API.
 authors:
   - thomassteiner
-date: 2021-12-06
-# updated: 2021-12-06
+date: 2021-12-14
+# updated: 2021-12-14
 description: |
   Launch handler lets you control how your app is launched, for example, whether it uses an existing
   window and whether the chosen window is navigated to the launch URL.
@@ -32,11 +32,11 @@ There are many ways to launch a Progressive Web App. Probably the most common is
 home screen or the app drawer of the device. But when you think about it, there are many other ways
 a launch can happen:
 
-- The app can be launched as the result of a share action when it is a
+- The app can be launched as the result of a share action when the app is a
   [share target](/web-share-target/).
 - A user may have clicked a file in their file explorer and decided to open it with the PWA, which
   acts as a [file handler](/file-handling/).
-- If the PWA has registered as a [protocol handler](/protocol-handling/), the PWA may launch as a
+- If the PWA has registered as a [protocol handler](/protocol-handling/), the PWA may launch as the
   result of a matching protocol.
 - The PWA may also be launched as a result of a click on a
   [push notification](/push-notifications-overview/) or an [app icon shortcut](/app-shortcuts/).
@@ -139,18 +139,18 @@ are as follows:
 
 Both `route_to` and `navigate_existing_client` also accept a list (array) of values, where the first
 valid value will be used. This is to allow new values to be added to the spec without breaking
-backwards compatibility with old implementations.
+backwards compatibility with existing implementations.
 
-For example, if `"matching-url-client"` were added, sites would specify
+For example, if the value `"matching-url-client"` were added, sites would specify
 `"route_to": ["matching-url-client", "existing-client"]` to continue to control the behavior of
 older browsers that did not support `"matching-url-client"`.
 
 ### The `window.launchQueue` interface
 
 If the app has declared that it wants to handle launches in an existing client (by specifying
-`"route_to": "existing-client"`), it needs to imperatively do something with incoming launch URLs.
+`"route_to": "existing-client"`), it can imperatively do something with incoming launch URLs.
 This is where the `launchQueue` comes into play. To access launch target URLs, a site needs to
-specify a consumer for the `window.launchQueue` object, which is then passed the target URLs via the
+specify a consumer for the `window.launchQueue` object, which is then passed the target URL via the
 `launchParams.targetURL` field. Launches are queued until they are handled by the specified
 consumer, which is invoked exactly once for each launch. In this manner, every launch is handled,
 regardless of when the consumer was specified. The code snippet below shows a fictive audio player
@@ -170,6 +170,15 @@ launchQueue.setConsumer((launchParams) => {
 You can see a demo of the Launch Handler API in action in the [PWA Launch Handler Demo][demo]. Be
 sure to check out the [source code][demo-source] of the application to see how it uses the Launch
 Handler API.
+
+1. Install the app on a Chrome OS device.
+1. Send yourself a link in a chat application of the form
+   <code>https://launch-handler.glitch.me?track=<strong>https://example.com/music.mp3</strong></code>.
+   (You can customize
+   **`https://example.com/music.mp3`** for any URL pointing to an audio file, for example,
+   [`https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190`](https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190)).
+1. Click the link in your chat app and notice how _Musicr 2.0_ opens and plays the track.
+1. Click the link in your chat app again and notice how always just one instance of Musicr 2.0 exists.
 
 ## Security and permissions
 
