@@ -182,6 +182,8 @@ Handler API.
 1. Click the link in your chat app again and notice how always just one instance of Musicr 2.0 exists.
 <!--lint enable no-literal-urls -->
 
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/nFgE69N5VTYBDon1DGmB.png", alt="Musicr 2.0 web application launched and playing music it handled from the launch params.", width="800", height="235" %}
+
 ## Security and permissions
 
 The Chromium team has designed and implemented the Launch Handler API using the core principles
