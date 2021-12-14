@@ -53,8 +53,6 @@ Web share has the following capabilities and limitations:
   [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)
   for details.
 
-<div class="w-clearfix"></div>
-
 ### Sharing links and text
 
 To share links and text, use the `share()` method, which is a promise-based
@@ -147,8 +145,6 @@ saving precious pixels.
 They also found that users shared with Web Share around 20% more than
 users without the API enabled. Head to
 [Santa Tracker](https://santatracker.google.com/) to see Web Share in action.
-
-<div class="w-clearfix"></div>
 
 ## Browser support
 

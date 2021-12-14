@@ -429,18 +429,18 @@ butDir.addEventListener('click', async () => {
 If you additionally need to access each file via `getFile()` to, for example, obtain the individual file sizes,
 do not use `await` on each result sequentially, but rather process all files in parallel, for example,
 via `Promise.all()`.
-  
+
 ```js
 const dirHandle = await window.showDirectoryPicker();
 const promises = [];
 for await (const entry of dirHandle.values()) {
   if (entry.kind !== 'file') {
     break;
-  }    
+  }
   promises.push(entry.getFile().then(file => `${file.name} (${file.size})`));
 }
 console.log(await Promise.all(promises));
-});  
+});
 ```
 
 ### Creating or accessing files and folders in a directory
@@ -612,8 +612,6 @@ context][secure-contexts]. If users change their minds, they can cancel the sele
 picker and the site does not get access to anything. This is the same behavior as that of the
 `<input type="file">` element.
 
-<div class="w-clearfix"></div>
-
 <figure class="w-figure w-figure--inline-left">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577", linkTo=true %}
   <figcaption class="w-figcaption">
@@ -625,8 +623,6 @@ Similarly, when a web app wants to save a new file, the browser will show the sa
 allowing the user to specify the name and location of the new file. Since they are saving a new file
 to the device (versus overwriting an existing file), the file picker grants the app permission to
 write to the file.
-
-<div class="w-clearfix"></div>
 
 #### Restricted folders
 
@@ -661,8 +657,6 @@ If the user chooses Cancel, and does not grant write access, the web app cannot 
 local file. It should provide an alternative method to allow the user to save their data, for
 example by providing a way to ["download" the file][download-file], saving data to the cloud, etc.
 
-<div class="w-clearfix"></div>
-
 ### Transparency
 
 <figure class="w-figure w-figure--inline-right">
@@ -676,8 +670,6 @@ example by providing a way to ["download" the file][download-file], saving data 
 Once a user has granted permission to a web app to save a local file, the browser will show an icon
 in the URL bar. Clicking on the icon opens a pop-over showing the list of files the user has given
 access to. The user can easily revoke that access if they choose.
-
-<div class="w-clearfix"></div>
 
 ### Permission persistence
 

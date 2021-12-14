@@ -191,8 +191,6 @@ For Android&nbsp;Q, you can find it under _Display_ as a _Dark Theme_ toggle swi
 and on iOS&nbsp;13, you can change the _Appearance_ in the _Display &amp; Brightness_
 section of the settings (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>).
 
-<div class="w-clearfix"></div>
-
 ## The `prefers-color-scheme` media query
 
 One last bit of theory before I get going.
