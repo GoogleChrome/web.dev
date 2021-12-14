@@ -128,7 +128,7 @@ During this period, the engineering team continuously measured page performance 
 
 The team used [SpeedCurve](https://speedcurve.com) to continuously run [lab tests](/user-centric-performance-metrics/#how-metrics-are-measured) against the condominium page. These are the results for the mobile version:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
