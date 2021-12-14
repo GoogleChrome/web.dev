@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Rakuten 24’s investment in PWA increases user retention by 450%
 subhead: >
   Making their web app installable resulted in increased traffic, visitor retention,
@@ -90,7 +91,7 @@ images that don't change frequently.
 
 ## Overall business results {: #results }
 
-<div class="w-columns">
+<div class="switcher">
   <div>
     <p>
       By implementing installability, Rakuten 24 was able to increase visit frequency

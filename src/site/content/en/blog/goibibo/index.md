@@ -1,4 +1,5 @@
 ---
+layout: post
 title: How Goibibo's PWA improved conversions by 60%
 subhead: Bridging the gap between web and iOS/Android experiences to delight users.
 date: 2020-09-29
@@ -56,7 +57,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 ### Contact Picker API {: #contact-picker }
 
-<div class="w-columns">
+<div class="switcher">
   <p>
     Nearly 15% of Goibibo's logged-in users make bookings for family or friends on the mobile web.
     Goibibo used the <a href="/contact-picker/">Contact Picker API</a> to enable PWA users to fill
@@ -69,7 +70,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 ### WebOTP {: #web-otp }
 
-<div class="w-columns">
+<div class="switcher">
   <p>
     Because secure authentication is a big challenge in India, Goibibo
     used the <a href="/web-otp/">WebOTP (One-Time Password) API</a>
@@ -82,7 +83,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 ### Web Share API {: #web-share }
 
-<div class="w-columns">
+<div class="switcher">
   <p>
     To bridge the gap between their web and iOS/Android experiences,  Goibibo adopted the
     <a href="/web-share/">Web Share API</a> to make it easier to share  links, text, or files around hotel
@@ -95,7 +96,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 ### Push notifications {: #notifications}
 
-<div class="w-columns">
+<div class="switcher">
   <p>
     Goibibo used <a href="https://developers.google.com/web/fundamentals/push-notifications">web push
     notifications</a> to retarget bounced users with relevant updates like flight fare alerts and other

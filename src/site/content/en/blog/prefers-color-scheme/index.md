@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'prefers-color-scheme: Hello darkness, my old friend'
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
 authors:
@@ -535,7 +536,7 @@ has shown that the majority of the surveyed people
 prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as _re-colorization_.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="Hero image slightly darkened in dark mode.", width="800", height="618" %}
     <figcaption class="w-figcaption">
@@ -600,7 +601,7 @@ that people don't like inversion for photos, it does work very well for most ico
 Again I use CSS variables to determine the inversion amount
 in the regular and in the [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) state.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Icons are inverted in dark mode.", width="744", height="48" %}
     <figcaption class="w-figcaption">
@@ -763,7 +764,7 @@ The demo below shows the element in action
 ></dark-mode-toggle>
 ```
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="<dark-mode-toggle> in light mode.", width="140", height="76" %}
     <figcaption class="w-figcaption">
