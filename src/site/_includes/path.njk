@@ -56,10 +56,22 @@ eleventyComputed:
           <h2 class="toc__header">Table of Contents</h2>
           <ul class="toc__list">
             {% for topic in topics %}
-              <li class="path__toc--item">
-                {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
-                <a href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
+              <li>
+                <div class="path__toc--item">
+                  {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
+                  <a href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
+                </div>
               </li>
+              {% if topic.subtopics %}
+                {% for section in topic.subtopics %}
+                  <li>
+                    <div class="path__toc--item">
+                      {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
+                      <a href="#{{ section.title | i18n(locale) | slug }}">{{ section.title | i18n(locale) }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+              {% endif %}
             {% endfor %}
           </ul>
         </div>
