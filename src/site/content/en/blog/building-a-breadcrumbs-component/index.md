@@ -502,4 +502,4 @@ to the community remixes section below!
 
 ## Community remixes
 
-*Nothing to see here yet.*
+- [Tux Solbakk](https://github.com/tux-/) as a web component: [demo and code](https://tux-.github.io/breadcrumbs/public/index.html)

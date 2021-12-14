@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Back/forward cache
 subhead: Optimize your pages for instant loads when using the browser's back and forward buttons.
 description: |
@@ -48,8 +49,8 @@ page, only to realize it's not what you wanted and click the back button? In
 that moment, bfcache can make a big difference in how fast the previous page
 loads:
 
-<div class="w-table-wrapper w-table--top-align">
-  <table>
+<div class="table-wrapper">
+  <table data-alignment="top>
     <tr>
       <td width="30%"><strong><em>Without</em> bfcache enabled</strong></td>
       <td>

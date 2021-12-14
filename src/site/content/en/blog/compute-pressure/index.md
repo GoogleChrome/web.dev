@@ -229,7 +229,7 @@ will display an ongoing readout of your device's CPU utilization and speed.
 
 ## API status
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                                                       |
 | ---------------------------------------- | ---------------------------------------------------------------------------- |

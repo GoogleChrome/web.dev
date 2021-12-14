@@ -113,6 +113,15 @@ As the element approaches the viewport, the browser no longer adds the `size`
 containment and starts painting and hit-testing the element's content. This
 enables the rendering work to be done just in time to be seen by the user.
 
+{% Aside 'caution' %}
+The browser is only able to skip rendering work if you are also careful not to call any DOM API that [forces some of rendering
+to occur](https://gist.github.com/paulirish/5d52fb081b3570c81e3a#file-what-forces-layout-md) on one of the skipped subtrees.
+If you're using `content-visibility` to improve performance, audit your code to make sure these APIs are not getting called.
+To help find them, Chromium will print console messages if you call one of these APIs for a subtree of an
+element with `content-visibility:hidden`. To see the messages, [turn on verbose logging](https://developer.chrome.com/docs/devtools/console/log/).
+{% endAside %}
+
+
 ## A note on accessibility
 
 One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without waiting for it to load or sacrificing rendering performance.
@@ -210,6 +219,19 @@ an estimate for the height and width of the sections.
 This means it will lay out as if it had a single child of "intrinsic-size"
 dimensions, ensuring that your unsized divs still occupy space.
 `contain-intrinsic-size` acts as a placeholder size in lieu of rendered content.
+
+In Chromium 98 and onward, there is a new [`auto`](https://drafts.csswg.org/css-sizing-4/#valdef-contain-intrinsic-width-auto-length)
+keyword for `contain-intrinsic-size`. When specified, the browser will remember
+the last-rendered size, if any, and use that instead of the developer-provided placeholder
+size. For example, if you specified `contain-intrinsic-size: auto 300px`, the
+element will start out with a `300px` intrinsic sizing in each dimension, but once
+the element's contents are rendered, it will retain the rendered intrinsic size.
+Any subsequent rendering size changes will also be remembered. In practice, this means that if you
+scroll an element with `content-visibilty: auto` applied, and then scroll it back
+offscreen, it will automatically retain its ideal width and height, and not revert
+to the placeholder sizing. This feature is especially useful for infinite scrollers,
+which can now automatically improve sizing estimation over time as the user
+explores the page.
 
 {% Aside %}
 We can use `IntersectionObserver` and `MutationObserver` to set

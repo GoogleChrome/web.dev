@@ -184,7 +184,7 @@ by Sarah Drasner for a great breakdown of how to use them.
   </figcaption>
 </figure>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'parent' %}
 ```css/4-5
 .stories {

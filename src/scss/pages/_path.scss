@@ -1,0 +1,35 @@
+.path__hero {
+  @include media-query('md') {
+    height: auto;
+    max-width: initial;
+    width: 420px;
+  }
+}
+
+.path__header {
+  display: block;
+  text-align: center;
+
+  @include media-query('md') {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: initial;
+  }
+}
+
+.path__topic {
+  .prose > * {
+    margin-inline: initial;
+  }
+}
+
+.path__toc--item {
+  display: flex;
+  flex-direction: row;
+
+  svg {
+    fill: get-color('core-primary');
+    margin-right: 6px;
+  }
+}

@@ -156,7 +156,7 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 
 ### Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                                                                          |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |

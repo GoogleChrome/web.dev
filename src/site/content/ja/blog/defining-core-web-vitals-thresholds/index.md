@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Core Web Vitals の指標のしきい値の定義
 subhead: Core Web Vitals のしきい値の背後にある調査と方法論
 authors:
@@ -22,13 +23,18 @@ tags:
 
 それぞれの Core Web Vitals 指標には、パフォーマンスを"良い"、"改善が必要"、"悪い" のいずれかへと分類するしきい値が関連付けられています。
 
-<div class="w-stack w-stack--center w-stack--md">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint のしきい値に関する推奨事項", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay のしきい値に関する推奨事項", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift のしきい値に関する推奨事項", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th> </th>
@@ -81,7 +87,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">達成可能性</h3>
 <p data-md-type="paragraph">CrUX のデータを使用することで、候補となる LCP の "良い" しきい値を満たす Web 上のオリジンのパーセンテージを決定することができます。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">(候補となる LCP のしきい値について) "良い" に分類された CrUX のオリジンのパーセンテージ</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -113,7 +119,7 @@ tags:
 <p data-md-type="paragraph">加えて、最適化されているサイトが一貫して達成することができるしきい値を確実に選択するために、Web 全体においてパフォーマンスが上位に数えられるサイトの LCP パフォーマンスを分析し、これらのサイトにおいて一貫して達成が可能となるしきい値の決定を行う必要がありました。具体的には、パフォーマンスの高いサイトの 75 パーセンタイルにおいて一貫して達成が可能なしきい値の特定を目標としました。その結果として、1.5 秒や 2 秒のしきい値については一貫して達成することができないものの、2.5 秒であれば一貫して達成可能であることが分かりました。</p>
 <p data-md-type="paragraph">LCP の "悪い" しきい値の特定には CrUX のデータを使用し、ほぼすべてのオリジンが満たすしきい値を特定しました。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">(候補となる LCP のしきい値について) "悪い" に分類された CrUX のオリジンのパーセンテージ</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -153,7 +159,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">達成可能性</h3>
 <p data-md-type="paragraph">CrUX のデータを使用し、Web 上のオリジンの大多数 (75 パーセンタイル) が 100 ミリ秒という FID の "良い" しきい値を満たしていることを特定しました。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">(100 ミリ秒という FID のしきい値について) "良い" に分類された CrUX のオリジンのパーセンテージ</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th></th>
@@ -177,7 +183,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">達成可能性</h3>
 <p data-md-type="paragraph">CrUX のデータによると、オリジン全体の約 50％ において CLS が 0.05 以下となっていることがわかりました。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">「良好」として分類されたCrUXオリジンの割合（候補CLSしきい値の場合）</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -202,7 +208,7 @@ tags:
 <p data-md-type="paragraph">CrUX のデータは 0.05 が CLS の "良い" しきい値として妥当であることを示唆していますが、現在は混乱をもたらすようなレイアウト シフトの回避が困難となるユース ケースが存在することも認識しています。たとえば、ソーシャルメディアの埋め込みなどを含むサードパーティ製の埋め込みコンテンツでは、埋め込まれているコンテンツの高さが読み込みが完了するまで分からないという場合もあり、その場合には 0.05 よりも大きいレイアウト シフトが発生してしまう可能性があります。このように、0.05 という CLS のしきい値を多くのオリジンが満たしてはいるものの、しきい値を 0.1 と多少緩めに設定することでユーザー体験の質と達成可能性のバランスを取ることができると結論付けました。Web の世界のエコシステムが機能することでサードパーティ製の埋め込みコンテンツによるレイアウト シフトへの対処方法が今後特定され、将来的な Core Web Vitals のバージョンにおいてより厳格な CLSの "良い" しきい値である 0.05 や 0 を使用できるようになることを期待しています。</p>
 <p data-md-type="paragraph">加えて、CLS の "悪い" しきい値を決定するために、CrUX のデータを使用して大半のオリジンが満たしているしきい値を特定しました。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">(候補となる CLS のしきい値について) "悪い" に分類された CrUX のオリジンのパーセンテージ</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>

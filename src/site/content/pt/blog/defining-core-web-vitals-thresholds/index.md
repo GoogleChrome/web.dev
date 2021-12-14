@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Definindo os limites das métricas Core Web Vitals
 subhead: A pesquisa e a metodologia por trás dos limites das Core Web Vitals
 authors:
@@ -22,13 +23,18 @@ Em 2020, o Core Web Vitals são três métricas: Largest Contentful Paint - LCP 
 
 Cada métrica Core Web Vitals tem limites associados, que categorizam o desempenho como "bom", "precisa melhorar" ou "ruim":
 
-<div class="w-stack w-stack--center w-stack--md">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendações de limites para Largest Contentful Paint", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendações de limites para First Input Delay", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendações de limites para Cumulative Layout Shift", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th> </th>
@@ -81,7 +87,7 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <h3 data-md-type="header" data-md-header-level="3">Possibilidade de realização</h3>
 <p data-md-type="paragraph">Usando os dados do CrUX, podemos determinar a porcentagem de origens na web que atendem aos limites "bons" de nosso candidato LCP.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "boas" (para candidatos a limites de LCP)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -113,7 +119,7 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <p data-md-type="paragraph">Além disso, para garantir que o limite escolhido seja consistentemente atingível para sites bem otimizados, analisamos o desempenho do LCP para sites de alto desempenho em toda a web, para determinar quais limites são consistentemente atingíveis para esses sites. Especificamente, nosso objetivo é identificar um limite que seja consistentemente atingível no 75º percentil para sites de melhor desempenho. Descobrimos que os limites de 1,5 e 2 segundos não são consistentemente alcançáveis, enquanto 2,5 segundos são consistentemente alcançáveis.</p>
 <p data-md-type="paragraph">Para identificar um limite "ruim" para LCP, usamos dados CrUX para identificar um limite atingido pela maioria das origens:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "ruins" (para candidatos a limites de LCP)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -153,7 +159,7 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <h3 data-md-type="header" data-md-header-level="3">Possibilidade de realização</h3>
 <p data-md-type="paragraph">Usando dados do CrUX, determinamos que a maioria das origens na web atendem ao limite "bom" do FID de 100 ms no 75º percentil:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "boas" para o limite FID de 100 ms</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th></th>
@@ -177,7 +183,7 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <h3 data-md-type="header" data-md-header-level="3">Possibilidade de realização</h3>
 <p data-md-type="paragraph">Com base nos dados CrUX, podemos ver que quase 50% das origens têm CLS de 0,05 ou menos.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "boas" (para candidatos a limites de CLS)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -202,7 +208,7 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <p data-md-type="paragraph">Embora os dados do CrUX sugiram que 0,05 pode ser um limite "bom" razoável para CLS, reconhecemos que existem alguns casos de uso em que é difícil evitar mudanças de layout perturbadoras. Por exemplo, para conteúdo incorporado de terceiros, como incorporações de mídia social, a altura do conteúdo incorporado às vezes não é conhecida até que termine de carregar, o que pode levar a uma mudança de layout maior que 0,05. Assim, concluímos que, embora muitas origens atendam ao limite de 0,05, o limite ligeiramente menos rigoroso do CLS de 0,1 atinge um melhor equilíbrio entre a qualidade da experiência e a capacidade de realização. Esperamos que, daqui para frente, o ecossistema da web identifique soluções para lidar com mudanças de layout causadas por incorporações de terceiros, o que permitiria o uso de um limite CLS "bom" mais rigoroso de 0,05 ou 0 em uma iteração futura dos Core Web Vitals.</p>
 <p data-md-type="paragraph">Além disso, para determinar um limite "ruim" para CLS, usamos dados CrUX para identificar um limite atingido pela maioria das origens:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "ruins" (para candidatos a limites de CLS)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>

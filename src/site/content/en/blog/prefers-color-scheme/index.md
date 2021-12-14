@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'prefers-color-scheme: Hello darkness, my old friend'
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
 authors:
@@ -189,8 +190,6 @@ and on Windows&nbsp;10, it's in the _Colors_ section and called _Choose your col
 For Android&nbsp;Q, you can find it under _Display_ as a _Dark Theme_ toggle switch (<a href="{{ 'image/admin/Yh6SEoWDK1SbqcGjlL6d.png' | imgix }}">screenshot</a>),
 and on iOS&nbsp;13, you can change the _Appearance_ in the _Display &amp; Brightness_
 section of the settings (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>).
-
-<div class="w-clearfix"></div>
 
 ## The `prefers-color-scheme` media query
 
@@ -535,7 +534,7 @@ has shown that the majority of the surveyed people
 prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as _re-colorization_.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="Hero image slightly darkened in dark mode.", width="800", height="618" %}
     <figcaption class="w-figcaption">
@@ -600,7 +599,7 @@ that people don't like inversion for photos, it does work very well for most ico
 Again I use CSS variables to determine the inversion amount
 in the regular and in the [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) state.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Icons are inverted in dark mode.", width="744", height="48" %}
     <figcaption class="w-figcaption">
@@ -763,7 +762,7 @@ The demo below shows the element in action
 ></dark-mode-toggle>
 ```
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="<dark-mode-toggle> in light mode.", width="140", height="76" %}
     <figcaption class="w-figcaption">

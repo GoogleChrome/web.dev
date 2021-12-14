@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Fast ads matter
 subhead: |
     Learn how improving ad speed can increase revenue and makes users happy, and
@@ -84,17 +85,17 @@ rate.
 With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic
 and 1.9% for desktop traffic:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/upKhjFZogtlvQGtTfwrX.svg", alt="Chart showing latency injected vs. impressions change", width="800", height="600" %}
-  <figcaption class="w-figcaption">Source: Google Internal Data, December 2016 to January 2017.</figcaption>
+  <figcaption>Source: Google Internal Data, December 2016 to January 2017.</figcaption>
 </figure>
 
 With 1&nbsp;s of added delay, viewability rate decreased by 3.6% for mobile
 traffic and 2.9% for desktop traffic:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/PeyZqzqs99y5kklrE2XK.svg", alt="Chart showing latency injected vs. viewability rate change", width="800", height="600" %}
-  <figcaption class="w-figcaption">Source: Google Internal Data, December 2016 to January 2017.</figcaption>
+  <figcaption>Source: Google Internal Data, December 2016 to January 2017.</figcaption>
 </figure>
 
 ## A framework for thinking about ad speed
@@ -151,7 +152,7 @@ While a more complex inventory type, such as mobile banner, may look like this:
 Then, use this information to create a simple table like the one below, which
 maps each inventory type to its dependencies in an easily digestible format.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

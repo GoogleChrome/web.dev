@@ -661,6 +661,7 @@ video,
 
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
+@import 'compositions/breakout';
 @import 'compositions/cluster';
 @import 'compositions/reel';
 @import 'compositions/repel';
@@ -685,6 +686,7 @@ video,
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/feature-card';
+@import 'blocks/figure';
 @import 'blocks/fixed-width-img';
 @import 'blocks/headline';
 @import 'blocks/hero';
@@ -737,9 +739,7 @@ video,
 @import 'pages/landing-page';
 @import 'pages/learn';
 @import 'pages/measure';
-
-// The prototype file is for temporary prototyping
-@import 'prototype';
+@import 'pages/path';
 
 // Temporary rollout patches
 @import 'rollout';

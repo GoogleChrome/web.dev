@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
   Use COOP and COEP to set up a cross-origin isolated environment and enable
@@ -44,7 +45,7 @@ and Desktop Chrome
   it's removed.
 - **May 6, 2021**: Based on feedback and issues reported we've decided to adjust
   the timeline for `SharedArrayBuffer` usage in none cross-origin isolated sites
-  to be restricted in Chrome M92. 
+  to be restricted in Chrome M92.
 - **April 16, 2021**: Added notes about [a new COEP credentialless
   mode](https://github.com/mikewest/credentiallessness/) and [COOP
   same-origin-allow-popups to be a relaxed
@@ -71,7 +72,7 @@ mitigate that risk, browsers offer an opt-in-based isolated environment called
 cross-origin isolated. With a cross-origin isolated state, the webpage will be
 able to use privileged features including:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -321,13 +322,13 @@ there's an issue with COEP, you should see
 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the **Status**
 column.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 You can then click the entry to see more details.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
@@ -340,7 +341,7 @@ You can check the iframe's status such as availability of `SharedArrayBuffer`,
 etc.
 </span>
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
@@ -349,7 +350,7 @@ You can also check the popup windows's status such as whether it's cross-origin
 isolated.
 </span>
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
 </figure>
 

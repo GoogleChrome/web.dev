@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 광고 전환을 측정하는 보다 개인적인 방법인 Event Conversion Measurement API
 subhead: 최초 평가판으로 사용할 수 있는 새로운 Web API는 사이트 간 식별자를 사용하지 않고 언제 광고 클릭이 전환으로 이어지는 지를 측정합니다.
 authors:
@@ -64,7 +65,7 @@ Chrome은 [제3자 쿠키에 대한 지원을 단계적으로 중단](https://bl
 
 ### 작동 원리
 
-<figure class="w-figure">{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="다이어그램: conversion measurement API 단계 개요", width="800", height="496" %}</figure>
+<figure>{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="다이어그램: conversion measurement API 단계 개요", width="800", height="496" %}</figure>
 
 이 API는 광고에 사용되는 두 가지 유형의 링크(`<a>` 요소)와 함께 사용할 수 있습니다.
 
@@ -123,7 +124,7 @@ Safari에서 사용하는 웹 브라우저 엔진인 WebKit에는 [Private Click
 
 #### 제3자 쿠키 사용
 
-<figure class="w-figure">{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="다이어그램: 제3자 쿠키가 사이트 간 사용자 인식을 가능하게 하는 방법", width="800", height="860" %}</figure>
+<figure>{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="다이어그램: 제3자 쿠키가 사이트 간 사용자 인식을 가능하게 하는 방법", width="800", height="860" %}</figure>
 
 `adtech.example`은 **사이트 간 고유 식별자로 사용되는 제3자 쿠키**를 이용해 **사이트 간에 사용자를 인식**합니다. 또한 `adtech.example`은 상세한 클릭 또는 조회 시간 데이터와 상세한 전환 시간 데이터에 **모두** 액세스하여 이들을 연결할 수 있습니다.
 
@@ -133,7 +134,7 @@ Safari에서 사용하는 웹 브라우저 엔진인 WebKit에는 [Private Click
 
 #### Event Conversion Measurement API 사용
 
-<figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="다이어그램: API가 사이트 간 사용자 인식 없이 전환 측정을 가능하게 하는 방법", width="800", height="643" %} <figcaption class="w-figcaption">쿠키 다이어그램의 "광고 ID"와 "클릭 ID"는 모두 세부 데이터에 매핑할 수 있게 해주는 식별자입니다. 이 다이어그램에서는 사용자 클릭 전환 측정만 지원되므로 "클릭 ID"라고 합니다.</figcaption></figure>
+<figure>{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="다이어그램: API가 사이트 간 사용자 인식 없이 전환 측정을 가능하게 하는 방법", width="800", height="643" %} <figcaption>쿠키 다이어그램의 "광고 ID"와 "클릭 ID"는 모두 세부 데이터에 매핑할 수 있게 해주는 식별자입니다. 이 다이어그램에서는 사용자 클릭 전환 측정만 지원되므로 "클릭 ID"라고 합니다.</figcaption></figure>
 
 `adtech.example`은 사이트 간 식별자를 사용할 수 없으며, 따라서 **여러 사이트에 걸쳐 사용자를 인식할 수 없습니다**.
 
@@ -160,8 +161,8 @@ Event Conversion Measurement API와 같은 제3자 쿠키에 대한 대안이 �
 
 클릭 데이터 및 전환 데이터 요약:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>데이터</th>
@@ -196,8 +197,8 @@ Event Conversion Measurement API와 같은 제3자 쿠키에 대한 대안이 �
 
 Chrome에서 보고서 예약은 다음과 같이 작동합니다.
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
@@ -254,7 +255,7 @@ Chrome에서 보고서 예약은 다음과 같이 작동합니다.
   </table>
 </div>
 
-<figure class="w-figure">{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="어떤 보고서가 언제 보내졌는 지에 대한 연대기", width="800", height="462" %}</figure>
+<figure>{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="어떤 보고서가 언제 보내졌는 지에 대한 연대기", width="800", height="462" %}</figure>
 
 타이밍에 대한 자세한 내용은 [예약 보고서 보내기](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports)를 참조하세요.
 
@@ -266,7 +267,7 @@ API가 전환을 기록하고 보고하는 방법은 다음과 같습니다. 이
 
 ### 광고 클릭(1~5단계)
 
-<figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="다이어그램: 광고 클릭 및 클릭 저장", width="800", height="694" %}</figure>
+<figure>{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="다이어그램: 광고 클릭 및 클릭 저장", width="800", height="694" %}</figure>
 
 `<a>` 광고 요소는 iframe 내의 `adtech.example`에 의해 게시자 사이트에 로드됩니다.
 
@@ -287,8 +288,8 @@ API가 전환을 기록하고 보고하는 방법은 다음과 같습니다. 이
 
 이 코드는 다음을 지정합니다.
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>귀속</th>
@@ -361,7 +362,7 @@ API가 전환을 기록하고 보고하는 방법은 다음과 같습니다. 이
 
 ### 전환 및 보고 예약(6~9단계)
 
-<figure class="w-figure">{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="다이어그램: 전환 및 보고 예약", width="800", height="639" %}</figure>
+<figure>{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="다이어그램: 전환 및 보고 예약", width="800", height="639" %}</figure>
 
 광고를 클릭한 직후 또는 나중에(예: 다음 날) 사용자는 `advertiser.example`을 방문하여 운동화를 검색하고 구매하려는 신발을 찾은 다음 결제를 진행합니다. `advertiser.example`의 체크아웃 페이지에 픽셀이 포함되었습니다.
 
@@ -407,7 +408,7 @@ app.get('/conversion', (req, res) => {
 
 ### 보고서 보내기(10 및 11단계)
 
-<figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="다이어그램: 보고서를 보내는 브라우저", width="800", height="533" %}</figure>
+<figure>{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="다이어그램: 보고서를 보내는 브라우저", width="800", height="533" %}</figure>
 
 보고서를 보내도록 예약된 시간에 도달하면 브라우저가 **전환 보고서**를 보냅니다. 구체적으로, `<a>` 요소(`adtech.example`)에 지정된 보고 출처로 HTTP POST가 보내집니다. 예를 들면 다음과 같습니다.
 

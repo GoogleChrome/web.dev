@@ -1,4 +1,5 @@
 ---
+layout: post
 title: '@property: giving superpowers to CSS variables'
 subhead: The Houdini Properties and Values API is coming to your CSS file in Chromium 85.
 authors:
@@ -38,7 +39,7 @@ it inherit the value from it's parent or not?). The current way to do this is
 through `CSS.registerProperty()` in JavaScript, but in Chromium 85 and later, the
 `@property` syntax will be supported in your CSS files:
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Separate JavaScript file (Chromium 78)' %}
 ```js
 CSS.registerProperty({
@@ -203,7 +204,7 @@ This will now enable that smooth gradient transition.
 </figure>
 -->
 
-## Conclusion 
+## Conclusion
 
 The `@property` rule makes an exciting technology even more accessible by
 allowing you to write semantically meaningful CSS within CSS itself. To learn

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Preparing for the display modes of tomorrow
 subhead: PWAs can use the "display_override" property to deal with special display modes.
 authors:
@@ -24,7 +24,7 @@ Via the [`display`](/add-manifest/#display) property, you can customize what bro
 address bar and browser chrome. Games can even be made to launch full screen.
 As a quick recap, below are the display modes that are specified at the time this article was written.
 
-<div class="w-table-wrapper">
+<div>
   <table id="display-params">
     <thead>
       <tr>

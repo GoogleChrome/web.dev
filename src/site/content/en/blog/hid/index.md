@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Connecting to uncommon HID devices
 subhead: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
@@ -50,7 +51,7 @@ of specific devices.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
@@ -78,7 +79,7 @@ including Bluetooth.
 
 Applications and HID devices exchange binary data through three report types:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -169,9 +170,9 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
-  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
+  <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
@@ -219,9 +220,9 @@ contain the HID data as a [`DataView`] object (`data`), the HID device it belong
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
+  <figcaption>Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
 Continuing with the previous example, the code below shows you how to detect
@@ -276,9 +277,9 @@ directions. They allow HID devices and applications to exchange non standardized
 HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Laptop keyboard</figcaption>
+  <figcaption>Laptop keyboard</figcaption>
 </figure>
 
 To send a feature report to a HID device, pass the 8-bit report ID associated
@@ -348,9 +349,9 @@ navigator.hid.addEventListener("disconnect", event => {
 Debugging HID in Chrome is easy with the internal page, `about://device-log`
 where you can see all HID and USB device related events in one single place.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
+  <figcaption>Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
 ## Browser support {: #browser-support }

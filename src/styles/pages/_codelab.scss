@@ -1,7 +1,7 @@
 @import '../tools/breakpoints';
 
 web-codelab {
-  // This spacing is put above the heading on mobile, so we can later load a 
+  // This spacing is put above the heading on mobile, so we can later load a
   // warning into it saying "not available on mobile". (Sorry.)
   $CODELAB_TOP_BUFFER: 160px;
 
@@ -36,7 +36,28 @@ web-codelab {
   }
 
   .web-codelab__glitch {
+    flex: 1;
     min-height: $CODELAB_TOP_BUFFER;
+    order: -1;
+
+    @include bp(md) {
+      order: initial;
+
+      .web-codelab__glitch-container {
+        position: sticky;
+        top: $WEB_HEADER_HEIGHT + 16px;
+        height: calc(100vh - #{$WEB_HEADER_HEIGHT + 32px});
+
+        .web-codelab__glitch-iframe {
+          height: 100%;
+          width: 100%;
+          border: 0;
+
+          &.web-codelab__glitch-snapshot {
+            background-color: red;
+          }
+        }
+      }
+    }
   }
 }
-

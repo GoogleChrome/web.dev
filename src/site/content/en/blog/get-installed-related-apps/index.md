@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: |
   The `getInstalledRelatedApps()` method allows your website to check whether
@@ -22,9 +23,9 @@ feedback:
 
 ## What is the getInstalledRelatedApps() API? {: #what }
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A website using <code>getInstalledRelatedApps()</code> to determine if its
     Android app is already installed.
   </figcaption>
@@ -43,16 +44,14 @@ For example, if your app is already installed:
 * Not [promoting the installation](/customize-install/) of your PWA if your
   other app is already installed.
 
-<div class="w-clearfix"></div>
-
 To use the `getInstalledRelatedApps()` API, you need to tell your app about
 your site, then tell your site about your app. Once you've defined the
 relationship between the two, you can check if the app is installed.
 
 ### Supported app types you can check
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>App type</th>

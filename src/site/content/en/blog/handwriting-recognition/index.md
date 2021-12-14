@@ -7,7 +7,7 @@ authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-# updated: 2021-05-14
+updated: 2021-12-14
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
@@ -47,12 +47,12 @@ Example uses include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
+| 2. Create initial draft of specification | [Complete][spec]         |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | [In progress][ot]        |
 | 5. Launch                                | Not started              |
@@ -369,7 +369,7 @@ application, [obtain it from npm](https://www.npmjs.com/package/handwriting-text
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the Handwriting Recognition API using the core
+The Chromium team designed and implemented the Handwriting Recognition API using the core
 principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control, transparency, and ergonomics.
 
@@ -420,6 +420,7 @@ and let us know where and how you're using it.
 ## Helpful Links
 
 - [Explainer][explainer]
+- [Spec draft][spec]
 - [GitHub repo][github]
 - [ChromeStatus](https://www.chromestatus.com/features/5263213807534080)
 - [Chromium bug](https://crbug.com/1207667)
@@ -435,6 +436,7 @@ This article was reviewed by [Joe Medley], Honglin Yu and Jiewei Qian. Hero imag
 [Unsplash](https://unsplash.com/photos/MFvflDBZdyM).
 
 [explainer]: https://github.com/WICG/handwriting-recognition/blob/main/explainer.md
+[spec]: https://wicg.github.io/handwriting-recognition/
 [github]: https://github.com/WICG/handwriting-recognition
 [issues]: https://github.com/WICG/handwriting-recognition/issues
 [cr-dev-twitter]: https://twitter.com/ChromiumDev

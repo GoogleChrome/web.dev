@@ -10,12 +10,13 @@
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  @include apply-utility('bg', 'core-bg');
+  border-radius: 10px;
+  border: 1px solid get-utility-value('bg', 'stroke');
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  @include apply-utility('bg', 'highlight-interact-bg');
+  @include apply-utility('bg', 'stroke');
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
