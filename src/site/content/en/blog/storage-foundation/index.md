@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 'High performance storage for your app: the Storage Foundation API'
 subhead: |
   The Storage Foundation API resembles a basic file system,

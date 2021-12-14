@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Breaking down barriers using the DataTransfer API
 subhead: "Enable the user to share data beyond the browser window."
 authors:

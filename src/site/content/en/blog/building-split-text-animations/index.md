@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building split text animations
 subhead: A foundational overview of how to build split letter and word animations.
 authors:

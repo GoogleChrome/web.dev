@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: |
   Excalidraw and Fugu: Improving Core User Journeys
 subhead: |

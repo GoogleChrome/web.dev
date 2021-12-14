@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reading and writing files and directories with the browser-fs-access library
 authors:
   - thomassteiner

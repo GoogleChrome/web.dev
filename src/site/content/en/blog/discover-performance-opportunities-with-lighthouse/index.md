@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Discover performance opportunities with Lighthouse
 authors:
   - kaycebasques

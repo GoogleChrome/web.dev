@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a breadcrumbs component
 subhead: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to navigate your site.
 authors:

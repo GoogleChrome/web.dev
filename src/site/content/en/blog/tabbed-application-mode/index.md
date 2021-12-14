@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Tabbed application mode for PWAs
 subhead: Work on more than one document at a time with tabs in your Progressive Web App
 authors:
