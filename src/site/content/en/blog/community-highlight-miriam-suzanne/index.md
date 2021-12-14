@@ -64,7 +64,7 @@ The conversation has also focused on size-based queries, as the original use-cas
 
 **Rachel:** Is there anything that we can’t do (or have an upcoming way to do) in CSS that you think would be useful?
 
-**Miriam:** I'm very excited about some other specs I've been working on. [Cascade Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) will give authors more control over specificity issues, and Scope should help with more precise selector targeting. But both of those are high-level architectural concerns. The artist in me is more excited for things like CSS toggles, a declarative way to create interactive styles, or container 'timelines', allowing us to smoothly transition values between media or container breakpoints. That has very practical implications for responsive typography, but would also open up a lot of creative opportunities for responsive art and animation. 
+**Miriam:** I'm very excited about some other specs I've been working on. [Cascade Layers](https://developer.mozilla.org/docs/Web/CSS/@layer) will give authors more control over specificity issues, and Scope should help with more precise selector targeting. But both of those are high-level architectural concerns. The artist in me is more excited for things like CSS toggles, a declarative way to create interactive styles, or container 'timelines', allowing us to smoothly transition values between media or container breakpoints. That has very practical implications for responsive typography, but would also open up a lot of creative opportunities for responsive art and animation. 
 
 **Rachel:** Who else is doing really interesting, fun, or creative work on the web right now?
 
