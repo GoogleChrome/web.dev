@@ -39,7 +39,7 @@ attempting to add any optimizations.
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/pyzLwutSzSx2qztQMXTM.png", alt="Network panel showing 71.2 KB JavaScript bundle.", width="800", height="153", class="w-screenshot" %}
+{% Img src="image/admin/pyzLwutSzSx2qztQMXTM.png", alt="Network panel showing 71.2 KB JavaScript bundle.", width="800", height="153" %}
 
 71.2 KB worth of JavaScript just to sort a few numbers in a simple application.
 What gives?
@@ -115,7 +115,7 @@ form.addEventListener("submit", e => {
 Reload the application, open DevTools, and take a look at the **Network** panel
 once again.
 
-{% Img src="image/admin/J8c1PhqMDOJKjoenzMCN.png", alt="Network panel showing 15.2 KB JavaScript bundle.", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/admin/J8c1PhqMDOJKjoenzMCN.png", alt="Network panel showing 15.2 KB JavaScript bundle.", width="800", height="148" %}
 
 For this application, the bundle size was reduced by over 4X with very little
 work, but there's still more room for improvement.
@@ -226,12 +226,12 @@ Reload the application one last time and keep a close eye on the **Network**
 panel again. Only a small initial bundle is downloaded as soon as the app
 loads.
 
-{% Img src="image/admin/f1QZcSozkaA1rj52YWGV.png", alt="Network panel showing 2.7 KB JavaScript bundle.", width="800", height="151", class="w-screenshot" %}
+{% Img src="image/admin/f1QZcSozkaA1rj52YWGV.png", alt="Network panel showing 2.7 KB JavaScript bundle.", width="800", height="151" %}
 
 After the button is pressed to sort the input numbers, the chunk that contains
 the sorting code gets fetched and executed.
 
-{% Img src="image/admin/LPNj3JpAmzsGppwJl5fs.png", alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.", width="800", height="211", class="w-screenshot" %}
+{% Img src="image/admin/LPNj3JpAmzsGppwJl5fs.png", alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.", width="800", height="211" %}
 
 Notice how the numbers still get sorted!
 
