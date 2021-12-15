@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "web.dev engineering blog #1: How we build the site and use Web Components"
 date: 2020-04-09
 authors:
@@ -53,7 +53,7 @@ Here's an example:
 
 ```md
 ---
-layout: post-old
+layout: post
 title: What is network reliability and how do you measure it?
 authors:
   - jeffposnick
@@ -111,7 +111,7 @@ It will end up looking like this:
 But it's actually creating HTML that looks like this:
 
 ```html
-<div class="w-aside w-aside--note">
+<div class="aside color-state-info-text">
 <p><a href="/handbook/web-dev-components/#asides">See how Asides work in the web.dev codebase</a></p>
 </div>
 ```

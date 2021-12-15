@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Going beyond images with basic video for the web
 subhead: Learn basic video. Increase engagement.
 authors:
@@ -79,7 +80,7 @@ users](https://caniuse.com/#search=h264),
 but is an older format, and as such, is generally a lot larger than WebM or H.265
 videos. In one example, you can see the difference for a two minute movie:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -156,14 +157,14 @@ window before the video starts playing:
 <video src="myVideo.mp4" poster="/image/myVideoImage.jpg">
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/g25bdsYqmAWM39KhjGTj.png", alt="A video without a poster shows a black screen before it starts.", width="478", height="269" %}
 </figure>
 {% Compare 'worse', 'No poster image' %}
   A video without a poster shows a black screen before it starts.
 {% endCompare %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/QVLwk1zEOzqllD8eY3pc.png", alt="A video with a poster is much more engaging.", width="478", height="269" %}
 </figure>
 {% Compare 'better', 'With a poster image' %}

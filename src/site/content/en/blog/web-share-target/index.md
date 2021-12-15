@@ -256,8 +256,6 @@ empty](https://bugs.chromium.org/p/chromium/issues/detail?id=789379) because
 it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
 
-<div class="w-clearfix"></div>
-
 ## Browser support
 
 As of early 2021, the Web Share Target API is supported by:

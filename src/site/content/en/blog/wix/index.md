@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How Wix improved website performance by evolving their infrastructure
 subhead: >
   A case study of some major changes introduced at Wix to improve website loading
@@ -199,10 +199,10 @@ improvements.
 ### Browser caching (and preparations for CDNs)
 
 <div class="w-figure">
-  <div class="w-stats">
-    <div class="w-stat">
-     <p class="w-stat__figure">~ 13<sub class="w-stat__sub">%</sub></p>
-     <p class="w-stat__desc">HTML requests served directly from the browser cache,
+  <div class="stats">
+    <div class="stats__item">
+     <p class="stats__figure">~ 13<sub>%</sub></p>
+     <p>HTML requests served directly from the browser cache,
      saving much bandwidth and reducing loading times for repeat views</p>
     </div>
   </div>
@@ -260,10 +260,10 @@ come with HTTP/2.
 ### Brotli compression (vs. gzip)
 
 <div class="w-figure">
-  <div class="w-stats">
-    <div class="w-stat">
-     <p class="w-stat__figure">21 - 25<sub class="w-stat__sub">%</sub></p>
-     <p class="w-stat__desc">Reduction of median file transfer size</p>
+  <div class="stats">
+    <div class="stats__item">
+     <p class="stats__figure">21 - 25<sub>%</sub></p>
+     <p>Reduction of median file transfer size</p>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Everything announced at Chrome Dev Summit 2021
 subhead: A roundup of all the key announcements from the 2021 Chrome Dev Summit, with the links you need to find out more.
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/gK7MVviHglsjJNEDG6Au.png

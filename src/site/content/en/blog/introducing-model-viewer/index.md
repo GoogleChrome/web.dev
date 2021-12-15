@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 'Introducing <model-viewer> 1.1'
 subhead: 3D models for your web page as easily as writing HTML.
 authors:

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Лучшие практики по настройке заголовков \tReferer и Referrer-Policy"
 subhead: Лучшие практики по настройке заголовка ответа Referrer-Policy и использования реферера во входящих запросах.
 authors:
@@ -34,7 +35,7 @@ HTTP-запросы могут включать необязательный [з
 
 В приведенном ниже примере заголовок `Referer` включает полный URL-адрес страницы на сайте `site-one`, с которого был сделан запрос.
 
-<figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-запрос, включая заголовок Referer", width="800", height="573" %}</figure>
+<figure>{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-запрос, включая заголовок Referer", width="800", height="573" %}</figure>
 
 Заголовок `Referer` может присутствовать в разных типах запросов:
 
@@ -47,7 +48,7 @@ HTTP-запросы могут включать необязательный [з
 
 Но когда полный URL-адрес, включая путь и строку запроса, отправляется в `Referer` **при запросах на другие источники**, это может нарушать **конфиденциальность** и создавать **риски для безопасности**. Взгляните на эти URL-адреса:
 
-<figure class="w-figure">{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URL-адреса с путями, сопоставленными с различными угрозами конфиденциальности и безопасности.", width="800", height="370" %}</figure>
+<figure>{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URL-адреса с путями, сопоставленными с различными угрозами конфиденциальности и безопасности.", width="800", height="370" %}</figure>
 
 URL-адреса с №1 по №5 содержат личную информацию, иногда даже идентифицирующую или конфиденциальную. Незаметная утечка данных при запросах на другие источники может поставить под угрозу конфиденциальность пользователей в Интернете.
 
@@ -63,13 +64,13 @@ URL № 6это [возможность URL](https://www.w3.org/TR/capability-ur
 - только [источник](/same-site-same-origin/#origin);
 - полный URL-адрес: источник, путь и строка запроса.
 
-<figure class="w-figure">{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Данные, которые могут содержаться в заголовке Referer и document.referrer.", width="800", height="255" %}</figure>
+<figure>{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Данные, которые могут содержаться в заголовке Referer и document.referrer.", width="800", height="255" %}</figure>
 
 Некоторые политики разработаны так, чтобы вести себя по-разному в зависимости от **контекста**: запрос на другой источник или в пределах текущего источника, безопасность, или и то, и другое (независимо от того, отправляется ли запрос из более безопасного протокола в менее безопасный). Это полезно для ограничения объема информации, передаваемой из разных источников, или для менее безопасных источниковпри сохранении разнообразия рефереров на вашем собственном сайте.
 
 Вот обзор, показывающий, как политики реферера ограничивают данные URL, доступные из заголовка Referer и `document.referrer`:
 
-<figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Различные политики рефереров и их поведение в зависимости от протокола безопасности и контекста разных источников.", width="800", height="537" %}</figure>
+<figure>{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Различные политики рефереров и их поведение в зависимости от протокола безопасности и контекста разных источников.", width="800", height="537" %}</figure>
 
 MDN предоставляет [полный список политик и примеров поведения](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
@@ -84,7 +85,7 @@ MDN предоставляет [полный список политик и пр
 
 **Если политика реферера не задана, будет использоваться политика браузера по умолчанию.**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -162,7 +163,7 @@ HTTP-заголовок и метаданные относятся к уровн
 
 Вы также можете использовать инструменты разработчика Chrome, Edge или Firefox, чтобы увидеть политику реферера, используемую для конкретного запроса. На момент написания этой статьи Safari не показывает `Referrer-Policy`, но показывает отправленный заголовок `Referer`.
 
-<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Скриншот панели Network в Chrome DevTools с заголовками Referer и Referrer-Policy.", width="800", height="416" %} <figcaption class="w-figcaption"> Chrome DevTools, панель <b>Network</b> с выбранным запросом. </figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Скриншот панели Network в Chrome DevTools с заголовками Referer и Referrer-Policy.", width="800", height="416" %} <figcaption> Chrome DevTools, панель <b>Network</b> с выбранным запросом. </figcaption></figure>
 
 ## Какую политику вы должны установить для своего веб-сайта?
 

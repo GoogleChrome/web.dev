@@ -108,6 +108,10 @@ declare global {
        * If the post should be excluded from /tags/ pages.
        */
       excludeFromTags?: boolean;
+      /**
+       * How Algolia should prioritize a page. 1 is average, higher is better.
+       */
+      algolia_priority: number;
     };
     /**
      * The rendered content of this template. This does not include layout wrappers.

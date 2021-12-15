@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: It's time to lazy-load offscreen iframes!
 subhead: Browser-level built-in lazy-loading for iframes is here
 authors:

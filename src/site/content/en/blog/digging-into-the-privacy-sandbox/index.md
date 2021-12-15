@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2021-09-03
+updated: 2021-12-10
 hero: image/admin/5F89q0kLUOLWvYtNJeWZ.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
@@ -83,6 +83,13 @@ The browser groups together many users with similar browsing histories into a gr
 Provides a solution for remarketing use cases, designed so it cannot be used by third parties to track user browsing behaviour across sites.
 
 You can dive into the API proposal explainers right away, and over the coming months we'll be publishing posts about each proposal individually.
+
+We'll also be adding to our playlist of five-minute videos that give a simple explanation of each API.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen style="max-width: 100% !important"></iframe>
 
 ## Use cases and goals
 

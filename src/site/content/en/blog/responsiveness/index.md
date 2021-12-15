@@ -99,7 +99,7 @@ most accurately reflect the interaction patterns on their pages.
 To help explain each of the following strategies, consider an example page visit
 that consists of four interactions:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th>Interaction</th>
@@ -138,7 +138,7 @@ suggests that users may not perceive latencies below certain thresholds as
 negative. Based on this research we're considering several budget strategies
 using on the following thresholds for each event type:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th>Interaction type</th>
@@ -163,7 +163,7 @@ Each of these strategies will only consider the latency that is more than the
 budget threshold per interaction. Using the example page visit above, the
 over-budget amounts would be as follows:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th>Interaction</th>
@@ -252,23 +252,22 @@ new PerformanceObserver((entries) => {
       // Get the interaction for this entry, or create one if it doesn't exist.
       let interaction = interactionMap.get(entry.interactionId);
       if (!interaction) {
-        interaction = {entries: []};
+        interaction = {latency: 0, entries: []};
         interactionMap.set(entry.interactionId, interaction);
       }
       interaction.entries.push(entry);
 
-      const latency = Math.max(entry.duration, interaction.latency || 0);
+      const latency = Math.max(entry.duration, interaction.latency);
       worstLatency = Math.max(worstLatency, latency);
 
       const budget = entry.name.includes('key') ? 50 : 100;
-      const latencyOverBudget = latency - budget;
+      const latencyOverBudget = Math.max(latency - budget, 0);
       worstLatencyOverBudget =
           Math.max(latencyOverBudget, worstLatencyOverBudget);
 
-      // If this event adds additional latency, update the total over budget.
-      const newLatency = latency - (interaction.latency || 0);
-      if (newLatency > 0) {
-        totalLatencyOverBudget += newLatency;
+      if (latencyOverBudget) {
+        const oldLatencyOverBudget = Math.max(interaction.latency - budget, 0);
+        totalLatencyOverBudget += latencyOverBudget - oldLatencyOverBudget;
       }
 
       // Set the latency on the interaction so future events can reference.
@@ -290,9 +289,9 @@ new PerformanceObserver((entries) => {
 {% Aside 'caution' %}
   There are currently [a few
   bugs](https://bugs.chromium.org/p/chromium/issues/list?q=label:proj-responsiveness-bugs)
-  in Chrome that affect accuracy of the reported interaction timestamps. We are
-  working to fix these bugs as soon as possible, and we recommend developers
-  test these strategies in Chrome Canary to get the most accurate results.
+  in Chrome that affect accuracy of the reported interaction timestamps. These
+  bugs have been fixed in version 98, so we recommend developers test these
+  strategies in Chrome Canary to get the most accurate results.
 {% endAside %}
 
 ## Feedback

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a color scheme
 subhead: A foundational overview of how to establish a dynamic and configurable color scheme
 authors:

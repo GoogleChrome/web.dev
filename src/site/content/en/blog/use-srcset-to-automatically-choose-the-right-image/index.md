@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Top tips for web performance
 subhead: Use srcset to automatically choose the right image size.
 authors:
@@ -62,7 +63,7 @@ Take a look at the images below.
 They appear nearly identical, but the file size of one is more than 10 times
 larger than the other.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/IHpM8DG6qiNlRcbfxnt8.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="800", height="534", class="w-screenshot" %}
     <figcaption class="w-figcaption">Saved width 1000 px, file size 184 KB</figcaption>

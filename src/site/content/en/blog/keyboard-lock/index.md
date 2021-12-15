@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Capture Keys with the Keyboard Lock API
 subhead: Provide an immersive, full screen experience for a variety of use cases including interactive websites, games, and remote desktop or application streaming.
 tags:

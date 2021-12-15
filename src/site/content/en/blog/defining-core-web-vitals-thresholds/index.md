@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Defining the Core Web Vitals metrics thresholds
 subhead: The research and methodology behind Core Web Vitals thresholds
 authors:
@@ -36,13 +37,18 @@ content.
 Each Core Web Vitals metric has associated thresholds, which categorize
 performance as either "good", "needs improvement", or "poor":
 
-<div class="w-stack w-stack--center w-stack--md">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -226,7 +232,7 @@ meet our candidate LCP "good" thresholds.
 
 **% of CrUX origins classified as "good" (for candidate LCP thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -272,7 +278,7 @@ met by most origins:
 
 **% of CrUX origins classified as "poor" (for candidate LCP thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -365,7 +371,7 @@ the 100ms FID "good" threshold at the 75th percentile:
 
 **% of CrUX origins classified as "good" for FID 100ms threshold**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th></th>
@@ -412,7 +418,7 @@ below.
 
 **% of CrUX origins classified as "good" (for candidate CLS thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>
@@ -453,7 +459,7 @@ identify a threshold met by most origins:
 
 **% of CrUX origins classified as "poor" (for candidate CLS thresholds)**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>&nbsp;</th>

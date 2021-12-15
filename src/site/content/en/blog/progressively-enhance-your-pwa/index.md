@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Progressively enhance your Progressive Web App
 subhead: Building for modern browsers and progressively enhancing like it's 2003
 authors:
@@ -448,7 +448,7 @@ the built-in share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/szInJQl908kv9GEU8EJf.png", alt="OS-level share sheet showing various apps to share the image to.", width="800", height="1645", class="w-screenshot" %}
     <figcaption class="w-figcaption">
@@ -513,7 +513,7 @@ contacts picker is limited to only show their names,
 but not their email addresses, or other information like their phone numbers.
 Their names are then drawn onto my greeting card.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T5gmSr1XGiVIV9Pw1HbC.png", alt="Contacts picker showing the names of two contacts in the address book.", width="800", height="1645", class="w-screenshot" %}
     <figcaption class="w-figcaption">
