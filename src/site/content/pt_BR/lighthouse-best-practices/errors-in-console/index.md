@@ -12,13 +12,13 @@ updated: '2019-08-28'
 
 A maioria dos navegadores vem com ferramentas de desenvolvedor integradas. Essas ferramentas de desenvolvedor geralmente incluem um [console](https://developers.google.com/web/tools/chrome-devtools/console/) . O console fornece informações sobre a página em execução no momento.
 
-Messages logged in the console come from either the web developers who built the page or the browser itself. All console messages have a severity level: `Verbose`, `Info`, `Warning`, or `Error`. An `Error` message means there's a problem on your page that you need to resolve.
+As mensagens registradas no console vêm dos desenvolvedores da web que criaram a página ou do próprio navegador. Todas as mensagens do console têm um nível de gravidade: `Verbose`, `Info`, `Warning` ou `Error`. Uma `Error` significa que há um problema em sua página que você precisa resolver.
 
-## How the Lighthouse browser error audit fails
+## Como a auditoria do Lighthouse de erro de navegador falha
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todos os erros do navegador registrados no console:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Lighthouse audit showing browser errors in the console", width="800", height="247", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Auditoria do Lighthouse mostrando erros do navegador no console", largura="800", altura="247", classe="w-screenshot"%}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
@@ -33,15 +33,15 @@ O Chrome DevTools inclui algumas ferramentas para ajudá-lo a rastrear a causa d
 
 Por exemplo, esta captura de tela mostra uma página com dois erros:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="An example of errors in the Chrome DevTools Console", width="800", height="505", class="w-screenshot w-screenshot--filled" %} </figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Um exemplo de erros no Chrome DevTools Console", largura="800", altura="505", classe="w-screenshot w-screenshot --preenchidas" %}</figure>
 
-In the example above, the first error comes from a web developer via a call to [`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error). The second error comes from the browser and indicates that a variable used in one of the page's scripts does not exist.
+No exemplo acima, o primeiro erro vem de um desenvolvedor da Web por meio de uma chamada para [`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error). O segundo erro vem do navegador e indica que não existe uma variável usada em um dos scripts da página.
 
-Below the text of each error, the DevTools Console indicates the call stack in which the error appears. For example, for the first error the Console indicates that an `(anonymous)` function called the `init` function, which called the `doStuff` function. Clicking the `pen.js:9` link in the top-right of that error shows you the relevant code.
+Abaixo do texto de cada erro, o DevTools Console indica a pilha de chamadas na qual o erro aparece. Por exemplo, para o primeiro erro, o Console indica que uma `(anonymous)` chamou a `init`, que chamou a função `doStuff` Clicar no `pen.js:9` no canto superior direito desse erro mostra o código relevante.
 
 Revisar o código relevante para cada erro dessa forma pode ajudá-lo a identificar e resolver possíveis problemas.
 
-If you can't figure out the cause of an error, try entering the error text into a search engine. If you can't find solutions to your problem, try asking a question on [Stack Overflow](https://stackoverflow.com).
+Se você não consegue descobrir a causa de um erro, tente inserir o texto do erro em um mecanismo de pesquisa. Se você não conseguir encontrar soluções para o seu problema, tente fazer uma pergunta no [Stack Overflow](https://stackoverflow.com).
 
 Se você não puder corrigir um erro, considere envolvê-lo em uma [`try…catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) para indicar explicitamente no código que você está ciente do problema. Você também pode usar o `catch` para lidar com o erro de forma mais elegante.
 
