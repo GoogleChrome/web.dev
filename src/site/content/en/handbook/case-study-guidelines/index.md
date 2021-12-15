@@ -117,11 +117,11 @@ You can check out [all of our case studies](/tags/case-study/) for more ideas,
 but be aware that they may not follow the case study guidelines as
 closely as the [Scale on web case studies][scale] do.
 
-[five]: https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project
-[scale]: /tags/scale-on-web/
-
 ## Deliverables {: #deliverables }
 
 When submitting the first draft of your case study, please submit it as a Google
 Doc. This helps to ensure that editorial feedback is communicated in a
 consistent way in a format that is familiar for Googlers.
+
+[five]: https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project
+[scale]: /tags/scale-on-web/
