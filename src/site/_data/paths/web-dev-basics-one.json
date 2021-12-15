@@ -1,0 +1,88 @@
+{
+  "slug": "web-dev-basics-one",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/9K5gvnLRtD0yyiJM2r0c.svg",
+  "title": "i18n.paths.web-dev-basics-one.title",
+  "updated": "December 15, 2021",
+  "description": "i18n.paths.web-dev-basics-one.description",
+  "overview": "i18n.paths.web-dev-basics-one.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.web",
+      "pathItems": [
+        {
+          "title": "Web development basics",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "The role of HTML, CSS, and JavaScript on a web page",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards"
+        },
+        {
+          "title": "The importance of accessibility",
+          "url": "what-is-accessibility"
+        },
+        {
+          "title": "The value of web security and privacy",
+          "url": "security-not-scary"
+        },
+        {
+          "title": "Preview the capabilities of the modern web platform",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "An introduction to web development quiz",
+          "url": "https://developers.google.com/web"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.html",
+      "pathItems": [
+        {
+          "title": "Introduction to HTML",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "Write and preview HTML code with a code editor",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "Learn basic HTML elements",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "Structure an HTML web page",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "Accessible HTML with semantic tags",
+          "url": "https://www.youtube.com/watch?v=g2tzEil5TL0"
+        },
+        {
+          "title": "Learn additional HTML elements",
+          "url": "https://developers.google.com/web"
+        },
+        {
+          "title": "Embed media content with video and audio tags",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content"
+        },
+        {
+          "title": "Write semantic HTML quiz",
+          "url": "https://developers.google.com/web"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.css",
+      "pathItems": []
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.javascript",
+      "pathItems": []
+    },
+    {
+      "title": "i18n.paths.web-dev-basics-one.topics.dom",
+      "pathItems": []
+    }
+  ]
+}

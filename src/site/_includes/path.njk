@@ -45,7 +45,7 @@ eleventyComputed:
   <div class="sidebar" data-direction="rtl">
     <div class="pad-block-size-1 flow">
       <h2>Overview</h2>
-      <p>{{path.overview | i18n(locale)}}</p>
+      <p>{{path.overview | i18n(locale) | safe}}</p>
       {% if path.youtubeId %}
         {% YouTube path.youtubeId %}
       {% endif %}
