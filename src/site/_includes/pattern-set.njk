@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-next
 pageScripts:
   - '/js/content.js'
 ---
@@ -36,7 +36,7 @@ pageScripts:
   {% set currentPatternSet = null %}
 {% endif %}
 
-<section class="w-layout-container--wide">
+<section class="wrapper">
   {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
   {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
   {% set crumbs = [
@@ -46,17 +46,13 @@ pageScripts:
   {{ breadcrumbs(crumbs) }}
 </section>
 
-<header class="w-masthead-patterns">
-  <div class="w-masthead-patterns__container w-layout-container--wide">
-    <div class="w-masthead-patterns__left">
-      <h1 class="w-headline--two">
-        {{ patternSuite.title }}
-      </h1>
-      <p>
-        {{ patternSuite.description }}
-      </p>
+<header class="wrapper region">
+  <div class="path__header">
+    <div>
+      <h1 class="text-size-6">{{ patternSuite.title }}</h1>
+      <p> {{ patternSuite.description }}</p>
     </div>
-    <div class="w-masthead-patterns__right">
+    <div class="all-center">
       {% Img
           height=220,
           width=330,
@@ -71,85 +67,72 @@ pageScripts:
 
 <hr>
 
-<section class="w-layout-container--wide code-patterns-nav--top">
-  <nav class="code-patterns-nav__sets">
-    {% for setId, set in patterns.sets %}
-      {% if set.suite == patternSuite.id %}
-        {% if setId == currentPatternSet.id %}
-          <a class="selected" href="/patterns/{{set.id}}">{{set.title}}</a>
-        {% else %}
-          <a href="/patterns/{{set.id}}">{{set.title}}</a>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-  </nav>
-  <div class="code-patterns-nav__filter">
-    {# <input type="text" placeholder="filter"/> #}
-  </div>
-</section>
+<div class="wrapper pad-block-size-1">
+  <div class="sidebar" data-direction="rtl">
+    <div class="pad-block-size-1 flow prose">
+      {# Show patterns from current set (if set) or from the whole suite #}
+      {% if currentPatternSet %}
+        <h2 class="w-headline--two">{{ currentPatternSet.title }}</h2>
+        {{ content | safe }}
+        <div>
+        {% for patternId, pattern in patterns.patterns %}
+          {% if pattern.set == currentPatternSet.id %}
+            {{ codePattern(pattern) }}
+          {% endif %}
+        {% endfor %}
+        </div>
 
-<section class="w-layout-container--wide code-patterns-main">
-  <div>
-    {# Show patterns from current set (if set) or from the whole suite #}
-    {% if currentPatternSet %}
-      <h2 class="w-headline--two">{{ currentPatternSet.title }}</h2>
-      {{ content | safe }}
-      {% for patternId, pattern in patterns.patterns %}
-        {% if pattern.set == currentPatternSet.id %}
-          {{ codePattern(pattern) }}
-        {% endif %}
-      {% endfor %}
+      {% else %}
 
-    {% else %}
+        {{ content | safe }}
 
-      {# Patterns in PatternSets that belong to the current suite #}
-      {% for patternSetId, patternSet in patterns.sets %}
-        {% if patternSet.suite == patternSuite.id %}
-          <h2 class="w-headline--two">{{ patternSet.title }}</h2>
-          {{ patternSet.rawContent | siteRender | safe }}
+        {# Patterns in PatternSets that belong to the current suite #}
+        {% for patternSetId, patternSet in patterns.sets %}
+          {% if patternSet.suite == patternSuite.id %}
+            <h2 class="w-headline--two">{{ patternSet.title }}</h2>
+            {{ patternSet.rawContent | siteRender | safe }}
+            <div>
+            {% for patternId, pattern in patterns.patterns %}
+              {% if pattern.set == patternSetId %}
+                {{ codePattern(pattern) }}
+              {% endif %}
+            {% endfor %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        {# Patterns that belong directly to the pattern suite #}
+        <div>
           {% for patternId, pattern in patterns.patterns %}
-            {% if pattern.set == patternSetId %}
+            {% if pattern.set == patternSuite.id %}
               {{ codePattern(pattern) }}
             {% endif %}
           {% endfor %}
-        {% endif %}
-      {% endfor %}
+        </div>
 
-      {# Patterns that belong directly to the pattern suite #}
-      {% set first = true %}
-      {% for patternId, pattern in patterns.patterns %}
-        {% if pattern.set == patternSuite.id %}
-          {% if first %}
-            {{ content | safe }}
-          {% endif %}
-          {% set first = false %}
-          {{ codePattern(pattern) }}
-        {% endif %}
-      {% endfor %}
-
-    {% endif %}
-  </div>
-
-  <div class="code-patterns-nav--side">
-    <div class="code-patterns-nav__filter">
-      {# <input type="text" placeholder="filter"/> #}
-    </div>
-    <nav class="code-patterns-nav__sets">
-      {% if currentPatternSet %}
-        <a href="/patterns/{{patternSuite.id}}">All</a>
-      {% else %}
-        <a class="selected" href="/patterns/{{patternSuite.id}}">All</a>
       {% endif %}
-      {% for setId, set in patterns.sets %}
-        {% if set.suite == patternSuite.id %}
-          {% if setId == currentPatternSet.id %}
-            <a class="selected" href="/patterns/{{set.id}}">{{set.title}}</a>
-          {% else %}
-            <a href="/patterns/{{set.id}}">{{set.title}}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </nav>
-
+    </div>
+    <div class="pad-block-size-1">
+      <div class="toc">
+        <div class="toc__content">
+          <ul class="toc__list">
+            {% if currentPatternSet %}
+              <li><a href="/patterns/{{patternSuite.id}}">All</a></li>
+            {% else %}
+              <li><a class="w-scroll-spy__active" href="/patterns/{{patternSuite.id}}">All</a></li>
+            {% endif %}
+            {% for setId, set in patterns.sets %}
+              {% if set.suite == patternSuite.id %}
+                {% if setId == currentPatternSet.id %}
+                  <li><a class="w-scroll-spy__active" href="/patterns/{{set.id}}">{{set.title}}</a></li>
+                {% else %}
+                  <li><a href="/patterns/{{set.id}}">{{set.title}}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

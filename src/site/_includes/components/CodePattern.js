@@ -56,7 +56,7 @@ module.exports = (patternId, height) => {
   height = height || pattern.height || defaultHeight;
 
   return `<div class="code-pattern">
-    <div class="code-pattern__content">
+    <div class="code-pattern__content auto-grid">
       <div class="code-pattern__demo" style="min-height: ${height}px">
         <iframe src="${pattern.demo}" title="Demo" height="${height}"></iframe>
       </div>
@@ -69,8 +69,12 @@ module.exports = (patternId, height) => {
         href="${pattern.demo}"
         target="_blank"
         class="code-pattern__icon"
-        data-icon="open_in_new"
-      >Open demo</a>
+      >
+        <svg viewBox="0 0 24 24">
+          <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+        </svg>
+        Open demo
+      </a>
     </div>
   </div>`;
 };

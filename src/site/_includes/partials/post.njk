@@ -52,12 +52,6 @@
         <div class="w-post-breadcrumbs">
           {% Breadcrumbs {title: 'All articles', slug: 'blog'} %}
         </div>
-      {% elif crumbs %}
-        {# Display other breadcrumbs #}
-        {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
-        <div class="w-post-breadcrumbs">
-          {{ breadcrumbs(crumbs) }}
-        </div>
       {% endif %}
 
       <h1 id="{{ safeTitle | slugify }}" class="w-article-header__headline">{{ safeTitle }}</h1>

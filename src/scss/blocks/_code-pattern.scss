@@ -1,0 +1,62 @@
+// @import '../settings/colors';
+// @import '../tools/mixins';
+// @import '../tools/breakpoints';
+
+// =============================================================================
+// CODE PATTERN component
+//
+// A component that displays the code and a demo side by side.
+//
+// =============================================================================
+
+.code-pattern {
+  width: 100%;
+
+  .code-pattern__assets {
+    border: 1px solid get-utility-value('bg', 'stroke');
+  }
+
+  .code-pattern__meta {
+    padding-top: 0.5rem;
+  }
+
+  .code-pattern__icon {
+    text-decoration: none;
+
+    svg {
+      vertical-align: middle;
+      margin-right: 4px;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  web-tabs:not(:defined) {
+    display: none;
+  }
+
+  web-tab {
+    height: 100%;
+  }
+
+  pre {
+    border: 0;
+    background: 0;
+    height: 100%;
+    margin: 0;
+  }
+
+  iframe {
+    // background-color: $WHITE;
+    // border: 1px solid $BORDER_COLOR;
+    width: 100%;
+    resize: both;
+    position: relative;
+    z-index: 1;
+  }
+
+  web-tabs {
+    height: 100%;
+    width: 100%;
+  }
+}

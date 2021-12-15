@@ -33,49 +33,15 @@
     #}
     <article class="prose legacy-rollout">
       <header class="flow gap-bottom-size-3">
-        {% if 'blog' in tags or crumbs %}
-          <nav class="breadcrumbs" aria-label="breadcrumbs">
-            <ul class="breadcrumbs__list" role="list">
-              <li>
-                <a
-                  class="gc-analytics-event"
-                  data-category="web.dev"
-                  data-label="post, home breadcrumb"
-                  data-action="click"
-                  href="/"
-                >
-                  {{site.titleVariation}}
-                </a>
-              </li>
-              {% if 'blog' in tags %}
-              <li>
-                <a
-                  class="gc-analytics-event"
-                  data-category="web.dev"
-                  data-label="post, path breadcrumb"
-                  data-action="click"
-                  href="/blog"
-                >
-                  {{ 'i18n.search.all_articles' | i18n(locale) }}
-                </a>
-              </li>
-              {% elif crumbs %}
-                {% for crumb in crumbs %}
-                  <li>
-                    <a
-                      class="gc-analytics-event"
-                      data-category="web.dev"
-                      data-label="post, path breadcrumb"
-                      data-action="click"
-                      href="{{crumb[1]}}"
-                    >
-                      {{crumb[0]}}
-                    </a>
-                  </li>
-                {% endfor %}
-              {% endif %}
-            </ul>
-          </nav>
+        {% if 'blog' in tags %}
+          {% set allArticles = 'i18n.search.all_articles' | i18n(locale) %}
+          {% set crumbs = [
+            [allArticles, '/blog']
+          ] %}
+        {% endif %}
+        {% if crumbs %}
+          {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+          {{ breadcrumbs(crumbs) }}
         {% endif %}
 
         <h1 id="{{ safeTitle | slugify }}">{{ safeTitle }}</h1>
@@ -177,7 +143,7 @@
           </a>
         </div>
       {% endif %}
-      <div class="docked-actions flow flow-space-base">    
+      <div class="docked-actions flow flow-space-base">
         <div>
           <share-action class="gc-analytics-event fab"
             authors="{{ authors | expandAuthors(collections.authors, lang) }}"
@@ -189,11 +155,11 @@
             tabindex="0"
             role="button"
           >
-            {% include "icons/share.svg" %} 
+            {% include "icons/share.svg" %}
             <span class="fab__label">{{ 'i18n.common.share' | i18n(locale) }}</span>
           </share-action>
         </div>
-        {# Temp hidden 
+        {# Temp hidden
         <div>
           {% include 'partials/subscribe-action-next.njk' %}
         </div> #}

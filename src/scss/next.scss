@@ -309,7 +309,6 @@ table[data-alignment='baseline'] {
 hr {
   border: none;
   border-top: 1px solid var(--color-stroke);
-  max-width: 80rem;
   margin-inline: 0;
 }
 
@@ -681,6 +680,7 @@ video,
 @import 'blocks/callout';
 @import 'blocks/card';
 @import 'blocks/carousel';
+@import 'blocks/code-pattern';
 @import 'blocks/compare';
 @import 'blocks/counter';
 @import 'blocks/eyebrow';
