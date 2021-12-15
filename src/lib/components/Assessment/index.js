@@ -15,7 +15,6 @@
  */
 
 import {html} from 'lit-element';
-import {render} from 'lit-html';
 import {BaseModalElement} from '../BaseModalElement';
 
 /**
