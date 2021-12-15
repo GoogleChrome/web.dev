@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Control how your app is launched
-subhead: |
+subhead: >
   Launch handler lets you control how your app is launched, for example, whether it uses an existing or a new
   window and whether the chosen window is navigated to the launch URL. This also enqueues a
   `LaunchParams` object in the launched page's `window.launchQueue`, similar to the File
@@ -10,7 +10,7 @@ authors:
   - thomassteiner
 date: 2021-12-14
 # updated: 2021-12-14
-description: |
+description: >
   Launch handler lets you control how your app is launched, for example, whether it uses an existing
   window and whether the chosen window is navigated to the launch URL.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/xw3fQotYBLeA8AUZAh5O.jpg
@@ -137,9 +137,9 @@ are as follows:
     `targetURL` in the enqueued `LaunchParams` set to the launch's target URL.
 
 {% Aside 'warning' %}
-  Careful, setting `navigate_existing_client` to `always` can cause data loss. Only use this
-  when it is safe to do so (for example, in a music player), or make sure the user's data gets
-  saved before navigating away from the previous location.
+Careful, setting `navigate_existing_client` to `always` can cause data loss. Only use this
+when it is safe to do so (for example, in a music player), or make sure the user's data gets
+saved before navigating away from the previous location.
 {% endAside%}
 
 Both `route_to` and `navigate_existing_client` also accept a list (array) of values, where the first
@@ -177,6 +177,7 @@ sure to check out the [source code][demo-source] of the application to see how i
 Handler API.
 
 <!--lint disable no-literal-urls -->
+
 1. Install the _Musicr 2.0_ app on a Chrome OS device.
 1. Send yourself a link in a chat application of the form
    <code>https://launch-handler.glitch.me?track=<strong>https://example.com/music.mp3</strong></code>.
