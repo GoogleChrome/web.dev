@@ -27,7 +27,7 @@ tags:
 {% Aside 'caution' %} Declarative Link Capturing was part of the
 [capabilities project](/fugu-status/).
 The engineering team has decided that Declarative Link Capturing will _not_
-launch in the current shape. Instead, the feature has been redesigned as
+launch with its current design. Instead, the feature has been redesigned as
 described in [Control how your app is launched](/launch-handler/).
 {% endAside %}
 
