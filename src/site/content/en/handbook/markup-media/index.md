@@ -89,11 +89,15 @@ an image on its horitonzal axis you would do:
 %}{% endraw%}
 ```
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
-Original
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>Original</figcaption>
+</figure>
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240", params={flip: 'h'} %}
-Flipped
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240", params={flip: 'h'} %}
+  <figcaption>Flipped</figcaption>
+</figure>
 
 {% Aside %}
 Please call out in a review if you're calling a specific Imgix API, so we can be
@@ -112,25 +116,33 @@ To include a caption along with an image, use `<figure>` with `<figcaption>` and
 place the shortcode snippet inside:
 
 ```md
-<figure>
-{% raw %}{% Img
-  src="image/foR0vJZKULb5AGJExlazy1xYDgI2/iuwBXAyKJMz4b7oRyIdI.jpg",
-  alt="ALT_TEXT_HERE",
-  width="380",
-  height="240",
-%}{% endraw%}
-  <figcaption>
-    A good boy.
-  </figcaption>
+{% raw %}
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
 </figure>
+{% endraw%}
 ```
 
 <figure>
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg",
-alt="ALT_TEXT_HERE", width="380", height="240" %}
-  <figcaption>
-    A good boy.
-  </figcaption>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
+</figure>
+
+If you would like an image to stretch to the full width of the content, you can apply the `data-size="full"` attribute to the `<figure>` element.
+
+```md
+{% raw %}
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
+</figure>
+{% endraw%}
+```
+
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
 </figure>
 
 ### YouTube

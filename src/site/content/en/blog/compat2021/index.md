@@ -194,21 +194,21 @@ aren't supported in Chromium, and although now
 the results are inconsistent across browsers:
 
 <div class="switcher">
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             Chromium with "TablesNG"
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             Gecko
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             WebKit
         </figcaption>
     </figure>

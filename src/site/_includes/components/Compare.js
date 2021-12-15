@@ -60,7 +60,7 @@ function Compare(content, type, labelOverride) {
 
   if (isDesignSystemContext(this.page.filePathStem)) {
     // prettier-ignore
-    return `<figure class="compare flow" data-type="${type}"><p class="compare__label">${label}</p>
+    return `<figure class="compare flow" data-type="${type}" data-size="full"><p class="compare__label">${label}</p>
 ${content}</figure>`;
   }
 

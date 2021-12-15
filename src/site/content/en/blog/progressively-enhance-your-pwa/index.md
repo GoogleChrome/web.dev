@@ -946,23 +946,23 @@ but the core functionality is always there—progressively enhanced according to
 Note that these capabilities may change even in one and the same browser,
 depending on whether the app is running as an installed app or in a browser tab.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LmUW0CZpH5eXIoHTZ6kH.png", alt="Fugu Greetings running on Android Chrome, showing many available features.", width="500", height="243", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LmUW0CZpH5eXIoHTZ6kH.png", alt="Fugu Greetings running on Android Chrome, showing many available features.", width="500", height="243" %}
+  <figcaption>
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on Android Chrome.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BOcbAW4FCi10d9cGdeNW.png", alt="Fugu Greetings running on desktop Safari, showing fewer available features.", width="500", height="403", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BOcbAW4FCi10d9cGdeNW.png", alt="Fugu Greetings running on desktop Safari, showing fewer available features.", width="500", height="403" %}
+  <figcaption>
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on desktop Safari.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7zT4BEUzxTkjg8e08OJU.png", alt="Fugu Greetings running on desktop Chrome, showing many available features.", width="500", height="348", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7zT4BEUzxTkjg8e08OJU.png", alt="Fugu Greetings running on desktop Chrome, showing many available features.", width="500", height="348" %}
+  <figcaption>
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on desktop Chrome.
   </figcaption>
 </figure>

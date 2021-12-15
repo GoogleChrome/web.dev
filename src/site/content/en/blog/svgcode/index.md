@@ -26,9 +26,9 @@ In a hurry? Go [straight to the SVGcode app](https://svgco.de/)
 and read the article later.
 {% endAside %}
 
-<figure class="w-figure">
+<figure data-size="full">
   {% YouTube "kcvfyQh6J-0" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     (If you prefer watching over reading, this article is also available as a <a href="https://youtu.be/kcvfyQh6J-0">video</a>.)
   </figcaption>
 </figure>
