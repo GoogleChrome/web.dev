@@ -136,6 +136,12 @@ are as follows:
   - `never`: Existing browsing contexts chosen for launch will not be navigated and instead have
     `targetURL` in the enqueued `LaunchParams` set to the launch's target URL.
 
+{% Aside 'warning' %}
+  Careful, setting `navigate_existing_client` to `always` can cause data loss. Only use this
+  when it is safe to do so (for example, in a music player), or make sure the user's data gets
+  saved before navigating away from the previous location.
+{% endAside%}
+
 Both `route_to` and `navigate_existing_client` also accept a list (array) of values, where the first
 valid value will be used. This is to allow new values to be added to the spec without breaking
 backwards compatibility with existing implementations.
