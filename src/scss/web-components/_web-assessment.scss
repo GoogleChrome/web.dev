@@ -20,6 +20,14 @@ web-assessment {
   a:focus {
     outline-color: currentColor;
   }
+
+  .web-tabs__tablist {
+    background: none;
+  }
+
+  [data-role='stimulus'] {
+    margin-block: get-space('size-1');
+  }
 }
 
 .web-assessment__content {

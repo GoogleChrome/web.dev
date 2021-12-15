@@ -9,13 +9,21 @@
 
 .web-select-group__option {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.3rem;
 
   code {
     border: none;
     padding: 0;
     background: transparent;
+  }
+
+  input {
+    transform: translateY(0.2ex);
+
+    &::before {
+      display: none;
+    }
   }
 }
 
@@ -29,4 +37,35 @@
 
 .web-response__correctness-flag {
   transform: translateY(-0.25ex);
+  margin-block-end: 0.5rem;
+
+  @include apply-utility('weight', 'bold');
+  @include apply-utility('color', 'state-bad-text');
+
+  [data-correct] & {
+    @include apply-utility('color', 'state-good-text');
+  }
+}
+
+.web-response__option-rationale {
+  font-size: get-size('size-0');
+  margin-block-end: 0.5rem;
+
+  @include apply-utility('color', 'mid-text');
+}
+
+/// Only show the correctness flags and option rationale when the
+/// context (usually assesment is submitted)
+.web-select-group {
+  .web-response__correctness-flag,
+  .web-response__option-rationale {
+    display: none;
+  }
+}
+
+[state='completed'] .web-response__correctness-flag,
+[data-role='option'][data-submitted] .web-response__correctness-flag,
+[state='completed'] .web-response__option-rationale,
+[data-role='option'][data-submitted] .web-response__option-rationale {
+  display: block;
 }

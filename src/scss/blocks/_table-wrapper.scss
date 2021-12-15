@@ -3,7 +3,6 @@
 .table-wrapper {
   @include overflow-shadow(#{get-utility-value('bg', 'core-bg')});
 
-
   table {
     min-width: 30rem;
     width: 100%;

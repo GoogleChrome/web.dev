@@ -1,6 +1,5 @@
 import {html} from 'lit-element';
 import {BaseResponseElement} from '../BaseResponseElement';
-import './_styles.scss';
 import {generateIdSalt} from '../../utils/generate-salt';
 
 export class ResponseMultipleChoice extends BaseResponseElement {

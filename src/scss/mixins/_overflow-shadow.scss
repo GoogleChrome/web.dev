@@ -5,7 +5,6 @@
 /// All you need to pass in is a background color, or it won't conceal
 // the shadow when there is overflow content
 @mixin overflow-shadow($background) {
-  width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
