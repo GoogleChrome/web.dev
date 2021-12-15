@@ -32,17 +32,17 @@ There are many ways to launch a Progressive Web App. Probably the most common is
 home screen or the app drawer of the device. But when you think about it, there are many other ways
 a launch can happen:
 
-- The app can be launched as the result of a share action when the app is a
+- A share action when the app is a
   [share target](/web-share-target/).
-- A user may have clicked a file in their file explorer and decided to open it with the PWA, which
+- A user click in the file explorer opening the PWA, which
   acts as a [file handler](/file-handling/).
-- If the PWA has registered as a [protocol handler](/protocol-handling/), the PWA may launch as the
+- A registered [protocol handler](/protocol-handling/) that the PWA may launch as the
   result of a matching protocol.
-- The PWA may also be launched as a result of a click on a
+- A click on a
   [push notification](/push-notifications-overview/) or an [app icon shortcut](/app-shortcuts/).
 
-There are even more ways, but you get the idea… Given the manyfold possibilities for launching PWAs,
-what was missing so far is a way to let apps customize their launch behavior across all types of app
+There are even more ways, but you get the idea. Given the manifold possibilities for launching PWAs,
+what has been missing is a way to let apps customize their launch behavior across all types of app
 launch triggers. The `launch_handler` manifest member together with the `window.launchQueue`
 interface enables PWAs to do just that.
 
@@ -104,7 +104,7 @@ if ('launchQueue' in window && 'targetURL' in LaunchParams.prototype) {
 To declaratively specify the launch behavior of your app, add the `launch_handler` manifest member
 to your manifest. It has two sub-fields, `route_to` and `navigate_existing_client`. The former lets
 you control whether a new or an existing client should be launched, and the latter how and if this
-client should be navigated. The code snippet below shows an excerpt of a Web App Manifest file with
+client should be navigated. The Web App Manifest excerpt below shows a file with
 exemplary values that would always route all launches to a new client.
 
 ```json
@@ -124,8 +124,7 @@ are as follows:
 
   - `new-client`: A new browsing context is created in a web app window to load the launch's target
     URL.
-  - `existing-client`: The most recently interacted with browsing context in a web app window for
-    the app being launched is chosen to handle the launch. How the launch is handled within that
+  - `existing-client`: An existing browsing context is used, specifically the one most recently used. How the launch is handled within that
     browsing context depends on `navigate_existing_client`.
   - `auto`: The behavior is up to the user agent to decide what works best for the platform. For
     example, mobile devices only support single clients and would use `existing-client`, while
@@ -141,7 +140,7 @@ Both `route_to` and `navigate_existing_client` also accept a list (array) of val
 valid value will be used. This is to allow new values to be added to the spec without breaking
 backwards compatibility with existing implementations.
 
-For example, if the value `"matching-url-client"` were added, sites would specify
+For example, if the hypothetical value `"matching-url-client"` were added, sites would specify
 `"route_to": ["matching-url-client", "existing-client"]` to continue to control the behavior of
 older browsers that did not support `"matching-url-client"`.
 
@@ -154,7 +153,7 @@ specify a consumer for the `window.launchQueue` object, which is then passed the
 `launchParams.targetURL` field. Launches are queued until they are handled by the specified
 consumer, which is invoked exactly once for each launch. In this manner, every launch is handled,
 regardless of when the consumer was specified. The code snippet below shows a fictive audio player
-PWA that extract a song ID from a target URL that it is potentially passed upon launch.
+PWA that extracts a song ID from a target URL that it is potentially passed on launch.
 
 ```js
 launchQueue.setConsumer((launchParams) => {
@@ -172,21 +171,21 @@ sure to check out the [source code][demo-source] of the application to see how i
 Handler API.
 
 <!--lint disable no-literal-urls -->
-1. Install the app on a Chrome OS device.
+1. Install the _Musicr 2.0_ app on a Chrome OS device.
 1. Send yourself a link in a chat application of the form
    <code>https://launch-handler.glitch.me?track=<strong>https://example.com/music.mp3</strong></code>.
    (You can customize
    <code><strong>https://example.com/music.mp3</strong></code> for any URL pointing to an audio file, for example,
    <a href="https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190"><code>https://launch-handler.glitch.me?track=https://cdn.glitch.me/3e952c9c-4d6d-4de4-9873-23cf976b422e%2Ffile_example_MP3_700KB.mp3?v=1638795977190</code></a>).
 1. Click the link in your chat app and notice how _Musicr 2.0_ opens and plays the track.
-1. Click the link in your chat app again and notice how always just one instance of Musicr 2.0 exists.
+1. Click the link in your chat app again and notice that you will not get a second instance of _Musicr 2.0_.
 <!--lint enable no-literal-urls -->
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/nFgE69N5VTYBDon1DGmB.png", alt="Musicr 2.0 web application launched and playing music it handled from the launch params.", width="800", height="235" %}
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the Launch Handler API using the core principles
+The Chromium team designed and implemented the Launch Handler API using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 

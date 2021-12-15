@@ -45,11 +45,11 @@ be captured, including, but not limited to, the following:
 
 - Clicked links from other web pages.
 - URL launches from a platform-specific app in the operating system.
-- Navigations originating from the [App Shortcuts API](/app-shortcuts/)
-- Links that go through [URL protocol handlers](/url-protocol-handler/)
-- Navigations caused by [file handlers](/file-handling/)
-- Navigations caused by the [Share Target API](/web-share-target/)
-- …and others
+- Navigations originating from the [App Shortcuts API](/app-shortcuts/).
+- Links that go through [URL protocol handlers](/url-protocol-handler/).
+- Navigations caused by [file handlers](/file-handling/).
+- Navigations caused by the [Share Target API](/web-share-target/).
+- …and others.
 
 Declarative Link Capturing is a proposal for a web app manifest property called
 `"capture_links"` that lets developers determine declaratively what should happen when the browser
