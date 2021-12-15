@@ -5,7 +5,6 @@ description: >
 authors:
   - adactio
 date: 2021-12-23
-placeholder: true
 ---
 
 Responsive web design was in many ways a reaction to mobile phones. Before smartphones appeared, very few people seriously considered how websites should look and feel on handheld devices. That changed with the meteoric rise of mobile phones featuring built-in web browsers.
