@@ -37,7 +37,7 @@ const myOriginal = {
 const myShallowCopy = {...myOriginal};
 ```
 
-Adding or chaning a property directly on the shallow copy with only affect the copy, not the original:
+Adding or changing a property directly on the shallow copy will only affect the copy, not the original:
 
 ```js
 myShallowCopy.aNewProp = "a new value";
