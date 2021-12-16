@@ -24,10 +24,10 @@ For some features, there's a clear trend in usage and awareness year-over-year. 
 This matches the trend for CSS Grid in the [2021 Web Almanac](https://almanac.httparchive.org/en/2021/css#flexbox-and-grid-adoption) and in Chrome's [usage metrics](https://www.chromestatus.com/metrics/feature/timeline/popularity/1693). 
 If you haven't used CSS Grid, now is a great time to [learn it](/learn/css/grid/).
 
-As more developers use grid, [awareness of subgrid]([https://2021.stateofcss.com/en-US/features/layout/#subgrid](https://2021.stateofcss.com/en-US/features/layout/#subgrid)) is also growing. Subgrid is already available in Firefox and will land in Chrome as part of the work by the Microsoft Team on [GridNG](https://blogs.windows.com/msedgedev/2021/08/10/compat2021-css-grid-gridng/).
+As more developers use grid, [awareness of subgrid](https://2021.stateofcss.com/en-US/features/layout/#subgrid) is also growing. Subgrid is already available in Firefox and will land in Chrome as part of the work by the Microsoft Team on [GridNG](https://blogs.windows.com/msedgedev/2021/08/10/compat2021-css-grid-gridng/).
 
 Other features with strong growth in usage and awareness are 
-[`aspect-ratio`]([https://2021.stateofcss.com/en-US/features/layout/#aspect_ratio](https://2021.stateofcss.com/en-US/features/layout/#aspect_ratio)`), [scroll snap]([https://2021.stateofcss.com/en-US/features/interactions/#scroll_snap](https://2021.stateofcss.com/en-US/features/interactions/#scroll_snap)), and [custom properties]([https://2021.stateofcss.com/en-US/features/other-features/#variables](https://2021.stateofcss.com/en-US/features/other-features/#variables)).
+[`aspect-ratio`](https://2021.stateofcss.com/en-US/features/layout/#aspect_ratio), [scroll snap](https://2021.stateofcss.com/en-US/features/interactions/#scroll_snap), and [custom properties](https://2021.stateofcss.com/en-US/features/other-features/#variables).
 
 # Browser compatibility
 
