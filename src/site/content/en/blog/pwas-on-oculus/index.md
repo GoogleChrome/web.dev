@@ -96,12 +96,20 @@ For 2D&nbsp;websites, users can resize the width of the content anywhere from 48
 
 ## PWAs made by Meta
 
-Multiple Meta divisions have created PWAs for the Oculus Quest&nbsp;2, namely [Instagram](https://www.oculus.com/experiences/quest/6102857836422862) and [Facebook](https://www.oculus.com/experiences/quest/6126469507395223).
-PWAs run in standalone app windows
+Multiple Meta divisions have created PWAs for the Oculus Quest&nbsp;2, for example [Instagram](https://www.oculus.com/experiences/quest/6102857836422862) and [Facebook](https://www.oculus.com/experiences/quest/6126469507395223).
+These PWAs run in standalone app windows that do not have a URL bar and that can be freely resized.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/m5NoDaB7hyFOvrxHF9oS.jpeg", alt="Facebook Oculus Quest 2 app.", width="800", height="450" %}
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/gxYCh0Z9R3vXRU0MWsIB.jpeg", alt="Instagram Oculus Quest 2 app", width="800", height="450" %}
+
+## App discovery
+
+Just like with any other browser, installed PWAs also work in Oculus Browser as websites running in a tab.
+When a user visits a site in the browser, the Oculus Browser will help them discover the app if it is available in the Oculus Store.
+For users that already have the app installed, Oculus Browser will help them easily switch to the app if they desire.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/YNM3CfMKqnLuCJLw3I0U.png", alt="ALT_TEXT_HERE", width="512", height="343" %}
 
 ## Acknowledgements
 
