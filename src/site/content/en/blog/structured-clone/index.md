@@ -45,7 +45,7 @@ console.log(myOriginal.aNewProp)
 // ^ logs `undefined`
 ```
 
-However, adding or changing a deeply nested property affects _both_ the copy and the origina:
+However, adding or changing a deeply nested property affects _both_ the copy and the original:
 
 ```js
 myShallowCopy.anotherProp.aNewProp = "a new value";
