@@ -109,7 +109,7 @@ While I haven’t done a new micro-benchmark comparison, [I did a comparison in 
  
 ## Conclusion
 
-If you need to create a deep-copy of a value in JS — maybe that be because you use immutable data structures or you want to make sure a function can manipulate an object without affecting the original — you no longer need to reach for workarounds or libraries. The JS ecosystem now has [`structuredClone()`][mdn structuredclone]. Huzzah.
+If you need to create a deep-copy of a value in JS—maybe that be because you use immutable data structures or you want to make sure a function can manipulate an object without affecting the original—you no longer need to reach for workarounds or libraries. The JS ecosystem now has [`structuredClone()`][mdn structuredclone]. Huzzah.
  
 [Spread Operator]:
 https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_syntax
