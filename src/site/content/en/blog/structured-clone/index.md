@@ -23,7 +23,7 @@ At the time of writing, _all browsers_ have  implemented this API in their night
 
 Copying a value in JavaScript is almost always _shallow_, as opposed to _deep_.  That means that changes to deeply nested values will be visible in the copy as well as the original. 
 
-One way to create a shallow copy in JS using object spread operator `...`:
+One way to create a shallow copy in JavaScript using the [object spread operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_syntax) `...`:
 
 ```js
 const myOriginal = {
