@@ -24,7 +24,7 @@ const stagingUrls =
   require('../../../tools/lhci/lighthouserc').ci.collect.url.map((url) =>
     path.join('dist', new URL(url).pathname, 'index.html'),
   );
-const pathToCss = 'dist/css/main.css';
+const pathToCss = 'dist/css/next.css';
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
