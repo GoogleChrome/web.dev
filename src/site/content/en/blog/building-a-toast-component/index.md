@@ -58,7 +58,7 @@ Toasts are more passive than other notice strategies.
 ## Markup
 
 The
-[`<output>`](​​https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element)
+[`<output>`](https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element)
 element is a good choice for the toast because it is announced to screen
 readers. Correct HTML provides a safe base for us to enhance with JavaScript and
 CSS, and there will be lots of JavaScript. 
