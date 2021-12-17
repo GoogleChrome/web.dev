@@ -255,7 +255,7 @@ Both metrics improved when showing a dark theme: bounce rates went from 27.25% t
 
 <ul class="stats">
   <div class="stats__item">
-    <p class="stats_figure">60<sub>%</sub></p>
+    <p class="stats__figure">60<sub>%</sub></p>
     <p>Reduction in Bounce Rates</p>
   </div>
   <div class="stats__item">
