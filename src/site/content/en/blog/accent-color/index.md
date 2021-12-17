@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: CSS `accent-color`
 subhead: Bring your brand color to built-in HTML form inputs with one line of code.
 authors:

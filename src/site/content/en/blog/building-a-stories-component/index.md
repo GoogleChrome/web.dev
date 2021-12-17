@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a Stories component
 # TODO(kayce): Rename URL to match the title
 subhead: A foundational overview of how to build an experience similar to Instagram Stories on the web.
@@ -184,7 +184,7 @@ by Sarah Drasner for a great breakdown of how to use them.
   </figcaption>
 </figure>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'parent' %}
 ```css/4-5
 .stories {

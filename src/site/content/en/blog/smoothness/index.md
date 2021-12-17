@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Towards an animation smoothness metric
 subhead: Learn about measuring animations, how to think about animation frames, and overall page smoothness.
 description: Learn about measuring animations, how to think about animation frames, and overall page smoothness.
@@ -369,7 +370,7 @@ completeness or smoothness score.
 Here is the spectrum of ways in which we interpret the state of a single
 animation frame, ordered from best to worst case:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <td style="width:12em"><strong style="background:#BCD5AC;padding:0.25em;">

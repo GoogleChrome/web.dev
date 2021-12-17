@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Custom bullets with CSS ::marker
 subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>.
 authors:
@@ -177,7 +178,7 @@ Changing the contents of a `::marker` is done with `content` as opposed to `list
 
 Also, note how the disallowed `background` property has no effect.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'List Styles' %}
 ```css
 li:nth-child(1) {

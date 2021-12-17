@@ -12,7 +12,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-01-07
-updated: 2021-05-19
+updated: 2021-11-30
 canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
 hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
 alt: |
@@ -123,7 +123,7 @@ and feel of the application is almost identical to the web version.
 </figure>
 
 On macOS, there is now a system-level menu at the top of the application, but since none of the menu
-actions—apart from **Close Window** and **About Excalidraw**—are hooked up to to anything, the menu
+actions—apart from **Close Window** and **About Excalidraw**—are hooked up to anything, the menu
 is, in its current state, pretty useless. Meanwhile, all actions can of course be performed via the
 regular Excalidraw toolbars and the context menu.
 

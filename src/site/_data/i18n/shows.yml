@@ -45,9 +45,9 @@ gui-challenges:
     zh: 图形用户界面挑战
   description:
     en: |
-      There is no one way to solve interfaces challenges. 
-      In this series, we'll be challenging ourselves and each other 
-      to find multiple ways to solve interface challenges 
+      There is no one way to solve interfaces challenges.
+      In this series, we'll be challenging ourselves and each other
+      to find multiple ways to solve interface challenges
       and expand the diversity of our skills.
     es: |
       No hay una sola manera de resolver los desafíos de las interfaces.
@@ -60,7 +60,7 @@ gui-challenges:
       方法を複数見つけ出し、多彩なスキルを身につけるために、
       自分自身に、そしてお互いに挑戦していきます。
     ko: |
-      인터페이스 문제를 해결하는 단 한 가지 방법은 없습니다. 
+      인터페이스 문제를 해결하는 단 한 가지 방법은 없습니다.
       이 시리즈에서는 인터페이스 문제를 해결하는 여러 가지 방법을 찾고
       우리가 가진 기술의 다양성을 확장하기 위해
       스스로, 그리고 서로 간에 도전을 제기할 것입니다.
@@ -97,3 +97,24 @@ designing-in-the-browser:
     pt: 'O design no navegador explora a interseção entre design e o desenvolvimento front-end, ensinando você a construir belas interfaces do usuário de acordo com os mais modernos padrões da web.'
     ru: 'Шоу «Дизайн в браузере» рассматривает проблемы на пересечении дизайна и фронтенд-разработки и учит создавать красивые интерфейсы с использованием современных веб-стандартов.'
     zh: '《在浏览器中进行设计》探索了设计和前端开发的交叉点，会教您如何构建符合现代网络标准的美观界面。'
+
+web-dev-live-day-1:
+  title:
+    en: web.dev LIVE Day 1
+  description:
+    en: Missed web.dev LIVE? We’ve got you covered. Watch the talks from the web.dev LIVE 2020 event on Youtube ([Day 2](/shows/web-dev-live-day-2), [Day 3](/shows/web-dev-live-day-3))
+
+web-dev-live-day-2:
+  title:
+    en: web.dev LIVE Day 2
+  description:
+    en: Missed web.dev LIVE? We’ve got you covered. Watch the talks from the web.dev LIVE 2020 event on Youtube ([Day 1](/shows/web-dev-live-day-1), [Day 3](/shows/web-dev-live-day-3))
+
+web-dev-live-day-3:
+  title:
+    en: web.dev LIVE Day 3
+  description:
+    en: Missed web.dev LIVE? We’ve got you covered. Watch the talks from the web.dev LIVE 2020 event on Youtube ([Day 1](/shows/web-dev-live-day-1), [Day 2](/shows/web-dev-live-day-2))
+
+all_episodes:
+  en: 'Back to all episodes'

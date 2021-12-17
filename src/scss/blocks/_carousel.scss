@@ -1,12 +1,8 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/carousel
 .carousel {
-  display: grid;
-  grid-template-columns: 2rem 1fr 2rem;
-  gap: $global-gutter-narrow;
-  align-items: center;
-
   .icon-button {
+    display: none;
     height: 36px;
     width: 36px;
 
@@ -56,6 +52,25 @@
       content: '';
       display: block;
       width: 0.5rem;
+    }
+  }
+
+  // Makes the content of each carousel item, fill the item.
+  // E.G cards will all be the same height in a carousel
+  > * > * {
+    height: 100%;
+  }
+}
+
+@include media-query('md') {
+  .carousel {
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    gap: $global-gutter-narrow;
+    align-items: center;
+
+    .icon-button {
+      display: inline-block;
     }
   }
 }

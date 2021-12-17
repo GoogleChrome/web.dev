@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How ZDF created a video PWA with offline and dark mode
 subhead: >
   Learn how ZDF created a progressive web app (PWA) with modern
@@ -75,7 +75,7 @@ good point in time to prompt for install because the user has expressed a clear 
 use the app offline.
 
 <figure class="w-figure">
-  <div class="w-columns">
+  <div class="switcher">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sj4J2JMlYdgf4BrhaRsT.jpg", alt="Custom invitation to install.", width="800", height="1595" %}
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FT4Xt5xpjCp57C8BwLtn.jpg", alt="Custom install prompt being triggered when downloading a video for offline consumption.", width="800", height="1595" %}
   </div>
@@ -90,7 +90,7 @@ lists all videos that have previously been downloaded or (in case no content has
 been downloaded yet) a short explanation of the offline feature.
 
 <figure class="w-figure">
-  <div class="w-columns">
+  <div class="switcher">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FcWDhtuSSpHg04krFqUD.png", alt="Offline page showing all content available for watching offline.", width="800", height="1418" %}
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PUvFyyaVfhh7PFyXDwCo.png", alt="Offline page showing that no content is available for watching offline.", width="800", height="1423" %}
   </div>

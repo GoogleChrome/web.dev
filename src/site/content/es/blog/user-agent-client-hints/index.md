@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Cómo mejorar la privacidad del usuario y la experiencia del desarrollador con las sugerencias incluidas en el repositorio User-Agent Client Hints
 subhead: Las sugerencias incluidas en el repositorio User-Agent Client Hints son una nueva expansión de la API Client Hints, la cual permite a los desarrolladores acceder a la información sobre el navegador del usuario de una forma sencilla y que mantiene la privacidad.
 authors:
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### Respuestas de User-Agent y encabezados de solicitud
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

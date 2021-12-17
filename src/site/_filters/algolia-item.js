@@ -36,6 +36,7 @@ function algoliaItem(post) {
     locale: data.lang || defaultLocale,
     locales: [],
     objectID: md5(post.url),
+    priority: data.algolia_priority ?? 1,
     tags: data.tags && Array.isArray(data.tags) ? data.tags : [],
     title: data.renderData?.title || data.title,
     updatedOn: data.updated,

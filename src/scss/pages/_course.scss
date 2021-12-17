@@ -134,6 +134,10 @@ $course-side-vert-space: 20px;
   position: sticky;
   top: get-space('size-1');
   max-height: 90vh;
+
+  .toc__wrapper {
+    max-width: 18rem;
+  }
 }
 
 .course__intro {

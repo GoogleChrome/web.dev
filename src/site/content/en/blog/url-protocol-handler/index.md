@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: URL protocol handler registration for PWAs
 subhead: |
   Let installed PWAs handle links that use a specific protocol for a more integrated experience.
@@ -99,7 +99,7 @@ allowing the possibility for complementary user-experiences:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                       |
 | ---------------------------------------- | -------------------------------------------- |

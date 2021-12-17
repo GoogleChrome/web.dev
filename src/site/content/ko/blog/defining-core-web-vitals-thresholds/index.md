@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Core Web Vitals 메트릭 및 임계값 정의
 subhead: Core Web Vitals 임계값에 대한 연구 및 방법론
 authors:
@@ -23,13 +24,18 @@ tags:
 각 Core Web Vitals 메트릭에는 성능을 "양호(good)", "개선 필요(needs improvement)" 또는 "나쁨(poor)"으로 분류하는 관련 임계값이 있습니다.
 
 
-<div class="w-stack w-stack--center w-stack--md">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="최대 콘텐츠풀 페인트 권장 임계값", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="최초 입력 지연 권장 임계값", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="누적 레이아웃 이동 권장 임계값", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th> </th>
@@ -82,7 +88,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">달성 가능성</h3>
 <p data-md-type="paragraph">CrUX의 데이터를 사용하여 후보 LCP에 대한 "양호" 임계값을 충족하는 웹에서의 원본 백분율을 결정할 수 있습니다.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">"양호"로 분류된 CrUX 원본의 %(후보 LCP 임계값용)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -114,7 +120,7 @@ tags:
 <p data-md-type="paragraph">또한 최적화가 잘 이루어진 사이트에 대해 선택한 임계값을 일관되게 달성할 수 있도록 웹 전반에서 최고 성능 사이트에 대한 LCP 성능을 분석하여 이러한 사이트에 대해 일관되게 달성할 수 있는 임계값을 결정합니다. 특히, 최고 성능 사이트에 대해 75번째 백분위수에서 일관되게 달성할 수 있는 임계값을 식별하는 것을 목표로 합니다. 1.5초 및 2초 임계값은 일관되게 달성할 수 없는 반면 2.5초는 일관되게 달성할 수 있습니다.</p>
 <p data-md-type="paragraph">LCP에 대한 "불량" 임계값을 식별하기 위해 CrUX 데이터를 사용하여 대부분의 출처에서 충족되는 임계값을 식별합니다.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">"나쁨"으로 분류된 CrUX 원본의 %(후보 LCP 임계값용)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -154,7 +160,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">달성 가능성</h3>
 <p data-md-type="paragraph">CrUX의 데이터를 사용하여 웹의 다양한 출처가 75번째 백분위수에서 100ms라는 FID의 "양호" 임계값을 충족하는지 확인합니다.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">FID 100ms 임계값에 대해 "양호"로 분류된 CrUX 출처의 %</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th></th>
@@ -178,7 +184,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">달성 가능성</h3>
 <p data-md-type="paragraph">CrUX 데이터를 기반으로 하면 거의 50%에 달하는 출처의 CLS가 0.05 이하임을 알 수 있습니다.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">"양호"로 분류된 CrUX 출처의 %(후보 CLS 임계값용)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -203,7 +209,7 @@ tags:
 <p data-md-type="paragraph">CrUX 데이터는 0.05가 합리적인 CLS "양호" 임계값일 수 있음을 시사하지만 우리는 현재 방해가 되는 레이아웃 이동을 피하기 어려운 사용 사례가 있다는 것도 알고 있습니다. 예를 들어 소셜 미디어 임베드와 같은 타사 임베딩 콘텐츠의 경우 임베드된 콘텐츠의 높이는 로드가 완료될 때까지 알 수 없으며, 이로 인해 0.05보다 큰 레이아웃 이동이 발생할 수 있습니다. 따라서 우리는 대부분 출처가 0.05 임계값을 충족하지만 0.1이라는 보다 완화된 CLS 임계값이 경험의 품질과 달성 가능성 사이에서 더 나은 균형을 유지한다고 결론지었습니다. 앞으로 웹 생태계에서 타사 임베드로 인한 레이아웃 이동에 대한 해결책을 찾아 향후 Core Web Vitals 반복에서 0.05 또는 0이라는 엄격한 CLS "양호" 임계값을 사용할 수 있기를 바랍니다.</p>
 <p data-md-type="paragraph">또한 CLS에 대한 "나쁨" 임계값을 결정하기 위해 CrUX 데이터를 사용하여 대부분의 출처에서 충족되는 임계값을 식별했습니다.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">"나쁨"으로 분류된 CrUX 출처의 %(후보 CLS 임계값용)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>

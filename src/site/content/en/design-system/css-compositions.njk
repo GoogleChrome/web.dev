@@ -57,7 +57,7 @@ permalink: '/design-system/css-compositions/index.html'
 </p>
 
 <h3>Configuration</h3>
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -91,7 +91,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Examples</h3>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="auto-grid">
     <div class="bg-mid-bg pad-size-1">Item 1</div>
     <div class="bg-mid-bg pad-size-1">Item 2</div>
@@ -104,6 +104,42 @@ permalink: '/design-system/css-compositions/index.html'
   </div>
 </div>
 
+<h3 id="breakout">Breakout</h3>
+<p><code>.breakout</code></p>
+
+<p>
+  A layout that allows you to break a an element out of the
+  bounds of its parent, with a sensible lock to prevent it bleeding out.
+</p>
+
+<h3>Configuration</h3>
+<div class="table-wrapper breakout">
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>--breakout-max-width</code></td>
+        <td><code>65rem</code></td>
+        <td>This defines the maximum width of the element.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Examples</h3>
+
+<div class="region bg-mid-bg">
+  <div class="breakout">
+    <div class="region pad-inline-size-1 bg-reversed-bg color-reversed-text ta-center">I am a breakout element and bleed out of my parent's bounds.</div>
+  </div>
+</div>
+
 <h2 id="cluster">Cluster</h2>
 <p><code>.cluster</code></p>
 
@@ -113,7 +149,7 @@ permalink: '/design-system/css-compositions/index.html'
 </p>
 
 <h3>Configuration</h3>
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -156,7 +192,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Examples</h3>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="cluster">
     <div class="bg-mid-bg pad-size-1">Item 1</div>
     <div class="bg-mid-bg pad-size-1">Item 2</div>
@@ -182,7 +218,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Configuration</h3>
 
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -203,7 +239,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Exceptions</h3>
 
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -222,7 +258,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Examples</h3>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="reel">
     <div class="region bg-mid-bg pad-inline-size-1">Item</div>
     <div class="region bg-mid-bg pad-inline-size-1">Item</div>
@@ -234,7 +270,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h4>With scrollbar</h4>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="reel scrollbar">
     <div class="region bg-mid-bg pad-inline-size-1">Item</div>
     <div class="region bg-mid-bg pad-inline-size-1">Item</div>
@@ -246,7 +282,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h4>With scroll snapping</h4>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="reel scrollbar" data-scroll="snap">
     <div class="region bg-mid-bg pad-inline-size-1">Item</div>
     <div class="region bg-mid-bg pad-inline-size-1">Item</div>
@@ -263,7 +299,7 @@ permalink: '/design-system/css-compositions/index.html'
 </p>
 <p><code>.repel</code></p>
 
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -294,7 +330,7 @@ permalink: '/design-system/css-compositions/index.html'
 </div>
 
 <h3>Examples</h3>
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="repel">
     <div class="bg-mid-bg pad-size-1">Item 1 repels item 2</div>
     <div class="bg-mid-bg pad-size-1">Item 2 repels item 1</div>
@@ -312,7 +348,7 @@ permalink: '/design-system/css-compositions/index.html'
 </p>
 
 <h3>Configuration</h3>
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -343,7 +379,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Exceptions</h3>
 
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -364,7 +400,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <p>A standard sidebar.</p>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="sidebar">
     <div class="bg-mid-bg pad-size-1">I am the sidebar</div>
     <div class="flow bg-mid-bg pad-size-1">
@@ -383,7 +419,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <p>Flipped sidebar.</p>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="sidebar" data-direction="rtl">
     <div class="flow bg-mid-bg pad-size-1">
       <h4>I am the content</h4>
@@ -409,7 +445,7 @@ permalink: '/design-system/css-compositions/index.html'
 </p>
 
 <h3>Configuration</h3>
-<div class="table-wrapper">
+<div class="table-wrapper breakout">
   <table>
     <thead>
       <tr>
@@ -449,7 +485,7 @@ permalink: '/design-system/css-compositions/index.html'
 
 <h3>Examples</h3>
 
-<div class="design-system__components-section gap-top-size-1">
+<div class="breakout gap-top-size-1">
   <div class="switcher">
     <div class="bg-mid-bg pad-size-1">Item 1</div>
     <div class="bg-mid-bg pad-size-1">Item 2</div>

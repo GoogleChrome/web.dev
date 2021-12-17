@@ -124,7 +124,9 @@ async function index() {
 
   // When indexing data we mark these two fields as fields that can be filtered by.
   await index.setSettings({
+    searchableAttributes: ['title', 'content', 'description'],
     attributesForFaceting: ['locales', 'tags'],
+    customRanking: ['desc(priority)'],
   });
 
   // Update algolia index with new data

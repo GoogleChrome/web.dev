@@ -3579,7 +3579,7 @@ mobtec:
     en: Guilherme Moser de Souza
   description:
     en: Web Developer
-    
+
 maurizioparadisi:
   title:
     en: Maurizio Paradisi
@@ -3599,3 +3599,21 @@ maurizioparadisi:
     pt: Nossas últimas notícias, atualizações e histórias por Maurizio Paradisi.
     ru: Последние новости и статьи от Maurizio Paradisi.
     zh: Maurizio Paradisi 撰写我们的最新资讯、动态和故事。
+
+joshuagrossberg:
+  title:
+    en: Joshua Grossberg
+  description:
+    en: Chief Technology Officer of Kapwing
+
+nsull:
+  title:
+    en: Nicole Sullivan
+  description:
+    en: Product manager on the Chrome team.
+
+danielasy:
+  title:
+    en: Daniela Sayuri Yassuda
+  description:
+    en: Staff Software Engineer at QuintoAndar

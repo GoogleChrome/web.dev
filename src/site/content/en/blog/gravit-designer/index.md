@@ -1,4 +1,5 @@
 ---
+layout: post
 title: PWA users are 2.5x more likely to purchase Gravit Designer PRO
 subhead: >
   PWA users are also 24% more active than all other install types,
@@ -18,18 +19,18 @@ authors:
   - rezakazemi
 ---
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">+24<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">PWA users have 24% more active sessions than all other platforms</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">+24<sub>%</sub></p>
+    <p>PWA users have 24% more active sessions than all other platforms</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">+31<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">PWA accounts for 31% more repeat users than all other platforms</p>
+  <div class="stats__item">
+    <p class="stats__figure">+31<sub>%</sub></p>
+    <p>PWA accounts for 31% more repeat users than all other platforms</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">2.5<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">PWA users are 2.5x more likely to purchase Gravit Designer PRO</p>
+  <div class="stats__item">
+    <p class="stats__figure">2.5<sub>x</sub></p>
+    <p>PWA users are 2.5x more likely to purchase Gravit Designer PRO</p>
   </div>
 </div>
 
@@ -67,8 +68,8 @@ and most importantly, greater visibility to our web apps for more users.
 Students and educators can install the Chrome OS version of Gravit Designer with
 ease, and enjoy the same powerful features regardless of platform.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CPOALQnJw0G03EHczYIh.png", alt="A screenshot of Gravit Designer.", width="800", height="476", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CPOALQnJw0G03EHczYIh.png", alt="A screenshot of Gravit Designer.", width="800", height="476" %}
 </figure>
 
 ## Engineering challenges
@@ -97,7 +98,7 @@ is no stranger to these challenges.
 With some platforms, the answer will be wrapping a web app in a
 platform-specific container application for the foreseeable future (e.g.
 Electron). However, with PWAs and Chrome OS we can start to deliver on the
-promise of a web app ported to a desktop experience with minimal disruption. 
+promise of a web app ported to a desktop experience with minimal disruption.
 
 For Gravit Designer, our team could see the growing value of PWAs, and made
 great strides to support it as an enabling technology going forward. The

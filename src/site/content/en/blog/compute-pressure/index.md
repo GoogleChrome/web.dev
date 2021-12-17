@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Observing compute pressure
 subhead: An experimental API for reacting to changes in CPU use.
 authors:
@@ -229,7 +229,7 @@ will display an ongoing readout of your device's CPU utilization and speed.
 
 ## API status
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                                                       |
 | ---------------------------------------- | ---------------------------------------------------------------------------- |

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 定义核心 Web 指标阈值
 subhead: 核心 Web 指标阈值背后的研究和方法论
 authors:
@@ -22,13 +23,18 @@ tags:
 
 每项核心 Web 指标都有一个相关联的阈值，这些阈值将性能分为"良好"、"需要改进"或"欠佳"：
 
-<div class="w-stack w-stack--center w-stack--md">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="最大内容绘制阈值建议", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="首次输入延迟阈值建议", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="累积布局偏移阈值建议", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th> </th>
@@ -81,7 +87,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">可实现性</h3>
 <p data-md-type="paragraph">利用 CrUX 的数据，我们可以确定网络上满足 LCP 候选"良好"阈值的域所占的百分比。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">被归类为"良好"（LCP 候选阈值）的 CrUX 域所占的百分比</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -113,7 +119,7 @@ tags:
 <p data-md-type="paragraph">此外，为了确保所选取的阈值对于优化良好的网站始终都可实现，我们分析了全网表现最出色的网站的 LCP 性能，从而确定哪些阈值对于这些网站是始终都可实现的。具体来说，我们的目标是确定一个对于表现最出色的网站来说，始终可以在第 75 个百分位数实现的阈值。我们发现，1.5 秒和 2 秒的阈值并不是始终都可以实现的，而 2.5 秒的阈值是始终可以实现的。</p>
 <p data-md-type="paragraph">为了确定 LCP 的"欠佳"阈值，我们利用 CrUX 数据来确定大多数域能够满足的阈值：</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">被归类为"欠佳"（LCP 候选阈值）的 CrUX 域所占的百分比</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -153,7 +159,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">可实现性</h3>
 <p data-md-type="paragraph">利用 CrUX 的数据，我们确定网络上的大多数域在第 75 个百分位数满足 FID 的 100 毫秒"良好"阈值：</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">满足 FID 100 毫秒阈值并被归类为"良好"的 CrUX 域所占的百分比</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th></th>
@@ -177,7 +183,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">可实现性</h3>
 <p data-md-type="paragraph">根据 CrUX 数据，我们可以看到近 50% 的域的 CLS 为 0.05 或更低。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">被归类为"良好"（CLS 候选阈值）的 CrUX 域所占的百分比</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -202,7 +208,7 @@ tags:
 <p data-md-type="paragraph">虽然 CrUX 数据表明 0.05 可能是一个合理的 CLS "良好"阈值，但我们认识到，目前在某些用例中还难以避免干扰性的布局偏移。例如，对于如社交媒体嵌入这样的第三方嵌入内容，嵌入内容的高度有时在完成加载之前是未知的，这就可能导致布局偏移大于 0.05。因此，我们的结论是，虽然许多域都满足 0.05 的阈值，但将 CLS 阈值定为略微宽松一点的 0.1 能够在体验质量和可实现性之间取得更好的平衡。我们希望网络生态系统在未来能够确定一个针对由第三方嵌入引起的布局偏移的解决方案，这将使我们能够在核心 Web 指标的未来迭代中采用 0.05 或 0 这两个更为严格的 CLS "良好"阈值。</p>
 <p data-md-type="paragraph">此外，为了决定 CLS 的"欠佳"阈值，我们利用 CrUX 数据来确定大多数域能够满足的阈值：</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">被归类为"欠佳"（CLS 候选阈值）的 CrUX 域所占的百分比</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>

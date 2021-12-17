@@ -27,6 +27,7 @@ $global-prose-element-max-width: 50rem;
 /// MIXINS
 @import 'mixins/button-base-styles';
 @import 'mixins/card-base-styles';
+@import 'mixins/overflow-shadow';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
@@ -660,11 +661,13 @@ video,
 
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
+@import 'compositions/breakout';
 @import 'compositions/cluster';
 @import 'compositions/reel';
 @import 'compositions/repel';
 @import 'compositions/sidebar';
 @import 'compositions/switcher';
+@import 'compositions/wide-card-index';
 
 /// BLOCKS
 @import 'blocks/aside';
@@ -683,6 +686,7 @@ video,
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/feature-card';
+@import 'blocks/figure';
 @import 'blocks/fixed-width-img';
 @import 'blocks/headline';
 @import 'blocks/hero';
@@ -713,6 +717,7 @@ video,
 @import 'web-components/web-copy-code';
 @import 'web-components/web-navigation-drawer';
 @import 'web-components/web-subscribe';
+@import 'web-components/web-tabs';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
@@ -734,12 +739,13 @@ video,
 @import 'pages/landing-page';
 @import 'pages/learn';
 @import 'pages/measure';
-
-// The prototype file is for temporary prototyping
-@import 'prototype';
+@import 'pages/path';
 
 // Temporary rollout patches
 @import 'rollout';
+
+// Import unresolved states for lit-elements
+@import 'unresolved';
 
 /// LEGACY EXTENSIONS
 /// These elements are everywhere and to replace them site-wide would be

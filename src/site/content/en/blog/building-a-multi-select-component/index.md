@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a multi-select component
 subhead: A foundational overview of how to build a responsive, adaptive, and accessible, multiselect component for sort and filter user experiences.
 authors:

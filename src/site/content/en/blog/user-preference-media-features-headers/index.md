@@ -8,7 +8,7 @@ authors:
   - thomassteiner
   - beaufortfrancois
 date: 2021-08-02
-updated: 2021-08-03
+updated: 2021-12-14
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/8O1JKZ6YxdA0IIuYtECB.jpg
 alt: Sun and moon
 tags:
@@ -175,7 +175,7 @@ app.get("/", (req, res) => {
 
 ## Privacy and security considerations
 
-The Chromium team has designed and implemented User Preference Media Features Client Hints Headers
+The Chromium team designed and implemented User Preference Media Features Client Hints Headers
 using the core principles defined in [Controlling Access to Powerful Web Platform
 Features][powerful-apis], including user control, transparency, and ergonomics.
 

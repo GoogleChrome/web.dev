@@ -79,7 +79,7 @@ you can use `autocomplete="billing postal-code"`.
 For the shipping address, use `shipping` as the first value.
 
 Change the label for the `Enter` key on on-screen keyboards with the `enterkeyhint` attribute. 
-Use `enterkeyhint="done"` for the last form control, and `autocomplete="next"` for the other form controls.
+Use `enterkeyhint="done"` for the last form control, and `enterkeyhint="next"` for the other form controls.
 
 ## Resources
 

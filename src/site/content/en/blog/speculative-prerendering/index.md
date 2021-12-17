@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Bringing instant page-loads to the browser through speculative prerendering
 subhead: Learn more about speculative prerendering in the browser and how to participate in Chrome origin trial.
 date: 2021-09-24
@@ -182,7 +183,7 @@ that could improve prerendering.
     Since `prerender` requirements may change, the proposed solution should
     allow users to specify blanket triggers for links that match certain
     criteria. This has been made possible through the [speculation rules API
-    ](#heading=h.c1fz0wjl7am)discussed in detail later.
+    ](https://github.com/WICG/nav-speculation/blob/main/triggers.md#speculation-rules)discussed in detail later.
 
 +   **Cross-origin prerender**: When the target link of a prerender is on
     the same origin, there are not many additional checks required. However,
@@ -413,7 +414,7 @@ You can also compare the transitions for each case by clicking on the link for
 the page.
 
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
       <figcaption class="w-figcaption">
 Timer.html with speculation rules

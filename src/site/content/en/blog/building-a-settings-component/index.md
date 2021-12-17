@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a Settings component
 subhead: A foundational overview of how to build a settings component of sliders and checkboxes.
 authors:
@@ -104,7 +104,7 @@ Five layouts use this strategy, here's all of them displayed:
 The `fieldset` element, which contains each input group (`.fieldset-item`), is using `gap: 1px` to
 create the hairline borders between elements. No tricky border solution!
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Filled gap' %}
 
 ```css
@@ -764,7 +764,7 @@ checkboxes via their associated labels.
   muted="true"
 %}
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'input' %}
 
 ```html

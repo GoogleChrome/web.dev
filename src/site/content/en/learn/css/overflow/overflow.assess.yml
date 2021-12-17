@@ -7,10 +7,11 @@ questions:
     stem: Text overflow and element overflow are the same?
     options:
       - content: "true"
-        rationale: "Incorrect. Text overflow is special when compared
+        rationale: "Text overflow is special when compared
         to element overflow."
       - content: "false"
-        rationale: "🎉"
+        rationale: "Text overflow is generally about inline overflow, 
+        where element overflow is about block overflow."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
@@ -31,7 +32,8 @@ questions:
       - content: "content box"
         rationale: "Try again!"
       - content: "padding box"
-        rationale: "🎉"
+        rationale: "Scrollbars in `overlay` mode will overlap the padding, 
+        and when in `inline` mode will add to the padding."
       - content: "border box"
         rationale: "Try again!"
       - content: "margin box"
@@ -47,7 +49,7 @@ questions:
       - content: "`scroll-hint`"
         rationale: "Try again!"
       - content: "`overscroll-behavior`"
-        rationale: "🎉"
+        rationale: "Setting this property to `contain` will trap scrolling."
       - content: "`scroll-padding`"
         rationale: "Try again!"
       - content: "`overscroll-effect`"
