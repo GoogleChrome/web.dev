@@ -41,7 +41,7 @@ Historically user interfaces in devices are displayed in "light mode", which usu
 Dark Mode has [benefits](/prefers-color-scheme/#why-dark-mode) for user experience. Some people prefer it for aesthetic or accessibility reasons. It has  other advantages, such as preserving battery life in devices. Users can express that they prefer dark mode via a setting in their devices, [which depends on the operating system](/prefers-color-scheme/#activating-dark-mode-in-the-operating-system). For example, the following screenshot shows what the **Dark Theme** configuration option looks like in devices that run **Android Q**:
 
 <figure>
-  {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings.", width="218", height="250" %}
+  {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings.", width="218", height="250", style="max-width: 218px; margin: 0 auto;" %}
   <figcaption>Android&nbsp;Q dark theme settings.</figcaption>
 </figure>
 
@@ -163,21 +163,21 @@ Most websites implement a dark theme by using the simple strategy shown previous
 Terra decided to give more control to the user: when they detect that they have the "prefer dark" setting turned on in their devices (via the media query), they show them a prompt to ask them if they want to navigate in "night mode". As long as the user doesn't deny the prompt (by clicking on the "Ignore" button), they honor the user's OS-setting, and apply a custom dark theme:
 
 <figure>
-  {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/TRqfCAmBe025456JyX1b.png", alt="Screenshot of Terra's light theme prompting the user to accept dark mode.", width="266", height="146" %}
+  {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/TRqfCAmBe025456JyX1b.png", alt="Screenshot of Terra's light theme prompting the user to accept dark mode.", width="266", height="146", style="max-width: 266px; margin: 0 auto;" %}
   <figcaption>Terra shows a prompt to the user asking if they want to navigate in dark mode after detecting that they prefer dark in their devices.</figcaption>
 </figure>
 
 As a complement of this strategy they provide additional configuration options in the "settings" screen, where the user can decide if they explicitly prefer "light", "dark", or want to rely on the underlying device settings.
 
 <figure>
-  {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/B7g0uvq2QB0eWVjnuMAl.png", alt="Screenshots of Terra's configuration screen to opt in and out of dark mode.", width="480", height="417" %}
+  {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/B7g0uvq2QB0eWVjnuMAl.png", alt="Screenshots of Terra's configuration screen to opt in and out of dark mode.", width="480", height="417", style="max-width: 480px; margin: 0 auto;" %}
   <figcaption>Terra's themes configurations allow users to choose between "Dark" and "Light" themes or rely on the device's settings.</figcaption>
 </figure>
 
 This is how Terra's "Night Mode" looks like:
 
 <figure>
-  {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/QRW06FYeMghUI8obAQWC.png", alt="Screenshot of Terra's dark theme.", width="286", height="468" %}
+  {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/QRW06FYeMghUI8obAQWC.png", alt="Screenshot of Terra's dark theme.", width="286", height="468", style="max-width: 286px; margin: 0 auto;" %}
   <figcaption>Terra's dark theme, "Night Mode".</figcaption>
 </figure>
 
