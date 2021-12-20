@@ -57,7 +57,7 @@ like WebXR. Through WebXR, we're opening the doors to the next frontier of the w
 
 The browser's user agent string at the time of writing can be broken down as follows.
 
-```
+```bash
 Mozilla/5.0 (X11; Linux x86_64; Quest 2)
 AppleWebKit/537.36 (KHTML, like Gecko)
 OculusBrowser/18.1.0.2.46.337441587
