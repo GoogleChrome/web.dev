@@ -75,9 +75,11 @@ The following code creates an analytics dimension, to measure the performance of
 function getColorScheme() {
     let colorScheme = 'Unknown';
     if (window.matchMedia) {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        colorScheme = 'Dark';
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {   colorScheme = 'Light'; }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            colorScheme = 'Dark';
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            colorScheme = 'Light';
+        }
     }
     return colorScheme;
 }
