@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-12-14
+updated: 2021-12-20
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -28,7 +28,9 @@ tags:
 [capabilities project](/fugu-status/).
 The engineering team has decided that Declarative Link Capturing will _not_
 launch with its current design. Instead, the feature has been redesigned as
-described in [Control how your app is launched](/launch-handler/).
+described in [Control how your app is launched](/launch-handler/). If your
+app implements the Declarative Link Capturing API, you should
+[transition to the replacement Launch Handler API](#migration).
 {% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
@@ -152,6 +154,51 @@ possible for the site to automatically trigger it. Second, the capability to foc
 window on its own domain and fire an event containing the clicked URL. This is intended to allow the
 site to navigate an existing window to a new page, overriding the default HTML navigation flow.
 
+## Migrate to Launch Handler API {: #migration }
+
+The Declarative Link Capturing API [origin trial](https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945)
+is set to [expire on March 30, 2022](https://groups.google.com/a/chromium.org/g/blink-dev/c/2c4bul4V3GQ/m/Anluh1txBQAJ)
+for Chrome M97 and below. It will be replaced by a set of [new features and APIs](https://docs.google.com/document/d/1w9qHqVJmZfO07kbiRMd9lDQMW15DeK5o-p-rZyL7twk/edit)
+in Chrome 98 and above, which includes user-enabled link capturing and [Launch Handler API](https://github.com/WICG/sw-launch/blob/main/launch_handler.md).
+
+### Link Capturing
+
+In Chrome 98, automatic link capturing is now a user opt-in behaviour rather than granted at install
+time to a web app. To enable link capturing, a user needs to launch an installed app from the browser
+using “Open with” and choose “Remember my choice”:
+
+{% Img src="image/ttTommHYbJXsEL29zNB1wXBvH4z1/rbFk5LtzHMlN3zRVpekf.png", alt="Example of an installed app's 'Open with' setting with the 'Remember my choice' option enabled.", width="385", height="277" %}
+
+Alternatively, users can switch link capturing on or off for a specific web app in the app management settings page:
+
+{% Img src="image/ttTommHYbJXsEL29zNB1wXBvH4z1/WJ2KPqFUjqJABNYQUEN9.png", alt="Example of an installed app's settings page.", width="800", height="449" %}
+
+Link capturing is a Chrome OS only feature for now; support for Windows/Mac/Linux is still in progress.
+
+### Launch Handler API
+
+The control of an incoming navigation is migrated to Launch Handler API, which allows web apps to decide
+how a web app launches at various situations, such as link capturing, share target or file handling, etc.
+To migrate from the Declarative Link Capturing API to the Launch Handler API:
+
+1. Register your site for the [Launch Handler origin trial](https://developer.chrome.com/origintrials/#/view_trial/2978005253598740481) and place the origin trial key into your web app.
+1. Add a `"launch_handler"` entry to your site’s manifest.
+   -  If you are using `"capture_links": "new-client"` then add:`"launch_handler": { "route_to": "new-client" }`
+   -  If you are using `"capture_links": "existing-client-navigate"` then add: `"launch_handler": { "route_to": "existing-client" }`
+   -  If you wanted to use `"capture_links": "existing-client-event"` (which was never implemented in the Declarative Link Capturing origin trial) then add:
+      ```json
+      "launch_handler": {
+        "route_to": "existing-client",
+        "navigate_existing_client": "never",
+      } 
+      ```
+      
+      **Note**: With this option, pages in your app scope will no longer navigate automatically when a link navigation is captured. You must handle the `LaunchParams` in JavaScript via the `window.launchQueue.setConsumer()` API to enable navigation.
+
+1. Keep the `capture_links` field and Declarative Link Capturing origin trial registration until March 30, 2022. This will ensure users on Chrome 97 and below can still launch the web app at a captured link.
+
+For more details, check out [Control how your app is launched](http://localhost:8080/launch-handler/).
+ 
 ## Feedback {: #feedback }
 
 The Chromium team wants to hear about your experiences with Declarative Link Capturing.
