@@ -17,19 +17,15 @@
 const {html} = require('common-tags');
 const {findByUrl} = require('../../_filters/find-by-url');
 const md = require('../../_filters/md');
-const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
 
-/* NOTE: This component is in a transition period to support both new design system contexts
-and the existing system. Once the new design system has been *fully* rolled out, this component
-can be cleaned up with the following:
-
-1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
-2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
-*/
-
-/* eslint-disable require-jsdoc */
-
-function CodelabCallout(slugs, lang) {
+/**
+ * Generates codelab links HTML.
+ *
+ * @param {string[]|string} slugs
+ * @param {string} lang
+ * @returns {string}
+ */
+function CodelabsCallout(slugs, lang) {
   // Coerce slugs to Array just in case someone pasted in a single slug string.
   slugs = slugs instanceof Array ? slugs : [slugs];
 
@@ -41,12 +37,36 @@ function CodelabCallout(slugs, lang) {
     return;
   }
 
-  /// UN-FENCE CODE IN THIS BLOCK WHEN ROLLOUT COMPLETE
-  // prettier-ignore
-  if (isDesignSystemContext(this.page.filePathStem)) {
-    return `
+  /**
+   *
+   * @param {EleventyCollectionItem} codelab
+   * @returns {string}
+   */
+  function renderCodelab(codelab) {
+    return html`
+      <li>
+        <a href="${codelab.url}">
+          <span>${md(codelab.data.title)}</span>
+          <!-- icons/carat-forward.svg -->
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m8 7.34 4.58 4.365L8 16.07l1.41 1.34 6-5.705L9.41 6 8 7.34Z"
+            />
+          </svg>
+        </a>
+      </li>
+    `;
+  }
+
+  return `
       <aside class="callout bg-quaternary-box-bg color-quaternary-box-text">
-        <div class="repel">
+        <div class="auto-grid">
           <div class="callout__content flow">
             <div class="callout__branding cluster gutter-base">
               <!-- icons/code.svg -->
@@ -58,50 +78,12 @@ function CodelabCallout(slugs, lang) {
           </div>
           <nav class="callout__links" aria-label="Codelabs links">
             <ul role="list">
-              ${codelabs.map(codelab => html`
-                <li>
-                  <a href="${codelab.url}">
-                    <span>${md(codelab.data.title)}</span>
-                    <!-- icons/carat-forward.svg -->
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m8 7.34 4.58 4.365L8 16.07l1.41 1.34 6-5.705L9.41 6 8 7.34Z"/></svg>
-                  </a>
-                </li>
-              `).join('')}
+              ${codelabs.map(renderCodelab).join('')}
             </ul>
           </nav>
         </div>
       </aside>
-    `
-  }
-
-  /// DELETE THIS WHEN ROLLOUT COMPLETE
-  function renderCodelab(codelab) {
-    return html`
-      <li class="w-callout__listitem">
-        <a
-          class="w-callout__link w-callout__link--codelab"
-          href="${codelab.url}"
-        >
-          ${md(codelab.data.title)}
-        </a>
-      </li>
     `;
-  }
-
-  return html`
-    <div class="w-callout w-callout--2col">
-      <div class="w-callout__header">
-        <h2 class="w-callout__lockup w-callout__lockup--codelab">Codelabs</h2>
-        <div class="w-callout__headline">See it in action</div>
-        <div class="w-callout__blurb">
-          Learn more and put this guide into action.
-        </div>
-      </div>
-      <ul class="w-unstyled-list w-callout__list">
-        ${codelabs.map(renderCodelab)}
-      </ul>
-    </div>
-  `;
 }
 
-module.exports = CodelabCallout;
+module.exports = CodelabsCallout;

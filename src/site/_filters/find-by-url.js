@@ -16,6 +16,7 @@
 
 const {defaultLocale} = require('../_data/site');
 const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}`);
+/** @type {{[url: string]: EleventyCollectionItem}} */
 let memo;
 
 /**
@@ -25,9 +26,9 @@ let memo;
  *
  * Memoize an eleventy collection into a hash for faster lookups.
  * Important: Memoization assumes that all post urls are unique.
- * @param {Array<Object>} collection An eleventy collection.
+ * @param {EleventyCollectionItem[]} collection An eleventy collection.
  * Typically collections.all
- * @return {Array<Object>} The original collection. We return this to make
+ * @return {EleventyCollectionItem[]} The original collection. We return this to make
  * eleventy.addCollection happy since it expects a collection of some kind.
  * @see {@link https://github.com/11ty/eleventy/issues/399}
  */
@@ -52,7 +53,7 @@ const memoize = (collection) => {
  * Look up a post by its url.
  * Requires that the collection the post lives in has already been memoized.
  * @param {string} url The post url (in a form of "lang/slug") to look up.
- * @return {Object} An eleventy collection item.
+ * @return {EleventyCollectionItem} An eleventy collection item.
  */
 const findByUrl = (url) => {
   if (!url) {
