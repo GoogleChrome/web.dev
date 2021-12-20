@@ -64,7 +64,7 @@ Pour voir un exemple d'implémentation, accédez au lien suivant : [https://fir
 
 ## Analyser l'impact de l'isolement d'origines multiples {: #analysis}
 
-Ne serait-il pas formidable de pouvoir évaluer l'impact de l'activation de l'isolement d'origines multiples sur votre site sans prendre le risque d'endommager quoi que ce soit ? C'est exactement ce que les en-têtes HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) et [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) vous permettent de faire.
+Ne serait-il pas formidable de pouvoir évaluer l'impact de l'activation de l'isolement d'origines multiples sur votre site sans prendre le risque d'endommager quoi que ce soit ? C'est exactement ce que les en-têtes HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) et [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) vous permettent de faire.
 
 1. Définissez [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) sur votre document de premier niveau. Comme son nom l'indique, cet en-tête envoie uniquement des rapports sur l'impact que `COOP: same-origin` **aurait** sur votre site ; il ne désactivera pas réellement la communication avec les fenêtres contextuelles.
 2. Configurez la création de rapports et configurez un serveur Web pour recevoir et enregistrer les rapports.
