@@ -207,8 +207,8 @@ feedback:
 
 В Firefox 79 и выше, если для параметра `network.cookie.sameSite.schemeful` установлено `true` (на странице `about:config`), в консоли будет отображаться сообщение о проблемах, относящихся к Same-Site с учетом схемы. Возможные проблемы:
 
-- «Файл cookie `cookie_name` **скоро будет обрабатываться** как межсайтовый по отношению к `http://site.example/`, потому что схемы не совпадают» (Cookie <code>cookie_name</code> <strong>will be soon</strong> treated as cross-site cookie against <code>http://site.example/</code> because the scheme does not match).
-- «Файл cookie `cookie_name` **был обработан** как межсайтовый по отношению к `http://site.example/`, потому что схемы не совпадают» (Cookie <code>cookie_name</code> <strong>has been</strong> treated as cross-site cookie against <code>http://site.example/</code> because the scheme does not match).
+- «Файл cookie `cookie_name` **скоро будет обрабатываться** как межсайтовый по отношению к `http://site.example/`, потому что схемы не совпадают» (Cookie <code>cookie_name</code> <strong>will be soon</strong> treated as cross-site cookie against `http://site.example/` because the scheme does not match).
+- «Файл cookie `cookie_name` **был обработан** как межсайтовый по отношению к `http://site.example/`, потому что схемы не совпадают» (Cookie <code>cookie_name</code> <strong>has been</strong> treated as cross-site cookie against `http://site.example/` because the scheme does not match).
 
 ## Часто задаваемые вопросы
 
