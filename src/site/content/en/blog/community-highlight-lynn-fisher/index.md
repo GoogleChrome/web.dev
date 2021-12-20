@@ -33,7 +33,7 @@ After that, I learned on the job and via the design and dev community sharing kn
 
 **Lynn:** At CSSConf 2013, I saw Lea Verou give her [Humble Border-radius](https://youtu.be/b9HGzJIcfDE) talk and it was another eye-opening moment. There was this whole world of artistic potential in CSS properties I was already using and I was so excited to explore and experiment. I went home and made [WhyAZ](https://why.az) and drew all the illustrations with CSS. At the time, each illustration was made of two HTML elements (which followed a lot of icon system markup that was floating around). So it looked something like:
 
-```
+```html
 <div class="icon">
   <span class="clock"></span>
 </div>
