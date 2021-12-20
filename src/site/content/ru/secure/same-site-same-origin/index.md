@@ -16,7 +16,7 @@ tags:
 
 {% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Источник", width="680", height="100" %}
 
-Источник (origin) — это комбинация [схемы](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol) (также известной как [протокол](https://developer.mozilla.org/en-US/docs/Glossary/Protocol), например, [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) или [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)), [имени хоста](https://en.wikipedia.org/wiki/Hostname) и [порта](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port) (если он указан). Например, для URL `https://www.example.com:443/foo` значение origin будет таким: `https://www.example.com:443`.
+Источник (origin) — это комбинация [схемы](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol) (также известной как [протокол](https://developer.mozilla.org/docs/Glossary/Protocol), например, [HTTP](https://developer.mozilla.org/docs/Glossary/HTTP) или [HTTPS](https://developer.mozilla.org/docs/Glossary/HTTPS)), [имени хоста](https://en.wikipedia.org/wiki/Hostname) и [порта](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port) (если он указан). Например, для URL `https://www.example.com:443/foo` значение origin будет таким: `https://www.example.com:443`.
 
 ### "same-origin" и "cross-origin" {: #same-origin-and-cross-origin }
 

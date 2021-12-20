@@ -73,7 +73,7 @@ self.addEventListener('install', function (event) {
 
 В примере выше обещание `cache.addAll` не передается в `event.waitUntil` для уровней 11–20, поэтому даже если оно будет отклонено, то игра будет работать в офлайн-режиме. Разумеется, вы должны будете учесть возможное отсутствие этих уровней и повторить попытку кеширования в случае их отсутствия.
 
-После окончания обработки событий сервис-воркер может быть завершен, в результате чего скачивание уровней 11–20 прервется и они не попадут в кеш. В будущем в подобных случаях, а также при скачивании более крупных файлов, таких как фильмы, можно будет использовать [Web Periodic Background Synchronization API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API). Сейчас этот API поддерживается только в форках Chromium.
+После окончания обработки событий сервис-воркер может быть завершен, в результате чего скачивание уровней 11–20 прервется и они не попадут в кеш. В будущем в подобных случаях, а также при скачивании более крупных файлов, таких как фильмы, можно будет использовать [Web Periodic Background Synchronization API](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API). Сейчас этот API поддерживается только в форках Chromium.
 
 ### При активации {: #on-activate }
 
@@ -134,7 +134,7 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 });
 ```
 
-[API-интерфейс кеширования](https://developer.mozilla.org/en-US/docs/Web/API/Cache) доступен как из сервис-воркера, так и со страниц, поэтому для сохранения контента в кеш не обязательно использовать сервис-воркер.
+[API-интерфейс кеширования](https://developer.mozilla.org/docs/Web/API/Cache) доступен как из сервис-воркера, так и со страниц, поэтому для сохранения контента в кеш не обязательно использовать сервис-воркер.
 
 ### При получении ответа по сети {: #on-network-response }
 
@@ -262,7 +262,7 @@ self.addEventListener('sync', function (event) {
 
 ## Сохранение кеша {: #cache-persistence }
 
-Вашему источнику доступно определенное количество свободного места, которым он может распоряжаться по своему усмотрению. Это место распределяется между всеми хранилищами: [локальным хранилищем](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB), [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/Storage), [File System Access](/file-system-access/) и, разумеется, [кешем](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
+Вашему источнику доступно определенное количество свободного места, которым он может распоряжаться по своему усмотрению. Это место распределяется между всеми хранилищами: [локальным хранилищем](https://developer.mozilla.org/docs/Glossary/IndexedDB), [IndexedDB](https://developer.mozilla.org/docs/Web/API/Storage), [File System Access](/file-system-access/) и, разумеется, [кешем](https://developer.mozilla.org/docs/Web/API/Cache).
 
 Объем не является фиксированным и зависит от устройства, а также от условий хранения данных. Узнать его можно следующим образом:
 
@@ -277,7 +277,7 @@ navigator.storageQuota.queryInfo('temporary').then(function (info) {
 
 Однако, как и в случае с любым другим браузерным хранилищем, в случае нехватки места на устройстве ваши данные могут в любой момент быть удалены. К сожалению, браузер не сможет отличить фильмы, которые ни в коем случае нельзя удалять, от игры, до которой пользователю нет дела.
 
-Чтобы обойти это ограничение, используйте интерфейс [StorageManager](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager):
+Чтобы обойти это ограничение, используйте интерфейс [StorageManager](https://developer.mozilla.org/docs/Web/API/StorageManager):
 
 ```js
 // Со страницы:
@@ -314,7 +314,7 @@ self.addEventListener('fetch', function (event) {
 });
 ```
 
-...однако обычно этот случай не требуется обрабатывать отдельно, поскольку для него подходит стратегия [Кеш, в случае неудачи — сеть](#cache-falling-back-to-network).
+…однако обычно этот случай не требуется обрабатывать отдельно, поскольку для него подходит стратегия [Кеш, в случае неудачи — сеть](#cache-falling-back-to-network).
 
 ### Только сеть {: #network-only }
 
@@ -330,7 +330,7 @@ self.addEventListener('fetch', function (event) {
 });
 ```
 
-...однако обычно этот случай не требуется обрабатывать отдельно, поскольку для него подходит стратегия [Кеш, в случае неудачи — сеть](#cache-falling-back-to-network).
+…однако обычно этот случай не требуется обрабатывать отдельно, поскольку для него подходит стратегия [Кеш, в случае неудачи — сеть](#cache-falling-back-to-network).
 
 ### Кеш, в случае неудачи — сеть {: #cache-falling-back-to-network }
 
