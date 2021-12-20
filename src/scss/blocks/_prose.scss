@@ -53,7 +53,7 @@
   details > * {
     --flow-space: #{get-space('size-1')};
   }
-    
+
   :not([class]) li {
     @extend .flow;
 
@@ -62,11 +62,11 @@
 
   /// Modidifies the custom list style positions to
   /// work with the larger line heights
-  ul li::before {
+  ul > li::before {
     inset: 1.2ex 0 0 0;
   }
 
-  ol li::before {
+  ol > li::before {
     line-height: 1.1;
     inset: 0.25ex 0 0 0;
   }
