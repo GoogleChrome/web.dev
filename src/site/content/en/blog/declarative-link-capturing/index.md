@@ -197,7 +197,7 @@ To migrate from the Declarative Link Capturing API to the Launch Handler API:
 
 1. Keep the `capture_links` field and Declarative Link Capturing origin trial registration until March 30, 2022. This will ensure users on Chrome 97 and below can still launch the web app at a captured link.
 
-For more details, check out [Control how your app is launched](http://localhost:8080/launch-handler/).
+For more details, check out [Control how your app is launched](/launch-handler/).
  
 ## Feedback {: #feedback }
 
