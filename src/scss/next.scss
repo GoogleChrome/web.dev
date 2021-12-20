@@ -120,7 +120,7 @@ ul:not([class]) {
   list-style: none;
   padding-inline-start: 1rem;
 
-  li::before {
+  > li::before {
     content: '';
     display: block;
     position: absolute;
@@ -131,7 +131,7 @@ ul:not([class]) {
     background: currentColor;
   }
 
-  li {
+  > li {
     padding-inline-start: 2ch;
   }
 }
@@ -140,7 +140,7 @@ ol:not([class]) {
   counter-reset: ol-list;
   padding-inline-start: 0.5rem;
 
-  li::before {
+  > li::before {
     content: counter(ol-list);
     display: flex;
     flex-direction: column;
@@ -158,7 +158,7 @@ ol:not([class]) {
     @include apply-utility('weight', 'medium');
   }
 
-  li {
+  > li {
     counter-increment: ol-list;
     padding-inline-start: 2.5rem;
   }
