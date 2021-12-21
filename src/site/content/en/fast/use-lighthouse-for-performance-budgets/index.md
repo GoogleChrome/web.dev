@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use Lighthouse for performance budgets
 authors:
   - katiehempenius

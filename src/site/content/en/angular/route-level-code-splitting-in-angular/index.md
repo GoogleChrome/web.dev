@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'Route-level code splitting in Angular'
 subhead: |
   Improve the performance of your app by using route-level code splitting!
@@ -10,7 +10,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api

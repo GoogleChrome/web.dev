@@ -21,7 +21,7 @@ If you use Lighthouse to audit your pages, you may be familiar with [Time to Int
 
 ## What are Long Tasks?
 
-A [Long Task](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API) is JavaScript code that monopolizes the main thread for extended periods of time, causing the UI to "freeze".
+A [Long Task](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) is JavaScript code that monopolizes the main thread for extended periods of time, causing the UI to "freeze".
 
 While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 

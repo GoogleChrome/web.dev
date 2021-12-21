@@ -15,11 +15,29 @@
  */
 
 declare global {
-  export interface AlgoliaItem extends PagesCollectionItem {
+  export interface AlgoliaItem {
+    content?: string;
+    createdOn?: Date;
+    description?: string;
+    image?: string;
     /**
      * Date of index, only available after indexed. Basically can only be used by search.
      */
     indexedOn?: number;
+    locale: string;
+    locales: string[];
+    /**
+     * ID of item used to update existing entry.
+     */
+    objectID: string;
+    priority: number;
+    tags: string[];
+    /**
+     * Title of a post.
+     */
+     title: string;
+     updatedOn?: Date;
+     url: string;
   }
 }
 

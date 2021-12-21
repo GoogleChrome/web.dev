@@ -1,4 +1,3 @@
 require('./urls');
-require('./components/LighthouseGauge');
-require('./components/LivestreamContainer');
+require('./components/LearnFilter');
 require('./components/ProgressBar');

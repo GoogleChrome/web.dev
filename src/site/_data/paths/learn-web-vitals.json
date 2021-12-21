@@ -56,6 +56,7 @@
                 "cookie-notice-best-practices",
                 "font-best-practices",
                 "tag-best-practices",
+                "embed-best-practices",
                 {
                     "title": "Infinite scroll without layout shifts",
                     "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"

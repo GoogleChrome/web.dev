@@ -23,14 +23,14 @@ post](https://web.dev/multi-origin-pwas/), Demian discussed the challenges that
 sites built on multiple origins face when trying to build a single Progressive
 Web App that encompasses all of them.
 
-An example of this type of site architecture is a ecommerce site where: 
+An example of this type of site architecture is a ecommerce site where:
 
 - The home page is at `https://www.example.com`.
 - The category pages are hosted at `https://category.example.com`.
 - The product detail pages at `https://product.example.com`.
 
 As discussed in the article, the [same-origin
-policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 imposes several restrictions, preventing the sharing of service workers, caches,
 and permissions across origins. For that reason, we strongly recommend
 avoiding this type of configuration and for those that already have sites
@@ -62,7 +62,7 @@ domains and origins. Before moving forward, let's review these concepts.
   example, `https://www.example.com:443` is an origin.
 
 As its name implies, [same-origin
-policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 imposes restrictions on origins, so we'll mostly refer to the term throughout
 the article. Nevertheless, we'll use "domains" or "subdomains" from time to
 time, to describe the technique being used, in order to create the different
@@ -92,7 +92,7 @@ name** is a good way of establishing that relationship. For example:
 ## Using separate origins
 
 The recommended approach in cases like these is for each conceptually
-distinct app live on its own origin. 
+distinct app live on its own origin.
 
 If you want to use the same domain name inside all of them, you can do that by
 using subdomains. For example, a company that provides multiple internet apps or
@@ -172,7 +172,7 @@ Here are some practical issues common to both same-origin approaches:
 
 - **Storage:** Cookies, local storage, and all forms of device-local storage are
   shared between apps. For that reason, if the user decides to wipe local data
-  for one app, it will wipe all the data from the origin; there's no way 
+  for one app, it will wipe all the data from the origin; there's no way
  to do this for a single app. Note that Chrome and some other
   browsers will actively prompt users to wipe local data when uninstalling one
   of the apps, and this will affect data for the other apps on the origin as
@@ -218,7 +218,7 @@ In practice this presents the following issues:
   that it is. The workaround for this is to install the inner app manually
   (via "Create Shortcut" browser menu option), or to install the inner app
   first, before the outer app.
-- **[Notification](https://developer.mozilla.org/en-US/docs/Web/API/notification)
+- **[Notification](https://developer.mozilla.org/docs/Web/API/notification)
   and the [Badging API](https://web.dev/badging-api/)**: If the outer app is
   installed but the inner app is not, notifications and badges coming from the
   inner app will be erroneously attributed to the outer app (which is the

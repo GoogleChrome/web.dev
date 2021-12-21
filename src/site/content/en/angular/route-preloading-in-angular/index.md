@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: 'Route preloading strategies in Angular'
 subhead: |
   Preload routes ahead of time to speed up users' navigation.
@@ -12,7 +12,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api

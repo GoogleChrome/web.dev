@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`)"
 description: |
   Learn how to make lists on your web page clear to assistive technology users

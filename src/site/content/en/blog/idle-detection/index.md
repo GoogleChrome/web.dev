@@ -11,7 +11,7 @@ date: 2020-05-18
 updated: 2021-08-25
 tags:
   - blog
-  - idle-detection
+  # - idle-detection
   - capabilities
 hero: image/admin/FXoKxeVCmPgEStieWKm2.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
@@ -38,7 +38,7 @@ can limit these calculations to moments when the user interacts with their devic
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -114,7 +114,7 @@ You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
 It takes an object with the desired idle `threshold` in milliseconds
 and an optional `signal` with an
-[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+[`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal)
 to abort idle detection as parameters.
 
 ```js
@@ -142,8 +142,8 @@ try {
 ```
 
 You can abort the idle detection by calling the
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)'s
-[`abort()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
+[`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController)'s
+[`abort()`](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
 method.
 
 ```js

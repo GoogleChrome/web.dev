@@ -13,7 +13,7 @@ tags:
   - css
   - dom
   - javascript
-  - animation
+  - animations
 ---
 
 In this post I want to share thinking on ways to solve split text animations and
@@ -111,7 +111,7 @@ a media query boolean into a variable:
 #### Preparing the JS conditional
 
 In JavaScript, the browser provides a way to check media queries, I used
-[destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+[destructuring](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 to extract and rename the boolean result from the media query check:
 
 ```js
@@ -171,7 +171,7 @@ export const byLetter = text =>
 ```
 
 The
-[spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+[spread](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 syntax from ES6 really helped make that a swift task.
 
 ### Splitting words utility function
@@ -185,14 +185,14 @@ export const byWord = text =>
 ```
 
 The
-[`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+[`split()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 method on JavaScript strings allows us to specify which characters to slice at.
 I passed an empty space, indicating a split between words.
 
 ### Making boxes utility function
 
 The effect requires boxes for each letter, and we see in those functions, that
-[`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+[`map()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 is being called with a `span()` function. Here is the `span()` function.
 
 ```js

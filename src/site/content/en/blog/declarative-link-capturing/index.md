@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-06-18
+updated: 2021-12-14
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -22,13 +22,14 @@ tags:
   - progressive-web-apps
   - web-app-manifest
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
 ---
 
-{% Aside %} Declarative Link Capturing is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
+{% Aside 'caution' %} Declarative Link Capturing was part of the
+[capabilities project](/fugu-status/).
+The engineering team has decided that Declarative Link Capturing will _not_
+launch with its current design. Instead, the feature has been redesigned as
+described in [Control how your app is launched](/launch-handler/).
+{% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
 
@@ -42,13 +43,13 @@ separate app windows, if the app is open already, should a new window or tab be 
 link click that is captured? When you think about it, there are many ways links and navigations can
 be captured, including, but not limited to, the following:
 
-* Clicked links from other web pages.
-* URL launches from a platform-specific app in the operating system.
-* Navigations originating from the [App Shortcuts API](/app-shortcuts/)
-* Links that go through [URL protocol handlers](/url-protocol-handler/)
-* Navigations caused by [file handlers](/file-handling/)
-* Navigations caused by the [Share Target API](/web-share-target/)
-* …and others
+- Clicked links from other web pages.
+- URL launches from a platform-specific app in the operating system.
+- Navigations originating from the [App Shortcuts API](/app-shortcuts/).
+- Links that go through [URL protocol handlers](/url-protocol-handler/).
+- Navigations caused by [file handlers](/file-handling/).
+- Navigations caused by the [Share Target API](/web-share-target/).
+- …and others.
 
 Declarative Link Capturing is a proposal for a web app manifest property called
 `"capture_links"` that lets developers determine declaratively what should happen when the browser
@@ -83,15 +84,15 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
-| Step                                     | Status                               |
-| ---------------------------------------- | ------------------------------------ |
-| 1. Create explainer                      | [Complete][explainer]                |
-| 2. Create initial draft of specification | [In Progress][spec]                  |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)             |
-| **4. Origin trial**                      | **[In progress][ot]** (on Chrome OS) |
-| 5. Launch                                | Not started                          |
+| Step                                     | Status                   |
+| ---------------------------------------- | ------------------------ |
+| 1. Create explainer                      | [Complete][explainer]    |
+| 2. Create initial draft of specification | [In Progress][spec]      |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 4. Origin trial                          | Complete                 |
+| 5. Launch                                | Not started              |
 
 </div>
 
@@ -99,20 +100,6 @@ Examples of sites that may use this API include:
 
 To experiment with Declarative Link Capturing locally, without an origin trial token, enable the
 `#enable-desktop-pwas-link-capturing ` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chromium&nbsp;91, Declarative Link Capturing will be available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
-
-{% Aside 'caution' %} The origin trial is initially limited to Chrome&nbsp;OS.
-{% endAside %}
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## How to use Declarative Link Capturing? {: #use }
 
@@ -130,7 +117,7 @@ defaulting to `"none"`. The following values are supported:
   arbitrarily navigated away from. Sites should be aware that they are opting into such behavior by
   choosing this option. This option works best for "read-only" sites that do not hold user data in
   memory, such as music players. If the page being navigated away from has a
-  [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload),
+  [`beforeunload` event](https://developer.mozilla.org/docs/Web/API/WindowEventHandlers/onbeforeunload),
   the user would see the prompt before the navigation completes.
 
 {% Aside %} There is discussion about adding options that do not open
@@ -157,7 +144,7 @@ running in a tab or as an installed PWA, to see the difference in behavior.
 
 ## Security and permissions
 
-The Chromium team has designed and implemented Declarative Link Capturing using the core principles
+The Chromium team designed and implemented Declarative Link Capturing using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics. This API allows sites new additional control options. First,
 being able to automatically open installed apps in a window. This uses existing UI but makes it
@@ -213,7 +200,5 @@ Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md
 [issues]: https://github.com/WICG/sw-launch/issues/
 [spec]: https://github.com/w3c/manifest/issues/764
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev

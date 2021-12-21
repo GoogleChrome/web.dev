@@ -1,0 +1,37 @@
+setLeader: Test your knowledge on theming
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "2,3"
+    stem: "To provide theme colors that impact the browser outside of the webpage, use:"
+    options:
+      - content: "CSS"
+        rationale: "CSS theme information would likely cause a flash of regular color, which is an undesirable user experience."
+      - content: "JavaScript"
+        rationale: "Only if you use it to update a 'theme-color' `<meta>` tag."
+      - content: "A web app manifest"
+        rationale: "`manifest.json` can be provided and includes fields for specifying theme colors for tinting how the app looks being opened from a mobile homescreen."
+      - content: "A 'theme-color' `<meta>` tag"
+        rationale: "As soon as possible a browser can notice this theme color in the `<head>` tag, avoiding unwanted flashes of color."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1"
+    stem: "To hook into a user's system preference regarding a light or dark theme, use:"
+    options:
+      - content: "The `(prefers-color-scheme)` media query"
+        rationale: "Pass the value you want to check for like light or dark and you're good to go."
+      - content: "JavaScript"
+        rationale: "Which then uses CSS media query syntax to ask for the current state of the preference."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,2"
+    stem: "So you support dark theme, but all the form inputs are still light themed. What can you do?"
+    options:
+      - content: "Add `html { color-scheme: light dark; }` to your CSS."
+        rationale: "This signals from CSS that the form inputs should match the system color scheme."
+      - content: 'Add `<meta name="supported-color-schemes" content="light dark">` to your HTML `<head>` tag.'
+        rationale: "This signals from HTML that the form inputs should match the system color scheme."
+      - content: "Write a bunch of CSS to change all the defaults of the input."
+        rationale: "This works too, but is a bit harder."

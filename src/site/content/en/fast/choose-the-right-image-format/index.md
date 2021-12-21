@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Choose the right image format
 authors:
   - ilyagrigorik

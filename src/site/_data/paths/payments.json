@@ -7,13 +7,27 @@
   "overview": "i18n.paths.payments.overview",
   "topics": [
     {
-      "title": "i18n.paths.payments.topics.integrate_web_payments_into_your_payment_app",
+      "title": "i18n.paths.payments.topics.basics",
       "pathItems": [
-        "empowering-payment-apps-with-web-payments",
-        "life-of-a-payment-transaction",
-        "setting-up-a-payment-method"
+        "payment-and-address-form-best-practices"
+      ]
+    },
+    {
+      "title": "i18n.paths.payments.topics.web_payments",
+      "pathItems": [
+        "web-payments-overview",
+        "how-payment-ecosystem-works",
+        "how-payment-request-api-works"
       ],
       "subtopics": [
+        {
+          "title": "i18n.paths.payments.topics.integrate_web_payments_into_your_payment_app",
+          "pathItems": [
+            "empowering-payment-apps-with-web-payments",
+            "life-of-a-payment-transaction",
+            "setting-up-a-payment-method"
+          ]
+        },
         {
           "title": "i18n.paths.payments.topics.build_an_android_payment_app",
           "pathItems": [

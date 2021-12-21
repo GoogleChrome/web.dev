@@ -22,9 +22,10 @@ currently in development. This post will be updated as the implementation progre
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
-create and process. The File Handling API allows you to do exactly this.
-After registering a text editor app as a file handler and after installing it, you can right-click a `.txt` file on macOS
-and select "Get Info" to then instruct the OS that it should always open `.txt` files with this app as default.
+create and process. The File Handling API allows you to do exactly this. After registering a text
+editor app as a file handler and after installing it, you can right-click a `.txt` file on macOS and
+select "Get Info" to then instruct the OS that it should always open `.txt` files with this app as
+default.
 
 ### Suggested use cases for the File Handling API {: #use-cases }
 
@@ -36,7 +37,7 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -65,7 +66,7 @@ app, however, can be achieved through two other means:
 To check if the File Handling API is supported, use:
 
 ```javascript
-if ('launchQueue' in window) {
+if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
   // The File Handling API is supported.
 }
 ```
@@ -82,6 +83,10 @@ an object with two properties:
 - An `"action"` property that points to a URL within the scope of the app as its value.
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
   values.
+- An `"icons"` property with an array of [`ImageResource`](https://www.w3.org/TR/image-resource/)
+  icons. Some operating systems allow a file type association to display an icon that is not just
+  the associated application icon, but rather a special icon related to the use of that file type
+  with the application.
 
 The example below, showing only the relevant excerpt of the web app manifest, should make it
 clearer:
@@ -93,20 +98,41 @@ clearer:
       "action": "/open-csv",
       "accept": {
         "text/csv": [".csv"]
-      }
+      },
+      "icons": [
+        {
+          "src": "csv-icon.png",
+          "sizes": "256x256",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "action": "/open-svg",
       "accept": {
         "image/svg+xml": ".svg"
-      }
+      },
+      "icons": [
+        {
+          "src": "svg-icon.png",
+          "sizes": "256x256",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "action": "/open-graf",
       "accept": {
         "application/vnd.grafr.graph": [".grafr", ".graf"],
         "application/vnd.alternative-graph-app.graph": ".graph"
-      }
+      },
+      "icons": [
+        {
+          "src": "graf-icon.png",
+          "sizes": "256x256",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }
@@ -130,7 +156,7 @@ exactly once for each launch. In this manner, every launch is handled, regardles
 consumer was specified.
 
 ```js
-if ('launchQueue' in window) {
+if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
   launchQueue.setConsumer((launchParams) => {
     // Nothing to do when the queue is empty.
     if (!launchParams.files.length) {
@@ -151,11 +177,11 @@ added.
 
 ## Demo
 
-I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. To test
-it, you first need to install Excalidraw. When you then
-create a file with it and store it somewhere on your file system, you can open the file via a
-double click, or a right click and then select "Excalidraw" in the context menu. You can check
-out the [implementation][demo-source] in the source code.
+I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. To test it,
+you first need to install Excalidraw. When you then create a file with it and store it somewhere on
+your file system, you can open the file via a double click, or a right click and then select
+"Excalidraw" in the context menu. You can check out the [implementation][demo-source] in the source
+code.
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}

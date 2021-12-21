@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Headings and landmarks
 authors:
   - robdodson

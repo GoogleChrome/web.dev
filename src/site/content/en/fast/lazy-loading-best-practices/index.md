@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: post-old
 title: Lazy-loading best practices
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2020-06-11

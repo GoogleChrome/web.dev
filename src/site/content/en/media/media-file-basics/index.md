@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Media file basics
 authors:
   - joemedley
@@ -12,7 +12,7 @@ date: 2020-06-19
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 In this article you will learn about media file basics such as the concepts of a
@@ -116,15 +116,15 @@ and FFmpeg.
 
 [YouTube]: https://www.youtube.com/
 [Vimeo]: https://vimeo.com/
-[formats]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats
+[formats]: https://developer.mozilla.org/docs/Web/Media/Formats
 [Can I Use]: https://caniuse.com/#feat=webm
-[video codecs]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs
-[audio codecs]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs
+[video codecs]: https://developer.mozilla.org/docs/Web/Media/Formats/Video_codecs
+[audio codecs]: https://developer.mozilla.org/docs/Web/Media/Formats/Audio_codecs
 [MP4]: https://caniuse.com/#search=mp4
 [WebM]: https://caniuse.com/#feat=webm
-[AV1]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1
-[AVC (H.264)]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264
-[VP9]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9
-[AAC]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC
-[Vorbis]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis
-[Opus]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus
+[AV1]: https://developer.mozilla.org/docs/Web/Media/Formats/Video_codecs#AV1
+[AVC (H.264)]: https://developer.mozilla.org/docs/Web/Media/Formats/Video_codecs#AVC_H.264
+[VP9]: https://developer.mozilla.org/docs/Web/Media/Formats/Video_codecs#VP9
+[AAC]: https://developer.mozilla.org/docs/Web/Media/Formats/Audio_codecs#AAC
+[Vorbis]: https://developer.mozilla.org/docs/Web/Media/Formats/Audio_codecs#Vorbis
+[Opus]: https://developer.mozilla.org/docs/Web/Media/Formats/Audio_codecs#Opus

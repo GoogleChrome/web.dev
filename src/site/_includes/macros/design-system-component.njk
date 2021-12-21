@@ -3,12 +3,6 @@
 <div class="flow">
   <iframe class="design-system__preview-frame" src="{{ previewUrl }}?state=window" data-size="{{ size if size else 'standard' }}"></iframe>
   <div class="cluster flex-justify-end">
-    {% if handle %}
-      <div>
-        {# Pretty gnarly, but we can't use {% raw %} because we need that `handle` #}
-        <strong>Render:</strong> <code>{{ "{{ design.components.render('" + handle + "') | safe }}" }}</code>
-      </div>
-    {% endif %}
     <a href="{{ previewUrl }}">View full screen</a>
   </div>
   {% if markup or rendered %}

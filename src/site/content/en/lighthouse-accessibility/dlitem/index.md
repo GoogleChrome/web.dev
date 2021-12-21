@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Definition list items are not wrapped in `<dl>` elements"
 description: |
   Learn how to make sure assistive technologies can announce definition list

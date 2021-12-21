@@ -210,20 +210,20 @@ Pixels became popular largely because at one time they were one of the cheapest
 and most reliable ways to make a HTTP request in situations where the server
 response is not relevant ( for example, when sending data to analytics
 providers). The
-[`navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+[`navigator.sendBeacon()`](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
 and [`fetch()
-keepalive`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
+keepalive`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
 APIs are designed to address this same use case but are arguably more reliable
-than pixels. 
+than pixels.
 
 {% Aside %}
 
 The `sendBeacon()` and `fetch() keepalive` APIs will both still work in
 situations where the browser is
-[unloading](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
+[unloading](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
 the page: for example, both of these APIs can be used to track outbound link
 clicks. By contrast, techniques like pixels and
-[`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+[`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
 would likely fail in those cases.
 
 {% endAside %}
@@ -236,7 +236,7 @@ it is worth considering using one of these APIs.
 ##### `sendBeacon()`
 
 The
-[`navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+[`navigator.sendBeacon()`](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
 API is designed for sending small amounts of data to web servers in situations
 where the server response does not matter.
 
@@ -249,7 +249,7 @@ const data = JSON.stringify({
 
 navigator.sendBeacon(url, data);
 
-``` 
+```
 
 `sendBeacon()` has a limited API: it only supports making POST requests and does
 not support setting custom headers. It is
@@ -258,9 +258,9 @@ not support setting custom headers. It is
 
 ##### `fetch() keepalive`
 
-[`keepalive`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
+[`keepalive`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
 is a flag that allows the [Fetch
-API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to
+API](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch) to
 be used to make non-blocking requests like event reporting and analytics. It is
 used by including `keepalive: true` in the parameters passed to `fetch()`.
 
@@ -285,7 +285,7 @@ keepalive`.
 When choosing between `fetch() keepalive` and `sendBeacon()`, it's important to
 consider the features and browser support that you need. The fetch() API is
 significantly more flexible; however, `keepalive` has less browser
-[support](https://caniuse.com/?search=keepalive) than `sendBeacon()`. 
+[support](https://caniuse.com/?search=keepalive) than `sendBeacon()`.
 
 
 ### Get clarification
@@ -410,7 +410,7 @@ Although Google Tag Manager can be used without the data layer, its use is
 strongly recommended. The data layer provides a way to consolidate the data
 being accessed by third-party scripts into a single place thereby providing
 better visibility into its usage. Amongst other things, this can help reduce
-redundant variable calculations and script execution. 
+redundant variable calculations and script execution.
 
 {% Aside %}
 
@@ -578,7 +578,7 @@ shifts)—however it can make it easier to isolate and measure the impact of the
 tag on things like script execution. Check out how [Telegraph uses this
 isolation approach to improve
 performance](https://medium.com/the-telegraph-engineering/improving-third-party-web-performance-at-the-telegraph-a0a1000be5)
-of third-party code. 
+of third-party code.
 
 
 ### Monitor tag performance

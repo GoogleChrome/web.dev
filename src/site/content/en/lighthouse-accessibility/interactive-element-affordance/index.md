@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Interactive elements indicate their purpose and state
 description: |
   Learn how to improve the accessibility of custom controls on your web page

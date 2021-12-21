@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Content is not sized correctly for the viewport
 description: |
   Learn how to size your web page content to fit on mobile screens.

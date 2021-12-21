@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to provide your own in-app install experience
 authors:
   - petelepage

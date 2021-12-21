@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Preconnect to required origins
 description: |
   Learn about the uses-rel-preconnect audit.

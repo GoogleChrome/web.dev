@@ -298,6 +298,19 @@ sidenav.addEventListener('keyup', event => {
 });
 ```
 
+##### Browser history
+
+In order to prevent the open and close interaction from stacking multiple
+entries into the browser history, add the following JavaScript inline to
+the close button:
+
+```html
+<a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu" onchange="history.go(-1)"></a>
+```
+
+This will remove the URL history entry on close, making it as if the menu was
+never opened.
+
 ##### Focus UX
 
 The next snippet helps us put focus on the open and close buttons after

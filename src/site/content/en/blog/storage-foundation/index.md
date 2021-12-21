@@ -4,12 +4,12 @@ title: 'High performance storage for your app: the Storage Foundation API'
 subhead: |
   The Storage Foundation API resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
-  developers flexibility by providing generic, simple, and performant 
+  developers flexibility by providing generic, simple, and performant
   primitives on which they can build higher-level components.
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-06-30
+updated: 2021-12-14
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -31,9 +31,13 @@ origin_trial:
 [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
 
+{% Aside %} There is an ongoing effort to bring the Storage Foundation API closer to the
+origin private file system of the File System Access API. For more information, read
+[Accessing files optimized for performance from the origin private file system](/file-system/access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system). {% endAside %}
+
 The web platform increasingly offers developers the tools they need to build fined-tuned
 high-performance applications for the web. Most notably,
-[WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) (Wasm) has opened the door to
+[WebAssembly](https://developer.mozilla.org/docs/WebAssembly) (Wasm) has opened the door to
 fast and powerful web applications, while technologies like [Emscripten](https://emscripten.org/)
 now allow developers to reuse tried and tested code on the web. To truly leverage this potential,
 developers must have the same power and flexibility when it comes to storage.
@@ -56,24 +60,24 @@ specific use-cases in mind.
 
 - Some of these options clearly do not overlap with this proposal as they only allow very small
   amounts of data to be stored, like
-  [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), or the
-  [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) consisting of
+  [cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies), or the
+  [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API) consisting of
   the `sessionStorage` and the `localStorage` mechanisms.
 - Other options are already deprecated for various reasons like the
-  [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction)
+  [File and Directory Entries API](https://developer.mozilla.org/docs/Web/API/File_and_Directory_Entries_API/Introduction)
   or [WebSQL](https://www.w3.org/TR/webdatabase/).
 - The [File System Access API](/file-system-access/) has a similar API surface, but its use is to
   interface with the client's file system and provide access to data that may be outside of the
   origin's or even the browser's ownership. This different focus comes with stricter security
   considerations and higher performance costs.
-- The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) can be used as
+- The [IndexedDB API](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) can be used as
   a backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes
   [IDBFS](https://emscripten.org/docs/api_reference/Filesystem-API.html), an IndexedDB-based
   persistent file system. However, since IndexedDB is fundamentally a key-value store, it comes with
   significant performance limitations. Furthermore, directly accessing subsections of a file is even
   more difficult and slower under IndexedDB.
 - Finally, the
-  [CacheStorage interface](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) is widely
+  [CacheStorage interface](https://developer.mozilla.org/docs/Web/API/CacheStorage) is widely
   supported and is tuned for storing large-sized data such as web application resources, but the
   values are immutable.
 
@@ -108,7 +112,7 @@ updated once a decision has been reached. For more background on the tradeoffs, 
 [Explainer](https://github.com/WICG/storage-foundation-api-explainer#sync-vs-async). {% endAside %}
 
 - `storageFoundation.open(name)`: Opens the file with the given name if it exists and otherwise
-  creates a new file. Returns a promise that resolves with the the opened file.
+  creates a new file. Returns a promise that resolves with the opened file.
 
 {% Aside 'warning' %} File names are restricted to lowercase alphanumeric characters and underscore
 (`a-z`, `0-9`, `_`). {% endAside %}
@@ -161,13 +165,13 @@ faster, less reliable variant would be useful. {% endAside %}
   bytes.
 - `NativeIOFile.read(buffer, offset)`: Reads the contents of the file at the given offset through a
   buffer that is the result of transferring the given buffer, which is then left detached. Returns a
-  `NativeIOReadResult` with the transferred buffer and the the number of bytes that were
+  `NativeIOReadResult` with the transferred buffer and the number of bytes that were
   successfully read.
 
   A `NativeIOReadResult` is an object that consists of two entries:
 
   - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView), which is
+    [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView), which is
     the result of transferring the buffer passed to `read()`. It is of the same type and length as
     source buffer.
   - `readBytes`: The number of bytes that were successfully read into `buffer`. This may be less
@@ -182,7 +186,7 @@ faster, less reliable variant would be useful. {% endAside %}
   A `NativeIOWriteResult` is an object that consists of two entries:
 
   - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) which is
+    [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView) which is
     the result of transferring the buffer passed to `write()`. It is of the same type and length as
     the source buffer.
   - `writtenBytes`: The number of bytes that were successfully written into `buffer`. This may be
@@ -195,7 +199,7 @@ it to successfully return. {% endAside %}
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -224,7 +228,7 @@ To experiment with the Storage Foundation API locally, without an origin trial t
 ### Enabling support during the origin trial phase
 
 Starting in Chromium&nbsp;90, the Storage Foundation API is available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;95 (November 10, 2021).
+Chromium. The origin trial is expected to end in Chromium&nbsp;98 (February 23, 2022).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -301,7 +305,7 @@ changes. You can find the [source code][demo-source] of the demo on Glitch.
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the Storage Foundation API using the core principles
+The Chromium team designed and implemented the Storage Foundation API using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 
@@ -373,6 +377,5 @@ Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on
 [cr-status]: https://chromestatus.com/feature/5670244905385984
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EStorage
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot]: https://developer.chrome.com/origintrials/#/view_trial/2916080758722396161

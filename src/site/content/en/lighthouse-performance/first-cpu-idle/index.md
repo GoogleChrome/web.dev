@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First CPU Idle
 description: |
   Learn about Lighthouse's First CPU Idle metric and how to optimize it.
@@ -12,7 +12,7 @@ web_lighthouse:
 {% Aside 'caution' %}
   First CPU Idle is deprecated in Lighthouse 6.0. While some have found that First CPU Idle
   offers a more meaningful measurement than [Time To Interactive](/interactive), the difference
-  isn't significant enough to justify maintaining two similar metrics. Moving forward, 
+  isn't significant enough to justify maintaining two similar metrics. Moving forward,
   consider using [Total Blocking Time](/lighthouse-total-blocking-time/) and
   [Time To Interactive](/interactive) instead.
 {% endAside %}

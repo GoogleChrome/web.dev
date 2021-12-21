@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'New aspect-ratio CSS property supported in Chromium, Safari Technology Preview, and Firefox Nightly'
 subhead: The new CSS property that helps maintain spacing in responsive layouts.
 authors:
@@ -19,7 +20,7 @@ Summary: Maintaining a consistent width-to-height ratio, called an *aspect ratio
 responsive web design and for preventing [cumulative layout shift](/cls/). Now,
 there's a more straightforward way to do this with the new `aspect-ratio` property launching in
 [Chromium 88](https://www.chromestatus.com/feature/5738050678161408), [Firefox
-87](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Experimental_features#property_aspect-ratio), and [Safari Technology Preview
+87](https://developer.mozilla.org/docs/Mozilla/Firefox/Experimental_features#property_aspect-ratio), and [Safari Technology Preview
 118](https://developer.apple.com/safari/technology-preview/release-notes/).
 
 {% endAside %}
@@ -137,7 +138,7 @@ ratios is much more clear.
 With the same markup, we can replace: `padding-top: 56.25%` with `aspect-ratio: 16 / 9`, setting
 `aspect-ratio` to a specified ratio of `width` / `height`.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Using padding-top' %}
 ```css
 .container {
@@ -164,7 +165,7 @@ This new property also adds the ability to
 set aspect ratio to `auto`, where "replaced elements with an intrinsic aspect ratio use that aspect
 ratio; otherwise the box has no preferred aspect ratio." If both `auto` and a `<ratio>` are
 specified together, the preferred aspect ratio is the specified ratio of `width` divided by `height` unless
-it is a [replaced element](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) with
+it is a [replaced element](https://developer.mozilla.org/docs/Web/CSS/Replaced_element) with
 an intrinsic aspect ratio, in which case that aspect ratio is used instead.
 
 ## Example: consistency in a grid

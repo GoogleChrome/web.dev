@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Minify JavaScript
 description: |
   Learn about the unminified-javascript audit.

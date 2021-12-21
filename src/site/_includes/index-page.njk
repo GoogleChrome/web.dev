@@ -1,0 +1,32 @@
+---
+layout: landing-page
+algolia_priority: 0.9
+eleventyComputed:
+  noindex: "{{ paged.index > 0 }}"
+---
+{% from 'macros/post-card.njk' import postCard with context %}
+
+<div class="region">
+  {# Elements start #}
+  <div class="wrapper auto-grid">
+    {% for element in paged.elements %}
+      {% set data = element.data %}
+
+      {{ postCard(
+        {
+          title: element.overrideTitle or element.title | i18n(locale),
+          subhead: element.description | i18n(locale),
+          url: element.url,
+          thumbnail: data.thumbnail or data.hero or null,
+          alt: element.overrideTitle or element.title | i18n(locale)
+        },
+        imageType
+      ) }}
+    {% endfor %}
+  </div>
+  {# Elements end #}
+
+  <div class="wrapper gap-top-size-3">
+    {% include "partials/pagination-next.njk" %}
+  </div>
+</div>

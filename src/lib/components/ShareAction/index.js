@@ -4,6 +4,8 @@
 
 import {isWebShareSupported} from '../../utils/web-share';
 
+import './_styles.scss';
+
 /**
  * Renders share element. This simply adds behavaior to share, and does not
  * render any HTML.

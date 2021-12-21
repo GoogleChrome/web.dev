@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Using the Chrome UX Report on PageSpeed Insights
 authors:
   - rviscomi

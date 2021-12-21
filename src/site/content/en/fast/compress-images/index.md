@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Choose the correct level of compression
 authors:
   - ilyagrigorik

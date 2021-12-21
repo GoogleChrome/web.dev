@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document doesn't have a valid `hreflang`
 description: |
   Learn about the "Document doesn't have a valid hreflang" Lighthouse audit.
@@ -23,7 +23,7 @@ incorrect `hreflang` links:
 </figure>
 
 Lighthouse checks for `hreflang` links
-in the page's `head` and in its [response headers](https://developer.mozilla.org/en-US/docs/Glossary/Response_header).
+in the page's `head` and in its [response headers](https://developer.mozilla.org/docs/Glossary/Response_header).
 
 Lighthouse then checks for valid language codes within the `hreflang`links.
 Lighthouse reports any `hreflang` links with invalid language codes.

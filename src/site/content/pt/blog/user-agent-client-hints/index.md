@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Melhorando a privacidade do usuário e a experiência do desenvolvedor com User-Agent Client Hints
 subhead: |-
   User-Agent Client Hints são uma nova expansão da API Client Hints, que
@@ -113,11 +114,11 @@ Sec-CH-UA-Mobile: ?0
 ### Cabeçalhos User-Agent de solicitação e resposta
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

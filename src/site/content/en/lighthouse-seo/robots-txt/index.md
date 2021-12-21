@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "`robots.txt` is not valid"
 description: |
   Learn about the "robots.txt is not valid" Lighthouse audit.

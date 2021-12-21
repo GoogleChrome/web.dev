@@ -15,7 +15,7 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - games
-  - game-design
+  # - game-design
   - monetization
   - tools
 ---
@@ -45,7 +45,7 @@ By "functional game" I refer to the three most core elements of what makes a gam
 - Visuals
 - Audio
 
-In each of these areas, the web platform has made significant strides in the past few years. For CPU performance we have access to a [performant new standard called WebAssembly](https://www.youtube.com/watch?v=njt-Qzw0mVY). From the graphics side, [WebGL 1.0](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) has [good cross-browser support](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_1) and future standards such as [WebGPU](https://www.youtube.com/watch?v=K2JzIUIHIhc) are positioning the web platform for an extensible future of graphics programming similar to Vulkan and Metal. Finally, for web audio we have the [common Web Audio API and more recently the Audio Worklet API](https://www.youtube.com/watch?v=-GaD0RCp-Q0).
+In each of these areas, the web platform has made significant strides in the past few years. For CPU performance we have access to a [performant new standard called WebAssembly](https://www.youtube.com/watch?v=njt-Qzw0mVY). From the graphics side, [WebGL 1.0](https://developer.mozilla.org/docs/Web/API/WebGL_API) has [good cross-browser support](https://developer.mozilla.org/docs/Web/API/WebGL_API#WebGL_1) and future standards such as [WebGPU](https://www.youtube.com/watch?v=K2JzIUIHIhc) are positioning the web platform for an extensible future of graphics programming similar to Vulkan and Metal. Finally, for web audio we have the [common Web Audio API and more recently the Audio Worklet API](https://www.youtube.com/watch?v=-GaD0RCp-Q0).
 
 Recently, Unity previewed a new runtime called Project Tiny which is focused on building 2D games for HTML5-based platforms. Project Tiny applies a new modular design to the engine structure of Unity enabling the core Unity engine to be under 1 megabyte in size.
 

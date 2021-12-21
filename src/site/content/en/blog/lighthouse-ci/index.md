@@ -421,7 +421,7 @@ to display these results on each pull request.
     recent commit.
 
     <figure class="w-figure">
-      {% Img src="image/admin/ougavsYk6faiNidNxIGQ.png", alt="Screenshot of the Github 'Settings' tab", width="800", height="216", class="w-screenshot" %}
+      {% Img src="image/admin/ougavsYk6faiNidNxIGQ.png", alt="Screenshot of the GitHub 'Settings' tab", width="800", height="216", class="w-screenshot" %}
     </figure>
 
     You can navigate to the Lighthouse report corresponding to a particular commit
@@ -429,7 +429,7 @@ to display these results on each pull request.
     workflow step, then expand the results of the **run Lighthouse CI** step.
 
     <figure class="w-figure">
-      {% Img src="image/admin/aJF6FVHGOPpGNxKB3LjY.png", alt="Screenshot of the Github 'Settings' tab", width="800", height="366", class="w-screenshot" %}
+      {% Img src="image/admin/aJF6FVHGOPpGNxKB3LjY.png", alt="Screenshot of the GitHub 'Settings' tab", width="800", height="366", class="w-screenshot" %}
     </figure>
 
     You've just set up a GitHub Action to run Lighthouse CI. This will be most
@@ -443,7 +443,7 @@ typically includes information such as the results of a test or the success of a
 build.
 
 <figure class="w-figure">
-  {% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Screenshot of the Github 'Settings' tab", width="800", height="297", class="w-screenshot" %}
+  {% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Screenshot of the GitHub 'Settings' tab", width="800", height="297", class="w-screenshot" %}
 </figure>
 
 The steps below explain how to set up a status check for Lighthouse CI.
@@ -466,7 +466,7 @@ The steps below explain how to set up a status check for Lighthouse CI.
     repository, click **Secrets**, then click **Add a new secret**.
 
     <figure class="w-figure">
-      {% Img src="image/admin/ZYH9cOHehImZLI6vov1r.png", alt="Screenshot of the Github 'Settings' tab", width="800", height="375", class="w-screenshot" %}
+      {% Img src="image/admin/ZYH9cOHehImZLI6vov1r.png", alt="Screenshot of the GitHub 'Settings' tab", width="800", height="375", class="w-screenshot" %}
     </figure>
 
 6.  Set the **Name** field to `LHCI_GITHUB_APP_TOKEN` and set the **Value**

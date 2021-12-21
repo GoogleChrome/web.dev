@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP)
 subhead: How to deploy a CSP based on script nonces or hashes as a defense-in-depth against cross-site scripting.
 description: |
@@ -23,7 +24,7 @@ inject malicious scripts into a web application—has been one of the biggest we
 security vulnerabilities for over a decade.
 
 [Content Security Policy
-(CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is an added layer
+(CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) is an added layer
 of security that helps to mitigate XSS. Configuring a CSP involves adding the
 Content-Security-Policy HTTP header to a web page and setting values to control
 what resources the user agent is allowed to load for that page. This article
@@ -74,7 +75,7 @@ This makes allowlist CSPs generally ineffective at preventing attackers from
 exploiting XSS. That's why it's recommended to use a strict CSP based on
 cryptographic nonces or hashes, which avoids the pitfalls outlined above.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Allowlist CSP' %}
 - Doesn't effectively protect your site. ❌
 - Must be highly customized. 😓
@@ -183,7 +184,7 @@ There are two types of strict CSPs, nonce- and hash-based. Here's how they work:
 
 Criteria for choosing a strict CSP approach:
 
-<div class="w-table-wrapper">
+<div>
   <table>
       <caption>Criteria for choosing a strict CSP approach</caption>
       <thead>
@@ -423,10 +424,10 @@ this snippet, keep in mind:
  - One/both scripts may execute before the document has finished downloading. If
    you want the document to be ready by the time the scripts execute, you need
    to wait for the [`DOMContentLoaded`
-   event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
+   event](https://developer.mozilla.org/docs/Web/API/Window/DOMContentLoaded_event)
    before you append the scripts. If this causes a performance issue (because
    the scripts don't start downloading early enough), you can use [preload
-   tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+   tags](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
    earlier in the page.
  - `defer = true` won't do anything. If you need that behaviour, you'll have to
    manually run the script at the time you want to run it. {% endDetails %}

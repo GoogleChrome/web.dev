@@ -22,16 +22,5 @@
         "summary": "Each test comes with helpful steps to improve your site's results."
       }
     ]
-  },
-  "variants": [
-    {
-      "name": "horizontal",
-      "title": "Horizontal",
-      "context": {
-        "utilities": {
-          "heading": "cluster"
-        }
-      }
-    }
-  ]
+  }
 }

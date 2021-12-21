@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Third-party JavaScript performance
 subhead: Find out how third-party JavaScript can affect performance and what you can do to keep it from slowing down your sites.
 authors:
@@ -13,7 +13,7 @@ alt: A diagram of a webpage featuring text, a video, a map, a chat widget, and s
 tags:
   - blog
   - performance
-  - third-party
+  # - third-party
 ---
 
 Third-party JavaScript generally refers to scripts embedded in your website that are:

@@ -15,45 +15,32 @@
  */
 require('dotenv').config();
 const algoliasearch = require('algoliasearch');
+const byteof = require('byteof');
 const fs = require('fs');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
-const maxItemSizeInBytes = 10000; // 10,000
+const maxItemSizeInBytes = 7000; // 7,000
+const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 /**
- * Trim text of Algoia Collection Item.
+ * Trim byte size of Algoia Collection Item.
  *
  * @param {AlgoliaItem} item
  * @return {AlgoliaItem}
  */
-const trimText = (item) => {
-  const currentSizeInBytes = JSON.stringify(item).length;
-  let textLength = 0;
-  if (currentSizeInBytes < maxItemSizeInBytes) {
-    // Check if item is small enough, if it is, return it
-    return item;
-  } else if (item.default_content) {
-    // Since it is not, check if there is a `default_content` then get the length of the contents
-    textLength = item.default_content.length + item.content.length;
-  } else {
-    // Get the length of the content
-    textLength = item.content.length;
-  }
+const trimBytes = (item) => {
+  const currentSizeInBytes = byteof(item);
   // Calculate how many characters needs to be removed to get to right size
-  const charactersToRemove = currentSizeInBytes - maxItemSizeInBytes;
+  const bytesToRemove = currentSizeInBytes - maxItemSizeInBytes;
+  const contentBytes = byteof(item.content);
   // Calculate what percentage of description can stay in order to get it to right size
-  const percentageToRemove = (textLength - charactersToRemove) / textLength;
-  // Trim content
+  const percentageToRemove = (contentBytes - bytesToRemove) / contentBytes;
+
   item.content = item.content.slice(
     0,
     Math.floor(item.content.length * percentageToRemove),
   );
-  if (item.default_content) {
-    item.default_content = item.content.slice(
-      0,
-      Math.floor(item.default_content.length * percentageToRemove),
-    );
-  }
+
   return item;
 };
 
@@ -68,8 +55,9 @@ const chunkAlgolia = (arr) => {
   let tempSizeInBytes = 0;
   let temp = [];
   for (const arrItem of arr) {
-    const current = trimText(arrItem);
-    const currentSizeInBytes = JSON.stringify(current).length;
+    const current = trimBytes(arrItem);
+    const currentSizeInBytes = byteof(current);
+
     if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
       temp.push(current);
       tempSizeInBytes += currentSizeInBytes;
@@ -93,10 +81,31 @@ async function index() {
 
   const raw = fs.readFileSync('dist/pages.json', 'utf-8');
   /** @type {AlgoliaItem[]} */
-  const algoliaData = JSON.parse(raw).map((e) => {
-    // Set date of when object is being added to algolia.
-    e.indexedOn = indexedOn.getTime();
-    return e;
+  const pagesData = JSON.parse(raw);
+
+  /** @type {{ [url: string]: string[]}} */
+  const urlToLocale = pagesData.reduce((urlLocalesDict, {url, locale}) => {
+    if (urlLocalesDict[url]) {
+      urlLocalesDict[url].push(locale);
+    } else {
+      urlLocalesDict[url] = [locale];
+    }
+
+    return urlLocalesDict;
+  }, {});
+
+  const algoliaData = pagesData.map((/** @type {AlgoliaItem} */ item) => {
+    if (item.locale === defaultLocale) {
+      const locales = urlToLocale[item.url];
+      item.locales = [
+        item.locale,
+        ...supportedLocales.filter((i) => locales.indexOf(i) === -1),
+      ];
+    } else {
+      item.locales = [item.locale];
+    }
+    item.indexedOn = indexedOn.getTime();
+    return item;
   });
 
   const chunkedAlgoliaData = chunkAlgolia(algoliaData);
@@ -115,7 +124,9 @@ async function index() {
 
   // When indexing data we mark these two fields as fields that can be filtered by.
   await index.setSettings({
+    searchableAttributes: ['title', 'content', 'description'],
     attributesForFaceting: ['locales', 'tags'],
+    customRanking: ['desc(priority)'],
   });
 
   // Update algolia index with new data

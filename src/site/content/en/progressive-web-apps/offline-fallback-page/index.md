@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Create an offline fallback page
 authors:
   - thomassteiner
@@ -206,7 +206,7 @@ self.addEventListener("fetch", (event) => {
 The `offline.html` file is where you can get creative and adapt it to your needs and add your
 branding. The example below shows the bare minimum of what is possible.
 It demonstrates both manual reload based on a button press as well as automatic reload
-based on the [`online` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event)
+based on the [`online` event](https://developer.mozilla.org/docs/Web/API/Window/online_event)
 and regular server polling.
 
 {% Aside 'gotchas' %} You need to cache all resources required by your offline page. One

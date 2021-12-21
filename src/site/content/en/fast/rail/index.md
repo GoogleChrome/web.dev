@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Measure performance with the RAIL model
 description: |
   RAIL model enables designers and developers to reliably target the performance optimization work that has the highest impact on user experience. Learn what goals and guidelines the RAIL model sets out and which tools you can use to achieve them.
@@ -165,7 +165,7 @@ input within 50&nbsp;ms.
 
 * Use idle time to complete deferred work. For example, for the initial page
   load, load as little data as possible, then use [idle
-  time](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+  time](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback)
   to load the rest.
 
 * Perform work during idle time in 50&nbsp;ms or less. Any longer, and you risk

@@ -10,7 +10,7 @@ tags:
   - blog
   - capabilities
   - progressive-web-apps
-  - badging
+  # - badging
   - notifications
 hero: image/admin/AFvb0uBtN7ZX9qToptEo.jpg
 alt: Neon sign with heart and zero
@@ -53,7 +53,7 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |

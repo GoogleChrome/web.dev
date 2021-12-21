@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Five ways AirSHIFT improved their React app's runtime performance
 subhead: |
   A real-world case study of React SPA performance optimization.
@@ -32,10 +33,11 @@ As the Recruit Technologies engineering team added new features to the
 AirSHIFT app, they started seeing more feedback around slow performance.
 The engineering manager of AirSHIFT, Yosuke Furukawa, said:
 
-<blockquote class="w-blockquote">
-  In a user research study, we were shocked when one of the store owners said she
+<blockquote>
+  <p>In a user research study, we were shocked when one of the store owners said she
   would leave her seat to brew coffee after clicking a button, just to kill time waiting
-  for the shift table to load.
+  for the shift table to load.</p>
+  <cite></cite>
 </blockquote>
 
 After going through the research, the engineering team realized that many of their users were trying to load massive shift tables on low spec computers, such as a 1 GHz Celeron M laptop from 10 years ago.
@@ -120,7 +122,7 @@ But the AirSHIFT team found it easier to analyze application activity based
 on React's lifecycle.
 
 React 16 provides its performance trace via the
-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API),
+[User Timing API](https://developer.mozilla.org/docs/Web/API/User_Timing_API),
 which you can visualize from the
 [Timings section](https://developers.google.com/web/updates/2018/04/devtools#tabs)
 of Chrome DevTools. AirSHIFT used the Timings section to find
@@ -156,7 +158,7 @@ To improve this experience, AirSHIFT now uses [React.lazy and Suspense](/code-sp
 
 The AirSHIFT team also migrated some of the expensive business logic
 within the lazily loaded components to
-[web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+[web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers).
 This solved the user input jank problem by freeing up the main thread
 so that it could focus on responding to user input.
 
@@ -300,7 +302,8 @@ before the project.
 
 After the performance optimizations launched, one user said:
 
-<blockquote class="w-blockquote">
+<blockquote class="blockquote">
   Thank you so much for making the shift table load fast.
   Arranging the shift work is so much more efficient now.
+  <cite></cite>
 </blockquote>

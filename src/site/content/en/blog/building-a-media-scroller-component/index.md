@@ -13,7 +13,7 @@ tags:
   - css
   - dom
   - javascript
-  - interaction
+  # - interaction
 ---
 
 In this post I want to share thinking on ways to create horizontal scrolling

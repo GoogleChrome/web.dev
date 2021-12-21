@@ -19,6 +19,7 @@ const react = require('./react.json');
 const reliable = require('./reliable.json');
 const secure = require('./secure.json');
 const animations = require('./animations.json');
+const identity = require('./identity.json');
 
 module.exports = {
   accessible,
@@ -33,6 +34,7 @@ module.exports = {
   'lighthouse-performance': lighthousePerformance,
   'lighthouse-pwa': lighthousePwa,
   'lighthouse-seo': lighthouseSeo,
+  identity,
   media,
   metrics,
   notifications,

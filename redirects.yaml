@@ -206,10 +206,15 @@ redirects:
   - source: /android-payment-apps-overview
     destination: /android-payment-app-developers-guide
 
+  - source: /payment-request-basic-card-deprecation
+    destination: https://chromestatus.com/feature/5730051011117056
+
   # Redirect for misconfigured Lighthouse report
 
   - source: /image-size-responsive
     destination: /image-aspect-ratio
+
+  # Redirect for misconfigured Lighthouse report
 
   # Redirects for Handbook refactors
 
@@ -287,6 +292,10 @@ redirects:
     destination: https://developer.chrome.com/blog/origin-trials/
   - source: /third-party-origin-trials/
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
+  - source: /conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /using-conversion-measurement/
+    destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
 
   # Redirect for Aurora
   - source: /aurora
@@ -295,3 +304,7 @@ redirects:
   # Design system
   - source: /design-system/component/action
     destination: /design-system/component/fab
+
+  # web.dev LIVE 2020 event
+  - source: /live
+    destination: /shows/web-dev-live-day-1

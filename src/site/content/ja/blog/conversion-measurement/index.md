@@ -1,4 +1,5 @@
 ---
+layout: post
 title: よりプライベートな広告コンバージョンの測定方法である Event Conversion Measurement API について
 subhead: オリジン トライアルとして利用可能な新しい Web API がクロスサイト ID を使用せずに、広告のクリックがコンバージョンにつながるタイミングを測定します。
 authors:
@@ -43,7 +44,7 @@ tags:
 
 ### なぜこれが必要なのですか？
 
-今日、広告コンバージョンの測定は、多くの場合、 [サードパーティ Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies) に依存しています。**しかし、ブラウザーはこれらへのアクセスを制限しています。**
+今日、広告コンバージョンの測定は、多くの場合、 [サードパーティ Cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies) に依存しています。**しかし、ブラウザーはこれらへのアクセスを制限しています。**
 
 [Chromeは、サードパーティ Cookie のサポートを段階的に廃止することを](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)計画しており[、ユーザーが選択した場合に](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en) Cookie をブロックする方法を提供します。 Safari は[サードパーティ Cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/) をブロックし、Firefox は[既知のサードパーティ追跡 Cookie をブロックし](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)、また Edge は[追跡防止を提供します](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)。
 
@@ -64,7 +65,7 @@ tags:
 
 ### 使い方
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="図：変換測定 API ステップの概要", width="800", height="496" %}
 </figure>
 
@@ -125,7 +126,7 @@ Safari で使用される Web ブラウザー エンジンである  WebKit に�
 
 #### サードパーティ Cookie を使用
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="図：サードパーティ Cookie がクロスサイト ユーザーの認識を可能にする方法", width="800", height="860" %}
 </figure>
 
@@ -137,9 +138,9 @@ Safari で使用される Web ブラウザー エンジンである  WebKit に�
 
 #### Event Conversion Measurement API を使用
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="図：API がクロスサイトユーザー認識なしでコンバージョン測定を可能にする方法", width="800", height="643" %}
-  <figcaption class="w-figcaption">Cookie 図の「広告 ID」と「クリック ID」はどちらも、詳細データへのマッピングを可能にする識別子です。この図では、クリックスルー コンバージョン測定のみがサポートされているため、「クリック ID」と呼ばれています。</figcaption>
+  <figcaption>Cookie 図の「広告 ID」と「クリック ID」はどちらも、詳細データへのマッピングを可能にする識別子です。この図では、クリックスルー コンバージョン測定のみがサポートされているため、「クリック ID」と呼ばれています。</figcaption>
 </figure>
 
 `adtech.example` はクロスサイト識別子を使用できないため、**サイト間でユーザーを認識できません**。
@@ -167,8 +168,8 @@ Event Conversion Measurement API などのサードパーティ Cookie に代わ
 
 クリック データとコンバージョン データの合計:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>データ</th>
@@ -203,8 +204,8 @@ Event Conversion Measurement API などのサードパーティ Cookie に代わ
 
 Chromeでは、レポートのスケジュールは次のように機能します。
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
@@ -261,7 +262,7 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
   </table>
 </div>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="どのレポートがいつ送信されるかを示すクロノロジー", width="800", height="462" %}
 </figure>
 
@@ -275,7 +276,7 @@ API によりコンバージョンが記録および報告される仕組みは�
 
 ### 広告クリック (ステップ 1 から 5)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="図：広告クリックとクリック ストレージ", width="800", height="694" %}
 </figure>
 
@@ -298,8 +299,8 @@ API によりコンバージョンが記録および報告される仕組みは�
 
 このコードは以下を指定します：
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>属性</th>
@@ -373,7 +374,7 @@ API によりコンバージョンが記録および報告される仕組みは�
 
 ### 変換とレポートのスケジュール (ステップ 6 から 9)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="図: 変換とレポートのスケジュール", width="800", height="639" %}
 </figure>
 
@@ -421,7 +422,7 @@ app.get('/conversion', (req, res) => {
 
 ### レポートの送信 (ステップ 10 および 11)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="図: レポートを送信するブラウザー", width="800", height="533" %}
 </figure>
 

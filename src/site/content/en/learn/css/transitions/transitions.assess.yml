@@ -1,0 +1,37 @@
+setLeader: Test your knowledge of transitions
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: Which transition property is for specifying easing?
+    options:
+      - content: "`transition-duration`"
+        rationale: "Try again."
+      - content: "`transition-easing`"
+        rationale: "Not a real CSS property."
+      - content: "`transition-cubic-bezier`"
+        rationale: "Not a real CSS property."
+      - content: "`transition-timing-function`"
+        rationale: "Correct!"
+      - content: "`animation-ease`"
+        rationale: "Not a real CSS property."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "It's best practice to use `transition-property: all`"
+    options:
+      - content: "true"
+        rationale: "Try again. Specifying `all` can lead to performance issues and unintended transitions."
+      - content: "false"
+        rationale: "Correct. Best practice is to specify each property individually. Finer control will lead to better performance and more predictable outcomes."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "All properties can be transitioned."
+    options:
+      - content: "true"
+        rationale: "Try again. Properties like `font-family` cannot transition."
+      - content: "false"
+        rationale: "Correct. A transition can be specified for incompatible properties, but they will transition discretely."

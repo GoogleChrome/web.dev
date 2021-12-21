@@ -1,4 +1,5 @@
 ---
+layou: post
 title: Towards a better responsiveness metric
 subhead: Learn about our thoughts on measuring responsiveness and give us feedback.
 description: Learn about our thoughts on measuring responsiveness and give us feedback.
@@ -61,7 +62,7 @@ interaction with a site. In other words, FID is a lower bound on the amount of t
 after interacting.
 
 Other metrics like [Total Blocking Time (TBT)](/tbt/) and [Time To Interactive (TTI)](/tti/) are based
-on [long tasks](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API) and, like FID, also
+on [long tasks](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) and, like FID, also
 measure main thread blocking time during load. Since these metrics can be measured in both the field
 and the lab, many developers have asked why we don't prefer one of these over FID.
 
@@ -195,7 +196,7 @@ dispatched when such user interaction occurs. For instance, when a user scrolls,
 dispatched, but it happens after the screen has been updated to reflect the scrolling, so we don't
 consider it part of the interaction latency.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -308,7 +309,7 @@ so its duration will always overlap with the duration of the`keydown`.
 
 There is an edge case here worth mentioning: there may be cases where the user presses a key and
 takes a while to release it. In this case, the sequence of events dispatched can
-[vary](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent#auto-repeat_handling). In
+[vary](https://developer.mozilla.org/docs/Web/API/KeyboardEvent#auto-repeat_handling). In
 these cases, we would consider there to be one interaction per `keydown`, which may or may not have
 a corresponding `keyup`. {% endDetails %}
 
@@ -352,7 +353,7 @@ about as well as make the latencies comparable with the other interactions consi
 consistent with our decision to exclude continuous events such as `mouseover`.
 
 We're also not considering drags implemented via the [Drag and Drop
-API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) because they only work
+API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) because they only work
 on desktop.
 
 ##### Scrolling

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Document doesn't have a `<title>` element
 description: |
   Learn about the "Document doesn't have a <title> element"

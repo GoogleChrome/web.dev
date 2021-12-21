@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: What should you measure to improve performance?
 subhead: Strategies to measure performance at each stage in the purchase funnel.
 authors:
@@ -12,7 +12,7 @@ description: |
 tags:
   - blog
   - performance
-  - ecommerce
+  # - ecommerce
 ---
 
 The different steps of a purchase funnel are prone to performance issues in

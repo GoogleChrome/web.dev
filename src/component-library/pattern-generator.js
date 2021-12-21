@@ -6,7 +6,7 @@ const pathIndex = process.argv.indexOf('-p');
 const nameIndex = process.argv.indexOf('-n');
 const titleIndex = process.argv.indexOf('-t');
 const skipMarkupIndex = process.argv.indexOf('-sm');
-const basePath = [process.cwd(), 'src', 'components', 'patterns'];
+const basePath = [process.cwd(), 'src', 'component-library'];
 
 // Set up the chalk warning and error states
 const warning = chalk.black.bgYellow;

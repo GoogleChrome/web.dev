@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Page load is not fast enough on mobile networks
 description: |
   Learn how to make your web page load quickly on mobile networks.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How can performance improve conversion?
 subhead: Optimize your site's performance and improve conversions.
 authors:
@@ -12,7 +12,7 @@ description: |
 tags:
   - blog
   - performance
-  - e-commerce
+  # - e-commerce
 ---
 
 In our other e-commerce guides you have learned about [what you should measure

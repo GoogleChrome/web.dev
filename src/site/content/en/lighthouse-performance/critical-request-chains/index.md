@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid chaining critical requests
 description: |
   Learn what critical request chains are, how they affect web page performance,

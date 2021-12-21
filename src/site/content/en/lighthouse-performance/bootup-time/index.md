@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Reduce JavaScript execution time
 description: |
   Learn how JavaScript execution can slow down your page performance

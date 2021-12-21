@@ -35,8 +35,6 @@ const virtualImports = {
   },
   webdev_config: {
     isProd,
-    env: process.env.ELEVENTY_ENV || 'dev',
-    version: 'v' + new Date().toISOString().replace(/[\D]/g, '').slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
 };

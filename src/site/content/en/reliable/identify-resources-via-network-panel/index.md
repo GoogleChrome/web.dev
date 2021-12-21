@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Identify resources loaded from the network
 authors:
   - jeffposnick
@@ -55,7 +55,7 @@ make sense for hundreds of large images, for instance.
 Another part of the overall loading picture is _when_ everything gets loaded.
 
 Some requests to the network, such as the
-[navigation request](https://developer.mozilla.org/en-US/docs/Web/API/Request/mode#Value)
+[navigation request](https://developer.mozilla.org/docs/Web/API/Request/mode#Value)
 for your initial HTML, are made unconditionally as soon as a user visits a given
 URL. That HTML might contain hardcoded references to critical CSS or JavaScript
 files that must also load in order to display your interactive page. These
@@ -72,7 +72,7 @@ critical loading path.
 
 {% Aside %}
 Advanced techniques outside the scope of this guide, like [<link
-rel="preload">](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content),
+rel="preload">](https://developer.mozilla.org/docs/Web/HTML/Preloading_content),
 add a twist to this story by giving a head start to what would otherwise be a
 late-loaded request.
 {% endAside %}
@@ -119,4 +119,4 @@ browser can request multiple subresources at the same time, and that's
 represented by the overlapping bars in the Waterfall column for `main.css` and
 `logo.svg`. Finally, you can see from the screenshot that `main.js` starts
 loading last, and it finishes loading after the other three URLs have completed
-as well. 
+as well.

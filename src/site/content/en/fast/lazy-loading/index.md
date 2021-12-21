@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: post-old
 title: Use lazy-loading to improve loading speed
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2020-06-09

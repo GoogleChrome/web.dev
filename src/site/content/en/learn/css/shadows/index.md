@@ -28,8 +28,8 @@ How do you do that with CSS?
 } %}
 
 CSS has the
-[`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) and
-[`text-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow) properties,
+[`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow) and
+[`text-shadow`](https://developer.mozilla.org/docs/Web/CSS/text-shadow) properties,
 but the picture isn't text, so you can't use `text-shadow`.
 If you use `box-shadow`, the shadow is on the surrounding box,
 _not_ around the t-shirt.
@@ -41,7 +41,7 @@ _not_ around the t-shirt.
 } %}
 
 Luckily, there is another option: the
-[`drop-shadow()`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()) filter.
+[`drop-shadow()`](https://developer.mozilla.org/docs/Web/CSS/filter-function/drop-shadow()) filter.
 This enables you to do exactly what the designer asked for.
 There are plenty of options when it comes to shadows in CSS,
 each designed for a different use case.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Heading elements are not in a sequentially-descending order
 description: |
   Learn how to make sure assistive technology users can easily navigate your
@@ -64,7 +64,7 @@ You can also use tools like Microsoft's
 to visualize your page structure and catch out-of-order heading elements.
 
 {% Aside 'caution' %}
-Less experienced developers sometimes skip heading levels
+Developers sometimes skip heading levels
 to achieve a desired visual style.
 For example, they may use an `<h3>` element
 because they feel the `<h2>` text is too large.

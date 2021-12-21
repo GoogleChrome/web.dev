@@ -1,4 +1,5 @@
 ---
+layout: post
 title: User-Agent Client Hints로 사용자 개인정보 보호 및 개발자 경험 개선
 subhead: User-Agent Client Hints는 Client Hints API의 새로운 확장으로, 개발자가 개인정보를 보호하고 인체 공학적인 방식으로 사용자 브라우저에 대한 정보에 액세스할 수 있도록 합니다.
 authors:
@@ -10,9 +11,9 @@ hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
 thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
 alt: 눈 속의 다양한 발자국. 누가 거기에 있었는지에 대한 힌트.
 tags:
-  - 블로그
-  - 개인정보보호
-  - 보안
+  - blog
+  - privacy
+  - security
 feedback:
   - API
 ---
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### 사용자 에이전트 응답 및 요청 헤더
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

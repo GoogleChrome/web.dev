@@ -3,14 +3,11 @@ layout: post
 title: |
   Excalidraw and Fugu: Improving Core User Journeys
 subhead: |
-  Any sufficiently advanced technology is indistinguishable from magic. Unless you understand it. My
-  name is Thomas Steiner, I work in Developer Relations at Google and in this write-up of my Google I/O talk, I will look at
-  some of the new Fugu APIs and how they improve core user journeys in the Excalidraw PWA, so you can
-  take inspiration from these ideas and apply them to your own apps.
+  Any sufficiently advanced technology is indistinguishable from magic. Unless you understand it. My name is Thomas Steiner, I work in Developer Relations at Google and in this write-up of my Google I/O talk, I will look at some of the new Fugu APIs and how they improve core user journeys in the Excalidraw PWA, so you can take inspiration from these ideas and apply them to your own apps.
 authors:
   - thomassteiner
 date: 2021-05-18
-updated: 2021-05-19
+updated: 2021-12-06
 scheduled: true
 description: |
   A write-up of Thomas Steiner's Google I/O 2021 talk titled Excalidraw and Fugu: Improving Core User Journeys

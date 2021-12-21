@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "prefers-reduced-motion: Sometimes less movement is more"
 subhead: |
   The prefers-reduced-motion media query detects whether the user has requested
@@ -86,7 +87,7 @@ these preferences cause the operating system to not use decorative effects like 
 animations. Applications themselves can and should honor this setting, too, and remove all
 unnecessary animations.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="398", height="300" %}
   </figure>
@@ -162,7 +163,7 @@ load conditionally via the `media` attribute on the `link` element&nbsp;😎:
 
 To illustrate how to work with `prefers-reduced-motion` with JavaScript, let's imagine I have
 defined a complex animation with the
-[Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). While
+[Web Animations API](https://developer.mozilla.org/docs/Web/API/Web_Animations_API). While
 CSS rules will be dynamically triggered by the browser when the user preference changes, for
 JavaScript animations I have to listen for changes myself, and then manually stop my potentially
 in-flight animations (or restart them if the user lets me):
@@ -258,10 +259,10 @@ out there (use at your own risk!) that allow for this.
 The way this works is that the CSS above overrides the durations of all animations and transitions
 to such a short time that they are not noticeable anymore. As some websites depend on an animation
 to be run in order to work correctly (maybe because a certain step depends on the firing of the
-[`animationend` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event)),
+[`animationend` event](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationend_event)),
 the more radical `animation: none !important;` approach wouldn't work. Even the above hack is not
 guaranteed to succeed on all websites (for example, it can't stop motion that was initiated via the
-[Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)),
+[Web Animations API](https://developer.mozilla.org/docs/Web/API/Web_Animations_API)),
 so be sure to deactivate it when you notice breakage.
 
 ## Related Links

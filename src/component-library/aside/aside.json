@@ -17,6 +17,13 @@
   },
   "variants": [
     {
+      "name": "note",
+      "title": "Note",
+      "context": {
+        "content": "A note is just a standard aside."
+      }
+    },
+    {
       "name": "caution",
       "title": "Caution",
       "context": {

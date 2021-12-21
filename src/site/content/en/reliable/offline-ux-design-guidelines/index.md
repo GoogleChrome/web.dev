@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Offline UX design guidelines
 subhead: A guide to designing web experiences for slow networks and offline.
 authors:

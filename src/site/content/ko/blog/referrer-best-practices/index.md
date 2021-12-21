@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 리퍼러 및 리퍼러 정책 모범 사례
 subhead: 리퍼러 정책을 설정하고 들어오는 요청에서 리퍼러를 사용하는 모범 사례
 authors:
@@ -30,11 +31,11 @@ feedback:
 
 ## 리퍼러 및 리퍼러 정책 A부터 Z까지
 
-HTTP 요청에는 요청이 이루어진 출처 또는 웹 페이지 URL을 나타내는 [`Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) 헤더가 포함될 수 있습니다. [`Referrer-Policy` 헤더](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)는 `Referer` 헤더에서 사용할 수 있는 데이터를 정의합니다.
+HTTP 요청에는 요청이 이루어진 출처 또는 웹 페이지 URL을 나타내는 [`Referer`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer) 헤더가 포함될 수 있습니다. [`Referrer-Policy` 헤더](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)는 `Referer` 헤더에서 사용할 수 있는 데이터를 정의합니다.
 
 아래 예에서 `Referer` 헤더에는 요청이 이루어진 `site-one`에 있는 페이지의 전체 URL이 포함됩니다.
 
-<figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="리퍼러 헤더를 포함하는 HTTP 요청", width="800", height="573" %}</figure>
+<figure>{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="리퍼러 헤더를 포함하는 HTTP 요청", width="800", height="573" %}</figure>
 
 `Referer` 헤더는 다양한 유형의 요청에 존재할 수 있습니다.
 
@@ -47,7 +48,7 @@ HTTP 요청에는 요청이 이루어진 출처 또는 웹 페이지 URL을 나�
 
 그러나 경로와 쿼리 문자열을 포함하는 전체 URL이 **출처 간**에 `Referer`에서 전송되면 이는 **개인정보 침해**를 유발할 수 있으며 **보안 위험**을 제기할 수 있습니다. 다음 URL을 살펴보세요.
 
-<figure class="w-figure">{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="경로가 있는 URL, 다양한 개인정보 보호 및 보안 위험에 매핑됨", width="800", height="370" %}</figure>
+<figure>{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="경로가 있는 URL, 다양한 개인정보 보호 및 보안 위험에 매핑됨", width="800", height="370" %}</figure>
 
 URL #1 ~ #5에는 개인정보가 포함되어 있으며 때로는 개인 식별이 가능하거나 민감한 정보도 포함될 수 있습니다. 출처 간에 이러한 정보가 감지되지 않고 누출되면 웹 사용자의 개인정보가 위험에 빠질 수 있습니다.
 
@@ -63,15 +64,15 @@ URL #6은 [기능 URL](https://www.w3.org/TR/capability-urls/)입니다. 의도�
 - [출처](/same-site-same-origin/#origin)만
 - 전체 URL: 출처, 경로 및 쿼리 문자열
 
-<figure class="w-figure">{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Referer 헤더 및 document.referrer에 포함될 수 있는 데이터", width="800", height="255" %}</figure>
+<figure>{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Referer 헤더 및 document.referrer에 포함될 수 있는 데이터", width="800", height="255" %}</figure>
 
 일부 정책은 출처 간 또는 동일 출처 요청, 보안(요청 대상이 출처만큼 안전한지 여부) 또는 둘 모두 등 **컨텍스트**에 따라 다르게 작동하도록 설계됩니다. 이는 자체 사이트 내에서 리퍼러의 풍부함을 유지하면서 출처 간에 공유되는 정보의 양을 제한하거나 덜 안전한 원본으로 제한하는 데 유용합니다.
 
 다음은 리퍼러 정책이 Referer 헤더와 `document.referrer`에서 사용할 수 있는 URL 데이터를 제한하는 방법을 보여주는 개요입니다.
 
-<figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="보안 및 출처 간 컨텍스트에 따라 다른 리퍼러 정책 및 동작", width="800", height="537" %}</figure>
+<figure>{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="보안 및 출처 간 컨텍스트에 따라 다른 리퍼러 정책 및 동작", width="800", height="537" %}</figure>
 
-MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives)을 제공합니다.
+MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives)을 제공합니다.
 
 참고 사항:
 
@@ -84,7 +85,7 @@ MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org
 
 **리퍼러 정책이 설정되어 있지 않으면 브라우저의 기본 정책이 사용됩니다.**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -136,7 +137,7 @@ MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org
 사이트에 대해 리퍼러 정책을 설정하는 여러 가지 방법이 있습니다.
 
 - HTTP 헤더로
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 내에서
+- [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 내에서
 - [요청이 있을 시](https://javascript.info/fetch-api#referrer-referrerpolicy) JavaScript에서
 
 페이지, 요청 또는 요소마다 다른 정책을 설정할 수 있습니다.
@@ -164,7 +165,7 @@ HTTP 헤더와 메타 요소는 모두 페이지 수준입니다. 요소의 유�
 
 Chrome, Edge 또는 Firefox의 개발자 도구를 사용하여 특정 요청에 사용된 리퍼러 정책을 볼 수도 있습니다. 이 글을 작성하는 시점에 Safari는 `Referrer-Policy` 헤더를 표시하지 않지만 전송된 `Referer`는 표시합니다.
 
-<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="리퍼러 및 리퍼러 정책을 보여주는 Chrome DevTools의 네트워크 패널 스크린샷", width="800", height="416" %}<figcaption class="w-figcaption"> Chrome DevTools, 요청이 선택된 <b>네트워크 패널</b></figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="리퍼러 및 리퍼러 정책을 보여주는 Chrome DevTools의 네트워크 패널 스크린샷", width="800", height="416" %}<figcaption class="w-figcaption"> Chrome DevTools, 요청이 선택된 <b>네트워크 패널</b></figcaption></figure>
 
 ## 내 웹 사이트에 어떤 정책을 설정해야 합니까?
 
@@ -269,7 +270,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 **출처(`https://site-one.example`)만 필요한 경우:**
 
 - 페이지에 대한 최상위 액세스 권한이 있는 스크립트에서 리퍼러를 사용하는 경우 `window.location.origin`이 대안입니다.
-- 가능한 경우, [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)와 같은 헤더가 `Origin`을 제공하거나, 정확하게 원하는 바 대로 요청이 출처 간인지 여부를 설명합니다.
+- 가능한 경우, [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site)와 같은 헤더가 `Origin`을 제공하거나, 정확하게 원하는 바 대로 요청이 출처 간인지 여부를 설명합니다.
 
 **URL의 다른 요소(경로, 쿼리 매개변수…)가 필요한 경우:**
 
@@ -285,13 +286,13 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 요청 이미터는 `no-referrer` 정책을 설정하여 언제든지 리퍼러를 보내지 않도록 결정할 수 있습니다(악의적인 행위자는 리퍼러를 도용할 수도 있음).
 
-[CSRF 토큰](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)을 기본 보호 수단으로 사용하세요. 보호 수준을 더욱 높이기 위해 [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)를 사용하고 `Referer` 대신 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)(POST 및 CORS 요청에서 사용 가능) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)(사용 가능한 경우)와 같은 헤더를 사용하세요.
+[CSRF 토큰](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)을 기본 보호 수단으로 사용하세요. 보호 수준을 더욱 높이기 위해 [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)를 사용하고 `Referer` 대신 [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)(POST 및 CORS 요청에서 사용 가능) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site)(사용 가능한 경우)와 같은 헤더를 사용하세요.
 
 ### 로깅
 
 `Referer`에 있을 수 있는 사용자의 개인 데이터 또는 민감한 데이터를 보호해야 합니다.
 
-출처만 사용하는 경우 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) 헤더가 대안이 될 수 있는지 확인하세요. 이렇게 하면 리퍼러를 구문 분석할 필요 없이 더 간단한 방법으로 디버깅에 필요한 정보를 얻을 수 있습니다.
+출처만 사용하는 경우 [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) 헤더가 대안이 될 수 있는지 확인하세요. 이렇게 하면 리퍼러를 구문 분석할 필요 없이 더 간단한 방법으로 디버깅에 필요한 정보를 얻을 수 있습니다.
 
 ### 결제
 
@@ -338,8 +339,8 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 - ["same-site" 및 "same-origin" 이해하기](/same-site-same-origin/)
 - [새로운 보안 헤더: 리퍼러 정책(2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- [MDN의 리퍼러 정책](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- [리퍼러 헤더: MDN의 개인정보 및 보안 문제](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+- [MDN의 리퍼러 정책](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
+- [리퍼러 헤더: MDN의 개인정보 및 보안 문제](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome 변경: 구현 의도 간단히 알아보기](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome 변경: 배송 의도 간단히 알아보기](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
 - [Chrome 변경: 상태 항목](https://www.chromestatus.com/feature/6251880185331712)

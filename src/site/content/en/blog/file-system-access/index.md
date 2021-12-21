@@ -12,11 +12,11 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-08-25
+updated: 2021-12-09
 tags:
   - blog
   - capabilities
-  - file
+  # - file
   - file-system
 hero: image/admin/qn7E0q1EWJUqdzsuHwx4.jpg
 alt: Image of hard disk platters
@@ -35,7 +35,7 @@ folders on the user's device. Beyond reading and writing files, the File System 
 the ability to open a directory and enumerate its contents.
 
 {% Aside %} The File System Access API—despite the similar name—is distinct from the
-[`FileSystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) interface exposed by the
+[`FileSystem`](https://developer.mozilla.org/docs/Web/API/FileSystem) interface exposed by the
 [File and Directory Entries API](https://wicg.github.io/entries-api/#api-domfilesystem), which
 documents the types and operations made available by browsers to script when a hierarchy of files
 and directories are dragged and dropped onto a page or selected using form elements or equivalent
@@ -55,7 +55,7 @@ API to ensure that people can easily manage their files. See the
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                |
 | ---------------------------------------- | --------------------- |
@@ -71,8 +71,8 @@ API to ensure that people can easily manage their files. See the
 `Window.chooseFileSystemEntries()` that has been replaced with the three specialized methods
 `Window.showOpenFilePicker()`, `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`.
 There were a number of other
-[changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up
-on. {% endAside %}
+[changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up on.
+{% endAside %}
 
 ## Browser support
 
@@ -80,9 +80,8 @@ on. {% endAside %}
 
 The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
 Chrome OS, and Linux. A notable exception is Brave
-([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)).
-Android support is planned; you can track progress by starring
-[crbug.com/1011535](https://crbug.com/1011535).
+([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)). Android support
+is planned; you can track progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
 
@@ -135,10 +134,10 @@ needed to save changes back to the file, or to perform any other file operations
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
 For now, I'll simply read its contents. Calling `handle.getFile()` returns a [`File`][file-api-spec]
 object, which contains a blob. To get the data from the blob, call one of [its
-methods][blob-methods], ([`slice()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice),
-[`stream()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream),
-[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), or
-[`arrayBuffer()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)).
+methods][blob-methods], ([`slice()`](https://developer.mozilla.org/docs/Web/API/Blob/slice),
+[`stream()`](https://developer.mozilla.org/docs/Web/API/Blob/stream),
+[`text()`](https://developer.mozilla.org/docs/Web/API/Blob/text), or
+[`arrayBuffer()`](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)).
 
 ```js
 const file = await fileHandle.getFile();
@@ -199,8 +198,8 @@ async function getNewFileHandle() {
 }
 ```
 
-{% Aside 'gotchas' %} Sometimes processing the to-be-saved data takes some time after the user clicks
-the **Save** button in your app. A common gotcha is to do this work _before_ the
+{% Aside 'gotchas' %} Sometimes processing the to-be-saved data takes some time after the user
+clicks the **Save** button in your app. A common gotcha is to do this work _before_ the
 `showSaveFilePicker()` code has run, resulting in a
 `SecurityError Failed to execute 'showSaveFilePicker' on 'Window': Must be handling a user gesture to show a file picker.`.
 Instead, get the file handle first, and only _after_ obtaining the file handle start processing the
@@ -427,6 +426,23 @@ butDir.addEventListener('click', async () => {
 });
 ```
 
+If you additionally need to access each file via `getFile()` to, for example, obtain the individual file sizes,
+do not use `await` on each result sequentially, but rather process all files in parallel, for example,
+via `Promise.all()`.
+
+```js
+const dirHandle = await window.showDirectoryPicker();
+const promises = [];
+for await (const entry of dirHandle.values()) {
+  if (entry.kind !== 'file') {
+    break;
+  }
+  promises.push(entry.getFile().then(file => `${file.name} (${file.size})`));
+}
+console.log(await Promise.all(promises));
+});
+```
+
 ### Creating or accessing files and folders in a directory
 
 From a directory, you can create or access files and folders using the
@@ -471,15 +487,15 @@ await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ### Drag and drop integration
 
 The
-[HTML Drag and Drop interfaces](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+[HTML Drag and Drop interfaces](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
 enable web applications to accept
-[dragged and dropped files](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop)
+[dragged and dropped files](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop)
 on a web page. During a drag and drop operation, dragged file and directory items are associated
 with file entries and directory entries respectively. The `DataTransferItem.getAsFileSystemHandle()`
 method returns a promise with a `FileSystemFileHandle` object if the dragged item is a file, and a
 promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory. The listing
 below shows this in action. Note that the Drag and Drop interface's
-[`DataTransferItem.kind`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind)
+[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
 will be `"file"` for both files _and_ directories, whereas the File System Access API's
 [`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
 be `"file"` for files and `"directory"` for directories.
@@ -531,6 +547,36 @@ const dirHandle = await root.getDirectoryHandle('New Folder', { create: true });
 await root.removeEntry('Old Stuff', { recursive: true });
 ```
 
+## Accessing files optimized for performance from the origin private file system
+
+The origin private file system provides optional access to a special kind of file
+that is highly optimized for performance, for example, by offering in-place and exclusive write
+access to a file's content. There is an
+[origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
+in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
+files can be accessed by exposing two new methods as part of the origin private file system:
+`createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
+(synchronous read and write operations) that are both
+exposed on `FileSystemFileHandle`.
+
+```js
+// Asynchronous access in all contexts:
+const handle = await file.createAccessHandle({ mode: 'in-place' });
+await handle.writable.getWriter().write(buffer);
+const reader = handle.readable.getReader({ mode: 'byob' });
+// Assumes seekable streams, and SharedArrayBuffer support are available
+await reader.read(buffer, { at: 1 });
+```
+
+```js
+// (Read and write operations are synchronous,
+// but obtaining the handle is asynchronous.)
+// Synchronous access exclusively in Worker contexts
+const handle = await file.createSyncAccessHandle();
+const writtenBytes = handle.write(buffer);
+const readBytes = handle.read(buffer, { at: 1 });
+```
+
 ## Polyfilling
 
 It is not possible to completely polyfill the File System Access API methods.
@@ -566,8 +612,6 @@ context][secure-contexts]. If users change their minds, they can cancel the sele
 picker and the site does not get access to anything. This is the same behavior as that of the
 `<input type="file">` element.
 
-<div class="w-clearfix"></div>
-
 <figure class="w-figure w-figure--inline-left">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577", linkTo=true %}
   <figcaption class="w-figcaption">
@@ -579,8 +623,6 @@ Similarly, when a web app wants to save a new file, the browser will show the sa
 allowing the user to specify the name and location of the new file. Since they are saving a new file
 to the device (versus overwriting an existing file), the file picker grants the app permission to
 write to the file.
-
-<div class="w-clearfix"></div>
 
 #### Restricted folders
 
@@ -615,8 +657,6 @@ If the user chooses Cancel, and does not grant write access, the web app cannot 
 local file. It should provide an alternative method to allow the user to save their data, for
 example by providing a way to ["download" the file][download-file], saving data to the cloud, etc.
 
-<div class="w-clearfix"></div>
-
 ### Transparency
 
 <figure class="w-figure w-figure--inline-right">
@@ -630,8 +670,6 @@ example by providing a way to ["download" the file][download-file], saving data 
 Once a user has granted permission to a web app to save a local file, the browser will show an icon
 in the URL bar. Clicking on the icon opens a pop-over showing the list of files the user has given
 access to. The user can easily revoke that access if they choose.
-
-<div class="w-clearfix"></div>
 
 ### Permission persistence
 
@@ -696,7 +734,7 @@ The File System Access API spec was written by
   https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
 [wicg-discourse]: https://discourse.wicg.io/t/writable-file-api/1433
 [file-api-spec]: https://w3c.github.io/FileAPI/
-[blob-methods]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
+[blob-methods]: https://developer.mozilla.org/docs/Web/API/Blob
 [showopenfilepicker]: https://wicg.github.io/file-system-access/#api-showopenfilepicker
 [showsavefilepicker]: https://wicg.github.io/file-system-access/#api-showsavefilepicker
 [showdirectorypicker]: https://wicg.github.io/file-system-access/#api-showdirectorypicker
@@ -707,8 +745,8 @@ The File System Access API spec was written by
 [removeentry]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-removeentry
 [resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [fs-writer]: https://wicg.github.io/file-system-access/#filesystemwriter
-[blob]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-[buffersource]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
+[blob]: https://developer.mozilla.org/docs/Web/API/Blob
+[buffersource]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [fs-file-handle]: https://wicg.github.io/file-system-access/#api-filesystemfilehandle
 [fs-dir-handle]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle
 [powerful-apis]:
@@ -728,7 +766,7 @@ The File System Access API spec was written by
   https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [fs-writablestream]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream
-[writable-stream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
+[writable-stream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [spec-resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [spec-issameentry]: https://wicg.github.io/file-system-access/#api-filesystemhandle-issameentry
 [spec-seek]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-seek

@@ -5,6 +5,20 @@
   align-items: center;
   color: $GREY_700;
 
+  @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
+    flex-wrap: wrap;
+
+    p,
+    > span:first-child {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    > span:first-child {
+      margin-bottom: 2rem;
+    }
+  }
+
   .browser-compat__icon {
     height: 24px;
     width: 24px;
@@ -38,10 +52,18 @@
 
   .browser-compat__link {
     margin-left: 24px;
+
+    @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
+      margin-left: 0;
+    }
   }
 
   .browser-compat--chrome {
     background-image: url('/images/icons/chrome.svg');
+
+    @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
+      margin-left: 0;
+    }
   }
 
   .browser-compat--firefox {

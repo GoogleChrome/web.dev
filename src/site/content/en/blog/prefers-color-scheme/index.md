@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'prefers-color-scheme: Hello darkness, my old friend'
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
 authors:
@@ -16,10 +17,10 @@ description: |
   to offer users a way to override their operating system level preference on specific web pages.
 tags:
   - blog
-  - dark-mode
-  - dark-theme
-  - prefers-color-scheme
-  - color-scheme
+  # - dark-mode
+  # - dark-theme
+  # - prefers-color-scheme
+  # - color-scheme
   - css
 feedback:
   - api
@@ -190,12 +191,10 @@ For Android&nbsp;Q, you can find it under _Display_ as a _Dark Theme_ toggle swi
 and on iOS&nbsp;13, you can change the _Appearance_ in the _Display &amp; Brightness_
 section of the settings (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>).
 
-<div class="w-clearfix"></div>
-
 ## The `prefers-color-scheme` media query
 
 One last bit of theory before I get going.
-[Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+[Media queries](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries)
 allow authors to test and query values or features of the user agent or display device,
 independent of the document being rendered.
 They are used in the CSS `@media` rule to conditionally apply styles to a document,
@@ -323,7 +322,7 @@ I hide the content of the page until `light.css` has loaded.
 
 ### Stylesheet architecture
 
-I make maximum use of [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var),
+I make maximum use of [CSS variables](https://developer.mozilla.org/docs/Web/CSS/var),
 this allows my generic `style.css` to be, well, generic,
 and all the light or dark mode customization happens in the two other files `dark.css` and `light.css`.
 Below you can see an excerpt of the actual styles, but it should suffice to convey the overall idea.
@@ -348,7 +347,7 @@ that essentially create a _dark-on-light_ and a _light-on-dark_ baseline theme.
 
 In my `style.css`, I then use these variables in the `body { … }` rule.
 As they are defined on the
-[`:root` CSS pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)—a
+[`:root` CSS pseudo-class](https://developer.mozilla.org/docs/Web/CSS/:root)—a
 selector that in HTML represents the `<html>` element
 and is identical to the selector `html`, except that its specificity is
 higher—they cascade down, which serves me for declaring global CSS variables.
@@ -535,7 +534,7 @@ has shown that the majority of the surveyed people
 prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as _re-colorization_.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="Hero image slightly darkened in dark mode.", width="800", height="618" %}
     <figcaption class="w-figcaption">
@@ -554,7 +553,7 @@ Re-colorization can be achieved through a CSS filter on my images.
 I use a CSS selector that matches all images that don't have `.svg` in their URL,
 the idea being that I can give vector graphics (icons) a different re-colorization treatment
 than my images (photos), more about this in the [next paragraph](#vector-graphics-and-icons).
-Note how I again use a [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/var),
+Note how I again use a [CSS variable](https://developer.mozilla.org/docs/Web/CSS/var),
 so I can later on flexibly change my filter.
 
 {% Aside 'note' %}
@@ -579,12 +578,12 @@ img:not([src*='.svg']) {
 Not everyone is the same and people have different dark mode needs.
 By sticking to the re-colorization method described above,
 I can easily make the grayscale intensity a user preference that I can
-[change via JavaScript](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Values_in_JavaScript),
+[change via JavaScript](https://developer.mozilla.org/docs/Web/CSS/Using_CSS_custom_properties#Values_in_JavaScript),
 and by setting a value of `0%`, I can also disable re-colorization completely.
-Note that [`document.documentElement`](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
+Note that [`document.documentElement`](https://developer.mozilla.org/docs/Web/API/Document/documentElement)
 provides a reference to the root element of the document,
 that is, the same element I can reference with the
-[`:root` CSS pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:root).
+[`:root` CSS pseudo-class](https://developer.mozilla.org/docs/Web/CSS/:root).
 
 ```js
 const filter = 'grayscale(70%)';
@@ -598,9 +597,9 @@ use a different re-colorization method.
 While [research](https://dl.acm.org/citation.cfm?id=2982168) has shown
 that people don't like inversion for photos, it does work very well for most icons.
 Again I use CSS variables to determine the inversion amount
-in the regular and in the [`:hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover) state.
+in the regular and in the [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) state.
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Icons are inverted in dark mode.", width="744", height="48" %}
     <figcaption class="w-figcaption">
@@ -644,14 +643,14 @@ img[src*='.svg']:hover {
 ### Use `currentColor` for inline SVGs
 
 For _inline_ SVG images, instead of [using inversion filters](#invert-vector-graphics-and-icons),
-you can leverage the [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
+you can leverage the [`currentColor`](https://developer.mozilla.org/docs/Web/CSS/color_value#currentColor_keyword)
 CSS keyword that represents the value of an element's `color` property.
 This lets you use the `color` value on properties that do not receive it by default.
 Conveniently, if `currentColor` is used as the value of the SVG
-[`fill` or `stroke` attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes#Fill_and_Stroke_Attributes),
+[`fill` or `stroke` attributes](https://developer.mozilla.org/docs/Web/SVG/Tutorial/Fills_and_Strokes#Fill_and_Stroke_Attributes),
 it instead takes its value from the inherited value of the color property.
 Even better: this also works for
-[`<svg><use href="…"></svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use),
+[`<svg><use href="…"></svg>`](https://developer.mozilla.org/docs/Web/SVG/Element/use),
 so you can have separate resources
 and `currentColor` will still be applied in context.
 Please note that this only works for _inline_ or `<use href="…">` SVGs,
@@ -763,7 +762,7 @@ The demo below shows the element in action
 ></dark-mode-toggle>
 ```
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="<dark-mode-toggle> in light mode.", width="140", height="76" %}
     <figcaption class="w-figcaption">

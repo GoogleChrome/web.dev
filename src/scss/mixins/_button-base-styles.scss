@@ -10,15 +10,26 @@
   position: relative;
   overflow: hidden;
 
+  /// It's really important line-height is flat
+  /// so to prevent cascade issues, we make it important
+  line-height: 1 !important;
+
   @include apply-utility('bg', 'action-bg');
-  @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'medium');
-  @include apply-utility('leading', 'flat');
+  @include apply-utility('font', 'brand');
   @include vertically-align-label();
 
+  &,
+  &:link,
+  &:visited {
+    @include apply-utility('color', 'action-text');
+  }
+
   & svg {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.3em;
+    height: 1.3em;
+    fill: currentColor;
+    transform: translateY(-0.2ex);
   }
 
   & svg + * {
@@ -41,12 +52,21 @@
     border-color: get-utility-value('bg', 'action-bg-primary');
 
     @include apply-utility('bg', 'action-bg-primary');
-    @include apply-utility('color', 'action-text-primary');
+
+    &,
+    &:link,
+    &:visited {
+      @include apply-utility('color', 'action-text-primary');
+    }
   }
 
   &[data-type='secondary'] {
     border: 1px solid get-utility-value('color', 'stroke');
-    @include apply-utility('color', 'mid-text');
+  }
+
+  &[data-type='clear'] {
+    border: none;
+    background: none;
   }
 
   /// DISABLED STATE
@@ -70,6 +90,7 @@
     background-position: center;
     transition: background 0.8s;
     opacity: 0.2;
+    // border-radius: 50%;
   }
 
   &:hover::after {
@@ -83,7 +104,6 @@
   }
 
   &:hover {
-    transform: translateY(-0.15em);
     box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
       0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
     transition: transform $global-transition-movement,

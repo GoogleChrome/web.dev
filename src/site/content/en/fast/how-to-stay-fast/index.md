@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: How to stay fast?
 authors:
   - bojanpavic

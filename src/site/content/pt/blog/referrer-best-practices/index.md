@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Melhores práticas no uso dos cabeçalhos Referer e Referrer-Policy
 subhead: Melhores práticas para definir seu Referrer-Policy e usar o referenciador nas solicitações de entrada.
 authors:
@@ -30,11 +31,11 @@ feedback:
 
 ## Fundamentos de Referer e Referrer-Policy
 
-As solicitações HTTP podem incluir o [cabeçalho `Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), que indica a origem ou URL da página da web a partir da qual a solicitação foi feita. O [cabeçalho `Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) define quais dados são disponibilizados no cabeçalho `Referer`
+As solicitações HTTP podem incluir o [cabeçalho `Referer`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer), que indica a origem ou URL da página da web a partir da qual a solicitação foi feita. O [cabeçalho `Referrer-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) define quais dados são disponibilizados no cabeçalho `Referer`
 
 No exemplo abaixo, o cabeçalho `Referer` inclui a URL completa da página no `site-one` partir do qual a solicitação foi feita.
 
-<figure class="w-figure"> {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="Solicitação HTTP incluindo um cabeçalho Referer.", width="800", height="573" %}</figure>
+<figure> {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="Solicitação HTTP incluindo um cabeçalho Referer.", width="800", height="573" %}</figure>
 
 O cabeçalho `Referer` pode estar presente em diferentes tipos de solicitações:
 
@@ -47,7 +48,7 @@ O `Referer` pode ser esclarecedor. Por exemplo, um serviço analítico pode usar
 
 Mas quando a URL completa, incluindo o caminho e a string de consulta, é enviada no cabeçalho `Referer` **entre origens**, isto pode **prejudicar a privacidade** e também representar **riscos à segurança**. Dê uma olhada nessas URLs:
 
-<figure class="w-figure"> {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs com caminhos, mapeados para diferentes riscos de privacidade e segurança.", width="800", height="370" %}</figure>
+<figure> {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs com caminhos, mapeados para diferentes riscos de privacidade e segurança.", width="800", height="370" %}</figure>
 
 As URLs de número 1 a 5 contêm informações privadas, às vezes até com informações de identificação ou confidenciais. Vazá-los silenciosamente entre origens pode comprometer a privacidade dos usuários da web.
 
@@ -63,15 +64,15 @@ Você pode selecionar uma dentre oito políticas. Dependendo da política, os da
 - Apenas a [origem](/same-site-same-origin/#origin)
 - A URL completa: origem, caminho e string de consulta (query string)
 
-<figure class="w-figure"> {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Dados que podem estar contidos no cabeçalho Referer e document.referrer.", width="800", height="255" %}</figure>
+<figure> {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Dados que podem estar contidos no cabeçalho Referer e document.referrer.", width="800", height="255" %}</figure>
 
 Algumas políticas são projetadas para se comportar de maneira diferente dependendo do **contexto**: origens cruzadas (cross-origin) ou solicitação da mesma origem (same-origin), segurança (se o destino da solicitação for tão seguro quanto a origem) ou ambos. Isto é útil para limitar a quantidade de informações compartilhadas entre origens ou para origens menos seguras, enquanto mantém a riqueza de informações do referenciador em seu próprio site.
 
 Aqui está uma visão geral que mostra como as políticas de referenciamento restringem os dados de URL disponíveis no cabeçalho Referer e `document.referrer`:
 
-<figure class="w-figure"> {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Políticas de referenciador diferentes e seu comportamento, dependendo da segurança e do contexto de origem cruzada.", width="800", height="537" %}</figure>
+<figure> {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Políticas de referenciador diferentes e seu comportamento, dependendo da segurança e do contexto de origem cruzada.", width="800", height="537" %}</figure>
 
-O MDN fornece uma [lista completa de políticas e exemplos de comportamento](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives) .
+O MDN fornece uma [lista completa de políticas e exemplos de comportamento](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives) .
 
 Algumas observações:
 
@@ -84,7 +85,7 @@ Algumas observações:
 
 **Se nenhuma política de referenciamento for definida, a política default do navegador será usada.**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -135,7 +136,7 @@ Algumas observações:
 Existem diferentes maneiras de definir políticas de referenciamento para seu site:
 
 - Como um cabeçalho HTTP
-- Em seu [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
+- Em seu [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
 - Em JavaScript, [por solicitação](https://javascript.info/fetch-api#referrer-referrerpolicy)
 
 Você pode definir políticas diferentes para páginas, solicitações ou elementos diferentes.
@@ -163,7 +164,7 @@ O site [securityheaders.com](https://securityheaders.com/) é útil para determi
 
 Você também pode usar as ferramentas de desenvolvedor do Chrome, Edge ou Firefox para saber qual é a política de referenciamento usada para uma solicitação específica. No momento da redação deste artigo, o Safari não mostra o `Referrer-Policy` mas mostra o `Referer` que foi enviado.
 
-<figure class="w-figure"> {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt=" Uma captura de tela do painel Rede do Chrome DevTools, mostrando Referer e Referrer-Policy.", width="800", height="416" %}   <figcaption class="w-figcaption">  Chrome DevTools, <b>painel de rede</b> com uma solicitação selecionada.   </figcaption></figure>
+<figure> {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt=" Uma captura de tela do painel Rede do Chrome DevTools, mostrando Referer e Referrer-Policy.", width="800", height="416" %}   <figcaption>  Chrome DevTools, <b>painel de rede</b> com uma solicitação selecionada.   </figcaption></figure>
 
 ## Qual política você deve definir para seu site?
 
@@ -268,7 +269,7 @@ Para definir alternativas, analise primeiro que parte do referenciador você est
 **Se você só precisa da origem (`https://site-one.example`):**
 
 - Se você estiver usando o referenciador em um script que tem acesso de nível superior à página, `window.location.origin` é uma alternativa.
-- Se disponíveis, cabeçalhos como [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) e [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) fornecem a `Origin` ou descrevem se a solicitação é de origem cruzada, que pode ser exatamente o que você precisa.
+- Se disponíveis, cabeçalhos como [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) e [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) fornecem a `Origin` ou descrevem se a solicitação é de origem cruzada, que pode ser exatamente o que você precisa.
 
 **Se você precisar de outros elementos da URL (caminho, parâmetros de query…):**
 
@@ -284,13 +285,13 @@ Para definir alternativas, analise primeiro que parte do referenciador você est
 
 Observe que um emissor de solicitação sempre pode decidir não enviar o referenciador, definindo uma política `no-referrer` (e um agente malicioso pode até mesmo falsificar o referenciador).
 
-Use [tokens CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) como sua proteção primária. Para proteção extra, use [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites) - e em vez de `Referer`, use cabeçalhos como [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (disponível em solicitações POST e CORS) e [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (se disponível).
+Use [tokens CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) como sua proteção primária. Para proteção extra, use [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites) - e em vez de `Referer`, use cabeçalhos como [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) (disponível em solicitações POST e CORS) e [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) (se disponível).
 
 ### Registro em log
 
 Certifique-se de proteger os dados pessoais ou confidenciais dos usuários que possam estar no `Referer`.
 
-Se você estiver usando apenas a origem, verifique se o cabeçalho [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) pode ser uma alternativa. Isto pode fornecer as informações que você precisa para fins de depuração de uma maneira mais simples e sem a necessidade de analisar o referenciador.
+Se você estiver usando apenas a origem, verifique se o cabeçalho [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) pode ser uma alternativa. Isto pode fornecer as informações que você precisa para fins de depuração de uma maneira mais simples e sem a necessidade de analisar o referenciador.
 
 ### Pagamentos
 
@@ -337,8 +338,8 @@ Para saber mais sobre diferentes técnicas para proteger seus usuários, consult
 
 - [Noções básicas sobre "same-site" e "same-origin"](/same-site-same-origin/)
 - [Um novo cabeçalho de segurança: Referrer Policy (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- [Referrer-Policy no MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- [Cabeçalho Referer: questões de privacidade e segurança no MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+- [Referrer-Policy no MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
+- [Cabeçalho Referer: questões de privacidade e segurança no MDN](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Alteração no Chrome: Blink intent to implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Alteração do Chrome: Blink intent to send](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
 - [Alteração do Chrome: status entry](https://www.chromestatus.com/feature/6251880185331712)

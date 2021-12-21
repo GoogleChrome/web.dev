@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "Audit your Angular app's accessibility with codelyzer"
 subhead: |
   Want to make your Angular site accessible for everyone? This is the right place!
@@ -12,7 +12,7 @@ authors:
   - mohamedzamakhan
   - mgechev
 tags:
-  - angular
+  # - angular
   - accessibility
 feedback:
   - api

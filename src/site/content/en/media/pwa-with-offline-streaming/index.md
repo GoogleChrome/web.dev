@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: PWA with offline streaming
 authors:
   - dero
@@ -12,7 +12,7 @@ date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 [Progressive Web Apps] bring a lot of features previously reserved for native
@@ -323,16 +323,16 @@ Up next, you will learn about [Fast playback with audio and video preload].
 [Progressive Web Apps]: /progressive-web-apps/
 [Media Frameworks]: /media-frameworks/
 [Cache API]: /cache-api-quick-guide/
-[HTTP range requests]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests
-[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-[IndexedDB API]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
-[Background Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API
+[HTTP range requests]: https://developer.mozilla.org/docs/Web/HTTP/Range_requests
+[Fetch API]: https://developer.mozilla.org/docs/Web/API/Fetch_API
+[IndexedDB API]: https://developer.mozilla.org/docs/Web/API/IndexedDB_API
+[Background Fetch API]: https://developer.mozilla.org/docs/Web/API/Background_Fetch_API
 [support Background Fetch]: https://caniuse.com/mdn-api_serviceworkerregistration_backgroundfetch
 [File System Access API]: /file-system-access/
 [Kino]: https://kinoweb.dev
 [source code]: https://github.com/GoogleChrome/kino
 [Streams–The definitive guide]: /streams/
 [Media Session API]: /media-session/
-[Response() constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
+[Response() constructor]: https://developer.mozilla.org/docs/Web/API/Response/Response
 [service worker source code]: https://github.com/GoogleChrome/kino/blob/72055bdc7c8ad3de943a55293b2bf882e467c814/src/js/sw/sw.js#L53-L122
 [Fast playback with audio and video preload]: /fast-playback-with-preload/

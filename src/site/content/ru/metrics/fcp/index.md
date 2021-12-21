@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton
@@ -51,7 +51,7 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 
 ### Измерение FCP в JavaScript
 
-Чтобы измерить FCP в JavaScript, можно воспользоваться [Paint Timing API](https://w3c.github.io/paint-timing/). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver), который прослушивает записи `paint` с именем `first-contentful-paint` и регистрирует их в консоли.
+Чтобы измерить FCP в JavaScript, можно воспользоваться [Paint Timing API](https://w3c.github.io/paint-timing/). В следующем примере показано, как создать [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver), который прослушивает записи `paint` с именем `first-contentful-paint` и регистрирует их в консоли.
 
 ```js
 new PerformanceObserver((entryList) => {
@@ -100,7 +100,7 @@ getFCP(console.log);
 - [Минимизация CSS-кода](/unminified-css/)
 - [Удаление неиспользуемого CSS-кода](/unused-css-rules/)
 - [Предварительное подключение к нужным источникам](/uses-rel-preconnect/)
-- [Уменьшение времени ответа сервера (TTFB)](/time-to-first-byte/)
+- [Уменьшение времени ответа сервера (TTFB)](/ttfb/)
 - [Уход от переадресации нескольких страниц](/redirects/)
 - [Предварительная загрузка ключевых запросов](/uses-rel-preload/)
 - [Уход от огромных нагрузок на сеть](/total-byte-weight/)

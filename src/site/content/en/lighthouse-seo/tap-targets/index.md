@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Tap targets are not sized appropriately
 description: |
   Learn about the "Tap targets are not sized appropriately" Lighthouse audit.

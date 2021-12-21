@@ -1,11 +1,12 @@
 ---
+layout: post
 title: How Swappie increased mobile revenue by 42% by focusing on Core Web Vitals
 subhead: Finding correlation between site performance and business metrics was the key to driving the success of their optimization efforts.
 authors:
   - linahansson
 date: 2021-09-15
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2aneaEewLLPNYYAUXXck.png
-thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/6Qu0JTWldoS9Uo6dzH3P.png
+thumbnail: image/VbAJIREinuYvovrBzzvEyZOpw5w1/3NkZrkyqQUMM0b7osxiH.png
 alt: The Swappie logo.
 description: |
   This case study explains how Swappie team increased conversions
@@ -21,19 +22,18 @@ Swappie is a successful start-up that sells refurbished phones. For a few years
 they prioritized adding new features over site performance, however when they
 noticed that business results on the mobile site were lagging behind the desktop
 version, a shift happened. They focused on optimizing performance and soon saw
-an uptick in mobile revenue. 
+an uptick in mobile revenue.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">42<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increase in revenue coming from mobile visitors</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">42<sub>%</sub></p>
+    <p>Increase in revenue coming from mobile visitors</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">10<sub class="w-stat__sub">pp*</sub></p>
-    <p class="w-stat__desc">*percentage point Rel mCvR increase</p>
+  <div class="stats__item">
+    <p class="stats__figure">10<sub>pp*</sub></p>
+    <p>*percentage point Rel mCvR increase</p>
   </div>
 </div>
-
 
 ### Highlighting the opportunity
 
@@ -43,7 +43,7 @@ Conversion Rate. There are many opportunities for tracking speed metrics, but
 connecting them to business metrics can be quite tricky. Since the same
 campaigns and seasonalities reach both mobile and desktop, the Rel mCvR metric
 strips away the influence of these external parameters, and only shows if the
-mobile site is improving or not. 
+mobile site is improving or not.
 
 The
 [average for the ten biggest e-commerce sites in the United States is a Rel mCvR of 50%](https://d34w0339mx0ifp.cloudfront.net/content/2020%20Ecommerce%20Stats%20Report.pdf),
@@ -60,32 +60,31 @@ Average Page Load Time, using
 [instructions for how to use the spreadsheet](/value-of-speed/#doing-the-analysis).)
 They also started
 [tracking Core Web Vitals through Google Analytics and BigQuery](/vitals-ga4/).
-With tracking in place, the developers started working on site performance. 
+With tracking in place, the developers started working on site performance.
 
 After only three months of work, the impact was clear–Rel mCvR went from 24% to
 34% and mobile revenue had increased 42%!
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/CNuIW0SPMXYGlzMRUcds.png", alt="A graph showing the correlation between decreased average page load time and increased Rel mCVR.", width="800", height="502", class="screenshot" %}
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">23<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower average page load time</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">23<sub>%</sub></p>
+    <p>Lower average page load time</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">55<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower LCP</p>
+  <div class="stats__item">
+    <p class="stats__figure">55<sub>%</sub></p>
+    <p>Lower LCP</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">91<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower CLS</p>
+  <div class="stats__item">
+    <p class="stats__figure">91<sub>%</sub></p>
+    <p>Lower CLS</p>
   </div>
-    <div class="w-stat">
-    <p class="w-stat__figure">90<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower FID</p>
+    <div class="stats__item">
+    <p class="stats__figure">90<sub>%</sub></p>
+    <p>Lower FID</p>
   </div>
 </div>
-
 
 ### Optimizations
 
@@ -94,7 +93,7 @@ After only three months of work, the impact was clear–Rel mCvR went from 24% t
 Swappie's development team found that there was lots of room for improvement of
 small things that were overlooked for a long time. Studying the site on
 different viewports, and in different languages, highlighted issues with LCP and
-CLS that were easy to solve and had a big impact on overall performance.  
+CLS that were easy to solve and had a big impact on overall performance.
 For example, rendering the LCP element on the server instead of the client when
 possible led to decreased LCP.
 
@@ -147,9 +146,8 @@ Linking site speed to business metrics is not always easy, and that's where the
 helped us a lot.
 {% endBlockquote %}
 
-
 Once the team of developers was given the opportunity to focus completely on
-site speed for a quarter, they were more motivated to dive deeper.  
+site speed for a quarter, they were more motivated to dive deeper.
 
 {% Blockquote 'Teemu Huovinen' %}
 Combining our impact with our team's growth is what makes it even more
@@ -157,8 +155,6 @@ impressive. Four of our seven developers had started within the month when we
 began working on performance. All credit to the team, it's truly amazing how we
 were able to rally around the topic and have such great impact.
 {% endBlockquote %}
-
-
 
 Teemu also points out the importance of spending time at the start to make
 data-informed plans, learning how to use the DevTools Performance tab, and

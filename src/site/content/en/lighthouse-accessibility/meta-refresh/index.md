@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: "The document uses `<meta http-equiv=\"refresh\">`"
 description: |
   Learn why automatically refreshing your web page is bad for accessibility

@@ -4,18 +4,25 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-08-20
+updated: 2021-10-29
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
 tags:
   - blog
   - privacy
-  - privacy-sandbox
+  # - privacy-sandbox
   - security
 feedback:
   - api
 ---
+
+{% Aside %}
+This post outlines the API design implemented in Chrome for the first origin trial of FLoC. 
+
+Future iterations of an API to enable interest-based advertising without third-party cookies 
+or other cross-site tracking mechanisms are currently in development.
+{% endAside %}
 
 FLoC provides a privacy-preserving mechanism for interest-based ad selection.
 
@@ -25,15 +32,15 @@ The browser recalculates its cohort periodically, on the user's device, without 
 individual browsing data with the browser vendor or anyone else.
 
 {% Aside %}
-During the initial FLoC trial, a page visit was only included in the browser's FLoC computation 
-for one of two reasons: 
-* The FLoC API (`document.interestCohort()`) is used on the page. 
-* Chrome detects that the page [loads ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
+During the initial FLoC trial, a page visit was only included in the browser's FLoC computation
+for one of two reasons:
+* The FLoC API (`document.interestCohort()`) is used on the page.
+* Chrome detects that the page [loads ads or ads-related resources](https://github.com/WICG/floc/issues/82).
 
-For other clustering algorithms, the trial may experiment with different inclusion criteria: that's 
+For other clustering algorithms, the trial may experiment with different inclusion criteria: that's
 part of the origin trial experiment process.
 
-The origin trial for the initial version of FLoC, which ran from Chrome 89 to 91, 
+The origin trial for the initial version of FLoC, which ran from Chrome 89 to 91,
 [is now closed](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561).
 {% endAside %}
 
@@ -65,9 +72,9 @@ relevant and useful to them, and relevant ads also bring more business to advert
 it displays relevant ads. Thus, selecting relevant ads increases revenue for ad-supported websites.
 That, in turn, means that relevant ads help fund content creation that benefits users.
 
-However, people are concerned about the privacy implications of tailored advertising, which 
-currently relies on techniques such as tracking cookies and device fingerprinting which can reveal 
-your browsing history across sites to advertisers or ad platforms. The FLoC proposal aims to allow 
+However, people are concerned about the privacy implications of tailored advertising, which
+currently relies on techniques such as tracking cookies and device fingerprinting which can reveal
+your browsing history across sites to advertisers or ad platforms. The FLoC proposal aims to allow
 ad selection in a way that better protects privacy.
 
 
@@ -289,7 +296,7 @@ computation.
 ## How does the FLoC JavaScript API work?
 
 {% Aside %}
-The origin trial for the initial version of FLoC, which ran from Chrome 89 to 91, 
+The origin trial for the initial version of FLoC, which ran from Chrome 89 to 91,
 [is now closed](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561).
 {% endAside %}
 
@@ -323,7 +330,7 @@ The promise returned by `document.interestCohort()` will reject for any frame th
 `interest-cohort` permission. If the main frame does not have the `interest-cohort` permission, then the
 page visit will not be included in the interest cohort calculation.
 
-For example, a site can opt out of all FLoC cohort calculation by sending the following HTTP 
+For example, a site can opt out of all FLoC cohort calculation by sending the following HTTP
 response header:
 
 ```text
@@ -332,8 +339,8 @@ response header:
 
 ## Can a user stop sites from getting their browser's FLoC cohort?
 
-If a user disables Privacy Sandbox in `chrome://settings/privacySandbox`, the browser will not provide 
-the user's cohort when asked for it via JavaScript: the promise returned by 
+If a user disables Privacy Sandbox in `chrome://settings/privacySandbox`, the browser will not provide
+the user's cohort when asked for it via JavaScript: the promise returned by
 `document.interestCohort()` will reject.
 
 ## How can I make suggestions or provide feedback?

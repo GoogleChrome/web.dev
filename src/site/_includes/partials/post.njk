@@ -7,7 +7,7 @@
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
-  {% set safeTitle = title | trim | md | safe %}
+  {% set safeTitle = title | trim | md({linkify: false}) | safe %}
 
   {% if hero %}
     {% Hero {
@@ -39,9 +39,10 @@
       tabindex="0"
       role="button"
     >
-      <span>Share</span>
+      <span>{{ 'i18n.common.share' | i18n(locale) }}</span>
     </share-action>
-    {% include 'partials/subscribe-action.njk' %}
+    {# Temporary disable #}
+    {# {% include 'partials/subscribe-action.njk' %} #}
   </div>
 
   <div class="w-layout-container--narrow w-post-content">
@@ -72,6 +73,14 @@
           {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
+
+      {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
+      {% if languageListHtml %}
+      <div class="w-layout-container--narrow w-post-signpost">
+        {{ languageListHtml | safe }}
+      </div>
+      {% endif %}
+
       {% SignPosts page.fileSlug %}
 
       {% if authors %}
@@ -123,8 +132,6 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
-    {# TODO: We've removed the feedback widget for now as it's noisy and unhelpful. #}
-    {# <web-feedback additional-questions="{{ feedback }}"></web-feedback> #}
   </div>
 
   {% if 'blog' in tags %}

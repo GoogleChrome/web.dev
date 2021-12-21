@@ -5,7 +5,7 @@
         <a class="repel" href="{{ item.url }}" {% if item.active %}aria-current="page"{% endif %}>
           <span class="cluster">
             {% if item.prefix %}
-            <span class="stack-nav__meta">{{ item.meta }}</span>
+            <span class="stack-nav__meta">{{ item.prefix }}</span>
             {% endif %}
             <span>{{ item.text }}</span>
           </span>
@@ -23,7 +23,7 @@
         <a class="repel" href="{{ item.url }}" {% if item.active %}aria-current="page"{% endif %}>
           <span class="cluster">
             {% if item.prefix %}
-            <span class="stack-nav__meta">{{ item.meta }}</span>
+            <span class="stack-nav__meta">{{ item.prefix }}</span>
             {% endif %}
             <span>{{ item.text }}</span>
           </span>

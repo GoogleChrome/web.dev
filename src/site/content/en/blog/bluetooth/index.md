@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2021-05-07
+updated: 2021-10-01
 hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
 thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
@@ -495,6 +495,13 @@ Bluetooth devices: status, services, characteristics, and descriptors.
 I also recommend checking out the official [How to file Web Bluetooth bugs]
 page as debugging Bluetooth can be hard sometimes.
 
+{% Aside 'caution' %}
+Reading and writing to Bluetooth characteristics in parallel may raise errors
+depending on the platform. I strongly suggest you manually queue GATT operation
+requests when appropriate. See ["GATT operation in progress - how to handle
+it?"](https://github.com/WebBluetoothCG/web-bluetooth/issues/188).
+{% endAside %}
+
 ## What's next
 
 Check the [browser and platform implementation status] first to know which parts
@@ -547,7 +554,7 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [receive GATT Notifications]: #notifications
 [Bluetooth device gets disconnected]: #disconnect
 [read and write to Bluetooth descriptors]: #descriptors
-[Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
+[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
 [origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [Web Bluetooth Security Model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
 [secure contexts]: https://w3c.github.io/webappsec-secure-contexts/#intro

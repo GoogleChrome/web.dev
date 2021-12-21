@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Time to Interactive
 description: |
   Learn about Lighthouse's Time to Interactive metric and

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Avoid multiple page redirects
 description: |
   Learn why page redirects slow down your web page's load speed and
@@ -56,5 +56,5 @@ If you are using React Router, minimize usage of the `<Redirect>` component for
 ## Resources
 
 - [Source code for **Avoid multiple page redirects** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
-- [Redirections in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
+- [Redirections in HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [Avoid Landing Page Redirects](https://developers.google.com/speed/docs/insights/AvoidRedirects)

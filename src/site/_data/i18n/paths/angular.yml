@@ -1,24 +1,72 @@
 title:
   en: Angular
+  es: Angular
+  ja: Angular
+  ko: Angular
+  pt: Angular
+  ru: Angular
+  zh: Angular
 
 description:
   en: Build performant and progressive Angular applications.
+  es: Crea aplicaciones de Angular progresivas y de alto rendimiento.
+  ja: 優れたパフォーマンスを発揮するプログレッシブ Angular アプリケーションを構築しましょう。
+  ko: 성능이 뛰어나고 진보적인 Angular 애플리케이션을 구축하세요.
+  pt: Construa aplicativos Angular progressivos de alto desempenho.
+  ru: Создавайте прогрессивные и производительные приложения на основе Angular.
+  zh: 构建高性能与渐进式 Angular 应用。
 
 overview:
   en: In this collection you’ll learn practical tips and tricks to make your Angular applications faster, more reliable, more accessible, and generally awesome.
+  es: En esta colección aprenderás trucos y consejos prácticos para hacer que tus aplicaciones de Angular sean más rápidas, confiables, accesibles y, en general, increíbles.
+  ja: このコレクションでは、Angular アプリケーションを高速化し、より安定させ、より高いアクセシビリティを実現しながら、全体を通して素晴らしいものにするための実践的なヒントやコツをご紹介します。
+  ko: 이 컬렉션에서는 Angular 애플리케이션을 더 빠르고 안정적이며 액세스하기 쉽고 전반적으로 훌륭하게 만드는 실용적인 팁과 트릭을 알아봅니다.
+  pt: Nesta coleção, você aprenderá dicas e truques práticos para deixar seus aplicativos Angular mais rápidos, mais confiáveis, mais acessíveis e, em geral, incríveis.
+  ru: В этой серии вы сможете ознакомиться с практическими советами о том, как сделать приложения на основе Angular более быстрыми, надежными, доступными и в целом более качественными.
+  zh: 在该系列文章中，您将了解能够使您的 Angular 应用更快、更可靠、更易于使用，且整体上更加出色的实用技巧和窍门。
 
 topics:
   introduction:
     en: Introduction
+    es: Introducción
+    ja: はじめに
+    ko: 소개
+    pt: Introdução
+    ru: Введение
+    zh: 介绍
 
   fast:
     en: Fast
+    es: Rápido
+    ja: 高速性
+    ko: 빠른 속도
+    pt: Rápido
+    ru: Скорость
+    zh: 快速
 
   reliable:
     en: Reliable
+    es: Confiable
+    ja: 安定性
+    ko: 안정적 작동
+    pt: Confiável
+    ru: Надежность
+    zh: 可靠
 
   installable:
     en: Installable
+    es: Instalable
+    ja: インストール可能性
+    ko: 설치 가능
+    pt: Instalável
+    ru: Возможность установки
+    zh: 可安装
 
   accessible:
     en: Accessible
+    es: Accesible
+    ja: アクセシビリティ
+    ko: 접근 가능
+    pt: Acessível
+    ru: Доступность
+    zh: 易于使用

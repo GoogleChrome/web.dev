@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Use lazysizes to lazy-load images
 authors:
   - katiehempenius

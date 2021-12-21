@@ -1,8 +1,11 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/numbered-headers
 .numbered-headers {
-  --auto-grid-placement: auto-fit;
   counter-reset: numbered-headers;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: get-space('size-1');
 }
 
 .numbered-headers__step {
@@ -10,6 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
+  width: clamp(16rem, 100%, 30rem);
 }
 
 /// The heading is a wrapper element which makes the horizontal
@@ -37,4 +41,15 @@
 
 .numbered-headers__heading.cluster::before {
   margin: 0;
+}
+
+@include media-query('lg') {
+  .numbered-headers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .numbered-headers__step {
+    width: unset;
+  }
 }

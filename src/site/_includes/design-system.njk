@@ -23,52 +23,45 @@
     <div class="flex-auto box-flex flex-dir-column">
       <div class="sidebar flex-auto">
         <nav class="flow bg-mid-bg pad-block-size-1" aria-label="design system">
-          <div class="brand cluster pad-inline-size-1">
-            {{ svg('../../images/lockup.svg', {label: 'web.dev'}) }}
-            <p class="brand__byline">Design System</p>
-          </div>
-          <div class="pad-inline-size-1">
-            {% include "partials/standard-theme-toggle.njk" %}
+          <div class="repel pad-inline-base flex-align-end">
+            <div class="brand">
+              {{ svg('../../images/lockup.svg', {label: 'web.dev'}) }}
+              <p class="brand__byline">Design System</p>
+            </div>
+            <div>
+              {% include "partials/standard-theme-toggle.njk" %}
+            </div>
           </div>
           <ul class="stack-nav flow-space-size-2" role="list">
             {% for link in sideLinks %}
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">CSS</h2>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">CSS</h2>
           <ul class="stack-nav" role="list">
             {% for link in cssLinks %}
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Component Library</h2>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">Component Library</h2>
           <ul class="stack-nav" role="list">
             {% for item in design.components.items %}
               <li>{{ stackLink(item.url, page.url, item.data.title) }}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Pages</h2>
-          <ul class="stack-nav" role="list">
-            {% for item in design.pages %}
-              <li>{{ stackLink(item.link, page.url, item.title) }}</li>
-            {% endfor %}
-          </ul>
         </nav>
-        <div class="pad-size-1">
-          <div class="wrapper flow">
+        <div class="pad-block-size-1">
+          <article class="prose">
             <h1>{{ pageTitle if pageTitle else title }}</h1>
             {% if summary %}
-              {{ summary | md | safe }}
+              <p>{{ summary | md | safe }}</p>
             {% endif %}
-
-            <div class="flow">
-              {% block inner %}
-              {% endblock %}
-            </div>
-          </div>
+            {% block inner %}
+            {% endblock %}
+          </article>
         </div>
       </div>
     </div>
-    {% include 'partials/footer.njk' %}
+    {% include 'partials/site-footer.njk' %}
   </body>
 </html>

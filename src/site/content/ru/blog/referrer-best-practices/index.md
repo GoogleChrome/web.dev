@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Лучшие практики по настройке заголовков \tReferer и Referrer-Policy"
 subhead: Лучшие практики по настройке заголовка ответа Referrer-Policy и использования реферера во входящих запросах.
 authors:
@@ -30,11 +31,11 @@ feedback:
 
 ## Кратко о заголовках Referer и Referrer-Policy
 
-HTTP-запросы могут включать необязательный [заголовок `Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), указывающий источник или URL-адрес веб-страницы, с которой был сделан запрос. [Заголовок `Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) определяет, какие данные будут доступны в заголовке `Referer`
+HTTP-запросы могут включать необязательный [заголовок `Referer`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer), указывающий источник или URL-адрес веб-страницы, с которой был сделан запрос. [Заголовок `Referrer-Policy`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) определяет, какие данные будут доступны в заголовке `Referer`
 
 В приведенном ниже примере заголовок `Referer` включает полный URL-адрес страницы на сайте `site-one`, с которого был сделан запрос.
 
-<figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-запрос, включая заголовок Referer", width="800", height="573" %}</figure>
+<figure>{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-запрос, включая заголовок Referer", width="800", height="573" %}</figure>
 
 Заголовок `Referer` может присутствовать в разных типах запросов:
 
@@ -47,7 +48,7 @@ HTTP-запросы могут включать необязательный [з
 
 Но когда полный URL-адрес, включая путь и строку запроса, отправляется в `Referer` **при запросах на другие источники**, это может нарушать **конфиденциальность** и создавать **риски для безопасности**. Взгляните на эти URL-адреса:
 
-<figure class="w-figure">{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URL-адреса с путями, сопоставленными с различными угрозами конфиденциальности и безопасности.", width="800", height="370" %}</figure>
+<figure>{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URL-адреса с путями, сопоставленными с различными угрозами конфиденциальности и безопасности.", width="800", height="370" %}</figure>
 
 URL-адреса с №1 по №5 содержат личную информацию, иногда даже идентифицирующую или конфиденциальную. Незаметная утечка данных при запросах на другие источники может поставить под угрозу конфиденциальность пользователей в Интернете.
 
@@ -63,15 +64,15 @@ URL № 6это [возможность URL](https://www.w3.org/TR/capability-ur
 - только [источник](/same-site-same-origin/#origin);
 - полный URL-адрес: источник, путь и строка запроса.
 
-<figure class="w-figure">{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Данные, которые могут содержаться в заголовке Referer и document.referrer.", width="800", height="255" %}</figure>
+<figure>{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Данные, которые могут содержаться в заголовке Referer и document.referrer.", width="800", height="255" %}</figure>
 
 Некоторые политики разработаны так, чтобы вести себя по-разному в зависимости от **контекста**: запрос на другой источник или в пределах текущего источника, безопасность, или и то, и другое (независимо от того, отправляется ли запрос из более безопасного протокола в менее безопасный). Это полезно для ограничения объема информации, передаваемой из разных источников, или для менее безопасных источниковпри сохранении разнообразия рефереров на вашем собственном сайте.
 
 Вот обзор, показывающий, как политики реферера ограничивают данные URL, доступные из заголовка Referer и `document.referrer`:
 
-<figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Различные политики рефереров и их поведение в зависимости от протокола безопасности и контекста разных источников.", width="800", height="537" %}</figure>
+<figure>{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Различные политики рефереров и их поведение в зависимости от протокола безопасности и контекста разных источников.", width="800", height="537" %}</figure>
 
-MDN предоставляет [полный список политик и примеров поведения](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
+MDN предоставляет [полный список политик и примеров поведения](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
 На заметку:
 
@@ -84,7 +85,7 @@ MDN предоставляет [полный список политик и пр
 
 **Если политика реферера не задана, будет использоваться политика браузера по умолчанию.**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -134,7 +135,7 @@ MDN предоставляет [полный список политик и пр
 Есть разные способы установить политики реферера для вашего сайта:
 
 - как заголовок HTTP;
-- в вашем [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)-коде;
+- в вашем [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)-коде;
 - из JavaScript по [запросу](https://javascript.info/fetch-api#referrer-referrerpolicy).
 
 Вы можете установить разные политики для разных страниц, запросов или элементов.
@@ -162,7 +163,7 @@ HTTP-заголовок и метаданные относятся к уровн
 
 Вы также можете использовать инструменты разработчика Chrome, Edge или Firefox, чтобы увидеть политику реферера, используемую для конкретного запроса. На момент написания этой статьи Safari не показывает `Referrer-Policy`, но показывает отправленный заголовок `Referer`.
 
-<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Скриншот панели Network в Chrome DevTools с заголовками Referer и Referrer-Policy.", width="800", height="416" %} <figcaption class="w-figcaption"> Chrome DevTools, панель <b>Network</b> с выбранным запросом. </figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Скриншот панели Network в Chrome DevTools с заголовками Referer и Referrer-Policy.", width="800", height="416" %} <figcaption> Chrome DevTools, панель <b>Network</b> с выбранным запросом. </figcaption></figure>
 
 ## Какую политику вы должны установить для своего веб-сайта?
 
@@ -267,7 +268,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 **Если вам нужен только источник ( `https://site-one.example` ):**
 
 - Если вы используете реферер в скрипте, который имеет доступ к странице верхнего уровня, альтернативой является `window.location.origin`.
-- Если возможно, используйте такие заголовки, как [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) и [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site), они дадут `Origin` или ответ, поступил ли запрос из другого источника. Возможно, именно это вам и нужно.
+- Если возможно, используйте такие заголовки, как [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) и [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site), они дадут `Origin` или ответ, поступил ли запрос из другого источника. Возможно, именно это вам и нужно.
 
 **Если вам нужны другие элементы URL (путь, параметры запроса…):**
 
@@ -283,13 +284,13 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 Обратите внимание, что отправитель запроса всегда может решить не отправлять реферер, установив `no-referrer` (а злоумышленник может даже подделать реферер).
 
-Используйте [токены CSRF в](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) качестве основной защиты. Для дополнительной защиты используйте [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites), а вместо `Referer`заголовки, такие как [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (доступно в запросах POST и CORS) и [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (если доступно).
+Используйте [токены CSRF в](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) качестве основной защиты. Для дополнительной защиты используйте [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites), а вместо `Referer`заголовки, такие как [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) (доступно в запросах POST и CORS) и [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) (если доступно).
 
 ### Логирование
 
 Обязательно защитите личные или конфиденциальные данные пользователей, которые могут находиться в `Referer`.
 
-Если вы используете только источник, проверьте, может ли заголовок [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) применяться в качестве альтернативы. Этот заголовок может дать вам информацию для отладки более простым способом и без необходимости синтаксического анализа реферера.
+Если вы используете только источник, проверьте, может ли заголовок [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) применяться в качестве альтернативы. Этот заголовок может дать вам информацию для отладки более простым способом и без необходимости синтаксического анализа реферера.
 
 ### Платежи
 
@@ -336,8 +337,8 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 - [Понимание "same-site" и "same-origin"](/same-site-same-origin/).
 - [Новый заголовок безопасности: политика реферера (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/).
-- [Referrer-Policy на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy).
-- [Заголовок Referer: проблемы конфиденциальности и безопасности в MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns).
+- [Referrer-Policy на MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy).
+- [Заголовок Referer: проблемы конфиденциальности и безопасности в MDN](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns).
 - [Изменение Chrome: намерение реализации на Blink](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ).
 - [Изменение Chrome: намерение о запуске на Blink](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8).
 - [Изменение Chrome: запись статуса](https://www.chromestatus.com/feature/6251880185331712).

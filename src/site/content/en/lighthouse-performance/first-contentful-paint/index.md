@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First Contentful Paint
 description: |
   Learn about Lighthouse's First Contentful Paint metric and

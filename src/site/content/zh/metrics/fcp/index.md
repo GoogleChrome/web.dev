@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: First Contentful Paint 首次内容绘制 (FCP)
 authors:
   - philipwalton
@@ -51,7 +51,7 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 在 JavaScript 中测量 FCP
 
-要在 JavaScript 中测量 FCP，您可以使用[绘制计时 API](https://w3c.github.io/paint-timing/)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)来侦听名称为`first-contentful-paint`的`paint`条目并记录在控制台中。
+要在 JavaScript 中测量 FCP，您可以使用[绘制计时 API](https://w3c.github.io/paint-timing/)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听名称为`first-contentful-paint`的`paint`条目并记录在控制台中。
 
 ```js
 new PerformanceObserver((entryList) => {
@@ -102,7 +102,7 @@ getFCP(console.log);
 - [缩小 CSS](/unminified-css/)
 - [移除未使用的 CSS](/unused-css-rules/)
 - [预连接到所需的来源](/uses-rel-preconnect/)
-- [减少服务器响应时间 (TTFB)](/time-to-first-byte/)
+- [减少服务器响应时间 (TTFB)](/ttfb/)
 - [避免多个页面重定向](/redirects/)
 - [预加载关键请求](/uses-rel-preload/)
 - [避免巨大的网络负载](/total-byte-weight/)

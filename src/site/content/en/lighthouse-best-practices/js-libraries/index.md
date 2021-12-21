@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Detected JavaScript libraries
 description: |
   Learn about Lighthouse's diagnostic "Detected JavaScript libraries" audit.

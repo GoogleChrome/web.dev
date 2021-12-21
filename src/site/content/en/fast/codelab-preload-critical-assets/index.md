@@ -136,7 +136,7 @@ unnecessary preload link for this page.
 
 For a list of all the types of resources that can be fetched along with the
 correct values that should be used for the `as` attribute, refer to the
-[MDN article on Preloading](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded).
+[MDN article on Preloading](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded).
 
 {% Aside %}
 Cross-origin resources can also be preloaded using the `crossorigin` attribute.

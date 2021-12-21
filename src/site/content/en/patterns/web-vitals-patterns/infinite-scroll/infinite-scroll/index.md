@@ -33,7 +33,7 @@ any unexpected layout shifts.
 **Implementation**
 
 The [Intersection Observer
-API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)
 is a performant way of monitoring the position and visibility of page
 elements. This design is implemented using two separate intersertion observers:
 - `listObserver` observes the position of the `#infinite-scroll-button` that is

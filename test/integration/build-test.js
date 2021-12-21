@@ -57,16 +57,5 @@ describe('Build test', function () {
         `Could not find Rollup output: ${file}`,
       );
     });
-
-    // Check that there's NOT a web.dev/LIVE partial. We confirm that partials
-    // are generally created above, in the list of common checks.
-    assert(
-      !fs.existsSync(path.join(dist, 'live/index.json')),
-      'web.dev/LIVE partial should not exist',
-    );
-    assert(
-      fs.existsSync(path.join(dist, 'live/index.html')),
-      'web.dev/LIVE page should exist',
-    );
   });
 });
