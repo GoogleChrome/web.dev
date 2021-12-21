@@ -61,7 +61,7 @@ Some other projects that Lynn has created are:
 
 <figure>
     {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/aVuPAt9P1MnVV2UVEfHG.png", alt="The portfolio archive on lynnandtonic.com.", width="800", height="407" %}
-    <figcaption>You can see an archive of all the designs <a href="https://lynnandtonic.com/archive/">here</a></figcaption>
+    <figcaption>You can see an <a href="https://lynnandtonic.com/archive/">archive of all the designs</a></figcaption>
 </figure>
 
 **Lynn:** It's still really fun and a project I look forward to. It's the one project I know I can make as weird as I want. It's always a good opportunity to experiment, try something new, and learn whatever new techniques gained traction that year. And because it gets replaced each year, it's really helped me to strengthen my ability to deal with change. It forces me to move on, even if I feel a particular affinity for any one version.
@@ -94,4 +94,4 @@ I often reach for JS to give me the height of an element when it's not explicitl
 - Charlie Gerard is making extremely cool hands-free and motion-controlled demos.
 - [George Francis](https://georgefrancis.dev/) is creating beautiful generative artwork.  
 
-You can find out what Lynn creates next via her portfolio website at [lynnandtonic.com]( https://lynnandtonic.com), or by following her on [Twitter](https://https://twitter.com/lynnandtonic).
+You can find out what Lynn creates next via her portfolio website at [lynnandtonic.com](https://lynnandtonic.com), or by following her on [Twitter](https://twitter.com/lynnandtonic).
