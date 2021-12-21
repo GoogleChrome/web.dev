@@ -3573,7 +3573,11 @@ lozandier:
     en: Kevin Lozandier
   description:
     en: User Experience Engineer on the Google Responsible Innovation team
-
+mobtec:
+  title:
+    en: Guilherme Moser de Souza
+  description:
+    en: Web Developer
 maurizioparadisi:
   title:
     en: Maurizio Paradisi
@@ -3611,3 +3615,21 @@ prashantmishra:
     en: Prashant Mishra
   description:
     en: Web Ecosystem Consultant at Google
+
+joshuagrossberg:
+  title:
+    en: Joshua Grossberg
+  description:
+    en: Chief Technology Officer of Kapwing
+
+nsull:
+  title:
+    en: Nicole Sullivan
+  description:
+    en: Product manager on the Chrome team.
+
+danielasy:
+  title:
+    en: Daniela Sayuri Yassuda
+  description:
+    en: Staff Software Engineer at QuintoAndar

@@ -6,10 +6,8 @@
 
   --flow-space: #{get-space('size-1')};
 
-  > * {
-    margin-inline: auto;
-    max-width: $global-prose-element-max-width;
-  }
+  max-width: $global-prose-element-max-width;
+  display: flow-root;  // Clear floats
 
   p:empty {
     display: none;
@@ -39,6 +37,12 @@
     --flow-space: 1rem;
   }
 
+  /// Stacked headings need to maintain larger spacing, however
+  h2 + h3,
+  h3 + h4 {
+    --flow-space: #{get-space('size-1')};
+  }
+
   /// Details gets more surrounding space, but the inner elements
   /// should all be equal
   details,
@@ -50,35 +54,21 @@
     --flow-space: #{get-space('size-1')};
   }
 
-  /// Keeps figures and embeds at a reasonable size and
-  /// makes sure their content fills them
-  figure,
-  iframe {
-    max-width: $global-prose-element-max-width;
-
-    > * {
-      width: 100%;
-    }
-  }
-
-  figure {
-    border: 1px solid var(--color-stroke);
-    padding: 1em;
-    border-radius: $global-radius-base;
-  }
-
-  figcaption {
-    max-width: 60ch;
-  }
-
-  ul > li {
+  :not([class]) li {
     @extend .flow;
 
     line-height: unset;
+  }
 
-    &::before {
-      inset: 1.2ex 0 0 0;
-    }
+  /// Modidifies the custom list style positions to
+  /// work with the larger line heights
+  ul > li::before {
+    inset: 1.2ex 0 0 0;
+  }
+
+  ol > li::before {
+    line-height: 1.1;
+    inset: 0.25ex 0 0 0;
   }
 
   /// An anchor that starts with a hash is a

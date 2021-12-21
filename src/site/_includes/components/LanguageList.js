@@ -16,7 +16,7 @@
 const path = require('path');
 const {getTranslatedUrls, getDefaultUrl} = require('../../_filters/urls');
 const {i18n} = require('../../_filters/i18n');
-const {languageNames} = require('../../../../shared/locale');
+const {languageNames} = require('../../../lib/utils/language');
 
 module.exports = (url, lang) => {
   const langhrefs = getTranslatedUrls(url)

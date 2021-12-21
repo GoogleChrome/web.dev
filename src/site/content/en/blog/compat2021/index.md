@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Compat 2021: Eliminating five top compatibility pain points on the web"
 subhead:
     "Google is working with other browser vendors and industry partners to fix the
@@ -100,7 +101,7 @@ both [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) an
 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)
 have had issues with `auto-height` flex containers leading to incorrectly sized images.
 
-<div class="w-columns">
+<div class="switcher">
     <figure class="w-figure" style="display: flex; flex-direction: column;">
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Stretched photo of a chessboard.", width="800", height="400" %}
         <figcaption class="w-figcaption" style="margin-top: auto">
@@ -192,7 +193,7 @@ aren't supported in Chromium, and although now
 [supported behind a flag](https://bugs.chromium.org/p/chromium/issues/detail?id=958381),
 the results are inconsistent across browsers:
 
-<div class="w-columns">
+<div class="switcher">
     <figure class="w-figure">
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}
         <figcaption class="w-figcaption">
@@ -237,7 +238,7 @@ CSS property makes it easy to maintain a consistent width-to-height ratio for
 elements, removing the need for the well-known
 [`padding-top` hack](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Using padding-top' %}
 ```css
 .container {
@@ -320,11 +321,11 @@ Dashboard](https://wpt.fyi/compat2021).
 
 <figure class="w-figure">
 <a href="https://wpt.fyi/compat2021">
-{% Img 
-src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", 
-alt="Compat 2021 Dashboard", 
-width="800", 
-height="942", 
+{% Img
+src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png",
+alt="Compat 2021 Dashboard",
+width="800",
+height="942",
 class="w-screenshot" %}
 </a>
 <figcaption class="w-figcaption">The Compat 2021 Dashboard (screenshot taken 16 November, 2021).</figcaption>

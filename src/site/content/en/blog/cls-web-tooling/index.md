@@ -1,4 +1,5 @@
 ---
+layou: post
 title: Evolving Cumulative Layout Shift in web tooling
 subhead: >
   Starting today,
@@ -59,7 +60,7 @@ Lighthouse, PageSpeed Insights, and Chrome UX Report.
 Below you can see a summary of the CLS windowing adjustment rollout,
 as well as which tools still provide the ability to benchmark against the original implementation.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -116,7 +117,7 @@ as well as which tools still provide the ability to benchmark against the origin
   </table>
 </div>
 
-Chrome DevTools will also be updated to support the windowing adjustment shortly. The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021. 
+Chrome DevTools will also be updated to support the windowing adjustment shortly. The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021.
 
 For most developers,
 this change is expected to happen seamlessly with no action needed to take advantage of data from the fix.
@@ -211,7 +212,7 @@ src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/UAslFmRMON2y5qtY1TZE.png",
 alt="Lighthouse scoring calculator",
 width="800", height="405" %}
 
-Lighthouse 8.0's CLS implementation includes both windowing and CLS contribution from subframes. Prior to 8.0, CLS in Lighthouse didn't include subframes' CLS in the metric calculation, but now does. And just for confirmation, field CLS measured by CrUX also handles windowing and subframes similarly. 
+Lighthouse 8.0's CLS implementation includes both windowing and CLS contribution from subframes. Prior to 8.0, CLS in Lighthouse didn't include subframes' CLS in the metric calculation, but now does. And just for confirmation, field CLS measured by CrUX also handles windowing and subframes similarly.
 
 Still, the primary difference between lab and field CLS is that lab CLS's window of observation ends at "fully loaded" as determined under lab conditions, whereas in the field, the window of observation extends to the entire page lifetime, including post-load activity. That said, the windowing adjustment does mitigate this difference substantially.
 

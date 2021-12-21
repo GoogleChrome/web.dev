@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Referer and Referrer-Policy best practices
 subhead: Best practices to set your Referrer-Policy and use the referrer in incoming requests.
 authors:
@@ -46,7 +47,7 @@ is made available in the `Referer` header.
 In the example below, the `Referer` header includes the complete URL of the page on `site-one` from
 which the request was made.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP request including a Referer header.", width="800", height="573" %}
 </figure>
 
@@ -66,7 +67,7 @@ But when the full URL including the path and query string is sent in the `Refere
 origins**, this can be **privacy-hindering** and pose **security risks** as well. Take a look at
 these URLs:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs with paths, mapped to different privacy and security risks.", width="800", height="370" %}
 </figure>
 
@@ -89,7 +90,7 @@ header (and `document.referrer`) can be:
 - Only the [origin](/same-site-same-origin/#origin)
 - The full URL: origin, path, and query string
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Data that can be contained in the Referer header and document.referrer.", width="800", height="255" %}
 </figure>
 
@@ -101,7 +102,7 @@ origins—while maintaining the richness of the referrer within your own site.
 Here is an overview showing how referrer policies restrict the URL data available from the Referer
 header and `document.referrer`:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Different referrer policies and their behaviour, depending on the security and cross-origin context.", width="800", height="537" %}
 </figure>
 
@@ -126,7 +127,7 @@ _As of October 2021_
 
 **If no referrer policy is set, the browser's default policy will be used.**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -209,9 +210,9 @@ You can also use the developer tools of Chrome, Edge, or Firefox to see the refe
 a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header
 but does show the `Referer` that was sent.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.", width="800", height="416" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Chrome DevTools, <b>Network</b> panel with a request selected.
   </figcaption>
 </figure>

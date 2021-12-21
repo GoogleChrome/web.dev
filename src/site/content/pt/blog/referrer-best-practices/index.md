@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Melhores práticas no uso dos cabeçalhos Referer e Referrer-Policy
 subhead: Melhores práticas para definir seu Referrer-Policy e usar o referenciador nas solicitações de entrada.
 authors:
@@ -34,7 +35,7 @@ As solicitações HTTP podem incluir o [cabeçalho `Referer`](https://developer.
 
 No exemplo abaixo, o cabeçalho `Referer` inclui a URL completa da página no `site-one` partir do qual a solicitação foi feita.
 
-<figure class="w-figure"> {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="Solicitação HTTP incluindo um cabeçalho Referer.", width="800", height="573" %}</figure>
+<figure> {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="Solicitação HTTP incluindo um cabeçalho Referer.", width="800", height="573" %}</figure>
 
 O cabeçalho `Referer` pode estar presente em diferentes tipos de solicitações:
 
@@ -47,7 +48,7 @@ O `Referer` pode ser esclarecedor. Por exemplo, um serviço analítico pode usar
 
 Mas quando a URL completa, incluindo o caminho e a string de consulta, é enviada no cabeçalho `Referer` **entre origens**, isto pode **prejudicar a privacidade** e também representar **riscos à segurança**. Dê uma olhada nessas URLs:
 
-<figure class="w-figure"> {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs com caminhos, mapeados para diferentes riscos de privacidade e segurança.", width="800", height="370" %}</figure>
+<figure> {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs com caminhos, mapeados para diferentes riscos de privacidade e segurança.", width="800", height="370" %}</figure>
 
 As URLs de número 1 a 5 contêm informações privadas, às vezes até com informações de identificação ou confidenciais. Vazá-los silenciosamente entre origens pode comprometer a privacidade dos usuários da web.
 
@@ -63,13 +64,13 @@ Você pode selecionar uma dentre oito políticas. Dependendo da política, os da
 - Apenas a [origem](/same-site-same-origin/#origin)
 - A URL completa: origem, caminho e string de consulta (query string)
 
-<figure class="w-figure"> {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Dados que podem estar contidos no cabeçalho Referer e document.referrer.", width="800", height="255" %}</figure>
+<figure> {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Dados que podem estar contidos no cabeçalho Referer e document.referrer.", width="800", height="255" %}</figure>
 
 Algumas políticas são projetadas para se comportar de maneira diferente dependendo do **contexto**: origens cruzadas (cross-origin) ou solicitação da mesma origem (same-origin), segurança (se o destino da solicitação for tão seguro quanto a origem) ou ambos. Isto é útil para limitar a quantidade de informações compartilhadas entre origens ou para origens menos seguras, enquanto mantém a riqueza de informações do referenciador em seu próprio site.
 
 Aqui está uma visão geral que mostra como as políticas de referenciamento restringem os dados de URL disponíveis no cabeçalho Referer e `document.referrer`:
 
-<figure class="w-figure"> {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Políticas de referenciador diferentes e seu comportamento, dependendo da segurança e do contexto de origem cruzada.", width="800", height="537" %}</figure>
+<figure> {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Políticas de referenciador diferentes e seu comportamento, dependendo da segurança e do contexto de origem cruzada.", width="800", height="537" %}</figure>
 
 O MDN fornece uma [lista completa de políticas e exemplos de comportamento](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives) .
 
@@ -84,7 +85,7 @@ Algumas observações:
 
 **Se nenhuma política de referenciamento for definida, a política default do navegador será usada.**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -163,7 +164,7 @@ O site [securityheaders.com](https://securityheaders.com/) é útil para determi
 
 Você também pode usar as ferramentas de desenvolvedor do Chrome, Edge ou Firefox para saber qual é a política de referenciamento usada para uma solicitação específica. No momento da redação deste artigo, o Safari não mostra o `Referrer-Policy` mas mostra o `Referer` que foi enviado.
 
-<figure class="w-figure"> {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt=" Uma captura de tela do painel Rede do Chrome DevTools, mostrando Referer e Referrer-Policy.", width="800", height="416" %}   <figcaption class="w-figcaption">  Chrome DevTools, <b>painel de rede</b> com uma solicitação selecionada.   </figcaption></figure>
+<figure> {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt=" Uma captura de tela do painel Rede do Chrome DevTools, mostrando Referer e Referrer-Policy.", width="800", height="416" %}   <figcaption>  Chrome DevTools, <b>painel de rede</b> com uma solicitação selecionada.   </figcaption></figure>
 
 ## Qual política você deve definir para seu site?
 

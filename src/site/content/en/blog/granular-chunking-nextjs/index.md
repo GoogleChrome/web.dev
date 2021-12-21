@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Improved Next.js and Gatsby page load performance with granular chunking
 subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes duplicate code to improve page load performance.
 authors:
@@ -178,7 +179,7 @@ getDependencies (route) {
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3XG4VlLQEQ724fvhynvM.png", alt="Output of multiple shared chunks in a Next.js application.", width="800", height="488", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
@@ -186,7 +187,7 @@ This newer granular chunking strategy was first rolled out in Next.js behind a f
 number of early adopters. Many saw significant reductions to the total JavaScript used for their
 entire site:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -249,7 +250,7 @@ config.optimization = {
 By optimizing their webpack configuration to adopt a similar granular chunking strategy, they also
 noticed sizeable JavaScript reductions in many large sites:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

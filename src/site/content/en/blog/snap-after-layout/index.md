@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Scroll snapping after layout changes"
 subhead: |
   Starting in Chrome 81, you no longer need to add event listeners to force
@@ -101,7 +102,7 @@ layout change, then the scroller will try to snap back to it. Pay attention to
 what happens when the layout changes in the following
 [example](https://codepen.io/argyleink/full/YzXyOaX).
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Snap position lost' %}
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">

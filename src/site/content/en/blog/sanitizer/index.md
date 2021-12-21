@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Safe DOM manipulation with the Sanitizer API
 subhead: |
   The new Sanitizer API aims to build a robust processor for arbitrary strings to be safely inserted into a page.
@@ -235,7 +236,7 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOM
 
 The Sanitizer API is under discussion in the standardization process and Chrome is in the process of implementing it.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

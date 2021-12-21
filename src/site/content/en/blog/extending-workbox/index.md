@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Extending Workbox
 subhead: >
   Write your own reusable, shareable strategies and plugins.
@@ -141,7 +142,7 @@ class CacheNetworkRace extends Strategy {
         if (results[0].status === 'rejected' &&
             !results[1].value) {
           reject(results[0].reason);
-        }  
+        }
       });
     });
   }
@@ -161,7 +162,7 @@ plugin lifecycle callbacks that we'll describe soon.
 
 A `StrategyHandler` instance supports the following methods:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -241,7 +242,7 @@ Here's an overview of all the events that a plugin could listen to. Technical
 details about implementing callbacks for these events is in the
 [Workbox documentation](https://developers.google.com/web/tools/workbox/guides/using-plugins).
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

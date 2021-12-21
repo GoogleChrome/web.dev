@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a Tabs component
 subhead: A foundational overview of how to build a tabs component similar to those found in iOS and Android apps.
 authors:
@@ -242,7 +242,7 @@ scroll containers have created.
 
 The next layout is nearly the same: I use flex to create vertical ordering.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html/1-4
 <snap-tabs>
@@ -314,7 +314,7 @@ The nav links need to be laid out in a line, with no line breaks, vertically
 centered, and each link item should snap to the scroll-snap container. Swift
 work for 2021 CSS!
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html/1-4
 <nav>
@@ -367,7 +367,7 @@ parent as much as possible, then for its own layout, it creates a series of
 columns that are `100%` the width of the parent. Percentages work great here
 because we've written strong constraints on the parent.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html/1-4
 <section>
@@ -420,7 +420,7 @@ position. They are simultaneously a scroll parent and a scroll child. The
 browser is really handling some tricky touch, mouse, and keyboard interactions
 for us here.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html
 <article>

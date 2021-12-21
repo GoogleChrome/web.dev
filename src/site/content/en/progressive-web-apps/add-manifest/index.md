@@ -111,7 +111,7 @@ specified in the `<title>` of the HTML document to prevent disguies attacks
 where standalone apps might try to be mistaken, for example, for operating
 system dialogs.
 
-In consequence, developers shoould _not_ repeat the
+In consequence, developers should _not_ repeat the
 application name in the `<title>` when the app is running in standalone mode.
 {% endAside %}
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a media scroller component
 subhead: A foundational overview of how to build a responsive horizontal scrollview for TVs, phones, desktops, etc.
 authors:

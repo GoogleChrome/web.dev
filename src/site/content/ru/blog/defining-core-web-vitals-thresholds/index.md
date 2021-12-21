@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Определение пороговых значений показателей Core Web Vitals
 subhead: Исследование и методология пороговых значений Core Web Vitals
 authors:
@@ -22,13 +23,18 @@ tags:
 
 Каждая метрика Core Web Vitals имеет свои пороговые значения, которые определяют производительность страницы как «хорошую», «требующую улучшения» или «плохую»:
 
-<div class="w-stack w-stack--center w-stack--md">
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Рекомендации по пороговому значению скорости загрузки основного контента", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Рекомендации по пороговому значению времени ожидания до первого взаимодействия с контентом", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Рекомендации по пороговому значению совокупного смещения макета", width="400", height="350" %}
 </div>
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th> </th>
@@ -81,7 +87,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">Достижимость</h3>
 <p data-md-type="paragraph">Используя данные из CrUX, мы можем определить процент источников в Интернете, которые соответствуют «хорошим» вероятным пороговым значениям LCP.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% источников CrUX, классифицированных как «хорошие» (для возможных пороговых значений LCP)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -113,7 +119,7 @@ tags:
 <p data-md-type="paragraph">Кроме того, чтобы гарантировать, что выбранный порог постоянно достигается для хорошо оптимизированных сайтов, мы анализируем производительность LCP для наиболее эффективных сайтов в Интернете, чтобы определить, какие пороговые значения стабильно достижимы для этих сайтов. В частности, мы стремимся определить порог, который постоянно достигается на 75-м процентиле для наиболее эффективных сайтов. Мы обнаружили, что пороговые значения 1,5 и 2 секунды не всегда достижимы, в то время как 2,5 секунды достижимы.</p>
 <p data-md-type="paragraph">Для определения «плохого» порога LCP мы использовали данные CrUX, чтобы определить порог, которому соответствует большинство источников:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% источников CrUX, классифицированных как «плохие» (для возможных пороговых значений LCP)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -153,7 +159,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">Достижимость</h3>
 <p data-md-type="paragraph">Используя данные CrUX, мы определили, что большинство источников в Интернете соответствуют порогу «хорошего» FID в 100 мс на уровне 75-го процентиля:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% источников CrUX, классифицированных как «хорошие» для порога FID в 100 мс</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th></th>
@@ -177,7 +183,7 @@ tags:
 <h3 data-md-type="header" data-md-header-level="3">Достижимость</h3>
 <p data-md-type="paragraph">Основываясь на данных CrUX, мы видим, что почти 50% источников имеют CLS 0,05 или ниже.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% источников CrUX, классифицированных как «хорошие» (для возможных пороговых значений CLS)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -202,7 +208,7 @@ tags:
 <p data-md-type="paragraph">Хотя данные CrUX свидетельствуют о том, что 0,05 может быть разумным «хорошим» порогом CLS, мы признаем, что есть некоторые варианты использования, где в настоящее время трудно избежать деструктивных смещений макета. Например, для стороннего встраиваемого контента, такого как встраиваемые объекты социальных сетей, высота встраиваемого контента иногда неизвестна до окончания загрузки, что может привести к смещению макета более чем на 0,05. Таким образом, мы пришли к выводу, что, хотя многие источники соответствуют порогу 0,05, чуть менее строгий порог CLS в 0,1 обеспечивает лучший баланс между качеством опыта и достижимостью. Мы надеемся, что в будущем экосистема веб-разработки найдет решения для устранения смещений макета, вызванных сторонними встраиваемыми объектами, что позволит использовать более строгий порог «хорошего» CLS в 0,05 или 0 в одной из будущих итераций Core Web Vitals.</p>
 <p data-md-type="paragraph">Для определения «плохого» порога CLS мы использовали данные CrUX, чтобы определить порог, которому соответствует большинство источников:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% источников CrUX, классифицированных как «плохие» (для возможных пороговых значений CLS)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>

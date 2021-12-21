@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Choose how in-scope links open your PWA with Declarative Link Capturing
 subhead: |
   Declarative Link Capturing is a proposal for a web app manifest property called
@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-11-22
+updated: 2021-12-14
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -27,9 +27,8 @@ tags:
 {% Aside 'caution' %} Declarative Link Capturing was part of the
 [capabilities project](/fugu-status/).
 The engineering team has decided that Declarative Link Capturing will _not_
-launch with the current design. Interested parties
-can check out and provide early feedback on the likely replacement feature called
-[Web App Launch Handling](https://github.com/WICG/sw-launch/blob/main/launch_handler.md).
+launch with its current design. Instead, the feature has been redesigned as
+described in [Control how your app is launched](/launch-handler/).
 {% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
@@ -44,13 +43,13 @@ separate app windows, if the app is open already, should a new window or tab be 
 link click that is captured? When you think about it, there are many ways links and navigations can
 be captured, including, but not limited to, the following:
 
-* Clicked links from other web pages.
-* URL launches from a platform-specific app in the operating system.
-* Navigations originating from the [App Shortcuts API](/app-shortcuts/)
-* Links that go through [URL protocol handlers](/url-protocol-handler/)
-* Navigations caused by [file handlers](/file-handling/)
-* Navigations caused by the [Share Target API](/web-share-target/)
-* …and others
+- Clicked links from other web pages.
+- URL launches from a platform-specific app in the operating system.
+- Navigations originating from the [App Shortcuts API](/app-shortcuts/).
+- Links that go through [URL protocol handlers](/url-protocol-handler/).
+- Navigations caused by [file handlers](/file-handling/).
+- Navigations caused by the [Share Target API](/web-share-target/).
+- …and others.
 
 Declarative Link Capturing is a proposal for a web app manifest property called
 `"capture_links"` that lets developers determine declaratively what should happen when the browser
@@ -85,15 +84,15 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
-| Step                                     | Status                               |
-| ---------------------------------------- | ------------------------------------ |
-| 1. Create explainer                      | [Complete][explainer]                |
-| 2. Create initial draft of specification | [In Progress][spec]                  |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)             |
-| 4. Origin trial                          | Complete                             |
-| 5. Launch                                | Not started                          |
+| Step                                     | Status                   |
+| ---------------------------------------- | ------------------------ |
+| 1. Create explainer                      | [Complete][explainer]    |
+| 2. Create initial draft of specification | [In Progress][spec]      |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 4. Origin trial                          | Complete                 |
+| 5. Launch                                | Not started              |
 
 </div>
 
@@ -145,7 +144,7 @@ running in a tab or as an installed PWA, to see the difference in behavior.
 
 ## Security and permissions
 
-The Chromium team has designed and implemented Declarative Link Capturing using the core principles
+The Chromium team designed and implemented Declarative Link Capturing using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics. This API allows sites new additional control options. First,
 being able to automatically open installed apps in a window. This uses existing UI but makes it
@@ -201,6 +200,5 @@ Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md
 [issues]: https://github.com/WICG/sw-launch/issues/
 [spec]: https://github.com/w3c/manifest/issues/764
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev

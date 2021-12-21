@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 通过用户代理客户端提示改善用户隐私和开发者体验
 subhead: 用户代理客户端提示是客户端提示 API 的新扩展，能够使开发者以保护隐私和符合工效学的方式访问用户的浏览器信息。
 authors:
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### 用户代理响应和请求标头
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

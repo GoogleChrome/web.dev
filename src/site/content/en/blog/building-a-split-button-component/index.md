@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a split-button component
 subhead: A foundational overview of how to build an accessible split-button component.
 authors:

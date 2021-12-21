@@ -1,0 +1,28 @@
+setLeader: Test your knowledge of icons
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "SVG can handle any pixel density with one single file or `<svg>` code block."
+    options:
+      - content: "True"
+        rationale: "SVG includes how to draw the shapes and lines, at any pixel density or scale or zoom."
+      - content: "False"
+        rationale: "Unlike `.png` or `.jpg`, SVG has no need for `srcset` or a `<picture>` element."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,4"
+    stem: "SVG code that's directly in the HTML has which advantages?"
+    options:
+      - content: "Styleable from CSS"
+        rationale: "Match SVG icon shapes to buttons and brand colors."
+      - content: "No download required."
+        rationale: "All the instructions are there."
+      - content: "Lazy loaded by default."
+        rationale: "No download to be lazy about."
+      - content: "Less CPU usage."
+        rationale: "I made this up."
+      - content: "Light or dark themed without a new asset."
+        rationale: "Media queries can change inline SVG styles!"

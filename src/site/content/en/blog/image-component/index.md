@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Building an effective Image Component
 subhead: An image component encapsulates performance best practices and provides an out-of-the-box solution to optimize images.
 date: 2021-10-25
@@ -12,10 +13,10 @@ description: |
 hero: image/IypihH3o5cSpEMVp5i08dp69otp2/Orid6fbbep03o45XkRis.jpeg
 alt: Assembling the pieces of a puzzle
 tags:
-  - blog 
+  - blog
 ---
 
-Images are a common source of performance bottlenecks for web applications and a key focus area for optimization. Unoptimized images [contribute to page bloat](https://almanac.httparchive.org/en/2020/page-weight#image-bytes) and currently account for over 70% of the total page weight in bytes at the 90<sup>th</sup> percentile. Multiple ways to optimize images call for an intelligent "image component" with performance solutions baked in as a default. 
+Images are a common source of performance bottlenecks for web applications and a key focus area for optimization. Unoptimized images [contribute to page bloat](https://almanac.httparchive.org/en/2020/page-weight#image-bytes) and currently account for over 70% of the total page weight in bytes at the 90<sup>th</sup> percentile. Multiple ways to optimize images call for an intelligent "image component" with performance solutions baked in as a default.
 
 The [Aurora](/introducing-aurora/) team worked with [Next.js](https://nextjs.org/) to build [one such component](https://nextjs.org/docs/basic-features/image-optimization#image-component). The goal was to create an optimized image template that web developers could further customize. The component serves as a good model and sets a standard for building image components in other frameworks, content management systems (CMS), and tech-stacks. We have collaborated on a similar [component for Nuxt.js,](https://image.nuxtjs.org/components/nuxt-img/) and we are working with [Angular](https://angular.io/) on image optimization in future versions. This post discusses how we designed the Next.js Image component and the lessons we learned along the way.
 
@@ -27,18 +28,18 @@ Images not only affect performance, but also business. The number of images on a
 
 ### Unsized images hurt CLS
 
-Images served without their size specified can cause layout instability and contribute to a high Cumulative Layout Shift ([CLS](/cls/)). Setting the `width` and `height` attributes on [img](/patterns/web-vitals-patterns/images/img-tag/) elements can help to prevent layout shifts. For example:  
-  
+Images served without their size specified can cause layout instability and contribute to a high Cumulative Layout Shift ([CLS](/cls/)). Setting the `width` and `height` attributes on [img](/patterns/web-vitals-patterns/images/img-tag/) elements can help to prevent layout shifts. For example:
+
 ```html
 <img src="flower.jpg" width="360" height="240">
-```  
-  
+```
+
 The width and height should be set such that the aspect ratio of the rendered image is close to its natural aspect ratio. A significant [difference in the aspect ratio](/image-aspect-ratio/) can result in the image looking distorted. A relatively new property that allows you to specify [aspect-ratio in CSS](/aspect-ratio/) can help to size images responsively while preventing CLS.
 
 ### Large images can hurt LCP
 
-The larger the file size of an image, the longer it will take to download. A large image could be the "hero" image for the page or the most significant element in the viewport responsible for triggering the Largest Contentful Paint ([LCP](/lcp/)). An image that is part of the critical content and takes a long time to download will delay the LCP.  
-  
+The larger the file size of an image, the longer it will take to download. A large image could be the "hero" image for the page or the most significant element in the viewport responsible for triggering the Largest Contentful Paint ([LCP](/lcp/)). An image that is part of the critical content and takes a long time to download will delay the LCP.
+
 In many cases, developers can reduce image sizes through better compression and the use of [responsive](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#how_do_you_create_responsive_images) images. The `srcset` and `sizes` attributes of the `<img>` element help to provide image files with different sizes. The browser can then choose the right one depending on the screen size and resolution.
 
 ### Poor image compression can hurt LCP
@@ -117,7 +118,7 @@ When an image is requested with layout modes _responsive_ or _fill_, Next.js ide
 
 The following comparison shows how the layout mode can be used to control the size of the image on different screens. We have used a [demo image](https://image-component.nextjs.gallery/layout-intrinsic) shared in the Next.js docs, viewed on a phone and a standard laptop.
 
-<div class="w-table-wrapper">
+<div>
 <table>
    <thead>
       <tr>
@@ -226,7 +227,7 @@ There may be situations where websites cannot use image CDNs. In such cases, an 
 
 ### Support progressive loading
 
-Progressive loading is a technique used to hold users' interest by displaying a placeholder image usually of significantly lower quality while the actual image loads. It improves perceived performance and enhances the user experience. It can be used in combination with lazy loading for below-the-fold images or for above-the-fold images. 
+Progressive loading is a technique used to hold users' interest by displaying a placeholder image usually of significantly lower quality while the actual image loads. It improves perceived performance and enhances the user experience. It can be used in combination with lazy loading for below-the-fold images or for above-the-fold images.
 
 The Next.js Image component supports progressive loading for the image through the [placeholder](https://nextjs.org/docs/api-reference/next/image#placeholder) property. This can be used as an [LQIP](/lazy-loading-best-practices/#wrong-layout-shifting) (Low-quality image placeholder) for displaying a low-quality or blurred image while the actual image loads.
 
@@ -246,19 +247,19 @@ In an early release of the Next.js Image component, we provided a `unsized` attr
 
 ### Separate useful friction from pointless annoyance
 
-The requirement for sizing an image is an example of "useful friction." It restricts the use of the component, but it provides outsized performance benefits in exchange. Users will readily accept the constraint if they have a clear picture of the potential performance benefits. Therefore, it is worthwhile to explain this tradeoff in the documentation and other published material about the component. 
+The requirement for sizing an image is an example of "useful friction." It restricts the use of the component, but it provides outsized performance benefits in exchange. Users will readily accept the constraint if they have a clear picture of the potential performance benefits. Therefore, it is worthwhile to explain this tradeoff in the documentation and other published material about the component.
 
 However, you can find workarounds for such friction without sacrificing performance. For example, during the development of the Next.js Image component, we received complaints that it was annoying to look up sizes for locally stored images. We added [static image imports](https://nextjs.org/docs/basic-features/image-optimization#image-imports), which streamline this process by automatically retrieving dimensions for local images at build time using a Babel plugin.
 
 ### Strike a balance between convenience features and performance optimizations
 
-If your image component does nothing but impose "useful friction" on its users, developers will tend to not want to use it. We found that although performance features like image sizing and automatic generation of `srcset` values were the most important. Developer-facing convenience features like automatic lazy loading and [built-in blurry placeholders](https://nextjs.org/docs/api-reference/next/image#placeholder) also drove interest in the Next.js Image component. 
+If your image component does nothing but impose "useful friction" on its users, developers will tend to not want to use it. We found that although performance features like image sizing and automatic generation of `srcset` values were the most important. Developer-facing convenience features like automatic lazy loading and [built-in blurry placeholders](https://nextjs.org/docs/api-reference/next/image#placeholder) also drove interest in the Next.js Image component.
 
 ### Set a roadmap for features to drive adoption
 
 Building a solution that works perfectly for all situations is very difficult. It can be tempting to design something that works well for 75% of people and then tell the other 25% that "in these cases, this component isn't for you."
 
-In practice, this strategy turns out to be at odds with your goals as a component designer. You want developers to adopt your component in order to benefit from its performance benefits. This is difficult to do if there is a contingent of users that are unable to migrate and feel left out of the conversation. They are likely to express disappointment, leading to negative perceptions that affect adoption. 
+In practice, this strategy turns out to be at odds with your goals as a component designer. You want developers to adopt your component in order to benefit from its performance benefits. This is difficult to do if there is a contingent of users that are unable to migrate and feel left out of the conversation. They are likely to express disappointment, leading to negative perceptions that affect adoption.
 
 It is advisable to have a roadmap for your component that covers all reasonable use cases over the long term. It also helps to be explicit in the documentation about what isn't supported and why in order to set expectations about the problems the component is intended to solve.
 

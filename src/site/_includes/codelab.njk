@@ -12,11 +12,11 @@ pageScripts:
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
-  <web-codelab class="web-codelab" glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.env === 'test' %}testmode{% endif %}>
+  <web-codelab class="web-codelab" glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.percy === 'true' %}snapshot{% endif %}>
     <div class="web-codelab__instructions">
-      {# 
-        TODO: The legacy rollout task can be removed 
-        when the design system has been full rolled-out across the site 
+      {#
+        TODO: The legacy rollout task can be removed
+        when the design system has been full rolled-out across the site
       #}
       <article class="prose legacy-rollout">
         <header class="flow gap-bottom-size-3">
@@ -57,9 +57,9 @@ pageScripts:
             <p><strong>{{ 'i18n.post.is_draft' | i18n(locale) }}</strong></p>
           </div>
         {% endif %}
-        
+
         {{ content | safe }}
-        
+
         <div class="text-size-0 color-mid-text">
           <span>
             {% if updated %}
@@ -68,14 +68,14 @@ pageScripts:
             {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
             {% endif %}
           </span>
-          — 
+          —
           <a
             href="{{ page.inputPath | githubLink }}"
           >
             {{ 'i18n.post.improve_article' | i18n(locale) }}
           </a>
         </div>
-        
+
         {% if related_post %}
           {% set backUrl = '/' + related_post %}
           {% set backLabel = 'Return to article' %}
@@ -87,7 +87,7 @@ pageScripts:
         {% if backLabel and backUrl %}
           <div class="flow-space-size-2">
             <a href="{{ backUrl }}" class="button" data-type="secondary">
-              {% include 'icons/arrow-back.svg' %} 
+              {% include 'icons/arrow-back.svg' %}
               <span>{{ backLabel }}</span>
             </a>
           </div>

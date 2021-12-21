@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Chromium lands Flexbox `gap`
 subhead: The CSS `gap` property is here for Chromium's CSS Flexbox and Multi-Column layout engines.
 authors:
@@ -64,7 +65,7 @@ or [percentage](https://www.w3.org/TR/css-values-3/#percentages) as a value.
 
 Gap can be passed 1 length, which will be used for both row and column.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Shorthand' %}
 ```css
 .grid {
@@ -95,7 +96,7 @@ Set both rows and columns **together** at once
 
 Gap can be passed 2 lengths, which will be used for row and column.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Shorthand' %}
 ```css
 .grid {
@@ -132,7 +133,7 @@ of a dynamically layed-out and wrapping set of children.
 ### Previous Attempts
 The following are patterns that folks have used to get gap-like spacing.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'pseudo-class selectors' %}
 ```css
 .layout > :not(:last-child) {

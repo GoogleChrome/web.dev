@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Building a breadcrumbs component
 subhead: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to navigate your site.
 authors:
@@ -502,4 +502,4 @@ to the community remixes section below!
 
 ## Community remixes
 
-*Nothing to see here yet.*
+- [Tux Solbakk](https://github.com/tux-/) as a web component: [demo and code](https://tux-.github.io/breadcrumbs/public/index.html)

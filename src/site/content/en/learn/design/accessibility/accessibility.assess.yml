@@ -1,0 +1,47 @@
+setLeader: Test your knowledge of accessibility
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: |
+      With CSS, a developer can overwrite a user preference like font size, for the worst?
+    options:
+      - content: "True"
+        rationale: "Simply using `body { font-size: 12px; }` is enough."
+      - content: "False"
+        rationale: "User preferences have strong influence, but don't provide full control."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1"
+    stem: |
+      To avoid overwriting a user's font size preference, use?
+    options:
+      - content: "Absolute units like `px`."
+        rationale: "These do not consider user font size preference when used."
+      - content: "Relative units like `rem`."
+        rationale: "These allow developers to build with lengths that are inclusive of user font size preferences."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      Everyone in the world uses a mouse.
+    options:
+      - content: "True"
+        rationale: "Some use their voice, a keyboard, a gamepad, a screen reader, or other ways to interact."
+      - content: "False"
+        rationale: "There are many alternatives to the popular mouse."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      An image with an empty alt attribute does what?
+    options:
+      - content: "The browser will automatically add them for the user."
+        rationale: "Not a feature of any browser."
+      - content: "Image is treated as presentational."
+        rationale: "It's assumed the image isn't important to consuming the content."
+      - content: "Reads out 'empty string' to a screen reader"
+        rationale: "This is not what happens."
+      - content: "Nothing"
+        rationale: "Definitely something happens."

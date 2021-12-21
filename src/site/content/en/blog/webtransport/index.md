@@ -21,8 +21,8 @@ feedback:
 ---
 
 {% Aside 'caution' %}
-This proposal continues to change during the origin trial period. There 
-may be a divergence between the browser implementation and the information in this 
+This proposal continues to change during the origin trial period. There
+may be a divergence between the browser implementation and the information in this
 article.
 
 For the latest on this evolving proposal, read the
@@ -60,7 +60,7 @@ WebTransport helps with similar use cases as QuicTransport, with the primary dif
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |

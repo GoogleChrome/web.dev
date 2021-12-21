@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Migrate to Reporting API v1
 subhead: |
   A new version of the Reporting API is available. It's more private and more likely to be supported across browsers.
@@ -134,8 +134,8 @@ All differences between v0 and v1
 
 {% endDetailsSummary %}
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th></th>
