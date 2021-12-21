@@ -45,7 +45,7 @@ Examples of sites that may use this API include:
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | Complete                 |
 | 4. Origin trial                          | Complete                 |
-| 5. **Launch**                            | **Chromium&nbsp;95**     |
+| 5. **Launch**                            | **Chromium&nbsp;98**     |
 
 </div>
 
