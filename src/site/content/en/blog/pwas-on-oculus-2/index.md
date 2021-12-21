@@ -16,7 +16,7 @@ description: >
   Developers can now build and distribute 2D Progressive Web Apps that take advantage of Oculus
   Quest 2's multitasking feature. This article describes the experience and how to build, sideload,
   and test your PWA on the Oculus Quest 2.
-date: 2021-12-09
+date: 2021-12-21
 tags:
   - blog
   - capabilities
