@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-12-09
+updated: 2021-12-21
 tags:
   - blog
   - capabilities
@@ -482,6 +482,33 @@ all subfolders and the therein contained files.
 await directoryHandle.removeEntry('Abandoned Projects.txt');
 // Recursively delete a folder.
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
+```
+
+### Deleting a file or folder directly
+
+If you have access to a file or directory handle, call `remove()` on a `FileSystemFileHandle` or
+`FileSystemDirectoryHandle` to remove it.
+
+```js
+// Delete a file.
+await fileHandle.remove();
+// Delete a directory.
+await directoryHandle.remove();
+```
+
+### Renaming and moving files and folders
+
+Files and folders can be renamed or moved to a new location by calling `rename()` or `move()` on the
+`FileSystemFileHandle` or `FileSystemDirectoryHandle` respectively. For `move()`, the first parameter
+is a `FileSystemDirectoryHandle`.
+
+```js
+// Rename the file.
+await file.rename('new_name');
+// Move the file to a new directory.
+await file.move(directory);
+// Move the file to a new directory and rename it.
+await file.move(directory, 'newer_name');
 ```
 
 ### Drag and drop integration
