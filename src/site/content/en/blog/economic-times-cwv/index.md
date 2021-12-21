@@ -83,7 +83,7 @@ In the head section we only loaded those resources which contain either an essen
 
 ### Better caching
 
-For all the frontend routes, we added a Redis layer which served the templates from a cache through a specific time period. This reduces the computation time on the server and builds the whole UI code in each request, thus decreasing LCP in subsequent requests.
+For all the frontend routes, we added a [Redis](https://en.wikipedia.org/wiki/Redis) layer which served templates from the cache. This reduces the computation time on the server and builds the whole UI code in each request, thus decreasing LCP in subsequent requests.
 
 ### Summarizing LCP Goals and achievements
 
