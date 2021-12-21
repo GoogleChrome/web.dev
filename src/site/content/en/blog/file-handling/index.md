@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-09-22
+updated: 2021-12-21
 tags:
   - blog
   - capabilities
