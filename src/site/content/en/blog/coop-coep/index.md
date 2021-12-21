@@ -18,7 +18,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-12-15
+updated: 2021-12-21
 tags:
   - blog
   - security
@@ -295,7 +295,7 @@ subresources are sending the `Cross-Origin-Resource-Policy` header.
 
 However, since `credentialless` mode is available on Chrome from version 96 but
 not supported by any other browsers yet, some developers might find it
-challenging to deploy COOP/COEP. If you prefer not to enable cross-origin
+challenging to deploy COOP or COEP. If you prefer not to enable cross-origin
 isolation yet, we recommend [registering for an origin
 trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
 and waiting until `credentialless` is available in more browsers.

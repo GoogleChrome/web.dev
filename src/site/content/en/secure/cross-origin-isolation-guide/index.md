@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-12-15
+updated: 2021-12-21
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -145,7 +145,7 @@ subresources are sending the `Cross-Origin-Resource-Policy` header.
 
 Though `credentialless` mode is available on Chrome from version 96, it's not
 supported by any other browsers yet, this may cause some developers find it
-challenging to deploy COOP/COEP at this stage.
+challenging to deploy COOP or COEP at this stage.
 
 Also, it's known that the `Cross-Origin-Opener-Policy: same-origin` header will
 break integrations that require cross-origin window interactions such as OAuth
