@@ -11,8 +11,6 @@ updated: 2021-12-21
 tags:
   - blog
   - capabilities
-  - chrome95
-  - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
