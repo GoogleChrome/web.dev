@@ -19,6 +19,33 @@ const {findByUrl} = require('../../_filters/find-by-url');
 const md = require('../../_filters/md');
 
 /**
+ *
+ * @param {EleventyCollectionItem} codelab
+ * @returns {string}
+ */
+function renderCodelab(codelab) {
+  return html`
+    <li>
+      <a href="${codelab.url}">
+        <span>${md(codelab.data.title)}</span>
+        <!-- icons/carat-forward.svg -->
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 7.34 4.58 4.365L8 16.07l1.41 1.34 6-5.705L9.41 6 8 7.34Z"
+          />
+        </svg>
+      </a>
+    </li>
+  `;
+}
+
+/**
  * Generates codelab links HTML.
  *
  * @param {string[]|string} slugs
@@ -35,33 +62,6 @@ function CodelabsCallout(slugs, lang) {
 
   if (!codelabs.length) {
     return;
-  }
-
-  /**
-   *
-   * @param {EleventyCollectionItem} codelab
-   * @returns {string}
-   */
-  function renderCodelab(codelab) {
-    return html`
-      <li>
-        <a href="${codelab.url}">
-          <span>${md(codelab.data.title)}</span>
-          <!-- icons/carat-forward.svg -->
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="m8 7.34 4.58 4.365L8 16.07l1.41 1.34 6-5.705L9.41 6 8 7.34Z"
-            />
-          </svg>
-        </a>
-      </li>
-    `;
   }
 
   return `
@@ -86,4 +86,4 @@ function CodelabsCallout(slugs, lang) {
     `;
 }
 
-module.exports = CodelabsCallout;
+module.exports = {CodelabsCallout, renderCodelab};

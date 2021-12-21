@@ -32,7 +32,9 @@ const Banner = require('./src/site/_includes/components/Banner');
 const Blockquote = require('./src/site/_includes/components/Blockquote');
 const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
 const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
-const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
+const {
+  CodelabsCallout,
+} = require('./src/site/_includes/components/CodelabsCallout');
 const CodePattern = require('./src/site/_includes/components/CodePattern');
 const Codepen = require('./src/site/_includes/components/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');
