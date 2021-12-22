@@ -191,13 +191,15 @@ handling, etc. To migrate from the Declarative Link Capturing API to the Launch 
 1.  Add a `"launch_handler"` entry to your site's manifest.
 
     - To use `"capture_links": "new-client"`,
-      add:`"launch_handler": { "route_to": "new-client" }`
+      add:`"launch_handler": { "route_to": "new-client" }`.
     - To use `"capture_links": "existing-client-navigate"`, add:
-      `"launch_handler": { "route_to": "existing-client" }`
-    - If you wanted to use `"capture_links": "existing-client-event"` (which was never implemented
-      in the Declarative Link Capturing origin trial), then add:
-      `json { "launch_handler": { "route_to": "existing-client", "navigate_existing_client": "never" } } `
-            **Note**: With this option, pages in your app scope will no longer navigate automatically when a link navigation is captured. You must handle the `LaunchParams` in JavaScript by calling `window.launchQueue.setConsumer()` to enable navigation.
+      `"launch_handler": { "route_to": "existing-client" }`.
+    - To use `"capture_links": "existing-client-event"` (which was never implemented
+      in the Declarative Link Capturing origin trial), add:
+      `{ "launch_handler": { "route_to": "existing-client", "navigate_existing_client": "never" } }`.
+      With this option, pages in your app scope will no longer navigate automatically when a link
+      navigation is captured. You must handle the `LaunchParams` in JavaScript by calling
+      `window.launchQueue.setConsumer()` to enable navigation.
 
 The `capture_links` field and Declarative Link Capturing origin trial registration are good until
 March&nbsp;30, 2022. This will ensure users on Chromium&nbsp;97 and below can still launch the
