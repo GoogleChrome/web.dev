@@ -203,7 +203,7 @@ En Chrome, la programación de informes funciona de la siguiente manera:
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
-        <th>Dependiendo del tiempo de conversión, se envía un informe de conversión (si el navegador está abierto) ...</th>
+        <th>Dependiendo del tiempo de conversión, se envía un informe de conversión (si el navegador está abierto)…</th>
         <th>Número de ventanas de informes</th>
       </tr>
     </thead>
