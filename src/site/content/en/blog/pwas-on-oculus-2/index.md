@@ -23,6 +23,15 @@ tags:
   - progressive-web-apps
 ---
 
+{% Aside %}
+This article is _not_ focused on apps making use of [WebXR](/tags/webxr/), a group of standards that are used
+together to support rendering 3D scenes to hardware designed for presenting virtual worlds (VR), or
+for adding graphical imagery to the real world (AR).
+
+Instead, this article is focused on 2D Progressive Web Apps, that is, PWAs that are primarily aimed at
+being consumed on regular screens, but that the user can also experience on their Oculus Quest&nbsp;2 device.
+{% endAside %}
+
 ## The Oculus Quest&nbsp;2
 
 The [Oculus Quest&nbsp;2](https://www.oculus.com/quest-2/) is a virtual reality (VR) headset created
@@ -242,13 +251,13 @@ which Chrome strictly requires for an app to be installable. Oculus offers a
 developers create PWAs for the Oculus Quest&nbsp;2, which allows them to pass the missing (or
 override the existing) parameters in the Web App Manifest.
 
-| Name         | Required | Description                                                                                                        |
-| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| `name`       | yes      | The name of the PWA. Currently Oculus only supports left-to-right languages for the name.                          |
+| Name         | Required | Description                                                                                  |
+| ------------ | -------- | -------------------------------------------------------------------------------------------- |
+| `name`       | yes      | The name of the PWA. Currently Oculus only supports left-to-right languages for the name.    |
 | `display`    | yes      | Either `"standalone"` or `"minimal-ui"`. Oculus currently does not support any other values. |
-| `short_name` | no       | A shorter version of the app name, if needed.                                                                      |
-| `scope`      | no       | The URL or paths that should be considered as part of the app.                 |
-| `start_url`  | no       | The URL to show at app launch.                                                                     |
+| `short_name` | no       | A shorter version of the app name, if needed.                                                |
+| `scope`      | no       | The URL or paths that should be considered as part of the app.                               |
+| `start_url`  | no       | The URL to show at app launch.                                                               |
 
 Oculus has a number of optional **proprietary** Web App Manifest fields that can be used to
 customize the PWA experience.
@@ -257,13 +266,13 @@ customize the PWA experience.
 | ----------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ovr_package_name`      | no       | Sets the package name of the APK generated for the PWA. This must be in reverse domain name notation, e.g., `"com.company.app.pwa"`. If not set, developers must provide a package name to the command line tool with the (then required) parameter `--package-name`.                                                                                                                                                                |
 | `ovr_multi_tab_enabled` | no       | If `true`, this boolean field will give the PWA a tab bar similar to Oculus Browser. In multi-tab PWAs, internal links that target a new tab (`target="_new"` or `target="_blank"`) will open in new tabs within the PWA window. This differs from single-tab PWAs where such links would open to a Oculus Browser window. **This feature is currently being standardized as [Tabbed Application Mode](/tabbed-application-mode/).** |
-| `ovr_scope_extensions`  | no       | Allows a PWA to include more web pages within the scope of the web application. It consists of a JSON dictionary containing extension URLs or wildcard patterns. **This feature is currently being standardized as [Scope Extensions for Web Apps](https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md).**                                                                           |
+| `ovr_scope_extensions`  | no       | Allows a PWA to include more web pages within the scope of the web application. It consists of a JSON dictionary containing extension URLs or wildcard patterns. **This feature is currently being standardized as [Scope Extensions for Web Apps](https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md).**                                                                                      |
 
 ### Packaging PWAs with the command line tool
 
 To sideload PWAs onto the Oculus Quest&nbsp;2, developers must use a
 [command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/) called
-`ovr-platform-util` with the `create-pwa` command to generate the APK. Set the output file name 
+`ovr-platform-util` with the `create-pwa` command to generate the APK. Set the output file name
 via the `-o` parameter. The Android SDK to use needs to be set via the `--android-sdk`
 parameter. Assuming a manifest file called `manifest.json` in the current working directory, the
 `--manifest-content-file` parameter helps the tool determine the relevant configuration fields
