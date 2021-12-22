@@ -236,7 +236,7 @@ We also used container queries to show and hide detail as the art became increas
 
 To enable a great modern cross-browser experience, especially for  experimental APIs like container queries, we need a great polyfill. We sent a call out to our team and Surma ended up spearheading a build for a new [container query polyfill](https://www.npmjs.com/package/container-query-polyfill). The polyfill relies on [ResizeObserver](https://caniuse.com/resizeobserver), [MutationObserver](https://caniuse.com/mutationobserver) and the CSS [:is() function](https://caniuse.com/css-matches-pseudo). Therefore, it supports all modern browsers, specifically Chrome/Edge 88+, Firefox 78+ and Safari 14+. Using the polyfill enables any of the following syntaxes:
 
-```
+```css
 /* These are all equivalent */
 @container (min-width: 200px) {
   /* ... */
