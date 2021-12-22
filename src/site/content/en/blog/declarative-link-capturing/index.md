@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-12-21
+updated: 2021-12-22
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -36,12 +36,11 @@ Declarative Link Capturing API, you should
 Clicking links on the web can sometimes be a pleasant surprise. For example, clicking a web page
 link to YouTube on a mobile device opens the YouTube iOS or Android app, if it is installed. But
 when you install the [YouTube PWA](https://www.youtube.com/) on a desktop computer and click a link,
-it opens in… 🥁 a browser tab.
+it opens in a browser tab.
 
 But it gets more complex. What if the link appears not in a website, but in a chat message that you
-receive in one of Google's chat apps? On desktop operating systems that have the notion of separate
-app windows, if the app is open already, should a new window or tab be created for each link click
-that is captured? When you think about it, there are many ways links and navigations can be
+receive in one of Google's chat apps? On desktop operating systems, which have the notion of separate
+app windows, if the app is open already, should a new window or tab be created for each link click? When you think about it, there are many ways links and navigations can be
 captured, including, but not limited to, the following:
 
 - Clicked links from other web pages.
@@ -178,12 +177,12 @@ management settings page.
 {% Img src="image/ttTommHYbJXsEL29zNB1wXBvH4z1/WJ2KPqFUjqJABNYQUEN9.png", alt="Example of an installed app's settings page.", width="800", height="449" %}
 
 Link capturing is a Chrome&nbsp;OS-only feature for now; support for Windows, macOS, and Linux is
-still in progress.
+in progress.
 
 ### Launch Handler API
 
 The control of an incoming navigation is migrated to Launch Handler API, which allows web apps to
-decide how a web app launches at various situations, such as link capturing, share target or file
+decide how a web app launches in various situations such as link capturing, share target or file
 handling, etc. To migrate from the Declarative Link Capturing API to the Launch Handler API:
 
 1.  Register your site for the
@@ -191,18 +190,18 @@ handling, etc. To migrate from the Declarative Link Capturing API to the Launch 
     and place the origin trial key into your web app.
 1.  Add a `"launch_handler"` entry to your site's manifest.
 
-    - If you are using `"capture_links": "new-client"`, then
+    - To use `"capture_links": "new-client"`,
       add:`"launch_handler": { "route_to": "new-client" }`
-    - If you are using `"capture_links": "existing-client-navigate"`, then add:
+    - To use `"capture_links": "existing-client-navigate"`, add:
       `"launch_handler": { "route_to": "existing-client" }`
     - If you wanted to use `"capture_links": "existing-client-event"` (which was never implemented
       in the Declarative Link Capturing origin trial), then add:
       `json { "launch_handler": { "route_to": "existing-client", "navigate_existing_client": "never" } } `
-            **Note**: With this option, pages in your app scope will no longer navigate automatically when a link navigation is captured. You must handle the `LaunchParams` in JavaScript via the `window.launchQueue.setConsumer()` API to enable navigation.
+            **Note**: With this option, pages in your app scope will no longer navigate automatically when a link navigation is captured. You must handle the `LaunchParams` in JavaScript by calling `window.launchQueue.setConsumer()` to enable navigation.
 
-1.  Keep the `capture_links` field and Declarative Link Capturing origin trial registration until
-    March&nbsp;30, 2022. This will ensure users on Chromium&nbsp;97 and below can still launch the
-    web app at a captured link.
+The `capture_links` field and Declarative Link Capturing origin trial registration are good until
+March&nbsp;30, 2022. This will ensure users on Chromium&nbsp;97 and below can still launch the
+web app at a captured link.
 
 For more details, check out [Control how your app is launched](/launch-handler/).
 
