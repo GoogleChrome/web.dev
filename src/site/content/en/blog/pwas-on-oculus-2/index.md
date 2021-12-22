@@ -241,9 +241,10 @@ installable in Chrome should oftentimes work out of the box on Oculus.
 
 There are some important differences compared to
 [Chrome's installability criteria](/install-criteria/#criteria) and the
-[Web App Manifest spec](https://w3c.github.io/manifest/), for example regarding language constraints
-(Oculus only supports left-to-right languages at the moment) or the optionality of `start_url`,
-which Chrome strictly requires for an app to be installable. Oculus offers a
+[Web App Manifest spec](https://w3c.github.io/manifest/). For example, Oculus only supports
+left-to-right languages at the moment, whereas the Web App Manifest spec enforces no such
+constraints. Another example is `start_url`, which Chrome strictly requires for an app to be
+installable, but which on Oculus is optional. Oculus offers a
 [command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/) that lets
 developers create PWAs for the Oculus Quest&nbsp;2, which allows them to pass the missing (or
 override the existing) parameters in the Web App Manifest.
