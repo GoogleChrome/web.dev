@@ -95,7 +95,7 @@ plus a little bit of knowledge about how masks on the web work. Let's look at th
 
 To become a mask, the inner four leaf clover type shape has to be isolated as its own shape, and the color white. White will tell CSS what content stays, and everything outside the white won't. In Photoshop, the inside of the window was selected, feathered 1px (to remove aliasing issues), then filled white and exported at the same height and width as the window frame. This way the frame and the mask could be layered directly on top of each other, showing the inner content within the frame as expected.
 
-{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/Jm6F9q8T41Sf6riwNYS7.png", alt="ALT_TEXT_HERE", width="776", height="774", style="max-width: 400px; margin: 1em auto;" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/Jm6F9q8T41Sf6riwNYS7.png", alt="Clover mask image", width="776", height="774", style="max-width: 400px; margin: 1em auto;" %}
 
 Once complete, the contents of the window could be modified and would always appear to stay within the custom frame. The following image shows the dark mode version of the window, with a different background gradient and a glow CSS filter applied to the light.
 
