@@ -32,7 +32,7 @@ operating system, and with Oculus-compatible VR software running on a desktop co
 connected over USB or Wi-Fi. It uses the Qualcomm
 [Snapdragon XR2](https://www.qualcomm.com/news/onq/2020/10/29/oculus-quest-2-how-snapdragon-xr2-powers-next-generation-vr)
 system on a chip with 6&nbsp;GB of RAM. The Quest&nbsp;2's display is a singular fast-switch LCD
-panel with a 1,832&nbsp;×&nbsp;1,920 pixels per eye resolution, which can run at a refresh rate of
+panel with 1,832&nbsp;×&nbsp;1,920 pixels per eye resolution that runs at a refresh rate of
 up to 120&nbsp;Hz.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/g0IQmlLaOiLWqwQuvnhQ.jpeg", alt="Oculus Quest 2 device with controllers.", width="800", height="304" %}
@@ -76,7 +76,7 @@ As you can see, the current version `18.1.0.2.46.337441587` of the Oculus Browse
 
 ### User interface
 
-The browser's user interface that you can check out in the screenshot above has the following
+The browser's user interface (shown above) has the following
 features (top row from left to right):
 
 - Back button
@@ -103,7 +103,7 @@ The bottom row includes the following features:
 
 ### Refresh rate and device pixel ratio
 
-For Oculus Quest&nbsp;2, Oculus Browser renders both 2D&nbsp;web page content and WebXR at
+For Oculus Quest&nbsp;2, Oculus Browser renders both 2D&nbsp;web page content and WebXR at a
 90&nbsp;Hz refresh rate. When watching fullscreen media, Oculus Browser optimizes the device refresh
 rate based on the frame rate of the video, for example, 24&nbsp;fps. The Oculus Quest&nbsp;2 has a
 device pixel ratio of 1.5 for crisp text.
@@ -112,7 +112,7 @@ device pixel ratio of 1.5 for crisp text.
 
 On October&nbsp;28, 2021, [Jacob Rossi](https://twitter.com/jacobrossi), Product Management Lead at
 Meta (Oculus), [shared](https://twitter.com/jacobrossi/status/1453776349299019778) that PWAs are
-coming to Oculus Quest and Oculus Quest&nbsp;2. In the following, I describe the experience and
+coming to Oculus Quest and Oculus Quest&nbsp;2. In the following, I describe the PWA experience on Oculus and
 explain how to build, sideload, and test your PWA on the Oculus Quest&nbsp;2.
 
 ### State sharing
@@ -143,7 +143,7 @@ Permissions in Oculus Browser work pretty much the same way as in Chrome. The st
 between apps running in the browser and installed PWAs, so users can switch between the two
 experiences without having to grant the same permissions again.
 
-Albeit many permissions are implemented, not all features are then actually supported. For example,
+Albeit many permissions are implemented, not all features are supported. For example,
 while requesting the geolocation permission succeeds, the device never actually gets a location.
 Similarly, the various hardware APIs like [WebHID](/hid/), [Web Bluetooth](/bluetooth/), etc. all
 pass feature detection, but don't actually show a picker that would let the user pair the Oculus
@@ -169,10 +169,10 @@ debugging PWAs on Oculus Quest&nbsp;2 works exactly as described in
 
 ### App discovery
 
-PWAs can be discovered via the browser or via the
-[Oculus Store](https://www.oculus.com/experiences/quest/). Just like with any other browser,
-installed PWAs also work in Oculus Browser as websites running in a tab. When a user visits a site
-in the browser, the Oculus Browser will help them discover the app if (and only if) it is available
+People can use the browser itself or the [Oculus Store](https://www.oculus.com/experiences/quest/) to discover PWAs.
+Just like with any other browser,
+installed PWAs also work in Oculus Browser as websites running in a tab. When a user visits a site,
+the Oculus Browser will help them discover the app if (and only if) it is available
 in the Oculus Store. For users that already have the app installed, Oculus Browser will help them
 easily switch to the app if they desire.
 
@@ -191,7 +191,7 @@ developers can also
 [submit their apps to App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/),
 a way for developers to distribute apps directly to consumers safely and securely, via direct links
 or platforms like [SideQuest](https://sidequestvr.com/), without requiring store approval and
-without sideloading, which allows them to get an app directly to end users, even if it is early in
+without sideloading. This allows them to get an app directly to end users, even if it is early in
 development, experimental, or aimed at a unique audience.
 
 ## Exemplary PWAs on the Oculus Quest&nbsp;2
@@ -209,7 +209,7 @@ app windows that do not have a URL bar and that can be freely resized.
 
 ### PWAs by other developers
 
-At the time of this writing, there are a couple of other developers that have published PWAs for the
+At the time of this writing, there is a small but growing number of PWAs for the
 Oculus Quest&nbsp;2 on the Oculus Store.
 [Spike](https://www.oculus.com/experiences/quest/4949538568409451) lets users experience all the
 essential work tools like email, chat, calls, notes, tasks, and to-dos from their inbox in a virtual
@@ -227,28 +227,28 @@ in the context of Facebook's Connect conference in 2021.
 
 ## Creating PWAs for Oculus
 
-Meta has outlined the required steps in their
+Meta outlined the required steps in their
 [documentation](https://developer.oculus.com/documentation/web/pwa-gs/). In general, PWAs that are
-installable in Chrome should oftentimes work out of the box.
+installable in Chrome should oftentimes work out of the box on Oculus.
 
 ### Web App Manifest requirements
 
 There are some important differences compared to
-[Chrome's installability criteria](https://web.dev/install-criteria/#criteria) and the
+[Chrome's installability criteria](/install-criteria/#criteria) and the
 [Web App Manifest spec](https://w3c.github.io/manifest/), for example regarding language constraints
 (Oculus only supports left-to-right languages at the moment) or the optionality of `start_url`,
 which Chrome strictly requires for an app to be installable. Oculus offers a
-[command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/) that developers
-can use to create PWAs for the Oculus Quest&nbsp;2, which allows them to pass the missing (or
+[command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/) that lets
+developers create PWAs for the Oculus Quest&nbsp;2, which allows them to pass the missing (or
 override the existing) parameters in the Web App Manifest.
 
 | Name         | Required | Description                                                                                                        |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
 | `name`       | yes      | The name of the PWA. Currently Oculus only supports left-to-right languages for the name.                          |
-| `display`    | yes      | Currently this value must be `"standalone"` or `"minimal-ui"`. Oculus currently does not support any other values. |
+| `display`    | yes      | Either `"standalone"` or `"minimal-ui"`. Oculus currently does not support any other values. |
 | `short_name` | no       | A shorter version of the app name, if needed.                                                                      |
-| `scope`      | no       | This field allows developers to specify what URL or paths should be considered as part of the app.                 |
-| `start_url`  | no       | Developers can specify a starting URL to load.                                                                     |
+| `scope`      | no       | The URL or paths that should be considered as part of the app.                 |
+| `start_url`  | no       | The URL to show at app launch.                                                                     |
 
 Oculus has a number of optional **proprietary** Web App Manifest fields that can be used to
 customize the PWA experience.
@@ -257,19 +257,19 @@ customize the PWA experience.
 | ----------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ovr_package_name`      | no       | Sets the package name of the APK generated for the PWA. This must be in reverse domain name notation, e.g., `"com.company.app.pwa"`. If not set, developers must provide a package name to the command line tool with the (then required) parameter `--package-name`.                                                                                                                                                                |
 | `ovr_multi_tab_enabled` | no       | If `true`, this boolean field will give the PWA a tab bar similar to Oculus Browser. In multi-tab PWAs, internal links that target a new tab (`target="_new"` or `target="_blank"`) will open in new tabs within the PWA window. This differs from single-tab PWAs where such links would open to a Oculus Browser window. **This feature is currently being standardized as [Tabbed Application Mode](/tabbed-application-mode/).** |
-| `ovr_scope_extensions`  | no       | This field allows a PWA to include more web pages within the scope of the web application. It consists of a JSON dictionary containing extension URLs or wildcard patterns. **This feature is currently being standardized as [Scope Extensions for Web Apps](https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md).**                                                                           |
+| `ovr_scope_extensions`  | no       | Allows a PWA to include more web pages within the scope of the web application. It consists of a JSON dictionary containing extension URLs or wildcard patterns. **This feature is currently being standardized as [Scope Extensions for Web Apps](https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md).**                                                                           |
 
 ### Packaging PWAs with the command line tool
 
 To sideload PWAs onto the Oculus Quest&nbsp;2, developers must use a
 [command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/) called
-`ovr-platform-util` with the `create-pwa` command to generate the APK. The output file name can be
-set via the `-o` parameter, the Android SDK to use needs to be set via the `--android-sdk`
-parameter. Assuming a manifest file called `manifest.json` in the present working directory, the
-`--manifest-content-file` parameter helps the tool to determine the relevant configuration fields
+`ovr-platform-util` with the `create-pwa` command to generate the APK. Set the output file name 
+via the `-o` parameter. The Android SDK to use needs to be set via the `--android-sdk`
+parameter. Assuming a manifest file called `manifest.json` in the current working directory, the
+`--manifest-content-file` parameter helps the tool determine the relevant configuration fields
 from the Web App Manifest. Alternatively, developers can point the tool at the live URL of a
-manifest via the `--web-manifest-url` parameter. To leave the manifest as pure as possible, the
-`--package-name` parameter can be used with a value in reverse domain name notation (e.g.,
+manifest via the `--web-manifest-url` parameter. To leave the manifest as pure as possible, use
+the `--package-name` parameter with a value in reverse domain name notation (e.g.,
 `com.company.app.pwa`), rather than adding the proprietary `ovr_package_name` field to the manifest.
 
 ```bash
@@ -288,8 +288,8 @@ adb install output.apk
 
 ### Testing multi-tab apps
 
-To test multi-tab apps, I have created a little
-[test PWA](https://tomayac.github.io/oculus-pwa-test/) that demonstrates the various link features;
+To test multi-tab apps, I created a little
+[test PWA](https://tomayac.github.io/oculus-pwa-test/) that demonstrates the various link features:
 namely opening a new in-PWA tab, staying on the current tab, opening a new browser window, and
 opening in a WebView staying on the current tab. Create a locally installable copy of this app by
 running the commands below on your machine.
@@ -299,16 +299,16 @@ ovr-platform-util create-pwa -o test.apk --android-skd ~/bin/android-10 --web-ma
 adb install test.apk
 ```
 
-You can see a screencast of the test app in action embedded below.
+Here's a screencast of the test app:
 
 {% YouTube "3ZlxCjW9rtg" %}
 
 ## An Oculus version of SVGcode
 
-To take the instructions for an actual spin, I have created an Oculus version of my most recent PWA,
+To take the instructions for a spin, I created an Oculus version of my most recent PWA,
 [SVGcode](/svgcode/). You can download the resulting APK file
 [`output.apk`](https://drive.google.com/file/d/1ieGjwIXGGWmh0j9WpBdWqP7Bns3McNr1/view?usp=sharing)
-from my Google Drive. If you want to investigate the package further, I have made available a
+from my Google Drive. If you want to investigate the package further, I have a
 [decompiled version](https://drive.google.com/drive/folders/1EFtXK9ApJiJitfysZS_Z7iIWWiKEglu-?usp=sharing),
 too. Find the build instructions in
 [`package.json`](https://github.com/tomayac/SVGcode/blob/6b23adf63a0a3a1b3828866dbb7db0f10206397f/package.json#L16).
