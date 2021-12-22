@@ -21,7 +21,7 @@ The [State of CSS 2021](https://2021.stateofcss.com/en-US/) survey ran for the t
 
 For some features, there's a clear trend in usage and awareness year-over-year. [CSS grid](https://2021.stateofcss.com/en-US/features/layout/#grid) is an example of this.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/9YXDRDmtMRF6bgWKIM7S.png", alt="Awareness of CSS Grid in State of CSS over time. The usage has grown from 55% to 83% between 2019 and 2021.", width="800", height="360" %}
+{% Img src="image/i1D3fea4SShlOWR9GvCYL83Xw822/JCCwRm9rKUZQikjZhiXj.png", alt="Awareness of CSS Grid in State of CSS over time. The usage has grown from 55% to 83% between 2019 and 2021.", width="800", height="360" %}
 
 This matches the trend for CSS Grid in the [2021 Web Almanac](https://almanac.httparchive.org/en/2021/css#flexbox-and-grid-adoption) and in Chrome's [usage metrics](https://www.chromestatus.com/metrics/feature/timeline/popularity/1693). 
 If you haven't used CSS Grid, now is a great time to [learn it](/learn/css/grid/).
