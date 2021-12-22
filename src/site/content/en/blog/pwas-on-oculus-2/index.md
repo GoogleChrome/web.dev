@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/B7zNhOVvzK3O71sQyLKe.jpg
 alt:
-  'Person wearing an Oculus Quest 2 device with a PWA sticker on it spreading their arms with Quest
+  'Person wearing an Oculus Quest 2 with a PWA sticker on it spreading their arms with Quest
   controllers in both hands.'
 subhead: >
   The Oculus Quest 2 is a virtual reality (VR) headset created by Oculus, a division of Meta.
@@ -56,7 +56,7 @@ like WebXR. Through WebXR, we're opening the doors to the next frontier of the w
 
 ### User agent
 
-The browser's user agent string at the time of writing can be broken down as follows.
+The browser's user agent string at the time of writing is as follows.
 
 ```bash
 Mozilla/5.0 (X11; Linux x86_64; Quest 2)
