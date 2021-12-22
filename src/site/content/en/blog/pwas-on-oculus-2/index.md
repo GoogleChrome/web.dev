@@ -248,22 +248,66 @@ which Chrome strictly requires for an app to be installable. Oculus offers a
 developers create PWAs for the Oculus Quest&nbsp;2, which allows them to pass the missing (or
 override the existing) parameters in the Web App Manifest.
 
-| Name         | Description                                                                                            |
-| ------------ | ------------------------------------------------------------------------------------------------------ |
-| `name`       | (Required) The name of the PWA. Currently Oculus only supports left-to-right languages for the name.   |
-| `display`    | (Required) Either `"standalone"` or `"minimal-ui"`. Oculus currently doesn't support any other values. |
-| `short_name` | (Required) A shorter version of the app name, if needed.                                               |
-| `scope`      | (Optional) The URL or paths that should be considered as part of the app.                              |
-| `start_url`  | (Optional) The URL to show at app launch.                                                              |
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>(Required) The name of the PWA. Currently Oculus only supports left-to-right languages for the name.</td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td>(Required) Either <code>"standalone"</code> or <code>"minimal-ui"</code>. Oculus currently doesn't support any other values.</td>
+</tr>
+<tr>
+<td><code>short_name</code></td>
+<td>(Required) A shorter version of the app name, if needed.</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>(Optional) The URL or paths that should be considered as part of the app.</td>
+</tr>
+<tr>
+<td><code>start_url</code></td>
+<td>(Optional) The URL to show at app launch.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 Oculus has a number of optional **proprietary** Web App Manifest fields that can be used to
 customize the PWA experience.
 
-| Name                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ovr_package_name`      | (Optional) Sets the package name of the APK generated for the PWA. This must be in reverse domain name notation, e.g., `"com.company.app.pwa"`. If not set, developers must provide a package name to the command line tool with the (then required) parameter `--package-name`.                                                                                                                                                                                 |
-| `ovr_multi_tab_enabled` | (Optional) If `true`, this boolean field will give the PWA a tab bar similar to Oculus Browser. In multi-tab PWAs, internal links that target a new tab (`target="_new"` or `target="_blank"`) will open in new tabs within the PWA window. This differs from single-tab PWAs where such links would open to a Oculus Browser window. **This feature is currently being standardized as [Tabbed Application Mode](https://github.com/w3c/manifest/issues/737).** |
-| `ovr_scope_extensions`  | (Optional) Allows a PWA to include more web pages within the scope of the web application. It consists of a JSON dictionary containing extension URLs or wildcard patterns. **This feature is currently being standardized as [Scope Extensions for Web Apps](https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md).**                                                                                                       |
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ovr_package_name</code></td>
+<td>(Optional) Sets the package name of the APK generated for the PWA. This must be in reverse domain name notation, e.g., <code>"com.company.app.pwa"</code>. If not set, developers must provide a package name to the command line tool with the (then required) parameter <code>--package-name</code>.</td>
+</tr>
+<tr>
+<td><code>ovr_multi_tab_enabled</code></td>
+<td>(Optional) If <code>true</code>, this boolean field will give the PWA a tab bar similar to Oculus Browser. In multi-tab PWAs, internal links that target a new tab (<code>target="_new"</code> or <code>target="_blank"</code>) will open in new tabs within the PWA window. This differs from single-tab PWAs where such links would open to a Oculus Browser window. <strong>This feature is currently being standardized as <a href="https://github.com/w3c/manifest/issues/737" rel="noopener">Tabbed Application Mode</a>.</strong></td>
+</tr>
+<tr>
+<td><code>ovr_scope_extensions</code></td>
+<td>(Optional) Allows a PWA to include more web pages within the scope of the web application. It consists of a JSON dictionary containing extension URLs or wildcard patterns. <strong>This feature is currently being standardized as <a href="https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md" rel="noopener">Scope Extensions for Web Apps</a>.</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ### Packaging PWAs with the command line tool
 
