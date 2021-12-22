@@ -47,7 +47,8 @@ Here's a preview of a responsive prototype using [`grid-auto-flow: dense`](https
 
 Once the general grid was relatively stable and communicated a sense of direction for the responsiveness of the building and its windows, we could focus on a single window. Some windows stretched, shrank, squeezed, grew, and re-composed themselves more than others in the grid.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/29hlFRq9IjwpMayM3BCq.png", alt="Wireframes showing how the windows display at different breakpoints.", width="512", height="520" %}
+
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/iJWU8JYwUhpeXafZ434y.png", alt="Wireframes showing how the windows display at different breakpoints.", width="800", height="812" %}
 
 Each window would need to handle a certain amount of resize turbulence. Below is a prototype of a window demonstrating it's responsiveness to turbulence, showing how much we could expect each interactive window to adjust.
 
@@ -175,7 +176,8 @@ As early adopters of Astro, we ran into a few snags with PostCSS. For example, w
 
 Some windows grow and shrink, maintaining [aspect ratio](/aspect-ratio) to preserve their art. We used some other windows to showcase the power of component-based architecture with container queries. Container queries meant windows could own their individual responsive styling information and readjust based on their own sizes. Some windows went from narrow to wide, and needed to adjust the size of the media within them and the placement of that media.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/HFsoBVDa1L7gJWIUEgko.png", alt="A demonstration of how the windows change as they have more space.", width="512", height="697" %}
+
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/ssFflPRQrTum3fbwkAWZ.png", alt="A demonstration of how the windows change as they have more space.", width="800", height="383" %}
 
 As more space becomes available for a window, we could adapt the size or child elements of the window to fit. Turned out that in order to fulfill the adaptive windows, container queries wouldn't just be fun to showcase, they'd be required and drastically simplify orchestrating certain layouts. 
 
@@ -255,13 +257,15 @@ To enable a great modern cross-browser experience, especially for  experimental 
 
 One last touch that was essential for the Designcember website was a beautiful dark theme. We wanted to show how you could use art itself to be an active participant in creating a great dark mode experience. For this, we adjusted the background styles of each window itself programmatically, and used as much CSS as made sense when creating the window art. Most of the backgrounds were CSS gradients, so that it would be easier to adjust their color values. We then layered the art on top of these.
 
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/gBrdHzLwdDckE9pgxK5L.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+
 ## Other Easter Eggs
 
 ### Personal touches
 
-We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on disabled days.
+We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on disabled days, and played around with the favicon style.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/C46CellLCebw12aHmGsT.png", alt="Custom cursor styles", width="248", height="264", style="max-width: 248px; margin: 0 auto;" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/qjXfDOxsGXIIE57cXnyr.jpg", alt="Custom cursor styles and favicon options", width="800", height="408" %}
 
 ### Functional touches
 
@@ -276,4 +280,4 @@ Designcember.com also has a special print stylesheet where we’re essentially s
 
 All in all, a ton of work went into creating a fun, whimsical modern web experience to celebrate UI development all month long in December. We hope you enjoyed it!
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/CzH6QyvIhNFUUwcZnLch.jpg", alt="The calendar with annotations.", width="649", height="1999" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/aNlNdEYdk4t9yteQm8GK.jpg", alt="Parts of the calendar with annotations and visual notes", width="800", height="957" %}
