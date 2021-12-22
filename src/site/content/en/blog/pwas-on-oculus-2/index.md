@@ -173,7 +173,7 @@ debugging PWAs on Oculus Quest&nbsp;2 works exactly as described in
    currently open on the device.
 1. Click **inspect** on the desired Oculus Browser tab.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/GiTjoiMuU2FoJOXLMEk2.png", alt="ALT_TEXT_HERE", width="800", height="476" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/GiTjoiMuU2FoJOXLMEk2.png", alt="Inspecting an app running on the Oculus Quest 2 with Chrome DevTools.", width="800", height="476" %}
 
 ### App discovery
 
@@ -304,7 +304,7 @@ ovr-platform-util create-pwa -o test.apk --android-skd ~/bin/android-10 --web-ma
 adb install test.apk
 ```
 
-Here's a screencast of the test app:
+Here's a screencast of the test app.
 
 {% YouTube "3ZlxCjW9rtg" %}
 
