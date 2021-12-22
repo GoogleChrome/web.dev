@@ -114,7 +114,7 @@ Finalmente veamos cómo se ve en la práctica la compatibilidad con el modo oscu
 
 ### Estrategia de carga
 
-Los dos últimos, `light.css` y `dark.css`, se cargan condicionalmente con una consulta `<link media>`. Inicialmente, [no todos los navegadores son compatibles con `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme) (que se puede detectar usando el patrón [ anterior](#finding-out-if-dark-mode-is-supported-by-the-browser)), lo que resuelvo de forma dinámica al cargar el archivo `light.css` de forma predeterminada mediante un elemento `<link rel="stylesheet">` insertado de forma condicional en un script de estilos integrados en el código minúsculo (light es una elección arbitraria, también podría haber configurado dark como experiencia predeterminada). Para evitar un [flash de contenido sin estilo](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), oculté el contenido de la página hasta que `light.css` se cargó.
+Los dos últimos, `light.css` y `dark.css`, se cargan condicionalmente con una consulta `<link media>`. Inicialmente, [no todos los navegadores son compatibles con `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme) (que se puede detectar usando el patrón [anterior](#finding-out-if-dark-mode-is-supported-by-the-browser)), lo que resuelvo de forma dinámica al cargar el archivo `light.css` de forma predeterminada mediante un elemento `<link rel="stylesheet">` insertado de forma condicional en un script de estilos integrados en el código minúsculo (light es una elección arbitraria, también podría haber configurado dark como experiencia predeterminada). Para evitar un [flash de contenido sin estilo](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), oculté el contenido de la página hasta que `light.css` se cargó.
 
 ```html
 <script>
@@ -309,7 +309,7 @@ document.documentElement.style.setProperty('--image-filter', value);
 
 ### Invertir iconos y gráficos vectoriales
 
-Para los gráficos vectoriales, que en mi caso se utilizan como iconos a los que hago referencia por medio de elementos `<img>`, utilizo un método de recolorización diferente. Aunque la [ investigación](https://dl.acm.org/citation.cfm?id=2982168) demostró que a la gente no le gusta la inversión de las fotos, funciona muy bien para la mayoría de los iconos. De nuevo, utilizo variables de CSS para determinar la cantidad de inversión en el estado normal y en el [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover).
+Para los gráficos vectoriales, que en mi caso se utilizan como iconos a los que hago referencia por medio de elementos `<img>`, utilizo un método de recolorización diferente. Aunque la [investigación](https://dl.acm.org/citation.cfm?id=2982168) demostró que a la gente no le gusta la inversión de las fotos, funciona muy bien para la mayoría de los iconos. De nuevo, utilizo variables de CSS para determinar la cantidad de inversión en el estado normal y en el [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover).
 
 <div class="switcher">
   <figure class="w-figure">{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Los iconos se invierten en el modo oscuro.", width="744", height="48" %} <figcaption class="w-figcaption"> Los iconos se invierten en el modo oscuro. </figcaption></figure>
@@ -447,7 +447,7 @@ Enlaces generales del modo oscuro:
 Artículos de investigación de antecedentes para esta publicación:
 
 - [¿Qué hace en realidad el "esquema de colores compatible" con el modo oscuro? 🤔](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d)
-- [¡Deja que haya oscuridad! 🌚 Tal vez...](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d)
+- [¡Deja que haya oscuridad! 🌚 Tal vez…](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d)
 - [Recolorización para el modo oscuro](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)
 
 ## Agradecimientos

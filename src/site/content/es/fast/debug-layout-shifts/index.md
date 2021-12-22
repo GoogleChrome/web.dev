@@ -79,7 +79,7 @@ Propiedad | Descripción
 `startTime` | La propiedad `startTime` indica cuándo se produjo un cambio de diseño. `startTime` se indica en milisegundos y se mide en relación con el [momento en que se inició la carga de la página](https://www.w3.org/TR/hr-time-2/#sec-time-origin).
 `duration` | La propiedad `duration` siempre se establecerá en `0`. Esta propiedad se hereda de la interfaz [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) (la interfaz `LayoutShift` amplía la interfaz `PerformanceEntry`). Sin embargo, el concepto de duración no se aplica a los eventos de cambio de diseño, por lo que se establece en `0`. Para obtener información sobre la interfaz `PerformanceEntry`, consulte las [especificaciones](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).
 
-{% Aside %} La [extensión Web Vitals](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) puede registrar información de cambios de diseño en la consola. Para habilitar esta función, vaya a **Opciones&gt; Registro de consola**. {% endAside %}
+{% Aside %} La [extensión Web Vitals](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) puede registrar información de cambios de diseño en la consola. Para habilitar esta función, vaya a **Opciones > Registro de consola**. {% endAside %}
 
 #### LayoutShiftAttribution
 

@@ -24,7 +24,7 @@ La [API Generic Sensor](https://www.w3.org/TR/generic-sensor/) es un conjunto de
 
 Algunas clases de sensores interactúan con sensores de hardware reales como, por ejemplo, las clases de acelerómetro o giroscopio. Estos se conocen como sensores de bajo nivel. Otros sensores, denominados [sensores agrupados](https://w3c.github.io/sensors/#sensor-fusion), combinan datos de varios sensores de bajo nivel para exponer información que, de otro modo, necesitaría ser calculada por un script. Por ejemplo, el sensor [`AbsoluteOrientation`](https://www.w3.org/TR/orientation-sensor/#absoluteorientationsensor) da una matriz de rotación de cuatro por cuatro lista para usar basada en los datos obtenidos del acelerómetro, giroscopio y magnetómetro.
 
-Podría pensar que la plataforma web ya proporciona datos de sensores ¡y tiene toda la razón! Por ejemplo, los eventos [ `DeviceMotion`](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent) y [`DeviceOrientation`](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent) exponen los datos del sensor de movimiento. Entonces, ¿por qué necesitamos una nueva API?
+Podría pensar que la plataforma web ya proporciona datos de sensores ¡y tiene toda la razón! Por ejemplo, los eventos [`DeviceMotion`](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent) y [`DeviceOrientation`](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent) exponen los datos del sensor de movimiento. Entonces, ¿por qué necesitamos una nueva API?
 
 En comparación con las interfaces existentes, la API Generic Sensor ofrece una gran cantidad de ventajas:
 

@@ -16,7 +16,7 @@ Nos ha pasado a todos: se ha olvidado de reducir la escala de una imagen antes d
 
 ## Identificar imágenes de tamaño incorrecto
 
-Lighthouse facilita la identificación de imágenes de tamaño incorrecto. Ejecute la Auditoría de rendimiento en Lighthouse&gt; Opciones&gt; Rendimiento (**Lighthouse&gt; Options&gt; Performance**) y busque los resultados de la auditoría de Imágenes de tamaño adecuado (**Properly size images**). La auditoría enumera todas las imágenes cuyo tamaño debe cambiarse.
+Lighthouse facilita la identificación de imágenes de tamaño incorrecto. Ejecute la Auditoría de rendimiento en Lighthouse > Opciones > Rendimiento (**Lighthouse > Options > Performance**) y busque los resultados de la auditoría de Imágenes de tamaño adecuado (**Properly size images**). La auditoría enumera todas las imágenes cuyo tamaño debe cambiarse.
 
 ## Determinar el tamaño de imagen correcto
 
@@ -31,7 +31,7 @@ Hay dos tipos de unidades CSS para especificar el tamaño de los elementos HTML,
 
 ### El enfoque "bueno"
 
-Para imágenes con tamaño basado en...
+Para imágenes con tamaño basado en…
 
 - **Unidades relativas** : cambie el tamaño de la imagen a un tamaño que funcione en todos los dispositivos.
 
@@ -45,7 +45,7 @@ El panel DevTools Elements se puede utilizar para determinar en qué tamaño se 
 
 ### El enfoque "mejor"
 
-Para imágenes con tamaño basado en...
+Para imágenes con tamaño basado en…
 
 - **Unidades absolutas:** Use los atributos [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset) y [sizes](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes) para servir diferentes imágenes a diferentes densidades de pantalla (Lea la guía sobre imágenes responsivas [aquí](/serve-responsive-images)).
 

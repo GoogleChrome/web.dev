@@ -180,7 +180,7 @@ Flujo de trabajo de Chrome DevTools:
 
 #### Reparar
 
-*Si tienes tiempo limitado ...*
+*Si tienes tiempo limitado…*
 
 Concentra tu tiempo en identificar imágenes grandes y cargadas con frecuencia y optimizarlas manualmente con una herramienta como [Squoosh](https://squoosh.app/). Las imágenes heroicas suelen ser buenas candidatas para la optimización.
 
@@ -190,7 +190,7 @@ Aspectos a tener en cuenta:
 - Compresión: En términos generales, un nivel de calidad de 80-85 tendrá un efecto mínimo en la calidad de la imagen al tiempo que producirá una reducción del 30-40% en el tamaño del archivo.
 - Formato: Utiliza archivos JPEG para fotos en lugar de PNG; usa MP4 para [contenido animado](/replace-gifs-with-videos/) en lugar de GIF.
 
-*Si tienes más tiempo ...*
+*Si tienes más tiempo…*
 
 Considera la posibilidad de configurar una CDN de imágenes si las imágenes constituyen una parte sustancial de tu sitio. Las CDN de imágenes están diseñadas para servir y optimizar imágenes y descargarán el servicio de imágenes desde el servidor de origen. La configuración de una CDN de imagen es sencilla, pero requiere actualizar las URL de imágenes existentes para que apunten a la CDN de la imagen.
 
