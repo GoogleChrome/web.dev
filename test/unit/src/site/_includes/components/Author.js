@@ -17,29 +17,85 @@
 
 const {expect} = require('chai');
 const cheerio = require('cheerio');
+const {defaultLocale} = require('../../../../../../src/site/_data/site');
 const Author = require('../../../../../../src/site/_includes/components/Author');
+/** @type AuthorsData */
 const authorsDataJson = require('../../../../../../src/site/_data/authorsData.json');
+const authorsDataArray = Object.entries(authorsDataJson);
 
-const collectionAll = /** @type {EleventyCollectionItem[]} */ ([
-  {url: '/en/foo/bar/', data: {title: 'foobar'}},
-  {url: '/en/foo-bar/', data: {title: 'foobar'}},
-  {url: '/en/foobar/', data: {title: 'foobar'}},
-  {url: '/es/fizzbuzz/', data: {title: 'fizzbuzz'}},
-]);
+/**
+ * @param {number} count
+ * @return {[string, AuthorsItem][]}
+ */
+const getAuthorsData = (count) => {
+  /** @type {[string, AuthorsItem][]} */
+  const authors = [];
+  for (let i = 0; i < count; i++) {
+    const [id, authorData] = authorsDataArray[i];
+    /** @type {AuthorsItem} */
+    const author = {
+      ...authorData,
+      description: `i18n.authors.${id}.description`,
+      elements: [],
+      href: `/authors/${id}/`,
+      key: id,
+      title: `i18n.authors.${id}.title`,
+      url: `/authors/${id}/`,
+    };
+    authors.push([id, author]);
+  }
+  return authors;
+};
 
 describe('Author', function () {
-  it('returns call out with correct links', async function () {
-    const html = Author({});
-    const $ = cheerio.load(html);
-    const li = $('li');
-    expect(li.length).to.equal(3);
+  it('does not throw error with correct data', async function () {
+    const [id, author] = getAuthorsData(1)[0];
+    expect(() => Author({id, author, locale: defaultLocale})).to.not.throw();
   });
 
-  it('returns nothing if URLs not found', async function () {
-    const html = CodelabsCallout(
-      collectionAll.map((i) => i.url + '/pop'),
-      'en',
-    );
+  it('does not throw error when author is missing', async function () {
+    const [id] = getAuthorsData(1)[0];
+    // @ts-ignore
+    expect(() => Author({id, locale: defaultLocale})).to.not.throw();
+  });
+
+  it('returns `undefined` when author is missing', async function () {
+    const [id] = getAuthorsData(1)[0];
+    // @ts-ignore
+    const html = Author({id, locale: defaultLocale});
     expect(html).to.equal(undefined);
+  });
+
+  it('does throw error when author is missing a valid title', async function () {
+    const [id, author] = getAuthorsData(1)[0];
+    delete author.title;
+    expect(() => Author({id, author, locale: defaultLocale})).to.throw();
+  });
+
+  it('includes link to author and name', async function () {
+    const [id, author] = getAuthorsData(1)[0];
+    const html = Author({id, author, locale: defaultLocale});
+    const $ = cheerio.load(html);
+    expect($('.author__name > a').html()).to.not.equal(null);
+    expect($('a.avatar').attr('href')).to.equal(author.href);
+  });
+
+  it('does not include social media when flag not set to true', async function () {
+    const [id, author] = getAuthorsData(1)[0];
+    const html = Author({id, author, locale: defaultLocale});
+    const $ = cheerio.load(html);
+    expect($('.author__links').html()).to.equal(null);
+  });
+
+  it('includes social media when flag set to true', async function () {
+    const [id, author] = getAuthorsData(1)[0];
+    const html = Author({
+      id,
+      author,
+      locale: defaultLocale,
+      showSocialMedia: true,
+    });
+    const $ = cheerio.load(html);
+    expect($('.author__links').html()).to.not.equal(null);
   });
 });

@@ -19,7 +19,7 @@ const {Img} = require('./Img');
 const {i18n} = require('../../_filters/i18n');
 
 /**
- * @param {{id: string, author: AuthorsItem, locale: string, showSocialMedia: boolean}} param0
+ * @param {{id: string, author: AuthorsItem, locale: string, showSocialMedia?: boolean}} param0
  * @returns {string}
  */
 function Author({id, author, locale, showSocialMedia = false}) {
