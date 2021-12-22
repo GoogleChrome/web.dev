@@ -81,7 +81,7 @@ Entonces, ¿qué significa esto en la práctica? Las pantallas de alta resoluci�
 - Prefiera imágenes vectoriales siempre que sea posible, ya que son independientes de la resolución y siempre brindan resultados nítidos.
 - Si se requiere una imagen de trama, proporcione [imágenes responsivas](/serve-responsive-images/).
 
-## Características de diferentes formatos de imágenes de trama.
+## Características de diferentes formatos de imágenes de trama
 
 Además de los diferentes algoritmos de compresión con y sin pérdida de datos, los diferentes formatos de imagen admiten diferentes características, como canales de animación y transparencia (alfa). Como resultado, la elección del "formato correcto" para una imagen específica es una combinación de los resultados visuales deseados y los requisitos funcionales.
 

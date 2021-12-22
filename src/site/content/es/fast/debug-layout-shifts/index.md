@@ -168,7 +168,7 @@ Para ver más información sobre el cambio de diseño, haga clic en el cambio de
 
 {% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png", alt="Captura de pantalla de la pestaña 'Resumen' de DevTools para un cambio de diseño", class="w-screenshot", width="612", height="354" %}
 
-Para obtener información sobre la duración de un cambio de diseño, abra la pestaña **Registro de eventos.**. La duración de un cambio de diseño también se puede aproximar si mira en el panel **Experiencia** la longitud del rectángulo rojo de cambio de diseño.
+Para obtener información sobre la duración de un cambio de diseño, abra la pestaña **Registro de eventos.** La duración de un cambio de diseño también se puede aproximar si mira en el panel **Experiencia** la longitud del rectángulo rojo de cambio de diseño.
 
 {% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png", alt="Captura de pantalla de la pestaña 'Registro de eventos' de DevTools para un cambio de diseño", class="w-screenshot", width="612", height="354" %}
 
@@ -216,7 +216,7 @@ Este tipo de cambios suele ser el resultado de:
 - Hojas de estilo que se cargan tarde o que sobrescriben estilos declarados previamente.
 - Efectos de animación y transición.
 
-#### Cambios en las dimensiones de un elemento.
+#### Cambios en las dimensiones de un elemento
 
 Este tipo de cambio suele ser el resultado de:
 
