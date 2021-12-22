@@ -9,10 +9,8 @@ authors:
   - anshusharma
   - sumitgugnani
   - prashantmishra
-date: 2022-12-01
-hero: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/rhX18pRJWKzMdDNFzxr7.PNG
+date: 2021-12-21
 alt: Google Core Web Vitals + Mail.ru Home Page.
-thumbnail: image/dB6B4Sr8kaaT0KZujRBFC303oFR2/7lLVG6IeMKZYyhLanvXc.PNG
 tags:
   - blog
   - web-vitals
