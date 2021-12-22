@@ -7,7 +7,7 @@ authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-updated: 2021-12-20
+updated: 2021-12-22
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
