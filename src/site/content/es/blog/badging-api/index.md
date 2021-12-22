@@ -8,9 +8,10 @@ date: 2018-12-11
 updated: 2021-02-23
 tags:
   - blog
-  - capacidades
-  - progresiva-web-aplicaciones
-  - notificaciones
+  - capabilities
+  - progressive-web-apps
+  # - badging
+  - notifications
 hero: image/admin/AFvb0uBtN7ZX9qToptEo.jpg
 alt: Letrero de neón con un corazón y un cero.
 feedback:

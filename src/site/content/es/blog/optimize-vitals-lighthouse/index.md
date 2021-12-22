@@ -12,7 +12,8 @@ hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: Un faro iluminando el mar
 tags:
   - blog
-  - rendimiento
+  # - fast
+  - performance
   - web-vitals
 ---
 

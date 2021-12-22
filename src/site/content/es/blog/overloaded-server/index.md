@@ -11,8 +11,8 @@ description: |2-
 
   Cómo determinar el cuello de botella de un servidor, solucionarlo rápidamente, mejorar su rendimiento y prevenir regresiones.
 tags:
-  - blog
-  - rendimiento
+  - blog # blog is a required tag for the article to show up in the blog.
+  - performance
 ---
 
 ## Descripción general

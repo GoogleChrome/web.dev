@@ -20,9 +20,9 @@ description: |2
 origin_trial:
   url: "https://developer.chrome.com/origintrials/#/view_trial/118219490218475521"
 tags:
-  - blog
-  - capacidades
-  - juegos
+  - blog # blog is a required tag for the article to show up in the blog.
+  - capabilities
+  - games
 feedback:
   - api
 stack_overflow_tag: webgpu

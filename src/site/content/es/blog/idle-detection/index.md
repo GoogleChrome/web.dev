@@ -14,7 +14,7 @@ date: 2020-05-18
 updated: 2021-08-25
 tags:
   - blog
-  - capacidades
+  - capabilities
 hero: image/admin/FXoKxeVCmPgEStieWKm2.jpg
 alt: Computadora abandonada en una cama con la pierna de alguien al lado.
 feedback:
