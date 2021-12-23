@@ -179,7 +179,7 @@ People use cursors and fingers to explore interfaces but when it comes time to e
 
 Unlike a physical keyboard, virtual keyboards can be tailored to match the expected input. If you provide information about the expected input, devices can serve up the most appropriate virtual keyboard.
 
-[HTML5 input types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types) are a great way of describing your `input` elements. The `type` attribute accepts values such as `email`, `number`, `tel`, `url`, and more.
+[HTML5 input types](https://developer.mozilla.org/docs/Learn/Forms/HTML5_input_types) are a great way of describing your `input` elements. The `type` attribute accepts values such as `email`, `number`, `tel`, `url`, and more.
 
 ```html
   <label for="email">Email</label>
@@ -213,7 +213,7 @@ Unlike a physical keyboard, virtual keyboards can be tailored to match the expec
 
 ### Input modes
 
-[The `inputmode` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) gives you fine-grained control over virtual keyboards. For example, whereas there’s one `input` `type` with a value of `number`, you can use the `inputmode` attribute to differentiate between whole numbers and decimals.
+[The `inputmode` attribute](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode) gives you fine-grained control over virtual keyboards. For example, whereas there’s one `input` `type` with a value of `number`, you can use the `inputmode` attribute to differentiate between whole numbers and decimals.
 
 If you’re asking for a whole number, like somebody’s age, use `inputmode="numeric"`.
 
@@ -241,7 +241,7 @@ If you’re asking for a number that includes decimal places, like a price, use 
 
 ### Autocomplete
 
-Nobody likes filling in forms. As a designer, you can improve the experience for your users by enabling them to automatically fill in form fields. [The `autocomplete` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) provides you with a host of options for improving contact forms, log-in forms, and checkout forms.
+Nobody likes filling in forms. As a designer, you can improve the experience for your users by enabling them to automatically fill in form fields. [The `autocomplete` attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) provides you with a host of options for improving contact forms, log-in forms, and checkout forms.
 
 ```html
 <label for="name">Name</label>
