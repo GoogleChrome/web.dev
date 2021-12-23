@@ -118,7 +118,7 @@ To maintain the fidelity of the illustration and ensure high definition screens 
 
 Illustration has unique challenges for compression, especially the brush stroke and transparent rough edge style Alice used. We chose to Squoosh each 3x Photoshop exported png image, to a smaller png, webp, and avif. Each file type has its own special compression abilities, and it took compressing more than 50 images to find some common optimization settings.
 
-The [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) became crucial with over 200 images to optimize&emdash;doing all those manually would have taken days. Once we had the common optimization settings, we provided them as command line instructions and batch processed entire folders of PNG images into their WebP and AVIF compressed counterparts. 
+The [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) became crucial with over 200 images to optimize&mdash;doing all those manually would have taken days. Once we had the common optimization settings, we provided them as command line instructions and batch processed entire folders of PNG images into their WebP and AVIF compressed counterparts. 
 
 Here's an example AVIF CLI squoosh command used:
 
