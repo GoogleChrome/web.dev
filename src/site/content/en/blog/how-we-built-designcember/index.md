@@ -50,7 +50,7 @@ Once the general grid was relatively stable and communicated a sense of directio
 
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/iJWU8JYwUhpeXafZ434y.png", alt="Wireframes showing how the windows display at different breakpoints.", width="800", height="812" %}
 
-Each window would need to handle a certain amount of resize turbulence. Below is a prototype of a window demonstrating it's responsiveness to turbulence, showing how much we could expect each interactive window to adjust.
+Each window would need to handle a certain amount of resize turbulence. Below is a prototype of a window demonstrating its responsiveness to turbulence, showing how much we could expect each interactive window to adjust.
 
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/2F6S98FvsNhviuBvtJcI.mov", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
@@ -140,17 +140,17 @@ It was repetitive writing the picture source code repeatedly, so we made an [Ast
 <Pic filename="day1/inner-frame" role="presentation" />
 ```
 
-We used `role="presentation"` to mark the image as presentational for screen readers. We felt that a user experience of between 5 and 12 fractured `alt` descriptions was going to be a poor experience. So, we marked the images as presentational and provided an overall window narration. Moving through the windows on a screen reader then has a nice narrative feeling, which we hoped would help deliver the whimsy and fun the site wants to share.
-
 ## Screen reader and keyboard users
 
 Much of the experience of Designcember is through the art and interactive windows. It was important to us that a keyboard user could use the site and peek into windows, and that screen reader users get a nice narrated experience. 
+
+For example, when embedding the images we used `role="presentation"` to mark the image as presentational for screen readers. We felt that a user experience of between 5 and 12 fractured `alt` descriptions was going to be a poor experience. So, we marked the images as presentational and provided an overall window narration. Moving through the windows on a screen reader then has a nice narrative feeling, which we hoped would help deliver the whimsy and fun the site wants to share.
 
 The following video shows a demo of the keyboard experience. Tab, enter, spacebar ,and escape keys are all used to orchestrate focus to and from the window popups and the windows.
 
 {% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/UYNJSy92FLABrsLgz0lz.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
-The screen reader experience has special aria attributes that bring clarity to the content. For example, the links for the days only say "one" or "two", but with some added ARIA, they are announced as "Day 1" and "Day 2." Furthermore, all the images are summarized in a single label so each window has a description.
+The screen reader experience has special aria attributes that bring clarity to the content. For example, the links for the days only say "one" or "two", but with some added ARIA, they are announced as "Day one" and "Day two." Furthermore, all the images are summarized in a single label so each window has a description.
 
 {% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bKYH0xxOJkwh0RTMGuAG.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
@@ -161,13 +161,13 @@ The screen reader experience has special aria attributes that bring clarity to t
 ### Days as components
 
 [Each day was a component](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Days/Day1.astro) that fetched status from a 
-[build time data store](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Days/day.store.js). This let us run template logic before the HTML reached the browser. The logic would determine if the day should show it's tooltip or not, as inactive days don't have pop ups. 
+[build time data store](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Days/day.store.js). This let us run template logic before the HTML reached the browser. The logic would determine if the day should show its tooltip or not, as inactive days don't have pop ups. 
 
 Builds are run every hour and the build time data store would unlock a new day when the build server was past midnight. Self updating and self sufficient little systems to keep the site up to date.
 
 ### Scoped styles and Open Props
 
-Astro [scopes styles written inside it's component model](https://docs.astro.build/guides/styling/), which made distributing the workload amongst many team members easier, and also made using [Open Props](https://open-props.style/) fun. The [Open Props normalize.css](https://unpkg.com/open-props/normalize.min.css) styles came in helpful with the adaptive (light and dark) theme, as well as helping wrangle content like paragraphs and headers. 
+Astro [scopes styles written inside its component model](https://docs.astro.build/guides/styling/), which made distributing the workload amongst many team members easier, and also made using [Open Props](https://open-props.style/) fun. The [Open Props normalize.css](https://unpkg.com/open-props/normalize.min.css) styles came in helpful with the adaptive (light and dark) theme, as well as helping wrangle content like paragraphs and headers. 
 
 As early adopters of Astro, we ran into a few snags with PostCSS. For example, we weren't able to update to the 
 [latest Astro version](https://astro.build/blog/astro-021-release/) due to too many build issues. More time could be spent here, optimizing the build and developer workflows. 
@@ -236,7 +236,7 @@ We also used container queries to show and hide detail as the art became increas
 
 ## Cross-browser support
 
-To enable a great modern cross-browser experience, especially for  experimental APIs like container queries, we need a great polyfill. We sent a call out to our team and Surma ended up spearheading a build for a new [container query polyfill](https://www.npmjs.com/package/container-query-polyfill). The polyfill relies on [ResizeObserver](https://caniuse.com/resizeobserver), [MutationObserver](https://caniuse.com/mutationobserver) and the CSS [:is() function](https://caniuse.com/css-matches-pseudo). Therefore, it supports all modern browsers, specifically Chrome/Edge 88+, Firefox 78+ and Safari 14+. Using the polyfill enables any of the following syntaxes:
+To enable a great modern cross-browser experience, especially for  experimental APIs like container queries, we need a great polyfill. We sent a call out to our team and Surma ended up spearheading a build for a new [container query polyfill](https://www.npmjs.com/package/container-query-polyfill). The polyfill relies on [ResizeObserver](https://caniuse.com/resizeobserver), [MutationObserver](https://caniuse.com/mutationobserver) and the CSS [:is() function](https://caniuse.com/css-matches-pseudo). Therefore, it supports all modern browsers, specifically Chrome and Edgefrom version 88, Firefox from version 78, and Safari from version 14. Using the polyfill enables any of the following syntaxes:
 
 ```css
 /* These are all equivalent */
@@ -263,7 +263,7 @@ One last touch that was essential for the Designcember website was a beautiful d
 
 ### Personal touches
 
-We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on disabled days, and played around with the favicon style.
+We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on inactive days, and played around with the favicon style.
 
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/qjXfDOxsGXIIE57cXnyr.jpg", alt="Custom cursor styles and favicon options", width="800", height="408" %}
 
