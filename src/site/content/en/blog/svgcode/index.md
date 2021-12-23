@@ -14,11 +14,17 @@ description: >
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/lqecVwtwI01kJ7n52Sqp.jpg
 alt: SVGcode logo
 date: 2021-11-19
+updated: 2021-12-23
 tags:
   - capabilities
   - progressive-web-apps
   - blog
 ---
+
+{% Aside %}
+In a hurry? Go [straight to the SVGcode app](https://svgco.de/)
+and read the article later.
+{% endAside %}
 
 <figure class="w-figure">
   {% YouTube "kcvfyQh6J-0" %}
