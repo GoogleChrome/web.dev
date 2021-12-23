@@ -68,7 +68,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 도구 체인에 따라 서버 캐싱을 적용하는 다양한 방법이 있습니다.
 
 - 캐시된 콘텐츠를 제공하거나 애플리케이션 서버 앞에 설치된 경우 캐시 서버 역할을 하도록 역방향 프록시([Varnish](https://varnish-cache.org/) , [nginx](https://www.nginx.com/)) 구성
-- 클라우드 공급자([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching))의 캐시 동작 구성 및 관리
+- 클라우드 공급자([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure](https://docs.microsoft.com/azure/architecture/best-practices/caching))의 캐시 동작 구성 및 관리
 - 콘텐츠가 캐시되어 사용자에게 더 가까운 곳에 저장되도록 엣지 서버를 제공하는 CDN 사용
 
 ### HTML 페이지 캐시 우선 제공
