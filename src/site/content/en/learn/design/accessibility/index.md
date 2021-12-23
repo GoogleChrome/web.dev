@@ -5,7 +5,6 @@ description: >
 authors:
   - adactio
 date: 2021-12-23
-placeholder: true
 ---
 
 Allowing your pages to respond to different screen sizes is just one way of making sure your website is accessible to as many people as possible. Consider some of these other factors that you should keep in mind.

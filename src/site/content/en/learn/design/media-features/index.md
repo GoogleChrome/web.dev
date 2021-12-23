@@ -5,7 +5,6 @@ description: >
 authors:
   - adactio
 date: 2021-12-23
-placeholder: true
 ---
 
 Responsive design wouldn't be possible without media queries. Before media queries there was no way of knowing what kind of device people were using to visit your website. Designers had to make assumptions. Those assumptions were encoded into fixed-width designs or liquid layouts.
