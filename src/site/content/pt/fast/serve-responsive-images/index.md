@@ -68,6 +68,7 @@ Serviços de imagem como [Thumbor](https://github.com/thumbor/thumbor) (open-sou
 
 Especifique várias versões da imagem e o navegador escolherá a melhor para usar:
 
+
 <div class="w-table-wrapper">
   <table>
     <thead>
@@ -78,8 +79,13 @@ Especifique várias versões da imagem e o navegador escolherá a melhor para us
     </thead>
     <tbody>
       <tr>
-        <td><img src = "flower-large.jpg"></td>
-        <td><img src="flower-large.jpg" srcset="flower-small.jpg 480w, flower-large.jpg 1080w" sizes="50vw"></td>
+        <td>
+          &lt;img src="flower-large.jpg"&gt;
+        </td>
+        <td>
+          &lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,
+          flower-large.jpg 1080w" sizes="50vw"&gt;
+        </td>
       </tr>
     </tbody>
   </table>

@@ -37,7 +37,7 @@ As causas mais comuns de uma LCP ruim são:
 - [Tempos lentos de carregamento de recursos](#slow-resource-load-times)
 - [Renderização do lado do cliente](#client-side-rendering)
 
-## Tempos de resposta lentos do servidor { :#slow-servers }
+## Tempos de resposta lentos do servidor {: #slow-servers }
 
 Quanto mais tempo leva para um navegador receber conteúdo do servidor, mais tempo leva para processar qualquer coisa na tela. Um tempo de resposta mais rápido do servidor melhora diretamente cada métrica de carregamento de página, incluindo a LCP.
 
@@ -218,7 +218,7 @@ Isto pode ser feito otimizando seus scripts de maneiras diferentes:
 
 {% Aside %} O guia [Otimize a First Input Delay](/optimize-fid/) explora todas as técnicas necessárias para reduzir o tempo de bloqueio do JavaScript em mais detalhes. {% endAside %}
 
-## Tempos de carregamento de recursos lentos { :#slow-resource-load-times }
+## Tempos de carregamento de recursos lentos {: #slow-resource-load-times }
 
 Embora um aumento no tempo de bloqueio do CSS ou JavaScript resulte diretamente em pior desempenho, o tempo que leva para carregar vários outros tipos de recursos também pode afetar os tempos de renderização. Os tipos de elementos que afetam a LCP são:
 
@@ -343,7 +343,7 @@ O pré-cache de recursos críticos usando um service worker pode reduzir seus te
 
 {% Aside %} Dê uma olhada em [Confiabilidade da rede](/reliable/) para aprender mais sobre service workers e o Workbox. {% endAside %}
 
-## Renderização lado-cliente { :#client-side-rendering }
+## Renderização lado-cliente {: #client-side-rendering }
 
 Muitos sites usam lógica JavaScript do lado do cliente para renderizar páginas diretamente no navegador. Frameworks e bibliotecas, como [React](https://reactjs.org/), [Angular](https://angular.io/) e [Vue](https://vuejs.org/), facilitaram a construção de aplicações de página única (SLA) que lidam com diferentes facetas de uma página web inteiramente no cliente, e não no servidor.
 
