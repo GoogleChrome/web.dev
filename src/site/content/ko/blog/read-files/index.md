@@ -11,7 +11,7 @@ authors:
   - petelepage
   - thomassteiner
 tags:
-  - 블로그
+  - blog
   - 스토리지
 ---
 

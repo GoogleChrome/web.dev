@@ -10,8 +10,8 @@ thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: Arduino Micro 보드의 사진
 description: WebUSB API는 USB를 웹으로 가져와 더 안전하고 사용하기 쉽게 만듭니다.
 tags:
-  - 블로그
-  - 기능
+  - blog
+  - capabilities
   - 장치
 feedback:
   - API

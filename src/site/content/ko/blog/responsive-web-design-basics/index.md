@@ -8,10 +8,10 @@ authors:
   - petelepage
   - rachelandrew
 tags:
-  - 블로그
+  - blog
   - css
-  - 레이아웃
-  - 모바일
+  - layout
+  - mobile
   - ux
 ---
 

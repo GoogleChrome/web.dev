@@ -8,10 +8,10 @@ date: 2020-07-07
 hero: image/admin/B07IzuMeRRGRLH9UQkwd.png
 alt: 성배 레이아웃.
 tags:
-  - 블로그
+  - blog
   - css
-  - 레이아웃
-  - 모바일
+  - layout
+  - mobile
 ---
 
 {% YouTube 'qm0IfG1GyZU' %}

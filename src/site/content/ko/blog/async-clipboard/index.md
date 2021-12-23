@@ -8,8 +8,8 @@ description: Async Clipboard API는 사용 권한이 있는 복사 및 붙여넣
 date: 2020-07-31
 updated: 2021-07-29
 tags:
-  - 블로그
-  - 기능
+  - blog
+  - capabilities
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: 쇼핑 목록이 있는 클립보드
 feedback:

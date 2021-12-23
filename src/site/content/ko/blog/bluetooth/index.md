@@ -10,8 +10,8 @@ thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: 코인에 들어가 있는 블루투스 칩
 description: Web Bluetooth API를 사용하면 웹 사이트에서 블루투스 장치와 통신할 수 있습니다.
 tags:
-  - 블로그
-  - 기능
+  - blog
+  - capabilities
   - 장치
 feedback:
   - API
