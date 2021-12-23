@@ -12,7 +12,7 @@ description: WebUSB API는 USB를 웹으로 가져와 더 안전하고 사용하
 tags:
   - blog
   - capabilities
-  - 장치
+  - devices
 feedback:
   - API
 stack_overflow_tag: webusb

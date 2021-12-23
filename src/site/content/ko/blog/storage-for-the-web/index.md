@@ -9,8 +9,10 @@ updated: 2021-02-11
 tags:
   - blog
   - progressive-web-apps
-  - 스토리지
-  - 메모리
+  - storage
+  # - indexeddb
+  # - cachestorage
+  - memory
 hero: image/admin/c8u2hKEFoFfgTsmcKeuK.jpg
 alt: 선적 컨테이너 더미
 feedback:

@@ -12,7 +12,7 @@ description: Web Bluetooth API를 사용하면 웹 사이트에서 블루투스 
 tags:
   - blog
   - capabilities
-  - 장치
+  - devices
 feedback:
   - API
 stack_overflow_tag: 웹 블루투스
