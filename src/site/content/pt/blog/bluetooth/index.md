@@ -15,7 +15,7 @@ description: |2
   A API Web Bluetooth permite que sites se comuniquem com dispositivos Bluetooth.
 tags:
   - blog
-  - resources
+  - capabilities
   - devices
 feedback:
   - api

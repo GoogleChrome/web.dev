@@ -14,7 +14,7 @@ hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: Um riacho na floresta com folhas coloridas caídas.
 tags:
   - blog
-  - resources
+  - capabilities
 ---
 
 A API Streams permite que você acesse programaticamente fluxos de dados recebidos pela rede ou criados por qualquer meio localmente e processe-os com JavaScript. O streaming envolve a divisão de um recurso que você deseja receber, enviar ou transformar em pequenos blocos e, em seguida, seu processamento gradual. Embora streaming seja algo que os navegadores fazem de qualquer maneira ao receber ativos como HTML ou vídeos para serem exibidos em páginas da web, esse recurso nunca esteve disponível para JavaScript antes do `fetch` com fluxos ser introduzido em 2015.
