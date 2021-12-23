@@ -39,9 +39,11 @@ Alice was inspiring, sharing processes and sketches that were exciting even in t
 Here's a preview of a responsive prototype using [`grid-auto-flow: dense`](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) showing how windows could be auto placed by the grid algorithm. We quickly realized that while aspect-ratio grids performed beautifully to showcase art, they didn’t provide an opportunity to let the windows grow and shrink into non-uniform available space and showcase the power of container queries.
 
 <figure>
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/Ktw3eAZCo6p5avjO6xdm.gif", alt="Animation showing how this wireframe responds to different screen sizes.", width="800", height="552" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/Ktw3eAZCo6p5avjO6xdm.gif", alt="Animation that shows how this wireframe responds to different screen sizes.", width="800", height="552" %}
 
-<figcaption><a href="https://codepen.io/argyleink/pen/189adacf9be3eb2348308d904d493143?editors=1100">See this demo on CodePen.</a></figcaption>
+<figcaption>
+   <a href="https://codepen.io/argyleink/pen/189adacf9be3eb2348308d904d493143?editors=1100">Check out this demo on CodePen.</a>
+</figcaption>
 
 </figure>
 
@@ -134,7 +136,8 @@ With optimized artwork checked into the repo, we could start loading them from H
 </picture>
 ```
 
-It was repetitive to write the picture source code, so we made an [Astro component](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Pic/Pic.astro) to embed images with one line of code.
+It was repetitive to write the picture source code, so we made an 
+[Astro component](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Pic/Pic.astro) to embed images with one line of code.
 
 ```html
 <Pic filename="day1/inner-frame" role="presentation" />
