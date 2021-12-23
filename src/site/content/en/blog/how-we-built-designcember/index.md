@@ -25,7 +25,7 @@ See the full experience at [designcember.com](https://designcember.com).
 
 ## Overview
 
-Our goal was to deliver an accessible, whimsical, and modern responsive web experience in as few bytes as possible. We wanted to highlight new responsive APIs like container queries, and include a beautiful example of a dark mode in a design-focused and asset-heavy website. To achieve this, we compressed files, offered multiple formats, used build tools optimized for static site generation, shipped a new polyfill, and more.
+Our goal was to deliver an accessible, whimsical, modern, and responsive web experience in as few bytes as possible. We wanted to highlight new responsive APIs like container queries, and include a beautiful example of a dark mode in a design-focused and asset-heavy website. To achieve this, we compressed files, offered multiple formats, used build tools optimized for static site generation, shipped a new polyfill, and more.
 
 ## Starting with whimsy
 
@@ -94,7 +94,7 @@ plus a little bit of knowledge about how masks on the web work. Let's look at th
 
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/ZFET81EyIUsVEofkYDIt.png", alt="The window for day eight.", width="800", height="655", style="max-width: 400px; margin: 1em auto;" %}
 
-To become a mask, the inner four leaf clover type shape has to be isolated as its own shape, and the color white. White will tell CSS what content stays, and everything outside the white won't. In Photoshop, the inside of the window was selected, feathered 1px (to remove aliasing issues), then filled white and exported at the same height and width as the window frame. This way the frame and the mask could be layered directly on top of each other, showing the inner content within the frame as expected.
+To become a mask, the inner four leaf clover type shape has to be isolated as its own shape and filled in the color white. White tells the CSS what content stays, and everything outside the white won't. In Photoshop, the inside of the window was selected, feathered 1px (to remove aliasing issues), then filled white and exported at the same height and width as the window frame. This way the frame and the mask could be layered directly on top of each other, showing the inner content within the frame as expected.
 
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/Jm6F9q8T41Sf6riwNYS7.png", alt="Clover mask image", width="776", height="774", style="max-width: 400px; margin: 1em auto;" %}
 
@@ -116,7 +116,7 @@ To maintain the fidelity of the illustration and ensure high definition screens 
 
 Illustration has unique challenges for compression, especially the brush stroke and transparent rough edge style Alice used. We chose to Squoosh each 3x Photoshop exported png image, to a smaller png, webp, and avif. Each file type has its own special compression abilities, and it took compressing more than 50 images to find some common optimization settings.
 
-The [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) became crucial with over 200 images to optimize, doing all those by hand would take days. Once we had the common optimization settings, we were able to provide them as command line instructions and batch process entire folders of PNG images into their WebP and AVIF compressed counterparts. 
+The [Squoosh CLI](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli) became crucial with over 200 images to optimize&emdash;doing all those manually would have taken days. Once we had the common optimization settings, we provided them as command line instructions and batch processed entire folders of PNG images into their WebP and AVIF compressed counterparts. 
 
 Here's an example AVIF CLI squoosh command used:
 
@@ -134,7 +134,7 @@ With optimized artwork checked into the repo, we could start loading them from H
 </picture>
 ```
 
-It was repetitive writing the picture source code repeatedly, so we made an [Astro component](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Pic/Pic.astro) to embed images with one line of code.
+It was repetitive to write the picture source code, so we made an [Astro component](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Pic/Pic.astro) to embed images with one line of code.
 
 ```html
 <Pic filename="day1/inner-frame" role="presentation" />
@@ -146,11 +146,11 @@ Much of the experience of Designcember is through the art and interactive window
 
 For example, when embedding the images we used `role="presentation"` to mark the image as presentational for screen readers. We felt that a user experience of between 5 and 12 fractured `alt` descriptions was going to be a poor experience. So, we marked the images as presentational and provided an overall window narration. Moving through the windows on a screen reader then has a nice narrative feeling, which we hoped would help deliver the whimsy and fun the site wants to share.
 
-The following video shows a demo of the keyboard experience. Tab, enter, spacebar ,and escape keys are all used to orchestrate focus to and from the window popups and the windows.
+The following video shows a demo of the keyboard experience. Tab, enter, spacebar, and escape keys are all used to orchestrate focus to and from the window popups and the windows.
 
 {% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/UYNJSy92FLABrsLgz0lz.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
-The screen reader experience has special aria attributes that bring clarity to the content. For example, the links for the days only say "one" or "two", but with some added ARIA, they are announced as "Day one" and "Day two." Furthermore, all the images are summarized in a single label so each window has a description.
+The screen reader experience has special ARIA attributes that bring clarity to the content. For example, the links for the days only say "one" or "two", but with some added ARIA, they are announced as "Day one" and "Day two." Furthermore, all the images are summarized in a single label so each window has a description.
 
 {% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bKYH0xxOJkwh0RTMGuAG.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
@@ -163,18 +163,18 @@ The screen reader experience has special aria attributes that bring clarity to t
 [Each day was a component](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Days/Day1.astro) that fetched status from a 
 [build time data store](https://github.com/GoogleChromeLabs/designcember/blob/main/src/components/Days/day.store.js). This let us run template logic before the HTML reached the browser. The logic would determine if the day should show its tooltip or not, as inactive days don't have pop ups. 
 
-Builds are run every hour and the build time data store would unlock a new day when the build server was past midnight. Self updating and self sufficient little systems to keep the site up to date.
+Builds are run every hour and the build time data store would unlock a new day when the build server was past midnight. These self-updating and self-sufficient little systems keep the site up to date.
 
 ### Scoped styles and Open Props
 
-Astro [scopes styles written inside its component model](https://docs.astro.build/guides/styling/), which made distributing the workload amongst many team members easier, and also made using [Open Props](https://open-props.style/) fun. The [Open Props normalize.css](https://unpkg.com/open-props/normalize.min.css) styles came in helpful with the adaptive (light and dark) theme, as well as helping wrangle content like paragraphs and headers. 
+Astro [scopes styles written inside its component model](https://docs.astro.build/guides/styling/), which made distributing the workload amongst many team members easier, and also made using [Open Props](https://open-props.style/) fun. The [Open Props normalize.css](https://unpkg.com/open-props/normalize.min.css) styles came in handy with the adaptive (light and dark) theme, as well as helping wrangle content like paragraphs and headers. 
 
 As early adopters of Astro, we ran into a few snags with PostCSS. For example, we weren't able to update to the 
 [latest Astro version](https://astro.build/blog/astro-021-release/) due to too many build issues. More time could be spent here, optimizing the build and developer workflows. 
 
 ## Flexible containers
 
-Some windows grow and shrink, maintaining [aspect ratio](/aspect-ratio) to preserve their art. We used some other windows to showcase the power of component-based architecture with container queries. Container queries meant windows could own their individual responsive styling information and readjust based on their own sizes. Some windows went from narrow to wide, and needed to adjust the size of the media within them and the placement of that media.
+Some windows grow and shrink, maintaining [aspect ratio](/aspect-ratio) to preserve their art. We used some other windows to showcase the power of component-based architecture with container queries. Container queries meant windows could own their individual responsive styling information and readjust based on their own sizes. Some windows went from narrow to wide and needed to adjust the size of the media within them, as well as the placement of that media.
 
 
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/ssFflPRQrTum3fbwkAWZ.png", alt="A demonstration of how the windows change as they have more space.", width="800", height="383" %}
@@ -203,13 +203,13 @@ As more space becomes available for a window, we could adapt the size or child e
 }
 ```
 
-{% Aside ‘warning’ %}
+{% Aside 'warning' %}
 The container query spec has since added a required `size()` wrapper around width and height queries. This syntax language is still a work in progress, but the polyfill described later in this article supports both syntaxes.
 {% endAside %}
 
 This approach is different from maintaining an aspect ratio. It offers more control and more opportunities. At a certain size, many children shift around to adapt to a new layout. 
 
-Container queries also enabled us to support block-direction (vertical) containment, so as a window grew in length, we could adjust its styles to fit appropriately. This is seen in the height-based queries, which we used standalone, and in addition to width-based queries:
+Container queries also allowed us to support block-direction (vertical) containment, so as a window grew in length, we could adjust its styles to fit appropriately. This is seen in the height-based queries, which we used standalone, and in addition to width-based queries:
 
 ```css
 .person {
@@ -236,7 +236,7 @@ We also used container queries to show and hide detail as the art became increas
 
 ## Cross-browser support
 
-To enable a great modern cross-browser experience, especially for  experimental APIs like container queries, we need a great polyfill. We sent a call out to our team and Surma ended up spearheading a build for a new [container query polyfill](https://www.npmjs.com/package/container-query-polyfill). The polyfill relies on [ResizeObserver](https://caniuse.com/resizeobserver), [MutationObserver](https://caniuse.com/mutationobserver) and the CSS [:is() function](https://caniuse.com/css-matches-pseudo). Therefore, it supports all modern browsers, specifically Chrome and Edgefrom version 88, Firefox from version 78, and Safari from version 14. Using the polyfill enables any of the following syntaxes:
+To create a great modern cross-browser experience, especially for experimental APIs like container queries, we need a great polyfill. We sent a call out to our team, and Surma spearheaded a build for a new [container query polyfill](https://www.npmjs.com/package/container-query-polyfill). The polyfill relies on [ResizeObserver](https://caniuse.com/resizeobserver), [MutationObserver](https://caniuse.com/mutationobserver) and the CSS [:is() function](https://caniuse.com/css-matches-pseudo). Therefore, all modern browsers support the polyfill, specifically Chrome and Edgefrom version 88, Firefox from version 78, and Safari from version 14. Using the polyfill allows any of the following syntaxes:
 
 ```css
 /* These are all equivalent */
@@ -251,27 +251,27 @@ To enable a great modern cross-browser experience, especially for  experimental 
 }
 ```
 
-## Dark Mode
+## Dark mode
 
-{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/KKWJFNWYiKBiOkpg1fBK.jpg", alt="The light and dark mode versions of the Designcember site side by side.", width="800", height="401" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/KKWJFNWYiKBiOkpg1fBK.jpg", alt="The light and dark mode versions of the Designcember site, side-by-side.", width="800", height="401" %}
 
 One last touch that was essential for the Designcember website was a beautiful dark theme. We wanted to show how you could use art itself to be an active participant in creating a great dark mode experience. For this, we adjusted the background styles of each window itself programmatically, and used as much CSS as made sense when creating the window art. Most of the backgrounds were CSS gradients, so that it would be easier to adjust their color values. We then layered the art on top of these.
 
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/gBrdHzLwdDckE9pgxK5L.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
-## Other Easter Eggs
+## Other Easter eggs
 
 ### Personal touches
 
-We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on inactive days, and played around with the favicon style.
+We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on inactive days and played around with the favicon style.
 
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/qjXfDOxsGXIIE57cXnyr.jpg", alt="Custom cursor styles and favicon options", width="800", height="408" %}
 
 ### Functional touches
 
-One of the additional functional touches is a “Jump to Today” functionality with the bird that sits on top of the building. Clicking or hitting enter on this bird jumps you down on the page to the current day of the month, so you can quickly get to the latest launches.
+One of the additional functional touches is a "Jump to Today" functionality, with a bird that sits on top of the building. Clicking or hitting enter on this bird jumps you down on the page to the current day of the month, so you can quickly get to the latest launches.
 
-Designcember.com also has a special print stylesheet where we’re essentially serving a specific image that works best on 8.5” x 11” paper so you can print the calendar out yourself and stay festive all year long. 
+Designcember.com also has a special print stylesheet where we're essentially serving a specific image that works best on 8.5" x 11" paper so you can print the calendar out yourself and stay festive all year long. 
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/FQ1XPh1UbVvlvNzn7PtC.jpg", alt="Poster-sized print of the calendar design.", width="800", height="1066" %}
