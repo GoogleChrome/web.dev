@@ -262,7 +262,7 @@ self.addEventListener('sync', function (event) {
 
 ## キャッシュの永続性 {: #cache-persistence}
 
-あなたのオリジンには、やりたいことができるように、一定の空きスペースが与えられます。その空きスペースは、すべてのオリジンストレージ[ ((ローカル) ストレージ](https://developer.mozilla.org/docs/Web/API/Storage)、[IndexedDB](https://developer.mozilla.org/docs/Glossary/IndexedDB) 、[ファイルシステムアクセス](/file-system-access/)、そして、もちろん[キャッシュ](https://developer.mozilla.org/docs/Web/API/Cache)) の間で共有されます。
+あなたのオリジンには、やりたいことができるように、一定の空きスペースが与えられます。その空きスペースは、すべてのオリジンストレージ[((ローカル) ストレージ](https://developer.mozilla.org/docs/Web/API/Storage)、[IndexedDB](https://developer.mozilla.org/docs/Glossary/IndexedDB) 、[ファイルシステムアクセス](/file-system-access/)、そして、もちろん[キャッシュ](https://developer.mozilla.org/docs/Web/API/Cache)) の間で共有されます。
 
 あなたに与えられる量は仕様で決定されていません。これは、デバイスやストレージ条件によります。以下のコードを使えば、自分に割り当てられた量を確認できます。
 
