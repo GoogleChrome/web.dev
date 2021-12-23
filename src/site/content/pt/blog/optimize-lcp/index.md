@@ -69,7 +69,7 @@ Se o seu HTML é estático e não precisa ser alterado a cada solicitação, o a
 Há muitas alternativas diferentes de usar cache no servidor; a escolha depende do seu toolchain:
 
 - Configuração de proxies reversos ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) para servir conteúdo em cache ou atuar como um servidor de cache quando instalado na frente de um servidor de aplicação
-- Configuração e gerenciamento do comportamento do cache do seu provedor de nuvem ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching)
+- Configuração e gerenciamento do comportamento do cache do seu provedor de nuvem ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/azure/architecture/best-practices/caching)
 - Uso de um CDN que forneça servidores de edge para que seu conteúdo seja armazenado em cache e fique mais perto de seus usuários
 
 ### Servindo páginas HTML usando cache-first

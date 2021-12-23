@@ -62,7 +62,7 @@ Veja um exemplo de implementação aqui: [https://first-party-test.glitch.me](ht
 
 {% endDetails %}
 
-## Analise o impacto do isolamento de origem cruzada {: #analysis}
+## Analise o impacto do isolamento de origem cruzada {: #analysis }
 
 Não seria ótimo se você pudesse avaliar o impacto que a ativação do isolamento de origem cruzada teria em seu site sem realmente quebrar nada? Os cabeçalhos HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) e [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) permitem que você faça exatamente isso.
 
