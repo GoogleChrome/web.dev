@@ -19,22 +19,22 @@ tags:
 
 In the spirit of December and the many calendars that folks use to countdown and celebrate, we wanted to highlight web content from the community and the Chrome team. Every day, we highlighted one piece of UI-development and design-related content, totaling 31 highlights, among which were 26 new demo sites, tools, announcements, podcasts, videos, articles, and case studies.
 
-See more at [designcember.com](https://designcember.com).
+See the full experience at [designcember.com](https://designcember.com).
 
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/v8kOpJVC6fygzllNjUpC.png", alt="The Designcember site.", width="800", height="1034" %}
 
 ## Overview
 
-Our goal was to deliver an accessible, whimsical, and modern responsive experience in as few bytes as possible. We wanted to highlight new responsive APIs like container queries, and include a beautiful example of a dark mode in a design-focused and asset-heavy web experience. To achieve this, we compressed files, offered multiple formats, used build tools optimized for static site generation, built a new polyfill, and more.
+Our goal was to deliver an accessible, whimsical, and modern responsive web experience in as few bytes as possible. We wanted to highlight new responsive APIs like container queries, and include a beautiful example of a dark mode in a design-focused and asset-heavy website. To achieve this, we compressed files, offered multiple formats, used build tools optimized for static site generation, shipped a new polyfill, and more.
 
 ## Starting with whimsy
 
-The idea around the Designcember calendar site was a responsive building with windows that rearranged themselves within the frame, and each represented one day (and thus, one piece of content). 
+The idea around the Designcember calendar site was to function as a showcase for all the work we wanted to spotlight throughout the month of December, while acting like a demo site itself. We decided to build a responsive apartment building that could get taller and more narrow, or shorter and wider, with windows that rearranged themselves within the frame. Each window represented one day (and thus, one piece of content). 
 We worked with illustrator [Alice Lee](https://www.byalicelee.com/) to bring our vision to life.
 
-{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/rO328nH0xEtVpwbXeYSi.jpg", alt="Sketches of the Designcember page.", width="800", height="618" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/rO328nH0xEtVpwbXeYSi.jpg", alt="Sketches of the Designcember page skeleton.", width="800", height="618" %}
 
-Alice was inspiring, sharing processes and sketches that were exciting even in their early concepts. While she hacked on the art, we hacked on the architecture. Early discussions were around the macro layout, the building, and its windows. How would the windows adapt to one, two, or three columns as more viewport space became available? How far could they shrink or stretch? What would the maximum size of the building be? How much would the windows shift?
+Alice was inspiring, sharing processes and sketches that were exciting even in their early concepts. While she worked on the art, we hacked on the architecture. Early discussions were around the macro layout, the building, and its windows. How would the windows adapt to one, two, or three columns as more viewport space became available? How far could they shrink or stretch? What would the maximum size of the building be? How much would the windows shift?
 
 Here's a preview of a responsive prototype using [`grid-auto-flow: dense`](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow) showing how windows could be auto placed by the grid algorithm. We quickly realized that while aspect-ratio grids performed beautifully to showcase art, they didn’t provide an opportunity to let the windows grow and shrink into non-uniform available space and showcase the power of container queries.
 
@@ -47,11 +47,12 @@ Here's a preview of a responsive prototype using [`grid-auto-flow: dense`](https
 
 Once the general grid was relatively stable and communicated a sense of direction for the responsiveness of the building and its windows, we could focus on a single window. Some windows stretched, shrank, squeezed, grew, and re-composed themselves more than others in the grid.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/29hlFRq9IjwpMayM3BCq.png", alt="Wireframes showing how the windows display at different breakpoints.", width="512", height="520" %}
+
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/iJWU8JYwUhpeXafZ434y.png", alt="Wireframes showing how the windows display at different breakpoints.", width="800", height="812" %}
 
 Each window would need to handle a certain amount of resize turbulence. Below is a prototype of a window demonstrating it's responsiveness to turbulence, showing how much we could expect each interactive window to adjust.
 
-TO DO: add animation
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/2F6S98FvsNhviuBvtJcI.mov", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
 ## Window animation with spritesheets
 
@@ -95,7 +96,7 @@ plus a little bit of knowledge about how masks on the web work. Let's look at th
 
 To become a mask, the inner four leaf clover type shape has to be isolated as its own shape, and the color white. White will tell CSS what content stays, and everything outside the white won't. In Photoshop, the inside of the window was selected, feathered 1px (to remove aliasing issues), then filled white and exported at the same height and width as the window frame. This way the frame and the mask could be layered directly on top of each other, showing the inner content within the frame as expected.
 
-TO DO: Image (the one from the Word doc downloaded as transparent)
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/Jm6F9q8T41Sf6riwNYS7.png", alt="Clover mask image", width="776", height="774", style="max-width: 400px; margin: 1em auto;" %}
 
 Once complete, the contents of the window could be modified and would always appear to stay within the custom frame. The following image shows the dark mode version of the window, with a different background gradient and a glow CSS filter applied to the light.
 
@@ -147,11 +148,11 @@ Much of the experience of Designcember is through the art and interactive window
 
 The following video shows a demo of the keyboard experience. Tab, enter, spacebar ,and escape keys are all used to orchestrate focus to and from the window popups and the windows.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/UYNJSy92FLABrsLgz0lz.mp4" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/UYNJSy92FLABrsLgz0lz.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
 The screen reader experience has special aria attributes that bring clarity to the content. For example, the links for the days only say "one" or "two", but with some added ARIA, they are announced as "Day 1" and "Day 2." Furthermore, all the images are summarized in a single label so each window has a description.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bKYH0xxOJkwh0RTMGuAG.mp4" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bKYH0xxOJkwh0RTMGuAG.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
 ## Astro, static first, component-driven site generator
 
@@ -175,7 +176,8 @@ As early adopters of Astro, we ran into a few snags with PostCSS. For example, w
 
 Some windows grow and shrink, maintaining [aspect ratio](/aspect-ratio) to preserve their art. We used some other windows to showcase the power of component-based architecture with container queries. Container queries meant windows could own their individual responsive styling information and readjust based on their own sizes. Some windows went from narrow to wide, and needed to adjust the size of the media within them and the placement of that media.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/HFsoBVDa1L7gJWIUEgko.png", alt="A demonstration of how the windows change as they have more space.", width="512", height="697" %}
+
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/ssFflPRQrTum3fbwkAWZ.png", alt="A demonstration of how the windows change as they have more space.", width="800", height="383" %}
 
 As more space becomes available for a window, we could adapt the size or child elements of the window to fit. Turned out that in order to fulfill the adaptive windows, container queries wouldn't just be fun to showcase, they'd be required and drastically simplify orchestrating certain layouts. 
 
@@ -229,7 +231,7 @@ Container queries also enabled us to support block-direction (vertical) containm
 
 We also used container queries to show and hide detail as the art became increasingly crowded at smaller sizes, and emptier at wider sizes. Window nine is a great example of where this came into play:
 
-{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/rXfci0RECfk5six1UTGv.mov" %}
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/rXfci0RECfk5six1UTGv.mov", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
 
 
 ## Cross-browser support
@@ -255,13 +257,15 @@ To enable a great modern cross-browser experience, especially for  experimental 
 
 One last touch that was essential for the Designcember website was a beautiful dark theme. We wanted to show how you could use art itself to be an active participant in creating a great dark mode experience. For this, we adjusted the background styles of each window itself programmatically, and used as much CSS as made sense when creating the window art. Most of the backgrounds were CSS gradients, so that it would be easier to adjust their color values. We then layered the art on top of these.
 
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/gBrdHzLwdDckE9pgxK5L.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+
 ## Other Easter Eggs
 
 ### Personal touches
 
-We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on disabled days.
+We added a few personal touches to the page to give the site more personality. The first was the cast of characters, drawn from inspiration from our team. We also included a throwback-style cursor on disabled days, and played around with the favicon style.
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/C46CellLCebw12aHmGsT.png", alt="Custom cursor styles", width="248", height="264", style="max-width: 248px; margin: 0 auto;" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/qjXfDOxsGXIIE57cXnyr.jpg", alt="Custom cursor styles and favicon options", width="800", height="408" %}
 
 ### Functional touches
 
@@ -276,4 +280,4 @@ Designcember.com also has a special print stylesheet where we’re essentially s
 
 All in all, a ton of work went into creating a fun, whimsical modern web experience to celebrate UI development all month long in December. We hope you enjoyed it!
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/CzH6QyvIhNFUUwcZnLch.jpg", alt="The calendar with annotations.", width="649", height="1999" %}
+{% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/aNlNdEYdk4t9yteQm8GK.jpg", alt="Parts of the calendar with annotations and visual notes", width="800", height="957" %}
