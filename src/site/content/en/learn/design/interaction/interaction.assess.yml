@@ -5,7 +5,7 @@ questions:
     cardinality: "1"
     correctAnswers: "0"
     stem: |
-      Instead of trying to infer a user's input type from screen size, use..?
+      Which feature should you use rather than trying to infer a user's input type from screen size?
     options:
       - content: "CSS media features"
         rationale: "Like `@media (pointer: coarse)` or `@media (-any-pointer: coarse)`"
@@ -19,11 +19,11 @@ questions:
     stem: |
       What is the difference between `@media (pointer)` and `@media (any-pointer)`?
     options:
-      - content: "Any pointer includes things like your finger as a pointer"
-        rationale: "Pointer already includes touch as an input type"
-      - content: "Pointers don't include things like a mouse"
+      - content: "Any pointer includes things like your finger as a pointer."
+        rationale: "Pointer already includes touch as an input type."
+      - content: "Pointers don't include things like a mouse."
         rationale: "Pointers do include a mouse as an input device."
-      - content: "Any pointer will report true when additional, none primary inputs, like a stylus, pass the test"
+      - content: "Any pointer will report true when additional, none primary inputs, like a stylus, pass the test."
         rationale: "`any-pointer` queries all device input types for any match."
   - type: multiple-choice
     cardinality: "1+"

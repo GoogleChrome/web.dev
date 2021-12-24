@@ -59,11 +59,11 @@ The `pointer` media feature reports the fineness of the *primary* input mechanis
 
 The `any-pointer` differs from the `pointer` media feature in that it reports if any pointing device passes the test.
 
-An `any-pointer` value of “none” means that no pointing device is available.
+An `any-pointer` value of `none` means that no pointing device is available.
 
-An `any-pointer` value of “coarse” means that at least one pointing device is not very accurate. But that might not be the primary input mechanism.
+An `any-pointer` value of `coarse` means that at least one pointing device is not very accurate. But that might not be the primary input mechanism.
 
-An `any-pointer` value of “fine” means that at least one pointing device is capable of fine-grained control. But again, this might not be the primary input mechanism.
+An `any-pointer` value of `fine` means that at least one pointing device is capable of fine-grained control. But again, this might not be the primary input mechanism.
 
 Because the `any-pointer` media query will report a positive result if *any* of the input mechanisms pass the test, it’s possible for a browser to report a result for `any-pointer: fine` and also report a result for `any-pointer: coarse`. In that case the order of your media queries matters. The last one will take precedence.
 
@@ -105,8 +105,8 @@ button .extra {
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'eYERVGN',
+ user: 'web-dot-dev',
+ id: 'VwMrYav',
  height: 200,
  theme: 'dark',
  tab: 'result'
@@ -129,8 +129,8 @@ button .extra {
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'JjyJpaJ',
+ user: 'web-dot-dev',
+ id: 'LYzOEZE',
  height: 200,
  theme: 'dark',
  tab: 'result'
@@ -162,8 +162,8 @@ button:focus .extra {
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'BadZYeE',
+ user: 'web-dot-dev',
+ id: 'Bawmyzd',
  height: 200,
  theme: 'dark',
  tab: 'result'
@@ -202,8 +202,8 @@ Unlike a physical keyboard, virtual keyboards can be tailored to match the expec
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'VwzWdRX',
+ user: 'web-dot-dev',
+ id: 'zYEPxBX',
  height: 400,
  theme: 'dark',
  tab: 'html, result'
@@ -230,8 +230,8 @@ If you’re asking for a number that includes decimal places, like a price, use 
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'GRvEXKp',
+ user: 'web-dot-dev',
+ id: 'mdBqyrO',
  height: 300,
  theme: 'dark',
  tab: 'html, result'
@@ -259,8 +259,8 @@ Nobody likes filling in forms. As a designer, you can improve the experience for
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'LYjLJpo',
+ user: 'web-dot-dev',
+ id: 'oNGogYX',
  height: 400,
  theme: 'dark',
  tab: 'html, result'
@@ -270,6 +270,6 @@ Nobody likes filling in forms. As a designer, you can improve the experience for
 
 These HTML attributes—`type`, `inputmode`, and `autocomplete`—are small additions to your form fields, but they can make a big difference to the user experience. By anticipating and responding to your user’s device capabilities, you are empowering your users. For more in-depth information, there’s a course dedicated to helping you [learn forms](/learn/forms/).
 
-Next up in this course, it’s time to examine some common interface patterns.
+Next up in this course, it’s time to examine some [common interface patterns](/learn/design/ui-patterns/).
 
 {% Assessment 'interaction' %}
