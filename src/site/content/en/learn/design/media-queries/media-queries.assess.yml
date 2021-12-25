@@ -43,7 +43,7 @@ questions:
         rationale: "Try again!"
       - content: "`font-size: 200%`"
         rationale: "Try again!"
-      - content: '`<meta name="viewport" value="width=device-width, initial-scale=1">`'
+      - content: '`<meta name="viewport" content="width=device-width, initial-scale=1">`'
         rationale: "🎉"
       - content: "Media Queries"
         rationale: "Try again!"

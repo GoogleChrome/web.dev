@@ -214,7 +214,7 @@ If you're using responsive design you need to tell the browser not to do that sc
 You can do that with a `meta` element in the `head` of the web page:
 
 ```html
-<meta name="viewport" value="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 There are two values, separated by commas. 
