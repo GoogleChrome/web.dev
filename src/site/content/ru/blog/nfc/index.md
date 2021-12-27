@@ -481,8 +481,8 @@ function readMimeRecord(record) {
 Создать запись с MIME-типом можно, передав в метод `write()` объекта NDEFReader
 словарь с NDEF-сообщением. Запись с MIME-типом в NDEF-сообщении определяется как объект, у которого
 ключ `recordType` имеет значение `"mime"`, `mediaType` — MIME-тип
-контента, а `data` — объект, либо являющийся объектом `ArrayBuffer`,
-либо предоставляющий представление для `ArrayBuffer` (например,
+контента, а `data` — либо объект `ArrayBuffer`,
+либо его представление (например,
 `Uint8Array`, `DataView`).
 
 ```js
