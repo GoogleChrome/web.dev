@@ -30,7 +30,7 @@ tags:
 {% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Панель «Сеть» (Network) с запросом пакета", width="800", height="169", class="w-screenshot" %}
 
 Вкладка [Покрытие](https://developer.chrome.com/docs/devtools/coverage/)
-(Coverage) в DevTools также сообщает, сколько CSS- и JS-кода в приложении
+(Coverage) в DevTools также сообщает, какое количество CSS- и JS-кода в приложении
 не используется.
 
 {% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Покрытие кода в DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
