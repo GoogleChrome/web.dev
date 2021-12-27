@@ -1,6 +1,6 @@
 ---
 layout: post-old
-title: Как избежать множественной переадресации страниц
+title: Как избежать множественной переадресации страницы
 description: |
   Почему переадресация страниц снижает скорость загрузки веб-страницы и как этого избежать.
 web_lighthouse:
@@ -54,6 +54,6 @@ Location: /путь/к/новому/местоположению
 
 ## Материалы
 
-- [Исходный код для аудита **Avoid multiple page redirects** (Избегайте множественной переадресации страниц)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js).
+- [Исходный код для аудита **Избежание множественной переадресации страниц** (Avoid multiple page redirects)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js).
 - [Переадресация в HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections).
 - [Avoid Landing Page Redirects (Избегайте переадресации целевой страницы)](https://developers.google.com/speed/docs/insights/AvoidRedirects).
