@@ -37,7 +37,7 @@ As causas mais comuns de uma LCP ruim são:
 - [Tempos lentos de carregamento de recursos](#slow-resource-load-times)
 - [Renderização do lado do cliente](#client-side-rendering)
 
-## Tempos de resposta lentos do servidor { :#slow-servers }
+## Tempos de resposta lentos do servidor {: #slow-servers }
 
 Quanto mais tempo leva para um navegador receber conteúdo do servidor, mais tempo leva para processar qualquer coisa na tela. Um tempo de resposta mais rápido do servidor melhora diretamente cada métrica de carregamento de página, incluindo a LCP.
 
@@ -69,7 +69,7 @@ Se o seu HTML é estático e não precisa ser alterado a cada solicitação, o a
 Há muitas alternativas diferentes de usar cache no servidor; a escolha depende do seu toolchain:
 
 - Configuração de proxies reversos ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) para servir conteúdo em cache ou atuar como um servidor de cache quando instalado na frente de um servidor de aplicação
-- Configuração e gerenciamento do comportamento do cache do seu provedor de nuvem ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching)
+- Configuração e gerenciamento do comportamento do cache do seu provedor de nuvem ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/azure/architecture/best-practices/caching)
 - Uso de um CDN que forneça servidores de edge para que seu conteúdo seja armazenado em cache e fique mais perto de seus usuários
 
 ### Servindo páginas HTML usando cache-first
@@ -218,7 +218,7 @@ Isto pode ser feito otimizando seus scripts de maneiras diferentes:
 
 {% Aside %} O guia [Otimize a First Input Delay](/optimize-fid/) explora todas as técnicas necessárias para reduzir o tempo de bloqueio do JavaScript em mais detalhes. {% endAside %}
 
-## Tempos de carregamento de recursos lentos { :#slow-resource-load-times }
+## Tempos de carregamento de recursos lentos {: #slow-resource-load-times }
 
 Embora um aumento no tempo de bloqueio do CSS ou JavaScript resulte diretamente em pior desempenho, o tempo que leva para carregar vários outros tipos de recursos também pode afetar os tempos de renderização. Os tipos de elementos que afetam a LCP são:
 
@@ -343,7 +343,7 @@ O pré-cache de recursos críticos usando um service worker pode reduzir seus te
 
 {% Aside %} Dê uma olhada em [Confiabilidade da rede](/reliable/) para aprender mais sobre service workers e o Workbox. {% endAside %}
 
-## Renderização lado-cliente { :#client-side-rendering }
+## Renderização lado-cliente {: #client-side-rendering }
 
 Muitos sites usam lógica JavaScript do lado do cliente para renderizar páginas diretamente no navegador. Frameworks e bibliotecas, como [React](https://reactjs.org/), [Angular](https://angular.io/) e [Vue](https://vuejs.org/), facilitaram a construção de aplicações de página única (SLA) que lidam com diferentes facetas de uma página web inteiramente no cliente, e não no servidor.
 
