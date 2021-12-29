@@ -67,7 +67,7 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
 
 {% endDetails %}
 
-## クロスオリジンアイソレーションの影響を分析する{: #analysis }
+## クロスオリジンアイソレーションの影響を分析する{：#analysis}
 
 クロスオリジンアイソレーションを有効にすることがサイトに与える影響を何も破損せずに評価できたら非常に便利だと思いませんか？[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) および [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) ヘッダーを使用すると、それを実際に行うことができます。
 
