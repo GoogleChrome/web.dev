@@ -5,13 +5,9 @@ authors:
   - robdodson
 date: 2018-11-18
 description: |2-
-
   Para que um leitor de tela apresente uma IU falada ao usuário,
-
   os elementos devem ter rótulos adequados ou alternativas de texto. Um rótulo ou texto
-
   alternativa proporciona a um elemento seu nome acessível, uma das propriedades-chave
-
   para expressar a semântica do elemento na árvore de acessibilidade.
 ---
 

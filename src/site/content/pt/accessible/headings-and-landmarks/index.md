@@ -5,9 +5,7 @@ authors:
   - robdodson
 date: 2018-11-18
 description: |2-
-
   Usando os elementos corretos para títulos e pontos de referência, você pode
-
   melhorar expressivamente a experiência de navegação para usuários de tecnologia assistiva.
 ---
 
