@@ -43,7 +43,7 @@ Si no tiene un proveedor del RUM, puede aumentar su configuración de análisis 
 
 ### Biblioteca de JavaScript web-vitals
 
-Si está implementando su propia configuración del RUM para Web Vitals, la forma más sencilla de recoger las medidas de los Web Vitals es utilizar la Biblioteca de JavaScript {[`web-vitals`](https://github.com/GoogleChrome/web-vitals). `web-vitals` es una biblioteca pequeña y modular (~1KB) que proporciona una API conveniente para recopilar y reportar cada una de las [medidas de campo](/user-centric-performance-metrics/#in-the-field) en Web Vitals.
+Si está implementando su propia configuración del RUM para Web Vitals, la forma más sencilla de recoger las medidas de los Web Vitals es utilizar la Biblioteca de JavaScript [`web-vitals`](https://github.com/GoogleChrome/web-vitals). `web-vitals` es una biblioteca pequeña y modular (~1KB) que proporciona una API conveniente para recopilar y reportar cada una de las [medidas de campo](/user-centric-performance-metrics/#in-the-field) en Web Vitals.
 
 Las métricas que componen Web Vitals no están expuestas directamente por las API de rendimiento integradas en el navegador, sino que se crearon sobre ellas. Por ejemplo, [Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS)](/cls/) se implementa utilizando la [API Layout Instability](https://wicg.github.io/layout-instability/). Al utilizar `web-vitals`, no necesita preocuparse de implementar estas métricas usted mismo. Además, garantiza que los datos que recopila coinciden con la metodología y las prácticas recomendadas para cada métrica.
 

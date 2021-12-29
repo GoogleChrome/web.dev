@@ -15,7 +15,7 @@ tags:
 
 ¡Hoy estamos lanzamos Lighthouse 6.0!
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse/) es una herramienta automatizada de auditoría de sitios web que ayuda a los desarrolladores con oportunidades y diagnósticos para mejorar la experiencia del usuario de sus sitios. Está disponible en Chrome DevTools, npm (como módulo de nodo y como CLI) o como extensión del navegador (en [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) y [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)). Es la [base](/measure/) de muchos servicios de Google, incluyendo web.dev/measure y [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[Lighthouse](https://github.com/GoogleChrome/lighthouse/) es una herramienta automatizada de auditoría de sitios web que ayuda a los desarrolladores con oportunidades y diagnósticos para mejorar la experiencia del usuario de sus sitios. Está disponible en Chrome DevTools, npm (como módulo de nodo y como CLI) o como extensión del navegador (en [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) y [Firefox](https://addons.mozilla.org/firefox/addon/google-lighthouse/)). Es la [base](/measure/) de muchos servicios de Google, incluyendo web.dev/measure y [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
 
 Lighthouse 6.0 está disponible inmediatamente en npm y en [Chrome Canary](https://www.google.com/chrome/canary/). Otros servicios de Google que aprovechan Lighthouse recibirán la actualización a fin de mes. Llegará a Chrome Stable en Chrome 84 (mediados de julio).
 
@@ -269,7 +269,7 @@ En lugar de ejecutar Lighthouse localmente, la extensión ahora usa la [API de P
 - No se garantiza que PageSpeed Insights utilice la última versión de Lighthouse. Si desea utilizar la última versión, use Node CLI. La extensión del navegador se actualizará entre 1 y 2 semanas después del lanzamiento.
 - PageSpeed Insights es una API de Google, su uso constituye la aceptación de los Términos de servicio de la API de Google. Si no desea o no puede aceptar los términos del servicio, utilice el panel DevTools **Lighthouse** o Node CLI.
 
-La buena noticia es que simplificar la historia del producto nos permitió centrarnos en otros problemas de ingeniería. Como resultado, lanzamos la [extensión Lighthouse para Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/).
+La buena noticia es que simplificar la historia del producto nos permitió centrarnos en otros problemas de ingeniería. Como resultado, lanzamos la [extensión Lighthouse para Firefox](https://addons.mozilla.org/firefox/addon/google-lighthouse/).
 
 ## Presupuestos {: #budgets }
 

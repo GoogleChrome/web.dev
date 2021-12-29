@@ -68,7 +68,7 @@ Si su HTML es estática y no necesita cambiar en cada solicitud, el almacenamien
 Dependiendo de su cadena de herramientas, hay muchas maneras diferentes de aplicar el almacenamiento en el caché del servidor:
 
 - Configure proxies inversos ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) para publicar contenido en el caché o actuar como un servidor del caché cuando se instala frente a un servidor de aplicaciones
-- Configure y administre el comportamiento del caché de su proveedor en la nube ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching))
+- Configure y administre el comportamiento del caché de su proveedor en la nube ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/azure/architecture/best-practices/caching))
 - Utilice una CDN que proporcione servidores perimetrales para que su contenido se almacene en el caché y esté más cerca de sus usuarios
 
 ### Publicar las páginas HTML en cache-first

@@ -59,7 +59,7 @@ Instrucciones:
 
 - [NGINX](https://www.nginx.com/blog/rate-limiting-nginx/)
 - [HAProxy](https://www.haproxy.com/blog/four-examples-of-haproxy-rate-limiting/)
-- [Microsoft IIS](https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/limits)
+- [Microsoft IIS](https://docs.microsoft.com/iis/configuration/system.applicationhost/sites/site/limits)
 
 Otras lecturas:
 
@@ -88,7 +88,7 @@ Instrucciones:
 
 - [NGINX](http://nginx.org/en/docs/http/ngx_http_headers_module.html)
 - [apache](http://httpd.apache.org/docs/current/mod/mod_expires.html)
-- [Microsoft](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/staticcontent/clientcache)
+- [Microsoft](https://docs.microsoft.com/iis/configuration/system.webserver/staticcontent/clientcache)
 
 Nota: `max-age` es solo una de las muchas directivas de almacenamiento en caché. Hay muchas otras directivas y encabezados que afectarán el comportamiento de almacenamiento en caché de tu aplicación. Para obtener una explicación más detallada de la estrategia de almacenamiento en caché, se recomienda encarecidamente que leas [Almacenamiento en caché HTTP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
 
@@ -136,9 +136,9 @@ Para investigar más a fondo, utiliza una herramienta de monitorización para ev
 
 #### Reparar
 
-Agregar un equilibrador de carga permite distribuir el tráfico entre varios servidores. Un equilibrador de carga se encuentra frente a un grupo de servidores y enruta el tráfico al servidor adecuado. Los proveedores de la nube ofrecen sus propios equilibradores de carga ([GCP](https://cloud.google.com/load-balancing), [AWS](https://aws.amazon.com/elasticloadbalancing/), [Azure](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview)) o puedes configurar los tuyos propios utilizando [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts) o [NGINX](http://nginx.org/en/docs/http/load_balancing.html). Una vez que se haya implementado un equilibrador de carga, se pueden agregar servidores adicionales.
+Agregar un equilibrador de carga permite distribuir el tráfico entre varios servidores. Un equilibrador de carga se encuentra frente a un grupo de servidores y enruta el tráfico al servidor adecuado. Los proveedores de la nube ofrecen sus propios equilibradores de carga ([GCP](https://cloud.google.com/load-balancing), [AWS](https://aws.amazon.com/elasticloadbalancing/), [Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)) o puedes configurar los tuyos propios utilizando [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts) o [NGINX](http://nginx.org/en/docs/http/load_balancing.html). Una vez que se haya implementado un equilibrador de carga, se pueden agregar servidores adicionales.
 
-Además del equilibrio de carga, la mayoría de los proveedores de la nube ofrecen un ajuste de escala automático ([GCP](https://cloud.google.com/compute/docs/load-balancing-and-autoscaling), [AWS](https://docs.aws.amazon.com/ec2/index.html), [Azure](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/autoscale-overview)). El ajuste de escala automático funciona junto con el equilibrio de carga: el ajuste de escala automático aumenta y disminuye automáticamente los recursos informáticos en función de la demanda en un momento dado. Este proceso no es mágico: requiere una configuración significativa y se necesita tiempo para que las nuevas instancias se conecten. Debido a la complejidad adicional que conlleva el ajuste de escala automático, primero se debe considerar una configuración más simple basada en el balanceador de carga.
+Además del equilibrio de carga, la mayoría de los proveedores de la nube ofrecen un ajuste de escala automático ([GCP](https://cloud.google.com/compute/docs/load-balancing-and-autoscaling), [AWS](https://docs.aws.amazon.com/ec2/index.html), [Azure](https://docs.microsoft.com/azure/azure-monitor/platform/autoscale-overview)). El ajuste de escala automático funciona junto con el equilibrio de carga: el ajuste de escala automático aumenta y disminuye automáticamente los recursos informáticos en función de la demanda en un momento dado. Este proceso no es mágico: requiere una configuración significativa y se necesita tiempo para que las nuevas instancias se conecten. Debido a la complejidad adicional que conlleva el ajuste de escala automático, primero se debe considerar una configuración más simple basada en el balanceador de carga.
 
 ### Habilitar la compresión
 
@@ -154,7 +154,7 @@ Habilita la compresión actualizando la configuración de tu servidor. Instrucci
 
 - [NGINX](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 - [apache](https://httpd.apache.org/docs/trunk/mod/mod_deflate.html)
-- [Microsoft](https://docs.microsoft.com/en-us/iis/extensions/iis-compression/iis-compression-overview)
+- [Microsoft](https://docs.microsoft.com/iis/extensions/iis-compression/iis-compression-overview)
 
 ### Optimizar imágenes y medios
 
@@ -224,11 +224,11 @@ Las alertas deben usar métricas que detecten problemas de manera consistente y 
 
 ### Reparar
 
-Todos los principales proveedores de nube ofrecen sus propias herramientas de monitoreo ([GCP](https://codelabs.developers.google.com/codelabs/cloud-monitoring-alerting/index.html?index=..%2F..index), [AWS](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitoring-system-instance-status-check.html), [Azure](https://docs.microsoft.com/en-us/azure/azure-monitor/)). Además, [Netdata](https://github.com/topics/monitoring) es una excelente alternativa gratuita y de código abierto. Independientemente de la herramienta que elijas, deberás instalar el agente de monitoreo de la herramienta en cada servidor que desees supervisar. Una vez completado, asegúrate de configurar las alertas.
+Todos los principales proveedores de nube ofrecen sus propias herramientas de monitoreo ([GCP](https://codelabs.developers.google.com/codelabs/cloud-monitoring-alerting/index.html?index=..%2F..index), [AWS](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitoring-system-instance-status-check.html), [Azure](https://docs.microsoft.com/azure/azure-monitor/)). Además, [Netdata](https://github.com/topics/monitoring) es una excelente alternativa gratuita y de código abierto. Independientemente de la herramienta que elijas, deberás instalar el agente de monitoreo de la herramienta en cada servidor que desees supervisar. Una vez completado, asegúrate de configurar las alertas.
 
 Instrucciones:
 
 - [GCP](https://cloud.google.com/monitoring/alerts)
 - [AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html)
-- [Azur](https://docs.microsoft.com/en-us/azure/azure-monitor/app/alerts)
+- [Azur](https://docs.microsoft.com/azure/azure-monitor/app/alerts)
 - [Netdata](https://docs.netdata.cloud/health/)
