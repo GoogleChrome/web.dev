@@ -2,7 +2,7 @@
 title: Изучайте CSS
 authors:
   - andybell
-description: "Постоянно обновляемый курс и справочник по CSS для повышения вашего уровня знаний в сфере веб-дизайна."
+description: Постоянно обновляемый курс и справочник по CSS для повышения вашего уровня знаний в сфере веб-дизайна.
 date: 2021-05-04
 tags:
   - css
@@ -21,10 +21,8 @@ tags:
 
 Изучаемые темы:
 
-{# Commented out as this breaks the build for localized pages
 {% include 'partials/course-index.njk' %}
-#}
 
 Итак, вы готовы изучить CSS? [Приступим](/learn/css/box-model/).
 
-{% Aside %} Этот курс написан и отредактирован экспертами сообщества CSS: <a href="https://twitter.com/piccalilli_">Энди Беллом</a>, <a href="https://twitter.com/rachelandrew">Рэйчел Эндрю</a>, <a href="https://twitter.com/Una">Уной Кравец</a> и <a href="https://twitter.com/argyleink">Адамом Аргайлом</a>. [Роб Додсон](https://twitter.com/twerske) и [Дживун Ли](https://twitter.com/camdenbickel) руководили UX и производственной сборкой, им также помогали [Ева Гасперович](https://twitter.com/KevinLozandier) и <a href="https://twitter.com/rob_dodson">Кейси Баски</a>. {% endAside %}
+{% Aside %} Этот курс написан и отредактирован экспертами сообщества CSS: <a href="https://twitter.com/piccalilli_">Энди Беллом</a>, <a href="https://twitter.com/rachelandrew">Рэйчел Эндрю</a>, <a href="https://twitter.com/Una">Уной Кравец</a>, <a href="https://twitter.com/argyleink">Адамом Аргайлом</a>, [Эммой Тверски](https://twitter.com/twerske), [Кэмден Бикель](https://twitter.com/camdenbickel) и [Кевином Лозандье](https://twitter.com/KevinLozandier). <a href="https://twitter.com/rob_dodson">Роб Додсон</a> и <a href="https://twitter.com/jiwoong">Дживун Ли</a> руководили UX и производственной сборкой, им также помогали <a href="https://twitter.com/devnook">Ева Гасперович</a> и <a href="https://twitter.com/kaycebasques">Кейси Баски</a>. {% endAside %}

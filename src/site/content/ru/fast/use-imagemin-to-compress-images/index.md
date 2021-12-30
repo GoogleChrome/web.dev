@@ -36,7 +36,7 @@ tags:
 
 Запустите Lighthouse и проверьте, нет ли возможностей сжать изображения и тем самым ускорить загрузку страницы. Такие возможности будут указаны в разделе Efficiently encode images (Эффективное кодирование изображений):
 
-{% Img src="image/admin/LnIukPEZHuVJwBtuJ7mc.png", alt="image", width="800", height="552" %}
+{% Img src="image/admin/LnIukPEZHuVJwBtuJ7mc.png", alt="Изображение", width="800", height="552" %}
 
 {% Aside %} В настоящее время Lighthouse проверяет, можно ли сжать изображения, только для формата JPEG. {% endAside %}
 
