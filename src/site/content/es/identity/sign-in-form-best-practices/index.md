@@ -54,7 +54,7 @@ El siguiente es un ejemplo de un formulario de inicio de sesión simple que mues
 
 También hay dos API relativamente nuevas que no se tratan en este artículo, que pueden ayudarlo a crear una mejor experiencia de inicio de sesión:
 
-- [**WebOTP: **](/web-otp/) para enviar códigos de acceso de un solo uso o números PIN a través de SMS a teléfonos móviles. Esto puede permitirles a los usuarios seleccionar un número de teléfono como identificador (¡no es necesario ingresar una dirección de correo electrónico!). Además, también habilita la verificación en dos pasos para el inicio de sesión y los códigos de un solo uso para la confirmación del pago.
+- [**WebOTP:**](/web-otp/) para enviar códigos de acceso de un solo uso o números PIN a través de SMS a teléfonos móviles. Esto puede permitirles a los usuarios seleccionar un número de teléfono como identificador (¡no es necesario ingresar una dirección de correo electrónico!). Además, también habilita la verificación en dos pasos para el inicio de sesión y los códigos de un solo uso para la confirmación del pago.
 - [**Gestión de credenciales**](https://developers.google.com/web/updates/2016/04/credential-management-api): para permitir que los desarrolladores almacenen y recuperen las credenciales de contraseña y credenciales federadas mediante programación. {% endAside %}
 
 ## Utilice HTML significativo {: #meaningful-html }

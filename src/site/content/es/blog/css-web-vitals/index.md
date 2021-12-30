@@ -212,7 +212,7 @@ La auditoría Lighthouse de "Evitar animaciones no compuestas" puede ser útil p
 
 {% Aside 'caution' %}
 
-La auditoría Lighthouse de "Evitar animaciones no compuestas" solo identifica *animaciones CSS * que no funcionan; Las animaciones controladas por JavaScript (por ejemplo, usando [`setInterval()`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) para "animar" un elemento) son malas para el rendimiento, pero esta auditoría no las marcará.
+La auditoría Lighthouse de "Evitar animaciones no compuestas" solo identifica *animaciones CSS* que no funcionan; Las animaciones controladas por JavaScript (por ejemplo, usando [`setInterval()`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) para "animar" un elemento) son malas para el rendimiento, pero esta auditoría no las marcará.
 
 {% endAside %}
 
