@@ -22,7 +22,7 @@ Para ver una demostración funcional de algunos de estos patrones, consulte [Tra
 
 Service Worker ofrece un evento `install`. Puede utilizarlo para preparar cosas, como aquellas que deben estar listas antes de manejar otros eventos. Mientras esto ocurre, cualquier versión anterior de su Service Worker continúa ejecutando y sirviendo páginas, por lo que las cosas que haga aquí no interrumpirán nada de eso.
 
-**Ideal para:** CSS, imágenes, fuentes, JS, plantillas ... básicamente cualquier cosa que consideres estática para esa "versión" de tu sitio.
+**Ideal para:** CSS, imágenes, fuentes, JS, plantillas … básicamente cualquier cosa que consideres estática para esa "versión" de tu sitio.
 
 Se trata de cosas que harían que su sitio no funcionara en absoluto si no se pueden recuperar, cosas que una aplicación específica de la plataforma equivalente incluiría en la descarga inicial.
 
@@ -73,7 +73,7 @@ self.addEventListener('install', function (event) {
 
 El ejemplo anterior no pasa `cache.addAll` para los niveles 11–20 a `event.waitUntil`, por lo que incluso si falla, el juego seguirá estando disponible sin conexión. Por supuesto, tendrá que cuidar de la posible ausencia de esos niveles y volver a intentar almacenarlos en caché si no están disponibles.
 
-El Service Worker puede finalizar mientras se descargan los niveles 11 a 20, ya que ha terminado de manejar los eventos, lo que significa que no se almacenarán en caché. En el futuro, la [API de sincronización en segundo plano](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API) se encargará de casos como este y de descargas más grandes, como películas. Actualmente, esa API solo es compatible con las bifurcaciones de Chromium.
+El Service Worker puede finalizar mientras se descargan los niveles 11 a 20, ya que ha terminado de manejar los eventos, lo que significa que no se almacenarán en caché. En el futuro, la [API de sincronización en segundo plano](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API) se encargará de casos como este y de descargas más grandes, como películas. Actualmente, esa API solo es compatible con las bifurcaciones de Chromium.
 
 ### Al activar {: #on-activate}
 
@@ -134,7 +134,7 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 });
 ```
 
-La [API de cachés](https://developer.mozilla.org/en-US/docs/Web/API/Cache) está disponible tanto en las páginas como en los service workers, lo que significa que no es necesario involucrar a este último para agregar cosas al caché.
+La [API de cachés](https://developer.mozilla.org/docs/Web/API/Cache) está disponible tanto en las páginas como en los service workers, lo que significa que no es necesario involucrar a este último para agregar cosas al caché.
 
 ### Cuando la red responde {: #on-network-response}
 
@@ -262,7 +262,7 @@ self.addEventListener('sync', function (event) {
 
 ## Persistencia en caché {: #cache-persistence }
 
-Su origen tiene una cierta cantidad de espacio libre para hacer lo que quiera. Ese espacio libre se comparte entre todo el almacenamiento de origen: [almacenamiento (local)](https://developer.mozilla.org/en-US/docs/Web/API/Storage), [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB), [acceso al sistema de archivos](/file-system-access/) y, por supuesto, las [cachés](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
+Su origen tiene una cierta cantidad de espacio libre para hacer lo que quiera. Ese espacio libre se comparte entre todo el almacenamiento de origen: [almacenamiento (local)](https://developer.mozilla.org/docs/Web/API/Storage), [IndexedDB](https://developer.mozilla.org/docs/Glossary/IndexedDB), [acceso al sistema de archivos](/file-system-access/) y, por supuesto, las [cachés](https://developer.mozilla.org/docs/Web/API/Cache).
 
 La cantidad de almacenamiento que recibe no está especificada. Varía según el dispositivo y las condiciones de almacenamiento. Puede averiguar cuánto tiene a través de:
 
@@ -277,7 +277,7 @@ navigator.storageQuota.queryInfo('temporary').then(function (info) {
 
 Sin embargo, al igual que todo el almacenamiento del navegador, el navegador tiene la libertad de despejar sus datos si el dispositivo está con almacenamiento limitado. Desafortunadamente, el navegador no puede distinguir entre las películas que desea conservar a cualquier costo y el juego que no le importa en lo más mínimo.
 
-[Para solucionar](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) este problema, utilice la interfaz StorageManager:
+[Para solucionar](https://developer.mozilla.org/docs/Web/API/StorageManager) este problema, utilice la interfaz StorageManager:
 
 ```js
 // From a page:
@@ -496,7 +496,7 @@ self.addEventListener('fetch', function (event) {
 });
 ```
 
-Es probable que el elemento al que recurra sea una [ dependencia de instalación (install dependency)](#on-install-as-dependency).
+Es probable que el elemento al que recurra sea una [dependencia de instalación (install dependency)](#on-install-as-dependency).
 
 Si su página está publicando un correo electrónico, el Service Worker puede recurrir a almacenar el correo electrónico en una 'bandeja de salida' IndexedDB y responder informando a la página que el envío falló, pero que los datos se guardaron correctamente.
 
@@ -506,7 +506,7 @@ Si su página está publicando un correo electrónico, el Service Worker puede r
 
 **Ideal para:** páginas que no pueden almacenar la respuesta del servidor en caché.
 
-[La representación de páginas en el servidor agiliza](https://jakearchibald.com/2013/progressive-enhancement-is-faster/), pero puede incluir datos de estado que pueden no tener sentido en la caché, por ejemplo, "Conectado como...". Si su página es controlada por un Service Worker, puede optar por solicitar datos JSON junto con una plantilla y representarlos en vez de ello.
+[La representación de páginas en el servidor agiliza](https://jakearchibald.com/2013/progressive-enhancement-is-faster/), pero puede incluir datos de estado que pueden no tener sentido en la caché, por ejemplo, "Conectado como…". Si su página es controlada por un Service Worker, puede optar por solicitar datos JSON junto con una plantilla y representarlos en vez de ello.
 
 ```js
 importScripts('templating-engine.js');
@@ -595,7 +595,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Creditos
 
-... por los encantadores íconos:
+… por los encantadores íconos:
 
 - [Code](http://thenounproject.com/term/code/17547/) de buzzyrobot
 - [Calendar](http://thenounproject.com/term/calendar/4672/) de Scott Lewis

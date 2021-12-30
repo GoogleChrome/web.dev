@@ -130,7 +130,7 @@ Debe agregar un ícono o botón **Mostrar la contraseña** para permitir que los
 
 ## Ofrezca el teclado adecuado a los usuarios de dispositivos móviles {: #mobile-keyboards }
 
-Utilice `<input type="email">` para brindarles a los usuarios de dispositivos móviles un teclado adecuado y habilitar la validación básica de direcciones de correo electrónico incorporada mediante el navegador... ¡No se requiere JavaScript!
+Utilice `<input type="email">` para brindarles a los usuarios de dispositivos móviles un teclado adecuado y habilitar la validación básica de direcciones de correo electrónico incorporada mediante el navegador… ¡No se requiere JavaScript!
 
 Si necesita utilizar un número de teléfono en lugar de una dirección de correo electrónico, `<input type="tel">` habilita un teclado telefónico en el móvil. También puede utilizar el atributo `inputmode` cuando sea necesario: `inputmode="numeric"` es ideal para números PIN. Puede encontrar más detalles en [Todo lo que siempre quiso saber sobre el modo de entrada](https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/).
 

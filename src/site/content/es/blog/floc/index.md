@@ -131,7 +131,7 @@ Cada proveedor de navegadores deberá tomar su propia decisión sobre cómo agru
 
 ## ¿Puede cambiar la cohorte de un navegador?
 
-¡*Sí!*! ¡La cohorte de un navegador definitivamente puede cambiar! Probablemente no visites los mismos sitios web todas las semanas, y la cohorte de tu navegador lo reflejará.
+¡*Sí!*! ¡La cohorte de un navegador definitivamente puede cambiar. Probablemente no visites los mismos sitios web todas las semanas, y la cohorte de tu navegador lo reflejará.
 
 Una cohorte representa un grupo de actividad de navegación, no una colección de personas. Las características de actividad de una cohorte son generalmente consistentes a lo largo del tiempo, y las cohortes son útiles para la selección de anuncios porque agrupan comportamientos similares de navegación recientes. Los navegadores de las personas individuales entrarán y saldrán de una cohorte a medida que cambie su comportamiento de navegación. Inicialmente, esperamos que el navegador vuelva a calcular su cohorte cada siete días.
 

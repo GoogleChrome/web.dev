@@ -18,7 +18,7 @@ tags:
 
 {% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Origin", width="680", height="100" %}
 
-"Origin (Origen)"  es una combinación de un [esquema](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol) (también conocido como [protocolo](https://developer.mozilla.org/en-US/docs/Glossary/Protocol), por ejemplo [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) o [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)), [nombre de host](https://en.wikipedia.org/wiki/Hostname) y [puerto](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port) (si se especifica). Por ejemplo, dada una URL de `https://www.example.com:443/foo`, el "origen" es `https://www.example.com:443`.
+"Origin (Origen)"  es una combinación de un [esquema](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol) (también conocido como [protocolo](https://developer.mozilla.org/docs/Glossary/Protocol), por ejemplo [HTTP](https://developer.mozilla.org/docs/Glossary/HTTP) o [HTTPS](https://developer.mozilla.org/docs/Glossary/HTTPS)), [nombre de host](https://en.wikipedia.org/wiki/Hostname) y [puerto](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port) (si se especifica). Por ejemplo, dada una URL de `https://www.example.com:443/foo`, el "origen" es `https://www.example.com:443`.
 
 ### "same-origin" y "cross-origin" {: #same-origin-and-cross-origin }
 

@@ -87,7 +87,7 @@ Encabezado de respuesta:
 
 `Content-Security-Policy-Report-Only: default-src https: 'unsafe-inline' 'unsafe-eval'; report-uri https://example.com/reportingEndpoint`
 
-{% Aside %} El encabezado de respuesta [report-uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) se está dejando de soportar en favor de [report-to](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to). La compatibilidad del navegador con `report-to` se limita actualmente a Chrome y Edge. Puede proporcionar ambos encabezados, en cuyo caso `report-uri` se ignorará si el navegador admite `report-to`. {% endAside %}
+{% Aside %} El encabezado de respuesta [report-uri](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) se está dejando de soportar en favor de [report-to](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to). La compatibilidad del navegador con `report-to` se limita actualmente a Chrome y Edge. Puede proporcionar ambos encabezados, en cuyo caso `report-uri` se ignorará si el navegador admite `report-to`. {% endAside %}
 
 Cada vez que un usuario visita una página de su sitio, su navegador envía informes en formato JSON a `https://example.com/reportingEndpoint` sobre cualquier cosa que viole la política de seguridad de contenido. En este caso, cada vez que se carga un recurso secundario a través de HTTP, se envía un informe. Estos informes incluyen la URL de la página donde ocurrió la infracción de la política y la URL del recurso secundario que violó la política. Si configura su terminal de informes para registrar estos informes, puede rastrear el contenido mixto en su sitio sin visitar cada página por sí mismo.
 

@@ -75,7 +75,7 @@ butInstall.addEventListener('click', async () => {
 
 ## Seguimiento del evento de instalación
 
-La instalación de una aplicación web progresiva a través de un botón de instalación es solo una de las formas en que los usuarios pueden instalar una PWA. También pueden usar el menú de Chrome, la mini-barra de información, y a través[ de un ícono en la omnibox (barra de direcciones)](/promote-install/#browser-promotion). Puede realizar un seguimiento de todas estas formas de instalación escuchando el evento `appinstalled`.
+La instalación de una aplicación web progresiva a través de un botón de instalación es solo una de las formas en que los usuarios pueden instalar una PWA. También pueden usar el menú de Chrome, la mini-barra de información, y a través[de un ícono en la omnibox (barra de direcciones)](/promote-install/#browser-promotion). Puede realizar un seguimiento de todas estas formas de instalación escuchando el evento `appinstalled`.
 
 1. Agregue un manejador de evento `appinstalled` al objeto `window`.
 2. Registre el evento de instalación en análisis u otro mecanismo.

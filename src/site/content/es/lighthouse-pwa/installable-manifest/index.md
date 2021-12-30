@@ -50,7 +50,7 @@ Cuando su aplicación cumpla con los requisitos mínimos de instalación, Chrome
 
 Otros navegadores tienen diferentes criterios de instalación y para activar el evento `beforeinstallprompt`. Consulte sus respectivos sitios para conocer todos los detalles:
 
-- [Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
+- [Edge](https://docs.microsoft.com/microsoft-edge/progressive-web-apps#requirements)
 - [Firefox](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
 - [Ópera](https://dev.opera.com/articles/installable-web-apps/)
 - [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
