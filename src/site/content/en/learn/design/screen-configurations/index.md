@@ -132,7 +132,7 @@ For dual screens with a vertical hinge, set the first column to be the width of 
 ```css
 @media (horizontal-viewport-segments: 2) and (vertical-viewport-segments: 1) {
   main article {
-    flex: 1 1 env(viewport-segment-width 0 0);
+    flex: 1 1 env(viewport-segment-width, 0);
   }
   main aside {
     flex: 1;
