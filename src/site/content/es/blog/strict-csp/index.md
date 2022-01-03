@@ -14,7 +14,7 @@ hero: image/3lmWcR1VGYVMicNlBh4aZWBTcSg1/mhE0NYvP3JFyvNyiQ1dj.jpg
 alt: Una captura de pantalla del código JavaScript que establece una política estricta de seguridad de contenido.
 tags:
   - blog
-  - seguridad
+  - security
 ---
 
 ## ¿Por qué deberías implementar una política de seguridad de contenido (CSP) estricta?

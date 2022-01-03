@@ -9,9 +9,9 @@ hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Esquema del teléfono con carga de imagen y recursos
 description: Esta publicación cubre el atributo loading y cómo se puede utilizar para controlar la carga de los iframes.
 tags:
-  - blog
-  - desempeño
-  - memoria
+  - blog # blog is a required tag for the article to show up in the blog.
+  - performance
+  - memory
 feedback:
   - api
 ---

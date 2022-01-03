@@ -11,9 +11,9 @@ updated: 2021-11-16
 hero: image/admin/vAnNpGQruw5EUXxob47V.jpg
 alt: Una foto de una mujer sentada frente a un escritorio de madera.
 tags:
-  - blog
-  - capacidades
-  - dispositivos
+  - blog # blog is a required tag for the article to show up in the blog.
+  - capabilities
+  - devices
 ---
 
 El objetivo de esta guía es ayudarte a elegir la mejor API para comunicarte con un dispositivo de hardware (por ejemplo, una cámara web, un micrófono, etc.) en la web. Por "mejor" me refiero a que te ofrece todo lo que necesitas con la menor cantidad de trabajo. En otras palabras, te ayuda en el caso que no sepas qué API usar o te preguntas si hay otra forma de conseguirlo.

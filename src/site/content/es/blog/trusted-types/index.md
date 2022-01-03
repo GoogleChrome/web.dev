@@ -11,7 +11,7 @@ description: |2-
   Presentamos Trusted Types (Tipos de confianza): una API del navegador para evitar ataques de cross-site scripting (secuencias de comandos en sitios cruzados) basados en DOM en las aplicaciones modernas de la web.
 tags:
   - blog
-  - seguridad
+  - security
 feedback:
   - api
 ---
