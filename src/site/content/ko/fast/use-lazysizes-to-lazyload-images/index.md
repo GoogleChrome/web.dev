@@ -12,7 +12,7 @@ tags:
   - performance
   - images
 feedback:
-  - API
+  - api
 ---
 
 {% Aside 'note' %} 이제 브라우저 수준의 지연 로딩을 사용할 수 있습니다! `loading` 속성을 사용하는 방법과 아직 지원하지 않는 브라우저에 대한 fallback으로 lazysize를 활용하는 방법을 알아보려면 [웹용 내장 지연 로드](/browser-level-image-lazy-loading/) 문서를 참조하세요. {% endAside %}

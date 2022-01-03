@@ -10,7 +10,7 @@ description: PWA 설치를 촉진하고 모범 사례를 홍보하는 방법.
 tags:
   - progressive-web-apps
 feedback:
-  - API
+  - api
 ---
 
 PWA(Progressive Web App)를 설치하면 사용자가 더 쉽게 찾고 사용할 수 있습니다. 브라우저 홍보를 사용하더라도 일부 사용자는 자신이 PWA를 설치할 수 있다는 사실을 인식하지 못하므로 PWA를 홍보하고 설치를 활성화하는 데 사용할 수 있는 인앱 경험을 제공하는 것이 도움이 될 수 있습니다.

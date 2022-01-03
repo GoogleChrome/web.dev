@@ -13,7 +13,7 @@ tags:
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: 쇼핑 목록이 있는 클립보드
 feedback:
-  - API
+  - api
 ---
 
 지난 몇 년 동안 브라우저는 클립보드 상호 작용에 [`document.execCommand()`](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)를 사용했습니다. 널리 지원되기는 하지만 이 잘라내어 붙여넣는 방법에는 대가가 필요했습니다. 즉, 클립보드 액세스는 동기식이었고 DOM을 읽고 쓸 수만 있었습니다.

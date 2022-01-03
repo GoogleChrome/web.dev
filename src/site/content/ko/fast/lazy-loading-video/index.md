@@ -12,7 +12,7 @@ description: |2-
 tags:
   - performance
 feedback:
-  - API
+  - api
 ---
 
 [이미지 요소](/lazy-loading-images)와 마찬가지로 동영상을 지연 로드할 수도 있습니다. 동영상은 일반적으로 `<video>` 요소를 통해 로드됩니다([`<img>`를 사용하는 대체 방법](https://calendar.perfplanet.com/2017/animated-gif-without-the-gif/)이 등장한 경우에도). `<video>`를 지연 로드하는 *방법*은 사용 사례에 따라 다릅니다. 각각 다른 솔루션이 필요한 몇 가지 시나리오에 대해 논의해 보겠습니다.

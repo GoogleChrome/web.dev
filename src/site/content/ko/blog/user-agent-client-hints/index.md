@@ -15,7 +15,7 @@ tags:
   - privacy
   - security
 feedback:
-  - API
+  - api
 ---
 
 {% YouTube 'f0YY0o2OAKA' %}

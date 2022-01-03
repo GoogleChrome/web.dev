@@ -11,11 +11,11 @@ hero: image/admin/UMxBPy0AKAfbzxwgTroV.jpg
 thumbnail: image/admin/3J33n1o98vnkO6fdDFwP.jpg
 alt: 두 접시에 따로 담긴 쿠키. 접시는 서로 다른 체계, HTTP 및 HTTPS를 나타냅니다. 쿠키는 쿠키를 나타냅니다.
 tags:
-  - 블로그
-  - 개인정보보호
-  - 보안
+  - blog
+  - privacy
+  - security
 feedback:
-  - API
+  - api
 ---
 
 {% Aside %} 이 문서는 `SameSite` 쿠키 특성 변경에 관한 시리즈의 일부입니다.

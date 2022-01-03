@@ -11,7 +11,7 @@ tags:
   - blog
   - payments
 feedback:
-  - API
+  - api
 ---
 
 [지불 요청 API](https://www.w3.org/TR/payment-request/)는 사용자가 그 어느 때보다 쉽게 필요한 지불 정보를 입력할 수 있도록 하는 내장 브라우저 기반 인터페이스를 웹에 제공합니다. API는 플랫폼 종속 결제 앱을 호출할 수도 있습니다.

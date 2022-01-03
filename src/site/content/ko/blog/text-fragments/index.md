@@ -14,7 +14,7 @@ tags:
   - blog
   - capabilities
 feedback:
-  - API
+  - api
 ---
 
 ## 조각 식별자

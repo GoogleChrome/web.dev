@@ -11,7 +11,7 @@ authors:
   - houssein
   - jeffposnick
 feedback:
-  - API
+  - api
 ---
 
 {% Aside %} 코드 분할의 기본 개념을 아직 이해하지 못한다면 [먼저 코드 분할로 자바스크립트 페이로드 줄이기](/reduce-javascript-payloads-with-code-splitting) 가이드를 참조하세요. {% endAside %}

@@ -13,7 +13,7 @@ tags:
   - privacy
   - security
 feedback:
-  - API
+  - api
 ---
 
 {% Aside %} 이 게시물은 FLoC의 첫 번째 원본 평가판을 위해 Chrome에 구현된 API 설계를 간략하게 설명합니다.

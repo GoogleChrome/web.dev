@@ -18,7 +18,7 @@ tags:
   - capabilities
   - network
 feedback:
-  - API
+  - api
 ---
 
 {% Aside 'caution' %} 이 제안은 원본 평가판 기간 동안 계속 변경됩니다. 브라우저 구현과 이 기사의 정보 사이에 차이가 있을 수 있습니다.

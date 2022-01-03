@@ -10,7 +10,7 @@ alt: 반쯤 칠한 벽의 사진입니다.
 tags:
   - blog
 feedback:
-  - API
+  - api
 ---
 
 ## 제공된 것은?

@@ -14,7 +14,7 @@ tags:
   - capabilities
   - devices
 feedback:
-  - API
+  - api
 stack_overflow_tag: webusb
 ---
 

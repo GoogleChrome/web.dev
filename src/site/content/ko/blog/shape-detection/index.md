@@ -16,7 +16,7 @@ alt: 휴대폰으로 QR 코드를 스캔하는 중
 origin-trial:
   url: "https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919"
 feedback:
-  - API
+  - api
 ---
 
 {% Aside %} 이 API는 새로운 [기능 프로젝트](https://developers.google.com/web/updates/capabilities)의 일부입니다. Chrome 83에서 바코드 감지 기능이 출시되었습니다. 플래그 뒤에서 얼굴 및 텍스트 감지를 사용할 수 있습니다. 이 게시물은 Shape Detection API가 발전함에 따라 업데이트됩니다. {% endAside %}

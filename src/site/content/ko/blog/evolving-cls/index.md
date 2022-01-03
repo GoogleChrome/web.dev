@@ -9,8 +9,8 @@ date: 2021-04-07
 hero: image/admin/JSBg0yF1fatrTDQSKiTW.webp
 alt: 레이아웃 이동을 측정하기 위한 예제 윈도잉 접근 방식.
 tags:
-  - 블로그
-  - 성능
+  - blog
+  - performance
   - web-vitals
 ---
 

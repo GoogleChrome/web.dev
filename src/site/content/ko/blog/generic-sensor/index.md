@@ -9,9 +9,10 @@ description: 센서는 해당 센서가 실행되는 장치의 방향이나 가�
 date: 2017-09-18
 updated: 2021-02-17
 tags:
-  - 블로그
-  - 장치
-  - 기능
+  - blog
+  # - sensors
+  - devices
+  - capabilities
 hero: image/admin/2AGc7aV66zc69fiqNJBZ.jpg
 alt: 간단한 자이로스코프.
 ---

@@ -12,7 +12,7 @@ tags:
   - css
   - layout
 feedback:
-  - API
+  - api
 ---
 
 반응형 디자인이 진화하고 점점 더 미묘해짐에 따라 CSS도 끊임없이 진화하고 작성자에게 향상된 제어 기능을 제공합니다. [`min()`](https://developer.mozilla.org/docs/Web/CSS/min) , [`max()`](https://developer.mozilla.org/docs/Web/CSS/max) 및 [`clamp()`](https://developer.mozilla.org/docs/Web/CSS/clamp) 함수는 웹사이트와 앱을 보다 동적이고 반응적으로 제작할 수 있는 최신 도구입니다.

@@ -14,8 +14,8 @@ tags:
   - capabilities
   - devices
 feedback:
-  - API
-stack_overflow_tag: 웹 블루투스
+  - api
+stack_overflow_tag: web-bluetooth
 ---
 
 웹 사이트가 안전하고 개인 정보를 보호하는 방식으로 근처의 블루투스 장치와 통신할 수 있다고 말한다면 어떻게 될까요? 이런 식으로 심박수 모니터, 노래하는 전구, 심지어 [거북이](https://www.youtube.com/watch?v=1LV1Fk5ZXwA)까지 웹 사이트와 직접 상호작용할 수 있습니다.

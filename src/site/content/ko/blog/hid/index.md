@@ -11,11 +11,11 @@ thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck 사진.
 description: WebHID API를 사용하면 웹사이트에서 대체 보조 키보드와 이색적인 게임패드에 액세스할 수 있습니다.
 tags:
-  - 블로그
-  - 기능
-  - 장치
+  - blog # blog is a required tag for the article to show up in the blog.
+  - capabilities
+  - devices
 feedback:
-  - API
+  - api
 stack_overflow_tag: webhid
 ---
 

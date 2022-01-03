@@ -19,7 +19,7 @@ tags:
 origin_trial:
   url: "https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281"
 feedback:
-  - API
+  - api
 ---
 
 {% Aside 'caution' %}

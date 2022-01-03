@@ -26,7 +26,7 @@ tags:
   - chrome-80
   - test-post
 feedback:
-  - API
+  - api
 ---
 
 {% Aside %} 이 문서는 `SameSite` 쿠키 속성 변경에 대한 시리즈의 일부입니다.

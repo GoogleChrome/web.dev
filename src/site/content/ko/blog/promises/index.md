@@ -9,7 +9,7 @@ tags:
 authors:
   - jakearchibald
 feedback:
-  - API
+  - api
 ---
 
 개발자 여러분, 웹 개발의 역사에서 중요한 순간에 대비하십시오.

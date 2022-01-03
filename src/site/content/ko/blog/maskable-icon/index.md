@@ -14,7 +14,7 @@ tags:
   - capabilities
   - progressive-web-apps
 feedback:
-  - API
+  - api
 ---
 
 ## 마스크 가능한 아이콘은 무엇입니까? {: #what }

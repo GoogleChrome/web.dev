@@ -11,7 +11,7 @@ tags:
   - blog
   - css
 feedback:
-  - API
+  - api
 ---
 
 `clip-path` 속성을 사용하여 [요소를 자르면](/css-clipping) 잘린 영역이 보이지 않게 됩니다. 대신 이미지의 일부를 불투명하게 만들거나 이미지에 다른 효과를 적용하려면 마스킹을 사용해야 합니다. 이 게시물은 CSS에서 [`mask-image`](https://developer.mozilla.org/docs/Web/CSS/mask-image) 속성을 사용하는 방법을 설명합니다. 이를 통해 마스크 레이어로 사용할 이미지를 지정할 수 있습니다. 이렇게 하면 세 가지 옵션이 제공됩니다. 즉, 이미지 파일을 마스크, SVG 또는 그라디언트로 사용할 수 있습니다.

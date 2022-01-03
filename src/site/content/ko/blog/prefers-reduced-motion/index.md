@@ -18,7 +18,7 @@ tags:
 hero: image/admin/LI2vYKZwQ98w3MLtUF8V.jpg
 alt: 기차에서 여성의 타임랩스
 feedback:
-  - API
+  - api
 ---
 
 모든 사람이 장식용 애니메이션이나 전환을 좋아하는 것은 아니며, 일부 사용자는 시차 스크롤, 확대 효과 등에 직면했을 때 노골적으로 멀미를 경험합니다. Chrome 74는 이러한 기본 설정을 표시한 사용자를 위해 사이트의 모션 축소 변형을 설계할 수 있는 사용자 기본 설정 미디어 쿼리 `prefers-reduced-motion`를 지원합니다.

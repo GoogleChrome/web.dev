@@ -13,7 +13,7 @@ tags:
   - identity
   - capabilities
 feedback:
-  - API
+  - api
 ---
 
 {% Aside 'gotchas' %} WebOTP API를 포함하여 일반적인 SMS OTP 양식 모범 사례를 더 자세히 알아보려면 [SMS OTP 양식 모범 사례](/sms-otp-form)를 확인하세요. {% endAside %}

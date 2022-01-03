@@ -13,7 +13,7 @@ tags:
 hero: image/admin/v9t93rXITPqFe3L0qlTN.jpg
 alt: 앱 패널이 열린 휴대기기
 feedback:
-  - API
+  - api
 ---
 
 ## getInstalledRelatedApps() API란 무엇입니까? {: #what }

@@ -9,10 +9,10 @@ hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: 웹 앱이 시스템 제공 공유 UI를 사용할 수 있음을 보여주는 그림.
 description: Web Share API를 통해 웹 앱은 플랫폼별 앱과 동일한 시스템 제공 공유 기능을 사용할 수 있습니다. Web Share API를 사용하면 웹 앱이 플랫폼별 앱과 동일한 방식으로 장치에 설치된 다른 앱에 대한 링크, 텍스트 및 파일을 공유할 수 있습니다.
 tags:
-  - 블로그
-  - 기능
+  - blog
+  - capabilities
 feedback:
-  - API
+  - api
 stack_overflow_tag: web-share
 ---
 

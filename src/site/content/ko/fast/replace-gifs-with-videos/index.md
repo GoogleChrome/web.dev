@@ -9,9 +9,9 @@ updated: 2019-08-29
 codelabs:
   - codelab-replace-gifs-with-video
 tags:
-  - 성능
+  - performance
 feedback:
-  - API
+  - api
 ---
 
 Imgur 또는 Gfycat와 같은 서비스에서 애니메이션 GIF를 보고 개발 도구에서 검사해보니 GIF가 실제로 비디오라는 사실을 알게 된 적이 있었나요? 여기에는 그럴 만한 이유가 있습니다. 애니메이션 GIF는 용량이 *정말 클 수 있습니다*.

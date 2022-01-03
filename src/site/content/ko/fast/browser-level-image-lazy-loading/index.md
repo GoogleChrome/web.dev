@@ -12,10 +12,10 @@ hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: 로딩 이미지와 자산이 있는 전화 개요
 description: 이 게시물은 로딩 속성과 이를 이용해 이미지 로딩을 제어하는 방법을 다룹니다.
 tags:
-  - 블로그
-  - 성능
+  - blog
+  - performance
 feedback:
-  - API
+  - api
 ---
 
 이제 웹에서 지연 로딩 이미지에 대한 브라우저 수준 지원이 제공됩니다! 이 비디오에서는 이 기능의 [데모](https://mathiasbynens.be/demo/img-loading-lazy)를 보여줍니다.

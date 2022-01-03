@@ -8,8 +8,8 @@ hero: image/admin/QvWXvBSXsRKtpGOcakb5.jpg
 alt: 모래가 쏟아지는 모래시계
 description: 긴 작업은 메인 스레드를 바쁘게 하여 사용자 상호 작용을 지연시킬 수 있습니다. Chrome DevTools가 이제 긴 작업을 시각화하여 최적화할 작업을 더 쉽게 보여줍니다.
 tags:
-  - 블로그
-  - 성능
+  - blog
+  - performance
 ---
 
 **tl;dr: 긴 작업은 메인 스레드를 바쁘게 만들어 사용자 상호 작용을 지연시킬 수 있습니다. Chrome DevTools는 이제 긴 작업을 시각화하여 최적화할 작업을 더 쉽게 보여줍니다.**

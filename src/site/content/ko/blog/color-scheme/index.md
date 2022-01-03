@@ -24,7 +24,7 @@ tags:
   - blog
   - css
 feedback:
-  - API
+  - api
 ---
 
 ## 배경

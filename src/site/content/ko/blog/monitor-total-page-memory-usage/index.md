@@ -22,7 +22,7 @@ tags:
   - memory
   - javascript
 feedback:
-  - API
+  - api
 ---
 
 {% Banner 'caution', 'body' %}
