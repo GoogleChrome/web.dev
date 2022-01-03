@@ -379,7 +379,7 @@ Good code example
 
 ### Comparar con subtítulo
 
-```text
+````text
 {% raw %}{% Compare 'worse' %}
 ```text
 Bad code example
@@ -401,25 +401,27 @@ Explanation of why `example` is good.
 {% endCompareCaption %}
 
 {% endCompare %}{% endraw %}
-```
+````
 
 {% Compare 'worse' %}
-
 ```text
 Bad code example
 ```
 
-{% CompareCaption %} Explicación de por qué el `example` es malo. {% endCompareCaption %}
+{% CompareCaption %}
+Explanation of why `example` is bad.
+{% endCompareCaption %}
 
 {% endCompare %}
 
 {% Compare 'better' %}
-
 ```text
 Good code example
 ```
 
-{% CompareCaption %} Explicación de por qué el `example` es bueno. {% endCompareCaption %}
+{% CompareCaption %}
+Explanation of why `example` is good.
+{% endCompareCaption %}
 
 {% endCompare %}
 
