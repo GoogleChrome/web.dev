@@ -19,7 +19,7 @@ description: |2-
   origem de um recurso, independentemente de como ele foi entregue.
 tags:
   - blog
-  - desempenho
+  - performance
 ---
 
 Uma troca assinada (SXG) é um mecanismo de entrega que permite autenticar a origem de um recurso independentemente de como foi entregue. Essa dissociação avança uma variedade de casos de uso, como pré-busca para preservação de privacidade, experiências de internet offline e serviço de caches de terceiros. Além disso, a implementação de SXGs pode melhorar o Largest Contentful Paint (LCP) para alguns sites.

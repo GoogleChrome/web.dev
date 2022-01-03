@@ -19,7 +19,7 @@ tags:
   - html
   - javascript
   - layout
-  - renderização
+  - rendering
 feedback:
   - api
 ---

@@ -12,7 +12,7 @@ description: |2-
 
   É importante que os elementos interativos tenham espaço suficiente ao seu redor, quando usados em um dispositivo móvel ou em touchscreen. Isso ajudará a todos, mas especialmente aqueles com deficiência motora.
 tags:
-  - acessibilidade
+  - accessibility
 ---
 
 Quando seu design é exibido em um dispositivo móvel, você deve garantir que os elementos interativos, como botões ou links, sejam grandes o bastante e tenham espaço suficiente ao redor deles, para torná-los fáceis de pressionar sem se sobrepor acidentalmente a outros elementos. Isso beneficia todos os usuários, mas é especialmente útil para qualquer pessoa com deficiência motora.

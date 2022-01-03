@@ -20,7 +20,7 @@ date: 2020-05-04
 updated: 2021-08-05
 tags:
   - blog
-  - segurança
+  - security
 feedback:
   - api
 ---

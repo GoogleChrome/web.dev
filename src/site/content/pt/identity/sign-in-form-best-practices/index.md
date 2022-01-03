@@ -12,10 +12,10 @@ hero: image/admin/pErOjllBUXhnj68qOhfr.jpg
 alt: Uma pessoa segurando um telefone.
 tags:
   - forms
-  - identidade
+  - identity
   - layout
-  - móvel
-  - securança
+  - mobile
+  - security
   - ux
 codelabs:
   - codelab-sign-in-form-best-practices

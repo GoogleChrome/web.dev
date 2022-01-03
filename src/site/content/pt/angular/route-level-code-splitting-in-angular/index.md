@@ -12,7 +12,7 @@ description: |2
 authors:
   - mgechev
 tags:
-  - desempenho
+  - performance
 feedback:
   - api
 ---

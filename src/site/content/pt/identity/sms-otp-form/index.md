@@ -16,9 +16,9 @@ description: |2-
 
   práticas recomendadas para construir um formulário SMS OTP com ótima experiência do usuário.
 tags:
-  - identidade
-  - segurança
-  - formulários
+  - identity
+  - security
+  - forms
 ---
 
 {% YouTube 'sU4MpWYrGSI' %}

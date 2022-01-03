@@ -11,7 +11,7 @@ description: |2-
 date: 2020-03-05
 updated: 2020-03-05
 tags:
-  - desempenho
+  - performance
 ---
 
 Muitos sites solicitam recursos pesados, como imagens, que não são otimizados para determinadas telas, e enviam grandes arquivos CSS contendo estilos que alguns dispositivos jamais usarão. O uso de consultas de mídia é uma técnica popular para fornecer folhas de estilo e ativos personalizados para diferentes telas para reduzir a quantidade de dados transferidos para os usuários e melhorar o desempenho do carregamento da página. Este guia mostra como usar consultas de mídia para enviar imagens que têm o tamanho necessário, uma técnica comumente conhecida como **imagens responsivas**.

@@ -12,7 +12,7 @@ description: |2-
   A busca de metadados é um novo recurso de plataforma da Web projetado para permitir que os servidores se protejam de ataques entre origens.
 tags:
   - blog
-  - segurança
+  - security
 feedback:
   - api
 ---

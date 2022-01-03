@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-old
 title: Diretrizes de design UX offline
 subhead: Um guia para projetar experiências da web para redes lentas e offline.
 authors:
@@ -10,8 +10,8 @@ updated: 2021-05-28
 tags:
   - progressive-web-apps
   - ux
-  - rede
-  - off-line
+  - network
+  - offline
 ---
 
 Este artigo contém diretrizes de design sobre como criar uma ótima experiência em redes lentas e off-line.

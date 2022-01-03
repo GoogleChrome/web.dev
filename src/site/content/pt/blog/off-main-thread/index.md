@@ -17,7 +17,7 @@ authors:
 date: 2019-12-05
 tags:
   - blog
-  - desempenho
+  - performance
   - test-post
 ---
 

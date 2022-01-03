@@ -11,8 +11,8 @@ hero: image/admin/lzLo9JCh6bcehH2nSH0n.png
 alt: Íconos contenidos dentro de círculos blancos en comparación con íconos que cubren todo su círculo
 tags:
   - blog
-  - capacidades
-  - aplicación-web-progresiva
+  - capabilities
+  - progressive-web-apps
 feedback:
   - api
 ---

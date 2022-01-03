@@ -9,8 +9,8 @@ description: |2
 
   Esta postagem explica como carregar WebFonts para evitar mudanças de layout e páginas em branco quando WebFonts não estão disponíveis quando a página é carregada.
 tags:
-  - desempenho
-  - fontes
+  - performance
+  - fonts
 feedback:
   - api
 ---

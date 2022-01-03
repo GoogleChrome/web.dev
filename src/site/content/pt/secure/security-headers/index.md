@@ -18,7 +18,7 @@ description: |2
   implemente-os em seu site e como referência para quando precisar de um lembrete.
 tags:
   - blog
-  - segurança
+  - security
 ---
 
 Este artigo lista os cabeçalhos de segurança mais importantes que você pode usar para proteger seu site. Use-o para entender os recursos de segurança baseados na web, aprender como implementá-los em seu site e como referência para quando precisar de um lembrete.
