@@ -6,7 +6,7 @@ date: 2018-11-12
 updated: 2021-11-04
 tags:
   - blog
-  - recursos
+  - resources
 ---
 
 <figure data-float="right"> {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uIIvM9xocYkjmBfHSrJE.svg", alt="A fugu fish, the logo of Project Fugu.", width="150", height="150" %}</figure>

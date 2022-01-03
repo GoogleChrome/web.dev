@@ -23,7 +23,7 @@ hero: image/admin/Y4wGmGP8P0Dc99c3eKkT.jpg
 tags:
   - blog
   - progressive-web-apps
-  - recursos
+  - resources
 feedback:
   - api
 ---
