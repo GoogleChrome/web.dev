@@ -14,7 +14,7 @@ alt: |2
   Gato dormindo. Foto de Kate Stone Matheson no Unsplash.
 tags:
   - blog
-  - resources
+  - capabilities
 feedback:
   - api
 ---

@@ -1,10 +1,8 @@
 ---
 title: WebRTC ahora es un estándar W3C e IETF
-subhead: |2
-
+subhead: |
   Una breve descripción general de la historia, la arquitectura, los casos de uso y el futuro de WebRTC.
-description: |2
-
+description: |
   Una breve descripción general de la historia, la arquitectura, los casos de uso y el futuro de WebRTC.
 date: 2021-01-26
 updated: 2021-01-26

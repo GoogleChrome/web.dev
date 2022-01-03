@@ -5,8 +5,7 @@ authors:
   - rachelandrew
 date: 2010-09-30
 updated: 2021-08-30
-description: |2-
-
+description: |
   La API Drag and Drop (DnD) de HTML5 nos permite la posibilidad de que casi cualquier elemento de nuestra página se pueda arrastrar. En esta publicación explicaremos los conceptos básicos de arrastrar y soltar (en inglés, "drag and drop").
 tags:
   - blog

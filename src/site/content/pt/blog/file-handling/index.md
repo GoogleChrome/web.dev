@@ -12,7 +12,7 @@ date: 2020-10-22
 updated: 2021-12-03
 tags:
   - blog
-  - resources
+  - capabilities
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Fichários em várias cores.
 ---
