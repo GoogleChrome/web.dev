@@ -434,7 +434,10 @@ asyncThing1().then(function() {
 
 위의 흐름은 일반 JavaScript try/catch와 매우 유사하며 "try" 내에서 발생하는 오류는 즉시 `catch()` 블록으로 이동합니다. 다음은 위의 순서도입니다(저는 순서도를 좋아합니다).
 
-<div style="position: relative; padding-top: 93%;">   <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden" src="%7B%7B%20" image="" imgix="" frameborder="0" allowtransparency="true"></iframe> </div>
+<div style="position: relative; padding-top: 93%;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden"
+   src="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/simQvoUExWisIW0XxToH.svg" | imgix }}" frameborder="0" allowtransparency="true"></iframe>
+</div>
 
 처리되는 Promise의 경우 파란색 선을 따르고, 거부되는 Promise의 경우 빨간색 선을 따릅니다.
 

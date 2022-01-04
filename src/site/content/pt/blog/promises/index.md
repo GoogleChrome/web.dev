@@ -438,7 +438,10 @@ asyncThing1().then(function() {
 
 O fluxo acima é muito parecido com o try/catch típico do JavaScript, os erros que acontecem em um "try" vão imediatamente para o bloco `catch()`. Aqui está o fluxograma do código acima (porque eu amo fluxogramas):
 
-<div style="position: relative; padding-top: 93%;">   <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden" src="%7B%7B%20" image="" imgix="" frameborder="0" allowtransparency="true"></iframe> </div>
+<div style="position: relative; padding-top: 93%;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden"
+   src="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/simQvoUExWisIW0XxToH.svg" | imgix }}" frameborder="0" allowtransparency="true"></iframe>
+</div>
 
 Siga as linhas azuis para as promessas que se cumprem, ou as vermelhas para as que são rejeitadas.
 

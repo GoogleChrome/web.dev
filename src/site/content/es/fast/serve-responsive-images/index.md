@@ -78,8 +78,13 @@ Especifique varias versiones de imagen y el navegador elegirá la mejor opción 
     </thead>
     <tbody>
       <tr>
-        <td>&lt;img src="flower-large.jpg"&gt;</td>
-        <td>&lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w, flower-large.jpg 1080w" sizes="50vw"&gt;</td>
+        <td>
+          &lt;img src="flower-large.jpg"&gt;
+        </td>
+        <td>
+          &lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,
+          flower-large.jpg 1080w" sizes="50vw"&gt;
+        </td>
       </tr>
     </tbody>
   </table>

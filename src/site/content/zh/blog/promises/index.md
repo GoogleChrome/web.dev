@@ -434,7 +434,10 @@ asyncThing1().then(function() {
 
 上面的流程与普通的 JavaScript try/catch 流程非常相似，在 try 中发生的错误会立即进入 `catch()` 块。这是上面的流程图（因为我喜欢流程图）：
 
-<div style="position: relative; padding-top: 93%;">   <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden" src="%7B%7B%20" image="" imgix="" frameborder="0" allowtransparency="true"></iframe> </div>
+<div style="position: relative; padding-top: 93%;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden"
+   src="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/simQvoUExWisIW0XxToH.svg" | imgix }}" frameborder="0" allowtransparency="true"></iframe>
+</div>
 
 蓝线通往完成的 promise，红线通往拒绝的 promise。
 

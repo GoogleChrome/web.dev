@@ -80,8 +80,13 @@ magick convert flower.jpg -resize 300x200 flower-small.jpg
     </thead>
     <tbody>
       <tr>
-        <td>&lt;img src="flower-large.jpg"&gt;</td>
-        <td>&lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,flower-large.jpg 1080w" size="50vw"&gt;</td>
+        <td>
+          &lt;img src="flower-large.jpg"&gt;
+        </td>
+        <td>
+          &lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,
+          flower-large.jpg 1080w" sizes="50vw"&gt;
+        </td>
       </tr>
     </tbody>
   </table>
