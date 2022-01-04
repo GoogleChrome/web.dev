@@ -50,7 +50,9 @@ function checkURL(tree, file) {
     // If the URL hostname is web.dev, yell about it, because those links should
     // be relative, not absolute.
     if (parsed.hostname === 'web.dev') {
-      const reason = 'Internal links to web.dev should be relative.';
+      const relative = parsed.pathname + parsed.hash;
+      const absolute = parsed.href;
+      const reason = `web.dev links must be relative (e.g., use ${relative} instead of ${absolute}).`;
       file.message(reason, node);
     }
 
