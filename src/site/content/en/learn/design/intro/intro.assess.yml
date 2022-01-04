@@ -33,14 +33,14 @@ questions:
     stem: The original three criteria for responsive design are?
     options:
       - content: "Fluid typography"
-        rationale: "Try again!"
+        rationale: "Try again! Fluid typography was not one of the initial criteria."
       - content: "Fluid grids"
         rationale: "🎉 Correct!"
       - content: "Adaptive grids"
-        rationale: "Try again!"
+        rationale: "Try again! An adaptive grid changes based on set viewport sizes."
       - content: "Fluid media"
         rationale: "🎉 Correct!"
       - content: "Fixed width design"
-        rationale: "`try again!"
+        rationale: "Try again! Fixed width designs refers to a design with a set, unresponsive width."
       - content: "Media Queries"
         rationale: "🎉 Correct!"
