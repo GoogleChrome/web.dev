@@ -114,7 +114,7 @@ YouTube動画埋め込みの遅延読み込み (最初のページ読み込み�
         allowfullscreen></iframe>
 ```
 
-**エピソード: **Chrome.comのYouTube埋め込みを遅延読み込みに切り替えたとき、モバイルデバイスで対話時間を10秒節約できました。 YouTubeの内部バグを申請して、埋め込みコードに`loading=lazy`を追加するように提案しました。
+**エピソード:** Chrome.comのYouTube埋め込みを遅延読み込みに切り替えたとき、モバイルデバイスで対話時間を10秒節約できました。 YouTubeの内部バグを申請して、埋め込みコードに`loading=lazy`を追加するように提案しました。
 
 <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.comは、YouTube動画埋め込み用のオフスクリーンiframeを遅延読み込みすることで、対話時間を10秒短縮しました", width="800", height="460" %}</figure>
 
