@@ -18,7 +18,11 @@ const rule = require('unified-lint-rule');
 const {URL} = require('url');
 const visit = require('unist-util-visit');
 const siteData = require('../../src/site/_data/site');
-const excludedFromLinkChecks = ['CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'README.md'];
+const excludedFromLinkChecks = [
+  'CODE_OF_CONDUCT.md',
+  'CONTRIBUTING.md',
+  'README.md',
+];
 
 module.exports = rule('remark-lint:bad-urls', checkURL);
 
@@ -52,7 +56,10 @@ function checkURL(tree, file) {
     // If the URL starts with web.dev, yell about it, because those links should
     // be relative, not absolute. We also must use nodeUrl here instead of the
     // parsed URL object since using the latter will throw for relative links.
-    if ((nodeUrl.startsWith('https://web.dev') || nodeUrl.startsWith('http://web.dev')) && !excludedFromLinkChecks.includes(markdownFile)) {
+    if (
+      nodeUrl.startsWith('https://web.dev') &&
+      !excludedFromLinkChecks.includes(markdownFile)
+    ) {
       const relative = parsed.pathname + parsed.hash;
       const absolute = parsed.href;
       const reason = `web.dev links must be relative (e.g., use ${relative} instead of ${absolute}).`;
