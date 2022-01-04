@@ -241,7 +241,7 @@ width="800", height="400" %}
 
 ### Step 1: Start measuring
 
-Start by measuring field data for your site using Real User Monitoring (RUM) tools. There are various Google and third party (3P) RUM tools available already.
+Start by measuring field data for your site using Real User Monitoring (RUM) tools. There are various Google and third-party (3P) RUM tools available already.
 
 {% Img src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/RR58abBFQBGphUgjvHaa.png", alt="RUM tools", width="800", height="397" %}
 
