@@ -241,6 +241,7 @@ using `min-width` or `max-width`.
 
 The code above uses `max-width`, and sets the links to `display:none`, as well
 as decreasing the time font size when the container is less than `850px` wide.
+
 ### Container query cards
 
 In this demo plant website, each of the product cards, including the one in the

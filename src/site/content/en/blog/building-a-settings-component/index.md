@@ -525,6 +525,7 @@ There's 3 parts to this element we need to customize:
 1. [Thumb](#thumb-styles)
 
 ### Range element styles
+
 ```css
 input[type="range"] {
   /* style setting variables */
@@ -584,6 +585,7 @@ full width color, waiting for transparency to reveal it.
 %}
 
 #### Track fill style
+
 My design **does require JavaScript** in order to maintain the fill style. There
 are CSS only strategies but they require the thumb element to be the same height
 as the track, and I wasn't able to find a harmony within those limits.

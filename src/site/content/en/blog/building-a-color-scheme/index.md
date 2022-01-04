@@ -590,6 +590,7 @@ needed, and should never need to worry about themes again.
 } %}
 
 ## Conclusion
+
 Now that you know how I did it, how would you?! 🙂
 
 Let's diversify our approaches and learn all the ways to build on the web.
@@ -597,6 +598,7 @@ Create a Codepen or host your own demo, tweet me with it, and I'll add it to the
 Community remixes section below.
 
 ### Source
+
 - [GUI Challenges source on GitHub](https://github.com/argyleink/gui-challenges)
 - [Color scheme Codepen starter](https://codepen.io/argyleink/pen/vYxrrpd)
 
