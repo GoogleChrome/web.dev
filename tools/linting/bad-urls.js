@@ -47,6 +47,13 @@ function checkURL(tree, file) {
       file.message(reason, node);
     }
 
+    // If the URL hostname is web.dev, yell about it, because those links should
+    // be relative, not absolute.
+    if (parsed.hostname === 'web.dev') {
+      const reason = 'Internal links to web.dev should be relative.';
+      file.message(reason, node);
+    }
+
     // If the URL is to MDN and contains localization info (e.g., en-US), warn
     // to remove the localization part of the URL.
     if (
