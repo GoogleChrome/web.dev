@@ -134,7 +134,7 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 たとえば、メールアドレスには `type="email"`、電話番号には `type="tel"` を使用します。
 
-<figure class="w-figure">{%Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="それぞれ type=email と type=tel を使ったメールアドレスと電話番号の入力に適切なキーボードを表示した Android 携帯電話のスクリーンショット (2 個)。", width="800", height="683" %}<figcaption class="w-figcaption"> 電子メールや携帯電話に適したキーボード。</figcaption></figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="それぞれ type=email と type=tel を使ったメールアドレスと電話番号の入力に適切なキーボードを表示した Android 携帯電話のスクリーンショット (2 個)。", width="800", height="683" %}<figcaption class="w-figcaption"> 電子メールや携帯電話に適したキーボード。</figcaption></figure>
 
 {: #inputmode-attribute }
 
