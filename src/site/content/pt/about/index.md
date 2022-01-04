@@ -2,7 +2,6 @@
 layout: about-next
 draft: 'true'
 noindex: 'true'
-permalink: "/about-new/index.html"
 title: Sobre o web.dev
 intro:
   title: Construindo juntos uma web melhor
