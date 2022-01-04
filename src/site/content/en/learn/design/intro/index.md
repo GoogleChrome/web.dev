@@ -44,7 +44,7 @@ Web designs changed accordingly. Designers and developers started assuming that 
 
 <figure class="w-figure">
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/C88van0yWyvbz5l746pB.png", alt="The Microsoft website using a three-column, mostly text-based design.", width="800", height="600" %}
-<figcaption class="w-figcaption">The Microsoft website in the learly 2000s designed for a width of 800 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
+<figcaption class="w-figcaption">The Microsoft website in the early 2000s designed for a width of 800 pixels. Screenshot from <a href="https://archive.org">archive.org</a></figcaption>
 </figure>
 
 Then the screens got bigger again. 1024 by 768 became the default. 
