@@ -111,7 +111,7 @@ tags:
 
 ### 使用签名交换（SXG）
 
-[签名交换 (SXG)](https://web.dev/signed-exchanges) 是一种交付机制，通过提供采用了易于缓存格式的内容来实现更快的用户体验。具体来说， [Google 搜索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)会缓存 SXG，有时也会预获取 SXG。对于通过 Google 搜索获得大部分流量的网站，SXG 可以是改进 LCP 的重要工具。如需了解更多信息，请参阅[签名交换](/signed-exchanges)。
+[签名交换 (SXG)](/signed-exchanges) 是一种交付机制，通过提供采用了易于缓存格式的内容来实现更快的用户体验。具体来说， [Google 搜索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)会缓存 SXG，有时也会预获取 SXG。对于通过 Google 搜索获得大部分流量的网站，SXG 可以是改进 LCP 的重要工具。如需了解更多信息，请参阅[签名交换](/signed-exchanges)。
 
 ## 阻塞渲染的 JavaScript 和 CSS {: #render-blocking-resources }
 
@@ -183,9 +183,9 @@ tags:
 
 这可以通过优化您的脚本来实现，有如下几种不同的方式：
 
-- [削减和压缩 JavaScript 文件](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [延迟加载未使用的 JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [最大限度减少未使用的 polyfill](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [削减和压缩 JavaScript 文件](/reduce-network-payloads-using-text-compression/)
+- [延迟加载未使用的 JavaScript](/reduce-javascript-payloads-with-code-splitting/)
+- [最大限度减少未使用的 polyfill](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}[优化首次输入延迟](/optimize-fid/)指南更详细地介绍了减少 JavaScript 阻塞时间所需的全部技巧。{% endAside %}
 

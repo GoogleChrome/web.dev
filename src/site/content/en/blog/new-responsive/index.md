@@ -96,7 +96,7 @@ height="428" %}
 ### `prefers-reduced-motion`
 
 Users who have set operating system preferences for [reduced
-motion](https://web.dev/prefers-reduced-motion/), are requesting fewer
+motion](/prefers-reduced-motion/), are requesting fewer
 animations when using their computer in general. Therefore, it's likely that
 they wouldn't appreciate a flashy intro screen, card flip animation, intricate
 loader, or other flashy animations while using the web.

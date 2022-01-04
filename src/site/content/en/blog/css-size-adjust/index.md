@@ -387,7 +387,7 @@ resources:
   MDN](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust)
 - [Seamless swap @font-face
   generator](https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Montserrat)
-- [Cumulative Layout Shift (CLS) on web.dev](https://web.dev/cls/)
+- [Cumulative Layout Shift (CLS) on web.dev](/cls/)
 - [A New Way To Reduce Font Loading Impact: CSS Font Descriptors
   ](https://www.smashingmagazine.com/2021/05/reduce-font-loading-impact-css-descriptors/)
 

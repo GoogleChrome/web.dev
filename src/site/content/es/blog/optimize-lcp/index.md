@@ -122,7 +122,7 @@ Aunque ambas sugerencias funcionan de manera diferente, considere utilizar `dns-
 
 ### Utilizar intercambios firmados (SXG)
 
-[Los intercambios firmados (SXG)](https://web.dev/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
+[Los intercambios firmados (SXG)](/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
 
 ## Renderización que bloquea JavaScript y CSS {: #render-blocking-resources }
 
@@ -195,9 +195,9 @@ Descargue y publique la cantidad mínima de JavaScript necesaria a los usuarios.
 
 Esto se puede lograr optimizando sus scripts de diferentes formas:
 
-- [Minificar y comprimir archivos JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Retrasar JavaScript no utilizado](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimice los polyfills no utilizados](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minificar y comprimir archivos JavaScript](/reduce-network-payloads-using-text-compression/)
+- [Retrasar JavaScript no utilizado](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimice los polyfills no utilizados](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} La guía [Optimizar First Input Delay](/optimize-fid/) cubre todas las técnicas necesarias para reducir el tiempo de bloqueo de JavaScript con un poco más de detalle. {% endAside %}
 

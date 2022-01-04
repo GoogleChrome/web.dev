@@ -332,7 +332,7 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 To align a label to the checkbox wrap the label and checkbox in an element with
 a `cluster gutter-base flex-align-start` class.
 
-[Detailed specification](https://web.dev/design-system/component/form-fields/#checkbox)
+[Detailed specification](/design-system/component/form-fields/#checkbox)
 
 ```html
 <div class="cluster gutter-base flex-align-start">
@@ -1266,7 +1266,7 @@ the tab, e.g. the code blocks.
 Use tooltips to provide information about UI controls
 that are too small to have a label
 
-[Detailed specification](https://web.dev/design-system/component/tooltips/)
+[Detailed specification](/design-system/component/tooltips/)
 
 ```html
 <div class="tooltip" data-alignment="">

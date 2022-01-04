@@ -186,7 +186,7 @@ The resulting report shows that results are generally good, but there may be som
 
 ## Timespans
 
-One of the biggest differences between performance results [in the field](https://web.dev/user-centric-performance-metrics/#in-the-field) (like from CrUX) and [in the lab](https://web.dev/user-centric-performance-metrics/#in-the-lab) (like from Lighthouse) is the lack of user input. This is where a timespan—the last user flow mode—can help.
+One of the biggest differences between performance results [in the field](/user-centric-performance-metrics/#in-the-field) (like from CrUX) and [in the lab](/user-centric-performance-metrics/#in-the-lab) (like from Lighthouse) is the lack of user input. This is where a timespan—the last user flow mode—can help.
 
 A timespan runs Lighthouse audits over some period of time, which may or may not include a navigation. This is a great way to capture what's going on with a page during interactions.  For instance, by default Lighthouse measures CLS during page load, but in the field, CLS is measured from initial navigation until the page is closed. If user interactions are the trigger of CLS, this is something Lighthouse previously wouldn't be able to catch and help fix.
 

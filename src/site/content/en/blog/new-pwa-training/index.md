@@ -11,7 +11,7 @@ tags:
   - progressive-web-apps
 ---
 
-A lot has changed in the world of [Progressive Web Apps](https://web.dev/progressive-web-apps/) since we released our last set of PWA training over four years ago: CSS Grid achieved widespread implementation, PWAs came to desktops, and the [capabilities project](https://web.dev/fugu-status/) has launched more than 25 new device-integration focused APIs, opening up brand new app segments that can be built entirely on the web. Today, we're excited to share the first iteration of our newly updated PWA training to teach you how to build reliable, installable, and capable Progressive Web Apps for all devices.
+A lot has changed in the world of [Progressive Web Apps](/progressive-web-apps/) since we released our last set of PWA training over four years ago: CSS Grid achieved widespread implementation, PWAs came to desktops, and the [capabilities project](/fugu-status/) has launched more than 25 new device-integration focused APIs, opening up brand new app segments that can be built entirely on the web. Today, we're excited to share the first iteration of our newly updated PWA training to teach you how to build reliable, installable, and capable Progressive Web Apps for all devices.
 
 The current version of the training is divided into six slide decks, ready for you to learn from or for you to pick up and teach to others. They are:
 

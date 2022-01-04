@@ -180,7 +180,7 @@ hard to use for some people.
 
 For more information see:
 
-- [Content reordering](https://web.dev/content-reordering/)
+- [Content reordering](/content-reordering/)
 - [Flexbox and the keyboard navigation disconnect](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### Writing modes and direction

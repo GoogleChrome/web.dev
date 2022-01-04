@@ -27,7 +27,7 @@ Make sure the `README` for your Glitch links back to web.dev. Here's a template 
 
 ```text
 # [Your Article Name]
-This example is part of the [name of article](link/to/article) post on [web.dev](https://web.dev).
+This example is part of the [name of article](link/to/article) post on [web.dev](/).
 ```
 
 Use the license headers for HTML, CSS, and JS files:

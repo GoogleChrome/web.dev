@@ -187,7 +187,7 @@ page speed](/preconnect-and-dns-prefetch/)
 
 ### Use signed exchanges (SXGs)
 
-[Signed exchanges (SXGs)](https://web.dev/signed-exchanges) are a delivery
+[Signed exchanges (SXGs)](/signed-exchanges) are a delivery
 mechanism that allow for faster user experiences by providing content in an
 easily cacheable format. Specifically, [Google
 Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
@@ -346,11 +346,11 @@ better LCP.
 This can be accomplished by optimizing your scripts in a few different ways:
 
 - [Minify and compress JavaScript
-  files](https://web.dev/reduce-network-payloads-using-text-compression/)
+  files](/reduce-network-payloads-using-text-compression/)
 - [Defer unused
-  JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
+  JavaScript](/reduce-javascript-payloads-with-code-splitting/)
 - [Minimize unused
-  polyfills](https://web.dev/serve-modern-code-to-modern-browsers/)
+  polyfills](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}
 The [Optimize First Input Delay](/optimize-fid/) guide covers all techniques

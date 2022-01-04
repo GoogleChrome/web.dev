@@ -28,7 +28,7 @@ and so Google has been working with other browser vendors to fix the top five co
 and [transforms](/learn/css/transitions/#transform).
 
 The work has already led to improvements in these key areas.
-You can read about those in the [Compat 2021 mid-year update](https://web.dev/compat2021-midyear/).
+You can read about those in the [Compat 2021 mid-year update](/compat2021-midyear/).
 
 {% Aside %}
 The Microsoft Edge team took on the work of rewriting CSS grid layout as part of the Compat 2021 effort.
@@ -66,7 +66,7 @@ Read about [overall responsiveness](/responsiveness/) and
 
 {% Aside %}
 You can find out more on our collaboration with JavaScript frameworks in our post
-[Introducing Aurora](https://web.dev/introducing-aurora/).
+[Introducing Aurora](/introducing-aurora/).
 {% endAside %}
 
 Also announced is an updated version of [PageSpeed Insights](/whats-new-pagespeed-insights/),
