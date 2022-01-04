@@ -16,7 +16,7 @@ questions:
 
   - type: multiple-choice
     cardinality: "1"
-    correctAnswers: "1"
+    correctAnswers: "0"
     stem: Background images are not repeated by default.
     options:
       - content: "False"
