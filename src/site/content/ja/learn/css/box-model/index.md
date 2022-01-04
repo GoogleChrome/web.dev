@@ -7,7 +7,7 @@ description: |2
 audio:
   title: 'CSSポッドキャスト   - 001: ボックスモデル'
   src: "https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_001_v2.0.mp3?dest-id=1891556"
-  thumbnail: image / foR0vJZKULb5AGJExlazy1xYDgI2 / ECDb0qa4TB7yUsHwBic8.png
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
