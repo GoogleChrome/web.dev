@@ -252,7 +252,7 @@ Start by measuring field data for your site using Real User Monitoring (RUM) too
 - web-vitals JavaScript library
 - Chrome User Experience Report (CrUX)
 
-#### Third party RUM tools
+#### Third-party RUM tools
 
 - Cloudflare
 - New Relic
