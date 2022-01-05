@@ -18,7 +18,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-11-26
+updated: 2021-12-21
 tags:
   - blog
   - security
@@ -287,17 +287,18 @@ Chrome.
 We've been exploring ways to deploy `Cross-Origin-Resource-Policy` at scale, as
 cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
-"credentialless" mode](https://github.com/mikewest/credentiallessness/) that
+"credentialless"
+mode](https://developer.chrome.com/blog/coep-credentialless-origin-trial/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are figuring out the details of how it should work, but we hope
-this will lighten your burden of making sure the subresources are sending the
-`Cross-Origin-Resource-Policy` header.
+credentials. We hope this will lighten your burden of making sure the
+subresources are sending the `Cross-Origin-Resource-Policy` header.
 
-If you want to enable cross-origin isolation but are blocked by this, we
-recommend [registering for an origin
+However, since `credentialless` mode is available on Chrome from version 96 but
+not supported by any other browsers yet, some developers might find it
+challenging to deploy COOP or COEP. If you prefer not to enable cross-origin
+isolation yet, we recommend [registering for an origin
 trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
-and waiting until the new mode is available. We are not planning to terminate
-the origin trial until the new mode is available.
+and waiting until `credentialless` is available in more browsers.
 
 {% endAside %}
 
