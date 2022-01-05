@@ -22,6 +22,7 @@ const path = require('path');
 const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
+const maxChunkSizeInMB = maxChunkSizeInBytes / 1000000;
 const maxItemSizeInBytes = 7000; // 7,000
 
 /**
@@ -64,7 +65,7 @@ const chunkAlgolia = (arr) => {
         `${path.join(
           arrItem.locale || '',
           arrItem.url || '',
-        )} is >= than 10 MB`,
+        )} is >= than ${maxChunkSizeInMB} MB`,
       );
     } else if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
       temp.push(arrItem);
