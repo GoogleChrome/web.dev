@@ -33,7 +33,7 @@ class Codelab extends BaseElement {
     // _isDesktop has no default value as it's only correctly set between connected/disconnected
     // callbacks via the MediaQueryList's listener.
 
-    this._mql = window.matchMedia('(min-width: 865px)');
+    this._mql = window.matchMedia('(min-width: 800px)');
     this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
     this.snapshot = false;
   }
