@@ -2,7 +2,7 @@
   "name": "web.dev",
   "version": "3.0.0",
   "scripts": {
-    "algolia": "node algolia.js",
+    "algolia": "node ./run-algolia.js",
     "build": "npm-run-all clean gulp ignore rollup eleventy gulp:default-locale firebase-config",
     "clean": "rimraf dist",
     "cloud-secrets": "node ./cloud-secrets.js",
@@ -104,6 +104,7 @@
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
     "c8": "^7.3.0",
+    "chai": "^4.3.4",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
     "chokidar-cli": "^1.2.3",
