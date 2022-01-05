@@ -16,7 +16,7 @@ tags:
 
 {% Aside %}
 The Compute Pressure API is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in
+[capabilities project](/fugu-status/) and is currently in
 development. This post will be updated as the implementation progresses.
 {% endAside %}
 

@@ -63,7 +63,7 @@ mobile web platform. This included:
 +   A lite version of the home page for new users with a
     [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
     to cache critical assets for subsequent navigation.
-+   A [Progressive Web App](https://web.dev/progressive-web-apps/) (PWA) for
++   A [Progressive Web App](/progressive-web-apps/) (PWA) for
     returning users.
 
 ### User flow

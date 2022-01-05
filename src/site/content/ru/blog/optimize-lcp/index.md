@@ -121,7 +121,7 @@ tags:
 
 ### Использование подписанных обменов (SXG)
 
-[Подписанные обмены (SXG)](https://web.dev/signed-exchanges)это механизм доставки, который позволяет ускорить взаимодействие с пользователем, предоставляя контент в легко кешируемом формате. В частности, [Google Поиск](https://developers.google.com/search/docs/advanced/experience/signed-exchange) будет кешировать, а иногда и предварительно загружать файлы SXG. Для сайтов, которые получают большую часть своего трафика от Поиска Google, SXG могут стать важным инструментом улучшения LCP. Более подробно см. в статье [«Подписанные обмены»](/signed-exchanges).
+[Подписанные обмены (SXG)](/signed-exchanges)это механизм доставки, который позволяет ускорить взаимодействие с пользователем, предоставляя контент в легко кешируемом формате. В частности, [Google Поиск](https://developers.google.com/search/docs/advanced/experience/signed-exchange) будет кешировать, а иногда и предварительно загружать файлы SXG. Для сайтов, которые получают большую часть своего трафика от Поиска Google, SXG могут стать важным инструментом улучшения LCP. Более подробно см. в статье [«Подписанные обмены»](/signed-exchanges).
 
 ## Блокирующие рендеринг JavaScript и CSS {: #render-blocking-resources}
 
@@ -237,9 +237,9 @@ tags:
 
 Этого можно добиться, оптимизируя скрипты несколькими различными способами:
 
-- [выполняйте минификацию и сжатие файлов JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/);
-- [отложите загрузку неиспользуемого JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/);
-- [минимизируйте неиспользуемые полифиллы](https://web.dev/serve-modern-code-to-modern-browsers/).
+- [выполняйте минификацию и сжатие файлов JavaScript](/reduce-network-payloads-using-text-compression/);
+- [отложите загрузку неиспользуемого JavaScript](/reduce-javascript-payloads-with-code-splitting/);
+- [минимизируйте неиспользуемые полифиллы](/serve-modern-code-to-modern-browsers/).
 
 {% Aside %} В статье [«Оптимизация времени ожидания до первого взаимодействия с контентом»](/optimize-fid/) более подробно описаны все методы, необходимые для уменьшения времени блокировки JavaScript. {% endAside %}
 

@@ -47,11 +47,11 @@ front. Not until the very end are they used to change the page.
 ### The Brand
 
 Often, a brand color has already been established and is delivered as
-[hex](https://web.dev/learn/css/color/#hex-colors) or
-[rgb](https://web.dev/learn/css/color/#rgb-(red-green-blue)). This GUI Challenge
+[hex](/learn/css/color/#hex-colors) or
+[rgb](/learn/css/color/#rgb-(red-green-blue)). This GUI Challenge
 has a base brand color of `#0af`. Firstly, for this color system, the hex value
 needs converted to
-[hsl](https://web.dev/learn/css/color/#hsl-(hue-saturation-lightness)).
+[hsl](/learn/css/color/#hsl-(hue-saturation-lightness)).
 
 ```css/2
 * {
@@ -298,7 +298,7 @@ alt="screenshot of the dark colors all together", width="800", height="160" %}
 
 This color scheme is all about orchestrating lightness and saturation. There
 should be enough saturation present to still have a hue visible, but should also
-just barely pass [contrast scores](https://web.dev/color-contrast/) since it's
+just barely pass [contrast scores](/color-contrast/) since it's
 intended to be dim and low contrast anyway.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/QjvjPLubdap7v7s9vAEh.png",
@@ -590,6 +590,7 @@ needed, and should never need to worry about themes again.
 } %}
 
 ## Conclusion
+
 Now that you know how I did it, how would you?! 🙂
 
 Let's diversify our approaches and learn all the ways to build on the web.
@@ -597,6 +598,7 @@ Create a Codepen or host your own demo, tweet me with it, and I'll add it to the
 Community remixes section below.
 
 ### Source
+
 - [GUI Challenges source on GitHub](https://github.com/argyleink/gui-challenges)
 - [Color scheme Codepen starter](https://codepen.io/argyleink/pen/vYxrrpd)
 

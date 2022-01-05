@@ -525,6 +525,7 @@ There's 3 parts to this element we need to customize:
 1. [Thumb](#thumb-styles)
 
 ### Range element styles
+
 ```css
 input[type="range"] {
   /* style setting variables */
@@ -584,6 +585,7 @@ full width color, waiting for transparency to reveal it.
 %}
 
 #### Track fill style
+
 My design **does require JavaScript** in order to maintain the fill style. There
 are CSS only strategies but they require the thumb element to be the same height
 as the track, and I wasn't able to find a harmony within those limits.
@@ -818,7 +820,7 @@ input[type="checkbox"]::before {
   block-size: var(--thumb-highlight-size);
   clip-path: circle(50%);                     /* circle shape */
   position: absolute;                         /* this is why position relative on parent */
-  top: 50%;                                   /* pop and plop technique (https://web.dev/centering-in-css/#5.-pop-and-plop) */
+  top: 50%;                                   /* pop and plop technique (/centering-in-css/#5.-pop-and-plop) */
   left: 50%;
   background: var(--thumb-highlight-color);
   transform-origin: center center;            /* goal is a centered scaling circle */

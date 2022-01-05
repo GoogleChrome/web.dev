@@ -19,7 +19,7 @@ tags:
 ---
 
 In the [Progressive Web Apps in multi-origin sites blog
-post](https://web.dev/multi-origin-pwas/), Demian discussed the challenges that
+post](/multi-origin-pwas/), Demian discussed the challenges that
 sites built on multiple origins face when trying to build a single Progressive
 Web App that encompasses all of them.
 
@@ -177,7 +177,7 @@ Here are some practical issues common to both same-origin approaches:
   browsers will actively prompt users to wipe local data when uninstalling one
   of the apps, and this will affect data for the other apps on the origin as
   well. Another issue is that apps will also have to share their [storage
-  quota](https://web.dev/storage-for-the-web/#how-much) which means if either of
+  quota](/storage-for-the-web/#how-much) which means if either of
   them takes up too much space, the other will be negatively impacted.
 - **Permissions:** Permissions are tied to the origin. That means if the user
   grants a permission to one app, it will apply to all apps on that origin
@@ -212,14 +212,14 @@ In practice this presents the following issues:
 - **Installation Promotion:** If the user visits the inner app (for example,
   in a web browser), when the outer app is already installed in the user's
   device, the browser won't show the install promotional banners, and the
-  [BeforeInstallPrompt event](https://web.dev/customize-install/) won't be
+  [BeforeInstallPrompt event](/customize-install/) won't be
   triggered. The reason is that the browser will check and see whether the
   current page belongs to an app that's already installed, and it will conclude
   that it is. The workaround for this is to install the inner app manually
   (via "Create Shortcut" browser menu option), or to install the inner app
   first, before the outer app.
 - **[Notification](https://developer.mozilla.org/docs/Web/API/notification)
-  and the [Badging API](https://web.dev/badging-api/)**: If the outer app is
+  and the [Badging API](/badging-api/)**: If the outer app is
   installed but the inner app is not, notifications and badges coming from the
   inner app will be erroneously attributed to the outer app (which is the
   nearest enclosing scope of an installed app). This feature works properly in
@@ -259,7 +259,7 @@ recommended over using overlapping or nested paths, like `https://example.com/`
 ## Additional resources
 
 - [Progressive Web Apps in multi-origin
-  sites](https://web.dev/multi-origin-pwas/)
+  sites](/multi-origin-pwas/)
 
 With many thanks for their technical reviews and suggestions: _Joe Medley,
 Dominick Ng, Alan Cutter, Daniel Murphy, Penny McLachlan, Thomas Steiner and

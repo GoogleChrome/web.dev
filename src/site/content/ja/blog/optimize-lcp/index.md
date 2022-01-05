@@ -111,7 +111,7 @@ HTML が静的なもので、リクエストのたびに変更する必要がな
 
 ### Signed Exchange (SXG) を使用する
 
-[Signed Exchange (SXG)](https://web.dev/signed-exchanges) は、簡単にキャッシュ可能な形式でコンテンツを配信することにより、より高速なユーザー エクスペリエンスを可能にする配信メカニズムです。具体的には、[Google 検索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)が SXG をキャッシュし、状況に応じてプリフェッチします。トラフィックの大部分を Google 検索が占めているサイトにとっては、SXG は LCP を改善するための重要なツールとなる可能性があります。詳細については、「[Signed Exchange](/signed-exchanges)」を参照してください。
+[Signed Exchange (SXG)](/signed-exchanges) は、簡単にキャッシュ可能な形式でコンテンツを配信することにより、より高速なユーザー エクスペリエンスを可能にする配信メカニズムです。具体的には、[Google 検索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)が SXG をキャッシュし、状況に応じてプリフェッチします。トラフィックの大部分を Google 検索が占めているサイトにとっては、SXG は LCP を改善するための重要なツールとなる可能性があります。詳細については、「[Signed Exchange](/signed-exchanges)」を参照してください。
 
 ## レンダリングを妨げる JavaScript および CSS {: #render-blocking-resources }
 
@@ -213,9 +213,9 @@ Above the fold (アバブ・ザ・フォールド、スクロールせずに閲�
 
 これを行うには、以下に示す様々な方法を用いてスクリプトの最適化を行う必要があります。
 
-- [JavaScript ファイルを圧縮する](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [使用されていない JavaScript を先送りする](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [使用されていないポリフィルを最小限に抑える](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [JavaScript ファイルを圧縮する](/reduce-network-payloads-using-text-compression/)
+- [使用されていない JavaScript を先送りする](/reduce-javascript-payloads-with-code-splitting/)
+- [使用されていないポリフィルを最小限に抑える](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}「[First Input Delay を最適化する](/optimize-fid/)」ガイドでは、JavaScript によるブロック時間を短縮するために必要なすべての技術を、より詳細に説明しています。{% endAside %}
 

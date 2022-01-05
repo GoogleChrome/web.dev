@@ -25,7 +25,7 @@ also want to utilize the `poster` attribute.
   this attribute is not specified, the browser will wait until the first frame
   of the video is available, then use this as the poster image; videos without
   a `poster` attribute are currently [not considered for Largest Contentful
-  Paint](https://web.dev/lcp/#what-elements-are-considered).
+  Paint](/lcp/#what-elements-are-considered).
 
 In this example, CSS is used to ensure that the video resizes to fit its
 container. This has no impact on Web Vitals but is a useful technique.

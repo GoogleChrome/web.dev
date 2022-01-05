@@ -336,4 +336,4 @@ To learn more about progressive web apps and how to build them, head to the
 [Progressive Web Apps section](/progressive-web-apps/) on web.dev.
 
 To read more Progressive Web Apps case studies, browse to the
-[case studies section](https://web.dev/tags/case-study/).
+[case studies section](/tags/case-study/).

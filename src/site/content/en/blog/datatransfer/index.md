@@ -49,7 +49,7 @@ data to wherever they would like.
 To get started with transferring data, you'll need to implement drag-drop or copy-paste. The examples
 below show drag-drop interactions, but the process for copy-paste is similar. If
 you are unfamiliar with the Drag and Drop API, there's a great article
-[explaining HTML5 Drag and Drop](https://web.dev/drag-and-drop/) that details the ins and outs.
+[explaining HTML5 Drag and Drop](/drag-and-drop/) that details the ins and outs.
 
 By providing [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
 Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime-types used in the

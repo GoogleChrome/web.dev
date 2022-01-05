@@ -58,7 +58,7 @@ navigation scope. This proposal does not apply if the user is already within the
 (for instance, if the user has a browser tab open that is within scope, and clicks an internal
 link).
 
-{% Aside 'key-term' %} The [navigation scope](https://web.dev/add-manifest/#scope) of a web app
+{% Aside 'key-term' %} The [navigation scope](/add-manifest/#scope) of a web app
 manifest is the `"scope"` item of a processed manifest. The navigation scope restricts the set of
 URLs to which an application context can be navigated while the manifest is applied. If the
 `"scope"` member is not present in the manifest, it defaults to the parent path of the `"start_url"`

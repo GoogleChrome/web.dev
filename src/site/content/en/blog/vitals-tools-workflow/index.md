@@ -477,7 +477,7 @@ is just one piece of adding governance to prevent regression
 but it occurs after you have made changes to the site.
 It would be ideal to identify potential pull requests that would degrade the performance ahead of code releases.
 To this end, you can use
-[Lighthouse-CI](https://web.dev/lighthouse-ci/)
+[Lighthouse-CI](/lighthouse-ci/)
 with most continuous integration tools.
 Using this,
 you will be able to identify degrading PRs

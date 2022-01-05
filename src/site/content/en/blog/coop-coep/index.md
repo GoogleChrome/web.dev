@@ -471,9 +471,9 @@ around COOP and COEP.
 
 ## Resources
 
-* [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
-* [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/)
+* [Why you need "cross-origin isolated" for powerful features](/why-coop-coep/)
+* [A guide to enable cross-origin isolation](/cross-origin-isolation-guide/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
   92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
 * [Monitor your web page's total memory usage with
-  `measureUserAgentSpecificMemory()`](https://web.dev/monitor-total-page-memory-usage/)
+  `measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)

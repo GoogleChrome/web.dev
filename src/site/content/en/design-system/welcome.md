@@ -110,7 +110,7 @@ The Sass folder mostly resembles the CUBE CSS structure and is as follows:
 
 ## For authors
 
-Please use the same [component guide in the handbook](https://web.dev/handbook/web-dev-components/) as always.
+Please use the same [component guide in the handbook](/handbook/web-dev-components/) as always.
 
 ## How to use the pattern/component generator
 
