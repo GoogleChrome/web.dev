@@ -39,7 +39,7 @@ Interested in styling forms? You can learn about this in a later
 The form element consists of the start tag `<form>`,
 optional attributes defined in the start tag, and an end tag `</form>`.
 
-Between the start and end tag, you can include form elements like `<ìnput>` and `<textarea>`
+Between the start and end tag, you can include form elements like `<input>` and `<textarea>`
 for different types of user input.
 You will learn more about [form elements](/learn/forms/form-fields) in the next module.
 
