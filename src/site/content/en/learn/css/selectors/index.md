@@ -91,7 +91,7 @@ This rule causes every `<section>` element to have `2em` of `padding` on all sid
 
 ### Class selector
 
-A HTML element can have one or more items defined in their `class` attribute.
+An HTML element can have one or more items defined in their `class` attribute.
 The
 [class selector](https://developer.mozilla.org/docs/Web/CSS/Class_selectors)
 matches any element that has that class applied to it.
