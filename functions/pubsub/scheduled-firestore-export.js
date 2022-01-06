@@ -1,14 +1,14 @@
-const functions = require('firebase-functions');
-const firestore = require('@google-cloud/firestore');
-const client = new firestore.v1.FirestoreAdminClient();
+import * as functions from 'firebase-functions';
+import firestore from '@google-cloud/firestore';
 
+const client = new firestore.v1.FirestoreAdminClient();
 const bucket = 'gs://web-dev-production-firestore-archive';
 
 /**
  * Copies over all collections from Firestore to GCP Bucket
  * at 19:00 UTC / 7:00 PST on every Monday.
  */
-exports.scheduledFirestoreExport = functions.pubsub
+export const scheduledFirestoreExport = functions.pubsub
   .schedule('0 19 * * 1')
   .onRun(() => {
     const projectId = process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT;
