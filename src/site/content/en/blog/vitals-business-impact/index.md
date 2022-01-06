@@ -241,31 +241,27 @@ width="800", height="400" %}
 
 ### Step 1: Start measuring
 
-Start by measuring your site using field tools! There are various tools available, from
-both Google and other providers.
+Start by measuring field data for your site using Real User Monitoring (RUM) tools. There are various Google and third-party (3P) RUM tools available already.
 
-{% Img
-src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BZbi6hd4OUfKmwyDgQeR.png",
-alt="",
-width="800", height="459" %}
+{% Img src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/RR58abBFQBGphUgjvHaa.png", alt="RUM tools", width="800", height="397" %}
 
-#### Google tools
+#### Google RUM tools
 
 - Search Console
-- PageSpeed insights
-- web-vitals JS
-- Chrome User Experience Report
+- PageSpeed Insights
+- web-vitals JavaScript library
+- Chrome User Experience Report (CrUX)
 
-#### Third-party tools
+#### Third-party RUM tools
 
 - Cloudflare
 - New Relic
 - Akamai
 - Calibre
-- WebPageTest
 - Blue Triangle
 - Sentry
 - SpeedCurve
+- Raygun
 
 Pick the tool that works best for you.
 You can go a step further and [integrate with
