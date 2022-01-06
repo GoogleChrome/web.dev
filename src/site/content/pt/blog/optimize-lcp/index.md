@@ -41,7 +41,7 @@ As causas mais comuns de uma LCP ruim são:
 
 Quanto mais tempo leva para um navegador receber conteúdo do servidor, mais tempo leva para processar qualquer coisa na tela. Um tempo de resposta mais rápido do servidor melhora diretamente cada métrica de carregamento de página, incluindo a LCP.
 
-Antes de mais nada, melhore como e onde seu servidor lida com seu conteúdo. Use a métrica [**Time to First Byte**](/time-to-first-byte) - TTFB (tempo até o primeiro byte) para medir os tempos de resposta do servidor. Você pode melhorar sua TTFB de várias maneiras:
+Antes de mais nada, melhore como e onde seu servidor lida com seu conteúdo. Use a métrica [**Time to First Byte**](/ttfb/) - TTFB (tempo até o primeiro byte) para medir os tempos de resposta do servidor. Você pode melhorar sua TTFB de várias maneiras:
 
 - Otimizando seu servidor
 - Direcionando os usuários para um CDN próximo

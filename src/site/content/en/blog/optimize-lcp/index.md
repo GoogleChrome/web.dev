@@ -55,7 +55,7 @@ takes to render anything on the screen. A faster server response time directly
 improves every single page-load metric, including LCP.
 
 Before anything else, improve how and where your server handles your content.
-Use [**Time to First Byte**](/time-to-first-byte) (TTFB) to measure your server
+Use [**Time to First Byte**](/ttfb/) (TTFB) to measure your server
 response times. You can improve your TTFB in a number of different ways:
 
 - Optimize your server
