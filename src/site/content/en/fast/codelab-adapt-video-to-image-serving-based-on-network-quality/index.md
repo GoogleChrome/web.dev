@@ -152,11 +152,11 @@ To test it yourself:
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
 
-{% Img src="image/admin/um0BRQOmsqGgZzWeLDHY.png", alt="DevTools Network tab with Fast 3G throttling option highlighted", width="723", height="198", class="w-screenshot" %}
+{% Img src="image/admin/um0BRQOmsqGgZzWeLDHY.png", alt="DevTools Network tab with Fast 3G throttling option highlighted", width="723", height="198" %}
 
 Now reload the page with Fast 3G still enabled. The app loads an image in the background instead of the video:
 
-{% Img src="image/admin/wtQs6oCU8c5q23SQOnHo.png", alt="Matrix-like image background with 'NETWORK INFORMATION' text overlay", width="800", height="456", class="w-screenshot" %}
+{% Img src="image/admin/wtQs6oCU8c5q23SQOnHo.png", alt="Matrix-like image background with 'NETWORK INFORMATION' text overlay", width="800", height="456" %}
 
 ## Extra Credit: Respond to changes
 
@@ -186,7 +186,7 @@ displayNetworkInfo();
 
 Here's the final state of the [app on Glitch](https://glitch.com/~adaptive-serving-netinfo).
 
-{% Img src="image/admin/0cTTeeAMgl5lD1PKRjy2.png", alt="Matrix-like video background with 'NETWORK INFORMATION 4g' text overlay", width="800", height="447", class="w-screenshot" %}
+{% Img src="image/admin/0cTTeeAMgl5lD1PKRjy2.png", alt="Matrix-like video background with 'NETWORK INFORMATION 4g' text overlay", width="800", height="447" %}
 
 To test it again:
 
@@ -197,4 +197,4 @@ To test it again:
 
 The app will update the network information to **3g**:
 
-{% Img src="image/admin/WRp4ceBiuDQZoWmuaZx4.png", alt="Matrix-like video background with 'NETWORK INFORMATION 3g' text overlay", width="800", height="447", class="w-screenshot" %}
+{% Img src="image/admin/WRp4ceBiuDQZoWmuaZx4.png", alt="Matrix-like video background with 'NETWORK INFORMATION 3g' text overlay", width="800", height="447" %}
