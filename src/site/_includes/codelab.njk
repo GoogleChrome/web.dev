@@ -57,9 +57,9 @@ pageScripts:
       <div class="text-size-0 color-mid-text">
         <span>
           {% if updated %}
-          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
+            {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
           {% else %}
-          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
+            {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
           {% endif %}
         </span>
         —
