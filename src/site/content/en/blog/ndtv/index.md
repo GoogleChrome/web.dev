@@ -105,7 +105,7 @@ process of improving user experience.
     After the optimization project, it was down to 1.6 seconds.
     They also reduced their <a href="/cls">Cumulative Layout Shift</a> (CLS) score to
     0.05. Other metrics on WebPageTest like
-    "<a href="/time-to-first-byte">First Byte Time</a>" and "Effective use of
+    "<a href="/ttfb/">First Byte Time</a>" and "Effective use of
     <a href="/content-delivery-networks/">CDN</a>" improved to an A grade.
   </p>
   <figure>

@@ -334,4 +334,4 @@ Stay tuned for part 2 where we discuss how to optimize runtime performance on hy
 [preact]: /codelab-code-splitting
 [preload]:/preload-critical-assets
 [400mil]: https://www.counterpointresearch.com/more-than-a-billion-feature-phones-to-be-sold-over-next-three-years/
-[ttfb]: /time-to-first-byte
+[ttfb]: /ttfb/
