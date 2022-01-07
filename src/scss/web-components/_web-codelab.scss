@@ -8,7 +8,7 @@
     width: inherit;
   }
 
-  @include media-query('md') {
+  @media (min-width: 1000px) {
     display: grid;
     gap: 0;
     grid-template-columns: minmax(0px, 600px) minmax(0px, 100%);
