@@ -60,7 +60,7 @@ async function createDB() {
        const store = db.createObjectStore('desserts', {
          // The `id` property of the object will be the key, and be incremented automatically
            autoincrement: true,
-keyPath: ‘id'
+keyPath: 'id'
        });
        // Create an index called `name` based on the `name` property of objects in the store
        store.createIndex('name', 'name');

@@ -307,4 +307,4 @@ Many new fields may appear in the future while browsers add more capabilities to
 - [Add a Web App Manifest](/add-manifest/)
 - [Adaptive icon support in PWAs with maskable icons](/maskable-icon/)
 - [Richer PWA installation UI](https://developer.chrome.com/blog/richer-pwa-installation/)
-- [MDN: Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+- [MDN: Web App Manifest](https://developer.mozilla.org/docs/Web/Manifest)

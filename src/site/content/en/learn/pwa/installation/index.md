@@ -64,7 +64,7 @@ PWAs installed on desktops:
 - Have an icon in app switchers and docks when the app is active, was recently used, or is opened in the background.
 - Appear in the app search, for example, search on Windows or Spotlight on macOS.
 - Can set a badge number for the icon, to indicate new notifications with the [Badging API](https://developer.mozilla.org/docs/Web/API/Badging_API).
-- Can set a contextual menu for the icon with [App Shortcuts](https://developer.mozilla.org/en-US/docs/Web/Manifest/shortcuts).
+- Can set a contextual menu for the icon with [App Shortcuts](https://developer.mozilla.org/docs/Web/Manifest/shortcuts).
 - Can't be installed twice with the same browser.
 
 {% Aside %}
@@ -75,7 +75,7 @@ After installing an app on the desktop, the users can navigate the browser to `a
 
 ### iOS and iPadOS installation
 
-A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In this platform PWAs are also known as *home screen web apps*. These apps have to be added manually to the homescreen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](https://web.dev/apple-touch-icon/) to your PWA. Safari will use information from your Web App Manifest to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the homescreen will be a screenshot of your PWA when the user installed it. 
+A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In this platform PWAs are also known as *home screen web apps*. These apps have to be added manually to the homescreen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your PWA. Safari will use information from your Web App Manifest to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the homescreen will be a screenshot of your PWA when the user installed it. 
 
 The steps to add apps to the homescreen are:
 
