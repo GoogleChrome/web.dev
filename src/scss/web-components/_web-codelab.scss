@@ -11,7 +11,7 @@
   @include media-query('md') {
     display: grid;
     gap: 0;
-    grid-template-columns: minmax(390px, 600px) minmax(390px, 100%);
+    grid-template-columns: minmax(0px, 600px) minmax(0px, 100%);
 
     .web-codelab__glitch-container {
       position: sticky;
