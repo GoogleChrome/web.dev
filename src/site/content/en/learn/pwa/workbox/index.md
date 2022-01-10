@@ -52,7 +52,7 @@ Workbox provides different ways to integrate into your PWA, you can choose which
 
 If you use the Workbox CLI you will see a wizard that will step you through creating your service worker.
 
-``` 
+```bash 
 npx workbox-cli wizard
 ```
 
@@ -121,6 +121,7 @@ self.addEventListener('install', event => {
   );
 });
 ```
+
 Then, in `setCatchHandler`, the destination of the request that threw an error is determined, and the `offline-fallbacks` cache is opened. If the destination is a document, the content of the offline fallback is returned to the user. If that doesn't exist, or the destination isn't a document (such as an image or stylesheet), an error response is returned. You can extend this pattern not just for documents but for images, videos, fonts, really anything that you'd want to provide an offline fallback when it is not available.
 
 ```js
