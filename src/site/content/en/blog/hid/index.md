@@ -1,12 +1,11 @@
 ---
-layout: post
 title: Connecting to uncommon HID devices
 subhead: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-02-27
+updated: 2022-01-10
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -51,7 +50,7 @@ of specific devices.
 
 ## Current status {: #status }
 
-<div>
+<div class="w-table-wrapper">
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
@@ -79,7 +78,7 @@ including Bluetooth.
 
 Applications and HID devices exchange binary data through three report types:
 
-<div>
+<div class="w-table-wrapper">
   <table>
     <thead>
       <tr>
@@ -170,9 +169,9 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-<figure>
+<figure class="w-figure">
   {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
-  <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
+  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
@@ -220,9 +219,9 @@ contain the HID data as a [`DataView`] object (`data`), the HID device it belong
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
-<figure>
+<figure class="w-figure">
   {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption>Nintendo Switch Joy-Con devices.</figcaption>
+  <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
 Continuing with the previous example, the code below shows you how to detect
@@ -277,9 +276,9 @@ directions. They allow HID devices and applications to exchange non standardized
 HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
-<figure>
+<figure class="w-figure">
   {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption>Laptop keyboard</figcaption>
+  <figcaption class="w-figcaption">Laptop keyboard</figcaption>
 </figure>
 
 To send a feature report to a HID device, pass the 8-bit report ID associated
@@ -349,10 +348,24 @@ navigator.hid.addEventListener("disconnect", event => {
 Debugging HID in Chrome is easy with the internal page, `about://device-log`
 where you can see all HID and USB device related events in one single place.
 
-<figure>
+<figure class="w-figure">
   {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
-  <figcaption>Internal page in Chrome to debug HID.</figcaption>
+  <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
 </figure>
+
+On most Linux systems, HID devices are mapped with read-only permissions by
+default. To allow Chrome to open a HID device, you will need to add a new [udev
+rule]. Create a file at `/etc/udev/rules.d/50-yourdevicename.rules` with the
+following content:
+
+```vim
+KERNEL=="hidraw*", ATTRS{idVendor}=="[yourdevicevendor]", MODE="0664", GROUP="plugdev"
+```
+
+where `[yourdevicevendor]` is `057e` if your device is a Nintendo Switch
+Joy-Con for instance. `ATTRS{idProduct}` can also be added for a more specific
+rule. Make sure your `user` is a [member] of the `plugdev` group. Then, just
+reconnect your device.
 
 ## Browser support {: #browser-support }
 
@@ -441,9 +454,11 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
 [the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
 [HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
-[`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
-[`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
+[`DataView`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[`BufferSource`]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
 [web.dev/hid-examples]: /hid-examples/
+[udev rule]: https://www.freedesktop.org/software/systemd/man/udev.html
+[member]: https://wiki.debian.org/SystemGroups
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
 [publicly available]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_usage_and_page.cc
