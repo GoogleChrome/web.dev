@@ -363,7 +363,7 @@ following content:
 KERNEL=="hidraw*", ATTRS{idVendor}=="[yourdevicevendor]", MODE="0664", GROUP="plugdev"
 ```
 
-where `[yourdevicevendor]` is `057e` if your device is a Nintendo Switch
+In the line above, `[yourdevicevendor]` is `057e` if your device is a Nintendo Switch
 Joy-Con for instance. `ATTRS{idProduct}` can also be added for a more specific
 rule. Make sure your `user` is a [member] of the `plugdev` group. Then, just
 reconnect your device.
