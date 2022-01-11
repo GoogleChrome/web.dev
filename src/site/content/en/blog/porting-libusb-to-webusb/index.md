@@ -14,9 +14,9 @@ tags:
   - devices
 ---
 
-In [a previous post](https://web.dev/asyncify/), I showed how to port apps using filesystem APIs to the web with [File System Access API](https://web.dev/file-system-access/), WebAssembly and [Asyncify](https://emscripten.org/docs/porting/asyncify.html). Now I want to continue the same topic of integrating [Fugu APIs](https://fugu-tracker.web.app/) with WebAssembly and porting apps to the web without losing important features.
+In [a previous post](/asyncify/), I showed how to port apps using filesystem APIs to the web with [File System Access API](/file-system-access/), WebAssembly and [Asyncify](https://emscripten.org/docs/porting/asyncify.html). Now I want to continue the same topic of integrating [Fugu APIs](https://fugu-tracker.web.app/) with WebAssembly and porting apps to the web without losing important features.
 
-I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/) - a popular USB library written in C - to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](https://web.dev/usb/).
+I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/) - a popular USB library written in C - to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](/usb/).
 
 **_Fun fact: WebUSB in Chromium also uses libusb under the hood, so what such port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate API layer. Isn't the web fun?_**
 
@@ -36,11 +36,11 @@ In the end, I got a working web application that previews live feed from a DSLR 
 
 Unfortunately, on Windows any "well-known" devices, including DSLR cameras, are assigned a system driver, which is not compatible with WebUSB. If you want to try the demo on Windows, you'll have to use a tool like [Zadig](https://zadig.akeo.ie/) to override the driver for the connected DSLR to either WinUSB or libusb. This approach works fine for me and many other users, but you should use it at your own risk.
 
-On Linux, you will likely need to [set some custom permissions](https://web.dev/build-for-webusb/#linux) to allow access to your DSLR via WebUSB, although this depends on your distribution.
+On Linux, you will likely need to [set some custom permissions](/build-for-webusb/#linux) to allow access to your DSLR via WebUSB, although this depends on your distribution.
 
 On macOS and Android, the demo should work out of the box.
 
-For a more in-depth guide on cross-platform usage of WebUSB, see the ["Platform-specific considerations" section of "Building a device for WebUSB"](https://web.dev/build-for-webusb/#platform-specific-considerations).
+For a more in-depth guide on cross-platform usage of WebUSB, see the ["Platform-specific considerations" section of "Building a device for WebUSB"](/build-for-webusb/#platform-specific-considerations).
 
 ## Adding a new backend to libusb
 
@@ -247,7 +247,7 @@ struct promise_result {
 
 Now I could use `promise_result::await` on any `Promise` returned from WebUSB operations and inspect its `error` and `value` fields separately.
 
-For example, retrieving a `val` representing a [`USBDevice`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice) from `libusb_device_handle`, calling its [`.open()`](https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/open) method, awaiting its result and returning an error code as a libusb status code looks like this:
+For example, retrieving a `val` representing a [`USBDevice`](https://developer.mozilla.org/docs/Web/API/USBDevice) from `libusb_device_handle`, calling its [`.open()`](https://developer.mozilla.org/docs/Web/API/USBDevice/open) method, awaiting its result and returning an error code as a libusb status code looks like this:
 
 ```cpp
 int em_open(libusb_device_handle *handle) {
@@ -260,7 +260,7 @@ int em_open(libusb_device_handle *handle) {
 
 Of course, before any device can be opened, libusb needs to retrieve a list of available devices. The backend must implement this operation via a `get_device_list` handler.
 
-The difficulty is that, unlike on other platforms, there is no way to enumerate all the connected USB devices on the web for security reasons. Instead, the flow is split into two parts. First, the web application can request devices with specific properties via [`navigator.usb.requestDevice()`](https://developer.mozilla.org/en-US/docs/Web/API/USB/requestDevice) and the user will manually choose which device they want to expose or they can reject the permission prompt. Then, you can list the already approved and connected devices via [`navigator.usb.getDevices()`](https://developer.mozilla.org/en-US/docs/Web/API/USB/getDevices).
+The difficulty is that, unlike on other platforms, there is no way to enumerate all the connected USB devices on the web for security reasons. Instead, the flow is split into two parts. First, the web application can request devices with specific properties via [`navigator.usb.requestDevice()`](https://developer.mozilla.org/docs/Web/API/USB/requestDevice) and the user will manually choose which device they want to expose or they can reject the permission prompt. Then, you can list the already approved and connected devices via [`navigator.usb.getDevices()`](https://developer.mozilla.org/docs/Web/API/USB/getDevices).
 
 At first I tried to use `requestDevice()` in the implementation of `get_device_list` handler to make usage easier. However, showing a permission prompt with a list of connected devices is considered a sensitive operation, and it must be triggered by user interaction (like a button click on a page), otherwise it always returns a rejected promise. libusb applications might often want to list the connected devices upon application start-up, so using `requestDevice()` was not an option.
 
@@ -437,7 +437,7 @@ The library currently has a few limitations:
 
 1. No transfer cancellation support. This is a limitation of WebUSB, which, in turn, stems from lack of cross-platform transfer cancellation in libusb itself.
 2. No isochronous transfer support. It shouldn't be hard to add it by following the implementation of existing transfer modes as examples, but it's also a somewhat rare mode and I didn't have any devices to test it on, so for now I left it as unsupported. If you do have such devices, and want to contribute to the library, PRs are welcome!
-3. The [earlier mentioned cross-platform limitations](#heading=h.ik9rifeitesl). Those limitations are imposed by operating systems, so not much we can do here, except ask users to override the driver or permissions. However, if you're porting HID or serial devices, you can follow the libusb example and port some other library to another Fugu API. For example, you could port a C library [hidapi](https://github.com/libusb/hidapi) to [WebHID](https://web.dev/hid/) and side-step those issues, associated with low-level USB access, altogether.
+3. The [earlier mentioned cross-platform limitations](#heading=h.ik9rifeitesl). Those limitations are imposed by operating systems, so not much we can do here, except ask users to override the driver or permissions. However, if you're porting HID or serial devices, you can follow the libusb example and port some other library to another Fugu API. For example, you could port a C library [hidapi](https://github.com/libusb/hidapi) to [WebHID](/hid/) and side-step those issues, associated with low-level USB access, altogether.
 
 ## Conclusion
 
