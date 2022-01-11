@@ -959,7 +959,7 @@ Support for the Streams API in browsers varies. Be sure to check
 have partial implementations of certain features, so be sure to check the data thoroughly.
 
 The good news is that there is a
-[reference implementation](https://github.com/whatwg/streams/tree/master/reference-implementation)
+[reference implementation](https://github.com/whatwg/streams/tree/main/reference-implementation)
 available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
 production use.
 
