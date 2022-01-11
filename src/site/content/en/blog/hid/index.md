@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-02-27
+updated: 2021-01-10
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -354,6 +354,20 @@ where you can see all HID and USB device related events in one single place.
   <figcaption>Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
+On most Linux systems, HID devices are mapped with read-only permissions by
+default. To allow Chrome to open a HID device, you will need to add a new [udev
+rule]. Create a file at `/etc/udev/rules.d/50-yourdevicename.rules` with the
+following content:
+
+```vim
+KERNEL=="hidraw*", ATTRS{idVendor}=="[yourdevicevendor]", MODE="0664", GROUP="plugdev"
+```
+
+In the line above, `[yourdevicevendor]` is `057e` if your device is a Nintendo Switch
+Joy-Con for instance. `ATTRS{idProduct}` can also be added for a more specific
+rule. Make sure your `user` is a [member] of the `plugdev` group. Then, just
+reconnect your device.
+
 ## Browser support {: #browser-support }
 
 The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
@@ -444,6 +458,8 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
 [`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [web.dev/hid-examples]: /hid-examples/
+[udev rule]: https://www.freedesktop.org/software/systemd/man/udev.html
+[member]: https://wiki.debian.org/SystemGroups
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
 [publicly available]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_usage_and_page.cc
