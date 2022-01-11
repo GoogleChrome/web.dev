@@ -59,7 +59,7 @@ developers to place custom content in what was previously the browser-controlled
 | Step                                     | Status                             |
 | ---------------------------------------- | ---------------------------------- |
 | 1. Create explainer                      | [Complete][explainer]              |
-| 2. Create initial draft of specification | Not started                        |
+| 2. Create initial draft of specification | [Complete][spec]                   |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback)           |
 | 4. Origin trial                          | Complete                           |
 | 5. **Launch**                            | **Complete** (in Chromium&nbsp;98) |
@@ -409,6 +409,7 @@ hashtag and let us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Explainer][explainer]
+- [Spec draft][spec]
 - [Chromium bug](https://crbug.com/937121)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/5741247866077184)
 - [TAG review](https://github.com/w3ctag/design-reviews/issues/481)
@@ -423,6 +424,7 @@ This article was reviewed by [Joe Medley](https://github.com/jpmedley) and
 [Sigmund](https://unsplash.com/@sigmund) on [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
 [explainer]: https://github.com/WICG/window-controls-overlay/blob/main/explainer.md
+[spec]: https://wicg.github.io/window-controls-overlay/
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
 [powerful-apis]:
