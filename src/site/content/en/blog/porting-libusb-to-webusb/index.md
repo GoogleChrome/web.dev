@@ -18,7 +18,9 @@ In [a previous post](/asyncify/), I showed how to port apps using filesystem API
 
 I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/) - a popular USB library written in C - to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](/usb/).
 
-**_Fun fact: WebUSB in Chromium also uses libusb under the hood, so what such port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate API layer. Isn't the web fun?_**
+{% Aside %}
+Fun fact: WebUSB in Chromium also uses libusb under the hood, so what the port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate API layer. Isn't the web fun?
+{% endAside %}
 
 ## First things first: a demo
 
@@ -30,7 +32,7 @@ I've decided to describe the steps that got me to this working demo in two parts
 
 In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. If you're impatient, feel free to jump ahead and check out the demo:
 
-[insert recorded preview and link]
+[TODO: insert recorded preview and link]
 
 ### Important cross-platform compatibility notes
 
@@ -48,7 +50,7 @@ While it's possible to provide a shim API similar to libusb (this has been done 
 
 Luckily, the [libusb README](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/README#L13-L15) says:
 
-> libusb is abstracted internally in such a way that it can hopefully be ported to other operating systems. Please see the [PORTING](https://github.com/libusb/libusb/blob/master/PORTING) file for more information.
+> “libusb is abstracted internally in such a way that it can hopefully be ported to other operating systems. Please see the [PORTING](https://github.com/libusb/libusb/blob/master/PORTING) file for more information.”
 
 libusb is structured in a way where the public API is separate from "backends". Those backends are responsible for listing, opening, closing and actually communicating to the devices via the operating system's low-level APIs. This is how libusb already abstracts away differences between Linux, macOS, Windows, Android, OpenBSD/NetBSD, Haiku and Solaris and works on all these platforms.
 
@@ -416,9 +418,9 @@ Finally, as mentioned earlier, WebUSB requires device enumeration to be done via
 
 Once all of this was done, I could serve the generated files with a static web server, initialize WebUSB and run those HTML executables manually with the help of DevTools.
 
-![alt_text](images/image1.png "image_tooltip")
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/i6dUiRRDtb0ucKX9gHOH.png", alt="Screenshot showing Chrome window with DevTools open on a locally served `testlibusb` page. DevTools console is evaluating `navigator.usb.requestDevice({ filters: [] })`, which triggered a permission prompt and it's currently asking the user to choose a USB device that should be shared with the page. ILCE-6600 (a Sony camera) is currently selected.", width="800", height="626" %}
 
-![alt_text](images/image2.png "image_tooltip")
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/0FhFjozbwA1sqk1Dhx7f.png", alt="Screenshot of the next step, with DevTools still open. After the device was selected, Console has evaluated a new expression `Module.callMain(['-v'])`, which executed the `testlibusb` app in verbose mode. The output shows various detailed information about previously connected USB camera - manufacturer Sony, product ILCE-6600, serial number, configuration etc.", width="800", height="824" %}
 
 It doesn't look like much, but, when porting libraries to a new platform, getting to the stage where it produces a valid output for the first time is pretty exciting!
 
