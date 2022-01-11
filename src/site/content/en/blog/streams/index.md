@@ -7,7 +7,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-02-19
-updated: 2021-02-25
+updated: 2022-01-11
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -625,6 +625,9 @@ a `WritableStream`, the underlying sink is given a corresponding `WritableStream
 instance to manipulate. The `WritableStreamDefaultController` has only one method:
 [`WritableStreamDefaultController.error()`](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/error),
 which causes any future interactions with the associated stream to error.
+`WritableStreamDefaultController` also supports a `signal` property which returns an instance of
+[`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal),
+allowing a `WritableStream` operation to be stopped if needed.
 
 ```js
 /* … */
