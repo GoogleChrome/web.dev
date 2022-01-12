@@ -63,7 +63,7 @@ As you continue, understand that it's not necessary for you to use _all_ of the 
 
 ### Chrome User Experience Report (CrUX)
 
-[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/) is a [BigQuery dataset](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) of field data gathered from [a segment of real Google Chrome users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) from millions of websites. It also presents Core Web Vitals for websites with sufficient traffic, but only at the origin level. However, the [CrUX API](https://web.dev/chrome-ux-report-api/) can provide field data at the URL level, provided a URL has enough samples in the CrUX dataset.
+[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/) is a [BigQuery dataset](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) of field data gathered from [a segment of real Google Chrome users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) from millions of websites. It also presents Core Web Vitals for websites with sufficient traffic, but only at the origin level. However, the [CrUX API](/chrome-ux-report-api/) can provide field data at the URL level, provided a URL has enough samples in the CrUX dataset.
 
 #### When to use CrUX
 
