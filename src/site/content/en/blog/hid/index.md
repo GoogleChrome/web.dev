@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2022-01-10
+updated: 2022-01-12
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -450,7 +450,7 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [Elgato Stream Deck]: https://www.elgato.com/en/gaming/stream-deck
 [Jabra headsets]: https://www.jabra.com/business/office-headsets
 [X-keys]: https://xkeys.com/xkeys.html
-[explainer]: https://github.com/WICG/webhid/blob/master/EXPLAINER.md
+[explainer]: https://github.com/WICG/webhid/blob/main/EXPLAINER.md
 [spec]: https://wicg.github.io/webhid/
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
 [the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
