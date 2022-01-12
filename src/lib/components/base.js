@@ -4,6 +4,7 @@
 
 import 'webdev-infra/web-components/YouTube';
 
+import './ProfileSwitcherContainer';
 import './Header';
 import './LanguageSelect';
 import './NavigationDrawer';

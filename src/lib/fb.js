@@ -18,7 +18,13 @@ import {clearSignedInState} from './actions';
 
 import {trackError} from './analytics';
 
+let isInitialized = false;
+
 function initialize() {
+  if (isInitialized) {
+    return;
+  }
+
   initializeApp(firebaseConfig);
 
   let firestoreUserUnsubscribe = () => {};
@@ -114,6 +120,8 @@ function initialize() {
       };
     })();
   });
+
+  isInitialized = true;
 }
 
 /**
@@ -195,6 +203,7 @@ export async function saveUserUrl(url, auditedOn = null) {
 export async function signIn() {
   let user = null;
   try {
+    initialize();
     const provider = new GoogleAuthProvider();
     const res = await signInWithPopup(getAuth(), provider);
     user = res.user;
@@ -211,6 +220,7 @@ export async function signIn() {
  */
 export async function signOut() {
   try {
+    initialize();
     await authSignOut(getAuth());
   } catch (err) {
     console.error('signOut error', err);
@@ -218,4 +228,8 @@ export async function signOut() {
   }
 }
 
-initialize();
+// Only initialize auth if the user was signed in on their last visit.
+// If they're not signed in, defer loading the library until they sign in.
+if (store.getState().isSignedIn) {
+  initialize();
+}
