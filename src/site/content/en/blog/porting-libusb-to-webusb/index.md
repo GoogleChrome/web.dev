@@ -19,7 +19,7 @@ In [a previous post](/asyncify/), I showed how to port apps using filesystem API
 I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/) - a popular USB library written in C - to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](/usb/).
 
 {% Aside %}
-Fun fact: WebUSB in Chromium also uses libusb under the hood, so what the port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate API layer. Isn't the web fun?
+Fun fact: WebUSB in Chromium also uses libusb under the hood. So what the port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate API layer. Isn't the web fun?
 {% endAside %}
 
 ## First things first: a demo
@@ -28,7 +28,7 @@ The most important thing to do when porting a library, obviously, is choosing th
 
 The idea I've stopped on was DSLR remote control. In particular, an open source project [gPhoto2](http://gphoto.org/) has been in this space long enough to reverse-engineer and implement support for a wide variety of digital cameras. It supports several protocols, but the one I was most interested in was USB support, which it performs via libusb.
 
-I've decided to describe the steps that got me to this working demo in two parts. In this blog post, I'll describe the technical details on how I've ported libusb itself, and what tricks might be necessary to port other popular libraries to Fugu APIs too. In the second post, I'll go into details on porting and integrating gPhoto2 itself.
+I'll describe the steps for building this demo in two parts. In this blog post, I'll describe how I ported libusb itself, and what tricks might be necessary to port other popular libraries to Fugu APIs. In the second post, I'll go into details on porting and integrating gPhoto2 itself.
 
 In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. If you're impatient, feel free to jump ahead and check out the demo:
 
@@ -38,7 +38,7 @@ In the end, I got a working web application that previews live feed from a DSLR 
 
 Unfortunately, on Windows any "well-known" devices, including DSLR cameras, are assigned a system driver, which is not compatible with WebUSB. If you want to try the demo on Windows, you'll have to use a tool like [Zadig](https://zadig.akeo.ie/) to override the driver for the connected DSLR to either WinUSB or libusb. This approach works fine for me and many other users, but you should use it at your own risk.
 
-On Linux, you will likely need to [set some custom permissions](/build-for-webusb/#linux) to allow access to your DSLR via WebUSB, although this depends on your distribution.
+On Linux, you will likely need to [set custom permissions](/build-for-webusb/#linux) to allow access to your DSLR via WebUSB, although this depends on your distribution.
 
 On macOS and Android, the demo should work out of the box.
 
@@ -50,7 +50,7 @@ While it's possible to provide a shim API similar to libusb (this has been done 
 
 Luckily, the [libusb README](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/README#L13-L15) says:
 
-> “libusb is abstracted internally in such a way that it can hopefully be ported to other operating systems. Please see the [PORTING](https://github.com/libusb/libusb/blob/master/PORTING) file for more information.”
+**“libusb is abstracted internally in such a way that it can hopefully be ported to other operating systems. Please see the [PORTING](https://github.com/libusb/libusb/blob/master/PORTING) file for more information.”**
 
 libusb is structured in a way where the public API is separate from "backends". Those backends are responsible for listing, opening, closing and actually communicating to the devices via the operating system's low-level APIs. This is how libusb already abstracts away differences between Linux, macOS, Windows, Android, OpenBSD/NetBSD, Haiku and Solaris and works on all these platforms.
 
@@ -72,7 +72,7 @@ haiku_usb.h            threads_posix.c
 haiku_usb_raw.cpp      threads_posix.h
 ```
 
-Each backend includes the [`libusbi.h`](https://github.com/libusb/libusb/blob/master/libusb/libusbi.h) header with common types and helpers, and needs to expose an `usbi_backend` variable of type [`usbi_os_backend`](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/libusb/libusbi.h#L886). For example, this is what the Windows backend looks like:
+Each backend includes the [`libusbi.h`](https://github.com/libusb/libusb/blob/master/libusb/libusbi.h) header with common types and helpers, and needs to expose a `usbi_backend` variable of type [`usbi_os_backend`](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/libusb/libusbi.h#L886). For example, this is what the Windows backend looks like:
 
 ```c
 const struct usbi_os_backend usbi_backend = {
@@ -120,7 +120,7 @@ Looking through the properties, we can see that the struct includes the backend 
 
 The private data fields are useful at least for storing OS handles to all those things, as without handles we don't know which item any given operation applies to. In the web implementation, the OS handles would be the underlying WebUSB JavaScript objects. The natural way to represent and store them in Emscripten would be via the [`emscripten::val`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4N10emscripten10emscripten3valE) class, which is provided as part of [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html) (Emscripten's bindings system).
 
-Most of the backends in the folder are implemented in C, but a few are implemented in C++ as well. Embind only works with C++, so the choice was made for me and I've added `libusb/libusb/os/emscripten_webusb.cpp` with the required structure and with `sizeof(val)` for the private data fields:
+Most of the backends in the folder are implemented in C, but a few are implemented in C++. Embind only works with C++, so the choice was made for me and I've added `libusb/libusb/os/emscripten_webusb.cpp` with the required structure and with `sizeof(val)` for the private data fields:
 
 ```cpp
 #include <emscripten.h>
@@ -143,7 +143,7 @@ const usbi_os_backend usbi_backend = {
 
 ### Storing WebUSB objects as device handles
 
-libusb provides ready-to-use pointers to the allocated area for private data. To work with those pointers as `val` instances, I've added small helpers that can construct them in-place, retrieve them as references, and move values out:
+libusb provides ready-to-use pointers to the allocated area for private data. To work with those pointers as `val` instances, I've added small helpers that construct them in-place, retrieve them as references, and move values out:
 
 ```cpp
 // We store an Embind handle to WebUSB USBDevice in "priv" metadata of
@@ -183,7 +183,7 @@ struct WebUsbTransferPtr : ValPtr {
 
 Now I've needed a way to handle async WebUSB APIs where libusb expects synchronous operations. For this, I could use Asyncify, or, more specifically, its Embind integration via [`val::await()`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val5awaitEv).
 
-I also wanted to correctly handle WebUSB errors and convert them into libusb error codes, but Embind currently doesn't have any way to handle JavaScript exceptions or `Promise` rejections from the C++ side. This problem can be worked around by catching a rejection on the JavaScript side and converting the result into an `{ error, value }` object that can be now safely parsed from the C++ side. This was accomplished by combination of [`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_JS) macro and [`Emval.to{Handle, Value}`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val9as_handleEv) APIs:
+I also wanted to correctly handle WebUSB errors and convert them into libusb error codes, but Embind currently doesn't have any way to handle JavaScript exceptions or `Promise` rejections from the C++ side. This problem can be worked around by catching a rejection on the JavaScript side and converting the result into an `{ error, value }` object that can be now safely parsed from the C++ side. I did this with a combination of the [`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_JS) macro and [`Emval.to{Handle, Value}`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val9as_handleEv) APIs:
 
 ```cpp
 namespace {
@@ -249,7 +249,7 @@ struct promise_result {
 
 Now I could use `promise_result::await` on any `Promise` returned from WebUSB operations and inspect its `error` and `value` fields separately.
 
-For example, retrieving a `val` representing a [`USBDevice`](https://developer.mozilla.org/docs/Web/API/USBDevice) from `libusb_device_handle`, calling its [`.open()`](https://developer.mozilla.org/docs/Web/API/USBDevice/open) method, awaiting its result and returning an error code as a libusb status code looks like this:
+For example, retrieving a `val` representing a [`USBDevice`](https://developer.mozilla.org/docs/Web/API/USBDevice) from `libusb_device_handle`, calling its [`open()`](https://developer.mozilla.org/docs/Web/API/USBDevice/open) method, awaiting its result, and returning an error code as a libusb status code looks like this:
 
 ```cpp
 int em_open(libusb_device_handle *handle) {
@@ -260,7 +260,7 @@ int em_open(libusb_device_handle *handle) {
 
 ### Device enumeration
 
-Of course, before any device can be opened, libusb needs to retrieve a list of available devices. The backend must implement this operation via a `get_device_list` handler.
+Of course, before I can open any device, libusb needs to retrieve a list of available devices. The backend must implement this operation via a `get_device_list` handler.
 
 The difficulty is that, unlike on other platforms, there is no way to enumerate all the connected USB devices on the web for security reasons. Instead, the flow is split into two parts. First, the web application can request devices with specific properties via [`navigator.usb.requestDevice()`](https://developer.mozilla.org/docs/Web/API/USB/requestDevice) and the user will manually choose which device they want to expose or they can reject the permission prompt. Then, you can list the already approved and connected devices via [`navigator.usb.getDevices()`](https://developer.mozilla.org/docs/Web/API/USB/getDevices).
 
@@ -302,13 +302,13 @@ One more piece of `libusb` that I do want to stop on is event handling. As descr
 
 There are a couple of problems with this approach on the web.
 
-First of all, WebUSB doesn't and cannot expose raw handles of the underlying devices, so polling those directly is not an option. Second, libusb uses `eventfd` and `pipe` APIs for other events as well as for handling transfers on operating systems without raw device handles, but `eventfd` is not currently supported in Emscripten, and `pipe`, while supported, [currently doesn't conform to the spec](https://github.com/emscripten-core/emscripten/issues/13214) and can't wait for events.
+First, WebUSB doesn't and cannot expose raw handles of the underlying devices, so polling those directly is not an option. Second, libusb uses `eventfd` and `pipe` APIs for other events as well as for handling transfers on operating systems without raw device handles, but `eventfd` is not currently supported in Emscripten, and `pipe`, while supported, [currently doesn't conform to the spec](https://github.com/emscripten-core/emscripten/issues/13214) and can't wait for events.
 
-Finally, the biggest problem is that the web has its own event loop. This global event loop is used for any external I/O operations (including `fetch`, timers, or, in this case, WebUSB), and it invokes event or `Promise` handlers whenever corresponding operation has finished. Executing another, nested, infinite event loop will block the browser's event loop from ever progressing, which means that not only will the UI become unresponsive, but also that the code will never get notifications for the very same I/O events it's waiting for. This usually results in a deadlock, and that's what happened when I tried to use libusb in a demo, too - the page froze.
+Finally, the biggest problem is that the web has its own event loop. This global event loop is used for any external I/O operations (including `fetch`, timers, or, in this case, WebUSB), and it invokes event or `Promise` handlers whenever corresponding operations finish. Executing another, nested, infinite event loop will block the browser's event loop from ever progressing, which means that not only will the UI become unresponsive, but also that the code will never get notifications for the very same I/O events it's waiting for. This usually results in a deadlock, and that's what happened when I tried to use libusb in a demo, too. The page froze.
 
 Like with other blocking I/O, to port such event loops to the web, developers need to find a way to run those loops without blocking the main thread. One way is to refactor the application to handle I/O events in a separate thread and pass the results back to the main one. The other is to use Asyncify to pause the loop and wait for events in a non-blocking fashion.
 
-I didn't want to do significant changes to either libusb or gPhoto2, and I've already used Asyncify for `Promise` integration earlier, so that's the path I've chosen. In order to simulate a blocking variant of `poll`, for the initial proof of concept I've used a loop below:
+I didn't want to do significant changes to either libusb or gPhoto2, and I've already used Asyncify for `Promise` integration, so that's the path I've chosen. To simulate a blocking variant of `poll`, for the initial proof of concept I've used a loop as shown below:
 
 ```cpp
 #ifdef __EMSCRIPTEN__
@@ -333,13 +333,13 @@ I didn't want to do significant changes to either libusb or gPhoto2, and I've al
 
 What it does is:
 
-1. Invokes `poll` to check if any events were reported by the backend yet. If there are some, the loop stops, otherwise Emscripten's implementation of `poll` will immediately return with `0`.
-2. Invokes `emscripten_sleep(0)`. This function uses Asyncify and `setTimeout` under the hood and is used here to yield control back to the main browser event loop. This allows the browser to handle any user interactions and I/O events, including WebUSB.
+1. Calls `poll()` to check if any events were reported by the backend yet. If there are some, the loop stops. Otherwise Emscripten's implementation of `poll` will immediately return with `0`.
+2. Calls `emscripten_sleep(0)`. This function uses Asyncify and `setTimeout()` under the hood and is used here to yield control back to the main browser event loop. This allows the browser to handle any user interactions and I/O events, including WebUSB.
 3. Check if the specified timeout has expired yet, and, if not, continue the loop.
 
 As the comment mentions, this approach was not optimal, because it kept saving-restoring the entire call stack with Asyncify even when there were no USB events to handle yet (most of the time), and because `setTimeout` itself has a minimal duration of 4ms in modern browsers. Still, it worked well enough to produce 13-14 FPS livestream from DSLR in the initial proof-of-concept.
 
-Later, I've decided to improve it by leveraging the browser event system. There are several ways in which this implementation could be improved further, but for now I've chosen to emit custom events directly on the global object, without associating them with a particular libusb data structure. I've done so via the following wait & notify mechanism:
+Later, I decided to improve it by leveraging the browser event system. There are several ways in which this implementation could be improved further, but for now I've chosen to emit custom events directly on the global object, without associating them with a particular libusb data structure. I've done so via the following wait and notify mechanism:
 
 ```js
 EM_JS(void, em_libusb_notify, (void), {
@@ -414,13 +414,13 @@ First, executables on Unix platforms normally don't have any extension. Emscript
 
 Second, because I'm using Embind and Asyncify, I need to enable those features (`--bind -s ASYNCIFY`) as well as allow dynamic memory growth (`-s ALLOW_MEMORY_GROWTH`) via linker parameters. Unfortunately, there is no way for a library to report those flags to the linker, so every application that uses this libusb port will have to add the same linker flags into their build configuration as well.
 
-Finally, as mentioned earlier, WebUSB requires device enumeration to be done via a user gesture. libusb examples and tests assume that they can enumerate devices at start-up, and fail with an error without changes. Instead, I had to disable automatic execution (`-s INVOKE_RUN=0`) and expose the manual `callMain` method (`-s EXPORTED_RUNTIME_METHODS=...`).
+Finally, as mentioned earlier, WebUSB requires device enumeration to be done via a user gesture. libusb examples and tests assume that they can enumerate devices at start-up, and fail with an error without changes. Instead, I had to disable automatic execution (`-s INVOKE_RUN=0`) and expose the manual `callMain()` method (`-s EXPORTED_RUNTIME_METHODS=...`).
 
-Once all of this was done, I could serve the generated files with a static web server, initialize WebUSB and run those HTML executables manually with the help of DevTools.
+Once all of this was done, I could serve the generated files with a static web server, initialize WebUSB, and run those HTML executables manually with the help of DevTools.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/i6dUiRRDtb0ucKX9gHOH.png", alt="Screenshot showing Chrome window with DevTools open on a locally served `testlibusb` page. DevTools console is evaluating `navigator.usb.requestDevice({ filters: [] })`, which triggered a permission prompt and it's currently asking the user to choose a USB device that should be shared with the page. ILCE-6600 (a Sony camera) is currently selected.", width="800", height="626" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/i6dUiRRDtb0ucKX9gHOH.png", alt="Screenshot showing a Chrome window with DevTools open on a locally served `testlibusb` page. DevTools console is evaluating `navigator.usb.requestDevice({ filters: [] })`, which triggered a permission prompt and it's currently asking the user to choose a USB device that should be shared with the page. ILCE-6600 (a Sony camera) is currently selected.", width="800", height="626" %}
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/0FhFjozbwA1sqk1Dhx7f.png", alt="Screenshot of the next step, with DevTools still open. After the device was selected, Console has evaluated a new expression `Module.callMain(['-v'])`, which executed the `testlibusb` app in verbose mode. The output shows various detailed information about previously connected USB camera - manufacturer Sony, product ILCE-6600, serial number, configuration etc.", width="800", height="824" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/0FhFjozbwA1sqk1Dhx7f.png", alt="Screenshot of the next step, with DevTools still open. After the device was selected, Console has evaluated a new expression `Module.callMain(['-v'])`, which executed the `testlibusb` app in verbose mode. The output shows various detailed information about the previously connected USB camera: manufacturer Sony, product ILCE-6600, serial number, configuration etc.", width="800", height="824" %}
 
 It doesn't look like much, but, when porting libraries to a new platform, getting to the stage where it produces a valid output for the first time is pretty exciting!
 
@@ -437,9 +437,9 @@ As mentioned [above](#heading=h.mogcyiy1x8w8), the port depends on a few Emscrip
 
 The library currently has a few limitations:
 
-1. No transfer cancellation support. This is a limitation of WebUSB, which, in turn, stems from lack of cross-platform transfer cancellation in libusb itself.
-2. No isochronous transfer support. It shouldn't be hard to add it by following the implementation of existing transfer modes as examples, but it's also a somewhat rare mode and I didn't have any devices to test it on, so for now I left it as unsupported. If you do have such devices, and want to contribute to the library, PRs are welcome!
-3. The [earlier mentioned cross-platform limitations](#heading=h.ik9rifeitesl). Those limitations are imposed by operating systems, so not much we can do here, except ask users to override the driver or permissions. However, if you're porting HID or serial devices, you can follow the libusb example and port some other library to another Fugu API. For example, you could port a C library [hidapi](https://github.com/libusb/hidapi) to [WebHID](/hid/) and side-step those issues, associated with low-level USB access, altogether.
+* No transfer cancellation support. This is a limitation of WebUSB, which, in turn, stems from lack of cross-platform transfer cancellation in libusb itself.
+* No isochronous transfer support. It shouldn't be hard to add it by following the implementation of existing transfer modes as examples, but it's also a somewhat rare mode and I didn't have any devices to test it on, so for now I left it as unsupported. If you do have such devices, and want to contribute to the library, PRs are welcome!
+* The [earlier mentioned cross-platform limitations](#heading=h.ik9rifeitesl). Those limitations are imposed by operating systems, so not much we can do here, except ask users to override the driver or permissions. However, if you're porting HID or serial devices, you can follow the libusb example and port some other library to another Fugu API. For example, you could port a C library [hidapi](https://github.com/libusb/hidapi) to [WebHID](/hid/) and side-step those issues, associated with low-level USB access, altogether.
 
 ## Conclusion
 
