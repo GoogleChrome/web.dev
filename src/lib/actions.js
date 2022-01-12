@@ -1,5 +1,4 @@
 import {store} from './store';
-import {saveUserUrl} from './fb';
 import {fetchReports} from './lighthouse-service';
 import {runPsi} from './psi-service';
 import lang from './utils/language';
@@ -32,9 +31,7 @@ export const requestRunPSI = store.action((state, url) => {
       lighthouseError: null,
     });
     const run = await runPsi(url);
-    const auditedOn = new Date(run.fetchTime);
     state = store.getState(); // might change during runLighthouse
-    await saveUserUrl(url, auditedOn); // write the url to Firestore
     return {
       userUrl: url,
       activeLighthouseUrl: null,
