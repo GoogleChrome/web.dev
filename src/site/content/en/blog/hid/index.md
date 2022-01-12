@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-01-10
+updated: 2022-01-12
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -33,7 +33,7 @@ way to implement device-specific logic in JavaScript.
 
 ## Suggested use cases {: #use-cases }
 
-A HID device takes input from or provides output to humans. Examples of devices
+An HID device takes input from or provides output to humans. Examples of devices
 include keyboards, pointing devices (mice, touchscreens, etc.), and gamepads.
 The [HID protocol] makes it possible to access these devices on desktop
 computers using operating system drivers. The web platform supports HID devices
@@ -70,7 +70,7 @@ Reports are the data that is exchanged between a device and a software client.
 The report descriptor describes the format and meaning of data that the device
 supports.
 
-A HID (Human Interface Device) is a type of device that takes input from or
+An HID (Human Interface Device) is a type of device that takes input from or
 provides output to humans. It also refers to the HID protocol, a standard for
 bi-directional communication between a host and a device that is designed to
 simplify the installation procedure. The HID protocol was originally developed
@@ -109,7 +109,7 @@ device. Its structure is hierarchical and can group reports together as distinct
 collections within the top-level collection. The [format] of the descriptor is
 defined by the HID specification.
 
-A HID usage is a numeric value referring to a standardized input or output.
+An HID usage is a numeric value referring to a standardized input or output.
 Usage values allow a device to describe the intended use of the device and the
 purpose of each field in its reports. For example, one is defined for the left
 button of a mouse. Usages are also organized into usage pages, which provide an
@@ -127,13 +127,13 @@ if ("hid" in navigator) {
 }
 ```
 
-### Open a HID connection {: #open }
+### Open an HID connection {: #open }
 
 The WebHID API is asynchronous by design to prevent the website UI from
 blocking when awaiting input. This is important because HID data can be received
 at any time, requiring a way to listen to it.
 
-To open a HID connection, first access a `HIDDevice` object. For this, you can
+To open an HID connection, first access a `HIDDevice` object. For this, you can
 either prompt the user to select a device by calling
 `navigator.hid.requestDevice()`, or pick one from `navigator.hid.getDevices()`
 which returns a list of devices the website has been granted access to
@@ -171,7 +171,7 @@ const devices = await navigator.hid.getDevices();
 ```
 
 <figure>
-  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
+  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of an HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
@@ -181,7 +181,7 @@ description of the device's report formats.
 
 ```js
 for (let collection of device.collections) {
-  // A HID collection includes usage, usage page, reports, and subcollections.
+  // An HID collection includes usage, usage page, reports, and subcollections.
   console.log(`Usage: ${collection.usage}`);
   console.log(`Usage page: ${collection.usagePage}`);
 
@@ -248,7 +248,7 @@ device.addEventListener("inputreport", event => {
 
 ### Send output reports {: #send-output-reports }
 
-To send an output report to a HID device, pass the 8-bit report ID associated
+To send an output report to an HID device, pass the 8-bit report ID associated
 with the output report (`reportId`) and bytes as a [`BufferSource`] (`data`) to
 `device.sendReport()`. The returned promise resolves once the report has been
 sent. If the HID device does not use report IDs, set `reportId` to 0.
@@ -282,7 +282,7 @@ sent by the application on a regular basis.
   <figcaption>Laptop keyboard</figcaption>
 </figure>
 
-To send a feature report to a HID device, pass the 8-bit report ID associated
+To send a feature report to an HID device, pass the 8-bit report ID associated
 with the feature report (`reportId`) and bytes as a [`BufferSource`] (`data`) to
 `device.sendFeatureReport()`. The returned promise resolves once the report has
 been sent. If the HID device does not use report IDs, set `reportId` to 0.
@@ -315,7 +315,7 @@ for (let i = 0; i < 10; i++) {
 
 {% Glitch { id: 'webhid-apple-keyboard-backlight', path: 'script.js', height: 480, allow: 'hid' } %}
 
-To receive a feature report from a HID device, pass the 8-bit report ID
+To receive a feature report from an HID device, pass the 8-bit report ID
 associated with the feature report (`reportId`)  to
 `device.receiveFeatureReport()`. The returned promise resolves with a
 [`DataView`] object that contains the contents of the feature report. If the HID
@@ -330,7 +330,7 @@ const dataView = await device.receiveFeatureReport(/* reportId= */ 1);
 
 ### Listen to connection and disconnection {: #connection-disconnection }
 
-When the website has been granted permission to access a HID device, it can
+When the website has been granted permission to access an HID device, it can
 actively receive connection and disconnection events by listening to `"connect"`
 and `"disconnect"` events.
 
@@ -355,7 +355,7 @@ where you can see all HID and USB device related events in one single place.
 </figure>
 
 On most Linux systems, HID devices are mapped with read-only permissions by
-default. To allow Chrome to open a HID device, you will need to add a new [udev
+default. To allow Chrome to open an HID device, you will need to add a new [udev
 rule]. Create a file at `/etc/udev/rules.d/50-yourdevicename.rules` with the
 following content:
 
@@ -450,7 +450,7 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [Elgato Stream Deck]: https://www.elgato.com/en/gaming/stream-deck
 [Jabra headsets]: https://www.jabra.com/business/office-headsets
 [X-keys]: https://xkeys.com/xkeys.html
-[explainer]: https://github.com/WICG/webhid/blob/master/EXPLAINER.md
+[explainer]: https://github.com/WICG/webhid/blob/main/EXPLAINER.md
 [spec]: https://wicg.github.io/webhid/
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
 [the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
