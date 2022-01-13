@@ -62,7 +62,7 @@ system then allow client-side stored exceptions.
 
 ## Markup
 
-A [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+A [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button)
 should be used for the toggle, as you then benefit from browser-provided
 interaction events and features, such as click events and focusability.
 
@@ -70,9 +70,9 @@ interaction events and features, such as click events and focusability.
 
 The button needs a class for use from CSS and an ID for use from JavaScript.
 Additionally, since the button content is an icon rather than text, add a
-[title](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title)
+[title](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/title)
 attribute to provide information about the button's purpose. Last, add an
-[`[aria-label]`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
+[`[aria-label]`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 to hold the state of the icon button, so screen readers can share the state of
 the theme to folks who are visually impaired.
 
@@ -91,7 +91,7 @@ the theme to folks who are visually impaired.
 
 To indicate to screen readers that changes to `aria-label` should be announced,
 add
-[`aria-live="polite"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live#:~:text=on%20that%20region.-,polite,-Indicates%20that%20updates)
+[`aria-live="polite"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-live#:~:text=on%20that%20region.-,polite,-Indicates%20that%20updates)
 to the button. 
 
 ```html/5/
@@ -107,13 +107,13 @@ to the button.
 ```
 
 This markup addition signals to screen readers to politely, instead of
-[`aria-live="assertive"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#:~:text=aria%2Dlive%3D%22assertive%22%20should%20only%20be%20used%20for%20time%2Dsensitive/critical%20notifications%20that%20absolutely%20require%20the%20user%27s%20immediate%20attention.),
+[`aria-live="assertive"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#:~:text=aria%2Dlive%3D%22assertive%22%20should%20only%20be%20used%20for%20time%2Dsensitive/critical%20notifications%20that%20absolutely%20require%20the%20user%27s%20immediate%20attention.),
 tell the user what changed. In the case of this button, it will announce "light"
 or "dark" depending on what the `aria-label` has become.
 
 ### The scalable vector graphic (SVG) icon
 
-[SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) provides a way to create
+[SVG](https://developer.mozilla.org/docs/Web/SVG) provides a way to create
 high-quality, scalable shapes with minimal markup. Interacting with the button
 can trigger new visual states for the vectors, making SVG great for icons.
 
@@ -125,12 +125,12 @@ The following SVG markup goes inside the `<button>`:
 </svg>
 ```
 
-[`aria-hidden`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute)
+[`aria-hidden`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute)
 has been added to the SVG element so screen readers know to ignore it as it's
 marked presentational. This is great to do for visual decorations, like the icon
 inside a button. In addition to the required `viewBox` attribute on the element,
 add height and width for [similar reasons that images should get inline
-sizes](https://web.dev/learn/design/responsive-images/).
+sizes](/learn/design/responsive-images/).
 
 #### The sun
 
@@ -151,10 +151,10 @@ which sets the size.
 ```
 
 Additionally, the mask property points to an [SVG element's
-ID](https://developer.mozilla.org/en-US/docs/Web/CSS/url()#:~:text=url(myFont.woff)%3B-,url(%23IDofSVGpath),-%3B%0A%0A/*%20associated%20properties%20*/%0Abackground),
+ID](https://developer.mozilla.org/docs/Web/CSS/url()#:~:text=url(myFont.woff)%3B-,url(%23IDofSVGpath),-%3B%0A%0A/*%20associated%20properties%20*/%0Abackground),
 which you will create next, and finally given a fill color that matches the
 page's text color with
-[`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword).
+[`currentColor`](https://developer.mozilla.org/docs/Web/CSS/color_value#currentcolor_keyword).
 
 #### The sun beams
 
@@ -167,7 +167,7 @@ page's text color with
 %}
 
 Next, the sunbeam lines are added just below the circle, inside of a group
-element [`<g>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g)
+element [`<g>`](https://developer.mozilla.org/docs/Web/SVG/Element/g)
 group.
 
 ```html/2-11/
@@ -187,9 +187,9 @@ group.
 ```
 
 This time, instead of the value of
-[fill](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill) being
+[fill](https://developer.mozilla.org/docs/Web/SVG/Attribute/fill) being
 `currentColor`, each line's
-[stroke](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke) is
+[stroke](https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke) is
 set. The lines plus the circle shapes create a nice sun with beams.
 
 {% Aside %} 
@@ -224,10 +224,10 @@ The bottom layer is labeled as the result and it shows the sun icon with a
 cutout where the top layer black circle is.", width="800", height="708" %}
 </figure>
 
-[Masks](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask) with SVG
+[Masks](https://developer.mozilla.org/docs/Web/SVG/Element/mask) with SVG
 are powerful, allowing the colors white and black to either remove or include
 parts of another graphic. The sun icon will be eclipsed by a moon
-[`<circle>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
+[`<circle>`](https://developer.mozilla.org/docs/Web/SVG/Element/circle)
 shape with an SVG mask, simply by moving a circle shape in and out of a mask
 area.
 
@@ -345,7 +345,7 @@ can be a struggle for a coarse pointer like a finger. Make the button meet many
 [touch size
 guidelines](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/buttons/#:~:text=buttons%20that%20measure%2044x44%20pt)
 by using a [hover media
-query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) to specify
+query](https://developer.mozilla.org/docs/Web/CSS/@media/hover) to specify
 a size increase. 
 
 ```css/4-6/
@@ -641,7 +641,7 @@ orchestrated or playful, it feels chaotic.
 
 ### Prefers reduced motion
 
-In most [GUI Challenges](https://web.dev/shows/gui-challenges/) I try to keep
+In most [GUI Challenges](/shows/gui-challenges/) I try to keep
 some animation, like opacity cross fades, for users who prefer reduced motion.
 This component felt better with instant state changes however. 
 
@@ -649,7 +649,7 @@ This component felt better with instant state changes however.
 
 There's a lot of work for JavaScript in this component, from managing ARIA
 information for screen readers to getting and setting values from [local
-storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
 
 ### The page load experience
@@ -713,12 +713,12 @@ An important thing to note at this point is the HTML
 document parsing state. The browser doesn't know about the "#theme-toggle"
 button yet, as the `<head>` tag hasn't been completely parsed. However, the
 browser does have a
-[`document.firstElementChild`](https://developer.mozilla.org/en-US/docs/Web/API/Element/firstElementChild)
+[`document.firstElementChild`](https://developer.mozilla.org/docs/Web/API/Element/firstElementChild)
 , aka the `<html>` tag. The function attempts to set both to keep them in sync,
 but on first run will only be able to set the HTML tag. The
-[`querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+[`querySelector`](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
 won't find anything at first and the [optional chaining
-operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 ensures no syntax errors when it's not found and the setAttribute function is
 attempted to be invoked. 
 
@@ -770,7 +770,7 @@ preference, as if the user had interacted with the theme switch at the same time
 it did the system switch. 
 
 Achieve this with JavaScript and a
-[`matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+[`matchMedia`](https://developer.mozilla.org/docs/Web/API/Window/matchMedia)
 event listening for changes to a media query:
 
 ```js
