@@ -24,7 +24,7 @@ Fun fact: WebUSB in Chromium also uses libusb under the hood. So what the port a
 
 ## First things first: a demo
 
-The most important thing to do when porting a library, obviously, is choosing the right demo - something that would showcase the capabilities of the ported library, allow you to test it in a variety of ways, and be visually compelling at the same time.
+The most important thing to do when porting a library is choosing the right demo - something that would showcase the capabilities of the ported library, allowing you to test it in a variety of ways, and be visually compelling at the same time.
 
 The idea I've stopped on was DSLR remote control. In particular, an open source project [gPhoto2](http://gphoto.org/) has been in this space long enough to reverse-engineer and implement support for a wide variety of digital cameras. It supports several protocols, but the one I was most interested in was USB support, which it performs via libusb.
 
