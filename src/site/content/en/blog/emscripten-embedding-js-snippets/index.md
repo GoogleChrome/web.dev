@@ -62,7 +62,6 @@ This code works well, but it performs lots of intermediate steps. Each operation
 4. Convert the result from JavaScript to intermediate format.
 5. Return the converted result to C++, and C++ finally reads it back.
 
- \
 Each `await()` also has to pause the C++ side by unwinding the entire call stack of the WebAssembly module, returning to JavaScript, waiting, and restoring the WebAssembly stack when the operation is complete. \
 
 Such code doesn't need anything from C++. C++ code is acting only as a driver for a series of JavaScript operations. What if you could move `fetch_json` to JavaScript and reduce the overhead of intermediate steps at the same time?
