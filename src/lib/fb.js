@@ -20,7 +20,7 @@ import {trackError} from './analytics';
 
 let isInitialized = false;
 
-function initialize() {
+export function initialize() {
   if (isInitialized) {
     return;
   }
@@ -226,10 +226,4 @@ export async function signOut() {
     console.error('signOut error', err);
     trackError(err, 'signOut');
   }
-}
-
-// Only initialize auth if the user was signed in on their last visit.
-// If they're not signed in, defer loading the library until they sign in.
-if (store.getState().isSignedIn) {
-  initialize();
 }
