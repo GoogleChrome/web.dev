@@ -33,7 +33,7 @@ To continue to build your HTML forms knowledge, here are some additional resourc
 - [12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account): outlines core back-end principles for managing user accounts.
 - [Passwords Evolved: Authentication Guidance for the Modern Era](https://www.troyhunt.com/passwords-evolved-authentication-guidance-for-the-modern-era/): detailed password guidance from Troy Hunt, creator of [haveibeenpwned.com](https://haveibeenpwned.com/),
 - [We Didn't Encrypt Your Password, We Hashed It. Here's What That Means](https://www.troyhunt.com/we-didnt-encrypt-your-password-we-hashed-it-heres-what-that-means/): also from Troy Hunt — here he explains the difference between encryption and hashing.
-- [HTML Form: All You Need to Know](https://lyty.dev/blog/html-forms/)
+- [HTML Form: All You Need to Know](https://lyty.dev/blog/html-forms/): teaches about HTML forms concepts, including methods, attributes, encoding types and how they are processed on the server.
 
 ## Brought to you by
 
