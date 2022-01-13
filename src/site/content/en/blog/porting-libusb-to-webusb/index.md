@@ -3,8 +3,8 @@ title: 'Porting USB applications to the web. Part 1: libusb'
 subhead: Learn how code that interacts with external devices can be ported to the web with WebAssembly and Fugu APIs.
 description: Learn how code that interacts with external devices can be ported to the web with WebAssembly and Fugu APIs.
 date: 2022-01-30
-hero:
-alt:
+hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/MR4YGRvl0Z9AWT6vv3sQ.jpg
+alt: A picture of DSLR camera connected via a USB cable to a laptop. The laptop is running the Web demo mentioned in the article, which mirrors a live video feed from the camera as well as allows to tweak its settings via form controls.
 authors:
   - rreverser
 tags:
