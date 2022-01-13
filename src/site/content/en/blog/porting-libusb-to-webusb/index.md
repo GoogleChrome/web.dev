@@ -30,9 +30,14 @@ The idea I've stopped on was DSLR remote control. In particular, an open source 
 
 I'll describe the steps for building this demo in two parts. In this blog post, I'll describe how I ported libusb itself, and what tricks might be necessary to port other popular libraries to Fugu APIs. In the second post, I'll go into details on porting and integrating gPhoto2 itself.
 
-In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. If you're impatient, feel free to jump ahead and check out the demo:
+In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. Feel free to check out the demo before reading up on technical details:
 
-[TODO: insert recorded preview and link]
+<figure>
+  {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/MR4YGRvl0Z9AWT6vv3sQ.jpg", alt="A picture of DSLR camera connected via a USB cable to a laptop. The laptop is running the Web demo mentioned in the article, which mirrors a live video feed from the camera as well as allows to tweak its settings via form controls.", width="800", height="450", linkTo="https://web-gphoto2.rreverser.com/" %}
+  <figcaption>
+    <a href="https://web-gphoto2.rreverser.com/">The demo</a> running on a laptop connected to a Sony camera.
+  </figcaption>
+</figure>
 
 ### Important cross-platform compatibility notes
 
