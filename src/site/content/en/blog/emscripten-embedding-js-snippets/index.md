@@ -13,7 +13,7 @@ tags:
   - javascript
 ---
 
-When working on WebAssembly integration with the web, you need a way to call out to external APIs such as web APIs and third-party libraries. You then need a way to store the values and object instances those APIs return, and a way to pass those stored values to other APIs later. For asynchronous APIs, you might also need to await `Promise`s in your synchronous C/C++ code with [Asyncify](https://web.dev/asyncify/) and read the result once the operation is finished.
+When working on WebAssembly integration with the web, you need a way to call out to external APIs such as web APIs and third-party libraries. You then need a way to store the values and object instances those APIs return, and a way to pass those stored values to other APIs later. For asynchronous APIs, you might also need to await `Promise`s in your synchronous C/C++ code with [Asyncify](/asyncify/) and read the result once the operation is finished.
 
 Emscripten provides several tools for such interactions:
 
@@ -174,7 +174,7 @@ std::string author = json["slideshow"]["author"].as<std::string>();
 
 `EM_JS` is the recommended way to declare JavaScript snippets. It's efficient because it binds the declared snippets directly like any other JavaScript function imports. It also provides good ergonomics by enabling you to explicitly declare all parameter types and names.
 
-In some cases, however, you want to insert a quick snippet for [`console.log`](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) call, a [`debugger;`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statement or something similar and don't want to bother with declaring a whole separate function. In those rare cases, an [`EM_ASM macros family`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_ASM) (`EM_ASM`, `EM_ASM_INT` and `EM_ASM_DOUBLE`) might be a simpler choice. Those macros are similar to the `EM_JS` macro, but they execute code inline where they're inserted, instead of defining a function.
+In some cases, however, you want to insert a quick snippet for [`console.log`](https://developer.mozilla.org/docs/Web/API/Console/log) call, a [`debugger;`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/debugger) statement or something similar and don't want to bother with declaring a whole separate function. In those rare cases, an [`EM_ASM macros family`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_ASM) (`EM_ASM`, `EM_ASM_INT` and `EM_ASM_DOUBLE`) might be a simpler choice. Those macros are similar to the `EM_JS` macro, but they execute code inline where they're inserted, instead of defining a function.
 
 Since they don't declare a function prototype, they need a different way of specifying the return type and accessing arguments.
 
