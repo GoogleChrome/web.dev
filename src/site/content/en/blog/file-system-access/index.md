@@ -527,30 +527,26 @@ will be `"file"` for both files _and_ directories, whereas the File System Acces
 [`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
 be `"file"` for files and `"directory"` for directories.
 
-```js/13
+```js/
 elem.addEventListener('dragover', (e) => {
   // Prevent navigation.
   e.preventDefault();
 });
 
 elem.addEventListener('drop', async (e) => {
-  // Prevent navigation.
   e.preventDefault();
-  // Process all of the items. Careful: since the loop operation is async
-  // you need to work with a copy of `e.dataTransfer.items` and a
-  // `forEach` loop for the association between `dataTransfer` and the
-  // drag data store not to be broken.
-  Array.from(e.dataTransfer.items).forEach(async (item) => {
-    if (item.kind === "file") {
-      const entry = await item.getAsFileSystemHandle();
-      console.log(entry);
-      if (entry.kind === "directory") {
-        output.innerHTML += `<p>(Correct) Directory: ${entry.name}`;
-      } else {
-        output.innerHTML += `<p>(Correct) File: ${entry.name}`;
-      }
+
+  const fileHandlesPromises = [...e.dataTransfer.items]
+    .filter((item) => item.kind === 'file')
+    .map((item) => item.getAsFileSystemHandle());
+
+  for await (const handle of fileHandlesPromises) {
+    if (handle.kind === "directory") {
+      console.log(`Directory: ${handle.name}`);
+    } else {
+      console.log(`File: ${handle.name}`);
     }
-  });  
+  }
 });
 ```
 
