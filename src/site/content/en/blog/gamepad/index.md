@@ -58,15 +58,23 @@ if ('getGamepads' in navigator) {
 
 ### How the browser represents a gamepad
 
-The browser represents gamepads as
-[`Gamepad`](https://developer.mozilla.org/docs/Web/API/Gamepad) objects.
+The browser represents gamepads as [`Gamepad`](https://developer.mozilla.org/docs/Web/API/Gamepad)
+objects. A `Gamepad` has the following properties:
 
 - `id`: An identification string for the gamepad. This string identifies the brand or style of
   connected gamepad device.
+- `displayId`: The
+  [`VRDisplay.displayId`](https://developer.mozilla.org/docs/Web/API/VRDisplay/displayId) of an
+  associated [`VRDisplay`](https://developer.mozilla.org/docs/Web/API/VRDisplay) (if relevant).
 - `index`: The index of the gamepad in the navigator.
 - `connected`: Indicates whether the gamepad is still connected to the system.
+- `hand`: An enum defining what hand the controller is being held in, or is most likely to be held
+  in.
 - `timestamp`: The last time the data for this gamepad was updated.
-- `mapping`: The button and axes mapping in use for this device, either `"standard"` or `"xr-standard"`.
+- `mapping`: The button and axes mapping in use for this device, either `"standard"` or
+  `"xr-standard"`.
+- `pose`: A [`GamepadPose`](https://developer.mozilla.org/docs/Web/API/GamepadPose) object
+  representing the pose information associated with a WebVR controller.
 - `axes`: An array of values for all axes of the gamepad, linearly normalized to the range of
   `-1.0`–`1.0`.
 - `buttons`: An array of button states for all buttons of the gamepad.
@@ -80,6 +88,9 @@ is why buttons are reported as `GamepadButton` objects, with the following attri
   property is `true` if the button is currently being touched, and `false` otherwise.
 - `value`: For buttons that have an analog sensor, this property represents the amount by which the
   button has been pressed, linearly normalized to the range of `0.0`–`1.0`.
+- `hapticActuators`: An array containing
+  [`GamepadHapticActuator`](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator)
+  objects, each of which represents haptic feedback hardware available on the controller.
 
 One additional thing that you might encounter, depending on your browser and the gamepad you have,
 is a `vibrationActuator` property. This field is currently implemented in Chrome and earmarked for
@@ -125,9 +136,9 @@ window.addEventListener('gamepadconnected', (event) => {
 
 ### Being notified when a gamepad gets disconnected
 
-Being notified of gamepad disconnections happens analogously to the way connections are detected. This
-time the app listens for the `gamepaddisconnected` event. Note how in the example below `connected`
-is now `false` when I unplug the Xbox 360 controller.
+Being notified of gamepad disconnections happens analogously to the way connections are detected.
+This time the app listens for the `gamepaddisconnected` event. Note how in the example below
+`connected` is now `false` when I unplug the Xbox 360 controller.
 
 ```js/6
 window.addEventListener('gamepaddisconnected', (event) => {
