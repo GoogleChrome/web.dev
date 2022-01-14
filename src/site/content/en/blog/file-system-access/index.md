@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-12-21
+updated: 2022-01-14
 tags:
   - blog
   - capabilities
@@ -536,19 +536,21 @@ elem.addEventListener('dragover', (e) => {
 elem.addEventListener('drop', async (e) => {
   // Prevent navigation.
   e.preventDefault();
-  // Process all of the items.
-  for (const item of e.dataTransfer.items) {
-    // Careful: `kind` will be 'file' for both file
-    // _and_ directory entries.
-    if (item.kind === 'file') {
+  // Process all of the items. Careful: since the loop operation is async
+  // you need to work with a copy of `e.dataTransfer.items` and a
+  // `forEach` loop for the association between `dataTransfer` and the
+  // drag data store not to be broken.
+  Array.from(e.dataTransfer.items).forEach(async (item) => {
+    if (item.kind === "file") {
       const entry = await item.getAsFileSystemHandle();
-      if (entry.kind === 'directory') {
-        handleDirectoryEntry(entry);
+      console.log(entry);
+      if (entry.kind === "directory") {
+        output.innerHTML += `<p>(Correct) Directory: ${entry.name}`;
       } else {
-        handleFileEntry(entry);
+        output.innerHTML += `<p>(Correct) File: ${entry.name}`;
       }
     }
-  }
+  });  
 });
 ```
 
