@@ -38,6 +38,7 @@ web-select > label > span {
 
 web-select > ul {
   background-color: get-utility-value('bg', 'mid-bg');
+  height: 0;
   transition: all 0.2s ease;
   margin: 2px 0 0 0;
   max-height: 20rem;
@@ -52,6 +53,7 @@ web-select > ul {
 }
 
 web-select[active] > ul {
+  height: auto;
   opacity: 1;
   pointer-events: auto;
 }
