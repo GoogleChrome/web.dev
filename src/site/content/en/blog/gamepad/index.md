@@ -58,7 +58,8 @@ if ('getGamepads' in navigator) {
 
 ### How the browser represents a gamepad
 
-The browser represents gamepads as `Gamepad` objects. A `Gamepad` has the following fields:
+The browser represents gamepads as
+[`Gamepad`](https://developer.mozilla.org/docs/Web/API/Gamepad) objects.
 
 - `id`: An identification string for the gamepad. This string identifies the brand or style of
   connected gamepad device.
