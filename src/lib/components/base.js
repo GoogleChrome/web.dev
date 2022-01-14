@@ -11,4 +11,5 @@ import './NavigationDrawer';
 import './SnackbarContainer';
 import './ThemeToggle';
 import './Search';
+import './Select';
 import './SearchResults';

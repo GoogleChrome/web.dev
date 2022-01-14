@@ -71,9 +71,11 @@ class LanguageSelect extends BaseStateElement {
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
-        <select id="preferred-language" @change="${this.onChange}">
-          ${langList.map((language) => this.renderOption(language))}
-        </select>
+        <web-select id="preferred-language" @change="${this.onChange}">
+          <select>
+            ${langList.map((language) => this.renderOption(language))}
+          </select>
+        </web-select>
       </div>
     `;
   }
