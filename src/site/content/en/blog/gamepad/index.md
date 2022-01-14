@@ -65,8 +65,7 @@ The browser represents gamepads as `Gamepad` objects. A `Gamepad` has the follow
 - `index`: The index of the gamepad in the navigator.
 - `connected`: Indicates whether the gamepad is still connected to the system.
 - `timestamp`: The last time the data for this gamepad was updated.
-- `mapping`: The button and axes mapping in use for this device. Currently the only mapping is
-  `"standard"`.
+- `mapping`: The button and axes mapping in use for this device, either `"standard"` or `"xr-standard"`.
 - `axes`: An array of values for all axes of the gamepad, linearly normalized to the range of
   `-1.0`–`1.0`.
 - `buttons`: An array of button states for all buttons of the gamepad.
@@ -125,7 +124,7 @@ window.addEventListener('gamepadconnected', (event) => {
 
 ### Being notified when a gamepad gets disconnected
 
-Being notified of gamepad disconnects happens analogously to the way connections are detected. This
+Being notified of gamepad disconnections happens analogously to the way connections are detected. This
 time the app listens for the `gamepaddisconnected` event. Note how in the example below `connected`
 is now `false` when I unplug the Xbox 360 controller.
 
@@ -148,7 +147,7 @@ window.addEventListener('gamepaddisconnected', (event) => {
 
 ### The gamepad in your game loop
 
-Getting a hold of a gamepad starts with a call to `navigator.getGamepads()`, which returns an array
+Getting ahold of a gamepad starts with a call to `navigator.getGamepads()`, which returns an array
 with `Gamepad` items. The array in Chrome _always_ has a fixed length of four items. If zero or less
 than four gamepads are connected, an item may just be `null`. Always be sure to check all items of
 the array and be aware that gamepads "remember" their slot and may not always be present at the
@@ -189,7 +188,7 @@ pollGamepad();
 _outside_ of the game loop, since the method returns a static snapshot, not a live object. Call
 `navigator.getGamepads()` each time anew _in your game loop_. {% endAside %}
 
-### Making use of the vibration actuator
+### Using the vibration actuator
 
 The `vibrationActuator` property returns a `GamepadHapticActuator` object, which corresponds to a
 configuration of motors or other actuators that can apply a force for the purposes of haptic
