@@ -69,21 +69,22 @@ class Select extends BaseElement {
    * @returns void
    */
   handleKeyDown(e) {
-    if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') {
-      return;
-    }
-    e.preventDefault();
-    const increment = e.key === 'ArrowUp' ? -1 : 1;
-    const lis = this.querySelectorAll('li');
+    if (e.key === 'Escape') {
+      this.toggleState();
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      const increment = e.key === 'ArrowUp' ? -1 : 1;
+      const lis = this.querySelectorAll('li');
 
-    this.activeIndex = this.activeIndex + increment;
-    if (this.activeIndex < 0) {
-      this.activeIndex = 0;
-    } else if (this.activeIndex >= lis.length) {
-      this.activeIndex = lis.length - 1;
-    }
+      this.activeIndex = this.activeIndex + increment;
+      if (this.activeIndex < 0) {
+        this.activeIndex = 0;
+      } else if (this.activeIndex >= lis.length) {
+        this.activeIndex = lis.length - 1;
+      }
 
-    lis[this.activeIndex].focus();
+      lis[this.activeIndex].focus();
+    }
   }
 
   /**

@@ -9,20 +9,21 @@ web-select > label {
   border-radius: 0;
   color: get-utility-value('color', 'core-text');
   font: inherit;
-  min-height: 2rem;
+  height: 3rem;
   max-width: 20rem;
   padding: 10px 10px 10px 0;
   width: 100%;
+}
+
+web-select > label {
+  display: inline-flex;
+  padding: 10px 0 10px 4px;
 }
 
 select:focus,
 web-select[active] > label {
   outline: none;
   border-bottom: 1px solid get-utility-value('color', 'action-text');
-}
-
-web-select > label {
-  display: inline-flex;
 }
 
 web-select > label:after {
