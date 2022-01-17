@@ -39,7 +39,7 @@ In the end, I got a working web application that previews live feed from a DSLR 
   </figcaption>
 </figure>
 
-## Note on camera-specific quirks
+### Note on camera-specific quirks
 
 You might have noticed that changing settings takes a while in the video. Like with most other issues you might run into, this is not caused by the performance of WebAssembly or WebUSB, but is due to how gPhoto2 interacts with the specific camera chosen for the demo.
 
