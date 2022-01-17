@@ -41,9 +41,7 @@ In the end, I got a working web application that previews live feed from a DSLR 
 
 ## Note on camera-specific quirks
 
-You might have noticed that changing settings takes a while in the video.
-
-Like with most other issues you might run into, this is not caused by the performance of WebAssembly or WebUSB, but is due to how gPhoto2 interacts with the specific camera chosen for the demo.
+You might have noticed that changing settings takes a while in the video. Like with most other issues you might run into, this is not caused by the performance of WebAssembly or WebUSB, but is due to how gPhoto2 interacts with the specific camera chosen for the demo.
 
 Sony a6600 doesn't expose an API to set values like ISO, aperture or shutter speed directly, and instead only provides commands to increase or decrease them by the specified number of steps. To make matters more complicated, it doesn't return a list of the actually supported values, either - the returned list seems hardcoded across many Sony cameras.
 
