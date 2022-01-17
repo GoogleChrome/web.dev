@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-01-14
+updated: 2022-01-17
 tags:
   - blog
   - capabilities
@@ -513,6 +513,15 @@ await file.move(directory);
 // Move the file to a new directory and rename it.
 await file.move(directory, 'newer_name');
 ```
+
+{% Aside 'warning' %}
+Due to some open questions regarding cross-file-system moves, `move()` is temporarily
+disabled for folders and moves outside of the
+[origin private file system](#accessing-the-origin-private-file-system). This feature is
+currently only available in the origin private file system to those with the
+[`AccessHandles origin trial`](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625)
+enabled.
+{% endAside %}
 
 ### Drag and drop integration
 
