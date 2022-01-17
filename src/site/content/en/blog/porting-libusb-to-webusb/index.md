@@ -39,6 +39,26 @@ In the end, I got a working web application that previews live feed from a DSLR 
   </figcaption>
 </figure>
 
+## Note on camera-specific quirks
+
+You might have noticed that changing settings takes a while in the video.
+
+Like with most other issues you might run into, this is not caused by the performance of WebAssembly or WebUSB, but is due to how gPhoto2 interacts with the specific camera chosen for the demo.
+
+Sony a6600 doesn't expose an API to set values like ISO, aperture or shutter speed directly, and instead only provides commands to increase or decrease them by the specified number of steps. To make matters more complicated, it doesn't return a list of the actually supported values, either - the returned list seems hardcoded across many Sony cameras.
+
+When setting one of those values, gPhoto2 has no other choice but to, roughly:
+
+1. Make a step (or a few) in the direction of the chosen value.
+2. Wait a bit for the camera to update the settings.
+3. Read back the value the camera actually landed on.
+4. Check that the last step didn't jump over the desired value nor wrapped around the end or the beginning of the list.
+5. Repeat.
+
+It can take some time, but if the value is actually supported by the camera, it will get there, and, if not, it will stop on the nearest supported value.
+
+Other cameras will likely have different sets of settings, underlying APIs, and quirks. Keep in mind that gPhoto2 is an open-source project, and either automated or manual testing of all the camera models out there is simply not feasible, so detailed issue reports and PRs are always welcome.
+
 ### Important cross-platform compatibility notes
 
 Unfortunately, on Windows any "well-known" devices, including DSLR cameras, are assigned a system driver, which is not compatible with WebUSB. If you want to try the demo on Windows, you'll have to use a tool like [Zadig](https://zadig.akeo.ie/) to override the driver for the connected DSLR to either WinUSB or libusb. This approach works fine for me and many other users, but you should use it at your own risk.
