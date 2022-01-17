@@ -30,7 +30,7 @@ The idea I chose was DSLR remote control. In particular, an open source project 
 
 I'll describe the steps for building this demo in two parts. In this blog post, I'll describe how I ported libusb itself, and what tricks might be necessary to port other popular libraries to Fugu APIs. In the second post, I'll go into details on porting and integrating gPhoto2 itself.
 
-In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. Feel free to check out the demo before reading up on technical details:
+In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. Feel free to check out the [live](https://web-gphoto2.rreverser.com/) or the pre-recorded demo before reading up on technical details:
 
 <figure class="w-figure">
   {% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/Ffn3eatYmzJZToWlzQu6.mp4", class="w-screenshot", controls="true" %}
@@ -41,11 +41,11 @@ In the end, I got a working web application that previews live feed from a DSLR 
 
 ### Note on camera-specific quirks
 
-You might have noticed that changing settings takes a while in the video. Like with most other issues you might run into, this is not caused by the performance of WebAssembly or WebUSB, but is due to how gPhoto2 interacts with the specific camera chosen for the demo.
+You might have noticed that changing settings takes a while in the video. Like with most other issues you might see, this is not caused by the performance of WebAssembly or WebUSB, but by how gPhoto2 interacts with the specific camera chosen for the demo.
 
-Sony a6600 doesn't expose an API to set values like ISO, aperture or shutter speed directly, and instead only provides commands to increase or decrease them by the specified number of steps. To make matters more complicated, it doesn't return a list of the actually supported values, either - the returned list seems hardcoded across many Sony cameras.
+Sony a6600 doesn't expose an API to set values like ISO, aperture or shutter speed directly, and instead only provides commands to increase or decrease them by the specified number of steps. To make matters more complicated, it doesn't return a list of the actually supported values, either - the returned list seems hardcoded across many Sony camera models.
 
-When setting one of those values, gPhoto2 has no other choice but to, roughly:
+When setting one of those values, gPhoto2 has no other choice but to:
 
 1. Make a step (or a few) in the direction of the chosen value.
 2. Wait a bit for the camera to update the settings.
@@ -55,7 +55,7 @@ When setting one of those values, gPhoto2 has no other choice but to, roughly:
 
 It can take some time, but if the value is actually supported by the camera, it will get there, and, if not, it will stop on the nearest supported value.
 
-Other cameras will likely have different sets of settings, underlying APIs, and quirks. Keep in mind that gPhoto2 is an open-source project, and either automated or manual testing of all the camera models out there is simply not feasible, so detailed issue reports and PRs are always welcome (but make sure to reproduce with the official gPhoto2 client first).
+Other cameras will likely have different sets of settings, underlying APIs, and quirks. Keep in mind that gPhoto2 is an open-source project, and either automated or manual testing of all the camera models out there is simply not feasible, so detailed issue reports and PRs are always welcome (but make sure to reproduce the issues with the official gPhoto2 client first).
 
 ### Important cross-platform compatibility notes
 
@@ -63,13 +63,13 @@ Unfortunately, on Windows any "well-known" devices, including DSLR cameras, are 
 
 On Linux, you will likely need to [set custom permissions](/build-for-webusb/#linux) to allow access to your DSLR via WebUSB, although this depends on your distribution.
 
-On macOS and Android, the demo should work out of the box.
+On macOS, the demo should work out of the box.
 
 For a more in-depth guide on cross-platform usage of WebUSB, see the ["Platform-specific considerations" section of "Building a device for WebUSB"](/build-for-webusb/#platform-specific-considerations).
 
 ## Adding a new backend to libusb
 
-While it's possible to provide a shim API similar to libusb (this has been done by others before) and link other applications against it, this approach is error-prone and makes any further extension or maintenance harder. I wanted to do things right, in a way that could be potentially contributed back upstream and merged into libusb in the future.
+Now onto the technical details. While it's possible to provide a shim API similar to libusb (this has been done by others before) and link other applications against it, this approach is error-prone and makes any further extension or maintenance harder. I wanted to do things right, in a way that could be potentially contributed back upstream and merged into libusb in the future.
 
 Luckily, the [libusb README](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/README#L13-L15) says:
 
