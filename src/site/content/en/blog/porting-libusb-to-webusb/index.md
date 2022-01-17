@@ -403,17 +403,17 @@ void usbi_signal_event(usbi_event_t *event)
 Meanwhile, the `em_libusb_wait` part is used to "wake up" from Asyncify sleep when either an `em-libusb` event is received, or the timeout has expired:
 
 ```cpp/8
-  double until_time = emscripten_get_now() + timeout_ms;
-  for (;;) {
-    // Emscripten `poll` ignores timeout param, but pass 0 explicitly just
-    // in case.
-    num_ready = poll(fds, nfds, 0);
-    if (num_ready != 0) break;
-    int timeout = until_time - emscripten_get_now();
-    if (timeout <= 0) break;
-    int result = em_libusb_wait(timeout);
-    if (result != 0) break;
-  }
+double until_time = emscripten_get_now() + timeout_ms;
+for (;;) {
+  // Emscripten `poll` ignores timeout param, but pass 0 explicitly just
+  // in case.
+  num_ready = poll(fds, nfds, 0);
+  if (num_ready != 0) break;
+  int timeout = until_time - emscripten_get_now();
+  if (timeout <= 0) break;
+  int result = em_libusb_wait(timeout);
+  if (result != 0) break;
+}
 ```
 
 Due to significant reduction in sleeps and wake-ups, this mechanism fixed the efficiency problems of the earlier `emscripten_sleep`-based implementation, and increased the DSLR demo throughput from 13-14 FPS to consistent 30+ FPS, which is enough for a smooth live feed.
