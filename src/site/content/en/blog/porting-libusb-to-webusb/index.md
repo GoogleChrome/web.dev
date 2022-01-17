@@ -446,7 +446,7 @@ It doesn't look like much, but, when porting libraries to a new platform, gettin
 
 ## Using the port
 
-As mentioned [above](#heading=h.mogcyiy1x8w8), the port depends on a few Emscripten features that currently need to be enabled at the linking stage of the application. If you want to use this libusb port in your own application, here's what you'll need to do:
+As mentioned [above](#build-system-and-the-first-test), the port depends on a few Emscripten features that currently need to be enabled at the linking stage of the application. If you want to use this libusb port in your own application, here's what you'll need to do:
 
 1. Download libusb fork from [https://github.com/RReverser/libusb](https://github.com/RReverser/libusb) either as an archive as part of your build or add it as a git submodule in your project.
 2. Run `autoreconf -fiv` in the `libusb` folder.
@@ -459,7 +459,7 @@ The library currently has a few limitations:
 
 * No transfer cancellation support. This is a limitation of WebUSB, which, in turn, stems from lack of cross-platform transfer cancellation in libusb itself.
 * No isochronous transfer support. It shouldn't be hard to add it by following the implementation of existing transfer modes as examples, but it's also a somewhat rare mode and I didn't have any devices to test it on, so for now I left it as unsupported. If you do have such devices, and want to contribute to the library, PRs are welcome!
-* The [earlier mentioned cross-platform limitations](#heading=h.ik9rifeitesl). Those limitations are imposed by operating systems, so not much we can do here, except ask users to override the driver or permissions. However, if you're porting HID or serial devices, you can follow the libusb example and port some other library to another Fugu API. For example, you could port a C library [hidapi](https://github.com/libusb/hidapi) to [WebHID](/hid/) and side-step those issues, associated with low-level USB access, altogether.
+* The [earlier mentioned cross-platform limitations](#important-cross-platform-compatibility-notes). Those limitations are imposed by operating systems, so not much we can do here, except ask users to override the driver or permissions. However, if you're porting HID or serial devices, you can follow the libusb example and port some other library to another Fugu API. For example, you could port a C library [hidapi](https://github.com/libusb/hidapi) to [WebHID](/hid/) and side-step those issues, associated with low-level USB access, altogether.
 
 ## Conclusion
 
