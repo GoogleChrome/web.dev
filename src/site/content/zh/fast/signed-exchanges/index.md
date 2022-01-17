@@ -183,7 +183,7 @@ Google Search 不会对页面的 SXG 和非 SXG 表示进行单独排名或编�
 
 #### Web Vitals
 
-对于从 Google Search 获得大部分流量的站点，SXG 可用于改进 [Web Vitals](/vitals/) — 即 [LCP](https://web.dev/lcp/) 。缓存和预取的 SXG 可以非常快地交付给用户，这会产生更快的 LCP。尽管 SXG 是强大的工具，但它们在与其他性能优化（例如使用 CDN 和减少呈现阻塞子资源）结合时性能最佳。
+对于从 Google Search 获得大部分流量的站点，SXG 可用于改进 [Web Vitals](/vitals/) — 即 [LCP](/lcp/) 。缓存和预取的 SXG 可以非常快地交付给用户，这会产生更快的 LCP。尽管 SXG 是强大的工具，但它们在与其他性能优化（例如使用 CDN 和减少呈现阻塞子资源）结合时性能最佳。
 
 ### AMP
 
@@ -255,5 +255,5 @@ webpackager \
 - [签名 HTTP 交换规范草案](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 - [Web 打包解释器](https://github.com/WICG/webpackage/tree/main/explainers)
 - [在 Google Search 上开始使用已签名交换](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
-- [如何使用 Web Packager 设置签名交换](https://web.dev/signed-exchanges-webpackager)
+- [如何使用 Web Packager 设置签名交换](/signed-exchanges-webpackager)
 - [签名交换演示](https://signed-exchange-testing.dev/)

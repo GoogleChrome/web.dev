@@ -282,7 +282,7 @@ Webページを特別なクロスオリジン分離状態にオプトインす�
 
 ## 資力
 
-- [強力な機能に「クロスオリジン分離」が必要な理由](https://web.dev/why-coop-coep/)
-- [クロスオリジン分離を有効にするためのガイド](https://web.dev/cross-origin-isolation-guide/)
+- [強力な機能に「クロスオリジン分離」が必要な理由](/why-coop-coep/)
+- [クロスオリジン分離を有効にするためのガイド](/cross-origin-isolation-guide/)
 - [Android Chrome88およびDesktopChrome92でのSharedArrayBufferの更新](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
-- [`measureUserAgentSpecificMemory()`使用してWebページの合計メモリ使用量を監視します](https://web.dev/monitor-total-page-memory-usage/)
+- [`measureUserAgentSpecificMemory()`使用してWebページの合計メモリ使用量を監視します](/monitor-total-page-memory-usage/)

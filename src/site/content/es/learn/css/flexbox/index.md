@@ -105,7 +105,7 @@ Cualquier cosa que pueda cambiar el orden de los elementos en flexbox o cuadríc
 
 Para más información, ver:
 
-- [Reordenamiento de contenido](https://web.dev/content-reordering/)
+- [Reordenamiento de contenido](/content-reordering/)
 - [Flexbox y la navegación desconectada por teclado](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### Modos de escritura y dirección

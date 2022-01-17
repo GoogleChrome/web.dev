@@ -105,7 +105,7 @@ date: 2021-04-21
 
 有关更多信息，请参阅：
 
-- [内容重新排序](https://web.dev/content-reordering/)
+- [内容重新排序](/content-reordering/)
 - [弹性框和键盘导航断开](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### 书写模式和方向

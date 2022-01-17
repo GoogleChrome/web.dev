@@ -103,7 +103,7 @@ Flexbox 또는 그리드의 항목 순서를 변경할 수 있는 모든 것이 
 
 자세한 내용은 다음을 참조합니다.
 
-- [콘텐츠 재정렬](https://web.dev/content-reordering/)
+- [콘텐츠 재정렬](/content-reordering/)
 - [Flexbox 및 키보드 탐색 연결 끊김](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### 쓰기 모드 및 방향

@@ -283,7 +283,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 ## Ресурсы
 
-- [Зачем вам нужна межсайтовая изоляция для мощных функций](https://web.dev/why-coop-coep/)
-- [Руководство по включению межсайтовой изоляции](https://web.dev/cross-origin-isolation-guide/)
+- [Зачем вам нужна межсайтовая изоляция для мощных функций](/why-coop-coep/)
+- [Руководство по включению межсайтовой изоляции](/cross-origin-isolation-guide/)
 - [Обновления SharedArrayBuffer в Android Chrome 88 и Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
-- [Отслеживание общего использования памяти веб-страницей с помощью метода `measureUserAgentSpecificMemory()`](https://web.dev/monitor-total-page-memory-usage/)
+- [Отслеживание общего использования памяти веб-страницей с помощью метода `measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)

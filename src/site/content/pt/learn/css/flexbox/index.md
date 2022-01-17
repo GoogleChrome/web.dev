@@ -106,7 +106,7 @@ Qualquer coisa que possa alterar a ordem dos itens no flexbox ou na grade pode c
 
 Para mais informações, veja:
 
-- [Reordenação de conteúdo](https://web.dev/content-reordering/)
+- [Reordenação de conteúdo](/content-reordering/)
 - [O Flexbox e a navegação do teclado se desconectam](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### Modos e direção de escrita

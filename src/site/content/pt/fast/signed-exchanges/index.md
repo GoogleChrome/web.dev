@@ -191,7 +191,7 @@ As representações SXG e não SXG de uma página não são classificadas ou ind
 
 #### Web Vitals
 
-Para sites que recebem uma parte significativa de seu tráfego da Pesquisa Google, os SXGs podem ser usados para melhorar o [Web Vitals](/vitals/) - como a [LCP](https://web.dev/lcp/). As SXGs em cache e pré-estendidos podem ser entregues aos usuários de forma incrivelmente rápida e isso produz uma LCP mais rápida. Embora as SXGs possam ser uma ferramenta poderosa, elas funcionam melhor quando combinados com outras otimizações de desempenho, como o uso de CDNs e a redução de sub-recursos de bloco de renderização.
+Para sites que recebem uma parte significativa de seu tráfego da Pesquisa Google, os SXGs podem ser usados para melhorar o [Web Vitals](/vitals/) - como a [LCP](/lcp/). As SXGs em cache e pré-estendidos podem ser entregues aos usuários de forma incrivelmente rápida e isso produz uma LCP mais rápida. Embora as SXGs possam ser uma ferramenta poderosa, elas funcionam melhor quando combinados com outras otimizações de desempenho, como o uso de CDNs e a redução de sub-recursos de bloco de renderização.
 
 ### AMP
 
@@ -263,5 +263,5 @@ As trocas assinadas são um mecanismo de entrega que permite verificar a origem 
 - [Rascunho da especificação para trocas de HTTP assinadas](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 - [Explicadores de empacotamento da Web](https://github.com/WICG/webpackage/tree/main/explainers)
 - [Comece com trocas assinadas na Pesquisa Google](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
-- [Como configurar as trocas assinadas usando o Web Packager](https://web.dev/signed-exchanges-webpackager)
+- [Como configurar as trocas assinadas usando o Web Packager](/signed-exchanges-webpackager)
 - [Demonstração de trocas assinadas](https://signed-exchange-testing.dev/)

@@ -183,7 +183,7 @@ Las representaciones SXG y no SXG de una página no están clasificadas ni index
 
 #### Web Vitals
 
-Para los sitios que reciben una parte significativa de su tráfico de la Búsqueda de Google, los SXG se pueden utilizar para mejorar [Web Vitals](/vitals/), a saber, [LCP](https://web.dev/lcp/). Los SXG almacenados en caché y capturados previamente se pueden entregar a los usuarios de manera increíblemente rápida y esto produce un LCP más rápido. Aunque los SXG pueden ser una herramienta poderosa, funcionan mejor cuando se combinan con otras optimizaciones de rendimiento, como el uso de CDN y la reducción de subrecursos que bloquean el renderizado.
+Para los sitios que reciben una parte significativa de su tráfico de la Búsqueda de Google, los SXG se pueden utilizar para mejorar [Web Vitals](/vitals/), a saber, [LCP](/lcp/). Los SXG almacenados en caché y capturados previamente se pueden entregar a los usuarios de manera increíblemente rápida y esto produce un LCP más rápido. Aunque los SXG pueden ser una herramienta poderosa, funcionan mejor cuando se combinan con otras optimizaciones de rendimiento, como el uso de CDN y la reducción de subrecursos que bloquean el renderizado.
 
 ### AMP
 
@@ -255,5 +255,5 @@ Los intercambios firmados son un mecanismo de entrega que permite verificar el o
 - [Borrador de especificaciones para intercambios HTTP firmados](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 - [Explicaciones de empaquetado web](https://github.com/WICG/webpackage/tree/main/explainers)
 - [Empiece a utilizar intercambios firmados en la Búsqueda de Google](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
-- [Cómo configurar intercambios firmados usando Web Packager](https://web.dev/signed-exchanges-webpackager)
+- [Cómo configurar intercambios firmados usando Web Packager](/signed-exchanges-webpackager)
 - [Demostración de intercambios firmados](https://signed-exchange-testing.dev/)

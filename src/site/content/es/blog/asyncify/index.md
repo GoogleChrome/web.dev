@@ -57,7 +57,7 @@ Pero, ¿qué sucede cuando intenta compilar cualquiera de esos ejemplos en WebAs
 
 ## Modelo asincrónico de la web
 
-La web tiene una variedad de opciones de almacenamiento diferentes a las que puede hacer mapeo, como almacenamiento en memoria (objetos JS), [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage), [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API), almacenamiento del lado del servidor y una nueva [API de acceso al sistema de archivos](https://web.dev/file-system-access/).
+La web tiene una variedad de opciones de almacenamiento diferentes a las que puede hacer mapeo, como almacenamiento en memoria (objetos JS), [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage), [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API), almacenamiento del lado del servidor y una nueva [API de acceso al sistema de archivos](/file-system-access/).
 
 Sin embargo, solo dos de esas API, la de almacenamiento en memoria y `localStorage` se pueden usar sincrónicamente, además ambas son las opciones más limitantes en cuanto a lo que se puede almacenar y por cuánto tiempo. Todas las demás opciones proporcionan solo API asincrónicas.
 
@@ -325,7 +325,7 @@ Asegúrese de habilitar siempre las optimizaciones para las compilaciones finale
 
 Ahora que ha visto los ejemplos simples, pasaré a escenarios más complejos.
 
-Como se mencionó al principio del artículo, una de las opciones de almacenamiento en la web es una [API de acceso al sistema de archivos](https://web.dev/file-system-access/) asincrónica. Proporciona acceso a un sistema de archivos de host real desde una aplicación web.
+Como se mencionó al principio del artículo, una de las opciones de almacenamiento en la web es una [API de acceso al sistema de archivos](/file-system-access/) asincrónica. Proporciona acceso a un sistema de archivos de host real desde una aplicación web.
 
 Por otro lado, existe un estándar de facto llamado [WASI](https://github.com/WebAssembly/WASI) para E/S de WebAssembly en la consola y en el lado del servidor. Fue diseñado como un destino de compilación para los lenguajes del sistema y expone todo tipo de sistema de archivos y otras operaciones en una forma sincrónica tradicional.
 
@@ -339,7 +339,7 @@ Compruébalo en vivo en [https://wasi.rreverser.com/](https://wasi.rreverser.com
 
 Los casos de uso de Asyncify tampoco se limitan solo a temporizadores y sistemas de archivos. Puede ir más allá y utilizar más API de nicho en la web.
 
-Por ejemplo, también con la ayuda de Asyncify, es posible mapear [libusb,](https://github.com/libusb/libusb) probablemente la biblioteca nativa más popular para trabajar con dispositivos USB, a una [API WebUSB](https://web.dev/usb/), que brinda acceso asincrónico a dichos dispositivos en la web. Una vez mapeada y compilada, obtuve pruebas estándar de libusb y ejemplos para ejecutar en los dispositivos elegidos directamente en la caja de arena de una página web.
+Por ejemplo, también con la ayuda de Asyncify, es posible mapear [libusb,](https://github.com/libusb/libusb) probablemente la biblioteca nativa más popular para trabajar con dispositivos USB, a una [API WebUSB](/usb/), que brinda acceso asincrónico a dichos dispositivos en la web. Una vez mapeada y compilada, obtuve pruebas estándar de libusb y ejemplos para ejecutar en los dispositivos elegidos directamente en la caja de arena de una página web.
 
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="Captura de pantalla de la salida de depuración libusb en una página web, que muestra información sobre la cámara Canon conectada", width="375", height="548" %}
 

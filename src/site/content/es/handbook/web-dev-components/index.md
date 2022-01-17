@@ -266,7 +266,7 @@ Vea la publicación de [Autoevaluaciones.](/handbook/self-assessment-components)
 
 Para alinear una etiqueta con la casilla de verificación, envuelva la etiqueta y la casilla de verificación en un elemento con una clase `cluster gutter-base flex-align-start`.
 
-[Especificación detallada](https://web.dev/design-system/component/form-fields/#checkbox)
+[Especificación detallada](/design-system/component/form-fields/#checkbox)
 
 ```html
 <div class="cluster gutter-base flex-align-start">
@@ -1052,7 +1052,7 @@ Utilice el componente web `web-tabs` para mostrar contenido que haga referencia 
 
 Utilice descripciones flotantes para dar información sobre los controles de la interfaz de usuario que son demasiado pequeños para tener una etiqueta
 
-[Especificación detallada](https://web.dev/design-system/component/tooltips/)
+[Especificación detallada](/design-system/component/tooltips/)
 
 ```html
 <div class="tooltip" data-alignment="">

@@ -115,7 +115,7 @@ Cross-Origin-Opener-Policy: same-origin
 这将破坏需要跨源窗口交互（例如 OAuth 和支付）的集成。为了缓解此问题，我们正在[探索放宽条件](https://github.com/whatwg/html/issues/6364)，从而支持 `Cross-Origin-Opener-Policy: same-origin-allow-popups` 跨源隔离。这样就可以让该标头与其打开的窗口进行通信。
 
 如果您想启用跨源隔离，但被此问题阻碍，那么我们建议您[注册来源试验](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)，同时等待可用的新条件。在安全解决此问题之前，我们不打算终止来源试验。
-       	
+
 {% endAside %}
 
 浏览上下文组是一组共享相同上下文的选项卡、窗口或 iframe。例如，如果网站 (`https://a.example`) 打开一个弹出窗口 (`https://b.example`)，打开程序窗口和弹出窗口共享相同的浏览上下文，并且它们可以通过 DOM API (`window.opener`) 相互进行访问。
@@ -283,7 +283,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 ## 资源
 
-- [为何需要“跨源隔离”才能获得强大的功能](https://web.dev/why-coop-coep/)
-- [跨源隔离的启用指南](https://web.dev/cross-origin-isolation-guide/)
+- [为何需要“跨源隔离”才能获得强大的功能](/why-coop-coep/)
+- [跨源隔离的启用指南](/cross-origin-isolation-guide/)
 - [Android 版 Chrome 88 和桌面版 Chrome 92 中的 SharedArrayBuffer 更新](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
-- [利用 `measureUserAgentSpecificMemory()` 监控网页的总内存使用量](https://web.dev/monitor-total-page-memory-usage/)
+- [利用 `measureUserAgentSpecificMemory()` 监控网页的总内存使用量](/monitor-total-page-memory-usage/)

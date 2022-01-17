@@ -183,7 +183,7 @@ Google 검색 크롤러가 전송한 [`Accept`](https://developer.mozilla.org/do
 
 #### 웹 바이탈
 
-Google 검색에서 트래픽의 상당 부분을 수신하는 사이트의 경우 SXG를 사용하여 [Web Vitals](/vitals/), 즉 [LCP](https://web.dev/lcp/)를 개선할 수 있습니다. 캐시 및 미리 불러온 SXG는 사용자에게 매우 빠르게 제공될 수 있으며 이로 인해 LCP가 더 빨리 생성됩니다. SXG가 강력한 도구가 될 수 있지만 CDN 사용 및 렌더링 차단 하위 리소스 감소와 같은 다른 성능 최적화와 결합할 때 가장 효과적입니다.
+Google 검색에서 트래픽의 상당 부분을 수신하는 사이트의 경우 SXG를 사용하여 [Web Vitals](/vitals/), 즉 [LCP](/lcp/)를 개선할 수 있습니다. 캐시 및 미리 불러온 SXG는 사용자에게 매우 빠르게 제공될 수 있으며 이로 인해 LCP가 더 빨리 생성됩니다. SXG가 강력한 도구가 될 수 있지만 CDN 사용 및 렌더링 차단 하위 리소스 감소와 같은 다른 성능 최적화와 결합할 때 가장 효과적입니다.
 
 ### AMP
 
@@ -255,5 +255,5 @@ SXG 파일이 생성되면 서버에 업로드하고 `application/signed-exchang
 - [Signed HTTP Exchanges를 위한 초안 사양](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 - [Web Packaging 설명자](https://github.com/WICG/webpackage/tree/main/explainers)
 - [Google 검색에서 Signed Exchanges 시작하기](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
-- [Web Packager를 사용하여 Signed Exchanges를 설정하는 방법](https://web.dev/signed-exchanges-webpackager)
+- [Web Packager를 사용하여 Signed Exchanges를 설정하는 방법](/signed-exchanges-webpackager)
 - [Signed Exchanges 데모](https://signed-exchange-testing.dev/)

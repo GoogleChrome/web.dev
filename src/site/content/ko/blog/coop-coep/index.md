@@ -285,7 +285,7 @@ COOP 및 COEP HTTP 헤더의 조합을 사용하여 웹 페이지를 특별한 �
 
 ## 자원
 
-- [강력한 기능을 위해 "교차 출처 격리"가 필요한 이유](https://web.dev/why-coop-coep/)
-- [교차 출처 격리를 가능하게 하는 가이드](https://web.dev/cross-origin-isolation-guide/)
+- [강력한 기능을 위해 "교차 출처 격리"가 필요한 이유](/why-coop-coep/)
+- [교차 출처 격리를 가능하게 하는 가이드](/cross-origin-isolation-guide/)
 - [Android Chrome 88 및 Desktop Chrome 92의 SharedArrayBuffer 업데이트](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
-- [`measureUserAgentSpecificMemory()`를 사용하여 웹 페이지의 총 메모리 사용량을 모니터링](https://web.dev/monitor-total-page-memory-usage/)
+- [`measureUserAgentSpecificMemory()`를 사용하여 웹 페이지의 총 메모리 사용량을 모니터링](/monitor-total-page-memory-usage/)
