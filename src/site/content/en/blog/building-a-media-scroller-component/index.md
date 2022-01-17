@@ -123,8 +123,8 @@ This means that navigations between pages of the site won't flash a white canvas
 background between loads. Seamless dark theme between loads, much nicer on the
 eyes.
 
-Learn much more from [Thomas Steiner](https://web.dev/authors/thomassteiner/) at
-[https://web.dev/color-scheme/](https://web.dev/color-scheme/).
+Learn much more from [Thomas Steiner](/authors/thomassteiner/) at
+[https://web.dev/color-scheme/](/color-scheme/).
 
 ### Add content
 
@@ -399,7 +399,7 @@ and brand defining micro-interaction UX
 
 Gamepad and keyboard users need special attention in these longs lists of
 scrolling content and options. The common pattern for solving this is called
-[roving index](https://web.dev/control-focus-with-tabindex/). It's when a
+[roving index](/control-focus-with-tabindex/). It's when a
 container of items is keyboard focused but only 1 child is allowed to hold focus
 at a time. This single focusable item at a time experience is designed to allow
 bypassing the potentially long list of items, as opposed to pressing tab 50+

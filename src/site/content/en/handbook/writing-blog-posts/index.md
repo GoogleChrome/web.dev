@@ -7,7 +7,7 @@ description: |
 ---
 
 This guide is written for people who are not primarily tech writers, 
-but want to write a post for [web.dev](https://web.dev) or [developer.chrome.com](https://developer.chrome.com). 
+but want to write a post for [web.dev](/) or [developer.chrome.com](https://developer.chrome.com). 
 It links to some of our key writing information, 
 explains our process, and provides tips for writing technical blog posts.
 
@@ -161,7 +161,7 @@ When creating a code example, ask the question,
 Good code examples have a lot in common with the reduced test case.
 They rarely resemble production code.
 
-For inline code examples, check out the [tips in the handbook](https://web.dev/handbook/write-code-samples/).
+For inline code examples, check out the [tips in the handbook](/handbook/write-code-samples/).
 
 In CodePen or Glitch examples, avoid using languages that compile to HTML, CSS, or JavaScript 
 (unless the post is about those alternate languages). Remember our ideal reader, 
@@ -210,8 +210,8 @@ On web.dev there are several interesting components.
 Using these in your article will avoid presenting readers with a wall of text. For example:
 
 -  Add extra information or warn people with the aside component: [aside on web.dev](/handbook/web-dev-components/#asides), [aside on developer.chrome.com](https://developer.chrome.com/docs/handbook/components/#asides). 
--  Contrast code examples with the compare component: [compare on web.dev](https://web.dev/handbook/web-dev-components/#compare), [compare on developer.chrome.com](https://developer.chrome.com/docs/handbook/components/#compare).
--  Add [browser compatibility information on web.dev](https://web.dev/handbook/web-dev-components/#browsercompat).
+-  Contrast code examples with the compare component: [compare on web.dev](/handbook/web-dev-components/#compare), [compare on developer.chrome.com](https://developer.chrome.com/docs/handbook/components/#compare).
+-  Add [browser compatibility information on web.dev](/handbook/web-dev-components/#browsercompat).
 
 ### Give credit and avoid plagiarism 
 

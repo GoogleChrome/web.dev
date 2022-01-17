@@ -41,7 +41,7 @@ As causas mais comuns de uma LCP ruim são:
 
 Quanto mais tempo leva para um navegador receber conteúdo do servidor, mais tempo leva para processar qualquer coisa na tela. Um tempo de resposta mais rápido do servidor melhora diretamente cada métrica de carregamento de página, incluindo a LCP.
 
-Antes de mais nada, melhore como e onde seu servidor lida com seu conteúdo. Use a métrica [**Time to First Byte**](/time-to-first-byte) - TTFB (tempo até o primeiro byte) para medir os tempos de resposta do servidor. Você pode melhorar sua TTFB de várias maneiras:
+Antes de mais nada, melhore como e onde seu servidor lida com seu conteúdo. Use a métrica [**Time to First Byte**](/ttfb/) - TTFB (tempo até o primeiro byte) para medir os tempos de resposta do servidor. Você pode melhorar sua TTFB de várias maneiras:
 
 - Otimizando seu servidor
 - Direcionando os usuários para um CDN próximo
@@ -112,7 +112,7 @@ Embora as duas dicas funcionem de maneira diferente, considere o uso de `dns-pre
 
 ### Usando trocas assinadas (SXGs)
 
-As [trocas assinadas (Signed Exchanged - SXG)](https://web.dev/signed-exchanges) são um mecanismo de entrega que permite experiências mais rápidas do usuário ao fornecer conteúdo em um formato facilmente armazenável em cache. Especificamente, uma [Pesquisa Google](https://developers.google.com/search/docs/advanced/experience/signed-exchange) será armazenada em cache e, às vezes, fará uma busca antecipada de SXGs. Para sites que recebem uma grande parte de seu tráfego a partir das Pesquisas Google, os SXGs podem ser uma ferramenta importante para melhorar a LCP. Para mais informações, veja [Trocas Assinadas](/signed-exchanges).
+As [trocas assinadas (Signed Exchanged - SXG)](/signed-exchanges) são um mecanismo de entrega que permite experiências mais rápidas do usuário ao fornecer conteúdo em um formato facilmente armazenável em cache. Especificamente, uma [Pesquisa Google](https://developers.google.com/search/docs/advanced/experience/signed-exchange) será armazenada em cache e, às vezes, fará uma busca antecipada de SXGs. Para sites que recebem uma grande parte de seu tráfego a partir das Pesquisas Google, os SXGs podem ser uma ferramenta importante para melhorar a LCP. Para mais informações, veja [Trocas Assinadas](/signed-exchanges).
 
 ## JavaScript e CSS que bloqueiam a renderização {: #render-blocking-resources }
 
@@ -212,9 +212,9 @@ Baixe e forneça a quantidade mínima de JavaScript necessária aos usuários. R
 
 Isto pode ser feito otimizando seus scripts de maneiras diferentes:
 
-- [Minificando e comprimindo arquivos JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Adiando JavaScript não utilizado](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimizando polyfills não usados](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minificando e comprimindo arquivos JavaScript](/reduce-network-payloads-using-text-compression/)
+- [Adiando JavaScript não utilizado](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimizando polyfills não usados](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} O guia [Otimize a First Input Delay](/optimize-fid/) explora todas as técnicas necessárias para reduzir o tempo de bloqueio do JavaScript em mais detalhes. {% endAside %}
 

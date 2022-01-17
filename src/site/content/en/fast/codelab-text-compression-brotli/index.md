@@ -73,7 +73,9 @@ You can determine which compression algorithm is used via the `Content-Encoding`
 field in the Chrome Developer Tools Network tab (`Command+Option+I` or
 `Ctrl+Alt+I`):
 
-{% Img src="image/admin/ZddI1FFjEckeO8mabgYl.png", alt="Network panel", width="800", height="136", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/ZddI1FFjEckeO8mabgYl.png", alt="Network panel", width="800", height="136" %}
+</figure>
 
 ## Enabling Brotli
 
@@ -146,7 +148,9 @@ app.use(shrinkRay());
 
 Now reload the app, and take a look at the bundle size in the Network panel:
 
-{% Img src="image/admin/KXDWBC6aH4o6MVJvBu8X.png", alt="Bundle size with dynamic Brotli compression", width="724", height="97", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/KXDWBC6aH4o6MVJvBu8X.png", alt="Bundle size with dynamic Brotli compression", width="724", height="97" %}
+</figure>
 
 You can now see `brotli` is applied from `bz` in the `Content-Encoding` header.
 `main.bundle.js` is reduced from **225 KB to 53.1 KB**! This is ~14% smaller
@@ -240,7 +244,9 @@ cd public
 ls -lh
 ```
 
-{% Img src="image/admin/GOlRrAhdDWO7yi7Bm1Pg.png", alt="Bundle size with static Brotli compression", width="489", height="133", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/GOlRrAhdDWO7yi7Bm1Pg.png", alt="Bundle size with static Brotli compression", width="489", height="133" %}
+</figure>
 
 The brotli compressed version of the bundle, `main.bundle.js.br`, is now saved
 here as well and is **~76% smaller in size** (225 KB vs. 53 KB) than
@@ -299,10 +305,11 @@ app.get('*.js', (req, res, next) => {
 app.use(express.static('public'));
 ```
 
-
 Once the app reloads, take a look at the Network panel once more.
 
-{% Img src="image/admin/2rJrkqLzWt3MT4XxNsYn.png", alt="Bundle size of 53.1 KB (from 225KB)", width="724", height="97", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/2rJrkqLzWt3MT4XxNsYn.png", alt="Bundle size of 53.1 KB (from 225KB)", width="724", height="97" %}
+</figure>
 
 Success! You have used Brotli compression to further compress your assets!
 

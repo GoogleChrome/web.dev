@@ -12,4 +12,4 @@ This animated footer slides-in from the bottom of the page. The effect is
 created by using the CSS
 [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform)
 property. The result is a [performant
-animation](https://web.dev/animations-guide/) that does not cause layout shifts.
+animation](/animations-guide/) that does not cause layout shifts.

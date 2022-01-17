@@ -48,6 +48,7 @@ guidance about how to use them effectively.
 1. [w-tables](#w-tables)
 
 ## Asides
+
 Use asides to provide information that's related to but distinct from the
 content in the body of the post or codelab. Asides should generally be short—no
 more than 2–3 lines.
@@ -205,6 +206,7 @@ instead, use the body variant, below.
 {% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
 
 ## Block quotes
+
 Use block quotes to emphasize a quotation that's important to
 the main idea of a post. (For example, in a case study you might include
 a quotation from someone on the partner organization's management team.)
@@ -332,7 +334,7 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 To align a label to the checkbox wrap the label and checkbox in an element with
 a `cluster gutter-base flex-align-start` class.
 
-[Detailed specification](https://web.dev/design-system/component/form-fields/#checkbox)
+[Detailed specification](/design-system/component/form-fields/#checkbox)
 
 ```html
 <div class="cluster gutter-base flex-align-start">
@@ -608,6 +610,7 @@ assumenda perspiciatis.
 ## Details
 
 ### Basic details component
+
 ```text
 {% raw %}&#123;% Details %&#125;
 
@@ -634,6 +637,7 @@ at.
 {% endDetails %}
 
 ### Details component with preview
+
 ```text/4-5
 {% raw %}&#123;% Details %&#125;
 
@@ -667,6 +671,7 @@ at.
 {% endDetails %}
 
 ### Details component with custom heading level
+
 The default heading level is `h2`.
 To ensure the `Details` component is in the correct place in the page hierarchy,
 add a custom heading argument to the `DetailsSummary` shortcode.
@@ -699,6 +704,7 @@ at.
 {% endDetails %}
 
 ### Details component in open state
+
 The `Details` component is closed by default.
 If for some reason you want it open,
 add the `open` argument to the `Details` shortcode.
@@ -898,6 +904,7 @@ console.log('hello');
 ```
 
 ## Lists
+
 See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)
 for information about when to use each list type.
 
@@ -1266,7 +1273,7 @@ the tab, e.g. the code blocks.
 Use tooltips to provide information about UI controls
 that are too small to have a label
 
-[Detailed specification](https://web.dev/design-system/component/tooltips/)
+[Detailed specification](/design-system/component/tooltips/)
 
 ```html
 <div class="tooltip" data-alignment="">
@@ -1299,6 +1306,7 @@ that are too small to have a label
 
 
 ## Video / YouTube {: #video }
+
 See the [Images and video](/handbook/markup-media) post.
 
 # Deprecated components

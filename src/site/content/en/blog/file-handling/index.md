@@ -7,11 +7,10 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-12-03
+updated: 2021-12-21
 tags:
   - blog
   - capabilities
-  # - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
@@ -42,18 +41,13 @@ Examples of sites that may use this API include:
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 3. Gather feedback & iterate on design   | Complete                 |
 | 4. Origin trial                          | Complete                 |
-| 5. Launch                                | Not started              |
+| 5. **Launch**                            | **Chromium&nbsp;98**     |
 
 </div>
 
 ## How to use the File Handling API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `about://flags`.
 
 ### Progressive enhancement
 
@@ -209,10 +203,10 @@ transparency, and ergonomics.
 
 ## Permissions, permissions persistence, and file handler updates
 
-To ensure user trust and the safety of users' files when the File Handling API is used to open a
-file, a permission prompt will be shown before a PWA can view a file. This permission prompt will be
-shown right after the user selects the PWA to open a file, so that the permission is tightly coupled
-to the action of opening a file using the PWA, making it more understandable and relevant.
+To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
+right after the user selects the PWA to open a file, so that the permission is tightly coupled to the
+action of opening a file using the PWA, making it more understandable and relevant.
 
 This permission will show every time until the user clicks to **Allow** or **Block** file handling
 for the site, or ignores the prompt three times (after which Chromium will embargo and block this

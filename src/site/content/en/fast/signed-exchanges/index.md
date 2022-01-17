@@ -314,7 +314,7 @@ Search to separately index or rank the same content delivered in different ways.
 
 For sites that receive a significant portion of their traffic from Google
 Search, SXGs can be used to improve [Web Vitals](/vitals/)—namely
-[LCP](https://web.dev/lcp/). Cached and prefetched SXGs can be delivered to
+[LCP](/lcp/). Cached and prefetched SXGs can be delivered to
 users incredibly quickly and this yields a faster LCP. Although SXGs can be a
 powerful tool, they work best when combined with other performance optimizations
 such as use of CDNs and reduction of render-blocking subresources.
@@ -443,5 +443,5 @@ maintaining full publisher attribution.
 *   [Draft spec for Signed HTTP Exchanges](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 *   [Web Packaging explainers](https://github.com/WICG/webpackage/tree/main/explainers)
 *   [Get started with signed exchanges on Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
-*   [How to set up Signed Exchanges using Web Packager](https://web.dev/signed-exchanges-webpackager)
+*   [How to set up Signed Exchanges using Web Packager](/signed-exchanges-webpackager)
 *   [Demo of Signed Exchanges](https://signed-exchange-testing.dev/)

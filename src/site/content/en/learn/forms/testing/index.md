@@ -159,7 +159,7 @@ This way, you can also see field data directly in the report.
 Lighthouse can be used as a command line tool,
 as a [Node module](https://www.npmjs.com/package/lighthouse),
 or with the [Lighthouse CI tools](https://github.com/GoogleChrome/lighthouse-ci).
-[Performance monitoring with the Lighthouse CI](https://web.dev/lighthouse-ci/)
+[Performance monitoring with the Lighthouse CI](/lighthouse-ci/)
 explains adding Lighthouse to a continuous integration system, such as GitHub Actions.
 
 There are many more

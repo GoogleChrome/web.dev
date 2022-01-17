@@ -7,14 +7,12 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-12-14
+updated: 2022-01-11
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KEHQXWqr6s7VnEfTqVOC.jpeg
 alt: Kid drawing, crafting, and painting rocks.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
@@ -58,31 +56,15 @@ developers to place custom content in what was previously the browser-controlled
 
 <div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | [**In progress**][ot]    |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                             |
+| ---------------------------------------- | ---------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]              |
+| 2. Create initial draft of specification | [Complete][spec]                   |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)           |
+| 4. Origin trial                          | Complete                           |
+| 5. **Launch**                            | **Complete** (in Chromium&nbsp;98) |
 
 </div>
-
-### Enabling via about://flags
-
-To experiment with Window Controls Overlay locally, without an origin trial token, enable the
-`#enable-desktop-pwas-window-controls-overlay` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome&nbsp;93, Window Controls Overlay will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome&nbsp;96 (expected in December 8, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## How to use Window Controls Overlay
 
@@ -113,9 +95,8 @@ right, depending on the operating system.
 ### Moving content into the title bar
 
 Now that there is space in the title bar, you can move something there. For this article, I have
-built a Wikimedia Featured Content PWA. A useful feature for this app may be a search for words
-in the article titles. The HTML for the search feature looks
-like this:
+built a Wikimedia Featured Content PWA. A useful feature for this app may be a search for words in
+the article titles. The HTML for the search feature looks like this:
 
 ```html
 <div class="search">
@@ -178,11 +159,9 @@ input {
 }
 ```
 
-{% Aside %}
-For now, `app-region` has not been standardized yet, so the plan is to continue using the prefixed
-`-webkit-app-region` until `app-region` is standardized. Currently, only `-webkit-app-region` is
-supported in the browser.
-{% endAside %}
+{% Aside %} For now, `app-region` has not been standardized yet, so the plan is to continue using
+the prefixed `-webkit-app-region` until `app-region` is standardized. Currently, only
+`-webkit-app-region` is supported in the browser. {% endAside %}
 
 With this CSS in place, the user can drag the app window as usual by dragging the `div`, the `img`,
 or the `label`. Only the `input` element is interactive so the search query can be entered.
@@ -210,7 +189,7 @@ blends in with the title bar's `maroon` background color that is determined by
 
 ```js
 if ('windowControlsOverlay' in navigator) {
-  const {x} = navigator.windowControlsOverlay.getTitlebarAreaRect();
+  const { x } = navigator.windowControlsOverlay.getTitlebarAreaRect();
   // Window controls are on the right (like on Windows).
   // Chrome menu is left of the window controls.
   // [ windowControlsOverlay___________________ […] [_] [■] [X] ]
@@ -354,9 +333,9 @@ The search feature in the window controls overlay is fully functional:
 
 ## Security considerations
 
-The Chromium team designed and implemented the Window Controls Overlay API using the core
-principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
-including user control, transparency, and ergonomics.
+The Chromium team designed and implemented the Window Controls Overlay API using the core principles
+defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
+control, transparency, and ergonomics.
 
 ### Spoofing
 
@@ -379,8 +358,8 @@ Enabling the window controls overlay and draggable regions do not pose considera
 other than feature detection. However, due to differing sizes and positions of the window controls
 buttons across operating systems, the JavaScript API for
 <code>navigator.<wbr>windowControlsOverlay.<wbr>getTitlebarAreaRect()</code> will return a
-[`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions
-will reveal information about the operating system upon which the browser is running. Currently,
+[`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions will
+reveal information about the operating system upon which the browser is running. Currently,
 developers can already discover the OS from the user agent string, but due to fingerprinting
 concerns, there is discussion about freezing the UA string and unifying OS versions. There is an
 ongoing effort with the community to understand how frequently the size of the window controls
@@ -430,6 +409,7 @@ hashtag and let us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Explainer][explainer]
+- [Spec draft][spec]
 - [Chromium bug](https://crbug.com/937121)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/5741247866077184)
 - [TAG review](https://github.com/w3ctag/design-reviews/issues/481)
@@ -439,13 +419,13 @@ hashtag and let us know where and how you're using it.
 
 Window Controls Overlay was implemented and specified by
 [Amanda Baker](https://www.linkedin.com/in/amanda-baker-20a2b962/) from the Microsoft Edge team.
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley) and [Kenneth Rohde Christiansen](https://github.com/kenchris).
-Hero image by [Sigmund](https://unsplash.com/@sigmund) on
-[Unsplash](https://unsplash.com/photos/OV44gxH71DU).
+This article was reviewed by [Joe Medley](https://github.com/jpmedley) and
+[Kenneth Rohde Christiansen](https://github.com/kenchris). Hero image by
+[Sigmund](https://unsplash.com/@sigmund) on [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
 [explainer]: https://github.com/WICG/window-controls-overlay/blob/main/explainer.md
+[spec]: https://wicg.github.io/window-controls-overlay/
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
+[powerful-apis]:
+  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md

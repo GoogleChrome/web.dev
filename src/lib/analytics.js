@@ -1,4 +1,4 @@
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {getCLS, getFCP, getFID, getLCP, getTTFB} from 'web-vitals';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -114,5 +114,7 @@ store.subscribe(({isSignedIn}) => {
 });
 
 getCLS(sendToGoogleAnalytics);
+getFCP(sendToGoogleAnalytics);
 getFID(sendToGoogleAnalytics);
 getLCP(sendToGoogleAnalytics);
+getTTFB(sendToGoogleAnalytics);

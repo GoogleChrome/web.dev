@@ -40,7 +40,7 @@ Las causas más comunes de una LCP deficiente son:
 
 Cuanto más tarda un navegador en recibir el contenido del servidor, más tiempo tarda en renderizar cualquier cosa en la pantalla. Un tiempo de respuesta del servidor más rápido mejora directamente cada métrica de carga de la página, incluido el LCP.
 
-Antes que nada, mejore cómo y dónde su servidor maneja su contenido. Utilice [**Time to First Byte: Tiempo hasta el primer byte**](/time-to-first-byte) (TTFB) para medir los tiempos de respuesta de su servidor. Puede mejorar su TTFB de varias formas:
+Antes que nada, mejore cómo y dónde su servidor maneja su contenido. Utilice [**Time to First Byte: Tiempo hasta el primer byte**](/ttfb/) (TTFB) para medir los tiempos de respuesta de su servidor. Puede mejorar su TTFB de varias formas:
 
 - <a>Optimizar su servidor</a>
 - Enrutar a los usuarios a una CDN cercana
@@ -85,7 +85,7 @@ En la siguiente gráfica se muestra cómo se han reducido las distribuciones de 
     height="495"
   %}
   <figcaption class="w-figcaption">
-    La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker - 
+    La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker -
     <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
   </figcaption>
 </figure>
@@ -122,7 +122,7 @@ Aunque ambas sugerencias funcionan de manera diferente, considere utilizar `dns-
 
 ### Utilizar intercambios firmados (SXG)
 
-[Los intercambios firmados (SXG)](https://web.dev/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
+[Los intercambios firmados (SXG)](/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
 
 ## Renderización que bloquea JavaScript y CSS {: #render-blocking-resources }
 
@@ -195,9 +195,9 @@ Descargue y publique la cantidad mínima de JavaScript necesaria a los usuarios.
 
 Esto se puede lograr optimizando sus scripts de diferentes formas:
 
-- [Minificar y comprimir archivos JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Retrasar JavaScript no utilizado](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimice los polyfills no utilizados](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minificar y comprimir archivos JavaScript](/reduce-network-payloads-using-text-compression/)
+- [Retrasar JavaScript no utilizado](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimice los polyfills no utilizados](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} La guía [Optimizar First Input Delay](/optimize-fid/) cubre todas las técnicas necesarias para reducir el tiempo de bloqueo de JavaScript con un poco más de detalle. {% endAside %}
 

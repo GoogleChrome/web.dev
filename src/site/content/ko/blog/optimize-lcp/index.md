@@ -40,7 +40,7 @@ tags:
 
 브라우저가 서버에서 콘텐츠를 수신하는 데 시간이 오래 걸릴수록 화면에 무엇이든 렌더링하는 데 더 오래 걸립니다. 더 빠른 서버 응답 시간은 LCP를 포함한 모든 단일 페이지 로드 메트릭을 직접적으로 향상시킵니다.
 
-가장 먼저 해야 할 것은 서버에서 콘텐츠를 처리하는 방법과 위치를 개선하는 것입니다. [**Time to First Byte**](/time-to-first-byte)(최초 바이트까지의 시간, TTBT)로 서버 응답 시간을 측정하세요. 다음과 같이 다양한 방식으로 TTBT를 개선할 수 있습니다.
+가장 먼저 해야 할 것은 서버에서 콘텐츠를 처리하는 방법과 위치를 개선하는 것입니다. [**Time to First Byte**](/ttfb/)(최초 바이트까지의 시간, TTBT)로 서버 응답 시간을 측정하세요. 다음과 같이 다양한 방식으로 TTBT를 개선할 수 있습니다.
 
 - 서버 최적화
 - 사용자를 가까운 CDN으로 라우팅
@@ -128,7 +128,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 ### 서명된 교환(SXG) 사용
 
-[서명된 교환(SXG)](https://web.dev/signed-exchanges)이란 쉽게 캐시할 수 있는 형식으로 콘텐츠를 제공하여 더 빠른 사용자 경험을 가능하게 하는 전달 메커니즘입니다. 특히 [Google 검색](https://developers.google.com/search/docs/advanced/experience/signed-exchange)은 SXG를 캐시하고 때로는 미리 가져옵니다. Google 검색에서 트래픽의 많은 부분을 수신하는 사이트의 경우 SXG는 LCP를 개선하기 위한 중요한 도구가 될 수 있습니다. 자세한 내용은 [서명된 교환](/signed-exchanges)을 참조하세요.
+[서명된 교환(SXG)](/signed-exchanges)이란 쉽게 캐시할 수 있는 형식으로 콘텐츠를 제공하여 더 빠른 사용자 경험을 가능하게 하는 전달 메커니즘입니다. 특히 [Google 검색](https://developers.google.com/search/docs/advanced/experience/signed-exchange)은 SXG를 캐시하고 때로는 미리 가져옵니다. Google 검색에서 트래픽의 많은 부분을 수신하는 사이트의 경우 SXG는 LCP를 개선하기 위한 중요한 도구가 될 수 있습니다. 자세한 내용은 [서명된 교환](/signed-exchanges)을 참조하세요.
 
 ## 렌더링 차단 JavaScript 및 CSS {: #render-blocking-resources }
 
@@ -238,9 +238,9 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 
 몇 가지 다른 방법으로 스크립트를 최적화하여 이를 수행할 수 있습니다.
 
-- [JavaScript 파일 축소 및 압축](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [사용하지 않는 JavaScript 지연](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [사용하지 않는 Polyfills 최소화](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [JavaScript 파일 축소 및 압축](/reduce-network-payloads-using-text-compression/)
+- [사용하지 않는 JavaScript 지연](/reduce-javascript-payloads-with-code-splitting/)
+- [사용하지 않는 Polyfills 최소화](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} [최초 입력 지연 최적화](/optimize-fid/) 가이드에서는 JavaScript 차단 시간을 줄이는 데 필요한 모든 기술을 조금 더 자세히 설명합니다. {% endAside %}
 

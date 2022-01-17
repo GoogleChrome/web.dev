@@ -190,8 +190,8 @@ what you think.
 ## Resources
 
 * [Verify phone numbers on the web with the Web OTP
-  API](https://web.dev/web-otp/)
-* [SMS OTP form best practices](https://web.dev/sms-otp-form/)
+  API](/web-otp/)
+* [SMS OTP form best practices](/sms-otp-form/)
 * [WebOTP API](https://wicg.github.io/web-otp/)
 * [Origin-bound one-time codes delivered via
   SMS](https://wicg.github.io/sms-one-time-codes/)

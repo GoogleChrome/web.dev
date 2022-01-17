@@ -1,36 +1,32 @@
-/// We use clamp for spacing, so this gives us a rough size for the site head
-/// and internal padding when we are in a larger viewport that a fixed position
-/// codelab embed makes sense in
-$web-codelab-embed-buffer: 8.5rem;
-
 .web-codelab {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $global-gutter get-space('size-1');
+  padding: $global-gutter;
+
   .prose {
-    padding-block: get-space('size-2');
+    width: inherit;
   }
-}
 
-@include media-query('lg') {
-  .web-codelab {
+  @media (min-width: 1000px) {
     display: grid;
-    padding: $global-gutter;
-    gap: $global-gutter get-space('size-2');
+    gap: 0;
+    grid-template-columns: minmax(0px, 600px) minmax(0px, 100%);
 
-    .prose {
-      padding-inline: 0;
-      padding-block-start: 0;
+    .web-codelab__glitch-container {
+      position: sticky;
+      top: calc(#{$global-gutter} / 2);
+      height: calc(100vh - #{$global-gutter});
+
+      .web-codelab__glitch-iframe {
+        height: 100%;
+        width: 100%;
+        border: 0;
+
+        &.web-codelab__glitch-snapshot {
+          background-color: red;
+        }
+      }
     }
-
-    .prose > * {
-      margin-inline: 0;
-    }
-  }
-  .web-codelab {
-    grid-template-columns: minmax(20rem, 40rem) 1fr;
-  }
-
-  .web-codelab__glitch > * {
-    position: sticky;
-    top: $global-gutter;
-    height: calc(100vh - #{$web-codelab-embed-buffer});
   }
 }
