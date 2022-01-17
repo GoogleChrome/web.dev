@@ -430,7 +430,7 @@ emscripten)
   ;;
 ```
 
-First, executables on Unix platforms normally don't have any extension. Emscripten, however, produces different output depending on which extension you request. I'm using `AC_SUBST(EXEEXT, …)` to change the executable extension to `.html` so that any executable within a package - tests and examples - becomes an HTML with Emscripten's default shell that takes care of loading and instantiating JavaScript and WebAssembly.
+First, executables on Unix platforms normally don't have file extensions. Emscripten, however, produces different output depending on which extension you request. I'm using `AC_SUBST(EXEEXT, …)` to change the executable extension to `.html` so that any executable within a package - tests and examples - becomes an HTML with Emscripten's default shell that takes care of loading and instantiating JavaScript and WebAssembly.
 
 Second, because I'm using Embind and Asyncify, I need to enable those features (`--bind -s ASYNCIFY`) as well as allow dynamic memory growth (`-s ALLOW_MEMORY_GROWTH`) via linker parameters. Unfortunately, there is no way for a library to report those flags to the linker, so every application that uses this libusb port will have to add the same linker flags into their build configuration as well.
 
