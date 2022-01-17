@@ -318,7 +318,7 @@ Most of the backend code uses `val` and `promise_result` in a similar way as alr
 
 ## Porting event loops to the web
 
-One more piece of `libusb` that I do want to stop on is event handling. As described in the previous article, most APIs in system languages like C are synchronous, and event handling is no exception. It's usually implemented via an infinite loop that "polls" (tries to read data or blocks execution until some data is available) from a set of external I/O sources, and, when at least one of those responds, passes that as an event to the corresponding handler. Once the handler has finished its job, the control returns to the loop, and it pauses for another poll.
+One more piece of `libusb` that I want to discuss is event handling. As described in the previous article, most APIs in system languages like C are synchronous, and event handling is no exception. It's usually implemented via an infinite loop that "polls" (tries to read data or blocks execution until some data is available) from a set of external I/O sources, and, when at least one of those responds, passes that as an event to the corresponding handler. Once the handler is finished, the control returns to the loop, and it pauses for another poll.
 
 There are a couple of problems with this approach on the web.
 
