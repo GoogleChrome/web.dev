@@ -314,7 +314,7 @@ int em_get_device_list(libusb_context *ctx, discovered_devs **devs) {
 }
 ```
 
-Most of the backend code uses `val` and `promise_result` in a similar way as already shown above. There were few more interesting hacks I've had to do to convert properties exposed by WebUSB to those expected by libusb, both in this method and in others handling data transfer, but those implementation details are less important for the purposes of this article. Make sure to check the code and the comments if you're interested.
+Most of the backend code uses `val` and `promise_result` in a similar way as already shown above. There are few more interesting hacks in the data transfer handling code, but those implementation details are less important for the purposes of this article. Make sure to check the code and comments on Github if you're interested.
 
 ## Porting event loops to the web
 
