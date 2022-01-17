@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Una guía para habilitar el aislamiento de origen cruzado
 authors:
   - agektmr

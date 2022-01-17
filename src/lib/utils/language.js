@@ -17,6 +17,8 @@ const languageNames = {
   ru: 'Русский',
   pt: 'Português',
   ja: '日本語',
+  de: 'Deutsch',
+  fr: 'Français',
 };
 
 /**

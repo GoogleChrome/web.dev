@@ -45,12 +45,7 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
     ```
 4. メッセージの最後に記載されているファイル名と行番号 (たとえば、`common-bundle.js:535`) は、 `SharedArrayBuffer` がどこから取得されているのかを示しています。サードパーティのライブラリの場合は、開発者に連絡して問題を修正してください。ウェブサイトの一部として実装されている場合は、以下のガイドに従って、クロスオリジンアイソレーションを有効にしてください。
 
-<figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="SharedArrayBuffer がクロスオリジンアイソレーションなしで使用されている場合に表示される DevToools Console 警告", width="800", height="163", class="w-screenshot" %}
-   <figcaption>
-      SharedArrayBuffer がクロスオリジンアイソレーションなしで使用されている場合に表示される DevToools Console 警告
-   </figcaption>
-</figure>
+<figure class="w-figure"> {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163", class="w-screenshot" %}    <figcaption>       DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation.    </figcaption> </figure>
 
 ### (高度) 非推奨のレポート機能を使う
 

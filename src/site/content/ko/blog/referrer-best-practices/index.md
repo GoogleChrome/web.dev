@@ -15,7 +15,7 @@ tags:
   - security
   - privacy
 feedback:
-  - API
+  - api
 ---
 
 ## 요약

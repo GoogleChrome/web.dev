@@ -142,7 +142,7 @@ height="292", class="w-screenshot" %}
 ### GUI Toast
 
 An individual toast has some `padding`, some softer corners with
-[`border-radius`](https://developer.mozilla.org/edocs/Web/CSS/border-radius),
+[`border-radius`](https://developer.mozilla.org/docs/Web/CSS/border-radius),
 and a [`min()`](https://developer.mozilla.org/docs/Web/CSS/min()) function to
 aid in mobile and desktop sizing. The responsive size in the following CSS
 prevents toasts growing wider than 90% of the viewport or

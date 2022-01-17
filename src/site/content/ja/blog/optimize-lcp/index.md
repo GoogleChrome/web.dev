@@ -68,7 +68,7 @@ HTML が静的なもので、リクエストのたびに変更する必要がな
 サーバー キャッシングの適用については、ご利用のツールチェーンに応じて以下のような複数の方法が存在します。
 
 - リバース プロキシ ([Varnish](https://varnish-cache.org/)、[nginx](https://www.nginx.com/)) を構成し、キャッシュされたコンテンツを配信するか、アプリケーション サーバーの前にインストールされた場合にキャッシュ サーバーとして機能させる
-- クラウド プロバイダー ([Firebase](https://firebase.google.com/docs/hosting/manage-cache)、[AWS](https://aws.amazon.com/caching/)、[Azure](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching)) のキャッシュ動作を構成して管理する
+- クラウド プロバイダー ([Firebase](https://firebase.google.com/docs/hosting/manage-cache)、[AWS](https://aws.amazon.com/caching/)、[Azure](https://docs.microsoft.com/azure/architecture/best-practices/caching)) のキャッシュ動作を構成して管理する
 - エッジ サーバーを設置している CDN を使用し、ユーザーの近くでコンテンツをキャッシュして保存する
 
 ### HTML ページをキャッシュファーストで配信する
