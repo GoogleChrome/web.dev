@@ -209,38 +209,37 @@ Now I've needed a way to handle async WebUSB APIs where libusb expects synchrono
 I also wanted to correctly handle WebUSB errors and convert them into libusb error codes, but Embind currently doesn't have any way to handle JavaScript exceptions or `Promise` rejections from the C++ side. This problem can be worked around by catching a rejection on the JavaScript side and converting the result into an `{ error, value }` object that can be now safely parsed from the C++ side. I did this with a combination of the [`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_JS) macro and [`Emval.to{Handle, Value}`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val9as_handleEv) APIs:
 
 ```cpp
-namespace {
-  EM_JS(EM_VAL, em_promise_catch_impl, (EM_VAL handle), {
-    let promise = Emval.toValue(handle);
-    promise = promise.then(
-      value => ({error : 0, value}),
-      error => {
-        const ERROR_CODES = {
-          // LIBUSB_ERROR_IO
-          NetworkError : -1,
-          // LIBUSB_ERROR_INVALID_PARAM
-          DataError : -2,
-          TypeMismatchError : -2,
-          IndexSizeError : -2,
-          // LIBUSB_ERROR_ACCESS
-          SecurityError : -3,
-          …
-        };
-        console.error(error);
-        let errorCode = -99; // LIBUSB_ERROR_OTHER
-        if (error instanceof DOMException)
-        {
-          errorCode = ERROR_CODES[error.name] ?? errorCode;
-        }
-        else if (error instanceof RangeError || error instanceof TypeError)
-        {
-          errorCode = -2; // LIBUSB_ERROR_INVALID_PARAM
-        }
-        return {error: errorCode, value: undefined};
+EM_JS(EM_VAL, em_promise_catch_impl, (EM_VAL handle), {
+  let promise = Emval.toValue(handle);
+  promise = promise.then(
+    value => ({error : 0, value}),
+    error => {
+      const ERROR_CODES = {
+        // LIBUSB_ERROR_IO
+        NetworkError : -1,
+        // LIBUSB_ERROR_INVALID_PARAM
+        DataError : -2,
+        TypeMismatchError : -2,
+        IndexSizeError : -2,
+        // LIBUSB_ERROR_ACCESS
+        SecurityError : -3,
+        …
+      };
+      console.error(error);
+      let errorCode = -99; // LIBUSB_ERROR_OTHER
+      if (error instanceof DOMException)
+      {
+        errorCode = ERROR_CODES[error.name] ?? errorCode;
       }
-    );
-    return Emval.toHandle(promise);
-  });
+      else if (error instanceof RangeError || error instanceof TypeError)
+      {
+        errorCode = -2; // LIBUSB_ERROR_INVALID_PARAM
+      }
+      return {error: errorCode, value: undefined};
+    }
+  );
+  return Emval.toHandle(promise);
+});
 
 val em_promise_catch(val &&promise) {
   EM_VAL handle = promise.as_handle();
