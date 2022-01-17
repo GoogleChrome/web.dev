@@ -13,7 +13,7 @@ tags:
   - javascript
 ---
 
-When working on WebAssembly integration with the web, you need a way to call out to external APIs such as web APIs and third-party libraries. You then need a way to store the values and object instances those APIs return, and a way to pass those stored values to other APIs later. For asynchronous APIs, you might also need to await `Promise`s in your synchronous C/C++ code with [Asyncify](/asyncify/) and read the result once the operation is finished.
+When working on WebAssembly integration with the web, you need a way to call out to external APIs such as web APIs and third-party libraries. You then need a way to store the values and object instances those APIs return, and a way to pass those stored values to other APIs later. For asynchronous APIs, you might also need to await promises in your synchronous C/C++ code with [Asyncify](/asyncify/) and read the result once the operation is finished.
 
 Emscripten provides several tools for such interactions:
 
@@ -62,7 +62,7 @@ This code works well, but it performs lots of intermediate steps. Each operation
 4. Convert the result from JavaScript to intermediate format.
 5. Return the converted result to C++, and C++ finally reads it back.
 
-Each `await()` also has to pause the C++ side by unwinding the entire call stack of the WebAssembly module, returning to JavaScript, waiting, and restoring the WebAssembly stack when the operation is complete. \
+Each `await()` also has to pause the C++ side by unwinding the entire call stack of the WebAssembly module, returning to JavaScript, waiting, and restoring the WebAssembly stack when the operation is complete.
 
 Such code doesn't need anything from C++. C++ code is acting only as a driver for a series of JavaScript operations. What if you could move `fetch_json` to JavaScript and reduce the overhead of intermediate steps at the same time?
 
@@ -147,7 +147,7 @@ We still have a couple of explicit conversions at the entry and exit points of t
 
 ## EM_ASYNC_JS macro
 
-The only bit left that does not look pretty is the `Asyncify.handleAsync` wrapper - its only purpose is to allow executing `async` JavaScript functions with Asyncify. In fact, this use case is so common that there is now a specialized `EM_ASYNC_JS` macro that combines them together.
+The only bit left that does not look pretty is the `Asyncify.handleAsync` wrapper—its only purpose is to allow executing `async` JavaScript functions with Asyncify. In fact, this use case is so common that there is now a specialized `EM_ASYNC_JS` macro that combines them together.
 
 Here's how you could use it to produce the final version of the `fetch` example:
 
@@ -179,7 +179,7 @@ Since they don't declare a function prototype, they need a different way of spec
 
 You need to use the right macro name to choose the return type. `EM_ASM` blocks are expected to act like `void` functions, `EM_ASM_INT` blocks can return an integer value, and `EM_ASM_DOUBLE` blocks return floating-point numbers correspondingly.
 
-Any passed arguments will be available under names `$0`, `$1`, and so on in the JavaScript body. As with `EM_JS` or WebAssembly in general, the arguments are limited only to numeric values - integers, floating-point numbers, pointers and handles.
+Any passed arguments will be available under names `$0`, `$1`, and so on in the JavaScript body. As with `EM_JS` or WebAssembly in general, the arguments are limited only to numeric values—integers, floating-point numbers, pointers and handles.
 
 Here's an example of how you could use an `EM_ASM` macro to log an arbitrary JS value to the console:
 
