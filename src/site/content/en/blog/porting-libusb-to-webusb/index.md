@@ -210,7 +210,6 @@ I also wanted to correctly handle WebUSB errors and convert them into libusb err
 
 ```cpp
 namespace {
-// clang-format off
   EM_JS(EM_VAL, em_promise_catch_impl, (EM_VAL handle), {
     let promise = Emval.toValue(handle);
     promise = promise.then(
@@ -242,7 +241,6 @@ namespace {
     );
     return Emval.toHandle(promise);
   });
-// clang-format on
 
 val em_promise_catch(val &&promise) {
   EM_VAL handle = promise.as_handle();
