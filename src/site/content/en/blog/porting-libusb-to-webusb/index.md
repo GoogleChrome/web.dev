@@ -450,6 +450,6 @@ The library currently has a few limitations:
 
 In this post I've shown how, with the help of Emscripten, Asyncify and Fugu APIs even low-level libraries like libusb can be ported to the web with a few integration tricks.
 
-Porting such essential and widely used low-level libraries is particularly rewarding, because, in turn, it allows to bring higher-level libraries or even whole applications to the web, too. This opens experiences that were previously limited to users of one or two platforms, to all kinds of devices and operating systems, making those experiences available just a link click away.
+Porting such essential and widely used low-level libraries is particularly rewarding, because, in turn, it allows bringing higher-level libraries or even whole applications to the web, too. This opens experiences that were previously limited to users of one or two platforms, to all kinds of devices and operating systems, making those experiences available just a link click away.
 
 In the next post I'll walk through the steps involved in building the web gPhoto2 demo which not only retrieves device information, but extensively uses the transfer feature of libusb too. Meanwhile, I hope you found the libusb example inspiring and will try out the demo, play with the library itself, or perhaps even go ahead and port another widely used library to one of the Fugu APIs too.
