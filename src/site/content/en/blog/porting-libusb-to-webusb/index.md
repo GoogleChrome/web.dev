@@ -99,43 +99,43 @@ Each backend includes the [`libusbi.h`](https://github.com/libusb/libusb/blob/ma
 
 ```c
 const struct usbi_os_backend usbi_backend = {
-    "Windows",
-    USBI_CAP_HAS_HID_ACCESS,
-    windows_init,
-    windows_exit,
-    windows_set_option,
-    windows_get_device_list,
-    NULL,   /* hotplug_poll */
-    NULL,   /* wrap_sys_device */
-    windows_open,
-    windows_close,
-    windows_get_active_config_descriptor,
-    windows_get_config_descriptor,
-    windows_get_config_descriptor_by_value,
-    windows_get_configuration,
-    windows_set_configuration,
-    windows_claim_interface,
-    windows_release_interface,
-    windows_set_interface_altsetting,
-    windows_clear_halt,
-    windows_reset_device,
-    NULL,   /* alloc_streams */
-    NULL,   /* free_streams */
-    NULL,   /* dev_mem_alloc */
-    NULL,   /* dev_mem_free */
-    NULL,   /* kernel_driver_active */
-    NULL,   /* detach_kernel_driver */
-    NULL,   /* attach_kernel_driver */
-    windows_destroy_device,
-    windows_submit_transfer,
-    windows_cancel_transfer,
-    NULL,   /* clear_transfer_priv */
-    NULL,   /* handle_events */
-    windows_handle_transfer_completion,
-    sizeof(struct windows_context_priv),
-    sizeof(union windows_device_priv),
-    sizeof(struct windows_device_handle_priv),
-    sizeof(struct windows_transfer_priv),
+  "Windows",
+  USBI_CAP_HAS_HID_ACCESS,
+  windows_init,
+  windows_exit,
+  windows_set_option,
+  windows_get_device_list,
+  NULL,   /* hotplug_poll */
+  NULL,   /* wrap_sys_device */
+  windows_open,
+  windows_close,
+  windows_get_active_config_descriptor,
+  windows_get_config_descriptor,
+  windows_get_config_descriptor_by_value,
+  windows_get_configuration,
+  windows_set_configuration,
+  windows_claim_interface,
+  windows_release_interface,
+  windows_set_interface_altsetting,
+  windows_clear_halt,
+  windows_reset_device,
+  NULL,   /* alloc_streams */
+  NULL,   /* free_streams */
+  NULL,   /* dev_mem_alloc */
+  NULL,   /* dev_mem_free */
+  NULL,   /* kernel_driver_active */
+  NULL,   /* detach_kernel_driver */
+  NULL,   /* attach_kernel_driver */
+  windows_destroy_device,
+  windows_submit_transfer,
+  windows_cancel_transfer,
+  NULL,   /* clear_transfer_priv */
+  NULL,   /* handle_events */
+  windows_handle_transfer_completion,
+  sizeof(struct windows_context_priv),
+  sizeof(union windows_device_priv),
+  sizeof(struct windows_device_handle_priv),
+  sizeof(struct windows_transfer_priv),
 };
 ```
 
@@ -156,11 +156,11 @@ using namespace emscripten;
 // …function implementations
 
 const usbi_os_backend usbi_backend = {
-    .name = "Emscripten + WebUSB backend",
-    .caps = LIBUSB_CAP_HAS_CAPABILITY,
-    // …handlers - function pointers to implementations above
-    .device_priv_size = sizeof(val),
-    .transfer_priv_size = sizeof(val),
+  .name = "Emscripten + WebUSB backend",
+  .caps = LIBUSB_CAP_HAS_CAPABILITY,
+  // …handlers - function pointers to implementations above
+  .device_priv_size = sizeof(val),
+  .transfer_priv_size = sizeof(val),
 };
 ```
 
@@ -363,23 +363,23 @@ Later, I decided to improve it by leveraging the browser event system. There are
 
 ```js
 EM_JS(void, em_libusb_notify, (void), {
-    dispatchEvent(new Event("em-libusb"));
+  dispatchEvent(new Event("em-libusb"));
 });
 
 EM_ASYNC_JS(int, em_libusb_wait, (int timeout), {
-    let onEvent, timeoutId;
+  let onEvent, timeoutId;
 
-    try {
-        return await new Promise(resolve => {
-            onEvent = () => resolve(0);
-            addEventListener('em-libusb', onEvent);
+  try {
+    return await new Promise(resolve => {
+      onEvent = () => resolve(0);
+      addEventListener('em-libusb', onEvent);
 
-            timeoutId = setTimeout(resolve, timeout, -1);
-        });
-    } finally {
-        removeEventListener('em-libusb', onEvent);
-        clearTimeout(timeoutId);
-    }
+      timeoutId = setTimeout(resolve, timeout, -1);
+    });
+  } finally {
+    removeEventListener('em-libusb', onEvent);
+    clearTimeout(timeoutId);
+  }
 });
 ```
 
@@ -388,14 +388,14 @@ The `em_libusb_notify` function is used whenever libusb tries to report an event
 ```cpp/8-10
 void usbi_signal_event(usbi_event_t *event)
 {
-    uint64_t dummy = 1;
-    ssize_t r;
+  uint64_t dummy = 1;
+  ssize_t r;
 
-    r = write(EVENT_WRITE_FD(event), &dummy, sizeof(dummy));
-    if (r != sizeof(dummy))
-        usbi_warn(NULL, "event write failed");
+  r = write(EVENT_WRITE_FD(event), &dummy, sizeof(dummy));
+  if (r != sizeof(dummy))
+    usbi_warn(NULL, "event write failed");
 #ifdef __EMSCRIPTEN__
-    em_libusb_notify();
+  em_libusb_notify();
 #endif
 }
 ```
@@ -403,17 +403,17 @@ void usbi_signal_event(usbi_event_t *event)
 Meanwhile, the `em_libusb_wait` part is used to "wake up" from Asyncify sleep when either an `em-libusb` event is received, or the timeout has expired:
 
 ```cpp/8
-    double until_time = emscripten_get_now() + timeout_ms;
-    for (;;) {
-        // Emscripten `poll` ignores timeout param, but pass 0 explicitly just
-        // in case.
-        num_ready = poll(fds, nfds, 0);
-        if (num_ready != 0) break;
-        int timeout = until_time - emscripten_get_now();
-        if (timeout <= 0) break;
-        int result = em_libusb_wait(timeout);
-        if (result != 0) break;
-    }
+  double until_time = emscripten_get_now() + timeout_ms;
+  for (;;) {
+    // Emscripten `poll` ignores timeout param, but pass 0 explicitly just
+    // in case.
+    num_ready = poll(fds, nfds, 0);
+    if (num_ready != 0) break;
+    int timeout = until_time - emscripten_get_now();
+    if (timeout <= 0) break;
+    int result = em_libusb_wait(timeout);
+    if (result != 0) break;
+  }
 ```
 
 Due to significant reduction in sleeps and wake-ups, this mechanism fixed the efficiency problems of the earlier `emscripten_sleep`-based implementation, and increased the DSLR demo throughput from 13-14 FPS to consistent 30+ FPS, which is enough for a smooth live feed.
