@@ -57,7 +57,7 @@ When setting one of those values, gPhoto2 has no other choice but to, roughly:
 
 It can take some time, but if the value is actually supported by the camera, it will get there, and, if not, it will stop on the nearest supported value.
 
-Other cameras will likely have different sets of settings, underlying APIs, and quirks. Keep in mind that gPhoto2 is an open-source project, and either automated or manual testing of all the camera models out there is simply not feasible, so detailed issue reports and PRs are always welcome.
+Other cameras will likely have different sets of settings, underlying APIs, and quirks. Keep in mind that gPhoto2 is an open-source project, and either automated or manual testing of all the camera models out there is simply not feasible, so detailed issue reports and PRs are always welcome (but make sure to reproduce with the official gPhoto2 client first).
 
 ### Important cross-platform compatibility notes
 
