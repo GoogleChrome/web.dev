@@ -370,7 +370,7 @@ EM_ASYNC_JS(int, em_libusb_wait, (int timeout), {
 
 The `em_libusb_notify` function is used whenever libusb tries to report an event, such as data transfer completion:
 
-```cpp
+```cpp/8-10
 void usbi_signal_event(usbi_event_t *event)
 {
     uint64_t dummy = 1;
@@ -387,7 +387,7 @@ void usbi_signal_event(usbi_event_t *event)
 
 Meanwhile, the `em_libusb_wait` part is used to "wake up" from Asyncify sleep when either an `em-libusb` event is received, or the timeout has expired:
 
-```cpp
+```cpp/8
     double until_time = emscripten_get_now() + timeout_ms;
     for (;;) {
         // Emscripten `poll` ignores timeout param, but pass 0 explicitly just
