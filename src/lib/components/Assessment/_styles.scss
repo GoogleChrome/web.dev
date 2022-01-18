@@ -78,6 +78,7 @@ web-assessment {
 
 .web-assessment__content {
   display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
