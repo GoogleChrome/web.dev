@@ -33,7 +33,7 @@
     "lint:types": "tsc --noEmit",
     "lint": "npm-run-all lint:md lint:scss lint:js",
     "patterns:create": "node src/component-library/pattern-generator.js",
-    "percy": "PERCY=true npm-run-all build snapshots:firebase",
+    "percy": "PERCY=true npm-run-all ignore build snapshots:firebase",
     "postinstall": "npm ci --prefix functions",
     "rollup": "rollup -c",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
