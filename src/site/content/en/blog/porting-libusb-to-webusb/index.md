@@ -33,7 +33,7 @@ I'll describe the steps for building this demo in two parts. In this blog post, 
 In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. Feel free to check out the [live](https://web-gphoto2.rreverser.com/) or the pre-recorded demo before reading up on technical details:
 
 <figure class="w-figure">
-  {% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/Ffn3eatYmzJZToWlzQu6.mp4", class="w-screenshot", controls="true" %}
+  {% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/4MUKvJhKOPK2CSTkhnEC.mp4", class="w-screenshot", controls="true" %}
   <figcaption class="w-figcaption">
     <a href="https://web-gphoto2.rreverser.com/">The demo</a> running on a laptop connected to a Sony camera.
   </figcaption>
