@@ -1,0 +1,41 @@
+name: Preview
+
+on: pull_request
+
+jobs:
+  deploy:
+    name: Preview
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max_old_space_size=4096
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run a staging build of site
+        run: npm run build
+        env:
+          ELEVENTY_ENV: staging
+
+      - name: Deploy to Netlify
+        id: deploy-netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=dist
+
+      - name: Comment Netlify Preview URL
+        uses: unsplash/comment-on-pr@v1.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT: "✔️ Deploy Preview for web-dev-staging ready!\n🔍 Inspect the deploy log: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n😎 Browse the preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
+        with:
+          msg: ${{ env.OUTPUT }}
+          check_for_duplicate_msg: false
