@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev components
 date: 2019-06-26
-updated: 2020-07-17
+updated: 2022-01-18
 description: |
   Learn how to use web.dev's UI and content components.
 ---
@@ -11,8 +11,8 @@ The web.dev platform includes various components to make it easy for content
 contributors to include common content features, like videos, side-by-side
 comparisons, and asides.
 
-This post shows sample markup for each of web.dev's content components and provides
-guidance about how to use them effectively.
+This post shows sample markup for each of web.dev's content components and
+provides guidance about how to use them effectively.
 
 ## Component types
 
@@ -259,7 +259,7 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
-[Detailed specification](design-system/component/button/)
+[Detailed specification](/design-system/component/button/)
 
 ### Text buttons
 
@@ -297,7 +297,7 @@ These buttons are shown for reference.
 
 A default icon button:
 
-[Detailed specification](design-system/component/icon-button/)
+[Detailed specification](/design-system/component/icon-button/)
 
 <div>
   <button class="icon-button" aria-label="Close">
@@ -1239,7 +1239,7 @@ the tab, e.g. the code blocks.
 <web-tabs>
   <div data-label="html">
     ```html
-    <p> I'm html</p>
+    <p>I'm html</p>
     ```
   </div>
   <div data-label="css">
@@ -1255,7 +1255,7 @@ the tab, e.g. the code blocks.
   <div data-label="html" title="t">
 
   ```html
-  <p> I'm html</p>
+  <p>I'm html</p>
   ```
 
   </div>
