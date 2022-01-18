@@ -259,7 +259,7 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
-[Detailed specification](design-system/component/button/)
+[Detailed specification](/design-system/component/button/)
 
 ### Text buttons
 
@@ -297,7 +297,7 @@ These buttons are shown for reference.
 
 A default icon button:
 
-[Detailed specification](design-system/component/icon-button/)
+[Detailed specification](/design-system/component/icon-button/)
 
 <div>
   <button class="icon-button" aria-label="Close">
