@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-12-21
+updated: 2022-01-14
 tags:
   - blog
   - capabilities
@@ -527,26 +527,24 @@ will be `"file"` for both files _and_ directories, whereas the File System Acces
 [`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
 be `"file"` for files and `"directory"` for directories.
 
-```js/13
+```js/
 elem.addEventListener('dragover', (e) => {
   // Prevent navigation.
   e.preventDefault();
 });
 
 elem.addEventListener('drop', async (e) => {
-  // Prevent navigation.
   e.preventDefault();
-  // Process all of the items.
-  for (const item of e.dataTransfer.items) {
-    // Careful: `kind` will be 'file' for both file
-    // _and_ directory entries.
-    if (item.kind === 'file') {
-      const entry = await item.getAsFileSystemHandle();
-      if (entry.kind === 'directory') {
-        handleDirectoryEntry(entry);
-      } else {
-        handleFileEntry(entry);
-      }
+
+  const fileHandlesPromises = [...e.dataTransfer.items]
+    .filter((item) => item.kind === 'file')
+    .map((item) => item.getAsFileSystemHandle());
+
+  for await (const handle of fileHandlesPromises) {
+    if (handle.kind === "directory") {
+      console.log(`Directory: ${handle.name}`);
+    } else {
+      console.log(`File: ${handle.name}`);
     }
   }
 });
