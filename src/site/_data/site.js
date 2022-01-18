@@ -48,6 +48,7 @@ module.exports = {
       notFound: 'UA-126406676-4',
     },
     dimensions: {
+      SIGNED_IN: 'dimension1',
       TRACKING_VERSION: 'dimension5',
       NAVIGATION_TYPE: 'dimension6',
     },
