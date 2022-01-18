@@ -8,6 +8,7 @@ description: A foundational overview of how to build an adaptive and accessible 
 date: 2022-01-19
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Us7qjkapii7sZurl0glF.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png
+alt: The sun and the word light and the moon next to the word dark.
 tags:
   - blog
   - css
@@ -15,7 +16,7 @@ tags:
   - javascript
 ---
 
-In this post I want to share thinking on a way to build breadcrumb components.
+In this post I want to share thinking on a way to build a dark and light theme switch component.
 [Try the demo](https://gui-challenges.web.app/theme-switch/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
@@ -329,7 +330,7 @@ The SVG inside of the button needs some styles as well. The SVG should fit the s
 }
 ```
 
-{% Aside 'key-term' %} 
+{% Aside %} 
 The [CSS @nest](https://www.w3.org/TR/css-nesting-1/)
 feature, used with [PostCSS
 Nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting),
@@ -723,7 +724,7 @@ ensures no syntax errors when it's not found and the setAttribute function is
 attempted to be invoked. 
 
 Next, that function `reflectPreference()` is immediately called so the HTML
-document has it's `data-theme` attribute set:
+document has its `data-theme` attribute set:
 
 ```js
 reflectPreference()
