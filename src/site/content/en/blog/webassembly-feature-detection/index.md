@@ -108,3 +108,4 @@ In this post, I've shown how to choose, build and switch between bundles for dif
 As the number of features grows,the number of feature cohorts may become unmaintainable. To alleviate this problem, you can choose feature cohorts based on your real-world user data, skip the less popular browsers and let them fall back to slightly less optimal cohorts. As long as your application still works for all users, this approach can provide a reasonable balance between progressive enhancement and runtime performance.
 
 In the future, WebAssembly might get a built-in way to detect supported features and switch between different implementations of the same function within the module. However, such a mechanism would itself be a post-MVP feature that you would need to detect and load conditionally using the approach above. Until then, this approach remains the only way to build and load code using new WebAssembly features across all browsers.
+
