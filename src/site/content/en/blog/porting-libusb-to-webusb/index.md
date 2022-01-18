@@ -63,7 +63,14 @@ Unfortunately, on Windows any "well-known" devices, including DSLR cameras, are 
 
 On Linux, you will likely need to [set custom permissions](/build-for-webusb/#linux) to allow access to your DSLR via WebUSB, although this depends on your distribution.
 
-On macOS, the demo should work out of the box.
+On macOS and Android, the demo should work out of the box. If you're trying it on an Android phone, make sure to switch to the landscape mode as I didn't put much effort into making it responsive (PRs are welcome!):
+
+<figure class="w-figure">
+  {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/POZGEUlnjJeRKvVDFdiR.jpg", alt="Android phone connected to a Canon camera via a USB-C cable.", width="800", height="533" %}
+  <figcaption class="w-figcaption">
+    <a href="https://web-gphoto2.rreverser.com/">The same demo</a> running on an Android phone. Picture by <a href="https://twitter.com/DasSurma">Surma</a>.
+  </figcaption>
+</figure>
 
 For a more in-depth guide on cross-platform usage of WebUSB, see the ["Platform-specific considerations" section of "Building a device for WebUSB"](/build-for-webusb/#platform-specific-considerations).
 
