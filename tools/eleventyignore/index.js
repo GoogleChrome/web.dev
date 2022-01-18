@@ -63,9 +63,10 @@ const isProduction = process.env.NODE_ENV === 'production';
 // This will automatically be set to true by GitHub Actions.
 const isCI = process.env.CI;
 const isPercy = process.env.PERCY;
-const translationDirs = getDirectories(path.join('src', 'site', 'content'))
+const enDirPath = path.join('src', 'site', 'content');
+const translationDirs = getDirectories(enDirPath)
   .filter((dir) => dir !== 'en')
-  .map((dir) => path.join(contentPath, dir));
+  .map((dir) => path.join(enDirPath, dir));
 
 if (isPercy) {
   console.log(warning(`Ignoring ALL translation docs in Percy mode`));
