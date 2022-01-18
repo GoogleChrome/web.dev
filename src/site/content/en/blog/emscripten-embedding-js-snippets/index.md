@@ -2,7 +2,7 @@
 title: Embedding JavaScript snippets in C++ with Emscripten
 subhead: Learn how to embed JavaScript code in your WebAssembly library to communicate with the outside world.
 description: Learn how to embed JavaScript code in your WebAssembly library to communicate with the outside world.
-date: 2022-01-20
+date: 2022-01-18
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/InR77BkPIakxD8X1rADr.jpg
 alt: A man putting sticky notes on a whiteboard.
 authors:
