@@ -46,6 +46,13 @@ const virtualImports = {
 const pagesDir = './src/lib/pages/';
 const pages = fs.readdirSync(pagesDir, 'utf-8').map((p) => join(pagesDir, p));
 
+// Suppress circular dependency warning
+const onwarn = (warning, rollupWarn) => {
+  if (warning.code !== 'CIRCULAR_DEPENDENCY') {
+    rollupWarn(warning);
+  }
+};
+
 // Plugins that are common to every bundle.
 const plugins = [
   virtual(buildVirtualJSON(virtualImports)),
@@ -59,6 +66,7 @@ const devConfig = {
     dir: 'dist/js',
     format: 'esm',
   },
+  onwarn,
   watch: {
     // By default rollup clears the console on every build. This disables that.
     clearScreen: false,
@@ -72,6 +80,7 @@ const productionConfig = {
     dir: 'dist/js',
     format: 'esm',
   },
+  onwarn,
   plugins: [
     ...plugins,
     postcss({
@@ -94,6 +103,7 @@ const testConfig = {
     format: 'iife',
     name: 'test',
   },
+  onwarn,
   plugins: [...plugins, postcss(), istanbul()],
 };
 

@@ -16,7 +16,13 @@
 
 import {BaseElement} from '../BaseElement';
 
-class Carousel extends BaseElement {
+export class Carousel extends BaseElement {
+  static get properties() {
+    return {
+      index: {type: Number, reflect: true},
+    };
+  }
+
   constructor() {
     super();
 
@@ -141,7 +147,6 @@ class Carousel extends BaseElement {
         }
 
         const scrollTo = this._items[index];
-
         return this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
       }
     }
