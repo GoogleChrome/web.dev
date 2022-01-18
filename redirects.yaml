@@ -308,3 +308,7 @@ redirects:
   # web.dev LIVE 2020 event
   - source: /live
     destination: /shows/web-dev-live-day-1
+
+  # Redirects old vitals tooling workflow doc to the updated doc
+  - source: /vitals-tools-workflow
+    destination: /vitals-tools
