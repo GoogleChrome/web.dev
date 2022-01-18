@@ -50,8 +50,9 @@ module.exports = {
     dimensions: {
       SIGNED_IN: 'dimension1',
       TRACKING_VERSION: 'dimension5',
+      NAVIGATION_TYPE: 'dimension6',
     },
-    version: 5,
+    version: 6,
   },
   firebase: {
     prod: {
