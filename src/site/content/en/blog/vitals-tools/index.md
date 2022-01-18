@@ -7,7 +7,8 @@ authors:
   - gmimani
   - addyosmani
   - egsweeny
-date: 2022-01-14
+date: 2021-08-09
+updated: 2022-01-18
 hero: image/PTlEGTxNW2XkfI8mA3pIGDFxdYY2/1qMzdR1XGj3HKzuW4PFG.jpg
 thumbnail: image/PTlEGTxNW2XkfI8mA3pIGDFxdYY2/ApVe49OiB4KIJwcC7njy.jpg
 alt: An image of icons of the various Google tools described in this article.
@@ -19,7 +20,7 @@ tags:
   - performance
 ---
 
-[Core Web Vitals](/vitals/) are a set of metrics that assess the user experience on criteria such as perceptual performance, responsiveness to user input, and layout stability. While Core Web Vitals are valuable user experience metrics, they won't mean much without guidance on creating a development workflow to continuously improve them in both the lab and the field.
+[Core Web Vitals](/vitals/) are a set of metrics that assess the user experience on criteria such as load performance, responsiveness to user input, and layout stability. While Core Web Vitals are valuable user experience metrics, they won't mean much without guidance on creating a development workflow to continuously improve them in both the lab and the field.
 
 {% Aside 'key-term' %}
 [**Lab data**](/lab-and-field-data-differences/#lab-data) describes how _hypothetical_ users _may_ experience your website. [**Field data**](/lab-and-field-data-differences/#field-data) describes how _real_ users _actually_ experienced your website. Field data is also known as Real User Monitoring (RUM).
@@ -39,7 +40,7 @@ To learn more about how simulated throttling works and how it differs from other
 
 ### First or third-party tools
 
-The best dataset for assessing website performance in the field is the one _you_ build. That starts with collecting field data from your website's visitors. How you do this depends on the size of your organization, and whether you want to pay for a third-party solution or create your own.
+The best dataset for assessing website performance in the field is the one _you_ build. That starts with collecting field data from your website's visitors. How you do this depends on the size of your organization, and whether you want to pay for [a third-party solution](https://en.wikipedia.org/wiki/Real_user_monitoring#RUM_software) or create your own.
 
 Paid solutions will almost certainly measure Core Web Vitals (and other performance metrics). In large organizations with significant resources, this may be the preferred method.
 
@@ -79,7 +80,7 @@ Since the data CrUX provides is a rolling average over the previous 28 days, it'
 
 ### PageSpeed Insights (PSI)
 
-[PSI](https://pagespeed.web.dev/) is a tool that reports lab data from CrUX _and_ field data from Lighthouse for a given page.
+[PSI](https://pagespeed.web.dev/) is a tool that reports field data from CrUX _and_ field lab from Lighthouse for a given page.
 
 #### When to use PSI
 
@@ -91,7 +92,7 @@ PSI may not be worth using for developers already using Lighthouse. From the fie
 
 ### Search Console
 
-[Search Console](https://search.google.com/search-console/about) measures your site's search traffic and performance, including Core Web Vitals. A valuable feature of Search Console is that it assesses groups of similar pages (for example, pages that use the same template). Search Console also includes a Core Web Vitals report based on field data from CrUX.
+[Search Console](https://search.google.com/search-console/about) measures your site's search traffic and performance, [including Core Web Vitals](https://support.google.com/webmasters/answer/9205520). A valuable feature of Search Console is that it assesses groups of similar pages (for example, pages that use the same template). Search Console also includes a Core Web Vitals report based on field data from CrUX.
 
 #### When to use Search Console
 
@@ -248,7 +249,7 @@ It's best to think of the Web Vitals extension as a spot-checking tool to find p
 
 #### Drill down with the performance tab
 
-The performance tab in Chrome's DevTools profiles all page behavior during a recorded period of time. When populated, a layer in the timeline labeled "experience" appears, which highlights layout shifts and the elements responsible for those shifts.
+The performance tab in Chrome's DevTools profiles all page behavior during a recorded period of time. When populated, a layer in the timeline labeled "experience" appears, which highlights layout shifts and the elements that shifted.
 
 <figure class="w-figure">
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vCzfCMzllJfrbHw5up3j.png", alt="A screenshot of a populated performance tab in Chrome's DevTools. The interface shows a row labeled 'Experience', which shows a single layout shift. The layout shift is focused in the tab, with information about the layout shift (such as the duration) in the bottom pane.", width="800", height="509" %}
@@ -317,13 +318,13 @@ The tools listed in the first step may seem like a lot, but you don't necessaril
         <td>Real-time</td>
       </tr>
       <tr>
-        <td>Allows slicing of data in meaningful ways which can be joined with other public datasets like the <a href="https://httparchive.org/">HTTP Archive</a> for advanced insights.</td>
+        <td>Breaks down data into meaningful dimensions, such as country, connection, device, and other factors, all with more detailed distribution data</td>
         <td>RESTful access to CrUX data programmatically. More filtering possibilities and faster than PSI API (also higher quota).</td>
         <td>RESTful access to CrUX and Lighthouse data programmatically.</td>
         <td>Collect real-time Core Web Vitals metrics from real user experiences on a website (needs to be integrated in pages).</td>
       </tr>
       <tr>
-        <td>Recommended for most accurate insights. Default users can query 1TB of data per month. Beyond that, the standard rates apply.</td>
+        <td>Default users can query 1TB of data per month. Beyond that, the standard rates apply.</td>
         <td>Free within API quota.</td>
         <td>Free within API quota.</td>
         <td>Free.</td>
@@ -344,4 +345,4 @@ Any workflow is better than none at all, as no plan for addressing problems with
 
 ## Conclusion
 
-Ensuring fast and delightful user experiences requires a performance-first mindset and adoption of a workflow to ensure progress. With the right tools and processes to audit, debug, monitor, and provide governance, building great user experiences and staying with the thresholds defined for good Core Web Vitals is within your reach.
+Ensuring fast and delightful user experiences requires a performance-first mindset and adoption of a workflow to ensure progress. With the right tools and processes to audit, debug, monitor, and provide governance, building great user experiences and staying within the thresholds defined for good Core Web Vitals is within your reach.
