@@ -152,7 +152,7 @@ if (navigator.storage && navigator.storage.estimate) {
 } 
 ```
 
-{% Glitch 'mlearn-pwa-offline-data-storage' %}
+{% Glitch 'learn-pwa-offline-data-storage' %}
 
 In Chromium DevTools, you can see your site's quota and how much storage is used, broken down by what's using it, by opening the **Storage** section in the **Application** tab.
 
