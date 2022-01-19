@@ -19,6 +19,7 @@ const {expect, assert} = require('chai');
 require('../../../../../../src/lib/components/Carousel/index');
 
 const cardCount = 10;
+const sleep = () => new Promise((res) => setTimeout(res, 600));
 
 /**
  * @returns {Promise<import('../../../../../../src/lib/components/Carousel/index').Carousel>}
@@ -33,10 +34,8 @@ const setup = async () => {
   divCarousel.classList.add('carousel');
 
   const backButton = document.createElement('button');
-  backButton.classList.add('icon-button');
   backButton.setAttribute('data-direction', 'prev');
-  backButton.setAttribute('aria-label', 'back');
-  divCarousel.appendChild(backButton);
+  divCarousel.append(backButton);
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
@@ -44,18 +43,16 @@ const setup = async () => {
 
   for (let i = 0; i < cardCount; i++) {
     const cardDiv = document.createElement('div');
-    divCarouselTrack.appendChild(cardDiv);
+    divCarouselTrack.append(cardDiv);
   }
 
-  divCarousel.appendChild(divCarouselTrack);
+  divCarousel.append(divCarouselTrack);
 
   const nextButton = document.createElement('button');
-  nextButton.classList.add('icon-button');
   nextButton.setAttribute('data-direction', 'next');
-  nextButton.setAttribute('aria-label', 'forward');
-  divCarousel.appendChild(nextButton);
+  divCarousel.append(nextButton);
 
-  webCarousel.appendChild(divCarousel);
+  webCarousel.append(divCarousel);
   document.body.append(webCarousel);
   // @ts-ignore
   await webCarousel.updateComplete;
@@ -78,27 +75,34 @@ describe('Carousel', function () {
     expect(webCarousel._previousButton).to.be.instanceOf(HTMLButtonElement);
   });
 
-  // /**
-  //  * @TODO
-  //  *
-  //  * Acting funny, I think that's cause of missing CSS.
-  //  */
-  // it('clicking on arrow scrolls carousel', async function () {
-  //   const webCarousel = await setup();
-  //   const carouselTrack = webCarousel._carouselTrack;
-  //   const initialScrollLeft = carouselTrack.scrollLeft;
-  //   const nextButton = webCarousel._nextButton;
-  //   const previousButton = webCarousel._previousButton;
+  it('clicking on arrow scrolls carousel', async function () {
+    const webCarousel = await setup();
 
-  //   nextButton.click();
-  //   expect(carouselTrack.scrollLeft).to.not.equal(initialScrollLeft);
+    const carouselTrack = webCarousel._carouselTrack;
+    const overflow =
+      carouselTrack.parentElement.clientWidth - carouselTrack.clientWidth;
 
-  //   previousButton.click();
-  //   expect(carouselTrack.scrollLeft).to.equal(initialScrollLeft);
+    let previousScrollLeft = carouselTrack.scrollLeft + overflow;
+    const nextButton = webCarousel._nextButton;
+    const previousButton = webCarousel._previousButton;
 
-  //   previousButton.click();
-  //   expect(carouselTrack.scrollLeft).to.equal(initialScrollLeft);
-  // });
+    // Check if next moves forward
+    nextButton.click();
+    await sleep();
+    expect(carouselTrack.scrollLeft).to.be.above(previousScrollLeft);
+    previousScrollLeft = carouselTrack.scrollLeft + overflow; // Account for overflow
+
+    // Check if back moves backward
+    previousButton.click();
+    await sleep();
+    expect(carouselTrack.scrollLeft).to.be.below(previousScrollLeft);
+    previousScrollLeft = carouselTrack.scrollLeft;
+
+    // Check if back at beginning doesn't move
+    previousButton.click();
+    await sleep();
+    expect(carouselTrack.scrollLeft).to.be.equal(previousScrollLeft);
+  });
 
   it('updates tracked index when element is focused in', async function () {
     const webCarousel = await setup();
