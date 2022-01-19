@@ -223,7 +223,7 @@ With a Cache only strategy you populate the cache with the assets you'll serve w
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/xzCJEYBUdof34CbhDE29.png", alt="Cache Only strategy in a diagram.", width="800", height="439" %}
 
-{% Glitch 'mlearn-pwa-serving-cache-only' %}
+{% Glitch 'learn-pwa-serving-cache-only' %}
 
 ### Custom strategies
 
