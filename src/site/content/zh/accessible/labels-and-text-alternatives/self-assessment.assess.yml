@@ -1,0 +1,89 @@
+setLeader: |
+  Check whether sample HTML elements have accessible names
+height: unset
+tabLabel: sample
+questions:
+  - stimulus: "![temp](image/user/temp.svg)"
+    type: think-and-check
+    stem: Does this image have an accessible name?
+    options:
+      - rationale: |
+          **Yes**. Give an image an accessible name by adding an `alt` attribute.
+  - stimulus: |
+      ```html
+      <object type="application/pdf" data="/report.pdf" alt="Annual report"></object>
+      ```
+    type: think-and-check
+    stem: Does this object have an accessible name?
+    options:
+      - rationale: |
+          **No**. Give an `<object>` element a name by providing text content.
+          (An `alt` attribute on an object will not be read by assistive technologies.)
+  - stimulus: |
+      This sample renders an icon button:
+
+      ```html
+      <button>
+        <svg class="icon">
+          <use xlink:href="#icon-1" />
+        </svg>
+      </button>
+      ```
+    type: think-and-check
+    stem: Does this button have an accessible name?
+    options:
+      - rationale: |
+          **No**. Give a button an accessible name by providing text content,
+          an `aria-label` attribute, or an `aria-labelledby` attribute.
+  - stimulus: |
+      This sample renders an icon button with a tooltip that appears on hover and focus:
+
+      ```html
+      <button>
+        <svg class="icon">
+          <use xlink:href="#icon-1" />
+        </svg>
+        <span class="tooltip hidden">Open menu</span>
+      </button>
+      ```
+    type: think-and-check
+    stem: Does this button have an accessible name?
+    options:
+      - rationale: |
+          **Yes**. Even if the button's tooltip is visually hidden using CSS,
+          assistive technologies can still read its text content.
+
+          **Caution:** When visually hiding button text,
+          use CSS rather than the `hidden` attribute.
+          The `hidden` attribute removes the element
+          from the accessibility tree.
+  - stimulus: |
+      ```html
+      <label>
+        <input type="checkbox" value="subscribe"></input>
+        Subscribe to the newsletter?
+      </label>
+      ```
+    type: think-and-check
+    stem: Does this checkbox have an accessible name?
+    options:
+      - rationale: |
+          **Yes**. The label is associated with the checkbox
+          because the label is the checkbox's parent.
+          So, assistive technologies treat the label's
+          text content as the input's name.
+  - stimulus: |
+      ```html
+      <input type="checkbox" value="subscribe"></input>
+      <label for="subscribe">Subscribe to the newsletter?</label>
+      ```
+    type: think-and-check
+    stem: Does this checkbox have an accessible name?
+    options:
+      - rationale: |
+          **No**. The checkbox's `value` attribute indicates
+          what text will be saved when the form is submitted,
+          but assistive technologies don't read it.
+          To provide an accessible name,
+          add an `id` attribute with the value `subscribe`
+          to associate the checkbox with the label.

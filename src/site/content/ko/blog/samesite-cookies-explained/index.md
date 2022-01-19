@@ -13,7 +13,7 @@ tags:
   - cookies
   - chrome-80
 feedback:
-  - API
+  - api
 ---
 
 {% Aside %} 이 문서는 `SameSite` 쿠키 특성 변경에 관한 시리즈의 일부입니다.
