@@ -122,7 +122,7 @@ self.addEventListener('install', event => {
 });
 ```
 
-Then, in `setCatchHandler`, the destination of the request that threw an error is determined, and the `offline-fallbacks` cache is opened. If the destination is a document, the content of the offline fallback is returned to the user. If that doesn't exist, or the destination isn't a document (such as an image or stylesheet), an error response is returned. You can extend this pattern not just for documents but for images, videos, fonts, really anything that you'd want to provide an offline fallback when it is not available.
+Then, in `setCatchHandler()`, the destination of the request that threw an error is determined, and the `offline-fallbacks` cache is opened. If the destination is a document, the content of the offline fallback is returned to the user. If that doesn't exist, or the destination isn't a document (such as an image or stylesheet), an error response is returned. You can extend this pattern not just for documents but for images, videos, fonts, really anything that you'd want to provide as an offline fallback.
 
 ```js
 // Respond with the fallback if a route throws an error
