@@ -723,7 +723,7 @@ normal bold, as that's the only bold font we have available. When variable fonts
 are supported, we can actually use the heaviest weight of 1000.
 
 The `@supports` rule is not supported by Internet Explorer, so this browser would
-not see any styling. If this is a problem, you could always use one of the
+not show any styling. If this is a problem, you could always use one of the
 [oldschool hacks](https://stackoverflow.com/a/20541859/6255000) to target relevant
 older browsers.
 
