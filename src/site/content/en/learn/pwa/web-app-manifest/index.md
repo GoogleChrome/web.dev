@@ -293,7 +293,7 @@ On Android, you can get a nicer installation UI if you provide values for the pr
 
 See these promotional fields in action
 
-{% Glitch 'mlearn-pwa-web-app-manifest-promotional' %}
+{% Glitch 'learn-pwa-web-app-manifest-promotional' %}
 
 
 ### Capabilities Fields
