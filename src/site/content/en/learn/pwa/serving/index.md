@@ -68,7 +68,7 @@ const htmlResponse = new Response("<b>HTML</b> content", options)
 When creating responses with a service worker, you need to be extra careful as buggy code can lead to corner cases and hard to debug issues, like when the browser can't even load the HTML document that will render your PWA. While debugging, you can always use your browser's reload button with the Shift key pressed, which will bypass the service worker; or use service worker devtools on supported browsers as we'll see in [Tools and Debug](/learn/pwa/tools-and-debug/).
 {% endAside %}
 
-{% Glitch 'mlearn-pwa-serving-synthesize' %}
+{% Glitch 'learn-pwa-serving-synthesize' %}
 
 
 ### Responding from the cache
