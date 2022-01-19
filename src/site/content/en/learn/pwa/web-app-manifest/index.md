@@ -234,7 +234,7 @@ Do not use transparent colors, CSS variables, gradient functions, or color funct
 
 #### Try it in Action
 
-{% Glitch 'mlearn-pwa-web-app-manifest' %}
+{% Glitch 'learn-pwa-web-app-manifest' %}
 
 #### Splash Screens
 
