@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-01-14
+updated: 2022-01-19
 tags:
   - blog
   - capabilities
@@ -498,18 +498,30 @@ await directoryHandle.remove();
 
 ### Renaming and moving files and folders
 
-Files and folders can be renamed or moved to a new location by calling `rename()` or `move()` on the
-`FileSystemFileHandle` or `FileSystemDirectoryHandle` respectively. For `move()`, the first parameter
-is a `FileSystemDirectoryHandle`.
+Files and folders can be renamed or moved to a new location by calling `move()` on the
+`FileSystemHandle` interface. `FileSystemHandle` has the child interfaces `FileSystemFileHandle`
+and `FileSystemDirectoryHandle`. The `move()` method takes one or two parameters. The first can
+either be a string with the new name or a `FileSystemDirectoryHandle` to the destination folder.
+In the latter case, the optional second parameter is a string with the new name, so moving and
+renaming can happen in one step.
 
 ```js
 // Rename the file.
-await file.rename('new_name');
+await file.move('new_name');
 // Move the file to a new directory.
 await file.move(directory);
 // Move the file to a new directory and rename it.
 await file.move(directory, 'newer_name');
 ```
+
+{% Aside 'warning' %}
+Due to some open questions regarding cross-file-system moves, `move()` is temporarily
+disabled for folders and moves outside of the
+[origin private file system](#accessing-the-origin-private-file-system). This feature is
+currently only available in the origin private file system to those with the
+[`AccessHandles origin trial`](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625)
+enabled.
+{% endAside %}
 
 ### Drag and drop integration
 
