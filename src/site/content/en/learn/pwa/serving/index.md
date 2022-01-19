@@ -197,7 +197,7 @@ self.addEventListener("fetch", event => {
 The Response's body is a [ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream), it can only be consumed once. That means that if you use the `fetch` API to deliver the response to the PWA because the asset was not cached, you can not re-use the same response for updating it in the cache. You'll need to clone the response so that you may use it twice.
 {% endAside %}
 
-{% Glitch 'mlearn-pwa-serving-stale-while-revalidate' %}
+{% Glitch 'learn-pwa-serving-stale-while-revalidate' %}
 
 ### Network Only
 
