@@ -147,7 +147,7 @@ self.addEventListener("fetch", event => {
 });
 ```
 
-{% Glitch 'mlearn-pwa-serving-offline' %}
+{% Glitch 'learn-pwa-serving-offline' %}
 
 ### Network First
 
