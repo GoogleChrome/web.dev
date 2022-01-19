@@ -17,12 +17,6 @@
 import {BaseElement} from '../BaseElement';
 
 export class Carousel extends BaseElement {
-  static get properties() {
-    return {
-      index: {type: Number, reflect: true},
-    };
-  }
-
   constructor() {
     super();
 
