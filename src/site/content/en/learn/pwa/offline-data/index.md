@@ -126,7 +126,7 @@ async function getData() {
 }
 ```
 
-{% Glitch 'mlearn-pwa-offline-data-get' %}
+{% Glitch 'learn-pwa-offline-data-get' %}
 
 {% Aside 'codelab' %}
 [Progressive Web Apps: IndexedDB](https://developers.google.com/codelabs/pwa-training/pwa03--indexeddb#0).
