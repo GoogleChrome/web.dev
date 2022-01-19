@@ -66,7 +66,6 @@ class Select extends BaseElement {
    * Handles key presses to navigate options.
    *
    * @param {KeyboardEvent} e
-   * @returns void
    */
   handleKeyDown(e) {
     switch (e.key) {
@@ -77,16 +76,39 @@ class Select extends BaseElement {
       case 'ArrowDown':
         e.preventDefault();
         const increment = e.key === 'ArrowUp' ? -1 : 1;
-        const lis = this.querySelectorAll('li');
-
-        this.activeIndex = this.activeIndex + increment;
-        if (this.activeIndex < 0) {
-          this.activeIndex = 0;
-        } else if (this.activeIndex >= lis.length) {
-          this.activeIndex = lis.length - 1;
-        }
-        lis[this.activeIndex].focus();
+        this.incrementIndex(increment);
         break;
+    }
+  }
+
+  /**
+   * Update active index of options.
+   *
+   * @param {number} i
+   */
+  incrementIndex(i) {
+    const lis = this.querySelectorAll('li');
+    this.activeIndex = this.activeIndex + i;
+    if (this.activeIndex < 0) {
+      this.activeIndex = 0;
+    } else if (this.activeIndex >= lis.length) {
+      this.activeIndex = lis.length - 1;
+    }
+    lis[this.activeIndex].focus();
+  }
+
+  /**
+   * Determing if when element is focused if it should respond to key presses.
+   *
+   * @param {KeyboardEvent} e
+   */
+  keydownEvent(e) {
+    if (e.key === 'Enter' || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      this.toggleState();
+      if (e.key === 'Enter') {
+        this.incrementIndex(1);
+      }
     }
   }
 
@@ -104,7 +126,6 @@ class Select extends BaseElement {
 
   /**
    * Toggles select elemenmt between active and inactive states.
-   *
    */
   toggleState() {
     this.active = !this.active;
@@ -122,9 +143,8 @@ class Select extends BaseElement {
   render() {
     return html`
       <label
-        @click="${this.toggleState}"
-        @keypress="${this.toggleState}"
-        @keyDown=${this.handleKeyDown}
+        @click=${this.toggleState}
+        @keydown=${this.keydownEvent}
         tabindex="0"
       >
         ${this.selected?.innerText}
