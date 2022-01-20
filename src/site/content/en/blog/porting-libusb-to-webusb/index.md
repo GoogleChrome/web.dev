@@ -102,7 +102,7 @@ haiku_usb.h            threads_posix.c
 haiku_usb_raw.cpp      threads_posix.h
 ```
 
-Each backend includes the [`libusbi.h`](https://github.com/libusb/libusb/blob/master/libusb/libusbi.h) header with common types and helpers, and needs to expose a `usbi_backend` variable of type [`usbi_os_backend`](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/libusb/libusbi.h#L886). For example, this is what the Windows backend looks like:
+Each backend includes the [`libusbi.h`](https://github.com/libusb/libusb/blob/master/libusb/libusbi.h) header with common types and helpers, and needs to expose a `usbi_backend` variable of type [`usbi_os_backend`](https://github.com/libusb/libusb/blob/f2b218b61867f27568ba74fa38e156e5f55ed825/libusb/libusbi.h#L886). For example, this is what the [Windows backend](https://github.com/libusb/libusb/blob/6cae9c6dbd74c0840848f343dd605c5ddcef1ad1/libusb/os/windows_common.c#L866-L904) looks like:
 
 ```c
 const struct usbi_os_backend usbi_backend = {
