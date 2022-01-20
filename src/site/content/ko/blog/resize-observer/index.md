@@ -53,7 +53,7 @@ ro.observe(someElement);
 
 일반적으로 [`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry) [`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly) 개체를 반환하는 `contentRect`라는 속성을 통해 요소의 콘텐츠 상자를 보고합니다. 콘텐츠 상자는 콘텐츠를 넣을 수 있는 상자입니다. 경계 상자에서 패딩을 뺀 값입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="CSS 상자 모델의 다이어그램입니다.", width="727", height="562" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="CSS 상자 모델의 다이어그램입니다.", width="727", height="562" %}</figure>
 
 이 때 `ResizeObserver`가 `contentRect`와 패딩의 치수를 모두 *보고*하는 반면, `contentRect`만을 *관찰*합니다. `contentRect`를 요소의 경계 상자와 혼동하지 *마십시오.* `getBoundingClientRect()` 의해 보고된 경계 상자는 전체 요소와 해당 하위 항목을 포함하는 상자입니다. `ResizeObserver`가 경계 상자의 크기를 보고하는 규칙의 예외입니다.
 
@@ -79,8 +79,8 @@ Chrome 84부터 `ResizeObserverEntry`에는 보다 자세한 정보를 제공하
 
 `ResizeObserver`를 사용하여 수행할 수 있는 한 가지는 요소별 미디어 쿼리를 구현하는 것입니다. 요소를 관찰함으로써 디자인 중단점을 명령적으로 정의하고 요소의 스타일을 변경할 수 있습니다. 다음 [예](https://googlechrome.github.io/samples/resizeobserver/)에서 두 번째 상자는 너비에 따라 테두리 반경을 변경합니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -100,8 +100,8 @@ ro.observe(document.querySelector('.box:nth-child(2)'));
 
 `ResizeObserver`를 사용하면 *두* 시나리오를 모두 처리하는 *단일* 코드를 작성할 수 있습니다. 창 크기 조정은 `ResizeObserver`가 정의에 따라 캡처할 수 있지만, `appendChild()`를 호출하면 해당 요소의 크기도 조정됩니다(`overflow: hidden` 이 설정되지 않은 경우). 왜냐하면 새 요소를 위한 공간을 만들어야 하기 때문입니다. 이를 염두에 두고 원하는 효과를 얻는 데 몇 줄만 사용됩니다.
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm" type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4" type="video/mp4; codecs=h264">
  </source></source></video></figure>

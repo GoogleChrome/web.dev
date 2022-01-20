@@ -75,7 +75,7 @@ Em alguns navegadores, o elemento `<input type="file">` também é um destino pa
 
 Sua superfície de soltar dependerá do design de sua aplicação. Você pode querer que apenas parte da janela seja uma superfície de soltar ou, potencialmente, a janela inteira.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="Uma captura de tela do Squoosh, um aplicativo da web de compressão de imagem.", width="800", height="589", class="w-screenshot w-screenshot--filled" %}   <figcaption class="w-figcaption">     Squoosh torna a janela inteira uma zona de soltar.   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="Uma captura de tela do Squoosh, um aplicativo da web de compressão de imagem.", width="800", height="589" %}   <figcaption>     Squoosh torna a janela inteira uma zona de soltar.   </figcaption></figure>
 
 O Squoosh permite que o usuário arraste e solte uma imagem em qualquer lugar da janela, e clicar em **selecionar uma imagem** invoca o elemento `<input type="file">`. Independentemente do que você escolher como zona para soltar, certifique-se de que esteja claro para o usuário que ele pode arrastar e soltar arquivos nessa superfície.
 

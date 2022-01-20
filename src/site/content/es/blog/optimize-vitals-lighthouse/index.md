@@ -23,11 +23,11 @@ Como recordatorio de las herramientas, [Lighthouse](https://github.com/GoogleChr
 
 Lighthouse 7.x incluye nuevas funciones, como capturas de pantalla de elementos, para facilitar la inspección visual de las partes de la interfaz de usuario que afectan las métricas de la experiencia del usuario (por ejemplo, qué nodos contribuyen al cambio de diseño).
 
-<figure class="w-figure"><video muted autoplay loop><source type="video/mp4" src="https://storage.googleapis.com/web-dev-uploads/video/1L2RBhCLSnXjCnSlevaDjy3vba73/3G0x4Z1dmOcsusG7j1LE.mp4" width="1920" height="1080"></source></video></figure>
+<figure><video muted autoplay loop><source type="video/mp4" src="https://storage.googleapis.com/web-dev-uploads/video/1L2RBhCLSnXjCnSlevaDjy3vba73/3G0x4Z1dmOcsusG7j1LE.mp4" width="1920" height="1080"></source></video></figure>
 
 También hemos enviado soporte para capturas de pantalla de elementos en PageSpeed Insights, lo que permite detectar más fácilmente los problemas de rendimiento de las páginas en una sola ocasión.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/mfkWFzyfO9XlJLYS80DE.png", alt="Element Screenshots highlighting the DOM node contributing to layout shift in the page", width="800", height="483" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/mfkWFzyfO9XlJLYS80DE.png", alt="Element Screenshots highlighting the DOM node contributing to layout shift in the page", width="800", height="483" %}</figure>
 
 ## Medir Core Web Vitals
 
@@ -35,11 +35,11 @@ Lighthouse puede medir [sintéticamente](/vitals-measurement-getting-started/#me
 
 La sección "Métricas" del informe Lighthouse incluye versiones de laboratorio de estas métricas. Puedes usar esto como una vista resumida de los aspectos de la experiencia del usuario que requieren tu atención.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VkLhdNb3fxtfttFZ1S6E.png", alt="Lighthouse peformance metrics", width="800", height="485" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VkLhdNb3fxtfttFZ1S6E.png", alt="Lighthouse peformance metrics", width="800", height="485" %}</figure>
 
 {% Aside %} Lighthouse se centra en medir la experiencia del usuario durante la carga inicial de la página en un entorno de laboratorio, emulando un teléfono lento o una máquina de escritorio. Si hay un comportamiento en tu página que pueda causar cambios en el diseño o largas tareas de JavaScript después de la carga de la página, las métricas del laboratorio no lo reflejarán. Prueba el panel DevTools Performance, [Search Console](https://search.google.com/search-console/about), la [extensión de Web Vitals](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en) o [RUM](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) para ver las métricas después de las cargas. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt="Web Vitals lane in the devtools performance panel", width="800", height="476" %} <figcaption> La nueva opción Web Vitals en el panel DevTools Performance muestra una pista que resalta los momentos métricos, como Layout Shift (LS) o cambio de diseño que se muestra arriba.</figcaption></figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt="Web Vitals lane in the devtools performance panel", width="800", height="476" %} <figcaption> La nueva opción Web Vitals en el panel DevTools Performance muestra una pista que resalta los momentos métricos, como Layout Shift (LS) o cambio de diseño que se muestra arriba.</figcaption></figure>
 
 [Las métricas de campo](/vitals-field-measurement-best-practices/), como las que se encuentran en [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) o [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), no tienen esta limitación y son un complemento valioso para los datos de laboratorio, ya que reflejan la experiencia que tienen los usuarios reales. Los datos de campo no pueden ofrecer el tipo de información de diagnóstico que se obtiene en el laboratorio, por lo que ambos van de la mano.
 
@@ -51,21 +51,21 @@ LCP (pintura con contenido más grande) es una medida de la experiencia de carga
 
 Lighthouse tiene una auditoría de "Elemento de pintura con contenido más grande" que identifica qué elemento fue la pintura con contenido más grande. Al pasar el cursor sobre el elemento, se resaltará en la ventana principal del navegador.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/qeNJwYAVxysRV0okWmf4.png", alt="Largest Contentful Paint element", width="800", height="505" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/qeNJwYAVxysRV0okWmf4.png", alt="Largest Contentful Paint element", width="800", height="505" %}</figure>
 
 Si este elemento es una imagen, esta información es una sugerencia útil de que es posible que desees optimizar la carga de esta imagen. Lighthouse incluye una serie de auditorías de optimización de imágenes para ayudarte a comprender si tus imágenes podrían comprimirse, cambiarse de tamaño o entregarse mejor en un formato de imagen moderno más óptimo.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/8RVIyj6NiMfx7VDVbQmI.png", alt="Properly size images audit", width="800", height="468" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/8RVIyj6NiMfx7VDVbQmI.png", alt="Properly size images audit", width="800", height="468" %}</figure>
 
 También puedes encontrar útil el [LCP Bookmarklet](https://gist.github.com/anniesullie/cf2982342337fd1b2be95c2d5fe5ea06) de Annie Sullivan para identificar rápidamente el elemento LCP con un rectángulo rojo con solo un clic.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/eZJdYsdfsNniDW1KRJkE.png", alt="Highlighting the LCP element with a bookmarklet", width="800", height="509" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/eZJdYsdfsNniDW1KRJkE.png", alt="Highlighting the LCP element with a bookmarklet", width="800", height="509" %}</figure>
 
 ### Precarga de imágenes descubiertas tardíamente para mejorar LCP
 
 Para mejorar la pintura con contenido más grande, carga [previamente](/preload-responsive-images/) tus imágenes heroicas críticas si el navegador las descubre tarde. Un descubrimiento tardío puede ocurrir si un paquete de JavaScript necesita ser cargado antes de que la imagen sea descubrible.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K9EPBZdSFoyXVDHoDjTx.png", alt="Preload the largest contentful paint image", width="800", height="489" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K9EPBZdSFoyXVDHoDjTx.png", alt="Preload the largest contentful paint image", width="800", height="489" %}</figure>
 
 {% Aside %} La **precarga debe usarse con moderación**. El ancho de banda de la red es un recurso escaso y el uso de la precarga puede producirse a costa de otro recurso. Para utilizar la precarga de forma eficaz, asegúrate de que los recursos se ordenan correctamente para evitar el retroceso de otras métricas cuando otros recursos de la página también se consideran importantes (por ejemplo, CSS, JS, fuentes críticas). El [costo de la precarga](https://docs.google.com/document/d/1ZEi-XXhpajrnq8oqs5SiW-CXR3jMc20jWIzN5QRy1QA/edit) cubre esto con más detalle. {% endAside %}
 
@@ -103,19 +103,19 @@ El cambio de diseño acumulativo es una medida de la estabilidad visual. Cuantif
 
 Esta auditoría destaca los elementos DOM que más contribuyen a los cambios de página. En la columna Elemento de la izquierda verás la lista de estos elementos DOM y, a la derecha, su contribución global al CLS.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/X31lkLFtfjDZdO2O7ytV.png", alt="The avoid large layout shifts audit in Lighthouse highlighting relevant DOM nodes contributing to CLS", width="800", height="525" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/X31lkLFtfjDZdO2O7ytV.png", alt="The avoid large layout shifts audit in Lighthouse highlighting relevant DOM nodes contributing to CLS", width="800", height="525" %}</figure>
 
 Gracias a la nueva función de capturas de pantalla de elementos de Lighthouse, podemos ver una vista previa de los elementos clave anotados en la auditoría, así como hacer clic para ampliar la vista:
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/L9geZVvkATRlAVcZA6dx.png", alt="Clicking on an Element screenshot will expand it", width="800", height="525" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/L9geZVvkATRlAVcZA6dx.png", alt="Clicking on an Element screenshot will expand it", width="800", height="525" %}</figure>
 
 Para el CLS posterior a la carga, puede ser útil *visualizar de forma persistente* con rectángulos qué elementos contribuyeron más al CLS. Esta es una característica que encontrarás en herramientas de terceros como el [panel de control Core Web Vitals](https://speedcurve.com/blog/web-vitals-user-experience/) de SpeedCurve y para la que me encanta usar [Layout Shift GIF Generator de Defaced](https://defaced.dev/tools/layout-shift-gif-generator/):
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/ju6XjKBYzF6G537myjUW.gif", alt="the layout shift generator highlighting shifts", width="800", height="450" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/ju6XjKBYzF6G537myjUW.gif", alt="the layout shift generator highlighting shifts", width="800", height="450" %}</figure>
 
 Para obtener una vista de todo el sitio de los problemas de cambio de diseño, aprovecho mucho [el informe Core Web Vitals de Search Console](https://support.google.com/webmasters/answer/9205520?hl=en). Esto me permite ver los tipos de páginas de mi sitio con un CLS alto (en este caso, me ayuda a identificar en qué parciales de plantilla necesito dedicar mi tiempo):
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/2Ihb2GYkbpGzYLYoZEDP.png", alt="Search Console displaying CLS issues", width="800", height="506" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/2Ihb2GYkbpGzYLYoZEDP.png", alt="Search Console displaying CLS issues", width="800", height="506" %}</figure>
 
 {% Aside %} Para reducir los cambios de diseño causados por las fuentes web, no pierdas de vista el nuevo descriptor [ajuste de tamaño](https://groups.google.com/a/chromium.org/g/blink-dev/c/1PVr94hZHjU/m/J0xT8-rlAQAJ) `@font-face`. Esto permite ajustar el tamaño de las fuentes alternativas para reducir CLS. {% endAside %}
 
@@ -123,7 +123,7 @@ Para obtener una vista de todo el sitio de los problemas de cambio de diseño, a
 
 Para [limitar](/optimize-cls/#images-without-dimensions) el cambio de diseño acumulativo causado por imágenes sin dimensiones, incluye atributos de tamaño de ancho y alto en sus imágenes y elementos de video. Este enfoque garantiza que el navegador pueda asignar la cantidad correcta de espacio en el documento mientras se carga la imagen.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/fZRkmM18rvfy6y7LB1Qx.png", alt="Audit for image elements without explicit width and height", width="800", height="489" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/fZRkmM18rvfy6y7LB1Qx.png", alt="Audit for image elements without explicit width and height", width="800", height="489" %}</figure>
 
 Consulta [Establecer la altura y el ancho en las imágenes es importante nuevamente](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/) para obtener un buen informe sobre la importancia de pensar en las dimensiones de la imagen y la relación de aspecto.
 
@@ -131,7 +131,7 @@ Consulta [Establecer la altura y el ancho en las imágenes es importante nuevame
 
 [Publisher Ads for Lighthouse](https://developers.google.com/publisher-ads-audits) te permite encontrar oportunidades para mejorar la experiencia de carga de los anuncios en tu página, incluidas las contribuciones al cambio de diseño y las tareas largas que pueden indicar qué tan pronto los usuarios pueden utilizar tu página. En Lighthouse, puedes habilitar esto a través de Community Plugins.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/kR3jgctso6Hg0OxD8xwi.png", alt="Ads related audits highlighting opportunities to reduce time to request and layout shift", width="800", height="527" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/kR3jgctso6Hg0OxD8xwi.png", alt="Ads related audits highlighting opportunities to reduce time to request and layout shift", width="800", height="527" %}</figure>
 
 Recuerda que los anuncios son una de las [mayores](/optimize-cls/#ads-embeds-and-iframes-without-dimensions) contribuciones a los cambios de diseño en la web. Es importante:
 
@@ -144,13 +144,13 @@ Las animaciones que no están compuestas pueden presentarse como basura en dispo
 
 Si Chrome descubre que una animación no se pudo componer, la informa a una traza de DevTools que Lighthouse lee, lo que le permite enumerar qué elementos con animaciones no se compusieron y por qué motivo. Puedes encontrarlos en la auditoría [Evitar animaciones no compuestas.](/non-composited-animations/)
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/heGuYXKeMrUftMvfrDU7.png", alt="Audit for avoiding non-composited animations", width="800", height="528" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/heGuYXKeMrUftMvfrDU7.png", alt="Audit for avoiding non-composited animations", width="800", height="528" %}</figure>
 
 ### Depurar el retardo de la primera entrada / Tiempo total de bloqueo / Tareas largas
 
 La primera entrada mide el tiempo desde que un usuario interactúa por primera vez con una página (por ejemplo, cuando hace clic en un enlace, toca un botón o usa un control personalizado impulsado por JavaScript) hasta el momento en que el navegador puede empezar a procesar los controladores de eventos en respuesta a esa interacción. Las tareas largas de JavaScript pueden afectar a esta métrica y al proxy de esta métrica, el tiempo total de bloqueo.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LqBCtAXdByd4fBzoNc1K.png", alt="Audit for avoiding long main thread tasks", width="800", height="485" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LqBCtAXdByd4fBzoNc1K.png", alt="Audit for avoiding long main thread tasks", width="800", height="485" %}</figure>
 
 Lighthouse incluye una auditoría [Evitar las tareas largas del hilo principal](/long-tasks-devtools/) que enumera las tareas más largas en el hilo principal. Esto puede ser útil para identificar los peores contribuyentes al retraso de entrada. En la columna de la izquierda podemos ver la URL de los scripts responsables de las tareas largas del hilo principal.
 
@@ -158,7 +158,7 @@ A la derecha podemos ver la duración de estas tareas. Como recordatorio, las ta
 
 Si considero los servicios de terceros para el monitoreo, también me gusta bastante la [línea de tiempo de ejecución del hilo principal](https://calibreapp.com/docs/features/main-thread-execution-timeline) visual que tiene Caliber para visualizar estos costos, que destaca tanto las tareas principales como las secundarias que contribuyen a tareas largas que impactan en la interactividad.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/IGENqHBjC97pHslOQYc6.png", alt="The main-thread execution timeline visual Calibre has", width="800", height="155" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/IGENqHBjC97pHslOQYc6.png", alt="The main-thread execution timeline visual Calibre has", width="800", height="155" %}</figure>
 
 ### Bloquear solicitudes de red para ver el impacto antes / después en Lighthouse
 
@@ -166,15 +166,15 @@ Chrome DevTools admite el [bloqueo de solicitudes de red](https://developer.chro
 
 El bloqueo de solicitudes de red también funciona con Lighthouse. Echemos un vistazo rápido al informe Lighthouse de un sitio. La puntuación de rendimiento es 63/100 con un TBT de 400 ms. Profundizando en el código, encontramos que este sitio carga un polyfill de Intersection Observer en Chrome que no es necesario. ¡Vamos a bloquearlo!
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/DPXEXhOZL0Czjm10lBox.png", alt="Network request blocking", width="800", height="508" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/DPXEXhOZL0Czjm10lBox.png", alt="Network request blocking", width="800", height="508" %}</figure>
 
 Podemos hacer clic derecho en un script en el panel de DevTools Network y hacer clic en `Block Request URL` para bloquearlo. Aquí haremos esto para el polyfill Intersection Observer.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iWB0jAtL0PKpwkmecOPf.png", alt="Block request URLs in DevTools", width="800", height="354" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iWB0jAtL0PKpwkmecOPf.png", alt="Block request URLs in DevTools", width="800", height="354" %}</figure>
 
 A continuación, podemos volver a ejecutar Lighthouse. Esta vez podemos ver que nuestra puntuación de rendimiento ha mejorado (70/100) al igual que el Tiempo de bloqueo total (400ms =&gt; 300ms).
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LiaMMxvy4prpFBIuSgfo.png", alt="The after view of blocking costly network requests", width="800", height="508" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LiaMMxvy4prpFBIuSgfo.png", alt="The after view of blocking costly network requests", width="800", height="508" %}</figure>
 
 ### Reemplazar las costosas incrustaciones de terceros con una fachada
 
@@ -182,11 +182,11 @@ Es común usar recursos de terceros para incrustar videos, publicaciones en rede
 
 Un patrón para mejorar el rendimiento de dichos widgets es [cargarlos de forma diferida cuando el usuario interactúa con ellos](https://addyosmani.com/blog/import-on-interaction/). Esto se puede hacer renderizando una vista previa ligera del widget (una fachada) y solo se carga la versión completa si un usuario interactúa con él. Lighthouse tiene una auditoría que recomienda recursos de terceros que pueden [cargarse de forma diferida con una fachada](/third-party-facades/), como incrustaciones de videos de YouTube.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}</figure>
 
 Como recordatorio, Lighthouse [resaltará el código de terceros](/third-party-summary/) que bloquea el hilo principal durante más de 250 ms. Esto puede mostrar todo tipo de scripts de terceros (incluidos los creados por Google) que puede valer la pena diferir o cargar con retraso si lo que renderizan requiere desplazarse para verlo.
 
-<figure class="w-figure">{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}</figure>
+<figure>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}</figure>
 
 ### Más allá de Core Web Vitals
 

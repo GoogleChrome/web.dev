@@ -16,7 +16,7 @@ tags:
 
 Si utiliza Lighthouse para auditar sus páginas, es posible que esté familiarizado con el [Time to Interactive](/interactive), una métrica que representa el momento en que los usuarios pueden interactuar con su página y obtener una respuesta. Pero, ¿sabía que las tareas largas (JavaScript) pueden contribuir en gran medida a un TTI deficiente?
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Time to Interactive mostrado en el informe de Lighthouse", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Time to Interactive mostrado en el informe de Lighthouse", width="800", height="169" %}
 
 ## ¿Qué son las tareas largas?
 
@@ -30,11 +30,11 @@ Las tareas largas que consumen muchos recursos del CPU ocurren debido a un traba
 
 Hasta ahora, era necesario buscar manualmente los "bloques amarillos largos" del script de más de 50ms de duración en [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) o utilizar la [API de tareas largas](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) para averiguar qué tareas estaban retrasando la interactividad. Esto podría ser un poco engorroso.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="Una captura de pantalla del panel de rendimiento de  DevTools muestra las diferencias entre las tareas cortas y las largas", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="Una captura de pantalla del panel de rendimiento de  DevTools muestra las diferencias entre las tareas cortas y las largas", width="800", height="450" %}
 
 Para facilitar el flujo de trabajo en la auditoría de rendimiento, [DevTools ahora visualiza las tareas largas](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Las tareas (que se muestran en gris) tienen banderas rojas si son tareas largas.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualiza las tareas largas como barras grises en el panel de rendimiento con una bandera roja para las tareas largas", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualiza las tareas largas como barras grises en el panel de rendimiento con una bandera roja para las tareas largas", width="800", height="450" %}
 
 - Registre un seguimiento en el [panel de rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) al cargar una página web.
 - Busque una bandera roja en la visualización del hilo principal. Debería ver que las tareas ahora son grises ("Tarea").
@@ -44,7 +44,7 @@ Para facilitar el flujo de trabajo en la auditoría de rendimiento, [DevTools ah
 
 Para descubrir qué está provocando una tarea larga, seleccione la barra de **tareas gris.** En el cajón de abajo, seleccione De **abajo hacia arriba** y **Agrupar por actividad** . Esto le permite ver qué actividades contribuyeron más (en total) a la tarea que tardó tanto en completarse. A continuación, parece ser un conjunto costoso de consultas DOM.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="Seleccionar una tarea larga (etiquetada como 'Tarea') en DevTools nos permitirá analizar detalladamente las actividades relacionadas con ella.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="Seleccionar una tarea larga (etiquetada como 'Tarea') en DevTools nos permitirá analizar detalladamente las actividades relacionadas con ella.", width="800", height="450" %}
 
 ## ¿Cuáles son las formas más comunes de optimizar las tareas largas?
 

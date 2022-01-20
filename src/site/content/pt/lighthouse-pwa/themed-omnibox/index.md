@@ -18,7 +18,7 @@ No momento em que este artigo foi escrito, o tema da barra de endereço do naveg
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas que não aplicam um tema à barra de endereço:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Auditoria Lighthouse mostrando barra de endereço que não tem o tema das cores da página", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Auditoria Lighthouse mostrando barra de endereço que não tem o tema das cores da página", width="800", height="98" %}</figure>
 
 A auditoria falha se o Lighthouse não encontrar uma meta tag `theme-color` no HTML da página e uma propriedade `theme_color` no [manifesto web app](/add-manifest).
 

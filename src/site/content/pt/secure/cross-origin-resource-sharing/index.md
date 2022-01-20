@@ -20,7 +20,7 @@ A ativação do **CORS** permite que o servidor informe ao navegador que é perm
 
 ## Como funciona uma solicitação de recurso na web?
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="solicitação e resposta", width="668", height="327" %}   <figcaption class="w-figcaption">     Figura: solicitação ilustrada do cliente e resposta do servidor </figcaption></figure>
+<figure data-float="right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="solicitação e resposta", width="668", height="327" %}   <figcaption>     Figura: solicitação ilustrada do cliente e resposta do servidor </figcaption></figure>
 
 Um navegador e um servidor podem trocar dados pela rede usando o protocolo HTTP (**Hypertext Transfer Protocol**). O HTTP define as regras de comunicação entre o solicitante e o respondente, incluindo quais informações são necessárias para obter um recurso.
 

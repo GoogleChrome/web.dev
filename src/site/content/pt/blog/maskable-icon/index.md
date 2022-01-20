@@ -21,23 +21,23 @@ feedback:
 
 Se você instalou uma Progressive Web App num celular Android recente, pode ter percebido que o ícone é exibido com um fundo branco. O Android Oreo introduziu ícones adaptáveis, que exibem ícones de aplicativos numa variedade de formas em diferentes modelos de dispositivos. Os ícones que não seguem esse novo formato recebem fundos brancos.
 
-<figure class="w-figure">   {% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="Ícones PWA em círculos brancos no Android", width="400", height="100" %}   <figcaption class="w-figcaption">Ícones transparentes de PWA aparecem dentro de círculos brancos no Android</figcaption></figure>
+<figure>   {% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="Ícones PWA em círculos brancos no Android", width="400", height="100" %}   <figcaption>Ícones transparentes de PWA aparecem dentro de círculos brancos no Android</figcaption></figure>
 
 Os ícones mascaráveis são um novo formato de ícone que oferece mais controle e permite que a Progressive Web App use ícones adaptáveis. Se você fornecer um ícone mascarável, seu ícone pode preencher toda a forma e ter uma ótima aparência em todos os dispositivos Android. O Firefox e o Chrome adicionaram recentemente suporte para esse novo formato e você pode adotá-lo nas suas aplicações.
 
-<figure class="w-figure">{% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="Ícones PWA cobrindo todo o círculo no Android", width="400", height="100" %} <figcaption class="w-figcaption">Ícones mascaráveis cobrem todo o círculo</figcaption></figure>
+<figure>{% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="Ícones PWA cobrindo todo o círculo no Android", width="400", height="100" %} <figcaption>Ícones mascaráveis cobrem todo o círculo</figcaption></figure>
 
 ## Meus ícones atuais estão prontos?
 
 Uma vez que os ícones mascaráveis precisam suportar uma variedade de formas, você deve fornecer uma imagem opaca com algum padding que o navegador possa posteriormente cortar na forma e no tamanho desejados. É melhor não confiar em nenhuma forma específica, uma vez que a forma escolhida pode variar de acordo com o navegador e a plataforma.
 
-<figure class="w-figure w-figure--inline-right">   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"],     class="w-screenshot",     autoplay=true,     loop=true,     muted=true,     playsinline=true   %}   <figcaption class="w-figcaption">     Diferentes formatos específicos de plataforma </figcaption></figure>
+<figure data-float="right">   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"],     autoplay=true,     loop=true,     muted=true,     playsinline=true   %}   <figcaption>     Diferentes formatos específicos de plataforma </figcaption></figure>
 
 Felizmente, existe uma "zona mínima de segurança" bem definida e [padronizada](https://w3c.github.io/manifest/#icon-masks) que todas as plataformas respeitam. As partes importantes de seu ícone, como seu logotipo, devem estar dentro de uma área circular no centro do ícone com um raio igual a 40% da largura do ícone. A borda externa de 10% pode ser cortada.
 
 Você pode verificar quais partes de seus ícones estão dentro da zona de segurança com o Chrome DevTools. Com a sua Progressive Web App aberta, inicie o DevTools e navegue até o painel **Aplicação**. Na seção **Ícones** você pode escolher **Mostrar apenas a área mínima de segurança para ícones mascaráveis**. Seus ícones serão cortados para que apenas a área segura fique visível. Se o seu logotipo estiver visível nesta área segura, seu problema está resolvido.
 
-<figure class="w-figure">   {% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Painel de aplicativos em DevTools exibindo ícones PWA com bordas cortadas", width="762", height="423", class="w-screenshot" %}   <figcaption class="w-figcaption">O painel de aplicativos</figcaption></figure>
+<figure>   {% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Painel de aplicativos em DevTools exibindo ícones PWA com bordas cortadas", width="762", height="423" %}   <figcaption>O painel de aplicativos</figcaption></figure>
 
 Para testar seu ícone mascarável com a variedade de formas Android, use a ferramenta [Maskable.app](https://maskable.app/) que criei. Abra um ícone e, em seguida, Maskable.app permitirá que você experimente com várias formas e tamanhos, e você pode compartilhar a visualização com outras pessoas de sua equipe.
 
@@ -45,7 +45,7 @@ Para testar seu ícone mascarável com a variedade de formas Android, use a ferr
 
 Se você deseja criar um ícone mascarável com base em seu ícone existente, você pode usar o [Editor Maskable.app](https://maskable.app/editor). Faça upload do seu ícone, ajuste a cor e o tamanho e exporte a imagem.
 
-<figure class="w-figure">   {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569", class="w-screenshot" %}   <figcaption class="w-figcaption">Criação de ícones no Maskable.app Editor</figcaption></figure>
+<figure>   {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569" %}   <figcaption>Criação de ícones no Maskable.app Editor</figcaption></figure>
 
 Depois de criar uma imagem de ícone mascarável e testá-la no DevTools, você precisará atualizar o {a0web app manifest  para apontar para os novos ativos. O web app manifest fornece informações sobre sua aplicação web em um arquivo JSON e inclui um [array de `icons`](https://developers.google.com/web/fundamentals/web-app-manifest#icons).
 

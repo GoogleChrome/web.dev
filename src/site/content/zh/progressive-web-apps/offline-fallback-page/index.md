@@ -13,27 +13,27 @@ tags:
 
 Google Assistant 应用、Slack 应用、Zoom 应用以及您手机或计算机上几乎所有其他特定于平台的应用有什么共同之处？对，它们的共同之处就是总能至少给您带来*一些东西*。即使没有网络连接，您仍然可以打开 Assistant 应用，或进入 Slack，或启动 Zoom。您可能不会得到任何特别有意义的东西，甚至无法实现您想要实现的目标，但至少您得到了*一些东西*并且应用处于掌控之中。
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-apps-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="离线 Google Assistant 移动应用。", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-assistant"> Google Assistant。</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="离线 Google Assistant 移动应用。", width="621", height="1344" %}<figcaption id="fig-assistant"> Google Assistant。</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="离线 Slack 移动应用。", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-slack">松弛。</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="离线 Slack 移动应用。", width="621", height="1344" %}<figcaption id="fig-slack">松弛。</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="离线 Zoom 移动应用。", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-zoom">飞涨。</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="离线 Zoom 移动应用。", width="621", height="1344" %}<figcaption id="fig-zoom">飞涨。</figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">使用特定于平台的应用，即使您没有网络连接，也不会一无所获。</figcaption>
+  <figcaption id="fig-apps-wrapper">使用特定于平台的应用，即使您没有网络连接，也不会一无所获。</figcaption>
 
 
 
 相比之下，在 Web 上，传统上您离线时什么也得不到。Chrome 为您提供[离线恐龙游戏](https://www.blog.google/products/chrome/chrome-dino/)，仅此而已。
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-offline-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="显示离线恐龙游戏的 Google Chrome 移动应用。", width="800", height="1731" %}<figcaption class="w-figcaption" id="fig-chrome-ios">适用于 iOS 的 Google Chrome。</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="显示离线恐龙游戏的 Google Chrome 移动应用。", width="800", height="1731" %}<figcaption id="fig-chrome-ios">适用于 iOS 的 Google Chrome。</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="显示离线恐龙游戏的 Google Chrome 桌面应用。", width="800", height="607" %}<figcaption class="w-figcaption" id="fig-chrome">适用于 macOS 的 Google Chrome。</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="显示离线恐龙游戏的 Google Chrome 桌面应用。", width="800", height="607" %}<figcaption id="fig-chrome">适用于 macOS 的 Google Chrome。</figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">在 Web 上，当您没有网络连接时，默认情况下您什么也得不到。</figcaption>
+  <figcaption id="fig-offline-wrapper">在 Web 上，当您没有网络连接时，默认情况下您什么也得不到。</figcaption>
 
 
 
@@ -41,7 +41,7 @@ Google Assistant 应用、Slack 应用、Zoom 应用以及您手机或计算机�
 
 但是，情况不应就这样。借助 [Service Workers 和 Cache Storage API](/service-workers-cache-storage/) ，您可以为用户提供定制的离线体验。这可以是一个含有用户当前离线信息的简单品牌页面，但也可以是一个更有创意的解决方案，例如著名的 [trivago 离线迷宫游戏](https://www.trivago.com/offline)，具有手动**重新连接**按钮和自动重新连接尝试倒数。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="具有 trivago 离线迷宫游戏的 trivago 离线页面。", width="800", height="616" %}<figcaption class="w-figcaption"> trivago 离线迷宫。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="具有 trivago 离线迷宫游戏的 trivago 离线页面。", width="800", height="616" %}<figcaption> trivago 离线迷宫。</figcaption></figure>
 
 ### 注册 Service Worker
 

@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、見出しが1つ以上のレベルをスキップするページにフラグを設定します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="レベルをスキップする見出しを示すLighthouse監査", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="レベルをスキップする見出しを示すLighthouse監査", width="800", height="206" %}</figure>
 
 たとえば、ページタイトルで`<h1>`要素を使用し、次にページのメインセクションで`<h3>`要素を使用すると、`<h2>`レベルがスキップされるため、監査が失敗します。
 

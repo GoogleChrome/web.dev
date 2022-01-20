@@ -29,8 +29,8 @@ La carga diferida estandarizada de iframes difiere la carga de iframes fuera de 
 
 Esta [demo](https://lazy-load.netlify.app/iframes/) de `<iframe loading=lazy>` muestra código incrustado de video de carga diferida:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -39,7 +39,7 @@ Esta [demo](https://lazy-load.netlify.app/iframes/) de `<iframe loading=lazy>` m
 
 El código incrustado de terceros cubre una amplia gama de casos de uso, desde reproductores de video hasta publicaciones en redes sociales y anuncios. A menudo, este contenido no es visible inmediatamente en la ventana gráfica del usuario. Por el contrario, solo se ve una vez que se desplazan hacia abajo en la página. A pesar de esto, los usuarios pagan el costo de descargar datos y JavaScript por cada cuadro, incluso si no se desplazan hasta él.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Ahorro de datos por usar iframe lazy-loading para un iframe. En este ejemplo, una carga completa usa 3 MB, mientras que lazy-loading no descarga nada hasta que el usuario se desplaza cerca del iframe.", width="800", height="460" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Ahorro de datos por usar iframe lazy-loading para un iframe. En este ejemplo, una carga completa usa 3 MB, mientras que lazy-loading no descarga nada hasta que el usuario se desplaza cerca del iframe.", width="800", height="460" %}</figure>
 
 Según la investigación de Chrome sobre [iframes fuera de pantalla de carga diferida automática para usuarios de Data Saver](https://blog.chromium.org/2019/10/automatically-lazy-loading-offscreen.html), los iframes de carga diferida podrían generar un ahorro medio de datos  del 2-3%, 1-2% de reducción de la [primera pintura con contenido](/fcp/) en la mediana y mejoras del 2% en el [retraso de la primera entrada](/fid/) (FID) en el percentil 95.
 
@@ -117,7 +117,7 @@ Incrustaciones de video de YouTube de carga diferida (ahorra ~ 500 KB en la carg
 
 **Anécdota:** cuando cambiamos a incrustaciones de YouTube de carga diferida para Chrome.com, ahorramos 10 segundos de la rapidez con la que nuestras páginas podrían ser interactivas en dispositivos móviles. Abrí un error interno con YouTube para discutir la adición de `loading=lazy` a su código de inserción.
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt = "Chrome.com logró una reducción de 10 segundos en el tiempo de interacción mediante la carga diferida de iframes fuera de la pantalla para su video incrustado de YouTube", width = "800", height = "460"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt = "Chrome.com logró una reducción de 10 segundos en el tiempo de interacción mediante la carga diferida de iframes fuera de la pantalla para su video incrustado de YouTube", width = "800", height = "460"%}</figure>
 
 {% Aside %} Si está buscando formas más eficientes de cargar inserciones de YouTube, es posible que le interese el [componente YouTube Lite](https://github.com/paulirish/lite-youtube-embed) . {% endAside %}
 
@@ -143,7 +143,7 @@ Aunque las incrustaciones anteriores ilustran los beneficios potenciales de los 
 
 *Los complementos sociales* de Facebook permiten a los desarrolladores incrustar contenido de Facebook en sus páginas web. Se ofrecen varios de estos complementos, como publicaciones incrustadas, fotos, videos, comentarios… El más popular es el [complemento Me gusta](https://developers.facebook.com/docs/plugins/like-button/) , un botón que muestra un recuento de a quién le ha "gustado" la página. De forma predeterminada, incrustar el complemento Me gusta en una página web (utilizando FB JSSDK) extrae ~ 215 KB de recursos, de los cuales 197 KB son JavaScript. En muchos casos, el complemento puede aparecer al final de un artículo o cerca del final de una página, por lo que cargarlo con entusiasmo cuando está fuera de la pantalla puede ser subóptimo.
 
-<figure class="w-figure">{% Img src = "image/admin/fdy8o61jxPN560IkF2Ne.png", alt = "Botón Me gusta de Facebook", width = "800", height = "71", class = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/admin/fdy8o61jxPN560IkF2Ne.png", alt = "Botón Me gusta de Facebook", width = "800", height = "71"%}</figure>
 
 Gracias al ingeniero Stoyan Stefanov, [todos los complementos sociales de Facebook ahora admiten la carga diferida de iframe estandarizada](https://developers.facebook.com/docs/plugins/like-button#settings) . Los desarrolladores que opten por la carga diferida a través de la `data-lazy` diferidos de los complementos ahora podrán evitar que se cargue hasta que el usuario se desplace cerca. Esto permite que la inserción siga funcionando completamente para los usuarios que la necesitan, al tiempo que ofrece ahorros de datos para aquellos que no se desplazan hacia abajo en una página. Tenemos la esperanza de que esta sea la primera de muchas incorporaciones para explorar la carga diferida de iframe estandarizada en producción.
 

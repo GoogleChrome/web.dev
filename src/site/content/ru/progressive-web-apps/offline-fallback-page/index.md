@@ -13,27 +13,27 @@ tags:
 
 Что общего у приложений Google Assistant, Slack и Zoom, а также почти у всех других приложений, созданных для определенных платформ, на телефоне или компьютере? Да, они всегда предоставляют хоть *какие-то* возможности. Даже если нет подключения к сети, вы все равно можете открыть приложение Assistant, войти в приложение Slack или запустить приложение Zoom. Возможно, вы не получите ничего особенно значимого или даже не сможете сделать то, что хотели, но, по крайней мере, вам будет доступен хотя бы *минимальный* набор функций и вы сможете управлять приложением.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-apps-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Мобильное приложение Google Assistant, работающее в автономном режиме.", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-assistant"> Google Assistant. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Мобильное приложение Google Assistant, работающее в автономном режиме.", width="621", height="1344" %} <figcaption id="fig-assistant"> Google Assistant. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Мобильное приложение Slack, работающее в автономном режиме.", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-slack"> Slack. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Мобильное приложение Slack, работающее в автономном режиме.", width="621", height="1344" %} <figcaption id="fig-slack"> Slack. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Мобильное приложение Zoom, работающее в автономном режиме.", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-zoom"> Zoom. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Мобильное приложение Zoom, работающее в автономном режиме.", width="621", height="1344" %} <figcaption id="fig-zoom"> Zoom. </figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">Если вы используете приложения, созданные для определенной платформы, вы всегда получаете хоть какие-то возможности, даже если нет подключения к сети.</figcaption>
+  <figcaption id="fig-apps-wrapper">Если вы используете приложения, созданные для определенной платформы, вы всегда получаете хоть какие-то возможности, даже если нет подключения к сети.</figcaption>
 
 
 
 В противоположность этому, вы не сможете получить никакие возможности в Интернете, если нет подключения к сети. В Chrome можно поиграть в [оффлайн-игру с динозавром](https://www.blog.google/products/chrome/chrome-dino/), но это все, что доступно.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-offline-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Мобильное приложение Google Chrome, в котором отображается оффлайн-игра с динозавром.", width="800", height="1731" %} <figcaption class="w-figcaption" id="fig-chrome-ios"> Google Chrome для iOS. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Мобильное приложение Google Chrome, в котором отображается оффлайн-игра с динозавром.", width="800", height="1731" %} <figcaption id="fig-chrome-ios"> Google Chrome для iOS. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Приложение Google Chrome для компьютеров, в котором отображается оффлайн-игра с динозавром.", width="800", height="607" %} <figcaption class="w-figcaption" id="fig-chrome"> Google Chrome для macOS. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Приложение Google Chrome для компьютеров, в котором отображается оффлайн-игра с динозавром.", width="800", height="607" %} <figcaption id="fig-chrome"> Google Chrome для macOS. </figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">Если у вас нет подключения к сети, то по умолчанию вам недоступны никакие возможности в Интернете.</figcaption>
+  <figcaption id="fig-offline-wrapper">Если у вас нет подключения к сети, то по умолчанию вам недоступны никакие возможности в Интернете.</figcaption>
 
 
 
@@ -41,7 +41,7 @@ tags:
 
 Тем не менее всё необязательно должно быть именно так. С помощью [служебных сценариев и Cache Storage API](/service-workers-cache-storage/) вы можете предоставить своим пользователям адаптированный интерфейс для работы в автономном режиме. Возможно, это будет простая страница с фирменной символикой и информацией о том, что в данный момент пользователь не подключен к сети. Но это может быть и более творческое решение, как, например, знаменитая [оффлайн-игра Trivago с лабиринтом](https://www.trivago.com/offline) с кнопкой ручного **повторного подключения к сети** и автоматическим таймером, отсчитывающим время до следующей попытки подключения к сети.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="Страница Trivago для автономного режима, на которой отображается оффлайн-игра с лабиринтом.", width="800", height="616" %} <figcaption class="w-figcaption"> Оффлайн-игра Trivago с лабиринтом. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="Страница Trivago для автономного режима, на которой отображается оффлайн-игра с лабиринтом.", width="800", height="616" %} <figcaption> Оффлайн-игра Trivago с лабиринтом. </figcaption></figure>
 
 ### Регистрация служебного сценария
 

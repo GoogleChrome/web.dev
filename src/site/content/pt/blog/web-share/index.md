@@ -22,7 +22,7 @@ Com a API Web Share, as aplicações web podem usar os mesmos recursos de compar
 
 ## Conceitos e uso
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="Selecionador de compartilhamento de nível de sistema com um PWA instalado como opção.", width="370", height="349" %}   <figcaption class="w-figcaption w-figcaption--fullbleed">  Selecionador de compartilhamento de nível de sistema com um PWA instalado como uma opção.  </figcaption></figure>
+<figure data-float="right">   {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="Selecionador de compartilhamento de nível de sistema com um PWA instalado como opção.", width="370", height="349" %}   <figcaption>  Selecionador de compartilhamento de nível de sistema com um PWA instalado como uma opção.  </figcaption></figure>
 
 ### Capacidades e limitações
 
@@ -82,7 +82,7 @@ Observe que o exemplo lida com a detecção de recursos testando `navigator.canS
 
 ## Estudo de caso do Santa Tracker (Siga o Papai Noel)
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="O aplicativo Santa Tracker mostrando um botão de compartilhamento.", width="343", height="600" %}   <figcaption class="w-figcaption w-figcaption--fullbleed">    Botão de compartilhamento do Santa Tracker  </figcaption></figure>
+<figure data-float="right">   {% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="O aplicativo Santa Tracker mostrando um botão de compartilhamento.", width="343", height="600" %}   <figcaption>    Botão de compartilhamento do Santa Tracker  </figcaption></figure>
 
 O  [Santa Tracker](https://santatracker.google.com/), um projeto de código aberto, é uma tradição de férias no Google. Todo mês de dezembro, você pode comemorar a temporada com jogos e experiências educacionais.
 

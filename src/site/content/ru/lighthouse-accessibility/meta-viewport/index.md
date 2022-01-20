@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse отмечает страницы, которые отключают масштабирование браузера:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Аудит Lighthouse, показывающий, что область просмотра отключает масштабирование текста", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Аудит Lighthouse, показывающий, что область просмотра отключает масштабирование текста", width="800", height="227" %}</figure>
 
 Страница не проходит аудит, если она содержит тег `<meta name="viewport">` с любым из следующего:
 

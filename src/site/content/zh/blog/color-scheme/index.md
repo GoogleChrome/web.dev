@@ -152,27 +152,27 @@ body {
 
 请注意，`<fieldset>` 元素的 `background-color` 根据是否启用深色模式而更改，遵循页面上开发人员提供的内联样式表中的规则。具体为 `gainsboro` 或 `darkslategray`。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="浅色模式页面。", width="800", height="322", class="w-screenshot w-screenshot-filled" %}<figcaption class="w-figcaption"> <strong>浅色模式：</strong>由开发人员和用户代理指定的样式。按照用户代理样式表，文本为黑色，背景为白色。按照内联的开发人员样式表，<code>&lt;fieldset&gt;</code> 元素的 <code>background-color</code> 为 <code>gainsboro</code>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="浅色模式页面。", width="800", height="322" %}<figcaption> <strong>浅色模式：</strong>由开发人员和用户代理指定的样式。按照用户代理样式表，文本为黑色，背景为白色。按照内联的开发人员样式表，<code>&lt;fieldset&gt;</code> 元素的 <code>background-color</code> 为 <code>gainsboro</code>。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="深色模式页面。", width="800", height="322", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"><strong>深色模式：</strong>由开发人员和用户代理指定的样式。按照用户代理样式表，文本为白色，背景为黑色。按照内联的开发人员样式表，<code>&lt;fieldset&gt;</code> 元素的 <code>background-color</code> 为 <code>darkslategray</code>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="深色模式页面。", width="800", height="322" %}<figcaption><strong>深色模式：</strong>由开发人员和用户代理指定的样式。按照用户代理样式表，文本为白色，背景为黑色。按照内联的开发人员样式表，<code>&lt;fieldset&gt;</code> 元素的 <code>background-color</code> 为 <code>darkslategray</code>。</figcaption></figure>
 
 `<button>` 元素的外观由用户代理样式表控制。它的 `color` 设置为 [`ButtonText`](https://drafts.csswg.org/css-color/#valdef-system-color-buttontext) 系统颜色，`background-color` 和四个 `border-color` 设置为系统颜色 [`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface)。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="使用 ButtonFace 属性的浅色模式页面。", width="800", height="322", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> <strong>浅色模式：</strong>将 <code>background-color</code> 和各种 <code>border-color</code> 设置为 <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a> 系统颜色。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="使用 ButtonFace 属性的浅色模式页面。", width="800", height="322" %} <figcaption> <strong>浅色模式：</strong>将 <code>background-color</code> 和各种 <code>border-color</code> 设置为 <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a> 系统颜色。</figcaption></figure>
 
 现在，请注意 `<button>` 元素的 `border-color` 发生变化。*计算*值（针对 `border-top-color` 和 `border-bottom-color`）从 `rgba(0, 0, 0, 0.847)`（偏黑色）切换为 `rgba(255, 255, 255, 0.847)`（偏白色），因为用户代理会根据配色方案动态更新 `ButtonFace`。这同样适用于 `<button>` 元素的 `color`，其设置为相应系统颜色 `ButtonText`。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="显示计算出的颜色值与 ButtonFace 匹配。", width="800", height="322", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> <strong>浅色模式：</strong><code>border-top-color</code> 和 <code>border-bottom-color</code> 的计算值（在用户代理样式表中这两个值均设置为 <code>ButtonFace</code>）现在为 <code>rgba(0, 0, 0, 0.847)</code>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="显示计算出的颜色值与 ButtonFace 匹配。", width="800", height="322" %} <figcaption> <strong>浅色模式：</strong><code>border-top-color</code> 和 <code>border-bottom-color</code> 的计算值（在用户代理样式表中这两个值均设置为 <code>ButtonFace</code>）现在为 <code>rgba(0, 0, 0, 0.847)</code>。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="显示计算出的颜色值与 ButtonFace 匹配。", width="800", height="322", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> <strong>深色模式：</strong><code>border-top-color</code> 和 <code>border-bottom-color</code> 的计算值（在用户代理样式表中这两个值均设置为 <code>ButtonFace</code>）现在为 <code>rgba(0, 0, 0, 0.847)</code>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="显示计算出的颜色值与 ButtonFace 匹配。", width="800", height="322" %} <figcaption> <strong>深色模式：</strong><code>border-top-color</code> 和 <code>border-bottom-color</code> 的计算值（在用户代理样式表中这两个值均设置为 <code>ButtonFace</code>）现在为 <code>rgba(0, 0, 0, 0.847)</code>。</figcaption></figure>
 
 ## 演示
 
 您可以看到应用于大量 HTML 元素 `color-scheme` 的效果（在[故障演示](https://color-scheme-demo.glitch.me/)中）。该演示*特意*显示 WCAG AA 和 WCAG AAA [冲突](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)（具有[上面警告](#using-color-scheme-in-practice)中提到的链接颜色）。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="浅色模式下的演示。", width="800", height="982", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"><a href="https://color-scheme-demo.glitch.me/">演示</a>已切换为 <code>color-scheme: light</code>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="浅色模式下的演示。", width="800", height="982" %} <figcaption><a href="https://color-scheme-demo.glitch.me/">演示</a>已切换为 <code>color-scheme: light</code>。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="深色模式下的演示。", width="800", height="982", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"><a href="https://color-scheme-demo.glitch.me/">演示</a>已切换为 <code>color-scheme: dark</code>。请注意具有链接颜色的 WCAG AA 和 WCAG AAA<a href="https://webaim.org/resources/contrastchecker/?fcolor=0000EE&amp;bcolor=000000"> 冲突</a>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="深色模式下的演示。", width="800", height="982" %} <figcaption><a href="https://color-scheme-demo.glitch.me/">演示</a>已切换为 <code>color-scheme: dark</code>。请注意具有链接颜色的 WCAG AA 和 WCAG AAA<a href="https://webaim.org/resources/contrastchecker/?fcolor=0000EE&amp;bcolor=000000"> 冲突</a>。</figcaption></figure>
 
 ## 鸣谢
 

@@ -70,7 +70,7 @@ feedback:
 }
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="使用 SVG 蒙版的示例", width="699", height="490", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="使用 SVG 蒙版的示例", width="699", height="490" %}</figure>
 
 这种方法的优点是可以对任何 HTML 元素应用遮罩，而不仅限于图像。不幸的是，Firefox <br> 是唯一支持这种方法的浏览器。
 

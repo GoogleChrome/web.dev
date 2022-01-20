@@ -27,9 +27,9 @@ Os atalhos de aplicativos ajudam os usuários a iniciar rapidamente tarefas comu
 
 O menu de atalhos do aplicativo é invocado clicando com o botão direito no ícone do aplicativo na barra de tarefas (Windows) ou dock (macOS) na área de trabalho do usuário, ou mantendo pressionado o ícone do iniciador do aplicativo no Android.
 
-<figure class="w-figure">{% Img src = "image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt = "Captura de tela de um menu de atalhos de aplicativo aberto no Android", width = "800", height = "420", class = "w-screenshot"%}<figcaption class="w-figcaption"> Menu de atalhos do aplicativo aberto no Android</figcaption></figure>
+<figure>{% Img src = "image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt = "Captura de tela de um menu de atalhos de aplicativo aberto no Android", width = "800", height = "420"%}<figcaption> Menu de atalhos do aplicativo aberto no Android</figcaption></figure>
 
-<figure class="w-figure">{% Img src = "image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt = "Captura de tela de um menu de atalhos de aplicativo aberto no Windows", width = "800", height = "420", class = "w-screenshot"%}<figcaption class="w-figcaption"> Menu de atalhos do aplicativo aberto no Windows</figcaption></figure>
+<figure>{% Img src = "image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt = "Captura de tela de um menu de atalhos de aplicativo aberto no Windows", width = "800", height = "420"%}<figcaption> Menu de atalhos do aplicativo aberto no Windows</figcaption></figure>
 
 O menu de atalhos do aplicativo é mostrado apenas para [Progressive Web Apps](/progressive-web-apps/) instalados na área de trabalho ou dispositivo móvel do usuário. Confira [O que é necessário para ser instalável?](/install-criteria/) para aprender sobre os requisitos de instalabilidade.
 
@@ -102,7 +102,7 @@ Como medida de qualidade, os ícones devem ter pelo menos metade do tamanho idea
 
 Para verificar se os atalhos do seu aplicativo estão configurados corretamente, use o **painel Manifesto** no painel **Aplicativo** do DevTools.
 
-<figure class="w-figure">{% Img src = "image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt = "Captura de tela dos atalhos do aplicativo no DevTools", width = "800", height = "534"%}<figcaption class="w-figcaption"> Atalhos de aplicativos mostrados no DevTools</figcaption></figure>
+<figure>{% Img src = "image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt = "Captura de tela dos atalhos do aplicativo no DevTools", width = "800", height = "534"%}<figcaption> Atalhos de aplicativos mostrados no DevTools</figcaption></figure>
 
 Este painel fornece uma versão legível, por humanos, de muitas das propriedades do seu manifesto, incluindo atalhos de aplicativos. Isso torna mais fácil verificar se todos os ícones de atalho, se fornecidos, estão carregando corretamente.
 
@@ -128,7 +128,7 @@ Você deve anotar as `url` de atalhos do aplicativo como faria com `start_url` p
 
 Os atalhos de aplicativos estão disponíveis no Android (Chrome 84), Windows (Chrome 85 e Edge 85), Chrome OS (Chrome 92), macOS e Linux (Chrome 96 e Edge 96).
 
-<figure class="w-figure">{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png", alt="Captura de tela de um menu de atalhos de aplicativo aberto no Chrome OS", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption"> Menu de atalhos do aplicativo aberto no Chrome OS</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png", alt="Captura de tela de um menu de atalhos de aplicativo aberto no Chrome OS", width="800", height="450" %}<figcaption> Menu de atalhos do aplicativo aberto no Chrome OS</figcaption></figure>
 
 ## Suporte para atividades confiáveis na web
 
@@ -140,8 +140,8 @@ Para os desenvolvedores que integram a Atividade da Web confiável manualmente e
 
 ## Amostra
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
+<figure>
+  <video controls autoplay loop muted src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
   </video></figure>
 
 Confira o [exemplo de atalhos](https://app-shortcuts.glitch.me) do aplicativo e sua [fonte](https://glitch.com/edit/#!/app-shortcuts) .

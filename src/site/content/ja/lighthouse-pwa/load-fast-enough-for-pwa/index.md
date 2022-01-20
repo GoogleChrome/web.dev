@@ -16,7 +16,7 @@ updated: 2020-06-10
 
 [Lighthouseは](https://developers.google.com/web/tools/lighthouse/)、モバイルである程度で早めに読み込まないページにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse監査はモバイルである程度で早めに読み込まないページを表示します", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse監査はモバイルである程度で早めに読み込まないページを表示します", width="800", height="98" %}</figure>
 
 下記の2つの主要な指標は、読み込み時間に対するユーザーの知覚に影響します。
 

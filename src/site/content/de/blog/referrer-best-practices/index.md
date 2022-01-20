@@ -33,7 +33,7 @@ HTTP requests may include the optional [`Referer` header](https://developer.mozi
 
 Im folgenden Beispiel enthält der `Referer`-Header die vollständige URL der Seite unter `site-one`, von der aus die Anfrage gestellt wurde.
 
-<figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-Anfrage mit Referer-Header.", width="800", height="573" %}</figure>
+<figure>{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-Anfrage mit Referer-Header.", width="800", height="573" %}</figure>
 
 Der `Referer`-Header kann in verschiedenen Arten von Anfragen vorhanden sein:
 
@@ -46,7 +46,7 @@ Der `Referer`-Wert kann aufschlussreich sein. Beispielsweise könnte ein Analyse
 
 Wenn jedoch die vollständige URL einschließlich des Pfads per`Referer` **zwischen verschiedenen Origins** geteilt wird, kann dies nicht nur die **Privatsphäre beeinträchtigen** sondern ebenfalls **Sicherheitsrisiken bergen**. Sehen Sie sich beispielsweise diese URLs an:
 
-<figure class="w-figure">{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs mit Pfaden, die verschiedenen Datenschutz- und Sicherheitsrisiken zugeordnet sind.", width="800", height="370" %}</figure>
+<figure>{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs mit Pfaden, die verschiedenen Datenschutz- und Sicherheitsrisiken zugeordnet sind.", width="800", height="370" %}</figure>
 
 Die URLs #1 bis #5 enthalten private Informationen – manche sogar identifizierende oder vertrauliche. Wenn diese stillschweigend zu anderen Origins durchsickern, kann dies die Privatsphäre der Webbenutzer gefährden.
 
@@ -62,13 +62,13 @@ Sie können eine von acht Richtlinien auswählen. Abhängig von der Richtlinie k
 - Nur die [Origins](/same-site-same-origin/#origin) betreffen
 - Die vollständige URL enthalten: Origin, Pfad und Query-String
 
-<figure class="w-figure">{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Daten, die im Referer-Header und in document.referrer enthalten sein können.", width="800", height="255" %}</figure>
+<figure>{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Daten, die im Referer-Header und in document.referrer enthalten sein können.", width="800", height="255" %}</figure>
 
 Einige Richtlinien wurden so gestaltet, dass Sie je nach **Kontext** unterschiedliches Verhalten hervorrufen, beispielsweise im Kontext einer Cross-Origin- bzw. Same-Origin-Anfrage, wenn erhöht Wert auf die Sicherheit (das Ziel der Anfrage sollte genauso sicher sein wie die Origin) gelegt wird oder wenn beides der Fall ist. Dies ist nützlich, um die Menge an Informationen zu begrenzen, die über Origins hinweg (cross-origin) oder mit weniger sicheren Origins geteilt werden – während gleichzeitig die Vielfalt des Referrers auf Ihrer eigenen Site erhalten bleibt.
 
 Hier ist eine Übersicht, die zeigt, wie Referrer-Richtlinien die im Referer-Header und über `document.referrer` verfügbaren URL-Daten einschränken:
 
-<figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Unterschiedliche Referrer-Richtlinien und ihr Verhalten, je nach Sicherheitseinstellungen und Cross-Origin-Kontext.", width="800", height="537" %}</figure>
+<figure>{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Unterschiedliche Referrer-Richtlinien und ihr Verhalten, je nach Sicherheitseinstellungen und Cross-Origin-Kontext.", width="800", height="537" %}</figure>
 
 MDN bietet eine [vollständige Liste mit Richtlinien und Verhaltensbeispielen](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives) an.
 
@@ -83,7 +83,7 @@ Dinge zu beachten:
 
 **Wenn keine Referrer-Richtlinie (Refferer-Policy) festgelegt wurde, wird die Standardrichtlinie des Browsers verwendet.**
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -148,7 +148,7 @@ Die Website [securityheaders.com](https://securityheaders.com/) kann dabei helfe
 
 Sie können ebenfalls die Entwicklertools von Chrome, Edge oder Firefox nutzen, um die von einer bestimmten Anfrage genutzte Referrer-Richtlinie anzuzeigen. Zum Zeitpunkt der Erstellung dieses Artikels kann Safari den `Referrer-Policy`-Header nicht anzeigen, zeigt allerdings den gesendeten `Referer` an.
 
-<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Ein Screenshot des Netzwerk-Panels der Chrome-Entwicklertools mit Referrer und Referrer-Richtlinie.", width="800", height="416" %}<figcaption class="w-figcaption"> Chrome-Entwicklertools, <b>Netzwerk</b>-Panel mit einer ausgewählten Anfrage.</figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Ein Screenshot des Netzwerk-Panels der Chrome-Entwicklertools mit Referrer und Referrer-Richtlinie.", width="800", height="416" %}<figcaption> Chrome-Entwicklertools, <b>Netzwerk</b>-Panel mit einer ausgewählten Anfrage.</figcaption></figure>
 
 ## Welche Richtlinie sollten Sie für Ihre Website festlegen?
 

@@ -22,7 +22,7 @@ A "origem" é a combinação de um [esquema](https://developer.mozilla.org/docs/
 
 Os sites que possuem a mesma combinação de esquema, nome de host e porta são considerados de "mesma origem". Todos os outros são considerados de "origem cruzada" (cross-origin).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -83,7 +83,7 @@ O nome completo do site é o eTLD+1. Por exemplo, no URL `https://my-project.git
 
 Os sites com o mesmo eTLD+1 são considerados o "mesmo site", enquanto aqueles com eTLD+1 diferentes são "vários sites" (cross-site).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -130,7 +130,7 @@ Os sites com o mesmo eTLD+1 são considerados o "mesmo site", enquanto aqueles c
 
 A definição de "mesmo site" está evoluindo ao considerar o esquema de URL como parte do site, a fim de evitar que o HTTP seja usado como um [canal fraco](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8). À medida que os navegadores mudam para essa interpretação, talvez você veja referências a "scheme-less same-site", relacionadas à definição mais antiga, e "[schemeful same-site](/schemeful-samesite/)", relacionadas à definição mais estrita. Nesse caso, `http://www.example.com` e `https://www.example.com` são considerados vários sites porque os esquemas não correspondem.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

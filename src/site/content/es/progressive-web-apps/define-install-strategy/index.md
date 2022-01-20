@@ -53,7 +53,7 @@ En esta sección, exploraremos diferentes formas de maximizar la velocidad de in
 
 Una vez que una PWA cumpla con los [criterios de instalación](/install-criteria/), la mayoría de los navegadores mostrarán una indicación de que la PWA es instalable. Por ejemplo, Chrome en Desktop mostrará un icono instalable en la barra de direcciones, y en el móvil, mostrará una mini barra de información:
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="Mensaje de instalación estándar de Chrome llamado mini-barra de información", width="800", height="417" %}<figcaption class="w-figcaption"> La mini-barra de información</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="Mensaje de instalación estándar de Chrome llamado mini-barra de información", width="800", height="417" %}<figcaption> La mini-barra de información</figcaption></figure>
 
 Si bien eso puede ser suficiente para algunas experiencias, si tu objetivo es impulsar las instalaciones de tu PWA, fuertemente te recomendamos que escuches a [`BeforeInstallPromptEvent`](https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent) y sigas los [patrones para promover la instalación](/promote-install/) de tu PWA.
 
@@ -90,12 +90,12 @@ Para solucionar este problema, algunas empresas están aprovechando de su PWA pa
 
 Oyo, una de las empresas hoteleras más grandes de la India, creó una [versión Lite de su aplicación](/oyo-lite-twa/) y la publicó en la Play Store mediante TWA. Pesa 850 KB, eso es el 7% del tamaño de su aplicación de Android. Y una vez instalado, es indistinguible de su aplicación de Android:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">OYO Lite en acción.</figcaption></figure>
+ <figcaption>OYO Lite en acción.</figcaption></figure>
 
 Oyo mantuvo tanto la versión insignia como la versión "lite" de la aplicación en la tienda, dejando la decisión final a los usuarios.
 

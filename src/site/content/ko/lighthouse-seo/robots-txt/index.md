@@ -19,7 +19,7 @@ web_lighthouse:
 
 [Lighthouse는](https://developers.google.com/web/tools/lighthouse/) `robots.txt` 파일에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 감사에서 잘못된 robots.txt가 표시됨", width="800", height="203", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 감사에서 잘못된 robots.txt가 표시됨", width="800", height="203" %}</figure>
 
 {% Aside %} 대부분의 Lighthouse 감사는 현재 보고 있는 페이지에만 적용됩니다. 그러나 `robots.txt`는 호스트 이름 수준에서 정의되므로 이 감사는 전체 도메인(또는 하위 도메인)에 적용됩니다. {% endAside %}
 

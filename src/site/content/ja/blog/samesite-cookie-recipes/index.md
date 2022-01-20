@@ -48,7 +48,7 @@ MDNの[`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Coo
 
 ここでは、Cookieを使用して、セッションの状態を維持したり、一般的な設定を保存したり、統計を有効にしたり、既存のアカウントを持つユーザーのコンテンツをパーソナライズしたりできます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="埋め込みコンテンツのURLがページのURLと一致しないブラウザウィンドウの図。", width="468", height="383", style="max-width: 35vw;" %} <figcaption class="w-figcaption">埋め込まれたコンテンツが最上位のブラウジングコンテキストと同じサイトから取得されていない場合は、サードパーティのコンテンツです。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="埋め込みコンテンツのURLがページのURLと一致しないブラウザウィンドウの図。", width="468", height="383", style="max-width: 35vw;" %} <figcaption>埋め込まれたコンテンツが最上位のブラウジングコンテキストと同じサイトから取得されていない場合は、サードパーティのコンテンツです。</figcaption></figure>
 
 さらに、本質的に、Webは構成可能であるため、`<iframes>`は、最上位またはファーストパーティのコンテキストでも表示されるコンテンツを埋め込むために使用されます。そのサイトで使用されているすべてのCookieは、サイトがフレーム内に表示されたときにサードパーティのCookieと見なされます。他のユーザーが簡単に埋め込むことができるサイトを作成し、Cookieを機能させる場合は、確実にサイト間で使用できるように設定するか、Cookieを使用せずにフォールバックできるようにする必要があります。
 
@@ -56,7 +56,7 @@ MDNの[`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Coo
 
 「安全ではない」と言うと少し不安に思われるかもしれませんが、これは状態を変更することを目的とした要求を指します。Webでは、これは主にPOST要求です。`SameSite=Lax`に設定されたCookieは、安全な最上位のナビゲーションで送信されます。たとえば、リンクをクリックして別のサイトに移動します。ただし、POST経由の別のサイトへの`<form>`送信などには、Cookieは含まれません。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="あるページから別のページに送信される要求の図。", width="719", height="382", style="max-width: 35vw;" %} <figcaption class="w-figcaption">受信要求が「安全な」方法を使用している場合、Cookieが送信されます。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="あるページから別のページに送信される要求の図。", width="719", height="382", style="max-width: 35vw;" %} <figcaption>受信要求が「安全な」方法を使用している場合、Cookieが送信されます。</figcaption></figure>
 
 このパターンは、ユーザーをリモートサービスにリダイレクトして、戻る前に何らかの操作を実行する可能性のあるサイトに使用されます。たとえば、サードパーティのIDプロバイダーにリダイレクトします。ユーザーがサイトを離れる前に、[クロスサイトリクエストフォージェリ (CSRF)](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) 攻撃を軽減するために、返される要求でこのトークンをチェックできるように、使い捨てトークンを含むCookieが設定されます。その返り要求がPOST経由で送信される場合、Cookieを`SameSite=None; Secure`に設定する必要があります。
 

@@ -30,7 +30,7 @@ Existem duas regras concorrentes aqui. Uma colorirá o botão de vermelho e a ou
 
 A especificidade é um dos quatro estágios distintos da cascata, que foi abordada no último módulo, na [cascata](/learn/css/the-cascade/).
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'YzNKMXm', height: 200 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'YzNKMXm', height: 200 } %}</figure>
 
 ## Pontuação de especificidade
 
@@ -231,7 +231,7 @@ Com um HTML semelhante a este:
 <button class="my-button" onclick="alert('hello')">Click me</button>
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoxdR', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoxdR', tab: 'css,result' } %}</figure>
 
 O botão tem fundo cinza, pois o segundo seletor ganha **11 pontos de especificidade** (`0-1-1`). Isso porque ele possui um seletor de tipo (`button`), que é de **1 ponto** e um seletor de atributo (`[onclick]`), que é de **10 pontos** .
 
@@ -249,7 +249,7 @@ button[onclick] {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'zYNOXBJ', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'zYNOXBJ', tab: 'css,result' } %}</figure>
 
 Agora, o botão terá um fundo azul, pois o novo seletor obtém uma pontuação de especificidade de **20 pontos** (`0-2-0`).
 
@@ -271,7 +271,7 @@ Vamos ficar com o exemplo de botão por enquanto e mudar o CSS para este:
 
 O botão tem um fundo cinza, porque os **dois seletores têm pontuação de especificidade idêntica** (`0-1-0`).
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'zYNOXKJ', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'zYNOXKJ', tab: 'css,result' } %}</figure>
 
 Se você mudar as regras na ordem de origem, o botão ficará azul.
 
@@ -285,7 +285,7 @@ Se você mudar as regras na ordem de origem, o botão ficará azul.
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'WNReWRO', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'WNReWRO', tab: 'css,result' } %}</figure>
 
 Esta é a única instância em que o CSS mais recente vence. Para fazer isso, ele deve corresponder à especificidade de outro seletor que visa o mesmo elemento.
 

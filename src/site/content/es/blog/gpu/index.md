@@ -32,7 +32,7 @@ stack_overflow_tag: webgpu
 
 [WebGPU](https://gpuweb.github.io/gpuweb/) es una nueva API web que expone las capacidades gráficas de sistemas modernos, específicamente Direct3D 12, Metal y Vulkan, para realizar operaciones de renderizado y cálculo en una unidad de procesamiento gráfico (GPU).
 
-<figure class="w-figure">{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram showing WebGPUs connection between OS APIs and Direct3D 12, Metal, and Vulkan.", width="800", height="313" %} <figcaption class="w-figcaption">Diagrama de arquitectura WebGPU</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram showing WebGPUs connection between OS APIs and Direct3D 12, Metal, and Vulkan.", width="800", height="313" %} <figcaption>Diagrama de arquitectura WebGPU</figcaption></figure>
 
 Este objetivo es similar al de la familia de APIs [WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API), pero WebGPU permite el acceso a funciones más avanzadas de las GPUs. Mientras que WebGL es principalmente para dibujar imágenes, y también se puede utilizar con gran esfuerzo para otros tipos de cálculos, WebGPU proporciona soporte de primera clase para realizar cálculos generales en la GPU.
 
@@ -42,7 +42,7 @@ Después de cuatro años de desarrollo en el [grupo comunitario "GPU para la Web
 
 {% Blockquote 'David Catuhe, Creator of Babylon.js' %} WebGPU nos acerca al metal y también desbloquea el poder del sombreador de cómputo para desarrolladores web. Hoy se pueden crear nuevas experiencias 3D en [Babylon.js Playground](https://playground.babylonjs.com/#XCNL7Y). {% endBlockquote %}
 
-<figure class="w-figure">{% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %} <figcaption class="w-figcaption"> Una demostración en Babylon.js de la simulación de un mar embravecido utilizando la capacidad de sombreado de cómputo de WebGPU. </figcaption></figure>
+<figure>{% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %} <figcaption> Una demostración en Babylon.js de la simulación de un mar embravecido utilizando la capacidad de sombreado de cómputo de WebGPU. </figcaption></figure>
 
 ## Estado actual {: #status }
 

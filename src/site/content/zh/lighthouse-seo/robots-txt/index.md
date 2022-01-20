@@ -19,7 +19,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记无效的 `robots.txt` 文件：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 审计显示无效的 robots.txt", width="800", height="203", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 审计显示无效的 robots.txt", width="800", height="203" %}</figure>
 
 {% Aside %} 大多数 Lighthouse 审计仅适用于您当前所在的页面。但是，由于 `robots.txt` 是在主机名级别定义的，因此该审计适用于您的整个域（或子域）。 {% endAside %}
 

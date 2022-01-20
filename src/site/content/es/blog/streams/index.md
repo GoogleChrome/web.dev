@@ -57,7 +57,7 @@ Una vez que se construye una cadena de tuberías, propagará señales con respec
 
 Un flujo de lectura puede procesarse en T (nombrado por la forma de una 'T' mayúscula) mediante su método `tee()`. Esto **bloqueará** el flujo, es decir, dejará de ser utilizable directamente. Sin embargo, creará **dos nuevos flujos**, llamados ramas, que se pueden consumir de forma independiente. El procesamiento en T también es importante porque los flujos no se pueden rebobinar ni reiniciar, explicaré más sobre esto posteriormente.
 
-<figure class="w-figure"><comment data-md-type="comment"></comment>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="Diagrama de una cadena de tuberías que consta de un flujo de lectura procedente de una invocación a la API Fetch que luego se canaliza a través de un flujo de transformación cuya salida se conecta y luego envía al navegador para el primer flujo de lectura resultante y a la caché del service worker para el segundo flujo de lectura resultante.", width="800", height ="430"%} <figcaption class="w-figcaption">Una cadena de tuberías.</figcaption></figure>
+<figure><comment data-md-type="comment"></comment>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="Diagrama de una cadena de tuberías que consta de un flujo de lectura procedente de una invocación a la API Fetch que luego se canaliza a través de un flujo de transformación cuya salida se conecta y luego envía al navegador para el primer flujo de lectura resultante y a la caché del service worker para el segundo flujo de lectura resultante.", width="800", height ="430"%} <figcaption>Una cadena de tuberías.</figcaption></figure>
 
 ## La mecánica de un flujo de lectura
 

@@ -18,15 +18,14 @@ tags:
 In this post I want to share thinking on how to build a toast component. Try the
 [demo](https://gui-challenges.web.app/toast/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/HuT5ZhOBd9ZPMcxR8W92.mp4",
-    class="w-screenshot",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/toast/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -116,9 +115,7 @@ edges to pin to, plus a little bit of `padding` from the same `block-end` edge.
 }
 ```
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/yJfP9FLqpngoR9zIm35J.png",
-alt="Screenshot with DevTools box size and padding overlayed on a
-.gui-toast-container element.", width="800", height="248", class="w-screenshot" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/yJfP9FLqpngoR9zIm35J.png", alt="Screenshot with DevTools box size and padding overlayed on a .gui-toast-container element.", width="800", height="248" %}
 
 In addition to positioning itself within the viewport, the toast container is a
 grid container that can align and distribute toasts. Items are centered as a
@@ -137,7 +134,7 @@ Throw in a little bit of `gap` so toasts don't touch.
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kaTSVr7KToPBYqDXKE4T.png",
 alt="Screenshot with the CSS grid overlay on the toast group, this time
 highlighting the space and gaps between toast child elements.", width="800",
-height="292", class="w-screenshot" %}
+height="292" %}
 
 ### GUI Toast
 
@@ -160,7 +157,7 @@ prevents toasts growing wider than 90% of the viewport or
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/fxZbpWDiuZCfpY2Cxq6A.png",
 alt="Screenshot of a single .gui-toast element, with the padding and border
-radius shown.", width="800", height="223", class="w-screenshot" %}
+radius shown.", width="800", height="223" %}
 
 ## Styles
 
@@ -183,9 +180,7 @@ clicks with the following CSS.
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/3uDub8eM8qYAepz6lbX0.mp4",
   autoplay="true",
   loop="true",
-  muted="true",
-  class="w-screenshot"
-%}
+  muted="true" %}
 
 ### GUI Toast
 
@@ -212,9 +207,7 @@ preference media query.
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/AUzcAPLccQdvIL2bR3pd.mp4",
   autoplay="true",
   loop="true",
-  muted="true",
-  class="w-screenshot"
-%}
+  muted="true" %}
 
 ### Animation
 
@@ -266,9 +259,7 @@ The toast element then sets up the variables and orchestrates the keyframes.
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/QeeF8vZ5gbXrxfp7EjRf.mp4",
   autoplay="true",
   loop="true",
-  muted="true",
-  class="w-screenshot"
-%}
+  muted="true" %}
 
 ## JavaScript
 
@@ -302,7 +293,7 @@ const init = () => {
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3O34m8U5Z6BsLUwzcKDx.png",
 alt="Screenshot of the toast group between the head and body tags.",
-width="800", height="308", class="w-screenshot" %}
+width="800", height="308" %}
 
 The `init()` function is called internally to the module, stashing the element
 as `Toaster`:
@@ -333,9 +324,7 @@ const createToast = text => {
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/3slAqrQiWDmnBnEgSPYz.mp4",
   autoplay="true",
   loop="true",
-  muted="true",
-  class="w-screenshot"
-%}
+  muted="true" %}
 
 JavaScript now adds a container to the document for containing toasts and is
 ready to add created toasts. The `addToast()` function orchestrates handling one

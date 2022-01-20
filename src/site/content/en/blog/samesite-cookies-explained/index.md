@@ -53,9 +53,9 @@ this:
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Three cookies being sent to a browser from a server in a response", width="800", height="276", style="max-width: 60vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Servers set cookies using the <code>Set-Cookie</code> header.
   </figcaption>
 </figure>
@@ -68,9 +68,9 @@ will send this header in its request:
 Cookie: promo_shown=1
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Three cookies being sent from a browser to a server in a request", width="800", height="165", style="max-width: 60vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Your browser sends cookies back in the <code>Cookie</code> header.
   </figcaption>
 </figure>
@@ -93,9 +93,9 @@ context, with each cookie separated by a semicolon:
 < "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript accessing cookies within the browser", width="600", height="382", style="max-width: 35vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     JavaScript can access cookies using <code>document.cookie</code>.
   </figcaption>
 </figure>
@@ -120,9 +120,9 @@ current site are referred to as **third-party** cookies. This isn't an absolute
 label but is relative to the user's context; the same cookie can be either
 first-party or third-party depending on which site the user is on at the time.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Three cookies being sent to a browser from different requests on the same page", width="800", height="346", style="max-width: 60vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Cookies may come from a variety of different domains on one page.
   </figcaption>
 </figure>
@@ -145,9 +145,9 @@ embedded player by a third-party cookie—meaning that "Watch later" button will
 just save the video in one go rather than prompting them to sign in or having to
 navigate them away from your page and back over to YouTube.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="The same cookie being sent in three different contexts", width="800", height="433", style="max-width: 60vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A cookie in a third-party context is sent when visiting different pages.
   </figcaption>
 </figure>
@@ -261,9 +261,9 @@ is being made explicit by introducing a new value of `SameSite=None`. This means
 you can use `None` to clearly communicate that you intentionally want the cookie
 sent in a third-party context.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Three cookies labelled None, Lax, or Strict depending on their context", width="800", height="456", style="max-width: 60vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Explicitly mark the context of a cookie as <code>None</code>, <code>Lax</code>, or <code>Strict</code>.
   </figcaption>
 </figure>

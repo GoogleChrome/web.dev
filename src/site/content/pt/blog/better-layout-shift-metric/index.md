@@ -58,34 +58,34 @@ Em cada um desses exemplos, a página tem mudanças de layout de gravidade vari�
 
 #### Janelas caindo
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Exemplo de uma janela tombada.</figcaption></figure>
+  <figcaption>Exemplo de uma janela tombada.</figcaption></figure>
 
 A abordagem mais simples é dividir a página em janelas de blocos de tamanhos iguais. Estas são chamadas de janelas caindo. Você notará acima que a quarta barra realmente parece que deveria ser agrupada na segunda janela pendente, mas como todas as janelas têm um tamanho fixo, ela está na primeira janela. Se houver pequenas diferenças no tempo de carregamento ou nas interações do usuário na página, as mesmas mudanças de layout podem ocorrer em lados diferentes dos limites da janela caindo.
 
 #### Janelas deslizantes
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Exemplo de janela deslizante.</figcaption></figure>
+  <figcaption>Exemplo de janela deslizante.</figcaption></figure>
 
 Uma abordagem que nos permite ver mais agrupamentos possíveis do mesmo comprimento é atualizar continuamente a janela potencial ao longo do tempo. A imagem acima mostra uma janela deslizante de cada vez, mas poderíamos olhar todas as janelas deslizantes possíveis ou um subconjunto delas para criar uma métrica.
 
 #### Janelas de sessão
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Exemplo de uma janela de sessão.</figcaption></figure>
+  <figcaption>Exemplo de uma janela de sessão.</figcaption></figure>
 
 Se quiséssemos nos concentrar na identificação de áreas da página com rajadas de mudanças de layout, poderíamos iniciar cada janela em uma mudança e continuar crescendo até encontrar um intervalo de um determinado tamanho entre as mudanças de layout. Essa abordagem agrupa as mudanças de layout e ignora a maior parte da experiência do usuário sem mudanças. Um problema potencial é que, se não houver lacunas nas mudanças de layout, uma métrica baseada em janelas de sessão pode crescer sem limites, assim como a métrica CLS atual. Então, também tentamos fazer isso com um tamanho máximo de janela.
 

@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse 可以标记禁用浏览器缩放的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Lighthouse 审计显示 viewport 禁用文本缩放和页面缩放", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Lighthouse 审计显示 viewport 禁用文本缩放和页面缩放", width="800", height="227" %}</figure>
 
 如果页面包含 `<meta name="viewport">` 标签并有以下内容之一，则该页面的审计会失败：
 

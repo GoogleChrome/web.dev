@@ -29,8 +29,8 @@ O carregamento lazy padrão para iframes adia o carregamento de iframes offscree
 
 Esta [demo](https://lazy-load.netlify.app/iframes/) de `<iframe loading=lazy>` mostra incorporações de vídeo com carregamento lazy:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -39,7 +39,7 @@ Esta [demo](https://lazy-load.netlify.app/iframes/) de `<iframe loading=lazy>` m
 
 As incorporações de terceiros cobrem uma ampla gama de casos de uso, desde players de vídeo a postagens em mídias sociais e anúncios. Frequentemente, esse conteúdo não fica imediatamente visível na viewport do usuário. Em vez disso, ele só é visto quando o usuário rola mais para baixo na página. Apesar disso, os usuários pagam o custo elevado do download de dados e JavaScript para todos os frames, mesmo que não role até eles.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Economia de dados com o carregamento lazy para um iframe. O carregamento eager baixa 3 MB neste exemplo, enquanto o carregamento lazy não baixa nada neste código até que o usuário role para mais perto do iframe. ", width="800", height="460" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Economia de dados com o carregamento lazy para um iframe. O carregamento eager baixa 3 MB neste exemplo, enquanto o carregamento lazy não baixa nada neste código até que o usuário role para mais perto do iframe. ", width="800", height="460" %}</figure>
 
 Com base na pesquisa do Chrome sobre [carregamento automático de iframes offscreen usando lazy-loading para usuários Data Saver](https://blog.chromium.org/2019/10/automatically-lazy-loading-offscreen.html), o carregamento lazy de iframes pode levar a uma economia média de dados de 2-3%, reduções de 1-2% na [First Contentful Paint](/fcp/) (FCP) na mediana e uma melhora de 2% da [First Input Delay](/fid/) (FID) no percentil 95.
 
@@ -117,7 +117,7 @@ Incorporações de vídeos do YouTube com lazy-loading (economiza 500KB na carga
 
 **Anedota:** quando passamos a fazer incorporações do YouTube com lazy-loading para o Chrome.com, economizamos 10 segundos do tempo em que nossas páginas seriam interativas em dispositivos móveis. Abri um bug interno com o YouTube para discutir a adição de `loading=lazy` ao seu código de incorporação.
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt = "", width = "800", height = "460"%}<br><br>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.com conseguiu uma redução de 10 segundos no tempo de interação ao carregar de forma lazy iframes offscreen para seu vídeo do YouTube incorporado", width="800", height="460" %}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt = "", width = "800", height = "460"%}<br><br>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.com conseguiu uma redução de 10 segundos no tempo de interação ao carregar de forma lazy iframes offscreen para seu vídeo do YouTube incorporado", width="800", height="460" %}</figure>
 
 {% Aside %} Se você estiver procurando maneiras mais eficientes de carregar incorporações do YouTube, talvez interesse explorar o [componente YouTube Lite](https://github.com/paulirish/lite-youtube-embed). {% endAside %}
 
@@ -143,7 +143,7 @@ Embora as incorporações acima ilustrem os benefícios potenciais de iframes de
 
 Os *plug-ins sociais* do Facebook permitem que os desenvolvedores incorporem conteúdo do Facebook em suas páginas web. Há vários desses plug-ins oferecidos, como postagens incorporadas, fotos, vídeos, comentários… O mais popular é o [plug-in Like](https://developers.facebook.com/docs/plugins/like-button/): um botão que mostra uma contagem de quem "curtiu" a página. Por default, a incorporação do plugin Like numa página web (usando o FB JSSDK) baixa cerca de 215 KB de recursos, 197 KB dos quais é JavaScript. Em muitos casos, o plug-in pode aparecer no final de um artigo ou próximo ao final de uma página, portanto, carregá-lo de forma imediata quando está offscreen pode não ser o ideal.
 
-<figure class="w-figure">   {% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Botão Facebook Like", width="800", height="71", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Botão Facebook Like", width="800", height="71" %}</figure>
 
 Graças ao engenheiro Stoyan Stefanov, [todos os plug-ins sociais do Facebook agora suportam carregamento lazy padrão de iframes](https://developers.facebook.com/docs/plugins/like-button#settings). Os desenvolvedores que optarem pelo carregamento lazy por meio da configuração `data-lazy` dos plug-ins agora poderão evitar que ele carregue até que o usuário role nas proximidades. Isto permite que os recursos incorporados funcionem totalmente para os usuários que precisarem deles, ao mesmo tempo que oferece economia de dados para aqueles que não rolarem uma página até o fim. Esperamos que esta seja a primeira de muitas incorporações a explorar o carregamento lazy de iframe padrão em produção.
 

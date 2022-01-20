@@ -16,7 +16,7 @@ tags:
 
 [ブラウザが提供するインストールエクスペリエンス](/promote-install/#browser-promotion)に加えて、独自のカスタムインストールフローをアプリ内で直接提供することができます。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Spotify PWAで提供されるInstall Appボタン", width="491", height="550"%}<figcaption class="w-figcaption"> Spotify PWAで提供される「Install App」ボタン</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Spotify PWAで提供されるInstall Appボタン", width="491", height="550"%}<figcaption> Spotify PWAで提供される「Install App」ボタン</figcaption></figure>
 
 インストールを促すかどうかを検討するときは、ユーザーが通常どのようにPWAを使用しているかを考えると良いでしょう。たとえば、1週間にPWAを複数回も使用するユーザーがいる場合、これらのユーザーにとっては、スマートフォンのホーム画面またはデスクトップのオペレーティングシステムの[スタート]メニューから便利にアプリを起動できると便利でしょう。一部の生産性アプリやエンターテインメントアプリにとっては、インストールされた`standalone`モードまたは`minimal-ui`モードでウィンドウからブラウザーのツールバーを削除することによって画面領域が広がるということがメリットになるでしょう。
 

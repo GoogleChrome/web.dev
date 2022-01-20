@@ -23,7 +23,7 @@ feedback:
 
 {% Aside %} 웹 공유 대상 API는 마법의 절반에 불과합니다. 웹 앱은 웹 공유 API를 사용하여 데이터, 파일, 링크 또는 텍스트를 공유할 수 있습니다. 자세한 내용은 [웹 공유 API](/web-share/)를 참조하세요.{% endAside %}
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="'다음을 통해 공유' 메뉴가 펼쳐진 안드로이드 휴대전화.", width="400", height="377" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> 설치된 PWA가 옵션으로 들어가 있는 시스템 차원의 공유 대상 선택기. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="'다음을 통해 공유' 메뉴가 펼쳐진 안드로이드 휴대전화.", width="400", height="377" %} <figcaption> 설치된 PWA가 옵션으로 들어가 있는 시스템 차원의 공유 대상 선택기. </figcaption></figure>
 
 ## 작동 중인 웹 공유 대상 보기
 
@@ -168,7 +168,7 @@ self.addEventListener('fetch', event => {
 
 ### 공유 콘텐츠 확인
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="공유 콘텐츠가 있는 데모 앱을 표시하는 Android 휴대전화입니다.", width="400", height="280" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> 샘플 공유 대상 앱.</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="공유 콘텐츠가 있는 데모 앱을 표시하는 Android 휴대전화입니다.", width="400", height="280" %}<figcaption> 샘플 공유 대상 앱.</figcaption></figure>
 
 들어오는 데이터를 확인하도록 하십시오. 유감스럽지만 다른 앱이 올바른 매개변수로 적절한 콘텐츠를 공유한다는 보장은 없습니다.
 

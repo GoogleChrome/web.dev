@@ -111,7 +111,7 @@ Ao definir `ETag` ou `Last-Modified` , você acabará tornando a solicitação d
 
 Quando um servidor da web configurado corretamente detectar esses cabeçalhos de solicitação de entrada, será possível confirmar se a versão do recurso que o navegador já possui em seu Cache HTTP corresponde à versão mais recente no servidor da web. Se houver uma correspondência, o servidor pode responder com um [`304 Not Modified`](https://developer.mozilla.org/docs/Web/HTTP/Status/304), que equivale a dizer "Ei, continue usando o que você já tem!". Há muito poucos dados a serem transferidos ao enviar esse tipo de resposta, então geralmente isso é bem mais rápido do que ter que retornar uma cópia do recurso real que está sendo solicitado.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="Diagrama de um cliente solicitando um recurso e o servidor respondendo com um cabeçalho 304.", width="474", height="215" %} <figcaption class="w-figcaption w-text--left"> O navegador solicita <code>/file</code> do servidor e inclui o <code>If-None-Match</code> para instrui-lo a retornar apenas o arquivo completo se a <code>ETag</code> do arquivo no servidor não corresponder ao valor <code>If-None-Match</code> nele. Nesse caso, ambos os valores coincidiram, por isso o servidor retorna um <code>304 Not Modified</code> com instruções sobre a quantidade de tempo pelo qual o arquivo deve ser armazenado no cache (<code>Cache-Control: max-age=120</code> ). </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="Diagrama de um cliente solicitando um recurso e o servidor respondendo com um cabeçalho 304.", width="474", height="215" %} <figcaption> O navegador solicita <code>/file</code> do servidor e inclui o <code>If-None-Match</code> para instrui-lo a retornar apenas o arquivo completo se a <code>ETag</code> do arquivo no servidor não corresponder ao valor <code>If-None-Match</code> nele. Nesse caso, ambos os valores coincidiram, por isso o servidor retorna um <code>304 Not Modified</code> com instruções sobre a quantidade de tempo pelo qual o arquivo deve ser armazenado no cache (<code>Cache-Control: max-age=120</code> ). </figcaption></figure>
 
 ## Resumo {: #summary }
 
@@ -147,7 +147,7 @@ Se você tiver mais tempo, confira abaixo outras maneiras de otimizar o uso do C
 
 ## Apêndice: `Cache-Control` {: #examples }
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -77,7 +77,7 @@ Para demonstrar melhor como isso funciona:
 
 O indicador de carregamento será mostrado por mais tempo agora. Observe como todo o código que compõe o `AvatarComponent` é obtido como um bloco separado.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="Painel de rede DevTools mostrando um arquivo chunk.js sendo baixado", width="800", height="478", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="Painel de rede DevTools mostrando um arquivo chunk.js sendo baixado", width="800", height="478" %}</figure>
 
 {% Aside %} Atualmente, o React não oferece suporte ao Suspense quando os componentes estão sendo renderizados do lado do servidor. Se você estiver renderizando no servidor, considere o uso de outra biblioteca, como [`loadable-components`](https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/), recomendada na documentação do React. {% endAside %}
 

@@ -19,15 +19,14 @@ tags:
 In this post I want to share thinking on a way to build a split button .
 [Try the demo](https://gui-challenges.web.app/split-buttons/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/hgKYrc5vFlj096ZLn1ZW.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/split-buttons/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -50,7 +49,7 @@ is send, but perhaps you can send later or save a draft instead:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/7D9MI9GmPhYAtFs83DDI.png",
 alt="An example split button as seen in an email application.",
-width="800", height="517", class="w-screenshot" %}
+width="800", height="517" %}
 
 The shared action area is nice, since the user doesn't need to look around. They
 know that essential email actions are contained in the split button.
@@ -64,7 +63,7 @@ inspect tool is used here to help show a macro view of the component, surfacing
 aspects of the HTML, style and accessibility for each major part.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/URCIaZV3gyMvTiMjRYmK.png",
-alt="The HTML elements that make up the split button.", width="800", height="581", class="w-screenshot" %}
+alt="The HTML elements that make up the split button.", width="800", height="581" %}
 
 #### Top level split button container
 
@@ -73,7 +72,7 @@ The highest level component is an inline flexbox, with a class of
 and the [`.gui-popup-button`](#the-popup-toggle-button).
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/SLjXwBPvsrEXBb1vcm6L.png",
-alt="The gui-split-button class inspected and showing the CSS properties used in this class.", width="800", height="581", class="w-screenshot" %}
+alt="The gui-split-button class inspected and showing the CSS properties used in this class.", width="800", height="581" %}
 
 #### The primary action button
 
@@ -85,7 +84,7 @@ two matching corner shapes for
 appear contained within `.gui-split-button`.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/69gvxF4AfQoNki4pBtVb.png",
-alt="The inspector showing the CSS rules for <button>.", width="800", height="644", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for <button>.", width="800", height="644" %}
 
 #### The popup toggle button
 
@@ -95,7 +94,7 @@ it is the positioning anchor for [`.gui-popup`](#the-popup-card) and host for `:
 to present the popup.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/p2R7pHvID9XR9JoHHzth.png",
-alt="The inspector showing the CSS rules for the class gui-popup-button.", width="800", height="490", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for the class gui-popup-button.", width="800", height="490" %}
 
 #### The popup card
 
@@ -104,7 +103,7 @@ This is a floating card child to its anchor
 semantically wrapping the button list.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LSeLIFhe7yuG9QoR1VM9.png",
-alt="The inspector showing the CSS rules for the class gui-popup", width="800", height="629", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for the class gui-popup", width="800", height="629" %}
 
 #### The secondary action(s)
 
@@ -113,7 +112,7 @@ action button](#the-primary-action-button) features an icon and a complimentary
 style to the primary button.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/5GBSno8pMaNVRZJT7yxd.png",
-alt="The inspector showing the CSS rules for <button>.", width="800", height="679", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for <button>.", width="800", height="679" %}
 
 ### Custom properties
 
@@ -282,7 +281,7 @@ should fit inline with other split buttons, actions or elements.
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/a55qj9gU1qmoTlnbQvDe.png",
-alt="The split button.", width="800", height="241", class="w-screenshot" %}
+alt="The split button.", width="800", height="241" %}
 
 #### The `<button>` styling
 
@@ -293,8 +292,7 @@ input types. Button styles add up quickly.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/psxWs3LOw3uRceD2FzFi.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -334,8 +332,7 @@ custom properties for the state:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/llQwSgee5Y2PtoiteLAx.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -364,8 +361,7 @@ The primary button needs a few special styles to complete the design effect:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q05zCTFPNQ5QDCR6R1q2.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -387,8 +383,7 @@ Lastly, for some flair, the light theme button and icon get a
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/8qkrdaVnJowC5Uvuqncw.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -422,8 +417,7 @@ The video below attempts to break this microinteraction down, to show how
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D2AqjpvafPAPB3CMXkhd.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -435,7 +429,7 @@ the primary button, it is transparent until otherwise hovered or interacted
 with, and stretched to fill.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/fiSlBJyM8x52b5msQBUY.png",
-alt="The arrow part of the split button used to trigger the popup.", width="800", height="241", class="w-screenshot" %}
+alt="The arrow part of the split button used to trigger the popup.", width="800", height="241" %}
 
 ```css
 .gui-popup-button {
@@ -524,8 +518,7 @@ who prefer reduced motion.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bsOaOSHe8ZZl0vnZAtmr.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -543,7 +536,7 @@ are thinner, and the shadow has a hint of brand blue to it. Like with buttons,
 strong UI and UX is a result of these little details stacking up.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/D7RWfwJW25G3kuzPSnlz.png",
-alt="A floating card element.", width="448", height="422", class="w-screenshot" %}
+alt="A floating card element.", width="448", height="422" %}
 
 ```css
 .gui-popup {
@@ -584,7 +577,7 @@ The icons and buttons are given brand colors to style nicely within each dark
 and light themed card:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ddCiS1PqDtjDRESUG4U1.png",
-alt="Links and icons for checkout, Quick Pay, and Save for later.", width="452", height="422", class="w-screenshot" %}
+alt="Links and icons for checkout, Quick Pay, and Save for later.", width="452", height="422" %}
 
 ```css
 .gui-popup {
@@ -610,7 +603,7 @@ The dark theme popup has text and icon shadow additions, plus a slightly more
 intense box shadow:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/4vOdW4OD1i4uNRQdTWH5.png",
-alt="The popup in the dark theme.", width="434", height="412", class="w-screenshot" %}
+alt="The popup in the dark theme.", width="434", height="412" %}
 
 ```css
 .gui-popup {
@@ -650,8 +643,7 @@ smooth.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2vJRCeIhxVitT79q78RR.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -671,8 +663,7 @@ Here's the list of logical properties used:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/lNn1KXfw1GprPJa9RFHO.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -720,8 +711,7 @@ popupButtons.forEach(element =>
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nlLgOPtwb4igmNEWxbg1.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -777,8 +767,7 @@ splitButtons.on('click', event => {
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gpHoUsZLgIRlDBA2127n.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}

@@ -21,23 +21,23 @@ feedback:
 
 最近のAndroid携帯にプログレッシブWebアプリをインストールした場合、アイコンに白い背景が表示されることに気付くかもしれません。 Android Oreoは、さまざまなデバイスモデルでさまざまな形でアプリアイコンを表示するアダプティブアイコンを導入しました。この新しい形式に従わないアイコンには、白い背景が表示されます。
 
-<figure class="w-figure">{% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="Androidの白い円の中にあるPWAアイコン", width="400", height="100" %} <figcaption class="w-figcaption">透明なPWAアイコンがAndroidの白い円の中に表示されます</figcaption></figure>
+<figure>{% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="Androidの白い円の中にあるPWAアイコン", width="400", height="100" %} <figcaption>透明なPWAアイコンがAndroidの白い円の中に表示されます</figcaption></figure>
 
 マスカブルアイコンは、より詳細な制御を可能にし、プログレッシブWebアプリでアダプティブアイコンを使用できるようにする新しいアイコン形式です。マスカブルアイコンを提供すると、アイコンが図形全体を埋めて、すべてのAndroidデバイスで見栄えが良くなります。 最近、FirefoxとChromeはこの新しい形式のサポートを追加しました。これをアプリに採用できます。
 
-<figure class="w-figure">{% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="Androidの円全体を埋めるPWAアイコン", width="400", height="100" %} <figcaption class="w-figcaption">代わりに、マスカブルアイコンが円全体を埋めます</figcaption></figure>
+<figure>{% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="Androidの円全体を埋めるPWAアイコン", width="400", height="100" %} <figcaption>代わりに、マスカブルアイコンが円全体を埋めます</figcaption></figure>
 
 ## 現在のアイコンは対応しているか。
 
 マスカブルアイコンはさまざまな形状をサポートする必要があるため、ブラウザが後で目的の形状とサイズにトリミングできるように、不透明な画像にパディングを付けます。最終的に選択される形状はブラウザやプラットフォームごとに異なる可能性があるため、特定の形状に依存しないことをお勧めします。
 
-<figure class="w-figure w-figure--inline-right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"], class="w-screenshot", autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption class="w-figcaption">さまざまなプラットフォーム固有の形状</figcaption></figure>
+<figure data-float="right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"], autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption>さまざまなプラットフォーム固有の形状</figcaption></figure>
 
 幸いなことに、すべてのプラットフォームで適用される、明確に定義され、[標準化された](https://w3c.github.io/manifest/#icon-masks)「最小セーフゾーン」があります。ロゴなどのアイコンの重要な部分は、アイコンの幅の40％の半径で、アイコンの中心にある円形の領域内に表示されることが望ましいとされます。外側の10％の端がトリミングされる場合があります。
 
 Chrome DevToolsを使用して、アイコンのどの部分がセーフゾーン内に収まるかを確認できます。プログレッシブWebアプリを開いた状態で、DevToolsを起動し、[**アプリケーション**]パネルに移動します。 [**アイコン]****セクションで、マスカブルアイコンの最小のセーフゾーンのみ**を表示するように選択できます。セーフゾーンのみが表示されるようにアイコンがトリミングされます。この安全な領域内にロゴが表示されている場合は、問題ありません。
 
-<figure class="w-figure">{% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="端がトリミングされたPWAアイコンを表示するDevToolsのアプリケーションパネル", width="762", height="423", class="w-screenshot" %} <figcaption class="w-figcaption">アプリケーションパネル</figcaption></figure>
+<figure>{% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="端がトリミングされたPWAアイコンを表示するDevToolsのアプリケーションパネル", width="762", height="423" %} <figcaption>アプリケーションパネル</figcaption></figure>
 
 さまざまなAndroidの図形でマスカブルアイコンをテストするには、私が作成した[Maskable.app](https://maskable.app/)ツールを使用します。アイコンを開くと、Maskable.appでさまざまな形やサイズを試すことができ、チームの他のメンバーとプレビューを共有することもできます。
 
@@ -45,7 +45,7 @@ Chrome DevToolsを使用して、アイコンのどの部分がセーフゾー�
 
 既存のアイコンに基づいてマスカブルアイコンを作成する場合は、 [Maskable.appエディタ](https://maskable.app/editor)を使用できます。アイコンをアップロードし、色とサイズを調整してから、画像をエクスポートします。
 
-<figure class="w-figure">{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.appエディタのスクリーンショット", width="670", height="569", class="w-screenshot" %} <figcaption class="w-figcaption"> Maskable.appエディタでアイコンを作成する</figcaption></figure>
+<figure>{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.appエディタのスクリーンショット", width="670", height="569" %} <figcaption> Maskable.appエディタでアイコンを作成する</figcaption></figure>
 
 マスカブルアイコン画像を作成して、DevToolsでテストしたら、新しいアセットを参照するように[Webアプリマニフェスト](https://developers.google.com/web/fundamentals/web-app-manifest)を更新する必要があります。 Webアプリマニフェストは、Webアプリに関する情報をJSONファイルで提供し、[`icons`配列](https://developers.google.com/web/fundamentals/web-app-manifest#icons)を含みます。
 

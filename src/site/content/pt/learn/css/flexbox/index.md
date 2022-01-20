@@ -40,13 +40,13 @@ Os layouts flexíveis possuem os seguintes recursos, que você poderá explorar 
 
 A chave para entender o flexbox é entender o conceito de eixo principal e eixo transversal. O eixo principal é aquele definido por sua propriedade `flex-direction` Se for `row` seu eixo principal está ao longo da linha, se for `column` seu eixo principal está ao longo da coluna.
 
-<figure class="w-figure">{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt = "Três caixas próximas umas das outras com uma seta apontando da esquerda para a direita. A seta é rotulada como Eixo principal", width = "800", height = " 320 "%}</figure>
+<figure>{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt = "Três caixas próximas umas das outras com uma seta apontando da esquerda para a direita. A seta é rotulada como Eixo principal", width = "800", height = " 320 "%}</figure>
 
 Os itens flexíveis se movem como um grupo no eixo principal. Lembre-se: temos um monte de coisas e estamos tentando obter o melhor layout para eles como um grupo.
 
 O eixo cruzado corre na direção oposta ao eixo principal, portanto, se `flex-direction` for `row` o eixo cruzado corre ao longo da coluna.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Três caixas de alturas diferentes, uma ao lado da outra com uma seta apontando da esquerda para a direita. A seta está rotulada como Eixo principal. inferior. Este é rotulado como eixo cruzado", width="800", height="320" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Três caixas de alturas diferentes, uma ao lado da outra com uma seta apontando da esquerda para a direita. A seta está rotulada como Eixo principal. inferior. Este é rotulado como eixo cruzado", width="800", height="320" %}</figure>
 
 Você pode fazer duas coisas no eixo transversal. Você pode mover os itens individualmente ou como um grupo para que eles se alinhem uns com os outros e com o contêiner flexível. Além disso, se você encapsulou as linhas flexíveis, pode tratar essas linhas como um grupo para controlar como o espaço é atribuído a essas linhas. Você verá como tudo isso funciona na prática ao longo deste guia, por enquanto, apenas tenha em mente que o eixo principal segue sua `flex-direction`.
 
@@ -129,7 +129,7 @@ Com o eixo principal e cruzado mais o modo de escrita a ser considerado, o fato 
 
 O valor inicial da propriedade `flex-wrap` `nowrap`. Isso significa que, se não houver espaço suficiente no contêiner, os itens transbordarão.
 
-<figure class="w-figure">{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt = "Um contêiner flexível com nove itens dentro, os itens diminuíram de modo que uma palavra está em uma linha, mas não há espaço suficiente para mostrá-los lado a lado para que os itens flexíveis tenham se estendido para fora da caixa do contêiner. ", width =" 800 ", height =" 282 "%}<figcaption class="w-figcaption"> Assim que atingirem o tamanho mínimo do conteúdo, os itens flexíveis começarão a estourar seu contêiner</figcaption></figure>
+<figure>{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt = "Um contêiner flexível com nove itens dentro, os itens diminuíram de modo que uma palavra está em uma linha, mas não há espaço suficiente para mostrá-los lado a lado para que os itens flexíveis tenham se estendido para fora da caixa do contêiner. ", width =" 800 ", height =" 282 "%}<figcaption> Assim que atingirem o tamanho mínimo do conteúdo, os itens flexíveis começarão a estourar seu contêiner</figcaption></figure>
 
 Os itens exibidos com os valores iniciais serão reduzidos o máximo possível, até o `min-content` antes que ocorra o estouro.
 

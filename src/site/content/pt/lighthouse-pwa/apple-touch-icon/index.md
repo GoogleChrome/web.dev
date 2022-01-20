@@ -15,7 +15,7 @@ Quando os usuários do Safari do iOS adicionam [Progressive Web Apps (PWAs)](/di
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas sem uma tag `<link rel="apple-touch-icon" href="/example.png">` em `<head>`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="O apple-touch-icon fornecido não é válido", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="O apple-touch-icon fornecido não é válido", width="800", height="95" %}</figure>
 
 {% Aside %} O link `rel="apple-touch-icon-precomposed"` é aprovado pela auditoria, mas está obsoleto desde o iOS 7. Em vez disso, use `rel="apple-touch-icon"`. {% endAside %}
 

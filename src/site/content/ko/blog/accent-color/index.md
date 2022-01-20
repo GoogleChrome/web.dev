@@ -22,11 +22,11 @@ accent-color: hotpink;
 
 [CSS UI 사양](https://www.w3.org/TR/css-ui-4/#widget-accent)의 CSS `accent-color`는 CSS의 한 라인으로 엘리먼트에 색조를 지정합니다. 이는 브랜드를 엘리먼트로 가져올 수 있는 방법을 제공함으로써 사용자 정의에 대한 노력을 덜어줍니다.
 
-<figure class="w-figure ">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", class="w-screenshot", alt="체크상자, 라디오 버튼, 범위 슬라이더 및 진행 요소가 모두 색조 지정된 핫핑크인 강조 색상 데모에 대한 밝은 테마 스크린샷.", width="800", height="548" %} <figcaption class="w-figure"> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">데모</a> </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", alt="체크상자, 라디오 버튼, 범위 슬라이더 및 진행 요소가 모두 색조 지정된 핫핑크인 강조 색상 데모에 대한 밝은 테마 스크린샷.", width="800", height="548" %} <figcaption> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">데모</a> </figcaption></figure>
 
 `accent-color` 속성은 [`color-scheme`](/color-scheme/)과도 작동하므로 작성자가 밝은 요소와 어두운 요소 모두에 색조를 지정할 수 있습니다. 다음 예에서 사용자는 어두운 테마 활성화를 가지며 페이지는 `color-scheme: light dark`을 사용하고 어두운 테마 핫핑크 색조 지정된 컨트롤을 위해 동일한 `accent-color: hotpink`를 사용합니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="체크상자, 라디오 버튼, 범위 슬라이더 및 진행 요소가 모두 색조 지정된 핫핑크인 강조 색상 데모에 대한 어두운 테마 스크린샷.", width="800", height="548" %} <figcaption class="w-figure"> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a> </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="체크상자, 라디오 버튼, 범위 슬라이더 및 진행 요소가 모두 색조 지정된 핫핑크인 강조 색상 데모에 대한 어두운 테마 스크린샷.", width="800", height="548" %} <figcaption> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a> </figcaption></figure>
 
 ### 브라우저 지원
 
@@ -58,7 +58,7 @@ accent-color: hotpink;
 
 액세스할 수 없는 요소가 존재하는 것을 방지하기 위해 `accent-color`가 있는 브라우저는 사용자 정의 액센트와 함께 사용할 [적격 대비 색상](https://webaim.org/articles/contrast/)을 결정해야 합니다. 다음은 Chrome 94(왼쪽)와 Firefox 92 Nightly(오른쪽)의 알고리즘이 어떻게 다른지 보여주는 스크린샷입니다.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", class="w-screenshot", alt="다양한 색조와 음영으로 전체 체크상자 스펙트럼을 렌더링하는 나란히 놓인 Firefox와 Chromium 스크린샷.", width="800", height="832" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", alt="다양한 색조와 음영으로 전체 체크상자 스펙트럼을 렌더링하는 나란히 놓인 Firefox와 Chromium 스크린샷.", width="800", height="832" %}
 
 여기에서 가장 중요한 것은 **브라우저를 신뢰**하는 것입니다. 브랜드 색상을 제공하고 브라우저가 현명한 결정을 내릴 것이라고 신뢰하세요.
 

@@ -17,7 +17,7 @@ feedback:
 
 La instalación de tu aplicación web progresiva (PWA) puede facilitar a los usuarios su búsqueda y uso. Incluso con la promoción del navegador, algunos usuarios no se dan cuenta de que pueden instalar una PWA, por lo que puede ser útil brindar una experiencia en la aplicación que puedas usar para promover y habilitar la instalación de tu PWA.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="Captura de pantalla de un botón de instalación simple de una PWA", width="800", height="368" %} <figcaption class="w-figcaption"> Un botón de instalación simple  provisto dentro de tu PWA.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="Captura de pantalla de un botón de instalación simple de una PWA", width="800", height="368" %} <figcaption> Un botón de instalación simple  provisto dentro de tu PWA.</figcaption></figure>
 
 Esta lista no es de ninguna manera exhaustiva, pero ofrece un punto de partida para diferentes formas de promover la instalación de tu PWA. Independientemente del patrón *o patrones* que utilices, todos conducen al mismo código que activa el flujo de instalación, documentado en [Cómo proporcionar tu propia experiencia de instalación en la aplicación](/customize-install/).
 
@@ -37,8 +37,8 @@ Existen algunas prácticas recomendadas que se aplican independientemente de los
 Cuando se cumplen [ciertos criterios](/install-criteria/), la mayoría de los navegadores le indicarán automáticamente al usuario que tu aplicación web progresiva se puede instalar. Por ejemplo, el escritorio de Chrome muestra un botón de instalación en el cuadro multifunción.
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Captura de pantalla del cuadro multifunción con indicador de instalación visible", width="800", height="307" %} <figcaption class="w-figcaption"> Promoción de instalación proporcionada por el navegador (escritorio)</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Captura de pantalla de la promoción de instalación proporcionada por el navegador", width="800", height="307" %}<figcaption class="w-figcaption"> Promoción de instalación proporcionada por el navegador (móvil)</figcaption></figure>
+  <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Captura de pantalla del cuadro multifunción con indicador de instalación visible", width="800", height="307" %} <figcaption> Promoción de instalación proporcionada por el navegador (escritorio)</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Captura de pantalla de la promoción de instalación proporcionada por el navegador", width="800", height="307" %}<figcaption> Promoción de instalación proporcionada por el navegador (móvil)</figcaption></figure>
 </div>
 
 <div class="w-clearfix"> </div>
@@ -57,7 +57,7 @@ Los sitios que tienen en cuenta cuándo activan la interfaz de usuario de promoc
 
 La experiencia de usuario más simple posible es incluir un botón de 'Instalar' o de 'Obtener aplicación' en una ubicación adecuada en tu contenido web. Asegúrate de que el botón no bloquee otras funciones importantes y no obstaculice el recorrido del usuario a través de tu aplicación.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Botón personalizado de instalación", width="800", height="448" %}<figcaption class="w-figcaption"> Botón de instalación simple</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Botón personalizado de instalación", width="800", height="448" %}<figcaption> Botón de instalación simple</figcaption></figure>
 
 <div class="w-clearfix"> </div>
 
@@ -65,11 +65,11 @@ La experiencia de usuario más simple posible es incluir un botón de 'Instalar'
 
 Este es un botón de instalación que forma parte del encabezado de tu sitio. Otro contenido de encabezado a menudo incluye la marca del sitio, como un logotipo y el menú de hamburguesas. Los encabezados pueden tener la propiedad de `position:fixed` o no, según la funcionalidad de tu sitio y las necesidades del usuario.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Botón personalizado de instalación en el encabezado", width="800", height="448" %}<figcaption class="w-figcaption"> Botón personalizado de instalación en el encabezado</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Botón personalizado de instalación en el encabezado", width="800", height="448" %}<figcaption> Botón personalizado de instalación en el encabezado</figcaption></figure>
 
 Cuando se usa adecuadamente, promover la instalación de PWA desde el encabezado de tu sitio es una excelente manera de facilitar que tus clientes más leales regresen a tu experiencia. Los píxeles en el encabezado de tu PWA son valiosos, así que asegúrate de que tu llamado a la acción de instalación tenga el tamaño adecuado, sea más importante que otro posible contenido de encabezado y no sea intrusivo.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Botón personalizado de instalación en el encabezado", width="800", height="430" %} <figcaption class="w-figcaption"> Botón personalizado de instalación en el encabezado</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Botón personalizado de instalación en el encabezado", width="800", height="430" %} <figcaption> Botón personalizado de instalación en el encabezado</figcaption></figure>
 
 Asegúrate de que tú:
 
@@ -81,7 +81,7 @@ Asegúrate de que tú:
 
 ### Menú de navegación {: #nav }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Botón personalizado de instalación en el menú de navegación", width="800", height="1117" %}<figcaption class="w-figcaption"> Agrega un botón y/o promoción de instalación en un menú de navegación deslizable.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Botón personalizado de instalación en el menú de navegación", width="800", height="1117" %}<figcaption> Agrega un botón y/o promoción de instalación en un menú de navegación deslizable.</figcaption></figure>
 
 El menú de navegación es un gran lugar para promover la instalación de tu aplicación, ya que los usuarios que abren el menú están indicando que están involucrados con tu experiencia.
 
@@ -96,7 +96,7 @@ Asegúrate de que tú:
 
 El propósito de una página de aterrizaje es promocionar tus productos y servicios, por lo que este es un lugar en el que es apropiado para promocionar a lo grande los beneficios de instalar tu PWA.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="Solicitud personalizada de instalación en la página de aterrizaje", width="800", height="1117" %}<figcaption class="w-figcaption"> Solicitud personalizada de instalación en la página de aterrizaje</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="Solicitud personalizada de instalación en la página de aterrizaje", width="800", height="1117" %}<figcaption> Solicitud personalizada de instalación en la página de aterrizaje</figcaption></figure>
 
 Primero, explica la propuesta de valor de tu sitio y luego informa a los visitantes qué obtendrán al instalar la aplicación.
 
@@ -110,7 +110,7 @@ Asegúrate de que tú:
 
 ### Instalar un banner {: #banner }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Banner personalizado de instalación en la parte superior de la página", width="800", height="1000" %}<figcaption class="w-figcaption"> Un banner descartable en la parte superior de la página.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Banner personalizado de instalación en la parte superior de la página", width="800", height="1000" %}<figcaption> Un banner descartable en la parte superior de la página.</figcaption></figure>
 
 La mayoría de los usuarios han encontrado banners de instalación en experiencias móviles y están familiarizados con las interacciones que ofrece un banner. Los banners deben usarse con cuidado porque pueden molestar al usuario.
 
@@ -125,11 +125,11 @@ Asegúrate de que tú:
 
 La interfaz de usuario temporal, como el patrón de diseño de [Snackbar](https://material.io/components/snackbars/), notifica al usuario y te permite completar una acción fácilmente. En este caso, instalar la aplicación. Cuando se usan correctamente, este tipo de patrones de IU no interrumpen el flujo del usuario y, por lo general, se descartan automáticamente si el usuario los ignora.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="Banner personalizado de instalación como snackbar.", width="800", height="448" %}<figcaption class="w-figcaption"> Un snackbar descartable que indica que la PWA es instalable.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="Banner personalizado de instalación como snackbar.", width="800", height="448" %}<figcaption> Un snackbar descartable que indica que la PWA es instalable.</figcaption></figure>
 
 Muestra la snackbar después de algunos compromisos e interacciones con tu aplicación. Si aparece al cargar la página, o fuera de contexto, se puede pasar por alto fácilmente o provocar una sobrecarga cognitiva. Cuando esto sucede, los usuarios simplemente descartarán todo lo que ven. Recuerda, es posible que los nuevos usuarios de tu sitio no estén listos para instalar tu PWA, por lo tanto, es mejor esperar hasta que tengas fuertes señales de interés del usuario antes de usar este patrón, por ejemplo, visitas repetidas, un inicio de sesión de usuario o un evento similar de conversión.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="Banner personalizado de instalación como snackbar.", width="800", height="424" %}<figcaption class="w-figcaption"> Un snackbar descartable que indica que la PWA es instalable.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="Banner personalizado de instalación como snackbar.", width="800", height="424" %}<figcaption> Un snackbar descartable que indica que la PWA es instalable.</figcaption></figure>
 
 Asegúrate de que tú:
 
@@ -143,11 +143,11 @@ Asegúrate de que tú:
 
 Inmediatamente después de un evento de conversión de usuario, por ejemplo, después de una compra en un sitio de comercio electrónico, es una excelente oportunidad para promover la instalación de tu PWA. El usuario está claramente comprometido con tu contenido, y una conversión a menudo indica que el usuario volverá a interactuar con tus servicios.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="Captura de pantalla de la promoción de instalación después de la conversión.", width="800", height="448" %} <figcaption class="w-figcaption"> Instala la promoción después de que el usuario haya completado la compra.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="Captura de pantalla de la promoción de instalación después de la conversión.", width="800", height="448" %} <figcaption> Instala la promoción después de que el usuario haya completado la compra.</figcaption></figure>
 
 ### Viaje de pago o reserva {: #journey }
 
-<figure class="w-figure w-figure--inline-right">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt = "Instalar la promoción después de un viaje del usuario", width = "800", height = "1419"%}<figcaption class="w-figcaption"> Instalar la promoción después de un viaje del usuario.</figcaption></figure>
+<figure data-float="right">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt = "Instalar la promoción después de un viaje del usuario", width = "800", height = "1419"%}<figcaption> Instalar la promoción después de un viaje del usuario.</figcaption></figure>
 
 Muestra una promoción de instalación durante o después de un viaje secuencial, como los típicos flujos de pago o reserva. Si muestras la promoción después de que el usuario haya completado el viaje, a menudo puedes hacerla más prominente una vez que el viaje sea completado.
 
@@ -163,7 +163,7 @@ Asegúrate de que tú:
 
 Esta promoción es un caso especial del patrón promocional del [viaje](#journey) donde la tarjeta de promoción puede ser más prominente.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="Botón personalizado de instalación en la página de registro.", width="800", height="1117" %} <figcaption class="w-figcaption"> Botón personalizado de instalación en la página de registro.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="Botón personalizado de instalación en la página de registro.", width="800", height="1117" %} <figcaption> Botón personalizado de instalación en la página de registro.</figcaption></figure>
 
 Por lo general, estas páginas solo las ven los usuarios comprometidos, cuando ya se ha establecido la propuesta de valor de tu PWA. Es normal que no haya mucho otro contenido útil para colocar en estas páginas. Como resultado, es menos perturbador hacer un llamado a la acción más grande siempre que no estorbe.
 
@@ -183,7 +183,7 @@ Las técnicas de promoción en línea entrelazan las promociones con el contenid
 
 Aparece una promoción de instalación en el feed entre artículos de noticias u otras listas de tarjetas de información en tu PWA.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="Instala la promoción en el feed de contenido.", width="800", height="1000" %}  <figcaption class="w-figcaption"> Instala la promoción en el feed de contenido.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="Instala la promoción en el feed de contenido.", width="800", height="1000" %}  <figcaption> Instala la promoción en el feed de contenido.</figcaption></figure>
 
 Tu objetivo es mostrar a los usuarios cómo acceder al contenido que disfrutan de una manera más conveniente. Concéntrate en promover características y funcionalidades que serán útiles para tus usuarios.
 

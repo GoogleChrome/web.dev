@@ -31,7 +31,7 @@ tags:
 - 인증서가 mkcert 생성 인증 기관에 의해 서명되었음을 확인하면 브라우저는 해당 인증서가 신뢰할 수 있는 인증 기관으로 등록되었는지 확인합니다.
 - mkcert는 신뢰할 수 있는 기관으로 등재되어 있으므로 브라우저가 인증서를 신뢰하고 HTTPS 연결을 만듭니다.
 
-<figure class="w-figure">{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="mkcert 작동 방식 다이어그램.", width="800", height="787" %} <figcaption class="w-figcaption">mkcert 작동 방식 다이어그램.</figcaption></figure>
+<figure>{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="mkcert 작동 방식 다이어그램.", width="800", height="787" %} <figcaption>mkcert 작동 방식 다이어그램.</figcaption></figure>
 
 mkcert(및 유사 도구)는 다음과 같은 몇 가지 이점을 제공합니다.
 
@@ -224,7 +224,7 @@ mkcert와 같은 로컬 인증 기관을 사용하지 않고 대신 **인증서�
 - mkcert와 같은 로컬 CA를 사용하는 것보다 반드시 더 쉽거나 빠른 것은 아닙니다.
 - 브라우저 컨텍스트에서 이 기술을 사용하지 않는 경우 서버에 대한 인증서 확인을 비활성화해야 할 수 있습니다. 프로덕션 과정에서 다시 활성화하지 않으면 위험할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="자체 서명된 인증서가 사용될 때 브라우저에 표시되는 경고 스크린샷.", width="800", height="598" %}<figcaption class="w-figcaption">자체 서명된 인증서가 사용될 때 브라우저에 경고가 표시됩니다.</figcaption></figure>
+<figure>{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="자체 서명된 인증서가 사용될 때 브라우저에 표시되는 경고 스크린샷.", width="800", height="598" %}<figcaption>자체 서명된 인증서가 사용될 때 브라우저에 경고가 표시됩니다.</figcaption></figure>
 
 {% Aside %} 인증서를 지정하지 않으면 [React](https://create-react-app.dev/docs/using-https-in-development/) 및 [Vue](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve)의 개발 서버 HTTPS 옵션이 내부적으로 자체 서명된 인증서를 생성합니다. 이 방법은 빠르지만 브라우저 경고가 표시되고 위에 나열된 자체 서명 인증서와 관련된 다른 함정이 발생합니다. 다행히 프론트엔드 프레임워크의 내장 HTTPS 옵션을 **사용하고** mkcert 또는 이와 유사한 도구를 통해 생성된 로컬로 신뢰할 수 있는 인증서를 지정할 수 있습니다. 이 작업은 [mkcert에서 React 예제](/#setup:~:text=a%20React%20development%20server)를 사용하여 참조하십시오. {% endAside %}
 
@@ -232,7 +232,7 @@ mkcert와 같은 로컬 인증 기관을 사용하지 않고 대신 **인증서�
 
 HTTPS를 사용하여 브라우저에서 로컬로 실행되는 사이트를 열면 브라우저가 로컬 개발 서버의 인증서를 확인합니다. 사용자가 직접 서명한 인증서가 확인되면 신뢰할 수 있는 인증 기관으로 등록되어 있는지 여부를 확인합니다. 사용자가 직접 서명하지 않았기 때문에 브라우저는 인증서를 신뢰할 수 없으며, 연결이 안전하지 않음을 알리는 경고를 표시합니다. 계속하면 HTTPS 연결이 생성되므로 위험을 감수하고 진행할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="브라우저가 자체 서명 인증서를 신뢰하지 않는 이유: 다이어그램.", width="800", height="833" %}<figcaption class="w-figcaption"> 브라우저가 자체 서명된 인증서를 신뢰하지 않는 이유.</figcaption></figure>
+<figure>{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="브라우저가 자체 서명 인증서를 신뢰하지 않는 이유: 다이어그램.", width="800", height="833" %}<figcaption> 브라우저가 자체 서명된 인증서를 신뢰하지 않는 이유.</figcaption></figure>
 
 {% endDetails %}
 

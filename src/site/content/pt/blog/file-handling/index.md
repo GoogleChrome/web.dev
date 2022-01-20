@@ -174,9 +174,9 @@ Não havia suporte para DevTools no momento em que este artigo foi redigido, mas
 
 Adicionei suporte para o gerenciamento de arquivos ao [Excalidraw](https://excalidraw.com/) , um aplicativo de desenho ao estilo cartoon. Para testá-lo, primeiro você precisa instalar o Excalidraw. Ao criar um arquivo com ele e armazená-lo em algum lugar do sistema de arquivos, você pode abrir o arquivo com um clique duplo ou com o botão direito e selecionar "Excalidraw" no menu de contexto. Você pode verificar a [implementação](https://github.com/excalidraw/excalidraw/search?q=launchqueue&type=code) no código-fonte.
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt = "A janela do localizador do macOS com um arquivo Excalidraw.", width = "800", height = "422", class = "w-screenshot w-screenshot --preenchidas" %}<figcaption class="w-figcaption"> Clique duas vezes ou clique com o botão direito em um arquivo no explorador de arquivos do seu sistema operacional.</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt = "A janela do localizador do macOS com um arquivo Excalidraw.", width = "800", height = "422" %}<figcaption> Clique duas vezes ou clique com o botão direito em um arquivo no explorador de arquivos do seu sistema operacional.</figcaption></figure>
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt = "O menu de contexto que aparece ao clicar com o botão direito em um arquivo com o item 'Abrir com… Excalidraw'.", width = "488", height = " 266 ", class =" w-screenshot w-screenshot - preenchido "%}<figcaption class="w-figcaption"> Excalidraw é o gerenciador de arquivos padrão para arquivos <code>.excalidraw</code></figcaption>.</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt = "O menu de contexto que aparece ao clicar com o botão direito em um arquivo com o item 'Abrir com… Excalidraw'.", width = "488", height = " 266 " %}<figcaption> Excalidraw é o gerenciador de arquivos padrão para arquivos <code>.excalidraw</code></figcaption>.</figure>
 
 ## Segurança
 

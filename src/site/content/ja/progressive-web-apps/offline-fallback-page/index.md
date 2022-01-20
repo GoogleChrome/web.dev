@@ -13,27 +13,27 @@ tags:
 
 Googleアシスタントアプリ、Slackアプリ、Zoomアプリ、および携帯電話やパソコン上の他のほとんどのプラットフォーム固有のアプリに共通するものは何ですか？そうです、彼らは常に少なくともあなたに*何かを*与えます。ネットワークに接続していない場合でも、アシスタントアプリを開くか、Slackに入る、またはZoomを起動することができます。*特に意味のあるものが得られない場合*や、達成したいことを達成できない場合もありますが、少なくとも何かを取得し、アプリを制御できます。
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-apps-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="オフライン中のGoogle Assistantモバイルアプリ。", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-assistant"> Google Assistant. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="オフライン中のGoogle Assistantモバイルアプリ。", width="621", height="1344" %} <figcaption id="fig-assistant"> Google Assistant. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="オフライン中のSlackモバイルアプリ。", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-slack"> Slack. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="オフライン中のSlackモバイルアプリ。", width="621", height="1344" %} <figcaption id="fig-slack"> Slack. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="オフライン中のZoomモバイルアプリ。", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-zoom"> Zoom. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="オフライン中のZoomモバイルアプリ。", width="621", height="1344" %} <figcaption id="fig-zoom"> Zoom. </figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">プラットフォーム固有のアプリでは、ネットワークに接続していなくても、何かを得ることができます。</figcaption>
+  <figcaption id="fig-apps-wrapper">プラットフォーム固有のアプリでは、ネットワークに接続していなくても、何かを得ることができます。</figcaption>
 
 
 
 対照的に、従来、Webでは、オフラインのときは何も得られません。 Chromeは[オフラインの恐竜ゲーム](https://www.blog.google/products/chrome/chrome-dino/)を提供しますが、それだけです。
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-offline-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="オフライン恐竜ゲームを表示するGoogle Chromeモバイルアプリ。", width="800", height="1731" %} <figcaption class="w-figcaption" id="fig-chrome-ios"> Google Chrome for iOS. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="オフライン恐竜ゲームを表示するGoogle Chromeモバイルアプリ。", width="800", height="1731" %} <figcaption id="fig-chrome-ios"> Google Chrome for iOS. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="オフライン恐竜ゲームを表示するGoogle Chromeデスクトップアプリ。", width="800", height="607" %} <figcaption class="w-figcaption" id="fig-chrome"> Google Chrome for macOS. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="オフライン恐竜ゲームを表示するGoogle Chromeデスクトップアプリ。", width="800", height="607" %} <figcaption id="fig-chrome"> Google Chrome for macOS. </figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">Webでは、ネットワーク接続がない場合、デフォルトでは何も得られません。</figcaption>
+  <figcaption id="fig-offline-wrapper">Webでは、ネットワーク接続がない場合、デフォルトでは何も得られません。</figcaption>
 
 
 
@@ -41,7 +41,7 @@ Googleアシスタントアプリ、Slackアプリ、Zoomアプリ、および�
 
 ただし、このようにする必要はありません。[サービスワーカーとCache Storage API](/service-workers-cache-storage/)のおかげで、カスタマイズされたオフラインエクスペリエンスをユーザーに提供できます。これは、ユーザーが現在オフラインであるという情報を含むシンプルなブランドページにすることもできますが、たとえば、手動の **[再接続]** ボタンと自動再接続試行のカウントダウンを備えた有名な[trivagoオフライン迷路ゲーム](https://www.trivago.com/offline)のようなもっとクリエイティブなソリューションにすることもできます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="trivagoオフライン迷路が表示されたtrivagoオフラインページ。", width="800", height="616" %} <figcaption class="w-figcaption">trivagoオフライン迷路。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="trivagoオフライン迷路が表示されたtrivagoオフラインページ。", width="800", height="616" %} <figcaption>trivagoオフライン迷路。</figcaption></figure>
 
 ### サービスワーカーの登録
 

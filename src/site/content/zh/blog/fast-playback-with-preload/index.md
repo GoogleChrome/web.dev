@@ -18,7 +18,7 @@ tags:
 播放开始得越快，意味着观看您的视频或收听<br>您的音频的人越多。[这是众所周知的事实](https://www.digitaltrends.com/web/buffer-rage/)。在本文中，我将探讨一些实用的技术，可以使用这些技术根据您的用例主动预加载资源来加速音频和视频播放。
 
 <figure>
-  <video controls muted playsinline class="w-screenshot">
+  <video controls muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1" type="video/mp4">
   </source></source></video>

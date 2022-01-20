@@ -51,7 +51,7 @@ Até recentemente, o conteúdo misto passivo era carregado em todos os navegador
 
 Sempre que detecta conteúdo misto ou atualiza automaticamente conteúdo misto passivo, o Chrome registra mensagens detalhadas na guia **Problemas** das DevTools para orientar você sobre como corrigir o problema específico.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="A guia Problemas no Chrome DevTools mostra informações detalhadas sobre o problema de conteúdo misto específico e como corrigi-lo", width="800", height="310", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="A guia Problemas no Chrome DevTools mostra informações detalhadas sobre o problema de conteúdo misto específico e como corrigi-lo", width="800", height="310" %}</figure>
 
 ### Conteúdo misto ativo
 
@@ -61,7 +61,7 @@ Devido à gravidade dessa ameaça, a maioria dos navegadores já bloqueia esse t
 
 Esta outra [demonstração](https://active-mixed-content.glitch.me/) contém exemplos de conteúdo misto ativo. [Carregue o exemplo por HTTP](http://active-mixed-content.glitch.me/) para ver o conteúdo que é bloqueado quando você [carrega o exemplo por HTTPS](https://active-mixed-content.glitch.me/). O conteúdo bloqueado também será detalhado na guia **Problemas.**
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="A guia Problemas no Chrome DevTools mostra informações detalhadas sobre o problema de conteúdo misto específico e como corrigi-lo", width="800", height="361", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="A guia Problemas no Chrome DevTools mostra informações detalhadas sobre o problema de conteúdo misto específico e como corrigi-lo", width="800", height="361" %}</figure>
 
 {% Aside %} Os navegadores também destacam o conteúdo bloqueado no DevTools. Problemas de conteúdo bloqueado são detalhados na guia **Problemas** em navegadores baseados no Chromium. O Firefox e o Safari registram mensagens no console. {% endAside %}
 

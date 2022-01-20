@@ -125,7 +125,7 @@ FLoC를 사용하면 브라우저는 FLoC 서비스 또는 다른 사람과 검�
 4. 웹 브라우저는 FLoC 서비스에서 "집단 공간"을 설명하는 이 데이터를 가져옵니다.
 5. 사용자가 웹에서 이동할 때 브라우저는 [알고리즘을 사용](#floc-algorithm)하여 자신의 검색 기록과 가장 근접하게 일치하는 "집단 공간"의 영역을 주기적으로 계산합니다.
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="FLoC 서버에 의해 생성된 '탐색 기록 공간'의 다이어그램으로, 각각 집단 번호가 있는 여러 세그먼트를 보여줍니다.", width="400", height="359" %}<figcaption class="w-figcaption"> FLoC 서비스는 "코호트 공간"을 수천 개의 세그먼트로 나눕니다(여기에는 몇 개만 표시됨).</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="FLoC 서버에 의해 생성된 '탐색 기록 공간'의 다이어그램으로, 각각 집단 번호가 있는 여러 세그먼트를 보여줍니다.", width="400", height="359" %}<figcaption> FLoC 서비스는 "코호트 공간"을 수천 개의 세그먼트로 나눕니다(여기에는 몇 개만 표시됨).</figcaption></figure>
 
 {% Aside %} 이 과정에서 사용자의 검색 기록은 FLoC 서비스나 제3자와 공유되지 않습니다. 브라우저의 집단은 사용자의 기기에서 브라우저에 의해 계산됩니다. FLoC 서비스는 사용자 데이터를 수집하거나 저장하지 않습니다. {% endAside %}
 
@@ -137,7 +137,7 @@ FLoC를 사용하면 브라우저는 FLoC 서비스 또는 다른 사람과 검�
 
 위의 예에서 Yoshi와 Alex의 브라우저 집단은 모두 1354입니다. 향후 Yoshi의 브라우저와 Alex의 브라우저는 관심사가 변경되면 다른 집단으로 이동할 수 있습니다. 아래 예에서 Yoshi의 브라우저는 집단 1101로 이동하고 Alex의 브라우저는 집단 1378로 이동합니다. 다른 사람들의 브라우저는 탐색 관심 분야가 변경됨에 따라 집단 안팎으로 이동합니다.
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="FLoC 서버에 의해 생성된 '탐색 기록 공간'의 다이어그램으로, 각각 코호트 번호가 있는 여러 브라우저 세그먼트를 보여줍니다. 다이어그램이 시간이 지나면서 탐색 관심사가 변경됨에 따라 Yoshi와 Alex가 한 집단에서 다른 집단으로 이동하는 것을 보여줍니다.", width="800", height="533" %}<figcaption class="w-figcaption"> Yoshi와 Alex의 브라우저 집단은 관심사가 바뀌면 바뀔 수 있습니다.</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="FLoC 서버에 의해 생성된 '탐색 기록 공간'의 다이어그램으로, 각각 코호트 번호가 있는 여러 브라우저 세그먼트를 보여줍니다. 다이어그램이 시간이 지나면서 탐색 관심사가 변경됨에 따라 Yoshi와 Alex가 한 집단에서 다른 집단으로 이동하는 것을 보여줍니다.", width="800", height="533" %}<figcaption> Yoshi와 Alex의 브라우저 집단은 관심사가 바뀌면 바뀔 수 있습니다.</figcaption></figure>
 
 {% Aside %} 집단은 사람들의 그룹이 아니라 탐색 활동의 그룹을 정의합니다. 브라우저는 활동이 변경됨에 따라 코호트 안팎으로 이동합니다. {% endAside %}
 

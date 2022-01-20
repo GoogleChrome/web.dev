@@ -48,7 +48,7 @@ feedback:
 
 这里，Cookie 可用于保持会话状态、存储常规偏好、启用统计或为拥有现有帐户的用户提供个性化内容等。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="嵌入内容的 URL 与页面 URL 不匹配的浏览器窗口图示。", width="468", height="383", style="max-width: 35vw;" %} <figcaption class="w-figcaption"> 如果嵌入的内容与顶级浏览上下文来自不同的网站，则是第三方内容。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="嵌入内容的 URL 与页面 URL 不匹配的浏览器窗口图示。", width="468", height="383", style="max-width: 35vw;" %} <figcaption> 如果嵌入的内容与顶级浏览上下文来自不同的网站，则是第三方内容。</figcaption></figure>
 
 此外，由于 Web 本身是可组合的，`<iframes>` 还用于嵌入也在顶级或第一方上下文中显示的内容。当网站显示在框架内时，该网站使用的任何 cookie 都将被视为第三方 cookie。如果您要创建的网站需要可以轻易嵌入其他网站，同时还要依赖 cookie 才能运行，那么您还需要确保这些 cookie 被标记为跨网站使用，或者可以在没有它们的情况下优雅地回退。
 
@@ -56,7 +56,7 @@ feedback:
 
 虽然“不安全”可能听起来有点令人不安，但这里指的是可能要更改状态的请求。在 Web 上主要是 POST 请求。标记为 `SameSite=Lax` 的 cookie 将在安全的顶级导航中发送，例如单击一个链接转到其他网站。但是，通过 POST 向其他网站提交 `<form>` 等行为不会包括 cookie。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="请求从一个页面移动到另一个页面的图示。", width="719", height="382", style="max-width: 35vw;" %} <figcaption class="w-figcaption"> 如果传入请求使用“安全”方法，则将发送 cookie。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="请求从一个页面移动到另一个页面的图示。", width="719", height="382", style="max-width: 35vw;" %} <figcaption> 如果传入请求使用“安全”方法，则将发送 cookie。</figcaption></figure>
 
 此模式用于可能将用户重定向到远程服务执行某些操作再返回的网站，例如重定向到第三方身份提供商。在用户离开网站之前，会设置一个包含一次性令牌的 cookie，期望可以在返回请求中检查此令牌，以缓解[跨站点请求伪造 (CSRF)](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) 攻击。如果该返回请求通过 POST 传入，则有必要将 cookie 标记为 `SameSite=None; Secure`。
 

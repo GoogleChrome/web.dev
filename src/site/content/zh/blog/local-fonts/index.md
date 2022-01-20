@@ -65,7 +65,7 @@ body {
 
 这种方法提供了一种很好的回退机制，可以节省带宽。 遗憾的是，互联网上没有完美的东西。`local()` 函数的问题在于它可能会被滥用于浏览器指纹识别。事实证明，用户安装的字体列表可以很容易识别。许多公司都有自己的企业字体，这些字体安装在员工的笔记本电脑上。例如，Google 有一种名为 *Google Sans* 的企业字体。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="显示 Google Sans 字体预览的 macOS 字体书应用。", width="800", height="420", class="w -screenshot w-screenshot--filled" %}<figcaption class="w-figcaption">安装在 Google 员工笔记本电脑上的 Google Sans 字体。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="显示 Google Sans 字体预览的 macOS 字体书应用。", width="800", height="420" %}<figcaption>安装在 Google 员工笔记本电脑上的 Google Sans 字体。</figcaption></figure>
 
 攻击者可以通过测试是否存在大量已知的公司字体（如*Google Sans）*来尝试确定某人为哪家公司工作。攻击者会尝试在画布上渲染以这些字体设置的文本并测量字形。如果字形与公司字体的已知形状相匹配，攻击者就会成功。如果字形不匹配，攻击者就知道使用了默认替代字体，因为没有安装公司字体。有关这类攻击和其他浏览器指纹识别攻击的完整详细信息，请阅读 Laperdix *等人*的[调查论文](http://www-sop.inria.fr/members/Nataliia.Bielova/papers/Lape-etal-20-TWEB.pdf)。
 

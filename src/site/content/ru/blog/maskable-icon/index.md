@@ -21,23 +21,23 @@ feedback:
 
 Установив прогрессивное веб-приложение на свежую модель Android, вы сможете заметить, что его иконка отображается на белом фоне. В Android Oreo были представлены адаптивные иконки приложений, принимающие различные формы на разных моделях устройств. Иконки, не соответствующие этому новому формату, имеют белый фон.
 
-<figure class="w-figure">{% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="Иконки PWA в белых кругах на Android", width="400", height="100" %} <figcaption class="w-figcaption">Прозрачные иконки PWA отображаются на Android внутри белых кругов</figcaption></figure>
+<figure>{% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="Иконки PWA в белых кругах на Android", width="400", height="100" %} <figcaption>Прозрачные иконки PWA отображаются на Android внутри белых кругов</figcaption></figure>
 
 Маскируемые иконки — это новый формат, который обеспечивает большую степень контроля, позволяя вашему прогрессивному веб-приложению использовать адаптивные иконки. Добавленная маскируемая иконка сможет заполнить форму целиком, благодаря чему ваше приложение будет замечательно смотреться на любых Android-устройствах. Firefox и Chrome недавно добавили поддержку этого нового формата, и вы можете использовать его в своих приложениях.
 
-<figure class="w-figure">{% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="Иконки PWA, покрывающие весь круг на Android", width="400", height="100" %} <figcaption class="w-figcaption">Маскируемые иконки покрывают круг целиком</figcaption></figure>
+<figure>{% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="Иконки PWA, покрывающие весь круг на Android", width="400", height="100" %} <figcaption>Маскируемые иконки покрывают круг целиком</figcaption></figure>
 
 ## Подходят ли мои нынешние иконки?
 
 Поскольку маскируемые иконки рассчитаны на поддержку различных форм, вам нужно предоставить непрозрачное изображение с некоторым отступом, которое браузер сможет позже обрезать до нужной формы и размера. Лучше не полагаться на какую-то конкретную форму, поскольку окончательный вариант может различаться в зависимости от браузера и платформы.
 
-<figure class="w-figure w-figure--inline-right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"], class="w-screenshot", autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption class="w-figcaption"> Различные формы иконок в зависимости от платформ </figcaption></figure>
+<figure data-float="right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"], autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption> Различные формы иконок в зависимости от платформ </figcaption></figure>
 
 К счастью, существует четко определенная и [стандартизированная](https://w3c.github.io/manifest/#icon-masks) «минимальная безопасная зона», соблюдаемая всеми платформами. Важные части вашей иконки, такие как логотип, должны находиться в пределах окружности в центре иконки с радиусом, равным 40% ее ширины. 10% внешнего края можно обрезать.
 
 Вы можете проверить, какие части ваших иконок попадают в безопасную зону, с помощью Chrome DevTools. Открыв прогрессивное веб-приложение, запустите DevTools и перейдите на панель «**Приложение**». В разделе «**Иконки**» вы можете выбрать «**Показывать только минимальную безопасную область для маскируемых иконок**». Ваши иконки будут обрезаны так, чтобы была видна только безопасная область. Если ваш логотип виден в этой безопасной зоне, все готово.
 
-<figure class="w-figure">{% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Панель приложений в DevTools, отображающая иконки PWA с обрезанными краями", width="762", height="423", class="w-screenshot" %} <figcaption class="w-figcaption">Панель приложений</figcaption></figure>
+<figure>{% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Панель приложений в DevTools, отображающая иконки PWA с обрезанными краями", width="762", height="423" %} <figcaption>Панель приложений</figcaption></figure>
 
 Чтобы протестировать маскируемую иконку на различными формах Android, используйте созданный мной инструмент [Maskable.app](https://maskable.app/). Откройте иконку, затем Maskable.app позволит вам опробовать различные формы и размеры, и вы сможете поделиться предварительным просмотром с другими членами своей команды.
 
@@ -45,7 +45,7 @@ feedback:
 
 Если вы хотите создать маскируемую иконку на основе существующей иконки, вы можете использовать [редактор Maskable.app](https://maskable.app/editor). Загрузите свою иконку, настройте цвет и размер, затем экспортируйте изображение.
 
-<figure class="w-figure">{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Снимок экрана редактора Maskable.app", width="670", height="569", class="w-screenshot" %} <figcaption class="w-figcaption">Создание иконок в редакторе Maskable.app</figcaption></figure>
+<figure>{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Снимок экрана редактора Maskable.app", width="670", height="569" %} <figcaption>Создание иконок в редакторе Maskable.app</figcaption></figure>
 
 После того, как вы создали маскируемое изображение иконки и протестировали его в DevTools, необходимо обновить [манифест веб-приложения](https://developers.google.com/web/fundamentals/web-app-manifest), чтобы он указывал на новые ресурсы. Манифест веб-приложения предоставляет информацию о вашем веб-приложении в файле JSON и включает [массив `icons`](https://developers.google.com/web/fundamentals/web-app-manifest#icons).
 

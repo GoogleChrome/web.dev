@@ -15,7 +15,7 @@ feedback:
 
 A continuación, se muestra una comparación de la misma aplicación con y sin pre-renderizado cargada en una conexión 3G simulada y un dispositivo móvil:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t5OiDw1VGxrbqbcxMh3J.gif", alt="Una comparación de carga de lado a lado. La versión que usa el renderizado previo se carga 4.2 segundos más rápido.", width="600", height="435", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t5OiDw1VGxrbqbcxMh3J.gif", alt="Una comparación de carga de lado a lado. La versión que usa el renderizado previo se carga 4.2 segundos más rápido.", width="600", height="435" %}</figure>
 
 {% Aside %} `react-snap` no es la única biblioteca que puede pre-renderizar contenido HTML estático para su aplicación React. [`react-snapshot`](https://github.com/geelen/react-snapshot) es otra alternativa. {% endAside %}
 
@@ -70,7 +70,7 @@ En lugar de solo usar `ReactDOM.render` para renderizar el elemento React raíz 
 
 La creación de la aplicación generará ahora archivos HTML estáticos como cargas útiles para cada ruta rastreada. Puede ver cómo se ve la carga útil HTML haciendo clic en la URL de la solicitud HTML y luego en la pestaña **Vistas previas** dentro de Chrome DevTools.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5U36PBU7H7Boswn5Gfq.png", alt="Una comparación antes y después. La toma de después muestra que el contenido se ha renderizado.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5U36PBU7H7Boswn5Gfq.png", alt="Una comparación antes y después. La toma de después muestra que el contenido se ha renderizado.", width="800", height="450" %}
 
 {% Aside %} ¡`react-snap` se puede usar para otros frameworks además de React! Esto incluye Vue y Preact. Se pueden encontrar más instrucciones sobre esto en el <a href="https://github.com/stereobooster/react-snap" data-md-type="link">README de `react-snap`</a>. {% endAside %}
 
@@ -88,7 +88,7 @@ Para ayudar a prevenir esto, el CSS **crítico**, o la cantidad mínima de CSS q
 
 Al observar la vista previa de respuesta en Chrome DevTools, ahora se mostrará la página con estilo con CSS crítico en línea.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sgxwVZfvpYchXnn1mQrY.png", alt="Una comparación de antes y después. La foto de después muestra que el contenido se ha renderizado y tiene un estilo debido al CSS crítico en línea.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sgxwVZfvpYchXnn1mQrY.png", alt="Una comparación de antes y después. La foto de después muestra que el contenido se ha renderizado y tiene un estilo debido al CSS crítico en línea.", width="800", height="450" %}
 
 {% Aside 'caution' %} La opción `inlineCSS` aún es experimental. Vale la pena revisar bien para asegurarse de que los estilos se estén aplicando correctamente a sus rutas. {% endAside %}
 

@@ -29,7 +29,7 @@ p {
 
 那么，内容可能会超出您的元素，并且它的宽度为 142 像素，而不是 100 像素。这是为什么？方框模型是 CSS 的核心基础，您要理解它的工作原理以及 CSS 的其他方面会对其产生哪些影响，重要的是，如何控制它来帮助您编写更容易预测的 CSS。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
 
 总的来说，编写 CSS 或在 Web 上工作时，要记住的一个重点是，CSS 显示的所有对象都是方框。无论是使用 `border-radius` 的看起来像圆形的方框，还是一些简单的文本：要记住的关键点是，它们都是方框。
 
@@ -41,13 +41,13 @@ p {
 
 我们来看一个演示，简单了解一下它们的区别。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption class="w-figcaption">请注意，当方框使用 extrinsic sizing 时，您可以添加的内容有限制，如果超出限制，内容就会溢出方框的边界。因此，演示中的“awesome”一词溢出了边界。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption>请注意，当方框使用 extrinsic sizing 时，您可以添加的内容有限制，如果超出限制，内容就会溢出方框的边界。因此，演示中的“awesome”一词溢出了边界。</figcaption></figure>
 
 该演示在一个具有固定尺寸和粗边框的方框中显示“CSS is awesome”。这个方框有宽度，所以它使用的是外部大小。它会控制子内容的大小。但问题在于“awesome”一词对这个方框来说太大了，所以它会溢出到父方框的**边框**外（本课程的后续部分会详细介绍）。防止这种溢出的一种方法是取消设置 `width`，或者在本例中，将宽度设置为 `min-content`，从而允许方框使用内部大小。关键字 `min-content` 会告诉方框将宽度调整为与内容的内部最小宽度（单词“awesome”）一致。这样，方框就可以刚好包含“CSS is awesome”。
 
 我们来看看更复杂的例子，了解不同大小对实际内容的影响：
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
 
 打开和关闭 intrinsic sizing，了解如何通过 extrinsic sizing 实现更多控制，并利用 extrinsic sizing 来让内容获得更多控制。要查看 intrinsic sizing 和 extrinsic sizing 的效果，请在卡片中添加几句话。当该元素使用 extrinsic sizing 时，您可以添加的内容数量有限制，否则会溢出元素的边界，但是，打开 intrinsic sizing 时，情况并非如此。
 
@@ -61,25 +61,25 @@ p {
 
 方框由不同的方框模型区域组成，这些区域都会执行特定的工作。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="显示方框模型四个主要区域的图表 - 内容框、填充框、边框和边距框", width="800", height ="547" %}<figcaption class="w-figcaption">方框模型的四个主要区域：内容框、填充框、边框和边距框。</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="显示方框模型四个主要区域的图表 - 内容框、填充框、边框和边距框", width="800", height ="547" %}<figcaption>方框模型的四个主要区域：内容框、填充框、边框和边距框。</figcaption></figure>
 
 首先是**内容框**，它是内容所在的区域。正如之前所学：这种内容可以控制父级的大小，因此，它通常是大小最容易发生变化的区域。
 
 **填充框**位于内容框周围，它是 [`padding`](https://developer.mozilla.org/docs/Web/CSS/padding) 属性创建的空间。因为填充位于方框内部，所以，方框的背景在它创建的空间内可见。如果方框设置有溢出规则，例如 `overflow: auto` 或`overflow: scroll`，那么滚动条也会占据该空间。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
 
 **边框**位于填充框周围，它的空间被 `border` 值占据。边框是方框的边界，而**边框的边缘**则是可以直观看到的界限。<a href="https://developer.mozilla.org/docs/Web/CSS/border" data-md-type="link">`border`</a> 属性用于可视化元素的框架。
 
 最后一个区域是**边距框**，它是方框周围的空间，由方框的 `margin` 规则定义。[`outline`](https://developer.mozilla.org/docs/Web/CSS/outline) 和 [`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow) 属性也会占据了该空间，因为它们在顶部绘制，所以不会影响方框的大小。您可以创建一个 `200px` `outline-width` 的方框，其中包含的所有内容以及边框的大小将完全相同。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
 
 ## 类比解析
 
 方框模型难以理解，所以，我们使用一个类比来回顾一下所学内容。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="三个画框", width="800", height="562" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="三个画框", width="800", height="562" %}</figure>
 
 该图中有三个并排安装在墙上的画框。该图包含关联框架元素和方框模型的标签。
 
@@ -101,7 +101,7 @@ p {
 2. [选择一个元素](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 3. 显示方框模型调试器
 
-<figure class="w-figure">{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}</figure>
+<figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>
 
 ## 控制方框模型
 
@@ -134,7 +134,7 @@ p {
 
 通过以下交互式演示了解其工作原理。请注意，当您切换 `box-sizing` 值时，它会通过蓝色背景显示方框*内部*应用的 CSS。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
 
 ```css
 *,

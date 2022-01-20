@@ -70,11 +70,11 @@ Web Bluetooth APIは、JavaScriptの[Promises](https://developer.mozilla.org/doc
 
 `navigator.bluetooth.requestDevice`を使用して近くのデバイスにアクセスを要求すると、ブラウザはユーザーにデバイスセレクターを表示します。ユーザーは1つのデバイスを選択するか、単にリクエストをキャンセルすることができます。
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/bluetooth/bluetooth-device-chooser.mp4">
   </source></video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <p data-md-type="paragraph"><a href="https://webbluetoothcg.github.io/demos/playbulb-candle/">Bluetoothデバイスのユーザープロンプト。</a></p>
   </figcaption></figure>
 
@@ -378,7 +378,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer']
 
 **Bluetooth Internals**ページはChromeの`about://bluetooth-internals`で利用できるため、近くのBluetoothデバイスに関するすべて（ステータス、サービス、特性、記述子）を調べることができます。
 
-<figure class="w-figure">{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="BluetoothをデバッグするChrome内部ページのスクリーンショット", width="800", height="572", class="w-screenshot" %} <figcaption class="w-figcaption">BluetoothデバイスをデバッグするChromeの内部ページ。</figcaption></figure>
+<figure>{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="BluetoothをデバッグするChrome内部ページのスクリーンショット", width="800", height="572" %} <figcaption>BluetoothデバイスをデバッグするChromeの内部ページ。</figcaption></figure>
 
 また、Bluetoothのデバッグが難しい場合があるため、公式の[How to file Web Bluetooth bugs](https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs)（Web Bluetoothバグの報告方法）ページを確認することもお勧めします。
 

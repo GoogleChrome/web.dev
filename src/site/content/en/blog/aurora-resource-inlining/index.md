@@ -54,22 +54,22 @@ Notice how the `font-face` definition references an external file hosted on `fon
 When loading the application, the browser first has to download the original stylesheet referenced
 in the head.
 
-<figure class="w-figure">
+<figure>
   {% Img
   src="image/S838B7UEsdXmwrD8q5gvNlWTHHP2/46NStJqOoW7xsrDe12Uf.png",
   alt="An image showing how the website has to make a request to the server and download the external stylesheet",
   width="800", height="267" %}
-  <figcaption class="w-figcaption">First, the website loads the font stylesheet.</figcaption>
+  <figcaption>First, the website loads the font stylesheet.</figcaption>
 </figure>
 
 Next, the browser downloads the `woff2` file, then finally, it's able to proceed with rendering the
 application.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/S838B7UEsdXmwrD8q5gvNlWTHHP2/V1uQUNEvw4vHwAW1ekPk.png",
   alt="An image showing the two requests made, one for the font stylesheet, the second for the font file.",
   width="800", height="281" %}
-  <figcaption class="w-figcaption">Next, a request is made to load the font.</figcaption>
+  <figcaption>Next, a request is made to load the font.</figcaption>
 </figure>
 
 An opportunity for optimization is to download the initial stylesheet at build time and inline it in
@@ -120,7 +120,7 @@ replace the attribute value to `all`:
 
 This practice, however, can cause flickering of unstyled content.
 
-<figure class="w-figcaption">
+<figure>
   {% Video
     src=["video/S838B7UEsdXmwrD8q5gvNlWTHHP2/6ZSZwK3Z0bzK90aunxrW.mp4"],
     autoplay=true,
@@ -197,7 +197,7 @@ Finally critters will inline the corresponding styles in the `<head>` of the pag
 
 After inlining the critical CSS in the HTML you will find that the flickering of the page is gone:
 
-<figure class="w-figcaption">
+<figure>
   {% Video
     src=["video/S838B7UEsdXmwrD8q5gvNlWTHHP2/TPbZ9TZiDzFEYfybaPoz.mp4"],
     autoplay=true,

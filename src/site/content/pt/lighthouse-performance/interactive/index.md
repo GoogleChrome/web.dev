@@ -14,7 +14,7 @@ Medir o TTI é importante porque alguns sites otimizam a visibilidade do conteú
 
 O Lighthouse apresenta a métrica TTI em segundos:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="Uma captura de tela da auditoria Lighthouse Time to Interactive", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="Uma captura de tela da auditoria Lighthouse Time to Interactive", width="800", height="588" %}</figure>
 
 ## O que mede o TTI
 
@@ -32,7 +32,7 @@ Sua pontuação TTI é uma comparação entre o TTI da sua página e os TTI para
 
 A tabela abaixo mostra como interpretar sua pontuação TTI:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

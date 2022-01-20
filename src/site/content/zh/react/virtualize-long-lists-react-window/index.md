@@ -24,7 +24,7 @@ feedback:
 
 **列表虚拟化**或“窗口化”是仅渲染用户可见内容的概念。最初渲染的元素数量是整个列表的一个非常小的子集，当用户继续滚动时，可见内容的“窗口”将*移动*。这提高了列表的渲染和滚动性能。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="虚拟化列表中的内容窗口", width="578", height="525", class="w-screenshot" %} <figcaption class="w-figcaption">在虚拟化列表中移动内容“窗口”</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="虚拟化列表中的内容窗口", width="578", height="525" %} <figcaption>在虚拟化列表中移动内容“窗口”</figcaption></figure>
 
 离开“窗口”的 DOM 节点会被回收，或者在用户向下滚动列表时立即被替换为更新的元素。这将使特定于窗口大小的所有渲染元素数量保持不变。
 
@@ -116,7 +116,7 @@ export default ListComponent;
 
 `react-window` 还提供对虚拟化多维列表或网格的支持。在这个背景中，可见内容的“窗口”随着用户水平**和**垂直滚动而变化。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="在虚拟化网格中移动内容窗口是二维的", width="739", height="516", class="w-screenshot "%} <figcaption class="w-figcaption">在虚拟化网格中移动内容“窗口”是二维的</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="在虚拟化网格中移动内容窗口是二维的", width="739", height="516"%} <figcaption>在虚拟化网格中移动内容“窗口”是二维的</figcaption></figure>
 
 同样，根据具体列表项的大小是否会变化，可以使用 `FixedSizeGrid` 和 `VariableSizeGrid` 组件。
 
@@ -133,7 +133,7 @@ export default ListComponent;
 
 下图可能有助于总结这种情况：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="常规列表和虚拟化列表之间的滚动差异", width="800", height="531", class="w-screenshot" %} <figcaption class="w-figcaption">常规列表和虚拟化列表之间的滚动差异</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="常规列表和虚拟化列表之间的滚动差异", width="800", height="531" %} <figcaption>常规列表和虚拟化列表之间的滚动差异</figcaption></figure>
 
 解决这个问题的最佳方法是继续使用 `react-window` 这样的库在页面上保持一个小的元素“窗口”，但在用户向下滚动时延迟加载新条目。一个单独的软件包 `react-window-infinite-loader` 通过 `react-window` 实现了这一点。
 

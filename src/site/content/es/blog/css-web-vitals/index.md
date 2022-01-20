@@ -134,7 +134,7 @@ Después:
 <img src="https://source.unsplash.com/random/800x600" width="800" height="600" alt="imagen a cargar">
 ```
 
-<figure class="w-figure">{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %} <figcaption class="w-figcaption"> La imagen ahora se carga sin provocar un cambio de diseño.</figcaption></figure>
+<figure>{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %} <figcaption> La imagen ahora se carga sin provocar un cambio de diseño.</figcaption></figure>
 
 {% Aside %} Otro enfoque para la carga de imágenes es utilizar los atributos de [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) y [`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) en conjunción con la especificación de los atributos de `width` y `height`. Esto tiene la ventaja de rendimiento adicional de permitirte servir imágenes de diferentes tamaños a diferentes dispositivos. Para obtener más información, consulta [Servir imágenes responsivas](/serve-responsive-images/). {% endAside %}
 
@@ -156,7 +156,7 @@ De forma predeterminada, los navegadores basados en Chromium y Firefox [bloquear
 
 El intercambio de fuentes, si bien es excelente para mostrar contenido al usuario rápidamente, tiene el potencial de causar cambios en el diseño. Estos cambios de diseño ocurren cuando una fuente web y su fuente alternativa ocupan diferentes cantidades de espacio en la página. El uso de fuentes de proporciones similares minimizará el tamaño de estos cambios de diseño.
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagrama que muestra un cambio de diseño causado por un cambio de fuente", width="800", height="452" %} <figcaption class="w-figcaption"> En este ejemplo, el intercambio de fuentes provocó que los elementos de la página se desplazaran cinco píxeles hacia arriba.</figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagrama que muestra un cambio de diseño causado por un cambio de fuente", width="800", height="452" %} <figcaption> En este ejemplo, el intercambio de fuentes provocó que los elementos de la página se desplazaran cinco píxeles hacia arriba.</figcaption></figure>
 
 #### Identificar
 

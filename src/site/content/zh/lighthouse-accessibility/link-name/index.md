@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse 标记没有可辨别名称的链接：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="显示链接没有可识别名称的 Lighthouse 审计", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="显示链接没有可识别名称的 Lighthouse 审计", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -31,7 +31,7 @@ Lo que debes de hacer es crear un certificado y firmarlo con una CA en la que tu
 - Al ver que el certificado ha sido firmado por la autoridad de certificación generada por mkcert, el navegador verifica si está registrado como una autoridad de certificación confiable.
 - mkcert está considerado como una autoridad de confianza, por lo que tu navegador confía en el certificado y crea una conexión HTTPS.
 
-<figure class="w-figure">{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="Un diagrama de cómo funciona mkcert.", width="800", height="787" %} <figcaption class="w-figcaption"><figcaption class="w-figcaption"> Un diagrama de cómo funciona mkcert.</figcaption></figcaption></figure>
+<figure>{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="Un diagrama de cómo funciona mkcert.", width="800", height="787" %} <figcaption><figcaption> Un diagrama de cómo funciona mkcert.</figcaption></figcaption></figure>
 
 mkcert (y herramientas similares) proporcionan varios beneficios:
 
@@ -224,7 +224,7 @@ Ten cuidado con algunas trampas con esta aproximación:
 - No es necesariamente más fácil o más rápido que usar una CA local como mkcert.
 - Si no estás utilizando esta técnica en el contexto de un navegador, es posible que debas de deshabilitar la verificación del certificado para tu servidor. Omitir volver a habilitarlo en producción sería peligroso.
 
-<figure class="w-figure">{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="Capturas de pantalla de las advertencias que muestran los navegadores cuando se usa un certificado autofirmado.", width="800", height="598" %} <figcaption class="w-figcaption"> Las advertencias de los navegadores se muestran cuando se utiliza un certificado autofirmado.</figcaption></figure>
+<figure>{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="Capturas de pantalla de las advertencias que muestran los navegadores cuando se usa un certificado autofirmado.", width="800", height="598" %} <figcaption> Las advertencias de los navegadores se muestran cuando se utiliza un certificado autofirmado.</figcaption></figure>
 
 {% Aside %} Si no especificaste ningún certificado, las opciones HTTPS del servidor de desarrollo de [React](https://create-react-app.dev/docs/using-https-in-development/) y de [Vue](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) crean un certificado autofirmado por ellos mismos. Esto es rápido, pero recibirá advertencias del navegador y encontrará otros errores relacionados con los certificados autofirmados que se enumeran anteriormente. Afortunadamente, puedes usar la opción HTTPS incorporada de los frameworks frontend **y** especificar un certificado de confianza local creado a través de mkcert o de manera similar. Mira cómo hacer esto en el [ejemplo de mkcert con React](/#setup:~:text=a%20React%20development%20server). {% endAside %}
 
@@ -232,7 +232,7 @@ Ten cuidado con algunas trampas con esta aproximación:
 
 Si abres tu sitio que se ejecuta localmente en tu navegador usando HTTPS, tu navegador verificará el certificado de tu servidor de desarrollo local. Cuando veas que el certificado ha sido firmado por ti mismo, este comprueba si estás registrado como una autoridad certificadora de confianza. Como no lo eres, tu navegador no puede confiar en el certificado; muestra una advertencia que te indica que tu conexión no es segura. Puedes proceder bajo su propio riesgo; si lo haces, se creará una conexión HTTPS.
 
-<figure class="w-figure">{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="Por qué los navegadores no confían en los certificados autofirmados: un diagrama.", width="800", height="833" %} <figcaption class="w-figcaption"> Por qué los navegadores no confían en los certificados autofirmados.</figcaption></figure>
+<figure>{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="Por qué los navegadores no confían en los certificados autofirmados: un diagrama.", width="800", height="833" %} <figcaption> Por qué los navegadores no confían en los certificados autofirmados.</figcaption></figure>
 
 {% endDetails %}
 

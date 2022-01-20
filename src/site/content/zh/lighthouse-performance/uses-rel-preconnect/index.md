@@ -10,7 +10,7 @@ web_lighthouse:
 
 Lighthouse 报告的“机会”部分列出了所有尚未使用 `<link rel=preconnect>` 对获取请求进行优先级排序的关键请求：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Lighthouse 预连接到所需的源审计截图", width="800", height="226", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Lighthouse 预连接到所需的源审计截图", width="800", height="226" %}</figure>
 
 ## 浏览器兼容性
 

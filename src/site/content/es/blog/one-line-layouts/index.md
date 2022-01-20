@@ -24,8 +24,8 @@ Para seguir o probar estas demostraciones por su cuenta, consulte el Glitch inse
 
 ## 01. Supercentrado: `place-items: center`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4">
   </source></video></figure>
 
@@ -44,8 +44,8 @@ Esto permite que el contenido esté perfectamente centrado dentro del elemento p
 
 ## 02. El panqueque deconstruido: `flex: <grow> <shrink> <basewidth>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4">
   </source></video></figure>
 
@@ -79,8 +79,8 @@ Si, en cambio *desea* que las cajas se estiren y llenen todo el espacio a medida
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4">
   </source></video></figure>
 
@@ -88,8 +88,8 @@ Ahora, a medida que aumenta o disminuye el tamaño de la pantalla, estos element
 
 ## 03. La barra lateral dice: `grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4">
   </source></video></figure>
 
@@ -106,8 +106,8 @@ Agregue esto como un valor de grid-template-columns con el siguiente valor: `min
 
 ## 04. Pila de panqueques: `grid-template-rows: auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4">
   </source></video></figure>
 
@@ -128,8 +128,8 @@ Esto configura el contenido del encabezado y pie de página para que tome autom�
 
 ## 05. Diseño del Santo Grial clásico: `grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4">
   </source></video></figure>
 
@@ -150,8 +150,8 @@ Como en el último ejemplo, donde el encabezado y el pie de página tenían cont
 
 ## 06. Cuadrícula flexible de 12-columnas: `grid-template-columns: repeat(12, 1fr)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4">
   </source></video></figure>
 
@@ -170,8 +170,8 @@ A continuación tenemos otro clásico: la cuadrícula de 12 columnas. Puede escr
 
 Ahora, con una cuadrícula de 12 columnas, podemos colocar a nuestros elementos secundarios en la cuadrícula. Una forma de hacer esto sería colocarlos usando líneas de cuadrícula. Por ejemplo, `grid-column: 1 / 13` 1/13 abarcaría todo el espacio desde la primera línea hasta la última (13ª) y abarcaría 12 columnas. `grid-column: 1 / 5;` abarcaría las primeras cuatro.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4">
   </source></video></figure>
 
@@ -185,8 +185,8 @@ Otra forma de escribir esto es usando la palabra clave `span`. Con `span`, se es
 
 ## 07. RAM (Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4">
   </source></video></figure>
 
@@ -205,8 +205,8 @@ Está utilizando repeat de nuevo, pero esta vez, utilizando `auto-fit` en vez de
 
 Con `auto-fit`, las cajas aumentarán a medida que su tamaño horizontal supere los 150px para llenar todo el espacio restante. Sin embargo, si cambia a `auto-fill`, no aumentarán cuando se exceda su tamaño base con la función minmax:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4">
   </source></video></figure>
 
@@ -219,8 +219,8 @@ Con `auto-fit`, las cajas aumentarán a medida que su tamaño horizontal supere 
 
 ## 08. Alinear: `justify-content: space-between`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4">
   </source></video></figure>
 
@@ -238,8 +238,8 @@ Esto coloca el título, la descripción y el bloque de imagen en una columna ver
 
 ## 09. Cohibiendo el estilo: `clamp(<min>, <actual>, <max>)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4">
   </source></video></figure>
 
@@ -263,8 +263,8 @@ Esta es una excelente técnica para garantizar la legibilidad con un valor de ta
 
 ## 10. Respeto por el aspecto: `aspect-ratio: <width> / <height>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4">
   </source></video></figure>
 

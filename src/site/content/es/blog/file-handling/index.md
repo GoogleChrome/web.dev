@@ -170,9 +170,9 @@ En el momento de escribir este artículo no hay soporte para DevTools, pero pres
 
 Agregué soporte para la administración de archivos a [Excalidraw](https://excalidraw.com/), una aplicación de dibujo estilo caricatura. Para probarlo, primero debe instalar Excalidraw. Cuando cree un archivo con él y lo almacene en algún sitio de su sistema de archivos, puede abrir el archivo mediante un doble clic, o un clic derecho y luego seleccionar 'Excalidraw' en el menú contexto. Puede consultar la [implementación](https://github.com/excalidraw/excalidraw/search?q=launchqueue&type=code) en el código fuente.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="La ventana del buscador de macOS con un archivo Excalidraw.", width="800", height="422", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Haga doble clic o haga clic derecho sobre un archivo en el explorador de archivos de su sistema operativo. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="La ventana del buscador de macOS con un archivo Excalidraw.", width="800", height="422" %} <figcaption> Haga doble clic o haga clic derecho sobre un archivo en el explorador de archivos de su sistema operativo. </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="El menú contexto que aparece al hacer clic derecho en un archivo con la opción resaltada 'Abrir con… Excalidraw'.", width="488", height="266", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Excalidraw es el administrador de archivos predeterminado para los archivos <code>.excalidraw</code>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="El menú contexto que aparece al hacer clic derecho en un archivo con la opción resaltada 'Abrir con… Excalidraw'.", width="488", height="266" %} <figcaption> Excalidraw es el administrador de archivos predeterminado para los archivos <code>.excalidraw</code>. </figcaption></figure>
 
 ## Seguridad
 

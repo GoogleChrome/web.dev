@@ -82,7 +82,7 @@ at work here</a>.
 One example of this would be [Chrome Platform Status](https://chromestatus.com)
 which posts a note to the user when the app has been updated.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ikam7evJEVSicAnVxvWA.png", alt="An example weather app.", width="324", height="598" %}
   <figcaption>
     Some apps, like the weather app, need to auto-update, as old data
@@ -90,7 +90,7 @@ which posts a note to the user when the app has been updated.
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TtIkRCPsuxAOajX8LPF.png", alt="Chrome Status uses a toast", width="336", height="598" %}
   <figcaption>
     Apps like Chrome Status let the user know
@@ -101,14 +101,14 @@ which posts a note to the user when the app has been updated.
 You may also show the last time the app was updated at all times in a prominent space. This would
 be useful for a currency converter app, for example.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nK4V7aUvmLvaNJgF1S2I.png", alt="The Material Money app being out-of-date.", width="324", height="598" %}
   <figcaption>
     Material Money caches rates…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wqaFuHzeAC2wR0D3pt7R.png", alt="Material money has been updated", width="324", height="598" %}
   <figcaption>
     …and notifies the user when the app has been updated.
@@ -119,14 +119,14 @@ Applications such as news apps could show a simple tap-to-update notification
 informing the user of new content. Auto-updating would cause users to lose
 their place.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="An example news app, Tailpiece in its normal state", width="360", height="665" %}
   <figcaption>
     Tailpiece, an online newspaper, will auto-download the latest news…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNIMNF14cSF29fntl1Lc.png", alt="Example news app, Tailpiece when its ready to be updated", width="360", height="665" %}
   <figcaption>
     …but allow users to refresh manually so they do not lose their place in an article.
@@ -165,14 +165,14 @@ user could read today's news without a connection, perhaps downloading the text 
 images. Also, adapt to the user's behavior. For example, if the sports section is what they typically view,
 make that the priority download.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M39yiHQYpXacVII6d7zX.png", alt="Tailpiece informs the user that they are offline with various design widgets", width="360", height="665" %}
   <figcaption>
     If the device is offline, Tailpiece will notify the user with a status message…
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KpkzjYNoCWquWKXTvM28.png", alt="Tailpiece has a visual indicator that shows what sections are ready for offline use.", width="360", height="665" %}
   <figcaption>
     …letting them know that they can at least partially still use the app.
@@ -198,7 +198,7 @@ messaging is given the same in all instances where it's used. The term offline i
 misunderstood by a non-technical audience so use action-based language that your audience can relate
 to.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fNOute6xBzFcDUNMeXDe.png", alt="I/O app offline", width="360", height="664" %}
   <figcaption>
     The Google I/O 2016 app notifies the user when
@@ -206,7 +206,7 @@ to.
   </figcaption>
 </figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Od6jUnazP8n7CMe18G2C.png", alt="Chrome Status site is offline", width="360", height="664" %}
   <figcaption>
     …and so does the Chrome Platform Status site, which includes information about the occupied storage.
@@ -279,7 +279,7 @@ current state of the app.
 
 <div class="w-columns">
 {% Compare 'worse' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <figure style="display: inline-block; max-width: 45%;">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="A service worker icon is a bad example", width="350", height="149" %}
     <figcaption>
       Avoid terms that aren't intelligible to non-technical users.
@@ -288,7 +288,7 @@ current state of the app.
 {% endCompare %}
 
 {% Compare 'better' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <figure style="display: inline-block; max-width: 45%;">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="A download icon is a good example", width="350", height="149" %}
     <figcaption>
       Use language and imagery that describes the action.
@@ -311,7 +311,7 @@ with color, labels, and UI components.
 
 <div class="w-columns">
 {% Compare 'worse' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <figure style="display: inline-block; max-width: 45%;">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="A bad example only using color.", width="720", height="368" %}
     <figcaption>
       Use color as the sole means to describe what is happening.
@@ -320,7 +320,7 @@ with color, labels, and UI components.
 {% endCompare %}
 
 {% Compare 'better' %}
-  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <figure style="display: inline-block; max-width: 45%;">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="A good example that uses color and text to show an error.", width="720", height="368" %}
     <figcaption>
       Use a mixture of design elements to convey meaning
@@ -359,13 +359,13 @@ example would be to pulsate the wireframe content giving the app the feeling tha
 loading. This reassures the user that something is happening and helps prevent resubmissions or
 refreshes of your app.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUIrcbblhHe5YPSrrwRy.png", alt="A skeleton layout example", width="360", height="665" %}
   <figcaption>
     Skeleton placeholder layout is shown during the download of the article…
   </figcaption>
 </figure>
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="A loaded article example", width="360", height="665" %}
   <figcaption>
     …that gets replaced with the real contents once the download finishes.

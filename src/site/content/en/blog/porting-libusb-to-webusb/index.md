@@ -32,9 +32,9 @@ I'll describe the steps for building this demo in two parts. In this blog post, 
 
 In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. Feel free to check out the [live](https://web-gphoto2.rreverser.com/) or the pre-recorded demo before reading up on technical details:
 
-<figure class="w-figure">
-  {% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/4MUKvJhKOPK2CSTkhnEC.mp4", class="w-screenshot", controls="true" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/4MUKvJhKOPK2CSTkhnEC.mp4", controls="true" %}
+  <figcaption>
     <a href="https://web-gphoto2.rreverser.com/">The demo</a> running on a laptop connected to a Sony camera.
   </figcaption>
 </figure>
@@ -65,9 +65,9 @@ On Linux, you will likely need to [set custom permissions](/build-for-webusb/#li
 
 On macOS and Android, the demo should work out of the box. If you're trying it on an Android phone, make sure to switch to the landscape mode as I didn't put much effort into making it responsive (PRs are welcome!):
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/POZGEUlnjJeRKvVDFdiR.jpg", alt="Android phone connected to a Canon camera via a USB-C cable.", width="800", height="533" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://web-gphoto2.rreverser.com/">The same demo</a> running on an Android phone. Picture by <a href="https://twitter.com/DasSurma">Surma</a>.
   </figcaption>
 </figure>

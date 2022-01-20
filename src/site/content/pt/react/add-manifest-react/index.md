@@ -22,7 +22,7 @@ authors:
 
 Criar Aplicativo React (CRA) inclui um manifesto de aplicativo da web por padrão. A modificação deste arquivo permitirá que você altere a forma como seu aplicativo é exibido quando instalado no dispositivo do usuário.
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yra3Y2jPf2tS5ELxJdAK.png", alt = "Um ícone de progressive web app na tela inicial de um telefone celular", width = "317", height = "640"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yra3Y2jPf2tS5ELxJdAK.png", alt = "Um ícone de progressive web app na tela inicial de um telefone celular", width = "317", height = "640"%}</figure>
 
 ## Por que isso é útil?
 
@@ -83,7 +83,7 @@ Para descobrir se todas as propriedades estão funcionando corretamente neste ex
 
 - No painel do **Aplicativo**, clique na guia **Manifesto.**
 
-{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IpK9fr3O0zEX1GJXq9mw.png", alt = "A guia Manifesto do DevTools mostra as propriedades do arquivo de manifesto do aplicativo.", width = "800", height = "695", class = "w-screenshot w-screenshot--filled"%}
+{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IpK9fr3O0zEX1GJXq9mw.png", alt = "A guia Manifesto do DevTools mostra as propriedades do arquivo de manifesto do aplicativo.", width = "800", height = "695" %}
 
 ## Conclusão
 

@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouseはテキストコンテンツまたは`aria-label`プロパティがないボタンにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="ボタンにアクセス可能な名前がないことを示すLighthouseの監査", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="ボタンにアクセス可能な名前がないことを示すLighthouseの監査", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

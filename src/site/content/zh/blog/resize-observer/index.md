@@ -51,7 +51,7 @@ ro.observe(someElement);
 
 通常， [`ResizeObserverEntry` 通过一个名为](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry) `contentRect` 的属性报告元素的内容框，该属性返回一个 [`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly) 对象。内容框是可以放置内容的框，等于边框减去填充。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="CSS 框模型图。", width="727", height="562" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="CSS 框模型图。", width="727", height="562" %}</figure>
 
 需要注意的是，虽然是 `ResizeObserver`*{nbsp}报告* `contentRect` 和填充的尺寸，但只*关注* `contentRect` 。*不要*将 `contentRect` 与元素的边界框混淆。 `getBoundingClientRect()` 报告的边界框是包含整个元素及其后代的框。SVG 不适用此规则，`ResizeObserver` 会报告边界框的尺寸。
 
@@ -77,8 +77,8 @@ ro.observe(someElement);
 
 利用 `ResizeObserver` 可以实现每个元素的媒体查询。通过监听元素，可以强制定义设计断点并更改元素的样式。在以下[示例中](https://googlechrome.github.io/samples/resizeobserver/)，第二个框将根据其宽度更改边框半径。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -98,8 +98,8 @@ ro.observe(document.querySelector('.box:nth-child(2)'));
 
 利用 `ResizeObserver` 只需写*一*段代码，即可满足*两种*情况的需要。调整窗口大小是一个 `ResizeObserver` 可以根据定义捕获的事件，但调用 `appendChild()` 也会调整该元素的大小（除非设置了 `overflow: hidden` ），因为它需要为新元素腾出空间。考虑到这一点，只需很少的行就可以达到预期的效果：
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm" type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4" type="video/mp4; codecs=h264">
  </source></source></video></figure>

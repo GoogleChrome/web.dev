@@ -38,7 +38,7 @@ CSS le brinda muchas opciones para seleccionar elementos y aplicarles reglas, de
 
 Para comprender cómo funcionan los selectores y su función en CSS, es importante conocer las partes de una regla CSS. Una regla CSS es un bloque de código que contiene uno o más selectores y una o más declaraciones.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="Una imagen de una regla CSS con el selector .my-css-rule", width="800", height="427" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="Una imagen de una regla CSS con el selector .my-css-rule", width="800", height="427" %}</figure>
 
 En esta regla CSS, el **selector** es `.my-css-rule` que encuentra todos los elementos de la clase `my-css-rule` en la página. Hay tres declaraciones entre corchetes. Una declaración es un par de propiedad y valor que aplica estilos a los elementos que coinciden con los selectores. Una regla CSS puede tener tantas declaraciones y selectores como desee.
 
@@ -180,7 +180,7 @@ Junto con los operadores de casos, tiene acceso a los operadores que buscan porc
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %}<figcaption class="w-figcaption">En esta demostración, el operador `$` en nuestro selector de atributos obtiene el tipo de archivo del atributo `href`. Esto hace posible ponerle un prefijo a la etiqueta, con base en ese tipo de archivo mediante un pseudoelemento.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %}<figcaption>En esta demostración, el operador `$` en nuestro selector de atributos obtiene el tipo de archivo del atributo `href`. Esto hace posible ponerle un prefijo a la etiqueta, con base en ese tipo de archivo mediante un pseudoelemento.</figcaption></figure>
 
 ### Agrupar selectores
 
@@ -289,7 +289,7 @@ p strong {
 
 Este fragmento selecciona todos los elementos `<strong>` que son elementos secundarios de los elementos `<p>` únicamente, para volverlos de color azul de forma recursiva.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %} <figcaption class="w-figcaption">Debido a que el combinador descendiente es recursivo, se aplica el relleno agregado a cada elemento secundario, lo que da como resultado un efecto escalonado.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %} <figcaption>Debido a que el combinador descendiente es recursivo, se aplica el relleno agregado a cada elemento secundario, lo que da como resultado un efecto escalonado.</figcaption></figure>
 
 Este efecto se visualiza mejor en el ejemplo anterior, mediante el uso del selector de combinador, `.top div`. Esa regla CSS agrega relleno a la izquierda de esos elementos `<div>`. Debido a que el combinador es recursivo, a todos los elementos `<div>` que están en `.top` se les aplicará el mismo relleno.
 
@@ -317,7 +317,7 @@ El problema con esto es que debido a que está seleccionando todos los elementos
 
 Un combinador subsiguiente es muy similar a un selector de hermano siguiente. Sin embargo, en lugar de un carácter `+`, utilice un carácter `~`. La diferencia es que un elemento solo tiene que seguir a otro elemento con el mismo elemento primario, en lugar de ser el siguiente elemento con el mismo elemento primario.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %} <figcaption class="w-figcaption">Utilice un selector subsiguiente junto con una pseudoclase `:checked` para crear un elemento de interruptor CSS puro.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %} <figcaption>Utilice un selector subsiguiente junto con una pseudoclase `:checked` para crear un elemento de interruptor CSS puro.</figcaption></figure>
 
 Este combinador subsiguiente proporciona un poco menos de rigidez, lo que es útil en contextos como el ejemplo anterior, donde cambiamos el color de un interruptor personalizado cuando su casilla de verificación asociada tiene el estado `:checked`.
 

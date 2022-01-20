@@ -27,7 +27,7 @@ tags:
 
 レスポンシブウェブデザインは、もともと[A  List Apart の Ethan Marcotte 氏](http://alistapart.com/article/responsive-web-design/)によって定義されたもので、ユーザーとユーザーの使用するデバイスのニーズに応えます。レイアウトは、デバイスのサイズと機能に応じて変わります。たとえば、携帯電話の場合は、コンテンツ 1 列のビューに表示されます。タブレットでは、同じコンテンツが 2 列のビューに表示される場合があります。
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot", playsinline=true %}</figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}</figure>
 
 携帯電話、「ファブレット」、タブレット、デスクトップ、ゲーム機、テレビ、さらにはウェアラブルでは、さまざまな画面サイズが存在します。画面サイズは常に変化するため、サイトが任意の画面サイズに適応できることは、今も今後も重要です。さらに、デバイスには、デバイスと対話するためのさまざまな機能があります。たとえば、訪問者の中にはタッチスクリーンを使用するユーザーがいるでしょう。現代のレスポンシブデザインは、これらすべてを考慮して、あらゆるユーザーのエクスペリエンスを最適化します。
 
@@ -51,9 +51,9 @@ tags:
 
 メタビューポート値 `width=device-width` は、デバイスに依存しないピクセルで画面の幅に合わせることをページに指示します。デバイス (または密度) に依存しないピクセルは、1 つのピクセスを表現したものであり、高密度画面では、多くの物理ピクセルで構成される場合があります。これにより、小型の携帯電話でも大型のデスクトップモニターでも、ページをリフローしてさまざまな画面サイズに合わせることができます。
 
-<figure class="w-figure">{% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="大きくズームアウトされているため、テキストが読みにくいページのスクリーンショット", width="500", height="640"%}<figcaption class="w-figcaption">ビューポートメタタグのないデバイスでページが読み込まれる様子を示した例。<a href="https://without-vp-meta.glitch.me/">Glitch でこちらの例をご覧ください</a>。</figcaption></figure>
+<figure>{% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="大きくズームアウトされているため、テキストが読みにくいページのスクリーンショット", width="500", height="640"%}<figcaption>ビューポートメタタグのないデバイスでページが読み込まれる様子を示した例。<a href="https://without-vp-meta.glitch.me/">Glitch でこちらの例をご覧ください</a>。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="テキストを判読できるサイズにした同じページのスクリーンショット", width="500", height="888"%}<figcaption class="w-figcaption">ビューポートメタタグを使用してページをデバイスに読み込む方法の例。<a href="https://with-vp-meta.glitch.me/">Glitch でこちらの例をご覧ください</a>。</figcaption></figure>
+<figure>{% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="テキストを判読できるサイズにした同じページのスクリーンショット", width="500", height="888"%}<figcaption>ビューポートメタタグを使用してページをデバイスに読み込む方法の例。<a href="https://with-vp-meta.glitch.me/">Glitch でこちらの例をご覧ください</a>。</figcaption></figure>
 
 [一部のブラウザ](https://css-tricks.com/probably-use-initial-scale1/)は、横向きモードに回転するときにページの幅を一定に保ち、リフローして画面全体に表示する代わりにズームします。`initial-scale=1` 値を追加すると、デバイスの向きを問わず、CSS ピクセルとデバイスに依存しないピクセルの間に1：1の関係を確立する指示をブラウザーに出し、ページは横の幅を完全に利用できるようになります。
 
@@ -100,7 +100,7 @@ CSSピクセルの画面サイズと幅はデバイス間（たとえば、電�
 
 以前は、これにはパーセンテージでレイアウトを作成するために使用される設定要素が必要でした。以下の例では、ピクセルを使用してサイズ設定された、フロート要素を含む2列のレイアウトを確認できます。ビューポートが列の全幅よりも小さくなったら、コンテンツを表示するために水平方向にスクロールする必要があります。
 
-<figure class="w-figure">{% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="2列からなるレイアウトがあり、2つ目の列の大部分がビューポートからはみ出しているスクリーンショット", width="800", height="504", class="w-screenshot"%}<figcaption class="w-figcaption">ピクセルを使用したフロートレイアウト。<a href="https://layout-floats-px.glitch.me/">Glitch でこちらの例をご覧ください</a>。</figcaption></figure>
+<figure>{% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="2列からなるレイアウトがあり、2つ目の列の大部分がビューポートからはみ出しているスクリーンショット", width="800", height="504" %}<figcaption>ピクセルを使用したフロートレイアウト。<a href="https://layout-floats-px.glitch.me/">Glitch でこちらの例をご覧ください</a>。</figcaption></figure>
 
 幅にパーセンテージを使用すると、列は常にコンテナサイズの特定のパーセンテージを維持します。つまり、列が狭くなるため、スクロールバーは作成されません。
 
@@ -227,11 +227,11 @@ CSSグリッドレイアウトを使用すると、柔軟なグリッドを簡�
 
 最初に紹介した天気予報の例を見てみましょう。最初のステップは、予報を小さな画面に見栄えよく表示することです。
 
-<figure class="w-figure">{% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="モバイル幅で表示された気象アプリのスクリーンショット", width="400", height="667", class="w-screenshot"%}<figcaption class="w-figcaption">狭い幅で表示したアプリ。</figcaption></figure>
+<figure>{% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="モバイル幅で表示された気象アプリのスクリーンショット", width="400", height="667" %}<figcaption>狭い幅で表示したアプリ。</figcaption></figure>
 
 次に、要素間に空白があり過ぎて、予報の見栄えがとにかく悪いという所までブラウザのサイズを変更します。この判断は幾分主観的なものですが、 `600px`以上は確実に広すぎると言えるでしょう。
 
-<figure class="w-figure">{% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="アイテム間に大きなギャップがある気象アプリのスクリーンショット", width="400", height="240", class="w-screenshot" %}<figcaption class="w-figcaption">アプリのデザインを微調整する必要があると感じる状態。</figcaption></figure>
+<figure>{% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="アイテム間に大きなギャップがある気象アプリのスクリーンショット", width="400", height="240" %}<figcaption>アプリのデザインを微調整する必要があると感じる状態。</figcaption></figure>
 
 `600px` でブレークポイントを挿入するには、CSSの終わりにコンポートネントに対するメディアクエリを 2 つ (ブラウザーが`600px`以下の場合に使用するものを 1 つ、`600px` よりも広い場合に使用するものを 1 つ) 作成します。
 
@@ -294,9 +294,9 @@ CSSグリッドレイアウトを使用すると、柔軟なグリッドを簡�
 
 読みやすさに関する従来の理論では、1 行あたり 70〜80 文字 (英語では約 8〜10 ワード) の列が理想とされています。したがって、テキストブロックの幅がおよそ 10 ワードを超えるときは、ブレークポイントを追加することを検討してください。
 
-<figure class="w-figure">{% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="テキストを含むページをモバイルデバイスに表示したスクリーンショット", width="400", height="488", class="w-screenshot" %}<figcaption class="w-figcaption">モバイルデバイスで読み取られたテキスト。</figcaption></figure>
+<figure>{% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="テキストを含むページをモバイルデバイスに表示したスクリーンショット", width="400", height="488" %}<figcaption>モバイルデバイスで読み取られたテキスト。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="テキストを含むページをデスクトップ用のブラウザに表示したスクリーンショット", width="800", height="377", class="w-screenshot" %}<figcaption class="w-figcaption">行の長さを制限するためにブレークポイントが追加された状態でデスクトップブラウザ上で読み取られたのテキスト。</figcaption></figure>
+<figure>{% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="テキストを含むページをデスクトップ用のブラウザに表示したスクリーンショット", width="800", height="377" %}<figcaption>行の長さを制限するためにブレークポイントが追加された状態でデスクトップブラウザ上で読み取られたのテキスト。</figcaption></figure>
 
 上記のブログ記事の例を詳しく見てみましょう。小さい画面では、`1em` のRobotoフォントは完全に機能しており、1 行あたり 10 ワードを表示していますが、大きい画面ではブレークポイントが必要です。この場合、ブラウザの幅が `575px` より大きい場合、コンテンツの幅は `550px` とするのが理想的です。
 
@@ -320,9 +320,9 @@ CSSグリッドレイアウトを使用すると、柔軟なグリッドを簡�
 
 メディアクエリブレークポイントを設定したら、サイトがどのように表示されるかを確認する必要があります。ブラウザウィンドウのサイズを変更してブレークポイントをトリガーすることもできますが、Chrome DevToolsには、さまざまなブレークポイントの下でページがどのように表示されるかを簡単に確認できる機能が組み込まれています。
 
-<figure class="w-figure">{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="気象アプリを開いて822ピクセルの幅を選択したDevToolsのスクリーンショット。", width="800", height="522", class="w-screenshot"%}<figcaption class="w-figcaption"> より広いビューポートサイズを見た状態で気象アプリを表示する DevToolsに。</figcaption></figure>
+<figure>{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="気象アプリを開いて822ピクセルの幅を選択したDevToolsのスクリーンショット。", width="800", height="522" %}<figcaption> より広いビューポートサイズを見た状態で気象アプリを表示する DevToolsに。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="気象アプリを開いて436ピクセルの幅を選択したDevToolsのスクリーンショット。", width="800", height="521", class="w-screenshot"%}<figcaption class="w-figcaption">より狭いビューポートサイズを見た状態で気象アプリを表示するDevTools。</figcaption></figure>
+<figure>{% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="気象アプリを開いて436ピクセルの幅を選択したDevToolsのスクリーンショット。", width="800", height="521" %}<figcaption>より狭いビューポートサイズを見た状態で気象アプリを表示するDevTools。</figcaption></figure>
 
 さまざまなブレークポイントでページを表示する場合は、
 

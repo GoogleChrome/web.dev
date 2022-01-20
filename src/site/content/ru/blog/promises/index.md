@@ -653,8 +653,8 @@ getJSON('story.json').then(function(story) {
 
 И вот она, полностью асинхронная версия синхронного кода. Но мы можем добиться еще большего. На данный момент наша страница скачивается так:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -698,8 +698,8 @@ getJSON('story.json').then(function(story) {
 
 В зависимости от соединения такой код может отработать на несколько секунд быстрее, чем загрузка по очереди, к тому же его объем меньше, чем в нашем первом примере. Главы могут загружаться в любом порядке, но на экране они появятся в нужном.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -743,8 +743,8 @@ getJSON('story.json')
 
 Вот и оно — лучшее от обоих подходов! Для доставки всего контента требуется такое же количество времени, но первую часть контента пользователь получает раньше.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>

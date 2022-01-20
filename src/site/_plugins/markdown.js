@@ -56,10 +56,10 @@ const rules = {
     const fenced = fence(tokens, idx, options, env, slf);
     return `<web-copy-code>${fenced}</web-copy-code>`;
   },
-  // Wrap tables in a <div class="w-table-wrapper"> element to make them
+  // Wrap tables in a <div class="table-wrapper scrollbar"> element to make them
   // responsive.
   table_close: () => '</table>\n</div>',
-  table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  table_open: () => '<div class="table-wrapper scrollbar">\n<table>\n',
   link_open: (tokens, idx, options, env, slf) => {
     const origin = new URL(tokens[idx].attrGet('href'), site.url).origin;
     if (origin !== site.url) {

@@ -59,7 +59,7 @@ Uma vez que uma cadeia de tubos é construída, ela propagará sinais sobre quã
 
 Um fluxo legível pode ser lido (nomeado após a forma de um "T" maiúsculo) usando seu método `tee()`. Isso **bloqueará** o fluxo, ou seja, não o tornará mais diretamente utilizável. No entanto, ele criará **dois novos fluxos**, chamados ramificações, que podem ser consumidos independentemente. Teeing também é importante porque os fluxos não podem ser retrocedidos ou reiniciados. Veremos mais sobre isso mais tarde.
 
-<figure class="w-figure"><comment data-md-type="comment"></comment>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="Diagrama de uma cadeia de tubos, que consiste em um fluxo legível proveniente de uma chamada para a API fetch, sendo canalizado por meio de um fluxo de transformação com saída dividida em T e depois enviado ao navegador, para o primeiro fluxo legível resultante, e ao cache do trabalho de serviço, para o segundo fluxo legível resultante.", width="800", height="430" %}<figcaption class="w-figcaption">. Uma cadeia de tubos.</figcaption></figure>
+<figure><comment data-md-type="comment"></comment>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="Diagrama de uma cadeia de tubos, que consiste em um fluxo legível proveniente de uma chamada para a API fetch, sendo canalizado por meio de um fluxo de transformação com saída dividida em T e depois enviado ao navegador, para o primeiro fluxo legível resultante, e ao cache do trabalho de serviço, para o segundo fluxo legível resultante.", width="800", height="430" %}<figcaption>. Uma cadeia de tubos.</figcaption></figure>
 
 ## A mecânica de um fluxo legível
 

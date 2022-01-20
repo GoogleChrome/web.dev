@@ -20,7 +20,7 @@ tags:
 
 Nesta postagem, quero compartilhar o pensamento sobre a construção de um componente de configurações para a web que seja responsivo, ofereça suporte a várias entradas de dispositivo e funcione em vários navegadores. Experimente a [demonstração](https://gui-challenges.web.app/settings/dist/).
 
-<figure class="w-figure w-figure--fullbleed">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/WuIwd9jPb30KmmnjJn75.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figure"> <a href="https://gui-challenges.web.app/settings/dist/">Demonstração</a> </figcaption></figure>
+<figure data-size="full">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/WuIwd9jPb30KmmnjJn75.mp4", autoplay="true", loop="true", muted="true" %} <figcaption> <a href="https://gui-challenges.web.app/settings/dist/">Demonstração</a> </figcaption></figure>
 
 Se você preferir vídeo ou quiser uma prévia da IU/UX do que estamos criaindo, aqui está um passo a passo mais curto no YouTube:
 
@@ -43,7 +43,7 @@ Eu dividi os aspectos desse componente nas seguintes seções:
 
 Esta é a primeira demonstração do Desafio de GUI **totalmente CSS Grid** ! Aqui está cada grade destacada com o [Chrome DevTools para grade](https://goo.gle/devtools-grid):
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/h6LZhScslprBcFol4gGp.png", alt="Contornos coloridos e sobreposições de espaçamento de lacunas que ajudam a mostrar todas as caixas que compõem o layout de configurações", class="w-screenshot", width="800", height="563" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/h6LZhScslprBcFol4gGp.png", alt="Contornos coloridos e sobreposições de espaçamento de lacunas que ajudam a mostrar todas as caixas que compõem o layout de configurações", width="800", height="563" %}
 
 {% Banner 'neutral' %} Para destacar seus layouts de grade:
 
@@ -124,7 +124,7 @@ main {
 
 O elemento principal é usar `place-content: center` [alinhamento atalho](https://developer.mozilla.org/docs/Web/CSS/place-content) para que os filhos sejam centralizados verticalmente e horizontalmente em layouts de uma e duas colunas.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IQI2PofA6gpNFUkDrvKo.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IQI2PofA6gpNFUkDrvKo.mp4", autoplay="true", loop="true", muted="true" %}
 
 Assista no vídeo acima como o "conteúdo" permanece centralizado, mesmo que o empacotamento tenha ocorrido.
 
@@ -156,7 +156,7 @@ A função extra `min()` é bem descrita por Evan Minto em seu blog na postagem 
 
 `max-width: 89vw` vale uma pequena análise neste post. Deixe-me mostrar o layout com e sem o estilo aplicado:
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gdldf7hyaBrHWwxQbSaT.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gdldf7hyaBrHWwxQbSaT.mp4", autoplay="true", loop="true", muted="true" %}
 
 O que está acontecendo? Quando `max-width` é especificado, está fornecendo contexto, dimensionamento explícito ou [dimensionamento definitivo](https://drafts.csswg.org/css-sizing-3/#definite) para o [algoritmo de layout `auto-fit`](https://drafts.csswg.org/css-grid/#auto-repeat) para saber quantas repetições ele pode caber no espaço. Embora pareça óbvio que o espaço é "largura total", de acordo com as especificações da grade CSS, um tamanho definido ou tamanho máximo deve ser fornecido. Eu forneci um tamanho máximo.
 
@@ -265,7 +265,7 @@ Eu os lanço em uma consulta de mídia preferencial como esta:
 
 Sem se aprofundar muito na teoria da cor, o LCH é uma sintaxe orientada para o ser humano, que define como percebemos a cor, não como medimos a cor com matemática (como 255). Isso dá a ele uma vantagem distinta, pois os humanos podem escrever mais facilmente e outros humanos estarão em sintonia com esses ajustes.
 
-<figure class="w-figure w-screenshot">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/160dWLSrMhFISwWMVd4w.png", alt="Uma captura de tela da página da web pod.link/csspodcast, com cor 2: episódio de percepção aumentado", width="800", height="329" %} <figcaption class="w-figure"> Saiba mais sobre cores perceptuais (e muito mais!) No <a href="https://pod.link/thecsspodcast">Podcast CSS</a> </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/160dWLSrMhFISwWMVd4w.png", alt="Uma captura de tela da página da web pod.link/csspodcast, com cor 2: episódio de percepção aumentado", width="800", height="329" %} <figcaption> Saiba mais sobre cores perceptuais (e muito mais!) No <a href="https://pod.link/thecsspodcast">Podcast CSS</a> </figcaption></figure>
 
 Por hoje, nesta demonstração, vamos nos concentrar na sintaxe e nos valores que estou mudando para tornar claro e escuro. Vejamos 1 superfície e 1 cor de texto:
 
@@ -295,7 +295,7 @@ Há [mais para aprender](https://lea.verou.me/2020/04/lch-colors-in-css-what-why
 
 Muitos navegadores fornecem controles de tema escuro, atualmente Safari e Chromium, mas você deve especificar em CSS ou HTML que seu design os utiliza.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/0VVtEAWM6jHeIxahqnFy.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/0VVtEAWM6jHeIxahqnFy.mp4", autoplay="true", loop="true", muted="true" %}
 
 O exemplo acima está demonstrando o efeito da propriedade do painel Estilos do DevTools. A demonstração usa a tag HTML, que, em minha opinião, geralmente é um local melhor:
 
@@ -321,7 +321,7 @@ input[type="checkbox"] {
 
 As cores aparecem mais quando usadas com moderação, e uma das maneiras que gosto de conseguir isso é por meio de interações coloridas da interface do usuário.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pm75QwVToKkiqedqPtmm.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true", width="480px" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pm75QwVToKkiqedqPtmm.mp4", autoplay="true", loop="true", muted="true", width="480px" %}
 
 Existem muitas camadas de feedback e interação da IU no vídeo acima, que ajudam a dar personalidade à interação ao:
 
@@ -417,7 +417,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 O truque para isso é "revelar" a cor de preenchimento vibrante. Isso é feito com o gradiente de parada rígida no topo. O gradiente é transparente até a porcentagem de preenchimento e, depois disso, usa a cor da superfície da trilha não preenchida. Por trás dessa superfície não preenchida, está uma cor de largura total, esperando pela transparência para revelá-la.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/aiAL28AkDRZvaAZNEbW8.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/aiAL28AkDRZvaAZNEbW8.mp4", autoplay="true", loop="true", muted="true" %}
 
 #### Estilo de preenchimento de trilha
 
@@ -494,7 +494,7 @@ A maioria desses estilos são para fazer um bom círculo. Novamente, você vê o
 
 O objetivo era um destaque visual animado e fácil de gerenciar para o feedback do usuário. Ao usar uma sombra de caixa, posso evitar o [disparo de layout](/animations-guide/#triggers) com o efeito. Eu faço isso criando uma sombra que não é desfocada e corresponde à forma circular do elemento polegar. Então eu mudo e transito seu tamanho de propagação ao pairar.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/s835RbH88L5bxjl5bMFl.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/s835RbH88L5bxjl5bMFl.mp4", autoplay="true", loop="true", muted="true" %}
 
 Se ao menos o efeito de realce fosse tão fácil nas caixas de seleção…
 
@@ -548,7 +548,7 @@ O `transform-style` e os `position` preparam para o pseudo-elemento que apresent
 
 É importante fornecer rótulos para as caixas de seleção por dois motivos. A primeira é representar para que o valor da caixa de seleção é usado, para responder "ligado ou desligado para quê?" O segundo é para UX, os usuários da web se acostumaram a interagir com as caixas de seleção por meio de seus rótulos associados.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7GYIFNjNCBdj13juFO7S.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7GYIFNjNCBdj13juFO7S.mp4", autoplay="true", loop="true", muted="true" %}
 
 <div class="switcher">{% Compare 'better', 'input' %}</div>
 <pre data-md-type="block_code" data-md-language="html"><code class="language-html">&lt;input
@@ -614,7 +614,7 @@ input[type="checkbox"]:hover::before {
 
 Criar um círculo psuedo-elemento é um trabalho simples, mas **colocá-lo atrás do elemento ao qual está anexado** foi mais difícil. Aqui está o antes e depois de eu consertar:
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Spdpw5P1MD8ceazneRXo.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Spdpw5P1MD8ceazneRXo.mp4", autoplay="true", loop="true", muted="true" %}
 
 É definitivamente uma micro interação, mas importante para mim manter a consistência visual. A técnica de dimensionamento da animação é a mesma que temos usado em outros lugares. Definimos uma propriedade personalizada com um novo valor e permitimos a transição do CSS com base nas preferências de movimento. O principal recurso aqui é `translateZ(-1px)`. O pai criou um espaço 3D e este filho de pseudoelemento aproveitou-se dele colocando-se ligeiramente para trás no espaço z.
 
@@ -643,7 +643,7 @@ Podemos ocultar elementos que não são necessários aos leitores de tela, neste
 <picture aria-hidden="true">
 ```
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fVjqHRZHQixAaxjeAvDP.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true", width="480px" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fVjqHRZHQixAaxjeAvDP.mp4", autoplay="true", loop="true", muted="true", width="480px" %}
 
 O vídeo acima demonstra o fluxo do leitor de tela no Mac OS. Observe como o foco de entrada se move direto de um controle deslizante para o próximo. Isso ocorre porque ocultamos o ícone que pode ter sido uma parada no caminho para o próximo controle deslizante. Sem este atributo, um usuário precisaria parar, ouvir e mover-se além da imagem que ele pode não ser capaz de ver.
 
@@ -675,7 +675,7 @@ form.addEventListener('input', event => {
 
 Sempre que o formulário é interagido e alterado, o console registra o formulário como um objeto em uma tabela para fácil revisão antes de enviá-lo a um servidor.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hFAyIOpOSdiczdf4AtIj.png", alt="Uma captura de tela dos resultados de console.table (), onde os dados do formulário são mostrados em uma tabela", class="w-screenshot", width="800", height="285" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hFAyIOpOSdiczdf4AtIj.png", alt="Uma captura de tela dos resultados de console.table (), onde os dados do formulário são mostrados em uma tabela", width="800", height="285" %}
 
 ## Conclusão
 

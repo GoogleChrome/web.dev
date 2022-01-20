@@ -57,8 +57,8 @@ Aqui estão as áreas a serem consertadas em 2021.
 O [CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout) é[amplamente utilizado](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692) na web e ainda existem alguns desafios importantes para os desenvolvedores. Por exemplo, o [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) e o [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983) tiveram problemas com o `auto-height`, levando a imagens de tamanho incorreto.
 
 <div class="switcher">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Foto esticada de um tabuleiro de xadrez.", width="800", height="400" %} <figcaption class="w-figcaption" style="margin-top: auto"> Imagem de tamanho incorreto devido a bugs. </figcaption></figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="Tabuleiro de Xadrez.", width="800", height="800" %} <figcaption class="w-figcaption" style="margin-top: auto"> Imagem de tamanho correto. <br> Foto por <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi.</a> </figcaption></figure>
+    <figure style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Foto esticada de um tabuleiro de xadrez.", width="800", height="400" %} <figcaption style="margin-top: auto"> Imagem de tamanho incorreto devido a bugs. </figcaption></figure>
+    <figure style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="Tabuleiro de Xadrez.", width="800", height="800" %} <figcaption style="margin-top: auto"> Imagem de tamanho correto. <br> Foto por <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi.</a> </figcaption></figure>
 </div>
 
 [A postagem do blog Cats do flexbox da Igalia](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/) se aprofunda nesses problemas com muitos outros exemplos.
@@ -73,7 +73,7 @@ O [CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layo
 
 [CSS Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) é um bloco de construção central para layouts de web modernos, substituindo muitas técnicas e soluções alternativas mais antigas. Como a adoção está crescendo, ela precisa ser sólida como uma rocha, para que as diferenças entre os navegadores nunca sejam um motivo para evitá-la. Uma área que está faltando é a capacidade de animar layouts de grade, com suporte no Gecko, mas não no [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=759665) ou [WebKit](https://bugs.webkit.org/show_bug.cgi?id=204580). Quando suportado, efeitos como este são possíveis:
 
-<figure class="w-figure">{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4", height="400", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption class="w-figcaption"> Demonstração de xadrez animada por <a href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen Hui Jing</a>. </figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4", height="400", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption> Demonstração de xadrez animada por <a href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen Hui Jing</a>. </figcaption></figure>
 
 #### Por que ele é priorizado
 
@@ -88,9 +88,9 @@ O [CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layo
 [O posicionamento sticky](https://developer.mozilla.org/docs/Web/CSS/position#sticky_positioning) permite que o conteúdo fique preso à borda da janela de visualização e é comumente usado para cabeçalhos que estão sempre visíveis na parte superior da janela de visualização. Embora seja compatível com todos os navegadores, há casos de uso comuns em que não funciona conforme o esperado. Por exemplo, [cabeçalhos de tabela fixos](https://bugs.chromium.org/p/chromium/issues/detail?id=702927) não são compatíveis com o Chromium e, embora agora sejam [compatíveis com um sinalizador](https://bugs.chromium.org/p/chromium/issues/detail?id=958381) , os resultados são inconsistentes entre os navegadores:
 
 <div class="switcher">
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %} <figcaption class="w-figcaption"> Chromium com "TablesNG" </figcaption></figure>
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %} <figcaption class="w-figcaption"> Gecko </figcaption></figure>
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %} <figcaption class="w-figcaption"> WebKit </figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %} <figcaption> Chromium com "TablesNG" </figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %} <figcaption> Gecko </figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %} <figcaption> WebKit </figcaption></figure>
 </div>
 
 Confira a <a href="https://output.jsbin.com/xunosud">demonstração dos cabeçalhos de tabela sticky</a> de Rob Flack.
@@ -127,7 +127,7 @@ Por ser um caso de uso tão comum, espera-se que ele se torne amplamente utiliza
 
 As [transformações CSS](https://developer.mozilla.org/docs/Web/CSS/transform) são suportadas em todos os navegadores há muitos anos e são amplamente utilizadas na web. No entanto, ainda existem muitas áreas onde eles não funcionam da mesma forma em todos os navegadores, principalmente com animações e transformações 3D. Por exemplo, um efeito de virada de cartão pode ser muito inconsistente entre os navegadores:
 
-<figure class="w-figure">{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4", class="w-screenshot", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption class="w-figcaption"> Efeito de virada do cartão no Chromium (left), Gecko (middle) e WebKit (right). Demo por David Baron a partir de <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">comentário sobre o bug</a>. </figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption> Efeito de virada do cartão no Chromium (left), Gecko (middle) e WebKit (right). Demo por David Baron a partir de <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">comentário sobre o bug</a>. </figcaption></figure>
 
 #### Por que é priorizado
 
@@ -141,7 +141,7 @@ Siga e compartilhe todas as atualizações que [postarmos](https://twitter.com/C
 
 Haverá atualizações regulares sobre o progresso aqui no web.dev e você também pode acompanhar o progresso de cada área de foco no [Compat 2021 Dashboard](https://wpt.fyi/compat2021).
 
-<figure class="w-figure"><p data-md-type="paragraph"><a href="https://wpt.fyi/compat2021"> {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", alt="Painel Compat 2021", width="800", height="942", class="w-screenshot" %} </a></p>
-<figcaption class="w-figcaption">O Painel Compat 2021 (captura de tela tirada em 16 de novembro de 2021).</figcaption></figure>
+<figure><p data-md-type="paragraph"><a href="https://wpt.fyi/compat2021"> {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", alt="Painel Compat 2021", width="800", height="942" %} </a></p>
+<figcaption>O Painel Compat 2021 (captura de tela tirada em 16 de novembro de 2021).</figcaption></figure>
 
 Esperamos que este esforço conjunto entre os fornecedores de navegadores para melhorar a confiabilidade e a interoperabilidade ajude você a criar coisas incríveis na web!

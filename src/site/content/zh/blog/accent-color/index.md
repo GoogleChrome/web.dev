@@ -22,11 +22,11 @@ accent-color: hotpink;
 
 [CSS UI 规范](https://www.w3.org/TR/css-ui-4/#widget-accent)中的 `accent-color` 在这里用一行 CSS 为元素着色，这种方法将您的品牌带入元素，使您免于自定义工作。
 
-<figure class="w-figure ">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", class="w-screenshot", alt="强调色演示的浅色主题截图，其中复选框、单选按钮、范围滑块和进度元素都被着色为热粉色。", width="800", height="548" %}<figcaption class="w-figure"><a href="https://codepen.io/web-dot-dev/pen/PomBZdy">演示</a></figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", alt="强调色演示的浅色主题截图，其中复选框、单选按钮、范围滑块和进度元素都被着色为热粉色。", width="800", height="548" %}<figcaption><a href="https://codepen.io/web-dot-dev/pen/PomBZdy">演示</a></figcaption></figure>
 
 `accent-color` 属性也适用于 [`color-scheme`](/color-scheme/) ，允许作者为浅色和深色元素着色。在以下示例中，用户激活了深色主题，页面使用 `color-scheme: light dark` ，并使用相同的 `accent-color: hotpink` 作为深色主题的热粉色着色控件。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="强调色演示的深色主题截图，其中复选框、单选按钮、范围滑块和进度元素都被着色为热粉色。", width="800", height="548" %}<figcaption class="w-figure"><a href="https://codepen.io/web-dot-dev/pen/PomBZdy">演示</a></figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="强调色演示的深色主题截图，其中复选框、单选按钮、范围滑块和进度元素都被着色为热粉色。", width="800", height="548" %}<figcaption><a href="https://codepen.io/web-dot-dev/pen/PomBZdy">演示</a></figcaption></figure>
 
 ### 浏览器支持
 
@@ -58,7 +58,7 @@ accent-color: hotpink;
 
 为了防止存在不可访问的元素，具备 `accent-color` 的浏览器需要确定[符合条件的对比度颜色](https://webaim.org/articles/contrast/)，以便与自定义强调色一起使用。下面的截图展示了 Chrome 94（左）和 Firefox 92 Nightly（右）在算法上的不同：
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", class="w-screenshot", alt="Firefox 和 Chromium 并排的屏幕截图，以各种色调和暗度呈现系列复选框。", width="800", height="832" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", alt="Firefox 和 Chromium 并排的屏幕截图，以各种色调和暗度呈现系列复选框。", width="800", height="832" %}
 
 最重要的一点是要**信任浏览器**。提供品牌颜色，并相信它会为您做出明智的决定。
 

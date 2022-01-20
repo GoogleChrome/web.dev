@@ -36,9 +36,9 @@ feedback:
 
 您可以按照我们的[演示](https://trust-token-demo.glitch.me)试用该 API，并在 Chrome DevTools **网络**和**应用程序**选项卡中[检查令牌](https://developers.google.com/web/updates/2021/01/devtools#trust-token)。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="“Chrome DevTools 网络”选项卡中显示信任令牌的截图。", width="800", height="584" %}<figcaption class="w-figcaption"> <b>Chrome DevTools 网络</b>选项卡中的信任令牌。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="“Chrome DevTools 网络”选项卡中显示信任令牌的截图。", width="800", height="584" %}<figcaption> <b>Chrome DevTools 网络</b>选项卡中的信任令牌。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Chrome DevTools 应用程序选项卡中显示信任令牌的屏幕截图。", width="800", height="584" %}<figcaption class="w-figcaption"> <b>Chrome DevTools 应用程序</b>选项卡中的信任令牌。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Chrome DevTools 应用程序选项卡中显示信任令牌的屏幕截图。", width="800", height="584" %}<figcaption> <b>Chrome DevTools 应用程序</b>选项卡中的信任令牌。</figcaption></figure>
 
 {% Aside %}隐私沙盒是一系列满足第三方用例的提案，无需第三方 Cookie 或其他跟踪机制。有关所有提案的概述，请参阅[深入了解隐私沙盒](/digging-into-the-privacy-sandbox)。
 

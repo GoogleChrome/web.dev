@@ -118,7 +118,7 @@ Al configurar `ETag` o `Last-Modified`, terminarás haciendo que la solicitud de
 
 Cuando un servidor web configurado correctamente ve esas cabeceras de solicitud entrantes, puedes confirmar si la versión del recurso que el navegador ya tiene en tu HTTP Cache coincide con la última versión en el servidor web. Si hay una coincidencia, el servidor puede responder con una [`304 Not Modified`](https://developer.mozilla.org/docs/Web/HTTP/Status/304), que es el equivalente a "¡Oye, sigue usando lo que ya tienes!". Hay muy pocos datos para transferir al enviar este tipo de respuesta, por lo que generalmente es mucho más rápido que tener que enviar una copia del recurso real que se solicita.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="Un diagrama de un cliente que solicita un recurso y el servidor responde con una cabecera 304.", width="474", height="215" %} <figcaption class="w-figcaption w-text--left"> El navegador solicita <code>/file</code> del servidor e incluye el <code>If-None-Match</code> para indicarle al servidor que solo devuelva el archivo completo si la <code>ETag</code> del archivo en el servidor no coincide con el valor de <code>If-None-Match</code> del navegador. En este caso, los 2 valores coincidieron, por lo que el servidor devuelve una <code>304 Not Modified</code> con instrucciones sobre cuánto tiempo más se debe almacenar en <code>Cache-Control: max-age=120</code> ).</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="Un diagrama de un cliente que solicita un recurso y el servidor responde con una cabecera 304.", width="474", height="215" %} <figcaption> El navegador solicita <code>/file</code> del servidor e incluye el <code>If-None-Match</code> para indicarle al servidor que solo devuelva el archivo completo si la <code>ETag</code> del archivo en el servidor no coincide con el valor de <code>If-None-Match</code> del navegador. En este caso, los 2 valores coincidieron, por lo que el servidor devuelve una <code>304 Not Modified</code> con instrucciones sobre cuánto tiempo más se debe almacenar en <code>Cache-Control: max-age=120</code> ).</figcaption></figure>
 
 ## Resumen {: #summary }
 
@@ -154,7 +154,7 @@ Si tienes más tiempo, aquí hay otras formas de optimizar el uso de HTTP Cache:
 
 ## Apéndice: `Cache-Control` {: #examples }
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

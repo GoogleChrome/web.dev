@@ -22,7 +22,7 @@ stack_overflow_tag: web-share
 
 ## Общее представление и использование
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="Средство выбора целевого ресурса на уровне системы с установленным PWA в качестве опции.", width="370", height="349" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Средство выбора целевого ресурса на уровне системы с установленным PWA в качестве опции. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="Средство выбора целевого ресурса на уровне системы с установленным PWA в качестве опции.", width="370", height="349" %} <figcaption> Средство выбора целевого ресурса на уровне системы с установленным PWA в качестве опции. </figcaption></figure>
 
 ### Возможности и ограничения
 
@@ -82,7 +82,7 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 
 ## Пример использования Santa Tracker
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="Приложение Santa Tracker показывает кнопку «Поделиться».", width="343", height="600" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Кнопка «Поделиться» в Santa Tracker. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="Приложение Santa Tracker показывает кнопку «Поделиться».", width="343", height="600" %} <figcaption> Кнопка «Поделиться» в Santa Tracker. </figcaption></figure>
 
 Проект с открытым исходным кодом [Santa Tracker](https://santatracker.google.com/) стал в Google праздничной традицией. Вы можете отмечать каждый декабрь, принимая участие в играх и образовательных мероприятиях.
 

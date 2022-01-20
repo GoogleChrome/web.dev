@@ -186,8 +186,8 @@ function handleDrop(e) {
 
 この例では、ユーザーが列の順番を並べ替えられるようにします。これを行うには、まず、ドラッグの開始時にソース要素のHTMLを保存する必要があります。
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </source></video>
   </figure>

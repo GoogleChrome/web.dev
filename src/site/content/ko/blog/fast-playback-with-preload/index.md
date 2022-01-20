@@ -16,7 +16,7 @@ tags:
 더 빠른 재생 시작은 더 많은 사람들이 귀하의 비디오를 보거나 오디오를 듣고 있음을 의미합니다. [이것은 알려진 사실](https://www.digitaltrends.com/web/buffer-rage/)입니다. 이 기사에서는 사용 사례에 따라 리소스를 능동적으로 미리 로드하여 오디오 및 비디오 재생을 가속화하는 데 사용할 수 있는 기술을 살펴보겠습니다.
 
 <figure>
-  <video controls muted playsinline class="w-screenshot">
+  <video controls muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1" type="video/mp4">
   </source></source></video>

@@ -14,7 +14,7 @@ Muitos navegadores possibilitam que você ative e promova a instalação do seu 
 
 Além da [experiência de instalação proporcionada pelo navegador](/promote-install/#browser-promotion), é possível fornecer seu próprio processo de instalação personalizado, diretamente a partir da sua aplicação.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Botão Instalar aplicativo fornecido no Spotify PWA", width="491", height="550" %} <figcaption class="w-figcaption"> Botão "Instalar aplicativo" fornecido no Spotify PWA </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Botão Instalar aplicativo fornecido no Spotify PWA", width="491", height="550" %} <figcaption> Botão "Instalar aplicativo" fornecido no Spotify PWA </figcaption></figure>
 
 Ao considerar se deve ou não promover a instalação, é melhor pensar em como os usuários normalmente usam seu PWA. Por exemplo, se houver um conjunto de usuários que usam seu PWA muitas vezes por semana, esses usuários poderão se beneficiar com a conveniência adicional de iniciar seu aplicativo a partir da tela inicial de um smartphone ou do menu Iniciar de um sistema operacional de desktop. Alguns aplicativos de produtividade e entretenimento também se beneficiam do espaço extra da tela criado pela remoção das barras de ferramentas do navegador da janela nos modos `standalone` ou `minimal-ui`
 

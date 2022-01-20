@@ -74,7 +74,7 @@ Si la solicitud fue negada, se puede solicitar nuevamente más tarde y se evalua
 
 Firefox delega la solicitud de permiso al usuario. Cuando se solicita el almacenamiento persistente, se le solicita al usuario mediante una ventana emergente de IU que le pregunta si permitirá que el sitio almacene datos en un almacenamiento persistente.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o8W7pNTZ5dFKeDg2cmvA.jpg", alt="Una ventana emergente que muestra Firefox cuando un sitio solicita el almacenamiento persistente.", width="428", height="177" %} <figcaption class="w-figcaption"> Una ventana emergente que muestra Firefox cuando un sitio solicita el almacenamiento persistente.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o8W7pNTZ5dFKeDg2cmvA.jpg", alt="Una ventana emergente que muestra Firefox cuando un sitio solicita el almacenamiento persistente.", width="428", height="177" %} <figcaption> Una ventana emergente que muestra Firefox cuando un sitio solicita el almacenamiento persistente.</figcaption></figure>
 
 ## ¿Qué almacenamiento está protegido por almacenamiento persistente?
 

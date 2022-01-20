@@ -16,7 +16,7 @@ Algunas funciones ARIA requieren roles hijos específicos. Por ejemplo, el rol `
 
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> marca los roles ARIA que no tienen los roles hijos requeridos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoría de Lighthouse que muestra la función ARIA que falta en el rol hijo requerido", width="800", height="205", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoría de Lighthouse que muestra la función ARIA que falta en el rol hijo requerido", width="800", height="205" %}</figure>
 
 Lighthouse usa las <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">definiciones de roles de la especificación WAI-ARIA</a> para verificar <a href="https://www.w3.org/TR/wai-aria/#mustContain" rel="noopener">los elementos de propiedad requeridos</a>, es decir, los roles hijos requeridos. Una página falla en esta auditoría cuando contiene un rol padre al que le faltan sus roles hijos requeridos.
 

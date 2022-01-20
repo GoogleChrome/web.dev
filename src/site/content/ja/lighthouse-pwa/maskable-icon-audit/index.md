@@ -13,7 +13,7 @@ date: 2020-05-06
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、マスカブルアイコンをサポートしていないページをフラグします。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse レポートの UI に表示されているマスカブルアイコンの監査。", width="800", height="110", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse レポートの UI に表示されているマスカブルアイコンの監査。", width="800", height="110" %}</figure>
 
 監査に合格するには、以下が必要です。
 

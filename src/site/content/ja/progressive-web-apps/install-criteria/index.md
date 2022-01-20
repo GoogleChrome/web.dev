@@ -17,8 +17,8 @@ tags:
 ほとんどのブラウザは、プログレッシブ Web アプリ（PWA）が特定の基準を満たしたときにインストール可能であることをユーザーに示します。インジケータの例には、アドレスバーの [インストール] ボタン、またはオーバーフローメニューの [インストール] メニュー項目が含まれます。
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="インストールインジケーターが表示されたオムニボックスのスクリーンショット。", width="800", height="307" %} <figcaption class="w-figcaption"> ブラウザが提供するインストールプロモーション（デスクトップ）</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="ブラウザが提供するインストールプロモーションのスクリーンショット。", width="800", height="307" %} <figcaption class="w-figcaption">ブラウザが提供するインストールプロモーション（モバイル）</figcaption></figure>
+  <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="インストールインジケーターが表示されたオムニボックスのスクリーンショット。", width="800", height="307" %} <figcaption> ブラウザが提供するインストールプロモーション（デスクトップ）</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="ブラウザが提供するインストールプロモーションのスクリーンショット。", width="800", height="307" %} <figcaption>ブラウザが提供するインストールプロモーション（モバイル）</figcaption></figure>
 </div>
 
 さらに、基準が満たされると、多くのブラウザは `beforeinstallprompt` イベントを発し、アプリ内のインストールフローをトリガーするカスタムアプリ内 UX を提供できます。

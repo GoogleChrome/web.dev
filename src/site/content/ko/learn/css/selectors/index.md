@@ -40,7 +40,7 @@ CSS는 이와 같은 상황을 해결하는 데 도움이 되는 매우 단순�
 
 선택기의 작동 방식과 CSS에서의 역할을 이해하려면 CSS 규칙의 일부를 아는 것이 중요합니다. CSS 규칙은 하나 이상의 선택자와 하나 이상의 선언을 포함하는 코드 블록입니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="선택기가 있는 CSS 규칙의 이미지 .my-css-rule", width="800", height="427" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="선택기가 있는 CSS 규칙의 이미지 .my-css-rule", width="800", height="427" %}</figure>
 
 이 CSS 규칙에서 **선택기**는 페이지에서 `my-css-rule` 클래스가 있는 모든 요소를 찾는 `.my-css-rule` 중괄호 안에 세 개의 선언이 있습니다. 선언은 선택자와 일치하는 요소에 스타일을 적용하는 속성 및 값 쌍입니다. CSS 규칙은 원하는 만큼 많은 선언과 선택기를 가질 수 있습니다.
 
@@ -182,7 +182,7 @@ HTML 요소에 `primary` 대신 `Primary`의 `data-type`가 있던 경우, 빨�
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %}<figcaption class="w-figcaption">이 데모에서 속성 선택기의 '$' 연산자는 'href' 속성에서 파일 유형을 가져옵니다. 이렇게 하면 의사 요소를 사용하여 해당 파일 유형에 따라 레이블에 접두사를 붙일 수 있습니다.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %}<figcaption>이 데모에서 속성 선택기의 '$' 연산자는 'href' 속성에서 파일 유형을 가져옵니다. 이렇게 하면 의사 요소를 사용하여 해당 파일 유형에 따라 레이블에 접두사를 붙일 수 있습니다.</figcaption></figure>
 
 ### 그룹화 선택기
 
@@ -291,7 +291,7 @@ p strong {
 
 이 스니펫은 `<p>` 요소의 하위 요소인 모든 `<strong>` 요소만 선택하여 반복해서 파란색으로 만듭니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %}<figcaption class="w-figcaption">하위 결합기는 반복적이기 때문에 각 하위 요소에 추가된 패딩이 적용되어 결과적으로 시차 효과가 발생합니다.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %}<figcaption>하위 결합기는 반복적이기 때문에 각 하위 요소에 추가된 패딩이 적용되어 결과적으로 시차 효과가 발생합니다.</figcaption></figure>
 
 이 효과는 위의 예에서 결합 선택기 `.top div`를 사용하여 더 잘 시각화됩니다. 해당 CSS 규칙은 해당 `<div>` 요소에 왼쪽 패딩을 추가합니다. 결합기는 반복적이기 때문에 `.top`에 있는 `<div>` 요소에는 동일한 패딩이 적용됩니다.
 
@@ -319,7 +319,7 @@ p strong {
 
 후속 결합기는 다음 형제 선택기와 매우 유사합니다. `+` 문자 대신 `~` 문자를 사용하십시오. 이것이 다른 점은 요소가 동일한 부모를 가진 다음 요소가 아니라 동일한 부모를 가진 다른 요소를 따라야 한다는 것입니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %}<figcaption class="w-figcaption">후속 선택기를 `:checked` 가짜 클래스와 함께 사용하여 순수 CSS 스위치 요소를 만듭니다.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %}<figcaption>후속 선택기를 `:checked` 가짜 클래스와 함께 사용하여 순수 CSS 스위치 요소를 만듭니다.</figcaption></figure>
 
 이 후속 결합기는 강성이 약간 낮아 위의 샘플과 같은 상황에서 유용하며, 관련 확인란이 `:checked` 상태일 때 사용자 지정 스위치의 색상을 변경합니다.
 

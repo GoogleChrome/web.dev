@@ -28,7 +28,7 @@ Cuando lleve a cabo desarrollo local, use `http://localhost` por defecto. Así, 
 
 - Para usar un nombre de host personalizado
 
-    <figure class="w-figure">{% Img src="image/admin/ifswaep3VUkY7cjArbIc.png", alt="Una lista de casos en los que necesita usar HTTPS para el desarrollo local.", width="800", height="450" %}<figcaption class="w-figcaption"> Cuándo usar HTTPS para el desarrollo local.</figcaption></figure>
+    <figure>{% Img src="image/admin/ifswaep3VUkY7cjArbIc.png", alt="Una lista de casos en los que necesita usar HTTPS para el desarrollo local.", width="800", height="450" %}<figcaption> Cuándo usar HTTPS para el desarrollo local.</figcaption></figure>
 
 {% Aside %} Si necesita HTTPS para uno de los casos de uso anteriores, consulte [Cómo usar HTTPS para el desarrollo local](/how-to-use-local-https). {% endAside %}
 
@@ -64,7 +64,7 @@ Debe utilizar HTTPS para el desarrollo local en los siguientes casos:
 
 - No está utilizando `localhost`, sino un nombre de host personalizado para el desarrollo local, por ejemplo, `mysite.example`. Normalmente, esto significa que ha anulado su archivo de hosts local:
 
-    <figure class="w-figure">{% Img src="image/admin/i7dPGFARXLbg9oIAUol2.jpg", alt="Captura de pantalla de una terminal editando un archivo de hosts", width="740", height="318" %}<figcaption class="w-figcaption"> Editar un archivo de hosts para agregar un nombre de host personalizado.</figcaption></figure>
+    <figure>{% Img src="image/admin/i7dPGFARXLbg9oIAUol2.jpg", alt="Captura de pantalla de una terminal editando un archivo de hosts", width="740", height="318" %}<figcaption> Editar un archivo de hosts para agregar un nombre de host personalizado.</figcaption></figure>
 
     En este caso, Chrome, Edge, Safari y Firefox *no* consideran que `mysite.example` sea seguro de forma predeterminada, aunque sea un sitio local. Por lo tanto, no se comportará como un sitio HTTPS.
 

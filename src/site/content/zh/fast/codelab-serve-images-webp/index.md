@@ -123,6 +123,6 @@ flower3.webp
 
 1. 验证是否通过了**以下一代格式提供图片**审计。
 
-{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="在 Lighthouse 中通过'以下一代格式提供图片'审计", width="701", height="651", class="w-screenshot" %}
+{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="在 Lighthouse 中通过'以下一代格式提供图片'审计", width="701", height="651" %}
 
 成功！现在，您在站点上提供的便是 WebP 图片。

@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse는 텍스트 콘텐츠 또는 `aria-label` 속성이 없는 버튼을 플래그 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse 감사 표시 버튼에 액세스할 수 있는 이름이 없음", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse 감사 표시 버튼에 액세스할 수 있는 이름이 없음", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

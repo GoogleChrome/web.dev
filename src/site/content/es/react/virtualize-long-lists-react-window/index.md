@@ -28,7 +28,7 @@ Puede haber ocasiones en las que necesite mostrar una tabla grande o una lista q
 
 **La virtualización de listas**, o "partición de la pantalla en ventanas", es el concepto de renderizar solo lo que es visible para el usuario. El número de elementos que se renderizan al principio es un subconjunto muy pequeño de la lista completa y la "ventana" de contenido visible se *mueve* cuando el usuario continúa desplazándose. Esto mejora tanto el rendimiento de renderizado como el de desplazamiento de la lista.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="Ventana de contenido en una lista virtualizada", width="578", height="525", class="w-screenshot" %} <figcaption class="w-figcaption"> "Ventana" móvil de contenido en una lista virtualizada</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="Ventana de contenido en una lista virtualizada", width="578", height="525" %} <figcaption> "Ventana" móvil de contenido en una lista virtualizada</figcaption></figure>
 
 Los nodos DOM que salen de la "ventana" se reciclan o se reemplazan inmediatamente con elementos más nuevos a medida que el usuario se desplaza hacia abajo en la lista. Esto mantiene el número de todos los elementos renderizados acorde al tamaño de la ventana.
 
@@ -120,7 +120,7 @@ La función de tamaño de elemento pasada al prop `itemSize` aleatoriza las altu
 
 `react-window` también ofrece soporte para virtualizar listas multidimensionales o cuadrículas. En este contexto, la "ventana" de contenido visible cambia a medida que el usuario se desplaza horizontal **y** verticalmente.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="La ventana móvil de contenido en una cuadrícula virtualizada es bidimensional", width="739", height="516", class="w-screenshot" %}<figcaption class="w-figcaption"> La "ventana" móvil de contenido en una cuadrícula virtualizada es bidimensional</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="La ventana móvil de contenido en una cuadrícula virtualizada es bidimensional", width="739", height="516" %}<figcaption> La "ventana" móvil de contenido en una cuadrícula virtualizada es bidimensional</figcaption></figure>
 
 De manera similar, los componentes `FixedSizeGrid` y `VariableSizeGrid` se pueden usar dependiendo de si el tamaño de elementos de lista específicos puede variar.
 
@@ -137,7 +137,7 @@ Muchos sitios web mejoran el rendimiento al esperar a cargar y representar eleme
 
 El siguiente diagrama puede ayudar a resumir esto:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="Diferencia en el desplazamiento entre una lista normal y una virtualizada", width="800", height="531", class="w-screenshot" %} <figcaption class="w-figcaption"> Diferencia en el desplazamiento entre una lista regular y una virtualizada</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="Diferencia en el desplazamiento entre una lista normal y una virtualizada", width="800", height="531" %} <figcaption> Diferencia en el desplazamiento entre una lista regular y una virtualizada</figcaption></figure>
 
 El mejor enfoque para resolver este problema es continuar usando una biblioteca como `react-window` para mantener una pequeña "ventana" de elementos en una página, pero también cargar de forma diferida las entradas más nuevas a medida que el usuario se desplaza hacia abajo. Un paquete separado, `react-window-infinite-loader`, lo hace posible con `react-window`.
 

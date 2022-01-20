@@ -71,7 +71,7 @@ magick convert flower.jpg -resize 300x200 flower-small.jpg
 画像のバージョンを複数個指定すると、ブラウザは最適なバージョンを選択します。
 
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -100,7 +100,7 @@ CSP-политика, приведенная выше, является «стр
 
 В ходе этого процесса вы можете использовать проверку **Best Practices** в [Lighthouse](https://developers.google.com/web/tools/lighthouse) (v7.3.0 или выше с флагом `--preset=experimental`) для подтверждения того, что на вашем сайте действует CSP-политика и она является достаточно строгой для предотвращения XSS-атак.
 
-{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="Предупреждение отчета Lighthouse о том, что CSP-политика, применяемая в режиме исполнения, не обнаружена.", width="730", height="78", class="w-screenshot" %}
+{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="Предупреждение отчета Lighthouse о том, что CSP-политика, применяемая в режиме исполнения, не обнаружена.", width="730", height="78" %}
 
 ### Шаг 1. Определитесь, какой вид CSP использовать: на основе одноразовых номеров или на основе хешей
 
@@ -289,7 +289,7 @@ scripts.forEach(function(scriptUrl) {
 
 Если в ходе предыдущего шага вы включили CSP, вы сможете видеть в консоли сообщения о нарушении CSP-политики каждый раз, когда происходит блокировка запрещенного паттерна.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt="Сообщения о нарушении CSP-политики в консоли разработчика Chrome.", class="w-screenshot", width="800", height="235" %}
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt="Сообщения о нарушении CSP-политики в консоли разработчика Chrome.", width="800", height="235" %}
 
 В большинстве случаев исправление не потребует больших усилий:
 

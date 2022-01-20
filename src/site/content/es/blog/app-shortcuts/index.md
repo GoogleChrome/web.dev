@@ -27,9 +27,9 @@ Los accesos directos a las aplicaciones ayudan a los usuarios a iniciar rápidam
 
 El menú de accesos directos de la aplicación se invoca haciendo clic con el botón derecho en el ícono de la aplicación en la barra de tareas (Windows) o en el dock (macOS) en el escritorio del usuario, o presionando prolongadamente el ícono del iniciador de la aplicación en Android.
 
-<figure class="w-figure">{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Captura de pantalla del menú de accesos directos abierto de una aplicación en Android", width="800", height="420", class="w-screenshot" %} }<figcaption class="w-figcaption"> Menú de accesos directos abierto de aplicaciones en Android</figcaption></figure>
+<figure>{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Captura de pantalla del menú de accesos directos abierto de una aplicación en Android", width="800", height="420" %} }<figcaption> Menú de accesos directos abierto de aplicaciones en Android</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Captura de pantalla del menú de accesos directos abierto de una aplicación en Windows", width="800", height="420", class="w-screenshot" %}<figcaption class="w-figcaption"> Menú de accesos directos abierto de las aplicaciones en Windows</figcaption></figure>
+<figure>{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Captura de pantalla del menú de accesos directos abierto de una aplicación en Windows", width="800", height="420" %}<figcaption> Menú de accesos directos abierto de las aplicaciones en Windows</figcaption></figure>
 
 El menú de accesos directos de la aplicación se muestra solo para [las aplicaciones web progresivas (PWA)](/progressive-web-apps/) que están instaladas en el escritorio o dispositivo móvil del usuario. Consulta [¿Qué se necesita para ser instalable?](/install-criteria/) para conocer los requisitos de instalación.
 
@@ -102,7 +102,7 @@ Como medida de calidad, los íconos deben tener al menos la mitad del tamaño id
 
 Para verificar que los accesos directos de su aplicación están configurados correctamente, usa el panel de **Manifiesto** en el panel de **Aplicación** de DevTools.
 
-<figure class="w-figure">{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Captura de pantalla de los accesos directos a las aplicaciones en DevTools", width="800", height="534" %}<figcaption class="w-figcaption"> Accesos directos de aplicaciones que se muestran en DevTools</figcaption></figure>
+<figure>{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Captura de pantalla de los accesos directos a las aplicaciones en DevTools", width="800", height="534" %}<figcaption> Accesos directos de aplicaciones que se muestran en DevTools</figcaption></figure>
 
 Este panel proporciona una versión legible por humanos de muchas de las propiedades de tu manifiesto, incluidos los accesos directos a las aplicaciones. Facilita la verificación de que todos los iconos de acceso directo, si es que fueron proporcionados, se carguen correctamente.
 
@@ -128,7 +128,7 @@ Deberías de anotar los accesos directos a las aplicaciones de `url` como lo hac
 
 Los accesos directos a aplicaciones están disponibles en Android (Chrome 84), Windows (Chrome 85 y Edge 85), Chrome OS (Chrome 92), macOS y Linux (Chrome 96 y Edge 96).
 
-<figure class="w-figure">{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Captura de pantalla de un menú de accesos directos abierto de aplicaciones en Chrome OS", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption"> Menú de accesos directos abierto de aplicaciones en Chrome OS</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Captura de pantalla de un menú de accesos directos abierto de aplicaciones en Chrome OS", width="800", height="450" %}<figcaption> Menú de accesos directos abierto de aplicaciones en Chrome OS</figcaption></figure>
 
 ## Soporte de Trusted Web Activity
 
@@ -140,8 +140,8 @@ Para los desarrolladores que integran Trusted Web Activity manualmente en su apl
 
 ## Muestra
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
+<figure>
+  <video controls autoplay loop muted src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
   </video></figure>
 
 Consulta la [muestra de accesos directos de la aplicación](https://app-shortcuts.glitch.me) y su [fuente](https://glitch.com/edit/#!/app-shortcuts).

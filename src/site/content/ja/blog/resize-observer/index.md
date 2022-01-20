@@ -49,7 +49,7 @@ ro.observe(someElement);
 
 通常、 [`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)は、`contentRect` と呼ばれるプロパティを介して要素のコンテンツボックスをレポートし、これにより [`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly) オブジェクトが返されます。このコンテンツボックスがコンテンツを配置できるボックスであり、パディングを差し引いたボーダーボックスです。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="CSS ボックスモデルの図。", width="727", height="562" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="CSS ボックスモデルの図。", width="727", height="562" %}</figure>
 
 `ResizeObserver` は `contentRect` とパディングの両方のサイズを*レポート*しますが、`contentRect` のみを*監視*することに注意しておくことが重要です。`contentRect`  を要素の境界ボックスと*混同しない*ようにしましょう。`getBoundingClientRect()` によってレポートされる境界ボックスは、要素とその子孫をすべて含むボックスです。SVG はこのルールの例外であり、`ResizeObserver` は境界ボックスのサイズをレポートします。
 
@@ -75,8 +75,8 @@ Chrome 84 の時点では、`ResizeObserverEntry` には、より詳細な情報
 
 `ResizeObserver` を使用して行えることの 1 つに、要素ごとのメディアクエリを実装することがあります。要素を監視することにより、デザインのブレークポイントを必然的に定義して要素のスタイルを変更することができます。次の[例](https://googlechrome.github.io/samples/resizeobserver/)では、2 番目のボックスは幅に応じて境界線の半径を変更します。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -96,8 +96,8 @@ ro.observe(document.querySelector('.box:nth-child(2)'));
 
 `ResizeObserver` を使用すると、*両方*のシナリオを処理する*単一*のコードを記述できます。ウィンドウのサイズ変更は、定義により `ResizeObserver` がキャプチャできるイベントではありますが、`appendChild()` 呼び出すと、新しい要素用にスペースを作成する必要があるため、その要素のサイズも変更されます（`overflow: hidden` が設定されていない限り）。これを念頭に置くと、ごくわずかな行でこの目的の効果を達成することができます。
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm" type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4" type="video/mp4; codecs=h264">
  </source></source></video></figure>

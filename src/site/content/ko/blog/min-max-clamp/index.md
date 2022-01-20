@@ -28,31 +28,31 @@ feedback:
 
 Safari는 2019년 4월에 완전한 기능 세트를 최초로 [출시](https://bugs.webkit.org/show_bug.cgi?id=167000) 했으며, 그해 후반에 Chromium이 버전 79를 출시했습니다. 올해 Firefox [75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519)가 출시되면서 모든 브라우저가 `min()`, `max()` 및 `clamp()`를 지원하게 되었습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246", class="w-screenshot" %} <figcaption class="w-figcaption"> <a href="https://caniuse.com/css-math-functions">Caniuse</a> 지원 테이블. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246" %} <figcaption> <a href="https://caniuse.com/css-math-functions">Caniuse</a> 지원 테이블. </figcaption></figure>
 
 ## 사용 방법
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">min() 함수가 옵션 목록과 그 부모를 기반으로 값을 선택하는 방법을 보여줍니다. <a href="https://codepen.io/una/pen/rNeGNVL">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
+  <figcaption>min() 함수가 옵션 목록과 그 부모를 기반으로 값을 선택하는 방법을 보여줍니다. <a href="https://codepen.io/una/pen/rNeGNVL">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
 
 적절한 경우 CSS 표현식의 오른쪽에 `min()` , `max()` 및 `clamp()` 를 사용할 수 있습니다. `min()` 및 `max()`의 경우 값의 인수 목록을 제공하고 브라우저는 각각 가장 작은 값 또는 가장 큰 값을 결정합니다. 예를 들어 `min(1rem, 50%, 10vw)`의 경우 브라우저는 이러한 상대 단위 중 가장 작은 단위를 계산하고 해당 값을 실제 값으로 사용합니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">max() 함수가 옵션 목록과 그 부모를 기반으로 값을 선택하는 방법을 보여줍니다. <a href="https://codepen.io/una/pen/RwaZXqR">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
+  <figcaption>max() 함수가 옵션 목록과 그 부모를 기반으로 값을 선택하는 방법을 보여줍니다. <a href="https://codepen.io/una/pen/RwaZXqR">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
 
 `max()` 함수는 쉼표로 구분된 표현식 목록에서 가장 큰 값을 선택합니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">clamp() 함수가 옵션 목록과 그 부모를 기반으로 값을 선택하는 방법을 보여줍니다. <a href="https://codepen.io/una/pen/bGpoGdJ">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
+  <figcaption>clamp() 함수가 옵션 목록과 그 부모를 기반으로 값을 선택하는 방법을 보여줍니다. <a href="https://codepen.io/una/pen/bGpoGdJ">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
 
 `clamp()`를 사용하려면 최소값, 이상적인 값(계산할 값) 및 최대값의 세 가지 값을 입력합니다.
 
@@ -82,27 +82,27 @@ p {
 
 이렇게 하면 브라우저가 단락의 너비를 결정할 수 있습니다. 50%의 너비가 `45ch`보다 작은 경우가 아니면 너비를 50%로 설정하며 작은 경우 `45ch`가 선택됩니다. 50%가 `75ch`보다 넓은 경우도 동일합니다. 이 데모에서는 카드 자체가 고정됩니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">clamp() 함수를 사용하여 최소 및 최대 너비를 제한합니다. <a href="https://codepen.io/una/pen/QWyLxaL">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
+  <figcaption>clamp() 함수를 사용하여 최소 및 최대 너비를 제한합니다. <a href="https://codepen.io/una/pen/QWyLxaL">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
 
 `min()` 또는 `max()` 함수로 이것을 분해할 수 있습니다. 요소의 너비가 `50%`이고 `75ch` 를 초과하지 않도록 하려면(즉, 더 큰 화면에서) 다음과 같이 코드를 작성하세요. `width: min(75ch, 50%);`. 이는 `min()` 함수를 사용하여 "최대" 크기를 설정합니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">clamp() 함수를 사용하여 최소 및 최대 너비를 제한합니다.</figcaption></figure>
+  <figcaption>clamp() 함수를 사용하여 최소 및 최대 너비를 제한합니다.</figcaption></figure>
 
 `max()` 함수를 사용하여 읽을 수 있는 텍스트의 최소 크기를 확인할 수 있습니다. 이것은 다음과 같을 것입니다: `width: max(45ch, 50%);`. 여기서 브라우저는 `45ch` 또는 `50%` 중 더 큰 것을 선택합니다. 이는 요소가 *최소한* `45ch` 이상이어야 함을 의미합니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">clamp() 함수를 사용하여 최소 및 최대 너비를 제한합니다.</figcaption></figure>
+  <figcaption>clamp() 함수를 사용하여 최소 및 최대 너비를 제한합니다.</figcaption></figure>
 
 ## 패딩 관리
 
@@ -114,21 +114,21 @@ footer {
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-padding.mp4">
   </source></video>
-  <figcaption class="w-figcaption">max() 함수를 사용하여 구성 요소에 대한 최소 패딩을 설정합니다. <a href="https://codepen.io/chriscoyier/pen/qBZqNKa">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
+  <figcaption>max() 함수를 사용하여 구성 요소에 대한 최소 패딩을 설정합니다. <a href="https://codepen.io/chriscoyier/pen/qBZqNKa">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
 
 ## 유동적인 타이포그래피
 
 [유동적인 타이포그래피](https://www.smashingmagazine.com/2016/05/fluid-typography/)를 가능하게 하기 위해 [Mike Riethmeuller](https://twitter.com/mikeriethmuller)는 `calc()` 함수를 사용하여 최소 글꼴 크기, 최대 글꼴 크기를 설정하고 최소에서 최대로 크기 조정을 허용하는 기술을 대중화했습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/fliud-type.mp4">
   </source></video>
-  <figcaption class="w-figcaption">clamp()를 사용하여 유동적인 타이포그래피를 만듭니다. <a href="https://codepen.io/una/pen/ExyYXaN">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
+  <figcaption>clamp()를 사용하여 유동적인 타이포그래피를 만듭니다. <a href="https://codepen.io/una/pen/ExyYXaN">Codepen의 데모를 참조하십시오.</a></figcaption></figure>
 
 `clamp()`를 사용하면 이것을 더 명확하게 작성할 수 있습니다. 복잡한 문자열을 요구하는 대신 브라우저가 작업을 수행할 수 있습니다. 허용되는 최소 글꼴 크기(예 `1.5rem`), 최대 크기(예: `3rem`) 및 이상적인 크기로 `5vw`를 설정 합니다.
 

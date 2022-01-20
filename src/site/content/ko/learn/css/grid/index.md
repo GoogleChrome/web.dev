@@ -111,7 +111,7 @@ Chrome Grid 개발 도구는 그리드의 다양한 부분을 이해하는 데 �
 
 Chrome에서 [데모](https://codepen.io/web-dot-dev/full/NWdbrzr)를 엽니다. ID가 `container`인 회색 배경의 요소를 검사합니다. `.container` 요소 옆에서 DOM의 그리드 배지를 선택하여 그리드를 강조 표시합니다. 레이아웃 탭 내의 드롭다운에서 **라인 번호 표시**를 선택하여 그리드의 라인 번호를 확인합니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg", alt="캡션 및 지침에 설명된 대로", width="800", height="449" %}<figcaption class="w-figcaption"> 라인 번호, 셀 및 트랙을 표시하는 Chrome DevTools에서 강조 표시된 그리드.</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg", alt="캡션 및 지침에 설명된 대로", width="800", height="449" %}<figcaption> 라인 번호, 셀 및 트랙을 표시하는 Chrome DevTools에서 강조 표시된 그리드.</figcaption></figure>
 
 ### 고유 크기 조정 키워드
 

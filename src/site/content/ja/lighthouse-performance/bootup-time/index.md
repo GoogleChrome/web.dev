@@ -32,7 +32,7 @@ JavaScriptの実行に時間がかかると、ページのパフォーマンス�
 
 JavaScriptの実行に2秒以上かかると、[Lighthouseは警告を表示します。実行に3.5秒以上かかると、監査は失敗します。](https://developers.google.com/web/tools/lighthouse/)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="LighthouseによるJavaScript実行時間短縮監査のスクリーンショット", width="800", height="321", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="LighthouseによるJavaScript実行時間短縮監査のスクリーンショット", width="800", height="321" %}</figure>
 
 実行時間が長くなる最大の要因を特定できるように、Lighthouseは、ページが読み込む各JavaScriptファイルの実行、評価、解析に費やされた時間を報告してくれます。
 

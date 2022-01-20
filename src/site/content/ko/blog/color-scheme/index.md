@@ -162,27 +162,27 @@ body {
 
 페이지에서 개발자가 제공한 인라인 스타일시트의 규칙에 따라 다크 모드가 활성화되었는지 여부에 따라 `<fieldset>` 요소의 `background-color`가 변화합니다. `gainsboro` 또는 `darkslategray` 중 하나입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="밝은 모드의 페이지입니다.", width="800", height="322", class="w-screenshot w-screenshot--filled " %}<figcaption class="w-figcaption"> <strong>라이트 모드:</strong> 개발자와 사용자 에이전트가 지정한 스타일입니다. 사용자 에이전트 스타일시트에 따라 텍스트는 검정색이고 배경은 흰색입니다. <code>&lt;fieldset&gt;</code> 요소의 <code>background-color</code>은 인라인 개발자 스타일시트에 따라 <code>gainsboro</code>입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="밝은 모드의 페이지입니다.", width="800", height="322" %}<figcaption> <strong>라이트 모드:</strong> 개발자와 사용자 에이전트가 지정한 스타일입니다. 사용자 에이전트 스타일시트에 따라 텍스트는 검정색이고 배경은 흰색입니다. <code>&lt;fieldset&gt;</code> 요소의 <code>background-color</code>은 인라인 개발자 스타일시트에 따라 <code>gainsboro</code>입니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="어두운 모드의 페이지입니다.", width="800", height="322", class="w-screenshot w-screenshot--filled " %}<figcaption class="w-figcaption"> <strong>다크 모드:</strong> 개발자와 사용자 에이전트가 지정한 스타일입니다. 사용자 에이전트 스타일시트에 따라 텍스트는 흰색이고 배경은 검은색입니다. <code>&lt;fieldset&gt;</code> 요소의 <code>background-color</code> 은 인라인 개발자 스타일시트에 따라 <code>darkslategray</code>입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="어두운 모드의 페이지입니다.", width="800", height="322" %}<figcaption> <strong>다크 모드:</strong> 개발자와 사용자 에이전트가 지정한 스타일입니다. 사용자 에이전트 스타일시트에 따라 텍스트는 흰색이고 배경은 검은색입니다. <code>&lt;fieldset&gt;</code> 요소의 <code>background-color</code> 은 인라인 개발자 스타일시트에 따라 <code>darkslategray</code>입니다.</figcaption></figure>
 
 `<button>` 요소의 모양은 사용자 에이전트 스타일시트에 의해 제어됩니다. `color`가 [`ButtonText`](https://drafts.csswg.org/css-color/#valdef-system-color-buttontext) 시스템 색상으로 설정되고 `background-color` 및 네 개의 `border-color`는 시스템 색상 [`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface)로 설정됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="ButtonFace 속성을 사용하는 라이트 모드 페이지입니다.", width="800", height="322", class="w-screenshot w- 스크린샷-채워짐" %}<figcaption class="w-figcaption"> <strong>라이트 모드:</strong> <code>background-color</code> 및 다양한 <code>border-color</code>가 <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a> 시스템 색상으로 설정됩니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="ButtonFace 속성을 사용하는 라이트 모드 페이지입니다.", width="800", height="322" %}<figcaption> <strong>라이트 모드:</strong> <code>background-color</code> 및 다양한 <code>border-color</code>가 <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a> 시스템 색상으로 설정됩니다.</figcaption></figure>
 
 `<button>` 요소의 `border-color`가 어떻게 변경되는지 확인합니다. `border-top-color`과 `border-bottom-color`에 대한 *계산된* 값은 `rgba(0, 0, 0, 0.847)`(어두움)에서 `rgba(255, 255, 255, 0.847)`(밝음)으로 전환합니다. 사용자 에이전트는 색상 구성표에 따라 `ButtonFace`를 동적으로 업데이트하기 때문입니다. 관련 시스템 색상 `ButtonText`에 설정된 `<button>`요소의 `color`에 대해 같은 방식이 적용됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="계산된 색상 값이 ButtonFace와 일치함을 표시합니다.", width="800", height="322", class="w-screenshot w-screenshot --채워진" %}<figcaption class="w-figcaption"> <strong>라이트 모드:</strong> 사용자 에이전트 스타일시트에서 <code>ButtonFace</code>로 설정된 <code>border-top-color</code> 및 <code>border-bottom-color</code>의 계산된 값 <code>rgba(0, 0, 0, 0.847)</code>입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="계산된 색상 값이 ButtonFace와 일치함을 표시합니다.", width="800", height="322" %}<figcaption> <strong>라이트 모드:</strong> 사용자 에이전트 스타일시트에서 <code>ButtonFace</code>로 설정된 <code>border-top-color</code> 및 <code>border-bottom-color</code>의 계산된 값 <code>rgba(0, 0, 0, 0.847)</code>입니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="어두운 모드에서 계산된 색상 값이 ButtonFace와 여전히 일치함을 표시합니다.", width="800", height="322", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> <strong>다크 모드:</strong> 사용자 에이전트 스타일시트에서 <code>ButtonFace</code>로 설정된 <code>border-top-color</code> 및 <code>border-bottom-color</code>의 계산된 값은 이제 <code>rgba(255, 255, 255, 0.847)</code>입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="어두운 모드에서 계산된 색상 값이 ButtonFace와 여전히 일치함을 표시합니다.", width="800", height="322" %}<figcaption> <strong>다크 모드:</strong> 사용자 에이전트 스타일시트에서 <code>ButtonFace</code>로 설정된 <code>border-top-color</code> 및 <code>border-bottom-color</code>의 계산된 값은 이제 <code>rgba(255, 255, 255, 0.847)</code>입니다.</figcaption></figure>
 
 ## 데모
 
 [Glitch](https://color-scheme-demo.glitch.me/) 의 데모에서 많은 수의 HTML 요소에 적용된 `color-scheme` 의 효과를 볼 수 있습니다. 데모는 [위의 경고](#using-color-scheme-in-practice)에 언급된 링크 색상으로 WCAG AA 및 WCAG AAA [위반](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)을 *의도적으로* 보여줍니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="라이트 모드에 있는 데모입니다.", width="800", height="982", class="w-screenshot w-screenshot-- 채워짐" %}<figcaption class="w-figcaption"> <a href="https://color-scheme-demo.glitch.me/">데모</a>가 <code>color-scheme: light</code> 전환되었습니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="라이트 모드에 있는 데모입니다.", width="800", height="982" %}<figcaption> <a href="https://color-scheme-demo.glitch.me/">데모</a>가 <code>color-scheme: light</code> 전환되었습니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="다크 모드에 있는 데모입니다.", width="800", height="982", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> <a href="https://color-scheme-demo.glitch.me/">데모</a>가 <code>color-scheme: dark</code> 전환되었습니다. 링크 색상과 함께 WCAG AA 및 WCAG AAA <a href="https://webaim.org/resources/contrastchecker/?fcolor=0000EE&amp;bcolor=000000">위반</a>에 유의하십시오.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="다크 모드에 있는 데모입니다.", width="800", height="982" %}<figcaption> <a href="https://color-scheme-demo.glitch.me/">데모</a>가 <code>color-scheme: dark</code> 전환되었습니다. 링크 색상과 함께 WCAG AA 및 WCAG AAA <a href="https://webaim.org/resources/contrastchecker/?fcolor=0000EE&amp;bcolor=000000">위반</a>에 유의하십시오.</figcaption></figure>
 
 ## 감사의 말
 

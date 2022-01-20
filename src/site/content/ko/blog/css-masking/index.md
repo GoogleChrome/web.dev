@@ -70,7 +70,7 @@ feedback:
 }
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="SVG 마스크 사용 예", width="699", height="490", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="SVG 마스크 사용 예", width="699", height="490" %}</figure>
 
 이 접근 방식의 장점은 마스크가 이미지뿐만 아니라 모든 HTML 요소에 적용될 수 있다는 것입니다. 불행히도 이 접근 방식을 지원하는 브라우저는 Firefox뿐입니다.
 

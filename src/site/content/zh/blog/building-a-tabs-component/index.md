@@ -19,7 +19,7 @@ tags:
 
 在本文中，我想与您分享我在为 Web 构建一个 Tabs（标签）组件的想法，该组件响应迅速、支持多种设备输入并可以跨浏览器工作。观看[演示](https://gui-challenges.web.app/tabs/dist/)。
 
-<figure class="w-figure w-figure--fullbleed">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}<figcaption class="w-figure"><a href="https://gui-challenges.web.app/tabs/dist/">演示</a></figcaption></figure>
+<figure data-size="full">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4", autoplay="true", loop="true", muted="true" %}<figcaption><a href="https://gui-challenges.web.app/tabs/dist/">演示</a></figcaption></figure>
 
 如果您更喜欢视频，以下是本文的 YouTube 版本：
 
@@ -31,7 +31,7 @@ Tabs 是设计系统的常见组件，但可以采用多种形状和形式。首
 
 现如今，Tabs 用户体验的基本要素是按钮导航区域，它可以切换显示框架中内容的可见性。许多不同的内容区域共享相同的空间，但根据导航中选择的按钮有条件地呈现。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", alt="由于网页应用到组件概念的样式多种多样，所以拼贴图很混乱", class="w-screenshot", width= "800", height="500" %}<figcaption class="w-figcaption">过去 10 年中标签组件网页设计风格的拼贴图</figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", alt="由于网页应用到组件概念的样式多种多样，所以拼贴图很混乱", width= "800", height="500" %}<figcaption>过去 10 年中标签组件网页设计风格的拼贴图</figcaption></figure>
 
 ## Web 策略
 
@@ -49,7 +49,7 @@ Tabs 是设计系统的常见组件，但可以采用多种形状和形式。首
 
 这里有一些结构内容成员：链接和`:target`。我们需要一个连接列表（可使用`<nav>`），以及一个`<article>`元素列表（可使用`<section>`）。每个链接哈希将匹配一个部分，让浏览器通过锚点滚动内容。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}<figcaption class="w-figure">单击链接按钮，在焦点内容中滑动</figcaption></figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4", autoplay="true", loop="true", muted="true" %}<figcaption>单击链接按钮，在焦点内容中滑动</figcaption></figure>
 
 例如，在 Chrome 89 中点击链接会自动聚焦到`:target`这篇文章，不需要使用 JS。然后用户可以像往常一样使用输入设备滚动文章内容。它是免费内容，如标记所示。
 
@@ -105,7 +105,7 @@ Tabs 是设计系统的常见组件，但可以采用多种形状和形式。首
 - 内容区域<b style="color: #008CFF;">（蓝色）</b>可水平滚动
 - 每篇文章<b style="color: #2FD800;">（绿色）</b>都可以垂直滚动。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", alt="3 个带有颜色匹配方向箭头的彩色框，描绘出了滚动区域并显示滚动方向。", class="w-screenshot", width="800", height="450" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", alt="3 个带有颜色匹配方向箭头的彩色框，描绘出了滚动区域并显示滚动方向。", width="800", height="450" %}</figure>
 
 滚动涉及两种不同类型的元素：
 
@@ -161,7 +161,7 @@ snap-tabs {
 
 我在下面用 [VisBug](https://a.nerdy.dev/gimme-visbug) 高亮显示的框架可帮我们查看滚动容器创建的**窗口**。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", alt="header 和 section 元素上有粉红色覆盖，勾勒出它们在组件中占用的空间", class="w-screenshot", width="800", height="620" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", alt="header 和 section 元素上有粉红色覆盖，勾勒出它们在组件中占用的空间", width="800", height="620" %}</figure>
 
 #### 标签 `<header>`布局 {: #tabs-header }
 
@@ -193,7 +193,7 @@ header {
 
 `.snap-indicator`应该与链接组一起水平移动，这个标题布局有助于设置那个阶段。这里没有用到绝对定位的元素！
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", alt="nav 和 span.indicator 元素上有粉红色覆盖，勾勒出它们在组件中占据的空间", class="w-screenshot", width="800", height="368" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", alt="nav 和 span.indicator 元素上有粉红色覆盖，勾勒出它们在组件中占据的空间", width="800", height="368" %}</figure>
 
 接下来是滚动样式。事实证明，我们可以在 2 个水平滚动区域（标题和章节）之间共享滚动样式，因此我创建了一个实用程序类`.scroll-snap-x` 。
 
@@ -255,7 +255,7 @@ nav {
 
 每个链接的样式和大小都是自己的，所以导航布局只需要指定方向和流向。导航项目上的独特宽度使标签之间的转换变得有趣，因为指示器将其宽度调整为新目标。根据此处有多少元素，浏览器将呈现或不呈现滚动条。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", alt="导航的 a 元素上有粉红色覆盖，勾勒出它们在组件中占据的空间以及溢出的位置", class=" w-screenshot", width="800", height="327" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", alt="导航的 a 元素上有粉红色覆盖，勾勒出它们在组件中占据的空间以及溢出的位置", width="800", height="327" %}</figure>
 
 #### 标签`<section>`布局 {: #tabs-section }
 
@@ -289,7 +289,7 @@ section {
 
 就好像我们在说“尽可能以强制方式多多垂直扩展”（记住我们为`flex-shrink: 0`设置的标题：这是对这种扩展推动的一种防御），它为一组全高列设置了行高。 `auto-flow`样式会告诉网格始终将子项排列在水平线上，不要自动换行，而这正是我们想要的；溢出父窗口。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", alt="文章元素上有粉红色覆盖，勾勒出它们在组件中占据的空间以及溢出的位置", class="w-screenshot", width="800", height="512" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", alt="文章元素上有粉红色覆盖，勾勒出它们在组件中占据的空间以及溢出的位置", width="800", height="512" %}</figure>
 
 我有时会发现这些实在很难理解！这个章节元素装进了一个盒子里，同时又创建了一组盒子。我希望上面的图像和解释会有所帮助。
 
@@ -327,7 +327,7 @@ article {
 
 我选择让文章在它们的父滚动条中对齐。我真的很喜欢导航链接项和文章元素与其各自滚动容器的内联开始对齐的样子。它看起来有一种和谐的关系。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", alt="文章元素及其子元素上有粉红色覆盖，勾勒出它们在组件中占据的空间和溢出的方向", class=" w-screenshot", width="800", height="808" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", alt="文章元素及其子元素上有粉红色覆盖，勾勒出它们在组件中占据的空间和溢出的方向", width="800", height="808" %}</figure>
 
 文章是一个网格子项，它的大小预先确定为我们想要提供滚动 UX 的视区区域。这意味着我在这里无需定义任何高度或宽度样式，只需要定义它的溢出方式。我将 overflow-y 设置为自动，接着还使用方便的 overscroll-behavior 属性捕获滚动交互。
 
@@ -335,13 +335,13 @@ article {
 
 下面我在系统设置中选择了“始终显示滚动条”。我认为要让布局成功，一定要启用此设置，因为我要查看布局和滚动编排。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", alt="3 个滚动条设置为显示，现在占用布局空间，我们的组件看起来还不错", class="w-screenshot", width="500", height="607" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", alt="3 个滚动条设置为显示，现在占用布局空间，我们的组件看起来还不错", width="500", height="607" %}</figure>
 
 我认为在这个组件中看到滚动条装订线，有助于清楚地显示滚动区域的位置、它们支持的方向以及相互交互方式。考虑每个滚动窗口框架如何是布局的弹性或网格父项。
 
 DevTools 可以帮我们把这个视觉化：
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", alt="滚动区域有网格和弹性框工具叠加，勾勒出它们在组件中占据的空间和溢出方向", class="w-screenshot ", width="800", height="455" %}<figcaption class="w-figure"> Chromium Devtools，显示了充满锚元素的弹性框导航元素布局，充满文章元素的网格章节布局，以及充满段落和标题元素的文章元素。</figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", alt="滚动区域有网格和弹性框工具叠加，勾勒出它们在组件中占据的空间和溢出方向", width="800", height="455" %}<figcaption> Chromium Devtools，显示了充满锚元素的弹性框导航元素布局，充满文章元素的网格章节布局，以及充满段落和标题元素的文章元素。</figcaption></figure>
 
 滚动布局是完整的：对齐、可深层链接以及可使用键盘访问。为 UX 增强、风格和愉悦打下的坚实基础。
 
@@ -355,7 +355,7 @@ DevTools 可以帮我们把这个视觉化：
 
 我会将标签下划线与文章滚动位置链接起来。捕捉不仅仅是对齐，它还会锚定动画的开始和结束。这使`<nav>`（它就像[迷你地图](https://en.wikipedia.org/wiki/Mini-map)）保持连接到内容。我们将从 CSS 和 JS 中检查用户的动作偏好。有几个很棒的地方需要考虑！
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 #### 滚动行为 {: #scroll-behavior }
 
@@ -369,7 +369,7 @@ DevTools 可以帮我们把这个视觉化：
 }
 ```
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 由于我们在此处引入了运动以及用户无法控制的运动（如滚动），因此我们仅在用户在操作系统中没有设置对减少运动的偏好时，才会应用此样式。这样，我们只为喜欢它的人引入滚动运动。
 
@@ -379,7 +379,7 @@ DevTools 可以帮我们把这个视觉化：
 
 在 Chromium Devtools 中，我可以切换首选项并演示 2 种不同的过渡样式。我在构建这个过程中获得了很多乐趣。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -497,13 +497,13 @@ TranslateX 关键帧：
 
 总结该策略，标签指示器现在将根据章节滚动条的滚动对齐位置在 4 个关键帧上设置动画。对齐点会在关键帧之间创建清晰的轮廓，并真正增加了动画的同步感。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", alt="活动选项卡和非活动选项卡与 VisBug 叠加显示，显示两者的通过对比度分数", class="w-screenshot", width="540", height="400" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", alt="活动选项卡和非活动选项卡与 VisBug 叠加显示，显示两者的通过对比度分数", width="540", height="400" %}</figure>
 
 用户通过他们的交互来驱动动画，看到指示器的宽度和位置从一个章节变化到下一个章节，通过滚动完美跟踪。
 
 您可能没有注意到，但是当高亮显示的导航项被选中时，我对颜色的转换感到非常自豪。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 当高亮显示的项目具有更高的对比度时，未选择的较浅灰色显得更加推后。为文本转换颜色是很常见的，比如在悬停时和被选中时，但在滚动时转换该颜色、与下划线指示器同步，则更高级。
 
@@ -568,7 +568,7 @@ window.onload = () => {
 
 用户并不总是点击或使用键盘，有时他们只是自由滚动，这是他们的自由。当章节滚动条停止滚动时，无论它停在任何位置，都需要在顶部导航栏中进行匹配。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 这是我等待滚动结束的方式：
 
@@ -605,7 +605,7 @@ const setActiveTab = tabbtn => {
 
 设置活动标签首先要清除任何当前活动的标签，然后为传入的导航项提供活动状态属性。调用`scrollIntoView()`与 CSS 有一个有趣的交互，值得注意。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ```css
 .scroll-snap-x {

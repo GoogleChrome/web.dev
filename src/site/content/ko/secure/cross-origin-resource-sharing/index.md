@@ -20,7 +20,7 @@ tags:
 
 ## 리소스 요청은 웹에서 어떻게 작동합니까?
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="요청 및 응답", width="668", height="327" %}   <figcaption class="w-figcaption">     그림: 클라이언트 요청과 서버 응답의 예시   </figcaption></figure>
+<figure data-float="right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="요청 및 응답", width="668", height="327" %}   <figcaption>     그림: 클라이언트 요청과 서버 응답의 예시   </figcaption></figure>
 
 브라우저와 서버는 **Hypertext Transfer Protocol**(HTTP)를 사용하여 네트워크를 통해 데이터를 교환할 수 있습니다. HTTP는 리소스를 가져오는 데 필요한 정보를 포함하여 요청자와 응답자 간의 통신 규칙을 정의합니다.
 

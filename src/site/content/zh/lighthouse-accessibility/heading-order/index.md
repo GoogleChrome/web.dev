@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记标题跳过一级或多级的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="显示标题跳级的 Lighthouse 审计", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="显示标题跳级的 Lighthouse 审计", width="800", height="206" %}</figure>
 
 例如，对页面标题使用 `<h1>` 元素，接着对页面的主要部分使用 `<h3>` 元素，将导致审计失败，因为跳过了 `<h2>` 级别：
 

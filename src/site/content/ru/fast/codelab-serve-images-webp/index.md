@@ -121,6 +121,6 @@ flower3.webp
 
 1. Убедитесь, что сайт успешно проходит проверку **Serve images in next-gen formats**.
 
-{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Успешное прохождение проверки «Serve images in next-gen formats» в Lighthouse", width="701", height="651", class="w-screenshot" %}
+{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Успешное прохождение проверки «Serve images in next-gen formats» в Lighthouse", width="701", height="651" %}
 
 Готово! Теперь ваш сайт использует изображения в формате WebP.

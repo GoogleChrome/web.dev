@@ -22,11 +22,11 @@ accent-color: hotpink;
 
 La propiedad CSS `accent-color` de la [especificación de la interfaz de usuario de CSS](https://www.w3.org/TR/css-ui-4/#widget-accent) está aquí para teñir elementos con una línea de CSS, lo que le ahorra esfuerzos de personalización al proporcionar una forma de llevar su marca a los elementos.
 
-<figure class="w-figure ">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", class="w-screenshot", alt="Una captura de pantalla de una demostración de color de acento en tema claro, donde la casilla de verificación, los botones de radio, el control deslizante de rango y la barra de progreso están teñidos de color hot-pink (rosa vívido).", width="800", height="548" %} <figcaption class="w-figure"> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Damostración</a> </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", alt="Una captura de pantalla de una demostración de color de acento en tema claro, donde la casilla de verificación, los botones de radio, el control deslizante de rango y la barra de progreso están teñidos de color hot-pink (rosa vívido).", width="800", height="548" %} <figcaption> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Damostración</a> </figcaption></figure>
 
 La propiedad `accent-color` también funciona con [`color-scheme`](/color-scheme/), lo que permite a los autores teñir tanto los elementos claros como los oscuros. En el siguiente ejemplo, el usuario tiene un tema oscuro activo, la página usa `color-scheme: light dark`, y usa el mismo `accent-color: hotpink` para controles teñidos de hotpink con temas oscuros.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="Una captura de pantalla de una demostración de color de acento con tema oscuro, donde la casilla de verificación, los botones de radio, el control deslizante de rango y la barra de progreso están teñidos de hot-pink (rosa vívido).", width="800", height="548" %} <figcaption class="w-figure"><a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demostración</a></figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="Una captura de pantalla de una demostración de color de acento con tema oscuro, donde la casilla de verificación, los botones de radio, el control deslizante de rango y la barra de progreso están teñidos de hot-pink (rosa vívido).", width="800", height="548" %} <figcaption><a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demostración</a></figcaption></figure>
 
 ### Compatibilidad del navegador
 
@@ -58,7 +58,7 @@ Actualmente, solo cuatro elementos se pueden teñir a través de la propiedad `a
 
 Para evitar que existan elementos inaccesibles, los navegadores con `accent-color` deben determinar un [color de contraste elegible](https://webaim.org/articles/contrast/) para usar junto con el acento personalizado. A continuación se muestra una captura de pantalla que demuestra cómo Chrome 94 (izquierda) y Firefox 92 Nightly (derecha) difieren en sus algoritmos:
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", class="w-screenshot", alt="Una captura de pantalla de Firefox y Chromium uno al lado del otro, que muestra un espectro completo de casillas de verificación en varios tonos y sombras.", width="800", height="832" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", alt="Una captura de pantalla de Firefox y Chromium uno al lado del otro, que muestra un espectro completo de casillas de verificación en varios tonos y sombras.", width="800", height="832" %}
 
 Lo más importante que hay que sacar de esto es **confiar en el navegador**. Proporcione un color de marca y confíe en que tomará decisiones inteligentes por usted.
 

@@ -88,7 +88,7 @@ Web Vitals. Optimizations included:
     </li>
   </ul>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h8k2D4AqsGbeDtpjsfNe.png", alt="A summary of the optimizations: Largest Contentful Paint, Caching, CSS, vector graphics, lazily loaded JS and CSS, preconnecting.", width="800", height="920", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h8k2D4AqsGbeDtpjsfNe.png", alt="A summary of the optimizations: Largest Contentful Paint, Caching, CSS, vector graphics, lazily loaded JS and CSS, preconnecting.", width="800", height="920" %}
   </figure>
 </div>
 
@@ -109,7 +109,7 @@ process of improving user experience.
     <a href="/content-delivery-networks/">CDN</a>" improved to an A grade.
   </p>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WSQ9ATmLBzHmNtTWBIf8.png", alt="0.05 CLS score.", width="800", height="370", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WSQ9ATmLBzHmNtTWBIf8.png", alt="0.05 CLS score.", width="800", height="370" %}
   </figure>
 </div>
 
@@ -144,7 +144,7 @@ few weeks of kicking off their optimization work.
     </li>
   </ul>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lN46T0iOTj45lSOkE8mo.png", alt="55% improvement in LCP. 50% reduction in bounce rate. Increased engagement and consumption.", width="800", height="825", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lN46T0iOTj45lSOkE8mo.png", alt="55% improvement in LCP. 50% reduction in bounce rate. Increased engagement and consumption.", width="800", height="825" %}
   </figure>
 </div>
 

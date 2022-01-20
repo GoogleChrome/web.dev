@@ -134,7 +134,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 <img src="https://source.unsplash.com/random/800x600" width="800" height="600" alt="image to load in">
 ```
 
-<figure class="w-figure">{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %}<figcaption class="w-figcaption">これで、レイアウトシフトが発生せずに画像が読み込まれます。</figcaption></figure>
+<figure>{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %}<figcaption>これで、レイアウトシフトが発生せずに画像が読み込まれます。</figcaption></figure>
 
 {% Aside %}画像を読み込む別のアプローチは、`width`および`height`属性を指定するとともに、[`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset)および[`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset)属性を使用することです。これには、さまざまなサイズの画像をさまざまなデバイスに提供できるというパフォーマンス上の利点があります。詳細については、[レスポンシブ画像の提供](/serve-responsive-images/)を参照してください。 {% endAside %}
 
@@ -156,7 +156,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 
 フォントスワップは、ユーザーにコンテンツをすばやく表示する点で優れていますが、レイアウトシフトが発生する可能性があります。これらのレイアウトシフトは、Webフォントとそのフォールバックフォントがページ上で異なる量のスペースを占める場合に発生します。類似した比率のフォントを使用すると、これらのレイアウトシフトのサイズを最小限に抑えることができます。
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="フォントスワップによるレイアウトシフトを示す図", width="800", height="452" %} <figcaption class="w-figcaption">この例では、フォントスワップにより、ページ要素が5ピクセル上にシフトしました。</figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="フォントスワップによるレイアウトシフトを示す図", width="800", height="452" %} <figcaption>この例では、フォントスワップにより、ページ要素が5ピクセル上にシフトしました。</figcaption></figure>
 
 #### 特定
 

@@ -63,7 +63,7 @@ body {
 
 이 접근 방식은 잠재적으로 대역폭을 절약할 수 있는 훌륭한 대체 메커니즘을 제공합니다. 인터넷에서는 불행히도 좋은 것을 가질 수 없습니다. `local()` 함수의 문제점은 브라우저 핑거프린트에 악용될 수 있다는 것입니다. 사용자가 설치한 글꼴 목록을 보면 꽤 식별할 수 있습니다. 많은 회사는 자체 회사 글꼴을 갖고 있으며 또한 해당 회사 직원의 랩톱에는 이러한 글꼴이 설치되어 있습니다. 예를 들어 Google에는 *Google Sans*라는 회사 글꼴이 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Google 직원의 노트북에 설치된 Google Sans 글꼴. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420" %} <figcaption> Google 직원의 노트북에 설치된 Google Sans 글꼴. </figcaption></figure>
 
 공격자는 *Google Sans*와 같이 알려진 많은 회사 글꼴이 있는지 테스트하여 어느 회사에서 일하는지 확인하려고 할 수 있습니다. 공격자는 캔버스에서 이러한 글꼴로 설정된 텍스트를 렌더링하고 글리프를 측정하려고 시도합니다. 글리프가 회사 글꼴의 알려진 모양과 일치하면 공격자가 맞는 추측을 한 것입니다. 글리프가 일치하지 않으면 공격자는 회사 글꼴이 설치되지 않았으며 기본 대체 글꼴이 사용되었음을 알 수 있습니다. 이러한 내용이나 기타 브라우저의 핑거프린트 공격에 대한 자세한 내용은 Laperdix *외*의 [설문조사 문서](http://www-sop.inria.fr/members/Nataliia.Bielova/papers/Lape-etal-20-TWEB.pdf)를 참조하세요.
 

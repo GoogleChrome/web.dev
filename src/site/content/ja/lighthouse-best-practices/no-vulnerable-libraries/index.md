@@ -14,7 +14,7 @@ updated: 2020-06-04
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリがページで使用されていることを示す Lighthouse 監査", width="800", height="190", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリがページで使用されていることを示す Lighthouse 監査", width="800", height="190" %}</figure>
 
 脆弱なライブラリを検出するために、Lighthouse は以下を実行します。
 

@@ -29,17 +29,17 @@ tags:
 
 Создать адаптивную систему навигации непросто. Некоторые пользователи могут работать с помощью клавиатуры, одни при входе на сайт будут использовать мощный компьютер, другие — маленькое мобильное устройство. Но каждый из посетителей должен иметь возможность открыть и закрыть меню.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/desktop-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">Демонстрация адаптивности макета на десктопе и мобильных</figcaption></figure>
+  <figcaption>Демонстрация адаптивности макета на десктопе и мобильных</figcaption></figure>
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/mobile-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">Светлая и темная тема на iOS и Android</figcaption></figure>
+  <figcaption>Светлая и темная тема на iOS и Android</figcaption></figure>
 
 ## Веб-подходы
 
@@ -81,8 +81,8 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/hash-change.mp4">
   </source></video></figure>
 
@@ -108,8 +108,8 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
   </source></video></figure>
 
@@ -126,11 +126,11 @@ tags:
 
 Изменяя значения `2fr` и `1fr`, можно найти нужное вам соотношение между панелью и кнопкой закрытия на вспомогательном пространстве при открытом боковом меню.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
   </source></video>
-  <figcaption class="w-figure">Демонстрация того, что происходит при изменении соотношения.</figcaption></figure>
+  <figcaption>Демонстрация того, что происходит при изменении соотношения.</figcaption></figure>
 
 ### CSS 3D-преобразования и переходы {: #transforms }
 
@@ -158,11 +158,11 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
   </source></video>
-  <figcaption class="w-figure">Демонстрация работы интерфейса с разными настройками длительности анимации</figcaption></figure>
+  <figcaption>Демонстрация работы интерфейса с разными настройками длительности анимации</figcaption></figure>
 
 Теперь, когда наша боковая навигация открывается и закрывается, если пользователь предпочитает ограничить анимацию, я мгновенно перемещаю элемент в область просмотра, поддерживая тем временем состояние без движения.
 
@@ -223,11 +223,11 @@ tags:
 </a>
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/keyboard-voiceover.mp4">
   </source></video>
-  <figcaption class="w-figure">Демонстрация озвучивания и взаимодействия с клавиатурой.</figcaption></figure>
+  <figcaption>Демонстрация озвучивания и взаимодействия с клавиатурой.</figcaption></figure>
 
 Теперь наши основные кнопки взаимодействия содержат четкое обозначение для пользователей как мыши, так и клавиатуры.
 

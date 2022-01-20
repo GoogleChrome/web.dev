@@ -26,7 +26,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且中间的任何值都需要改进", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且中间的任何值都需要改进", width="384", height="96" %}
 </picture>
 
 CLS 较差的最常见原因为：
@@ -41,11 +41,11 @@ CLS 较差的最常见原因为：
 
 **概述**：始终在您的图像和视频元素上包含`width`和`height`属性。或者通过使用[CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)预留所需的空间。这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">未指定宽度和高度的图像。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true %}<figcaption>未指定宽度和高度的图像。</figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">已指定宽度和高度的图像。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true %}<figcaption>已指定宽度和高度的图像。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="灯塔报告显示的在设置图像尺寸前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption class="w-figcaption">灯塔 6.0 中设置图像尺寸对 CLS 的影响。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="灯塔报告显示的在设置图像尺寸前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption>灯塔 6.0 中设置图像尺寸对 CLS 的影响。</figcaption></figure>
 
 ### 历史
 
@@ -166,11 +166,11 @@ img {
 
 如果不太可能填满广告位，一些网站可能会发现在最开始将广告位折叠可以减少布局偏移的发生。目前没有一种简单的方法可以每次都选择准确的尺寸，除非您自己控制广告投放。
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">没有预留足够空间的广告。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %}<figcaption>没有预留足够空间的广告。</figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">已预留足够空间的广告。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %}<figcaption>已预留足够空间的广告。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="灯塔报告显示的在为广告等网页横幅预留空间前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption class="w-figcaption">灯塔 6.0 中为该横幅预留空间对 CLS 的影响</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="灯塔报告显示的在为广告等网页横幅预留空间前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption>灯塔 6.0 中为该横幅预留空间对 CLS 的影响</figcaption></figure>
 
 #### 为广告位静态预留空间
 
@@ -192,11 +192,11 @@ img {
 
 这些嵌入通常无法提前预知某个嵌入会有多大（以社交媒体帖子为例，帖子是否有嵌入的图像？视频？多行文本？）。因此，提供嵌入的平台并不总能为这些嵌入预留足够的空间，并可能在最终加载时导致布局偏移。
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">无预留空间的嵌入。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %}<figcaption>无预留空间的嵌入。</figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">有预留空间的嵌入。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %}<figcaption>有预留空间的嵌入。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="灯塔报告显示的在为该嵌入预留空间前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption class="w-figcaption"> 灯塔 6.0 中为该嵌入预留空间对 CLS 的影响</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="灯塔报告显示的在为该嵌入预留空间前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption> 灯塔 6.0 中为该嵌入预留空间对 CLS 的影响</figcaption></figure>
 
 要解决此问题，您可以通过使用占位符或后备回调符为嵌入预先计算足够的空间来最大程度减少 CLS。您可以在嵌入上采用下述工作流程：
 
@@ -221,7 +221,7 @@ img {
 
 - "《一般数据保护条例》通知"
 
-    <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">无预留空间的动态内容。</figcaption></figure>
+    <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %}<figcaption>无预留空间的动态内容。</figcaption></figure>
 
 如果您需要显示上述类型的用户界面可供性，请提前在可视区域中为其预留足够的空间（例如，使用占位符或骨架用户界面），以便在加载时不会导致页面内容发生意外位移.
 
@@ -231,7 +231,7 @@ img {
 - 让用户主动加载新内容，这样他们就不会对偏移（例如出现"加载更多"或"刷新"按钮）感到惊讶。我们建议在用户交互前预取内容，以便立即进行显示。这里需要提醒一下，在用户输入后 500 毫秒内发生的布局偏移不计入 CLS。
 - 无缝加载屏幕外的内容，并向用户叠加一个通知，说明内容已经可用（例如，显示一个 "向上滚动 "按钮）。
 
-<figure class="w-figure">   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="来自 Twitter 和 Chloé 网站的没有造成意外布局偏移的动态内容加载示例", width="800", height="458" %}   <figcaption class="w-figcaption">没有造成意外布局偏移的动态内容加载示例。左图：Twitter 上的实时内容加载。右图：Chloé 网站上的"加载更多"示例。欢迎查看 YNAP 团队如何<a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">在加载更多内容时对 CLS 进行优化</a>。</figcaption></figure>
+<figure>   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="来自 Twitter 和 Chloé 网站的没有造成意外布局偏移的动态内容加载示例", width="800", height="458" %}   <figcaption>没有造成意外布局偏移的动态内容加载示例。左图：Twitter 上的实时内容加载。右图：Chloé 网站上的"加载更多"示例。欢迎查看 YNAP 团队如何<a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">在加载更多内容时对 CLS 进行优化</a>。</figcaption></figure>
 
 ### 导致无样式文本闪烁 (FOUT)/不可见文本闪烁 (FOIT) 的网络字体 📝
 
@@ -270,7 +270,7 @@ img {
 
 开发者工具中的[性能面板](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)突出显示了 Chrome 84 中**体验**部分的布局偏移。`Layout Shift`记录的**摘要**视图包括累积布局偏移分数以及显示受影响区域的矩形叠加层。
 
-<figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="展开体验部分时，Chrome 开发者工具性能面板中显示出布局偏移记录", width="800", height="438" %}<figcaption class="w-figcaption">在性能面板中记录新的跟踪后，结果中的<b>体验</b>部分将填充一个显示<code>Layout Shift</code>记录的红色条。单击记录可以让您详细了解受影响的元素（例如，标记位移自/至条目）。</figcaption></figure>
+<figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="展开体验部分时，Chrome 开发者工具性能面板中显示出布局偏移记录", width="800", height="438" %}<figcaption>在性能面板中记录新的跟踪后，结果中的<b>体验</b>部分将填充一个显示<code>Layout Shift</code>记录的红色条。单击记录可以让您详细了解受影响的元素（例如，标记位移自/至条目）。</figcaption></figure>
 
 通过[Chrome 用户体验报告](/chrome-ux-report-bigquery/)也可以测量在域级聚合下的真实 CLS。 CrUX CLS 数据可以通过 BigQuery 获得，并且可以使用[样本查询](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)查看 CLS 性能 。
 

@@ -28,7 +28,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会报告页面的总 DOM 元素数量，页面的最大 DOM 深度及其最大子元素：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse 避免 DOM 过大审核的截图", width="800", height="363", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse 避免 DOM 过大审核的截图", width="800", height="363" %}</figure>
 
 Lighthouse 使用 DOM 树标记页面：
 

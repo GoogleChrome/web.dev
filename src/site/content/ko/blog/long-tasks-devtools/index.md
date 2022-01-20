@@ -16,7 +16,7 @@ tags:
 
 Lighthouse를 사용하여 페이지를 감사하는 경우 사용자가 페이지와 상호 작용하고 응답을 받을 수 있는 시간을 나타내는 지표인 [상호 작용 시간](/interactive)에 익숙할 것입니다. 하지만 긴 (JavaScript) 작업이 TTI를 저하시키는 데 크게 기여할 수 있다는 사실을 알고 계셨나요?
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse 보고서에 표시되는 상호 작용 시간", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse 보고서에 표시되는 상호 작용 시간", width="800", height="169" %}
 
 ## 긴 작업이란?
 
@@ -30,11 +30,11 @@ CPU를 많이 사용하는 긴 작업은 50ms 이상 걸리는 복잡한 작업�
 
 지금까지는 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)에서 50ms가 넘는 스크립트의 "긴 노란색 블록"을 수동으로 찾거나 [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/)를 사용하여 상호 작용을 지연시키는 작업을 파악해야 했습니다. 조금 번거로울 수 있습니다.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="짧은 작업과 긴 작업의 차이점을 보여주는 DevTools 성능 패널 스크린샷", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="짧은 작업과 긴 작업의 차이점을 보여주는 DevTools 성능 패널 스크린샷", width="800", height="450" %}
 
 성능 감사 워크플로를 쉽게 수행하도록 [DevTools는 이제 긴 작업을 시각화](https://developers.google.com/web/updates/2019/03/devtools#longtasks)합니다. 작업(회색으로 표시)이 긴 작업이면 빨간색 플래그가 지정됩니다.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools는 긴 작업에 대해 성능 패널에서 빨간색 플래그가 있는 회색 막대를 표시해 시각화", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools는 긴 작업에 대해 성능 패널에서 빨간색 플래그가 있는 회색 막대를 표시해 시각화", width="800", height="450" %}
 
 - 웹 페이지를 로드하는 [성능 패널](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)에서 추적을 기록합니다.
 - 기본 스레드 보기에서 빨간색 플래그를 찾습니다. 이제 작업이 회색("작업")으로 표시된 것을 볼 수 있습니다.
@@ -44,7 +44,7 @@ CPU를 많이 사용하는 긴 작업은 50ms 이상 걸리는 복잡한 작업�
 
 긴 작업의 원인을 찾으려면 회색 **작업** 표시줄을 선택합니다. 아래 드로어에서 **Bottom-Up(상향식)** 및 **Group by Activity(활동별 그룹화)**를 선택합니다. 이를 통해 완료하는 데 너무 오래 걸리는 작업에 가장 많은(전체적으로) 기여를 한 활동을 확인할 수 있습니다. 아래에서는 비용이 많이 드는 DOM 쿼리 세트가 이유인 것으로 보입니다.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="DevTools에서 긴 작업('Task'로 레이블 지정)을 선택하면 작업이 오래 걸리는 원인을 제공한 활동을 심층 조사할 수 있습니다.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="DevTools에서 긴 작업('Task'로 레이블 지정)을 선택하면 작업이 오래 걸리는 원인을 제공한 활동을 심층 조사할 수 있습니다.", width="800", height="450" %}
 
 ## 긴 작업을 최적화하는 일반적인 방법은 무엇인가요?
 

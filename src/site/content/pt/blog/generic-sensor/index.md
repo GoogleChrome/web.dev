@@ -119,7 +119,7 @@ Talvez seja necessária uma breve introdução aos sensores. Se você está fami
 
 ### Acelerômetro e sensor de aceleração linear {: #acceleration-and-linear-accelerometer-sensor }
 
- <figure class="w-figure">{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figcaption"> Medidas do acelerômetro</figcaption></figure>
+ <figure>{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %} <figcaption> Medidas do acelerômetro</figcaption></figure>
 
 O sensor [`Accelerometer`](https://developer.mozilla.org/docs/Web/API/Accelerometer) mede a aceleração de um dispositivo que hospeda o sensor em três eixos (X, Y e Z). É um sensor inercial, ou seja, quando o dispositivo está em queda livre linear, a aceleração total medida é de 0 m/s<sup>2</sup>, e, quando o dispositivo está deitado sobre uma mesa, a aceleração para cima (eixo Z) é igual à gravidade da Terra, aproxidamente +9,8 m/s<sup>2</sup>, pois mede a força da mesa empurrando o dispositivo para cima. Se você empurrar o dispositivo para a direita, a aceleração no eixo X será positiva. Se ele for acelerado da direita para a esquerda, essa aceleração será negativa.
 
@@ -133,13 +133,13 @@ Os usuários já conseguem derivar manualmente leituras próximas às de um sens
 
 ### Giroscópio {: #gyroscope-sensor }
 
- <figure class="w-figure">{% Video src="https://github.com/GoogleChrome/web.dev/blob/main/src/site/content/en/blog/generic-sensor/video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4?raw=true", width="800", autoplay="true", loop="true", muted="true" %}<br>Medidas do giroscópio</figure>
+ <figure>{% Video src="https://github.com/GoogleChrome/web.dev/blob/main/src/site/content/en/blog/generic-sensor/video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4?raw=true", width="800", autoplay="true", loop="true", muted="true" %}<br>Medidas do giroscópio</figure>
 
 O [`Gyroscope`](https://developer.mozilla.org/docs/Web/API/Gyroscope) mede a velocidade angular em radianos por segundo em torno dos eixos X, Y e Z locais do dispositivo. A maioria dos dispositivos para consumidores tem giroscópios mecânicos ([MEMS](https://en.wikipedia.org/wiki/Microelectromechanical_systems)), que são sensores inerciais que medem a taxa de rotação com base na [força inercial de Coriolis](https://en.wikipedia.org/wiki/Coriolis_force). Os giroscópios MEMS são propensos à deriva causada pela sensibilidade gravitacional do sensor, que deforma o sistema mecânico interno dele. Os giroscópios oscilam em frequências relativamente altas (por exemplo, 10s de kHz) e, portanto, podem consumir mais energia em comparação com outros sensores.
 
 ### Sensores de orientação {: #orientation-sensors }
 
-<figure class="w-figure">% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figcaption"> Medidas do sensor de orientação absoluta</figcaption></figure>
+<figure>% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %} <figcaption> Medidas do sensor de orientação absoluta</figcaption></figure>
 
 O [`AbsoluteOrientationSensor`](https://developer.mozilla.org/docs/Web/API/AbsoluteOrientationSensor) é um sensor de fusão que mede a rotação de um dispositivo em relação ao sistema de coordenadas da Terra, enquanto o [`RelativeOrientationSensor`](https://developer.mozilla.org/docs/Web/API/RelativeOrientationSensor) fornece dados que representam a rotação de um dispositivo que hospeda sensores de movimento em relação a um sistema de coordenadas de referência estático.
 
@@ -198,11 +198,11 @@ Para mais informações sobre os sensores de movimento, casos de uso avançados 
 
 Por padrão, as leituras dos [sensores espaciais](https://w3c.github.io/sensors/#spatial-sensor) são resolvidas em um sistema de coordenadas local vinculado ao dispositivo e não considera a orientação da tela.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="Sistema de coordenadas do dispositivo", width="800", height="520" %} <figcaption class="w-figcaption">Sistema de coordenadas do dispositivo</figcaption></figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="Sistema de coordenadas do dispositivo", width="800", height="520" %} <figcaption>Sistema de coordenadas do dispositivo</figcaption></figure>
 
 No entanto, vários casos de uso, como os jogos ou a realidade aumentada e virtual, exigem que as leituras dos sensores sejam resolvidas em um sistema de coordenadas que, em vez disso, está vinculado à orientação da tela.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="Sistema de coordenadas da tela", width="800", height="520" %} <figcaption class="w-figcaption">Sistema de coordenadas da tela</figcaption></figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="Sistema de coordenadas da tela", width="800", height="520" %} <figcaption>Sistema de coordenadas da tela</figcaption></figure>
 
 Anteriormente, o remapeamento das leituras dos sensores para as coordenadas da tela precisava ser implementado no JavaScript. Essa abordagem é ineficiente e também aumenta significativamente a complexidade do código do aplicativo da Web. O aplicativo precisa observar as mudanças de orientação da tela e realizar transformações de coordenadas para as leituras dos sensores, o que não é fácil para quatérnios ou ângulos de Euler.
 
@@ -246,7 +246,7 @@ function initSensor() {
 
 A orientação do dispositivo será refletida na rotação do  `model` 3D na cena WebGL.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="Atualização da orientação do modelo 3D pelo sensor", width="338", height="368" %}<br>Atualização da orientação do modelo 3D pelo sensor</figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="Atualização da orientação do modelo 3D pelo sensor", width="338", height="368" %}<br>Atualização da orientação do modelo 3D pelo sensor</figure>
 
 ### Medidor de socos
 
@@ -277,13 +277,13 @@ this.accel.onreading = () => {
 
 A velocidade atual é calculada como uma aproximação da integral da função de aceleração.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="Demonstração de app da Web para medir a velocidade de um soco", width="338", height="347" %}<br>Medida da velocidade de um soco</figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="Demonstração de app da Web para medir a velocidade de um soco", width="338", height="347" %}<br>Medida da velocidade de um soco</figure>
 
 ## Depuração e substituição do sensor com o Chrome DevTools
 
 Em alguns casos, você não precisa de um dispositivo físico para testar a API Generic Sensor. O Chrome DevTools oferece um ótimo suporte para [simular a orientação do dispositivo](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Uso do Chrome DevTools para substituir os dados de orientação personalizados de um telefone virtual", width="800", height="648" %} <figcaption class="w-figcaption">Simulação da orientação do dispositivo com o Chrome DevTools</figcaption></figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Uso do Chrome DevTools para substituir os dados de orientação personalizados de um telefone virtual", width="800", height="648" %} <figcaption>Simulação da orientação do dispositivo com o Chrome DevTools</figcaption></figure>
 
 ## Privacidade e segurança {: #privacy-and-security }
 

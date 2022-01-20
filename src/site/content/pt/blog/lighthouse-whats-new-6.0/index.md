@@ -42,7 +42,7 @@ Esta versão do Lighthouse vem com um grande número de mudanças [listadas no c
 
 ## Novas métricas {: #new-metrics}
 
-<figure>{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Métricas do Lighthouse 6.0.", width="600", height="251", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Métricas do Lighthouse 6.0.", width="600", height="251" %}</figure>
 
 O Lighthouse 6.0 apresenta três novas métricas ao relatório. Duas dessas novas métricas - Largest Contentful Paint (LCP) e Cumulative Layout Shift (CLS) - são implementações de laboratório de [Core Web Vitals](/vitals/).
 
@@ -187,7 +187,7 @@ As mudanças na curva de pontuação individual também impactaram as mudanças 
 
 Publicamos uma [calculadora de pontuação](https://googlechrome.github.io/lighthouse/scorecalc/) para ajudá-lo a explorar a pontuação de desempenho. A calculadora também oferece uma comparação entre as pontuações das versões 5 e 6 do Lighthouse. Quando você executa uma auditoria com o Lighthouse 6.0, o relatório vem com um link para a calculadora com seus resultados preenchidos.
 
-<figure>{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Calculadora de pontuação do farol.", width="600", height="319", class="w-screenshot" %} <figcaption class="w-figcaption">Um grande obrigado a <a href="https://twitter.com/anatudor">Ana Tudor</a> pela atualização do medidor!</figcaption></figure>
+<figure>{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Calculadora de pontuação do farol.", width="600", height="319" %} <figcaption>Um grande obrigado a <a href="https://twitter.com/anatudor">Ana Tudor</a> pela atualização do medidor!</figcaption></figure>
 
 ## Novas auditorias {: #new-audits}
 
@@ -224,11 +224,11 @@ No [CDS em novembro passado](/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha
 
 Comece a usar o CI do Lighthouse em seu projeto hoje, seguindo nosso [guia de primeiros passos](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md).
 
-<figure data-float="left">{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="CI do Lighthouse.", width="600", height="413", linkTo=true, class="w-screenshot" %}</figure>
+<figure data-float="left">{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="CI do Lighthouse.", width="600", height="413", linkTo=true %}</figure>
 
-<figure data-float="left">{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="CI do Lighthouse.", width="600", height="412", linkTo=true, class="w-screenshot" %}</figure>
+<figure data-float="left">{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="CI do Lighthouse.", width="600", height="412", linkTo=true %}</figure>
 
-<figure>{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="CI do Lighthouse.", width="600", height="354", linkTo=true, class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="CI do Lighthouse.", width="600", height="354", linkTo=true %}</figure>
 
 ## Painel do Chrome DevTools renomeado {: #devtools}
 
@@ -257,7 +257,7 @@ Desde o início, a Lighthouse usou o Nexus 5X como seu dispositivo de referênci
 
 A partir do Chrome 81, o Moto G4 também está disponível na lista de emulação de dispositivos Chrome DevTools.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Lista de emulação de dispositivo Chrome DevTools com Moto G4 incluído.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Lista de emulação de dispositivo Chrome DevTools com Moto G4 incluído.", width="800", height="653" %}</figure>
 
 ## Extensão do navegador {: #extension}
 
@@ -282,7 +282,7 @@ O Lighthouse 6.0 adiciona [suporte para métricas de orçamento](https://github.
 Alguns dos problemas que o Lighthouse encontra sobre uma página podem ser rastreados até uma linha específica de código-fonte e o relatório indicará o arquivo e a linha exatos que são relevantes. Para facilitar a exploração no DevTools, clicar nos locais especificados no relatório abrirá os arquivos relevantes no painel **Fontes.**
 
 <figure>
-  <video autoplay loop muted playsinline class="w-screenshot">
+  <video autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </source></source></video>
@@ -298,7 +298,7 @@ O Lighthouse começou a experimentar a coleta de mapas de origem para potenciali
 - Visualizações de mapa de árvore destacando os módulos que requerem ação.
 - Exibindo o código-fonte original para itens de relatório com um "local de origem".
 
-<figure>{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="JavaScript não usado mostrando módulos de mapas de origem.", width="600", height="566", class="w-screenshot" %} <figcaption class="w-figcaption">A auditoria de JavaScript não usado usando mapas de origem para mostrar o código não usado em módulos agrupados específicos.</figcaption></figure>
+<figure>{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="JavaScript não usado mostrando módulos de mapas de origem.", width="600", height="566" %} <figcaption>A auditoria de JavaScript não usado usando mapas de origem para mostrar o código não usado em módulos agrupados específicos.</figcaption></figure>
 
 Esses recursos serão habilitados por padrão em uma versão futura do Lighthouse. Por enquanto, você pode ver as auditorias experimentais do Lighthouse com a seguinte sinalização CLI:
 

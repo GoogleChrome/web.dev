@@ -14,7 +14,7 @@ El texto del enlace que es discernible, único y enfocable mejora la experiencia
 
 Lighthouse marca los enlaces que no tienen nombres discernibles:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Auditoría de Lighthouse que muestra que los enlaces no tienen nombres discernibles", width="800", height="206", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Auditoría de Lighthouse que muestra que los enlaces no tienen nombres discernibles", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -23,19 +23,19 @@ feedback:
 
 ### *ダークモード*が登場する前のダークモード
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="グリーンスクリーンのコンピューターのモニター", width="233", height="175" %} <figcaption class="w-figcaption">グリーンスクリーン（<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">出典</a>）</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="グリーンスクリーンのコンピューターのモニター", width="233", height="175" %} <figcaption>グリーンスクリーン（<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">出典</a>）</figcaption></figure>
 
 ダークモードにおいては、一回りして戻ってきました。パーソナルコンピューターが台頭した当初、ダークモードは選択ではなく、事実でしかありませんでした。モノクロ <abbr title="Cathode-Ray Tube">CRT</abbr> コンピューターのモニターは、蓄光スクリーン上で電子線を発することによって機能し、初期の CRT で使用されていた蛍光体は緑色でした。テキストは緑、残りの画面は黒で表示されていたため、これらのモデルは[グリーンスクリーン](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg)を呼ばれていました。
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="白黒のワープロ", width="222", height="175" %} <figcaption class="w-figcaption">白黒（<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">出典</a>）</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="白黒のワープロ", width="222", height="175" %} <figcaption>白黒（<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">出典</a>）</figcaption></figure>
 
 その後登場したカラー CRT は、赤、緑、および青の蛍光体を使用することで表現された多色表示でした。3 色すべての蛍光体を同時に発光することで白を作り出していました。より洗練された <abbr title="What You See Is What You Get">WYSIWYG</abbr> 系[デスクトップパブリッシング](https://en.wikipedia.org/wiki/Desktop_publishing)の登場により、実物の用紙に似せて仮想文書を作成するという考えに人気が集まりました。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="WorldWideWeb ブラウザの白黒の Webページ", width="233", height="175" %} <figcaption class="w-figcaption">WorldWideWeb ブラウザ（<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">出典</a>）</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="WorldWideWeb ブラウザの白黒の Webページ", width="233", height="175" %} <figcaption>WorldWideWeb ブラウザ（<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">出典</a>）</figcaption></figure>
 
 これがデザイントレンドとしての*白黒*の始まりであり、このトレンドは[初期のドキュメントベースの Web](http://info.cern.ch/hypertext/WWW/TheProject.html) に引き継がれました。史上初のブラウザである[WorldWideWeb](https://en.wikipedia.org/wiki/WorldWideWeb)（[CSS はまだ発明されていなかった](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History)ころ）は、この方法で [Web ページを表示していました](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png)。豆知識: その次に登場した 2 番目のブラウザである [Line Mode Browser](https://en.wikipedia.org/wiki/Line_Mode_Browser)（ターミナルベースのブラウザ）は、黒背景に緑文字が使用されていました。最近の Web ページと Web アプリは通常、明るい背景に暗いテキストを使用して設計されています。これは、[Chrome](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css) を含むユーザーエージェントのスタイルシートにもハードコーディングされているベースラインの前提です。
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="ベッドに寝転がって使用されるスマートフォン", width="262", height="175" %} <figcaption class="w-figcaption">ベッドで使用するスマートフォン（出典: Unsplash）</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="ベッドに寝転がって使用されるスマートフォン", width="262", height="175" %} <figcaption>ベッドで使用するスマートフォン（出典: Unsplash）</figcaption></figure>
 
 CRT の時代は過ぎ去りました。コンテンツの消費と作成は、バックライト付き <abbr title="液晶表示装置">LCD</abbr> または省エネ <abbr title="アクティブマトリックス有機発光ダイオード">AMOLED</abbr> スクリーンを使用するモバイルデバイスにシフトしています。小型で持ち運びに便利なコンピューター、タブレット、スマートフォンによって、使用パターンも新しくなっています。Web サーフ、趣味のコーディング、ハイエンドゲームなどのレジャータスクは、一日の終わりにかけて薄暗い環境で行われることが頻繁です。夜にはベッドに入ってデバイスを楽しむことさえあります。より多くの人が暗い環境でデバイスを使用するにつれ、*ライトオンダーク*のルーツに戻るという考えに人気が集まっているのです。
 
@@ -47,7 +47,7 @@ CRT の時代は過ぎ去りました。コンテンツの消費と作成は、�
 
 {% Aside 'note' %} 「[ダークモードを欲する理由とその使用方法に関するユーザー調査](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d)」でさらに詳細をご覧ください。 {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="「White on Black」モードを使った MacOS System 7 のCloseView", width="193", height="225" %} <figcaption class="w-figcaption">System 7 CloseView（<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">出典</a>）</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="「White on Black」モードを使った MacOS System 7 のCloseView", width="193", height="225" %} <figcaption>System 7 CloseView（<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">出典</a>）</figcaption></figure>
 
 #### アクセシビリティツールとしてのダークモード
 
@@ -61,13 +61,13 @@ CRT の時代は過ぎ去りました。コンテンツの消費と作成は、�
 
 最後に、ダークモードは <abbr title="アクティブマトリックス有機発光ダイオード">AMOLED</abbr> 画面で*多く*のエネルギーを節約することが知られています。YouTube などの人気のある Google アプリに焦点を当てた Android のケーススタディでは、電力を最大 60％ 節約できることが示されています。以下の動画では、これらのケーススタディとアプリごとの省電力について詳しく説明されています。
 
-<figure class="w-figure w-figure--fullbleed">{% YouTube id='N_6sPd0Jd3g', startTime='305' %}</figure>
+<figure data-size="full">{% YouTube id='N_6sPd0Jd3g', startTime='305' %}</figure>
 
 ## OS でダークモードをアクティブにする
 
 ダークモードが多くのユーザーにとって非常に重要である理由の背景を説明したので、それをどのようにサポートできるかを確認しましょう。
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q ダークモード設定", width="218", height="250" %} <figcaption class="w-figcaption">Android Q ダークテーマ設定</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q ダークモード設定", width="218", height="250" %} <figcaption>Android Q ダークテーマ設定</figcaption></figure>
 
 ダークモードまたはダークテーマをサポートするオペレーティングシステムには、通常、設定のどこかでアクティブ化するオプションがあります。macOS Xでは、システム環境設定の［*全般*］セクションの［*外観*］（<a href="%7B%7B%20'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lUAnDhiGiZxigDbCqfn1.png'%20%7C%20imgix%20%7D%7D">スクリーンショット</a>）にあり、Windows 10 では、［*色*］セクションの［*色を選択する*］（<a href="%7B%7B%20'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ahr8nkFttRPCe4RH8IEk.png'%20%7C%20imgix%20%7D%7D">スクリーンショット</a>）にあります。Android Q の場合は、［*ディスプレイ*］の下の［*ダークテーマ*］トグルスイッチ（<a href="%7B%7B%20'image/admin/Yh6SEoWDK1SbqcGjlL6d.png'%20%7C%20imgix%20%7D%7D">スクリーンショット</a>）にあり、iOS 13 の場合は、設定の［*ディスプレイと明るさ*］セクションの［*外観*］（<a href="%7B%7B%20'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg'%20%7C%20imgix%20%7D%7D">スクリーンショット</a>）で変更できます。
 
@@ -228,11 +228,11 @@ body {
 
 {% Aside 'note' %} 😲 [一致しないメディアクエリでブラウザがスタイルシートをダウンロードする理由](https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513)について、さらに詳細をご覧ください。 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="ライトモードでダークモードの CSS が最低優先度でどのように読み込まれるかを示すネットワーク読み込み図", width="800", height="417" %} <figcaption class="w-figcaption">ライトモードのサイトは、ダークモードの CSS 最も低い優先度で読み込む。</figcaption></figure>
+<figure>{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="ライトモードでダークモードの CSS が最低優先度でどのように読み込まれるかを示すネットワーク読み込み図", width="800", height="417" %} <figcaption>ライトモードのサイトは、ダークモードの CSS 最も低い優先度で読み込む。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="ダークモードでライトモードの CSS が最低優先度でどのように読み込まれるかを示すネットワーク読み込み図", width="800", height="417" %} <figcaption class="w-figcaption">}ダークモードのサイトは、ライトモードのCSS を最も低い優先度で読み込む。</figcaption></figure>
+<figure>{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="ダークモードでライトモードの CSS が最低優先度でどのように読み込まれるかを示すネットワーク読み込み図", width="800", height="417" %} <figcaption>}ダークモードのサイトは、ライトモードのCSS を最も低い優先度で読み込む。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="デフォルトのライトモードでダークモードの CSS が最低優先度でどのように読み込まれるかを示すネットワーク読み込み図", width="800", height="417" %} <figcaption class="w-figcaption"><code>prefers-color-scheme</code> をサポートしていないブラウザでは、デフォルトのライトモードのサイトは、ダークモードの CSS 最も低い優先度で読み込む。</figcaption></figure>
+<figure>{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="デフォルトのライトモードでダークモードの CSS が最低優先度でどのように読み込まれるかを示すネットワーク読み込み図", width="800", height="417" %} <figcaption><code>prefers-color-scheme</code> をサポートしていないブラウザでは、デフォルトのライトモードのサイトは、ダークモードの CSS 最も低い優先度で読み込む。</figcaption></figure>
 
 ### ダークモードの変更への対応
 
@@ -263,7 +263,7 @@ Chromium 93 と Safari 15 において、この色は、`meta` テーマカラ�
 
 オペレーティングシステム全体の配色を切り替えると、すぐに煩わしくなります。そのため、Chrome DevTools では、現在表示されているタブのみに影響するように、ユーザーの好みの配色をエミュレートできるようになりました。[Command メニュー](https://developers.google.com/web/tools/chrome-devtools/command-menu)を開いて、「`Rendering`」と入力し、`Show Rendering` コマンドを実行して、**Emulate CSS media feature prefers-color-scheme** オプションを変更します。
 
-<figure class="w-figure">{% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Chrome DevTools の［Rendering］タブにある［Emulate CSS media feature prefers-color-scheme］オプションのスクリーンショット", width="800", height="552" %}</figure>
+<figure>{% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Chrome DevTools の［Rendering］タブにある［Emulate CSS media feature prefers-color-scheme］オプションのスクリーンショット", width="800", height="552" %}</figure>
 
 ### Puppeteer で `prefers-color-scheme` をスクリーンショットする
 
@@ -284,8 +284,8 @@ npx dark-mode-screenshot --url https://googlechromelabs.github.io/dark-mode-togg
 以下の 2 つのスクリーンショットを比較すると、コアテーマが*ダークオンライト*から*ライトオンダーク*に変更されただけでなく、ヒーロー画像もわずかに異なって見えることがわかります。私の[ユーザー調査](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)によると、調査対象の大多数のユーザーは、ダークモードがアクティブな場合に、鮮やかさと明るさがわずかに劣る画像を好むことがわかっています。私はこれを*再色付け*と呼んでいます。
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="ダークモードでわずかに暗くしたヒーロー画像。", width="800", height="618" %} <figcaption class="w-figcaption"> ダークモードでわずかに暗くしたヒーロー画像。</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="ライトモードの通常のヒーロー画像。", width="800", height="618" %} <figcaption class="w-figcaption"> ライトモードの通常のヒーロー画像。</figcaption></figure>
+  <figure>{% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="ダークモードでわずかに暗くしたヒーロー画像。", width="800", height="618" %} <figcaption> ダークモードでわずかに暗くしたヒーロー画像。</figcaption></figure>
+  <figure>{% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="ライトモードの通常のヒーロー画像。", width="800", height="618" %} <figcaption> ライトモードの通常のヒーロー画像。</figcaption></figure>
 </div>
 
 再色付けは、画像に CSS フィルターを使用して実行できます。URL に `.svg` のないすべての画像に一致する CSS セレクターを使用します。これは、ベクター画像（アイコン）に画像（写真）とは異なる再色付け処理を行えることができるという考えです。これについては、[次の段落](#vector-graphics-and-icons)で説明します。もう一度 [CSS 変数](https://developer.mozilla.org/docs/Web/CSS/var)を使用しているところに注意してください。これにより、後でフィルターを柔軟に変更できます。
@@ -317,8 +317,8 @@ document.documentElement.style.setProperty('--image-filter', value);
 ベクター画像（私の例ではでは、`<img>` 要素を介して参照するアイコンとして使用されています）の場合、別の再色付け方法を使用してします。[調査](https://dl.acm.org/citation.cfm?id=2982168)によると、ユーザーは写真の反転を好まないことがわかっていますが、ほとんどのアイコンでは非常にうまく機能します。ここでも、CSS 変数を使用して、通常の状態と[`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) 状態の反転量を決定しています。
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="ダークモードではアイコンが反転する。", width="744", height="48" %} <figcaption class="w-figcaption"> ダークモードではアイコンが反転する。</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="ライトモードの通常のアイコン。", width="744", height="48" %} <figcaption class="w-figcaption"> ライトモードの通常のアイコン。</figcaption></figure>
+  <figure>{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="ダークモードではアイコンが反転する。", width="744", height="48" %} <figcaption> ダークモードではアイコンが反転する。</figcaption></figure>
+  <figure>{% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="ライトモードの通常のアイコン。", width="744", height="48" %} <figcaption> ライトモードの通常のアイコン。</figcaption></figure>
 </div>
 
 `dark.css` でのみアイコンを反転し、`light.css` では反転しないこと、そしてユーザーが選択したモードに応じて、アイコンがわずかに暗くまたは明るく表示されるように、2 つのケースで異なる反転強度を使用していることに注意してください。
@@ -413,13 +413,13 @@ body {
 ```
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="ライトモードの <dark-mode-toggle>。", width="140", height="76" %} <figcaption class="w-figcaption"> ライトモードの <code><dark-mode-toggle></code></figcaption></dark-mode-toggle></figure>
-  <figure class="w-figure">{% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="ダークモードの <dark-mode-toggle>。", width="140", height="76" %} <figcaption class="w-figcaption"> ダークモードの <code><dark-mode-toggle></code> 。</figcaption></dark-mode-toggle></figure>
+  <figure>{% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="ライトモードの <dark-mode-toggle>。", width="140", height="76" %} <figcaption> ライトモードの <code><dark-mode-toggle></code></figcaption></dark-mode-toggle></figure>
+  <figure>{% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="ダークモードの <dark-mode-toggle>。", width="140", height="76" %} <figcaption> ダークモードの <code><dark-mode-toggle></code> 。</figcaption></dark-mode-toggle></figure>
 </div>
 
 下のデモの右上にあるダークモードコントロールをクリックまたはタップしてみてください。3 番目と 4 番目のコントロールのチェックボックスをオンにすると、ページを再読み込みしてもモード選択が記憶されることを確認できます。これにより、訪問者はオペレーティングシステムをダークモードに保ちながら、サイトをライトモードで楽しむことができ、その逆も可能です。
 
-<div class="w-screenshot" style="height: 800px; width: 100%;">{% IFrame { allow: 'geolocation; microphone; camera; midi; vr; encrypted-media', src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html' } %}</div>
+<div style="height: 800px; width: 100%;">{% IFrame { allow: 'geolocation; microphone; camera; midi; vr; encrypted-media', src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html' } %}</div>
 
 ## まとめ
 

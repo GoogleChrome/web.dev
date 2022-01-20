@@ -120,7 +120,7 @@ const orientation = new AbsoluteOrientationSensor({ frequency: 60 });
 
 ### 가속도계 및 선형 가속도 센서 {: #acceleration-and-linear-accelerometer-sensor }
 
- <figure class="w-figure">  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %}   <figcaption class="w-figcaption">     가속도계 센서 측정   </figcaption></figure>
+ <figure>  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %}   <figcaption>     가속도계 센서 측정   </figcaption></figure>
 
 [`Accelerometer`](https://developer.mozilla.org/docs/Web/API/Accelerometer) 센서는 3개 축(X, Y, Z)에서 센서를 장착한 장치의 가속도를 측정합니다. 이 센서는 관성 센서입니다. 즉, 장치가 선형 자유낙하 상태일 때는 측정된 총 가속도가 0 m/s<sup>2</sup>이고 장치가 테이블 위에 평평하게 놓여져 있을 때는 위쪽 방향(Z 축)의 가속도가 지구 중력인 g ≈ +9.8 m/s<sup>2</sup>와 같습니다(테이블이 장치를 위로 미는 힘을 측정함). 장치를 오른쪽으로 밀면 X축의 가속도가 양수이고 장치가 오른쪽에서 왼쪽으로 가속되면 음수가 됩니다.
 
@@ -134,13 +134,13 @@ const orientation = new AbsoluteOrientationSensor({ frequency: 60 });
 
 ### 자이로스코프 {: #gyroscope-sensor }
 
- <figure class="w-figure">   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true", loop="true", muted="true" %}   <figcaption class="w-figcaption">     자이로스코프 센서 측정   </figcaption></figure>
+ <figure>   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true", loop="true", muted="true" %}   <figcaption>     자이로스코프 센서 측정   </figcaption></figure>
 
 [`Gyroscope`](https://developer.mozilla.org/docs/Web/API/Gyroscope) 센서는 장치의 로컬 X, Y 및 Z축 주변에서 각속도(초당 라디안)를 측정합니다. 대부분의 소비자 장치에는 [관성 Coriolis 힘](https://en.wikipedia.org/wiki/Coriolis_force)을 기반으로 회전 속도를 측정하는 관성 센서인 기계식([MEMS](https://en.wikipedia.org/wiki/Coriolis_force)) 자이로스코프가 있습니다. MEMS 자이로스코프는 센서의 중력 감도로 인해 센서의 내부 기계 시스템이 변형되는 관계로 드리프트가 발생하기 쉽습니다. 자이로스코프는 상대적으로 높은 주파수(예: 10kHz)에서 진동하므로 다른 센서에 비해 더 많은 전력을 소비할 수 있습니다.
 
 ### 방향 센서 {: #orientation-sensors }
 
-<figure class="w-figure"> {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %}   <figcaption class="w-figcaption">     절대 방향 센서 측정   </figcaption></figure>
+<figure> {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %}   <figcaption>     절대 방향 센서 측정   </figcaption></figure>
 
 [`AbsoluteOrientationSensor`](https://developer.mozilla.org/docs/Web/API/AbsoluteOrientationSensor)는 지구 좌표계를 기준으로 장치의 회전을 측정하는 융합 센서이며, [`RelativeOrientationSensor`](https://developer.mozilla.org/docs/Web/API/RelativeOrientationSensor)는 고정 참조 좌표계를 기준으로 모션 센서가 장착된 장치의 회전을 나타내는 데이터를 제공합니다.
 
@@ -199,11 +199,11 @@ gl.uniformMatrix4fv(modMatrixAttr, false, modMatrix);
 
 기본적으로, [공간 센서](https://w3c.github.io/sensors/#spatial-sensor)의 판독값은 장치에 구속되지만 화면 방향을 고려하지 않는 로컬 좌표계에서 확인됩니다.
 
-<figure class="w-figure">   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="장치 좌표계", width="800", height="520" %}   <figcaption class="w-figcaption">장치 좌표계</figcaption></figure>
+<figure>   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="장치 좌표계", width="800", height="520" %}   <figcaption>장치 좌표계</figcaption></figure>
 
 그러나 게임이나 증강 현실 및 가상 현실과 같은 많은 사용 사례에서는 이와 달리 화면 방향에 구속되는 좌표계에서 센서 판독값을 확인해야 합니다.
 
-<figure class="w-figure">   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="화면 좌표계", width="800", height="520" %}   <figcaption class="w-figcaption">화면 좌표계</figcaption></figure>
+<figure>   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="화면 좌표계", width="800", height="520" %}   <figcaption>화면 좌표계</figcaption></figure>
 
 이전에는 화면 좌표에 대한 센서 판독값의 재매핑을 JavaScript로 구현해야 했습니다. 이 접근 방식은 비효율적이며 웹 애플리케이션 코드의 복잡성을 크게 증가시킵니다. 웹 애플리케이션은 화면 방향의 변화를 관찰하고 센서 판독값에 대한 좌표 변환을 수행해야 하는데, 이는 오일러 각도 또는 쿼터니언에 대해 간단하게 처리할 수 있는 일이 아닙니다.
 
@@ -247,7 +247,7 @@ function initSensor() {
 
 장치의 방향은 WebGL 장면 내에서 3D `model` 회전에 반영됩니다.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="센서가 3D 모델의 방향을 업데이트", width="338", height="368" %}<figcaption class="w-figcaption"> 센서가 3D 모델의 방향을 업데이트합니다.</figcaption></figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="센서가 3D 모델의 방향을 업데이트", width="338", height="368" %}<figcaption> 센서가 3D 모델의 방향을 업데이트합니다.</figcaption></figure>
 
 ### 펀치미터
 
@@ -278,13 +278,13 @@ this.accel.onreading = () => {
 
 현재 속도는 가속도 함수의 적분에 대한 근사값으로 계산됩니다.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="펀치 속도 측정을 위한 데모 웹 애플리케이션", width="338", height="347" %}<figcaption class="w-figcaption"> 펀치 속도 측정</figcaption></figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="펀치 속도 측정을 위한 데모 웹 애플리케이션", width="338", height="347" %}<figcaption> 펀치 속도 측정</figcaption></figure>
 
 ## Chrome DevTools를 사용한 디버깅 및 센서 재정의
 
 어떤 경우에는 물리적 장치가 없어도 Generic Sensor API를 사용해볼 수 있습니다. Chrome DevTools는 [장치 방향 시뮬레이션](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation)을 훌륭하게 지원합니다.
 
-<figure class="w-figure">{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="가상 전화의 사용자 지정 방향 데이터를 재정의하는 데 사용되는 Chrome DevTools", width="800", height="648" %}<figcaption class="w-figcaption"> Chrome DevTools로 장치 방향 시뮬레이션</figcaption></figure>
+<figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="가상 전화의 사용자 지정 방향 데이터를 재정의하는 데 사용되는 Chrome DevTools", width="800", height="648" %}<figcaption> Chrome DevTools로 장치 방향 시뮬레이션</figcaption></figure>
 
 ## 개인정보보호 및 보안 {: #privacy-and-security }
 

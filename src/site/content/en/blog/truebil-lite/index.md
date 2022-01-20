@@ -64,7 +64,7 @@ To lazy-load non-critical resources, they used their framework-level lazy-loadin
 To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code splitting](/reduce-javascript-payloads-with-code-splitting). They used component- and route-based chunking to reduce main bundle size and **improve their loading time by 44%,** with TTI falling from 6 seconds to about 5 seconds and [First Meaningful Paint (FMP)](/first-meaningful-paint) from 4.1 seconds to 3.6 seconds.
 
 <figure>
-  {% Img src="image/admin/BHIhtRrQcc2Ec22vLYtT.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.", width="800", height="350", class="w-screenshot" %}
+  {% Img src="image/admin/BHIhtRrQcc2Ec22vLYtT.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.", width="800", height="350" %}
   <figcaption>Impact of reducing chunk size.</figcaption>
 </figure>
 
@@ -73,7 +73,7 @@ To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code
 To further improve FMP, the team used Lighthouse to find opportunities for and validate the impact of performance optimizations. Lighthouse indicated that reducing render blocking CSS would have the biggest effect, so Truebil inlined all critical CSS and [deferred non-critical CSS](/defer-non-critical-css). This technique **reduced FMP by around 2 seconds**.
 
 <figure>
-  {% Img src="image/admin/GnQDJz27SuLuLgdvM6Q3.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's time to First Meaningful Paint before and after inlining CSS.", width="800", height="496", class="w-screenshot" %}
+  {% Img src="image/admin/GnQDJz27SuLuLgdvM6Q3.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's time to First Meaningful Paint before and after inlining CSS.", width="800", height="496" %}
   <figcaption>Impact of inlining critical CSS.</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ To further improve FMP, the team used Lighthouse to find opportunities for and v
 To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](/uses-rel-preconnect) and `<link rel="dns-prefetch">`. This approach causes the browser to complete the TLS handshake as soon as possible on page load and pre-resolve cross-origin domain names, allowing for a secure, snappy user experience.
 
 <figure>
-  {% Img src="image/admin/e1taLW99INISJAsEP0xe.png", alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.", width="800", height="350", class="w-screenshot" %}
+  {% Img src="image/admin/e1taLW99INISJAsEP0xe.png", alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.", width="800", height="350" %}
   <figcaption>Impact of adding <code>&#60;link rel=preconnect&#62;</code>.</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](
 By analyzing their data, the team identified the most common user journeys that they could optimize for. In these cases, the app dynamically downloads the next page resource by using `<link rel=prefetch>` to ensure smooth navigation for users. While the team manually identifies the links to prefetch, they use webpack to bundle the JS for those links.
 
 <figure>
-  {% Img src="image/admin/fuxD2hQlNcTPKUHMQpN2.png", alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.", width="800", height="1006", class="w-screenshot" %}
+  {% Img src="image/admin/fuxD2hQlNcTPKUHMQpN2.png", alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.", width="800", height="1006" %}
   <figcaption>The effect of prefetching assets for common user journeys.</figcaption>
 </figure>
 

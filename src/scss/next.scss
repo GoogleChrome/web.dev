@@ -754,28 +754,8 @@ video,
   @extend .visually-hidden;
 }
 
-.w-table-wrapper {
-  @extend .table-wrapper;
-}
-
-.w-screenshot {
-  @extend .fixed-width-img;
-}
-
 .w-columns {
   @extend .switcher;
-}
-
-.w-stats {
-  @extend .stats;
-}
-
-.w-stat {
-  @extend .stats__item;
-}
-
-.w-stat__figure {
-  @extend .stats__figure;
 }
 
 // Render gorko utilities

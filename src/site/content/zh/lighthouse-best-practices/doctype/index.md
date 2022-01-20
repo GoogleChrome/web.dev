@@ -14,7 +14,7 @@ updated: 2019-08-28
 
 没有 `<!DOCTYPE html>` 声明的 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse 审核显示缺少文档类型", width="800", height="76", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse 审核显示缺少文档类型", width="800", height="76" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 

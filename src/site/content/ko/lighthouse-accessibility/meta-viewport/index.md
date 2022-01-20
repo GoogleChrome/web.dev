@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse는 브라우저 확대/축소를 비활성화하는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="표시 영역을 표시하는 Lighthouse 감사는 텍스트 크기 조정 및 확대/축소를 비활성화합니다", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="표시 영역을 표시하는 Lighthouse 감사는 텍스트 크기 조정 및 확대/축소를 비활성화합니다", width="800", height="227" %}</figure>
 
 다음 중 하나와 함께 `<meta name="viewport">` 태그가 포함된 페이지는 감사에 실패합니다.
 

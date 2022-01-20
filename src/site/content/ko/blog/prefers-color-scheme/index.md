@@ -23,19 +23,19 @@ feedback:
 
 ### *다크 모드* 전의 다크 모드
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="그린 스크린 컴퓨터 모니터", width="233", height="175" %}   <figcaption class="w-figcaption">그린 스크린(<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">출처</a>)</figcaption></figure>
+<figure data-float="right">   {% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="그린 스크린 컴퓨터 모니터", width="233", height="175" %}   <figcaption>그린 스크린(<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">출처</a>)</figcaption></figure>
 
 우리는 다크 모드의 시초부터 많은 길을 거쳐왔습니다. 개인용 컴퓨팅이 태동하던 당시에는 다크 모드가 선택의 문제가 아니었습니다. 그저 사실이었죠. 흑백 <abbr title="Cathode-Ray Tube">CRT</abbr> 컴퓨터 모니터는  인광 스크린에 전자 빔을 쏘는 방식으로 작동했고 초기 CRT에 사용된 인광은 녹색이었습니다. 텍스트가 녹색으로 표시되고 화면의 나머지 부분은 검은색이었기 때문에 이러한 모델을 [그린 스크린](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg)이라고도 많이 불렀습니다.
 
-<figure class="w-figure w-figure--inline-left">   {% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="다크 온 화이트 단어 처리", width="222", height="175" %}   <figcaption class="w-figcaption">다크 온 화이트(<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">출처</a>)</figcaption></figure>
+<figure data-float="left">   {% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="다크 온 화이트 단어 처리", width="222", height="175" %}   <figcaption>다크 온 화이트(<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">출처</a>)</figcaption></figure>
 
 이후에 도입된 컬러 CRT는 빨간색, 녹색 및 파란색 인광체를 사용하여 여러 색상을 표시했습니다. 세 가지 인광을 모두 활성화하면 흰색이 만들어집니다. 보다 정교한 <abbr title="What You See Is What You Get">WYSIWYG</abbr> [데스크톱 출판](https://en.wikipedia.org/wiki/Desktop_publishing)의 출현으로 가상 문서를 실제 종이와 비슷하게 만드는 아이디어가 인기를 얻었습니다.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="WorldWideWeb 브라우저의 다크 온 화이트 웹페이지", width="233", height="175" %}<figcaption class="w-figcaption"> WorldWideWeb 브라우저(<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">출처</a>)</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="WorldWideWeb 브라우저의 다크 온 화이트 웹페이지", width="233", height="175" %}<figcaption> WorldWideWeb 브라우저(<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">출처</a>)</figcaption></figure>
 
 여기서부터 디자인 트렌드로서 *다크 온 화이트(Dark-on-White*)가 시작되었고, 이 트렌드는 [초기 문서 기반의 웹](http://info.cern.ch/hypertext/WWW/TheProject.html)까지 이어졌습니다. 최초의 브라우저인 [WorldWideWeb](https://en.wikipedia.org/wiki/WorldWideWeb)(이 때는 [CSS가 아직 생겨나지도](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History) 않았음)은 이러한 방식으로 [웹페이지를 표시했습니다](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png). 재미있는 사실: 터미널 기반 브라우저였던 두 번째 브라우저인 [Line Mode Browser](https://en.wikipedia.org/wiki/Line_Mode_Browser)는 그린 온 다크였습니다. 당시에 웹 페이지와 웹 앱이 일반적으로 밝은 배경에 어두운 텍스트로 디자인되어 [Chrome](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)을 포함한 사용자 에이전트 스타일시트에 기본적인 방식으로 자리를 잡게 되었습니다.
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="침대에 누워 스마트폰을 사용하는 모습", width="262", height="175" %}<figcaption class="w-figcaption"> 침대에서 사용하는 스마트폰(출처: Unsplash)</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="침대에 누워 스마트폰을 사용하는 모습", width="262", height="175" %}<figcaption> 침대에서 사용하는 스마트폰(출처: Unsplash)</figcaption></figure>
 
 CRT의 시대는 지났습니다. 콘텐츠 소비와 제작은 <abbr title="액정 디스플레이">백라이트 LCD</abbr>나 에너지 절약형 <abbr title="활성 매트릭스 유기 발광 다이오드">AMOLED</abbr> 화면을 사용하는 모바일 기기로 옮겨가고 있습니다. 더 작고 더 휴대하기 쉬운 컴퓨터, 태블릿 및 스마트폰의 등장으로 새로운 사용 패턴이 생겨나고 있습니다. 웹 브라우징, 재미로 하는 코딩, 고급 게임과 같은 레저 작업은 야간에 어두운 환경에서 이루어지는 경우가 많습니다. 사람들은 심지어 밤에 침대에서 기기를 통한 탐닉에 빠집니다. 사람들이 어둠 속에서 기기를 더 많이 사용할수록 *라이트-온-다크*의 뿌리로 돌아가려는 아이디어가 더 힘을 얻고 있습니다.
 
@@ -47,7 +47,7 @@ CRT의 시대는 지났습니다. 콘텐츠 소비와 제작은 <abbr title="액
 
 {% Aside 'note' %} 계속해서 [사람들이 다크 모드를 원하는 이유와 이를 사용하는 방식에 대한 사용자 연구](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d)에 대해 더 읽어보세요. {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="Mac OS System 7에서 \"검정 바탕에 흰색\" 모드로 표시된 CloseView", width="193", height="225" %}   <figcaption class="w-figcaption">System 7 CloseView(<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">출처</a>)</figcaption></figure>
+<figure data-float="right">   {% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="Mac OS System 7에서 \"검정 바탕에 흰색\" 모드로 표시된 CloseView", width="193", height="225" %}   <figcaption>System 7 CloseView(<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">출처</a>)</figcaption></figure>
 
 #### 접근성 도구로서의 다크 모드
 
@@ -61,13 +61,13 @@ CRT의 시대는 지났습니다. 콘텐츠 소비와 제작은 <abbr title="액
 
 마지막으로 다크 모드는 <abbr title="활성 매트릭스 유기 발광 다이오드">AMOLED</abbr> 화면에서 *많은* 에너지를 절약하는 것으로 알려져 있습니다. YouTube와 같은 인기 있는 Google 앱에 초점을 맞춘 Android 사례 연구에 따르면 최대 60%까지 전력을 절약할 수 있는 것으로 나타났습니다. 아래 비디오에서 이러한 사례 연구와 앱별 절전 효과에 대한 자세한 내용을 확인할 수 있습니다.
 
-<figure class="w-figure w-figure--fullbleed">{% YouTube id='N_6sPd0Jd3g', startTime='305' %}</figure>
+<figure data-size="full">{% YouTube id='N_6sPd0Jd3g', startTime='305' %}</figure>
 
 ## 운영 체제에서 다크 모드 활성화
 
 이제 많은 사용자에게 다크 모드가 중요한 이유에 대한 배경을 설명했으니 이를 지원하는 방법을 살펴보도록 하겠습니다.
 
-<figure class="w-figure w-figure--inline-left">   {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q 다크 모드 설정", width="218", height="250" %}   <figcaption class="w-figcaption">Android Q 다크 테마 설정</figcaption></figure>
+<figure data-float="left">   {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q 다크 모드 설정", width="218", height="250" %}   <figcaption>Android Q 다크 테마 설정</figcaption></figure>
 
 다크 모드 또는 다크 테마를 지원하는 운영 체제에는 일반적으로 설정 어딘가에 이를 활성화할 수 있는 옵션이 있습니다. macOS X에서는 시스템 환경설정의 *일반* 섹션에 *모양*이라는 이름으로 있고(<a href="%7B%7B%20'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lUAnDhiGiZxigDbCqfn1.png'%20%7C%20imgix%20%7D%7D">스크린샷</a>), Windows 10에서는 *색상* 섹션에 *색상 선택*이라는 이름으로 제공됩니다(<a href="%7B%7B%20'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ahr8nkFttRPCe4RH8IEk.png'%20%7C%20imgix%20%7D%7D">스크린샷</a>). Android Q의 경우 *디스플레이*의 *다크 테마* 토글 스위치에서 찾을 수 있고(<a href="%7B%7B%20'image/admin/Yh6SEoWDK1SbqcGjlL6d.png'%20%7C%20imgix%20%7D%7D">스크린샷</a>) iOS 13에서는 설정의 *디스플레이 및 밝기* 섹션에서 *모양*을 변경할 수 있습니다(<a href="%7B%7B%20'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg'%20%7C%20imgix%20%7D%7D">스크린샷</a>).
 
@@ -223,11 +223,11 @@ body {
 
 {% Aside 'note' %} 😲 [브라우저가 일치하지 않는 미디어 쿼리로 스타일시트를 다운로드하는 이유](https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513)에 대해 읽어보세요. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="라이트 모드에서 다크 모드 CSS가 가장 낮은 우선순위로 로드되는 방식을 보여주는 네트워크 로드 다이어그램", width="800", height="417" %}<figcaption class="w-figcaption">라이트 모드의 사이트는 다크 모드 CSS를 가장 낮은 우선 순위로 로드합니다.</figcaption></figure>
+<figure>{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="라이트 모드에서 다크 모드 CSS가 가장 낮은 우선순위로 로드되는 방식을 보여주는 네트워크 로드 다이어그램", width="800", height="417" %}<figcaption>라이트 모드의 사이트는 다크 모드 CSS를 가장 낮은 우선 순위로 로드합니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="다크 모드에서 라이트 모드 CSS가 가장 낮은 우선 순위로 로드되는 방식을 보여주는 네트워크 로드 다이어그램", width="800", height="417" %}<figcaption class="w-figcaption">다크 모드의 사이트는 라이트 모드 CSS를 가장 낮은 우선 순위로 로드합니다.</figcaption></figure>
+<figure>{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="다크 모드에서 라이트 모드 CSS가 가장 낮은 우선 순위로 로드되는 방식을 보여주는 네트워크 로드 다이어그램", width="800", height="417" %}<figcaption>다크 모드의 사이트는 라이트 모드 CSS를 가장 낮은 우선 순위로 로드합니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="기본 라이트 모드에서 다크 모드 CSS가 가장 낮은 우선 순위로 로드되는 방식을 보여주는 네트워크 로드 다이어그램", width="800", height="417" %}<figcaption class="w-figcaption"> <code>prefers-color-scheme</code>을 지원하지 않는 브라우저에서 기본 라이트 모드의 사이트가 다크 모드 CSS를 가장 낮은 우선 순위로 로드합니다.</figcaption></figure>
+<figure>{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="기본 라이트 모드에서 다크 모드 CSS가 가장 낮은 우선 순위로 로드되는 방식을 보여주는 네트워크 로드 다이어그램", width="800", height="417" %}<figcaption> <code>prefers-color-scheme</code>을 지원하지 않는 브라우저에서 기본 라이트 모드의 사이트가 다크 모드 CSS를 가장 낮은 우선 순위로 로드합니다.</figcaption></figure>
 
 ### 다크 모드 변경에 대한 반응
 
@@ -258,7 +258,7 @@ Chromium 93 및 Safari 15부터 `meta` 테마 색상 요소의 `media` 특성을
 
 전체 운영 체제의 색 구성표를 전환하는 것은 매우 성가신 일이 될 수 있으므로, Chrome DevTools를 사용하여 현재 표시되는 탭에만 영향을 미치는 방식으로 사용자가 선호하는 색 구성표를 에뮬레이션할 수 있습니다. [명령 메뉴](https://developers.google.com/web/tools/chrome-devtools/command-menu)를 열고 `Rendering` 입력을 시작하고 `Show Rendering` 명령을 실행한 다음, **CSS 미디어 요소 prefers-color-scheme 에뮬레이션** 옵션을 변경합니다.
 
-<figure class="w-figure">   {% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="A Chrome DevTools의 렌더링 탭에 있는 'CSS 미디어 요소 prefers-color-scheme 에뮬레이션' 옵션을 보여주는 스크린샷", width="800", height="552" %}</figure>
+<figure>   {% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="A Chrome DevTools의 렌더링 탭에 있는 'CSS 미디어 요소 prefers-color-scheme 에뮬레이션' 옵션을 보여주는 스크린샷", width="800", height="552" %}</figure>
 
 ### Puppeteer로 `prefers-color-scheme` 스크린샷 만들기
 
@@ -279,8 +279,8 @@ npx dark-mode-screenshot --url https://googlechromelabs.github.io/dark-mode-togg
 아래 두 스크린샷을 비교해 보면 핵심 테마가 *다크 온 라이트*에서 *라이트 온 다크*로 변경되었을 뿐만 아니라 영웅 이미지도 약간 다르게 보이는 것을 알 수 있습니다. 저의 [사용자 연구](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)에 따르면 설문 응한 대다수의 사람들이 다크 모드가 활성화되어 있을 때 약간 덜 생생하고 덜 밝은 이미지를 선호하는 것으로 나타났습니다. 저는 이것을 *다시 채색한다*고 부릅니다.
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="다크 모드에서 약간 더 어두워진 영웅 이미지", width="800", height="618" %}<figcaption class="w-figcaption"> 영웅 이미지가 다크 모드에서 약간 더 어두워졌습니다.</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="라이트 모드의 일반 영웅 이미지.", width="800", height="618" %}<figcaption class="w-figcaption"> 라이트 모드의 일반 영웅 이미지.</figcaption></figure>
+  <figure>{% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="다크 모드에서 약간 더 어두워진 영웅 이미지", width="800", height="618" %}<figcaption> 영웅 이미지가 다크 모드에서 약간 더 어두워졌습니다.</figcaption></figure>
+  <figure>{% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="라이트 모드의 일반 영웅 이미지.", width="800", height="618" %}<figcaption> 라이트 모드의 일반 영웅 이미지.</figcaption></figure>
 </div>
 
 저의 이미지에서 CSS 필터를 통해 다시 채색할 수 있습니다. 이를 위해 URL에 `.svg`가 없는 모든 이미지와 일치하는 CSS 선택기를 사용합니다. 벡터 그래픽(아이콘)을 내 이미지(사진)와 다르게 다시 채색 처리할 수 있다는 것이 주된 개념이며 이에 대해서는 [다음 단락](#vector-graphics-and-icons)에서 좀 더 이야기하겠습니다. 나중에 유연하게 필터를 변경할 수 있도록 [CSS 변수](https://developer.mozilla.org/docs/Web/CSS/var)를 다시 사용하는 것에 주목하세요.
@@ -312,8 +312,8 @@ document.documentElement.style.setProperty('--image-filter', value);
 제 경우에 `<img>` 요소를 통해 참조하는 아이콘으로 사용되는 벡터 그래픽의 경우, 상이한 다시 채색 방법을 사용합니다. [연구](https://dl.acm.org/citation.cfm?id=2982168) 결과에 따르면 사람들은 사진 반전을 좋아하지 않지만 대부분의 아이콘에서는 효과가 좋습니다. 다시, CSS 변수를 사용하여 일반 및 [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) 상태에서 반전의 양을 결정합니다.
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="다크 모드에서 아이콘이 반전됩니다.", width="744", height="48" %}<figcaption class="w-figcaption"> 다크 모드에서 아이콘이 반전됩니다.</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="라이트 모드의 일반 아이콘", width="744", height="48" %}<figcaption class="w-figcaption"> 라이트 모드의 일반 아이콘.</figcaption></figure>
+  <figure>{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="다크 모드에서 아이콘이 반전됩니다.", width="744", height="48" %}<figcaption> 다크 모드에서 아이콘이 반전됩니다.</figcaption></figure>
+  <figure>{% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="라이트 모드의 일반 아이콘", width="744", height="48" %}<figcaption> 라이트 모드의 일반 아이콘.</figcaption></figure>
 </div>
 
 `dark.css`에서만 아이콘을 반전시키고 `light.css`에서는 반전시키지 않은 방식, 그리고 사용자가 선택한 모드에 따라 아이콘이 약간 더 어둡거나 밝게 나타나도록 하기 위해 두 경우에 `:hover`가 다른 반전 강도를 얻는 방식에 주목하세요.
@@ -408,13 +408,13 @@ body {
 ```
 
 <div class="switcher">
-  <figure class="w-figure">     {% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="라이트 모드에서 {dark-mode-toggle0}", width="140", height="76" %}     <figcaption class="w-figcaption">       라이트 모드에서 <code>&lt;dark-mode-toggle&gt;</code>.     </figcaption>   {/dark-mode-toggle0}</figure>
-  <figure class="w-figure">     {% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="라이트 모드에서 {dark-mode-toggle0}.", width="140", height="76" %}     <figcaption class="w-figcaption">       다크 모드에서 <code>&lt;dark-mode-toggle&gt;</code>.     </figcaption>   {/dark-mode-toggle0}</figure>
+  <figure>     {% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="라이트 모드에서 {dark-mode-toggle0}", width="140", height="76" %}     <figcaption>       라이트 모드에서 <code>&lt;dark-mode-toggle&gt;</code>.     </figcaption>   {/dark-mode-toggle0}</figure>
+  <figure>     {% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="라이트 모드에서 {dark-mode-toggle0}.", width="140", height="76" %}     <figcaption>       다크 모드에서 <code>&lt;dark-mode-toggle&gt;</code>.     </figcaption>   {/dark-mode-toggle0}</figure>
 </div>
 
 아래 데모에서 오른쪽 상단 모서리에 있는 다크 모드 컨트롤을 클릭하거나 탭해 보세요. 세 번째와 네 번째 컨트롤에서 확인란을 선택하면 페이지를 새로 고치더라도 모드 선택이 기억된다는 것을 알 수 있습니다. 이를 통해 방문자는 운영 체제를 다크 모드로 유지하면서 사이트는 라이트 모드로 유지할 수 있습니다(그 반대도 마찬가지).
 
-<div class="w-screenshot" style="height: 800px; width: 100%;">   {% IFrame {     allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',     src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html'   } %}</div>
+<div style="height: 800px; width: 100%;">   {% IFrame {     allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',     src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html'   } %}</div>
 
 ## 결론
 

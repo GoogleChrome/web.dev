@@ -186,8 +186,8 @@ function handleDrop(e) {
 
 在以下示例中，我们将允许用户重新排列各列的顺序。为此，首先您需要在拖动开始时存储源元素的 HTML：
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </source></video>
   </figure>

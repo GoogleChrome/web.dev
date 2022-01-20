@@ -29,17 +29,17 @@ tags:
 
 반응형 내비게이션 시스템을 구축하는 것은 어렵습니다. 일부 사용자는 키보드를 사용하고 일부는 강력한 데스크톱을 사용하며 일부는 소형 모바일 장치에서 방문합니다. 방문하는 모든 사람이 메뉴를 열고 닫을 수 있어야 합니다.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/desktop-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">데스크톱과 모바일에 반응하는 레이아웃 데모</figcaption></figure>
+  <figcaption>데스크톱과 모바일에 반응하는 레이아웃 데모</figcaption></figure>
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/mobile-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">iOS 및 Android에서 작동하는 밝고 어두운 테마</figcaption></figure>
+  <figcaption>iOS 및 Android에서 작동하는 밝고 어두운 테마</figcaption></figure>
 
 ## 웹 전술
 
@@ -81,8 +81,8 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/hash-change.mp4">
   </source></video></figure>
 
@@ -108,8 +108,8 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
   </source></video></figure>
 
@@ -126,11 +126,11 @@ tags:
 
 `2fr` 및 `1fr`을 조정하여 메뉴 오버레이와 음수 공간 닫기 버튼에 대해 원하는 비율을 찾습니다.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
   </source></video>
-  <figcaption class="w-figure">비율을 변경하면 어떻게 되는지를 보여주는 데모입니다.</figcaption></figure>
+  <figcaption>비율을 변경하면 어떻게 되는지를 보여주는 데모입니다.</figcaption></figure>
 
 ### CSS 3D 변환 및 전환 {: #transforms }
 
@@ -158,11 +158,11 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
   </source></video>
-  <figcaption class="w-figure">지속 시간이 적용되거나 적용되지 않은 상호 작용의 데모입니다.</figcaption></figure>
+  <figcaption>지속 시간이 적용되거나 적용되지 않은 상호 작용의 데모입니다.</figcaption></figure>
 
 이제 sidenav가 열리고 닫힐 때 사용자가 감소된 움직임을 선호하는 경우 움직임이 없는 상태를 유지하면서 요소를 즉시 보기로 이동합니다.
 
@@ -223,11 +223,11 @@ sidenav의 `box-shadow`가 숨겨져 있을 때 기본 뷰포트를 들여다보
 </a>
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/keyboard-voiceover.mp4">
   </source></video>
-  <figcaption class="w-figure">음성 해설 및 키보드 상호 작용 UX의 데모.</figcaption></figure>
+  <figcaption>음성 해설 및 키보드 상호 작용 UX의 데모.</figcaption></figure>
 
 이제 기본 상호 작용 버튼이 마우스와 키보드 모두에 대한 의도를 명확하게 나타냅니다.
 

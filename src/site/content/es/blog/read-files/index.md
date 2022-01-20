@@ -75,7 +75,7 @@ En algunos navegadores, el elemento `<input type="file">` también es un lugar p
 
 Su zona para soltar dependerá del diseño de su aplicación. Es posible que solo desee que una parte de la ventana sea una zona para soltar o, potencialmente, toda la ventana.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="Una captura de pantalla de Squoosh, una aplicación web para compresión de imagen.", width="800", height="589", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Squoosh convierte toda la ventana en una zona para soltar. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="Una captura de pantalla de Squoosh, una aplicación web para compresión de imagen.", width="800", height="589" %} <figcaption> Squoosh convierte toda la ventana en una zona para soltar. </figcaption></figure>
 
 Squoosh permite al usuario arrastrar y soltar una imagen en cualquier lugar de la ventana, y al hacer clic en **seleccionar una imagen se** invoca el elemento `<input type="file">`. Independientemente de lo que elija como zona para soltar, asegúrese de que el usuario tenga claro que puede arrastrar y soltar archivos en esa zona.
 

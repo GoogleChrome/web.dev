@@ -45,7 +45,7 @@ Si vous savez déjà où vous utilisez un `SharedArrayBuffer`, passez à [Analys
     ```
 4. Le nom de fichier et le numéro de ligne à la fin du message (par exemple, `common-bundle.js:535`) indiquent d'où vient le `SharedArrayBuffer`. S'il s'agit d'une bibliothèque tierce, contactez le développeur pour résoudre le problème. S'il est implémenté dans le cadre de votre site Web, suivez le guide ci-dessous pour activer l'isolement d'origines multiples.
 
-<figure class="w-figure">{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Avertissement DevTools Console lorsqu'un SharedArrayBuffer est utilisé sans isolement d'origines multiples", width="800", height="163", class="w-screenshot " %}<figcaption> Avertissement DevTools Console lorsqu'un SharedArrayBuffer est utilisé sans isolement d'origines multiples.</figcaption></figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Avertissement DevTools Console lorsqu'un SharedArrayBuffer est utilisé sans isolement d'origines multiples", width="800", height="163" %}<figcaption> Avertissement DevTools Console lorsqu'un SharedArrayBuffer est utilisé sans isolement d'origines multiples.</figcaption></figure>
 
 ### (Avancé) Utilisation des rapports d'obsolescence
 

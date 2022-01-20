@@ -31,7 +31,7 @@ Em vez disso, você pode usar `:is()` e melhorar a legibilidade, evitando um sel
 
 Legibilidade e conveniências mais curtas do seletor são apenas uma parte do valor que `:is()` e `:where()` trazem para o CSS. Nesta postagem, você descobrirá a sintaxe e o valor desses dois pseudo seletores funcionais.
 
-<figure class="w-figure w-figure--fullbleed">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/mkyjox1HJNL0AgtX25bi.mp4", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figure"> Um visual infinito de antes e depois de usar <code>:is()</code> </figcaption></figure>
+<figure data-size="full">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/mkyjox1HJNL0AgtX25bi.mp4", autoplay="true", loop="true", muted="true" %} <figcaption> Um visual infinito de antes e depois de usar <code>:is()</code> </figcaption></figure>
 
 ### Compatibilidade do navegador
 

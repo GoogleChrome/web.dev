@@ -25,13 +25,13 @@ Avalie primeiro o desempenho do site antes de adicionar qualquer otimização. {
 
 O relatório Lighthouse gerado mostrará a sequência de busca de recursos em **Latência máxima do caminho crítico**.
 
-{% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Fontes da web estão presentes na cadeia de solicitação crítica.", width="704", height="198", class="w-screenshot" %}
+{% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Fontes da web estão presentes na cadeia de solicitação crítica.", width="704", height="198" %}
 
 Na auditoria acima, as fontes da web fazem parte da cadeia de solicitação crítica e são buscadas por último. A [**cadeia de solicitação crítica**](/critical-request-chains) representa a ordem dos recursos que são priorizados e buscados pelo navegador. Neste aplicativo, as fontes da web (Pacfico e Pacifico-Bold) são definidas usando a regra [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) e são o último recurso buscado pelo navegador na cadeia de solicitação crítica. Normalmente, as fontes da web são carregadas lentamente, o que significa que não são carregadas até que os recursos críticos sejam baixados (CSS, JS).
 
 Aqui está a sequência dos recursos buscados no aplicativo:
 
-{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Webfonts carregados lentamente.", width="583", height="256", class="w-screenshot" %}
+{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Webfonts carregados lentamente.", width="583", height="256" %}
 
 ## Pré-carregamento de fontes da web
 
@@ -52,10 +52,10 @@ Como a Pacifico-Bold é usada no cabeçalho da página, adicionamos uma tag de p
 
 Recarregue o aplicativo e execute o lighthouse novamente. Verifique a seção **Latência máxima do caminho crítico.**
 
-{% Img src="image/admin/lC85s7XSc8zEXgtwLsFu.png", alt="Pacifico-Bold webfont é pré-carregada e removida da cadeia de solicitação crítica", width="645", height="166", class="w-screenshot" %}
+{% Img src="image/admin/lC85s7XSc8zEXgtwLsFu.png", alt="Pacifico-Bold webfont é pré-carregada e removida da cadeia de solicitação crítica", width="645", height="166" %}
 
 Observe como a `Pacifico-Bold.woff2` é removida da cadeia de solicitação crítica. Ela é obtida anteriormente no aplicativo.
 
-{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="A fonte da web Pacifico-Bold está pré-carregada", width="553", height="254", class="w-screenshot"%}
+{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="A fonte da web Pacifico-Bold está pré-carregada", width="553", height="254" %}
 
 Com o pré-carregamento, o navegador sabe que precisa fazer o download desse arquivo mais cedo. É importante observar que, se não for usado corretamente, o pré-carregamento pode prejudicar o desempenho, fazendo solicitações desnecessárias de recursos que não são usados.

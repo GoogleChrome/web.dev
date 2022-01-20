@@ -32,7 +32,7 @@ p {
 
 El contenido saldría de su elemento y tendría 142px de ancho, en lugar de 100px. ¿Porqué sucede eso? El modelo de caja es una base fundamental de CSS y comprender cómo funciona, cómo se ve afectado por otros aspectos de CSS y, lo que es más importante, cómo puedes controlarlo te ayudará a escribir un CSS más predecible.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
 
 Una cosa realmente importante para recordar al escribir CSS, o al trabajar en la web en general, es que todo lo que muestra CSS es una caja. Ya sea que uses `border-radius` en una caja para que se parezca a un círculo, o incluso solo un texto: la clave a recordar es que todo es una caja.
 
@@ -44,13 +44,13 @@ Puedes controlar esto mediante el **tamaño extrínseco**, o puedes seguir permi
 
 Veamos rápidamente la diferencia, usando una demostración como apoyo.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption class="w-figcaption"> Ten en cuenta que cuando la caja usa un tamaño extrínseco, hay un límite de la cantidad de contenido que puede agregar antes de que se desborde de los límites de la caja. Esto hace que la palabra "awesome" se desborde.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption> Ten en cuenta que cuando la caja usa un tamaño extrínseco, hay un límite de la cantidad de contenido que puede agregar antes de que se desborde de los límites de la caja. Esto hace que la palabra "awesome" se desborde.</figcaption></figure>
 
 La demostración tiene las palabras, "CSS is awesome" en una caja con dimensiones fijas y un borde grueso. La caja tiene un ancho, por lo que tiene un tamaño extrínseco, el cual controla el tamaño de su contenido hijo. Sin embargo, el problema con esto es que la palabra "awesome" es demasiado grande para la caja, por lo que se desborda fuera del **borde de la caja** del elemento padre (más sobre esto más adelante en la lección). Una forma de evitar este desbordamiento es permitir que la caja tenga un tamaño intrínseco ya sea removiendo el tamaño del ancho o, en este caso, estableciendo el `width` en `min-content`. El `min-content` le dice a la caja que sea tan ancha como el ancho mínimo intrínseco de su contenido (la palabra "awesome"). Esto permite que la caja se ajuste perfectamente a "CSS is awesome".
 
 Veamos algo más complejo para ver el impacto de diferentes tamaños en el contenido real:
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
 
 Activa y desactiva el tamaño intrínseco para ver cómo puedes obtener más control con el tamaño extrínseco y dejar que el contenido tenga más control con el tamaño intrínseco. Para ver el efecto que tiene el tamaño intrínseco y extrínseco, agrega algunas oraciones de contenido a la tarjeta. Cuando este elemento usa un tamaño extrínseco, hay un límite de la cantidad de contenido que puedes agregar antes de que se desborde de los límites del elemento, pero este no es el caso cuando el tamaño intrínseco está activado.
 
@@ -64,25 +64,25 @@ Cuando cambia al tamaño intrínseco, deja que el navegador tome decisiones por 
 
 Las cajas se componen de áreas de modelo de caja distintas que realizan un trabajo específico.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="Un diagrama que muestra las cuatro áreas principales del modelo de caja: caja de contenido, caja de padding, caja de borde y caja de margen", width="800", height="547" %} <figcaption class="w-figcaption"> Las cuatro áreas principales del modelo de caja: caja de contenido, caja de padding, caja de borde y caja de margen.</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="Un diagrama que muestra las cuatro áreas principales del modelo de caja: caja de contenido, caja de padding, caja de borde y caja de margen", width="800", height="547" %} <figcaption> Las cuatro áreas principales del modelo de caja: caja de contenido, caja de padding, caja de borde y caja de margen.</figcaption></figure>
 
 Inicias con la **caja de contenido**, que es la área en la que reside el contenido. Como aprendiste antes: este contenido puede controlar el tamaño de su elemento principal, por lo que suele ser el área de tamaño más variable.
 
 La **caja de padding (relleno)** rodea la caja de contenido y es el espacio creado por la propiedad de [`padding`](https://developer.mozilla.org/docs/Web/CSS/padding). Debido a que el padding está dentro de la caja, el fondo de la caja será visible en el espacio que crea. Si nuestra caja tiene reglas de desbordamiento establecidas, como `overflow: auto` o `overflow: scroll`, las barras de desplazamiento ocuparán este espacio también.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
 
 La **caja de borde** rodea la caja de padding y su espacio está ocupado por el valor del `border`. La caja de borde son los límites de su caja y el **filo del borde** es el límite de lo que puedes ver visualmente. La propiedad de <a href="https://developer.mozilla.org/docs/Web/CSS/border" data-md-type="link">`border`</a> se usa para enmarcar visualmente un elemento.
 
 El área final, la **caja de margen**, es el espacio alrededor de tu caja, definida por la regla de `margin`. Propiedades como el [`outline`](https://developer.mozilla.org/docs/Web/CSS/outline) y [`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow) ocupan este espacio porque están pintadas por encima de los elementos, por lo que no afectan el tamaño de nuestra caja. Puedes tener un `outline-width` de `200px` en nuestra caja y todo lo que está dentro e incluido la caja de borde sería exactamente del mismo tamaño.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
 
 ## Una analogía útil
 
 El modelo de caja es complejo de entender, así que recapitulemos lo que haz aprendido con una analogía.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Tres fotos con marcos", width="800", height="562" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Tres fotos con marcos", width="800", height="562" %}</figure>
 
 En este diagrama, tienes tres fotos con marcos, montados en una pared, uno al lado del otro. El diagrama tiene etiquetas que asocian elementos del marco con el modelo de caja.
 
@@ -104,7 +104,7 @@ Prueba lo siguiente en tu propio navegador:
 2. [Selecciona un elemento](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 3. Muestra el depurador del modelo de caja
 
-<figure class="w-figure">{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}</figure>
+<figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>
 
 ## Controlando el modelo de caja
 
@@ -137,7 +137,7 @@ Este modelo de caja alternativo le dice a CSS que aplique el `width`  la caja de
 
 Mira cómo funciona esto en la siguiente demostración interactiva. Observa que cuando cambia el `box-sizing` se muestra, a través de un fondo azul, qué CSS se está aplicando *dentro de* nuestro cuadro.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
 
 ```css
 *,

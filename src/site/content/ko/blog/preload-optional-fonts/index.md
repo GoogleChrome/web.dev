@@ -47,19 +47,19 @@ CSS [`font-display`](https://font-display.glitch.me/) 속성은 다양한 범위
 
 이전에 `font-display: optional`로 지정된 글꼴에는 100ms의 차단 기간이 있고 교체 기간이 없었습니다. 이는 "보이지 않는" 텍스트가 폴백 글꼴로 전환되기 전에 매우 짧게 표시되는 것을 의미합니다. 글꼴이 100ms 이내에 다운로드되지 않으면 폴백 글꼴이 사용되며 폴백이 발생하지 않습니다.
 
-<figure class="w-figure">{% Img src="image/admin/WHLORYEu864QRRveFQUz.png", alt="글꼴 로드 실패 시 이전 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="340" %}<figcaption class="w-figcaption"> 100ms 차단 기간 <b>이후</b> 글꼴을 다운로드할 때 Chrome에서 이전 <code>font-display: optional</code> 동작 </figcaption></figure>
+<figure>{% Img src="image/admin/WHLORYEu864QRRveFQUz.png", alt="글꼴 로드 실패 시 이전 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="340" %}<figcaption> 100ms 차단 기간 <b>이후</b> 글꼴을 다운로드할 때 Chrome에서 이전 <code>font-display: optional</code> 동작 </figcaption></figure>
 
 단, 100ms의 차단 기간이 끝나기 전에 글꼴을 다운로드 한 경우, 사용자 정의 글꼴을 렌더링하여 페이지에 사용합니다.
 
-<figure class="w-figure">{% Img src="image/admin/mordYRjmCCDtlMcNXEOU.png", alt="글꼴이 제시간에 로드될 때 이전 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="318" %}<figcaption class="w-figcaption"> 100ms 차단 기간 <b>이전</b> 글꼴을 다운로드할 때 Chrome에서 이전 <code>font-display: optional</code> 동작</figcaption></figure>
+<figure>{% Img src="image/admin/mordYRjmCCDtlMcNXEOU.png", alt="글꼴이 제시간에 로드될 때 이전 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="318" %}<figcaption> 100ms 차단 기간 <b>이전</b> 글꼴을 다운로드할 때 Chrome에서 이전 <code>font-display: optional</code> 동작</figcaption></figure>
 
 Chrome은 폴백 글꼴이 사용되는지나 맞춤 글꼴이 제시간에 로드를 완료하는지에 관계없이 두 경우 모두에서 페이지를 **두 번** 다시 렌더링합니다. 이에 따라 보이지 않는 텍스트가 약간 깜박이고 새 글꼴이 렌더링 되는 경우 페이지 내용의 일부를 옮기는 레이아웃 버벅거림이 발생합니다. 이는 글꼴이 브라우저의 디스크 캐시에 저장되어 있고 차단 기간이 완료되기 전에 로드될 수 있는 경우에도 발생합니다.
 
 [`<link rel="preload'>`](/codelab-preload-web-fonts/)로 미리 로드된 선택적 글꼴의 첫 번째 렌더링 주기를 완전히 없애기 위해 Chrome 83에 [최적화](https://bugs.chromium.org/p/chromium/issues/detail?id=1040632)가 적용되었습니다. 대신 맞춤 글꼴 로드가 완료되거나 일정 시간이 경과할 때까지 렌더링이 차단됩니다. 이 시간 초과 기간은 현재 100ms로 설정되어 있지만 성능을 최적화하기 위해 가까운 시일 내에 변경될 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/zLldiq9J3duBTaeRN88e.png", alt="글꼴 로드 실패 시 새로운 미리 로드된 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="353" %} <figcaption class="w-figcaption"> 글꼴이 미리 로드되고 100ms 차단 기간(보이지 않는 텍스트의 깜박임 없음) <b>이후</b> 글꼴이 다운로드될 때 Chrome에서 <figcaption class="w-figcaption"> 새로운 <code>font-display: optional</code> 동작 </figcaption></figcaption></figure>
+<figure>{% Img src="image/admin/zLldiq9J3duBTaeRN88e.png", alt="글꼴 로드 실패 시 새로운 미리 로드된 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="353" %} <figcaption> 글꼴이 미리 로드되고 100ms 차단 기간(보이지 않는 텍스트의 깜박임 없음) <b>이후</b> 글꼴이 다운로드될 때 Chrome에서 <figcaption> 새로운 <code>font-display: optional</code> 동작 </figcaption></figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/OEHClGFMFspaWjb3xXLY.png", alt="글꼴이 제시간에 로드될 때 미리 로드된 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="346" %}<figcaption class="w-figcaption"> 100ms 차단 기간(보이지 않는 텍스트의 플래시 없음) <b>이전</b> 글꼴이 미리 로드되고 글꼴을 다운로드할 때 Chrome에서 새로운 <code>font-display: optional</code> 동작</figcaption></figure>
+<figure>{% Img src="image/admin/OEHClGFMFspaWjb3xXLY.png", alt="글꼴이 제시간에 로드될 때 미리 로드된 선택적 글꼴 동작을 보여주는 다이어그램", width="800", height="346" %}<figcaption> 100ms 차단 기간(보이지 않는 텍스트의 플래시 없음) <b>이전</b> 글꼴이 미리 로드되고 글꼴을 다운로드할 때 Chrome에서 새로운 <code>font-display: optional</code> 동작</figcaption></figure>
 
 Chrome에서 선택적 글꼴을 미리 로드하면 레이아웃이 버벅거릴 가능성과 스타일이 지정되지 않은 텍스트의 깜박임이 없어집니다. 이것은 [CSS Fonts Module Level 4](https://drafts.csswg.org/css-fonts-4/#valdef-font-face-font-display-optional)에 지정된 필수 동작과 일치합니다. 선택적 글꼴은 레이아웃이 다시 발생하지 않도록 해야 하고 사용자 에이전트는 대신 적절한 시간 동안 렌더링을 지연할 수 있습니다.
 

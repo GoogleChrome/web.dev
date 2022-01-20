@@ -19,8 +19,8 @@ tags:
 Большинство браузеров указывают пользователю, что прогрессивное веб-приложение (PWA) можно установить, если оно соответствует определенным критериям. Среди индикаторов — кнопка «Установить» в адресной строке или пункт «Установить» в дополнительном меню.
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Скриншот омнибокса с отображаемым индикатором установки.", width="800", height="307" %}<figcaption class="w-figcaption"> Браузер предлагает установку (настольный компьютер)</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Скриншот браузера, предлагающего установку.", width="800", height="307" %} <figcaption class="w-figcaption"> Браузер предлагает установку (мобильное устройство) </figcaption></figure>
+  <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Скриншот омнибокса с отображаемым индикатором установки.", width="800", height="307" %}<figcaption> Браузер предлагает установку (настольный компьютер)</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Скриншот браузера, предлагающего установку.", width="800", height="307" %} <figcaption> Браузер предлагает установку (мобильное устройство) </figcaption></figure>
 </div>
 
 Кроме того, при соблюдении критериев многие браузеры запускают событие `beforeinstallprompt`, что позволяет предоставить встроенный в приложение пользовательский интерфейс, который будет запускать процесс установки в вашем приложении.

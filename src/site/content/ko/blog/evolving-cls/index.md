@@ -37,12 +37,12 @@ tags:
 
 세션 창을 검토하기 위한 예는 다음과 같습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">세션 창의 예.</figcaption></figure>
+  <figcaption>세션 창의 예.</figcaption></figure>
 
 위의 예에서 사용자가 페이지를 볼 때 시간이 지남에 따라 많은 레이아웃 이동이 발생합니다. 각각은 파란색 막대로 표시됩니다. 위에서 파란색 막대의 높이가 다른 것을 알 수 있습니다. 이것들은 각 개별 레이아웃 이동의 [점수](/cls/#layout-shift-score)를 나타냅니다. 세션 창은 첫 번째 레이아웃 이동으로 시작하여 레이아웃 이동이 없는 간격이 있을 때까지 계속 확장됩니다. 다음 레이아웃 이동이 발생하면 새 세션 창이 시작됩니다. 레이아웃 이동이 없는 세 개의 간격이 있으므로 이 예제에는 세 개의 세션 창이 있습니다. CLS의 현재 정의와 유사하게 각 이동의 점수가 합산되어 각 창의 점수는 개별 레이아웃 이동의 합계가 됩니다.
 

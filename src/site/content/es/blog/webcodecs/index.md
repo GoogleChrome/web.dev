@@ -84,7 +84,7 @@ Con [`HTMLCanvasElement.transferControlToOffscreen`](https://developers.google.c
 
 ### Codificación
 
-<figure class="w-figure">{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/lEovMYp8oh1JSClCLCiD.png", alt="La ruta desde un Canvas o un ImageBitmap a la red o al almacenamiento", width="800", height="393" %}<figcaption class="w-figcaption"> La ruta desde un <code>Canvas</code> o un <code>ImageBitmap</code> a la red o al almacenamiento</figcaption></figure>
+<figure>{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/lEovMYp8oh1JSClCLCiD.png", alt="La ruta desde un Canvas o un ImageBitmap a la red o al almacenamiento", width="800", height="393" %}<figcaption> La ruta desde un <code>Canvas</code> o un <code>ImageBitmap</code> a la red o al almacenamiento</figcaption></figure>
 
 Todo comienza con un `VideoFrame`. Hay tres formas de construir fotogramas de video.
 
@@ -228,7 +228,7 @@ await encoder.flush();
 
 ### Decodificación
 
-<figure class="w-figure">{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/fzi3E4v2jJJj5QAlhoRG.png", alt="La ruta desde la red o el almacenamiento a un Canvas o ImageBitmap.", width="800", height="419" %}<figcaption class="w-figcaption"> La ruta desde la red o el almacenamiento a un <code>Canvas</code> o un <code>ImageBitmap</code>.</figcaption></figure>
+<figure>{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/fzi3E4v2jJJj5QAlhoRG.png", alt="La ruta desde la red o el almacenamiento a un Canvas o ImageBitmap.", width="800", height="419" %}<figcaption> La ruta desde la red o el almacenamiento a un <code>Canvas</code> o un <code>ImageBitmap</code>.</figcaption></figure>
 
 La configuración de un `VideoDecoder` es similar a lo que se ha hecho para el `VideoEncoder`: se pasan dos funciones cuando se crea el decodificador y se pasan los parámetros del códec a `configure()`.
 

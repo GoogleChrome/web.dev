@@ -13,7 +13,7 @@ date: 2020-05-06
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记没有可屏蔽图标支持的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse Report UI 中的可屏蔽图标审计。", width="800", height="110", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse Report UI 中的可屏蔽图标审计。", width="800", height="110" %}</figure>
 
 为了通过审计：
 

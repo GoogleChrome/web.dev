@@ -28,7 +28,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、ページの DOM 要素の合計、ページの最大 DOM 深度、およびその最大子要素を報告します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse の「過大な DOM サイズを回避」監査のスクリーンショット", width="800", height="363", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse の「過大な DOM サイズを回避」監査のスクリーンショット", width="800", height="363" %}</figure>
 
 Lighthouse は DOM ツリーのあるページに以下のようなフラグを設定します。
 

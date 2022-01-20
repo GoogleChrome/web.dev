@@ -18,7 +18,7 @@ Los usuarios de lectores de pantalla y otras tecnologías de asistencia confían
 
 Lighthouse señala los elementos `<frame>` e `<iframe>` que no tienen título:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt="Lighthouse audit showing frame or iframe doesn't have a title element", width="800", height="185", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt="Lighthouse audit showing frame or iframe doesn't have a title element", width="800", height="185" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

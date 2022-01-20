@@ -13,27 +13,27 @@ tags:
 
 ¿Qué tienen en común la aplicación Asistente de Google, la aplicación de Slack, la aplicación de Zoom y casi cualquier otra aplicación específica de plataforma en su teléfono o computadora? Exacto, siempre al menos te dan *algo*. Incluso cuando no tengas una conexión de red, aún puedes abrir la aplicación Asistente, ingresar a Slack o iniciar en Zoom. Es posible que no obtengas nada particularmente significativo o incluso no puedas lograr lo que querías lograr, pero al menos obtienes *algo* y la aplicación tiene el control.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-apps-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Aplicación móvil Asistente de Google sin conexión", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-assistant"> Asistente de Google.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Aplicación móvil Asistente de Google sin conexión", width="621", height="1344" %} <figcaption id="fig-assistant"> Asistente de Google.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Aplicación de Slack móvil sin conexión", width="621", height="1344" %} <figcaption class="w-figcaption" id="fig-slack"> Slack. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Aplicación de Slack móvil sin conexión", width="621", height="1344" %} <figcaption id="fig-slack"> Slack. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Aplicación móvil de Zoom sin conexión", width = "621", height = "1344"%}<figcaption class="w-figcaption" id="fig-zoom"> Zoom.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Aplicación móvil de Zoom sin conexión", width = "621", height = "1344"%}<figcaption id="fig-zoom"> Zoom.</figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">Con aplicaciones específicas de plataforma, incluso cuando no tienes una conexión de red, nunca obtendrás nada.</figcaption>
+  <figcaption id="fig-apps-wrapper">Con aplicaciones específicas de plataforma, incluso cuando no tienes una conexión de red, nunca obtendrás nada.</figcaption>
 
 
 
 Por el contrario, en la Web, tradicionalmente no obtienes nada cuando estás desconectado. Chrome te ofrece el [juego de dinosaurios sin conexión](https://www.blog.google/products/chrome/chrome-dino/), pero eso es todo.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-offline-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Aplicación móvil de Google Chrome que muestra el juego de dinosaurios sin conexión.", width="800", height="1731" %} <figcaption class="w-figcaption" id="fig-chrome-ios"> Google Chrome para iOS.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Aplicación móvil de Google Chrome que muestra el juego de dinosaurios sin conexión.", width="800", height="1731" %} <figcaption id="fig-chrome-ios"> Google Chrome para iOS.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Aplicación de escritorio de Google Chrome que muestra el juego de dinosaurios sin conexión", width="800", height="607" %} <figcaption class="w-figcaption" id="fig-chrome"> Google Chrome para macOS.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Aplicación de escritorio de Google Chrome que muestra el juego de dinosaurios sin conexión", width="800", height="607" %} <figcaption id="fig-chrome"> Google Chrome para macOS.</figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">En la Web, cuando no tienes una conexión de red, de forma predeterminada, no obtienes nada.</figcaption>
+  <figcaption id="fig-offline-wrapper">En la Web, cuando no tienes una conexión de red, de forma predeterminada, no obtienes nada.</figcaption>
 
 
 
@@ -41,7 +41,7 @@ Por el contrario, en la Web, tradicionalmente no obtienes nada cuando estás des
 
 Sin embargo, no tiene por qué ser así. Gracias a [los service workers y la API de Cache Storage (almacenamiento en caché)](/service-workers-cache-storage/), puedes proporcionar una experiencia fuera de línea personalizada para tus usuarios. Esta puede ser una simple página con tu marca con la información de que el usuario está actualmente sin conexión, pero también puede ser una solución más creativa, como por ejemplo, el famoso [juego de laberintos sin conexión de trivago](https://www.trivago.com/offline) con un botón de **reconexión** manual y un intento de reconexión automática usando una cuenta regresiva.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="La página sin conexión de Trivago con el laberinto sin conexión de Trivago.", width="800", height="616" %} <figcaption class="w-figcaption"> El laberinto sin conexión de Trivago.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="La página sin conexión de Trivago con el laberinto sin conexión de Trivago.", width="800", height="616" %} <figcaption> El laberinto sin conexión de Trivago.</figcaption></figure>
 
 ### Registrar al service worker
 

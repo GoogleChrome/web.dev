@@ -22,7 +22,7 @@ tags:
 
 同じスキーム、ホスト名、ポートの組み合わせを持つWebサイトは、「同一オリジン」と見なされます。それ以外はすべて「オリジン間」と見なされます。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -83,7 +83,7 @@ tags:
 
 同じeTLD + 1を持つWebサイトは、「same-site」と見なされます。異なるeTLD + 1を持つWebサイトは、「cross-site」です。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -129,7 +129,7 @@ tags:
 
 「same-site」の定義は、HTTPが[脆弱なチャネル](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8)として使用されないように、 URL スキームをサイトの一部として考慮するように展開されています。ブラウザがこのように解釈すると、古い定義を参照する場合は[「スキームのないsame-site](/schemeful-samesite/)」への参照が表示され、より厳密な定義を参照する場合は「スキームのないsame-site」への参照が表示される場合があります。その場合、スキームが一致しないため`http://www.example.com`と`https://www.example.com`はcross-siteと見なされます。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

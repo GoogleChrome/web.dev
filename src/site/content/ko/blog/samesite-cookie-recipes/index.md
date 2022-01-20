@@ -60,7 +60,7 @@ MDN의 [`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Co
 
 쿠키는 무엇보다도 세션 상태를 유지하고, 일반 기본 설정을 저장하고, 통계를 활성화하거나, 기존 계정이 있는 사용자를 위해 콘텐츠를 개인화하는 데 사용될 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="포함된 콘텐츠의 URL이 페이지의 URL과 일치하지 않는 브라우저 창의 다이어그램입니다.", width="468", height="383 ", 스타일="최대 너비: 35vw;" %}<figcaption class="w-figcaption"> 포함된 콘텐츠가 최상위 검색 컨텍스트와 동일한 사이트에서 제공되지 않으면 타사 콘텐츠입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="포함된 콘텐츠의 URL이 페이지의 URL과 일치하지 않는 브라우저 창의 다이어그램입니다.", width="468", height="383 ", 스타일="최대 너비: 35vw;" %}<figcaption> 포함된 콘텐츠가 최상위 검색 컨텍스트와 동일한 사이트에서 제공되지 않으면 타사 콘텐츠입니다.</figcaption></figure>
 
 또한 웹은 본질적으로 구성 가능하므로 `<iframes>`는 최상위 또는 자사 컨텍스트에서도 볼 수 있는 콘텐츠를 포함하는 데 사용됩니다. 해당 사이트에서 사용하는 모든 쿠키는 사이트가 프레임 내에 표시될 때 타사 쿠키로 간주됩니다. 쿠키를 사용하여 기능을 수행하면서 다른 사람이 쉽게 포함할 수 있는 사이트를 만드는 경우 사이트 간 사용으로 표시되어 있는지 또는 쿠키 없이도 정상적으로 대체할 수 있는지 확인해야 합니다.
 
@@ -68,7 +68,7 @@ MDN의 [`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Co
 
 여기서 "안전하지 않음"이 약간 우려되는 것처럼 들릴 수 있지만 이는 상태를 변경하려는 모든 요청을 나타냅니다. 웹에서 주로 POST 요청에 해당합니다. `SameSite=Lax`로 표시된 쿠키는 안전한 최상위 탐색(예: 링크를 클릭하여 다른 사이트로 이동)에서 전송됩니다. 그러나 POST를 통해 다른 사이트로 `<form>` 제출과 같은 것은 쿠키를 포함하지 않습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="한 페이지에서 다른 페이지로 이동하는 요청의 다이어그램입니다.", width="719", height="382", style="max-width: 35vw;" %}<figcaption class="w-figcaption"> 들어오는 요청이 "안전한" 방법을 사용하는 경우 쿠키가 전송됩니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="한 페이지에서 다른 페이지로 이동하는 요청의 다이어그램입니다.", width="719", height="382", style="max-width: 35vw;" %}<figcaption> 들어오는 요청이 "안전한" 방법을 사용하는 경우 쿠키가 전송됩니다.</figcaption></figure>
 
 이 패턴은 사용자를 원격 서비스로 리디렉션하여 반환하기 전에 일부 작업(예: 타사 ID 공급자로 리디렉션)을 수행하도록 리디렉션할 수 있는 사이트에 사용됩니다. 사용자가 사이트를 떠나기 전에 [CSRF(Cross Site Request Forgery)](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) 공격을 완화하기 위해 반환 요청에서 이 토큰을 확인할 수 있다는 기대와 함께 단일 사용 토큰이 포함된 쿠키가 설정됩니다. 반환 요청이 POST를 통해 오는 경우 쿠키를 `SameSite=None; Secure`로 설정해야 합니다.
 

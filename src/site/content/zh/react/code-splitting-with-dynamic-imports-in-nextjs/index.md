@@ -45,11 +45,11 @@ import Puppy from "../components/Puppy";
 
 加载页面时，所有必要的代码，包括 `Puppy.js` 组件，都捆绑在 `index.js` 中：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="DevTools Network 选项卡显示了六个 JavaScript 文件：index.js、app.js、webpack.js、main.js、0.js 和 dll (动态链接库) 文件。", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="DevTools Network 选项卡显示了六个 JavaScript 文件：index.js、app.js、webpack.js、main.js、0.js 和 dll (动态链接库) 文件。", width="800", height="665" %}</figure>
 
 当您按下 **Click me（点击我）**按钮时，只有对 puppy JPEG 的请求会添加到 **Network（网络）**选项卡中：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="点击按钮后的 DevTools Network 选项卡，显示相同的六个 JavaScript 文件和一张图片。", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="点击按钮后的 DevTools Network 选项卡，显示相同的六个 JavaScript 文件和一张图片。", width="800", height="665" %}</figure>
 
 这种方法的缺点是，即使用户不点击按钮查看小狗，他们也必须加载 `Puppy` 组件，因为它包含在 `index.js` 中。在这个小例子中，这没什么大不了的，但在实际的应用程序中，仅在必要时加载大型组件通常是一个巨大的改进。
 
@@ -70,11 +70,11 @@ const Puppy = dynamic(import("../components/Puppy"));
 
 首次加载该应用时，只会下载 `index.js`。这次小了 0.5 KB（从 37.9 KB 减少到 37.4 KB），因为它不包含 `Puppy` 组件的代码：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="DevTools Network 显示了相同的六个 JavaScript 文件，index.js 现在为 0.5 KB 小。", width="800", height="666" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="DevTools Network 显示了相同的六个 JavaScript 文件，index.js 现在为 0.5 KB 小。", width="800", height="666" %}</figure>
 
 `Puppy` 组件现在位于一个单独的块 `1.js` 中，它仅在您按下按钮时加载：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="点击按钮后的 DevTools Network 选项卡，显示附加的 1.js 文件和添加到文件列表底部的图像。", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="点击按钮后的 DevTools Network 选项卡，显示附加的 1.js 文件和添加到文件列表底部的图像。", width="800", height="665" %}</figure>
 
 {% Aside %} 默认情况下，Next.js 将这些动态块命名为*编号*.js，其中*编号*从 1 开始。{% endAside %}
 
@@ -106,7 +106,7 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 
 现在，当您点击按钮时，加载组件需要一段时间，同时应用会显示“正在加载…”消息。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="一块黑屏，显示\"正在加载...\"文本。", width="800", height="663" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="一块黑屏，显示\"正在加载...\"文本。", width="800", height="663" %}</figure>
 
 ## 没有 SSR 的动态导入
 

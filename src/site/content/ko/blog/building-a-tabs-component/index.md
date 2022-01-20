@@ -19,7 +19,7 @@ tags:
 
 이 게시물에서는 반응형이고 여러 장치 입력을 지원하며 여러 브라우저에서 작동하는 웹용 탭 구성 요소를 구축하는 방법에 대한 생각을 공유합니다. [데모](https://gui-challenges.web.app/tabs/dist/)를 사용해 보세요.
 
-<figure class="w-figure w-figure--fullbleed">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figure"> <a href="https://gui-challenges.web.app/tabs/dist/">데모</a> </figcaption></figure>
+<figure data-size="full">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4", autoplay="true", loop="true", muted="true" %} <figcaption> <a href="https://gui-challenges.web.app/tabs/dist/">데모</a> </figcaption></figure>
 
 동영상을 선호하는 경우 이 게시물의 YouTube 버전이 있습니다.
 
@@ -31,7 +31,7 @@ tags:
 
 오늘날 탭 사용자 경험의 핵심은 디스플레이 프레임에서 콘텐츠의 가시성을 토글하는 버튼 탐색 영역입니다. 많은 다른 콘텐츠 영역이 동일한 공간을 공유하지만 이들은 탐색에서 선택한 버튼을 기반으로 조건부로 표시됩니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", alt="웹이 구성 요소 개념에 적용한 스타일의 거대한 다양성으로 인해 콜라주가 매우 혼란스럽습니다.", class="w-screenshot", width="800", height="500" %} <figcaption class="w-figcaption"> 지난 10년 동안의 탭 구성 요소 웹 디자인 스타일의 콜라주 </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", alt="웹이 구성 요소 개념에 적용한 스타일의 거대한 다양성으로 인해 콜라주가 매우 혼란스럽습니다.", width="800", height="500" %} <figcaption> 지난 10년 동안의 탭 구성 요소 웹 디자인 스타일의 콜라주 </figcaption></figure>
 
 ## 웹 전술
 
@@ -49,7 +49,7 @@ tags:
 
 여기에는 링크 및 `:target`과 같은 구조적 콘텐츠 구성 요소가 있습니다. 우리는 `<nav>`가 유용한 링크 목록과 `<section>`가 유용한 `<article>` 요소의 목록이 필요합니다. 각 링크 해시는 섹션과 일치하게 되며 브라우저가 앵커링을 통해 스크롤할 수 있도록 합니다.
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figure"> 링크 버튼을 클릭하면 초점이 맞춰진 콘텐츠가 슬라이딩됩니다. </figcaption></figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4", autoplay="true", loop="true", muted="true" %} <figcaption> 링크 버튼을 클릭하면 초점이 맞춰진 콘텐츠가 슬라이딩됩니다. </figcaption></figure>
 
 예를 들어 링크를 클릭하면 Chrome 89의 `:target` 기사에 자동으로 초점이 맞춰지며 JS가 필요하지 않습니다. 그러면 사용자는 언제나처럼 입력 장치로 기사 콘텐츠를 스크롤할 수 있습니다. 이는 마크업에 표시된 대로 무료 콘텐츠입니다.
 
@@ -105,7 +105,7 @@ tags:
 - 콘텐츠 영역<b style="color: #008CFF;">(파란색)</b>은 가로로 스크롤 할 수 있습니다.
 - 각 문서 항목<b style="color: #2FD800;">(녹색)</b>은 세로로 스크롤 할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", alt="스크롤 영역의 윤곽을 표시하고 스크롤 방향을 표시하는 색 맞추기 방향 화살표와 3가지 색상의 상자.", class="w-screenshot", width="800", height="450" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", alt="스크롤 영역의 윤곽을 표시하고 스크롤 방향을 표시하는 색 맞추기 방향 화살표와 3가지 색상의 상자.", width="800", height="450" %}</figure>
 
 스크롤과 관련된 두 가지 유형의 요소가 있습니다.
 
@@ -161,7 +161,7 @@ snap-tabs {
 
 아래에서 [VisBug](https://a.nerdy.dev/gimme-visbug)로 강조 표시한 프레임은 스크롤 컨테이너가 생성한 **창**을 확인하는 데 도움이 됩니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", alt="이 헤더 및 섹션 요소에 핫핑크색의 오버레이가 있으며 이는 구성 요소에서 차지하는 공간을 설명합니다.", class="w-screenshot", width="800", height="620" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", alt="이 헤더 및 섹션 요소에 핫핑크색의 오버레이가 있으며 이는 구성 요소에서 차지하는 공간을 설명합니다.", width="800", height="620" %}</figure>
 
 #### 탭 `<header>` 레이아웃 {: #tabs-header }
 
@@ -193,7 +193,7 @@ header {
 
 `.snap-indicator`는 링크 그룹과 함께 세로로 이동해야 하며, 이 헤더 레이아웃은 해당 단계를 설정하는 데 도움이 됩니다. 여기에는 절대 위치 요소가 없습니다!
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", alt="nav 및 span.indicator 요소에는 구성 요소에서 이들이 차지하는 공간을 설명하는 핫핑크색 오버레이가 있습니다.", class="w-screenshot", width="800", height="368" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", alt="nav 및 span.indicator 요소에는 구성 요소에서 이들이 차지하는 공간을 설명하는 핫핑크색 오버레이가 있습니다.", width="800", height="368" %}</figure>
 
 다음은 스크롤 스타일입니다. 우리가 2개의 가로 스크롤 영역(헤더 및 섹션) 간에 스크롤 스타일을 공유할 수 있다는 것이 밝혀졌기에 저는 유틸리티 클래스인 `.scroll-snap-x`를 만들었습니다.
 
@@ -255,7 +255,7 @@ nav {
 
 각 링크는 자체적으로 스타일과 크기를 지정하므로 nav 레이아웃은 방향과 흐름만 지정하면 됩니다. nav 항목의 고유한 너비는 표시기가 새 대상에 맞게 너비를 조정할 때 탭 간 전환을 재미있게 만듭니다. 여기에 있는 요소의 수에 따라 브라우저는 스크롤 막대를 렌더링할지 여부를 결정합니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", alt="이 nav 요소에는 핫핑크색 오버레이가 표시되어 이들이 구성 요소에서 차지하는 공간과 오버플로되는 위치를 설명합니다.", class="w-screenshot", width="800", height="327" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", alt="이 nav 요소에는 핫핑크색 오버레이가 표시되어 이들이 구성 요소에서 차지하는 공간과 오버플로되는 위치를 설명합니다.", width="800", height="327" %}</figure>
 
 #### 탭 `<section>` 레이아웃 {: #tabs-section }
 
@@ -289,7 +289,7 @@ section {
 
 이는 마치 우리가 "강제적으로라도 세로로 최대한 확장하세요"하는 것과 같으며(`flex-shrink: 0`으로 설정한 헤더를 기억하세요. 이는 확장 압력에 대한 방어제입니다), 이는 전체 높이 열의 세트의 행 높이를 설정합니다. `auto-flow` 스타일은 상위 창을 오버플로하기 위해 그리드로 하여금 항상 우리가 원하는 대로 하위 항목을 줄 바꿈 없이 세로로 배치하도록 지시합니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", alt="이 문서 요소에는 구성 요소에서 이들이 차지하는 공간과 오버플로되는 위치를 설명하는 핫핑크색 오버레이가 있습니다.", class="w-screenshot", width="800", height="512" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", alt="이 문서 요소에는 구성 요소에서 이들이 차지하는 공간과 오버플로되는 위치를 설명하는 핫핑크색 오버레이가 있습니다.", width="800", height="512" %}</figure>
 
 저는 때때로 이러한 내용이 이해하기 어렵다는 것을 발견합니다! 이 섹션 요소는 상자로 구분하고 있지만 상자 세트도 생성했습니다. 시각 자료와 설명이 도움이 되었으면 합니다.
 
@@ -327,7 +327,7 @@ article {
 
 저는 이 문서가 상위 스크롤러 내에서 스냅되도록 선택했습니다. 저는 탐색 링크 항목과 문서 요소가 각각의 스크롤 컨테이너의 인라인 시작에 스냅하는 방식을 정말 좋아합니다. 그것이 조화로운 관계처럼 보이고 느껴지기 때문입니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", alt="문서 요소와 그 하위 요소에 핫핑크색의 오버레이가 있으며 구성 요소에서 그들이 차지하는 공간과 오버플로 방향을 설명합니다.", class="w-screenshot", width="800", height="808" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", alt="문서 요소와 그 하위 요소에 핫핑크색의 오버레이가 있으며 구성 요소에서 그들이 차지하는 공간과 오버플로 방향을 설명합니다.", width="800", height="808" %}</figure>
 
 이 문서는 그리드의 하위 요소이며 우리가 스크롤 UX를 제공하고자 하는 뷰포트 영역으로 크기가 미리 정해져 있습니다. 이것은 제가 높이나 너비 스타일이 필요하지 않다는 것을 의미하며, 저는 오버플로 방식을 정의하기만 하면 됩니다. 저는 overflow-y를 auto로 설정한 다음 편리한 overscroll-behavior 속성으로 스크롤 상호 작용을 트래핑합니다.
 
@@ -335,13 +335,13 @@ article {
 
 아래에서 저는 시스템 설정에서 "항상 스크롤 막대 표시"를 선택했습니다. 레이아웃과 스크롤 오케스트레이션을 검토해야 하기 때문에 저는 이 설정이 켜진 상태에서 레이아웃이 작동하는 것이 두 배로 중요하다고 생각합니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", alt="3개의 스크롤 막대가 표시되도록 설정되어 이제 레이아웃 공간을 소비하고 있으며, 구성 요소는 여전히 멋있어 보입니다.", class="w-screenshot", width="500", height="607" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", alt="3개의 스크롤 막대가 표시되도록 설정되어 이제 레이아웃 공간을 소비하고 있으며, 구성 요소는 여전히 멋있어 보입니다.", width="500", height="607" %}</figure>
 
 저는 이 구성 요소에서 스크롤 막대의 여백을 보는 것은 스크롤 영역이 어디에 있는지, 스크롤 영역이 지원하는 방향 및 서로 상호 작용하는 방식을 명확하게 표시하는 데 도움이 된다고 생각합니다. 이러한 스크롤 창 프레임 각각이 레이아웃의 플렉스 또는 그리드 상위 요소가 되는 방법을 고려하세요.
 
 DevTools는 다음을 시각화하는 데 도움이 될 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", alt="스크롤 영역에 그리드 및 플렉스박스(Flexbox) 도구 오버레이가 있어 구성 요소에서 차지하는 공간과 오버플로 방향을 설명합니다.", class="w-screenshot", width="800", height="455" %} <figcaption class="w-figure"> 앵커 요소로 가득 찬 플렉스박스 nav 요소 레이아웃, 문서 요소로 가득 찬 그리드 섹션 레이아웃, 단락과 제목 요소로 가득 찬 문서 요소를 보여주는 Chromium Devtools. </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", alt="스크롤 영역에 그리드 및 플렉스박스(Flexbox) 도구 오버레이가 있어 구성 요소에서 차지하는 공간과 오버플로 방향을 설명합니다.", width="800", height="455" %} <figcaption> 앵커 요소로 가득 찬 플렉스박스 nav 요소 레이아웃, 문서 요소로 가득 찬 그리드 섹션 레이아웃, 단락과 제목 요소로 가득 찬 문서 요소를 보여주는 Chromium Devtools. </figcaption></figure>
 
 스냅핑, 딥 링크 및 키보드 액세스 등 스크롤 레이아웃이 완료되었습니다. UX 향상, 스타일 및 즐거움을 위한 강력한 기반입니다.
 
@@ -355,7 +355,7 @@ DevTools는 다음을 시각화하는 데 도움이 될 수 있습니다.
 
 기사 스크롤 위치에 탭 밑줄을 연결하겠습니다. 스냅핑은 정렬을 잘하기 위해 사용할 뿐만 아니라  애니메이션의 시작과 끝을 고정시키는 역할도 합니다. 이렇게 하면 [미니 맵](https://en.wikipedia.org/wiki/Mini-map)과 같은 역할을 하는 `<nav>`가 콘텐츠에 연결된 상태로 유지됩니다. 우리는 CSS와 JS 모두에서 사용자의 모션 선호 설정을 확인할 것입니다. 고려해야 할 몇 가지 좋은 위치가 있습니다!
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 #### 스크롤 동작 {: #scroll-behavior }
 
@@ -369,7 +369,7 @@ DevTools는 다음을 시각화하는 데 도움이 될 수 있습니다.
 }
 ```
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 여기에서 우리는 모션과 사용자가 제어하지 않는 모션(예: 스크롤)을 소개하므로 우리는 사용자가 자신의 운영 체제에 모션 감소에 대한 선호 설정이 없는 경우에만 이 스타일을 적용합니다. 이런 식으로, 우리는 이런 설정에 대해 괜찮아하는 사람들에게만 스크롤 동작을 소개합니다.
 
@@ -379,7 +379,7 @@ DevTools는 다음을 시각화하는 데 도움이 될 수 있습니다.
 
 Chromium Devtools에서 저는 선호 설정을 토글 설정하고 2가지 다른 전환 스타일을 시연할 수 있습니다. 저는 이것을 구축하는 데 많은 재미를 느꼈습니다.
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -497,13 +497,13 @@ TranslateX 키프레임:
 
 전략을 요약하자면, 섹션 스크롤러의 스크롤 스냅 위치에 따라 탭 표시기가 4개의 키프레임에 걸쳐 애니메이션 작업을 수행합니다. 스냅 포인트는 우리의 키프레임 사이를 명확하게 설명하고 애니메이션의 동기화된 느낌에 실제로 추가합니다.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", alt="활성 탭과 비활성 탭은 VisBug 오버레이와 함께 표시되어 두 가지 모두에 대한 통과 대비 점수를 보여줍니다.", class="w-screenshot", width="540", height="400" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", alt="활성 탭과 비활성 탭은 VisBug 오버레이와 함께 표시되어 두 가지 모두에 대한 통과 대비 점수를 보여줍니다.", width="540", height="400" %}</figure>
 
 사용자는 상호 작용으로 애니메이션을 구동하며, 표시기의 너비와 위치가 한 섹션에서 다음 섹션으로 변경되는 것을 보고 스크롤을 사용하여 완벽하게 추적합니다.
 
 눈치채지 못하셨겠지만 저는 강조 표시된 탐색 항목이 선택될 때 색상이 변하는 것을 매우 자랑스럽게 생각합니다.
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 강조 표시된 항목의 대비가 더 높을 때 선택하지 않은 밝은 회색이 항목이 훨씬 더 뒤로 밀려 나타납니다. 마우스를 가져갔을 때와 선택했을 때와 같이 텍스트의 색상을 전환하는 것이 일반적이며, 밑줄 표시기와 동기화되어 스크롤할 때 해당 색상을 전환하는 것은 다음 단계입니다.
 
@@ -568,7 +568,7 @@ window.onload = () => {
 
 우리의 사용자들은 항상 클릭하거나 키보드를 사용하는 것은 아니며, 때때로 그들은, 당연히 할 수 있기에, 그저 자유롭게 스크롤합니다. 섹션 스크롤러가 스크롤을 멈췄을 때, 그것이 멈춘 위치가 어디든지 상단 탐색 모음과 일치해야 합니다.
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 제가 스크롤 종료를 기다리는 방법은 다음과 같습니다.
 
@@ -605,7 +605,7 @@ const setActiveTab = tabbtn => {
 
 활성 탭 설정은 현재 활성 탭을 지우고 들어오는 nav 항목에 활성 상태 속성을 부여하는 것으로 시작됩니다. `scrollIntoView()`에 대한 호출에는 주목할 가치가 있는 CSS와의 재미있는 상호 작용이 있습니다.
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ```css
 .scroll-snap-x {

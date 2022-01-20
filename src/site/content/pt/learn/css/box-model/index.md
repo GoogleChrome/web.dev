@@ -32,7 +32,7 @@ p {
 
 O conteúdo sairia do seu elemento e teria 142 pixels de largura, em vez de 100 pixels. Por quê? O modelo de caixa é a base central do CSS, e entender como ele funciona, como é afetado por outros aspectos do CSS e, o mais importante, como você pode controlá-lo ajudará a escrever um CSS mais previsível.
 
-<figure class="w-figure">{% Codepen {user: 'web-dot-dev', id: 'WNRemxN', height: 300}%}</figure>
+<figure>{% Codepen {user: 'web-dot-dev', id: 'WNRemxN', height: 300}%}</figure>
 
 Uma coisa muito importante para lembrar ao escrever o CSS, ou trabalhar na web como um todo, é que tudo que será exibido pelo CSS é uma caixa. Seja uma caixa que usa `border-radius` para se parecer com um círculo, seja apenas um texto: o mais importante a considerar é que tudo são caixas.
 
@@ -44,13 +44,13 @@ Você pode controlar isso usando o **dimensionamento extrínseco** ou continuar 
 
 Vamos ver rapidamente a diferença, usando uma demonstração para nos ajudar.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' }%}<figcaption class="w-figcaption"> Observe que, quando a caixa está usando dimensionamento extrínseco, há um limite de quanto conteúdo você pode adicionar antes que ultrapasse os limites da caixa. Isso faz com que a palavra "incrível" cause um estouro.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' }%}<figcaption> Observe que, quando a caixa está usando dimensionamento extrínseco, há um limite de quanto conteúdo você pode adicionar antes que ultrapasse os limites da caixa. Isso faz com que a palavra "incrível" cause um estouro.</figcaption></figure>
 
 A demonstração traz as palavras, "CSS é incrível" em uma caixa com dimensões fixas e uma borda grossa. A caixa tem uma largura, portanto é extrinsecamente dimensionada. Ela controla o dimensionamento de seu conteúdo filho. Porém, o problema disso é que a palavra "incrível" é muito grande para a caixa, causando estouro na **borda** da caixa pai (mais sobre isso mais tarde na lição). Uma maneira de evitar esse estouro é permitir que a caixa seja intrinsecamente dimensionada ao remover a largura ou, neste caso, definir `width` para `min-content`. `min-content` diz à caixa que seja tão larga quanto a largura mínima intrínseca de seu conteúdo (a palavra "incrível"). Isso permite que a caixa se encaixe perfeitamente na mensagem "CSS é incrível".
 
 Vejamos algo mais complexo para ver o impacto de diferentes tamanhos no conteúdo real:
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
 
 Ative e desative o dimensionamento intrínseco para ver como você pode obter mais controle com o dimensionamento extrínseco e permitir que o conteúdo tenha mais controle com o dimensionamento intrínseco. Para ver o efeito dos dimensionamentos intrínseco e extrínseco, adicione algumas frases de conteúdo ao cartão. Quando esse elemento está usando dimensionamento extrínseco, há um limite de quanto conteúdo você pode adicionar antes que ultrapasse os limites do elemento, mas esse não é o caso quando o dimensionamento intrínseco é ativado.
 
@@ -64,25 +64,25 @@ Quando você muda para o tamanho intrínseco, permite que o navegador tome decis
 
 As caixas são compostas por áreas de modelo de caixa distintas que fazem um trabalho específico.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="Um diagrama que mostra as quatro áreas principais do modelo de caixa: caixa de conteúdo, caixa de preenchimento, caixa de borda e caixa de margem", width="800", height="547" %}<figcaption class="w-figcaption">As quatro áreas principais do modelo de caixa: caixa de conteúdo, caixa de preenchimento, caixa de borda e caixa de margem.</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="Um diagrama que mostra as quatro áreas principais do modelo de caixa: caixa de conteúdo, caixa de preenchimento, caixa de borda e caixa de margem", width="800", height="547" %}<figcaption>As quatro áreas principais do modelo de caixa: caixa de conteúdo, caixa de preenchimento, caixa de borda e caixa de margem.</figcaption></figure>
 
 Você começa com a **caixa de conteúdo**, que é a área em que o conteúdo está localizado. Como você já aprendeu, esse conteúdo pode controlar o tamanho de seu pai, então geralmente é a área de tamanho mais variável.
 
 A **caixa de preenchimento** envolve a caixa de conteúdo e é o espaço criado pela propriedade [`padding`](https://developer.mozilla.org/docs/Web/CSS/padding). Como o preenchimento está dentro da caixa, o plano de fundo da caixa ficará visível no espaço que ela cria. Se nossa caixa tiver regras de estouro definidas, como `overflow: auto` ou `overflow: scroll`, as barras de rolagem também ocuparão esse espaço.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
 
 A **caixa de borda** envolve a caixa de preenchimento e seu espaço é ocupado pelo valor de `border`. A caixa de borda são os limites de sua caixa e a **borda da borda** é o limite do que você pode ver visualmente. <a href="https://developer.mozilla.org/docs/Web/CSS/border" data-md-type="link">`border`</a> é usada para enquadrar visualmente um elemento.
 
 A área final, a **caixa de margem**, é o espaço ao redor de sua caixa, definido pela regra `margin` em sua caixa. Propriedades como [`outline`](https://developer.mozilla.org/docs/Web/CSS/outline) e [`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow) ocupam esse espaço porque são pintadas na parte superior, de modo que não afetam o tamanho da caixa. Você poderia ter uma `outline-width` de `200px` em nossa caixa e tudo dentro dela, incluindo a caixa de borda, teria exatamente o mesmo tamanho.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'XWprGea'} %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'XWprGea'} %}</figure>
 
 ## Uma analogia útil
 
 O modelo de caixa é complexo de entender, então vamos recapitular o que você aprendeu com uma analogia.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Três molduras de foto", width = "800", height ="562" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Três molduras de foto", width = "800", height ="562" %}</figure>
 
 Neste diagrama, você tem três molduras de fotos, montadas em uma parede, uma ao lado da outra. O diagrama possui rótulos que associam elementos da moldura ao modelo da caixa.
 
@@ -104,7 +104,7 @@ Vá em frente e tente isso em seu próprio navegador:
 2. [Selecione um elemento](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 3. Exiba o depurador de modelo de caixa
 
-<figure class="w-figure">{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}</figure>
+<figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>
 
 ## Controlando o modelo de caixa
 
@@ -137,7 +137,7 @@ Este modelo de caixa alternativa diz ao CSS que aplique a `width` na caixa de bo
 
 Veja como isso funciona na demonstração interativa a seguir. Observe que, quando você ativa ou desativa a `box-sizing`, é exibido - por meio de um fundo azul - qual CSS está sendo aplicado *dentro* da nossa caixa.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
 
 ```css
 *,

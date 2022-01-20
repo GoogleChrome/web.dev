@@ -27,9 +27,9 @@ feedback:
 
 通过右键单击用户桌面上任务栏 (Windows) 或程序坞 (macOS) 中的应用程序图标，或在 Android 上长按应用程序的启动图标，可以调用应用程序快捷方式菜单。
 
-<figure class="w-figure">{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Android 上打开的应用快捷菜单截图", width="800", height="420", class="w-screenshot" %}<figcaption class="w-figcaption">在 Android 上打开的应用程序快捷方式菜单</figcaption></figure>
+<figure>{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Android 上打开的应用快捷菜单截图", width="800", height="420" %}<figcaption>在 Android 上打开的应用程序快捷方式菜单</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="在 Windows 上打开的应用程序快捷菜单的屏幕截图", width="800", height="420", class="w-screenshot" %}<figcaption class="w-figcaption">在 Windows 上打开的应用程序快捷方式菜单</figcaption></figure>
+<figure>{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="在 Windows 上打开的应用程序快捷菜单的屏幕截图", width="800", height="420" %}<figcaption>在 Windows 上打开的应用程序快捷方式菜单</figcaption></figure>
 
 应用程序快捷方式菜单仅针对安装在用户桌面或移动设备上的[渐进式 Web 应用程序](/progressive-web-apps/) 显示。查看[怎样才能设置成可安装？](/install-criteria/)了解可安装性要求。
 
@@ -102,7 +102,7 @@ feedback:
 
 要验证您的应用程序快捷方式设置是否正确，请使用 DevTools 的**应用程序**面板中的**清单**窗格。
 
-<figure class="w-figure">{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="DevTools 中应用程序快捷方式的屏幕截图", width="800", height="534" %}<figcaption class="w-figcaption"> DevTools 中显示的应用程序快捷方式</figcaption></figure>
+<figure>{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="DevTools 中应用程序快捷方式的屏幕截图", width="800", height="534" %}<figcaption> DevTools 中显示的应用程序快捷方式</figcaption></figure>
 
 此窗格提供了许多清单属性的用户可读版本，包括应用程序快捷方式。它可以轻松验证所有快捷方式图标（如果提供）是否正确加载。
 
@@ -128,7 +128,7 @@ feedback:
 
 应用程序快捷方式可在 Android (Chrome 84)、Windows（Chrome 85 和 Edge 85）、Chrome OS（Chrome 92）、macOS 和 Linux（Chrome 96 和 Edge 96）上可用。
 
-<figure class="w-figure">{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Chrome 操作系统上打开的应用快捷菜单截图", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption">在 Chrome 操作系统上打开的应用程序快捷方式菜单</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Chrome 操作系统上打开的应用快捷菜单截图", width="800", height="450" %}<figcaption>在 Chrome 操作系统上打开的应用程序快捷方式菜单</figcaption></figure>
 
 ## 支持可信的 Web 活动
 
@@ -140,8 +140,8 @@ feedback:
 
 ## 示例
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
+<figure>
+  <video controls autoplay loop muted src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
   </video></figure>
 
 查看[应用程序快捷方式示例](https://app-shortcuts.glitch.me)及其[源代码](https://glitch.com/edit/#!/app-shortcuts)。

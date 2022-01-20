@@ -18,7 +18,7 @@ updated: 2020-09-28
 
 ### 설치 시 - 종속성 {: #on-install-as-dependency }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="설치 시 - 종속성.", width="800", height="498" %}<figcaption class="w-figcaption"> 설치 시 - 종속성.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="설치 시 - 종속성.", width="800", height="498" %}<figcaption> 설치 시 - 종속성.</figcaption></figure>
 
 Service Worker는 `install` 이벤트를 제공합니다. 이를 사용하여 다른 이벤트를 처리하기 전에 준비해야 하는 항목을 준비할 수 있습니다. 이 문제가 발생하는 동안 Service Worker의 이전 버전은 여전히 실행 중이고 페이지를 제공하므로, 여기에서 수행하는 작업이 중단되어서는 안 됩니다.
 
@@ -48,7 +48,7 @@ self.addEventListener('install', function (event) {
 
 ### 설치 시 - 종속성이 아님 {: #on-install-not }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="설치 시 - 종속성이 아님.", width="800", height="500" %}<figcaption class="w-figcaption"> 설치 시 - 종속성이 아님.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="설치 시 - 종속성이 아님.", width="800", height="500" %}<figcaption> 설치 시 - 종속성이 아님.</figcaption></figure>
 
 위와 비슷하지만 설치 완료를 지연시키지 않으며 캐싱이 실패해도 설치가 실패하지 않습니다.
 
@@ -77,7 +77,7 @@ Service Worker는 이벤트 처리가 완료되었기 때문에 레벨 11–20�
 
 ### 활성화 시 {: #on-activate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="활성화 시.", width="800", height="500" %} <figcaption class="w-figcaption">활성화 시.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="활성화 시.", width="800", height="500" %} <figcaption>활성화 시.</figcaption></figure>
 
 **이상적인 대상:** 정리 및 마이그레이션.
 
@@ -109,7 +109,7 @@ self.addEventListener('activate', function (event) {
 
 ### 사용자 상호작용 시 {: #on-user-interaction }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="사용자 상호작용 시On user interaction.", width="800", height="222" %} <figcaption class="w-figcaption">사용자 상호작용 시.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="사용자 상호작용 시On user interaction.", width="800", height="222" %} <figcaption>사용자 상호작용 시.</figcaption></figure>
 
 **이상적인 대상:** 전체 사이트를 오프라인으로 전환할 수 없고 사용자가 오프라인에서 사용할 수 있는 콘텐츠를 선택할 수 있도록 선택한 경우. 예를 들어 YouTube와 같은 동영상, Wikipedia의 글, Flickr의 특정 갤러리.
 
@@ -138,7 +138,7 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 
 ### 네트워크 응답 시 {: #on-network-response }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="네트워크 응답 시.", width="800", height="390" %} <figcaption class="w-figcaption">네트워크 응답 시.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="네트워크 응답 시.", width="800", height="390" %} <figcaption>네트워크 응답 시.</figcaption></figure>
 
 **이상적인 대상:** 자주 업데이트하는 사용자의 받은 편지함 또는 기사 콘텐츠와 같은 리소스. 아바타와 같은 비필수적인 콘텐츠에도 유용하지만 주의가 필요합니다.
 
@@ -170,7 +170,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 오래된 재검증 {: #stale-while-revalidate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="오래된 재검증.", width="800", height="388" %} <figcaption class="w-figcaption">오래된 재검증.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="오래된 재검증.", width="800", height="388" %} <figcaption>오래된 재검증.</figcaption></figure>
 
 **이상적인 대상:** 최신 버전이 필수적이지 않은 자주 업데이트하는 리소스. 아바타는 이 범주에 속할 수 있습니다.
 
@@ -196,7 +196,7 @@ HTTP의 [오래된 재검증](https://www.mnot.net/blog/2007/12/12/stale)과 매
 
 ### 푸시 메시지 {: #on-push-message }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="푸시 메시지.", width="800", height="498" %}<figcaption class="w-figcaption"> 푸시 메시지.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="푸시 메시지.", width="800", height="498" %}<figcaption> 푸시 메시지.</figcaption></figure>
 
 [푸시 API](https://developers.google.com/web/fundamentals/push-notifications)는 Service Worker 위에 구축된 또 다른 기능입니다. 이를 통해 OS의 메시징 서비스에서 메시지에 대한 응답으로 Service Worker를 깨울 수 있습니다. 이는 사용자가 사이트에 열려 있는 탭이 없는 경우에도 발생합니다. 오직 Service Worker만 깨어납니다. 페이지에서 이 작업을 수행할 수 있는 권한을 요청하면 사용자에게 메시지가 표시됩니다.
 
@@ -242,7 +242,7 @@ self.addEventListener('notificationclick', function (event) {
 
 ### 백그라운드 동기화 시 {: #on-background-sync }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="백그라운드 동기화 시.", width="800", height="219" %} <figcaption class="w-figcaption">백그라운드 동기화 시.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="백그라운드 동기화 시.", width="800", height="219" %} <figcaption>백그라운드 동기화 시.</figcaption></figure>
 
 [백그라운드 동기화](https://developers.google.com/web/updates/2015/12/background-sync)는 Service Worker를 기반으로 구축된 또 다른 기능입니다. 이를 통해 일회성 또는 (매우 경험적) 간격으로 백그라운드 데이터 동기화를 요청할 수 있습니다. 이는 사용자가 사이트에 열려 있는 탭이 없는 경우에도 발생합니다. 오직 Service Worker만 깨어납니다. 페이지에서 이 작업을 수행할 수 있는 권한을 요청하면 사용자에게 메시지가 표시됩니다.
 
@@ -302,7 +302,7 @@ navigator.storage.persist()
 
 ### 캐시 전용 {: #cache-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="캐시 전용.", width="800", height="272" %} <figcaption class="w-figcaption">캐시 전용.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="캐시 전용.", width="800", height="272" %} <figcaption>캐시 전용.</figcaption></figure>
 
 **이상적인 대상:** 사이트의 특정 "버전"에 대해 정적인 것으로 간주되는 모든 것. 설치 이벤트에서 이러한 항목을 캐시해야 하므로 해당 항목에 의존할 수 있습니다.
 
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 네트워크 전용 {: #network-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="네트워크 전용.", width="800", height="272" %} <figcaption class="w-figcaption">네트워크 전용.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="네트워크 전용.", width="800", height="272" %} <figcaption>네트워크 전용.</figcaption></figure>
 
 **이상적인 대상:** 분석 핑, GET이 아닌 요청과 같이 오프라인에 상응하는 항목이 없는 것.
 
@@ -334,7 +334,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 캐시, 네트워크로 폴백 {: #cache-falling-back-to-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="캐시, 네트워크로 폴백.", width="800", height="395" %} <figcaption class="w-figcaption">캐시, 네트워크로 폴백.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="캐시, 네트워크로 폴백.", width="800", height="395" %} <figcaption>캐시, 네트워크로 폴백.</figcaption></figure>
 
 **이상적인 대상:** 오프라인 우선 구축. 이러한 경우 대부분의 요청을 처리하는 방법입니다. 다른 패턴은 들어오는 요청에 따라 예외가 됩니다.
 
@@ -352,7 +352,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 캐시 및 네트워크 경쟁 {: #cache-and-network-race }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="캐시 및 네트워크 경쟁.", width="800", height="427" %} <figcaption class="w-figcaption">캐시 및 네트워크 경쟁.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="캐시 및 네트워크 경쟁.", width="800", height="427" %} <figcaption>캐시 및 네트워크 경쟁.</figcaption></figure>
 
 **이상적인 대상:** 디스크 액세스가 느린 장치에서 성능을 추구하는 소규모 애셋.
 
@@ -380,7 +380,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 캐시로 네트워크 폴백 {: #network-falling-back-to-cache }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="캐시로 네트워크 폴백.", width="800", height="388" %} <figcaption class="w-figcaption">캐시로 네트워크 폴백.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="캐시로 네트워크 폴백.", width="800", height="388" %} <figcaption>캐시로 네트워크 폴백.</figcaption></figure>
 
 **이상적인 대상:** 사이트의 "버전" 외부에서 자주 업데이트되는 리소스의 빠른 수정. 예: 글, 아바타, 소셜 미디어 타임라인 및 게임 리더보드.
 
@@ -400,7 +400,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 캐시 후 네트워크 {: #cache-then-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="캐시 후 네트워크.", width="800", height="478" %} <figcaption class="w-figcaption">캐시 후 네트워크.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="캐시 후 네트워크.", width="800", height="478" %} <figcaption>캐시 후 네트워크.</figcaption></figure>
 
 **이상적인 대상:** 자주 업데이트되는 콘텐츠. 예: 글, 소셜 미디어 타임라인 및 게임. 리더보드.
 
@@ -469,7 +469,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 일반 폴백 {: #generic-fallback }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="일반 폴백.", width="800", height="389" %} <figcaption class="w-figcaption">일반 폴백.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="일반 폴백.", width="800", height="389" %} <figcaption>일반 폴백.</figcaption></figure>
 
 캐시 및/또는 네트워크에서 무언가를 제공하는 데 실패하면 일반 폴백을 제공할 수 있습니다.
 
@@ -502,7 +502,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Service Worker 측 템플릿 {: #Service Worker-side-templating }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Service Worker 측 템플릿.", width="800", height="463" %} <figcaption class="w-figcaption">Service Worker 측 템플릿.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Service Worker 측 템플릿.", width="800", height="463" %} <figcaption>Service Worker 측 템플릿.</figcaption></figure>
 
 **이상적인 대상:** 서버 응답을 캐시할 수 없는 페이지.
 

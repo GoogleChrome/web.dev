@@ -233,11 +233,11 @@ self.addEventListener('periodicsync', (event) => {
 
 DevTools의 **주기적인 백그라운드 동기화** 섹션은 주기적인 백그라운드 동기화 수명 주기의 주요 이벤트(동기화 등록, 배경 동기화 수행 및 등록 취소)를 중심으로 구성되어 있습니다. 이러한 이벤트에 대한 정보를 얻으려면 **기록 시작**을 클릭하십시오.
 
-<figure>{% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="DevTools의 기록 버튼", width="708", height="90", class="w-screenshot" %}<figcaption> DevTools의 기록 버튼</figcaption></figure>
+<figure>{% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="DevTools의 기록 버튼", width="708", height="90" %}<figcaption> DevTools의 기록 버튼</figcaption></figure>
 
 기록하는 동안 항목은 이벤트에 해당하는 DevTools에 표시되며 각각에 대해 기록된 컨텍스트 및 메타데이터와 함께 표시됩니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="기록된 주기적 백그라운드 동기화 데이터의 예",  width="800", height="357", class="w-screenshot", style="max-width: 75%" %}<figcaption> 기록된 주기적인 백그라운드 동기화 데이터의 예</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="기록된 주기적 백그라운드 동기화 데이터의 예",  width="800", height="357", style="max-width: 75%" %}<figcaption> 기록된 주기적인 백그라운드 동기화 데이터의 예</figcaption></figure>
 
 기록을 한 번 활성화하면 최대 3일 동안 활성화된 상태로 유지되어 DevTools가 향후 몇 시간 동안 발생할 수 있는 백그라운드 동기화에 대한 로컬 디버깅 정보를 캡처할 수 있습니다.
 
@@ -249,10 +249,10 @@ Chrome DevTools의 애플리케이션 패널에 있는 **서비스 작업자** �
 
 {% Aside %} `periodicsync` 동기화 이벤트를 수동으로 트리거하려면 Chrome 81 이상이 필요합니다. {% endAside %}
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="응용 프로그램 패널의 '서비스 작업자' 섹션에 '주기적 동기화' 텍스트 필드와 버튼이 표시됩니다.", width="800", height="321", class="w-screenshot", style="max-width: 90%" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="응용 프로그램 패널의 '서비스 작업자' 섹션에 '주기적 동기화' 텍스트 필드와 버튼이 표시됩니다.", width="800", height="321", style="max-width: 90%" %}</figure>
 
 ## DevTools 인터페이스 사용
 
 Chrome 81부터 DevTools *애플리케이션* 패널에 **주기적 백그라운드 동기화** 섹션이 표시됩니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="주기적인 백그라운드 동기화 섹션을 보여주는 응용 프로그램 패널", width="382", height="253", class="w-screenshot", style="max-width: 75%" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="주기적인 백그라운드 동기화 섹션을 보여주는 응용 프로그램 패널", width="382", height="253", style="max-width: 75%" %}</figure>

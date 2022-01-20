@@ -53,7 +53,7 @@ tags:
 
 只要 PWA 满足[可安装性标准](/install-criteria/)，大多数浏览器便会显示可安装 PWA 的指示。例如，桌面 Chrome 会在地址栏中显示可安装图标，在移动设备上会显示迷你信息栏：
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="名为迷你信息栏的标准 Chrome 安装提示", width="800", height="417" %}<figcaption class="w-figcaption">迷你信息栏</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="名为迷你信息栏的标准 Chrome 安装提示", width="800", height="417" %}<figcaption>迷你信息栏</figcaption></figure>
 
 虽然对于某些体验来说这已足够，但如果您的目标是要推动 PWA 的安装，我们强烈建议您关注 [`BeforeInstallPromptEvent`](https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent) ，并遵循[推广 PWA 安装的模式](/promote-install/)。
 
@@ -90,12 +90,12 @@ tags:
 
 Oyo 是印度最大的酒店公司之一，开发了其[精简版应用程序](/oyo-lite-twa/)，并使用 TWA 在 Play Store 中予以提供。它只有 850 KB，仅在其 Android 应用程序大小的 7%。安装后，与它们的 Android 应用程序别无二致：
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">当前提供的 OYO 精简版。</figcaption></figure>
+ <figcaption>当前提供的 OYO 精简版。</figcaption></figure>
 
 Oyo 在商店中保留了旗舰版和“精简版”应用程序版本，将最终决定权留给用户。
 

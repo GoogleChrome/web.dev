@@ -16,7 +16,7 @@ O thread principal também processa eventos do usuário. Portanto, sempre que o 
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que mantêm o thread principal ocupado por mais de 4 segundos durante o carregamento:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="Uma captura de tela da auditoria Lighthouse Minimize main thread work audit", width="800", height="408", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="Uma captura de tela da auditoria Lighthouse Minimize main thread work audit", width="800", height="408" %}</figure>
 
 Para ajudá-lo a identificar as fontes de carregamento do thread principal, o Lighthouse mostra uma análise de onde o tempo da CPU foi gasto enquanto o navegador carregava sua página.
 

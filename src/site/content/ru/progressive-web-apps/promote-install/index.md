@@ -17,7 +17,7 @@ feedback:
 
 Установка прогрессивного веб-приложения (PWA) может упростить пользователям его поиск и использование. Даже при продвижении через браузер некоторые пользователи не понимают, что они могут установить PWA, поэтому может быть полезно предоставить интерфейс в приложении, который можно будет использовать для его продвижения и установки.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="Скриншот простой кнопки установки в PWA.", width="800", height="368" %} <figcaption class="w-figcaption"> Простая кнопка установки в вашем PWA. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="Скриншот простой кнопки установки в PWA.", width="800", height="368" %} <figcaption> Простая кнопка установки в вашем PWA. </figcaption></figure>
 
 Этот список ни в коем случае не является исчерпывающим, но с него можно начать знакомство с различными способами продвижения установки вашего PWA. Независимо от того, *какие алгоритмы* вы используете, все они приводят к одному и тому же коду, запускающему процесс установки, описанный в разделе «[Как обеспечить персональный интерфейс установки приложения](/customize-install/)».
 
@@ -37,8 +37,8 @@ feedback:
 При [соблюдении определенных критериев](/install-criteria/) большинство браузеров автоматически сообщают пользователю, что ваше прогрессивное веб-приложение можно установить. Например, Chrome для десктопов показывает кнопку установки в омнибоксе.
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Скриншот омнибокса с отображаемым индикатором установки.", width="800", height="307" %} <figcaption class="w-figcaption"> Браузер показывает рекламу установки (на десктопе) </figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Скриншот браузера, предлагающего установку.", width="800", height="307" %} <figcaption class="w-figcaption"> Браузер показывает рекламу установки (на мобильном устройстве)</figcaption></figure>
+  <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Скриншот омнибокса с отображаемым индикатором установки.", width="800", height="307" %} <figcaption> Браузер показывает рекламу установки (на десктопе) </figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Скриншот браузера, предлагающего установку.", width="800", height="307" %} <figcaption> Браузер показывает рекламу установки (на мобильном устройстве)</figcaption></figure>
 </div>
 
 <div class="w-clearfix"> </div>
@@ -57,7 +57,7 @@ Chrome для Android покажет пользователю небольшую
 
 Простейший возможный UX — это кнопка «Установить» или «Получить приложение» в соответствующем месте вашего веб-контента. Убедитесь, что кнопка не блокирует другие важные функции и не мешает пользователю просматривать ваше приложение.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Пользовательская кнопка установки", width="800", height="448" %} <figcaption class="w-figcaption"> Простая кнопка установки </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Пользовательская кнопка установки", width="800", height="448" %} <figcaption> Простая кнопка установки </figcaption></figure>
 
 <div class="w-clearfix"> </div>
 
@@ -65,11 +65,11 @@ Chrome для Android покажет пользователю небольшую
 
 Это кнопка установки, которая является частью заголовка вашего сайта. Заголовок также часто включает в себя элементы брендинга сайта, например, логотип и бургер-меню. Заголовки могут иметь фиксированную позицию (`position:fixed`) или нет в зависимости от функциональности вашего сайта и потребностей пользователей.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Настраиваемая кнопка установки в заголовке", width="800", height="448" %} <figcaption class="w-figcaption"> Настраиваемая кнопка установки в заголовке </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Настраиваемая кнопка установки в заголовке", width="800", height="448" %} <figcaption> Настраиваемая кнопка установки в заголовке </figcaption></figure>
 
 При правильном использовании реклама установки PWA в заголовке вашего сайта упрощает возврат лояльных клиентов. Пространство в заголовке PWA ценится дорого, поэтому убедитесь, что ваш призыв к установке имеет соответствующий размер и смотрится более важным, чем другой контент в заголовке, но при этом ненавязчиво.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Настраиваемая кнопка установки в заголовке", width="800", height="430" %} <figcaption class="w-figcaption"> Настраиваемая кнопка установки в заголовке </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Настраиваемая кнопка установки в заголовке", width="800", height="430" %} <figcaption> Настраиваемая кнопка установки в заголовке </figcaption></figure>
 
 Важно:
 
@@ -81,7 +81,7 @@ Chrome для Android покажет пользователю небольшую
 
 ### Меню навигации {: #nav }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Настраиваемая кнопка установки в меню навигации", width="800", height="1117" %} <figcaption class="w-figcaption"> Добавьте кнопку установки или рекламу в выдвижное меню навигации. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Настраиваемая кнопка установки в меню навигации", width="800", height="1117" %} <figcaption> Добавьте кнопку установки или рекламу в выдвижное меню навигации. </figcaption></figure>
 
 Меню навигации отлично подходит для продвижения установки приложения, поскольку пользователи, открывающие меню, сигнализируют о взаимодействии с вашим контентом.
 
@@ -96,7 +96,7 @@ Chrome для Android покажет пользователю небольшую
 
 Назначение целевой страницы — продвигать ваши продукты и услуги, поэтому здесь уместно широко продвигать преимущества установки вашего PWA.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="Настраиваемое диалоговое окно установки на целевой странице", width = "800", height = "1117" %}<figcaption class="w-figcaption"> Настраиваемое диалоговое окно установки на целевой странице </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="Настраиваемое диалоговое окно установки на целевой странице", width = "800", height = "1117" %}<figcaption> Настраиваемое диалоговое окно установки на целевой странице </figcaption></figure>
 
 Сначала изложите конкурентное предложение вашего сайта, а затем расскажите посетителям, что они получат от установки.
 
@@ -110,7 +110,7 @@ Chrome для Android покажет пользователю небольшую
 
 ### Баннер установки {: #banner }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Настраиваемый баннер установки вверху страницы.", width="800", height="1000" %} <figcaption class="w-figcaption"> Скрываемый баннер вверху страницы. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Настраиваемый баннер установки вверху страницы.", width="800", height="1000" %} <figcaption> Скрываемый баннер вверху страницы. </figcaption></figure>
 
 Большинство пользователей сталкивались с установочными баннерами в мобильных приложениях и знакомы с взаимодействиями, предлагаемыми баннером. Баннеры следует использовать осторожно, потому что они могут помешать пользователю.
 
@@ -125,11 +125,11 @@ Chrome для Android покажет пользователю небольшую
 
 Временный пользовательский интерфейс, такой как шаблон дизайна [Snackbar](https://material.io/components/snackbars/), уведомляет пользователя и позволяет ему легко выполнить действие, в данном случае установить приложение. При правильном использовании эти виды шаблонов интерфейса не прерывают работу пользователя и обычно автоматически отклоняются, если пользователь их игнорирует.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="Настраиваемый баннер установки в виде снекбара.", width="800", height="448" %} <figcaption class="w-figcaption"> Скрываемый снекбар, показывающий возможность установки PWA. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="Настраиваемый баннер установки в виде снекбара.", width="800", height="448" %} <figcaption> Скрываемый снекбар, показывающий возможность установки PWA. </figcaption></figure>
 
 Покажите снекбар после нескольких взаимодействий с вашим приложением. Появляясь при загрузке страницы или вне контекста, он может оказаться незамеченным или вызвать когнитивную перегрузку. Когда это произойдет, пользователи просто закроют все, что видят. И помните, что новые пользователи вашего сайта могут быть не готовы установить PWA. Поэтому перед использованием этого шаблона лучше подождать, пока у вас не появятся четкие сигналы интереса от пользователя, например, повторные посещения, вход пользователя в систему или подобное событие конверсии.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="Настраиваемый баннер установки в виде снекбара.", width="800", height="424" %} <figcaption class="w-figcaption"> Скрываемый снекбар, показывающий возможность установки PWA. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="Настраиваемый баннер установки в виде снекбара.", width="800", height="424" %} <figcaption> Скрываемый снекбар, показывающий возможность установки PWA. </figcaption></figure>
 
 Важно:
 
@@ -143,11 +143,11 @@ Chrome для Android покажет пользователю небольшую
 
 Момент после события конверсии пользователя, например, после покупки в Интернет-магазине — отличная возможность прорекламировать установку вашего PWA. Пользователь явно заинтересован в вашем контенте, и конверсия часто сигнализирует о том, что пользователь снова воспользуется вашими услугами.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="Скриншот рекламы установки после конверсии.", width="800", height="448" %} <figcaption class="w-figcaption"> Реклама установки после того, как пользователь совершил покупку. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="Скриншот рекламы установки после конверсии.", width="800", height="448" %} <figcaption> Реклама установки после того, как пользователь совершил покупку. </figcaption></figure>
 
 ### Бронирование или оформление заказа {: #journey }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt="Реклама после пользовательского пути.", width="800", height="1419" %} <figcaption class="w-figcaption"> Реклама после пользовательского пути. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt="Реклама после пользовательского пути.", width="800", height="1419" %} <figcaption> Реклама после пользовательского пути. </figcaption></figure>
 
 Покажите рекламу установки во время или после последовательного пути пользователя, например, при бронировании или оформлении заказа. Зачастую, показывая рекламу после того, как пользователь завершил путь, ее можно сделать более заметной.
 
@@ -163,7 +163,7 @@ Chrome для Android покажет пользователю небольшую
 
 Этот подход является частным случаем шаблона продвижения для [пользовательского пути](#journey), где карточка с рекламой может быть более заметной.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="Настраиваемая кнопка установки на странице регистрации.", width="800", height="1117" %} <figcaption class="w-figcaption"> Настраиваемая кнопка установки на странице регистрации.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="Настраиваемая кнопка установки на странице регистрации.", width="800", height="1117" %} <figcaption> Настраиваемая кнопка установки на странице регистрации.</figcaption></figure>
 
 Эти страницы обычно просматривают только заинтересованные пользователи, для которых ценность вашего PWA уже сформулирована. Кроме того, часто на этих страницах не так много другого полезного контента. В результате можно сделать призыв к действию более крупным, поскольку он не мешает пользователям.
 
@@ -183,7 +183,7 @@ Chrome для Android покажет пользователю небольшую
 
 Реклама установки в ленте появляется между новостными статьями или другими информационными карточками в вашем PWA.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="Реклама установки в ленте контента.", width="800", height="1000" %} <figcaption class="w-figcaption"> Реклама установки в ленте контента. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="Реклама установки в ленте контента.", width="800", height="1000" %} <figcaption> Реклама установки в ленте контента. </figcaption></figure>
 
 Ваша цель — показать пользователям, как удобнее получать доступ к интересующему их контенту. Сосредоточьтесь на продвижении функций и возможностей, которые будут полезны вашим пользователям.
 

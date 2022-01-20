@@ -29,8 +29,8 @@ iframeの標準化された遅延読み込みは、ユーザーがiframeの近�
 
 この`<iframe loading=lazy>`の[デモ](https://lazy-load.netlify.app/iframes/)は、遅延読み込みの動画埋め込みを示しています。
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -39,7 +39,7 @@ iframeの標準化された遅延読み込みは、ユーザーがiframeの近�
 
 サードパーティの埋め込みは、動画再生ツールから、ソーシャルメディアの投稿、広告まで、幅広いユースケースに対応しています。多くの場合、このコンテンツはユーザーのビューポートにすぐには表示されず、ページをさらに下にスクロールして初めて表示されます。それにもかかわらず、ユーザーは、スクロールしない場合でも、フレームごとにデータのダウンロードと高額なJavaScriptのコストを支払っています。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="iframeでiframe遅延読み込みを使用することによるデータの節約。この例では、即時読み込みでは3MBを取り込みますが、遅延読み込みでは、ユーザーがiframeの近くにスクロールするまで、このコードを取り込みません。", width="800", height="460" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="iframeでiframe遅延読み込みを使用することによるデータの節約。この例では、即時読み込みでは3MBを取り込みますが、遅延読み込みでは、ユーザーがiframeの近くにスクロールするまで、このコードを取り込みません。", width="800", height="460" %}</figure>
 
 [データセーバーユーザー向けのオフスクリーンiframeの自動遅延読み込み](https://blog.chromium.org/2019/10/automatically-lazy-loading-offscreen.html)に関するChromeの調査に基づくと、iframeの遅延読み込みにより、データの節約の中央値が2〜3％、中央値での[最初のコンテンツフルペイントの](/fcp/)[削減が1〜2％、95パーセンタイルで](/fid/)[最初の入力遅延](/fid/)(FID)が2%改善される可能性があります。
 
@@ -116,7 +116,7 @@ YouTube動画埋め込みの遅延読み込み (最初のページ読み込み�
 
 **エピソード:** Chrome.comのYouTube埋め込みを遅延読み込みに切り替えたとき、モバイルデバイスで対話時間を10秒節約できました。 YouTubeの内部バグを申請して、埋め込みコードに`loading=lazy`を追加するように提案しました。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.comは、YouTube動画埋め込み用のオフスクリーンiframeを遅延読み込みすることで、対話時間を10秒短縮しました", width="800", height="460" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.comは、YouTube動画埋め込み用のオフスクリーンiframeを遅延読み込みすることで、対話時間を10秒短縮しました", width="800", height="460" %}</figure>
 
 {% Aside %} YouTube埋め込みを読み込むためのより効率的な方法を探している場合は、[YouTube liteコンポーネント](https://github.com/paulirish/lite-youtube-embed)にも検討してみてください。{% endAside %}
 
@@ -142,7 +142,7 @@ Instagramの埋め込みは、マークアップのブロックと、ページ�
 
 Facebookの*ソーシャルプラグイン*を使用すると、開発者はFacebookコンテンツをWebページに埋め込むことができます。埋め込まれた投稿、写真、動画、コメントなど、このようなプラグインが多数提供されています。最も人気のあるプラグイン[Likeプラグイン](https://developers.facebook.com/docs/plugins/like-button/)で、ページを「いいね」した人の数を表示するボタンです。デフォルトでは、FB JSSDKを使用して、WebページにLikeプラグインを埋め込むと、最大215KBのリソースが取り込まれます。そのうち、197KBはJavaScriptです。多くの場合、プラグインは記事の最後またはページの終わり近くに表示される可能性があるため、オフスクリーンのときに即時読み込みすることは最適ではない可能性があります。
 
-<figure class="w-figure">{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Facebookの「いいね」ボタン", width="800", height="71", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Facebookの「いいね」ボタン", width="800", height="71" %}</figure>
 
 エンジニアのStoyanStefanovのおかげで、[Facebookのすべてのソーシャルプラグインが標準化されたiframe遅延読み込みをサポートするようになりました](https://developers.facebook.com/docs/plugins/like-button#settings)。 プラグインの`data-lazy`構成を使用した遅延読み込みを選択する開発者は、ユーザーが近くをスクロールするまで、読み込みを回避できるようになります。これにより、埋め込みを必要とするユーザーにとっては埋め込みが完全に機能し、ページを最後までスクロールしていないユーザーにとってはデータが節約されます。これは、多数の埋め込みの中でも、本番環境で標準化されたiframe遅延読み込みを検討する最初の埋め込みであると思います。
 

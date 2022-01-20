@@ -23,7 +23,7 @@ feedback:
 
 Версия Chrome 80 содержала множество важных изменений. Был реализован ряд долгожданных функций, таких как [модули ECMAScript в веб-воркерах](/module-workers/), [нулевое слияние](https://v8.dev/features/nullish-coalescing), [опциональная последовательность](https://v8.dev/features/optional-chaining) и другие. О выпуске, как обычно, было объявлено в [блоге](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html) Chromium. Отрывок из публикации в блоге приведен на скриншоте ниже.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}<figcaption class="w-figcaption"> Публикация в блоге Chromium с красными рамками вокруг элементов с атрибутом <code>id</code>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}<figcaption> Публикация в блоге Chromium с красными рамками вокруг элементов с атрибутом <code>id</code>.</figcaption></figure>
 
 Вы, вероятно, задаетесь вопросом, что это за красные прямоугольники. Они являются результатом выполнения следующего фрагмента в DevTools. Он выделяет все элементы, у которых есть атрибут `id`.
 
@@ -35,7 +35,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 
 Я могу разместить внешнюю ссылку на любой элемент, выделенный красной рамкой, благодаря [идентификатору фрагмента](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment), который я затем использую в [хэше](https://developer.mozilla.org/docs/Web/API/URL/hash) URL-адреса страницы. Допустим, я решил добавить внешнюю ссылку на блок «*Оставить отзыв в разделе [Форумы по продукту](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*» сбоку. Это можно сделать вручную, создав URL-адрес <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1&lt;/mark&gt;</code></a>. Как видно на панели «Элементы» в инструментах разработчика, рассматриваемый элемент имеет атрибут `id` со значением `HTML1`.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption class="w-figcaption"> Отображение <code>id</code> элемента в Dev Tools.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption> Отображение <code>id</code> элемента в Dev Tools.</figcaption></figure>
 
 Если проанализировать этот URL-адрес с помощью конструктора JavaScript `URL()`, будут обнаружены различные компоненты. Обратите внимание на свойство `hash` со значением `#HTML1`.
 
@@ -63,7 +63,7 @@ URL {
 
 А что, если мне нужно опубликовать ссылку на что-то, не имеющее `id`? Скажем, я хочу сделать ссылку на заголовок *ECMAScript Modules in Web Workers*. Как видно на скриншоте ниже, у рассматриваемого элемента `<h1>` нет `id`, а это значит, что я не могу ссылаться на этот заголовок. Как раз эту проблему решают текстовые фрагменты.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption class="w-figcaption"> Заголовок без <code>id</code> в Dev Tools.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption> Заголовок без <code>id</code> в Dev Tools.</figcaption></figure>
 
 ## Текстовые фрагменты
 
@@ -91,7 +91,7 @@ URL {
 
 Текстовый фрагмент выделен <mark class="highlight-line highlight-line-active">вот так</mark>. Если вы нажмете на ссылку в браузере с поддержкой этой функции, например, Chrome, фрагмент текста будет выделен, а экран прокрутится до него:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption class="w-figcaption"> Экран прокручен до выделенного фрагмента текста.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption> Экран прокручен до выделенного фрагмента текста.</figcaption></figure>
 
 ### `textStart` и `textEnd`
 
@@ -105,29 +105,29 @@ URL {
 
 Значением `textStart` будет `ECMAScript%20Modules%20in%20Web%20Workers`, затем идет запятая `,`, за которой следует `ES%20Modules%20in%20Web%20Workers.` —значение `textEnd`. Когда вы нажмете на такую ссылку в браузере с соответствующей поддержкой, например, Chrome, весь раздел будет выделен, а экран прокрутится до него:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption class="w-figcaption"> Экран прокручен до выделенного фрагмента текста.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption> Экран прокручен до выделенного фрагмента текста.</figcaption></figure>
 
 Здесь вы можете усомниться в моем выборе значений `textStart` и `textEnd`. На самом деле, чуть более короткий URL-адрес <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript%20Modules,Web%20Workers.&lt;/mark&gt;</code></a> с двумя словами с каждой стороны тоже подойдет. Сравните `textStart` и `textEnd` с предыдущими значениями.
 
 Но если я сделаю еще один шаг и использую лишь по одному слову в `textStart` и `textEnd`, вы увидите, что у меня проблемы. URL-адрес <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript,Workers.&lt;/mark&gt;</code></a> стал еще короче, но выделенный фрагмент текста уже не соответствует тому, что планировался изначально. Выделение прекращается при первом появлении слова `Workers.`, что технически верно, но это не то, что я собирался выделить. Проблема в том, что нужный раздел не идентифицируется однозначно текущими значениями `textStart` и `textEnd`, содержащими по одному слову:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption class="w-figcaption"> Экран прокручен, но выделенный фрагмент текста не тот, что нужно.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption> Экран прокручен, но выделенный фрагмент текста не тот, что нужно.</figcaption></figure>
 
 ### `prefix-` и `-suffix`
 
 Используя достаточно длинные значения для `textStart` и `textEnd`, можно получить уникальную ссылки. Однако в некоторых ситуациях это невозможно. Кстати, почему я выбрал в качестве примера публикацию в блоге о выпуске Chrome 80? Дело в том, что в этой версии были представлены текстовые фрагменты:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Текст публикации в блоге: фрагменты текста URL. Пользователи и авторы теперь могут ссылаться на определенную часть страницы, используя фрагмент текста, указанный в URL. При загрузке страницы браузер выделяет текст и прокручивает область просмотра до нужного фрагмента. Например, указанный ниже URL загружает вики-страницу для 'Cat' и прокручивает экран до контента, указанного в параметре `text`.", width="800", height="200", class="w-screenshot" %} <figcaption class="w-figcaption">Отрывок из публикации в блоге с объявлением о текстовых фрагментах.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Текст публикации в блоге: фрагменты текста URL. Пользователи и авторы теперь могут ссылаться на определенную часть страницы, используя фрагмент текста, указанный в URL. При загрузке страницы браузер выделяет текст и прокручивает область просмотра до нужного фрагмента. Например, указанный ниже URL загружает вики-страницу для 'Cat' и прокручивает экран до контента, указанного в параметре `text`.", width="800", height="200" %} <figcaption>Отрывок из публикации в блоге с объявлением о текстовых фрагментах.</figcaption></figure>
 
 Обратите внимание, что на скриншоте выше слово «text» появляется четыре раза. Четвертое вхождение написано зеленым кодовым шрифтом. Если бы я хотел создать ссылку на это конкретное слово, я бы установил для `textStart` значение `text`. Поскольку «text» — это всего лишь одно слово, параметр `textEnd` неприменим. Что же делать? URL-адрес <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=text&lt;/mark&gt;</code></a> совпадает с первым вхождением слова «Text» уже в заголовке:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption class="w-figcaption"> Фрагмент текста соответствует первому вхождению «Text».</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption> Фрагмент текста соответствует первому вхождению «Text».</figcaption></figure>
 
 {% Aside 'caution' %} Обратите внимание, что при сопоставлении фрагментов текста регистр не учитывается. {% endAside %}
 
 К счастью, решение есть. В подобных случаях можно указать параметры `prefix​-` и `-suffix`. Слово перед написанным зеленым кодовым шрифтом «text» — это «the», а слово после него — «parameter». Ни одно из трех других вхождений слова «text» не окружают те же слова. Вооружившись этими знаниями, я могу настроить предыдущий URL и добавить `prefix-` и `-suffix`. Как и другие параметры, они также должны быть закодированы в процентах и ​​могут содержать более одного слова. <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=the-,text,-parameter&lt;/mark&gt;</code></a>. Чтобы синтаксический анализатор мог четко распознать `prefix-` и `-suffix`, их необходимо отделять от `textStart` и необязательного `textEnd` при помощи дефиса `-`.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption class="w-figcaption">Фрагмент текста соответствует желаемому вхождению «text».</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption>Фрагмент текста соответствует желаемому вхождению «text».</figcaption></figure>
 
 ### Полный синтаксис
 
@@ -164,19 +164,19 @@ URL {
 - [Link to Text Fragment для Mozilla Firefox](https://addons.mozilla.org/firefox/addon/link-to-text-fragment/)
 - [Link to Text Fragment для Apple Safari](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
-<figure class="w-figure">Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption class="w-figcaption"> Расширение браузера <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Link to Text Fragment</a>.</figcaption></figure>
+<figure>Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption> Расширение браузера <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Link to Text Fragment</a>.</figcaption></figure>
 
 ### Несколько фрагментов текста в одном URL
 
 Обратите внимание, что в одном URL-адресе может отображаться несколько фрагментов текста. Отдельные фрагменты текста необходимо разделять символом амперсанда `&`. Вот пример ссылки с тремя текстовыми фрагментами: <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet&lt;mark class="highlight-line highlight-line-active"&gt;</code></a>.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption class="w-figcaption"> Три текстовых фрагмента в одном URL.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption> Три текстовых фрагмента в одном URL.</figcaption></figure>
 
 ### Смешивание элемента и текстовых фрагментов
 
 Фрагменты традиционных элементов можно комбинировать с фрагментами текста. Совершенно нормально использовать и то, и другое в одном и том же URL-адресе, например, чтобы обеспечить осмысленный запасной вариант на случай, если исходный текст на странице изменится и текстовый фрагмент перестанет соответствовать параметрам. URL-адрес <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.&lt;/mark&gt;</code></a>, ведущий к разделу *Give us feedback in our [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*, содержит как фрагмент элемента (`HTML1`), так и текстовый фрагмент `text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %} <figcaption class="w-figcaption"> Ссылка с фрагментом элемента и текстовым фрагментом.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %} <figcaption> Ссылка с фрагментом элемента и текстовым фрагментом.</figcaption></figure>
 
 ### Директива фрагмента
 
@@ -293,9 +293,9 @@ defaults write com.google.Chrome ScrollToTextFragmentEnabled -bool false
 
 Для некоторых запросов поисковая система Google дает быстрый ответ или сводку с фрагментом контента с соответствующего веб-сайта. Эти *избранные фрагменты* чаще всего появляются, когда поиск выполняется в форме вопроса. Нажав на избранный фрагмент, пользователь переходит прямо к его тексту на исходной веб-странице. Это работает благодаря автоматически созданным URL-адресам фрагментов текста.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %}<figcaption class="w-figcaption"> Страница результатов поисковой системы Google с избранным фрагментом. В строке состояния отображается URL-адрес с фрагментом текста.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %}<figcaption> Страница результатов поисковой системы Google с избранным фрагментом. В строке состояния отображается URL-адрес с фрагментом текста.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption"> После нажатия экран прокручивается до соответствующего раздела страницы.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption> После нажатия экран прокручивается до соответствующего раздела страницы.</figcaption></figure>
 
 ## Заключение
 

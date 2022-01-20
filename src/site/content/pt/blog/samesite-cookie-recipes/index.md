@@ -50,7 +50,7 @@ O conteúdo de um site diferente exibido em um `<iframe>` está em um contexto d
 
 Os cookies podem ser usados aqui para, entre outras coisas, manter o estado da sessão, armazenar preferências gerais, habilitar estatísticas ou personalizar conteúdo para usuários com contas existentes.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="Diagrama de uma janela do navegador em que o URL do conteúdo incorporado não corresponde ao URL da página.", width="468", height="383", style="max-width: 35vw;" %} <figcaption class="w-figcaption"> Se o conteúdo incorporado não vier do mesmo site que o contexto de navegação de nível superior, é conteúdo de terceiros. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="Diagrama de uma janela do navegador em que o URL do conteúdo incorporado não corresponde ao URL da página.", width="468", height="383", style="max-width: 35vw;" %} <figcaption> Se o conteúdo incorporado não vier do mesmo site que o contexto de navegação de nível superior, é conteúdo de terceiros. </figcaption></figure>
 
 Além disso, como a web é inerentemente combinável, `<iframes>` são usados para incorporar conteúdo que também é visualizado em um contexto de nível superior ou próprio. Todos os cookies usados por esse site serão considerados cookies de terceiros quando o site for exibido dentro do quadro. Se você estiver criando sites que pretende incorporar facilmente por outras pessoas, ao mesmo tempo em que também depende de cookies para funcionar, você também precisará garantir que eles sejam marcados para uso entre sites ou que você possa fazer um fallback sem eles.
 
@@ -58,7 +58,7 @@ Além disso, como a web é inerentemente combinável, `<iframes>` são usados pa
 
 Embora "inseguro" possa soar um pouco preocupante aqui, isso se refere a qualquer solicitação que possa ter a intenção de mudar de estado. Na web, isso é principalmente solicitações POST. Os cookies marcados como `SameSite=Lax` serão enviados em navegações seguras de nível superior, por exemplo, clicar em um link para ir para um site diferente. No entanto, algo como um `<form>` via POST para um site diferente não incluiria cookies.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="Diagrama de uma solicitação passando de uma página para outra.", width="719", height="382", style="max-width: 35vw;" %} <figcaption class="w-figcaption"> Se a solicitação recebida usar um método "seguro", os cookies serão enviados. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="Diagrama de uma solicitação passando de uma página para outra.", width="719", height="382", style="max-width: 35vw;" %} <figcaption> Se a solicitação recebida usar um método "seguro", os cookies serão enviados. </figcaption></figure>
 
 Esse padrão é usado em sites que podem redirecionar o usuário para um serviço remoto para realizar alguma operação antes de retornar, por exemplo, redirecionando para um provedor de identidade de terceiros. Antes de o usuário deixar o site, um cookie é definido contendo um token de uso único com a expectativa de que esse token possa ser verificado na solicitação de retorno para mitigar ataques [Cross Site Request Forgery (CSRF).](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) Se essa solicitação de retorno vier via POST, será necessário marcar os cookies como `SameSite=None; Secure`.
 

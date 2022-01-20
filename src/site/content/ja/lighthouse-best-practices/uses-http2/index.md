@@ -14,7 +14,7 @@ HTTP/2は、ページのリソースをより高速に提供し、ネットワ�
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)では、HTTP/2経由で提供されないすべてのリソースが表示されます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse監査は、HTTP/2経由提供されていないリソースを示しています ", width="800", height="191", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse監査は、HTTP/2経由提供されていないリソースを示しています ", width="800", height="191" %}</figure>
 
 Lighthouseは、ページによって要求されたすべてのリソースを収集し、それぞれのHTTPプロトコルバージョンをチェックします。 HTTP/2以外の要求が監査結果で無視される場合があります。詳細については、[実装を参照](https://github.com/GoogleChrome/lighthouse/blob/9fad007174f240982546887a7e97f452e0eeb1d1/lighthouse-core/audits/dobetterweb/uses-http2.js#L138)してください。
 

@@ -22,7 +22,7 @@ feedback:
   #video-demo { max-height: 600px; }
 </style>
 
-<figure class="w-figure w-figure--inline-right">   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",     loop=true,     autoplay=true,     muted=true,     class="w-screenshot",     linkTo=true,     id="video-demo",     playsinline=true   %}</figure>
+<figure data-float="right">   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",     loop=true,     autoplay=true,     muted=true,     linkTo=true,     id="video-demo",     playsinline=true   %}</figure>
 
 O acesso aos contatos do usuário em um dispositivo móvel é um recurso dos aplicativos iOS/Android desde (quase) o início dos tempos. É uma das solicitações de recursos mais comuns que ouço de desenvolvedores web e geralmente é o principal motivo para eles criarem um aplicativo iOS/Android.
 
@@ -134,7 +134,7 @@ A equipe do Chrome projetou e implementou a API Contact Picker usando os princí
 
 O acesso aos contatos dos usuários é feito através do seletor e ele só pode ser acessado com um gesto do usuário, em um contexto de navegação [seguro](https://w3c.github.io/webappsec-secure-contexts/) e de nível superior. Isto garante que um site não irá mostrar o seletor no carregamento da página ou mostrá-lo aleatoriamente sem qualquer contexto.
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Captura de tela, os usuários podem escolher quais propriedades compartilhar.", width="800", height="639", class="w-screenshot" %}   <figcaption class="w-figcaption">     Os usuários podem optar por não compartilhar algumas propriedades. Nesta captura de tela, o usuário desmarcou o botão 'Números de telefone'. Mesmo que o site solicite números de telefone, eles não serão compartilhados com o site.  </figcaption></figure>
+<figure data-float="right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Captura de tela, os usuários podem escolher quais propriedades compartilhar.", width="800", height="639" %}   <figcaption>     Os usuários podem optar por não compartilhar algumas propriedades. Nesta captura de tela, o usuário desmarcou o botão 'Números de telefone'. Mesmo que o site solicite números de telefone, eles não serão compartilhados com o site.  </figcaption></figure>
 
 Não há opção de selecionar em massa todos os contatos, de modo que os usuários são incentivados a selecionar apenas os contatos que precisam compartilhar para aquele site específico. Os usuários também podem controlar quais propriedades são compartilhadas com o site, alternando o botão de propriedade na parte superior do seletor.
 
@@ -143,11 +143,11 @@ Não há opção de selecionar em massa todos os contatos, de modo que os usuár
 Para esclarecer quais detalhes de contato estão sendo compartilhados, o seletor sempre mostra o nome e o ícone do contato, além de quaisquer propriedades que o site tenha solicitado. Por exemplo, se um site solicitar `name`, `email` e `tel`, todas as três propriedades serão mostradas no seletor. Alternativamente, se um site solicitar apenas `tel`, o selecionador mostrará apenas o nome e os números de telefone.
 
 <div class="switcher">
-  <figure class="w-figure">     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Captura de tela do seletor solicitando todas as propriedades.", width="800", height="639", class="w-screenshot" %}     <figcaption class="w-figcaption">       Seletor (Picker), solicitando ao site as propriedades <code>name</code>, <code>email</code> e       <code>tel</code>, um contato selecionado.     </figcaption></figure>
-  <figure class="w-figure">     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Captura de tela do seletor para site requisitando apenas números de telefone.", width="800", height="639", class="w-screenshot" %}     <figcaption class="w-figcaption">       Seletor (picker) solicitando ao site apenas a propriedade <code>tel</code>, um contato selecionado.     </figcaption></figure>
+  <figure>     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Captura de tela do seletor solicitando todas as propriedades.", width="800", height="639" %}     <figcaption>       Seletor (Picker), solicitando ao site as propriedades <code>name</code>, <code>email</code> e       <code>tel</code>, um contato selecionado.     </figcaption></figure>
+  <figure>     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Captura de tela do seletor para site requisitando apenas números de telefone.", width="800", height="639" %}     <figcaption>       Seletor (picker) solicitando ao site apenas a propriedade <code>tel</code>, um contato selecionado.     </figcaption></figure>
 </div>
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Captura de tela do seletor quando um contato é selecionado com um toque demorado.", width="800", height="389",class="w-screenshot" %}   <figcaption class="w-figcaption">     Resultado de um toque demorado sobre um contato.   </figcaption></figure>
+<figure data-float="right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Captura de tela do seletor quando um contato é selecionado com um toque demorado.", width="800", height="389" %}   <figcaption>     Resultado de um toque demorado sobre um contato.   </figcaption></figure>
 
 Um toque demorado sobre um contato mostrará todas as informações que serão compartilhadas se o contato for selecionado. (Veja a imagem de contato do gato Cheshire.)
 

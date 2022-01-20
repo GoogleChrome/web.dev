@@ -36,9 +36,9 @@ feedback:
 
 [데모](https://trust-token-demo.glitch.me)에서 API를 사용해 보고 Chrome DevTools **네트워크** 및 **애플리케이션** 탭에서 [토큰을 검사](https://developers.google.com/web/updates/2021/01/devtools#trust-token)할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Chrome DevTools 네트워크 탭에서 신뢰 토큰을 보여주는 스크린샷", width="800", height="584" %}<figcaption class="w-figcaption"> Chrome DevTools <b>네트워크</b> 탭에서 토큰을 신뢰합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Chrome DevTools 네트워크 탭에서 신뢰 토큰을 보여주는 스크린샷", width="800", height="584" %}<figcaption> Chrome DevTools <b>네트워크</b> 탭에서 토큰을 신뢰합니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Chrome DevTools 애플리케이션 탭에서 신뢰 토큰을 보여주는 스크린샷.", width="800", height="584" %}<figcaption class="w-figcaption"> Chrome DevTools <b>애플리케이션</b> 탭에서 토큰을 신뢰합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Chrome DevTools 애플리케이션 탭에서 신뢰 토큰을 보여주는 스크린샷.", width="800", height="584" %}<figcaption> Chrome DevTools <b>애플리케이션</b> 탭에서 토큰을 신뢰합니다.</figcaption></figure>
 
 {% Aside %} 개인정보 보호 샌드박스는 타사 쿠키 또는 기타 추적 메커니즘 없이 타사 사용 사례를 충족하기 위한 일련의 제안입니다. 모든 제안에 대한 개요는  [개인 정보 보호 샌드박스](/digging-into-the-privacy-sandbox) 자세히 보기를 참조하세요.
 

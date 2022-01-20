@@ -192,9 +192,9 @@ ranges 0.0 to 0.5, 0.5 to 0.75, 0.75 to 0.9, and 0.9 to 1.0. To represent bucket
 membership, the value reported to the callback is the average between
 the lower and upper bounds for the bucket.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/FNkVSAX8UDTTQWQkKftSgGe9clO2/VUrr3MykViLDtHuTkjYG.svg", alt="A diagram illustrating the bucketing for different actual CPU utilizations", width="800", height="549" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     This diagram illustrates the relationship between three thresholds and the
     four buckets that they form.
   </figcaption>

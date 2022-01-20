@@ -20,7 +20,7 @@ feedback:
 
 &lt;style&gt; #video-demo { max-height: 600px; } &lt;/style&gt;
 
-<figure class="w-figure w-figure--inline-right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, class="w-screenshot", linkTo=true, id="video-demo", playsinline=true %}</figure>
+<figure data-float="right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, linkTo=true, id="video-demo", playsinline=true %}</figure>
 
 모바일 장치에서 사용자의 연락처에 대한 액세스는 (거의) 초기부터 있던 iOS/Android 앱의 기능입니다. 웹 개발자로부터 가장 많이 듣는 기능 요청 중 하나이며 iOS/Android 앱을 빌드하는 주요 이유이기도 합니다.
 
@@ -132,7 +132,7 @@ Chrome 팀은 사용자 제어, 투명성, 인체 공학을 포함하여 [강력
 
 사용자 연락처에 대한 액세스는 선택기를 통해 이루어지며 [안전한](https://w3c.github.io/webappsec-secure-contexts/) 최상위 탐색 컨텍스트에서 사용자 동작으로만 호출할 수 있습니다. 이렇게 하면 사이트가 페이지 로드 시 선택기를 표시하거나 컨텍스트 없이 선택기를 무작위로 표시할 수 없습니다.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="스크린샷, 사용자는 공유할 속성을 선택할 수 있습니다.", width="800", height="639", class="w-screenshot" %} <figcaption class="w-figcaption"> 사용자는 일부 속성을 공유하지 않도록 선택할 수 있습니다. 이 스크린샷에서 사용자는 '전화번호' 버튼의 선택을 해제했습니다. 사이트에서 전화번호를 요청하더라도 사이트와 공유되지 않습니다. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="스크린샷, 사용자는 공유할 속성을 선택할 수 있습니다.", width="800", height="639" %} <figcaption> 사용자는 일부 속성을 공유하지 않도록 선택할 수 있습니다. 이 스크린샷에서 사용자는 '전화번호' 버튼의 선택을 해제했습니다. 사이트에서 전화번호를 요청하더라도 사이트와 공유되지 않습니다. </figcaption></figure>
 
 사용자가 특정 웹사이트에 대해 공유해야 하는 연락처만 선택할 수 있도록 모든 연락처를 일괄 선택하는 옵션은 없습니다. 사용자는 선택기 상단에 있는 속성 버튼을 토글하여 사이트와 공유되는 속성을 제어할 수도 있습니다.
 
@@ -141,11 +141,11 @@ Chrome 팀은 사용자 제어, 투명성, 인체 공학을 포함하여 [강력
 공유되는 연락처 세부 정보를 명확히 하기 위해 선택기는 항상 연락처의 이름 및 아이콘과 함께 사이트에서 요청한 모든 속성을 표시합니다. 예를 들어 사이트에서 `name`, `email`, `tel`을 요청하면 세 가지 속성이 모두 선택기에 표시됩니다. 또는 사이트에서 `tel`만 요청하는 경우 선택기에 이름과 전화번호만 표시됩니다.
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="사이트에 대해 모든 속성을 요청하는 선택기 스크린샷.", width="800", height="639", class="w-screenshot" %} <figcaption class="w-figcaption"> 선택기, 사이트에서 <code>name</code>, <code>email</code>, <code>tel</code>를 요청, 하나의 연락처가 선택됨. </figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="사이트에 대해 전화번호만 요청하는 선택기의 스크린샷.", width="800", height="639", class="w-screenshot" %} <figcaption class="w-figcaption"> 선택기, <code>tel</code>만 요청하는 사이트, 하나의 연락처가 선택됨. </figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="사이트에 대해 모든 속성을 요청하는 선택기 스크린샷.", width="800", height="639" %} <figcaption> 선택기, 사이트에서 <code>name</code>, <code>email</code>, <code>tel</code>를 요청, 하나의 연락처가 선택됨. </figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="사이트에 대해 전화번호만 요청하는 선택기의 스크린샷.", width="800", height="639" %} <figcaption> 선택기, <code>tel</code>만 요청하는 사이트, 하나의 연락처가 선택됨. </figcaption></figure>
 </div>
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="연락처를 길게 눌렀을 때의 선택기 스크린샷.", width="800", height="389",class="w-screenshot" %} <figcaption class="w-figcaption"> 연락처를 길게 눌렀을 경우의 결과. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="연락처를 길게 눌렀을 때의 선택기 스크린샷.", width="800", height="389" %} <figcaption> 연락처를 길게 눌렀을 경우의 결과. </figcaption></figure>
 
 연락처를 길게 누르면 연락처를 선택할 경우 공유되는 모든 정보가 표시됩니다. (Cheshire Cat 연락처 이미지 참조.)
 

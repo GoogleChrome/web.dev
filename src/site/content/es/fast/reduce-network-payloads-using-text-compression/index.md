@@ -23,13 +23,13 @@ La incorporación de estas dos técnicas reduce el tamaño de la carga útil y, 
 
 Lighthouse muestra una auditoría fallida si detecta algún recurso CSS o JS en su página que se pueda minificar.
 
-{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Auditoría de CSS de Lighthouse Minify", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Auditoría de CSS de Lighthouse Minify", width="800", height="90" %}
 
-{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Auditoría Lighthouse Minify JS", width="800", height="112", class="w-screenshot" %}
+{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Auditoría Lighthouse Minify JS", width="800", height="112" %}
 
 También audita los activos sin comprimir.
 
-{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: Habilitar compresión de texto", width="800", height="123", class="w-screenshot" %}
+{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: Habilitar compresión de texto", width="800", height="123" %}
 
 ## Minificación
 

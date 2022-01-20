@@ -21,13 +21,13 @@ tags:
 
 生成されるLighthouseレポートには、**Maximum critical path latency**の下にリソースのフェッチ順が表示されます。
 
-{% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Webフォントがクリティカルリクエストチェーンに存在します。", width="704", height="198", class="w-screenshot" %}
+{% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Webフォントがクリティカルリクエストチェーンに存在します。", width="704", height="198" %}
 
 上記の監査では、Webフォントはクリティカルリクエストチェーンの一部であり、最後にフェッチされています。[**クリティカルリクエストチェーン**](/critical-request-chains)は、ブラウザが優先順位を付けてフェッチするリソースの順序を表します。このアプリケーションでは、Webフォント（PacficoとPacifico-Bold）は、[@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)ルールで定義されており、クリティカルリクエストチェーンでブラウザがフェッチする最後のリソースとなっています。通常、Webフォントは遅延読み込みされるため、クリティカルリソース（CSS、JS）がダウンロードされるまで読み込まれません。
 
 アプリケーションでフェッチされたリソースの順序は次のとおりです。
 
-{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Webフォントは遅延読み込みされます。", width="583", height="256", class="w-screenshot" %}
+{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Webフォントは遅延読み込みされます。", width="583", height="256" %}
 
 ## Webフォントのプリロード
 
@@ -48,10 +48,10 @@ Pacifico-Boldがページのヘッダーで使用されているため、さら�
 
 アプリケーションを再読み込みして、Lighthouseをもう一度実行します。**Maximum critical path latency**セクションを確認してください。
 
-{% Img src="image/admin/lC85s7XSc8zEXgtwLsFu.png", alt="Pacifico-BoldのWebフォントがプリロードされ、クリティカルリクエストチェーンから削除されています", width="645", height="166", class="w-screenshot" %}
+{% Img src="image/admin/lC85s7XSc8zEXgtwLsFu.png", alt="Pacifico-BoldのWebフォントがプリロードされ、クリティカルリクエストチェーンから削除されています", width="645", height="166" %}
 
 `Pacifico-Bold.woff2`がクリティカルリクエストチェーンからどのように削除されているかに注目してください。アプリケーションの早い段階でフェッチされています。
 
-{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="Pacifico-Bold Webフォントはプリロードされています", width="553", height="254", class="w-screenshot" %}
+{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="Pacifico-Bold Webフォントはプリロードされています", width="553", height="254" %}
 
 preloadを使用すると、ブラウザはこのファイルを早期にダウンロードする必要があることを認識します。preloadが正しく使用されていない場合、使用されていないリソースが不要に要求されてしまうため、パフォーマンスが低下する可能性があることに注意しておくことが重要です。

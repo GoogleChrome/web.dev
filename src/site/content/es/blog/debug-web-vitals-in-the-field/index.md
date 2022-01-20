@@ -38,7 +38,7 @@ De todas las estadísticas de Core Web Vitals, [CLS](/cls/) es quizá la más im
 
 Considere el siguiente informe de PageSpeed Insights para la URL: [web.dev/measure](/measure/)
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/nZjd6rXrOgW5VUsm5fyx.png", alt="Un informe de PageSpeed Insights con diferentes valores CLS", width="800", height="587", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/nZjd6rXrOgW5VUsm5fyx.png", alt="Un informe de PageSpeed Insights con diferentes valores CLS", width="800", height="587" %}
 
 El valor informado desde el laboratorio para CLS (Lighthouse) en comparación con el CLS de campo (datos CrUX) es bastante diferente, y esto tiene sentido si considera que la página [web.dev/measure](/measure/) tiene una gran cantidad de contenido interactivo que no se utiliza cuando se prueba en Lighthouse.
 

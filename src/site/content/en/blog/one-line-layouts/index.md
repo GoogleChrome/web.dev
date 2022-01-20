@@ -28,8 +28,8 @@ To follow along or play with these demos on your own, check out the Glitch embed
 
 ## 01. Super Centered: `place-items: center`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4'>
   </video>
 </figure>
@@ -49,8 +49,8 @@ This enables the content to be perfectly centered within the parent, regardless 
 
 ## 02. The Deconstructed Pancake: `flex: <grow> <shrink> <baseWidth>`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4'>
   </video>
 </figure>
@@ -84,8 +84,8 @@ If you *do* want the boxes to stretch and fill the space as they wrap to the nex
   flex: 1 1 150px;
 }
 ```
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4'>
   </video>
 </figure>
@@ -94,8 +94,8 @@ Now, as you increase or decrease the screen size,  these flex items both shrink 
 
 ## 03. Sidebar Says: `grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4'>
   </video>
 </figure>
@@ -114,8 +114,8 @@ Add this as a value of grid-template-columns with the following value:
 
 ## 04. Pancake Stack: `grid-template-rows: auto 1fr auto`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4'>
   </video>
 </figure>
@@ -137,8 +137,8 @@ This sets the header and footer content to automatically take the size of its ch
 
 ## 05. Classic Holy Grail Layout: `grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4'>
   </video>
 </figure>
@@ -160,8 +160,8 @@ As in the last example, where the header and footer had auto-sized content, here
 
 ## 06. 12-Span Grid: `grid-template-columns: repeat(12, 1fr)`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4'>
   </video>
 </figure>
@@ -181,8 +181,8 @@ Next we have another classic: the 12-span grid. You can quickly write grids in C
 
 Now you have a 12 column track grid, we can place our children on the grid. One way to do this would be to place them using grid lines. For example, `grid-column: 1 / 13` would span all the way from the first line to the last (13th) and span 12 columns. `grid-column: 1 / 5;` would span the first four.
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4'>
   </video>
 </figure>
@@ -197,8 +197,8 @@ Another way to write this is by using the `span` keyword. With `span`, you set t
 
 ## 07. RAM (Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4'>
   </video>
 </figure>
@@ -218,8 +218,8 @@ You are using repeat again, but this time, using the `auto-fit` keyword instead 
 
 With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px to fill the entire remaining space. However, if you change this to `auto-fill`, they will not stretch when their base size in the minmax function is exceeded:
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4'>
   </video>
 </figure>
@@ -233,8 +233,8 @@ With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px t
 
 ## 08. Line Up: `justify-content: space-between`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4'>
   </video>
 </figure>
@@ -253,8 +253,8 @@ This places the title, description, and image block in a vertical column inside 
 
 ## 09. Clamping My Style: `clamp(<min>, <actual>, <max>)`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4'>
   </video>
 </figure>
@@ -279,8 +279,8 @@ This is a great technique to ensure legibility with a minimum and maximum size v
 
 ## 10. Respect for Aspect: `aspect-ratio: <width> / <height>`
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4'>
   </video>
 </figure>

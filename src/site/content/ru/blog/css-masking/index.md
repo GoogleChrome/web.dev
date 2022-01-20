@@ -78,7 +78,7 @@ feedback:
 }
 ```
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="Пример использования маски SVG", width="699", height="490", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="Пример использования маски SVG", width="699", height="490" %}</figure>
 
 Здесь преимущество в том, что маску можно применить к любому элементу HTML, а не только к изображению. К сожалению, такой подход поддерживается только в Firefox.
 

@@ -18,7 +18,7 @@ feedback:
 
 ## getInstalledRelatedApps() API란 무엇입니까? {: #what }
 
-<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %} <figcaption class="w-figcaption"> Android 앱이 이미 설치되어 있는지 확인하기 위해 <code>getInstalledRelatedApps()</code>를 사용하는 웹사이트.</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %} <figcaption> Android 앱이 이미 설치되어 있는지 확인하기 위해 <code>getInstalledRelatedApps()</code>를 사용하는 웹사이트.</figcaption></figure>
 
 [`getInstalledRelatedApps()`](https://wicg.github.io/get-installed-related-apps/spec/)를 사용하면 *여러분*의 페이지에서 *여러분*의 모바일, 데스크톱 앱 또는 경우에 따라서 PWA가 사용자 장치에 설치되었는지 확인하고 그러한 경우 사용자 경험을 최적화 할 수 있습니다.
 

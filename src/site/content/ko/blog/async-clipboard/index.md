@@ -199,7 +199,7 @@ async function copy() {
 
 클립보드 액세스는 항상 브라우저에 보안 문제를 야기시킵니다. 적절한 권한이 없으면 페이지는 모든 종류의 악성 콘텐츠를 사용자의 클립보드에 자동으로 복사하여, 붙여넣을 때 치명적인 결과를 초래할 수 있습니다. `rm -rf /` 또는 [압축 해제 폭탄 이미지](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html)를 클립보드에 자동으로 복사하는 웹 페이지를 상상해 보세요.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="사용자에게 클립보드 권한을 요청하는 브라우저 메시지", width="800", height="338", class="w-screenshot" %}<figcaption class="w-figcaption"> Clipboard API에 대한 권한 요청 메시지.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="사용자에게 클립보드 권한을 요청하는 브라우저 메시지", width="800", height="338" %}<figcaption> Clipboard API에 대한 권한 요청 메시지.</figcaption></figure>
 
 웹 페이지에 클립보드에 대한 무제한 읽기 액세스 권한을 부여하는 것은 훨씬 큰 문제를 일으킵니다. 사용자가 정기적으로 암호 및 개인 정보와 같은 민감한 정보를 클립보드에 복사한다면 사용자 모르게 모든 페이지에서 이를 읽을 수 있게 됩니다.
 

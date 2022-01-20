@@ -21,15 +21,14 @@ experiences for the web that are minimal, responsive, accessible and work across
 browsers and platforms (like TVs!). Try the
 [demo](https://gui-challenges.web.app/media-scroller/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/kFXDbQeTKLcAX0ivOwdt.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/media-scroller/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -101,8 +100,7 @@ scrolled into view.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/3YF8UackZ1Lan5ykXBvG.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -150,7 +148,7 @@ flexible enough to handle many interesting combinations.
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/VFIcWLB6bnyYAszFzoE8.png", alt="2
 scrolling rows shown. One has no ellipsis, which means it's taller and each
 title is fully legible. The other is shorter and many titles are cutoff with
-ellipsis.", width="800", height="501", class="w-screenshot" %}
+ellipsis.", width="800", height="501" %}
 
 The container allows overriding the column size by providing the default size as
 a custom property. This grid layout is opinionated about column size, it's
@@ -248,8 +246,7 @@ critical to a harmonious and minimal component.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/hClUoh402H88dexfTpqS.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -324,8 +321,7 @@ A scrolling container with overflow can become a snapping viewport with one line
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/hClUoh402H88dexfTpqS.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -364,8 +360,7 @@ your couch with a remote, give that interaction some small enhancements:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/5i0or9qst3oRA5Dqe3rA.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -449,7 +444,7 @@ Progressive enhancement into some more dynamic media scrollers.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ffm4hCXrnxKiLcBNNigP.png", alt="A
 box with 4:4 aspect ratio is shown next to the other design ratios used of 16:9
-and 4:3", width="800", height="324", class="w-screenshot" %}
+and 4:3", width="800", height="324" %}
 
 ```css/3,6,12
 @supports (aspect-ratio: 1) {

@@ -36,7 +36,7 @@ Otro concepto que usualmente es ignorado es la distinción entre un estilo y una
 
 Antes de las fuentes variables, cada estilo se implementaba como un archivo de fuente independiente. Con fuentes variables, todos los estilos pueden estar contenidos en un solo archivo.
 
-<figure>{% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="Una composición de muestras y una lista de diferentes estilos de la familia Roboto", width="800", height="600" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Izquierda: un ejemplar de la familia tipográfica Roboto. Derecha: estilos con nombre dentro de la familia.</figcaption></figure>
+<figure>{% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="Una composición de muestras y una lista de diferentes estilos de la familia Roboto", width="800", height="600" %} <figcaption> Izquierda: un ejemplar de la familia tipográfica Roboto. Derecha: estilos con nombre dentro de la familia.</figcaption></figure>
 
 ## Desafíos para el diseñador y el desarrollador
 
@@ -54,12 +54,12 @@ Esto funciona comenzando con un estilo central o 'predeterminado', generalmente 
 
 La fuente variable [Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex) tiene tres estilos para su eje de **Peso.** El estilo regular está en el centro y hay dos estilos en los extremos opuestos del eje, uno más ligero y otro más pesado. Entre estos, puedes elegir entre 900 instancias:
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="La letra 'A' se muestra en diferentes pesos", width="800", height="218" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> Arriba: Anatomía ilustrada del eje Peso para el tipo de letra Roboto.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="La letra 'A' se muestra en diferentes pesos", width="800", height="218" %}<figcaption> Arriba: Anatomía ilustrada del eje Peso para el tipo de letra Roboto.</figcaption></figure>
 
 El desarrollador de fuentes puede ofrecer un conjunto de diferentes ejes. Puedes combinarlos porque todos comparten los mismos estilos predeterminados. Roboto tiene tres estilos en el eje Ancho: el regular está en el centro del eje y los estilos de estrechos y anchos, ambos están en cada extremo. Estos proporcionan todos los anchos del estilo regular y se combinan con el eje de Peso para proporcionar todos los anchos para cada peso.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-dance.mp4" type="video/mp4">
   </source></video>
   <figcaption>Roboto Flex en combinaciones aleatorias de ancho y peso</figcaption></figure>
@@ -72,7 +72,7 @@ La forma en que se manejan las cursivas en fuentes variables es interesante, ya 
 
 Otros tipos de letra (como Garamond, Baskerville o Bodoni) en sus estilos romanos y cursivos tienen contorno de glifos que no son compatibles con la interpolación. Por ejemplo, los contornos que normalmente definen una "n" minúscula de estilo romano no coinciden con los contornos utilizados para definir una "n" minúscula en cursiva. En lugar de interpolar un contorno a otro, el eje de **cursiva** cambia de los contornos romanos a los de cursiva.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="{Ejemplo de ejes de peso para el tipo de letra Amstelvar", width="800", height="520" %} <figcaption class="w-figcaption"> Contornos "n" de Amstelvar en cursiva (12 puntos, peso regular, ancho normal) y en romano. Imagen proporcionada por David Berlow, diseñador de tipografías y tipógrafo de Font Bureau.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="{Ejemplo de ejes de peso para el tipo de letra Amstelvar", width="800", height="520" %} <figcaption> Contornos "n" de Amstelvar en cursiva (12 puntos, peso regular, ancho normal) y en romano. Imagen proporcionada por David Berlow, diseñador de tipografías y tipógrafo de Font Bureau.</figcaption></figure>
 
 Después del cambio a cursiva, los ejes disponibles para el usuario deben ser los mismos que los estilos romanos, al igual que el conjunto de caracteres debe ser el mismo.
 
@@ -142,14 +142,14 @@ Puedes ver el ejemplo en vivo y su código fuente [aquí](https://codepen.io/man
 
 ### Animación
 
-<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4", class="w-screenshot", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption class="w-figcaption"> Typeface Zycon, diseñado para animación por David Berlow, diseñador de tipografías y tipógrafo de Font Bureau.</figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption> Typeface Zycon, diseñado para animación por David Berlow, diseñador de tipografías y tipógrafo de Font Bureau.</figcaption></figure>
 
 También existe la posibilidad de explorar personajes animados con fuentes variables. Arriba hay un ejemplo de diferentes ejes que se utilizan con el tipo de letra Zycon. Mira el [ejemplo de animación en vivo en Axis Praxis](https://www.axis-praxis.org/specimens/zycon).
 
 [Anicons](https://typogram.github.io/Anicons) es la primera fuente de iconos de colores animados del mundo, basada en Material Design Icons. Anicons es un experimento que combina dos tecnologías de fuentes de vanguardia: fuentes variables y fuentes de color.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
   </source></video>
   <figcaption>Algunos ejemplos de animaciones al pasar el ratón sobre un elemento utilizando la fuente de iconos de color de Anicon</figcaption></figure>
@@ -157,7 +157,7 @@ También existe la posibilidad de explorar personajes animados con fuentes varia
 ### Finura
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
   </source></video>
   <figcaption>Amstelvar usa pequeños trozos de XTRA en direcciones opuestas para que los anchos de las palabras se nivelen</figcaption></figure>
@@ -209,7 +209,7 @@ Tradicionalmente, definirás `font-weight` como una palabra clave (`light`, `bol
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-weight.mp4" type="video/mp4">
   </source></video>
   <figcaption>El eje de peso de Roboto Flex se cambia de su mínimo a su máximo.</figcaption></figure>
@@ -227,7 +227,7 @@ Asimismo, podemos definir `font-stretch` con palabras clave (`condensed`, `ultra
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-width.mp4" type="video/mp4">
   </source></video>
   <figcaption>El eje de ancho de Roboto Flex se cambia de su mínimo a su máximo.</figcaption></figure>
@@ -253,7 +253,7 @@ i, em, .italic {
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-slant.mp4" type="video/mp4">
   </source></video>
   <figcaption>El eje inclinado de Roboto Flex se cambia de su mínimo a su máximo.</figcaption></figure>
@@ -262,7 +262,7 @@ i, em, .italic {
 
 Un tipo de letra puede ser muy pequeño (una nota al pie de 12 píxeles) o muy grande (un título de 80 píxeles). Las fuentes pueden responder a estos cambios de tamaño cambiando las formas de las letras y así adaptarse mejor a su tamaño. Un tamaño pequeño podría estar mejor sin detalles finos, mientras que un tamaño grande podría beneficiarse con trazos y detalles más finos.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="La letra 'a' se muestra en diferentes tamaños ópticos", width="800", height="147" %}<figcaption class="w-figcaption"> La letra 'a' en Roboto Flex en diferentes tamaños de píxeles, luego escalada para tener el mismo tamaño, se muestra las diferencias en el diseño. <a href="https://codepen.io/RoelN/pen/PoPvdeV">Pruébalo en Codepen</a></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="La letra 'a' se muestra en diferentes tamaños ópticos", width="800", height="147" %}<figcaption> La letra 'a' en Roboto Flex en diferentes tamaños de píxeles, luego escalada para tener el mismo tamaño, se muestra las diferencias en el diseño. <a href="https://codepen.io/RoelN/pen/PoPvdeV">Pruébalo en Codepen</a></figcaption></figure>
 
 Se ha introducido una nueva propiedad CSS para este eje: `font-optical-sizing`. De forma predeterminada, este tiene un valor de `auto`, lo que hace que el navegador establezca el valor del eje en función del `font-size`. Esto significa que el navegador elegirá el mejor tamaño óptico automáticamente, pero si deseas desactivarlo, puedes definir `font-optical-sizing` como `none`.
 
@@ -282,7 +282,7 @@ A diferencia de los ejes registrados, los ejes personalizados no se asignarán a
 Roboto Flex ofrece algunos ejes personalizados, y el más importante es Grade (`GRAD`). El eje Grade es interesante ya que cambia el peso de la fuente sin cambiar los anchos, por lo que los saltos de línea no cambian. Al jugar con un eje Grade, puedes evitar estar obligado a juguetear con los cambios en el eje de Peso que afectan al ancho general, y luego los cambios en el eje de Ancho que afectan al peso total.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-grade.mp4" type="video/mp4">
   </source></video>
   <figcaption>El eje de Grade de Roboto Flex se cambia de su mínimo a su máximo.</figcaption></figure>

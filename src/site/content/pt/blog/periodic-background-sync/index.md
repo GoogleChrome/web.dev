@@ -239,11 +239,11 @@ Pode ser um desafio obter uma visão ponta a ponta da sincronização periódica
 
 A **seção Sincronização periódica em segundo plano** do DevTools é organizada em torno dos principais eventos do ciclo de vida da sincronização periódica em segundo plano: registrar para sincronização, executar uma sincronização em segundo plano e cancelar o registro. Para obter informações sobre esses eventos, clique em **Iniciar gravação** .
 
-<figure>{% Img src = "image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt = "O botão de gravação em DevTools", width = "708", height = "90", classe = "w-screenshot"%}<figcaption class="w-figcaption"> O botão de gravação no DevTools</figcaption></figure>
+<figure>{% Img src = "image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt = "O botão de gravação em DevTools", width = "708", height = "90" %}<figcaption> O botão de gravação no DevTools</figcaption></figure>
 
 Durante a gravação, as entradas aparecerão no DevTools correspondentes aos eventos, com contexto e metadados registrados para cada um.
 
-<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt = "Um exemplo de dados de sincronização periódica de fundo gravados", width = "800", height = "357", class = "w-screenshot", style = "max-width: 75%"%}<figcaption class="w-figcaption"> Um exemplo de dados de sincronização periódica em segundo plano registrados</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt = "Um exemplo de dados de sincronização periódica de fundo gravados", width = "800", height = "357", style = "max-width: 75%"%}<figcaption> Um exemplo de dados de sincronização periódica em segundo plano registrados</figcaption></figure>
 
 Depois de habilitar a gravação uma vez, ela permanecerá habilitada por até três dias, permitindo que o DevTools capture informações de depuração local sobre sincronizações em segundo plano que podem ocorrer, mesmo em horas no futuro.
 
@@ -255,10 +255,10 @@ Você pode fazer isso por meio da **seção Service Workers** no painel Applicat
 
 {% Aside %} O acionamento manual de um `periodicsync` requer o Chrome 81 ou posterior. {% endAside %}
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="A seção 'Service Workers' do painel Application mostra um campo de texto e botão 'Periodic Sync'.", width="800", height=" 321 ", class=" w-screenshot ", style="max-width: 75%"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="A seção 'Service Workers' do painel Application mostra um campo de texto e botão 'Periodic Sync'.", width="800", height=" 321 ", style="max-width: 75%"%}</figure>
 
 ## Usando a interface DevTools
 
 A partir do Chrome 81, você verá uma seção **Periodic Background Sync** no painel do *aplicativo DevTools.*
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="O painel do aplicativo mostrando a seção de sincronização periódica de fundo", width="382", height="253", class="w-screenshot", style="max-width: 90%"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="O painel do aplicativo mostrando a seção de sincronização periódica de fundo", width="382", height="253", style="max-width: 90%"%}</figure>

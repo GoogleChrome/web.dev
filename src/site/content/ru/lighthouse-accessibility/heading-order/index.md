@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, в заголовках которых пропущен один или несколько уровней:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Аудит Lighthouse, в котором отображены заголовки с пропущенными уровнями", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Аудит Lighthouse, в котором отображены заголовки с пропущенными уровнями", width="800", height="206" %}</figure>
 
 Например, если для названия страницы используется элемент `<h1>`, а для основных разделов страницы используются элементы `<h3>`, то этой странице не удастся пройти аудит, так как пропущен уровень `<h2>`:
 

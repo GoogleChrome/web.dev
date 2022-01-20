@@ -101,15 +101,15 @@ const cancelScheduledNotification = async (tag) => {
 
 Você pode usar o [painel de notificações do Chrome DevTools](https://developers.google.com/web/updates/2019/07/devtools#backgroundservices) para depurar notificações. Para iniciar a depuração, pressione **Iniciar gravação de eventos** {% Img src="image/admin/vf1pad201b4NM9WjgNQh.png", alt="Iniciar gravação de eventos", width="24", height="24" %} ou <kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> no Mac). O Chrome DevTools registra todos os eventos de notificação, incluindo notificações programadas, exibidas e fechadas, por três dias, mesmo quando o DevTools está fechado.
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Fcyc3iFPdNexgqh1peA8.png", alt="Um evento de notificação exibido foi registrado no painel Notificações do Chrome DevTools, localizado no painel do aplicativo.", width="800", height="247" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Uma notificação agendada. </figcaption></figure>
+<figure data-size="full">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Fcyc3iFPdNexgqh1peA8.png", alt="Um evento de notificação exibido foi registrado no painel Notificações do Chrome DevTools, localizado no painel do aplicativo.", width="800", height="247" %} <figcaption> Uma notificação agendada. </figcaption></figure>
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7Sj2NxYKbSXv4P894aLh.png", alt="Um evento de notificação exibido foi registrado no painel de Notificações do Chrome DevTools.", width="800", height="247" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Uma notificação exibida. </figcaption></figure>
+<figure data-size="full">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7Sj2NxYKbSXv4P894aLh.png", alt="Um evento de notificação exibido foi registrado no painel de Notificações do Chrome DevTools.", width="800", height="247" %} <figcaption> Uma notificação exibida. </figcaption></figure>
 
 ### Demonstração
 
 Você pode ver os acionadores de notificação em ação na [demonstração](https://notification-triggers.glitch.me/), que permite agendar notificações, listar notificações agendadas e cancelá-las. O código-fonte está disponível no [Glitch](https://glitch.com/edit/#!/notification-triggers).
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/admin/WVlem3Tf2GEEFwNVA2L1.png", alt="Uma captura de tela do aplicativo da web de demonstração de acionadores de notificação.", width="800", height="525" %} <figcaption class="w-figcaption">A <a href="https://notification-triggers.glitch.me/">demonstração</a> de acionadores de notificação.</figcaption></figure>
+<figure data-size="full">{% Img src="image/admin/WVlem3Tf2GEEFwNVA2L1.png", alt="Uma captura de tela do aplicativo da web de demonstração de acionadores de notificação.", width="800", height="525" %} <figcaption>A <a href="https://notification-triggers.glitch.me/">demonstração</a> de acionadores de notificação.</figcaption></figure>
 
 ## Segurança e permissões
 

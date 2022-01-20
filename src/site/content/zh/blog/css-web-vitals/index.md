@@ -134,7 +134,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 <img src="https://source.unsplash.com/random/800x600" width="800" height="600" alt="image to load in">
 ```
 
-<figure class="w-figure">{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMG0lGhKnNHef2py.mp4"%}<figcaption class="w-figcaption">现在图像加载时不会导致布局偏移。</figcaption></figure>
+<figure>{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMG0lGhKnNHef2py.mp4"%}<figcaption>现在图像加载时不会导致布局偏移。</figcaption></figure>
 
 {% Aside %}加载图像的另一种方法是使用 [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) 和 [`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) 属性同时结合指定 `width` 和 `height` 属性。这会带来额外的性能优势，允许您为不同的设备提供不同大小的图像。有关更多信息，请参阅[提供响应式图像](/serve-responsive-images/)。 {% endAside %}
 
@@ -156,7 +156,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 
 字体交换虽然非常适合快速向用户显示内容，但有可能导致布局偏移。当 Web 字体及其后备字体在页面上占用不同数量的空间时，就会发生这些布局偏移。使用类似比例的字体将最小化这些布局偏移的大小。
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="显示由字体交换引起的布局偏移的图表", width="800", height="452" %}<figcaption class="w-figcaption">在此示例中，字体交换导致页面元素向上偏移五个像素。</figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="显示由字体交换引起的布局偏移的图表", width="800", height="452" %}<figcaption>在此示例中，字体交换导致页面元素向上偏移五个像素。</figcaption></figure>
 
 #### 识别
 

@@ -364,7 +364,7 @@ background sync, and unregistering. To obtain information about these events,
 click **Start recording**.
 
 <figure>
-  {% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="The record button in DevTools", width="708", height="90", class="w-screenshot" %}
+  {% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="The record button in DevTools", width="708", height="90" %}
   <figcaption>
     The record button in DevTools
   </figcaption>
@@ -374,7 +374,7 @@ While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="An example of recorded periodic background sync data", width="800", height="357", class="w-screenshot", style="max-width: 75%" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="An example of recorded periodic background sync data", width="800", height="357", style="max-width: 75%" %}
   <figcaption>
     An example of recorded periodic background sync data
   </figcaption>
@@ -399,7 +399,7 @@ event to use, and to trigger it as many times as you'd like.
 {% endAside %}
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync' text field and button.", width="800", height="321", class="w-screenshot", style="max-width: 90%" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync' text field and button.", width="800", height="321", style="max-width: 90%" %}
 </figure>
 
 ## Using the DevTools interface
@@ -408,5 +408,5 @@ Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", class="w-screenshot", style="max-width: 75%" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", style="max-width: 75%" %}
 </figure>

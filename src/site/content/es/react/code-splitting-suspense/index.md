@@ -81,8 +81,8 @@ Para demostrar mejor cómo funciona esto:
 
 El indicador de carga se mostrará durante más tiempo. Observe cómo todo el código que forma `AvatarComponent` se obtiene como un fragmento separado.
 
-<figure class="w-figure">
- {% Img src ="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt = "Panel de red de DevTools que muestra un archivo chunk.js que se está descargando", width = "800", height = "478", class = "w-screenshot -captura de pantalla -llena "%}
+<figure>
+ {% Img src ="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt = "Panel de red de DevTools que muestra un archivo chunk.js que se está descargando", width = "800", height = "478" %}
 </figure>
 
 {% Aside %}

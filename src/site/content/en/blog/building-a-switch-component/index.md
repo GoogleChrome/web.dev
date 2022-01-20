@@ -18,15 +18,14 @@ tags:
 In this post I want to share thinking on a way to build switch components.
 [Try the demo](https://gui-challenges.web.app/switch/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nzABBfSBoy73cyYD60WR.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/switch/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -113,7 +112,7 @@ ambiguity, while giving the user the ability to interact with the label to
 toggle the input.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hRnaoi1lcNmpzizuUUzm.png", alt="A
-natural, unstyled label and checkbox.", class="w-screenshot", width="216",
+natural, unstyled label and checkbox.", width="216",
 height="80" %}
 
 ```html
@@ -149,7 +148,7 @@ layouts.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/aIpui6HjdmtoELmVX59U.png",
 alt="Flexbox DevTools overlaying a horizontal label and switch, showing their layout
-distribution of space.", width="746", height="218", class="w-screenshot" %}
+distribution of space.", width="746", height="218" %}
 
 ```css
 .gui-switch {
@@ -166,7 +165,7 @@ For example, to put labels above or below a switch, or to change the
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q9ouS16fND5xcqY14YVh.png",
 alt="Flexbox DevTools overlaying a vertical label and switch.", width="486",
-height="254", class="w-screenshot" %}
+height="254" %}
 
 ```html
 <label for="light-switch" class="gui-switch" style="flex-direction: column">
@@ -182,7 +181,7 @@ The checkbox input is styled as a switch track by removing its normal
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Ai9vbILT66rxmVsKgmoJ.png",
 alt="Grid DevTools overlaying the switch track, showing the named grid track
-areas with the name 'track'.", width="272", height="182", class="w-screenshot" %}
+areas with the name 'track'.", width="272", height="182" %}
 
 ```css
 .gui-switch > input {
@@ -216,7 +215,7 @@ stacks on top of the track instead of below it by claiming the grid area
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/THV6KoJTUIBfSFntzcG1.png",
 alt="DevTools showing the pseudo-element thumb as positioned inside a CSS grid.",
-width="554", height="196", class="w-screenshot" %}
+width="554", height="196" %}
 
 ```css
 .gui-switch > input::before {
@@ -258,8 +257,7 @@ my own `cursor: pointer` style:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bc6ocZIoezgR9tGXaLuC.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -308,7 +306,7 @@ The thumb element is already on the right `track` but needs circle styles:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/2XLIMU0IzH9oHLfUso65.png",
 alt="DevTools shown highlighting the circle thumb pseudo-element.", width="504",
-height="208", class="w-screenshot" %}
+height="208" %}
 
 #### Interaction
 
@@ -370,8 +368,7 @@ may animate when changed:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2ECSW2OFiI4Fj4bSdGRF.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -409,8 +406,7 @@ a vertical button to flow in layout as expected:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D9kVn8ESM6SPI3GaDsEm.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -607,8 +603,7 @@ animation then provides direction towards the interactive thumb element.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/9LytLmt8m8f1QyxUCwQs.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -643,8 +638,7 @@ attempted and nothing happens.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/03YLvDcirYLYWE3dVx1z.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -731,8 +725,7 @@ from the function event handler:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/ytciNZidPZg12i8OZStU.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}

@@ -19,15 +19,14 @@ tags:
 In this post I want to share thinking on a way to build a dark and light theme switch component.
 [Try the demo](https://gui-challenges.web.app/theme-switch/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/vLZNIPTNEXLl9rxxlirg.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/theme-switch/dist/">Demo</a> button size increased for easy visibility
   </figcaption>
 </figure>
@@ -48,14 +47,14 @@ example, the browser should be made aware of the preference as soon as possible
 to prevent page color flashes, and the control needs to first sync with the
 system then allow client-side stored exceptions.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/5v5M1n6bOtSBaVXbkcon.png", 
     alt="", 
     width="800", 
     height="687" 
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Diagram shows a preview of JavaScript page load and document 
     interaction events to overall show there's 4 paths to setting the theme
   </figcaption>
@@ -549,26 +548,26 @@ panel in Chrome DevTools, you can find a timeline for animation transitions. The
 duration of the total animation, the elements, and the easing timing can be
 inspected.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/5KYAhwMgxZf9nnKvlDxn.png", 
     alt="",
     width="800", 
     height="334" 
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Light to dark transition
   </figcaption>
 </figure>
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/SO9IRLvOXSVeyl3TCjPu.png", 
     alt="",
     width="800", 
     height="203" 
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Dark to light transition
   </figcaption>
 </figure>
@@ -616,26 +615,26 @@ orchestrated or playful, it feels chaotic.
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fd6K4IVMe4XaOF12ngXY.png", 
     alt="",
     width="800", 
     height="334" 
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Light to dark transition
   </figcaption>
 </figure>
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Bw0oBqpFw1mZ0OXHGeAU.png", 
     alt="",
     width="800", 
     height="203" 
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Dark to light transition
   </figcaption>
 </figure>

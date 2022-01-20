@@ -116,7 +116,7 @@ window.screen;
 
 Como la mayoría de las personas que trabajan en campos de tecnología, he tenido que adaptarme a la nueva realidad laboral y montar mi propia oficina en casa. La mía se ve como en la foto de abajo (si está interesado, puede leer los [detalles completos sobre mi configuración](https://blog.tomayac.com/2020/03/23/my-working-from-home-setup-during-covid-19/)). El iPad al lado de mi MacBook está conectado a la computadora portátil a través de [Sidecar](https://support.apple.com/en-us/HT210380) , por lo que siempre que lo necesito, puedo convertir rápidamente el iPad en una segunda pantalla.
 
-<figure class="w-figure">{% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="Banco escolar en dos sillas. En la parte superior del banco escolar hay cajas de zapatos que sostienen una computadora portátil y dos iPads a su alrededor.", width="558", height="520" %}<figcaption class="w-figcaption"> Una configuración multipantalla.</figcaption></figure>
+<figure>{% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="Banco escolar en dos sillas. En la parte superior del banco escolar hay cajas de zapatos que sostienen una computadora portátil y dos iPads a su alrededor.", width="558", height="520" %}<figcaption> Una configuración multipantalla.</figcaption></figure>
 
 Si quiero aprovechar la pantalla más grande, puedo colocar la ventana emergente del [ejemplo de código](/multi-screen-window-placement/#the-problem) anterior en la segunda pantalla. Lo hago así:
 
@@ -295,11 +295,11 @@ Los otros aspectos de la API, es decir, los diversos eventos de cambio de pantal
 
 Si usted es como yo, vigila de cerca el desarrollo de las distintas criptomonedas. (En realidad, no lo hago mucho porque amo este planeta, pero, por el bien de este artículo, asuma que lo hago). Para realizar un seguimiento de las criptomonedas que poseo, he desarrollado una aplicación web que me permite ver los mercados en todas las situaciones de la vida, como desde la comodidad de mi cama, donde tengo una configuración decente de pantalla única.
 
-<figure class="w-figure">{% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt= "Pantalla de televisión enorme al final de una cama con las piernas del autor parcialmente visibles. En la pantalla, una mesa de trading de criptodivisas falsas.", width="800", height="863" %}<figcaption class="w-figcaption"> Relajándose y observando los mercados.</figcaption></figure>
+<figure>{% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt= "Pantalla de televisión enorme al final de una cama con las piernas del autor parcialmente visibles. En la pantalla, una mesa de trading de criptodivisas falsas.", width="800", height="863" %}<figcaption> Relajándose y observando los mercados.</figcaption></figure>
 
 Al tratarse de criptomonedas, los mercados pueden agitarse en cualquier momento. Si esto sucediera, puedo moverme rápidamente a mi escritorio donde tengo una configuración de múltiples pantallas. Puedo hacer clic en la ventana de cualquier moneda y ver rápidamente los detalles completos en una vista de pantalla completa en la pantalla opuesta. A continuación se muestra una foto reciente mía tomada durante el último [baño de sangre de YCY](https://www.youtube.com/watch?v=dQw4w9WgXcQ). Me tomó completamente desprevenido y me dejó [con las manos en la cara](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
-<figure class="w-figure">{% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="El autor con las manos en la cara de pánico mirando la mesa de trading de criptomonedas falsas.", width="800", height="600" %}<figcaption class="w-figcaption"> En pánico, presenciando el baño de sangre de YCY.</figcaption></figure>
+<figure>{% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="El autor con las manos en la cara de pánico mirando la mesa de trading de criptomonedas falsas.", width="800", height="600" %}<figcaption> En pánico, presenciando el baño de sangre de YCY.</figcaption></figure>
 
 Puede jugar con la [demostración](https://window-placement.glitch.me/) incrustada a continuación, o ver su [código fuente](https://glitch.com/edit/#!/window-placement) en glitch.
 

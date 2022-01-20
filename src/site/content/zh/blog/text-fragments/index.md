@@ -19,7 +19,7 @@ feedback:
 
 Chrome 80 是一个大版本。它包含许多备受期待的功能，例如 [Web Workers 中的 ECMAScript 模块](/module-workers/)、[空值合并](https://v8.dev/features/nullish-coalescing)、[可选链](https://v8.dev/features/optional-chaining)等。此版本像往常一样在 Chromium 博客中通过[博客文章](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html)发布。您可以在下面的屏幕截图中看到博客文章的摘录。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}<figcaption class="w-figcaption">Chromium 博客文章，其中带有 <code>id</code> 属性的元素周围带有红框。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}<figcaption>Chromium 博客文章，其中带有 <code>id</code> 属性的元素周围带有红框。</figcaption></figure>
 
 您可能会问所有这些红框的含义是什么。它们是在 DevTools 中运行以下代码段的结果，突出显示具有 `id` 属性的所有元素。
 
@@ -31,7 +31,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 
 由于具有[片段标识符](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment)，我可以向任何用红框突出显示的元素添加深层链接，然后在页面 URL 的[哈希](https://developer.mozilla.org/docs/Web/API/URL/hash)中使用。假设我想深层链接到 aside 中的*在[产品论坛](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)中提供反馈*框，我可以通过手工制作 URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1&lt;/mark&gt;</code></a> 来实现此操作。正如您在 Developer Tools 的“元素”面板中看到的，相关元素有一个值为 `HTML1` 的 `id` 属性。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption class="w-figcaption">显示元素的 <code>id</code> 的 Dev Tools。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption>显示元素的 <code>id</code> 的 Dev Tools。</figcaption></figure>
 
 如果我用 JavaScript 的 `URL()` 构造函数解析此 URL，会显示不同的组件。请注意值为 `#HTML1` 的 `hash` 属性。
 
@@ -59,7 +59,7 @@ URL {
 
 如果我想链接到没有 `id` 的内容，该怎么办？假设我想链接到 *Web Workers 中的 ECMAScript 模块*标题。正如您在下面的屏幕截图中看到的，相关的 `<h1>` 没有 `id` 属性，这意味着我无法链接到此标题。文本片段正好可以解决的问题。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption class="w-figcaption">显示没有 <code>id</code> 的标题的 Dev Tools。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption>显示没有 <code>id</code> 的标题的 Dev Tools。</figcaption></figure>
 
 ## 文本片段
 
@@ -87,7 +87,7 @@ URL {
 
 <mark class="highlight-line highlight-line-active">按此方式</mark>强调文本片段。如果您在 Chrome 等支持浏览器中单击该链接，文本片段将突出显示并滚动到视图中：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption class="w-figcaption">文本片段滚动到视图中并突出显示。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption>文本片段滚动到视图中并突出显示。</figcaption></figure>
 
 ### `textStart` 和 `textEnd`
 
@@ -101,29 +101,29 @@ URL {
 
 对于 `textStart`，我使用 `ECMAScript%20Modules%20in%20Web%20Workers`，然后是逗号 `,`，后跟 `ES%20Modules%20in%20Web%20Workers.` 作为 `textEnd`。当您单击 Chrome 等支持浏览器时，整个部分将突出显示并滚动到视图中：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption class="w-figcaption">文本片段滚动到视图中并突出显示。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption>文本片段滚动到视图中并突出显示。</figcaption></figure>
 
 现在您可能想知道我对 `textStart` 和 `textEnd` 的选择。实际上，每边只有两个字的略短的 URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript%20Modules,Web%20Workers.&lt;/mark&gt;</code></a> 也可以运行。将 `textStart` 和 `textEnd` 与之前的值进行比较。
 
 如果我更进一步，现在 `textStart` 和 `textEnd` 只使用一个词，您会发现我遇到了麻烦。URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript,Workers.&lt;/mark&gt;</code></a> 现在更短了，但是突出显示的文本片段不再是最初想要的片段。`Workers.` 第一次出现时停止突出显示，这是正确的，但并不是我想要的。问题是所需的部分不是由当前的单字 `textStart` 和 `textEnd` 值唯一标识的：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption class="w-figcaption">非预期文本片段滚动到视图中并突出显示。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption>非预期文本片段滚动到视图中并突出显示。</figcaption></figure>
 
 ### `prefix-` 和 `-suffix`
 
 `textStart` 和 `textEnd` 使用足够长的值是获得唯一链接的一种解决方案。然而，在某些情况下，这是不可能的。附带说明一下，为什么我选择 Chrome 80 版本博客文章作为我的示例？答案是在这个版本中引入了文本片段：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="博客文章文本：文本 URL 片段。用户或作者现在可以使用 URL 中提供的文本片段链接到页面的特定部分。当页面加载后，浏览器将突出显示文本并将片段滚动到视图中。例如，下面的 URL 加载 'Cat' 的 wiki 页面并滚动到 `text` 参数中列出的内容。", width="800", height="200", class="w-screenshot" %} <figcaption class="w-figcaption">文本片段公告博客文章摘录。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="博客文章文本：文本 URL 片段。用户或作者现在可以使用 URL 中提供的文本片段链接到页面的特定部分。当页面加载后，浏览器将突出显示文本并将片段滚动到视图中。例如，下面的 URL 加载 'Cat' 的 wiki 页面并滚动到 `text` 参数中列出的内容。", width="800", height="200" %} <figcaption>文本片段公告博客文章摘录。</figcaption></figure>
 
 请注意，在上面的屏幕截图中，“Text“ 一词出现了四次。第四次以绿色代码字体书写。如果我想链接到这个特定的词，我会将 `textStart` 设置为 `text`。由于 “Text“ 一词只包含一个词，因此没有 `textEnd`。现在怎么办？URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=text&lt;/mark&gt;</code></a> 将匹配标题中出现的第一个词 “Text“：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption class="w-figcaption">与出现的第一个 “Text“ 匹配的文本片段。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption>与出现的第一个 “Text“ 匹配的文本片段。</figcaption></figure>
 
 {% Aside 'caution' %} 请注意，文本片段匹配不区分大小写。{% endAside %}
 
 幸运的是有一个解决方案。在这种情况下，我可以指定 `prefix​-` 和 `-suffix`。绿色代码字体 “Text“ 前面的字词是 “Text“，后面的词是 “parameter”。出现的其他三个词 “Text“ 周围没有相同的词。有了这些知识，我可以调整之前的 URL 并添加 `prefix-` 和 `-suffix`。与其他参数一样，它们也需要进行百分比编码，并且可以包含多个词。<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=the-,text,-parameter&lt;/mark&gt;</code></a>。为了让解析程序清楚地识别 `prefix-` 和 `-suffix`，需要用破折号 `-` 将它们与 `textStart` 和可选的 `textEnd` 区分开。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption class="w-figcaption">与预期出现位置的 “Text“ 匹配的文本片段。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption>与预期出现位置的 “Text“ 匹配的文本片段。</figcaption></figure>
 
 ### 完整语法
 
@@ -160,19 +160,19 @@ URL {
 - [适用于 Mozilla Firefox 的文本片段的链接](https://addons.mozilla.org/firefox/addon/link-to-text-fragment/)
 - [适用于 Apple Safari 的文本片段的链接](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption class="w-figcaption"> <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">文本片段链接</a>浏览器扩展。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption> <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">文本片段链接</a>浏览器扩展。</figcaption></figure>
 
 ### 一个 URL 中有多个文本片段
 
 请注意，一个 URL 中可以出现多个文本片段。特定的文本片段需要用 &amp; 字符 `&` 分隔。以下是一个包含三个文本片段的示例链接：<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet&lt;mark class="highlight-line highlight-line-active"&gt;</code></a>。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption class="w-figcaption">一个 URL 中有三个文本片段。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption>一个 URL 中有三个文本片段。</figcaption></figure>
 
 ### 混合使用元素和文本片段
 
 传统元素片段可以与文本片段组合使用。将两者放在同一个 URL 中是完全可以的，例如，在页面上的原始文本发生更改时提供有效回退，以便文本片段不再匹配。链接到*在[产品论坛](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)中提供反馈*部分的 URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.&lt;/mark&gt;</code></a> 包含一个元素片段 (`HTML1`) 和一个文本片段 (`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`)：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %} <figcaption class="w-figcaption">链接到元素片段和文本片段两者。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %} <figcaption>链接到元素片段和文本片段两者。</figcaption></figure>
 
 ### 片段指令
 
@@ -289,9 +289,9 @@ defaults write com.google.Chrome ScrollToTextFragmentEnabled -bool false
 
 对于某些搜索，搜索引擎 Google 会使用来自相关网站的内容代码段提供快速答案或摘要。当以问题的形式进行搜索时，这些*精选代码段*最有可能出现。单击精选代码段会使用户直接转到源网页上的精选代码段文本。这要归功于自动创建的文本片段 URL。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">显示精选代码段的 Google 搜索引擎结果页面。状态栏显示文本片段 URL。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption>显示精选代码段的 Google 搜索引擎结果页面。状态栏显示文本片段 URL。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">单击后，页面的相关部分将滚动到视图中。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption>单击后，页面的相关部分将滚动到视图中。</figcaption></figure>
 
 ## 结论
 

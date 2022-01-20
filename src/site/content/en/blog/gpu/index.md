@@ -30,9 +30,9 @@ stack_overflow_tag: webgpu
 specifically Direct3D 12, Metal, and Vulkan, for performing rendering and
 computation operations on a graphics processing unit (GPU).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram showing WebGPUs connection between OS APIs and Direct3D 12, Metal, and Vulkan.", width="800", height="313" %}
-  <figcaption class="w-figcaption">WebGPU architecture diagram</figcaption>
+  <figcaption>WebGPU architecture diagram</figcaption>
 </figure>
 
 This goal is similar to the [WebGL] family of APIs, but WebGPU enables access to
@@ -56,9 +56,9 @@ shader for Web developers. New 3D experiences can be built today on [Babylon.js
 Playground].
 {% endBlockquote %}
 
-<figure class="w-figure">
+<figure>
   {% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A Babylon.js demo of a rough sea being simulated using WebGPU's compute shader capability.
   </figcaption>
 </figure>

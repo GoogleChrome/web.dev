@@ -165,7 +165,7 @@ HTTP 헤더와 메타 요소는 모두 페이지 수준입니다. 요소의 유�
 
 Chrome, Edge 또는 Firefox의 개발자 도구를 사용하여 특정 요청에 사용된 리퍼러 정책을 볼 수도 있습니다. 이 글을 작성하는 시점에 Safari는 `Referrer-Policy` 헤더를 표시하지 않지만 전송된 `Referer`는 표시합니다.
 
-<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="리퍼러 및 리퍼러 정책을 보여주는 Chrome DevTools의 네트워크 패널 스크린샷", width="800", height="416" %}<figcaption class="w-figcaption"> Chrome DevTools, 요청이 선택된 <b>네트워크 패널</b></figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="리퍼러 및 리퍼러 정책을 보여주는 Chrome DevTools의 네트워크 패널 스크린샷", width="800", height="416" %}<figcaption> Chrome DevTools, 요청이 선택된 <b>네트워크 패널</b></figcaption></figure>
 
 ## 내 웹 사이트에 어떤 정책을 설정해야 합니까?
 

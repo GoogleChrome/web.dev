@@ -127,9 +127,9 @@ given vendor (`vendorId`) and, optionally, product (`productId`) identifiers.
 The `classCode`, `protocolCode`, `serialNumber`, and `subclassCode` keys can
 also be defined there as well.
 
-<figure class="w-figure">
-  {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Screenshot of the USB device user prompt in Chrome", width="800", height="533", class="w-screenshot" %}
-  <figcaption class="w-figcaption">USB device user prompt.</figcaption>
+<figure>
+  {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Screenshot of the USB device user prompt in Chrome", width="800", height="533" %}
+  <figcaption>USB device user prompt.</figcaption>
 </figure>
 
 For instance, here's how to get access to a connected Arduino device configured
@@ -157,9 +157,9 @@ By the way, if a USB device announces its [support for WebUSB], as well as
 defining a landing page URL, Chrome will show a persistent notification when the
 USB device is plugged in. Clicking this notification will open the landing page.
 
-<figure class="w-figure">
-  {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", class="w-screenshot" %}
-  <figcaption class="w-figcaption">WebUSB notification.</figcaption>
+<figure>
+  {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450" %}
+  <figcaption>WebUSB notification.</figcaption>
 </figure>
 
 From there, you can simply call `navigator.usb.getDevices()` and access your
@@ -288,18 +288,18 @@ and firmware.
 Debugging USB in Chrome is easier with the internal page `about://device-log`
 where you can see all USB device related events in one single place.
 
-<figure class="w-figure">
-  {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Screenshot of the device log page to debug WebUSB in Chrome", width="800", height="442", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Device log page in Chrome for debugging the WebUSB API.</figcaption>
+<figure>
+  {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Screenshot of the device log page to debug WebUSB in Chrome", width="800", height="442" %}
+  <figcaption>Device log page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
 The internal page `about://usb-internals` also comes in handy and allows you
 to simulate connection and disconnection of virtual WebUSB devices.
 This is be useful for doing UI testing without for real hardware.
 
-<figure class="w-figure">
-  {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Screenshot of the internal page to debug WebUSB in Chrome", width="800", height="294",  class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging the WebUSB API.</figcaption>
+<figure>
+  {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Screenshot of the internal page to debug WebUSB in Chrome", width="800", height="294" %}
+  <figcaption>Internal page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
 On most Linux systems, USB devices are mapped with read-only permissions by

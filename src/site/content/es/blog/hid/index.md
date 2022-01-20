@@ -147,7 +147,7 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-<figure>{% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Captura de pantalla de un mensaje de dispositivo HID en un sitio web.", width="800", height="513", class="w-screenshot" %}<figcaption> Mensaje de usuario para seleccionar un Joy-Con de Nintendo Switch.</figcaption></figure>
+<figure>{% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Captura de pantalla de un mensaje de dispositivo HID en un sitio web.", width="800", height="513" %}<figcaption> Mensaje de usuario para seleccionar un Joy-Con de Nintendo Switch.</figcaption></figure>
 
 Un objeto `HIDDevice` contiene identificadores de producto y proveedor USB para la identificación del dispositivo. Su atributo `collections` se inicializa con una descripción jerárquica de los formatos de informe del dispositivo.
 
@@ -187,7 +187,7 @@ await device.open();
 
 Una vez que se ha establecido la conexión HID, puede manejar los informes de entrada entrantes escuchando los `"inputreport"` del dispositivo. Esos eventos contienen los datos HID como un objeto [`DataView`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView) (`data`), el dispositivo HID al que pertenece (`device`) y el ID de informe de 8 bits asociado con el informe de entrada (`reportId`).
 
-<figure>{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Foto de Nintendo switch rojo y azul.", width="800", height="575", class="w-screenshot" %}<figcaption> Dispositivos Nintendo Switch Joy-Con.</figcaption></figure>
+<figure>{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Foto de Nintendo switch rojo y azul.", width="800", height="575" %}<figcaption> Dispositivos Nintendo Switch Joy-Con.</figcaption></figure>
 
 Continuando con el ejemplo anterior, el código a continuación le muestra cómo detectar qué botón ha presionado el usuario en un dispositivo Joy-Con Right para que, con suerte, pueda probarlo en casa.
 
@@ -232,7 +232,7 @@ await device.sendReport(0x10, new Uint8Array(rumbleData));
 
 Los informes de características son el único tipo de informes de datos HID que pueden viajar en ambas direcciones. Permiten que los dispositivos y aplicaciones HID intercambien datos HID no estandarizados. A diferencia de los informes de entrada y salida, la aplicación no recibe ni envía informes de características de forma regular.
 
-<figure>{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Foto de computadora portátil negra y plateada.", width="800", height="575", class="w-screenshot" %}<figcaption> Teclado de computadora portátil</figcaption></figure>
+<figure>{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Foto de computadora portátil negra y plateada.", width="800", height="575" %}<figcaption> Teclado de computadora portátil</figcaption></figure>
 
 Para enviar un informe de características a un dispositivo HID, pase el ID de informe de 8 bits asociado con el informe de características (`reportId`) y bytes como un [`BufferSource`](https://developer.mozilla.org/docs/Web/API/BufferSource) (`data`) a `device.sendFeatureReport()`. La promesa devuelta se resuelve una vez que se ha enviado el informe. Si el dispositivo HID no utiliza IDs de informe, ponga `reportId` a 0.
 
@@ -290,7 +290,7 @@ navigator.hid.addEventListener("disconnect", event => {
 
 La depuración de HID en Chrome es fácil con la página interna, `about://device-log`, donde puede ver todos los eventos relacionados con dispositivos HID y USB en un solo lugar.
 
-<figure>{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Captura de pantalla de la página interna para depurar HID.", width="800", height="575", class="w-screenshot" %}<figcaption> Página interna en Chrome para depurar HID.</figcaption></figure>
+<figure>{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Captura de pantalla de la página interna para depurar HID.", width="800", height="575" %}<figcaption> Página interna en Chrome para depurar HID.</figcaption></figure>
 
 ## Compatibilidad con navegadores {: #browser-support }
 

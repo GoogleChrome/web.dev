@@ -19,8 +19,8 @@ A maioria dos usuários está familiarizada com a instalação de aplicativos e 
 A maioria dos navegadores indica ao usuário que seu Progressive Web App (PWA) pode ser instalado quando atende a determinados critérios. Entre exemplos de indicadores, temos o botão Instalar na barra de endereço ou o item de menu Instalar no menu suspenso.
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Captura de tela do omnibox com indicador de instalação visível.", width="800", height="307" %} <figcaption class="w-figcaption"> Divulgação de instalação fornecida pelo navegador (desktop) </figcaption></figure>
-  <figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Captura de tela da divulgação de instalação fornecida pelo navegador.", width="800", height="307" %} <figcaption class="w-figcaption"> Divulgação de instalação fornecida pelo navegador (dispositivos móveis) </figcaption></figure>
+  <figure id="browser-install-promo"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Captura de tela do omnibox com indicador de instalação visível.", width="800", height="307" %} <figcaption> Divulgação de instalação fornecida pelo navegador (desktop) </figcaption></figure>
+  <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Captura de tela da divulgação de instalação fornecida pelo navegador.", width="800", height="307" %} <figcaption> Divulgação de instalação fornecida pelo navegador (dispositivos móveis) </figcaption></figure>
 </div>
 
 Além disso, quando os critérios são atendidos, muitos navegadores disparam um evento `beforeinstallprompt`, permitindo que você forneça uma experiência de usuário personalizada dentro do aplicativo que acionará o fluxo de instalação no aplicativo.

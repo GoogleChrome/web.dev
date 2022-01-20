@@ -22,7 +22,7 @@ tags:
 
 동일한 구성표, 호스트 이름 및 포트가 조합된 웹 사이트는 "동일 출처"로 간주됩니다. 다른 모든 것은 "교차 출처"로 간주됩니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -84,7 +84,7 @@ tags:
 
 동일한 eTLD+1이 있는 웹사이트는 "same-site"로 간주됩니다. 다른 eTLD+1이 있는 웹사이트는 "cross-site"입니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -131,7 +131,7 @@ tags:
 
 "동일 사이트"의 정의는 HTTP가 [약한 채널](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8)로 사용되는 것을 방지하기 위해 URL 체계를 사이트의 일부로 간주하도록 진화하고 있습니다. 브라우저가 이 해석으로 이동함에 따라 이전 정의를 참조할 때 "scheme-less 동일 사이트"에 대한 참조와 더 엄격한 정의를 참조하는 "[schemeful 동일 사이트](/schemeful-samesite/)"에 대한 참조를 볼 수 있습니다. 이 경우 `http://www.example.com` 및 `https://www.example.com`이 교차 사이트로 간주됩니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -18,15 +18,14 @@ tags:
 In this post I want to share thinking on a way to build a multi-select component. Try the
 [demo](https://gui-challenges.web.app/multi-select/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nYQfioJpi2xziWrsMQ8Q.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/multi-select/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -78,8 +77,7 @@ Below is a demonstration of how to use a `<select multiple>` from the keyboard.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Ahh0DJ7upPdNox1hFjM0.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true",
   width="640"
@@ -92,8 +90,7 @@ still not as usable as a sidebar of checkboxes.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7FXTAv3VQ2xzJnLZDZWk.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -151,8 +148,7 @@ can space them evenly and maintain alignment when labels go multiline.
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/vOw5gp1GmYtJ5JPSh7JI.png",
-  class="w-screenshot",
-  alt="A screenshot with an informative overlay for the legend and
+   alt="A screenshot with an informative overlay for the legend and
   fieldset elements, shows color and element name.",
   width="800", height="616"
 %}
@@ -205,8 +201,7 @@ elements for the filter.
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pjCjCZAnNgHItIYSin1w.png",
-  class="w-screenshot",
-  alt="A screenshot of the desktop rendering of a multi-select element.",
+   alt="A screenshot of the desktop rendering of a multi-select element.",
   width="554", height="320"
 %}
 
@@ -268,8 +263,7 @@ outside what counters can do.
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ae97QeV86HFYr3xnmwrQ.png",
-  class="w-screenshot",
-  alt="A screenshot of the MacOS screen reader announcing number of active filters.",
+   alt="A screenshot of the MacOS screen reader announcing number of active filters.",
   width="800", height="177"
 %}
 
@@ -295,8 +289,7 @@ aside {
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/abxqZy9rht1fypkWX39e.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -353,8 +346,7 @@ The default styling and layout of a `<fieldset>` with a `<legend>` is unique:
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/YGuj5hH6ZuYW08YD1S1C.png",
-  class="w-screenshot",
-  alt="A screenshot of the default styles for a fieldset and legend.",
+   alt="A screenshot of the default styles for a fieldset and legend.",
   width="568", height="550"
 %}
 
@@ -379,8 +371,7 @@ This skips the `<legend>` from having it's space adjusted by targeting just the
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DwfZaTP6Yui32K0RKAZl.png",
-  class="w-screenshot",
-  alt="Screenshot showing the margin spacing between inputs but not the legend.",
+   alt="Screenshot showing the margin spacing between inputs but not the legend.",
   width="768", height="602"
 %}
 
@@ -398,15 +389,14 @@ fieldset > div {
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/29BmNgNWDGZjMz5gxqIY.png",
-    class="w-screenshot",
-    alt="Screenshot showing how the checkmark aligns to
+       alt="Screenshot showing how the checkmark aligns to
     the first line of text in a multi-line wrapping scenario.",
     width="800", height="448"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Play more in this <a href="https://codepen.io/argyleink/pen/VwWqwqe">Codepen</a>
   </figcaption>
 </figure>
@@ -431,8 +421,7 @@ same. With some JavaScript though, we can
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uBPBUzFc45v13Effbz8P.png",
-  class="w-screenshot",
-  alt="Screenshot of the DevTools JavaScript console which
+   alt="Screenshot of the DevTools JavaScript console which
   shows the goal, normalized data results.",
   width="800", height="355"
 %}
@@ -497,8 +486,7 @@ Altogether this work completes the announcement "2 filters giving 25 results".
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/RHqlVps5uIO9pg4SLVmu.png",
-  class="w-screenshot",
-  alt="A screenshot of the MacOS screen reader announcing results.",
+   alt="A screenshot of the MacOS screen reader announcing results.",
   width="800", height="177"
 %}
 

@@ -12,7 +12,7 @@ web_lighthouse:
 
 A seção Oportunidades de seu relatório Lighthouse lista todas as imagens em formatos mais antigos, mostrando a economia potencial obtida servindo versões AVIF dessas imagens:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="Uma captura de tela da auditoria Lighthouse Sirva imagens em formatos modernos", width="800", height="306", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="Uma captura de tela da auditoria Lighthouse Sirva imagens em formatos modernos", width="800", height="306" %}</figure>
 
 ## Por que servir imagens no formato AVIF ou WebP?
 

@@ -186,8 +186,8 @@ function handleDrop(e) {
 
 이 예에서는 사용자가 열의 순서를 다시 정렬할 수 있도록 합니다. 이를 위해 먼저 드래그가 시작될 때 소스 요소의 HTML을 저장해야 합니다.
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </source></video>
   </figure>

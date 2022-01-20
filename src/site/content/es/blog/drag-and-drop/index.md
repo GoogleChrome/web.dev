@@ -185,8 +185,8 @@ La propiedad `dataTransfer` es donde ocurre toda la magia de DnD. Contiene la pi
 
 En este ejemplo, permitiremos a los usuarios reorganizar el orden de las columnas. Para hacer eso, primero debe almacenar el HTML del elemento de origen cuando se inicia la acción de arrastrar:
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </source></video>
   </figure>

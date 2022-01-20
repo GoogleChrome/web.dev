@@ -69,7 +69,7 @@ const DetailsComponent = () => (
 
 加载指示器现在将显示更长时间。 注意构成 `AvatarComponent` 的所有代码是如何以单独块的形式获取的。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="DevTools 网络面板显示正在下载一个 chunk.js 文件", width="800", height="478", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="DevTools 网络面板显示正在下载一个 chunk.js 文件", width="800", height="478" %}</figure>
 
 {% Aside %} 当组件在服务器端呈现时，React 目前不支持 Suspense。如果在服务器上呈现，请考虑使用其他库，例如 React 文档中推荐的 [`loadable-components`](https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/)。{% endAside %}
 

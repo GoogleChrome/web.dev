@@ -29,12 +29,12 @@ Uma nova proposta de API de plataforma da Web, chamada [Portals](https://github.
 
 Veja a Portals em ação:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_h264.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">Integrações e navegação perfeitas com a Portals. Criado por <a href="https://twitter.com/argyleink">Adam Argyle</a>.</figcaption></figure>
+ <figcaption>Integrações e navegação perfeitas com a Portals. Criado por <a href="https://twitter.com/argyleink">Adam Argyle</a>.</figcaption></figure>
 
 ## O que a Portals possibilita fazer
 
@@ -61,7 +61,7 @@ Experimente a Portals no Chrome 85 e versões posteriores lançando um sinalizad
 
 Durante essa fase inicial de testes da Portals, também recomendamos o uso de um diretório de dados do usuário completamente separado para seus testes, definindo a sinalização de linha de comando [`--user-data-dir`](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md#command-line) Assim que a Portals estiver habilitada, confirme no DevTools se você possui o novo `HTMLPortalElement` brilhante.
 
-{% Img src="image/admin/aUrrqhzMxaEX865Fk5zX.png", alt="Uma captura de tela do console DevTools mostrando o HTMLPortalElement", width="800", height="252", class="w-screenshot" %}
+{% Img src="image/admin/aUrrqhzMxaEX865Fk5zX.png", alt="Uma captura de tela do console DevTools mostrando o HTMLPortalElement", width="800", height="252" %}
 
 ## Implementar a Portals
 
@@ -87,7 +87,7 @@ portal.addEventListener('load', (evt) => {
 
 É simples assim. Tente este código no console do DevTools, a página da wikipedia deve abrir.
 
-{% Img src="image/admin/rp6i8ngGJkvooXJ9WmLK.gif", alt="Um gif da demonstração do estilo do portal de prévia", width="800", height="557", class="w-screenshot" %}
+{% Img src="image/admin/rp6i8ngGJkvooXJ9WmLK.gif", alt="Um gif da demonstração do estilo do portal de prévia", width="800", height="557" %}
 
 Se você quiser construir algo como mostramos no Chrome Dev Summit, que funciona exatamente como a demo acima, o seguinte snippet será de seu interesse.
 
@@ -163,7 +163,7 @@ Se você quiser experimentar rapidamente como é a Portals, tente usar [uskay-po
 3. Clique na visualização.
 4. A visualização será ativada após uma animação.
 
-{% Img src="image/admin/Y4Vv6v3DAAC32IsiWS7g.gif", alt="Um gif do uso da demonstração de falha do uso da Portals", width="800", height="547", class="w-screenshot" %}
+{% Img src="image/admin/Y4Vv6v3DAAC32IsiWS7g.gif", alt="Um gif do uso da demonstração de falha do uso da Portals", width="800", height="547" %}
 
 ## Confira as especificações
 

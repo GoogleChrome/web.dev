@@ -92,7 +92,7 @@ WebUSB APIは、JavaScriptの[Promises](https://developer.mozilla.org/docs/Web/J
 
 `navigator.usb.requestDevice()`関数は、`filters`を定義する必須のJavaScriptオブジェクトを取ります。これらのフィルタは、任意のUSBデバイスを特定のベンダー (`vendorId`) および任意の製品 (`productId`) 識別子と照合するために使用されます。`classCode`、`protocolCode`、`serialNumber`、および`subclassCode`キーもそこで定義できます。
 
-<figure class="w-figure">{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="ChromeでのUSBデバイスユーザープロンプトのスクリーンショット", width="800", height="533", class="w-screenshot" %} <figcaption class="w-figcaption">USBデバイスのユーザープロンプト。</figcaption></figure>
+<figure>{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="ChromeでのUSBデバイスユーザープロンプトのスクリーンショット", width="800", height="533" %} <figcaption>USBデバイスのユーザープロンプト。</figcaption></figure>
 
 たとえば、オリジンを許可するように構成された接続済みのArduinoデバイスにアクセスする方法は次のとおりです。
 
@@ -111,7 +111,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 ちなみに、USBデバイス[がWebUSBのサポート](https://wicg.github.io/webusb/#webusb-platform-capability-descriptor)を発表し、ランディングページのURLを定義すると、ChromeはUSBデバイスが接続されたときに永続的な通知を表示します。この通知をクリックすると、ランディングページが開きます。
 
-<figure class="w-figure">{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="ChromeでのWebUSB通知のスクリーンショット", width="800", height="450", class="w-screenshot" %} <figcaption class="w-figcaption">WebUSB通知。</figcaption></figure>
+<figure>{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="ChromeでのWebUSB通知のスクリーンショット", width="800", height="450" %} <figcaption>WebUSB通知。</figcaption></figure>
 
 `navigator.usb.getDevices()`を呼び出すだけで、以下に示すようにArduinoデバイスにアクセスできます。
 
@@ -206,11 +206,11 @@ WebUSB APIを使用すると、すべてのUSB転送/エンドポイントタイ
 
 内部ページ`about://device-log`を使用すると、ChromeでのUSBのデバッグが簡単です。ここでは、USBデバイスに関連するすべてのイベントを1か所で確認できます。
 
-<figure class="w-figure">{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="ChromeでWebUSBをデバッグするためのデバイスログページのスクリーンショット", width="800", height="442", class="w-screenshot" %} <figcaption class="w-figcaption">WebUSBAPIをデバッグするためのChromeのデバイスログページ。</figcaption></figure>
+<figure>{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="ChromeでWebUSBをデバッグするためのデバイスログページのスクリーンショット", width="800", height="442" %} <figcaption>WebUSBAPIをデバッグするためのChromeのデバイスログページ。</figcaption></figure>
 
 `about://usb-internals`内部ページも便利で、仮想WebUSBデバイスの接続と切断をシミュレートできます。これは、実際のハードウェアを使用せずにUIテストを実行する場合に役立ちます。
 
-<figure class="w-figure">{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="ChromeでWebUSBをデバッグするための内部ページのスクリーンショット", width="800", height="294", class="w-screenshot" %} <figcaption class="w-figcaption">WebUSBAPIをデバッグするためのChromeの内部ページ。</figcaption></figure>
+<figure>{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="ChromeでWebUSBをデバッグするための内部ページのスクリーンショット", width="800", height="294" %} <figcaption>WebUSBAPIをデバッグするためのChromeの内部ページ。</figcaption></figure>
 
 ほとんどのLinuxシステムでは、USBデバイスはデフォルトで読み取り専用のアクセス許可にマッピングされます。ChromeがUSBデバイスを開くことができるようにするには、新しい[udevルール](https://www.freedesktop.org/software/systemd/man/udev.html)を追加する必要があります。`/etc/udev/rules.d/50-yourdevicename.rules`に、次の内容のファイルを作成します。
 

@@ -23,7 +23,7 @@ tags:
 
 アスペクト比は、2 つの整数とコロンを使って「幅:高さ」または 「x:y」の次元として表されるのが最も一般的です。写真の最も一般的なアスペクト比は 4:3 と 3:2 ですが、ビデオや最近のコンシューマー向けカメラのアスペクト比は 16:9 である傾向があります。
 
-<figure class="w-figure">{% Img src="image/admin/od54hUUe21UABpbWxSFG.jpg", alt="同じアスペクト比を持つ 2 つの画像。1 つは 634 x 951px で、もう 1 つは 200 x 300px です。どちらもアスペクト比は 2:3 です。", width="800", height="526", class="w-screenshot" %} <figcaption class="w-figcaption">同じアスペクト比を持つ 2 つの画像。1 つは 634 x 951px で、もう 1 つは 200 x 300px です。どちらもアスペクト比は 2:3 です。</figcaption></figure>
+<figure>{% Img src="image/admin/od54hUUe21UABpbWxSFG.jpg", alt="同じアスペクト比を持つ 2 つの画像。1 つは 634 x 951px で、もう 1 つは 200 x 300px です。どちらもアスペクト比は 2:3 です。", width="800", height="526" %} <figcaption>同じアスペクト比を持つ 2 つの画像。1 つは 634 x 951px で、もう 1 つは 200 x 300px です。どちらもアスペクト比は 2:3 です。</figcaption></figure>
 
 レスポンシブデザインが出現したことで、特に画像のサイズと要素のサイズが使用可能なスペースに基づいて変化するようになったため、アスペクト比を維持することが Web 開発者にとってますます重要になっています。
 
@@ -39,7 +39,7 @@ tags:
 
 アスペクト比を定義すると、レスポンシブなコンテキストでメディアのサイズを決定するのに役立ちます。このバケツのもう 1 つのツールは、`object-fit` プロパティです。ユーザーはこれを使用して、ブロック内のオブジェクト（画像など）がそのブロックをどのように埋めるかを記述できます。
 
-<figure class="w-figure">{% Img src="image/admin/A7uj6u5MULodlw4lVsI2.jpg", alt="Object-fit デモの視覚化", width="800", height="236", class="w-screenshot" %} <figcaption class="w-figcaption">さまざまな <code>object-fit</code> の値を実演。<a href="https://codepen.io/una/pen/mdrLGjR">Codepen のデモ</a>をご覧ください。</figcaption></figure>
+<figure>{% Img src="image/admin/A7uj6u5MULodlw4lVsI2.jpg", alt="Object-fit デモの視覚化", width="800", height="236" %} <figcaption>さまざまな <code>object-fit</code> の値を実演。<a href="https://codepen.io/una/pen/mdrLGjR">Codepen のデモ</a>をご覧ください。</figcaption></figure>
 
 `initial` 値と `fill` 値は、スペースを埋めるように画像を再調整します。この例では、これにより、ピクセルが再調整されるにつれ、画像が押しつぶされてぼやけています。これは理想的ではありません。`object-fit: cover` は、画像の最小サイズを使用してスペースを埋め、このサイズに基づいて画像をトリミングしてフィットさせます。最も低い境界で「ズームイン」します。`object-fit: contain` は、画像全体が常に表示されるようにするため、 `cover` の動作とは逆に、最大の境界のサイズ（上記の例では幅）を取って、画像のサイズを変更して固有のアスペクト比を維持しながらスペースにフィットさせます。`object-fit: none` の場合は、中央（デフォルトのオブジェクト位置）で自然なサイズでトリミングされた画像を示します。
 
@@ -49,7 +49,7 @@ tags:
 
 ## 以前の技法: `padding-top` でアスペクト比を維持する
 
-<figure class="w-figure">{% Img src="image/admin/j3YJicINXjly349uEEUt.jpg", alt="padding-top を使用して、カルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する。", width="800", height="296", class="w-screenshot" %} <figcaption class="w-figcaption"><code>padding-top</code> を使用して、カルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する。</figcaption></figure>
+<figure>{% Img src="image/admin/j3YJicINXjly349uEEUt.jpg", alt="padding-top を使用して、カルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する。", width="800", height="296" %} <figcaption><code>padding-top</code> を使用して、カルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する。</figcaption></figure>
 
 これらをさらにレスポンシブにするために、アスペクト比を使用できます。これにより、特定の比率のサイズを設定し、残りのメディアを個々の軸（高さまたは幅）に基づいて設定できます。
 
@@ -85,7 +85,7 @@ tags:
 
 ## `aspect-ratio` でアスペクト比を維持する
 
-<figure class="w-figure">{% Img src="image/admin/XT8PbPiYx1IJq3Pvmanz.jpg", alt="aspect-ratio を使用してカルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する。", width="800", height="296", class="w-screenshot" %} <figcaption class="w-figcaption"><code>aspect-ratio</code> を使用してカルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する</figcaption></figure>
+<figure>{% Img src="image/admin/XT8PbPiYx1IJq3Pvmanz.jpg", alt="aspect-ratio を使用してカルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する。", width="800", height="296" %} <figcaption><code>aspect-ratio</code> を使用してカルーセル内のプレビュー後の画像に 1:1 のアスペクト比を設定する</figcaption></figure>
 
 残念ながら、これらの `padding-top` 値の計算はあまり直感的ではなく、追加のオーバーヘッドと配置が必要です。新しい固有の `aspect-ratio` [CSS プロパティ](https://drafts.csswg.org/css-sizing-4/#aspect-ratio)を使用すると、アスペクト比を維持するための言語がはるかに明確になります。
 
@@ -133,21 +133,21 @@ tags:
 }
 ```
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/gridimages2.mp4" type="video/mp4">
   </source></video>
-  <figcaption class="w-figcaption">さまざまなアスペクト比のサイズの親要素を持つグリッド内の画像。<a href="https://codepen.io/una/pen/PoGddaw">Codepen のデモをご覧ください</a>。</figcaption></figure>
+  <figcaption>さまざまなアスペクト比のサイズの親要素を持つグリッド内の画像。<a href="https://codepen.io/una/pen/PoGddaw">Codepen のデモをご覧ください</a>。</figcaption></figure>
 
 ## 例: レイアウトシフトを防止する
 
 `aspect-ratio` のもう 1 つの優れた機能は、プレースホルダースペースを作成して、[累積レイアウトシフト](/cls/)を防止し、より優れた[ウェブバイタル](/learn-web-vitals/)を提供できることです。この最初の例では、[Unsplash](https://source.unsplash.com/) などの API からアセットを読み込むと、メディアの読み込みが終了したときにレイアウトシフトが作成されます。
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/aspect-ratio-missing.mp4" type="video/mp4">
   </source></video>
-  <figcaption class="w-figcaption">読み込まれたアセットにアスペクト比が設定されていない場合に発生する累積レイアウトシフトの動画。この動画は、エミュレートされた 3G ネットワークで録画されています。</figcaption></figure>
+  <figcaption>読み込まれたアセットにアスペクト比が設定されていない場合に発生する累積レイアウトシフトの動画。この動画は、エミュレートされた 3G ネットワークで録画されています。</figcaption></figure>
 
 一方で、`aspect-ratio` を使用すると、このレイアウトシフトを防止するためのプレースホルダーが作成されます。
 
@@ -158,11 +158,11 @@ img {
 }
 ```
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/aspect-ratio-set.mp4" type="video/mp4">
   </source></video>
-  <figcaption class="w-figcaption">アスペクト比が設定された動画は、読み込み済みのアセットに配置されます。この動画は、エミュレートされた 3G ネットワークで録画されています。<a href="https://codepen.io/una/pen/GRjLZmG">Codepen のデモをご覧ください。</a></figcaption></figure>
+  <figcaption>アスペクト比が設定された動画は、読み込み済みのアセットに配置されます。この動画は、エミュレートされた 3G ネットワークで録画されています。<a href="https://codepen.io/una/pen/GRjLZmG">Codepen のデモをご覧ください。</a></figcaption></figure>
 
 ### ボーナスヒント: アスペクト比の画像属性
 

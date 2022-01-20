@@ -199,7 +199,7 @@ async function copy() {
 
 El acceso al portapapeles siempre ha supuesto un problema de seguridad para los navegadores. Sin los permisos adecuados, una página podría copiar silenciosamente todo tipo de contenido malicioso en el portapapeles de un usuario que produciría resultados catastróficos al pegarlo. Imagine una página web que copia silenciosamente `rm -rf /` o una [bomba zip](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html) a su portapapeles.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Cuadro de diálogo del navegador que solicita al usuario el permiso del portapapeles.", width="800", height="338", class="w-screenshot" %}<figcaption class="w-figcaption"> La solicitud de permiso para la API del portapapeles.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Cuadro de diálogo del navegador que solicita al usuario el permiso del portapapeles.", width="800", height="338" %}<figcaption> La solicitud de permiso para la API del portapapeles.</figcaption></figure>
 
 Dar a las páginas web acceso de lectura sin restricciones al portapapeles es aún más problemático. Los usuarios copian rutinariamente información confidencial como contraseñas y datos personales al portapapeles, que luego podría ser leído por cualquier página sin el conocimiento del usuario.
 

@@ -187,8 +187,8 @@ A propriedade `dataTransfer` é onde toda a mágica da DnD acontece. Contém os 
 
 Neste exemplo, vamos permitir que os usuários reorganizem a ordem das colunas. Para fazer isso, primeiro você precisa armazenar o HTML do elemento de origem quando o arraste começar:
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </source></video>
   </figure>

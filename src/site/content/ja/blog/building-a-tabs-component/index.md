@@ -19,7 +19,7 @@ tags:
 
 この投稿では、レスポンシブで、複数のデバイスからの入力をサポートし、ブラウザー間で機能するWeb用のTabsコンポーネントを構築することについての考えを共有したいと思います。[デモを](https://gui-challenges.web.app/tabs/dist/)お試しください。
 
-<figure class="w-figure w-figure--fullbleed">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figure"> <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a> </figcaption></figure>
+<figure data-size="full">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4", autoplay="true", loop="true", muted="true" %} <figcaption> <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a> </figcaption></figure>
 
 ビデオにより興味があれば、この投稿のYouTubeバージョンをご覧ください。
 
@@ -31,7 +31,7 @@ Tabは設計システムの一般的なコンポーネントですが、種々�
 
 本日、tabユーザー体験の基本は、表示フレーム内のコンテンツの可視性を切り替えるボタンナビゲーション範囲です。多くの異なるコンテンツ範囲は同じスペースを共有しますが、ナビゲーション内で選択されたボタンによって条件付きで表示されます。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", alt="Webがコンポーネントのコンセプトに適用したスタイルの多様性のため、コラージュはかなり混沌になっています", class="w-screenshot", width="800", height="500" %} <figcaption class="w-figcaption"> 過去10年間のtabコンポーネントWebデザインスタイルのコラージュ </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", alt="Webがコンポーネントのコンセプトに適用したスタイルの多様性のため、コラージュはかなり混沌になっています", width="800", height="500" %} <figcaption> 過去10年間のtabコンポーネントWebデザインスタイルのコラージュ </figcaption></figure>
 
 ## Web戦術
 
@@ -49,7 +49,7 @@ Tabは設計システムの一般的なコンポーネントですが、種々�
 
 そこにはlinkと`:target`等の構造的なコンテンツメンバーがあります。`<nav>`が最適なリンクのリストと、 `<section>`が最適な`<article>`要素のリストが必要です。リンクハッシュごとはセクションと一致し、ブラウザにアンカー経由でスクロールさせます。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %} <figcaption class="w-figure"> Linkボタンをクリックして、フォーカスされたコンテンツ内にスライドさせます</figcaption></figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4", autoplay="true", loop="true", muted="true" %} <figcaption> Linkボタンをクリックして、フォーカスされたコンテンツ内にスライドさせます</figcaption></figure>
 
 たとえば、linkをクリックすると、Chrome 89にある`:target`記事が自動的にフォーカスさ、JSが必要ありません。そうしたら、ユーザーは通常入力デバイスを使用して記事のコンテンツをスクロールできます。マークアップに示されているように、これは無料で提供されるコンテンツです。
 
@@ -105,7 +105,7 @@ Tabは設計システムの一般的なコンポーネントですが、種々�
 - コンテンツ範囲<b style="color: #008CFF;">（青）</b>は水平方向にスクロール可能です
 - 各記事項目<b style="color: #2FD800;">（緑）</b>は垂直方向にスクロール可能です。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", alt="スクロール範囲の輪郭を描き、スクロールする方向を示す矢印の該当色が付いた3つのカラフルなボックス。", class="w-screenshot", width="800", height="450" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", alt="スクロール範囲の輪郭を描き、スクロールする方向を示す矢印の該当色が付いた3つのカラフルなボックス。", width="800", height="450" %}</figure>
 
 スクロールに関連する要素には2つの異なるタイプがあります。
 
@@ -161,7 +161,7 @@ snap-tabs {
 
 以下で[VisBug](https://a.nerdy.dev/gimme-visbug)を使用して強調表示したフレームは、スクロールコンテナが作成した**ウィンドウ**を確認する上で役立ちます。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", alt="header要素とセクション要素の上にはホットピンクのオーバーレイがあり、コンポーネントで占めるスペースに輪郭を描きます。", class="w-screenshot", width="800", height="620" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", alt="header要素とセクション要素の上にはホットピンクのオーバーレイがあり、コンポーネントで占めるスペースに輪郭を描きます。", width="800", height="620" %}</figure>
 
 #### Tab`<header>`レイアウト{: #tabs-header }
 
@@ -193,7 +193,7 @@ header {
 
 `.snap-indicator`は、linkのグループとともに水平方向に移動する必要があり、そしてこのheaderレイアウトは、その段階を設定する上で役立ちます。ここには絶対的に配置される要素はありません！
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", alt="nav要素とspan.indicator要素の上にはホットピンクのオーバーレイがあり、コンポーネントで占めるスペースに輪郭を描きます。", class="w-screenshot", width="800", height="368" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", alt="nav要素とspan.indicator要素の上にはホットピンクのオーバーレイがあり、コンポーネントで占めるスペースに輪郭を描きます。", width="800", height="368" %}</figure>
 
 次はスクロールスタイルです。2つの水平スクロール範囲（headerとセクション）間でスクロールスタイルを共有できることがわかったので、ユーティリティクラス`.scroll-snap-x`を作成しました。
 
@@ -255,7 +255,7 @@ nav {
 
 各リンクはそれ自体のスタイルとサイズを設定するため、ナビゲーションレイアウトでは方向とフローを指定するだけで済みます。ナビゲーションアイテムの唯一の幅は、インジケーターが新しいターゲットに合わせて幅を調整するため、タブ間の移行を楽しくします。ここにある要素の数に応じて、ブラウザはスクロールバーをレンダリングするかどうかを決定します。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", alt="ナビゲーションの要素の上にはホットピンクのオーバーレイがあり、コンポーネント内で占めるスペースとオーバーフローするところのに輪郭を描きます。", class="w-screenshot", width="800", height="327" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", alt="ナビゲーションの要素の上にはホットピンクのオーバーレイがあり、コンポーネント内で占めるスペースとオーバーフローするところのに輪郭を描きます。", width="800", height="327" %}</figure>
 
 #### Tab`<section>`レイアウト{: #tabs-section }
 
@@ -289,7 +289,7 @@ section {
 
 これは、「強引になるべく垂直方向に拡張する」と言っているかのようです（`flex-shrink: 0`設定したheaderがこの拡張プッシュに対する防御だと覚えておきましょう）。これにより、フルハイト例のセットに行の高さが設定されます。`auto-flow`スタイルは、我々の希望の通りに、グリッドに常に子を水平線に配置し、折り返しはなくするように指示します。そして親ウィンドウをオーバーフローさせます。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", alt="記事の要素の上にはホットピンクのオーバーレイがあり、コンポーネント内で占めるスペースとオーバーフローするところに輪郭を描きます。", class="w-screenshot", width="800", height="512" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", alt="記事の要素の上にはホットピンクのオーバーレイがあり、コンポーネント内で占めるスペースとオーバーフローするところに輪郭を描きます。", width="800", height="512" %}</figure>
 
 たまにこれを理解するのに困ります！このセクション要素はボックスに収まりますが、ボックスのセットも既に作成しました。画像と説明がお役に立てば幸いです。
 
@@ -327,7 +327,7 @@ article {
 
 親スクローラー内で記事をスナップすることを選択しました。ナビゲーションlinkアイテムと記事要素がそれぞれのスクロールコンテナのインラインスタートにスナップする方法が本当に気に入っています。それは調和のとれた関係のように感じます。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", alt="記事要素とその子要素の上にはホットピンクのオーバーレイがあり、コンポーネントで占めるスペースとオーバーフローする方向に輪郭を描きます。", class="w-screenshot", width="800", height="808" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", alt="記事要素とその子要素の上にはホットピンクのオーバーレイがあり、コンポーネントで占めるスペースとオーバーフローする方向に輪郭を描きます。", width="800", height="808" %}</figure>
 
 記事はグリッドの子であり、そのサイズは、スクロールUXを提供するビューポート範囲になるように事前に決めされています。つまり、ここでは高さや幅のスタイルは必要ありません。オーバーフローする方法を定義するだけで十分です。私はoverflow-yをautoに設定し、そして便利なoverscroll-behaviorプロパティを使用してスクロールの相互作用をトラップします。
 
@@ -335,13 +335,13 @@ article {
 
 以下のように、システム設定で「常にスクロールバーを表示する」を選択しました。レイアウトとスクロールオーケストレーションを確認するために、この設定をオンにしてレイアウトを機能させることは極めて重要だと思います。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", alt="3つのスクロールバーが表示されるように設定されて、今レイアウトスペースが消費されるが、コンポーネントはまだ見栄えがします", class="w-screenshot", width="500", height="607" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", alt="3つのスクロールバーが表示されるように設定されて、今レイアウトスペースが消費されるが、コンポーネントはまだ見栄えがします", width="500", height="607" %}</figure>
 
 このコンポーネント内でスクロールバーのガターがあるので、スクロール範囲がどこにあるか、それらがサポートする方向、およびそれらが互いにどのように相互作用するかを明確に示す上で役立つと思います。こういったスクロールウィンドウフレームがそれぞれどのようにレイアウトのflex またはgrid の親になるを検討しましょう。
 
 DevToolsは、これを可視化する上で役立ちます。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", alt="スクロール範囲にはgrid とflexboxツールのオーバーレイがあり、コンポーネントで占めるスペースとオーバーフローする方向に輪郭を描きます", class="w-screenshot", width="800", height="455" %} <figcaption class="w-figure"> Chromium Devtoolsは、アンカー要素でフレックスボックスナビゲーション要素レイアウト、記事要素でいっぱいのグリッドセクションレイアウト、段落と見出し要素でいっぱいの記事要素を示しています。</figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", alt="スクロール範囲にはgrid とflexboxツールのオーバーレイがあり、コンポーネントで占めるスペースとオーバーフローする方向に輪郭を描きます", width="800", height="455" %} <figcaption> Chromium Devtoolsは、アンカー要素でフレックスボックスナビゲーション要素レイアウト、記事要素でいっぱいのグリッドセクションレイアウト、段落と見出し要素でいっぱいの記事要素を示しています。</figcaption></figure>
 
 スクロールレイアウトは完全です：スナップ、ディープリンク可能、キーボードアクセス可能。 UXの機能強化、スタイル、楽しみの強力な基盤。
 
@@ -355,7 +355,7 @@ DevToolsは、これを可視化する上で役立ちます。
 
 タブの下線を記事のスクロール位置に紐付けるします。スナップは、きれいに配置されるだけでなく、アニメーションの開始と終了を固定する役割も果たします。これにより、[ミニマップの](https://en.wikipedia.org/wiki/Mini-map)ように機能する`<nav>`がコンテンツに接続される状態を維持します。CSSとJSの両方からユーザーのモーション嗜好をチェックします。気配りのある素晴らしい場所がいくつかあります！
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 #### スクロール動作{: #scroll-behavior }
 
@@ -369,7 +369,7 @@ DevToolsは、これを可視化する上で役立ちます。
 }
 ```
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ここではモーションと、ユーザーが（スクロールなどの）制御しないモーションを紹介しているため、ユーザーがオペレーティングシステムでモーションの削減を優先しない場合のみ、このスタイルを適用します。このように、それで同意する人々のためにスクロールモーションを紹介します。
 
@@ -379,7 +379,7 @@ DevToolsは、これを可視化する上で役立ちます。
 
 Chromium Devtoolsでは、設定を切り替えて、2つの異なる遷移スタイルを示すことができます。これを作るのは凄く楽しました。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -497,13 +497,13 @@ TranslateXキーフレーム：
 
 戦略のまとめるとしては、タブインジケーターは、セクションスクローラーのスクロールスナップ位置に応じて、4つのキーフレームにわたってアニメーション化されます。スナップポイントは、キーフレーム間の明確な描写を作成し、アニメーションの同期された感触を実際に追加します。
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", alt="アクティブタブと非アクティブタブは、両方のコントラストの合格点数を示すVisBugオーバーレイで表示されます", class="w-screenshot", width="540", height="400" %}</figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", alt="アクティブタブと非アクティブタブは、両方のコントラストの合格点数を示すVisBugオーバーレイで表示されます", width="540", height="400" %}</figure>
 
 ユーザーは、インタラクションを使用してアニメーションを操作しながら、インジケーターの幅と位置がセクションごとに変化するのを確認し、スクロールで完全に追跡します。
 
 お気づきではないかもしれませんが、強調表示されたナビゲーションアイテムが選択されると、色が変化することを非常に誇りに思っています。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 選択されていない明るい灰色は、強調表示されたアイテムのコントラストが高くなると、さらに押し戻されて表示されます。ホバーや選択の時など、テキストの色を変更させるのが一般的ですが、下線のインジケーターと同期して、スクロールに応じてその色を変更させるのは一段上のレベルです。
 
@@ -568,7 +568,7 @@ window.onload = () => {
 
 ユーザーは常にキーボードをクリックしたり使用したりせずに必要に応じて、自由にスクロールする場合もあります。セクションスクローラーがスクロールを停止すると、それがどこで止めても、上部のナビゲーションバーに合わせ必要があります。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 次はスクロールが終了するのをどうやって待つのです。
 
@@ -605,7 +605,7 @@ const setActiveTab = tabbtn => {
 
 アクティブなタブの設定は、現在アクティブなタブをクリアしてから、着信ナビゲーションアイテムにアクティブな状態属性を与えることから始まります。 `scrollIntoView()`の呼び出しには、CSSとの楽しい相互作用があると覚えておきましょう。
 
-<figure class="w-figure">{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}</figure>
+<figure>{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4", autoplay="true", loop="true", muted="true" %}</figure>
 
 ```css
 .scroll-snap-x {

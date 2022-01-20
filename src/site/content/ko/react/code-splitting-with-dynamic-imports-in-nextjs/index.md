@@ -47,11 +47,11 @@ Next.js가 앱을 번들로 묶는 방법을 살펴보려면 DevTools에서 네�
 
 페이지 로드 시 `Puppy.js` 구성 요소를 포함하여 필요한 모든 코드는 `index.js`로 번들로 묶입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="index.js, app.js, webpack.js, main.js, 0.js 6가지 JavaScript 파일 및 dll(동적 링크 라이브러리) 파일을 표시하는 DevTools 네트워크 탭.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="index.js, app.js, webpack.js, main.js, 0.js 6가지 JavaScript 파일 및 dll(동적 링크 라이브러리) 파일을 표시하는 DevTools 네트워크 탭.", width="800", height="665" %}</figure>
 
 **Click me** 버튼을 누르면 강아지 JPEG에 대한 요청만 **네트워크** 탭에 추가됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="6가지 JavaScript 파일과 이미지 하나를 표시하는 버튼 클릭 이후에 표시되는 DevTools 네트워크 탭.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="6가지 JavaScript 파일과 이미지 하나를 표시하는 버튼 클릭 이후에 표시되는 DevTools 네트워크 탭.", width="800", height="665" %}</figure>
 
 이러한 접근 방식의 단점은 사용자가 강아지를 보기 위해 버튼을 클릭하지 않더라도 `index.js`에 포함되어 있기 때문에 `Puppy` 구성 요소를 로드해야 한다는 것입니다. 이 간단한 예에서는 문제가 되지 않지만 실제 적용 시 필요할 경우에만 중요한 구성 요소를 로드하는 것이 상당한 개선으로 이어지는 경우가 종종 있습니다.
 
@@ -72,11 +72,11 @@ const Puppy = dynamic(import("../components/Puppy"));
 
 앱을 처음 로드하면 `index.js`만 다운로드됩니다. `Puppy` 구성 요소에 대한 코드가 포함되어 있지 않기 때문에 0.5KB 더 작습니다(37.9KB에서 37.4KB로 감소).
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="동일한 6가지 JavaScript 파일을 표시하는 DevTools 네트워크, 예외적으로 index.js는 현재 0.5KB 더 작음.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="동일한 6가지 JavaScript 파일을 표시하는 DevTools 네트워크, 예외적으로 index.js는 현재 0.5KB 더 작음.", width="800", height="665" %}</figure>
 
 `Puppy` 구성 요소는 이제 버튼을 누를 때만 로드되는 별도의 청크 `1.js`에 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="추가적인 1.js 파일과 파일 목록 하단에 추가된 이미를 표시하는 버튼 클릭 이후에 표시되는 DevTools 네트워크 탭.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="추가적인 1.js 파일과 파일 목록 하단에 추가된 이미를 표시하는 버튼 클릭 이후에 표시되는 DevTools 네트워크 탭.", width="800", height="665" %}</figure>
 
 {% Aside %} 기본적으로, Next.js는 이러한 동적 청크 *number*.js에 이름을 지정합니다. 여기에서 *number*는 1부터 시작합니다. {% endAside %}
 
@@ -108,7 +108,7 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 
 이제 버튼을 클릭하면 구성 요소를 로드하는 데 시간이 걸리고 그 동안 앱이 "로드 중…" 메시지를 표시합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="\"로드 중...\" 텍스트가 있는 어두운 화면.", width="800", height="663" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="\"로드 중...\" 텍스트가 있는 어두운 화면.", width="800", height="663" %}</figure>
 
 ## SSR 없이 동적 가져오기
 

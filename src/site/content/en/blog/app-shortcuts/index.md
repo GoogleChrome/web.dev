@@ -35,14 +35,14 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 (Windows) or dock (macOS) on the user's desktop, or long pressing the app's
 launcher icon on Android.
 
-<figure class="w-figure">
-  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420", class="w-screenshot" %}
-  <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
+<figure>
+  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420" %}
+  <figcaption>App shortcuts menu opened on Android</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420", class="w-screenshot" %}
-  <figcaption class="w-figcaption">App shortcuts menu opened on Windows</figcaption>
+<figure>
+  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420" %}
+  <figcaption>App shortcuts menu opened on Windows</figcaption>
 </figure>
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
@@ -145,9 +145,9 @@ must be at least 72 by 72 pixels. (This is derived from the
 To verify your app shortcuts are setup correctly, use the **Manifest** pane in the
 **Application** panel of DevTools.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Screenshot of app shortcuts in DevTools", width="800", height="534" %}
-  <figcaption class="w-figcaption">App shortcuts shown in DevTools</figcaption>
+  <figcaption>App shortcuts shown in DevTools</figcaption>
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -190,9 +190,9 @@ You should annotate app shortcuts `url` entries like you would do with
 App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
 Edge 85), Chrome OS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
 
-<figure class="w-figure">
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450", class="w-screenshot" %}
-  <figcaption class="w-figcaption">App shortcuts menu opened on Chrome OS</figcaption>
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450" %}
+  <figcaption>App shortcuts menu opened on Chrome OS</figcaption>
 </figure>
 
 ## Trusted Web Activity support
@@ -212,8 +212,8 @@ behaviors.
 
 ## Sample
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot"
+<figure>
+  <video controls autoplay loop muted
     src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
   </video>
 </figure>

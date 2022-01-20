@@ -114,7 +114,7 @@ window.screen;
 
 기술 분야에서 일하는 대부분의 사람들과 마찬가지로 저도 새로운 업무 현실에 적응하고 개인 홈 오피스를 설정해야 했습니다. 제 것은 아래 사진과 같습니다(관심이 있다면 [제 설정에 대한 전체 세부 정보](https://blog.tomayac.com/2020/03/23/my-working-from-home-setup-during-covid-19/)를 읽을 수 있습니다). 제 MacBook 옆에 있는 iPad는 [Sidecar](https://support.apple.com/en-us/HT210380)를 통해 노트북에 연결되어 있으므로 필요할 때마다 iPad를 두 번째 화면으로 빠르게 전환할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="2개의 의자에 놓인 학교 벤치입니다. 학교 벤치 위에는 노트북을 지지하는 신발 상자와 이를 둘러싸고 있는 두 대의 iPad가 있습니다.", width="558", height="520" %}<figcaption class="w-figcaption"> 멀티 스크린 설정.</figcaption></figure>
+<figure>{% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="2개의 의자에 놓인 학교 벤치입니다. 학교 벤치 위에는 노트북을 지지하는 신발 상자와 이를 둘러싸고 있는 두 대의 iPad가 있습니다.", width="558", height="520" %}<figcaption> 멀티 스크린 설정.</figcaption></figure>
 
 더 큰 화면을 활용하고 싶다면 위 [코드 샘플](/multi-screen-window-placement/#the-problem)의 팝업을 두 번째 화면에 추가하면 됩니다. 저는 이것을 다음과 같이 했습니다.
 
@@ -293,11 +293,11 @@ API의 다른 측면, 즉, 다양한 화면 변경 이벤트 및 `FullscreenOpti
 
 여러분이 저와 같다면 다양한 암호 화폐의 발전을 예의주시하고 있을 겁니다. (사실 저는 이 행성을 사랑하기 때문에 별로 좋아하지 않지만, 이 기사를 위해 그냥 제가 그랬다고 가정합니다.) 제가 소유하고 있는 암호화폐를 추적하기 위해, 나는 내가 볼 수 있는 웹 앱을 개발했습니다. 제 침대의 안락함과 같은 모든 삶의 상황에서 시장은 괜찮은 단일 화면 설정을 가지고 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="작가의 다리가 부분적으로 보이는 침대 끝의 거대한 TV 화면 화면에는 가짜 암호 화폐 거래 데스크가 있습니다. ", width=" 800", height="863" %}<figcaption class="w-figcaption"> 휴식과 시장 구경.</figcaption></figure>
+<figure>{% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="작가의 다리가 부분적으로 보이는 침대 끝의 거대한 TV 화면 화면에는 가짜 암호 화폐 거래 데스크가 있습니다. ", width=" 800", height="863" %}<figcaption> 휴식과 시장 구경.</figcaption></figure>
 
 이것은 암호화에 관한 것이기 때문에 시장은 언제든지 바빠질 수 있습니다. 이런 일이 발생하면 다중 화면 설정이 있는 책상으로 빠르게 이동할 수 있습니다. 통화 창을 클릭하면 반대쪽 화면의 전체 화면 보기에서 전체 세부 정보를 빠르게 볼 수 있습니다. 아래는 지난 [YCY 유혈 사태](https://www.youtube.com/watch?v=dQw4w9WgXcQ) 중에 찍은 최근 사진입니다. 그것은 저를 완전히 방심하게 했고 저는 [제 얼굴에 손을 얹었습니다](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
-<figure class="w-figure">{% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="가짜 암호 화폐 거래 데스크를 바라보는 당황한 얼굴에 손을 얹은 작성자.", width="800", height="600" %}<figcaption class="w-figcaption"> 패닉, YCY  유혈 사태 목격.</figcaption></figure>
+<figure>{% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="가짜 암호 화폐 거래 데스크를 바라보는 당황한 얼굴에 손을 얹은 작성자.", width="800", height="600" %}<figcaption> 패닉, YCY  유혈 사태 목격.</figcaption></figure>
 
 아래에 포함된 [데모](https://window-placement.glitch.me/)로 플레이하거나 글리치에서 [소스 코드](https://glitch.com/edit/#!/window-placement)를 볼 수 있습니다.
 

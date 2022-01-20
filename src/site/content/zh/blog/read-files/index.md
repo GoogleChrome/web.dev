@@ -75,7 +75,7 @@ tags:
 
 您的放置表面将取决于您的应用程序设计。您可能只希望将一部分窗口作为放置表面，也可能希望整个窗口都是放置表面。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="Squoosh（图像压缩网络应用程序）的截图。", width="800", height="589", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption">Squoosh 将整个窗口设置成了放置区。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="Squoosh（图像压缩网络应用程序）的截图。", width="800", height="589" %}<figcaption>Squoosh 将整个窗口设置成了放置区。</figcaption></figure>
 
 Squoosh 允许用户将图像拖放到窗口的任意位置，而单击**选择图像**就会调用`<input type="file">`元素。无论您选择何种放置区，请确保能够让用户一目了然地知道他们可以将文件拖放到该表面。
 

@@ -22,7 +22,7 @@ tags:
 
 方案、主机名和端口均相同的组合的网站视为“同源”，否则视为“跨源”。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -82,7 +82,7 @@ tags:
 
 eTLD+1 相同的网站被视为“同站”。eTLD+1 不同的网站则被视为“跨站”。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -129,7 +129,7 @@ eTLD+1 相同的网站被视为“同站”。eTLD+1 不同的网站则被视为
 
 “同站”的定义正在演变为将 URL 方案视为站点的一部分，从而防止将 HTTP 用作[弱通道](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8)。由于浏览器转变为这种解释，因此，当引述旧定义时，您可能会看到“无方案同站”之类的引用，而“[有方案同站](/schemeful-samesite/)”则是更严格的定义。在这种情况下，`http://www.example.com` 和 `https://www.example.com` 被视为跨站，因为方案不匹配。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

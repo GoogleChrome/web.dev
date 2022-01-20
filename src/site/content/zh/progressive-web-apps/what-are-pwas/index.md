@@ -17,7 +17,7 @@ Web 是一个不可思议的平台。其跨设备和操作系统的普遍性、�
 
 特定于平台的应用程序以极其丰富和可靠而为人所知。它们总是存在于主屏幕、程序坞和任务栏上。无论网络连接如何，它们都可以工作，并且有各自的独立使用体验。它们可以从本地文件系统读写文件，访问通过 USB、串行或蓝牙连接的硬件，甚至与设备上存储的数据（如联系人和日历事件）进行交互。在这些应用程序中，您可以执行拍照、查看主屏幕上列出的正在播放的歌曲或在另一个应用程序中控制歌曲播放等操作。特定于平台的应用程序就像运行它们的设备的*一部分*。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DKtUFjXLJbiiruKA9P1.svg", alt="说明功能强大的特定于平台的应用程序、具有高覆盖范围的 Web 应用程序以及既功能强大、又具有高覆盖范围的渐进式 Web 应用程序的相对功能和覆盖范围的图示。", width="370", height="367" %}<figcaption class="w-figcaption w-figcaption--fullbleed">特定于平台的应用程序、Web 应用程序和渐进式 Web 应用程序的功能与覆盖范围。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DKtUFjXLJbiiruKA9P1.svg", alt="说明功能强大的特定于平台的应用程序、具有高覆盖范围的 Web 应用程序以及既功能强大、又具有高覆盖范围的渐进式 Web 应用程序的相对功能和覆盖范围的图示。", width="370", height="367" %}<figcaption>特定于平台的应用程序、Web 应用程序和渐进式 Web 应用程序的功能与覆盖范围。</figcaption></figure>
 
 如果从功能和覆盖范围的角度考虑特定于平台的应用程序和 Web 应用程序，特定于平台的应用程序代表最佳的功能，而 Web 应用程序代表最佳的覆盖范围。那么渐进式 Web 应用程序处于什么位置？
 

@@ -125,7 +125,7 @@ FLoC 为基于兴趣的广告选择提供了一种隐私保护机制。
 4. Web 浏览器从其 FLoC 服务中获取描述“群组空间”的数据。
 5. 当用户在网上浏览时，其浏览器会[使用一种算法](#floc-algorithm)来定期计算“群组空间”中最能与其浏览历史记录对应的区域。
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="由 FLoC 服务器创建的“浏览历史记录空间”图表，显示多个段，每个段都有一个群组编号。", width="400", height="359" %} <figcaption class="w-figcaption">FLoC 服务将“群组空间”划分为数千个段（这里只显示几个）。</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="由 FLoC 服务器创建的“浏览历史记录空间”图表，显示多个段，每个段都有一个群组编号。", width="400", height="359" %} <figcaption>FLoC 服务将“群组空间”划分为数千个段（这里只显示几个）。</figcaption></figure>
 
 {% Aside %} 在此过程中，用户的浏览历史记录不会与 FLoC 服务或任何第三方共享。浏览器的群组由浏览器在用户的设备上计算。FLoC 服务不会获取或存储任何用户数据。{% endAside %}
 
@@ -137,7 +137,7 @@ FLoC 为基于兴趣的广告选择提供了一种隐私保护机制。
 
 在上面的例子中，Yoshi 和 Alex 的浏览器的群组都是 1354。将来，如果 Yoshi 和 Alex 的兴趣发生变化，他们的浏览器可能会移至不同的群组。在下面的示例中，Yoshi 的浏览器移至群组 1101，Alex 的浏览器移至群组 1378。其他人的浏览器会随着浏览兴趣的变化而进入或离开群组。
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="由 FLoC 服务器创建的“浏览历史记录空间”图表，显示多个段，每个段都有一个群组编号。该图表显示，随着时间的推移，属于用户 Yoshi 和 Alex 的浏览器根据他们的浏览兴趣的变化从一个群组移至另一个群组。", width="800", height="533" %} <figcaption class="w-figcaption">Yoshi 和 Alex 的兴趣发生变化时，他们的浏览器群组可能也会变化。</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="由 FLoC 服务器创建的“浏览历史记录空间”图表，显示多个段，每个段都有一个群组编号。该图表显示，随着时间的推移，属于用户 Yoshi 和 Alex 的浏览器根据他们的浏览兴趣的变化从一个群组移至另一个群组。", width="800", height="533" %} <figcaption>Yoshi 和 Alex 的兴趣发生变化时，他们的浏览器群组可能也会变化。</figcaption></figure>
 
 {% Aside %} 群组定义了一组浏览活动，而不是一群人。浏览器会随着其活动的变化而进入和离开群组。{% endAside %}
 

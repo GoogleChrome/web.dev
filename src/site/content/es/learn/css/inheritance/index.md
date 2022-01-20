@@ -41,7 +41,7 @@ article a {
 
 En esta lección, aprenderá por qué sucede eso y cómo la herencia es una característica poderosa para ayudarlo a escribir menos CSS.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'zYNGEbg', height: 400 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'zYNGEbg', height: 400 } %}</figure>
 
 ## Flujo de la herencia
 
@@ -65,7 +65,7 @@ html {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'JjEKgBX', height: 200 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'JjEKgBX', height: 200 } %}</figure>
 
 La propiedad `color` es heredada por otros elementos. El elemento `html` tiene un valor `color: lightslategray`, por lo tanto, todos los elementos que pueden heredar el color ahora tendrán un color `lightslategray`.
 
@@ -75,7 +75,7 @@ body {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'VwPLrLP', height: 200 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'VwPLrLP', height: 200 } %}</figure>
 
 {% Aside %} Debido a que esta demostración establece el tamaño de fuente en el elemento `body`, el elemento `html` aún tendrá el tamaño de fuente inicial establecido por el navegador (hoja de estilo del agente de usuario), pero los elementos `article` y `p` heredarán el tamaño de fuente declarado por el elemento `body`. Esto se debe a que la herencia solo desciende en cascada. {% endAside %}
 
@@ -87,7 +87,7 @@ p {
 
 Solo el elemento `<p>` tendrá texto en cursiva porque es el elemento anidado más profundo. La herencia solo fluye hacia abajo, no hacia los elementos principales.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'JjEKgmK', tab: 'css,result', height: 400 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'JjEKgmK', tab: 'css,result', height: 400 } %}</figure>
 
 ## ¿Qué propiedades son heredables?
 
@@ -127,11 +127,11 @@ No todas las propiedades CSS son heredables, pero hay muchas que sí lo son. Com
 
 Cada elemento HTML tiene todas las propiedades CSS definidas por defecto con un valor inicial. Un valor inicial es una propiedad que no se hereda y aparece como predeterminada si la cascada no calcula un valor para ese elemento.
 
-<figure class="w-figure">{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/OvoYqOMcdFZL7wJQIL2C.mp4" %}</figure>
+<figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/OvoYqOMcdFZL7wJQIL2C.mp4" %}</figure>
 
 Las propiedades que se pueden heredar descienden en cascada y los elementos secundarios obtendrán un valor calculado que representa el valor de sus primarios. Esto significa que si un primario tiene el elemento `font-weight` establecido en `bold`, todos los elementos secundarios estarán en negrita, a menos que su elemento `font-weight` se establezca en un valor diferente, o la hoja de estilo del agente de usuario tenga un valor `font-weight` para ese elemento.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgGPOZ' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgGPOZ' } %}</figure>
 
 ## Cómo heredar y controlar explícitamente la herencia
 
@@ -163,7 +163,7 @@ En su lugar, la clase `.my-component` establece el valor `font-weight` en `500`.
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'eYgNedO', height: 400 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'eYgNedO', height: 400 } %}</figure>
 
 Ahora, los elementos `<strong>` dentro de `.my-component` tendrán un `font-weight` igual a `500`.
 
@@ -183,7 +183,7 @@ aside strong {
 
 Este fragmento eliminará el peso en negrita de todos los elementos `<strong>` dentro de un elemento `<aside>` y, en su lugar, los convertirá en un peso normal, que es el valor inicial.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'OJWVORZ', tab: 'css,result', height: 300 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'OJWVORZ', tab: 'css,result', height: 300 } %}</figure>
 
 ### La palabra clave `unset`
 
@@ -205,7 +205,7 @@ aside p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'JjEdpjw', tab: 'css,result', height: 400 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'JjEdpjw', tab: 'css,result', height: 400 } %}</figure>
 
 Ahora, el `margin` se elimina y el `color` vuelve a ser el valor calculado heredado.
 
@@ -227,7 +227,7 @@ aside p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'bGgdLNB', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'bGgdLNB', tab: 'css,result' } %}</figure>
 
 Si en vez de ello, cambia la regla `aside p` a `all: unset`, no importa qué estilos globales se apliquen a `p` en el futuro, siempre estarán desactivados.
 
@@ -239,7 +239,7 @@ aside p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'XWpbZbB', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'XWpbZbB', tab: 'css,result' } %}</figure>
 
 {% Assessment 'conclusion' %}
 

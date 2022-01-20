@@ -12,7 +12,7 @@ web_lighthouse:
 
 В разделе Opportunities (Возможности) отчета Lighthouse перечислены все изображения в более старых форматах и показана потенциальная экономия, полученная при использовании AVIF-версий этих изображений.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="Скриншот проверки Lighthouse «Используйте современные форматы изображений»", width="800", height="306", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="Скриншот проверки Lighthouse «Используйте современные форматы изображений»", width="800", height="306" %}</figure>
 
 ## Зачем использовать изображения в формате WebP
 

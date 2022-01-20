@@ -97,11 +97,11 @@ When a website requests access to nearby devices using
 `navigator.bluetooth.requestDevice`, the browser prompts user with a device
 chooser where they can pick one device or simply cancel the request.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/bluetooth/bluetooth-device-chooser.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://webbluetoothcg.github.io/demos/playbulb-candle/">Bluetooth device user prompt.</a>
   </figcaption>
 </figure>
@@ -487,9 +487,9 @@ A **Bluetooth Internals** page is available in Chrome at
 `about://bluetooth-internals` so that you can inspect everything about nearby
 Bluetooth devices: status, services, characteristics, and descriptors.
 
-<figure class="w-figure">
-  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging Bluetooth devices.</figcaption>
+<figure>
+  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572" %}
+  <figcaption>Internal page in Chrome for debugging Bluetooth devices.</figcaption>
 </figure>
 
 I also recommend checking out the official [How to file Web Bluetooth bugs]

@@ -229,9 +229,9 @@ After:
 ```
 
 
-<figure class="w-figure">
+<figure>
   {% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The image now loads without causing a layout shift.
   </figcaption>
 </figure>
@@ -283,14 +283,14 @@ the potential to cause layout shifts. These layout shifts occur when a web font
 and its fallback font take up different amounts of space on the page. Using
 similarly proportioned fonts will minimize the size of these layout shifts.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png",
     alt="Diagram showing a layout shift caused by a font swap",
     width="800",
     height="452"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     In this example, font swapping caused page elements to shift upwards by five pixels.
   </figcaption>
 </figure>

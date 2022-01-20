@@ -129,7 +129,7 @@ const saveFile = async (blob) => {
 
 Por mais perfeita que seja a API de acesso ao sistema de arquivos, ela [ainda não está amplamente disponível](https://caniuse.com/native-filesystem-api).
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Tabela de suporte do navegador para a API de acesso ao sistema de arquivos. Todos os navegadores são marcados como 'sem suporte' ou 'atrás de um sinalizador'.", width="800", height="224", class="w-screenshot" %} <figcaption class="w-figcaption">Tabela de suporte do navegador para a API de acesso ao sistema de arquivos. (<a href="https://caniuse.com/native-filesystem-api">Fonte</a>)</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Tabela de suporte do navegador para a API de acesso ao sistema de arquivos. Todos os navegadores são marcados como 'sem suporte' ou 'atrás de um sinalizador'.", width="800", height="224" %} <figcaption>Tabela de suporte do navegador para a API de acesso ao sistema de arquivos. (<a href="https://caniuse.com/native-filesystem-api">Fonte</a>)</figcaption></figure>
 
 É por isso que vejo a API de acesso ao sistema de arquivos como um [aprimoramento progressivo](/progressively-enhance-your-pwa). Como tal, quero usá-lo quando o navegador oferecer suporte e, se não for, usar a abordagem tradicional; ao mesmo tempo, nunca pune o usuário com downloads desnecessários de código JavaScript não suportado. A [biblioteca browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) é minha resposta para esse desafio.
 
@@ -185,13 +185,13 @@ Em meu tempo livre, contribuo um pouquinho para um [PWA instalável](/progressiv
 
 Posso, por exemplo, iniciar um desenho no meu iPhone, salvá-lo (tecnicamente: baixe-o, pois o Safari não oferece suporte à API de acesso ao sistema de arquivos) na pasta Downloads do meu iPhone, abra o arquivo no meu desktop (após transferi-lo do meu telefone), modifique o arquivo e substitua-o com minhas alterações ou mesmo salve-o como um novo arquivo.
 
-<figure class="w-figure">{% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="Um desenho Excalidraw em um iPhone.", width="300", height="649", class="w-screenshot" %} <figcaption class="w-figcaption"> Iniciando um desenho Excalidraw em um iPhone onde a API de acesso ao sistema de arquivos não é suportada, mas onde um arquivo pode ser salvo (baixado) na pasta Downloads.</figcaption></figure>
+<figure>{% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="Um desenho Excalidraw em um iPhone.", width="300", height="649" %} <figcaption> Iniciando um desenho Excalidraw em um iPhone onde a API de acesso ao sistema de arquivos não é suportada, mas onde um arquivo pode ser salvo (baixado) na pasta Downloads.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="O desenho Excalidraw modificado no Chrome na área de trabalho.", width="800", height="592", class="w-screenshot" %} <figcaption class="w-figcaption"> Abrindo e modificando o desenho Excalidraw na área de trabalho onde a API de acesso ao sistema de arquivos é suportada e, portanto, o arquivo pode ser acessado por meio da API.</figcaption></figure>
+<figure>{% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="O desenho Excalidraw modificado no Chrome na área de trabalho.", width="800", height="592" %} <figcaption> Abrindo e modificando o desenho Excalidraw na área de trabalho onde a API de acesso ao sistema de arquivos é suportada e, portanto, o arquivo pode ser acessado por meio da API.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Substituindo o arquivo original com as modificações.", width="800", height="585", class="w-screenshot" %} <figcaption class="w-figcaption">Substituindo o arquivo original com as modificações no arquivo de desenho original Excalidraw. O navegador mostra uma caixa de diálogo perguntando se está tudo bem.</figcaption></figure>
+<figure>{% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Substituindo o arquivo original com as modificações.", width="800", height="585" %} <figcaption>Substituindo o arquivo original com as modificações no arquivo de desenho original Excalidraw. O navegador mostra uma caixa de diálogo perguntando se está tudo bem.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Salvando as modificações em um novo arquivo de desenho Excalidraw.", width="800", height="592", class="w-screenshot" %} <figcaption class="w-figcaption">Salvando as modificações em um novo arquivo Excalidraw. O arquivo original permanece intocado.</figcaption></figure>
+<figure>{% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Salvando as modificações em um novo arquivo de desenho Excalidraw.", width="800", height="592" %} <figcaption>Salvando as modificações em um novo arquivo Excalidraw. O arquivo original permanece intocado.</figcaption></figure>
 
 ### Amostra de código de aplicação real
 
@@ -233,9 +233,9 @@ export const loadFromJSON = async () => {
 
 Seja no Excalidraw ou em seu aplicativo, a IU deve se adaptar à situação de suporte do navegador. Se a API de acesso ao sistema de arquivos for suportada (`if ('showOpenFilePicker' in window) {}`), você pode mostrar um **botão Salvar como** além de um botão **Salvar**. As imagens abaixo mostram a diferença entre a barra de ferramentas responsiva do aplicativo principal do Excalidraw no iPhone e na área de trabalho do Chrome. Observe como no iPhone o **botão Salvar como** está faltando.
 
-<figure class="w-figure">{% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar no iPhone com apenas um botão 'Salvar'.", width="300", height="226", class="w-screenshot" %} <figcaption class="w-figcaption">Barra de ferramentas do aplicativo Excalidraw no iPhone com apenas um botão <strong>Salvar</strong>.</figcaption></figure>
+<figure>{% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar no iPhone com apenas um botão 'Salvar'.", width="300", height="226" %} <figcaption>Barra de ferramentas do aplicativo Excalidraw no iPhone com apenas um botão <strong>Salvar</strong>.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Barra de ferramentas do aplicativo Excalidraw na área de trabalho do Chrome com um botão 'Salvar' e 'Salvar como'.", width="300", height="66", class="w-screenshot" %} <figcaption class="w-figcaption">Barra de ferramentas do aplicativo Excalidraw no Chrome com um botão <strong>Salvar</strong> e um botão <strong>Salvar</strong> em foco.</figcaption></figure>
+<figure>{% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Barra de ferramentas do aplicativo Excalidraw na área de trabalho do Chrome com um botão 'Salvar' e 'Salvar como'.", width="300", height="66" %} <figcaption>Barra de ferramentas do aplicativo Excalidraw no Chrome com um botão <strong>Salvar</strong> e um botão <strong>Salvar</strong> em foco.</figcaption></figure>
 
 ## Conclusões
 

@@ -32,11 +32,11 @@ Em [O que é conteúdo misto?](/what-is-mixed-content), você pode encontrar vá
 
 O exemplo de [conteúdo misto passivo](https://passive-mixed-content.glitch.me/) fornecerá os seguintes avisos. Se o navegador conseguir encontrar o conteúdo em um `https` ele o atualizará automaticamente e exibirá uma mensagem.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools mostrando os avisos exibidos quando conteúdo misto é detectado e atualizado", width="800", height="294", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools mostrando os avisos exibidos quando conteúdo misto é detectado e atualizado", width="800", height="294" %}</figure>
 
 [O conteúdo misto ativo](https://active-mixed-content.glitch.me/) é bloqueado e exibe um aviso.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools mostrando os avisos exibidos quando o conteúdo misto ativo é bloqueado", width="800", height="304", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools mostrando os avisos exibidos quando o conteúdo misto ativo é bloqueado", width="800", height="304" %}</figure>
 
 Se você encontrar avisos como esses para `http://` em seu site, será necessário corrigi-los na fonte do site. É útil fazer uma lista desses URLs, junto com a página em que os encontrou para usar ao corrigi-los.
 

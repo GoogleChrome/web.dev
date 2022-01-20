@@ -24,7 +24,7 @@ updated: 2020-06-10
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、サービスワーカーを登録しないページをフラグします。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="サイトがサービスワーカーを登録しないことを示す Lighthouse 監査", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="サイトがサービスワーカーを登録しないことを示す Lighthouse 監査", width="800", height="95" %}</figure>
 
 Lighthouse は、[Chrome Remote Debugging Protocol (Chrome リモートデバッグプロトコル)](https://github.com/ChromeDevTools/devtools-protocol) がサービスワーカーのバージョンを返すかどうかを確認します。返されない場合に監査は失敗します。
 

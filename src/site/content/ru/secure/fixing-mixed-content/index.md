@@ -30,11 +30,11 @@ tags:
 
 При открытии примера с [пассивным смешанным контентом](https://passive-mixed-content.glitch.me/) появятся предупреждения, показанные ниже. Если браузеру удается найти нужный контент по URL-адресу с `https`, он автоматически переходит на защищенное соединение и сообщает об этом.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Предупреждения, показываемые в Chrome DevTools при обнаружении смешанного контента и переходе на защищенное соединение", width="800", height="294", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Предупреждения, показываемые в Chrome DevTools при обнаружении смешанного контента и переходе на защищенное соединение", width="800", height="294" %}</figure>
 
 [Активный смешанный контент](https://active-mixed-content.glitch.me/) блокируется с отображением предупреждения.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Предупреждения, показываемые в Chrome DevTools при блокировке активного смешанного контента", width="800", height="304", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Предупреждения, показываемые в Chrome DevTools при блокировке активного смешанного контента", width="800", height="304" %}</figure>
 
 Если для URL-адресов `http://` на вашем сайте показываются такие предупреждения, эти адреса необходимо исправить в исходном коде сайта. Чтобы вам было легче это сделать, рекомендуем составить список таких адресов, а также страниц, где они были найдены.
 

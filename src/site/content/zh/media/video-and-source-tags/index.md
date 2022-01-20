@@ -65,8 +65,8 @@ tags:
 
 节省带宽并改善网站响应性：利用媒体片段为视频元素添加开始和结束时间。
 
-<figure class="w-figure">
-  <video controls class="w-screenshot" width="100%">
+<figure>
+  <video controls width="100%">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
     <p>该浏览器不支持视频元素。</p>
@@ -86,7 +86,7 @@ tags:
 
 幸运的是，您可以在浏览器开发人员工具中执行此操作。例如，在 Chrome 中，它位于[“网络”面板](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network)中。请查找 `Accept-Ranges` 标头并验证它是否显示 `bytes`。在下图中，我将标头上画了一个红色框。如果您没有看到 `bytes` 值，则需要联系您的托管服务提供商。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools 截屏：Accept-Ranges: bytes。", width="800", height="480", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> Chrome DevTools 截屏：Accept-Ranges: bytes。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools 截屏：Accept-Ranges: bytes。", width="800", height="480" %}<figcaption> Chrome DevTools 截屏：Accept-Ranges: bytes。</figcaption></figure>
 
 ### 包含海报图像
 
@@ -100,12 +100,12 @@ tags:
 
 如果视频 `src` 遭到损坏或不支持任何提供的视频格式，海报也可以作为备用。海报图像的唯一缺点是需要额外的文件请求，它会消耗一些带宽，并且需要进行渲染。有关详细信息，请参阅[有效的编码图像](/uses-optimized-images/)。
 
-<div class="w-columns">{% Compare 'worse' %}<figure class="w-figure" w-figure--inline-left=""> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="没有备用海报，只能看到视频未显示。", width="360", height="600" %}</figure>
+<div class="w-columns">{% Compare 'worse' %}<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="没有备用海报，只能看到视频未显示。", width="360", height="600" %}</figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} 如果没有备用海报，则只能看到视频未显示。{% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
-<div data-md-type="block_html"><figure class="w-figure" w-figure--inline-right>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="备用海报看起来就像获取了视频的第一帧。", width="360", height="600" %}</figure></div>
+<div data-md-type="block_html"><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="备用海报看起来就像获取了视频的第一帧。", width="360", height="600" %}</figure></div>
 <p data-md-type="paragraph">{% CompareCaption %} 备用海报看起来就像获取了视频的第一帧。{% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
 <div data-md-type="block_html"></div>
@@ -115,8 +115,8 @@ tags:
 当视频元素对视口来说太大时，它们可能会溢出容器，导致用户无法看到内容或使用控件。
 
 <div class="w-columns">
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome 截屏，纵向：无样式的视频元素溢出视口。", width="338", height="600" %}<figcaption class="w-figcaption">Android Chrome 截屏，纵向：无样式的视频元素溢出视口。</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 截屏，横向：无样式的视频元素溢出视口。", width="800", height="450" %}<figcaption class="w-figcaption"> Android Chrome 截屏，横向：无样式的视频元素溢出视口。</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome 截屏，纵向：无样式的视频元素溢出视口。", width="338", height="600" %}<figcaption>Android Chrome 截屏，纵向：无样式的视频元素溢出视口。</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 截屏，横向：无样式的视频元素溢出视口。", width="800", height="450" %}<figcaption> Android Chrome 截屏，横向：无样式的视频元素溢出视口。</figcaption></figure>
 </div>
 
 您可以使用 CSS 控制视频尺寸。如果 CSS 不能满足您的所有需求，JavaScript 库和插件（如 [FitVids](http://fitvidsjs.com/) ，本文不做讨论）可以提供帮助，即便是来自 YouTube 和其他来源的视频，也是如此。不幸的是，这些资源会增加[网络负载大小](/total-byte-weight/)，从而对您的收入和用户的费用产生负面影响。
@@ -170,12 +170,12 @@ tags:
 iPhone 上的 Safari 可以很好地切换纵向和横向模式：
 
 <div class="w-columns">
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="iPhone 上的 Safari 中播放的视频截屏，纵向。", width="338", height="600", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">iPhone 上的 Safari 中播放视频截屏，纵向。</figcaption></figure><figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="iPhone 上的 Safari 中播放的视频截屏，横向。", width="600", height="338", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">iPhone 上的 Safari 中播放的视频截屏，横向。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="iPhone 上的 Safari 中播放的视频截屏，纵向。", width="338", height="600" %} <figcaption>iPhone 上的 Safari 中播放视频截屏，纵向。</figcaption></figure><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="iPhone 上的 Safari 中播放的视频截屏，横向。", width="600", height="338" %} <figcaption>iPhone 上的 Safari 中播放的视频截屏，横向。</figcaption></figure>
 </div>
 
 iPad 上的设备方向和 Android 上的 Chrome 都可能有问题。例如，在不进行任何自定义的情况下，iPad 上横向播放的视频可能如下所示：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="iPad 上的 Safari 中播放的视频截屏，横向。", width="600", height="450", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">iPad 上的 Safari 中播放的视频截屏，横向。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="iPad 上的 Safari 中播放的视频截屏，横向。", width="600", height="450" %} <figcaption>iPad 上的 Safari 中播放的视频截屏，横向。</figcaption></figure>
 
 使用 CSS 设置视频 `width: 100%` 或 `max-width: 100%` 可以解决许多设备的方向布局问题。
 

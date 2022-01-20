@@ -49,7 +49,7 @@ ro.observe(someElement);
 
 Как правило, [`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry) сообщает о блоке содержимого элемента через свойство с именем `contentRect`, которое возвращает объект [`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly). Блок содержимого — это область внутри рамки с учетом внутреннего отступа.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="Схема блочной модели CSS.", width="727", height="562" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="Схема блочной модели CSS.", width="727", height="562" %}</figure>
 
 Важно отметить, что, хотя `ResizeObserver` *сообщает* и размеры `contentRect`, и внутренние отступы, он *наблюдает* только `contentRect`. *Не путайте* `contentRect` с ограничивающей рамкой элемента. Ограничивающая рамка, как сообщает `getBoundingClientRect()`, представляет собой прямоугольник, который содержит весь элемент и его потомков. SVG являются исключением из правила, где `ResizeObserver` сообщает размеры ограничивающей рамки.
 
@@ -75,8 +75,8 @@ ro.observe(someElement);
 
 `ResizeObserver` позволяет реализовывать поэлементные медиазапросы. Наблюдая за элементами, вы можете императивно определять контрольные точки своего дизайна и изменять стили элемента. В следующем [примере](https://googlechrome.github.io/samples/resizeobserver/) второй блок изменит радиус границы в соответствии с его шириной.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -96,8 +96,8 @@ ro.observe(document.querySelector('.box:nth-child(2)'));
 
 `ResizeObserver` позволяет написать *единственный* фрагмент кода, который обработает *оба* сценария. Изменение размера окна — это событие, которое `ResizeObserver` может захватить по определению, но вызов `appendChild()` также изменяет размер этого элемента (если не установлено `overflow: hidden`), потому что ему нужно освободить место для новых элементов. Учитывая это, для достижения желаемого эффекта потребуется всего несколько строк:
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm" type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4" type="video/mp4; codecs=h264">
  </source></source></video></figure>

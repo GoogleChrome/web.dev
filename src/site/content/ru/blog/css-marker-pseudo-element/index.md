@@ -21,7 +21,7 @@ feedback:
 
 Благодаря Igalia при поддержке Bloomberg мы наконец-то можем избавиться от костылей для стилей списков. Посмотрите!
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %} <figcaption class="w-figcaption"> <a href="https://glitch.com/edit/#!/marker-fun-example">Посмотреть в источнике</a> </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %} <figcaption> <a href="https://glitch.com/edit/#!/marker-fun-example">Посмотреть в источнике</a> </figcaption></figure>
 
 Благодаря селектору [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) мы можем изменять содержимое и некоторые стили маркеров и чисел.
 
@@ -220,7 +220,7 @@ li::marker {
 
 Chrome DevTools помогут вам проверить, отладить и изменить стили, применяемые к псевдоэлементам `::marker`.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools открыты и показывают стили из пользовательского агента и пользовательских стилей", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools открыты и показывают стили из пользовательского агента и пользовательских стилей", width="776", height="574", style="max-inline-size: 480px" %}</figure>
 
 ### Будущие стили псевдоэлементов
 

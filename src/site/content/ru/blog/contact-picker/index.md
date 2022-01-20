@@ -20,7 +20,7 @@ feedback:
 
 &lt;style&gt;   #video-demo { max-height: 600px; } &lt;/style&gt;
 
-<figure class="w-figure w-figure--inline-right">   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",     loop=true,     autoplay=true,     muted=true,     class="w-screenshot",     linkTo=true,     id="video-demo",     playsinline=true   %}</figure>
+<figure data-float="right">   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",     loop=true,     autoplay=true,     muted=true,     linkTo=true,     id="video-demo",     playsinline=true   %}</figure>
 
 С давних времен в приложениях для iOS и Android на мобильных устройствах была функция доступа к контактам пользователя. Это одна из самых запрашиваемых разработчиками функций и часто — основная причина, по которой они разрабатывают приложение для iOS или Android.
 
@@ -132,7 +132,7 @@ Contact Picker API возвращает массив из контактов, к
 
 Доступ к контактам пользователей осуществляется через окно выбора, которое можно вызвать только жестом пользователя в [безопасном](https://w3c.github.io/webappsec-secure-contexts/) веб-контексте верхнего уровня. Благодаря этому сайт не сможет вывести окно выбора при загрузке страницы или случайным образом показать его без какого-либо контекста.
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Скриншот. Пользователи могут выбрать, какое свойство передать", width="800", height="639", class="w-screenshot" %}   <figcaption class="w-figcaption">     Пользователи могут не передавать определенные свойства. На скриншоте     пользователь снял выделение с кнопки «Номера телефонов» (Phone numbers), поэтому     они не будут переданы, хотя сайт их запрашивал   </figcaption></figure>
+<figure data-float="right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Скриншот. Пользователи могут выбрать, какое свойство передать", width="800", height="639" %}   <figcaption>     Пользователи могут не передавать определенные свойства. На скриншоте     пользователь снял выделение с кнопки «Номера телефонов» (Phone numbers), поэтому     они не будут переданы, хотя сайт их запрашивал   </figcaption></figure>
 
 Выбрать все контакты сразу нельзя — это сделано для того, чтобы поощрять пользователей выбирать только те контакты, которые нужно передать конкретному сайту. Пользователи также определяют, какие свойства передать, — с помощью кнопок свойств в верхней части окна выбора.
 
@@ -141,11 +141,11 @@ Contact Picker API возвращает массив из контактов, к
 Чтобы пользователь в точности знал, какие контактные данные передаются, окно выбора всегда отображает имя и значок контакта, а также все свойства, запрошенные сайтом. Например, если сайт запрашивает имя (`name`), адрес электронной почты (`email`) и телефон (`tel`), в окне выбора будут показаны все три свойства. А если сайт запрашивает только телефон (`tel`), то будет показано только имя и номера телефонов.
 
 <div class="switcher">
-  <figure class="w-figure">     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Скриншот окна выбора для сайта, запрашивающего все свойства", width="800", height="639", class="w-screenshot" %}     <figcaption class="w-figcaption">       Окно выбора, сайт запрашивает имя (<code>name</code>), адрес электронной почты (<code>email</code>) и       телефон (<code>tel</code>), выбран один контакт     </figcaption></figure>
-  <figure class="w-figure">     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Скриншот окна выбора для сайта, запрашивающего только номера телефонов", width="800", height="639", class="w-screenshot" %}     <figcaption class="w-figcaption">       Окно выбора, сайт запрашивает только телефон (<code>tel</code>), выбран один контакт     </figcaption></figure>
+  <figure>     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Скриншот окна выбора для сайта, запрашивающего все свойства", width="800", height="639" %}     <figcaption>       Окно выбора, сайт запрашивает имя (<code>name</code>), адрес электронной почты (<code>email</code>) и       телефон (<code>tel</code>), выбран один контакт     </figcaption></figure>
+  <figure>     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Скриншот окна выбора для сайта, запрашивающего только номера телефонов", width="800", height="639" %}     <figcaption>       Окно выбора, сайт запрашивает только телефон (<code>tel</code>), выбран один контакт     </figcaption></figure>
 </div>
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Скриншот окна выбора для сайта; долгое нажатие на контакт", width="800", height="389",class="w-screenshot" %}   <figcaption class="w-figcaption">     Результат долгого нажатия на контакт   </figcaption></figure>
+<figure data-float="right">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Скриншот окна выбора для сайта; долгое нажатие на контакт", width="800", height="389" %}   <figcaption>     Результат долгого нажатия на контакт   </figcaption></figure>
 
 При долгом нажатии на контакт отображается вся информация, которая будет передана, если выбрать этот контакт. (См. изображение с контактом «Cheshire Cat».)
 

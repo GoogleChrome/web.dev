@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse отмечает кнопки, у которых нет текстового содержимого или свойства `aria-label`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Скриншот проверки Lighthouse, отображающий кнопки без информативного названия", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Скриншот проверки Lighthouse, отображающий кнопки без информативного названия", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -88,7 +88,7 @@ WebUSB API는 JavaScript [Promise](https://developer.mozilla.org/docs/Web/JavaSc
 
 `navigator.usb.requestDevice()` 함수는 `filters`를 정의하는 필수 JavaScript 객체를 사용합니다. 이러한 필터는 USB 장치를 지정된 공급업체(`vendorId`) 및 선택적으로 제품(`productId`) 식별자와 일치시키는 데 사용됩니다. `classCode`, `protocolCode`, `serialNumber` 및 `subclassCode` 키도 여기에서 정의할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Chrome의 USB 장치 사용자 프롬프트를 보여주는 스크린샷", width="800", height="533", class="w-screenshot" %}<figcaption class="w-figcaption"> USB 장치 사용자 프롬프트.</figcaption></figure>
+<figure>{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Chrome의 USB 장치 사용자 프롬프트를 보여주는 스크린샷", width="800", height="533" %}<figcaption> USB 장치 사용자 프롬프트.</figcaption></figure>
 
 예를 들어, 원본을 허용하도록 구성된 연결된 Arduino 장치에 액세스하는 방법은 다음과 같습니다.
 
@@ -107,7 +107,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 그런데 USB 장치가 [WebUSB 지원](https://wicg.github.io/webusb/#webusb-platform-capability-descriptor)을 공표하고 랜딩 페이지 URL을 정의하면 USB 장치가 연결될 때 Chrome에서 지속적인 알림을 표시합니다. 이 알림을 클릭하면 랜딩 페이지가 열립니다.
 
-<figure class="w-figure">{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Chrome의 WebUSB 알림을 보여주는 스크린샷", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption"> WebUSB 알림.</figcaption></figure>
+<figure>{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Chrome의 WebUSB 알림을 보여주는 스크린샷", width="800", height="450" %}<figcaption> WebUSB 알림.</figcaption></figure>
 
 여기에서 간단히 `navigator.usb.getDevices()`를 호출하고 아래와 같이 Arduino 장치에 액세스할 수 있습니다.
 
@@ -202,11 +202,11 @@ WebUSB API를 사용하면 모든 USB 전송/엔드포인트 유형과 상호 �
 
 모든 USB 장치 관련 이벤트를 한 곳에서 볼 수 있는 내부 페이지인 `about://device-log`가 있어 Chrome에서는 USB 디버깅이 간편합니다.
 
-<figure class="w-figure">{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Chrome에서 WebUSB를 디버그하기 위한 장치 로그 페이지 스크린샷", width="800", height="442", class="w-screenshot" %}<figcaption class="w-figcaption"> WebUSB API 디버깅을 위한 Chrome의 장치 로그 페이지.</figcaption></figure>
+<figure>{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Chrome에서 WebUSB를 디버그하기 위한 장치 로그 페이지 스크린샷", width="800", height="442" %}<figcaption> WebUSB API 디버깅을 위한 Chrome의 장치 로그 페이지.</figcaption></figure>
 
 내부 페이지 `about://usb-internals`도 유용하며 가상 WebUSB 장치의 연결 및 분리를 시뮬레이션할 수 있습니다. 실제 하드웨어 없이 UI 테스트를 수행하는 데 유용합니다.
 
-<figure class="w-figure">{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Chrome에서 WebUSB를 디버그하기 위한 내부 페이지 스크린샷", width="800", height="294", class="w-screenshot" %}<figcaption class="w-figcaption"> WebUSB API 디버깅을 위한 Chrome의 내부 페이지.</figcaption></figure>
+<figure>{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Chrome에서 WebUSB를 디버그하기 위한 내부 페이지 스크린샷", width="800", height="294" %}<figcaption> WebUSB API 디버깅을 위한 Chrome의 내부 페이지.</figcaption></figure>
 
 대부분의 Linux 시스템에서 USB 장치는 기본적으로 읽기 전용 권한으로 매핑됩니다. Chrome에서 USB 장치를 열 수 있도록 하려면 새 [udev 규칙](https://www.freedesktop.org/software/systemd/man/udev.html)을 추가해야 합니다. 다음 내용으로 `/etc/udev/rules.d/50-yourdevicename.rules`에 파일을 만듭니다.
 

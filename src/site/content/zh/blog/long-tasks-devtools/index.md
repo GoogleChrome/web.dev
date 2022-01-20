@@ -16,7 +16,7 @@ tags:
 
 如果您使用 Lighthouse 来审计自己的页面，那么可能熟悉 [Time to Interactive](/interactive) ，这是一个表示用户何时可以与您的页面交互并获得响应的指标。但是您知道长 (JavaScript) 任务会导致 TTI 表现不佳吗？
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse 报告中显示的 Time to Interactive", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse 报告中显示的 Time to Interactive", width="800", height="169" %}
 
 ## 什么是长任务？
 
@@ -30,11 +30,11 @@ tags:
 
 到目前为止，您需要在 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) 中手动查找超过 50 毫秒的“黄色长块”脚本，或者使用 [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) 找出哪些任务延迟了交互。这可能有点麻烦。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="显示短任务和长任务差异的 DevTools Performance 面板截图", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="显示短任务和长任务差异的 DevTools Performance 面板截图", width="800", height="450" %}
 
 为了帮助简化性能审计工作流程， [DevTools 现在可视化了长任务](https://developers.google.com/web/updates/2019/03/devtools#longtasks) 。如果任务（以灰色显示）是长任务，则会以红色标注。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools 将长任务可视化为性能面板中的灰色条，以红色标注", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools 将长任务可视化为性能面板中的灰色条，以红色标注", width="800", height="450" %}
 
 - 在[性能面板](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)中记录加载网页的跟踪情况。
 - 在主线程视图中寻找红色标志。您应该会看到任务现在是灰色的（“任务”）。
@@ -44,7 +44,7 @@ tags:
 
 要发现导致长任务的原因，请选择灰色的**任务**栏。在下方的抽屉中，选择**自下而上**和**按活动分组**。这样就可以查看哪些活动对长任务完成的任务贡献最大（总共）。下面似乎是一组耗时高的 DOM 查询。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="在 DevTools 中选择一个长任务（标记为“任务”）可以深入了解负责它的活动。", width=" 800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="在 DevTools 中选择一个长任务（标记为“任务”）可以深入了解负责它的活动。", width=" 800", height="450" %}
 
 ## 优化长任务的常用方法有哪些？
 

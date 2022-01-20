@@ -17,7 +17,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает недопустимые файлы `robots.txt`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Аудит Lighthouse показывает недопустимый файл robots.txt", width="800", height="203", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Аудит Lighthouse показывает недопустимый файл robots.txt", width="800", height="203" %}</figure>
 
 {% Aside %} Большинство аудитов Lighthouse применяется только к той странице, на которой вы сейчас находитесь. Однако, поскольку `robots.txt` определяется на уровне имени хоста, этот аудит применяется ко всему вашему домену (или субдомену). {% endAside %}
 

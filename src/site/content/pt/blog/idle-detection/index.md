@@ -142,7 +142,7 @@ console.log('IdleDetector is stopped.');
 
 A partir do Chromium 94, você pode emular eventos ociosos no DevTools sem realmente ficar ocioso. Em DevTools, abra a **guia Sensores** e procure o **Emular estado de Detector Inativo**. Você pode ver as várias opções no vídeo abaixo.
 
-<figure class="w-figure">{% Video src = "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/2OEuuTRnBdDoxARFejNN.mp4", controls = true, autoplay = true, loop = true, muted = true, class = "w-screenshot", playsinline = true%}<figcaption class="w-figcaption"> Emulação de estado de detector inativo no DevTools.</figcaption></figure>
+<figure>{% Video src = "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/2OEuuTRnBdDoxARFejNN.mp4", controls = true, autoplay = true, loop = true, muted = true, playsinline = true%}<figcaption> Emulação de estado de detector inativo no DevTools.</figcaption></figure>
 
 ### Suporte para Puppeteer
 

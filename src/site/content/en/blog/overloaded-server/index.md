@@ -115,9 +115,9 @@ CDNs benefit from scale, so operating your own CDN rarely makes sense. A basic C
 
 Identify resources that are not being served from a CDN (but should be) by running [WebPageTest](https://webpagetest.org/). On the results page, click on the square above 'Effective use of CDN' to see the list of resources that should be served from a CDN.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109" %}
+  <figcaption>
    WebPageTest results
   </figcaption>
 </figure>

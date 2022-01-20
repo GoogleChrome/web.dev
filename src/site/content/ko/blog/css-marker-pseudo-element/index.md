@@ -21,7 +21,7 @@ feedback:
 
 Bloomberg가 후원하는 Igalia 덕분에 마침내 스타일링 목록을 쉽게 처리할 수 있습니다. 보세요!
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %} <figcaption class="w-figcaption"> <a href="https://glitch.com/edit/#!/marker-fun-example">소스 보기</a> </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %} <figcaption> <a href="https://glitch.com/edit/#!/marker-fun-example">소스 보기</a> </figcaption></figure>
 
 [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) 덕분에 글머리 기호와 숫자의 내용과 일부 스타일을 변경할 수 있습니다.
 
@@ -220,7 +220,7 @@ li::marker {
 
 Chrome DevTools는 `::marker` 의사 요소에 적용되는 스타일을 검사, 디버그 및 수정하는 데 도움을 줄 준비가 되어 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools가 사용자 에이전트 및 사용자 스타일의 스타일을 열고 표시합니다.", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools가 사용자 에이전트 및 사용자 스타일의 스타일을 열고 표시합니다.", width="776", height="574", style="max-inline-size: 480px" %}</figure>
 
 ### 미래의 의사 요소 스타일링
 

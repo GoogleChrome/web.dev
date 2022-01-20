@@ -21,9 +21,9 @@ thumbnail: image/admin/X84uooDup0B9OYWY4ZKh.jpg
 
 En marzo de 2003, [Nick Finck](https://twitter.com/nickf) y [Steve Champeon](https://twitter.com/schampeo) sorprendieron al mundo del diseño web con el concepto de [mejora progresiva](http://www.hesketh.com/publications/inclusive_web_design_for_the_future/), una estrategia para el diseño web que enfatiza la carga del contenido principal de la página web en primer lugar, y que luego agrega progresivamente capas de presentación y características más matizadas y técnicamente rigurosas sobre el contenido. Mientras que en 2003, la mejora progresiva consistía en usar, en ese momento, características modernas de CSS, JavaScript discreto e incluso gráficos vectoriales escalables. La mejora progresiva en 2020 y después se trata de utilizar [las capacidades de los navegadores modernos](/fugu-status/).
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IEOd4MT9BqnbeXQ7z0vC.png", alt="Diseño web inclusivo para el futuro con mejoras progresivas. Diapositiva de título de la presentación original de Finck y Champeon.", width="800", height="597", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IEOd4MT9BqnbeXQ7z0vC.png", alt="Diseño web inclusivo para el futuro con mejoras progresivas. Diapositiva de título de la presentación original de Finck y Champeon.", width="800", height="597" %}
+<figcaption>
  Diapositiva: Diseño web inclusivo para el futuro con mejoras progresivas.
  (<a href="http://www.hesketh.com/publications/inclusive_web_design_for_the_future/">Fuente</a>)
  </figcaption>
@@ -33,18 +33,18 @@ En marzo de 2003, [Nick Finck](https://twitter.com/nickf) y [Steve Champeon](htt
 
 Hablando de JavaScript, la situación de compatibilidad del navegador para las últimas funciones básicas de JavaScript de ES 2015 es excelente. El nuevo estándar incluye promesas, módulos, clases, literales de plantilla, funciones de flecha, `let` y `const`, parámetros predeterminados, generadores, asignación de desestructuración, descanso y extensión, `Map`/`Set`, `WeakMap`/`WeakSet`, y muchos más. [Todos son compatibles](https://caniuse.com/#feat=es6).
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sYcABrEPMr01C2ilp4B0.png", alt="La tabla de compatibilidad de CanIUse para las funciones de ES6 que muestra la compatibilidad con todos los navegadores principales.", width="800", height="296", class= "w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sYcABrEPMr01C2ilp4B0.png", alt="La tabla de compatibilidad de CanIUse para las funciones de ES6 que muestra la compatibilidad con todos los navegadores principales.", width="800", height="296" %}
+<figcaption>
  La tabla de compatibilidad del navegador ECMAScript 2015 (ES6). (<a href="https://caniuse.com/#feat=es6">Fuente</a>)
  </figcaption>
 </figure>
 
 Las funciones asincrónicas, una característica de ES 2017 y una de mis favoritas, [se pueden utilizar](https://caniuse.com/#feat=async-functions) en todos los navegadores principales. Las palabras clave `async` y `await` permiten que el comportamiento asincrónico basado en promesas se escriba en un estilo más limpio, evitando la necesidad de configurar explícitamente cadenas de promesas.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0WFlQTFFTlqXKvpROMu9.png", alt="La tabla de compatibilidad de CanIUse para funciones asíncronas que muestra compatibilidad en todos los navegadores principales.", width="800", height="247", class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0WFlQTFFTlqXKvpROMu9.png", alt="La tabla de compatibilidad de CanIUse para funciones asíncronas que muestra compatibilidad en todos los navegadores principales.", width="800", height="247" %}
+ <figcaption>
   La tabla de soporte del navegador de funciones asíncronas. (<a href="https://caniuse.com/#feat=async-functions">Fuente</a>)
   </figcaption>
 </figure>
@@ -64,9 +64,9 @@ console.log(0 ?? 42);
 // Expected output: 0
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/v1nhcTV9aaqPKd9oRvYz.png", alt="La imagen de fondo de hierba verde icónica de Windows XP.", width="800", height="500" %}
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+ <figcaption>
   Está mejor que nunca cuando se trata de funciones básicas de JavaScript (captura de pantalla de producto de Microsoft, utilizada con <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/permissions/default">permiso</a>.)</figcaption></figure>
 
 ## La aplicación de muestra: Fugu Greetings
@@ -75,9 +75,9 @@ Para este artículo, trabajo con una PWA simple, llamada [Fugu Greetings](https:
 
 Fugu Greetings es una aplicación de dibujo que te permite crear tarjetas de felicitación virtuales y enviárselas a tus seres queridos. Ejemplifica [los conceptos centrales de PWA](/progressive-web-apps/). Es [confiable](/reliable/) y está completamente habilitada sin conexión, por lo que puede usarla incluso si no está conectado a una red. También se puede [instalar](/install-criteria/) en la pantalla de inicio de un dispositivo y se integra perfectamente con el sistema operativo como una aplicación independiente.
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0id013BKBF2z7m70TrX.png", alt="PWA Fugu Greetings con un dibujo que se asemeja al logo de la comunidad de PWA.", width="800", height="543", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0id013BKBF2z7m70TrX.png", alt="PWA Fugu Greetings con un dibujo que se asemeja al logo de la comunidad de PWA.", width="800", height="543" %}
+<figcaption>
  La aplicación de muestra <a href="https://tomayac.github.io/fugu-greetings/public/">Fugu Greetings.</a>
  </figcaption>
  </figure>
@@ -153,25 +153,25 @@ const loadImportAndExport = () => {
 
 Pero antes de entrar de lleno en los detalles de la API de acceso al sistema de archivos, permítanme destacar rápidamente el patrón de mejora progresiva aquí. En los navegadores que actualmente no son compatibles con la API de acceso al sistema de archivos, cargo los scripts heredados. Puede ver las pestañas de red de Firefox y Safari a continuación.
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rnPL8xIMt6HJEUbDfrez.png", alt="Safari Web Inspector muestra los archivos heredados que se cargan.", width="800", height="114", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rnPL8xIMt6HJEUbDfrez.png", alt="Safari Web Inspector muestra los archivos heredados que se cargan.", width="800", height="114" %}
+<figcaption>
  Pestaña de red Safari Web Inspector.
  </figcaption>
  </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bui4rcv0jvlVLHI3jBoo.png", alt="Herramientas de desarrollo de Firefox que muestran los archivos heredados que se cargan.", width="800", height="166", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bui4rcv0jvlVLHI3jBoo.png", alt="Herramientas de desarrollo de Firefox que muestran los archivos heredados que se cargan.", width="800", height="166" %}
+<figcaption>
  Pestaña de red Firefox Developer Tools.
  </figcaption>
  </figure>
 
 Sin embargo, en Chrome, un navegador que admite la API, solo se cargan los nuevos scripts. Esto se hace posible de forma elegante gracias a [dynamic `import()`](https://v8.dev/features/dynamic-import), que todos los navegadores modernos [soportan](https://caniuse.com/#feat=es6-module-dynamic-import). Como dije anteriortmente, las cosas van viento en popa hoy en día.
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/plf6kGtFE8g9Fjogv8ia.png", alt="Chrome DevTools que muestra los archivos modernos que se cargan.", width="800", height="241", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/plf6kGtFE8g9Fjogv8ia.png", alt="Chrome DevTools que muestra los archivos modernos que se cargan.", width="800", height="241" %}
+<figcaption>
  Pestaña de red Chrome DevTools.
  </figcaption>
  </figure>
@@ -227,23 +227,23 @@ const exportImage = async (blob) => {
 
 Utilizando la mejora progresiva con la API de acceso al sistema de archivos, puedo abrir un archivo como antes. El archivo importado se dibuja directamente en el lienzo. Puedo hacer mis ediciones y finalmente guardarlas con un cuadro de diálogo de guardado real donde puedo elegir el nombre y la ubicación de almacenamiento del archivo. Ahora el archivo está listo para conservarse por la eternidad.
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEKHbetFMURVWh4QPRJw.png", alt="Aplicación Fugu Greetings con un cuadro de diálogo para abrir archivo.", width="800", height="480", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEKHbetFMURVWh4QPRJw.png", alt="Aplicación Fugu Greetings con un cuadro de diálogo para abrir archivo.", width="800", height="480" %}
+<figcaption>
  El diálogo abrir de archivo.
  </figcaption>
  </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tls52mkxDB513SzzcfNj.png", alt="La aplicación Fugu Greetings ahora con una imagen importada.", width="800", height="480", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tls52mkxDB513SzzcfNj.png", alt="La aplicación Fugu Greetings ahora con una imagen importada.", width="800", height="480" %}
+<figcaption>
  La imagen importada.
  </figcaption>
  </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3LwHvtROaN1bHJN1El5D.png", alt="Aplicación Fugu Greetings con la imagen modificada", width="800", height="480", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3LwHvtROaN1bHJN1El5D.png", alt="Aplicación Fugu Greetings con la imagen modificada", width="800", height="480" %}
+<figcaption>
  Guardando la imagen modificada en un nuevo archivo.
 </figcaption>
 </figure>
@@ -252,9 +252,9 @@ Utilizando la mejora progresiva con la API de acceso al sistema de archivos, pue
 
 Además de almacenarla por toda la eternidad, tal vez realmente quiera compartir mi tarjeta de felicitación. Esto es algo que la [API Web Share](/web-share/) y la [API Web Share Target](/web-share-target/) me permiten hacer. Los sistemas operativos móviles y, más recientemente, los de escritorio, han adquirido mecanismos de intercambio integrados. Por ejemplo, a continuación se muestra la hoja para compartir de Safari de escritorio en macOS activada desde un artículo de mi [blog](https://blog.tomayac.com/). Cuando hace clic en el botón **Compartir artículo**, puedes compartir un enlace al artículo con un amigo, por ejemplo, a través de la aplicación Mensajes de macOS.
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sinRHRHFgSgwAC7x8dIZ.png", alt="Hoja para compartir de Desktop Safari en macOS activada desde el botón Compartir de un artículo", width="800", height="423", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sinRHRHFgSgwAC7x8dIZ.png", alt="Hoja para compartir de Desktop Safari en macOS activada desde el botón Compartir de un artículo", width="800", height="423" %}
+<figcaption>
  API Web Share en Safari de escritorio para macOS.
  </figcaption>
  </figure>
@@ -310,16 +310,16 @@ const loadShare = () => {
 En Fugu Greetings, si toco el botón **Compartir** en un navegador compatible como Chrome en Android, se abre la hoja para compartir incorporada. Puedo, por ejemplo, escoger Gmail, y el widget del redactor de correo electrónico aparece con la imagen adjunta.
 
 <div class="switcher">
-  <figure class="w-figure">
-   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/szInJQl908kv9GEU8EJf.png", alt="Hoja para compartir a nivel de SO que muestra varias aplicaciones para compartir la imagen.", width="800", height="1645", class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/szInJQl908kv9GEU8EJf.png", alt="Hoja para compartir a nivel de SO que muestra varias aplicaciones para compartir la imagen.", width="800", height="1645" %}
+   <figcaption>
     Elección de una aplicación para compartir el archivo.
    </figcaption>
   </figure>
 
-  <figure class="w-figure">
-   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mKmdg1OMGpWDukmfSSOl.png", alt="Widget de redacción de correo electrónico de Gmail con la imagen adjunta.", width = "800", height = "1645", class = "w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mKmdg1OMGpWDukmfSSOl.png", alt="Widget de redacción de correo electrónico de Gmail con la imagen adjunta.", width = "800", height = "1645" %}
+   <figcaption>
      El archivo se adjunta a un nuevo correo electrónico en el redactor de Gmail.
    </figcaption>
   </figure>
@@ -355,16 +355,16 @@ En Fugu Greeting, cuando toco el **botón Contactos** y selecciono a mis dos mej
 [Сергей Михайлович Брин](https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D0%BD,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87) y [劳伦斯·爱德华·"拉里"·佩奇](https://zh.wikipedia.org/wiki/%E6%8B%89%E9%87%8C%C2%B7%E4%BD%A9%E5%A5%87), puedes ver cómo el selector de contactos se limita a mostrar solo sus nombres, pero no sus direcciones de correo electrónico u otra información como sus números de teléfono. Luego, sus nombres se incorporan a mi tarjeta de felicitación.
 
 <div class="switcher">
-  <figure class="w-figure">
-   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T5gmSr1XGiVIV9Pw1HbC.png", alt="Selector de contactos que muestra los nombres de dos contactos en la libreta de direcciones.", width="800", height="1645", class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T5gmSr1XGiVIV9Pw1HbC.png", alt="Selector de contactos que muestra los nombres de dos contactos en la libreta de direcciones.", width="800", height="1645" %}
+   <figcaption>
     Selección de dos nombres con el selector de contactos de la libreta de direcciones.
    </figcaption>
    </figure>
 
-  <figure class="w-figure">
-   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ioMOCEHwvwdyzS7DX5L8.png", alt="Los nombres de los dos contactos seleccionados previamente incorporados a la tarjeta de felicitación.", width="800", height="1644", class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ioMOCEHwvwdyzS7DX5L8.png", alt="Los nombres de los dos contactos seleccionados previamente incorporados a la tarjeta de felicitación.", width="800", height="1644" %}
+   <figcaption>
     Luego, los dos nombres se incorporan a la tarjeta de felicitación.
    </figcaption>
   </figure>
@@ -423,18 +423,18 @@ if ('clipboard' in navigator && 'write' in navigator.clipboard) {
 
 Entonces, ¿cómo funciona esto en la práctica? Tengo una imagen abierta en la aplicación macOS Preview y la copio al portapapeles. Cuando hago clic en **Pegar**, la aplicación Fugu Greetings me pregunta si quiero permitir que la aplicación vea texto e imágenes en el portapapeles.
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EO9BemEDnDtO3SvLl8u5.png", alt="La aplicación Fugu Greetings muestra la solicitud de permiso del portapapeles.", width="800", height="543", class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EO9BemEDnDtO3SvLl8u5.png", alt="La aplicación Fugu Greetings muestra la solicitud de permiso del portapapeles.", width="800", height="543" %}
+ <figcaption>
   La solicitud de permiso del portapapeles.
   </figcaption>
 </figure>
 
 Finalmente, después de aceptar el permiso, la imagen se pega en la aplicación. También funciona al revés. Déjame copiar una tarjeta de felicitación en el portapapeles. Cuando abro Preview y hago clic en **File** y luego en **New desde el portapapeles**, la tarjeta de felicitación se pega en una nueva imagen sin título.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VAkvEYWsQsJ0VJ8IjEs1.png", alt="La aplicación de vista previa de macOS con una imagen sin título, recién pegada.", width="800", height="464", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VAkvEYWsQsJ0VJ8IjEs1.png", alt="La aplicación de vista previa de macOS con una imagen sin título, recién pegada.", width="800", height="464" %}
+<figcaption>
  Una imagen pegada en la aplicación macOS Preview.
  </figcaption>
  </figure>
@@ -466,16 +466,16 @@ if ('setAppBadge' in navigator) {
 
 En este ejemplo, dibujé los números del uno al siete, usando un trazo de lápiz por número. El contador de insignias en el icono ahora está en siete.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uKurKxYeRlLCLXJYhX9I.png", alt="Los números del uno al siete dibujados en la tarjeta de felicitación, cada uno con un solo trazo de lápiz.", width="800", height="480", class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uKurKxYeRlLCLXJYhX9I.png", alt="Los números del uno al siete dibujados en la tarjeta de felicitación, cada uno con un solo trazo de lápiz.", width="800", height="480" %}
+ <figcaption>
   Dibujo de los números del 1 al 7 con siete trazos de lápiz.
  </figcaption>
 </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5uOcN2MdjKVnWXRyTmCG.png", alt="Icono de insignia en la aplicación Fugu Greetings que muestra el número 7.", width="742", height="448", class="w-screenshot" %}
-<figcaption class="w-figcaption">
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5uOcN2MdjKVnWXRyTmCG.png", alt="Icono de insignia en la aplicación Fugu Greetings que muestra el número 7.", width="742", height="448" %}
+<figcaption>
 El contador de trazos de lápiz tiene la forma de la credencial del icono de la aplicación.
 </figcaption>
 </figure>
@@ -539,9 +539,9 @@ if ('periodicSync' in self.registration) {
 
 En Fugu Greetings, al presionar el botón **Fondo de pantalla** se muestra la imagen de la tarjeta de felicitación del día que se actualiza todos los días a través de la API de sincronización periódica en segundo plano.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YdSHSI4pZcTPyVv8CVx8.png", alt="Aplicación Fugu Greetings con una nueva imagen de tarjeta de felicitación del día.", width="800", height="481", class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YdSHSI4pZcTPyVv8CVx8.png", alt="Aplicación Fugu Greetings con una nueva imagen de tarjeta de felicitación del día.", width="800", height="481" %}
+ <figcaption>
   Al presionar el botón <strong>Fondo de pantalla</strong> se muestra la imagen del día.
  </figcaption>
 </figure>
@@ -574,18 +574,18 @@ if ('Notification' in window && 'showTrigger' in Notification.prototype) {
 
 Cuando marco la casilla de verificación **Recordatorio** en Fugu Greetings, un mensaje me pregunta cuándo quiero que se me recuerde que debo terminar mi tarjeta de felicitación.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xtD7PtIIBO0Yn1ISFSyz.png", alt="Aplicación Fugu Greetings con un mensaje que pregunta al usuario cuándo quiere que se le recuerde que termine su tarjeta de felicitación.", width="800", height="480", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xtD7PtIIBO0Yn1ISFSyz.png", alt="Aplicación Fugu Greetings con un mensaje que pregunta al usuario cuándo quiere que se le recuerde que termine su tarjeta de felicitación.", width="800", height="480" %}
+  <figcaption>
    Programación de una notificación local para recordarle que debe terminar una tarjeta de felicitación.
   </figcaption>
 </figure>
 
 Cuando se activa una notificación programada en Fugu Greetings, se muestra como cualquier otra notificación, pero como escribí antes, no fue necesaria una conexión de red.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e1FJA11UE3lrL1d4mCCo.png", alt="Centro de notificaciones de macOS que muestra una notificación activada de Fugu Greetings.", width="300", height="172", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e1FJA11UE3lrL1d4mCCo.png", alt="Centro de notificaciones de macOS que muestra una notificación activada de Fugu Greetings.", width="300", height="172" %}
+  <figcaption>
    La notificación activada aparece en el Centro de notificaciones de macOS.
   </figcaption>
 </figure>
@@ -626,9 +626,9 @@ if ('wakeLock' in navigator && 'request' in navigator.wakeLock) {
 
 En Fugu Greetings, hay una **casilla de verificación Insomnia** que, cuando está marcada, mantiene la pantalla activa.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kB5LkdV3cVKaJ0Xze76v.png", alt="La casilla de insomnia, si está marcada, mantiene la pantalla activa.", width="800", height="480", class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kB5LkdV3cVKaJ0Xze76v.png", alt="La casilla de insomnia, si está marcada, mantiene la pantalla activa.", width="800", height="480" %}
+ <figcaption>
   La casilla de verificación <strong>Insomnia</strong> mantiene la aplicación activa.
  </figcaption>
 </figure>
@@ -666,9 +666,9 @@ if ('IdleDetector' in window) {
 
 En la aplicación Fugu Greetings, el lienzo se borra cuando la casilla de verificación **Ephemeral** está marcada y el usuario está inactivo durante demasiado tiempo.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yq3IsOqp01AZTw7nvfnB.png", alt="La aplicación Fugu Greetings con un lienzo despejado después de que el usuario ha estado inactivo durante demasiado tiempo.", width="800", height="480", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yq3IsOqp01AZTw7nvfnB.png", alt="La aplicación Fugu Greetings con un lienzo despejado después de que el usuario ha estado inactivo durante demasiado tiempo.", width="800", height="480" %}
+  <figcaption>
    Cuando la casilla de verificación <strong>Ephemeral</strong> está marcada y el usuario ha estado inactivo durante demasiado tiempo, el lienzo se borra.
   </figcaption>
 </figure>
@@ -677,39 +677,39 @@ En la aplicación Fugu Greetings, el lienzo se borra cuando la casilla de verifi
 
 Uf, qué paseo. Tantas API en una sola aplicación de muestra. Y recuerde, nunca hacemos que el usuario pague el costo de descarga de una función que su navegador no admite. Al usar la mejora progresiva, me aseguro de que solo se cargue el código relevante. Y dado que con HTTP/2, las solicitudes son baratas, este patrón debería funcionar bien para muchas aplicaciones, aunque es posible que desee considerar un paquete para aplicaciones realmente grandes.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DOnuk7CHPsnbTdlqOHXM.png", alt="El panel Chrome DevTools Network muestra solo solicitudes de archivos con código compatible con el navegador actual.", width="800", height="566", class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DOnuk7CHPsnbTdlqOHXM.png", alt="El panel Chrome DevTools Network muestra solo solicitudes de archivos con código compatible con el navegador actual.", width="800", height="566" %}
+ <figcaption>
   La pestaña de DevTools de Chrome muestra solo las solicitudes de archivos con código compatible con el navegador actual.
  </figcaption>
 </figure>
 
 La aplicación puede aparecer un poco diferente en cada navegador, ya que no todas las plataformas admiten todas las funciones, pero la funcionalidad principal siempre está disponible, mejorada progresivamente de acuerdo con las capacidades del navegador específico. Tenga en cuenta que estas capacidades pueden cambiar incluso en el mismo navegador, dependiendo de si la aplicación se ejecuta como una aplicación instalada o en una pestaña del navegador.
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LmUW0CZpH5eXIoHTZ6kH.png", alt="Fugu Greetings en Android Chrome, mostrando muchas funciones disponibles.", width="500", height="243", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LmUW0CZpH5eXIoHTZ6kH.png", alt="Fugu Greetings en Android Chrome, mostrando muchas funciones disponibles.", width="500", height="243" %}
+  <figcaption>
    <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> en ejecución en Android Chrome.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
- {% Img src ="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BOcbAW4FCi10d9cGdeNW.png", alt="Fugu Greetings ejecutándose en Safari de escritorio, mostrando menos funciones disponibles.", width="500", height="403", class="w-screenshot" %}
- <figcaption class="w-figcaption"> <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> en ejecución en Safari de escritorio.
+<figure>
+ {% Img src ="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BOcbAW4FCi10d9cGdeNW.png", alt="Fugu Greetings ejecutándose en Safari de escritorio, mostrando menos funciones disponibles.", width="500", height="403" %}
+ <figcaption> <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> en ejecución en Safari de escritorio.
  </figcaption>
 </figure>
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7zT4BEUzxTkjg8e08OJU.png", alt="Fugu Greetings en ejecución en Chrome para escritorio, mostrando varias funciones disponibles.", width="500", height="348", class="w-screenshot" %}
-  <figcaption class="w-figcaption"> <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> en ejecución en Chrome para escritorios.
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7zT4BEUzxTkjg8e08OJU.png", alt="Fugu Greetings en ejecución en Chrome para escritorio, mostrando varias funciones disponibles.", width="500", height="348" %}
+  <figcaption> <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> en ejecución en Chrome para escritorios.
   </figcaption>
 </figure>
 
 Si está interesado en la [aplicación Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/) búsquelo y [bifúrquelo en GitHub](https://github.com/tomayac/fugu-greetings).
 
-<figure class="w-figure">
- {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l260mtBzRi8OxdV8gXSg.png", alt="Repo de Fugu Greetings en GitHub.", width="800", height="490", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+ {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l260mtBzRi8OxdV8gXSg.png", alt="Repo de Fugu Greetings en GitHub.", width="800", height="490" %}
+  <figcaption>
    <a href="https://github.com/tomayac/fugu-greetings">Aplicación Fugu Greetings</a> en GitHub.
   </figcaption>
 </figure>

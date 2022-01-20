@@ -45,9 +45,9 @@ Informa al usuario tanto de las acciones que aún puede hacer cuando tiene una f
 
 > Parece que tienes una mala conexión a la red. ¡No es para preocuparse! Los mensajes se enviarán cuando la red se restaure.
 
-<figure class="w-figure" style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/roxoXuJ9x7qUHFVWMgXZ.png", alt="La aplicación de mensajería emoji de Emojoy que informa al usuario cuando se produce un cambio de estado.", width="335", height="601" %}<figcaption class="w-figcaption"> Informarle al usuario lo antes posible y de la manera más clara cuando se produzca un cambio de estado.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/roxoXuJ9x7qUHFVWMgXZ.png", alt="La aplicación de mensajería emoji de Emojoy que informa al usuario cuando se produce un cambio de estado.", width="335", height="601" %}<figcaption> Informarle al usuario lo antes posible y de la manera más clara cuando se produzca un cambio de estado.</figcaption></figure>
 
-<figure class="w-figure" style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GvE07BeSsnTyxnRbkZhz.png", alt="La aplicación I/O del 2016 le informa al usuario cuando se produce un cambio de estado.", width="335", height="601" %}<figcaption class="w-figcaption"> La aplicación I/O de Google utilizó un "toast" de material design para que el usuario supiera cuándo estaba desconectado.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GvE07BeSsnTyxnRbkZhz.png", alt="La aplicación I/O del 2016 le informa al usuario cuando se produce un cambio de estado.", width="335", height="601" %}<figcaption> La aplicación I/O de Google utilizó un "toast" de material design para que el usuario supiera cuándo estaba desconectado.</figcaption></figure>
 
 ### Infórmale a los usuarios cuando la conexión de red mejore o se restablezca
 
@@ -57,21 +57,21 @@ Se recomienda que le informes al usuario que tu aplicación web se ha actualizad
 
 Un ejemplo de esto sería el [Chrome Platform Status](https://chromestatus.com), que publica una nota para el usuario cuando se actualiza la aplicación.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ikam7evJEVSicAnVxvWA.png", alt="Una aplicación meteorológica de ejemplo", width="324", height="598" %}<figcaption class="w-figcaption"> Algunas aplicaciones, como la aplicación del tiempo, deben actualizarse automáticamente, ya que los datos antiguos no son útiles.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ikam7evJEVSicAnVxvWA.png", alt="Una aplicación meteorológica de ejemplo", width="324", height="598" %}<figcaption> Algunas aplicaciones, como la aplicación del tiempo, deben actualizarse automáticamente, ya que los datos antiguos no son útiles.</figcaption></figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TtIkRCPsuxAOajX8LPF.png", alt="El Chrome Status usa un toast", width="336", height="598" %}<figcaption class="w-figcaption"> Las aplicaciones como Chrome Status le permiten al usuario saber cuándo se ha actualizado el contenido a través de una notificación del tipo toast.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TtIkRCPsuxAOajX8LPF.png", alt="El Chrome Status usa un toast", width="336", height="598" %}<figcaption> Las aplicaciones como Chrome Status le permiten al usuario saber cuándo se ha actualizado el contenido a través de una notificación del tipo toast.</figcaption></figure>
 
 También puedes mostrar, en todo momento, la última vez que se actualizó la aplicación en un espacio prominente. Por ejemplo, esto sería útil para una aplicación de conversión de moneda.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nK4V7aUvmLvaNJgF1S2I.png", alt="La aplicación Material Money está desactualizada", width="324", height="598" %}<figcaption class="w-figcaption"> Tasas de caché de Material Money ...</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nK4V7aUvmLvaNJgF1S2I.png", alt="La aplicación Material Money está desactualizada", width="324", height="598" %}<figcaption> Tasas de caché de Material Money ...</figcaption></figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wqaFuHzeAC2wR0D3pt7R.png", alt="Material Money se ha actualizado", width="324", height="598" %} <figcaption class="w-figcaption"> …y notifica al usuario cuando la aplicación se ha actualizado.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wqaFuHzeAC2wR0D3pt7R.png", alt="Material Money se ha actualizado", width="324", height="598" %} <figcaption> …y notifica al usuario cuando la aplicación se ha actualizado.</figcaption></figure>
 
 Las aplicaciones, como las de noticias, pueden mostrar una simple notificación de "toque aquí para actualizar" que informa al usuario sobre el nuevo contenido. La actualización automática haría que los usuarios perdieran su posición.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="Una aplicación de noticias como ejemplo, Tailpiece en su estado normal", width="360", height="665" %}}<figcaption class="w-figcaption"> Tailpiece, un periódico en línea, descargará automáticamente las últimas noticias...</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="Una aplicación de noticias como ejemplo, Tailpiece en su estado normal", width="360", height="665" %}}<figcaption> Tailpiece, un periódico en línea, descargará automáticamente las últimas noticias...</figcaption></figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNIMNF14cSF29fntl1Lc.png", alt="Ejemplo de aplicación de noticias, Tailpiece cuando esté listo para actualizarse", width="360", height="665" %} {figcaption0 …pero permite a los usuarios actualizar manualmente para que no pierdan su posición en un artículo.</figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNIMNF14cSF29fntl1Lc.png", alt="Ejemplo de aplicación de noticias, Tailpiece cuando esté listo para actualizarse", width="360", height="665" %} {figcaption0 …pero permite a los usuarios actualizar manualmente para que no pierdan su posición en un artículo.</figure>
 
 ### Actualizar la interfaz de usuario para reflejar el estado contextual actual
 
@@ -89,9 +89,9 @@ Si tu aplicación no requiere de muchos datos, entonces almacena esos datos en c
 
 Los sitios de noticias podrían beneficiarse de la descarga automática y el guardado automático de las últimas noticias para que un usuario pueda leer las noticias de hoy sin una conexión, tal vez descargando el texto sin las imágenes del artículo. Además, adáptate al comportamiento del usuario. Por ejemplo, si la sección de deportes es lo que ven normalmente, conviértelo en la descarga prioritaria.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M39yiHQYpXacVII6d7zX.png", alt="Tailpiece le informa al usuario que está desconectado mediante varios widgets de diseño", width="360", height="665" %} <figcaption class="w-figcaption"> Si el dispositivo se encuentra sin conexión, Tailpiece notificará al usuario con un mensaje de estado...</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M39yiHQYpXacVII6d7zX.png", alt="Tailpiece le informa al usuario que está desconectado mediante varios widgets de diseño", width="360", height="665" %} <figcaption> Si el dispositivo se encuentra sin conexión, Tailpiece notificará al usuario con un mensaje de estado...</figcaption></figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KpkzjYNoCWquWKXTvM28.png", alt="Tailpiece tiene un indicador visual que muestra qué secciones están listas para ser usadas sin conexión.", width="360", height="665" %} <figcaption class="w-figcaption"> …haciéndoles saber que, al menos parcialmente, todavía pueden usar la aplicación.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KpkzjYNoCWquWKXTvM28.png", alt="Tailpiece tiene un indicador visual que muestra qué secciones están listas para ser usadas sin conexión.", width="360", height="665" %} <figcaption> …haciéndoles saber que, al menos parcialmente, todavía pueden usar la aplicación.</figcaption></figure>
 
 {% Aside %} Cuando se trata de comunicar el estado de una aplicación, decir que "La red está inactiva" envía el mensaje de que la red de la aplicación está experimentando problemas, mientras que "Estás desconectado" le aclara al usuario que el problema se encuentra de su lado. {% endAside %}
 
@@ -101,9 +101,9 @@ Cuando una aplicación web se carga por primera vez, debe de indicarle al usuari
 
 De nuevo, piensa en el lenguaje que estás utilizando para asegurarte de que sea adecuado para tu audiencia. Asegúrate de que el mensaje sea el mismo en todos los casos en los que se utilice. El término sin conexión generalmente es mal entendido por una audiencia no técnica, por lo tanto, usa un lenguaje basado en acciones con el que tu audiencia pueda relacionarse.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fNOute6xBzFcDUNMeXDe.png", alt="Aplicación I/O sin conexión", width="360", height="664" %}<figcaption class="w-figcaption"> La aplicación  I/O 2016 de Google notifica al usuario cuando la aplicación está lista para su uso sin conexión...</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fNOute6xBzFcDUNMeXDe.png", alt="Aplicación I/O sin conexión", width="360", height="664" %}<figcaption> La aplicación  I/O 2016 de Google notifica al usuario cuando la aplicación está lista para su uso sin conexión...</figcaption></figure>
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Od6jUnazP8n7CMe18G2C.png", alt="El sitio de Chrome Status está sin conexión", width="360", height="664" %} …y también lo hace el sitio de Chrome Platform Status, que incluye información sobre el almacenamiento ocupado.</figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Od6jUnazP8n7CMe18G2C.png", alt="El sitio de Chrome Status está sin conexión", width="360", height="664" %} …y también lo hace el sitio de Chrome Platform Status, que incluye información sobre el almacenamiento ocupado.</figure>
 
 ### Haz que 'guardar para usar sin conexión' una parte obvia de la interfaz para aplicaciones con gran cantidad de datos
 
@@ -139,10 +139,10 @@ Al diseñar, busca ser inclusivo al proporcionar dispositivos de diseño signifi
 
 Una buena experiencia de usuario no se trata solo de una interfaz bien diseñada. Incluye la ruta que toma un usuario, así como las palabras utilizadas en la aplicación. Evita la jerga tecnológica al explicar el estado de la aplicación o los componentes individuales de la interfaz de usuario. Ten en cuenta que es posible que la frase "aplicación sin conexión" no transmita al usuario el estado actual de la aplicación.
 
-<div class="w-columns">{% Compare 'worse' %}<figure style="display: inline-block; max-width: 45%;" class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="Un icono de service worker es un mal ejemplo", width="350", height="149" %}<figcaption class="w-figcaption"> Evita usar términos que no sean entendibles para usuarios no técnicos.</figcaption></figure> {% endCompare %}</div>
+<div class="w-columns">{% Compare 'worse' %}<figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="Un icono de service worker es un mal ejemplo", width="350", height="149" %}<figcaption> Evita usar términos que no sean entendibles para usuarios no técnicos.</figcaption></figure> {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
 <div data-md-type="block_html">
-<figure style="display: inline-block; max-width: 45%;" class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="Un icono de descarga es un buen ejemplo", width="350", height="149" %} <figcaption class="w-figcaption"> Utiliza lenguaje e imágenes que describan la acción.</figcaption></figure> {% endCompare %}</div>
+<figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="Un icono de descarga es un buen ejemplo", width="350", height="149" %} <figcaption> Utiliza lenguaje e imágenes que describan la acción.</figcaption></figure> {% endCompare %}</div>
 
 ### Utiliza varios dispositivos de diseño para crear experiencias de usuario accesibles
 
@@ -150,10 +150,10 @@ Utiliza lenguaje, color y componentes visuales para demostrar un cambio de estad
 
 Para evitar malentendidos, expresa diferentes estados al usuario de varias formas, por ejemplo, con colores, etiquetas y componentes de la interfaz de usuario.
 
-<div class="w-columns">{% Compare 'worse' %}<figure style="display: inline-block; max-width: 45%;" class="w-figure">  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="Un mal ejemplo usando color.", width="720", height="368" %} <figcaption class="w-figcaption"> Utiliza el color como único medio para describir lo que está sucediendo.</figcaption></figure> {% endCompare %}</div>
+<div class="w-columns">{% Compare 'worse' %}<figure style="display: inline-block; max-width: 45%;">  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="Un mal ejemplo usando color.", width="720", height="368" %} <figcaption> Utiliza el color como único medio para describir lo que está sucediendo.</figcaption></figure> {% endCompare %}</div>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
 <div data-md-type="block_html">
-<figure style="display: inline-block; max-width: 45%;" class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="Un buen ejemplo que usa color y texto para mostrar un error.", width="720", height="368" %} <figcaption class="w-figcaption"> Utiliza una combinación de elementos de diseño para transmitir tu significado.</figcaption></figure> {% endCompare %}</div>
+<figure style="display: inline-block; max-width: 45%;"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="Un buen ejemplo que usa color y texto para mostrar un error.", width="720", height="368" %} <figcaption> Utiliza una combinación de elementos de diseño para transmitir tu significado.</figcaption></figure> {% endCompare %}</div>
 
 ### Usa íconos que transmitan significado
 
@@ -169,7 +169,7 @@ Sin conexión puede significar varias cosas según el contexto, como descargar, 
 
 Un diseño de esqueleto (skeleton layout) es esencialmente una versión de un wireframe de tu aplicación que se muestra mientras se carga el contenido. Esto ayuda a demostrarle al usuario que el contenido está a punto de cargarse. Considera también usar una interfaz de usuario de preloader, con una etiqueta de texto que informe al usuario que la aplicación se está cargando. Un ejemplo sería pulsar el contenido del wireframe, dando a la aplicación la sensación de que está viva y cargándose. Esto le asegura al usuario que algo está sucediendo y ayuda a prevenir reenvíos o actualizaciones de tu aplicación.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUIrcbblhHe5YPSrrwRy.png", alt="Un ejemplo de diseño de esqueleto", width="360", height="665" %} <figcaption class="w-figcaption"> El diseño del marcador de posición de esqueleto se muestra durante la descarga del artículo...</figcaption></figure><figure style="display: inline-block; max-width: 45%;" class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="Un ejemplo de artículo cargado", width="360", height="665" %} <figcaption class="w-figcaption"> …que se reemplaza con el contenido real una vez que finaliza la descarga.</figcaption></figure>
+<figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUIrcbblhHe5YPSrrwRy.png", alt="Un ejemplo de diseño de esqueleto", width="360", height="665" %} <figcaption> El diseño del marcador de posición de esqueleto se muestra durante la descarga del artículo...</figcaption></figure><figure style="display: inline-block; max-width: 45%;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="Un ejemplo de artículo cargado", width="360", height="665" %} <figcaption> …que se reemplaza con el contenido real una vez que finaliza la descarga.</figcaption></figure>
 
 ### No bloquees el contenido
 

@@ -23,7 +23,7 @@ En el pasado, solo las aplicaciones específicas de la plataforma podían regist
 
 {% Aside %} La API de destino de recurso compartido web es solo la mitad de la magia. Las aplicaciones web pueden compartir datos, archivos, enlaces o texto mediante la API de recurso compartido web. Consulte el documento [API de recurso compartido web](/web-share/) para obtener más detalles. {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Teléfono Android con el cajón 'Compartir vía' abierto.", width="400", height="377" %} <figcaption class="w-figcaption w-figcaption--fullbleed">Selector de destino de recurso compartido a nivel del sistema con una PWA instalada como opción. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Teléfono Android con el cajón 'Compartir vía' abierto.", width="400", height="377" %} <figcaption>Selector de destino de recurso compartido a nivel del sistema con una PWA instalada como opción. </figcaption></figure>
 
 ## Vea el destino de recurso compartido en acción
 
@@ -168,7 +168,7 @@ self.addEventListener('fetch', event => {
 
 ### Verificar el contenido compartido
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="Un teléfono Android que muestra la aplicación de demostración con contenido compartido", width="400", height="280" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Ejemplo de aplicación de destino de recurso compartido. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="Un teléfono Android que muestra la aplicación de demostración con contenido compartido", width="400", height="280" %} <figcaption> Ejemplo de aplicación de destino de recurso compartido. </figcaption></figure>
 
 Asegúrese de verificar los datos entrantes. Desafortunadamente, no hay garantía de que otras aplicaciones compartan el contenido apropiado en el parámetro correcto.
 

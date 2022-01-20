@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает страницы без метаописания:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Аудит Lighthouse показывает, что у документа нет метаописания", width="800", height="74", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Аудит Lighthouse показывает, что у документа нет метаописания", width="800", height="74" %}</figure>
 
 Аудит считается неудачным, если:
 

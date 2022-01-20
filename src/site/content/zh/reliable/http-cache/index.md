@@ -106,7 +106,7 @@ HTTP 缓存设置中最重要的部分是 Web 服务器添加到每个传出响�
 
 当正确配置的 Web 服务器看到这些传入的请求标头时，它可以确认浏览器在其 HTTP 缓存中已有的资源版本是否与 Web 服务器上的最新版本匹配。如果匹配，则服务器可以使用 [`304 Not Modified`](https://developer.mozilla.org/docs/Web/HTTP/Status/304) HTTP 进行响应，这相当于说“请继续使用您已有的东西！”发送这种类型的响应时要传输的数据很少，因此通常比必须实际发回所请求的实际资源的副本要快得多。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="客户端请求资源和服务器响应 304 标头的图表。", width="474", height="215" %}<figcaption class="w-figcaption w-text--left">浏览器从服务器请求 <code>/file</code> 并加入 <code>If-None-Match</code> 标头，命令服务器仅在服务器上文件的 <code>ETag</code> 与浏览器的 <code>If-None-Match</code> 值不匹配时才返回完整文件。在本例中，这两个值确实匹配，因此服务器返回 <code>304 Not Modified</code> 响应，并说明文件还要再缓存多久（<code>Cache-Control: max-age=120</code>） 。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="客户端请求资源和服务器响应 304 标头的图表。", width="474", height="215" %}<figcaption>浏览器从服务器请求 <code>/file</code> 并加入 <code>If-None-Match</code> 标头，命令服务器仅在服务器上文件的 <code>ETag</code> 与浏览器的 <code>If-None-Match</code> 值不匹配时才返回完整文件。在本例中，这两个值确实匹配，因此服务器返回 <code>304 Not Modified</code> 响应，并说明文件还要再缓存多久（<code>Cache-Control: max-age=120</code>） 。</figcaption></figure>
 
 ## 摘要 {: #summary }
 
@@ -142,7 +142,7 @@ HTTP 缓存是一种提高负载性能的有效方式，因为它减少了不必
 
 ## 附录： `Cache-Control` 示例 {: #examples }
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -96,9 +96,9 @@ For foldable screens, six new environment variables are being proposed: `viewpor
 Remember, this is just at the proposal stage right now. The specific syntax for the environment variables may well change.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/Ok2IFh9xJWHSGedPx9Xe.svg", alt="Diagram showing environment variables for dual screens.", width="800", height="420" %}
-<figcaption class="w-figcaption">
+<figcaption>
    Diagram from <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Foldables/explainer.md">Microsoft Edge Explainers</a>.
  </figcaption>
 </figure>
@@ -145,9 +145,9 @@ For dual screens with a vertical hinge, set the first column to be the width of 
 
 Treat dual screens as an opportunity. Perhaps one screen could be used to display scrollable text content while the other displays a fixed element like an image or a map.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/F08tJySy3ZeePoCzzw1Z.svg", alt="Diagram illustrating a location service split over two screens, with the map on one screen and directions on the other.", width="800", height="426" %}
-<figcaption class="w-figcaption">
+<figcaption>
    Diagram from <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Foldables/explainer.md">Microsoft Edge Explainers</a>.
  </figcaption>
 </figure>

@@ -174,21 +174,21 @@ Cross-Origin-Opener-Policy: same-origin
 
 对于在屏幕上呈现的资源（例如图像），很容易检测 COEP 问题，因为请求会被阻止且页面会指示缺少图像。但是，对于不一定具有视觉影响的资源（例如脚本或样式），可能无法注意到 COEP 问题。对于这些问题，请使用“DevTools 网络”面板。如果 COEP 有问题，您会在**状态**栏看到 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)`。
 
-<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="网络面板状态栏中的 COEP 问题。", width="800", height="444", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="网络面板状态栏中的 COEP 问题。", width="800", height="444" %}</figure>
 
 随后，您可以单击此条目以查看更多详细信息。
 
-<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="单击“网络”面板中的网络资源后，COEP 问题的详细信息会显示在“标题”选项卡中。", width="800", height=" 241", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="单击“网络”面板中的网络资源后，COEP 问题的详细信息会显示在“标题”选项卡中。", width="800", height=" 241" %}</figure>
 
 您还可以通过**应用程序**面板确定 iframe 和弹出窗口的状态。转到左侧的“框架”部分并展开“顶部”即可查看详细资源结构。
 
 <span id="devtools-coep-iframe">您可以检查 iframe 的状态，例如“SharedArrayBuffer”的可用性等。</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe 检查器", width="800", height="480", class="w-screenshot w-screenshot-filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe 检查器", width="800", height="480" %}</figure>
 
 <span id="devtools-coop">您还可以检查弹出窗口的状态，例如它是否已跨源隔离。</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools 弹出窗口检查器", width="800", height="480", class="w-screenshot w-screenshot-filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools 弹出窗口检查器", width="800", height="480" %}</figure>
 
 ### 使用报告 API 观察问题
 

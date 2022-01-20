@@ -16,7 +16,7 @@ tags:
 Чем быстрее начнется воспроизведение, тем больше людей посмотрят ваше видео или послушают аудиофайл. [Это известно всем](https://www.digitaltrends.com/web/buffer-rage/). В этой статье я рассмотрю методы, которые можно применять для ускорения воспроизведения мультимедиа за счет активной предварительной загрузки ресурсов в зависимости от сценария использования.
 
 <figure>
-  <video controls muted playsinline class="w-screenshot">
+  <video controls muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1" type="video/mp4">
   </source></source></video>

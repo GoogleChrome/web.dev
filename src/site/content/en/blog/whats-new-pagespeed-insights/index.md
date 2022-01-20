@@ -67,16 +67,16 @@ If you don't know the difference between lab and field data, check
 out the [explainer on web.dev](/how-to-measure-speed/).
 {% endAside %}
 
-<figure class="w-figure">
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jM0GYMrQZcPymVXdLOLP.png", alt="discover what your real users are experiencing", width="800", height="436", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jM0GYMrQZcPymVXdLOLP.png", alt="discover what your real users are experiencing", width="800", height="436" %}
+  <figcaption>
     Section for field data
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/wQ9RGcJAcBBc4SUDK7Dz.png", alt="Diagnose performance issues", width="800", height="355", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/wQ9RGcJAcBBc4SUDK7Dz.png", alt="Diagnose performance issues", width="800", height="355" %}
+  <figcaption>
     Section for lab data
   </figcaption>
 </figure>
@@ -104,16 +104,16 @@ desktop centrally on the report page. The links are now easily visible and
 distinctly indicate the platform for which the data is being shown. Doing this
 also helped make the navigation bar cleaner.
 
-<figure class="w-figure">
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hEv5XuTeVV98Z3AS59bQ.png", alt="Older (at the time of writing) version of PageSpeed Insights", width="800", height="97", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/hEv5XuTeVV98Z3AS59bQ.png", alt="Older (at the time of writing) version of PageSpeed Insights", width="800", height="97" %}
+  <figcaption>
     PSI mobile and desktop labels before
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vi5j7ouZtmWwqN9BRsUD.png", alt="Newer version of the navigation bar", width="800", height="149", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vi5j7ouZtmWwqN9BRsUD.png", alt="Newer version of the navigation bar", width="800", height="149" %}
+  <figcaption>
         PSI mobile and desktop labels after
   </figcaption>
 </figure>
@@ -125,7 +125,7 @@ The Origin Summary, which provides the aggregated CrUX score for all pages from
 the origin, currently appears on click of a checkbox. We have moved this report
 section to a new tab, "Origin", under the Field Data section.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/5Kn5meWq0sWwCLT69lMb.png", alt="Origin summary for the new PageSpeed Insights refresh.", width="800", height="381", class="w-screenshot" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/5Kn5meWq0sWwCLT69lMb.png", alt="Origin summary for the new PageSpeed Insights refresh.", width="800", height="381" %}
 
 ### Additional helpful information
 
@@ -143,7 +143,7 @@ This information should enhance the distinction between lab and field data and
 help users who have previously been uncertain how the two data sources (lab and
 field) might differ. 
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jVxqisC0x6I5viUGgjAD.png", alt="Enhanced section of information sharing data about field and lab sampling and configuration data", width="800", height="368", class="w-screenshot" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jVxqisC0x6I5viUGgjAD.png", alt="Enhanced section of information sharing data about field and lab sampling and configuration data", width="800", height="368" %}
 
 ### Expand view
 
@@ -159,7 +159,7 @@ We have removed the image of the loaded page, which appears right next to the
 field data. The image and thumbnails of the page displaying the loading sequence
 will both be available in the lab data section.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dnIsJA35tj7vs6qgybRM.png", alt="Loaded page image next to the lab data.", width="800", height="444", class="w-screenshot" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dnIsJA35tj7vs6qgybRM.png", alt="Loaded page image next to the lab data.", width="800", height="444" %}
 
 For up to date product documentation, visit
 [https://developers.google.com/speed/docs/insights/.](https://developers.google.com/speed/docs/insights/v5/about)
@@ -181,16 +181,16 @@ With /measure calling the same API directly as the PSI UI, developers will get
  functionality—seeing multiple categories—will still be available for use.
 
 
-<figure class="w-figure">
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/KFZmLMU2iSxkPDph7FTV.png", alt="The old version of the measure page.", width="800", height="377", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/KFZmLMU2iSxkPDph7FTV.png", alt="The old version of the measure page.", width="800", height="377" %}
+  <figcaption>
     web.dev/measure before
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/C04zQEkxtSQqPEQedNN7.png", alt="The refreshed version of the measure tool focusing on offering page quality measurement.", width="800", height="696", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/C04zQEkxtSQqPEQedNN7.png", alt="The refreshed version of the measure tool focusing on offering page quality measurement.", width="800", height="696" %}
+  <figcaption>
     web.dev/measure after
   </figcaption>
 </figure>
@@ -226,7 +226,7 @@ users in the CrUX dataset. Scores are calculated for the last 28 days and are
 not available for new pages where sufficient real-user data may not be
 available.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/A7xrSBFuqf9puSgBJH4l.png", alt="breakdown of different sections of data in the current PageSpeed Insight report", width="800", height="497", class="w-screenshot" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/A7xrSBFuqf9puSgBJH4l.png", alt="breakdown of different sections of data in the current PageSpeed Insight report", width="800", height="497" %}
 
 **Origin Summary:** Users can click on the _Show Origin Summary_ checkbox to
 view the aggregated score for the metrics for all pages served from the same

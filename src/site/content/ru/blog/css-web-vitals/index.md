@@ -134,7 +134,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 <img src="https://source.unsplash.com/random/800x600" width="800" height="600" alt="Изображение, которое необходимо загрузить">
 ```
 
-<figure class="w-figure">{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %} <figcaption class="w-figcaption"> Теперь загрузка изображения не приводит к сдвигу макета. </figcaption></figure>
+<figure>{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %} <figcaption> Теперь загрузка изображения не приводит к сдвигу макета. </figcaption></figure>
 
 {% Aside %} Другой подход к загрузке изображений — использовать атрибуты [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) и [`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) и указать значения для атрибутов `width` и `height`. Это повысит производительность и позволит передавать изображения разного размера на разные устройства. Дополнительные сведения см. в статье «[Передача адаптивных изображений](/serve-responsive-images/)». {% endAside %}
 
@@ -156,7 +156,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 
 Метод с заменой шрифта отлично подходит, если нужно быстро отображать содержимое для пользователя, но может привести к сдвигу макета. Такие сдвиги макета возникают, когда веб-шрифт и используемый вместо него резервный шрифт занимают разное место на странице. Используя шрифты с похожими пропорциями, можно свести к минимуму сдвиги макета.
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Схема, на которой показан сдвиг макета, вызванный заменой шрифта", width="800", height="452" %} <figcaption class="w-figcaption"> В этом примере замена шрифта привела к сдвигу элементов страницы на пять пикселей вверх. </figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Схема, на которой показан сдвиг макета, вызванный заменой шрифта", width="800", height="452" %} <figcaption> В этом примере замена шрифта привела к сдвигу элементов страницы на пять пикселей вверх. </figcaption></figure>
 
 #### Выявление проблемы
 

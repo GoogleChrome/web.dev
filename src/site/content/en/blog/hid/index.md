@@ -171,7 +171,7 @@ const devices = await navigator.hid.getDevices();
 ```
 
 <figure>
-  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of an HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
+  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of an HID device prompt on a website.", width="800", height="513" %}
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
@@ -221,7 +221,7 @@ to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
 <figure>
-  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
+  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575" %}
   <figcaption>Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
@@ -278,7 +278,7 @@ HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
 <figure>
-  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
+  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575" %}
   <figcaption>Laptop keyboard</figcaption>
 </figure>
 
@@ -350,7 +350,7 @@ Debugging HID in Chrome is easy with the internal page, `about://device-log`
 where you can see all HID and USB device related events in one single place.
 
 <figure>
-  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
+  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575" %}
   <figcaption>Internal page in Chrome to debug HID.</figcaption>
 </figure>
 

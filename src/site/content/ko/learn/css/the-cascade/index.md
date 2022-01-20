@@ -27,7 +27,7 @@ button {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'GRrgMOm', height: 200 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'GRrgMOm', height: 200 } %}</figure>
 
 캐스케이드 알고리즘을 이해하면 브라우저가 이와 같은 충돌을 해결하는 방법을 이해하는 데 도움이 됩니다. 캐스케이드 알고리즘은 4단계로 나뉩니다.
 
@@ -46,11 +46,11 @@ CSS 규칙이 표시되는 순서와 표시 방법은 충돌 해결을 계산하
 
 HTML 페이지 상단에 CSS를 포함하는 `<link>`가 있는 경우 페이지 하단에 CSS를 포함하는 다른 `<link>`: 하위 `<link>`가 가장 구체적입니다. 임베드된 ` {style}` 요소에서도 동일한 현상이 발생합니다. 페이지 아래쪽으로 갈수록 구체화됩니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'NWdPaWv' } %}<figcaption class="w-figcaption"> 버튼의 배경은 <code>&lt;link /&gt;</code> 요소에 의해 포함된 CSS에서 정의된 파란색입니다. 어둡게 설정하는 CSS 규칙은 두 번째 연결된 스타일시트에 있으며 이후 위치 때문에 적용됩니다.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'NWdPaWv' } %}<figcaption> 버튼의 배경은 <code>&lt;link /&gt;</code> 요소에 의해 포함된 CSS에서 정의된 파란색입니다. 어둡게 설정하는 CSS 규칙은 두 번째 연결된 스타일시트에 있으며 이후 위치 때문에 적용됩니다.</figcaption></figure>
 
 이 순서는 포함된 `<style>` 요소에도 적용됩니다. `<link>` 전에 선언된 경우 연결된 스타일시트의 CSS가 가장 구체적입니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgbLoB' } %}<figcaption class="w-figcaption"> <code>&lt;style&gt;</code> 요소는 <code>&lt;head&gt;</code>에 선언되고 <code> 요소는 &lt;code&gt;&amp;lt;body&amp;gt;</code>에 선언됩니다. <code>&lt;style&gt;</code> 요소보다 더 구체적임을 의미합니다.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgbLoB' } %}<figcaption> <code>&lt;style&gt;</code> 요소는 <code>&lt;head&gt;</code>에 선언되고 <code> 요소는 &lt;code&gt;&amp;lt;body&amp;gt;</code>에 선언됩니다. <code>&lt;style&gt;</code> 요소보다 더 구체적임을 의미합니다.</figcaption></figure>
 
 CSS가 선언된 인라인 `style` 속성은 선언에 `!important`가 정의되어 있지 않은 한 위치에 관계없이 다른 모든 CSS를 재정의합니다.
 
@@ -72,7 +72,7 @@ CSS가 선언된 인라인 `style` 속성은 선언에 `!important`가 정의되
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgbPMP' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgbPMP' } %}</figure>
 
 {% Aside %} 동일한 속성을 두 번 선언하는 이 접근 방식은 브라우저가 이해하지 못하는 값을 무시하기 때문에 작동합니다. 일부 다른 프로그래밍 언어와 달리 CSS는 구문 분석할 수 없는 행을 감지할 때 오류를 발생시키거나 프로그램을 중단하지 않습니다. 구문 분석할 수 없는 값은 유효하지 않으므로 무시됩니다. 그런 다음 브라우저는 이미 이해하고 있는 내용을 깨뜨리지 않고 나머지 CSS를 계속 처리합니다. {% endAside %}
 
@@ -117,7 +117,7 @@ h1 {
 5. **로컬 사용자 스타일 `!important`**. 운영 체제 수준 또는 브라우저 확장 수준 CSS에서 가져온 모든 `!important`.
 6. **사용자 에이전트 `!important`**. 브라우저에서 제공하는 기본 CSS에 정의된 모든 `!important`.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg", alt="목록에 설명된 원점 순서를 시각적으로 보여줍니다.", width="800", height="347" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg", alt="목록에 설명된 원점 순서를 시각적으로 보여줍니다.", width="800", height="347" %}</figure>
 
 사용자가 작성한 CSS에 `!important` 규칙 유형이 있고 사용자가 사용자 지정 CSS에 `!important` 규칙 유형이 있는 경우 누구의 CSS가 승리합니까?
 
@@ -140,7 +140,7 @@ h1 {
 
 브라우저 DevTools는 일반적으로 요소와 일치할 수 있는 모든 CSS를 표시하고 사용되지 않는 CSS는 긋습니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png", alt="덮어쓴 CSS가 지워진 브라우저 DevTools의 이미지", width="800", height="446" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png", alt="덮어쓴 CSS가 지워진 브라우저 DevTools의 이미지", width="800", height="446" %}</figure>
 
 적용할 것으로 예상한 CSS가 전혀 나타나지 않으면 요소와 일치하지 않는 것입니다. 이 경우 클래스나 요소 이름의 오타나 잘못된 CSS 등 다른 곳을 찾아야 합니다.
 

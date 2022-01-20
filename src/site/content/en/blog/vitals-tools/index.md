@@ -156,13 +156,13 @@ When working to improve the user experience, it's best to think of the process a
 2. Debug and optimize.
 3. Monitor with continuous integration tools to catch and prevent regressions.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/9k3o679FUq63WT1kbxHe.png", alt="A diagram of a three step process, rendered as a continuous cycle. The first step reads 'Evaluate website health and identify paint points', the second 'Debug and optimize', and the third 'Monitor and continuous development'.", width="800", height="465" %}
 </figure>
 
 ### Step 1: Evaluate website health and identify opportunities for improvement
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZMqqyP9cuwY1DEGE3Qky.png", alt="A flow for evaluating website health and identifying opportunity for improvement. From left to right, the steps are 'CrUX Dashboard/Field Data', 'Search Console', and 'PageSpeed Insights'.", width="800", height="358" %}
 </figure>
 
@@ -174,7 +174,7 @@ Whether you analyze field data you collect yourself or CrUX data, the first step
 
 #### Measure website health with the CrUX dashboard and collected field data
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/oF2PQELFtdICPN10aZge.png", alt="A screenshot of the CrUX dashboard. The dashboard breaks down LCP, FID, and CLS into desktop and mobile categories, with each category showing the distribution of values that lie within 'Good', 'Needs Improvement' and 'Poor' thresholds for the previous month.", width="800", height="837" %}
 </figure>
 
@@ -188,7 +188,7 @@ Even if your website is represented in CrUX, you should still collect your own f
 
 #### Identify poorly performing pages in Search Console
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/DWdv878oyTdEWQViRh06.png", alt="A screenshot of a Core Web Vitals report in Search Console. The report is broken down into Desktop and Mobile categories, with line graphs detailing the distribution of pages with Core Web Vitals in the 'Good', 'Needs Improvement', and 'Poor' categories over time.", width="800", height="639" %}
 </figure>
 
@@ -204,7 +204,7 @@ The data in Search Console is different from what's shown in CrUX dashboard. Thi
 
 #### Analyze performance by page with PageSpeed Insights
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/qobynTXHVaEPD2Ng8ZLb.png", alt="A screenshot of how PageSpeed Insights portrays CrUX data for a URL's Core Web Vitals. Each of the Core Web Vitals is displayed separately, while grouping each Core Web Vital in the 'Good', 'Needs Improvement', and 'Poor' thresholds for the last 28 days.", width="800", height="268" %}
 </figure>
 
@@ -214,7 +214,7 @@ The lab data component of PageSpeed Insights is represented by the Lighthouse sc
 
 ### Step 2: Debug and optimize
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8HckQw23SkwcDwgMGp33.png", alt="A two-step flow, with the Lighthouse and Web Vitals Extension icons at left, then an arrow, then the Chrome DevTools icon at the right.", width="800", height="187" %}
 </figure>
 
@@ -225,7 +225,7 @@ The lab data component of PageSpeed Insights is represented by the Lighthouse sc
 
 Though PageSpeed Insights runs Lighthouse for you, it's more convenient during local development to run Lighthouse from Chrome's DevTools.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/k6HffrY6tUbreyzi2mVk.png", alt="A screenshot of a Lighthouse report within Chrome's DevTools. The report breaks down scores across five categories, with the report focused on the 'Performance' category, with results at the bottom of the report window.", width="800", height="526" %}
 </figure>
 
@@ -241,7 +241,7 @@ Even so, this simulated throttling may not be representative of the variety of u
 
 The Web Vitals Chrome extension shows Core Web Vitals in real time during startup _and_ while browsing a page. Because of this, it can capture FID, as well as layout shifts that occur after startup.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/FfyQpEEpJYkjW39eDz4S.png", alt="A screenshot of the Web Vitals Chrome extension panel. It shows the state of each Core Web Vital, and how the current page experience compares with the 75th percentile of end user experiences as gathered by CrUX (if available).", width="800", height="556" %}
 </figure>
 
@@ -251,13 +251,13 @@ It's best to think of the Web Vitals extension as a spot-checking tool to find p
 
 The performance tab in Chrome's DevTools profiles all page behavior during a recorded period of time. When populated, a layer in the timeline labeled "experience" appears, which highlights layout shifts and the elements that shifted.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vCzfCMzllJfrbHw5up3j.png", alt="A screenshot of a populated performance tab in Chrome's DevTools. The interface shows a row labeled 'Experience', which shows a single layout shift. The layout shift is focused in the tab, with information about the layout shift (such as the duration) in the bottom pane.", width="800", height="509" %}
 </figure>
 
 Additionally, there's a checkbox near the top of the performance tab labeled "Web Vitals", which plots Web Vitals on the timeline as well as long tasks:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/N8XSXfHenREUQxnw84HH.png", alt="A screenshot of a populated performance tab in Chrome's DevTools. The interface is composed of many rows, including one for each of the Core Web Vitals, which shows when each Core Web Vital metric occurred in time. The interface is also accompanied by bars representing where long tasks occurred, and how long.", width="800", height="509" %}
 </figure>
 
@@ -279,7 +279,7 @@ Lab tools can't always identify the cause of all Core Web Vitals issues affectin
 
 ### Step 3: Monitor with continuous integration tools
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/LqEnonUKd8j3QGK3Ax7w.png", alt="A collection of icons for Google tools. From left to right, the icons represent 'CrUX on BigQuery', 'CrUX API', 'PSI API', 'web-vitals.js', with 'Lighthouse CI' at the far right.", width="800", height="185" %}
 </figure>
 
@@ -294,7 +294,7 @@ The last step in the performance improvement workflow cycle is two-fold:
 
 The tools listed in the first step may seem like a lot, but you don't necessarily need _all_ of them&mdash;only those that will give you the level of coverage you need to assess performance and preserve good user experiences. The table below can help you determine which tools you need:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

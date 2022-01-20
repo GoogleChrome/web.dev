@@ -18,7 +18,7 @@ feedback:
 
 ## Что такое API getInstalledRelatedApps()? {: #what }
 
-<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %} <figcaption class="w-figcaption"> Веб-сайт, использующий <code>getInstalledRelatedApps()</code>, чтобы определить, установлено ли его приложение для Android. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %} <figcaption> Веб-сайт, использующий <code>getInstalledRelatedApps()</code>, чтобы определить, установлено ли его приложение для Android. </figcaption></figure>
 
 [`getInstalledRelatedApps()`](https://wicg.github.io/get-installed-related-apps/spec/) позволяет *вашей* странице проверять, установлено ли *ваше* мобильное или десктопное приложение или, в некоторых случаях, прогрессивное веб-приложение (PWA) на устройстве пользователя, и позволяет настраивать взаимодействие с пользователем, когда приложение установлено.
 

@@ -30,7 +30,7 @@ Aquí hay dos reglas que compiten. Una coloreará el botón de rojo y el otro de
 
 La especificidad es una de las cuatro etapas distintas de la cascada, que se cubrió en el último módulo de [la cascada](/learn/css/the-cascade/).
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNKMXm',
@@ -237,7 +237,7 @@ Con un HTML que se ve así:
 <button class="my-button" onclick="alert('hello')">Click me</button>
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoxdR', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoxdR', tab: 'css,result' } %}</figure>
 
 El botón tiene un fondo gris, porque el segundo selector gana **11 puntos de especificidad** (`0-1-1`). Esto se debe a que tiene un selector de tipo (`button`), que es de **1 punto** y un selector de atributo (`[onclick]`), que es de **10 puntos**.
 
@@ -255,7 +255,7 @@ button[onclick] {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'zYNOXBJ', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'zYNOXBJ', tab: 'css,result' } %}</figure>
 
 Ahora, el botón tendrá un fondo azul, porque el nuevo selector obtiene una puntuación de especificidad de **20 puntos** (`0-2-0`).
 
@@ -277,7 +277,7 @@ Sigamos con el ejemplo del botón por ahora y cambiemos el CSS a esto:
 
 El botón tiene un fondo gris, porque **ambos selectores tienen una puntuación de especificidad idéntica** ( `0-1-0` ).
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'zYNOXKJ', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'zYNOXKJ', tab: 'css,result' } %}</figure>
 
 Si cambia las reglas en el orden de origen, el botón será azul.
 
@@ -291,7 +291,7 @@ Si cambia las reglas en el orden de origen, el botón será azul.
 }
 ```
 
-<figure class="w-figure">{% Codepen {user: 'web-dot-dev', id: 'WNReWRO', tab: 'css,result' } %}</figure>
+<figure>{% Codepen {user: 'web-dot-dev', id: 'WNReWRO', tab: 'css,result' } %}</figure>
 
 Esta es la única instancia en la que gana el CSS más nuevo. Para hacerlo, debe coincidir con la especificidad de otro selector que apunte al mismo elemento.
 

@@ -16,11 +16,11 @@ Muchos motores de búsqueda clasifican las páginas en función de su compatibil
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas con objetivos táctiles que son demasiado pequeños o están demasiado juntos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoría de Lighthouse que muestra objetivos táctiles de tamaño inadecuado", width="800", height="206", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoría de Lighthouse que muestra objetivos táctiles de tamaño inadecuado", width="800", height="206" %}</figure>
 
 Los objetivos que miden menos de 48 px por 48 px o que están a menos de 8 px de distancia no pasan la auditoría. Cuando la auditoría falla, Lighthouse enumera los resultados en una tabla con tres columnas:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <tbody>
       <tr>
@@ -45,7 +45,7 @@ Los objetivos que miden menos de 48 px por 48 px o que están a menos de 8 px de
 
 **Paso 1:** aumente el tamaño de los objetivos táctiles que son demasiado pequeños. Los objetivos táctiles de 48 px por 48 px nunca fallan en la auditoría. Si tiene elementos que no deberían *aparecer* más grandes (por ejemplo, iconos), intente aumentar la propiedad `padding`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="Objetivos táctiles de tamaño apropiado", width="800", height="419", class="w-screenshot w-screenshot" %} <figcaption class="w-figcaption">Utilice <code>padding</code> para agrandar los objetivos táctiles sin cambiar la apariencia de un elemento.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="Objetivos táctiles de tamaño apropiado", width="800", height="419" %} <figcaption>Utilice <code>padding</code> para agrandar los objetivos táctiles sin cambiar la apariencia de un elemento.</figcaption></figure>
 
 **Paso 2:** aumente el espacio entre los objetivos táctiles que están demasiado cerca entre sí, utilizando propiedades como `margin`. Debe haber al menos 8 px entre los objetivos táctiles.
 

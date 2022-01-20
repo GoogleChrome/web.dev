@@ -38,7 +38,7 @@ response delay.
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96" %}
 </picture>
 
 To help predict FID in the [lab](/how-to-measure-speed/#lab-data-vs-field-data), we
@@ -69,9 +69,9 @@ characterized as a Long Task. Long Tasks are a sign of
 potential JavaScript bloat (loading and executing more than a user may need right now).
 Splitting up long tasks can reduce input delay on your site.
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Long Tasks in Chrome DevTools", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Long Tasks in Chrome DevTools", width="800", height="132" %}
+  <figcaption>Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
 </figure>
 
 FID should improve noticeably as you adopt best practices like code-splitting and breaking up your
@@ -103,7 +103,7 @@ Below are the TBT scores before and after optimizing first-party script loading 
 application. By moving costly script loading (and execution) for a non-essential component off the
 critical path, users were able to interact with the page much sooner.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.", width="800", height="148" %}
 
 ### Data-fetching can impact many aspects of interaction readiness
 
@@ -162,7 +162,7 @@ responding to user input.
 The [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
 DevTools can tell you how much JavaScript is not being used on your web page.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559" %}
 
 To cut down on unused JavaScript:
 
@@ -257,7 +257,7 @@ A number of tools are available to measure and debug FID:
   Time](/tbt/) (TBT) can be used as a proxy. Optimizations that improve TBT should
   also improve FID in the field.
 
-  {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
+  {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
   provides real-world FID values aggregated at the origin-level

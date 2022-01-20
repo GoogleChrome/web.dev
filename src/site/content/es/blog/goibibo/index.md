@@ -32,7 +32,7 @@ tags:
 
 En su viaje para mejorar la experiencia del usuario, Goibibo notó algunas tendencias:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0dmwrJViuhgA3I4IDCkj.png", alt="PWA de Goibibo.", width="800", height="1624", class="w-screenshot w-screenshot--filled w-figure--inline-right" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0dmwrJViuhgA3I4IDCkj.png", alt="PWA de Goibibo.", width="800", height="1624" %}</figure>
 
 - Dado que los usuarios ya cambiaron o están cambiando rápidamente a dispositivos móviles, su estrategia inicial hacia la web móvil fue construir una aplicación liviana y funcional. Esto funcionó, con conversiones de páginas de búsqueda a detalles que se igualaron en la web y en iOS y Android, pero las aplicaciones de iOS y Android ganaron en todos los pasos posteriores del embudo de conversión.
 
@@ -46,35 +46,35 @@ En su viaje para mejorar la experiencia del usuario, Goibibo notó algunas tende
 
 <div class="switcher">
   <p>Casi el 15% de los usuarios registrados en Goibibo hacen reservas para familiares o amigos en la web móvil. Goibibo usó la <a href="/contact-picker/">API de Contact Picker (Selector de contactos)</a> para permitir a los usuarios de la PWA completar formularios en nombre de otros sin problemas.</p>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Pdqx8qyXbwzzS8ivNS3l.png", alt="Impacto: el 20% de los usuarios eligieron la experiencia perfecta de Goibibo.", width="800", height="360", class="w-screenshot" %}</figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Pdqx8qyXbwzzS8ivNS3l.png", alt="Impacto: el 20% de los usuarios eligieron la experiencia perfecta de Goibibo.", width="800", height="360" %}</figure>
 </div>
 
 ### WebOTP {: #web-otp }
 
 <div class="switcher">
   <p>Debido a que la autenticación segura es un gran desafío en la India, Goibibo utilizó la <a href="/web-otp/">API de WebOTP (contraseña de un solo uso)</a> para reducir la fricción de inicio de sesión en su PWA.</p>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Nf0NeE3sSFOrYleAsxVd.png", alt="Impacto: aumento del 20% en los usuarios que han iniciado sesión en la web móvil; disminución del 25% en las llamadas a la API de reintentos de OTP durante el registro.", width="800", height="526", class="w-screenshot" %}</figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Nf0NeE3sSFOrYleAsxVd.png", alt="Impacto: aumento del 20% en los usuarios que han iniciado sesión en la web móvil; disminución del 25% en las llamadas a la API de reintentos de OTP durante el registro.", width="800", height="526" %}</figure>
 </div>
 
 ### API de Web Share {: #web-share }
 
 <div class="switcher">
   <p>Para cerrar la brecha entre su experiencia web y de iOS y Android, Goibibo adoptó la <a href="/web-share/">API de Web Share</a> para facilitar el intercambio de enlaces, texto o archivos sobre los detalles del hotel, la disponibilidad de trenes, etc.</p>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u5pl2i6MHBkDZESQRHXR.png", alt="Impacto: el 5% de las nuevas sesiones provienen de la API de Web Share.", width="800", height="356", class="w-screenshot" %}</figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u5pl2i6MHBkDZESQRHXR.png", alt="Impacto: el 5% de las nuevas sesiones provienen de la API de Web Share.", width="800", height="356" %}</figure>
 </div>
 
 ### Notificaciones push {: #notifications}
 
 <div class="switcher">
   <p>Goibibo usó <a href="https://developers.google.com/web/fundamentals/push-notifications">notificaciones push web</a> para reorientar a los usuarios rebotados con actualizaciones relevantes como alertas de tarifas de vuelos y otro contenido personalizado.</p>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/baFHO5RXsOVdE6qiT0AR.png", alt="Impacto: Los usuarios reorientados se convirtieron 4 veces más en comparación con la base de usuarios normal.", width="800", height="414", class="w-screenshot" %}</figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/baFHO5RXsOVdE6qiT0AR.png", alt="Impacto: Los usuarios reorientados se convirtieron 4 veces más en comparación con la base de usuarios normal.", width="800", height="414" %}</figure>
 </div>
 
 ## Cómo las nuevas capacidades web mejoraron el embudo de Goibibo {: #funnel}
 
 &lt;style&gt; @media (min-width: 865px) { #funnel { max-width: 75%; } } &lt;/style&gt;
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rsENPcTITCviudxIhPU1.png", alt="1. Web Share mejoró el porcentaje de usuarios recurrentes 2. Contact Picker mejoró la experiencia del usuario, lo que facilita la reserva de los clientes 3. WebOTP redujo la fricción durante las transacciones, lo que resulta en menos tiempo dedicado a la pantalla OTP y menos reintentos de llamadas a la API 4. Las notificaciones push mejoraron las conversiones de los usuarios reorientados", width="711", height="627", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rsENPcTITCviudxIhPU1.png", alt="1. Web Share mejoró el porcentaje de usuarios recurrentes 2. Contact Picker mejoró la experiencia del usuario, lo que facilita la reserva de los clientes 3. WebOTP redujo la fricción durante las transacciones, lo que resulta en menos tiempo dedicado a la pantalla OTP y menos reintentos de llamadas a la API 4. Las notificaciones push mejoraron las conversiones de los usuarios reorientados", width="711", height="627" %}</figure>
 
 ## Resultados comerciales generales {: #results }
 

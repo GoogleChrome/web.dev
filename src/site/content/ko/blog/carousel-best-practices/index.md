@@ -17,7 +17,7 @@ tags:
 
 이 문서에서는 캐러셀의 성능 및 UX 모범 사례에 대해 설명합니다.
 
-<figure class="w-figure">{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="캐러셀을 보여주는 이미지", width="629", height="420", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="캐러셀을 보여주는 이미지", width="629", height="420" %}</figure>
 
 ## 성능
 

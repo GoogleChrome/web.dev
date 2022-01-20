@@ -14,7 +14,7 @@ Las etiquetas garantizan que los controles de formulario se anuncien correctamen
 
 Lighthouse señala los elementos de formulario que no tienen etiquetas asociadas:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Auditoría de Lighthouse que muestra que los elementos del formulario no tienen etiquetas asociadas", width="800", height="185", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Auditoría de Lighthouse que muestra que los elementos del formulario no tienen etiquetas asociadas", width="800", height="185" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

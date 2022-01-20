@@ -27,7 +27,7 @@ O uso de dispositivos móveis para navegar na web continua a crescer num ritmo a
 
 O web design responsivo, definido originalmente por [Ethan Marcotte em A List Apart](http://alistapart.com/article/responsive-web-design/), atende às necessidades dos usuários e dos dispositivos que eles estão usando. O layout muda com base no tamanho e nas capacidades do dispositivo. Por exemplo, num telefone, os usuários veriam o conteúdo mostrado numa coluna única; um tablet já poderia mostrar o mesmo conteúdo em duas colunas.
 
-<figure class="w-figure">   {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot", playsinline=true %}</figure>
+<figure>   {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}</figure>
 
 Existe uma infinidade de tamanhos de tela diferentes em celulares, "phablets", tablets, desktops, consoles de jogos, TVs e até mesmo wearables. Os tamanhos de tela estão sempre mudando, por isso é importante que seu site possa se adaptar a qualquer tamanho de tela, hoje ou no futuro. Além disso, os dispositivos possuem recursos diferentes com os quais interagimos com eles. Por exemplo, alguns de seus visitantes usarão uma tela sensível ao toque. O design responsivo moderno considera todas essas coisas para otimizar a experiência para todos.
 
@@ -51,9 +51,9 @@ Para proporcionar a melhor experiência, os navegadores móveis renderizam a pá
 
 Usando o valor meta viewport de `width=device-width` instrui a página a corresponder à largura da tela em pixels independentes de dispositivo. Um pixel independente de dispositivo (ou de densidade) é uma representação de um único pixel, que na realizada pode consistir de muitos pixels físicos, numa tela de alta densidade. Isto permite que a página readapte o conteúdo para corresponder a diferentes tamanhos de tela, seja ele renderizado num pequeno telefone celular ou num grande monitor de área de trabalho.
 
-<figure class="w-figure">   {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Captura de tela de uma página com o texto difícil de ler porque está muito pequeno", width="500", height="640" %}   <figcaption class="w-figcaption"> Exemplo de como a página é carregada num dispositivo sem a meta tag viewport. <a href="https://without-vp-meta.glitch.me/">Veja este exemplo no Glitch</a>. </figcaption></figure>
+<figure>   {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Captura de tela de uma página com o texto difícil de ler porque está muito pequeno", width="500", height="640" %}   <figcaption> Exemplo de como a página é carregada num dispositivo sem a meta tag viewport. <a href="https://without-vp-meta.glitch.me/">Veja este exemplo no Glitch</a>. </figcaption></figure>
 
-<figure class="w-figure">   {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Captura de tela da mesma página com o texto em um tamanho que pode ser lido", width="500", height="888" %}   <figcaption class="w-figcaption">     Um exemplo de como a página é carregada em dispositivo com a meta tag viewport. <a href="https://with-vp-meta.glitch.me/">Veja este exemplo no Glitch</a>.   </figcaption></figure>
+<figure>   {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Captura de tela da mesma página com o texto em um tamanho que pode ser lido", width="500", height="888" %}   <figcaption>     Um exemplo de como a página é carregada em dispositivo com a meta tag viewport. <a href="https://with-vp-meta.glitch.me/">Veja este exemplo no Glitch</a>.   </figcaption></figure>
 
 [Alguns navegadores](https://css-tricks.com/probably-use-initial-scale1/) mantêm a largura da página constante ao girar para o modo paisagem e fazem zoom em vez de refluir o conteúdo para preencher a tela. Adicionar o valor `initial-scale=1` instrui os navegadores a estabelecer uma relação 1:1 entre pixels CSS e pixels independentes de dispositivo, independentemente da orientação do dispositivo, e permite que a página aproveite a largura total do modo paisagem.
 
@@ -100,7 +100,7 @@ Como as dimensões e largura da tela em pixels CSS variam amplamente entre dispo
 
 No passado, isto exigia elementos de configuração para definir o layout em porcentagens. No exemplo abaixo está mostrado um layout de duas colunas com elementos flutuantes, dimensionados usando pixels. Uma vez que a viewport é menor do que a largura total das colunas, somos obrigados a rolar horizontalmente para ver o conteúdo.
 
-<figure class="w-figure">   {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Captura de tela de um layout de duas colunas com a maior parte da segunda coluna fora da viewport", width="800", height="504", class="w-screenshot" %}   <figcaption class="w-figcaption"> Um layout flutuante usando pixels. <a href="https://layout-floats-px.glitch.me/">Veja este exemplo no Glitch</a>  </figcaption></figure>
+<figure>   {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Captura de tela de um layout de duas colunas com a maior parte da segunda coluna fora da viewport", width="800", height="504" %}   <figcaption> Um layout flutuante usando pixels. <a href="https://layout-floats-px.glitch.me/">Veja este exemplo no Glitch</a>  </figcaption></figure>
 
 Usando porcentagens para as larguras, as colunas sempre se mantêm proporcionais ao contêiner. Isso significa que as colunas se tornam mais estreitas, em vez de criar uma barra de rolagem.
 
@@ -227,11 +227,11 @@ Projete o conteúdo para caber numa tela pequena primeiro e, em seguida, expanda
 
 Vamos explorar o exemplo que vimos no início: a previsão do tempo. O primeiro passo é fazer com que a previsão pareça boa numa tela pequena.
 
-<figure class="w-figure">   {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Captura de tela de um aplicativo de previsão do tempo em uma largura móvel", width="400", height="667", class="w-screenshot" %}   <figcaption class="w-figcaption"> O aplicativo tem uma largura estreita.   </figcaption></figure>
+<figure>   {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Captura de tela de um aplicativo de previsão do tempo em uma largura móvel", width="400", height="667" %}   <figcaption> O aplicativo tem uma largura estreita.   </figcaption></figure>
 
 Em seguida, redimensione o navegador até que haja excesso de espaço em branco entre os elementos e a previsão simplesmente não pareça tão boa. A decisão é um tanto subjetiva, mas uma dimensão acima de `600px` é sem dúvida larga demais.
 
-<figure class="w-figure">   {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Captura de tela de um aplicativo de clima com grandes lacunas entre os itens", width="400", height="240", class="w-screenshot" %}   <figcaption class="w-figcaption">O aplicativo em um ponto em que sentimos que devemos ajustar o design. </figcaption></figure>
+<figure>   {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Captura de tela de um aplicativo de clima com grandes lacunas entre os itens", width="400", height="240" %}   <figcaption>O aplicativo em um ponto em que sentimos que devemos ajustar o design. </figcaption></figure>
 
 Para inserir um breakpoint em `600px`, crie duas media queries no final de seu CSS para o componente, uma para usar quando o navegador tiver `600px` ou menos e outra para quando ele for mais largo que `600px` .
 
@@ -294,9 +294,9 @@ Da mesma forma, para telas grandes, é melhor limitar a largura máxima do paine
 
 A teoria clássica da legibilidade sugere que uma coluna ideal deve conter de 70 a 80 caracteres por linha (cerca de 8 a 10 palavras em inglês). Portanto, cada vez que a largura de um bloco de texto ultrapassar cerca de 10 palavras, considere adicionar um breakpoint.
 
-<figure class="w-figure">   {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Captura de tela de uma página de texto em um dispositivo móvel", width="400", height="488", class="w-screenshot" %}   <figcaption class="w-figcaption">    O texto lido em um dispositivo móvel.</figcaption></figure>
+<figure>   {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Captura de tela de uma página de texto em um dispositivo móvel", width="400", height="488" %}   <figcaption>    O texto lido em um dispositivo móvel.</figcaption></figure>
 
-<figure class="w-figure">   {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Captura de tela de uma página de texto em um navegador de desktop", width="800", height="377", class="w-screenshot" %}   <figcaption class="w-figcaption">     O texto lido em um navegador de desktop com um breakpoint adicionado para restringir o comprimento da linha. </figcaption></figure>
+<figure>   {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Captura de tela de uma página de texto em um navegador de desktop", width="800", height="377" %}   <figcaption>     O texto lido em um navegador de desktop com um breakpoint adicionado para restringir o comprimento da linha. </figcaption></figure>
 
 Vamos dar uma olhada mais a fundo no exemplo de postagem do blog acima. Em telas menores, a fonte Roboto com `1em` funciona perfeitamente resultando em 10 palavras por linha, mas telas maiores requerem um breakpoint. Nesse caso, se a largura do navegador for maior que `575px`, a largura ideal do conteúdo é `550px` .
 
@@ -320,9 +320,9 @@ Tenha cuidado ao escolher o conteúdo a ocultar ou mostrar, dependendo do tamanh
 
 Depois de configurar seus breakpoints de media query, você vai querer ver como seu site se apresenta com eles. Você pode redimensionar a janela do navegador para acionar os breakpoints, mas o Chrome DevTools tem um recurso integrado que facilita a visualização da aparência de uma página em diferentes breakpoints.
 
-<figure class="w-figure">{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Captura de tela de DevTools com nosso aplicativo de clima aberto e uma largura de 822 pixels selecionada.", width="800", height="522", class="w-screenshot" %} <figcaption class="w-figcaption"> DevTools mostrando o aplicativo de previsão do tempo enquanto olha para um tamanho de viewport maior. </figcaption></figure>
+<figure>{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Captura de tela de DevTools com nosso aplicativo de clima aberto e uma largura de 822 pixels selecionada.", width="800", height="522" %} <figcaption> DevTools mostrando o aplicativo de previsão do tempo enquanto olha para um tamanho de viewport maior. </figcaption></figure>
 
-<figure class="w-figure">   {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Captura de tela do DevTools com nosso aplicativo de clima aberto e uma largura de 436 pixels selecionada.", width="800", height="521", class="w-screenshot" %}   <figcaption class="w-figcaption">     DevTools mostrando o aplicativo de clima enquanto olha para um tamanho de viewport mais estreito.   </figcaption></figure>
+<figure>   {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Captura de tela do DevTools com nosso aplicativo de clima aberto e uma largura de 436 pixels selecionada.", width="800", height="521" %}   <figcaption>     DevTools mostrando o aplicativo de clima enquanto olha para um tamanho de viewport mais estreito.   </figcaption></figure>
 
 Para visualizar sua página em diferentes breakpoints:
 

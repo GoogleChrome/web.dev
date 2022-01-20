@@ -17,7 +17,7 @@ tags:
 
 本文讨论了轮播的性能和 UX 最佳实践。
 
-<figure class="w-figure">{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="显示旋转木马的图像", width="629", height="420", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="显示旋转木马的图像", width="629", height="420" %}</figure>
 
 ## 性能
 

@@ -16,7 +16,7 @@ Uma tela inicial personalizada torna seu [Progressive Web App (PWA)](/discover-i
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm uma tela inicial personalizada:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Auditoria do Lighthouse mostrando que o site não está configurado para ter uma tela inicial personalizada", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Auditoria do Lighthouse mostrando que o site não está configurado para ter uma tela inicial personalizada", width="800", height="98" %}</figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

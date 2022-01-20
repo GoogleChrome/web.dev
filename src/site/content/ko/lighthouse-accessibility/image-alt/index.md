@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse는 `alt` 속성이 없는 `<img>` 요소에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse 감사가 alt 속성이 없는 <img> 요소를 표시합니다", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse 감사가 alt 속성이 없는 <img> 요소를 표시합니다", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

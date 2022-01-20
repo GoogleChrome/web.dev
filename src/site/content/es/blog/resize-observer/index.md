@@ -49,7 +49,7 @@ ro.observe(someElement);
 
 Generalmente, un [`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry) informa el cuadro de contenido de un elemento mediante una propiedad llamada `contentRect`, que devuelve un objeto [`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly). El cuadro de contenido es el cuadro en el que se puede colocar el contenido. Es el cuadro del borde menos el relleno.
 
-<figure class="w-figure">{% Img src ="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="Un diagrama del modelo de caja CSS.", width="727", height="562" %}</figure>
+<figure>{% Img src ="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="Un diagrama del modelo de caja CSS.", width="727", height="562" %}</figure>
 
 Es importante tener en cuenta que, si bien `ResizeObserver` *informa* tanto las dimensiones del `contentRect` como del relleno, solo *observa* el `contentRect`. *No* confunda `contentRect` con el cuadro delimitador del elemento. El cuadro delimitador, según lo informado por `getBoundingClientRect()`, es el cuadro que contiene el elemento completo y sus descendientes. Los SVG son una excepción a la regla, donde `ResizeObserver` informará las dimensiones del cuadro delimitador.
 
@@ -75,8 +75,8 @@ Quizá se esté preguntando: ¿qué sucede si cambio el tamaño de un elemento o
 
 Una cosa que `ResizeObserver` permite hacer es implementar consultas de medios por elemento. Al observar los elementos, puede definir imperativamente los puntos de interrupción de su diseño y cambiar los estilos de un elemento. En el siguiente [ejemplo](https://googlechrome.github.io/samples/resizeobserver/), el segundo cuadro cambiará su radio de borde de acuerdo con su ancho.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -96,8 +96,8 @@ Otro ejemplo interesante para analizar es una ventana de chat. El problema que s
 
 `ResizeObserver` permite escribir una *sola* pieza de código que se encarga de *ambos* escenarios. Cambiar el tamaño de la ventana es un evento que un `ResizeObserver` puede capturar por definición, pero invocar a `appendChild()` también cambia el tamaño de ese elemento (a menos que se establezca un elemento `overflow: hidden` ), porque necesita hacer espacio para los nuevos elementos. Si tenemos esto en cuenta, se necesitan muy pocas líneas para lograr el efecto deseado:
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm" type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4" type="video/mp4; codecs=h264">
  </source></source></video></figure>

@@ -303,17 +303,15 @@ This could be useful to, for example, denote a particular animation that causes 
 Notably, this `info` won't be replayed if a user later causes navigation, e.g., via their Back and Forward buttons.
 In fact, it will always be `undefined` in those cases.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/QMjXarRXcMarxQddwrEdPvHVM242/UGyXlkr5Cbn3Db84FwqU.mov",
     autoplay="true",
     loop="true",
     width="320",
     height="320",
-    muted="true",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figure">
+    muted="true" %}
+  <figcaption>
     <a href="https://wiry-tricolor-lipstick.glitch.me" target="_blank">Demo of opening from left or right</a>
   </figcaption>
 </figure>

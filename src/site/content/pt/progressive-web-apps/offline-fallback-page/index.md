@@ -13,27 +13,27 @@ tags:
 
 O que os apps Google Assistant, Slack, Zoom e quase todos os outros apps específicos de plataforma em seu telefone ou computador têm em comum? Certo, eles sempre dão pelo menos *alguma coisa*. Mesmo quando você não tem uma conexão de rede, ainda pode abrir o app Assistant, entrar no Slack ou iniciar o Zoom. Você pode não conseguir nada particularmente significativo ou até não conseguir obter o que queria, mas pelo menos obtém *algo* e o aplicativo está no controle.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-apps-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Aplicativo Google Assistant para celular off-line.", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-assistant"> Google Assistant.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Aplicativo Google Assistant para celular off-line.", width="621", height="1344" %}<figcaption id="fig-assistant"> Google Assistant.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="App móvel Slack off-line.", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-slack"> Slack.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="App móvel Slack off-line.", width="621", height="1344" %}<figcaption id="fig-slack"> Slack.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Aplicativo móvel Zoom off-line.", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-zoom"> Zoom. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Aplicativo móvel Zoom off-line.", width="621", height="1344" %}<figcaption id="fig-zoom"> Zoom. </figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">Com aplicativos específicos de plataforma, mesmo sem ter conexão de rede, você nunca recebe nada.</figcaption>
+  <figcaption id="fig-apps-wrapper">Com aplicativos específicos de plataforma, mesmo sem ter conexão de rede, você nunca recebe nada.</figcaption>
 
 
 
 Por outro lado, na web, via de regra você não obtém nada quando está off-line. O Chrome oferece o [jogo do dinossauro off-line](https://www.blog.google/products/chrome/chrome-dino/), mas é só isso.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-offline-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Aplicativo Google Chrome para celular mostrando o jogo do dinossauro  off-line.", width="800", height="1731" %}<figcaption class="w-figcaption" id="fig-chrome-ios"> Google Chrome para iOS. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Aplicativo Google Chrome para celular mostrando o jogo do dinossauro  off-line.", width="800", height="1731" %}<figcaption id="fig-chrome-ios"> Google Chrome para iOS. </figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Aplicativo Google Chrome para desktop mostrando o jogo do dinossauro off-line.", width="800", height="607" %}<figcaption class="w-figcaption" id="fig-chrome"> Google Chrome para macOS. </figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Aplicativo Google Chrome para desktop mostrando o jogo do dinossauro off-line.", width="800", height="607" %}<figcaption id="fig-chrome"> Google Chrome para macOS. </figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">Na web, sem ter uma conexão de rede, por padrão, você não recebe nada.</figcaption>
+  <figcaption id="fig-offline-wrapper">Na web, sem ter uma conexão de rede, por padrão, você não recebe nada.</figcaption>
 
 
 
@@ -41,7 +41,7 @@ Por outro lado, na web, via de regra você não obtém nada quando está off-lin
 
 Mas não tem que ser assim. Graças aos [trabalhos de serviço e à API Cache Storage](/service-workers-cache-storage/), você pode fornecer uma experiência off-line personalizada para seus usuários. Pode ser uma página de marca simples com a informação de que o usuário está off-line no momento, mas também pode ser uma solução mais criativa, como, por exemplo, o famoso [jogo do labirinto off-line do trivago](https://www.trivago.com/offline), com um **botão manual de reconexão** e uma contagem regressiva para a tentativa de reconexão automática.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="A página off-line do trivago com o seu labirinto off-line.", width="800", height="616" %} <figcaption class="w-figcaption"> O labirinto off-line do trivago. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="A página off-line do trivago com o seu labirinto off-line.", width="800", height="616" %} <figcaption> O labirinto off-line do trivago. </figcaption></figure>
 
 ### Registrando o trabalho de serviço
 

@@ -39,13 +39,13 @@ Una de las principales dificultades del desempeño es encontrar una terminologí
 
 Ajustamos todo nuestro monitoreo y discusiones internas para incluir métricas estándar de la industria como [Web Vitals](/vitals/), que incluyen:
 
-<figure class="w-figure">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/PLF62sx8lHkpKbnvYKKR.jpg", alt="Un diagrama de 2020 Core Web Vitals: LCP, FID y CLS.", width="800", height="215" %} <figcaption class="w-figcaption">Core Web Vitals</figcaption></figure>
+<figure>{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/PLF62sx8lHkpKbnvYKKR.jpg", alt="Un diagrama de 2020 Core Web Vitals: LCP, FID y CLS.", width="800", height="215" %} <figcaption>Core Web Vitals</figcaption></figure>
 
 ### Puntajes de rendimiento y complejidad del sitio
 
 Es bastante fácil crear un sitio que se cargue instantáneamente siempre que lo [hagas muy simple](https://justinjackson.ca/words.html) usando solo HTML y lo sirvas a través de un CDN.
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/xMUN9CUVvgnHofImPcV5.jpg", alt="Ejemplo de PageSpeed Insights", width="800", height="647" %}</figure>
+<figure data-float="left">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/xMUN9CUVvgnHofImPcV5.jpg", alt="Ejemplo de PageSpeed Insights", width="800", height="647" %}</figure>
 
 Sin embargo, la realidad es que los sitios son cada vez más complejos y sofisticados, funcionan más como aplicaciones que como documentos y soportan funcionalidades como blogs, soluciones de comercio electrónico, código personalizado, etc.
 
@@ -57,7 +57,7 @@ Wix ofrece una gran [variedad de plantillas](https://www.wix.com/website/templat
 
 Cada vez que se carga una página web, siempre comienza con una solicitud inicial a una URL para recuperar el documento HTML. Esta respuesta HTML activa todas las solicitudes de clientes adicionales y la lógica del navegador para ejecutar y renderizar tu sitio. Esta es la parte más importante de la carga de la página, porque no sucede nada hasta que llega el comienzo de la respuesta (conocido como Time to First Byte (TTFB): Tiempo para el primer byte).
 
-<figure class="w-figure">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/b1KKSlUQQTuNCDj4ndyJ.jpg", alt="Primera vista de WebPageTest", width="800", height="411" %}<figcaption class="w-figcaption"> Primera vista de WebPageTest</figcaption></figure>
+<figure>{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/b1KKSlUQQTuNCDj4ndyJ.jpg", alt="Primera vista de WebPageTest", width="800", height="411" %}<figcaption> Primera vista de WebPageTest</figcaption></figure>
 
 #### El pasado: renderización del lado del cliente (CSR)
 
@@ -97,7 +97,7 @@ Sin embargo, la necesidad de modificar el HTML para cada respuesta introdujo una
 
 ### Almacenamiento en caché del navegador (y preparativos para CDN)
 
-<div class="w-figure">
+<div>
   <div class="stats">
     <div class="stats__item">
      <p class="stats__figure">~ 13 <sub>%</sub></p>
@@ -112,7 +112,7 @@ Migramos cuidadosamente estos datos y cookies a un nuevo punto final, que se lla
 
 Esto nos permitió habilitar el almacenamiento en caché del HTML del navegador, lo que significa que los navegadores ahora guardan la respuesta HTML para visitas repetidas y solo llaman al servidor para validar que el contenido no haya cambiado. Esto se hace usando [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag), que es básicamente un identificador asignado a una versión específica de un recurso HTML. Si el contenido sigue siendo el mismo, nuestros servidores envían una respuesta [304 Not Modified](https://developer.mozilla.org/docs/Web/HTTP/Status/304) al cliente, sin un cuerpo.
 
-<figure class="w-figure">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/hr1xnQccJEkHTBGxS5wF.jpg", alt="ALT_TEXT_HERE", width="800", height="410" %} <figcaption class="w-figcaption"> Vista de repetición de WebPageTest</figcaption></figure>
+<figure>{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/hr1xnQccJEkHTBGxS5wF.jpg", alt="ALT_TEXT_HERE", width="800", height="410" %} <figcaption> Vista de repetición de WebPageTest</figcaption></figure>
 
 Además, este cambio significa que nuestro HTML ya no es específico del visitante y no contiene cookies. En otras palabras, básicamente se puede almacenar en caché en cualquier lugar, lo que abre la puerta al uso de proveedores de CDN que tienen una presencia geográfica mucho mejor en cientos de ubicaciones en todo el mundo.
 
@@ -120,13 +120,13 @@ Además, este cambio significa que nuestro HTML ya no es específico del visitan
 
 Con el almacenamiento en caché habilitado, los tiempos de espera se redujeron y otras partes importantes de la conexión inicial se volvieron más sustanciales. Mejorar nuestra infraestructura de red y monitoreo nos permitió mejorar nuestros tiempos de DNS, conexión y SSL.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/Uuvh9xTItQ8wMA9s13RP.jpg", alt="Un gráfico de tiempo de respuesta", width="800", height="441" %}</figure>
+<figure data-float="right">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/Uuvh9xTItQ8wMA9s13RP.jpg", alt="Un gráfico de tiempo de respuesta", width="800", height="441" %}</figure>
 
 [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) se habilitó para todos los dominios de usuario, lo que redujo tanto la cantidad de conexiones necesarias como la sobrecarga que conlleva cada nueva conexión. Este fue un cambio relativamente fácil de implementar, mientras se aprovechaban los beneficios de [rendimiento y resistencia](https://developers.google.com/web/fundamentals/performance/http2) que vienen con HTTP/2.
 
 ### Compresión Brotli (contra gzip)
 
-<div class="w-figure">
+<div>
   <div class="stats">
     <div class="stats__item">
      <p class="stats__figure">21 - 25 <sub>%</sub></p>
@@ -137,7 +137,7 @@ Con el almacenamiento en caché habilitado, los tiempos de espera se redujeron y
 
 Tradicionalmente, todos nuestros archivos se comprimían mediante la compresión [gzip](https://en.wikipedia.org/wiki/Gzip), que es la opción de compresión HTML más común en la web. ¡Este protocolo de compresión se implementó inicialmente hace casi 30 años!
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/h7KzeAfg2THMdDGMYvlR.jpg", alt="Compresión Brotli", width="800", height="805" %}<figcaption class="w-figcaption"> <a href="https://tools.paulcalvano.com/compression.php">Estimador de nivel de compresión Brotli</a></figcaption></figure>
+<figure data-float="right">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/h7KzeAfg2THMdDGMYvlR.jpg", alt="Compresión Brotli", width="800", height="805" %}<figcaption> <a href="https://tools.paulcalvano.com/compression.php">Estimador de nivel de compresión Brotli</a></figcaption></figure>
 
 La más reciente [compresión Brotli](https://en.wikipedia.org/wiki/Brotli) introduce mejoras de compresión casi sin concesiones y poco a poco se está volviendo más popular, como se describe en el anual [Compression chapter](https://almanac.httparchive.org/en/2020/compression#what-type-of-content-should-we-compress) de Web Almanac. Ha sido compatible con [todos los principales navegadores](https://caniuse.com/brotli) durante un tiempo.
 
@@ -145,7 +145,7 @@ Habilitamos el soporte de Brotli en nuestros proxies nginx en los bordes, para t
 
 Al pasar a utilizar la compresión Brotli, redujo nuestro tamaño mediano de transferencia de archivos entre un **21% y un 25%**, lo que resultó en un uso reducido del ancho de banda y tiempos de carga mejorados.
 
-<figure class="w-figure">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/392RWYamrwkdFozk91LC.jpg", alt="Tamaños de respuesta de la mediana para dispositivos móviles y computadoras de escritorio", width="800", height="173" %}<figcaption class="w-figcaption"> Tamaños de respuesta de la mediana</figcaption></figure>
+<figure>{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/392RWYamrwkdFozk91LC.jpg", alt="Tamaños de respuesta de la mediana para dispositivos móviles y computadoras de escritorio", width="800", height="173" %}<figcaption> Tamaños de respuesta de la mediana</figcaption></figure>
 
 ## Redes de entrega de contenido (CDN)
 
@@ -179,7 +179,7 @@ Esperamos ver el informe actualizado en 2021 y estamos monitoreando activamente 
 
 Estamos comprometidos a mejorar continuamente los tiempos de carga y proporcionar a nuestros usuarios una plataforma en la que puedan crear sitios como ellos lo imaginen, sin comprometer el rendimiento.
 
-<figure class="w-figure">{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/AADz7d1yVOWZlq0iSb6P.jpg", alt="La LCP, Speed Index y FCP para un sitio móvil a lo largo del tiempo", width="800", height="259" %} <figcaption class="w-figcaption">La LCP, Speed Index y FCP para un sitio móvil a lo largo del tiempo</figcaption></figure>
+<figure>{% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/AADz7d1yVOWZlq0iSb6P.jpg", alt="La LCP, Speed Index y FCP para un sitio móvil a lo largo del tiempo", width="800", height="259" %} <figcaption>La LCP, Speed Index y FCP para un sitio móvil a lo largo del tiempo</figcaption></figure>
 
 DebugBear lanzó recientemente una [revisión de rendimiento del Website Builder (creador de sitios web)](https://www.debugbear.com/blog/website-builder-performance-review) muy interesante, que toca algunas de las áreas que mencioné anteriormente y examina el rendimiento de sitios muy simples construidos en cada plataforma. Este [sitio](https://matt05041.wixsite.com/bizsolutions) se construyó hace casi dos años y no se modificó desde entonces, pero la plataforma está mejorando continuamente y el rendimiento del sitio junto con él, lo que se puede observar al [ver sus datos](https://www.debugbear.com/project/175/pageLoad/873/overview?dateRange=2019-03-31T21%3A00Z-to-2021-03-31T21%3A59Z) durante el último año y medio.
 

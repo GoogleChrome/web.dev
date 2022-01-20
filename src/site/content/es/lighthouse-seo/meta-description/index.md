@@ -16,7 +16,7 @@ El elemento `<meta name="description">` proporciona un resumen del contenido de 
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas sin una metadescripción:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Auditoría Lighthouse que muestra que el documento no tiene una metadescripción", width="800", height="74", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Auditoría Lighthouse que muestra que el documento no tiene una metadescripción", width="800", height="74" %}</figure>
 
 La auditoría falla si:
 

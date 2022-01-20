@@ -92,7 +92,7 @@ WebUSB API 严重依赖于 JavaScript [Promises](https://developer.mozilla.org/d
 
 `navigator.usb.requestDevice()` 函数采用定义 `filters` 的强制性 JavaScript 对象。这些过滤器用于匹配具有给定供应商 (`vendorId`) 和可选的产品 (`productId`) 标识符的任何 USB 设备。也可以定义 `classCode`、`protocolCode`、`serialNumber` 和 `subclassCode`。
 
-<figure class="w-figure">{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Chrome 中 USB 设备用户提示的截图", width="800", height="533", class="w-screenshot" %}<figcaption class="w-figcaption"> USB 设备用户提示。</figcaption></figure>
+<figure>{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Chrome 中 USB 设备用户提示的截图", width="800", height="533" %}<figcaption> USB 设备用户提示。</figcaption></figure>
 
 例如，这里是如何访问配置为允许初始连接的 Arduino 设备。
 
@@ -111,7 +111,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 顺便说一下，如果 USB 设备宣布[支持 WebUSB](https://wicg.github.io/webusb/#webusb-platform-capability-descriptor) 并定义了登陆页面 URL，Chrome 将在 USB 设备插入时显示持久通知。点击此通知将打开登陆页面。
 
-<figure class="w-figure">{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Chrome 中的 WebUSB 通知截图", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption"> WebUSB 通知。</figcaption></figure>
+<figure>{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Chrome 中的 WebUSB 通知截图", width="800", height="450" %}<figcaption> WebUSB 通知。</figcaption></figure>
 
 从那里，您可以简单地调用 `navigator.usb.getDevices()` 并访问您的 Arduino 设备，如下所示。
 
@@ -206,11 +206,11 @@ WebUSB API 允许您与所有 USB 传输/端点类型交互：
 
 使用内部页面 `about://device-log` 在 Chrome 中调试 USB 更容易，其中您可以在同一个位置查看所有与 USB 设备相关的事件。
 
-<figure class="w-figure">{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Chrome 中调试 WebUSB 的设备日志页面截图", width="800", height="442", class="w-screenshot" %}<figcaption class="w-figcaption"> Chrome 中用于调试 WebUSB API 的设备日志页面。</figcaption></figure>
+<figure>{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Chrome 中调试 WebUSB 的设备日志页面截图", width="800", height="442" %}<figcaption> Chrome 中用于调试 WebUSB API 的设备日志页面。</figcaption></figure>
 
 内部页面 `about://usb-internals` 也派上用场，可让您模拟虚拟 WebUSB 设备的连接和断开。这对于在没有真实硬件的情况下进行 UI 测试非常有用。
 
-<figure class="w-figure">{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Chrome 中调试 WebUSB 的内部页面截图", width="800", height="294", class="w-screenshot" %}<figcaption class="w-figcaption"> Chrome 中用于调试 WebUSB API 的内部页面。</figcaption></figure>
+<figure>{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Chrome 中调试 WebUSB 的内部页面截图", width="800", height="294" %}<figcaption> Chrome 中用于调试 WebUSB API 的内部页面。</figcaption></figure>
 
 在大多数 Linux 系统上，USB 设备默认映射为只读权限。要允许 Chrome 打开 USB 设备，您需要添加新的[udev 规则](https://www.freedesktop.org/software/systemd/man/udev.html)。在 `/etc/udev/rules.d/50-yourdevicename.rules` 上创建如下内容的文件：
 

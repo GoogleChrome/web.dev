@@ -199,7 +199,7 @@ async function copy() {
 
 クリップボードへのアクセスは、常にブラウザにとってセキュリティ上の懸念でした。適切なアクセス権がないと、ページはあらゆる種類の悪意のあるコンテンツをユーザーのクリップボードにサイレントにコピーし、貼り付けられたときに壊滅的な結果を招く可能性があります。`rm -rf /`または[高圧縮ファイル爆弾の画像](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html)をクリップボードにサイレントコピーするWebページを想像してみてください。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="クリップボードのアクセス権をユーザーに求めるブラウザプロンプト。", width="800", height="338", class="w-screenshot" %} <figcaption class="w-figcaption">クリップボードAPIのアクセス権プロンプト。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="クリップボードのアクセス権をユーザーに求めるブラウザプロンプト。", width="800", height="338" %} <figcaption>クリップボードAPIのアクセス権プロンプト。</figcaption></figure>
 
 Webページにクリップボードへの無制限の読み取りアクセスを許可することはさらに厄介です。ユーザーは、パスワードや個人情報などの機密情報をクリップボードに定期的にコピーしますが、ユーザーの知らないうちにどこかのページによってこのような情報が読み取られる可能性があります。
 

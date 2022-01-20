@@ -650,8 +650,8 @@ getJSON('story.json').then(function(story) {
 
 여기에 동기화 버전의 완전히 비동기화된 버전이 있습니다. 하지만 우리는 더 잘할 수 있습니다. 현재 페이지가 다음과 같이 다운로드되고 있습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -695,8 +695,8 @@ getJSON('story.json').then(function(story) {
 
 연결에 따라 하나씩 로드하는 것보다 몇 초 더 빠를 수 있으며 첫 번째 시도보다 코드가 적습니다. 챕터는 어떤 순서로든 다운로드할 수 있지만 올바른 순서로 화면에 나타납니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -740,8 +740,8 @@ getJSON('story.json')
 
 이렇게 우리는 두 가지의 장점을 모두 얻었습니다! 모든 콘텐츠를 전달하는 데 동일한 시간이 걸리지만 사용자는 첫 번째 콘텐츠를 더 빨리 받습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>

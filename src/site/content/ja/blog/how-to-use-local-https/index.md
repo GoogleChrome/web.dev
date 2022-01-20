@@ -31,7 +31,7 @@ tags:
 - ブラウザは、証明書がmkcertによって生成された認証局によって署名されていることを確認すると、証明書が信頼できる認証局として登録されているかどうかを確認します。
 - mkcertは信頼できる機関として登録されているため、ブラウザは証明書を信頼し、HTTPS接続を作成します。
 
-<figure class="w-figure">{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="mkcertの動作の仕組みの図。", width="800", height="787" %} <figcaption class="w-figcaption">mkcertの動作の仕組みの図。</figcaption></figure>
+<figure>{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="mkcertの動作の仕組みの図。", width="800", height="787" %} <figcaption>mkcertの動作の仕組みの図。</figcaption></figure>
 
 mkcert (および類似したツール) には、次のようなさまざまな利点があります。
 
@@ -224,7 +224,7 @@ HTTPSを使用してローカル開発サイトを実行するには、次の手
 - mkcertのようなローカルCAを使用する場合と比べ、必ずしも簡単または高速であるとは限りません。
 - ブラウザのコンテキストでこの手法を使用していない場合、サーバーの証明書の検証を無効にしなければならないことがあります。本番環境で再有効化しないと危険です。
 
-<figure class="w-figure">{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="自己署名証明書が使用されたときにブラウザに表示される警告のスクリーンショット。", width="800", height="598" %} <figcaption class="w-figcaption">自己署名証明書が使用されると、警告ブラウザが表示されます。</figcaption></figure>
+<figure>{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="自己署名証明書が使用されたときにブラウザに表示される警告のスクリーンショット。", width="800", height="598" %} <figcaption>自己署名証明書が使用されると、警告ブラウザが表示されます。</figcaption></figure>
 
 {% Aside %}証明書を指定しない場合、 [React](https://create-react-app.dev/docs/using-https-in-development/)および[Vueの](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve)開発サーバーのHTTPSオプションは、内部で自己署名証明書を作成します。これは簡単ですが、ブラウザの警告が表示され、上記の自己署名証明書に関連するその他の落とし穴が発生します。幸い、フロントエンドフレームワークの組み込みHTTPSオプション**を**使用して、mkcertなどを介して作成されたローカルで信頼できる証明書を指定できます。 [Reactの例を使用](/#setup:~:text=a%20React%20development%20server)したmkcertでこれを行う方法を参照してください。 {% endAside %}
 
@@ -232,7 +232,7 @@ HTTPSを使用してローカル開発サイトを実行するには、次の手
 
 HTTPSを使用してブラウザでローカルに実行されているサイトを開くと、ブラウザはローカル開発サーバーの証明書を確認します。ブラウザで証明書がユーザーによって署名されていることが確認されると、信頼できる認証局として登録されているかどうかがチェックされます。信頼できる認証局として登録されていないため、ブラウザは証明書を信頼できません。接続が安全でないことを通知する警告が表示されます。自己責任で続行できます。続行すると、HTTPS接続が作成されます。
 
-<figure class="w-figure">{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="ブラウザが自己署名証明書を信頼しない理由: 図。", width="800", height="833" %} <figcaption class="w-figcaption">ブラウザが自己署名証明書を信頼しない理由。</figcaption></figure>
+<figure>{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="ブラウザが自己署名証明書を信頼しない理由: 図。", width="800", height="833" %} <figcaption>ブラウザが自己署名証明書を信頼しない理由。</figcaption></figure>
 
 {% endDetails %}
 

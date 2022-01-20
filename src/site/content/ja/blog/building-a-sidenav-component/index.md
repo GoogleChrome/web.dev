@@ -29,17 +29,17 @@ tags:
 
 応答性の高いナビゲーションシステムを構築するのは難しいです。多少のユーザーはキーボードを使用し、多少のユーザーは強力なデスクトップを使用し、一部のユーザーは小さなモバイルデバイスからアクセスします。訪問する全員がメニューを開いたり閉じたりできる必要があります。
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/desktop-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">デスクトップからモバイルへのレスポンシブ対応のレイアウトのデモ</figcaption></figure>
+  <figcaption>デスクトップからモバイルへのレスポンシブ対応のレイアウトのデモ</figcaption></figure>
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/mobile-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">iOSとAndroidでの明るいテーマと暗いテーマ</figcaption></figure>
+  <figcaption>iOSとAndroidでの明るいテーマと暗いテーマ</figcaption></figure>
 
 ## Web戦術
 
@@ -81,8 +81,8 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/hash-change.mp4">
   </source></video></figure>
 
@@ -108,8 +108,8 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
   </source></video></figure>
 
@@ -126,11 +126,11 @@ tags:
 
 メニューオーバーレイとボタンに近くのネガティブスペースに適した比率を見つけるために、`2fr`と`1fr`を調整してください。
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
   </source></video>
-  <figcaption class="w-figure">比率を変更する結果のデモ。</figcaption></figure>
+  <figcaption>比率を変更する結果のデモ。</figcaption></figure>
 
 ### CSS 3D変換と遷移{: #transforms }
 
@@ -158,11 +158,11 @@ tags:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
   </source></video>
-  <figcaption class="w-figure">durationが適用されている場合と適用されていない場合のインタラクションのデモ。</figcaption></figure>
+  <figcaption>durationが適用されている場合と適用されていない場合のインタラクションのデモ。</figcaption></figure>
 
 これで、サイドナビゲーションがスライドして開閉している間に、ユーザーが動きを抑えたい場合は、要素を即座にビューに移動して、動きのない状態を維持します。
 
@@ -223,11 +223,11 @@ tags:
 </a>
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/keyboard-voiceover.mp4">
   </source></video>
-  <figcaption class="w-figure">ナレーションとキーボードインタラクションUXのデモ。</figcaption></figure>
+  <figcaption>ナレーションとキーボードインタラクションUXのデモ。</figcaption></figure>
 
 これで、主要なインタラクションボタンは、マウスとキーボードの両方に対する意図を明確に示しています。
 

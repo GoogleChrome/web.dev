@@ -55,7 +55,7 @@ tags:
 
 可使用`tee()` 方法对可读流进行 T 型改造（以大写 'T' 的形状命名）。这将**锁定**流，也就是使其不再直接可用；但是，它会创建**两个新的流**，这两个流称为分支，可以独立使用。T 型改造也很重要，因为流不能倒回或重新启动，稍后我会详细介绍。
 
-<figure class="w-figure"><comment data-md-type="comment"></comment>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="管道链图，其中包含一个可读流，该流来自 fetch API 的调用，然后通过输出已经过 T 型改造的转换流进行传输，之后再发送至第一个结果可读流的浏览器和第二个结果可读流的 Service Worker 缓存。", width="800", height="430" %}<figcaption class="w-figcaption">管道链。</figcaption></figure>
+<figure><comment data-md-type="comment"></comment>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="管道链图，其中包含一个可读流，该流来自 fetch API 的调用，然后通过输出已经过 T 型改造的转换流进行传输，之后再发送至第一个结果可读流的浏览器和第二个结果可读流的 Service Worker 缓存。", width="800", height="430" %}<figcaption>管道链。</figcaption></figure>
 
 ## 可读流的机制
 
