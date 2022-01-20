@@ -1,9 +1,20 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/figure
 figure {
-  border: 1px solid var(--color-stroke);
-  padding: 1em;
-  border-radius: $global-radius-base;
+  display: block;
+  width: 100%;
+
+  > *:not(figcaption) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > figcaption {
+    display: block;
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 figure[data-float] {
@@ -11,25 +22,30 @@ figure[data-float] {
   margin-bottom: get-space('size-1');
 }
 
-figure[data-float="left"] {
+figure[data-float='left'] {
   float: left;
   margin-inline-end: get-space('size-1');
-}
 
-figure[data-float="right"] {
-  float: right;
-  margin-inline-start: get-space('size-1');
-}
-
-/// Keeps figures and embeds at a reasonable size and
-/// makes sure their content fills them
-figure,
-iframe {
-  > * {
-    width: 100%;
+  > figcaption {
+    text-align: inherit;
   }
 }
 
-figcaption {
-  max-width: 60ch;
+figure[data-float='right'] {
+  float: right;
+  margin-inline-start: get-space('size-1');
+
+  > figcaption {
+    text-align: inherit;
+  }
+}
+
+figure[data-size='full'] {
+  > * {
+    width: 100%;
+  }
+
+  > figcaption {
+    text-align: inherit;
+  }
 }

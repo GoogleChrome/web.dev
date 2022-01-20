@@ -113,8 +113,8 @@ Width axis: the Regular is at the center of the axis, and two styles, narrower
 and wider, are at each end. These provide all the widths of the Regular style,
 and combine with the Weight axis to provide all the widths for every weight.
 
-<figure>
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-dance.mp4" type="video/mp4">
   </video>
   <figcaption>
