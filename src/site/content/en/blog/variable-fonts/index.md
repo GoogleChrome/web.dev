@@ -11,7 +11,7 @@ authors:
   - dcrossland
   - roeln
 date: 2018-02-19
-updated: 2020-08-17
+updated: 2022-01-19
 hero: image/admin/SHy7jOlEVPU1lsyfgvlG.jpg
 tags:
   - blog
@@ -680,24 +680,26 @@ variable fonts as progressive enhancement:
 
 ```css
 /* Set up Roboto for old browsers, only regular + bold */
-@font-face {
-  font-family: Roboto;
-  src: url('Roboto-Regular.woff2');
-  font-weight: normal;
-}
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: Roboto;
+    src: url('Roboto-Regular.woff2');
+    font-weight: normal;
+  }
 
-@font-face {
-  font-family: Roboto;
-  src: url('Roboto-Bold.woff2');
-  font-weight: bold;
-}
+  @font-face {
+    font-family: Roboto;
+    src: url('Roboto-Bold.woff2');
+    font-weight: bold;
+  }
 
-body {
-  font-family: Roboto;
-}
+  body {
+    font-family: Roboto;
+  }
 
-.super-bold {
-  font-weight: bold;
+  .super-bold {
+    font-weight: bold;
+  }
 }
 
 /* Set up Roboto for modern browsers, all weights */
@@ -719,6 +721,11 @@ body {
 For older browsers, text with the class `.super-bold` will get rendered in the
 normal bold, as that's the only bold font we have available. When variable fonts
 are supported, we can actually use the heaviest weight of 1000.
+
+The `@supports` rule is not supported by Internet Explorer, so this browser would
+not show any styling. If this is a problem, you could always use one of the
+[oldschool hacks](https://stackoverflow.com/a/20541859/6255000) to target relevant
+older browsers.
 
 If you are using the Google Fonts API, it will take care of loading the proper
 fonts for your visitor's browsers. Say you request the font Oswald in weight
