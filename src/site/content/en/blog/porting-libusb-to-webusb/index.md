@@ -148,7 +148,7 @@ const struct usbi_os_backend usbi_backend = {
 
 Looking through the properties, we can see that the struct includes the backend name, a set of its capabilities, handlers for various low-level USB operations in form of function pointers, and, finally, sizes to allocate for storing private device-/context-/transfer-level data.
 
-The private data fields are useful at least for storing OS handles to all those things, as without handles we don't know which item any given operation applies to. In the web implementation, the OS handles would be the underlying WebUSB JavaScript objects. The natural way to represent and store them in Emscripten would be via the [`emscripten::val`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4N10emscripten10emscripten3valE) class, which is provided as part of [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html) (Emscripten's bindings system).
+The private data fields are useful at least for storing OS handles to all those things, as without handles we don't know which item any given operation applies to. In the web implementation, the OS handles would be the underlying WebUSB JavaScript objects. The natural way to represent and store them in Emscripten is via the [`emscripten::val`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4N10emscripten10emscripten3valE) class, which is provided as part of [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html) (Emscripten's bindings system).
 
 Most of the backends in the folder are implemented in C, but a few are implemented in C++. Embind only works with C++, so the choice was made for me and I've added `libusb/libusb/os/emscripten_webusb.cpp` with the required structure and with `sizeof(val)` for the private data fields:
 
@@ -211,7 +211,7 @@ struct WebUsbTransferPtr : ValPtr {
 
 ### Async web APIs in synchronous C contexts
 
-Now I've needed a way to handle async WebUSB APIs where libusb expects synchronous operations. For this, I could use Asyncify, or, more specifically, its Embind integration via [`val::await()`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val5awaitEv).
+Now needed a way to handle async WebUSB APIs where libusb expects synchronous operations. For this, I could use Asyncify, or, more specifically, its Embind integration via [`val::await()`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val5awaitEv).
 
 I also wanted to correctly handle WebUSB errors and convert them into libusb error codes, but Embind currently doesn't have any way to handle JavaScript exceptions or `Promise` rejections from the C++ side. This problem can be worked around by catching a rejection on the JavaScript side and converting the result into an `{ error, value }` object that can be now safely parsed from the C++ side. I did this with a combination of the [`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.EM_JS) macro and [`Emval.to{Handle, Value}`](https://emscripten.org/docs/api_reference/val.h.html#_CPPv4NK10emscripten10emscripten3val9as_handleEv) APIs:
 
