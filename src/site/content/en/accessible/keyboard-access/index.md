@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Keyboard access fundamentals
 authors:
   - robdodson

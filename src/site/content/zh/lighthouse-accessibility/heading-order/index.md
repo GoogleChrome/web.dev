@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 标题元素没有按降序顺序排列
 description: 了解如何通过正确构建标题元素来确保辅助技术用户可以轻松浏览您的网页。
 date: 2019-10-17

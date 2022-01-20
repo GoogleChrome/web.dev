@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minifique e comprima payloads de rede
 authors:
   - houssein

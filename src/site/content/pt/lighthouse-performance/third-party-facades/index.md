@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carregue recursos de terceiros de forma lazy com fachadas
 description: Aprenda sobre as oportunidades de carregamento lazy de recursos de terceiros com fachadas.
 date: 2020-12-01

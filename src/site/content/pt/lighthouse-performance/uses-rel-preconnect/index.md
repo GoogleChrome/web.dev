@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pré-conectar às origens necessárias
 description: |2
 

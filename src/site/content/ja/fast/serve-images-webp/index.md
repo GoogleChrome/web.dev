@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: WebP 画像の使用
 authors:
   - katiehempenius

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: フォントの読み込み中にテキストが非表示されることを避ける
 authors:
   - katiehempenius

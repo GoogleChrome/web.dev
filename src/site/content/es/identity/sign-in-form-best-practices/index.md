@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Mejores prácticas para el formulario de inicio de sesión
 subhead: Utilice funciones de navegador multiplataforma para crear formularios de inicio de sesión que sean seguros, accesibles y fáciles de usar.
 authors:

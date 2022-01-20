@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than `5`"
 description: |
   Learn how to make your web page more accessible by making sure that browser
@@ -20,8 +20,8 @@ to see the contents of a web page.
 
 Lighthouse flags pages that disable browser zooming:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Lighthouse audit showing the viewport disables text scaling and zooming", width="800", height="227", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Lighthouse audit showing the viewport disables text scaling and zooming", width="800", height="227" %}
 </figure>
 
 A page fails the audit if it contains a `<meta name="viewport">` tag with either of the following:

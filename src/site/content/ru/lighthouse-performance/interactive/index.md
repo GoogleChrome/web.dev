@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Время до интерактивности (TTI)
 description: |2-
 

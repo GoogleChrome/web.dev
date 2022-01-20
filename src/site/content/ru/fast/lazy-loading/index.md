@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Использование отложенной загрузки для ускорения отрисовки страницы
 authors:
   - jlwagner

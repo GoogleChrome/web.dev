@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Оценка производительности в Lighthouse
 description: Узнайте, как Lighthouse оценивает общую производительность вашей страницы.
 subhead: Как Lighthouse оценивает общую производительность страницы

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Etiquetas y texto alternativo
 authors:
   - robdodson

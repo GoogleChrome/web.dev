@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cookie 通知的最佳实践
 subhead: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "**Enable text compression"
 description: |2-
 

@@ -12,8 +12,8 @@ This demo uses an experimental web technology that is not currently supported in
 
 This demo uses [container queries](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries) to create an intrinsic, responsive card. The card goes from a single-column layout at more narrow sizes to a two-column layout when it is at wider sizes.
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/LgWuKF0DH9QhoicKgbvA.mp4">
   </video>
 </figure>
@@ -64,8 +64,8 @@ And update those base styles according to that parent container's inline width:
 
 This means that if you have this exact same component in different parts of your UI, it's able to use its own logic to resize and best fit its container. You have better control over the card's layout than you would if you only had the global viewport to rely on. The following illustrates this by placing the container query card in a grid with varying column widths:
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/YkkfwOM5iKqsKo6gn8oF.mp4">
   </video>
 </figure>

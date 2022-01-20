@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O conteúdo não está dimensionado corretamente para a janela de visualização
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Используйте Lighthouse для расчета бюджета производительности
 authors:
   - katiehempenius

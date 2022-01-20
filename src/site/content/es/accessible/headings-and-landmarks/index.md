@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Encabezados y landmarks
 authors:
   - robdodson

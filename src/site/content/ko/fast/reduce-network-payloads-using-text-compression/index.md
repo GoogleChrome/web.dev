@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 네트워크 페이로드 축소 및 압축
 authors:
   - houssein

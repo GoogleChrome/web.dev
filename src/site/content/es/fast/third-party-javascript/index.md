@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Rendimiento de JavaScript de terceros
 subhead: Descubra cómo JavaScript de terceros puede afectar el rendimiento y lo que puede hacer para evitar que se ralenticen sus sitios.
 authors:

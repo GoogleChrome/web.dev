@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Exiba imagens responsivas
 authors:
   - katiehempenius

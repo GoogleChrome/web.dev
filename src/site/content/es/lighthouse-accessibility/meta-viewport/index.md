@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable =" no "]` se usa en el elemento `<meta name =" viewport ">` o el atributo `[maximum-scale]` es menor que `5`'
 description: Aprenda a hacer que su página web sea más accesible al asegurar que el acercamiento del navegador  no se desactive.
 date: 2019-05-02

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Por que a velocidade é importante?
 authors:
   - bojanpavic

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los enlaces a destinos de origen cruzado no son seguros
 description: |2-
 

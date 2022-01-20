@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 发布、传输和安装现代 JavaScript 以实现更快的应用程序
 subhead: 通过开启现代 JavaScript 依赖项和输出来提高性能。
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg

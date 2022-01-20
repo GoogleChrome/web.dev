@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用图像 CDN 优化图像
 authors:
   - katiehempenius

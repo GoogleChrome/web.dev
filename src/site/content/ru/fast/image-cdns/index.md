@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Оптимизация изображений при помощи специализированных CDN
 authors:
   - katiehempenius

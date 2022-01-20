@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Structured data is valid
 description: |
   Learn about the "Structured data is valid" Lighthouse audit.

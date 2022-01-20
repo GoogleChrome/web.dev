@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os erros do navegador foram registrados no console
 description: |2
 

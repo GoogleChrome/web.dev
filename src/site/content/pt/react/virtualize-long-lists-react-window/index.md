@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Virtualize grandes listas com janela de reação
 subhead: |2
 

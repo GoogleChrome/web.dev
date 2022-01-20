@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: La carga de la página no es lo suficientemente rápida en las redes móviles
 description: |2
 

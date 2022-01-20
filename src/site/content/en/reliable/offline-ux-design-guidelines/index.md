@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Offline UX design guidelines
 subhead: A guide to designing web experiences for slow networks and offline.
 authors:
@@ -52,16 +52,16 @@ current state of the application. For example, a notification could say:
 > You seem to have a bad network connection. Not to worry! Messages will be sent when the
 > network is restored.
 
-<figure class="w-figure" style="display: inline-block; max-width: 45%;">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/roxoXuJ9x7qUHFVWMgXZ.png", alt="The Emojoy emoji messaging app informing the user when a change in state occurs.", width="335", height="601" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Clearly inform the user when a change in state occurs as soon as possible.
   </figcaption>
 </figure>
 
-<figure class="w-figure" style="display: inline-block; max-width: 45%;">
+<figure style="display: inline-block; max-width: 45%;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GvE07BeSsnTyxnRbkZhz.png", alt="The I/O 2016 app informing the user when a change in state occurs.", width="335", height="601" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The Google I/O app used a material design "toast" to let the user know when they were offline.
   </figcaption>
 </figure>
@@ -84,7 +84,7 @@ which posts a note to the user when the app has been updated.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ikam7evJEVSicAnVxvWA.png", alt="An example weather app.", width="324", height="598" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Some apps, like the weather app, need to auto-update, as old data
     is not useful.
   </figcaption>
@@ -92,7 +92,7 @@ which posts a note to the user when the app has been updated.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TtIkRCPsuxAOajX8LPF.png", alt="Chrome Status uses a toast", width="336", height="598" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Apps like Chrome Status let the user know
     when content has been updated via a toast notification.
   </figcaption>
@@ -103,14 +103,14 @@ be useful for a currency converter app, for example.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nK4V7aUvmLvaNJgF1S2I.png", alt="The Material Money app being out-of-date.", width="324", height="598" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Material Money caches rates…
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wqaFuHzeAC2wR0D3pt7R.png", alt="Material money has been updated", width="324", height="598" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     …and notifies the user when the app has been updated.
   </figcaption>
 </figure>
@@ -121,14 +121,14 @@ their place.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="An example news app, Tailpiece in its normal state", width="360", height="665" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Tailpiece, an online newspaper, will auto-download the latest news…
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNIMNF14cSF29fntl1Lc.png", alt="Example news app, Tailpiece when its ready to be updated", width="360", height="665" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     …but allow users to refresh manually so they do not lose their place in an article.
   </figcaption>
 </figure>
@@ -167,14 +167,14 @@ make that the priority download.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M39yiHQYpXacVII6d7zX.png", alt="Tailpiece informs the user that they are offline with various design widgets", width="360", height="665" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     If the device is offline, Tailpiece will notify the user with a status message…
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KpkzjYNoCWquWKXTvM28.png", alt="Tailpiece has a visual indicator that shows what sections are ready for offline use.", width="360", height="665" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     …letting them know that they can at least partially still use the app.
   </figcaption>
 </figure>
@@ -200,7 +200,7 @@ to.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fNOute6xBzFcDUNMeXDe.png", alt="I/O app offline", width="360", height="664" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The Google I/O 2016 app notifies the user when
     the app is ready for offline use…
   </figcaption>
@@ -208,7 +208,7 @@ to.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Od6jUnazP8n7CMe18G2C.png", alt="Chrome Status site is offline", width="360", height="664" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     …and so does the Chrome Platform Status site, which includes information about the occupied storage.
   </figcaption>
 </figure>
@@ -281,7 +281,7 @@ current state of the app.
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="A service worker icon is a bad example", width="350", height="149" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Avoid terms that aren't intelligible to non-technical users.
     </figcaption>
   </figure>
@@ -290,7 +290,7 @@ current state of the app.
 {% Compare 'better' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="A download icon is a good example", width="350", height="149" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Use language and imagery that describes the action.
     </figcaption>
   </figure>
@@ -313,7 +313,7 @@ with color, labels, and UI components.
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="A bad example only using color.", width="720", height="368" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Use color as the sole means to describe what is happening.
     </figcaption>
   </figure>
@@ -322,7 +322,7 @@ with color, labels, and UI components.
 {% Compare 'better' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="A good example that uses color and text to show an error.", width="720", height="368" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Use a mixture of design elements to convey meaning
     </figcaption>
   </figure>
@@ -361,13 +361,13 @@ refreshes of your app.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUIrcbblhHe5YPSrrwRy.png", alt="A skeleton layout example", width="360", height="665" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Skeleton placeholder layout is shown during the download of the article…
   </figcaption>
 </figure>
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="A loaded article example", width="360", height="665" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     …that gets replaced with the real contents once the download finishes.
   </figcaption>
 </figure>

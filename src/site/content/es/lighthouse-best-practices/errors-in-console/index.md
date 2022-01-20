@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los errores del navegador se registraron en la consola
 description: Aprenda a identificar y corregir errores del navegador.
 web_lighthouse:

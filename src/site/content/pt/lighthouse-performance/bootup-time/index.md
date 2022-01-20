@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduza o tempo de execução do JavaScript
 description: |2
 

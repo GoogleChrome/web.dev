@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Document does not have a meta description
 description: |
   Learn about the "Document does not have a meta description" Lighthouse audit.
@@ -19,8 +19,8 @@ traffic.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 without a meta description:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Lighthouse audit showing the document doesn't have a meta description", width="800", height="74", class="w-screenshot w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Lighthouse audit showing the document doesn't have a meta description", width="800", height="74" %}
 </figure>
 
 The audit fails if:

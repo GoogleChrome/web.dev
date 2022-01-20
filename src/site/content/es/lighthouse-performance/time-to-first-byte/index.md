@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reducción de los Tiempos de respuesta del servidor (TTFB)
 description: Obtenga información sobre time-to-first-byte audit.
 date: 2019-05-02

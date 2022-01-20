@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: コード分割でJavaScriptペイロードを削減する
 authors:
   - houssein

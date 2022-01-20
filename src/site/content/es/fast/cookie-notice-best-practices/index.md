@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Prácticas recomendadas para los avisos de cookies
 subhead: Optimizar los avisos de cookies para mejorar el rendimiento y la facilidad de uso.
 authors:

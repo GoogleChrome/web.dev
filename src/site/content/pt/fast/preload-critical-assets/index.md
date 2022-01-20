@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pré-carregue ativos críticos para melhorar a velocidade de carregamento
 authors:
   - houssein

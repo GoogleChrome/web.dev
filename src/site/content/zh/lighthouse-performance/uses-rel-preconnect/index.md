@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 预连接到所需的源
 description: 了解 uses-rel-preconnect 审计。
 date: 2019-05-02

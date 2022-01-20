@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use formatos de vídeo para conteúdos animados
 description: |2
 

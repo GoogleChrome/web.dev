@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 没有带 `width` 或 `initial-scale` 的 `<meta name="viewport">` 标记
 description: 了解有关“没有带 width 或 initial-scale 的 <meta name="viewport"> 标记”Lighthouse 审计的信息。
 date: 2019-05-02

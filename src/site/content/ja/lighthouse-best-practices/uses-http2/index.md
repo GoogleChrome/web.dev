@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: すべてのリソースにHTTP/2を使用していない
 description: ページの読み込み時間にHTTP/2が重要である理由と、サーバーでHTTP/2を有効にする方法。
 web_lighthouse:

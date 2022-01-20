@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: マニフェストにマスカブルアイコンがない
 description: PWA にマスカブルアイコンのサポートを追加する方法について学びます。
 web_lighthouse:

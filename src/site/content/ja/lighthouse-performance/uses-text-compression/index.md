@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: テキストの圧縮を有効にする
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 链接没有可辨别的名称
 description: 了解如何使您的网页上的链接更易于访问——确保它们的名称可以被辅助技术解释。
 date: 2019-05-02

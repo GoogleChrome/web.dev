@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 더 빠른 애플리케이션을 위한 최신 JavaScript 배포, 제공 및 설치
 subhead: 최신 JavaScript 의존성 및 결과물을 중심으로 성능을 개선합니다.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg

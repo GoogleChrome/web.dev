@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos de referencia HTML5 se utilizan para mejorar la navegación.
 description: |2-
 

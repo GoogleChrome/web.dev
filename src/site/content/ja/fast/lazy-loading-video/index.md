@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 動画を遅延読み込みする
 authors:
   - jlwagner

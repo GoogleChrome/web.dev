@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "\tFirst Meaningful Paint (FMP)"
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 매니페스트에 마스크 가능 아이콘 없음
 description: |2-
 

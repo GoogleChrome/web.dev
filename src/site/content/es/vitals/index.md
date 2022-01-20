@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web Vitals
 description: Métricas esenciales para un sitio saludable
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
@@ -29,7 +29,7 @@ Los Core Web Vitals son el subconjunto de Web Vitals que se aplica a todas las p
 
 Las métricas que componen los Core Web Vitals [evolucionarán](#evolving-web-vitals) con el tiempo. El conjunto actual en el 2020 se centra en tres aspectos de la experiencia del usuario: *carga* , *interactividad* y *estabilidad visual*, e incluye las siguientes métricas (y sus respectivos umbrales):
 
-<div class="w-stack w-stack--center w-stack--md">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones de umbral para LCP", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones de umbral para FID", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones de umbral para CLS", width="400", height="350" %} </div>
+<div class="auto-grid" style="--auto-grid-min-item-size: 200px;">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones de umbral para LCP", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones de umbral para FID", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones de umbral para CLS", width="400", height="350" %} </div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)** : se refiere al tiempo para el despliegue del contenido más extenso, LCP por sus siglas en inglés, mide el rendimiento de *carga.* Para proporcionar una buena experiencia de usuario, el LCP debe producirse dentro de los **2,5 segundos desde** que la página comienza a cargarse.
 - **[First Input Delay (FID)](/fid/)**: se refiere a la demora para la primera entrada, FID por sus siglas en inglés, mide la *interactividad*. Para proporcionar una buena experiencia de usuario, las páginas deben tener un FID de menos de **100 milisegundos**.
@@ -49,7 +49,7 @@ Google cree que los Core Web Vitals son fundamentales para todas las experiencia
 
 El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)](https://developers.google.com/web/tools/chrome-user-experience-report) recopila datos de medición de usuarios reales y anónimos para cada Core Web Vital. Estos datos permiten a los propietarios de sitios evaluar rápidamente su rendimiento sin tener que instrumentar manualmente los análisis en sus páginas, y potencian herramientas como [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) y el [informe de Core Web Vitals](https://support.google.com/webmasters/answer/9205520) de la Search Console.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <td> </td>
@@ -115,7 +115,7 @@ También se puede reportar sobre cada uno de los Core Web Vitals sin escribir c�
 
 Esta extensión puede resultar útil para comprender el rendimiento de sus propios sitios, los de la competencia y la web en general.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -158,7 +158,7 @@ La medición en el laboratorio es la mejor manera de probar el rendimiento de la
 
 Las siguientes herramientas se pueden utilizar para medir los Core Web Vitals en un entorno de laboratorio:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

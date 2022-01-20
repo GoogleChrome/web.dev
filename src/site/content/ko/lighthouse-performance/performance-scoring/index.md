@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Lighthouse 성능 점수
 description: Lighthouse가 페이지에 대한 전체 성능 점수를 생성하는 방법을 알아봅니다.
 subhead: Lighthouse가 전체 성능 점수를 계산하는 방법

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: サードパーティのJavaScriptを効率的に読み込む
 subhead: サードパーティのスクリプトを使用して読み込み時間とユーザーエクスペリエンスを改善するときによくある誤りを回避します。
 authors:

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: リンクの名前が識別できない
 description: ウェブページ上のリンクに支援技術が解釈できる名前を付けて、一層利用しやすくする方法を学びます。
 date: 2019-05-02

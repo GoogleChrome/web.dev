@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ページに HTML Doctype が指定されていないため、Quirks モードがトリガーされる
 description: ページが古いブラウザで Quirks モードをトリガーしないようにする方法を学習します。
 web_lighthouse:

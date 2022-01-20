@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 주소 표시줄의 테마 색상을 설정하지 않습니다.
 description: |2-
 

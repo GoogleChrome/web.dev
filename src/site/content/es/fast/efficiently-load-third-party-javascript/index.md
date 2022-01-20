@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga el JavaScript de terceros de manera eficiente
 subhead: Evita los errores comunes de usar scripts de terceros para mejorar los tiempos de carga y la experiencia del usuario.
 authors:

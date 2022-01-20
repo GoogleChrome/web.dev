@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usa document.write ()
 description: |2
 

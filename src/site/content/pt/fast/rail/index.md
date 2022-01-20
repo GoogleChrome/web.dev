@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Meça o desempenho com o modelo RAIL
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplazar CSS no crítico
 authors:
   - demianrenzulli

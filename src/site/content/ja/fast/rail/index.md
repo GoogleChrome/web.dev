@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: RAILモデルでパフォーマンスを評価する
 description: |2-
 

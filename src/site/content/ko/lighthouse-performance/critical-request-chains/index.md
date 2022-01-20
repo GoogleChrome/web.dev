@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요한 요청 연결 방지
 description: 중요한 요청 연결이 무엇인지, 이것이 웹 페이지 성능에 어떠한 영향을 미치는지, 어떻게 그 효과를 줄일 수 있는지 알아봅니다.
 date: 2019-05-02

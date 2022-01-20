@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cómo agregar un manifiesto en la aplicación web
 authors:
   - petelepage

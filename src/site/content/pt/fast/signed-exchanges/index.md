@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Trocas assinadas (SXGs)
 subhead: |2-
 

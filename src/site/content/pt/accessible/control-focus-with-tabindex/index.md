@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Controle o foco com tabindex
 authors:
   - robdodson

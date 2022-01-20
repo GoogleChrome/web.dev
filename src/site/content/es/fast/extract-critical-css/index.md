@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Extraer CSS crítico
 subhead: Aprenda a mejorar los tiempos de renderizado con la técnica de CSS crítico.
 authors:

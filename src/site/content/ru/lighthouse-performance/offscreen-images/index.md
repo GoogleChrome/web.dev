@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Откладывание закадровых изображений
 description: |2
 

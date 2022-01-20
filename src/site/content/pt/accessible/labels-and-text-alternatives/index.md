@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Rótulos e alternativas de texto
 authors:
   - robdodson

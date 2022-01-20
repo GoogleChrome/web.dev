@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 通过代码拆分减少 JavaScript 负载
 authors:
   - houssein

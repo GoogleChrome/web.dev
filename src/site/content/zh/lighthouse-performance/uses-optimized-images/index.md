@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 对图像进行高效编码
 description: 了解 uses-optimized-images 审计。
 date: 2019-05-02

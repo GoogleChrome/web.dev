@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O carregamento da página não é rápido o suficiente em redes móveis
 description: Aprenda como fazer sua página da web carregar rapidamente em redes móveis.
 web_lighthouse:

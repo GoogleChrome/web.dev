@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 画像を効率的にエンコードする
 description: uses-optimized-images監査について学びます。
 date: 2019-05-02

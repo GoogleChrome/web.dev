@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: モバイルネットワークではページの読み込みが十分に速くないです
 description: モバイルネットワークでWebページのく読み込みを加速する方法を学びましょう。
 web_lighthouse:

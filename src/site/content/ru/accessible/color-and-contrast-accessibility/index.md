@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Доступность по цвету и контрастности
 authors:
   - dgash

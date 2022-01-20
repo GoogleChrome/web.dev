@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: アドレスバーのテーマの色を設定しません
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: У документа нет метаописания
 description: |2-
 

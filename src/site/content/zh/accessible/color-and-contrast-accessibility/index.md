@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 颜色和对比度辅助功能
 authors:
   - dgash

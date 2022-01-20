@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Tempo Total de Bloqueio
 description: Saiba mais sobre a métrica de tempo total de bloqueio do Lighthouse e como medi-lo e otimizá-lo.
 web_lighthouse:

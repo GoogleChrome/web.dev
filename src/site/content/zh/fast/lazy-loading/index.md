@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用延迟加载提高加载速度
 authors:
   - jlwagner

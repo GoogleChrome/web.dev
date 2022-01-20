@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: WebOTP API로 웹에서 전화번호 확인
 subhead: SMS를 통해 수신한 OTP로 사용자 지원
 authors:

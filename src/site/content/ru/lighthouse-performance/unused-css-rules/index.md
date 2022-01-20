@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Удалите неиспользуемый CSS-код
 description: Узнайте о проверке неиспользуемых CSS-правил.
 date: 2019-05-02

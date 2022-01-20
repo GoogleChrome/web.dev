@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga diferida de recursos de terceros con fachadas
 description: |2
 

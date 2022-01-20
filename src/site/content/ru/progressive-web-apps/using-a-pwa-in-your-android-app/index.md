@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Использование прогрессивного веб-приложения в приложении для Android
 authors:
   - andreban

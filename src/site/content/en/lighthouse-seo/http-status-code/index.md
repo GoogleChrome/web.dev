@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Page has unsuccessful HTTP status code
 description: |
   Learn about the "Page has unsuccessful HTTP status code" Lighthouse audit.
@@ -24,8 +24,8 @@ _Crawling_ is how a search engine updates its index of content on the web.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 that return an unsuccessful HTTP status code (in the 400s or 500s):
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/omMzgdKyzeYBQjPjQFKa.png", alt="Lighthouse audit showing search engines are struggling to index your page", width="800", height="74", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/omMzgdKyzeYBQjPjQFKa.png", alt="Lighthouse audit showing search engines are struggling to index your page", width="800", height="74" %}
 </figure>
 
 {% include 'content/lighthouse-seo/scoring.njk' %}

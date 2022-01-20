@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web 应用清单不符合可安装性要求
 description: |2-
 

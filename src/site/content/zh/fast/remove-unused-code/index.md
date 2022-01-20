@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 删除未使用的代码
 subhead: 通过 npm 可以轻而易举地向项目添加代码。但是这些额外的字节真的都能用到吗？
 authors:

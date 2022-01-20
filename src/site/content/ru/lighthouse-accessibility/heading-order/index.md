@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Аудит Heading elements are not in a sequentially-descending order
 description: Узнайте, как создать правильную структуру заголовков, чтобы пользователи, применяющие специальные возможности, могли без труда перемещаться по веб-странице.
 date: 2019-10-17

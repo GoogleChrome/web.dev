@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evita las animaciones no compuestas
 description: Cómo aprobar la auditoría Lighthouse "Evitar animaciones no compuestas".
 date: 2020-08-12

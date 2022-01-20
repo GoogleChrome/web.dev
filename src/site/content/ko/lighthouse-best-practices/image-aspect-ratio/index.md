@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지가 잘못된 종횡비로 나타납니다
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Verificación de los números de teléfono en la web con la API de WebOTP
 subhead: Ayuda a los usuarios con las OTP recibidas a través de SMS
 authors:

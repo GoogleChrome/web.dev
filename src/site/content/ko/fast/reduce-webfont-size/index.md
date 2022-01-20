@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: WebFont 크기 줄이기
 authors:
   - ilyagrigorik

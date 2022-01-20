@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Аудит Efficiently encode images
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Mostrar las imágenes con una relación de aspecto incorrecta
 description: |2
 

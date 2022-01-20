@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用媒体查询优化 CSS 背景图像
 authors:
   - demianrenzulli

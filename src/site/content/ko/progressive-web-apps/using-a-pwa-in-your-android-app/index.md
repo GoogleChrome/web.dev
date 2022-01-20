@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Android 앱에서 PWA 사용
 authors:
   - andreban

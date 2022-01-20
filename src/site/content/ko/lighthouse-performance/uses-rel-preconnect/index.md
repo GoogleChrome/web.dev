@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 필수 원본에 사전 연결
 description: |2-
 

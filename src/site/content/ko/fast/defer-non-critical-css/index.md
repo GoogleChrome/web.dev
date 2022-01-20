@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요하지 않은 CSS 연기
 authors:
   - demianrenzulli

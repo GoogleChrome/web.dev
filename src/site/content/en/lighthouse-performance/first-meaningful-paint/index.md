@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First Meaningful Paint
 description: |
   Learn about Lighthouse's First Meaningful Paint metric and
@@ -25,8 +25,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays FMP in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="A screenshot of the Lighthouse First Meaningful Paint audit", width="800", height="588", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="A screenshot of the Lighthouse First Meaningful Paint audit", width="800", height="588" %}
 </figure>
 
 ## What FMP measures
@@ -63,7 +63,7 @@ The FCP score would be 99, but the FMP score would be 75.
 
 This table shows how to interpret your FMP score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

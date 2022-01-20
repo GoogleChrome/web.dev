@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 指向跨源目的地的链接不安全
 description: |2
 

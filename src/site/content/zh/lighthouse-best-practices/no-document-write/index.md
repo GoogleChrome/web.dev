@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 document.write()
 description: 了解如何通过避免使用 document.write() 来加快页面加载速度。
 web_lighthouse:

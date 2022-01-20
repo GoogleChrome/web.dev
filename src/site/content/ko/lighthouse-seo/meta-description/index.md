@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 문서에 메타 설명이 없음
 description: |2-
 

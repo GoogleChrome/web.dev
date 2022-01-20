@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 重要なCSSを抽出する
 subhead: 重要なCSSテクニックを使用してレンダリング時間を改善する方法を学びます。
 authors:

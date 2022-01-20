@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 文档没有有效的 `rel=canonical`
 description: |2-
 

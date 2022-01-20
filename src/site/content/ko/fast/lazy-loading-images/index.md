@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지 지연 로딩
 authors:
   - jlwagner

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ensure CSP is effective against XSS attacks
 description: |
   Learn about preventing cross-site scripting (XSS) attacks with a strict Content Security Policy (CSP).
@@ -14,7 +14,7 @@ A Content Security Policy (CSP) helps to ensure any content loaded in the page i
 <figure>
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/EFTWlPiCrPOn6ETCRiGr.png",
 alt="Lighthouse report warning that no CSP is found in enforcement mode.",
-width="800", height="165", class="w-screenshot" %}
+width="800", height="165" %}
 <figcaption>Lighthouse report warning that no CSP is found in enforcement mode.</figcaption>
 </figure>
 

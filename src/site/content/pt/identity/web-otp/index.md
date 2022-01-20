@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Verifique números de telefone na web com a API WebOTP
 subhead: Ajude os usuários com OTPs (senhas de uso único) recebidos por SMS
 authors:

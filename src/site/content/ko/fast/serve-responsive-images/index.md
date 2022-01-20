@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 반응형 이미지 제공
 authors:
   - katiehempenius

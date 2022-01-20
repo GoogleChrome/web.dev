@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Estratégias de pré-carregamento de rota no Angular
 subhead: |2
 

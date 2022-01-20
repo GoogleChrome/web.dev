@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Utilice CDN de imágenes para optimizar imágenes
 authors:
   - katiehempenius

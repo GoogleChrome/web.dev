@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Page transitions don't feel like they block on the network
 description: |
   Learn how to make transitions between web pages feel responsive,

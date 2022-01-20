@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免非合成动画
 description: 如何通过“避免非合成动画”Lighthouse 审计。
 date: 2020-08-12

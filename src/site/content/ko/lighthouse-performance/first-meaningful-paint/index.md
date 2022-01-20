@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 첫 번째 의미 있는 페인트
 description: |2
 

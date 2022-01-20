@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Preconectarse a los orígenes requeridos
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No registra un service worker que controla la página y el `start_url`
 description: Aprenda a registrar un service worker compatible con las características de la aplicación web progresiva como funcionalidad fuera de línea, notificaciones emergentes, e instalación.
 web_lighthouse:

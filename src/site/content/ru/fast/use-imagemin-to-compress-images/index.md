@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Сжатие изображений с помощью средства Imagemin
 authors:
   - katiehempenius

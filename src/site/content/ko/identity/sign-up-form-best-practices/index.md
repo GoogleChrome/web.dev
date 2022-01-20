@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 가입 양식 모범 사례
 subhead: 사용자가 최소한의 번거로움으로 가입, 로그인 및 계정 세부 정보를 관리하도록 돕습니다.
 authors:

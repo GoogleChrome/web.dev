@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: A los elementos con un "[role]" ARIA que requieren que los hijos contengan un "[role]" específico les faltan algunos o todos los hijos requeridos
 description: Aprenda a mejorar la accesibilidad de su página web para los usuarios de tecnologías de asistencia, asegurándose de que todos los elementos con funciones ARIA tengan el elemento hijo requerido.
 date: 2019-05-02

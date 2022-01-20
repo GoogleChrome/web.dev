@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 텍스트 압축 활성화
 description: |2-
 

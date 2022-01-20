@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ドキュメントにメタ記述がない
 description: |2-
 

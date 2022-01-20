@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ページと `start_url` を制御するサービスワーカーが登録されない
 description: オフライン機能やプッシュ通知、インストール可能性といった Progressive Web App (プログレッシブウェブアプリ) の機能をサポートするサービスワーカーを登録する方法について学びます。
 web_lighthouse:

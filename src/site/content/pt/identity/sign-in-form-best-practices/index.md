@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Práticas recomendadas do formulário de login
 subhead: Use recursos de navegador de plataforma cruzada para criar formulários de login que sejam seguros, acessíveis e fáceis de usar.
 authors:

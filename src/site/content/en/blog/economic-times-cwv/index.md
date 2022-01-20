@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How The Economic Times passed Core Web Vitals thresholds and achieved an overall 43% better bounce rate
 subhead: |
   Optimizing Core Web Vitals on The Economic Times website significantly improved the user experience and substantially reduced bounce rate across the entire website.

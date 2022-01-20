@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No usa HTTP / 2 para todos sus recursos
 description: |2
 

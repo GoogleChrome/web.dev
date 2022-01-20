@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Utilice lazysizes para cargar imágenes de forma diferida
 authors:
   - katiehempenius

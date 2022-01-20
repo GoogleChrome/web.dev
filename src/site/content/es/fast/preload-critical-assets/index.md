@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Precarga de activos críticos para mejorar la velocidad de carga
 authors:
   - houssein

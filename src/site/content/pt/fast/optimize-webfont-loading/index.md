@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Otimize o carregamento e a renderização do WebFont
 authors:
   - ilyagrigorik

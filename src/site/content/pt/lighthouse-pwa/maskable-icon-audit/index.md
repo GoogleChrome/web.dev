@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O manifesto não tem um ícone mascarável
 description: |2
 

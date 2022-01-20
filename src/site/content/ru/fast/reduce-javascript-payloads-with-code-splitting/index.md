@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Сокращение размера полезной нагрузки JavaScript за счет разделения кода
 authors:
   - houssein

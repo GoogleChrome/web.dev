@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Удалите неиспользуемый JavaScript
 description: Узнайте, как пройти проверку Lighthouse «Удаление неиспользуемого JavaScript».
 web_lighthouse:

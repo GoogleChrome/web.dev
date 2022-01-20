@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usa Lighthouse para los presupuestos de rendimiento
 authors:
   - katiehempenius

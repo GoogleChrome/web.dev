@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 배경색과 전경색의 명암비가 충분하지 않습니다.
 description: 모든 텍스트의 색상 대비가 충분한지 확인하여 웹 페이지의 접근성을 향상시키는 방법을 알아봅니다.
 date: 2019-05-02

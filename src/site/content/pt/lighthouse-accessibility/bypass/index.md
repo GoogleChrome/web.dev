@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: A página não contém um título, link para pular ou região de referência
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 페이지 및 `start_url`을 제어하는 서비스 워커를 등록하지 않습니다.
 description: 오프라인 기능, 푸시 알림 및 설치 가능성과 같은 기능을 특징으로 하는 Progressive Web App을 지원하는 서비스 워커를 등록하는 방법을 배웁니다.
 web_lighthouse:

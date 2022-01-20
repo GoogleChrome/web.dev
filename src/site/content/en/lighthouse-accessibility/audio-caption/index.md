@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`<audio>` elements are missing a `<track>` element with `[kind=\"captions\"]`"
 description: |
   Learn how to improve the accessibility of audio on your web page by providing
@@ -25,8 +25,8 @@ Lighthouse flags `<audio>` elements that are missing `<track>` elements.
 But no matter what, it seems to pass,
 even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets)
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing Audio element missing captions">
+<figure>
+  <img src="" alt="Lighthouse audit showing Audio element missing captions">
 </figure>
 -->
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 브라우저 오류가 콘솔에 기록되었습니다
 description: |2
 

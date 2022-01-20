@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplique carregamento instantâneo com o padrão PRPL
 authors:
   - houssein

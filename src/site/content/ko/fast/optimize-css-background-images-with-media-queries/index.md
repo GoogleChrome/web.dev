@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 미디어 쿼리로 CSS 배경 이미지 최적화
 authors:
   - demianrenzulli

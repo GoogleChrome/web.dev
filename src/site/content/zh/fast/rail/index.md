@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 RAIL 模型衡量性能
 description: 凭借 RAIL 模型，设计人员和开发人员能够可靠地将对用户体验影响最大的性能优化工作作为目标。了解 RAIL 模型设定了哪些目标和准则，以及您可以使用哪些工具来实现它们。
 date: 2020-06-10

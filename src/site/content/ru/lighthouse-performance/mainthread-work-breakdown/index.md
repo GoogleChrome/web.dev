@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Минимизация работы основного потока
 description: |2-
 

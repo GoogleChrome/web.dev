@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지를 효율적으로 인코딩
 description: |2-
 

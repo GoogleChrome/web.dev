@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Сократите время выполнения JavaScript
 description: Узнайте, как выполнение JavaScript может снизить производительность вашей страницы и как можно его ускорить.
 date: 2019-05-02

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cómo eliminar el JavaScript que no se utiliza
 description: |2-
 

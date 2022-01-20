@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 移动网络上的页面加载速度不够快
 description: |2
 

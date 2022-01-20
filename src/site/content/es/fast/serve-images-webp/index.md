@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usar imágenes WebP
 authors:
   - katiehempenius

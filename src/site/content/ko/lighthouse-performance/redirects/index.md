@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 여러 페이지 리디렉션 방지
 description: 페이지 리디렉션이 웹 페이지의 로드 속도를 늦추는 이유와 이를 피하는 방법을 배웁니다.
 web_lighthouse:

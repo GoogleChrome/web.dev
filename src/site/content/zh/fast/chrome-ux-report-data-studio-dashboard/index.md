@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 在 Data Studio 上使用 CrUX Dashboard
 authors:
   - rviscomi

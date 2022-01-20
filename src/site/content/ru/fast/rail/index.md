@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Измеряем производительность с помощью модели RAIL
 description: |2-
 

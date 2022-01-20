@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 글꼴 로드 중 보이지 않는 텍스트 방지
 authors:
   - katiehempenius

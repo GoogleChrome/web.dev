@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga diferida de imágenes a nivel del navegador para la web
 subhead: "¡La carga diferida incorporada finalmente está aquí!"
 authors:

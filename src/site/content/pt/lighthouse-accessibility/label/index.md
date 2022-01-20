@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os elementos do formulário não têm rótulos associados
 description: Aprenda como tornar os elementos do formulário acessíveis aos usuários de tecnologia assistiva fornecendo rótulos.
 date: 2019-05-02

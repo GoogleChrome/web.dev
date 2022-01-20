@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Eliminar el CSS no utilizado
 description: Obtén más información sobre la auditoría de unused-css-rules.
 date: 2019-05-02

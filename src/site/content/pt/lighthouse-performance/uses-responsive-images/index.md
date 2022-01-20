@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Redimensione imagens corretamente
 description: Saiba mais sobre a auditoria uses-responsive-images.
 date: 2019-05-02

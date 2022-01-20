@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Escolha o formato de imagem certo
 authors:
   - ilyagrigorik

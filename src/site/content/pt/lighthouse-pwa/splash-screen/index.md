@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não está configurado para uma tela inicial personalizada
 description: |2
 

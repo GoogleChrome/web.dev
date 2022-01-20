@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No está configurada para una pantalla de presentación personalizada
 description: |2
 

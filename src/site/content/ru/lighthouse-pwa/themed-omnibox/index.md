@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Не установлен цвет темы для адресной строки (Does not set a theme color for the address bar)
 description: |2-
 

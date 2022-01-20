@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use o Lighthouse para orçamentos de desempenho
 authors:
   - katiehempenius

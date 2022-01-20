@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minificar CSS
 description: Saiba mais sobre a auditoria do css não minificado.
 date: 2019-05-02

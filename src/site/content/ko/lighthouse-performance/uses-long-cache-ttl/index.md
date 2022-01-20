@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 효율적인 캐시 정책으로 정적 자산 제공
 description: 웹 페이지의 정적 리소스를 캐싱하여 반복 방문자의 성능과 안정성을 향상시키는 방법을 알아보세요.
 date: 2019-05-02

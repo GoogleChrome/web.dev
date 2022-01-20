@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Depuración de cambios de diseño
 subhead: |2-
 

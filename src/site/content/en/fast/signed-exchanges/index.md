@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Signed Exchanges (SXGs)
 subhead: |
   An SXG is a delivery mechanism that makes it possible to authenticate the
@@ -233,14 +233,14 @@ value of `1`.
 Signed Exchanges can be identified by looking for `signed-exchange` in the
 **Type** column of the **Network** panel in Chrome DevTools.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Screenshot showing a SXG request within the 'Network' panel in DevTools", width="696", height="201" %}
   <figcaption>The <b>Network</b> panel in DevTools</figcaption>
 </figure>
 
 The **Preview** tab provides more information about the contents of a SXG.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="Screenshot of the 'Preview' tab for a SXG", width="800", height="561" %}
   <figcaption>The <b>Preview</b> tab in DevTools</figcaption>
 </figure>

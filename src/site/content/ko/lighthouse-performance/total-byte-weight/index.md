@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 막대한 네트워크 페이로드 방지
 description: 사용자에게 제공하는 리소스의 전체 파일 크기를 줄여 웹 페이지 로드 시간을 개선하는 방법에 대해 알아봅니다.
 date: 2019-05-02

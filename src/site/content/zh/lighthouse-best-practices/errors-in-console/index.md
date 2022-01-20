@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 将浏览器错误记录到控制台
 description: 了解如何识别和解决浏览器错误。
 web_lighthouse:

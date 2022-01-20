@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Избегайте чрезмерного размера DOM
 description: |2-
 

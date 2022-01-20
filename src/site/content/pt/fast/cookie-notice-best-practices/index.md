@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Melhores práticas para avisos de cookies
 subhead: |2
 

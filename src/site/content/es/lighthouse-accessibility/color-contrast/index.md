@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los colores del fondo y del primer plano no tienen una suficiente relación de contraste
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Применение мгновенной загрузки с помощью шаблона PRPL
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 启用文本压缩
 description: 了解启用文本压缩如何提高网页加载性能。
 date: 2019-05-02

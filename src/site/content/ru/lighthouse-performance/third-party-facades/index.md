@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Отложенная загрузка сторонних ресурсов с помощью фасадов
 description: |2
 

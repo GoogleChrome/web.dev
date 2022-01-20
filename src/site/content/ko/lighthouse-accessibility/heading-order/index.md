@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 제목 요소가 내림차순으로 정렬되어 있지 않음
 description: |2
 

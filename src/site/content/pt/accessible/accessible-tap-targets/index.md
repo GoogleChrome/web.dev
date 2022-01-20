@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pontos de toque acessíveis
 authors:
   - dgash

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: SMS OTP 表单最佳实践
 subhead: 了解如何优化 SMS OTP 表单并改善用户体验。
 authors:

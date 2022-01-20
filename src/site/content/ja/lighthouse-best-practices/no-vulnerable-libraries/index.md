@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 既知のセキュリティ脆弱性を持つフロントエンド JavaScript ライブラリが含まれる
 description: 既知の脆弱性が含まれる JavaScript ライブラリを置き換えることでページをより安全にする方法を学びます。
 web_lighthouse:

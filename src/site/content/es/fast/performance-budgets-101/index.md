@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Presupuestos para rendimiento 101
 authors:
   - mihajlija

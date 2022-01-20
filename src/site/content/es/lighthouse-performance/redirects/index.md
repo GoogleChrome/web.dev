@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evitar los redireccionamientos múltiples de páginas
 description: |2
 

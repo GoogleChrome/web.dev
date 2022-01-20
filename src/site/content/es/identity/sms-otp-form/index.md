@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Mejores prácticas para formularios SMS OTP
 subhead: Aprenda a optimizar su formulario SMS OTP y mejorar la experiencia del usuario.
 authors:

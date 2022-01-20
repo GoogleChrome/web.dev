@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos `[aria-hidden =" true"]` contienen descendientes enfocables
 description: |2
 

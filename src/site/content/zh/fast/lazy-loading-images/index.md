@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 延迟加载图像
 authors:
   - jlwagner

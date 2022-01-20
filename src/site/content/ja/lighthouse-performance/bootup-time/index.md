@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: JavaScriptの実行時間を短縮する
 description: JavaScriptの実行によりページのパフォーマンスが低下すること、またJavaScriptの実行を高速化する方法について学びます。
 date: 2019-05-02

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 要求されるオリジンへの事前接続
 description: |2
 

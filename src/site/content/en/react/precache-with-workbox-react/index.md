@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Precaching in Create React App with Workbox
 subhead: |
   Caching assets with a service worker can speed up repeat visits and provide offline support. Workbox makes this easy and is included in Create React App by default.
@@ -24,7 +24,7 @@ feedback:
 Create React App (CRA) with a default configuration that precaches all the
 static assets in your application with every build.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3s4l29dJ6ch6QBmTvVg3.png", alt="Requests/responses with service worker", width="800", height="1224" %}
 </figure>
 
@@ -75,7 +75,7 @@ You'll notice that instead of showing the payload size, the `Size` column shows
 a `(from ServiceWorker)` message to indicate that these resources were retrieved
 from the service worker.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N7YbiAIT88s8wPUriwo0.png", alt="Network requests with a service worker", width="800", height="450", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N7YbiAIT88s8wPUriwo0.png", alt="Network requests with a service worker", width="800", height="450" %}
 
 Since the service worker caches all static assets, try to use the application
 while offline:

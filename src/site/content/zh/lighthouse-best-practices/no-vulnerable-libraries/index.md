@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 包括具有已知安全漏洞的前端 JavaScript 库
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduza os tempos de resposta do servidor (TTFB)
 description: Saiba mais sobre a auditoria tempo até o primeiro byte.
 date: 2019-05-02

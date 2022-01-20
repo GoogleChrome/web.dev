@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Utilice la carga diferida para mejorar la velocidad de carga
 authors:
   - jlwagner

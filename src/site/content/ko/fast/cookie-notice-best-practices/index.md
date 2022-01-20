@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 쿠키 알림에 대한 모범 사례
 subhead: |2
 

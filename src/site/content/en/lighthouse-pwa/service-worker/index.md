@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Does not register a service worker that controls page and `start_url`"
 description: |
   Learn how to register a service worker that supports Progressive Web App
@@ -29,8 +29,8 @@ All major browsers except Internet Explorer support service workers. See
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't register a service worker:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse audit showing site doesn't register a service worker", width="800", height="95", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse audit showing site doesn't register a service worker", width="800", height="95" %}
 </figure>
 
 Lighthouse checks if the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Uses Application Cache
 description: |
   Learn how to migrate your web page from the deprecated Application Cache to
@@ -17,8 +17,8 @@ is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that use the Application Cache:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zOiY51J8avDQU8IkL2XG.png", alt="Lighthouse audit showing that a page uses the Application Cache", width="800", height="74", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zOiY51J8avDQU8IkL2XG.png", alt="Lighthouse audit showing that a page uses the Application Cache", width="800", height="74" %}
 </figure>
 
 This audit fails when Lighthouse finds a reference to

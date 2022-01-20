@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 오프스크린 이미지 지연
 description: 오프스크린 이미지 감사에 대해 알아봅니다.
 date: 2019-05-02

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: lazysizes를 사용하여 이미지 지연 로드
 authors:
   - katiehempenius

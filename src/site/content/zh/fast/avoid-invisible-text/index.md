@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 在字体加载期间避免不可见的文本
 authors:
   - katiehempenius

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Страница загружается недостаточно быстро в мобильных сетях (Page load is not fast enough on mobile networks)
 description: |2-
 

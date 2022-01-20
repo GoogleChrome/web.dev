@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: As cores de fundo e de primeiro plano não têm uma taxa de contraste suficiente
 description: |-
   Aprenda como melhorar a acessibilidade de sua página da web certificando-se de que

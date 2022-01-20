@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 파사드를 사용하여 타사 리소스를 지연 로드
 description: |2
 

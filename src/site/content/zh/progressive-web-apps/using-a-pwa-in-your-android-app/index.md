@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 在 Android 应用程序中使用 PWA
 authors:
   - andreban

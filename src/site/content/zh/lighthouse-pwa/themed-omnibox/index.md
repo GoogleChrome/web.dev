@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 没有为地址栏设置主题颜色
 description: 了解如何为渐进式 Web 应用设置地址栏主题颜色。
 web_lighthouse:

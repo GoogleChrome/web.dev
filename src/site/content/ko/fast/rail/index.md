@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: RAIL 모델을 사용한 성능 측정
 description: |2-
 

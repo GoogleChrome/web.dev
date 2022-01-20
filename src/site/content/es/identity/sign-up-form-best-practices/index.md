@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Prácticas recomendadas para el formulario de registro
 subhead: Ayude a que sus usuarios se registren, inicien sesión y administren los detalles de su cuenta con un mínimo de esfuerzo.
 authors:

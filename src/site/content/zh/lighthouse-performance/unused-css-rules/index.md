@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 删除未使用的 CSS
 description: 了解 unused-css-rules 审计。
 date: 2019-05-02

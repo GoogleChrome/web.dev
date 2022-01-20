@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 显示纵横比不正确的图像
 description: 了解如何以正确的纵横比显示响应式图像。
 web_lighthouse:

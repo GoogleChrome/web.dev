@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Garanta que o texto permanece visível durante o carregamento das fontes web
 description: Aprenda a usar a API font-display para garantir que o texto da sua página web estará sempre visível para seus usuários.
 date: 2019-05-02

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplazar imágenes fuera de pantalla
 description: |2
 

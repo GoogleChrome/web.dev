@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Откладывание некритичных CSS
 authors:
   - demianrenzulli

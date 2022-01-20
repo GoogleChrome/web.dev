@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 按钮没有可访问的名称
 description: 了解如何通过确保所有按钮都有使用辅助技术的用户可访问的名称，来提高网页的可访问性。
 date: 2019-05-02

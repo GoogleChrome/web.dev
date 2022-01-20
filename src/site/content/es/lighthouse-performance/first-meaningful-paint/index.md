@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Primer despliegue significativo (First Meaningful Paint)
 description: Obtenga información sobre la métrica de Primer despliegue significativo de Lighthouse y cómo medirlo y optimizarlo.
 date: 2019-05-02

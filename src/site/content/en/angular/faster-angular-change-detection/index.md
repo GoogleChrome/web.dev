@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Optimize Angular's change detection"
 subhead: |
   Implement faster change detection for better user experience.

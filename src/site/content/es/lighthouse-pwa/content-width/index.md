@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El contenido no tiene el tamaño correcto para la ventana gráfica
 description: Aprende a ajustar el tamaño del contenido de tu página web para que se ajuste a las pantallas de los dispositivos móviles.
 web_lighthouse:

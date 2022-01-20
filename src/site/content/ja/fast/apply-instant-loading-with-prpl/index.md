@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: PRPLパターンを使用して即時読み込みを適用する
 authors:
   - houssein

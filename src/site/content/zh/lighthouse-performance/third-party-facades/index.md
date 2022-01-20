@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 Facade （外观）延迟加载第三方资源
 description: 了解使用 Facade 延迟加载第三方资源的机会。
 date: 2020-12-01

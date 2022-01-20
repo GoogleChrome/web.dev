@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pré-carregue solicitações importantes
 description: Saiba mais sobre a auditoria uses-rel-preload.
 date: 2019-05-02

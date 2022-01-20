@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 사용하지 않는 코드 제거
 subhead: npm을 사용하면 프로젝트에 코드를 쉽게 추가할 수 있습니다. 그렇지만 이런 추가적인 바이트를 모두 활용하고 계십니까?
 authors:

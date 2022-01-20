@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 색상 및 대비 접근성
 authors:
   - dgash

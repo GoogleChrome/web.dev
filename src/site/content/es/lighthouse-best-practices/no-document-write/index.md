@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usos de document.write()
 description: Aprenda a acelerar el tiempo de carga de su página con el fin de evitar document.write().
 web_lighthouse:

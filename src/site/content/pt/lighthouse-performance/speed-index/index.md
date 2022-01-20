@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Speed Index
 description: Aprenda sobre a métrica Speed Index do Lighthouse e como otimizá-la.
 date: 2019-05-02

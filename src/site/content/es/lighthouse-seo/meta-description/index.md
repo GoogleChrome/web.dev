@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El documento no tiene una metadescripción
 description: |2-
 

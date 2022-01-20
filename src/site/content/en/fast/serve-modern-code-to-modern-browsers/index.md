@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Serve modern code to modern browsers for faster page loads
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Intercambios firmados (SXG)
 subhead: Un SXG es un mecanismo de entrega que permite autenticar el origen de un recurso independientemente de cómo haya sido entregado.
 authors:

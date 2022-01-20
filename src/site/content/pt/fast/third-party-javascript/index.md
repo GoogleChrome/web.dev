@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Desempenho do JavaScript de terceiros
 subhead: Descubra como o JavaScript de terceiros pode afetar o desempenho e o que você pode fazer para evitar que ele diminua a velocidade de seus sites.
 authors:

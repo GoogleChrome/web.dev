@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No usa HTTPS
 description: |2
 

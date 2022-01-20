@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 페이지에 HTML 문서 유형이 없으므로 쿼크 모드가 트리거됩니다
 description: |2-
 

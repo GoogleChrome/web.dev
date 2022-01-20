@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Does not redirect HTTP traffic to HTTPS
 description: |
   Learn how to make your site more secure by redirecting all pages to HTTPS.
@@ -18,8 +18,8 @@ and how to set up HTTPS on your server.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that aren't redirected to HTTPS:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BcRkqleQD9k31nfWZy2z.png", alt="Lighthouse audit showing that HTTP traffic isn't redirected to HTTPS", width="800", height="95", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BcRkqleQD9k31nfWZy2z.png", alt="Lighthouse audit showing that HTTP traffic isn't redirected to HTTPS", width="800", height="95" %}
 </figure>
 
 Lighthouse changes the page's URL to HTTP, loads the page,

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Exibe imagens com proporção incorreta
 description: |2
 

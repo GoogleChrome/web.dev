@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 表单元素没有关联标签
 description: 了解如何通过提供标签使表单元素可供辅助技术用户访问。
 date: 2019-05-02

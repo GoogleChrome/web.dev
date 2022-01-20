@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os elementos de título não estão em ordem decrescente sequencial
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How AMP can guarantee fastness in your Next.js app
 authors:
   - houssein

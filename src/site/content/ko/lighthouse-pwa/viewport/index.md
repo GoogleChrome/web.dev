@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`width` 또는 `initial-scale`이 있는 `<meta name="viewport">` 태그 없음'
 description: '"너비 또는 초기 규모가 있는 <meta name="viewport"> 태그 없음" Lighthouse 감사에 대한 정보'
 date: 2019-05-02

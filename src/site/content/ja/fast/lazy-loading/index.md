@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 遅延読み込みを使用して読み込み速度を向上しましょう
 authors:
   - jlwagner

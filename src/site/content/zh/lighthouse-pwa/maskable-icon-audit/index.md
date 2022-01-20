@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 清单没有可屏蔽的图标
 description: 了解如何向 PWA 添加可屏蔽图标支持。
 web_lighthouse:

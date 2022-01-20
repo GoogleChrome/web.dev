@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: WebFont 로딩 및 렌더링 최적화
 authors:
   - ilyagrigorik

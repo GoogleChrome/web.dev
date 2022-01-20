@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: На странице отсутствует тип документа HTML, поэтому запускается режим совместимости
 description: |2-
 

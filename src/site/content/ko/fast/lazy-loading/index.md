@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 지연 로드를 사용하여 로드 속도 향상
 authors:
   - jlwagner

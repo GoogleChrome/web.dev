@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免巨大的网络有效负载
 description: 了解如何通过减少为用户提供资源的总文件大小来提高网页的加载时间。
 date: 2019-05-02

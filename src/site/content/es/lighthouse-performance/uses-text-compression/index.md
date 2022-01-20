@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Habilitar la compresión de texto
 description: |2-
 

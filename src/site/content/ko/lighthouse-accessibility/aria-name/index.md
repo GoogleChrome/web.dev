@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ARIA 항목에 액세스 가능한 이름이 없음
 description: |2
 

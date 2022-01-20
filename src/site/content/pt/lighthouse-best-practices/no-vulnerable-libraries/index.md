@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Inclui bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas
 description: |2
 

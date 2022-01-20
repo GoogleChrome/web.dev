@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cómo publicar activos estáticos con políticas eficientes para el caché
 description: Descubra cómo el almacenamiento en el caché de los recursos estáticos de su página web puede mejorar el rendimiento y la seguridad para los visitantes habituales.
 date: 2019-05-02

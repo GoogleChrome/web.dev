@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los enlaces no tienen texto descriptivo
 description: |2-
 

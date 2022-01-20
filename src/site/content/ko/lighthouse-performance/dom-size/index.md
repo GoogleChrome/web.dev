@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 과도한 DOM 크기 피하기
 description: |2-
 

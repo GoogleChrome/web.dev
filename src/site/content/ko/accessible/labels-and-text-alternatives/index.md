@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 레이블 및 대체 텍스트
 authors:
   - robdodson

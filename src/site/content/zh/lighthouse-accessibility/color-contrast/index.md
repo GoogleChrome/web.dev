@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 背景色和前景色没有足够的对比度
 description: 了解如何通过确保所有文本都有足够的颜色对比度来提高网页的可访问性。
 date: 2019-05-02

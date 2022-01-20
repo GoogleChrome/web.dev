@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 유효한 apple-touch-icon을 제공하지 않음
 description: Progressive Web App이 iOS 홈 화면에 표시할 아이콘을 지정하는 방법을 알아봅니다.
 web_lighthouse:

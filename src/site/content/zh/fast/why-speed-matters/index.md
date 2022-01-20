@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 为什么速度很重要？
 authors:
   - bojanpavic

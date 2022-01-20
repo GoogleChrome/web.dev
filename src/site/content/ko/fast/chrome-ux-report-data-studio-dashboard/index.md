@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Data Studio에서 CrUX 대시보드 사용
 authors:
   - rviscomi

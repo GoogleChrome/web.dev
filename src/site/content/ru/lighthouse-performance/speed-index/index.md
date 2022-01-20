@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Индекс скорости
 description: |2
 

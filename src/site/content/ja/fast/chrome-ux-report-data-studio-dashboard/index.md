@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Data StudioでのCrUX Dashboardの使用
 authors:
   - rviscomi

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No proporciona un ícono apple-touch-icon válido
 description: Aprenda a especificar qué icono muestra su aplicación web progresiva en las pantallas de inicio de iOS.
 web_lighthouse:

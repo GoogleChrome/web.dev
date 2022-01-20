@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga diferida de imágenes
 authors:
   - jlwagner

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`start_url` não responde com 200 quando está off-line"
 description: |2-
 

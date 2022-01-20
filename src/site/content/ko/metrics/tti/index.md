@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Time to Interactive(상호 작용까지의 시간, TTI)
 authors:
   - philipwalton

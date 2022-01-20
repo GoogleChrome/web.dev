@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 Lighthouse 进行性能预算
 authors:
   - katiehempenius

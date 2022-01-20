@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 缩小和压缩网络有效负载
 authors:
   - houssein

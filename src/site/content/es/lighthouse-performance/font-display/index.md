@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Asegúrese de que el texto permanece visible mientras carga la fuente web
 description: Aprenda cómo utilizar la API de visualización de fuentes para asegurarse de que el texto de su página web siempre esté visible para sus usuarios.
 date: 2019-05-02

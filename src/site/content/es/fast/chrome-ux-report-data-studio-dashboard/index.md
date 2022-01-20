@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Uso del panel de CrUX en Data Studio
 authors:
   - rviscomi

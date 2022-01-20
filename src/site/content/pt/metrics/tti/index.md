@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Time to Interactive (TTI)
 authors:
   - philipwalton

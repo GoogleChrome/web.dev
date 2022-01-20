@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Diretrizes de design UX offline
 subhead: Um guia para projetar experiências da web para redes lentas e offline.
 authors:

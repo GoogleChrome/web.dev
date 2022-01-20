@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplicar la carga instantánea con el patrón PRPL
 authors:
   - houssein

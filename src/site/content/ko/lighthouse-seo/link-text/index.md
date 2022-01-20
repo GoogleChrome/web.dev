@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 링크에 설명 텍스트가 없습니다.
 description: |2
 

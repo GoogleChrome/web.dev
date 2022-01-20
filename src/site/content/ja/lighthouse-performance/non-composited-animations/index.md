@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 合成されていないアニメーションは避けてください
 description: "「合成されていないアニメーションを避ける」灯台監査に合格する方法。"
 date: 2020-08-12

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 高效加载第三方 JavaScript
 subhead: 避免使用第三方脚本时发生的常见缺陷，从而改善加载时间和用户体验。
 authors:

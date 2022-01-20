@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 링크에 식별 가능한 이름이 없습니다.
 description: |2
 

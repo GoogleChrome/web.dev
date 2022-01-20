@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Accesibilidad de color y contraste
 authors:
   - dgash

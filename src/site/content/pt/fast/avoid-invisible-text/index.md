@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite texto invisível durante o carregamento da fonte
 authors:
   - katiehempenius

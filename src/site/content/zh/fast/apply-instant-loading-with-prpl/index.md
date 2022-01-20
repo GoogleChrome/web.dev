@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 PRPL 模式实现即时加载
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: スピードが重要な理由とは？
 authors:
   - bojanpavic

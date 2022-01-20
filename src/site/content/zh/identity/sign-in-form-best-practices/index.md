@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 登录表单最佳实践
 subhead: 使用跨平台浏览器功能构建安全、可访问且易于使用的登录表单。
 authors:

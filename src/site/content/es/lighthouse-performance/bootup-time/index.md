@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reducir el tiempo de ejecución de JavaScript
 description: |-
   Descubra cómo la ejecución de JavaScript puede ralentizar el rendimiento de su página

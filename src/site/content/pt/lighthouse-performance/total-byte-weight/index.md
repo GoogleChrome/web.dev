@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite enormes cargas de rede
 description: |2
 

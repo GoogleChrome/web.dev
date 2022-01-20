@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite um tamanho excessivo de DOM
 description: |2-
 

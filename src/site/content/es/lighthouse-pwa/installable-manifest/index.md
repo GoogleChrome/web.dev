@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El manifiesto de la aplicación web no cumple con los requisitos de instalación
 description: |2
 

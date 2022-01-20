@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 图像元素没有 `[alt]` 属性
 description: 了解如何通过提供替代文本来确保辅助技术用户可以访问网页的图像。
 date: 2019-05-02

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`[id]` attributes on the page are not unique"
 description: |
   Learn how to make sure that all elements on your page are announced correctly
@@ -19,8 +19,8 @@ noindex: true
 
 Lighthouse flags duplicate IDs found in a page:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB9as7xizO7s5ScR1B0s.png", alt="Lighthouse audit showing ID attributes on the page are not unique", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB9as7xizO7s5ScR1B0s.png", alt="Lighthouse audit showing ID attributes on the page are not unique", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

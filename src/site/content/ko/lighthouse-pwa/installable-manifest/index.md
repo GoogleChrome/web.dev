@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 웹 앱 매니페스트가 설치 가능성 요구 사항을 충족하지 않음
 description: |2
 

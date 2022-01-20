@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pontuação de desempenho no Lighthouse
 description: |2-
 

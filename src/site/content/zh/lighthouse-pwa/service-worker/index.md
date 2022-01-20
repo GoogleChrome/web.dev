@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 不注册可控制页面和“start_url”的服务工作进程
 description: 了解如何注册可支持离线功能、推送通知和可安装等渐进式 Web 应用程序特性的服务工作进程。
 web_lighthouse:

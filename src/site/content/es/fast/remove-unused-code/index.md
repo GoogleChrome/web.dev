@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Eliminar el código no utilizado
 subhead: El npm hace que agregar código a su proyecto sea muy sencillo. ¿Pero realmente estás usando todo esos bytes extra?
 authors:

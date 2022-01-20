@@ -1,5 +1,5 @@
 ~---
-layout: post-old
+layout: post
 title: 로그인 양식 모범 사례
 subhead: 교차 플랫폼 브라우저 기능을 사용하여 안전하고 액세스 가능하며 사용하기 쉬운 로그인 양식을 작성하십시오.
 authors:

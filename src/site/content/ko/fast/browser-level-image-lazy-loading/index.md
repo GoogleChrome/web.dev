@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 웹용 브라우저 수준 이미지 지연 로딩
 subhead: 지연 로딩이 드디어 기본 제공됩니다!
 authors:

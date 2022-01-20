@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Imagemin を使用して画像を圧縮する
 authors:
   - katiehempenius

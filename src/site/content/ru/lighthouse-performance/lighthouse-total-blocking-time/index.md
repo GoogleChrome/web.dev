@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Общее время блокировки
 description: Узнайте о метрике Lighthouse Total Blocking Time (общее время блокировки), а также о том, как ее измерять и оптимизировать.
 web_lighthouse:

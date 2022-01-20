@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Optimice la carga y el renderizado de fuentes web
 authors:
   - ilyagrigorik

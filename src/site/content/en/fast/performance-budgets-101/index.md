@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Performance budgets 101
 authors:
   - mihajlija
@@ -34,7 +34,7 @@ We've already mentioned a few things you can include in a performance budget suc
 
 However, these numbers don't tell you much about the user experience. Two pages with the same number of requests or same weight can render differently depending on the order in which resources get requested. If a [critical resource](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) like a hero image or a stylesheet on one of the pages is loaded late in the process, the users will wait longer to see something useful and perceive the page as slower. If on the other page the most important parts load quickly, they may not even notice if the rest of the page doesn't.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Image of progressive page rendering based on the critical-path", width="611", height="300" %}
 </figure>
 

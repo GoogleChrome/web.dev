@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Tiempo para interactuar
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Headings don't skip levels
 description: |
   Learn how to make sure assistive technology users can easily navigate your

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: La página no contiene un encabezado, saltos de enlace ni puntos de referencia.
 description: |2-
 

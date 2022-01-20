@@ -1,6 +1,6 @@
 ---
 title: Los elementos `<frame>` o `<iframe>` no tienen título
-layout: post-old
+layout: post
 description: |2-
 
   Aprende a asegurarte de que las tecnologías de asistencia puedan anunciar el contenido del frame (marco, en español) en

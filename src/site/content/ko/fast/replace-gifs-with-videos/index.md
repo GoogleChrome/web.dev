@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 애니메이션 GIF를 비디오로 대체하여 페이지를 더 빠르게 로드
 authors:
   - houssein

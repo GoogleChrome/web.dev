@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Imagemin을 사용하여 이미지 압축
 authors:
   - katiehempenius

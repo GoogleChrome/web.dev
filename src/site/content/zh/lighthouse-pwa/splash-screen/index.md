@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 未配置自定义初始屏幕
 description: 了解如何为渐进式 Web 应用创建自定义初始屏幕。
 web_lighthouse:

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reducir las cargas útiles de JavaScript con la división de código
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Redes de distribuição de conteúdo (CDNs)
 authors:
   - katiehempenius

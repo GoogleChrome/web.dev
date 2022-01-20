@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 적절한 크기의 이미지
 description: |2-
 

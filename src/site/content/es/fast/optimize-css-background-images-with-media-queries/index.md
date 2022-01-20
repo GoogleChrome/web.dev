@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Optimice las imágenes de fondo CSS con consultas de medios
 authors:
   - demianrenzulli

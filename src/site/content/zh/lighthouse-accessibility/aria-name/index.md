@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ARIA 项目没有可访问的名称
 description: 了解如何通过确保辅助技术用户可以访问 ARIA 项目名称，提高网页的可访问性。
 date: 2020-12-08

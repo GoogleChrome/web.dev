@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Аудит Manifest doesn't have a maskable icon"
 description: |2-
 

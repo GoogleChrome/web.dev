@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 합성되지 않은 애니메이션 방지
 description: '"합성되지 않은 애니메이션 방지" Lighthouse 감사를 통과하는 방법입니다.'
 date: 2020-08-12

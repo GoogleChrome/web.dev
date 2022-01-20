@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O manifesto do aplicativo da web não atende aos requisitos de instalabilidade
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 标签和文本替代
 authors:
   - robdodson

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Handling navigation requests
 subhead: |
   Respond to navigation requests without waiting on the network by using

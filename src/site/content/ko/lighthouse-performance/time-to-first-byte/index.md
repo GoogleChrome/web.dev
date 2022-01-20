@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 서버 응답 시간(TTFB) 단축
 description: |2-
 

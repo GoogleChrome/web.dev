@@ -1376,15 +1376,15 @@ by wrapping them in a `<div class="w-columns">` element:
 
 ```html
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
@@ -1392,15 +1392,15 @@ by wrapping them in a `<div class="w-columns">` element:
 ```
 
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
@@ -1486,7 +1486,7 @@ it doesn't include the wrapper element needed
 to ensure correct whitespace around the table.
 
 ```html
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -1508,7 +1508,7 @@ to ensure correct whitespace around the table.
 </div>
 ```
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -1552,7 +1552,7 @@ If you want content in `<td>` elements to be vertically aligned
 to the top of the cell, add the `w-table--top-align` class
 to the `<table>` element:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table class="w-table--top-align">
     <thead>
       <tr>
@@ -1601,7 +1601,7 @@ to the `<table>` element:
 
 Include code in tables using a `<code>` element:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -1629,7 +1629,7 @@ Include code in tables using a `<code>` element:
 
 Tables scroll when their width is larger than that of the content column:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tbody>
       <tr>
@@ -1687,7 +1687,7 @@ deleniti! Atque aliquam facilis labore odio similique provident illo culpa
 assumenda perspiciatis.
 </p>
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

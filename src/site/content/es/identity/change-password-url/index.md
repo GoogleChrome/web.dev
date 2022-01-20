@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ayude a los usuarios a cambiar las contraseñas fácilmente agregando una URL conocida para cambiar las contraseñas
 subhead: Redirigir una solicitud a "/.well-known/change-password" a la URL de cambio de contraseñas
 authors:

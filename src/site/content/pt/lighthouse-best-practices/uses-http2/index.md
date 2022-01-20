@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não usa HTTP/2 para todos os seus recursos.
 description: Saiba por que HTTP/2 é importante para o tempo de carregamento de sua página e como ativar HTTP/2 no seu servidor.
 web_lighthouse:

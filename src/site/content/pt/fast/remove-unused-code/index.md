@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Remova o código não utilizado
 subhead: |2
 

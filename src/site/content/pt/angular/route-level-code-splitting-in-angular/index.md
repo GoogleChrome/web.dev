@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Divisão de código de nível de rota no Angular
 subhead: |2
 

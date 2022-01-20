@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: SMS OTP 양식 모범 사례
 subhead: SMS OTP 양식을 최적화하고 사용자 경험을 개선하는 방법을 알아보세요.
 authors:

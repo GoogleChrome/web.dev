@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minimice y comprima las cargas útiles de la red
 authors:
   - houssein

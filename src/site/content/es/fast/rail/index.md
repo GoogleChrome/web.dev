@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Medir el rendimiento con el modelo RAIL
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 커스텀 스플래시 스크린에 대해 구성되지 않았습니다.
 description: 프로그레시브 웹 앱에 대한 커스텀 스플래시 스크린을 만드는 방법을 알아봅니다.
 web_lighthouse:

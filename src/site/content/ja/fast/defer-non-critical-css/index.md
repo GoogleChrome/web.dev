@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 重要でないCSSを延期する
 authors:
   - demianrenzulli

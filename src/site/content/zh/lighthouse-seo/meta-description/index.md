@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 文档没有描述标签
 description: 了解 Lighthouse 的“文档没有描述标签”审计。
 date: 2019-05-02

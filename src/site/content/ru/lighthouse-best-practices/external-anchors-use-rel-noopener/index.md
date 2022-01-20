@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ссылки на пункты назначения из разных источников небезопасны
 description: |2
 

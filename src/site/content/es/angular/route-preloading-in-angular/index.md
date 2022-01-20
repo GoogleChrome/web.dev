@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Estrategias de precarga de ruta en Angular
 subhead: Cargue las rutas con anticipación para acelerar la navegación de los usuarios.
 hero: image/admin/q4b86k6REnNHkpjQnsLK.jpg

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리 포함
 description: |2
 

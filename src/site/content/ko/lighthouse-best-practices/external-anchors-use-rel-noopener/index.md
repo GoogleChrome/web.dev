@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 교차 출처 대상에 대한 링크는 안전하지 않습니다
 description: 다른 호스트의 리소스에 안전하게 링크하는 방법을 알아보세요.
 web_lighthouse:

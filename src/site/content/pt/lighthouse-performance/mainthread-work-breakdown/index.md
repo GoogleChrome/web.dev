@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minimize o trabalho do thread principal
 description: Aprenda sobre o thread principal do navegador e como você pode otimizar sua página web para reduzir a carga do thread principal e melhorar o desempenho.
 date: 2019-05-02

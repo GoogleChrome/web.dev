@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Objetivos táctiles accesibles
 authors:
   - dgash

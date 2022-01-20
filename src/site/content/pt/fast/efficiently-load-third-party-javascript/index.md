@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carregar JavaScript de terceiros com eficiência
 subhead: Evite as armadilhas comuns de usar scripts de terceiros para melhorar o tempo de carregamento e a experiência do usuário.
 authors:

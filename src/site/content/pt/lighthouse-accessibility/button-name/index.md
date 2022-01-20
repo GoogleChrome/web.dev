@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os botões não têm um nome acessível
 description: |2
 

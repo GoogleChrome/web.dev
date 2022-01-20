@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Адаптивная загрузка изображений
 authors:
   - katiehempenius

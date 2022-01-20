@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Elementos com um ARIA `[role]` que exigem que os filhos contenham um `[role]` específico estão faltando alguns ou todos os filhos necessários
 description: |2
 

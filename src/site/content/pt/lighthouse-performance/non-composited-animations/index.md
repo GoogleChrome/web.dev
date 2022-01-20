@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite animações não compostas
 description: Como passar na auditoria Lighthouse "Evitar animações não compostas".
 date: 2020-08-12

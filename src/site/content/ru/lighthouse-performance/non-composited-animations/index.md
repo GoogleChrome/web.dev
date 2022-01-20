@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Избегайте анимации за пределами этапа компоновки
 description: Как пройти проверку «Avoid non-composited animations» в Lighthouse.
 date: 2020-08-12

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 重要なアセットをプリロードして、読み込み速度を向上させる
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 画像CDNを使用して画像を最適化する
 authors:
   - katiehempenius

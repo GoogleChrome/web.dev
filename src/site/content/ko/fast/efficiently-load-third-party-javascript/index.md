@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 타사 JavaScript를 효율적으로 로드
 subhead: 로드 시간과 사용자 경험을 개선하기 위해 타사 스크립트를 사용하는 일반적인 함정을 피하십시오.
 authors:

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Imagens de carregamento lento
 authors:
   - jlwagner

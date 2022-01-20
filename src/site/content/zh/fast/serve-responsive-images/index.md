@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 提供响应式图像
 authors:
   - katiehempenius

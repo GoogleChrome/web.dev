@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evita enormes cargas útiles de red
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os itens ARIA não têm nomes acessíveis
 description: |2
 

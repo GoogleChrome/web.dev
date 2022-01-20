@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Publique, envíe e instale JavaScript moderno para obtener aplicaciones más rápidas
 subhead: Mejore el rendimiento activando las dependencias y la salida de JavaScript modernas.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reemplace los GIF animados con video para cargas de página más rápidas
 authors:
   - houssein

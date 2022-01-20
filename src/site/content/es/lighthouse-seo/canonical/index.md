@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El documento no tiene un `rel=canonical` válido
 description: Conozca la auditoría de Lighthouse "El documento no tiene un rel=canonical válido".
 date: 2019-05-02

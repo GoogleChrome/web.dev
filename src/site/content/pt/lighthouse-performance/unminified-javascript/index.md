@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minify JavaScript
 description: |2
 

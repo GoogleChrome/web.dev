@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Lazy loading de imagens em navegadores
 subhead: O lazy loading integrado nos navegadores finalmente chegou!
 authors:

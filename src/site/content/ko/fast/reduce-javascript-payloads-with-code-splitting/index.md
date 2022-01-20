@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 코드 분할로 JavaScript 페이로드 줄이기
 authors:
   - houssein

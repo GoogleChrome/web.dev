@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los atributos ARIA no tienen nombres accesibles
 description: Aprenda a mejorar la accesibilidad de su página web garantizando que los usuarios de tecnología asistencial puedan acceder a los nombres de los atributos ARIA.
 date: 2020-12-08

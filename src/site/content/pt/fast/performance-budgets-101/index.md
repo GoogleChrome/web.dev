@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Orçamentos de desempenho 101
 authors:
   - mihajlija

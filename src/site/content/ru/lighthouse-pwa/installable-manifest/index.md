@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Аудит "Web app manifest does not meet the installability requirements"
 description: |2-
 

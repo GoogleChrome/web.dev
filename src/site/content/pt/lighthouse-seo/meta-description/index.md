@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O documento não tem uma meta description
 description: |2-
 

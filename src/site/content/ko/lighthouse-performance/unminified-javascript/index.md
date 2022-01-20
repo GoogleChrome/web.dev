@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 자바스크립트 축소
 description: |2
 

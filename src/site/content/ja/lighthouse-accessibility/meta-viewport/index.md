@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable="no"]` が `<meta name="viewport">` 要素で使用されているか、`[maximum-scale]` 属性が `5` 未満です'
 description: ブラウザのズーム無効になっていないことを確認して、Web ページのアクセシビリティをさらに高める方法を学びます。
 date: 2019-05-02

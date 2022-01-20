@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '"start_url" no responde con un 200 cuando está sin conexión'
 description: Aprende a configurar la URL de inicio de tu aplicación web progresiva para que tu aplicación sea accesible sin conexión.
 web_lighthouse:

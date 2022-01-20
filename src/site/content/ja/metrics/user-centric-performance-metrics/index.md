@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ユーザーを中心としたパフォーマンス指標
 authors:
   - philipwalton

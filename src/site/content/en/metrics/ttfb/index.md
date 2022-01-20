@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Time to First Byte (TTFB)
 authors:
   - jlwagner

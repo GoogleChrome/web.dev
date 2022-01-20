@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O documento não tem um `rel = canonical` válido
 description: |2-
 

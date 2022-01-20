@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 注册表单最佳实践
 subhead: 帮助您的用户轻松注册、登录和管理他们的帐户详细信息。
 authors:

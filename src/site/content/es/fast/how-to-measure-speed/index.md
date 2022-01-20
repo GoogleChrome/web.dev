@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "¿Cómo medir la velocidad?"
 authors:
   - bojanpavic

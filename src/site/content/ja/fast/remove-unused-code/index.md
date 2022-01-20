@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 未使用のコードを削除する
 subhead: npmを使用すると、プロジェクトにコードを簡単に追加できます。しかし、あなたは本当に余分なバイトを全て使用していますか？
 authors:

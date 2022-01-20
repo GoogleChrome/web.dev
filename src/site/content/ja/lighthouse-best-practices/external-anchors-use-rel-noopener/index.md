@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 安全でないクロスオリジン宛先へのリンク
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ウェブアプリマニフェストがインストール可能性の要件を満たしていない
 description: |2-
 

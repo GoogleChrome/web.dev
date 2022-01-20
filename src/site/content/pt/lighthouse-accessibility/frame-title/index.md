@@ -1,6 +1,6 @@
 ---
 title: Os elementos `<frame>` ou `<iframe>` não têm um título
-layout: post-old
+layout: post
 description: Saiba como garantir que as tecnologias de assistência possam apresentar corretamente o conteúdo do frame em sua página da web, dando títulos a todos os elementos do frame.
 date: 2019-05-02
 updated: 2019-09-19

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 Imagemin 压缩图像
 authors:
   - katiehempenius

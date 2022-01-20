@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Práticas recomendadas para formulários de inscrição
 subhead: Ajude seus usuários a se inscrever, fazer login e gerenciar os detalhes de suas contas com o mínimo de confusão.
 authors:

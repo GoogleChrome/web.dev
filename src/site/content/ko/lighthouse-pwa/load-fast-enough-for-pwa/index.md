@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다.
 description: |2-
 

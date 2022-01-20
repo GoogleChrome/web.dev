@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: リンクには説明文がありません
 description: |2-
 

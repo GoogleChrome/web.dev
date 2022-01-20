@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Total Blocking Time (合計ブロック時間)
 description: |2-
 

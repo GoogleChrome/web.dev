@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No tiene una etiqueta `<meta name ="viewport">` con `width` o` initial-scale`
 description: |2-
 

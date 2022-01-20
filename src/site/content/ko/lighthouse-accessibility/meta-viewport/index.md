@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable="no"]`가 `<meta name="viewport">` 요소에 사용되거나 `[maximum-scale]` 속성이 `5` 미만입니다.'
 description: 브라우저 줌이 비활성화되지 않았는지 확인해서 웹 페이지에의 접근성을 높이는 방법을 알아보십시오.
 date: 2019-05-02

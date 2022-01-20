@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 签名交换 (SXG)
 subhead: SXG 是一种交付机制，可以独立于资源的交付方式来验证资源的来源。
 authors:

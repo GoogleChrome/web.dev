@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Precargar consultas claves
 description: |2-
 

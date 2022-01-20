@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O apple-touch-icon fornecido não é válido
 description: Aprenda a especificar o ícone exibido pelo Progressive Web App na tela inicial do iOS.
 web_lighthouse:

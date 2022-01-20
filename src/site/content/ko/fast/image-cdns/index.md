@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지 CDN을 사용하여 이미지 최적화
 authors:
   - katiehempenius

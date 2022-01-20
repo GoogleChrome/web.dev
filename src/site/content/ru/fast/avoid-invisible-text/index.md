@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Как избежать скрытия текста во время загрузки шрифта
 authors:
   - katiehempenius

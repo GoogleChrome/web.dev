@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduza os payloads do JavaScript com divisão de código
 authors:
   - houssein

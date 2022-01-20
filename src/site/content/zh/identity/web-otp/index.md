@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 WebOTP API 验证网络上的电话号码
 subhead: 帮助通过短信收到 OTP 的用户
 authors:

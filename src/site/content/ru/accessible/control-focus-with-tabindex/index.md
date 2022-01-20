@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Управление фокусом при помощи tabindex
 authors:
   - robdodson

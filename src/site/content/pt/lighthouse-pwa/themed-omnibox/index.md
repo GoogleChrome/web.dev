@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não define uma cor de tema para a barra de endereço
 description: Aprenda a definir uma cor de tema da barra de endereço para seu Progressive Web App.
 web_lighthouse:

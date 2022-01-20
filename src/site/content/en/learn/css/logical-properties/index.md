@@ -52,7 +52,7 @@ For example, if there are two paragraphs, the block flow is where the second par
 In an English document, the block flow is top-to-bottom.
 Think of this in the context of paragraphs of text following each other, top-to-bottom.
 
-<figure class="w-figure">
+<figure>
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/JKfvuIFBBtmvylmFSV8K.svg",
 alt="Three blocks, div elements, with a down arrow, labelled 'block flow'",
@@ -67,7 +67,7 @@ In an English document the inline flow is left to right.
 If you were to change the document language of your webpage to Arabic (`<html lang="ar">`),
 then the inline flow would be right-to-left.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/DfyMS0jh0SjSxaeNioJt.svg",
 alt="Three words, 'she sells seashells', with a left-to-right arrow, labelled 'inline flow'",
 width="800",
@@ -97,7 +97,7 @@ the **block flow** has appropriate margin rules.
   id: 'ZELeBzM'
 } %}
 
-<figure class="w-figure">
+<figure>
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/GezxDZXkJgkMevkKg39M.png",
 alt="A diagram showing all the different sizes of a box and where each sizing section starts and ends",

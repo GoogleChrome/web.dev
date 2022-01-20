@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 주요 요청 사전 로드
 description: |2-
 

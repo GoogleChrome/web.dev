@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Скорость загрузки основного контента (LCP)
 authors:
   - philipwalton
@@ -27,7 +27,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="Хорошие значения LCP - 2,5 секунды, низкие значения больше 4,0 секунд, и все, что находится между ними, требует улучшения", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="Хорошие значения LCP - 2,5 секунды, низкие значения больше 4,0 секунд, и все, что находится между ними, требует улучшения", width="400", height="300" %}
 </picture>
 
 ### Что такое хороший показатель LCP?

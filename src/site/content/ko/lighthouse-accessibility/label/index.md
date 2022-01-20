@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 양식 요소에 연결된 레이블이 없습니다.
 description: 레이블을 제공하여 보조 기술 사용자가 양식 요소에 액세스할 수 있도록 하는 방법을 알아보세요.
 date: 2019-05-02

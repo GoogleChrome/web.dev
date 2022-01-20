@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Использование панели CrUX Dashboard в Data Studio
 authors:
   - rviscomi

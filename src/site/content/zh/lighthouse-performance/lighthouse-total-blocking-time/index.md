@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 总阻塞时间
 description: |2-
 

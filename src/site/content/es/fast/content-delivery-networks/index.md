@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Redes de entrega de contenido (CDN)
 authors:
   - katiehempenius

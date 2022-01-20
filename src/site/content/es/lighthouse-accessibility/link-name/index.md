@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los enlaces no tienen un nombre discernible
 description: Aprenda a hacer más accesibles los enlaces de su página web al asegurar que tengan nombres que puedan ser interpretados por tecnologías de asistencia.
 date: 2019-05-02

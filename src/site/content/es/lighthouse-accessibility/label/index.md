@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos de formulario no tienen etiquetas asociadas
 description: Aprenda a hacer que los elementos de formulario sean accesibles para los usuarios de tecnologías de asistencia al proporcionar etiquetas.
 date: 2019-05-02

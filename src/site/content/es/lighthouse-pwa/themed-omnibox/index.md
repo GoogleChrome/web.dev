@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No establece un color de tema para la barra de direcciones
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite encadenar solicitudes críticas
 description: |2-
 

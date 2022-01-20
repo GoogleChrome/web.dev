@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: A página não tem o doctype HTML, acionando assim o modo quirks
 description: |2-
 

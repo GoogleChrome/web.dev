@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`<meta name="viewport">` 元素中使用了 `[user-scalable="no"]` ，或者 `[maximum-scale]` 属性小于 `5`'
 description: 了解如何通过确保不禁用浏览器缩放功能使网页更易于访问。
 date: 2019-05-02

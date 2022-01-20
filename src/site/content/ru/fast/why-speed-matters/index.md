@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Почему важна скорость?
 authors:
   - bojanpavic

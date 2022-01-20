@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Identifique JavaScript lento de terceros
 subhead: Potencie sus habilidades de detective de desempeño con Lighthouse y Chrome DevTools.
 authors:

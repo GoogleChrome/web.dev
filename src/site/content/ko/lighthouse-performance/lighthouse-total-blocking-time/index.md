@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 총 차단 시간
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El manifiesto no tiene un icono enmascarable
 description: |2-
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 以用户为中心的性能指标
 authors:
   - philipwalton

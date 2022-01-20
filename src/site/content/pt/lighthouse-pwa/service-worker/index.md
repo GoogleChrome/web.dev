@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não registra um service worker que controla a página e `start_url`
 description: |2
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Uso do CrUX Dashboard no Data Studio
 authors:
   - rviscomi

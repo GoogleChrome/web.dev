@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: La página carece del doctype HTML, por lo que se activa el modo quirks
 description: Aprenda a asegurarse de que su página no activa el modo "quirks" en los navegadores más antiguos.
 web_lighthouse:

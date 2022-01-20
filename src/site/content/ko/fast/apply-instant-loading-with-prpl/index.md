@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: PRPL 패턴으로 즉시 로딩 적용
 authors:
   - houssein

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Публикация, доставка и установка современного JavaScript для ускорения работы приложений
 subhead: Повысьте производительность, включив зависимости и выходные данные для современного JavaScript.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg

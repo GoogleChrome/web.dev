@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免链接关键请求
 description: |2
 

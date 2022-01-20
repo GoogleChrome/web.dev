@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 見出し要素は番号の降順ではない
 description: 見出し要素を正しく構造化することで、支援技術のユーザーがWebページを簡単に操作できるようにする方法について説明します。
 date: 2019-10-17

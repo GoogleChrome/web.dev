@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 减少 JavaScript 执行时间
 description: 了解 JavaScript 执行如何降低页面性能以及如何加速。
 date: 2019-05-02

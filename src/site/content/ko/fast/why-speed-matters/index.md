@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 속도가 왜 중요합니까?
 authors:
   - bojanpavic

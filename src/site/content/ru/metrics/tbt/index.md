@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Общее время блокировки (TBT)
 authors:
   - philipwalton

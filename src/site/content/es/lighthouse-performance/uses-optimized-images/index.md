@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Codifique imágenes de manera eficiente
 description: Obtenga más información sobre la auditoría de uso de imágenes optimizadas.
 date: 2019-05-02

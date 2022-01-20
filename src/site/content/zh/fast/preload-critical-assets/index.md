@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 预加载关键资产以提高加载速度
 authors:
   - houssein

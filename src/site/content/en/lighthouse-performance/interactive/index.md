@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Time to Interactive
 description: |
   Learn about Lighthouse's Time to Interactive metric and
@@ -22,8 +22,8 @@ nothing happens.
 
 Lighthouse displays TTI in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="592", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="592" %}
 </figure>
 
 ## What TTI measures
@@ -56,7 +56,7 @@ If your website's TTI is 2.2&nbsp;seconds, your TTI score is 99.
 
 This table shows how to interpret your TTI score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

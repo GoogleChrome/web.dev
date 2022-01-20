@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os elementos da imagem não têm atributos `[alt]`
 description: |2
 

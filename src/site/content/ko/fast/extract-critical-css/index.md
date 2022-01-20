@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요한 CSS 추출
 subhead: 중요한 CSS 기술로 렌더링 시간을 개선하는 방법을 알아보세요.
 authors:

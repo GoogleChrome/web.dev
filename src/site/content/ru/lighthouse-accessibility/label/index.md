@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Элементам формы не сопоставлены ярлыки (Form elements do not have associated labels)
 description: |2-
 

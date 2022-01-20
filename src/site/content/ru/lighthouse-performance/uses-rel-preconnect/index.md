@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Используйте предварительное подключение к необходимым доменам
 description: Узнайте о проверке uses-rel-preconnect.
 date: 2019-05-02

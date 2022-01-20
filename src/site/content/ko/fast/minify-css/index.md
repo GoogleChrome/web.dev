@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: CSS 축소
 authors:
   - demianrenzulli

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable =" no "]` é usado no elemento `<meta name =" viewport ">` ou o atributo `[maximum-scale]` é menor que `5`'
 description: |2
 

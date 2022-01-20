@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 웹폰트 로드 중에 텍스트가 계속 표시되도록 하기
 description: 글꼴 표시 API를 사용하여 웹 페이지 텍스트가 사용자에게 항상 표시되도록 하는 방법을 알아보세요.
 date: 2019-05-02

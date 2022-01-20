@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 올바른 이미지 형식 선택
 authors:
   - ilyagrigorik

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 提取关键 CSS (Critical CSS)
 subhead: 了解如何使用关键 CSS 技术改进渲染时间。
 authors:

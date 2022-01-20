@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web app manifest does not meet the installability requirements
 description: |
   Learn how to make your Progressive Web App installable.
@@ -24,8 +24,8 @@ required to make your app installable.
 flags pages that don't have a [web app manifest](/add-manifest/)
 that meets minimum requirements for installability:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Lighthouse audit showing user can't install the web app from their home screen", width="800", height="98", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Lighthouse audit showing user can't install the web app from their home screen", width="800", height="98" %}
 </figure>
 
 If a page's manifest doesn't include the following properties,

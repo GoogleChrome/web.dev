@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Sirva imagens em formatos modernos
 description: Saiba mais sobre a auditoria uses-webp-images.
 date: 2019-05-02

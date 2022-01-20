@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Сократите время ответа сервера (TTFB)
 description: Узнайте о проверке времени до первого байта.
 date: 2019-05-02

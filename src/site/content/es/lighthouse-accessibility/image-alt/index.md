@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos de la imagen no tienen atributos "[alt]".
 description: Aprenda a asegurarse de que los usuarios de tecnología auxiliar puedan acceder a las imágenes de su página web al introducir un texto alternativo.
 date: 2019-05-02

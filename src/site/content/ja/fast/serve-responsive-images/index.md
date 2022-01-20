@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: レスポンシブ画像を提供する
 authors:
   - katiehempenius

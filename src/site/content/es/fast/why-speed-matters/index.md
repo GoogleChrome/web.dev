@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "¿Por qué es importante la velocidad?"
 authors:
   - bojanpavic

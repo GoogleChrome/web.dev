@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Defer offscreen images
 description: |
   Learn about the offscreen-images audit.
@@ -16,8 +16,8 @@ Consider lazy-loading these images
 after all critical resources have finished loading
 to lower [Time to Interactive](/interactive):
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="A screenshot of the Lighthouse Defer offscreen images audit", width="800", height="416", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="A screenshot of the Lighthouse Defer offscreen images audit", width="800", height="416" %}
 </figure>
 
 See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).

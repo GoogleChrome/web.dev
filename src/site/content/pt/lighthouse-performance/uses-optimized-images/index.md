@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Codifique imagens de forma eficiente
 description: |2
 
