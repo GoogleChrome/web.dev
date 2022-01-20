@@ -291,7 +291,7 @@ Of course, before I can open any device, libusb needs to retrieve a list of avai
 
 The difficulty is that, unlike on other platforms, there is no way to enumerate all the connected USB devices on the web for security reasons. Instead, the flow is split into two parts. First, the web application requests devices with specific properties via [`navigator.usb.requestDevice()`](https://developer.mozilla.org/docs/Web/API/USB/requestDevice) and the user manually chooses which device they want to expose or rejects the permission prompt. Afterwards, the application lists the already approved and connected devices via [`navigator.usb.getDevices()`](https://developer.mozilla.org/docs/Web/API/USB/getDevices).
 
-At first I tried to use `requestDevice()` in the implementation of `get_device_list` handler to make usage easier. However, showing a permission prompt with a list of connected devices is considered a sensitive operation, and it must be triggered by user interaction (like a button click on a page), otherwise it always returns a rejected promise. libusb applications might often want to list the connected devices upon application start-up, so using `requestDevice()` was not an option.
+At first I tried to use `requestDevice()` directly in the implementation of the `get_device_list` handler. However, showing a permission prompt with a list of connected devices is considered a sensitive operation, and it must be triggered by user interaction (like a button click on a page), otherwise it always returns a rejected promise. libusb applications might often want to list the connected devices upon application start-up, so using `requestDevice()` was not an option.
 
 Instead, I had to leave invocation of `navigator.usb.requestDevice()` to the end developer, and only expose the already approved devices from `navigator.usb.getDevices()`:
 
@@ -325,17 +325,17 @@ Most of the backend code uses `val` and `promise_result` in a similar way as alr
 
 ## Porting event loops to the web
 
-One more piece of `libusb` that I want to discuss is event handling. As described in the previous article, most APIs in system languages like C are synchronous, and event handling is no exception. It's usually implemented via an infinite loop that "polls" (tries to read data or blocks execution until some data is available) from a set of external I/O sources, and, when at least one of those responds, passes that as an event to the corresponding handler. Once the handler is finished, the control returns to the loop, and it pauses for another poll.
+One more piece of the libusb port that I want to discuss is event handling. As described in the previous article, most APIs in system languages like C are synchronous, and event handling is no exception. It's usually implemented via an infinite loop that "polls" (tries to read data or blocks execution until some data is available) from a set of external I/O sources, and, when at least one of those responds, passes that as an event to the corresponding handler. Once the handler is finished, the control returns to the loop, and it pauses for another poll.
 
 There are a couple of problems with this approach on the web.
 
-First, WebUSB doesn't and cannot expose raw handles of the underlying devices, so polling those directly is not an option. Second, libusb uses `eventfd` and `pipe` APIs for other events as well as for handling transfers on operating systems without raw device handles, but `eventfd` is not currently supported in Emscripten, and `pipe`, while supported, [currently doesn't conform to the spec](https://github.com/emscripten-core/emscripten/issues/13214) and can't wait for events.
+First, WebUSB doesn't and cannot expose raw handles of the underlying devices, so polling those directly is not an option. Second, libusb uses [`eventfd`](https://man7.org/linux/man-pages/man2/eventfd.2.html) and [`pipe`](https://man7.org/linux/man-pages/man2/pipe.2.html) APIs for other events as well as for handling transfers on operating systems without raw device handles, but `eventfd` is not currently supported in Emscripten, and `pipe`, while supported, [currently doesn't conform to the spec](https://github.com/emscripten-core/emscripten/issues/13214) and can't wait for events.
 
-Finally, the biggest problem is that the web has its own event loop. This global event loop is used for any external I/O operations (including `fetch`, timers, or, in this case, WebUSB), and it invokes event or `Promise` handlers whenever corresponding operations finish. Executing another, nested, infinite event loop will block the browser's event loop from ever progressing, which means that not only will the UI become unresponsive, but also that the code will never get notifications for the very same I/O events it's waiting for. This usually results in a deadlock, and that's what happened when I tried to use libusb in a demo, too. The page froze.
+Finally, the biggest problem is that the web has its own event loop. This global event loop is used for any external I/O operations (including `fetch()`, timers, or, in this case, WebUSB), and it invokes event or `Promise` handlers whenever corresponding operations finish. Executing another, nested, infinite event loop will block the browser's event loop from ever progressing, which means that not only will the UI become unresponsive, but also that the code will never get notifications for the very same I/O events it's waiting for. This usually results in a deadlock, and that's what happened when I tried to use libusb in a demo, too. The page froze.
 
 Like with other blocking I/O, to port such event loops to the web, developers need to find a way to run those loops without blocking the main thread. One way is to refactor the application to handle I/O events in a separate thread and pass the results back to the main one. The other is to use Asyncify to pause the loop and wait for events in a non-blocking fashion.
 
-I didn't want to do significant changes to either libusb or gPhoto2, and I've already used Asyncify for `Promise` integration, so that's the path I've chosen. To simulate a blocking variant of `poll`, for the initial proof of concept I've used a loop as shown below:
+I didn't want to do significant changes to either libusb or gPhoto2, and I've already used Asyncify for `Promise` integration, so that's the path I've chosen. To simulate a blocking variant of `poll()`, for the initial proof of concept I've used a loop as shown below:
 
 ```cpp
 #ifdef __EMSCRIPTEN__
@@ -360,7 +360,7 @@ I didn't want to do significant changes to either libusb or gPhoto2, and I've al
 
 What it does is:
 
-1. Calls `poll()` to check if any events were reported by the backend yet. If there are some, the loop stops. Otherwise Emscripten's implementation of `poll` will immediately return with `0`.
+1. Calls `poll()` to check if any events were reported by the backend yet. If there are some, the loop stops. Otherwise Emscripten's implementation of `poll()` will immediately return with `0`.
 2. Calls `emscripten_sleep(0)`. This function uses Asyncify and `setTimeout()` under the hood and is used here to yield control back to the main browser event loop. This allows the browser to handle any user interactions and I/O events, including WebUSB.
 3. Check if the specified timeout has expired yet, and, if not, continue the loop.
 
@@ -390,7 +390,7 @@ EM_ASYNC_JS(int, em_libusb_wait, (int timeout), {
 });
 ```
 
-The `em_libusb_notify` function is used whenever libusb tries to report an event, such as data transfer completion:
+The `em_libusb_notify()` function is used whenever libusb tries to report an event, such as data transfer completion:
 
 ```cpp/8-10
 void usbi_signal_event(usbi_event_t *event)
@@ -407,7 +407,7 @@ void usbi_signal_event(usbi_event_t *event)
 }
 ```
 
-Meanwhile, the `em_libusb_wait` part is used to "wake up" from Asyncify sleep when either an `em-libusb` event is received, or the timeout has expired:
+Meanwhile, the `em_libusb_wait()` part is used to "wake up" from Asyncify sleep when either an `em-libusb` event is received, or the timeout has expired:
 
 ```cpp/8
 double until_time = emscripten_get_now() + timeout_ms;
@@ -423,7 +423,7 @@ for (;;) {
 }
 ```
 
-Due to significant reduction in sleeps and wake-ups, this mechanism fixed the efficiency problems of the earlier `emscripten_sleep`-based implementation, and increased the DSLR demo throughput from 13-14 FPS to consistent 30+ FPS, which is enough for a smooth live feed.
+Due to significant reduction in sleeps and wake-ups, this mechanism fixed the efficiency problems of the earlier `emscripten_sleep()`-based implementation, and increased the DSLR demo throughput from 13-14 FPS to consistent 30+ FPS, which is enough for a smooth live feed.
 
 ## Build system and the first test
 
