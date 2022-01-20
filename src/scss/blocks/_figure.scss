@@ -13,6 +13,7 @@ figure {
   > figcaption {
     display: block;
     max-width: 100%;
+    text-align: center;
   }
 }
 
@@ -24,15 +25,27 @@ figure[data-float] {
 figure[data-float='left'] {
   float: left;
   margin-inline-end: get-space('size-1');
+
+  > figcaption {
+    text-align: inherit;
+  }
 }
 
 figure[data-float='right'] {
   float: right;
   margin-inline-start: get-space('size-1');
+
+  > figcaption {
+    text-align: inherit;
+  }
 }
 
 figure[data-size='full'] {
   > * {
     width: 100%;
+  }
+
+  > figcaption {
+    text-align: inherit;
   }
 }
