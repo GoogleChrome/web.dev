@@ -17,7 +17,7 @@ feedback:
 
 プログレッシブウェブアプリ（PWA）のインストールでは、ユーザーの検索と利用をやすくさせます。PWAのインストールができることに気付いていないユーザーもいるので、PWAのインストールを促進および有効化することを目的とするアプリ内の体験を提供するに役立つ場合があります。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="PWAの簡単なインストールボタンのスクリーンショット.", width="800", height="368" %} <figcaption class="w-figcaption">PWA内にある簡単なインストールボタン. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="PWAの簡単なインストールボタンのスクリーンショット.", width="800", height="368" %} <figcaption>PWA内にある簡単なインストールボタン. </figcaption></figure>
 
 このリストは完璧ではないが、PWAのインストールを促進するための種々な方法の起点を共有します。 どんなパターン、*または利用中のパターン*に関係なく、これらはすべて、インストールフローをトリガーする同じコードにつながります。これは、[独自のアプリ内インストール体験を提供する方法](/customize-install/)に記載されています。
 
@@ -37,8 +37,8 @@ feedback:
 [特定の基準](/install-criteria/)が満たされると、ほとんどのブラウザーは、プログレッシブWebアプリがインストール可能な状態になることをユーザーに自動的に示します。たとえば、デスクトップChromeではオムニボックスにインストールボタンが表示されます。
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="インストールインジケーターが表示されたオムニボックスのスクリーンショット.", width="800", height="307" %} <figcaption class="w-figcaption">ブラウザが インストールプロモーション(デスクトップ)を提供しました</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="ブラウザが提供したインストールプロモーションのスクリーンショット.", width="800", height="307" %} <figcaption class="w-figcaption"> ブラウザ提供のインストールプロモーション（モバイル） </figcaption></figure>
+  <figure id="browser-install-promo">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="インストールインジケーターが表示されたオムニボックスのスクリーンショット.", width="800", height="307" %} <figcaption>ブラウザが インストールプロモーション(デスクトップ)を提供しました</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="ブラウザが提供したインストールプロモーションのスクリーンショット.", width="800", height="307" %} <figcaption> ブラウザ提供のインストールプロモーション（モバイル） </figcaption></figure>
 </div>
 
 <div class="w-clearfix"> </div>
@@ -57,7 +57,7 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 最も簡単なUXは、Webコンテンツの適切な場所に「インストール」または「アプリを入手する」ボタンを付けることです。ボタンが他の重要な機能をブロックせず、ユーザーがアプリケーションを移動する際の邪魔にならないようにしてください。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="カスタムインストールボタン", width="800", height="448" %} <figcaption class="w-figcaption">シンプルなインストールボタン</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="カスタムインストールボタン", width="800", height="448" %} <figcaption>シンプルなインストールボタン</figcaption></figure>
 
 <div class="w-clearfix"> </div>
 
@@ -65,11 +65,11 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 これは、サイトのheaderの一部であるインストールボタンです。他のheaderコンテンツには、ロゴやハンバーガーメニューなどのサイトのブランドがよく入っています。Headerは`position:fixed`になるか、サイトの機能とユーザーのニーズにあわせないかもしれません。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Headerのカスタムインストールボタン", width="800", height="448" %} <figcaption class="w-figcaption"> Headerのカスタムインストールボタン </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Headerのカスタムインストールボタン", width="800", height="448" %} <figcaption> Headerのカスタムインストールボタン </figcaption></figure>
 
 適切に使用すると、サイトのheaderからPWAのインストールを促進することは、最も忠実な顧客があなたの経験に戻しやすくするための優れた方法です。 PWA headerのピクセルは貴重であるため、インストールの召喚状のサイズが適切であり、他のheaderコンテンツよりも重要であり、邪魔にならないようにしてください。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Headerのカスタムインストールボタン", width="800", height="430" %} <figcaption class="w-figcaption"> Headerのカスタムインストールボタン </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Headerのカスタムインストールボタン", width="800", height="430" %} <figcaption> Headerのカスタムインストールボタン </figcaption></figure>
 
 次のことを確認してください。
 
@@ -81,7 +81,7 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 ### ナビゲーションメニュー{: #nav }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="ナビゲーションメニューのカスタムインストールボタン", width="800", height="1117" %} <figcaption class="w-figcaption"> スライドアウトナビゲーションメニューにインストールボタン/プロモーションを追加します. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="ナビゲーションメニューのカスタムインストールボタン", width="800", height="1117" %} <figcaption> スライドアウトナビゲーションメニューにインストールボタン/プロモーションを追加します. </figcaption></figure>
 
 メニューを開いたユーザーがあなたの体験への関与を示しているため、ナビゲーションメニューはアプリのインストールを促進するのに最適な場所です。
 
@@ -96,7 +96,7 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 ランディングページの目的はあなたの製品とサービスを宣伝することです。それで、これはあなたのPWAのインストールによるメリットを宣伝する規模を拡大することに適切である場所です。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="ランディングページのカスタムインストールプロンプト", width="800", height="1117" %} <figcaption class="w-figcaption"> ランディングページのカスタムインストールプロンプト </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="ランディングページのカスタムインストールプロンプト", width="800", height="1117" %} <figcaption> ランディングページのカスタムインストールプロンプト </figcaption></figure>
 
 まず、サイトの価値提案を説明してから、訪問者にインストールにより得られるものを知らせます。
 
@@ -110,7 +110,7 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 ### バナーをインストールする{: #banner }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="ページ上部のカスタムインストールバナー.", width="800", height="1000" %} <figcaption class="w-figcaption"> ページ上部の非表示のバナー. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="ページ上部のカスタムインストールバナー.", width="800", height="1000" %} <figcaption> ページ上部の非表示のバナー. </figcaption></figure>
 
 ほとんどのユーザーは、モバイル体験でインストールバナーに遭遇し、バナーによって提供されるインタラクションに精通しています。バナーはユーザーを混乱させる可能性があるため、慎重に使用する必要があります。
 
@@ -125,11 +125,11 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 [スナックバー](https://material.io/components/snackbars/)のデザインパターンなどの一時的なUIは、ユーザーに通知し、ユーザーにアクションを簡単に完了させます。この場合は、アプリをインストールしてください。これらの種類のUIパターンを適切に使用すると、ユーザーフローが中断されずに、ユーザーが無視すると通常に自動的に閉じられます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="スナックバーとしてのカスタムインストールバナー.", width="800", height="448" %} <figcaption class="w-figcaption"> PWAがインストール可能であることを示す非表示のスナックバー. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="スナックバーとしてのカスタムインストールバナー.", width="800", height="448" %} <figcaption> PWAがインストール可能であることを示す非表示のスナックバー. </figcaption></figure>
 
 いくつかのエンゲージメント、アプリとのやり取りの後にスナックバーを表示します。ページの読み込み時に表示されたり、コンテキストから外れたりすると、簡単に見落とされたり、認知機能の過負荷につながる可能性があります。これが発生すると、ユーザーは表示されたものをすべて見落とす可能性が高いです。また、サイトの新規ユーザーはPWAのインストールをすぐできない可能性があることを忘れないでください。したがって、このパターンを使用する前に、ユーザーからの強い関心のシグナルが届くまで待つことをお勧めします。たとえば、繰り返しの訪問、ユーザーのサインイン、または同様のコンバージョンイベントなどです。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="スナックバー形のカスタムインストールバナー.", width="800", height="424" %} <figcaption class="w-figcaption"> PWAのインストールができることを示す非表示のスナックバー. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="スナックバー形のカスタムインストールバナー.", width="800", height="424" %} <figcaption> PWAのインストールができることを示す非表示のスナックバー. </figcaption></figure>
 
 次のことを確認してください。
 
@@ -143,11 +143,11 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 ユーザーコンバージョンイベントの直後、たとえば電子商取引での購入後は、PWAのインストールを促進する絶好の機会です。ユーザーは明らかにあなたのコンテンツに関与しており、コンバージョンは、ユーザーが再びあなたのサービスに関与することを示します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="変換後のインストールプロモーションのスクリーンショット.", width="800", height="448" %} <figcaption class="w-figcaption">ユーザーが購入を完了した後にプロモーションをインストールします. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="変換後のインストールプロモーションのスクリーンショット.", width="800", height="448" %} <figcaption>ユーザーが購入を完了した後にプロモーションをインストールします. </figcaption></figure>
 
 ### 予約またはチェックアウトの旅{: #journey }
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt="ユーザージャーニーの後にプロモーションをインストールします.", width="800", height="1419" %} <figcaption class="w-figcaption"> ユーザージャーニーの後にプロモーションをインストールします. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt="ユーザージャーニーの後にプロモーションをインストールします.", width="800", height="1419" %} <figcaption> ユーザージャーニーの後にプロモーションをインストールします. </figcaption></figure>
 
 予約またはチェックアウトフローの典型的なものなど、連続した移動中または移動後にインストールプロモーションを表示します。ユーザーがジャーニーを完了した後にプロモーションを表示する場合は、ジャーニーが完了したため、プロモーションをより目立たせることができます。
 
@@ -163,7 +163,7 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 このプロモーションは、プロモーションカードをより目立たせることができる[、ジャーニーの](#journey)プロモーションパターンの特殊なケースです。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="サインアップページのカスタムインストールボタン。", width="800", height="1117" %}<figcaption class="w-figcaption">サインアップページのカスタムインストールボタン。</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="サインアップページのカスタムインストールボタン。", width="800", height="1117" %}<figcaption>サインアップページのカスタムインストールボタン。</figcaption></figure>
 
 これらのページは通常、PWAのバリュープロポジションがすでに確立されている熱心なユーザーのみに閲覧されます。また、通常にこれらのページには載せる有用なコンテンツがあまりあまりません。結果として、邪魔にならない限り、より大きな召喚状を作成することで混乱が少なくなります。
 
@@ -183,7 +183,7 @@ Chrome for Androidはユーザーにミニ情報バーを表示するが、こ�
 
 インフィードインストールプロモーションは、PWAの各ニュース記事または他の情報カードの各リストの間に表示されます。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="コンテンツフィード内にプロモーションをインストールします.", width="800", height="1000" %} <figcaption class="w-figcaption"> コンテンツフィード内にプロモーションをインストールします. </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="コンテンツフィード内にプロモーションをインストールします.", width="800", height="1000" %} <figcaption> コンテンツフィード内にプロモーションをインストールします. </figcaption></figure>
 
 あなたの目標は、ユーザーに楽しむコンテンツにもっと簡単にアクセスする方法を示すことです。ユーザーに役立つ機能の宣伝に注目してください。
 

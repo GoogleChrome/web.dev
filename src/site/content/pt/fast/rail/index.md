@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Meça o desempenho com o modelo RAIL
 description: |2
 
@@ -21,13 +21,13 @@ tags:
 
 RAIL representa quatro aspectos distintos do ciclo de vida do aplicativo da web: resposta, animação, inatividade e carregamento. Os usuários têm expectativas de desempenho diferentes para cada um desses contextos. Portanto, as metas de desempenho são definidas com base no contexto e [na pesquisa de UX sobre como os usuários percebem os atrasos](https://www.nngroup.com/articles/response-times-3-important-limits/).
 
-<figure class="w-figure">{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="As quatro partes do modelo de desempenho RAIL: resposta, animação, ocioso e carga.", width = "800", height="290" %}<figcaption class="w-figcaption"> As quatro partes do modelo de desempenho RAIL</figcaption></figure>
+<figure>{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="As quatro partes do modelo de desempenho RAIL: resposta, animação, ocioso e carga.", width = "800", height="290" %}<figcaption> As quatro partes do modelo de desempenho RAIL</figcaption></figure>
 
 ## Foco no usuário
 
 Faça dos usuários o ponto central de seu esforço de desempenho. A tabela abaixo descreve as principais métricas de como os usuários percebem atrasos no desempenho:
 
-<table class="w-table-wrapper">
+<table class="table-wrapper scrollbar">
   <thead>Percepção do usuário sobre atrasos de desempenho</thead>
   <tr>
     <td>0 a 16 ms</td>
@@ -77,7 +77,7 @@ No contexto do RAIL, os termos **objetivos** e **diretrizes** têm significados 
 
 O objetivo é responder à entrada em menos de 100 ms, então por que a nossa reserva é de apenas 50 ms? Isso ocorre porque geralmente há outro trabalho sendo feito, além do tratamento de entrada, e ele ocupa parte do tempo disponível para obter uma resposta de entrada aceitável. Se um aplicativo estiver executando o trabalho nos blocos recomendados de 50 ms durante o tempo ocioso, isso significa que a entrada pode ser enfileirada por até 50 ms se ocorrer durante um desses blocos de trabalho. Levando em conta isso, é seguro presumir que apenas os 50 ms restantes estão disponíveis para o tratamento de entrada real. Este efeito é visualizado no diagrama abaixo que mostra como a entrada recebida durante uma tarefa ociosa é enfileirada, reduzindo o tempo de processamento disponível:
 
-<figure class="w-figure">{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagrama mostrando como a entrada recebida durante uma tarefa ociosa é enfileirada, reduzindo o tempo de processamento de entrada disponível para 50 ms", width="800", height="400" %}<figcaption class="w-figcaption"> Como as tarefas ociosas afetam a reserva de resposta de entrada.</figcaption></figure>
+<figure>{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagrama mostrando como a entrada recebida durante uma tarefa ociosa é enfileirada, reduzindo o tempo de processamento de entrada disponível para 50 ms", width="800", height="400" %}<figcaption> Como as tarefas ociosas afetam a reserva de resposta de entrada.</figcaption></figure>
 
 ## Animação: produzir um quadro em 10 ms
 

@@ -173,21 +173,21 @@ COEPを完全に有効にする前に、 `Cross-Origin-Embedder-Policy-Report-On
 
 画像などの画面に表示されるリソースの場合は、リクエストがブロックされ、ページに画像がないと示されるため、COEPの問題を簡単に検出できます。ただし、必ずしも視覚的な影響を与えないスクリプトやスタイルなどのリソースの場合、COEPの問題が見過ごされる恐れがあります。それらについては、DevToolsネットワークパネルをご利用ください。COEPに関する問題が発生する場合は、**ステータス**列にある`(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)`をご覧ください。
 
-<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="ネットワークパネルのステータス例のCOEP問題.", width="800", height="444", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="ネットワークパネルのステータス例のCOEP問題.", width="800", height="444" %}</figure>
 
 次に、エントリをクリックしたら、詳細をご覧ください。
 
-<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="ネットワークパネルにあるネットワークリソースをクリックすると、COEPに関する問題の詳細がheaderタブに表示されます.", width="800", height="241", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="ネットワークパネルにあるネットワークリソースをクリックすると、COEPに関する問題の詳細がheaderタブに表示されます.", width="800", height="241" %}</figure>
 
 **アプリケーション**パネルでiframeとポップアップウィンドウの状態を確認することもできます。左側の「Frames」セクションに移動し、「Top」を開き、リソース構造の内訳をご確認ください。
 
 <span id="devtools-coep-iframe">`SharedArrayBuffer`の可用性などのiframeの状態を確認できます。</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframeのインスペクター", width="800", height="480", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframeのインスペクター", width="800", height="480" %}</figure>
 
 <span id="devtools-coop">クロスオリジンが分離されているかどうかなのポップアップウィンドウの状態を確認することもできます。</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevToolsポップアップウィンドウズのインスペクター", width="800", height="480", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevToolsポップアップウィンドウズのインスペクター", width="800", height="480" %}</figure>
 
 ### ReportingAPIで問題を観察する
 

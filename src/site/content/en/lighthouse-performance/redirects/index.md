@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Avoid multiple page redirects
 description: |
   Learn why page redirects slow down your web page's load speed and
@@ -29,8 +29,8 @@ of the resource by hundreds of milliseconds.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that have multiple redirects:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}
 </figure>
 
 A page fails this audit when it has two or more redirects.

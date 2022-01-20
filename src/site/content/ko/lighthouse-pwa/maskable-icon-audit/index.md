@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 매니페스트에 마스크 가능 아이콘 없음
 description: |2-
 
@@ -15,7 +15,7 @@ date: 2020-05-06
 
 마스크 가능 아이콘 지원이 없는 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 플래그 페이지:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse 보고서 UI의 마스크 가능한 아이콘 감사.", width="800", height="110", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse 보고서 UI의 마스크 가능한 아이콘 감사.", width="800", height="110" %}</figure>
 
 감사 통과 방법:
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Remova o código não utilizado
 subhead: |2
 
@@ -22,15 +22,15 @@ Registros como o [npm](https://docs.npmjs.com/getting-started/what-is-npm) trans
 
 DevTools torna mais fácil ver o tamanho de todas as solicitações de rede: {% Instruction 'devtools-network', 'ol' %} {% Instruction 'disable-cache', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Painel de rede com solicitação de pacote", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Painel de rede com solicitação de pacote", width="800", height="169" %}
 
 A guia [Cobertura](https://developer.chrome.com/docs/devtools/coverage/) em DevTools também informará quanto código CSS e JS em seu aplicativo não está sendo usado.
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Abrangência de códigos no DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled "%}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Abrangência de códigos no DevTools", width="800", height="562"%}
 
 Ao especificar uma configuração completa do Lighthouse por meio de seu Node CLI, uma auditoria de "JavaScript não usado" também pode ser usada para rastrear quanto código não usado está sendo enviado com seu aplicativo.
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Auditoria do Lighthouse de JS não usado", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Auditoria do Lighthouse de JS não usado", width="800", height="347" %}
 
 Se você estiver usando o [webpack](https://webpack.js.org/) como seu empacotador, o [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) ajudará a investigar o que constitui o bundle. Inclua o plug-in em seu arquivo de configurações do webpack como qualquer outro plug-in:
 

@@ -29,7 +29,7 @@ feedback:
 
 O Chrome 80 foi um grande lançamento. Ele continha uma série de recursos altamente esperados, como [Módulos ECMAScript em Web Workers](/module-workers/), [coalescência nula](https://v8.dev/features/nullish-coalescing), [encadeamento opcional](https://v8.dev/features/optional-chaining) e muito mais. O lançamento foi, como de costume, anunciado por meio de uma [postagem](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html) no blog do Chromium. Você pode ver um trecho da postagem do blog na imagem abaixo.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %} <figcaption class="w-figcaption">Postagem de blog do Chromium com caixas vermelhas ao redor de elementos com um atributo <code>id</code></figcaption>.</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %} <figcaption>Postagem de blog do Chromium com caixas vermelhas ao redor de elementos com um atributo <code>id</code></figcaption>.</figure>
 
 Você provavelmente está se perguntando o que todas as caixas vermelhas significam. Eles são o resultado da execução do seguinte fragmento no DevTools. Ele destaca todos os elementos que possuem um atributo `id`.
 
@@ -41,7 +41,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 
 Posso colocar um link direto para qualquer elemento destacado com uma caixa vermelha graças ao [identificador de fragmento](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment) que uso no [hash](https://developer.mozilla.org/docs/Web/API/URL/hash) do URL da página. Supondo que eu quisesse criar um link direto para a caixa *Envie-nos seus comentários em nossos [Fóruns de produto](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)* à parte, poderia fazer isso criando manualmente o URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1&lt;/mark&gt;</code></a>. Como você pode ver no painel Elementos das Ferramentas do Desenvolvedor, o elemento em questão possui um `id` com o valor `HTML1`.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption class="w-figcaption">Ferramentas de desenvolvimento mostrando o <code>id</code> de um elemento.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption>Ferramentas de desenvolvimento mostrando o <code>id</code> de um elemento.</figcaption></figure>
 
 Se eu analisar este URL com o `URL()` do JavaScript, os diferentes componentes serão revelados. Observe a `hash` com o valor `#HTML1` .
 
@@ -69,7 +69,7 @@ No entanto, o fato de eu ter que abrir as Ferramentas do desenvolvedor para enco
 
 E se eu quiser fazer um link para algo sem `id`? Digamos que eu queira criar um link para o título *Módulos ECMAScript em Web Workers*. Como você pode ver na imagem abaixo, o `<h1>` em questão não tem um `id`, o que significa que não há como vincular a este título. Esse é o problema que os fragmentos de texto resolvem.
 
-<figure class="w-figure">% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption class="w-figcaption">Ferramentas de desenvolvimento mostrando um título sem um <code>id</code>.</figcaption></figure>
+<figure>% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption>Ferramentas de desenvolvimento mostrando um título sem um <code>id</code>.</figcaption></figure>
 
 ## Fragmentos de texto
 
@@ -97,7 +97,7 @@ Por exemplo, digamos que eu queira criar um link para o título *Módulos ECMASc
 
 O fragmento do texto é enfatizado<mark class="highlight-line highlight-line-active"> assim</mark>. Se você clicar no link em um navegador compatível como o Chrome, o fragmento de texto será destacado e aparecerá na tela:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption class="w-figcaption">Fragmento de texto rolado para exibição e destacado.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption>Fragmento de texto rolado para exibição e destacado.</figcaption></figure>
 
 ### `textStart` e `textEnd`
 
@@ -111,29 +111,29 @@ Isso se parece com isto:
 
 Para `textStart`, tenho `ECMAScript%20Modules%20in%20Web%20Workers`, depois uma vírgula `,` seguida por `ES%20Modules%20in%20Web%20Workers.` como `textEnd`. Quando você clica em um navegador compatível como o Chrome, toda a seção é destacada e rolada para a visualização:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption class="w-figcaption">Fragmento de texto rolado para exibição e destacado.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption>Fragmento de texto rolado para exibição e destacado.</figcaption></figure>
 
 Agora você pode se perguntar sobre minha escolha de `textStart` e `textEnd`. Na verdade, o URL um pouco mais curto <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript%20Modules,Web%20Workers.&lt;/mark&gt;</code></a> com apenas duas palavras em cada lado também teria funcionado. Compare `textStart` e `textEnd` com os valores anteriores.
 
 Se eu der um passo adiante e usar apenas uma palavra para `textStart` e `textEnd`, você verá que estou com problemas. O URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript,Workers.&lt;/mark&gt;</code></a> é ainda mais curto agora, mas o fragmento de texto destacado não é mais o originalmente desejado. O destaque para na primeira ocorrência da palavra `Workers.`, o que é correto, mas não o que pretendo destacar. O problema é que a seção desejada não é identificada exclusivamente pelos valores atuais `textStart` e `textEnd` uma palavra:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption class="w-figcaption">Fragmento de texto não pretendido rolado para exibição e destacado.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption>Fragmento de texto não pretendido rolado para exibição e destacado.</figcaption></figure>
 
 ### `prefix-` e `-suffix`
 
 Usar valores longos o suficiente para `textStart` e `textEnd` é uma solução para obter um link exclusivo. Em algumas situações, no entanto, isso não é possível. Por outro lado, por que escolhi a postagem do blog sobre o lançamento do Chrome 80 como meu exemplo? A resposta é que nesta versão foram introduzidos fragmentos de texto:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Texto da postagem do blog: Fragmentos de URL de texto. Os usuários ou autores agora podem criar um link para uma parte específica de uma página usando um fragmento de texto fornecido em um URL. página é carregada, o navegador destaca o texto e rola o fragmento para exibição. Por exemplo, a URL abaixo carrega uma página wiki para 'Cat' e rola para o conteúdo listado no parâmetro `text`.", width="800", height="200", class="w-screenshot" %} <figcaption class="w-figcaption">Trecho da postagem do blog do anúncio de fragmentos de texto.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Texto da postagem do blog: Fragmentos de URL de texto. Os usuários ou autores agora podem criar um link para uma parte específica de uma página usando um fragmento de texto fornecido em um URL. página é carregada, o navegador destaca o texto e rola o fragmento para exibição. Por exemplo, a URL abaixo carrega uma página wiki para 'Cat' e rola para o conteúdo listado no parâmetro `text`.", width="800", height="200" %} <figcaption>Trecho da postagem do blog do anúncio de fragmentos de texto.</figcaption></figure>
 
 Observe como na imagem acima a palavra "texto" aparece quatro vezes. A quarta ocorrência é escrita em uma fonte de código verde. Se eu quisesse criar um link para essa palavra específica, `textStart` como `text` . Visto que a palavra "texto" é, bem, apenas uma palavra, não pode haver um `textEnd`. E agora? O URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=text&lt;/mark&gt;</code></a> corresponde à primeira ocorrência da palavra "Texto" já no cabeçalho:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption class="w-figcaption">Correspondência de fragmentos de texto na primeira ocorrência de "Texto".</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption>Correspondência de fragmentos de texto na primeira ocorrência de "Texto".</figcaption></figure>
 
 {% Aside 'caution' %} Observe que a correspondência de fragmentos de texto não diferencia maiúsculas de minúsculas. {% endAside %}
 
 Felizmente, existe uma solução. Em casos como este, posso especificar um `prefix​-` e um `-suffix`. A palavra antes da fonte do código verde "texto" é "o" e a palavra depois é "parâmetro". Nenhuma das outras três ocorrências da palavra "texto" tem as mesmas palavras circundantes. Armado com este conhecimento, eu posso ajustar o URL anterior e adicione o `prefix-` e o `-suffix`. Como os outros parâmetros, eles também precisam ser codificados por porcentagem e podem conter mais de uma palavra. <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=the-,text,-parameter&lt;/mark&gt;</code></a>. Para permitir que o analisador para identificar claramente o `prefix-` e o `-suffix`, eles precisam ser separados do `textStart` e o opcional `textEnd` com um hífen `-`.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption class="w-figcaption">Correspondência de fragmentos de texto na ocorrência desejada de "texto".</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption>Correspondência de fragmentos de texto na ocorrência desejada de "texto".</figcaption></figure>
 
 ### A sintaxe completa
 
@@ -170,19 +170,19 @@ Criar URLs de fragmentos de texto manualmente é entediante, especialmente quand
 - [Link para fragmento de texto para Mozilla Firefox](https://addons.mozilla.org/firefox/addon/link-to-text-fragment/)
 - [Link para fragmento de texto para Apple Safari](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption class="w-figcaption"> Extensão de navegador com <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Link para fragmento de texto</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption> Extensão de navegador com <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Link para fragmento de texto</a>.</figcaption></figure>
 
 ### Vários fragmentos de texto em um URL
 
 Observe que vários fragmentos de texto podem aparecer em um URL. Os fragmentos de texto específicos precisam ser separados por um caractere de e comercial `&`. Aqui está um exemplo de link com três fragmentos de texto: <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet&lt;mark class="highlight-line highlight-line-active"&gt;</code></a>.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption class="w-figcaption">Três fragmentos de texto em um URL.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption>Três fragmentos de texto em um URL.</figcaption></figure>
 
 ### Mistura de elementos e fragmentos de texto
 
 Fragmentos de elementos tradicionais podem ser combinados com fragmentos de texto. É perfeitamente normal ter ambos no mesmo URL, por exemplo, para fornecer um fallback significativo no caso de o texto original na página mudar, de modo que o fragmento de texto não corresponda mais. O URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.&lt;/mark&gt;</code></a> vinculado à seção *Dê-nos feedback em nossos [Fóruns de produto](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)* contém um fragmento de elemento (`HTML1`), bem como um fragmento de `text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt = "", width = "237", height = "121"%}<figcaption class="w-figcaption"> Vinculando com fragmento de elemento e fragmento de texto.</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt = "", width = "237", height = "121"%}<figcaption> Vinculando com fragmento de elemento e fragmento de texto.</figcaption></figure>
 
 ### A diretiva do fragmento
 
@@ -299,9 +299,9 @@ No Windows, siga a documentação no site de suporte da [Ajuda do Google Chrome 
 
 Para algumas pesquisas, o mecanismo de busca Google fornece uma resposta rápida ou resumo com um snippet de conteúdo de um site relevante. É *mais provável que esses trechos em destaque* apareçam quando uma pesquisa é feita na forma de uma pergunta. Clicar em um snippet em destaque leva o usuário diretamente ao texto do snippet em destaque na página da web de origem. Isso funciona graças aos URLs de fragmentos de texto criados automaticamente.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">Página de resultados do mecanismo de pesquisa do Google mostrando um snippet em destaque. A barra de status mostra o URL de fragmentos de texto.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption>Página de resultados do mecanismo de pesquisa do Google mostrando um snippet em destaque. A barra de status mostra o URL de fragmentos de texto.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %}Depois de clicar, a seção relevante da página é exibida na tela.</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %}Depois de clicar, a seção relevante da página é exibida na tela.</figure>
 
 ## Conclusão
 

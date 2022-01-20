@@ -100,7 +100,7 @@ Content-Security-Policy:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) (플래그 `--preset=experimental`를 포함한 v7.3.0 이상) **모범 사례** 감사를 이 프로세스 전반에 걸쳐 사용하여 사이트에 CSP가 있는지, 그리고 이것이 XSS에 대해 효과적일 만큼 충분히 엄격한지 확인할 수 있습니다.
 
-{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="시행 모드에서 CSP를 찾을 수 없다는 Lighthouse 보고서 경고", width="730", height="78", class="w-screenshot " %}
+{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="시행 모드에서 CSP를 찾을 수 없다는 Lighthouse 보고서 경고", width="730", height="78" %}
 
 ### 1단계: 임시값 또는 해시 기반 CSP가 필요한지 결정
 
@@ -289,7 +289,7 @@ scripts.forEach(function(scriptUrl) {
 
 이전 단계에서 CSP를 활성화한 경우 CSP가 호환되지 않는 패턴을 차단할 때마다 콘솔에서 CSP 위반을 볼 수 있습니다.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt="Chrome 개발자 콘솔의 CSP 위반 보고서", class="w-screenshot", width="800", height="235" %}
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt="Chrome 개발자 콘솔의 CSP 위반 보고서", width="800", height="235" %}
 
 대부분의 경우 수정은 간단합니다.
 

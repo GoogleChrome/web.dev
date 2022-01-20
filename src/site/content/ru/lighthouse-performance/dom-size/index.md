@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Избегайте чрезмерного размера DOM
 description: |2-
 
@@ -30,7 +30,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) сообщает об общем количестве элементов DOM для страницы, максимальной глубине DOM и максимуме дочерних элементов:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Снимок экрана аудита предотвращения чрезмерного размера DOM Lighthouse", width="800", height="363", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Снимок экрана аудита предотвращения чрезмерного размера DOM Lighthouse", width="800", height="363" %}</figure>
 
 Lighthouse отмечает страницы со следующими деревьями DOM:
 

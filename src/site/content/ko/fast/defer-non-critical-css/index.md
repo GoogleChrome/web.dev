@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요하지 않은 CSS 연기
 authors:
   - demianrenzulli
@@ -30,7 +30,7 @@ CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/too
 
 보고서는 값이 "1s"인 **First Contentful Paint** 메트릭과 **style.css** 파일을 가리키는 **렌더 차단 리소스 제거** 기회를 보여줍니다.
 
-<figure class="w-figure">% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="'1s'의 FCP를 표시하는 최적화되지 않은 페이지의 Lighthouse 보고서 및  '기회'" 아래 '차단 리소스 제거', width="800", height="640", class="w-screenshot" %}</figure>
+<figure>% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="'1s'의 FCP를 표시하는 최적화되지 않은 페이지의 Lighthouse 보고서 및  '기회'" 아래 '차단 리소스 제거', width="800", height="640" %}</figure>
 
 {% Aside %} 이 데모 사이트에 사용하는 CSS는 매우 작습니다.  더 큰 CSS 파일(프로덕션 시나리오에서 흔히 볼 수 있음)을 요청하는 경우 그리고 Lighthouse가 **폴드 상에 있는** 콘텐츠를  렌더링하는 동안 사용되지 않은 2048바이트 이상의 CSS 규칙이 페이지에 있음을 감지하면 **미사용 CSS 제거**라는 제안도 받게 됩니다. {% endAside %}
 
@@ -41,7 +41,7 @@ CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/too
 
 결과 추적에서 CSS가 다음에 대한 로드를 완료한 직후 **FCP** 마커가 배치된 것을 볼 수 있습니다.
 
-<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="CSS 로드 후 FCP 시작을 나타내는 최적화되지 않은 페이지에 대한 DevTools 성능 추적.", width="800", height="352", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="CSS 로드 후 FCP 시작을 나타내는 최적화되지 않은 페이지에 대한 DevTools 성능 추적.", width="800", height="352" %}</figure>
 
 즉, 브라우저는 화면에 단일 픽셀을 그리기 전에 모든 CSS가 로드되고 처리될 때까지 기다려야 합니다.
 
@@ -53,7 +53,7 @@ CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/too
 2. "Coverage"를 입력하고 **Show Coverage**를 선택합니다.
 3. 페이지를 다시 로드하고 커버리지 캡처를 시작하려면 **리로드** 버튼을 클릭하십시오.
 
-<figure class="w-figure">{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="55.9% 미사용 바이트를 표시하는 CSS 파일 커버리지.", width="800", height="82", class="w-screenshot" %}<br>두 가지 색상으로 표시된 클래스를 보려면 보고서를 두 번 클릭하십시오.</figure>
+<figure>{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="55.9% 미사용 바이트를 표시하는 CSS 파일 커버리지.", width="800", height="82" %}<br>두 가지 색상으로 표시된 클래스를 보려면 보고서를 두 번 클릭하십시오.</figure>
 
 두 가지 색상으로 표시된 클래스를 보려면 보고서를 두 번 클릭하십시오.
 
@@ -98,17 +98,17 @@ DevTools를 사용하여 [최적화된 페이지](https://defer-css-optimized.gl
 
 **FCP** 마커는 페이지가 CSS를 요청하기 전에 나타납니다. 즉, 브라우저는 페이지를 렌더링하기 전에 CSS가 로드될 때까지 기다릴 필요가 없습니다.
 
-<figure class="w-figure">{% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="CSS라 로드되기 전 FCP 시작을 표시하는 최적화되지 않은 페이지에 대한 DevTools 성능 추적.", width="800", height="389", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="CSS라 로드되기 전 FCP 시작을 표시하는 최적화되지 않은 페이지에 대한 DevTools 성능 추적.", width="800", height="389" %}</figure>
 
 마지막 단계로 최적화된 페이지에서 Lighthouse를 실행합니다.
 
 보고서에서 FCP 페이지가 **0.2초** 감소(20% 개선!)된 것을 볼 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="'0.8초의 FCP 값을 나타내는 Lighthouse 보고서.", width="800", height="324", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="'0.8초의 FCP 값을 나타내는 Lighthouse 보고서.", width="800", height="324" %}</figure>
 
 **렌더링 차단 리소스 제거** 제안은 더 이상 **기회** 아래에 없으며 이제 **통과된 감사** 섹션에 속합니다.
 
-<figure class="w-figure">{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="'통과된 감사' 섹션에서 '차단 리소스 제거'를 표시하는 Lighthouse 보고서.", width="800", height="237", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="'통과된 감사' 섹션에서 '차단 리소스 제거'를 표시하는 Lighthouse 보고서.", width="800", height="237" %}</figure>
 
 ## 다음 단계 및 참조
 

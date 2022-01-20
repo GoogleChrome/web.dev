@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use formatos de vídeo para conteúdos animados
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 A seção Oportunidades de seu relatório Lighthouse lista todos os GIFs animados, junto com a economia estimada em segundos obtida pela conversão desses GIFs em vídeo:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTfWMspCIMjREn2rpwlG.png", alt="Uma captura de tela da auditoria do Lighthouse Usar formatos de vídeo para conteúdo animado", width="800", height="235", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTfWMspCIMjREn2rpwlG.png", alt="Uma captura de tela da auditoria do Lighthouse Usar formatos de vídeo para conteúdo animado", width="800", height="235" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

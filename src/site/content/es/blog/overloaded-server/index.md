@@ -114,7 +114,7 @@ Las CDN se benefician de la escala, por lo que operar tu propia CDN rara vez tie
 
 Identifica los recursos que no se sirven desde una CDN (pero que deberían servirse) ejecutando [WebPageTest](https://webpagetest.org/). En la página de resultados, haz clic en el recuadro situado encima de "Uso efectivo de la CDN" para ver la lista de recursos que deberían servirse desde una CDN.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109", class="w-screenshot" %} <figcaption class="w-figcaption w-figcaption--center"> Resultados de WebPageTest</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109" %} <figcaption> Resultados de WebPageTest</figcaption></figure>
 
 #### Reparar
 

@@ -142,7 +142,7 @@ console.log('IdleDetector is stopped.');
 
 A partir de Chromium 94, puedes emular eventos inactivos en DevTools sin estar realmente inactivo. En DevTools, abre la pestaña **Sensores** y busca **el estado Emular detector inactivo**. Puedes ver las diversas opciones en el video a continuación.
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/2OEuuTRnBdDoxARFejNN.mp4", controls=true, autoplay=true, loop=true, muted=true, class="w-screenshot", playsinline=true %} <figcaption class="w-figcaption"> Emulación del estado de Idle Detector en DevTools.</figcaption></figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/2OEuuTRnBdDoxARFejNN.mp4", controls=true, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption> Emulación del estado de Idle Detector en DevTools.</figcaption></figure>
 
 ### Soporte de Puppeteer
 

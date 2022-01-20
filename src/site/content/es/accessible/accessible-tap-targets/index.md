@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Objetivos táctiles accesibles
 authors:
   - dgash
@@ -33,7 +33,7 @@ Si tu objetivo es texto y has utilizado valores relativos como `em` o `rem` para
 
 Inspecciona la `a` del enlace y, en Chrome DevTools, cambia al [panel de Calculados](https://developers.google.com/web/tools/chrome-devtools/css/overrides#computed) en donde puedes inspeccionar las distintas partes del cuadro y ver a qué tamaño de píxeles se resuelven. En Firefox DevTools hay un panel de diseño. En ese panel obtienes el tamaño real del elemento inspeccionado.
 
-<figure class="w-figure" style="max-width: 500px">{% Img src="image/admin/vmFzREveRttHVDfLqqCx.jpg", alt="El panel de diseño en Firefox DevTools muestra el tamaño del elemento a", width="800", height="565" %}</figure>
+<figure style="max-width: 500px">{% Img src="image/admin/vmFzREveRttHVDfLqqCx.jpg", alt="El panel de diseño en Firefox DevTools muestra el tamaño del elemento a", width="800", height="565" %}</figure>
 
 ## Usar consultas de medios para detectar el uso de la pantalla táctil
 

@@ -75,7 +75,7 @@ File System Access API は、まだすべてのブラウザーと互換性があ
 
 ドロップサーフェスは、アプリケーションの設計によって異なります。ドロップサーフェスは、ウィンドウの一部のみ、またはウィンドウ全体にすることもできます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="画像圧縮WebアプリSquooshのスクリーンショット。", width="800", height="589", class="w-screenshot w -screenshot--filled" %}<figcaption class="w-figcaption"> Squooshは、ウィンドウ全体をドロップゾーンにします。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="画像圧縮WebアプリSquooshのスクリーンショット。", width="800", height="589" %}<figcaption> Squooshは、ウィンドウ全体をドロップゾーンにします。</figcaption></figure>
 
 Squooshを使用すると、ユーザーは画像をウィンドウ内の任意の場所にドラッグアンドドロップでき、**画像を選択**を選択すると、`<input type="file">`要素が呼び出されます。何をドロップゾーンとする場合も、そのサーフェスにファイルをドラッグアンドドロップできることをユーザーが分かるようにしましょう。
 

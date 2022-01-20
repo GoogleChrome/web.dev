@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 Facade （外观）延迟加载第三方资源
 description: 了解使用 Facade 延迟加载第三方资源的机会。
 date: 2020-12-01
@@ -17,7 +17,7 @@ web_lighthouse:
 
 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="一个加载 YouTube 嵌入式播放器的示例，facade 的大小是 3 KB，交互时会加载大小为 540 KB 的播放器。", width="800", height="521" %} <figcaption class="w-figcaption"> 使用 facade 加载 YouTube 嵌入式播放器。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="一个加载 YouTube 嵌入式播放器的示例，facade 的大小是 3 KB，交互时会加载大小为 540 KB 的播放器。", width="800", height="521" %} <figcaption> 使用 facade 加载 YouTube 嵌入式播放器。</figcaption></figure>
 
 ## Lighthouse 检测可延迟加载的第三方嵌入内容的方法
 
@@ -27,7 +27,7 @@ Lighthouse 会寻找可延迟加载的第三方产品，例如社交按钮小部
 
 如果网页加载隶属这些第三方嵌入之一的资源，则本次审计将失败。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Lighthouse 第三方 facade 审计突出显示 Vimeo 嵌入式播放器和 Drift 实时聊天。", width="800", height="517", class="w-screenshot"%}<figcaption class="w-figcaption">Lighthouse 第三方 facade 审计。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Lighthouse 第三方 facade 审计突出显示 Vimeo 嵌入式播放器和 Drift 实时聊天。", width="800", height="517" %}<figcaption>Lighthouse 第三方 facade 审计。</figcaption></figure>
 
 ## 如何使用 Facade 延迟加载第三方资源
 

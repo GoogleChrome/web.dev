@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Tiempo para interactuar
 description: |2-
 
@@ -16,7 +16,7 @@ Medir el TTI es importante porque algunos sitios optimizan la visibilidad del co
 
 Lighthouse muestra el TTI en segundos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="Una captura de pantalla de la auditoría de TTI de Lighthouse", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="Una captura de pantalla de la auditoría de TTI de Lighthouse", width="800", height="588" %}</figure>
 
 ## Qué mide el TTI
 
@@ -34,7 +34,7 @@ La puntuación TTI es una comparación del TTI de tu página y el TTI de sitios 
 
 Esta tabla muestra cómo interpretar tu puntaje TTI:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

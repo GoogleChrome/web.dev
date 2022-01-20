@@ -51,7 +51,7 @@ tags:
 
 혼합 콘텐츠를 감지하거나 수동 혼합 콘텐츠를 자동 업그레이드할 때마다 Chrome은 DevTools의 **문제** 탭에 자세한 메시지를 기록하여 특정 문제를 해결하는 방법을 안내합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="Chrome DevTools의 문제 탭은 특정 혼합 콘텐츠 문제 및 해결 방법에 대한 자세한 정보를 보여줍니다.", width="800", height="310 ", class="w-스크린샷" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="Chrome DevTools의 문제 탭은 특정 혼합 콘텐츠 문제 및 해결 방법에 대한 자세한 정보를 보여줍니다.", width="800", height="310 " %}</figure>
 
 ### 활성 혼합 콘텐츠
 
@@ -61,7 +61,7 @@ tags:
 
 이 다른 [데모](https://active-mixed-content.glitch.me/)에는 활성 혼합 콘텐츠의 예가 포함되어 있습니다. [HTTPS를 통해 예제를 로드](https://active-mixed-content.glitch.me/)할 때 차단되는 콘텐츠를 보려면 [HTTP를 통해 예제를 로드](http://active-mixed-content.glitch.me/)하십시오. 차단된 콘텐츠는 **문제** 탭에서도 자세히 설명됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="Chrome DevTools의 Issues 탭은 특정 혼합 콘텐츠 문제와 해결 방법에 대한 자세한 정보를 보여줍니다.", width="800", height="361 ", class="w-스크린샷" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="Chrome DevTools의 Issues 탭은 특정 혼합 콘텐츠 문제와 해결 방법에 대한 자세한 정보를 보여줍니다.", width="800", height="361 " %}</figure>
 
 {% Aside %} 브라우저는 DevTools에서 차단된 콘텐츠도 강조표시합니다. 차단된 콘텐츠 문제는 Chromium 기반 브라우저의 **문제** 탭에 자세히 설명되어 있습니다. Firefox 및 Safari는 콘솔에 메시지를 기록합니다. {% endAside %}
 

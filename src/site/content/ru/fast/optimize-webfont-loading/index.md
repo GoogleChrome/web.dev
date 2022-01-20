@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Оптимизация загрузки и рендеринга веб-шрифтов
 authors:
   - ilyagrigorik

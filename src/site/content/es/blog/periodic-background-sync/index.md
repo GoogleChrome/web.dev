@@ -233,11 +233,11 @@ Puede ser un reto obtener una vista de extremo a extremo de la sincronización p
 
 La sección **Sincronización periódica en segundo plano** de DevTools está organizada en torno a los eventos clave del ciclo de vida de la sincronización periódica en segundo plano: registro para la sincronización, realización de una sincronización en segundo plano y anulación del registro. Para obtener información sobre estos eventos, haga clic en **Iniciar registro**.
 
-<figure>{% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="El botón de registro en DevTools", width="708", height="90", class="w-screenshot" %} <figcaption class="w-figcaption"> The record button in DevTools </figcaption></figure>
+<figure>{% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="El botón de registro en DevTools", width="708", height="90" %} <figcaption> The record button in DevTools </figcaption></figure>
 
 Mientras se graba, aparecerán entradas en DevTools correspondientes a los eventos, con el contexto y los metadatos registrados para cada uno.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="Un ejemplo de datos de sincronización periódica de fondo registrados", width="800", height="357", class="w-screenshot", style="max-width: 75%" %} <figcaption class="w-figcaption"> Un ejemplo de datos de sincronización periódica de fondo registrados </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="Un ejemplo de datos de sincronización periódica de fondo registrados", width="800", height="357", style="max-width: 75%" %} <figcaption> Un ejemplo de datos de sincronización periódica de fondo registrados </figcaption></figure>
 
 Después de activar el registro por primera vez, permanecerá activado hasta tres días, lo que permite a DevTools capturar información de depuración local sobre las sincronizaciones en segundo plano que puedan tener lugar, incluso horas en el futuro.
 
@@ -249,10 +249,10 @@ Puede hacerlo mediante la sección **Service Workers** del panel de aplicaciones
 
 {% Aside %} La activación manual de un evento `periodicsync` requiere Chrome 81 o una versión posterior. {% endAside %}
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="La sección 'Service Workers' del panel de la aplicación muestra un campo de texto y un botón de 'Sincronización periódica'", width="800", height="321", class="w-screenshot", style="max-width: 90%" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="La sección 'Service Workers' del panel de la aplicación muestra un campo de texto y un botón de 'Sincronización periódica'", width="800", height="321", style="max-width: 90%" %}</figure>
 
 ## Uso de la interfaz de DevTools
 
 A partir de Chrome 81, podrás consultar una sección **Sincronización periódica en segundo plano** en el panel *Aplicación* de DevTools.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="El panel de la aplicación muestra la sección de Sincronización periódica en segundo plano", width="382", height="253", class="w-screenshot", style="max-width: 75%" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="El panel de la aplicación muestra la sección de Sincronización periódica en segundo plano", width="382", height="253", style="max-width: 75%" %}</figure>

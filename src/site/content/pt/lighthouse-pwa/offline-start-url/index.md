@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`start_url` não responde com 200 quando está off-line"
 description: |2-
 
@@ -20,7 +20,7 @@ Se o navegador não receber uma [resposta HTTP 200](https://developer.mozilla.or
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza aplicativos da web cujo URL inicial não responde com 200 quando off-line:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Auditoria do Lighthouse mostrando que URL inicial não responde com 200 quando está off-line", width="800", height="76", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Auditoria do Lighthouse mostrando que URL inicial não responde com 200 quando está off-line", width="800", height="76" %}</figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

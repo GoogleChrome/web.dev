@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: División de código a nivel de ruta en Angular
 subhead: Mejora el rendimiento de tu aplicación mediante la división de código a nivel de ruta.
 hero: image/admin/WVwZbWEEXUfXzVTtAlha.jpg

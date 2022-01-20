@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 PRPL 模式实现即时加载
 authors:
   - houssein
@@ -33,7 +33,7 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 
 如果某个资源被解析和延迟获取，Lighthouse 会显示以下失败的审计：
 
-{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse：预加载关键请求审计", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse：预加载关键请求审计", width="745", height="97" %}
 
 [**Preload**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content) 是一个声明性的获取请求，它会告诉浏览器尽快请求资源。通过在 HTML 文档头部添加带有 `rel="preload"` 的 `<link>` 标签来预加载关键资源：
 
@@ -49,7 +49,7 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 
 如果存在延迟[**首次绘制**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)（First Paint，即网站将像素呈现到屏幕的那一刻）的资源，Lighthouse 会发出警告：
 
-{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 消除渲染阻塞资源审计", width="800", height="111", class="w-screenshot" %}
+{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 消除渲染阻塞资源审计", width="800", height="111" %}
 
 为了改进 First Paint，Lighthouse 建议内联关键 JavaScript 并使用 [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript) 推迟其余部分，以及内联首屏使用的关键 CSS。这样可以消除到服务器的往返，从而获取阻塞渲染的资产，提高性能。但是从开发的角度来看，内联代码更难维护，并且无法被浏览器单独缓存。
 
@@ -60,7 +60,7 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 - [优化 CSS 交付](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 - [什么是服务器端渲染？](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="带服务工作进程的请求/响应", width="800", height="1224" %}</figure>
+<figure data-float="right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="带服务工作进程的请求/响应", width="800", height="1224" %}</figure>
 
 ## 预缓存资产
 
@@ -72,11 +72,11 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 
 如果您通过网络发送的数据太多，Lighthouse 会显示审计失败。
 
-{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse：网络有效负载过大的审计", width="800", height="99", class="w-screenshot" %}
+{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse：网络有效负载过大的审计", width="800", height="99" %}
 
 这包括所有资产类型，但由于浏览器解析和编译大型 JavaScript 有效负载需要时间，因此尤其消耗尤其严重。 Lighthouse 还会在适当的时候为此提供警告。
 
-{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse：JavaScript 启动时间审计", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse：JavaScript 启动时间审计", width="797", height="100" %}
 
 要发送仅包含用户最初加载应用程序所需代码的较小 JavaScript 有效负载，请根据需要拆分整个包并[延迟加载](/reduce-javascript-payloads-with-code-splitting)代码块。
 
@@ -84,7 +84,7 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 
 除了按需拆分和加载不同的 JavaScript 代码块外，Lighthouse 还提供对延迟加载非关键图像的审计。
 
-{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse：延迟加载屏幕外图像审计", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse：延迟加载屏幕外图像审计", width="800", height="90" %}
 
 如果您在网页上使用了许多图像，请在加载页面时延迟加载所有位于首屏下方或设备视区之外的图像（请参阅[使用 lazysizes 来延迟加载图像](/use-lazysizes-to-lazyload-images)）。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "¿Por qué es importante la velocidad?"
 authors:
   - bojanpavic
@@ -19,7 +19,7 @@ Este artículo resume algunas de las investigaciones que se han realizado sobre 
 
 ## El rendimiento se trata de retener a los usuarios
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   <blockquote>
     <p>El rendimiento ha tenido un impacto directo en los resultados de la empresa.</p>
     <cite>
@@ -51,7 +51,7 @@ Cuando se trata de la experiencia del usuario, la velocidad importa. Un [estudio
 
 A medida que un sitio comienza a cargarse, hay un período de tiempo en el que los usuarios esperan a que aparezca el contenido. Hasta que esto suceda, no hay experiencia de usuario de la que hablar. Esta falta de experiencia es fugaz en conexiones rápidas. Sin embargo, en conexiones más lentas, los usuarios se ven obligados a esperar. Los usuarios pueden experimentar más problemas a medida que los recursos de la página ingresan lentamente.
 
-<figure class="w-figure">{% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="Una comparación de dos carretes de tira de película de una página que se carga. La primera muestra una página que se carga en una conexión lenta, mientras que la segunda muestra la misma página que se carga en una conexión rápida.", width="800", height="264" %}<figcaption> Una comparación de la carga de la página en una conexión muy lenta (arriba) versus una conexión más rápida (abajo).</figcaption></figure>
+<figure>{% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="Una comparación de dos carretes de tira de película de una página que se carga. La primera muestra una página que se carga en una conexión lenta, mientras que la segunda muestra la misma página que se carga en una conexión rápida.", width="800", height="264" %}<figcaption> Una comparación de la carga de la página en una conexión muy lenta (arriba) versus una conexión más rápida (abajo).</figcaption></figure>
 
 El rendimiento es un aspecto fundamental de las buenas experiencias de usuario. Cuando los sitios envían mucho código, los navegadores deben usar megabytes del plan de datos del usuario para descargar el código. Los dispositivos móviles tienen memoria y potencia de CPU limitadas, a menudo se sienten abrumados con lo que podríamos considerar una pequeña cantidad de código no optimizado. Esto crea un rendimiento deficiente que conduce a la falta de respuesta. Sabiendo lo que sabemos sobre el comportamiento humano, los usuarios solo tolerarán aplicaciones de bajo rendimiento durante un tiempo antes de abandonarlas.
 

@@ -16,7 +16,7 @@ tags:
 
 除了[浏览器提供的安装体验之外](/promote-install/#browser-promotion)，还可以直接在您的应用内提供您自己的自定义安装流程。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Spotify PWA 中提供的安装应用按钮", width="491", height="550" %}<figcaption class="w-figcaption"> Spotify PWA 中提供的“安装应用”按钮</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Spotify PWA 中提供的安装应用按钮", width="491", height="550" %}<figcaption> Spotify PWA 中提供的“安装应用”按钮</figcaption></figure>
 
 在考虑是否推进安装时，最好考虑用户通常如何使用您的 PWA。例如，如果有一组用户在一周内多次使用您的 PWA，则从智能手机主屏幕或桌面操作系统的开始菜单启动您的应用会令这些用户受益于额外的便利。在安装 `standalone` 或 `minimal-ui` 模式下，删除窗口中的浏览器工具栏，创建额外的屏幕空间，也会让生产性和娱乐性应用程序受益。
 

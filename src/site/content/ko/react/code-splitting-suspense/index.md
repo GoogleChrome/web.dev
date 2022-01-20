@@ -75,7 +75,7 @@ const DetailsComponent = () => (
 
 이제 로딩 표시기가 더 오래 표시됩니다. `AvatarComponent`를 구성하는 모든 코드를 별도의 청크로 가져오는 방법에 주목하십시오.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="다운로드 중인 하나의 chunk.js 파일을 보여주는 DevTools 네트워크 패널", width="800", height="478", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="다운로드 중인 하나의 chunk.js 파일을 보여주는 DevTools 네트워크 패널", width="800", height="478" %}</figure>
 
 {% Aside %} React는 현재 구성 요소가 서버 측에서 렌더링될 때 Suspense를 지원하지 않습니다. 서버에서 렌더링하는 경우 React 문서에서 권장하는 [`loadable-components`](https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/)와 같은 다른 라이브러리를 사용하는 것이 좋습니다. {% endAside %}
 

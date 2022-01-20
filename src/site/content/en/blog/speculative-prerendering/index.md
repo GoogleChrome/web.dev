@@ -345,13 +345,13 @@ study the performance impact by using existing Chrome tools.
 
 The `chrome://process-internals` page can tell if a prerendered page exists.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/TEh2wBHOaslCV6zbqWHy.png", alt="Process internals page.", class="w-screenshot", width="800", height="107" %}
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/TEh2wBHOaslCV6zbqWHy.png", alt="Process internals page.", width="800", height="107" %}
 
 Both the page that initiates the prerender through speculation rules and the
 prerendered page will be under the same `webcontents` block but can be
 differentiated by the `prerender` keyword.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9U3igmdttYqWWJ017EIy.png", alt="Webcontents block showing the initiator page and the prerendered page.", class="w-screenshot", width="800", height="77" %}
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9U3igmdttYqWWJ017EIy.png", alt="Webcontents block showing the initiator page and the prerendered page.", width="800", height="77" %}
 
 #### Was the prerendered page activated?
 
@@ -402,7 +402,7 @@ To check out a
 [enable the `enable-prerender2` flag in Chrome](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 You will need to enable this for the demo to work.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Chrome flags page.", class="w-screenshot", width="800", height="205" %}
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Chrome flags page.", width="800", height="205" %}
 
 The demo provides options to prerender three different page types using `<link
 rel=prerender>` and the Speculation Rules API. You can click on each of the
@@ -415,14 +415,14 @@ the page.
 
 
 <div class="switcher">
-  <figure class="w-figure">
-      <figcaption class="w-figcaption">
+  <figure>
+      <figcaption>
 Timer.html with speculation rules
     </figcaption>
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/d4aNnm3A4PNN2h9iPrVa.png", alt="", width="498", height="318" %}
   </figure>
-  <figure class="w-figure">
-      <figcaption class="w-figcaption">
+  <figure>
+      <figcaption>
 Timer.html without speculation rules
     </figcaption>
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Gjbu7HMTr9bDP9Qa1hDz.png", alt="", width="710", height="792" %}

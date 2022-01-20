@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: На странице отсутствует тип документа HTML, поэтому запускается режим совместимости
 description: |2-
 
@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает страницы без объявления `<!DOCTYPE html>`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Аудит Lighthouse показывает отсутствие типа документа", width="800", height="76", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Аудит Lighthouse показывает отсутствие типа документа", width="800", height="76" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 

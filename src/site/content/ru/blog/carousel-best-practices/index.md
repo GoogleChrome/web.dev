@@ -17,7 +17,7 @@ tags:
 
 В этой статье рассказывается, как повысить производительность каруселей и удобство их использования.
 
-<figure class="w-figure">{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Изображение, на котором показана карусель", width="629", height="420", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Изображение, на котором показана карусель", width="629", height="420" %}</figure>
 
 ## Производительность
 

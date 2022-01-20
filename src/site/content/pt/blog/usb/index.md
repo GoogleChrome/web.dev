@@ -88,7 +88,7 @@ Você pode ou solicitar que o usuário selecione um único dispositivo USB conec
 
 A `navigator.usb.requestDevice()` usa um objeto JavaScript obrigatório que define `filters`. Esses filtros são usados para fazer a correspondência de qualquer dispositivo USB com o fornecedor (`vendorId`) e, opcionalmente, identificadores `productId`. As chaves `classCode`, `protocolCode`, `serialNumber` e `subclassCode` também podem ser definidas lá.
 
-<figure class="w-figure">   {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Captura de tela do prompt do usuário do dispositivo USB no Chrome", width="800", height="533", class="w-screenshot" %}   <figcaption class="w-figcaption">Solicitação do usuário do dispositivo USB.</figcaption></figure>
+<figure>   {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Captura de tela do prompt do usuário do dispositivo USB no Chrome", width="800", height="533" %}   <figcaption>Solicitação do usuário do dispositivo USB.</figcaption></figure>
 
 Por exemplo, eis como obter acesso a um dispositivo Arduino conectado e configurado para permitir a origem.
 
@@ -107,7 +107,7 @@ O `device` USB retornado na promessa cumprida acima tem algumas informações b�
 
 A propósito, se um dispositivo USB anunciar seu [suporte para WebUSB](https://wicg.github.io/webusb/#webusb-platform-capability-descriptor), além de definir uma URL da página de destino, o Chrome mostrará uma notificação persistente quando o dispositivo USB for conectado. Clicar nesta notificação abrirá a página de destino.
 
-<figure class="w-figure">   {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Captura de tela da notificação WebUSB no Chrome", width="800", height="450", class="w-screenshot" %}   <figcaption class="w-figcaption">Notificação WebUSB.</figcaption></figure>
+<figure>   {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Captura de tela da notificação WebUSB no Chrome", width="800", height="450" %}   <figcaption>Notificação WebUSB.</figcaption></figure>
 
 A partir daí, você pode simplesmente chamar `navigator.usb.getDevices()` e acessar seu dispositivo Arduino conforme mostrado abaixo.
 
@@ -202,11 +202,11 @@ Você também pode querer dar uma olhada no [projeto WebLight](https://github.co
 
 Depurar USB no Chrome é mais fácil com a página interna `about://device-log` onde você pode ver todos os eventos relacionados a dispositivos USB num só lugar.
 
-<figure class="w-figure">   {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Captura de tela da página de registro do dispositivo para depurar WebUSB no Chrome", width="800", height="442", class="w-screenshot" %}   <figcaption class="w-figcaption">Página de log do dispositivo no Chrome para depurar a API WebUSB.</figcaption></figure>
+<figure>   {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Captura de tela da página de registro do dispositivo para depurar WebUSB no Chrome", width="800", height="442" %}   <figcaption>Página de log do dispositivo no Chrome para depurar a API WebUSB.</figcaption></figure>
 
 A página interna `about://usb-internals` também é útil e permite simular a conexão e a desconexão de dispositivos virtuais WebUSB. Isto é útil para fazer testes de IU sem hardware real.
 
-<figure class="w-figure">   {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Captura de tela da página interna para depurar WebUSB no Chrome", width="800", height="294",  class="w-screenshot" %}   <figcaption class="w-figcaption">Página interna no Chrome para depurar a API WebUSB.</figcaption></figure>
+<figure>   {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Captura de tela da página interna para depurar WebUSB no Chrome", width="800", height="294" %}   <figcaption>Página interna no Chrome para depurar a API WebUSB.</figcaption></figure>
 
 Na maioria dos sistemas Linux, os dispositivos USB são mapeados com permissões somente leitura por default. Para permitir que o Chrome abra um dispositivo USB, você precisará adicionar uma nova [regra udev](https://www.freedesktop.org/software/systemd/man/udev.html). Crie um arquivo em `/etc/udev/rules.d/50-yourdevicename.rules` com o seguinte conteúdo:
 

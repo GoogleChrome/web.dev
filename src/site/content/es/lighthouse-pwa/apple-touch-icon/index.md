@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No proporciona un ícono apple-touch-icon válido
 description: Aprenda a especificar qué icono muestra su aplicación web progresiva en las pantallas de inicio de iOS.
 web_lighthouse:
@@ -15,7 +15,7 @@ Cuando los usuarios de iOS Safari agregan [aplicaciones web progresivas (PWA)](/
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) señala la falta de un `<link rel="apple-touch-icon" href="/example.png">` en el `<head>` de las páginas:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="No proporciona un icono táctil de Apple válido", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="No proporciona un icono táctil de Apple válido", width="800", height="95" %}</figure>
 
 {% Aside %} Un enlace `rel="apple-touch-icon-precomposed"` pasa la auditoría, pero ha sido obsoleto desde iOS 7. Use `rel="apple-touch-icon"`en su lugar. {% endAside %}
 

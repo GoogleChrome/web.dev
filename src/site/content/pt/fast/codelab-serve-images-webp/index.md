@@ -123,6 +123,6 @@ A auditoria de desempenho do Lighthouse **Servir imagens em formatos de última 
 
 1. Verifique se a auditoria **Servir imagens em formatos de próxima geração** foi aprovada.
 
-{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Aprovação da auditoria 'Servir imagens em formatos de última geração' no Lighthouse", width="701", height="651", class="w-screenshot" %}
+{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Aprovação da auditoria 'Servir imagens em formatos de última geração' no Lighthouse", width="701", height="651" %}
 
 Sucesso! Agora você está servindo imagens WebP em seu site.

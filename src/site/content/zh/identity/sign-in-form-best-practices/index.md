@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 登录表单最佳实践
 subhead: 使用跨平台浏览器功能构建安全、可访问且易于使用的登录表单。
 authors:
@@ -85,7 +85,7 @@ codelabs:
 
 最好将标签放在输入之上。这可以实现跨移动和桌面的一致设计，根据 [Google AI 研究](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html)，这还可以让用户更快地进行扫描。您将获得全宽标签和输入，并且无需调整标签和输入宽度以适合标签文本。
 
-<figure class="w-figure">{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="屏幕截图：显示移动设备上的表单输入标签位置：输入旁边和输入上方。",  width="500", height="253", class="w-screenshot" %} <figcaption class="w-figcaption">标签和输入宽度在同一行时受到限制。</figcaption></figure>
+<figure>{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="屏幕截图：显示移动设备上的表单输入标签位置：输入旁边和输入上方。",  width="500", height="253" %} <figcaption>标签和输入宽度在同一行时受到限制。</figcaption></figure>
 
 在移动设备上打开[标签位置](https://label-position.glitch.me)故障，亲自查看。
 
@@ -126,7 +126,7 @@ codelabs:
 
 您应该添加**显示密码**图标或按钮，让用户能够检查他们输入的文本——并且不要忘记添加**忘记密码**链接。请参阅[启用密码显示](#password-display)。
 
-<figure class="w-figure">{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="显示“显示密码”图标的 Google 登录表单。", width="300", height="107", class="w-screenshot" %}<figcaption class="w-figcaption">从 Google 登录表单输入密码：使用<strong>显示密码</strong>图标和<strong>忘记密码</strong>链接。</figcaption></figure>
+<figure>{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="显示“显示密码”图标的 Google 登录表单。", width="300", height="107" %}<figcaption>从 Google 登录表单输入密码：使用<strong>显示密码</strong>图标和<strong>忘记密码</strong>链接。</figcaption></figure>
 
 ## 为移动用户提供正确的键盘 {: #mobile-keyboards }
 
@@ -140,23 +140,23 @@ codelabs:
 
 不幸的是，如果您不小心，移动键盘可能会覆盖您的表单，或者更糟糕的是，部分遮挡**登录**按钮。用户可能在意识到发生了什么之前就放弃了。
 
-<figure class="w-figure">{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Android 手机登录表单的两个屏幕截图：一个显示提交按钮如何被手机键盘遮挡。", width="400 ", height="360", class="w-screenshot" %}<figcaption class="w-figcaption"><b>登录</b>按钮：一会儿能看见，一会儿看不见。</figcaption></figure>
+<figure>{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Android 手机登录表单的两个屏幕截图：一个显示提交按钮如何被手机键盘遮挡。", width="400 ", height="360" %}<figcaption><b>登录</b>按钮：一会儿能看见，一会儿看不见。</figcaption></figure>
 
 在可能的情况下，仅在**登录**页面顶部显示电子邮件/电话和密码输入来避免这种情况。将其他内容放在下面。
 
-<figure class="w-figure">{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Android 手机登录表单的屏幕截图：登录按钮没有被手机键盘遮挡。", width="200", height="342", class="w-screenshot" %}<figcaption class="w-figcaption">键盘没有遮挡<b>登录</b>按钮。</figcaption></figure>
+<figure>{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Android 手机登录表单的屏幕截图：登录按钮没有被手机键盘遮挡。", width="200", height="342" %}<figcaption>键盘没有遮挡<b>登录</b>按钮。</figcaption></figure>
 
 #### 在一系列设备上测试 {: #devices }
 
 您需要针对目标受众在一系列设备上进行测试，并进行相应调整。 BrowserStack 支持在一系列真实设备和浏览器上对[开源项目进行免费测试。](https://www.browserstack.com/open-source)
 
-<figure class="w-figure">{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="iPhone 7、8 和 11 上登录表单的屏幕截图。在 iPhone 7 和 8 上，登录按钮被手机键盘遮挡，但 iPhone 11 上则没有", width="800", height="522", class="w-screenshot" %}<figcaption class="w-figcaption"><b>登录</b>按钮：在 iPhone 7 和 8 上被遮挡，但在 iPhone 11 上没有。</figcaption></figure>
+<figure>{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="iPhone 7、8 和 11 上登录表单的屏幕截图。在 iPhone 7 和 8 上，登录按钮被手机键盘遮挡，但 iPhone 11 上则没有", width="800", height="522" %}<figcaption><b>登录</b>按钮：在 iPhone 7 和 8 上被遮挡，但在 iPhone 11 上没有。</figcaption></figure>
 
 #### 考虑使用两页 {: #two-pages }
 
 一些网站（包括亚马逊和 eBay）通过在两个页面上询问电子邮件/电话和密码来避免这个问题。这种方法还简化了体验：用户一次只负责一件事。
 
-<figure class="w-figure">{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="亚马逊网站登录表单的截图：电子邮件/电话和密码在两个单独的“页面”上。", width="400", height="385", class="w-screenshot" %}<figcaption class="w-figcaption">两阶段登录：电子邮件或电话，然后是密码。</figcaption></figure>
+<figure>{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="亚马逊网站登录表单的截图：电子邮件/电话和密码在两个单独的“页面”上。", width="400", height="385" %}<figcaption>两阶段登录：电子邮件或电话，然后是密码。</figcaption></figure>
 
 理想情况下，这应该使用单个 &lt;form&gt; 来实现。使用 JavaScript 最初仅显示电子邮件输入，然后将其隐藏并显示密码输入。如果您必须强制用户在输入电子邮件和密码之间导航到新页面，则第二页上的表单应该有一个带有电子邮件值的隐藏输入元素，以帮助密码管理器存储正确的值。[Chromium 理解的密码表单样式](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands)提供了一个代码示例。
 
@@ -202,11 +202,11 @@ codelabs:
 
 不同的浏览器处理电子邮件自动填充和密码建议的方式略有不同，但效果大致相同。例如，在桌面版 Safari 11 及更高版本上，会显示密码管理器，然后在可用时使用生物识别身份验证（指纹或面部识别）。
 
-<figure class="w-figure">{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="桌面版 Safari 登录过程的三个阶段的屏幕截图：密码管理器、生物识别身份验证、自动填充。", width="800", height= "234", class="w-screenshot" %}<figcaption class="w-figcaption">使用自动填充登录 - 无需输入文本！</figcaption></figure>
+<figure>{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="桌面版 Safari 登录过程的三个阶段的屏幕截图：密码管理器、生物识别身份验证、自动填充。", width="800", height= "234" %}<figcaption>使用自动填充登录 - 无需输入文本！</figcaption></figure>
 
 桌面版 Chrome 显示电子邮件建议、显示密码管理器并自动填充密码。
 
-<figure class="w-figure">{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="桌面版 Chrome 登录过程的四个阶段的屏幕截图：电子邮件填充、电子邮件建议、密码管理器、选择时自动填充。", width=" 800", height="232", class="w-screenshot" %}<figcaption class="w-figcaption"> Chrome 84 中的自动填充登录流程。</figcaption></figure>
+<figure>{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="桌面版 Chrome 登录过程的四个阶段的屏幕截图：电子邮件填充、电子邮件建议、密码管理器、选择时自动填充。", width=" 800", height="232" %}<figcaption> Chrome 84 中的自动填充登录流程。</figcaption></figure>
 
 浏览器密码和自动填充系统并不简单。猜测、存储和显示值的算法没有标准化，并且因平台而异。例如，正如 [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form) 所指出的：“Firefox 的密码管理器通过[配方系统](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)补充了它的启发式方法。”
 
@@ -220,7 +220,7 @@ codelabs:
 
 以下是 Safari 在桌面上的执行方式。
 
-<figure class="w-figure">{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Firefox 密码管理器桌面截图。", width="800", height="229", class="w-screenshot" %}<figcaption class="w-figcaption"> Safari 中的密码建议流程。</figcaption></figure>
+<figure>{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Firefox 密码管理器桌面截图。", width="800", height="229" %}<figcaption> Safari 中的密码建议流程。</figcaption></figure>
 
 （自 12.0 版以来，Safari 中已提供强大的唯一密码建议。）
 
@@ -232,7 +232,7 @@ codelabs:
 
 将 `required` 属性添加到电子邮件和密码字段。现代浏览器会自动提示并为丢失的数据设置焦点。无需 JavaScript！
 
-<figure class="w-figure">{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="桌面版 Firefox 和 Chrome for Android 的屏幕截图，显示“请填写此字段”提示缺少数据。", width="600", height=" 392", class="w-screenshot"%}<figcaption class="w-figcaption">提示并关注桌面版 Firefox（版本 76）和 Android 版 Chrome（版本 83）上丢失的数据。</figcaption></figure>
+<figure>{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="桌面版 Firefox 和 Chrome for Android 的屏幕截图，显示“请填写此字段”提示缺少数据。", width="600", height=" 392" %}<figcaption>提示并关注桌面版 Firefox（版本 76）和 Android 版 Chrome（版本 83）上丢失的数据。</figcaption></figure>
 
 ## 手指和拇指设计 {: #mobile-design }
 
@@ -242,7 +242,7 @@ codelabs:
 
 输入和按钮的默认大小和填充在桌面上太小，在移动设备上更糟。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="桌面版 Chrome 和 Chrome for Android 中无样式表单的屏幕截图。", width="800", height="434", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="桌面版 Chrome 和 Chrome for Android 中无样式表单的屏幕截图。", width="800", height="434" %}</figure>
 
 根据 [Android 辅助功能指南](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB)，触摸屏对象的推荐目标尺寸为 7-10 毫米。 Apple 界面指南建议 48x48 像素，W3C 建议[至少 44x44 CSS 像素](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)。在此基础上，为移动设备的输入元素和按钮添加（至少）大约 15 像素的内边距，在桌面设备上添加大约 10 像素的内边距。用真正的移动设备和真正的手指或拇指试试这个。您应该能够轻松点击每个输入和按钮。
 
@@ -256,7 +256,7 @@ codelabs:
 
 与大小和填充一样，输入元素和按钮的默认浏览器字体大小太小，尤其是在移动设备上。
 
-<figure class="w-figure">{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Chrome 桌面和 Android 上无样式表单的屏幕截图。", width="800", height="494", class="w-screenshot "%}<figcaption class="w-figcaption">桌面和移动设备上的默认样式：输入文本太小，许多用户无法辨认。</figcaption></figure>
+<figure>{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Chrome 桌面和 Android 上无样式表单的屏幕截图。", width="800", height="494"%}<figcaption>桌面和移动设备上的默认样式：输入文本太小，许多用户无法辨认。</figcaption></figure>
 
 不同平台上的浏览器字体大小不同，因此很难指定在任何地方都能正常工作的特定字体大小。对流行网站的快速调查显示桌面上的大小为 13-16 像素：匹配该物理大小是移动文本的最佳最小值。
 
@@ -274,13 +274,13 @@ codelabs:
 
 除了填充，添加边框：在白色背景上，一个好的规则是使用 `#ccc` 或更暗的边框。
 
-<figure class="w-figure">{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Chrome on Android 中样式表单的屏幕截图。", width="250", height="525", class="w-screenshot" %}<figcaption class="w-figcaption">清晰的文本、可见的输入边框、足够的填充和边距。</figcaption></figure>
+<figure>{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Chrome on Android 中样式表单的屏幕截图。", width="250", height="525" %}<figcaption>清晰的文本、可见的输入边框、足够的填充和边距。</figcaption></figure>
 
 ### 使用内置浏览器功能警告无效的输入值 {: #built-in-validation }
 
 浏览器具有内置功能，可以对具有 `type` 属性的输入进行基本的表单验证。当您提交具有无效值的表单时，浏览器会发出警告，并将焦点设置在有问题的输入上。
 
-<figure class="w-figure">{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="桌面版 Chrome 登录表单的屏幕截图，显示浏览器提示和无效电子邮件值的焦点。", width="300", height="290" %}<figcaption class="w-figcaption">浏览器的基本内置验证。</figcaption></figure>
+<figure>{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="桌面版 Chrome 登录表单的屏幕截图，显示浏览器提示和无效电子邮件值的焦点。", width="300", height="290" %}<figcaption>浏览器的基本内置验证。</figcaption></figure>
 
 您可以使用 `:invalid` CSS 选择器来突出显示无效数据。使用 `:not(:placeholder-shown)` 避免选择没有内容的输入。
 
@@ -299,7 +299,7 @@ input[type=email]:not(:placeholder-shown):invalid {
 
 您应该添加**显示密码**图标或按钮，使用户能够检查他们输入的文本。当用户看不到他们输入的文本时，[可用性会受到影响。](https://www.nngroup.com/articles/stop-password-masking/)目前没有内置的方法可以做到这一点，但[有实施计划](https://twitter.com/sw12/status/1251191795377156099)。您需要改用 JavaScript。
 
-<figure class="w-figure"><img class="w-screenshot" src="./show-password-google.png" alt="显示“显示密码”图标的 Google 登录表单。" width="350"><figcaption class="w-figcaption"> Google 登录表单：带有<strong>显示密码</strong>图标和<strong>忘记密码</strong>链接。</figcaption></figure>
+<figure><img src="./show-password-google.png" alt="显示“显示密码”图标的 Google 登录表单。" width="350"><figcaption> Google 登录表单：带有<strong>显示密码</strong>图标和<strong>忘记密码</strong>链接。</figcaption></figure>
 
 以下代码使用文本按钮添加**显示密码**功能。
 
@@ -357,7 +357,7 @@ function togglePassword() {
 
 这是最终结果：
 
-<figure class="w-figure">{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Mac 和 iPhone 7 Safari 中显示密码文本“按钮”的登录表单截图。", width="800", height ="468", class="w-screenshot" %}<figcaption class="w-figcaption">Mac 和 iPhone 7 上的 Safari 中带有<strong>显示密码</strong>文本“按钮”的登录表单。</figcaption></figure>
+<figure>{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Mac 和 iPhone 7 Safari 中显示密码文本“按钮”的登录表单截图。", width="800", height ="468" %}<figcaption>Mac 和 iPhone 7 上的 Safari 中带有<strong>显示密码</strong>文本“按钮”的登录表单。</figcaption></figure>
 
 ### 使密码输入可访问 {: #accessible-password-inputs }
 

@@ -149,7 +149,7 @@ Utiliser le site [securityheaders.com](https://securityheaders.com/) pour déter
 
 Vous pouvez également utiliser les outils de développement de Chrome, Edge ou Firefox pour déterminer la Referrer-Policy utilisée pour une requête spécifique. Pour le moment, Safari n'affiche pas l'en-tête `Referrer-Policy`, mais affiche le `Referer` qui a été envoyé.
 
-<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Une capture d'écran du panneau Réseau des outils pour les développeurs Chrome, montrant Referer et Referrer-Policy.", width="800", height="416" %}<figcaption class="w-figcaption"> Outils pour les développeurs Chrome, <b>panneau Réseau</b> avec une requête sélectionnée.</figcaption></figure>
+<figure>{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Une capture d'écran du panneau Réseau des outils pour les développeurs Chrome, montrant Referer et Referrer-Policy.", width="800", height="416" %}<figcaption> Outils pour les développeurs Chrome, <b>panneau Réseau</b> avec une requête sélectionnée.</figcaption></figure>
 
 ## Quelle politique devez-vous définir pour votre site Web ?
 

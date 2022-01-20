@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos de referencia HTML5 se utilizan para mejorar la navegación.
 description: |2-
 
@@ -36,7 +36,7 @@ Utilice la [lista de elementos de referencia del W3C](https://www.w3.org/TR/2017
 
 También puede usar herramientas como la <a href="https://accessibilityinsights.io/" rel="noopener">extensión Accessibility Insights</a> de Microsoft para visualizar la estructura de su página y encontrar secciones que no están incluidas en puntos de referencia:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EUH3Yz64EbuAI0GKQoWa.png", alt="Captura de pantalla de web.dev con elementos de referencia resaltados por la extensión Accessibility Insights", width="800", height="534", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EUH3Yz64EbuAI0GKQoWa.png", alt="Captura de pantalla de web.dev con elementos de referencia resaltados por la extensión Accessibility Insights", width="800", height="534" %}</figure>
 
 ## Cómo utilizar los elementos de referencia de forma eficaz
 

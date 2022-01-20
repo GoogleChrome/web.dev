@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Избегайте чрезмерной нагрузки на сеть
 description: Узнайте, как уменьшить время загрузки веб-страницы за счет уменьшения общего размера файлов ресурсов, которые вы предоставляете пользователям.
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) показывает общий размер всех ресурсов, запрошенных вашей страницей, в [кибибайтах (КиБ)](https://en.wikipedia.org/wiki/Kibibyte). Сначала перечисляются самые тяжеловесные запросы:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Скриншот проверки Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть) в Lighthouse", width="800", height="518", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Скриншот проверки Avoid enormous network payloads (Избегайте чрезмерных нагрузок на сеть) в Lighthouse", width="800", height="518" %}</figure>
 
 По [данным Интернет-архива](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal), медианная нагрузка на сеть составляет от 1700 до 1900 КиБ. Чтобы помочь выявить самые тяжеловесные нагрузки на сеть, Lighthouse отмечает страницы, чей общий объем сетевых запросов превышает 5000 КиБ.
 

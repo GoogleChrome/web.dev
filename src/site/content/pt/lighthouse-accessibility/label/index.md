@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os elementos do formulário não têm rótulos associados
 description: Aprenda como tornar os elementos do formulário acessíveis aos usuários de tecnologia assistiva fornecendo rótulos.
 date: 2019-05-02
@@ -14,7 +14,7 @@ Os rótulos garantem que os controles de formulário sejam anunciados adequadame
 
 Os sinalizadores do Lighthouse formam elementos que não têm rótulos associados:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Auditoria de farol mostrando que os elementos do formulário não têm rótulos associados", width="800", height="185", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Auditoria de farol mostrando que os elementos do formulário não têm rótulos associados", width="800", height="185" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

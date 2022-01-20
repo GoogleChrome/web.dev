@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 웹폰트 로드 중에 텍스트가 계속 표시되도록 하기
 description: 글꼴 표시 API를 사용하여 웹 페이지 텍스트가 사용자에게 항상 표시되도록 하는 방법을 알아보세요.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 보이지 않는 텍스트를 플래시시킬 수 있는 모든 글꼴 URL에 플래그를 지정합니다.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="웹폰트 로드 중에 텍스트가 계속 표시되도록 하기 Lighthouse 감사의 스크린샷", width="800", height="430", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="웹폰트 로드 중에 텍스트가 계속 표시되도록 하기 Lighthouse 감사의 스크린샷", width="800", height="430" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

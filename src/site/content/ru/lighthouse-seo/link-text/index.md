@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: В ссылках отсутствует содержательный текст
 description: Узнайте об аудите Lighthouse «В ссылках отсутствует содержательный текст».
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает ссылки без описательного текста:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Аудит Lighthouse показывает, что у ссылок нет описательного текста", width="800", height="191", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Аудит Lighthouse показывает, что у ссылок нет описательного текста", width="800", height="191" %}</figure>
 
 Lighthouse отмечает следующий типовой текст ссылок:
 

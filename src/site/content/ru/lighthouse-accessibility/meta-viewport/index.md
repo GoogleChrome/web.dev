@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Аудит «[user-scalable="no"] используется в элементе <meta name="viewport"> или значение атрибута [maximum-scale] меньше 5»
 description: Узнайте, как сделать вашу веб-страницу более доступной, убедившись, что масштабирование браузера не отключено.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse отмечает страницы, которые отключают масштабирование браузера:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Аудит Lighthouse, показывающий, что область просмотра отключает масштабирование текста", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Аудит Lighthouse, показывающий, что область просмотра отключает масштабирование текста", width="800", height="227" %}</figure>
 
 Страница не проходит аудит, если она содержит тег `<meta name="viewport">` с любым из следующего:
 

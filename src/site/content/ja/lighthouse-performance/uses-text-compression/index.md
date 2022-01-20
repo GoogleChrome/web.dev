@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: テキストの圧縮を有効にする
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 テキストベースのリソースは、ネットワークの総バイト数を最小限に抑えるために圧縮して提供する必要があります。Lighthouseレポートの[Opportunities]セクションには、圧縮されていないテキストベースのリソースがすべて表示されます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Lighthouseによる「テキストの圧縮を有効にする」監査のスクリーンショット", width="800", height="271", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Lighthouseによる「テキストの圧縮を有効にする」監査のスクリーンショット", width="800", height="271" %}</figure>
 
 ## Lighthouseがテキストの圧縮を取り扱う方法
 
@@ -57,7 +57,7 @@ Content-Encoding: br
 2. **Headers**] (ヘッダー) タブをクリックします。
 3. **[Response Headers]** (レスポンスヘッダー) セクションの`content-encoding`ヘッダーを確認します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="content-encoding レスポンスヘッダー", width="800", height="571", class="w-screenshotw-screenshot--filled" %}<figcaption class="w-figcaption"> <code>content-encoding</code>レスポンスヘッダー。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="content-encoding レスポンスヘッダー", width="800", height="571" %}<figcaption> <code>content-encoding</code>レスポンスヘッダー。</figcaption></figure>
 
 レスポンスの圧縮されたときのサイズと圧縮解除されたときのサイズを比較するには、以下のことを行います。
 

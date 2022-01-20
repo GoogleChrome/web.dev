@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Cells in a `<table>` element that use the `[headers]` attribute refer to an element ID not found within the same table"
 description: |
   Learn how to improve the accessibility of tables on your web page by making
@@ -21,8 +21,8 @@ therefore, there should only be one table header per column.
 
 Lighthouse flags tables that have more than one table header per column:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RI3y7LU6YECI6AdOw5GC.png", alt="Lighthouse audit showing there's more than one table header for a single column", width="800", height="227", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RI3y7LU6YECI6AdOw5GC.png", alt="Lighthouse audit showing there's more than one table header for a single column", width="800", height="227" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

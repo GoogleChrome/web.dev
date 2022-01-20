@@ -21,7 +21,7 @@ feedback:
 
 感谢 Bloomberg 赞助的 Igalia，我们终于可以把这些技巧加入样式列表中了。瞧！
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %} <figcaption class="w-figcaption"> <a href="https://glitch.com/edit/#!/marker-fun-example">查看源代码</a> </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %} <figcaption> <a href="https://glitch.com/edit/#!/marker-fun-example">查看源代码</a> </figcaption></figure>
 
 凭借 [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo)，我们可以更改项目符号和数字的内容以及一些样式。
 
@@ -220,7 +220,7 @@ li::marker {
 
 Chrome DevTools 已准备就绪，可帮助您检查、调试和修改应用到 `::marker` 伪元素的样式。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools 打开，显示来自用户代理和用户样式的样式", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools 打开，显示来自用户代理和用户样式的样式", width="776", height="574", style="max-inline-size: 480px" %}</figure>
 
 ### 未来的伪元素样式
 

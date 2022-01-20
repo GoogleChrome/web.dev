@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지 요소에는 `[alt]` 속성이 없습니다
 description: 대체 텍스트를 제공하여 보조 기술 사용자가 귀하의 웹 페이지의 이미지에 액세스할 수 있도록 하는 방법을 알아보세요.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse는 `alt` 속성이 없는 `<img>` 요소에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse 감사가 alt 속성이 없는 <img> 요소를 표시합니다", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse 감사가 alt 속성이 없는 <img> 요소를 표시합니다", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

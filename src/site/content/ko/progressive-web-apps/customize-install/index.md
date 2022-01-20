@@ -16,7 +16,7 @@ tags:
 
 [브라우저에서 제공하는 설치 환경](/promote-install/#browser-promotion) 외에도 앱 내에서 직접 사용자 지정 설치 흐름을 제공할 수 있습니다.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Spotify PWA에 제공되어 있는 앱 설치 버튼", width="491", height="550" %}<figcaption class="w-figcaption"> Spotify PWA에 제공되어 있는 "앱 설치" 버튼</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Spotify PWA에 제공되어 있는 앱 설치 버튼", width="491", height="550" %}<figcaption> Spotify PWA에 제공되어 있는 "앱 설치" 버튼</figcaption></figure>
 
 설치를 승격할지 여부를 고려할 때 사용자가 일반적으로 PWA를 사용하는 방법에 대해 생각하는 것이 가장 좋습니다. 예를 들어, 일주일에 여러 번 PWA를 사용하는 사용자 집합이 있는 경우 이러한 사용자들은 스마트폰 홈 화면이나 데스크톱 운영 체제의 시작 메뉴에서 앱을 시작하는 추가 편의성 이점을 누릴 수 있습니다. 일부 생산성 및 엔터테인먼트 애플리케이션도 설치된 `독립 실행형` 또는 `minimal-ui` 모드에서 창에서 브라우저 도구 모음을 제거하여 생성된 추가 화면 실물의 이점을 누릴 수 있습니다.
 

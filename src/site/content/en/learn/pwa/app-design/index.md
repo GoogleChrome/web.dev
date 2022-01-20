@@ -43,7 +43,7 @@ There are a number of ways you can customize app styling in your PWA's, includin
 
 <figure>
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/fW7mXimvH0Djb637xDH8.png", alt="A desktop PWA showing theme and accent colors, and an Android PWA splash screen showing theme and background colors.", width="800", height="526" %}
-<figcaption class="w-figcaption">A desktop PWA showing theme and accent colors, and an Android PWA splash screen showing theme and background colors.</figcaption>
+<figcaption>A desktop PWA showing theme and accent colors, and an Android PWA splash screen showing theme and background colors.</figcaption>
 </figure>
 {% Aside %}
 
@@ -81,11 +81,11 @@ The most common option for a Progressive Web App, standalone mode displays your 
 
 The title bar may also show permissions and hardware usage replacing the omnibox or URL bar when the PWA renders in the tab.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/0496WcZmxpNXE35jOGEw.png", alt="A PWA installed with Microsoft Edge on desktop showing its menu.", width="800", height="459" %}
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/2RmIdDEe4gm99lTzwLCa.png", alt="A PWA installed with Google Chrome on desktop showing the drop-down menu and the plugins-icon.", width="800", height="640" %}
-  <figcaption class="w-figcaption">The images above show how a PWA displays in standalone mode on the desktop in Microsoft Edge, and Chrome.</figcaption>
+  <figcaption>The images above show how a PWA displays in standalone mode on the desktop in Microsoft Edge, and Chrome.</figcaption>
 </figure>
 
 On mobile devices, a standalone PWA experience will create a standard screen that keeps the status bar visible, so the user can still see notifications, time, and battery level. It often does not have any browser-controlled menu like desktop standalone experiences may include.

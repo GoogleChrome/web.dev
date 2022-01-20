@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First CPU Idle
 description: |
   Learn about Lighthouse's First CPU Idle metric and how to optimize it.
@@ -23,8 +23,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays First CPU Idle in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Du6ioJcZ6qNBBniOIKN2.png", alt="A screenshot of the Lighthouse First CPU Idle audit", width="800", height="588", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Du6ioJcZ6qNBBniOIKN2.png", alt="A screenshot of the Lighthouse First CPU Idle audit", width="800", height="588" %}
 </figure>
 
 ## What First CPU Idle measures
@@ -58,7 +58,7 @@ your First CPU Idle score is 95.
 
 This table shows how to interpret your First CPU Idle score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

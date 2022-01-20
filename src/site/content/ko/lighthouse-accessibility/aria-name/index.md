@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ARIA 항목에 액세스 가능한 이름이 없음
 description: |2
 
@@ -27,7 +27,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 보조 기술에서 이름에 액세스할 수 없는 사용자 지정 ARIA 항목에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="접근 가능한 이름이 없는 사용자 지정 토글 요소를 표시하는 Lighthouse 감사", width="800", height="259", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="접근 가능한 이름이 없는 사용자 지정 토글 요소를 표시하는 Lighthouse 감사", width="800", height="259" %}</figure>
 
 액세스 가능한 이름을 확인하는 7개의 감사가 있으며 각 감사는 서로 다른 [ARIA 역할](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex) 집합을 다룹니다. 다음 ARIA 역할 중 하나가 있지만 액세스 가능한 이름이 없는 요소로 인해 이 감사가 실패합니다.
 

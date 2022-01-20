@@ -38,7 +38,7 @@ Cada aplicación de pago debe proporcionar lo siguiente:
 - Manifiesto del método de pago (excepto cuando un tercero proporciona el identificador del método de pago)
 - Manifiesto de la aplicación web
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kvLIMUysDNEG3IfPxKz6.png", alt="Diagrama: cómo un navegador descubre la aplicación de pago a partir de un identificador de método de pago basado en URL", width="800", height="587" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kvLIMUysDNEG3IfPxKz6.png", alt="Diagrama: cómo un navegador descubre la aplicación de pago a partir de un identificador de método de pago basado en URL", width="800", height="587" %}</figure>
 
 El proceso de descubrimiento comienza cuando un comerciante inicia una transacción:
 
@@ -83,7 +83,7 @@ Cuando un comerciante inicia una transacción de pago, [el navegador envía una 
 
 Un manifiesto de método de pago tiene dos campos, `default_applications` y `supported_origins`.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -197,7 +197,7 @@ El manifiesto típico de una aplicación web se vería así:
 
 La información descrita en un manifiesto de aplicación web también se utiliza para definir cómo aparece una aplicación de pago en la IU de Payment Request.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -251,7 +251,7 @@ La información descrita en un manifiesto de aplicación web también se utiliza
   </table>
 </div>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Aplicación de pago con un ícono", width="800", height="237", class="w-screenshot" %}<figcaption class="w-figcaption"> Etiqueta e ícono de la aplicación de pago.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Aplicación de pago con un ícono", width="800", height="237" %}<figcaption> Etiqueta e ícono de la aplicación de pago.</figcaption></figure>
 
 La propiedad `name` del manifiesto de la aplicación web se usa como el nombre de la aplicación de pago, la propiedad `icons` se usa como el icono de la aplicación de pago.
 
@@ -307,21 +307,21 @@ El navegador inicia la aplicación de pago basada en la web enviando un evento `
 
 En Chrome, cuando se llama al método `show()` de  `PaymentRequest`, la API de Payment Request muestra una IU proporcionada por el navegador llamada "IU de Payment Request". Esta interfaz de usuario permite a los usuarios elegir una aplicación de pago. Después de presionar el botón de **Continue (Continuar)** en la IU de Payment Request, se inicia la aplicación de pago seleccionada.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">La IU de Payment Request interviene antes de iniciar la aplicación de pago.</figcaption></figure>
+  <figcaption>La IU de Payment Request interviene antes de iniciar la aplicación de pago.</figcaption></figure>
 
 Mostrar la IU de Payment Request antes de iniciar una aplicación de pago aumenta la cantidad de pasos necesarios para que un usuario complete un pago. Para optimizar el proceso, el navegador puede delegar el cumplimiento de esa información a las aplicaciones de pago e iniciar una aplicación de pago directamente sin mostrar la IU de Payment Request cuando se llama a `show()`.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Omite la IU de Payment Request e inicia la aplicación de pago directamente.</figcaption></figure>
+  <figcaption>Omite la IU de Payment Request e inicia la aplicación de pago directamente.</figcaption></figure>
 
 Para iniciar una aplicación de pago directamente, se deben cumplir las siguientes condiciones:
 

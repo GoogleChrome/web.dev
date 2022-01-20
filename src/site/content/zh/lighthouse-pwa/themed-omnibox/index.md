@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 没有为地址栏设置主题颜色
 description: 了解如何为渐进式 Web 应用设置地址栏主题颜色。
 web_lighthouse:
@@ -18,7 +18,7 @@ updated: 2020-06-17
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有为地址栏设置主题的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 审计显示地址栏的颜色与页面颜色不匹配", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 审计显示地址栏的颜色与页面颜色不匹配", width="800", height="98" %}</figure>
 
 如果 Lighthouse 没有找到页面的 HTML 中的`theme-color`元标记和 [web 应用清单中的](/add-manifest)`theme_color`属性，则审计将失败。
 

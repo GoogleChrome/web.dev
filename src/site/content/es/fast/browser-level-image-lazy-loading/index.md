@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga diferida de imágenes a nivel del navegador para la web
 subhead: "¡La carga diferida incorporada finalmente está aquí!"
 authors:
@@ -22,8 +22,8 @@ feedback:
 
 ¡La compatibilidad con el nivel del navegador para imágenes de carga diferida ahora es compatible en la web! Este video muestra una [demostración](https://mathiasbynens.be/demo/img-loading-lazy) de la función:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -96,11 +96,11 @@ Puede encontrar una comparación entre los limites de distancia desde la ventana
 
 Limites antiguos contra limites nuevos:
 
-<figure class="w-figure">{% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="Los nuevos y mejorados limites para la carga diferida de imágenes, reduciendo los limites de distancia desde la ventana gráfica para conexiones rápidas de 3000px a 1250px", width="800", height="460" %}</figure>
+<figure>{% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="Los nuevos y mejorados limites para la carga diferida de imágenes, reduciendo los limites de distancia desde la ventana gráfica para conexiones rápidas de 3000px a 1250px", width="800", height="460" %}</figure>
 
 y los nuevos limites frente a LazySizes (una popular biblioteca de carga diferida de JS):
 
-<figure class="w-figure">{% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="Los nuevos limites de distancia desde la ventana gráfica en Chrome carga 90KB de imágenes en comparación con LazySizes que carga en 70KB en las mismas condiciones de red", width="800", height="355" %}</figure>
+<figure>{% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="Los nuevos limites de distancia desde la ventana gráfica en Chrome carga 90KB de imágenes en comparación con LazySizes que carga en 70KB en las mismas condiciones de red", width="800", height="355" %}</figure>
 
 {% Aside %} Para garantizar que los usuarios de Chrome en versiones recientes también se beneficien de los nuevos limites, hemos respaldado estos cambios para que Chrome 79 - 85 también los use. Tenga esto en cuenta si intenta comparar los ahorros de datos de versiones anteriores de Chrome con las más recientes. {% endAside %}
 

@@ -121,6 +121,6 @@ Lighthouse의 **차세대 형식의 이미지 제공** 성능 감사를 통해 �
 
 1. **차세대 형식의 이미지 제공** 감사가 통과되었는지 확인합니다.
 
-{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Lighthouse에서 '차세대 형식의 이미지 제공' 감사 통과", width="701", height="651", class="w-screenshot" %}
+{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Lighthouse에서 '차세대 형식의 이미지 제공' 감사 통과", width="701", height="651" %}
 
 성공! 이제 사이트에서 WebP 이미지를 제공하고 있습니다.

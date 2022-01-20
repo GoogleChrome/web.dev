@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 未使用のコードを削除する
 subhead: npmを使用すると、プロジェクトにコードを簡単に追加できます。しかし、あなたは本当に余分なバイトを全て使用していますか？
 authors:
@@ -18,15 +18,15 @@ tags:
 
 DevToolsを使用すると、すべてのネットワークリクエストのサイズを簡単に確認できます。{% Instruction 'devtools-network', 'ol' %} {% Instruction 'disable-cache', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="バンドルリクエストのあるネットワークパネル", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="バンドルリクエストのあるネットワークパネル", width="800", height="169" %}
 
 [DevToolsのカバレッジ](https://developer.chrome.com/docs/devtools/coverage/)タブには、アプリケーション内の未使用のCSSおよびJSコードの量も表示されます。
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="DevToolsのコードカバレッジ", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="DevToolsのコードカバレッジ", width="800", height="562" %}
 
 ノードCLIを介して完全なLighthouse構成を指定することにより、「未使用のJavaScript」監査を使用して、アプリケーションに付属している未使用のコードの量を追跡することもできます。
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347" %}
 
 バンドラーとして[webpack](https://webpack.js.org/)を使用している場合は[、Webpack BundleAnalyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)がバンドルの構成要素を調査するのに役立ちます。他のプラグインと同様に、プラグインをwebpack構成ファイルに含めます。
 

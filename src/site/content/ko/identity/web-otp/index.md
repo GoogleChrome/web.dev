@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: WebOTP API로 웹에서 전화번호 확인
 subhead: SMS를 통해 수신한 OTP로 사용자 지원
 authors:
@@ -48,7 +48,7 @@ WebOTP API를 사용하면 동영상에서 보여지는 것처럼 사용자가 �
 
 전체 프로세스는 아래 이미지에 다이어그램으로 표시되어 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> WebOTP API 다이어그램 </figcaption><br></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %} <figcaption> WebOTP API 다이어그램 </figcaption><br></figure>
 
 [데모](https://web-otp.glitch.me)를 직접 시도해보십시오. 전화번호를 묻거나 여러분의 장치로 SMS를 보내지 않지만, 데모에 표시된 문자를 복사하여 다른 장치에서 보낼 수 이습니다. WebOTP API를 사용할 때에는 발신자를 중요시하지 않기 때문에 이렇게 작동할 수 있습니다.
 
@@ -271,7 +271,7 @@ Your OTP is: 123456.
 - SMS 문자 메시지에서 상단 프레임 오리진과 iframe 오리진 모두에 주석을 답니다.
 - 교차 오리진 iframe이 사용자로부터 직접 OTP를 수신할 수 있도록 권한 정책을 구성합니다.
 
-<figure class="w-figure">{% Video src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4", autoplay="true", controls="true", loop="true", muted="true", preload="auto", width="300", height="600", class="w-screenshot" %} <figcaption class="w-figcaption"> iframe 내에서 WebOTP API가 작동 중에 있습니다. </figcaption></figure>
+<figure>{% Video src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4", autoplay="true", controls="true", loop="true", muted="true", preload="auto", width="300", height="600" %} <figcaption> iframe 내에서 WebOTP API가 작동 중에 있습니다. </figcaption></figure>
 
 [https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io)에서 데모를 시도해볼 수 있습니다.
 

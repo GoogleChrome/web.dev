@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用图像 CDN 优化图像
 authors:
   - katiehempenius
@@ -19,7 +19,7 @@ tags:
 
 图像 CDN 专门从事图像的转换、优化和分发。您也可以将它们视为 API，用于访问和处理网站上使用的图像。对于从图像 CDN 加载的图像，图像 URL 不仅指示要加载的图像，还指示大小、格式和质量等参数。这样便可针对不同用例轻松创建图像的变体。
 
-<figure class="w-figure">{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="显示图像 CDN 和客户端之间的请求/响应流。大小和格式等参数用于请求同一图像的变体。", width ="800", height="408", class="w-screenshot" %} <figcaption class="w-figcaption"> 图像 CDN 可以根据图像 URL 中的参数执行的转换示例。</figcaption></figure>
+<figure>{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="显示图像 CDN 和客户端之间的请求/响应流。大小和格式等参数用于请求同一图像的变体。", width ="800", height="408" %} <figcaption> 图像 CDN 可以根据图像 URL 中的参数执行的转换示例。</figcaption></figure>
 
 图像 CDN 与构建时图像优化脚本的不同之处在于，它们根据需要创建图像的新版本。因此，CDN 通常比构建脚本更适合创建针对每个单独客户端高度定制的图像。
 
@@ -27,7 +27,7 @@ tags:
 
 图像 CDN 使用的图像 URL 可传达有关图像的重要信息以及应该对其应用的转换和优化。URL 格式会因图像 CDN 的不同而有所不同，但在高层次上，它们都具有相似的功能。让我们来看一些最常见的功能。
 
-<figure class="w-figure">{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="图像 URL 通常包含以下成分：来源、图像、安全密钥和转换。", width="800", height="127" %}</figure>
+<figure>{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="图像 URL 通常包含以下成分：来源、图像、安全密钥和转换。", width="800", height="127" %}</figure>
 
 ### 来源
 

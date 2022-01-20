@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Публикация, доставка и установка современного JavaScript для ускорения работы приложений
 subhead: Повысьте производительность, включив зависимости и выходные данные для современного JavaScript.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
@@ -18,7 +18,7 @@ tags:
 
 Более 90% браузеров способны выполнять современный JavaScript, но на сегодняшний день одна из основных причин проблем с производительностью в Интернете— преобладание старого JavaScript. С помощью несложного средства [EStimator.dev](http://estimator.dev/) можно вычислить, насколько уменьшится размер и повысится производительность сайта при использовании синтаксиса современного JavaScript.
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="Средство EStimator.dev c результатами анализа, согласно которым использование современного JavaScript ускорит работу сайта на 9%.", width="800", height="785" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> EStimator.dev </figcaption></figure>
+<figure data-size="full">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="Средство EStimator.dev c результатами анализа, согласно которым использование современного JavaScript ускорит работу сайта на 9%.", width="800", height="785" %} <figcaption> EStimator.dev </figcaption></figure>
 
 На сегодняшний день возможности Интернета ограничены старым JavaScript. Никакие методы оптимизации не повысят производительность так, как это можно сделать, создавая, публикуя и доставляя веб-страницы или пакеты с использованием синтаксиса **ES2017**.
 
@@ -147,12 +147,12 @@ module.exports = {
 
 Плагин `Optimize Plugin` может работать быстрее и эффективнее, чем пользовательские конфигурации webpack, в которых современный и старый код обычно помещают в отдельные пакеты. Кроме того, он управляет работой компилятора [Babel](https://babeljs.io/) и уменьшает размер пакетов с помощью средства [Terser](https://terser.org/), используя отдельные оптимальные параметры для современного и старого выходного кода. И, наконец, полифиллы, необходимые для сгенерированных старых пакетов, извлекаются в отдельный скрипт и поэтому они никогда не дублируются, а новые браузеры не загружают их, когда это не нужно.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Сравнение подходов с двойным транспилированием исходных модулей и транспилированием сгенерированных пакетов.</figcaption></figure>
+  <figcaption>Сравнение подходов с двойным транспилированием исходных модулей и транспилированием сгенерированных пакетов.</figcaption></figure>
 
 ### Плагин BabelEsmPlugin
 

@@ -16,7 +16,7 @@ tags:
 
 Lighthouse を使用してページを監査している場合は、ユーザーがページを操作して応答を得ることができるまでの時間を表す [Time to Interactive](/interactive)（TTI/対話時間）という指標に聞き覚えがあるかもしれません。しかし、長い（JavaScript）タスクが  TTI の低下に大きく寄与する可能性があることはご存知ですか？
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse のレポートに表示される Time to Interactive", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse のレポートに表示される Time to Interactive", width="800", height="169" %}
 
 ## 長いタスクとは？
 
@@ -30,11 +30,11 @@ CPU を多用する長いタスクは、50 ミリ秒以上かかる複雑な作�
 
 これまでは、[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) で 50 ミリ秒を超える長さのスクリプトを示す「長い黄色のブロック」を手動で探すか、[Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) を使用して対話性を遅らせているタスクを特定する必要がありました。これでは少し面倒かもしれません。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="短いタスクと長いタスクの違いを示す DevTools Performance パネルのスクリーンショット", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="短いタスクと長いタスクの違いを示す DevTools Performance パネルのスクリーンショット", width="800", height="450" %}
 
 パフォーマンス監査ワークフローを容易にするために、[DevTools は長いタスクを視覚化できるようになりました](https://developers.google.com/web/updates/2019/03/devtools#longtasks)。長いタスクである場合、タスク（灰色で表示）には赤いフラグが設定されます。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="Performance パネルで灰色のバーで示される長いタスクに赤いフラグを付けて視覚化する DevTools", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="Performance パネルで灰色のバーで示される長いタスクに赤いフラグを付けて視覚化する DevTools", width="800", height="450" %}
 
 - [Performance パネル](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)で、読み込み中の Web ページのトレースを記録します。
 - メインスレッドビューで赤いフラグを探します。タスクは灰色で表示されています（「Task」）。
@@ -44,7 +44,7 @@ CPU を多用する長いタスクは、50 ミリ秒以上かかる複雑な作�
 
 長いタスクを引き起こしている原因を見つけるには、灰色の **Task** バーを選択します。下のドロワーで、［**Bottom-Up**］と［**Group by Activity**］を選択します。これにより、完了までに非常に長い時間がかかるタスクに（合計で）最も貢献したアクティビティを確認できます。以下は、コストのかかる DOM クエリのセットのようです。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="DevTools で長いタスク（「Task」ラベル）を選択すると、その原因となったアクティビティにドリルダウンできる。", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="DevTools で長いタスク（「Task」ラベル）を選択すると、その原因となったアクティビティにドリルダウンできる。", width="800", height="450" %}
 
 ## 長いタスクを最適化する一般的な方法とは？
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Codifique imágenes de manera eficiente
 description: Obtenga más información sobre la auditoría de uso de imágenes optimizadas.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 La sección Oportunidades de su informe Lighthouse enumera todas las imágenes no optimizadas, con ahorros potenciales en [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte). Optimice estas imágenes para que la página se cargue más rápido y consuma menos datos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Una captura de pantalla de la auditoría Lighthouse Codificación eficiente de imágenes", width="800", height="263", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Una captura de pantalla de la auditoría Lighthouse Codificación eficiente de imágenes", width="800", height="263" %}</figure>
 
 ## De qué manera marca Lighthouse las imágenes como optimizables
 

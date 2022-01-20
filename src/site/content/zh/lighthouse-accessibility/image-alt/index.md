@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 图像元素没有 `[alt]` 属性
 description: 了解如何通过提供替代文本来确保辅助技术用户可以访问网页的图像。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse 标记没有 `alt` 属性的 `<img>` 元素：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="显示 <img> 元素没有 alt 属性的 Lighthouse 审核", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="显示 <img> 元素没有 alt 属性的 Lighthouse 审核", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -114,7 +114,7 @@ Os CDNs se beneficiam da escala, portanto operar seu próprio CDN raramente faz 
 
 Identifique os recursos que não estão sendo servidos por um CDN (mas deveriam ser) executando [WebPageTest](https://webpagetest.org/) . Na página de resultados, clique no quadrado acima de 'Uso efetivo do CDN' para ver a lista de recursos que devem ser servidos por um CDN.
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt = "Seta apontando para o botão 'Uso efetivo do CDN'", width="300", height="109", class="w-screenshot" %} <figcaption class="w-figcaption w-figcaption--center"> Resultados do WebPageTest</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt = "Seta apontando para o botão 'Uso efetivo do CDN'", width="300", height="109" %} <figcaption> Resultados do WebPageTest</figcaption></figure>
 
 #### Consertar
 

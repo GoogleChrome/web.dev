@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ウェブアプリマニフェストがインストール可能性の要件を満たしていない
 description: |2-
 
@@ -20,7 +20,7 @@ updated: 2019-09-19
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、インストール可能性の最低要件を満たす[ウェブアプリマニフェスト](/add-manifest/)がないページをフラグします。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="ユーザーがホーム画面からウェブアプリをインストールできないことを示す Lighthouse 監査", width="800", height="98", class=" w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="ユーザーがホーム画面からウェブアプリをインストールできないことを示す Lighthouse 監査", width="800", height="98" %}</figure>
 
 以下のプロパティがないページのマニフェストは、監査は失敗します。
 

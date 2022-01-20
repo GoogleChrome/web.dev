@@ -28,7 +28,7 @@ El uso de dispositivos móviles para navegar por la web continúa creciendo a un
 
 El diseño web responsivo, originalmente definido por [Ethan Marcotte en A List Apart](http://alistapart.com/article/responsive-web-design/), responde a las necesidades de los usuarios y a la de los dispositivos que utilizan. El diseño cambia según el tamaño y las capacidades del dispositivo. Por ejemplo, en un teléfono, los usuarios verían el contenido que se muestra en una vista de una sola columna mientras que una tableta puede mostrar el mismo contenido en dos columnas.
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot", playsinline=true %}</figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}</figure>
 
 Existe una multitud de tamaños de pantalla diferentes en teléfonos, "phablets", tabletas, computadoras de escritorio, consolas de juegos, televisores e incluso dispositivos portátiles. Los tamaños de pantalla cambian constantemente, por lo que es importante que su sitio pueda adaptarse a cualquier tamaño de pantalla, hoy o en el futuro. Además, los dispositivos tienen distintas características con las que interactuamos con ellos. Por ejemplo, algunos de sus visitantes utilizarán una pantalla táctil. El diseño responsivo moderno considera todas estas cosas para optimizar la experiencia para todos.
 
@@ -52,9 +52,9 @@ Para intentar brindar la mejor experiencia, los navegadores móviles representan
 
 El uso del valor de la meta etiqueta de ventana gráfica  `width=device-width` indica a la página que coincida con el ancho de la pantalla en píxeles independientes del dispositivo. Un dispositivo (o densidad) de píxeles independientes es una representación de un solo píxel, el cual en una pantalla de alta densidad puede constar de muchos píxeles físicos. Esto permite que la página redistribuya el contenido para que coincida con diferentes tamaños de pantalla, ya sea renderizado en un teléfono móvil pequeño o en un monitor de escritorio grande.
 
-<figure class="w-figure">{% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Una captura de pantalla de una página con un texto difícil de leer gracias a que el texto se encuentra muy alejado", width="500", height="640" %}<figcaption class="w-figcaption"> Un ejemplo de cómo se carga la página en un dispositivo sin la meta etiqueta de la ventana gráfica. <a href="https://without-vp-meta.glitch.me/">Vea este ejemplo en Glitch</a> .</figcaption></figure>
+<figure>{% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Una captura de pantalla de una página con un texto difícil de leer gracias a que el texto se encuentra muy alejado", width="500", height="640" %}<figcaption> Un ejemplo de cómo se carga la página en un dispositivo sin la meta etiqueta de la ventana gráfica. <a href="https://without-vp-meta.glitch.me/">Vea este ejemplo en Glitch</a> .</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Una captura de pantalla de la misma página con el texto de un tamaño que se puede leer", width="500", height="888" %}<figcaption class="w-figcaption"> Un ejemplo de cómo se carga la página en un dispositivo con la meta etiqueta de la ventana gráfica. <a href="https://with-vp-meta.glitch.me/">Vea este ejemplo en Glitch</a> .</figcaption></figure>
+<figure>{% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Una captura de pantalla de la misma página con el texto de un tamaño que se puede leer", width="500", height="888" %}<figcaption> Un ejemplo de cómo se carga la página en un dispositivo con la meta etiqueta de la ventana gráfica. <a href="https://with-vp-meta.glitch.me/">Vea este ejemplo en Glitch</a> .</figcaption></figure>
 
 [Algunos navegadores](https://css-tricks.com/probably-use-initial-scale1/) mantienen constante el ancho de la página cuando se gira al modo horizontal y hacen zoom en lugar de volver a acomodar para llenar la pantalla. Agregar el valor `initial-scale=1` indica a los navegadores que establezcan una relación 1:1 entre los píxeles del CSS y los píxeles independientes del dispositivo, independientemente de la orientación del dispositivo, y permite que la página aproveche todo el ancho.
 
@@ -101,7 +101,7 @@ Dado que las dimensiones y el ancho de la pantalla en píxeles del CSS varían a
 
 En el pasado, esto requería elementos de configuración que se usaban para crear un diseño basado en porcentajes. En el siguiente ejemplo, puede ver un diseño de dos columnas con elementos flotantes, con un tamaño con base en píxeles. Una vez que la ventana gráfica se vuelva más pequeña que el ancho total de las columnas, tenemos que desplazarnos horizontalmente para ver el contenido.
 
-<figure class="w-figure">{% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Captura de pantalla de un diseño con dos columnas donde la segunda columna está por fuera de la ventana gráfica", width="800", height="504", class="w-screenshot" %} <figcaption class="w-figcaption"> Un diseño flotante que utiliza píxeles. <a href="https://layout-floats-px.glitch.me/">Vea este ejemplo en Glitch</a> .</figcaption></figure>
+<figure>{% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Captura de pantalla de un diseño con dos columnas donde la segunda columna está por fuera de la ventana gráfica", width="800", height="504" %} <figcaption> Un diseño flotante que utiliza píxeles. <a href="https://layout-floats-px.glitch.me/">Vea este ejemplo en Glitch</a> .</figcaption></figure>
 
 Al usar porcentajes para los anchos, las columnas siempre quedan como un cierto porcentaje del contenedor. Esto significa que las columnas se vuelven más estrechas, en lugar de crear una barra de desplazamiento.
 
@@ -228,11 +228,11 @@ Primero diseñe el contenido para que se ajuste a un tamaño de pantalla pequeñ
 
 Trabajemos en el ejemplo que vimos al principio: el pronostico del clima. El primer paso es hacer que el pronóstico se vea bien en una pantalla pequeña.
 
-<figure class="w-figure">{% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Captura de pantalla de una aplicación del pronostico del clima con un ancho de dispositivo móvil", width="400", height="667", class="w-screenshot" %}<figcaption class="w-figcaption"> La aplicación en una anchura muy estrecha.</figcaption></figure>
+<figure>{% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Captura de pantalla de una aplicación del pronostico del clima con un ancho de dispositivo móvil", width="400", height="667" %}<figcaption> La aplicación en una anchura muy estrecha.</figcaption></figure>
 
 A continuación, cambie el tamaño del navegador hasta que haya demasiado espacio en blanco entre los elementos y el pronóstico del clima no se vea tan bien. La decisión es algo subjetiva, pero por encima de `600px` es ciertamente demasiado amplia.
 
-<figure class="w-figure">{% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Captura de pantalla de una aplicación meteorológica con grandes espacios entre los elementos", width="400", height="240", class="w-screenshot" %} <figcaption class="w-figcaption"> La aplicación en un punto en el que creemos que deberíamos modificar el diseño.</figcaption></figure>
+<figure>{% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Captura de pantalla de una aplicación meteorológica con grandes espacios entre los elementos", width="400", height="240" %} <figcaption> La aplicación en un punto en el que creemos que deberíamos modificar el diseño.</figcaption></figure>
 
 Para insertar un breakpoint en `600px`, cree dos consultas de medios al final de su CSS para el componente, una que se utilice cuando el navegador tenga `600px` o menos, y otra para cuando sea más ancho que `600px`.
 
@@ -295,9 +295,9 @@ Del mismo modo, para las pantallas grandes, es mejor limitar el ancho máximo de
 
 La teoría clásica de la legibilidad sugiere que una columna ideal debe contener de 70 a 80 caracteres por línea (aproximadamente de 8 a 10 palabras en inglés). Por lo tanto, cada vez que el ancho de un bloque de texto supere las 10 palabras, considere agregar un breakpoint.
 
-<figure class="w-figure">{% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Captura de pantalla de una página de texto en un dispositivo móvil", width="400", height="488", class="w-screenshot" %} <figcaption class="w-figcaption"> El texto como se lee en un dispositivo móvil.</figcaption></figure>
+<figure>{% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Captura de pantalla de una página de texto en un dispositivo móvil", width="400", height="488" %} <figcaption> El texto como se lee en un dispositivo móvil.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Captura de pantalla de una página de texto en un navegador de escritorio", width="800", height="377", class="w-screenshot" %} <figcaption class="w-figcaption"> El texto como se lee en un navegador de escritorio con un breakpoint agregado para restringir la longitud de la línea.</figcaption></figure>
+<figure>{% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Captura de pantalla de una página de texto en un navegador de escritorio", width="800", height="377" %} <figcaption> El texto como se lee en un navegador de escritorio con un breakpoint agregado para restringir la longitud de la línea.</figcaption></figure>
 
 Echemos un vistazo más profundo al ejemplo de la publicación anterior del blog. En pantallas más pequeñas, la fuente Roboto en `1em` funciona perfectamente acumulando 10 palabras por línea, pero las pantallas más grandes requieren un breakpoint. En este caso, si el ancho del navegador es superior a `575px`, el ancho ideal del contenido es `550px`.
 
@@ -321,9 +321,9 @@ Tenga cuidado al elegir qué contenido ocultar o mostrar según el tamaño de la
 
 Una vez que haya configurado sus consultas de medios de breakpoints, querrá ver cómo se ve su sitio con ellos. Puede cambiar el tamaño de la ventana de su navegador para activar los puntos de interrupción, pero Chrome DevTools tiene una función incorporada que facilita ver cómo se ve una página en diferentes puntos de interrupción.
 
-<figure class="w-figure">{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Captura de pantalla de DevTools con nuestra aplicación del pronostico del clima abierta y un ancho de 822 píxeles seleccionados.", width="800", height="522", class="w-screenshot" %} <figcaption class="w-figcaption"> DevTools muestra la aplicación del pronóstico del clima a medida que se ve en un tamaño de ventana más amplio.</figcaption></figure>
+<figure>{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Captura de pantalla de DevTools con nuestra aplicación del pronostico del clima abierta y un ancho de 822 píxeles seleccionados.", width="800", height="522" %} <figcaption> DevTools muestra la aplicación del pronóstico del clima a medida que se ve en un tamaño de ventana más amplio.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Captura de pantalla de DevTools con nuestra aplicación del pronostico del clima abierta y un ancho de 436 píxeles seleccionados.", width="800", height="521", class="w-screenshot" %}<figcaption class="w-figcaption"> DevTools muestra la aplicación del pronóstico del clima a medida que se ve en un tamaño de ventana gráfica más estrecho.</figcaption></figure>
+<figure>{% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Captura de pantalla de DevTools con nuestra aplicación del pronostico del clima abierta y un ancho de 436 píxeles seleccionados.", width="800", height="521" %}<figcaption> DevTools muestra la aplicación del pronóstico del clima a medida que se ve en un tamaño de ventana gráfica más estrecho.</figcaption></figure>
 
 Para ver su página en diferentes breakpoints:
 

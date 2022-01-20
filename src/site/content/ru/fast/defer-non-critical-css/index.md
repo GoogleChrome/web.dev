@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Откладывание некритичных CSS
 authors:
   - demianrenzulli
@@ -34,7 +34,7 @@ CSS-файлы [блокируют отрисовку](https://developers.google
 
 В отчете у метрики **First Contentful Paint** указано значение «1s» (1 секунда) и приведена рекомендация **Eliminate render-blocking resources** (уберите ресурсы, блокирующие отрисовку) с указанием на файл **style.css**:
 
-<figure class="w-figure">   {% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="Lighthouse report for unoptimized page, showing FCP of '1s' and 'Eliminate blocking resources' under 'Opportunities'", width="800", height="640", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="Lighthouse report for unoptimized page, showing FCP of '1s' and 'Eliminate blocking resources' under 'Opportunities'", width="800", height="640" %}</figure>
 
 {% Aside %} CSS-файл в рамках этой демонстрации не очень большого размера. Если запросить CSS большего размера (обычное дело на реальных проектах) и Lighthouse обнаружит, что на странице как минимум 2048 байт CSS-правил, не использованных при отрисовке контента **видимой части страницы**, появится также рекомендация **Remove Unused CSS** (удалите неиспользуемые CSS). {% endAside %}
 
@@ -45,7 +45,7 @@ CSS-файлы [блокируют отрисовку](https://developers.google
 
 В полученной трассировке метка **FCP** размещена сразу после завершения загрузки CSS:
 
-<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="Трассировка производительности в DevTools для неоптимизированной страницы. FCP начинается после загрузки CSS.", width="800", height="352", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="Трассировка производительности в DevTools для неоптимизированной страницы. FCP начинается после загрузки CSS.", width="800", height="352" %}</figure>
 
 Это означает, что браузеру, прежде чем отрисовать первый пиксель на экране, необходимо дождаться загрузки и обработки всех CSS.
 
@@ -57,7 +57,7 @@ CSS-файлы [блокируют отрисовку](https://developers.google
 2. Введите «coverage» (область действия) и выберите **Show Coverage** (Показать область действия).
 3. Нажмите кнопку **перезагрузки** — страница будет обновлена и начнется сбор данных.
 
-<figure class="w-figure">   {% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="Покрытие для CSS-файла. Показано, что не используются 55,9 % байтов.", width="800", height="82", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="Покрытие для CSS-файла. Показано, что не используются 55,9 % байтов.", width="800", height="82" %}</figure>
 
 Дважды щелкните отчет — будут показаны классы, выделенные двумя цветами:
 
@@ -102,17 +102,17 @@ CSS-файлы [блокируют отрисовку](https://developers.google
 
 Теперь метка **FCP** появляется перед тем, как страница запрашивает CSS — то есть, браузеру не приходится ждать загрузки стилей, чтобы начать отрисовку:
 
-<figure class="w-figure">   {% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="Трассировка производительности DevTools для оптимизированной страницы. FCP начинается до загрузки CSS.", width="800", height="389", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="Трассировка производительности DevTools для оптимизированной страницы. FCP начинается до загрузки CSS.", width="800", height="389" %}</figure>
 
 Наконец, запустим Lighthouse для оптимизированной страницы.
 
 В отчете видно, что время FCP страницы снизилось на **0,2 с** — то есть, на целых 20 %:
 
-<figure class="w-figure">   {% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Отчет Lighthouse. Показано значение FCP, равное «0.8 s».", width="800", height="324", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Отчет Lighthouse. Показано значение FCP, равное «0.8 s».", width="800", height="324" %}</figure>
 
 Подсказка **Eliminate render-blocking resources** из раздела **Opportunities** (Варианты оптимизации) перешла в **Passed Audits** (Пройденные проверки):
 
-<figure class="w-figure">   {% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Отчет Lighthouse. Пункт «Eliminate blocing resources» показан в разделе «Passed Audits».", width="800", height="237", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Отчет Lighthouse. Пункт «Eliminate blocing resources» показан в разделе «Passed Audits».", width="800", height="237" %}</figure>
 
 ## Дальнейшие действия и дополнительные материалы
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Estrategias de precarga de ruta en Angular
 subhead: Cargue las rutas con anticipación para acelerar la navegación de los usuarios.
 hero: image/admin/q4b86k6REnNHkpjQnsLK.jpg
@@ -53,7 +53,7 @@ Ahora entregue la aplicación y mire el panel de **Red** en Chrome DevTools:
 
 Debería ver que el enrutador descargó `nyan-nyan-module.js` y `about-about-module.js` en segundo plano cuando abrió la aplicación:
 
-<figure class="w-figure w-figure--fullbleed">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/TVi6LCasiwZI1hxJrBOL.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/e9h6JBVl8TUGMWOSAWyC.mp4"], controls="true", loop="true", muted="true" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> La estrategia PreloadAllModules en acción. </figcaption></figure>
+<figure data-size="full">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/TVi6LCasiwZI1hxJrBOL.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/e9h6JBVl8TUGMWOSAWyC.mp4"], controls="true", loop="true", muted="true" %} <figcaption> La estrategia PreloadAllModules en acción. </figcaption></figure>
 
 El enrutador también registró las declaraciones de ruta de los módulos para que cuando navegue a una URL asociada con cualquiera de los módulos precargados, la transición sea instantánea.
 
@@ -91,7 +91,7 @@ export class AppModule {}
 
 Ahora, cuando vuelva a abrir la aplicación, notará que el enrutador solo carga previamente `nyan-nyan-module.js`, ya que el botón en el centro de la página tiene un enlace de enrutador. Cuando abra la navegación lateral, notará que el enrutador carga previamente la ruta "Acerca de":
 
-<figure class="w-figure w-figure--fullbleed">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/dfZkoiQyNh4fUj4DJjrc.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/SkNp99W1Bv2tsaRgOwoe.mp4"], controls="true", loop="true", muted="true" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Una demostración de la estrategia de precarga de enlaces rápidos. </figcaption></figure>
+<figure data-size="full">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/dfZkoiQyNh4fUj4DJjrc.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/SkNp99W1Bv2tsaRgOwoe.mp4"], controls="true", loop="true", muted="true" %} <figcaption> Una demostración de la estrategia de precarga de enlaces rápidos. </figcaption></figure>
 
 ### Usar la estrategia de precarga de Quicklink en varios módulos de carga diferida
 

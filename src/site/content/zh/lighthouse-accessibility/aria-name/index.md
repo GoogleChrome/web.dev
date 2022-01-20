@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ARIA 项目没有可访问的名称
 description: 了解如何通过确保辅助技术用户可以访问 ARIA 项目名称，提高网页的可访问性。
 date: 2020-12-08
@@ -23,7 +23,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记了辅助技术无法访问其名称的自定义 ARIA 项目：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Lighthouse 审计显示了没有可访问名称的自定义切换元素", width="800", height="259", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Lighthouse 审计显示了没有可访问名称的自定义切换元素", width="800", height="259" %}</figure>
 
 有 7 项审计负责检查可访问名称，每个审计负责一组不同的 [ARIA 角色](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex)。具有以下任何 ARIA 角色但没有可访问名称的元素将导致此审计失败：
 

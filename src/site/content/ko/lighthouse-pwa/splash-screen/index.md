@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 커스텀 스플래시 스크린에 대해 구성되지 않았습니다.
 description: 프로그레시브 웹 앱에 대한 커스텀 스플래시 스크린을 만드는 방법을 알아봅니다.
 web_lighthouse:
@@ -14,7 +14,7 @@ updated: 2019-09-19
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 커스텀 스플래시 스크린이 없는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse 감사 표시 사이트가 커스텀 스플래시 스크린에 대해 구성되지 않았습니다.", width="800", height="98", class="w- screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse 감사 표시 사이트가 커스텀 스플래시 스크린에 대해 구성되지 않았습니다.", width="800", height="98" %}</figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

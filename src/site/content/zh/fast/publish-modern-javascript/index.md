@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 发布、传输和安装现代 JavaScript 以实现更快的应用程序
 subhead: 通过开启现代 JavaScript 依赖项和输出来提高性能。
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
@@ -18,7 +18,7 @@ tags:
 
 超过 90% 的浏览器能够运行现代 JavaScript，但传统 JavaScript 的流行仍然是当今 Web 性能问题的最大原因之一。[EStimator.dev](http://estimator.dev/) 是一个简单的基于 Web 的工具，它可以计算网站在采用现代 JavaScript 语法后可实现的尺寸和性能改进。
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev 分析显示，网站使用现代 JavaScript 可以提速 9%。", width="800", height="785" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> EStimator.dev </figcaption></figure>
+<figure data-size="full">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev 分析显示，网站使用现代 JavaScript 可以提速 9%。", width="800", height="785" %} <figcaption> EStimator.dev </figcaption></figure>
 
 当今的 Web 受到传统 JavaScript 限制，没有任何单一优化可以像使用 **ES2017** 语法编写、发布和传输网页或软件包那样提高性能。
 
@@ -147,12 +147,12 @@ module.exports = {
 
 `Optimize Plugin` 可以比自定义 webpack 配置更快、更高效，后者通常单独捆绑现代和传统代码。它还可以处理运行中的 [Babel](https://babeljs.io/)，并使用 [Terser](https://terser.org/) 以单独的针对现代和传统输出优化的设置，使捆绑包最小化。最后，生成的传统捆绑包所需的 polyfill 将提取到一个专用脚本中，这样在较新的浏览器中不会复制或不必要地加载它们。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">比较：转换源模块两次与转换生成的捆绑包。</figcaption></figure>
+  <figcaption>比较：转换源模块两次与转换生成的捆绑包。</figcaption></figure>
 
 ### BabelEsmPlugin
 

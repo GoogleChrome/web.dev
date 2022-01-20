@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Support payment method change from an Android payment app
 subhead: |
   How to update your Android payment app to support payment method change with Web Payments APIs.
@@ -99,7 +99,7 @@ The `callingPackageName` used for the service's start intent can have one of the
 following values depending on the browser that has initiated the payment
 request.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

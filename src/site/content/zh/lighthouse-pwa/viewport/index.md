@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 没有带 `width` 或 `initial-scale` 的 `<meta name="viewport">` 标记
 description: 了解有关“没有带 width 或 initial-scale 的 <meta name="viewport"> 标记”Lighthouse 审计的信息。
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有  viewport meta 标记的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 审计显示页面缺少 viewport", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 审计显示页面缺少 viewport", width="800", height="76" %}</figure>
 
 除非满足以下所有条件，否则页面将无法通过审计：
 

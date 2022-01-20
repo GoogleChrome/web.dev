@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 移动网络上的页面加载速度不够快
 description: |2
 
@@ -18,7 +18,7 @@ updated: 2020-06-10
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出在移动设备上加载速度不够快的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse 审计显示在移动设备上加载速度不够快的页面", width="800", height="98", class="w-screenshot "%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse 审计显示在移动设备上加载速度不够快的页面", width="800", height="98"%}</figure>
 
 有两个主要指标影响了用户对加载时间的体验：
 

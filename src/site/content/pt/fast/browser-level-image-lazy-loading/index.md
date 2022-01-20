@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Lazy loading de imagens em navegadores
 subhead: O lazy loading integrado nos navegadores finalmente chegou!
 authors:
@@ -20,8 +20,8 @@ feedback:
 
 O suporte, a nível de navegador, para ao lazy loading de imagens (carregamento assíncrono lento) já é suportado na web! Este vídeo mostra uma [demonstração](https://mathiasbynens.be/demo/img-loading-lazy) do recurso:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -94,11 +94,11 @@ Você encontrará uma comparação entre o antigo e o novo limite de distance-fr
 
 Limites antigos vs. novos:
 
-<figure class="w-figure">   {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="Os novos e aprimorados limites para lazy loading de imagens, reduzindo os limites de distance-from-viewport para conexões rápidas de 3000px até 1250px", width="800", height="460" %}</figure>
+<figure>   {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="Os novos e aprimorados limites para lazy loading de imagens, reduzindo os limites de distance-from-viewport para conexões rápidas de 3000px até 1250px", width="800", height="460" %}</figure>
 
 e os novos limites versus LazySizes (uma biblioteca JS de lazy loading):
 
-<figure class="w-figure">   {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="Os novos limites de distance-from-viewport no Chrome carregando 90 KB de imagens em comparação com LazySizes carregando em 70 KB nas mesmas condições de rede", width="800", height="355" %}</figure>
+<figure>   {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="Os novos limites de distance-from-viewport no Chrome carregando 90 KB de imagens em comparação com LazySizes carregando em 70 KB nas mesmas condições de rede", width="800", height="355" %}</figure>
 
 {% Aside %} Para garantir que os usuários do Chrome em versões recentes também se beneficiem dos novos limites, fizemos um backport dessas alterações para que o Chrome 79-85, inclusive, também os use. Lembre-se disso se tentar comparar a economia de dados de versões mais antigas do Chrome com as mais recentes. {% endAside %}
 

@@ -185,13 +185,13 @@ Highlight the grid by selecting the grid badge in the DOM, next to the `.contain
 Inside the Layout tab,
 select **Display Line Numbers** in the dropdown to see the line numbers on your grid.
 
-<figure class="w-figure">
+<figure>
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg",
 alt="As described in the caption and instructions",
 width="800",
 height="449" %}
-<figcaption class="w-figcaption">
+<figcaption>
 A grid highlighted in Chrome DevTools showing line numbers, cells and tracks.
 </figcaption>
 </figure>

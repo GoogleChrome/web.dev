@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Títulos e pontos de referência
 authors:
   - robdodson
@@ -34,7 +34,7 @@ Em vez de depender do tamanho de fonte padrão do navegador para títulos, use s
 
 Por exemplo, este site tem uma seção chamada "NAS NOTÍCIAS", seguida por duas manchetes:
 
-{% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="Um site de notícias com título, imagem principal e subseções.", width="800", height="414", class="w-screenshot" %}
+{% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="Um site de notícias com título, imagem principal e subseções.", width="800", height="414" %}
 
 O título da seção, "NAS NOTÍCIAS", pode ser `h2`, e as manchetes de apoio podem ser `h3`.
 

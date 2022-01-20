@@ -37,12 +37,12 @@ tags:
 
 В качестве напоминания об окнах сеанса — пример:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">     Пример окна сеанса</figcaption></figure>
+  <figcaption>     Пример окна сеанса</figcaption></figure>
 
 В примере выше, пока пользователь просматривает страницу, происходит много смещений макета. Каждое из них представлено синей полосой. Как можно заметить, у синих полос разная высота: она представляет собой [оценку](/cls/#layout-shift-score) каждого отдельного смещения макета. Окно сеанса начинается с первым смещением макета и продолжает расширяться, пока не появится промежуток без смещений. При следующем смещении макета открывается новое окно сеанса. В примере есть три промежутка без смещений — они соответствуют трем окнам сеанса. Как и в случае с текущим определением CLS, оценки за каждое смещение суммируются, поэтому оценка окна — это сумма по отдельным смещениям макета.
 

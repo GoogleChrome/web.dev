@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Page lacks the HTML doctype, thus triggering quirks mode
 description: |
   Learn how to make sure your page doesn't trigger quirks mode in older
@@ -18,8 +18,8 @@ which can cause your page to [render in unexpected ways](https://quirks.spec.wha
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages without the `<!DOCTYPE html>` declaration:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse audit showing missing doctype", width="800", height="76", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse audit showing missing doctype", width="800", height="76" %}
 </figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 링크에 설명 텍스트가 없습니다.
 description: |2
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 설명 텍스트가 없는 링크에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="설명 텍스트가 없는 링크를 표시하는 Lighthouse 감사", width="800", height="191", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="설명 텍스트가 없는 링크를 표시하는 Lighthouse 감사", width="800", height="191" %}</figure>
 
 Lighthouse는 다음의 일반적인 링크 텍스트에 플래그를 지정합니다.
 

@@ -32,31 +32,31 @@ Cuando se trata de una tipografía flexible y fluida, un cambio de tamaño contr
 
 Safari fue el primero en incorporar el conjunto completo de funciones en abril del 2019, y Chromium lo hizo más tarde ese mismo año en su versión 79. Este año, con el lanzamiento de Firefox [75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519), ahora tenemos similitud de navegadores para `min()`, `max()` y `clamp()` en todos los navegadores evergreen.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246", class="w-screenshot" %} <figcaption class="w-figcaption"> Mesa de apoyo <a href="https://caniuse.com/css-math-functions">Caniuse</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246" %} <figcaption> Mesa de apoyo <a href="https://caniuse.com/css-math-functions">Caniuse</a>.</figcaption></figure>
 
 ## Cómo se utilizan
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Para mostrar cómo la función min() selecciona un valor basado en una lista de opciones y su padre. <a href="https://codepen.io/una/pen/rNeGNVL">Consulte la demostración en Codepen.</a></figcaption></figure>
+  <figcaption>Para mostrar cómo la función min() selecciona un valor basado en una lista de opciones y su padre. <a href="https://codepen.io/una/pen/rNeGNVL">Consulte la demostración en Codepen.</a></figcaption></figure>
 
 Se puede utilizar `min()`, `max()`, y `clamp()` en el lado derecho de cualquier expresión de CSS donde tenga sentido. En el caso de `min()` y `max()`, se proporciona una lista de valores como argumento, y el navegador determina cuál es el más pequeño o el más grande, respectivamente. Por ejemplo, en el caso de `min(1rem, 50%, 10vw)`, el navegador calcula cuál de estas unidades relativas es la más pequeña, y utiliza ese valor como valor real.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Para mostrar cómo la función max() selecciona un valor basado en una lista de opciones y su padre. <a href="https://codepen.io/una/pen/RwaZXqR">Consulte la demostración en Codepen.</a></figcaption></figure>
+  <figcaption>Para mostrar cómo la función max() selecciona un valor basado en una lista de opciones y su padre. <a href="https://codepen.io/una/pen/RwaZXqR">Consulte la demostración en Codepen.</a></figcaption></figure>
 
 En la función `max()` se selecciona el mayor valor de una lista de expresiones separadas por comas.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Para mostrar cómo la función clamp() selecciona un valor basado en una lista de opciones y su padre. <a href="https://codepen.io/una/pen/bGpoGdJ">Consulte la demostración en Codepen.</a></figcaption></figure>
+  <figcaption>Para mostrar cómo la función clamp() selecciona un valor basado en una lista de opciones y su padre. <a href="https://codepen.io/una/pen/bGpoGdJ">Consulte la demostración en Codepen.</a></figcaption></figure>
 
 Para usar `clamp()` ingrese tres valores: un valor mínimo, un valor ideal (a partir del cual calcular) y un valor máximo.
 
@@ -86,27 +86,27 @@ p {
 
 Esto permite que el navegador defina el ancho del párrafo. Establecerá el ancho al 50%, a menos que el 50% sea más pequeño que `45ch`, en cuyo caso se seleccionará `45ch`, y a la inversa si el 50% es más ancho que `75ch`. En esta demostración, la tarjeta por sí misma quedará sujeta:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Al utilizar la función clamp() para limitar un ancho mínimo y máximo. <a href="https://codepen.io/una/pen/QWyLxaL">Consulte la demostración en Codepen.</a></figcaption></figure>
+  <figcaption>Al utilizar la función clamp() para limitar un ancho mínimo y máximo. <a href="https://codepen.io/una/pen/QWyLxaL">Consulte la demostración en Codepen.</a></figcaption></figure>
 
 Podrá dividir esto con la función `min()` o `max()`. Si desea que el elemento siempre esté a `50%` de ancho, y no exceda `75ch` de ancho (es decir, en pantallas más grandes), escriba: `width: min(75ch, 50%);`. Esto establece esencialmente un tamaño "máximo" utilizando la función `min()`.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Al utilizar la función clamp() para limitar un ancho mínimo y máximo.</figcaption></figure>
+  <figcaption>Al utilizar la función clamp() para limitar un ancho mínimo y máximo.</figcaption></figure>
 
 Del mismo modo, puede garantizar un tamaño mínimo para que el texto sea legible mediante la función `max()`. Esto se vería así: `width: max(45ch, 50%);`. Aquí, el navegador seleccionará lo que sea más grande, `45ch` o `50%`, lo que significa que el elemento debe tener *al menos* `45ch` o que sea más grande.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Al utilizar la función clamp() para limitar un ancho mínimo y máximo.</figcaption></figure>
+  <figcaption>Al utilizar la función clamp() para limitar un ancho mínimo y máximo.</figcaption></figure>
 
 ## Administración del relleno
 
@@ -118,21 +118,21 @@ footer {
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-padding.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Establezca un relleno mínimo para un componente mediante la función max(). <a href="https://codepen.io/chriscoyier/pen/qBZqNKa">Consulte la demostración en Codepen.</a></figcaption></figure>
+  <figcaption>Establezca un relleno mínimo para un componente mediante la función max(). <a href="https://codepen.io/chriscoyier/pen/qBZqNKa">Consulte la demostración en Codepen.</a></figcaption></figure>
 
 ## Tipografía fluida
 
 Para permitir una tipografía fluida, [Mike Riethmeuller](https://twitter.com/mikeriethmuller) popularizó una técnica que utiliza la función `calc()` para establecer un tamaño de fuente mínimo, un tamaño de fuente máximo y permitir escalar del mínimo al máximo.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/fliud-type.mp4">
   </source></video>
-  <figcaption class="w-figcaption">Para crear una tipografía fluida con clamp(), <a href="https://codepen.io/una/pen/ExyYXaN">consulte la demostración en Codepen.</a><a href="https://codepen.io/una/pen/ExyYXaN"></a></figcaption></figure>
+  <figcaption>Para crear una tipografía fluida con clamp(), <a href="https://codepen.io/una/pen/ExyYXaN">consulte la demostración en Codepen.</a><a href="https://codepen.io/una/pen/ExyYXaN"></a></figcaption></figure>
 
 Con `clamp()`, puede escribir esto más claramente. En vez de requerir una cadena compleja, el navegador puede hacer el trabajo por usted. Establezca el tamaño de fuente mínimo aceptable (por ejemplo, `1,5rem` para un título, el tamaño máximo (es decir, `3rem`) y el tamaño ideal de `5vw`.
 

@@ -19,7 +19,7 @@ O `robots.txt` informa aos mecanismos de pesquisa quais páginas do seu site ele
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza arquivos `robots.txt`
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Auditoria do Lighthouse mostrando robots.txt inválido", width="800", height="203", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Auditoria do Lighthouse mostrando robots.txt inválido", width="800", height="203" %}</figure>
 
 {% Aside %} A maioria das auditorias do Lighthouse se aplica apenas à página em que você está atualmente. No entanto, como o `robots.txt` é definido no nível do nome do host, essa auditoria se aplica a todo o seu domínio (ou subdomínio). {% endAside %}
 

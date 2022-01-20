@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usa document.write ()
 description: |2
 
@@ -29,7 +29,7 @@ data from the network to be reparsed.
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza solicitações para `document.write()` que não foram bloqueadas pelo Chrome:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt = "Auditoria do Lighthouse mostrando o uso de document.write", width = "800", height = "213", class = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt = "Auditoria do Lighthouse mostrando o uso de document.write", width = "800", height = "213"%}</figure>
 
 Para os usos mais problemáticos, o Chrome bloqueará solicitações para `document.write()` ou emitirá um aviso de console sobre elas, dependendo da velocidade de conexão do usuário. De qualquer forma, as solicitações afetadas aparecem no console do DevTools. Consulte o artigo <a href="https://developers.google.com/web/updates/2016/08/removing-document-write" data-md-type="link">Intervenção contra `document.write()`</a> para obter mais informações.
 

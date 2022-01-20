@@ -92,7 +92,7 @@ Puede solicitar al usuario que seleccione un único dispositivo USB conectado me
 
 La función `navigator.usb.requestDevice()` toma un objeto JavaScript obligatorio que define `filters`. Estos filtros se utilizan para emparejar cualquier dispositivo USB con los identificadores `vendorId` del proveedor y, opcionalmente, los (`productId`) del producto. Las claves `classCode`, `protocolCode`, `serialNumber` y `subclassCode` también se pueden definir allí.
 
-<figure class="w-figure">{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Captura de pantalla del mensaje de usuario del dispositivo USB en Chrome", width="800", height="533", class="w-screenshot" %}<figcaption class="w-figcaption">Mensaje de usuario del dispositivo USB.</figcaption></figure>
+<figure>{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Captura de pantalla del mensaje de usuario del dispositivo USB en Chrome", width="800", height="533" %}<figcaption>Mensaje de usuario del dispositivo USB.</figcaption></figure>
 
 Por ejemplo, aquí se explica cómo obtener acceso a un dispositivo Arduino conectado configurado para permitir el origen.
 
@@ -111,7 +111,7 @@ El `device` USB devuelto en la promesa cumplida anterior tiene información bás
 
 Por cierto, si un dispositivo USB anuncia su [compatibilidad con WebUSB](https://wicg.github.io/webusb/#webusb-platform-capability-descriptor), además de definir una URL de página de destino, Chrome mostrará una notificación persistente cuando el dispositivo USB esté conectado. Al hacer clic en esta notificación, se abrirá la página de destino.
 
-<figure class="w-figure">{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Captura de pantalla de la notificación WebUSB en Chrome", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption"> Notificación WebUSB.</figcaption></figure>
+<figure>{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Captura de pantalla de la notificación WebUSB en Chrome", width="800", height="450" %}<figcaption> Notificación WebUSB.</figcaption></figure>
 
 A partir de allí, puede ejecutar fácilmente `navigator.usb.getDevices()` y acceder a su dispositivo Arduino como se muestra a continuación.
 
@@ -206,11 +206,11 @@ Es posible que también desee echar un vistazo al [proyecto WebLight de](https:/
 
 La depuración de USB en Chrome es más fácil con la página interna `about://device-log` donde puede ver todos los eventos relacionados con el dispositivo USB en un solo lugar.
 
-<figure class="w-figure">{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Captura de pantalla de la página de registro del dispositivo para depurar WebUSB en Chrome", width="800", height="442", clase="w-captura de pantalla" %}<figcaption class="w-figcaption">Página de registro del dispositivo en Chrome para depurar la API WebUSB.</figcaption></figure>
+<figure>{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Captura de pantalla de la página de registro del dispositivo para depurar WebUSB en Chrome", width="800", height="442", clase="w-captura de pantalla" %}<figcaption>Página de registro del dispositivo en Chrome para depurar la API WebUSB.</figcaption></figure>
 
 La página interna `about://usb-internals` también es útil y le permite simular la conexión y desconexión de dispositivos WebUSB virtuales. Esto es útil para realizar pruebas de IU sin hardware real.
 
-<figure class="w-figure">{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Captura de pantalla de la página interna para depurar WebUSB en Chrome", width="800", height="294", class="w-screenshot" %}<figcaption class="w-figcaption"> Página interna en Chrome para depurar la API WebUSB.</figcaption></figure>
+<figure>{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Captura de pantalla de la página interna para depurar WebUSB en Chrome", width="800", height="294" %}<figcaption> Página interna en Chrome para depurar la API WebUSB.</figcaption></figure>
 
 En la mayoría de los sistemas Linux, los dispositivos USB se asignan con permisos de solo lectura de forma predeterminada. Para permitir que Chrome abra un dispositivo USB, deberá agregar una nueva [regla de udev](https://www.freedesktop.org/software/systemd/man/udev.html). Cree un archivo en `/etc/udev/rules.d/50-yourdevicename.rules` con el siguiente contenido:
 

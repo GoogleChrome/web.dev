@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 总阻塞时间
 description: |2-
 
@@ -14,7 +14,7 @@ updated: 2021-06-04
 
 Lighthouse 报告以毫秒为单位显示 TBT：
 
-<figure class="w-figure">{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="Lighthouse 总阻塞时间审计截图", width="800", height="592", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="Lighthouse 总阻塞时间审计截图", width="800", height="592" %}</figure>
 
 ## TBT 测量什么
 
@@ -26,7 +26,7 @@ TBT 测量页面被阻止响应用户输入（例如鼠标点击、屏幕点击�
 
 下表显示了如何解释您的 TBT 分数：
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

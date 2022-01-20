@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 자바스크립트 실행 시간 단축
 description: JavaScript 실행이 페이지 성능을 저하시키는 방식과 속도를 높이는 방법에 대해 알아봅니다.
 date: 2019-05-02
@@ -32,7 +32,7 @@ JavaScript를 실행하는 데 시간이 오래 걸리면 여러 가지 방법�
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 JavaScript 실행이 2초 이상 걸리면 경고를 표시합니다. 실행 시간이 3.5초를 초과하면 감사가 실패합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Lighthouse Reduce JavaScript 실행 시간 감사의 스크린샷", width="800", height="321", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Lighthouse Reduce JavaScript 실행 시간 감사의 스크린샷", width="800", height="321" %}</figure>
 
 Lighthouse는 실행 시간에 가장 큰 영향을 미치는 요인을 식별하는 데 도움이 되도록 페이지에서 로드하는 각 JavaScript 파일을 실행, 평가 및 구문 분석하는 데 소요된 시간을 보고합니다.
 

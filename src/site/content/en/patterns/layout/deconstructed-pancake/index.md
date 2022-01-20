@@ -25,8 +25,8 @@ If you want the boxes to stretch and fill the space as they wrap to the next lin
 }
 ```
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4'>
   </video>
 </figure>
@@ -47,8 +47,8 @@ If you want your boxes to fill out to their `<flex-basis>` size, shrink on small
 }
 ```
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4'>
   </video>
 </figure>

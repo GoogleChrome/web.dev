@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os links não têm um nome discernível
 description: |2-
 
@@ -18,7 +18,7 @@ O texto do link que é discernível, exclusivo e focalizável melhora a experiê
 
 O Lighthouse sinaliza links que não têm nomes discerníveis:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Auditoria do Lighthouse mostrando que os links não têm nomes discerníveis", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Auditoria do Lighthouse mostrando que os links não têm nomes discerníveis", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

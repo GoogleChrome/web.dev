@@ -181,16 +181,16 @@ your file system, you can open the file via a double click, or a right click and
 "Excalidraw" in the context menu. You can check out the [implementation][demo-source] in the source
 code.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422" %}
+  <figcaption>
      Double click or right click a file in your operating system's file explorer.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266" %}
+  <figcaption>
      Excalidraw is the default file handler for <code>.excalidraw</code> files.
   </figcaption>
 </figure>

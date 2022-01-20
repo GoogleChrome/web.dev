@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: tabindex로 포커스 제어
 authors:
   - robdodson

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não tem uma `<meta name =" viewport ">` tag com `largura` ou` escala inicial`
 description: |2-
 
@@ -19,7 +19,7 @@ Definir a viewport meta tag permite controlar a largura e a escala da janela de 
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas sem uma meta tag da janela de visualização:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt = "A auditoria lighthouse mostra que a página está sem janela de visualização", width = "800", height = "76", class = "w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt = "A auditoria lighthouse mostra que a página está sem janela de visualização", width = "800", height = "76" %}</figure>
 
 Uma página falha na auditoria, a menos que todas essas condições sejam atendidas:
 

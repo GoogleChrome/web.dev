@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Используйте предварительное подключение к необходимым доменам
 description: Узнайте о проверке uses-rel-preconnect.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 В разделе Opportunities (Возможности) отчета Lighthouse перечислены все ключевые запросы, для которых еще не установлен приоритет запросов на выборку с помощью `<link rel=preconnect>`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Скриншот проверки Preconnect to required origins (Используйте предварительное подключение к необходимым доменам) в Lighthouse", width="800", height="226", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Скриншот проверки Preconnect to required origins (Используйте предварительное подключение к необходимым доменам) в Lighthouse", width="800", height="226" %}</figure>
 
 ## Совместимость с браузерами
 

@@ -237,7 +237,7 @@ module.exports = {
 
 El resultado de consola que genera luce así:
 
-<figure class="w-figure">{% Img src="image/admin/ti9NuzxPKZCYVIzjjddc.png", alt="Captura de pantalla de un mensaje de advertencia generado por Lighthouse CI", width="800", height="431",  class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ti9NuzxPKZCYVIzjjddc.png", alt="Captura de pantalla de un mensaje de advertencia generado por Lighthouse CI", width="800", height="431" %}</figure>
 
 Para obtener más información sobre las afirmaciones de Lighthouse CI, consulte la [documentación](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#assert).
 
@@ -247,7 +247,7 @@ Para obtener más información sobre las afirmaciones de Lighthouse CI, consulte
 
 Se [puede usar una GitHub Action](https://github.com/features/actions) para ejecutar Lighthouse CI. Esto generará un nuevo informe Lighthouse cada vez que se envíe un cambio de código a cualquier rama de un repositorio de GitHub. Úselo junto con una [verificación de estado](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks) para mostrar estos resultados en cada solicitud de extracción.
 
-<figure class="w-figure">{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de pantalla de una verificación de estado de GitHub", width="800", height="297", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de pantalla de una verificación de estado de GitHub", width="800", height="297" %}</figure>
 
 1. En la raíz de su repositorio, cree un directorio llamado `.github/workflows`. Los [flujos de trabajo](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#about-workflows) de su proyecto irán a este directorio. Un flujo de trabajo es un proceso que se ejecuta en un momento predeterminado (por ejemplo, cuando se envía un código) y se compone de una o más acciones.
 
@@ -297,11 +297,11 @@ Se [puede usar una GitHub Action](https://github.com/features/actions) para ejec
 
 5. Para confirmar que Lighthouse CI se ha activado y ver el informe que generó, vaya a la pestaña **Acciones** de su proyecto. Debería ver el flujo de trabajo **Compilar el proyecto y el flujo de trabajo de ejecución de Lighthouse CI** en la lista de su confirmación más reciente.
 
-    <figure class="w-figure">{% Img src="image/admin/ougavsYk6faiNidNxIGQ.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="216", class="w-screenshot" %}</figure>
+    <figure>{% Img src="image/admin/ougavsYk6faiNidNxIGQ.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="216" %}</figure>
 
     Puede navegar hasta el informe Lighthouse correspondiente a una confirmación en particular desde la pestaña **Acciones.** Haga clic en la confirmación, haga clic en el paso del flujo de trabajo de **Lighthouse CI** y, a continuación, expanda los resultados del paso de **ejecución de Lighthouse CI**.
 
-    <figure class="w-figure">{% Img src="image/admin/aJF6FVHGOPpGNxKB3LjY.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="366", class="w-screenshot"%}</figure>
+    <figure>{% Img src="image/admin/aJF6FVHGOPpGNxKB3LjY.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="366" %}</figure>
 
     Acaba de configurar una GitHub Action para ejecutar Lighthouse CI. Esto será más útil cuando se use junto con una [verificación de estado](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks) de GitHub.
 
@@ -309,7 +309,7 @@ Se [puede usar una GitHub Action](https://github.com/features/actions) para ejec
 
 Una verificación de estado, si está configurada, es un mensaje que aparece en cada RP y generalmente incluye información como los resultados de una prueba o el éxito de una compilación.
 
-<figure class="w-figure">{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="297", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="297" %}</figure>
 
 Los pasos a continuación explican cómo configurar una verificación de estado para Lighthouse CI.
 
@@ -323,7 +323,7 @@ Los pasos a continuación explican cómo configurar una verificación de estado 
 
 5. Para agregar el token, navegue a la página de **Configuración** de su repositorio de GitHub, haga clic en **Secretos**, luego haga clic en **Agregar un nuevo secreto**.
 
-    <figure class="w-figure">{% Img src="image/admin/ZYH9cOHehImZLI6vov1r.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="375", class="w-screenshot" %}</figure>
+    <figure>{% Img src="image/admin/ZYH9cOHehImZLI6vov1r.png", alt="Captura de pantalla de la pestaña 'Configuración' de GitHub", width="800", height="375" %}</figure>
 
 6. Establezca el campo **Nombre** en `LHCI_GITHUB_APP_TOKEN` y establezca el campo **Valor** como el token que copió en el último paso y luego haga clic en el botón **Agregar secreto**.
 
@@ -333,9 +333,9 @@ Los pasos a continuación explican cómo configurar una verificación de estado 
 
 El servidor Lighthouse CI proporciona un panel para explorar los informes históricos de Lighthouse. También puede actuar como un almacén de datos privado a largo plazo para los informes Lighthouse.
 
-<figure class="w-figure">{% Img src="image/admin/4xv6LLe6G48weVNl1CO1.png", alt="Captura de pantalla del panel de Lighthouse CI Server", width="800", height="581", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/admin/4xv6LLe6G48weVNl1CO1.png", alt="Captura de pantalla del panel de Lighthouse CI Server", width="800", height="581" %}</figure>
 
-<figure class="w-figure">{% Img src="image/admin/vp9hVBQGZk01fUMpIQ1Z.png", alt="Captura de pantalla de la comparación de dos informes de Lighthouse en Lighthouse CI Server", width="800", height="556", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/vp9hVBQGZk01fUMpIQ1Z.png", alt="Captura de pantalla de la comparación de dos informes de Lighthouse en Lighthouse CI Server", width="800", height="556" %}</figure>
 
 1. Elija qué compromisos comparar.
 2. La cantidad en que ha cambiado la puntuación de Lighthouse entre las dos confirmaciones.

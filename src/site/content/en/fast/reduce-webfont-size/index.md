@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduce WebFont Size
 authors:
   - ilyagrigorik

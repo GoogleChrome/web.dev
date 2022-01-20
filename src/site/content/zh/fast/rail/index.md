@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 RAIL 模型衡量性能
 description: 凭借 RAIL 模型，设计人员和开发人员能够可靠地将对用户体验影响最大的性能优化工作作为目标。了解 RAIL 模型设定了哪些目标和准则，以及您可以使用哪些工具来实现它们。
 date: 2020-06-10
@@ -19,13 +19,13 @@ tags:
 
 RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空闲和加载。用户对这些上下文分别有不同的性能期望，因此，性能目标是根据上下文以及[用户如何感知延迟的用户体验研究](https://www.nngroup.com/articles/response-times-3-important-limits/)来定义的。
 
-<figure class="w-figure">{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="RAIL 性能模型的四个部分：响应、动画、空闲和加载。", width="800", height="290" %}<figcaption class="w-figcaption">RAIL 性能模型的四个部分</figcaption></figure>
+<figure>{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="RAIL 性能模型的四个部分：响应、动画、空闲和加载。", width="800", height="290" %}<figcaption>RAIL 性能模型的四个部分</figcaption></figure>
 
 ## 以用户为中心
 
 将用户作为性能工作的关键点。下表介绍了用户如何感知性能延迟的关键指标：
 
-<table class="w-table-wrapper">
+<table class="table-wrapper scrollbar">
   <thead>用户对性能延迟的看法</thead>
   <tr>
     <td>0 至 16 毫秒</td>
@@ -75,7 +75,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 目标是在 100 毫秒内响应输入，那么，为什么我们的预算只有 50 毫秒？这是因为除输入处理外，通常还有需要执行其他工作，而且这些工作会占用可接受输入响应的部分可用时间。如果应用程序在空闲时间以推荐的 50 毫秒区块执行工作，这就意味着，如果输入在这些工作区块之一中发生，它最多可能会排队 50 毫秒。考虑到这一点，假设只有剩余的 50 毫秒可用于实际输入处理才是安全地做法。下图展示了这种影响，图中显示了在空闲任务期间收到的输入如何排队，从而减少可用的处理时间：
 
-<figure class="w-figure">{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="显示空闲任务期间收到的输入如何排队，从而将可用输入处理时间减少到 50 毫秒的图表", width="800", height="400" %}<figcaption class="w-figcaption">空闲任务如何影响输入响应预算。</figcaption></figure>
+<figure>{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="显示空闲任务期间收到的输入如何排队，从而将可用输入处理时间减少到 50 毫秒的图表", width="800", height="400" %}<figcaption>空闲任务如何影响输入响应预算。</figcaption></figure>
 
 ## 动画：在 10 毫秒内生成一帧
 

@@ -17,7 +17,7 @@ En esta publicación, aprenderá cómo funciona el enrutamiento en Next.js, cóm
 
 En [Next.js](https://nextjs.org/), no es necesario configurar el enrutamiento manualmente. Next.js usa un enrutamiento basado en el sistema de archivos, lo que le permite crear archivos y carpetas dentro del directorio `./pages/`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cwpyvEgBCIbkqrbsbL0.png", alt="Captura de pantalla de un directorio de páginas que contiene tres archivos: index.js, margherita.js y pineapple-pizza.",  width="376", height="348", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cwpyvEgBCIbkqrbsbL0.png", alt="Captura de pantalla de un directorio de páginas que contiene tres archivos: index.js, margherita.js y pineapple-pizza.",  width="376", height="348" %}</figure>
 
 Para enlazar a diferentes páginas, use el componente [`<Link>`](https://nextjs.org/docs/api-reference/next/link), de manera similar a como usaría el viejo elemento `<a>`:
 

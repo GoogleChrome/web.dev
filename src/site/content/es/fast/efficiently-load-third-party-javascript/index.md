@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga el JavaScript de terceros de manera eficiente
 subhead: Evita los errores comunes de usar scripts de terceros para mejorar los tiempos de carga y la experiencia del usuario.
 authors:
@@ -107,7 +107,7 @@ La sugerencia de `preconnect` se utiliza mejor solo para las conexiones más cr�
 
 Los recursos de terceros integrados pueden contribuir en gran medida a reducir la velocidad de la página cuando se construyen de una forma deficiente. Si no son críticos o están en la mitad inferior de la página (es decir, si los usuarios tienen que desplazarse para verlos), la carga diferida es una buena manera de mejorar la velocidad de la página y las métricas de contenido. De esta manera, los usuarios obtendrán el contenido de la página principal más rápido y tendrán una mejor experiencia.
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="Un diagrama de una página web que se muestra en un dispositivo móvil con contenido desplazable que se extiende más allá de la pantalla. El contenido que está debajo de la página no está saturado porque no está cargado todavía.", width="366", height="438" %}</figure>
+<figure data-float="left">{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="Un diagrama de una página web que se muestra en un dispositivo móvil con contenido desplazable que se extiende más allá de la pantalla. El contenido que está debajo de la página no está saturado porque no está cargado todavía.", width="366", height="438" %}</figure>
 
 Un enfoque eficaz es cargar contenido de terceros de forma diferida después de que se cargue el contenido de la página principal. Los anuncios son un buen candidato para este enfoque.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 重要でないCSSを延期する
 authors:
   - demianrenzulli
@@ -30,7 +30,7 @@ CSS ファイルは[レンダリングをブロックするリソース](https:/
 
 レポートでは、**First Contentful Paint**メトリックの値が「1」となっており、Opportunties のセクションでは、**Eliminate render-blocking resources** が **style.css** を指しています。
 
-<figure class="w-figure">{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="最適化されていないページの Lighthouse レポート。FCP は「1」、Opportunities のセクションには「Eliminate blocking resources」と表示されている", width="800", height="640", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="最適化されていないページの Lighthouse レポート。FCP は「1」、Opportunities のセクションには「Eliminate blocking resources」と表示されている", width="800", height="640" %}</figure>
 
 {% Aside %}このデモサイトに使用している CSS は非常に小さなものです。より大きな CSS ファイルを要求していて (本番環境ではいたって普通です)、かつ対象のページには**アバブ・ザ・フォールド**コンテンツ (スクロールしなくても閲覧できる画面領域) のレンダリング中に使用されなかった CSS ルールが少なくとも 2048 バイトあることが Lighthouse によって検出される場合は、**Remove Unused CSS** という提案が表示されます。{% endAside %}
 
@@ -53,7 +53,7 @@ CSS ファイルは[レンダリングをブロックするリソース](https:/
 2. 「Coverage」と入力し、**Show Coverage** (カバレッジを表示) を選択します。
 3. [**Reload**] (再読み込み) ボタンをクリックして、ページを再読み込みし、カバレッジの取り込みを開始します。
 
-<figure class="w-figure">{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="CSS ファイルのカバレッジ、未使用のバイトが 55.9％ であることを示している。", width="800", height="82", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="CSS ファイルのカバレッジ、未使用のバイトが 55.9％ であることを示している。", width="800", height="82" %}</figure>
 
 レポートをダブルクリックして、2 つの色に分けられたクラスを表示します。
 
@@ -98,17 +98,17 @@ DevTools を使用して、[最適化されたページ](https://defer-css-optim
 
 **FCP** マーカーは、ページが CSS を要求する前に表示されます。つまり、ブラウザーは、CSS が読み込まれるのを待たずにページをレンダリングすることができます。
 
-<figure class="w-figure">{% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="最適化されていないページに対する DevTools のパフォーマンストレース。CSS が読み込まれる前に FCP が開始されていることがわかります。", width="800", height="389", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="最適化されていないページに対する DevTools のパフォーマンストレース。CSS が読み込まれる前に FCP が開始されていることがわかります。", width="800", height="389" %}</figure>
 
 最後のステップとして、最適化されたページに対して Lighthouse を実行します。
 
 レポートを見れば、FCP ページが **0.2 秒**短縮されたことがわかります (20％ も改善しました！)。
 
-<figure class="w-figure">{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="FCP の値が 0.8s になったことを示す Lighthouse のレポート。", width="800", height="324", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="FCP の値が 0.8s になったことを示す Lighthouse のレポート。", width="800", height="324" %}</figure>
 
 **Eliminate render-blocking resources** という提案は **Opportunities** セクションから **Passed Audits** セクションに移動されています。
 
-<figure class="w-figure">{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="'Eliminate blocing resources' が 'Passed Audits' セクションに移っていることを示す Lighthouse のレポート。", width="800", height="237", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="'Eliminate blocing resources' が 'Passed Audits' セクションに移っていることを示す Lighthouse のレポート。", width="800", height="237" %}</figure>
 
 ## 今度のステップと参考資料
 

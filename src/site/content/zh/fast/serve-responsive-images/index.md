@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 提供响应式图像
 authors:
   - katiehempenius
@@ -70,7 +70,7 @@ magick convert flower.jpg -resize 300x200 flower-small.jpg
 
 指定多个图像版本，浏览器将选择最好的一个来使用：
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

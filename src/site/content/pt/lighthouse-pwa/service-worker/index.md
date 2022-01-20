@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não registra um service worker que controla a página e `start_url`
 description: |2
 
@@ -28,7 +28,7 @@ Todos os principais navegadores, exceto o Internet Explorer, oferecem suporte a 
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não registram um service worker:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoria do Lighthouse mostrando que o site não registra um service worker", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoria do Lighthouse mostrando que o site não registra um service worker", width="800", height="95" %}</figure>
 
 O Lighthouse verifica se o [protocolo de depuração remota  do Chrome](https://github.com/ChromeDevTools/devtools-protocol) retorna uma versão do service worker. Do contrário, a auditoria falha.
 

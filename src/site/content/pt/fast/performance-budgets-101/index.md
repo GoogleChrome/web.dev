@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Orçamentos de desempenho 101
 authors:
   - mihajlija
@@ -36,7 +36,7 @@ Já mencionamos algumas coisas que você pode incluir em um orçamento de desemp
 
 No entanto, esses números não dizem muito sobre a experiência do usuário. Duas páginas com o mesmo número de solicitações ou mesmo peso podem ser renderizadas de maneira diferente dependendo da ordem em que os recursos são solicitados. Se um [recurso crítico,](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) como uma imagem principal ou uma folha de estilo em uma das páginas, for carregado no final do processo, os usuários irão esperar mais para ver algo útil e perceber a página como mais lenta. Se na outra página as partes mais importantes carregarem rapidamente, eles podem nem perceber se o resto da página carregou ou não.
 
-<figure class="w-figure">{% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagem de renderização progressiva de página com base no caminho crítico", width="611", height="300" %}</figure>
+<figure>{% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagem de renderização progressiva de página com base no caminho crítico", width="611", height="300" %}</figure>
 
 É por isso que é importante controlar outro tipo de métrica.
 

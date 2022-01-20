@@ -40,7 +40,7 @@ O CSS fornece muitas opções para selecionar elementos e aplicar regras a eles,
 
 Para entender como os seletores funcionam e sua função no CSS, é importante conhecer as partes de uma regra CSS. Uma regra CSS é um bloco de código, contendo um ou mais seletores e uma ou mais declarações.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="Uma imagem de uma regra de CSS com o seletor .my-css-rule", width="800", height="427" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="Uma imagem de uma regra de CSS com o seletor .my-css-rule", width="800", height="427" %}</figure>
 
 Nesta regra de CSS, o **seletor** é `.my-css-rule` que encontra todos os elementos com uma classe de `my-css-rule` na página. Existem três declarações dentro das chaves. Uma declaração é um par de propriedade e valor que aplica estilos aos elementos correspondidos pelos seletores. Uma regra de CSS pode ter quantas declarações e seletores você desejar.
 
@@ -182,7 +182,7 @@ Junto com os operadores de caso, você tem acesso a operadores que combinam part
 }
 ```
 
-<figure class="w-figure">{% Codepen {user: 'web-dot-dev', id: 'BapBbOy'}%}<figcaption class="w-figcaption"> Neste demo, o operador `$` em nosso seletor de atributo obtém o tipo de arquivo do atributo `href`. Isso torna possível prefixar o rótulo - com base nesse tipo de arquivo - usando um pseudoelemento.</figcaption></figure>
+<figure>{% Codepen {user: 'web-dot-dev', id: 'BapBbOy'}%}<figcaption> Neste demo, o operador `$` em nosso seletor de atributo obtém o tipo de arquivo do atributo `href`. Isso torna possível prefixar o rótulo - com base nesse tipo de arquivo - usando um pseudoelemento.</figcaption></figure>
 
 ### Seletores de agrupamento
 
@@ -291,7 +291,7 @@ p strong {
 
 Este snippet seleciona todos os `<strong>` elementos que são elementos filho dos elementos `<p>` apenas, tornando-os azuis recursivamente.
 
-<figure class="w-figure">{% Codepen {user: 'web-dot-dev', id: 'BapBbGN'}%}<figcaption class="w-figcaption"> Como o combinador descendente é recursivo, o preenchimento adicionado a cada elemento filho se aplica, resultando em um efeito escalonado.</figcaption></figure>
+<figure>{% Codepen {user: 'web-dot-dev', id: 'BapBbGN'}%}<figcaption> Como o combinador descendente é recursivo, o preenchimento adicionado a cada elemento filho se aplica, resultando em um efeito escalonado.</figcaption></figure>
 
 Este efeito é melhor visualizado no exemplo acima, usando o seletor combinador, `.top div`. Essa regra CSS adiciona preenchimento esquerdo a esses elementos `<div>` Como o combinador é recursivo, todos os `<div>` que estão em `.top` terão o mesmo preenchimento aplicado a eles.
 
@@ -319,7 +319,7 @@ O problema com isso é que, como você está selecionando cada elemento filho de
 
 Um combinador subsequente é muito semelhante a um seletor irmão seguinte. No entanto, em vez de um `+`, use um caractere `~`. A diferença é que um elemento precisa apenas seguir outro elemento com o mesmo pai, em vez de ser o próximo elemento com o mesmo pai.
 
-<figure class="w-figure">{% Codepen {user: 'web-dot-dev', id: 'ZELzPPX', height: 400}%}<figcaption class="w-figcaption"> Use um seletor subsequente junto com uma pseudo classe `: check` para criar um elemento switch CSS puro.</figcaption></figure>
+<figure>{% Codepen {user: 'web-dot-dev', id: 'ZELzPPX', height: 400}%}<figcaption> Use um seletor subsequente junto com uma pseudo classe `: check` para criar um elemento switch CSS puro.</figcaption></figure>
 
 Este combinador subsequente fornece um pouco menos de rigidez, o que é útil em contextos como o exemplo acima, onde alteramos a cor de um switch personalizado quando sua caixa de seleção associada tem o estado `:checked`
 

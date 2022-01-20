@@ -37,9 +37,9 @@ avoiding this type of configuration and for those that already have sites
 built in this way, to consider migrating to a single origin site architecture
 whenever possible.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/QnwgUcEBv8o8k2XiAYbm.png", alt="Diagram showing a site divded into multiple origins and showing that technique is discouraged when building PWAs.", width="800", height="461" %}
-  <figcaption class="w-figcaption">Avoid using different origins for site sections of the same site when trying to build a unified Progresive Web App.</figcaption>
+  <figcaption>Avoid using different origins for site sections of the same site when trying to build a unified Progresive Web App.</figcaption>
 </figure>
 
 In this post, we take a look at the opposite case: instead of a single PWA
@@ -84,9 +84,9 @@ name** is a good way of establishing that relationship. For example:
 - A company wants to build separate chat, mail, and calendar apps and wants them
   to work as individual apps, tied to the company's name.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/XEwhGkkV9Bz7Z2KEJWjm.png", alt="Avoid using different origins for site sections of the same site when trying to build a unified Progresive Web App.", width="800", height="475" %}
-  <figcaption class="w-figcaption">Company that owns example.com wants to provide three independent apps or PWAs, using the same domain name to establish the relationship between them.</figcaption>
+  <figcaption>Company that owns example.com wants to provide three independent apps or PWAs, using the same domain name to establish the relationship between them.</figcaption>
 </figure>
 
 ## Using separate origins
@@ -127,9 +127,9 @@ If apps on subdomains want to share local data with each other they will still
 be able to do it via cookies, or for more advanced scenarios they could
 consider synchronizing the storage through a server.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/FfuseK64y4PRqXYEGEt9.png", alt="ALT_TEXT_HERE", width="800", height="421" %}
-  <figcaption class="w-figcaption">Building different PWAs in distinct origins, by using subdomains is a good practice.</figcaption>
+  <figcaption>Building different PWAs in distinct origins, by using subdomains is a good practice.</figcaption>
 </figure>
 
 ## Using the same origin
@@ -158,9 +158,9 @@ many problems and limitations, the root of which stems from the fact that the
 browser won't fully consider these to be distinct "apps", therefore **this
 approach is discouraged**.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/6HX5zEb58sEEWQoJt82m.png", alt="ALT_TEXT_HERE", width="800", height="420" %}
-  <figcaption class="w-figcaption">Using paths (overlapping or not) to provide two independent PWAs (“app1”, “app2”) under the same origin is discouraged.</figcaption>
+  <figcaption>Using paths (overlapping or not) to provide two independent PWAs (“app1”, “app2”) under the same origin is discouraged.</figcaption>
 </figure>
 
 In the next section, we analyze these challenges in more detail, and what can be

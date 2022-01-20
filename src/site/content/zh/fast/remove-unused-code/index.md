@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 删除未使用的代码
 subhead: 通过 npm 可以轻而易举地向项目添加代码。但是这些额外的字节真的都能用到吗？
 authors:
@@ -18,15 +18,15 @@ tags:
 
 通过 DevTools 可以轻松查看所有网络请求的大小：{% Instruction 'devtools-network', 'ol' %} {% Instruction 'disable-cache', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="包含代码包请求的网络面板", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="包含代码包请求的网络面板", width="800", height="169" %}
 
 DevTools 中的 [Coverage](https://developer.chrome.com/docs/devtools/coverage/)（覆盖）选项卡还会告诉您应用程序中有多少 CSS 和 JS 代码未使用。
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="DevTools 中的代码覆盖", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="DevTools 中的代码覆盖", width="800", height="562" %}
 
 通过 Node CLI 指定完整的 Lighthouse 配置后，还可以使用“未使用的 JavaScript”审计来追踪您的应用程序附带了多少未使用的代码。
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse 未使用的 JS 审计", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse 未使用的 JS 审计", width="800", height="347" %}
 
 如果您恰巧使用 [webpack](https://webpack.js.org/) 作为打包器，[Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) 将帮助您调查代码包的组成。像包含任何其他插件一样，将该插件包含在 webpack 配置文件中：
 

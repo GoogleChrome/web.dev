@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 在字体加载期间避免不可见的文本
 authors:
   - katiehempenius
@@ -23,7 +23,7 @@ feedback:
 
 ## 选项 1：使用 font-display
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -57,7 +57,7 @@ feedback:
 
 这些是常见浏览器的默认 font-loading 行为：
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

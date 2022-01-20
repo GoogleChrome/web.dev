@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요한 자산을 미리 로드하여 로딩 속도 향상
 authors:
   - houssein
@@ -22,15 +22,15 @@ feedback:
 
 사전 로딩은 일반적으로 브라우저가 늦게 발견한 리소스에 가장 적합합니다.
 
-<figure class="w-figure">{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Chrome DevTools Network 패널에 대한 스크린샷.", width="701", height="509" %} <figcaption class="w-figcaption">이 예제에서, Pacifico 글꼴은 <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> 규칙을 사용하여 스타일시트에 지정됩니다. 브라우저는 스타일시트 다운로드 및 구문 분석을 완료한 이후에만 글꼴 파일을 로드합니다.</figcaption></figure>
+<figure>{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Chrome DevTools Network 패널에 대한 스크린샷.", width="701", height="509" %} <figcaption>이 예제에서, Pacifico 글꼴은 <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> 규칙을 사용하여 스타일시트에 지정됩니다. 브라우저는 스타일시트 다운로드 및 구문 분석을 완료한 이후에만 글꼴 파일을 로드합니다.</figcaption></figure>
 
 특정 리소스를 미리 로드하면 현재 페이지에 중요하다고 확신하기 때문에 브라우저가 검색할 때보다 더 빨리 가져오고 싶다고 브라우저에 알립니다.
 
-<figure class="w-figure">{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="사전 로딩 적용 후 Chrome DevTools Network 패널에 대한 스크린샷.", width="701", height="509" %} <figcaption class="w-figcaption">이 예제에서는 Pacifico 글꼴이 미리 로드되어 있으므로 스타일시트를 사용하는 동시에 다운로드됩니다.</figcaption></figure>
+<figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="사전 로딩 적용 후 Chrome DevTools Network 패널에 대한 스크린샷.", width="701", height="509" %} <figcaption>이 예제에서는 Pacifico 글꼴이 미리 로드되어 있으므로 스타일시트를 사용하는 동시에 다운로드됩니다.</figcaption></figure>
 
 중요한 요청 체인은 브라우저에서 우선순위를 지정하고 가져오는 리소스의 순서를 나타냅니다. Lighthouse는 이 체인의 세 번째 수준에 있는 자산을 늦게 발견한 자산으로 식별합니다. [**사전 로드 키 요청**](/uses-rel-preload) 감사를 사용하여 사전 로드할 리소스를 식별할 수 있습니다.
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse의 사전 로드 키 요청 감사.", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse의 사전 로드 키 요청 감사.", width="745", height="97" %}
 
 HTML 문서의 헤드에 `rel="preload"`가 있는 `<link>` 태그를 추가하여 리소스를 미리 로드할 수 있습니다.
 
@@ -46,7 +46,7 @@ HTML 문서의 헤드에 `rel="preload"`가 있는 `<link>` 태그를 추가하�
 
 사용되지 않은 프리로드는 `load` 이벤트 후 약 3초 후에 Chrome에서 콘솔 경고를 트리거합니다.
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="사용되지 않은 리소스에 대한 Chrome DevTools Console 경고.", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="사용되지 않은 리소스에 대한 Chrome DevTools Console 경고.", width="800", height="228" %}
 
 {% Aside %} `preload`는 모든 최신 브라우저에서 [지원됩니다](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility). {% endAside %}
 

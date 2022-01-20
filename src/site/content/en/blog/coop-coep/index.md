@@ -324,13 +324,13 @@ there's an issue with COEP, you should see
 column.
 
 <figure>
-  {% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444" %}
 </figure>
 
 You can then click the entry to see more details.
 
 <figure>
-  {% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241" %}
 </figure>
 
 You can also determine the status of iframes and popup windows through the
@@ -343,7 +343,7 @@ etc.
 </span>
 
 <figure>
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480" %}
 </figure>
 
 <span id="devtools-coop">
@@ -352,7 +352,7 @@ isolated.
 </span>
 
 <figure>
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480" %}
 </figure>
 
 ### Observe issues using the Reporting API

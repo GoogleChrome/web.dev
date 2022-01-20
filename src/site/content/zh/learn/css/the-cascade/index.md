@@ -24,7 +24,7 @@ button {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'GRrgMOm', height: 200 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'GRrgMOm', height: 200 } %}</figure>
 
 了解级联算法可以帮助您了解浏览器如何解决此类冲突。级联算法分为 4 个不同的阶段。
 
@@ -43,11 +43,11 @@ button {
 
 如果一个 `<link>` 中包括您的 HTML 页面顶部的 CSS，另一个 `<link>` 中包括您的页面底部的 CSS：底部 `<link>` 将具有最多的特异性。嵌入的 `<style>` 元素情况相同。它们更具体，越往页面下方越具体。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'NWdPaWv' } %} <figcaption class="w-figcaption">该按钮具有蓝色背景，由 CSS 定义，包含在 <code>&lt;link /&gt;</code> 元素中。将其设置为深色的 CSS 规则位于第二个链接样式表中，并因其位置在较后面而被应用。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'NWdPaWv' } %} <figcaption>该按钮具有蓝色背景，由 CSS 定义，包含在 <code>&lt;link /&gt;</code> 元素中。将其设置为深色的 CSS 规则位于第二个链接样式表中，并因其位置在较后面而被应用。</figcaption></figure>
 
 此顺序也适用于嵌入的 `<style>` 元素。如果它们在 `<link>` 之前声明，则链接样式表的 CSS 将具有最多的特异性。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgbLoB' } %} <figcaption class="w-figcaption"><code>&lt;style&gt;</code> 元素在 <code>&lt;head&gt;</code> 中声明，而 <code>&lt;link /&gt;</code> 元素在 <code>&lt;body&gt;</code> 中声明。这意味着它比 <code>&lt;style&gt;</code> 元素具有更多的特异性</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgbLoB' } %} <figcaption><code>&lt;style&gt;</code> 元素在 <code>&lt;head&gt;</code> 中声明，而 <code>&lt;link /&gt;</code> 元素在 <code>&lt;body&gt;</code> 中声明。这意味着它比 <code>&lt;style&gt;</code> 元素具有更多的特异性</figcaption></figure>
 
 声明了 CSS 的内联 `style` 属性将覆盖所有其他 CSS，无论其位置如何，除非声明定义了 `!important`。
 
@@ -69,7 +69,7 @@ button {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgbPMP' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgbPMP' } %}</figure>
 
 {% Aside %} 这种将同一属性声明两次的方法有效，因为浏览器会忽略它们不理解的值。与其他一些编程语言不同，CSS 在检测到无法解析的行时不会引发错误或中断您的程序，它无法解析的值是无效的，因此会被忽略。然后浏览器继续处理其余的 CSS，而不会中断它已经理解的内容。{% endAside %}
 
@@ -114,7 +114,7 @@ h1 {
 5. **本地用户样式 `!important`**。任何来自操作系统级别或浏览器扩展级别 CSS 的 `!important`。
 6. **用户代理 `!important`**。任何在浏览器提供的默认 CSS 中定义的 `!important`。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg", alt="同样在列表中解释的来源顺序的视觉演示。", width="800", height="347" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg", alt="同样在列表中解释的来源顺序的视觉演示。", width="800", height="347" %}</figure>
 
 如果您创作的 CSS 中有 `!important` 规则类型，而用户自定义的 CSS 中有 `!important` 规则类型，那么谁的 CSS 会胜出？
 
@@ -137,7 +137,7 @@ h1 {
 
 浏览器 DevTools 通常会显示所有可以匹配元素的 CSS，没有使用的被划掉。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png", alt="被覆盖的 CSS 被划掉的浏览器 DevTools 的图像", width="800", height="446" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png", alt="被覆盖的 CSS 被划掉的浏览器 DevTools 的图像", width="800", height="446" %}</figure>
 
 如果您希望应用的 CSS 根本没有出现，则它与元素不匹配。在这种情况下，您需要查找其他原因，可能是类或元素名称中有拼写错误或某些 CSS 无效。
 

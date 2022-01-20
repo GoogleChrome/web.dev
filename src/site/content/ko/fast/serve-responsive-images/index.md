@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 반응형 이미지 제공
 authors:
   - katiehempenius
@@ -68,7 +68,7 @@ magick convert flower.jpg -resize 300x200 flower-small.jpg
 
 여러 이미지 버전을 지정하면 브라우저에서 사용하기에 가장 적합한 버전을 선택합니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

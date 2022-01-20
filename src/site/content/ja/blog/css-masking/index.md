@@ -70,7 +70,7 @@ feedback:
 }
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="SVG マスクの使用例", width="699", height="490", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="SVG マスクの使用例", width="699", height="490" %}</figure>
 
 このアプローチの利点は、画像だけでなく、任意の HTML 要素にマスクを適用できることです。残念ながら、このアプローチは Firefox 以外でサポートされていません。
 

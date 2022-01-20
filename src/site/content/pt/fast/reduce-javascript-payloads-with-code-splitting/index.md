@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduza os payloads do JavaScript com divisão de código
 authors:
   - houssein
@@ -21,7 +21,7 @@ O envio de grandes cargas úteis de JavaScript afeta significativamente a veloci
 
 O Lighthouse exibe uma auditoria com falha quando uma quantidade significativa de tempo é levada para executar todo o JavaScript em uma página.
 
-{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="Uma auditoria do Lighthouse com falha mostrando os scripts que demoram muito para serem executados.", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="Uma auditoria do Lighthouse com falha mostrando os scripts que demoram muito para serem executados.", width="797", height="100" %}
 
 Divida o pacote JavaScript para enviar apenas o código necessário para a rota inicial quando o usuário carregar um aplicativo. Isso minimiza a quantidade de script que precisa ser analisado e compilado, o que resulta em tempos de carregamento de página mais rápidos.
 

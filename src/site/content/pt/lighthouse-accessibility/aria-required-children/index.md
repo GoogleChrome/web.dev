@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Elementos com um ARIA `[role]` que exigem que os filhos contenham um `[role]` específico estão faltando alguns ou todos os filhos necessários
 description: |2
 
@@ -22,7 +22,7 @@ Algumas funções ARIA requerem funções secundárias específicas. Por exemplo
 
 O <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> sinaliza funções ARIA que não têm as funções filho necessárias:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoria Lighthouse mostrando função ARIA sem função(ões) filho(s) necessária(s)", width="800", height="205", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoria Lighthouse mostrando função ARIA sem função(ões) filho(s) necessária(s)", width="800", height="205" %}</figure>
 
 O Lighthouse usa as <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">definições de função da especificação WAI-ARIA</a> para verificar <a href="https://www.w3.org/TR/wai-aria/#mustContain" rel="noopener">os elementos de propriedade necessários</a> - ou seja, funções filho obrigatórias. Uma página falha nesta auditoria quando contém uma função pai que esteja sem suas funções filho necessárias.
 

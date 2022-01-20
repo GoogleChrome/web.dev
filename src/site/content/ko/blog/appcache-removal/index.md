@@ -116,7 +116,7 @@ AppCache 매니페스트에 원본 평가판 토큰을 추가하면 각 매니�
 
 AppCache 매니페스트에 토큰을 추가한 후에는 `about://appcache-internals`를 방문하여 여러분의 Chrome(버전 84 이상)의 로컬 인스턴스가 원본 평가판 토큰을 매니페스트의 캐시된 항목과 올바르게 연결했는지 확인하세요. 여러분의 원본 평가판이 인식되면 해당 페이지에 여러분의 매니페스트와 연결된 `Token Expires: Tue Apr 06 2021...` 필드가 표시되어야 합니다.
 
-<figure>{% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="인식된 토큰을 보여주는 about://appcache-internals 인터페이스.", width="550", height="203", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="인식된 토큰을 보여주는 about://appcache-internals 인터페이스.", width="550", height="203" %}</figure>
 
 ## 제거 전 테스트
 

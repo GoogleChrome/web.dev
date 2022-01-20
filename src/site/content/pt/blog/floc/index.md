@@ -125,7 +125,7 @@ Cada fornecedor de navegador precisará fazer sua própria escolha de como agrup
 4. O navegador da web obtém esses dados que descrevem o "espaço de coorte" de seu serviço FLoC.
 5. Conforme um usuário se move pela web, seu navegador [usa um algoritmo](#floc-algorithm) para calcular periodicamente a região no "espaço de coorte" que corresponde mais de perto ao seu próprio histórico de navegação.
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="Diagrama do 'espaço de histórico de navegação' criado por um servidor FLoC, mostrando vários segmentos, cada um com um número de coorte",  width="400", height="359" %} <figcaption class="w-figcaption">O serviço FLoC divide o "espaço de coorte" em milhares de segmentos (apenas alguns são mostrados aqui).</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="Diagrama do 'espaço de histórico de navegação' criado por um servidor FLoC, mostrando vários segmentos, cada um com um número de coorte",  width="400", height="359" %} <figcaption>O serviço FLoC divide o "espaço de coorte" em milhares de segmentos (apenas alguns são mostrados aqui).</figcaption></figure>
 
 {% Aside %} Em nenhum momento deste processo o histórico de navegação do usuário é compartilhado com o serviço FLoC ou qualquer terceiro. A coorte do navegador é calculada pelo navegador, no dispositivo do usuário. Nenhum dado do usuário é adquirido ou armazenado pelo serviço FLoC. {% endAside %}
 
@@ -137,7 +137,7 @@ Uma coorte representa um cluster de atividade de navegação, não um grupo de p
 
 No exemplo acima, o coorte dos navegadores de Yoshi e Alex é 1354. No futuro, os navegadores de Yoshi e Alex podem mudar para um coorte diferente se seus interesses mudarem. No exemplo abaixo, o navegador de Yoshi muda para a coorte 1101 e o navegador de Alex para a coorte 1378. Os navegadores de outras pessoas entram e saem das coortes conforme seus interesses de navegação mudam.
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="Diagrama do 'espaço de histórico de navegação' criado por um servidor FLoC, mostrando vários segmentos, cada um com um número de coorte. O diagrama mostra os navegadores pertencentes aos usuários Yoshi e Alex mudando de uma coorte para outra conforme seus interesses de navegação mudam com o tempo.", width="800", height="533"%}<figcaption class="w-figcaption"> O grupo de navegadores de Yoshi e Alex pode mudar se seus interesses mudarem.</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="Diagrama do 'espaço de histórico de navegação' criado por um servidor FLoC, mostrando vários segmentos, cada um com um número de coorte. O diagrama mostra os navegadores pertencentes aos usuários Yoshi e Alex mudando de uma coorte para outra conforme seus interesses de navegação mudam com o tempo.", width="800", height="533"%}<figcaption> O grupo de navegadores de Yoshi e Alex pode mudar se seus interesses mudarem.</figcaption></figure>
 
 {% Aside %} Um coorte define um agrupamento de atividades de navegação, não um grupo de pessoas. Os navegadores entram e saem de uma coorte conforme sua atividade muda. {% endAside %}
 

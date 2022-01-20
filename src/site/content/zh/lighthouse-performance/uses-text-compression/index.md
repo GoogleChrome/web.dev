@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 启用文本压缩
 description: 了解启用文本压缩如何提高网页加载性能。
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 基于文本的资源应进行压缩，以尽量减少网络总字节数。Lighthouse 报告的 Opportunities 部分列出了所有未压缩的基于文本的资源：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Lighthouse 启用文本压缩审计的截图", width="800", height="271", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Lighthouse 启用文本压缩审计的截图", width="800", height="271" %}</figure>
 
 ## Lighthouse 如何处理文本压缩
 
@@ -55,7 +55,7 @@ Content-Encoding: br
 2. 点击 **Headers** 选项卡。
 3. 检查 **Response Headers** 部分中的 `content-encoding` 标头。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="content-encoding 响应标头", width="800", height="571", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> <code>content-encoding</code> 响应标头。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="content-encoding 响应标头", width="800", height="571" %} <figcaption> <code>content-encoding</code> 响应标头。</figcaption></figure>
 
 要比较响应的压缩和解压缩大小：
 

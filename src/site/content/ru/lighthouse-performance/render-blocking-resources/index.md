@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Устраните ресурсы, блокирующие рендеринг
 description: Узнайте о проверке ресурсов, блокирующих рендеринг.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 В разделе Opportunities (Возможности) отчета Lighthouse перечислены все URL-адреса, блокирующие первую отрисовку страницы. Цель: уменьшить влияние URL-адресов, блокирующих рендеринг, путем встраивания критических ресурсов, отсрочки загрузки некритических ресурсов и удаления всего неиспользуемого.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8xAmOUQsM8sfEAgzLBis.png", alt="Скриншот проверки Lighthouse «Устраните блокирующие рендеринг ресурсы»", width="800", height="271", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8xAmOUQsM8sfEAgzLBis.png", alt="Скриншот проверки Lighthouse «Устраните блокирующие рендеринг ресурсы»", width="800", height="271" %}</figure>
 
 ## Какие URL-адреса помечаются как ресурсы, блокирующие рендеринг?
 
@@ -31,7 +31,7 @@ web_lighthouse:
 
 Первый шаг к уменьшению воздействия ресурсов, блокирующих рендеринг, — это определить, что критично, а что нет. Используйте вкладку [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools, чтобы определить некритический код CSS и JS. Когда вы загружаете или запускаете страницу, вкладка показывает, какое количество кода из всего загруженного реально использовалось.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: вкладка Coverage", width="800", height="407", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Chrome DevTools: вкладка Coverage. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: вкладка Coverage", width="800", height="407" %} <figcaption> Chrome DevTools: вкладка Coverage. </figcaption></figure>
 
 Вы можете уменьшить размер своих страниц, отправляя только тот код и стили, которые вам нужны. Щелкните URL-адрес, чтобы просмотреть этот файл на панели Sources (Источники). Стили в файлах CSS и код в файлах JavaScript отмечены двумя цветами:
 

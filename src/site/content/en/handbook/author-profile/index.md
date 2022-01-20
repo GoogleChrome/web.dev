@@ -60,5 +60,5 @@ description: |
    ```
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wwUATUCfC4NdWk61UmrV.png", alt="Screenshot of an author lockup", width="267", height="95", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wwUATUCfC4NdWk61UmrV.png", alt="Screenshot of an author lockup", width="267", height="95" %}
 </figure>

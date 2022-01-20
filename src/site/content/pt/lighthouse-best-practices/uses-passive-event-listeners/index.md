@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use ouvintes passivos para melhorar o desempenho de rolagem
 description: Aprenda como melhorar a responsividade da rolagem da página, evitando ouvintes de eventos passivos.
 web_lighthouse:
@@ -18,7 +18,7 @@ A maioria dos navegadores oferece suporte a ouvintes de eventos passivos. Veja [
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza ouvintes de eventos que podem atrasar a rolagem da página:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="A auditoria Lighthouse mostra que a página não usa ouvintes de eventos passivos para melhorar o desempenho de rolagem", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="A auditoria Lighthouse mostra que a página não usa ouvintes de eventos passivos para melhorar o desempenho de rolagem", width="800", height="213" %}</figure>
 
 O Lighthouse usa o seguinte processo para identificar ouvintes de eventos que podem afetar o desempenho da rolagem:
 

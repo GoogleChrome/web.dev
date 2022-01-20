@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用延迟加载提高加载速度
 authors:
   - jlwagner
@@ -18,7 +18,7 @@ tags:
 
 延迟加载是一种在页面加载时推迟加载非关键资源的技术。相反，只会在需要时加载这些非关键资源。就图像而言，“非关键”就是指“屏幕外”。如果您使用过 Lighthouse 并检查了一些改进的机会，您可能已经在[推迟屏幕外图像审计](/offscreen-images/)中看到了这方面的部分指南：
 
-<figure class="w-figure">{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouse 中推迟屏幕外图像审计的屏幕截图。", width="800", height="102", class="w-screenshot" %}<figcaption class="w-figcaption"> Lighthouse 的性能审计之一是识别屏幕外图像，这是延迟加载的候选对象。</figcaption></figure>
+<figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouse 中推迟屏幕外图像审计的屏幕截图。", width="800", height="102" %}<figcaption> Lighthouse 的性能审计之一是识别屏幕外图像，这是延迟加载的候选对象。</figcaption></figure>
 
 您可能已经看到了延迟加载的实现，它是这样的：
 
@@ -28,7 +28,7 @@ tags:
 
 在热门发布平台 [Medium](https://medium.com/) 上可以找到一个图像延迟加载的例子，它在页面加载时加载轻量级占位符图像，并在它们滚动到视区时用延迟加载的图像替换它们。
 
-<figure class="w-figure">{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="浏览中的网站 Medium 截图，它展示了延迟加载的作用。模糊的占位符在左边，加载的资源在右边。", width="800", height="493" %}<figcaption class="w-figcaption">图像延迟加载的示例。占位符图像在页面加载时加载（左），当滚动到视区时，最终图像在需要时加载。</figcaption></figure>
+<figure>{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="浏览中的网站 Medium 截图，它展示了延迟加载的作用。模糊的占位符在左边，加载的资源在右边。", width="800", height="493" %}<figcaption>图像延迟加载的示例。占位符图像在页面加载时加载（左），当滚动到视区时，最终图像在需要时加载。</figcaption></figure>
 
 如果您还不熟悉延迟加载，那么可能想知道该技术的作用以及好处。请仔细阅读，找出答案！
 

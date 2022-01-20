@@ -36,7 +36,7 @@ Workbox maneja las actualizaciones de caché por usted, ya sea vinculadas a su p
 
 Cuando comienza con los service workers, entender *por qué* algo se almacena en caché (o, igualmente frustrante, por qué *no se* almacena en caché) es un desafío. Workbox detecta automáticamente cuándo está ejecutando una versión de desarrollo de su sitio web en `localhost` y activa el registro de depuración en la consola JavaScript de su navegador.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gvsGSU3urfjl52jRcj3j.png", alt="Registro de Workbox en la consola de DevTools", width="800", height="438", class="w-screenshot"%}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gvsGSU3urfjl52jRcj3j.png", alt="Registro de Workbox en la consola de DevTools", width="800", height="438" %}
 
 SI le hace seguimiento a los mensajes de registro, puede llegar a la raíz de cualquier problema de configuración o invalidación mucho más rápidamente que si lo hiciera solo.
 

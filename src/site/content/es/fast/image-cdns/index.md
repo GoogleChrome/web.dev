@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Utilice CDN de imágenes para optimizar imágenes
 authors:
   - katiehempenius
@@ -19,7 +19,7 @@ Las redes de distribución de contenido de imágenes (CDN) son excelentes para o
 
 Las CDN de imágenes se especializan en la transformación, optimización y entrega de imágenes. También puede pensar en ellas como API para acceder y manipular las imágenes utilizadas en su sitio. Para las imágenes cargadas desde una CDN de imágenes, la URL de una imagen indica no solo qué imagen cargar, sino también los parámetros como el tamaño, el formato y la calidad. Esto facilita la creación de variaciones de una imagen para diferentes casos de uso.
 
-<figure class="w-figure">{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="Muestra el flujo de solicitud/respuesta entre la CDN de imágenes y el cliente. Los parámetros como el tamaño y el formato se utilizan para solicitar variaciones de la misma imagen.", width="800", height="408", class="w-screenshot" %} <figcaption class="w-figcaption"> Ejemplos de transformaciones que las CDN de imágenes pueden realizar en función de los parámetros de las URL de imágenes.</figcaption></figure>
+<figure>{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="Muestra el flujo de solicitud/respuesta entre la CDN de imágenes y el cliente. Los parámetros como el tamaño y el formato se utilizan para solicitar variaciones de la misma imagen.", width="800", height="408" %} <figcaption> Ejemplos de transformaciones que las CDN de imágenes pueden realizar en función de los parámetros de las URL de imágenes.</figcaption></figure>
 
 Las CDN de imágenes se diferencian de los scripts de optimización de imágenes en tiempo de compilación, en que crean nuevas versiones de imágenes a medida que se necesitan. Como resultado, las CDN generalmente se adaptan mejor que los scripts de compilación a la creación de imágenes muy personalizadas para cada cliente en individual.
 
@@ -27,7 +27,7 @@ Las CDN de imágenes se diferencian de los scripts de optimización de imágenes
 
 Las URL de imagen utilizadas por las CDN de imágenes transmiten información importante sobre una imagen, y las transformaciones y optimizaciones que se le deben aplicar. Los formatos de URL variarán según la CDN de imágenes, pero en un nivel alto, todos tienen características similares. Repasemos algunas de las características más comunes.
 
-<figure class="w-figure">{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="Las URL de imagen suelen constar de los siguientes componentes: origen, imagen, clave de seguridad y transformaciones.", width="800", height="127" %}</figure>
+<figure>{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="Las URL de imagen suelen constar de los siguientes componentes: origen, imagen, clave de seguridad y transformaciones.", width="800", height="127" %}</figure>
 
 ### Origen
 

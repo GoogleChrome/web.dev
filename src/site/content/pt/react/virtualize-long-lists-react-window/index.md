@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Virtualize grandes listas com janela de reação
 subhead: |2
 
@@ -28,7 +28,7 @@ Pode haver momentos em que você precise exibir uma grande tabela ou lista que c
 
 A**virtualização de lista**, ou "janelamento", é o conceito de apenas renderizar o que é visível para o usuário. O número de elementos renderizados a princípio é um subconjunto muito pequeno de toda a lista e a "janela" de conteúdo visível *se move* quando o usuário continua a rolar. Isso melhora o desempenho de renderização e rolagem da lista.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="Janela de conteúdo em uma lista virtualizada", width="578", height="525", class="w-screenshot" %} <figcaption class="w-figcaption"> Mover "janela" de conteúdo em uma lista virtualizada </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="Janela de conteúdo em uma lista virtualizada", width="578", height="525" %} <figcaption> Mover "janela" de conteúdo em uma lista virtualizada </figcaption></figure>
 
 Os nós DOM que saem da "janela" são reciclados ou imediatamente substituídos por elementos mais novos conforme o usuário rola a lista para baixo. Isso mantém o número de todos os elementos renderizados específicos para o tamanho da janela.
 
@@ -120,7 +120,7 @@ A função de tamanho do item passada para a propriedade `itemSize` randomiza as
 
 O `react-window` também fornece suporte para virtualizar listas multidimensionais ou grades. Nesse contexto, a "janela" de conteúdo visível muda conforme o usuário rola horizontal **e** verticalmente.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="Mover janela de conteúdo em uma grade virtualizada é bidimensional", width="739", height="516", class="w-screenshot" %} <figcaption class="w-figcaption"> Mover "janela" de conteúdo em uma grade virtualizada é bidimensional </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="Mover janela de conteúdo em uma grade virtualizada é bidimensional", width="739", height="516" %} <figcaption> Mover "janela" de conteúdo em uma grade virtualizada é bidimensional </figcaption></figure>
 
 Da mesma forma, os `FixedSizeGrid` e `VariableSizeGrid` podem ser usados dependendo se o tamanho de itens de lista específicos pode variar.
 
@@ -137,7 +137,7 @@ Muitos sites melhoram o desempenho esperando para carregar e renderizar itens em
 
 O diagrama a seguir pode ajudar a resumir isso:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="Diferença na rolagem entre uma lista normal e virtualizada", width="800", height="531", class="w-screenshot" %} <figcaption class="w-figcaption"> Diferença na rolagem entre uma lista normal e virtualizada </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="Diferença na rolagem entre uma lista normal e virtualizada", width="800", height="531" %} <figcaption> Diferença na rolagem entre uma lista normal e virtualizada </figcaption></figure>
 
 A melhor abordagem para resolver esse problema é continuar a usar uma biblioteca como a `react-window` para manter uma pequena "janela" de elementos em uma página, mas também para carregar lentamente as entradas mais recentes conforme o usuário rola para baixo. Um pacote separado, `react-window-infinite-loader`, torna isso possível com `react-window`.
 

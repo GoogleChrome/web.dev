@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Depuración de cambios de diseño
 subhead: |2-
 
@@ -162,15 +162,15 @@ Vea una [demostración de cómo la API de inestabilidad de diseño informa los c
 
 El panel **Experiencia** del panel **Rendimiento** de DevTools muestra todos los cambios de diseño que se producen durante un seguimiento de rendimiento determinado, incluso si se producen dentro de los 500 ms posteriores a la interacción del usuario y, por lo tanto, no cuentan para CLS. Al pasar el cursor sobre un cambio de diseño particular en el panel **Experiencia**, se resalta el elemento DOM afectado.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Uug2fnJT8mOc2YQmxo2l.png", alt="Captura de pantalla de un cambio de diseño que se muestra en el panel Red de DevTools", class="w-screenshot", width="724", height="629" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Uug2fnJT8mOc2YQmxo2l.png", alt="Captura de pantalla de un cambio de diseño que se muestra en el panel Red de DevTools", width="724", height="629" %}
 
 Para ver más información sobre el cambio de diseño, haga clic en el cambio de diseño y luego abra el cajón de **Resumen**. Los cambios en las dimensiones del elemento se enumeran mediante el formato `[width, height]`. Los cambios en la posición del elemento se enumeran mediante el formato `[x,y]`. La propiedad **Tuvo una entrada reciente** indica si se produjo un cambio de diseño dentro de los 500 ms posteriores a la interacción del usuario.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png", alt="Captura de pantalla de la pestaña 'Resumen' de DevTools para un cambio de diseño", class="w-screenshot", width="612", height="354" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png", alt="Captura de pantalla de la pestaña 'Resumen' de DevTools para un cambio de diseño", width="612", height="354" %}
 
 Para obtener información sobre la duración de un cambio de diseño, abra la pestaña **Registro de eventos.** La duración de un cambio de diseño también se puede aproximar si mira en el panel **Experiencia** la longitud del rectángulo rojo de cambio de diseño.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png", alt="Captura de pantalla de la pestaña 'Registro de eventos' de DevTools para un cambio de diseño", class="w-screenshot", width="612", height="354" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png", alt="Captura de pantalla de la pestaña 'Registro de eventos' de DevTools para un cambio de diseño", width="612", height="354" %}
 
 {% Aside %} La duración de un cambio de diseño no tiene ningún impacto en su puntuación de cambio de diseño. {% endAside %}
 
@@ -205,7 +205,7 @@ Si el elemento anterior no provocó el cambio de diseño, continúe su búsqueda
 
 Además, la dirección y la distancia de un cambio de diseño pueden proporcionar pistas sobre la causa raíz. Por ejemplo, un gran cambio hacia abajo a menudo indica la inserción de un elemento DOM, mientras que un cambio de diseño de 1 px o 2 px a menudo indica la aplicación de estilos CSS conflictivos o la carga y aplicación de una fuente web.
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagrama que muestra un cambio de diseño causado por un cambio de fuente", width="800", height="452" %} <figcaption class="w-figcaption"> En este ejemplo, el intercambio de fuentes provocó que los elementos de la página se desplazaran cinco píxeles hacia arriba.</figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagrama que muestra un cambio de diseño causado por un cambio de fuente", width="800", height="452" %} <figcaption> En este ejemplo, el intercambio de fuentes provocó que los elementos de la página se desplazaran cinco píxeles hacia arriba.</figcaption></figure>
 
 Estos son algunos de los comportamientos específicos que con mayor frecuencia provocan eventos de cambio de diseño:
 

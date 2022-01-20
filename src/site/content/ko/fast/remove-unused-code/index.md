@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 사용하지 않는 코드 제거
 subhead: npm을 사용하면 프로젝트에 코드를 쉽게 추가할 수 있습니다. 그렇지만 이런 추가적인 바이트를 모두 활용하고 계십니까?
 authors:
@@ -18,15 +18,15 @@ tags:
 
 DevTools를 사용하면 모든 네트워크 요청의 크기를 쉽게 확인할 수 있습니다. {% Instruction 'devtools-network', 'ol' %} {% Instruction 'disable-cache', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="번들 요청이 있는 네트워크 패널", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="번들 요청이 있는 네트워크 패널", width="800", height="169" %}
 
 DevTools의 [Coverage](https://developer.chrome.com/docs/devtools/coverage/) 탭은 애플리케이션에서 얼마나 많은 CSS 및 JS 코드가 사용되지 않았는지 알려줍니다.
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="DevTools의 코드 적용 범위", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="DevTools의 코드 적용 범위", width="800", height="562" %}
 
 Node CLI를 통해 전체 Lighthouse 구성을 지정하면 "사용되지 않은 JavaScript" 감사를 사용하여 애플리케이션과 함께 제공되는 사용되지 않은 코드의 양을 추적할 수도 있습니다.
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse 미사용 JS 감사", width="800", height="347", class="w-스크린샷" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse 미사용 JS 감사", width="800", height="347" %}
 
 [webpack](https://webpack.js.org/)을 번들러로 사용하는 경우 [Webpack 번들 분석기](https://github.com/webpack-contrib/webpack-bundle-analyzer)가 번들을 구성하는 요소를 조사하는 데 도움이 됩니다. 다른 플러그인과 마찬가지로 webpack 구성 파일에 플러그인을 포함합니다.
 

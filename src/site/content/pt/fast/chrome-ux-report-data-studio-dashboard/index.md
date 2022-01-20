@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Uso do CrUX Dashboard no Data Studio
 authors:
   - rviscomi
@@ -13,7 +13,7 @@ tags:
 
 O [Data Studio](https://marketingplatform.google.com/about/data-studio/) é uma ferramenta poderosa de visualização de dados que permite criar painéis em cima de fontes de big data, como o [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX). Neste guia, aprenda a criar seu próprio CrUX Dashboard personalizado para rastrear as tendências de experiência do usuário de uma origem.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Painel CrUX", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Painel CrUX", width="800", height="598" %}
 
 O Painel CrUX é construído com um recurso do Data Studio chamado [Community Connectors](https://developers.google.com/datastudio/connector/). Esse conector é um link preestabelecido entre os dados CrUX brutos do [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) e as visualizações do Data Studio. Ele elimina a necessidade dos usuários do painel de escrever quaisquer consultas ou gerar quaisquer gráficos. Tudo é feito para você; tudo que você precisa é fornecer uma origem e um painel personalizado será gerado para você.
 
@@ -21,7 +21,7 @@ O Painel CrUX é construído com um recurso do Data Studio chamado [Community Co
 
 Para começar, acesse [g.co/chromeuxdash](https://g.co/chromeuxdash). Isso o levará para a página do conector da comunidade CrUX, onde você pode fornecer a origem para a qual o painel será gerado. Observe que os usuários iniciantes podem precisar preencher os prompts de permissão ou preferência de marketing.
 
-{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="Conector do painel CrUX", width="800", height="484", class="w-screenshot" %}
+{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="Conector do painel CrUX", width="800", height="484" %}
 
 O campo de entrada de texto aceita apenas origens, não URLs completos. Por exemplo:
 
@@ -47,11 +47,11 @@ Alguns problemas comuns com as origens são fornecer o protocolo errado, por exe
 
 Se a sua origem não estiver incluída no conjunto de dados CrUX, você pode receber uma mensagem de erro como a mostrada abaixo. Existem mais de 4 milhões de origens no conjunto de dados, mas aquela que você deseja pode não ter dados suficientes para serem incluídos.
 
-{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="Mensagem de erro do Painel CrUX", width="800", height="409", class="w-screenshot"%}
+{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="Mensagem de erro do Painel CrUX", width="800", height="409" %}
 
 Se a origem existir, você será levado à página de esquema do painel. Isso mostra todos os campos incluídos: cada tipo de conexão efetiva, cada fator de forma, o mês do lançamento do conjunto de dados, a distribuição do desempenho de cada métrica e, claro, o nome da origem. Não há nada que você precise fazer ou alterar nesta página, basta clicar em **Criar relatório** para continuar.
 
-{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="Esquema do Painel CrUX", width="800", height="403", class="w-screenshot"%}
+{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="Esquema do Painel CrUX", width="800", height="403" %}
 
 ## Uso do painel
 
@@ -69,19 +69,19 @@ Os conjuntos de dados mensais são divulgados na segunda terça-feira de cada m�
 
 A primeira página é uma visão geral do desempenho mensal do [Core Web Vitals](/vitals/) da origem. Essas são as métricas de experiência do usuário mais importantes nas quais o Google recomenda que você se concentre.
 
-{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="Visão geral do Core Web Vitals do Painel CrUX", width="800", height="906", class="w-screenshot" %}
+{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="Visão geral do Core Web Vitals do Painel CrUX", width="800", height="906" %}
 
 Use a página Core Web Vitals para entender como a origem é experimentada por usuários de desktop e telefone. Por padrão, o mês mais recente no momento em que você criou o painel é selecionado. Para alternar entre lançamentos mensais mais antigos ou mais recentes, use o filtro **Mês** na parte superior da página.
 
 Observe que o tablet é omitido desses gráficos por padrão, mas se necessário, você pode remover o filtro **Sem tablet** na configuração do gráfico de barras, mostrado abaixo.
 
-{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Editando o CrUX Dashboard para mostrar tablets na página Core Web Vitals", width="800", height="288", class="w-screenshot" %}
+{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Editando o CrUX Dashboard para mostrar tablets na página Core Web Vitals", width="800", height="288" %}
 
 ### Desempenho métrico
 
 Após a página Core Web Vitals, você encontrará páginas independentes para todas as [métricas](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) no conjunto de dados CrUX.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Página LCP do Painel CrUX", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Página LCP do Painel CrUX", width="800", height="598" %}
 
 No topo de cada página está o filtro **Dispositivo**, que você pode usar para restringir os fatores de forma incluídos nos dados de experiência. Por exemplo, você pode se aprofundar especificamente em experiências de telefone. Essa configuração persiste nas páginas.
 
@@ -107,7 +107,7 @@ Existem duas [dimensões](https://developers.google.com/web/tools/chrome-user-ex
 
 A página de distribuição de dispositivos mostra a análise de usuários de telefones, desktops e tablets ao longo do tempo. Muitas origens tendem a ter poucos ou nenhum dado de tablet, então você verá "0%" pendurado na borda do gráfico.
 
-{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="Página de dispositivo do Painel CrUX", width="800", height="603", class="w-screenshot" %}
+{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="Página de dispositivo do Painel CrUX", width="800", height="603" %}
 
 Da mesma forma, a página de distribuição da ECT mostra a divisão de experiências 4G, 3G, 2G, 2G lentas e off-line.
 

@@ -16,12 +16,12 @@ feedback:
 
 [지불 요청 API](https://www.w3.org/TR/payment-request/)는 사용자가 그 어느 때보다 쉽게 필요한 지불 정보를 입력할 수 있도록 하는 내장 브라우저 기반 인터페이스를 웹에 제공합니다. API는 플랫폼 종속 결제 앱을 호출할 수도 있습니다.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">웹 결제를 사용하는 플랫폼 종속 구글 페이 앱의 결제 흐름.</figcaption></figure>
+  <figcaption>웹 결제를 사용하는 플랫폼 종속 구글 페이 앱의 결제 흐름.</figcaption></figure>
 
 Android 인텐트만 사용할 때와 비교해, 웹 결제 사용 시 사용 브라우저, 보안 및 사용자 경험을 더 잘 통합할 수 있습니다.
 

@@ -77,7 +77,7 @@ the team can make proactive optimizations with ownership of problematic code bei
 The heart of the Site Speed Governance (SSG) app is [Lighthouse CI](/lighthouse-ci/).
 The SSG app uses Lighthouse to validate and audit the page performance of every pull request.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/62alkvo2eRYoyptYeDbZ.png", alt="A process diagram of the SSG app, the steps shown in the diagram are described later in the article.", width="800", height="567" %}
 </figure>
 

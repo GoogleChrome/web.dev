@@ -184,8 +184,8 @@ function handleDrop(e) {
 
 В этом примере мы позволим пользователям изменять порядок столбцов. Для этого сначала нужно сохранить HTML-код исходного элемента при запуске перетаскивания:
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </source></video>
   </figure>

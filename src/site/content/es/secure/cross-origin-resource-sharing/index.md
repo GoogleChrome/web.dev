@@ -22,7 +22,7 @@ Habilitar el **CORS** permite que el servidor le diga al navegador que tiene per
 
 ## ¿Cómo funciona una consulta de recursos en la web?
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="consulta y respuesta", width="668", height="327" %} <figcaption class="w-figcaption"> Imagen: Ilustración de la consulta del cliente y respuesta del servidor </figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="consulta y respuesta", width="668", height="327" %} <figcaption> Imagen: Ilustración de la consulta del cliente y respuesta del servidor </figcaption></figure>
 
 Un navegador y un servidor pueden intercambiar datos a través de la red utilizando el **Protocolo de transferencia de hipertexto** (HTTP). El HTTP define las reglas de comunicación entre quien la solicita y quien responde, incluyendo la información que se necesita para obtener un recurso.
 

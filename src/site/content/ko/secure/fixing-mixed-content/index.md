@@ -30,11 +30,11 @@ Google Chrome에서 HTTPS 페이지를 방문할 때 브라우저는 혼합 콘�
 
 [패시브 혼합 콘텐츠](https://passive-mixed-content.glitch.me/)의 경우, 다음과 같은 경고가 제공됩니다. `https` URL에서 콘텐츠가 발견되면 브라우저가 이를 자동으로 업그레이드한 다음 메시지를 표시합니다.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="혼합 콘텐츠가 감지되고 업그레이드될 때 표시되는 경고를 보여주는 Chrome DevTools", width="800", height="294", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="혼합 콘텐츠가 감지되고 업그레이드될 때 표시되는 경고를 보여주는 Chrome DevTools", width="800", height="294" %}</figure>
 
 [액티브 혼합 콘텐츠](https://active-mixed-content.glitch.me/)는 차단되고 경고가 표시됩니다.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="액티브 혼합 콘텐츠가 차단될 때 표시되는 경고를 보여주는 Chrome DevTools", width="800", height="304", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="액티브 혼합 콘텐츠가 차단될 때 표시되는 경고를 보여주는 Chrome DevTools", width="800", height="304" %}</figure>
 
 해당 사이트에서 `http://` URL에 대해 이와 같은 경고를 보게 되면 사이트 소스에서 이를 수정해야 합니다. 이러한 URL을 발견한 페이지와 함께 이러한 URL의 목록을 만들어 수정할 때 사용하는 것이 좋습니다.
 

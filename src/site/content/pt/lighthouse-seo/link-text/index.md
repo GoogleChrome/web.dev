@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os links não possuem texto descritivo
 description: |2-
 
@@ -16,7 +16,7 @@ O texto do link é a palavra ou frase clicável em um hiperlink. Quando ele tran
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza links sem texto descritivo:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Auditoria do Lighthouse mostrando links sem texto descritivo", width="800", height="191", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Auditoria do Lighthouse mostrando links sem texto descritivo", width="800", height="191" %}</figure>
 
 O Lighthouse sinaliza o seguinte texto de link genérico:
 

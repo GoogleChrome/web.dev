@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 여러 페이지 리디렉션 방지
 description: 페이지 리디렉션이 웹 페이지의 로드 속도를 늦추는 이유와 이를 피하는 방법을 배웁니다.
 web_lighthouse:
@@ -21,7 +21,7 @@ Location: /path/to/new/location
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 여러 리디렉션이 있는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
 두 개 이상의 리디렉션이 있는 페이지는 이 감사에 실패합니다.
 

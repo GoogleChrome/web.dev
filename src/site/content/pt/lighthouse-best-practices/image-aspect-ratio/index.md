@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Exibe imagens com proporção incorreta
 description: |2
 
@@ -16,7 +16,7 @@ Se uma imagem renderizada tem uma [proporção de aspecto](https://en.wikipedia.
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza qualquer imagem com uma dimensão renderizada com mais do que alguns pixels de diferença da dimensão esperada quando renderizada em sua proporção natural:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="A auditoria do Lighthouse mostra as imagens exibidas com proporção incorreta", width="800", height="198", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="A auditoria do Lighthouse mostra as imagens exibidas com proporção incorreta", width="800", height="198" %}</figure>
 
 Existem duas causas comuns para uma proporção de imagem incorreta:
 

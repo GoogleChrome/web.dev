@@ -133,7 +133,7 @@ Use o atributo de entrada [`type`](https://developer.mozilla.org/docs/Web/HTML/E
 
 Por exemplo, use `type="email"` para endereços de e-mail e `type="tel"` para números de telefone.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Duas capturas de tela de telefones Android, mostrando um teclado apropriado para inserir um endereço de e-mail (usando type=email) e para inserir um número de telefone (com type=tel).", width="800", height="683" %} <figcaption class="w-figcaption">Teclados apropriados para e-mail e telefone.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Duas capturas de tela de telefones Android, mostrando um teclado apropriado para inserir um endereço de e-mail (usando type=email) e para inserir um número de telefone (com type=tel).", width="800", height="683" %} <figcaption>Teclados apropriados para e-mail e telefone.</figcaption></figure>
 
 {: #inputmode-attribute}
 
@@ -163,7 +163,7 @@ Se um valor de preenchimento automático apropriado estiver disponível para um 
 
 Por padrão, defina o endereço de cobrança igual ao endereço de entrega. Reduza a confusão visual fornecendo um link para editar o endereço de cobrança (ou use [elementos de `summary` e `details`](https://simpl.info/details/)) em vez de exibir o endereço de cobrança em um formulário.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Exemplo de página de checkout mostrando o link para alterar o endereço de cobrança.", width="800", height="250" %} <figcaption class="w-figcaption">Adicione um link para revisar a cobrança.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Exemplo de página de checkout mostrando o link para alterar o endereço de cobrança.", width="800", height="250" %} <figcaption>Adicione um link para revisar a cobrança.</figcaption></figure>
 
 Use os valores de preenchimento automático apropriados para o endereço de cobrança, assim como você faz para o endereço de entrega, de forma que o usuário não precise inserir os dados mais de uma vez. Adicione uma palavra de prefixo aos atributos de preenchimento automático se você tiver valores diferentes para entradas com o mesmo nome em seções diferentes.
 
@@ -195,7 +195,7 @@ Os navegadores modernos também fazem validação básica para entradas com o ti
 
 No envio do formulário, os navegadores definem automaticamente o foco nos campos com valores obrigatórios problemáticos ou ausentes. Não é necessário JavaScript!
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Captura de tela de um formulário de login no Chrome na área de trabalho mostrando o prompt do navegador e o foco para um valor de e-mail inválido.", width="500", height="483", class="w-screenshot" %} <figcaption class="w-figcaption">Validação embutida básica pelo navegador.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Captura de tela de um formulário de login no Chrome na área de trabalho mostrando o prompt do navegador e o foco para um valor de e-mail inválido.", width="500", height="483" %} <figcaption>Validação embutida básica pelo navegador.</figcaption></figure>
 
 Valide inline e forneça feedback ao usuário à medida que ele insere os dados, em vez de fornecer uma lista de erros ao clicar no botão de envio. Se você precisar validar os dados em seu servidor após o envio do formulário, liste todos os problemas encontrados e destaque claramente todos os campos do formulário com valores inválidos, além de exibir uma mensagem integrada ao lado de cada campo problemático explicando o que precisa ser corrigido. Verifique os logs do servidor e os dados analíticos em busca de erros comuns. Talvez seja necessário reprojetar seu formulário.
 
@@ -227,7 +227,7 @@ Acima de tudo, os usuários estão mais propensos a abandonar formulários que p
 
 Para uma loja online, a maneira mais simples de reduzir o atrito com formulários é tornar o pagamento como convidado como padrão. Não force os usuários a criar uma conta antes de fazer uma compra. Não permitir o pagamento como convidado é citado como um dos principais motivos para o abandono do carrinho de compras.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Motivos para abandono do carrinho de compras durante a finalização da compra.", width="800", height="503", class="w-screenshot" %} <figcaption class="w-figcaption">De <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Motivos para abandono do carrinho de compras durante a finalização da compra.", width="800", height="503" %} <figcaption>De <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption></figure>
 
 Você pode oferecer inscrição na conta após a finalização da compra. Nesse ponto, você já tem a maioria dos dados de que precisa para configurar uma conta, portanto, a criação da conta deve ser rápida e fácil para o usuário.
 
@@ -237,19 +237,19 @@ Você pode oferecer inscrição na conta após a finalização da compra. Nesse 
 
 Você pode tornar o processo de checkout menos complexo mostrando o progresso e deixando claro o que precisa ser feito a seguir. O vídeo abaixo mostra como o varejista [johnlewis.com do](https://www.johnlewis.com) Reino Unido consegue isso.
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption class="w-figcaption">Mostre o progresso do checkout.</figcaption></figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption>Mostre o progresso do checkout.</figcaption></figure>
 
 Você tem que manter o ímpeto! Para cada etapa do pagamento, use títulos de página e valores de botão descritivos que deixem claro o que precisa ser feito naquele instante e qual é a próxima etapa de checkout.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Dê aos botões de formulário nomes significativos que mostrem o que vem a seguir.</figcaption></figure>
+  <figcaption>Dê aos botões de formulário nomes significativos que mostrem o que vem a seguir.</figcaption></figure>
 
 Use o `enterkeyhint` nas entradas do formulário para definir o rótulo da tecla enter do teclado móvel. Por exemplo, use `enterkeyhint="previous"` e `enterkeyhint="next"` em um formulário de várias páginas, `enterkeyhint="done"` para a entrada final no formulário e `enterkeyhint="search"` para uma entrada de pesquisa.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Duas capturas de tela de um formulário de endereço no Android mostrando como o atributo de entrada enterkeyhint altera o ícone do botão de tecla Enter.", width="800", height="684", class="w-screenshot" %} <figcaption class="w-figcaption">Botões de tecla Enter no Android: 'próximo' e 'concluído'.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Duas capturas de tela de um formulário de endereço no Android mostrando como o atributo de entrada enterkeyhint altera o ícone do botão de tecla Enter.", width="800", height="684" %} <figcaption>Botões de tecla Enter no Android: 'próximo' e 'concluído'.</figcaption></figure>
 
 O atributo `enterkeyhint` [é compatível com Android e iOS](https://caniuse.com/mdn-html_global_attributes_enterkeyhint). Você pode descobrir mais no [enterkeyhint explainer](https://github.com/dtapuska/enterkeyhint).
 
@@ -261,15 +261,15 @@ Torne mais fácil para os usuários irem e voltarem no processo de finalização
 
 Limite os pontos de saída potenciais, removendo confusão visual e distrações, como promoções de produtos. Muitos varejistas de sucesso removem até mesmo a navegação e a pesquisa do checkout.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Duas capturas de tela no celular mostrando o progresso no checkout do johnlewis.com. Pesquisa, navegação e outras distrações são removidas.", width="800", height="683", class="w-screenshot" %} <figcaption class="w-figcaption">Pesquisa, navegação e outras distrações removidas do checkout.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Duas capturas de tela no celular mostrando o progresso no checkout do johnlewis.com. Pesquisa, navegação e outras distrações são removidas.", width="800", height="683" %} <figcaption>Pesquisa, navegação e outras distrações removidas do checkout.</figcaption></figure>
 
 Mantenha a jornada no foco. Este não é o momento de apresentar tentações para os usuários fazerem outra coisa!
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Captura de tela da página de finalização de compra no celular, mostrando uma promoção de ETIQUETAS GRATUITAS que distrai.", width="350", height="735", class="w-screenshot" %} <figcaption class="w-figcaption">Não distraia os clientes quando estão concluindo a compra.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Captura de tela da página de finalização de compra no celular, mostrando uma promoção de ETIQUETAS GRATUITAS que distrai.", width="350", height="735" %} <figcaption>Não distraia os clientes quando estão concluindo a compra.</figcaption></figure>
 
 Para usuários recorrentes, você pode simplificar ainda mais o fluxo de checkout, ocultando dados que eles não precisam ver. Por exemplo: exiba o endereço de entrega em texto simples (não em um formulário) e permita que os usuários o alterem através de um link.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Captura de tela da seção 'Revisar pedido' da página de finalização da compra, mostrando texto sem formatação, com links para alterar o endereço de entrega, forma de pagamento e endereço de cobrança, que não são exibidos.", width="450", height="219", class="w-screenshot" %} <figcaption class="w-figcaption">Oculte dados que os clientes não precisam ver.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Captura de tela da seção 'Revisar pedido' da página de finalização da compra, mostrando texto sem formatação, com links para alterar o endereço de entrega, forma de pagamento e endereço de cobrança, que não são exibidos.", width="450", height="219" %} <figcaption>Oculte dados que os clientes não precisam ver.</figcaption></figure>
 
 ## Facilite a inserção de nome e endereço {: #address-forms}
 
@@ -325,11 +325,11 @@ Para a validação, evite usar expressões regulares que correspondam apenas a c
 
 {% endCompare %}
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Correspondência de letras Unicode comparada à correspondência de letras apenas latinas.</figcaption></figure>
+  <figcaption>Correspondência de letras Unicode comparada à correspondência de letras apenas latinas.</figcaption></figure>
 
 {% Aside %} Você pode descobrir mais sobre [internacionalização e localização](#internationalization-localization) abaixo, mas certifique-se de que seus formulários funcionem com nomes em todas as regiões onde você tem usuários. Por exemplo, para nomes japoneses, você deve considerar ter um campo para nomes fonéticos. Isso ajuda a equipe de suporte ao cliente a dizer o nome do cliente ao telefone. {% endAside %}
 
@@ -412,19 +412,19 @@ Alguns sites usam um serviço para pesquisar endereços com base no código post
 
 A sugestão de endereço de código postal não funciona para todos os países e, em algumas regiões, os códigos postais podem incluir um grande número de endereços potenciais.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">CEPs ou códigos postais podem incluir muitos endereços!</figcaption></figure>
+  <figcaption>CEPs ou códigos postais podem incluir muitos endereços!</figcaption></figure>
 
 É difícil para os usuários selecionar a partir de uma longa lista de endereços, especialmente no celular se estiverem com pressa ou estressados. Pode ser mais fácil e menos sujeito a erros permitir que os usuários aproveitem o preenchimento automático e insiram seus endereços completos preenchidos com um único toque ou clique.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Uma única entrada de nome permite a entrada de endereço com um toque (um clique).</figcaption></figure>
+  <figcaption>Uma única entrada de nome permite a entrada de endereço com um toque (um clique).</figcaption></figure>
 
 ## Simplifique os formulários de pagamento {: #general-guidelines}
 
@@ -447,13 +447,13 @@ Isso permite que os navegadores ajudem os usuários armazenando com segurança o
 
 Se não forem projetados corretamente, os [elementos personalizados](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) podem interromper o fluxo de pagamento interrompendo o preenchimento automático e não funcionar em navegadores mais antigos. Se todos os outros detalhes do cartão de pagamento estiverem disponíveis no preenchimento automático, mas um usuário for obrigado a encontrar seu cartão físico de pagamento para procurar uma data de validade porque o preenchimento automático não funcionou para um elemento personalizado, você provavelmente perderá uma venda. Considere usar elementos HTML padrão em vez disso e estilize-os de acordo.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Captura de tela do formulário de pagamento mostrando elementos personalizados para a data de validade do cartão que interrompem o preenchimento automático.", width="800", height="916" %} <figcaption class="w-figcaption">O preenchimento automático preencheu todos os campos, exceto a data de validade!</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Captura de tela do formulário de pagamento mostrando elementos personalizados para a data de validade do cartão que interrompem o preenchimento automático.", width="800", height="916" %} <figcaption>O preenchimento automático preencheu todos os campos, exceto a data de validade!</figcaption></figure>
 
 ### Use uma única entrada para cartão de pagamento e números de telefone {: #single-number-input}
 
 Para cartões de pagamento e números de telefone, use uma única entrada: não divida o número em partes. Isso facilitar para os usuários inserirem dados, torna a validação mais simples e permite que os navegadores sejam preenchidos automaticamente. Considere fazer o mesmo para outros dados numéricos, como PIN e códigos bancários.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Captura de tela do formulário de pagamento mostrando um campo de cartão de crédito dividido em quatro elementos de entrada.", width="800", height="833" %} <figcaption class="w-figcaption">Não use várias entradas para um número de cartão de crédito.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Captura de tela do formulário de pagamento mostrando um campo de cartão de crédito dividido em quatro elementos de entrada.", width="800", height="833" %} <figcaption>Não use várias entradas para um número de cartão de crédito.</figcaption></figure>
 
 ### Valide com atenção {: #validate}
 
@@ -471,7 +471,7 @@ Permita que os usuários incluam espaços ao inserir um novo número de cartão 
 
 É particularmente importante testar o endereço e os formulários de pagamento nas plataformas mais comuns para seus usuários, uma vez que a funcionalidade e a aparência do elemento do formulário podem variar, e as diferenças no tamanho da janela de visualização podem levar a um posicionamento problemático. O BrowserStack permite [o teste gratuito para projetos de código aberto](https://www.browserstack.com/open-source) em uma variedade de dispositivos e navegadores.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Capturas de tela de um formulário de pagamento, payment-form.glitch.me, no iPhone 7 e 11. O botão Concluir pagamento é mostrado no iPhone 11, mas não no 7", width="800", height="707" %} <figcaption class="w-figcaption">A mesma página no iPhone 7 e no iPhone 11. <br> Reduza o preenchimento para janelas de visualização móveis menores para garantir que o botão <strong>Concluir pagamento</strong> não esteja oculto.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Capturas de tela de um formulário de pagamento, payment-form.glitch.me, no iPhone 7 e 11. O botão Concluir pagamento é mostrado no iPhone 11, mas não no 7", width="800", height="707" %} <figcaption>A mesma página no iPhone 7 e no iPhone 11. <br> Reduza o preenchimento para janelas de visualização móveis menores para garantir que o botão <strong>Concluir pagamento</strong> não esteja oculto.</figcaption></figure>
 
 ## Implemente análises e RUM {: #analytics-rum}
 

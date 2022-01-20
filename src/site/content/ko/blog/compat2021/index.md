@@ -56,8 +56,8 @@ Google은 다른 브라우저 공급업체 및 업계 파트너와 협력하여 
 [CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout)는 [웹에서 널리 사용](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)되며 개발자에게는 여전히 몇 가지 주요 과제가 있습니다. 예를 들어 [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123)과 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)는 `auto-height` 플렉스 컨테이너에 문제가 있어 이미지 크기가 잘못 조정됩니다.
 
 <div class="switcher">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="체스판의 확대 사진입니다.", width="800", height="400" %}<figcaption class="w-figcaption" style="margin-top: auto"> 버그로 인해 이미지 크기가 잘못되었습니다.</figcaption></figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="체스판", width="800",height="800" %}<figcaption class="w-figcaption" style="margin-top: auto"> 올바른 크기의 이미지입니다.<br> <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi</a>의 사진.</figcaption></figure>
+    <figure style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="체스판의 확대 사진입니다.", width="800", height="400" %}<figcaption style="margin-top: auto"> 버그로 인해 이미지 크기가 잘못되었습니다.</figcaption></figure>
+    <figure style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="체스판", width="800",height="800" %}<figcaption style="margin-top: auto"> 올바른 크기의 이미지입니다.<br> <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi</a>의 사진.</figcaption></figure>
 </div>
 
 [Igalia의 flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/) 블로그 게시물은 더 많은 예를 통해 이러한 문제에 대해 자세히 설명합니다.
@@ -72,7 +72,7 @@ Google은 다른 브라우저 공급업체 및 업계 파트너와 협력하여 
 
 [CSS 그리드](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)는 최신 웹 레이아웃을 위한 핵심 빌딩 블록으로, 많은 이전 기술과 해결 방법을 대체합니다. 채택이 증가함에 따라 브라우저 간의 차이가 그것을 피할 이유가 되지 않도록 견고해야 합니다. 부족한 영역 중 하나는 Gecko에서는 지원되지만 [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=759665) 또는 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=204580)에서는 지원되지 않는 그리드 레이아웃을 애니메이션하는 기능입니다. 지원되면 다음과 같은 효과가 가능합니다.
 
-<figure class="w-figure">{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4", height="400", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption class="w-figcaption"> <a href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen Hui Jing</a>의 애니메이션 체스 데모.</figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4", height="400", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption> <a href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen Hui Jing</a>의 애니메이션 체스 데모.</figcaption></figure>
 
 #### 우선순위가 높은 이유
 
@@ -87,9 +87,9 @@ Google은 다른 브라우저 공급업체 및 업계 파트너와 협력하여 
 [고정 위치 지정을](https://developer.mozilla.org/docs/Web/CSS/position#sticky_positioning) 사용하면 콘텐츠가 뷰포트 가장자리에 고정될 수 있으며 일반적으로 뷰포트 상단에 항상 표시되는 헤더에 사용됩니다. 모든 브라우저에서 지원되지만 의도한 대로 작동하지 않는 일반적인 사용 사례가 있습니다. 예를 들어 [고정 테이블 헤더](https://bugs.chromium.org/p/chromium/issues/detail?id=702927)는 Chromium에서 지원되지 않으며 이제는 [플래그 뒤에서 지원](https://bugs.chromium.org/p/chromium/issues/detail?id=958381) 되지만 결과는 브라우저 간에 일관되지 않습니다.
 
 <div class="switcher">
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}<figcaption class="w-figcaption"> "TablesNG"가 있는 Chromium</figcaption></figure>
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %}<figcaption class="w-figcaption"> Gecko</figcaption></figure>
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %}<figcaption class="w-figcaption"> WebKit</figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}<figcaption> "TablesNG"가 있는 Chromium</figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %}<figcaption> Gecko</figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %}<figcaption> WebKit</figcaption></figure>
 </div>
 
 Rob Flack의 <a href="https://output.jsbin.com/xunosud">고정 테이블 헤더 데모</a>를 확인하세요.
@@ -126,7 +126,7 @@ Rob Flack의 <a href="https://output.jsbin.com/xunosud">고정 테이블 헤더 
 
 [CSS 변환](https://developer.mozilla.org/docs/Web/CSS/transform)은 수년 동안 모든 브라우저에서 지원되었으며 웹에서 널리 사용됩니다. 그러나 특히 애니메이션 및 3D 변환과 같이 브라우저 간에 동일하게 작동하지 않는 영역이 여전히 많이 남아 있습니다. 예를 들어 카드 뒤집기 효과는 브라우저 간에 매우 일관성이 없을 수 있습니다.
 
-<figure class="w-figure">{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4", class="w-screenshot", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption class="w-figcaption"> Chromium(왼쪽), Gecko(가운데) 및 WebKit(오른쪽)의 카드 뒤집기 효과. <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">버그 코멘트</a>에서 David Baron의 데모.</figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption> Chromium(왼쪽), Gecko(가운데) 및 WebKit(오른쪽)의 카드 뒤집기 효과. <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">버그 코멘트</a>에서 David Baron의 데모.</figcaption></figure>
 
 #### 우선순위가 높은 이유
 
@@ -140,7 +140,7 @@ Rob Flack의 <a href="https://output.jsbin.com/xunosud">고정 테이블 헤더 
 
 여기 web.dev에 진행 상황에 대한 정기적인 업데이트가 있으며 [Compat 2021 대시보드](https://wpt.fyi/compat2021)에서 각 중점 영역에 대한 진행 상황을 확인할 수도 있습니다.
 
-<figure class="w-figure"><p data-md-type="paragraph"><a href="https://wpt.fyi/compat2021">{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", alt="Compat 2021 대시보드", width="800", height="942", class="w-screenshot" %}</a></p>
-<figcaption class="w-figcaption">Compat 2021 대시보드(2021년 11월 16일에 찍은 스크린샷).</figcaption></figure>
+<figure><p data-md-type="paragraph"><a href="https://wpt.fyi/compat2021">{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", alt="Compat 2021 대시보드", width="800", height="942" %}</a></p>
+<figcaption>Compat 2021 대시보드(2021년 11월 16일에 찍은 스크린샷).</figcaption></figure>
 
 안정성과 상호 운용성을 개선하기 위한 브라우저 공급업체 간의 이러한 공동 노력이 웹에서 놀라운 것을 구축하는 데 도움이 되기를 바랍니다!

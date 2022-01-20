@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 올바른 크기의 이미지 제공
 authors:
   - katiehempenius

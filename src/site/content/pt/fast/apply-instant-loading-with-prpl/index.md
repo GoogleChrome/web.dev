@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplique carregamento instantâneo com o padrão PRPL
 authors:
   - houssein
@@ -33,7 +33,7 @@ Para mais informações, veja [Descubra oportunidades de desempenho com o Lighth
 
 O Lighthouse mostra a seguinte auditoria com falha se um determinado recurso for processado e baixado posteriormente:
 
-{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Auditoria Lighthouse: Pré-carregue requisições importantes", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Auditoria Lighthouse: Pré-carregue requisições importantes", width="745", height="97" %}
 
 O [**preload**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content) (pré-carregamento) é uma solicitação de busca declarativa que informa ao navegador para solicitar um recurso o mais rápido possível. Pré-carregue recursos críticos adicionando uma tag `<link>` com `rel="preload"` no cabeçalho do seu documento HTML:
 
@@ -49,7 +49,7 @@ Para mais informações sobre o pré-carregamento de recursos críticos, veja o 
 
 O Lighthouse avisa se há recursos que atrasam o [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (primeira renderização), o momento em que seu site renderiza pixels na tela:
 
-{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Auditoria Lighthouse: Elimine recursos bloqueantes", width="800", height="111", class="w-screenshot" %}
+{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Auditoria Lighthouse: Elimine recursos bloqueantes", width="800", height="111" %}
 
 Para melhorar a métrica First Paint, o Lighthouse recomenda integrar na página o JavaScript crítico e adiar o resto usando [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), bem como também integrar o CSS crítico usado acima da dobra. Isso tudo melhora o desempenho, eliminando viagens de ida e volta ao servidor para buscar ativos de renderização bloqueantes. No entanto, o código inline é mais difícil de manter do ponto de vista do desenvolvimento e não pode ser armazenado em cache separadamente pelo navegador.
 
@@ -60,7 +60,7 @@ Não existe uma única solução perfeita para reduzir a métrica First Paint na
 - [Otimize a entrega de CSS](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 - [O que é renderização do lado do servidor?](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
-<figure class="w-figure w-figure--inline-right">   {% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="Solicitações/respostas com o service worker", width="800", height="1224" %}</figure>
+<figure data-float="right">   {% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="Solicitações/respostas com o service worker", width="800", height="1224" %}</figure>
 
 ## Faça cache prévio de ativos
 
@@ -72,11 +72,11 @@ Use uma biblioteca de terceiros para simplificar o processo de geração de um s
 
 O Lighthouse exibirá uma auditoria com falha se você enviar um excesso de dados pela rede.
 
-{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Auditoria Lighthouse: Tem payloads de rede muito grandes", width="800", height="99", class="w-screenshot" %}
+{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Auditoria Lighthouse: Tem payloads de rede muito grandes", width="800", height="99" %}
 
 Isto inclui todos os tipos de ativos, mas grandes payloads de JavaScript são especialmente caras devido ao tempo que o navegador leva para processá-las e compilá-las. O Lighthouse também fornece um aviso sobre isto, quando apropriado.
 
-{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Auditoria Lighthouse: Tempo de inicialização do JavaScript", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Auditoria Lighthouse: Tempo de inicialização do JavaScript", width="797", height="100" %}
 
 Para enviar uma payload de JavaScript menor que contenha apenas o código necessário quando um usuário carrega inicialmente sua aplicação, divida o pacote inteiro e os blocos de [carregamento lazy](/reduce-javascript-payloads-with-code-splitting) sob demanda.
 
@@ -84,7 +84,7 @@ Uma vez que você conseguiu dividir seu pacote, pré-carregue os pedaços que s�
 
 Além de dividir e carregar diferentes blocos de JavaScript sob demanda, o Lighthouse também fornece uma auditoria para carregar de forma lazy imagens não críticas.
 
-{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Auditoria Lighthouse: Adie a carga de imagens offscreen", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Auditoria Lighthouse: Adie a carga de imagens offscreen", width="800", height="90" %}
 
 Se você carrega muitas imagens em sua página da web, adie todas as que estiverem abaixo da dobra ou fora da janela de visualização do dispositivo quando uma página for carregada (veja [Usar lazysizes para carregar imagens de forma lazy](/use-lazysizes-to-lazyload-images)).
 

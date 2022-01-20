@@ -30,11 +30,11 @@ Google ChromeでHTTPSのページにアクセスすると、ブラウザは、�
 
 [パッシブ混在コンテンツ](https://passive-mixed-content.glitch.me/)の例では、次のような警告が表示されます。ブラウザは、`https` URLでコンテンツを見つけることができれば、それを自動的に更新してからメッセージを表示します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="混在コンテンツが検出、更新されたときに Chrom DevToolsで表示される警告", width="800", height="294", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="混在コンテンツが検出、更新されたときに Chrom DevToolsで表示される警告", width="800", height="294" %}</figure>
 
 [アクティブな混在コンテンツ](https://active-mixed-content.glitch.me/)はブロックされ、以下のような警告が表示されます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="アクティブな混在コンテンツがブロックされたときにChrome DevToolsに表示される警告", width="800", height="304", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="アクティブな混在コンテンツがブロックされたときにChrome DevToolsに表示される警告", width="800", height="304" %}</figure>
 
 サイトの`http://` URLについて、こうした警告が見つかった場合は、サイトのソースで修正する必要があります。こうしたURLをそれぞれが見つかったページと一緒にリストアップしておけば、修正するときに便利です。
 

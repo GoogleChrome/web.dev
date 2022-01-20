@@ -36,9 +36,9 @@ Trust Token APIを使用すると、ユーザーを識別したり、2つのID�
 
 [デモ](https://trust-token-demo.glitch.me)でAPIを試して、ChromeDevToolsの**ネットワーク**タブと**アプリケーション**タブで[トークンを調べることができます。](https://developers.google.com/web/updates/2021/01/devtools#trust-token)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Chrome DevToolsネットワークタブの信頼トークンを表示するスクリーンショット.", width="800", height="584" %} <figcaption class="w-figcaption">ChromeDevToolsの<b>ネットワーク</b>タブの信頼トークンNetwork tab.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Chrome DevToolsネットワークタブの信頼トークンを表示するスクリーンショット.", width="800", height="584" %} <figcaption>ChromeDevToolsの<b>ネットワーク</b>タブの信頼トークンNetwork tab.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Chrome DevToolsアプリケーションタブにTrust Tokenを表示するスクリーンショット.", width="800", height="584" %} <figcaption class="w-figcaption">ChromeDevTools<b>アプリケーション</b>のタブのTrust Token</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Chrome DevToolsアプリケーションタブにTrust Tokenを表示するスクリーンショット.", width="800", height="584" %} <figcaption>ChromeDevTools<b>アプリケーション</b>のタブのTrust Token</figcaption></figure>
 
 {% Aside %}プライバシーサンドボックスは、サードパーティのCookieや他の追跡メカニズムを使用せずにサードパーティのユースケースを満たすための一連の提案です。すべての提案の概要については[、プライバシーサンドボックス](/digging-into-the-privacy-sandbox)を掘り下げるを参照してください。
 

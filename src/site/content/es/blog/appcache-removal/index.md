@@ -121,7 +121,7 @@ Si bien la prueba de origen "inversa" comienza oficialmente con Chrome 84, puede
 
 Una vez que haya agregado un token a su manifiesto de AppCache, visite `about://appcache-internals` para confirmar que su instancia local de Chrome (versión 84 o posterior) ha asociado correctamente el token de prueba de origen con las entradas en caché de su manifiesto. Si se reconoce su prueba de origen, debería ver un campo con `Token Expires: Tue Apr 06 2021...` en esa página, asociado con su manifiesto:
 
-<figure>{% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="Interfaz about://appcache-internals mostrando un token reconocido.", width="550", height="203", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="Interfaz about://appcache-internals mostrando un token reconocido.", width="550", height="203" %}</figure>
 
 ## Prueba antes de la eliminación
 

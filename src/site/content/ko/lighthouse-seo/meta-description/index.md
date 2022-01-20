@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 문서에 메타 설명이 없음
 description: |2-
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 메타 설명이 없는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="문서에 메타 데이터가 없음을 보여주는 Lighthouse 감사", width="800", height="74", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="문서에 메타 데이터가 없음을 보여주는 Lighthouse 감사", width="800", height="74" %}</figure>
 
 다음과 같은 경우 감사가 실패합니다.
 

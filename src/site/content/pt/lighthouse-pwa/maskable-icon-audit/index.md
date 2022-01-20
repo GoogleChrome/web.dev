@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O manifesto não tem um ícone mascarável
 description: |2
 
@@ -15,7 +15,7 @@ Os [ícones mascaráveis](/maskable-icon/) são um novo formato de ícone que ga
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm suporte para ícones mascaráveis:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="A auditoria do ícone mascarável na IU do relatório Lighthouse.", width="800", height="110", class="w-screenshot" %}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="A auditoria do ícone mascarável na IU do relatório Lighthouse.", width="800", height="110" %}</figure>
 
 Para passar na auditoria:
 

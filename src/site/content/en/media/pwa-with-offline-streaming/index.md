@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: PWA with offline streaming
 authors:
   - dero

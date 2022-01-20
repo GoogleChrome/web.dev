@@ -18,7 +18,7 @@ Para ver una demostración funcional de algunos de estos patrones, consulte [Tra
 
 ### Al instalar: como dependencia {: #on-install-as-dependency}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="Al instalar, como dependencia", width="800", height="498" %}<figcaption class="w-figcaption"> Al instalar: como dependencia.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="Al instalar, como dependencia", width="800", height="498" %}<figcaption> Al instalar: como dependencia.</figcaption></figure>
 
 Service Worker ofrece un evento `install`. Puede utilizarlo para preparar cosas, como aquellas que deben estar listas antes de manejar otros eventos. Mientras esto ocurre, cualquier versión anterior de su Service Worker continúa ejecutando y sirviendo páginas, por lo que las cosas que haga aquí no interrumpirán nada de eso.
 
@@ -48,7 +48,7 @@ En [trained-to-thrill](https://jakearchibald.github.io/trained-to-thrill/), uso 
 
 ### Al instalar, no como dependencia {: #on-install-not}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="Al instalar, no como dependencia", width="800", height="500" %}<figcaption class="w-figcaption"> Al instalar, no como dependencia.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="Al instalar, no como dependencia", width="800", height="500" %}<figcaption> Al instalar, no como dependencia.</figcaption></figure>
 
 Esto es similar a lo anterior, pero no retrasará la finalización de la instalación y no hará que la instalación falle si el almacenamiento en caché falla.
 
@@ -77,7 +77,7 @@ El Service Worker puede finalizar mientras se descargan los niveles 11 a 20, ya 
 
 ### Al activar {: #on-activate}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="Al activar", width="800", height="500" %}<figcaption class="w-figcaption"> Al activar.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="Al activar", width="800", height="500" %}<figcaption> Al activar.</figcaption></figure>
 
 **Ideal para:** limpieza y migración.
 
@@ -109,7 +109,7 @@ En [trained-to-thrill](https://jakearchibald.github.io/trained-to-thrill/), lo u
 
 ### Cuando el usuario interactúa {: #on-user-interaction}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="Durante la interacción del usuario", width="800", height="222" %}<figcaption class="w-figcaption"> Durante la interacción del usuario.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="Durante la interacción del usuario", width="800", height="222" %}<figcaption> Durante la interacción del usuario.</figcaption></figure>
 
 **Ideal para:** cuando no se puede desconectar todo el sitio y usted decide permitir que el usuario seleccione el contenido que quiere que esté disponible sin conexión. Por ejemplo, un video en algo como YouTube, un artículo en Wikipedia, una galería particular en Flickr.
 
@@ -138,7 +138,7 @@ La [API de cachés](https://developer.mozilla.org/docs/Web/API/Cache) está disp
 
 ### Cuando la red responde {: #on-network-response}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="Cuando la red responde", width="800", height="390" %}<figcaption class="w-figcaption"> Cuando la red responde.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="Cuando la red responde", width="800", height="390" %}<figcaption> Cuando la red responde.</figcaption></figure>
 
 **Ideal para:** recursos que actualizan con frecuencia como la bandeja de entrada de un usuario o el contenido de un artículo. También es útil para contenido no esencial como avatares, pero es necesario usarlo cuidado.
 
@@ -170,7 +170,7 @@ En [trained-to-thrill](https://jakearchibald.github.io/trained-to-thrill/), lo u
 
 ### Obsoleto-mientras-revalida {: #stale-while-revalidate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Obsoleto mientras revalida", width ="800", height="388" %}<figcaption class="w-figcaption"> Obsoleto mientras revalida.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Obsoleto mientras revalida", width ="800", height="388" %}<figcaption> Obsoleto mientras revalida.</figcaption></figure>
 
 **Ideal para:** recursos que actualizan con frecuencia donde tener la última versión no es esencial. Los avatares pueden caer en esta categoría.
 
@@ -196,7 +196,7 @@ Esto es muy similar al [stale-while-revalidate](https://www.mnot.net/blog/2007/1
 
 ### Al recibir un mensaje push {: #on-push-message }
 
-<figure class="w-figure">{% Img src= "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="Al recibir un mensaje push.", width="800", height="498" %}<figcaption class="w-figcaption"> Al recibir un mensaje push.</figcaption></figure>
+<figure>{% Img src= "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="Al recibir un mensaje push.", width="800", height="498" %}<figcaption> Al recibir un mensaje push.</figcaption></figure>
 
 [Push API](https://developers.google.com/web/fundamentals/push-notifications) es otra característica construida sobre Service Worker. Esto permite activar al Service Worker en respuesta a un mensaje del servicio de mensajería del sistema operativo. Esto sucede incluso cuando el usuario no tiene una pestaña abierta en su sitio. Solo activa al Service Worker. Solicite permiso para hacer esto desde una página y se enviará una solicitud al usuario.
 
@@ -242,7 +242,7 @@ self.addEventListener('notificationclick', function (event) {
 
 ### Al sincronizar en segundo plano {: #on-background-sync }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="Al sincronizar en segundo plano.", width="800", height="219" %}<figcaption class="w-figcaption"> Al sincronizar en segundo plano.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="Al sincronizar en segundo plano.", width="800", height="219" %}<figcaption> Al sincronizar en segundo plano.</figcaption></figure>
 
 [La sincronización en segundo plano](https://developers.google.com/web/updates/2015/12/background-sync) es otra característica construida sobre Service Worker. Le permite solicitar la sincronización de datos en una única instancia o en un intervalo (extremadamente heurístico). Esto sucede incluso cuando el usuario no tiene una pestaña abierta en su sitio. Solo activa al Service Worker. Solicite permiso para hacer esto desde una página y se le enviará una solicitud al usuario.
 
@@ -302,7 +302,7 @@ No importa cuantas cosas almacene en caché, el Service Worker no la usará a me
 
 ### Solo desde caché {: #cache-only }
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Solo caché", width="800", height="272" %}<figcaption class="w-figcaption"> Solo caché.</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Solo caché", width="800", height="272" %}<figcaption> Solo caché.</figcaption></figure>
 
 **Ideal para:** cualquier cosa que considere estática para una "versión" particular de su sitio. Debe haberlos almacenado en caché en el evento de instalación, por lo que puede confiar en que estarán allí.
 
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Solo de la red {: #network-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Solo red", width="800", height="272" %}<figcaption class="w-figcaption"> Solo red.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Solo red", width="800", height="272" %}<figcaption> Solo red.</figcaption></figure>
 
 **Ideal para:** cosas que no tienen equivalente sin conexión, como pings analíticos, solicitudes que no utilizan GET.
 
@@ -334,7 +334,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Caché primero y luego de vuelta a la red {: #cache-falling-back-to-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Caché primero y luego de vuelta a la red.", width="800", height="395" %}<figcaption class="w-figcaption"> Caché primero y luego de vuelta a la red.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Caché primero y luego de vuelta a la red.", width="800", height="395" %}<figcaption> Caché primero y luego de vuelta a la red.</figcaption></figure>
 
 **Ideal para:** construir primero sin conexión. En tales casos, así es como manejará la mayoría de las solicitudes. Otros patrones serán excepciones basadas en la solicitud entrante.
 
@@ -352,7 +352,7 @@ Esto le brinda el comportamiento de "solo desde caché" para las cosas en la cac
 
 ### Carrera de red de caché {: #cache-and-network-race }
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt = "Carrera de red y caché", width="800", height="427" %}<figcaption class="w-figcaption"> Carrera de red y caché.</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt = "Carrera de red y caché", width="800", height="427" %}<figcaption> Carrera de red y caché.</figcaption></figure>
 
 **Ideal para:** activos pequeños en los que busca rendimiento en dispositivos con acceso lento al disco.
 
@@ -380,7 +380,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Red primero, luego vuelta a la caché {: #network-fallling-back-to-cache }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Red primero, luego vuelta a la caché", width="800", height="388" %}<figcaption class="w-figcaption"> Red primero, luego vuelta a la caché.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Red primero, luego vuelta a la caché", width="800", height="388" %}<figcaption> Red primero, luego vuelta a la caché.</figcaption></figure>
 
 **Ideal para:** una solución rápida para recursos que se actualizan con frecuencia, fuera de la "versión" del sitio. Por ejemplo, artículos, avatares, líneas de tiempo de redes sociales y tablas de clasificación de juegos.
 
@@ -400,7 +400,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Caché luego red {: #cache-then-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Caché luego red", width="800", height="478" %}<figcaption class="w-figcaption"> Caché luego red.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Caché luego red", width="800", height="478" %}<figcaption> Caché luego red.</figcaption></figure>
 
 **Ideal para:** contenido que se actualiza con frecuencia. Por ejemplo, artículos, líneas de tiempo de redes sociales y tablas de clasificación de juegos.
 
@@ -469,7 +469,7 @@ En [trained-to-thrill](https://jakearchibald.github.io/trained-to-thrill/) pude 
 
 ### Método de respaldo genérico {: #generic-fallback }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Método de respaldo genérico.", width="800", height="389" %}<figcaption class="w-figcaption"> Método de respaldo genérico.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Método de respaldo genérico.", width="800", height="389" %}<figcaption> Método de respaldo genérico.</figcaption></figure>
 
 Si no puede proporcionar algún contenido de la caché o la red, es posible que deba proporcionar un respaldo genérico.
 
@@ -502,7 +502,7 @@ Si su página está publicando un correo electrónico, el Service Worker puede r
 
 ### Plantillas del lado del Service Worker {: #Service Worker-side-templating }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Plantillas del lado del Service Worker.", width="800", height="463" %}<figcaption class="w-figcaption"> Plantillas del lado del Service Worker.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Plantillas del lado del Service Worker.", width="800", height="463" %}<figcaption> Plantillas del lado del Service Worker.</figcaption></figure>
 
 **Ideal para:** páginas que no pueden almacenar la respuesta del servidor en caché.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Escoja el formato de imagen correcto
 authors:
   - ilyagrigorik
@@ -26,7 +26,7 @@ Si alguna vez se encuentra codificando texto en un recurso de imagen, deténgase
 
 Si está seguro de que una imagen es la opción correcta, debe seleccionar cuidadosamente el tipo de imagen adecuado para el trabajo.
 
-<figure class="w-figure">{% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="Imágenes de trama e imágenes vectoriales ampliadas", width="585", height="313" %}<figcaption> Imagen vectorial (L) e Imagen de trama (R) ampliadas</figcaption></figure>
+<figure>{% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="Imágenes de trama e imágenes vectoriales ampliadas", width="585", height="313" %}<figcaption> Imagen vectorial (L) e Imagen de trama (R) ampliadas</figcaption></figure>
 
 - [Los gráficos vectoriales](https://en.wikipedia.org/wiki/Vector_graphics) utilizan líneas, puntos y polígonos para representar una imagen.
 - [Los gráficos de trama](https://en.wikipedia.org/wiki/Raster_graphics) (raster images) representan una imagen codificando los valores individuales de cada píxel dentro de una cuadrícula rectangular.
@@ -41,13 +41,13 @@ Las imágenes de trama no tienen las mismas propiedades agradables de ser indepe
 
 Hay dos tipos diferentes de píxeles: píxeles CSS y píxeles del dispositivo. Un solo píxel de CSS puede corresponder directamente a un solo píxel de dispositivo, o puede estar respaldado por múltiples píxeles de dispositivo. ¿Cuál es la finalidad? En resumen, cuantos más píxeles del dispositivo, más refinados serán los detalles del contenido que se muestra en la pantalla.
 
-<figure class="w-figure">{% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="Tres imágenes que muestran la diferencia entre los píxeles CSS y los píxeles del dispositivo", width="470", height="205" %}<figcaption class="w-figcaption"> La diferencia entre píxeles CSS y píxeles del dispositivo.</figcaption></figure>
+<figure>{% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="Tres imágenes que muestran la diferencia entre los píxeles CSS y los píxeles del dispositivo", width="470", height="205" %}<figcaption> La diferencia entre píxeles CSS y píxeles del dispositivo.</figcaption></figure>
 
 Las pantallas de alto DPI (HiDPI) producen hermosos resultados, pero hay una compensación obvia: las imágenes requieren más detalles para aprovechar el mayor número de píxeles del dispositivo. La buena noticia es que las imágenes vectoriales son ideales para esta tarea, ya que se pueden renderizar en cualquier resolución con resultados nítidos; es posible que incurra en un mayor costo de procesamiento para renderizar los detalles más finos, pero el activo subyacente es el mismo y es independiente de la resolución.
 
 Por otro lado, las imágenes de trama plantean un desafío mucho mayor porque codifican datos de imagen por píxel. Por lo tanto, cuanto mayor sea el número de píxeles, mayor será la imagen de trama. Como ejemplo, consideremos la diferencia entre un recurso fotográfico que se muestra a 100x100 píxeles (CSS):
 
-<div class="w-table-wrapper"><table>
+<div class="table-wrapper scrollbar"><table>
 <thead>
   <tr>
     <th>Resolución de la pantalla</th>
@@ -85,7 +85,7 @@ Entonces, ¿qué significa esto en la práctica? Las pantallas de alta resoluci�
 
 Además de los diferentes algoritmos de compresión con y sin pérdida de datos, los diferentes formatos de imagen admiten diferentes características, como canales de animación y transparencia (alfa). Como resultado, la elección del "formato correcto" para una imagen específica es una combinación de los resultados visuales deseados y los requisitos funcionales.
 
-<div class="w-table-wrapper"><table>
+<div class="table-wrapper scrollbar"><table>
 <thead>
   <tr>
     <th>Formato</th>

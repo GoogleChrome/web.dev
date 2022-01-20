@@ -21,13 +21,13 @@ tags:
 
 В сгенерированном отчете Lighthouse последовательность выборки ресурсов показана в разделе **Maximum critical path latency (Максимальная задержка критического пути)**.
 
-{% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Веб-шрифты присутствуют в цепочке критических запросов.", width="704", height="198", class="w-screenshot" %}
+{% Img src="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Веб-шрифты присутствуют в цепочке критических запросов.", width="704", height="198" %}
 
 В приведенной выше проверке веб-шрифты являются частью цепочки критических запросов и загружаются последними. [**Цепочка критических запросов**](/critical-request-chains) представляет собой порядок выборки ресурсов браузером. В данном приложении веб-шрифты (Pacfico и Pacifico-Bold) определены с помощью правила [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) и являются последним ресурсом, получаемым браузером в цепочке критических запросов. Обычно веб-шрифты загружаются в отложенном режиме, а это означает, что они не загрузятся, пока не будут загружены критические ресурсы (CSS, JS).
 
 Вот последовательность ресурсов, загружаемых в приложении:
 
-{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Веб-шрифты загружаются в отложенном режиме.", width="583", height="256", class="w-screenshot" %}.
+{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt="Веб-шрифты загружаются в отложенном режиме.", width="583", height="256" %}.
 
 ## Предварительная загрузка веб-шрифтов
 
@@ -48,10 +48,10 @@ tags:
 
 Перезагрузите приложение и снова запустите Lighthouse. Проверьте раздел **Maximum critical path latency (Максимальная задержка критического пути)**.
 
-{% Img src="image/admin/lC85s7XSc8zEXgtwLsFu.png", alt="Веб-шрифт Pacifico-Bold предварительно загружен и удален из цепочки критических запросов", width="645", height="166", class="w-screenshot" %}
+{% Img src="image/admin/lC85s7XSc8zEXgtwLsFu.png", alt="Веб-шрифт Pacifico-Bold предварительно загружен и удален из цепочки критических запросов", width="645", height="166" %}
 
 Обратите внимание, как `Pacifico-Bold.woff2` удаляется из цепочки критических запросов. Он загружается ранее в приложении.
 
-{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="Веб-шрифт Pacifico-Bold предварительно загружен", width="553", height="254", class="w-screenshot" %}
+{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="Веб-шрифт Pacifico-Bold предварительно загружен", width="553", height="254" %}
 
 При предварительной загрузке браузер знает, что ему нужно загрузить этот файл раньше. Важно отметить, что при неправильном использовании предварительная загрузка может нанести вред производительности, делая ненужные запросы к ресурсам, которые не используются.

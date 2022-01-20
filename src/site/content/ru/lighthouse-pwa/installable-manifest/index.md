@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Аудит "Web app manifest does not meet the installability requirements"
 description: |2-
 
@@ -20,7 +20,7 @@ updated: 2019-09-19
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, у которых нет [манифеста веб-приложения](/add-manifest/), отвечающего минимальным требованиям для возможности установки приложения:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Результаты аудита Lighthouse, в которых сказано, что пользователю не удастся установить веб-приложение на начальный экран", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Результаты аудита Lighthouse, в которых сказано, что пользователю не удастся установить веб-приложение на начальный экран", width="800", height="98" %}</figure>
 
 Если в манифесте страницы нет указанных ниже свойств, она не пройдет аудит.
 

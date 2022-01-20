@@ -18,7 +18,7 @@ updated: 2020-09-28
 
 ### 安装时 — 作为依赖项 {: #on-install-as-dependency }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="安装时 - 作为依赖项。", width="800", height="498" %} <figcaption class="w-figcaption">安装时 - 作为依赖项。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="安装时 - 作为依赖项。", width="800", height="498" %} <figcaption>安装时 - 作为依赖项。</figcaption></figure>
 
 服务工作进程提供了 `install` 事件，可以使用该事件来准备必须在处理其他事件前就绪的内容。在执行此操作时，先前版本的服务工作进程仍在运行并提供页面，所以此操作不得干扰其他服务。
 
@@ -48,7 +48,7 @@ self.addEventListener('install', function (event) {
 
 ### 安装时 — 不作为依赖项 {: #on-install-not }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="安装时 - 不作为依赖项。", width="800", height="500" %}<figcaption class="w-figcaption">安装时 - 不作为依赖项。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="安装时 - 不作为依赖项。", width="800", height="500" %}<figcaption>安装时 - 不作为依赖项。</figcaption></figure>
 
 与上面相似，但不会使安装延迟完成，并且缓存失败不会导致安装失败。
 
@@ -77,7 +77,7 @@ self.addEventListener('install', function (event) {
 
 ### 激活时 {: #on-activate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="激活时。", width="800", height="500" %} <figcaption class="w-figcaption">激活时。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="激活时。", width="800", height="500" %} <figcaption>激活时。</figcaption></figure>
 
 **适合：**清理和迁移。
 
@@ -109,7 +109,7 @@ self.addEventListener('activate', function (event) {
 
 ### 用户交互时 {: #on-user-interaction }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="用户交互时。", width="800", height="222" %} <figcaption class="w-figcaption">用户交互时。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="用户交互时。", width="800", height="222" %} <figcaption>用户交互时。</figcaption></figure>
 
 **适合：**当整个网站无法离线使用，并且您选择允许用户选择他们希望离线使用的内容时。例如，YouTube 之类的网站上的视频、Wikipedia 上的文章、Flickr 上的特定图库。
 
@@ -138,7 +138,7 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 
 ### 网络响应时 {: #on-network-response }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="网络响应时。", width="800", height="390" %} <figcaption class="w-figcaption">网络响应时。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="网络响应时。", width="800", height="390" %} <figcaption>网络响应时。</figcaption></figure>
 
 **适合：**频繁更新的资源，例如用户的收件箱或文章内容。也可用于不重要内容，例如头像，但需要小心。
 
@@ -170,7 +170,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Stale-while-revalidate {: #stale-while-revalidate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Stale-while-revalidate。", width="800", height="388" %} <figcaption class="w-figcaption">Stale-while-revalidate。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Stale-while-revalidate。", width="800", height="388" %} <figcaption>Stale-while-revalidate。</figcaption></figure>
 
 **适合：**频繁更新，但不需要最新版本的资源。头像可以属于这类资源。
 
@@ -196,7 +196,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 推送消息时 {: #on-push-message }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="推送消息时。", width="800", height="498" %} <figcaption class="w-figcaption">推送消息时。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="推送消息时。", width="800", height="498" %} <figcaption>推送消息时。</figcaption></figure>
 
 [Push API](https://developers.google.com/web/fundamentals/push-notifications) 是构建在服务工作进程之上的另一个功能。它允许唤醒服务工作进程以响应来自操作系统消息服务的消息。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
 
@@ -242,7 +242,7 @@ self.addEventListener('notificationclick', function (event) {
 
 ### 后台同步时 {: #on-background-sync }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="后台同步时。", width="800", height="219" %} <figcaption class="w-figcaption">后台同步时。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="后台同步时。", width="800", height="219" %} <figcaption>后台同步时。</figcaption></figure>
 
 [后台同步](https://developers.google.com/web/updates/2015/12/background-sync)是构建在服务工作进程之上的另一个功能。它允许一次性或以一个（极具启发性的）时间间隔请求后台数据同步。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
 
@@ -302,7 +302,7 @@ navigator.storage.persist()
 
 ### 仅缓存 {: #cache-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="仅缓存。", width="800", height="272" %} <figcaption class="w-figcaption">仅缓存。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="仅缓存。", width="800", height="272" %} <figcaption>仅缓存。</figcaption></figure>
 
 **适合：**您认为对于您网站的特定“版本”为静态的任何内容。您应该已在 install 事件中缓存这些内容，因此您可以依赖它们。
 
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 仅网络 {: #network-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="仅网络。", width="800", height="272" %}<figcaption class="w-figcaption">仅网络。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="仅网络。", width="800", height="272" %}<figcaption>仅网络。</figcaption></figure>
 
 **适合：**没有离线等效项的内容，例如分析 ping、非 GET 请求。
 
@@ -334,7 +334,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 缓存优先，网络为回退方案 {: #cache-falling-back-to-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="缓存优先，网络为回退方案。", width="800", height="395" %} <figcaption class="w-figcaption">缓存优先，网络为回退方案。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="缓存优先，网络为回退方案。", width="800", height="395" %} <figcaption>缓存优先，网络为回退方案。</figcaption></figure>
 
 **适合：**构建离线优先内容。在这种情况下，这就是您处理大多数请求的方式。其他模式将是例外，具体取决于传入请求。
 
@@ -352,7 +352,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 缓存和网络竞赛 {: #cache-and-network-race }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="缓存和网络竞争。", width="800", height="427" %}<figcaption class="w-figcaption">缓存和网络竞赛。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="缓存和网络竞争。", width="800", height="427" %}<figcaption>缓存和网络竞赛。</figcaption></figure>
 
 **适合：**在磁盘访问速度较慢的设备上追求性能的小型资产。
 
@@ -380,7 +380,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 网络优先，缓存为回退方案 {: #network-falling-back-to-cache }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="网络优先，缓存为回退方案。", width="800", height="388" %}<figcaption class="w-figcaption">网络优先，缓存为回退方案。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="网络优先，缓存为回退方案。", width="800", height="388" %}<figcaption>网络优先，缓存为回退方案。</figcaption></figure>
 
 **适合：**快速修正在网站“版本”外部经常更新的资源。例如文章、头像、社交媒体时间线和游戏排行榜。
 
@@ -400,7 +400,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 先缓存，再网络 {: #cache-then-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="先缓存，再网络。", width="800", height="478" %} <figcaption class="w-figcaption">先缓存，再网络。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="先缓存，再网络。", width="800", height="478" %} <figcaption>先缓存，再网络。</figcaption></figure>
 
 **适合：**频繁更新的内容。例如文章、社交媒体时间线和游戏排行榜。
 
@@ -469,7 +469,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 通用回退 {: #generic-fallback }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="通用回退。", width="800", height="389" %} <figcaption class="w-figcaption">通用回退。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="通用回退。", width="800", height="389" %} <figcaption>通用回退。</figcaption></figure>
 
 如果无法从缓存和/或网络提供内容，则可能需要提供通用回退。
 
@@ -502,7 +502,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 服务工作进程端模板 {: #Service Worker-side-templating }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="服务工作进程端模板。", width="800", height="463" %} <figcaption class="w-figcaption">服务工作进程端模板。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="服务工作进程端模板。", width="800", height="463" %} <figcaption>服务工作进程端模板。</figcaption></figure>
 
 **适合：**无法缓存服务器响应的页面。
 

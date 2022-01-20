@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Intercambios firmados (SXG)
 subhead: Un SXG es un mecanismo de entrega que permite autenticar el origen de un recurso independientemente de cómo haya sido entregado.
 authors:
@@ -149,11 +149,11 @@ Tenga en cuenta que la subexpresión `(,|$)` coincide con los encabezados donde 
 
 Los intercambios firmados se pueden identificar buscando `signed-exchange` en la columna **Tipo** del panel **Red** en Chrome DevTools.
 
-<figure class="w-figure">{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Captura de pantalla que muestra una solicitud SXG dentro del panel 'Red' en DevTools", width="696", height="201"%} <figcaption>El panel de <b>red</b> en DevTools</figcaption></figure>
+<figure>{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Captura de pantalla que muestra una solicitud SXG dentro del panel 'Red' en DevTools", width="696", height="201"%} <figcaption>El panel de <b>red</b> en DevTools</figcaption></figure>
 
 La pestaña **Vista previa** proporciona más información sobre el contenido de un SXG.
 
-<figure class="w-figure">{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="Captura de pantalla de la pestaña 'Vista previa' para un SXG", width="800", height="561"%} <figcaption>La pestaña <b>Vista previa</b> en DevTools</figcaption></figure>
+<figure>{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="Captura de pantalla de la pestaña 'Vista previa' para un SXG", width="800", height="561"%} <figcaption>La pestaña <b>Vista previa</b> en DevTools</figcaption></figure>
 
 Para ver un SXG de primera mano, visite esta [demostración](https://signed-exchange-testing.dev/) en [uno de los navegadores compatibles con SXG](#browser-compatibility)
 

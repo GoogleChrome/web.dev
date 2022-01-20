@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: A guide to enable cross-origin isolation
 authors:
   - agektmr
@@ -72,8 +72,8 @@ allows developers to inspect websites.
    contact the developer to fix the issue. If it's implemented as part of your website, follow
    the guide below to enable cross-origin isolation.
 
-<figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163", class="w-screenshot" %}
+<figure>
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163" %}
    <figcaption>
       DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation.
    </figcaption>

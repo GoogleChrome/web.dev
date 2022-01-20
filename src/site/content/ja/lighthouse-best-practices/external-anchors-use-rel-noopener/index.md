@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 安全でないクロスオリジン宛先へのリンク
 description: |2-
 
@@ -23,7 +23,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、安全でないクロスオリジン宛先へのリンクにフラグを設定します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="安全でないクロスオリジン宛先へリンクを示すLighthouse監査", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="安全でないクロスオリジン宛先へリンクを示すLighthouse監査", width="800", height="213" %}</figure>
 
 Lighthouseは、次のプロセスを使用して、リンクを安全でないものとして識別します。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: PRPLパターンを使用して即時読み込みを適用する
 authors:
   - houssein
@@ -33,7 +33,7 @@ Lighthouseを実行して、PRPL手法に沿った改善の機会を特定しま
 
 Lighthouseは、特定のリソースが解析されて遅れて取得された場合、次の失敗した監査を示します。
 
-{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: 主要な要求の監査を事前読み込み", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: 主要な要求の監査を事前読み込み", width="745", height="97" %}
 
 [**事前読み込み**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)は宣言型の取得要求であり、ブラウザにできるだけ早くリソースを要求するように命令します。 HTMLドキュメントの先頭に`<link>`タグと`rel="preload"`を追加して、重要なリソースを事前に読み込みます。
 
@@ -49,7 +49,7 @@ Lighthouseは、特定のリソースが解析されて遅れて取得された�
 
 サイトが画面にピクセルをレンダリングする瞬間に、[**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)を遅らせるリソースがある場合、Lighthouseによって警告が表示されます。
 
-{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="レンダリングをブロックするリソースの監査を排除する", width="800", height="111", class="w-screenshot" %}
+{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="レンダリングをブロックするリソースの監査を排除する", width="800", height="111" %}
 
 First Paintを改善するために、Lighthouseは、重要なJavaScriptをインライン化し、[`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)を使用してその他の項目を遅延すること、および最も重要なCSSをインライン化することをお勧めします。これにより、レンダリングをブロックするアセットを取得するためのサーバーとの間の往復処理が排除され、パフォーマンスが向上します。ただし、開発の観点からは、インラインコードはメンテナンスが難しく、ブラウザで個別にキャッシュに保存できません。
 
@@ -60,7 +60,7 @@ First Paintを改善する別のアプローチは、ページの初期HTML**を
 - [CSS配信を最適化する](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 - [サーバーサイドレンダリングとは何か](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="サービスワーカーとの間の要求/応答", width="800", height="1224" %}</figure>
+<figure data-float="right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="サービスワーカーとの間の要求/応答", width="800", height="1224" %}</figure>
 
 ## アセットを事前にキャッシュする
 
@@ -72,11 +72,11 @@ First Paintを改善する別のアプローチは、ページの初期HTML**を
 
 ネットワーク経由で送信するデータが多すぎると、Lighthouseは失敗した監査を表示します。
 
-{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse: 膨大なネットワークペイロード監査があります", width="800", height="99", class="w-screenshot" %}
+{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse: 膨大なネットワークペイロード監査があります", width="800", height="99" %}
 
 これにはすべてのアセットタイプが含まれますが、大きなJavaScriptペイロードは、ブラウザで解析およびコンパイルするのに時間がかかるため、特にコストがかかります。Lighthouseは、必要に応じてこれに対する警告も提供します。
 
-{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse: JavaScript起動時間監査", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse: JavaScript起動時間監査", width="797", height="100" %}
 
 ユーザーが最初にアプリケーションを読み込むときに必要なコードのみを含む小さなJavaScriptペイロードを送信するには、バンドル全体を分割し、オンデマンドでチャンクの[遅延読み込み](/reduce-javascript-payloads-with-code-splitting)を実行します。
 
@@ -84,7 +84,7 @@ First Paintを改善する別のアプローチは、ページの初期HTML**を
 
 Lighthouseは、オンデマンドでさまざまなJavaScriptチャンクを分割して読み込むだけでなく、重要ではない画像を遅延読み込みするための監査も提供します。
 
-{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: オフスクリーン画像の遅延監査", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: オフスクリーン画像の遅延監査", width="800", height="90" %}
 
 Webページで多数の画像を読み込む場合は、ページが読み込まれるときに、スクロールしなければ見えない位置、またはデバイスのビューポートの外にあるすべての画像を遅延します ([lazysizesを使用した画像の遅延読み込み](/use-lazysizes-to-lazyload-images)を参照)。
 

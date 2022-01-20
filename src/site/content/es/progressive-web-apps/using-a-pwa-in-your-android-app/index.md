@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usando una PWA en su aplicación de Android
 authors:
   - andreban
@@ -60,7 +60,7 @@ La aplicación también debe cumplir con criterios adicionales específicos de A
 
 {% Aside 'caution' %} Cuando su aplicación esté diseñada principalmente para niños menores de 13 años, se aplican [políticas adicionales de Play Family](https://play.google.com/about/families/), que pueden ser incompatibles con el uso de Trusted Web Activity. {% endAside %}
 
-<figure class="w-figure w-figure--center">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="Una captura de pantalla que muestra la puntuación de Lighthouse para AirHorn, con la insignia PWA y una puntuación de rendimiento de 100.", width="800", height="141" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> La insignia de PWA en Lighthouse muestra si su PWA pasa los criterios de instalabilidad.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="Una captura de pantalla que muestra la puntuación de Lighthouse para AirHorn, con la insignia PWA y una puntuación de rendimiento de 100.", width="800", height="141" %}<figcaption> La insignia de PWA en Lighthouse muestra si su PWA pasa los criterios de instalabilidad.</figcaption></figure>
 
 ## Herramientas
 

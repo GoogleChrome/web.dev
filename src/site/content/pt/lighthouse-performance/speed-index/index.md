@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Speed Index
 description: Aprenda sobre a métrica Speed Index do Lighthouse e como otimizá-la.
 date: 2019-05-02
@@ -12,7 +12,7 @@ O Speed Index (índice de velocidade) é uma das seis métricas monitoradas na s
 
 O Lighthouse apresenta a métrica Speed Index em segundos:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ksKnQH9tGEzIXsrVoUHR.png", alt="Uma captura de tela da auditoria do Lighthouse Speed Index", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ksKnQH9tGEzIXsrVoUHR.png", alt="Uma captura de tela da auditoria do Lighthouse Speed Index", width="800", height="588" %}</figure>
 
 ## O que mede o Speed Index
 
@@ -26,7 +26,7 @@ Sua pontuação Speed Index (índice de velocidade) é uma comparação do índi
 
 A tabela abaixo mostra como interpretar sua pontuação Speed Index:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

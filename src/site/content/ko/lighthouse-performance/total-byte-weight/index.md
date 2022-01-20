@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 막대한 네트워크 페이로드 방지
 description: 사용자에게 제공하는 리소스의 전체 파일 크기를 줄여 웹 페이지 로드 시간을 개선하는 방법에 대해 알아봅니다.
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 페이지에서 요청한 모든 리소스의 전체 크기를 [KiB(kibibytes)](https://en.wikipedia.org/wiki/Kibibyte) 단위로 표시합니다. 가장 큰 요청이 먼저 표시됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Lighthouse의 막대한 네트워크 페이로드 방지 감사에 대한 스크린샷", width="800", height="518", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Lighthouse의 막대한 네트워크 페이로드 방지 감사에 대한 스크린샷", width="800", height="518" %}</figure>
 
 [HTTP 아카이브 데이터](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal)를 기반으로 하는 중간 네트워크 페이로드는 1,700~1,900KiB입니다. 가장 높은 페이로드가 표시되도록 지원하기 위해 Lighthouse는 전체 네트워크 요청이 5,000KiB를 초과하는 페이지에 플래그를 지정합니다.
 

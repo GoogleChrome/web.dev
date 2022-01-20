@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Откладывание закадровых изображений
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 В разделе «Возможности» вашего отчета Lighthouse перечислены все закадровые или скрытые изображения на вашей странице, а также потенциальная экономия в [кибибайтах (KiB)](https://en.wikipedia.org/wiki/Kibibyte). Рассмотрите возможность отложенной загрузки этих изображений после завершения загрузки всех критически важных ресурсов, чтобы сократить показатель [Time to Interactive (время до интерактивности)](/interactive):
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="Снимок экрана аудита откладывания закадровых изображений Lighthouse", width="800", height="416", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="Снимок экрана аудита откладывания закадровых изображений Lighthouse", width="800", height="416" %}</figure>
 
 См. также раздел [«Отложенная загрузка закадровых изображений с помощью lazysizes codelab»](/codelab-use-lazysizes-to-lazyload-images).
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Usos de document.write()
 description: Aprenda a acelerar el tiempo de carga de su página con el fin de evitar document.write().
 web_lighthouse:
@@ -27,7 +27,7 @@ data from the network to be reparsed.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las llamadas a `document.write()` que no fueron bloqueadas por Chrome:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="La auditoría de Lighthouse muestra el uso de document.write", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="La auditoría de Lighthouse muestra el uso de document.write", width="800", height="213" %}</figure>
 
 Para los usos más problemáticos, Chrome bloqueará las llamadas a `document.write()` o emitirá una advertencia de la consola sobre ellas, dependiendo de la velocidad de conexión del usuario. En cualquier caso, las llamadas afectadas aparecerán en la consola de DevTools. Consulte el artículo de Google <a href="https://developers.google.com/web/updates/2016/08/removing-document-write" data-md-type="link">Intervención contra `document.write()`</a> para obtener más información.
 

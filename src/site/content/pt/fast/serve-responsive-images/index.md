@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Exiba imagens responsivas
 authors:
   - katiehempenius
@@ -69,7 +69,7 @@ Serviços de imagem como [Thumbor](https://github.com/thumbor/thumbor) (open-sou
 Especifique várias versões da imagem e o navegador escolherá a melhor para usar:
 
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

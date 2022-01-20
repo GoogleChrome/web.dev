@@ -28,31 +28,31 @@ feedback:
 
 2019 年 4 月，Safari 成为第一款[包含](https://bugs.webkit.org/show_bug.cgi?id=167000)整套函数的浏览器，当年晚些时候，Chromium 也在版本 79 中包含了这些函数。这一年，随着 Firefox [75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519) 发布，主要浏览器基本上都已经开始支持 `min()`、`max()` 和 `clamp()`。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246", class="w-screenshot" %}<figcaption class="w-figcaption"> <a href="https://caniuse.com/css-math-functions">Caniuse</a> 支持表格。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246" %}<figcaption> <a href="https://caniuse.com/css-math-functions">Caniuse</a> 支持表格。</figcaption></figure>
 
 ## 用法
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">显示 min() 函数如何根据选项列表及其父项选择值。请<a href="https://codepen.io/una/pen/rNeGNVL">参阅 Codepen 上的演示</a>。</figcaption></figure>
+  <figcaption>显示 min() 函数如何根据选项列表及其父项选择值。请<a href="https://codepen.io/una/pen/rNeGNVL">参阅 Codepen 上的演示</a>。</figcaption></figure>
 
 您可以在任何有意义的 CSS 表达式的右侧使用 `min()`、`max()` 和 `clamp()`。对于 `min()` 和 `max()`，您要提供一个参数值列表，浏览器则会分别确定哪个是最小值以及哪个是最大值。例如，对于：`min(1rem, 50%, 10vw)`，浏览器会计算这些相对单位中哪一个最小，并将该值用作实际值。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">显示 max() 函数如何根据选项列表及其父项选择值。请<a href="https://codepen.io/una/pen/RwaZXqR">参阅 Codepen 上的演示</a>。</figcaption></figure>
+  <figcaption>显示 max() 函数如何根据选项列表及其父项选择值。请<a href="https://codepen.io/una/pen/RwaZXqR">参阅 Codepen 上的演示</a>。</figcaption></figure>
 
 `max()` 函数从逗号分隔的表达式列表中选择最大值。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-demo.mp4">
   </source></video>
-  <figcaption class="w-figcaption">显示 clamp() 函数如何根据选项列表及其父项选择值。请<a href="https://codepen.io/una/pen/bGpoGdJ">参阅 Codepen 上的演示</a>。</figcaption></figure>
+  <figcaption>显示 clamp() 函数如何根据选项列表及其父项选择值。请<a href="https://codepen.io/una/pen/bGpoGdJ">参阅 Codepen 上的演示</a>。</figcaption></figure>
 
 要使用 `clamp()` 输入三个值：最小值、理想值（用于计算的值）和最大值。
 
@@ -82,27 +82,27 @@ p {
 
 这样，浏览器就可以确定段落的宽度。它会将宽度设置为 50%，但如果 50% 的宽度小于 `45ch`，则会选择 `45ch`，反之，如果 50% 的宽度比 `75ch` 更宽，则会选择 `75ch`。在本演示中，卡片的尺寸被限定了：
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">使用 clamp() 函数可限定最小和最大宽度。请<a href="https://codepen.io/una/pen/QWyLxaL">参阅 Codepen 上的演示</a>。</figcaption></figure>
+  <figcaption>使用 clamp() 函数可限定最小和最大宽度。请<a href="https://codepen.io/una/pen/QWyLxaL">参阅 Codepen 上的演示</a>。</figcaption></figure>
 
 只需要使用 `min()` 或 `max()` 函数，您就可以打破这种限制。如果您希望元素使用 `50%` 的宽度，并且不超过 `75ch`（即在较大的屏幕上），则可以这样编写代码：`width: min(75ch, 50%);`。实际上，这是使用 `min()` 函数来设置“最大”大小。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">使用 clamp() 函数来限制最小和最大宽度。</figcaption></figure>
+  <figcaption>使用 clamp() 函数来限制最小和最大宽度。</figcaption></figure>
 
 同样，您也可以使用 `max()` 函数来设定最小尺寸，从而让文本清晰易读。例如：`width: max(45ch, 50%);`。这样，浏览器就会选择 `45ch` 或 `50%` 中较大的值，这意味着元素*至少* 为 `45ch`，否则会更大。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
   </source></video>
-  <figcaption class="w-figcaption">使用 clamp() 函数来限制最小和最大宽度。</figcaption></figure>
+  <figcaption>使用 clamp() 函数来限制最小和最大宽度。</figcaption></figure>
 
 ## 填充管理
 
@@ -114,21 +114,21 @@ footer {
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-padding.mp4">
   </source></video>
-  <figcaption class="w-figcaption">使用 max() 函数为组件设置最小填充。请<a href="https://codepen.io/chriscoyier/pen/qBZqNKa">参阅 Codepen 上的演示</a>。</figcaption></figure>
+  <figcaption>使用 max() 函数为组件设置最小填充。请<a href="https://codepen.io/chriscoyier/pen/qBZqNKa">参阅 Codepen 上的演示</a>。</figcaption></figure>
 
 ## 流畅的排版
 
 为了实现[流畅的排版](https://www.smashingmagazine.com/2016/05/fluid-typography/)，[Mike Riethmeuller](https://twitter.com/mikeriethmuller) 推广了一种技术。该技术使用 `calc()` 函数来设置最小字体大小、最大字体大小，并允许从最小值放大至最大值。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/fliud-type.mp4">
   </source></video>
-  <figcaption class="w-figcaption">使用 clamp() 实现流畅的排版。请<a href="https://codepen.io/una/pen/ExyYXaN">参阅 Codepen 上的演示</a>。</figcaption></figure>
+  <figcaption>使用 clamp() 实现流畅的排版。请<a href="https://codepen.io/una/pen/ExyYXaN">参阅 Codepen 上的演示</a>。</figcaption></figure>
 
 凭借 `clamp()`，您可以更清楚地编写这一段代码。不需要复杂的字符串，浏览器就可以完成这项工作。设置可接受的最小字体大小（例如，标题为 `1.5rem`，最大大小（即 `3rem`）和理想大小为 `5vw`。
 

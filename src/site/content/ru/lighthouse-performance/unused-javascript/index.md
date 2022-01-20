@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Удалите неиспользуемый JavaScript
 description: Узнайте, как пройти проверку Lighthouse «Удаление неиспользуемого JavaScript».
 web_lighthouse:
@@ -16,7 +16,7 @@ date: 2020-07-07
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает каждый файл JavaScript с более чем 20 кибибайтами неиспользуемого кода:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt = "Скриншот проверки.", width = "800", height = "332", class = "w-screenshot"%}<figcaption class="w-figcaption"> Щелкните значение в столбце <b>URL</b>, чтобы открыть исходный код сценария в новой вкладке.</figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt = "Скриншот проверки.", width = "800", height = "332"%}<figcaption> Щелкните значение в столбце <b>URL</b>, чтобы открыть исходный код сценария в новой вкладке.</figcaption></figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

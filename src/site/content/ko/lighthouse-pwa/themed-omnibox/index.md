@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 주소 표시줄의 테마 색상을 설정하지 않습니다.
 description: |2-
 
@@ -20,7 +20,7 @@ updated: 2020-06-17
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 주소 표시줄에 테마를 적용하지 않은 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="주소 표시줄을 표시하는 Lighthouse 감사는 페이지 색상을 테마로 하지 않습니다.", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="주소 표시줄을 표시하는 Lighthouse 감사는 페이지 색상을 테마로 하지 않습니다.", width="800", height="98" %}</figure>
 
 Lighthouse가 페이지의 HTML에서 `theme-color` 메타 태그를, [웹앱 매니페스트](/add-manifest)에서 `theme_color` 속성을 찾지 못하면 감사가 실패합니다.
 

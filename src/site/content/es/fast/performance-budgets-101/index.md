@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Presupuestos para rendimiento 101
 authors:
   - mihajlija
@@ -32,7 +32,7 @@ Ya hemos mencionado algunas cosas que se pueden incluir en un presupuesto de ren
 
 Sin embargo, estos números no le dicen mucho sobre la experiencia del usuario. Dos páginas con la misma cantidad de solicitudes o el mismo peso se pueden procesar de manera diferente según el orden en que se soliciten los recursos. Si un [recurso crítico](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) como una imagen principal o una hoja de estilo en una de las páginas se carga tarde en el proceso, los usuarios esperarán más para ver algo útil y percibirán la página como más lenta. Si en la otra página las partes más importantes se cargan rápidamente, es posible que ni siquiera se den cuenta si el resto de la página no lo hace.
 
-<figure class="w-figure">{% Img src ="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagen del procesamiento progresivo de la página basada en la ruta crítica", width="611", height="300" %}</figure>
+<figure>{% Img src ="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagen del procesamiento progresivo de la página basada en la ruta crítica", width="611", height="300" %}</figure>
 
 Por eso es importante realizar un seguimiento de otro tipo de métrica.
 

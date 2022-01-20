@@ -20,7 +20,7 @@ feedback:
 
 &lt;style&gt; #video-demo { max-height: 600px; } &lt;/style&gt;
 
-<figure class="w-figure w-figure--inline-right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, class="w-screenshot", linkTo=true, id="video-demo", playsinline=true %}</figure>
+<figure data-float="right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, linkTo=true, id="video-demo", playsinline=true %}</figure>
 
 （几乎）自从出现以来，在移动设备上访问用户的联系人一直是 iOS/Android 应用的功能之一。这是我从 Web 开发人员那里听到的最常见的功能请求之一，并且通常是他们构建 iOS/Android 应用的关键原因。
 
@@ -132,7 +132,7 @@ Chrome 团队在[控制对强大 Web 平台功能的访问](https://chromium.goo
 
 对用户联系人的访问是通过选取器进行的，并且只能在[安全的](https://w3c.github.io/webappsec-secure-contexts/)顶级浏览上下文中通过用户手势进行调用。这可确保网站不会在页面加载时显示选取器，或在没有任何上下文的情况下随机显示选取器。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="屏幕截图，用户可以选择分享哪些属性。", width="800", height="639", class="w-screenshot" %}<figcaption class="w-figcaption">用户可以选择不分享某些属性。在此屏幕截图中，用户已取消选中“电话号码”按钮。即使该网站要求提供电话号码，也不会与该网站分享。</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="屏幕截图，用户可以选择分享哪些属性。", width="800", height="639" %}<figcaption>用户可以选择不分享某些属性。在此屏幕截图中，用户已取消选中“电话号码”按钮。即使该网站要求提供电话号码，也不会与该网站分享。</figcaption></figure>
 
 不提供批量选择所有联系人的选项，因此鼓励用户仅选择他们需要为该特定网站分享的联系人。用户还可以通过切换选取器顶部的属性按钮来控制与站点分享哪些属性。
 
@@ -141,11 +141,11 @@ Chrome 团队在[控制对强大 Web 平台功能的访问](https://chromium.goo
 为清楚地表明共享的联系人详细信息，选取器会始终显示联系人的姓名和图标，以及网站请求的任何属性。例如，如果网站请求`name`、`email`和`tel` ，那么所有三个属性都将显示在选取器中。或者，如果网站仅请求`tel`，那么选取器将仅显示名称和电话号码。
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="请求所有属性的网站选取器的屏幕截图。", width="800", height="639", class="w-screenshot" %}<figcaption class="w-figcaption">选取器，网站请求<code>name</code>、<code>email</code>和<code>tel</code>，选择了一位联系人。</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="仅请求电话号码的网站选取器的屏幕截图。", width="800", height="639", class="w-screenshot" %}<figcaption class="w-figcaption">选择器，网站仅请求<code>tel</code>，选择了一位联系人。</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="请求所有属性的网站选取器的屏幕截图。", width="800", height="639" %}<figcaption>选取器，网站请求<code>name</code>、<code>email</code>和<code>tel</code>，选择了一位联系人。</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="仅请求电话号码的网站选取器的屏幕截图。", width="800", height="639" %}<figcaption>选择器，网站仅请求<code>tel</code>，选择了一位联系人。</figcaption></figure>
 </div>
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="长按联系人时选取器的屏幕截图。", width="800", height="389",class="w-screenshot "%}<figcaption class="w-figcaption">长按联系人的结果。</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="长按联系人时选取器的屏幕截图。", width="800", height="389" %}<figcaption>长按联系人的结果。</figcaption></figure>
 
 如果联系人被选中，长按联系人将显示将共享的所有信息。（请参阅 Cheshire Cat 联系人图片。）
 

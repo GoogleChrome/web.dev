@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cookie 通知的最佳实践
 subhead: |2-
 
@@ -139,13 +139,13 @@ clickAndWait    id=cookieButton
 
 要使用 Cookie 集运行 WebPageTest，请转到**高级**选项卡并将 Cookie 标头添加到**自定义标头**字段中：
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="显示 WebPageTest 中的“自定义标题”字段截屏", width="800", height="181", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="显示 WebPageTest 中的“自定义标题”字段截屏", width="800", height="181" %}
 
 #### 更改测试位置
 
 要更改 WebPageTest 使用的测试位置，请单击**高级测试**选项卡上的**测试位置**下拉菜单。
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="WebPageTest 中的'测试位置'下拉菜单截屏", width="800", height="267", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="WebPageTest 中的'测试位置'下拉菜单截屏", width="800", height="267" %}
 
 ### 使用 Lighthouse 测试 Cookie 通知
 
@@ -155,7 +155,7 @@ clickAndWait    id=cookieButton
 
 从 DevTools 运行 Lighthouse 时不会清除 Cookie。但是，默认情况下会清除其他类型的存储。使用 **Lighthouse** 设置面板中的**清除存储**选项可以更改此行为。
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Lighthouse“清除存储”选项的截屏", width="800", height="304", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Lighthouse“清除存储”选项的截屏", width="800", height="304" %}
 
 #### CLI
 

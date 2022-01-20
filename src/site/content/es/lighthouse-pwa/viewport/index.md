@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No tiene una etiqueta `<meta name ="viewport">` con `width` o` initial-scale`
 description: |2-
 
@@ -18,7 +18,7 @@ La configuración de la metaetiqueta de la ventana gráfica te permite controlar
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas sin una metaetiqueta de ventana gráfica:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="La auditoría de Lighthouse muestra que a la página le falta una ventana gráfica", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="La auditoría de Lighthouse muestra que a la página le falta una ventana gráfica", width="800", height="76" %}</figure>
 
 Una página no pasa la auditoría a menos que se cumplan todas las siguientes condiciones:
 

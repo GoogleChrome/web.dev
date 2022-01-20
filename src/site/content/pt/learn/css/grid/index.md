@@ -111,7 +111,7 @@ As ferramentas do desenvolvedor do Chrome para a grade podem ajudá-lo a entende
 
 Abra a [demonstração](https://codepen.io/web-dot-dev/full/NWdbrzr) no Chrome. Inspecione o elemento com o plano de fundo cinza, que possui um ID de `container`. Destaque a grade selecionando o selo dela no DOM, ao lado do elemento `.container`. Na guia "Layout", selecione **Display Line Numbers** (Exibir números das linhas) na lista suspensa para ver os números na grade.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg", alt="Conforme descrito nas legendas e instruções", width="800", height="449" %}<br>Uma grade destacada no Chrome DevTools mostrando números de linha, células e trilhas.</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg", alt="Conforme descrito nas legendas e instruções", width="800", height="449" %}<br>Uma grade destacada no Chrome DevTools mostrando números de linha, células e trilhas.</figure>
 
 ### Palavras-chave de dimensionamento intrínseco
 

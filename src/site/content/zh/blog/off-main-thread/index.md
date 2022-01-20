@@ -132,21 +132,21 @@ Google Chrome 团队开发了 [PROXX](/load-faster-like-proxx/) 作为满足[渐
 
 OMT 对 PROXX 的功能手机性能产生了有趣的影响。在非 OMT 版本中，用户与其交互后 UI 会冻结 6 秒。没有反馈，用户必须等待整整六秒钟才能做其他事情。
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">PROXX 的<strong>非 OMT </strong>版本中的 UI 响应时间。</figcaption></figure>
+ <figcaption>PROXX 的<strong>非 OMT </strong>版本中的 UI 响应时间。</figcaption></figure>
 
 在 OMT 版本中，游戏需要 *12* 秒才能完成 UI 更新。虽然这看起来像是一种性能损失，但它实际上会导致对用户的反馈增加。速度变慢是因为该应用比非 OMT 版本传送更多的帧，后者根本不传送任何帧。因此，用户知道正在发生的事情，可以在 UI 更新期间继续玩游戏，从而使游戏感觉更好。
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">PROXX 的 <strong>OMT</strong> 版本中的 UI 响应时间。</figcaption></figure>
+ <figcaption>PROXX 的 <strong>OMT</strong> 版本中的 UI 响应时间。</figcaption></figure>
 
 这是一个有意识的权衡：我们在不惩罚高端设备用户的情况下，为受限设备的用户提供*感觉*更好的体验。
 

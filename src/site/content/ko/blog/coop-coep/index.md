@@ -176,21 +176,21 @@ Cross-Origin-Opener-Policy: same-origin
 
 이미지와 같이 화면에 렌더링되는 리소스의 경우 요청이 차단되고 페이지에 누락된 이미지가 표시되기 때문에 COEP 문제를 감지하기가 상당히 쉽습니다. 그러나 스크립트나 스타일과 같이 시각적 영향이 반드시 필요하지 않은 리소스의 경우 COEP 문제가 눈에 띄지 않을 수 있습니다. 이를 위해 DevTools 네트워크 패널을 사용하십시오. COEP에 문제가 있는 경우 **상태** 열에 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)`를 볼 수 있습니다.
 
-<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="네트워크 패널의 상태 열에 나타난 COEP 문제", width="800", height="444", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="네트워크 패널의 상태 열에 나타난 COEP 문제", width="800", height="444" %}</figure>
 
 그런 다음 항목을 클릭하여 자세한 내용을 볼 수 있습니다.
 
-<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="COEP 문제에 대한 세부정보는 네트워크 패널에서 네트워크 리소스를 클릭하면 헤더 탭에 표시됩니다.", width="800", height=" 241", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="COEP 문제에 대한 세부정보는 네트워크 패널에서 네트워크 리소스를 클릭하면 헤더 탭에 표시됩니다.", width="800", height=" 241" %}</figure>
 
 **응용 프로그램** 패널을 통해 iframe 및 팝업 창의 상태를 확인할 수도 있습니다. 왼쪽의 "프레임" 섹션으로 이동하고 "상단"을 확장하여 리소스 구조의 분석을 확인합니다.
 
 <span id="devtools-coep-iframe">'SharedArrayBuffer' 사용 가능 여부 등 iframe의 상태를 확인할 수 있습니다.</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe 검사기", width="800", height="480", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe 검사기", width="800", height="480" %}</figure>
 
 <span id="devtools-coop">또한 교차 출처 격리 여부와 같은 팝업 창의 상태를 확인할 수 있습니다.</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools 팝업 창 검사기", width="800", height="480", class="w-screenshot w-screenshot--fill" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools 팝업 창 검사기", width="800", height="480" %}</figure>
 
 ### 보고 API를 사용하여 문제 관찰
 

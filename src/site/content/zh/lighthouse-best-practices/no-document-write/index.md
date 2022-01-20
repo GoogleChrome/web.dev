@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 document.write()
 description: 了解如何通过避免使用 document.write() 来加快页面加载速度。
 web_lighthouse:
@@ -27,7 +27,7 @@ data from the network to be reparsed.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 对未被 Chrome 阻止的 `document.write()` 的调用：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="显示 document.write 使用的 Lighthouse 审核", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="显示 document.write 使用的 Lighthouse 审核", width="800", height="213" %}</figure>
 
 对于最容易产生问题的用途，Chrome 将阻止对 `document.write()` 的调用或发出相关的控制台警告，具体取决于用户的连接速度。无论采用哪种方式，受影响的调用都会显示在 DevTools 控制台中。有关详细信息，请参阅 Google 的<a href="https://developers.google.com/web/updates/2016/08/removing-document-write" data-md-type="link">干预 `document.write()`</a>。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지 CDN을 사용하여 이미지 최적화
 authors:
   - katiehempenius
@@ -23,7 +23,7 @@ tags:
 
 이미지 CDN은 이미지 변환, 최적화 및 전달을 전문으로 합니다. 사이트에서 사용되는 이미지에 액세스하고 조작하기 위한 API로 간주할 수도 있습니다. 이미지 CDN에서 로드된 이미지의 경우 이미지 URL은 로드할 이미지뿐만 아니라 크기, 형식 및 품질과 같은 매개변수도 나타냅니다. 이를 통해 다양한 사용 사례에 대한 이미지 변형을 쉽게 만들 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="이미지 CDN과 클라이언트 간의 요청/응답 흐름을 표시합니다. 크기 및 형식과 같은 매개변수는 동일한 이미지의 변형을 요청하는 데 사용됩니다.", width="800", height="408", class="w-스크린샷" %}<figcaption class="w-figcaption"> 변환의 예 이미지 CDN은 이미지 URL의 매개변수를 기반으로 수행할 수 있습니다.</figcaption></figure>
+<figure>{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="이미지 CDN과 클라이언트 간의 요청/응답 흐름을 표시합니다. 크기 및 형식과 같은 매개변수는 동일한 이미지의 변형을 요청하는 데 사용됩니다.", width="800", height="408" %}<figcaption> 변환의 예 이미지 CDN은 이미지 URL의 매개변수를 기반으로 수행할 수 있습니다.</figcaption></figure>
 
 이미지 CDN은 필요에 따라 새 버전의 이미지를 생성한다는 점에서 빌드 시 이미지 최적화 스크립트와 다릅니다. 결과적으로 CDN은 일반적으로 빌드 스크립트보다 각 개별 클라이언트에 대해 크게 사용자 지정된 이미지를 만드는 데 더 적합합니다.
 
@@ -31,7 +31,7 @@ tags:
 
 이미지 CDN에서 사용하는 이미지 URL은 이미지와 이미지에 적용해야 하는 변환 및 최적화에 대한 중요한 정보를 전달합니다. URL 형식은 이미지 CDN에 따라 다르지만 대략적으로는 모두 유사한 기능을 가지고 있습니다. 가장 일반적인 몇 가지 기능을 살펴보겠습니다.
 
-<figure class="w-figure">{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="이미지 URL은 일반적으로 원본, 이미지, 보안 키 및 변환 구성요소로 구성됩니다.", width="800", height="127" %}</figure>
+<figure>{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="이미지 URL은 일반적으로 원본, 이미지, 보안 키 및 변환 구성요소로 구성됩니다.", width="800", height="127" %}</figure>
 
 ### 기원
 

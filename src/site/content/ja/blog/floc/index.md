@@ -125,7 +125,7 @@ FLoCで、ブラウザは閲覧履歴をFLoCサービスや他の人と**共有�
 4. Webブラウザーは、FLoCサービスから「コホートスペース」を説明するこのデータを取得します。
 5. ユーザーがWウェブを行動すると、ブラウザー[はアルゴリズム](#floc-algorithm)を使用して、自身の閲覧履歴に最も近い「コホートスペース」内の領域を定期的に計算します。
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="FLoCサーバーによって作成された「閲覧履歴スペース」の図。それぞれにコホート番号が付いた複数のセグメントが表示されます。", width="400", height="359" %}<figcaption class="w-figcaption"> FLoCサービスは、「コホートスペース」を数千のセグメントに分割します（ここではごく一部のみを示しています）。</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="FLoCサーバーによって作成された「閲覧履歴スペース」の図。それぞれにコホート番号が付いた複数のセグメントが表示されます。", width="400", height="359" %}<figcaption> FLoCサービスは、「コホートスペース」を数千のセグメントに分割します（ここではごく一部のみを示しています）。</figcaption></figure>
 
 {% Aside %}このプロセスのどの時点でも、ユーザーの閲覧履歴はFLoCサービスまたはサードパーティと共有されません。ブラウザのコホートは、ユーザーのデバイス上のブラウザによって計算されます。 FLoCサービスによってユーザーデータが取得または保存されることはありません。 {% endAside %}
 
@@ -137,7 +137,7 @@ FLoCで、ブラウザは閲覧履歴をFLoCサービスや他の人と**共有�
 
 上記の例では、YoshiとAlexのブラウザのコホートはどちらも1354です。将来、YoshiのブラウザとAlexのブラウザは、関心が変わった場合に別のコホートに移動する可能性があります。以下の例では、Yoshiのブラウザはコホート1101に移動し、Alexのブラウザはコホート1378に移動します。他の人のブラウザは、閲覧の興味が変わると、コホートに出入りします。
 
-<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="FLoCサーバーによって作成された「閲覧履歴スペース」の図は複数のセグメントを表示し、それぞれのコホートを番号付いています。この図はAlexとYoshiユーザーのブラウザが閲覧の興味が時間とともに変化するにつれて、あるコホートから別のコホートに移動することを示します。 ", width="800", height="533" %}<figcaption class="w-figcaption">AlexとYoshiのブラウザコホートは、興味が変わると変わる可能性があります。</figcaption></figure>
+<figure style="text-align: center">{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="FLoCサーバーによって作成された「閲覧履歴スペース」の図は複数のセグメントを表示し、それぞれのコホートを番号付いています。この図はAlexとYoshiユーザーのブラウザが閲覧の興味が時間とともに変化するにつれて、あるコホートから別のコホートに移動することを示します。 ", width="800", height="533" %}<figcaption>AlexとYoshiのブラウザコホートは、興味が変わると変わる可能性があります。</figcaption></figure>
 
 {% Aside %}コホートは、人々のグループではなく、ブラウジングアクティビティのグループを定義します。ブラウザは、アクティビティが変化すると、コホートに出入りします。 {% endAside %}
 

@@ -174,21 +174,21 @@ Cross-Origin-Opener-Policy: same-origin
 
 Для ресурсов, которые отображаются на экране, таких как изображения, довольно легко обнаружить проблемы COEP, поскольку запрос будет заблокирован, а на странице будет указано отсутствующее изображение. Однако для ресурсов, которые не обязательно имеют визуальный эффект, например, сценарии или стили, проблемы COEP могут остаться незамеченными. Для них используйте панель «Сеть» в DevTools. Если есть проблема с COEP, вы должны увидеть `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` в столбце «**Статус**».
 
-<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="Проблемы с COEP в столбце «Статус» на панели «Сеть».", width="800", height="444", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="Проблемы с COEP в столбце «Статус» на панели «Сеть».", width="800", height="444" %}</figure>
 
 Затем вы можете нажать на запись, чтобы увидеть более подробную информацию.
 
-<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Подробная информация о проблеме COEP отображается на вкладке «Заголовки» после щелчка по сетевому ресурсу на панели «Сеть».", width="800", height="241", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Подробная информация о проблеме COEP отображается на вкладке «Заголовки» после щелчка по сетевому ресурсу на панели «Сеть».", width="800", height="241" %}</figure>
 
 Вы также можете определить статус iframe и всплывающих окон через панель «**Приложения**». Перейдите в раздел «Фреймы» слева и разверните «верх», чтобы увидеть разбор структуры ресурсов.
 
 <span id="devtools-coep-iframe">Вы можете проверить статус iframe, например, доступность SharedArrayBuffer и т. д.</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe Inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe Inspector", width="800", height="480" %}</figure>
 
 <span id="devtools-coop">Вы также можете проверить статус всплывающих окон, например, изолированы ли они от разных источников.</span>
 
-<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Инспектор всплывающих окон Chrome DevTools", width="800", height="480", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Инспектор всплывающих окон Chrome DevTools", width="800", height="480" %}</figure>
 
 ### Наблюдение за проблемами с помощью Reporting API
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El manifiesto de la aplicación web no cumple con los requisitos de instalación
 description: |2
 
@@ -20,7 +20,7 @@ Un [manifiesto de aplicación web](/add-manifest/) incluye información clave ne
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no tengan un [manifiesto de aplicación web](/add-manifest/) que cumpla con los requisitos mínimos de instalación:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Auditoría de Lighthouse que muestra que el usuario no puede instalar la aplicación web desde su pantalla de inicio", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Auditoría de Lighthouse que muestra que el usuario no puede instalar la aplicación web desde su pantalla de inicio", width="800", height="98" %}</figure>
 
 Si el manifiesto de una página no incluye las siguientes propiedades, la auditoría fallará:
 

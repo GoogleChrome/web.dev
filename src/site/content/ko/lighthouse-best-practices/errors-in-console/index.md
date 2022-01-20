@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 브라우저 오류가 콘솔에 기록되었습니다
 description: |2
 
@@ -18,7 +18,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 콘솔에 기록된 모든 브라우저 오류에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="콘솔에서 브라우저 오류를 보여주는 Lighthouse 감사", width="800", height="247", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="콘솔에서 브라우저 오류를 보여주는 Lighthouse 감사", width="800", height="247" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
@@ -33,7 +33,7 @@ Chrome DevTools에는 오류 원인을 추적하는 데 도움이 되는 몇 가
 
 예를 들어 이 스크린샷은 두 가지 오류가 있는 페이지를 보여줍니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Chrome DevTools 콘솔의 오류 예", width="800", height="505", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Chrome DevTools 콘솔의 오류 예", width="800", height="505" %}</figure>
 
 위의 예에서 첫 번째 오류는 [`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error) 호출을 통해 웹 개발자로부터 발생합니다. 두 번째 오류는 브라우저에서 발생하며 페이지의 스크립트 중 하나에 사용된 변수가 존재하지 않음을 의미합니다.
 

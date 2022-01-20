@@ -36,7 +36,7 @@ feedback:
 
 До появления вариативных шрифтов каждый стиль реализовывался как отдельный файл шрифта. В случае вариативных шрифтов все стили могут содержаться в одном файле.
 
-<figure>{% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="Образец композиции и список различных стилей семейства Roboto", width="800", height="600" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Слева: образец гарнитур шрифтов Roboto. Справа: именованные стили внутри семейства. </figcaption></figure>
+<figure>{% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="Образец композиции и список различных стилей семейства Roboto", width="800", height="600" %} <figcaption> Слева: образец гарнитур шрифтов Roboto. Справа: именованные стили внутри семейства. </figcaption></figure>
 
 ## Вызовы для дизайнера и разработчика
 
@@ -54,12 +54,12 @@ feedback:
 
 Вариативный шрифт [Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex) имеет три стиля для оси **веса.** В центре находится стиль Regular, а на противоположных концах оси расположены два стиля: более легкий и более тяжелый. Между ними существует 900 экземпляров:
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="Буква «А» с разным весом", width="800", height="218" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> На рисунке выше: иллюстрированная структура оси веса для гарнитуры Roboto. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="Буква «А» с разным весом", width="800", height="218" %} <figcaption> На рисунке выше: иллюстрированная структура оси веса для гарнитуры Roboto. </figcaption></figure>
 
 Разработчик шрифта может предложить набор различных осей. Их можно комбинировать, потому что они используют одни и те же стили по умолчанию. Roboto имеет три стиля для оси Width (Ширина): Regular находится в центре оси, а два стиля, более узкий и более широкий, находятся на каждом ее конце. Сочетание осей ширины и веса предоставляют для стиля Regular огромный диапазон возможных вариантов.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-dance.mp4" type="video/mp4">
   </source></video>
   <figcaption>Roboto Flex в случайных комбинациях ширины и веса</figcaption></figure>
@@ -72,7 +72,7 @@ feedback:
 
 Другие гарнитуры (например, Garamond, Baskerville или Bodoni) имеют несовместимые с интерполяцией контуры глифов Roman и Italic. Например, контуры, которые обычно определяют строчную латинскую букву «n», не соответствуют контурам, используемым для определения курсивной строчной буквы «n». Вместо интерполяции одного контура в другой ось **Italic** переключается с контура Roman на Italic.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="Пример осей веса для гарнитуры Amstelvar", width="800", height="520" %} <figcaption class="w-figcaption"> Контуры «n», шрифт Amstelvar, курсив (Italic) (12 пт, обычный вес, нормальная ширина) и латиница (Roman). Изображение предоставлено Дэвидом Берлоу, шрифтовым дизайнером и типографом в Font Bureau. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="Пример осей веса для гарнитуры Amstelvar", width="800", height="520" %} <figcaption> Контуры «n», шрифт Amstelvar, курсив (Italic) (12 пт, обычный вес, нормальная ширина) и латиница (Roman). Изображение предоставлено Дэвидом Берлоу, шрифтовым дизайнером и типографом в Font Bureau. </figcaption></figure>
 
 Оси, доступные пользователю после переключения на Italic, должны быть такими же, как и для латиницы, так же как и набор символов.
 
@@ -142,14 +142,14 @@ feedback:
 
 ### Анимация
 
-<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4", class="w-screenshot", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption class="w-figcaption"> Гарнитура Zycon, разработанная для анимации Дэвидом Берлоу, шрифтовым дизайнером и типографом в Font Bureau. </figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4", controls=false, autoplay=true, loop=true, muted=true, playsinline=true %} <figcaption> Гарнитура Zycon, разработанная для анимации Дэвидом Берлоу, шрифтовым дизайнером и типографом в Font Bureau. </figcaption></figure>
 
 Благодаря вариативным шрифтам также есть возможность анимировать символы. Выше приведен пример использования различных осей с гарнитурой Zycon. Посмотрите интерактивный [пример анимации на сайте Axis Praxis](https://www.axis-praxis.org/specimens/zycon).
 
 [Anicons](https://typogram.github.io/Anicons) — это первый в мире шрифт с анимированными цветными иконками, основанный на Material Design Icons. Anicons — это эксперимент, в котором сочетаются две передовые технологии шрифтов: вариативные шрифты и цветные шрифты.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
   </source></video>
   <figcaption>Несколько примеров анимации при наведении курсора на цветные иконки шрифта Anicon</figcaption></figure>
@@ -157,7 +157,7 @@ feedback:
 ### Тонкая настройка
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
   </source></video>
   <figcaption>Ширина слов в шрифте Amstelvar выравнивается путем небольшого смещения по оси XTRA в противоположных направлениях</figcaption></figure>
@@ -209,7 +209,7 @@ feedback:
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-weight.mp4" type="video/mp4">
   </source></video>
   <figcaption>Шрифт Roboto Flex меняется по оси Weight (Вес) от минимального до максимального значения.</figcaption></figure>
@@ -227,7 +227,7 @@ feedback:
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-width.mp4" type="video/mp4">
   </source></video>
   <figcaption>Шрифт Roboto Flex меняется по оси Width (Ширина) от минимального до максимального значения.</figcaption></figure>
@@ -253,7 +253,7 @@ i, em, .italic {
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-slant.mp4" type="video/mp4">
   </source></video>
   <figcaption>Шрифт Roboto Flex меняется по оси Slant (Наклон) от минимального до максимального значения.</figcaption></figure>
@@ -262,7 +262,7 @@ i, em, .italic {
 
 Гарнитура может быть очень маленькой (сноска размером 12 пикселей) или очень большой (заголовок размером 80 пикселей). Шрифт может реагировать на эти изменения размера, изменяя форму букв, чтобы лучше соответствовать размеру. При маленьком размере букв лучше обойтись без мелких деталей, в то время как при большом размере лучше использовать более детальные и тонкие штрихи.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="Буква «a» в разных оптических размерах", width="800", height="147" %} <figcaption class="w-figcaption"> Различия в дизайне показаны на примере буквы «а» из шрифта Roboto Flex. Буква взята в разных размерах пикселей и затем масштабирована до одинакового размера. <a href="https://codepen.io/RoelN/pen/PoPvdeV">Попробуйте сами на Codepen</a> </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="Буква «a» в разных оптических размерах", width="800", height="147" %} <figcaption> Различия в дизайне показаны на примере буквы «а» из шрифта Roboto Flex. Буква взята в разных размерах пикселей и затем масштабирована до одинакового размера. <a href="https://codepen.io/RoelN/pen/PoPvdeV">Попробуйте сами на Codepen</a> </figcaption></figure>
 
 Для этой оси было введено новое свойство CSS: `font-optical-sizing`. По умолчанию оно установлено на `auto`, и браузер устанавливает значение оси на основе `font-size`. То есть браузер будет автоматически выбирать лучший оптический размер. Если нужно отключить автоматический выбор, установите для `font-optical-sizing` значение `none`.
 
@@ -282,7 +282,7 @@ i, em, .italic {
 Шрифт Roboto Flex предлагает несколько пользовательских осей, самая важная из которых — Grade (`GRAD`). Ось Grade (Уклон) интересна тем, что она изменяет вес шрифта без изменения ширины, поэтому межбуквенные интервалы не меняются. Меняя шрифт по оси Grade, можно избежать необходимости возиться с изменениями оси Weight, затрагивающими общую ширину, а затем с изменениями оси Width, затрагивающими общий вес.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-grade.mp4" type="video/mp4">
   </source></video>
   <figcaption>Шрифт Roboto Flex меняется по оси Grade от минимального до максимального значения.</figcaption></figure>

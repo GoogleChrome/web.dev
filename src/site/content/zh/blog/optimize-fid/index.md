@@ -24,7 +24,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="好的fid 值为2.5 秒，差的值大于4.0 秒，中间的任何值都需要改进", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="好的fid 值为2.5 秒，差的值大于4.0 秒，中间的任何值都需要改进", width="384", height="96" %}
   </picture>
 
 为了有助于在[实验室](/how-to-measure-speed/#lab-data-vs-field-data)中预测 FID，我们建议您测量[Total Blocking Time 总阻塞时间 (TBT)](/tbt/)。虽然这两项指标的测量内容不同，但 TBT 的改进通常能够带来 FID 的相应改进。
@@ -46,9 +46,9 @@ tags:
 
 [**长任务**](/custom-metrics/#long-tasks-api)是 JavaScript 的执行期，这期间，用户可能会发现您的用户界面没有响应。任何阻塞主线程 50 毫秒或以上的代码都可以被称为长任务。长任务是潜在 JavaScript 膨胀的标志（加载和执行的内容超出用户现在可能需要的范围）。将长任务拆分可以减少您网站上的输入延迟。
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome 开发者工具中的长任务", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption"> Chrome 开发者工具在性能面板中<a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">将长任务可视化</a></figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome 开发者工具中的长任务", width="800", height="132" %}
+  <figcaption> Chrome 开发者工具在性能面板中<a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">将长任务可视化</a></figcaption>
 </figure>
 
 当您采用类似代码分割和分割长任务这样的最佳实践后，FID 应该会得到显著改善。虽然 TBT 不是一项实际指标，但该指标对于查看 Time To Interactive 可交互时间 (TTI) 和 FID 的最终改进进度非常有用。
@@ -66,7 +66,7 @@ tags:
 
 以下是优化某应用程序的第一方脚本加载之前和之后的 TBT 分数。通过移除关键路径上消耗大量资源为非必要组件加载（和执行）的脚本，用户便能够更快地与页面进行交互。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="优化第一方脚本后，灯塔中 TBT 分数的改善。", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="优化第一方脚本后，灯塔中 TBT 分数的改善。", width="800", height="148" %}
 
 ### 数据获取会影响交互准备的许多方面
 
@@ -105,7 +105,7 @@ tags:
 
 Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡能够告诉您网页上有多少未在使用的 JavaScript。
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="代码覆盖率选项卡。", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="代码覆盖率选项卡。", width="800", height="559" %}
 
 要想精简未使用的 JavaScript：
 
@@ -165,7 +165,7 @@ import('module.js').then((module) => {
 
 - [灯塔 6.0](https://developers.google.com/web/tools/lighthouse) 不支持 FID，因为 FID 是一个实际指标。但是，可以用[总阻塞时间](/tbt/) (TBT) 作为代理。能够改进 TBT 的优化也应该能改进实际情况下的 FID。
 
-    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="灯塔 6.0.", width="800", height="309", class="w-screenshot" %}
+    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="灯塔 6.0.", width="800", height="309" %}
 
 - [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 FID 值
 

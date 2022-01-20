@@ -20,7 +20,7 @@ feedback:
 
 <style> #video-demo { max-height: 600px; } </style>
 
-<figure class="w-figure w-figure--inline-right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, class="w-screenshot", linkTo=true, id="video-demo", playsinline=true %}</figure>
+<figure data-float="right">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, linkTo=true, id="video-demo", playsinline=true %}</figure>
 
 モバイルデバイス上のユーザーの連絡先へのアクセスは、従来から（ほぼ）iOS / Android アプリの機能となっています。これは、 Web 開発者から寄せられる最も一般的な機能リクエストの 1 つであり、多くの場合、 iOS/Android アプリを構築する主な理由です。
 
@@ -132,7 +132,7 @@ Chromeチームは、ユーザーコントロール、透明性、人間工学�
 
 ピッカー経由でユーザーの連絡先へアクセスします。または、[セキュア](https://w3c.github.io/webappsec-secure-contexts/)上位レベル閲覧文脈でのみ、ユーザージェスチャを使用して呼び出すことができます。これにより、サイトがページ読み込み時にピッカーを表示できないようにしたり、文脈がないとピッカーをランダムに表示したりすることができなくなります。
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="スクリーンショットでは、ユーザーは共有するプロパティを選択できます。", width="800", height="639", class="w-screenshot" %}<br><figcaption class="w-figcaption">ユーザーは、一部のプロパティを共有しないことを選択できます。このスクリーンショットでは、ユーザーは「電話番号」ボタンをオフにします。 サイトが電話番号を要求しても、サイトと共有されることはありません。</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="スクリーンショットでは、ユーザーは共有するプロパティを選択できます。", width="800", height="639" %}<br><figcaption>ユーザーは、一部のプロパティを共有しないことを選択できます。このスクリーンショットでは、ユーザーは「電話番号」ボタンをオフにします。 サイトが電話番号を要求しても、サイトと共有されることはありません。</figcaption></figure>
 
 すべての連絡先を一括選択するオプションがないため、特定の Web サイトで共有する必要がある連絡先のみを選択することをお勧めします。ユーザーはピッカー上部のプロパティボタンを切り替えることで、サイトで共有するプロパティをコントロールすることもできます。
 
@@ -141,11 +141,11 @@ Chromeチームは、ユーザーコントロール、透明性、人間工学�
 共有されている連絡先の詳細を明確にするために、ピッカーには常に連絡先の名前とアイコン、およびサイトが要求したプロパティが表示されます。例えば、 `name` 、 `email` 、および`tel`をリクエストした場合、3つのプロパティすべてがピッカーに表示されます。または、`tel`のみを要求する場合、ピッカーは名前と電話番号のみを表示します。
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="すべてのプロパティを要求するサイトのピッカーのスクリーンショット。", width="800", height="639", class="w-screenshot" %}<br><figcaption class="w-figcaption"> ピッカー、<code>name</code> 、 <code>email</code> 、 <code>tel</code>をリクエストするサイト、 1 つの連絡先が選択されました。</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="電話番号のみを要求するサイトのピッカーのスクリーンショット。", width="800", height="639", class="w-screenshot" %}<figcaption class="w-figcaption"> ピッカー、<code>tel</code>のみを要求するサイト、 1 つの連絡先が選択されました。</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="すべてのプロパティを要求するサイトのピッカーのスクリーンショット。", width="800", height="639" %}<br><figcaption> ピッカー、<code>name</code> 、 <code>email</code> 、 <code>tel</code>をリクエストするサイト、 1 つの連絡先が選択されました。</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="電話番号のみを要求するサイトのピッカーのスクリーンショット。", width="800", height="639" %}<figcaption> ピッカー、<code>tel</code>のみを要求するサイト、 1 つの連絡先が選択されました。</figcaption></figure>
 </div>
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="連絡先が長く押されたときのピッカーのスクリーンショット。", width="800", height="389",class="w-screenshot" %}<figcaption class="w-figcaption">連絡先を長押しした結果</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="連絡先が長く押されたときのピッカーのスクリーンショット。", width="800", height="389" %}<figcaption>連絡先を長押しした結果</figcaption></figure>
 
 連絡先を長押しすると、その連絡先が選択されている場合に共有されるすべての情報が表示されます。（Cheshire Cat連絡先イメージを参照してください）。
 

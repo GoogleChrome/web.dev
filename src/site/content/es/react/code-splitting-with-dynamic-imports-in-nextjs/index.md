@@ -47,11 +47,11 @@ Para ver cómo Next.js agrupa la aplicación, inspeccione el seguimiento de red 
 
 Cuando carga la página, todo el código necesario, incluyendo el `Puppy.js`, se agrupa en `index.js`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="La pestaña DevTools Network muestra seis archivos JavaScript: index.js, app.js, webpack.js, main.js, 0.js y el archivo dll (biblioteca de vínculos dinámicos).", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="La pestaña DevTools Network muestra seis archivos JavaScript: index.js, app.js, webpack.js, main.js, 0.js y el archivo dll (biblioteca de vínculos dinámicos).", width="800", height="665" %}</figure>
 
 Cuando presiona el botón **Click me**, solo se agrega la solicitud del JPEG del cachorro a la pestaña **Red**:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="Pestaña DevTools Network después de hacer clic en el botón, que muestra los mismos seis archivos JavaScript y una imagen.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="Pestaña DevTools Network después de hacer clic en el botón, que muestra los mismos seis archivos JavaScript y una imagen.", width="800", height="665" %}</figure>
 
 La desventaja de este enfoque es que incluso si los usuarios no hacen clic en el botón para ver el cachorro, tienen que cargar el `Puppy` porque está incluido en `index.js`. En este pequeño ejemplo, eso no es gran cosa, pero en aplicaciones del mundo real a menudo es una gran mejora cargar componentes grandes solo cuando es necesario.
 
@@ -72,11 +72,11 @@ Siga los pasos del primer ejemplo para inspeccionar el rastreo de la red.
 
 Cuando carga la aplicación por primera vez, solo se descarga `index.js`. Esta vez es 0,5 KB más pequeño (pasó de 37,9 KB a 37,4 KB) porque no incluye el código del componente `Puppy`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="DevTools Network muestra los mismos seis archivos JavaScript, excepto que index.js ahora es 0,5 KB más pequeño.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="DevTools Network muestra los mismos seis archivos JavaScript, excepto que index.js ahora es 0,5 KB más pequeño.", width="800", height="665" %}</figure>
 
 El componente `Puppy` ahora está en un fragmento separado, `1.js`, que se carga solo cuando presiona el botón:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="Pestaña DevTools Network después de hacer clic en el botón, que muestra el archivo adicional 1.js y la imagen agregada al final de la lista de archivos.", width="800", height="665" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="Pestaña DevTools Network después de hacer clic en el botón, que muestra el archivo adicional 1.js y la imagen agregada al final de la lista de archivos.", width="800", height="665" %}</figure>
 
 {% Aside %} De forma predeterminada, Next.js nombra estos fragmentos dinámicos *número*.js, donde el *número* comienza desde 1. {% endAside %}
 
@@ -108,7 +108,7 @@ Para ver el indicador de carga en acción, simule una conexión de red lenta en 
 
 Ahora, cuando hace clic en el botón, se tarda un poco en cargar el componente y, mientras tanto, la aplicación muestra el mensaje "Cargando…".
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="Una pantalla oscura con el texto \"Cargando…\".", width="800", height="663" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="Una pantalla oscura con el texto \"Cargando…\".", width="800", height="663" %}</figure>
 
 ## Importaciones dinámicas sin SSR
 

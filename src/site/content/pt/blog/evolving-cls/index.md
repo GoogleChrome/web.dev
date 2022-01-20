@@ -37,12 +37,12 @@ Em nosso [post anterior](/better-layout-shift-metric/), cobrimos [algumas estrat
 
 Para revisar as janelas de sessão, aqui está um exemplo:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Exemplo de janela de sessão.</figcaption></figure>
+  <figcaption>Exemplo de janela de sessão.</figcaption></figure>
 
 No exemplo acima, muitas mudanças de layout ocorrem ao longo do tempo, conforme o usuário visualiza a página. Cada um é representado por uma barra azul. Você notará acima que as barras azuis têm alturas diferentes; aqueles representam a [pontuação](/cls/#layout-shift-score) de cada mudança de layout individual. Uma janela de sessão começa com a primeira mudança de layout e continua a se expandir até que haja uma lacuna sem mudanças de layout. Quando ocorre a próxima mudança de layout, uma nova janela de sessão é iniciada. Como há três lacunas sem mudanças de layout, há três janelas de sessão no exemplo. Semelhante à definição atual de CLS, as pontuações de cada turno são somadas, de modo que a pontuação de cada janela é a soma de suas alterações de layout individuais.
 

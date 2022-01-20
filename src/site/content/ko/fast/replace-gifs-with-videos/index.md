@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 애니메이션 GIF를 비디오로 대체하여 페이지를 더 빠르게 로드
 authors:
   - houssein
@@ -16,7 +16,7 @@ feedback:
 
 Imgur 또는 Gfycat와 같은 서비스에서 애니메이션 GIF를 보고 개발 도구에서 검사해보니 GIF가 실제로 비디오라는 사실을 알게 된 적이 있었나요? 여기에는 그럴 만한 이유가 있습니다. 애니메이션 GIF는 용량이 *정말 클 수 있습니다*.
 
-{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="13.7MB gif를 보여주는 DevTools 네트워크 패널.", width="800", height="155", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="13.7MB gif를 보여주는 DevTools 네트워크 패널.", width="800", height="155" %}
 
 고맙게도 로딩 성능과 관련된 이 영역은 비교적 적은 노력으로 큰 효과를 거둘 수 부분입니다! **대용량 GIF를 동영상으로 변환하면 사용자의 대역폭을 크게 절약할 수 있습니다**.
 
@@ -24,7 +24,7 @@ Imgur 또는 Gfycat와 같은 서비스에서 애니메이션 GIF를 보고 개�
 
 Lighthouse를 사용하여 사이트에서 비디오로 변환할 수 있는 GIF가 있는지 확인하세요. DevTools에서 Audits(감사) 탭을 클릭하고 Performance(성능) 확인란을 선택합니다. 그런 다음 Lighthouse를 실행하고 보고서를 확인합니다. 변환할 수 있는 GIF가 있으면 "애니메이션 콘텐츠에 비디오 형식 사용"이라는 제안이 표시될 것입니다.
 
-{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="애니메이션 콘텐츠에 비디오 형식 사용 Lighthouse 감사 실패.", width="800", height="173", class="w-screenshot" %}
+{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="애니메이션 콘텐츠에 비디오 형식 사용 Lighthouse 감사 실패.", width="800", height="173" %}
 
 ## MPEG 비디오 만들기
 
@@ -56,7 +56,7 @@ ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm
 
 GIF와 비디오 간의 비용 절감 효과는 상당히 클 수 있습니다.
 
-{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="gif의 경우 3.7MB, mp4의 경우 551KB, webm의 경우 341KB를 보여주는 파일 크기 비교.", width="800", height="188", class="w-screenshot" %}
+{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="gif의 경우 3.7MB, mp4의 경우 551KB, webm의 경우 341KB를 보여주는 파일 크기 비교.", width="800", height="188" %}
 
 이 예에서 초기 GIF는 3.7MB인 것에 비해 MP4 버전은 551KB, WebM 버전은 341KB에 불과합니다!
 

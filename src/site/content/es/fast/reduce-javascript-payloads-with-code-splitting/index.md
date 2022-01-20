@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reducir las cargas útiles de JavaScript con la división de código
 authors:
   - houssein
@@ -27,7 +27,7 @@ El envío de grandes cargas útiles de JavaScript impacta significativamente en 
 
 Lighthouse muestra una auditoría como fallida cuando se tarda una cantidad significativa de tiempo en ejecutar todo el JavaScript en una página.
 
-{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="Una auditoría de Lighthouse fallida que muestra que los scripts tardan demasiado en ejecutarse.", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="Una auditoría de Lighthouse fallida que muestra que los scripts tardan demasiado en ejecutarse.", width="797", height="100" %}
 
 Divida el paquete de JavaScript para enviar solo el código necesario para la ruta inicial cuando el usuario carga una aplicación. Esto minimiza la cantidad de script que necesita ser analizado y compilado, resultando en tiempos de carga de página más rápidos.
 

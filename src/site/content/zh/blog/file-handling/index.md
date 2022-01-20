@@ -170,9 +170,9 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 
 [我已经为 Excalidraw](https://excalidraw.com/)（一款卡通风格的绘图应用程序）添加了文件处理支持。要进行测试，您需要先安装 Excalidraw。当您使用它创建一个文件并将其存储在文件系统中时，您可以通过双击打开该文件，也可以单击右键，然后在上下文菜单中选择“Excalidraw”。您可以查看源代码的[实现](https://github.com/excalidraw/excalidraw/search?q=launchqueue&type=code)。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="包含 Excalidraw 文件的 macOS 访达窗口。", width="800", height="422", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">在操作系统的文件资源管理器中双击或右键单击文件。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="包含 Excalidraw 文件的 macOS 访达窗口。", width="800", height="422" %} <figcaption>在操作系统的文件资源管理器中双击或右键单击文件。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="右键单击文件时显示的上下文菜单，其中突出显示了“打开方式...Excalidraw”项目。", width="488", height=" 266", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Excalidraw 是 <code>.excalidraw</code> 文件的默认文件处理程序。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="右键单击文件时显示的上下文菜单，其中突出显示了“打开方式...Excalidraw”项目。", width="488", height=" 266" %} <figcaption> Excalidraw 是 <code>.excalidraw</code> 文件的默认文件处理程序。</figcaption></figure>
 
 ## 安全性
 

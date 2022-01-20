@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 텍스트 압축 활성화
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 텍스트 기반 리소스는 총 네트워크 바이트를 최소화하기 위해 압축과 함께 제공해야 합니다. Lighthouse 보고서의 기회 섹션에는 압축되지 않은 모든 텍스트 기반 리소스가 나열되어 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Lighthouse Enable 텍스트 압축 감사에 대한 스크린샷", width="800", height="271", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Lighthouse Enable 텍스트 압축 감사에 대한 스크린샷", width="800", height="271" %}</figure>
 
 ## Lighthouse가 텍스트 압축을 처리하는 방법
 
@@ -57,7 +57,7 @@ Content-Encoding: br
 2. **헤더** 탭을 클릭합니다.
 3. **응답 헤더** 섹션에서 `content-encoding` 헤더를 확인합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="콘텐츠 인코딩 응답 헤더", width="800", height="571", class="w-screenshot w-screenshot--filled " %}<figcaption class="w-figcaption"> <code>content-encoding</code> 응답 헤더. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="콘텐츠 인코딩 응답 헤더", width="800", height="571" %}<figcaption> <code>content-encoding</code> 응답 헤더. </figcaption></figure>
 
 응답의 압축 및 압축 해제 크기를 비교하려면 다음을 수행합니다.
 

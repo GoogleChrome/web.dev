@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos de título no están en orden descendente secuencial
 description: |2-
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas cuyos encabezados saltan uno o más niveles:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoría de Lighthouse que muestra encabezados que omiten niveles", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoría de Lighthouse que muestra encabezados que omiten niveles", width="800", height="206" %}</figure>
 
 Por ejemplo, usar un elemento `<h1>` para el título de tu página y luego usar elementos de `<h3>` para las secciones principales de la página hará que la auditoría falle porque se omite el nivel de `<h2>`:
 

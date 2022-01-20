@@ -114,9 +114,9 @@ Your drop surface will depend on the design of your application. You may
 only want part of the window to be a drop surface, or potentially the entire
 window.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="A screenshot of Squoosh, an image compression web app.", width="800", height="589", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="A screenshot of Squoosh, an image compression web app.", width="800", height="589" %}
+  <figcaption>
     Squoosh makes the entire window a drop zone.
   </figcaption>
 </figure>

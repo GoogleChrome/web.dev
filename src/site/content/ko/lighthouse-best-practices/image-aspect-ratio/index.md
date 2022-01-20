@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지가 잘못된 종횡비로 나타납니다
 description: |2
 
@@ -16,7 +16,7 @@ updated: 2020-04-29
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 기본 비율로 렌더링될 때 예상 크기와 몇 픽셀 이상 다른 렌더링된 크기를 가진 모든 이미지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 감사에서 잘못된 종횡비로 표시된 이미지가 표시됨", width="800", height="198", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 감사에서 잘못된 종횡비로 표시된 이미지가 표시됨", width="800", height="198" %}</figure>
 
 잘못된 이미지 종횡비가 나타나는 두 가지 일반적인 원인은 다음과 같습니다.
 

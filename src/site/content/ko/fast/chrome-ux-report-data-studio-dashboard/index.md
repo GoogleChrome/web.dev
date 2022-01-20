@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Data Studio에서 CrUX 대시보드 사용
 authors:
   - rviscomi
@@ -13,7 +13,7 @@ tags:
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/)[는](https://developers.google.com/web/tools/chrome-user-experience-report/)[Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)(CrUX)와 같은 빅 데이터 소스를 기반으로 대시보드를 구축할 수 있는 강력한 데이터 시각화 도구입니다. 이 가이드에서는 출처의 사용자 환경을 추적하기 위해 고유한 사용자 지정 CrUX Dashboard를 만드는 방법에 대해 알아봅니다.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
 CrUX Dashboard는 [커뮤니티 커넥터(Community Connector)](https://developers.google.com/datastudio/connector/)라는 Data Studio 기능에 기반하여 구축되었습니다. 이 커넥터는 [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)의 원시 CrUX 데이터와 Data Studio의 시각화 간에 미리 설정된 링크입니다. 대시보드 사용자가 쿼리를 작성하거나 어떠한 차트도 생성할 필요가 없습니다. 모든 것이 사용자를 위해 만들어졌습니다. 출처를 제공하기만 하면 사용자 지정 대시보드가 만들어집니다.
 
@@ -21,7 +21,7 @@ CrUX Dashboard는 [커뮤니티 커넥터(Community Connector)](https://develope
 
 시작하려면 [g.co/chromeuxdash](https://g.co/chromeuxdash)로 이동하세요. 그러면 대시보드가 생성될 출처를 제공할 수 있는 CrUX 커뮤니티 커넥터 페이지로 이동합니다. 처음에 사용자는 권한 또는 마케팅 기본 설정 프롬프트를 완료해야 할 수 있습니다.
 
-{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX 대시보드 커넥터", width="800", height="484", class="w-screenshot" %}
+{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX 대시보드 커넥터", width="800", height="484" %}
 
 텍스트 입력 필드는 전체 URL이 아닌 출처만 허용합니다. 예:
 
@@ -47,11 +47,11 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 출처가 CrUX 데이터 세트에 포함되어 있지 않은 경우 아래와 같은 오류 메시지가 표시될 수 있습니다. 데이터 세트에는 400만 개 이상의 출처가 있지만 원하는 출처에 포함될 데이터가 충분하지 않을 수 있습니다.
 
-{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX 대시보드 오류 메시지", width="800", height="409", class="w-screenshot" %}
+{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX 대시보드 오류 메시지", width="800", height="409" %}
 
 출처가 있는 경우 대시보드의 스키마 페이지로 이동합니다. 이 페이지에는 포함된 모든 필드가 표시됩니다. 각 유효 연결 유형, 각 폼 팩터, 데이터 세트 릴리스 월, 각 메트릭의 성능 분포, 물론 출처 이름 등이 표시됩니다. 이 페이지에서 작업을 수행하거나 변경할 필요가 없습니다. 계속하려면 **보고서 생성**을 클릭하기만 하면 됩니다.
 
-{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX 대시보드 스키마", width="800", height="403", class="w-screenshot" %}
+{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX 대시보드 스키마", width="800", height="403" %}
 
 ## 대시보드 사용
 
@@ -69,19 +69,19 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 첫 번째 페이지는 출처의 월간 [Core Web Vitals](/vitals/) 성능에 대한 개요입니다. 이것은 Google에서 집중할 것을 권장하는 가장 중요한 UX 측정 항목입니다.
 
-{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX 대시보드 Core Web Vitals 개요", width="800", height="906", class="w-screenshot" %}
+{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX 대시보드 Core Web Vitals 개요", width="800", height="906" %}
 
 데스크탑 및 전화 사용자가 출처를 어떻게 경험하는지 이해하려면 Core Web Vitals 페이지를 사용하십시오. 기본적으로 대시보드를 생성한 시점의 가장 최근 월이 선택됩니다. 이전 또는 최신 월간 릴리스를 변경하려면 페이지 상단의 **월** 필터를 사용하십시오.
 
 기본적으로 태블릿은 이러한 차트에서 생략되지만 필요한 경우 아래에 표시된 바와 같이 막대 차트 구성에서 **태블릿 없음** 필터를 제거할 수 있습니다.
 
-{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="핵심 Web Vitals 페이지를 표시하도록 CrUX 편집", width="800", height="288", class="w-screenshot" %}
+{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="핵심 Web Vitals 페이지를 표시하도록 CrUX 편집", width="800", height="288" %}
 
 ### 메트릭 성능
 
 Core Web Vitals 페이지 다음에 CrUX 데이터 세트의 모든 [메트릭](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)에 대한 독립 실행형 페이지를 찾을 수 있습니다.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX 대시보드 LCP 페이지", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX 대시보드 LCP 페이지", width="800", height="598" %}
 
 각 페이지 상단에는 경험 데이터에 포함된 폼 팩터를 제한하는 데 사용할 수 있는 **장치 필터**가 있습니다. 예를 들어 전화 경험을 구체적으로 드릴다운할 수 있습니다. 이 설정은 여러 페이지에 걸쳐 유지됩니다.
 
@@ -107,7 +107,7 @@ PageSpeed Insights와 같은 도구의 해당 P75 값은 공개 BigQuery 데이�
 
 장치 배포 페이지는 시간 경과에 따른 전화, 데스크탑 및 태블릿 사용자의 분석 결과를 보여줍니다. 여러 출처에는 태블릿 데이터가 거의 또는 전혀 없는 경향이 있으므로 종종 차트 가장자리에 "0%"가 걸려 있는 것을 볼 수 있습니다.
 
-{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX 대시보드 장치 페이지", width="800", height="603", class="w-screenshot" %}
+{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX 대시보드 장치 페이지", width="800", height="603" %}
 
 마찬가지로 ECT 배포 페이지는 4G, 3G, 2G, 느린 2G 및 오프라인 경험에 대한 분석 결과를 보여줍니다.
 

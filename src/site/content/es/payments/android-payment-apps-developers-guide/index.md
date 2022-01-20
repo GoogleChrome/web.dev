@@ -16,12 +16,12 @@ feedback:
 
 La [API de solicitud de pago](https://www.w3.org/TR/payment-request/) le aporta a la web una interfaz integrada basada en el navegador que permite que los usuarios ingresen la información de pago requerida de manera más fácil que nunca. La API también puede invocar aplicaciones de pago específicas de la plataforma.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Flujo de pago con la aplicación Google Pay específica de la plataforma que utiliza pagos web.</figcaption></figure>
+  <figcaption>Flujo de pago con la aplicación Google Pay específica de la plataforma que utiliza pagos web.</figcaption></figure>
 
 En comparación con el uso solo de los intentos Android, los pagos web permiten una mejor integración con el navegador, la seguridad y la experiencia del usuario:
 

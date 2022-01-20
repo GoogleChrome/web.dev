@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos de la imagen no tienen atributos "[alt]".
 description: Aprenda a asegurarse de que los usuarios de tecnología auxiliar puedan acceder a las imágenes de su página web al introducir un texto alternativo.
 date: 2019-05-02
@@ -14,7 +14,7 @@ Los elementos informativos deben tener un texto alternativo corto y descriptivo.
 
 Lighthouse marca los elementos `<img>` que no tienen atributos `alt`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="La auditoría de Lighthouse muestra que los elementos <img> no tienen atributos alt", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="La auditoría de Lighthouse muestra que los elementos <img> no tienen atributos alt", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -16,7 +16,7 @@ authors:
 
 Create React App (CRA) incluye un manifiesto de aplicación web de forma predeterminada. La modificación de este archivo te permitirá cambiar la forma que se muestra tu aplicación cuando se instala en el dispositivo del usuario.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yra3Y2jPf2tS5ELxJdAK.png", alt="A progressive web app icon on a mobile phone's home screen", width="317", height="640" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yra3Y2jPf2tS5ELxJdAK.png", alt="A progressive web app icon on a mobile phone's home screen", width="317", height="640" %}</figure>
 
 ## ¿Por qué resulta útil?
 
@@ -77,7 +77,7 @@ Para saber si todas las propiedades funcionan correctamente en este ejemplo:
 
 - En el panel de **Aplicación**, haga clic en la pestaña **Manifiesto.**
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IpK9fr3O0zEX1GJXq9mw.png", alt="DevTool's Manifest tab shows the properties from the app manifest file.", width="800", height="695", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IpK9fr3O0zEX1GJXq9mw.png", alt="DevTool's Manifest tab shows the properties from the app manifest file.", width="800", height="695" %}
 
 ## Conclusión
 

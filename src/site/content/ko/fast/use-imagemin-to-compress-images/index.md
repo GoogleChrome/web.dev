@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Imagemin을 사용하여 이미지 압축
 authors:
   - katiehempenius
@@ -20,7 +20,7 @@ tags:
 
 압축되지 않은 이미지는 불필요한 바이트로 페이지를 부풀립니다. 오른쪽 사진은 왼쪽 사진보다 40% 작지만 일반 사용자에게는 동일하게 보일 것입니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -54,7 +54,7 @@ Imagemin은 "플러그인"을 중심으로 구축되었습니다. 플러그인�
 
 대부분의 사람들에게는 손실 플러그인이 최선의 선택입니다. 훨씬 더 큰 파일 크기 절감 효과를 제공하며 요구 사항에 맞게 압축 수준을 사용자 지정할 수 있습니다. 아래 표에는 인기 있는 Imagemin 플러그인이 나열되어 있습니다. 이것들이 사용 가능한 유일한 플러그인은 아니지만 모두 프로젝트에 좋은 선택이 될 것입니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

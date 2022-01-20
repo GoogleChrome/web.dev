@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Отложенная загрузка сторонних ресурсов с помощью фасадов
 description: |2
 
@@ -19,7 +19,7 @@ web_lighthouse:
 
 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="Пример загрузки встроенного плеера YouTube с фасадом. Фасад весит 3 КБ, а плеер размером 540 КБ загружается при взаимодействии.", width="800 ", height="521" %} <figcaption class="w-figcaption">Загрузка встроенного плеера YouTube с фасадом. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="Пример загрузки встроенного плеера YouTube с фасадом. Фасад весит 3 КБ, а плеер размером 540 КБ загружается при взаимодействии.", width="800 ", height="521" %} <figcaption>Загрузка встроенного плеера YouTube с фасадом. </figcaption></figure>
 
 ## Как Lighthouse обнаруживает сторонние встраиваемые объекты, допускающие отложенную загрузку
 
@@ -29,7 +29,7 @@ Lighthouse ищет сторонние продукты, которые можн
 
 Аудит завершится ошибкой, если страница загружает ресурсы, относящиеся к одному из этих сторонних встраиваемых объектов.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Аудит фасада сторонних ресурсов Lighthouse, выделяющий встроенный проигрыватель Vimeo и живой чат Drift.", width="800", height="517", class="w-screenshot" %} <figcaption class="w-figcaption"> Аудит фасада сторонних ресурсов Lighthouse. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Аудит фасада сторонних ресурсов Lighthouse, выделяющий встроенный проигрыватель Vimeo и живой чат Drift.", width="800", height="517" %} <figcaption> Аудит фасада сторонних ресурсов Lighthouse. </figcaption></figure>
 
 ## Как отложить загрузку сторонних ресурсов при помощи фасада
 

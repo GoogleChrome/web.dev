@@ -1,6 +1,6 @@
 ---
 title: Os elementos `<frame>` ou `<iframe>` não têm um título
-layout: post-old
+layout: post
 description: Saiba como garantir que as tecnologias de assistência possam apresentar corretamente o conteúdo do frame em sua página da web, dando títulos a todos os elementos do frame.
 date: 2019-05-02
 updated: 2019-09-19
@@ -14,7 +14,7 @@ Os usuários de leitores de tela e outras tecnologias de assistência contam com
 
 O Lighthouse sinaliza os elementos `<frame>` e `<iframe>` que não têm títulos:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt = "Auditoria do Lighthouse mostrando que frame ou iframe não tem um elemento de título", width = "800", height = "185", class = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt = "Auditoria do Lighthouse mostrando que frame ou iframe não tem um elemento de título", width = "800", height = "185"%}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

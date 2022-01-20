@@ -18,7 +18,7 @@ updated: 2020-09-28
 
 ### インストール時 - 依存関係としての場合 {: #on-install-as-dependency}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="インストール時 - 依存関係としての場合。", width="800", height="498" %}<figcaption class="w-figcaption">インストール時 - 依存関係としての場合。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="インストール時 - 依存関係としての場合。", width="800", height="498" %}<figcaption>インストール時 - 依存関係としての場合。</figcaption></figure>
 
 サービスワーカーは、`install` イベントを起こします。これを使用すれば、他のイベントを処理する前に準備しておく必要があるものを準備できます。このイベントが発生する間、サービスワーカーの古いバージョンはまだ実行中で、ページのためにあくせく働いていますので、ここで実行することがサービスワーカーの働きを邪魔することがあってはいけません。
 
@@ -48,7 +48,7 @@ self.addEventListener('install', function (event) {
 
 ### インストール時 - 依存関係としてではない場合 {: #on-install-not}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="インストール時 - 依存関係としてではない場合。", width="800", height="500" %}<figcaption class="w-figcaption">インストール時 - 依存関係としてではない場合。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="インストール時 - 依存関係としてではない場合。", width="800", height="500" %}<figcaption>インストール時 - 依存関係としてではない場合。</figcaption></figure>
 
 これは上述した内容と似ていますが、インストールの完了を遅らせることも、キャッシュが失敗した場合にインストールを失敗させることもありません。
 
@@ -77,7 +77,7 @@ self.addEventListener('install', function (event) {
 
 ### アクティベート時 {: #on-activate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="アクティベート時", width="800", height="500" %}<figcaption class="w-figcaption">アクティベート時。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="アクティベート時", width="800", height="500" %}<figcaption>アクティベート時。</figcaption></figure>
 
 **理想的な用途:** クリーンアップと移行。
 
@@ -109,7 +109,7 @@ self.addEventListener('activate', function (event) {
 
 ### ユーザーによる操作時 {: #on-user-interaction}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="ユーザーによる操作時。", width="800", height="222" %}<figcaption class="w-figcaption">ユーザーによる操作時。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="ユーザーによる操作時。", width="800", height="222" %}<figcaption>ユーザーによる操作時。</figcaption></figure>
 
 **理想的な用途:** サイト全体をオフラインにはできないため、ユーザーがオフラインで利用できるコンテンツを選択できるようにした場合。たとえば、YouTube のようなビデオやウィキペディアの記事、Flickr の特定のギャラリーなどが該当します。
 
@@ -138,7 +138,7 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 
 ### ネットワークからレスポンスを受信する時 {: #on-network-response}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="ネットワークからレスポンスを受信する時。", width="800", height="390" %}<figcaption class="w-figcaption">ネットワークからレスポンスを受信する時。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="ネットワークからレスポンスを受信する時。", width="800", height="390" %}<figcaption>ネットワークからレスポンスを受信する時。</figcaption></figure>
 
 **理想的な用途:** ユーザーの受信トレイや記事の内容といったリソースを頻繁に更新する場合。アバターなどの必須ではないコンテンツにも便利ですが、注意が必要です。
 
@@ -170,7 +170,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Stale-while-revalidate {: #stale-while-revalidate}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Stale-while-revalidate。", width="800", height="388" %}<figcaption class="w-figcaption">Stale-while-revalidate。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Stale-while-revalidate。", width="800", height="388" %}<figcaption>Stale-while-revalidate。</figcaption></figure>
 
 **理想的な用途:** リソースを頻繁に更新するが、最新バージョンを使用することは必須ではない場合。アバターはこのカテゴリに該当します。
 
@@ -196,7 +196,7 @@ self.addEventListener('fetch', function (event) {
 
 ### プッシュメッセージ送信時 {: #on-push-message}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="プッシュメッセージ送信時。", width="800", height="498" %}<figcaption class="w-figcaption">プッシュメッセージ送信時。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="プッシュメッセージ送信時。", width="800", height="498" %}<figcaption>プッシュメッセージ送信時。</figcaption></figure>
 
 [Push API](https://developers.google.com/web/fundamentals/push-notifications) は、サービスワーカーを土台に構築されたもう 1 つの機能です。これを使用することで、OS のメッセージングサービスから送られてくるメッセージに応答して、サービスワーカーを起動できます。これは、ユーザーがサイトに対してタブを開いていない場合でも発生します。サービスワーカーだけが起動します。ページからこれを行う許可を要求すると、ユーザーにプロンプトが表示されます。
 
@@ -242,7 +242,7 @@ self.addEventListener('notificationclick', function (event) {
 
 ### バックグランドでの同期時 {: #on-background-sync}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="バックグランドでの同期時。", width="800", height="219" %}<figcaption class="w-figcaption">バックグランドでの同期時。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="バックグランドでの同期時。", width="800", height="219" %}<figcaption>バックグランドでの同期時。</figcaption></figure>
 
 [バックグランドでの同期時](https://developers.google.com/web/updates/2015/12/background-sync)も、サービスワーカーを土台に構築された機能の 1 です。これを使えば、バックグラウンドデータの同期を 1 回だけ、または (非常にヒューリスティックな) 間隔で要求できます。これは、ユーザーがサイトに対してタブを開いていなくても発生します。サービスワーカーだけが起動します。ページからこれを行う許可を要求すると、ユーザーにプロンプトが表示されます。
 
@@ -302,7 +302,7 @@ navigator.storage.persist()
 
 ### キャッシュのみ {: #cache-only}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="キャッシュのみ。", width="800", height="272" %}<figcaption class="w-figcaption">キャッシュのみ。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="キャッシュのみ。", width="800", height="272" %}<figcaption>キャッシュのみ。</figcaption></figure>
 
 **理想的な用途:** サイトの特定の「バージョン」に対して静的であると考えられるもの。これらは、その存在を当てにできるよう、インストールイベントでキャッシュしておく必要があります。
 
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 ### ネットワークのみ {: #network-only}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="ネットワークのみ。", width="800", height="272" %}<figcaption class="w-figcaption">ネットワークのみ。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="ネットワークのみ。", width="800", height="272" %}<figcaption>ネットワークのみ。</figcaption></figure>
 
 **理想的な用途:** 分析 ping や GET 以外のリクエストなど、同等のオフライン機能が無いもの。
 
@@ -334,7 +334,7 @@ self.addEventListener('fetch', function (event) {
 
 ### キャッシュ、ネットワークへのフォールバック {: #cache-falling-back-to-network}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="キャッシュ、ネットワークへのフォールバック。", width="800", height="395" %}<figcaption class="w-figcaption">キャッシュ、ネットワークへのフォールバック。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="キャッシュ、ネットワークへのフォールバック。", width="800", height="395" %}<figcaption>キャッシュ、ネットワークへのフォールバック。</figcaption></figure>
 
 **理想的な用途:** オフラインファーストのアプローチで構築する場合。そのような場合は、以下のコードでリクエストの大多数を処理します。他のパターンは、受信するリクエストに応じて例外とされます。
 
@@ -352,7 +352,7 @@ self.addEventListener('fetch', function (event) {
 
 ### キャッシュとネットワークの競合 {: #cache-and-network-race}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="キャッシュとネットワークの競合。", width="800", height="427" %}<figcaption class="w-figcaption"> キャッシュとネットワークの競合。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="キャッシュとネットワークの競合。", width="800", height="427" %}<figcaption> キャッシュとネットワークの競合。</figcaption></figure>
 
 **理想的な用途:** 小さなアセットのうち、ディスクアクセスが遅いデバイスにおいてパフォーマンスを追い求めているアセット。
 
@@ -380,7 +380,7 @@ self.addEventListener('fetch', function (event) {
 
 ### ネットワークがキャッシュにフォールバックする場合 {: #network-falling-back-to-cache}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="ネットワークがキャッシュにフォールバックする場合。", width="800", height="388" %}<figcaption class="w-figcaption">ネットワークがキャッシュにフォールバックする場合。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="ネットワークがキャッシュにフォールバックする場合。", width="800", height="388" %}<figcaption>ネットワークがキャッシュにフォールバックする場合。</figcaption></figure>
 
 **理想的な用途:** サイトの「バージョン」の外で頻繁に更新されるリソースのクイックフィックス。たとえば、記事、アバター、ソーシャルメディアのタイムライン、ゲームリーダーボードなど。
 
@@ -400,7 +400,7 @@ self.addEventListener('fetch', function (event) {
 
 ### キャッシュ、ネットワークの順にアクセスする {: #cache-then-network}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Cache then network。", width="800", height="478" %}<figcaption class="w-figcaption">キャッシュ、ネットワークの順にアクセスする。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Cache then network。", width="800", height="478" %}<figcaption>キャッシュ、ネットワークの順にアクセスする。</figcaption></figure>
 
 **最適な用途:** 頻繁に更新されるコンテンツ。例: 記事、ソーシャルメディアのタイムライン、ゲーム。リーダーボードなど。
 
@@ -469,7 +469,7 @@ self.addEventListener('fetch', function (event) {
 
 ### 一般的なフォールバック {: #generic-fallback}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="一般的なフォールバック。", width="800", height="389" %}<figcaption class="w-figcaption">一般的なフォールバック。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="一般的なフォールバック。", width="800", height="389" %}<figcaption>一般的なフォールバック。</figcaption></figure>
 
 キャッシュやネットワークから提供できないものがあった場合は、一般的なフォールバックを提供することをお勧めします。
 
@@ -502,7 +502,7 @@ self.addEventListener('fetch', function (event) {
 
 ### サービスワーカー側のテンプレート {: #Service Worker-side-templating }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="サービスワーカー側のテンプレート。", width="800", height="463" %} <figcaption class="w-figcaption">サービスワーカー側のテンプレート。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="サービスワーカー側のテンプレート。", width="800", height="463" %} <figcaption>サービスワーカー側のテンプレート。</figcaption></figure>
 
 **理想的な用途:** サーバーの応答をキャッシュできないページ。
 

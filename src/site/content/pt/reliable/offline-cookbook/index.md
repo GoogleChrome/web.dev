@@ -18,7 +18,7 @@ O [Trabalho de Serviço](/service-workers-cache-storage/) permite que você lide
 
 ### Na instalação — como uma dependência {: #on-install-as-dependency }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="Na instalação — como uma dependência.", width="800", height="498" %}<figcaption class="w-figcaption">Na instalação — como uma dependência.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="Na instalação — como uma dependência.", width="800", height="498" %}<figcaption>Na instalação — como uma dependência.</figcaption></figure>
 
 O Trabalho de Serviço oferece um evento `install` Você pode usar isso para preparar as coisas, coisas que devem estar prontas antes de lidar com outros eventos. Enquanto isso acontece, qualquer versão anterior do seu Trabalho de Serviço ainda está em execução e atendendo páginas, então as coisas que você faz aqui não devem atrapalhar.
 
@@ -48,7 +48,7 @@ No [treinamento para surpreender,](https://jakearchibald.github.io/trained-to-th
 
 ### Na instalação — não como uma dependência {: #on-install-not }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt = "Na instalação — não como uma dependência.", width="800", height="500" %}<figcaption class="w-figcaption"> Na instalação — não como uma dependência.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt = "Na instalação — não como uma dependência.", width="800", height="500" %}<figcaption> Na instalação — não como uma dependência.</figcaption></figure>
 
 Isso é semelhante ao anterior, mas não atrasará a conclusão da instalação e não fará com que a instalação falhe se o cache falhar.
 
@@ -77,7 +77,7 @@ O Trabalho de Serviço pode ser eliminado durante o download dos níveis 11–20
 
 ### Na ativaçao {: #on-activate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt = "Ativado.", width="800", height="500" %}<figcaption class="w-figcaption">Ativado.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt = "Ativado.", width="800", height="500" %}<figcaption>Ativado.</figcaption></figure>
 
 **Ideal para:** limpeza e migração.
 
@@ -109,7 +109,7 @@ No [treinamento para surpreender,](https://jakearchibald.github.io/trained-to-th
 
 ### Na interação do usuário {: #on-user-interaction }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="Na interação do usuário.", width="800", height="222" %}<figcaption class="w-figcaption"> Na interação do usuário.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="Na interação do usuário.", width="800", height="222" %}<figcaption> Na interação do usuário.</figcaption></figure>
 
 **Ideal para:** quando o site inteiro não pode ser colocado off-line e você opta por permitir que o usuário selecione o conteúdo que deseja disponibilizar off-line. Por exemplo, um vídeo em algo como o YouTube, um artigo na Wikipedia, uma galeria particular no Flickr.
 
@@ -138,7 +138,7 @@ A [API de caches](https://developer.mozilla.org/docs/Web/API/Cache) está dispon
 
 ### Na resposta da rede {: #on-network-response }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="Na resposta da rede.", width="800", height="390" %}<figcaption class="w-figcaption">Na resposta da rede.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="Na resposta da rede.", width="800", height="390" %}<figcaption>Na resposta da rede.</figcaption></figure>
 
 **Ideal para:** atualizar recursos com frequência, como a caixa de entrada de um usuário ou conteúdo de artigo. Também é útil para conteúdo não essencial, como avatares, mas é preciso ter cuidado.
 
@@ -170,7 +170,7 @@ No [treinamento para surpreender,](https://jakearchibald.github.io/trained-to-th
 
 ### Obsoleto na revalidação {: #stale-while-revalidate }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Obsoleto na revalidação.", width="800", height="388" %}<figcaption class="w-figcaption">Obsoleto na revalidação.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Obsoleto na revalidação.", width="800", height="388" %}<figcaption>Obsoleto na revalidação.</figcaption></figure>
 
 **Ideal para:** atualização frequente de recursos em que não é necessário ter a versão mais recente. Os avatares podem se enquadrar nesta categoria.
 
@@ -196,7 +196,7 @@ Isso é muito semelhante ao [obsoleto na revalidação](https://www.mnot.net/blo
 
 ### Na mensagem por push {: #on-push-message }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="Na mensagem por push.", width="800", height="498" %}<figcaption class="w-figcaption">Na mensagem por push.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="Na mensagem por push.", width="800", height="498" %}<figcaption>Na mensagem por push.</figcaption></figure>
 
 A [API Push](https://developers.google.com/web/fundamentals/push-notifications) é outro recurso criado com base no Trabalho de Serviço. Isso permite que o Trabalho de Serviço seja despertado em resposta a uma mensagem do serviço de mensagens do sistema operacional. Isso acontece mesmo quando o usuário não tem uma guia aberta no seu site. Apenas o Trabalho de Serviço é despertado. Você solicita permissão para fazer isso a partir de uma página e o usuário será solicitado.
 
@@ -242,7 +242,7 @@ self.addEventListener('notificationclick', function (event) {
 
 ### Na sincronização em segundo plano {: #on-background-sync }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="Na sincronização em segundo plano.", width="800", height="219" %}<figcaption class="w-figcaption">Na sincronização em segundo plano.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="Na sincronização em segundo plano.", width="800", height="219" %}<figcaption>Na sincronização em segundo plano.</figcaption></figure>
 
 A [sincronização em segundo plano](https://developers.google.com/web/updates/2015/12/background-sync) é outro recurso criado com base no Trabalho de Serviço. Ele permite que você solicite a sincronização de dados em segundo plano como um intervalo único ou em um intervalo (extremamente heurístico). Isso acontece mesmo quando o usuário não tenha uma guia aberta no seu site. Apenas o Trabalho de Serviço é despertado. Você solicita permissão para fazer isso a partir de uma página e o usuário será solicitado.
 
@@ -302,7 +302,7 @@ Não importa quanto cache você faça, o trabalho de serviço não usará o cach
 
 ### Apenas cache {: #cache-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Apenas cache.", width="800", height="272" %}<figcaption class="w-figcaption">Apenas cache.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Apenas cache.", width="800", height="272" %}<figcaption>Apenas cache.</figcaption></figure>
 
 **Ideal para:** qualquer coisa que você considere estática para uma "versão" específica de seu site. Você deve ter armazenado em cache no evento de instalação, para que possa contar com sua presença.
 
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Apenas rede {: #network-only }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Apenas rede.", width="800", height="272" %}<figcaption class="w-figcaption">Apenas rede.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Apenas rede.", width="800", height="272" %}<figcaption>Apenas rede.</figcaption></figure>
 
 **Ideal para:** coisas que não têm equivalente off-line, como pings analíticos, solicitações não GET.
 
@@ -334,7 +334,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Cache, fazendo fallback para a rede{: #cache-falling-back-to-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Cache, fazendo fallback para a rede.", width="800", height="395"%}<figcaption class="w-figcaption">Cache, fazendo fallback para a rede.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Cache, fazendo fallback para a rede.", width="800", height="395"%}<figcaption>Cache, fazendo fallback para a rede.</figcaption></figure>
 
 **Ideal para:** construir o primeiro projeto off-line. Nesses casos, é assim que você lidará com a maioria das solicitações. Outros padrões serão exceções com base na solicitação recebida.
 
@@ -352,7 +352,7 @@ Isso fornece o comportamento "somente cache" para itens no cache e o comportamen
 
 ### Cache e corrida de rede {: #cache-and-network-race }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="Cache e corrida de rede.", width="800", height="427 "%}<figcaption class="w-figcaption">Cache e corrida de rede.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="Cache e corrida de rede.", width="800", height="427 "%}<figcaption>Cache e corrida de rede.</figcaption></figure>
 
 **Ideal para:** pequenos ativos em que você busca desempenho em dispositivos com acesso lento ao disco.
 
@@ -380,7 +380,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Rede fazendo fallback para o cache {: #network-falling-back-to-cache }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Rede fazendo fallback para o cache.", width="800", height="388" %}<figcaption class="w-figcaption">Rede fazendo fallback para o cache.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Rede fazendo fallback para o cache.", width="800", height="388" %}<figcaption>Rede fazendo fallback para o cache.</figcaption></figure>
 
 **Ideal para:** uma solução rápida para recursos que se atualizam com frequência, fora da "versão" do site. Por exemplo, artigos, avatares, cronogramas de mídia social e placares de jogos.
 
@@ -400,7 +400,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Cache e rede {: #cache-then-network }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Cache e rede.", width="800", height="478" %}<figcaption class="w-figcaption"> Cache e rede.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Cache e rede.", width="800", height="478" %}<figcaption> Cache e rede.</figcaption></figure>
 
 **Ideal para:** conteúdo que é atualizado com frequência. Por exemplo, artigos, cronogramas de mídia social e jogos, além de placares.
 
@@ -469,7 +469,7 @@ No [Treinamento para supreender](https://jakearchibald.github.io/trained-to-thri
 
 ### Fallback genérico {: #generic-fallback}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Fallback genérico.", width="800", height="389" %}<figcaption class="w-figcaption">Substituto genérico.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Fallback genérico.", width="800", height="389" %}<figcaption>Substituto genérico.</figcaption></figure>
 
 Se você falhar em atender algo do cache e/ou rede, você pode querer fornecer um fallback genérico.
 
@@ -502,7 +502,7 @@ Se sua página estiver postando um e-mail, seu trabalho de serviço pode voltar 
 
 ### Templates no trabalho de serviço {: #Service Worker-side-templating }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Template no trabalho de serviço.", width="800", height="463"%}<figcaption class="w-figcaption">Template no trabalho de serviço.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Template no trabalho de serviço.", width="800", height="463"%}<figcaption>Template no trabalho de serviço.</figcaption></figure>
 
 **Ideal para:** páginas que não podem ter a resposta do servidor em cache.
 

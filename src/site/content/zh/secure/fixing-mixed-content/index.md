@@ -33,11 +33,11 @@ tags:
 
 [被动混合内容](https://passive-mixed-content.glitch.me/)的示例将给出以下警告。如果浏览器能够在`https` URL 找到被动混合内容，会自动将其升级，然后显示一条消息。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools 在检测到和升级混合内容时显示的警告", width="800", height="294", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools 在检测到和升级混合内容时显示的警告", width="800", height="294" %}</figure>
 
 浏览器会阻止[主动混合内容](https://active-mixed-content.glitch.me/)并显示一条警告。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools 在主动混合内容被阻止时显示的警告", width="800", height="304", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools 在主动混合内容被阻止时显示的警告", width="800", height="304" %}</figure>
 
 如果在您的网站上发现 `http://` URL 出现此类警告，则需要在网站的源代码中修复这些警告。将这些 URL 及其所在的网页编制列表，会有助于修复时使用。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Общее время блокировки
 description: Узнайте о метрике Lighthouse Total Blocking Time (общее время блокировки), а также о том, как ее измерять и оптимизировать.
 web_lighthouse:
@@ -12,7 +12,7 @@ updated: 2021-06-04
 
 В отчете Lighthouse TBT отображается в миллисекундах:
 
-<figure class="w-figure">{% Img src = "image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt = "Снимок экрана аудита общего времени блокировки Lighthouse", width = "800", height = "592", class = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt = "Снимок экрана аудита общего времени блокировки Lighthouse", width = "800", height = "592"%}</figure>
 
 ## Что такое TBT
 
@@ -24,7 +24,7 @@ TBT — это общее время, в течение которого стр�
 
 В этой таблице показано, как интерпретировать оценку TBT:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -24,8 +24,8 @@ tags:
 
 ## 01. Super Centered: `place-items: center`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4">
   </source></video></figure>
 
@@ -44,8 +44,8 @@ tags:
 
 ## 02. Deconstructed Pancake: `flex: <grow> <shrink> <baseWidth>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4">
   </source></video></figure>
 
@@ -79,8 +79,8 @@ tags:
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4">
   </source></video></figure>
 
@@ -88,8 +88,8 @@ tags:
 
 ## 03. Sidebar Says: `grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4">
   </source></video></figure>
 
@@ -106,8 +106,8 @@ grid-template-columnsの値として、この値と`minmax(150px, 25%) 1fr`の�
 
 ## 04. Pancake Stack: `grid-template-rows: auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4">
   </source></video></figure>
 
@@ -128,8 +128,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 ## 05. Classic Holy Grailレイアウト: `grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4">
   </source></video></figure>
 
@@ -150,8 +150,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 ## 06. 12-Spanグリッド: `grid-template-columns: repeat(12, 1fr)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4">
   </source></video></figure>
 
@@ -170,8 +170,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 これで12列のトラックグリッドが作成されたため、子をグリッドに配置できます。これを行うための方法の1つは、グリッド線を使用してそれらを配置することです。たとえば、`grid-column: 1 / 13`は、最初の行から最後 (13番目) までのすべての行にまたがり、12列にまたがります。 `grid-column: 1 / 5;`最初の4列にまたがります。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4">
   </source></video></figure>
 
@@ -185,8 +185,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 ## 07. RAM (Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4">
   </source></video></figure>
 
@@ -205,8 +205,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 `auto-fit`では、ボックスの水平方向のサイズが150ピクセルを超えると、ボックスが伸びて残りのスペース全体が埋められます。ただし、これを`auto-fill`に変更すると、minmax関数の基本サイズを超えても伸びることはありません。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4">
   </source></video></figure>
 
@@ -219,8 +219,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 ## 08. Line Up: `justify-content: space-between`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4">
   </source></video></figure>
 
@@ -238,8 +238,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 ## 09. Clamping My Style: `clamp(<min>, <actual>, <max>)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4">
   </source></video></figure>
 
@@ -263,8 +263,8 @@ Deconstructed Pancakeとは異なり、この例では、画面サイズが変�
 
 ## 10. Respect for Aspect: `aspect-ratio: <width> / <height>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4">
   </source></video></figure>
 

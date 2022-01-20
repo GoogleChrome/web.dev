@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Escolha o formato de imagem certo
 authors:
   - ilyagrigorik
@@ -26,7 +26,7 @@ Se você alguma vez codificar texto em um recurso de imagem, pare e reconsidere.
 
 Se você tiver certeza de que uma imagem é a opção correta, você deve selecionar cuidadosamente o tipo certo de imagem para o trabalho.
 
-<figure class="w-figure">{% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="Imagens vetoriais e raster ampliadas", width="585", height="313" %} <figcaption>Imagem vetorial ampliada (L) imagem raster (R)</figcaption></figure>
+<figure>{% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="Imagens vetoriais e raster ampliadas", width="585", height="313" %} <figcaption>Imagem vetorial ampliada (L) imagem raster (R)</figcaption></figure>
 
 - [Gráficos vetoriais](https://en.wikipedia.org/wiki/Vector_graphics) usam linhas, pontos e polígonos para representar uma imagem.
 - [Gráficos raster](https://en.wikipedia.org/wiki/Raster_graphics) representam uma imagem codificando os valores individuais de cada pixel em uma grade retangular.
@@ -41,13 +41,13 @@ As imagens raster não têm as mesmas propriedades de serem independentes de res
 
 Existem dois tipos diferentes de pixels: pixels CSS e pixels de dispositivo. Um único pixel CSS pode corresponder diretamente a um único pixel de dispositivo ou pode ser apoiado por vários pixels de dispositivo. Qual é o ponto? Bem, quanto mais pixels de dispositivo houver, mais precisos serão os detalhes do conteúdo exibido na tela.
 
-<figure class="w-figure">{% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="Três imagens mostrando a diferença entre pixels CSS e pixels do dispositivo.", width="470", height="205" %} <figcaption class="w-figcaption">A diferença entre pixels CSS e pixels do dispositivo.</figcaption></figure>
+<figure>{% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="Três imagens mostrando a diferença entre pixels CSS e pixels do dispositivo.", width="470", height="205" %} <figcaption>A diferença entre pixels CSS e pixels do dispositivo.</figcaption></figure>
 
 Telas de alto DPI (HiDPI) produzem resultados bonitos, mas há uma desvantagem óbvia: os ativos de imagem requerem mais detalhes para aproveitar as vantagens das contagens de pixels mais altas do dispositivo. A boa notícia é que as imagens vetoriais são ideais para essa tarefa, pois podem ser renderizadas em qualquer resolução com resultados nítidos - você pode incorrer em um custo de processamento mais alto para renderizar os detalhes mais finos, mas o ativo subjacente é o mesmo e não depende da resolução.
 
 Por outro lado, as imagens raster representam um desafio muito maior porque codificam os dados da imagem por pixel. Portanto, quanto maior o número de pixels, maior será o tamanho do arquivo de uma imagem raster. Como exemplo, vamos considerar a diferença entre um recurso de foto exibido em pixels de 100 x 100 (CSS):
 
-<div class="w-table-wrapper"><table>
+<div class="table-wrapper scrollbar"><table>
 <thead>
   <tr>
     <th>Resolução da tela</th>
@@ -85,7 +85,7 @@ Então, o que isso significa na prática? Telas de alta resolução permitem que
 
 Além de diferentes algoritmos de compactação com e sem perdas, diferentes formatos de imagem oferecem suporte a diferentes recursos, como canais de animação e transparência (alfa). Como resultado, a escolha do "formato certo" para uma determinada imagem é uma combinação dos resultados visuais desejados e dos requisitos funcionais.
 
-<div class="w-table-wrapper"><table>
+<div class="table-wrapper scrollbar"><table>
 <thead>
   <tr>
     <th>Formato</th>

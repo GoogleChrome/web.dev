@@ -199,7 +199,7 @@ async function copy() {
 
 O acesso à área de transferência sempre representou uma preocupação de segurança para os navegadores. Sem as permissões adequadas, uma página poderia copiar silenciosamente todo tipo de conteúdo malicioso para a área de transferência de um usuário, o que produziria resultados catastróficos quando colado. Imagine uma página da web que copia silenciosamente `rm -rf /` ou uma [imagem de bomba de descompressão](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html) para sua área de transferência.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Prompt do navegador pedindo permissão ao usuário para a área de transferência.", width="800", height="338", class="w-screenshot" %}   <figcaption class="w-figcaption">O prompt de permissão para a API Clipboard. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Prompt do navegador pedindo permissão ao usuário para a área de transferência.", width="800", height="338" %}   <figcaption>O prompt de permissão para a API Clipboard. </figcaption></figure>
 
 Dar às páginas web acesso irrestrito de leitura à área de transferência é ainda mais problemático. Os usuários copiam rotineiramente informações confidenciais, como senhas e detalhes pessoais, para a área de transferência, que poderia então ser lida por qualquer página sem o conhecimento do usuário.
 

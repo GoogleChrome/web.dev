@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los enlaces no tienen texto descriptivo
 description: |2-
 
@@ -16,7 +16,7 @@ El texto del vínculo es la palabra o frase en la que se puede hacer clic en un 
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca los enlaces sin textos descriptivos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Auditoría de Lighthouse que muestra los enlaces que no tienen texto descriptivo", width="800", height="191", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Auditoría de Lighthouse que muestra los enlaces que no tienen texto descriptivo", width="800", height="191" %}</figure>
 
 Lighthouse marca los siguientes textos de enlace genéricos:
 

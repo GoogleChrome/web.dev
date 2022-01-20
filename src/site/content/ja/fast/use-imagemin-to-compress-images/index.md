@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Imagemin を使用して画像を圧縮する
 authors:
   - katiehempenius
@@ -18,7 +18,7 @@ tags:
 
 圧縮されていない画像は、不要なバイトを増やし、ページを肥大化させます。右側の写真は左側の写真よりも 40％ 小さいのですが、一般的なユーザーには同じように見えるのではないでしょうか。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -52,7 +52,7 @@ Imagemin は「プラグイン」を中心に構築されています。プラ�
 
 多くの人にとっては、ロッシーなプラグインがベストでしょう。ファイルサイズを大幅に縮小し、ニーズに合わせて圧縮レベルをカスタマイズできます。下の表は、人気の高い Imagemin プラグインを示したものです。利用できるプラグインは他にもありますが、プロジェクトに使う選択肢としては、どれも申し分ありません。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

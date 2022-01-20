@@ -167,7 +167,7 @@ against XSS.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png",
 alt="Lighthouse report warning that no CSP is found in enforcement mode.",
-width="730", height="78", class="w-screenshot" %}
+width="730", height="78" %}
 
 ### Step 1: Decide if you need a nonce- or hash-based CSP
 
@@ -447,8 +447,7 @@ If you enabled CSP in the previous step, you'll be able to see CSP violations in
 the console every time CSP blocks an incompatible pattern.
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg",
-alt="CSP violation reports in the Chrome developer console.",
-class="w-screenshot", width="800", height="235" %}
+alt="CSP violation reports in the Chrome developer console.", width="800", height="235" %}
 
 In most cases, the fix is straightforward:
 

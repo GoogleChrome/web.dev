@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Скорость загрузки основного контента (LCP)
 description: Подробнее о метрике LCP (Скорость загрузки основного контента) и о способах ее измерения и оптимизации
 date: 2020-01-10
@@ -12,7 +12,7 @@ LCP (Скорость загрузки основного контента) — 
 
 Lighthouse отображает LCP в секундах:
 
-<figure class="w-figure">   {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/NcBzUBQFmSzhZaxshxLS.png", alt="Скриншот проверки Lighthouse для LCP", width="800", height="592", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/NcBzUBQFmSzhZaxshxLS.png", alt="Скриншот проверки Lighthouse для LCP", width="800", height="592" %}</figure>
 
 ## Что измеряет LCP
 
@@ -24,7 +24,7 @@ LCP измеряет время до вывода на экран самого �
 
 В таблице ниже показано, как интерпретировать вашу оценку LCP:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

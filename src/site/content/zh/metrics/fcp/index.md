@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First Contentful Paint 首次内容绘制 (FCP)
 authors:
   - philipwalton
@@ -25,7 +25,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好的 FCP 值是 1.8 秒或更短，差的值大于 3.0 秒，中间的任何东西都需要改进", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好的 FCP 值是 1.8 秒或更短，差的值大于 3.0 秒，中间的任何东西都需要改进", width="400", height="300" %}
 </picture>
 
 ### 怎样算是良好的 FCP 分数？

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用被动监听器优化滚动体验
 description: 了解如何通过避免被动事件监听器来提高页面的滚动响应能力。
 web_lighthouse:
@@ -18,7 +18,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记可能会延迟页面滚动的事件监听器：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse 审计显示页面不使用被动事件监听器来提高滚动性能", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse 审计显示页面不使用被动事件监听器来提高滚动性能", width="800", height="213" %}</figure>
 
 Lighthouse 使用以下过程来识别可能影响滚动性能的事件监听器：
 

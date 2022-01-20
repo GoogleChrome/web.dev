@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable="no"]`가 `<meta name="viewport">` 요소에 사용되거나 `[maximum-scale]` 속성이 `5` 미만입니다.'
 description: 브라우저 줌이 비활성화되지 않았는지 확인해서 웹 페이지에의 접근성을 높이는 방법을 알아보십시오.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse는 브라우저 확대/축소를 비활성화하는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="표시 영역을 표시하는 Lighthouse 감사는 텍스트 크기 조정 및 확대/축소를 비활성화합니다", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="표시 영역을 표시하는 Lighthouse 감사는 텍스트 크기 조정 및 확대/축소를 비활성화합니다", width="800", height="227" %}</figure>
 
 다음 중 하나와 함께 `<meta name="viewport">` 태그가 포함된 페이지는 감사에 실패합니다.
 

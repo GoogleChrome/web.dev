@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Использование панели CrUX Dashboard в Data Studio
 authors:
   - rviscomi
@@ -13,7 +13,7 @@ tags:
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) — это мощный инструмент визуализации данных, позволяющий создавать панели мониторинга поверх источников больших данных, таких как отчет [Chrome UX](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX). В этой статье вы узнаете, как создать собственную пользовательскую панель CrUX для отслеживания  тенденций взаимодействия с пользователем в источнике.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Панель CrUX Dashboard", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Панель CrUX Dashboard", width="800", height="598" %}
 
 Панель CrUX Dashboard построена с помощью функции Data Studio, которая называется [Community Connectors](https://developers.google.com/datastudio/connector/). Коннектор представляет собой предварительно установленную связь между необработанными данными CrUX в [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) и визуализациями Data Studio. Это избавляет пользователей панели от необходимости писать запросы или создавать гистограммы. Всё создано за вас: нужно только указать источник, и будет сгенерирована настраиваемая панель управления.
 
@@ -21,7 +21,7 @@ tags:
 
 Для начала перейдите на [g.co/chromeuxdash](https://g.co/chromeuxdash). Это приведет вас на страницу коннекторов сообщества CrUX, где вы можете указать источник, для которого будет сгенерирована панель управления. Обратите внимание, что новым пользователям может потребоваться заполнить запросы разрешений или маркетинговых предпочтений.
 
-{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="Коннектор панели CrUX Dashboard", width="800", height="484", class="w-screenshot" %}
+{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="Коннектор панели CrUX Dashboard", width="800", height="484" %}
 
 В текстовом поле ввода нужно указывать только источники, а не полные URL-адреса. Например:
 
@@ -47,11 +47,11 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 Если ваш источник не включен в набор данных CrUX, вы можете получить сообщение об ошибке, подобное приведенному ниже. В наборе данных более 4 миллионов источников, но нужный вам источник может не содержать достаточно данных для включения в набор.
 
-{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="Сообщение панели CrUX Dashboard об ошибке", width="800", height="409", class="w-screenshot" %}
+{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="Сообщение панели CrUX Dashboard об ошибке", width="800", height="409" %}
 
 Если источник существует, вы попадете на страницу схемы для панели. Здесь показаны все включенные поля: каждый эффективный тип подключения, каждый форм-фактор, месяц выпуска набора данных, распределение производительности для каждой метрики и, конечно же, название источника. На этой странице вам ничего не нужно делать или изменять, просто нажмите **«Создать отчет»**, чтобы продолжить.
 
-{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="Схема панели CrUX Dashboard", width="800", height="403", class="w-screenshot" %}
+{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="Схема панели CrUX Dashboard", width="800", height="403" %}
 
 ## Использование панели
 
@@ -69,19 +69,19 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 На первой странице представлен месячный обзор метрик производительности [Core Web Vitals](/vitals/). Это самые важные показатели UX, на которых Google рекомендует сосредоточиться.
 
-{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="Обзор Core Web Vitals на панели CrUX Dashboard", width="800", height="906", class="w-screenshot" %}
+{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="Обзор Core Web Vitals на панели CrUX Dashboard", width="800", height="906" %}
 
 Используйте страницу Core Web Vitals, чтобы понять, как пользователи настольных компьютеров и телефонов воспринимают источник. По умолчанию выбирается последний месяц на момент создания панели. Чтобы переключаться между ежемесячными выпусками, используйте фильтр **Month (Месяц)** в верхней части страницы.
 
 Обратите внимание, что данные по планшетам по умолчанию не отображаются на этих гистограммах, но при необходимости вы можете удалить фильтр **No Tablet (Без планшета)** в конфигурации гистограммы, как показано ниже.
 
-{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Изменение панели CrUX Dashboard для отображения данных по планшетам на странице Core Web Vitals", width="800", height="288", class="w-screenshot" %}
+{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Изменение панели CrUX Dashboard для отображения данных по планшетам на странице Core Web Vitals", width="800", height="288" %}
 
 ### Метрики производительности
 
 После страницы с Core Web Vitals идут отдельные страницы для всех [метрик](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) в наборе данных CrUX.
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Страница LCP на панели CrUX", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="Страница LCP на панели CrUX", width="800", height="598" %}
 
 На каждой странице находится фильтр **Device (Устройство)**, который можно использовать для ограничения форм-факторов, включенных в данные о взаимодействии с пользователями. Например, можно детализировать данные для мобильного сектора. Этот параметр сохраняется на всех страницах.
 
@@ -107,7 +107,7 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 На странице распределения устройств показано распределение пользователей телефонов, компьютеров и планшетов с течением времени. Для многих источников, как правило, практически нет данных по планшетам, поэтому вы часто будете видеть 0% сбоку гистограммы.
 
-{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="Страница панели CrUX Dashboard о распределении по устройствам", width="800", height="603", class="w-screenshot" %}
+{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="Страница панели CrUX Dashboard о распределении по устройствам", width="800", height="603" %}
 
 Точно так же страница распределения ECT показывает разбивку по соединениям 4G, 3G, 2G, медленному 2G и автономному использованию.
 

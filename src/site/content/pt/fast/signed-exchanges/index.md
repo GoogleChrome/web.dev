@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Trocas assinadas (SXGs)
 subhead: |2-
 
@@ -157,11 +157,11 @@ Observe que a subexpressão `(,|$)` corresponde aos cabeçalhos onde o `q-value`
 
 As trocas assinadas podem ser identificadas procurando por `signed-exchange` na coluna **Tipo** do painel **Rede** no Chrome DevTools.
 
-<figure class="w-figure">{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Captura de tela mostrando uma solicitação de SXG dentro do painel 'Rede' em DevTools", width="696", height="201" %} <figcaption>O painel <b>Rede</b> no DevTools</figcaption></figure>
+<figure>{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Captura de tela mostrando uma solicitação de SXG dentro do painel 'Rede' em DevTools", width="696", height="201" %} <figcaption>O painel <b>Rede</b> no DevTools</figcaption></figure>
 
 A guia **Visualização** fornece mais informações sobre o conteúdo de uma SXG.
 
-<figure class="w-figure">{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="Captura de tela da guia 'Visualização' para uma SXG", width="800", height="561" %} <figcaption>A guia <b>Visualização</b> no DevTools</figcaption></figure>
+<figure>{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="Captura de tela da guia 'Visualização' para uma SXG", width="800", height="561" %} <figcaption>A guia <b>Visualização</b> no DevTools</figcaption></figure>
 
 Para ver uma SXG em primeira mão, visite esta [demonstração](https://signed-exchange-testing.dev/) em [um dos navegadores compatíveis com SXGs](#browser-compatibility)
 

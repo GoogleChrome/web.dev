@@ -18,11 +18,11 @@ Muitos mecanismos de pesquisa classificam as páginas com base no grau de compat
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas com pontos de toque muito pequenos ou muito próximos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoria do Lighthouse mostrando pontos de toque de tamanho inadequado", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoria do Lighthouse mostrando pontos de toque de tamanho inadequado", width="800", height="206" %}</figure>
 
 Os destinos menores que 48 x 48 pixels ou mais próximos do que 8 pixels entre eles falham na auditoria. Quando a auditoria falha, o Lighthouse lista os resultados em uma tabela com três colunas:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <tbody>
       <tr>
@@ -47,7 +47,7 @@ Os destinos menores que 48 x 48 pixels ou mais próximos do que 8 pixels entre e
 
 **Etapa 1:** aumente o tamanho dos pontos de toque que são muito pequenos. Os pontos de toque com 48 x 48 px nunca falham na auditoria. Se você tiver elementos que não deveriam *parecer* maiores (por exemplo, ícones), tente aumentar a propriedade `padding`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="pontos de toque de tamanho adequado", width="800", height="419", class="w-screenshot" %}<figcaption class="w-figcaption"> Use <code>padding</code> para tornar os pontos de toque maiores sem alterar a aparência de um elemento.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="pontos de toque de tamanho adequado", width="800", height="419" %}<figcaption> Use <code>padding</code> para tornar os pontos de toque maiores sem alterar a aparência de um elemento.</figcaption></figure>
 
 **Etapa 2:** aumente o espaçamento entre os pontos de toque que estão muito próximos usando propriedades como `margin` . Deve haver pelo menos 8 px entre os pontos de toque.
 

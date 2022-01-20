@@ -37,13 +37,13 @@ Flexbox는 이 사이드바 패턴에 대한 이상적인 레이아웃 모델입
 
 Flexbox를 이해하려면 주 축과 교차 축의 개념을 이해해야 합니다. 주 축은 `flex-direction` 속성으로 설정한 축입니다. `row`인 경우 여러분의 주 축은 행을 따르며, `column`인 경우 여러분의 주 축은 열을 따릅니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt="나란히 있는 세 개의 상자, 왼쪽에서 오른쪽으로 가리키는 화살표가 존재하며 화살표에는 '주 축'이라는 표시가 있음.", width="800", height="320" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt="나란히 있는 세 개의 상자, 왼쪽에서 오른쪽으로 가리키는 화살표가 존재하며 화살표에는 '주 축'이라는 표시가 있음.", width="800", height="320" %}</figure>
 
 플렉스 항목은 주 축에서 그룹으로 이동합니다. 기억하기: 우리는 많은 것을 가지고 있으며 우리는 그것들을 위한 최상의 레이아웃을 그룹으로 얻으려고 노력하고 있습니다.
 
 교차 축은 주 축과 다른 방향으로 실행되므로 `flex-direction`이 `row`인 경우 교차 축은 열을 따라 실행됩니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="나란히 있는 세 개의 상자, 왼쪽에서 오른쪽으로 가리키는 화살표가 존재하며 화살표에는 '주 축'이라는 표시가 있음. 위에서 아래로 향하고 있는 화살표가 하나 더 있으며 이것에는 '교차 축'이라는 표시가 있음.", width="800", height="320" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="나란히 있는 세 개의 상자, 왼쪽에서 오른쪽으로 가리키는 화살표가 존재하며 화살표에는 '주 축'이라는 표시가 있음. 위에서 아래로 향하고 있는 화살표가 하나 더 있으며 이것에는 '교차 축'이라는 표시가 있음.", width="800", height="320" %}</figure>
 
 교차 축에서는 두 가지 작업을 수행할 수 있습니다. 항목을 개별적으로 또는 그룹으로 이동하여 서로 및 플렉스 컨테이너에 대해 정렬할 수 있습니다. 또한 플렉스 라인을 래핑한 경우 해당 라인에 공간을 할당하는 방식을 제어하기 위해 이러한 라인을 그룹으로 처리할 수 있습니다. 이 가이드 전체를 통해 이 모든 것이 실제로 어떻게 작동하는지 볼 수 있습니다. 지금은 주 축이 `flex-direction`을 따른다는 점을 명심하세요.
 
@@ -126,7 +126,7 @@ Flex 항목은 기본적으로 행으로 배치됩니다. 여러분의 쓰기 �
 
 `flex-wrap` 속성의 초기 값은 `nowrap`입니다. 즉, 컨테이너에 공간이 충분하지 않으면 항목이 오버플로됩니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt="내부에 9개의 항목이 있는 플렉스 컨테이너. 항목이 축소되어 한 단어가 줄에 표시되지만 나란히 표시할 공간이 충분하지 않아 플렉스 항목이 컨테이너 상자 밖으로 확장됨.", width="800", height="282" %} <figcaption class="w-figcaption"> 최소 콘텐츠 크기에 도달하면 플렉스 항목이 컨테이너를 오버플로하기 시작합니다. </figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt="내부에 9개의 항목이 있는 플렉스 컨테이너. 항목이 축소되어 한 단어가 줄에 표시되지만 나란히 표시할 공간이 충분하지 않아 플렉스 항목이 컨테이너 상자 밖으로 확장됨.", width="800", height="282" %} <figcaption> 최소 콘텐츠 크기에 도달하면 플렉스 항목이 컨테이너를 오버플로하기 시작합니다. </figcaption></figure>
 
 초기 값을 사용하여 표시되는 항목은 오버플로가 발생하기 전에 `min-content` 크기까지 최대한 작게 축소됩니다.
 

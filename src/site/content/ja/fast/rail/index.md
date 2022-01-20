@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: RAILモデルでパフォーマンスを評価する
 description: |2-
 
@@ -21,13 +21,13 @@ tags:
 
 RAILは、ウェブアプリのライフサイクルを構成する4つの要素、Response (応答)、Animation (アニメーション)、Idle (アイドル処理)、Load (読み込み) の頭文字を取ったものです。それぞれのパフォーマンスに関するユーザーの期待は異なるため、パフォーマンスの目標は、コンテキストおよび[ユーザーが遅延をどのように認識するかを調べたUX調査](https://www.nngroup.com/articles/response-times-3-important-limits/)を基に定義されます。
 
-<figure class="w-figure">{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="RAILパフォーマンスモデルを構成する4要素: 応答、アニメーション、アイドル処理、読み込み。", width="800", height="290" %}<figcaption class="w-figcaption"> RAILパフォーマンスモデルを構成する4要素</figcaption></figure>
+<figure>{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="RAILパフォーマンスモデルを構成する4要素: 応答、アニメーション、アイドル処理、読み込み。", width="800", height="290" %}<figcaption> RAILパフォーマンスモデルを構成する4要素</figcaption></figure>
 
 ## ユーザーに焦点を合わせる
 
 パフォーマンスへの取り組みはユーザーを中心に考えます。次の表は、ユーザーがパフォーマンスの遅延をどのように認識しているかを判断する主なメトリックを説明したものです。
 
-<table class="w-table-wrapper">
+<table class="table-wrapper scrollbar">
   <thead>パフォーマンスの遅延に対するユーザーの認識</thead>
   <tr>
     <td>0〜16ミリ秒</td>
@@ -77,7 +77,7 @@ RAILのコンテキストにおいて、**目標**と**ガイドライン**と�
 
 目標は100ミリ秒未満で入力に応答することですが、なぜ50ミリ秒しかないか？これは、一般的に、入力処理以外の作業も実行されており、そうした作業が許容可能な入力応答に使える時間の一部を占めるためです。アプリケーションがアイドル時間中に50ミリ秒の推奨チャンクで作業を実行している場合、そうした作業チャンクの1つで入力が発生すると、入力を最大で50ミリ秒のキューに入れることができます。これを考慮すると、実際の入力処理に使用できるのは、残りの50ミリ秒のみと想定しても問題ないでしょう。この効果については、次のダイアグラムをご覧ください。アイドルタスクの実行中に受信した入力がキューに入り、使用可能な処理時間が短縮されるのが分かります。
 
-<figure class="w-figure">{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="アイドルタスクの実行中に受信した入力がキューに入り、使用可能な入力処理時間が50msに短縮されるのを示した図", width="800", height="400" %}<figcaption class="w-figcaption">アイドル状態のタスクが入力応答バジェットにどう影響するか。</figcaption></figure>
+<figure>{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="アイドルタスクの実行中に受信した入力がキューに入り、使用可能な入力処理時間が50msに短縮されるのを示した図", width="800", height="400" %}<figcaption>アイドル状態のタスクが入力応答バジェットにどう影響するか。</figcaption></figure>
 
 ## アニメーション：フレームを10ミリ秒で生成する
 

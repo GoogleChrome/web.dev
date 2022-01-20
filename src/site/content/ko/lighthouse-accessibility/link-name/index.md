@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 링크에 식별 가능한 이름이 없습니다.
 description: |2
 
@@ -18,7 +18,7 @@ web_lighthouse:
 
 식별 가능한 이름이 없는 Lighthouse 플래그 링크:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Lighthouse 감사 표시 링크에 식별 가능한 이름이 없습니다.", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Lighthouse 감사 표시 링크에 식별 가능한 이름이 없습니다.", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 删除未使用的 CSS
 description: 了解 unused-css-rules 审计。
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 Lighthouse 报告的“Opportunities（机会）”部分列出了所有未使用 CSS 的样式表，可能节省 2 KiB 或更多。删除未使用的 CSS 以减少网络活动消耗的不必要的字节：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="Lighthouse 删除未使用的 CSS 审计的屏幕截图", width="800", height="235", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="Lighthouse 删除未使用的 CSS 审计的屏幕截图", width="800", height="235" %}</figure>
 
 ## 未使用的 CSS 如何降低性能
 
@@ -36,7 +36,7 @@ Lighthouse 报告的“Opportunities（机会）”部分列出了所有未使�
 
 借助 Chrome DevTools 的“Coverage（覆盖率）”选项卡，您可以发现关键和非关键 CSS。请参阅[使用 Coverage 选项卡查看已使用和未使用的 CSS](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage)。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools：Coverage 选项卡", width="800", height="407", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Chrome DevTools：Coverage 选项卡。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools：Coverage 选项卡", width="800", height="407" %} <figcaption> Chrome DevTools：Coverage 选项卡。</figcaption></figure>
 
 您还可以从 Puppeteer 中提取此信息。请参阅 [page.coverage](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagecoverage)。
 

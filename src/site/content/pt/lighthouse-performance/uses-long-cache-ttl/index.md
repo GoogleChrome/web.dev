@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Sirva ativos estáticos com uma política de cache eficiente
 description: Aprenda como armazenar em cache os recursos estáticos de sua página web pode melhorar o desempenho e confiabilidade para visitantes recorrentes.
 date: 2019-05-02
@@ -16,7 +16,7 @@ Quando um navegador solicita um recurso, o servidor que fornece o recurso pode d
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todos os recursos estáticos que não são armazenados em cache:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Uma captura de tela da auditoria Lighthouse Sirva ativos estáticos com uma política de cache eficiente", width="800", height="490", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Uma captura de tela da auditoria Lighthouse Sirva ativos estáticos com uma política de cache eficiente", width="800", height="490" %}</figure>
 
 O Lighthouse considera um recurso armazenável em cache se todas as seguintes condições forem atendidas:
 
@@ -26,7 +26,7 @@ O Lighthouse considera um recurso armazenável em cache se todas as seguintes co
 
 Quando uma página falha na auditoria, o Lighthouse lista os resultados numa tabela com três colunas:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <tbody>
       <tr>
@@ -75,7 +75,7 @@ Para ver quais recursos o navegador está obtendo de seu cache, abra a **guia Re
 
 A coluna **Tamanho** no Chrome DevTools pode ajudá-lo a verificar se um recurso foi armazenado em cache:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="A coluna Tamanho.", width="800", height="565", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="A coluna Tamanho.", width="800", height="565" %}</figure>
 
 O Chrome fornece os recursos mais solicitados do cache de memória, que é muito rápido, mas é esvaziado quando o navegador é fechado.
 
@@ -84,7 +84,7 @@ Para verificar se o cabeçalho `Cache-Control` de um recurso está definido conf
 1. Clique na URL da solicitação, na coluna**Nome** da tabela Solicitações.
 2. Clique na aba **Cabeçalhos.**
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspecionando o cabeçalho Cache-Control por meio da aba Cabeçalhos", width="800", height="597", class="w-screenshot w-screenshot--filled" %}   <figcaption class="w-figcaption">     Inspecionando o cabeçalho <code>Cache-Control</code> por meio da aba <b>Headers</b>.   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspecionando o cabeçalho Cache-Control por meio da aba Cabeçalhos", width="800", height="597" %}   <figcaption>     Inspecionando o cabeçalho <code>Cache-Control</code> por meio da aba <b>Headers</b>.   </figcaption></figure>
 
 ## Orientações específicas para diferentes pilhas
 

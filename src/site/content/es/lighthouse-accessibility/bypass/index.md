@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: La página no contiene un encabezado, saltos de enlace ni puntos de referencia.
 description: |2-
 
@@ -20,7 +20,7 @@ Proporcionar una forma de omitir el contenido repetitivo facilita la navegación
 
 Lighthouse marca las páginas que no ofrecen una forma de omitir el contenido repetitivo:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fJBo4Nbmlks8cj5i2UMJ.png", alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region", width="800", height="185", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fJBo4Nbmlks8cj5i2UMJ.png", alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region", width="800", height="185" %}</figure>
 
 Lighthouse comprueba que la página contenga al menos uno de los siguientes elementos:
 

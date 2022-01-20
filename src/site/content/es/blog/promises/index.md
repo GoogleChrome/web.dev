@@ -656,8 +656,8 @@ getJSON('story.json').then(function(story) {
 
 Y ahí lo tenemos, una versión totalmente asíncrona de la versión sincronizada. Pero lo podemos hacer mejor. Por el momento, nuestra página se está descargando así:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -701,8 +701,8 @@ getJSON('story.json').then(function(story) {
 
 Dependiendo de la conexión, esto puede ser segundos más rápido que cargar uno por uno, y es menos código que nuestro primer intento. Los capítulos se pueden descargar en cualquier orden, pero aparecen en la pantalla en el orden correcto.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -746,8 +746,8 @@ getJSON('story.json')
 
 ¡Y ahí está, lo mejor de ambos! Se necesita la misma cantidad de tiempo para entregar todo el contenido, pero el usuario obtiene el primer pedazo del contenido antes.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>

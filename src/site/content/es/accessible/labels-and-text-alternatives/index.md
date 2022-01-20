@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Etiquetas y texto alternativo
 authors:
   - robdodson
@@ -21,7 +21,7 @@ Es fácil verificar el nombre accesible de un elemento usando DevTools de Chrome
 2. En el panel Elementos, busque el panel **Accesibilidad.** Puede estar oculto detrás de un símbolo `»`.
 3. En el menú desplegable**{nbsp}Propiedades computadas**, busque la propiedad **Nombre**.
 
-<figure class="w-figure">{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Panel de accesibilidad de DevTools que muestra el nombre de un botón.</figcaption></figure>
+<figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> Panel de accesibilidad de DevTools que muestra el nombre de un botón.</figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la [Referencia de accesibilidad de DevTools](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference). {% endAside %}
 
@@ -31,7 +31,7 @@ Ya sea que esté viendo un `img` con texto `alt` o un `input` con `label`, todos
 
 Hay diferentes formas de agregar un nombre accesible a un elemento, según su tipo. La siguiente tabla enumera los tipos de elementos más comunes que necesitan nombres accesibles y enlaces a explicaciones sobre cómo agregarlos.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -198,7 +198,7 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 Esto es especialmente útil para los lectores de pantalla que ofrecen accesos directos para enumerar todos los enlaces de la página. Si los enlaces están llenos de texto de relleno repetitivo, estos atajos se vuelven mucho menos útiles:
 
-<figure class="w-figure">{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="El menú de enlaces de VoiceOver se llenó con la palabra 'aquí'.", width = "519", height="469" %} <figcaption class="w-figcaption">Ejemplo de VoiceOver, un lector de pantalla para macOS, que muestra el menú de navegación por enlaces.</figcaption></figure>
+<figure>{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="El menú de enlaces de VoiceOver se llenó con la palabra 'aquí'.", width = "519", height="469" %} <figcaption>Ejemplo de VoiceOver, un lector de pantalla para macOS, que muestra el menú de navegación por enlaces.</figcaption></figure>
 
 ## Etiquetar elementos de formulario
 
@@ -221,6 +221,6 @@ Hay dos formas de asociar una etiqueta con un elemento de formulario, como una c
 
 Cuando la casilla de verificación se ha etiquetado correctamente, el lector de pantalla puede informar que el elemento tiene la función de casilla de verificación, está en un estado marcado y se llama "Receive promotional offers?" como en el ejemplo de VoiceOver a continuación:
 
-<figure class="w-figure">{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="Salida de texto de VoiceOver que muestra '¿Recibir ofertas promocionales?'", width="640", height="174", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="Salida de texto de VoiceOver que muestra '¿Recibir ofertas promocionales?'", width="640", height="174" %}</figure>
 
 {% Assessment 'self-assessment' %}

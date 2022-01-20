@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 注册表单最佳实践
 subhead: 帮助您的用户轻松注册、登录和管理他们的帐户详细信息。
 authors:
@@ -74,11 +74,11 @@ codelabs:
 
 明确如何在您的网站上创建帐户，例如使用页面右上角的**登录**或**登录**按钮。避免使用模棱两可的图标或模糊的措辞（“加入！”、“加入我们”）并且不要在导航菜单中隐藏登录信息。可用性专家 Steve Krug 总结了这种网站可用性的方法：[不要让我思考！](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63)如果您需要说服网络团队中的其他人，请使用[分析](#analytics-rum)来显示不同选项的影响。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="两个在安卓手机上查看的电子商务网站样机截图。左边的一个使用了一个有点模棱两可的登录链接图标；右边的一个简单地说'登录'", width="800", height="737" %}<figcaption class="w-figcaption">使登录变得明显。图标可能不明确，但<b>登录</b>按钮或链接很明显。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="两个在安卓手机上查看的电子商务网站样机截图。左边的一个使用了一个有点模棱两可的登录链接图标；右边的一个简单地说'登录'", width="800", height="737" %}<figcaption>使登录变得明显。图标可能不明确，但<b>登录</b>按钮或链接很明显。</figcaption></figure>
 
 {% Aside %}您可能会考虑是添加按钮（或链接）来创建帐户，还是添加供现有用户登录的按钮（或链接）。许多热门网站现在只显示一个**登录**按钮。当用户点击该按钮时，他们还会在必要时获得创建帐户的链接。现在这是一种常见模式，您的用户容易理解，但您可以使用[交互分析](#analytics-rum)来监控单个按钮是否效果最佳。 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Gmail 登录截图：一个页面，显示&quot;登录&quot;按钮，单击时会引导至也具有&quot;创建帐户链接&quot;的表单。", width="800", height="545" %}  <figcaption class="w-figcaption">Gmail 登录页面包含用于创建帐户的链接。<br>当窗口尺寸大于此处显示的尺寸时，Gmail 会显示<b>登录</b>链接和<b>创建帐户</b>按钮。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Gmail 登录截图：一个页面，显示&quot;登录&quot;按钮，单击时会引导至也具有&quot;创建帐户链接&quot;的表单。", width="800", height="545" %}  <figcaption>Gmail 登录页面包含用于创建帐户的链接。<br>当窗口尺寸大于此处显示的尺寸时，Gmail 会显示<b>登录</b>链接和<b>创建帐户</b>按钮。</figcaption></figure>
 
 确保为通过身份提供商（例如 Google）注册并且还使用电子邮件和密码注册的用户关联帐户。如果您可以从身份提供商的配置文件数据访问用户的电子邮件地址，并且匹配两个帐户，那么这很容易做到。下面的代码显示了如何访问 Google 登录用户的电子邮件数据。
 
@@ -98,11 +98,11 @@ if (auth2.isSignedIn.get()) {
 
 在注册流程中，您的工作是将复杂性降至最低并让用户保持专注。减少杂乱项。现在不是分心和诱惑的时候！
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/avoid-distractions.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">不要分散用户完成注册的注意力。</figcaption></figure>
+  <figcaption>不要分散用户完成注册的注意力。</figcaption></figure>
 
 在注册时，要求尽可能少。仅在您需要并且用户看到提供该数据的明显好处时才收集其他用户数据（例如姓名和地址）。请记住，您传达和存储的每一项数据都会产生成本和责任。
 
@@ -110,11 +110,11 @@ if (auth2.isSignedIn.get()) {
 
 您可能希望通过在用户每次在新设备或浏览器上登录时向用户发送代码来考虑免密码登录。Slack 和 Medium 等网站使用了这一版本。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/medium-sign-in.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">在 medium.com 上免密码登录。</figcaption></figure>
+  <figcaption>在 medium.com 上免密码登录。</figcaption></figure>
 
 与联合登录一样，这还有一个额外的好处，即您不必管理用户密码。
 
@@ -154,11 +154,11 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 
 如果您确实拒绝了用户建议的密码，请具体告诉他们拒绝的原因。在用户输入值后立即[显示问题原因并解释如何修复它们](https://baymard.com/blog/inline-form-validation)——不要等到他们提交注册表单并不得不等待服务器的响应之后。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/password-validation.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">明确密码被拒绝的原因。</figcaption></figure>
+  <figcaption>明确密码被拒绝的原因。</figcaption></figure>
 
 ## 不要禁止密码粘贴 {: #allow-password-pasting}
 
@@ -180,7 +180,7 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 
 您还应该让您的用户访问他们的帐户登录历史记录，向他们显示登录发生的时间和地点。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Gmail 帐户活动页面", width="800", height="469" %}<figcaption class="w-figcaption"> <a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="了解如何查看 Gmail 帐户活动。">Gmail 帐户活动页面</a>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Gmail 帐户活动页面", width="800", height="469" %}<figcaption> <a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="了解如何查看 Gmail 帐户活动。">Gmail 帐户活动页面</a>。</figcaption></figure>
 
 ## 使更改或重置密码变得简单 {: #password-change}
 
@@ -196,7 +196,7 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 
 许多用户更喜欢使用电子邮件地址和密码注册表单登录网站。但是，您还应该允许用户通过第三方身份提供者登录，也称为联合登录。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="WordPress 登录页面", width="800", height="513" %}<figcaption class="w-figcaption"> WordPress 登录页面，含 Google 和 Apple 登录选项。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="WordPress 登录页面", width="800", height="513" %}<figcaption> WordPress 登录页面，含 Google 和 Apple 登录选项。</figcaption></figure>
 
 这种方法有几个优点。对于使用联合登录创建帐户的用户，您无需询问、交流或存储密码。
 
@@ -210,7 +210,7 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 
 许多用户使用相同的浏览器共享设备并在帐户之间切换。无论用户是否访问联合登录，您都应该使帐户切换变得简单。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, 显示账户切换", width="800", height="494" %}<figcaption class="w-figcaption"> Gmail 上的帐户切换。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, 显示账户切换", width="800", height="494" %}<figcaption> Gmail 上的帐户切换。</figcaption></figure>
 
 ## 考虑提供多重身份验证 {: #multi-factor-authentication}
 

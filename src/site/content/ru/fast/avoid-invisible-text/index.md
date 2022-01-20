@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Как избежать скрытия текста во время загрузки шрифта
 authors:
   - katiehempenius
@@ -31,7 +31,7 @@ feedback:
 
 ## Вариант № 1: использовать «font-display»
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -65,7 +65,7 @@ API [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-
 
 Поведение по умолчанию при загрузке шрифтов для популярных браузеров:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

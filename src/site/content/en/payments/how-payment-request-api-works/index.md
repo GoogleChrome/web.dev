@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How Payment Request API works
 subhead: |
   Learn how the Payment Request API works at a high level.

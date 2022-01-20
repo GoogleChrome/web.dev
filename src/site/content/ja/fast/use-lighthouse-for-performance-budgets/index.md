@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: パフォーマンス予算にLighthouseを使用する
 authors:
   - katiehempenius

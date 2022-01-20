@@ -16,12 +16,12 @@ feedback:
 
 [Payment Request API](https://www.w3.org/TR/payment-request/) 为 web 带来了一个基于浏览器的内置界面，允许用户比以往更轻松地输入所需的支付信息。该 API 还可以调用特定于平台的支付应用。
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">使用 Web Payments 的特定于平台的 Google 支付应用的结账流程。</figcaption></figure>
+  <figcaption>使用 Web Payments 的特定于平台的 Google 支付应用的结账流程。</figcaption></figure>
 
 与仅使用 Android Intents 相比，Web Payments 可以更好地与浏览器、安全性和用户体验集成：
 

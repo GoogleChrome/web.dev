@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Первая отрисовка контента (FCP)
 description: Подробнее о метрике FCP (Первая отрисовка контента) и о способах ее измерения и оптимизации
 date: 2019-05-02
@@ -12,7 +12,7 @@ FCP (Первая отрисовка контента) — одна из мет�
 
 Lighthouse показывает FCP в секундах:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y8maVyZwGyS6gdyRjYWb.png", alt="Скриншот проверки Lighthouse для FCP", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y8maVyZwGyS6gdyRjYWb.png", alt="Скриншот проверки Lighthouse для FCP", width="800", height="588" %}</figure>
 
 ## Что измеряет FCP
 
@@ -24,7 +24,7 @@ FCP измеряет, сколько времени требуется брау�
 
 В этой таблице показано, как интерпретировать оценку FCP:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

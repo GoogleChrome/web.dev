@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 标签和文本替代
 authors:
   - robdodson
@@ -19,7 +19,7 @@ description: 为了让屏幕阅读器向用户呈现鲜明的 UI，有意义的�
 2. 在“元素”面板中，找到 **Accessibility（辅助功能）**窗格。它可能隐藏在 `»` 符号后面。
 3. 在 **Computed Properties（计算出的属性）**下拉列表中，找到**Name（名称）**属性。
 
-<figure class="w-figure">{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> 显示按钮的计算名称的 DevTools 辅助功能窗格。</figcaption></figure>
+<figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %}<figcaption> 显示按钮的计算名称的 DevTools 辅助功能窗格。</figcaption></figure>
 
 {% Aside %}要了解更多信息，请查阅 [DevTools 辅助功能参考](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)。 {% endAside %}
 
@@ -29,7 +29,7 @@ description: 为了让屏幕阅读器向用户呈现鲜明的 UI，有意义的�
 
 根据元素的类型，有不同的方法可以为元素添加可访问的名称。下表列出了需要可访问名称的最常见元素类型以及指向如何添加它们的说明的链接。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -196,7 +196,7 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 这对于提供列出页面上所有链接的快捷方式的屏幕阅读器特别有用。如果链接充满了重复的填充文本，这些快捷方式就会变得不那么有用：
 
-<figure class="w-figure">{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="VoiceOver 的链接菜单充满了“这里”这个词。", width="519", height="469" %}<figcaption class="w-figcaption"> macOS 屏幕阅读器 VoiceOver 示例，显示按链接导航菜单。</figcaption></figure>
+<figure>{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="VoiceOver 的链接菜单充满了“这里”这个词。", width="519", height="469" %}<figcaption> macOS 屏幕阅读器 VoiceOver 示例，显示按链接导航菜单。</figcaption></figure>
 
 ## 标签表单元素
 
@@ -219,6 +219,6 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 当复选框被正确标记后，屏幕阅读器可以报告该元素具有复选框的作用，处于选中状态，并被命名为“接收促销优惠？”就像下面的 VoiceOver 示例一样：
 
-<figure class="w-figure">{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="显示'接收促销优惠？'的 VoiceOver 文本输出", width="640", height="174", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="显示'接收促销优惠？'的 VoiceOver 文本输出", width="640", height="174" %}</figure>
 
 {% Assessment 'self-assessment' %}

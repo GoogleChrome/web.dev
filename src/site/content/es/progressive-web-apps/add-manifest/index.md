@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cómo agregar un manifiesto en la aplicación web
 authors:
   - petelepage
@@ -119,7 +119,7 @@ La propiedad `background_color` se utiliza en la pantalla de inicio cuando la ap
 
 Puede personalizar la interfaz de usuario del navegador para que se muestre cuando se inicie su aplicación. Por ejemplo, puede ocultar la barra de direcciones y el navegador de Chrome. Incluso, puede hacer que los juegos se inicien en pantalla completa.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table id="display-params">
     <thead>
       <tr>
@@ -134,12 +134,12 @@ Puede personalizar la interfaz de usuario del navegador para que se muestre cuan
       </tr>
       <tr>
         <td><code>standalone</code></td>
-        <td>Abre la aplicación web para que parezca una aplicación independiente. La aplicación se ejecuta en su propia ventana, separada del navegador, y oculta los elementos estándar de la interfaz de usuario del navegador, como la barra de las URL. <figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="Un ejemplo de una ventana PWA con visualización independiente.", width="800", height="196", class="w-screenshot" %} </figure>
+        <td>Abre la aplicación web para que parezca una aplicación independiente. La aplicación se ejecuta en su propia ventana, separada del navegador, y oculta los elementos estándar de la interfaz de usuario del navegador, como la barra de las URL. <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="Un ejemplo de una ventana PWA con visualización independiente.", width="800", height="196" %} </figure>
 </td>
       </tr>
       <tr>
         <td><code>minimal-ui</code></td>
-        <td>Este modo es similar al <code>standalone</code>, pero le ofrece al usuario un conjunto mínimo de elementos de la interfaz de usuario para controlar la navegación (como atrás y recargar). <figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="Un ejemplo de una ventana PWA con visualización mínima de la interfaz de usuario (UI).", width="800", height="196", class="w-screenshot" %} </figure>
+        <td>Este modo es similar al <code>standalone</code>, pero le ofrece al usuario un conjunto mínimo de elementos de la interfaz de usuario para controlar la navegación (como atrás y recargar). <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="Un ejemplo de una ventana PWA con visualización mínima de la interfaz de usuario (UI).", width="800", height="196" %} </figure>
 </td>
       </tr>
       <tr>
@@ -191,7 +191,7 @@ Algunas otras notas sobre el `scope` :
 
 El `theme_color` establecerá el color de la barra de herramientas, y puede reflejarse en la vista previa de la aplicación en los alternadores de tareas. El `theme_color` debe coincidir con el color del tema `meta` que se especifica en el encabezado del documento.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="Este es un ejemplo de una ventana PWA con un color de tema personalizado.", width="800", height="196", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="Este es un ejemplo de una ventana PWA con un color de tema personalizado.", width="800", height="196" %}</figure>
 
 A partir de Chromium 93 y Safari 15, puede ajustar este color basándose en una consulta de medios con el atributo `media` del elemento con el color del tema `meta`. Se elegirá el primero que coincida. Por ejemplo, puede tener un color para el modo claro y otro para el modo oscuro. Al momento de escribir esto, no se pueden definir en el manifiesto. Consulte [w3c/manifest#975 GitHub issue](https://github.com/w3c/manifest/issues/975).
 
@@ -235,7 +235,7 @@ Después de crear el manifiesto, agregue una etiqueta `<link>` a todas las pági
 
 Para verificar que su manifiesto se configuró correctamente, utilice el panel **Manifiesto** que aparece en el panel **Aplicación** de Chrome DevTools.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="El panel de aplicaciones en Chrome Devtools con la pestaña Manifiesto seleccionada.", width="800", height="601", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="El panel de aplicaciones en Chrome Devtools con la pestaña Manifiesto seleccionada.", width="800", height="601" %}</figure>
 
 En este panel se ofrece una versión legible para las personas sobre muchas de las propiedades que componen el manifiesto, y hace que sea fácil verificar que todas las imágenes se carguen correctamente.
 

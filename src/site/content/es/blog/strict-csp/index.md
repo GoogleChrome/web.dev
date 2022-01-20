@@ -104,7 +104,7 @@ Para adoptar un CSP estricto, debes:
 
 Puedes utilizar la **auditoría de prácticas** [recomendadas Lighthouse](https://developers.google.com/web/tools/lighthouse) (v7.3.0 y superior con flag `--preset=experimental` ) a lo largo de este proceso para comprobar si tu sitio tiene un CSP y si es lo suficientemente estricto como para ser eficaz contra XSS.
 
-{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="Lighthouse report warning that no CSP is found in enforcement mode.", width="730", height="78", class="w-screenshot" %}
+{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="Lighthouse report warning that no CSP is found in enforcement mode.", width="730", height="78" %}
 
 ### Paso 1: Decide si necesitas un CSP basado en hash o en nonce
 
@@ -293,7 +293,7 @@ Los controladores de eventos en línea (como `onclick="…"`, `onerror="…"` ) 
 
 Si habilitaste CSP en el paso anterior, podrás ver las infracciones de CSP en la consola cada vez que CSP bloquee un patrón incompatible.
 
-{% Img src = "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt = "Informes de infracción de CSP en la consola de desarrollador de Chrome.", Class = "w-screenshot", width = "800", height = "235"%}
+{% Img src = "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt = "Informes de infracción de CSP en la consola de desarrollador de Chrome.", width = "800", height = "235"%}
 
 En la mayoría de los casos, la solución es sencilla:
 

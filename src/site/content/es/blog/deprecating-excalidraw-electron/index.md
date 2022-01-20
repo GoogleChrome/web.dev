@@ -55,13 +55,13 @@ Observando solo estos tres ejemplos, está claro que Electron está lejos del pr
 
 Excalidraw Desktop hasta ahora es básicamente la aplicación web Excalidraw empaquetada como un archivo [`.asar`](https://github.com/electron/asar) agrgándole una ventana **Acerca de Excalidraw**. La apariencia de la aplicación es casi idéntica a la versión web.
 
-<figure class="w-figure">{% Img  src="image/admin/oR9usELiRYTSu8V7i7vj.png", alt="La aplicación Excalidraw Desktop ejecutándose en un contenedor Electron.", width="800", height="601" %}<figcaption class="w-figcaption"> Excalidraw Desktop es casi indistinguible de la versión web</figcaption></figure>
+<figure>{% Img  src="image/admin/oR9usELiRYTSu8V7i7vj.png", alt="La aplicación Excalidraw Desktop ejecutándose en un contenedor Electron.", width="800", height="601" %}<figcaption> Excalidraw Desktop es casi indistinguible de la versión web</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/y9d4nWR3p0VjvHcnP0iq.png", alt="La ventana 'Acerca de' de Excalidraw Desktop que muestra la versión del contenedor de Electron y la aplicación web.", width="400", height="330" %}<figcaption class="w-figcaption"> El menú <strong>Acerca de Excalibur</strong> que da información sobre las versiones.</figcaption></figure>
+<figure>{% Img src="image/admin/y9d4nWR3p0VjvHcnP0iq.png", alt="La ventana 'Acerca de' de Excalidraw Desktop que muestra la versión del contenedor de Electron y la aplicación web.", width="400", height="330" %}<figcaption> El menú <strong>Acerca de Excalibur</strong> que da información sobre las versiones.</figcaption></figure>
 
 En macOS, ahora hay un menú de nivel de sistema en la parte superior de la aplicación, pero como ninguna de las acciones del menú, aparte de **Cerrar ventana** y **Acerca de Excalidraw**, está conectada a nada, el menú es, en su estado actual, bastante inútil. Mientras tanto, todas las acciones se pueden realizar, por supuesto, a través de las barras de herramientas normales de Excalidraw y el menú contextual.
 
-<figure class="w-figure">{% Img src="image/admin/akQQgmMKo66quqeVDdAH.png", alt="La barra de menú de Excalidraw Desktop en macOS con el elemento de menú 'Archivo', 'Cerrar ventana' seleccionado.", width="736", height="138" %}<figcaption class="w-figcaption"> La barra de menú de Excalidraw Desktop en macOS</figcaption></figure>
+<figure>{% Img src="image/admin/akQQgmMKo66quqeVDdAH.png", alt="La barra de menú de Excalidraw Desktop en macOS con el elemento de menú 'Archivo', 'Cerrar ventana' seleccionado.", width="736", height="138" %}<figcaption> La barra de menú de Excalidraw Desktop en macOS</figcaption></figure>
 
 Usamos [electron-builder](https://github.com/electron-userland/electron-builder), que admite [asociaciones de tipos de archivos](https://www.electron.build/configuration/configuration#PlatformSpecificBuildOptions-fileAssociations). Al hacer doble clic en un `.excalidraw`, lo ideal sería que se abriera la aplicación Excalidraw Desktop. El extracto relevante de nuestro archivo `electron-builder.json` ve así:
 
@@ -91,17 +91,17 @@ Incluso en 2020, [jQuery](https://jquery.com/) sigue siendo [increíblemente pop
 
 Excalidraw hoy es una aplicación web progresiva [instalable](/installable/) con un [trabajador de servicio](https://excalidraw.com/service-worker.js) y un [manifiesto de aplicación web](https://excalidraw.com/manifest.json). Almacena todos sus recursos en dos cachés, uno para fuentes y CSS relacionado con fuentes, y otro para todo lo demás.
 
-<figure class="w-figure">{% Img src="image/admin/tTo7miHIREZRySv8aoBd.png", alt="Pestaña de la aplicación Chrome DevTools que muestra los dos cachés de Excalidraw.", width="800", height="569" %}<figcaption class="w-figcaption"> Contenido de la caché de Excalidraw</figcaption></figure>
+<figure>{% Img src="image/admin/tTo7miHIREZRySv8aoBd.png", alt="Pestaña de la aplicación Chrome DevTools que muestra los dos cachés de Excalidraw.", width="800", height="569" %}<figcaption> Contenido de la caché de Excalidraw</figcaption></figure>
 
 Esto significa que la aplicación está completamente habilitada sin conexión y puede ejecutarse sin una conexión de red. Los navegadores basados en Chromium, tanto en computadoras de escritorio como en dispositivos móviles, solicitan al usuario que instale la aplicación. Puede ver el mensaje de instalación en la siguiente captura de pantalla.
 
-<figure class="w-figure">{% Img src="image/admin/be3EQLezj3776w6SHLPi.png", alt="Excalidraw solicita al usuario que instale la aplicación en Chrome en macOS.", width="400", height="258" %}<figcaption class="w-figcaption"> El cuadro de diálogo de instalación de Excalidraw en Chrome</figcaption></figure>
+<figure>{% Img src="image/admin/be3EQLezj3776w6SHLPi.png", alt="Excalidraw solicita al usuario que instale la aplicación en Chrome en macOS.", width="400", height="258" %}<figcaption> El cuadro de diálogo de instalación de Excalidraw en Chrome</figcaption></figure>
 
 Excalidraw está configurado para ejecutarse como una aplicación independiente, por lo que cuando lo instala, obtiene una aplicación que se ejecuta en su propia ventana. Está completamente integrado en la interfaz de usuario multitarea del sistema operativo y tiene su propio ícono de aplicación en la pantalla de inicio, el Dock o la barra de tareas; dependiendo de la plataforma donde lo instale.
 
-<figure class="w-figure">{% Img src="image/admin/MbMgQlGSBeNcX7Y362jV.png", alt="Excalidraw ejecutándose en su propia ventana", width="800", height="584" %}<figcaption class="w-figcaption"> La PWA Excalidraw en una ventana independiente</figcaption></figure>
+<figure>{% Img src="image/admin/MbMgQlGSBeNcX7Y362jV.png", alt="Excalidraw ejecutándose en su propia ventana", width="800", height="584" %}<figcaption> La PWA Excalidraw en una ventana independiente</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/7ncf98ZQZcg4g3UP2s7F.png", alt="Icono de Excalidraw en macOS Dock.", width="400", height="167" %}<figcaption class="w-figcaption"> El icono de Excalidraw en macOS Dock</figcaption></figure>
+<figure>{% Img src="image/admin/7ncf98ZQZcg4g3UP2s7F.png", alt="Icono de Excalidraw en macOS Dock.", width="400", height="167" %}<figcaption> El icono de Excalidraw en macOS Dock</figcaption></figure>
 
 ### Acceso al sistema de archivos
 
@@ -115,7 +115,7 @@ Los archivos se pueden arrastrar y soltar en la ventana de Excalidraw al igual q
 
 Excalidraw funciona bien con el portapapeles del sistema operativo. Se pueden copiar y pegar dibujos completos de Excalidraw o solo objetos individuales en formatos `image/png` e `image/svg+xml`, lo que permite una fácil integración con otras herramientas específicas de la plataforma como [Inkscape](https://inkscape.org/) o herramientas basadas en web como [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
-<figure class="w-figure">{% Img src="image/admin/90gLbYTtkKtDfun4fiRM.png", alt="Menú contextual de Excalidraw que muestra los elementos de menú 'copiar al portapapeles como SVG' y 'copiar al portapapeles como PNG'.", width="800", height="746" %}<figcaption class="w-figcaption"> El menú contextual de Excalidraw que ofrece acciones del portapapeles</figcaption></figure>
+<figure>{% Img src="image/admin/90gLbYTtkKtDfun4fiRM.png", alt="Menú contextual de Excalidraw que muestra los elementos de menú 'copiar al portapapeles como SVG' y 'copiar al portapapeles como PNG'.", width="800", height="746" %}<figcaption> El menú contextual de Excalidraw que ofrece acciones del portapapeles</figcaption></figure>
 
 ### Manejo de archivos
 

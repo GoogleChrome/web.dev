@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 오프스크린 이미지 지연
 description: 오프스크린 이미지 감사에 대해 알아봅니다.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 Lighthouse 보고서의 기회 섹션에는 페이지의 모든 오프스크린 이미지 또는 숨겨진 이미지와 함께 [KiB 단위](https://en.wikipedia.org/wiki/Kibibyte)의 잠재적 절감 효과가 나열됩니다. [상호 작용까지 시간](/interactive)을 낮추기 위해 모든 중요한 리소스가 로드를 완료한 후에 이러한 이미지를 지연 로드하는 것이 좋습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="Lighthouse 오프스크린 이미지 지연 감사를 보여주는 스크린샷", width="800", height="416", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="Lighthouse 오프스크린 이미지 지연 감사를 보여주는 스크린샷", width="800", height="416" %}</figure>
 
 [lazysizes codelab을 사용한 오프스크린 이미지 지연 로드](/codelab-use-lazysizes-to-lazyload-images)도 참조하세요.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El manifiesto no tiene un icono enmascarable
 description: |2-
 
@@ -15,7 +15,7 @@ date: 2020-05-06
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no tienen soporte de íconos enmascarables:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="La auditoría de ícono enmascarable en la interfaz de usuario de Lighthouse Report.", width="800", height="110", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="La auditoría de ícono enmascarable en la interfaz de usuario de Lighthouse Report.", width="800", height="110" %}</figure>
 
 Para aprobar la auditoría:
 

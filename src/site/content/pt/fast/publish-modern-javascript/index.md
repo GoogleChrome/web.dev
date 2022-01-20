@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Publique, envie e instale o JavaScript moderno para aplicativos mais rápidos
 subhead: Melhore o desempenho ativando as dependências e a saída do JavaScript moderno.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
@@ -20,7 +20,7 @@ tags:
 
 Mais de 90% dos navegadores são capazes de executar o JavaScript moderno, mas a prevalência do JavaScript legado continua sendo um dos maiores contribuintes para os problemas de desempenho na web hoje. [EStimator.dev](http://estimator.dev/) é uma ferramenta simples baseada na web que calcula o tamanho e a melhoria de desempenho que um site pode alcançar fornecendo uma sintaxe do JavaScript moderna.
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="A análise do EStimator.dev mostrando um site poderia ser 9% mais rápida com JavaScript moderno.", width="800", height="785" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> EStimator.dev </figcaption></figure>
+<figure data-size="full">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="A análise do EStimator.dev mostrando um site poderia ser 9% mais rápida com JavaScript moderno.", width="800", height="785" %} <figcaption> EStimator.dev </figcaption></figure>
 
 A web hoje é limitada por JavaScript legado e nenhuma otimização melhorará o desempenho tanto quanto escrever, publicar e enviar sua página da web ou pacote usando a sintaxe **ES2017**.
 
@@ -149,12 +149,12 @@ module.exports = {
 
 O `Optimize Plugin` pode ser mais rápido e eficiente do que configurações de webpack personalizadas, que normalmente agrupam código moderno e legado separadamente. Ele também lida com a execução do [Babel](https://babeljs.io/) para você e minimiza os pacotes usando o [Terser](https://terser.org/) com configurações ideais separadas para as saídas modernas e legadas. Por último, polyfills necessários para os pacotes legados gerados são extraídos em um script dedicado para que nunca sejam duplicados ou carregados desnecessariamente em navegadores mais novos.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Comparação: transpilar módulos de fonte duas vezes versus transpilar pacotes gerados.</figcaption></figure>
+  <figcaption>Comparação: transpilar módulos de fonte duas vezes versus transpilar pacotes gerados.</figcaption></figure>
 
 ### BabelEsmPlugin
 

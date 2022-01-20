@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Verifique números de telefone na web com a API WebOTP
 subhead: Ajude os usuários com OTPs (senhas de uso único) recebidos por SMS
 authors:
@@ -48,7 +48,7 @@ Para o usuário, com a API WebOTP, essas etapas são tão fáceis quanto um toqu
 
 Todo o processo está diagramado na imagem abaixo.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %}   <figcaption class="w-figcaption w-figcaption--fullbleed">     Diagrama da WebOTP API   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %}   <figcaption>     Diagrama da WebOTP API   </figcaption></figure>
 
 Experimente a [demonstração](https://web-otp.glitch.me) você mesmo. Ela não pede seu número de telefone ou envia um SMS para o seu dispositivo, mas você pode enviar um de outro dispositivo copiando o texto exibido na demonstração. Isto funciona porque, ao usar a API WebOTP, não importa quem é o remetente .
 
@@ -271,7 +271,7 @@ Para usar a API WebOTP de um iframe de origem cruzada, você precisa fazer duas 
 - Anotar tanto a origem do frame superior como a origem do iframe na mensagem de texto SMS.
 - Configure a política de permissões para permitir que o iframe de origem cruzada receba a OTP diretamente do usuário.
 
-<figure class="w-figure"> {% Video   src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4",   autoplay="true",   controls="true",   loop="true",   muted="true",   preload="auto",   width="300",   height="600",   class="w-screenshot" %}   <figcaption class="w-figcaption">     WebOTP API num iframe em ação.   </figcaption></figure>
+<figure> {% Video   src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4",   autoplay="true",   controls="true",   loop="true",   muted="true",   preload="auto",   width="300",   height="600" %}   <figcaption>     WebOTP API num iframe em ação.   </figcaption></figure>
 
 Você pode experimentar a demonstração em [https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io) .
 

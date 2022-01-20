@@ -19,7 +19,7 @@ tags:
 
 Nesta postagem, quero compartilhar ideias sobre a construção de um componente de abas para a web que seja responsivo, ofereça suporte a variadas entradas de dispositivo e funcione em múltiplos navegadores. Experimente a [demonstração](https://gui-challenges.web.app/tabs/dist/).
 
-<figure class="w-figure w-figure--fullbleed">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}   <figcaption class="w-figure">     <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a>   </figcaption></figure>
+<figure data-size="full">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",     autoplay="true",     loop="true",     muted="true"   %}   <figcaption>     <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a>   </figcaption></figure>
 
 Se você preferir vídeo, aqui está uma versão desta postagem no YouTube:
 
@@ -31,7 +31,7 @@ As abas são um componente comum dos sistemas de design, mas podem assumir muita
 
 Hoje, o essencial da experiência do usuário com abas é uma área de navegação de botão que alterna a visibilidade do conteúdo em um frame de exibição. Muitas áreas de conteúdo diferentes compartilham o mesmo espaço, mas são apresentadas condicionalmente com base no botão selecionado na navegação.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png",     alt="a colagem é bastante caótica devido à grande variedade de estilos que passaram a ser chamados componente pela web",     class="w-screenshot",     width="800", height="500"   %}   <figcaption class="w-figcaption">     Uma colagem de estilos de web design de componentes de aba, dos últimos 10 anos  </figcaption></figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png",     alt="a colagem é bastante caótica devido à grande variedade de estilos que passaram a ser chamados componente pela web",     width="800", height="500"   %}   <figcaption>     Uma colagem de estilos de web design de componentes de aba, dos últimos 10 anos  </figcaption></figure>
 
 ## Táticas da Web
 
@@ -49,7 +49,7 @@ Basicamente, a UX aqui consiste em: clique em um link, faça com que a URL repre
 
 Lá dentro existem alguns membros de conteúdo estrutural: links e `:target`s. Precisamos de uma lista de links, para os quais um `<nav>` é perfeito, e uma lista de elementos `<article>`, para os quais uma `<section>` é excelente. Cada hash de link corresponderá a uma seção, permitindo que o navegador role as coisas por meio da ancoragem.
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}   <figcaption class="w-figure">     Um botão de link é clicado, fazendo o conteúdo em foco ocupar a viewport   </figcaption></figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",     autoplay="true",     loop="true",     muted="true"   %}   <figcaption>     Um botão de link é clicado, fazendo o conteúdo em foco ocupar a viewport   </figcaption></figure>
 
 Por exemplo, clicar em um link direciona automaticamente o artigo destino `:target` no Chrome 89, sem necessidade de usar JS. O usuário pode então rolar o conteúdo do artigo com seu dispositivo de entrada como sempre. É um conteúdo complementar, conforme indicado na marcação.
 
@@ -105,7 +105,7 @@ Existem 3 tipos diferentes de áreas de rolagem neste componente:
 - A área de conteúdo <b style="color: #008CFF;">(azul)</b> é rolável horizontalmente
 - Cada item de artigo <b style="color: #2FD800;">(verde)</b> pode ser rolado verticalmente.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png",     alt="3 caixas coloridas com setas direcionais, correspondentes a cores, que contornam as áreas de rolagem e mostram a direção em que irão rolar.",     class="w-screenshot",     width="800", height="450"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png",     alt="3 caixas coloridas com setas direcionais, correspondentes a cores, que contornam as áreas de rolagem e mostram a direção em que irão rolar.",     width="800", height="450"   %}</figure>
 
 Existem 2 diferentes tipos de elementos envolvidos na rolagem:
 
@@ -161,7 +161,7 @@ Apontando de volta ao diagrama colorido de 3 rolagens:
 
 Os frames que destaquei abaixo com [VisBug](https://a.nerdy.dev/gimme-visbug) nos ajudam a ver as **janelas** que foram criadas pelos containers de rolagem.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png",     alt="os elementos header e section têm sobreposições de hotpink, delineando o espaço que ocupam no componente",     class="w-screenshot",     width="800", height="620"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png",     alt="os elementos header e section têm sobreposições de hotpink, delineando o espaço que ocupam no componente",     width="800", height="620"   %}</figure>
 
 #### Layout de cabeçalho de abas `<header>` {: #tabs-header}
 
@@ -179,7 +179,7 @@ O próximo layout é quase o mesmo: eu uso flex para criar ordenação vertical.
 
 O `.snap-indicator` deve viajar horizontalmente junto com o grupo de links, e esse layout de cabeçalho ajuda a definir esse estágio. Nenhum elemento é posicionado de forma absoluta aqui!
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png",     alt="os elementos nav e span.indicator têm overlays hotpink, contornando o espaço que ocupam no componente",     class="w-screenshot",     width="800", height="368"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png",     alt="os elementos nav e span.indicator têm overlays hotpink, contornando o espaço que ocupam no componente",     width="800", height="368"   %}</figure>
 
 Em seguida, os estilos de rolagem. Acontece que podemos compartilhar os estilos de rolagem entre nossas 2 áreas de rolagem horizontal (header e section), então eu criei uma classe utilitária `.scroll-snap-x`.
 
@@ -223,7 +223,7 @@ Os links nav precisam ser dispostos em uma linha, sem quebras de linha, centrali
 
 Cada link define seu tamanho e estilo, portanto, o layout nav só precisa especificar direção e fluxo. Larguras exclusivas em itens nav deixam a transição entre as abas divertida, já que o indicador ajusta sua largura para o novo destino. Dependendo de quantos elementos estiverem lá, o navegador irá renderizar uma barra de rolagem ou não.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png",     alt="os elementos a do nav têm overlays de hotpink, destacando o espaço que ocupam no componente, bem como onde eles transbordam",     class="w-screenshot",     width="800", height="327"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png",     alt="os elementos a do nav têm overlays de hotpink, destacando o espaço que ocupam no componente, bem como onde eles transbordam",     width="800", height="327"   %}</figure>
 
 #### Layout de seção de abas `<section>` {: #tabs-section }
 
@@ -244,7 +244,7 @@ Esta seção é um item flexível e precisa ser o consumidor dominante de espaç
 
 É como se estivéssemos dizendo "expanda verticalmente o máximo possível, de forma agressiva" (lembre-se do cabeçalho que definimos para `flex-shrink: 0` : é uma defesa contra esse impulso de expansão), que define a altura da linha para um conjunto de colunas de altura total. O estilo `auto-flow` diz à grade para sempre posicionar os filhos numa linha horizontal, sem quebra automática, exatamente o que queremos; para transbordar a janela pai.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png",     alt="os elementos article têm overlays hotpink neles, delineando o espaço que ocupam no componente e onde transbordam",     class="w-screenshot",     width="800", height="512"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png",     alt="os elementos article têm overlays hotpink neles, delineando o espaço que ocupam no componente e onde transbordam",     width="800", height="512"   %}</figure>
 
 Eu acho isso difícil de entender às vezes! Este elemento de seção cabe em uma caixa, mas também criou um conjunto de caixas. Espero que os recursos visuais e as explicações estejam ajudando.
 
@@ -266,7 +266,7 @@ O usuário deve ser capaz de rolar o conteúdo do artigo, e as barras de rolagem
 
 Eu escolhi fazer com que os artigos se encaixassem no rolador pai. Eu realmente gosto de como os itens do link de navegação e os elementos do artigo se encaixam no início inline de seus respectivos containers de rolagem. Parece um relacionamento harmonioso.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png",     alt="o elemento article e seus elementos filho têm overlays hotpink neles, delineando o espaço que ocupam no componente e a direção em que transbordam",     class="w-screenshot",     width="800", height="808"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png",     alt="o elemento article e seus elementos filho têm overlays hotpink neles, delineando o espaço que ocupam no componente e a direção em que transbordam",     width="800", height="808"   %}</figure>
 
 O artigo é um filho da grade e seu tamanho é predeterminado para ser a área da janela de visualização para a qual desejamos fornecer a UX de rolagem. Isto significa que não preciso ter estilos de altura ou largura aqui, só preciso definir como ele transborda. Eu defino overflow-y como auto e, em seguida, também intercepto as interações de rolagem com a propriedade overscroll-behaviour.
 
@@ -274,13 +274,13 @@ O artigo é um filho da grade e seu tamanho é predeterminado para ser a área d
 
 Abaixo, escolhi nas configurações do meu sistema como "sempre mostrar as barras de rolagem". Acho que é duplamente importante para o layout funcionar com essa configuração ativada, assim como é para mim revisar o layout e a orquestração da rolagem.
 
-<figure class="w-figure">  {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png",     alt="as 3 barras de rolagem estão configuradas para aparecer, agora consumindo espaço de layout, e nosso componente ainda parece ótimo",     class="w-screenshot",     width="500", height="607"   %}</figure>
+<figure>  {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png",     alt="as 3 barras de rolagem estão configuradas para aparecer, agora consumindo espaço de layout, e nosso componente ainda parece ótimo",     width="500", height="607"   %}</figure>
 
 Acho que ver a medianiz da barra de rolagem neste componente ajuda a mostrar claramente onde estão as áreas de rolagem, a direção que suportam e como elas interagem umas com as outras. Considere como cada uma desses frames de janela de rolagem também são pais flex ou de grid para um layout.
 
 O DevTools pode nos ajudar a visualizar isso:
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png",     alt="as áreas de rolamento têm overlays de ferramentas grid e flexbox overlays, delineando o espaço que ocupam no componente e a direção em que transbordam",     class="w-screenshot",     width="800", height="455"   %}   <figcaption class="w-figure">     Chromium Devtools, mostrando o elemento nav flexbox cheio de elementos âncora, o layout da grade criado pelo elemento section cheio de elementos article e os elementos article cheios de parágrafos e um elemento de cabeçalho.   </figcaption></figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png",     alt="as áreas de rolamento têm overlays de ferramentas grid e flexbox overlays, delineando o espaço que ocupam no componente e a direção em que transbordam",     width="800", height="455"   %}   <figcaption>     Chromium Devtools, mostrando o elemento nav flexbox cheio de elementos âncora, o layout da grade criado pelo elemento section cheio de elementos article e os elementos article cheios de parágrafos e um elemento de cabeçalho.   </figcaption></figure>
 
 Os layouts de rolagem são completos, com snapping, links profundos e acessibilidade por teclado. Uma base sólida para aprimoramentos de UX, estilo e prazer.
 
@@ -294,7 +294,7 @@ O objetivo do trabalho de animação aqui é vincular claramente as interações
 
 Estarei vinculando um sublinhado de aba com a posição de rolagem do artigo. Snapping não é apenas bom alinhamento, mas também serve para ancorar o início e o fim de uma animação. Isto mantém o `<nav>`, que atua como um [minimapa](https://en.wikipedia.org/wiki/Mini-map), conectado ao conteúdo. Verificaremos a preferência de movimento do usuário em CSS e JS.
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}</figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",     autoplay="true",     loop="true",     muted="true"   %}</figure>
 
 #### Comportamento de rolagem {: #scroll-behavior }
 
@@ -308,7 +308,7 @@ Há uma oportunidade de aprimorar o comportamento de movimento de ambos `:target
 }
 ```
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}</figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",     autoplay="true",     loop="true",     muted="true"   %}</figure>
 
 Como estamos introduzindo movimento aqui, e movimento que o usuário não controla (como a rolagem), só aplicamos esse estilo se o usuário não tiver preferência em seu sistema operacional em relação a movimento reduzido. Dessa forma, apresentamos o movimento de rolagem apenas para as pessoas que concordarem com ele.
 
@@ -318,7 +318,7 @@ O objetivo desta animação é ajudar a associar o indicador ao estado do conte�
 
 No Chromium Devtools, posso alternar a preferência e demonstrar os 2 estilos de transição diferentes. Eu me diverti muito construindo isso.
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}</figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",     autoplay="true",     loop="true",     muted="true"   %}</figure>
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -436,13 +436,13 @@ Keyframes de width:
 
 Para resumir a estratégia, o indicador da aba agora será animado em 4 keyframes, dependendo da posição do snap de rolagem do scroller da seção. Os pontos de ajuste criam um delineamento definido entre nossos keyframes e aumentam a sensação de sincronização da animação.
 
-<figure class="w-figure">   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png",     alt="aba ativa e aba inativa são mostradas com sobreposições VisBug que exibem as pontuações de contraste para ambos que passam na auditoria",     class="w-screenshot",     width="540", height="400"   %}</figure>
+<figure>   {% Img     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png",     alt="aba ativa e aba inativa são mostradas com sobreposições VisBug que exibem as pontuações de contraste para ambos que passam na auditoria",     width="540", height="400"   %}</figure>
 
 O usuário conduz a animação com sua interação, vendo a largura e a posição do indicador mudar de uma seção para a seguinte, acompanhando perfeitamente com a rolagem.
 
 Você pode não ter notado, mas estou muito orgulhoso da transição de cores quando o item de navegação destacado é selecionado.
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}</figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",     autoplay="true",     loop="true",     muted="true"   %}</figure>
 
 O cinza mais claro não selecionado aparece ainda mais empurrado para trás quando o item destacado tem mais contraste. É comum fazer a transição de cor para o texto, como ao passar o mouse e quando selecionado, mas o próximo nível faz a transição dessa cor na rolagem, sincronizada com o indicador de sublinhado.
 
@@ -507,7 +507,7 @@ window.onload = () => {
 
 Nossos usuários nem sempre estão clicando ou usando um teclado, às vezes eles estão apenas rolando livremente, como deveriam ser capazes de fazer. Quando o scroller de seção para de rolar, o local onde ele para precisa ser correspondido na barra de navegação superior.
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}</figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",     autoplay="true",     loop="true",     muted="true"   %}</figure>
 
 É assim que espero o final da rolagem:
 
@@ -544,7 +544,7 @@ const setActiveTab = tabbtn => {
 
 A definição da aba ativa começa ao limpar qualquer aba que esteja atualmente ativa e, em seguida, dando ao novo item nav atributo de estado "active". A chamada para `scrollIntoView()` tem uma interação divertida com CSS que vale a pena observar.
 
-<figure class="w-figure">   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",     class="w-screenshot",     autoplay="true",     loop="true",     muted="true"   %}</figure>
+<figure>   {% Video     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",     autoplay="true",     loop="true",     muted="true"   %}</figure>
 
 ```css
 .scroll-snap-x {

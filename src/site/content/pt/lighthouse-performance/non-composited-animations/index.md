@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite animações não compostas
 description: Como passar na auditoria Lighthouse "Evitar animações não compostas".
 date: 2020-08-12
@@ -13,7 +13,7 @@ Animações não compostas podem parecer irregulares (ou seja, não suaves) em t
 
 Os algoritmos do navegador para converter HTML, CSS e JavaScript em pixels são conhecidos coletivamente como *pipeline de renderização*.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="O pipeline de renderização consiste nas seguintes etapas sequenciais: JavaScript, Estilo, Layout, Pintura, Composto.", width="800", height="122" %} <figcaption class="w-figcaption">O pipeline de renderização.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="O pipeline de renderização consiste nas seguintes etapas sequenciais: JavaScript, Estilo, Layout, Pintura, Composto.", width="800", height="122" %} <figcaption>O pipeline de renderização.</figcaption></figure>
 
 Tudo bem se você não entender o que significa cada etapa do pipeline de renderização. O principal a ser entendido agora é que, em cada etapa do pipeline de renderização, o navegador usa o resultado da operação anterior para criar novos dados. Por exemplo, se o seu código faz algo que acione o Layout, as etapas de pintura e composição precisam ser executadas novamente. Uma animação não composta é qualquer animação que acione uma das etapas anteriores no pipeline de renderização (Estilo, Layout ou Pintura). As animações não compostas têm pior desempenho porque forçam o navegador a trabalhar mais.
 

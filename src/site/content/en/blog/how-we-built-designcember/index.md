@@ -54,7 +54,7 @@ Once the general grid was relatively stable and communicated a sense of directio
 
 Each window would need to handle a certain amount of resize turbulence. Below is a prototype of a window demonstrating its responsiveness to turbulence, showing how much we could expect each interactive window to adjust.
 
-{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/2F6S98FvsNhviuBvtJcI.mov", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/2F6S98FvsNhviuBvtJcI.mov", autoplay="true", loop="true", muted="true" %}
 
 ## Window animation with spritesheets
 
@@ -151,11 +151,11 @@ For example, when embedding the images we used `role="presentation"` to mark the
 
 The following video shows a demo of the keyboard experience. Tab, enter, spacebar, and escape keys are all used to orchestrate focus to and from the window popups and the windows.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/UYNJSy92FLABrsLgz0lz.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/UYNJSy92FLABrsLgz0lz.mp4", autoplay="true", loop="true", muted="true" %}
 
 The screen reader experience has special ARIA attributes that bring clarity to the content. For example, the links for the days only say "one" or "two", but with some added ARIA, they are announced as "Day one" and "Day two." Furthermore, all the images are summarized in a single label so each window has a description.
 
-{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bKYH0xxOJkwh0RTMGuAG.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bKYH0xxOJkwh0RTMGuAG.mp4", autoplay="true", loop="true", muted="true" %}
 
 ## Astro, static first, component-driven site generator
 
@@ -234,7 +234,7 @@ Container queries also allowed us to support block-direction (vertical) containm
 
 We also used container queries to show and hide detail as the art became increasingly crowded at smaller sizes, and emptier at wider sizes. Window nine is a great example of where this came into play:
 
-{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/rXfci0RECfk5six1UTGv.mov", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/rXfci0RECfk5six1UTGv.mov", autoplay="true", loop="true", muted="true" %}
 
 
 ## Cross-browser support
@@ -260,7 +260,7 @@ To create a great modern cross-browser experience, especially for experimental A
 
 One last touch that was essential for the Designcember website was a beautiful dark theme. We wanted to show how you could use art itself to be an active participant in creating a great dark mode experience. For this, we adjusted the background styles of each window itself programmatically, and used as much CSS as made sense when creating the window art. Most of the backgrounds were CSS gradients, so that it would be easier to adjust their color values. We then layered the art on top of these.
 
-{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/gBrdHzLwdDckE9pgxK5L.mp4", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/gBrdHzLwdDckE9pgxK5L.mp4", autoplay="true", loop="true", muted="true" %}
 
 ## Other Easter eggs
 

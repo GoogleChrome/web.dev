@@ -21,7 +21,7 @@ feedback:
 
 ブルームバーグが後援しているIgaliaのおかげで、私たちはついにスタイリングリストのハックを片付けることができます。見る！
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %} <figcaption class="w-figcaption"> <a href="https://glitch.com/edit/#!/marker-fun-example">ソースを見る</a> </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %} <figcaption> <a href="https://glitch.com/edit/#!/marker-fun-example">ソースを見る</a> </figcaption></figure>
 
 [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo)で、箇条書きと数字の内容といくつかのスタイルを変更できます。
 
@@ -245,7 +245,7 @@ li::marker {
 
 `::marker`疑似要素に適用されるスタイルの検査、デバッグ、および変更をサポートできるようになりました。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevToolsがユーザーエージェントからのスタイルとユーザースタイルを開いて、表示します", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevToolsがユーザーエージェントからのスタイルとユーザースタイルを開いて、表示します", width="776", height="574", style="max-inline-size: 480px" %}</figure>
 
 ### 将来の疑似要素のスタイリング
 

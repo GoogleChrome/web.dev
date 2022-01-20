@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduza o tempo de execução do JavaScript
 description: |2
 
@@ -36,7 +36,7 @@ Quando seu JavaScript leva muito tempo para ser executado, ele desacelera o dese
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) mostra um aviso quando a execução do JavaScript leva mais de 2 segundos. A auditoria falha quando a execução leva mais de 3,5 segundos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Uma captura de tela da auditoria do Lighthouse Reduzir tempo de execução do JavaScriptt", width="800", height="321", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Uma captura de tela da auditoria do Lighthouse Reduzir tempo de execução do JavaScriptt", width="800", height="321" %}</figure>
 
 Para ajudá-lo a identificar os maiores contribuintes para o tempo de execução, o Lighthouse relata o tempo gasto na execução, avaliação e análise de cada arquivo JavaScript que sua página carrega.
 

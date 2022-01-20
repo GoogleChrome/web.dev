@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免多个页面重定向
 description: 了解为什么页面重定向会减慢网页的加载速度以及如何加以避免。
 web_lighthouse:
@@ -21,7 +21,7 @@ Location: /path/to/new/location
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记具有多个重定向的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
 当页面有两个或更多重定向时，该页面无法通过此审计。
 

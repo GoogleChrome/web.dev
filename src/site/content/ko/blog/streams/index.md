@@ -55,7 +55,7 @@ Streams API를 사용하면 네트워크를 통해 수신되거나 로컬에서 
 
 `tee()` 메서드를 사용하여 읽기 가능한 스트림을 티잉(대문자 'T' 모양의 이름을 따서 명명)할 수 있습니다. 이렇게 하면 스트림이 **잠깁니다**. 즉, 스트림을 더 이상 직접 사용할 수 없게 됩니다. 그러나 독립적으로 사용할 수 있는 분기라고 하는 **두 개의 새로운 스트림**을 생성합니다. 스트림을 되감거나 다시 시작할 수 없기 때문에 티잉도 중요합니다. 이에 대해서는 나중에 자세히 다루도록 하겠습니다.
 
-<figure class="w-figure"><comment data-md-type="comment"></comment> {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="호출에서 패치 API(출력이 티잉되는 변환 스트림을 통해 파이핑된 다음 첫 번째 결과로 나타나는 읽기 가능한 스트림을 위해 브라우저에 전송되고 두 번째 결과로 나타나는 읽기 가능한 스트림을 위해 서비스 작업자 캐시에 전송됨)로 이어지는 읽기 가능한 스트림으로 구성된 파이프 체인 다이어그램", width="800", height="430" %} <figcaption class="w-figcaption">파이프 체인.</figcaption></figure>
+<figure><comment data-md-type="comment"></comment> {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="호출에서 패치 API(출력이 티잉되는 변환 스트림을 통해 파이핑된 다음 첫 번째 결과로 나타나는 읽기 가능한 스트림을 위해 브라우저에 전송되고 두 번째 결과로 나타나는 읽기 가능한 스트림을 위해 서비스 작업자 캐시에 전송됨)로 이어지는 읽기 가능한 스트림으로 구성된 파이프 체인 다이어그램", width="800", height="430" %} <figcaption>파이프 체인.</figcaption></figure>
 
 ## 읽기 가능한 스트림 메커니즘
 

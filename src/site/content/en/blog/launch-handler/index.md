@@ -59,7 +59,7 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |

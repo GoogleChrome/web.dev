@@ -39,13 +39,13 @@ Las distribuciones flex tienen las siguientes características, que podrá explo
 
 La clave para comprender flexbox es comprender el concepto de eje principal y eje transversal. El eje principal es el que establece su propiedad `flex-direction`. Si esa es `row`, su eje principal está a lo largo de la fila, si es `column` su eje principal está a lo largo de la columna.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt="Tres cuadros uno al lado del otro con una flecha, apuntando de izquierda a derecha. La flecha está etiquetada como Eje principal",width="800", height="320" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt="Tres cuadros uno al lado del otro con una flecha, apuntando de izquierda a derecha. La flecha está etiquetada como Eje principal",width="800", height="320" %}</figure>
 
 Los elementos flex se mueven como un grupo en el eje principal. Recuerde: tenemos un montón de cosas y estamos tratando de obtener el mejor diseño para ellas como grupo.
 
 El eje transversal corre en la otra dirección al eje principal, por lo que si `flex-direction` es `row` el eje transversal corre a lo largo de la columna.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Tres cuadros de diferentes alturas, uno al lado del otro con una flecha, apuntando de izquierda a derecha. La flecha está etiquetada como eje principal. Hay otra flecha apuntando de arriba a abajo. Esta tiene la etiqueta Eje transversal", width="800", height="320" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Tres cuadros de diferentes alturas, uno al lado del otro con una flecha, apuntando de izquierda a derecha. La flecha está etiquetada como eje principal. Hay otra flecha apuntando de arriba a abajo. Esta tiene la etiqueta Eje transversal", width="800", height="320" %}</figure>
 
 Puede hacer dos cosas en el eje transversal. Puede mover los elementos individualmente o en grupo para que se alineen entre sí y con el contenedor flex. Además, si ha envuelto líneas flex, puede tratar esas líneas como un grupo para controlar cómo se asigna el espacio a ellas. Verá cómo funciona todo esto en la práctica a lo largo de esta guía, por ahora solo tenga en cuenta que el eje principal sigue su `flex-direction`.
 
@@ -128,7 +128,7 @@ Teniendo que considerar los ejes principal y transversal más el modo de escritu
 
 El valor inicial de la propiedad `flex-wrap` es `nowrap`. Esto significa que si no hay suficiente espacio en el contenedor, los elementos se desbordarán.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt="Un contenedor flex con nueve elementos dentro, los elementos se han reducido, por lo que una palabra está en una línea, pero no hay suficiente espacio para mostrarlos uno al lado del otro, por lo que los elementos flex se han extendido fuera de la caja del contenedor. ", width="800", height="282" %}<figcaption class="w-figcaption"> Una vez que alcancen el tamaño mínimo del contenido, los elementos flex comenzarán a desbordar su contenedor</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt="Un contenedor flex con nueve elementos dentro, los elementos se han reducido, por lo que una palabra está en una línea, pero no hay suficiente espacio para mostrarlos uno al lado del otro, por lo que los elementos flex se han extendido fuera de la caja del contenedor. ", width="800", height="282" %}<figcaption> Una vez que alcancen el tamaño mínimo del contenido, los elementos flex comenzarán a desbordar su contenedor</figcaption></figure>
 
 Los elementos que se muestran usando los valores iniciales se encogerán lo más pequeño posible, hasta el tamaño `min-content`, antes de que ocurra el desbordamiento.
 

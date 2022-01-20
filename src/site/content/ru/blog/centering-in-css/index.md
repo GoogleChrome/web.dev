@@ -42,7 +42,7 @@ tags:
 
 Я предоставил несколько визуальных цветовых подсказок, чтобы помочь вам сохранить некоторую метаинформацию в контексте:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438", class="w-screenshot" %} <figcaption class="w-figcaption"></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438" %} <figcaption></figcaption></figure>
 
 - Розовая рамка указывает на владение стилями центрирования.
 - Серый прямоугольник - это фон на контейнере, на котором необходимо разместить элементы по центру.
@@ -54,8 +54,8 @@ tags:
 
 ### 1. Центр содержимого
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </source></video>
   <figcaption>Редактирование и копирование контента с помощью <a href="https://github.com/GoogleChromeLabs/ProjectVisBug#visbug">VisBug</a></figcaption></figure>
@@ -89,8 +89,8 @@ tags:
 
 ### 2. Нежный изгиб
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gentle-flex-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -125,8 +125,8 @@ Gentle Flex - более точная стратегия, *основанная 
 
 ### 3. Автобот
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/autobot-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -162,8 +162,8 @@ Gentle Flex - более точная стратегия, *основанная 
 
 ### 4. Пушистый центр
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/fluffy-center-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -195,8 +195,8 @@ Gentle Flex - более точная стратегия, *основанная 
 
 ### 5. Pop &amp; Plop
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/popnplop-ringer-cycle.mp4">
   </source></video></figure>
 

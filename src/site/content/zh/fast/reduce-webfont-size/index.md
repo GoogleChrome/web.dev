@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 减小 WebFont 大小
 authors:
   - ilyagrigorik

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O conteúdo não está dimensionado corretamente para a janela de visualização
 description: |2
 
@@ -16,7 +16,7 @@ A janela de visualização é a parte da janela do navegador na qual o conteúdo
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas cuja largura não é igual à largura da janela de visualização:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Auditoria do Lighthouse mostrando conteúdo não dimensionado corretamente para a janela de visualização", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Auditoria do Lighthouse mostrando conteúdo não dimensionado corretamente para a janela de visualização", width="800", height="98" %}</figure>
 
 A auditoria falhará se `window.innerWidth` não for igual a `window.outerWidth` .
 

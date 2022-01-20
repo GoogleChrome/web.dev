@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reemplace los GIF animados con video para cargas de página más rápidas
 authors:
   - houssein
@@ -16,7 +16,7 @@ feedback:
 
 ¿Alguna vez ha visto un GIF animado en un servicio como Imgur o Gfycat, lo inspeccionó en sus herramientas de desarrollo y descubrió que el GIF era realmente un video? Hay una buena razón para ello. Los GIF animados pueden ser francamente *enormes*.
 
-{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="El panel de red de DevTools muestra un gif de 13.7 MB", width="800", height="155", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="El panel de red de DevTools muestra un gif de 13.7 MB", width="800", height="155" %}
 
 Afortunadamente, esta es una de esas áreas del rendimiento de carga en las que hacer un trabajo relativamente pequeño brinda grandes ganancias. **Al convertir GIF grandes en videos, puede ahorrarle mucho ancho de banda a los usuarios**.
 
@@ -24,7 +24,7 @@ Afortunadamente, esta es una de esas áreas del rendimiento de carga en las que 
 
 Use Lighthouse para verificar su sitio en busca de GIFs que se puedan convertir en videos. En DevTools, haga clic en la pestaña Auditorías y marque la casilla de verificación Rendimiento. Luego, ejecute Lighthouse y verifique el informe. Si tiene algún GIF que se pueda convertir, debería ver una sugerencia para "Usar formatos de video para contenido animado":
 
-{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="Una auditoría de Lighthouse fallida, use formatos de video para contenido animado.", width="800", height="173", class="w-screenshot" %}
+{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="Una auditoría de Lighthouse fallida, use formatos de video para contenido animado.", width="800", height="173" %}
 
 ## Cree videos MPEG
 
@@ -56,7 +56,7 @@ ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm
 
 El ahorro de costos entre un GIF y un video puede ser bastante significativo.
 
-{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="La comparación del tamaño del archivo muestra 3.7 MB para el gif, 551 KB para el mp4 y 341 KB para el webm.", width="800", height="188", class="w-screenshot" %}
+{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="La comparación del tamaño del archivo muestra 3.7 MB para el gif, 551 KB para el mp4 y 341 KB para el webm.", width="800", height="188" %}
 
 En este ejemplo, el GIF inicial es de 3.7 MB, en comparación con la versión MP4, que tiene 551 KB, y la versión WebM, ¡que solo tiene 341 KB!
 

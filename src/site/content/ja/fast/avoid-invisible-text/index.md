@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: フォントの読み込み中にテキストが非表示されることを避ける
 authors:
   - katiehempenius
@@ -23,7 +23,7 @@ feedback:
 
 ## オプション＃1：font-displayを使用する
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -57,7 +57,7 @@ feedback:
 
 下記は、一般的なブラウザのデフォルトのフォント読み込み動作です。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

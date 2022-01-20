@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 文档没有有效的 `rel=canonical`
 description: |2-
 
@@ -26,7 +26,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记任何具有无效 canonical 链接的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Lighthouse 审计显示文档具有无效的 canonical 链接", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Lighthouse 审计显示文档具有无效的 canonical 链接", width="800", height="76" %}</figure>
 
 除非满足以下所有条件，否则页面将无法通过审计：
 

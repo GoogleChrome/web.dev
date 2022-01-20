@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 在 Data Studio 上使用 CrUX Dashboard
 authors:
   - rviscomi
@@ -13,7 +13,7 @@ tags:
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) 是一款功能强大的数据可视化工具，可让您使用大数据源构建仪表板，如 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX)。您可以在本文中了解如何创建自定义 CrUX Dashboard 来跟踪源中用户的体验。
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
 CrUX 仪表板使用 Data Studio 的 [Community Connectors](https://developers.google.com/datastudio/connector/) 功能构建。此连接器是 [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) 上的原始 CrUX 数据与 Data Studio 的可视化之间预建立的一个链接。有了它，仪表板用户无需编写任何查询或生成任何图表。它可以为您构建所有内容；您只需要提供一个源，就会为您生成一个自定义仪表板。
 
@@ -21,7 +21,7 @@ CrUX 仪表板使用 Data Studio 的 [Community Connectors](https://developers.g
 
 首先请访问 [g.co/chromeuxdash](https://g.co/chromeuxdash)。您会进入 CrUX 社区连接器页面，可以在这里提供将用于生成仪表板的源。请注意，首次使用的用户可能需要完成权限或营销偏好提示。
 
-{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX 仪表板连接器", width="800", height="484", class="w-screenshot" %}
+{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX 仪表板连接器", width="800", height="484" %}
 
 文本输入字段只接受源，不接受完整的 URL。例如：
 
@@ -47,11 +47,11 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 如果您的源并未包含在 CrUX 数据集中，那么您可能会看到如下所示的错误消息。数据集收集了超过 400 万个源，但您想用的源可能数据不足，所以未被收录。
 
-{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX Dashboard 错误信息", width="800", height="409", class="w-screenshot" %}
+{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX Dashboard 错误信息", width="800", height="409" %}
 
 如果源存在，您将转至仪表板的架构页面。这里显示了包含的所有字段：每个有效连接类型、每个窗体因子、数据集发布的月份、每个指标的性能分布，当然还有源的名称。您无需在此页面进行任何操作或更改，只需单击**创建报告**即可继续。
 
-{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX Dashboard 架构", width="800", height="403", class="w-screenshot" %}
+{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX Dashboard 架构", width="800", height="403" %}
 
 ## 使用仪表板
 
@@ -69,19 +69,19 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 第一页显示了源的 [Core Web Vitals](/vitals/) 月度表现概览。这些是 Google 建议关注的最重要的用户体验指标。
 
-{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX Dashboard Core Web Vitals 概览", width="800", height="906", class="w-screenshot" %}
+{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX Dashboard Core Web Vitals 概览", width="800", height="906" %}
 
 使用 Core Web Vitals 页面了解桌面和收集用户的源体验。默认情况会选择您创建仪表板时的最近一个月。要改为较旧或较新的月度版本，请使用页面顶部的**月份**过滤器。
 
 请注意，默认情况下这些图表中会忽略平板电脑。但如果您有此方面的需要，则可以删除条形图配置中的**无平板电脑**过滤器，如下所示。
 
-{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="编辑 CrUX 仪表板以在 Core Web Vitals 页面上显示平板电脑", width="800", height="288", class="w-screenshot" %}
+{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="编辑 CrUX 仪表板以在 Core Web Vitals 页面上显示平板电脑", width="800", height="288" %}
 
 ### 指标性能
 
 在 Core Web Vitals 页面之后，您将找到 CrUX 数据集中所有[指标](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)的独立页面。
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard LCP 页面", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard LCP 页面", width="800", height="598" %}
 
 每个页面顶部都设有**设备**过滤器，您可以用它来限制体验数据中的窗体因子。例如，您可以专门深入研究电话用户体验。此设置支持跨页面调用。
 
@@ -107,7 +107,7 @@ PageSpeed Insights 等工具中对应的 P75 值并非基于公共 BigQuery 数�
 
 设备分布页面显示了手机、台式机和平板电脑用户随时间的细分数据。许多源往往几乎没有平板电脑数据，因此您经常会看到图表边缘出现 "0%" 的情况。
 
-{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX Dashboard 设备页面", width="800", height="603", class="w-screenshot" %}
+{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX Dashboard 设备页面", width="800", height="603" %}
 
 同样，ECT 分布页面向您展示了 4G、3G、2G、慢速 2G 和离线体验的细分数据。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: サインインフォームのベストプラクティス
 subhead: クロスプラットフォーム対応のブラウザ機能を使用して、安全で、アクセスしやすく、使いやすいサインインフォームを作成します。
 authors:
@@ -85,7 +85,7 @@ codelabs:
 
 ラベルは、おそらく入力の上に配置するのがベストでしょう。そうすれば。モバイルとデスクトップで同じデザインを一貫させることができるほか、[Google による AI の調査](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html)によると、ユーザーは画面上のラベルに目を通しやすくなります。ラベルと入力は画面幅いっぱいに表示されるため、どちらもラベルのテキストに合わせて調節する必要がありません。
 
-<figure class="w-figure">{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="モバイルでのフォーム入力ラベルの位置 (入力の横と上) を示すスクリーンショット。", width="500", height="253", class="w-screenshot"%}<figcaption class="w-figcaption">ラベルと入力が同じ行にある場合はそれぞれの幅が制限される。</figcaption></figure>
+<figure>{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="モバイルでのフォーム入力ラベルの位置 (入力の横と上) を示すスクリーンショット。", width="500", height="253" %}<figcaption>ラベルと入力が同じ行にある場合はそれぞれの幅が制限される。</figcaption></figure>
 
 モバイルデバイスで [label-position](https://label-position.glitch.me) Glitch を開いて、ご自分の目でお確かめてください。
 
@@ -126,7 +126,7 @@ codelabs:
 
 ユーザーが自分で入力したテキストを確認できるように、[**パスワードを表示**]のアイコンまたはボタンを追加するとよいでしょう。また[**パスワードを忘れた場合**]のリンクを追加することも忘れないようにしましょう。[Enable password display (パスワードの表示を有効にする)](#password-display) を参照してください。
 
-<figure class="w-figure">{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="「パスワードを表示」のアイコンを示す Google のログインフォーム。", width="300", height="107", class="w-screenshot" %}<figcaption class="w-figcaption"> [<strong>パスワードを表示</strong>]のアイコンと[<strong>パスワードを忘れた場合</strong>]のリンクがある Google のサインインフォームを使ったパスワード入力。</figcaption></figure>
+<figure>{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="「パスワードを表示」のアイコンを示す Google のログインフォーム。", width="300", height="107" %}<figcaption> [<strong>パスワードを表示</strong>]のアイコンと[<strong>パスワードを忘れた場合</strong>]のリンクがある Google のサインインフォームを使ったパスワード入力。</figcaption></figure>
 
 ## モバイルユーザーに適切なキーボードを提供する {: #mobile-keyboards }
 
@@ -140,23 +140,23 @@ codelabs:
 
 残念ながら、注意が足りないと、モバイルキーボードがフォームを覆い隠したり、もっと酷い場合は、**[サインイン**]ボタンを部分的に妨害したりしてしまう場合があります。ユーザーは、状況が分からないまま諦めてしまう可能性があります。
 
-<figure class="w-figure">{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Android 携帯電話のサインインフォームを示した 2 つのスクリーンショット (そのうち 1 つは携帯電話のキーボードによって[送信]ボタンが覆い隠されている様子を示している)。", width="400", height="360", class="w-screenshot" %}<figcaption class="w-figcaption"> [<b>サインイン</b>]ボタン (見える場合と見えない場合)。</figcaption></figure>
+<figure>{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Android 携帯電話のサインインフォームを示した 2 つのスクリーンショット (そのうち 1 つは携帯電話のキーボードによって[送信]ボタンが覆い隠されている様子を示している)。", width="400", height="360" %}<figcaption> [<b>サインイン</b>]ボタン (見える場合と見えない場合)。</figcaption></figure>
 
 可能であれば、サインインページの上部には電子メールアドレス/電話番号およびパスワードの入力と**サインイン**ボタンのみを表示して、これを回避します。他のコンテンツはその下に配置します。
 
-<figure class="w-figure">{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Android 携帯電話のサインインフォームを示したスクリーンショット (サインインボタンは電話のキーボードによって覆い隠されていない)。", width="200", height="342", class="w-screenshot" %}<figcaption class="w-figcaption">キーボードは<b>サインイン</b>ボタンを妨害していない。</figcaption></figure>
+<figure>{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Android 携帯電話のサインインフォームを示したスクリーンショット (サインインボタンは電話のキーボードによって覆い隠されていない)。", width="200", height="342" %}<figcaption>キーボードは<b>サインイン</b>ボタンを妨害していない。</figcaption></figure>
 
 #### さまざまなデバイスでテストする {: #devices }
 
 ターゲットオーディエンスを考慮して、さまざまなデバイスでテストを実施し、結果に応じて調整を行う必要があります。BrowserStack を使用すれば、実在するさまざまなデバイスやブラウザで[オープンソースプロジェクトのテストを無料で行えます](https://www.browserstack.com/open-source)。
 
-<figure class="w-figure">{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="iPhone 7、8、11 のサインインフォームを示したスクリーンショット。iPhone 7 と 8 では、サインインボタンが電話のキーボードによって覆われているが、iPhone 11 は覆われていない", width="800", height="522", class="w-screenshot" %}<figcaption class="w-figcaption"><b>サインイン</b>ボタン (iPhone 7 と 8では覆われているが、iPhone 11では覆われていない)。</figcaption></figure>
+<figure>{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="iPhone 7、8、11 のサインインフォームを示したスクリーンショット。iPhone 7 と 8 では、サインインボタンが電話のキーボードによって覆われているが、iPhone 11 は覆われていない", width="800", height="522" %}<figcaption><b>サインイン</b>ボタン (iPhone 7 と 8では覆われているが、iPhone 11では覆われていない)。</figcaption></figure>
 
 #### ページを 2 つ使用することを検討する {: #two-pages}
 
 Amazon や eBay を含む一部のサイトでは、電子メールアドレス/電話番号とパスワードを 2 つのページで要求することによりこの問題を回避しています。このアプローチでは、ユーザーは 1 度に 1 つのことだけをすればいいので、使用体験がシンプルになります。
 
-<figure class="w-figure">{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Amazon ウェブサイトのサインインフォームを示したスクリーンショット (電子メールアドレス/電話番号とパスワードが 2 つの別のページで求められている)。", width="400", height="385", class="w-screenshot" %}<figcaption class="w-figcaption"> 2 段階のサインイン (電子メールアドレスまたは電話の後にパスワードを入力)。</figcaption></figure>
+<figure>{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Amazon ウェブサイトのサインインフォームを示したスクリーンショット (電子メールアドレス/電話番号とパスワードが 2 つの別のページで求められている)。", width="400", height="385" %}<figcaption> 2 段階のサインイン (電子メールアドレスまたは電話の後にパスワードを入力)。</figcaption></figure>
 
 これは &lt;form&gt;を 1 つ使って実装するのが理想です。JavaScript を使用して、最初に電子メールアドレスの入力のみを表示し、次にそれを非表示にしてからパスワード入力を表示します。電子メールアドレスとパスワードを入力する間に新しいページに移動することをユーザーに強制する必要がある場合は、パスワードマネージャーが正しい値を保存できるように、2 つ目のページのフォームには電子メールアドレスを値として持つ非表示の入力要素を設ける必要があります。コードの例は、[Password Form Styles that Chromium Understands (Chromium が理解できるパスワードフォームスタイル)](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands) でご覧いただけます。
 
@@ -202,11 +202,11 @@ Amazon や eBay を含む一部のサイトでは、電子メールアドレス/
 
 ブラウザが異なれば、電子メールアドレスの自動入力とパスワードの提案も処理の仕方が多少異なりますが、得られる効果はも多少異なりますが、効果はほぼ変わりありません。たとえば、デスクトップ版の Safari 11 以降では、パスワードマネージャーが表示された後、利用可能であれば、場合は生体認証 (指紋または顔認識) が使用されます。
 
-<figure class="w-figure">{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="デスクトップ版 Safari での 3 段階のサインインプロセス (パスワードマネージャー、生体認証、自動入力) を示したスクリーンショット。", width="800", height="234", class="w-screenshot"%}<figcaption class="w-figcaption">オートコンプリートによるサインイン。テキスト入力は必要ありません！</figcaption></figure>
+<figure>{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="デスクトップ版 Safari での 3 段階のサインインプロセス (パスワードマネージャー、生体認証、自動入力) を示したスクリーンショット。", width="800", height="234" %}<figcaption>オートコンプリートによるサインイン。テキスト入力は必要ありません！</figcaption></figure>
 
 デスクトップ版の Chrome は、メールアドレスの提案とパスワードマネージャーを表示し、パスワードを自動入力します。
 
-<figure class="w-figure">{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="デスクトップ版 Chrome での 4 段階のサインインプロセス (メールアドレスの補完、メールアドレスの提案、パスワードマネージャー、選択時の自動入力) を示したスクリーンショット。", width="800", height="232", class="w-screenshot" %}<figcaption class="w-figcaption"> Chrome 84 におけるオートコンプリートを使ったサインインフロー。</figcaption></figure>
+<figure>{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="デスクトップ版 Chrome での 4 段階のサインインプロセス (メールアドレスの補完、メールアドレスの提案、パスワードマネージャー、選択時の自動入力) を示したスクリーンショット。", width="800", height="232" %}<figcaption> Chrome 84 におけるオートコンプリートを使ったサインインフロー。</figcaption></figure>
 
 ブラウザのパスワードシステムと自動入力システムの仕組みは、単純なものではありません。値を推測、保存、表示するためのアルゴリズムは標準化されておらず、プラットフォームごとに異なります。たとえば、[Hidde de Vries 氏](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form)が指摘するように、「Firefox のパスワードマネージャーは、[レシピシステム](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)を使ってそのヒューリスティックを補完します。」
 
@@ -220,7 +220,7 @@ Amazon や eBay を含む一部のサイトでは、電子メールアドレス/
 
 こちらはデスクトップ版 Safari の場合です。
 
-<figure class="w-figure">{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="デスクトップ版 Firefox のパスワードマネージャーを示したスクリーンショット。", width="800", height="229", class="w-screenshot"%}<figcaption class="w-figcaption"> Safari でのパスワード提案フロー。</figcaption></figure>
+<figure>{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="デスクトップ版 Firefox のパスワードマネージャーを示したスクリーンショット。", width="800", height="229" %}<figcaption> Safari でのパスワード提案フロー。</figcaption></figure>
 
 (Safari では、バージョン 12.0 以降、強力な一意のパスワード提案が利用可能になっています。)
 
@@ -232,7 +232,7 @@ Amazon や eBay を含む一部のサイトでは、電子メールアドレス/
 
 メールアドレスとパスワードの両方のフィールドに `required` 属性を追加します。最新のブラウザでは、入力されていないデータがあれば、それにフォーカスが自動的に移動するようになっています。JavaScript は必要ありません！
 
-<figure class="w-figure">{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="デスクトップ版 Firefox と Android 版 Chrome で未入力のデータに対して「このフィールドは必須です」というプロンプトが表示される場合のスクリーンショット。", width="600", height="392", class="w-screenshot" %}<figcaption class="w-figcaption"> デスクトップ版 Firefox (バージョン76) および Android 版 Chrome (バージョン83) で不足しているデータに対して表示されるプロンプトとフォーカス。</figcaption></figure>
+<figure>{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="デスクトップ版 Firefox と Android 版 Chrome で未入力のデータに対して「このフィールドは必須です」というプロンプトが表示される場合のスクリーンショット。", width="600", height="392" %}<figcaption> デスクトップ版 Firefox (バージョン76) および Android 版 Chrome (バージョン83) で不足しているデータに対して表示されるプロンプトとフォーカス。</figcaption></figure>
 
 ## 指と親指のデザイン {: #mobile-design}
 
@@ -242,7 +242,7 @@ Amazon や eBay を含む一部のサイトでは、電子メールアドレス/
 
 デスクトップ上の入力とボタンのデフォルトサイズとパディングは、とにかく小さいですが、モバイルはもっと小さくなります。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="デスクトップ版 Chrome および Android 版 Chrome のスタイル指定されていないフォームを示したスクリーンショット。", width="800", height="434", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="デスクトップ版 Chrome および Android 版 Chrome のスタイル指定されていないフォームを示したスクリーンショット。", width="800", height="434" %}</figure>
 
 [Android のアクセシビリティガイダンスに](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB)よると、タッチスクリーンオブジェクトの推奨ターゲットサイズは 7〜10mm です。Apple インターフェイスガイドラインは、48x48 ピクセルを提案し、W3C は[少なくとも 44x44 CSS ピクセル](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)を提案しています。その上で、モバイルの入力要素とボタンに (少なくとも) 約15ピクセルのパディングを追加し、デスクトップの場合は約10ピクセルを追加します。実際のモバイルデバイスと実際の指または親指でこれを試してください。各入力とボタンを快適にタップできるはずです。
 
@@ -256,7 +256,7 @@ Lighthouse による [Tap targets are not sized appropriately (タップター�
 
 サイズやパディングと同様に、特にモバイルでは、入力要素とボタンのデフォルトのブラウザフォントサイズが小さすぎます。
 
-<figure class="w-figure">{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="デスクトップ版 Android と Chrome でのスタイル未指定のフォームを示したスクリーンショット。", width="800", height="494", class="w-screenshot" %}<figcaption class="w-figcaption">デスクトップとモバイルのデフォルトスタイル (入力テキストが小さすぎて、多くのユーザーが判読できない。</figcaption></figure>
+<figure>{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="デスクトップ版 Android と Chrome でのスタイル未指定のフォームを示したスクリーンショット。", width="800", height="494" %}<figcaption>デスクトップとモバイルのデフォルトスタイル (入力テキストが小さすぎて、多くのユーザーが判読できない。</figcaption></figure>
 
 同じブラウザでも、プラットフォームが異なるとフォントのサイズも異なります。したがい、プラットフォームを問わずにうまく機能する特定のフォントサイズを指定するのは容易ではありません。人気のウェブサイトをさっと調査したところ、デスクトップの場合は 13～16 ピクセルのサイズが使用されているようです。モバイルのテキストは、物理的に少なくとも同じサイズにするとよいでしょう。
 
@@ -274,13 +274,13 @@ Lighthouse による [Document doesn't use legible font sizes (ドキュメン�
 
 パディングに加え、ボーダーも追加します。背景が白の場合は、`#ccc` かもっと暗い色を使用することが原則とされています。
 
-<figure class="w-figure">{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Android 版の Chrome でスタイル指定されたフォームを示したスクリーンショット。", width="250", height="525", class="w-screenshot"%}<figcaption class="w-figcaption">読みやすいテキスト、目に見える入力ボーダー、十分なパディングとマージン。</figcaption></figure>
+<figure>{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Android 版の Chrome でスタイル指定されたフォームを示したスクリーンショット。", width="250", height="525" %}<figcaption>読みやすいテキスト、目に見える入力ボーダー、十分なパディングとマージン。</figcaption></figure>
 
 ### ブラウザの組み込み機能を使って無効な入力値について警告する  {: #built-in-validation}
 
 ブラウザーには、`type` 属性を持つ入力に対し、基本的なフォーム検証を行うためのビルトイン機能があります。無効な値が含まれたフォームを送信すると、ブラウザはそれに対して警告を出し、問題のある入力にフォーカスを移動させます。
 
-<figure class="w-figure">{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="メールアドレスの無効な値に対するプロンプトとフォーカスを表示したデスクトップ版の Chrome におけるサインインフォームを示したスクリーンショット。", width="300", height="290"%}<figcaption class="w-figcaption">ブラウザに組み込まれたベーシックな検証機能。</figcaption></figure>
+<figure>{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="メールアドレスの無効な値に対するプロンプトとフォーカスを表示したデスクトップ版の Chrome におけるサインインフォームを示したスクリーンショット。", width="300", height="290"%}<figcaption>ブラウザに組み込まれたベーシックな検証機能。</figcaption></figure>
 
 `:invalid` CSSセレクターを使用すれば、無効なデータを強調表示できます。`:not(:placeholder-shown)`を使用して、コンテンツのない入力を選択しないようにします。
 
@@ -299,7 +299,7 @@ input[type=email]:not(:placeholder-shown):invalid {
 
 ユーザーが入力したテキストを確認できるようにするには、**[パスワードを表示]**のアイコンまたはボタンを追加する必要があります。ユーザーが自分の入力したテキストを確認できないと、[ユーザビリティが損なわれます](https://www.nngroup.com/articles/stop-password-masking/)。現在、ビルトイン機能によってこれを行うための方法はありませんが、[実装の計画はあります](https://twitter.com/sw12/status/1251191795377156099)。代わりに JavaScript を使用する必要があります。
 
-<figure class="w-figure"><img src="https://github.com/GoogleChrome/web.dev/blob/main/src/site/content/ja/identity/sign-in-form-best-practices/show-password-google.png?raw=true" class="" alt="「パスワードを表示」のアイコンを示した Google のサインインフォーム。"> <figcaption><strong>[パスワードを表示]</strong> のアイコンと <strong>[パスワードを忘れた場合]</strong> のリンクが使用された Google のサインインフォーム。</figcaption></figure>
+<figure><img src="https://github.com/GoogleChrome/web.dev/blob/main/src/site/content/ja/identity/sign-in-form-best-practices/show-password-google.png?raw=true" class="" alt="「パスワードを表示」のアイコンを示した Google のサインインフォーム。"> <figcaption><strong>[パスワードを表示]</strong> のアイコンと <strong>[パスワードを忘れた場合]</strong> のリンクが使用された Google のサインインフォーム。</figcaption></figure>
 
 次のコードは、テキストボタンを使用して**パスワードの表示**機能を追加します。
 
@@ -357,7 +357,7 @@ function togglePassword() {
 
 最終結果はこちら。
 
-<figure class="w-figure">{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Mac 版 Safari と iPhone 7 の「パスワードを表示」テキスト 'ボタン'  付きサインインフォームを示したスクリーンショット。", width="800", height="468", class="w-screenshot" %}<figcaption class="w-figcaption"> Mac 版 Safari と iPhone 7 の <strong>[パスワードを表示]テキスト</strong> 'ボタン'  付きサインインフォームを示したスクリーンショット。</figcaption></figure>
+<figure>{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Mac 版 Safari と iPhone 7 の「パスワードを表示」テキスト 'ボタン'  付きサインインフォームを示したスクリーンショット。", width="800", height="468" %}<figcaption> Mac 版 Safari と iPhone 7 の <strong>[パスワードを表示]テキスト</strong> 'ボタン'  付きサインインフォームを示したスクリーンショット。</figcaption></figure>
 
 ### パスワード入力をアクセス可能にする {: #accessible-password-inputs}
 

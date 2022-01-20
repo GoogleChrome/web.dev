@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 파사드를 사용하여 타사 리소스를 지연 로드
 description: |2
 
@@ -19,7 +19,7 @@ web_lighthouse:
 
 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="파사드와 함께 YouTube 내장 플레이어를 로드하는 예입니다. 파사드의 무게는 3KB이고 무게가 540KB인 플레이어는 상호작용 시 로드됩니다.", width="800", height="521" %}<figcaption class="w-figcaption"> 파사드가 있는 YouTube 내장 플레이어를 로드 중입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="파사드와 함께 YouTube 내장 플레이어를 로드하는 예입니다. 파사드의 무게는 3KB이고 무게가 540KB인 플레이어는 상호작용 시 로드됩니다.", width="800", height="521" %}<figcaption> 파사드가 있는 YouTube 내장 플레이어를 로드 중입니다.</figcaption></figure>
 
 ## Lighthouse가 지연 가능한 타사 콘텐츠를 감지하는 방법
 
@@ -29,7 +29,7 @@ Lighthouse는 소셜 버튼 위젯 또는 비디오 콘텐츠(예: YouTube 내�
 
 페이지가 이러한 타사 콘텐츠 중 하나에 속한 리소스를 로드하면 감사가 실패합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Vimeo 내장 플레이어 및 Drift 라이브 채팅을 강조하는 Lighthouse 타사 파사드 감사.", width="800", height="517", class=" w-스크린샷" %}<figcaption class="w-figcaption"> Lighthouse 타사 파사드 감사.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Vimeo 내장 플레이어 및 Drift 라이브 채팅을 강조하는 Lighthouse 타사 파사드 감사.", width="800", height="517", class=" w-스크린샷" %}<figcaption> Lighthouse 타사 파사드 감사.</figcaption></figure>
 
 ## 파사드로 타사 콘텐츠를 연기하는 방법
 

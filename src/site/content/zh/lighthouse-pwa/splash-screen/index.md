@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 未配置自定义初始屏幕
 description: 了解如何为渐进式 Web 应用创建自定义初始屏幕。
 web_lighthouse:
@@ -14,7 +14,7 @@ updated: 2019-09-19
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记没有自定义初始屏幕的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse 审计显示站点未配置自定义初始屏幕", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse 审计显示站点未配置自定义初始屏幕", width="800", height="98" %}</figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

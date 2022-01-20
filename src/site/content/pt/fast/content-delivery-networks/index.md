@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Redes de distribuição de conteúdo (CDNs)
 authors:
   - katiehempenius
@@ -33,11 +33,11 @@ Embora possa parecer não intuitivo, usar um CDN para fornecer recursos (mesmo o
 
 Quando um CDN é usado para fornecer recursos da origem, uma nova conexão é estabelecida entre o cliente e um servidor CDN próximo. O restante da jornada (em outras palavras, a transferência de dados entre o servidor CDN e a origem) ocorre pela rede do CDN — que geralmente inclui conexões existentes e persistentes com a origem. Os benefícios são duplos: encerrar a nova conexão o mais próximo possível do usuário elimina custos de configuração de conexão desnecessários (estabelecer uma nova conexão é caro e requer várias viagens de ida e volta); o uso de uma conexão pré-aquecida permite que os dados sejam transferidos imediatamente com a máxima produtividade possível.
 
-<figure class="w-figure">{% Img src="image/admin/M9kzM7J7FenUyO7E9MF0.png", alt="Comparação da configuração da conexão com e sem CDN", width="800", height="512" %}</figure>
+<figure>{% Img src="image/admin/M9kzM7J7FenUyO7E9MF0.png", alt="Comparação da configuração da conexão com e sem CDN", width="800", height="512" %}</figure>
 
 Alguns CDNs melhoram isso ainda mais, roteando o tráfego para a origem por meio de vários servidores CDN espalhados pela Internet. As conexões entre os servidores CDN ocorrem por meio de rotas confiáveis e altamente otimizadas, em vez de rotas determinadas pelo [Border Gateway Protocol (BGP)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol). Embora o BGP seja o protocolo de roteamento de fato da Internet, suas decisões de roteamento nem sempre são voltadas para o desempenho. Portanto, as rotas determinadas pelo BGP provavelmente têm menos desempenho do que as rotas ajustadas entre os servidores CDN.
 
-<figure class="w-figure">{% Img src="image/admin/ZLMPFySQgBkpWvgujuJP.png", alt="Comparação da configuração da conexão com e sem CDN", width="800", height="449" %}</figure>
+<figure>{% Img src="image/admin/ZLMPFySQgBkpWvgujuJP.png", alt="Comparação da configuração da conexão com e sem CDN", width="800", height="449" %}</figure>
 
 ### Cache
 
@@ -195,7 +195,7 @@ O TLS 1.3 é a versão mais recente do [Transport Layer Security (TLS)](https://
 
 O TLS 1.3 encurta o aperto de mão do TLS de duas viagens de ida e volta para uma. Para conexões usando HTTP/1 ou HTTP/2, encurtar o aperto de mão do TLS para uma viagem de ida e volta reduz efetivamente o tempo de configuração da conexão em 33%.
 
-<figure class="w-figure">{% Img src="image/admin/FnCSj1W23jXaiOWCp0Bw.png", alt="Comparação dos apertos de mão do TLS 1.2 e TLS 1.3", width="800", height="448" %}</figure>
+<figure>{% Img src="image/admin/FnCSj1W23jXaiOWCp0Bw.png", alt="Comparação dos apertos de mão do TLS 1.2 e TLS 1.3", width="800", height="448" %}</figure>
 
 ### HTTP/2 e HTTP/3
 
@@ -227,13 +227,13 @@ O [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3) é o sucessor do [HTTP/2](https
 
     O HTTP/2 introduziu a multiplexação, um recurso que permite que uma única conexão seja usada para transmitir vários fluxos de dados simultaneamente. No entanto, com o HTTP/2, um único pacote descartado bloqueia todos os fluxos em uma conexão (um fenômeno conhecido como bloqueio frontal). Com o HTTP/3, um pacote descartado bloqueia apenas um único fluxo. Essa melhoria é em grande parte o resultado de HTTP/3 usando [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (o HTTP/3 usa UDP via [QUIC](https://en.wikipedia.org/wiki/QUIC) ) em vez de [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). Isso torna o HTTP/3 particularmente útil para transferência de dados em redes congestionadas ou com perdas.
 
-<figure class="w-figure">{% Img src="image/admin/B7YKfqGG4eS2toSoTDdS.png", alt="Diagrama mostrando as diferenças na transmissão de dados entre HTTP/1, HTTP/2, e HTTP/3", width="800", height="449" %}</figure>
+<figure>{% Img src="image/admin/B7YKfqGG4eS2toSoTDdS.png", alt="Diagrama mostrando as diferenças na transmissão de dados entre HTTP/1, HTTP/2, e HTTP/3", width="800", height="449" %}</figure>
 
 - **Tempo de configuração de conexão reduzido**
 
     O HTTP/3 usa TLS 1.3 e, portanto, compartilha seus benefícios de desempenho: estabelecer uma nova conexão requer apenas uma única viagem de ida e volta e retomar uma conexão existente não requer nenhuma viagem de ida e volta.
 
-<figure class="w-figure">{% Img src="image/admin/7ffDEjblsisTNsfkynt6.png", alt="Comparação da retomada da conexão entre TLS 1.2, TLS 1.3, TLS 1.3 0-RTT e HTTP/3", width="800", height="400" %}</figure>
+<figure>{% Img src="image/admin/7ffDEjblsisTNsfkynt6.png", alt="Comparação da retomada da conexão entre TLS 1.2, TLS 1.3, TLS 1.3 0-RTT e HTTP/3", width="800", height="400" %}</figure>
 
 O HTTP/3 terá o maior impacto sobre os usuários em conexões de rede ruins: não apenas porque HTTP/3 lida com a perda de pacotes melhor do que seus predecessores, mas também porque a economia de tempo absoluta resultante de uma configuração de conexão 0-RTT ou 1-RTT será maior em redes com alta latência.
 

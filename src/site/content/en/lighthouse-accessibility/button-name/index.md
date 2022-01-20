@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Buttons do not have an accessible name
 description: |
   Learn how to improve the accessibility of your web page by making sure that
@@ -18,8 +18,8 @@ which provides no information to users about what the button does.
 
 Lighthouse flags buttons that don't have text content or an `aria-label` property:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse audit showing buttons do not have an accessible name", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse audit showing buttons do not have an accessible name", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

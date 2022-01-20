@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 包括具有已知安全漏洞的前端 JavaScript 库
 description: |2-
 
@@ -16,7 +16,7 @@ updated: 2020-06-04
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记具有已知安全漏洞的前端 JavaScript 库：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Lighthouse 审计显示页面使用的具有已知安全漏洞的前端 JavaScript 库", width="800", height="190", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Lighthouse 审计显示页面使用的具有已知安全漏洞的前端 JavaScript 库", width="800", height="190" %}</figure>
 
 为了检测易受攻击的库，Lighthouse 会执行以下操作：
 

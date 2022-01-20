@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los colores del fondo y del primer plano no tienen una suficiente relación de contraste
 description: |2
 
@@ -20,7 +20,7 @@ Si bien este problema es particularmente desafiante para las personas con mala v
 
 Lighthouse señala los textos cuyos colores de fondo y de primer plano no tienen una relación de contraste suficientemente alta:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Auditoría de Lighthouse que muestra que los colores de fondo y de primer plano no tienen una relación de contraste suficiente", width="800", height="343", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Auditoría de Lighthouse que muestra que los colores de fondo y de primer plano no tienen una relación de contraste suficiente", width="800", height="343" %}</figure>
 
 Para evaluar el contraste de color del texto, Lighthouse utiliza el <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noopener">criterio de éxito 1.4.3 de WCAG 2.1</a>:
 
@@ -48,17 +48,17 @@ Una forma de encontrar un color que cumpla con los requisitos de contraste es ut
 
 El selector de color te indica si el elemento cumple con los requisitos de contraste de color, teniendo en cuenta el tamaño y el peso de la fuente:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Captura de pantalla del selector de color de Chrome DevTools con información de contraste de color resaltada", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Captura de pantalla del selector de color de Chrome DevTools con información de contraste de color resaltada", width="298", height="430" %}</figure>
 
 Puedes usar el selector de color para ajustar el color hasta que tu contraste sea lo suficientemente alto. Es más fácil realizar ajustes en el modelo de color HSL. Cambia a ese formato haciendo clic en el botón de alternancia a la derecha del selector:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Captura de pantalla del selector de color de Chrome DevTools con el formato de color resaltado", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Captura de pantalla del selector de color de Chrome DevTools con el formato de color resaltado", width="298", height="430" %}</figure>
 
 Una vez que tengas un valor de color que pase la prueba, actualiza el CSS de tu proyecto.
 
 En los casos más complejos, como el texto en un degradado o el texto en una imagen, deben de verificarse manualmente, al igual que los elementos y las imágenes de la interfaz de usuario. Para el texto de una imagen, puedes utilizar el selector de color de fondo de DevTools para comprobar el fondo en el que aparece el texto:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Captura de pantalla del selector de color de fondo de Chrome DevTools", width="301", height="431", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Captura de pantalla del selector de color de fondo de Chrome DevTools", width="301", height="431" %}</figure>
 
 Para otros casos, considera usar una herramienta como el <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser (Analizador de contraste de color)</a> de Paciello Group.
 

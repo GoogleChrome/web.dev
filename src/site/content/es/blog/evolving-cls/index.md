@@ -37,12 +37,12 @@ En nuestra [publicación anterior](/better-layout-shift-metric/), cubrimos [algu
 
 A continuación se muestra un ejemplo para revisar las ventanas de la sesión:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Ejemplo de ventana de sesión.</figcaption></figure>
+  <figcaption>Ejemplo de ventana de sesión.</figcaption></figure>
 
 En el ejemplo anterior, se producen muchos cambios de diseño a lo largo del tiempo mientras el usuario ve la página. Cada uno está representado por una barra azul. Observará que las barras azules tienen diferentes alturas, que representan la [puntuación](/cls/#layout-shift-score) de cada cambio de diseño. Una ventana de sesión comienza con el primer cambio de diseño y continúa expandiéndose hasta que hay un espacio sin cambios de diseño. Cuando se produce el siguiente cambio de diseño, se inicia una nueva ventana de sesión. Dado que hay tres intervalos sin cambios de diseño, hay tres ventanas de sesión en el ejemplo. Al igual que en la definición actual de CLS, las puntuaciones de cada cambio se suman, de modo que la puntuación de cada ventana es la suma de sus cambios de diseño individuales.
 

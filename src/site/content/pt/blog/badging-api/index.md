@@ -19,7 +19,7 @@ feedback:
 
 ## O que é a App Badging API? {: #what }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Exemplo de Twitter com oito notificações e outro aplicativo mostrando um emblema do tipo flag.", width="600", height="189" %}<figcaption class="w-figcaption"> Exemplo de Twitter com oito notificações e outro aplicativo mostrando um emblema do tipo flag.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Exemplo de Twitter com oito notificações e outro aplicativo mostrando um emblema do tipo flag.", width="600", height="189" %}<figcaption> Exemplo de Twitter com oito notificações e outro aplicativo mostrando um emblema do tipo flag.</figcaption></figure>
 
 A API App Badging permite que os aplicativos da web instalados definam um emblema para todo o aplicativo, mostrado em um local específico do sistema operacional associado ao aplicativo (como a tela de notificações ou tela inicial).
 

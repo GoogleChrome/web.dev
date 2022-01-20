@@ -138,7 +138,7 @@ You may notice that some scrollers have a pull-to-refresh behavior and other spe
 
 To create a root scroller, you can use something called *scroller promotion* by positioning a container as fixed, ensuring it covers the entire viewport and is z-index on top with a scroller. Experience a root scroller vs a nested implicit scroller [here](https://cdpn.io/web-dot-dev/debug/dyzPzwz).
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/sn1cOusFy18gRkZroAET.mp4",
     autoplay="true",
@@ -146,7 +146,7 @@ To create a root scroller, you can use something called *scroller promotion* by 
     width="380",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     The video shows a root scroller with bounce behavior and new styling features, <br>
     compared to scrolling an implicit scroller with no enhanced scroll behavior. 
   </figcaption>

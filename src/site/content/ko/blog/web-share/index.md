@@ -22,7 +22,7 @@ Web Share API를 통해 웹 앱은 플랫폼별 앱과 동일한 시스템 제�
 
 ## 개념 및 사용법
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="PWA가 옵션으로 설치된 시스템 수준 공유 대상 선택기.", width="370", height="349" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> PWA가 옵션으로 설치된 시스템 수준 공유 대상 선택기.</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="PWA가 옵션으로 설치된 시스템 수준 공유 대상 선택기.", width="370", height="349" %}<figcaption> PWA가 옵션으로 설치된 시스템 수준 공유 대상 선택기.</figcaption></figure>
 
 ### 기능 및 제한 사항
 
@@ -82,7 +82,7 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 
 ## Santa Tracker 사례 연구
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="공유 버튼을 표시하는 Santa Tracker 앱.", width="343", height="600" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> Santa Tracker 공유 버튼.</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="공유 버튼을 표시하는 Santa Tracker 앱.", width="343", height="600" %}<figcaption> Santa Tracker 공유 버튼.</figcaption></figure>
 
 오픈 소스 프로젝트인 [Santa Tracker](https://santatracker.google.com/)는 Google의 휴일 전통입니다. 매년 12월이 되면 게임과 교육적 체험으로 시즌을 기념할 수 있습니다.
 

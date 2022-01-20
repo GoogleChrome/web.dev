@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 배경색과 전경색의 명암비가 충분하지 않습니다.
 description: 모든 텍스트의 색상 대비가 충분한지 확인하여 웹 페이지의 접근성을 향상시키는 방법을 알아봅니다.
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 Lighthouse는 배경색과 전경색의 명암비가 충분히 높지 않은 텍스트에 플래그를 지정합니다.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="배경색과 전경색의 명암비가 충분하지 않은 것을 보여주는 Lighthouse 감사", width="800", height="343", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="배경색과 전경색의 명암비가 충분하지 않은 것을 보여주는 Lighthouse 감사", width="800", height="343" %}</figure>
 
 텍스트의 색상 대비를 평가하기 위해 Lighthouse는 <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noopener">WCAG 2.1의 성공 기준 1.4.3</a>을 사용합니다.
 
@@ -44,17 +44,17 @@ Lighthouse는 배경색과 전경색의 명암비가 충분히 높지 않은 텍
 
 색상 선택기는 글꼴 크기와 두께를 고려하여 요소가 색상 대비 요구 사항을 충족하는지 여부를 알려줍니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="색상 대비 정보가 강조 표시된 Chrome DevTools 색상 선택기를 보여주는 스크린샷", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="색상 대비 정보가 강조 표시된 Chrome DevTools 색상 선택기를 보여주는 스크린샷", width="298", height="430" %}</figure>
 
 색상 선택기를 사용하여 대비가 충분히 높을 때까지 색상을 조정할 수 있습니다. HSL 색상 형식을 조정하는 것이 가장 쉽습니다. 선택기 오른쪽에 있는 토글 버튼을 클릭하여 해당 형식으로 전환합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="색상 형식 토글이 강조 표시된 Chrome DevTools 색상 선택기를 보여주는 스크린샷", width="298", height="430", class="w-screenshot " %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="색상 형식 토글이 강조 표시된 Chrome DevTools 색상 선택기를 보여주는 스크린샷", width="298", height="430" %}</figure>
 
 기준을 통과하는 색상 값을 얻었으면 프로젝트의 CSS를 업데이트하세요.
 
 그라디언트의 텍스트 또는 이미지의 텍스트와 같은 더 복잡한 경우는 UI 요소 및 이미지와 마찬가지로 수동으로 확인해야 합니다. 이미지에 있는 텍스트의 경우, DevTools의 배경색 선택기를 사용하여 텍스트가 나타나는 배경을 확인할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Chrome DevTools 배경색 선택기를 보여주는 스크린샷", width="301", height="431", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Chrome DevTools 배경색 선택기를 보여주는 스크린샷", width="301", height="431" %}</figure>
 
 다른 경우에는 Paciello Group의 <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Color Contrast Analyzer</a>와 같은 도구의 사용을 고려하세요.
 

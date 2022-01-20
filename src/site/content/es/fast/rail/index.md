@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Medir el rendimiento con el modelo RAIL
 description: |2-
 
@@ -21,13 +21,13 @@ tags:
 
 RAIL representa cuatro aspectos distintos del ciclo de vida de las aplicaciones web: respuesta, animación, inactivo y carga. Los usuarios tienen diferentes expectativas de rendimiento para cada uno de estos contextos, por lo que los objetivos de rendimiento se definen en función del contexto y en la [investigación de UX sobre cómo los usuarios perciben los retrasos](https://www.nngroup.com/articles/response-times-3-important-limits/).
 
-<figure class="w-figure">{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="Las 4 partes del modelo de rendimiento de RAIL: respuesta, animación, inactivo y carga", width="800", height="290" %} <figcaption class="w-figcaption"> Las 4 partes del modelo de rendimiento RAIL</figcaption></figure>
+<figure>{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="Las 4 partes del modelo de rendimiento de RAIL: respuesta, animación, inactivo y carga", width="800", height="290" %} <figcaption> Las 4 partes del modelo de rendimiento RAIL</figcaption></figure>
 
 ## Centrarse en el usuario
 
 Haz que los usuarios sean el punto de enfoque del desempeño de tu esfuerzo. La siguiente tabla describe las métricas clave de cómo los usuarios perciben los retrasos en el rendimiento:
 
-<table class="w-table-wrapper">
+<table class="table-wrapper scrollbar">
   <thead>Percepción del usuario de los retrasos en el rendimiento</thead>
   <tr>
     <td>0 a 16 ms</td>
@@ -77,7 +77,7 @@ En el contexto de RAIL, los términos **objetivos** y **directrices** tienen sig
 
 Si el objetivo es responder a la entrada en menos de 100 ms, entonces, ¿por qué nuestro presupuesto es de solo 50 ms? Esto se debe a que generalmente se está realizando otro trabajo además del manejo de entrada y ese trabajo ocupa parte del tiempo disponible para una respuesta de entrada aceptable. Si una aplicación está realizando trabajo en los tiempos recomendados de 50 ms durante el tiempo de inactividad, eso significa que la entrada se puede poner en cola hasta 50 ms si ocurre durante uno de esos tiempos de trabajo. Teniendo en cuenta esto, es seguro asumir que solo los 50 ms restantes están disponibles para el manejo de entrada real. Este efecto se visualiza en el diagrama a continuación que muestra cómo se coloca en cola la entrada recibida durante una tarea inactiva, reduciendo el tiempo de procesamiento disponible:
 
-<figure class="w-figure">{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagrama que muestra cómo se pone en cola la entrada recibida durante una tarea inactiva, lo que reduce el tiempo de procesamiento de entrada disponible a 50 ms", width="800", height="400" %} <figcaption class="w-figcaption"> Cómo las tareas inactivas afectan el presupuesto de respuesta de entrada.</figcaption></figure>
+<figure>{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagrama que muestra cómo se pone en cola la entrada recibida durante una tarea inactiva, lo que reduce el tiempo de procesamiento de entrada disponible a 50 ms", width="800", height="400" %} <figcaption> Cómo las tareas inactivas afectan el presupuesto de respuesta de entrada.</figcaption></figure>
 
 ## Animación: produce un fotograma en 10 ms
 

@@ -14,7 +14,7 @@ tags:
 
 Помимо возможностей [установки, предоставляемых браузером](/promote-install/#browser-promotion), можно создать собственный процесс установки непосредственно в приложении.
 
-<figure class="w-figure w-figure--inline-right">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt = "Кнопка установки приложения, предусмотренная в PWA Spotify", width = "491", height = "550"%}<figcaption class="w-figcaption"> Кнопка Install App (Установить приложение) в PWA Spotify.</figcaption></figure>
+<figure data-float="right">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt = "Кнопка установки приложения, предусмотренная в PWA Spotify", width = "491", height = "550"%}<figcaption> Кнопка Install App (Установить приложение) в PWA Spotify.</figcaption></figure>
 
 При рассмотрении вопроса о том, стоит ли продвигать установку, подумайте о том, как пользователи обычно используют ваше PWA. Например, если есть группа пользователей, которые используют PWA несколько раз в неделю, им будет удобней запускать приложение с главного экрана смартфона или из меню «Пуск» настольной операционной системы. Некоторые приложения для работы и развлечений также выигрывают от дополнительной площади экрана, созданной за счет удаления панелей инструментов браузера из окна при установленных режимах отображения `standalone` или `minimal-ui`.
 

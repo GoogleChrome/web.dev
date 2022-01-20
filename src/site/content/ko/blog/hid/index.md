@@ -143,7 +143,7 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-<figure>   {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="웹사이트의 HID 장치 프롬프트 스크린샷.", width="800", height="513", class="w-screenshot" %}   <figcaption>Nintendo Switch Joy-Con을 선택하기 위한 사용자 프롬프트</figcaption></figure>
+<figure>   {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="웹사이트의 HID 장치 프롬프트 스크린샷.", width="800", height="513" %}   <figcaption>Nintendo Switch Joy-Con을 선택하기 위한 사용자 프롬프트</figcaption></figure>
 
 `HIDDevice` 개체에는 장치 식별을 위한 USB 공급업체 및 제품 식별자가 포함되어 있습니다. 해당 `collections` 속성은 장치의 보고서 형식에 대한 계층적 설명으로 초기화됩니다.
 
@@ -183,7 +183,7 @@ await device.open();
 
 HID 연결이 수립되면 장치에서 `"inputreport"` 이벤트에 수신 대기하여 들어오는 입력 보고서를 처리할 수 있습니다. 이러한 이벤트에는 [`DataView`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView) 개체(`data`), 이 개체가 속해 있는 HID 장치(`device`) 및 입력 보고서와 연결된 8비트 보고서 ID(`reportId`) 등의 HID 데이터가 포함됩니다.
 
-<figure>{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="빨간색 및 파란색 Nintendo Switch 사진.", width="800", height="575", class="w-screenshot" %}<figcaption> Nintendo Switch Joy-Con 장치.</figcaption></figure>
+<figure>{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="빨간색 및 파란색 Nintendo Switch 사진.", width="800", height="575" %}<figcaption> Nintendo Switch Joy-Con 장치.</figcaption></figure>
 
 이전 예제를 계속 이어서, 아래 코드는 사용자가 Joy-Con Right 장치에서 어떤 버튼을 눌렀는지 감지하는 방법을 보여줍니다. 아마 여러분도 집에서 시도해 볼 수 있을 겁니다.
 
@@ -228,7 +228,7 @@ await device.sendReport(0x10, new Uint8Array(rumbleData));
 
 기능 보고서는 양방향으로 이동할 수 있는 유일한 형태의 HID 데이터 보고서입니다. 이를 통해 HID 장치와 애플리케이션은 비표준 HID 데이터를 교환할 수 있습니다. 입력 및 출력 보고서와 달리 기능 보고서는 애플리케이션에서 정기적으로 수신하거나 전송하지 않습니다.
 
-<figure>{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="검정색 및 은색 노트북 컴퓨터 사진.", width="800", height="575", class="w-screenshot" %}<figcaption> 노트북 키보드</figcaption></figure>
+<figure>{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="검정색 및 은색 노트북 컴퓨터 사진.", width="800", height="575" %}<figcaption> 노트북 키보드</figcaption></figure>
 
 기능 보고서를 HID 장치로 보내려면 기능 보고서와 관련된 8비트 보고서 ID(`reportId`) 및 바이트를 `device.sendFeatureReport()`에 [`BufferSource`](https://developer.mozilla.org/docs/Web/API/BufferSource)(`data`)로 전달합니다. 보고서가 전송되면 반환된 promise가 확인됩니다. HID 장치가 보고서 ID를 사용하지 않는 경우 `reportId`를 0으로 설정합니다.
 
@@ -286,7 +286,7 @@ navigator.hid.addEventListener("disconnect", event => {
 
 Chrome에서 HID를 디버깅하는 작업은 내부 페이지 `about://device-log`에서 쉽게 수행할 수 있습니다. 여기에서 모든 HID 및 USB 장치 관련 이벤트를 일목요연하게 볼 수 있습니다.
 
-<figure>{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="HID를 디버깅하기 위한 내부 페이지를 보여주는 스크린샷.", width="800", height="575", class="w-screenshot" %}<figcaption> HID 디버깅을 위한 Chrome의 내부 페이지.</figcaption></figure>
+<figure>{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="HID를 디버깅하기 위한 내부 페이지를 보여주는 스크린샷.", width="800", height="575" %}<figcaption> HID 디버깅을 위한 Chrome의 내부 페이지.</figcaption></figure>
 
 ## 브라우저 지원 {: #browser-support }
 

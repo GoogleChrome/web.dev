@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Precargar consultas claves
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 La sección Oportunidades de su informe Lighthouse marca el tercer nivel de consultas en su cadena de consultas críticas como candidatos de precarga:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Una captura de pantalla de la auditoría de precargar consultas claves de Lighthouse", width="800", height="214", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Una captura de pantalla de la auditoría de precargar consultas claves de Lighthouse", width="800", height="214" %}</figure>
 
 ## Cómo las banderas de Lighthouse determinan los candidatos de precarga
 

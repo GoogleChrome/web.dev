@@ -68,7 +68,7 @@ For users who weren't able to install the PWA from the banner, they created a
 (linked from the banner) with instructions on how to install the PWA manually on
 both Android and iOS devices.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/APDhzk6SjyxQTgxVidFR.png", alt="Screenshots of the custom installation instructions.", width="800", height="480" %}
 </figure>
 
@@ -106,7 +106,7 @@ images that don't change frequently.
     {% endAside %}
   </div>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l49plmwrrFO3V953MQZD.png", alt="310% increase in visit frequency per user.  450% increase in visitor retention rate. 150% increase in sales per customer.200% increase in conversion rate.", width="800", height="1074", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l49plmwrrFO3V953MQZD.png", alt="310% increase in visit frequency per user.  450% increase in visitor retention rate. 150% increase in sales per customer.200% increase in conversion rate.", width="800", height="1074" %}
   </figure>
 </div>
 

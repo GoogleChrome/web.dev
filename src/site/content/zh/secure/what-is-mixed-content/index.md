@@ -48,7 +48,7 @@ tags:
 
 每当检测到混合内容或自动升级被动混合内容时，Chrome 都会将详细消息记录到 DevTools 的**“问题”**选项卡下，从而指导您解决特定的问题。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="Chrome DevTools 中显示关于特定混合内容问题及其解决方法详细信息的问题选项卡", width="800", height="310", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="Chrome DevTools 中显示关于特定混合内容问题及其解决方法详细信息的问题选项卡", width="800", height="310" %}</figure>
 
 ### 主动混合内容
 
@@ -58,7 +58,7 @@ tags:
 
 下面的[演示](https://active-mixed-content.glitch.me/)包含主动混合内容的示例。[通过 HTTP 加载示例](http://active-mixed-content.glitch.me/)可查看[通过 HTTPS 加载示例](https://active-mixed-content.glitch.me/)时阻止的内容。**问题**选项卡中也会详细说明阻止的内容。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="Chrome DevTools 中显示关于特定混合内容问题及其解决方法详细信息的问题选项卡", width="800", height="361", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="Chrome DevTools 中显示关于特定混合内容问题及其解决方法详细信息的问题选项卡", width="800", height="361" %}</figure>
 
 {% Aside %} 浏览器还会在开发者工具中突出显示阻止的内容。在基于 Chromium 的浏览器的**问题**选项卡中会详细介绍阻止的内容问题。Firefox 和 Safari 会在控制台中记录消息。{% endAside %}
 

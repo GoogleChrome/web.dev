@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Отложенная загрузка изображений для веб-сайтов на уровне браузера
 subhead: Наконец-то появилась встроенная отложенная загрузка!
 authors:
@@ -20,8 +20,8 @@ feedback:
 
 Наконец-то появилась поддержка отложенной загрузки изображений для веб-сайтов на уровне браузера! В этом видео показана [демонстрация](https://mathiasbynens.be/demo/img-loading-lazy) функции:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -94,11 +94,11 @@ Chrome уже умеет загружать изображения с разны
 
 Сравнение старых и новых пороговых значений:
 
-<figure class="w-figure">{% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="Новые улучшенные пороговые значения для отложенной загрузки изображений; пороговое расстояние от области просмотра для быстрых подключений снижено с 3000 пикселей до 1250 пикселей", width="800", height="460" %}</figure>
+<figure>{% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="Новые улучшенные пороговые значения для отложенной загрузки изображений; пороговое расстояние от области просмотра для быстрых подключений снижено с 3000 пикселей до 1250 пикселей", width="800", height="460" %}</figure>
 
 Сравнение новых пороговых значений с LazySizes (популярной JavaScript-библиотекой для отложенной загрузки):
 
-<figure class="w-figure">{% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="Загрузка изображений с новыми пороговыми значениями расстояния от области просмотра в Chrome занимает 90 КБ против 70 КБ с библиотекой  LazySizes  при одинаковых сетевых условиях", width="800", height="355" %}</figure>
+<figure>{% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="Загрузка изображений с новыми пороговыми значениями расстояния от области просмотра в Chrome занимает 90 КБ против 70 КБ с библиотекой  LazySizes  при одинаковых сетевых условиях", width="800", height="355" %}</figure>
 
 {% Aside %} Чтобы пользователи последних версий Chrome также получили преимущества от новых пороговых значений, мы бэкпортировали эти изменения для версий Chrome с 79 по  85 включительно. Учитывайте это, если решите сравнить экономию данных в старых и новых версиях Chrome. {% endAside %}
 

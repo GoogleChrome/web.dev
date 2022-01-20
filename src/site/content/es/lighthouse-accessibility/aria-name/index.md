@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los atributos ARIA no tienen nombres accesibles
 description: Aprenda a mejorar la accesibilidad de su página web garantizando que los usuarios de tecnología asistencial puedan acceder a los nombres de los atributos ARIA.
 date: 2020-12-08
@@ -23,7 +23,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca los artículos ARIA personalizados cuyos nombres no son accesibles para las tecnologías asistenciales:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Auditoría de Lighthouse que muestra elementos de alternancia personalizados sin nombres accesibles", width="800", height="259", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Auditoría de Lighthouse que muestra elementos de alternancia personalizados sin nombres accesibles", width="800", height="259" %}</figure>
 
 Existen 7 auditorías que verifican nombres accesibles, cada una cubre un conjunto diferente de [roles ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex). Los elementos que tienen alguno de los siguientes roles ARIA pero no tienen nombres accesibles harán que esta auditoría falle:
 

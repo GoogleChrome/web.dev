@@ -19,7 +19,7 @@ El archivo `robots.txt` le dice a los motores de búsqueda cuáles de las págin
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca los archivos `robots.txt` inválidos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Auditoría Lighthouse que muestra un archivo robots.txt inválido", width="800", height="203", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Auditoría Lighthouse que muestra un archivo robots.txt inválido", width="800", height="203" %}</figure>
 
 {% Aside %} La mayoría de las auditorías de Lighthouse solo se aplican a la página en la que se encuentra actualmente. Sin embargo, dado que `robots.txt` se define en el nivel del nombre de host, esta auditoría se aplica a todo su dominio (o subdominio). {% endAside %}
 

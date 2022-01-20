@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplazar CSS no crítico
 authors:
   - demianrenzulli
@@ -30,7 +30,7 @@ Ejecute [Lighthouse](/discover-performance-opportunities-with-lighthouse/#run-li
 
 El informe muestra la métrica **First Contentful Paint** con un valor de "1s" y la oportunidad **Eliminar recursos que bloquean el renderizado**, apuntando al archivo **style.css**:
 
-<figure class="w-figure">{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="Informe Lighthouse para página no optimizada, que muestra FCP de '1s' y la opción 'Eliminar recursos de bloqueo' en la sección 'Oportunidades'", width="800", height="640", clase="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="Informe Lighthouse para página no optimizada, que muestra FCP de '1s' y la opción 'Eliminar recursos de bloqueo' en la sección 'Oportunidades'", width="800", height="640" %}</figure>
 
 {% Aside %} El CSS que usamos para este sitio de demostración es bastante pequeño. Si usted solicitaba archivos CSS más grandes (algo frecuente en escenarios de producción), y si Lighthouse detecta que una página tiene al menos 2048 bytes de reglas CSS que no se usaron al renderizar el contenido **superior**, también recibirá una sugerencia llamada **Eliminar CSS no utilizado**. {% endAside %}
 
@@ -42,7 +42,7 @@ Para visualizar cómo este CSS bloquea el renderizado:
 
 En el seguimiento resultante, verá que el marcador **FCP** se coloca inmediatamente después de que el CSS termina de cargarse:
 
-<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="Seguimiento de rendimiento de DevTools para página no optimizada, mostrando FCP comenzando después de cargar el CSS", width="800", height="352", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="Seguimiento de rendimiento de DevTools para página no optimizada, mostrando FCP comenzando después de cargar el CSS", width="800", height="352" %}</figure>
 
 Esto significa que el navegador debe esperar a que todo el CSS se cargue y procese antes de pintar un solo píxel en la pantalla.
 
@@ -54,7 +54,7 @@ Para optimizar esta página, necesita saber qué clases se consideran "críticas
 2. Escriba "Cobertura" y seleccione **Mostrar cobertura**.
 3. Haga clic en el botón **Actualizar** para volver a cargar la página y comenzar a capturar la cobertura.
 
-<figure class="w-figure">{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="Cobertura del archivo CSS, que muestra 55,9% de bytes no utilizados", width="800", height="82", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="Cobertura del archivo CSS, que muestra 55,9% de bytes no utilizados", width="800", height="82" %}</figure>
 
 Haga doble clic en el informe para ver las clases marcadas en dos colores:
 
@@ -99,17 +99,17 @@ Utilice DevTools para ejecutar otro seguimiento de **rendimiento** [en la págin
 
 El marcador **FCP** aparece antes de que la página solicite el CSS, lo que significa que el navegador no necesita esperar a que se cargue el CSS antes de renderizar la página:
 
-<figure class="w-figure">{% Img src ="image/admin/0mVq3q760y37JSn2MmCP.png", alt="Seguimiento de rendimiento de DevTools para una página no optimizada, que muestra el inicio de FCP antes de que se cargue el CSS", width="800", height="389", class="w -captura de pantalla" %}</figure>
+<figure>{% Img src ="image/admin/0mVq3q760y37JSn2MmCP.png", alt="Seguimiento de rendimiento de DevTools para una página no optimizada, que muestra el inicio de FCP antes de que se cargue el CSS", width="800", height="389", class="w -captura de pantalla" %}</figure>
 
 Como paso final, ejecute Lighthouse en la página optimizada.
 
 En el informe, verá que la página FCP se ha reducido en **0,2 s** (¡una mejora del 20%!):
 
-<figure class="w-figure">{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Informe Lighthouse, que muestra un valor de FCP de '0.8s'.", width="800", height="324", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Informe Lighthouse, que muestra un valor de FCP de '0.8s'.", width="800", height="324" %}</figure>
 
 La sugerencia **Eliminar recursos que bloquean el renderizado** ya no se encuentra en **Oportunidades** y ahora pertenece a la sección **Auditorías aprobadas**:
 
-<figure class="w-figure">{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Informe Lighthouse que muestra la sugerencia 'Eliminar recursos de bloqueo' en la sección 'Auditorías aprobadas'.", width="800", height="237", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Informe Lighthouse que muestra la sugerencia 'Eliminar recursos de bloqueo' en la sección 'Auditorías aprobadas'.", width="800", height="237" %}</figure>
 
 ## Próximos pasos y referencias
 

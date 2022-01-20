@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Browser sandbox
 authors:
   - kosamari
@@ -17,9 +17,9 @@ are turned on by default to protect users.
 
 ## The idea of a "sandbox"
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kPXwa8wRoJ5DGw97Mx3D.png", alt="browser as a sandbox", width="719", height="403" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Figure: Browser as a sandbox
   </figcaption>
 </figure>

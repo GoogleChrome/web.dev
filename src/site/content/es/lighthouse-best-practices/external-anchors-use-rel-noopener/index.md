@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los enlaces a destinos de origen cruzado no son seguros
 description: |2-
 
@@ -23,7 +23,7 @@ Agregar `rel="noopener"` o `rel="noreferrer"` a sus `target="_blank"` evita esto
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) señala enlaces inseguros a destinos de origen cruzado:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Auditoría Lighthouse que muestra enlaces inseguros a destinos de origen cruzado", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Auditoría Lighthouse que muestra enlaces inseguros a destinos de origen cruzado", width="800", height="213" %}</figure>
 
 Lighthouse utiliza el siguiente proceso para identificar enlaces como inseguros:
 

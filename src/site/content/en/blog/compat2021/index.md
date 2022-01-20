@@ -102,15 +102,15 @@ both [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) an
 have had issues with `auto-height` flex containers leading to incorrectly sized images.
 
 <div class="switcher">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
+    <figure style="display: flex; flex-direction: column;">
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Stretched photo of a chessboard.", width="800", height="400" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
+        <figcaption style="margin-top: auto">
             Incorrectly sized image due to bugs.
         </figcaption>
     </figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
+    <figure style="display: flex; flex-direction: column;">
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="Chessboard.", width="800", height="800" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
+        <figcaption style="margin-top: auto">
             Correctly sized image. <br>
             Photo by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
             Mahmoudi.</a>
@@ -145,7 +145,7 @@ lacking is the ability to animate grid layouts, supported in Gecko but not
 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=204580). When supported,
 effects like this are made possible:
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4",
   height="400",
   controls=false,
@@ -154,7 +154,7 @@ effects like this are made possible:
   muted=true,
   playsinline=true
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Animated chess demo by <a
     href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen
     Hui Jing</a>.
@@ -279,16 +279,15 @@ web. However, there still remain many areas where they don't work the same
 across browsers, notably with animations and 3D transforms. For example, a card
 flip effect can be very inconsistent across browsers:
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4",
-  class="w-screenshot",
-  controls=false,
+   controls=false,
   autoplay=true,
   loop=true,
   muted=true,
   playsinline=true
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Card flip effect in Chromium (left), Gecko (middle) and WebKit (right).
     Demo by David Baron from <a
     href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">bug
@@ -319,16 +318,15 @@ There will be regular updates about the progress here on web.dev and you can
 also follow the progress for each focus area in the [Compat 2021
 Dashboard](https://wpt.fyi/compat2021).
 
-<figure class="w-figure">
+<figure>
 <a href="https://wpt.fyi/compat2021">
 {% Img
 src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png",
 alt="Compat 2021 Dashboard",
 width="800",
-height="942",
-class="w-screenshot" %}
+height="942" %}
 </a>
-<figcaption class="w-figcaption">The Compat 2021 Dashboard (screenshot taken 16 November, 2021).</figcaption>
+<figcaption>The Compat 2021 Dashboard (screenshot taken 16 November, 2021).</figcaption>
 </figure>
 
 We hope this concerted effort among browser vendors to improve reliability and

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable =" no "]` se usa en el elemento `<meta name =" viewport ">` o el atributo `[maximum-scale]` es menor que `5`'
 description: Aprenda a hacer que su página web sea más accesible al asegurar que el acercamiento del navegador  no se desactive.
 date: 2019-05-02
@@ -14,7 +14,7 @@ El parámetro `user-scalable="no"` para el elemento `<meta name="viewport">` des
 
 Lighthouse marca las páginas que deshabilitan el zoom del navegador:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Auditoría Lighthouse que muestra que la ventana gráfica deshabilita el escalado y el zoom del texto", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Auditoría Lighthouse que muestra que la ventana gráfica deshabilita el escalado y el zoom del texto", width="800", height="227" %}</figure>
 
 Una página no supera la auditoría si contiene una etiqueta `<meta name="viewport">` con cualquiera de los siguientes:
 

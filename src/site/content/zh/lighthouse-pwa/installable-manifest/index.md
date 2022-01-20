@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web 应用清单不符合可安装性要求
 description: |2-
 
@@ -20,7 +20,7 @@ updated: 2019-09-19
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)会标记没有满足可安装性最低要求的[Web 应用程序清单](/add-manifest/)的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="显示用户无法从其主屏幕安装 Web 应用的 Lighthouse 审计", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="显示用户无法从其主屏幕安装 Web 应用的 Lighthouse 审计", width="800", height="98" %}</figure>
 
 如果页面的清单不包含以下属性，则审计将失败：
 

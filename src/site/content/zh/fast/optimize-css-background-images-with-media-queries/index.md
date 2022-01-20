@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用媒体查询优化 CSS 背景图像
 authors:
   - demianrenzulli
@@ -26,7 +26,7 @@ tags:
 
 您会看到请求的唯一图像为 `background-desktop.jpg`，大小为 **1006KB**：
 
-<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="DevTools 未优化背景图像的网络跟踪。", width="800", height="126", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="DevTools 未优化背景图像的网络跟踪。", width="800", height="126" %}</figure>
 
 调整浏览器窗口的大小，并发现网络日志未显示该页面发出的任何新请求。这表示所有屏幕尺寸都使用相同的图像背景。
 
@@ -123,7 +123,7 @@ body {
 
 特别是当宽度低于在移动断点中定义的值 (480px) 时，您会看到以下网络日志：
 
-<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="DevTools 优化背景图像的网络跟踪。", width="800", height="125", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="DevTools 优化背景图像的网络跟踪。", width="800", height="125" %}</figure>
 
 新的移动设备背景大小比桌面设备背景**小 67%**。
 

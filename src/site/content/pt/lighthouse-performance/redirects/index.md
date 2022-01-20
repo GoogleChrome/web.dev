@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite vários redirecionamentos de página
 description: |2
 
@@ -25,7 +25,7 @@ O navegador deve então fazer outra solicitação HTTP no novo local para recupe
 
 [O farol](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que têm vários redirecionamentos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
 Uma página falha nesta auditoria quando tem dois ou mais redirecionamentos.
 

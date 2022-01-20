@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "\tFirst Meaningful Paint (FMP)"
 description: |2-
 
@@ -16,7 +16,7 @@ First Meaningful Paint (FMP) é uma das seis métricas monitoradas na **seção 
 
 O Lighthouse exibe FMP em segundos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="Uma captura de tela da auditoria da First Meaningful Paint", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="Uma captura de tela da auditoria da First Meaningful Paint", width="800", height="588" %}</figure>
 
 ## O que mede a FMP
 
@@ -34,7 +34,7 @@ Por exemplo, digamos que sua FCP é de 1,5 segundos e sua FMP é de 3 segundos. 
 
 Esta tabela mostra como interpretar sua pontuação FMP:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Otimizar imagens de fundo CSS com consultas de mídia
 authors:
   - demianrenzulli
@@ -30,7 +30,7 @@ Primeiro, analise o tráfego de rede da demonstração não otimizada:
 
 Você verá que a única imagem solicitada é `background-desktop.jpg`, que tem um tamanho de **1006 KB**:
 
-<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="Rastreamento de rede DevTools para a imagem de fundo não otimizada.", width="800", height="126", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="Rastreamento de rede DevTools para a imagem de fundo não otimizada.", width="800", height="126" %}</figure>
 
 Redimensione a janela do navegador e observe que o log de rede não está mostrando nenhuma nova solicitação feita pela página. Isso significa que a mesma imagem de fundo está sendo usada para todos os tamanhos de tela.
 
@@ -127,7 +127,7 @@ Quando a largura da tela do navegador é alterada, novas imagens são solicitada
 
 Em particular, quando a largura está abaixo do valor definido no ponto de interrupção móvel (480px), você vê o seguinte Log de rede:
 
-<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="Rastreamento de rede DevTools para a imagem de fundo otimizada.", width="800", height="125", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="Rastreamento de rede DevTools para a imagem de fundo otimizada.", width="800", height="125" %}</figure>
 
 O tamanho do novo plano de fundo do celular é **67% menor do** que o do desktop.
 

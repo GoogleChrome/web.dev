@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Desempenho do JavaScript de terceiros
 subhead: Descubra como o JavaScript de terceiros pode afetar o desempenho e o que você pode fazer para evitar que ele diminua a velocidade de seus sites.
 authors:
@@ -29,7 +29,7 @@ Os sites usam esses scripts para vários fins, incluindo:
 - Scripts de teste A/B para experimentos
 - Bibliotecas auxiliares (como formatação de data, animação e bibliotecas funcionais)
 
-<figure class="w-figure w-figure--fullbleed"> {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}</figure>
+<figure data-size="full"> {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}</figure>
 
 Os scripts de terceiros podem fornecer funcionalidade poderosa, mas essa não é toda a história. Eles também afetam a privacidade, a segurança e o comportamento da página⁠ — e podem ser particularmente problemáticos para o desempenho.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 不注册可控制页面和“start_url”的服务工作进程
 description: 了解如何注册可支持离线功能、推送通知和可安装等渐进式 Web 应用程序特性的服务工作进程。
 web_lighthouse:
@@ -24,7 +24,7 @@ updated: 2020-06-10
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记不注册服务工作进程的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 审计显示网站不注册服务工作进程", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 审计显示网站不注册服务工作进程", width="800", height="95" %}</figure>
 
 Lighthouse 检查 [Chrome 远程调试协议](https://github.com/ChromeDevTools/devtools-protocol)是否返回一个服务工作进程版本。如果不返回，则审计失败。
 

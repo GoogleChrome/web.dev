@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Preconectarse a los orígenes requeridos
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 La sección Oportunidades de tu informe Lighthouse enumera todas las solicitudes clave que aún no priorizan las solicitudes de recuperación con `<link rel=preconnect>`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Una captura de pantalla de la auditoría Lighthouse de Preconectarse a los orígenes requeridos", width="800", height="226", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Una captura de pantalla de la auditoría Lighthouse de Preconectarse a los orígenes requeridos", width="800", height="226" %}</figure>
 
 ## Compatibilidad del navegador
 

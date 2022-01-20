@@ -49,7 +49,7 @@ Cookie のデフォルトを `SameSite=Lax` に変更した主な理由の 1 つ
 
 クロススキームバージョンの Web サイト間を移動する際（たとえば、**http**://site.example から **https**://site.example にリンクしている場合）、以前は `SameSite=Strict` Cookie を送信することができました。現在では、これはクロスサイトナビゲーションとして扱われるようになっており、つまり `SameSite=Strict` Cookie はブロックされるようになっています。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yDViqKg9eeEeAEiCNqe4.png", alt="セキュリティで保護されていない HTTP バー所jんのサイトからセキュリティで保護された HTTPS バージョンのサイトへのリンクをたどることでトリガーされるクロススキームナビゲーション。SameSite=Strict Cookie はブロックされ、安全な Cookie である  SameSite=Lax と SameSite=None が許可されている。", width="800", height="342" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> HTTP から HTTPS へのクロススキームナビゲーション。 </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yDViqKg9eeEeAEiCNqe4.png", alt="セキュリティで保護されていない HTTP バー所jんのサイトからセキュリティで保護された HTTPS バージョンのサイトへのリンクをたどることでトリガーされるクロススキームナビゲーション。SameSite=Strict Cookie はブロックされ、安全な Cookie である  SameSite=Lax と SameSite=None が許可されている。", width="800", height="342" %} <figcaption> HTTP から HTTPS へのクロススキームナビゲーション。 </figcaption></figure>
 
 <table>
   <tr>
@@ -97,7 +97,7 @@ Cookie のデフォルトを `SameSite=Lax` に変更した主な理由の 1 つ
 
 さらに、ブラウザがセキュリティで保護されていないスキームからのリソースをセキュリティで保護されたページに読み込むことを許可している場合でも、サードパーティまたはクロスサイトの Cookie には `Secure` が必要なため、これらのリクエストではすべての Cookie がブロックされます。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GgR6Yln1f9JGkt04exRC.png", alt="セキュリティで保護されていない HTTP バージョンのサイトに含まれているセキュリティで保護された HTTPS バージョンのサイトのリソースによって生じるクロススキームサブリソース。SameSite= Strict および SameSite = Lax Cookie がブロックされ、SameSite = None; Secure Cookie が許可される。", width="800", height="285" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> HTTPS を通じてクロススキームサブリソースを含む HTTP ページ。 </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GgR6Yln1f9JGkt04exRC.png", alt="セキュリティで保護されていない HTTP バージョンのサイトに含まれているセキュリティで保護された HTTPS バージョンのサイトのリソースによって生じるクロススキームサブリソース。SameSite= Strict および SameSite = Lax Cookie がブロックされ、SameSite = None; Secure Cookie が許可される。", width="800", height="285" %} <figcaption> HTTPS を通じてクロススキームサブリソースを含む HTTP ページ。 </figcaption></figure>
 
 <table>
   <tr>
@@ -141,7 +141,7 @@ Cookie のデフォルトを `SameSite=Lax` に変更した主な理由の 1 つ
 
 {% Aside 'warning' %} ここでの最善の解決策は、フォームページと宛先の両方が HTTPS などの安全な接続上にあることを確認することです。これは、ユーザーがフォームに機密情報を入力する場合に特に重要となります。 {% endAside %}
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ud9LkDeGJUWHObifD718.png", alt="セキュリティで保護されていない HTTP バージョンのサイトにあるフォームがセキュリティで保護された HTTPS バージョンに送信されることで生じるクロススキームフォーム送信。SameSite=Strict と SameSite=Lax Cookie がブロックされ、SameSite=None; Secure Cookie が許可される。", width="800", height="376" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> HTTP から HTTPS へのクロススキームフォーム送信。 </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ud9LkDeGJUWHObifD718.png", alt="セキュリティで保護されていない HTTP バージョンのサイトにあるフォームがセキュリティで保護された HTTPS バージョンに送信されることで生じるクロススキームフォーム送信。SameSite=Strict と SameSite=Lax Cookie がブロックされ、SameSite=None; Secure Cookie が許可される。", width="800", height="376" %} <figcaption> HTTP から HTTPS へのクロススキームフォーム送信。 </figcaption></figure>
 
 <table>
   <tr>

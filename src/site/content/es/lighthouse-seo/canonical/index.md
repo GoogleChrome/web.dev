@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El documento no tiene un `rel=canonical` válido
 description: Conozca la auditoría de Lighthouse "El documento no tiene un rel=canonical válido".
 date: 2019-05-02
@@ -24,7 +24,7 @@ El uso de enlaces canónicos tiene muchas ventajas:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca cualquier página con un enlace canónico no válido:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt = "Auditoría de Lighthouse mostrando documento con enlace canónico no válido", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt = "Auditoría de Lighthouse mostrando documento con enlace canónico no válido", width="800", height="76" %}</figure>
 
 Una página falla en esta auditoría si se cumple alguna de las siguientes condiciones:
 

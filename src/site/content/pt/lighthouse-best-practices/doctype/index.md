@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: A página não tem o doctype HTML, acionando assim o modo quirks
 description: |2-
 
@@ -16,7 +16,7 @@ Especificar um doctype evita que o navegador mude para o [modo quirks](https://d
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas sem a declaração `<!DOCTYPE html>`
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Auditoria do Lighthouse mostrando ausência do doctype", width="800", height="76", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Auditoria do Lighthouse mostrando ausência do doctype", width="800", height="76" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 

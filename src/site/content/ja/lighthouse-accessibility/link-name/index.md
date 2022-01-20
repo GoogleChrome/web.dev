@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: リンクの名前が識別できない
 description: ウェブページ上のリンクに支援技術が解釈できる名前を付けて、一層利用しやすくする方法を学びます。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouseは、名前を識別できないリンクをフラグします。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="名前を識別できないことを示すLighthouseの監査", width="800", height="206", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="名前を識別できないことを示すLighthouseの監査", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

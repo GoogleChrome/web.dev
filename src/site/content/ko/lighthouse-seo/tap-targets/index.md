@@ -16,11 +16,11 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 너무 작거나 너무 가까운 탭 대상이 있는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="부적절한 크기의 탭 대상을 나타낸 Lighthouse 감사", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="부적절한 크기의 탭 대상을 나타낸 Lighthouse 감사", width="800", height="206" %}</figure>
 
 48 x 48픽셀보다 작거나 8픽셀보다 가까운 대상은 감사에 실패합니다. 감사가 실패하면 Lighthouse는 세 개의 열이 있는 테이블에 결과를 나열합니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <tbody>
       <tr>
@@ -45,7 +45,7 @@ web_lighthouse:
 
 **1단계:** 너무 작은 탭 대상의 크기를 늘립니다. 48 x 48 px인 탭 대상은 절대 감사에 실패하지 않습니다. 더 크게 *표시*되지 않아야 하는 요소(예: 아이콘)가 있는 경우 `padding` 속성을 늘려 보세요.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="적절한 크기의 탭 대상", width="800", height="419", class="w-screenshot w-screenshot" %}<figcaption class="w-figcaption"> <code>padding</code>을 사용하여 요소의 모양을 바꾸지 않고 탭 대상을 더 크게 만드세요.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="적절한 크기의 탭 대상", width="800", height="419" %}<figcaption> <code>padding</code>을 사용하여 요소의 모양을 바꾸지 않고 탭 대상을 더 크게 만드세요.</figcaption></figure>
 
 **2단계:** `margin`과 같은 속성을 사용하여 서로 너무 가까운 탭 대상 사이의 간격을 늘리세요. 탭 대상 사이에는 최소 8픽셀이 있어야 합니다.
 

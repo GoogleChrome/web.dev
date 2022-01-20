@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Элементам формы не сопоставлены ярлыки (Form elements do not have associated labels)
 description: |2-
 
@@ -18,7 +18,7 @@ web_lighthouse:
 
 Lighthouse помечает элементы формы, которым не сопоставлены ярлыки:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Аудит Lighthouse «Элементам формы не сопоставлены ярлыки» (Form elements do not have associated labels)", width="800", height="185", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Аудит Lighthouse «Элементам формы не сопоставлены ярлыки» (Form elements do not have associated labels)", width="800", height="185" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

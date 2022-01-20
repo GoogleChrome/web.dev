@@ -24,7 +24,7 @@ tags:
 
 Los sitios web que tienen la combinación del mismo esquema, nombre de host y puerto se consideran "same-origin (mismo origen)". Todo lo demás se considera "cross-origin (origen cruzado)".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -84,7 +84,7 @@ El nombre completo del sitio se conoce como eTLD+1. Por ejemplo, dada una URL de
 
 Los sitios web que tienen el mismo eTLD+1 se consideran "same-site (mismo sitio)". Los sitios web que tienen un eTLD+1 diferente son "cross-site (sitio cruzado)".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -131,7 +131,7 @@ Los sitios web que tienen el mismo eTLD+1 se consideran "same-site (mismo sitio)
 
 La definición de "same-site" está evolucionando para considerar el esquema de URL como parte del sitio para evitar que HTTP se utilice como [un canal débil](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8). A medida que los navegadores adopten esta interpretación, es posible que veas referencias a "scheme-less same-site (mismo sitio sin esquema)" cuando se refiera a la definición anterior y "[schemeful same-site (mismo sitio esquemático)](/schemeful-samesite/)" refiriéndose a la definición más estricta. En ese caso, `http://www.example.com` y `https://www.example.com` se consideran cross-site porque los esquemas no coinciden.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

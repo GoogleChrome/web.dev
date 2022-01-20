@@ -170,9 +170,9 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 
 만화 스타일의 그리기 앱인 [Excalidraw](https://excalidraw.com/)에 파일 처리 지원을 추가했습니다. 테스트하려면 먼저 Excalidraw를 설치해야 합니다. 그런 다음 이 파일을 사용하여 파일을 만들고 파일 시스템의 어딘가에 저장할 때 더블 클릭을 통해 파일을 열거나 마우스 오른쪽 버튼을 클릭한 다음 컨텍스트 메뉴에서 "Excalidraw"를 선택할 수 있습니다. 소스 코드에서 [구현](https://github.com/excalidraw/excalidraw/search?q=launchqueue&type=code)을 확인할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="Excalidraw 파일이 있는 macOS 찾기 창입니다.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> 운영 체제의 파일 탐색기에서 파일을 두 번 클릭하거나 마우스 오른쪽 버튼으로 클릭합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="Excalidraw 파일이 있는 macOS 찾기 창입니다.", width="800", height="422" %}<figcaption> 운영 체제의 파일 탐색기에서 파일을 두 번 클릭하거나 마우스 오른쪽 버튼으로 클릭합니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="'Excalidraw...으로 열기' 항목이 강조 표시된 파일을 마우스 오른쪽 버튼으로 클릭하면 나타나는 컨텍스트 메뉴입니다.", width="488", height="266", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> Excalidraw은 <code>.excalidraw</code> 파일의 기본 파일 핸들러입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="'Excalidraw...으로 열기' 항목이 강조 표시된 파일을 마우스 오른쪽 버튼으로 클릭하면 나타나는 컨텍스트 메뉴입니다.", width="488", height="266" %}<figcaption> Excalidraw은 <code>.excalidraw</code> 파일의 기본 파일 핸들러입니다.</figcaption></figure>
 
 ## 보안
 

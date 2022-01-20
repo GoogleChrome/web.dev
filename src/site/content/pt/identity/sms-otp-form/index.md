@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Práticas recomendadas de formulário OTP de SMS
 subhead: Aprenda como otimizar seu formulário OTP de SMS e melhorar a experiência do usuário.
 authors:
@@ -81,12 +81,12 @@ Alguns sites usam `type="tel"` para campos de entrada OTP, uma vez que também t
 
 Com `autocomplete="one-time-code"` sempre que um usuário recebe uma mensagem SMS enquanto um formulário está aberto, o sistema operacional irá analisar o OTP no SMS heuristicamente e o teclado irá sugerir o OTP para o usuário inserir. Funciona apenas no Safari 12 e posterior no iOS, iPadOS e macOS, mas é altamente recomendável usá-lo, porque é uma maneira fácil de melhorar a experiência de SMS OTP nessas plataformas.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">`autocomplete ="one-time-code"` em ação.</figcaption></figure>
+  <figcaption>`autocomplete ="one-time-code"` em ação.</figcaption></figure>
 
 O `autocomplete="one-time-code"` melhora a experiência do usuário, mas você pode fazer mais [garantindo que a mensagem SMS está em conformidade com o formato de mensagem vinculado à origem](#format).
 
@@ -150,12 +150,12 @@ navigator.credentials.get({
 .then(otp => input.value = otp.code);
 ```
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">API WebOTP em ação.</figcaption></figure>
+  <figcaption>API WebOTP em ação.</figcaption></figure>
 
 Aprenda a usar a API WebOTP detalhadamente em [Verificar números de telefone na web com a API WebOTP](/web-otp/) ou copie e cole o seguinte snippet. (Certifique-se de que o `<form>` tenha um `action` e `method` devidamente definido.)
 

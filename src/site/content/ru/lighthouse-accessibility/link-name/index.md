@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ссылки имеют неинформативные названия
 description: Узнайте, как повысить доступность ссылок на веб-странице, сделав их названия более информативными для пользователей вспомогательных технологий.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse помечает ссылки с неинформативными названиями:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Скриншот проверки Lighthouse, отображающей ссылки с неинформативными названиями", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Скриншот проверки Lighthouse, отображающей ссылки с неинформативными названиями", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -20,7 +20,7 @@ feedback:
 
 ## ¿Qué es la API de identificación de aplicaciones? {: #what }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Example of Twitter with eight notifications and another app showing a flag type badge.", width="600", height="189" %} <figcaption class="w-figcaption"> Ejemplo de Twitter con ocho notificaciones y otra aplicación que muestra una bandera como distintivo.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Example of Twitter with eight notifications and another app showing a flag type badge.", width="600", height="189" %} <figcaption> Ejemplo de Twitter con ocho notificaciones y otra aplicación que muestra una bandera como distintivo.</figcaption></figure>
 
 La API de identificación de aplicaciones permite que las aplicaciones web instaladas establezcan un distintivo para toda la aplicación, que se muestra en un lugar específico del sistema operativo asociado con la misma (como la estantería o la pantalla de inicio).
 

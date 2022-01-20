@@ -39,13 +39,13 @@ date: 2021-04-21
 
 要理解弹性框，关键是理解主轴和横轴的概念。主轴由 `flex-direction` 属性设置。如果该属性为 `row`，则主轴沿行方向分布，如果该属性为 `column`，则主轴沿列方向分布。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt="三个框彼此相邻，共用一个从左指向右的箭头。箭头上标记有主轴", width="800", height=" 320"%}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg", alt="三个框彼此相邻，共用一个从左指向右的箭头。箭头上标记有主轴", width="800", height=" 320"%}</figure>
 
 弹性项目作为一个组沿主轴移动。请记住：我们已经获得了很多内容，并且正在努力为作为一个组的它们构建最佳布局。
 
 相对于主轴，横轴沿另一个方向分布，因此，如果 `flex-direction` 为 `row`，则横轴沿列方向分布。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="三个框高度不同，彼此相邻，共用一个从左指向右的箭头。箭头上标记有主轴。另有一个从上指向下的箭头。这个箭头上标记有横轴", width="800", height="320" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="三个框高度不同，彼此相邻，共用一个从左指向右的箭头。箭头上标记有主轴。另有一个从上指向下的箭头。这个箭头上标记有横轴", width="800", height="320" %}</figure>
 
 您可以在横轴上做两件事：可以单独移动每个项目，也可以将这些项目作为一个组移动，使它们相互对齐并与弹性容器对齐。此外，如果您已将弹性行换行，可以将这些线视为一个组，以便控制如何为这些线分配空间。本指南将向您展示这一切在实践中的应用，现在只需记住主轴方向符合 `flex-direction`。
 
@@ -128,7 +128,7 @@ date: 2021-04-21
 
 `flex-wrap` 属性的初始值为 `nowrap`。这意味着，如果容器中没有足够的空间，项目就会溢出。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt="弹性容器包含九个项目，各个项目已经缩减为一个词一行，但仍没有足够的空间来并排显示它们，因此弹性项目扩展到了容器框外。", width="800", height="282" %}<figcaption class="w-figcaption"> 一旦它们达到最小内容 (min-content) 大小，弹性项目将开始溢出其容器 </figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg", alt="弹性容器包含九个项目，各个项目已经缩减为一个词一行，但仍没有足够的空间来并排显示它们，因此弹性项目扩展到了容器框外。", width="800", height="282" %}<figcaption> 一旦它们达到最小内容 (min-content) 大小，弹性项目将开始溢出其容器 </figcaption></figure>
 
 在溢出发生之前，使用初始值显示的项目将尽可能缩小到 `min-content` 大小。
 

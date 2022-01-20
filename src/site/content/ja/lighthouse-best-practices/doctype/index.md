@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ページに HTML Doctype が指定されていないため、Quirks モードがトリガーされる
 description: ページが古いブラウザで Quirks モードをトリガーしないようにする方法を学習します。
 web_lighthouse:
@@ -14,7 +14,7 @@ Doctype を指定すると、ブラウザが [Quirks モード](https://develope
 
 `<!DOCTYPE html>` 宣言が存在しない場合、[Lighthouse](https://developers.google.com/web/tools/lighthouse/) はページにフラグを設定します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Doctype がないことを示す Lighthouse 監査", width="800", height="76", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Doctype がないことを示す Lighthouse 監査", width="800", height="76" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 

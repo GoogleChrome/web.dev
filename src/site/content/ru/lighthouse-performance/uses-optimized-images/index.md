@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Аудит Efficiently encode images
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 В разделе «Возможности» отчета Lighthouse перечислены все неоптимизированные изображения, а также указано, на сколько [кибибайтов (КиБ)](https://en.wikipedia.org/wiki/Kibibyte) можно уменьшить их размер. Оптимизируйте такие изображения, чтобы страница загружалась быстрее и на ее передачу уходило меньше трафика:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Снимок экрана с результатами работы аудита Efficiently encode images в Lighthouse", width="800", height="263", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Снимок экрана с результатами работы аудита Efficiently encode images в Lighthouse", width="800", height="263" %}</figure>
 
 ## Как Lighthouse определяет изображения, которые можно оптимизировать
 

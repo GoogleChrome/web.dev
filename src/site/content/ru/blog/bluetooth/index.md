@@ -70,11 +70,11 @@ Web Bluetooth API в значительной степени полагаетс�
 
 Когда веб-сайт запрашивает доступ к ближайшим устройствам с помощью `navigator.bluetooth.requestDevice`, браузер вызывает список устройств, где пользователь может выбрать одно устройство или отменить запрос.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/bluetooth/bluetooth-device-chooser.mp4">
   </source></video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <p data-md-type="paragraph"><a href="https://webbluetoothcg.github.io/demos/playbulb-candle/">Пользовательское диалоговое окно с устройствами Bluetooth.</a></p>
   </figcaption></figure>
 
@@ -378,7 +378,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer']
 
 Страница «**Внутренние устройства Bluetooth**» доступна в Chrome по адресу `about://bluetooth-internals`. Здесь вы можете проверить все, что связано с ближайшими Bluetooth-устройствами: состояние, службы, характеристики и дескрипторы.
 
-<figure class="w-figure">{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Снимок экрана внутренней страницы для отладки Bluetooth в Chrome", width="800", height="572", class="w-screenshot" %} <figcaption class="w-figcaption">Внутренняя страница в Chrome для отладки Bluetooth-устройств.</figcaption></figure>
+<figure>{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Снимок экрана внутренней страницы для отладки Bluetooth в Chrome", width="800", height="572" %} <figcaption>Внутренняя страница в Chrome для отладки Bluetooth-устройств.</figcaption></figure>
 
 Также рекомендую ознакомиться с официальной страницей «[Как зарегистрировать ошибки Web Bluetooth](https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs)», поскольку отладка Bluetooth порой может быть сложной.
 

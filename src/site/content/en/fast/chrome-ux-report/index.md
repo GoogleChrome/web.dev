@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Using the Chrome UX Report to look at performance in the field
 authors:
   - rviscomi

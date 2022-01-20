@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 올바른 이미지 형식 선택
 authors:
   - ilyagrigorik
@@ -26,7 +26,7 @@ tags:
 
 이미지가 올바른 옵션이라고 확신하는 경우 작업에 적합한 이미지 종류를 신중하게 선택해야 합니다.
 
-<figure class="w-figure">{% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="확대된 벡터 및 래스터 이미지", width="585", height="313" %} <figcaption>확대된 벡터 이미지(L) 래스터 이미지(R)</figcaption></figure>
+<figure>{% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="확대된 벡터 및 래스터 이미지", width="585", height="313" %} <figcaption>확대된 벡터 이미지(L) 래스터 이미지(R)</figcaption></figure>
 
 - [벡터 그래픽](https://en.wikipedia.org/wiki/Vector_graphics)은 선, 점 및 다각형을 사용하여 이미지를 나타냅니다.
 - [래스터 그래픽](https://en.wikipedia.org/wiki/Raster_graphics)은 직사각형 격자 내에서 각 픽셀의 개별 값을 인코딩하여 이미지를 나타냅니다.
@@ -41,13 +41,13 @@ tags:
 
 픽셀에는 CSS 픽셀과 장치 픽셀의 두 가지 종류가 있습니다. 단일 CSS 픽셀은 단일 장치 픽셀에 직접 대응하거나 여러 장치 픽셀로 뒷받침될 수 있습니다. 점은 무엇인가? 장치 픽셀이 많을수록 화면에 표시되는 콘텐츠의 세부 사항이 더 미세해집니다.
 
-<figure class="w-figure">{% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="CSS 픽셀과 기기 픽셀의 차이를 보여주는 세 개의 이미지.", width="470", height="205" %}<figcaption class="w-figcaption"> CSS 픽셀과 장치 픽셀의 차이입니다.</figcaption></figure>
+<figure>{% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="CSS 픽셀과 기기 픽셀의 차이를 보여주는 세 개의 이미지.", width="470", height="205" %}<figcaption> CSS 픽셀과 장치 픽셀의 차이입니다.</figcaption></figure>
 
 높은 DPI(HiDPI) 화면은 아름다운 결과를 제공하지만 한 가지 분명한 절충안이 있습니다. 이미지 자산은 더 많은 장치 픽셀 수를 활용하기 위해 더 많은 세부 정보가 필요합니다. 좋은 소식은 벡터 이미지가 이 작업에 이상적으로 적합하다는 것입니다. 어떤 해상도에서도 선명한 결과로 렌더링할 수 있기 때문입니다. 더 미세한 디테일을 렌더링하려면 더 높은 처리 비용이 발생할 수 있지만 기본 자산은 동일하고 해상도에 독립적입니다. .
 
 반면에 래스터 이미지는 픽셀 단위로 이미지 데이터를 인코딩하기 때문에 훨씬 더 큰 문제를 야기합니다. 따라서 픽셀 수가 많을수록 래스터 이미지의 파일 크기가 커집니다. 예를 들어 100x100(CSS) 픽셀로 표시되는 사진 자산의 차이점을 살펴보겠습니다.
 
-<div class="w-table-wrapper"><table>
+<div class="table-wrapper scrollbar"><table>
 <thead>
   <tr>
     <th>화면 해상도</th>
@@ -85,7 +85,7 @@ tags:
 
 다양한 손실 및 무손실 압축 알고리즘 외에도 다양한 이미지 형식은 애니메이션 및 투명도(알파) 채널과 같은 다양한 기능을 지원합니다. 결과적으로 특정 이미지에 대한 "올바른 형식"의 선택은 원하는 시각적 결과와 기능적 요구 사항의 조합입니다.
 
-<div class="w-table-wrapper"><table>
+<div class="table-wrapper scrollbar"><table>
 <thead>
   <tr>
     <th>체재</th>

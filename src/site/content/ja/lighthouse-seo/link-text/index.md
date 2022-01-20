@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: リンクには説明文がありません
 description: |2-
 
@@ -16,7 +16,7 @@ Link テキストは、ハイパーリンク内のクリック可能な単語ま
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、説明文なしでlinkにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Lighthouse auditは説明文なしでlinkを表示します", width="800", height="191", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Lighthouse auditは説明文なしでlinkを表示します", width="800", height="191" %}</figure>
 
 Lighthouseは、次の一般的なlink テキストにフラグを立てます。
 

@@ -54,8 +54,8 @@ Web 上的兼容性一直是开发人员面临的一大挑战。在过去的几�
 [CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout) 在网络上被[广泛使用](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)，但对于开发者来说仍然存在一些重大挑战。例如，[Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) 和 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983) 都存在 `auto-height` flex 容器的问题，导致图像大小不正确。
 
 <div class="switcher">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="棋盘的拉伸照片。", width="800", height="400" %}<figcaption class="w-figcaption" style="margin-top: auto">由于错误，图像大小不正确。</figcaption></figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="棋盘。", width="800", height="800" %}<figcaption class="w-figcaption" style="margin-top: auto">正确大小的图像。<br>摄影：<a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi</a>。</figcaption></figure>
+    <figure style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="棋盘的拉伸照片。", width="800", height="400" %}<figcaption style="margin-top: auto">由于错误，图像大小不正确。</figcaption></figure>
+    <figure style="display: flex; flex-direction: column;">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="棋盘。", width="800", height="800" %}<figcaption style="margin-top: auto">正确大小的图像。<br>摄影：<a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi</a>。</figcaption></figure>
 </div>
 
 [Igalia 的 flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/) 博客文章通过更多示例深入探讨了这些问题。
@@ -70,7 +70,7 @@ Web 上的兼容性一直是开发人员面临的一大挑战。在过去的几�
 
 [CSS 网格](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)是现代 Web 布局的核心构建块，取代了许多旧的技术和变通方法。随着采用率的增长，它需要非常可靠，因此浏览器之间的差异永远不是避免它的理由。缺乏的一个方面是动画网格布局的能力，Gecko 支持，但 [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=759665) 或 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=204580) 不支持。当支持时，可以实现这样的效果：
 
-<figure class="w-figure">{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4", height="400", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption class="w-figcaption"><a href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen Hui Jing</a> 演示的动画象棋。</figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4", height="400", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption><a href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen Hui Jing</a> 演示的动画象棋。</figcaption></figure>
 
 #### 为什么优先
 
@@ -85,9 +85,9 @@ Web 上的兼容性一直是开发人员面临的一大挑战。在过去的几�
 [粘性定位](https://developer.mozilla.org/docs/Web/CSS/position#sticky_positioning)允许内容粘在视口的边缘，通常用于始终在视口顶部可见的标题。虽然在所有浏览器中都受支持，但在某些常见用例中它无法按预期工作。例如，Chromium 不支持[粘性表头](https://bugs.chromium.org/p/chromium/issues/detail?id=702927)，尽管当前在[flag 后面受支持](https://bugs.chromium.org/p/chromium/issues/detail?id=958381)，但结果在不同的浏览器之间不一致：
 
 <div class="switcher">
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}<figcaption class="w-figcaption">有“TablesNG”的 Chromium</figcaption></figure>
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %} <figcaption class="w-figcaption"> Gecko </figcaption></figure>
-    <figure class="w-figure">{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %} <figcaption class="w-figcaption"> WebKit </figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}<figcaption>有“TablesNG”的 Chromium</figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %} <figcaption> Gecko </figcaption></figure>
+    <figure>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %} <figcaption> WebKit </figcaption></figure>
 </div>
 
 查看由 Rob Flack 提供的<a href="https://output.jsbin.com/xunosud">粘性表头演示</a>。
@@ -124,7 +124,7 @@ Web 上的兼容性一直是开发人员面临的一大挑战。在过去的几�
 
 多年来，所有浏览器都支持 [CSS 变换](https://developer.mozilla.org/docs/Web/CSS/transform)，并在网络上广泛使用。然而，在许多浏览器中仍然存在许多不同的领域，特别是动画和 3D 变换。例如，卡片翻转效果在浏览器之间可能非常不一致：
 
-<figure class="w-figure">{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4", class="w-screenshot", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption class="w-figcaption"> Chromium（左）、Gecko（中）和 WebKit（右）中的卡片翻转效果。来自 David Baron 在<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">错误评论</a>中的演示。</figcaption></figure>
+<figure>{% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4", controls=false, autoplay=true, loop=true, muted=true, playinline=true %}<figcaption> Chromium（左）、Gecko（中）和 WebKit（右）中的卡片翻转效果。来自 David Baron 在<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">错误评论</a>中的演示。</figcaption></figure>
 
 #### 为什么优先
 
@@ -138,7 +138,7 @@ Web 上的兼容性一直是开发人员面临的一大挑战。在过去的几�
 
 web.dev 上会定期更新进度，您还可以在 [Compat 2021 仪表板中](https://wpt.fyi/compat2021)关注每个重点领域的进度。
 
-<figure class="w-figure"><p data-md-type="paragraph"><a href="https://wpt.fyi/compat2021">{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", alt="Compat 2021 Dashboard", width="800", height="942", class="w-screenshot" %}</a></p>
-<figcaption class="w-figcaption">Compat 2021 仪表板（截图日期：2021 年 11 月 16 日）。</figcaption></figure>
+<figure><p data-md-type="paragraph"><a href="https://wpt.fyi/compat2021">{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png", alt="Compat 2021 Dashboard", width="800", height="942" %}</a></p>
+<figcaption>Compat 2021 仪表板（截图日期：2021 年 11 月 16 日）。</figcaption></figure>
 
 我们希望浏览器供应商之间共同努力提高可靠性和互操作性的举措将帮助您在网络上构建卓越的内容！

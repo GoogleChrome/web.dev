@@ -16,7 +16,7 @@ tags:
 再生の開始が速ければ、あなたの動画を見たり音声を聞いたりする人が多くなります。[これは動かぬ事実です](https://www.digitaltrends.com/web/buffer-rage/)。この記事では、ユースケースに応じてリソースを積極的にプリロードすることによって音声と動画の再生を加速するために使用できるテクニックを探ります。
 
 <figure>
-  <video controls muted playsinline class="w-screenshot">
+  <video controls muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1" type="video/mp4">
   </source></source></video>

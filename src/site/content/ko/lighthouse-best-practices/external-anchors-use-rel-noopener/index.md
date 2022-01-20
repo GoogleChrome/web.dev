@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 교차 출처 대상에 대한 링크는 안전하지 않습니다
 description: 다른 호스트의 리소스에 안전하게 링크하는 방법을 알아보세요.
 web_lighthouse:
@@ -21,7 +21,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 교차 출처 대상에 대한 안전하지 않은 링크를 표시합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="교차 출처 대상에 대한 안전하지 않은 링크를 표시하는 Lighthouse 감사", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="교차 출처 대상에 대한 안전하지 않은 링크를 표시하는 Lighthouse 감사", width="800", height="213" %}</figure>
 
 Lighthouse는 다음 프로세스를 사용하여 링크를 안전하지 않은 것으로 식별합니다.
 

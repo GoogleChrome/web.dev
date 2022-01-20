@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: アドレスバーのテーマの色を設定しません
 description: |2-
 
@@ -20,7 +20,7 @@ updated: 2020-06-17
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、アドレスバーにテーマを適用しないページにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 監査はページの色をテーマにしていないアドレスバーを表示します", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse 監査はページの色をテーマにしていないアドレスバーを表示します", width="800", height="98" %}</figure>
 
 LighthouseがページのHTMLで`theme-color`メタタグを検出せず、[Webアプリマニフェスト](/add-manifest)で`theme_color`プロパティを検出しない場合、監査は失敗します。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Estratégias de pré-carregamento de rota no Angular
 subhead: |2
 
@@ -56,7 +56,7 @@ Agora sirva o aplicativo e observe o painel **Rede** no Chrome DevTools:
 
 Você deve ver que o roteador baixou `nyan-nyan-module.js` e `about-about-module.js` em segundo plano ao abrir o aplicativo:
 
-<figure class="w-figure w-figure--fullbleed">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/TVi6LCasiwZI1hxJrBOL.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/e9h6JBVl8TUGMWOSAWyC.mp4"], controls="true", loop="true", muted="true" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> A estratégia PreloadAllModules em ação. </figcaption></figure>
+<figure data-size="full">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/TVi6LCasiwZI1hxJrBOL.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/e9h6JBVl8TUGMWOSAWyC.mp4"], controls="true", loop="true", muted="true" %} <figcaption> A estratégia PreloadAllModules em ação. </figcaption></figure>
 
 O roteador também registrou as declarações de rota dos módulos para que, quando você navegar para um URL associado a qualquer um dos módulos pré-carregados, a transição seja instantânea.
 
@@ -94,7 +94,7 @@ export class AppModule {}
 
 Agora, ao abrir o aplicativo novamente, você notará que o roteador pré-carrega apenas `nyan-nyan-module.js`, pois o botão no centro da página tem um link de roteador para ele. E ao abrir a navegação lateral, você perceberá que o roteador pré-carrega a rota "Sobre":
 
-<figure class="w-figure w-figure--fullbleed">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/dfZkoiQyNh4fUj4DJjrc.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/SkNp99W1Bv2tsaRgOwoe.mp4"], controls="true", loop="true", muted="true" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Uma demonstração da estratégia de pré-carregamento quicklink. </figcaption></figure>
+<figure data-size="full">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/dfZkoiQyNh4fUj4DJjrc.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/SkNp99W1Bv2tsaRgOwoe.mp4"], controls="true", loop="true", muted="true" %} <figcaption> Uma demonstração da estratégia de pré-carregamento quicklink. </figcaption></figure>
 
 ### Usando a estratégia de pré-carregamento Quicklink em vários módulos de carregamento lento
 

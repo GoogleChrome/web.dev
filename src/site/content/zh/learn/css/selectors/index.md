@@ -36,7 +36,7 @@ article p:first-of-type {
 
 要了解选择器的工作原理及其在 CSS 中的作用，了解 CSS 规则的组成部分很重要。CSS 规则是一段代码，包含一个或多个选择器和一个或多个声明。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="含有选择器 .my-css-rule 的 CSS 规则的图像", width="800", height="427" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="含有选择器 .my-css-rule 的 CSS 规则的图像", width="800", height="427" %}</figure>
 
 在该 CSS 规则中，**选择器**是 `.my-css-rule` ，它在页面上找到所有类为 `my-css-rule` 的元素。大括号内有三个声明。声明是一个属性和值对，它将样式应用于选择器匹配的元素。CSS 规则可以有任意多的声明和选择器。
 
@@ -178,7 +178,7 @@ section {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %}<figcaption class="w-figcaption">在该演示中，属性选择器中的 `$` 操作符从 `href` 属性中获取文件类型。这使得可以使用伪元素根据该文件类型为标签添加前缀。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %}<figcaption>在该演示中，属性选择器中的 `$` 操作符从 `href` 属性中获取文件类型。这使得可以使用伪元素根据该文件类型为标签添加前缀。</figcaption></figure>
 
 ### 分组选择器
 
@@ -287,7 +287,7 @@ p strong {
 
 此代码段仅选择 `<p>` 元素的子元素的所有 `<strong>` 元素，使它们递归地变为蓝色。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %}<figcaption class="w-figcaption">由于后代连结符是递归的，因此会应用添加到每个子元素的填充，从而产生交错效果。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %}<figcaption>由于后代连结符是递归的，因此会应用添加到每个子元素的填充，从而产生交错效果。</figcaption></figure>
 
 在上面的示例中，使用连结符选择器 `.top div` 可以更好地可视化这种效果。该 CSS 规则为这些 `<div>` 元素添加了左填充。因为连结符是递归的， `.top` 中的所有 `<div>` 元素都将应用相同的填充。
 
@@ -315,7 +315,7 @@ p strong {
 
 后续连结符与下一个同级选择器非常相似。但是，其不使用 `+` 字符，而是使用 `~` 字符。不同之处在于一个元素只需要跟随另一个具有相同父元素的元素，而不是成为具有相同父元素的下一个元素。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %} <figcaption class="w-figcaption">使用后续选择器和 `:checked` 伪类可创建纯 CSS 开关元素。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %} <figcaption>使用后续选择器和 `:checked` 伪类可创建纯 CSS 开关元素。</figcaption></figure>
 
 该后续连结符提供一定的灵活性，这在像上面的示例这样的上下文中很有用，当其关联的复选框具有 `:checked` 状态时，我们可更改自定义开关的颜色。
 

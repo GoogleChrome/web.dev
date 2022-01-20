@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 미디어 쿼리로 CSS 배경 이미지 최적화
 authors:
   - demianrenzulli
@@ -26,7 +26,7 @@ tags:
 
 요청되는 유일한 이미지는 **1006KB** 크기인 `background-desktop.jpg`입니다.
 
-<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="최적화되지 않은 배경 이미지에 대한 DevTools 네트워크 추적.", width="800", height="126", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="최적화되지 않은 배경 이미지에 대한 DevTools 네트워크 추적.", width="800", height="126" %}</figure>
 
 브라우저 창의 크기를 조정하고 네트워크 로그에 페이지에서 수행하는 새 요청이 표시되지 않는지 확인합니다. 이는 모든 화면 크기에 동일한 이미지 배경이 사용됨을 의미합니다.
 
@@ -123,7 +123,7 @@ body {
 
 특히 너비가 모바일 중단점에서 정의한 값 미만(480px)인 경우 다음 네트워크 로그가 표시됩니다.
 
-<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="최적화된 배경 이미지를 위한 DevTools 네트워크 추적.", width="800", height="125", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="최적화된 배경 이미지를 위한 DevTools 네트워크 추적.", width="800", height="125" %}</figure>
 
 새로운 모바일 배경의 크기는 데스크톱보다 **67% 작습니다**.
 

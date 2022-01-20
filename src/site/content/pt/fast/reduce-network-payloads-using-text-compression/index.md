@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minifique e comprima payloads de rede
 authors:
   - houssein
@@ -27,13 +27,13 @@ A incorporação de ambas as técnicas reduz o tamanho do payload e, por sua vez
 
 O Lighthouse exibirá uma auditoria com falha se detectar quaisquer recursos CSS ou JS em sua página que possam ser minificados.
 
-{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Auditoria Lighthouse minifica CSS", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Auditoria Lighthouse minifica CSS", width="800", height="90" %}
 
-{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Auditoria Lighthouse minifica JS", width="800", height="112", class="w-screenshot" %}
+{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Auditoria Lighthouse minifica JS", width="800", height="112" %}
 
 Ele também audita todos os ativos não compactados.
 
-{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: ativar compactação de texto", width="800", height="123", class="w-screenshot" %}
+{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: ativar compactação de texto", width="800", height="123" %}
 
 ## Minificação
 

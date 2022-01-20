@@ -29,17 +29,17 @@ Si prefieres ver un video, aquí tienes una versión de YouTube de esta publicac
 
 Es difícil construir un sistema de navegación responsivo. Algunos usuarios estarán en un teclado, algunos tendrán computadoras de escritorio potentes y algunos visitarán desde un pequeño dispositivo móvil. Todas las personas que visiten deben poder abrir y cerrar el menú.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/desktop-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">Demostración de diseño responsivo de escritorio a dispositivo móvil</figcaption></figure>
+  <figcaption>Demostración de diseño responsivo de escritorio a dispositivo móvil</figcaption></figure>
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/mobile-demo-1080p.mp4">
   </source></video>
-  <figcaption class="w-figure">Modo claro y modo oscuro en iOS y Android</figcaption></figure>
+  <figcaption>Modo claro y modo oscuro en iOS y Android</figcaption></figure>
 
 ## Tácticas web
 
@@ -81,8 +81,8 @@ Al hacer clic en cada uno de estos enlaces cambia el estado hash de la URL de nu
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/hash-change.mp4">
   </source></video></figure>
 
@@ -108,8 +108,8 @@ El elemento de diseño principal `#sidenav-container` es una cuadrícula que cre
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
   </source></video></figure>
 
@@ -126,11 +126,11 @@ El elemento de diseño principal `#sidenav-container` es una cuadrícula que cre
 
 Ajusta `2fr` y `1fr` para encontrar la proporción que desees para la superposición del menú y su botón de cierre de espacio negativo.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
   </source></video>
-  <figcaption class="w-figure">Una demostración de lo que sucede cuando cambias la proporción.</figcaption></figure>
+  <figcaption>Una demostración de lo que sucede cuando cambias la proporción.</figcaption></figure>
 
 ### Transformaciones y transiciones 3D en CSS {: #transforms}
 
@@ -158,11 +158,11 @@ No todo el mundo querrá una experiencia de movimiento al momento de deslizarse.
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
   </source></video>
-  <figcaption class="w-figure">Se aplicó una demostración de la interacción con y sin duración.</figcaption></figure>
+  <figcaption>Se aplicó una demostración de la interacción con y sin duración.</figcaption></figure>
 
 Ahora, cuando nuestra sidenav se abre y se cierra, si un usuario prefiere un movimiento reducido, instantáneamente moveré el elemento a la vista, manteniendo el estado sin movimiento.
 
@@ -223,11 +223,11 @@ Esta solución se basa en cambiar la URL para que se maneje el estado. Naturalme
 </a>
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/keyboard-voiceover.mp4">
   </source></video>
-  <figcaption class="w-figure">Una demostración de la UX de interacción de voz y teclado.</figcaption></figure>
+  <figcaption>Una demostración de la UX de interacción de voz y teclado.</figcaption></figure>
 
 Ahora, nuestros botones de interacción principales indican claramente su intención tanto para el ratón como para el teclado.
 

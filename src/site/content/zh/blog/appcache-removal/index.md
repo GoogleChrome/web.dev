@@ -116,7 +116,7 @@ TOKEN_GOES_HERE
 
 将令牌添加到 AppCache 清单后，请访问 `about://appcache-internals` 以确认您的本地 Chrome 实例（版本 84 或更高版本）已将初始试用令牌与清单的缓存条目正确关联。如果您的初始试用被识别，您应该在该页面上看到一个包含 `Token Expires: Tue Apr 06 2021...` 的字段与您的清单相关联：
 
-<figure>{% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="about://appcache-internals 界面显示了一个已识别的令牌。", width="550", height="203", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="about://appcache-internals 界面显示了一个已识别的令牌。", width="550", height="203" %}</figure>
 
 ## 移除前测试
 

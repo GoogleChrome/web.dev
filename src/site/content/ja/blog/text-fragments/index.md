@@ -25,7 +25,7 @@ feedback:
 
 Chrome80は大きなリリースでした。これには、[WebワーカーのECMAScriptモジュール](/module-workers/)、 [Null合体](https://v8.dev/features/nullish-coalescing)、[オプションのチェーン](https://v8.dev/features/optional-chaining)など、非常に期待されている機能が多数含まれていました。このリリースは、いつものように、Chromiumブログの[ブログ記事](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html)を通じて発表されました。下のスクリーンショットはそのブログ記事の抜粋です。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %} <figcaption class="w-figcaption"><code>id</code>属性を持つ要素の周りに赤いボックスが付いたChromiumのブログ記事。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %} <figcaption><code>id</code>属性を持つ要素の周りに赤いボックスが付いたChromiumのブログ記事。</figcaption></figure>
 
 すべての赤いボックスが何を意味するのかを考えているのではないでしょうか。これらは、DevToolsで次のスニペットを実行した結果です。`id`属性を持つすべての要素が強調表示されています。
 
@@ -37,7 +37,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 
 [フラグメント識別子](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment)のお陰で、赤いボックスで強調表示された要素にディープリンクを作成することができます。これは、後で、ページのURLの[ハッシュ](https://developer.mozilla.org/docs/Web/API/URL/hash)で使用できるようになります。横にある「*[プロダクトフォーラム](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)にフィードバックを送信*」ボックスにディープリンクを作成するとした場合、手動でURL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#HTML1</mark></code></a>とすることで作成することができます。DevToolsの要素パネルに表示されているとおり、対象の要素には`id`属性と値`HTML1`があります。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption class="w-figcaption">要素の<code>id</code>を表示するDevTools。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption>要素の<code>id</code>を表示するDevTools。</figcaption></figure>
 
 このURLをJavaScriptの`URL()`コンストラクターで解析すると、さまざまなコンポーネントが表示されます。値が`#HTML1`を持つ`hash`プロパティに注目してください。
 
@@ -65,7 +65,7 @@ URL {
 
 `id`を使わずに何かにリンクしたい場合はどうなるでしょうか。*ECMAScript Modules in Web Workers*ヘッダーにリンクするとしましょう。下のスクリーンショットでわかるように、問題の`<h1>`には`id`属性がありません。つまり、この見出しにリンクする方法はないということです。テキストフラグメントを使用すると、この問題を解決できます。
 
-<figure class="w-figure">% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption class="w-figcaption"><code>id</code>のない見出しを表示するDevTools。</figcaption></figure>
+<figure>% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption><code>id</code>のない見出しを表示するDevTools。</figcaption></figure>
 
 ## テキストフラグメント
 
@@ -93,7 +93,7 @@ URL {
 
 テキストフラグメントは<mark class="highlight-line highlight-line-active">このように</mark>が強調されます。Chromeなどのサポートブラウザでこのリンクをクリックすると、テキストフラグメントが強調表示され、スクロールして表示されます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption class="w-figcaption">テキストフラグメントはスクロールして表示され、強調表示されます。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption>テキストフラグメントはスクロールして表示され、強調表示されます。</figcaption></figure>
 
 ### `textStart`と`textEnd`
 
@@ -107,29 +107,29 @@ URL {
 
 `textStart`の`ECMAScript%20Modules%20in%20Web%20Workers`、コンマ（`,`）、そして`textEnd`として`ES%20Modules%20in%20Web%20Workers.`となっています。Chromeなどのサポートされているブラウザでクリックすると、セクション全体が強調表示され、スクロールして表示されます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption class="w-figcaption">スクロール表示され、強調表示されたテキストフラグメント。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption>スクロール表示され、強調表示されたテキストフラグメント。</figcaption></figure>
 
 `textStart`と`textEnd`の選択について疑問に思うかもしれません。実際には、わずかに短いURL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules,Web%20Workers.</mark></code></a>で、両側に2つの単語しか使用しなくてもよいでしょう。`textStart`と`textEnd`を以前の値と比較してください。
 
 `textStart`と`textEnd`の両方に1つの単語しか使用しない場合、問題が発生していることがわかります。URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript,Workers.</mark></code></a>はさらに短くなりましたが、強調表示されたテキストフラグメントは本来求めていたものではなくなりました。強調表示は、最初に出現する`Workers.`で停止し、これは正しい動作ではありますが、私が強調しようとしたものではありません。問題は、目的のセクションは、現在の一単語のみの`textStart`と`textEnd`の値では一意に識別されていないということです。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption class="w-figcaption">意図しないテキストフラグメントがスクロール表示され、強調表示されています。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption>意図しないテキストフラグメントがスクロール表示され、強調表示されています。</figcaption></figure>
 
 ### `prefix-`と`-suffix`
 
 `textStart`と`textEnd`で十分な長さの値を使用することが、一意のリンクを取得するための1つのソリューションです。ただし、状況によっては、これが不可能な場合もあります。ちなみに、なぜChrome 80リリースのブログ記事を例として選んだのでしょうか？このリリースでテキストフラグメントが導入されたからです。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="ブログ記事のテキスト: テキストURLフラグメント。ユーザーまたは作成者は、URLに指定するテキストフラグメントを使用してページの特定の部分にリンクできるようになりました。ページが読み込まれると、ブラウザはテキストを強調表示し、そのフラグメントまでスクロールして表示します。たとえば、以下のURLは、「Cat」のwikiページを読み込み、「text」パラメーターにリストされているコンテンツまでスクロールします。", width="800", height="200", class="w-screenshot" %} <figcaption class="w-figcaption">テキストフラグメントの発表ブログ記事の抜粋。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="ブログ記事のテキスト: テキストURLフラグメント。ユーザーまたは作成者は、URLに指定するテキストフラグメントを使用してページの特定の部分にリンクできるようになりました。ページが読み込まれると、ブラウザはテキストを強調表示し、そのフラグメントまでスクロールして表示します。たとえば、以下のURLは、「Cat」のwikiページを読み込み、「text」パラメーターにリストされているコンテンツまでスクロールします。", width="800", height="200" %} <figcaption>テキストフラグメントの発表ブログ記事の抜粋。</figcaption></figure>
 
 上のスクリーンショットで「テキスト」という単語が4回表示されていることに注目してください。 4番目の出現は緑色のコードフォントで書かれています。この特定の単語にリンクする場合は、 `textStart`を`text`に設定します。「テキスト」という単語は1つの単語だけなので、 `textEnd`は存在できません。どうすればよいでしょうか？URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=text</mark></code></a>とすると、見出しにも「Text」が存在するため、最初の出現で一致してしまいます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption class="w-figcaption">「Text」の最初の出現に一致するテキストフラグメント。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption>「Text」の最初の出現に一致するテキストフラグメント。</figcaption></figure>
 
 {% Aside 'caution' %}テキストフラグメントの一致では大文字と小文字が区別されないことに注意してください。 {% endAside %}
 
 幸いなことに解決策があります。このようなケースでは、`prefix​-`と`-suffix`を指定することができます 。緑のコードフォントの「text」の前の単語は「the」で、後の単語は「parameter」です。ほかの3つの「Text」の出現には、これと同じ前後の単語がありません。この知識を使って、前のURLを微調整して、`prefix-`と`-suffix`を追加できます。他のパラメーターと同様に、これらもパーセントエンコードする必要があり、複数の単語を含めることができます。 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=the-,text,-parameter</mark></code></a> 。パーサーが`prefix-`と`-suffix`をはっきりと識別できるようにするに 、`textStart`から分離し、オプションの`textEnd`にはダッシュ`-`を使用します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %}<figcaption class="w-figcaption"> 「テキスト」の目的のオカレンスでのテキストフラグメントの一致。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %}<figcaption> 「テキスト」の目的のオカレンスでのテキストフラグメントの一致。</figcaption></figure>
 
 ### 完全な構文
 
@@ -166,19 +166,19 @@ URL {
 - [Mozilla Firefox用Link to Text Fragment](https://addons.mozilla.org/firefox/addon/link-to-text-fragment/)
 - [Apple Safari用Link to Text Fragment](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption class="w-figcaption"><a href="https://github.com/GoogleChromeLabs/link-to-text-fragment"> Link to Text Fragment </a>ブラウザ拡張機能</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %} <figcaption><a href="https://github.com/GoogleChromeLabs/link-to-text-fragment"> Link to Text Fragment </a>ブラウザ拡張機能</figcaption></figure>
 
 ### 1つのURLに複数のテキストフラグメント
 
 1つのURLに複数のテキストフラグメントが表示される可能性があることに注意してください。特定のテキストフラグメントは、アンパサンド文字で`&`区切る必要があります。ここに、3つのテキストフラグメントを含むリンクの例を示します。<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<mark class="highlight-line highlight-line-active"></code></a>。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption class="w-figcaption">1つのURLの3つのテキストフラグメント。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %} <figcaption>1つのURLの3つのテキストフラグメント。</figcaption></figure>
 
 ### 要素とテキストフラグメントの混合
 
 従来の要素フラグメントをテキストフラグメントと組み合わせることができます。同一のURLに両方のフラグメントを含めることにまったく問題はないため、たとえばページの元のテキストが変更したことでテキストフラグメントが一致しなくなった場合の意味のあるフォールバックを提供することができます。「*Give us feedback in our [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*」セクションにリンクするURL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</mark></code></a> には、要素フラグメント（`HTML1`）だけでなく、テキストフラグメント（`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`）の両方が含まれています。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %} <figcaption class="w-figcaption">要素フラグメントとテキストフラグメントの両方を使用したリンク。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %} <figcaption>要素フラグメントとテキストフラグメントの両方を使用したリンク。</figcaption></figure>
 
 ### フラグメントディレクティブ
 
@@ -295,9 +295,9 @@ Windowsの場合は、[Google Chrome Enterpriseヘルプ](https://support.google
 
 一部の検索では、Google検索エンジンは、関連するWebサイトのコンテンツスニペットによってクイックアンサーまたは要約を提供します。これらの*注目のスニペット*は、検索が質問の形式である場合に表示される可能性が最も高くなります。注目のスニペットをクリックすると、ユーザーはソースWebページの注目のスニペットテキストに直接移動します。この動作は、自動的に作成されたテキストフラグメントURLによるものです。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">注目のスニペットを表示するGoogle検索エンジンの結果ページ。ステータスバーにはテキストフラグメントURLが表示されている。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption>注目のスニペットを表示するGoogle検索エンジンの結果ページ。ステータスバーにはテキストフラグメントURLが表示されている。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">クリックすると、ページの関連するセクションがスクロールされて表示される。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption>クリックすると、ページの関連するセクションがスクロールされて表示される。</figcaption></figure>
 
 ## まとめ
 

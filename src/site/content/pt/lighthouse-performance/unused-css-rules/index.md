@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Remover CSS não utilizado
 description: Aprenda sobre a auditoria unused-css-rules.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 A seção Oportunidades de seu relatório Lighthouse lista todas as folhas de estilo com CSS não utilizado com uma economia potencial de 2 KiB ou mais. Remova o CSS não utilizado para reduzir bytes desnecessários consumidos pela atividade de rede:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="Uma captura de tela da auditoria Lighthouse Remover CSS não utilizado", width="800", height="235", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="Uma captura de tela da auditoria Lighthouse Remover CSS não utilizado", width="800", height="235" %}</figure>
 
 ## Como CSS não utilizado diminui o desempenho
 
@@ -36,7 +36,7 @@ O CSS não utilizado também retarda a construção da [árvore de renderizaçã
 
 A aba Cobertura do Chrome DevTools pode ajudá-lo a descobrir qual o CSS que é crítico e qual o que não é crítico. Veja [Exibir CSS usado e não usado com a aba Cobertura](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: aba Cobertura", width="800", height="407", class="w-screenshot w-screenshot--filled" %}   <figcaption class="w-figcaption">     Chrome DevTools: aba Cobertura.   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: aba Cobertura", width="800", height="407" %}   <figcaption>     Chrome DevTools: aba Cobertura.   </figcaption></figure>
 
 Você também pode extrair essas informações do Puppeteer. Veja [page.coverage](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagecoverage).
 

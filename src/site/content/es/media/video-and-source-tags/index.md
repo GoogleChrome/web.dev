@@ -65,8 +65,8 @@ Hay algunas formas de profundizar en los detalles. Consulte [Un manual de medios
 
 Ahorre ancho de banda y haga que su sitio tenga una mayor capacidad de respuesta: utilice fragmentos de medios para agregar tiempos de inicio y finalización al elemento de video.
 
-<figure class="w-figure">
-  <video controls class="w-screenshot" width="100%">
+<figure>
+  <video controls width="100%">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
     <p>Este navegador no es compatible con el elemento de video.</p>
@@ -86,7 +86,7 @@ Para que esta función funcione, su servidor debe admitir solicitudes de rango y
 
 Afortunadamente, puede hacer esto desde las herramientas de desarrollo de su navegador. En Chrome, por ejemplo, se encuentra en el [panel de la red](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network). Busque el encabezado `Accept-Ranges` y verifique que dice `bytes`. En la imagen, dibujé un cuadro rojo alrededor de este encabezado. Si no observa `bytes` como valor, tendrá que ponerse en contacto con su proveedor de alojamiento.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Captura de pantalla de Chrome DevTools: Accept-Ranges: bytes.", width="800", height="480", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">Captura de pantalla de Chrome DevTools: Accept-Ranges: bytes.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Captura de pantalla de Chrome DevTools: Accept-Ranges: bytes.", width="800", height="480" %} <figcaption>Captura de pantalla de Chrome DevTools: Accept-Ranges: bytes.</figcaption></figure>
 
 ### Incluya una imagen de cartel
 
@@ -100,12 +100,12 @@ Agregue un atributo de cartel al elemento `video` para que los espectadores se h
 
 Un cartel también puede ser una alternativa si el video `src` está dañado o si ninguno de los formatos de video proporcionados es compatible. La única desventaja de las imágenes de un cartel es el hecho de solicitar un archivo adicional, que consuma algo de ancho de banda y que requiera renderización. Para obtener más información, consulte [Codificación eficiente de las imágenes](/uses-optimized-images/).
 
-<div class="w-columns">{% Compare 'worse' %} <figure class="w-figure" w-figure--inline-left=""> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Sin un cartel de reserva, el video parece estropeado.", width="360", height="600" %} </figure>
+<div class="w-columns">{% Compare 'worse' %} <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Sin un cartel de reserva, el video parece estropeado.", width="360", height="600" %} </figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} Sin un cartel de reserva, el video parece estropeado. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
-<div data-md-type="block_html"><figure class="w-figure" w-figure--inline-right>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="Un cartel alternativo hace que parezca que se capturó el primer fotograma.", width="360", height="600" %}</figure></div>
+<div data-md-type="block_html"><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="Un cartel alternativo hace que parezca que se capturó el primer fotograma.", width="360", height="600" %}</figure></div>
 <p data-md-type="paragraph">{% CompareCaption %} Un cartel alternativo hace que parezca que se capturó el primer fotograma. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
 <div data-md-type="block_html"></div>
@@ -115,8 +115,8 @@ Un cartel también puede ser una alternativa si el video `src` está dañado o s
 Cuando los elementos de video son demasiado grandes para la ventana de visualización, pueden desbordar su contenedor, lo que hace imposible que el usuario vea el contenido o utilice los controles.
 
 <div class="w-columns">
-  <figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt = "Captura de pantalla de Android Chrome, en vertical: el elemento de video sin estilo desborda la ventana de visualización.", width = "338", height = "600"%}<figcaption class="w-figcaption">Captura de pantalla de Android Chrome, en vertical: el elemento de video sin estilo desborda la ventana de visualización.</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Captura de pantalla de Android Chrome, paisaje: el elemento de video sin estilo desborda la ventana de visualización.", width="800", height="450" %} <figcaption class="w-figcaption">Captura de pantalla de Android Chrome, paisaje: el elemento de video sin estilo desborda la ventana de visualización.</figcaption></figure>
+  <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt = "Captura de pantalla de Android Chrome, en vertical: el elemento de video sin estilo desborda la ventana de visualización.", width = "338", height = "600"%}<figcaption>Captura de pantalla de Android Chrome, en vertical: el elemento de video sin estilo desborda la ventana de visualización.</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Captura de pantalla de Android Chrome, paisaje: el elemento de video sin estilo desborda la ventana de visualización.", width="800", height="450" %} <figcaption>Captura de pantalla de Android Chrome, paisaje: el elemento de video sin estilo desborda la ventana de visualización.</figcaption></figure>
 </div>
 
 Puede controlar las dimensiones del video usando CSS. Si el CSS no satisface todas sus necesidades, las bibliotecas de JavaScript y los complementos como [FitVids](http://fitvidsjs.com/) (que están fuera del alcance de este artículo) pueden ayudar, incluso para los videos de YouTube y otras fuentes. Lamentablemente, estos recursos pueden aumentar el [tamaño de la carga útil de su red](/total-byte-weight/), con consecuencias negativas para sus ingresos y la cartera de sus usuarios.
@@ -170,12 +170,12 @@ La orientación del dispositivo no es un problema para los monitores de las comp
 Safari en iPhone hace un buen trabajo al cambiar entre la orientación vertical y la horizontal:
 
 <div class="w-columns">
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Captura de pantalla de un video que se reproduce en un iPhone con Safari, en posición vertical.", width="338", height="600", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">Captura de pantalla de un video que se reproduce en un iPhone con Safari, en posición vertical.</figcaption></figure><figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="Captura de pantalla de un video que se reproduce en un iPhone con Safari, en formato horizontal.", width="600", height="338", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">Captura de pantalla de un video que se reproduce en un iPhone con Safari, en formato horizontal.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Captura de pantalla de un video que se reproduce en un iPhone con Safari, en posición vertical.", width="338", height="600" %} <figcaption>Captura de pantalla de un video que se reproduce en un iPhone con Safari, en posición vertical.</figcaption></figure><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="Captura de pantalla de un video que se reproduce en un iPhone con Safari, en formato horizontal.", width="600", height="338" %} <figcaption>Captura de pantalla de un video que se reproduce en un iPhone con Safari, en formato horizontal.</figcaption></figure>
 </div>
 
 La orientación del dispositivo en un iPad y Chrome en Android podría ser problemática. Por ejemplo, sin ninguna personalización, un video que se reproduzca en un iPad con orientación horizontal tendrá el siguiente aspecto:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="Captura de pantalla de un video que se reproduce en un iPad con Safari, en formato horizontal.", width="600", height="450", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">Captura de pantalla de un video que se reproduce en un iPad con Safari, en formato horizontal.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="Captura de pantalla de un video que se reproduce en un iPad con Safari, en formato horizontal.", width="600", height="450" %} <figcaption>Captura de pantalla de un video que se reproduce en un iPad con Safari, en formato horizontal.</figcaption></figure>
 
 La configuración del video `width: 100%` o `max-width: 100%` con CSS puede resolver muchos problemas de diseño en la orientación del dispositivo.
 

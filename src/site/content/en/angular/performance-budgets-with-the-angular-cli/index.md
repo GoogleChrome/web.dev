@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 'Performance budgets with the Angular CLI'
 subhead: |
   Monitor the sizes of your bundles over time to make sure your application stays fast.

@@ -196,9 +196,9 @@ Add attributes to the form in your `index.html` file so it looks like this:
 View your app again and then tap or click in the **Card number** field. Depending on the device and
 platform, you may see a chooser showing payment methods stored for the browser, like the one below.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yPPoZYFMeSILBjgyjcFI.png", alt="Two screenshots of a payment form in Chrome on an Android phone. One shows the built-in browser payment card selector; the other shows dummy autofilled values.", width="800", height="684" %}
-  <figcaption class="w-figcaption">Built-in browser payment chooser and autofill.</figcaption>
+  <figcaption>Built-in browser payment chooser and autofill.</figcaption>
 </figure>
 
 Once you select a payment method and enter your security code, the browser autofills the form using

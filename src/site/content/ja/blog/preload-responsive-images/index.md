@@ -84,11 +84,11 @@ feedback:
 
 3. ページを再読み込みします。
 
-<figure class="w-figure">{% Img src="image/admin/cyocwRmB3XlfY26vUZ5h.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="481" %}<figcaption class="w-figcaption">この滝は、ブラウザがスクリプトを実行し終えるまで画像の読み込みが始まらないため、画像が最初にユーザーに表示されるタイミングを不要に遅らせていることを示しています。</figcaption></figure>
+<figure>{% Img src="image/admin/cyocwRmB3XlfY26vUZ5h.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="481" %}<figcaption>この滝は、ブラウザがスクリプトを実行し終えるまで画像の読み込みが始まらないため、画像が最初にユーザーに表示されるタイミングを不要に遅らせていることを示しています。</figcaption></figure>
 
 `preload`を使用すると、画像の読み込みが事前に開始され、ブラウザで表示する必要があるときにすでに読み込みが完了している可能性が高いため、ここでは重宝します。
 
-<figure class="w-figure">{% Img src="image/admin/rIRdFypLWf1ljMaXCVCs.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="481" %}<figcaption class="w-figcaption">この滝は、最初の画像の読み込みがスクリプトの実行と同時に開始されているため、不要な遅延が回避され、画像が速く表示されていることを示しています。</figcaption></figure>
+<figure>{% Img src="image/admin/rIRdFypLWf1ljMaXCVCs.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="481" %}<figcaption>この滝は、最初の画像の読み込みがスクリプトの実行と同時に開始されているため、不要な遅延が回避され、画像が速く表示されていることを示しています。</figcaption></figure>
 
 プリロードによって生じる違いを確認するには、最初の例の手順に従って、動的に読み込まれた同じ画像ギャラリーを検査できますが、[プリロードされた最初の画像](https://responsive-preload.glitch.me/preload.html)から始めます。
 
@@ -112,7 +112,7 @@ CSSの背景画像は、ブラウザがページ内の`<head>`タグにあるす
 
 この問題は、サンプルウェブサイトに[レスポンシブ背景画像](https://responsive-preload.glitch.me/background_no_preload.html)使って確認できます。
 
-<figure class="w-figure">{% Img src="image/admin/7sjFt1RsoEOKn5zlS5zb.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="451" %}<figcaption class="w-figcaption">この例では、CSSが完全にダウンロードされるまで画像のダウンロードが開始されないため、画像の表示に不必要な遅れが生じています。</figcaption></figure>
+<figure>{% Img src="image/admin/7sjFt1RsoEOKn5zlS5zb.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="451" %}<figcaption>この例では、CSSが完全にダウンロードされるまで画像のダウンロードが開始されないため、画像の表示に不必要な遅れが生じています。</figcaption></figure>
 
 レスポンシブ画像のプリロードは、こうした画像をより高速に読み込むためのシンプルな方法で、小技などは一切不要です。
 
@@ -122,7 +122,7 @@ CSSの背景画像は、ブラウザがページ内の`<head>`タグにあるす
 
 前の例に[プリロードされたレスポンシブ背景画像](https://responsive-preload.glitch.me/background_preload.html)を使った場合の動作を確認できます。
 
-<figure class="w-figure">{% Img src="image/admin/dOI6EmChfahBujnZOke7.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="439" %}<figcaption class="w-figcaption">ここでは、画像とCSSのダウンロードを同時に開始しているため、遅延が回避され、画像がより速く読み込まれています。</figcaption></figure>
+<figure>{% Img src="image/admin/dOI6EmChfahBujnZOke7.png", alt="Chrome DevTools Networkパネルのスクリーンショット。", width="800", height="439" %}<figcaption>ここでは、画像とCSSのダウンロードを同時に開始しているため、遅延が回避され、画像がより速く読み込まれています。</figcaption></figure>
 
 ## レスポンシブ画像を実際にプリロードしてみる
 
@@ -134,7 +134,7 @@ CSSの背景画像は、ブラウザがページ内の`<head>`タグにあるす
 
 もちろん、違いを視覚的に示すのであれば、フィルムストリップを使って比較するのが一番です。
 
-<figure class="w-figure">{% Img src="image/admin/sXyZOvsNoAY0K2NRqT4U.png", alt="プリロードされた画像が約1.5秒速く表示されることをを示すWebPageTestのフィルムストリップによる比較を示したスクリーンショット。", width="800", height="328" %}<figcaption class="w-figcaption">フィルムストリップは、画像をプリロードすると到着までの時間が大幅に短縮されるため、ユーザーエクスペリエンスが大幅に向上することを示しています。</figcaption></figure>
+<figure>{% Img src="image/admin/sXyZOvsNoAY0K2NRqT4U.png", alt="プリロードされた画像が約1.5秒速く表示されることをを示すWebPageTestのフィルムストリップによる比較を示したスクリーンショット。", width="800", height="328" %}<figcaption>フィルムストリップは、画像をプリロードすると到着までの時間が大幅に短縮されるため、ユーザーエクスペリエンスが大幅に向上することを示しています。</figcaption></figure>
 
 ## プリロードと`<picture>` ？
 

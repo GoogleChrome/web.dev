@@ -19,15 +19,14 @@ tags:
 In this post I want to share thinking on a way to build breadcrumb components.
 [Try the demo](https://gui-challenges.web.app/breadcrumbs/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/90PkYJ8y9wi2U1w034gv.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/breadcrumbs/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -58,8 +57,7 @@ rpg » indie » on sale`, as shown below.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/u3nemRGC7g39sVvPnUBh.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -70,8 +68,7 @@ accuracy.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/69hQj4fuf6cJltEqGxDJ.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -136,8 +133,7 @@ markup choices and how they impact the overall component.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/I8w6oe28ueaZsDiOFssl.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -256,8 +252,7 @@ contextual tooltip showing.", width="271", height="83" %}
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/LASjAldbKTMivtF01aWo.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -366,8 +361,7 @@ Try using this icon component from mobile!
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/n3MsbELMwsvYn355hXdi.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}

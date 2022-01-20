@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 按钮没有可访问的名称
 description: 了解如何通过确保所有按钮都有使用辅助技术的用户可访问的名称，来提高网页的可访问性。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse 会标记出缺少文本内容或 `aria-label` 属性的按钮：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse 审计显示按钮没有可访问的名称", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse 审计显示按钮没有可访问的名称", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os botões não têm um nome acessível
 description: |2
 
@@ -18,7 +18,7 @@ Quando um botão não tem um nome acessível, os leitores de tela e outras tecno
 
 O Lighthouse sinaliza botões que não têm conteúdo de texto ou uma propriedade `aria-label`
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Auditoria do Lighthouse mostrando os botões de captura de tela não têm um nome acessível", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Auditoria do Lighthouse mostrando os botões de captura de tela não têm um nome acessível", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

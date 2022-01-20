@@ -13,27 +13,27 @@ tags:
 
 Google Assistant 앱, Slack 앱, Zoom 앱 및 휴대전화나 컴퓨터에 있는 거의 모든 플랫폼별 앱의 공통점은 무엇입니까? 맞습니다. 그들은 항상 적어도 당신에게 *무언가*를 줍니다. 네트워크에 연결되어 있지 않아도 어시스턴트 앱을 열거나 Slack에 들어가거나 Zoom을 실행할 수 있습니다. 특히 의미 있는 것을 얻지 못하거나 달성하고자 하는 것을 달성하지 못할 수도 있지만 적어도 *무언가*를 얻고 앱이 제어할 수 있습니다.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-apps-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="오프라인 시 Google Assistant 모바일 앱.", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-assistant"> Google Assistant.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="오프라인 시 Google Assistant 모바일 앱.", width="621", height="1344" %}<figcaption id="fig-assistant"> Google Assistant.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="오프라인 시 Slack 모바일 앱.", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-slack"> Slack.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="오프라인 시 Slack 모바일 앱.", width="621", height="1344" %}<figcaption id="fig-slack"> Slack.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="오프라인 시 Zoom 모바일 앱.", width="621", height="1344" %}<figcaption class="w-figcaption" id="fig-zoom"> Zoom.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="오프라인 시 Zoom 모바일 앱.", width="621", height="1344" %}<figcaption id="fig-zoom"> Zoom.</figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">플랫폼별 앱을 사용하면 네트워크에 연결되어 있지 않아도 아무것도 얻을 수 없습니다.</figcaption>
+  <figcaption id="fig-apps-wrapper">플랫폼별 앱을 사용하면 네트워크에 연결되어 있지 않아도 아무것도 얻을 수 없습니다.</figcaption>
 
 
 
 대조적으로, 웹에서는 전통적으로 오프라인일 때 아무것도 얻지 못합니다. Chrome은 [오프라인 공룡 게임](https://www.blog.google/products/chrome/chrome-dino/)을 제공하지만 그게 전부입니다.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper"></figure>
+<figure role="group" aria-labelledby="fig-offline-wrapper"></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="오프라인 공룡 게임을 보여주는 Google Chrome모바일 앱.", width="800", height="1731" %}<figcaption class="w-figcaption" id="fig-chrome-ios"> Google Chrome for iOS.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="오프라인 공룡 게임을 보여주는 Google Chrome모바일 앱.", width="800", height="1731" %}<figcaption id="fig-chrome-ios"> Google Chrome for iOS.</figcaption></figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="오프라인 공룡 게임을 보여주는 Google Chrome 데스크톱 앱.", width="800", height="607" %}<figcaption class="w-figcaption" id="fig-chrome"> Google Chrome for macOS.</figcaption></figure>
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="오프라인 공룡 게임을 보여주는 Google Chrome 데스크톱 앱.", width="800", height="607" %}<figcaption id="fig-chrome"> Google Chrome for macOS.</figcaption></figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">웹에서 네트워크 연결이 없으면 기본적으로 아무 것도 얻지 못합니다.</figcaption>
+  <figcaption id="fig-offline-wrapper">웹에서 네트워크 연결이 없으면 기본적으로 아무 것도 얻지 못합니다.</figcaption>
 
 
 
@@ -41,7 +41,7 @@ Google Assistant 앱, Slack 앱, Zoom 앱 및 휴대전화나 컴퓨터에 있�
 
 하지만 반드시 그래야 하는 것은 아닙니다. [서비스 워커와 Cache Storage API](/service-workers-cache-storage/) 덕분에 사용자에게 맞춤형 오프라인 경험을 제공할 수 있습니다. 이것은 사용자가 현재 오프라인 상태라는 정보가 포함된 단순한 브랜드 페이지일 수 있지만, 예를 들어 수동 **재연결** 버튼과 자동 재연결 시도 카운트다운이 있는 유명한 [trivago 오프라인 미로 게임](https://www.trivago.com/offline)과 같은 보다 창의적인 솔루션일 수도 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="trivago 오프라인 미로가 있는 trivago 오프라인 페이지.", width="800", height="616" %}<figcaption class="w-figcaption"> trivago 오프라인 미로.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="trivago 오프라인 미로가 있는 trivago 오프라인 페이지.", width="800", height="616" %}<figcaption> trivago 오프라인 미로.</figcaption></figure>
 
 ### 서비스 워커 등록
 

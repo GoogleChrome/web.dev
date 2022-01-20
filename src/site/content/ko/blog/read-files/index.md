@@ -75,7 +75,7 @@ tags:
 
 드롭 표면은 애플리케이션의 디자인에 따라 다릅니다. 창의 일부만 드롭 표면이 되도록 하거나 잠재적으로 전체 창을 드롭 표면으로 원할 수 있습니다.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="이미지 압축 웹 앱인 Squoosh의 스크린샷.", width="800", height="589", class="w-screenshot w-screenshot--filled" %}   <figcaption class="w-figcaption">     Squoosh는 전체 창을 드롭 영역으로 만듭니다.   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="이미지 압축 웹 앱인 Squoosh의 스크린샷.", width="800", height="589" %}   <figcaption>     Squoosh는 전체 창을 드롭 영역으로 만듭니다.   </figcaption></figure>
 
 Squoosh를 사용하면 사용자가 창의 아무 곳이나 이미지를 끌어다 놓을 수 있으며 **이미지 선택**을 클릭하면 `<input type="file">` 요소가 호출됩니다. 드롭 영역으로 무엇을 선택하든 사용자가 파일을 해당 표면으로 끌어다 놓을 수 있다는 점을 분명히 알도록 해야 합니다.
 

@@ -92,7 +92,7 @@ WebUSB API в значительной степени полагается на 
 
 Функция `navigator.usb.requestDevice()` принимает обязательный объект JavaScript, определяющий `filters`. Эти фильтры используются для сопоставления любого USB-устройства с указанным идентификатором поставщика (`vendorId`) и опционально — продукта (`productId`). Ключи `classCode`, `protocolCode`, `serialNumber` и `subclassCode` также могут быть там определены.
 
-<figure class="w-figure">{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Скриншот диалогового окна в Chrome с выбором USB-устройства", width="800", height="533", class="w-screenshot" %} <figcaption class="w-figcaption">Диалоговое окно с выбором USB-устройства.</figcaption></figure>
+<figure>{% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Скриншот диалогового окна в Chrome с выбором USB-устройства", width="800", height="533" %} <figcaption>Диалоговое окно с выбором USB-устройства.</figcaption></figure>
 
 Например, вот так можно получить доступ к подключенному устройству Arduino, настроенному для разрешения источника.
 
@@ -111,7 +111,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 Кстати, если USB-устройство объявляет о своей [поддержке WebUSB](https://wicg.github.io/webusb/#webusb-platform-capability-descriptor), а также определяет URL-адрес целевой страницы, Chrome будет постоянно показывать уведомление при подключении USB-устройства. При нажатии на это уведомление откроется целевая страница.
 
-<figure class="w-figure">{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Скриншот уведомления WebUSB в Chrome", width="800", height="450", class="w-screenshot" %} <figcaption class="w-figcaption">Уведомление WebUSB.</figcaption></figure>
+<figure>{% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Скриншот уведомления WebUSB в Chrome", width="800", height="450" %} <figcaption>Уведомление WebUSB.</figcaption></figure>
 
 Таким образом, вы можете просто вызвать `navigator.usb.getDevices()` и получить доступ к своему устройству Arduino, как показано ниже.
 
@@ -206,11 +206,11 @@ WebUSB API позволяет взаимодействовать со всеми
 
 Отладка USB в Chrome упрощается благодаря внутренней странице `about://device-log`, где в одном месте сосредоточены все события, связанные с USB-устройством.
 
-<figure class="w-figure">{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Скриншот страницы журнала устройства для отладки WebUSB в Chrome", width="800", height="442", class="w-screenshot" %} <figcaption class="w-figcaption">Страница журнала устройства в Chrome для отладки WebUSB API.</figcaption></figure>
+<figure>{% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Скриншот страницы журнала устройства для отладки WebUSB в Chrome", width="800", height="442" %} <figcaption>Страница журнала устройства в Chrome для отладки WebUSB API.</figcaption></figure>
 
 Внутренняя страница `about://usb-internals` также пригодится — она позволяет моделировать подключение и отключение виртуальных устройств WebUSB. Это полезно для тестирования пользовательского интерфейса без использования реального оборудования.
 
-<figure class="w-figure">{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Скриншот внутренней страницы для отладки WebUSB в Chrome", width="800", height="294", class="w-screenshot" %} <figcaption class="w-figcaption">Внутренняя страница в Chrome для отладки WebUSB API.</figcaption></figure>
+<figure>{% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Скриншот внутренней страницы для отладки WebUSB в Chrome", width="800", height="294" %} <figcaption>Внутренняя страница в Chrome для отладки WebUSB API.</figcaption></figure>
 
 В большинстве систем Linux USB-устройства по умолчанию отображаются с разрешениями только для чтения. Чтобы разрешить Chrome открывать USB-устройство, вам нужно будет добавить новое [правило udev](https://www.freedesktop.org/software/systemd/man/udev.html). Создайте файл по адресу `/etc/udev/rules.d/50-yourdevicename.rules` со следующим содержанием:
 

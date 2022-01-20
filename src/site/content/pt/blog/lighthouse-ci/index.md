@@ -237,7 +237,7 @@ module.exports = {
 
 A saída do console que ele gera é assim:
 
-<figure class="w-figure">{% Img src="image/admin/ti9NuzxPKZCYVIzjjddc.png", alt="Captura de tela de uma mensagem de aviso gerada pelo Lighthouse CI", width="800", height="431", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ti9NuzxPKZCYVIzjjddc.png", alt="Captura de tela de uma mensagem de aviso gerada pelo Lighthouse CI", width="800", height="431" %}</figure>
 
 Para obter mais informações sobre as afirmações do Lighthouse CI, consulte a [documentação](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#assert).
 
@@ -247,7 +247,7 @@ Para obter mais informações sobre as afirmações do Lighthouse CI, consulte a
 
 Um [GitHub Action](https://github.com/features/actions) pode ser usado para executar o Lighthouse CI. Isso gerará um novo relatório do Lighthouse sempre que uma alteração de código for enviada a qualquer branch de um repositório do GitHub. Use isso em conjunto com uma [verificação de status](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks) para exibir esses resultados em cada solicitação pull.
 
-<figure class="w-figure">{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de tela de uma verificação de status do GitHub", width="800", height="297", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de tela de uma verificação de status do GitHub", width="800", height="297" %}</figure>
 
 1. Na raiz do seu repositório, crie um diretório chamado `.github/workflows`. Os [fluxos de trabalho](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#about-workflows) do seu projeto irão para este diretório. Um fluxo de trabalho é um processo executado em um momento predeterminado (por exemplo, quando o código é enviado) e é composto por uma ou mais ações.
 
@@ -297,11 +297,11 @@ Um [GitHub Action](https://github.com/features/actions) pode ser usado para exec
 
 5. Para confirmar se o CI do Lighthouse foi acionado e visualizar o relatório gerado, acesse a guia **Ações** de seu projeto. Você deve ver o fluxo de trabalho **Projeto de construção e execução do Lighthouse CI** listados em seu commit mais recente.
 
-    <figure class="w-figure">{% Img src="image/admin/ougavsYk6faiNidNxIGQ.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="216", class="w-screenshot" %}</figure>
+    <figure>{% Img src="image/admin/ougavsYk6faiNidNxIGQ.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="216" %}</figure>
 
     Você pode navegar até o relatório do Lighthouse correspondente a um commit específico na guia **Actions**. Clique no commit, clique na etapa de fluxo de trabalho **Lighthouse CI** e expanda os resultados da etapa de **execução do Lighthouse CI**.
 
-    <figure class="w-figure">{% Img src="image/admin/aJF6FVHGOPpGNxKB3LjY.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="366", class="w-screenshot" %}</figure>
+    <figure>{% Img src="image/admin/aJF6FVHGOPpGNxKB3LjY.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="366" %}</figure>
 
     Você acabou de configurar um GitHub Action para executar o Lighthouse CI. Isso será mais útil quando usado em conjunto com uma [verificação de status](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks) do GitHub.
 
@@ -309,7 +309,7 @@ Um [GitHub Action](https://github.com/features/actions) pode ser usado para exec
 
 Uma verificação de status, se configurada, é uma mensagem que aparece em cada PR e geralmente inclui informações como os resultados de um teste ou o sucesso de uma construção.
 
-<figure class="w-figure">{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="297", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/RZIfiOAPrst9Cxtxi9AX.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="297" %}</figure>
 
 As etapas abaixo explicam como configurar uma verificação de status para o Lighthouse CI.
 
@@ -323,7 +323,7 @@ As etapas abaixo explicam como configurar uma verificação de status para o Lig
 
 5. Para adicionar o token, navegue até a página **Configurações** do seu repositório do GitHub, clique em **Segredos** e em **Adicionar um novo segredo**.
 
-    <figure class="w-figure">{% Img src="image/admin/ZYH9cOHehImZLI6vov1r.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="375", class="w-screenshot" %}</figure>
+    <figure>{% Img src="image/admin/ZYH9cOHehImZLI6vov1r.png", alt="Captura de tela da guia 'Configurações' do GitHub", width="800", height="375" %}</figure>
 
 6. Defina o campo **Nome** para `LHCI_GITHUB_APP_TOKEN` e defina o campo **Valor** como o token que você copiou na última etapa e clique no botão **Adicionar segredo**.
 
@@ -333,9 +333,9 @@ As etapas abaixo explicam como configurar uma verificação de status para o Lig
 
 O Lighthouse CI Server fornece um painel para explorar os relatórios históricos do Lighthouse. Ele também pode atuar como um armazenamento de dados privado de longo prazo para relatórios do Lighthouse.
 
-<figure class="w-figure">{% Img src="image/admin/4xv6LLe6G48weVNl1CO1.png", alt="Captura de tela do painel do Lighthouse CI Server", width="800", height="581", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/4xv6LLe6G48weVNl1CO1.png", alt="Captura de tela do painel do Lighthouse CI Server", width="800", height="581" %}</figure>
 
-<figure class="w-figure">{% Img src="image/admin/vp9hVBQGZk01fUMpIQ1Z.png", alt="Captura de tela da comparação de dois relatórios do Lighthouse no Lighthouse CI Server", width="800", height="556", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/vp9hVBQGZk01fUMpIQ1Z.png", alt="Captura de tela da comparação de dois relatórios do Lighthouse no Lighthouse CI Server", width="800", height="556" %}</figure>
 
 1. Escolha quais commits comparar.
 2. A quantidade de alteração da pontuação do Lighthouse entre os dois commits.

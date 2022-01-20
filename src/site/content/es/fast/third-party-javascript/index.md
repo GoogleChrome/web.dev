@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Rendimiento de JavaScript de terceros
 subhead: Descubra cómo JavaScript de terceros puede afectar el rendimiento y lo que puede hacer para evitar que se ralenticen sus sitios.
 authors:
@@ -29,7 +29,7 @@ Los sitios usan estos scripts para varios propósitos, que incluyen:
 - Scripts de prueba A/B para experimentos
 - Bibliotecas auxiliares (como formato de fecha, animación y bibliotecas funcionales)
 
-<figure class="w-figure w-figure--fullbleed">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}</figure>
+<figure data-size="full">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}</figure>
 
 Los scripts de terceros pueden proporcionar una funcionalidad poderosa, pero esa no es toda la historia. También afectan la privacidad, la seguridad y el comportamiento de la página⁠, además pueden ser particularmente problemáticos para el rendimiento.
 

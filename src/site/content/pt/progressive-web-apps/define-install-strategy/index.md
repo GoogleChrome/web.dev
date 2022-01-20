@@ -53,7 +53,7 @@ Nesta seção, exploraremos diferentes maneiras de maximizar a taxa de instalaç
 
 Quando um PWA atende aos [critérios de instalabilidade](/install-criteria/) , a maioria dos navegadores mostra uma indicação de que o PWA pode ser instalado. Por exemplo, Desktop Chrome mostrará um ícone instalável na barra de endereço e, no celular, mostrará uma mini-barra de informações:
 
-<figure class="w-figure w-figure--inline-right">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt = "Solicitação de instalação padrão do Chrome chamada mini-infobar", width = "800", height = "417"%}<figcaption class="w-figcaption"> O mini-infobar</figcaption></figure>
+<figure data-float="right">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt = "Solicitação de instalação padrão do Chrome chamada mini-infobar", width = "800", height = "417"%}<figcaption> O mini-infobar</figcaption></figure>
 
 Embora isso possa ser suficiente para algumas experiências, se seu objetivo é conduzir as instalações do seu PWA, é altamente recomendável ouvir [`BeforeInstallPromptEvent`](https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent) e seguir os [padrões para promover a instalação](/promote-install/) do seu PWA.
 
@@ -90,12 +90,12 @@ Para resolver isso, algumas empresas estão aproveitando seu PWA para fornecer u
 
 A Oyo, uma das maiores empresas de hospedagem da Índia, criou uma [versão Lite de seu aplicativo](/oyo-lite-twa/) e a disponibilizou na Play Store usando PWA. Tem apenas 850 KB, apenas 7% do tamanho de seu aplicativo Android. E uma vez instalado, é indistinguível de seu aplicativo Android:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">OYO Lite em ação.</figcaption></figure>
+ <figcaption>OYO Lite em ação.</figcaption></figure>
 
 A Oyo manteve as versões do aplicativo carro-chefe e "leve" na loja, deixando a decisão final para os usuários.
 

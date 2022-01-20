@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Время до интерактивности (TTI)
 description: |2-
 
@@ -18,7 +18,7 @@ Time to Interactive (TTI) — это один из шести показател
 
 Lighthouse отображает TTI в секундах:
 
-<figure class="w-figure">{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="Снимок экрана аудита Time to Interactive Lighthouse", width="800", height="592", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="Снимок экрана аудита Time to Interactive Lighthouse", width="800", height="592" %}</figure>
 
 ## Что измеряет TTI
 
@@ -36,7 +36,7 @@ TTI измеряет, сколько времени требуется стра�
 
 В этой таблице показано, как интерпретировать оценку TTI:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -20,7 +20,7 @@ tags:
 
 ## 资源请求在网络上是如何运作的？
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="请求和响应", width="668", height="327" %}<figcaption class="w-figcaption">图：客户端请求和服务器响应图示</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="请求和响应", width="668", height="327" %}<figcaption>图：客户端请求和服务器响应图示</figcaption></figure>
 
 浏览器和服务器可以使用**超文本传输协议** (HTTP) 来通过网络交换数据。HTTP 定义了请求者和响应者之间的通信规则，其中包括获取资源所需的信息。
 

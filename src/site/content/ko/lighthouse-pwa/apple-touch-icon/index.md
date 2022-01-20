@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 유효한 apple-touch-icon을 제공하지 않음
 description: Progressive Web App이 iOS 홈 화면에 표시할 아이콘을 지정하는 방법을 알아봅니다.
 web_lighthouse:
@@ -15,7 +15,7 @@ iOS Safari 사용자가 홈 화면에 [PWA(Progressive Web App)](/discover-insta
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 `<head>`에 `<link rel="apple-touch-icon" href="/example.png">` 태그가 없는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="유효한 apple-touch-icon을 제공하지 않음", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="유효한 apple-touch-icon을 제공하지 않음", width="800", height="95" %}</figure>
 
 {% Aside %} `rel="apple-touch-icon-precomposed"` 링크가 감사를 통과했지만 iOS 7부터는 이 링크가 사용되지 않습니다. 대신 `rel="apple-touch-icon"`을 사용하세요. {% endAside %}
 

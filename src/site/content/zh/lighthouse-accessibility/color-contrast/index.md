@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 背景色和前景色没有足够的对比度
 description: 了解如何通过确保所有文本都有足够的颜色对比度来提高网页的可访问性。
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 Lighthouse 会将背景色和前景色对比度不足的文本标记出来：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="显示背景色和前景色对比度不足的 Lighthouse 审计", width="800", height="343", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="显示背景色和前景色对比度不足的 Lighthouse 审计", width="800", height="343" %}</figure>
 
 Lighthouse 使用 <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noopener">WCAG 2.1 的成功标准 1.4.3</a> 来评估文本的颜色对比度：
 
@@ -44,17 +44,17 @@ Lighthouse 使用 <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="
 
 颜色选取器会告诉您该元素是否符合颜色对比度要求，同时考虑字体大小和粗细：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="突出显示颜色对比度信息的 Chrome DevTools 颜色选取器屏幕截图", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="突出显示颜色对比度信息的 Chrome DevTools 颜色选取器屏幕截图", width="298", height="430" %}</figure>
 
 您可以使用颜色选取器来调整颜色，直到其对比度足够高。在 HSL 颜色格式中进行调整最简单。单击选取器右侧的切换按钮切换到该格式：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="突出显示颜色格式切换的 Chrome DevTools 颜色选择器屏幕截图", width="298", height="430", class="w-screenshot "%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="突出显示颜色格式切换的 Chrome DevTools 颜色选择器屏幕截图", width="298", height="430"%}</figure>
 
 获得传递的颜色值后，更新项目的 CSS。
 
 更复杂的情况，例如渐变上的文本或图像上的文本，需要手动检查，UI 元素和图像也是如此。对于图像上的文本，您可以使用 DevTools 的背景颜色选择器来检查文本出现的背景：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="带背景颜色选取器的 Chrome DevTools 的屏幕截图", width="301", height="431", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="带背景颜色选取器的 Chrome DevTools 的屏幕截图", width="301", height="431" %}</figure>
 
 对于其他情况，请考虑使用 Paciello Group 的 <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Color Contrast Analyzer  </a> 之类的工具。
 

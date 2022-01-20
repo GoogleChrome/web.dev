@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 페이지 및 `start_url`을 제어하는 서비스 워커를 등록하지 않습니다.
 description: 오프라인 기능, 푸시 알림 및 설치 가능성과 같은 기능을 특징으로 하는 Progressive Web App을 지원하는 서비스 워커를 등록하는 방법을 배웁니다.
 web_lighthouse:
@@ -24,7 +24,7 @@ Internet Explorer를 제외한 모든 주요 브라우저는 서비스 워커를
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 서비스 워커를 등록하지 않은 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 감사 표시 사이트에서 서비스 워커를 등록하지 않음", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 감사 표시 사이트에서 서비스 워커를 등록하지 않음", width="800", height="95" %}</figure>
 
 Lighthouse는 [Chrome 원격 디버깅 프로토콜](https://github.com/ChromeDevTools/devtools-protocol) 이 서비스 워커 버전을 반환하는지 확인합니다. 그렇지 않으면 감사가 실패합니다.
 

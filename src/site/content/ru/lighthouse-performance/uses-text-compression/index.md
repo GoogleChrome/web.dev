@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "**Enable text compression"
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Текстовые ресурсы следует предоставлять в сжатом виде, чтобы свести к минимуму общее количество данных, передаваемых по сети. В разделе Opportunities (Возможности) отчета Lighthouse отображаются все несжатые текстовые ресурсы:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt = "Снимок экрана с результатами аудита Enable text compression (Включить сжатие текста) в Lighthouse", width = "800", height = "271", class = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt = "Снимок экрана с результатами аудита Enable text compression (Включить сжатие текста) в Lighthouse", width = "800", height = "271"%}</figure>
 
 ## Как Lighthouse сжимает текст
 
@@ -57,7 +57,7 @@ Lighthouse собирает все ответы, в которых:
 2. Перейдите на вкладку **Headers** (Заголовки).
 3. Проверьте заголовок `content-encoding` в разделе  **Response Headers** (Заголовки ответов).
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt = "Заголовок ответа content-encoding", width = "800", height = "571", class = "w-screenshot w-screenshot - заполнено "%}<figcaption class="w-figcaption"> Заголовок ответа <code>content-encoding</code></figcaption></figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt = "Заголовок ответа content-encoding", width = "800", height = "571" %}<figcaption> Заголовок ответа <code>content-encoding</code></figcaption></figure>
 
 Чтобы сравнить размеры сжатых и распакованных данных ответа, выполните указанные ниже действия.
 

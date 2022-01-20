@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable =" no "]` é usado no elemento `<meta name =" viewport ">` ou o atributo `[maximum-scale]` é menor que `5`'
 description: |2
 
@@ -18,7 +18,7 @@ O `user-scalable="no"` para o elemento `<meta name="viewport">` desativa o zoom 
 
 O farol sinaliza as páginas que desabilitam o zoom do navegador:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="A auditoria do Lighthouse mostrando a janela de visualização desativa o dimensionamento e o zoom do texto", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="A auditoria do Lighthouse mostrando a janela de visualização desativa o dimensionamento e o zoom do texto", width="800", height="227" %}</figure>
 
 Uma página falha na auditoria se contiver uma `<meta name="viewport">` com um dos seguintes:
 

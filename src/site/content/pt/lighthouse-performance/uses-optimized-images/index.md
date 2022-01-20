@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Codifique imagens de forma eficiente
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 A seção Oportunidades no seu relatório Lighthouse lista todas as imagens não otimizadas, com economia potencial em [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte). Otimize essas imagens para que a página carregue mais rápido e consuma menos dados:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Uma captura de tela da auditoria de codificação de imagens do Lighthouse com eficiência", width="800", height="263", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Uma captura de tela da auditoria de codificação de imagens do Lighthouse com eficiência", width="800", height="263" %}</figure>
 
 ## Como o Lighthouse sinaliza imagens como otimizáveis
 

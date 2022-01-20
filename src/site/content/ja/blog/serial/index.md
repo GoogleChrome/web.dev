@@ -122,7 +122,7 @@ const port = await navigator.serial.requestPort({ filters });
 const { usbProductId, usbVendorId } = port.getInfo();
 ```
 
-<figure class="w-figure">{% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Webサイトのシリアルポートプロンプトのスクリーンショット", width="800", height="513", class="w-screenshot" %} <figcaption class="w-figcaption">BBC micro:bitを選択するためのユーザープロンプト</figcaption></figure>
+<figure>{% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Webサイトのシリアルポートプロンプトのスクリーンショット", width="800", height="513" %} <figcaption>BBC micro:bitを選択するためのユーザープロンプト</figcaption></figure>
 
 `requestPort()`呼び出すと、ユーザーはデバイスを選択するように求められ、`SerialPort`オブジェクトが返されます。`SerialPort`オブジェクトを取得したら、目的のボーレートで`port.open()`を呼び出すことで、シリアルポートが開きます。`baudRate`ディクショナリメンバーは、データがシリアル回線を介して送信される速度を指定します。これは、ビット/秒（bps）の単位で表されます。これが正しく指定されていない場合、送受信するすべてのデータが意味のないものになるため、デバイスのドキュメントが正しい値で作成されていることを確認してください。シリアルポートをエミュレートする一部のUSBおよびBluetoothデバイスでは、この値はエミュレーションによって無視されるため、任意の値に安全に設定できます。
 
@@ -370,7 +370,7 @@ console.log(`Ring Indicator:      ${signals.ringIndicator}`);
 
 これに対処するには、`TextDecoderStream`などの組み込みの変換ストリームを使用するか、着信ストリームを解析して解析されたデータを返すことができる独自の変換ストリームを作成することができます。変換ストリームは、シリアルデバイスとそのストリームを消費している読み取りループの間にあります。データが消費される前に、任意の変換を適用できます。組み立てラインのようにイメージするとよいでしょう。ウィジェットがラインに入ると、ラインの各工程がウィジェットを変更するため、最終的な目的地に到達するまでに、ウィジェットは完全に機能するウィジェットになります。
 
-<figure class="w-figure">{% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="飛行機工場の写真", width="800", height="519" %} <figcaption class="w-figcaption">第二次世界大戦のキャッスルブロムウィッチ飛行機工場</figcaption></figure>
+<figure>{% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="飛行機工場の写真", width="800", height="519" %} <figcaption>第二次世界大戦のキャッスルブロムウィッチ飛行機工場</figcaption></figure>
 
 たとえば、ストリームを消費し、改行に基づいてストリームをチャンク化する変換ストリームクラスを作成する方法を考察してみましょう。その`transform()`メソッドは、ストリームが新しいデータを受信するたびに呼び出されます。データをキューに入れるか、後で使用できるように保存することができます。`flush()`メソッドは、ストリームが閉じられたときに呼び出され、まだ処理されていないデータを処理します。
 
@@ -420,7 +420,7 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ChromeでWebシリアルAPIをデバッグするには、Chrome内部の`about://device-log`ページで簡単に行えます。このページでは、すべてのシリアルデバイス関連イベントをまとめて表示することができます。
 
-<figure class="w-figure">{% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="WebシリアルAPIのデバッグに使用できる内部ページのスクリーンショット。", width="800", height="547", class="w-screenshot" %} <figcaption class="w-figcaption">WebシリアルAPIのデバッグに使用できるChromeの内部ページ。</figcaption></figure>
+<figure>{% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="WebシリアルAPIのデバッグに使用できる内部ページのスクリーンショット。", width="800", height="547" %} <figcaption>WebシリアルAPIのデバッグに使用できるChromeの内部ページ。</figcaption></figure>
 
 ## Codelab {: #codelab }
 

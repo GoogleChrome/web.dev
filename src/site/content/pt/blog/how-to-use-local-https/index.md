@@ -31,7 +31,7 @@ O que você precisa fazer é criar um certificado e assiná-lo com uma CA que se
 - Ao ver que o certificado foi assinado pela autoridade de certificação gerada pelo mkcert, o navegador verifica se está registrado como uma autoridade de certificação confiável.
 - mkcert é listado como uma autoridade confiável, portanto, seu navegador confia no certificado e cria uma conexão HTTPS.
 
-<figure class="w-figure">{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="Um diagrama de como o mkcert funciona.", width="800", height="787" %}<figcaption class="w-figcaption"> Um diagrama de como funciona o mkcert.</figcaption></figure>
+<figure>{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="Um diagrama de como o mkcert funciona.", width="800", height="787" %}<figcaption> Um diagrama de como funciona o mkcert.</figcaption></figure>
 
 mkcert (e ferramentas semelhantes) fornecem vários benefícios:
 
@@ -224,7 +224,7 @@ Cuidado com algumas armadilhas desta abordagem:
 - Não é necessariamente mais fácil ou mais rápido do que usar uma CA local como o mkcert.
 - Se você não estiver usando esta técnica em um contexto de navegador, pode ser necessário desativar a verificação de certificado para o seu servidor. Omitir a reativação na produção seria perigoso.
 
-<figure class="w-figure">{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="Screenshots of the warnings browsers show when a self-signed certificate is used.", width="800", height="598" %} <figcaption class="w-figcaption"> Os navegadores de avisos mostram quando um certificado autoassinado é usado.</figcaption></figure>
+<figure>{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="Screenshots of the warnings browsers show when a self-signed certificate is used.", width="800", height="598" %} <figcaption> Os navegadores de avisos mostram quando um certificado autoassinado é usado.</figcaption></figure>
 
 {% Aside %} Se você não especificar nenhum certificado, as opções HTTPS do servidor de desenvolvimento do [React](https://create-react-app.dev/docs/using-https-in-development/) e do [Vue](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) criam um certificado autoassinado em segundo plano. Isso é rápido, mas você receberá avisos do navegador e encontrará outras armadilhas relacionadas aos certificados autoassinados listados acima. Felizmente, você pode usar a opção HTTPS integrada dos frameworks front-end **e** especificar um certificado confiável localmente criado via mkcert ou similar. Veja como fazer isso no [exemplo mkcert com React](/#setup:~:text=a%20React%20development%20server). {% endAside %}
 
@@ -232,7 +232,7 @@ Cuidado com algumas armadilhas desta abordagem:
 
 Se você abrir seu site em execução localmente em seu navegador usando HTTPS, seu navegador verificará o certificado de seu servidor de desenvolvimento local. Quando ele vê que o certificado foi assinado por você, ele verifica se você está registrado como uma autoridade de certificação confiável. Porque você não é, seu navegador não pode confiar no certificado; ele exibe um aviso informando que sua conexão não é segura. Você pode prosseguir por sua própria conta e risco — se o fizer, uma conexão HTTPS será criada.
 
-<figure class="w-figure">{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="Por que os navegadores não confiam em certificados autoassinados: um diagrama.", width="800", height="833" %} <figcaption class="w-figcaption"> Por que os navegadores não confiam em certificados autoassinados.</figcaption></figure>
+<figure>{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="Por que os navegadores não confiam em certificados autoassinados: um diagrama.", width="800", height="833" %} <figcaption> Por que os navegadores não confiam em certificados autoassinados.</figcaption></figure>
 
 {% endDetails %}
 

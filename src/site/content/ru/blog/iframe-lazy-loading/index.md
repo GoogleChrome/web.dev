@@ -29,8 +29,8 @@ feedback:
 
 В этой [демонстрации](https://lazy-load.netlify.app/iframes/) `<iframe loading=lazy>` показана отложенная загрузка встраиваемых видео:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -39,7 +39,7 @@ feedback:
 
 Сторонние встраивания охватывают широкий спектр вариантов использования: от видеоплееров до сообщений в социальных сетях и рекламы. Часто это содержимое не сразу видно в окне просмотра пользователя. Скорее, оно отображается, лишь когда пользователи прокручивают страницу дальше. Несмотря на это, пользователи теряют время на загрузку данных и дорогостоящее выполнение JavaScript для каждого фрейма, даже если прокрутка до него не доходит.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Экономия данных за счет использования отложенной загрузки iframe. В этом примере при активной загрузке скачивается 3 МБ, в то время как при отложенной загрузке не скачивается ничего, пока пользователь не переместится ближе к iframe.", width="800", height="460" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Экономия данных за счет использования отложенной загрузки iframe. В этом примере при активной загрузке скачивается 3 МБ, в то время как при отложенной загрузке не скачивается ничего, пока пользователь не переместится ближе к iframe.", width="800", height="460" %}</figure>
 
 Согласно проведенному Chrome исследованию [автоматической отложенной загрузки закадровых iframe для пользователей Data Saver](https://blog.chromium.org/2019/10/automatically-lazy-loading-offscreen.html), отложенная загрузка фреймов может привести к экономии 2-3% данных в срединном значении, сокращению [First Contentful Paint](/fcp/) на 1-2% по медиане и улучшению [First Input Delay](/fid/) (FID) на 2% в 95-м процентиле.
 
@@ -116,7 +116,7 @@ document.body.appendChild(iframe);
 
 **Случай из практики:** перейдя на отложенную загрузку встраиваемых файлов YouTube для Chrome.com, мы сэкономили 10 секунд для установления интерактивности наших страницы на мобильных устройствах. Я открыл внутренний дефект, чтобы обсудить с YouTube добавление `loading=lazy` в его код для встраивания.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.com добился сокращения TTI на 10 секунд за счет отложенной загрузки фреймов за пределами экрана для встроенного видео YouTube", width="800", height="460" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.com добился сокращения TTI на 10 секунд за счет отложенной загрузки фреймов за пределами экрана для встроенного видео YouTube", width="800", height="460" %}</figure>
 
 {% Aside %} Если вы ищете более эффективные способы загрузить вставки YouTube, вас может заинтересовать [компонент YouTube lite](https://github.com/paulirish/lite-youtube-embed). {% endAside %}
 
@@ -142,7 +142,7 @@ document.body.appendChild(iframe);
 
 *Социальные плагины* Facebook позволяют разработчикам встраивать контент Facebook на свои веб-страницы. Предлагается ряд таких подключаемых модулей, например, встроенные публикации, фотографии, видео, комментарии… Самым популярным является [подключаемый модуль «Нравится»](https://developers.facebook.com/docs/plugins/like-button/) — кнопка, которая показывает количество тех, кому понравилась страница. По умолчанию встраивание плагина «Нравится» на веб-страницу (с использованием FB JSSDK) требует ≈215 КБ ресурсов, из которых 197 КБ составляет JavaScript. Во многих случаях плагин может появляться в конце статьи или ближе к концу страницы, поэтому его активная загрузка за пределами экрана может быть нерациональной.
 
-<figure class="w-figure">{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Кнопка «Нравится» на Facebook", width="800", height="71", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Кнопка «Нравится» на Facebook", width="800", height="71" %}</figure>
 
 Благодаря инженеру Стояну Стефанову [все социальные плагины Facebook](https://developers.facebook.com/docs/plugins/like-button#settings) теперь поддерживают унифицированную отложенную загрузку iframe. Разработчики, которые выбрали отложенную загрузку с помощью конфигурации плагина `data-lazy`, теперь смогут отложить загрузку контента до тех пор, пока пользователь не прокрутит страницу до нужного места. Это обеспечивает полный функционал встроенных элементов для пользователей, которым они нужны, и экономит данные для тех, кто не прокручивает страницу до конца. Мы надеемся, что это лишь первая из многих вставок, при эксплуатации которых будет применяться унифицированная отложенная загрузка iframe.
 

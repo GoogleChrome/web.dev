@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: PRPL 패턴으로 즉시 로딩 적용
 authors:
   - houssein
@@ -35,7 +35,7 @@ Lighthouse를 실행하여 PRPL 기술과 일치하는 개선 기회를 식별�
 
 Lighthouse는 특정 리소스을 분석하고 가져오는 게 늦어지는 경우 다음과 같은 실패한 감사를 표시합니다.
 
-{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: 사전 로드 키 요청 감사", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: 사전 로드 키 요청 감사", width="745", height="97" %}
 
 [**사전 로드**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)는 브라우저에 가능한 한 빨리 리소스를 요청하도록 지시하는 선언적 가져오기 요청입니다. HTML 문서의 헤드에 `rel="preload"`를 포함한 `<link>` 태그를 추가하여 중요한 리소스를 미리 로드합니다.
 
@@ -51,7 +51,7 @@ Lighthouse는 특정 리소스을 분석하고 가져오는 게 늦어지는 경
 
 Lighthouse는 사이트에서 픽셀을 화면에 렌더링하는 순간인 [**FP(First Paint)**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)를 지연시키는 리소스가 있는 경우 경고합니다.
 
-{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 렌더링 차단 리소스 감사 제거", width="800", height="111", class="w-screenshot" %}
+{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 렌더링 차단 리소스 감사 제거", width="800", height="111" %}
 
 FP를 개선하기 위해 Lighthouse는 중요한 JavaScript를 인라인하고 [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)를 사용하여 나머지는 연기할 뿐만 아니라 스크롤 없이 볼 수 있는 부분에서 사용되는 중요한 CSS를 인라인할 것을 권장합니다. 이는 렌더링 차단 자산을 가져오기 위한 서버와의 왕복 통신을 제거함으로써 성능을 향상시킵니다. 그러나 인라인 코드는 개발 관점에서 유지 관리하기가 더 어려우며 브라우저에서 별도로 캐시할 수 없습니다.
 
@@ -62,7 +62,7 @@ FP를 개선하는 또 다른 방법은 페이지의 초기 HTML을 **서버 측
 - [CSS 전달 최적화](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 - [서버 측 렌더링이란 무엇입니까?](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="서비스 작업자와의 요청/응답", width="800", height="1224" %}</figure>
+<figure data-float="right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="서비스 작업자와의 요청/응답", width="800", height="1224" %}</figure>
 
 ## 자산 사전 캐시
 
@@ -74,11 +74,11 @@ FP를 개선하는 또 다른 방법은 페이지의 초기 HTML을 **서버 측
 
 Lighthouse는 네트워크를 통해 너무 많은 데이터를 보내면 실패한 감사를 표시합니다.
 
-{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse: 막대한 네트워크 페이로드 감사 있음", width="800", height="99", class="w-screenshot" %}
+{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse: 막대한 네트워크 페이로드 감사 있음", width="800", height="99" %}
 
 여기에는 모든 자산 유형이 포함되지만 대형 JavaScript 페이로드는 브라우저가 이를 구문 분석하고 컴파일하는 데 걸리는 시간으로 인해 특히 비용이 많이 듭니다. Lighthouse는 적절한 경우 이에 대한 경고도 제공합니다.
 
-{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse: JavaScript 부팅 시간 감사", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse: JavaScript 부팅 시간 감사", width="797", height="100" %}
 
 사용자가 애플리케이션을 처음 로드할 때 필요한 코드만 포함하는 더 작은 JavaScript 페이로드를 보내려면 요청 시 전체 번들과 [지연 로드](/reduce-javascript-payloads-with-code-splitting) 청크를 분할합니다.
 
@@ -86,7 +86,7 @@ Lighthouse는 네트워크를 통해 너무 많은 데이터를 보내면 실패
 
 요청에 따라 다양한 JavaScript 청크를 분할하고 로드하는 것 외에도 Lighthouse는 중요하지 않은 이미지를 지연 로드하는 것에 대한 감사도 제공합니다.
 
-{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: 오프스크린 이미지 감사 연기", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: 오프스크린 이미지 감사 연기", width="800", height="90" %}
 
 웹 페이지에 많은 이미지를 로드하는 경우 페이지가 로드될 때 스크롤 없이 볼 수 있는 부분 또는 장치 표시 영역 외부에 있는 모든 이미지를 연기합니다([이미지를 지연 로드하기 위해 lazysizes 사용](/use-lazysizes-to-lazyload-images) 참조).
 

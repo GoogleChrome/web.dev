@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Avoid enormous network payloads
 description: |
   Learn how to improve your web page's load time by reducing the total file
@@ -28,8 +28,8 @@ You can adjust the results to factor in purchasing power.
 shows the total size in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) of all resources requested by your page.
 The largest requests are presented first:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="A screenshot of the Lighthouse Avoid enormous network payloads audit", width="800", height="518", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="A screenshot of the Lighthouse Avoid enormous network payloads audit", width="800", height="518" %}
 </figure>
 
 Based on [HTTP Archive data](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal),

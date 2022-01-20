@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Адаптивная загрузка изображений
 authors:
   - katiehempenius
@@ -68,7 +68,7 @@ magick convert flower.jpg -resize 300x200 flower-small.jpg
 
 Укажите несколько вариантов изображения, и браузер выберет наиболее подходящую:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

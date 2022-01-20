@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os itens ARIA não têm nomes acessíveis
 description: |2
 
@@ -27,7 +27,7 @@ tags:
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza itens ARIA personalizados cujos nomes não são acessíveis a tecnologias de assistência:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Auditoria do Lighthouse mostrando elementos de alternância personalizados sem nomes acessíveis", width="800", height="259", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Auditoria do Lighthouse mostrando elementos de alternância personalizados sem nomes acessíveis", width="800", height="259" %}</figure>
 
 Existem 7 auditorias que verificam os nomes acessíveis, cada uma cobre um conjunto diferente de [funções ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex). Elementos que têm qualquer uma das seguintes funções ARIA, mas não têm nomes acessíveis, farão com que esta auditoria falhe:
 

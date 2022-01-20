@@ -35,9 +35,9 @@ in close proximity to the user's device (usually 5-10 cm, 2-4 inches).
 The current scope is limited to NFC Data Exchange Format (NDEF), a lightweight
 binary message format that works across different tag formats.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/jWmCabXZCB6zNwQIR90I.png", alt="Phone powering up an NFC tag to exchange data", width="800", height="489" %}
-  <figcaption class="w-figcaption">Diagram of an NFC operation</figcaption>
+  <figcaption>Diagram of an NFC operation</figcaption>
 </figure>
 
 ## Suggested use cases {: #use-cases }
@@ -57,9 +57,9 @@ Examples of sites that may use Web NFC include:
   provisioning scenarios and also to deploy configuration data in operational
   mode.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/zTEXhIx9nDWtbKrIPN0x.png", alt="Phone scanning several NFC tags", width="800", height="383" %}
-  <figcaption class="w-figcaption">NFC inventory management illustrated</figcaption>
+  <figcaption>NFC inventory management illustrated</figcaption>
 </figure>
 
 ## Current status {: #status }
@@ -96,9 +96,9 @@ An NFC tag is a passive NFC device, meaning that is powered by magnetic
 induction when an active NFC device (.e.g a phone) is in proximity. NFC tags
 come in many forms and fashions, as stickers, credit cards, arm wrists, etc.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/uUBxSkSc3MJBG8Lw52fV.jpg", alt="Photo of a transparent NFC tag", width="800", height="450" %}
-  <figcaption class="w-figcaption">A transparent NFC tag</figcaption>
+  <figcaption>A transparent NFC tag</figcaption>
 </figure>
 
 The `NDEFReader` object is the entry point in Web NFC that exposes functionality
@@ -117,9 +117,9 @@ Web NFC supports the following NFC Forum standardized record types: empty, text,
 URL, smart poster, MIME type, absolute URL, external type, unknown, and local
 type.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/50clBWSJbKkyumsxrioB.png", alt="Diagram of an NDEF message", width="800", height="243" %}
-  <figcaption class="w-figcaption">Diagram of an NDEF message</figcaption>
+  <figcaption>Diagram of an NDEF message</figcaption>
 </figure>
 
 ### Scan NFC tags {: #scan }
@@ -278,9 +278,9 @@ Because NFC expands the domain of information potentially available to malicious
 websites, the availability of NFC is restricted to maximize users' awareness and
 control over NFC use.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/PjUcOk4zbtOFJLXfSeSD.png", alt="Screenshot of a Web NFC prompt on a website", width="800", height="407" %}
-  <figcaption class="w-figcaption">Web NFC user prompt</figcaption>
+  <figcaption>Web NFC user prompt</figcaption>
 </figure>
 
 Web NFC is only available to top-level frames and secure browsing contexts (HTTPS
@@ -742,11 +742,11 @@ Try out the [official sample] and check out some cool Web NFC demos:
 - [Intel RSP Sensor NFC]
 - [Media MEMO]
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/web-nfc-cards-demo.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Web NFC cards demo at Chrome Dev Summit 2019
   </figcaption>
 </figure>

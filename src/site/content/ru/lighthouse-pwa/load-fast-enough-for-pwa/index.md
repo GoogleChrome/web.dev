@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Страница загружается недостаточно быстро в мобильных сетях (Page load is not fast enough on mobile networks)
 description: |2-
 
@@ -18,7 +18,7 @@ updated: 2020-06-10
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые на мобильном подключении загружаются недостаточно быстро.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Аудит Lighthouse показывает, что страница на мобильном подключении загружается недостаточно быстро", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Аудит Lighthouse показывает, что страница на мобильном подключении загружается недостаточно быстро", width="800", height="98" %}</figure>
 
 На восприятие времени загрузки влияют две основные метрики:
 

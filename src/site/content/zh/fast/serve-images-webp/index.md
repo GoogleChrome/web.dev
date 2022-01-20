@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 WebP 图像
 authors:
   - katiehempenius

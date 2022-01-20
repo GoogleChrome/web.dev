@@ -167,8 +167,8 @@ regressions in the layout stability for certain pages. In this scenario, you
 would want to prioritize the efforts to analyze the underlying issues of these
 pages.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cpi7NkLvKyvf2xYzFwAn.png", alt="A screenshot of Core Web Vitals results in Data Studio.", width="800", height="904", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cpi7NkLvKyvf2xYzFwAn.png", alt="A screenshot of Core Web Vitals results in Data Studio.", width="800", height="904" %}
 </figure>
 
 To simplify the end-to-end process from data collection to visualization, you

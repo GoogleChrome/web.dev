@@ -134,7 +134,7 @@ Depois:
 <img src="https://source.unsplash.com/random/800x600" width="800" height="600" alt="image to load in">
 ```
 
-<figure class="w-figure">{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4"%} <figcaption class="w-figcaption"> A imagem agora carrega sem causar uma mudança de layout. </figcaption></figure>
+<figure>{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4"%} <figcaption> A imagem agora carrega sem causar uma mudança de layout. </figcaption></figure>
 
 {% Aside %} Outra abordagem para o carregamento de imagens é usar os atributos [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) e [`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) em conjunto com a especificação dos atributos `width` e `height`. Isso tem a vantagem de desempenho adicional de permitir que você veicule imagens de tamanhos diferentes para dispositivos diferentes. Para obter mais informações, consulte [Veicular imagens responsivas](/serve-responsive-images/). {% endAside %}
 
@@ -156,7 +156,7 @@ Por padrão, os navegadores baseados em Chromium e Firefox [bloquearão a render
 
 A troca de fontes, embora excelente para exibir conteúdo ao usuário rapidamente, tem o potencial de causar mudanças de layout. Essas mudanças de layout ocorrem quando uma fonte da web e sua fonte substituta ocupam diferentes quantidades de espaço na página. O uso de fontes com proporções semelhantes minimizará o tamanho dessas mudanças de layout.
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagrama mostrando uma mudança de layout causada por uma troca de fonte", width="800", height="452" %} <figcaption class="w-figcaption"> Nests exemplo, a troca de fonte fez com que os elementos da página se deslocassem cinco pixels para cima.</figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagrama mostrando uma mudança de layout causada por uma troca de fonte", width="800", height="452" %} <figcaption> Nests exemplo, a troca de fonte fez com que os elementos da página se deslocassem cinco pixels para cima.</figcaption></figure>
 
 #### Identificação
 

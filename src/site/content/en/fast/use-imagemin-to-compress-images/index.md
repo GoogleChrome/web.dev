@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use Imagemin to compress images
 authors:
   - katiehempenius
@@ -22,7 +22,7 @@ Uncompressed images bloat your pages with unnecessary bytes. The photo on the
 right is 40% smaller than the one on the left, yet would probably look identical
 to the average user.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -80,7 +80,7 @@ greater filesize savings, and you can customize the compression levels to meet
 your needs. The table below lists popular Imagemin plugins. These aren't the only plugins
 available, but they'd all be good choices for your project.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O documento não tem uma meta description
 description: |2-
 
@@ -16,7 +16,7 @@ O elemento `<meta name="description">` fornece um resumo do conteúdo de uma pá
 
 O Lighthouse sinaliza páginas que não têm uma meta description:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Auditoria Lighthouse mostrando que o documento não tem uma meta description", width="800", height="74", class="w-screenshot w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Auditoria Lighthouse mostrando que o documento não tem uma meta description", width="800", height="74" %}</figure>
 
 A auditoria falha se:
 

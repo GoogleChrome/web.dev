@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Data StudioでのCrUX Dashboardの使用
 authors:
   - rviscomi
@@ -13,7 +13,7 @@ tags:
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/)は、[Chrome UXレポート](https://developers.google.com/web/tools/chrome-user-experience-report/)（CrUX）などのビッグデータソースの上にダッシュボードを構築できるようにする強力なデータ可視化ツールです。このガイドでは、オリジンのユーザーエクスペリエンスの傾向を追跡する独自のカスタムCrUX Dashboardを作成する方法を学習します。
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX Dashboard", width="800", height="598" %}
 
 CrUX Dashboardは、[コミュニティコネクター](https://developers.google.com/datastudio/connector/)と呼ばれるData Studioの機能を使用して構築されます。このコネクターは、[BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)のCrUXローデータとData Studioの可視化の間で事前に確立されたリンクで、ダッシュボードのユーザーがクエリを書いたり、グラフを生成したりする必要がなくなります。すべてが構築されているため、ユーザーはオリジンを指定するだけで、ダッシュボードを生成することができます。
 
@@ -21,7 +21,7 @@ CrUX Dashboardは、[コミュニティコネクター](https://developers.googl
 
 まず、[g.co/chromeuxdash](https://g.co/chromeuxdash)にアクセスし、ダッシュボードを生成するオリジンを指定できるCrUXコミュニティコネクターページに移動します。初めて利用するユーザーの場合、許可またはマーケティング設定のプロンプトを完了する必要がある場合があります。
 
-{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX ダッシュボードコネクター", width="800", height="484", class="w-screenshot" %}
+{% Img src="image/admin/SSUqCau3HiN5qBbewX6h.png", alt="CrUX ダッシュボードコネクター", width="800", height="484" %}
 
 テキスト入力フィールドには、完全なURLではなく、以下のようにオリジンのURLのみを指定できます。
 
@@ -47,11 +47,11 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 オリジンがCrUXデータセットに含まれていない場合、次のようなエラーメッセージが表示されることがあります。データセットには400万以上のオリジンがあるが、必要なオリジンにはデータセットに含まれるのに十分なデータがないこともあります。
 
-{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX Dashboardのエラーメッセージ", width="800", height="409", class="w-screenshot" %}
+{% Img src="image/admin/qt0jWTgtdS93hDKW2SCm.png", alt="CrUX Dashboardのエラーメッセージ", width="800", height="409" %}
 
 オリジンが存在する場合は、ダッシュボードのスキーマページに移動します。そのページには、有効な接続タイプ、フォームファクター、データセットがリリースされた月、指標ごとのパフォーマンスの分布、そしてもちろんオリジンの名前が含まれています。このページでは何かを実行したり変更したりする必要はないため、**Create Report**をクリックして次に進みます。
 
-{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX Dashboardのスキーマ", width="800", height="403", class="w-screenshot" %}
+{% Img src="image/admin/DTNigYO4gUwovCuCgyhH.png", alt="CrUX Dashboardのスキーマ", width="800", height="403" %}
 
 ## ダッシュボードの使用
 
@@ -69,19 +69,19 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 最初のページは、オリジンの毎月の[Core WebVitals](/vitals/)パフォーマンスの概要です。これらは、Googleが注目するよう勧めている最も重要なUX指標です。
 
-{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX DashboardのCore Web Vitalsの概要", width="800", height="906", class="w-screenshot" %}
+{% Img src="image/admin/h8iCTgvmG4DS2zScvatc.png", alt="CrUX DashboardのCore Web Vitalsの概要", width="800", height="906" %}
 
 Core Web Vitalsページを使用すると、デスクトップと携帯電話におけるオリジンのユーザーエクスペリエンスを理解できます。デフォルトでは、ダッシュボードを作成した最新の月が選択されています。古い月次リリースと新しい月次リリースを切り替えるには、ページの上部にある**Month**フィルターを使用します。
 
 タブレットはデフォルトでこれらのグラフから省略されていますが、必要に応じて、以下に示す棒グラフ構成で**No Tablet**フィルターを削除できます。
 
-{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Core Web Vitalsページにタブレットが表示されるようにCrUX Dashboardを編集する", width="800", height="288", class="w-screenshot" %}
+{% Img src="image/admin/lD3eZ3LipJmBGmmkrUvG.png", alt="Core Web Vitalsページにタブレットが表示されるようにCrUX Dashboardを編集する", width="800", height="288" %}
 
 ### 指標のパフォーマンス
 
 Core Web Vitalsページの次に、CrUXデータセットのあるあらゆる[指標](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)を示す独立したページがあります。
 
-{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX DashboardのLCPページ", width="800", height="598", class="w-screenshot" %}
+{% Img src="image/admin/AG2jdUtgsQzrxIUlLFyf.png", alt="CrUX DashboardのLCPページ", width="800", height="598" %}
 
 各ページの上部には**Device**フィルターがあり、エクスペリエンスデータに含まれるフォームファクターを絞り込むために使用できます。たとえば、具体的に携帯電話でのエクスペリエンスに絞り込むことができます。この設定はページ全体に適用されます。
 
@@ -107,7 +107,7 @@ PageSpeed Insightsなどのツールの対応するP75値は、公開されて�
 
 デバイス分布ページには、携帯電話、デスクトップ、およびタブレットのユーザーの内訳が時系列で表示されます。多くのオリジンはタブレットデータがほとんどないかまったく存在しない傾向があるため、グラフの端からのぶら下がりが「0％」であることがよくあります。
 
-{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX Dashboardのデバイスページ", width="800", height="603", class="w-screenshot" %}
+{% Img src="image/admin/6PXh8MoQTWHnHXf8o1ZU.png", alt="CrUX Dashboardのデバイスページ", width="800", height="603" %}
 
 同様に、ECT分布ページには、4G、3G、2G、低速2G、およびオフラインエクスペリエンスの内訳が表示されます。
 

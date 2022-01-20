@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 优化 WebFont 加载和呈现
 authors:
   - ilyagrigorik

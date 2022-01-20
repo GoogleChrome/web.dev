@@ -56,34 +56,34 @@ En cada uno de estos ejemplos, la página tiene cambios de diseño de diferente 
 
 #### Ventanas de salto de tamaño constante
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Ejemplo de una ventana de salto de tamaño constante</figcaption></figure>
+  <figcaption>Ejemplo de una ventana de salto de tamaño constante</figcaption></figure>
 
 El enfoque más simple es dividir la página en ventanas de partes del mismo tamaño. Estos se llaman ventanas de salto de tamaño constante. Arriba notará que la cuarta barra realmente parece que debería estar agrupada en la segunda ventana de salto de tamaño constante, pero debido a que todas las ventanas tienen un tamaño fijo, está en la primera ventana. Si hay ligeras diferencias en el tiempo de las cargas o las interacciones del usuario en la página, los mismos cambios de diseño pueden caer en diferentes lados de los límites de la ventana de salto de tamaño constante.
 
 #### Ventanas deslizantes
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Ejemplo de ventana deslizante.</figcaption></figure>
+  <figcaption>Ejemplo de ventana deslizante.</figcaption></figure>
 
 Un enfoque que nos permite ver más agrupaciones posibles de la misma longitud es actualizar continuamente la ventana potencial a lo largo del tiempo. La imagen de arriba muestra una ventana deslizante a la vez, pero podríamos mirar todas las ventanas deslizantes posibles o un subconjunto de ellas para crear una métrica.
 
 #### Ventanas de sesión
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Ejemplo de ventana de sesión.</figcaption></figure>
+  <figcaption>Ejemplo de ventana de sesión.</figcaption></figure>
 
 Si quisiéramos centrarnos en identificar áreas de la página con ráfagas de cambios de diseño, podríamos iniciar cada ventana en un turno y seguir aumentando hasta que encontremos un intervalo de tamaño determinado entre los cambios de diseño. Este enfoque agrupa los cambios de diseño e ignora la mayor parte de la experiencia del usuario sin cambios. Un problema potencial es que si no hay intervalos en los cambios de diseño, una métrica basada en las ventanas de sesión podría crecer sin límites al igual que la métrica CLS actual. Así que también probamos esto con un tamaño máximo de ventana.
 

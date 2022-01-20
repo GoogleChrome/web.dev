@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pontuação de desempenho no Lighthouse
 description: |2-
 
@@ -33,13 +33,13 @@ A pontuação de desempenho é uma [média ponderada](https://www.wikihow.com/Ca
 
 {% Aside %} As ponderações são escolhidas para proporcionar uma representação equilibrada da percepção de desempenho pelo usuário. As ponderações mudaram com o tempo porque a equipe do Lighthouse tem feito pesquisas regularmente e reunido feedback para entender o que tem o maior impacto no desempenho percebido pelo usuário. {% endAside %}
 
-<figure class="w-figure">
+<figure>
   <p data-md-type="paragraph"><a href="https://googlechrome.github.io/lighthouse/scorecalc/">     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rLftIdSA8JJYruHOHrOn.png", alt="Aplicativo web Lighthouse - calculadora de pontuação ", width="600", height="414" %}   </a></p>
-  <figcaption class="w-figcaption">Explore a pontuação com a <a href="https://googlechrome.github.io/lighthouse/scorecalc/">calculadora de pontuação do Lighthouse</a></figcaption></figure>
+  <figcaption>Explore a pontuação com a <a href="https://googlechrome.github.io/lighthouse/scorecalc/">calculadora de pontuação do Lighthouse</a></figcaption></figure>
 
 ### Lighthouse 8
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -79,7 +79,7 @@ A pontuação de desempenho é uma [média ponderada](https://www.wikihow.com/Ca
 
 ### Lighthouse 6
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -124,7 +124,7 @@ Por exemplo, a métrica Largest Contentful Paint (LCP) mede quando um usuário p
 
 Indo um pouco mais fundo, o modelo de curva de pontuação do Lighthouse usa dados do HTTPArchive para determinar dois pontos de controle que depois definem a forma de uma curva [logarítmica normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law). O 25º percentil dos dados de HTTPArchive torna-se uma pontuação de 50 (o ponto de controle mediano) e o 8º percentil torna-se uma pontuação de 90 (o ponto de controle bom/verde). Ao explorar o gráfico da curva de pontuação abaixo, observe que entre 0,50 e 0,92, há uma relação quase linear entre o valor da métrica e a pontuação. Em torno de uma pontuação de 0,96 encontra-se o "ponto de diminuição dos retornos", já que acima dela a curva se afasta, exigindo cada vez mais melhorias métricas para melhorar uma pontuação já alta.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Imagem da curva de pontuação para TTI", width="600", height="329" %}   <figcaption class="w-figcaption">     <a href="https://www.desmos.com/calculator/o98tbeyt1t">Explore a curva de pontuação para TTI</a>.   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Imagem da curva de pontuação para TTI", width="600", height="329" %}   <figcaption>     <a href="https://www.desmos.com/calculator/o98tbeyt1t">Explore a curva de pontuação para TTI</a>.   </figcaption></figure>
 
 ### Como se lida com desktop vs celular {: #desktop}
 
@@ -152,7 +152,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 5
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -187,7 +187,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 3 and 4
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -221,7 +221,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 2
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

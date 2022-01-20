@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os elementos da imagem não têm atributos `[alt]`
 description: |2
 
@@ -18,7 +18,7 @@ Os elementos informativos devem ter como objetivo um texto alternativo curto e d
 
 Elementos de sinalizadores de farol `<img>` que não têm atributos `alt`
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Auditoria do farol mostrando<img> os elementos não têm atributos alt", width="800", height="206", class="w-screenshot "%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Auditoria do farol mostrando<img> os elementos não têm atributos alt", width="800", height="206"%}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

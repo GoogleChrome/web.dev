@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os erros do navegador foram registrados no console
 description: |2
 
@@ -18,7 +18,7 @@ As mensagens registradas no console vêm dos desenvolvedores da web que criaram 
 
 [O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todos os erros do navegador registrados no console:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Auditoria do Lighthouse mostrando erros do navegador no console", width="800", height="247", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Auditoria do Lighthouse mostrando erros do navegador no console", width="800", height="247" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
@@ -33,7 +33,7 @@ O Chrome DevTools inclui algumas ferramentas para ajudá-lo a rastrear a causa d
 
 Por exemplo, esta captura de tela mostra uma página com dois erros:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Um exemplo de erros no Chrome DevTools Console", width="800", height="505", class="w-screenshot w-screenshot --preenchidas" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Um exemplo de erros no Chrome DevTools Console", width="800", height="505" %}</figure>
 
 No exemplo acima, o primeiro erro vem de um desenvolvedor da Web por meio de uma chamada para [`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error). O segundo erro vem do navegador e indica que não existe uma variável usada em um dos scripts da página.
 

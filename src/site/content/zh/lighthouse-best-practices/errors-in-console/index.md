@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 将浏览器错误记录到控制台
 description: 了解如何识别和解决浏览器错误。
 web_lighthouse:
@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记记录到控制台的所有浏览器错误：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="显示控制台中的浏览器错误的 Lighthouse 审核", width="800", height="247", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="显示控制台中的浏览器错误的 Lighthouse 审核", width="800", height="247" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
@@ -31,7 +31,7 @@ Chrome DevTools 提供了一些可帮助您跟踪错误原因的工具：
 
 例如，下面的截屏显示了一个有两个错误的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Chrome DevTools 控制台中的错误示例", width="800", height="505", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Chrome DevTools 控制台中的错误示例", width="800", height="505" %}</figure>
 
 在上述示例中，第一个错误来自 Web 开发人员对 [`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error) 的调用。第二个错误来自浏览器，指示页面脚本之一使用的一个变量不存在。
 

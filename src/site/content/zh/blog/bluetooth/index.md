@@ -70,11 +70,11 @@ Web Bluetooth API 严重依赖于 JavaScript [Promises](https://developer.mozill
 
 当网站使用 `navigator.bluetooth.requestDevice` 请求访问附近的设备时，浏览器会通过设备选择器提示用户，用户可以在该选择器中选择一台设备或简单地取消请求。
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/bluetooth/bluetooth-device-chooser.mp4">
   </source></video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <p data-md-type="paragraph"><a href="https://webbluetoothcg.github.io/demos/playbulb-candle/">蓝牙设备用户提示。</a></p>
   </figcaption></figure>
 
@@ -378,7 +378,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer']
 
 在 Chrome 中的 `about://bluetooth-internals` <br> 位置可查看**蓝牙内部**页面，以便您可以检查附近蓝牙设备的所有信息：状态、服务、特征和描述符。
 
-<figure class="w-figure">{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Chrome 中用于调试蓝牙的内部页面的截图", width="800", height="572", class="w-screenshot" %}<figcaption class="w-figcaption"> Chrome 中用于调试蓝牙设备的内部页面。</figcaption></figure>
+<figure>{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Chrome 中用于调试蓝牙的内部页面的截图", width="800", height="572" %}<figcaption> Chrome 中用于调试蓝牙设备的内部页面。</figcaption></figure>
 
 还建议您查阅官方[如何提交 Web 蓝牙错误](https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs)页面，因为调试蓝牙有时比较麻烦。
 

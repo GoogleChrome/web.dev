@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 지연 로드를 사용하여 로드 속도 향상
 authors:
   - jlwagner
@@ -18,7 +18,7 @@ tags:
 
 지연 로드는 페이지 로드 시 중요하지 않은 리소스의 로드를 연기하는 기술입니다. 대신 이러한 중요하지 않은 리소스는 필요한 순간에 로드됩니다. 이미지와 관련하여 "비중요"는 종종 "오프스크린"과 거의 같은 의미를 갖습니다. 여러분이 Lighthouse를 사용하며 몇 가지 개선 가능성을 조사했다면 [오프스크린 이미지 지연 감사](/offscreen-images/) 형식으로 이 영역에 있는 몇 가지 지침을 보았을 것입니다.
 
-<figure class="w-figure">{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouse의 오프스크린 이미지 지연 감사의 스크린샷.", width="800", height="102", class="w-screenshot" %} <figcaption class="w-figcaption">Lighthouse의 성능 감사 중 하나는 지연 로드 후보인 오프스크린 이미지를 식별하는 것입니다.</figcaption></figure>
+<figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouse의 오프스크린 이미지 지연 감사의 스크린샷.", width="800", height="102" %} <figcaption>Lighthouse의 성능 감사 중 하나는 지연 로드 후보인 오프스크린 이미지를 식별하는 것입니다.</figcaption></figure>
 
 아마도 지연 로드가 작동하는 것을 이미 보았을 것이며 다음과 같이 진행됩니다.
 
@@ -28,7 +28,7 @@ tags:
 
 이미지 지연 로드의 예는 인기 퍼블리싱 플랫폼인 [Medium](https://medium.com/)에서 확인할 수 있습니다. 이 플랫폼은 페이지 로드 시 가벼운 자리 표시자 이미지를 로드하고 뷰포트로 스크롤할 때 지연 로드 이미지로 대체합니다.트로 스크롤할 때 지연 로드 이미지로 대체합니다.
 
-<figure class="w-figure">{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="탐색 중인 웹 사이트 Medium의 스크린샷으로 지연 로드가 작동하는 모습을 보여줍니다. 흐릿한 자리 표시자는 왼쪽에 있고 로드된 리소스는 오른쪽에 있습니다.", width="800", height="493" %} <figcaption class="w-figcaption">작동 중인 이미지 지연 로드의 예. 자리 표시자 이미지는 페이지 로드 시 로드되며(왼쪽), 뷰포트로 스크롤하면 최종 이미지가 필요할 때 로드됩니다.</figcaption></figure>
+<figure>{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="탐색 중인 웹 사이트 Medium의 스크린샷으로 지연 로드가 작동하는 모습을 보여줍니다. 흐릿한 자리 표시자는 왼쪽에 있고 로드된 리소스는 오른쪽에 있습니다.", width="800", height="493" %} <figcaption>작동 중인 이미지 지연 로드의 예. 자리 표시자 이미지는 페이지 로드 시 로드되며(왼쪽), 뷰포트로 스크롤하면 최종 이미지가 필요할 때 로드됩니다.</figcaption></figure>
 
 지연 로드에 익숙하지 않다면 이 기술이 얼마나 유용한지, 그리고 그 이점이 무엇인지 궁금할 것입니다. 계속 읽어나가며 알아보십시오.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Os elementos de título não estão em ordem decrescente sequencial
 description: |2-
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza as páginas cujos títulos pulam um ou mais níveis:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoria do Lighthouse mostrando cabeçalhos que pulam níveis", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Auditoria do Lighthouse mostrando cabeçalhos que pulam níveis", width="800", height="206" %}</figure>
 
 Por exemplo, usar um elemento `<h1>` para o título da sua página e, em seguida, usar elementos `<h3>` para as seções principais fará com que a auditoria falhe porque o nível `<h2>` foi ignorado:
 

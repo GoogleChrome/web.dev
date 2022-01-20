@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 쿠키 알림에 대한 모범 사례
 subhead: |2
 
@@ -141,13 +141,13 @@ WebPageTest 스크립팅에 대한 자세한 내용은 [WebPageTest 문서](http
 
 쿠키 세트로 WebPageTest를 실행하려면 **고급** 탭으로 이동하여 쿠키 헤더를 **사용자 정의 헤더** 필드에 추가하십시오.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="WebPageTest의 '사용자 정의 헤더' 필드를 보여주는 스크린샷", width="800", height="181", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="WebPageTest의 '사용자 정의 헤더' 필드를 보여주는 스크린샷", width="800", height="181" %}
 
 #### 테스트 위치 변경
 
 WebPageTest에서 사용하는 테스트 위치를 변경하려면 **고급 테스트** 탭 **에 있는 테스트 위치** 드롭다운을 클릭합니다.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="WebPageTest의 '테스트 위치' 드롭다운 스크린샷", width="800", height="267", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="WebPageTest의 '테스트 위치' 드롭다운 스크린샷", width="800", height="267" %}
 
 ### Lighthouse로 쿠키 알림 테스트
 
@@ -157,7 +157,7 @@ Lighthouse 실행 시 쿠키를 설정하면 Lighthouse에서 테스트하기 �
 
 Lighthouse가 DevTools에서 실행될 때 쿠키가 지워지지 않습니다. 그러나 다른 유형의 저장소는 기본적으로 지워집니다. 이 동작은 **Lighthouse** 설정 패널에서 **저장소 비우기** 옵션을 사용하여 변경할 수 있습니다.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Lighthouse '저장소 비우기' 옵션을 강조한 스크린샷", width="800", height="304", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Lighthouse '저장소 비우기' 옵션을 강조한 스크린샷", width="800", height="304" %}
 
 #### CLI
 

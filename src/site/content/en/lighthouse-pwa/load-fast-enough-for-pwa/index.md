@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Page load is not fast enough on mobile networks
 description: |
   Learn how to make your web page load quickly on mobile networks.
@@ -24,8 +24,8 @@ to be considered a Progressive Web App. See the
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't load fast enough on mobile:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse audit showing page doesn't load fast enough on mobile", width="800", height="98", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse audit showing page doesn't load fast enough on mobile", width="800", height="98" %}
 </figure>
 
 Two main metrics affect how users perceive load time:

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 显示纵横比不正确的图像
 description: 了解如何以正确的纵横比显示响应式图像。
 web_lighthouse:
@@ -14,7 +14,7 @@ updated: 2020-04-29
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出其渲染尺寸与以自然比例渲染时的预期尺寸相差超过几个像素的图像：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 审计显示展示的图像纵横比不正确", width="800", height="198", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 审计显示展示的图像纵横比不正确", width="800", height="198" %}</figure>
 
 图像纵横比不正确的常见原因有两个：
 

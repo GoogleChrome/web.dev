@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: WebFont の読み込みとレンダリングを最適化する
 authors:
   - ilyagrigorik

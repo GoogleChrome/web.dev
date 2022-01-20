@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite encadenar solicitudes críticas
 description: |2-
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) informa sobre las solicitudes críticas cargadas con una prioridad alta:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Una captura de pantalla de la auditoría de Minimización de profundidad de solicitudes críticas de Lighthouse", width="800", height="452", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Una captura de pantalla de la auditoría de Minimización de profundidad de solicitudes críticas de Lighthouse", width="800", height="452" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

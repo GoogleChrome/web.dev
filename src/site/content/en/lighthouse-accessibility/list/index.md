@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`)"
 description: |
   Learn how to make lists on your web page clear to assistive technology users
@@ -20,8 +20,8 @@ They can also contain script supporting elements (`<script>` and `<template>`).
 
 Lighthouse flags lists that contain content elements that shouldn't be in a list:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xtmwFU4ntCqAou16qd88.png", alt="Lighthouse audit showing lists contain content elements that shouldn't be within the lists", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xtmwFU4ntCqAou16qd88.png", alt="Lighthouse audit showing lists contain content elements that shouldn't be within the lists", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

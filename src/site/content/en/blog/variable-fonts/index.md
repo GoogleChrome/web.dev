@@ -264,8 +264,7 @@ You can view the working example and source code for the above sample
 
 <figure>
   {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4",
-  class="w-screenshot",
-  controls=false,
+   controls=false,
   autoplay=true,
   loop=true,
   muted=true,
@@ -287,7 +286,7 @@ color icon font, based on Material Design Icons. Anicons is an experiment that
 combines two cutting edge font technologies: variable fonts and color fonts.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
   </video>
   <figcaption>
@@ -298,7 +297,7 @@ combines two cutting edge font technologies: variable fonts and color fonts.
 ### Finesse
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
   </video>
   <figcaption>
@@ -382,7 +381,7 @@ can set any value within the font's Width range:
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-weight.mp4" type="video/mp4">
   </video>
   <figcaption>
@@ -404,7 +403,7 @@ Likewise, we can set `font-stretch` with keywords (`condensed`,
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-width.mp4" type="video/mp4">
   </video>
   <figcaption>
@@ -442,7 +441,7 @@ i, em, .italic {
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-slant.mp4" type="video/mp4">
   </video>
   <figcaption>
@@ -499,7 +498,7 @@ the overall width, and then changes to the Width axis that affect the overall
 weight.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-grade.mp4" type="video/mp4">
   </video>
   <figcaption>

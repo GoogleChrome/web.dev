@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute"
 description: |
   Learn how to make presentational tables more accessible for assistive
@@ -23,8 +23,8 @@ Lighthouse flags layout `<table>` elements that use `<th>`, `<caption>`, or `sum
 ***Todo*** This audit doesn't seem to be failing for me. I added `role="presentation"` to a table
 with `th` expecting this to fail, and it does not.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="layout-table.png" alt="Lighthouse audit showing presentational <table> elements incorrectly using <th>, <caption>, or [summary] attribute">
+<figure>
+  <img src="layout-table.png" alt="Lighthouse audit showing presentational <table> elements incorrectly using <th>, <caption>, or [summary] attribute">
 </figure>
 -->
 

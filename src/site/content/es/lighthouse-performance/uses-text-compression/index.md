@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Habilitar la compresión de texto
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Los recursos basados en texto deben servirse comprimidos para minimizar el total de bytes de la red. La sección Oportunidades de su informe de Lighthouse enumera todos los recursos basados en texto que no están comprimidos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Una captura de pantalla de la auditoría de compresión de texto Lighthouse Enable", width="800", height="271", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="Una captura de pantalla de la auditoría de compresión de texto Lighthouse Enable", width="800", height="271" %}</figure>
 
 ## Cómo maneja Lighthouse la compresión de textos
 
@@ -57,7 +57,7 @@ Para comprobar si un servidor comprimió una respuesta:
 2. Haga clic en la pestaña **Encabezados.**
 3. Verifique el encabezado `content-encoding` en la sección **Encabezados de respuesta.**
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="Encabezado de respuesta de codificación de contenido",  width="800", height="571", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> El encabezado de respuesta <code>content-encoding</code></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="Encabezado de respuesta de codificación de contenido",  width="800", height="571" %} <figcaption> El encabezado de respuesta <code>content-encoding</code></figcaption></figure>
 
 Para comparar los tamaños comprimidos y descomprimidos de una respuesta:
 

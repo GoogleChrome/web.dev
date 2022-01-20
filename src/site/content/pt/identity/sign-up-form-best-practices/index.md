@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Práticas recomendadas para formulários de inscrição
 subhead: Ajude seus usuários a se inscrever, fazer login e gerenciar os detalhes de suas contas com o mínimo de confusão.
 authors:
@@ -74,11 +74,11 @@ Se o principal motivo pelo qual você pede aos usuários para criar uma conta é
 
 Deixe claro como criar uma conta em seu site, por exemplo, com um botão **Login** ou **Inscrever-se** no canto superior direito da página. Evite usar um ícone ambíguo ou palavras vagas ("Suba a bordo!", "Junte-se a nós") e não oculte o login em um menu de navegação. O especialista em usabilidade Steve Krug resumiu esta abordagem para a usabilidade de sites: [Não me faça pensar!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63) Se você precisar convencer outras pessoas em sua equipe da web, use [análises](#analytics-rum) para mostrar o impacto das diferentes opções.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="Duas capturas de tela de um site de comércio eletrônico de modelo visualizado em um telefone Android. O da esquerda usa um ícone para o link de login que é um tanto ambíguo; o da direita simplesmente diz 'Fazer login'", width="800", height="737" %} <figcaption class="w-figcaption">Torne o login óbvio. Um ícone pode ser ambíguo, mas um botão ou link <b>Fazer login</b> é óbvio.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="Duas capturas de tela de um site de comércio eletrônico de modelo visualizado em um telefone Android. O da esquerda usa um ícone para o link de login que é um tanto ambíguo; o da direita simplesmente diz 'Fazer login'", width="800", height="737" %} <figcaption>Torne o login óbvio. Um ícone pode ser ambíguo, mas um botão ou link <b>Fazer login</b> é óbvio.</figcaption></figure>
 
 {% Aside %} Você pode estar se perguntando se deseja adicionar um botão (ou link) para criar uma conta e outra para que os usuários existentes façam login. Muitos sites famosos agora simplesmente exibem um único botão de **Login.** Quando o usuário toca ou clica nele, ele também obtém um link para criar uma conta, se necessário. Esse é um padrão comum agora e seus usuários provavelmente o entenderão, mas você pode usar a [análise de interação](#analytics-rum) para monitorar se um único botão funciona melhor ou não. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Capturas de tela de login para Gmail: uma página, mostrando o botão Sign in, que quando clicado leva a um formulário que também tem um link Criar conta.", width="800", height="545" %} <figcaption class="w-figcaption">A página de login do Gmail tem um link para criar uma conta.<br> Em tamanhos de janela maiores do que os mostrados aqui, o Gmail exibe um link <b>Login</b> e um botão <b>Criar uma conta.</b></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Capturas de tela de login para Gmail: uma página, mostrando o botão Sign in, que quando clicado leva a um formulário que também tem um link Criar conta.", width="800", height="545" %} <figcaption>A página de login do Gmail tem um link para criar uma conta.<br> Em tamanhos de janela maiores do que os mostrados aqui, o Gmail exibe um link <b>Login</b> e um botão <b>Criar uma conta.</b></figcaption></figure>
 
 Certifique-se de vincular contas de usuários que se inscreverem por meio de um provedor de identidade como o Google e que também tiverem se inscrito usando e-mail e senha. Isso é fácil de fazer se você puder acessar o endereço de e-mail de um usuário a partir dos dados de perfil do provedor de identidade e combinar as duas contas. O código a seguir mostra como acessar os dados de e-mail de um usuário do Google Sign-in.
 
@@ -98,11 +98,11 @@ Depois que o usuário fizer login, deixe claro como acessar os detalhes da conta
 
 No fluxo de inscrição, seu trabalho é minimizar a complexidade e manter o foco do usuário. Elimine a desordem. Este não é o momento para distrações e tentações!
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/avoid-distractions.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Não distraia os usuários quando eles estiverem para concluir a inscrição.</figcaption></figure>
+  <figcaption>Não distraia os usuários quando eles estiverem para concluir a inscrição.</figcaption></figure>
 
 Ao inscrever-se, peça o mínimo possível. Colete dados adicionais do usuário (como nome e endereço) apenas quando for necessário e quando o usuário perceber um benefício claro em fornecer esses dados. Lembre-se de que cada dado que você comunica e armazena incorre em custos e responsabilidades.
 
@@ -110,11 +110,11 @@ Não duplique suas entradas apenas para garantir que os usuários acertem seus d
 
 Você pode considerar o login sem senha, enviando um código aos usuários sempre que eles se conectarem em um novo dispositivo ou navegador. Sites como Slack e Medium usam uma versão disso.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/medium-sign-in.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Login sem senha em medium.com.</figcaption></figure>
+  <figcaption>Login sem senha em medium.com.</figcaption></figure>
 
 Assim como acontece com o login federado, ele tem a vantagem de não precisar gerenciar senhas de usuários.
 
@@ -154,11 +154,11 @@ O Gerenciador de Senhas do Google também permite que você [verifique se alguma
 
 Se você rejeitar a senha proposta por um usuário, diga a ele especificamente por que ela foi rejeitada. [Mostre os problemas em linha e explique como corrigi-los](https://baymard.com/blog/inline-form-validation) assim que o usuário inserir um valor, e não depois de enviar o formulário de inscrição e ter que esperar por uma resposta do seu servidor.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/password-validation.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Seja claro por que uma senha foi rejeitada.</figcaption></figure>
+  <figcaption>Seja claro por que uma senha foi rejeitada.</figcaption></figure>
 
 ## Não proíba a colagem de senha {: #allow-password-pasting}
 
@@ -180,7 +180,7 @@ Em vez de forçar atualizações de senha, você deve monitorar a atividade inco
 
 Você também deve oferecer aos seus usuários acesso ao histórico de login da conta, mostrando onde e quando o login ocorreu.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Página de atividade da conta do Gmail", width="800", height="469" %} <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="Descubra como visualizar a atividade da conta do Gmail.">Página de atividade da conta do Gmail</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Página de atividade da conta do Gmail", width="800", height="469" %} <figcaption><a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="Descubra como visualizar a atividade da conta do Gmail.">Página de atividade da conta do Gmail</a>.</figcaption></figure>
 
 ## Simplifique a alteração ou redefinição de senhas {: #password-change}
 
@@ -196,7 +196,7 @@ Você também deve simplificar para os usuários a exclusão de suas contas, se 
 
 Muitos usuários preferem fazer login em sites usando um endereço de e-mail e um formulário de inscrição com senha. No entanto, você também deve permitir que os usuários façam login por meio de um provedor de identidade de terceiros, também conhecido como login federado.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="Página de login do WordPress", width="800", height="513" %} <figcaption class="w-figcaption">Página de login do WordPress, com opções de login do Google e Apple.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="Página de login do WordPress", width="800", height="513" %} <figcaption>Página de login do WordPress, com opções de login do Google e Apple.</figcaption></figure>
 
 Esta abordagem tem várias vantagens. Para usuários que criarem uma conta usando login federado, você não precisa pedir, comunicar ou armazenar senhas.
 
@@ -210,7 +210,7 @@ Você também pode acessar informações adicionais do perfil verificado a parti
 
 Muitos usuários compartilham dispositivos e trocam de contas usando o mesmo navegador. Quer os usuários acessem o login federado ou não, você deve simplificar essa troca de contas.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, mostrando troca de contas", width="800", height="494" %} <figcaption class="w-figcaption">Troca de conta no Gmail.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, mostrando troca de contas", width="800", height="494" %} <figcaption>Troca de conta no Gmail.</figcaption></figure>
 
 ## Considere oferecer autenticação multifator {: #autenticação multifator}
 

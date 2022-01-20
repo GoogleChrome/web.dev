@@ -14,7 +14,7 @@ tags:
 
 La web es un medio responsivo, pero a veces deseamos controlar sus dimensiones para mejorar la calidad general de la interfaz. Un buen ejemplo de esto es limitar la longitud de las líneas para mejorar la legibilidad. ¿Cómo haría eso en un medio flexible como la web?
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'bGgEGxj', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'bGgEGxj', tab: 'css,result' } %}</figure>
 
 Para este caso, puede usar una unidad `ch`, que es igual al ancho de un carácter "0" en la fuente renderizada a su tamaño calculado. Esta unidad le permite limitar el ancho del texto con una unidad diseñada para ajustar su tamaño, lo que a su vez, permite un control predecible independientemente del tamaño de ese texto. La unidad `ch` es una de las pocas unidades que son útiles para contextos específicos como este ejemplo.
 
@@ -31,7 +31,7 @@ p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'yLgYZRK', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'yLgYZRK', tab: 'css,result' } %}</figure>
 
 En este ejemplo, `1.5` es igual al **150%** del **tamaño de fuente en píxeles calculado** del elemento `p`. Esto significa que si la `p` tiene un `font-size` de `24px`, la altura de la línea se calculará como `36px`.
 
@@ -59,7 +59,7 @@ div p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'ZELbwwj', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'ZELbwwj', tab: 'css,result' } %}</figure>
 
 En el ejemplo anterior, el ancho de `div p` es `150px`.
 
@@ -77,7 +77,7 @@ div p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'WNRQPqX', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'WNRQPqX', tab: 'css,result' } %}</figure>
 
 En el fragmento anterior, tanto `margin-top` como `padding-left` se calcularán en `150px`.
 
@@ -93,7 +93,7 @@ div p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgwBxv', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgwBxv', tab: 'css,result' } %}</figure>
 
 Si establece un valor `transform` como porcentaje, se basa en el elemento con el conjunto de transformación. En este ejemplo, `p` tiene un valor `translateX` de `10%` y un `width` del `50%`. Primero, calcule cuál será el ancho: `150px` porque es el **50% del ancho de su padre**. Luego, toma el `10%` de `150px`, que son `15px`.
 
@@ -117,7 +117,7 @@ div {
 
 Si imprimiera esta página, el `div` se imprimiría como un rectángulo negro de 10x5cm. Tenga en cuenta que CSS se utiliza no solo para contenido digital, sino también para diseñar contenido impreso. Las longitudes absolutas pueden resultar muy útiles a la hora de diseñar para imprimir.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -174,7 +174,7 @@ La longitud relativa se calcula contra un valor base, muy parecido a un porcenta
 
 CSS tiene unidades útiles que son relativas al tamaño de los elementos de la tipografía renderizada, como el tamaño del texto en sí (unidades `em`) o el ancho de los caracteres tipográficos (unidades `ch`).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -221,13 +221,13 @@ CSS tiene unidades útiles que son relativas al tamaño de los elementos de la t
   </table>
 </div>
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ttaikDgwEC572lrGgWlG.svg", alt="El texto CSS es 10x grande con etiquetas para altura ascendente, altura descendente y x-height. x-height representa 1ex y 0 representa 1ch" , width="800", height="203" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ttaikDgwEC572lrGgWlG.svg", alt="El texto CSS es 10x grande con etiquetas para altura ascendente, altura descendente y x-height. x-height representa 1ex y 0 representa 1ch" , width="800", height="203" %}</figure>
 
 #### Unidades relativas a la ventana gráfica
 
 Puede utilizar las dimensiones de la ventana gráfica (ventana del navegador) como una base relativa. Estas unidades reparten el espacio disponible de la ventana gráfica.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -274,7 +274,7 @@ p {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'JjEYqXa' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'JjEYqXa' } %}</figure>
 
 En este ejemplo, el `div` será el 10% del ancho de la ventana gráfica, porque `1vw` es el **1% del ancho de la ventana gráfica**. El elemento `p` tiene un `max-width` de `60ch` que significa que no puede exceder el ancho de 60 caracteres "0" en la fuente y el tamaño calculados.
 
@@ -304,7 +304,7 @@ div {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'VwPvRbK', tab: 'css,result' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'VwPvRbK', tab: 'css,result' } %}</figure>
 
 Usando launidad de ángulo `deg`, puede rotar un `div` 90 ° en su eje central.
 

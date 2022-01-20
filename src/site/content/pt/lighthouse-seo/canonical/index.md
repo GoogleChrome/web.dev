@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O documento não tem um `rel = canonical` válido
 description: |2-
 
@@ -26,7 +26,7 @@ O uso de links canônicos tem muitas vantagens:
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza qualquer página com um link canônico inválido:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Auditoria do Lighthouse mostrando documento com link canônico inválido", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Auditoria do Lighthouse mostrando documento com link canônico inválido", width="800", height="76" %}</figure>
 
 Uma página falha nesta auditoria se qualquer uma das seguintes condições for atendida:
 

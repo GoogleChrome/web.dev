@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 동영상 지연 로드
 authors:
   - jlwagner

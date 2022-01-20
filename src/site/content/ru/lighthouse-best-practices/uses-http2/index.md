@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Не использует HTTP/2 для всех своих ресурсов
 description: |2-
 
@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) перечисляет все ресурсы, которые не обслуживаются через HTTP/2:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Аудит Lighthouse показывает, что ресурсы не обслуживаются через HTTP/2", width="800", height="191", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Аудит Lighthouse показывает, что ресурсы не обслуживаются через HTTP/2", width="800", height="191" %}</figure>
 
 Lighthouse собирает все ресурсы, запрашиваемые страницей, и проверяет версию протокола HTTP для каждого из них. В некоторых случаях запросы, отличные от HTTP/2, игнорируются в результатах аудита. См. [реализацию](https://github.com/GoogleChrome/lighthouse/blob/9fad007174f240982546887a7e97f452e0eeb1d1/lighthouse-core/audits/dobetterweb/uses-http2.js#L138) для получения более подробной информации.
 

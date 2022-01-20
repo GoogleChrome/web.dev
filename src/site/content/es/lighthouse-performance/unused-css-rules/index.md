@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Eliminar el CSS no utilizado
 description: Obtén más información sobre la auditoría de unused-css-rules.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 La sección Oportunidades de tu informe Lighthouse enumera todas las hojas de estilo con CSS no utilizado con un ahorro potencial de 2 KiB o más. Elimina el CSS no utilizado para reducir los bytes innecesarios consumidos por la actividad de la red:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="captura de pantalla de la auditoría de Eliminar el CSS no utilizado de Lighthouse", width="800", height="235", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="captura de pantalla de la auditoría de Eliminar el CSS no utilizado de Lighthouse", width="800", height="235" %}</figure>
 
 ## Cómo el CSS no utilizado ralentiza el rendimiento
 
@@ -36,7 +36,7 @@ El CSS no utilizado también ralentiza la construcción del [render tree (árbol
 
 La pestaña de Cobertura (Coverage) de Chrome DevTools puede ayudarte a descubrir el CSS crítico y no crítico. Consulta [Ver CSS usado y no usado en la pestaña de Cobertura](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: pestaña de Cobertura", width="800", height="407", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Chrome DevTools: pestaña de Cobertura.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: pestaña de Cobertura", width="800", height="407" %} <figcaption> Chrome DevTools: pestaña de Cobertura.</figcaption></figure>
 
 También puedes extraer esta información desde Puppeteer. Consulta [page.coverage](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagecoverage).
 

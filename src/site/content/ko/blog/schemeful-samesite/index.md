@@ -49,7 +49,7 @@ Chrome과 Firefox 모두에서 테스트를 위해 이러한 변경을 활성화
 
 웹사이트의 크로스-scheme 버전 사이를 이동하면(예를 들어, **http**://site.example에서 **https**://site.example로 연결) 이전에는 `SameSite=Strict` 쿠키를 보낼 수 있었습니다. 이것은 현재 크로스 사이트 이동으로 취급되어 `SameSite=Strict` 쿠키가 차단됩니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yDViqKg9eeEeAEiCNqe4.png", alt="사이트의 안전하지 않은 HTTP 버전에서 안전한 HTTPS 버전으로 연결되는 링크를 따라가면 크로스-scheme 이동이 트리거됩니다. SameSite=Strick 쿠키 차단됨, SameSite=Lax 및 SameSite=None; 보안 쿠키는 허용됩니다.", width="800", height="342" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> HTTP에서 HTTPS로의 크로스-scheme 이동.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yDViqKg9eeEeAEiCNqe4.png", alt="사이트의 안전하지 않은 HTTP 버전에서 안전한 HTTPS 버전으로 연결되는 링크를 따라가면 크로스-scheme 이동이 트리거됩니다. SameSite=Strick 쿠키 차단됨, SameSite=Lax 및 SameSite=None; 보안 쿠키는 허용됩니다.", width="800", height="342" %}<figcaption> HTTP에서 HTTPS로의 크로스-scheme 이동.</figcaption></figure>
 
 <table>
   <tr>
@@ -97,7 +97,7 @@ Chrome과 Firefox 모두에서 테스트를 위해 이러한 변경을 활성화
 
 또한 브라우저가 보안되지 않은 scheme의 리소스를 보안 페이지에 로드하도록 허용하더라도 타사 또는 크로스 사이트 쿠키에 `Secure`가 필요하므로 이러한 요청에서 모든 쿠키가 차단됩니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GgR6Yln1f9JGkt04exRC.png", alt="사이트의 보안 HTTPS 버전 리소스에서 발생하는 크로스-scheme 하위 리소스가 비보안 HTTP 버전에 포함됨. SameSite=Strict 및 SameSite=Lax 쿠키가 차단됨, SameSite=None; 보안 쿠키는 허용됩니다.", width="800", height="285" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> HTTPS를 통해 크로스-scheme 하위 리소스를 포함하는 HTTP 페이지.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GgR6Yln1f9JGkt04exRC.png", alt="사이트의 보안 HTTPS 버전 리소스에서 발생하는 크로스-scheme 하위 리소스가 비보안 HTTP 버전에 포함됨. SameSite=Strict 및 SameSite=Lax 쿠키가 차단됨, SameSite=None; 보안 쿠키는 허용됩니다.", width="800", height="285" %}<figcaption> HTTPS를 통해 크로스-scheme 하위 리소스를 포함하는 HTTP 페이지.</figcaption></figure>
 
 <table>
   <tr>
@@ -141,7 +141,7 @@ Chrome과 Firefox 모두에서 테스트를 위해 이러한 변경을 활성화
 
 {% Aside 'warning' %} 여기에서 가장 좋은 해결책은 양식 페이지와 대상이 모두 HTTPS와 같은 보안 연결상에 있는지 확인하는 것입니다. 이는 사용자가 양식에 민감한 정보를 입력하는 경우 특히 중요합니다. {% endAside %}
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ud9LkDeGJUWHObifD718.png", alt="사이트의 비보안 HTTP 버전 양식에서 크로스-scheme으로 양식을 제출하면 보안 HTTPS 버전으로 제출됨. SameSite=Strict 및 SameSite=Lax 쿠키 차단됨, 및 SameSite=None; 쿠키가 허용됩니다.", width="800", height="376" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> HTTP에서 HTTPS로 크로스-scheme 양식 제출.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ud9LkDeGJUWHObifD718.png", alt="사이트의 비보안 HTTP 버전 양식에서 크로스-scheme으로 양식을 제출하면 보안 HTTPS 버전으로 제출됨. SameSite=Strict 및 SameSite=Lax 쿠키 차단됨, 및 SameSite=None; 쿠키가 허용됩니다.", width="800", height="376" %}<figcaption> HTTP에서 HTTPS로 크로스-scheme 양식 제출.</figcaption></figure>
 
 <table>
   <tr>

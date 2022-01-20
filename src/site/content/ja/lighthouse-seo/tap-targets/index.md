@@ -16,11 +16,11 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、小さすぎるか互いに近すぎるタップターゲットのあるページにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="不適切なサイズのタップターゲットを示す Lighthouse 監査", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="不適切なサイズのタップターゲットを示す Lighthouse 監査", width="800", height="206" %}</figure>
 
 48 px × 48 px よりも小さいか間隔が 8 px 未満であるターゲットは、この監査に失敗します。監査に失敗すると、Lighthouse は結果を 3 列構成のテーブルに表示します。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <tbody>
       <tr>
@@ -45,7 +45,7 @@ web_lighthouse:
 
 **ステップ 1:** タップターゲットのサイズが小さすぎる場合は、大きくします。48 px x 48 px のタップターゲットは絶対に監査に失敗しません。大きく*表示*されてはいけないアイコンなどの要素の場合は、`padding` プロパティを増やしてみてください。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="適切なサイズのタップターゲット", width="800", height="419", class="w-screenshot w-screenshot" %} <figcaption class="w-figcaption"><code>padding</code> を使用すると、要素の外観を変更せずにタップターゲットを大きくできる。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="適切なサイズのタップターゲット", width="800", height="419" %} <figcaption><code>padding</code> を使用すると、要素の外観を変更せずにタップターゲットを大きくできる。</figcaption></figure>
 
 **ステップ 2:** `margin` などのプロパティを使用して、互いに近すぎるタップターゲット間の間隔を広げます。タップターゲット間には少なくとも 8 px が必要です。
 

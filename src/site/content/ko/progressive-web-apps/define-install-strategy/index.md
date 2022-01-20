@@ -53,7 +53,7 @@ tags:
 
 PWA가 [설치 가능성 기준](/install-criteria/)을 충족하면 대부분의 브라우저에 PWA를 설치할 수 있다는 표시가 표시됩니다. 예를 들어 데스크톱 Chrome은 주소 표시줄에 설치 가능한 아이콘을 표시하고 모바일에서는 미니 정보 표시줄을 표시합니다.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="미니 정보 표시줄이라는 표준 Chrome 설치 프롬프트", width="800", height="417" %}<figcaption class="w-figcaption"> 미니 정보 표시줄</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="미니 정보 표시줄이라는 표준 Chrome 설치 프롬프트", width="800", height="417" %}<figcaption> 미니 정보 표시줄</figcaption></figure>
 
 일부 경험에는 충분할 수 있지만 목표가 PWA 설치를 유도하는 것이라면 [`BeforeInstallPromptEvent`](https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent)를 듣고 PWA [설치를 승격하기 위한 패턴](/promote-install/)을 따르는 것이 좋습니다.
 
@@ -90,12 +90,12 @@ PWA가 [설치 가능성 기준](/install-criteria/)을 충족하면 대부분�
 
 인도의 가장 큰 환대 회사 중 하나인 Oyo는 [앱의 Lite 버전](/oyo-lite-twa/)을 만들고 TWA를 사용하여 Play 스토어에서 사용할 수 있도록 했습니다. Android 앱 크기의 7%에 불과한 850KB에 불과합니다. 그리고 일단 설치되면 Android 앱과 구별할 수 없습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">작동 중인 OYO Lite.</figcaption></figure>
+ <figcaption>작동 중인 OYO Lite.</figcaption></figure>
 
 Oyo는 플래그십 및 "lite" 앱 버전을 모두 스토어에 보관했으며 최종 결정은 사용자에게 맡겼습니다.
 

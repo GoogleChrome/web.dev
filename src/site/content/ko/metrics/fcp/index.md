@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First Contentful Paint(최초 콘텐츠풀 페인트, FCP)
 authors:
   - philipwalton
@@ -25,7 +25,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-    {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="좋은 FCP 값은 1.8초 이하이고 나쁜 값은 3.0초보다 크며 그 사이에는 개선이 필요합니다", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="좋은 FCP 값은 1.8초 이하이고 나쁜 값은 3.0초보다 크며 그 사이에는 개선이 필요합니다", width="400", height="300" %}
   </picture>
 
 ### 좋은 FCP 점수는 무엇인가요?

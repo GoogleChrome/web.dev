@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免链接关键请求
 description: |2
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 报告通过高优先级加载的关键请求：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouse 最小化关键请求深度审计的截图", width="800", height="452", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouse 最小化关键请求深度审计的截图", width="800", height="452" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

@@ -78,7 +78,7 @@ Em vez de usar um arquivo de imagem como máscara, você pode usar SVG. Existem 
 }
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="Um exemplo de uso de máscara SVG", width="699", height="490", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="Um exemplo de uso de máscara SVG", width="699", height="490" %}</figure>
 
 A vantagem dessa abordagem é que a máscara pode ser aplicada a qualquer elemento HTML, não apenas a uma imagem. Infelizmente, o Firefox é o único navegador que oferece suporte a essa abordagem.
 

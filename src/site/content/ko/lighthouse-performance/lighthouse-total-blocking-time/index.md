@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 총 차단 시간
 description: |2-
 
@@ -14,7 +14,7 @@ updated: 2021-06-04
 
 Lighthouse 보고서는 TBT를 밀리초 단위로 표시합니다.
 
-<figure class="w-figure">{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="Lighthouse 총 차단 시간 감사를 보여주는 스크린샷", width="800", height="592", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="Lighthouse 총 차단 시간 감사를 보여주는 스크린샷", width="800", height="592" %}</figure>
 
 ## TBT 측정 항목
 
@@ -26,7 +26,7 @@ TBT 점수는 모바일 장치에 로드되었을 때의 페이지 TBT 시간과
 
 다음 표는 TBT 점수를 해석하는 방식을 보여줍니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Prácticas recomendadas para el formulario de registro
 subhead: Ayude a que sus usuarios se registren, inicien sesión y administren los detalles de su cuenta con un mínimo de esfuerzo.
 authors:
@@ -74,11 +74,11 @@ Si la razón principal por la que solicita a los usuarios que creen una cuenta e
 
 Haga que sea obvio cómo crear una cuenta en su sitio, por ejemplo, con un botón **Iniciar sesión** o **Regístrese** en la parte superior derecha de la página. Evite el uso de un icono ambiguo o palabras vagas ("¡Suba a bordo!", "Únase a nosotros") y no oculte el inicio de sesión en un menú de navegación. El experto en usabilidad Steve Krug resumió este enfoque de usabilidad del sitio web: [¡No me haga pensar!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63) Si necesita convencer a otros miembros de su equipo web, utilice los [análisis](#analytics-rum) para mostrar el impacto de las diferentes opciones.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="Dos capturas de pantalla de una maqueta de un sitio web de comercio electrónico visto en un teléfono Android. La de la izquierda usa un icono para el enlace de inicio de sesión que es algo ambiguo uno a la derecha simplemente dice 'Iniciar sesión' ", width= "800", height="737" %}<figcaption class="w-figcaption">Haga que el inicio de sesión sea obvio. Un icono puede ser ambiguo, pero un botón o enlace <b>Iniciar sesión</b>  es obvio.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="Dos capturas de pantalla de una maqueta de un sitio web de comercio electrónico visto en un teléfono Android. La de la izquierda usa un icono para el enlace de inicio de sesión que es algo ambiguo uno a la derecha simplemente dice 'Iniciar sesión' ", width= "800", height="737" %}<figcaption>Haga que el inicio de sesión sea obvio. Un icono puede ser ambiguo, pero un botón o enlace <b>Iniciar sesión</b>  es obvio.</figcaption></figure>
 
 {% Aside %} Es posible que se esté preguntando si debe agregar un botón (o enlace) para crear una cuenta y otro para que los usuarios existentes inicien sesión. Muchos sitios populares ahora simplemente muestran un solo botón **Iniciar sesión**. Cuando el usuario toca o hace clic en eso, también obtiene un enlace para crear una cuenta si es necesario. Ese es un patrón común ahora y es probable que sus usuarios lo entiendan, pero puede usar [el análisis de interacción](#analytics-rum) para monitorear si un solo botón funciona mejor o no. {% endAside %}
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Capturas de pantalla del inicio de sesión para Gmail: una página, que muestra el botón Iniciar sesión, cuando se hace clic en el formulario que también tiene un enlace Crear una cuenta.", width="800", height="545" %}   <figcaption class="w-figcaption"> La página de inicio de sesión de Gmail tiene un enlace para crear una cuenta. <br> En tamaños de ventana más grandes que los que se muestran aquí, Gmail muestra un enlace <b>Iniciar sesión</b> y un botón <b>Crear una cuenta</b>. </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Capturas de pantalla del inicio de sesión para Gmail: una página, que muestra el botón Iniciar sesión, cuando se hace clic en el formulario que también tiene un enlace Crear una cuenta.", width="800", height="545" %}   <figcaption> La página de inicio de sesión de Gmail tiene un enlace para crear una cuenta. <br> En tamaños de ventana más grandes que los que se muestran aquí, Gmail muestra un enlace <b>Iniciar sesión</b> y un botón <b>Crear una cuenta</b>. </figcaption></figure>
 
 Asegúrese de vincular las cuentas de los usuarios que se registran a través de un proveedor de identidad como Google y que también se registran mediante correo electrónico y contraseña. Eso es fácil de hacer si puede acceder a la dirección de correo electrónico de un usuario desde los datos del perfil del proveedor de identidad y hacer coincidir las dos cuentas. El siguiente código muestra cómo acceder a los datos de correo electrónico de un usuario con inicio de sesión de Google.
 
@@ -98,11 +98,11 @@ Una vez que un usuario haya iniciado sesión, aclare cómo acceder a los detalle
 
 En el flujo de registro, su trabajo es minimizar la complejidad y mantener al usuario enfocado. Elimine el desorden. ¡Este no es el momento de distracciones y tentaciones!
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/avoid-distractions.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">No distraiga a los usuarios mientras completan el registro.</figcaption></figure>
+  <figcaption>No distraiga a los usuarios mientras completan el registro.</figcaption></figure>
 
 Durante el registro, solicite lo menos posible. Recopile datos de usuario adicionales (como nombre y dirección) solo cuando sea necesario y cuando el usuario vea un beneficio claro al proporcionar esos datos. Tenga en cuenta que cada elemento de datos que comunique y almacene implica un costo y una responsabilidad.
 
@@ -110,11 +110,11 @@ No duplique sus entradas solo para asegurar de que los usuarios ingresen sus dat
 
 Es posible que desee considerar el inicio de sesión sin contraseña al enviarle a los usuarios un código cada vez que inician sesión en un nuevo dispositivo o navegador. Sitios como Slack y Medium usan una versión de esto.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/medium-sign-in.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Inicio de sesión sin contraseña en medium.com.</figcaption></figure>
+  <figcaption>Inicio de sesión sin contraseña en medium.com.</figcaption></figure>
 
 Al igual que con el inicio de sesión federado, esto tiene la ventaja adicional de no tener que administrar las contraseñas de los usuarios.
 
@@ -154,11 +154,11 @@ El Administrador de contraseñas de Google también le permite [verificar si alg
 
 Si rechaza la contraseña que propone un usuario, dígale específicamente por qué se rechazó. [Muestre los problemas en línea y explique cómo solucionarlos](https://baymard.com/blog/inline-form-validation), tan pronto como el usuario haya ingresado un valor, no después de que haya enviado el formulario de registro y haya tenido que esperar una respuesta de su servidor.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/password-validation.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Sea claro respecto a por qué se rechaza una contraseña.</figcaption></figure>
+  <figcaption>Sea claro respecto a por qué se rechaza una contraseña.</figcaption></figure>
 
 ## No prohíba el pegado de contraseñas {: #allow-password-pasting}
 
@@ -180,7 +180,7 @@ En lugar de forzar las actualizaciones de contraseñas, debe controlar la activi
 
 También debe proporcionarles a sus usuarios acceso al historial de inicio de sesión de su cuenta, para mostrarles dónde y cuándo ocurrió un inicio de sesión.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Página de actividad de la cuenta de Gmail", width="800", height="469" %} <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="Descubra cómo ver la actividad de la cuenta de Gmail.">Página de actividad de la cuenta de Gmail</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Página de actividad de la cuenta de Gmail", width="800", height="469" %} <figcaption><a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="Descubra cómo ver la actividad de la cuenta de Gmail.">Página de actividad de la cuenta de Gmail</a>.</figcaption></figure>
 
 ## Simplifique el cambio o restablecimiento de contraseñas {: #password-change}
 
@@ -196,7 +196,7 @@ También debe facilitarles a los usuarios la eliminación de su cuenta si eso es
 
 Muchos usuarios prefieren iniciar sesión en sitios web mediante una dirección de correo electrónico y un formulario de registro de contraseña. Sin embargo, también debe permitir que los usuarios inicien sesión a través de un proveedor de identidad externo, también conocido como inicio de sesión federado.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="Página de inicio de sesión de WordPress", width="800", height="513" %} <figcaption class="w-figcaption">Página de inicio de sesión de WordPress, con opciones de inicio de sesión de Google y Apple.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="Página de inicio de sesión de WordPress", width="800", height="513" %} <figcaption>Página de inicio de sesión de WordPress, con opciones de inicio de sesión de Google y Apple.</figcaption></figure>
 
 Este enfoque tiene varias ventajas. Para los usuarios que crean una cuenta mediante el inicio de sesión federado, no es necesario que soliciten, comuniquen o almacenen las contraseñas.
 
@@ -210,7 +210,7 @@ el documento [Integración del inicio de sesión de Google en su aplicación web
 
 Muchos usuarios comparten dispositivos e intercambian cuentas mediante el mismo navegador. Ya sea que los usuarios accedan al inicio de sesión federado o no, debe simplificar el cambio de cuenta.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Se muestra un cambio de cuenta en Gmail", width="800", height="494" %} <figcaption class="w-figcaption">Cambio de cuenta en Gmail.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Se muestra un cambio de cuenta en Gmail", width="800", height="494" %} <figcaption>Cambio de cuenta en Gmail.</figcaption></figure>
 
 ## Considere ofrecer autenticación multifactor {: #multi-factor-authentication}
 

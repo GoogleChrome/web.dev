@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Аудит Manifest doesn't have a maskable icon"
 description: |2-
 
@@ -15,7 +15,7 @@ date: 2020-05-06
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, не поддерживающие маскируемые значки:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Аудит маскируемых значков в пользовательском интерфейсе отчетов Lighthouse.", width="800", height="110", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Аудит маскируемых значков в пользовательском интерфейсе отчетов Lighthouse.", width="800", height="110" %}</figure>
 
 Для успешного прохождения аудита должны быть выполнены указанные ниже условия.
 

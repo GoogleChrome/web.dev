@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Remove unused JavaScript
 description: |
   Learn how to pass Lighthouse's "Remove unused JavaScript" audit.
@@ -25,9 +25,9 @@ Unused JavaScript can slow down your page load speed:
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags every JavaScript file with more than 20 kibibytes of unused code:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="A screenshot of the audit.", width="800", height="332", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="A screenshot of the audit.", width="800", height="332" %}
+  <figcaption>
     Click a value in the <b>URL</b> column to open the script's
     source code in a new tab.
   </figcaption>

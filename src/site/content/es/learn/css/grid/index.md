@@ -115,7 +115,7 @@ Las herramientas de desarrollo de Chrome Grid pueden ayudarlo a comprender las d
 
 Abra la [demostración](https://codepen.io/web-dot-dev/full/NWdbrzr) en Chrome. Inspeccione el elemento con el fondo gris, que tiene un ID de `container`. Resalte la cuadrícula seleccionando la insignia de la cuadrícula en el DOM, junto al elemento `.container`. Dentro de la pestaña Diseño, seleccione **Mostrar números de línea** en el menú desplegable para ver los números de línea en su cuadrícula.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg", alt="Como se describe en el título y las instrucciones", width="800", height="449" %}<figcaption class="w-figcaption"> Una cuadrícula resaltada en Chrome DevTools que muestra números de línea, celdas y bandas.</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg", alt="Como se describe en el título y las instrucciones", width="800", height="449" %}<figcaption> Una cuadrícula resaltada en Chrome DevTools que muestra números de línea, celdas y bandas.</figcaption></figure>
 
 ### Palabras clave de tamaño intrínsecas
 

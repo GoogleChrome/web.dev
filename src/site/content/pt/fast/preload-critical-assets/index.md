@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pré-carregue ativos críticos para melhorar a velocidade de carregamento
 authors:
   - houssein
@@ -30,15 +30,15 @@ Quando você abre uma página da web, o navegador solicita o documento HTML de u
 
 O pré-carregamento é mais adequado para recursos normalmente descobertos mais tarde pelo navegador.
 
-<figure class="w-figure">{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Captura de tela do painel Chrome DevTools Network.", width="701", height="509" %}<figcaption class="w-figcaption"> Neste exemplo, a fonte Pacifico é definida na folha de estilo com uma regra <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>. O navegador carrega o arquivo de fonte somente após concluir o download e a análise da folha de estilo.</figcaption></figure>
+<figure>{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Captura de tela do painel Chrome DevTools Network.", width="701", height="509" %}<figcaption> Neste exemplo, a fonte Pacifico é definida na folha de estilo com uma regra <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>. O navegador carrega o arquivo de fonte somente após concluir o download e a análise da folha de estilo.</figcaption></figure>
 
 Ao pré-carregar um determinado recurso, você está dizendo ao navegador que gostaria de buscá-lo antes do que o navegador iria descobri-lo, porque você tem certeza de que é importante para a página atual.
 
-<figure class="w-figure">{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de tela do painel Chrome DevTools Network após aplicar o pré-carregamento.", width="701", height="509" %} <figcaption class="w-figcaption"> Neste exemplo, a fonte Pacifico é pré-carregada, portanto, o download ocorre em paralelo com a folha de estilo.</figcaption></figure>
+<figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de tela do painel Chrome DevTools Network após aplicar o pré-carregamento.", width="701", height="509" %} <figcaption> Neste exemplo, a fonte Pacifico é pré-carregada, portanto, o download ocorre em paralelo com a folha de estilo.</figcaption></figure>
 
 A cadeia de solicitação crítica representa a ordem dos recursos que são priorizados e buscados pelo navegador. O Lighthouse identifica os ativos que estão no terceiro nível dessa cadeia como descobertos posteriormente. Você pode usar a [**auditoria de solicitações de chave**](/uses-rel-preload) de pré-carregamento para identificar quais recursos pré-carregar.
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="A chave de pré-carregamento do farol solicita auditoria.", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="A chave de pré-carregamento do farol solicita auditoria.", width="745", height="97" %}
 
 Você pode pré-carregar recursos adicionando uma tag `<link>` `rel="preload"` ao cabeçalho do seu documento HTML:
 
@@ -54,7 +54,7 @@ Dicas de recursos, por exemplo, [`preconnect`](/preconnect-and-dns-prefetch) - [
 
 Pré-carregamentos não utilizados disparam um alerta de Console no Chrome, aproximadamente 3 segundos depois do evento `load`.
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Aviso do Chrome DevTools Console sobre recursos pré-carregados não utilizados.", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Aviso do Chrome DevTools Console sobre recursos pré-carregados não utilizados.", width="800", height="228" %}
 
 {% Aside %} O [`preload` é suportado](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) em todos os navegadores modernos. {% endAside %}
 

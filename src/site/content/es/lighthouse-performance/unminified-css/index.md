@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minificar CSS
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 La sección Oportunidades de su informe Lighthouse enumera todos los archivos CSS sin minificar, junto con los ahorros potenciales en [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) cuando estos archivos se minifican:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C1ah0bnY6JQsffdO446S.png", alt="Una captura de pantalla de la auditoría de Lighthouse Minify CSS", width="800", height="212", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C1ah0bnY6JQsffdO446S.png", alt="Una captura de pantalla de la auditoría de Lighthouse Minify CSS", width="800", height="212" %}</figure>
 
 ## Cómo la minificación de archivos CSS puede mejorar el rendimiento
 

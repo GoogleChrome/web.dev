@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Mejores prácticas para el formulario de inicio de sesión
 subhead: Utilice funciones de navegador multiplataforma para crear formularios de inicio de sesión que sean seguros, accesibles y fáciles de usar.
 authors:
@@ -85,7 +85,7 @@ No utilice los marcadores de posición como etiquetas de entrada. Es probable qu
 
 Probablemente sea mejor poner sus etiquetas encima de sus entradas. Esto permite un diseño coherente en dispositivos móviles y de escritorio, además, de acuerdo con la [Investigación de Google sobre la IA](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html), permite que los usuarios hagan un escaneo más rápido. Usted obtiene etiquetas y entradas de ancho completo, y no necesita ajustar la etiqueta y el ancho de la entrada para que se ajusten al texto de la etiqueta.
 
-<figure class="w-figure">{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="Captura de pantalla que muestra la posición de la etiqueta de entrada del formulario en el dispositivo móvil: junto a la entrada y arriba de la entrada", width="500", height="253", class="w-screenshot" %} <figcaption class="w-figcaption">La etiqueta y el ancho de entrada están limitados cuando ambos están en la misma línea.</figcaption></figure>
+<figure>{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="Captura de pantalla que muestra la posición de la etiqueta de entrada del formulario en el dispositivo móvil: junto a la entrada y arriba de la entrada", width="500", height="253" %} <figcaption>La etiqueta y el ancho de entrada están limitados cuando ambos están en la misma línea.</figcaption></figure>
 
 Abra el Glitch [posición-de-etiqueta](https://label-position.glitch.me) en un dispositivo móvil para verlo usted mismo.
 
@@ -126,7 +126,7 @@ Las entradas de contraseñas deben tener el atributo `type="password"` para ocul
 
 Debe agregar un ícono o botón **Mostrar la contraseña** para permitir que los usuarios verifiquen el texto que han ingresado, además no olvide agregar un enlace **¿Olvidó la contraseña?** Consulte [Habilitar la visualización de contraseñas](#password-display).
 
-<figure class="w-figure">{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="Formulario de inicio de sesión de Google que muestra el ícono Mostrar la contraseña", width="300", height="107", class="w-screenshot" %} <figcaption class="w-figcaption">Entrada de contraseña desde el formulario de inicio de sesión de Google: con el ícono <strong>Mostrar contraseña</strong> y el enlace <strong>Olvidé la contraseña</strong>.</figcaption></figure>
+<figure>{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="Formulario de inicio de sesión de Google que muestra el ícono Mostrar la contraseña", width="300", height="107" %} <figcaption>Entrada de contraseña desde el formulario de inicio de sesión de Google: con el ícono <strong>Mostrar contraseña</strong> y el enlace <strong>Olvidé la contraseña</strong>.</figcaption></figure>
 
 ## Ofrezca el teclado adecuado a los usuarios de dispositivos móviles {: #mobile-keyboards }
 
@@ -140,23 +140,23 @@ Si necesita utilizar un número de teléfono en lugar de una dirección de corre
 
 Desafortunadamente, si no tiene cuidado, los teclados móviles pueden cubrir su formulario o, peor aún, obstruir parcialmente el botón **Iniciar sesión**. Los usuarios pueden darse por vencidos antes de darse cuenta de lo que ha sucedido.
 
-<figure class="w-figure">{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Dos capturas de pantalla de un formulario de inicio de sesión en un teléfono Android: una que muestra cómo el botón Enviar queda oculto por el teclado del teléfono.", width="400", height="360", class="w-captura de pantalla" %} <figcaption class="w-figcaption">El botón <b>Iniciar sesión</b>: ahora lo ve, ahora no.</figcaption></figure>
+<figure>{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Dos capturas de pantalla de un formulario de inicio de sesión en un teléfono Android: una que muestra cómo el botón Enviar queda oculto por el teclado del teléfono.", width="400", height="360", class="w-captura de pantalla" %} <figcaption>El botón <b>Iniciar sesión</b>: ahora lo ve, ahora no.</figcaption></figure>
 
 Siempre que sea posible, evite esto al mostrar solo las entradas de correo electrónico, teléfono y contraseña, además del botón **Iniciar sesión** en la parte superior de la página de inicio de sesión. Ponga otro contenido debajo.
 
-<figure class="w-figure">{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Captura de pantalla de un formulario de inicio de sesión en un teléfono Android: el botón Iniciar sesión no está oculto por el teclado del teléfono.", width="200", height="342", class="w-screenshot" %} <figcaption class="w-figcaption">El teclado no obstruye el botón <b>Iniciar sesión</b>.</figcaption></figure>
+<figure>{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Captura de pantalla de un formulario de inicio de sesión en un teléfono Android: el botón Iniciar sesión no está oculto por el teclado del teléfono.", width="200", height="342" %} <figcaption>El teclado no obstruye el botón <b>Iniciar sesión</b>.</figcaption></figure>
 
 #### Pruebas en una variedad de dispositivos {: #devices }
 
 Deberá realizar pruebas en una variedad de dispositivos para su público objetivo y realizar los ajustes necesarios. BrowserStack permite [realizar pruebas gratuitas para proyectos de código abierto](https://www.browserstack.com/open-source) en una variedad de navegadores y dispositivos reales.
 
-<figure class="w-figure">{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="Capturas de pantalla de un formulario de inicio de sesión en iPhone 7, 8 y 11. En iPhone 7 y 8, el botón Iniciar sesión queda oculto por el teclado del teléfono, pero no en iPhone 11", width="800 ", height=" 522", class="w-screenshot" %} <figcaption class="w-figcaption"> El botón <b>Iniciar sesión</b>: oculto en el iPhone 7 y 8, pero no en el iPhone 11.</figcaption></figure>
+<figure>{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="Capturas de pantalla de un formulario de inicio de sesión en iPhone 7, 8 y 11. En iPhone 7 y 8, el botón Iniciar sesión queda oculto por el teclado del teléfono, pero no en iPhone 11", width="800 ", height=" 522" %} <figcaption> El botón <b>Iniciar sesión</b>: oculto en el iPhone 7 y 8, pero no en el iPhone 11.</figcaption></figure>
 
 #### Considere usar dos páginas {: #two-pages }
 
 Algunos sitios (incluidos Amazon y eBay) evitan el problema al solicitar el correo electrónico, el teléfono y la contraseña en dos páginas. Este enfoque también simplifica la experiencia: el usuario solo tiene la tarea de una cosa a la vez.
 
-<figure class="w-figure">{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Captura de pantalla de un formulario de inicio de sesión en el sitio web de Amazon: correo electrónico, teléfono y contraseña en dos 'páginas' separadas.", width="400", height="385", class="w-screenshot" %} <figcaption class="w-figcaption">Inicio de sesión en dos etapas: correo electrónico o teléfono, luego contraseña.</figcaption></figure>
+<figure>{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Captura de pantalla de un formulario de inicio de sesión en el sitio web de Amazon: correo electrónico, teléfono y contraseña en dos 'páginas' separadas.", width="400", height="385" %} <figcaption>Inicio de sesión en dos etapas: correo electrónico o teléfono, luego contraseña.</figcaption></figure>
 
 Idealmente, esto debería implementarse con un solo elemento &lt;form&gt;. Use JavaScript para mostrar inicialmente solo la entrada de correo electrónico, luego ocúltela y muestre la entrada de contraseña. Si debe obligar a que el usuario navegue a una nueva página entre el ingreso de su correo electrónico y la contraseña, el formulario en la segunda página debe tener un elemento de entrada oculto con el valor del correo electrónico, para ayudar a que los administradores de contraseñas almacenen el valor correcto. Un ejemplo de código se proporciona en [Estilos de formulario de contraseña que Chromium entiende](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands).
 
@@ -202,11 +202,11 @@ Específicamente, el formulario para cambiar la contraseña del usuario debe bor
 
 Los diferentes navegadores manejan el llenado automático del correo electrónico y la sugerencia de contraseñas de manera algo diferente, pero los efectos son muy parecidos. En Safari 11 y versiones superiores en equipos de escritorio, por ejemplo, se muestra el administrador de contraseñas y luego se usa la autenticación biométrica (reconocimiento de huellas dactilares o facial) si está disponible.
 
-<figure class="w-figure">{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="Capturas de pantalla de tres etapas del proceso de inicio de sesión en Safari en equipos de escritorio: administrador de contraseñas, autenticación biométrica, llenado automático.", width="800", height= "234", class="w-screenshot" %}<figcaption class="w-figcaption"> Inicio de sesión con llenado automático, ¡no es necesario ingresar texto!</figcaption></figure>
+<figure>{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="Capturas de pantalla de tres etapas del proceso de inicio de sesión en Safari en equipos de escritorio: administrador de contraseñas, autenticación biométrica, llenado automático.", width="800", height= "234" %}<figcaption> Inicio de sesión con llenado automático, ¡no es necesario ingresar texto!</figcaption></figure>
 
 En equipos de escritorio, Chrome muestra sugerencias de correo electrónico, muestra el gestor de contraseñas y llena automáticamente la contraseña.
 
-<figure class="w-figure">{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="Capturas de pantalla de cuatro etapas del proceso de inicio de sesión en Chrome en equipos de escritorio: completar el correo electrónico, sugerencia de correo electrónico, administrador de contraseñas, llenado automático durante la selección.", width="800", height="232", class="w-screenshot" %} <figcaption class="w-figcaption">Flujo de inicio de sesión con llenado automático en Chrome 84.</figcaption></figure>
+<figure>{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="Capturas de pantalla de cuatro etapas del proceso de inicio de sesión en Chrome en equipos de escritorio: completar el correo electrónico, sugerencia de correo electrónico, administrador de contraseñas, llenado automático durante la selección.", width="800", height="232" %} <figcaption>Flujo de inicio de sesión con llenado automático en Chrome 84.</figcaption></figure>
 
 Los sistemas de llenado automático y de contraseñas del navegador no son sencillos. Los algoritmos para adivinar, almacenar y mostrar los valores no están estandarizados y varían de una plataforma a otra. Por ejemplo, como lo señaló [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form): "El gestor de contraseñas de Firefox complementa su heurística con un [sistema de recetas](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)".
 
@@ -220,7 +220,7 @@ Los navegadores modernos utilizan la heurística para decidir cuándo mostrar la
 
 Así es como Safari lo hace en equipos de escritorio.
 
-<figure class="w-figure">{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Captura de pantalla del administrador de contraseñas de Firefox en el escritorio", width="800", height="229", class="w-screenshot" %} <figcaption class="w-figcaption"> Flujo de sugerencia de contraseñas en Safari.</figcaption></figure>
+<figure>{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Captura de pantalla del administrador de contraseñas de Firefox en el escritorio", width="800", height="229" %} <figcaption> Flujo de sugerencia de contraseñas en Safari.</figcaption></figure>
 
 (La sugerencia de contraseñas únicas y fuertes ha estado disponible en Safari desde la versión 12.0).
 
@@ -232,7 +232,7 @@ La presencia de generadores de contraseñas incorporados en el navegador signifi
 
 Agregue el atributo `required` a los campos de correo electrónico y contraseña. Los navegadores modernos solicitan y establecen automáticamente el enfoque en los datos faltantes. ¡No se requiere JavaScript!
 
-<figure class="w-figure">{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="Captura de pantalla de Firefox y Chrome para Android de equipos de escritorio que muestra el mensaje 'Complete este campo' para los datos que faltan.", width="600", height="392", class="w-screenshot" %}<figcaption class="w-figcaption"> Solicitud y enfoque sobre los datos faltantes en Firefox para equipos de escritorio (versión 76) y Chrome para Android (versión 83).</figcaption></figure>
+<figure>{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="Captura de pantalla de Firefox y Chrome para Android de equipos de escritorio que muestra el mensaje 'Complete este campo' para los datos que faltan.", width="600", height="392" %}<figcaption> Solicitud y enfoque sobre los datos faltantes en Firefox para equipos de escritorio (versión 76) y Chrome para Android (versión 83).</figcaption></figure>
 
 ## Diseñe para dedos y pulgares {: #mobile-design }
 
@@ -242,7 +242,7 @@ El tamaño predeterminado del navegador para casi todo lo relacionado con los el
 
 El tamaño y el relleno predeterminados para las entradas y los botones es demasiado pequeño en equipos de escritorio e incluso peor en los móviles.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Captura de pantalla de un formulario sin estilo en Chrome para equipos de escritorio y Chrome para Android.", width="800", height="434", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Captura de pantalla de un formulario sin estilo en Chrome para equipos de escritorio y Chrome para Android.", width="800", height="434" %}</figure>
 
 Según la [Guía de accesibilidad de Android](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB), el tamaño objetivo recomendado para los objetos de la pantalla táctil es de 7 a 10 mm. Las pautas de la interfaz de Apple sugieren 48x48 px, y el W3C sugiere [al menos 44x44 píxeles CSS](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html). Sobre esa base, agregue (al menos) alrededor de 15 px de relleno a los elementos de entrada y botones para dispositivos móviles, y alrededor de 10 px en dispositivos de escritorio. Pruebe esto con un dispositivo móvil real y un dedo o pulgar real. Debería estar en capacidad de tocar cómodamente cada una de sus entradas y botones.
 
@@ -256,7 +256,7 @@ Haga una búsqueda por [objetivo táctil](https://www.google.com/search?q=touch+
 
 Al igual que con el tamaño y el relleno, el tamaño de fuente predeterminado del navegador para los elementos de entrada y los botones es demasiado pequeño, especialmente en dispositivos móviles.
 
-<figure class="w-figure">{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Captura de pantalla de un formulario sin estilo en Chrome en equipos de escritorio y en Android.", width="800", height="494", class="w-screenshot "%} <figcaption class="w-figcaption">Estilo predeterminado en equipos de escritorio y dispositivos móviles: el texto de entrada es demasiado pequeño como para que muchos usuarios lo puedan leer.</figcaption></figure>
+<figure>{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Captura de pantalla de un formulario sin estilo en Chrome en equipos de escritorio y en Android.", width="800", height="494"%} <figcaption>Estilo predeterminado en equipos de escritorio y dispositivos móviles: el texto de entrada es demasiado pequeño como para que muchos usuarios lo puedan leer.</figcaption></figure>
 
 Los navegadores de diferentes plataformas dimensionan las fuentes de manera diferente, por lo que es difícil especificar un tamaño de fuente en particular que funcione bien en todas partes. Una encuesta rápida de sitios web populares muestra tamaños de 13 a 16 píxeles en equipos escritorio: hacer coincidir ese tamaño físico es un buen punto mínimo para el texto en dispositivos móviles.
 
@@ -274,13 +274,13 @@ El estilo de borde predeterminado para las entradas hace que sean difíciles de 
 
 Además del relleno, agregue un borde: sobre un fondo blanco, una buena regla general es usar `#ccc` o uno más oscuro.
 
-<figure class="w-figure">{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Captura de pantalla de un formulario con estilo en Chrome para Android", width="250", height="525", class="w-screenshot" %} <figcaption class="w-figcaption">Texto legible, bordes de entrada visibles, relleno y márgenes adecuados.</figcaption></figure>
+<figure>{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Captura de pantalla de un formulario con estilo en Chrome para Android", width="250", height="525" %} <figcaption>Texto legible, bordes de entrada visibles, relleno y márgenes adecuados.</figcaption></figure>
 
 ### Utilice las funciones integradas del navegador para advertir sobre valores de entrada inválidos {: #built-in-validation }
 
 Los navegadores tienen funciones integradas para realizar una validación de formulario básica para las entradas con un atributo `type`. Los navegadores advierten cuando se envía un formulario con un valor inválido y enfocan la entrada problemática.
 
-<figure class="w-figure">{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="Captura de pantalla de un formulario de inicio de sesión en Chrome para equipos de escritorio que muestra el mensaje del navegador y el foco en un valor de correo electrónico inválido.", width="300", height="290"%} <figcaption class="w-figcaption">Validación básica incorporada en el navegador.</figcaption></figure>
+<figure>{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="Captura de pantalla de un formulario de inicio de sesión en Chrome para equipos de escritorio que muestra el mensaje del navegador y el foco en un valor de correo electrónico inválido.", width="300", height="290"%} <figcaption>Validación básica incorporada en el navegador.</figcaption></figure>
 
 Puede utilizar el selector CSS `:invalid` para resaltar los datos inválidos. Utilice `:not(:placeholder-shown)` para evitar la selección de entradas sin contenido.
 
@@ -299,7 +299,7 @@ Pruebe diferentes formas de resaltar las entradas con valores inválidos.
 
 Debe agregar un ícono o botón **Mostrar contraseña** para permitir que los usuarios verifiquen el texto que ingresaron. [La usabilidad se ve afectada](https://www.nngroup.com/articles/stop-password-masking/) cuando los usuarios no pueden ver el texto que ingresaron. Actualmente no hay una forma incorporada de hacer esto, aunque [hay planes de implementación](https://twitter.com/sw12/status/1251191795377156099). Deberá utilizar JavaScript en su lugar.
 
-<figure class="w-figure"><img class="w-screenshot" src="./show-password-google.png" width="350" alt="Formulario de inicio de sesión de Google que muestra el icono Mostrar contraseña."> <figcaption class="w-figcaption">Formulario de inicio de sesión de Google: con el icono <strong>Mostrar contraseña</strong> y el enlace <strong>Olvidé mi contraseña</strong>.</figcaption></figure>
+<figure><img src="./show-password-google.png" width="350" alt="Formulario de inicio de sesión de Google que muestra el icono Mostrar contraseña."> <figcaption>Formulario de inicio de sesión de Google: con el icono <strong>Mostrar contraseña</strong> y el enlace <strong>Olvidé mi contraseña</strong>.</figcaption></figure>
 
 El siguiente código usa un botón de texto para agregar la funcionalidad **Mostrar contraseña**.
 
@@ -357,7 +357,7 @@ function togglePassword() {
 
 Éste es el resultado final:
 
-<figure class="w-figure">{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Capturas de pantalla del formulario de inicio de sesión con el 'botón' de texto Mostrar la contraseña, en Safari para Mac y para iPhone 7.", width= "800", height="468", class="w-screenshot" %} <figcaption class="w-figcaption">Formulario de inicio de sesión con el 'botón' de texto <strong>Mostrar la contraseña</strong> en Safari para Mac y iPhone 7.</figcaption></figure>
+<figure>{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Capturas de pantalla del formulario de inicio de sesión con el 'botón' de texto Mostrar la contraseña, en Safari para Mac y para iPhone 7.", width= "800", height="468" %} <figcaption>Formulario de inicio de sesión con el 'botón' de texto <strong>Mostrar la contraseña</strong> en Safari para Mac y iPhone 7.</figcaption></figure>
 
 ### Haga que las entradas de contraseña sean accesibles {: #accessible-password-inputs }
 

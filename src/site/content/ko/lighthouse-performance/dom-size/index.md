@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 과도한 DOM 크기 피하기
 description: |2-
 
@@ -30,7 +30,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 페이지의 총 DOM 요소, 페이지의 최대 DOM 깊이 및 최대 하위 요소를 보고합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse Avoids 과도한 DOM 크기 감사 스크린샷.", width="800", height="363", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Lighthouse Avoids 과도한 DOM 크기 감사 스크린샷.", width="800", height="363" %}</figure>
 
 Lighthouse는 다음과 같은 DOM 트리가 있는 페이지에 플래그를 지정합니다.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minify JavaScript
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Minifizar arquivos JavaScript pode reduzir os tamanhos de carga útil e o tempo de análise do script. A seção Oportunidades de seu relatório Lighthouse lista todos os arquivos JavaScript não minimizados, junto com a economia potencial em [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) quando esses arquivos são minimizados:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="Uma captura de tela da auditoria de JavaScript do Lighthouse Minify", width="800", height="212", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="Uma captura de tela da auditoria de JavaScript do Lighthouse Minify", width="800", height="212" %}</figure>
 
 ## Como reduzir seus arquivos JavaScript
 

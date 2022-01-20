@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ドキュメントにメタ記述がない
 description: |2-
 
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)はメタ記述のないページにフラグを設定します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="ドキュメントにメタ記述がないことを示すLighthouse監査", width="800", height="74", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="ドキュメントにメタ記述がないことを示すLighthouse監査", width="800", height="74" %}</figure>
 
 次の場合、監査は失敗します。
 

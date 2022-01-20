@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Удаление неиспользуемого кода
 subhead: |
   Npm упрощает добавление кода в проект. Но так ли уж нужны все эти лишние байты?
@@ -27,19 +27,19 @@ tags:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Панель «Сеть» (Network) с запросом пакета", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Панель «Сеть» (Network) с запросом пакета", width="800", height="169" %}
 
 Вкладка [Покрытие](https://developer.chrome.com/docs/devtools/coverage/)
 (Coverage) в DevTools также сообщает, какое количество CSS- и JS-кода в приложении
 не используется.
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Покрытие кода в DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Покрытие кода в DevTools", width="800", height="562" %}
 
 Указав полную конфигурацию Lighthouse через Node CLI, с помощью аудита
 «Неиспользуемый JavaScript» (Unused JavaScript) можно отслеживать, какое количество
 неиспользуемого кода поставляется с приложением.
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Аудит «Unused JavaScript» в Lighthouse", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Аудит «Unused JavaScript» в Lighthouse", width="800", height="347" %}
 
 Если в качестве упаковщика вы используете [webpack](https://webpack.js.org/),
 то разобраться в том, что входит в комплект, вам поможет

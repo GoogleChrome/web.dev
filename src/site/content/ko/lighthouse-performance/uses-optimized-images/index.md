@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 이미지를 효율적으로 인코딩
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Lighthouse 보고서의 기회 섹션에는 [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte)로 잠재적 절감 효과를 제공하는 최적화되지 않은 모든 이미지가 나열되어 있습니다. 페이지가 더 빨리 로드되고 더 적은 데이터를 소비하도록 이러한 이미지를 최적화합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Lighthouse 효율적인 이미지 인코딩 감사에 대한 스크린샷", width="800", height="263", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Lighthouse 효율적인 이미지 인코딩 감사에 대한 스크린샷", width="800", height="263" %}</figure>
 
 ## Lighthouse가 이미지를 최적화 가능한 것으로 플래그 지정하는 방법
 

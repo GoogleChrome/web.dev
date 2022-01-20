@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Max Potential First Input Delay
 description: |
   Learn about Lighthouse's Max Potential First Input Delay metric and
@@ -16,8 +16,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays Max Potential FID in milliseconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VPy7DxOpD2tSd3O4Vrai.png", alt="A screenshot of the Lighthouse Max Potential First Input Delay audit.", width="800", height="588", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VPy7DxOpD2tSd3O4Vrai.png", alt="A screenshot of the Lighthouse Max Potential First Input Delay audit.", width="800", height="588" %}
 </figure>
 
 ## What Max Potential FID measures
@@ -45,7 +45,7 @@ that your page performs better than 90% of real websites.
 
 This table shows how to interpret your Max Potential FID score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

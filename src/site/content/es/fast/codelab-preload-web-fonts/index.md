@@ -25,13 +25,13 @@ Primero, mida el rendimiento del sitio web antes de agregar optimizaciones.
 
 El informe Lighthouse que se genera le mostrará la secuencia de búsqueda de recursos en **Latencia máxima de la ruta crítica**.
 
-{% Img src ="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Las fuentes web están presentes en la cadena de solicitudes críticas.", width="704", height="198", class="w-screenshot" %}
+{% Img src ="image/admin/eperh8ZUnjhsDlnJdNIG.png", alt="Las fuentes web están presentes en la cadena de solicitudes críticas.", width="704", height="198" %}
 
 En la auditoría anterior, las fuentes web forman parte de la cadena de solicitudes críticas y se recuperan en último lugar. La [**cadena de solicitudes críticas**](/critical-request-chains) representa el orden de los recursos priorizados y encontrados por el navegador. En esta aplicación, las fuentes web (Pacifico y Pacifico-Bold) se definen utilizando la regla [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) y son el último recurso obtenido por el navegador en la cadena de solicitudes críticas. Normalmente, las fuentes web se cargan de forma diferida, lo que significa que no se cargan hasta que se descargan los recursos críticos (CSS, JS).
 
 Aquí está la secuencia de los recursos obtenidos en la aplicación:
 
-{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt ="Las fuentes web se cargan de forma diferida.", width="583", height="256", class="w-screenshot" %}
+{% Img src="image/admin/9oBNjZORrBj6X8RVlr9t.png", alt ="Las fuentes web se cargan de forma diferida.", width="583", height="256" %}
 
 ## Precarga de fuentes web
 
@@ -56,6 +56,6 @@ Vuelva a cargar la aplicación y vuelva a ejecutar lighthouse. Verifique la secc
 
 Observe cómo `Pacifico-Bold.woff2` de la cadena de solicitudes críticas. Se obtiene anteriormente en la aplicación.
 
-{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="La fuente web Pacifico-Bold está precargada", width="553", height="254", class="w-screenshot" %}
+{% Img src="image/admin/BrXidcKZfCbbUbkcSwas.png", alt="La fuente web Pacifico-Bold está precargada", width="553", height="254" %}
 
 Con la precarga, el navegador sabe que necesita descargar este archivo antes. Es importante tener en cuenta que si no se utiliza correctamente, la precarga puede perjudicar el rendimiento al realizar solicitudes innecesarias de recursos que no se utilizan.

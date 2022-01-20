@@ -24,8 +24,8 @@ tags:
 
 ## 01. 超级居中：`place-items: center`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4">
   </source></video></figure>
 
@@ -44,8 +44,8 @@ tags:
 
 ## 02. 解构煎饼式布局：`flex: <grow> <shrink> <baseWidth>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4">
   </source></video></figure>
 
@@ -79,8 +79,8 @@ tags:
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4">
   </source></video></figure>
 
@@ -88,8 +88,8 @@ tags:
 
 ## 03. 侧边栏布局：`grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4">
   </source></video></figure>
 
@@ -106,8 +106,8 @@ tags:
 
 ## 04. 煎饼堆栈布局：`grid-template-rows: auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4">
   </source></video></figure>
 
@@ -128,8 +128,8 @@ tags:
 
 ## 05. 经典圣杯布局：`grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4">
   </source></video></figure>
 
@@ -150,8 +150,8 @@ tags:
 
 ## 06. 12 跨网格：`grid-template-columns: repeat(12, 1fr)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4">
   </source></video></figure>
 
@@ -170,8 +170,8 @@ tags:
 
 现在您有一个 12 列的轨道网格，我们可以将子项放在网格上。一种方法是使用网格线放置它们。例如， `grid-column: 1 / 13` 将跨越从第一行到最后一行（第 13 行）并跨越 12 列。`grid-column: 1 / 5;` 将跨越前四个列。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4">
   </source></video></figure>
 
@@ -185,8 +185,8 @@ tags:
 
 ## 07. RAM (Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4">
   </source></video></figure>
 
@@ -205,8 +205,8 @@ tags:
 
 使用 `auto-fit` ，当它们的水平尺寸超过 150px 时，框将拉伸以填充整个剩余空间。但是，如果您将其更改为 `auto-fill` ，则当超出 minmax 函数中的基本大小时，它们将不会拉伸：
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4">
   </source></video></figure>
 
@@ -219,8 +219,8 @@ tags:
 
 ## 08. 排列布局：`justify-content: space-between`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4">
   </source></video></figure>
 
@@ -238,8 +238,8 @@ tags:
 
 ## 09. 保持我的风格：`clamp(<min>, <actual>, <max>)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4">
   </source></video></figure>
 
@@ -263,8 +263,8 @@ tags:
 
 ## 10.保持宽高比：`aspect-ratio: <width> / <height>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4">
   </source></video></figure>
 

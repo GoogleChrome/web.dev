@@ -36,7 +36,7 @@ article p:first-of-type {
 
 CSS におけるセレクターの機能の仕組みと役割について理解するには、CSS ルールを構成する各要素について知っておくことが重要です。 CSS ルールは、1 つ以上のセレクターと 1 つ以上の宣言を含むコードブロックです。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt=".my-css-rule というセレクターが使用された CSS ルールの画像", width="800", height="427" %}を使用したCSSルールの画像</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt=".my-css-rule というセレクターが使用された CSS ルールの画像", width="800", height="427" %}を使用したCSSルールの画像</figure>
 
 この CSS ルールの**セレクター**は、`.my-css-rule` で、ページ上で `my-css-rule` というクラスを持つすべての要素を検索します。中括弧内には 3 つの宣言があります。宣言とは、セレクターによって一致する要素にスタイルを適用するプロパティと値のペアです。CSS ルールで使用できる宣言とセレクターの数に制限はありません。
 
@@ -178,7 +178,7 @@ HTML 要素は、`class` 属性に 1 つ以上の項目を定義できます。[
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %} <figcaption class="w-figcaption">このデモでは、属性セレクターの `$` 演算子が `href` 属性からファイルの種類を取得しています。これにより、取得したファイルの種類に応じて、疑似要素を使ってラベルにプレフィックスを付けることができます。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbOy' } %} <figcaption>このデモでは、属性セレクターの `$` 演算子が `href` 属性からファイルの種類を取得しています。これにより、取得したファイルの種類に応じて、疑似要素を使ってラベルにプレフィックスを付けることができます。</figcaption></figure>
 
 ### グループ化セレクター
 
@@ -287,7 +287,7 @@ p strong {
 
 上のスニペットでは、`<p>` 要素の子要素である `<strong>` 要素がすべて選択され、テキストは再帰的に青色にされます。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %} <figcaption class="w-figcaption">子孫コンビネータは再帰的な働きをするため、各子要素に追加されたパディングが適用されるので、互い違いな効果が得られます。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BapBbGN' } %} <figcaption>子孫コンビネータは再帰的な働きをするため、各子要素に追加されたパディングが適用されるので、互い違いな効果が得られます。</figcaption></figure>
 
 その効果は、上の例で `.top div` を使用すると分かりやすく視覚化できるでしょう。その CSS ルールは、そうした`<div>` 要素に左パディングを追加します。コンビネータは再帰的に働くため、`.top` 内にあるすべての `<div>` 要素に同じパディングが適用されます。
 
@@ -315,7 +315,7 @@ p strong {
 
 後続コンビネータは、隣接兄弟セレクターと非常によく似ていまが「`+`」文字の代わりに「`~`」文字を使用します。同じ親を持つ隣接要素ではなく、同じ親を持つ別の要素の後に来る要素が対象になるという点で異なります。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %} <figcaption class="w-figcaption">純粋な CSS スイッチ要素を作成するには、後続セレクターを「:checked」疑似クラスと一緒に使用します。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'ZELzPPX', height: 400 } %} <figcaption>純粋な CSS スイッチ要素を作成するには、後続セレクターを「:checked」疑似クラスと一緒に使用します。</figcaption></figure>
 
 この後続コンビネータは、わずかながら柔軟性があるため、カスタムスイッチに関連付けられているチェックボックスが `:checked` の状態にあるときは、そのカスタムスイッチの色を変更するといった上のサンプルのようなコンテキストでは便利です。
 

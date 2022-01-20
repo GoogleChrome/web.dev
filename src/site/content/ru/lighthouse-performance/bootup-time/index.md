@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Сократите время выполнения JavaScript
 description: Узнайте, как выполнение JavaScript может снизить производительность вашей страницы и как можно его ускорить.
 date: 2019-05-02
@@ -32,7 +32,7 @@ tags:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) показывает предупреждение, если выполнение JavaScript занимает более 2 секунд. Если  выполнение занимает более 3,5 секунд, проверка завершается неудачей:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Скриншот проверки «Сократите время выполнения JavaScript» в Lighthouse", width="800", height="321", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="Скриншот проверки «Сократите время выполнения JavaScript» в Lighthouse", width="800", height="321" %}</figure>
 
 Чтобы помочь вам выявить главные причины медленного выполнения кода, Lighthouse сообщает о времени, затрачиваемом на выполнение, оценку и обработку каждого файла JavaScript, загружаемого страницей.
 

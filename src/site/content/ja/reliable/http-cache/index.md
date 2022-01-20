@@ -106,7 +106,7 @@ webpackのようなビルドツールは、アセットURLにハッシュフィ�
 
 適切に構成されたWebサーバーは、受信要求ヘッダーを確認するときに、ブラウザによってすでにHTTPキャッシュに格納されたリソースのバージョンがWebサーバー上の最新バージョンと一致するかどうかを確認できます。一致がある場合、サーバーは[`304 Not Modified`](https://developer.mozilla.org/docs/Web/HTTP/Status/304) HTTP応答で応答できます。これは、「既存のリソースを引き続き使用すること」という意味です。このような応答を送信するときには、転送するデータがほとんどありません。このため、通常は、要求されている実際のリソースのコピーを実際に返送するよりも処理が大幅に高速化します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="リソースを要求しているクライアントと304ヘッダーで応答しているサーバーの図。", width="474", height="215" %} <figcaption class="w-figcaption w-text--left">ブラウザはサーバーに<code>/file</code>を要求し<code>If-None-Match</code>ヘッダーを追加して、サーバー上のファイルの<code>ETag</code>がブラウザの<code>If-None-Match</code>値と一致しない場合にのみ、完全なファイルを返すようにサーバーに命令します。この場合、2つの値が一致したため、サーバーは、ファイルをキャッシュに保存する期間に関する命令 (<code>Cache-Control: max-age=120</code>) と<code>304 Not Modified</code>応答を返します。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="リソースを要求しているクライアントと304ヘッダーで応答しているサーバーの図。", width="474", height="215" %} <figcaption>ブラウザはサーバーに<code>/file</code>を要求し<code>If-None-Match</code>ヘッダーを追加して、サーバー上のファイルの<code>ETag</code>がブラウザの<code>If-None-Match</code>値と一致しない場合にのみ、完全なファイルを返すようにサーバーに命令します。この場合、2つの値が一致したため、サーバーは、ファイルをキャッシュに保存する期間に関する命令 (<code>Cache-Control: max-age=120</code>) と<code>304 Not Modified</code>応答を返します。</figcaption></figure>
 
 ## まとめ{: #summary }
 
@@ -142,7 +142,7 @@ HTTPキャッシュを使用すると、不要なネットワーク要求が減�
 
 ## 付録: `Cache-Control`例{: #examples }
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

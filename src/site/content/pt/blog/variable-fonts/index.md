@@ -36,7 +36,7 @@ Outro conceito que muitas vezes é deixado em segundo plano é a distinção ent
 
 Antes das fontes variáveis, cada estilo era implementado como um arquivo de fonte separado. Com fontes variáveis, todos os estilos podem estar contidos num único arquivo.
 
-<figure>{% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="Uma composição e lista de estilos diferentes da família Roboto", width="800", height="600" %}   <figcaption class="w-figcaption w-figcaption--fullbleed">     À esquerda: uma amostra da família de tipos Roboto. À direita: estilos nomeados dentro da família.   </figcaption></figure>
+<figure>{% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="Uma composição e lista de estilos diferentes da família Roboto", width="800", height="600" %}   <figcaption>     À esquerda: uma amostra da família de tipos Roboto. À direita: estilos nomeados dentro da família.   </figcaption></figure>
 
 ## Desafios para designers e desenvolvedores
 
@@ -54,12 +54,12 @@ Isto funciona partindo de um estilo central ou 'default', geralmente o 'Regular'
 
 A fonte variável [Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex) possui três estilos para seu eixo **Peso**. O estilo Regular está no centro e existem dois estilos nas extremidades opostas do eixo, um mais leve e outro mais pesado. Entre eles, você pode escolher dentre 900 instâncias:
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="A letra 'A' mostrada em pesos diferentes", width="800", height="218" %}   <figcaption class="w-figcaption w-figcaption--fullbleed">    Acima: Anatomia ilustrada do eixo Weight (Peso) para a fonte Roboto.   </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="A letra 'A' mostrada em pesos diferentes", width="800", height="218" %}   <figcaption>    Acima: Anatomia ilustrada do eixo Weight (Peso) para a fonte Roboto.   </figcaption></figure>
 
 O desenvolvedor da fonte pode oferecer um conjunto de eixos diferentes. Você pode combiná-los porque todos compartilham os mesmos estilos padrão. Roboto tem três estilos no eixo Largura (Width): o Regular está no centro do eixo e dois estilos, Narrower (mais estreito) e Wider (mais largo), estão em cada extremidade. Eles fornecem todas as larguras possíveis para o estilo Regular e se combinam com o eixo Peso (Weight) para fornecer todas as larguras para cada peso.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-dance.mp4" type="video/mp4">
   </source></video>
   <figcaption>Roboto Flex em combinações aleatórias de largura e peso</figcaption></figure>
@@ -72,7 +72,7 @@ A forma como o estilo itálico é tratado em fontes variáveis é interessante, 
 
 Outros tipos (como Garamond, Baskerville ou Bodoni) têm contornos de glifo romano e itálico que não são compatíveis com interpolação. Por exemplo, os contornos normalmente usados para desenhar um "n" minúsculo no estilo Roman não correspondem aos mesmos contornos usados para desenhar um "n" minúsculo no estilo Italic. Em vez de interpolar um contorno ao outro, o eixo **Itálico** (Italic) alterna entre os dois contornos romano e itálico.
 
-<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="Exemplo de eixos Weight para a fonte Amstelvar", width="800", height="520" %}   <figcaption class="w-figcaption">     Contornos do "n" do tipo Amstelvar em itálico (12 pontos, peso regular, largura normal) e romano. Imagem fornecida por David Berlow, designer de tipos e tipógrafo na Font Bureau.  </figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="Exemplo de eixos Weight para a fonte Amstelvar", width="800", height="520" %}   <figcaption>     Contornos do "n" do tipo Amstelvar em itálico (12 pontos, peso regular, largura normal) e romano. Imagem fornecida por David Berlow, designer de tipos e tipógrafo na Font Bureau.  </figcaption></figure>
 
 Após a mudança para Itálico, os eixos disponíveis ao usuário devem ser os mesmos disponíveis ao estilo Romano, assim como o conjunto de caracteres deve ser o mesmo.
 
@@ -142,14 +142,14 @@ Você pode ver o exemplo em funcionamento e seu código-fonte [aqui](https://cod
 
 ### Animação
 
-<figure>   {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4",   class="w-screenshot",   controls=false,   autoplay=true,   loop=true,   muted=true,   playsinline=true   %}   <figcaption class="w-figcaption">     O tipo Zycon, projetado para animação por David Berlow, designer de tipos e tipógrafo do Font Bureau.  </figcaption></figure>
+<figure>   {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4", controls=false,   autoplay=true,   loop=true,   muted=true,   playsinline=true   %}   <figcaption>     O tipo Zycon, projetado para animação por David Berlow, designer de tipos e tipógrafo do Font Bureau.  </figcaption></figure>
 
 Também existe a possibilidade de explorar caracteres animados com fontes variáveis. Acima está um exemplo de diferentes eixos sendo usados com a fonte Zycon. Veja o [exemplo de animação](https://www.axis-praxis.org/specimens/zycon) ao vivo no Axis Praxis.
 
 [Anicons](https://typogram.github.io/Anicons) é a primeira fonte de ícones coloridos animados do mundo, baseadas no Material Design Icons. Anicons é um experimento que combina duas tecnologias de ponta para fontes: fontes variáveis e fontes coloridas.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
   </source></video>
   <figcaption>Alguns exemplos de animações com a fonte de ícones colorida Anicons</figcaption></figure>
@@ -157,7 +157,7 @@ Também existe a possibilidade de explorar caracteres animados com fontes variá
 ### Finesse
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
   </source></video>
   <figcaption>Amstelvar, usando pequenas quantidades de XTRA em direções opostas para que as larguras das palavras sejam uniformizadas</figcaption></figure>
@@ -209,7 +209,7 @@ Tradicionalmente, você definiria a `font-weight` como uma palavra-chave (`light
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-weight.mp4" type="video/mp4">
   </source></video>
   <figcaption>Eixo Weight do Roboto Flex sendo alterado do mínimo para o máximo.</figcaption></figure>
@@ -227,7 +227,7 @@ De forma similar, podemos definir `font-stretch` com as palavras-chave `condense
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-width.mp4" type="video/mp4">
   </source></video>
   <figcaption>Eixo Width do Roboto Flex sendo alterado do mínimo para o máximo.</figcaption></figure>
@@ -253,7 +253,7 @@ i, em, .italic {
 ```
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-slant.mp4" type="video/mp4">
   </source></video>
   <figcaption>Eixo Slant do Roboto Flex sendo alterado do mínimo para o máximo.</figcaption></figure>
@@ -262,7 +262,7 @@ i, em, .italic {
 
 Um tipo de letra pode ser renderizado numa dimensão muito pequena (uma nota de rodapé de 12 px) ou muito grande (um título de 80 px). As fontes podem responder a essas mudanças de tamanho, alterando o formato das letras para que sejam melhor adequadas ao seu tamanho. Um tamanho pequeno pode ficar melhor sem detalhes finos, enquanto um tamanho grande pode se beneficiar de mais detalhes e traços mais finos.
 
-<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="A letra 'a' mostrada em diferentes tamanhos ópticos", width="800", height="147" %}   <figcaption class="w-figcaption">     A letra 'a' no Roboto Flex em diferentes tamanhos de pixel, depois dimensionada para ter o mesmo tamanho, mostrando as diferenças no design. <a href="https://codepen.io/RoelN/pen/PoPvdeV">Experimente você mesmo no Codepen</a>   </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="A letra 'a' mostrada em diferentes tamanhos ópticos", width="800", height="147" %}   <figcaption>     A letra 'a' no Roboto Flex em diferentes tamanhos de pixel, depois dimensionada para ter o mesmo tamanho, mostrando as diferenças no design. <a href="https://codepen.io/RoelN/pen/PoPvdeV">Experimente você mesmo no Codepen</a>   </figcaption></figure>
 
 Uma nova propriedade CSS foi introduzida para este eixo: `font-optical-sizing`. Por default, é definida como `auto`, o que faz com que o navegador defina o valor do eixo com base no `font-size` da fonte. Isto significa que o navegador escolherá o melhor tamanho ótico automaticamente, mas se você desejar desligar esse recurso, você pode definir `font-optical-sizing` como `none`.
 
@@ -282,7 +282,7 @@ Diferentemente dos eixos registrados, os eixos personalizados não serão mapead
 O Roboto Flex oferece alguns eixos personalizados, e o mais importante é o Grade (`GRAD`). Um eixo de graduação é interessante já que altera o peso da fonte sem alterar as larguras, de forma que não mudam as quebras de linha. Ao brincar com um eixo de graduação, você pode evitar ser forçado a fazer alterações no eixo Peso, que afeta a largura geral e, em seguida, alterações no eixo Largura que afeta o peso geral.
 
 <figure>
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-grade.mp4" type="video/mp4">
   </source></video>
   <figcaption>Eixo Grade do Roboto Flex sendo alterado do mínimo para o máximo.</figcaption></figure>

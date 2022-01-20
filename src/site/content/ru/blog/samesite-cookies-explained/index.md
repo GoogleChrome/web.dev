@@ -32,7 +32,7 @@ feedback:
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Три файла cookie отправляются в браузер с сервера в ответе", width="800", height="276", style="max-width: 60vw" %} <figcaption class="w-figcaption"> Серверы устанавливают файлы cookie с помощью заголовка <code>Set-Cookie</code>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Три файла cookie отправляются в браузер с сервера в ответе", width="800", height="276", style="max-width: 60vw" %} <figcaption> Серверы устанавливают файлы cookie с помощью заголовка <code>Set-Cookie</code>. </figcaption></figure>
 
 Когда ваш читатель просматривает страницу, которая соответствует этим требованиям, то есть просматривается в безопасном соединении, а возраст cookie не превышает одного месяца, браузер пользователя отправит этот заголовок в своем запросе:
 
@@ -40,7 +40,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 Cookie: promo_shown=1
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Три файла cookie отправляются из браузера на сервер в запросе", width="800", height="165", style="max-width: 60vw" %} <figcaption class="w-figcaption"> Браузер отправляет файл cookie обратно в заголовке <code>Cookie</code>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Три файла cookie отправляются из браузера на сервер в запросе", width="800", height="165", style="max-width: 60vw" %} <figcaption> Браузер отправляет файл cookie обратно в заголовке <code>Cookie</code>. </figcaption></figure>
 
 Вы также можете добавлять и читать файлы cookie, доступные для этого сайта, в JavaScript, используя `document.cookie`. Запись в `document.cookie` приведет к созданию или переопределению файла cookie с этим ключом. Например, в консоли JavaScript браузера можно попробовать выполнить следующее:
 
@@ -56,9 +56,9 @@ Cookie: promo_shown=1
 < "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="Доступ к файлам cookie в браузере через JavaScript", width="600", height="382", style="max-width: 35vw" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     JavaScript может получить доступ к файлам cookie с помощью <code>document.cookie</code>.
   </figcaption>
 </figure>
@@ -69,13 +69,13 @@ Cookie: promo_shown=1
 
 Если вы вернетесь к  предыдущей подборке сайтов, то, вероятно, заметите, что присутствуют файлы cookie  для различных доменов, а не только для того, который вы посещаете в данный момент. Файлы cookie, соответствующие домену текущего сайта, то есть тому, что отображается в адресной строке браузера, называются **основными** файлами cookie. Аналогично, файлы cookie из доменов, отличных от текущего сайта, называются **сторонними** файлами cookie. Это определение не абсолютное, а зависит от контекста пользователя; один и тот же файл cookie может быть как основным, так и сторонним, в зависимости от того, на каком сайте пользователь находится в данный момент.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Три файла cookie отправляются в браузер из разных запросов на одной странице", width="800", height="346", style="max-width: 60vw" %} <figcaption class="w-figcaption"> Файлы cookie могут поступать с разных доменов на одной странице. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Три файла cookie отправляются в браузер из разных запросов на одной странице", width="800", height="346", style="max-width: 60vw" %} <figcaption> Файлы cookie могут поступать с разных доменов на одной странице. </figcaption></figure>
 
 Продолжая приведенный выше пример, предположим, что в одном из ваших сообщений в блоге есть изображение изумительно чудесного котика, и оно размещено по адресу `/blog/img/amazing-cat.png`. Поскольку это изображение такое изумительное, другой человек использует его прямо на своем сайте. Если посетитель был в вашем блоге и у него файл cookie `promo_shown`, то, когда он просматривает `amazing-cat.png` на сайте другого человека, этот файл cookie **будет отправлен** в этом запросе для изображения. Это никому не нужно, так как `promo_shown` ни для чего не используется на сайте этого человека, он просто добавляет накладные расходы к запросу.
 
 Если это непреднамеренный эффект, то зачем вам это нужно? Именно этот механизм позволяет сайтам сохранять состояние, когда они используются в стороннем контексте. Например, если вы разместите на своем сайте видео с YouTube, посетители увидят в проигрывателе опцию «Посмотреть позже». Если ваш посетитель уже зарегистрирован на YouTube, его сессия будет доступна во встроенном проигрывателе с помощью стороннего cookie, то есть кнопка «Посмотреть позже» просто сохранит видео одним махом, а не предложит ему войти в систему или переместит его с вашей страницы обратно на YouTube.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="Один и тот же файл cookie отправляется в трех разных контекстах<br>", width="800", height="433", style="max-width: 60vw" %} <figcaption class="w-figcaption"><br>Файл cookie в стороннем контексте отправляется при посещении разных страниц. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="Один и тот же файл cookie отправляется в трех разных контекстах<br>", width="800", height="433", style="max-width: 60vw" %} <figcaption><br>Файл cookie в стороннем контексте отправляется при посещении разных страниц. </figcaption></figure>
 
 Одно из культурных свойств Интернета заключается в том, что он по умолчанию считается открытым. Отчасти это позволило многим людям создавать собственный контент и приложения. Однако это также породило ряд проблем, связанных с безопасностью и конфиденциальностью. Атаки с подделкой межсайтовых запросов (CSRF) основываются на том факте, что файлы cookie прикрепляются к любому запросу из заданного источника, независимо от того, кто инициирует запрос. Например, если вы посетите `evil.example`, он может инициировать запросы к `your-blog.example`, и ваш браузер с радостью прикрепит связанные файлы cookie. Если ваш блог не будет внимательно следить за тем, как он проверяет эти запросы, то  `evil.example` ​может инициировать такие действия, как удаление сообщений или добавление собственного контента.
 
@@ -133,7 +133,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 Наконец, можно не указывать значение, что ранее было способом неявного заявления о том, что вы хотите, чтобы файлы cookie отправлялись во всех контекстах. В последнем проекте [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) это делается явным образом путем введения нового значения `SameSite=None`. Это означает, что вы можете использовать значение `None`, чтобы четко указать, что вы намеренно хотите, чтобы файл cookie был отправлен в стороннем контексте.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Три файла cookie, помеченных как None, Lax или Strict в зависимости от их контекста", width="800", height="456", style="max-width: 60vw" %} <figcaption class="w-figcaption"> Файлы  cookie с явно указанным контекстом <code>None</code>, <code>Lax</code> или <code>Strict</code>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Три файла cookie, помеченных как None, Lax или Strict в зависимости от их контекста", width="800", height="456", style="max-width: 60vw" %} <figcaption> Файлы  cookie с явно указанным контекстом <code>None</code>, <code>Lax</code> или <code>Strict</code>. </figcaption></figure>
 
 {% Aside %}
 

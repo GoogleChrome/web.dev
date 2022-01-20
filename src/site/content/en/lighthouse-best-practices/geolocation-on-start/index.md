@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Requests the geolocation permission on page load
 description: |
   Learn how to responsibly request geolocation permission in a way that provides
@@ -17,8 +17,8 @@ that automatically request their location on page load.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that request geolocation permission on load:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EKObTXN3729mGBN5bRyv.png", alt="Lighthouse audit showing geolocation request on page load", width="800", height="213", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EKObTXN3729mGBN5bRyv.png", alt="Lighthouse audit showing geolocation request on page load", width="800", height="213" %}
 </figure>
 
 Lighthouse checks all JavaScript executed on page load.

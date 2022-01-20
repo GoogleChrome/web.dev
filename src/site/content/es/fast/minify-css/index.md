@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minificar CSS
 authors:
   - demianrenzulli
@@ -72,7 +72,7 @@ Ahora inspeccione el contenido del CSS:
 2. Haga clic en el filtro **CSS.**
 3. Seleccione la casilla de verificación **Desactivar caché.** {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/WgneNAyftk8jneyXxMih.png", alt="Rastro no optimizada de DevTools CSS", width="800", height="138", class="w-screenshot" %}
+{% Img src="image/admin/WgneNAyftk8jneyXxMih.png", alt="Rastro no optimizada de DevTools CSS", width="800", height="138" %}
 
 La página solicita dos archivos CSS, de **1.9 KB** y **76.2 KB** respectivamente.
 
@@ -81,7 +81,7 @@ La página solicita dos archivos CSS, de **1.9 KB** y **76.2 KB** respectivament
 
 Tenga en cuenta que la hoja de estilo contiene caracteres para espacios en blanco e indentación:
 
-{% Img src="image/admin/UEB5Xxe5IHhGtMx3XfKD.png", alt="Respuesta no optimizada de DevTools CSS", width="800", height="286", class="w-screenshot" %}
+{% Img src="image/admin/UEB5Xxe5IHhGtMx3XfKD.png", alt="Respuesta no optimizada de DevTools CSS", width="800", height="286" %}
 
 A continuación, agregará algunos complementos de webpack a su proceso de compilación para minificar estos archivos.
 
@@ -145,7 +145,7 @@ Para inspeccionar el tamaño y el contenido de los archivos:
 1. Haga clic en el filtro **CSS**.
 2. Seleccione la casilla de verificación **Deshabilitar caché** si aún no está seleccionada. {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/id5kWwB3NilmVPWPTM59.png", alt="Respuesta no optimizada de DevTools CSS", width="800", height="130", class="w-screenshot" %}
+{% Img src="image/admin/id5kWwB3NilmVPWPTM59.png", alt="Respuesta no optimizada de DevTools CSS", width="800", height="130" %}
 
 Puede inspeccionar estos archivos y ver que las nuevas versiones no contienen espacios en blanco. Ambos archivos son mucho más pequeños, en particular, [animate.css](http://fav-kitties-animated-min.glitch.me/animate.css) se ha reducido en **~26%**, ¡ahorrando **~20 KB**!
 
@@ -158,7 +158,7 @@ Como paso final:
 
 El informe ya no muestra "Minificar CSS" como "Oportunidad" y ahora se ha trasladado a la sección "Auditorías aprobadas":
 
-{% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Auditorías aprobadas por Lighthouse para una página optimizada", width="800", height="163", class="w-screenshot" %}
+{% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Auditorías aprobadas por Lighthouse para una página optimizada", width="800", height="163" %}
 
 Dado que los archivos CSS son [recursos bloqueadores de la renderización](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), si aplica minificación en sitios que usan archivos CSS grandes, puede ver mejoras en métricas como [First Contentful Paint: Primer despliegue de contenido](/first-contentful-paint).
 

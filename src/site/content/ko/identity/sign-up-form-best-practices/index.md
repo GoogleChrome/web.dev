@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 가입 양식 모범 사례
 subhead: 사용자가 최소한의 번거로움으로 가입, 로그인 및 계정 세부 정보를 관리하도록 돕습니다.
 authors:
@@ -74,11 +74,11 @@ codelabs:
 
 예를 들어 페이지 오른쪽 상단의 **로그인(Login)** 또는 **로그인(Sign in)** 버튼을 사용하여 사이트에서 계정을 만드는 방법을 명확하게 만드세요. 모호한 아이콘이나 모호한 문구("탑승하세요!", "합류하기")를 사용하지 말고 탐색 메뉴에서 로그인을 숨기지 마세요. 사용성 전문가인 Steve Krug는 웹사이트 사용성에 대한 접근 방식을 다음과 같이 요약했습니다. [생각하게 하지 마세요!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63) 웹 팀의 다른 사람들을 설득해야 하는 경우 [분석](#analytics-rum)을 사용하여 다양한 옵션의 영향을 보여줍니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="안드로이드 폰에서 본 모의 전자상거래 웹사이트 스크린샷 2장. 왼쪽은 로그인 링크 아이콘을 사용하여 다소 모호한 부분이 있습니다. 오른쪽에 있는 하나는 단순히 '로그인'이라고 되어 있습니다.", width="800", height="737" %}<figcaption class="w-figcaption"> 로그인을 명확하게 합니다. 아이콘이 모호할 수 있지만 <b>로그인</b> 버튼이나 링크는 명확합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="안드로이드 폰에서 본 모의 전자상거래 웹사이트 스크린샷 2장. 왼쪽은 로그인 링크 아이콘을 사용하여 다소 모호한 부분이 있습니다. 오른쪽에 있는 하나는 단순히 '로그인'이라고 되어 있습니다.", width="800", height="737" %}<figcaption> 로그인을 명확하게 합니다. 아이콘이 모호할 수 있지만 <b>로그인</b> 버튼이나 링크는 명확합니다.</figcaption></figure>
 
 {% Aside %} 계정을 생성하기 위한 버튼(또는 링크)을 추가하고 기존 사용자가 로그인할 수 있는 다른 버튼을 추가할지 고민할 수 있습니다. 이제 많은 인기 사이트에서 단일 **로그인** 버튼만 표시합니다. 사용자가 이를 탭하거나 클릭하면 필요한 경우 계정을 생성할 수 있는 링크도 표시됩니다. 이는 이제 일반적인 패턴이며 사용자가 이를 이해할 가능성이 높지만 [상호 작용 분석](#analytics-rum)을 사용하여 단일 버튼이 가장 잘 작동하는지 여부를 모니터링할 수 있습니다. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Gmail 로그인 스크린샷: 로그인 버튼이 표시된 한 페이지, 클릭하면 계정 만들기 링크가 있는 양식으로 연결됩니다.", width ="800", height="545" %} <figcaption class="w-figcaption">Gmail 로그인 페이지에는 계정을 만들 수 있는 링크가 있습니다.<br> 여기에 표시된 것보다 큰 창 크기에서 Gmail은 <b>로그인</b> 링크 및 <b>계정 만들기</b> 버튼을 보여줍니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Gmail 로그인 스크린샷: 로그인 버튼이 표시된 한 페이지, 클릭하면 계정 만들기 링크가 있는 양식으로 연결됩니다.", width ="800", height="545" %} <figcaption>Gmail 로그인 페이지에는 계정을 만들 수 있는 링크가 있습니다.<br> 여기에 표시된 것보다 큰 창 크기에서 Gmail은 <b>로그인</b> 링크 및 <b>계정 만들기</b> 버튼을 보여줍니다.</figcaption></figure>
 
 Google과 같은 ID 제공업체를 통해 가입하고 이메일과 비밀번호를 사용하여 가입하는 사용자의 계정을 연결해야 합니다. ID 공급자의 프로필 데이터에서 사용자의 이메일 주소에 액세스하고 두 계정을 일치시킬 수 있으면 쉽게 할 수 있습니다. 아래 코드는 Google 로그인 사용자의 이메일 데이터에 액세스하는 방법을 보여줍니다.
 
@@ -98,11 +98,11 @@ if (auth2.isSignedIn.get()) {
 
 가입 과정에서 여러분의 임무는 복잡성을 최소화하고 사용자가 집중할 수 있도록 하는 것입니다. 어수선함을 줄입니다. 지금은 주의를 산만하게 하고 유혹할 때가 아닙니다!
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/avoid-distractions.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">사용자가 가입을 완료하는 데 방해가 되지 않도록 하세요.</figcaption></figure>
+  <figcaption>사용자가 가입을 완료하는 데 방해가 되지 않도록 하세요.</figcaption></figure>
 
 가입할 때 가능한 한 적게 요구하세요. 추가 사용자 데이터(예: 이름 및 주소)는 필요한 경우에만 그리고 사용자가 해당 데이터를 제공함으로써 분명한 이점이 있다고 판단되는 경우에만 수집합니다. 통신하고 저장하는 모든 데이터 항목에는 비용과 법적 책임이 따른다는 점을 명심하세요.
 
@@ -110,11 +110,11 @@ if (auth2.isSignedIn.get()) {
 
 새 기기나 브라우저에서 로그인할 때마다 사용자에게 코드를 전송하여 비밀번호 없는 로그인을 고려할 수 있습니다. Slack 및 Medium과 같은 사이트는 이 버전을 사용합니다.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/medium-sign-in.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">medium.com에서 비밀번호 없는 로그인.</figcaption></figure>
+  <figcaption>medium.com에서 비밀번호 없는 로그인.</figcaption></figure>
 
 연동 로그인과 마찬가지로 이것은 사용자 암호를 관리할 필요가 없다는 추가 이점이 있습니다.
 
@@ -154,11 +154,11 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 
 사용자가 제안한 비밀번호를 거부하는 경우 거부된 이유를 구체적으로 설명하십시오. [문제를 인라인으로 표시하고 해결 방법을 설명](https://baymard.com/blog/inline-form-validation) 하세요. 사용자가 등록 양식을 제출하고 서버의 응답을 기다려야 하는 것이 아니라 사용자가 값을 입력하는 즉시 문제를 해결하는 방법을 설명합니다.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/password-validation.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">비밀번호가 거부된 이유를 명확히 하세요.</figcaption></figure>
+  <figcaption>비밀번호가 거부된 이유를 명확히 하세요.</figcaption></figure>
 
 ## 비밀번호 붙여넣기를 금지하지 마세요. {: #allow-password-pasting}
 
@@ -180,7 +180,7 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 
 또한 사용자에게 계정 로그인 기록에 대한 액세스 권한을 제공하여 로그인이 발생한 위치와 시간을 보여주어야 합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Gmail 계정 활동 페이지", width="800", height="469" %}<figcaption class="w-figcaption"> <a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="Gmail 계정 활동을 보는 방법을 알아보세요.">Gmail 계정 활동 페이지</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Gmail 계정 활동 페이지", width="800", height="469" %}<figcaption> <a href="https://support.google.com/mail/answer/45938?hl=en-GB" title="Gmail 계정 활동을 보는 방법을 알아보세요.">Gmail 계정 활동 페이지</a>.</figcaption></figure>
 
 ## 비밀번호를 변경하거나 재설정하기 쉽게 만드세요 {: #password-change}
 
@@ -196,7 +196,7 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 
 많은 사용자가 이메일 주소와 비밀번호 등록 양식을 사용하여 웹사이트에 로그인하는 것을 선호합니다. 그러나 사용자가 연동 로그인이라고도 하는 서드파티 ID 공급자를 통해 로그인할 수 있도록 설정해야 합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="워드프레스 로그인 페이지", width="800", height="513" %}<figcaption class="w-figcaption"> Google 및 Apple 로그인 옵션이 있는 WordPress 로그인 페이지.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="워드프레스 로그인 페이지", width="800", height="513" %}<figcaption> Google 및 Apple 로그인 옵션이 있는 WordPress 로그인 페이지.</figcaption></figure>
 
 이 접근 방식에는 몇 가지 장점이 있습니다. 연동 로그인을 사용하여 계정을 만드는 사용자의 경우 비밀번호를 묻거나, 커뮤니케이션하거나, 저장할 필요가 없습니다.
 
@@ -210,7 +210,7 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 
 많은 사용자가 동일한 브라우저를 사용하여 장치를 공유하고 계정 간에 교환합니다. 사용자가 연동 로그인에 액세스하는지 여부에 관계없이 계정 전환을 간단하게 만들어야 합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, 계정 전환 표시 중", width="800", height="494" %}<figcaption class="w-figcaption"> Gmail에서 계정 전환.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, 계정 전환 표시 중", width="800", height="494" %}<figcaption> Gmail에서 계정 전환.</figcaption></figure>
 
 ## 다중 인증 제공 고려 {: #multi-factor-authentication}
 

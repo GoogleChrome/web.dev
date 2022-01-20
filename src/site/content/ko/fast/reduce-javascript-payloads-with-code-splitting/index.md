@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 코드 분할로 JavaScript 페이로드 줄이기
 authors:
   - houssein
@@ -19,7 +19,7 @@ tags:
 
 Lighthouse는 페이지에서 모든 JavaScript를 실행하는 데 상당한 시간이 걸리면 실패한 감사라고 표시합니다.
 
-{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="실행하는 데 너무 오래 걸리는 스크립트를 보여주는 실패한 Lighthouse 감사.", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="실행하는 데 너무 오래 걸리는 스크립트를 보여주는 실패한 Lighthouse 감사.", width="797", height="100" %}
 
 사용자가 애플리케이션을 로드할 때 초기 경로에 필요한 코드만 보내도록 JavaScript 번들을 분할합니다. 이렇게 하면 구문 분석 및 컴파일해야 하는 스크립트의 양이 최소화되어 페이지 로드 시간이 빨라집니다.
 

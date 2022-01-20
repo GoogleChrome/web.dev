@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Utilice la carga diferida para mejorar la velocidad de carga
 authors:
   - jlwagner
@@ -20,7 +20,7 @@ La porción de [imágenes](http://beta.httparchive.org/reports/state-of-images?s
 
 La carga diferida es una técnica que pospone la carga de recursos no críticos en el momento de la carga de la página. En vez de cargar de inmediato, estos recursos no críticos se cargan en el momento en que se necesitan. En lo que a imágenes se refiere, "no crítico" es a menudo sinónimo de "fuera de pantalla". Si ha utilizado Lighthouse y visualizó algunas oportunidades de mejora, es posible que haya visto alguna guía en este ámbito en la forma de la [Defer offscreen images audit (auditoría Diferir imágenes fuera de pantalla)](/offscreen-images/):
 
-<figure class="w-figure">{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Una captura de pantalla de la auditoría de diferir imágenes fuera de pantalla en Lighthouse.", width="800", height="102", class="w-screenshot" %}<figcaption class="w-figcaption"> Una de las auditorías de rendimiento de Lighthouse es identificar imágenes fuera de pantalla, que son candidatas para la carga diferida.</figcaption></figure>
+<figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Una captura de pantalla de la auditoría de diferir imágenes fuera de pantalla en Lighthouse.", width="800", height="102" %}<figcaption> Una de las auditorías de rendimiento de Lighthouse es identificar imágenes fuera de pantalla, que son candidatas para la carga diferida.</figcaption></figure>
 
 Probablemente ya haya visto la carga diferida en acción, y es algo así:
 
@@ -30,7 +30,7 @@ Probablemente ya haya visto la carga diferida en acción, y es algo así:
 
 Se puede encontrar un ejemplo de carga diferida de imágenes en la popular plataforma de publicación [Medium](https://medium.com/), que carga imágenes de marcador de posición ligeras al cargar la página y las reemplaza con imágenes cargadas de forma diferida a medida que se desplazan hacia la ventana gráfica.
 
-<figure class="w-figure">{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="Una captura de pantalla del sitio web Medium durante la navegación, que muestra la carga diferida en acción. El marcador de posición borroso está a la izquierda y el recurso cargado está en la derecha.", width="800", height="493" %}<figcaption class="w-figcaption"> Un ejemplo de carga diferida de imágenes en acción. Una imagen de marcador de posición se usa al cargar la página (izquierda) y, cuando se desplaza hacia la ventana gráfica, la imagen final se carga en el momento en que se necesita.</figcaption></figure>
+<figure>{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="Una captura de pantalla del sitio web Medium durante la navegación, que muestra la carga diferida en acción. El marcador de posición borroso está a la izquierda y el recurso cargado está en la derecha.", width="800", height="493" %}<figcaption> Un ejemplo de carga diferida de imágenes en acción. Una imagen de marcador de posición se usa al cargar la página (izquierda) y, cuando se desplaza hacia la ventana gráfica, la imagen final se carga en el momento en que se necesita.</figcaption></figure>
 
 Si no está familiarizado con la carga diferida, es posible que se pregunte qué tan útil es la técnica y cuáles son sus beneficios. ¡Sigue leyendo para descubrirlo!
 

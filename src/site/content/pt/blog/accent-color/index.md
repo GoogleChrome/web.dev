@@ -22,11 +22,11 @@ accent-color: hotpink;
 
 A `accent-color` de [destaque CSS da especificação da interface do usuário CSS](https://www.w3.org/TR/css-ui-4/#widget-accent) está aqui para tingir os elementos com uma linha de CSS, poupando você dos esforços de personalização ao fornecer uma maneira de trazer sua marca para os elementos.
 
-<figure class="w-figure ">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", class="w-screenshot", alt="Uma captura de tela de tema leve de uma demonstração de cores de destaque em que caixa de seleção, botões de opção, um controle deslizante de intervalo e elemento de progresso são todos na cor rosa choque.", width="800", height="548" %} <figcaption class="w-figure"> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a> </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", alt="Uma captura de tela de tema leve de uma demonstração de cores de destaque em que caixa de seleção, botões de opção, um controle deslizante de intervalo e elemento de progresso são todos na cor rosa choque.", width="800", height="548" %} <figcaption> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a> </figcaption></figure>
 
 O `accent-color` também funciona com o [`color-scheme`](/color-scheme/), permitindo aos autores colorir os elementos claros e escuros. No exemplo a seguir, o usuário tem um tema escuro ativo, a página usa `color-scheme:light dark` e usa a mesma `accent-color:hotpink` para controles rosa choque com tema escuro.
 
-<figure class="w-figure">{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="Uma captura de tela de tema escuro de uma demo accent-color onde caixa de seleção, botões de seleção, um controle deslizante de intervalo e um elemento de progresso estão na cor rosa choque.", width="800", height="548" %} <figcaption class="w-figure"> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a> </figcaption></figure>
+<figure>{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", alt="Uma captura de tela de tema escuro de uma demo accent-color onde caixa de seleção, botões de seleção, um controle deslizante de intervalo e um elemento de progresso estão na cor rosa choque.", width="800", height="548" %} <figcaption> <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a> </figcaption></figure>
 
 ### Suporte para navegador
 
@@ -58,7 +58,7 @@ Atualmente, apenas quatro elementos serão tingidos por meio da propriedade `acc
 
 Para evitar a existência de elementos inacessíveis, os navegadores com `accent-color` precisam determinar uma [cor de contraste compatível](https://webaim.org/articles/contrast/) a ser usada junto com o destaque personalizado. Abaixo está uma captura de tela que demonstra como o Chrome 94 (esquerda) e o Firefox 92 Noturno (direita) diferem em seus algoritmos:
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", class="w-screenshot", alt="Uma captura de tela do Firefox e Chromium lado a lado, renderizando um espectro completo de caixas de seleção em vários tons e sombras.", width="800", height="832" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", alt="Uma captura de tela do Firefox e Chromium lado a lado, renderizando um espectro completo de caixas de seleção em vários tons e sombras.", width="800", height="832" %}
 
 O mais importante a tirar disso é **confiar no navegador**. Forneça a cor da marca e confie que ela tomará decisões inteligentes para você.
 

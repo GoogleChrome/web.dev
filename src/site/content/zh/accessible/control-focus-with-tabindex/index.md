@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 tabindex 控制焦点
 authors:
   - robdodson

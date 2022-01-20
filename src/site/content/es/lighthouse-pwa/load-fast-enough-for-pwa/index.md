@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: La carga de la página no es lo suficientemente rápida en las redes móviles
 description: |2
 
@@ -18,7 +18,7 @@ Muchos usuarios de su página visitan usando una conexión de red celular lenta.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no se cargan lo suficientemente rápido en dispositivos móviles:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt = "La auditoría de Lighthouse muestra que la página no se carga lo suficientemente rápido en el dispositivo móvil", width = "800", height = "98", class = "w-screenshot "%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt = "La auditoría de Lighthouse muestra que la página no se carga lo suficientemente rápido en el dispositivo móvil", width = "800", height = "98"%}</figure>
 
 Dos métricas principales afectan la forma en que los usuarios perciben el tiempo de carga:
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carregar JavaScript de terceiros com eficiência
 subhead: Evite as armadilhas comuns de usar scripts de terceiros para melhorar o tempo de carregamento e a experiência do usuário.
 authors:
@@ -107,7 +107,7 @@ O [suporte do navegador para `dns-prefetch`](https://caniuse.com/#search=dns-pre
 
 Recursos de terceiros incorporados podem ser um grande contribuidor para diminuir a velocidade da página quando são mal construídos. Se não forem essenciais ou estiverem na parte inferior da página (ou seja, se os usuários tiverem que rolar para visualizá-los), o carregamento lento é uma boa maneira de melhorar a velocidade da página e as métricas de pintura. Dessa forma, os usuários obterão o conteúdo da página principal com mais rapidez e terão uma experiência melhor.
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="Um diagrama de uma página da web mostrado em um dispositivo móvel com conteúdo rolável que se estende além da tela. O conteúdo na parte inferior está dessaturado porque não foi carregado ainda.", width="366", height="438" %}</figure>
+<figure data-float="left">{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="Um diagrama de uma página da web mostrado em um dispositivo móvel com conteúdo rolável que se estende além da tela. O conteúdo na parte inferior está dessaturado porque não foi carregado ainda.", width="366", height="438" %}</figure>
 
 Uma abordagem eficaz é carregar lentamente o conteúdo de terceiros após o carregamento do conteúdo da página principal. Os anúncios são um bom candidato para essa abordagem.
 

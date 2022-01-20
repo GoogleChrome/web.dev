@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 양식 요소에 연결된 레이블이 없습니다.
 description: 레이블을 제공하여 보조 기술 사용자가 양식 요소에 액세스할 수 있도록 하는 방법을 알아보세요.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse 플래그는 연결된 레이블이 없는 요소를 형성합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="관련된 레이블이 없는 양식 요소를 보여주는 Lighthouse 감사", width="800", height="185", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="관련된 레이블이 없는 양식 요소를 보여주는 Lighthouse 감사", width="800", height="185" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

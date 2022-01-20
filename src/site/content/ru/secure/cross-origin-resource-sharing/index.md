@@ -20,7 +20,7 @@ tags:
 
 ## Как работает запрос ресурса в Интернете?
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="запрос и ответ", width="668", height="327" %} <figcaption class="w-figcaption"> Рисунок: иллюстрированный запрос клиента и ответ сервера</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="запрос и ответ", width="668", height="327" %} <figcaption> Рисунок: иллюстрированный запрос клиента и ответ сервера</figcaption></figure>
 
 Браузер и сервер могут обмениваться данными по сети с помощью **протокола передачи гипертекста** (HTTP). HTTP определяет правила связи между запрашивающей стороной и респондентом, включая информацию, необходимую для получения ресурса.
 

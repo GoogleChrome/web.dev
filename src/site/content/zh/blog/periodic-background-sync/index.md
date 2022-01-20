@@ -233,11 +233,11 @@ self.addEventListener('periodicsync', (event) => {
 
 DevTools 的**后台定期同步**部分围绕后台定期同步生命周期中的关键事件进行组织：注册同步、执行后台同步和取消注册。要获取有关这些事件的信息，请单击**开始记录**。
 
-<figure>{% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="DevTools 中的记录按钮", width="708", height="90", class="w-screenshot" %}<figcaption>DevTools 中的记录按钮</figcaption></figure>
+<figure>{% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="DevTools 中的记录按钮", width="708", height="90" %}<figcaption>DevTools 中的记录按钮</figcaption></figure>
 
 记录时，条目将出现在与事件对应的 DevTools 中，并为每个条目记录上下文和元数据。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="记录的后台定期同步数据示例", width="800", height="357", class="w-screenshot", style="max-width: 75%" %} <figcaption>记录的后台定期同步数据示例</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="记录的后台定期同步数据示例", width="800", height="357", style="max-width: 75%" %} <figcaption>记录的后台定期同步数据示例</figcaption></figure>
 
 启用记录一次后，它最多会保持启用状态三天，从而允许 DevTools 获取有关可能发生的后台同步的本地调试信息（甚至在未来几小时内）。
 
@@ -249,10 +249,10 @@ DevTools 的**后台定期同步**部分围绕后台定期同步生命周期中�
 
 {% Aside %} 手动触发 `periodicsync` 事件需要 Chrome 81 或更高版本。{% endAside %}
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="应用程序面板中的“服务工作进程”部分显示了“定期同步”文本字段和按钮。", width="800", height=" 321", class="w-screenshot", style="max-width: 90%" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="应用程序面板中的“服务工作进程”部分显示了“定期同步”文本字段和按钮。", width="800", height=" 321", style="max-width: 90%" %}</figure>
 
 ## 使用 DevTools 界面
 
 从 Chrome 81 开始，您将在 DevTools *应用程序*面板中看到**后台定期同步**部分。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="显示后台定期同步部分的应用程序面板", width="382", height="253", class="w-screenshot", style="max-width: 75%" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="显示后台定期同步部分的应用程序面板", width="382", height="253", style="max-width: 75%" %}</figure>

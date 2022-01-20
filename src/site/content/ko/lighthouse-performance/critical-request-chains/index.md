@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요한 요청 연결 방지
 description: 중요한 요청 연결이 무엇인지, 이것이 웹 페이지 성능에 어떠한 영향을 미치는지, 어떻게 그 효과를 줄일 수 있는지 알아봅니다.
 date: 2019-05-02
@@ -12,7 +12,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 높은 우선순위로 로드된 중요한 요청을 보고합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouse 최소화 중요 요청 깊이를 보여주는 스크린샷", width="800", height="452", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Lighthouse 최소화 중요 요청 깊이를 보여주는 스크린샷", width="800", height="452" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

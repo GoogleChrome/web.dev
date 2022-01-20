@@ -23,7 +23,7 @@ feedback:
 
 {% Aside %}这里面只有 Web Share Target API 一半的功劳。 Web 应用可以使用 Web Share API 分享数据、文件、链接或文本。有关详细信息，请参阅 [Web Share API](/web-share/)。 {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt=" 安卓手机的 Share via 抽屉。", width="400", height="377" %}<figcaption class="w-figcaption w-figcaption--fullbleed">将安装的 PWA 作为一个选项的系统级分享目标选择器。</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt=" 安卓手机的 Share via 抽屉。", width="400", height="377" %}<figcaption>将安装的 PWA 作为一个选项的系统级分享目标选择器。</figcaption></figure>
 
 ## 查看 Web Share Target 的实际应用
 
@@ -168,7 +168,7 @@ self.addEventListener('fetch', event => {
 
 ### 验证分享内容
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="显示带有分享内容的演示应用的 Android 手机。", width="400", height="280" %}<figcaption class="w-figcaption w-figcaption--fullbleed">分享目标应用的示例。</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="显示带有分享内容的演示应用的 Android 手机。", width="400", height="280" %}<figcaption>分享目标应用的示例。</figcaption></figure>
 
 请务必验证传入的数据。遗憾的是，我们无法保证其他应用会以正确的参数分享适当的内容。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Por que a velocidade é importante?
 authors:
   - bojanpavic
@@ -19,7 +19,7 @@ Esta postagem resume algumas das pesquisas feitas sobre a relação entre desemp
 
 ## Desempenho envolve reter usuários
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   <blockquote>
     <p>O desempenho impactou diretamente os resultados financeiros da empresa.</p>
     <cite>
@@ -51,7 +51,7 @@ Quando se trata de experiência do usuário, a velocidade é importante. Um [est
 
 Conforme um site começa a carregar, há um período de tempo em que os usuários esperam que o conteúdo apareça. Até que isso aconteça, sequer há experiência do usuário para se falar. Essa falta de experiência é passageira em conexões rápidas. Em conexões mais lentas, no entanto, os usuários são forçados a esperar. Os usuários podem ter mais problemas à medida que os recursos da página lentamente chegam.
 
-<figure class="w-figure">{% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="Uma comparação de dois rolos de película de uma página carregando. O primeiro mostra uma página carregando em uma conexão lenta, enquanto o segundo mostra a mesma página carregando em um conexão rápida.", width="800", height="264" %}<figcaption>Uma comparação entre o carregamento da página em uma conexão muito lenta (parte superior) e uma conexão mais rápida (parte inferior).</figcaption></figure>
+<figure>{% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="Uma comparação de dois rolos de película de uma página carregando. O primeiro mostra uma página carregando em uma conexão lenta, enquanto o segundo mostra a mesma página carregando em um conexão rápida.", width="800", height="264" %}<figcaption>Uma comparação entre o carregamento da página em uma conexão muito lenta (parte superior) e uma conexão mais rápida (parte inferior).</figcaption></figure>
 
 O desempenho é um aspecto fundamental das boas experiências do usuário. Quando os sites enviam muitos códigos, os navegadores devem usar megabytes do plano de dados do usuário para fazer o download do código. Os dispositivos móveis têm capacidade de CPU e memória limitadas. Frequentemente, esses aparelhos ficam sobrecarregados com o que podemos considerar uma pequena quantidade de código não otimizado. Isso cria um desempenho ruim que leva à falta de resposta. Sabendo o que sabemos sobre o comportamento humano, os usuários só irão tolerar aplicativos de baixo desempenho por um certo tempo até abandoná-los.
 

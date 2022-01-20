@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 웹용 브라우저 수준 이미지 지연 로딩
 subhead: 지연 로딩이 드디어 기본 제공됩니다!
 authors:
@@ -20,8 +20,8 @@ feedback:
 
 이제 웹에서 지연 로딩 이미지에 대한 브라우저 수준 지원이 제공됩니다! 이 비디오에서는 이 기능의 [데모](https://mathiasbynens.be/demo/img-loading-lazy)를 보여줍니다.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </source></source></video></figure>
@@ -94,11 +94,11 @@ JavaScript 지연 로딩 라이브러리와 비교하여 보기 내로 스크롤
 
 이전 임계값과 새 임계값 비교:
 
-<figure class="w-figure">   {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="이미지 지연 로딩에 대해 새롭게 향상된 임계값으로 뷰포트로부터 거리 임계값을 3000px에서 1250px로 줄여 연결 속도 개선", width="800", height="460" %}</figure>
+<figure>   {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="이미지 지연 로딩에 대해 새롭게 향상된 임계값으로 뷰포트로부터 거리 임계값을 3000px에서 1250px로 줄여 연결 속도 개선", width="800", height="460" %}</figure>
 
 그리고 새로운 임계값 대 지연 크기(주요 JS 지연 로딩 라이브러리):
 
-<figure class="w-figure">   {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="동일한 네트워크 조건에서 70KB로 로드되는 LazySizes와 비교하여 90KB의 이미지를 로드하는 Chrome의 새로운 뷰포트로부터의 거리 임계값", width="800", height="355" %}</figure>
+<figure>   {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="동일한 네트워크 조건에서 70KB로 로드되는 LazySizes와 비교하여 90KB의 이미지를 로드하는 Chrome의 새로운 뷰포트로부터의 거리 임계값", width="800", height="355" %}</figure>
 
 {% Aside %} 최신 버전의 Chrome 사용자도 새로운 임계값의 이점을 누릴 수 있도록 Chrome 79 - 85에서도 사용할 수 있도록 이러한 변경 사항을 백포트했습니다. 이전 버전과 최신 버전의 Chrome에서 데이터 절약을 비교하려는 경우 이 점을 염두에 두십시오. {% endAside %}
 

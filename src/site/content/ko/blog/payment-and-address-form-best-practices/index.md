@@ -133,7 +133,7 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 예를 들어 이메일 주소에 `type="email"`을 사용하고 전화번호에는 `type="tel"`을 사용하세요.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="이메일 주소(type=email 사용)를 입력하는 동안 그리고 전화번호(type=tel 포함)를 입력하는 동안 적절한 키보드를 표시하는 Android 전화에 대한 스크린샷 2개.", width="800", height="683" %} <figcaption class="w-figcaption">이메일 및 전화에 적합한 키보드.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="이메일 주소(type=email 사용)를 입력하는 동안 그리고 전화번호(type=tel 포함)를 입력하는 동안 적절한 키보드를 표시하는 Android 전화에 대한 스크린샷 2개.", width="800", height="683" %} <figcaption>이메일 및 전화에 적합한 키보드.</figcaption></figure>
 
 {: #inputmode-attribute}
 
@@ -163,7 +163,7 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 기본적으로 청구서 수신 주소를 배송 주소와 동일하게 설정합니다. 청구서 수신 주소를 양식에 표시하는 대신 청구서 수신 주소를 편집할 수 있는 링크를 제공(또는 [`summary` 및 `details` 요소](https://simpl.info/details/) 사용)하여 시각적 혼란을 줄입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="청구서 수신 주소를 변경하는 링크를 나타내는 결제 페이지 예제.", width="800", height="250" %} <figcaption class="w-figcaption">청구서 검토 링크 추가.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="청구서 수신 주소를 변경하는 링크를 나타내는 결제 페이지 예제.", width="800", height="250" %} <figcaption>청구서 검토 링크 추가.</figcaption></figure>
 
 배송 주소와 마찬가지로 청구서 수신 주소에 적절한 자동 완성 값을 사용하면 사용자가 데이터를 두 번 이상 입력할 필요가 없습니다. 다른 섹션에 동일한 이름이 있는 입력에 대한 값이 다를 경우 접두어를 추가하여 속성을 자동으로 완성합니다.
 
@@ -195,7 +195,7 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 양식 제출 시 브라우저는 문제가 있거나 필수 값이 누락된 필드에 자동으로 초점을 맞춥니다. JavaScript가 필요하지 않습니다!
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="브라우저 프롬프트와 유효하지 않은 이메일 값에 대한 포커스를 보여주는 데스크톱의 Chrome 로그인 양식에 대한 스크린샷.", width="500", height="483", class="w-screenshot" %} <figcaption class="w-figcaption">브라우저의 기본 제공 유효성 검사 기능.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="브라우저 프롬프트와 유효하지 않은 이메일 값에 대한 포커스를 보여주는 데스크톱의 Chrome 로그인 양식에 대한 스크린샷.", width="500", height="483" %} <figcaption>브라우저의 기본 제공 유효성 검사 기능.</figcaption></figure>
 
 제출 버튼을 클릭할 때 오류 목록을 제공하는 대신 인라인으로 유효성을 검사하고 사용자가 데이터를 입력할 때 피드백을 제공합니다. 양식 제출 후 서버의 데이터를 유효성 검사해야 하는 경우 발견된 모든 문제를 나열하고 유효하지 않은 값이 있는 모든 양식 필드를 명확하게 강조 표시하고 문제가 있는 각 필드 옆에 수정해야 할 항목을 설명하는 메시지를 인라인으로 표시합니다. 서버 로그 및 분석 데이터에서 일반적인 오류를 확인하십시오. 양식을 다시 디자인해야 할 수도 있습니다.
 
@@ -227,7 +227,7 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 온라인 상점의 경우 양식 마찰을 줄이는 가장 간단한 방법은 게스트 결제를 기본값으로 설정하는 것입니다. 사용자가 구매하기 전에 계정을 만들도록 강요하지 마십시오. 고객 결제를 허용하지 않는 것이 장바구니 포기의 주요 원인입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="결제하는 동안 장바구니를 포기하는 이유.", width="800", height="503", class="w-screenshot" %} <figcaption class="w-figcaption">출처: <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="결제하는 동안 장바구니를 포기하는 이유.", width="800", height="503" %} <figcaption>출처: <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption></figure>
 
 결제 후 계정 가입을 제안할 수 있습니다. 이 시점에서 계정을 설정하는 데 필요한 대부분의 데이터가 이미 있으므로 사용자를 위해 계정을 빠르고 쉽게 만들 수 있습니다.
 
@@ -237,19 +237,19 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 진행 상황을 표시하고 다음에 수행해야 할 작업을 명확히 하여 결제 프로세스를 더 쉽게 만들 수 있습니다. 아래 동영상은 영국 소매업체인 [johnlewis.com](https://www.johnlewis.com)이 이를 달성하는 방법을 보여줍니다.
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption class="w-figcaption">결제 진행 과정 보기.</figcaption></figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption>결제 진행 과정 보기.</figcaption></figure>
 
 모멘텀을 유지해야 합니다! 결제를 위한 각 단계마다 페이지 제목과 설명 버튼 값을 사용하여 지금 수행해야 할 작업과 결제 후 단계를 명확히 합니다.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">양식 버튼에 다음에 무엇이 표시될지 알려주는 의미 있는 이름을 부여하십시오.</figcaption></figure>
+  <figcaption>양식 버튼에 다음에 무엇이 표시될지 알려주는 의미 있는 이름을 부여하십시오.</figcaption></figure>
 
 모바일 키보드 입력 키 레이블을 설정하려면 양식 입력에 `enterkeyhint` 속성을 사용하십시오. 예를 들어, 다중 페이지 양식 내에서는 `enterkeyhint="previous"` 및 `enterkeyhint="next"`를 사용하고, 양식의 최종 입력에 대해서는 `enterkeyhint="done"`, 그리고 검색 입력에 대해서는 `enterkeyhint="search"`를 사용하십시오.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Enterkeyhint 입력 속성이 Enter 키 버튼 아이콘을 변경하는 방법을 보여주는 Android 주소 양식에 대한 두 개의 스크린샷.", width="800", height="684", class="w-screenshot" %} <figcaption class="w-figcaption">Android의 입력 키 버튼: '다음' 및 '완료'.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Enterkeyhint 입력 속성이 Enter 키 버튼 아이콘을 변경하는 방법을 보여주는 Android 주소 양식에 대한 두 개의 스크린샷.", width="800", height="684" %} <figcaption>Android의 입력 키 버튼: '다음' 및 '완료'.</figcaption></figure>
 
 `enterkeyhint` 속성은 [Android 및 iOS에서 지원](https://caniuse.com/mdn-html_global_attributes_enterkeyhint)됩니다. [enterkeyhint 설명자](https://github.com/dtapuska/enterkeyhint)에서 자세한 내용을 확인할 수 있습니다.
 
@@ -261,18 +261,18 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 제품 프로모션과 같은 시각적 혼란과 주의를 산만하게 하는 요소를 제거하여 잠재적 출구 지점을 제한합니다. 많은 성공적인 소매업체는 결제에서 탐색 및 검색을 제거하기도 합니다.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="johnlewis.com 결제를 통한 진행 상황을 보여주는 두 개의 모바일 스크린샷. 검색, 탐색 및 기타 방해 요소가 제거되었습니다.", width="800", height="683", class="w-screenshot" %}
-  <figcaption class="w-figcaption">결제를 위해 제거된 검색, 탐색 및 기타 방해 요소.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="johnlewis.com 결제를 통한 진행 상황을 보여주는 두 개의 모바일 스크린샷. 검색, 탐색 및 기타 방해 요소가 제거되었습니다.", width="800", height="683" %}
+  <figcaption>결제를 위해 제거된 검색, 탐색 및 기타 방해 요소.</figcaption>
 </figure>
 
 여정에 집중하세요. 지금은 사용자가 다른 일을 하도록 유혹할 때가 아닙니다!
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="무료 스티커에 대한 산만한 프로모션을 보여주는 모바일 결제 페이지 스크린샷", width="350", height="735", class="w-screenshot" %} <figcaption class="w-figcaption"> 고객이 구매를 완료하는 데 방해가 되지 않도록 합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="무료 스티커에 대한 산만한 프로모션을 보여주는 모바일 결제 페이지 스크린샷", width="350", height="735" %} <figcaption> 고객이 구매를 완료하는 데 방해가 되지 않도록 합니다.</figcaption></figure>
 
 재방문 사용자의 경우 볼 필요가 없는 데이터를 숨겨 결제 흐름을 더욱 간순화할 수 있습니다. 예를 들어, 배송 주소를 양식이 아닌 일반 텍스트로 표시하여 사용자가 링크를 통해 배송 주소를 변경할 수 있도록 합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="표시되지 않은 배송 주소, 지불 방법 및 청구서 수신 주소를 변경하는 링크를 포함하여 일반 텍스트로 텍스트를 표시하는 결제 페이지의 '주문 검토' 섹션에 대한 스크린샷.", width="450", height="219", class="w-screenshot" %} <figcaption class="w-figcaption">고객이 볼 필요가 없는 데이터를 숨깁니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="표시되지 않은 배송 주소, 지불 방법 및 청구서 수신 주소를 변경하는 링크를 포함하여 일반 텍스트로 텍스트를 표시하는 결제 페이지의 '주문 검토' 섹션에 대한 스크린샷.", width="450", height="219" %} <figcaption>고객이 볼 필요가 없는 데이터를 숨깁니다.</figcaption></figure>
 
 ## 이름과 주소를 쉽게 입력할 수 있도록 합니다. {: #address-forms}
 
@@ -328,11 +328,11 @@ HTML `<form>`을 사용하면 모든 최신 브라우저에서 강력한 기본 
 
 {% endCompare %}
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">라틴어 전용 문자 일치와 비교한 유니코드 문자 일치.</figcaption></figure>
+  <figcaption>라틴어 전용 문자 일치와 비교한 유니코드 문자 일치.</figcaption></figure>
 
 {% Aside %} 아래에서 [국제화 및 현지화](#internationalization-localization)에 대해 자세히 알아볼 수 있지만 사용자가 있는 모든 지역의 이름에 대해 양식이 효과적인지 확인하세요. 예를 들어, 일본어 이름의 경우 음성 이름을 위한 필드를 넣는 것을 고려해야 합니다. 이렇게 하면 고객 지원 직원이 전화로 고객의 이름을 말할 수 있습니다. {% endAside %}
 
@@ -415,19 +415,19 @@ Address line 2 (optional)
 
 우편번호 주소 제안은 모든 국가에서 효과적이지 않으며 일부 지역에서는 우편번호에 상당히 많은 잠재적 주소가 될 수 있습니다.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">ZIP 또는 우편번호에는 많은 주소가 포함될 수 있습니다!</figcaption></figure>
+  <figcaption>ZIP 또는 우편번호에는 많은 주소가 포함될 수 있습니다!</figcaption></figure>
 
 사용자가 긴 주소 목록에서 선택하기가 어렵습니다. 특히 사용자가 서두르거나 스트레스를 받는 모바일에서는 더욱 그렇습니다. 사용자가 자동 채우기 기능을 활용하고 한 번의 탭이나 클릭으로 채워진 전체 주소를 입력하도록 하는 것이 더 쉽고 오류가 덜 발생할 수 있습니다.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">단일 이름 입력으로 원 탭(원 클릭) 주소 입력이 가능합니다.</figcaption></figure>
+  <figcaption>단일 이름 입력으로 원 탭(원 클릭) 주소 입력이 가능합니다.</figcaption></figure>
 
 ## 결제 양식 간소화 {: #general-guidelines}
 
@@ -450,13 +450,13 @@ Address line 2 (optional)
 
 적절히 디자인되지 않은 경우 [사용자 정의 요소](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements)는 자동 채우기를 중단하여 결제 흐름을 방해할 수 있으며 이전 브라우저에서는 효과적이지 않을 수 있습니다. 자동 완성 기능에서 다른 모든 지불 카드 세부 정보를 사용할 수 있지만 자동 채우기가 사용자 지정 요소에 효과적이지 않았기 때문에 사용자는 만료 날짜를 찾기 위해 자신의 실제 지불 카드를 찾아야 합니다. 따라서 구매하지 않고 사이트를 떠날 수 있습니다. 대신 표준 HTML 요소를 사용하고 그에 따라 스타일을 지정하는 것을 고려하십시오.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="자동 채우기를 방해하는 카드 만료 날짜에 대한 사용자 정의 요소를 보여주는 지불 양식 스크린샷.", width="800", height="916" %} <figcaption class="w-figcaption">만료 날짜를 제외한 모든 필드가 채워진 자동 완성 기능!</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="자동 채우기를 방해하는 카드 만료 날짜에 대한 사용자 정의 요소를 보여주는 지불 양식 스크린샷.", width="800", height="916" %} <figcaption>만료 날짜를 제외한 모든 필드가 채워진 자동 완성 기능!</figcaption></figure>
 
 ### 지불 카드 및 전화번호 숫자에 단일 입력 사용 {: #single-number-input}
 
 지불 카드 및 전화번호의 경우 단일 입력을 사용합니다. 번호를 여러 부분으로 나누지 마십시오. 그러면 사용자가 데이터를 더 쉽게 입력할 수 있고 유효성 검사가 더 간단해지며 브라우저에서 자동 채우기 기능을 사용할 수 있습니다. PIN 및 은행 코드와 같은 다른 숫자 데이터에 대해서도 동일한 작업을 수행하는 것을 고려하십시오.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="4가지 입력 요소로 나누어진 신용카드 필드를 표시하는 지불 양식 스크린샷.", width="800", height="833" %} <figcaption class="w-figcaption">신용카드 번호에 여러 개의 입력을 사용하지 마세요.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="4가지 입력 요소로 나누어진 신용카드 필드를 표시하는 지불 양식 스크린샷.", width="800", height="833" %} <figcaption>신용카드 번호에 여러 개의 입력을 사용하지 마세요.</figcaption></figure>
 
 ### 신중하게 유효성 검사 {: #validate}
 
@@ -474,7 +474,7 @@ Address line 2 (optional)
 
 양식 요소의 기능과 모양이 다를 수 있고 표시 영역 크기의 차이로 인해 위치 문제가 발생할 수 있으므로 사용자에게 가장 일반적인 플랫폼에서 주소 및 지불 양식을 테스트하는 것이 특히 중요합니다. BrowserStack을 사용하면 다양한 장치와 브라우저에서 [오픈 소스 프로젝트를 무료로 테스트](https://www.browserstack.com/open-source)할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="iPhone 7 및 11에서 지불 양식 payment-form.glitch.me에 대한 스크린샷. 전체적인 지불 버튼은 iPhone 11에는 표시되지만 7에서는 표시되지 않습니다.", width="800", height="707" %} <figcaption class="w-figcaption">iPhone 7 및 iPhone 11의 동일한 페이지.<br><strong>지불 완료</strong> 버튼이 숨겨지지 않도록 더 작은 모바일 표시 영역의 패딩을 줄이십시오.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="iPhone 7 및 11에서 지불 양식 payment-form.glitch.me에 대한 스크린샷. 전체적인 지불 버튼은 iPhone 11에는 표시되지만 7에서는 표시되지 않습니다.", width="800", height="707" %} <figcaption>iPhone 7 및 iPhone 11의 동일한 페이지.<br><strong>지불 완료</strong> 버튼이 숨겨지지 않도록 더 작은 모바일 표시 영역의 패딩을 줄이십시오.</figcaption></figure>
 
 ## 분석 및 RUM 구현 {: #analytics-rum}
 

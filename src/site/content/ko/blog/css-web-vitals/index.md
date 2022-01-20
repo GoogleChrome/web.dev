@@ -134,7 +134,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 <img src="https://source.unsplash.com/random/800x600" width="800" height="600" alt="image to load in">
 ```
 
-<figure class="w-figure">{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %} <figcaption class="w-figcaption"> 이제 이미지가 레이아웃 이동 없이 로드됩니다.</figcaption></figure>
+<figure>{% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %} <figcaption> 이제 이미지가 레이아웃 이동 없이 로드됩니다.</figcaption></figure>
 
 {% Aside %} 이미지를 로드하는 또 다른 방법은 `width` 및 `height` 속성 지정과 함께 [`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) 및 [`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) 속성을 사용하는 것입니다. 이렇게 하면 다른 장치에 다른 크기의 이미지를 제공할 수 있는 추가적인 성능 이점이 있습니다. 자세한 내용은 [반응형 이미지 제공](/serve-responsive-images/)을 참조하십시오. {% endAside %}
 
@@ -156,7 +156,7 @@ background: linear-gradient(135deg, #fbc6ff 20%, #bdfff9 90%);
 
 글꼴 스와핑은 사용자에게 콘텐츠를 빠르게 표시하는 데 탁월하지만 레이아웃 이동을 유발할 가능성이 있습니다. 이러한 레이아웃 변경은 웹 글꼴과 해당 대체 글꼴이 페이지에서 다른 양의 공간을 차지할 때 발생합니다. 비슷한 비율의 글꼴을 사용하면 이러한 레이아웃 이동의 크기가 최소화됩니다.
 
-<figure class="w-figure">{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="글꼴 교체로 인한 레이아웃 이동을 보여주는 다이어그램", width="800", height="452" %} <figcaption class="w-figcaption"> 이 예에서 글꼴 교체로 인해 페이지 요소가 5픽셀 위쪽으로 이동했습니다.</figcaption></figure>
+<figure>{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="글꼴 교체로 인한 레이아웃 이동을 보여주는 다이어그램", width="800", height="452" %} <figcaption> 이 예에서 글꼴 교체로 인해 페이지 요소가 5픽셀 위쪽으로 이동했습니다.</figcaption></figure>
 
 #### 식별
 

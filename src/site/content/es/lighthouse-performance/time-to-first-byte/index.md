@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reducción de los Tiempos de respuesta del servidor (TTFB)
 description: Obtenga información sobre time-to-first-byte audit.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 La sección Oportunidades de su informe Lighthouse contiene información sobre Time to First Byte, que es el tiempo que el navegador de un usuario tarda en recibir el primer byte del contenido de la página:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0P3MeqXSwGIL7fJbBRj.png", alt="Una captura de pantalla de la auditoría (TTFB) de los tiempos de respuesta bajos del servidor Lighthouse", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0P3MeqXSwGIL7fJbBRj.png", alt="Una captura de pantalla de la auditoría (TTFB) de los tiempos de respuesta bajos del servidor Lighthouse", width="800", height="95" %}</figure>
 
 ## Los tiempos de respuesta lentos del servidor afectan el desempeño
 

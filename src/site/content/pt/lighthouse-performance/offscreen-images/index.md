@@ -10,7 +10,7 @@ web_lighthouse:
 
 A seção Oportunidades de seu relatório Lighthouse lista todas as imagens offscreen ou ocultas em sua página junto com a economia potencial em [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte). Considere o carregamento lazy dessas imagens depois que todos os recursos críticos terminarem de carregar para reduzir a métrica [Time to Interactive](/interactive) (tempo até interação):
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="Uma captura de tela da auditoria Lighthouse Defer offscreen images", width="800", height="416", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="Uma captura de tela da auditoria Lighthouse Defer offscreen images", width="800", height="416" %}</figure>
 
 Veja também [Carregamento lazy de imagens offscreen com o codelab lazysizes](/codelab-use-lazysizes-to-lazyload-images).
 

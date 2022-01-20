@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ayude a los usuarios a cambiar las contraseñas fácilmente agregando una URL conocida para cambiar las contraseñas
 subhead: Redirigir una solicitud a "/.well-known/change-password" a la URL de cambio de contraseñas
 authors:
@@ -89,11 +89,11 @@ Echemos un vistazo a cómo el administrador de contraseñas de Chrome trata las 
 
 El administrador de contraseñas de Chrome puede buscar contraseñas filtradas. Al navegar a `about://settings/passwords` usuarios pueden ejecutar **Comprobar contraseñas** para las contraseñas almacenadas y ver una lista de contraseñas que se recomienda actualizar.
 
-<figure class="w-figure"></figure>
+<figure></figure>
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478", height="845", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478", height="845" %}
 
-  <figcaption class="w-figcaption">Función de <b>comprobación de contraseñas</b> de Chrome</figcaption>
+  <figcaption>Función de <b>comprobación de contraseñas</b> de Chrome</figcaption>
 
 
 

@@ -49,9 +49,9 @@ In each of these areas, the web platform has made significant strides in the pas
 
 Recently, Unity previewed a new runtime called Project Tiny which is focused on building 2D games for HTML5-based platforms. Project Tiny applies a new modular design to the engine structure of Unity enabling the core Unity engine to be under 1 megabyte in size.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/NAydOzjTBzlBnom2SubM.gif", alt="Two tanks engaged in a battle.", width="800", height="449" %}
-  <figcaption class="w-figcaption">Unity's Tanks Demo exported via HTML5.</figcaption>
+  <figcaption>Unity's Tanks Demo exported via HTML5.</figcaption>
 </figure>
 
 From the technical side, there has never been a better time to embrace web game development.

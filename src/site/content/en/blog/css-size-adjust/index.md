@@ -19,14 +19,14 @@ where the `font-size` is a consistent `64px`, and the only difference between ea
 have an inconsistent final size. The examples on the right use `size-adjust` to
 ensure `64px` is the consistent final size.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/6xhatUhszn7M6pDFcVgV.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
    In this example Chrome DevTools CSS grid layout debug tools are used to show heights.
   </figcaption>
 </figure>
@@ -99,14 +99,14 @@ In the following gif, watch the examples on the left and how there's a shift
 when the font is changed. This is just a small example with a single headline
 element and the issue is very noticeable.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/6xhatUhszn7M6pDFcVgV.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     The example on the left has layout shift, the one on the right does not.
   </figcaption>
 </figure>
@@ -120,14 +120,14 @@ sacrificing your user's time to content. The problem however, is that sometimes
 when the web font loads, it shifts the entire page around since it presents at a
 slightly different box height size.
 
-<figure class="w-figure w-screenshot">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/F7CwbZuMHaapGTeXRfSJ.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     more content equals more potential layout shift when font swaps
   </figcaption>
 </figure>
@@ -139,14 +139,14 @@ change, a seamless swap. To create a seamless swap, hand adjust or try this
 calculator](https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback)
 by [Malte Ubl](https://twitter.com/cramforce).
 
-<figure class="w-figure w-screenshot">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Tw8J2e0ymyGogeA7NJjY.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Choose a <a href="https://fonts.google.com/">Google Web Font</a>, get back a pre-adjusted <code>@font-face</code> snippet.
   </figcaption>
 </figure>

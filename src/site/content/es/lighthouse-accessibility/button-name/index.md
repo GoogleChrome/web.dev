@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los botones no tienen un nombre accesible
 description: |2-
 
@@ -16,7 +16,7 @@ Cuando un botón no tiene un nombre accesible, los lectores de pantalla y otras 
 
 Lighthouse marca a los botones que no tienen contenido de texto o una propiedad de `aria-label`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Auditoría de Lighthouse que muestra que los botones no tienen un nombre accesible", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Auditoría de Lighthouse que muestra que los botones no tienen un nombre accesible", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

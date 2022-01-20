@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los errores del navegador se registraron en la consola
 description: Aprenda a identificar y corregir errores del navegador.
 web_lighthouse:
@@ -16,7 +16,7 @@ Los mensajes que se registran en la consola provienen de los desarrolladores web
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca todos los errores del navegador que se registran en la consola:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt = "La auditoría de Lighthouse muestra los errores del navegador en la consola", width = "800", height = "247", class = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt = "La auditoría de Lighthouse muestra los errores del navegador en la consola", width = "800", height = "247"%}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
@@ -31,7 +31,7 @@ Chrome DevTools incluye un par de herramientas que le ayudarán a localizar la c
 
 Por ejemplo, esta captura de pantalla muestra una página con dos errores:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Un ejemplo de los errores en la consola de Chrome DevTools", width="800", height="505", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="Un ejemplo de los errores en la consola de Chrome DevTools", width="800", height="505" %}</figure>
 
 En el ejemplo anterior, el primer error proviene de un desarrollador web mediante una llamada a [`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error). El segundo error proviene del navegador e indica que una variable que se utiliza en uno de los scripts de la página no existe.
 

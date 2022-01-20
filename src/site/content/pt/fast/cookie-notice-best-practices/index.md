@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Melhores práticas para avisos de cookies
 subhead: |2
 
@@ -141,13 +141,13 @@ Para obter mais informações sobre scripts WebPageTest, verifique a [documenta�
 
 Para executar o WebPageTest com um conjunto de cookies, vá para a guia **Avançado** e adicione o cabeçalho do cookie ao campo **Cabeçalhos personalizados:**
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Captura de tela mostrando o campo 'Cabeçalhos personalizados' em WebPageTest", width="800", height="181", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Captura de tela mostrando o campo 'Cabeçalhos personalizados' em WebPageTest", width="800", height="181" %}
 
 #### Mude o local do teste
 
 Para alterar o local de teste usado pelo WebPageTest, clique no menu suspenso **Local de teste** localizado na guia **Teste avançado.**
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Captura de tela da lista suspensa 'Localização de teste' em WebPageTest", width="800", height="267", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Captura de tela da lista suspensa 'Localização de teste' em WebPageTest", width="800", height="267" %}
 
 ### Testando avisos de cookies com o Lighthouse
 
@@ -157,7 +157,7 @@ Definir cookies em uma execução do Lighthouse pode servir como um mecanismo pa
 
 Os cookies não são apagados quando o Lighthouse é executado no DevTools. No entanto, outros tipos de armazenamento são limpos por padrão. Esse comportamento pode ser alterado usando a opção **Limpar armazenamento** no painel de configurações do **Lighthouse**.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Captura de tela destacando a opção 'Limpar armazenamento' do Lighthouse", width="800", height="304", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Captura de tela destacando a opção 'Limpar armazenamento' do Lighthouse", width="800", height="304" %}
 
 #### CLI
 

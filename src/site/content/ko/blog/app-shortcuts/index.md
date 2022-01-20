@@ -27,9 +27,9 @@ feedback:
 
 앱 바로 가기 메뉴는 사용자 바탕 화면의 작업 표시줄(Windows) 또는 독(macOS)에서 앱 아이콘을 마우스 오른쪽 버튼으로 클릭하거나 Android에서 앱의 런처 아이콘을 길게 누르면 호출됩니다.
 
-<figure class="w-figure">{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Android에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="420", class="w-screenshot" %}<figcaption class="w-figcaption"> Android에서 열린 앱 바로 가기 메뉴</figcaption></figure>
+<figure>{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Android에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="420" %}<figcaption> Android에서 열린 앱 바로 가기 메뉴</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Windows에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="420", class="w-screenshot" %}<figcaption class="w-figcaption"> Windows에서 열린 앱 바로 가기 메뉴</figcaption></figure>
+<figure>{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Windows에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="420" %}<figcaption> Windows에서 열린 앱 바로 가기 메뉴</figcaption></figure>
 
 앱 바로 가기 메뉴는 사용자의 데스크톱 또는 모바일 장치에 설치된 [Progressive Web Apps](/progressive-web-apps/)에 대해서만 표시됩니다. [설치하려면 무엇이 필요합니까?](/install-criteria/)를 확인하십시오. 설치 가능성 요구 사항에 대해 알아보십시오.
 
@@ -102,7 +102,7 @@ feedback:
 
 앱 바로 가기가 올바르게 설정되었는지 확인하려면 DevTools의 **애플리케이션** 패널에서 **매니페스트** 창을 사용하세요.
 
-<figure class="w-figure">{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="DevTools의 앱 바로 가기 스크린샷", width="800", height="534" %}<figcaption class="w-figcaption"> DevTools에 표시된 앱 바로 가기</figcaption></figure>
+<figure>{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="DevTools의 앱 바로 가기 스크린샷", width="800", height="534" %}<figcaption> DevTools에 표시된 앱 바로 가기</figcaption></figure>
 
 이 창은 앱 바로 가기를 포함하여 많은 매니페스트 속성의 사람이 읽을 수 있는 버전을 제공합니다. 모든 바로 가기 아이콘이 제공되는 경우 제대로 로드되는지 쉽게 확인할 수 있습니다.
 
@@ -128,7 +128,7 @@ feedback:
 
 앱 바로가기는 Android(Chrome 84), Windows(Chrome 85 및 Edge 85), Chrome OS(Chrome 92), macOS 및 Linux(Chrome 96 및 Edge 96)에서 사용할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Chrome OS에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="450", class="w-screenshot" %}<figcaption class="w-figcaption"> Chrome OS에서 열린 앱 바로 가기 메뉴</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Chrome OS에서 열린 앱 바로 가기 메뉴의 스크린샷", width="800", height="450" %}<figcaption> Chrome OS에서 열린 앱 바로 가기 메뉴</figcaption></figure>
 
 ## 신뢰할 수 있는 웹 활동 지원
 
@@ -140,8 +140,8 @@ feedback:
 
 ## 샘플
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
+<figure>
+  <video controls autoplay loop muted src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
   </video></figure>
 
 [앱 바로 가기 샘플](https://app-shortcuts.glitch.me) 및 해당 [소스](https://glitch.com/edit/#!/app-shortcuts)를 확인하세요.

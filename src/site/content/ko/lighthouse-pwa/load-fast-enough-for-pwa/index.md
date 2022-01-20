@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다.
 description: |2-
 
@@ -18,7 +18,7 @@ updated: 2020-06-10
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 모바일에서 충분히 빠르게 로드되지 않는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="페이지가 모바일에서 충분히 빠르게 로드되지 않음을 보여주는 Lighthouse 감사", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="페이지가 모바일에서 충분히 빠르게 로드되지 않음을 보여주는 Lighthouse 감사", width="800", height="98" %}</figure>
 
 두 가지 주요 메트릭은 사용자가 로드 시간을 인식하는 방식에 영향을 줍니다.
 

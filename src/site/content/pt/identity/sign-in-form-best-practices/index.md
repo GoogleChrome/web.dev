@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Práticas recomendadas do formulário de login
 subhead: Use recursos de navegador de plataforma cruzada para criar formulários de login que sejam seguros, acessíveis e fáceis de usar.
 authors:
@@ -85,7 +85,7 @@ Não use marcadores de posição como rótulos de entrada. As pessoas podem esqu
 
 Provavelmente, é melhor colocar seus rótulos acima de suas entradas. Isso permite um design consistente em dispositivos móveis e desktops e, de acordo com a [pesquisa de IA do Google](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html), permite uma digitalização mais rápida pelos usuários. Você obtém rótulos e entradas de largura total e não precisa ajustar o rótulo e a largura de entrada para caber no texto do rótulo.
 
-<figure class="w-figure">{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="Captura de tela mostrando a posição do rótulo de entrada do formulário no celular: próximo à entrada e acima da entrada.", width="500", height="253", class="w-screenshot" %} <figcaption class="w-figcaption"> O rótulo e a largura de entrada são limitados quando ambos estão na mesma linha.</figcaption></figure>
+<figure>{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="Captura de tela mostrando a posição do rótulo de entrada do formulário no celular: próximo à entrada e acima da entrada.", width="500", height="253" %} <figcaption> O rótulo e a largura de entrada são limitados quando ambos estão na mesma linha.</figcaption></figure>
 
 Abra o [Glitch de posição de rótulo](https://label-position.glitch.me) em um dispositivo móvel para ver por si mesmo.
 
@@ -126,7 +126,7 @@ As entradas de senhas devem ter `type="password"` para ocultar o texto da senha 
 
 Você deve adicionar um **ícone ou botão Mostrar senha** para permitir que os usuários verifiquem o texto que inseriram - e não se esqueça de adicionar um link **Esqueci a senha.** Consulte [Habilitar exibição de senha](#password-display).
 
-<figure class="w-figure"> {% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="Formulário de login do Google mostrando o ícone de senha.", width="300", height="107", class="w-screenshot" %} <figcaption class="w-figcaption"> Entrada de senha a partir do formulário de login do Google: com <strong>Mostrar</strong> ícone de senha e link <strong>Esqueci minha senha.</strong></figcaption></figure>
+<figure> {% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="Formulário de login do Google mostrando o ícone de senha.", width="300", height="107" %} <figcaption> Entrada de senha a partir do formulário de login do Google: com <strong>Mostrar</strong> ícone de senha e link <strong>Esqueci minha senha.</strong></figcaption></figure>
 
 ## Dê aos usuários de celular o teclado certo {: #mobile-keyboards}
 
@@ -140,23 +140,23 @@ Se você precisar usar um número de telefone em vez de um endereço de e-mail, 
 
 Infelizmente, se você não tiver cuidado, os teclados móveis podem cobrir seu formulário ou, pior, obstruir parcialmente o botão **Login.** Os usuários podem desistir antes de perceber o que aconteceu.
 
-<figure class="w-figure">{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Duas capturas de tela de um formulário de login em um telefone Android: uma mostrando como o botão Enviar é obscurecido pelo teclado do telefone.", width="400", height="360", class="w-screenshot" %}<figcaption class="w-figcaption"> O <b>botão Sign in</b>: agora você o vê, agora não.</figcaption></figure>
+<figure>{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Duas capturas de tela de um formulário de login em um telefone Android: uma mostrando como o botão Enviar é obscurecido pelo teclado do telefone.", width="400", height="360" %}<figcaption> O <b>botão Sign in</b>: agora você o vê, agora não.</figcaption></figure>
 
 Sempre que possível, evite isso exibindo apenas as entradas de e-mail / telefone e senha e o **botão Sign in** na parte superior de sua página de login. Coloque outro conteúdo abaixo.
 
-<figure class="w-figure">{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Captura de tela de um formulário de login em um telefone Android: o botão Sign in não é obscurecido pelo teclado do telefone.", width="200", height="342", class="w-screenshot" %} <figcaption class="w-figcaption"><figcaption class="w-figcaption"> O teclado não obstrui o botão <b>Sign in.</b></figcaption></figcaption></figure>
+<figure>{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Captura de tela de um formulário de login em um telefone Android: o botão Sign in não é obscurecido pelo teclado do telefone.", width="200", height="342" %} <figcaption><figcaption> O teclado não obstrui o botão <b>Sign in.</b></figcaption></figcaption></figure>
 
 #### Teste em uma variedade de dispositivos {: #devices}
 
 Você precisará testar em uma variedade de dispositivos para seu público-alvo e ajustar de acordo. O BrowserStack permite [o teste gratuito de projetos de código aberto](https://www.browserstack.com/open-source) em uma variedade de dispositivos e navegadores reais.
 
-<figure class="w-figure">{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="Capturas de tela de um formulário de login no iPhone 7, 8 e 11. No iPhone 7 e 8, o botão Sign in é obscurecido pelo teclado do telefone, mas não no iPhone 11 ", width="800", height="522", class="w-screenshot" %} <figcaption class="w-figcaption"> O <b>botão Sign in</b>: obscurecido no iPhone 7 e 8, mas não no iPhone 11.</figcaption></figure>
+<figure>{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="Capturas de tela de um formulário de login no iPhone 7, 8 e 11. No iPhone 7 e 8, o botão Sign in é obscurecido pelo teclado do telefone, mas não no iPhone 11 ", width="800", height="522" %} <figcaption> O <b>botão Sign in</b>: obscurecido no iPhone 7 e 8, mas não no iPhone 11.</figcaption></figure>
 
 #### Considere o uso de duas páginas {: #two-pages}
 
 Alguns sites (incluindo Amazon e eBay) evitam o problema pedindo e-mail/telefone e senha em duas páginas. Essa abordagem também simplifica a experiência: o usuário recebe apenas uma tarefa de cada vez.
 
-<figure class="w-figure">{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Captura de tela de um formulário de login no site da Amazon: e-mail / telefone e senha em duas 'páginas' separadas.", width="400", height="385", class="w-screenshot" %} <figcaption class="w-figcaption"> Login em duas etapas: e-mail ou telefone e senha.</figcaption></figure>
+<figure>{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Captura de tela de um formulário de login no site da Amazon: e-mail / telefone e senha em duas 'páginas' separadas.", width="400", height="385" %} <figcaption> Login em duas etapas: e-mail ou telefone e senha.</figcaption></figure>
 
 Idealmente, isso deve ser implementado com um único &lt;form&gt;. Use JavaScript para exibir inicialmente apenas a entrada de e-mail, depois oculte-o e mostre a entrada de senha. Se você precisar forçar o usuário a navegar para uma nova página entre inserir seu e-mail e senha, o formulário na segunda página deve ter um elemento de entrada oculto com o valor de e-mail, para ajudar a permitir que os gerenciadores de senha armazenem o valor correto. [Estilos de formulário de senha que o Chromium entende](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands) fornece um exemplo de código.
 
@@ -202,11 +202,11 @@ Especificamente, o formulário para alterar a senha do usuário deve ser apagado
 
 Navegadores diferentes lidam com o preenchimento automático de e-mail e a sugestão de senha de maneira um pouco diferente, mas os efeitos são os mesmos. No Safari 11 e superior na área de trabalho, por exemplo, o gerenciador de senha é exibido e, em seguida, a autenticação biométrica (impressão digital ou reconhecimento facial) é usada, se disponível.
 
-<figure class="w-figure">{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="Capturas de tela de três estágios do processo de login no Safari no desktop: gerenciador de senha, autenticação biométrica, preenchimento automático.", width="800", height="234", class="w-screenshot" %} <figcaption class="w-figcaption">Faça login com preenchimento automático - nenhuma entrada de texto necessária!</figcaption></figure>
+<figure>{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="Capturas de tela de três estágios do processo de login no Safari no desktop: gerenciador de senha, autenticação biométrica, preenchimento automático.", width="800", height="234" %} <figcaption>Faça login com preenchimento automático - nenhuma entrada de texto necessária!</figcaption></figure>
 
 O Chrome na área de trabalho exibe sugestões de e-mail, mostra o gerenciador de senhas e preenche automaticamente a senha.
 
-<figure class="w-figure">{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="Capturas de tela de quatro estágios do processo de login no Chrome na área de trabalho: conclusão de e-mail, sugestão de e-mail, gerenciador de senha, preenchimento automático na seleção.", width="800", height="232", class="w-screenshot" %} <figcaption class="w-figcaption">Fluxo de login de preenchimento automático no Chrome 84.</figcaption></figure>
+<figure>{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="Capturas de tela de quatro estágios do processo de login no Chrome na área de trabalho: conclusão de e-mail, sugestão de e-mail, gerenciador de senha, preenchimento automático na seleção.", width="800", height="232" %} <figcaption>Fluxo de login de preenchimento automático no Chrome 84.</figcaption></figure>
 
 A senha do navegador e os sistemas de preenchimento automático não são simples. Os algoritmos para adivinhar, armazenar e exibir valores não são padronizados e variam de plataforma para plataforma. Por exemplo, como apontado por [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form): "O gerenciador de senhas do Firefox complementa sua heurística com um [sistema de receita](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
 
@@ -220,7 +220,7 @@ Os navegadores modernos usam heurísticas para decidir quando mostrar a IU do ge
 
 Veja como o Safari faz isso no desktop.
 
-<figure class="w-figure">{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Captura de tela do gerenciador de senhas do Firefox na área de trabalho.", width="800", height="229", class="w-screenshot" %} <figcaption class="w-figcaption">Fluxo de sugestão de senha no Safari.</figcaption></figure>
+<figure>{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Captura de tela do gerenciador de senhas do Firefox na área de trabalho.", width="800", height="229" %} <figcaption>Fluxo de sugestão de senha no Safari.</figcaption></figure>
 
 (A sugestão de senha única forte está disponível no Safari desde a versão 12.0.)
 
@@ -232,7 +232,7 @@ Geradores de senha de navegador integrados significam que usuários e desenvolve
 
 Adicione o `required` aos campos de e-mail e senha. Os navegadores modernos solicitam e definem o foco automaticamente para os dados ausentes. Não requer JavaScript!
 
-<figure class="w-figure">{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="Captura de tela do desktop Firefox e Chrome para Android mostrando o prompt 'Preencha este campo' para dados ausentes.", width="600", height="392", class="w-screenshot" %} <figcaption class="w-figcaption"> Avisar e focar em dados ausentes no Firefox para desktop (versão 76) e Chrome para Android (versão 83).</figcaption></figure>
+<figure>{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="Captura de tela do desktop Firefox e Chrome para Android mostrando o prompt 'Preencha este campo' para dados ausentes.", width="600", height="392" %} <figcaption> Avisar e focar em dados ausentes no Firefox para desktop (versão 76) e Chrome para Android (versão 83).</figcaption></figure>
 
 ## Design para dedos e polegares {: #mobile-design}
 
@@ -242,7 +242,7 @@ O tamanho padrão do navegador para quase tudo relacionado a elementos de entrad
 
 O tamanho e o preenchimento padrão para entradas e botões são muito pequenos na área de trabalho e ainda pior no celular.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Captura de tela do formulário sem estilo no Chrome para desktop e Chrome para Android.", width="800", height="434", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Captura de tela do formulário sem estilo no Chrome para desktop e Chrome para Android.", width="800", height="434" %}</figure>
 
 De acordo com as [orientações de acessibilidade do Android,](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB) o tamanho alvo recomendado para objetos touchscreen é de 7 a 10 mm. As diretrizes de interface da Apple sugerem 48x48 px, e o W3C sugere [pelo menos 44x44 pixels CSS](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html). Com base nisso, adicione (pelo menos) cerca de 15 px de preenchimento para inserir elementos e botões para dispositivos móveis e cerca de 10 px para desktop. Experimente fazer isso com um dispositivo móvel real e um dedo ou polegar real. Você deve ser capaz de tocar confortavelmente em cada uma de suas entradas e botões.
 
@@ -256,7 +256,7 @@ Pesquise o [alvo de toque](https://www.google.com/search?q=touch+target) e você
 
 Assim como acontece com o tamanho e o preenchimento, o tamanho da fonte do navegador padrão para elementos de entrada e botões é muito pequeno, principalmente em dispositivos móveis.
 
-<figure class="w-figure">{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Captura de tela do formulário não estilizado no Chrome no desktop e no Android.", width="800", height="494", class="w-screenshot" %} <figcaption class="w-figcaption">Estilo padrão no desktop e no celular: o texto de entrada é muito pequeno para ser legível para muitos usuários.</figcaption></figure>
+<figure>{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Captura de tela do formulário não estilizado no Chrome no desktop e no Android.", width="800", height="494" %} <figcaption>Estilo padrão no desktop e no celular: o texto de entrada é muito pequeno para ser legível para muitos usuários.</figcaption></figure>
 
 Navegadores em diferentes plataformas têm tamanhos de fontes diferentes, então é difícil especificar um tamanho de fonte específico que funcione bem em qualquer lugar. Uma rápida pesquisa de sites populares mostra tamanhos de 13 a 16 pixels no desktop: corresponder a esse tamanho físico é um bom mínimo para texto no celular.
 
@@ -274,13 +274,13 @@ O estilo de borda padrão para entradas torna-as difíceis de ver. Eles são qua
 
 Além do preenchimento, adicione uma borda: em um fundo branco, uma boa regra geral é usar `#ccc` ou mais escuro.
 
-<figure class="w-figure">{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Captura de tela da forma estilizada no Chrome no Android.", width="250", height="525", class="w-screenshot" %} <figcaption class="w-figcaption">Texto legível, bordas de entrada visíveis, preenchimento e margens adequados.</figcaption></figure>
+<figure>{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Captura de tela da forma estilizada no Chrome no Android.", width="250", height="525" %} <figcaption>Texto legível, bordas de entrada visíveis, preenchimento e margens adequados.</figcaption></figure>
 
 ### Use recursos integrados do navegador para avisar sobre valores de entrada inválidos {: #built-in-validation}
 
 Os navegadores possuem recursos integrados para fazer a validação básica de formulários para entradas com um atributo `type`. Os navegadores avisam quando você envia um formulário com um valor inválido e definem o foco na entrada problemática.
 
-<figure class="w-figure">{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="Captura de tela de um formulário de login no Chrome na área de trabalho mostrando o prompt do navegador e o foco para um valor de e-mail inválido.", width="300", height="290" %} <figcaption class="w-figcaption">Validação embutida básica pelo navegador.</figcaption></figure>
+<figure>{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="Captura de tela de um formulário de login no Chrome na área de trabalho mostrando o prompt do navegador e o foco para um valor de e-mail inválido.", width="300", height="290" %} <figcaption>Validação embutida básica pelo navegador.</figcaption></figure>
 
 Você pode usar o `:invalid` seletor CSS inválido para destacar dados inválidos. Use `:not(:placeholder-shown)` para evitar a seleção de entradas sem conteúdo.
 
@@ -299,7 +299,7 @@ Experimente maneiras diferentes de destacar entradas com valores inválidos.
 
 Você deve adicionar um **ícone ou botão Mostrar senha** para permitir que os usuários verifiquem o texto que inseriram. [A usabilidade é prejudicada](https://www.nngroup.com/articles/stop-password-masking/) quando os usuários não conseguem ver o texto que inseriram. Atualmente não há uma maneira integrada de fazer isso, embora [haja planos para implementação](https://twitter.com/sw12/status/1251191795377156099). Você precisará usar JavaScript em vez disso.
 
-<figure class="w-figure"><img class="w-screenshot" src="./show-password-google.png" width="350" alt="Formulário de login do Google com o ícone Mostrar ísenha."><figcaption class="w-figcaption"> Formulário de login do Google: com o ícone <strong>Mostrar senha</strong> e link <strong>Esqueci a senha.</strong></figcaption></figure>
+<figure><img src="./show-password-google.png" width="350" alt="Formulário de login do Google com o ícone Mostrar ísenha."><figcaption> Formulário de login do Google: com o ícone <strong>Mostrar senha</strong> e link <strong>Esqueci a senha.</strong></figcaption></figure>
 
 O código a seguir usa um botão de texto para adicionar a funcionalidade **Mostrar senha.**
 
@@ -357,7 +357,7 @@ function togglePassword() {
 
 Aqui está o resultado final:
 
-<figure class="w-figure">{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Capturas de tela do formulário de login com Mostrar texto de senha 'botão', no Safari no Mac e no iPhone 7.", width="800", height="468", class="w-screenshot" %} <figcaption class="w-figcaption">Formulário de login com o "botão" de texto <strong>{nbsp}Mostrar senha</strong>, no Safari no Mac e iPhone 7.</figcaption></figure>
+<figure>{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Capturas de tela do formulário de login com Mostrar texto de senha 'botão', no Safari no Mac e no iPhone 7.", width="800", height="468" %} <figcaption>Formulário de login com o "botão" de texto <strong>{nbsp}Mostrar senha</strong>, no Safari no Mac e iPhone 7.</figcaption></figure>
 
 ### Torne as entradas de senha acessíveis {: #accessible-password-inputs}
 

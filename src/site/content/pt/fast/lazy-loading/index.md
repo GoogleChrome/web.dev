@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use lazy-loading para melhorar a velocidade de carregamento
 authors:
   - jlwagner
@@ -18,7 +18,7 @@ A porção de [imagens](http://beta.httparchive.org/reports/state-of-images?star
 
 O lazy-loading, ou carregamento adiado, é uma técnica que não carrega recursos não críticos no momento que a página é carregada. Em vez disso, esses recursos não críticos são carregados no momento em que são necessários. No que diz respeito às imagens, "não crítico" costuma ser sinônimo de "fora da tela". Se você usou o Lighthouse e examinou algumas oportunidades para melhoria, pode ter visto alguma orientação neste domínio na forma da [auditoria para adiar imagens fora da tela](/offscreen-images/):
 
-<figure class="w-figure">   {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Uma captura de tela da auditoria Adiar imagens fora da tela, do Lighthouse.", width="800", height="102", class="w-screenshot" %}   <figcaption class="w-figcaption">Uma das auditorias de desempenho do Lighthouse é identificar imagens fora da tela, que são candidatas ao carregamento lazy.</figcaption></figure>
+<figure>   {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Uma captura de tela da auditoria Adiar imagens fora da tela, do Lighthouse.", width="800", height="102" %}   <figcaption>Uma das auditorias de desempenho do Lighthouse é identificar imagens fora da tela, que são candidatas ao carregamento lazy.</figcaption></figure>
 
 Você provavelmente já viu o carregamento lazy em ação, e é mais ou menos assim:
 
@@ -28,7 +28,7 @@ Você provavelmente já viu o carregamento lazy em ação, e é mais ou menos as
 
 Um exemplo de carregamento lazy de imagem pode ser encontrado na popular plataforma de publicação [Medium](https://medium.com/), que carrega imagens de placeholder leves no carregamento da página e as substitui por imagens carregadas de forma lazy à medida que são roladas para dentro da viewport.
 
-<figure class="w-figure">   {% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="Uma captura de tela do site Medium na navegação, demonstrando o carregamento lazy em ação. O placeholder desfocado está à esquerda e o recurso carregado está à direita.", width="800", height="493" %}   <figcaption class="w-figcaption">Um exemplo de carregamento lazy de imagem em ação. Uma imagem de placeholder é carregada junto com a página (à esquerda) e, quando rolada para a viewport, a imagem final é carregada no momento necessário.</figcaption></figure>
+<figure>   {% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="Uma captura de tela do site Medium na navegação, demonstrando o carregamento lazy em ação. O placeholder desfocado está à esquerda e o recurso carregado está à direita.", width="800", height="493" %}   <figcaption>Um exemplo de carregamento lazy de imagem em ação. Uma imagem de placeholder é carregada junto com a página (à esquerda) e, quando rolada para a viewport, a imagem final é carregada no momento necessário.</figcaption></figure>
 
 Se você não está familiarizado com o carregamento lazy, pode estar se perguntando qual a utilidade dessa técnica e quais são seus benefícios. Leia mais para descobrir!
 

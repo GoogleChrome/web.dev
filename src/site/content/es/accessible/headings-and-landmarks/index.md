@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Encabezados y landmarks
 authors:
   - robdodson
@@ -32,7 +32,7 @@ En lugar de depender del tamaño de fuente predeterminado del navegador para los
 
 Por ejemplo, este sitio tiene una sección llamada "IN THE NEWS (EN LAS NOTICIAS)", seguida de dos titulares:
 
-{% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="Un sitio de noticias con un título, una imagen principal y subsecciones.", width="800", height="414", class="w-screenshot" %}
+{% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="Un sitio de noticias con un título, una imagen principal y subsecciones.", width="800", height="414" %}
 
 El título de la sección, "IN THE NEWS", podría ser un `h2` y ambos titulares de apoyo podrían ser `h3`.
 

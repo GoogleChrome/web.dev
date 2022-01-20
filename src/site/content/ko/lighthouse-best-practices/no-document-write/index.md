@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: document.write() 사용
 description: |2
 
@@ -29,7 +29,7 @@ data from the network to be reparsed.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 Chrome에서 차단하지 않은 `document.write()` 호출에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="document.write 사용을 보여주는 Lighthouse 감사", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="document.write 사용을 보여주는 Lighthouse 감사", width="800", height="213" %}</figure>
 
 가장 문제가 되는 사용의 경우 Chrome은 `document.write()` 호출을 차단하거나 이에 대한 콘솔 경고를 표시합니다. 어느 쪽이든 영향을 받는 호출은 DevTools 콘솔에 나타납니다. 자세한 내용은 Google의 <a href="https://developers.google.com/web/updates/2016/08/removing-document-write" data-md-type="link">`document.write()`에 대한 개입</a> 문서를 참조하세요.
 

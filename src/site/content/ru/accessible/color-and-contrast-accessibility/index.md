@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Доступность по цвету и контрастности
 authors:
   - dgash
@@ -28,7 +28,7 @@ tags:
 Исключение — очень крупный текст (на 120–150 % больше основного текста по умолчанию):
 здесь контрастность может составлять 3:1. Обратите внимание на разницу в контрасте ниже.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/DcYclKelVqhQ2CWlIG97.jpg", alt="Изображение, показывающее различную контрастность", width="800", height="328" %}
 </figure>
 
@@ -43,22 +43,22 @@ tags:
 Откройте DevTools, щелкните «Аудиты» (Audits или Lighthouse), выберите «Специальные возможности» (Accessibility)
 и создайте отчет.
 
-<figure class="w-figure">
-  {% Img src="image/admin/vSFzNOurQO6z2xV6qWuW.png", alt="Скриншот вывода от аудита по цветовому контрасту.", width="800", height="218", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/vSFzNOurQO6z2xV6qWuW.png", alt="Скриншот вывода от аудита по цветовому контрасту.", width="800", height="218" %}
 </figure>
 
 В браузере Chrome также есть экспериментальная функция, которая поможет [обнаружить низкоконтрастный
 текст на странице](https://developers.google.com/web/updates/2020/10/devtools#css-overview). А исправить низкий контраст можно с помощью [подсказки по доступности цветов](https://developers.google.com/web/updates/2020/08/devtools#accessible-color).
 
-<figure class="w-figure">
-  {% Img src="image/admin/VYZeK2l2vs6pIoWhH2hO.png", alt="Скриншот вывода экспериментальной функции Chrome по поиску низкоконтрастного текста.", width="800", height="521", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/VYZeK2l2vs6pIoWhH2hO.png", alt="Скриншот вывода экспериментальной функции Chrome по поиску низкоконтрастного текста.", width="800", height="521" %}
 </figure>
 
 Более подробный отчет можно получить, установив [расширение Accessibility Insights](https://accessibilityinsights.io/).
 Одна из проверок в отчете Fastpass — цветовой контраст.
 Вы получите подробные сведения обо всех элементах, не соответствующих требованиям.
 
-<figure class="w-figure w-screenshot">
+<figure>
   {% Img src="image/admin/CR21TFMZw8gWsSTWOGIF.jpg", alt="Отчет в Accessibility Insights", width="800", height="473" %}
 </figure>
 
@@ -76,8 +76,8 @@ tags:
 
 В браузере Chrome есть [экспериментальная функция, которая заменяет рекомендации AA/AAA на APCA](https://developers.google.com/web/updates/2021/01/devtools#apca).
 
-<figure class="w-figure">
-  {% Img src="image/admin/YhGKRLYvt37j3ldlwiXE.png", alt="Скриншот с выводом функции APCA в Chrome.", width="800", height="543", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/YhGKRLYvt37j3ldlwiXE.png", alt="Скриншот с выводом функции APCA в Chrome.", width="800", height="543" %}
 </figure>
 
 ## При передаче информации не полагайтесь только на цвет
@@ -100,8 +100,8 @@ tags:
 Но при недостатке цветового зрения или использовании программы чтения с экрана эта информация будет передана плохо или вообще потеряется.
 Поэтому всегда нужно стараться предоставить несколько способов получения важной информации.
 
-<figure class="w-figure" style="width: 200px">
-  {% Img src="image/admin/MKmlhejyjNpk7XE9R2KV.png", alt="Изображение формы ввода с неверным номером телефона, который выделен только красным цветом.", width="293", height="323", class="w-screenshot" %}
+<figure style="width: 200px">
+  {% Img src="image/admin/MKmlhejyjNpk7XE9R2KV.png", alt="Изображение формы ввода с неверным номером телефона, который выделен только красным цветом.", width="293", height="323" %}
 </figure>
 
 В [разделе 1.4.1 контрольного списка WebAIM](https://webaim.org/standards/wcag/checklist#sc1.4.1) сказано
@@ -114,8 +114,8 @@ tags:
 В предыдущем примере можно просто добавить в поле сообщение, говорящее о том, что
 значение недействительно (и в чем проблема).
 
-<figure class="w-figure" style="width: 200px">
-  {% Img src="image/admin/FLQPcG16akNRoElx3pnz.png", alt="Форма ввода из предыдущего примера — на этот раз с текстовой меткой, указывающей на проблему с полем.", width="292", height="343", class="w-screenshot" %}
+<figure style="width: 200px">
+  {% Img src="image/admin/FLQPcG16akNRoElx3pnz.png", alt="Форма ввода из предыдущего примера — на этот раз с текстовой меткой, указывающей на проблему с полем.", width="292", height="343" %}
 </figure>
 
 При создании приложения нужно помнить обо всем этом и следить за тем,
@@ -134,8 +134,8 @@ tags:
 - Тританопия— неспособность воспринимать синий цвет.
 - Ахроматопсия: неспособность воспринимать цвета вообще, за исключение оттенков серого (встречается крайне редко).
 
-<figure class="w-figure">
-  {% Img src="image/admin/VAnFxYhzFcpovdTCToPl.jpg", alt="Имитация зрения человека с ахроматопсией: наша страница отображается в оттенках серого.", width="800", height="393", class="w-screenshot--filled" %}
+<figure>
+  {% Img src="image/admin/VAnFxYhzFcpovdTCToPl.jpg", alt="Имитация зрения человека с ахроматопсией: наша страница отображается в оттенках серого.", width="800", height="393" %}
 </figure>
 
 ## Режим высокой контрастности
@@ -157,15 +157,15 @@ tags:
 Если включить режим высокой контрастности, этот цвет становится незаметным
 и становится непонятно, какая страница активна.
 
-<figure class="w-figure" style="width: 500px">
-  {% Img src="image/admin/dgmA4W1Qu8JmcgsH80HD.png", alt="Скриншот панели навигации в режиме высокой контрастности: непонятно, какая вкладка активна", width="640", height="57", class="w-screenshot" %}
+<figure style="width: 500px">
+  {% Img src="image/admin/dgmA4W1Qu8JmcgsH80HD.png", alt="Скриншот панели навигации в режиме высокой контрастности: непонятно, какая вкладка активна", width="640", height="57" %}
 </figure>
 
 А в примере выше красное подчеркивание в поле недействительного
 номера телефона может отображаться трудно различимым
 сине-зеленым цветом.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/HtlXwmHQHBcAO4LYSfAA.jpg", alt="Скриншот использованной ранее адресной формы в режиме высокой контрастности. Изменение цвета недействительного элемента трудно читается.", width="700", height="328" %}
 </figure>
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 네트워크 페이로드 축소 및 압축
 authors:
   - houssein
@@ -23,13 +23,13 @@ tags:
 
 Lighthouse는 페이지에서 축소할 수 있는 CSS 또는 JS 리소스를 감지하면 실패한 감사를 표시합니다.
 
-{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Lighthouse CSS 감사 축소", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Lighthouse CSS 감사 축소", width="800", height="90" %}
 
-{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Lighthouse Minify JS 감사", width="800", height="112", class="w-screenshot" %}
+{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Lighthouse Minify JS 감사", width="800", height="112" %}
 
 또한 압축되지 않은 자산에 대해 감사합니다.
 
-{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: 텍스트 압축 사용", width="800", height="123", class="w-screenshot" %}
+{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: 텍스트 압축 사용", width="800", height="123" %}
 
 ## 축소
 

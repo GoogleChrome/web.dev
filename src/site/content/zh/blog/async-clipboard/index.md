@@ -199,7 +199,7 @@ async function copy() {
 
 剪贴板访问一直是浏览器的安全问题。如果没有适当的权限，页面可能会悄悄地将各种恶意内容复制到用户的剪贴板，粘贴时会产生灾难性的结果。想象一个网页，它默默地将 `rm -rf /` 或[解压炸弹图像](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html)复制到您的剪贴板。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="浏览器提示询问用户剪贴板权限。", width="800", height="338", class="w-screenshot" %}<figcaption class="w-figcaption">剪贴板 API 的权限提示。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="浏览器提示询问用户剪贴板权限。", width="800", height="338" %}<figcaption>剪贴板 API 的权限提示。</figcaption></figure>
 
 让网页不受限制地读取剪贴板的权限就更麻烦了。用户通常会将密码和个人详细信息等敏感信息复制到剪贴板，然后任何页面都可以在用户不知情的情况下读取这些信息。
 

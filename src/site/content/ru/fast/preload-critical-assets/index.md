@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Настройте предварительную загрузку критических ресурсов для повышения скорости загрузки
 authors:
   - houssein
@@ -22,15 +22,15 @@ feedback:
 
 Предварительная загрузка лучше всего подходит для ресурсов, которые браузер обычно обнаруживает поздно.
 
-<figure class="w-figure">{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Скриншот панели Network (Сеть) в Chrome DevTools.", width="701", height="509" %} <figcaption class="w-figcaption">В этом примере шрифт Pacifico определяется в таблице стилей правилом <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>. Браузер загружает файл шрифта только после завершения загрузки и анализа таблицы стилей.</figcaption></figure>
+<figure>{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Скриншот панели Network (Сеть) в Chrome DevTools.", width="701", height="509" %} <figcaption>В этом примере шрифт Pacifico определяется в таблице стилей правилом <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>. Браузер загружает файл шрифта только после завершения загрузки и анализа таблицы стилей.</figcaption></figure>
 
 Предварительно загружая определенный ресурс, вы сообщаете браузеру, что хотели бы получить данный ресурс раньше, чем он будет загружен браузером, так как ресурс важен для текущей страницы.
 
-<figure class="w-figure">{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Скриншот панели Network (Сеть) в Chrome DevTools после применения предварительной загрузки.", width="701", height="509" %} <figcaption class="w-figcaption">В этом примере предварительно загружается шрифт Pacifico, поэтому его загрузка происходит параллельно с таблицей стилей.</figcaption></figure>
+<figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Скриншот панели Network (Сеть) в Chrome DevTools после применения предварительной загрузки.", width="701", height="509" %} <figcaption>В этом примере предварительно загружается шрифт Pacifico, поэтому его загрузка происходит параллельно с таблицей стилей.</figcaption></figure>
 
 Цепочка критических запросов представляет собой установленный браузером порядок выборки ресурсов. Lighthouse определяет ресурсы, которые находятся на третьем уровне этой цепочки, как поздно обнаруженные. Вы можете использовать аудит [**Preload key requests (Настройте предварительную загрузку ключевых запросов)**](/uses-rel-preload), чтобы определить, какие ресурсы необходимо загружать заранее.
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Аудит Preload key requests (Настройте предварительную загрузку ключевых запросов) в Lighthouse.", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Аудит Preload key requests (Настройте предварительную загрузку ключевых запросов) в Lighthouse.", width="745", height="97" %}
 
 Вы можете настроить предварительную загрузку ресурсов, добавив тег `<link>` с атрибутом `rel="preload"` в заголовок HTML-документа:
 
@@ -46,7 +46,7 @@ feedback:
 
 Неиспользованные предварительные загрузки вызывают предупреждение на вкладке Console (Консоль) в Chrome DevTools примерно через 3 секунды после события `load`.
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Предупреждение на вкладке Console в Chrome DevTools о неиспользуемых предварительно загруженных ресурсах.", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Предупреждение на вкладке Console в Chrome DevTools о неиспользуемых предварительно загруженных ресурсах.", width="800", height="228" %}
 
 {% Aside %} [`preload` поддерживается](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) во всех современных браузерах. {% endAside %}
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Используйте пассивные прослушиватели для повышения производительности при прокрутке
 description: Узнайте, как улучшить отзывчивость страницы при прокрутке, используя пассивные прослушиватели событий.
 web_lighthouse:
@@ -18,7 +18,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает прослушиватели событий, которые могут задерживать прокрутку страницы:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Проверка Lighthouse показывает, что страница не использует пассивные прослушиватели событий для повышения производительности при прокрутке (Does not use passive event listeners to improve scrolling performance)", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Проверка Lighthouse показывает, что страница не использует пассивные прослушиватели событий для повышения производительности при прокрутке (Does not use passive event listeners to improve scrolling performance)", width="800", height="213" %}</figure>
 
 Lighthouse использует следующий процесс для определения прослушивателей событий, которые могут повлиять на производительность при прокрутке:
 

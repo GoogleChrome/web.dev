@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 通过代码拆分减少 JavaScript 负载
 authors:
   - houssein
@@ -19,7 +19,7 @@ tags:
 
 当花费大量时间在页面上执行所有 JavaScript 时，Lighthouse 会显示审计失败。
 
-{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="Lighthouse 审计失败，显示脚本执行时间过长。", width="797", height="100", class="w-screenshot "%}
+{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="Lighthouse 审计失败，显示脚本执行时间过长。", width="797", height="100"%}
 
 拆分 JavaScript 包以仅在用户加载应用程序时发送初始路由所需的代码。这最大限度地减少了需要解析和编译的脚本数量，从而加快了页面加载时间。
 

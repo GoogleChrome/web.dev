@@ -56,11 +56,11 @@ Você pode acelerar o tempo de carregamento em 100–500 ms estabelecendo conex�
 
 Devido às dependências com versão, às vezes você acaba em uma situação em que sabe que estará solicitando um recurso de um CDN específico, mas não o caminho exato até ele.
 
-<figure class="w-figure">{% Img src="image/admin/PsP4qymb1gIp8Ip2sD9W.png", alt="Um url de um script com o nome da versão.", width="450", height="50" %} <figcaption>Um exemplo de URL com versão.</figcaption></figure>
+<figure>{% Img src="image/admin/PsP4qymb1gIp8Ip2sD9W.png", alt="Um url de um script com o nome da versão.", width="450", height="50" %} <figcaption>Um exemplo de URL com versão.</figcaption></figure>
 
 O outro caso comum é carregar imagens de um [CDN de imagem](/image-cdns), em que o caminho exato para uma imagem depende de consultas de mídia ou verificações de recurso de tempo de execução no navegador do usuário.
 
-<figure class="w-figure">{% Img src="image/admin/Xx4ai7tzSq12DJsQXaL1.png", alt="Um URL de CDN de imagem com os parâmetros size = 300x400 e quality = auto.", width="800", height="52" %} <figcaption>Um exemplo de URL de CDN de imagem.</figcaption></figure>
+<figure>{% Img src="image/admin/Xx4ai7tzSq12DJsQXaL1.png", alt="Um URL de CDN de imagem com os parâmetros size = 300x400 e quality = auto.", width="800", height="52" %} <figcaption>Um exemplo de URL de CDN de imagem.</figcaption></figure>
 
 Nessas situações, se o recurso que você busca for importante, você deseja economizar o máximo de tempo possível conectando-se previamente ao servidor. O navegador não fará o download do arquivo até que sua página o solicite, mas pelo menos pode lidar com os aspectos de conexão com antecedência, evitando que o usuário espere várias viagens de ida e volta.
 

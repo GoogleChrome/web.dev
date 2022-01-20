@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não usa HTTPS
 description: |2
 
@@ -20,7 +20,7 @@ Para obter mais informações sobre por que todos os sites devem ser protegidos 
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não estão em HTTPS:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="A auditoria do Lighthouse mostrando que a página não está em HTTPS", width="800", height="139", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="A auditoria do Lighthouse mostrando que a página não está em HTTPS", width="800", height="139" %}</figure>
 
 O Lighthouse aguarda um evento do [Protocolo de depuração remota do Chrome](https://github.com/ChromeDevTools/devtools-protocol) indicando que a página está sendo executada em uma conexão segura. Se o evento não for ouvido em 10 segundos, a auditoria falhará.
 

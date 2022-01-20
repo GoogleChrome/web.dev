@@ -1,5 +1,5 @@
 ~---
-layout: post-old
+layout: post
 title: 로그인 양식 모범 사례
 subhead: 교차 플랫폼 브라우저 기능을 사용하여 안전하고 액세스 가능하며 사용하기 쉬운 로그인 양식을 작성하십시오.
 authors:
@@ -85,7 +85,7 @@ codelabs:
 
 레이블을 입력 위에 두는 것이 가장 좋습니다. 이를 통해 모바일과 데스크톱에서 일관된 디자인이 가능하며 [Google AI 연구](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html)에 따르면 사용자가 더 빠르게 스캔할 수 있습니다. 전체 너비 레이블 및 입력을 얻을 수 있으며 레이블 텍스트에 맞게 레이블 및 입력 너비를 조정할 필요가 없습니다.
 
-<figure class="w-figure">{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="모바일에서 양식 입력 레이블 위치를 보여주는 스크린샷: 입력 옆 및 입력 위.", width="500", height="253", class="w-screenshot" %} <figcaption class="w-figcaption">레이블과 입력 너비는 둘 다 같은 줄에 있을 때 제한됩니다.</figcaption></figure>
+<figure>{% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="모바일에서 양식 입력 레이블 위치를 보여주는 스크린샷: 입력 옆 및 입력 위.", width="500", height="253" %} <figcaption>레이블과 입력 너비는 둘 다 같은 줄에 있을 때 제한됩니다.</figcaption></figure>
 
 모바일 장치에서 [레이블 위치](https://label-position.glitch.me) Glitch를 열어 직접 확인하십시오.
 
@@ -126,7 +126,7 @@ codelabs:
 
 사용자가 입력한 텍스트를 확인할 수 있도록 **비밀번호 표시** 아이콘 또는 버튼을 추가해야 하며 **비밀번호 분실** 링크를 추가하는 것을 잊지 마십시오. [비밀번호 표시 활성화](#password-display)를 참조하십시오.
 
-<figure class="w-figure">{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="비밀번호 표시 아이콘을 표시하는 Google 로그인 양식.", width="300", height="107", class="w-screenshot" %} <figcaption class="w-figcaption">Google 로그인 양식에서 비밀번호 입력: <strong>비밀번호 표시</strong> 아이콘 및 <strong>비밀번호 찾기</strong> 링크가 있습니다.</figcaption></figure>
+<figure>{% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="비밀번호 표시 아이콘을 표시하는 Google 로그인 양식.", width="300", height="107" %} <figcaption>Google 로그인 양식에서 비밀번호 입력: <strong>비밀번호 표시</strong> 아이콘 및 <strong>비밀번호 찾기</strong> 링크가 있습니다.</figcaption></figure>
 
 ## 모바일 사용자에게 적합한 키보드 제공 {: #mobile-keyboards }
 
@@ -140,23 +140,23 @@ codelabs:
 
 유감스럽게도 조심하지 않으면 모바일 키보드가 양식을 덮거나 더 심하게는 **로그인** 버튼을 부분적으로 가리게 될 수 있습니다. 사용자는 무슨 일이 일어났는지 깨닫기도 전에 포기할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Android 휴대전화 로그인 양식의 두 스크린샷: 제출 버튼이 휴대전화 키보드에 가려지는 방식을 보여주는 스크린샷", width="400", height="360", class="w-screenshot" %}<figcaption class="w-figcaption"><b>로그인</b> 버튼: 지금은 표시되지만 이제는 표시되지 않습니다.</figcaption></figure>
+<figure>{% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Android 휴대전화 로그인 양식의 두 스크린샷: 제출 버튼이 휴대전화 키보드에 가려지는 방식을 보여주는 스크린샷", width="400", height="360" %}<figcaption><b>로그인</b> 버튼: 지금은 표시되지만 이제는 표시되지 않습니다.</figcaption></figure>
 
 가능하면 **로그인** 페이지 상단에 이메일/전화 및 비밀번호 입력과 로그인 버튼만 표시하여 이를 방지하십시오. 아래에 다른 내용을 넣으십시오.
 
-<figure class="w-figure">{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Android 휴대폰의 로그인 양식 스크린샷: 로그인 버튼이 휴대폰 키보드에 가려지지 않습니다.", width="200", height="342", class="w-screenshot" %} <figcaption class="w-figcaption">키보드가 <b>로그인</b> 버튼을 가리지 않습니다.</figcaption></figure>
+<figure>{% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Android 휴대폰의 로그인 양식 스크린샷: 로그인 버튼이 휴대폰 키보드에 가려지지 않습니다.", width="200", height="342" %} <figcaption>키보드가 <b>로그인</b> 버튼을 가리지 않습니다.</figcaption></figure>
 
 #### 다양한 기기에서 테스트 {: #devices }
 
 대상 고객을 위해 다양한 장치에서 테스트하고 그에 따라 조정해야 합니다. BrowserStack을 사용하면 다양한 실제 장치 및 브라우저에서 [오픈 소스 프로젝트를 무료로 테스트](https://www.browserstack.com/open-source)할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="iPhone 7, 8 및 11의 로그인 양식 스크린샷. iPhone 7 및 8의 로그인 버튼은 전화 키보드로 가려져 있지만 iPhone 11에는 없음", width="800", height="522", class="w-screenshot" %}<figcaption class="w-figcaption"><b>로그인</b> 버튼: iPhone 7 및 8에서는 가려져 있지만 iPhone 11에서는 보이지 않습니다.</figcaption></figure>
+<figure>{% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="iPhone 7, 8 및 11의 로그인 양식 스크린샷. iPhone 7 및 8의 로그인 버튼은 전화 키보드로 가려져 있지만 iPhone 11에는 없음", width="800", height="522" %}<figcaption><b>로그인</b> 버튼: iPhone 7 및 8에서는 가려져 있지만 iPhone 11에서는 보이지 않습니다.</figcaption></figure>
 
 #### 두 페이지 사용 고려 {: #two-pages }
 
 일부 사이트(Amazon 및 eBay 포함)는 두 페이지에 이메일/전화 및 비밀번호를 요청하여 문제를 방지합니다. 이 접근 방식은 또한 경험을 단순화합니다. 사용자는 한 번에 한 가지만 수행해야 합니다.
 
-<figure class="w-figure">{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Amazon 웹사이트의 로그인 양식 스크린샷: 두 개의 별도 '페이지'에 있는 이메일/전화 및 비밀번호.", width="400", height="385", class="w-screenshot" %} <figcaption class="w-figcaption">2단계 로그인: 이메일 또는 전화, 비밀번호</figcaption></figure>
+<figure>{% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Amazon 웹사이트의 로그인 양식 스크린샷: 두 개의 별도 '페이지'에 있는 이메일/전화 및 비밀번호.", width="400", height="385" %} <figcaption>2단계 로그인: 이메일 또는 전화, 비밀번호</figcaption></figure>
 
 이상적으로는 단일 &lt;form&gt;으로 구현되어야 합니다. JavaScript를 사용하여 처음에 이메일 입력만 표시한 다음 숨기고 비밀번호 입력을 표시합니다. 사용자가 이메일과 비밀번호를 입력하는 사이에 새 페이지로 이동하도록 해야 하는 경우 두 번째 페이지의 양식에는 비밀번호 관리자가 올바른 값을 저장할 수 있도록 이메일 값과 함께 숨겨진 입력 요소가 있어야 합니다. [Chromium이 이해하는 비밀번호 양식 스타일](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands)은 코드 예제를 제공합니다.
 
@@ -202,11 +202,11 @@ codelabs:
 
 브라우저마다 이메일 자동 완성 및 비밀번호 제안을 다소 다르게 처리하지만 효과는 거의 동일합니다. 예를 들어 데스크톱의 Safari 11 이상에서는 비밀번호 관리자가 표시된 다음 가능한 경우 생체 인증(지문 또는 얼굴 인식)이 사용됩니다.
 
-<figure class="w-figure">{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="데스크톱용 Safari의 3단계 로그인 프로세스 스크린샷: 비밀번호 관리자, 생체 인증, 자동 완성.", width="800", height="234", class="w-screenshot" %} <figcaption class="w-figcaption">자동 완성으로 로그인 - 텍스트 입력이 필요하지 않습니다!</figcaption></figure>
+<figure>{% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="데스크톱용 Safari의 3단계 로그인 프로세스 스크린샷: 비밀번호 관리자, 생체 인증, 자동 완성.", width="800", height="234" %} <figcaption>자동 완성으로 로그인 - 텍스트 입력이 필요하지 않습니다!</figcaption></figure>
 
 데스크톱의 Chrome은 이메일 제안을 표시하고 비밀번호 관리자를 표시하며 비밀번호를 자동 완성합니다.
 
-<figure class="w-figure">{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="데스크톱용 Chrome 로그인 프로세스의 4단계 스크린샷: 이메일 완성, 이메일 제안, 비밀번호 관리자, 선택 시 자동 완성.", width="800", height="232", class="w-screenshot" %} <figcaption class="w-figcaption">Chrome 84의 자동 완성 로그인 흐름.</figcaption></figure>
+<figure>{% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="데스크톱용 Chrome 로그인 프로세스의 4단계 스크린샷: 이메일 완성, 이메일 제안, 비밀번호 관리자, 선택 시 자동 완성.", width="800", height="232" %} <figcaption>Chrome 84의 자동 완성 로그인 흐름.</figcaption></figure>
 
 브라우저 비밀번호 및 자동 완성 시스템은 간단하지 않습니다. 값을 추측, 저장 및 표시하는 알고리즘은 표준화되지 않았으며 플랫폼마다 다릅니다. 예를 들어, [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form)가 지적한 바와 같이: "Firefox의 비밀번호 관리자는 [레시피 시스템](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)으로 휴리스틱을 보완합니다."
 
@@ -220,7 +220,7 @@ codelabs:
 
 다음은 Safari가 데스크톱에서 수행하는 방법입니다.
 
-<figure class="w-figure">{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="데스크톱의 Firefox 비밀번호 관리자 스크린샷", width="800", height="229", class="w-screenshot" %} <figcaption class="w-figcaption">Safari의 비밀번호 제안 흐름.</figcaption></figure>
+<figure>{% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="데스크톱의 Firefox 비밀번호 관리자 스크린샷", width="800", height="229" %} <figcaption>Safari의 비밀번호 제안 흐름.</figcaption></figure>
 
 (강력한 고유 비밀번호 제안은 버전 12.0부터 Safari에서 사용할 수 있습니다.)
 
@@ -232,7 +232,7 @@ codelabs:
 
 이메일 및 비밀번호 필드 모두에 `required` 속성을 추가하십시오. 최신 브라우저는 누락된 데이터에 대해 자동으로 메시지를 표시하고 초점을 설정합니다. JavaScript가 필요하지 않습니다!
 
-<figure class="w-figure">{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="데스크톱 Firefox 및 Android용 Chrome의 스크린샷에 누락된 데이터에 대한 '이 필드를 작성하십시오' 프롬프트가 표시됩니다.", width="600", height="392", class="w-screenshot" %} <figcaption class="w-figcaption">데스크톱용 Firefox(버전 76) 및 Android용 Chrome(버전 83)에서 누락된 데이터에 대한 프롬프트 및 포커스.</figcaption></figure>
+<figure>{% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="데스크톱 Firefox 및 Android용 Chrome의 스크린샷에 누락된 데이터에 대한 '이 필드를 작성하십시오' 프롬프트가 표시됩니다.", width="600", height="392" %} <figcaption>데스크톱용 Firefox(버전 76) 및 Android용 Chrome(버전 83)에서 누락된 데이터에 대한 프롬프트 및 포커스.</figcaption></figure>
 
 ## 손가락과 엄지손가락을 위한 디자인 {: #mobile-design }
 
@@ -242,7 +242,7 @@ codelabs:
 
 입력 및 버튼의 기본 크기와 패딩은 데스크톱에서 너무 작고 모바일에서는 더 작습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="데스크톱용 Chrome 및 Android용 Chrome의 스타일이 지정되지 않은 양식 스크린샷", width="800", height="434", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="데스크톱용 Chrome 및 Android용 Chrome의 스타일이 지정되지 않은 양식 스크린샷", width="800", height="434" %}</figure>
 
 [Android 접근성 지침](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB)에 따르면 터치스크린 개체의 권장 대상 크기는 7–10mm입니다. Apple 인터페이스 지침은 48x48 픽셀을 제안하고 W3C는 [최소 44x44 CSS 픽셀](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)을 제안합니다. 이를 기반으로 모바일의 경우 입력 요소 및 버튼에 약 15픽셀, 데스크톱에서 약 10픽셀의 패딩을 추가합니다. 실제 모바일 장치와 실제 손가락 또는 엄지 손가락으로 이것을 시도하십시오. 각 입력과 버튼을 편안하게 누를 수 있어야 합니다.
 
@@ -256,7 +256,7 @@ codelabs:
 
 크기 및 패딩과 마찬가지로 입력 요소 및 버튼의 기본 브라우저 글꼴 크기는 특히 모바일에서 너무 작습니다.
 
-<figure class="w-figure">{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="데스크톱 및 Android의 Chrome에서 스타일이 지정되지 않은 양식의 스크린샷", width="800", height="494", class="w-screenshot" %} <figcaption class="w-figcaption">데스크탑 및 모바일의 기본 스타일: 입력 텍스트가 너무 작아서 많은 사용자가 읽을 수 없습니다.</figcaption></figure>
+<figure>{% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="데스크톱 및 Android의 Chrome에서 스타일이 지정되지 않은 양식의 스크린샷", width="800", height="494" %} <figcaption>데스크탑 및 모바일의 기본 스타일: 입력 텍스트가 너무 작아서 많은 사용자가 읽을 수 없습니다.</figcaption></figure>
 
 다른 플랫폼의 브라우저는 글꼴 크기를 다르게 지정하므로 모든 곳에서 잘 작동하는 특정 글꼴 크기를 지정하기가 어렵습니다. 인기 있는 웹사이트에 대한 간단한 설문조사는 데스크톱에서 13-16픽셀 크기를 보여줍니다. 모바일에서 텍스트의 경우 물리적 크기와 일치하는 것이 좋은 최소값입니다.
 
@@ -274,13 +274,13 @@ codelabs:
 
 패딩뿐만 아니라 테두리를 추가합니다. 흰색 배경에 `#ccc` 또는 더 어두운 색을 사용하는 것이 일반적인 규칙입니다.
 
-<figure class="w-figure">{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Android의 Chrome에서 스타일이 지정된 양식의 스크린샷.", width="250", height="525", class="w-screenshot" %} <figcaption class="w-figcaption">읽기 쉬운 텍스트, 눈에 보이는 입력 테두리, 적절한 패딩 및 여백.</figcaption></figure>
+<figure>{% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Android의 Chrome에서 스타일이 지정된 양식의 스크린샷.", width="250", height="525" %} <figcaption>읽기 쉬운 텍스트, 눈에 보이는 입력 테두리, 적절한 패딩 및 여백.</figcaption></figure>
 
 ### 내장 브라우저 기능을 사용하여 잘못된 입력 값 경고 {: #built-in-validation }
 
 브라우저에는 `type` 속성에 대한 기본 양식 유효성 검사를 수행하는 기능이 내장되어 있습니다. 브라우저는 잘못된 값으로 양식을 제출할 때 경고하고 문제가 있는 입력에 초점을 맞춥니다.
 
-<figure class="w-figure">{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="잘못된 이메일 값에 대한 브라우저 프롬프트 및 포커스를 표시하는 데스크톱의 Chrome 로그인 양식 스크린샷.", width="300", height="290" %} <figcaption class="w-figcaption">브라우저에 의한 기본 내장 유효성 검사.</figcaption></figure>
+<figure>{% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="잘못된 이메일 값에 대한 브라우저 프롬프트 및 포커스를 표시하는 데스크톱의 Chrome 로그인 양식 스크린샷.", width="300", height="290" %} <figcaption>브라우저에 의한 기본 내장 유효성 검사.</figcaption></figure>
 
 `:invalid` CSS 선택기를 사용하여 잘못된 데이터를 강조 표시할 수 있습니다. 내용이 없는 입력을 선택하지 않으려면 `:not(:placeholder-shown)`을 사용하십시오.
 
@@ -299,7 +299,7 @@ input[type=email]:not(:placeholder-shown):invalid {
 
 사용자가 입력한 텍스트를 확인할 수 있도록 **비밀번호 표시** 아이콘 또는 버튼을 추가해야 합니다. 사용자가 입력한 텍스트를 볼 수 없으면 [사용성이 저하](https://www.nngroup.com/articles/stop-password-masking/)됩니다. [구현 계획](https://twitter.com/sw12/status/1251191795377156099)은 있지만 현재로서는 이를 수행할 수 있는 기본 제공 방법이 없습니다. 대신 JavaScript를 사용해야 합니다.
 
-<figure class="w-figure"><img class="w-screenshot" src="./show-password-google.png" width="350" alt="비밀번호 표시 아이콘이 표시된 Google 로그인 양식."><figcaption class="w-figcaption"> Google 로그인 양식: <strong>비밀번호 표시</strong> 아이콘 및 <strong>비밀번호 찾기</strong> 링크가 있습니다.</figcaption></figure>
+<figure><img src="./show-password-google.png" width="350" alt="비밀번호 표시 아이콘이 표시된 Google 로그인 양식."><figcaption> Google 로그인 양식: <strong>비밀번호 표시</strong> 아이콘 및 <strong>비밀번호 찾기</strong> 링크가 있습니다.</figcaption></figure>
 
 다음 코드는 텍스트 버튼을 사용하여 **비밀번호 표시** 기능을 추가합니다.
 
@@ -357,7 +357,7 @@ function togglePassword() {
 
 최종 결과는 다음과 같습니다.
 
-<figure class="w-figure">{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Mac 및 iPhone 7의 Safari에서 비밀번호 텍스트 '버튼' 표시가 있는 로그인 양식 스크린샷.", width="800", height="468", class="w-screenshot" %} <figcaption class="w-figcaption">Mac 및 iPhone 7의 Safari에서 <strong>비밀번호</strong> 텍스트 '버튼' 표시가 있는 로그인 양식.</figcaption></figure>
+<figure>{% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Mac 및 iPhone 7의 Safari에서 비밀번호 텍스트 '버튼' 표시가 있는 로그인 양식 스크린샷.", width="800", height="468" %} <figcaption>Mac 및 iPhone 7의 Safari에서 <strong>비밀번호</strong> 텍스트 '버튼' 표시가 있는 로그인 양식.</figcaption></figure>
 
 ### 비밀번호 입력에 액세스할 수 있도록 설정 {: #accessible-password-inputs }
 

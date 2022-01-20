@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Identifique JavaScript lento de terceros
 subhead: Potencie sus habilidades de detective de desempeño con Lighthouse y Chrome DevTools.
 authors:
@@ -38,19 +38,19 @@ Para ejecutar una auditoría:
 
 La auditoría de **uso de de terceros** de Lighthouse muestra una lista de los proveedores de terceros que utiliza una página. Esta descripción general puede ayudarle a comprender mejor el panorama general e identificar el código de terceros redundante. La auditoría está disponible en la [extensión Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) y pronto se agregará a DevTools en Chrome 77.
 
-<figure class="w-figure">{% Img src="image/admin/4JXHK0FkgJIfKED16BnF.png", alt="Captura de pantalla que muestra que se encontraron 51 usos de terceros y una lista de startups imaginarias.", width="728", height="646", class="w-screenshot" %}<figcaption class="w-figcaption"> Nombres de proveedores de terceros generados con el <a href="http://tiffzhang.com/startup/?s=641553836036">generador de startups</a>. Cualquier similitud con startups reales, vivas o muertas, es pura coincidencia.</figcaption></figure>
+<figure>{% Img src="image/admin/4JXHK0FkgJIfKED16BnF.png", alt="Captura de pantalla que muestra que se encontraron 51 usos de terceros y una lista de startups imaginarias.", width="728", height="646" %}<figcaption> Nombres de proveedores de terceros generados con el <a href="http://tiffzhang.com/startup/?s=641553836036">generador de startups</a>. Cualquier similitud con startups reales, vivas o muertas, es pura coincidencia.</figcaption></figure>
 
 ### Reducir el tiempo de ejecución de JavaScript
 
 La auditoría [Reducir el tiempo de ejecución de JavaScript](/bootup-time) de Lighthouse destaca los scripts que tardan mucho en analizarse, compilarse o evaluarse. Seleccione la casilla de verificación **Mostrar recursos de terceros** para descubrir scripts de terceros que usen intensivamente la CPU.
 
-{% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Captura de pantalla que muestra que la casilla de verificación 'Mostrar recursos de terceros' está marcada.", width="800", height="981", class= "w-screenshot" %}
+{% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Captura de pantalla que muestra que la casilla de verificación 'Mostrar recursos de terceros' está marcada.", width="800", height="981" %}
 
 ### Evite cargas útiles de red enormes
 
 La auditoría [Evitar enormes cargas útiles de red](/total-byte-weight) de Lighthouse identifica las solicitudes de red, incluidas las de terceros, que pueden ralentizar el tiempo de carga de la página. La auditoría falla cuando su carga útil de red supera los 4,000 KB.
 
-{% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Captura de pantalla de la auditoría de Chrome DevTools 'Evitar enormes cargas útiles de red'", width="799", height="631", class="w-screenshot" %}
+{% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Captura de pantalla de la auditoría de Chrome DevTools 'Evitar enormes cargas útiles de red'", width="799", height="631" %}
 
 ## Bloquear solicitudes de red en Chrome DevTools
 
@@ -61,7 +61,7 @@ Para habilitar el bloqueo de solicitudes: {% Instruction 'devtools-network', 'ol
 1. Haga clic con el botón derecho en cualquier solicitud en el panel **Red**.
 2. Seleccione **Bloquear URL de solicitud**.
 
-{% Img src="image/admin/UbedvjrtP9si1l0X2QVA.png", alt="Una captura de pantalla del menú contextual en el panel de rendimiento de Chrome DevTools. La opción 'Bloquear URL de solicitud' está resaltada.", width="800", height="529", class="w-screenshot" %}
+{% Img src="image/admin/UbedvjrtP9si1l0X2QVA.png", alt="Una captura de pantalla del menú contextual en el panel de rendimiento de Chrome DevTools. La opción 'Bloquear URL de solicitud' está resaltada.", width="800", height="529" %}
 
 Aparecerá una **pestaña de bloqueo de solicitudes** en el cajón de DevTools. Puede administrar qué solicitudes se han bloqueado allí.
 

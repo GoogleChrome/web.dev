@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 lazysizes 延迟加载图像
 authors:
   - katiehempenius

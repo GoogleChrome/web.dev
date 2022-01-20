@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 글꼴 로드 중 보이지 않는 텍스트 방지
 authors:
   - katiehempenius
@@ -23,7 +23,7 @@ feedback:
 
 ## 옵션 #1: font-display 사용
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -50,7 +50,7 @@ feedback:
 
 다음은 일반 브라우저의 기본 글꼴 로드 동작입니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

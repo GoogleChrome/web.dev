@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Не установлен цвет темы для адресной строки (Does not set a theme color for the address bar)
 description: |2-
 
@@ -20,7 +20,7 @@ updated: 2020-06-17
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые не применяют тему к адресной строке:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Аудит Lighthouse показывает, что для адресной строки не установлена тема согласно цветам страницы", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Аудит Lighthouse показывает, что для адресной строки не установлена тема согласно цветам страницы", width="800", height="98" %}</figure>
 
 Аудит считается непройденным, если Lighthouse не находит метатег `theme-color` в HTML-коде страницы или свойство `theme_color` в [манифесте веб-приложения](/add-manifest).
 

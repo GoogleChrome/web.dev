@@ -145,7 +145,7 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-<figure>{% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Captura de tela da solicitação de um dispositivo HID em um site.", width="800", height="513", class="w-screenshot" %} <figcaption class="w-figcaption">Solicitação ao usuário para selecionar um Joy-Con do Nintendo Switch.</figcaption></figure>
+<figure>{% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Captura de tela da solicitação de um dispositivo HID em um site.", width="800", height="513" %} <figcaption>Solicitação ao usuário para selecionar um Joy-Con do Nintendo Switch.</figcaption></figure>
 
 Um objeto `HIDDevice` contém identificadores de fornecedor USB e de produto para a identificação do dispositivo. Seu atributo `collections` é inicializado com uma descrição hierárquica dos formatos de relatório do dispositivo.
 
@@ -185,7 +185,7 @@ await device.open();
 
 Depois que a conexão HID for estabelecida, será possível lidar com os relatórios de entrada ao escutar os eventos `"inputreport"` do dispositivo. Esses eventos contêm os dados HID como um objeto [`DataView`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView) (`data`), o dispositivo HID ao qual ele pertence (`device`) e o ID do relatório de 8 bits associado ao relatório de entrada (`reportId`).
 
-<figure>{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Foto de um Nintendo Switch azul e vermelho.", width="800", height="575", class="w-screenshot" %} <figcaption class="w-figcaption">Dispositivos Joy-Con do Nintendo Switch.</figcaption></figure>
+<figure>{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Foto de um Nintendo Switch azul e vermelho.", width="800", height="575" %} <figcaption>Dispositivos Joy-Con do Nintendo Switch.</figcaption></figure>
 
 Continuando com o exemplo anterior, o código abaixo mostra como detectar qual botão o usuário pressionou em um dispositivo Joy-Con Right para que você possa tentar em casa.
 
@@ -230,7 +230,7 @@ await device.sendReport(0x10, new Uint8Array(rumbleData));
 
 Os relatórios de recursos são o único tipo de relatório de dados HID que conseguem viajar em ambas as direções. Eles permitem que dispositivos HID e aplicativos troquem dados HID não padronizados. Ao contrário dos relatórios de entrada e saída, os relatórios de recursos não são recebidos ou enviados pelo aplicativo regularmente.
 
-<figure>{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Foto de um laptop preto e prata.", width="800", height="575", class="w-screenshot" %} <figcaption class="w-figcaption">Teclado de laptop</figcaption></figure>
+<figure>{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Foto de um laptop preto e prata.", width="800", height="575" %} <figcaption>Teclado de laptop</figcaption></figure>
 
 Para enviar um relatório de recurso a um dispositivo HID, transmita o ID de relatório de 8 bits associado ao relatório de recurso (`reportId`) e os bytes como [`BufferSource`](https://developer.mozilla.org/docs/Web/API/BufferSource) (`data`) para `device.sendFeatureReport()`. A promessa retornada é resolvida assim que o relatório for enviado. Se o dispositivo HID não usar IDs de relatório, defina `reportId` como 0.
 
@@ -288,7 +288,7 @@ navigator.hid.addEventListener("disconnect", event => {
 
 Depurar o HID no Chrome é fácil com a página interna, `about://device-log`, onde você consegue ver todos os eventos relacionados a dispositivos HID e USB em um único lugar.
 
-<figure>{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Captura de tela da página interna para depurar o HID.", width="800", height="575", class="w-screenshot" %} <figcaption class="w-figcaption">Página interna no Chrome para depurar o HID.</figcaption></figure>
+<figure>{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Captura de tela da página interna para depurar o HID.", width="800", height="575" %} <figcaption>Página interna no Chrome para depurar o HID.</figcaption></figure>
 
 ## Compatibilidade com o navegador {: #browser-support }
 

@@ -128,7 +128,7 @@ quam sem.
 ## Image, Inline
 
 <figure data-float="right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306" %}
   <figcaption>
     Inline right, outlined image.
   </figcaption>
@@ -149,7 +149,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure data-float="left">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306" %}
   <figcaption>
     Inline left, outlined image.
   </figcaption>
@@ -170,7 +170,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
   <figcaption>
     Filled screenshot.
   </figcaption>
@@ -263,7 +263,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
     <figcaption>
       Filled screenshot.
     </figcaption>
@@ -310,7 +310,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
     <figcaption>
       Filled screenshot.
     </figcaption>

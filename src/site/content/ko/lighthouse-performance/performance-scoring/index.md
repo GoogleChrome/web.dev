@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Lighthouse 성능 점수
 description: Lighthouse가 페이지에 대한 전체 성능 점수를 생성하는 방법을 알아봅니다.
 subhead: Lighthouse가 전체 성능 점수를 계산하는 방법
@@ -31,13 +31,13 @@ updated: 2021-02-26
 
 {% Aside %} 가중치는 성능에 대한 사용자의 인식을 균형 있게 표현하기 위해 선택되었습니다. 사용자가 인식하는 성능에 가장 큰 영향을 미치는 요소가 무엇인지 이해하기 위해 Lighthouse 팀이 정기적으로 연구를 수행하고 피드백을 수집하기 때문에 가중치는 시간이 지나면서 변경됩니다. {% endAside %}
 
-<figure class="w-figure">
+<figure>
   <p data-md-type="paragraph"><a href="https://googlechrome.github.io/lighthouse/scorecalc/">     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rLftIdSA8JJYruHOHrOn.png", alt="Lighthouse 점수 계산기 웹앱", width="600", height="414" %}   </a></p>
-  <figcaption class="w-figcaption"><a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse 점수 계산기</a>로 점수 매기기 살펴보기</figcaption></figure>
+  <figcaption><a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse 점수 계산기</a>로 점수 매기기 살펴보기</figcaption></figure>
 
 ### Lighthouse 8
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -76,7 +76,7 @@ updated: 2021-02-26
 
 ### Lighthouse 6
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -121,7 +121,7 @@ Lighthouse가 성능 메트릭 수집을 완료하면(대부분 수 밀리초 �
 
 좀 더 깊이 들어가면, Lighthouse 점수 곡선 모델은 HTTPArchive 데이터를 사용하여 두 개의 제어점을 결정한 다음, 이로부터 [로그 정규](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) 곡선의 모양을 설정합니다. HTTPArchive 데이터의 25번째 백분위수는 50점(중앙 제어점)이 되고 8번째 백분위수는 90점(양호/녹색 제어점)이 됩니다. 아래의 점수 곡선 플롯을 살펴보면서 0.50과 0.92 사이에는 메트릭 값과 점수 사이에 거의 선형적 관계가 있다는 점에 주목하세요. 약 0.96의 점수는 위와 같이 "이득이 감소하는 지점"으로, 곡선이 멀어지므로 이미 높은 점수를 개선하기 위해 점점 더 많은 메트릭 개선이 필요합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="TTI 점수 곡선 이미지", width="600", height="329" %}<figcaption class="w-figcaption"> <a href="https://www.desmos.com/calculator/o98tbeyt1t">TTI에 대한 점수 곡선을 살펴보세요</a>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="TTI 점수 곡선 이미지", width="600", height="329" %}<figcaption> <a href="https://www.desmos.com/calculator/o98tbeyt1t">TTI에 대한 점수 곡선을 살펴보세요</a>.</figcaption></figure>
 
 ### 데스크톱과 모바일이 처리되는 방식 비교 {: #desktop }
 
@@ -149,7 +149,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 5
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -184,7 +184,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 3 and 4
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -218,7 +218,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 2
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

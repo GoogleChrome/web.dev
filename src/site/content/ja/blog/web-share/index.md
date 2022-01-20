@@ -22,7 +22,7 @@ Web Share APIを使用すると、Webアプリは、プラットフォーム固�
 
 ## 概念と使用方法
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="オプションとしてPWAがインストールされたシステムレベルの共有ターゲットピッカー。", width="370", height="349" %} <figcaption class="w-figcaption w-figcaption--fullbleed">オプションとしてPWAがインストールされたシステムレベルの共有ターゲットピッカー。</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="オプションとしてPWAがインストールされたシステムレベルの共有ターゲットピッカー。", width="370", height="349" %} <figcaption>オプションとしてPWAがインストールされたシステムレベルの共有ターゲットピッカー。</figcaption></figure>
 
 ### 機能と制限
 
@@ -82,7 +82,7 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 
 ## Santa Trackerの事例研究
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="共有ボタンを表示しているSanta Trackerアプリ。", width="343", height="600" %} <figcaption class="w-figcaption w-figcaption--fullbleed">Santa Tracke共有ボタン。</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="共有ボタンを表示しているSanta Trackerアプリ。", width="343", height="600" %} <figcaption>Santa Tracke共有ボタン。</figcaption></figure>
 
 オープンソースプロジェクトである[Santa Tracke](https://santatracker.google.com/)は、Googleの休日の伝統です。毎年12月には、ゲームや教育体験でクリスマスを祝うことができます。
 

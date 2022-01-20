@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Controlar el enfoque con tabindex
 authors:
   - robdodson

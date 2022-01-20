@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Оценка производительности в Lighthouse
 description: Узнайте, как Lighthouse оценивает общую производительность вашей страницы.
 subhead: Как Lighthouse оценивает общую производительность страницы
@@ -31,13 +31,13 @@ updated: 2021-06-04
 
 {% Aside %} Весовые коэффициенты выбраны, чтобы обеспечить сбалансированное представление о восприятии пользователем производительности. Веса со временем менялись, потому что команда Lighthouse регулярно проводит исследования и собирает отзывы, чтобы понять, что больше всего влияет на воспринимаемую пользователем производительность. {% endAside %}
 
-<figure class="w-figure">
+<figure>
   <p data-md-type="paragraph"><a href="https://googlechrome.github.io/lighthouse/scorecalc/">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rLftIdSA8JJYruHOHrOn.png", alt = "Веб-приложение для подсчета оценки Lighthouse", width = "600", height = "414"%}</a></p>
-  <figcaption class="w-figcaption">Ознакомьтесь с системой подсчета оценки с помощью <a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse scoring calculator</a></figcaption></figure>
+  <figcaption>Ознакомьтесь с системой подсчета оценки с помощью <a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse scoring calculator</a></figcaption></figure>
 
 ### Lighthouse 8
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -76,7 +76,7 @@ updated: 2021-06-04
 
 ### Lighthouse 6
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -121,7 +121,7 @@ updated: 2021-06-04
 
 Если немного углубиться в тему, модель кривой подсчета оценки Lighthouse использует данные Интернет-архива для определения двух контрольных точек, которые затем задают форму кривой [логарифмического нормального распределения](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law). 25-й процентиль данных Интернет-архива становится оценкой 50 (медианная контрольная точка), а 8-й процентиль становится оценкой 90 (хорошая/зеленая контрольная точка). Изучая приведенный ниже график кривой оценки, обратите внимание, что между 0,50 и 0,92 существует почти линейная зависимость между значением метрики и оценкой. Примерно 0,96 — это «точка падения эффективности», поскольку выше нее кривая уходит в сторону, требуя всё большего улучшения метрики для повышения и без того высокого балла.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Изображение кривой оценки для TTI", width="600", height="329" %} <figcaption class="w-figcaption"> <a href="https://www.desmos.com/calculator/o98tbeyt1t">Ознакомьтесь с кривой оценки TTI</a>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Изображение кривой оценки для TTI", width="600", height="329" %} <figcaption> <a href="https://www.desmos.com/calculator/o98tbeyt1t">Ознакомьтесь с кривой оценки TTI</a>. </figcaption></figure>
 
 ### Как сравниваются компьютеры и мобильные устройства {: #desktop}
 
@@ -149,7 +149,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 5
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -184,7 +184,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 3 and 4
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -218,7 +218,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 2
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

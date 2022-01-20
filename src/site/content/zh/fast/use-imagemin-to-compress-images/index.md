@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 Imagemin 压缩图像
 authors:
   - katiehempenius
@@ -18,7 +18,7 @@ tags:
 
 未压缩的图像会因不必要的字节使页面膨胀。右边的这张照片比左边的这张小 40%，但对于普通用户来说可能看起来一样。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -52,7 +52,7 @@ Imagemin 是围绕“插件”构建的。插件是压缩特定图像格式的 n
 
 对于大多数人来说，有损插件是最好的选择。它们会显著降低文件大小，可以自定义压缩级别来满足需求。下表列出了流行的 Imagemin 插件。这些不是唯一可用的插件，但它们都是您项目的理想选择。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

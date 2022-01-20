@@ -27,7 +27,7 @@ tags:
 
 [A List Apart에서 Ethan Marcotte](http://alistapart.com/article/responsive-web-design/)이 처음 정의한 반응형 웹 디자인은 사용자와 사용자가 사용하는 장치의 요구에 대응합니다. 장치의 크기와 기능에 따라 레이아웃이 달라집니다. 예를 들어, 전화 사용자는 하나의 열에 콘텐츠가 표시되는 모습을 볼 수 있지만, 태블릿은 동일한 콘텐츠를 두 개의 열에 표시할 수 있습니다.
 
-<figure class="w-figure">   {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot", playsinline=true %}</figure>
+<figure>   {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}</figure>
 
 휴대폰, "패블릿", 태블릿, 데스크톱, 게임 콘솔, TV, 심지어 웨어러블에 이르기까지 다양한 화면 크기가 존재합니다. 화면 크기는 계속해서 변하기 때문에 사이트가 현재 또는 미래의 모든 화면 크기에 적응할 수 있도록 하는 것이 중요합니다. 또한 장치에는 우리가 상호 작용하는 다양한 요소들이 있습니다. 예를 들어 방문자 중 일부는 터치스크린을 사용합니다. 현대적인 반응형 디자인은 이러한 모든 사항을 고려하여 모든 사람의 경험을 최적화합니다.
 
@@ -51,9 +51,9 @@ tags:
 
 메타 뷰포트 값 `width=device-width`를 사용하면 장치 독립적인 픽셀로 화면 너비를 일치시킬 것을 페이지에 지시합니다. 고밀도 화면에서 많은 물리적 픽셀로 구성될 수 있는 단일 픽셀의 표현인 장치(또는 밀도) 독립 픽셀입니다. 이를 통해 페이지는 작은 휴대폰에서 렌더링하든 큰 데스크톱 모니터에서 렌더링하든 다양한 화면 크기와 일치하도록 콘텐츠를 리플로우할 수 있습니다.
 
-<figure class="w-figure">   {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="텍스트가 매우 축소되어 읽기 어려운 페이지를 보여주는 스크린샷", width="500", height="640" %}   <figcaption class="w-figcaption">     뷰포트 메타 태그가 없는 기기에서 페이지가 로드되는 방식을 보여주는 예입니다. <a href="https://without-vp-meta.glitch.me/">Glitch에서 이 예를 참조하세요</a>.   </figcaption></figure>
+<figure>   {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="텍스트가 매우 축소되어 읽기 어려운 페이지를 보여주는 스크린샷", width="500", height="640" %}   <figcaption>     뷰포트 메타 태그가 없는 기기에서 페이지가 로드되는 방식을 보여주는 예입니다. <a href="https://without-vp-meta.glitch.me/">Glitch에서 이 예를 참조하세요</a>.   </figcaption></figure>
 
-<figure class="w-figure">   {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="텍스트가 읽을 수 있는 크기로 표시된 동일한 페이지의 스크린샷", width="500", height="888" %}   <figcaption class="w-figcaption">     뷰포트 메타 태그가 있는 기기에서 페이지가 로드되는 방식을 보여주는 예입니다. <a href="https://with-vp-meta.glitch.me/">Glitch에서 이 예를 참조하세요</a>.   </figcaption></figure>
+<figure>   {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="텍스트가 읽을 수 있는 크기로 표시된 동일한 페이지의 스크린샷", width="500", height="888" %}   <figcaption>     뷰포트 메타 태그가 있는 기기에서 페이지가 로드되는 방식을 보여주는 예입니다. <a href="https://with-vp-meta.glitch.me/">Glitch에서 이 예를 참조하세요</a>.   </figcaption></figure>
 
 [일부 브라우저](https://css-tricks.com/probably-use-initial-scale1/)는 가로 모드로 회전할 때 페이지의 너비를 일정하게 유지하고 리플로우 대신 확대/축소를 통해 화면을 채웁니다. `initial-scale=1` 값을 추가하면 브라우저가 장치 방향에 관계없이 CSS 픽셀과 장치 독립적인 픽셀 사이에 1:1 관계를 유지하도록 지시하고 페이지에서 전체 가로 너비를 활용할 수 있습니다.
 
@@ -100,7 +100,7 @@ CSS 픽셀의 화면 크기와 너비는 기기(예: 휴대폰과 태블릿, 심
 
 과거에는 레이아웃을 생성하는 데 사용되는 요소를 백분율로 설정해야 했습니다. 아래 예에서 픽셀을 사용하여 크기가 조정된 부동 요소가 있는 2-열 레이아웃을 볼 수 있습니다. 뷰포트가 열의 전체 너비보다 작아지면 콘텐츠를 보기 위해 가로로 스크롤해야 합니다.
 
-<figure class="w-figure">   {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="두 번째 열의 대부분이 뷰포트 밖에 있는 2-열 레이아웃을 보여주는 스크린샷", width="800", height="504", class="w-screenshot" %}   <figcaption class="w-figcaption">     픽셀을 사용하는 부동 레이아웃. <a href="https://layout-floats-px.glitch.me/">Glitch에서 이 예제를 참조하세요</a>.   </figcaption></figure>
+<figure>   {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="두 번째 열의 대부분이 뷰포트 밖에 있는 2-열 레이아웃을 보여주는 스크린샷", width="800", height="504" %}   <figcaption>     픽셀을 사용하는 부동 레이아웃. <a href="https://layout-floats-px.glitch.me/">Glitch에서 이 예제를 참조하세요</a>.   </figcaption></figure>
 
 너비에 백분율을 사용하면 열이 항상 컨테이너의 특정 비율로 유지됩니다. 즉, 스크롤바를 만드는 대신 열이 좁아집니다.
 
@@ -227,11 +227,11 @@ CSS 그리드 레이아웃을 사용하면 유연한 그리드를 간단하게 �
 
 처음에 본 예제인 날씨 예보를 계속 작업해 보겠습니다. 첫 번째 단계는 작은 화면에서 예보가 잘 보이도록 하는 것입니다.
 
-<figure class="w-figure">   {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="모바일 너비에 맞춰진 날씨 앱의 스크린샷", width="400", height="667", class="w-screenshot" %}   <figcaption class="w-figcaption">     너비가 좁은 앱.   </figcaption></figure>
+<figure>   {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="모바일 너비에 맞춰진 날씨 앱의 스크린샷", width="400", height="667" %}   <figcaption>     너비가 좁은 앱.   </figcaption></figure>
 
 그런 다음, 요소 사이에 공백이 너무 많아 예보가 시각적으로 이상해 보일 때까지 브라우저 크기를 조정합니다. 결정은 다소 주관적이지만 위의 `600px`는 확실히 너무 넓습니다.
 
-<figure class="w-figure">   {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="항목 간 간격이 넓은 날씨 앱의 스크린샷", width="400", height="240", class="w-screenshot" %}   <figcaption class="w-figcaption">     디자인을 조정해야 한다고 느껴지는 시점까지 이른 앱.   </figcaption></figure>
+<figure>   {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="항목 간 간격이 넓은 날씨 앱의 스크린샷", width="400", height="240" %}   <figcaption>     디자인을 조정해야 한다고 느껴지는 시점까지 이른 앱.   </figcaption></figure>
 
 `600px`에 중단점을 삽입하려면 구성요소의 CSS 끝에 두 개의 미디어 쿼리를 만듭니다. 하나는 브라우저가 `600px` 이하일 때 사용하고 다른 하나는 `600px` 보다 넓을 때 사용합니다.
 
@@ -294,9 +294,9 @@ CSS 그리드 레이아웃을 사용하면 유연한 그리드를 간단하게 �
 
 고전적인 가독성 이론에 따르면 이상적인 열은 한 줄에 70~80자(영어의 경우 약 8~10단어)를 포함해야 합니다. 따라서 텍스트 블록의 너비가 약 10단어를 초과할 때마다 중단점을 추가하는 것이 좋습니다.
 
-<figure class="w-figure">   {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="모바일 장치의 텍스트 페이지를 보여주는 스크린샷", width="400", height="488", class="w-screenshot" %}   <figcaption class="w-figcaption">     모바일 장치에서 읽혀지는 텍스트.   </figcaption></figure>
+<figure>   {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="모바일 장치의 텍스트 페이지를 보여주는 스크린샷", width="400", height="488" %}   <figcaption>     모바일 장치에서 읽혀지는 텍스트.   </figcaption></figure>
 
-<figure class="w-figure">   {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="데스크톱 브라우저의 텍스트 페이지를 보여주는 스크린샷", width="800", height="377", class="w-screenshot" %}   <figcaption class="w-figcaption">     줄 길이를 제한하기 위해 중단점이 추가된 데스크톱 브라우저에서 읽혀지는 텍스트.   </figcaption></figure>
+<figure>   {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="데스크톱 브라우저의 텍스트 페이지를 보여주는 스크린샷", width="800", height="377" %}   <figcaption>     줄 길이를 제한하기 위해 중단점이 추가된 데스크톱 브라우저에서 읽혀지는 텍스트.   </figcaption></figure>
 
 위의 블로그 게시물 예를 자세히 살펴보겠습니다. 작은 화면에서 `1em`의 Roboto 글꼴은 한 줄에 10단어를 제공하여 완벽하게 작동하지만 큰 화면에서는 중단점이 필요합니다. 이 경우 브라우저 너비가 `575px`보다 크면 이상적인 콘텐츠 너비는 `550px`입니다.
 
@@ -320,9 +320,9 @@ CSS 그리드 레이아웃을 사용하면 유연한 그리드를 간단하게 �
 
 미디어 쿼리 중단점을 설정했으면 이로 인해 사이트가 어떻게 표시되는지 확인하고 싶을 것입니다. 브라우저 창의 크기를 조정하여 중단점을 트리거할 수 있지만 Chrome DevTools에는 다양한 중단점에서 페이지가 어떻게 보이는지 쉽게 확인할 수 있는 기능이 기본적으로 제공됩니다.
 
-<figure class="w-figure">   {% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="날씨 앱이 열려 있고 너비가 822픽셀로 선택된 DevTools의 스크린샷.", width="800", height="522", class="w-screenshot" %}   <figcaption class="w-figcaption">     더 넓은 뷰포트 크기에서 볼 때 날씨 앱을 보여주는 DevTools.   </figcaption></figure>
+<figure>   {% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="날씨 앱이 열려 있고 너비가 822픽셀로 선택된 DevTools의 스크린샷.", width="800", height="522" %}   <figcaption>     더 넓은 뷰포트 크기에서 볼 때 날씨 앱을 보여주는 DevTools.   </figcaption></figure>
 
-<figure class="w-figure">   {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="날씨 앱이 열려 있고 너비가 436픽셀로 선택된 DevTools의 스크린샷.", width="800", height="521", class="w-screenshot" %}   <figcaption class="w-figcaption">     더 좁은 뷰포트 크기에서 볼 때 날씨 앱을 보여주는 DevTools.   </figcaption></figure>
+<figure>   {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="날씨 앱이 열려 있고 너비가 436픽셀로 선택된 DevTools의 스크린샷.", width="800", height="521" %}   <figcaption>     더 좁은 뷰포트 크기에서 볼 때 날씨 앱을 보여주는 DevTools.   </figcaption></figure>
 
 다른 중단점에서 페이지를 보려면 다음 단계를 따르세요.
 

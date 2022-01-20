@@ -48,7 +48,7 @@ Chrome は現在、可能な限り、パッシブ混合コンテンツの自動�
 
 混合コンテンツを検出するか、パッシブ混合コンテンツを自動アップグレードするたびに、Chrome は詳細メッセージを DevToolsの [**Issues**] タブに記録して、特定の問題を修正する方法を案内します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="Chrome DevTools の [Issues] タブには、特定の混合コンテンツの問題とその修正方法に関する詳細情報が表示されます。", width="800", height="310", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="Chrome DevTools の [Issues] タブには、特定の混合コンテンツの問題とその修正方法に関する詳細情報が表示されます。", width="800", height="310" %}</figure>
 
 ### アクティブな混合コンテンツ
 
@@ -58,7 +58,7 @@ Chrome は現在、可能な限り、パッシブ混合コンテンツの自動�
 
 このもう 1 つの[デモ](https://active-mixed-content.glitch.me/)には、アクティブな混合コンテンツの例が含まれています。[例を HTTP 経由で読み込んで](http://active-mixed-content.glitch.me/)、 [HTTPS 経由で例を読み込む際にブロックされるコンテンツを確認します。ブロックされたコンテンツは、[**Issues**] タブでも詳しく説明されます。](https://active-mixed-content.glitch.me/)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="Chrome DevToolsの [Issues] タブには、特定の混合コンテンツの問題とその修正方法に関する詳細情報が表示されます。", width="800", height="361", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="Chrome DevToolsの [Issues] タブには、特定の混合コンテンツの問題とその修正方法に関する詳細情報が表示されます。", width="800", height="361" %}</figure>
 
 {% Aside %} ブラウザは、DevTools でブロックされたコンテンツもハイライト表示します。ブロックされたコンテンツの問題については、Chromium ベースのブラウザの [**Issues**] タブで詳しく説明されます。Firefox と Safari はコンソールにメッセージを記録します。 {% endAside %}
 

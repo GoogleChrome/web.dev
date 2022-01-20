@@ -70,11 +70,11 @@ Esta versão da especificação da API Web Bluetooth permite que sites, executan
 
 Quando um site solicita acesso a dispositivos próximos usando `navigator.bluetooth.requestDevice`, o navegador exibe ao usuário um seletor de dispositivos no qual é possível escolher um dispositivo ou simplesmente cancelar a solicitação.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/bluetooth/bluetooth-device-chooser.mp4">
   </source></video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <p data-md-type="paragraph"><a href="https://webbluetoothcg.github.io/demos/playbulb-candle/">Prompt do usuário de dispositivo Bluetooth.</a></p>
   </figcaption></figure>
 
@@ -378,7 +378,7 @@ Confira também nossas [Demos da Web Bluetooth coletadas](https://github.com/Web
 
 Uma **página Bluetooth Internals** está disponível no Chrome em `about://bluetooth-internals` para que você possa inspecionar tudo sobre dispositivos Bluetooth próximos: status, serviços, características e descritores.
 
-<figure class="w-figure">{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Captura de tela da página interna para depurar Bluetooth no Chrome", width="800", height="572", class="w-screenshot" %}<figcaption class="w-figcaption"> Página interna no Chrome para depurar dispositivos Bluetooth.</figcaption></figure>
+<figure>{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Captura de tela da página interna para depurar Bluetooth no Chrome", width="800", height="572" %}<figcaption> Página interna no Chrome para depurar dispositivos Bluetooth.</figcaption></figure>
 
 Também recomendo verificar a página oficial [Como arquivar bugs do Web Bluetooth](https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs), pois às vezes pode ser difícil depurar o Bluetooth.
 

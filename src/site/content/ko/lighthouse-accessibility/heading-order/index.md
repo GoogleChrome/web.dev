@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 제목 요소가 내림차순으로 정렬되어 있지 않음
 description: |2
 
@@ -18,7 +18,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 제목이 하나 이상의 레벨을 건너뛰는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="레벨을 건너뛰는 제목을 표시하는 Lighthouse 감사", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="레벨을 건너뛰는 제목을 표시하는 Lighthouse 감사", width="800", height="206" %}</figure>
 
 예를 들어 페이지 제목으로 `<h1>` 요소를 사용한 다음 페이지의 주요 섹션에 대해 `<h3>` 요소를 사용하면 `<h2>` 레벨을 건너뛰기 때문에 감사에 실패합니다.
 

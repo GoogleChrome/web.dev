@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: SMS OTP 表单最佳实践
 subhead: 了解如何优化 SMS OTP 表单并改善用户体验。
 authors:
@@ -75,12 +75,12 @@ tags:
 
 借助 `autocomplete="one-time-code"`，当用户在表单打开期间收到 SMS 消息时，操作系统将试探性地解析 SMS 中的 OTP，并且键盘会建议用户输入的 OTP。它仅适用于 iOS、iPadOS 和 macOS 上的 Safari 12 及更高版本，但我们强烈建议使用它，因为它是改善这些平台上 SMS OTP 体验的简单方法。
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">`autocomplete="one-time-code"` 正在运行。</figcaption></figure>
+  <figcaption>`autocomplete="one-time-code"` 正在运行。</figcaption></figure>
 
 `autocomplete="one-time-code"` 改善了用户体验，但通过[确保 SMS 消息符合源绑定消息格式，](#format)您还可以做更多的事情。
 
@@ -144,12 +144,12 @@ navigator.credentials.get({
 .then(otp => input.value = otp.code);
 ```
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">运行中的 WebOTP API。</figcaption></figure>
+  <figcaption>运行中的 WebOTP API。</figcaption></figure>
 
 请参阅[使用 WebOTP API 验证 Web 上的电话号码](/web-otp/)以详细了解如何使用 WebOTP API，或复制并粘贴以下代码段。（确保 `<form>` 元素正确设置了 `action` 和 `method` 属性。）
 

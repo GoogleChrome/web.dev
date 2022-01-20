@@ -45,7 +45,7 @@ Die [Chrome-Entwicklertools](https://developers.google.com/web/tools/chrome-devt
     ```
 4. Der Dateiname und die Zeilennummer am Ende der Nachricht (z. B. `common-bundle.js:535`) geben an, woher der `SharedArrayBuffer` stammt. Wenn es sich um eine Bibliothek eines Drittanbieters handelt, wenden Sie sich an die Entwickler, um das Problem zu beheben. Wenn es als Teil Ihrer Website implementiert wurde, folgen Sie der Anleitung unten, um die Cross-Site-Isolierung zu aktivieren.
 
-<figure class="w-figure">{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevTools-Konsolenwarnung bei Verwendung von SharedArrayBuffer ohne Cross-Origin-Isolation", width="800", height="163", class="w-screenshot " %}<figcaption> DevTools-Konsolenwarnung, wenn SharedArrayBuffer ohne Cross-Origin-Isolierung verwendet wird.</figcaption></figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevTools-Konsolenwarnung bei Verwendung von SharedArrayBuffer ohne Cross-Origin-Isolation", width="800", height="163" %}<figcaption> DevTools-Konsolenwarnung, wenn SharedArrayBuffer ohne Cross-Origin-Isolierung verwendet wird.</figcaption></figure>
 
 ### (Erweitert) Nutzen von Deprecation Reporting
 

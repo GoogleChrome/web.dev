@@ -19,7 +19,7 @@ tags:
 
 Google 検索には、[ページ エクスペリエンス](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html)を評価するための基盤として Core Web Vitals が含まれるようになりました。これらの指標が可能な限りいつでも利用可能で、実用的であることはとても重要です。
 
-<figure class="w-figure">{% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="Core Web Vitals の指標をサポートする Chrome および検索ツールの概要", width="800", height="509", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="Core Web Vitals の指標をサポートする Chrome および検索ツールの概要", width="800", height="509" %}</figure>
 
 {% Aside 'key-term' %}**ラボ測定を実施するためのツール**は、*潜在的なユーザー*があなたの Web サイトをどのように体験するかについての分析情報を提供し、デバッグに必要な再現性のある結果を提供します。**フィールド測定**を実施するためのツールは、*実際のユーザー*があなたの Web サイトをどのように体験しているかについての分析情報を提供します。このタイプの測定は、しばしばリアル ユーザー モニタリング (RUM) と呼ばれています。[ラボ測定またはフィールド測定を実施するためのツール](/how-to-measure-speed/#lab-data-vs-field-data)のそれぞれが、ユーザー エクスペリエンスの最適化に役立つ異なる価値を提供します。{% endAside %}
 
@@ -38,7 +38,7 @@ Core Web Vitals を使用したユーザー エクスペリエンスの最適化
 
 Lighthouse は、開発者が問題を診断し、サイトのユーザー エクスペリエンスを向上させるために改善可能なポイントを特定するための自動 Web サイト監査ツールです。パフォーマンスやアクセシビリティなど、ユーザー エクスペリエンスの品質に関する様々な側面について、ラボ環境で測定を行います。Lighthouse の最新バージョン ([6.0](/lighthouse-whats-new-6.0/)、2020 年 5 月中旬リリース) には、付加的な監査、新しい指標、新しく構成されたパフォーマンス スコアが含まれています。
 
-<figure class="w-figure">{% Img src="image/admin/4j72CWywp2D88Xti8zBf.png", alt="最新の Core Web Vitals 指標を表示している Lighthouse 6.0", width="800", height="527", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/4j72CWywp2D88Xti8zBf.png", alt="最新の Core Web Vitals 指標を表示している Lighthouse 6.0", width="800", height="527" %}</figure>
 
 Lighthouse 6.0 では、レポートに 3 つの新しい指標が導入されました。そのうちの 2 つである [Largest Contentful Paint](/lcp/) (最大視覚コンテンツの表示時間、LCP) と [Cumulative Layout Shift](/cls/) (累積レイアウト シフト数、CLS) は、Core Web Vitals をラボ環境で実装したもので、ユーザー エクスペリエンスの最適化を行うために重要な診断情報を提供します。ユーザー エクスペリエンスを評価する上での重要性を考慮し、新しい指標は測定されレポートに含まれるだけでなく、パフォーマンス スコアの計算にも織り込まれています。
 
@@ -46,7 +46,7 @@ Lighthouse に採用された 3 つ目の新しい指標である [Total Blockin
 
 Lighthouse が活用されている製品は、マージされデプロイされる前にプル リクエストの Core Web Vitals を簡単に測定することができる [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) を含む最新バージョンを反映して更新されます。
 
-<figure class="w-figure">{% Img src="image/admin/aOm5ZAIUbspjcyRMIXbn.png", alt="Largest Contentful Paint に関する様々なビューが表示されている Lighthouse CI", width="800", height="498", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/aOm5ZAIUbspjcyRMIXbn.png", alt="Largest Contentful Paint に関する様々なビューが表示されている Lighthouse CI", width="800", height="498" %}</figure>
 
 Lighthouse の最新のアップデートについては、「[Lighthouse 6.0 の最新情報](/lighthouse-whats-new-6.0/)」のブログ投稿を参照してください。
 
@@ -56,7 +56,7 @@ Lighthouse の最新のアップデートについては、「[Lighthouse 6.0 �
 
 PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) も内部で Lighthouse 6.0 を使用するようにアップグレードされており、レポートのラボ セクションおよびフィールド セクションの両方で Core Web Vitals の測定をサポートするようになりました。Core Web Vitals は、以下のように青いリボンで表示されています。
 
-<figure class="w-figure">{% Img src="image/admin/l1posckVsR7JeVGnk6Jv.png", alt="フィールド データおよびラボ データに分けて Core Web Vitals が表示されている PageSpeed Insights", width="800", height="873", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/l1posckVsR7JeVGnk6Jv.png", alt="フィールド データおよびラボ データに分けて Core Web Vitals が表示されている PageSpeed Insights", width="800", height="873" %}</figure>
 
 [Search Console](https://search.google.com/search-console/) が注意が必要なページのグループに関する概要情報をサイトの所有者に提供する一方で、PSI はページのユーザー エクスペリエンスの改善機会をページごとに特定する際に役立ちます。PSI では、あなたのページがすべての Core Web Vitals について良好なユーザー体験を示すしきい値を満たしているかどうかを、レポートの上部に表示される **Passes the Core Web Vitals assessment** (Core Web Vitals の評価に合格) または **Does not pass the Core Web Vitals assessment** (Core Web Vitals の評価に不合格) を確認することで明確に判断することができます。
 
@@ -79,7 +79,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 以下は、CrUX API を使用して Core Web Vitals の指標を**良い**、**改善が必要**、**悪い**の分布で可視化した[デモ](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started)です。
 
-<figure class="w-figure">{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals の指標を表示している Chrome User Experience Report API のデモ", width="800", height="523", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals の指標を表示している Chrome User Experience Report API のデモ", width="800", height="523" %}</figure>
 
 今後のリリースでは、API を拡張して CrUX のデータセットに含まれているその他の側面や指標にもアクセスできるようにする予定です。
 
@@ -87,7 +87,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 新しくデザインされた [CrUX ダッシュボード](http://g.co/chromeuxdash)ではオリジンのパフォーマンスを時系列で簡単に追跡することができ、すべての Core Web Vitals 指標の分布を監視できるようにもなりました。ダッシュボードの使用を開始するには、web.dev の「[Tutorial](/chrome-ux-report-data-studio-dashboard/) (チュートリアル)」を参照してください。
 
-<figure class="w-figure">{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="新しいランディング ページで Core Web Vitals の指標を表示している Chrome UX Report ダッシュボード", width="800", height="497", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="新しいランディング ページで Core Web Vitals の指標を表示している Chrome UX Report ダッシュボード", width="800", height="497" %}</figure>
 
 新しい Core Web Vitals ランディング ページが導入され、サイトのパフォーマンスを一目で確認できるようになりました。Google では、CrUX のすべてのツールに対する皆さまからのご意見をお待ちしております。ご意見やご質問は、Twitter アカウント [@ChromeUXReport](https://twitter.com/chromeuxreport) または [Google グループ](https://groups.google.com/a/chromium.org/g/chrome-ux-report)までお寄せください。
 
@@ -97,7 +97,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 Chrome DevTools の**パフォーマンス** パネルに、予期しないレイアウト シフトの検出に役立つ**[エクスペリエンス セクション](https://developers.google.com/web/updates/2020/05/devtools#cls)**が新しく追加されました。これは、Cumulative Layout Shift の改善につながるページ上での視覚的不安定性に関する問題を発見して修正する際に役立ちます。
 
-<figure class="w-figure">{% Img src="image/admin/VMbZAgKCi5V6FiQyu631.png", alt="パフォーマンス パネルに赤色で表示されている Cumulative Layout Shift", width="800", height="517", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/VMbZAgKCi5V6FiQyu631.png", alt="パフォーマンス パネルに赤色で表示されている Cumulative Layout Shift", width="800", height="517" %}</figure>
 
 レイアウト シフトを選択すると、**Summary** (概要) タブにその詳細情報が表示されます。シフトの発生箇所を可視化するには、**Moved from** (移動元) フィールドと **Moved to** (移動先) フィールドにカーソルを合わせてください。
 
@@ -105,7 +105,7 @@ Chrome DevTools の**パフォーマンス** パネルに、予期しないレ�
 
 Total Blocking Time (TBT) 指標は、ラボ ツールでの測定が可能な First Input Delay の優れた代替指標です。TBT は、長時間に渡りメイン スレッドがブロックされ、入力の応答性が妨げられることで発生する [First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) と [Time to Interactive (操作可能になるまでの時間、TTI)](/tti/) の間の時間の合計を測定します。TBT をラボ環境で改善するパフォーマンスの最適化は、実際のユーザー環境でも同じように FID を改善してくれるはずです。
 
-<figure class="w-figure">{% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="DevTools のパフォーマンス パネルのフッターに表示されている Total Blocking Time", width="800", height="517", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="DevTools のパフォーマンス パネルのフッターに表示されている Total Blocking Time", width="800", height="517" %}</figure>
 
 ページのパフォーマンスを測定する際に、Chrome DevTools の**パフォーマンス** パネルのフッターに TBT が表示されるようになりました。
 
@@ -121,7 +121,7 @@ Total Blocking Time (TBT) 指標は、ラボ ツールでの測定が可能な F
 
 Search Console の新しい [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) は、CrUX の実際のユーザー環境で測定された (フィールド) データに基づいて、運営するサイト全体の中から注意が必要なページのグループを特定する際に役立ちます。URL のパフォーマンスは、状態、指標の種類、URL のグループ (類似した Web ページのグループ) ごとに分類されます。
 
-<figure class="w-figure">{% Img src="image/admin/BjTUt0xdWXD9hrLsbhLK.png", alt="Search Console の新しい Core Web Vitals Report", width="800", height="1000", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/BjTUt0xdWXD9hrLsbhLK.png", alt="Search Console の新しい Core Web Vitals Report", width="800", height="1000" %}</figure>
 
 このレポートは、LCP、FID、CLS という 3 つの Core Web Vitals 指標に基づいて作成されています。これらの指標について最低限のレポート データを持たない URL については、レポートから除外されます。新しいレポートをお試しいただき、あなたのオリジンのパフォーマンスの全体像を把握してみてください。
 
@@ -131,7 +131,7 @@ Core Web Vitals に関連した問題を抱えるページの種類を特定し�
 
 [web.dev/measure](/measure/) では、ページのパフォーマンスを経時的に測定し、優先度順に整理された改善を行うためのガイドや Codelabs を確認することができます。web.dev/measure での測定には、PageSpeed Insights が使用されています。この測定ツールは、以下のように Core Web Vitals の指標にも対応しています。
 
-<figure class="w-figure">{% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="web.dev の測定ツールを使用して Core Web Vitals の指標を経時的に測定し、優先度順に整理されたガイダンスを確認することができます", width="800", height="459", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="web.dev の測定ツールを使用して Core Web Vitals の指標を経時的に測定し、優先度順に整理されたガイダンスを確認することができます", width="800", height="459" %}</figure>
 
 ### Web Vitals 拡張機能
 
@@ -139,7 +139,7 @@ Web Vitals 拡張機能を使用すれば、デスクトップ版の Google Chro
 
 この拡張機能は、[Chrome ウェブストア](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)からインストールできるようになりました。是非ご利用ください。プロジェクトの [GitHub](https://github.com/GoogleChrome/web-vitals-extension/) リポジトリへのフィードバックだけでなく、改善につながる貢献もお待ちしております。
 
-<figure class="w-figure">{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals がリアルタイムに表示されている Web Vitals Chrome 拡張機能", width="800", height="459", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals がリアルタイムに表示されている Web Vitals Chrome 拡張機能", width="800", height="459" %}</figure>
 
 #### クイック ハイライト
 

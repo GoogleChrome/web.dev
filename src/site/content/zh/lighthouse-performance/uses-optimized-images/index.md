@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 对图像进行高效编码
 description: 了解 uses-optimized-images 审计。
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 Lighthouse 报告的 Opportunities 部分列出了所有未优化的图像，以及可能节省的空间（以[千字节 (KiB)](https://en.wikipedia.org/wiki/Kibibyte) 为单位）。优化这些图像，使页面加载速度更快并消耗更少的数据：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Lighthouse 对图像进行高效编码审计的截图", width="800", height="263", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="Lighthouse 对图像进行高效编码审计的截图", width="800", height="263" %}</figure>
 
 ## Lighthouse 如何将图像标记为可优化
 

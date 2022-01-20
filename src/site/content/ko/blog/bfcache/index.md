@@ -256,17 +256,17 @@ Chrome DevTools는 페이지를 테스트하여 bfcache에 최적화되어 있�
 
 특정 페이지를 테스트하려면 Chrome에서 해당 페이지로 이동한 다음 DevTools에서 **애플리케이션** &gt; **캐시 뒤로-앞으로**로 이동합니다. 다음으로 **테스트 실행** 버튼을 클릭하면 DevTools가 페이지를 bfcache에서 복원할 수 있는지 여부를 확인하기 위해 이전 및 뒤로 탐색을 시도합니다.
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png", alt="DevTools의 캐시 패널 뒤로-앞으로", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png", alt="DevTools의 캐시 패널 뒤로-앞으로", width="800", height="313" %}
 
 {% Aside %} DevTools의 뒤로/앞으로 캐시 기능은 현재 개발 중입니다. 개발자는 Chrome Canary에서 페이지를 테스트하여 최신 버전의 DevTools를 실행하고 최신 bfcache 권장 사항을 받을 것을 적극 권장합니다. {% endAside %}
 
 성공하면 패널에서 "역방향 캐시에서 복원됨"을 보고합니다.
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png", alt="DevTools 보고 페이지가 bfcache에서 성공적으로 복원되었습니다", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png", alt="DevTools 보고 페이지가 bfcache에서 성공적으로 복원되었습니다", width="800", height="313" %}
 
 실패하면 패널에 페이지가 복원되지 않았으며 이유가 나열됩니다. 그 이유가 개발자로서 해결할 수 있는 것이라면 다음과 같이 표시됩니다.
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png", alt="DevTools가 bfcache에서 페이지 복원 실패 보고", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png", alt="DevTools가 bfcache에서 페이지 복원 실패 보고", width="800", height="313" %}
 
 위의 스크린샷에서 `unload` 이벤트 리스너를 사용하면 페이지가 bfcache에 [적합하지 않습니다](/bfcache/#never-use-the-unload-event). 대신 `unload`에서 `pagehide`를 사용하여 이 문제를 해결할 수 있습니다.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use lazysizes para imagens de carregamento lento
 authors:
   - katiehempenius

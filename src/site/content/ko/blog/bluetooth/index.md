@@ -66,11 +66,11 @@ Web Bluetooth API는 JavaScript [Promise](https://developer.mozilla.org/docs/Web
 
 웹 사이트에서 `navigator.bluetooth.requestDevice`를 사용하여 주변 장치에 대한 액세스를 요청하면 브라우저는 사용자에게 하나의 장치를 선택하거나 단순히 요청을 취소할 수 있는 장치 선택기를 표시합니다.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/bluetooth/bluetooth-device-chooser.mp4">
   </source></video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <p data-md-type="paragraph"><a href="https://webbluetoothcg.github.io/demos/playbulb-candle/">블루투스 장치 사용자 프롬프트</a></p>
   </figcaption></figure>
 
@@ -374,7 +374,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer']
 
 Chrome의 `about://bluetooth-internals`에서 제공하는 **Bluetooth Internals** 페이지를 살펴보세요. 상태, 서비스, 특성 및 설명자 등 주변의 블루투스 장치에 대한 모든 것을 검사할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="블루투스를 디버깅하기 위한 Chrome의 내부 페이지를 보여주는 스크린샷", width="800", height="572", class="w-screenshot" %}<figcaption class="w-figcaption"> 블루투스 장치 디버깅을 위한 Chrome 내부 페이지입니다.</figcaption></figure>
+<figure>{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="블루투스를 디버깅하기 위한 Chrome의 내부 페이지를 보여주는 스크린샷", width="800", height="572" %}<figcaption> 블루투스 장치 디버깅을 위한 Chrome 내부 페이지입니다.</figcaption></figure>
 
 또한 블루투스 디버깅이 때로 어려울 수 있으므로 공식 [웹 블루투스 버그 신고 방법](https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs) 페이지도 확인해 볼 것을 추천합니다.
 

@@ -37,12 +37,12 @@ tags:
 
 セッションウィンドウを確認するために、次の例を示します。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">セッションウィンドウの例。</figcaption></figure>
+  <figcaption>セッションウィンドウの例。</figcaption></figure>
 
 上記の例では、ユーザーがページを表示すると、時間の経過とともに多くのレイアウトシフトが発生します。各シフトは青いバーで表されています。上記では、青いバーの高さがそれぞれに異なっており、個別のレイアウトシフトの[スコア](/cls/#layout-shift-score)が表されています。セッションウィンドウは、最初のレイアウトシフトから始まり、レイアウトシフトのない間隔ができるまで拡大し続けます。次のレイアウトシフトが発生すると、新しいセッションウィンドウが開始されます。レイアウトシフトのない間隔が 3 つあるため、この例には 3 つのセッションウィンドウがあることになります。現在の CLS の定義と同様に、各シフトのスコアが合計されるため、各ウィンドウのスコアは個別のレイアウトシフトの合計になります。
 

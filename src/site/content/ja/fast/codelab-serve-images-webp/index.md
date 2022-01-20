@@ -123,6 +123,6 @@ Lighthouse の**Serve images in next-gen formats (画像を次世代フォーマ
 
 1. **Serve images in next-gen formats** 監査に合格していることを確認します。
 
-{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Lighthouse の 'Serve images in next-gen formats' 監査に合格", width="701", height="651", class="w-screenshot" %}
+{% Img src="image/admin/Y8x0FLWs1Xsf32DX20DG.png", alt="Lighthouse の 'Serve images in next-gen formats' 監査に合格", width="701", height="651" %}
 
 うまく出来ましたね！これで、サイトに WebP 画像が表示されるようになりました。

@@ -29,7 +29,7 @@ No passado, apenas aplicativos específicos da plataforma podiam se registrar no
 
 {% Aside %} A API Web Share Target é apenas metade da mágica. Os aplicativos da web podem compartilhar dados, arquivos, links ou texto usando a API Web Share. Consulte [Web Share API](/web-share/) para saber mais detalhes. {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Telefone Android com a gaveta 'Compartilhar com' aberta. ", width="400", height="377" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Selecionador de compartilhamento de nível de sistema com um PWA instalado como uma opção. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Telefone Android com a gaveta 'Compartilhar com' aberta. ", width="400", height="377" %} <figcaption> Selecionador de compartilhamento de nível de sistema com um PWA instalado como uma opção. </figcaption></figure>
 
 ## Veja o Web Share Target em ação
 
@@ -174,7 +174,7 @@ self.addEventListener('fetch', event => {
 
 ### Verificando o conteúdo compartilhado
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="Um telefone Android exibindo o aplicativo de demonstração com conteúdo compartilhado.", width="400", height="280" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> O aplicativo de destino de compartilhamento de amostra. </figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="Um telefone Android exibindo o aplicativo de demonstração com conteúdo compartilhado.", width="400", height="280" %} <figcaption> O aplicativo de destino de compartilhamento de amostra. </figcaption></figure>
 
 Certifique-se de verificar os dados de entrada. Infelizmente, não há garantia de que outros aplicativos compartilharão o conteúdo apropriado no parâmetro certo.
 

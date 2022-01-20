@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Total Blocking Time
 description: |2-
 
@@ -14,7 +14,7 @@ El Total Blocking Time o TBT (tiempo de bloqueo total) es una de las métricas q
 
 El informe Lighthouse muestra el TBT en milisegundos:
 
-<figure class="w-figure">{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="Una captura de pantalla de la auditoría Lighthouse Tiempo total de bloqueo", width="800", height="592", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="Una captura de pantalla de la auditoría Lighthouse Tiempo total de bloqueo", width="800", height="592" %}</figure>
 
 ## Qué mide la TBT
 
@@ -26,7 +26,7 @@ Su puntaje TBT es una comparación del tiempo TBT de su página y el tiempo TBT 
 
 Esta tabla muestra cómo interpretar su puntaje TBT:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

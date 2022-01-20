@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 为什么速度很重要？
 authors:
   - bojanpavic
@@ -19,7 +19,7 @@ tags:
 
 ## 性能是留住用户的关键
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   <blockquote>
     <p>性能直接影响公司的命运。</p>
     <cite>
@@ -51,7 +51,7 @@ COOK 将页面平均加载时间减少了 850 毫秒，从而[将转化次数提
 
 当网站开始加载时，用户需要等待一定的时间出现内容。在此之前，没有用户体验可言。这种缺乏体验在快速连接上是短暂的。然而，在较慢的连接上，用户被迫等待。随着页面资源慢慢载入，用户可能会遇到更多问题。
 
-<figure class="w-figure">{% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="页面加载的两个幻灯片卷轴的比较。第一个显示页面加载速度较慢，而第二个显示同一页面加载连接快速。", width="800", height="264" %}<figcaption>非常慢的页面加载连接（顶部）与较快的页面加载连接（底部）比较。</figcaption></figure>
+<figure>{% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="页面加载的两个幻灯片卷轴的比较。第一个显示页面加载速度较慢，而第二个显示同一页面加载连接快速。", width="800", height="264" %}<figcaption>非常慢的页面加载连接（顶部）与较快的页面加载连接（底部）比较。</figcaption></figure>
 
 性能是良好用户体验的基础。当网站发布大量代码时，浏览器必须使用用户数以百万计的数据计划才能下载代码。移动设备的 CPU 能力和内存有限。它们经常被我们认为所谓的“少量”未优化的代码所淹没。这会导致性能不佳，从而导致无响应。了解我们人类的行为后就会知道，用户只有对低性能的应用程序忍无可忍时才会选择放弃。
 

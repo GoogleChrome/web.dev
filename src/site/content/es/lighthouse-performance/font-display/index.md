@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Asegúrese de que el texto permanece visible mientras carga la fuente web
 description: Aprenda cómo utilizar la API de visualización de fuentes para asegurarse de que el texto de su página web siempre esté visible para sus usuarios.
 date: 2019-05-02
@@ -14,7 +14,7 @@ Con frecuencia, las fuentes son archivos grandes que tardan en cargarse. En algu
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) etiqueta cualquier fuente de una URL donde pueda destellar texto invisible:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="Una captura de pantalla de Lighthouse. Asegúrese de que el texto permanece visible durante la auditoría de cargas para fuentes web", width="800", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="Una captura de pantalla de Lighthouse. Asegúrese de que el texto permanece visible durante la auditoría de cargas para fuentes web", width="800", height="430" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

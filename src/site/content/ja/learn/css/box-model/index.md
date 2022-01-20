@@ -32,7 +32,7 @@ p {
 
 コンテンツは要素から外れ、幅は100ピクセルではなく142ピクセルになります。なぜでしょうか。ボックスモデルはCSSの重要な基盤です。より予測可能なCSSを作成するには、ボックスモデルがどのように機能して、CSSの他の側面によってどのように影響を受けるのかを理解する必要があります。そして、重要な点は、ボックスモデルを制御する方法を理解することです。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
 
 CSSを作成するとき、またはWeb全般で作業するときに覚えておくべき非常に重要なことは、CSSによって表示される要素がすべてボックスであるということです。これは、`border-radius`を使用して円のように見えるボックスでも、単純なテキストでも同じです。覚えておくべき重要なことは、それがすべてボックスであるということです。
 
@@ -44,13 +44,13 @@ CSSを作成するとき、またはWeb全般で作業するときに覚えて�
 
 デモを使用して、違いを簡単に見てみましょう。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption class="w-figcaption">ボックスが外在サイズ設定を使用しているときには、追加できるコンテンツの量には制限があり、それを超えると、ボックスの境界からオーバーフローします。このため、「awesome」という単語がオーバーフローします。</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption>ボックスが外在サイズ設定を使用しているときには、追加できるコンテンツの量には制限があり、それを超えると、ボックスの境界からオーバーフローします。このため、「awesome」という単語がオーバーフローします。</figcaption></figure>
 
 デモでは、固定サイズで太い境界線のボックスがあり、このボックスに「CSS is awesome」という単語が入っています。このボックスは幅設定があるので、外在サイズです。これで子コンテンツのサイズが制御されます。ただし、これには問題があります。「awesome」という単語がボックスに対して大きすぎるため、親ボックスの**境界ボックス**の外側にオーバーフローしてしまいます(この点については授業の後半で詳しく説明します)。 このオーバーフローを防止するための方法の1つは、幅の設定を解除するか、この場合は`width`を`min-content`に設定して、ボックスを内在サイズにできるようにすることです。 `min-content`キーワードは、ボックスの幅をコンテンツの内在最小幅(「{awesome」)に制限するようにボックスに命令します。これにより、「CSS is awesome」がボックス内にきっちりと収まります。
 
 さらに複雑な例を見て、実際のコンテンツに対するさまざまなサイズ設定の影響を確認しましょう。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
 
 内在サイズ設定のオンとオフを切り替え、外在サイズ設定をより詳細に制御し、コンテンツに内在サイズ設定をより詳細に制御させる方法を確認します。内在および外在サイズ設定の効果を確認するには、カードにコンテンツの文をいくつか追加します。この要素が外在サイズ設定を使用しているときには、追加できるコンテンツの量に制限があり、それを超えると要素の境界からオーバーフローしますが、内部サイズ設定がオンになっている場合はオーバーフローしません。
 
@@ -64,25 +64,25 @@ CSSを作成するとき、またはWeb全般で作業するときに覚えて�
 
 ボックスは、すべてが特定の仕事をする別個のボックスモデル領域で構成されています。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="ボックスモデルの4つの主な領域を示す図 - コンテンツボックス、パディングボックス、境界ボックス、マージンボックス", width="800", height="547" %} <figcaption class="w-figcaption">ボックスモデルの4つの主な領域は、コンテンツボックス、パディングボックス、境界ボックス、マージンボックスです。</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="ボックスモデルの4つの主な領域を示す図 - コンテンツボックス、パディングボックス、境界ボックス、マージンボックス", width="800", height="547" %} <figcaption>ボックスモデルの4つの主な領域は、コンテンツボックス、パディングボックス、境界ボックス、マージンボックスです。</figcaption></figure>
 
 まず、**コンテンツボックス**から始めます。これはコンテンツが存在する領域です。すでに学習したように、このコンテンツは親のサイズを制御できるため、通常は、最もサイズが変動する領域です。
 
 **パディングボックス**はコンテンツボックスを囲み、[`padding`](https://developer.mozilla.org/docs/Web/CSS/padding)プロパティによって作成されたスペースです。パディングはボックス内にあるため、ボックスの背景は作成されたスペースに表示されます。 `overflow: auto`や`overflow: scroll`などのオーバーフロールールがボックスに設定されている場合、スクロールバーもこのスペースを占有します。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
 
 **境界ボックス**はパディングボックスを囲みます。スペースは`border`値によって占められます。境界ボックスはボックスの境界です。**境界エッジ**は視覚的に見える内容の限界です。 <a href="https://developer.mozilla.org/docs/Web/CSS/border" data-md-type="link">`border`</a>プロパティは、要素を視覚的にフレーム化するために使用されます。
 
 最後の領域である**マージンボックス**はボックスの周囲のスペースであり、ボックスの`margin`ルールによって定義されます。 [`outline`](https://developer.mozilla.org/docs/Web/CSS/outline)や[`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow)などのプロパティも上部に描画されるためこのスペースを占め、ボックスのサイズには影響しません。 ボックスでは`outline-width`を`200px`に設定することができ、ボックスを含むボックスのすべての要素がまったく同じサイズになります。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
 
 ## 役に立つ例
 
 ボックスモデルは複雑で理解することが難しいので、例を使用して学習した内容をまとめます。
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="3つのフォトフレーム", width="800", height="562" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="3つのフォトフレーム", width="800", height="562" %}</figure>
 
 この図では、3つのフォトフレームが隣に並べて壁に取り付けられています。この図には、フレームの要素をボックスモデルに関連付けるラベルがあります。
 
@@ -104,7 +104,7 @@ CSSを作成するとき、またはWeb全般で作業するときに覚えて�
 2. [要素を選択します](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 3. ボックスモデルデバッガーを表示する
 
-<figure class="w-figure">{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}</figure>
+<figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>
 
 ## ボックスモデルの制御
 
@@ -137,7 +137,7 @@ CSSを作成するとき、またはWeb全般で作業するときに覚えて�
 
 次のインタラクティブデモでこれがどのように機能するかを確認してください。 `box-sizing`値を切り替えると、青い背景で表示されます。CSSは*ボックス内*に適用されています。
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
 
 ```css
 *,

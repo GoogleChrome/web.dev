@@ -49,7 +49,7 @@ Many popular embeds include over 100&nbsp;KB of JavaScript, sometimes even going
 
 It is a good practice to periodically audit the performance impact of your embeds and third-party code because embed source code may change. You can use this opportunity to remove any redundant code.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/WektrXQsgQPMWy2hxQ4E.png", alt="Reduce the impact of third-party code", width="800", height="738", class="w-screenshot" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/WektrXQsgQPMWy2hxQ4E.png", alt="Reduce the impact of third-party code", width="800", height="738" %}
 
 ## Loading best practices
 
@@ -167,17 +167,17 @@ Instagram provides a block of markup and a script as part of the embed. The scri
 While interactive embeds add value to the page, many users may not interact with them. For example, not every user browsing a restaurant page will click, expand, scroll, and navigate the map embed. Similarly, not every user to a telecom service providers page will interact with the chatbot. In these cases, you can avoid loading or lazy-loading the embed altogether by displaying a facade in its place.
 
 <div class="switcher">
-  <figure class="w-figure">
-    <figcaption class="w-figcaption">
+  <figure>
+    <figcaption>
       A map embed with a zoom in and out feature.
     </figcaption>
-    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725", class="w-screenshot" %}
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725" %}
   </figure>
-  <figure class="w-figure">
-    <figcaption class="w-figcaption">
+  <figure>
+    <figcaption>
       A map facade that is an image.
     </figcaption>
-    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541", class="w-screenshot" %}
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541" %}
   </figure>
 </div>
 
@@ -187,7 +187,7 @@ A [facade](/third-party-facades/) is a static element that looks similar to the 
 
 Static images can be used instead of map embeds where you might not need to make the map interactive. You can zoom in on the area of interest on the map, capture an image, and use this instead of the interactive map embed. You can also use DevTools **Capture node screenshot** functionality to capture a screenshot of the embedded `iframe` element, as shown below.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EJvMAEUmF3QNUDGBgfNR.png", alt="Capture node screenshot", width="400", height="500", class="w-screenshot" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EJvMAEUmF3QNUDGBgfNR.png", alt="Capture node screenshot", width="400", height="500" %}
 
 DevTools captures the image as a  `png`, but you can also consider converting it to <code>[WebP format for better performance](/serve-images-webp/)</code>.
 
@@ -232,15 +232,15 @@ You can build a custom click-to-load facade using the _import on interaction_ pa
 	Following is a comparison between the lite-youtube-embed and the actual embed.
 
   <div class="switcher">
-    <figure class="w-figure">
+    <figure>
       {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EcTxjLs9SUb1ofALN8rA.png", alt="Lite YouTube embed", width="800", height="521" %}
-      <figcaption class="w-figcaption">
+      <figcaption>
         A lite-YouTube embed
       </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
       {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/cYG1NJqM8ZoLkYOi6xFJ.png", alt="Actual YouTube embed", width="800", height="502" %}
-      <figcaption class="w-figcaption">
+      <figcaption>
         A YouTube embed
       </figcaption>
     </figure>
@@ -252,7 +252,7 @@ You can build a custom click-to-load facade using the _import on interaction_ pa
 
     [React-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader) loads a button that looks like a chat embed instead of the embed itself. It can be used with various chat provider platforms such as Intercom, Help Scout, Messenger, and so on. The look-alike widget is much lighter than the chat-widget and loads faster. It can be replaced by the actual chat widget when the user hovers or clicks on the button or if the page has been idle for a long time. The [Postmark case study](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100) explains how they implemented react-live-chat-loader and performance improvements they achieved.
 
-   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/XyJON43TV8h1qWNZV1Ev.png", alt="Postmark chat widget", width="800", height="389", class="w-screenshot" %}
+   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/XyJON43TV8h1qWNZV1Ev.png", alt="Postmark chat widget", width="800", height="389" %}
 
 ### Remove or replace embeds with links
 

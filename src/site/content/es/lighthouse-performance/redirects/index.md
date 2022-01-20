@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evitar los redireccionamientos múltiples de páginas
 description: |2
 
@@ -25,7 +25,7 @@ Después, el navegador debe realizar otra solicitud HTTP en la nueva ubicación 
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que tienen múltiples redireccionamientos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 
 Una página falla en esta auditoría cuando tiene dos o más redireccionamientos.
 

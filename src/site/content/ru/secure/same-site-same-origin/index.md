@@ -22,7 +22,7 @@ tags:
 
 Веб-сайты, использующие одну и ту же схему, имя хоста и порт, считаются имеющими одинаковый источник (same-origin). Все остальное считается перекрестными источниками (cross-origin).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -83,7 +83,7 @@ tags:
 
 Веб-сайты с одинаковым eTLD+1 считаются одинаковыми (same-site). Веб-сайты с отличающимися eTLD+1 являются перекрестными (cross-site).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -130,7 +130,7 @@ tags:
 
 Определение same-site развивается, чтобы рассматривать схему URL как часть сайта, чтобы предотвратить использование HTTP в качестве [слабого канала](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8). По мере того, как браузеры переходят к этой интерпретации, вы можете видеть ссылки на «один и тот же сайт без схемы» (scheme-less same-site) при обращении к старому определению и на «[тот же сайт со схемой](/schemeful-samesite/)» (schemeful same-site) при обращении к более строгому определению. В этом случае `http://www.example.com` и `https://www.example.com` покажут значение cross-site, поскольку протоколы не совпадают.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

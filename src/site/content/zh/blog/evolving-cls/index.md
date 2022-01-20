@@ -37,12 +37,12 @@ tags:
 
 要审阅会话窗口，以下是一个示例：
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">会话窗口示例。</figcaption></figure>
+  <figcaption>会话窗口示例。</figcaption></figure>
 
 在上面的示例中，在用户查看页面时，许多布局会随着时间的推移而变化。每个都由一个蓝条表示。您会注意到上面的蓝条具有不同的高度；这些代表每一个布局偏移的[分数](/cls/#layout-shift-score)。会话窗口从第一个布局偏移开始并继续扩展，直到出现没有布局偏移的间隙。当下一次布局偏移发生时，将启动一个新的会话窗口。由于存在三个没有布局偏移的间隙，因此示例中共有三个会话窗口。与 CLS 的当前定义类似，将每次偏移的分数相加，因此每个窗口的分数是其各个布局偏移的总和。
 

@@ -130,8 +130,8 @@ Be aware with all of these values that the shape will be clipped by the margin b
 If you create a circle on an image,
 and that shape would extend outside of the natural size of the image, you will get a flat edge.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sQPOF6oaR31kjSVGzztu.jpg", alt="A clipped circle with flat edges", width="800", height="427", class="w-screenshot",style="max-inline-size: 480px" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sQPOF6oaR31kjSVGzztu.jpg", alt="A clipped circle with flat edges", width="800", height="427",style="max-inline-size: 480px" %}
   <figcaption>The image used earlier now has <code>circle(50%)</code> applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
 </figure>
 

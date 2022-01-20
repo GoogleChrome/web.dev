@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免巨大的网络有效负载
 description: 了解如何通过减少为用户提供资源的总文件大小来提高网页的加载时间。
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 显示页面请求的所有资源的总大小（单位是 [千字节 (KiB) ）。](https://en.wikipedia.org/wiki/Kibibyte)首先呈现最大的请求：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Lighthouse 避免巨大网络有效负载审计的截图", width="800", height="518", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Lighthouse 避免巨大网络有效负载审计的截图", width="800", height="518" %}</figure>
 
 根据 [HTTP Archive 上的数据](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal)，网络有效负载的中位数在 1700 到 1900 KiB 之间。为了筛选出最高的有效负载，Lighthouse 会标记总网络请求超过 5000 KiB 的页面。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 要求されるオリジンへの事前接続
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 LighthouseレポートのOpportunitiesセクションには、`<link rel=preconnect>`でフェッチリクエストを優先していないすべての主要なリクエストの一覧が表示されます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Lighthouseの「要求されたオリジンへの事前接続」監査のスクリーンショット", width="800", height="226", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Lighthouseの「要求されたオリジンへの事前接続」監査のスクリーンショット", width="800", height="226" %}</figure>
 
 ## ブラウザの互換性
 

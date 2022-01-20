@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`width` 또는 `initial-scale`이 있는 `<meta name="viewport">` 태그 없음'
 description: '"너비 또는 초기 규모가 있는 <meta name="viewport"> 태그 없음" Lighthouse 감사에 대한 정보'
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 표시 영역 메타 태그가 없는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 감사는 페이지에 표시 영역이 누락되었음을 보여줍니다", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 감사는 페이지에 표시 영역이 누락되었음을 보여줍니다", width="800", height="76" %}</figure>
 
 다음 조건이 모두 충족되지 않으면 페이지는 감사에 실패합니다.
 

@@ -42,7 +42,7 @@ Esta versión de Lighthouse viene con una gran cantidad de cambios que se [enume
 
 ## Nuevas métricas {: #new-metrics }
 
-<figure>{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Métricas de Lighthouse 6.0.", width="600", height="251", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Métricas de Lighthouse 6.0.", width="600", height="251" %}</figure>
 
 Lighthouse 6.0 introduce tres nuevas métricas para informar. Dos de estas nuevas métricas, Despliegue del contenido más extenso (LCP) y el cambio acumulativo del diseño (CLS), son implementaciones de laboratorio de [Core Web Vitals](/vitals/).
 
@@ -187,7 +187,7 @@ Los cambios de la curva de puntuación individual también afectaron los cambios
 
 Hemos publicado una [calculadora de puntuación](https://googlechrome.github.io/lighthouse/scorecalc/) para ayudarle a explorar la puntuación de rendimiento. La calculadora también le ofrece una comparación entre las puntuaciones de la versión 5 y 6 de Lighthouse. Cuando ejecuta una auditoría con Lighthouse 6.0, el informe viene con un enlace a la calculadora con sus resultados completos.
 
-<figure>{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Calculadora de puntuación de Lighthouse.", width="600", height="319", class="w-screenshot" %}<figcaption> ¡Muchas gracias a <a href="https://twitter.com/anatudor">Ana Tudor</a> por la mejora del indicador!</figcaption></figure>
+<figure>{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Calculadora de puntuación de Lighthouse.", width="600", height="319" %}<figcaption> ¡Muchas gracias a <a href="https://twitter.com/anatudor">Ana Tudor</a> por la mejora del indicador!</figcaption></figure>
 
 ## Nuevas auditorías {: #new-audits }
 
@@ -224,11 +224,11 @@ En [CDS, en noviembre pasado](/lighthouse-evolution-cds-2019/#lighthouse-ci-alph
 
 Empiece a utilizar Lighthouse CI en su proyecto hoy mismo siguiendo nuestra [guía de introducción](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md).
 
-<figure data-float="left">{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, class="w-screenshot" %}</figure>
+<figure data-float="left">{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true %}</figure>
 
-<figure data-float="left">{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, class="w-screenshot" %}</figure>
+<figure data-float="left">{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true %}</figure>
 
-<figure>{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true %}</figure>
 
 ## Panel de DevTools de Chrome renombrado {: #devtools }
 
@@ -257,7 +257,7 @@ Desde el principio, Lighthouse ha utilizado Nexus 5X como dispositivo de referen
 
 A partir de Chrome 81, Moto G4 también está disponible en la lista de emulación de dispositivos Chrome DevTools.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Lista de emulación de dispositivos de Chrome DevTools con Moto G4 incluido.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Lista de emulación de dispositivos de Chrome DevTools con Moto G4 incluido.", width="800", height="653" %}</figure>
 
 ## Extensión del navegador {: #extension }
 
@@ -282,7 +282,7 @@ Lighthouse 6.0 agrega [soporte para métricas presupuestarias](https://github.co
 Algunos de los problemas que Lighthouse encuentra sobre una página se pueden rastrear hasta una línea específica de código fuente y el informe indicará el archivo y la línea exactos que son relevantes. Para facilitar la exploración en DevTools, al hacer clic en las ubicaciones especificadas en el informe se abrirán los archivos relevantes en el panel **Fuentes.**
 
 <figure>
-  <video autoplay loop muted playsinline class="w-screenshot">
+  <video autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </source></source></video>
@@ -298,7 +298,7 @@ Lighthouse ha comenzado a experimentar con la recopilación de mapas de origen p
 - Visualizaciones de mapas de árbol que destacan los módulos que requieren acción.
 - Visualización del código fuente original de los elementos del informe con una "ubicación de origen".
 
-<figure>{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="JavaScript no utilizado que muestra módulos de mapas de origen", width="600", height="566", class="w-screenshot" %}<figcaption>. La auditoría de JavaScript no utilizado emplea mapas de origen para mostrar el código no utilizado en módulos empaquetados específicos.</figcaption></figure>
+<figure>{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="JavaScript no utilizado que muestra módulos de mapas de origen", width="600", height="566" %}<figcaption>. La auditoría de JavaScript no utilizado emplea mapas de origen para mostrar el código no utilizado en módulos empaquetados específicos.</figcaption></figure>
 
 Estas funciones estarán habilitadas de forma predeterminada en una versión futura de Lighthouse. Por ahora, puede ver las auditorías experimentales de Lighthouse con la siguiente bandera CLI:
 

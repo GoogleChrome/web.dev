@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 提取关键 CSS (Critical CSS)
 subhead: 了解如何使用关键 CSS 技术改进渲染时间。
 authors:
@@ -19,21 +19,21 @@ tags:
 
 {% Aside 'key-term' %}关键 CSS (Critical CSS) 是一种提取首屏内容 CSS，以便尽快向用户呈现内容的技术。 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="笔记本电脑和移动设备的网页溢出屏幕边缘的截图", width="800", height="469", class =""%}</figure>
+<figure>{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="笔记本电脑和移动设备的网页溢出屏幕边缘的截图", width="800", height="469", class =""%}</figure>
 
 {% Aside 'note' %}首屏是浏览用户在滚动加载页面前看到的所有内容。由于存在无数的设备和屏幕尺寸，因此首屏内容的像素高度没有统一定义。 {% endAside %}
 
 将提取的样式内联到 HTML 文档的 `<head>` 中，从而无需发出额外的请求就能获取这些样式。 CSS 的其余部分可以异步加载。
 
-<figure class="w-figure">{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="标签内嵌关键 CSS 的 HTML 文件", width="800", height="325", class="w-screenshot" %}<figcaption class="w-figcaption">内联关键 CSS</figcaption></figure>
+<figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="标签内嵌关键 CSS 的 HTML 文件", width="800", height="325" %}<figcaption>内联关键 CSS</figcaption></figure>
 
 缩短渲染时间可以对[用户体验](https://developers.google.com/web/fundamentals/performance/rail#ux)产生巨大影响，尤其是在较差的网络条件下。在移动网络上，无论带宽如何，高延迟都是一个问题。
 
-<figure class="w-figure">{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="使用 3G 连接加载具有渲染阻塞 CSS（顶部）的页面和具有内联关键 CSS（底部）的相同页面的胶片视图比较。顶部幻灯片在最终显示内容之前显示六个空白帧。底部幻灯片在第一帧显示有意义的内容。", width="800", height="363", class="w-screenshot" %}<figcaption class="w-figcaption">使用 3G 连接加载具有渲染阻塞 CSS 的页面（顶部）和具有内联关键 CSS 的同一页面（底部）的比较</figcaption></figure>
+<figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="使用 3G 连接加载具有渲染阻塞 CSS（顶部）的页面和具有内联关键 CSS（底部）的相同页面的胶片视图比较。顶部幻灯片在最终显示内容之前显示六个空白帧。底部幻灯片在第一帧显示有意义的内容。", width="800", height="363" %}<figcaption>使用 3G 连接加载具有渲染阻塞 CSS 的页面（顶部）和具有内联关键 CSS 的同一页面（底部）的比较</figcaption></figure>
 
 如果您的 [First Contentful Paint (FCP)](/first-contentful-paint) 表现很差，并且在 Lighthouse 审计中看到了“消除渲染阻塞资源”，那么试试关键 CSS 是个不错的选择。
 
-{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Lighthouse 的”消除渲染阻塞资源“或”延迟加载未使用的 CSS“ 审计", width="743", height="449", class ="w-screenshot" %}
+{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Lighthouse 的”消除渲染阻塞资源“或”延迟加载未使用的 CSS“ 审计", width="743", height="449" %}
 
 {% Aside 'gotchas' %} 请记住，如果你内联了大量 CSS，则会延迟 HTML 文档其余部分的传输。如果所有内容都被优先处理，那么也就没有了意义。内联也有一些缺点，因为它会阻止浏览器缓存 CSS 以便在后续页面加载时重用，因此最好谨慎使用它。 {% endAside %}
 

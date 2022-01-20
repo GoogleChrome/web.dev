@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: A página não contém um título, link para pular ou região de referência
 description: |2
 
@@ -20,7 +20,7 @@ Fornecer uma maneira de contornar o conteúdo repetitivo torna a navegação sem
 
 O Lighthouse sinaliza páginas que não oferecem uma maneira de pular conteúdo repetitivo:
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fJBo4Nbmlks8cj5i2UMJ.png", alt = "A auditoria Lighthouse mostrando que a página não contém um título, link para pular ou região do ponto de referência", width = "800", height = "185", classe = "w-screenshot"%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fJBo4Nbmlks8cj5i2UMJ.png", alt = "A auditoria Lighthouse mostrando que a página não contém um título, link para pular ou região do ponto de referência", width = "800", height = "185" %}</figure>
 
 O Lighthouse verifica se a página contém pelo menos um dos seguintes:
 

@@ -134,7 +134,7 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 たとえば、メールアドレスには `type="email"`、電話番号には `type="tel"` を使用します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="それぞれ type=email と type=tel を使ったメールアドレスと電話番号の入力に適切なキーボードを表示した Android 携帯電話のスクリーンショット (2 個)。", width="800", height="683" %}<figcaption class="w-figcaption"> 電子メールや携帯電話に適したキーボード。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="それぞれ type=email と type=tel を使ったメールアドレスと電話番号の入力に適切なキーボードを表示した Android 携帯電話のスクリーンショット (2 個)。", width="800", height="683" %}<figcaption> 電子メールや携帯電話に適したキーボード。</figcaption></figure>
 
 {: #inputmode-attribute }
 
@@ -165,7 +165,7 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 既定として、請求先住所は配送先住所と同じに設定します。フォームをすっきり見せるように、請求先住所は表示せずに、請求先住所を編集ためのリンクを提供します (もしくは、[`summary` 要素と `details` 要素を使用します](https://simpl.info/details/))。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="請求先住所を変更するためのリンクを示すチェックアウトページの例。", width="800", height="250" %}<figcaption class="w-figcaption">請求内容を確認するためのリンクを追加する。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="請求先住所を変更するためのリンクを示すチェックアウトページの例。", width="800", height="250" %}<figcaption>請求内容を確認するためのリンクを追加する。</figcaption></figure>
 
 配送先住所の場合と同様に、請求先住所に適切なオートコンプリート値を使用して、ユーザーがデータを何度も入力しなくて済みようにします。同じ名前の入力の値がセクションによって異なるという場合は、オートコンプリート属性にプレフィックスワードを追加します。
 
@@ -197,7 +197,7 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 フォームの送信時に、ブラウザは、自動的に問題のあるフィールドや未記入の必須フィールドにフォーカスをあてます。 JavaScript は必要ありません！
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="無効なメールアドレス値に対するプロンプトとフォーカスを示すデスクトップ版 Chromeのサインインフォームのスクリーンショット。", width="500", height="483", class="w-screenshot" %}<figcaption class="w-figcaption">ブラウザに組み込まれた基本的な検証機能。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="無効なメールアドレス値に対するプロンプトとフォーカスを示すデスクトップ版 Chromeのサインインフォームのスクリーンショット。", width="500", height="483" %}<figcaption>ブラウザに組み込まれた基本的な検証機能。</figcaption></figure>
 
 ユーザーが送信ボタンをクリックしたときにエラーの一覧を表示するのではなく、インラインで検証し、ユーザーがデータを入力するときにフィードバックを提供します。フォームの送信後にサーバー上のデータを検証する必要がある場合は、見つかったすべての問題を一覧表示し、無効な値を持つすべてのフォームフィールドを明確に強調表示し、問題のある各フィールドの横に修正が必要なことを説明するメッセージをインラインで表示します。サーバーログと分析データで一般的なエラーを確認してください。フォームの再設計が必要になる場合があります。
 
@@ -229,7 +229,7 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 オンラインストアの場合、フォームの摩擦を減らす最も簡単な方法は、ゲストのチェックアウトをデフォルトにすることです。購入する前にユーザーにアカウントの作成を強制しないでください。ショッピングカートを放棄する主な理由として、ゲストとしてチェックアウトすることが許可されていないことが挙げられます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="チェックアウト中にショッピングカートが放棄される理由。", width="800", height="503", class="w-screenshot" %}<figcaption class="w-figcaption"> <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a> 参照。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="チェックアウト中にショッピングカートが放棄される理由。", width="800", height="503" %}<figcaption> <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a> 参照。</figcaption></figure>
 
 アカウントのサインアップは、チェックアウトの後に提供するとよいでしょう。その時点で、アカウントを設定するために必要なデータはほぼすべて揃っているため、ユーザーはアカウントをすばやく、簡単に作成できます。
 
@@ -239,22 +239,22 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 進捗状況を表示し、次に何をする必要があるかを明確にすることで、チェックアウトプロセスの複雑さを軽減できます。以下の動画は、英国の小売業者 [johnlewis.com](https://www.johnlewis.com) がこれ成し遂げている方法を紹介しています。
 
-<figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %}
-  <figcaption class="w-figcaption">Show checkout progress.</figcaption>
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %}
+  <figcaption>Show checkout progress.</figcaption>
 </figure>
 
 ペースを最後まで維持する必要があります！支払いに向けた各ステップでは、ページの見出しと説明的なボタンの値を使用して、今何をする必要があるか、チェックアウトの次のステップは何かを明確にします。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">フォームボタンに、次のステップが分かる名前を付けます。</figcaption></figure>
+  <figcaption>フォームボタンに、次のステップが分かる名前を付けます。</figcaption></figure>
 
 `enterkeyhint` 属性を使用して、モバイル用キーボードの Enter キーのラベルを設定します。例えば、`enterkeyhint="previous"` と`enterkeyhint="next"` は複数ページのフォーム内に、`enterkeyhint="done"` はフォームの最終入力に、そして `enterkeyhint="search"` は検索入力に使用します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Enter キーのボタンアイコンが enterkeyhint 入力属性によってどのように変更されるかを表した、Android のアドレスフォームを示す 2 つのスクリーンショット。", width="800", height="684", class="w-screenshot" %}<figcaption class="w-figcaption"> Android の Enter キーボタン(「次へ」と「完了」)。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Enter キーのボタンアイコンが enterkeyhint 入力属性によってどのように変更されるかを表した、Android のアドレスフォームを示す 2 つのスクリーンショット。", width="800", height="684" %}<figcaption> Android の Enter キーボタン(「次へ」と「完了」)。</figcaption></figure>
 
 `enterkeyhint` 属性は、[Android と iOSでサポートされています](https://caniuse.com/mdn-html_global_attributes_enterkeyhint)。詳細については、[enterkeyhint の説明](https://github.com/dtapuska/enterkeyhint)をご覧ください。
 
@@ -266,15 +266,15 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 製品のプロモーションなど、視野に入ってくるものや、気が散る原因となるものを取り除き、離脱ポイントが生まれる可能性を制限します。実績ある小売業者の多くは、チェックアウトからナビゲーションや検索機能まで削除しています。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="johnlewis.com におけるチェックアウトの進捗状況を表示したモバイルデバイスを示す 2 つのスクリーンショット。検索やナビゲーション、気が散る原因となるその他の要素は削除されている。", width="800", height="683", class="w-screenshot" %}<figcaption class="w-figcaption"> 検索やナビゲーション、気が散る原因となるその他の要素はチェックアウトから削除。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="johnlewis.com におけるチェックアウトの進捗状況を表示したモバイルデバイスを示す 2 つのスクリーンショット。検索やナビゲーション、気が散る原因となるその他の要素は削除されている。", width="800", height="683" %}<figcaption> 検索やナビゲーション、気が散る原因となるその他の要素はチェックアウトから削除。</figcaption></figure>
 
 チェックアウトだけに集中できるようにしましょう。ここは、ユーザーを誘惑する場面ではありません！
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="目障りな「無料ステッカー」の宣伝が表示されたモバイルのチェックアウトページを示したスクリーンショット。", width="350", height="735", class="w-screenshot" %}<figcaption class="w-figcaption"> お客様が購入手続きを完了させるのを邪魔してはいけません。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="目障りな「無料ステッカー」の宣伝が表示されたモバイルのチェックアウトページを示したスクリーンショット。", width="350", height="735" %}<figcaption> お客様が購入手続きを完了させるのを邪魔してはいけません。</figcaption></figure>
 
 リピーターの場合、表示する必要のないデータを非表示にすることで、チェックアウトフローをさらに簡素化できます。例: 配送先住所を (フォームではなく) プレーンテキストで表示し、ユーザーがリンクを使って住所を変更できるようにします。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="プレーンテキストで表示されたテキスト、配送先住所を変更するためのリンク、(画面には写っていないが支払い方法と請求先住所) が含まれたチェックアウトページの「注文内容を確認」セクションを示したスクリーンショット。", width="450", height="219", class="w-screenshot" %}<figcaption class="w-figcaption"> お客様に見せる必要のないデータは非表示にする。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="プレーンテキストで表示されたテキスト、配送先住所を変更するためのリンク、(画面には写っていないが支払い方法と請求先住所) が含まれたチェックアウトページの「注文内容を確認」セクションを示したスクリーンショット。", width="450", height="219" %}<figcaption> お客様に見せる必要のないデータは非表示にする。</figcaption></figure>
 
 ## 名前と住所を簡単に入力できるようにする {: #address-forms }
 
@@ -330,11 +330,11 @@ HTML の `<form>` を使用すると、すべての最新ブラウザーで一�
 
 {% endCompare %}
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Unicode のマッチングとラテン文字のみのマッチングの比較。</figcaption></figure>
+  <figcaption>Unicode のマッチングとラテン文字のみのマッチングの比較。</figcaption></figure>
 
 {% Aside %} [国際化とローカライゼーション](#internationalization-localization)の詳細は、以下よりご確認いただけます。フォームは、ユーザーがいるすべての地域で使用される名前に対応していることを確認しておきましょう。たとえば、日本語の名前の場合は、ふりがなのフィールドを用意することを検討する必要があります。これは、カスタマーサポートスタッフが電話でお客様の名前を言う際に便利です。{% endAside %}
 
@@ -417,19 +417,19 @@ Address line 2 (optional)
 
 郵便番号による住所の提案は、すべての国で機能するわけではありません。一部の地域では、郵便番号に膨大な数の住所が含まれる場合があります。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">郵便番号 (ZIP) には多くの住所が含まれている場合があります。</figcaption></figure>
+  <figcaption>郵便番号 (ZIP) には多くの住所が含まれている場合があります。</figcaption></figure>
 
 アドレスの長いリストから選択することはユーザーにとって困難でしょう。特に、急いでいる場合やストレスを感じている場合に、モバイルで選択するのは大変です。ユーザーが自動入力を利用して、シングルタップまたはクリックで完全な住所を自動的に入力できるようにすれば、楽な上に、エラーも出にくくなります。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">名前に単一の入力を使えば、ワンタップ (ワンクリック) でアドレスを入力できます。</figcaption></figure>
+  <figcaption>名前に単一の入力を使えば、ワンタップ (ワンクリック) でアドレスを入力できます。</figcaption></figure>
 
 ## 支払いフォームを簡素化する {: #general-guidelines }
 
@@ -452,13 +452,13 @@ Address line 2 (optional)
 
 [カスタム要素](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements)は、適切に設計されていないと、自動入力に支障をきたし、支払いフローを中断させてしまう可能性があります。また、古いブラウザでは機能しません。支払いカードの他のすべての詳細はオートコンプリートで利用できても、カスタム要素の自動入力が機能しなかったために、ユーザーが物理的な支払いカードを探してまでカードの有効期限を調べることになれば、売り上げを失う可能性が高くなります。代わりに標準の HTML 要素を使用することを検討し、それに応じてスタイルを設定することを検討しましょう。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="自動入力を中断するカードの有効期限のカスタム要素を示す支払いフォームのスクリーンショット。", width="800", height="916" %}<figcaption class="w-figcaption">オートコンプリートによって、有効期限を除くすべてのフィールドが入力されているのが分かります！。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="自動入力を中断するカードの有効期限のカスタム要素を示す支払いフォームのスクリーンショット。", width="800", height="916" %}<figcaption>オートコンプリートによって、有効期限を除くすべてのフィールドが入力されているのが分かります！。</figcaption></figure>
 
 ### 支払いカードと電話番号に単一の入力を使用する {: #single-number-input }
 
 支払いカードと電話番号には、単一の入力を使用します。番号を分割してはいけません。単一の入力を使用することで、ユーザーはデータを入力しやすくなり、検証が簡単になり、ブラウザで自動入力も使用できます。PIN や銀行コードといった他の数値データについても同じことを検討してください。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="クレジットカードフィールドが 4 つの入力要素に分割されていることを示す支払いフォームのスクリーンショット。", width="800", height="833" %}<figcaption class="w-figcaption">クレジットカード番号に複数の入力要素を使用してはいけません。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="クレジットカードフィールドが 4 つの入力要素に分割されていることを示す支払いフォームのスクリーンショット。", width="800", height="833" %}<figcaption>クレジットカード番号に複数の入力要素を使用してはいけません。</figcaption></figure>
 
 ### 検証は慎重に {: #validate }
 
@@ -476,7 +476,7 @@ Address line 2 (optional)
 
 フォーム要素の機能と外観は異なる場合があり、ビューポートのサイズの違いにより配置に問題が出る可能性もあるため、住所フォームと支払いフォームはユーザーが一番使い慣れたプラットフォームでテストすることが特に重要になります。BrowserStack を使用すると、さまざまなデバイスやブラウザで[オープンソースプロジェクトを無料でテストする](https://www.browserstack.com/open-source)ことができます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="iPhone 7 と11 で表示した支払いフォーム (payment-form.glitch.me) のスクリーンショット。「支払いを完了」ボタンは iPhone 11には表示されますが、7 には表示されません。", width="800", height="707" %}<figcaption class="w-figcaption"> 同じページを iPhone 7 と iPhone 11 で表示した画像。[<strong>支払いを完了</strong>] ボタンが隠れてしまわないように、<br>モバイルの小さいビューポートのパディングを減らす。 </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="iPhone 7 と11 で表示した支払いフォーム (payment-form.glitch.me) のスクリーンショット。「支払いを完了」ボタンは iPhone 11には表示されますが、7 には表示されません。", width="800", height="707" %}<figcaption> 同じページを iPhone 7 と iPhone 11 で表示した画像。[<strong>支払いを完了</strong>] ボタンが隠れてしまわないように、<br>モバイルの小さいビューポートのパディングを減らす。 </figcaption></figure>
 
 ## 分析と RUM を実装する {: #analytics-rum }
 

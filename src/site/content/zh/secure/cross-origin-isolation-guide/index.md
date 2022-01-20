@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 跨域隔离的启用指南
 authors:
   - agektmr
@@ -45,8 +45,8 @@ tags:
     ```
 4. 消息末尾的文件名和行号（例如，`common-bundle.js:535`）表明`SharedArrayBuffer`的来源。如果来源是第三方库，请联系开发者解决问题。如果是作为您网站的一部分来执行的，请按照以下指南启用跨域隔离。
 
-<figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="在没有跨域隔离的情况下使用 SharedArrayBuffer 时，开发者工具控制台发出警告", width="800", height="163", class="w-screen" %}
+<figure>
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="在没有跨域隔离的情况下使用 SharedArrayBuffer 时，开发者工具控制台发出警告", width="800", height="163"  %}
 <figcaption>在没有跨域隔离的情况下使用 SharedArrayBuffer 时，开发者工具控制台发出警告。</figcaption>
 </figure>
 

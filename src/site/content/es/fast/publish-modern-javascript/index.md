@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Publique, envíe e instale JavaScript moderno para obtener aplicaciones más rápidas
 subhead: Mejore el rendimiento activando las dependencias y la salida de JavaScript modernas.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
@@ -18,7 +18,7 @@ tags:
 
 Más del 90% de los navegadores son capaces de ejecutar JavaScript moderno, pero la prevalencia de JavaScript heredado sigue siendo uno de los mayores contribuyentes a los problemas de rendimiento en la web en la actualidad. [EStimator.dev](http://estimator.dev/) es una sencilla herramienta basada en web que calcula el tamaño y la mejora del rendimiento que podría lograr un sitio al ofrecer una sintaxis JavaScript moderna.
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="El análisis de EStimator.dev que muestra que un sitio web podría ser un 9% más rápido con JavaScript moderno.", width="800", height="785" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> EStimator.dev</figcaption></figure>
+<figure data-size="full">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="El análisis de EStimator.dev que muestra que un sitio web podría ser un 9% más rápido con JavaScript moderno.", width="800", height="785" %}<figcaption> EStimator.dev</figcaption></figure>
 
 Hoy en día, la web está limitada por el JavaScript heredado, y ninguna optimización única mejorará el rendimiento tanto como escribir, publicar y enviar su página web o paquete utilizando la sintaxis **ES2017.**
 
@@ -147,12 +147,12 @@ module.exports = {
 
 `Optimize Plugin` puede ser más rápido y más eficiente que las configuraciones de webpack personalizadas, que normalmente agrupan código moderno y heredado por separado. También maneja la ejecución de [Babel](https://babeljs.io/) por usted y minimiza los paquetes usando [Terser](https://terser.org/) con configuraciones óptimas separadas para las salidas modernas y heredadas. Por último, los polyfills necesarios para los paquetes heredados generados se extraen en un script dedicado para que nunca se dupliquen ni se carguen innecesariamente en los navegadores más nuevos.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Comparación: transpilar módulos fuente dos veces versus transpilar paquetes generados.</figcaption></figure>
+  <figcaption>Comparación: transpilar módulos fuente dos veces versus transpilar paquetes generados.</figcaption></figure>
 
 ### BabelEsmPlugin
 

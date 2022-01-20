@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No está configurada para una pantalla de presentación personalizada
 description: |2
 
@@ -16,7 +16,7 @@ Una pantalla de presentación personalizada hace que su [aplicación web progres
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no tienen una pantalla de presentación personalizada:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Auditoría Lighthouse que muestra que el sitio no está configurado para una pantalla de presentación personalizada", width="800", height="98",class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Auditoría Lighthouse que muestra que el sitio no está configurado para una pantalla de presentación personalizada", width="800", height="98" %}</figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

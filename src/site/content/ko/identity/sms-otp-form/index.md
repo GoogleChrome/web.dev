@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: SMS OTP 양식 모범 사례
 subhead: SMS OTP 양식을 최적화하고 사용자 경험을 개선하는 방법을 알아보세요.
 authors:
@@ -75,12 +75,12 @@ OTP는 일반적으로 5자리 또는 6자리 숫자이므로 입력 필드에 `
 
 `autocomplete="one-time-code"`를 사용하면 양식이 열려 있는 동안 사용자가 SMS 메시지를 수신할 때마다 운영 체제가 SMS의 OTP를 경험적으로 구문 분석하고 키보드는 사용자가 입력할 수 있도록 OTP를 제안합니다. iOS, iPadOS 및 macOS의 Safari 12 이상에서만 사용할 수 있지만 해당 플랫폼에서 SMS OTP 환경을 개선하는 쉬운 방법이므로 이러한 기능을 사용하는 것이 좋습니다.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">실행 중인 `autocomplete="one-time-code"`</figcaption></figure>
+  <figcaption>실행 중인 `autocomplete="one-time-code"`</figcaption></figure>
 
 `autocomplete="one-time-code"`[는 사용자 경험을 개선하지만 SMS 메시지가 원본 바인딩 메시지 형식을 준수하도록](#format) 하면 더 많은 작업을 수행할 수 있습니다.
 
@@ -144,12 +144,12 @@ navigator.credentials.get({
 .then(otp => input.value = otp.code);
 ```
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">실행 중인 WebOTP API.</figcaption></figure>
+  <figcaption>실행 중인 WebOTP API.</figcaption></figure>
 
 [WebOTP API로 웹에서 전화번호 인증하기](/web-otp/)에서 WebOTP API 사용 방법을 자세히 알아보거나 다음 스니펫을 복사하여 붙여넣으세요. `<form>` 요소에 `action` 및 `method` 속성이 제대로 설정되어 있는지 확인하세요.)
 

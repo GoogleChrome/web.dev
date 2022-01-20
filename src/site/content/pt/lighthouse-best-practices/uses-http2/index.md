@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Não usa HTTP/2 para todos os seus recursos.
 description: Saiba por que HTTP/2 é importante para o tempo de carregamento de sua página e como ativar HTTP/2 no seu servidor.
 web_lighthouse:
@@ -14,7 +14,7 @@ O HTTP/2 serve os recursos de sua página com mais rapidez e menos movimentaçã
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) lista todos os recursos que não são servidos por HTTP/2:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="A auditoria do Lighthouse audit mostra recursos não atendidos por HTTP/2 ", width="800", height="191", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="A auditoria do Lighthouse audit mostra recursos não atendidos por HTTP/2 ", width="800", height="191" %}</figure>
 
 O Lighthouse reúne todos os recursos solicitados pela página e verifica a versão do protocolo HTTP de cada um. Existem alguns casos em que as solicitações não HTTP/2 serão ignoradas nos resultados da auditoria. [Veja a implementação](https://github.com/GoogleChrome/lighthouse/blob/9fad007174f240982546887a7e97f452e0eeb1d1/lighthouse-core/audits/dobetterweb/uses-http2.js#L138) para mais detalhes.
 

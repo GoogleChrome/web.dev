@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 预加载关键资产以提高加载速度
 authors:
   - houssein
@@ -22,15 +22,15 @@ feedback:
 
 预加载最适合用于浏览器通常较晚发现的资源。
 
-<figure class="w-figure">{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Chrome DevTools Network 面板的屏幕截图。", width="701", height="509" %}<figcaption class="w-figcaption">在本例中，Pacifico 字体是在样式表通过 <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> 规则定义的。浏览器只有在完成下载和解析样式表后才会加载字体文件。</figcaption></figure>
+<figure>{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Chrome DevTools Network 面板的屏幕截图。", width="701", height="509" %}<figcaption>在本例中，Pacifico 字体是在样式表通过 <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> 规则定义的。浏览器只有在完成下载和解析样式表后才会加载字体文件。</figcaption></figure>
 
 通过预加载某个资源，您希望浏览器可以比正常发现它更早地获取该资源，因为您认为它对当前页面很重要。
 
-<figure class="w-figure">{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="应用预加载后 Chrome DevTools Network 面板的屏幕截图。", width="701", height="509" %}<figcaption class="w-figcaption">在本例中，已预加载了 Pacifico 字体，所以下载会与样式表并行进行。</figcaption></figure>
+<figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="应用预加载后 Chrome DevTools Network 面板的屏幕截图。", width="701", height="509" %}<figcaption>在本例中，已预加载了 Pacifico 字体，所以下载会与样式表并行进行。</figcaption></figure>
 
 关键请求链代表着浏览器优先处理和获取的资源顺序。 Lighthouse 会将位于该链第三层的资产识别为后期发现的资产。您可以使用[**预加载关键请求**](/uses-rel-preload)审计来确定要预加载的资源。
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse 的预加载关键请求审计。", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse 的预加载关键请求审计。", width="745", height="97" %}
 
 您可以通过在 HTML 文档的头部添加带有 `rel="preload"` 的 `<link>` 标记来预加载资源：
 
@@ -46,7 +46,7 @@ feedback:
 
 `load` 事件后大约 3 秒会触发 Chrome 中的控制台警告。
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console 警告关于未使用的预加载资源。", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console 警告关于未使用的预加载资源。", width="800", height="228" %}
 
 {% Aside %}所有现代浏览器均支持 [`preload`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility)。 {% endAside %}
 

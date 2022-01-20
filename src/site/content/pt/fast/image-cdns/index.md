@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use CDNs de imagem para otimizar imagens
 authors:
   - katiehempenius
@@ -22,7 +22,7 @@ As redes de entrega de conteúdo de imagem (CDNs) são excelentes na otimizaçã
 
 Os CDNs de imagens são especializados na transformação, otimização e entrega de imagens. Você também pode pensar neles como APIs para acessar e manipular as imagens usadas em seu site. Para imagens carregadas de um CDN de imagem, um URL de imagem indica não apenas qual imagem carregar, mas também parâmetros como tamanho, formato e qualidade. Isso facilita a criação de variações de uma imagem para diferentes casos de uso.
 
-<figure class="w-figure">{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="Mostra o fluxo de solicitação / resposta entre o CDN da imagem e o cliente. Parâmetros como tamanho e formato são usados para solicitar variações da mesma imagem.", width="800", height="408", class="w-screenshot" %} <figcaption class="w-figcaption"> Exemplos de transformações de CDNs de imagem podem ser executados com base em parâmetros em URLs de imagem.</figcaption></figure>
+<figure>{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="Mostra o fluxo de solicitação / resposta entre o CDN da imagem e o cliente. Parâmetros como tamanho e formato são usados para solicitar variações da mesma imagem.", width="800", height="408" %} <figcaption> Exemplos de transformações de CDNs de imagem podem ser executados com base em parâmetros em URLs de imagem.</figcaption></figure>
 
 Os CDNs de imagem são diferentes dos scripts de otimização de imagem em tempo de criação, pois eles criam novas versões de imagens conforme necessário. Como resultado, os CDNs geralmente são mais adequados para criar imagens altamente customizadas para cada cliente individual do que os scripts de construção.
 
@@ -30,7 +30,7 @@ Os CDNs de imagem são diferentes dos scripts de otimização de imagem em tempo
 
 Os URLs de imagem usados por CDNs de imagem transmitem informações importantes sobre uma imagem e as transformações e otimizações que devem ser aplicadas a ela. Os formatos de URL variam de acordo com o CDN da imagem, mas, em geral, todos têm recursos semelhantes. Vamos examinar alguns dos recursos mais comuns.
 
-<figure class="w-figure">{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="URLs de imagem normalmente consistem nos seguintes componentes: origem, imagem, chave de segurança e transformações.", width="800", height="127" %}</figure>
+<figure>{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="URLs de imagem normalmente consistem nos seguintes componentes: origem, imagem, chave de segurança e transformações.", width="800", height="127" %}</figure>
 
 ### Origem
 

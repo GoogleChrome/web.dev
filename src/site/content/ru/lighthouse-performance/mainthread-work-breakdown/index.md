@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Минимизация работы основного потока
 description: |2-
 
@@ -20,7 +20,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает страницы, которые во время загрузки загружают основной поток более 4 секунд:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="Снимок экрана аудита минимизации работы основного потока Lighthouse", width="800", height="408", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="Снимок экрана аудита минимизации работы основного потока Lighthouse", width="800", height="408" %}</figure>
 
 Чтобы помочь вам определить источники загрузки основного потока, Lighthouse показывает, на что было потрачено время ЦП, пока браузер загружал вашу страницу.
 

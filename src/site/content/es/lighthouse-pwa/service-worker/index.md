@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No registra un service worker que controla la página y el `start_url`
 description: Aprenda a registrar un service worker compatible con las características de la aplicación web progresiva como funcionalidad fuera de línea, notificaciones emergentes, e instalación.
 web_lighthouse:
@@ -24,7 +24,7 @@ Todos los navegadores principales, excepto Internet Explorer, son compatibles co
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no registran un service worker:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoría de Lighthouse que muestra que el sitio no registra un service worker", width="800", height="95", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoría de Lighthouse que muestra que el sitio no registra un service worker", width="800", height="95" %}</figure>
 
 Lighthouse comprueba si el [Protocolo de depuración remota de Chrome](https://github.com/ChromeDevTools/devtools-protocol) devuelve una versión del service worker. Si no es así, la auditoría falla.
 

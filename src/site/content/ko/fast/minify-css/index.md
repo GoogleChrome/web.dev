@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: CSS 축소
 authors:
   - demianrenzulli
@@ -70,7 +70,7 @@ body{font-family:"Benton Sans","Helvetica Neue",helvetica,arial,sans-serif;margi
 2. **CSS** 필터를 클릭합니다.
 3. **Disable cache(캐시 비활성화)** 확인란을 선택합니다. {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/WgneNAyftk8jneyXxMih.png", alt="DevTools CSS 최적화되지 않은 추적", width="800", height="138", class="w-screenshot" %}
+{% Img src="image/admin/WgneNAyftk8jneyXxMih.png", alt="DevTools CSS 최적화되지 않은 추적", width="800", height="138" %}
 
 페이지는 각각 **1.9KB**와 **76.2KB**인 두 CSS 파일을 요청합니다.
 
@@ -79,7 +79,7 @@ body{font-family:"Benton Sans","Helvetica Neue",helvetica,arial,sans-serif;margi
 
 스타일시트에는 화이트 공백 및 들여쓰기 문자가 포함되어 있습니다.
 
-{% Img src="image/admin/UEB5Xxe5IHhGtMx3XfKD.png", alt="DevTools CSS 최적화되지 않은 응답", width="800", height="286", class="w-screenshot" %}
+{% Img src="image/admin/UEB5Xxe5IHhGtMx3XfKD.png", alt="DevTools CSS 최적화되지 않은 응답", width="800", height="286" %}
 
 다음으로, 이러한 파일을 축소하기 위해 빌드 프로세스에 몇 가지 webpack 플러그인을 추가합니다.
 
@@ -143,7 +143,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 1. **CSS** 필터를 클릭합니다.
 2. **Disable cache(캐시 비활성화)** 확인란이 아직 선택되지 않은 경우 선택합니다. {% Instruction 'reload-app', 'ol' %}
 
-{% Img src="image/admin/id5kWwB3NilmVPWPTM59.png", alt="DevTools CSS 최적화되지 않은 응답", width="800", height="130", class="w-screenshot" %}
+{% Img src="image/admin/id5kWwB3NilmVPWPTM59.png", alt="DevTools CSS 최적화되지 않은 응답", width="800", height="130" %}
 
 이러한 파일을 검사하고 새 버전에 어떤 화이트 공백도 없는 것을 확인할 수 있습니다. 두 파일 모두 훨씬 작습니다. 특히 [animate.css](http://fav-kitties-animated-min.glitch.me/animate.css)는 **~26%** 감소하여 **~20KB**가 절약되었습니다!
 
@@ -156,7 +156,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 보고서에 "CSS 축소"가 더 이상 "기회"로 표시되지 않으며 이제 "감사 통과" 섹션으로 이동되었습니다.
 
-{% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Lighthouse가 최적화된 페이지 감사를 통과했습니다.", width="800", height="163", class="w-screenshot" %}
+{% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Lighthouse가 최적화된 페이지 감사를 통과했습니다.", width="800", height="163" %}
 
 CSS 파일은 [렌더링을 차단하는 리소스](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)이므로 대용량 CSS 파일을 사용하는 사이트에 축소를 적용하면 [첫 콘텐츠풀 페인트](/first-contentful-paint)와 같은 메트릭에서 개선을 확인할 수 있습니다.
 

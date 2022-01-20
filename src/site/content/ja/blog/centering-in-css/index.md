@@ -42,7 +42,7 @@ Resilience Ringerは、センタリング戦略は多言語レイアウト、可
 
 コンテキストにそってメタ情報を示せるよう、色による視覚的なヒントをいくつか用意しました。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438", class="w-screenshot" %} <figcaption class="w-figcaption"></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438" %} <figcaption></figcaption></figure>
 
 - ピンクの境界線は、センタリングスタイルのオーナーシップを示します。
 - 灰色のボックスは、アイテムを中央に配置しようとするコンテナの背景です。
@@ -54,8 +54,8 @@ Resilience Ringerは、センタリング戦略は多言語レイアウト、可
 
 ### 1. コンテンツセンター
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </source></video>
   <figcaption><a href="https://github.com/GoogleChromeLabs/ProjectVisBug#visbug">VisBug</a>を使用してコンテンツの編集と複製を行う</figcaption></figure>
@@ -89,8 +89,8 @@ Resilience Ringerは、センタリング戦略は多言語レイアウト、可
 
 ### 2. ジェントルフレックス
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gentle-flex-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -125,8 +125,8 @@ Resilience Ringerは、センタリング戦略は多言語レイアウト、可
 
 ### 3. オートボット
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/autobot-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -162,8 +162,8 @@ Resilience Ringerは、センタリング戦略は多言語レイアウト、可
 
 ### 4. ふわふわセンター
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/fluffy-center-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -195,8 +195,8 @@ Resilience Ringerは、センタリング戦略は多言語レイアウト、可
 
 ### 5. ポップ＆プロップ
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/popnplop-ringer-cycle.mp4">
   </source></video></figure>
 

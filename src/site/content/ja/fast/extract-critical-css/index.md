@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 重要なCSSを抽出する
 subhead: 重要なCSSテクニックを使用してレンダリング時間を改善する方法を学びます。
 authors:
@@ -21,21 +21,21 @@ tags:
 
 {% Aside 'key-term' %}クリティカルCSSは、ユーザーに対してコンテンツをできるだけ速くレンダリングするために、重要なコンテンツのCSSを抽出する手法です。 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="画面の端からWebページがオーバーフローするノートPCとモバイルデバイスの図", width="800", height="469", class="" %}</figure>
+<figure>{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="画面の端からWebページがオーバーフローするノートPCとモバイルデバイスの図", width="800", height="469", class="" %}</figure>
 
 {% Aside 'note' %}最も重要なのは、ページの読み込み時に、スクロールする前に、閲覧者に表示されるすべてのコンテンツです。非常に多数のデバイスと画面サイズがあるため、折りたたまれたコンテンツの上にあると見なされるコンテンツには普遍的に定義されたピクセルの高さがありません。 {% endAside %}
 
 HTMLドキュメントの`<head>`で抽出されたスタイルをインライン化すると、これらのスタイルを取り込むために追加の要求を行う必要がなくなります。 CSSの残りの部分は非同期でロードできます。
 
-<figure class="w-figure">{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="クリティカルCSSが先頭でインライン化されたHTMLファイル", width="800", height="325", class="w-screenshot" %} <figcaption class="w-figcaption">インライン化されたクリティカルCSS</figcaption></figure>
+<figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="クリティカルCSSが先頭でインライン化されたHTMLファイル", width="800", height="325" %} <figcaption>インライン化されたクリティカルCSS</figcaption></figure>
 
 レンダリング時間を改善すると、特にネットワークの状態が悪い[場合に、知覚されるパフォーマンスに](https://developers.google.com/web/fundamentals/performance/rail#ux)大きな違いが生じる可能性があります。モバイルネットワークでは、帯域幅に関係なく、高遅延が問題になります。
 
-<figure class="w-figure">{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) を読み込んだフィルムストリップビューの比較。上のフィルムストリップは、最終的にコンテンツを表示する前の6つの空白フレームを表示します。下のフィルムストリップは、最初のフレームに意味のあるコンテンツを表示します。", width="800", height="363", class="w-screenshot" %} <figcaption class="w-figcaption">3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) の読み込みの比較</figcaption></figure>
+<figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) を読み込んだフィルムストリップビューの比較。上のフィルムストリップは、最終的にコンテンツを表示する前の6つの空白フレームを表示します。下のフィルムストリップは、最初のフレームに意味のあるコンテンツを表示します。", width="800", height="363" %} <figcaption>3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) の読み込みの比較</figcaption></figure>
 
 [First Contentful Paint (FCP)](/first-contentful-paint) が不十分で、Lighthouse監査で「レンダリングブロックリソースの排除」の可能性が特定された場合は、クリティカルCSSを試してみることをお勧めします。
 
-{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="「レンダリングブロックリソースの排除」または「未使用のCSSの遅延」の可能性が特定されたLighthouse監査", width="743", height="449", class="w-screenshot" %}
+{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="「レンダリングブロックリソースの排除」または「未使用のCSSの遅延」の可能性が特定されたLighthouse監査", width="743", height="449" %}
 
 {% Aside 'gotchas' %}大量のCSSをインライン化すると、残りのHTMLドキュメントの送信が遅れることに注意してください。すべてが優先されるということは、何も優先されないということです。インライン化には、ブラウザがCSSをキャッシュに保存できず、後続のページの読み込みでCSSを再利用できないという欠点もあるため、慎重に使用することをお勧めします。 {% endAside %}
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Индекс скорости
 description: |2
 
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse отображает индекс скорости в секундах:
 
-<figure class="w-figure">{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/LFN6FPQ2uQ4LnwcHiZWq.png", alt="Снимок экрана аудита индекса скорости Lighthouse", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/LFN6FPQ2uQ4LnwcHiZWq.png", alt="Снимок экрана аудита индекса скорости Lighthouse", width="800", height="588" %}</figure>
 
 ## Что измеряет индекс скорости
 
@@ -28,7 +28,7 @@ Lighthouse отображает индекс скорости в секунда�
 
 В этой таблице показано, как интерпретировать оценку индекса скорости:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

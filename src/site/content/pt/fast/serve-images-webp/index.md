@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use imagens WebP
 authors:
   - katiehempenius

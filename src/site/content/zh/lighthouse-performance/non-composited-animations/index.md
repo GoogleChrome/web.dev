@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 避免非合成动画
 description: 如何通过“避免非合成动画”Lighthouse 审计。
 date: 2020-08-12
@@ -13,7 +13,7 @@ web_lighthouse:
 
 浏览器的用来将 HTML、CSS 和 JavaScript 转换为像素的算法统称为*渲染流水线*。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="渲染流水线包含以下顺序步骤：JavaScript、样式、布局、绘制、合成。", width="800", height="122 "%} <figcaption class="w-figcaption">渲染流水线。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="渲染流水线包含以下顺序步骤：JavaScript、样式、布局、绘制、合成。", width="800", height="122 "%} <figcaption>渲染流水线。</figcaption></figure>
 
 如果您不了解渲染流水线每个步骤的含义，那也没关系。现在要了解的重点是，在渲染流水线的每一步，浏览器都使用上一个操作的结果来创建新数据。例如，如果代码执行一些触发“布局”的操作，则“绘制”和“合成”步骤需要再次运行。非合成动画是触发渲染流水线较早步骤之一（“样式”、“布局”或“绘制”）的动画。非合成动画的性能更差，因为它们迫使浏览器做更多工作。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 链接没有可辨别的名称
 description: 了解如何使您的网页上的链接更易于访问——确保它们的名称可以被辅助技术解释。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse 标记没有可辨别名称的链接：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="显示链接没有可识别名称的 Lighthouse 审计", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="显示链接没有可识别名称的 Lighthouse 审计", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

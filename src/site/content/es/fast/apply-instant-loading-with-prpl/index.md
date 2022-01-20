@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Aplicar la carga instantánea con el patrón PRPL
 authors:
   - houssein
@@ -33,7 +33,7 @@ Para obtener más información, consulte [Descubra oportunidades de rendimiento 
 
 Lighthouse muestra la siguiente auditoría fallida si un determinado recurso se analiza y se recupera tarde:
 
-{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: Auditoría de de precarga de solicitudes clave", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: Auditoría de de precarga de solicitudes clave", width="745", height="97" %}
 
 La [**precarga**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content) es una solicitud de recuperación declarativa que le indica al navegador que solicite un recurso lo antes posible. Puede precargar los recursos críticos si agrega una etiqueta `<link>` con `rel="preload"` al encabezado de su documento HTML:
 
@@ -49,7 +49,7 @@ Para obtener más información sobre la precarga de recursos críticos, consulte
 
 Lighthouse proporciona una advertencia si hay recursos que retrasan el [**First Paint (Primer despliegue)**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint), el momento en que su sitio muestra los píxeles en la pantalla:
 
-{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: Auditoría para eliminar los recursos que bloquean el renderizado", width="800", height="111", class="w-screenshot" %}
+{% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: Auditoría para eliminar los recursos que bloquean el renderizado", width="800", height="111" %}
 
 Para mejorar el Primer despliegue, Lighthouse recomienda insertar JavaScript crítico y diferir el resto mediante el uso de [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), así como también incluir CSS crítico usado en la mitad superior de la página. Esto mejora el rendimiento al eliminar los viajes de ida y vuelta al servidor para buscar activos que bloquean el renderizado. Sin embargo, el código en línea es más difícil de mantener desde una perspectiva de desarrollo y el navegador no puede almacenarlo en caché por separado.
 
@@ -60,7 +60,7 @@ No existe una única solución correcta para reducir el Primer despliegue en su 
 - [Optimizar la entrega de CSS](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 - [¿Qué es el renderizado del lado del servidor?](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="Solicitudes/respuestas con service worker", width="800", height="1224" %}</figure>
+<figure data-float="right">{% Img src="image/admin/xv1f7ZLKeBZD83Wcw6pd.png", alt="Solicitudes/respuestas con service worker", width="800", height="1224" %}</figure>
 
 ## Activos de caché previa
 
@@ -72,11 +72,11 @@ Utilice una biblioteca de terceros para simplificar el proceso de generación de
 
 Lighthouse muestra una auditoría fallida si envía demasiados datos a través de la red.
 
-{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse: Tiene una auditoría de cargas útiles de red enormes", width="800", height="99", class="w-screenshot" %}
+{% Img src="image/admin/Ml4hOCqfD4kGWfuKYVTN.png", alt="Lighthouse: Tiene una auditoría de cargas útiles de red enormes", width="800", height="99" %}
 
 Esto incluye todos los tipos de activos, pero las cargas útiles grandes de JavaScript son especialmente costosas debido al tiempo que le toma al navegador analizarlas y compilarlas. Lighthouse también proporciona una advertencia para esto cuando sea apropiado.
 
-{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse: Auditoría de tiempo de arranque de JavaScript", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/aKDCV8qv3nuTVFt0Txyj.png", alt="Lighthouse: Auditoría de tiempo de arranque de JavaScript", width="797", height="100" %}
 
 Para enviar una carga útil de JavaScript más pequeña que contenga solo el código necesario cuando un usuario carga inicialmente su aplicación, divida todo el paquete y [cargue diferidamente](/reduce-javascript-payloads-with-code-splitting) los fragmentos a pedido.
 
@@ -84,7 +84,7 @@ Una vez que haya logrado dividir su paquete, cargue previamente los fragmentos q
 
 Además de dividir y cargar diferentes fragmentos de JavaScript a pedido, Lighthouse también proporciona una auditoría para la carga diferida de imágenes no críticas.
 
-{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: Auditoría de imágenes diferidas fuera de pantalla", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/sEgLhoYadRCtKFCYVM1d.png", alt="Lighthouse: Auditoría de imágenes diferidas fuera de pantalla", width="800", height="90" %}
 
 Si carga muchas imágenes en su página web, posponga todas las que están en la mitad inferior de la página, o fuera de la ventana gráfica del dispositivo, cuando se carga una página (consulte [Uso de lazysizes para cargar imágenes de forma diferida](/use-lazysizes-to-lazyload-images)).
 

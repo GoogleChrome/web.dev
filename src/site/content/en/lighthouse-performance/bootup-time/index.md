@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduce JavaScript execution time
 description: |
   Learn how JavaScript execution can slow down your page performance
@@ -44,8 +44,8 @@ it slows down your page performance in several ways:
 shows a warning when JavaScript execution takes longer than 2&nbsp;seconds.
 The audit fails when execution takes longer than 3.5&nbsp;seconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="A screenshot of the Lighthouse Reduce JavaScript execution time audit", width="800", height="321", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="A screenshot of the Lighthouse Reduce JavaScript execution time audit", width="800", height="321" %}
 </figure>
 
 To help you identify the biggest contributors to execution time,

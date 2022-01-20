@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Uso del informe Chrome UX para observar el rendimiento en el campo
 authors:
   - rviscomi

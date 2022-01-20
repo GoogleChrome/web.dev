@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Prácticas recomendadas para los avisos de cookies
 subhead: Optimizar los avisos de cookies para mejorar el rendimiento y la facilidad de uso.
 authors:
@@ -137,13 +137,13 @@ Para obtener más información sobre la programación de WebPageTest, consulte l
 
 Para ejecutar WebPageTest con una cookie determinada, vaya a la pestaña **Avanzado** y agregue el encabezado de la cookie al campo **Cabezados personalizados**:
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Captura de pantalla que muestra el campo denominado 'Encabezados personalizados' en WebPageTest", width="800", height="181", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Captura de pantalla que muestra el campo denominado 'Encabezados personalizados' en WebPageTest", width="800", height="181" %}
 
 #### Cambiar la ubicación de la prueba
 
 Para cambiar la ubicación de la prueba que utiliza WebPageTest, haga clic en el elemento desplegable **Ubicación de la prueba** situado en la pestaña **Pruebas avanzadas**.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Captura de pantalla del elemento desplegable 'Ubicación de la prueba' en WebPageTest", width="800", height="267", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Captura de pantalla del elemento desplegable 'Ubicación de la prueba' en WebPageTest", width="800", height="267" %}
 
 ### Cómo probar los avisos de cookies con Lighthouse
 
@@ -153,7 +153,7 @@ La configuración de cookies en una ejecución de Lighthouse puede servir como m
 
 Las cookies no se borrarán cuando Lighthouse se ejecute desde DevTools. Sin embargo, otros tipos de almacenamiento se borran automáticamente. Este comportamiento puede modificarse mediante la opción **Borrar almacenamiento** en el panel de control de **Lighthouse**.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Captura de pantalla en la que se destaca la opción 'Borrar almacenamiento' de Lighthouse", width="800", height="304", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Captura de pantalla en la que se destaca la opción 'Borrar almacenamiento' de Lighthouse", width="800", height="304" %}
 
 #### CLI
 

@@ -132,21 +132,21 @@ Google Chrome 팀은 오프라인 작업 및 매력적인 사용자 경험을 �
 
 OMT는 PROXX의 피처폰 성능에 흥미로운 영향을 미쳤습니다. 비 OMT 버전에서 UI는 사용자가 상호 작용한 후 6초 동안 정지됩니다. 피드백이 없으며 사용자는 다른 작업을 수행하기 전에 6초 동안 기다려야 합니다.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption"><strong>비-OMT</strong> 버전의 PROXX에서 UI 응답 시간.</figcaption></figure>
+ <figcaption><strong>비-OMT</strong> 버전의 PROXX에서 UI 응답 시간.</figcaption></figure>
 
 하지만 OMT 버전에서는 게임이 UI 업데이트를 완료하는 데 *12초*가 걸립니다. 성능 손실처럼 보이지만 실제로는 사용자에 대한 피드백을 증가시킵니다. 앱이 프레임을 전혀 전달하지 않는 비-OMT 버전보다 더 많은 프레임을 전달하기 때문에 속도가 느려집니다. 따라서 사용자는 어떤 일이 일어나고 있는지 알고 UI가 업데이트될 때 계속 플레이할 수 있으므로 더 나은 게임 환경을 누릴 수 있습니다.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">PROXX의 <strong>OMT</strong> 버전에서 UI 응답 시간.</figcaption></figure>
+ <figcaption>PROXX의 <strong>OMT</strong> 버전에서 UI 응답 시간.</figcaption></figure>
 
 이것은 의식적인 트레이드 오프입니다 : 우리가 제한된 장치의 사용자에게 하이 엔드 기기의 사용자를 처벌하지 않고 더 나은 *느낌* 경험을 제공합니다.
 

@@ -62,11 +62,11 @@ finishes scrolling the carousel, its visible image snaps into place. No scroll
 adjustments needed by JavaScript.
 
 
-<figure class="w-figure">
+<figure>
     {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/b2Zbw03FzAth5NvBM2Cb.png",
     alt="Example of using css scroll snap with an image carousel.",
     width="800", height="356" %}
-  <figcaption class="w-figcaption">Example of using css scroll snap with an image carousel.
+  <figcaption>Example of using css scroll snap with an image carousel.
     Here scroll snapping ensures at the end of scrolling an image horizontal
     center is aligned with the horizontal center of the scroll container.
   </figcaption>
@@ -101,13 +101,13 @@ the same as the visual viewport of the scroll container, but it can be adjusted
 using the `scroll-padding` property.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
     {% Video src="video/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/U9rWoMBMwhKMo6dJZE8v.mp4",
     autoplay=true,
     playsinline=true,
     muted=true,
     loop=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of a various alignments on horizontal scrolling axis.
  </figcaption>
 </figure>
@@ -154,13 +154,13 @@ requires implementations to detect this case and allow the user to freely scroll
 around within that image only snapping at its edges.
 
 
-<figure class="w-figure">
+<figure>
   {% Video src="video/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/yKrUtFVhZLR9ekaws8o3.mp4",
     autoplay=true,
     playsinline=true,
     muted=true,
     loop=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://snap.glitch.me/carousel.html"
        target="_blank">View demo</a> |
     <a href="https://glitch.com/edit/#!/snap?path=carousel.html:1:0"
@@ -234,13 +234,13 @@ as PageDown and PageUp, and also when calculating scroll amount for the
 `Element.scrollIntoView()` operation.
 
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/vJ4o1a537JsKzgkiAVd6.mp4",
     autoplay=true,
     playsinline=true,
     muted=true,
     loop=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://snap.glitch.me/product.html"
        target="_blank">View demo</a> |
     <a href="https://glitch.com/edit/#!/snap?path=product.html:1:0"

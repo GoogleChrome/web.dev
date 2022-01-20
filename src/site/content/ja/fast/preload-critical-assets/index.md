@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 重要なアセットをプリロードして、読み込み速度を向上させる
 authors:
   - houssein
@@ -22,15 +22,15 @@ Webページを開くと、ブラウザはすぐにサーバーからのHTMLフ�
 
 プリロードは、通常、ブラウザが遅れて検出するリソースに最適です。
 
-<figure class="w-figure">{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Chrome DevToolsネットワークパネルのスクリーンショット。", width="701", height="509" %} <figcaption class="w-figcaption">この例では、<a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>ルールを使って、Pacificoフォントがスタイルシートに定義されています。ブラウザは、スタイルシートのダウンロードと解析が完了した後にのみフォントファイルをロードします。</figcaption></figure>
+<figure>{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Chrome DevToolsネットワークパネルのスクリーンショット。", width="701", height="509" %} <figcaption>この例では、<a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>ルールを使って、Pacificoフォントがスタイルシートに定義されています。ブラウザは、スタイルシートのダウンロードと解析が完了した後にのみフォントファイルをロードします。</figcaption></figure>
 
 特定のリソースが現在のページで重要であることがわかっているため、そのリソースをプリロードすることで、ブラウザがロードするよりも前にそのリソースをフェッチするようにブラウザに指示します。
 
-<figure class="w-figure">{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="プリロードを適用した後のChrome DevToolsネットワークパネルのスクリーンショット。", width="701", height="509" %} <figcaption class="w-figcaption">この例では、Pacificoフォントがプリロードされているため、ダウンロードはスタイルシートと並行して行われます。</figcaption></figure>
+<figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="プリロードを適用した後のChrome DevToolsネットワークパネルのスクリーンショット。", width="701", height="509" %} <figcaption>この例では、Pacificoフォントがプリロードされているため、ダウンロードはスタイルシートと並行して行われます。</figcaption></figure>
 
 クリティカルリクエストチェーンは、ブラウザが優先順位を付けてフェッチするリソースの順序を表します。Lighthouseは、このチェーンの3番目のレベルにあるアセットを遅延検出と識別します。[**重要リクエストのプリロード**](/uses-rel-preload)監査を使用して、プリロードするリソースを特定できます。
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouseの「重要なリクエストのプリロード」監査。", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouseの「重要なリクエストのプリロード」監査。", width="745", height="97" %}
 
 HTMLドキュメントのheadに、`<link>`タグと`rel="preload"`を追加して、リソースをプリロードできます。
 
@@ -46,7 +46,7 @@ HTMLドキュメントのheadに、`<link>`タグと`rel="preload"`を追加し�
 
 未使用のpreloadについては、Chromeは`load`イベントの約3秒後にコンソール警告を表示します。
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="未使用のプリロードされたリソースに関するChrome DevToolsコンソールの警告。", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="未使用のプリロードされたリソースに関するChrome DevToolsコンソールの警告。", width="800", height="228" %}
 
 {% Aside %} [`preload`はすべての最新のブラウザでサポート](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility)されています。{% endAside %}
 

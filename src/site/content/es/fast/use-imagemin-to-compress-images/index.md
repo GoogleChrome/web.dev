@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Utilice Imagemin para comprimir imágenes
 authors:
   - katiehempenius
@@ -18,7 +18,7 @@ tags:
 
 Las imágenes sin comprimir inflan sus páginas con bytes innecesarios. La foto de la derecha es un 40% más pequeña que la de la izquierda, pero probablemente lucirá idéntica para el usuario medio.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -52,7 +52,7 @@ Lo más importante a considerar al elegir un complemento es si presenta "pérdid
 
 Para la mayoría de las personas, los complementos con pérdidas son la mejor opción. Ofrecen ahorros significativamente mayores y se pueden personalizar los niveles de compresión para satisfacer sus necesidades. La siguiente tabla enumera los complementos populares de Imagemin. Estos no son los únicos complementos disponibles, pero todos serían buenas opciones para su proyecto.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

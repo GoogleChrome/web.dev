@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 상호 작용까지의 시간
 description: Lighthouse의 상호 작용까지의 시간 메트릭과 이를 측정하고 최적화하는 방법에 대해 알아봅니다.
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse는 TTI를 초 단위로 표시합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="Lighthouse 상호 작용까지의 시간 감사를 보여주는 스크린샷", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="Lighthouse 상호 작용까지의 시간 감사를 보여주는 스크린샷", width="800", height="588" %}</figure>
 
 ## TTI로 측정되는 내용
 
@@ -32,7 +32,7 @@ TTI 점수는 [HTTP 아카이브의 데이터](https://httparchive.org/reports/l
 
 다음 표는 TTI 점수를 해석하는 방법을 보여줍니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

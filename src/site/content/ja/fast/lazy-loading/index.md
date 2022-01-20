@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 遅延読み込みを使用して読み込み速度を向上しましょう
 authors:
   - jlwagner
@@ -20,7 +20,7 @@ Webサイトの一般的なペイロードに含まれる[画像](http://beta.ht
 
 遅延読み込みは、ページの読み込み時に重要ではないリソースの読み込みを延期する手法です。代わりに、こういった重要ではないリソースは、必要になる時点に読み込まれます。画像の場合、「重要ではない」は普通に「画面外」と同義です。 Lighthouseを使用して改善を検討したことがあれば、この領域で[オフスクリーン画像監査の延期](/offscreen-images/)のフォームでガイダンスを見たことがあるかもしれません。
 
-<figure class="w-figure">{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouseでのオフスクリーン画像監査の延長のスクリーンショット。", width="800", height="102", class="w-screenshot" %}<figcaption class="w-figcaption">Lighthouseのパフォーマンス監査の1つは、遅延読み込みの候補である画面外の画像を特定することです。</figcaption></figure>
+<figure>{% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="Lighthouseでのオフスクリーン画像監査の延長のスクリーンショット。", width="800", height="102" %}<figcaption>Lighthouseのパフォーマンス監査の1つは、遅延読み込みの候補である画面外の画像を特定することです。</figcaption></figure>
 
 おそらく、遅延読み込みが実際に行われているのを見たことがあるでしょう。これは次のようになります。
 
@@ -30,7 +30,7 @@ Webサイトの一般的なペイロードに含まれる[画像](http://beta.ht
 
 画像の遅延読み込みの例は、一般公開プラットフォーム[Medium](https://medium.com/)にあります。このプラットフォームは、ページの読み込み時に軽量のプレースホルダー画像を読み込み、そしてビューポートにスクロールすると遅延読み込みの画像に置き換えられます。
 
-<figure class="w-figure">{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="ブラウジング中、かつ遅延読み込みの動作を示しているWebサイトMediumのスクリーンショット。ぼやけたプレースホルダーは左側にあり、読み込まれたリソースは右にあります。", width="800", height="493" %}<br><figcaption class="w-figcaption">実際の遅延読み込みの例の画像。プレースホルダー画像はページの読み込みに読み込まれ（左）、そしてビューポートにスクロールすると、必要なときに最終的な画像が読み込まれます。</figcaption></figure>
+<figure>{% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="ブラウジング中、かつ遅延読み込みの動作を示しているWebサイトMediumのスクリーンショット。ぼやけたプレースホルダーは左側にあり、読み込まれたリソースは右にあります。", width="800", height="493" %}<br><figcaption>実際の遅延読み込みの例の画像。プレースホルダー画像はページの読み込みに読み込まれ（左）、そしてビューポートにスクロールすると、必要なときに最終的な画像が読み込まれます。</figcaption></figure>
 
 遅延読み込みに慣れていない場合は、この手法がどれほど有用であり、メリットは何であるか疑問に思われるかもしれません。ここで読んで調べましょう！
 

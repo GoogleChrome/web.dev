@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 더 빠른 애플리케이션을 위한 최신 JavaScript 배포, 제공 및 설치
 subhead: 최신 JavaScript 의존성 및 결과물을 중심으로 성능을 개선합니다.
 hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
@@ -18,7 +18,7 @@ tags:
 
 브라우저의 90% 이상이 최신 JavaScript를 실행할 수 있지만 널리 퍼져있는 레거시 JavaScript는 오늘날 웹에서 성능 문제를 일으키는 가장 큰 원인 중 하나입니다. [EStimator.dev](http://estimator.dev/)는 최신 JavaScript 문법을 제공하여 사이트가 크기와 성능을 얼마나 향상할 수 있는지 계산하는 간단한 웹 기반 도구입니다.
 
-<figure class="w-figure w-figure--fullbleed">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev 분석은 최신 JavaScript로 웹사이트가 9% 더 빨라질 수 있다는 것을 보여줍니다.", width="800", height="785" %}<figcaption class="w-figcaption w-figcaption--fullbleed"> EStimator.dev </figcaption></figure>
+<figure data-size="full">{% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev 분석은 최신 JavaScript로 웹사이트가 9% 더 빨라질 수 있다는 것을 보여줍니다.", width="800", height="785" %}<figcaption> EStimator.dev </figcaption></figure>
 
 오늘날 웹은 레거시 JavaScript로 인해 제한되며 **ES2017** 문법을 사용하여 웹 페이지 또는 패키지를 작성, 배포 및 제공하는 것만큼 성능을 향상시키는 단일 최적화 방식은 없습니다.
 
@@ -147,12 +147,12 @@ module.exports = {
 
 `Optimize Plugin` 은 일반적으로 최신 코드와 레거시 코드를 별도로 번들로 제공하는 사용자 지정 webpack 구성보다 더 빠르고 효율적일 수 있습니다. 또한 [Babel](https://babeljs.io/) 실행을 처리하고 최신 및 레거시 출력에 대해 별도의 최적 설정으로 [Terser](https://terser.org/)를 사용하여 번들을 축소합니다. 마지막으로 생성된 레거시 번들에 필요한 폴리필이 전용 스크립트로 추출되어 최신 브라우저에서 중복되거나 불필요하게 로드되지 않습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">비교: 소스 모듈을 두 번 트랜스파일하는 것과 생성된 번들을 트랜스파일하는 것.</figcaption></figure>
+  <figcaption>비교: 소스 모듈을 두 번 트랜스파일하는 것과 생성된 번들을 트랜스파일하는 것.</figcaption></figure>
 
 ### BabelEsmPlugin
 

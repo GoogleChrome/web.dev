@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 합성되지 않은 애니메이션 방지
 description: '"합성되지 않은 애니메이션 방지" Lighthouse 감사를 통과하는 방법입니다.'
 date: 2020-08-12
@@ -13,7 +13,7 @@ web_lighthouse:
 
 HTML, CSS 및 JavaScript를 픽셀로 변환하기 위한 브라우저의 알고리즘을 통틀어 *렌더링 파이프라인*이라고 합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="렌더링 파이프라인은 JavaScript, 스타일, 레이아웃, 페인트, 합성과 같은 순차적 단계로 구성됩니다.", width="800", height="122 " %}<figcaption class="w-figcaption"> 렌더링 파이프라인.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="렌더링 파이프라인은 JavaScript, 스타일, 레이아웃, 페인트, 합성과 같은 순차적 단계로 구성됩니다.", width="800", height="122 " %}<figcaption> 렌더링 파이프라인.</figcaption></figure>
 
 렌더링 파이프라인의 각 단계가 의미하는 바를 이해하지 못해도 괜찮습니다. 지금 이해해야 할 핵심은 렌더링 파이프라인의 각 단계에서 브라우저가 이전 작업의 결과를 사용하여 새 데이터를 생성한다는 것입니다. 예를 들어, 코드가 레이아웃을 트리거 하는 작업을 수행하는 경우 페인트 및 합성 단계를 다시 실행해야 합니다. 합성되지 않은 애니메이션은 렌더링 파이프라인(스타일, 레이아웃 또는 페인트)의 이전 단계 중 하나를 트리거 하는 모든 애니메이션입니다. 합성되지 않은 애니메이션은 브라우저가 더 많은 작업을 수행하도록 하기 때문에 성능이 저하됩니다.
 

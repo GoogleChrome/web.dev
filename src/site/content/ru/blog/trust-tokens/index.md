@@ -36,9 +36,9 @@ Trust Token API позволяет передавать доверие к под
 
 Вы можете опробовать API в нашей [демонстрации](https://trust-token-demo.glitch.me) и [проверить токены](https://developers.google.com/web/updates/2021/01/devtools#trust-token) на вкладках Chrome DevTools **Network** и **Application**.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Скриншот, показывающий Trust Tokens на вкладке Network в Chrome DevTools.", width="800", height="584" %} <figcaption class="w-figcaption">Trust Tokens на вкладке <b>Network</b> в Chrome DevTools.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Скриншот, показывающий Trust Tokens на вкладке Network в Chrome DevTools.", width="800", height="584" %} <figcaption>Trust Tokens на вкладке <b>Network</b> в Chrome DevTools.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Скриншот, показывающий Trust Tokens на вкладке Application в Chrome DevTools.", width="800", height="584" %} <figcaption class="w-figcaption">Trust Tokens на вкладке <b>Application</b> в Chrome DevTools.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Скриншот, показывающий Trust Tokens на вкладке Application в Chrome DevTools.", width="800", height="584" %} <figcaption>Trust Tokens на вкладке <b>Application</b> в Chrome DevTools.</figcaption></figure>
 
 {% Aside %} Privacy Sandbox — это ряд предложений, позволяющих удовлетворить запросы сторонних разработчиков без использования сторонних файлов cookie и других механизмов отслеживания. См. статью [«Подробно о Privacy Sandbox»](/digging-into-the-privacy-sandbox), чтобы ознакомиться со всеми предложениями.
 

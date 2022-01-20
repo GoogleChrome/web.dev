@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O manifesto do aplicativo da web não atende aos requisitos de instalabilidade
 description: |2
 
@@ -20,7 +20,7 @@ Um [manifesto de aplicativo da web](/add-manifest/) inclui informações importa
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm um [manifesto de aplicativo da web](/add-manifest/) que atenda aos requisitos mínimos de instalação:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Auditoria do farol mostrando que o usuário não pode instalar o aplicativo da web a partir da tela inicial", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="Auditoria do farol mostrando que o usuário não pode instalar o aplicativo da web a partir da tela inicial", width="800", height="98" %}</figure>
 
 Se o manifesto de uma página não incluir as seguintes propriedades, ele falhará na auditoria:
 

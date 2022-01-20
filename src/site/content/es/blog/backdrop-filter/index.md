@@ -19,16 +19,16 @@ feedback:
 
 La translucidez, el desenfoque y otros efectos son formas útiles de crear profundidad mientras se mantiene el contexto del contenido de fondo. Admiten una gran cantidad de casos de uso, como vidrio esmerilado, superposiciones de video, encabezados de navegación translúcidos, censura de imágenes inapropiadas, carga de imágenes, etc. Puede reconocer estos efectos en dos sistemas operativos populares: [Windows 10](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) e [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg).
 
-<figure class="w-figure">{% Img src="image/admin/mEc6bdwB2ZX6VSXvyJEn.jpg", alt="Un ejemplo de efecto de vidrio esmerilado", width="400", height="300" %} <figcaption class="w-figcaption">Un ejemplo de efecto de vidrio esmerilado. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&amp;tag=android" target="_blank" rel="noopener noreferrer">Fuente</a>.</figcaption></figure>
+<figure>{% Img src="image/admin/mEc6bdwB2ZX6VSXvyJEn.jpg", alt="Un ejemplo de efecto de vidrio esmerilado", width="400", height="300" %} <figcaption>Un ejemplo de efecto de vidrio esmerilado. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&amp;tag=android" target="_blank" rel="noopener noreferrer">Fuente</a>.</figcaption></figure>
 
 Históricamente, estas técnicas eran difíciles de implementar en la web, además requerían [trucos o soluciones](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter) menos que perfectos. En los últimos años, tanto [Safari](https://webkit.org/blog/3632/introducing-backdrop-filters/) como Edge han proporcionado estas capacidades mediante la propiedad `background-filter` (y alternativamente, mediante la propiedad `-webkit-backdrop-filter`), que combina dinámicamente los colores de primer plano y de fondo según las funciones de filtro. Ahora Chrome admite `background-filter` a partir de la versión 76.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">Una demostración de las funciones de filtro para <code>backdrop-filter</code>. Pruebe el ejemplo en <a href="https://codepen.io/robinrendle/pen/LmzLEL" target="_blank" rel="noopener">CodePen</a>.</figcaption></figure>
+  <figcaption>Una demostración de las funciones de filtro para <code>backdrop-filter</code>. Pruebe el ejemplo en <a href="https://codepen.io/robinrendle/pen/LmzLEL" target="_blank" rel="noopener">CodePen</a>.</figcaption></figure>
 
 ## Aspectos básicos
 
@@ -96,12 +96,12 @@ En el siguiente ejemplo, el efecto escarchado se logra al combinar color y desen
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption">Pruebe este ejemplo usted mismo en <a href="https://codepen.io/netsi1964/pen/JqBLPK" target="_blank" rel="noopener">CodePen</a>.</figcaption></figure>
+  <figcaption>Pruebe este ejemplo usted mismo en <a href="https://codepen.io/netsi1964/pen/JqBLPK" target="_blank" rel="noopener">CodePen</a>.</figcaption></figure>
 
 ### Varios filtros
 
@@ -115,12 +115,12 @@ A veces, necesitará varios filtros para lograr el efecto deseado. Para hacer es
 
 En el siguiente ejemplo, cada uno de los cuatro paneles tiene una combinación diferente de filtros de fondo, mientras que detrás de ellos se anima el mismo conjunto de formas.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption">Pruebe este ejemplo usted mismo en <a href="https://codepen.io/pepf/pen/GqZkdj" target="_blank" rel="noopener">CodePen</a>.</figcaption></figure>
+  <figcaption>Pruebe este ejemplo usted mismo en <a href="https://codepen.io/pepf/pen/GqZkdj" target="_blank" rel="noopener">CodePen</a>.</figcaption></figure>
 
 ### Superposiciones
 
@@ -133,12 +133,12 @@ Este ejemplo muestra cómo desenfocar un fondo semitransparente para que el text
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption">Pruebe este <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank" rel="noopener">ejemplo</a> usted mismo.</figcaption></figure>
+  <figcaption>Pruebe este <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank" rel="noopener">ejemplo</a> usted mismo.</figcaption></figure>
 
 ### Contraste de texto sobre fondos dinámicos
 
@@ -157,12 +157,12 @@ Como se indicó anteriormente, `backdrop-filter` permite efectos de rendimiento 
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption">Pruebe este ejemplo de <a href="https://www.chenhuijing.com/#%F0%9F%91%9F">Chen Hui Jing</a> en <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank" rel="noopener">Codrops</a>.</figcaption></figure>
+  <figcaption>Pruebe este ejemplo de <a href="https://www.chenhuijing.com/#%F0%9F%91%9F">Chen Hui Jing</a> en <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank" rel="noopener">Codrops</a>.</figcaption></figure>
 
 ## Conclusión
 

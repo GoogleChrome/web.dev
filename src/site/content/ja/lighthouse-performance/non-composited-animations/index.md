@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 合成されていないアニメーションは避けてください
 description: "「合成されていないアニメーションを避ける」灯台監査に合格する方法。"
 date: 2020-08-12
@@ -13,7 +13,7 @@ web_lighthouse:
 
 HTML、CSS、およびJavaScriptをピクセルに変換するためのブラウザーのアルゴリズムは、まとめて*レンダリングパイプラインと*呼ばれます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="レンダリングパイプラインは、JavaScript、スタイル、レイアウト、ペイント、コンポジット。", width="800", height="122" %}<figcaption class="w-figcaption">レンダリングパイプライン。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="レンダリングパイプラインは、JavaScript、スタイル、レイアウト、ペイント、コンポジット。", width="800", height="122" %}<figcaption>レンダリングパイプライン。</figcaption></figure>
 
 レンダリングパイプラインの各ステップが何を意味するのか理解していなくても大丈夫です。ここで理解しておくべき重要なことは、レンダリングパイプラインの各ステップで、ブラウザーが前の操作の結果を使用して新しいデータを作成することです。たとえば、コードがレイアウトをトリガーする何かを実行する場合、ペイントとコンポジットのステップを再度実行する必要があります。合成されていないアニメーションとは、レンダリングパイプラインの初期のステップ（スタイル、レイアウト、またはペイント）のいずれかをトリガーするアニメーションです。合成されていないアニメーションは、ブラウザに多くの作業を強制するため、パフォーマンスが低下します。
 

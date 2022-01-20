@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 첫 번째 의미 있는 페인트
 description: |2
 
@@ -18,7 +18,7 @@ web_lighthouse:
 
 Lighthouse는 몇 초 만에 FMP를 표시합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="Lighthouse 첫 번째 의미 있는 페인트 감사의 스크린샷", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="Lighthouse 첫 번째 의미 있는 페인트 감사의 스크린샷", width="800", height="588" %}</figure>
 
 ## FMP가 측정하는 것
 
@@ -36,7 +36,7 @@ FMP와 FCP가 같을 때 점수는 같다. FCP 이후에 FMP가 발생하는 경
 
 다음 표는 FMP 점수를 해석하는 방법을 보여줍니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 画像CDNを使用して画像を最適化する
 authors:
   - katiehempenius
@@ -19,7 +19,7 @@ tags:
 
 画像CDNは、画像の変換、最適化、配信に特化しています。サイトで使用されている画像にアクセスして操作するためのAPIと考えることもできます。画像CDNから読み込まれた画像の場合、画像URLは、読み込む画像だけでなく、サイズ、形式、品質などのパラメータも示します。これにより、さまざまなユースケースに合わせて画像のバリエーションを簡単に作成できます。
 
-<figure class="w-figure">{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="画像CDNとクライアント間の要求/応答フローを表示します。サイズや形式などのパラメータは、同じ画像のバリエーションを要求するために使用されます。", width="800", height="408", class="w-screenshot" %} <figcaption class="w-figcaption">画像CDNが画像URLのパラメータに基づいて実行できる変換の例。</figcaption></figure>
+<figure>{% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="画像CDNとクライアント間の要求/応答フローを表示します。サイズや形式などのパラメータは、同じ画像のバリエーションを要求するために使用されます。", width="800", height="408" %} <figcaption>画像CDNが画像URLのパラメータに基づいて実行できる変換の例。</figcaption></figure>
 
 画像CDNは、必要に応じて新しいバージョンの画像を作成するという点で、ビルド時の画像最適化スクリプトとは異なります。その結果、CDNは一般に、ビルドスクリプトよりも、個々のクライアントごとに大幅にカスタマイズされた画像の作成に適しています。
 
@@ -27,7 +27,7 @@ tags:
 
 画像CDNで使用される画像URLは、画像に関する重要な情報と、画像に適用する変換と最適化を伝送します。 URL形式は画像のCDNによって異なりますが、大まかに言えば、すべて同様の機能を備えています。最も一般的な機能をいくつかを見ていきましょう。
 
-<figure class="w-figure">{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="通常、画像のURLはオリジン、画像、セキュリティキー、変換で構成されます。", width="800", height="127" %}</figure>
+<figure>{% Img src="image/admin/GA4udXeYUEjHSY4N0Qew.jpg", alt="通常、画像のURLはオリジン、画像、セキュリティキー、変換で構成されます。", width="800", height="127" %}</figure>
 
 ### オリジン
 

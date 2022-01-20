@@ -48,7 +48,7 @@ Hasta hace poco tiempo, el contenido mixto pasivo se cargaba en todos los navega
 
 Siempre que se detecta contenido mixto o actualizaciones automáticas de contenido mixto pasivo, Chrome registra mensajes detallados en la pestaña **Problemas** de DevTools que le indican cómo solucionar el problema específico.
 
-<figure class="w-figure">{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt = "La pestaña Problemas de Chrome DevTools muestra información detallada sobre el problema específico de contenido mixto y cómo solucionarlo", width = "800", height = "310 ", class =" w-screenshot "%}</figure>
+<figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt = "La pestaña Problemas de Chrome DevTools muestra información detallada sobre el problema específico de contenido mixto y cómo solucionarlo", width = "800", height = "310 " %}</figure>
 
 ### Contenido mixto activo
 
@@ -58,7 +58,7 @@ Debido a la peligrosidad de esta amenaza, la mayoría de los navegadores ya bloq
 
 Esta otra [demostración](https://active-mixed-content.glitch.me/) contiene ejemplos de contenido mixto activo. [Cargue el ejemplo a través de HTTP](http://active-mixed-content.glitch.me/) para ver el contenido que está bloqueado cuando [carga el ejemplo a través de HTTPS](https://active-mixed-content.glitch.me/) . El contenido bloqueado también se detallará en la pestaña **Problemas.**
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="La pestaña Problemas de Chrome DevTools muestra información detallada sobre el problema específico de contenido mixto y cómo solucionarlo", width="800", height="361", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="La pestaña Problemas de Chrome DevTools muestra información detallada sobre el problema específico de contenido mixto y cómo solucionarlo", width="800", height="361" %}</figure>
 
 {% Aside %} Además, los navegadores destacan el contenido bloqueado en sus DevTools. Los problemas de contenido bloqueado se detallan en la pestaña **Problemas** de los navegadores basados en Chromium. Firefox y Safari registran los mensajes en la consola. {% endAside %}
 

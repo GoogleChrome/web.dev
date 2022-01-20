@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: フォーム要素にラベルが関連付けられていない
 description: ラベルを指定して支援技術を使用するユーザーがフォーム要素にアクセスできるようにする方法を学びます。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse は、ラベルが関連付けられていないフォーム要素にラベルを設定します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="フォーム要素にラベルが関連付けられていないことを示す Lighthouse 監査", width="800", height="185", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="フォーム要素にラベルが関連付けられていないことを示す Lighthouse 監査", width="800", height="185" %}</figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

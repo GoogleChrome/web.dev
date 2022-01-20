@@ -132,21 +132,21 @@ El equipo decidió utilizar trabajadores web para separar el estado visual del j
 
 El uso de la OMT tuvo efectos interesantes en el rendimiento de PROXX en los teléfonos básicos. En la versión que no es OMT, la interfaz de usuario se congela durante seis segundos después de que el usuario interactúa con ella. No hay reatroalimentación y el usuario tiene que esperar seis segundos completos antes de poder hacer otra cosa.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">Tiempo de respuesta de la interfaz de usuario en la versión <strong>no OMT</strong> de PROXX.</figcaption></figure>
+ <figcaption>Tiempo de respuesta de la interfaz de usuario en la versión <strong>no OMT</strong> de PROXX.</figcaption></figure>
 
 Sin embargo, en la versión OMT el juego tarda *doce* segundos en completar una actualización de la interfaz de usuario. Si bien eso parece una pérdida de rendimiento, en realidad conduce a una mayor retroalimentación para el usuario. La desaceleración se produce porque la aplicación envía más marcos que la versión que no es OMT, que no envía ningún marco. Por lo tanto, el usuario sabe que algo está sucediendo y puede continuar jugando a medida que se actualiza la interfaz de usuario, lo que hace que el juego se sienta considerablemente mejor.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">Tiempo de respuesta de la interfaz de usuario en la versión <strong>OMT</strong> de PROXX.</figcaption></figure>
+ <figcaption>Tiempo de respuesta de la interfaz de usuario en la versión <strong>OMT</strong> de PROXX.</figcaption></figure>
 
 Esta es una compensación consciente: brindamos a los usuarios de dispositivos restringidos una experiencia que se *siente* mejor, sin penalizar a los usuarios de dispositivos de gama alta.
 

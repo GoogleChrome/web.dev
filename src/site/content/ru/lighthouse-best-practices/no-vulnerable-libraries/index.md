@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Страница включает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности
 description: Узнайте, как сделать свою страницу более безопасной, заменив библиотеки JavaScript, которые имеют известные уязвимости.
 web_lighthouse:
@@ -14,7 +14,7 @@ updated: 2020-06-04
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает интерфейсные библиотеки JavaScript с известными уязвимостями безопасности:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Аудит Lighthouse, показывающий все интерфейсные библиотеки JavaScript с известными уязвимостями безопасности, используемые на странице", width="800", height="190", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Аудит Lighthouse, показывающий все интерфейсные библиотеки JavaScript с известными уязвимостями безопасности, используемые на странице", width="800", height="190" %}</figure>
 
 Чтобы обнаружить уязвимые библиотеки, Lighthouse:
 

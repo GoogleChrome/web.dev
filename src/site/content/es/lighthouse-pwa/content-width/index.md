@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: El contenido no tiene el tamaño correcto para la ventana gráfica
 description: Aprende a ajustar el tamaño del contenido de tu página web para que se ajuste a las pantallas de los dispositivos móviles.
 web_lighthouse:
@@ -14,7 +14,7 @@ La ventana gráfica es la parte de la ventana del navegador en la que se ve el c
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas cuyo ancho no es igual al ancho de la ventana gráfica:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Auditoría Lighthouse que muestra contenido que no tiene el tamaño correcto para la ventana gráfica", width="800", height="98", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Auditoría Lighthouse que muestra contenido que no tiene el tamaño correcto para la ventana gráfica", width="800", height="98" %}</figure>
 
 La auditoría falla si `window.innerWidth` no es igual a `window.outerWidth`.
 

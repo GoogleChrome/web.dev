@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite enormes cargas de rede
 description: |2
 
@@ -20,7 +20,7 @@ Grandes cargas de rede são altamente correlacionadas com longos tempos de carre
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) mostra o tamanho total em [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) de todos os recursos solicitados por sua página. As maiores solicitações são apresentadas primeiro:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Uma captura de tela da enorme auditoria de cargas úteis de rede do Lighthouse Avoid", width="800", height="518", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Uma captura de tela da enorme auditoria de cargas úteis de rede do Lighthouse Avoid", width="800", height="518" %}</figure>
 
 Com base nos [dados do arquivo HTTP](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal), a carga útil média da rede está entre 1.700 e 1.900 KiB. Para ajudar a revelar as cargas úteis mais altas, o Lighthouse sinaliza páginas cujo total de solicitações de rede excede 5.000 KiB.
 

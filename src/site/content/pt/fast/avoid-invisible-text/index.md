@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite texto invisível durante o carregamento da fonte
 authors:
   - katiehempenius
@@ -23,7 +23,7 @@ Este guia descreve duas maneiras de fazer isto: a primeira abordagem é muito si
 
 ## Opção 1: usar font-display
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -57,7 +57,7 @@ Se um navegador não suporta `font-display`, ele continuará a seguir seu compor
 
 Estes são os comportamentos default de carregamento de fonte para navegadores comuns:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

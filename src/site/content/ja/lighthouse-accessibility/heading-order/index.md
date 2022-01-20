@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 見出し要素は番号の降順ではない
 description: 見出し要素を正しく構造化することで、支援技術のユーザーがWebページを簡単に操作できるようにする方法について説明します。
 date: 2019-10-17
@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、見出しが1つ以上のレベルをスキップするページにフラグを設定します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="レベルをスキップする見出しを示すLighthouse監査", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="レベルをスキップする見出しを示すLighthouse監査", width="800", height="206" %}</figure>
 
 たとえば、ページタイトルで`<h1>`要素を使用し、次にページのメインセクションで`<h3>`要素を使用すると、`<h2>`レベルがスキップされるため、監査が失敗します。
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 延迟加载非关键 CSS
 authors:
   - demianrenzulli
@@ -30,7 +30,7 @@ CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighth
 
 报告显示了值为“1s”的 **First Contentful Paint** 指标，以及**消除渲染阻塞资源**的机会，结果指向 **style.css** 文件：
 
-<figure class="w-figure">{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="未经优化的网页的 Lighthouse 报告，显示“1s”的 FCP 并在“Opportunities”下显示“消除阻塞资源”", width="800", height="640", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/eZtuQ2IwL3Mtnmz09bmp.png", alt="未经优化的网页的 Lighthouse 报告，显示“1s”的 FCP 并在“Opportunities”下显示“消除阻塞资源”", width="800", height="640" %}</figure>
 
 {% Aside %}用于此演示网站的 CSS 非常小。如果请求更大的 CSS 文件（这在生产场景中并不少见），并且 Lighthouse 检测到在渲染**折叠项上方**内容时，页面至少有 2048 字节的 CSS 规则未使用，那么您还将收到建议：**删除未使用的 CSS**。{% endAside %}
 
@@ -41,7 +41,7 @@ CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighth
 
 在生成的跟踪中，您将看到在 CSS 完成加载后会立即放置 **FCP** 标记：
 
-<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="未经优化页面的 DevTools 性能跟踪，显示 FCP 在 CSS 加载后启动。", width="800", height="352", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WhpaDYb98Rf03JmuPenp.png", alt="未经优化页面的 DevTools 性能跟踪，显示 FCP 在 CSS 加载后启动。", width="800", height="352" %}</figure>
 
 这意味着浏览器需要等待所有 CSS 加载完毕并得到处理，之后才能在屏幕上绘制单个像素。
 
@@ -53,7 +53,7 @@ CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighth
 2. 输入“Coverage”并选择 **Show Coverage** 。
 3. 单击 **Reload** 按钮，重新加载页面并开始捕获覆盖范围。
 
-<figure class="w-figure">{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="CSS 文件的覆盖范围，显示未使用的字节占 55.9%。", width="800", height="82", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/JTFK7wjhlTzd2cCfkpps.png", alt="CSS 文件的覆盖范围，显示未使用的字节占 55.9%。", width="800", height="82" %}</figure>
 
 双击报告，查看以两种颜色标记的类：
 
@@ -98,17 +98,17 @@ CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighth
 
 **FCP** 标记出现在页面请求 CSS 之前，这意味着浏览器在渲染页面之前不需要等待 CSS 加载：
 
-<figure class="w-figure">{% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="未经优化页面的 DevTools 性能跟踪，显示 FCP 在 CSS 加载前启动。", width="800", height="389", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/0mVq3q760y37JSn2MmCP.png", alt="未经优化页面的 DevTools 性能跟踪，显示 FCP 在 CSS 加载前启动。", width="800", height="389" %}</figure>
 
 最后一步，在优化后的页面上运行 Lighthouse。
 
 在报告中，您将看到 FCP 页面减少了 **0.2s**（改善了 20%！）：
 
-<figure class="w-figure">{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Lighthouse 报告，显示 FCP 值为“0.8s”。", width="800", height="324", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/oTDQFSlfQwS9SbqE0D0K.png", alt="Lighthouse 报告，显示 FCP 值为“0.8s”。", width="800", height="324" %}</figure>
 
 **消除渲染阻塞资源**建议不再位于 **Opportunities** 下，现在属于 **Passed Audits** 部分：
 
-<figure class="w-figure">{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Lighthouse 报告，“消除阻塞资源”显示在“Passed Audits”部分中。", width="800", height="237", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/yDjEvZAcjPouC6I3I7qB.png", alt="Lighthouse 报告，“消除阻塞资源”显示在“Passed Audits”部分中。", width="800", height="237" %}</figure>
 
 ## 后续步骤和参考
 

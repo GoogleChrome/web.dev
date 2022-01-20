@@ -39,9 +39,9 @@ applications on desktop. Transferring data between applications doesn't need to 
 tightly coupled integrations anymore. Instead you can give the user the full control to transfer their
 data to wherever they would like.
 
-<figure class="w-figure">
+<figure>
   {% YouTube 'EYMgUhn_Zdo' %}
-  <figcaption class="w-figcaption">An example of interactions that are possible with the DataTransfer API.</figcaption>
+  <figcaption>An example of interactions that are possible with the DataTransfer API.</figcaption>
 </figure>
 
 ## Transferring data

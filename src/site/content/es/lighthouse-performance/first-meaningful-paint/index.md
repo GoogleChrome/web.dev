@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Primer despliegue significativo (First Meaningful Paint)
 description: Obtenga información sobre la métrica de Primer despliegue significativo de Lighthouse y cómo medirlo y optimizarlo.
 date: 2019-05-02
@@ -14,7 +14,7 @@ Primer despliegue significativo (FMP) es una de las seis métricas que se regist
 
 Lighthouse muestra FMP en segundos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="Una captura de pantalla de la auditoría Primer despliegue significativo en Lighthouse", width="800", height="588", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6XzSjk0QsMpAL8V0bZiq.png", alt="Una captura de pantalla de la auditoría Primer despliegue significativo en Lighthouse", width="800", height="588" %}</figure>
 
 ## ¿Qué mide FMP?
 
@@ -32,7 +32,7 @@ Por ejemplo, digamos que su FCP es de 1,5 segundos y su FMP es de 3 segundos. La
 
 Esta tabla muestra cómo interpretar su puntuación FMP:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

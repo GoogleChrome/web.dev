@@ -204,8 +204,7 @@ But this is not the whole story! Consider the following example:
 
 {% Video
   src="video/nM10iAStORWg0YlDbPc2czmpRRr2/xkdE00Gizsks9ytPkP6r.mov",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   controls="true",
   loop="true",
   muted="true"

@@ -133,7 +133,7 @@ codelabs:
 
 例如，为电子邮件地址使用 `type="email"`，为电话号码使用 `type="tel"`。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IQLyhbQm.jpg", alt="Android 手机的两张截屏，显示了适合输入电子邮件地址（使用 type=email）和电话号码（使用 type=tel）的键盘）。", width="800", height="683" %}<figcaption class="w-figcaption">适合输入电子邮件地址和电话号码的键盘。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IQLyhbQm.jpg", alt="Android 手机的两张截屏，显示了适合输入电子邮件地址（使用 type=email）和电话号码（使用 type=tel）的键盘）。", width="800", height="683" %}<figcaption>适合输入电子邮件地址和电话号码的键盘。</figcaption></figure>
 
 {: #inputmode-attribute}
 
@@ -163,7 +163,7 @@ codelabs:
 
 默认情况下，将账单地址设置为与送货地址相同。请提供编辑账单地址的链接（或使用 [`summary` 和 `details` 元素](https://simpl.info/details/)），让界面更一目了然，而不要在表单中显示账单地址。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="显示更改账单地址链接的示例结账页面。", width="800", height="250" %}<figcaption class="w-figcaption">添加查看账单的链接。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="显示更改账单地址链接的示例结账页面。", width="800", height="250" %}<figcaption>添加查看账单的链接。</figcaption></figure>
 
 与处理送货地址一样，为账单地址使用适当的自动完成值，这样，用户便不必多次输入数据。如果不同部分具有相同名称的输入字段，但需要输入不同的值，则要向自动完成属性添加前缀词。
 
@@ -195,7 +195,7 @@ codelabs:
 
 在提交表单时，浏览器会自动将焦点设置在有问题或缺少必填值的字段中。不需要 JavaScript！
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="桌面 Chrome 登录表单的截屏，显示浏览器提示和无效电子邮件值的焦点。", width="500", height= "483", class="w-screenshot" %}<figcaption class="w-figcaption">浏览器的基本内置验证。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="桌面 Chrome 登录表单的截屏，显示浏览器提示和无效电子邮件值的焦点。", width="500", height= "483" %}<figcaption>浏览器的基本内置验证。</figcaption></figure>
 
 内联验证并在用户输入数据时向其提供反馈，而不是在用户单击提交按钮时提供错误列表。如果您需要在表单提交后验证服务器上的数据，请列出发现的所有问题并清楚地突出显示所有包含无效值的表单字段，同时在每个有问题的字段旁显示一条消息，说明需要解决的问题。检查服务器日志和分析数据，查看是否存在常见错误——您可能需要重新设计表单。
 
@@ -227,7 +227,7 @@ codelabs:
 
 对于在线商店，要减少表单障碍，最简单的方法是将客户结账设置为默认操作。不要强迫用户在购买前创建帐户。不允许客户结账是导致客户放弃购买的主要原因。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="结账时放弃购买的原因。", width="800", height="503", class="w-screenshot" %}<figcaption class="w-figcaption">由 <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a> 提供</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="结账时放弃购买的原因。", width="800", height="503" %}<figcaption>由 <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a> 提供</figcaption></figure>
 
 您可以在客户完成结账后提供帐户注册步骤。此时，您已经获得设置帐户所需的大部分数据，因此，用户可以轻松快捷的创建帐户。
 
@@ -237,19 +237,19 @@ codelabs:
 
 为了让客户觉得结账流程不那么复杂，您可以显示结账进度并明确告知下一步需要做什么。下面的视频展示了英国零售商 [johnlewis.com](https://www.johnlewis.com) 是如何实现这一目标的。
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption class="w-figcaption">显示结账进度。</figcaption></figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption>显示结账进度。</figcaption></figure>
 
 您要让客户保持动力！对于付款的每一个步骤，您都要使用页眉和描述性的按钮值，明确告知客户现在需要做什么，以及接下来是哪一个结账步骤。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">为表单按钮指定有意义的名称，以显示接下来需要执行的操作。</figcaption></figure>
+  <figcaption>为表单按钮指定有意义的名称，以显示接下来需要执行的操作。</figcaption></figure>
 
 为表单输入使用 `enterkeyhint` 属性来设置移动键盘 Enter 键标签。例如，在多页表单中使用 `enterkeyhint="previous"` 和 `enterkeyhint="next"`，为表单中最后的输入使用 `enterkeyhint="done"`，为搜索输入使用 `enterkeyhint="search"`。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Android 设备上地址表单的两张截屏，显示了 enterkeyhint 输入属性如何更改 Enter 键图标。", width="800", height=" 684", class="w-screenshot"%}<figcaption class="w-figcaption">Android 设备上的输入 Enter 键按钮：“下一步”和“完成”。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Android 设备上地址表单的两张截屏，显示了 enterkeyhint 输入属性如何更改 Enter 键图标。", width="800", height=" 684" %}<figcaption>Android 设备上的输入 Enter 键按钮：“下一步”和“完成”。</figcaption></figure>
 
 [Android 和 iOS 支持](https://caniuse.com/mdn-html_global_attributes_enterkeyhint)的 `enterkeyhint` 属性。您可以从 [enterkeyhint 解释器](https://github.com/dtapuska/enterkeyhint)中了解更多信息。
 
@@ -261,15 +261,15 @@ codelabs:
 
 通过消除视觉混乱和产品促销等干扰因素来限制潜在的退出点。很多成功的零售商甚至会从结账步骤中移除导航和搜索功能。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="两张移动截屏，显示了 johnlewis.com 上的结账进度。已排除搜索、导航和其他干扰因素。", width="800", height="683", class="w-screenshot" %}<figcaption class="w-figcaption">为结账步骤移除了搜索、导航和其他干扰因素。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="两张移动截屏，显示了 johnlewis.com 上的结账进度。已排除搜索、导航和其他干扰因素。", width="800", height="683" %}<figcaption>为结账步骤移除了搜索、导航和其他干扰因素。</figcaption></figure>
 
 让客户保持专注。现在不是诱使用户做其他事情的时候！
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="移动设备上的结账页面截屏，展示了令人分心的免费贴纸促销活动。", width="350", height="735", class="w-screenshot" %}<figcaption class="w-figcaption">不要分散客户完成购买的注意力。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="移动设备上的结账页面截屏，展示了令人分心的免费贴纸促销活动。", width="350", height="735" %}<figcaption>不要分散客户完成购买的注意力。</figcaption></figure>
 
 对于回头客，您可以通过隐藏他们不需要看到的数据来进一步简化结账流程。例如：以纯文本（而不是表单）形式显示送货地址，并允许用户通过链接进行更改。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="结账页面上“查看订单”部分的截屏，以纯文本显示文字，并提供了更改送货地址、付款方式和账单地址的链接（未直接显示）。", width="450", height="219", class="w-screenshot" %}<figcaption class="w-figcaption">隐藏客户不需要看到的数据。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="结账页面上“查看订单”部分的截屏，以纯文本显示文字，并提供了更改送货地址、付款方式和账单地址的链接（未直接显示）。", width="450", height="219" %}<figcaption>隐藏客户不需要看到的数据。</figcaption></figure>
 
 ## 简化姓名和地址输入操作 {: #address-forms}
 
@@ -325,11 +325,11 @@ codelabs:
 
 {% endCompare %}
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Unicode 字母匹配与仅拉丁字母匹配对比。</figcaption></figure>
+  <figcaption>Unicode 字母匹配与仅拉丁字母匹配对比。</figcaption></figure>
 
 {% Aside %} 下面可以找到[关于国际化和本地化](#internationalization-localization)的更多信息，但是，请确保表单适用于您的用户所在的所有地区的姓名。例如，对于日语姓名，您要考虑设置一个姓名音标字段。这有助于客户支持人员在电话中说出客户的姓名。{% endAside %}
 
@@ -412,19 +412,19 @@ Address line 2 (optional)
 
 邮政编码地址建议并不适合所有国家/地区——在某些地区，邮政编码可能包含大量潜在地址。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">邮政编码可能包含很多地址！</figcaption></figure>
+  <figcaption>邮政编码可能包含很多地址！</figcaption></figure>
 
 用户很难从一长串地址中进行选择——尤其是在移动设备上，当他们时间匆忙或压力较大时。让用户利用自动填充功能，并通过一次点击或单击来输入完整的地址可能更容易且不容易出错。
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">单一名称输入支持一键（单击一次）地址输入。</figcaption></figure>
+  <figcaption>单一名称输入支持一键（单击一次）地址输入。</figcaption></figure>
 
 ## 简化付款表单 {: #general-guidelines}
 
@@ -447,13 +447,13 @@ Address line 2 (optional)
 
 如果设计不当，[自定义元素](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements)可能会中断自动填充，从而导致支付流程中断，而且这些元素在旧浏览器上可能无法使用。如果所有其他支付卡详细信息都可以通过自动完成获得，但由于自动填充无法处理自定义元素，导致用户不得不找出实体支付卡才能找到到期日期，那么您很可能会失去销售机会。请考虑使用标准 HTML 元素，并相应地设置样式。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="显示导致自动填充中断的卡到期日自定义元素的付款表单截屏。", width="800", height="916" %}<figcaption class="w-figcaption">自动完成填写了除到期日期外的所有字段！</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="显示导致自动填充中断的卡到期日自定义元素的付款表单截屏。", width="800", height="916" %}<figcaption>自动完成填写了除到期日期外的所有字段！</figcaption></figure>
 
 ### 为支付卡和电话号码使用单一输入字段 {: #single-number-input}
 
 对于支付卡和电话号码，请使用单一输入字段：不要将号码分成几部分。这样，用户更容易输入数据，验证也更简单，同时更便于浏览器自动填充。考虑对其他数字数据（例如 PIN 和银行代码）采取相同的做法。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="显示将信用卡字段分成四个输入元素的付款表单截屏。", width="800", height="833" %}<figcaption class="w-figcaption">不要为信用卡号使用多个输入字段。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="显示将信用卡字段分成四个输入元素的付款表单截屏。", width="800", height="833" %}<figcaption>不要为信用卡号使用多个输入字段。</figcaption></figure>
 
 ### 仔细验证 {: #validate}
 
@@ -471,7 +471,7 @@ Address line 2 (optional)
 
 在用户最常用的平台上测试地址和付款表单极其重要，因为表单元素的功能和外观可能有所不同，而且视口大小的差异可能会导致定位出现问题。BrowserStack 支持对各种设备和浏览器上的[开源项目进行免费测试](https://www.browserstack.com/open-source)。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="iPhone 7 和 iPhone 11 上的付款表单 (payment-form.glitch.me) 的截屏。iPhone 11 上会显示“完成付款”按钮，但 iPhone 11 上不显示", width="800", height="707" %}<figcaption class="w-figcaption">iPhone 7 和 iPhone 11 上的同一页面。<br>对于较小的移动视口，请缩减边距，确保不遮住<strong>完成付款</strong>按钮。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="iPhone 7 和 iPhone 11 上的付款表单 (payment-form.glitch.me) 的截屏。iPhone 11 上会显示“完成付款”按钮，但 iPhone 11 上不显示", width="800", height="707" %}<figcaption>iPhone 7 和 iPhone 11 上的同一页面。<br>对于较小的移动视口，请缩减边距，确保不遮住<strong>完成付款</strong>按钮。</figcaption></figure>
 
 ## 实施分析和 RUM {: #analytics-rum}
 

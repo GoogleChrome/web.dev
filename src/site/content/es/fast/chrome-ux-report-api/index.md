@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Uso de la API de Chrome UX Report
 subhead: |2-
 

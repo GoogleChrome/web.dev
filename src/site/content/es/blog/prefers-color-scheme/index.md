@@ -23,19 +23,19 @@ feedback:
 
 ### El modo oscuro previo al *Modo oscuro*
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="Pantalla verde de la computadora", width="233", height="175" %} <figcaption class="w-figcaption">Pantalla verde (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Fuente</a>)</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="Pantalla verde de la computadora", width="233", height="175" %} <figcaption>Pantalla verde (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Fuente</a>)</figcaption></figure>
 
 Completamos el círculo con el modo oscuro. En los inicios de la informática doméstica, el modo oscuro no era una cuestión de elección, sino un hecho: los monitores monocromáticos <abbr title="Cathode-Ray Tube">CRT</abbr> para computadoras funcionaban emitiendo haces de electrones sobre una pantalla fosforescente y el fósforo utilizado en los primeros CRT era verde. Debido a que el texto se mostraba en verde y el resto de la pantalla en negro, estos modelos frecuentemente se denominaban [pantallas verdes](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="Procesamiento de texto oscuro sobre blanco", width="222", height="175" %} <figcaption class="w-figcaption">Oscuridad sobre blanco (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Fuente</a>)</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="Procesamiento de texto oscuro sobre blanco", width="222", height="175" %} <figcaption>Oscuridad sobre blanco (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Fuente</a>)</figcaption></figure>
 
 Los monitores CRT de color que se introdujeron posteriormente mostraron diferentes colores mediante el uso de fósforos rojos, verdes y azules. Para crear el blanco se activaban los tres fósforos simultáneamente. Con la llegada de la [edición por computadora](https://en.wikipedia.org/wiki/Desktop_publishing) más sofisticada de <abbr title="What You See Is What You Get">WYSIWYG</abbr>, se popularizó la idea de hacer que el documento virtual se pareciera a una hoja de papel física.
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="Página web oscura en blanco en el navegador WorldWideWeb", width="233", height="175" %}<figcaption class="w-figcaption"> El navegador WorldWideWeb (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Fuente</a>)</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="Página web oscura en blanco en el navegador WorldWideWeb", width="233", height="175" %}<figcaption> El navegador WorldWideWeb (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Fuente</a>)</figcaption></figure>
 
 En esta época comenzó la tendencia de diseño *oscuro sobre blanco*, que se trasladó a la [primera web basada en documentos](http://info.cern.ch/hypertext/WWW/TheProject.html). El primer navegador de la historia, [WorldWideWeb](https://en.wikipedia.org/wiki/WorldWideWeb) (recordemos que [el CSS aún no se había inventado](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History)), [mostraba las páginas web](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png) de esta manera. Dato curioso: el segundo navegador de la historia, [Navegador de modo de línea](https://en.wikipedia.org/wiki/Line_Mode_Browser) -un navegador basado en una terminal- era verde sobre oscuro. Hoy en día, las páginas y aplicaciones web se diseñan normalmente con texto oscuro sobre fondo claro, una suposición básica que también está codificada en las hojas de estilo de los agentes de usuario, incluyendo la de [Chrome](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="El smartphone se utiliza mientras está acostado en la cama", width="262", height="175" %} <figcaption class="w-figcaption">Smartphone utilizado en la cama (Fuente: Unsplash)</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="El smartphone se utiliza mientras está acostado en la cama", width="262", height="175" %} <figcaption>Smartphone utilizado en la cama (Fuente: Unsplash)</figcaption></figure>
 
 Los días de las pantallas CRT quedaron atrás. El consumo y la creación de contenidos se trasladaron a los dispositivos móviles que utilizan pantallas <abbr title="Pantalla de cristal líquido">LCD</abbr> o <abbr title="Diodo emisor de luz orgánico de matriz activa">AMOLED</abbr> de bajo consumo. Las computadoras, las tabletas y los smartphones, más pequeños y transportables, dieron lugar a nuevos patrones de uso. Las tareas de ocio, como la navegación por Internet, la codificación por diversión y los juegos de alta gama, con frecuencia se llevan a cabo después de las horas de trabajo en entornos poco iluminados. La gente incluso disfruta de sus dispositivos en sus camas durante la noche. Cuanto más utilicen las personas sus dispositivos en la oscuridad, más se popularizará la idea de volver a los orígenes de la *luz en la oscuridad*.
 
@@ -47,7 +47,7 @@ Cuando a la gente se le pregunta [por qué le gusta o quiere el modo oscuro](htt
 
 {% Aside 'note' %} Obtenga más información sobre [la investigación de usuarios sobre por qué las personas quieren el modo oscuro y cómo lo usan](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d) . {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="CloseView en Mac OS System 7 con modo 'Blanco sobre Negro'", width="193", height="225" %} <figcaption class="w-figcaption">Sistema 7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Fuente</a>)</figcaption></figure>
+<figure data-float="right">{% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="CloseView en Mac OS System 7 con modo 'Blanco sobre Negro'", width="193", height="225" %} <figcaption>Sistema 7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Fuente</a>)</figcaption></figure>
 
 #### El modo oscuro como herramienta de accesibilidad
 
@@ -61,13 +61,13 @@ Una forma especial de visión deficiente es el Síndrome visual por computadora,
 
 Finalmente, se sabe que el modo oscuro ahorra *mucha* energía en las pantallas <abbr title="Diodo emisor de luz orgánico de matriz activa">AMOLED.</abbr> Los estudios de casos de Android que se centraron en aplicaciones populares de Google como YouTube han demostrado que el ahorro de energía puede ser de hasta un 60%. El video a continuación tiene más detalles sobre estos estudios de caso y el ahorro de energía por aplicación.
 
-<figure class="w-figure w-figure--fullbleed">{% YouTube id='N_6sPd0Jd3g', startTime='305' %}</figure>
+<figure data-size="full">{% YouTube id='N_6sPd0Jd3g', startTime='305' %}</figure>
 
 ## Activación del modo oscuro en el sistema operativo
 
 Ahora que se han explicado los antecedentes de por qué el modo oscuro es tan importante para muchos usuarios, vamos a repasar cómo se puede hacer uso de él.
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Configuración del modo oscuro de Android Q", width="218", height="250" %}<figcaption class="w-figcaption"> Configuración del tema oscuro de Android Q</figcaption></figure>
+<figure data-float="left">{% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Configuración del modo oscuro de Android Q", width="218", height="250" %}<figcaption> Configuración del tema oscuro de Android Q</figcaption></figure>
 
 Los sistemas operativos que son compatibles con el modo oscuro o el tema oscuro suelen tener una opción para activarlo en algún lugar de la configuración. En macOS X, está en la sección *General* de las preferencias del sistema y se llama *Apariencia* (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lUAnDhiGiZxigDbCqfn1.png' | imgix }}">captura de pantalla</a>), y en Windows 10, está en la sección *Colores* y se llama *Elige tu color* (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ahr8nkFttRPCe4RH8IEk.png' | imgix }}">captura de pantalla</a>). En el caso de Android Q, se encuentra en *Pantalla* como interruptor de palanca *Tema oscuro* (<a href="{{ 'image/admin/Yh6SEoWDK1SbqcGjlL6d.png' | imgix }}">captura de pantalla</a>), y en iOS 13, se puede cambiar la *Apariencia* en la sección *Pantalla y brillo* de la configuración (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">captura de pantalla</a>).
 
@@ -223,11 +223,11 @@ Cuando juegue con este ejemplo, podrá ver por qué cargo mi `dark.css` y `light
 
 {% Aside 'note' %} 😲 Obtenga más información sobre [por qué los navegadores descargan hojas de estilo con consultas de medios que no coinciden](https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513) . {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="Diagrama de carga de red que muestra cómo en el modo claro el CSS del modo oscuro se carga con la prioridad más baja", width="800", height="417" %}<figcaption class="w-figcaption"> El sitio en modo claro carga el CSS en modo oscuro con la prioridad más baja.</figcaption></figure>
+<figure>{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="Diagrama de carga de red que muestra cómo en el modo claro el CSS del modo oscuro se carga con la prioridad más baja", width="800", height="417" %}<figcaption> El sitio en modo claro carga el CSS en modo oscuro con la prioridad más baja.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="Diagrama de carga de red que muestra cómo en el modo oscuro el CSS del modo claro se carga con la prioridad más baja", width="800", height="417" %}<figcaption class="w-figcaption"> El sitio en modo oscuro carga el CSS en modo claro con la prioridad más baja.</figcaption></figure>
+<figure>{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="Diagrama de carga de red que muestra cómo en el modo oscuro el CSS del modo claro se carga con la prioridad más baja", width="800", height="417" %}<figcaption> El sitio en modo oscuro carga el CSS en modo claro con la prioridad más baja.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="Diagrama de carga de red que muestra cómo en el modo claro predeterminado el CSS del modo oscuro se carga con la prioridad más baja", width="800", height="417" %}<figcaption class="w-figcaption"> El sitio con el modo claro predeterminado en un navegador que no admite <code>prefers-color-scheme</code> carga el CSS en modo oscuro con la prioridad más baja.</figcaption></figure>
+<figure>{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="Diagrama de carga de red que muestra cómo en el modo claro predeterminado el CSS del modo oscuro se carga con la prioridad más baja", width="800", height="417" %}<figcaption> El sitio con el modo claro predeterminado en un navegador que no admite <code>prefers-color-scheme</code> carga el CSS en modo oscuro con la prioridad más baja.</figcaption></figure>
 
 ### Cómo reaccionar ante los cambios en el modo oscuro
 
@@ -258,7 +258,7 @@ A partir de Chromium 93 y Safari 15, puede ajustar este color basándose en una 
 
 Cambiar el esquema de colores de todo el sistema operativo puede ser molesto muy rápidamente, por lo que Chrome DevTools ahora le permite emular el esquema de colores preferido por el usuario de una manera que solo afecta a la pestaña que se encuentra visible en ese momento. Abra el [Menú Comandos](https://developers.google.com/web/tools/chrome-devtools/command-menu), comience a escribir `Rendering`, ejecute el comando `Show Rendering` y, a continuación, cambie la opción prefers-color-scheme correspondiente a la función de medios CSS.
 
-<figure class="w-figure">{% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Una captura de pantalla de la opción 'La función de emulación de medios CSS favorece el esquema de color' que se encuentra en la pestaña Renderización de Chrome DevTools", width="800", height="552" %}</figure>
+<figure>{% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Una captura de pantalla de la opción 'La función de emulación de medios CSS favorece el esquema de color' que se encuentra en la pestaña Renderización de Chrome DevTools", width="800", height="552" %}</figure>
 
 ### Cómo hacer capturas de pantalla mediante `prefers-color-scheme` con Puppeteer
 
@@ -279,8 +279,8 @@ Un pequeño detalle que tal vez haya notado es que yo no utilizo un blanco puro.
 Si compara las dos capturas de pantalla que aparecen a continuación, se darán cuenta de que no solo el tema principal cambió del modo *oscuro sobre claro* a *claro sobre oscura*, sino que también la imagen hero tiene un aspecto un poco diferente. Mi <em>investigación de usuarios</em> mostró que la mayoría de los encuestados prefieren imágenes ligeramente menos vibrantes y brillantes cuando el modo oscuro está activo. Me refiero a esto como *recolorización*.
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="Imagen hero ligeramente oscura en modo oscuro.", width="800", height="618" %} <figcaption class="w-figcaption"> Imagen hero ligeramente oscura en modo oscuro. </figcaption></figure>
-  <figure class="w-figure">{% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="Imagen hero normal en modo claro.", width="800", height="618" %} <figcaption class="w-figcaption"> Imagen hero normal en modo claro. </figcaption></figure>
+  <figure>{% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="Imagen hero ligeramente oscura en modo oscuro.", width="800", height="618" %} <figcaption> Imagen hero ligeramente oscura en modo oscuro. </figcaption></figure>
+  <figure>{% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="Imagen hero normal en modo claro.", width="800", height="618" %} <figcaption> Imagen hero normal en modo claro. </figcaption></figure>
 </div>
 
 La recolorización puede lograrse mediante un filtro de CSS en mis imágenes. Utilizo un selector de CSS que coincide con todas las imágenes que no tienen `.svg` en su URL, la idea es que puedo dar a los gráficos vectoriales (iconos) un tratamiento de recolorización diferente al de mis imágenes (fotos), puede obtener más información sobre esto en el [siguiente párrafo](#vector-graphics-and-icons). Observe cómo vuelvo a utilizar una [variable de CSS](https://developer.mozilla.org/docs/Web/CSS/var), para poder cambiar posteriormente mi filtro de forma flexible.
@@ -312,8 +312,8 @@ document.documentElement.style.setProperty('--image-filter', value);
 Para los gráficos vectoriales, que en mi caso se utilizan como iconos a los que hago referencia por medio de elementos `<img>`, utilizo un método de recolorización diferente. Aunque la [investigación](https://dl.acm.org/citation.cfm?id=2982168) demostró que a la gente no le gusta la inversión de las fotos, funciona muy bien para la mayoría de los iconos. De nuevo, utilizo variables de CSS para determinar la cantidad de inversión en el estado normal y en el [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover).
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Los iconos se invierten en el modo oscuro.", width="744", height="48" %} <figcaption class="w-figcaption"> Los iconos se invierten en el modo oscuro. </figcaption></figure>
-  <figure class="w-figure">{% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="Iconos normales en modo claro.", width="744", height="48" %} <figcaption class="w-figcaption"> Iconos normales en modo claro. </figcaption></figure>
+  <figure>{% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Los iconos se invierten en el modo oscuro.", width="744", height="48" %} <figcaption> Los iconos se invierten en el modo oscuro. </figcaption></figure>
+  <figure>{% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="Iconos normales en modo claro.", width="744", height="48" %} <figcaption> Iconos normales en modo claro. </figcaption></figure>
 </div>
 
 Observe cómo, de nuevo, solo invierto los iconos en `dark.css` pero no en `light.css`, y cómo `:hover` adopta una intensidad de inversión diferente en los dos casos para que el icono aparezca ligeramente más oscuro o ligeramente más brillante, dependiendo del modo que el usuario haya seleccionado.
@@ -408,13 +408,13 @@ Por supuesto, puede crear el código para hacer esto usted mismo, pero también 
 ```
 
 <div class="switcher">
-  <figure class="w-figure">{% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="{dark-mode-toggle0} en modo claro.", width="140", height="76" %} <figcaption class="w-figcaption"> <code>&lt;dark-mode-toggle&gt;</code> en modo claro. </figcaption> {/dark-mode-toggle0}</figure>
-  <figure class="w-figure">{% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="{dark-mode-toggle0} en modo claro.", width="140", height="76" %} <figcaption class="w-figcaption"> <code>&lt;dark-mode-toggle&gt;</code> en modo oscuro. </figcaption> {/dark-mode-toggle0}</figure>
+  <figure>{% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="{dark-mode-toggle0} en modo claro.", width="140", height="76" %} <figcaption> <code>&lt;dark-mode-toggle&gt;</code> en modo claro. </figcaption> {/dark-mode-toggle0}</figure>
+  <figure>{% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="{dark-mode-toggle0} en modo claro.", width="140", height="76" %} <figcaption> <code>&lt;dark-mode-toggle&gt;</code> en modo oscuro. </figcaption> {/dark-mode-toggle0}</figure>
 </div>
 
 Intente hacer clic o pulsar los controles del modo oscuro en la esquina superior derecha que aparece en la demostración que está más abajo. Si selecciona la casilla del tercer y cuarto control, verá cómo su selección de modo quedará registrada incluso cuando recargue la página. Esto permite que sus visitantes mantengan su sistema operativo en modo oscuro, pero disfruten de su sitio en modo claro o viceversa.
 
-<div class="w-screenshot" style="height: 800px; width: 100%;">{% IFrame { allow: 'geolocation; microphone; camera; midi; vr; encrypted-media', src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html' } %}</div>
+<div style="height: 800px; width: 100%;">{% IFrame { allow: 'geolocation; microphone; camera; midi; vr; encrypted-media', src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html' } %}</div>
 
 ## Conclusiones
 

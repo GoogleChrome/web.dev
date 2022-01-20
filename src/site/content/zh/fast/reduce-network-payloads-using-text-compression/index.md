@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 缩小和压缩网络有效负载
 authors:
   - houssein
@@ -23,13 +23,13 @@ tags:
 
 如果 Lighthouse 在您的页面上检测到任何可以缩小的 CSS 或 JS 资源，则会显示审计失败。
 
-{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Lighthouse 缩小 CSS 审计", width="800", height="90", class="w-screenshot" %}
+{% Img src="image/admin/ZT9ESeCStegt0SklYbni.png", alt="Lighthouse 缩小 CSS 审计", width="800", height="90" %}
 
-{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Lighthouse 缩小 JS 审计", width="800", height="112", class="w-screenshot" %}
+{% Img src="image/admin/vDaAnUSvQxmGcoasQj1k.png", alt="Lighthouse 缩小 JS 审计", width="800", height="112" %}
 
 它还会审计任何未压缩的资产。
 
-{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: 启用文本压缩", width="800", height="123", class="w-screenshot" %}
+{% Img src="image/admin/xfqzdLuu3w3lanxo5Ggc.png", alt="Lighthouse: 启用文本压缩", width="800", height="123" %}
 
 ## 缩小
 

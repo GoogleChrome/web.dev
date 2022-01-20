@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 필수 원본에 사전 연결
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Lighthouse 보고서의 기회 섹션에는 `<link rel=preconnect>`로 아직 가져오기 요청의 우선 순위를 지정하지 않은 모든 주요 요청이 나열되어 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Lighthouse 필수 원본 사전 연결 감사에 대한 스크린샷", width="800", height="226", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Lighthouse 필수 원본 사전 연결 감사에 대한 스크린샷", width="800", height="226" %}</figure>
 
 ## 브라우저 호환성
 

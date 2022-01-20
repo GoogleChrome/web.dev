@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ссылки на пункты назначения из разных источников небезопасны
 description: |2
 
@@ -23,7 +23,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает небезопасные ссылки на пункты назначения из разных источников:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Аудит Lighthouse, показывающий небезопасные ссылки на пункты назначения из разных источников", width="800", height="213", class="w-screenshot", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Аудит Lighthouse, показывающий небезопасные ссылки на пункты назначения из разных источников", width="800", height="213" %}</figure>
 
 Lighthouse использует следующий процесс для определения ссылок как небезопасных:
 

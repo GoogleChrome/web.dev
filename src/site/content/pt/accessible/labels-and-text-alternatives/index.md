@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Rótulos e alternativas de texto
 authors:
   - robdodson
@@ -23,7 +23,7 @@ Quando o nome de um elemento é combinado com a **função** do elemento, ele fo
 2. No painel Elementos, procure o painel **Acessibilidade.** Ele pode estar oculto por trás de um símbolo `»`.
 3. No menu suspenso **Propriedades computadas**, procure a propriedade **Nome**.
 
-<figure class="w-figure">{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Painel de acessibilidade do DevTools mostrando o nome calculado para um botão.</figcaption></figure>
+<figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> Painel de acessibilidade do DevTools mostrando o nome calculado para um botão.</figcaption></figure>
 
 {% Aside %} Para saber mais, consulte a [Referência de acessibilidade](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference) do DevTools. {% endAside %}
 
@@ -33,7 +33,7 @@ Quer você esteja olhando para um `img` com `alt` ou uma `input` com um `label`,
 
 Há diferentes maneiras de adicionar um nome acessível a um elemento, dependendo de seu tipo. A tabela a seguir lista os tipos de elemento mais comuns que precisam de nomes e links acessíveis para explicações sobre como adicioná-los.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -200,7 +200,7 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 Isso é especialmente útil para leitores de tela que oferecem atalhos para listar todos os links na página. Se os links estiverem cheios de textos de preenchimento repetitivos, esses atalhos se tornam muito menos úteis:
 
-<figure class="w-figure">{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="Menu de links de narração preenchida com a palavra 'Aqui'.", width="519", height="469" %} <figcaption class="w-figcaption">  Exemplo de narração, um leitor de tela para macOS, mostrando o menu navegar por links.</figcaption></figure>
+<figure>{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="Menu de links de narração preenchida com a palavra 'Aqui'.", width="519", height="469" %} <figcaption>  Exemplo de narração, um leitor de tela para macOS, mostrando o menu navegar por links.</figcaption></figure>
 
 ## Rotular os elementos do formulário
 
@@ -223,6 +223,6 @@ Existem duas maneiras de associar um rótulo a um elemento de formulário, como 
 
 Quando a caixa de seleção está marcada corretamente, o leitor de tela pode relatar que o elemento tem uma função de caixa de seleção, está em um estado marcado e é denominado "Receber ofertas promocionais?" como no exemplo do VoiceOver abaixo:
 
-<figure class="w-figure">{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="Saída de texto de narração mostrando 'Receber ofertas promocionais?'", width="640", height="174", class="w-screenshot" %}<br>{% Assessment 'self-assessment' %}</figure>
+<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="Saída de texto de narração mostrando 'Receber ofertas promocionais?'", width="640", height="174" %}<br>{% Assessment 'self-assessment' %}</figure>
 
 {% Assessment 'self-assessment' %}

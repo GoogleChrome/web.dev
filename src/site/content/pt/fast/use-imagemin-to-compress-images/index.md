@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use Imagemin para comprimir imagens
 authors:
   - katiehempenius
@@ -20,7 +20,7 @@ tags:
 
 Imagens não compactadas incham suas páginas com bytes desnecessários. A foto à direita é 40% menor do que a da esquerda, mas provavelmente seria idêntica à do usuário comum.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -54,7 +54,7 @@ A coisa mais importante a se considerar ao escolher um plug-in é se ele é "com
 
 Para a maioria das pessoas, plug-ins com perdas são a melhor escolha. Eles oferecem uma economia de tamanho de arquivo significativamente maior e você pode personalizar os níveis de compactação para atender às suas necessidades. A tabela abaixo lista os plug-ins populares da Imagemin. Esses não são os únicos plug-ins disponíveis, mas todos são boas opções para o seu projeto.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

@@ -114,7 +114,7 @@ window.screen;
 
 像大多数从事技术工作的人一样，我不得不让自己适应新的工作现实并建立我的个人家庭办公室。我的办公室看起来像下面的照片（如果您有兴趣，可以阅读[有关我的设置的完整详细信息](https://blog.tomayac.com/2020/03/23/my-working-from-home-setup-during-covid-19/)）。我的 MacBook 旁边的 iPad 通过 [Sidecar](https://support.apple.com/en-us/HT210380) 连接到笔记本电脑，所以只要我需要，我可以快速将 iPad 变成第二个屏幕。
 
-<figure class="w-figure">{% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="两把椅子上的学校长凳。在学校长凳的顶部是支撑笔记本电脑和两个 iPad 的鞋盒。", width="558", height="520" %}<figcaption class="w-figcaption">多屏设置。</figcaption></figure>
+<figure>{% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="两把椅子上的学校长凳。在学校长凳的顶部是支撑笔记本电脑和两个 iPad 的鞋盒。", width="558", height="520" %}<figcaption>多屏设置。</figcaption></figure>
 
 如果我想利用更大的屏幕，我可以将上面[代码示例](/multi-screen-window-placement/#the-problem)中的弹出窗口放到第二个屏幕上。我这样做：
 
@@ -293,11 +293,11 @@ API 的其他方面，即各种屏幕更改事件和 `FullscreenOptions` 的 `sc
 
 如果您和我一样，您会密切关注各种加密货币的发展。（实际上，我并非真正喜欢这个领域，只是，就本文而言，假设我喜欢。）为了跟踪我拥有的加密货币，我开发了一个网络应用，可以让我在生活中随时随地观看行情，例如在我舒适的床上，在那里我有一个不错的单屏幕设置。
 
-<figure class="w-figure">{% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="床尾的大电视屏幕，作者的腿部分可见。屏幕上是一个假的加密货币交易台。", width="800", height="863" %}<figcaption class="w-figcaption">放松和观察市场。</figcaption></figure>
+<figure>{% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="床尾的大电视屏幕，作者的腿部分可见。屏幕上是一个假的加密货币交易台。", width="800", height="863" %}<figcaption>放松和观察市场。</figcaption></figure>
 
 这与加密有关，市场随时都可能变得忙碌。如果发生这种情况，我可以快速移动到我的办公桌上，那里有一个多屏幕设置。我可以单击任何货币的窗口，然后在对面屏幕的全屏视图中快速查看完整详细信息。下面是我在上次 [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9WgXcQ)期间拍摄的照片。它让我完全措手不及，让我[双手捂脸](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces)。
 
-<figure class="w-figure">{% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="作者双手捂着惊恐的脸盯着假加密货币交易台。", width="800", height="600" %}<figcaption class="w-figcaption">惊慌失措，目睹了 YCY bloodbath。</figcaption></figure>
+<figure>{% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="作者双手捂着惊恐的脸盯着假加密货币交易台。", width="800", height="600" %}<figcaption>惊慌失措，目睹了 YCY bloodbath。</figcaption></figure>
 
 您可以播放下面嵌入的[演示](https://window-placement.glitch.me/)，或在 glitch 上查看其[源代码](https://glitch.com/edit/#!/window-placement)。
 

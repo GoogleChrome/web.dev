@@ -24,7 +24,7 @@ feedback:
 
 **목록 가상화** 또는 "윈도잉"은 사용자에게 보이는 것만 렌더링하는 개념입니다. 먼저 렌더링되는 요소의 수는 전체 목록의 아주 작은 부분 집합이며 사용자가 스크롤을 계속하는 경우 보이는 콘텐츠의 "창"이 *움직입니다*. 이렇게 하면 리스트의 렌더링 및 스크롤 성능이 모두 향상됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="가상화된 리스트의 콘텐츠 창", width="578", height="525", class="w-screenshot" %}<figcaption class="w-figcaption"> 가상화된 리스트에서 콘텐츠 "창" 이동</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="가상화된 리스트의 콘텐츠 창", width="578", height="525" %}<figcaption> 가상화된 리스트에서 콘텐츠 "창" 이동</figcaption></figure>
 
 "창"을 종료하는 DOM 노드는 재활용되거나 사용자가 목록을 아래로 스크롤할 때 새로운 요소로 즉시 교체됩니다. 이렇게 하면 창 크기에 따라 렌더링된 모든 요소의 수가 유지됩니다.
 
@@ -116,7 +116,7 @@ export default ListComponent;
 
 `react-window` 는 또한 다차원 리스트 또는 그리드 가상화를 지원합니다. 이 컨텍스트에서 표시되는 콘텐츠의 "창"은 사용자가 가로 **및** 세로로 스크롤할 때 변경됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="가상화된 그리드에서 콘텐츠 이동 창은 2차원적입니다.", width="739", height="516", class="w-screenshot " %}<figcaption class="w-figcaption"> 가상화된 그리드에서 콘텐츠의 "창" 이동은 2차원적입니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="가상화된 그리드에서 콘텐츠 이동 창은 2차원적입니다.", width="739", height="516" %}<figcaption> 가상화된 그리드에서 콘텐츠의 "창" 이동은 2차원적입니다.</figcaption></figure>
 
 마찬가지로, 특정 리스트 항목의 크기가 다양할 수 있는지 여부에 따라 `FixedSizeGrid` 및 `VariableSizeGrid` 구성 요소 모두 사용될 수 있습니다.
 
@@ -133,7 +133,7 @@ export default ListComponent;
 
 다음 다이어그램은 이를 요약하는 데 도움이 될 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="일반 리스트와 가상화 리스트의 스크롤 차이", width="800", height="531", class="w-screenshot" %}<figcaption class="w-figcaption"> 일반 리스트와 가상화 리스트 간의 스크롤 차이</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="일반 리스트와 가상화 리스트의 스크롤 차이", width="800", height="531" %}<figcaption> 일반 리스트와 가상화 리스트 간의 스크롤 차이</figcaption></figure>
 
 이 문제를 해결하는 가장 좋은 방법은 `react-window` 와 같은 라이브러리를 계속 사용하여 페이지에 있는 요소의 "창"을 작게 유지하고 사용자가 아래로 스크롤할 때 최신 항목을 지연 로드하는 것입니다. 별도의 패키지인 `react-window-infinite-loader`은 `react-window`로 이를 가능하게 합니다.
 

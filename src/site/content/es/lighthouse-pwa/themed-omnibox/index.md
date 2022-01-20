@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: No establece un color de tema para la barra de direcciones
 description: |2
 
@@ -20,7 +20,7 @@ En el momento de redactar este artículo, el uso de temas para la barra de direc
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no aplican un tema a la barra de direcciones:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="La auditoría de Lighthouse que muestra que la barra de direcciones no está relacionada con los colores de la página", width="800", height="98", class = "w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="La auditoría de Lighthouse que muestra que la barra de direcciones no está relacionada con los colores de la página", width="800", height="98" %}</figure>
 
 La auditoría falla si Lighthouse no encuentra una meta tag `theme-color` en el HTML de la página y una propiedad `theme_color` en el [manifiesto de la aplicación web](/add-manifest).
 

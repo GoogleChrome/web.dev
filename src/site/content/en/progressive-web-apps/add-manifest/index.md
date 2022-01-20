@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Add a web app manifest
 authors:
   - petelepage
@@ -164,7 +164,7 @@ You can customize what browser UI is shown when your app is launched. For
 example, you can hide the address bar and browser chrome. Games can even
 be made to launch full screen.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table id="display-params">
     <thead>
       <tr>
@@ -186,8 +186,8 @@ be made to launch full screen.
           Opens the web app to look and feel like a standalone
           app. The app runs in its own window, separate from the browser, and
           hides standard browser UI elements like the URL bar.
-          <figure class="w-figure">
-            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196", class="w-screenshot" %}
+          <figure>
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196" %}
           </figure>
         </td>
       </tr>
@@ -197,8 +197,8 @@ be made to launch full screen.
           This mode is similar to <code>standalone</code>, but provides the
           user a minimal set of UI elements for controlling navigation (such
           as back and reload).
-          <figure class="w-figure">
-            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196", class="w-screenshot" %}
+          <figure>
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196" %}
           </figure>
         </td>
       </tr>
@@ -281,8 +281,8 @@ The `theme_color` sets the color of the tool bar, and may be reflected in
 the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196" %}
 </figure>
 
 As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust this color based on a
@@ -346,8 +346,8 @@ include `crossorigin="use-credentials"` in the manifest tag.
 To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601" %}
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -374,8 +374,6 @@ a smooth transition from the splash screen to your app.
 Chrome will choose the icon that closely matches the device resolution for the
 device. Providing 192px and 512px icons is sufficient for most cases, but
 you can provide additional icons for pixel perfection.
-
-<div class="w-clearfix">&nbsp;</div>
 
 ## Further reading
 

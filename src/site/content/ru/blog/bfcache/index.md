@@ -253,17 +253,17 @@ window.addEventListener('pageshow', (event) => {
 
 Чтобы протестировать определенную страницу, перейдите на нее в Chrome, а затем в DevTools перейдите в раздел **Application** > **Back-forward Cache** (Приложение > Кэш для перехода назад и вперед). Затем нажмите кнопку **Run Test** (Выполнить тест). DevTools попытается покинуть страницу, а затем вернуться на ее, чтобы определить, можно ли восстановить страницу из bfcache.
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png", alt="Панель Back-forward cache (Кэш перехода назад и вперед) в DevTools", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png", alt="Панель Back-forward cache (Кэш перехода назад и вперед) в DevTools", width="800", height="313" %}
 
 {% Aside %} В настоящее время функция Back/forward Cache (Кэш для перехода назад и вперед) в DevTools находится в стадии активной разработки. Мы настоятельно рекомендуем разработчикам тестировать страницы в Chrome Canary. Благодаря этому вы будете использовать последнюю версию DevTools и получать самые свежие рекомендации по bfcache. {% endAside %}
 
 При успешном выполнении операции на панели отобразится сообщение Restored from back-forward cache (Восстановлено из кэша для перехода назад и вперед):
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png", alt="Сообщение DevTools о том, что страница успешно восстановлена из bfcache", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png", alt="Сообщение DevTools о том, что страница успешно восстановлена из bfcache", width="800", height="313" %}
 
 В случае неудачи на панели отобразится сообщение о том, что страница не была восстановлена, и будет указана причина этого. Если вы, как разработчик, можете устранить причину проблемы, это также будет указано:
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png", alt="Сообщение DevTools о том, что не удалось восстановить страницу из bfcache", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png", alt="Сообщение DevTools о том, что не удалось восстановить страницу из bfcache", width="800", height="313" %}
 
 На приведенном выше снимке экрана показано, что из-за применения прослушивателя события `unload` страница [не подходит](/bfcache/#never-use-the-unload-event) для размещения в bfcache. Чтобы решить эту проблему, можно вместо события `unload` использовать событие `pagehide`:
 

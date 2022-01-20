@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 在 Android 应用程序中使用 PWA
 authors:
   - andreban
@@ -58,7 +58,7 @@ Trusted Web Activity 中的 Web 内容必须满足 PWA 可安装性标准。
 
 {% Aside 'caution' %} 如果您的应用程序主要面向 13 岁以下的儿童设计，则额外的 [Play 家庭政策](https://play.google.com/about/families/)适用，这可能与使用 Trusted Web Activity 不兼容。{% endAside %}
 
-<figure class="w-figure w-figure--center">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="显示 AirHorn 的 Lighthouse 分数的屏幕截图，带有 PWA 徽章，性能分数为 100。",  width="800", height="141" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Lighthouse 中的 PWA 徽章显示您的 PWA 是否通过可安装性标准。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="显示 AirHorn 的 Lighthouse 分数的屏幕截图，带有 PWA 徽章，性能分数为 100。",  width="800", height="141" %} <figcaption> Lighthouse 中的 PWA 徽章显示您的 PWA 是否通过可安装性标准。</figcaption></figure>
 
 ## 工具
 

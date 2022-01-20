@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 주요 요청 사전 로드
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Lighthouse 보고서의 '기회' 섹션에는 중요 요청 체인에 있는 세 번째 수준의 요청이 사전 로드 후보로 표시됩니다.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Lighthouse 주요 요청 사전 로드 감사를 보여주는 스크린샷", width="800", height="214", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Lighthouse 주요 요청 사전 로드 감사를 보여주는 스크린샷", width="800", height="214" %}</figure>
 
 ## Lighthouse 플래그가 사전 로드 후보를 결정하는 방법
 

@@ -33,11 +33,11 @@ En [¿Qué es el contenido mixto?](/what-is-mixed-content), puede encontrar vari
 
 El ejemplo de [contenido mixto pasivo](https://passive-mixed-content.glitch.me/) generará las siguientes advertencias. Si el navegador puede encontrar el contenido en una URL `https`, lo actualiza automáticamente y luego muestra un mensaje.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools muestra las advertencias que aparecen cuando se detecta y actualiza contenido mixto", width="800", height="294", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y7b4EWAbSL6BgI07FdQq.jpg", alt="Chrome DevTools muestra las advertencias que aparecen cuando se detecta y actualiza contenido mixto", width="800", height="294" %}</figure>
 
 El [contenido mixto activo](https://active-mixed-content.glitch.me/) está bloqueado y se muestra una advertencia.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools muestra las advertencias que aparecen cuando el contenido mixto activo está bloqueado", width="800", height="304", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KafrfEz1adCP2eUHQEWy.jpg", alt="Chrome DevTools muestra las advertencias que aparecen cuando el contenido mixto activo está bloqueado", width="800", height="304" %}</figure>
 
 Si encuentra advertencias como estas para las URL `http://` en su sitio, debe corregirlas en la fuente del mismo. Es útil hacer una lista de estas URL, junto con la página donde las encontró, para usarla cuando las corrija.
 

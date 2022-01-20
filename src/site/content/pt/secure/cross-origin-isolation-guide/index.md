@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Um guia para permitir o isolamento da origem cruzada
 authors:
   - agektmr
@@ -45,7 +45,7 @@ Se você já sabe onde está usando `SharedArrayBuffer`, vá para [Analisar o im
     ```
 4. O nome do arquivo e o número da linha no final da mensagem (por exemplo, `common-bundle.js:535`) indicam de onde o `SharedArrayBuffer` está vindo. Se for uma biblioteca de terceiros, entre em contato com o desenvolvedor para corrigir o problema. Se for implementado como parte do seu site, siga o guia abaixo para habilitar o isolamento de origem cruzada.
 
-<figure class="w-figure">{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Aviso do console DevToools quando SharedArrayBuffer é usado sem isolamento de origem cruzada", width="800", height="163", class="w-screenshot" %}<figcaption> Aviso do console DevToools quando SharedArrayBuffer é usado sem isolamento de origem cruzada.</figcaption></figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Aviso do console DevToools quando SharedArrayBuffer é usado sem isolamento de origem cruzada", width="800", height="163" %}<figcaption> Aviso do console DevToools quando SharedArrayBuffer é usado sem isolamento de origem cruzada.</figcaption></figure>
 
 ### (Avançado) Usando Deprecation Reporting
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`<object>` elements do not have `[alt]` text"
 description: |
   Learn how to improve the accessibility of object elements on your web page by
@@ -25,8 +25,8 @@ Need to check how this audit fails.
 Also need to talk with Rob the slight inconsistencies between
 Rob's doc, the audit, and recommendations in deque docs.
 -->
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JWSzKy951NpiznLGxqoQ.png", alt="Lighthouse audit showing <object> elements do not have alternative text", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JWSzKy951NpiznLGxqoQ.png", alt="Lighthouse audit showing <object> elements do not have alternative text", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

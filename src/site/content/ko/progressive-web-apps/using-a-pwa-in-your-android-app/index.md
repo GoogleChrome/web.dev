@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Android 앱에서 PWA 사용
 authors:
   - andreban
@@ -58,7 +58,7 @@ Cordova는 WebView의 단점을 보완하도록 설계되었지만 API는 Cordov
 
 {% Aside 'caution' %} 앱이 주로 13세 미만의 어린이를 위해 설계된 경우 신뢰할 수 있는 웹 활동 사용과 호환되지 않을 수 있는 추가적인 [Play 가족 정책](https://play.google.com/about/families/)이 적용됩니다. {% endAside %}
 
-<figure class="w-figure w-figure--center">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="PWA 배지가 있고 성능 점수가 100인 AirHorn의 Lighthouse 점수를 보여주는 스크린샷.", width="840", height="141 " %}<figcaption class="w-figcaption w-figcaption--fullbleed"> Lighthouse의 PWA 배지는 PWA가 설치 가능성 기준을 통과하는지 여부를 보여줍니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="PWA 배지가 있고 성능 점수가 100인 AirHorn의 Lighthouse 점수를 보여주는 스크린샷.", width="840", height="141 " %}<figcaption> Lighthouse의 PWA 배지는 PWA가 설치 가능성 기준을 통과하는지 여부를 보여줍니다.</figcaption></figure>
 
 ## 도구
 

@@ -650,8 +650,8 @@ getJSON('story.json').then(function(story) {
 
 好了，这就是同步版本的完全异步版本。但我们可以做得更好。目前页面的下载方式如下：
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -695,8 +695,8 @@ getJSON('story.json').then(function(story) {
 
 根据连接情况，这可能比逐个加载快几秒钟，并且比第一次尝试使用的代码更少。章节可以按任何顺序下载，但它们会以正确的顺序出现在屏幕上。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>
@@ -740,8 +740,8 @@ getJSON('story.json')
 
 就这样，两全其美！交付所有内容所需的时间相同，但用户会更快地获得第一个内容。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
   </source></source></video></figure>

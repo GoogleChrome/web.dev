@@ -255,17 +255,17 @@ Chrome DevToolsは、ページをテストしてbfcache用に最適化されて�
 
 特定のページをテストするには、Chromeでそのページに移動し、DevToolsで**[アプリケーション]** > **[バックフォワードキャッシュ]** に移動します。次に、**[テストの実行**] ボタンをクリックすると、DevToolsは前後に移動して、ページをbfcacheから復元できるかどうかを判断します。
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png", alt="DevToolsのバックフォワードキャッシュパネル", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png", alt="DevToolsのバックフォワードキャッシュパネル", width="800", height="313" %}
 
 {% Aside %} 現在、DevToolsのバック/フォワードキャッシュ機能は活発に開発されています。開発者は、Chrome Canaryでページをテストして、最新バージョンのDevToolsを実行し、最新のbfcacheの推奨事項が適用されていることを確認するように強くお勧めします。 {% endAside %}
 
 成功すると、パネルに「バックフォワードキャッシュから復元されました」と表示されます。
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png", alt="ページがbfcacheから正常に復元されたことを報告するDevTools", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png", alt="ページがbfcacheから正常に復元されたことを報告するDevTools", width="800", height="313" %}
 
 失敗した場合、パネルにはページが復元されなかったことと、理由が表示します。開発者とが対処できる理由である場合は、その点についても表示されます。
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png", alt="bfcacheからページを復元できなかったことを報告'するDevTools'", width="800", height="313", class="w-screenshot" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png", alt="bfcacheからページを復元できなかったことを報告'するDevTools'", width="800", height="313" %}
 
 上のスクリーンショットでは、`unload`イベントリスナーの使用によって、ページがbfcacheの[対象にならなくなっています](/bfcache/#never-use-the-unload-event)。`unload`から`pagehide`を使用するように切り替えることで、この問題を修正できます。
 

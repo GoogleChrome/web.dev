@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Help users change passwords easily by adding a well-known URL for changing passwords
 subhead: Redirect a request to `/.well-known/change-password` to the change-passwords URL
 authors:
@@ -153,11 +153,11 @@ Chrome's password manager is able to check for leaked passwords. By navigating
 to `about://settings/passwords` users can run **Check passwords** against stored
 passwords, and see a list of passwords that are recommended for update.
 
-<figure class="w-figure">
+<figure>
 
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478", height="845", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478", height="845" %}
 
-  <figcaption class="w-figcaption">
+  <figcaption>
     Chrome's <b>Check passwords</b> functionality
   </figcaption>
 </figure>

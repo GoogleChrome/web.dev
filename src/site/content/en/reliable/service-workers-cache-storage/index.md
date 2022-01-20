@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Service workers and the Cache Storage API
 authors:
   - jeffposnick

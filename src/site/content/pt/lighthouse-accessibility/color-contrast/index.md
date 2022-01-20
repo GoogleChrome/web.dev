@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: As cores de fundo e de primeiro plano não têm uma taxa de contraste suficiente
 description: |-
   Aprenda como melhorar a acessibilidade de sua página da web certificando-se de que
@@ -18,7 +18,7 @@ Embora esse problema seja particularmente desafiador para pessoas com baixa vis�
 
 O Lighthouse sinaliza o texto cujas cores de fundo e de primeiro plano não têm uma taxa de contraste suficientemente alta:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Auditoria do Lighthouse mostrando cque as cores de fundo e de primeiro plano não têm relação de contraste suficiente", width="800", height="343", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Auditoria do Lighthouse mostrando cque as cores de fundo e de primeiro plano não têm relação de contraste suficiente", width="800", height="343" %}</figure>
 
 Para avaliar o contraste de cores do texto, o Lighthouse usa o <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noopener">critério de sucesso 1.4.3 das WCAG 2.1</a> :
 
@@ -46,17 +46,17 @@ Uma maneira de encontrar uma cor que atenda aos requisitos de contraste é usar 
 
 O seletor de cores informa se o elemento atende aos requisitos de contraste de cor, levando em consideração o tamanho e o peso da fonte:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Captura de tela do seletor de cores Chrome DevTools com informações de contraste de cor destacadas", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Captura de tela do seletor de cores Chrome DevTools com informações de contraste de cor destacadas", width="298", height="430" %}</figure>
 
 Você pode usar o seletor de cores para ajustar a cor até que o contraste seja alto o suficiente. É mais fácil fazer ajustes no formato de cores HSL. Mude para esse formato clicando no botão de alternância à direita do seletor:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Captura de tela do seletor de cores Chrome DevTools com a chave de formatação de cores em destaque", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Captura de tela do seletor de cores Chrome DevTools com a chave de formatação de cores em destaque", width="298", height="430" %}</figure>
 
 Depois de obter um valor de cor de passagem, atualize o CSS do seu projeto.
 
 Casos mais complexos como texto sobre um gradiente ou texto sobre uma imagem precisam ser verificados manualmente, assim como os elementos e imagens da IU. Para texto em uma imagem, você pode usar o seletor de cor de fundo do DevTools para verificar o fundo em que o texto aparece:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Captura de tela do seletor de cores de fundo do Chrome DevToolsr", width="301", height="431", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Captura de tela do seletor de cores de fundo do Chrome DevToolsr", width="301", height="431" %}</figure>
 
 Para outros casos, considere o uso de uma ferramenta como o <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Analisador de contraste de cores</a> do Paciello Group.
 

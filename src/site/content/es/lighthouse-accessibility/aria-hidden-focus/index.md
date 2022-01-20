@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Los elementos `[aria-hidden =" true"]` contienen descendientes enfocables
 description: |2
 
@@ -19,7 +19,7 @@ El uso del `aria-hidden="true"` en un elemento oculta el elemento y todos sus el
 
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> señala los elementos enfocables que tienen padres con el atributo `aria-hidden="true"`
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Auditoría de Lighthouse que muestra elementos enfocables que tienen padres con el atributo aria-hidden", width="800", height="206", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Auditoría de Lighthouse que muestra elementos enfocables que tienen padres con el atributo aria-hidden", width="800", height="206" %}</figure>
 
 {% include 'content/lighthouse-accessibility/focusable-els.njk' %}
 

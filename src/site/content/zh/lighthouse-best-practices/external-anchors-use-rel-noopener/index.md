@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 指向跨源目的地的链接不安全
 description: |2
 
@@ -23,7 +23,7 @@ updated: 2019-08-28
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记指向跨源目的地的不安全链接：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="显示指向跨源目的地的不安全链接的 Lighthouse 审计", width="800", height="213", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="显示指向跨源目的地的不安全链接的 Lighthouse 审计", width="800", height="213" %}</figure>
 
 Lighthouse 使用以下过程将链接识别为不安全：
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Servir imágenes receptivas
 authors:
   - katiehempenius
@@ -68,7 +68,7 @@ También vale la pena echarle un vistazo a servicios de imágenes como [Thumbor]
 
 Especifique varias versiones de imagen y el navegador elegirá la mejor opción para usar:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

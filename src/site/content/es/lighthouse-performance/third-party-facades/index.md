@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carga diferida de recursos de terceros con fachadas
 description: |2
 
@@ -19,7 +19,7 @@ Una *fachada* es un elemento estático que luce similar al tercero incrustado re
 
 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="Un ejemplo de carga de un reproductor incrustado de YouTube con una fachada. La fachada pesa 3 KB y el reproductor que pesa 540 KB se carga durante la interacción.", width="800", height="521" %} <figcaption class="w-figcaption"> Se está cargando el reproductor incrustado de YouTube con una fachada.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="Un ejemplo de carga de un reproductor incrustado de YouTube con una fachada. La fachada pesa 3 KB y el reproductor que pesa 540 KB se carga durante la interacción.", width="800", height="521" %} <figcaption> Se está cargando el reproductor incrustado de YouTube con una fachada.</figcaption></figure>
 
 ## Cómo detecta Lighthouse las incrustaciones diferibles de terceros
 
@@ -29,7 +29,7 @@ Los datos sobre los productos diferibles y las fachadas disponibles se [mantiene
 
 La auditoría falla si la página carga recursos que pertenecen a una de estas incrustaciones de terceros.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Auditoría Lighthouse de fachada de terceros que destaca el reproductor integrado de Vimeo y el chat en vivo de Drift.", width="800", height="517", class="w-screenshot" %} <figcaption class="w-figcaption"> Auditoría Lighthouse de fachada de terceros.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Auditoría Lighthouse de fachada de terceros que destaca el reproductor integrado de Vimeo y el chat en vivo de Drift.", width="800", height="517" %} <figcaption> Auditoría Lighthouse de fachada de terceros.</figcaption></figure>
 
 ## Cómo diferir terceros con una fachada
 

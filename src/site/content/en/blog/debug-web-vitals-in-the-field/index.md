@@ -69,8 +69,7 @@ Consider the following report from PageSpeed Insights for the URL:
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/nZjd6rXrOgW5VUsm5fyx.png",
    alt="A PageSpeed Insights Report with different CLS values",
    width="800",
-   height="587",
-   class="w-screenshot" %}
+   height="587" %}
 
 The value reported for CLS from the lab (Lighthouse) compared to the CLS from
 the field (CrUX data) are quite different, and this makes sense if you consider

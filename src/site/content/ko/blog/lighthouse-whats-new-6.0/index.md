@@ -42,7 +42,7 @@ lighthouse https://www.example.com --view
 
 ## 새 측정항목 {: #new-metrics }
 
-<figure>{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 측정항목", width="600", height="251", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 측정항목", width="600", height="251" %}</figure>
 
 Lighthouse 6.0은 보고서에 세 가지 새로운 메트릭을 도입합니다. 이러한 새로운 측정항목 중 LCP(Largest Contentful Paint) 및 CLS(Cumulative Layout Shift)는 [Core Web Vitals](/vitals/)의 실험실 구현입니다.
 
@@ -187,7 +187,7 @@ Lighthouse 버전 5와 6 사이의 점수 변경 사항에 대한 몇 가지 주
 
 성과 채점을 탐색하는 데 도움이 되는 [점수 계산기](https://googlechrome.github.io/lighthouse/scorecalc/)를 게시했습니다. 계산기는 또한 Lighthouse 버전 5와 6 점수를 비교합니다. Lighthouse 6.0으로 감사를 실행하면 보고서에 결과가 채워진 계산기에 대한 링크가 포함됩니다.
 
-<figure>{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse 점수 계산기.", width="600", height="319", class="w-screenshot" %} <figcaption>게이지 업그레이드에 대해 <a href="https://twitter.com/anatudor">Ana Tudor</a>에게 큰 감사를 드립니다!</figcaption></figure>
+<figure>{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse 점수 계산기.", width="600", height="319" %} <figcaption>게이지 업그레이드에 대해 <a href="https://twitter.com/anatudor">Ana Tudor</a>에게 큰 감사를 드립니다!</figcaption></figure>
 
 ## 새 감사 {: #new-audits }
 
@@ -224,11 +224,11 @@ Lighthouse는 접근성 카테고리를 강화하기 위해 멋진 [axe-core](ht
 
 [시작 안내서](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md)에 따라 지금 바로 프로젝트에서 Lighthouse CI를 사용하십시오.
 
-<figure data-float="left">{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, class="w-screenshot" %}</figure>
+<figure data-float="left">{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true %}</figure>
 
-<figure data-float="left">{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, class="w-screenshot" %}</figure>
+<figure data-float="left">{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true %}</figure>
 
-<figure>{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true %}</figure>
 
 ## Chrome DevTools 패널의 이름 변경 {: #devtools }
 
@@ -257,7 +257,7 @@ Lighthouse는 처음부터 Nexus 5X를 참조 장치로 사용했습니다. 최�
 
 Chrome 81부터 Moto G4는 Chrome DevTools 기기 에뮬레이션 목록에서도 사용할 수 있습니다.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Moto G4가 포함된 Chrome DevTools 장치 에뮬레이션 목록.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Moto G4가 포함된 Chrome DevTools 장치 에뮬레이션 목록.", width="800", height="653" %}</figure>
 
 ## 브라우저 확장자 {: #extension }
 
@@ -282,7 +282,7 @@ Lighthouse 6.0은 [예산 메트릭에 대한 지원](https://github.com/GoogleC
 Lighthouse가 페이지에 대해 찾은 문제 중 일부는 소스 코드의 특정 줄로 다시 추적될 수 있으며 보고서에는 관련 있는 정확한 파일과 줄이 표시됩니다. DevTools에서 이를 쉽게 탐색할 수 있도록 보고서에 지정된 위치를 클릭하면 **소스** 패널에서 관련 파일이 열립니다.
 
 <figure>
-  <video autoplay loop muted playsinline class="w-screenshot">
+  <video autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </source></source></video>
@@ -298,7 +298,7 @@ Lighthouse는 다음과 같은 새로운 기능을 강화하기 위해 소스 �
 - 조치가 필요한 모듈을 강조 표시하는 트리맵을 시각화합니다.
 - "소스 위치"가 있는 보고서 항목에 대한 원래 소스 코드를 표시합니다.
 
-<figure>{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="소스 맵의 모듈을 표시하는 사용되지 않는 JavaScript.", width="600", height="566", class="w-screenshot" %}<figcaption> 소스 맵을 사용하여 사용하지 않는 JavaScript 감사는 특정 번들 모듈에서 사용되지 않는 코드를 표시합니다.</figcaption></figure>
+<figure>{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="소스 맵의 모듈을 표시하는 사용되지 않는 JavaScript.", width="600", height="566" %}<figcaption> 소스 맵을 사용하여 사용하지 않는 JavaScript 감사는 특정 번들 모듈에서 사용되지 않는 코드를 표시합니다.</figcaption></figure>
 
 이러한 기능은 Lighthouse의 향후 버전에서 기본적으로 활성화됩니다. 지금은 다음 CLI 플래그를 사용하여 Lighthouse의 실험적 감사를 볼 수 있습니다.
 

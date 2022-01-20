@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Предварительная загрузка ключевых запросов
 description: Узнайте о проверке предварительной загрузки ключевых запросов.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 В разделе Opportunities (Возможности) отчета Lighthouse запросы третьего уровня в критической цепочке запросов помечаются в качестве кандидатов на предварительную загрузку:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Скриншот проверки Preload key requests (Предварительная загрузка ключевых запросов) в Lighthouse", width="800", height="214", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Скриншот проверки Preload key requests (Предварительная загрузка ключевых запросов) в Lighthouse", width="800", height="214" %}</figure>
 
 ## Как Lighthouse определяет кандидатов на предварительную загрузку
 

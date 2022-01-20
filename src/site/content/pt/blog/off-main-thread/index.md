@@ -142,21 +142,21 @@ A equipe decidiu usar web workers para separar o estado visual do jogo de sua l�
 
 OMT teve efeitos interessantes no desempenho do telefone de recursos da PROXX. Na versão não OMT, a IU é congelada por seis segundos após o usuário interagir com ela. Não há feedback e o usuário tem que esperar seis segundos inteiros antes de poder fazer outra coisa.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">Tempo de resposta da IU na <strong>versão não OMT</strong> do PROXX.</figcaption></figure>
+ <figcaption>Tempo de resposta da IU na <strong>versão não OMT</strong> do PROXX.</figcaption></figure>
 
 Na versão OMT, no entanto, o jogo leva *doze* segundos para completar uma atualização da IU. Embora pareça uma perda de desempenho, na verdade leva a um maior feedback para o usuário. A desaceleração ocorre porque o aplicativo está enviando mais frames do que a versão não OMT, que não envia frames. O usuário, portanto, sabe que algo está acontecendo e pode continuar jogando conforme a IU é atualizada, tornando o jogo consideravelmente melhor.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
- <figcaption class="w-figcaption">Tempo de resposta da IU na <strong>versão OMT</strong> do PROXX.</figcaption></figure>
+ <figcaption>Tempo de resposta da IU na <strong>versão OMT</strong> do PROXX.</figcaption></figure>
 
 Esta é uma troca consciente: oferecemos aos usuários de dispositivos restritos uma experiência que se *sente* melhor, sem penalizar os usuários de dispositivos de última geração.
 

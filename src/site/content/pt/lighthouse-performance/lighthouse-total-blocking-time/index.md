@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Tempo Total de Bloqueio
 description: Saiba mais sobre a métrica de tempo total de bloqueio do Lighthouse e como medi-lo e otimizá-lo.
 web_lighthouse:
@@ -12,7 +12,7 @@ O Tempo Total de Bloqueio (TBT - Total Blocking Time) é uma das métricas monit
 
 O Lighthouse apresenta a métrica TBT em segundos:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5mK1Vac6rk9cJHMNfZh2.jpg", alt="Uma captura de tela da auditoria do Tempo Total de Bloqueio do Lighthouse", width="800", height="556", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5mK1Vac6rk9cJHMNfZh2.jpg", alt="Uma captura de tela da auditoria do Tempo Total de Bloqueio do Lighthouse", width="800", height="556" %}</figure>
 
 ## O que o TBT mede
 
@@ -24,7 +24,7 @@ Sua pontuação TBT é uma comparação entre o tempo TBT de sua página e os te
 
 Esta tabela mostra como interpretar sua pontuação TBT:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

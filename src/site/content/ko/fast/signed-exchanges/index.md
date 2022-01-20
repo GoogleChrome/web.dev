@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: SXG(Signed Exchanges)
 subhead: SXG는 리소스가 전달된 방식에 관계없이 리소스의 출처를 인증할 수 있도록 하는 전달 메커니즘입니다.
 authors:
@@ -149,11 +149,11 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 
 Signed Exchanges는 Chrome DevTools **네트워크** 패널의 **유형** 열에서 `signed-exchange`를 찾아 식별할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="DevTools '네트워크' 패널 내의 SXG 요청을 보여주는 스크린샷", width="696", height="201" %} <figcaption>DevTools의 <b>네트워크</b> 패널</figcaption></figure>
+<figure>{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="DevTools '네트워크' 패널 내의 SXG 요청을 보여주는 스크린샷", width="696", height="201" %} <figcaption>DevTools의 <b>네트워크</b> 패널</figcaption></figure>
 
 **미리보기** 탭은 SXG의 내용에 대한 자세한 정보를 제공합니다.
 
-<figure class="w-figure">{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="SXG에 대한 '미리보기' 탭 스크린샷", width="800", height="561" %} <figcaption> DevTools의 <b>미리보기</b> 탭</figcaption></figure>
+<figure>{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="SXG에 대한 '미리보기' 탭 스크린샷", width="800", height="561" %} <figcaption> DevTools의 <b>미리보기</b> 탭</figcaption></figure>
 
 SXG를 직접 보려면 [}SXG를 지원하는 브라우저 중 하나](https://signed-exchange-testing.dev/) 에서 이 [데모](#browser-compatibility)를 방문하세요.
 

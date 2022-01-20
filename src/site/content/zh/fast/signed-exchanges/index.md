@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 签名交换 (SXG)
 subhead: SXG 是一种交付机制，可以独立于资源的交付方式来验证资源的来源。
 authors:
@@ -149,11 +149,11 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 
 可以通过在 Chrome DevTools 的**网络**面板的**类型**列中查找签名交换来识别 `signed-exchange`。
 
-<figure class="w-figure">{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="在 DevTools 的“网络”面板中显示 SXG 请求的屏幕截图", width="696", height="201" %}<figcaption> DevTools 中的<b>网络</b>面板</figcaption></figure>
+<figure>{% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="在 DevTools 的“网络”面板中显示 SXG 请求的屏幕截图", width="696", height="201" %}<figcaption> DevTools 中的<b>网络</b>面板</figcaption></figure>
 
 **预览**选项卡提供有关 SXG 内容的更多信息。
 
-<figure class="w-figure">{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="SXG 的“预览”选项卡的屏幕截图", width="800", height="561" %}<figcaption> DevTools 中的<b>预览</b>选项卡</figcaption></figure>
+<figure>{% Img src="image/admin/E0rBwuxk4BxFmLJ3gXhP.png", alt="SXG 的“预览”选项卡的屏幕截图", width="800", height="561" %}<figcaption> DevTools 中的<b>预览</b>选项卡</figcaption></figure>
 
 要直接查看 SXG，请在[支持 SXG 的浏览器之一](https://signed-exchange-testing.dev/)中访问此[演示](#browser-compatibility)
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 레이블 및 대체 텍스트
 authors:
   - robdodson
@@ -19,7 +19,7 @@ Chrome의 DevTools를 사용하여 요소의 액세스 가능한 이름을 쉽�
 2. 요소 패널에서 **접근성** 창을 찾습니다. `»` 기호 뒤에 숨겨져 있을 수 있습니다.
 3. **계산된 속성** 드롭다운에서 **이름** 속성을 찾습니다.
 
-<figure class="w-figure">{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> 버튼의 계산된 이름을 보여주는 DevTools 접근 가능성 창. </figcaption></figure>
+<figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> 버튼의 계산된 이름을 보여주는 DevTools 접근 가능성 창. </figcaption></figure>
 
 {% Aside %} 자세히 알아보려면 [DevTools 접근 가능성 참조](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)를 확인하세요. {% endAside %}
 
@@ -29,7 +29,7 @@ Chrome의 DevTools를 사용하여 요소의 액세스 가능한 이름을 쉽�
 
 요소의 유형에 따라 액세스 가능한 이름을 요소에 추가하는 방법은 다양합니다. 다음 표에는 액세스 가능한 이름이 필요한 가장 일반적인 요소 유형과 추가 방법에 대한 설명 링크가 나와 있습니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -196,7 +196,7 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 이는 페이지의 모든 링크를 나열할 수 있는 단축키를 제공하는 스크린 리더에 특히 유용합니다. 링크가 반복적인 채우기 텍스트로 가득 차 있으면 다음 단축키가 훨씬 덜 유용합니다.
 
-<figure class="w-figure">{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="'여기'라는 단어로 채워진 VoiceOver 링크 메뉴.", width="519", height="469" %} <figcaption class="w-figcaption"> 링크 메뉴에 의한 탐색 결과를 나타내는 macOS 용 스크린 리더 VoiceOver에 대한 예. </figcaption></figure>
+<figure>{% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="'여기'라는 단어로 채워진 VoiceOver 링크 메뉴.", width="519", height="469" %} <figcaption> 링크 메뉴에 의한 탐색 결과를 나타내는 macOS 용 스크린 리더 VoiceOver에 대한 예. </figcaption></figure>
 
 ## 레이블 양식 요소
 
@@ -219,6 +219,6 @@ Check out <a href="/guide">our guide to web performance</a>.
 
 확인란 레이블이 올바르게 지정된 경우, 스크린 리더는 요소가 확인란 역할을 하고, 선택된 상태이며, 아래의 VoiceOver 예제와 같이 "홍보 제안을 수신하시겠습니까?"라는 이름을 가진 요소를 보고할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="'홍보 제안을 수신하시겠습니까?'를 나타내는 VoiceOver 텍스트 출력", width="640", height="174", class="w-screenshot" %}<br>{% Assessment 'self-assessment' %}</figure>
+<figure>{% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="'홍보 제안을 수신하시겠습니까?'를 나타내는 VoiceOver 텍스트 출력", width="640", height="174" %}<br>{% Assessment 'self-assessment' %}</figure>
 
 {% Assessment 'self-assessment' %}

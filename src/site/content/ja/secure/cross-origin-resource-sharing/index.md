@@ -23,7 +23,7 @@ tags:
 
 ## リソースリクエストはWeb上でどのように機能しますか？
 
-<figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="request and response", width="668", height="327"%}<figcaption class="w-figcaption">図：図示されたクライアントリクエストとサーバーレスポンス</figcaption></figure>
+<figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="request and response", width="668", height="327"%}<figcaption>図：図示されたクライアントリクエストとサーバーレスポンス</figcaption></figure>
 
 ブラウザとサーバーは、**Hypertext Transfer Protocol  (ハイパーテキスト転送プロトコル)** (HTTP) を使用することにより、ネットワーク経由でデータのやり取りを行えます。 HTTPは、リソースを取得するために必要な情報など、リクエスターとレスポンダー間の通信ルールを定義します。
 

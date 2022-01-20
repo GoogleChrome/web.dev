@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cómo publicar activos estáticos con políticas eficientes para el caché
 description: Descubra cómo el almacenamiento en el caché de los recursos estáticos de su página web puede mejorar el rendimiento y la seguridad para los visitantes habituales.
 date: 2019-05-02
@@ -16,7 +16,7 @@ Cuando un navegador solicita un recurso, el servidor que lo proporciona puede in
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) etiqueta todos los recursos estáticos que no se almacenan en el caché:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Una captura de pantalla sobre los activos estáticos de Lighthouse Serve y una auditoría eficiente de las políticas relacionadas con el caché", width="800", height="490", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Una captura de pantalla sobre los activos estáticos de Lighthouse Serve y una auditoría eficiente de las políticas relacionadas con el caché", width="800", height="490" %}</figure>
 
 Lighthouse considerará que un recurso puede almacenarse en el caché si se cumplen todas las condiciones que se indican a continuación:
 
@@ -26,7 +26,7 @@ Lighthouse considerará que un recurso puede almacenarse en el caché si se cump
 
 Cuando una página no aprueba la auditoría, Lighthouse muestra los resultados en una tabla con tres columnas:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <tbody>
       <tr>
@@ -75,7 +75,7 @@ Para conocer los recursos que obtiene el navegador a partir de su caché, abra l
 
 El **tamaño** de la columna en Chrome DevTools puede ayudarle a verificar que un recurso se almacenó en el caché:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="El tamaño de la columna", width="800", height="565", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="El tamaño de la columna", width="800", height="565" %}</figure>
 
 Chrome publica los recursos más solicitados desde la memoria caché, que es muy rápida, pero se borra cuando se cierra el navegador.
 
@@ -84,7 +84,7 @@ Para verificar que el encabezado `Cache-Control` de un recurso se establezca com
 1. Haga clic en la URL de la solicitud, debajo de la **columna Name** en la tabla Solicitudes.
 2. Haga clic en la pestaña **Encabezados.**
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspección del encabezado Cache-Control mediante la pestaña Headers", width="800", height="597", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Inspección del encabezado <code>Cache-Control</code> mediante la pestaña <b>Headers</b>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspección del encabezado Cache-Control mediante la pestaña Headers", width="800", height="597" %} <figcaption> Inspección del encabezado <code>Cache-Control</code> mediante la pestaña <b>Headers</b>. </figcaption></figure>
 
 ## Orientación específica del Stack
 

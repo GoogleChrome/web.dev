@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Carregue recursos de terceiros de forma lazy com fachadas
 description: Aprenda sobre as oportunidades de carregamento lazy de recursos de terceiros com fachadas.
 date: 2020-12-01
@@ -17,7 +17,7 @@ Uma *fachada* é um elemento estático que parece com o componente de terceiros 
 
 {% endAside %}
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="Um exemplo de carregamento do player incorporado do YouTube com uma fachada. A fachada consome 3 KB e o player, que requer 540 KB, é carregado na interação.", width="800", height="521" %}   <figcaption class="w-figcaption">     Carregando um player incorporado do YouTube com uma fachada.  </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="Um exemplo de carregamento do player incorporado do YouTube com uma fachada. A fachada consome 3 KB e o player, que requer 540 KB, é carregado na interação.", width="800", height="521" %}   <figcaption>     Carregando um player incorporado do YouTube com uma fachada.  </figcaption></figure>
 
 ## Como o Lighthouse detecta incorporações de terceiros que podem ter o carregamento adiado
 
@@ -27,7 +27,7 @@ Os dados sobre produtos que podem ser adiados e fachadas disponíveis são [mant
 
 A auditoria falhará se a página carregar recursos pertencentes a uma dessas incorporações de terceiros.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Auditoria de fachada de terceiros do farol destacando o player incorporado do Vimeo e o bate-papo ao vivo do Drift.", width="800", height="517", class="w-screenshot" %}   <figcaption class="w-figcaption">     Auditoria de fachada de terceiros do  Lighthouse.  </figcaption></figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Auditoria de fachada de terceiros do farol destacando o player incorporado do Vimeo e o bate-papo ao vivo do Drift.", width="800", height="517" %}   <figcaption>     Auditoria de fachada de terceiros do  Lighthouse.  </figcaption></figure>
 
 ## Como adiar componentes de terceiros com uma fachada
 

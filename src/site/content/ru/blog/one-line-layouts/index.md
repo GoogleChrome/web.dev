@@ -24,8 +24,8 @@ tags:
 
 ## 01. Супер-центрирование: `place-items: center`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4">
   </source></video></figure>
 
@@ -44,8 +44,8 @@ tags:
 
 ## 02. Разрезанный блин: `flex: <grow> <shrink> <baseWidth>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4">
   </source></video></figure>
 
@@ -79,8 +79,8 @@ tags:
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4">
   </source></video></figure>
 
@@ -88,8 +88,8 @@ tags:
 
 ## 03. Слово боковой панели: `grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4">
   </source></video></figure>
 
@@ -106,8 +106,8 @@ tags:
 
 ## 04. Стопка блинов: `grid-template-rows: auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4">
   </source></video></figure>
 
@@ -128,8 +128,8 @@ tags:
 
 ## 05. Классический макет Святого Грааля: `grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4">
   </source></video></figure>
 
@@ -150,8 +150,8 @@ tags:
 
 ## 06. 12-интервальная сетка: `grid-template-columns: repeat(12, 1fr)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4">
   </source></video></figure>
 
@@ -170,8 +170,8 @@ tags:
 
 Теперь у вас есть сетка из 12 столбцов, и мы можем разместить в ней наши дочерние элементы. Один из способов это сделать — разместить их с помощью линий сетки. Например, `grid-column: 1 / 13` займет все пространство от первой линии до последней (13-й) и растянется на 12 столбцов. `grid-column: 1 / 5;` охватит первые четыре.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4">
   </source></video></figure>
 
@@ -185,8 +185,8 @@ tags:
 
 ## 07. RAM (Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4">
   </source></video></figure>
 
@@ -205,8 +205,8 @@ tags:
 
 При `auto-fit` блоки будут растягиваться, если их горизонтальный размер превышает 150 пикселей, чтобы заполнить все оставшееся пространство. Однако, если изменить его на `auto-fill`, они не будут растягиваться при превышении своего базового размера в функции minmax:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4">
   </source></video></figure>
 
@@ -219,8 +219,8 @@ tags:
 
 ## 08. Линейка: `justify-content: space-between`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4">
   </source></video></figure>
 
@@ -238,8 +238,8 @@ tags:
 
 ## 09. Захватываем мой стиль: `clamp(<min>, <actual>, <max>)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4">
   </source></video></figure>
 
@@ -263,8 +263,8 @@ tags:
 
 ## 10. Сохраняем масштаб: `aspect-ratio: <width> / <height>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4">
   </source></video></figure>
 

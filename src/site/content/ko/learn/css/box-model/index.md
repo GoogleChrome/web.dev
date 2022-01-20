@@ -32,7 +32,7 @@ p {
 
 콘텐츠가 여러분의 요소에서 벗어나게 되고 너비는 100px이 아닌 142px이 될 것입니다. 왜 그럴까요? 박스 모델은 CSS의 핵심 기반이며, CSS의 작동 방식, CSS의 다른 측면에 의해 CSS가 영향을 받는 방식, 그리고 이를 제어하는 방법(중요함)을 이해하면 보다 예측 가능한 CSS를 작성하는 데 도움이 됩니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
 
 CSS를 작성하거나 웹에서 통으로 작업할 때 기억해야 할 정말 중요한 점은 CSS로 표시하는 모든 것이 박스라는 것입니다. `border-radius`을 사용하여 원처럼 보이는 박스이든, 그저 텍스트만 있더라도 모든 것이 박스로 되어 있다는 것을 기억하는 게 중요합니다.
 
@@ -44,13 +44,13 @@ CSS를 작성하거나 웹에서 통으로 작업할 때 기억해야 할 정말
 
 데모를 사용하여 차이점을 빠르게 살펴보겠습니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption class="w-figcaption"> 박스가 외부 크기 조정을 사용하는 경우 박스의 경계를 오버플로하기 전까지 추가할 수 있는 콘텐츠의 양에 제한이 있습니다. 이것은 "awesome"이라는 단어가 오버플로되게 만듭니다.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'abpoMBL' } %} <figcaption> 박스가 외부 크기 조정을 사용하는 경우 박스의 경계를 오버플로하기 전까지 추가할 수 있는 콘텐츠의 양에 제한이 있습니다. 이것은 "awesome"이라는 단어가 오버플로되게 만듭니다.</figcaption></figure>
 
 데모에는 고정된 치수와 두꺼운 테두리가 있는 박스에 "CSS is awesome"라는 단어가 있습니다. 박스에는 너비가 있으며 이는 외부 크기입니다. 이것이 자식 콘텐츠의 크기를 제어합니다. 그런데 이것의 문제는 "awesome"이라는 단어가 박스에 비해 너무 커서 부모 박스의 **테두리 박스** 밖으로 오버플로된다는 것입니다(이에 대한 자세한 내용은 나중에 학습 예정). 이렇게 오버플로되는 현상을 방지하는 한 가지 방법은 `width`를 `min-content`로 설정하여 박스의 크기를 내부 크기로 설정하는 것입니다. `min-content` 키워드는 박스가 콘텐츠(단어 "awesome")의 최소 내부 너비만큼만 넓어지도록 지시합니다. 이렇게 하면 박스가 "CSS is awesome"에 완벽하게 맞게 됩니다.
 
 실제 콘텐츠에 대한 다양한 크기 조정의 영향을 확인하기 위해 더 복잡한 내용을 살펴보겠습니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'wvgwOJV', height: 650 } %}</figure>
 
 내부 크기 조정 토글을 켜고 끄면 외부 크기 조정으로 여러분이 더 많은 제어 권한을 얻을 수 있게 하는 방법과 내부 크기 조정으로 콘텐츠가 더 많은 제어 권한을 갖게 하는 방법을 확인할 수 있습니다. 내부 및 외부 크기 조정의 효과를 확인하려면 카드에 여러 문장의 콘텐츠를 추가합니다. 이 요소가 외부 크기 조정을 사용하는 경우 요소의 경계를 오버플로하기 전까지 추가할 수 있는 콘텐츠의 양에 제한이 있지만 내부 크기 조정토글이 켜져 있는 경우에는 그렇지 않습니다.
 
@@ -64,25 +64,25 @@ CSS를 작성하거나 웹에서 통으로 작업할 때 기억해야 할 정말
 
 박스는 모두 특정 작업을 수행하는 별개의 박스 모델 영역으로 구성되어 있습니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="박스 모델의 네 가지 주요 영역을 보여주는 다이어그램 - 콘텐츠 박스, 패딩 박스, 테두리 박스 및 여백 박스", width="800", height="547" %} <figcaption class="w-figcaption">박스 모델의 네 가지 주요 영역: 콘텐츠 박스, 패딩 박스, 테두리 박스 및 여백 박스</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="박스 모델의 네 가지 주요 영역을 보여주는 다이어그램 - 콘텐츠 박스, 패딩 박스, 테두리 박스 및 여백 박스", width="800", height="547" %} <figcaption>박스 모델의 네 가지 주요 영역: 콘텐츠 박스, 패딩 박스, 테두리 박스 및 여백 박스</figcaption></figure>
 
 콘텐츠가 있는 영역인 **콘텐츠 박스**부터 시작합니다. 이전에 배웠듯이 이 콘텐츠는 부모 콘텐츠의 크기를 제어할 수 있으며, 그렇기에 일반적으로 가장 다양한 크기의 영역도 제어합니다.
 
 **패딩 박스**는 콘텐츠 박스를 둘러싸고 있으며 [`padding`](https://developer.mozilla.org/docs/Web/CSS/padding) 속성에 의해 생성된 공간입니다. 패딩이 박스 안에 있기 때문에 박스의 배경을 박스가 만드는 공간에서 볼 수 있습니다. 박스에 `overflow: auto` 또는 `overflow: scroll`과 같은 오버플로 규칙이 설정되어 있으면 스크롤바도 이 공간을 차지하게 됩니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'BaReoEV' } %}</figure>
 
 **테두리 박스**는 패딩 박스를 둘러싸고 있으며 그 공간은 `border` 값으로 채워집니다. 테두리 박스는 박스의 경계이며 **테두리 가장자리**는 시각적으로 볼 수 있는 영역의 한계입니다. <a href="https://developer.mozilla.org/docs/Web/CSS/border" data-md-type="link">`border`</a> 속성은 요소를 시각적으로 프레임하는 데 사용됩니다.
 
 마지막 영역인 **여백 박스**는 박스의 `margin` 규칙에 의해 정의된 여러분의 박스 주변의 공간입니다. [`outline`](https://developer.mozilla.org/docs/Web/CSS/box-shadow) 및 [`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow)와 같은 속성이 페인트처럼 상단을 칠하며 이 공간을 차지하기에 우리 박스의 크기에 영향을 미치지 않습니다. 박스의 `outline-width`가 `200px`일 수 있으며 테두리 박스를 포함하여 내부의 모든 것이 정확히 같은 크기일 수 있습니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'XWprGea' } %}</figure>
 
 ## 유용한 비유
 
 박스 모델은 이해하기 복잡하므로 배운 내용을 유추를 사용하여 요약해 보겠습니다.
 
-<figure class="w-figure">{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Three photo frames", width="800", height="562" %}</figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Three photo frames", width="800", height="562" %}</figure>
 
 이 다이어그램에는 3개의 사진 프레임이 벽에 나란히 걸려 있습니다. 다이어그램에는 프레임의 요소를 박스 모델과 연결하는 레이블이 있습니다.
 
@@ -104,7 +104,7 @@ CSS를 작성하거나 웹에서 통으로 작업할 때 기억해야 할 정말
 2. [요소 선택](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 3. 박스 모델 디버거 표시
 
-<figure class="w-figure">{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}</figure>
+<figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>
 
 ## 박스 모델 제어
 
@@ -137,7 +137,7 @@ CSS를 작성하거나 웹에서 통으로 작업할 때 기억해야 할 정말
 
 다음 대화식 데모에서 이것이 어떻게 작동하는지 확인하십시오. `box-sizing` 값을 토글하면 우리의 박스 *내부*에서 적용되는 CSS가 파란색 배경으로 표시됩니다.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'oNBvVpM', height: 650 } %}</figure>
 
 ```css
 *,

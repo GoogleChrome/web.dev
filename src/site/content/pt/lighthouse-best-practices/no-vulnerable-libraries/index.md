@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Inclui bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas
 description: |2
 
@@ -18,7 +18,7 @@ Os invasores têm rastreadores da web automatizados que podem varrer seu site em
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Auditoria de Lighthouse mostrando quaisquer bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas usadas pela página", width="800", height="190", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Auditoria de Lighthouse mostrando quaisquer bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas usadas pela página", width="800", height="190" %}</figure>
 
 Para detectar bibliotecas vulneráveis, o Lighthouse:
 

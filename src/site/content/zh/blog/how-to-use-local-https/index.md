@@ -31,7 +31,7 @@ tags:
 - 在看到证书已由 mkcert 生成的证书颁发机构签名后，浏览器会检查它是否已注册为受信任的证书颁发机构。
 - mkcert 已被列为受信任的颁发机构，所以浏览器会信任该证书并创建 HTTPS 连接。
 
-<figure class="w-figure">{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="mkcert 工作原理图。", width="800", height="787" %}<figcaption class="w-figcaption"> mkcert 工作原理图。</figcaption></figure>
+<figure>{% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="mkcert 工作原理图。", width="800", height="787" %}<figcaption> mkcert 工作原理图。</figcaption></figure>
 
 mkcert（和类似工具）具备下列几种优势：
 
@@ -224,7 +224,7 @@ mkcert（和类似工具）具备下列几种优势：
 - 它不一定比使用 mkcert 这样的本地 CA 更方便或更快捷。
 - 如果您没有在浏览器上下文中使用此技术，则可能需要禁用服务器的证书验证。在生产中忘记重新启用它会带来潜在风险。
 
-<figure class="w-figure">{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="使用自签名证书时浏览器显示的警告截图。", width="800", height="598" %}<figcaption class="w-figcaption">使用自签名证书时浏览器显示的警告。</figcaption></figure>
+<figure>{% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="使用自签名证书时浏览器显示的警告截图。", width="800", height="598" %}<figcaption>使用自签名证书时浏览器显示的警告。</figcaption></figure>
 
 {% Aside %}如果您没有指定任何证书，那么 [React](https://create-react-app.dev/docs/using-https-in-development/) 和 [Vue](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) 的开发服务器 HTTPS 选项会在后台创建一个自签名证书。这样虽然很快捷，但您会收到浏览器警告，并遇到与上面列出的与自签名证书相关的其他问题。幸运的是，您可以使用前端框架的内置 HTTPS 选项**并**指定由 mkcert 或类似工具创建的本地可信证书。请前往[React 与 mkcert 示例](/#setup:~:text=a%20React%20development%20server)查看如何执行此操作。 {% endAside %}
 
@@ -232,7 +232,7 @@ mkcert（和类似工具）具备下列几种优势：
 
 如果您使用 HTTPS 在浏览器中打开本地运行的网站，浏览器将检查本地开发服务器的证书。当它看到证书由您签名时，它会检查您是否已注册为受信任的证书颁发机构。因为您不是，所以浏览器不能信任此证书；它会警告您的连接不安全。您可以自行承担风险。如果选择这样，那么将创建 HTTPS 连接。
 
-<figure class="w-figure">{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="为什么浏览器不信任自签名证书：示意图。", width="800", height="833" %}<figcaption class="w-figcaption">为什么浏览器不信任自签名证书。</figcaption></figure>
+<figure>{% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="为什么浏览器不信任自签名证书：示意图。", width="800", height="833" %}<figcaption>为什么浏览器不信任自签名证书。</figcaption></figure>
 
 {% endDetails %}
 

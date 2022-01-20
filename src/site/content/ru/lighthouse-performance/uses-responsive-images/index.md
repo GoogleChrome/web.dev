@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Выбирайте размер изображений правильно
 description: Узнайте о проверке правильности масштабирования изображений.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 В разделе Opportunities (Возможности) отчета Lighthouse перечисляются все изображения на проверяемой странице, размер которых не соответствует требованиям, а также потенциальная экономия в [кибибайтах (КиБ)](https://en.wikipedia.org/wiki/Kibibyte). Измените размер этих изображений, чтобы сэкономить данные и сократить время загрузки страницы:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="Скриншот проверки Properly size images (Выбирайте размер изображений правильно) в Lighthouse", width="800", height="264", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="Скриншот проверки Properly size images (Выбирайте размер изображений правильно) в Lighthouse", width="800", height="264" %}</figure>
 
 ## Как Lighthouse определяет изображения слишком большого размера
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: '`[user-scalable="no"]` が `<meta name="viewport">` 要素で使用されているか、`[maximum-scale]` 属性が `5` 未満です'
 description: ブラウザのズーム無効になっていないことを確認して、Web ページのアクセシビリティをさらに高める方法を学びます。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 Lighthouse は、ブラウザのズーム機能を無効にするページにフラグを立てます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="ビューポートがテキストのスケーリングとズーム機能を無効にしていることを示す Lighthouse 監査", width="800", height="227", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="ビューポートがテキストのスケーリングとズーム機能を無効にしていることを示す Lighthouse 監査", width="800", height="227" %}</figure>
 
 以下のいずれかの `<meta name="viewport">` タグが含まれている場合、ページは監査に失敗します。
 

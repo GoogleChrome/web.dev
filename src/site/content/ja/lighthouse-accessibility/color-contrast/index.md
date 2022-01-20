@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 背景色と前景色のコントラスト比が不十分である
 description: すべてのテキストのカラーコントラストが十分であることを確認して、ウェブベースにアクセシビリティを改善する方法について学びます。
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 Lighthouse は、背景色と前景色のコントラスト比の高さが不十分なテキストをフラグします。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="背景色と前景色のコントラスト比が不十分であることを示す Lighthouse 監査", width="800", height="343", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="背景色と前景色のコントラスト比が不十分であることを示す Lighthouse 監査", width="800", height="343" %}</figure>
 
 Lighthouse は <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noopener">WCAG2.1 の成功基準 1.4.3</a> を使ってテキストのカラーコントラストを評価します。
 
@@ -44,17 +44,17 @@ Lighthouse は <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noo
 
 カラーピッカーは、フォントのサイズと太さを考慮して、対象の要素がカラーコントラストの要件を満たしているかどうかを示します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Chrome DevTools のカラーピッカーのカラーコントラスト情報が強調表示された状態を示したスクリーンショット", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Chrome DevTools のカラーピッカーのカラーコントラスト情報が強調表示された状態を示したスクリーンショット", width="298", height="430" %}</figure>
 
 カラーピッカーを使用して、コントラストが十分に高くなるまで色を調整できます。HSLカラー形式で調整するのが最も簡単です。ピッカーの右側にあるトグルボタンをクリックして、その形式に切り替えます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Chrome DevTools のカラーピッカーのカラーフォーマットトグルが強調表示された状態を示したスクリーンショット", width="298", height="430", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Chrome DevTools のカラーピッカーのカラーフォーマットトグルが強調表示された状態を示したスクリーンショット", width="298", height="430" %}</figure>
 
 基準を満たす color 値を見つけたら、プロジェクトのCSSを更新します。
 
 グラデーションのテキストや画像のテキストといった、より複雑なケースは、UI要素や画像と同様に手動でチェックする必要があります。画像上のテキストの場合は、DevTools の背景色ピッカーを使用すれば、テキストが表示される背景を確認できます。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Chrome DevTools の背景カラーピッカーのスクリーンショット", width="301", height="431", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Chrome DevTools の背景カラーピッカーのスクリーンショット", width="301", height="431" %}</figure>
 
 他の例では、Paciello グループの <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser</a> といったツールを使用することを検討してください。
 

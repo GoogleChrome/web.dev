@@ -27,7 +27,7 @@ button {
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'GRrgMOm', height: 200 } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'GRrgMOm', height: 200 } %}</figure>
 
 Compreender o algoritmo em cascata ajuda a entender como o navegador resolve conflitos como este. O algoritmo em cascata é dividido em 4 estágios distintos.
 
@@ -46,11 +46,11 @@ Os estilos podem vir de várias fontes em uma página HTML, como uma tag `<link>
 
 Se você tiver um `<link>` que inclui CSS no topo de sua página HTML, então outro `<link>` que inclui CSS na parte inferior de sua página: o `<link>` inferior terá mais especificidade. A mesma coisa acontece com `<style>` incorporados também. Eles ficam mais específicos à medida que avançam na página.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'NWdPaWv' } %}<br><figcaption class="w-figcaption"> O botão tem um fundo azul, conforme definido pelo CSS, que é incluído por um elemento <code>&lt;link /&gt;</code> . Uma regra CSS que define como escuro está em uma segunda folha de estilo vinculada e é aplicada por causa de sua posição posterior.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'NWdPaWv' } %}<br><figcaption> O botão tem um fundo azul, conforme definido pelo CSS, que é incluído por um elemento <code>&lt;link /&gt;</code> . Uma regra CSS que define como escuro está em uma segunda folha de estilo vinculada e é aplicada por causa de sua posição posterior.</figcaption></figure>
 
 Essa ordem também se aplica a elementos `<style>`. Se forem declarados antes de um `<link>`, o CSS da folha de estilo vinculada terá a maior especificidade.
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgbLoB' } %}<figcaption class="w-figcaption"> O <code>&lt;style&gt;</code> é declarado no <code>&lt;head&gt;</code>, enquanto o elemento <code>&lt;link /&gt;</code> é declarado no <code>&lt;body&gt;</code>. Isso significa que ele obtém mais especificidade do que o elemento <code>&lt;style&gt;</code>.</figcaption></figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgbLoB' } %}<figcaption> O <code>&lt;style&gt;</code> é declarado no <code>&lt;head&gt;</code>, enquanto o elemento <code>&lt;link /&gt;</code> é declarado no <code>&lt;body&gt;</code>. Isso significa que ele obtém mais especificidade do que o elemento <code>&lt;style&gt;</code>.</figcaption></figure>
 
 Um `style` inline com CSS declarado nele substituirá todos os outros CSS, independentemente de sua posição, a menos que uma declaração tenha `!important` definido.
 
@@ -72,7 +72,7 @@ Ser capaz de especificar dois valores para a mesma propriedade pode ser uma mane
 }
 ```
 
-<figure class="w-figure">{% Codepen { user: 'web-dot-dev', id: 'xxgbPMP' } %}</figure>
+<figure>{% Codepen { user: 'web-dot-dev', id: 'xxgbPMP' } %}</figure>
 
 {% Aside %} Esta abordagem de declarar a mesma propriedade duas vezes funciona porque os navegadores ignoram valores que não entendem. Ao contrário de algumas outras linguagens de programação, o CSS não gerará um erro ou interromperá seu programa ao detectar uma linha que não pode ser analisada - o valor que não pode ser analisado é inválido e, portanto, ignorado. O navegador continua a processar o resto do CSS sem quebrar o que já entende. {% endAside %}
 
@@ -117,7 +117,7 @@ O CSS que você escreve não é o único CSS aplicado a uma página. A cascata l
 5. **Estilos de usuários locais `!important`**. Qualquer coisa `!important` que venha do nível do sistema operacional ou CSS do nível de extensão do navegador.
 6. **Agente do usuário `!important`**. Qualquer `!important` que seja definido no CSS padrão, fornecido pelo navegador.
 
-<figure class="w-figure">{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg", alt = "Uma demonstração visual da ordem das origens, conforme também explicado na lista.", width = "800", height = "347"%}</figure>
+<figure>{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg", alt = "Uma demonstração visual da ordem das origens, conforme também explicado na lista.", width = "800", height = "347"%}</figure>
 
 Se você tiver um `!important` no CSS de sua autoria e o usuário tiver um `!important` no CSS personalizado, qual CSS vence?
 
@@ -140,7 +140,7 @@ Os tipos de regras de transição e animação ativas têm maior importância do
 
 As ferramentas de desenvolvimento do navegador geralmente mostram todos os CSS que podem corresponder a um elemento, com aqueles que não estão sendo usados riscados.
 
-<figure class="w-figure">{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png", alt = "Uma imagem do navegador DevTools com CSS substituído riscado", width = "800", height = "446"%}</figure>
+<figure>{% Img src = "image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png", alt = "Uma imagem do navegador DevTools com CSS substituído riscado", width = "800", height = "446"%}</figure>
 
 Se o CSS que você esperava aplicar não aparecer, então ele não corresponde ao elemento. Nesse caso, você precisa procurar em outro lugar, talvez por um erro de digitação em uma classe ou nome de elemento ou algum CSS inválido.
 

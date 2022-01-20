@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 使用 WebOTP API 验证网络上的电话号码
 subhead: 帮助通过短信收到 OTP 的用户
 authors:
@@ -48,7 +48,7 @@ WebOTP API 允许您的应用程序接收绑定到您应用程序域的特殊格
 
 整个过程如下图所示。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> WebOTP API 图</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %} <figcaption> WebOTP API 图</figcaption></figure>
 
 尝试一下[演示](https://web-otp.glitch.me)中的操作。它不会询问您的电话号码或向您的设备发送短信，但您可以复制演示中显示的文本，从另一台设备发送短信。可以这样操作是因为在使用 WebOTP API 时发送方是谁并不重要。
 
@@ -271,7 +271,7 @@ Your OTP is: 123456.
 - 为短信文本消息中的 top-frame 原点和 iframe 原点添加注释。
 - 配置权限策略，允许跨域 iframe 直接从用户处接收 OTP。
 
-<figure class="w-figure">{% Video src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4", autoplay="true", controls="true", loop="true", muted="true", preload="auto", width="300", height="600", class="w-screenshot" %} <figcaption class="w-figcaption">iframe 中的 WebOTP API 实例。</figcaption></figure>
+<figure>{% Video src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4", autoplay="true", controls="true", loop="true", muted="true", preload="auto", width="300", height="600" %} <figcaption>iframe 中的 WebOTP API 实例。</figcaption></figure>
 
 您可以尝试 [https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io) 中的演示。
 

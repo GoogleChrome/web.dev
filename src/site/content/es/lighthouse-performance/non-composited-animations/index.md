@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evita las animaciones no compuestas
 description: Cómo aprobar la auditoría Lighthouse "Evitar animaciones no compuestas".
 date: 2020-08-12
@@ -13,7 +13,7 @@ Las animaciones no compuestas pueden parecer irregulares (es decir, no fluidas) 
 
 Los algoritmos del navegador para convertir HTML, CSS y JavaScript en píxeles se conocen colectivamente como *canalización de renderizado*.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="The rendering pipeline consists of the following sequential steps: JavaScript, Style, Layout, Paint, Composite.", width="800", height="122" %} <figcaption class="w-figcaption"> Canalización de renderizado.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="The rendering pipeline consists of the following sequential steps: JavaScript, Style, Layout, Paint, Composite.", width="800", height="122" %} <figcaption> Canalización de renderizado.</figcaption></figure>
 
 Está bien si no comprendes lo que significa cada paso de la canalización de renderizado. La clave para entenderlo ahora es que en cada paso de la canalización de renderizado, el navegador usa el resultado de la operación anterior para crear nuevos datos. Por ejemplo, si tu código hace algo que activa Diseño, los pasos Pintura y Composición deben ejecutarse nuevamente. Una animación no compuesta es cualquier animación que activa uno de los pasos anteriores en la canalización de renderizado (Estilo, Diseño o Pintura). Las animaciones no compuestas funcionan peor porque obligan al navegador a trabajar más.
 

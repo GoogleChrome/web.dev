@@ -48,15 +48,15 @@ You can try out the API with our [demo](https://trust-token-demo.glitch.me), and
 [inspect tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) in the 
 Chrome DevTools **Network** and **Application** tabs.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", 
   alt="Screenshot showing Trust Tokens in the Chrome DevTools Network tab.", width="800", height="584" %}
-  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
+  <figcaption>Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Screenshot showing Trust Tokens in the Chrome DevTools Application tab.", width="800", height="584" %}
-  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
+  <figcaption>Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
 </figure>
 
 {% Aside %}

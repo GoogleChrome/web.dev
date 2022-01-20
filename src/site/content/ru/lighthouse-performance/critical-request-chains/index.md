@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Избегайте цепочек критических запросов
 description: Узнайте, что такое цепочки критических запросов, как они влияют на производительность веб-страницы и как можно уменьшить этот эффект.
 date: 2019-05-02
@@ -12,7 +12,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) оповещает о критических запросах, загружаемых с высоким приоритетом:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Скриншот проверки Minimize critical request depth («Минимизируйте глубину критических запросов») в Lighthouse", width="800", height="452", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Скриншот проверки Minimize critical request depth («Минимизируйте глубину критических запросов») в Lighthouse", width="800", height="452" %}</figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

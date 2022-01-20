@@ -18,7 +18,7 @@ updated: 2020-09-28
 
 ### При установке: в качестве зависимости {: #on-install-as-dependency }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="При установке: в качестве зависимости.", width="800", height="498" %} <figcaption class="w-figcaption">При установке: в качестве зависимости.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="При установке: в качестве зависимости.", width="800", height="498" %} <figcaption>При установке: в качестве зависимости.</figcaption></figure>
 
 Сервис-воркеры поддерживают событие `install`, при помощи которого можно подготовить все необходимое для обработки других событий. Во время его обработки предыдущая версия сервис-воркера продолжает работать и выдавать страницы, так что не делайте ничего, что могло бы этому помешать.
 
@@ -48,7 +48,7 @@ self.addEventListener('install', function (event) {
 
 ### При установке: не в качестве зависимости {: #on-install-not }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="При установке: не в качестве зависимости.", width="800", height="500" %} <figcaption class="w-figcaption">При установке: не в качестве зависимости.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="При установке: не в качестве зависимости.", width="800", height="500" %} <figcaption>При установке: не в качестве зависимости.</figcaption></figure>
 
 Этот пример похож на предыдущий, но в данном случае загрузка ресурсов не задерживает окончание установки и не является обязательной для успешного завершения установки.
 
@@ -77,7 +77,7 @@ self.addEventListener('install', function (event) {
 
 ### При активации {: #on-activate }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="При активации.", width="800", height="500" %} <figcaption class="w-figcaption">При активации.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="При активации.", width="800", height="500" %} <figcaption>При активации.</figcaption></figure>
 
 **Подходит для:** очистки и миграции данных.
 
@@ -109,7 +109,7 @@ self.addEventListener('activate', function (event) {
 
 ### В ответ на действие пользователя {: #on-user-interaction }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="В ответ на действие пользователя.", width="800", height="222" %} <figcaption class="w-figcaption">В ответ на действие пользователя.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="В ответ на действие пользователя.", width="800", height="222" %} <figcaption>В ответ на действие пользователя.</figcaption></figure>
 
 **Подходит для:** ситуаций, когда перевести весь сайт в офлайн невозможно и вы разрешили пользователю выбирать контент для офлайн-просмотра, такой как видео с YouTube, статьи из Википедии, отдельные галереи с Flickr и т. д.
 
@@ -138,7 +138,7 @@ document.querySelector('.cache-article').addEventListener('click', function (eve
 
 ### При получении ответа по сети {: #on-network-response }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="При получении ответа по сети.", width="800", height="390" %} <figcaption class="w-figcaption">При получении ответа по сети.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="При получении ответа по сети.", width="800", height="390" %} <figcaption>При получении ответа по сети.</figcaption></figure>
 
 **Подходит для:** часто обновляемых ресурсов, таких как почтовый ящик пользователя или содержание статьи. Также подходит для необязательного контента, такого как аватары, однако в этом случае проявляйте осторожность.
 
@@ -170,7 +170,7 @@ self.addEventListener('fetch', function (event) {
 
 ### При проверке устаревшего ресурса {: #stale-while-revalidate }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="При проверке устаревшего ресурса.", width="800", height="388" %} <figcaption class="w-figcaption">При проверке устаревшего ресурса.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="При проверке устаревшего ресурса.", width="800", height="388" %} <figcaption>При проверке устаревшего ресурса.</figcaption></figure>
 
 **Подходит для:** частого обновления ресурсов, для которых наличие самой последней версии не является критичным. К таким ресурсам относятся аватары пользователей.
 
@@ -196,7 +196,7 @@ self.addEventListener('fetch', function (event) {
 
 ### При получении push-уведомления {: #on-push-message }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="При получении push-уведомления.", width="800", height="498" %} <figcaption class="w-figcaption">При получении push-уведомления.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="При получении push-уведомления.", width="800", height="498" %} <figcaption>При получении push-уведомления.</figcaption></figure>
 
 Интерфейс [Push API](https://developers.google.com/web/fundamentals/push-notifications) — еще одна функция, реализованная на основе сервис-воркеров. Она позволяет запускать сервис-воркер (и только его) в ответ на сообщение от службы уведомлений ОС, и это происходит даже в том случае, если у пользователя нет открытых вкладок с вашим сайтом. Для использования этой функциональности страница должна запросить разрешение пользователя.
 
@@ -242,7 +242,7 @@ self.addEventListener('notificationclick', function (event) {
 
 ### При фоновой синхронизации {: #on-background-sync }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="При фоновой синхронизации.", width="800", height="219" %} <figcaption class="w-figcaption">При фоновой синхронизации.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="При фоновой синхронизации.", width="800", height="219" %} <figcaption>При фоновой синхронизации.</figcaption></figure>
 
 [Фоновая синхронизация](https://developers.google.com/web/updates/2015/12/background-sync) — еще одна функция, реализованная на основе сервис-воркеров. Она позволяет запрашивать синхронизацию в фоновом режиме как единоразово, так и с (крайне неточным) интервалом. Запускается только код сервис-воркера, и это происходит даже в том случае, если у пользователя нет открытой вкладки с вашим сайтом. Для использования этой функциональности страница должна запросить разрешение пользователя.
 
@@ -302,7 +302,7 @@ navigator.storage.persist()
 
 ### Только кеш {: #cache-only }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Только кеш.", width="800", height="272" %} <figcaption class="w-figcaption">Только кеш.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Только кеш.", width="800", height="272" %} <figcaption>Только кеш.</figcaption></figure>
 
 **Подходит для:** любого контента, который остается неизменным в рамках одной «версии» сайта. Такие ресурсы должны кешироваться во время события install, поэтому должны быть доступны в кеше.
 
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Только сеть {: #network-only }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Только сеть.", width="800", height="272" %} <figcaption class="w-figcaption">Только сеть.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Только сеть.", width="800", height="272" %} <figcaption>Только сеть.</figcaption></figure>
 
 **Подходит для:** запросов, не имеющих офлайн-эквивалента, таких как оповещения аналитики или запросы, отличные от GET.
 
@@ -334,7 +334,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Кеш, в случае неудачи — сеть {: #cache-falling-back-to-network }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Кеш, в случае неудачи — сеть.", width="800", height="395" %} <figcaption class="w-figcaption">Кеш, в случае неудачи — сеть.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Кеш, в случае неудачи — сеть.", width="800", height="395" %} <figcaption>Кеш, в случае неудачи — сеть.</figcaption></figure>
 
 **Походит для:** приложений, ориентированных в первую очередь на офлайн-работу. В таких случаях именно эта стратегия будет использоваться для большинства запросов. Другие паттерны будут применяться в порядке исключения на основании типа входящего запроса.
 
@@ -352,7 +352,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Приоритизация по скорости {: #cache-and-network-race }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="Приоритизация по скорости.", width="800", height="427" %} <figcaption class="w-figcaption">Приоритизация по скорости.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="Приоритизация по скорости.", width="800", height="427" %} <figcaption>Приоритизация по скорости.</figcaption></figure>
 
 **Подходит для:** небольших ресурсов, при загрузке которых очень важна скорость на устройствах с медленным доступом к диску.
 
@@ -380,7 +380,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Сеть, в случае неудачи — кеш {: #network-falling-back-to-cache }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Сеть, в случае неудачи — кеш.", width="800", height="388" %} <figcaption class="w-figcaption">Сеть, в случае неудачи — кеш.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Сеть, в случае неудачи — кеш.", width="800", height="388" %} <figcaption>Сеть, в случае неудачи — кеш.</figcaption></figure>
 
 **Подходит для:** ресурсов, которые часто обновляются независимо от версии сайта: статей, аватаров, лент в социальных сетях и таблиц рекордов в играх (в качестве временного решения).
 
@@ -400,7 +400,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Кеш, затем сеть {: #cache-then-network }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Кеш, затем сеть.", width="800", height="478" %} <figcaption class="w-figcaption">Кеш, затем сеть.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Кеш, затем сеть.", width="800", height="478" %} <figcaption>Кеш, затем сеть.</figcaption></figure>
 
 **Подходит для:** контента, который необходимо часто обновлять: статей, лент в социальных сетях и таблиц рекордов в играх.
 
@@ -469,7 +469,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Резервные ресурсы {: #generic-fallback }
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Резервные ресурсы.", width="800", height="389" %} <figcaption class="w-figcaption">Резервные ресурсы.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Резервные ресурсы.", width="800", height="389" %} <figcaption>Резервные ресурсы.</figcaption></figure>
 
 Когда загрузить ресурс из кеша или из сети не удается, есть смысл предоставить резервный вариант.
 
@@ -503,7 +503,7 @@ self.addEventListener('fetch', function (event) {
 
 ### Разметка на стороне сервис-воркера {: #Service Worker-side-templating }
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Разметка на стороне сервис-воркера", width="800", height="463" %} <figcaption class="w-figcaption">Разметка на стороне сервис-воркера.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="Разметка на стороне сервис-воркера", width="800", height="463" %} <figcaption>Разметка на стороне сервис-воркера.</figcaption></figure>
 
 **Подходит для:** страниц, для которых невозможно кешировать ответ с сервера.
 

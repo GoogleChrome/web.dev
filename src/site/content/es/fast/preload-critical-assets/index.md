@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Precarga de activos críticos para mejorar la velocidad de carga
 authors:
   - houssein
@@ -30,15 +30,15 @@ Cuando abre una página web, el navegador solicita el documento HTML de un servi
 
 La precarga es más adecuada para los recursos que el navegador suele descubrir más tarde.
 
-<figure class="w-figure">{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Captura de pantalla del panel de red de Chrome DevTools", width="701", height="509"%}<figcaption class="w-figcaption"> En este ejemplo, la fuente Pacifico se define en la hoja de estilo con una regla <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>. El navegador carga el archivo de fuente solo después de que haya terminado de descargar y analizar la hoja de estilo.</figcaption></figure>
+<figure>{% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Captura de pantalla del panel de red de Chrome DevTools", width="701", height="509"%}<figcaption> En este ejemplo, la fuente Pacifico se define en la hoja de estilo con una regla <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a>. El navegador carga el archivo de fuente solo después de que haya terminado de descargar y analizar la hoja de estilo.</figcaption></figure>
 
 Al precargar un determinado recurso, está informando al navegador que le gustaría recuperar dicho recurso antes de que el navegador lo descubra, porque está seguro de que es importante para la página actual.
 
-<figure class="w-figure">{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de pantalla del panel Chrome DevTools Network después de habilitar la precarga", width="701", height="509" %}. En este ejemplo, se realiza la precarga de la fuente Pacifico, por lo que la descarga ocurre en paralelo con la hoja de estilo.</figure>
+<figure>{% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Captura de pantalla del panel Chrome DevTools Network después de habilitar la precarga", width="701", height="509" %}. En este ejemplo, se realiza la precarga de la fuente Pacifico, por lo que la descarga ocurre en paralelo con la hoja de estilo.</figure>
 
 La cadena de solicitudes críticas representa el orden de los recursos priorizados y buscados por el navegador. Lighthouse identifica los activos que se encuentran en el tercer nivel de esta cadena como descubiertos tardíamente. Puede utilizar la [**auditoría de solicitudes de claves de precarga**](/uses-rel-preload) para identificar cuáles recursos precargar.
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="La clave de precarga de Lighthouse solicita auditoría", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="La clave de precarga de Lighthouse solicita auditoría", width="745", height="97" %}
 
 Puede precargar recursos agregando una etiqueta `<link>` con el atributo `rel="preload"` al encabezado de su documento HTML:
 
@@ -54,7 +54,7 @@ Sugerencias de recursos, por ejemplo, [`preconnect`](/preconnect-and-dns-prefetc
 
 Las precargas no utilizadas activan una advertencia de consola en Chrome, aproximadamente 3 segundos después del evento de `load`.
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Advertencia de la consola Chrome DevTools sobre recursos precargados no utilizados", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Advertencia de la consola Chrome DevTools sobre recursos precargados no utilizados", width="800", height="228" %}
 
 {% Aside %} [`preload` es compatible](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) con todos los navegadores modernos. {% endAside %}
 

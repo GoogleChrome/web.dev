@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: RAIL 모델을 사용한 성능 측정
 description: |2-
 
@@ -21,13 +21,13 @@ tags:
 
 RAIL은 웹 앱 수명 주기의 4가지 뚜렷한 측면인 응답(response), 애니메이션(animation), 유휴 상태(idle) 및 로드(load)를 나타냅니다. 사용자는 이러한 각 컨텍스트에 대해 서로 다른 성능 기대치를 가지고 있으므로 컨텍스트 및 [사용자가 지연을 인식하는 방식에 대한 UX 연구](https://www.nngroup.com/articles/response-times-3-important-limits/)를 기반으로 성능 목표가 정의됩니다.
 
-<figure class="w-figure">{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="RAIL 성능 모델의 네 가지 부분: 응답(response), 애니메이션(animation), 유휴 상태(idle) 및 로드(load)", width="800", height="290" %} <figcaption class="w-figcaption">RAIL 성능 모델의 네 가지 부분</figcaption></figure>
+<figure>{% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="RAIL 성능 모델의 네 가지 부분: 응답(response), 애니메이션(animation), 유휴 상태(idle) 및 로드(load)", width="800", height="290" %} <figcaption>RAIL 성능 모델의 네 가지 부분</figcaption></figure>
 
 ## 사용자에게 집중
 
 사용자를 성능 개선 노력의 중심에 둡니다. 아래 표는 사용자가 성능 지연을 인식하는 방식에 대한 주요 측정항목을 설명합니다.
 
-<table class="w-table-wrapper">
+<table class="table-wrapper scrollbar">
   <thead>성능 지연에 대한 사용자 인식</thead>
   <tr>
     <td>0~16ms</td>
@@ -77,7 +77,7 @@ RAIL의 컨텍스트에서 **목표** 및 **지침**이라는 용어는 다음�
 
 목표는 100ms 이내에 입력에 응답하는 것인데 우리의 예산은 왜 50ms에 불과할까요? 이는 일반적으로 입력 처리 외에 다른 작업이 수행되고 있으며, 해당 작업이 허용 가능한 입력 응답에 사용할 수 있는 시간의 일부를 차지하기 때문입니다. 애플리케이션이 유휴 시간 동안 권장되는 50ms 청크로 작업을 수행한다면, 이는 해당 작업 청크 중 하나의 동안 작업이 이루어질 때, 입력이 최대 50ms 동안 대기할 수 있음을 의미합니다. 이를 고려한다면 실제 입력 처리에 나머지 50ms만 사용할 수 있다고 가정하는 것이 안전합니다. 이러한 효과는 유휴 작업 동안 수신된 입력이 사용 가능한 처리 시간을 줄이며 큐에서 대기하는 방식을 보여주는 아래 다이어그램에 시각화되어 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="유휴 작업 동안 수신된 입력이 사용 가능한 처리 시간을 50ms로 줄이며 큐에서 대기하는 방식을 보여주는 다이어그램", width="800", height="400" %} <figcaption class="w-figcaption">유휴 작업이 입력 응답 예산에 영향을 미치는 방식.</figcaption></figure>
+<figure>{% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="유휴 작업 동안 수신된 입력이 사용 가능한 처리 시간을 50ms로 줄이며 큐에서 대기하는 방식을 보여주는 다이어그램", width="800", height="400" %} <figcaption>유휴 작업이 입력 응답 예산에 영향을 미치는 방식.</figcaption></figure>
 
 ## 애니메이션: 10ms 안에 프레임 생성
 

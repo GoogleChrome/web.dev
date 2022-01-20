@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: O carregamento da página não é rápido o suficiente em redes móveis
 description: Aprenda como fazer sua página da web carregar rapidamente em redes móveis.
 web_lighthouse:
@@ -16,7 +16,7 @@ Muitos usuários acessam sua página através de uma conexão de rede celular le
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas que não carregam rápido o suficiente em dispositivos móveis:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Auditoria Lighthouse mostrando que página não carrega rápido o suficiente em dispositivos móveis", width="800", height="98", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Auditoria Lighthouse mostrando que página não carrega rápido o suficiente em dispositivos móveis", width="800", height="98" %}</figure>
 
 Duas métricas principais afetam a forma como os usuários percebem o tempo de carregamento:
 

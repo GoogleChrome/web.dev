@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: コード分割でJavaScriptペイロードを削減する
 authors:
   - houssein
@@ -19,7 +19,7 @@ tags:
 
 ページ上のすべてのJavaScriptの実行にかなりの時間がかかると、Lighthouseは監査の失敗を示します。
 
-{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="実行に時間がかかりすぎるスクリプトを示すLighthouse監査の失敗。", width="797", height="100", class="w-screenshot" %}
+{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="実行に時間がかかりすぎるスクリプトを示すLighthouse監査の失敗。", width="797", height="100" %}
 
 JavaScriptバンドルを分割して、ユーザーがアプリケーションを読み込んだときに最初のルートに必要なコードのみを送信します。これにより、解析およびコンパイルする必要のあるスクリプトの量が最小限に抑えられ、ページの読み込み時間が短縮されます。
 

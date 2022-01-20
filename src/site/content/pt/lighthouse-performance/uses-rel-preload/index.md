@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pré-carregue solicitações importantes
 description: Saiba mais sobre a auditoria uses-rel-preload.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 A seção Oportunidades de seu relatório Lighthouse sinaliza o terceiro nível de solicitações em sua cadeia de solicitações críticas como candidatos de pré-carregamento:
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Uma captura de tela da auditoria Lighthouse Pré-carregue solicitações importantes", width="800", height="214", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="Uma captura de tela da auditoria Lighthouse Pré-carregue solicitações importantes", width="800", height="214" %}</figure>
 
 ## Como sinalizações do Lighthouse determinam candidatos a pré-carregamento
 

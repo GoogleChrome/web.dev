@@ -45,7 +45,7 @@ Si ya sabe dónde está utilizando `SharedArrayBuffer`, pase a [Analizar el impa
     ```
 4. El nombre del archivo y el número de línea al final del mensaje (por ejemplo, `common-bundle.js:535`) indican de dónde proviene `SharedArrayBuffer`. Si se trata de una biblioteca de terceros, comuníquese con el desarrollador para solucionar el problema. Si se implementa como parte de su sitio web, siga la guía que se indica a continuación para habilitar el aislamiento de origen cruzado.
 
-<figure class="w-figure">{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Advertencia de la consola DevToools cuando se utiliza SharedArrayBuffer sin aislamiento de origen cruzado", width="800", height="163", class="w-screenshot" %} <figcaption>  Advertencia de la consola DevToools cuando se utiliza SharedArrayBuffer sin aislamiento de origen cruzado.</figcaption></figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Advertencia de la consola DevToools cuando se utiliza SharedArrayBuffer sin aislamiento de origen cruzado", width="800", height="163" %} <figcaption>  Advertencia de la consola DevToools cuando se utiliza SharedArrayBuffer sin aislamiento de origen cruzado.</figcaption></figure>
 
 ### (Avanzado) Uso de informes de depreciación
 

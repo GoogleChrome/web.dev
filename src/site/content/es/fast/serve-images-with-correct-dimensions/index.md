@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Sirve imágenes con las dimensiones correctas
 authors:
   - katiehempenius

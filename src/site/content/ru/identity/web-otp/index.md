@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Подтверждайте номера телефонов в Интернете с помощью API WebOTP
 subhead: Упростите для пользователей процедуру подтверждения телефона с помощью одноразовых паролей, полученных через СМС
 authors:
@@ -48,7 +48,7 @@ API WebOTP позволяет приложению получать специа
 
 Весь процесс показан на изображении ниже.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> Схема API WebOTP </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %} <figcaption> Схема API WebOTP </figcaption></figure>
 
 Запустите [демонстрационный пример](https://web-otp.glitch.me). Он не запрашивает номер телефона и не отправляет СМС на ваше устройство, но вы можете отправить СМС с другого устройства, скопировав текст, отображаемый в демонстрации. Это работает, потому что при использовании API WebOTP не имеет значения, кто отправитель.
 
@@ -271,7 +271,7 @@ Your OTP is: 123456.
 - аннотировать в СМС-сообщении источник iframe верхнего уровня и источник iframe;
 - настроить политику разрешений, чтобы разрешить iframe с перекрестным происхождением напрямую получать OTP от пользователя.
 
-<figure class="w-figure">{% Video src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4", autoplay="true", controls="true", loop="true", muted="true", preload="auto", width="300", height="600", class="w-screenshot" %} <figcaption class="w-figcaption"> API WebOTP в iframe в действии. </figcaption></figure>
+<figure>{% Video src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4", autoplay="true", controls="true", loop="true", muted="true", preload="auto", width="300", height="600" %} <figcaption> API WebOTP в iframe в действии. </figcaption></figure>
 
 Попробуйте демонстрацию на [https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io).
 

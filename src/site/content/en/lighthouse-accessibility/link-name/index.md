@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Links do not have a discernible name
 description: |
   Learn how to make links on your web page more accessible by
@@ -18,8 +18,8 @@ and other assistive technologies.
 
 Lighthouse flags links that don't have discernible names:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Lighthouse audit showing links do not have discernible names", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6enCwSloHJSyylrNIUF4.png", alt="Lighthouse audit showing links do not have discernible names", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

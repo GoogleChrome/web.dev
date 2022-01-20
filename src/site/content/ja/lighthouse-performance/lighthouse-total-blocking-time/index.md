@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Total Blocking Time (合計ブロック時間)
 description: |2-
 
@@ -14,7 +14,7 @@ Total Blocking Time（TBT）は、Lighthouseレポートの**[パフォーマン
 
 Lighthouseのレポートには、TBTがミリ秒単位で表示されます。
 
-<figure class="w-figure">{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="LighthouseのTotal Blocking Time (合計ブロック時間) 監査のスクリーンショット", width="800", height="592", class="w-screenshot"%}</figure>
+<figure>{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="LighthouseのTotal Blocking Time (合計ブロック時間) 監査のスクリーンショット", width="800", height="592" %}</figure>
 
 ## TBTが測定するもの
 
@@ -26,7 +26,7 @@ TBTは、マウスのクリック、画面のタップ、キーボードの押�
 
 この表は、TBTスコアを解釈する方法を示しています。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

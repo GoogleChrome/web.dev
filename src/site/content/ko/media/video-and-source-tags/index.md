@@ -65,8 +65,8 @@ tags:
 
 대역폭을 절약하고 사이트의 반응성을 높이십시오. 미디어 조각을 사용하여 비디오 요소에 시작 및 종료 시간을 추가하십시오.
 
-<figure class="w-figure">
-  <video controls class="w-screenshot" width="100%">
+<figure>
+  <video controls width="100%">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
     <p>이 브라우저는 비디오 요소를 지원하지 않습니다.</p>
@@ -86,7 +86,7 @@ tags:
 
 다행히 브라우저 개발자 도구에서 이 작업을 수행할 수 있습니다. 예를 들어 Chrome에서는 [네트워크 패널에](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network) 있습니다. `Accept-Ranges` `bytes` 라고 표시되어 있는지 확인합니다. 이미지에서 이 헤더 주위에 빨간색 상자를 그렸습니다. `bytes` 가 표시되지 않으면 호스팅 제공업체에 문의해야 합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools 스크린샷. Accept-Ranges: 바이트.", width="800", height="480", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Chrome DevTools 스크린샷. Accept-Ranges: 바이트.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools 스크린샷. Accept-Ranges: 바이트.", width="800", height="480" %} <figcaption> Chrome DevTools 스크린샷. Accept-Ranges: 바이트.</figcaption></figure>
 
 ### 포스터 이미지 포함
 
@@ -100,12 +100,12 @@ tags:
 
 `src`가 손상되었거나 제공된 비디오 형식이 지원되지 않는 경우 포스터가 대체될 수도 있습니다. 포스터 이미지의 유일한 단점은 일부 대역폭을 소비하고 렌더링이 필요한 추가 파일 요청입니다. 자세한 내용은 [이미지를 효율적으로 인코딩](/uses-optimized-images/)을 참조하십시오.
 
-<div class="w-columns">{% Compare 'worse' %}<figure class="w-figure w-figure--inline-left"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="대체 포스터가 없으면 동영상이 깨져 보입니다.", width="360", height="600" %}</figure>
+<div class="w-columns">{% Compare 'worse' %}<figure data-float="left"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="대체 포스터가 없으면 동영상이 깨져 보입니다.", width="360", height="600" %}</figure>
 </div>
 <p data-md-type="paragraph">{% CompareCaption %} 대체 포스터가 없으면 동영상이 깨져 보입니다. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
 <p data-md-type="paragraph">{% Compare 'better' %}</p>
-<div data-md-type="block_html"><figure class="w-figure w-figure--inline-right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="대체 포스터는 첫 번째 프레임이 캡처된 것처럼 보이게 합니다.", width="360", height="600" %}</figure></div>
+<div data-md-type="block_html"><figure data-float="right">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="대체 포스터는 첫 번째 프레임이 캡처된 것처럼 보이게 합니다.", width="360", height="600" %}</figure></div>
 <p data-md-type="paragraph">{% CompareCaption %} 대체 포스터는 첫 번째 프레임이 캡처된 것처럼 보이게 합니다. {% endCompareCaption %}</p>
 <p data-md-type="paragraph">{% endCompare %}</p>
 <div data-md-type="block_html"></div>
@@ -115,8 +115,8 @@ tags:
 비디오 요소가 뷰포트에 비해 너무 크면 컨테이너가 오버플로되어 사용자가 콘텐츠를 보거나 컨트롤을 사용할 수 없게 될 수 있습니다.
 
 <div class="w-columns">
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome 스크린샷, 세로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="338", height="600" %}<figcaption class="w-figcaption"> Android Chrome 스크린샷, 세로: 스타일이 지정되지 않은 동영상 요소가 표시 영역을 넘습니다.</figcaption></figure>
-  <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="800", height="450" %}<figcaption class="w-figcaption"> Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 넘습니다.</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome 스크린샷, 세로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="338", height="600" %}<figcaption> Android Chrome 스크린샷, 세로: 스타일이 지정되지 않은 동영상 요소가 표시 영역을 넘습니다.</figcaption></figure>
+  <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 초과합니다.", width="800", height="450" %}<figcaption> Android Chrome 스크린샷, 가로: 스타일이 지정되지 않은 동영상 요소가 뷰포트를 넘습니다.</figcaption></figure>
 </div>
 
 CSS를 사용하여 비디오 크기를 제어할 수 있습니다. CSS가 모든 요구 사항을 충족하지 못하는 경우 YouTube 및 기타 소스의 비디오에 대해서도 [FitVids](http://fitvidsjs.com/)(이 기사의 범위를 벗어남)와 같은 JavaScript 라이브러리 및 플러그인이 도움이 될 수 있습니다. 불행히도 이러한 리소스는 [네트워크 페이로드 크기](/total-byte-weight/)를 증가시켜 수익과 부정적인 결과를 초래하고 사용자에게는 많은 비용이 발생할 수 있습니다.
@@ -170,12 +170,12 @@ iframe의 미디어 콘텐츠(예: YouTube 동영상)의 경우 반응형 접근
 iPhone의 Safari는 세로 방향과 가로 방향 사이를 잘 전환합니다.
 
 <div class="w-columns">
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="iPhone의 Safari에서 재생되는 비디오 스크린샷(세로).", width="338", height="600", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> iPhone의 Safari에서 재생 중인 비디오의 스크린샷(세로).</figcaption></figure><figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="iPhone의 Safari에서 재생되는 비디오의 스크린샷(가로).", width="600", height="338", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> iPhone의 Safari에서 재생 중인 비디오의 스크린샷(가로).</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="iPhone의 Safari에서 재생되는 비디오 스크린샷(세로).", width="338", height="600" %}<figcaption> iPhone의 Safari에서 재생 중인 비디오의 스크린샷(세로).</figcaption></figure><figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="iPhone의 Safari에서 재생되는 비디오의 스크린샷(가로).", width="600", height="338" %} <figcaption> iPhone의 Safari에서 재생 중인 비디오의 스크린샷(가로).</figcaption></figure>
 </div>
 
 iPad 및 Android Chrome에서 기기 방향은 문제가 될 수 있습니다. 예를 들어, 사용자 정의 없이 iPad에서 가로 방향으로 재생되는 비디오는 다음과 같은 모습입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="iPad의 Safari에서 재생되는 비디오의 스크린샷(가로)",  width="600", height="450", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption"> iPad의 Safari에서 재생 중인 비디오의 스크린샷(가로).</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="iPad의 Safari에서 재생되는 비디오의 스크린샷(가로)",  width="600", height="450" %}<figcaption> iPad의 Safari에서 재생 중인 비디오의 스크린샷(가로).</figcaption></figure>
 
 CSS를 사용하여 비디오를 `width: 100%` 혹은 `max-width: 100%`로 설정하면 많은 장치 방향 레이아웃 문제를 해결할 수 있습니다.
 

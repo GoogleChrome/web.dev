@@ -27,7 +27,7 @@ tags:
 
 响应式网页设计最初由 [Ethan Marcotte 在《A List Apart》中](http://alistapart.com/article/responsive-web-design/)进行了定义，响应了用户及他们所使用设备的需求。布局会根据设备的尺寸和功能而变化。例如，用户会在手机上看到以单列视图显示的内容，而平板电脑可能会采用两列视图来显示相同的内容。
 
-<figure class="w-figure">{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot", playsinline=true %}</figure>
+<figure>{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}</figure>
 
 手机、“平板手机”、平板电脑、台式机、游戏机、电视，甚至可穿戴设备中存在多种不同的屏幕尺寸。屏幕尺寸始终在变化，因此至关重要的是您的网站能够适应现在以及将来的任何屏幕尺寸。此外，我们与不同设备的交互方式也不同。例如，您的一部分访问者将使用触摸屏。现代响应式设计将所有这些因素都考虑在内，进而优化每个人的体验。
 
@@ -51,9 +51,9 @@ tags:
 
 使用`width=device-width`元可视区域值可以指示页面采用设备独立像素匹配屏幕宽度。一个设备（或密度）独立像素代表一个像素，在高密度屏幕上可能由许多物理像素组成。这使得页面无论是在小型手机还是大型桌面显示器上进行渲染，都可以对内容进行重排来匹配不同的屏幕尺寸。
 
-<figure class="w-figure">{% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="文本被过度缩小而难以阅读的页面截图", width="500", height="640" %} <figcaption class="w-figcaption">页面在没有可视区域元标签的情况下在设备中加载的示例。<a href="https://without-vp-meta.glitch.me/">在 Glitch 上查看此示例</a>。</figcaption></figure>
+<figure>{% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="文本被过度缩小而难以阅读的页面截图", width="500", height="640" %} <figcaption>页面在没有可视区域元标签的情况下在设备中加载的示例。<a href="https://without-vp-meta.glitch.me/">在 Glitch 上查看此示例</a>。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="文本大小易于阅读的同一页面截图", width="500", height="888" %} <figcaption class="w-figcaption">页面在有可视区域元标签的情况下在设备中加载的示例。<a href="https://with-vp-meta.glitch.me/">在 Glitch 上查看此示例</a>。</figcaption></figure>
+<figure>{% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="文本大小易于阅读的同一页面截图", width="500", height="888" %} <figcaption>页面在有可视区域元标签的情况下在设备中加载的示例。<a href="https://with-vp-meta.glitch.me/">在 Glitch 上查看此示例</a>。</figcaption></figure>
 
 [部分浏览器](https://css-tricks.com/probably-use-initial-scale1/)在旋转到横屏模式时页面宽度保持不变，同时采用缩放来填充屏幕，而不是通过重排。添加`initial-scale=1`值可以指示浏览器在 CSS 像素和设备独立像素之间建立 1:1 的关系，从而在无需考虑设备方向的情况下使页面能够充分利用完整的横向宽度。
 
@@ -100,7 +100,7 @@ img {
 
 在过去，我们需要设置元素来按百分比创建布局。在下面的示例中，您可以看到一个包含浮动元素的双列布局，元素尺寸由像素设置。一旦可视区域小于两列的总宽度，我们就必须水平滚动来查看内容。
 
-<figure class="w-figure">{% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="第二列的大部分超出可视区域的双列布局截图", width="800", height="504", class="w-screenshot" %} <figcaption class="w-figcaption">使用像素设置的浮动布局。<a href="https://layout-floats-px.glitch.me/">在 Glitch 上查看此示例</a>。</figcaption></figure>
+<figure>{% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="第二列的大部分超出可视区域的双列布局截图", width="800", height="504" %} <figcaption>使用像素设置的浮动布局。<a href="https://layout-floats-px.glitch.me/">在 Glitch 上查看此示例</a>。</figcaption></figure>
 
 通过为宽度设置百分比，列的宽度就会始终保持在容器宽度的特定百分比。这意味着列会随之变窄，而不会出现滚动条。
 
@@ -227,11 +227,11 @@ CSS 网格布局使您能够非常直观地创建灵活的网格。如果考虑�
 
 我们就拿开头看到的示例来说：天气预报。第一步是让天气预报在小屏幕上呈现出良好的效果。
 
-<figure class="w-figure">{% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="移动设备宽度下的天气应用程序截图", width="400", height="667", class="w-screenshot" %} <figcaption class="w-figcaption">宽度较窄情况下的应用程序。</figcaption></figure>
+<figure>{% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="移动设备宽度下的天气应用程序截图", width="400", height="667" %} <figcaption>宽度较窄情况下的应用程序。</figcaption></figure>
 
 接下来，调整浏览器的大小，直到元素之间出现大片空白，这时天气预报的呈现效果就逊色一些了。虽然这个看法有点主观，但超过`600px`肯定是太宽了。
 
-<figure class="w-figure">{% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="元素之间间距过大的天气应用程序截图", width="400", height="240", class="w-screenshot" %} <figcaption class="w-figcaption">该应用程序处于我们认为应该调整设计的地步。</figcaption></figure>
+<figure>{% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="元素之间间距过大的天气应用程序截图", width="400", height="240" %} <figcaption>该应用程序处于我们认为应该调整设计的地步。</figcaption></figure>
 
 如需在`600px`处插入一个断点，请在 CSS 的末尾为组件创建两个媒体查询，一个在浏览器宽度处于`600px`及以下时使用，另一个在浏览器宽度大于`600px`时使用。
 
@@ -294,9 +294,9 @@ CSS 网格布局使您能够非常直观地创建灵活的网格。如果考虑�
 
 经典的可读性理论表明，一个理想的列应该包含每行 70 到 80 个字符（英语中的大约 8 到 10 个单词）。因此，每当一个文本块的宽度增加至超过 10 个单词时，请考虑添加一个断点。
 
-<figure class="w-figure">{% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="移动设备上一页文本的截图", width="400", height="488", class="w-screenshot" %} <figcaption class="w-figcaption">在移动设备上阅读的文本。</figcaption></figure>
+<figure>{% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="移动设备上一页文本的截图", width="400", height="488" %} <figcaption>在移动设备上阅读的文本。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="桌面端浏览器中一页文本的截图", width="800", height="377", class="w-screenshot" %} <figcaption class="w-figcaption">在桌面端浏览器中阅读的文本，已添加断点限制每行的长度。</figcaption></figure>
+<figure>{% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="桌面端浏览器中一页文本的截图", width="800", height="377" %} <figcaption>在桌面端浏览器中阅读的文本，已添加断点限制每行的长度。</figcaption></figure>
 
 我们来更深入地看一下上方的博客文章示例。在较小的屏幕上，`1em`的 Roboto 字体可以完美地保持每行 10 个单词，但在较大的屏幕上就需要一个断点。在本示例中，如果浏览器宽度大于`575px`，则理想的内容宽度为`550px`。
 
@@ -320,9 +320,9 @@ CSS 网格布局使您能够非常直观地创建灵活的网格。如果考虑�
 
 设置好媒体查询断点后，您会希望查看您的网站在有了断点后的呈现效果。虽然您可以调整浏览器窗口大小来触发这些断点，但 Chrome DevTools 有一项内置功能，可以让您轻松查看页面在不同断点下的呈现效果。
 
-<figure class="w-figure">{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="打开我们的天气应用程序并选择宽度为 822 像素时的 DevTools 截图。", width="800", height="522", class="w-screenshot" %} <figcaption class="w-figcaption">DevTools 显示的天气应用程序在较宽的可视区域下的呈现效果。</figcaption></figure>
+<figure>{% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="打开我们的天气应用程序并选择宽度为 822 像素时的 DevTools 截图。", width="800", height="522" %} <figcaption>DevTools 显示的天气应用程序在较宽的可视区域下的呈现效果。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="打开我们的天气应用程序并选择宽度为 436 像素时的 DevTools 截图。", width="800", height="521", class="w-screenshot" %} <figcaption class="w-figcaption">DevTools 显示的天气应用程序在较窄的可视区域下的呈现效果。</figcaption></figure>
+<figure>{% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="打开我们的天气应用程序并选择宽度为 436 像素时的 DevTools 截图。", width="800", height="521" %} <figcaption>DevTools 显示的天气应用程序在较窄的可视区域下的呈现效果。</figcaption></figure>
 
 如需在不同的断点下查看您的页面：
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Удалите неиспользуемый CSS-код
 description: Узнайте о проверке неиспользуемых CSS-правил.
 date: 2019-05-02
@@ -10,7 +10,7 @@ web_lighthouse:
 
 В разделе Opportunities (Возможности) отчета Lighthouse перечислены все таблицы стилей с неиспользуемым CSS-кодом с потенциальной экономией 2 КиБ или более. Удалите неиспользуемый CSS-код, чтобы уменьшить количество ненужных байтов, потребляемых сетевой активностью:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="Скриншот проверки Remove unused CSS (Удалите неиспользуемый CSS-код) в Lighthouse", width="800", height="235", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="Скриншот проверки Remove unused CSS (Удалите неиспользуемый CSS-код) в Lighthouse", width="800", height="235" %}</figure>
 
 ## Как неиспользуемый CSS-код снижает производительность
 
@@ -36,7 +36,7 @@ web_lighthouse:
 
 Вкладка Coverage в Chrome DevTools поможет обнаружить критический и некритический CSS-код. См. раздел [«Просмотр используемого и неиспользуемого CSS-кода на вкладке Coverage»](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: вкладка Coverage", width="800", height="407", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption"> Chrome DevTools: вкладка Coverage. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: вкладка Coverage", width="800", height="407" %} <figcaption> Chrome DevTools: вкладка Coverage. </figcaption></figure>
 
 Вы также можете извлечь эту информацию из Puppeteer. См. [Page.coverage](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagecoverage) .
 

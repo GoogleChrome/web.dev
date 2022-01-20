@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 페이지에 HTML 문서 유형이 없으므로 쿼크 모드가 트리거됩니다
 description: |2-
 
@@ -16,7 +16,7 @@ doctype을 지정하면 브라우저가 페이지가 [예기치 않은 방식으
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 `<!DOCTYPE html>` 선언이 없는 페이지에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse 감사에서 누락된 문서 유형이 표시됨", width="800", height="76", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse 감사에서 누락된 문서 유형이 표시됨", width="800", height="76" %}</figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 

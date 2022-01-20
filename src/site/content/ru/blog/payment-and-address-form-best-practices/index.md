@@ -133,7 +133,7 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 Например, для адресов электронной почты используйте `type="email"`, а для номеров телефона — `type="tel"`.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Скриншоты двух типов клавиатур на Android-телефоне: для ввода электронного адреса (type=email) и для ввода номера телефона (type=tel).", width="800", height="683" %} <figcaption class="w-figcaption">Клавиатуры для ввода электронного адреса и для ввода телефона.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Скриншоты двух типов клавиатур на Android-телефоне: для ввода электронного адреса (type=email) и для ввода номера телефона (type=tel).", width="800", height="683" %} <figcaption>Клавиатуры для ввода электронного адреса и для ввода телефона.</figcaption></figure>
 
 {: #inputmode-attribute}
 
@@ -163,7 +163,7 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 По умолчанию в качестве адреса выставления счета следует использовать адрес доставки. Чтобы сократить визуальную зашумленность, не отображайте адрес выставления счета в самой форме, а укажите ссылку для его редактирования (или используйте [элементы `summary` и `details`](https://simpl.info/details/)).
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Пример страницы оформления заказа со ссылкой, позволяющей изменить адрес выставления счета.", width="800", height="250" %} <figcaption class="w-figcaption">Добавьте ссылку для редактирования платежной информации.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Пример страницы оформления заказа со ссылкой, позволяющей изменить адрес выставления счета.", width="800", height="250" %} <figcaption>Добавьте ссылку для редактирования платежной информации.</figcaption></figure>
 
 Как и в случае с адресом доставки, для полей адреса выставления счета следует указывать соответствующие значения атрибута «autocomplete», чтобы пользователю не приходилось вводить данные повторно. Если поля ввода в разных разделах имеют одинаковое название, но разные значения, то для их разграничения добавьте в начало атрибута «autocomplete» дополнительное слово.
 
@@ -195,7 +195,7 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 При попытке отправить форму браузер автоматически выделяет поля с отсутствующими или неверно указанными значениями. Использование JavaScript не требуется.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Скриншот формы входа в Chrome на ПК, отображающий предупреждение и выделение поля в связи с неверно указанным электронным адресом.", width="500", height="483", class="w-screenshot" %} <figcaption class="w-figcaption">Базовая валидация при помощи встроенных средств браузера.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Скриншот формы входа в Chrome на ПК, отображающий предупреждение и выделение поля в связи с неверно указанным электронным адресом.", width="500", height="483" %} <figcaption>Базовая валидация при помощи встроенных средств браузера.</figcaption></figure>
 
 Проверяйте данные и предоставляйте пользователю отклик непосредственно во время ввода, а не отображайте список ошибок после нажатия кнопки отправки. Если данные необходимо проверять на сервере после отправки формы, то после проверки перечисляйте все обнаруженные ошибки и четко выделяйте все неверно заполненные поля формы, а также отображайте рядом с каждым из них рекомендации по исправлению. Проверяйте журналы сервера и данные аналитики на предмет часто совершаемых ошибок: они могут указывать на необходимость изменения дизайна формы.
 
@@ -227,7 +227,7 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 Самый простой способ минимизировать помехи при заполнении формы в интернет-магазине — это использовать гостевое оформление заказа по умолчанию. Не заставляйте пользователей создавать аккаунт перед покупкой. Отсутствие возможности оформить заказ от имени гостя считается одной из главных причин возникновения брошенных корзин.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Причины возникновения брошенных корзин при оформлении заказа.", width="800", height="503", class="w-screenshot" %} <figcaption class="w-figcaption">Источник: <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Причины возникновения брошенных корзин при оформлении заказа.", width="800", height="503" %} <figcaption>Источник: <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption></figure>
 
 Предложить пользователю зарегистрировать аккаунт можно после окончания оформления заказа. К этому моменту у вас уже есть большая часть данных, необходимых для создания аккаунта, так что процесс регистрации можно сделать быстрым и легким.
 
@@ -237,19 +237,19 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 Процесс оформления заказа можно сделать субъективно менее сложным, если отображать ход его оформления и помогать пользователю четкими инструкциями. На видео ниже показано, как это реализовала британская розничная сеть [johnlewis.com](https://www.johnlewis.com).
 
-<figure class="w-figure"> {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption class="w-figcaption">Отображайте ход оформления заказа.</figcaption></figure>
+<figure> {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %} <figcaption>Отображайте ход оформления заказа.</figcaption></figure>
 
 Старайтесь поддерживать интерес пользователя. На каждом этапе, приближающем пользователя к оплате, используйте четкие заголовки страниц и названия кнопок, дающие понять, что требуется от пользователя и каким будет следующий этап оформления заказа.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Давайте кнопкам формы осмысленные подписи, которые четко обозначают следующий шаг.</figcaption></figure>
+  <figcaption>Давайте кнопкам формы осмысленные подписи, которые четко обозначают следующий шаг.</figcaption></figure>
 
 Указывайте для элементов ввода атрибут `enterkeyhint`, позволяющий задавать подпись клавиши Enter на мобильной клавиатуре. Например, можно использовать `enterkeyhint="previous"` и `enterkeyhint="next"` в многостраничных формах, `enterkeyhint="done"` — для последнего поля ввода в форме, а `enterkeyhint="search"` — для поля ввода поиска.
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Два скриншота формы ввода адреса на Android, иллюстрирующие изменение значка кнопки Enter под влиянием атрибута enterkeyhint.", width="800", height="684", class="w-screenshot" %} <figcaption class="w-figcaption">Кнопки Enter на Android: «next» и «done».</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Два скриншота формы ввода адреса на Android, иллюстрирующие изменение значка кнопки Enter под влиянием атрибута enterkeyhint.", width="800", height="684" %} <figcaption>Кнопки Enter на Android: «next» и «done».</figcaption></figure>
 
 Атрибут `enterkeyhint` [поддерживается на Android и iOS](https://caniuse.com/mdn-html_global_attributes_enterkeyhint). Подробности см. в [описании enterkeyhint](https://github.com/dtapuska/enterkeyhint).
 
@@ -261,15 +261,15 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 Ограничьте потенциальные точки выхода, избавившись от визуального мусора и отвлекающих факторов, таких как реклама продуктов. Многие успешные магазины не отображают при оформлении заказа даже поле поиска и элементы навигации.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Два скриншота, отображающие ход оформления заказа в мобильной версии johnlewis.com. Поиск, навигация и другие отвлекающие факторы не показываются.", width="800", height="683", class="w-screenshot" %} <figcaption class="w-figcaption">Поиск, навигация и другие отвлекающие факторы скрыты со страницы оформления заказа.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Два скриншота, отображающие ход оформления заказа в мобильной версии johnlewis.com. Поиск, навигация и другие отвлекающие факторы не показываются.", width="800", height="683" %} <figcaption>Поиск, навигация и другие отвлекающие факторы скрыты со страницы оформления заказа.</figcaption></figure>
 
 Не давайте пользователю отклониться от курса. В момент оформления заказа не следует предлагать пользователю что-либо еще.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Скриншот мобильной страницы оформления заказа, на которой отображается навязчивая реклама с текстом «FREE STICKERS».", width="350", height="735", class="w-screenshot" %} <figcaption class="w-figcaption">Не отвлекайте клиентов от завершения покупки.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Скриншот мобильной страницы оформления заказа, на которой отображается навязчивая реклама с текстом «FREE STICKERS».", width="350", height="735" %} <figcaption>Не отвлекайте клиентов от завершения покупки.</figcaption></figure>
 
 Для пользователей, заходящих повторно, вы можете еще сильнее упростить процесс оформления заказа, сократив объем лишних данных. Например, отображайте адрес доставки в виде обычного текста (а не формы) и укажите ссылку для его изменения.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Скриншот раздела подтверждения данных на странице оформления заказа. Данные отображаются в виде обычного текста; рядом видны ссылки для изменения адреса доставки, способа оплаты и адреса выставления счета, которые не отображаются на странице.", width="450", height="219", class="w-screenshot" %} <figcaption class="w-figcaption">Скрывайте данные, которые не требуется отображать клиентам.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Скриншот раздела подтверждения данных на странице оформления заказа. Данные отображаются в виде обычного текста; рядом видны ссылки для изменения адреса доставки, способа оплаты и адреса выставления счета, которые не отображаются на странице.", width="450", height="219" %} <figcaption>Скрывайте данные, которые не требуется отображать клиентам.</figcaption></figure>
 
 ## Упростите ввод имени и адреса {: #address-forms}
 
@@ -325,11 +325,11 @@ HTML-элемент `<form>` предоставляет доступ к мощн
 
 {% endCompare %}
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Сравнение распознавания букв Unicode с распознаванием только латинских букв.</figcaption></figure>
+  <figcaption>Сравнение распознавания букв Unicode с распознаванием только латинских букв.</figcaption></figure>
 
 {% Aside %} Подробнее об [интернационализации и локализации](#internationalization-localization) рассказывается ниже, однако старайтесь проектировать формы ввода с учетом имен, распространенных в регионах проживания всех ваших пользователей. Например, для японских имен есть смысл добавить поле, позволяющее указать фонетическую формы имени. Это поможет сотрудникам службы поддержки правильно произносить имя клиента при разговоре по телефону. {% endAside %}
 
@@ -412,19 +412,19 @@ Address line 2 (optional)
 
 Поиск адреса по индексу работает не во всех странах, а в некоторых регионах к одному почтовому индексу может принадлежать большое количество адресов.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Одному почтовому индексу может соответствовать множество адресов.</figcaption></figure>
+  <figcaption>Одному почтовому индексу может соответствовать множество адресов.</figcaption></figure>
 
 Пользователям трудно выбирать адреса из длинного списка, особенно если они просматривают страницу с мобильного устройства, находясь в спешке или в напряженном состоянии. В такой ситуации будет проще и надежнее воспользоваться автозаполнением, чтобы в одно касание или нажатие вставить адрес в форму.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </source></video>
-  <figcaption class="w-figcaption">Единое поле ввода позволяет заполнять адрес в одно касание (или нажатие).</figcaption></figure>
+  <figcaption>Единое поле ввода позволяет заполнять адрес в одно касание (или нажатие).</figcaption></figure>
 
 ## Упрощайте формы оплаты {: #general-guidelines}
 
@@ -447,13 +447,13 @@ Address line 2 (optional)
 
 Неправильно спроектированные [нестандартные элементы](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) могут нарушать работу автозаполнения и тем самым создавать помехи при оплате, а также не поддерживаются устаревшими браузерами. Если автоматическое заполнение данных банковской карты срабатывает для всех полей, но не для поля срока действия, использующего нестандартный элемент, пользователю придется смотреть его на самой карте, что с большой вероятностью отобьет у него желание совершать покупку. Поэтому предпочтительнее использовать стандартные HTML-элементы с соответствующим стилем.
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Скриншот формы оплаты с нестандартными элементами ввода срока действия, мешающими работе автозаполнения.", width="800", height="916" %} <figcaption class="w-figcaption">Автозаполнение сработало для всех полей — за исключением срока действия карты.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Скриншот формы оплаты с нестандартными элементами ввода срока действия, мешающими работе автозаполнения.", width="800", height="916" %} <figcaption>Автозаполнение сработало для всех полей — за исключением срока действия карты.</figcaption></figure>
 
 ### Используйте единое поле для ввода номеров телефона и банковских карт {: #single-number-input}
 
 Для ввода номеров телефона и банковских карт используйте единое поле; не разбивайте номер на части. Это упрощает процесс ввода данных и их валидацию, а также позволяет использовать автозаполнение в браузере. Это же справедливо и для других числовых данных, таких как PIN-коды и защитные коды карт.
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Скриншот формы оплаты. Поле номера банковской карты разбито на четыре элемента ввода.", width="800", height="833" %} <figcaption class="w-figcaption">Не используйте раздельные поля для ввода номера банковской карты.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Скриншот формы оплаты. Поле номера банковской карты разбито на четыре элемента ввода.", width="800", height="833" %} <figcaption>Не используйте раздельные поля для ввода номера банковской карты.</figcaption></figure>
 
 ### Будьте аккуратны при валидации ввода {: #validate}
 
@@ -471,7 +471,7 @@ Address line 2 (optional)
 
 Формы оплаты и ввода адреса особенно важно тестировать на платформах, которые чаще всего встречаются у ваших пользователей, поскольку функциональность и внешний вид элементов форм могут различаться, а отличия в размерах области просмотра могут приводить к проблемам с позиционированием. Сервис BrowserStack [бесплатное тестирование на различных устройствах и браузерах](https://www.browserstack.com/open-source) для проектов с открытым исходным кодом.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Скриншоты формы оплаты с сайта payment-form.glitch.me на iPhone 7 и 11. Кнопка «Завершить оплату» видна на iPhone 11, но не 7", width="800", height="707" %} <figcaption class="w-figcaption">Отображение одной и той же страницы на iPhone 7 и iPhone 11.<br>Чтобы кнопка <strong>Завершить оплату</strong> оставалась видимой, необходимо уменьшить поля на небольших экранах мобильных устройств.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Скриншоты формы оплаты с сайта payment-form.glitch.me на iPhone 7 и 11. Кнопка «Завершить оплату» видна на iPhone 11, но не 7", width="800", height="707" %} <figcaption>Отображение одной и той же страницы на iPhone 7 и iPhone 11.<br>Чтобы кнопка <strong>Завершить оплату</strong> оставалась видимой, необходимо уменьшить поля на небольших экранах мобильных устройств.</figcaption></figure>
 
 ## Внедрите аналитику и RUM {: #analytics-rum}
 

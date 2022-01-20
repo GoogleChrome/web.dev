@@ -51,7 +51,7 @@ tags:
 
 Всякий раз при обнаружении или автоматическом обновлении пассивного смешанного контента Chrome записывает подробные сообщения на вкладку «**Проблемы**» в DevTools, чтобы помочь вам решить конкретную проблему.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="На вкладке «Проблемы» в Chrome DevTools отображается подробная информация о конкретной проблеме со смешанным контентом и способах ее устранения", width="800", height="310", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNxoomaHi2ksvYHGuNiE.jpg", alt="На вкладке «Проблемы» в Chrome DevTools отображается подробная информация о конкретной проблеме со смешанным контентом и способах ее устранения", width="800", height="310" %}</figure>
 
 ### Активный смешанный контент
 
@@ -61,7 +61,7 @@ tags:
 
 Следующая [демонстрация](https://active-mixed-content.glitch.me/) содержит примеры активного смешанного контента. [Загрузите пример через HTTP](http://active-mixed-content.glitch.me/), чтобы увидеть контент, который блокируется при [загрузке примера через HTTPS](https://active-mixed-content.glitch.me/). Заблокированный контент также будет подробно описан на вкладке «**Проблемы**».
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="На вкладке «Проблемы» в Chrome DevTools отображается подробная информация о конкретной проблеме со смешанным контентом и способах ее устранения", width="800", height="361", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xRG5zpKLr0Z3OwfYpn2H.jpg", alt="На вкладке «Проблемы» в Chrome DevTools отображается подробная информация о конкретной проблеме со смешанным контентом и способах ее устранения", width="800", height="361" %}</figure>
 
 {% Aside %} Браузеры также выделяют заблокированный контент в своих DevTools. Проблемы с заблокированным контентом подробно описаны на вкладке «**Проблемы**» в браузерах на основе Chromium. Firefox и Safari записывают сообщения в консоли. {% endAside %}
 

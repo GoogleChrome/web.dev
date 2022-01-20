@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Не регистрируется сервис-воркер, управляющий страницей и `start_url`
 description: Узнайте, как зарегистрировать сервис-воркер, поддерживающий возможности прогрессивных веб-приложений, такие как офлайн-работа, push-уведомления и возможность установки.
 web_lighthouse:
@@ -24,7 +24,7 @@ updated: 2020-06-10
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые не выполняют регистрацию сервис-воркера:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Проверка Lighthouse показывает, что сайт не выполняет регистрацию сервис-воркера", width="800", height="95", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Проверка Lighthouse показывает, что сайт не выполняет регистрацию сервис-воркера", width="800", height="95" %}</figure>
 
 Lighthouse проверяет, возвращает ли [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol) номер версии сервис-воркера. Если этого не происходит, проверка завершается неудачей.
 

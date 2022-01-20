@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 성능 예산에 Lighthouse 사용
 authors:
   - katiehempenius

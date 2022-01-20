@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 减少 JavaScript 执行时间
 description: 了解 JavaScript 执行如何降低页面性能以及如何加速。
 date: 2019-05-02
@@ -32,7 +32,7 @@ tags:
 
 当 JavaScript 执行时间超过 2 秒时，[Lighthouse](https://developers.google.com/web/tools/lighthouse/)会显示警告。当执行时间超过 3.5 秒时审计失败：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="减少 JavaScript 执行时间的 Lighthouse 审计截图", width="800", height="321", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="减少 JavaScript 执行时间的 Lighthouse 审计截图", width="800", height="321" %}</figure>
 
 为了帮助您确定对执行时间影响最大的因素，Lighthouse 报告了执行、评估和解析页面加载的每个 JavaScript 文件所花费的时间。
 

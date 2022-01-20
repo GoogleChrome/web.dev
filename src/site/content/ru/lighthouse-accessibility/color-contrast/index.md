@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Недостаточное соотношение контрастности цветов фона и текста
 description: Узнайте, как улучшить доступность веб-страницы, обеспечив достаточную цветовую контрастность всего текста.
 date: 2019-05-02
@@ -16,7 +16,7 @@ web_lighthouse:
 
 Lighthouse помечает текст как не прошедший проверку, если обнаруживает недостаточно высокое соотношение контрастности между цветом фона и самого текста:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Проверка Lighthouse, показывающая недостаточное соотношение контрастности цветов текста и фона", width="800", height="343", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Проверка Lighthouse, показывающая недостаточное соотношение контрастности цветов текста и фона", width="800", height="343" %}</figure>
 
 Для оценки контрастности текста Lighthouse использует критерий успеха 1.4.3 из <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" rel="noopener">рекомендаций WCAG 2.1</a>:
 
@@ -44,17 +44,17 @@ Lighthouse помечает текст как не прошедший прове
 
 Инструмент выбора цвета сообщит вам, соответствует ли элемент требованиям к цветовому контрасту, принимая во внимание размер и толщину шрифта:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Скриншот инструмента выбора цвета в Chrome DevTools. Информация о цветовом контрасте выделена прямоугольником", width="298", height="430", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Скриншот инструмента выбора цвета в Chrome DevTools. Информация о цветовом контрасте выделена прямоугольником", width="298", height="430" %}</figure>
 
 При помощи инструмента выбора цвета вы можете подстроить цвет, чтобы его контрастность стала достаточно высокой. Проще всего использовать для выбора цвета формат HSL. Переключитесь на этот формат, нажав на переключатель в правой части окна выбора цвета:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Скриншот инструмента выбора цвета в Chrome DevTools. Переключатель цветового формата выделен прямоугольником", width="298", height="430", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Скриншот инструмента выбора цвета в Chrome DevTools. Переключатель цветового формата выделен прямоугольником", width="298", height="430" %}</figure>
 
 Как только вы подберете подходящее цветовое значение, укажите его в CSS-коде сайта.
 
 Более сложные случаи, такие как текст, отображаемый поверх градиента или изображения, необходимо проверять вручную; то же самое касается графики и элементов интерфейса. Для исправления текста, отображаемого поверх изображения, используйте в DevTools средство выбора цвета фона, позволяющее проверить фон, на котором отображается текст:
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Скриншот инструмента выбора цвета фона в Chrome DevTools", width="301", height="431", class="w-screenshot" %}</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Скриншот инструмента выбора цвета фона в Chrome DevTools", width="301", height="431" %}</figure>
 
 В остальных случаях можно воспользоваться специальным инструментом, таким как <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser</a> от Paciello Group.
 

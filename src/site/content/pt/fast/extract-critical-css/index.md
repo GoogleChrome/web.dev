@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Extraia CSS crítico
 subhead: Aprenda como melhorar os tempos de renderização com técnicas críticas de CSS.
 authors:
@@ -21,21 +21,21 @@ O navegador deve baixar e analisar os arquivos CSS antes de mostrar a página, o
 
 {% Aside 'key-term' %} CSS crítico é uma técnica que extrai o CSS para conteúdo acima da dobra, a fim de renderizar o conteúdo para o usuário o mais rápido possível. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="Uma ilustração de um laptop e um dispositivo móvel com páginas da web ultrapassando as bordas das telas", width="800", height="469", class="" %}</figure>
+<figure>{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="Uma ilustração de um laptop e um dispositivo móvel com páginas da web ultrapassando as bordas das telas", width="800", height="469", class="" %}</figure>
 
 {% Aside 'note' %} Acima da dobra está todo o conteúdo que um visualizador vê no carregamento da página antes de rolar. Não existe uma altura de pixel definida universalmente do que é considerado conteúdo acima da dobra, pois há uma infinidade de dispositivos e tamanhos de tela. {% endAside %}
 
 Colocar inline estilos extraídos no `<head>` do documento HTML elimina a necessidade de fazer uma solicitação adicional para buscar esses estilos. O restante do CSS pode ser carregado de forma assíncrona.
 
-<figure class="w-figure">{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="arquivo HTML com CSS crítico inline (embutido) no cabeçalho", width="800", height="325", class="w-screenshot" %} <figcaption class="w-figcaption"> CSS crítico inline </figcaption></figure>
+<figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="arquivo HTML com CSS crítico inline (embutido) no cabeçalho", width="800", height="325" %} <figcaption> CSS crítico inline </figcaption></figure>
 
 Melhorar os tempos de renderização pode fazer uma grande diferença no [desempenho percebido](https://developers.google.com/web/fundamentals/performance/rail#ux) , especialmente em caso más condições de rede. Em redes móveis, a alta latência é um problema, independentemente da largura de banda.
 
-<figure class="w-figure">{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Comparação da visualização da película de filme do carregamento de uma página com CSS de bloqueio de renderização (parte superior) e a mesma página com CSS crítico inline (parte inferior) em uma conexão 3G. tira de filme mostra seis quadros em branco antes de finalmente exibir o conteúdo. Tira de filme inferior exibe conteúdo significativo no primeiro quadro.", width="800", height="363", class="w-screenshot" %} <figcaption class="w-figcaption"> Comparação do carregamento de uma página com CSS de bloqueio de renderização (parte superior) e a mesma página com CSS crítico inline (parte inferior) em uma conexão 3G </figcaption></figure>
+<figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Comparação da visualização da película de filme do carregamento de uma página com CSS de bloqueio de renderização (parte superior) e a mesma página com CSS crítico inline (parte inferior) em uma conexão 3G. tira de filme mostra seis quadros em branco antes de finalmente exibir o conteúdo. Tira de filme inferior exibe conteúdo significativo no primeiro quadro.", width="800", height="363" %} <figcaption> Comparação do carregamento de uma página com CSS de bloqueio de renderização (parte superior) e a mesma página com CSS crítico inline (parte inferior) em uma conexão 3G </figcaption></figure>
 
 Se você tem um [First Contentful Paint (FCP)](/first-contentful-paint) ruim e vê a oportunidade "Eliminar recurso de bloqueio de renderização" nas auditorias do Lighthouse, é uma boa ideia dar uma chance ao CSS crítico.
 
-{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Auditoria do Lighthouse com 'Eliminar recurso de bloqueio de renderização' ou oportunidades de 'Adiar CSS não utilizado'", width="743", height="449", class="w-screenshot" %}
+{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Auditoria do Lighthouse com 'Eliminar recurso de bloqueio de renderização' ou oportunidades de 'Adiar CSS não utilizado'", width="743", height="449" %}
 
 {% Aside 'gotchas' %} Lembre-se de que se você colocar uma grande quantidade de CSS inline, isso atrasará a transmissão do restante do documento HTML. Se tudo for priorizado, nada será. Colocar como inline também tem algumas desvantagens, pois evita que o navegador armazene o CSS em cache para reutilização em carregamentos de página subsequentes, portanto, é melhor usá-lo com moderação. {% endAside %}
 

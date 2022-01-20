@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 高效加载第三方 JavaScript
 subhead: 避免使用第三方脚本时发生的常见缺陷，从而改善加载时间和用户体验。
 authors:
@@ -105,7 +105,7 @@ tags:
 
 如果构建不当，嵌入的第三方资源可能是导致页面速度变慢的一个重要因素。如果它们不重要或低于首屏（即，如果用户必须滚动才能查看它们），则延迟加载是提高页面速度和绘制指标的好方法。这样，用户将更快地获得主页内容并拥有更好的体验。
 
-<figure class="w-figure w-figure--inline-left">{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="显示在移动设备上的网页图，存在超出屏幕的滚动内容。低于首屏的内容以去饱和方式显示，因为尚未加载。", width="366", height="438" %}</figure>
+<figure data-float="left">{% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="显示在移动设备上的网页图，存在超出屏幕的滚动内容。低于首屏的内容以去饱和方式显示，因为尚未加载。", width="366", height="438" %}</figure>
 
 一种有效的方法是在主页内容加载后延迟加载第三方内容。广告是这种方法的一个很好的候选者。
 

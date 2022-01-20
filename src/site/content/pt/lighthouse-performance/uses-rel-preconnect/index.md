@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Pré-conectar às origens necessárias
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 A seção Oportunidades de seu relatório Lighthouse lista todas as solicitações principais que ainda não estão priorizando solicitações de busca com `<link rel=preconnect>`:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Uma captura de tela do Lighthouse Preconnect para auditoria de origens exigidas", width="800", height="226", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="Uma captura de tela do Lighthouse Preconnect para auditoria de origens exigidas", width="800", height="226" %}</figure>
 
 ## Compatibilidade do navegador
 

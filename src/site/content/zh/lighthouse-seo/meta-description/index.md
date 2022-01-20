@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 文档没有描述标签
 description: 了解 Lighthouse 的“文档没有描述标签”审计。
 date: 2019-05-02
@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有描述标签的页面：
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="显示文档没有描述标签的 Lighthouse 审计", width="800", height="74", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="显示文档没有描述标签的 Lighthouse 审计", width="800", height="74" %}</figure>
 
 若出现以下情况，审计将失败：
 

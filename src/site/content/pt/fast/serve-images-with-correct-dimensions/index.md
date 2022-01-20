@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Veicule imagens com dimensões corretas
 authors:
   - katiehempenius

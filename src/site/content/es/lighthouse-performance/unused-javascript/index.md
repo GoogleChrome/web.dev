@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Cómo eliminar el JavaScript que no se utiliza
 description: |2-
 
@@ -18,7 +18,7 @@ El JavaScript que no se utiliza puede reducir la velocidad de carga de la págin
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) etiqueta cada archivo de JavaScript con más de 20 kibibytes de código sin utilizar:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="Una captura de pantalla de la auditoría", width="800", height="332", class="w-screenshot" %} <figcaption class="w-figcaption"> Haga clic en el valor de la columna <b>URL</b> para abrir el código fuente del script en una nueva pestaña. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="Una captura de pantalla de la auditoría", width="800", height="332" %} <figcaption> Haga clic en el valor de la columna <b>URL</b> para abrir el código fuente del script en una nueva pestaña. </figcaption></figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 

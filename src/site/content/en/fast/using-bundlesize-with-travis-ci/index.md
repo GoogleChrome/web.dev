@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Using bundlesize with Travis CI
 authors:
   - mihajlija
@@ -36,7 +36,7 @@ To see it in action, here's an app bundled with
 kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
-  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567" %}
 </a>
 
 ## Set the performance budget

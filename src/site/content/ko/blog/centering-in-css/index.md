@@ -42,7 +42,7 @@ Resilience Ringer는 센터링 전략이 국제 레이아웃, 다양한 크기�
 
 컨텍스트에서 일부 메타 정보를 유지하는 데 도움이 되는 몇 가지 시각적 색상 힌트를 제공했습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438", class="w-스크린샷" %}<figcaption class="w-figcaption"></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438" %}<figcaption></figcaption></figure>
 
 - 분홍색 테두리는 센터링 스타일의 소유권을 나타냅니다.
 - 회색 상자는 항목을 중앙에 배치하려는 컨테이너의 배경입니다.
@@ -54,8 +54,8 @@ Resilience Ringer는 센터링 전략이 국제 레이아웃, 다양한 크기�
 
 ### 1. 콘텐츠 센터
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </source></video>
   <figcaption><a href="https://github.com/GoogleChromeLabs/ProjectVisBug#visbug">VisBug</a>로 콘텐츠 편집 및 복제</figcaption></figure>
@@ -89,8 +89,8 @@ Resilience Ringer는 센터링 전략이 국제 레이아웃, 다양한 크기�
 
 ### 2. Gentle Flex
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gentle-flex-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -125,8 +125,8 @@ Gentle Flex는 진정한 센터링 *전용* 전략입니다. 부드럽고 온화
 
 ### 3. 오토봇
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/autobot-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -162,8 +162,8 @@ Gentle Flex는 진정한 센터링 *전용* 전략입니다. 부드럽고 온화
 
 ### 4. 플러피 센터
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/fluffy-center-ringer-cycle.mp4">
   </source></video></figure>
 
@@ -195,8 +195,8 @@ Gentle Flex는 진정한 센터링 *전용* 전략입니다. 부드럽고 온화
 
 ### 5. 팝 &amp; 플롭
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/popnplop-ringer-cycle.mp4">
   </source></video></figure>
 

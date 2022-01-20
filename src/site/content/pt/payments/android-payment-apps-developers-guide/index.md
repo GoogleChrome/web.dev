@@ -20,12 +20,12 @@ feedback:
 
 A [API Payment Request](https://www.w3.org/TR/payment-request/) traz para a web uma interface baseada em navegador embutida que permite aos usuários inserir as informações de pagamento necessárias de um jeito mais fácil do que nunca. A API também pode invocar aplicativos de pagamento específicos da plataforma.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Fluxo de checkout com o aplicativo Google Pay específico da plataforma que usa Web Payments.</figcaption></figure>
+  <figcaption>Fluxo de checkout com o aplicativo Google Pay específico da plataforma que usa Web Payments.</figcaption></figure>
 
 Comparado ao uso apenas de Android Intents, o Web Payments permite uma melhor integração com o navegador, segurança e experiência do usuário:
 

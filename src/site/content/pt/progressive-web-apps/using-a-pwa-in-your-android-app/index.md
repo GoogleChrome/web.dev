@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Como usar um PWA em seu aplicativo Android
 authors:
   - andreban
@@ -60,7 +60,7 @@ O aplicativo também deve atender a critérios adicionais específicos do Androi
 
 {% Aside 'caution' %} Quando seu app é projetado principalmente para crianças menores de 13 anos, [são aplicadas políticas adicionais para a família do Play](https://play.google.com/about/families/) , que podem ser incompatíveis com o uso de Atividade da Web Confiável. {% endAside %}
 
-<figure class="w-figure w-figure--center">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="Uma captura de tela mostrando a pontuação do Lighthouse para AirHorn, com o emblema PWA e uma pontuação de desempenho de 100.", width="800", height="141" %} <figcaption class="w-figcaption w-figcaption--fullbleed"> O emblema do PWA no Lighthouse mostra se o seu PWA passa nos critérios de instalabilidade.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="Uma captura de tela mostrando a pontuação do Lighthouse para AirHorn, com o emblema PWA e uma pontuação de desempenho de 100.", width="800", height="141" %} <figcaption> O emblema do PWA no Lighthouse mostra se o seu PWA passa nos critérios de instalabilidade.</figcaption></figure>
 
 ## Ferramentas
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리 포함
 description: |2
 
@@ -18,7 +18,7 @@ updated: 2020-06-04
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리에 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="페이지에서 사용되는 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리를 보여주는 Lighthouse 감사", width="800", height="190", class ="w-스크린샷" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="페이지에서 사용되는 알려진 보안 취약점이 있는 프런트 엔드 JavaScript 라이브러리를 보여주는 Lighthouse 감사", width="800", height="190" %}</figure>
 
 취약한 라이브러리를 감지하기 위해 Lighthouse는 다음을 수행합니다.
 

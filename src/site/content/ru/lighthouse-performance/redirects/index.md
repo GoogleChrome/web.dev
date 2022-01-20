@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Как избежать множественной переадресации страницы
 description: |
   Почему переадресация страниц снижает скорость загрузки веб-страницы и как этого избежать.
@@ -28,8 +28,8 @@ Location: /путь/к/новому/местоположению
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 помечает страницы с множественной переадресацией:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}
 </figure>
 
 Страница не проходит этот аудит, если на ней есть как минимум две переадресации.

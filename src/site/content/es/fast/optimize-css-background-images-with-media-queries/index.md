@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Optimice las imágenes de fondo CSS con consultas de medios
 authors:
   - demianrenzulli
@@ -28,7 +28,7 @@ Primero, analice el tráfico de red de la demostración no optimizada:
 
 Verá que la única imagen que se solicita es `background-desktop.jpg`, que tiene un tamaño de **1006 KB**:
 
-<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="Seguimiento de red de DevTools para la imagen de fondo no optimizada", width="800", height="126", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="Seguimiento de red de DevTools para la imagen de fondo no optimizada", width="800", height="126" %}</figure>
 
 Cambie el tamaño de la ventana del navegador y observe que el registro de red no muestra ninguna solicitud nueva realizada por la página. Esto significa que se utiliza el mismo fondo de imagen para todos los tamaños de pantalla.
 
@@ -119,7 +119,7 @@ A continuación, visualice el sitio resultante en diferentes tamaños de pantall
 
 1. Abra el [sitio optimizado](https://use-media-queries-optimized.glitch.me/) en una nueva pestaña de Chrome.
 2. Haga que su ventana gráfica sea más estrecha (menos de `480px`).
-{% Instruction 'devtools-network', 'ol' %} 
+{% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'reload-page', 'ol' %} Observe cómo se solicitó la imagen `background-mobile.jpg`.
 3. Amplíe su ventana. Una vez que sea más ancha que `480px`, vea cómo se solicita `background-tablet.jpg`. Una vez que sea más ancha que `1025px`, vea cómo se solicita `background-desktop.jpg`.
 
@@ -127,7 +127,7 @@ Cuando se cambia el ancho de la pantalla del navegador, se solicitan nuevas imá
 
 En particular, cuando el ancho está por debajo del valor definido en el punto de interrupción para móvil (480px), verá el siguiente registro de red:
 
-<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="Seguimiento de red de DevTools para la imagen de fondo optimizada", width="800", height="125", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="Seguimiento de red de DevTools para la imagen de fondo optimizada", width="800", height="125" %}</figure>
 
 El tamaño del nuevo fondo móvil es un **67% más pequeño** que el del escritorio.
 

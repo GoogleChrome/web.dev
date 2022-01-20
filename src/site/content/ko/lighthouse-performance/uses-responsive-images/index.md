@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 적절한 크기의 이미지
 description: |2-
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 Lighthouse 보고서의 '기회' 섹션에는 페이지에서 크기가 적절하지 않은 모든 이미지와 함께 잠재적인 절감량이 [KiB(kibibytes)](https://en.wikipedia.org/wiki/Kibibyte) 단위로 나열됩니다. 이러한 이미지의 크기를 조정하여 데이터를 절약하고 페이지 로드 시간을 개선하세요.
 
-<figure class="w-figure">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="Lighthouse의 적절한 크기의 이미지 감사를 보여주는 스크린샷", width="800", height="264", class="w-screenshot" %}</figure>
+<figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="Lighthouse의 적절한 크기의 이미지 감사를 보여주는 스크린샷", width="800", height="264" %}</figure>
 
 ## Lighthouse가 과도한 크기의 이미지를 계산하는 방법
 

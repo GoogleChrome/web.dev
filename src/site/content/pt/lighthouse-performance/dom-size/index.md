@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Evite um tamanho excessivo de DOM
 description: |2-
 
@@ -30,7 +30,7 @@ Uma grande árvore DOM pode diminuir o desempenho de sua página de várias mane
 
 O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) relata o total de elementos DOM de uma página, a profundidade máxima do DOM da página e o máximo de elementos filho:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Captura de tela da auditoria do Lighthouse 'Evitar um tamanho excessivo do DOM'", width="800", height="363", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Captura de tela da auditoria do Lighthouse 'Evitar um tamanho excessivo do DOM'", width="800", height="363" %}</figure>
 
 O Lighthouse sinaliza páginas com árvores DOM:
 

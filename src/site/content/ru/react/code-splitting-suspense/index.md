@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Разделение кода с помощью React.lazy и Suspense
 subhead: |
   Чем меньше вы отправляете пользователям кода, тем лучше, поэтому разделяйте пакеты, чтобы не отправлять ненужный код!
@@ -101,8 +101,8 @@ height: 480
 Индикатор загрузки будет отображаться дольше. Обратите внимание, что весь код
 `AvatarComponent` передается как отдельный фрагмент.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="Панель «Сеть» в DevTools. Загружается файл chunk.js", width="800", height="478", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="Панель «Сеть» в DevTools. Загружается файл chunk.js", width="800", height="478" %}
 </figure>
 
 {% Aside %}

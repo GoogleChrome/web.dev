@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 자바스크립트 축소
 description: |2
 
@@ -12,7 +12,7 @@ web_lighthouse:
 
 JavaScript 파일을 축소하면 페이로드 크기와 스크립트 구문 분석 시간을 줄일 수 있습니다. Lighthouse 보고서의 기회 섹션에는 축소되지 않은 모든 JavaScript 파일이 나열되며 이러한 파일을 축소할 때 잠재적으로 절약할 수 있는 [키비바이트(KiB)](https://en.wikipedia.org/wiki/Kibibyte)가 표시됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="Lighthouse Minify JavaScript 감사의 스크린샷", width="800", height="212", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="Lighthouse Minify JavaScript 감사의 스크린샷", width="800", height="212" %}</figure>
 
 ## JavaScript 파일을 축소하는 방법
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: ファサードを使用したサードパーティリソースの遅延読み込み
 description: ファサードを使用してサードパーティのリソースを遅延読み込みする機会について学習します。
 date: 2020-12-01
@@ -17,7 +17,7 @@ web_lighthouse:
 
 {% endAside %}
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="ファサードを使用してYouTube埋め込みプレーヤーを読み込む例。操作時に読み込まれるファサードのサイズは3KB、プレーヤーのサイズは540 KBです。", width="800", height="521" %} <figcaption class="w-figcaption">ファサードを使用してYouTube埋め込みプレーヤーを読み込んでいます。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="ファサードを使用してYouTube埋め込みプレーヤーを読み込む例。操作時に読み込まれるファサードのサイズは3KB、プレーヤーのサイズは540 KBです。", width="800", height="521" %} <figcaption>ファサードを使用してYouTube埋め込みプレーヤーを読み込んでいます。</figcaption></figure>
 
 ## 遅延可能なサードパーティの埋め込みをLighthouseによって検出する方法
 
@@ -27,7 +27,7 @@ Lighthouseは、ソーシャルボタンウィジェットや動画埋め込み 
 
 これらのサードパーティの埋め込みのいずれかに属するリソースがページによって読み込まれると、監査は失敗します。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Vimeo組み込みプレーヤーとDriftライブチャットを強調するLighthouseサードパーティファサード監査。", width="800", height="517", class="w-screenshot" %} <figcaption class="w-figcaption">Lighthouseサードパーティのファサード監査。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Vimeo組み込みプレーヤーとDriftライブチャットを強調するLighthouseサードパーティファサード監査。", width="800", height="517" %} <figcaption>Lighthouseサードパーティのファサード監査。</figcaption></figure>
 
 ## ファサードを使用してサードパーティを遅延する方法
 

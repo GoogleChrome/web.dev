@@ -636,9 +636,9 @@ control and transparency, and user ergonomics.
 
 ### Opening a file or saving a new file
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BtrU36qfJoC5M9AgRumF.jpg", alt="File picker to open a file for reading", width="800", height="577", linkTo=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A file picker used to open an existing file for reading.
   </figcaption>
 </figure>
@@ -649,9 +649,9 @@ context][secure-contexts]. If users change their minds, they can cancel the sele
 picker and the site does not get access to anything. This is the same behavior as that of the
 `<input type="file">` element.
 
-<figure class="w-figure w-figure--inline-left">
+<figure data-float="left">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577", linkTo=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A file picker used to save a file to disk.
   </figcaption>
 </figure>
@@ -674,9 +674,9 @@ A web app cannot modify a file on disk without getting explicit permission from 
 
 #### Permission prompt
 
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", class="w-screenshot", linkTo=true %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", linkTo=true %}
+  <figcaption>
     Prompt shown to users before the browser is granted write
     permission on an existing file.
   </figcaption>
@@ -696,9 +696,9 @@ example by providing a way to ["download" the file][download-file], saving data 
 
 ### Transparency
 
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", class="w-screenshot", linkTo=true %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", linkTo=true %}
+  <figcaption>
     Omnibox icon indicating the user has granted the website permission to
     save to a local file.
   </figcaption>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 문서에 유효한 `rel=canonical`이 없음
 description: '"문서에 유효한 rel=canonical이 없음" Lighthouse 감사에 대해 알아봅니다.'
 date: 2019-05-02
@@ -24,7 +24,7 @@ web_lighthouse:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 잘못된 정식 링크가 있는 아무 페이지에나 플래그를 지정합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="유효하지 않은 정식 링크가 있는 문서를 표시하는 Lighthouse 감사", width="800", height="76", class="w-screenshot w-screenshot" %}</figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="유효하지 않은 정식 링크가 있는 문서를 표시하는 Lighthouse 감사", width="800", height="76" %}</figure>
 
 다음 조건 중 하나라도 충족되면 페이지가 이 감사에 실패합니다.
 

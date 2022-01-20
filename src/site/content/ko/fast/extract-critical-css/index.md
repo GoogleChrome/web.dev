@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 중요한 CSS 추출
 subhead: 중요한 CSS 기술로 렌더링 시간을 개선하는 방법을 알아보세요.
 authors:
@@ -21,21 +21,21 @@ tags:
 
 {% Aside 'key-term' %} Critical CSS는 사용자에게 가능한 한 빨리 콘텐츠를 렌더링하기 위해 스크롤 없이 볼 수 있는 콘텐츠에 대한 CSS를 추출하는 기술입니다. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="웹페이지가 화면 가장자리를 넘고 있는 노트북 및 모바일 장치의 그림", width="800", height="469", class ="" %}</figure>
+<figure>{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="웹페이지가 화면 가장자리를 넘고 있는 노트북 및 모바일 장치의 그림", width="800", height="469", class ="" %}</figure>
 
 {% Aside 'note' %} 스크롤 없이 볼 수 있는 부분은 스크롤하기 전 페이지 로드 시 뷰어가 보는 모든 콘텐츠입니다. 무수히 많은 장치와 화면 크기가 있기 때문에 스크롤 없이 볼 수 있는 콘텐츠 이상으로 간주되는 보편적으로 정의된 픽셀 높이는 없습니다. {% endAside %}
 
 `<head>`에서 추출된 스타일을 인라인하면 이러한 스타일을 가져오기 위해 추가로 요청할 필요가 없습니다. CSS의 나머지 부분은 비동기식으로 로드할 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="머리에 인라인된 중요한 CSS가 있는 HTML 파일", width="800", height="325", class="w-screenshot" %}<figcaption class="w-figcaption"> 인라인 중요 CSS</figcaption></figure>
+<figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="머리에 인라인된 중요한 CSS가 있는 HTML 파일", width="800", height="325" %}<figcaption> 인라인 중요 CSS</figcaption></figure>
 
 렌더링 시간을 개선하면 특히 열악한 네트워크 조건에서 [인지된 성능](https://developers.google.com/web/fundamentals/performance/rail#ux)에 큰 차이를 만들 수 있습니다. 모바일 네트워크에서는 대역폭에 관계없이 높은 대기 시간이 문제입니다.
 
-<figure class="w-figure">{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단)를 로드하는 필름 스트립 보기 비교. 맨 위로 필름 스트립은 최종적으로 콘텐츠를 표시하기 전에 6개의 빈 프레임을 표시합니다. 하단 필름 스트립은 첫 번째 프레임에 의미 있는 콘텐츠를 표시합니다.", width="800", height="363", class="w-screenshot" %}<figcaption class="w-figcaption"> 3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단) 로드 비교</figcaption></figure>
+<figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단)를 로드하는 필름 스트립 보기 비교. 맨 위로 필름 스트립은 최종적으로 콘텐츠를 표시하기 전에 6개의 빈 프레임을 표시합니다. 하단 필름 스트립은 첫 번째 프레임에 의미 있는 콘텐츠를 표시합니다.", width="800", height="363" %}<figcaption> 3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단) 로드 비교</figcaption></figure>
 
 [FCP(First Contentful Paint)](/first-contentful-paint)가 불량하고 Lighthouse 감사에서 "렌더링 차단 리소스 제거" 기회가 표시되는 경우 중요 CSS를 사용하는 것이 좋습니다.
 
-{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="'렌더 차단 리소스 제거' 또는 '사용하지 않는 CSS 연기' 기회를 사용한 Lighthouse 감사", width="743", height="449", class ="w-스크린샷" %}
+{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="'렌더 차단 리소스 제거' 또는 '사용하지 않는 CSS 연기' 기회를 사용한 Lighthouse 감사", width="743", height="449" %}
 
 {% Aside 'gotchas' %} 많은 양의 CSS를 인라인하면 HTML 문서의 나머지 부분의 전송이 지연된다는 점에 유의하세요. 모든 것이 우선시되면 아무것도 아닙니다. 인라인은 또한 브라우저가 후속 페이지 로드에서 재사용하기 위해 CSS를 캐싱하는 것을 방지한다는 점에서 몇 가지 단점이 있으므로 드물게 사용하는 것이 가장 좋습니다. {% endAside %}
 

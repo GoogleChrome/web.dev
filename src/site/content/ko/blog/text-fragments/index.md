@@ -21,7 +21,7 @@ feedback:
 
 Chrome 80은 커다란 릴리스였습니다. 여기에는 웹 작업자의 [ECMAScript 모듈](/module-workers/), [무효 병합](https://v8.dev/features/nullish-coalescing), [선택적 연결](https://v8.dev/features/optional-chaining) 등과 같이 매우 기대되는 기능이 많이 포함되어 있습니다. 릴리스는 평소와 같이 Chromium 블로그의 [블로그 게시물](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html)을 통해 발표되었습니다. 아래 스크린샷에서 블로그 게시물의 발췌문을 볼 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %} <figcaption class="w-figcaption"><code>id</code> 속성이 있는 요소 주위에 빨간색 상자가 있는 Chromium 블로그 게시물.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %} <figcaption><code>id</code> 속성이 있는 요소 주위에 빨간색 상자가 있는 Chromium 블로그 게시물.</figcaption></figure>
 
 아마도 모든 빨간 상자가 무엇을 의미하는지 스스로에게 묻고 있을 것입니다. DevTools에서 다음 스니펫을 실행한 결과입니다. `id` 속성이 있는 모든 요소를 강조 표시합니다.
 
@@ -33,7 +33,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 
 페이지 URL의 [해시](https://developer.mozilla.org/docs/Web/API/URL/hash)에서 사용하는 [조각 식별자](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment) 덕분에 빨간색 상자로 강조 표시된 모든 요소에 대한 딥 링크를 배치할 수 있습니다. *옆에 있는 [제품 포럼](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)의 피드백 제공* 상자에 딥 링크를 하고 싶다고 가정하고 URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1&lt;/mark&gt;</code></a>을 직접 제작해서 할 수 있습니다. 개발자 도구의 요소 패널에서 볼 수 있듯이 문제의 요소에는 값이 `id` 속성이 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption class="w-figcaption">요소의 <code>id</code>를 표시하는 개발 도구.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %} <figcaption>요소의 <code>id</code>를 표시하는 개발 도구.</figcaption></figure>
 
 JavaScript's `URL()` 생성자로 이 URL을 구문 분석하면 다른 구성 요소가 표시됩니다. `#HTML1` 값을 가진 `hash` 속성을 확인하세요.
 
@@ -61,7 +61,7 @@ URL {
 
 `id` 없는 항목에 연결하려면 어떻게 합니까? *웹 작업자의 ECMAScript 모듈* 헤딩에 연결하는 것으로 가정해 보겠습니다. 아래 스크린샷에서 볼 수 있듯이 `<h1>`에 `id` 속성이 없습니다. 즉, 이 제목에 연결할 수 있는 방법이 없습니다. 이것이 텍스트 조각이 해결하는 문제입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption class="w-figcaption"><code>id</code> 없는 제목을 표시하는 개발 도구.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %} <figcaption><code>id</code> 없는 제목을 표시하는 개발 도구.</figcaption></figure>
 
 ## 텍스트 조각
 
@@ -89,7 +89,7 @@ URL {
 
 텍스트 조각이 <mark class="highlight-line highlight-line-active">이와 같이</mark> 강조됩니다. Chrome과 같은 지원 브라우저에서 링크를 클릭하면 텍스트 조각이 강조 표시되고 보기로 스크롤됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption class="w-figcaption">텍스트 조각이 보기로 스크롤되어 강조 표시되었습니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %} <figcaption>텍스트 조각이 보기로 스크롤되어 강조 표시되었습니다.</figcaption></figure>
 
 ### `textStart` 및 `textEnd`
 
@@ -103,29 +103,29 @@ URL {
 
 `textStart`의 경우 `ECMAScript%20Modules%20in%20Web%20Workers`, 쉼표 `,` 다음에 `ES%20Modules%20in%20Web%20Workers.` `textEnd`가 옵니다. Chrome과 같은 지원 브라우저를 클릭하면 전체 섹션이 강조 표시되고 보기로 스크롤됩니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption class="w-figcaption">텍스트 조각이 보기로 스크롤되어 강조 표시되었습니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %} <figcaption>텍스트 조각이 보기로 스크롤되어 강조 표시되었습니다.</figcaption></figure>
 
 이제 `textStart` 및 `textEnd` 선택에 관해 궁금증이 생길 것입니다. 실제로 URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript%20Modules,Web%20Workers.&lt;/mark&gt;</code></a>는 약간 더 짧으며, 양쪽에 두 단어만 있으면 작동했을 것입니다. `textStart` 및 `textEnd`를 이전 값과 비교합니다.
 
 `textStart`와 textEnd 모두에 대해 한 단어만 사용 `textEnd`을 알 수 있습니다. URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=ECMAScript,Workers.&lt;/mark&gt;</code></a> 는 이제 더 짧아졌지만 강조 표시된 텍스트 조각은 더 이상 원래 원하는 것이 아닙니다. `Workers.` 단어가 처음 나오는 위치에서 멈춥니다. , 정확하지만 강조하려고 한 것은 아닙니다. 문제는 원하는 섹션이 현재 한 단어로 된 `textStart` 및 `textEnd` 값으로 고유하게 식별되지 않는다는 것입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption class="w-figcaption">의도하지 않은 텍스트 조각이 보기로 스크롤되어 강조 표시되었습니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %} <figcaption>의도하지 않은 텍스트 조각이 보기로 스크롤되어 강조 표시되었습니다.</figcaption></figure>
 
 ### `prefix-` 및 `-suffix`
 
 `textStart` 및 `textEnd` 대해 충분히 긴 값을 사용하는 것은 고유한 링크를 얻기 위한 한 가지 솔루션입니다. 그러나 일부 상황에서는 이것이 불가능합니다. 참고로 Chrome 80 릴리스 블로그 게시물을 예로 선택한 이유는 무엇인가요? 대답은 이번 릴리스에서 텍스트 조각이 도입되었다는 것입니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="블로그 게시물 텍스트: 텍스트 URL 조각. 사용자 또는 작성자는 이제 URL에 제공된 텍스트 조각을 사용하여 페이지의 특정 부분에 연결할 수 있습니다. 페이지가 로드되면 브라우저는 텍스트를 강조 표시하고 조각을 스크롤하여 보기에 표시합니다. 예를 들어 아래 URL은 'Cat'에 대한 Wiki 페이지를 로드하고 'text' 매개변수에 나열된 콘텐츠로 스크롤합니다.", width="800", height="200", class="w-screenshot" %} <figcaption class="w-figcaption">텍스트 조각 발표 블로그 게시물 발췌.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="블로그 게시물 텍스트: 텍스트 URL 조각. 사용자 또는 작성자는 이제 URL에 제공된 텍스트 조각을 사용하여 페이지의 특정 부분에 연결할 수 있습니다. 페이지가 로드되면 브라우저는 텍스트를 강조 표시하고 조각을 스크롤하여 보기에 표시합니다. 예를 들어 아래 URL은 'Cat'에 대한 Wiki 페이지를 로드하고 'text' 매개변수에 나열된 콘텐츠로 스크롤합니다.", width="800", height="200" %} <figcaption>텍스트 조각 발표 블로그 게시물 발췌.</figcaption></figure>
 
 위의 스크린샷에서 "텍스트"라는 단어가 네 번 나타나는 것을 확인하십시오. 네 번째 항목은 녹색 코드 글꼴로 작성됩니다. 이 특정 단어에 연결하려면 `textStart`를 `text`로 설정합니다. "text"라는 단어는 하나의 단어이므로 `textEnd`가 될 수 없습니다. 그렇다면 어떻게 될까요? URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=text&lt;/mark&gt;</code></a>는 제목에 이미 있는 "Text"라는 단어가 처음 나타날 때 일치합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption class="w-figcaption">"텍스트"가 처음 나타날 때 일치하는 텍스트 조각.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %} <figcaption>"텍스트"가 처음 나타날 때 일치하는 텍스트 조각.</figcaption></figure>
 
 {% Aside 'caution' %} 텍스트 조각 일치는 대소문자를 구분하지 않습니다. {% endAside %}
 
 다행히 해결책이 있습니다. 이런 경우에, `prefix​-`와 `-suffix`를 지정할 수 있습니다. 녹색 코드 글꼴 "text" 앞의 단어는 "the"이고 뒤의 단어는 "parameter"입니다. "텍스트"라는 단어의 다른 세 항목 중 어느 것도 동일한 주변 단어를 가지고 있지 않습니다. 이 지식을 바탕으로, 이전 URL을 조정하고 `prefix-`와 `-suffix`를 추가할 수 있습니다. 다른 매개변수와 마찬가지로 이 매개변수도 백분율로 인코딩되어야 하며 둘 이상의 단어를 포함할 수 있습니다. <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=the-,text,-parameter&lt;/mark&gt;</code></a>. 구문 분석에서 `prefix-`와 `-suffix`를 명확하게 식별하기 위해서 `textStart` 및 선택적 `textEnd`로부터 대시 `-`를 사용해 구분할 필요가 있습니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption class="w-figcaption">"텍스트"의 원하는 발생에서 일치하는 텍스트 조각.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %} <figcaption>"텍스트"의 원하는 발생에서 일치하는 텍스트 조각.</figcaption></figure>
 
 ### 전체 구문
 
@@ -162,19 +162,19 @@ URL {
 - [Mozilla Firefox용 텍스트 조각에 대한 링크](https://addons.mozilla.org/firefox/addon/link-to-text-fragment/)
 - [Apple Safari용 텍스트 조각에 대한 링크](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %}<figcaption class="w-figcaption"> <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Text Fragment</a> 브라우저 확장에 대한 링크.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %}<figcaption> <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">Text Fragment</a> 브라우저 확장에 대한 링크.</figcaption></figure>
 
 ### 하나의 URL에 있는 여러 텍스트 조각
 
 여러 텍스트 조각이 하나의 URL에 나타날 수 있습니다. 특정 텍스트 조각은 앰퍼샌드 문자 `&`로 구분해야 합니다. 다음은 3개의 텍스트 조각이 있는 링크의 예입니다. <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#:~:text=Text%20URL%20Fragments&amp;text=text,-parameter&amp;text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet&lt;mark class="highlight-line highlight-line-active"&gt;</code></a> .
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %}<figcaption class="w-figcaption"> 하나의 URL에 3개의 텍스트 조각이 있습니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %}<figcaption> 하나의 URL에 3개의 텍스트 조각이 있습니다.</figcaption></figure>
 
 ### 요소 및 텍스트 조각 혼합
 
 전통적인 요소 조각은 텍스트 조각과 결합될 수 있습니다. 예를 들어 페이지의 원본 텍스트가 변경되는 경우 의미 있는 대체를 제공하여 텍스트 조각이 더 이상 일치하지 않도록 하기 위해 동일한 URL에 둘 다 있으면 완벽합니다. URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html&lt;mark class="highlight-line highlight-line-active"&gt;#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.&lt;/mark&gt;</code></a> *[제품 포럼](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs) 섹션의 피드백 제공* 링크에는 요소 단편(`HTML1`)과 텍스트 조각(`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`)을 포함합니다:
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %}<figcaption class="w-figcaption"> 요소 조각과 텍스트 조각 모두와 연결합니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %}<figcaption> 요소 조각과 텍스트 조각 모두와 연결합니다.</figcaption></figure>
 
 ### 조각 지시문
 
@@ -291,9 +291,9 @@ Windows의 경우 [Google Chrome Enterprise 도움말](https://support.google.co
 
 일부 검색의 경우 검색 엔진 Google은 관련 웹사이트의 콘텐츠 스니펫으로 빠른 답변이나 요약을 제공합니다. 이러한 *추천 스니펫* 은 검색이 질문 형식일 때 표시될 가능성이 가장 높습니다. 추천 스니펫을 클릭하면 사용자가 소스 웹 페이지의 추천 스니펫 텍스트로 바로 이동합니다. 이것은 자동으로 생성된 텍스트 조각 URL 덕분에 작동합니다.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">추천 스니펫을 보여주는 Google 검색 엔진 결과 페이지. 상태 표시줄에 텍스트 조각 URL이 표시됩니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %} <figcaption>추천 스니펫을 보여주는 Google 검색 엔진 결과 페이지. 상태 표시줄에 텍스트 조각 URL이 표시됩니다.</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption class="w-figcaption">클릭하면 페이지의 관련 섹션이 스크롤되어 표시됩니다.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %} <figcaption>클릭하면 페이지의 관련 섹션이 스크롤되어 표시됩니다.</figcaption></figure>
 
 ## 결론
 

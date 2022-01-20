@@ -24,8 +24,8 @@ tags:
 
 ## 01. 가운데 맞춤 완전 해결: `place-items: center`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/01-place-items-center.mp4">
   </source></video></figure>
 
@@ -44,8 +44,8 @@ tags:
 
 ## 02. 분해된 팬케이크: `flex: <grow> <shrink> <baseWidth>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-1.mp4">
   </source></video></figure>
 
@@ -79,8 +79,8 @@ tags:
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/02-deconstructed-pancake-2.mp4">
   </source></video></figure>
 
@@ -88,8 +88,8 @@ tags:
 
 ## 03. 사이드바가 하는 말: `grid-template-columns: minmax(<min>, <max>) …)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4">
   </source></video></figure>
 
@@ -106,8 +106,8 @@ tags:
 
 ## 04. 팬케이크 스택: `grid-template-rows: auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/04-pancake-stack.mp4">
   </source></video></figure>
 
@@ -128,8 +128,8 @@ tags:
 
 ## 05. 고전적 성배 레이아웃: `grid-template: auto 1fr auto / auto 1fr auto`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/05-holy-grail.mp4">
   </source></video></figure>
 
@@ -150,8 +150,8 @@ tags:
 
 ## 06. 12-스팬 그리드: `grid-template-columns: repeat(12, 1fr)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4">
   </source></video></figure>
 
@@ -170,8 +170,8 @@ tags:
 
 이제 12열 트랙 그리드가 있으므로 그리드에 하위 요소를 배치할 수 있습니다. 이를 수행하는 한 가지 방법은 그리드 선을 사용하여 배치하는 것입니다. 예를 들어, `grid-column: 1 / 13`은 첫 번째 줄부터 마지막(13번째) 줄까지 확장되고 12개의 열에 걸쳐집니다. `grid-column: 1 / 5;`은 처음 4개에 걸쳐집니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4">
   </source></video></figure>
 
@@ -185,8 +185,8 @@ tags:
 
 ## 07. RAM(Repeat, Auto, MinMax): `grid-template-columns(auto-fit, minmax(<base>, 1fr))`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4">
   </source></video></figure>
 
@@ -205,8 +205,8 @@ tags:
 
 `auto-fit`을 사용하면 가로 크기가 150px를 초과할 때 상자가 늘어나서 나머지 공간을 모두 채웁니다. 그러나 이것을 `auto-fill`로 변경하면 minmax 함수의 기본 크기가 초과될 때 늘어나지 않습니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4">
   </source></video></figure>
 
@@ -219,8 +219,8 @@ tags:
 
 ## 08. 라인업: `justify-content: space-between`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/08-lineup.mp4">
   </source></video></figure>
 
@@ -238,8 +238,8 @@ tags:
 
 ## 09. 내 스타일 클램핑: `clamp(<min>, <actual>, <max>)`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/09-clamping.mp4">
   </source></video></figure>
 
@@ -263,8 +263,8 @@ tags:
 
 ## 10. 종횡비 준수: `aspect-ratio: <width> / <height>`
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4">
   </source></video></figure>
 

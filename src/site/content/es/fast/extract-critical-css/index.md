@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Extraer CSS crítico
 subhead: Aprenda a mejorar los tiempos de renderizado con la técnica de CSS crítico.
 authors:
@@ -21,21 +21,21 @@ El navegador debe descargar y analizar los archivos CSS antes de poder mostrar l
 
 {% Aside 'key-term' %} El CSS crítico es una técnica que extrae el CSS del contenido de la mitad superior de la página para mostrar el contenido al usuario lo más rápido posible. {% endAside %}
 
-<figure class="w-figure">{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="Una ilustración de una computadora portátil y un dispositivo móvil con páginas web que desbordan los bordes de las pantallas", width="800", height="469", class="" %}</figure>
+<figure>{% Img src="image/admin/t3Kkvh265zi6naTBga41.png", alt="Una ilustración de una computadora portátil y un dispositivo móvil con páginas web que desbordan los bordes de las pantallas", width="800", height="469", class="" %}</figure>
 
 {% Aside 'note' %} En la mitad superior de la página está todo el contenido que un espectador ve al cargar la página, antes de desplazarse. No hay una altura de pixel definida universalmente de lo que se considera contenido en la mitad superior de la página, ya que hay una gran cantidad de dispositivos y tamaños de pantalla. {% endAside %}
 
 Insertar estilos extraídos en el `<head>` del documento HTML elimina la necesidad de realizar una solicitud adicional para obtener estos estilos. El resto del CSS se puede cargar de forma asincrónica.
 
-<figure class="w-figure">{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="Archivo HTML con CSS crítico insertado en el encabezado", width="800", height="325", class="w-screenshot"%}<figcaption class="w-figcaption"> CSS crítico en línea</figcaption></figure>
+<figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="Archivo HTML con CSS crítico insertado en el encabezado", width="800", height="325" %}<figcaption> CSS crítico en línea</figcaption></figure>
 
 La mejora de los tiempos de renderizado puede marcar una gran diferencia en el [rendimiento percibido](https://developers.google.com/web/fundamentals/performance/rail#ux), especialmente en condiciones de red deficientes. En las redes móviles, la latencia alta es un problema independientemente del ancho de banda.
 
-<figure class="w-figure">{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Comparación de vista de tira de película sobre la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G. La tira de película superior muestra seis fotogramas en blanco antes de mostrar finalmente el contenido. La tira de película inferior muestra contenido significativo en el primer fotograma.", width="800", height="363", class="w-screenshot" %}<figcaption class="w-figcaption"> Comparación de la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G</figcaption></figure>
+<figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Comparación de vista de tira de película sobre la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G. La tira de película superior muestra seis fotogramas en blanco antes de mostrar finalmente el contenido. La tira de película inferior muestra contenido significativo en el primer fotograma.", width="800", height="363" %}<figcaption> Comparación de la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G</figcaption></figure>
 
 Si tiene un [First Contentful Paint o FCP (primer despliegue de contenido)](/first-contentful-paint) deficiente y ve la oportunidad de "Eliminar el recurso de bloqueo de renderizado" en las auditorías de Lighthouse, es una buena idea probar el CSS crítico.
 
-{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Auditoría Lighthouse con oportunidades de 'Eliminar recurso de bloqueo de renderizado' o 'Aplazar CSS no utilizado'", width="743", height="449", class="w-screenshot" %}
+{% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Auditoría Lighthouse con oportunidades de 'Eliminar recurso de bloqueo de renderizado' o 'Aplazar CSS no utilizado'", width="743", height="449" %}
 
 {% Aside 'gotchas' %} Tenga en cuenta que si inserta una gran cantidad de CSS, la transmisión del resto del documento HTML se retrasa. Si todo está priorizado, entonces no hay nada lo está. La inserción también tiene algunas desventajas, ya que evita que el navegador almacene en caché el CSS para reutilizarlo en cargas de página posteriores, por lo que es mejor usarlo con moderación. {% endAside %}
 
