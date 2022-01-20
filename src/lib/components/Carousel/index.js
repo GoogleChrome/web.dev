@@ -23,7 +23,7 @@ class Carousel extends BaseElement {
     /** @type {HTMLElement} */
     this._carouselTrack = undefined;
     /** @type {number} */
-    this._index = 0;
+    this.index = 0;
     /** @type {HTMLElement[]} */
     this._items = [];
     /** @type {HTMLButtonElement} */
@@ -32,6 +32,7 @@ class Carousel extends BaseElement {
     this._previousButton = undefined;
 
     this._next = this._next.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._onKeyup = this._onKeyup.bind(this);
     this._previous = this._previous.bind(this);
   }
@@ -55,9 +56,7 @@ class Carousel extends BaseElement {
     this._nextButton = this.querySelector('button[data-direction="next"]');
     this._nextButton.addEventListener('click', this._next);
 
-    this._items.forEach((e, i) =>
-      e.addEventListener('focusin', () => this._setIndex(i - this._index)),
-    );
+    this._carouselTrack.addEventListener('click', this._onClick);
     this._carouselTrack.addEventListener('keyup', this._onKeyup);
   }
 
@@ -65,7 +64,7 @@ class Carousel extends BaseElement {
     super.disconnectedCallback();
     this._previousButton?.removeEventListener('click', this._previous);
     this._nextButton?.removeEventListener('click', this._next);
-    this._items.forEach((e) => e.removeChild(e));
+    this._carouselTrack?.addEventListener('click', this._onClick);
     this._carouselTrack?.removeEventListener('keyup', this._onKeyup);
   }
 
@@ -74,6 +73,30 @@ class Carousel extends BaseElement {
    */
   _next() {
     this._scroll(true);
+  }
+
+  /**
+   * Event listener function that listens for click to see if user is selecting element in carousel.
+   *
+   * @param {MouseEvent} e The click event.
+   */
+  _onClick(e) {
+    let target = /** @type {HTMLElement} */ (e.target);
+    let searchForElement = true;
+
+    do {
+      if (target.tagName === 'A') {
+        return;
+      }
+
+      searchForElement = !(target.parentElement === this._carouselTrack);
+      if (searchForElement) {
+        target = target.parentElement;
+      }
+    } while (searchForElement);
+
+    const index = this._items.findIndex((e) => e === target);
+    this._setIndex(index - this.index);
   }
 
   /**
@@ -130,15 +153,15 @@ class Carousel extends BaseElement {
    * @param {number} increment How many items to move by.
    */
   _setIndex(increment) {
-    this._index = this._index + increment;
+    this.index = this.index + increment;
 
-    if (this._index < 0) {
-      this._index = 0;
-    } else if (this._index >= this._items.length) {
-      this._index = this._items.length - 1;
+    if (this.index < 0) {
+      this.index = 0;
+    } else if (this.index >= this._items.length) {
+      this.index = this._items.length - 1;
     }
 
-    const active = this._items[this._index];
+    const active = this._items[this.index];
     active.focus({preventScroll: true});
     this._carouselTrack.scrollTo(active.offsetLeft, 0);
   }
