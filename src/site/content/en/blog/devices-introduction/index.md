@@ -7,7 +7,7 @@ description: |
 authors:
   - beaufortfrancois
 date: 2021-02-12
-updated: 2021-11-16
+updated: 2022-01-20
 hero: image/admin/vAnNpGQruw5EUXxob47V.jpg
 alt: A woman sitting in front of a wooden desk photo.
 tags:
@@ -150,7 +150,8 @@ If wired, check out these APIs in this specific order:
 1. With [WebHID], understanding HID reports and report descriptors through
    [collections] is key to your comprehension of this device. This can be
    challenging without vendor documentation for this device. Tools like
-   [Wireshark] can help you reverse-engineering it.
+   [Wireshark] can help you reverse-engineering it. You can also use the [HID
+   Explorer web app] for dumping HID devices info into a human-readable format.
 
 2. With [Web Serial], without vendor documentation for this device and what
    commands this device supports, it's hard but still possible with lucky
@@ -207,6 +208,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [WebHID]: /hid/
 [collections]: https://webhid-collections.glitch.me/
 [Wireshark]: https://gitlab.com/wireshark/wireshark/-/wikis/CaptureSetup/USB
+[HID Explorer web app]: https://nondebug.github.io/webhid-explorer/
 [Web Serial]: /serial/
 [Serial Terminal web app]: https://googlechromelabs.github.io/serial-terminal/
 [WebUSB]: /usb/
