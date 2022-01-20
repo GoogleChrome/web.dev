@@ -16,7 +16,7 @@ tags:
 
 In [a previous post](/asyncify/), I showed how to port apps using filesystem APIs to the web with [File System Access API](/file-system-access/), WebAssembly and [Asyncify](https://emscripten.org/docs/porting/asyncify.html). Now I want to continue the same topic of integrating [Fugu APIs](https://fugu-tracker.web.app/) with WebAssembly and porting apps to the web without losing important features.
 
-I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/) - a popular USB library written in C - to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](/usb/).
+I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/)—a popular USB library written in C—to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](/usb/).
 
 {% Aside %}
 Fun fact: WebUSB in Chromium also uses libusb under the hood. So what the port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate API layer. Isn't the web fun?
@@ -24,7 +24,7 @@ Fun fact: WebUSB in Chromium also uses libusb under the hood. So what the port a
 
 ## First things first: a demo
 
-The most important thing to do when porting a library is choosing the right demo - something that would showcase the capabilities of the ported library, allowing you to test it in a variety of ways, and be visually compelling at the same time.
+The most important thing to do when porting a library is choosing the right demo—something that would showcase the capabilities of the ported library, allowing you to test it in a variety of ways, and be visually compelling at the same time.
 
 The idea I chose was DSLR remote control. In particular, an open source project [gPhoto2](http://gphoto.org/) has been in this space long enough to reverse-engineer and implement support for a wide variety of digital cameras. It supports several protocols, but the one I was most interested in was USB support, which it performs via libusb.
 
@@ -43,7 +43,7 @@ In the end, I got a working web application that previews live feed from a DSLR 
 
 You might have noticed that changing settings takes a while in the video. Like with most other issues you might see, this is not caused by the performance of WebAssembly or WebUSB, but by how gPhoto2 interacts with the specific camera chosen for the demo.
 
-Sony a6600 doesn't expose an API to set values like ISO, aperture or shutter speed directly, and instead only provides commands to increase or decrease them by the specified number of steps. To make matters more complicated, it doesn't return a list of the actually supported values, either - the returned list seems hardcoded across many Sony camera models.
+Sony a6600 doesn't expose an API to set values like ISO, aperture or shutter speed directly, and instead only provides commands to increase or decrease them by the specified number of steps. To make matters more complicated, it doesn't return a list of the actually supported values, either—the returned list seems hardcoded across many Sony camera models.
 
 When setting one of those values, gPhoto2 has no other choice but to:
 
@@ -165,7 +165,7 @@ using namespace emscripten;
 const usbi_os_backend usbi_backend = {
   .name = "Emscripten + WebUSB backend",
   .caps = LIBUSB_CAP_HAS_CAPABILITY,
-  // …handlers - function pointers to implementations above
+  // …handlers—function pointers to implementations above
   .device_priv_size = sizeof(val),
   .transfer_priv_size = sizeof(val),
 };
@@ -437,7 +437,7 @@ emscripten)
   ;;
 ```
 
-First, executables on Unix platforms normally don't have file extensions. Emscripten, however, produces different output depending on which extension you request. I'm using `AC_SUBST(EXEEXT, …)` to change the executable extension to `.html` so that any executable within a package - tests and examples - becomes an HTML with Emscripten's default shell that takes care of loading and instantiating JavaScript and WebAssembly.
+First, executables on Unix platforms normally don't have file extensions. Emscripten, however, produces different output depending on which extension you request. I'm using `AC_SUBST(EXEEXT, …)` to change the executable extension to `.html` so that any executable within a package—tests and examples—becomes an HTML with Emscripten's default shell that takes care of loading and instantiating JavaScript and WebAssembly.
 
 Second, because I'm using Embind and Asyncify, I need to enable those features (`--bind -s ASYNCIFY`) as well as allow dynamic memory growth (`-s ALLOW_MEMORY_GROWTH`) via linker parameters. Unfortunately, there is no way for a library to report those flags to the linker, so every application that uses this libusb port will have to add the same linker flags into their build configuration as well.
 
