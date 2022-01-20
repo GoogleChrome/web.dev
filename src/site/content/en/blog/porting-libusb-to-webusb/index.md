@@ -274,7 +274,7 @@ struct promise_result {
 };
 ```
 
-Now I could use `promise_result::await` on any `Promise` returned from WebUSB operations and inspect its `error` and `value` fields separately.
+Now I could use `promise_result::await()` on any `Promise` returned from WebUSB operations and inspect its `error` and `value` fields separately.
 
 For example, retrieving a `val` representing a [`USBDevice`](https://developer.mozilla.org/docs/Web/API/USBDevice) from `libusb_device_handle`, calling its [`open()`](https://developer.mozilla.org/docs/Web/API/USBDevice/open) method, awaiting its result, and returning an error code as a libusb status code looks like this:
 
