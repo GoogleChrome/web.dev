@@ -52,7 +52,7 @@ module.exports = {
       TRACKING_VERSION: 'dimension5',
       NAVIGATION_TYPE: 'dimension6',
     },
-    version: 6,
+    version: 7,
   },
   firebase: {
     prod: {
