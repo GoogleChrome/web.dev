@@ -7,6 +7,7 @@ authors:
 description: |
   Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Web Vitals.
 date: 2021-05-11
+updated: 2022-01-20
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: "A Lighthouse illuminating the sea"
 tags:
@@ -129,8 +130,6 @@ JavaScript bundle needs to be loaded before the image is discoverable.
 {% Aside %} **Preload should be used sparingly**. Early network bandwidth is a scarce resource and using preload can come at the cost of another resource. To use preload effectively, make sure resources are being ordered correctly to avoid regressing other metrics when other resources in the page are also considered important (e.g. critical CSS, JS, fonts). The [cost of preload](https://docs.google.com/document/d/1ZEi-XXhpajrnq8oqs5SiW-CXR3jMc20jWIzN5QRy1QA/edit) covers this in more detail.
 {% endAside %}
 
-Lighthouse 6.5 and above now suggests opportunities to apply this optimization.
-
 There are a few common questions we are asked about preloading LCP images that may also be worth
 briefly covering.
 
@@ -161,6 +160,20 @@ background? Yes.
 
 Any image flagged as the LCP image whether via CSS background or `<img>` is a candidate if it's
 discovered at a waterfall depth of three or more.
+
+### Lazy-loading offscreen images and avoiding this for LCP
+
+Offscreen images that are not critical to the initial user experience can be [lazy-loaded](/browser-level-image-lazy-loading/). This is a technique that defers downloading an image until a user scrolls near it, which can reduce network contention for critical assets and in some cases improve LCP. The ["Defer offscreen images"](/offscreen-images/) audit can help here:
+
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vW6EwUnp51g0QVAkUyN9.png", alt="Defer offscreen images", width="800", height="317" %}
+</figure>
+
+Critical above-the-fold images, such as the Largest Contentful Paint image, should not be lazy-loaded. Doing so can [delay the LCP image loading](/lcp-lazy-loading/). Lighthouse will highlight if an LCP image is being incorrectly lazy-loaded via the "Largest Contentful Paint image was lazily loaded" audit:
+
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VKmCrIG748sCCoByrBV8.png", alt="Avoid lazy-loading LCP images", width="800", height="226" %}
+</figure>
 
 ### Identify CLS contributions
 
