@@ -36,7 +36,9 @@ Anything larger than that just results in wasted bytes and slows down page load 
 The main strategy for serving appropriately sized images is called "responsive images".
 With responsive images, you generate multiple versions of each image,
 and then specify which version to use in your HTML or CSS using media queries, viewport dimensions, and so on.
-See [Serve responsive images](/serve-responsive-images) to learn more.
+[RespImageLint](https://ausi.github.io/respimagelint/) is a really helpful bookmarklet
+for identifying the best `srcset` and `sizes` values for your images. 
+See [Serve responsive images](/serve-responsive-images) to learn more about these attributes.
 
 [Image CDNs](/image-cdns/) are another main strategy for serving appropriately sized images.
 You can think of image CDNs like web service APIs for transforming images.
