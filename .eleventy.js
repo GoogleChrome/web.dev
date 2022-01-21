@@ -27,7 +27,6 @@ const ArticleNavigation = require('./src/site/_includes/components/ArticleNaviga
 const Aside = require('./src/site/_includes/components/Aside');
 const Assessment = require('./src/site/_includes/components/Assessment');
 const Author = require('./src/site/_includes/components/Author');
-const AuthorInfo = require('./src/site/_includes/components/AuthorInfo');
 const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
 const Blockquote = require('./src/site/_includes/components/Blockquote');
@@ -207,7 +206,6 @@ module.exports = function (config) {
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
-  config.addShortcode('AuthorInfo', AuthorInfo);
   config.addShortcode('AuthorsDate', AuthorsDate);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);

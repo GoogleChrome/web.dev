@@ -27,118 +27,55 @@ const {i18n} = require('../../_filters/i18n');
 const authorsCollectionFn = require('../../_collections/authors');
 const {defaultLocale} = require('../../_data/site');
 
-const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
-
-/* NOTE: This component is in a transition period to support both new design system contexts
-and the existing system. Once the new design system has been *fully* rolled out, this component
-can be cleaned up with the following:
-
-1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
-2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
-*/
-
 /**
  *
  * @param {string} locale
  * @param {Date} date
  * @param {Date} [updated]
- * @param {boolean} [isDesignSystem]
  * @returns {string}
  */
-const renderDate = (locale, date, updated, isDesignSystem) => {
-  let result = '';
-
-  if (isDesignSystem) {
-    // prettier-ignore
-    return html`
+const renderDate = (locale, date, updated) => {
+  // prettier-ignore
+  return html`
       <time>${(+updated) ? `${i18n('i18n.common.updated', locale)}: ${prettyDate(updated)}` : prettyDate(date)}</time>
     `;
-  }
-
-  /// DELETE BELOW THIS LINE
-  // nb. +date checks for valid dates, not just non-null dates
-  if (+updated) {
-    result += html`
-      <div class="w-author__updated">
-        <time
-          >${i18n('i18n.common.updated', locale)}: ${prettyDate(updated)}</time
-        >
-      </div>
-    `;
-  } else if (+date) {
-    result += html`
-      <div class="w-author__published">
-        <time>${prettyDate(date)}</time>
-      </div>
-    `;
-  }
-  return result;
 };
 
 /**
  *
  * @param {number} limit
  * @param {Array<TODO>} pairs
- * @param {boolean} [isDesignSystem]
  * @returns {string|string[]}
  */
-const renderAuthorImages = (limit, pairs, isDesignSystem) => {
+const renderAuthorImages = (limit, pairs) => {
   if (!pairs.length || pairs.length > limit) {
     return ''; // don't render images if we have none, or too many
   }
 
-  if (isDesignSystem) {
-    return pairs.map(({info}) => {
-      const img = Img({
-        src: info.image,
-        alt: info.title,
-        width: '40',
-        height: '40',
-        class: '',
-        params: {
-          fit: 'crop',
-          h: '40',
-          w: '40',
-        },
-      });
-      return html` <a class="avatar" href="${info.href}">${img}</a> `;
+  return pairs.map(({info}) => {
+    const img = Img({
+      src: info.image,
+      alt: info.title,
+      width: '40',
+      height: '40',
+      class: '',
+      params: {
+        fit: 'crop',
+        h: '40',
+        w: '40',
+      },
     });
-  }
-
-  /// DELETE BELOW THIS LINE
-  const inner = pairs
-    .map(({info}) => {
-      const img = Img({
-        src: info.image,
-        alt: info.title,
-        width: '40',
-        height: '40',
-        class: 'w-author__image w-author__image--small',
-        params: {
-          fit: 'crop',
-          h: '40',
-          w: '40',
-        },
-      });
-      return html`
-        <div class="w-author__image--row-item">
-          <a href="${info.href}">${img}</a>
-        </div>
-      `;
-    })
-    .reverse();
-
-  return html` <div class="w-author__image--row">${inner}</div> `;
+    return html` <a class="avatar" href="${info.href}">${img}</a> `;
+  });
 };
 
-const renderAuthorNames = (pairs, isDesignSystem) => {
+const renderAuthorNames = (pairs) => {
   if (!pairs.length) {
     return; // don't render if no authors
   }
 
-  if (isDesignSystem) {
-    // prettier-ignore
-    return html`
+  // prettier-ignore
+  return html`
       <div
         class="card__authors flow-space-base"
         aria-label="authors"
@@ -146,23 +83,12 @@ const renderAuthorNames = (pairs, isDesignSystem) => {
         ${pairs.map(({info}) => `<a href="${info.href}">${info.title}</a>`).join(', ')}
       </div>
     `;
-  }
-
-  const inner = pairs
-    .map(({info}) => {
-      return html`
-        <a class="w-author__name-link" href="${info.href}">${info.title}</a>
-      `;
-    })
-    .join(', ');
-
-  return html` <span class="w-author__name">${inner}</span> `;
 };
 
 /**
  * Render an authors card, including any number of authors and an optional date.
  *
- * @param {{authors?: Array<string>, date?: Date, images?: number, updated?: Date, locale?: string}} arg
+ * @param {{authors?: string[], date?: Date, images?: number, updated?: Date, locale?: string}} arg
  * @param {Authors} [authorsCollection]
  * @return {string}
  */
@@ -197,25 +123,11 @@ function renderAuthorsDate(
     };
   });
 
-  if (isDesignSystemContext(this.page ? this.page.filePathStem : '')) {
-    return html`
-      <div class="card__avatars cluster color-mid-text">
-        ${renderAuthorImages(images, pairs, true)}
-        <div class="flow flow-space-size-0">
-          ${renderAuthorNames(pairs, true)}
-          ${renderDate(locale, date, updated, true)}
-        </div>
-      </div>
-    `;
-  }
-
-  /// DELETE BELOW THIS LINE
   return html`
-    <div class="w-authors__card">
-      ${renderAuthorImages(images, pairs, false)}
-      <div class="w-authors__card--holder">
-        ${renderAuthorNames(pairs, false)}
-        ${renderDate(locale, date, updated, false)}
+    <div class="card__avatars cluster color-mid-text">
+      ${renderAuthorImages(images, pairs)}
+      <div class="flow flow-space-size-0">
+        ${renderAuthorNames(pairs)} ${renderDate(locale, date, updated)}
       </div>
     </div>
   `;
