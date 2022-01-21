@@ -19,6 +19,11 @@ const {expect, assert} = require('chai');
 require('../../../../../../src/lib/components/Carousel/index');
 
 const cardCount = 10;
+/**
+ * Causes 600ms delay to allow UI changes, such as smooth scroll, to occur.
+ *
+ * @returns Promise<void>
+ */
 const sleep = () => new Promise((res) => setTimeout(res, 600));
 
 /**
@@ -104,11 +109,11 @@ describe('Carousel', function () {
     expect(carouselTrack.scrollLeft).to.be.equal(previousScrollLeft);
   });
 
-  it('updates tracked index when element is focused in', async function () {
+  it('updates tracked index when element is clicked', async function () {
     const webCarousel = await setup();
     const index = Math.floor(cardCount / 2);
     const items = webCarousel._items;
-    items[index].dispatchEvent(new Event('focusin'));
+    items[index].click();
     expect(webCarousel.index).to.equal(index);
   });
 
