@@ -298,9 +298,9 @@ When you try to build a great site, **set Lighthouse performance score budget to
 
 ## Prioritize
 
-Ask yourself what level of interaction you expect on your site. If it's a news website, users' primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.com visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
+Ask yourself what level of interaction you expect on your site. If it's a news website, users primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.io visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
 
-Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
+Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
 
 <figure>
   {% Img src="image/admin/ycZwOrFNzjdjquriM9rJ.png", alt="Device distribution data from Chrome User Experience report", width="800", height="530" %}
