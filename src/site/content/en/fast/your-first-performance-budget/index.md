@@ -89,7 +89,7 @@ Let's take a highly specialized search engine, doggos.io, as an example. Doggos.
 
 ## Competitive analysis
 
-Once you've analyzed your own site, it's time to analyze your competitors' sites. Comparing results from websites similar to yours is a great way to figure out a performance budget. Whether you are working on an established project or starting from scratch, this is an important step. You get competitive advantage when you are faster than your competitors.
+Once you've analyzed your own site, it's time to analyze your competitors sites. Comparing results from websites similar to yours is a great way to figure out a performance budget. Whether you are working on an established project or starting from scratch, this is an important step. You get competitive advantage when you are faster than your competitors.
 
 If you are not sure which sites to look at, here are a few tools to try:
 
