@@ -194,7 +194,7 @@ On GitHub, go to your project's settings and **add "lighthousebot" as a collabor
 {% Img src="image/admin/H2aLCOr36UDwm5Yk1k9r.png", alt="Lighthouse bot collaborator status", width="800", height="298" %}
 
 Approving these requests is a manual process so they don't always happen
-instantly. Before you start testing, make sure lighthousebot has approved its
+instantly. Before you start testing, make sure lighthousebot has approved it's
 collaborator status. In the meantime, you also need to add another key to your
 project's environment variables on Travis. [Leave your email
 here](https://docs.google.com/forms/d/e/1FAIpQLSdIc3QNIMn7bBMgl2cfxmmo6wGBlUpdLGxjB_ml464t9eCg_A/viewform),
