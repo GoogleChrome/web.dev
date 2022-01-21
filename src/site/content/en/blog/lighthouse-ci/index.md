@@ -38,7 +38,7 @@ performance monitoring. A single Lighthouse report provides a snapshot of a web
 page's performance at the time that it is run; Lighthouse CI shows how these
 findings have changed over time. This can be used to identify the impact of
 particular code changes or ensure that performance thresholds are met during
-continuous integration processes. Although performance monitoring is the most
+continuous integration process. Although performance monitoring is the most
 common use case for Lighthouse CI, it can be used to monitor other aspects of
 the Lighthouse report - for example, SEO or accessibility.
 
