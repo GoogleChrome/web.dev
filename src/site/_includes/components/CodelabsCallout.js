@@ -49,7 +49,7 @@ function CodelabsCallout(slugs, lang) {
             <h2 class="callout__title">See it in action</h2>
             <p>Learn more and put this guide into action.</p>
           </div>
-          <nav class="callout__links" aria-label="Codelabs links">
+          <nav class="callout__links repel" aria-label="Codelabs links">
             <ul role="list">
               ${codelabs.map(CodelabsCallout.renderCodelab).join('')}
             </ul>
