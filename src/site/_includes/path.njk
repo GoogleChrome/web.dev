@@ -13,7 +13,7 @@ eleventyComputed:
 
 <header class="hero">
   <div class="wrapper">
-    <div class="path__header">
+    <div class="hero__content--split">
       <div>
         <h1 class="text-size-6">{{path.title | i18n(locale)}}</h1>
         <p>{{path.description | i18n(locale)}}</p>
@@ -25,7 +25,7 @@ eleventyComputed:
             width=330,
             src=path.cover,
             alt="Collection cover image",
-            class="path__hero"
+            class="hero__content__img"
           %}
         </div>
       {% endif %}
