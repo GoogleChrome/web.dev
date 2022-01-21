@@ -354,7 +354,7 @@ where you can see all HID and USB device related events in one single place.
   <figcaption>Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
-Check out the [HID explorer][hid-explorer] web app tool for dumping HID devices
+Check out the [HID explorer][hid-explorer] for dumping HID device
 info into a human-readable format. It maps from usage values to names for each
 HID usage.
 
