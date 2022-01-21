@@ -163,7 +163,7 @@ discovered at a waterfall depth of three or more.
 
 ### Lazy-loading offscreen images and avoiding this for LCP
 
-Offscreen images that are not critical to the initial user experience can be [lazy-loaded](/browser-level-image-lazy-loading/). This is a technique that defers downloading an image until a user scrolls near it, which can reduce network contention for critical assets and in some cases improve LCP. The "Defer offscreen images" audit can help here:
+Offscreen images that are not critical to the initial user experience can be [lazy-loaded](/browser-level-image-lazy-loading/). This is a technique that defers downloading an image until a user scrolls near it, which can reduce network contention for critical assets and in some cases improve LCP. The ["Defer offscreen images"](/offscreen-images/) audit can help here:
 
 <figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vW6EwUnp51g0QVAkUyN9.png", alt="Defer offscreen images", width="800", height="317" %}
