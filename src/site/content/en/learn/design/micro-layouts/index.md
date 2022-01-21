@@ -11,7 +11,7 @@ When we think of layouts, we often think of page-level designs.
 But smaller components within the page can have their own self-contained layouts.
 
 Ideally, these component-level layouts will adjust themselves automatically, 
-regardless oftheir position on the page. 
+regardless of their position on the page. 
 There may be situations where you don't know if a component will be placed into the main content column or the sidebar or both. 
 Without knowing for sure where a component will end up, 
 you need to make sure that the component can adjust itself to its container.
