@@ -22,7 +22,7 @@ time you edit your code, you don't have to do that. Tools can do the tedious
 stuff for you. [Travis CI](https://travis-ci.com/) is a great service that
 automatically runs tests for your app in the cloud every time you push new code.
 
-Lighthouse Bot integrates with Travis CI, and its performance budget feature ensures
+Lighthouse Bot integrates with Travis CI, and it's performance budget feature ensures
 that you won't accidentally downgrade performance without noticing. You can
 [configure your repository](https://help.github.com/articles/about-required-status-checks/)
 so that it won't allow merging pull-requests if the Lighthouse scores fall below
@@ -155,7 +155,9 @@ Firebase, you have to authorize it. How do you do that? With a Firebase token.
 
 To generate the token run this command:
 
-<pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
+```bash
+firebase login:ci
+```
 
 It will open a new tab in a browser window so that Firebase can verify you.
 After that, look back at the console, and you'll see your freshly minted token.
