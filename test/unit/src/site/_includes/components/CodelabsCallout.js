@@ -18,10 +18,7 @@
 const {expect} = require('chai');
 const cheerio = require('cheerio');
 const {memoize} = require('../../../../../../src/site/_filters/find-by-url');
-const {
-  CodelabsCallout,
-  renderCodelab,
-} = require('../../../../../../src/site/_includes/components/CodelabsCallout');
+const CodelabsCallout = require('../../../../../../src/site/_includes/components/CodelabsCallout');
 
 const collectionAll = /** @type {EleventyCollectionItem[]} */ ([
   {url: '/en/foo/bar/', data: {title: 'foobar'}},
@@ -54,10 +51,10 @@ describe('CodelabsCallout', function () {
     });
   });
 
-  describe('renderCodelab', function () {
+  describe('CodelabsCallout.renderCodelab', function () {
     it('creates links for codelabs', async function () {
       collectionAll.forEach((item) => {
-        const html = renderCodelab(item);
+        const html = CodelabsCallout.renderCodelab(item);
         const $ = cheerio.load(html);
         expect($('a').attr('href')).to.equal(item.url);
         expect($('span').text()).to.equal(item.data.title);
