@@ -5,7 +5,7 @@ authors:
   - katiehempenius
 description: |
   We've all been there—you forgot to scale down an image before adding it to the
-  page. The image looks fine, but it is wasting users' data and hurting page
+  page. The image looks fine, but it is wasting users data and hurting page
   performance.
 date: 2018-11-05
 wf_blink_components: N/A
@@ -16,7 +16,7 @@ tags:
 ---
 
 We've all been there: you forgot to scale down an image before adding it to the
-page. The image looks fine, but it is wasting users' data and hurting page
+page. The image looks fine, but it is wasting users data and hurting page
 performance.
 
 ## Identify incorrectly sized images
@@ -78,7 +78,7 @@ experience the crispest possible images, regardless of the pixel density of
 their device.
 
 {% Aside %}
-Some sites find that this difference in image quality matters, some find that it
+Some sites find that this difference in image quality matters, some sites find that it
 does not.
 {% endAside %}
 
