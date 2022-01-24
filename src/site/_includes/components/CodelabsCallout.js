@@ -64,22 +64,20 @@ function CodelabsCallout(slugs, lang) {
  * @returns {string}
  */
 CodelabsCallout.renderCodelab = function (codelab) {
+  const svg = html`<svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="m8 7.34 4.58 4.365L8 16.07l1.41 1.34 6-5.705L9.41 6 8 7.34Z" />
+  </svg>`;
   return html`
     <li>
       <a href="${codelab.url}">
         <span>${md(codelab.data.title)}</span>
-        <!-- icons/carat-forward.svg -->
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m8 7.34 4.58 4.365L8 16.07l1.41 1.34 6-5.705L9.41 6 8 7.34Z"
-          />
-        </svg>
+        ${svg}
       </a>
     </li>
   `;
