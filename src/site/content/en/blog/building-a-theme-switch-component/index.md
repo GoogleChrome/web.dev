@@ -805,4 +805,8 @@ to the community remixes section below!
 
 ## Community remixes
 
-- (@NathanG)[https://twitter.com/NathanG] on [Codepen with Vue](https://codepen.io/nathangath/pen/qYeOJJ)
+- [@NathanG](https://twitter.com/NathanG) on [Codepen with Vue](https://codepen.io/nathangath/pen/qYeOJJ)
+- [@ShadowShahriar](https://twitter.com/ShadowShahriar) on [Codepen](https://codepen.io/ShadowShahriar/pen/ZEQPvMP)
+- [@tomayac](https://twitter.com/tomayac) as a [custom element](https://github.com/GoogleChromeLabs/dark-mode-toggle)
+- [@bramus](https://twitter.com/bramus) with [vanilla JavaScript](https://www.bram.us/2020/04/26/the-quest-for-the-perfect-dark-mode-using-vanilla-javascript/)
+- [@](https://twitter.com/JoshWComeau) with [react](https://www.joshwcomeau.com/react/dark-mode/)
