@@ -45,12 +45,12 @@ EM_CACHE = $(EMSCRIPTEN)/cache
 # Sysroot is always under the `sysroot` subfolder.
 SYSROOT = $(EM_CACHE)/sysroot
 
-…
+# …
 
 # For all dependencies I've used the same ./configure command with the
 # earlier defined SYSROOT path as the --prefix.
 deps/%/Makefile: deps/%/configure
-        cd $(@D) && ./configure --prefix=$(SYSROOT) …
+        cd $(@D) && ./configure --prefix=$(SYSROOT) # …
 ```
 
 With such configuration, I only needed to run `make install` in each dependency, which installed it under the sysroot, and then the libraries found each other automatically.
@@ -76,9 +76,9 @@ It's possible to adapt the build system to those differences and hardcode the li
 
 Turns out, libtool abstracts away various [dynamic linking methods](https://www.gnu.org/software/libtool/manual/html_node/Module-loaders-for-libltdl.html) on different platforms, and even supports writing custom loaders for others. One of the built-in methods it supports is called ["Dlpreopening"](https://www.gnu.org/software/libtool/manual/html_node/Dlpreopening.html):
 
-> Libtool provides special support for dlopening libtool object and libtool library files, so that their symbols can be resolved even on platforms without any dlopen and dlsym functions.
-> [...]
-> Libtool emulates -dlopen on static platforms by linking objects into the program at compile time, and creating data structures that represent the program’s symbol table. In order to use this feature, you must declare the objects you want your application to dlopen by using the -dlopen or -dlpreopen flags when you link your program (see [Link mode](https://www.gnu.org/software/libtool/manual/html_node/Link-mode.html#Link-mode)).
+**“Libtool provides special support for dlopening libtool object and libtool library files, so that their symbols can be resolved even on platforms without any dlopen and dlsym functions.
+…
+Libtool emulates -dlopen on static platforms by linking objects into the program at compile time, and creating data structures that represent the program’s symbol table. In order to use this feature, you must declare the objects you want your application to dlopen by using the -dlopen or -dlpreopen flags when you link your program (see [Link mode](https://www.gnu.org/software/libtool/manual/html_node/Link-mode.html#Link-mode)).”**
 
 This mechanism allows to emulate dynamic loading at libtool level instead of Emscripten, while linking everything statically into a single library.
 
@@ -176,9 +176,9 @@ static std::pair<val, val> walk_config(CameraWidget *widget) {
 
   val name(GPP_CALL(const char *, gp_widget_get_name(widget, _)));
   result.set("name", name);
-  result.set("info", …);
-  result.set("label", …);
-  result.set("readonly", …);
+  result.set("info", /* … */);
+  result.set("label", /* … */);
+  result.set("readonly", /* … */);
 
   auto type = GPP_CALL(CameraWidgetType, gp_widget_get_type(widget, _));
 
@@ -217,7 +217,7 @@ switch (config.type) {
       min,
       max,
       step,
-      ...attrs
+      …attrs
     });
     break;
   }
@@ -227,7 +227,7 @@ switch (config.type) {
   case 'toggle': {
     inputElem = h('input', {
       type: 'checkbox',
-      ...attrs
+      …attrs
     });
     break;
   }
@@ -298,11 +298,11 @@ while (this.canvasRef.current) {
   try {
     let blob = await this.props.getPreview();
 
-    let img = await createImageBitmap(blob, { ... });
+    let img = await createImageBitmap(blob, { /* … */ });
     await new Promise(resolve => requestAnimationFrame(resolve));
     canvasCtx.transferFromImageBitmap(img);
   } catch (err) {
-    // ...
+    // …
   }
 }
 ```
