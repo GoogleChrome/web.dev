@@ -7,18 +7,16 @@ authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-updated: 2021-12-22
+updated: 2022-02-02
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/3207688834594635777
 ---
 
-{% Aside %} The Handwriting Recognition API is part of the [capabilities project](/fugu-status/) and
-is currently in development. This post will be updated as the implementation progresses.
+{% Aside %}
+The Handwriting Recognition API is part of the [capabilities project](/fugu-status/) and launched in Chrome&nbsp;99.
 {% endAside %}
 
 ## What is the Handwriting Recognition API? {: #what }
@@ -54,32 +52,12 @@ Example uses include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [Complete][spec]         |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [In progress][ot]        |
-| 5. Launch                                | Not started              |
+| 4. Origin trial                          | Complete                 |
+| 5. Launch                                | Chrome 99                |
 
 </div>
 
 ## How to use the Handwriting Recognition API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the Handwriting Recognition API locally, without an origin trial token, enable
-the `#experimental-web-platform-features` flag in `about://flags`.
-
-{% Aside %} Note that the API is currently exclusive to Chrome&nbsp;OS devices. Chrome&nbsp;91
-already contained limited support for the API, but to fully experience it, we recommend you test on
-Chrome&nbsp;92 to Chrome&nbsp;98. {% endAside %}
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome&nbsp;92, the Handwriting Recognition API will be available as an origin trial on
-Chrome&nbsp;OS. The origin trial is expected to end in Chrome&nbsp;98 (February 22, 2022).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
@@ -444,4 +422,3 @@ This article was reviewed by [Joe Medley], Honglin Yu and Jiewei Qian. Hero imag
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-handwriting-recognition-api/4935
 [i2p]: https://groups.google.com/a/chromium.org/g/blink-dev/c/VXUq1UY4m7Y
 [joe medley]: https://github.com/jpmedley
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/3207688834594635777
