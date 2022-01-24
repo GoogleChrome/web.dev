@@ -240,8 +240,8 @@ a massa sit amet ullamcorper.
   </cite>
 </blockquote>
 
-To additionally emphasize a piece of text from the article, or a quote,
-use `pullquote` class:
+To embed a [pull quote](https://en.wikipedia.org/wiki/Pull_quote) in an article,
+to emphasize a piece of text or a quote, you can use `pullquote` class:
 
 ```html
 <blockquote data-type="pullquote">
@@ -252,14 +252,14 @@ use `pullquote` class:
   <cite>
     Jon Doe
   </cite>
-</blockquote data-type="pullquote">
+</blockquote>
 ```
 
 <blockquote data-type="pullquote">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Proin dictum a massa sit amet ullamcorper.</p>
   <cite>Jon Doe</cite>
-</blockquote data-type="pullquote">
+</blockquote>
 
 You can also use a shortcode with a `pullquote` attribute:
 
