@@ -164,7 +164,7 @@ $ imagemin images/* --out-dir=images
 ### Imagemin npm module
 
 If you use one of these build tools,
-checkout out the codelabs for Imaginemin with
+checkout the codelabs for Imagemin with
 [webpack](/codelab-imagemin-webpack), [gulp](/codelab-imagemin-gulp),
 or [grunt](/codelab-imagemin-grunt).
 
