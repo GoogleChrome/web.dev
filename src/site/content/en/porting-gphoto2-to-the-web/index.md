@@ -350,5 +350,3 @@ After that, all the operations were executing successfully without conflicts.
 ## Conclusion
 
 Together, WebAssembly, Asyncify and Fugu APIs provide a very powerful compilation target for even the most complex applications. They allow you to take a library or an application previously built for a single platform, and port it to the web, making it available to a vastly larger number of users across desktop and mobile devices alike.
-
-If you'd like to see more system libraries and applications ported to the web, why not pick an API, use these articles as guidelines, and port one to the web yourself?
