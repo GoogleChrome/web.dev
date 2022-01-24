@@ -179,15 +179,33 @@ dd + dt {
 /// Blockquotes
 
 blockquote {
+  padding-left: 24px;
+
+  cite {
+    font-size: get-size('size-0');
+  }
+}
+
+blockquote::before {
+  content: '”';
+  @include apply-utility('font', 'brand');
+  font-size: get-size('size-4');
+  float: left;
+  margin: -6px 0 0 -24px;
+}
+
+blockquote[data-type=pullquote] {
+  padding-left: initial;
   font-size: get-size('size-3');
   text-align: center;
+  display: block;
 
   @include apply-utility('font', 'brand');
   @include apply-utility('leading', 'short');
 }
 
-blockquote,
-blockquote > * {
+blockquote[data-type=pullquote],
+blockquote[data-type=pullquote] > * {
   margin-inline: auto;
 
   @include apply-utility('measure', 'short');
@@ -197,33 +215,43 @@ blockquote > * {
 /// However, we want child elements to flow without
 /// having to add a class so in this instance, it
 /// can slide
-blockquote {
+blockquote[data-type=pullquote] {
   @extend .flow;
 }
 
 /// <q> elements are ideal, but we need to make sure
 /// any element is styled as a quote
-blockquote > *:not(:last-child)::before {
+
+blockquote[data-type=pullquote]::before {
+  content: '';
+  display: none;
+}
+
+blockquote[data-type=pullquote] > *:first-child::before {
   content: open-quote;
 }
 
-blockquote > *:not(:last-child)::after {
+blockquote[data-type=pullquote] > *:nth-last-child(2)::after {
+  content: close-quote;
+}
+
+blockquote[data-type=pullquote] > *:last-child:not(cite)::after {
   content: close-quote;
 }
 
 /// It's best to reset content rather than
 /// add quotes only to the first-child, because
 /// quotes might actually be multiline
-blockquote > cite::before,
-blockquote > cite::after {
+blockquote[data-type=pullquote] > cite::before,
+blockquote[data-type=pullquote] > cite::after {
   content: unset;
 }
 
-/// Make sure figcaptions are central with the blockquote
+/// Make sure figcaptions are central with the blockquote[data-type=pullquote]
 /// when they appear in the same <figure> context.
 // Same applies to cites
-figure > blockquote ~ figcaption,
-blockquote cite {
+figure > blockquote[data-type=pullquote] ~ figcaption,
+blockquote[data-type=pullquote] cite {
   margin-inline: auto;
   display: block;
   font-style: normal;

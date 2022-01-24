@@ -18,7 +18,7 @@ provides guidance about how to use them effectively.
 
 1. [Asides](#asides)
 1. [Banners](#banners)
-1. [Block quotes](#blockquotes)
+1. [Block quotes](#block-quotes)
 1. [Browser Compatibility](#browsercompat)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
@@ -205,11 +205,8 @@ instead, use the body variant, below.
 
 ## Block quotes
 
-Use block quotes to emphasize a quotation that's important to
-the main idea of a post. (For example, in a case study you might include
-a quotation from someone on the partner organization's management team.)
-
-Always include a `<cite>` element indicating the quote's source
+To include quotation in the body of an article, use `<blockquote>` tag.
+You can include a `<cite>` element indicating the quote's source
 at the end of a block quote:
 
 ```html
@@ -224,6 +221,8 @@ at the end of a block quote:
 </blockquote>
 ```
 
+You can also use a shortcode:
+
 ```html
 {% raw %}{% Blockquote 'Jon Doe' %}
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
@@ -231,7 +230,47 @@ a massa sit amet ullamcorper.
 {% endBlockquote %}{% endraw %}
 ```
 
-{% Blockquote 'Jon Doe' %}
+<blockquote>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
+  </p>
+  <cite>
+    Jon Doe
+  </cite>
+</blockquote>
+
+To embed a [pull quote](https://en.wikipedia.org/wiki/Pull_quote) in an article,
+to emphasize a piece of text or a quote, you can use `pullquote` class:
+
+```html
+<blockquote data-type="pullquote">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
+  </p>
+  <cite>
+    Jon Doe
+  </cite>
+</blockquote>
+```
+
+<blockquote data-type="pullquote">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.</p>
+  <cite>Jon Doe</cite>
+</blockquote>
+
+You can also use a shortcode with a `pullquote` attribute:
+
+```html
+{% raw %}{% Blockquote 'Jon Doe', 'pullquote' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}{% endraw %}
+```
+
+{% Blockquote 'Jon Doe', 'pullquote' %}
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
 a massa sit amet ullamcorper.
 {% endBlockquote %}
