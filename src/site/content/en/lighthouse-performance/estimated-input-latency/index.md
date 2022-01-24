@@ -29,7 +29,7 @@ during the busiest 5&nbsp;second window of page load.
 The timing of this audit is from
 [First Meaningful Paint](/first-meaningful-paint)
 to the end of the trace, which is roughly 5&nbsp;seconds after
-[Time to Interactive](/interactive).
+[Time to Interactive](/tti/).
 If your latency is higher than 50&nbsp;ms, users may perceive your app as laggy.
 
 The [RAIL performance model](https://developers.google.com/web/fundamentals/performance/rail)

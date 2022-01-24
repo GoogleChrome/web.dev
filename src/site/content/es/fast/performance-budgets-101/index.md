@@ -42,7 +42,7 @@ Los tiempos de hito marcan eventos que suceden durante la carga de la página, c
 
 La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/fcp/) mide el momento en que el navegador muestra el primer fragmento de contenido del DOM, como texto o imágenes.
 
-[Time to Interactive o tiempo de interacción (TTI)](/interactive) mide el tiempo que tarda una página en volverse completamente interactiva y responder de manera confiable a la entrada del usuario. El seguimiento de esta métrica es muy importante si espera algún tipo de interacción del usuario en la página, como hacer clic en enlaces, botones, escribir o usar elementos de formulario.
+[Time to Interactive o tiempo de interacción (TTI)](/tti/) mide el tiempo que tarda una página en volverse completamente interactiva y responder de manera confiable a la entrada del usuario. El seguimiento de esta métrica es muy importante si espera algún tipo de interacción del usuario en la página, como hacer clic en enlaces, botones, escribir o usar elementos de formulario.
 
 ### Métricas basadas en reglas 💯
 

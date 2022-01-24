@@ -14,7 +14,7 @@ tags:
 
 **tl; dr: Las tareas largas pueden mantener el hilo principal ocupado, retrasando la interacción del usuario. Chrome DevTools ahora puede visualizar las tareas largas, lo que facilita la visualización de las tareas que deben optimizarse.**
 
-Si utiliza Lighthouse para auditar sus páginas, es posible que esté familiarizado con el [Time to Interactive](/interactive), una métrica que representa el momento en que los usuarios pueden interactuar con su página y obtener una respuesta. Pero, ¿sabía que las tareas largas (JavaScript) pueden contribuir en gran medida a un TTI deficiente?
+Si utiliza Lighthouse para auditar sus páginas, es posible que esté familiarizado con el [Time to Interactive](/tti/), una métrica que representa el momento en que los usuarios pueden interactuar con su página y obtener una respuesta. Pero, ¿sabía que las tareas largas (JavaScript) pueden contribuir en gran medida a un TTI deficiente?
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Time to Interactive mostrado en el informe de Lighthouse", width="800", height="169" %}
 

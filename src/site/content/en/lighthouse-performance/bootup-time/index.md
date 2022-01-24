@@ -28,7 +28,7 @@ it slows down your page performance in several ways:
 
   JavaScript is also executed on the main thread.
   If your page runs a lot of code before it's really needed,
-  that also delays your [Time To Interactive](/interactive),
+  that also delays your [Time To Interactive](/tti/),
   which is one of the key metrics related to how users perceive your page speed.
 
 - **Memory cost**

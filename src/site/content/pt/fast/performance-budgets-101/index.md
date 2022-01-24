@@ -46,7 +46,7 @@ Os tempos de marcos marcam eventos que acontecem durante o carregamento da pági
 
 [First Contentful Paint (FCP)](/fcp/) mede quando o navegador exibe o primeiro bit de conteúdo do DOM, como texto ou imagens.
 
-[O Time to Interactive (TTI)](/interactive) mede quanto tempo leva para uma página se tornar totalmente interativa e responder de forma confiável à entrada do usuário. É uma métrica muito importante a ser acompanhada se você espera qualquer tipo de interação do usuário na página, como clicar em links, botões, digitar ou usar elementos de formulário.
+[O Time to Interactive (TTI)](/tti/) mede quanto tempo leva para uma página se tornar totalmente interativa e responder de forma confiável à entrada do usuário. É uma métrica muito importante a ser acompanhada se você espera qualquer tipo de interação do usuário na página, como clicar em links, botões, digitar ou usar elementos de formulário.
 
 ### Métricas baseadas em regras 💯
 

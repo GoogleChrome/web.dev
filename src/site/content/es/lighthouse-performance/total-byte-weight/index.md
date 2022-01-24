@@ -26,7 +26,7 @@ Según los datos de [HTTP Archive](https://httparchive.org/reports/state-of-the-
 
 ## Cómo reducir el tamaño de la carga útil
 
-Trata de mantener tu tamaño total de bytes por debajo de los 1,600 KiB. Este objetivo se basa en la cantidad de datos que teóricamente se pueden descargar en una conexión 3G sin dejar de alcanzar un [Time to Interactive (TTI): Tiempo para interactuar](/interactive) de 10 segundos o menos.
+Trata de mantener tu tamaño total de bytes por debajo de los 1,600 KiB. Este objetivo se basa en la cantidad de datos que teóricamente se pueden descargar en una conexión 3G sin dejar de alcanzar un [Time to Interactive (TTI): Tiempo para interactuar](/tti/) de 10 segundos o menos.
 
 A continuación, se muestran algunas formas de reducir el tamaño de la carga útil:
 

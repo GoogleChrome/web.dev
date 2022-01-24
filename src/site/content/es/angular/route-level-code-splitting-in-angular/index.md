@@ -13,7 +13,7 @@ feedback:
   - api
 ---
 
-Esta publicación explica cómo configurar la [división de código](/reduce-javascript-payloads-with-code-splitting/) a nivel de ruta en una aplicación de Angular, lo que puede reducir el tamaño del paquete de JavaScript y mejorar drásticamente el [Time to Interactive (TTI): Tiempo de interacción](/interactive).
+Esta publicación explica cómo configurar la [división de código](/reduce-javascript-payloads-with-code-splitting/) a nivel de ruta en una aplicación de Angular, lo que puede reducir el tamaño del paquete de JavaScript y mejorar drásticamente el [Time to Interactive (TTI): Tiempo de interacción](/tti/).
 
 *Puedes encontrar los ejemplos de código de este artículo en [GitHub](https://github.com/mgechev/code-splitting-web-dev). El ejemplo de eager routing está disponible en  [eager branch](https://github.com/mgechev/code-splitting-web-dev/tree/eager). El ejemplo de división de código a nivel de ruta está en [lazy branch](https://github.com/mgechev/code-splitting-web-dev/tree/lazy).*
 
@@ -29,7 +29,7 @@ La forma más eficaz de reducir los paquetes de JavaScript sin sacrificar funcio
 
 {% Aside 'note' %}
 
-Al usar la división de código, [Twitter y Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observaron mejoras de hasta un 50% en su [Time to Interactive](/interactive).
+Al usar la división de código, [Twitter y Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observaron mejoras de hasta un 50% en su [Time to Interactive](/tti/).
 
 {% endAside %}
 

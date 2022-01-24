@@ -238,7 +238,7 @@ shows the performance using metrics like[First Contentful
 Paint](/fcp/), [Largest Contentful Paint](/lcp/),
 [Speed Index](/speed-index/), [Cumulative Layout
 Shift](/cls/), [Time to
-Interactive](/interactive/), and [Total Blocking
+Interactive](/tti/), and [Total Blocking
 Time](/tbt/). Each metric is
 [scored](/performance-scoring/) and labeled with an icon
 indicating Good, Needs improvement, or Poor. This section provides a good

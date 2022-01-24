@@ -54,7 +54,7 @@ JavaScript](/lcp/#measure-lcp-in-javascript).
 
 [Total Blocking Time (TBT)](/tbt/) metric measures the total amount of time
 between [First Contentful Paint (FCP)](/fcp/) and [Time to
-Interactive (TTI)](/interactive/) where the main thread was blocked for long
+Interactive (TTI)](/tti/) where the main thread was blocked for long
 enough to prevent input responsiveness.
 
 A [task is considered long](/custom-metrics/#long-tasks-api) if it runs on the

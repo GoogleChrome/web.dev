@@ -18,7 +18,7 @@ El informe Lighthouse muestra el TBT en milisegundos:
 
 ## Qué mide la TBT
 
-La TBT mide la cantidad total de tiempo que una página está bloqueada para que no responda a la entrada del usuario, como los clics del ratón, toques de la pantalla o pulsaciones del teclado. La suma se calcula sumando la *parte de bloqueo* de todas [las tareas largas](/long-tasks-devtools) entre [First Contentful Paint (primer despliegue de contenido)](/fcp/) y [Time to Interactive (tiempo de interacción)](/interactive/). Cualquier tarea que se ejecute durante más de 50 ms es una tarea larga. La cantidad de tiempo después de 50 ms es la parte de bloqueo. Por ejemplo, si Lighthouse detecta una tarea de 70 ms de duración, la porción de bloqueo sería de 20 ms.
+La TBT mide la cantidad total de tiempo que una página está bloqueada para que no responda a la entrada del usuario, como los clics del ratón, toques de la pantalla o pulsaciones del teclado. La suma se calcula sumando la *parte de bloqueo* de todas [las tareas largas](/long-tasks-devtools) entre [First Contentful Paint (primer despliegue de contenido)](/fcp/) y [Time to Interactive (tiempo de interacción)](/tti/). Cualquier tarea que se ejecute durante más de 50 ms es una tarea larga. La cantidad de tiempo después de 50 ms es la parte de bloqueo. Por ejemplo, si Lighthouse detecta una tarea de 70 ms de duración, la porción de bloqueo sería de 20 ms.
 
 ## Cómo determina Lighthouse su puntaje TBT
 
@@ -72,7 +72,7 @@ En general, las causas más comunes de tareas largas son:
 - [¿Las tareas largas de JavaScript están retrasando su Time to Interactive?](/long-tasks-devtools)
 - [Optimizar la demora de la primera entrada](/optimize-fid)
 - [Primer despliegue de contenido](/fcp/)
-- [Tiempo de interacción](/interactive/)
+- [Tiempo de interacción](/tti/)
 - [Reducir las cargas útiles de JavaScript con la división de código](/reduce-javascript-payloads-with-code-splitting/)
 - [Eliminar el código no utilizado](/remove-unused-code/)
 - [Cargar de manera eficiente los recursos de terceros](/efficiently-load-third-party-javascript/)

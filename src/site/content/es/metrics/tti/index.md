@@ -41,7 +41,7 @@ Para evitar este problema, haga todo lo posible para minimizar la diferencia ent
 
 ## Cómo medir TTI
 
-TTI es una métrica que se mide mejor [en el laboratorio](/user-centric-performance-metrics/#in-the-lab) . La mejor manera de medir TTI es ejecutar una auditoría de desempeño Lighthouse en su sitio. Consulte la [documentación de Lighthouse sobre TTI](/interactive/) para obtener información sobre su uso.
+TTI es una métrica que se mide mejor [en el laboratorio](/user-centric-performance-metrics/#in-the-lab) . La mejor manera de medir TTI es ejecutar una auditoría de desempeño Lighthouse en su sitio. Consulte la [documentación de Lighthouse sobre TTI](/tti/) para obtener información sobre su uso.
 
 ### Herramientas de laboratorio
 

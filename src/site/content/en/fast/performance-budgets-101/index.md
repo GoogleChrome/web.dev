@@ -46,7 +46,7 @@ Milestone timings mark events that happen during page load, such as [DOMContentL
 
 [First Contentful Paint (FCP)](/fcp/) measures when the browser displays the first bit of content from the DOM, like text or images.
 
-[Time to Interactive (TTI)](/interactive) measures how long it takes for a page to become fully interactive and reliably respond to user input. It's a very important metric to track if you expect any kind of user interaction on the page like clicking links, buttons, typing or using form elements.
+[Time to Interactive (TTI)](/tti/) measures how long it takes for a page to become fully interactive and reliably respond to user input. It's a very important metric to track if you expect any kind of user interaction on the page like clicking links, buttons, typing or using form elements.
 
 ### Rule-based metrics 💯
 

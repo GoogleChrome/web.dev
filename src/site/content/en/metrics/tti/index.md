@@ -71,7 +71,7 @@ interactive.
 TTI is a metric that's best measured [in the
 lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TTI is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
-TTI](/interactive/) for usage details.
+TTI](/tti/) for usage details.
 
 ### Lab tools
 
