@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2021-02-23
+updated: 2022-01-24
 hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
 thumbnail: image/admin/8tWkeYbKLxSd2YgTUSGv.jpg
 alt: A photo of NFC tags
@@ -52,7 +52,8 @@ Examples of sites that may use Web NFC include:
   when the user touches their device to an NFC card near the exhibit.
 - Inventory management sites can read or write data to the NFC tag on a
   container to update information on its contents.
-- Conference sites can use it to scan NFC badges during the event.
+- Conference sites can use it to scan NFC badges during the event and make sure
+  they are locked to prevent further changes of the information written on them.
 - Sites can use it for sharing initial secrets needed for device or service
   provisioning scenarios and also to deploy configuration data in operational
   mode.
@@ -128,6 +129,8 @@ To scan NFC tags, first instantiate a new `NDEFReader` object. Calling `scan()`
 returns a promise. The [user may be prompted] if access was not previously
 granted. The promise will resolve if the following conditions are all met:
 
+- It must be called in response to a user gesture such as a touch gesture or
+  mouse click.
 - User has allowed the website to interact with NFC devices when they tap their
   phone.
 - The user's phone supports NFC.
@@ -198,6 +201,8 @@ To write NFC tags, first instantiate a new `NDEFReader` object. Calling
 previously granted. At this point, an NDEF message is "prepared" and promise
 will resolve if the following conditions are all met:
 
+- It must be called in response to a user gesture such as a touch gesture or
+  mouse click.
 - User has allowed the website to interact with NFC devices when they tap their
   phone.
 - The user's phone supports NFC.
@@ -263,9 +268,62 @@ const ndef = new NDEFReader();
 ndef.write("Writing data on an empty NFC tag is fun!", { overwrite: false })
 .then(() => {
   console.log("Message written.");
-}).catch(_ => {
+}).catch(error => {
   console.log(`Write failed :-( try again: ${error}.`);
 });
+```
+
+### Make NFC tags read-only {: #make-read-only }
+
+To prevent malicious users from overwriting NFC tags content, it is possible to
+make NFC tags permanently read-only. This operation is a one-way process and
+cannot be reversed. Once an NFC tag has been made read-only, it can't be written
+anymore.
+
+To make NFC tags read-only, first instantiate a new `NDEFReader` object. Calling
+`makeReadOnly()` returns a promise. The [user may be prompted] if access was not
+previously granted. The promise will resolve if the following conditions are all
+met:
+
+- It must be called in response to a user gesture such as a touch gesture or
+  mouse click.
+- User has allowed the website to interact with NFC devices when they tap their
+  phone.
+- The user's phone supports NFC.
+- The user has enabled NFC on their phone.
+- User has tapped an NFC tag and the NFC tag has been successfully made read-only.
+
+```js
+const ndef = new NDEFReader();
+ndef.makeReadOnly()
+.then(() => {
+  console.log("NFC tag has been made permanently read-only.");
+}).catch(error => {
+  console.log(`Operation failed: ${error}`);
+});
+```
+
+Here's how to make an NFC tag permanently read-only after writing to it.
+
+```js
+const ndef = new NDEFReader();
+try {
+  await ndef.write("Hello world");
+  console.log("Message written.");
+  await ndef.makeReadOnly();
+  console.log("NFC tag has been made permanently read-only after writing to it.");
+} catch (error) {
+  console.log(`Operation failed: ${error}`);
+}
+```
+
+As `makeReadOnly()` is available on Android in Chrome&nbsp;100 or later, check
+if this feature is supported with the following:
+
+```js
+if ("NDEFReader" in window && "makeReadOnly" in NDEFReader.prototype) {
+  // makeReadOnly() is supported.
+}
 ```
 
 ### Security and permissions {: #security-and-permissions }
@@ -285,8 +343,9 @@ control over NFC use.
 
 Web NFC is only available to top-level frames and secure browsing contexts (HTTPS
 only). Origins must first request the `"nfc"` [permission] while handling a
-user gesture (e.g a button click). The NDEFReader `scan()` and `write()` methods
-trigger a user prompt, if access was not previously granted.
+user gesture (e.g a button click). The NDEFReader `scan()`, `write()`, and
+`makeReadOnly()` methods trigger a user prompt, if access was not previously
+granted.
 
 ```js
   document.querySelector("#scanButton").onclick = async () => {
@@ -362,8 +421,8 @@ if (nfcPermissionStatus.state === "granted") {
 
 Using the <code>[AbortController]</code> primitive makes it easy to abort NFC
 operations. The example below shows you how to pass the `signal` of an
-`AbortController` through the options of NDEFReader `scan()` and `write()`
-methods and abort both NFC operations at the same time.
+`AbortController` through the options of NDEFReader `scan()`, `makeReadOnly()`,
+`write()` methods and abort both NFC operations at the same time.
 
 ```js
 const abortController = new AbortController();
@@ -375,6 +434,7 @@ const ndef = new NDEFReader();
 await ndef.scan({ signal: abortController.signal });
 
 await ndef.write("Hello world", { signal: abortController.signal });
+await ndef.makeReadOnly({ signal: abortController.signal });
 
 document.querySelector("#abortButton").onclick = event => {
   abortController.abort();
