@@ -401,7 +401,7 @@ walls](https://techcrunch.com/2020/05/06/no-cookie-consent-walls-and-no-scrollin
 Large modals can be considered a type of interstitial. Google Search [does not
 penalize](https://developers.google.com/search/blog/2016/08/helping-users-easily-access-content-on)
 the usage of interstitials when they are used to comply with legal regulations
-such as in the case of cookie banners. However, ther usage of interstitials in
+such as in the case of cookie banners. However, their usage of interstitials in
 other contexts—particularly if they are intrusive or create a poor user
 experience—may be penalized.
 {% endAside %}
