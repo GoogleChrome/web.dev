@@ -61,7 +61,7 @@ provides a good overview.
 
 From a user perspective the most important metrics are:
 
-+   **[First Contentful Paint (FCP)](/first-contentful-paint):**
++   **[First Contentful Paint (FCP)](/fcp/):**
     The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
 +   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**

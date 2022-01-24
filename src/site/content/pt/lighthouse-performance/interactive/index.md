@@ -20,7 +20,7 @@ O Lighthouse apresenta a métrica TTI em segundos:
 
 O TTI mede quanto tempo leva para uma página se tornar *totalmente* interativa. Uma página é considerada totalmente interativa quando:
 
-- A página exibe conteúdo útil, que é medido pela métrica [First Contentful Paint](/first-contentful-paint),
+- A página exibe conteúdo útil, que é medido pela métrica [First Contentful Paint](/fcp/),
 - Os handlers de eventos estão registrados para a maioria dos elementos visíveis da página e
 - A página responde às interações do usuário dentro de 50 milissegundos.
 

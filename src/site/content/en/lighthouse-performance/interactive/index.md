@@ -32,7 +32,7 @@ TTI measures how long it takes a page to become _fully_ interactive.
 A page is considered fully interactive when:
 
 - The page displays useful content, which is measured by the
-[First Contentful Paint](/first-contentful-paint),
+[First Contentful Paint](/fcp/),
 - Event handlers are registered for most visible page elements, and
 - The page responds to user interactions within 50&nbsp;milliseconds.
 

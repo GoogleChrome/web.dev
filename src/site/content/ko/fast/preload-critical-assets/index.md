@@ -40,7 +40,7 @@ HTML 문서의 헤드에 `rel="preload"`가 있는 `<link>` 태그를 추가하�
 
 브라우저는 미리 로드된 리소스를 캐시하므로 필요 시 즉시 사용할 수 있습니다. (스크립트를 실행하거나 스타일시트를 적용하지 않습니다.)
 
-{% Aside %} 사전 로딩을 구현한 후 [Shopify, Financial Times 및 Treebo](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)를 포함한 많은 사이트에서 [Interactive 시간](/interactive) 및 [First Contentful Paint](/first-contentful-paint)와 같은 사용자 중심 매트릭이 1초 개선되었습니다. {% endAside %}
+{% Aside %} 사전 로딩을 구현한 후 [Shopify, Financial Times 및 Treebo](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)를 포함한 많은 사이트에서 [Interactive 시간](/interactive) 및 [First Contentful Paint](/fcp/)와 같은 사용자 중심 매트릭이 1초 개선되었습니다. {% endAside %}
 
 리소스 힌트(예: [`preconnect`](/preconnect-and-dns-prefetch) 및 [`prefetch`](/link-prefetch))는 브라우저가 적합하다고 판단하는 대로 실행됩니다. 반면에 `preload`는 브라우저에 필수입니다. 최신 브라우저는 이미 리소스의 우선순위를 정하는 데 능숙합니다. `preload` 드물게 사용하고 가장 중요한 리소스만 미리 로드하는 것이 중요하기 때문입니다.
 

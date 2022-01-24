@@ -130,7 +130,7 @@ While performance measurement is highly important, make sure to keep an open
 mind and question unexpected results—and make sure to not report misleading
 numbers to stakeholders and management. If unsure on what to pick and report,
 we'd advise as a minimum for 90th percentile
-[First Contentful Paint](/first-contentful-paint), which is also what we use
+[First Contentful Paint](/fcp/), which is also what we use
 across our public tooling.
 
 ## Third party content

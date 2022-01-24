@@ -22,7 +22,7 @@ O Lighthouse exibe FMP em segundos:
 
 O FMP mede quando o conteúdo principal de uma página está visível para o usuário. A pontuação bruta para FMP é o tempo em segundos entre o usuário iniciar o carregamento da página e a página que renderiza o conteúdo primário acima da dobra. A FMP mostra essencialmente o tempo da pintura após o qual a maior mudança de layout acima da dobra acontece. Saiba mais sobre os detalhes técnicos da FMP em [Time to First Meaningful Paint do Google: uma abordagem baseada em layout](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view).
 
-[First Contentful Paint (FCP)](/first-contentful-paint) e FMP são geralmente as mesmas quando o primeiro bit de conteúdo renderizado na página inclui o conteúdo acima da dobra. No entanto, essas métricas podem ser diferentes quando, por exemplo, há conteúdo acima da dobra em um iframe. A FMP registra quando o conteúdo do iframe é visível para o usuário, enquanto a FCP *não* inclui o conteúdo do iframe.
+[First Contentful Paint (FCP)](/fcp/) e FMP são geralmente as mesmas quando o primeiro bit de conteúdo renderizado na página inclui o conteúdo acima da dobra. No entanto, essas métricas podem ser diferentes quando, por exemplo, há conteúdo acima da dobra em um iframe. A FMP registra quando o conteúdo do iframe é visível para o usuário, enquanto a FCP *não* inclui o conteúdo do iframe.
 
 ## Como o Lighthouse determina sua pontuação FMP
 

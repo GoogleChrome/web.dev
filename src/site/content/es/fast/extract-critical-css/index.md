@@ -33,7 +33,7 @@ La mejora de los tiempos de renderizado puede marcar una gran diferencia en el [
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="Comparación de vista de tira de película sobre la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G. La tira de película superior muestra seis fotogramas en blanco antes de mostrar finalmente el contenido. La tira de película inferior muestra contenido significativo en el primer fotograma.", width="800", height="363" %}<figcaption> Comparación de la carga de una página con CSS que bloquea el renderizado (arriba) y la misma página con CSS crítico en línea (abajo) en una conexión 3G</figcaption></figure>
 
-Si tiene un [First Contentful Paint o FCP (primer despliegue de contenido)](/first-contentful-paint) deficiente y ve la oportunidad de "Eliminar el recurso de bloqueo de renderizado" en las auditorías de Lighthouse, es una buena idea probar el CSS crítico.
+Si tiene un [First Contentful Paint o FCP (primer despliegue de contenido)](/fcp/) deficiente y ve la oportunidad de "Eliminar el recurso de bloqueo de renderizado" en las auditorías de Lighthouse, es una buena idea probar el CSS crítico.
 
 {% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Auditoría Lighthouse con oportunidades de 'Eliminar recurso de bloqueo de renderizado' o 'Aplazar CSS no utilizado'", width="743", height="449" %}
 

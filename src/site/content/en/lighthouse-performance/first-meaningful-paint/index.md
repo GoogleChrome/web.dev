@@ -39,7 +39,7 @@ after which the biggest above-the-fold layout change happens.
 Learn more about the technical details of FMP in Google's
 [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view).
 
-[First Contentful Paint (FCP)](/first-contentful-paint)
+[First Contentful Paint (FCP)](/fcp/)
 and FMP are often the same
 when the first bit of content rendered on the page includes the content above the fold.
 However, these metrics can differ when, for example,

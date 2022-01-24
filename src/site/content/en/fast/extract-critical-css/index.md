@@ -48,7 +48,7 @@ Improving render times can make a huge difference in [perceived performance](htt
   </figcaption>
 </figure>
 
-If you have poor [First Contentful Paint (FCP)](/first-contentful-paint) and see "Eliminate render-blocking resource" opportunity in Lighthouse audits it's a good idea to give critical CSS a go.
+If you have poor [First Contentful Paint (FCP)](/fcp/) and see "Eliminate render-blocking resource" opportunity in Lighthouse audits it's a good idea to give critical CSS a go.
 
 {% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Lighthouse audit with 'Eliminate render-blocking resource' or 'Defer unused CSS' opportunities", width="743", height="449" %}
 

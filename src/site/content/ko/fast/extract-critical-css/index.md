@@ -33,7 +33,7 @@ tags:
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단)를 로드하는 필름 스트립 보기 비교. 맨 위로 필름 스트립은 최종적으로 콘텐츠를 표시하기 전에 6개의 빈 프레임을 표시합니다. 하단 필름 스트립은 첫 번째 프레임에 의미 있는 콘텐츠를 표시합니다.", width="800", height="363" %}<figcaption> 3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단) 로드 비교</figcaption></figure>
 
-[FCP(First Contentful Paint)](/first-contentful-paint)가 불량하고 Lighthouse 감사에서 "렌더링 차단 리소스 제거" 기회가 표시되는 경우 중요 CSS를 사용하는 것이 좋습니다.
+[FCP(First Contentful Paint)](/fcp/)가 불량하고 Lighthouse 감사에서 "렌더링 차단 리소스 제거" 기회가 표시되는 경우 중요 CSS를 사용하는 것이 좋습니다.
 
 {% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="'렌더 차단 리소스 제거' 또는 '사용하지 않는 CSS 연기' 기회를 사용한 Lighthouse 감사", width="743", height="449" %}
 

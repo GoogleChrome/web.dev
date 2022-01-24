@@ -24,7 +24,7 @@ Lighthouse는 몇 초 만에 FMP를 표시합니다.
 
 FMP는 페이지의 주요 콘텐츠가 사용자에게 표시되는 시점을 측정합니다. FMP의 원시 점수는 페이지 로드를 시작한 사용자와 스크롤 없이 볼 수 있는 기본 콘텐츠를 렌더링하는 페이지 사이의 시간(초)입니다. FMP는 기본적으로 가장 큰 스크롤 없이 볼 수 있는 레이아웃 변경이 발생한 후 페인트의 타이밍을 보여줍니다. Google의 [Time to First meaningful Paint: 레이아웃 기반 접근 방식](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)에서 FMP의 기술적 세부사항에 대해 자세히 알아보세요.
 
-[FCP(First Contentful Paint)](/first-contentful-paint)와 FMP는 페이지에 렌더링된 콘텐츠의 첫 번째 비트에 스크롤 없이 볼 수 있는 부분의 콘텐츠가 포함되어 있는 경우가 많습니다. 그러나 이러한 측정항목은 예를 들어 iframe 내 스크롤 없이 볼 수 있는 부분에 콘텐츠가 있는 경우 다를 수 있습니다. FMP는 iframe 내의 콘텐츠가 사용자에게 표시될 때 등록되지만 FCP는 iframe 콘텐츠를 포함 *하지 않습니다.*
+[FCP(First Contentful Paint)](/fcp/)와 FMP는 페이지에 렌더링된 콘텐츠의 첫 번째 비트에 스크롤 없이 볼 수 있는 부분의 콘텐츠가 포함되어 있는 경우가 많습니다. 그러나 이러한 측정항목은 예를 들어 iframe 내 스크롤 없이 볼 수 있는 부분에 콘텐츠가 있는 경우 다를 수 있습니다. FMP는 iframe 내의 콘텐츠가 사용자에게 표시될 때 등록되지만 FCP는 iframe 콘텐츠를 포함 *하지 않습니다.*
 
 ## Lighthouse가 FMP 점수를 결정하는 방법
 

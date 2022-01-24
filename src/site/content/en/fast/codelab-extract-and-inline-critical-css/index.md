@@ -36,7 +36,7 @@ To run a Lighthouse audit on this site:
 
 {% Img src="image/admin/bk0impRv9Mo0yDpbuIQi.png", alt="Audits panel of Chrome DevTools, powered by Lighthouse", width="800", height="1068" %}
 
-When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/first-contentful-paint/) is high and why overall performance score is not great.
+When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/fcp/) is high and why overall performance score is not great.
 
 {% Img src="image/admin/otfxnEjhjP9cNpSF8W4o.png", alt="Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app", width="710", height="356" %}
 

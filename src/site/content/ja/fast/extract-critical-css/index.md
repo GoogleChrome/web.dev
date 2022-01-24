@@ -33,7 +33,7 @@ HTMLドキュメントの`<head>`で抽出されたスタイルをインライ�
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) を読み込んだフィルムストリップビューの比較。上のフィルムストリップは、最終的にコンテンツを表示する前の6つの空白フレームを表示します。下のフィルムストリップは、最初のフレームに意味のあるコンテンツを表示します。", width="800", height="363" %} <figcaption>3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) の読み込みの比較</figcaption></figure>
 
-[First Contentful Paint (FCP)](/first-contentful-paint) が不十分で、Lighthouse監査で「レンダリングブロックリソースの排除」の可能性が特定された場合は、クリティカルCSSを試してみることをお勧めします。
+[First Contentful Paint (FCP)](/fcp/) が不十分で、Lighthouse監査で「レンダリングブロックリソースの排除」の可能性が特定された場合は、クリティカルCSSを試してみることをお勧めします。
 
 {% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="「レンダリングブロックリソースの排除」または「未使用のCSSの遅延」の可能性が特定されたLighthouse監査", width="743", height="449" %}
 

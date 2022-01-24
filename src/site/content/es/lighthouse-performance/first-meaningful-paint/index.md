@@ -20,7 +20,7 @@ Lighthouse muestra FMP en segundos:
 
 FMP mide cuándo el contenido principal de una página se hace  visible para el usuario. La puntuación bruta para FMP es el tiempo en segundos entre el momento en que el usuario inicia la carga de la página y el momento en que la página presenta el contenido principal de la mitad superior de la página. FMP esencialmente muestra el momento del despliegue después del cual ocurre el mayor cambio en el diseño en la parte superior de la página. Obtenga más información sobre los detalles técnicos de FMP en [Hasta el primer despliegue significativo: un enfoque basado en diseño](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view) de Google.
 
-El [Primer despliegue del contenido (FCP)](/first-contentful-paint) y el FMP suelen ser iguales cuando el primer fragmento de contenido representado en la página incluye el contenido en la mitad superior de la página. Sin embargo, estas métricas pueden diferir cuando, por ejemplo, existe contenido en la mitad superior de un iframe. FMP registra cuando el contenido dentro del iframe es visible para el usuario, mientras que FCP *no* incluye contenido de iframe.
+El [Primer despliegue del contenido (FCP)](/fcp/) y el FMP suelen ser iguales cuando el primer fragmento de contenido representado en la página incluye el contenido en la mitad superior de la página. Sin embargo, estas métricas pueden diferir cuando, por ejemplo, existe contenido en la mitad superior de un iframe. FMP registra cuando el contenido dentro del iframe es visible para el usuario, mientras que FCP *no* incluye contenido de iframe.
 
 ## Cómo Lighthouse determina su puntaje FMP
 
