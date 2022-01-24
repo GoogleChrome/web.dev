@@ -15,7 +15,7 @@ web_lighthouse:
   has been overly sensitive to small differences in the page load, leading to inconsistent
   (bimodal) results. Additionally, the metric's definition relies on browser-specific
   implementation details, which means it cannot be standardized nor implemented in all web
-  browsers. Moving forward, consider using [Largest Contentful Paint](/largest-contentful-paint/)
+  browsers. Moving forward, consider using [Largest Contentful Paint](/lcp/)
   instead.
 {% endAside %}
 
@@ -118,7 +118,7 @@ enables you to see User Timing data in your report.
 - [Source code for **First Meaningful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-- [Largest Contentful Paint](/largest-contentful-paint)
+- [Largest Contentful Paint](/lcp/)
 
 [metrics]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics
 [tracking]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements

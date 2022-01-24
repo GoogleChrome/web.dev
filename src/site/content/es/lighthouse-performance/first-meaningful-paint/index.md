@@ -8,7 +8,7 @@ web_lighthouse:
   - first-meaningful-paint
 ---
 
-{% Aside 'caution' %} El Primer despliegue significativo (FMP) está obsoleto a partir de Lighthouse 6.0. En la práctica, FMP se ha comportado de forma demasiado sensible a las pequeñas diferencias en la carga de la página, lo que ha dado lugar a resultados inconsistentes (bimodales). Además, la definición de la métrica se basa en detalles de implementación específicos del navegador, lo que significa que no se puede estandarizar ni implementar en todos los navegadores. En el futuro, en vez de esta métrica, considere usar [Despliegue del contenido más extenso](/largest-contentful-paint/). {% endAside %}
+{% Aside 'caution' %} El Primer despliegue significativo (FMP) está obsoleto a partir de Lighthouse 6.0. En la práctica, FMP se ha comportado de forma demasiado sensible a las pequeñas diferencias en la carga de la página, lo que ha dado lugar a resultados inconsistentes (bimodales). Además, la definición de la métrica se basa en detalles de implementación específicos del navegador, lo que significa que no se puede estandarizar ni implementar en todos los navegadores. En el futuro, en vez de esta métrica, considere usar [Despliegue del contenido más extenso](/lcp/). {% endAside %}
 
 Primer despliegue significativo (FMP) es una de las seis métricas que se registran en la sección **Rendimiento** del informe Lighthouse. Cada métrica captura algún aspecto de la velocidad de carga de la página.
 
@@ -80,4 +80,4 @@ Consulte [Evaluación del rendimiento de carga en la vida real con la navegació
 - [Código fuente para la auditoría de **Primer despliegue significativo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Guía de puntuación de Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Hasta el primer despliegue significativo: un enfoque basado en diseño](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-- [Despliegue con contenido más extenso](/largest-contentful-paint)
+- [Despliegue con contenido más extenso](/lcp/)

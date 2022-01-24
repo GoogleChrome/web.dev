@@ -10,7 +10,7 @@ web_lighthouse:
   - first-meaningful-paint
 ---
 
-{% Aside 'caution' %} A métrica first-meaningful-paint (FMP) foi descontinuada no Lighthouse 6.0. Na prática, a FMP tem sido excessivamente sensível a pequenas diferenças no carregamento da página, levando a resultados inconsistentes (bimodais). Além disso, a definição da métrica depende de detalhes de implementação específicos do navegador, o que significa que não pode ser padronizada nem implementada em todos os navegadores da web. Seguindo em frente, considere usar a [Largest Contentful Paint](/largest-contentful-paint/). {% endAside %}
+{% Aside 'caution' %} A métrica first-meaningful-paint (FMP) foi descontinuada no Lighthouse 6.0. Na prática, a FMP tem sido excessivamente sensível a pequenas diferenças no carregamento da página, levando a resultados inconsistentes (bimodais). Além disso, a definição da métrica depende de detalhes de implementação específicos do navegador, o que significa que não pode ser padronizada nem implementada em todos os navegadores da web. Seguindo em frente, considere usar a [Largest Contentful Paint](/lcp/). {% endAside %}
 
 First Meaningful Paint (FMP) é uma das seis métricas monitoradas na **seção Desempenho** do relatório Lighthouse. Cada métrica captura algum aspecto da velocidade de carregamento da página.
 
@@ -82,4 +82,4 @@ Consulte [Avaliação do desempenho de carregamento do Google na vida real com n
 - [Código-fonte para auditoria da **First Meaningful Paint**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Guia de pontuação do Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Tempo até a First Meaningful Paint: uma abordagem baseada em layout](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-- [Largest Contentful Paint](/largest-contentful-paint)
+- [Largest Contentful Paint](/lcp/)
