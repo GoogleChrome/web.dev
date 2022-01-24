@@ -413,15 +413,18 @@ sup {
 details {
   @extend .flow;
 
-  --flow-space: 0.5em;
+  $flow-space: 0.5em;
+  --flow-space: $flow-space;
 
   border-block: 1px solid get-utility-value('bg', 'stroke');
-  padding: 1rem 0.5rem 1.2rem 0.5rem;
+  padding: 0 0.5rem 1.2rem 0.5rem;
+  padding-top: calc(1rem + #{$flow-space});
   text-align: left;
 }
 
 details + details {
   border-block-start: none;
+  padding-top: 1rem;
 }
 
 details summary {

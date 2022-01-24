@@ -8,6 +8,7 @@
 {% set tocContents %}
   {{- content | toc | safe -}}
 {% endset %}
+{% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
 {% if hero %}
   {% Img src=hero, alt=alt or '', loading=false, class='hero-image', height='480', width='1600', sizes='100vw' %}

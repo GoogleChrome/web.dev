@@ -31,6 +31,7 @@ CSS_ORIGIN: 'next'
 {% set tocContents %}
   {{- content | toc | safe -}}
 {% endset %}
+{% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
 <a class="skip-link button" data-type="primary" href="#main">Skip to main</a>
 

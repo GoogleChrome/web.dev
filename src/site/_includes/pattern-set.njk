@@ -13,7 +13,7 @@ pageScripts:
 {% from 'macros/code-pattern.njk' import codePattern with context %}
 
 
-{% set tocTitle = "All Patterns" %}
+{% set tocTitle = "Layout Patterns" %}
 
 {% if page.url %}
   {% set patternSetId = page.url | getRelativePath('/patterns/') %}
@@ -92,7 +92,7 @@ pageScripts:
   <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
     {% include 'partials/toc-side.njk' %}
 
-    <div class="prose legacy-rollout">
+    <div class="flow legacy-rollout">
       {% include 'partials/toc-inner.njk' %}
       {# Show patterns from current set (if set) or from the whole suite #}
       {% if currentPatternSet %}
