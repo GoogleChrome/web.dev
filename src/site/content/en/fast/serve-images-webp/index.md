@@ -49,7 +49,7 @@ for simple projects or if you'll only need to convert images once.
 When you convert images to WebP, you have the option to set a wide variety of
 compression settings—but for most people the only thing you'll ever need to
 care about is the quality setting. You can specify a quality level from 0
-(worst) to 100 (best). It's worth playing around with this find
+(worst) to 100 (best). It's worth playing around with this, find
 which level is the right tradeoff between image quality and filesize for your
 needs.
 
