@@ -26,7 +26,7 @@ Additionally, libgphoto2 uses libtool for loading dynamic plugins, and even thou
 
 Here's an approximate dependency diagram (dashed lines denote dynamic linking):
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ziuavwzLjYb5ZopEUzvi.svg", alt='A diagram shows "the app" depending on "libgphoto2 fork", which depends on "libtool". "libtool" block depends dynamically on "libgphoto2 ports" and "libgphoto2 camlibs". Finally, "libgphoto2 ports" depends statically on the "libusb fork".', width="800", height="481" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ziuavwzLjYb5ZopEUzvi.svg", alt="A diagram shows 'the app' depending on 'libgphoto2 fork', which depends on 'libtool'. 'libtool' block depends dynamically on 'libgphoto2 ports' and 'libgphoto2 camlibs'. Finally, 'libgphoto2 ports' depends statically on the 'libusb fork'.", width="800", height="481" %}
 
 Most configure-based build systems, including the ones used in these libraries, allow overriding paths for dependencies via various flags, so that's what I tried to do first. However, when the dependency graph becomes complex, the list of path overrides for each library's dependencies becomes verbose and error-prone. I also found some bugs where build systems weren't actually prepared for their dependencies to live in non-standard paths.
 
@@ -89,7 +89,7 @@ The only problem this doesn't solve is enumeration of dynamic libraries - the li
 
 Here's what the updated dependency diagram looks like with everything linked statically together:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/5Fg5aJnydnIVMn44fiBE.svg", alt="A diagram shows "the app" depending on "libgphoto2 fork", which depends on "libtool". "libtool" depends on "ports: libusb1" and "camlibs: libptp2". "ports: libusb1" depends on the "libusb fork".", width="800", height="481" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/5Fg5aJnydnIVMn44fiBE.svg", alt="A diagram shows 'the app' depending on 'libgphoto2 fork', which depends on 'libtool'. 'libtool' depends on 'ports: libusb1' and 'camlibs: libptp2'. 'ports: libusb1' depends on the 'libusb fork'.", width="800", height="481" %}
 
 So that's what I hardcoded for Emscripten builds:
 
