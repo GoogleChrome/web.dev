@@ -22,7 +22,7 @@ time you edit your code, you don't have to do that. Tools can do the tedious
 stuff for you. [Travis CI](https://travis-ci.com/) is a great service that
 automatically runs tests for your app in the cloud every time you push new code.
 
-Lighthouse Bot integrates with Travis CI, and it's performance budget feature ensures
+Lighthouse Bot integrates with Travis CI, and its performance budget feature ensures
 that you won't accidentally downgrade performance without noticing. You can
 [configure your repository](https://help.github.com/articles/about-required-status-checks/)
 so that it won't allow merging pull-requests if the Lighthouse scores fall below
