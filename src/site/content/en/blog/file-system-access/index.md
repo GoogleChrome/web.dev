@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-01-19
+updated: 2022-01-24
 tags:
   - blog
   - capabilities
@@ -426,20 +426,22 @@ butDir.addEventListener('click', async () => {
 });
 ```
 
-If you additionally need to access each file via `getFile()` to, for example, obtain the individual file sizes,
-do not use `await` on each result sequentially, but rather process all files in parallel, for example,
-via `Promise.all()`.
+If you additionally need to access each file via `getFile()` to, for example, obtain the individual
+file sizes, do not use `await` on each result sequentially, but rather process all files in
+parallel, for example, via `Promise.all()`.
 
 ```js
-const dirHandle = await window.showDirectoryPicker();
-const promises = [];
-for await (const entry of dirHandle.values()) {
-  if (entry.kind !== 'file') {
-    break;
+const butDir = document.getElementById('butDirectory');
+butDir.addEventListener('click', async () => {
+  const dirHandle = await window.showDirectoryPicker();
+  const promises = [];
+  for await (const entry of dirHandle.values()) {
+    if (entry.kind !== 'file') {
+      break;
+    }
+    promises.push(entry.getFile().then((file) => `${file.name} (${file.size})`));
   }
-  promises.push(entry.getFile().then(file => `${file.name} (${file.size})`));
-}
-console.log(await Promise.all(promises));
+  console.log(await Promise.all(promises));
 });
 ```
 
@@ -499,11 +501,11 @@ await directoryHandle.remove();
 ### Renaming and moving files and folders
 
 Files and folders can be renamed or moved to a new location by calling `move()` on the
-`FileSystemHandle` interface. `FileSystemHandle` has the child interfaces `FileSystemFileHandle`
-and `FileSystemDirectoryHandle`. The `move()` method takes one or two parameters. The first can
-either be a string with the new name or a `FileSystemDirectoryHandle` to the destination folder.
-In the latter case, the optional second parameter is a string with the new name, so moving and
-renaming can happen in one step.
+`FileSystemHandle` interface. `FileSystemHandle` has the child interfaces `FileSystemFileHandle` and
+`FileSystemDirectoryHandle`. The `move()` method takes one or two parameters. The first can either
+be a string with the new name or a `FileSystemDirectoryHandle` to the destination folder. In the
+latter case, the optional second parameter is a string with the new name, so moving and renaming can
+happen in one step.
 
 ```js
 // Rename the file.
@@ -514,14 +516,12 @@ await file.move(directory);
 await file.move(directory, 'newer_name');
 ```
 
-{% Aside 'warning' %}
-Due to some open questions regarding cross-file-system moves, `move()` is temporarily
-disabled for folders and moves outside of the
-[origin private file system](#accessing-the-origin-private-file-system). This feature is
-currently only available in the origin private file system to those with the
+{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is
+temporarily disabled for folders and moves outside of the
+[origin private file system](#accessing-the-origin-private-file-system). This feature is currently
+only available in the origin private file system to those with the
 [`AccessHandles origin trial`](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625)
-enabled.
-{% endAside %}
+enabled. {% endAside %}
 
 ### Drag and drop integration
 
@@ -534,12 +534,12 @@ with file entries and directory entries respectively. The `DataTransferItem.getA
 method returns a promise with a `FileSystemFileHandle` object if the dragged item is a file, and a
 promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory. The listing
 below shows this in action. Note that the Drag and Drop interface's
-[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
-will be `"file"` for both files _and_ directories, whereas the File System Access API's
+[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind) will be
+`"file"` for both files _and_ directories, whereas the File System Access API's
 [`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
 be `"file"` for files and `"directory"` for directories.
 
-```js/
+```js
 elem.addEventListener('dragover', (e) => {
   // Prevent navigation.
   e.preventDefault();
@@ -553,7 +553,7 @@ elem.addEventListener('drop', async (e) => {
     .map((item) => item.getAsFileSystemHandle());
 
   for await (const handle of fileHandlesPromises) {
-    if (handle.kind === "directory") {
+    if (handle.kind === 'directory') {
       console.log(`Directory: ${handle.name}`);
     } else {
       console.log(`File: ${handle.name}`);
@@ -586,15 +586,14 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 ## Accessing files optimized for performance from the origin private file system
 
-The origin private file system provides optional access to a special kind of file
-that is highly optimized for performance, for example, by offering in-place and exclusive write
-access to a file's content. There is an
+The origin private file system provides optional access to a special kind of file that is highly
+optimized for performance, for example, by offering in-place and exclusive write access to a file's
+content. There is an
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
 in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
 files can be accessed by exposing two new methods as part of the origin private file system:
 `createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
-(synchronous read and write operations) that are both
-exposed on `FileSystemFileHandle`.
+(synchronous read and write operations) that are both exposed on `FileSystemFileHandle`.
 
 ```js
 // Asynchronous access in all contexts:
