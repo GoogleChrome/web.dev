@@ -1,0 +1,18 @@
+select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid get-utility-value('color', 'mid-text');
+  border-radius: 0;
+  color: get-utility-value('color', 'core-text');
+  font: inherit;
+  height: 3rem;
+  min-width: 13rem;
+  max-width: 20rem;
+  padding: 10px 10px 10px 0;
+  width: 100%;
+}
+
+select:focus {
+  outline: none;
+  border-bottom: 1px solid get-utility-value('color', 'action-text');
+}
