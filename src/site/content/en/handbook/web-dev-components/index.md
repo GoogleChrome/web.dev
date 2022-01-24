@@ -256,13 +256,9 @@ use `pullquote` class:
 ```
 
 <blockquote data-type="pullquote">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Proin dictum a massa sit amet ullamcorper.
-  </p>
-  <cite>
-    Jon Doe
-  </cite>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.</p>
+  <cite>Jon Doe</cite>
 </blockquote data-type="pullquote">
 
 You can also use a shortcode with a `pullquote` attribute:
