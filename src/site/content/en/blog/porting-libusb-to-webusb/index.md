@@ -19,7 +19,7 @@ In [a previous post](/asyncify/), I showed how to port apps using filesystem API
 I'll show how apps that communicate with USB devices can be ported to the web by porting [libusb](https://libusb.info/)—a popular USB library written in C—to WebAssembly (via [Emscripten](https://emscripten.org/)), Asyncify and [WebUSB](/usb/).
 
 {% Aside %}
-Fun fact: On many platforms, Chromium implementation of WebUSB also uses libusb under the hood. So what the port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate layer. Isn't the web fun?
+Fun fact: On some platforms, implementation of WebUSB also uses libusb under the hood. So what the port achieves is, in fact, one libusb, compiled to WebAssembly, talking to another libusb, shipped as part of the browser, through an intermediate layer. Isn't the web fun?
 {% endAside %}
 
 ## First things first: a demo
