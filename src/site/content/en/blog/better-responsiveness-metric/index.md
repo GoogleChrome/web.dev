@@ -495,7 +495,7 @@ const observer = new PerformanceObserver(list => {
     }
   });
 });
-observer.observe({type: "event", minDuration: 16, buffered: true});
+observer.observe({type: "event", durationThreshold: 16, buffered: true});
 // We can report maxTapDragDuration and maxKeyboardDuration when sending
 // metrics to analytics.
 ```
