@@ -7,6 +7,8 @@ date: 2019-05-02
 updated: 2019-08-21
 web_lighthouse:
   - http-status-code
+codelabs:
+  - codelab-fix-sneaky-404
 ---
 
 Servers provide a three-digit [HTTP status code](https://developer.mozilla.org/docs/Web/HTTP/Status)
@@ -56,5 +58,3 @@ complicated. Learn how to [fix sneaky 404s in an Express application](/codelab-f
 
 - [Source code for **Page has unsuccessful HTTP status code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
 - [HTTP response status codes](https://developer.mozilla.org/docs/Web/HTTP/Status)
-
-{% CodelabsCallout 'codelab-fix-sneaky-404', lang %}
