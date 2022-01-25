@@ -13,7 +13,7 @@ To build a solid offline experience, your PWA needs storage management. In the [
 Storage is not just about files and assets, but can include other types of data. On all browsers that support PWAs, the following APIs are available for on-device storage:
 
 - IndexedDB: A NoSQL object storage option for structured data and blobs (binary data).
-- WebStorage: A way to store key/value string pairs, using Local Storage or Session Storage. It's not available within a service worker context. This API is synchronous so it's not recommended for complex data storage.
+- WebStorage: A way to store key/value string pairs, using local storage or session storage. It's not available within a service worker context. This API is synchronous so it's not recommended for complex data storage.
 - Cache Storage: As covered in the [Caching module](/learn/pwa/caching).
 
 {% Aside %}
