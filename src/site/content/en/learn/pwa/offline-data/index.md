@@ -113,7 +113,7 @@ Once you've added the cookies, the recipe will be in the database with other des
 Here is how you get data from IndexedDB: 
 
 1. Start a transaction and specify the object store or stores, and optionally transaction type.
-1. Use the method `objectStore` from that transaction, you have to specify again the object store name.
+1. Call `objectStore()` from that transaction. Make sure you specify the object store name.
 1. Call object store's `get` method, passing in the key you want to get. By default the store uses its key as an index.
 
 ```js
