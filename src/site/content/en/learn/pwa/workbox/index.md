@@ -146,7 +146,7 @@ Caching assets also involves updating them. Workbox helps with updating your ass
 You'll learn more about updating in the [Update chapter](/learn/pwa/update).
 
 ## Play with Workbox
-You can play with Workbox right away, by using the following code lab:
+You can play with Workbox right away using the following code lab:
 
 {% Aside 'codelab' %}
 [Working With Workbox](https://developers.google.com/codelabs/pwa-training/pwa03--working-with-workbox?hl=pt#).
