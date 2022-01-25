@@ -86,7 +86,7 @@ To add data:
 1. Call `add` with the data you are saving. The method receives data with a dictionary structure (such as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd use `put` instead.
 
 
-Transactions have a `.done` promise which resolves when the transaction completes successfully, and otherwise rejects with the [transaction error](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error). 
+Transactions have a `done` promise that resolves when the transaction completes successfully, or rejects with a [transaction error](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error). 
 
 As the [IDB library documentation](https://www.npmjs.com/package/idb?activeTab=readme) explains, if you're writing to the database, `tx.done` is the signal that everything was successfully committed to the database. However, it's still beneficial to await the individual operations, as you'll see the error that caused the transaction to fail.
 
