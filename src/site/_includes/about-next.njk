@@ -1,6 +1,8 @@
 ---
 layout: 'default-next'
 CSS_ORIGIN: 'next'
+pageScripts:
+  - '/js/about.js'
 ---
 {% from 'macros/icon.njk' import icon, svg with context %}
 
@@ -63,7 +65,6 @@ CSS_ORIGIN: 'next'
   </div>
   {# Other resources end #}
 
-  {# Temporary disable #}
-  {# {% include 'partials/subscribe-next.njk' %} #}
+  {% include 'partials/subscribe-next.njk' %}
 
 </div>

@@ -50,12 +50,23 @@
         </label>
       </div>
       <div class="visually-hidden">
-        <label for="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot">Congrats on finding this field, I'd recommend you not filling it out though...</label>
-        <input type="text" id="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot" name="is-it-just-me-or-was-this-form-filled-out-by-a-robot" tabindex="-1" />
         <label for="sub-language">{{ 'i18n.subscribe.language' | i18n(locale) }}</label>
         <select id="sub-language" name="LanguagePreference" required tabindex="-1">
           <option selected value="en-US">en-US</option>
         </select>
+      </div>
+      <div class="all-center gap-top-size-1">
+        <div>
+          <div class="g-recaptcha" data-sitekey="{{ site.recaptchaSiteKey }}" data-callback="recaptchaSuccess" style="height: 78px;"></div>
+        </div>
+      </div>
+      <div class="gap-top-size-2">
+        <div class="subscribe__error hidden-yes">
+          {% Aside 'warning' %}
+            <p class="subscribe__error__message"></p>
+          {% endAside %}
+        </div>
+        <noscript>{% Aside 'warning' %}{{ 'i18n.subscribe.no_javascript' | i18n(locale) }}{% endAside %}</noscript>
       </div>
       <div class="all-center gap-top-size-1">
         <div>
@@ -65,13 +76,5 @@
         </div>
       </div>
     </form>
-    <div class="gap-top-size-2">
-      <div class="subscribe__error hidden-yes">
-        {% Aside 'warning' %}
-          <p class="subscribe__error__message"></p>
-        {% endAside %}
-      </div>
-      <noscript>{% Aside 'warning' %}{{ 'i18n.subscribe.no_javascript' | i18n(locale) }}{% endAside %}</noscript>
-    </div>
   </div>
 </web-subscribe>
