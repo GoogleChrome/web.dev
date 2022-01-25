@@ -17,7 +17,7 @@ tags:
 ---
 
 {% Aside %}
-The Handwriting Recognition API is part of the [capabilities project](/fugu-status/) and launched in Chrome&nbsp;99.
+The Handwriting Recognition API is part of the [capabilities project](/fugu-status/) and launched in Chromium&nbsp;99.
 {% endAside %}
 
 ## What is the Handwriting Recognition API? {: #what }
