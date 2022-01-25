@@ -104,7 +104,7 @@ async function addData() {
 }
 ```
 
-Once you've added the cookies, the recipe will be in the database with other desserts. The ID is automatically set and incremented by indexedDB, if you run this code twice you will have two identical cookie entries.
+Once you've added the cookies, the recipe will be in the database with other desserts. The ID is automatically set and incremented by indexedDB. If you run this code twice you will have two identical cookie entries.
 
 {% Glitch 'learn-pwa-offline-data-saving' %}
 
