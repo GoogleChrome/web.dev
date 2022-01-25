@@ -12,7 +12,7 @@ web_lighthouse:
   - 첫 번째 의미있는 페인트
 ---
 
-{% Aside 'caution' %} 첫 번째 의미 있는 페인트(FMP)는 Lighthouse 6.0에서 더 이상 사용되지 않습니다. 실제로 FMP는 페이지 로드의 작은 차이에 지나치게 민감하여 일관성 없는(바이모달) 결과를 초래합니다. 또한 메트릭의 정의는 브라우저별 구현 세부 정보에 의존하므로 모든 웹 브라우저에서 표준화하거나 구현할 수 없습니다. 앞으로는 [가장 큰 콘텐츠가 포함된 페인트](/largest-contentful-paint/)를 대신 사용하는 것이 좋습니다. {% endAside %}
+{% Aside 'caution' %} 첫 번째 의미 있는 페인트(FMP)는 Lighthouse 6.0에서 더 이상 사용되지 않습니다. 실제로 FMP는 페이지 로드의 작은 차이에 지나치게 민감하여 일관성 없는(바이모달) 결과를 초래합니다. 또한 메트릭의 정의는 브라우저별 구현 세부 정보에 의존하므로 모든 웹 브라우저에서 표준화하거나 구현할 수 없습니다. 앞으로는 [가장 큰 콘텐츠가 포함된 페인트](/lcp/)를 대신 사용하는 것이 좋습니다. {% endAside %}
 
 첫 번째 의미 있는 페인트(FMP)는 Lighthouse 보고서의 **성능** 섹션에서 추적되는 6가지 메트릭 중 하나입니다. 각 메트릭은 페이지 로드 속도의 일부 측면을 캡처합니다.
 
@@ -24,7 +24,7 @@ Lighthouse는 몇 초 만에 FMP를 표시합니다.
 
 FMP는 페이지의 주요 콘텐츠가 사용자에게 표시되는 시점을 측정합니다. FMP의 원시 점수는 페이지 로드를 시작한 사용자와 스크롤 없이 볼 수 있는 기본 콘텐츠를 렌더링하는 페이지 사이의 시간(초)입니다. FMP는 기본적으로 가장 큰 스크롤 없이 볼 수 있는 레이아웃 변경이 발생한 후 페인트의 타이밍을 보여줍니다. Google의 [Time to First meaningful Paint: 레이아웃 기반 접근 방식](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)에서 FMP의 기술적 세부사항에 대해 자세히 알아보세요.
 
-[FCP(First Contentful Paint)](/first-contentful-paint)와 FMP는 페이지에 렌더링된 콘텐츠의 첫 번째 비트에 스크롤 없이 볼 수 있는 부분의 콘텐츠가 포함되어 있는 경우가 많습니다. 그러나 이러한 측정항목은 예를 들어 iframe 내 스크롤 없이 볼 수 있는 부분에 콘텐츠가 있는 경우 다를 수 있습니다. FMP는 iframe 내의 콘텐츠가 사용자에게 표시될 때 등록되지만 FCP는 iframe 콘텐츠를 포함 *하지 않습니다.*
+[FCP(First Contentful Paint)](/fcp/)와 FMP는 페이지에 렌더링된 콘텐츠의 첫 번째 비트에 스크롤 없이 볼 수 있는 부분의 콘텐츠가 포함되어 있는 경우가 많습니다. 그러나 이러한 측정항목은 예를 들어 iframe 내 스크롤 없이 볼 수 있는 부분에 콘텐츠가 있는 경우 다를 수 있습니다. FMP는 iframe 내의 콘텐츠가 사용자에게 표시될 때 등록되지만 FCP는 iframe 콘텐츠를 포함 *하지 않습니다.*
 
 ## Lighthouse가 FMP 점수를 결정하는 방법
 
@@ -84,4 +84,4 @@ FMP가 실제로 사용자의 기기에서 발생하는 시점을 측정하는 �
 - [**첫 번째 의미 있는 페인트** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 스코어링 가이드](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [첫 번째 의미 있는 페인트까지의 시간: 레이아웃 기반 접근 방식](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-- [가장 큰 콘텐츠가 포함된 페인트](/largest-contentful-paint)
+- [가장 큰 콘텐츠가 포함된 페인트](/lcp/)

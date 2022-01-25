@@ -18,7 +18,7 @@ Lighthouse 보고서는 TBT를 밀리초 단위로 표시합니다.
 
 ## TBT 측정 항목
 
-TBT는 마우스 클릭, 화면 탭 또는 키보드 누름과 같은 사용자 입력으로부터 페이지가 응답하지 못하도록 차단된 총 시간을 측정합니다. 합계는 [최초 콘텐츠풀 페인트](/first-contentful-paint/)와 [상호 작용까지의 시간](/interactive/) 사이의 모든 [긴 작업](/long-tasks-devtools)의 *차단 부분*을 더하여 계산합니다. 50ms 이상 실행되는 모든 작업은 긴 작업입니다. 50ms 이후의 시간이 차단 부분입니다. 예를 들어 Lighthouse가 70ms 길이의 작업을 감지하면 차단 부분은 20ms가 됩니다.
+TBT는 마우스 클릭, 화면 탭 또는 키보드 누름과 같은 사용자 입력으로부터 페이지가 응답하지 못하도록 차단된 총 시간을 측정합니다. 합계는 [최초 콘텐츠풀 페인트](/fcp/)와 [상호 작용까지의 시간](/tti/) 사이의 모든 [긴 작업](/long-tasks-devtools)의 *차단 부분*을 더하여 계산합니다. 50ms 이상 실행되는 모든 작업은 긴 작업입니다. 50ms 이후의 시간이 차단 부분입니다. 예를 들어 Lighthouse가 70ms 길이의 작업을 감지하면 차단 부분은 20ms가 됩니다.
 
 ## Lighthouse가 TBT 점수를 산정하는 방법
 
@@ -71,8 +71,8 @@ Chrome DevTools의 성능 패널로 긴 작업의 근본 원인을 진단하는 
 - [**총 차단 시간** 감사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
 - [긴 JavaScript 작업으로 인해 상호 작용까지의 시간이 지연됩니까?](/long-tasks-devtools)
 - [첫 번째 입력 지연 최적화](/optimize-fid)
-- [최초 콘텐츠풀 페인트](/first-contentful-paint/)
-- [상호 작용까지의 시간](/interactive/)
+- [최초 콘텐츠풀 페인트](/fcp/)
+- [상호 작용까지의 시간](/tti/)
 - [코드 분할로 JavaScript 페이로드 줄이기](/reduce-javascript-payloads-with-code-splitting/)
 - [사용하지 않는 코드 제거](/remove-unused-code/)
 - [타사 리소스를 효율적으로 로드](/efficiently-load-third-party-javascript/)

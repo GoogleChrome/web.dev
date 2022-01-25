@@ -41,7 +41,7 @@ Web ページの[パフォーマンス トレース](https://developers.google.c
 
 ## TTI の測定方法
 
-TTI は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定する場合に最適な指標です。TTI の測定に最適な方法には、サイトでの Lighthouse のパフォーマンス監査の実行が挙げられます。使用方法の詳細については、「[TTI に関する Lighthouse ドキュメント](/interactive/)」を参照してください。
+TTI は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定する場合に最適な指標です。TTI の測定に最適な方法には、サイトでの Lighthouse のパフォーマンス監査の実行が挙げられます。使用方法の詳細については、「[TTI に関する Lighthouse ドキュメント](/tti/)」を参照してください。
 
 ### ラボ測定を実施するためのツール
 

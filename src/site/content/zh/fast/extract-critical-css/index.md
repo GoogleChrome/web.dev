@@ -31,7 +31,7 @@ tags:
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="使用 3G 连接加载具有渲染阻塞 CSS（顶部）的页面和具有内联关键 CSS（底部）的相同页面的胶片视图比较。顶部幻灯片在最终显示内容之前显示六个空白帧。底部幻灯片在第一帧显示有意义的内容。", width="800", height="363" %}<figcaption>使用 3G 连接加载具有渲染阻塞 CSS 的页面（顶部）和具有内联关键 CSS 的同一页面（底部）的比较</figcaption></figure>
 
-如果您的 [First Contentful Paint (FCP)](/first-contentful-paint) 表现很差，并且在 Lighthouse 审计中看到了“消除渲染阻塞资源”，那么试试关键 CSS 是个不错的选择。
+如果您的 [First Contentful Paint (FCP)](/fcp/) 表现很差，并且在 Lighthouse 审计中看到了“消除渲染阻塞资源”，那么试试关键 CSS 是个不错的选择。
 
 {% Img src="image/admin/0xea7menL90lWHwbjZoP.png", alt="Lighthouse 的”消除渲染阻塞资源“或”延迟加载未使用的 CSS“ 审计", width="743", height="449" %}
 

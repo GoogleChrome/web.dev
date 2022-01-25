@@ -28,7 +28,7 @@ Com base nos [dados do arquivo HTTP](https://httparchive.org/reports/state-of-th
 
 ## Como reduzir o tamanho da carga útil
 
-Tente manter o tamanho total de bytes abaixo de 1.600 KiB. Essa meta é baseada na quantidade de dados que podem ser baixados teoricamente em uma conexão 3G enquanto ainda atinge um [tempo de interação](/interactive) de 10 segundos ou menos.
+Tente manter o tamanho total de bytes abaixo de 1.600 KiB. Essa meta é baseada na quantidade de dados que podem ser baixados teoricamente em uma conexão 3G enquanto ainda atinge um [tempo de interação](/tti/) de 10 segundos ou menos.
 
 Aqui estão algumas maneiras de manter o tamanho da carga útil baixo:
 

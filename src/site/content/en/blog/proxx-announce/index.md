@@ -43,7 +43,7 @@ application:
 - **Accessible**: mouse, keyboard, touch, d-pad, screen readers
 - **Performant**:
   - Less than 25kb of initial payload
-  - Less than 5 seconds TTI ([time to interactive](/interactive))
+  - Less than 5 seconds TTI ([time to interactive](/tti/))
     on slow 3G
   - Consistent 60fps animation
 

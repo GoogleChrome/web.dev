@@ -50,7 +50,7 @@ Changes are coming to the Lighthouse Performance score version 6! In version 5
 (as of November 2019), Lighthouse has five metrics that are [weighted and
 blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
 [First Contentful Paint](/fcp/), [Speed Index](/speed-index/), [First Meaningful
-Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
+Paint](/first-meaningful-paint/), [Time to Interactive](/tti/), and
 [First CPU Idle](/first-cpu-idle/).
 
 <figure>

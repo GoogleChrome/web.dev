@@ -44,9 +44,9 @@ No entanto, esses números não dizem muito sobre a experiência do usuário. Du
 
 Os tempos de marcos marcam eventos que acontecem durante o carregamento da página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) ou evento de [carregamento.](https://developer.mozilla.org/docs/Web/Events/load) Os tempos mais úteis são [métricas de desempenho centradas no usuário](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) que informam algo sobre a experiência de carregar uma página. Essas métricas estão disponíveis por meio de [APIs de navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) e como parte dos relatórios do [Lighthouse.](https://developers.google.com/web/tools/lighthouse/)
 
-[First Contentful Paint (FCP)](/first-contentful-paint) mede quando o navegador exibe o primeiro bit de conteúdo do DOM, como texto ou imagens.
+[First Contentful Paint (FCP)](/fcp/) mede quando o navegador exibe o primeiro bit de conteúdo do DOM, como texto ou imagens.
 
-[O Time to Interactive (TTI)](/interactive) mede quanto tempo leva para uma página se tornar totalmente interativa e responder de forma confiável à entrada do usuário. É uma métrica muito importante a ser acompanhada se você espera qualquer tipo de interação do usuário na página, como clicar em links, botões, digitar ou usar elementos de formulário.
+[O Time to Interactive (TTI)](/tti/) mede quanto tempo leva para uma página se tornar totalmente interativa e responder de forma confiável à entrada do usuário. É uma métrica muito importante a ser acompanhada se você espera qualquer tipo de interação do usuário na página, como clicar em links, botões, digitar ou usar elementos de formulário.
 
 ### Métricas baseadas em regras 💯
 

@@ -40,7 +40,7 @@ feedback:
 
 浏览器会缓存预加载的资源，以便在需要时立即可用。（它不会执行脚本或应用样式表。）
 
-{% Aside %}在实施预加载后，包括 [Shopify、Financial Times 和 Treebo](/interactive)在内的许多网站在以用户为中心的指标（例如 [Time to Interactive](/first-contentful-paint) 和 [First Contentful Paint](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)）等方面，都实现了 1 秒的改进。 {% endAside %}
+{% Aside %}在实施预加载后，包括 [Shopify、Financial Times 和 Treebo](/tti/)在内的许多网站在以用户为中心的指标（例如 [Time to Interactive](/fcp/) 和 [First Contentful Paint](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)）等方面，都实现了 1 秒的改进。 {% endAside %}
 
 浏览器会根据情况执行诸如 [`preconnect`](/preconnect-and-dns-prefetch) 和 [`prefetch`](/link-prefetch) 等资源提示。而另一方面，`preload` 对浏览器来说是强制性的。现代浏览器已经非常擅长对资源进行优先级排序，这就是为什么谨慎使用 `preload` 并且只预加载最关键的资源那么重要。
 

@@ -14,7 +14,7 @@ tags:
 
 **要約: 長いタスクはメインスレッドをビジー状態にし、ユーザーの操作を遅らせる可能性があります。Chrome DevTools では、長いタスクを視覚化し、最適化するタスクを簡単に確認できるようになりました。**
 
-Lighthouse を使用してページを監査している場合は、ユーザーがページを操作して応答を得ることができるまでの時間を表す [Time to Interactive](/interactive)（TTI/対話時間）という指標に聞き覚えがあるかもしれません。しかし、長い（JavaScript）タスクが  TTI の低下に大きく寄与する可能性があることはご存知ですか？
+Lighthouse を使用してページを監査している場合は、ユーザーがページを操作して応答を得ることができるまでの時間を表す [Time to Interactive](/tti/)（TTI/対話時間）という指標に聞き覚えがあるかもしれません。しかし、長い（JavaScript）タスクが  TTI の低下に大きく寄与する可能性があることはご存知ですか？
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Lighthouse のレポートに表示される Time to Interactive", width="800", height="169" %}
 

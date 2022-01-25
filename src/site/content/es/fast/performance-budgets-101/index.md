@@ -40,9 +40,9 @@ Por eso es importante realizar un seguimiento de otro tipo de métrica.
 
 Los tiempos de hito marcan eventos que suceden durante la carga de la página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) o un evento de [carga.](https://developer.mozilla.org/docs/Web/Events/load) Los tiempos más útiles sonlas  [métricas de rendimiento centradas en el usuario](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) que le dicen algo sobre la experiencia al cargar una página. Estas métricas están disponibles a través de las [API del navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) y como parte de los informes [Lighthouse](https://developers.google.com/web/tools/lighthouse/).
 
-La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/first-contentful-paint) mide el momento en que el navegador muestra el primer fragmento de contenido del DOM, como texto o imágenes.
+La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/fcp/) mide el momento en que el navegador muestra el primer fragmento de contenido del DOM, como texto o imágenes.
 
-[Time to Interactive o tiempo de interacción (TTI)](/interactive) mide el tiempo que tarda una página en volverse completamente interactiva y responder de manera confiable a la entrada del usuario. El seguimiento de esta métrica es muy importante si espera algún tipo de interacción del usuario en la página, como hacer clic en enlaces, botones, escribir o usar elementos de formulario.
+[Time to Interactive o tiempo de interacción (TTI)](/tti/) mide el tiempo que tarda una página en volverse completamente interactiva y responder de manera confiable a la entrada del usuario. El seguimiento de esta métrica es muy importante si espera algún tipo de interacción del usuario en la página, como hacer clic en enlaces, botones, escribir o usar elementos de formulario.
 
 ### Métricas basadas en reglas 💯
 

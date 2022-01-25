@@ -24,7 +24,7 @@ Cuando su JavaScript tarda mucho en ejecutarse, ralentiza el rendimiento de su p
 
 - **Costo de ejecución**
 
-    JavaScript también se ejecuta en el hilo principal. Si su página ejecuta mucho código antes de que sea realmente necesario, eso también retrasa el [Time to Interactive (tiempo de interacción)](/interactive), que es una de las métricas clave relacionadas con la forma en que los usuarios perciben la velocidad de su página.
+    JavaScript también se ejecuta en el hilo principal. Si su página ejecuta mucho código antes de que sea realmente necesario, eso también retrasa el [Time to Interactive (tiempo de interacción)](/tti/), que es una de las métricas clave relacionadas con la forma en que los usuarios perciben la velocidad de su página.
 
 - **Costo de memoria**
 

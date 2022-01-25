@@ -185,7 +185,7 @@ viewability](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/re
 
 * Optimize for fast loading performance relative to the device and network
   capabilities of your users. Currently, a good target for first loads is to
-  load the page and be [interactive](/interactive/) in [5 seconds
+  load the page and be [interactive](/tti/) in [5 seconds
   or less on mid-range mobile devices with slow 3G
   connections](/performance-budgets-101/#establish-a-baseline).
 

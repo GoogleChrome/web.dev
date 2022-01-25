@@ -17,7 +17,7 @@ feedback:
   - api
 ---
 
-Esta postagem explica como configurar a [divisão de código](/reduce-javascript-payloads-with-code-splitting/) no nível da rota em um aplicativo Angular, o que pode reduzir o tamanho do pacote JavaScript e melhorar drasticamente o [tempo de interação](/interactive).
+Esta postagem explica como configurar a [divisão de código](/reduce-javascript-payloads-with-code-splitting/) no nível da rota em um aplicativo Angular, o que pode reduzir o tamanho do pacote JavaScript e melhorar drasticamente o [tempo de interação](/tti/).
 
 *Você pode encontrar os exemplos de código deste artigo no [GitHub](https://github.com/mgechev/code-splitting-web-dev). O exemplo de roteamento ansioso está disponível no [branch adiantado](https://github.com/mgechev/code-splitting-web-dev/tree/eager). O exemplo de divisão de código no nível da rota está no [branch lento](https://github.com/mgechev/code-splitting-web-dev/tree/lazy).*
 
@@ -33,7 +33,7 @@ A **[divisão de código](/reduce-javascript-payloads-with-code-splitting/)** pe
 
 {% Aside 'note' %}
 
-Usando a divisão de código, o [Twitter e o Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observaram melhorias de até 50% em seu [tempo até ficar interativo](/interactive).
+Usando a divisão de código, o [Twitter e o Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observaram melhorias de até 50% em seu [tempo até ficar interativo](/tti/).
 
 {% endAside %}
 

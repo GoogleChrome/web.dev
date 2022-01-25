@@ -158,7 +158,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 {% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Lighthouse가 최적화된 페이지 감사를 통과했습니다.", width="800", height="163" %}
 
-CSS 파일은 [렌더링을 차단하는 리소스](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)이므로 대용량 CSS 파일을 사용하는 사이트에 축소를 적용하면 [첫 콘텐츠풀 페인트](/first-contentful-paint)와 같은 메트릭에서 개선을 확인할 수 있습니다.
+CSS 파일은 [렌더링을 차단하는 리소스](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)이므로 대용량 CSS 파일을 사용하는 사이트에 축소를 적용하면 [첫 콘텐츠풀 페인트](/fcp/)와 같은 메트릭에서 개선을 확인할 수 있습니다.
 
 ## 다음 단계 및 리소스
 

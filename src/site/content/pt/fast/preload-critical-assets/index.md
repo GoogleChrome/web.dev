@@ -48,7 +48,7 @@ Você pode pré-carregar recursos adicionando uma tag `<link>` `rel="preload"` a
 
 O navegador armazena em cache os recursos pré-carregados para que estejam disponíveis imediatamente quando necessário. Ele não executa os scripts nem aplica as folhas de estilo.
 
-{% Aside %} Depois de implementar o pré-carregamento, muitos sites, incluindo [Shopify, Financial Times e Treebo, viram melhorias de 1 segundo](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) em métricas centradas no usuário, como [Time to Interactive](/interactive) e [First Contentful Paint](/first-contentful-paint). {% endAside %}
+{% Aside %} Depois de implementar o pré-carregamento, muitos sites, incluindo [Shopify, Financial Times e Treebo, viram melhorias de 1 segundo](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) em métricas centradas no usuário, como [Time to Interactive](/tti/) e [First Contentful Paint](/fcp/). {% endAside %}
 
 Dicas de recursos, por exemplo, [`preconnect`](/preconnect-and-dns-prefetch) - [`prefetch`](/link-prefetch), são executadas conforme o navegador achar adequado. A `preload`, por outro lado, é obrigatória para o navegador. Os navegadores modernos já são muito bons em priorizar recursos, por isso é importante usar o `preload` com moderação e pré-carregar apenas os recursos mais críticos.
 

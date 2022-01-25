@@ -15,7 +15,7 @@ web_lighthouse:
   has been overly sensitive to small differences in the page load, leading to inconsistent
   (bimodal) results. Additionally, the metric's definition relies on browser-specific
   implementation details, which means it cannot be standardized nor implemented in all web
-  browsers. Moving forward, consider using [Largest Contentful Paint](/largest-contentful-paint/)
+  browsers. Moving forward, consider using [Largest Contentful Paint](/lcp/)
   instead.
 {% endAside %}
 
@@ -39,7 +39,7 @@ after which the biggest above-the-fold layout change happens.
 Learn more about the technical details of FMP in Google's
 [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view).
 
-[First Contentful Paint (FCP)](/first-contentful-paint)
+[First Contentful Paint (FCP)](/fcp/)
 and FMP are often the same
 when the first bit of content rendered on the page includes the content above the fold.
 However, these metrics can differ when, for example,
@@ -118,7 +118,7 @@ enables you to see User Timing data in your report.
 - [Source code for **First Meaningful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-- [Largest Contentful Paint](/largest-contentful-paint)
+- [Largest Contentful Paint](/lcp/)
 
 [metrics]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics
 [tracking]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements

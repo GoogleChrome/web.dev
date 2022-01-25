@@ -41,7 +41,7 @@ SSR(서버 측 렌더링)과 같은 기술로 인해 페이지가 상호 작용 
 
 ## TTI 측정 방법
 
-TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 측정하기 좋은 메트릭입니다. TTI를 측정하는 가장 좋은 방법은 사이트에서 Lighthouse 성능 감사를 실행하는 것입니다. 사용법에 대한 자세한 내용은 [TTI에 대한 Lighthouse 문서](/interactive/)를 참조하세요.
+TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 측정하기 좋은 메트릭입니다. TTI를 측정하는 가장 좋은 방법은 사이트에서 Lighthouse 성능 감사를 실행하는 것입니다. 사용법에 대한 자세한 내용은 [TTI에 대한 Lighthouse 문서](/tti/)를 참조하세요.
 
 ### 실험실 도구
 

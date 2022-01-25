@@ -40,7 +40,7 @@ HTMLドキュメントのheadに、`<link>`タグと`rel="preload"`を追加し�
 
 ブラウザはプリロードされたリソースをキャッシュするため、必要なときにすぐに利用できます。（スクリプトを実行したり、スタイルシートを適用したりすることはありません。）
 
-{% Aside %} プリロード実装後、[Shopify、Financial Times、Treeboなどの多くのサイトで、](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)[Time to Interactive](/interactive)や[First Contentful Paint](/first-contentful-paint)などのユーザー中心の指標において1秒の改善が確認されました。{% endAside %}
+{% Aside %} プリロード実装後、[Shopify、Financial Times、Treeboなどの多くのサイトで、](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)[Time to Interactive](/tti/)や[First Contentful Paint](/fcp/)などのユーザー中心の指標において1秒の改善が確認されました。{% endAside %}
 
 [`preconnect`](/preconnect-and-dns-prefetch)や[`prefetch`](/link-prefetch)などのリソースヒントは、ブラウザが適切と判断したときに実行されますが、`preload`はブラウザ必須です。最新のブラウザはすでにリソースの優先順位付けの実行に非常に優れているため、`preload`を慎重に使用し、最も重要なリソースのみをプリロードすることが重要です。
 

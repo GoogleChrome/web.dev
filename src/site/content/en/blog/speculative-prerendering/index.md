@@ -372,7 +372,7 @@ activated.
 
 The `activationStart` value is a timestamp that can be compared to the values of
 First Paint and [First Contentful
-Paint](/first-contentful-paint/) to determine the user-centric
+Paint](/fcp/) to determine the user-centric
 performance metrics for the prerendered page.
 
 ```js

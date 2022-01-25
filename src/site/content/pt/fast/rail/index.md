@@ -117,7 +117,7 @@ Quando as páginas carregam lentamente, a atenção do usuário se dispersa e os
 
 **Objetivos**:
 
-- Otimize para obter desempenho de carregamento rápido em relação aos recursos do dispositivo e da rede de seus usuários. Atualmente, um bom objetivo para os primeiros carregamentos é carregar a página e ser [interativo](/interactive/) em [5 segundos ou menos a partir de dispositivos móveis de médio alcance com conexões 3G lentas](/performance-budgets-101/#establish-a-baseline).
+- Otimize para obter desempenho de carregamento rápido em relação aos recursos do dispositivo e da rede de seus usuários. Atualmente, um bom objetivo para os primeiros carregamentos é carregar a página e ser [interativo](/tti/) em [5 segundos ou menos a partir de dispositivos móveis de médio alcance com conexões 3G lentas](/performance-budgets-101/#establish-a-baseline).
 
 - Para os próximos carregamentos, uma boa meta é carregar a página em menos de 2 segundos.
 

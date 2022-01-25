@@ -18,7 +18,7 @@ Lighthouseのレポートには、TBTがミリ秒単位で表示されます。
 
 ## TBTが測定するもの
 
-TBTは、マウスのクリック、画面のタップ、キーボードの押下といったユーザー入力への応答がブロックされている合計時間を測定します。合計は、[First Contentful Paint (最初のコンテンツ描画にかかるまでの時間)](/first-contentful-paint/) と [Time to Interactive (インタラクティブになるまでの時間)](/interactive/) の間に実行されるすべての[長いタスク](/long-tasks-devtools)の*ブロック部分*を加算することで算出されます。長いタスクとは、50ミリ秒を超えて実行されるタスクのことです。50msを超えた後の時間がブロック部分です。たとえば、Lighthouseが70ミリ秒の長さのタスクを検出した場合、ブロック部分は20ミリ秒になります。
+TBTは、マウスのクリック、画面のタップ、キーボードの押下といったユーザー入力への応答がブロックされている合計時間を測定します。合計は、[First Contentful Paint (最初のコンテンツ描画にかかるまでの時間)](/fcp/) と [Time to Interactive (インタラクティブになるまでの時間)](/tti/) の間に実行されるすべての[長いタスク](/long-tasks-devtools)の*ブロック部分*を加算することで算出されます。長いタスクとは、50ミリ秒を超えて実行されるタスクのことです。50msを超えた後の時間がブロック部分です。たとえば、Lighthouseが70ミリ秒の長さのタスクを検出した場合、ブロック部分は20ミリ秒になります。
 
 ## LighthouseがTBTスコアを決定する方法
 
@@ -71,8 +71,8 @@ Chrome DevToolsのパフォーマンスパネルを使用して長いタスク�
 - [**Total BlockingTime**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
 - [Are long JavaScript tasks delaying your Time to Interactive? (JavaScriptの長いタスクがインタラクティブになるまでの時間を遅らせていませんか？)](/long-tasks-devtools)
 - [Optimize First Input Delay (最初の入力の遅延を最適化する)](/optimize-fid)
-- [First Contentful Paint (最初のコンテンツ描画にかかるまでの時間)](/first-contentful-paint/)
-- [Time to Interactive (インタラクティブになるまでの時間)](/interactive/)
+- [First Contentful Paint (最初のコンテンツ描画にかかるまでの時間)](/fcp/)
+- [Time to Interactive (インタラクティブになるまでの時間)](/tti/)
 - [Reduce JavaScript payloads with code splitting (コードを分割してJavaScriptのペイロードを削減する)](/reduce-javascript-payloads-with-code-splitting/)
 - [Remove unused code (未使用のコードを除去うする)](/remove-unused-code/)
 - [Efficiently load third-party resources (サードパーティのリソースを効率的に読み込む)](/efficiently-load-third-party-javascript/)

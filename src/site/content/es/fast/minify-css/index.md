@@ -160,7 +160,7 @@ El informe ya no muestra "Minificar CSS" como "Oportunidad" y ahora se ha trasla
 
 {% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Auditorías aprobadas por Lighthouse para una página optimizada", width="800", height="163" %}
 
-Dado que los archivos CSS son [recursos bloqueadores de la renderización](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), si aplica minificación en sitios que usan archivos CSS grandes, puede ver mejoras en métricas como [First Contentful Paint: Primer despliegue de contenido](/first-contentful-paint).
+Dado que los archivos CSS son [recursos bloqueadores de la renderización](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), si aplica minificación en sitios que usan archivos CSS grandes, puede ver mejoras en métricas como [First Contentful Paint: Primer despliegue de contenido](/fcp/).
 
 ## Próximos pasos y recursos
 

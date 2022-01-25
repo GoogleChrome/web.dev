@@ -202,7 +202,7 @@ longer than 50 milliseconds (ms).
 Anytime you need to run expensive code (or load and execute large scripts) it's
 useful to track whether or not that code blocked the main thread. In fact, many
 higher-level metrics are built on top of the Long Tasks API themselves (such as
-[Time to Interactive (TTI)](/interactive/) and [Total Blocking Time
+[Time to Interactive (TTI)](/tti/) and [Total Blocking Time
 (TBT)](/lighthouse-total-blocking-time/)).
 
 To determine when long tasks happen, you can use

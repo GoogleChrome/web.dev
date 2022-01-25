@@ -18,7 +18,7 @@ Lighthouse 报告以毫秒为单位显示 TBT：
 
 ## TBT 测量什么
 
-TBT 测量页面被阻止响应用户输入（例如鼠标点击、屏幕点击或按下键盘）的总时间。总和是[首次内容绘制](/first-contentful-paint/)和[互动时间](/interactive/)之间所有[长时间任务](/long-tasks-devtools)*的阻塞部分*之和。任何执行时间超过 50 毫秒的任务都是长任务。50 毫秒后的时间量是阻塞部分。例如，如果 Lighthouse 检测到一个 70 毫秒长的任务，则阻塞部分将为 20 毫秒。
+TBT 测量页面被阻止响应用户输入（例如鼠标点击、屏幕点击或按下键盘）的总时间。总和是[首次内容绘制](/fcp/)和[互动时间](/tti/)之间所有[长时间任务](/long-tasks-devtools)*的阻塞部分*之和。任何执行时间超过 50 毫秒的任务都是长任务。50 毫秒后的时间量是阻塞部分。例如，如果 Lighthouse 检测到一个 70 毫秒长的任务，则阻塞部分将为 20 毫秒。
 
 ## Lighthouse 如何确定您的 TBT 分数
 
@@ -71,8 +71,8 @@ TBT 测量页面被阻止响应用户输入（例如鼠标点击、屏幕点击�
 - [**总阻塞时间**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
 - [长的 JavaScript 任务是否会延迟您的交互时间？](/long-tasks-devtools)
 - [优化首次输入延迟](/optimize-fid)
-- [首次内容绘制](/first-contentful-paint/)
-- [互动时间](/interactive/)
+- [首次内容绘制](/fcp/)
+- [互动时间](/tti/)
 - [通过代码拆分减少 JavaScript 负载](/reduce-javascript-payloads-with-code-splitting/)
 - [删除未使用的代码](/remove-unused-code/)
 - [高效加载第三方资源](/efficiently-load-third-party-javascript/)

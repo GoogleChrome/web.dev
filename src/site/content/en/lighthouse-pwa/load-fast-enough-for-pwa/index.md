@@ -31,7 +31,7 @@ flags pages that don't load fast enough on mobile:
 Two main metrics affect how users perceive load time:
 
 - [First Meaningful Paint (FMP)](/first-meaningful-paint), which measures when the primary content of the page appears visually complete
-- [Time to Interactive (TTI)](/interactive), which measures when the page is fully interactive
+- [Time to Interactive (TTI)](/tti/), which measures when the page is fully interactive
 
 For example, if a page appears visually complete after 1&nbsp;second,
 but the user can't interact with it for 10&nbsp;seconds,

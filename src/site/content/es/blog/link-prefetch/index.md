@@ -23,7 +23,7 @@ Esta guía explica cómo lograrlo con `<link rel=prefetch>`, un [indicador de re
 
 ## Mejore la navegación con `rel=prefetch`
 
-Agregar `<link rel=prefetch>` a una página web le indica al navegador que descargue páginas enteras, o algunos de los recursos (como scripts o archivos CSS), que el usuario pueda necesitar en el futuro. Esto puede mejorar las estadísticas como [First Contentful Paint](/first-contentful-paint) (Primer despliegue del contenido) y [Time to Interactive](/interactive/) (Tiempo para interacción) y, a menudo, puede hacer que las navegaciones posteriores parezcan cargarse instantáneamente.
+Agregar `<link rel=prefetch>` a una página web le indica al navegador que descargue páginas enteras, o algunos de los recursos (como scripts o archivos CSS), que el usuario pueda necesitar en el futuro. Esto puede mejorar las estadísticas como [First Contentful Paint](/fcp/) (Primer despliegue del contenido) y [Time to Interactive](/tti/) (Tiempo para interacción) y, a menudo, puede hacer que las navegaciones posteriores parezcan cargarse instantáneamente.
 
 ```html
 <link rel="prefetch" href="/articles/" as="document">

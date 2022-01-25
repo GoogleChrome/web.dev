@@ -16,7 +16,7 @@ O Lighthouse apresenta a métrica TBT em segundos:
 
 ## O que o TBT mede
 
-O TBT mede a quantidade total de tempo que uma página fica bloqueada para responder à entrada do usuário, como cliques do mouse, toques na tela ou pressionar de teclas. A soma é calculada adicionando a *parte* do bloqueio de todas [as tarefas longas](/long-tasks-devtools) entre [First Contentful Paint](/first-contentful-paint/), renderização do primeiro conteúdo, e [Time to Interactive](/interactive/), tempo até interativa. Qualquer tarefa executada por mais de 50 ms é uma tarefa longa. A quantidade de tempo após 50 ms é a parte do bloqueio. Por exemplo, se o Lighthouse detecta uma tarefa de 70 ms, a porção de bloqueio seria de 20 ms.
+O TBT mede a quantidade total de tempo que uma página fica bloqueada para responder à entrada do usuário, como cliques do mouse, toques na tela ou pressionar de teclas. A soma é calculada adicionando a *parte* do bloqueio de todas [as tarefas longas](/long-tasks-devtools) entre [First Contentful Paint](/fcp/), renderização do primeiro conteúdo, e [Time to Interactive](/tti/), tempo até interativa. Qualquer tarefa executada por mais de 50 ms é uma tarefa longa. A quantidade de tempo após 50 ms é a parte do bloqueio. Por exemplo, se o Lighthouse detecta uma tarefa de 70 ms, a porção de bloqueio seria de 20 ms.
 
 ## Como o Lighthouse determina sua pontuação TBT
 
@@ -68,8 +68,8 @@ Em geral, as causas mais comuns das tarefas longas são:
 
 - [Código fonte para auditoria de **Total Blocking Time** (tempo total de bloqueio)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
 - [As longas tarefas de JavaScript estão atrasando seu Time to Interactive (tempo até interativa)?](/long-tasks-devtools)
-- [First Contentful Paint (primeira renderização de conteúdo)](/first-contentful-paint/)
-- [Time to Interactive (tempo até interativa)](/interactive/)
+- [First Contentful Paint (primeira renderização de conteúdo)](/fcp/)
+- [Time to Interactive (tempo até interativa)](/tti/)
 - [Reduza os payloads do JavaScript com divisão de código](/reduce-javascript-payloads-with-code-splitting/)
 - [Remova o código não utilizado](/remove-unused-code/)
 - [Carregue com eficiência recursos de terceiros](/efficiently-load-third-party-javascript/)

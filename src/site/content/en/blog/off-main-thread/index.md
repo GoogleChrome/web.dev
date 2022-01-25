@@ -315,8 +315,8 @@ Also, OMT has secondary benefits:
 
 *   It moves JavaScript execution costs to a separate thread.
 *   It moves _parsing_ costs, meaning UI might boot up faster.
-    That might reduce [First Contentful Paint](/first-contentful-paint)
-    or even [Time to Interactive](/interactive),
+    That might reduce [First Contentful Paint](/fcp/)
+    or even [Time to Interactive](/tti/),
     which can in turn increase your
     [Lighthouse](https://developers.google.com/web/tools/lighthouse) score.
 

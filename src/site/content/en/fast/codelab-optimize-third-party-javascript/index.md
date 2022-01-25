@@ -54,7 +54,7 @@ Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [perform
 1. Select the **Clear Storage** checkbox.
 1. Click **Run audits**.
 
-When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint (FCP)](/first-contentful-paint) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, optimizations will still yield improvements.)
+When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint (FCP)](/fcp/) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, optimizations will still yield improvements.)
 
 <figure>
   {% Img src="image/admin/gIkIJM2OaocxImjLLjev.png", alt="Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.", width="741", height="700" %}

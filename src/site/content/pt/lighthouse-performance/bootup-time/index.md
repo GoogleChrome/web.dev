@@ -26,7 +26,7 @@ Quando seu JavaScript leva muito tempo para ser executado, ele desacelera o dese
 
 - **Custo de execução**
 
-    JavaScript também é executado no thread principal. Se sua página executa muitos códigos antes de eles realmente serem necessários, isso também atrasa seu [Time to Interactive](/interactive) (tempo até interativa), que é uma das principais métricas relacionadas a como os usuários percebem a velocidade de sua página.
+    JavaScript também é executado no thread principal. Se sua página executa muitos códigos antes de eles realmente serem necessários, isso também atrasa seu [Time to Interactive](/tti/) (tempo até interativa), que é uma das principais métricas relacionadas a como os usuários percebem a velocidade de sua página.
 
 - **Custo de memória**
 

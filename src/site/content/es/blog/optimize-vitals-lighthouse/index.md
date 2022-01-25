@@ -31,7 +31,7 @@ También hemos enviado soporte para capturas de pantalla de elementos en PageSpe
 
 ## Medir Core Web Vitals
 
-Lighthouse puede medir [sintéticamente](/vitals-measurement-getting-started/#measuring-web-vitals-using-lab-data) [las métricas de Core Web Vitals,](/vitals/) incluidas la [pintura con contenido más grande](/lcp/), el [cambio de diseño acumulativo](/cls/) y el [tiempo de bloqueo total](/tbt/) (un proxy de laboratorio para el [retraso de la primera entrada](/fid/)). Estas métricas reflejan la carga, la estabilidad del diseño y la preparación para la interacción. También existen otras métricas, como la [primera pintura con contenido,](/first-contentful-paint/) destacada en el [futuro de Core Web Vitals (CWV).](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/)
+Lighthouse puede medir [sintéticamente](/vitals-measurement-getting-started/#measuring-web-vitals-using-lab-data) [las métricas de Core Web Vitals,](/vitals/) incluidas la [pintura con contenido más grande](/lcp/), el [cambio de diseño acumulativo](/cls/) y el [tiempo de bloqueo total](/tbt/) (un proxy de laboratorio para el [retraso de la primera entrada](/fid/)). Estas métricas reflejan la carga, la estabilidad del diseño y la preparación para la interacción. También existen otras métricas, como la [primera pintura con contenido,](/fcp/) destacada en el [futuro de Core Web Vitals (CWV).](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/)
 
 La sección "Métricas" del informe Lighthouse incluye versiones de laboratorio de estas métricas. Puedes usar esto como una vista resumida de los aspectos de la experiencia del usuario que requieren tu atención.
 

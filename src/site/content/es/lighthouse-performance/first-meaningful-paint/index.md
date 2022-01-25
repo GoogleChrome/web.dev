@@ -8,7 +8,7 @@ web_lighthouse:
   - first-meaningful-paint
 ---
 
-{% Aside 'caution' %} El Primer despliegue significativo (FMP) está obsoleto a partir de Lighthouse 6.0. En la práctica, FMP se ha comportado de forma demasiado sensible a las pequeñas diferencias en la carga de la página, lo que ha dado lugar a resultados inconsistentes (bimodales). Además, la definición de la métrica se basa en detalles de implementación específicos del navegador, lo que significa que no se puede estandarizar ni implementar en todos los navegadores. En el futuro, en vez de esta métrica, considere usar [Despliegue del contenido más extenso](/largest-contentful-paint/). {% endAside %}
+{% Aside 'caution' %} El Primer despliegue significativo (FMP) está obsoleto a partir de Lighthouse 6.0. En la práctica, FMP se ha comportado de forma demasiado sensible a las pequeñas diferencias en la carga de la página, lo que ha dado lugar a resultados inconsistentes (bimodales). Además, la definición de la métrica se basa en detalles de implementación específicos del navegador, lo que significa que no se puede estandarizar ni implementar en todos los navegadores. En el futuro, en vez de esta métrica, considere usar [Despliegue del contenido más extenso](/lcp/). {% endAside %}
 
 Primer despliegue significativo (FMP) es una de las seis métricas que se registran en la sección **Rendimiento** del informe Lighthouse. Cada métrica captura algún aspecto de la velocidad de carga de la página.
 
@@ -20,7 +20,7 @@ Lighthouse muestra FMP en segundos:
 
 FMP mide cuándo el contenido principal de una página se hace  visible para el usuario. La puntuación bruta para FMP es el tiempo en segundos entre el momento en que el usuario inicia la carga de la página y el momento en que la página presenta el contenido principal de la mitad superior de la página. FMP esencialmente muestra el momento del despliegue después del cual ocurre el mayor cambio en el diseño en la parte superior de la página. Obtenga más información sobre los detalles técnicos de FMP en [Hasta el primer despliegue significativo: un enfoque basado en diseño](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view) de Google.
 
-El [Primer despliegue del contenido (FCP)](/first-contentful-paint) y el FMP suelen ser iguales cuando el primer fragmento de contenido representado en la página incluye el contenido en la mitad superior de la página. Sin embargo, estas métricas pueden diferir cuando, por ejemplo, existe contenido en la mitad superior de un iframe. FMP registra cuando el contenido dentro del iframe es visible para el usuario, mientras que FCP *no* incluye contenido de iframe.
+El [Primer despliegue del contenido (FCP)](/fcp/) y el FMP suelen ser iguales cuando el primer fragmento de contenido representado en la página incluye el contenido en la mitad superior de la página. Sin embargo, estas métricas pueden diferir cuando, por ejemplo, existe contenido en la mitad superior de un iframe. FMP registra cuando el contenido dentro del iframe es visible para el usuario, mientras que FCP *no* incluye contenido de iframe.
 
 ## Cómo Lighthouse determina su puntaje FMP
 
@@ -80,4 +80,4 @@ Consulte [Evaluación del rendimiento de carga en la vida real con la navegació
 - [Código fuente para la auditoría de **Primer despliegue significativo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Guía de puntuación de Lighthouse v3](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Hasta el primer despliegue significativo: un enfoque basado en diseño](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-- [Despliegue con contenido más extenso](/largest-contentful-paint)
+- [Despliegue con contenido más extenso](/lcp/)
