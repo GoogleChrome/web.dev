@@ -7,7 +7,7 @@ authors:
 date: 2022-01-10
 ---
 
-To build a solid offline experience, your PWA needs some kind of storage management. In the [caching chapter](/learn/pwa/caching) you learned that cache storage is one option to save data on a device. In this chapter, we'll expand on how you can manage offline data, including data persistence, limits, and the available tools.
+To build a solid offline experience, your PWA needs storage management. In the [caching chapter](/learn/pwa/caching) you learned that cache storage is one option to save data on a device. In this chapter, we'll show you how to manage offline data, including data persistence, limits, and the available tools.
 
 ## Storage 
 Storage is not just about files and assets, but can include other types of data. On all browsers that support PWA, the following APIs are available for on device storage:
