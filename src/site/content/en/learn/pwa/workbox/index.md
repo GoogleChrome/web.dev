@@ -142,7 +142,7 @@ Several routing and caching patterns, like `NetworkFirst` navigations and offlin
 
 ### Caching and updating assets
 
-Caching assets also involves updating them. Workbox also helps with updating your assets however you decide it is best, it could be keeping them updated if they change server-side, or waiting until you have a new version of your app. 
+Caching assets also involves updating them. Workbox helps with updating your assets in whatever way you decide is best. It could be keeping them updated if they change on the server, or waiting until you have a new version of your app. 
 You'll learn more about updating on the [Update chapter](/learn/pwa/update) 
 
 ## Play with Workbox
