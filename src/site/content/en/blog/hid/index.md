@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2022-01-12
+updated: 2022-01-20
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -354,6 +354,10 @@ where you can see all HID and USB device related events in one single place.
   <figcaption>Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
+Check out the [HID explorer][hid-explorer] for dumping HID device
+info into a human-readable format. It maps from usage values to names for each
+HID usage.
+
 On most Linux systems, HID devices are mapped with read-only permissions by
 default. To allow Chrome to open an HID device, you will need to add a new [udev
 rule]. Create a file at `/etc/udev/rules.d/50-yourdevicename.rules` with the
@@ -457,14 +461,15 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
 [`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
 [`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
+[hid-explorer]: https://nondebug.github.io/webhid-explorer/
 [web.dev/hid-examples]: /hid-examples/
 [udev rule]: https://www.freedesktop.org/software/systemd/man/udev.html
 [member]: https://wiki.debian.org/SystemGroups
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
-[publicly available]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_usage_and_page.cc
-[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:chrome/browser/usb/usb_blocklist.cc
-[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_blocklist.cc
+[publicly available]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_usage_and_page.cc
+[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
+[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
 [cr-dev-twitter]: https://twitter.com/chromiumdev
