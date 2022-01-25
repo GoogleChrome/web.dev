@@ -69,7 +69,6 @@ module.exports = (patternId, height) => {
         href="${pattern.demo}"
         target="_blank"
         class="code-pattern__icon"
-        data-icon="open_in_new"
       >Open demo</a>
     </div>
   </div>`;
