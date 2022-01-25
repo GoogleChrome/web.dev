@@ -149,7 +149,7 @@ Order does not matter for keywords associated with different axes of position.
 
 {% CompareCaption %}
 
-When CSS values are used alongside keywords, it must be preceded by a keyword.
+When CSS values are used alongside keywords, the order matters. The first value represents the horizontal axis and the second the vertical axis.
 {% endCompareCaption %}
 
 {% endCompare%}
