@@ -1,6 +1,7 @@
 .code-pattern {
   width: 100%;
 
+  --flow-space: 1em;
   --primary-color: get-color('core-primary');
 
   .code-pattern__content {
@@ -64,4 +65,9 @@
     height: 100%;
     width: 100%;
   }
+}
+
+.code-patterns__description,
+.code-patterns__more {
+  --flow-space: 1em;
 }
