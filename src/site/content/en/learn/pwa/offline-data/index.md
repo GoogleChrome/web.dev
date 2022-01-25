@@ -42,7 +42,7 @@ The following example creates a database to hold cooking recipes.
 To open a database:
 
 1. Use the `openDB` function to create a new IndexedDB database called `recipes`. Because IndexedDB databases are versioned, you need to increase the version number whenever you make changes to a database. The second parameter is the database version. In the example is set to 1.
-1. An initialization object containing an `upgrade` function is passed to `openDB`. This function will be called when the database is installed for the first time or when it upgrades to a newer version. This function is the only place where actions can happen. Actions might include creating new Object Stores (the structures IndexedDB uses to organize data), or indexes (that you'd like to search on). This is also where data migration should happen. Typically, the `upgrade` function contains a `switch` statement, without breaks, to allow each step to happen in order based on what the old version of the database is.
+1. An initialization object containing an `upgrade()` callback is passed to `openDB()`. The callback function is called when the database is installed for the first time or when it upgrades to a new version. This function is the only place where actions can happen. Actions might include creating new object stores (the structures IndexedDB uses to organize data), or indexes (that you'd like to search on). This is also where data migration should happen. Typically, the `upgrade()` function contains a `switch` statement without `break` statements to allow each step to happen in order based on what the old version of the database is.
 
 ```js
 import { openDB } from 'idb';
