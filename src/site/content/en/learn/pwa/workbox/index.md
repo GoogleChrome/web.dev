@@ -138,7 +138,7 @@ setCatchHandler(async (options) => {
 
 ## Recipes
 
-Several routing and caching patterns, like `NetworkFirst` navigations and offline fallbacks, are common enough to be encapsulated further into reusable recipes. Check [workbox-recipes](https://developers.google.com/web/tools/workbox/modules/workbox-recipes) as they can help you if they provide a solution suitable for your architecture. They are usually available as one line of code that you need to add to your service worker's code. 
+Several routing and caching patterns, like `NetworkFirst` navigations and offline fallbacks, are common enough to be encapsulated into reusable recipes. Check [workbox-recipes](https://developers.google.com/web/tools/workbox/modules/workbox-recipes) as they can help you if they provide a solution suitable for your architecture. They are usually available as one line of code that you need to add to your service worker's code. 
 
 ### Caching and updating assets
 
