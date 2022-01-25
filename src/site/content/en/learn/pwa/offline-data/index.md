@@ -17,7 +17,7 @@ Storage is not just about files and assets, but can include other types of data.
 - Cache Storage: As covered in the [Caching module](/learn/pwa/caching).
 
 {% Aside %}
-On supported platforms, you can also use the [FileSystem Access API](/file-system-access/) to read and write to and from the user's local filesystem, with permission. Since you are writing files directly to the filesystem the browser won't assign the data to your origin's quota, and any other application can interact with those files, if the user allows it.
+On supported platforms, you can also use the [FileSystem Access API](/file-system-access/) to read and write to and from the user's local filesystem, with permission. Since you are writing files directly to the file system the browser won't assign the data to your origin's quota, and any other application can interact with those files, if the user allows it.
 {% endAside %}
 
 You can manage all the on-device storage with the [Storage Manager API](https://developer.mozilla.org/docs/Web/API/StorageManager) on supported platforms.
