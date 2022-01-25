@@ -185,7 +185,7 @@ The `navigator.storage` interface has `persist` and `persisted` methods that bot
 
 {% Aside %}
 [Content Indexing API](/content-indexing-api/) is an experimental ability available in some Chromium browsers that lets your PWA expose the pieces of content that you have indexed offline. 
-If you register your offline-ready content using this API, the user will see them in Downloads within the browser when there is no network connection. 
+If you register your offline-ready content using this API, the user will see them in Downloads within the browser even when there is no network connection. 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/b1o5a6iCgjqOVMVfcbuj.png", alt="The Content Indexing API results available in Chrome for Android.", width="800", height="1480" %}
 {% endAside %}
 
