@@ -134,7 +134,7 @@ async function getData() {
 
 ## The Storage Manager 
 
-Knowing how to manage your PWA's storage is particularly important to store and stream network responses correctly. 
+Knowing how to manage your PWA's storage is particularly important to storing and streaming network responses correctly. 
 
 Storage is shared between all storage options, including Cache Storage, IndexedDB, Web Storage, and even the service worker file and its dependencies. 
 However, the amount of storage available varies from browser to browser. You're not likely to run out; sites could store megabytes and even gigabytes of data on some browsers. Chrome, for instance, allows the browser to use up to 80% of the total disk space, and an individual origin can use up to 60% of the entire disk space. For browsers that support the Storage API, you can know how much storage is still available for your app, its quota, and its use.
