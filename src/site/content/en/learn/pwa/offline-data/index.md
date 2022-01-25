@@ -32,7 +32,7 @@ All storage, no matter how you use it, is tied not just to the PWA it is used fo
 {% endAside %}
 
 ## IndexedDB
-To start using IndexedDB, you first open a database. This will create a new database if one does not exist.
+To use IndexedDB, first open a database. This creates a new database if one does not exist.
 IndexedDB is an asynchronous API, but it has a callback interface instead of a Promise interface.The following example uses Jake Archibald's [idb library](https://github.com/jakearchibald/idb), which is a tiny, Promise wrapper for IndexedDB. Helper libraries are not required to use IndexedDB, but if you want to use the Promise syntax the `idb` library is an option.
 
 The following example creates a database to hold cooking recipes.
