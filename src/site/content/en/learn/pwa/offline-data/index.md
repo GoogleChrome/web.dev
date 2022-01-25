@@ -23,7 +23,7 @@ On supported platforms, you can also use the [FileSystem Access API](/file-syste
 You can manage all the on-device storage with the [Storage Manager API](https://developer.mozilla.org/docs/Web/API/StorageManager) on supported platforms.
 The Cache Storage API and IndexedDB provide asynchronous access to persistent storage for PWAs and can be accessed from the main thread,web workers, and service workers. Both play essential roles in making PWAs work reliably when the network is flaky or non-existent. But when should you use each one?
 
-The *Cache Storage API* should be used for network resources, things you'd access by requesting them via a URL, like your HTML, CSS, and JavaScript. It's the storage that your PWA can use for images, videos, and audio.
+Use the *Cache Storage API* for network resources, things you'd access by requesting them via a URL, such as HTML, CSS, JavaScript, images, videos, and audio.
 
 *IndexedDB* should be used to store structured data. This includes data that needs to be searchable or combinable in a NoSQL-like manner, or other data such as user-specific data that doesn't necessarily match a URL request. However, it's important to note that IndexedDB isn't designed for full-text search.
 
