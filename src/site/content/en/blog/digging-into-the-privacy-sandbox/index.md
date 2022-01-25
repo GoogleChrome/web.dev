@@ -78,7 +78,7 @@ Provide privacy preserving mechanisms to support a variety of use cases such as 
 * [Attribution Reporting](https://github.com/WICG/conversion-measurement-api)<br>
 Provide privacy preserving measurement of clicks and views with event-level and aggregate reports.
 * [Topics API](https://github.com/jkarlin/topics)<br>
-Enable interest-based advertising, without having to resort to tracking the sites a user visits.
+Enable interest-based advertising, without having to resort to tracking the sites a user visits. The design of the API was informed by community feedback from our earlier FLoC trials, and supersedes the [FLoC proposal](https://github.com/WICG/floc).
 * [FLEDGE](https://github.com/WICG/turtledove/blob/main/FLEDGE.md)<br>
 Provides a solution for remarketing use cases, designed so it cannot be used by third parties to track user browsing behaviour across sites.
 
