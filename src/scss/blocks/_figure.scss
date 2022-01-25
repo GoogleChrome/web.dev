@@ -18,6 +18,7 @@ figure {
 }
 
 figure[data-float] {
+  width: auto;
   max-width: calc(#{$global-prose-element-max-width} / 2);
   margin-bottom: get-space('size-1');
 }
@@ -25,27 +26,19 @@ figure[data-float] {
 figure[data-float='left'] {
   float: left;
   margin-inline-end: get-space('size-1');
-
-  > figcaption {
-    text-align: inherit;
-  }
 }
 
 figure[data-float='right'] {
   float: right;
   margin-inline-start: get-space('size-1');
-
-  > figcaption {
-    text-align: inherit;
-  }
 }
 
 figure[data-size='full'] {
   > * {
     width: 100%;
   }
+}
 
-  > figcaption {
-    text-align: inherit;
-  }
+figure[data-screenshot] {
+  border: 1px solid var(--color-stroke);
 }
