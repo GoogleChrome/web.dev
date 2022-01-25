@@ -1,5 +1,11 @@
 const Prism = require('prismjs');
 const patterns = require('../../_data/patterns').patterns;
+const openInNewSvg = require('fs')
+  .readFileSync(
+    require('path').join(__dirname, '..', 'icons', 'open_in_new.svg'),
+    'utf-8',
+  )
+  .trim();
 
 /**
  * @fileoverview A component to display code samples, organized in tabs,
@@ -69,7 +75,7 @@ module.exports = (patternId, height) => {
         href="${pattern.demo}"
         target="_blank"
         class="code-pattern__icon"
-      >Open demo</a>
+      >${openInNewSvg}Open demo</a>
     </div>
   </div>`;
 };
