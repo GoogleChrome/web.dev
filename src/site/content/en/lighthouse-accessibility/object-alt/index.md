@@ -42,7 +42,7 @@ of the object.
 See all valid alt text examples in [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.3/object-alt).
 
 {% Aside 'note' %}
-The `alt` attribute and the inner text of the `<object>` tag [are *not*
+The `alt` attribute and the inner text of the `<object>` element [are *not*
 recognized as alt text by Lighthouse](https://github.com/dequelabs/axe-core/issues/3318).
 {% endAside %}
 
