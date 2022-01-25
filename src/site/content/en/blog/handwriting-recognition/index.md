@@ -7,7 +7,7 @@ authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-updated: 2021-12-14
+updated: 2021-12-22
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
@@ -67,13 +67,13 @@ To experiment with the Handwriting Recognition API locally, without an origin tr
 the `#experimental-web-platform-features` flag in `about://flags`.
 
 {% Aside %} Note that the API is currently exclusive to Chrome&nbsp;OS devices. Chrome&nbsp;91
-already contains limited support for the API, but to fully experience it, we recommend you test on
-Chrome&nbsp;92 to Chrome&nbsp;97. {% endAside %}
+already contained limited support for the API, but to fully experience it, we recommend you test on
+Chrome&nbsp;92 to Chrome&nbsp;98. {% endAside %}
 
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;92, the Handwriting Recognition API will be available as an origin trial on
-Chrome&nbsp;OS. The origin trial is expected to end in Chrome&nbsp;97 (January 26, 2022).
+Chrome&nbsp;OS. The origin trial is expected to end in Chrome&nbsp;98 (February 22, 2022).
 
 {% include 'content/origin-trials.njk' %}
 

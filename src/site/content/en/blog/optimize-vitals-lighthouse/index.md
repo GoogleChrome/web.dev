@@ -7,6 +7,7 @@ authors:
 description: |
   Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Web Vitals.
 date: 2021-05-11
+updated: 2022-01-20
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: "A Lighthouse illuminating the sea"
 tags:
@@ -33,7 +34,7 @@ parts of your UI impacting user-experience metrics (e.g. what nodes are contribu
 shift).
 
 
-<figure class="w-figure">
+<figure>
 <video muted autoplay loop>
 <source type="video/mp4" src="https://storage.googleapis.com/web-dev-uploads/video/1L2RBhCLSnXjCnSlevaDjy3vba73/3G0x4Z1dmOcsusG7j1LE.mp4" type="video/mp4" width="1920" height="1080">
 </video>
@@ -42,7 +43,7 @@ shift).
 We've also shipped support for element screenshots on PageSpeed Insights, enabling a way to more
 easily spot issues for one-off performance runs of pages.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/mfkWFzyfO9XlJLYS80DE.png", alt="Element Screenshots highlighting the DOM node contributing to layout shift in the page", width="800", height="483" %}
 </figure>
 
@@ -54,13 +55,13 @@ Lighthouse can
 the [Core Web Vitals metrics](/vitals/) including [Largest Contentful Paint](/lcp/), [Cumulative
 Layout Shift](/cls/) and [Total Blocking Time](/tbt/) (a lab proxy for [First Input Delay](/fid/)).
 These metrics reflect loading, layout stability, and interaction readiness. Other metrics such as
-[First Contentful Paint](/first-contentful-paint/) highlighted in the [future of
+[First Contentful Paint](/fcp/) highlighted in the [future of
 Core Web Vitals (CWV)](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/) are there too.
 
 The "Metrics" section of the Lighthouse report includes lab versions of these metrics. You can use
 this as a summary view of what aspects of user-experience require your attention.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VkLhdNb3fxtfttFZ1S6E.png", alt="Lighthouse peformance metrics", width="800", height="485" %}
 </figure>
 
@@ -72,7 +73,7 @@ the [Web Vitals
 extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en),
 or [RUM](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) for a post-load view into the metrics. {% endAside %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt="Web Vitals lane in the devtools performance panel", width="800", height="476" %}
   <figcaption>The new Web Vitals option in the DevTools Performance panel displays a
 track which highlights metric moments, such as Layout Shift (LS) shown above.</figcaption>
@@ -95,7 +96,7 @@ primary–or "largest"–content has loaded and is visible to the user.
 Lighthouse has a "Largest Contentful Paint element" audit that identifies what element was the
 largest contentful paint. Hovering over the element will highlight it in the main browser window.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/qeNJwYAVxysRV0okWmf4.png", alt="Largest Contentful Paint element", width="800", height="505" %}
 </figure>
 
@@ -104,7 +105,7 @@ of this image. Lighthouse includes a number of image optimization audits for hel
 if your images could be better compressed, resized or delivered in a more optimal modern image
 format.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/8RVIyj6NiMfx7VDVbQmI.png", alt="Properly size images audit", width="800", height="468" %}
 </figure>
 
@@ -112,7 +113,7 @@ You might also find [LCP
 Bookmarklet](https://gist.github.com/anniesullie/cf2982342337fd1b2be95c2d5fe5ea06) by Annie
 Sullivan useful for quickly identifying the LCP element with a red rectangle in just one click.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/eZJdYsdfsNniDW1KRJkE.png", alt="Highlighting the LCP element with a bookmarklet", width="800", height="509" %}
 </figure>
 
@@ -122,14 +123,12 @@ To improve the Largest Contentful Paint, [preload](/preload-responsive-images/) 
 images if they are being discovered late by the browser. A late discovery can happen if a
 JavaScript bundle needs to be loaded before the image is discoverable.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K9EPBZdSFoyXVDHoDjTx.png", alt="Preload the largest contentful paint image", width="800", height="489" %}
 </figure>
 
 {% Aside %} **Preload should be used sparingly**. Early network bandwidth is a scarce resource and using preload can come at the cost of another resource. To use preload effectively, make sure resources are being ordered correctly to avoid regressing other metrics when other resources in the page are also considered important (e.g. critical CSS, JS, fonts). The [cost of preload](https://docs.google.com/document/d/1ZEi-XXhpajrnq8oqs5SiW-CXR3jMc20jWIzN5QRy1QA/edit) covers this in more detail.
 {% endAside %}
-
-Lighthouse 6.5 and above now suggests opportunities to apply this optimization.
 
 There are a few common questions we are asked about preloading LCP images that may also be worth
 briefly covering.
@@ -162,6 +161,20 @@ background? Yes.
 Any image flagged as the LCP image whether via CSS background or `<img>` is a candidate if it's
 discovered at a waterfall depth of three or more.
 
+### Lazy-loading offscreen images and avoiding this for LCP
+
+Offscreen images that are not critical to the initial user experience can be [lazy-loaded](/browser-level-image-lazy-loading/). This is a technique that defers downloading an image until a user scrolls near it, which can reduce network contention for critical assets and in some cases improve LCP. The ["Defer offscreen images"](/offscreen-images/) audit can help here:
+
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/vW6EwUnp51g0QVAkUyN9.png", alt="Defer offscreen images", width="800", height="317" %}
+</figure>
+
+Critical above-the-fold images, such as the Largest Contentful Paint image, should not be lazy-loaded. Doing so can [delay the LCP image loading](/lcp-lazy-loading/). Lighthouse will highlight if an LCP image is being incorrectly lazy-loaded via the "Largest Contentful Paint image was lazily loaded" audit:
+
+<figure>
+  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VKmCrIG748sCCoByrBV8.png", alt="Avoid lazy-loading LCP images", width="800", height="226" %}
+</figure>
+
 ### Identify CLS contributions
 
 Cumulative Layout Shift is a measurement of visual stability. It quantifies how much a page's
@@ -172,14 +185,14 @@ This audit highlights DOM elements that contribute the most to shifts of the pag
 column to the left you will see the list of these DOM elements and to the right, their overall CLS
 contribution.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/X31lkLFtfjDZdO2O7ytV.png", alt="The avoid large layout shifts audit in Lighthouse highlighting relevant DOM nodes contributing to CLS", width="800", height="525" %}
 </figure>
 
 Thanks to the new Lighthouse Element Screenshots feature, we can both see a visual preview of the
 key elements noted in the audit as well as click-to-zoom for a clearer view:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/L9geZVvkATRlAVcZA6dx.png", alt="Clicking on an Element screenshot will expand it", width="800", height="525" %}
 </figure>
 
@@ -189,7 +202,7 @@ SpeedCurve's [Core Web Vitals dashboard](https://speedcurve.com/blog/web-vitals-
 and which I love using [Defaced's Layout Shift GIF
 Generator](https://defaced.dev/tools/layout-shift-gif-generator/) for:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/ju6XjKBYzF6G537myjUW.gif", alt="the layout shift generator highlighting shifts", width="800", height="450" %}
 </figure>
 
@@ -198,7 +211,7 @@ Web Vitals report](https://support.google.com/webmasters/answer/9205520?hl=en). 
 the kinds of pages on my site with a high CLS (in this case helping self-identify what template
 partials I need to spend my time on):
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/2Ihb2GYkbpGzYLYoZEDP.png", alt="Search Console displaying CLS issues", width="800", height="506" %}
 </figure>
 
@@ -212,7 +225,7 @@ without dimensions, include width and height size attributes on your images and 
 This approach ensures that the browser can allocate the correct amount of space in the document
 while the image is loading.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/fZRkmM18rvfy6y7LB1Qx.png", alt="Audit for image elements without explicit width and height", width="800", height="489" %}
 </figure>
 
@@ -227,7 +240,7 @@ find opportunities to improve the loading experience of ads on your page, includ
 to layout shift and long tasks that may push out how soon your page is usable by users. In
 Lighthouse, you can enable this via Community Plugins.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/kR3jgctso6Hg0OxD8xwi.png", alt="Ads related audits highlighting opportunities to reduce time to request and layout shift", width="800", height="527" %}
 </figure>
 
@@ -248,7 +261,7 @@ Lighthouse reads, allowing it to list which elements with animations weren't com
 what reason. You can find these in the [Avoid non-composited
 animations](/non-composited-animations/) audit.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/heGuYXKeMrUftMvfrDU7.png", alt="Audit for avoiding non-composited animations", width="800", height="528" %}
 </figure>
 
@@ -259,7 +272,7 @@ link, tap on a button, or use a custom, JavaScript-powered control) to the time 
 actually able to begin processing event handlers in response to that interaction. Long JavaScript
 Tasks can impact this metric and the proxy for this metric, Total Blocking Time.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LqBCtAXdByd4fBzoNc1K.png", alt="Audit for avoiding long main thread tasks", width="800", height="485" %}
 </figure>
 
@@ -277,7 +290,7 @@ timeline](https://calibreapp.com/docs/features/main-thread-execution-timeline) v
 for visualizing these costs, which highlights both parent and child tasks contributing to long
 tasks that impact interactivity.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/IGENqHBjC97pHslOQYc6.png", alt="The main-thread execution timeline visual Calibre has", width="800", height="155" %}
 </figure>
 
@@ -294,21 +307,21 @@ Lighthouse report for a site. The Perf score is 63/100 with a TBT of 400ms. Digg
 we find this site loads an Intersection Observer polyfill in Chrome which isn't necessary. Let's
 block it!
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/DPXEXhOZL0Czjm10lBox.png", alt="Network request blocking", width="800", height="508" %}
 </figure>
 
 We can right-click on a script in the DevTools Network panel and click `Block Request URL` to block
 it. Here we'll do this for the Intersection Observer polyfill.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iWB0jAtL0PKpwkmecOPf.png", alt="Block request URLs in DevTools", width="800", height="354" %}
 </figure>
 
 Next we can re-run Lighthouse. This time we can see our performance score has improved (70/100) as
 has Total Blocking Time (400ms => 300ms).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LiaMMxvy4prpFBIuSgfo.png", alt="The after view of blocking costly network requests", width="800", height="508" %}
 </figure>
 
@@ -325,13 +338,13 @@ lightweight preview of the widget (a facade) and only load the full version if a
 with it. Lighthouse has an audit that will recommend third-party resources which can be
 [lazy-loaded with a facade](/third-party-facades/), such as YouTube video embeds.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}
 </figure>
 
 As a reminder, Lighthouse will [highlight third-party code](/third-party-summary/) that blocks the main thread for over 250ms. This can surface all kinds of third-party scripts (including ones authored by Google) that may be worth better deferring or lazy-loading if what they render requires scrolling to view it.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}
 </figure>
 

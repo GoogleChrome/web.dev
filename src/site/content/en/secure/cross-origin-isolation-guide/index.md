@@ -1,10 +1,10 @@
 ---
-layout: post-old
+layout: post
 title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-08-05
+updated: 2021-12-21
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -72,8 +72,8 @@ allows developers to inspect websites.
    contact the developer to fix the issue. If it's implemented as part of your website, follow
    the guide below to enable cross-origin isolation.
 
-<figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163", class="w-screenshot" %}
+<figure>
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163" %}
    <figcaption>
       DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation.
    </figcaption>
@@ -140,9 +140,12 @@ have come up with the idea of going in the opposite direction: [a new COEP
 "credentialless"
 mode](https://developer.chrome.com/blog/coep-credentialless-origin-trial/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are figuring out the details of how it should work, but we hope
-this will lighten your burden of making sure the subresources are sending the
-`Cross-Origin-Resource-Policy` header.
+credentials. We hope this will lighten your burden of making sure the
+subresources are sending the `Cross-Origin-Resource-Policy` header.
+
+Though `credentialless` mode is available on Chrome from version 96, it's not
+supported by any other browsers yet, this may cause some developers find it
+challenging to deploy COOP or COEP at this stage.
 
 Also, it's known that the `Cross-Origin-Opener-Policy: same-origin` header will
 break integrations that require cross-origin window interactions such as OAuth

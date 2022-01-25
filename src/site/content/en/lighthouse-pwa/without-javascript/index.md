@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Does not provide fallback content when JavaScript is not available
 description: |
   Learn how to make sure users can view at least some content on your web page
@@ -26,8 +26,8 @@ functionality should not rely on CSS or JavaScript.
 flags pages that don't contain _some_ content
 when JavaScript is unavailable:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/durRW9Bh687rjFAIgF7P.png", alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable", width="800", height="120", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/durRW9Bh687rjFAIgF7P.png", alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable", width="800", height="120" %}
 </figure>
 
 Lighthouse disables JavaScript on the page and then inspects the page's HTML. If

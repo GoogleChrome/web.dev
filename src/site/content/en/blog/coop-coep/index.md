@@ -18,7 +18,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-11-26
+updated: 2021-12-21
 tags:
   - blog
   - security
@@ -287,17 +287,18 @@ Chrome.
 We've been exploring ways to deploy `Cross-Origin-Resource-Policy` at scale, as
 cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
-"credentialless" mode](https://github.com/mikewest/credentiallessness/) that
+"credentialless"
+mode](https://developer.chrome.com/blog/coep-credentialless-origin-trial/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are figuring out the details of how it should work, but we hope
-this will lighten your burden of making sure the subresources are sending the
-`Cross-Origin-Resource-Policy` header.
+credentials. We hope this will lighten your burden of making sure the
+subresources are sending the `Cross-Origin-Resource-Policy` header.
 
-If you want to enable cross-origin isolation but are blocked by this, we
-recommend [registering for an origin
+However, since `credentialless` mode is available on Chrome from version 96 but
+not supported by any other browsers yet, some developers might find it
+challenging to deploy COOP or COEP. If you prefer not to enable cross-origin
+isolation yet, we recommend [registering for an origin
 trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
-and waiting until the new mode is available. We are not planning to terminate
-the origin trial until the new mode is available.
+and waiting until `credentialless` is available in more browsers.
 
 {% endAside %}
 
@@ -323,13 +324,13 @@ there's an issue with COEP, you should see
 column.
 
 <figure>
-  {% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444" %}
 </figure>
 
 You can then click the entry to see more details.
 
 <figure>
-  {% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241" %}
 </figure>
 
 You can also determine the status of iframes and popup windows through the
@@ -342,7 +343,7 @@ etc.
 </span>
 
 <figure>
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480" %}
 </figure>
 
 <span id="devtools-coop">
@@ -351,7 +352,7 @@ isolated.
 </span>
 
 <figure>
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480" %}
 </figure>
 
 ### Observe issues using the Reporting API
@@ -470,9 +471,9 @@ around COOP and COEP.
 
 ## Resources
 
-* [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
-* [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/)
+* [Why you need "cross-origin isolated" for powerful features](/why-coop-coep/)
+* [A guide to enable cross-origin isolation](/cross-origin-isolation-guide/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
   92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
 * [Monitor your web page's total memory usage with
-  `measureUserAgentSpecificMemory()`](https://web.dev/monitor-total-page-memory-usage/)
+  `measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)

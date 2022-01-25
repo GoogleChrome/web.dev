@@ -456,12 +456,15 @@ on their parent element. This process can be done once the document is ready, or
 specific events like Custom Element lifecycles.
 
 ```js
-document.querySelectorAll('template[shadowroot]').forEach(template => {
-  const mode = template.getAttribute('shadowroot');
-  const shadowRoot = template.parentNode.attachShadow({ mode });
-  shadowRoot.appendChild(template.content);
-  template.remove();
-});
+(function attachShadowRoots(root) {
+  root.querySelectorAll("template[shadowroot]").forEach(template => {
+    const mode = template.getAttribute("shadowroot");
+    const shadowRoot = template.parentNode.attachShadow({ mode });
+    shadowRoot.appendChild(template.content);
+    template.remove();
+    attachShadowRoots(shadowRoot);
+  });
+})(document);
 ```
 
 ## Further Reading {: #further-reading }

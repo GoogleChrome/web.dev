@@ -59,7 +59,7 @@ Be sure to check out the [authoritative guide on how to utilize WebAssembly Debu
 
 ## High performance storage
 
-Given how large Photoshop documents can be, a critical need for Photoshop is the ability to dynamically move data from on-disk to in-memory as the user pans around. On other platforms, this is accomplished usually through memory mapping via [`mmap`](https://en.wikipedia.org/wiki/Mmap), but this hasn't been performantly possible on the web—that is until origin private file system access handles were developed and implemented as an origin trial! You can read how to leverage this new API [in the documentation](https://web.dev/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
+Given how large Photoshop documents can be, a critical need for Photoshop is the ability to dynamically move data from on-disk to in-memory as the user pans around. On other platforms, this is accomplished usually through memory mapping via [`mmap`](https://en.wikipedia.org/wiki/Mmap), but this hasn't been performantly possible on the web—that is until origin private file system access handles were developed and implemented as an origin trial! You can read how to leverage this new API [in the documentation](/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
 
 ## P3 color space for canvas
 

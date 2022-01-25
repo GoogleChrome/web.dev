@@ -284,9 +284,9 @@ Imagine a web page that silently copies `rm -rf /` or a
 [decompression bomb image](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html)
 to your clipboard.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Browser prompt asking the user for the clipboard permission.", width="800", height="338", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Browser prompt asking the user for the clipboard permission.", width="800", height="338" %}
+  <figcaption>
     The permission prompt for the Clipboard API.
   </figcaption>
 </figure>

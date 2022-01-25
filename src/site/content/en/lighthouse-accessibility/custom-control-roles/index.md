@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Custom controls have ARIA roles
 description: |
   Learn how to improve your web page's accessibility by making sure custom

@@ -38,7 +38,7 @@ content. See [Pete LePage](/authors/petelepage/) for an example.
 See [Author profile](/handbook/author-profile/) to learn how to add a new author.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcvkKpSchx1lzJ8Sjtcc.jpg", alt="An example of a page with authors.", width="800", height="712", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcvkKpSchx1lzJ8Sjtcc.jpg", alt="An example of a page with authors.", width="800", height="712" %}
   <figcaption>
     The authors of this page were Kayce and Pete.
   </figcaption>
@@ -58,7 +58,7 @@ A list of codelabs that are related to the post. All indicated codelabs
 appear in callouts at the end of the post.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d9euImHuQJpMjBaNGllz.jpg", alt="An example of a codelab callout at the end of a post.", width="800", height="585", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d9euImHuQJpMjBaNGllz.jpg", alt="An example of a codelab callout at the end of a post.", width="800", height="585" %}
 </figure>
 
 ## `date`: indicate when the content was originally created {: #date }
@@ -78,7 +78,7 @@ Use the [`updated`](#updated) field to indicate content updates.
 The `date` value is presented in human-readable format beneath the page title.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcvkKpSchx1lzJ8Sjtcc.jpg", alt="The date field shows up under the title.", width="800", height="712", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcvkKpSchx1lzJ8Sjtcc.jpg", alt="The date field shows up under the title.", width="800", height="712" %}
   <figcaption>
     This page was originally published on <code>Jun 18, 2010</code>.
   </figcaption>
@@ -95,7 +95,7 @@ description: How to debug SEO issues on individual pages or across an entire sit
 ```
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DG2ye3DP8hTSeEdBZyz3.jpg", alt="An example of a description showing up in a search engine result page.", width="800", height="395", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DG2ye3DP8hTSeEdBZyz3.jpg", alt="An example of a description showing up in a search engine result page.", width="800", height="395" %}
   <figcaption>
     An example of a description showing up in a search engine result page.
   </figcaption>
@@ -118,7 +118,7 @@ and the sitemap. However, **the page is still publicly accessible**. I.e. anyone
 the link to the page will be able to see it.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fOznvD7Sd6X7kYSrk5QI.jpg", alt="An example of a page in draft mode.", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fOznvD7Sd6X7kYSrk5QI.jpg", alt="An example of a page in draft mode.", width="800", height="482" %}
   <figcaption>
     An example of a page in draft mode.
   </figcaption>
@@ -135,7 +135,7 @@ glitch: gif-to-video
 ```
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqbfe3IWOXclsNUr1a8H.jpg", alt="A screenshot of a page using the codelab layout.", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqbfe3IWOXclsNUr1a8H.jpg", alt="A screenshot of a page using the codelab layout.", width="800", height="482" %}
   <figcaption>
     The <code>gif-to-video</code> Glitch is presented on the right because of the
     <code>glitch: gif-to-video</code> YAML property in the page's front matter.
@@ -155,9 +155,7 @@ hero: image/admin/tyBs8QP5pbMVpY3yp1dM.jpg
 See [Hero images](/handbook/markup-media/#hero).
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="hero.jpg"
-       alt="A page with a hero image.">
+  <img src="hero.jpg" alt="A page with a hero image.">
 </figure>
 
 ## `layout`: change the overall layout of your content {: #layout }
@@ -165,18 +163,18 @@ See [Hero images](/handbook/markup-media/#hero).
 ```yaml/11-13
 ---
 …
-layout: post-old|codelab
+layout: post|codelab
 …
 ---
 ```
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zkPy8m0ZBVWoCf5qs0EZ.jpg", alt="A screenshot of a page using the post layout.", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
-  <figcaption>An example of <code>layout: post-old</code>.</figcaption>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zkPy8m0ZBVWoCf5qs0EZ.jpg", alt="A screenshot of a page using the post layout.", width="800", height="482" %}
+  <figcaption>An example of <code>layout: post</code>.</figcaption>
 </figure>
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqbfe3IWOXclsNUr1a8H.jpg", alt="A screenshot of a page using the codelab layout.", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqbfe3IWOXclsNUr1a8H.jpg", alt="A screenshot of a page using the codelab layout.", width="800", height="482" %}
   <figcaption>An example of <code>layout: codelab</code>.</figcaption>
 </figure>
 
@@ -195,7 +193,7 @@ See [Replace GIFs with video](/codelab-replace-gifs-with-video/) for an
 example.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nl4fS8RGjVcwUw2Ozk8Z.jpg", alt="An example of a page with a related post.", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nl4fS8RGjVcwUw2Ozk8Z.jpg", alt="An example of a page with a related post.", width="800", height="482" %}
 </figure>
 
 ## `stack_overflow_tag`: add an "Ask on Stack Overflow" note {: #stack_overflow_tag }
@@ -237,11 +235,11 @@ relevant to them.
 The subtitle also shows up on `web.dev/blog`.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5QJtXjihXDKFet1dPUoh.jpg", alt="An example of a page with a subhead.", width="800", height="592", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5QJtXjihXDKFet1dPUoh.jpg", alt="An example of a page with a subhead.", width="800", height="592" %}
 </figure>
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YAbmkgByFYVJ7BbOF11x.jpg", alt="An example of a subhead on web.dev/blog.", width="800", height="643", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YAbmkgByFYVJ7BbOF11x.jpg", alt="An example of a subhead on web.dev/blog.", width="800", height="643" %}
 </figure>
 
 ## `tags`: increase awareness of related content {: #tags }
@@ -261,14 +259,14 @@ For example, all of our Web Vitals content is available under
 the [Web Vitals tags page](/tags/web-vitals/):
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IFohRqh8YedZG7iZZOiX.jpg", alt="A screenshot of https://web.dev/tags/web-vitals", width="800", height="617", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IFohRqh8YedZG7iZZOiX.jpg", alt="A screenshot of https://web.dev/tags/web-vitals", width="800", height="617" %}
 </figure>
 
 Tags show up in a few places across the site.
 The first three tags of a page are shown on the [blog homepage](/blog):
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RMA4IVA7bvCaEhY5Nevw.jpg", alt="A screenshot of https://web.dev/blog", width="800", height="586", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RMA4IVA7bvCaEhY5Nevw.jpg", alt="A screenshot of https://web.dev/blog", width="800", height="586" %}
   <figcaption>
     The human interface devices page is tagged with <code>Capabilities</code> and
     <code>Games</code>, the streaming requests page is tagged with <code>Network</code>
@@ -279,7 +277,7 @@ The first three tags of a page are shown on the [blog homepage](/blog):
 A page's full list of tags is shown at the bottom of its main content:
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/p9V8IluserA3J9Og6SuY.jpg", alt="A screenshot of https://web.dev/covid19", width="800", height="408", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/p9V8IluserA3J9Og6SuY.jpg", alt="A screenshot of https://web.dev/covid19", width="800", height="408" %}
 </figure>
 
 ### Supported keywords {: #supported-keywords }
@@ -304,18 +302,14 @@ cropping, or rearranging the hero image's content is OK. Using a completely
 different image is not OK.
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="thumbnail.jpg"
-       alt="A page with a thumbnail that's different from its hero.">
+  <img src="thumbnail.jpg" alt="A page with a thumbnail that's different from its hero.">
   <figcaption>
     A page with a thumbnail that's different from its hero.
   </figcaption>
 </figure>
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="hero.jpg"
-       alt="The page's hero image.">
+  <img src="hero.jpg" alt="The page's hero image.">
 </figure>
 
 ## `title`: increase SEO with a keyword-rich title {: #title }
@@ -329,9 +323,7 @@ title: Web developer tools for debugging JavaScript issues in Google Search
 ```
 
 <figure>
-  <img class="w-screenshot w-screenshot--filled"
-       src="hero.jpg"
-       alt="A screenshot of a page's title.">
+  <img src="hero.jpg" alt="A screenshot of a page's title.">
 </figure>
 
 ## `translation`: specify how the page was translated {: #translation }
@@ -360,7 +352,7 @@ changed for minor updates, like typo fixes.
 The `updated` value is presented in human-readable format beneath the page title.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcvkKpSchx1lzJ8Sjtcc.jpg", alt="The updated field shows up under the title.", width="800", height="712", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcvkKpSchx1lzJ8Sjtcc.jpg", alt="The updated field shows up under the title.", width="800", height="712" %}
   <figcaption>
     This page was updated on <code>May 8, 2020</code>.
   </figcaption>

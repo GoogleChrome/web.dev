@@ -45,7 +45,7 @@ Dark Mode has [benefits](/prefers-color-scheme/#why-dark-mode) for user experien
   <figcaption>Android&nbsp;Q dark theme settings.</figcaption>
 </figure>
 
-To offer a better experience to users who prefer "dark mode", you can use the [`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) media query, with a value of `light` or `dark`. This media query reflects the user's choice in their device. You can then load a [custom dark theme](https://web.dev/prefers-color-scheme/#dark-mode-in-practice) for those that prefer dark. For example, by loading a "dark" CSS file, and changing values such as font and background colors. The following code shows an example of that:
+To offer a better experience to users who prefer "dark mode", you can use the [`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme) media query, with a value of `light` or `dark`. This media query reflects the user's choice in their device. You can then load a [custom dark theme](/prefers-color-scheme/#dark-mode-in-practice) for those that prefer dark. For example, by loading a "dark" CSS file, and changing values such as font and background colors. The following code shows an example of that:
 
 ```css
 @media (prefers-color-scheme: dark) {

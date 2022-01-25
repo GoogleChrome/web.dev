@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: What is speed?
 authors:
   - bojanpavic

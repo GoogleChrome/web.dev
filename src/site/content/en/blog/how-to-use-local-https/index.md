@@ -47,9 +47,9 @@ and browser. [mkcert](https://github.com/FiloSottile/mkcert) is a tool that help
 - mkcert is listed as a trusted authority, so your browser trusts the
   certificate and creates an HTTPS connection.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/3kdjci7NORnOw54fMia9.jpg", alt="A diagram of how mkcert works.", width="800", height="787" %}
-  <figcaption class="w-figcaption">A diagram of how mkcert works.</figcaption>
+  <figcaption>A diagram of how mkcert works.</figcaption>
 </figure>
 
 mkcert (and similar tools) provide several benefits:
@@ -258,9 +258,9 @@ Beware of a few pitfalls with this approach:
 - It's not necessarily easier or faster than using a local CA like mkcert.
 - If you're not using this technique in a browser context, you may need to disable certificate verification for your server. Omitting to re-enable it in production would be dangerous.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/KxLz7mcUudiFwWBIdhH8.jpg", alt="Screenshots of the warnings browsers show when a self-signed certificate is used.", width="800", height="598" %}
-  <figcaption class="w-figcaption">The warnings browsers show when a self-signed certificate is used.</figcaption>
+  <figcaption>The warnings browsers show when a self-signed certificate is used.</figcaption>
 </figure>
 
 {% Aside %}
@@ -274,9 +274,9 @@ Why don't browsers trust self-signed certificates?
 
 If you open your locally running site in your browser using HTTPS, your browser will check the certificate of your local development server. When it sees that the certificate has been signed by yourself, it checks whether you're registered as a trusted certificate authority. Because you're not, your browser can't trust the certificate; it displays a warning telling you that your connection is not secure. You may proceed at your own risk—if you do, an HTTPS connection will be created.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="Why browsers don't trust self-signed certificates: a diagram.", width="800", height="833" %}
-  <figcaption class="w-figcaption">Why browsers don't trust self-signed certificates.</figcaption>
+  <figcaption>Why browsers don't trust self-signed certificates.</figcaption>
 </figure>
 
 {% endDetails %}

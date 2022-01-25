@@ -33,16 +33,15 @@ specification](https://www.w3.org/TR/css-ui-4/#widget-accent) is here to tint
 elements with one line of CSS, saving you from customization efforts by
 providing a way to bring your brand into elements.
 
-<figure class="w-figure ">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png",
-    class="w-screenshot",
     alt="A light theme screenshot of an accent-color demo where
     checkbox, radio buttons, a range slider and progress element
     are all tinted hotpink.",
     width="800", height="548"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a>
   </figcaption>
 </figure>
@@ -54,7 +53,7 @@ In the following example the user has a dark theme active, the page uses
 `color-scheme: light dark`, and uses the same `accent-color: hotpink` for dark
 themed hotpink tinted controls.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png",
     alt="A dark theme screenshot of an accent-color demo where
@@ -62,7 +61,7 @@ themed hotpink tinted controls.
     are all tinted hotpink.",
     width="800", height="548"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a>
   </figcaption>
 </figure>
@@ -122,8 +121,7 @@ Nightly (right) differ in their algorithms:
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png",
-  class="w-screenshot",
-  alt="A screenshot of Firefox and Chromium side by side,
+   alt="A screenshot of Firefox and Chromium side by side,
   rendering a full spectrum of checkboxes in various hues and darknesses.",
   width="800", height="832"
 %}

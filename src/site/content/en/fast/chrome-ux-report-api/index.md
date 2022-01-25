@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Using the Chrome UX Report API
 subhead: >
   Learn how to use the Chrome UX Report API to get easy, RESTful access to

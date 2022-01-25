@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Ориентированные на пользователя показатели производительности
 authors:
   - philipwalton

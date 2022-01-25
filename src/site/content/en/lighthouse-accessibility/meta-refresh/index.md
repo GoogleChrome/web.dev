@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "The document uses `<meta http-equiv=\"refresh\">`"
 description: |
   Learn why automatically refreshing your web page is bad for accessibility
@@ -23,8 +23,8 @@ particularly those who rely on screen readers or other assistive technologies.
 
 Lighthouse flags pages that contain a `<meta>` tag with the `http-equiv="refresh"` attribute:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TcgGsJJyQXpwvepkcXx.png", alt="Lighthouse audit showing the document uses timed refresh", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TcgGsJJyQXpwvepkcXx.png", alt="Lighthouse audit showing the document uses timed refresh", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

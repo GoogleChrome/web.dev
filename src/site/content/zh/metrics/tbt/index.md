@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Total Blocking Time 总阻塞时间 (TBT)
 authors:
   - philipwalton

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Первая отрисовка контента (FCP)
 authors:
   - philipwalton
@@ -25,7 +25,7 @@ tags:
 
 <picture>
     <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-    {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Хорошие значения FCP не более 1,8 секунды, низкие значения больше 3,0 секунд, и все, что находится между ними, требует улучшения", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Хорошие значения FCP не более 1,8 секунды, низкие значения больше 3,0 секунд, и все, что находится между ними, требует улучшения", width="400", height="300" %}
 </picture>
 
 ### Какое значение показателя FCP можно считать хорошим?

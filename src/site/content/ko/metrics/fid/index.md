@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First Input Delay(최초 입력 지연, FID)
 authors:
   - philipwalton
@@ -31,7 +31,7 @@ FID는 사용자가 페이지와 처음 상호 작용할 때(예: 링크를 클�
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="좋은 fid 값은 2.5초, 나쁜 값은 4.0초보다 크며 그 사이에 개선이 필요함", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="좋은 fid 값은 2.5초, 나쁜 값은 4.0초보다 크며 그 사이에 개선이 필요함", width="400", height="300" %}
 </picture>
 
 ### 좋은 FID 점수는 무엇인가요?

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How Chrome handles updates to the web app manifest
 subhead: What it takes to change icons, shortcuts, colors, and other metadata for your PWA
 authors:

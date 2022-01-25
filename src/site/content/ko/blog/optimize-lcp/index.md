@@ -26,7 +26,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="좋은 LCP 값은 2.5초이고 나쁜 값은 4.0초보다 크며 그 사이에는 개선이 필요합니다.", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="좋은 LCP 값은 2.5초이고 나쁜 값은 4.0초보다 크며 그 사이에는 개선이 필요합니다.", width="384", height="96" %}
   </picture>
 
 열악한 LCP 값이 발생하는 일반적인 이유는 다음과 같습니다.
@@ -40,7 +40,7 @@ tags:
 
 브라우저가 서버에서 콘텐츠를 수신하는 데 시간이 오래 걸릴수록 화면에 무엇이든 렌더링하는 데 더 오래 걸립니다. 더 빠른 서버 응답 시간은 LCP를 포함한 모든 단일 페이지 로드 메트릭을 직접적으로 향상시킵니다.
 
-가장 먼저 해야 할 것은 서버에서 콘텐츠를 처리하는 방법과 위치를 개선하는 것입니다. [**Time to First Byte**](/time-to-first-byte)(최초 바이트까지의 시간, TTBT)로 서버 응답 시간을 측정하세요. 다음과 같이 다양한 방식으로 TTBT를 개선할 수 있습니다.
+가장 먼저 해야 할 것은 서버에서 콘텐츠를 처리하는 방법과 위치를 개선하는 것입니다. [**Time to First Byte**](/ttfb/)(최초 바이트까지의 시간, TTBT)로 서버 응답 시간을 측정하세요. 다음과 같이 다양한 방식으로 TTBT를 개선할 수 있습니다.
 
 - 서버 최적화
 - 사용자를 가까운 CDN으로 라우팅
@@ -77,7 +77,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 다음 차트는 이 패턴을 사용하여 사이트에서 LCP 분포가 어떻게 감소했는지 보여줍니다.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/uB0Sm56R88MRF16voQ1k.png",
     alt="HTML 캐싱 전후 최대 콘텐츠풀 페인트 분포",
@@ -86,14 +86,14 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
   %}
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/uB0Sm56R88MRF16voQ1k.png",
     alt="HTML 캐싱 전후 최대 콘텐츠풀 페인트 분포",
     width="800",
     height="495"
   %}
-  <figcaption class="w-figcaption"> 페이지 로드 시 서비스 작업자 여부에 따른 최대 콘텐츠풀 분포 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a> </figcaption>
+  <figcaption> 페이지 로드 시 서비스 작업자 여부에 따른 최대 콘텐츠풀 분포 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a> </figcaption>
 </figure>
 
 이 차트는 지난 28일 동안 단일 사이트의 LCP 분포를 서비스 작업자 상태별로 분류하여 보여줍니다. 캐시 우선 HTML 페이지 서비스가 서비스 작업자(차트의 파란색 부분)에 도입된 후 얼마나 많은 페이지 로드가 더 빨라진 LCP 값을 갖게 됐는지 확인하세요.
@@ -128,7 +128,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 ### 서명된 교환(SXG) 사용
 
-[서명된 교환(SXG)](https://web.dev/signed-exchanges)이란 쉽게 캐시할 수 있는 형식으로 콘텐츠를 제공하여 더 빠른 사용자 경험을 가능하게 하는 전달 메커니즘입니다. 특히 [Google 검색](https://developers.google.com/search/docs/advanced/experience/signed-exchange)은 SXG를 캐시하고 때로는 미리 가져옵니다. Google 검색에서 트래픽의 많은 부분을 수신하는 사이트의 경우 SXG는 LCP를 개선하기 위한 중요한 도구가 될 수 있습니다. 자세한 내용은 [서명된 교환](/signed-exchanges)을 참조하세요.
+[서명된 교환(SXG)](/signed-exchanges)이란 쉽게 캐시할 수 있는 형식으로 콘텐츠를 제공하여 더 빠른 사용자 경험을 가능하게 하는 전달 메커니즘입니다. 특히 [Google 검색](https://developers.google.com/search/docs/advanced/experience/signed-exchange)은 SXG를 캐시하고 때로는 미리 가져옵니다. Google 검색에서 트래픽의 많은 부분을 수신하는 사이트의 경우 SXG는 LCP를 개선하기 위한 중요한 도구가 될 수 있습니다. 자세한 내용은 [서명된 교환](/signed-exchanges)을 참조하세요.
 
 ## 렌더링 차단 JavaScript 및 CSS {: #render-blocking-resources }
 
@@ -154,14 +154,14 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 - Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png",
     alt="LCP 개선 예시: CSS 축소 이전/이후",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP 개선 예시: CSS 축소 이전/이후
   </figcaption>
 </figure>
@@ -183,14 +183,14 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
     alt="LCP 개선 예시: 중요하지 않은 CSS 지연 이전/이후",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP 개선 예시: 중요하지 않은 CSS 지연 이전/이후
   </figcaption>
 </figure>
@@ -201,14 +201,13 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 
 스크롤 없이 볼 수 있는 콘텐츠에 사용되는 중요 경로 CSS를 `<head>`에 포함해 즉시 처리합니다
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",
     alt="중요 CSS 즉시 처리됨",
-    width="800", height="325",
-    class="w-screenshot w-screenshot--filled"
+    width="800", height="325"
   %}
-  <figcaption class="w-figcaption">중요 CSS 즉시 처리됨</figcaption>
+  <figcaption>중요 CSS 즉시 처리됨</figcaption>
 </figure>
 
 중요한 스타일을 즉시 처리하면 중요한 CSS를 가져오기 위해 왕복 요청을 할 필요가 없습니다. 나머지를 연기하면 CSS 차단 시간이 최소화됩니다.
@@ -218,14 +217,14 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 - [Critical](https://github.com/addyosmani/critical), [CriticalCSS](https://github.com/filamentgroup/criticalCSS) 및 [Penthouse](https://github.com/pocketjoso/penthouse) 는 모두 스크롤 없이 볼 수 있는 CSS를 추출하고 즉시 처리하는 패키지입니다.
 - [Critters](https://github.com/GoogleChromeLabs/critters)는 중요한 CSS를 즉시 처리하고 나머지는 지연 로드하는 웹팩 플러그인입니다.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/L8sc51bd3ckxwnUfczC4.png",
     alt="LCP 개선 예시: 중요 CSS 즉시 처리 이전/이후",
     width="800",
     height="175"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP 개선 예시: 중요 CSS 즉시 처리 이전/이후
   </figcaption>
 </figure>
@@ -238,9 +237,9 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 
 몇 가지 다른 방법으로 스크립트를 최적화하여 이를 수행할 수 있습니다.
 
-- [JavaScript 파일 축소 및 압축](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [사용하지 않는 JavaScript 지연](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [사용하지 않는 Polyfills 최소화](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [JavaScript 파일 축소 및 압축](/reduce-network-payloads-using-text-compression/)
+- [사용하지 않는 JavaScript 지연](/reduce-javascript-payloads-with-code-splitting/)
+- [사용하지 않는 Polyfills 최소화](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} [최초 입력 지연 최적화](/optimize-fid/) 가이드에서는 JavaScript 차단 시간을 줄이는 데 필요한 모든 기술을 조금 더 자세히 설명합니다. {% endAside %}
 
@@ -266,7 +265,7 @@ CSS 또는 JavaScript 차단 시간이 증가는 성능 저하에 직접적 영�
 
 대부분의 사이트에서 이미지는 페이지 로드가 완료되었을 때 표시되는 가장 큰 요소입니다. 대표 이미지, 대형 캐러셀 또는 배너 이미지 등이 이러한 예시에 속합니다.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png",
     alt="",
@@ -322,14 +321,14 @@ Chrome 73부터 [반응형 이미지](/preload-responsive-images/)와 함께 사
 2. 파일을 압축하기 위해 서버를 수정해야 하는 경우 gzip 대신 더 나은 압축 비율을 제공하는 Brotli를 사용하는 것이 좋습니다.
 3. 사용할 압축 알고리즘을 선택한 후에는 브라우저에서 요청하는 즉시 자산을 압축하는 대신 빌드 프로세스 중에 미리 자산을 압축하세요. 이렇게 하면 서버 오버헤드가 최소화되고, 특히 높은 압축률을 사용한 경우 요청 시 지연이 방지됩니다.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",
     alt="LCP 개선 예시: Brotli 압축 이전/이후",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP 개선 예시: Brotli 압축 이전/이후
   </figcaption>
 </figure>
@@ -407,14 +406,14 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 사전 렌더링을 사용하면 TTI에는 여전히 부정적이지만, 서버 응답 시간은 요청된 후에만 각 페이지를 동적으로 렌더링하는 서버 측 렌더링 솔루션의 경우만큼 영향을 받지 않습니다.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",
     alt="LCP 개선 예시: 사전 렌더링 이전/이후",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP 개선 예시: 사전 렌더링 이전/이후
   </figcaption>
 </figure>

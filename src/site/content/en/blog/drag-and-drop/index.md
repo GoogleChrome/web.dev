@@ -245,8 +245,8 @@ Calling `e.dataTransfer.setData(mimeType, dataPayload)` lets you set the object'
 In this example, we're going to allow users to rearrange the order of the columns.
 To do that, first you need to store the source element's HTML when the drag starts:
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
     </video>
   </figure>

@@ -1,0 +1,42 @@
+setLeader: Test your knowledge of interactions
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: |
+      Which feature should you use rather than trying to infer a user's input type from screen size?
+    options:
+      - content: "CSS media features"
+        rationale: "Like `@media (pointer: coarse)` or `@media (-any-pointer: coarse)`"
+      - content: "Ask the user with JavaScript's `prompt()`"
+        rationale: "Not ideal to ask directly."
+      - content: "CSS media type `handheld`"
+        rationale: "This has been deprecated in Media Queries 4."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: |
+      What is the difference between `@media (pointer)` and `@media (any-pointer)`?
+    options:
+      - content: "Any pointer includes things like your finger as a pointer."
+        rationale: "Pointer already includes touch as an input type."
+      - content: "Pointers don't include things like a mouse."
+        rationale: "Pointers do include a mouse as an input device."
+      - content: "Any pointer will report true when additional, none primary inputs, like a stylus, pass the test."
+        rationale: "`any-pointer` queries all device input types for any match."
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,2,3"
+    stem: |
+      Which input types show a more appropriate virtual keyboard for users?
+    options:
+      - content: "`type=\"url\"`"
+        rationale: "Keyboard will offer buttons to support typing URLs."
+      - content: "`type=\"tel\"`"
+        rationale: "Keyboard will offer buttons to support typing phone numbers."
+      - content: "`type=\"number\"`"
+        rationale: "Keyboard will offer buttons to support typing only numbers."
+      - content: "`type=\"email\"`"
+        rationale: "Keyboard will offer buttons to support typing email addresses."
+  

@@ -31,8 +31,8 @@ server for visual diffing and basic category score history. Existing
 seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="400", height="356", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="400", height="356" %}
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -50,11 +50,11 @@ Changes are coming to the Lighthouse Performance score version 6! In version 5
 (as of November 2019), Lighthouse has five metrics that are [weighted and
 blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
 [First Contentful Paint](/fcp/), [Speed Index](/speed-index/), [First Meaningful
-Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
+Paint](/first-meaningful-paint/), [Time to Interactive](/tti/), and
 [First CPU Idle](/first-cpu-idle/).
 
-<figure class="w-figure">
-  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211" %}
 </figure>
 
 See [Lighthouse performance scoring](/performance-scoring/) for detailed
@@ -100,8 +100,8 @@ Packs](https://github.com/GoogleChrome/lighthouse-stack-packs) add customized
 recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qdhyyYLFj0avPPHgx8in.png", alt="Lighthouse report recommendation for deferring offscreen images in React applications.", width="800", height="194", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qdhyyYLFj0avPPHgx8in.png", alt="Lighthouse report recommendation for deferring offscreen images in React applications.", width="800", height="194" %}
 </figure>
 
 At the moment, there are Stack Packs for Angular, WordPress, Magento, React, and
@@ -111,7 +111,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/pPFz27fWWNVyT42ptr7a.png", alt="Lighthouse plugin icon.", width="250", height="220" %}
 </figure>
 
@@ -128,9 +128,9 @@ only work in [Lighthouse
 CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
-<figure class="w-figure">
-  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
+<figure>
+  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753" %}
+  <figcaption>Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 
 When users install Lighthouse plugin extensions from the [Chrome Web

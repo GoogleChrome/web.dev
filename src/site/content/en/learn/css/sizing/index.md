@@ -19,7 +19,7 @@ but sometimes you want to control its dimensions to improve the overall interfac
 A good example of this is limiting line lengths to improve readability.
 How would you do that in a flexible medium like the web?
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgEGxj',
@@ -50,7 +50,7 @@ p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgYZRK',
@@ -97,7 +97,7 @@ div p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELbwwj',
@@ -123,7 +123,7 @@ div p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRQPqX',
@@ -145,7 +145,7 @@ div p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgwBxv',
@@ -190,7 +190,7 @@ If you printed this page, the `div` would print as a 10x5cm black rectangle.
 Keep in mind, CSS is used not only for digital content, but also to style print content.
 Absolute lengths can really come in handy when designing for print.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -252,7 +252,7 @@ Relative lengths are particularly useful on the web due to its responsive nature
 CSS provides helpful units that are relative to the size of elements of rendered typography,
 such as the size of the text itself (`em` units) or width of the typefaces characters (`ch` units).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -305,7 +305,7 @@ such as the size of the text itself (`em` units) or width of the typefaces chara
   </table>
 </div>
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ttaikDgwEC572lrGgWlG.svg", alt="The text, CSS is 10x great with labels for ascender height, descender height and x-height. The x-height represents 1ex and the 0 represents 1ch", width="800", height="203" %}
 </figure>
 
@@ -314,7 +314,7 @@ such as the size of the text itself (`em` units) or width of the typefaces chara
 You can use the dimensions of the viewport (browser window) as a relative basis.
 These units portion up the available viewport space.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -373,7 +373,7 @@ p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEYqXa'
@@ -426,7 +426,7 @@ div {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPvRbK',

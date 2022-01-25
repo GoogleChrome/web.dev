@@ -27,7 +27,7 @@ In this guide, we'll cover optimizing common causes of layout shifts.
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96" %}
 </picture>
 
 The most common causes of a poor CLS are:
@@ -42,37 +42,33 @@ The most common causes of a poor CLS are:
 
 **Summary:** Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect ratio boxes](https://css-tricks.com/aspect-ratio-boxes/). This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
-  <figure class="w-figure">
+  <figure>
     {% Video
       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"],
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
-   <figcaption class="w-figcaption">
+      muted=true %}
+   <figcaption>
       Images without width and height specified.
     </figcaption>
   </figure>
 
-  <figure class="w-figure">
+  <figure>
     {% Video
       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"],
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
-   <figcaption class="w-figcaption">
+      muted=true %}
+   <figcaption>
       Images with width and height specified.
     </figcaption>
   </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift after setting dimensions on images", width="800", height="148" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Lighthouse 6.0 impact of setting image dimensions on CLS.
   </figcaption>
 </figure>
@@ -196,37 +192,33 @@ The good news is that it's possible for sites to follow best practices to reduce
 
 Some sites may find collapsing the slot initially can reduce layout shifts if the ad slot is unlikely to fill. There isn't an easy way to choose the exact size each time, unless you control the ad serving yourself.
 
-  <figure class="w-figure">
+  <figure>
     {% Video
       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"],
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
-   <figcaption class="w-figcaption">
+      muted=true %}
+   <figcaption>
       Ads without sufficient space reserved.
     </figcaption>
   </figure>
 
-  <figure class="w-figure">
+  <figure>
       {% Video
         src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],
         poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
         controls=true,
         loop=true,
-        muted=true,
-        class="w-screenshot"
-      %}
-   <figcaption class="w-figcaption">
+        muted=true %}
+   <figcaption>
       Ads with sufficient space reserved.
     </figcaption>
   </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for banners like ads", width="800", height="148" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Lighthouse 6.0 impact of reserving space for this banner on CLS
   </figcaption>
 </figure>
@@ -251,23 +243,23 @@ Embeddable widgets allow you to embed portable web content in your page (for exa
 
 These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post - does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve enough space for their embeds and can cause layout shifts when they finally load.
 
-  <figure class="w-figure">
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %}
+   <figcaption>
       Embed without space reserved.
     </figcaption>
   </figure>
 
-  <figure class="w-figure">
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %}
+   <figcaption>
       Embed with space reserved.
     </figcaption>
   </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for this embed on CLS", width="800", height="148" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Lighthouse 6.0 impact of reserving space for this embed on CLS
   </figcaption>
 </figure>
@@ -291,9 +283,9 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 - "We're still taking orders"
 - "GDPR notice"
 
-  <figure class="w-figure">
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %}
+   <figcaption>
       Dynamic content without space reserved.
     </figcaption>
   </figure>
@@ -307,9 +299,9 @@ In some cases adding content dynamically is an important part of user experience
 *   Seamlessly load the content offscreen and overlay a notice to the user that it's available (for example, with a "Scroll up" button).
 
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Examples of dynamic content loading without causing unexpected layout shifts from Twitter and the Chloé website", width="800", height="458" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Examples of dynamic content loading without causing unexpected layout shifts. Left: Live feed content loading on Twitter. Right: "Load More" example on Chloé website. Check out how the YNAP team <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">optimized for CLS when loading more content</a>.
   </figcaption>
 </figure>
@@ -351,9 +343,9 @@ I'm happy to share there are a number of tools available to measure and debug Cu
 
 The [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) in DevTools highlights layout shifts in the **Experience** section as of Chrome 84. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Layout Shift records being displayed in the Chrome DevTools performance panel when expanding the Experience section", width="800", height="438" %}
-  <figcaption class="w-figcaption">After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
+  <figcaption>After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
 </figure>
 
 Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) to look at CLS performance is available to use.

@@ -180,8 +180,8 @@ should be sized by its minimal content needs, and the 2nd column can take up the
 Then, if in a constrained viewport of `540px` or less, put the sidenav and main content elements
 into the same row and column, resulting in them being on top of each other in a 1x1 grid.
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
   </video>
 </figure>
@@ -234,8 +234,8 @@ Add the following CSS to `css/sidenav.css`:
 I thought the ratio and names were a really nice touch here,
 where grid could shine and give a designer a lot of control.
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
   </video>
 </figure>
@@ -336,11 +336,11 @@ Add the following CSS to `css/sidenav.css`:
 }
 ```
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     A demo of the interaction with and without duration applied
     based on the `prefers-reduced-motion` media query.
   </figcaption>

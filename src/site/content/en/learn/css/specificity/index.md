@@ -36,7 +36,7 @@ is the key to understanding how CSS decides between competing rules.
 Specificity is one of the four distinct stages of the cascade,
 which was covered in the last module, on [the cascade](/learn/css/the-cascade/).
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzNKMXm',
@@ -277,7 +277,7 @@ With HTML that looks like this:
 <button class="my-button" onclick="alert('hello')">Click me</button>
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpoxdR',
@@ -306,7 +306,7 @@ button[onclick] {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNOXBJ',
@@ -341,7 +341,7 @@ Let's stay with the button example for now and switch the CSS around to this:
 The button has a grey background,
 because **both selectors have an identical specificity score** (`0-1-0`).
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNOXKJ',
@@ -362,7 +362,7 @@ the button would then be blue.
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNReWRO',

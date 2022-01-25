@@ -112,8 +112,8 @@ applying them specifically during product sale promotional events.
       re-enagement from push notifications
     </li>
   </ul>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6cgF8sQt5IH2XcISQsk.png", alt="The impact statistics.", width="800", height="870", class="w-screenshot" %}
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6cgF8sQt5IH2XcISQsk.png", alt="The impact statistics.", width="800", height="870" %}
   </figure>
 </div>
 

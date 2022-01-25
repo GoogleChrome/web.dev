@@ -1,6 +1,6 @@
 ---
 title: "`<frame>` or `<iframe>` elements do not have a title"
-layout: post-old
+layout: post
 description: |
   Learn how to make sure assistive technologies can announce frame content on
   your web page correctly by giving all frame elements titles.
@@ -20,8 +20,8 @@ with a title attribute.
 
 Lighthouse flags `<frame>` and `<iframe>` elements that don't have titles:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt="Lighthouse audit showing frame or iframe doesn't have a title element", width="800", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt="Lighthouse audit showing frame or iframe doesn't have a title element", width="800", height="185" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

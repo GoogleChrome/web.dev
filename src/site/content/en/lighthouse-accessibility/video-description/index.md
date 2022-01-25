@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`<video>` elements do not contain a `<track>` element with `[kind=\"description\"]`"
 description: |
   Learn how to make video on your web page more accessible by providing
@@ -26,8 +26,8 @@ But no matter what, they seem to pass
 even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1)
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing audio descriptions">
+<figure>
+  <img src="" alt="Lighthouse audit showing video element missing audio descriptions">
 </figure>
 -->
 

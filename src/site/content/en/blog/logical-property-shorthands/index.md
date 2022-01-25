@@ -28,7 +28,7 @@ This catches Chromium up to Firefox, which has had support for the shorthands
 [since 66](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/66).
 Safari has them ready in their [tech preview](https://webkit.org/blog/11300/release-notes-for-safari-technology-preview-114/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t2y5tF9s3Wcp50kJJMmm.png", alt="Latin, Hebrew and Japanese are shown rending placeholder text within a device frame. Arrows and colors follow the text to help associate the 2 directions of block and inline.", width="800", height="577" %}
 </figure>
 
@@ -369,8 +369,8 @@ is available on MDN.
 Let's put it all together in a small example. Logical properties can layout
 an image with a caption to handle different writing and document directions.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/logical-property-figure-demo.mp4">
   </video>
 </figure>

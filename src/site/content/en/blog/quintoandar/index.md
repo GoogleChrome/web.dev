@@ -69,7 +69,7 @@ The first step was to [remove unused code](/remove-unused-code/). We looked at t
 
 Our team went further and evaluated the performance cost of existing features. For instance, the "like" button required quite a lot of JS to work. However, in the condominium page, less than 0.5% of the users interacted with the button, which is available and used more frequently in other parts of our app. After a discussion involving both Engineering and Product, we decided to remove this feature.
 
-<figure class="w-figure">
+<figure>
   {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2uEL2YxbuGGlmJDlvW9F.mp4", autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
   <figcaption>
     An animation showing the “like” button feature. There is a card about an apartment available for rent. In the bottom right corner of the card, there is a grey heart-shaped button that turns blue when clicked.
@@ -82,7 +82,7 @@ Other JS optimizations were already in place, such as [static compression with B
 
 There is a hero image occupying most of the area above the fold in the mobile version. It also happens to be the [Largest Contentful Paint](/lcp/) (LCP) of the page.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/W7koRinBm3QXErIzwGP8.png", alt="The condominium page for Edifício Copan (São Paulo, Brazil). A photo taken from the ground level shows the curves of the building structure.", width="360", height="640" %}
   <figcaption>
     The hero image of a condominium page.
@@ -107,7 +107,7 @@ The condominium page had a few issues with [Cumulative Layout Shift](/cls/) (CLS
 
 To solve these problems, we set exact dimensions for these elements when possible, or estimated values with `min-height`. There are more options, such as using the [`aspect-ratio` CSS property](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio). We also created placeholders to prevent dynamically rendered components from causing layout shifts.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/VqFwUiJOtNmyNc14xljP.png", alt="An image showing an urban area in Google Maps with a red marker in the center.", width="397", height="174" %}
   <figcaption>
     Defining dimensions for elements such as the map image reduced the CLS.
@@ -172,11 +172,11 @@ The team used [SpeedCurve](https://speedcurve.com) to continuously run [lab test
 
 We also wanted to check the impact on our real users. Using field data collected with [Instana Website Monitoring](https://www.instana.com/website-end-user-monitoring/), we looked at the 1-month period before and after the roll-out. Comparing the 75th percentile for mobile users, we found that LCP decreased by 26%, and FID decreased by 72%.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/IAVpmg7O1Moxk8qA7zcq.png", alt="A line graph with LCP values comparing the new and previous versions during the current and past month. The curve for the new version floats between 2 and 4 seconds, staying below the curve for the previous version most of the time.", width="800", height="495" %}
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/QWkHnGHi4YTdBR6q17sw.png", alt="A line graph with FID values comparing the new and previous versions during the current and past month. The curve for the new version stays below 100ms most of the time, while in the curve for the previous version there are a few spikes crossing 250ms.
 ", width="800", height="494" %}
   <figcaption>
@@ -186,7 +186,7 @@ We also wanted to check the impact on our real users. Using field data collected
 
 [PageSpeed Insights](https://pagespeed.web.dev/) provides a field data report for the last 28 days. [The most accessed condominium page](https://www.quintoandar.com.br/condominio/ed-copan-centro-historico-de-sao-paulo-sao-paulo-ndv7sq7j2d) alone had enough data to generate a report for mobile users. As of November 2021, all Core Web Vitals are in the "good" bucket.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/83nulYFqSAAWNLLPHXut.png", alt="A screenshot of the PageSpeed Insights report focusing on the Field Data section. All Core Web Vitals metrics (FCP, FID, LCP, CLS) are in the good bucket.", width="800", height="483" %}
   <figcaption>
     PageSpeed Insights shows that mobile users are having a good experience in the most accessed condominium page.
@@ -195,7 +195,7 @@ We also wanted to check the impact on our real users. Using field data collected
 
 During the progressive roll-out, we noticed a drop in bounce rates. By the time we had finished the release for all pages, [Google Analytics](https://analytics.google.com/) showed a 46% decrease in bounce rate, a 87% increase in pages per session, and a 49% increase in average session duration. The bounce rate reduction was even bigger for paid searches, reaching a 59% drop — a positive sign when it comes to the investments in [pay-per click](https://en.wikipedia.org/wiki/Pay-per-click) (PPC) ads.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/f31hvBafirHtDBlKINwI.png", alt="A screenshot of a graph from Google Analytics. It compares the bounce rates between two distinct periods in March 2021. Starting from March 17th, there is a slight drop in the bounce rate. The drop is accentuated on March 24th.", width="800", height="169" %}
   <figcaption>
     Google Analytics shows the bounce rate decreasing as we rolled-out the new version in more pages.
@@ -204,7 +204,7 @@ During the progressive roll-out, we noticed a drop in bounce rates. By the time 
 
 As for the impact in business metrics, we analyzed conversion rates for transactions like scheduling a tour and applying to rent or buy an estate. While improvements were still being rolled out, our team compared the conversion between the previous and new versions. In the same week, the group of pages with the new version showed a 5% conversion increase, while the other pages had a slight decrease in the same metric.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8duPNi2huaphIWCU7DBb.png", alt="Two line graphs side-by-side, each one comparing the conversion between the current and previous week. The left one is for the previous version of the page, showing the conversion curve for the current week is a bit below the one for the previous week. The right one is for the new version, and the conversion curve for the current week is a bit above the one for the previous week.", width="800", height="447" %}
   <figcaption>
     In the same week, the conversion for the new version increased, while the previous version had a small decrease.

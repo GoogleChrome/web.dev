@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Image elements do not have `[alt]` attributes"
 description: |
   Learn how to make sure assistive technology users can access your web page's
@@ -17,8 +17,8 @@ Decorative elements can be ignored with an empty alt attribute.
 
 Lighthouse flags `<img>` elements that don't have `alt` attributes:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse audit showing <img> elements do not have alt attributes", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse audit showing <img> elements do not have alt attributes", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

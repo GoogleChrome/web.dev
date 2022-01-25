@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Minify JavaScript
 description: |
   Learn about the unminified-javascript audit.
@@ -15,8 +15,8 @@ all unminified JavaScript files,
 along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte)
 when these files are minified:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="A screenshot of the Lighthouse Minify JavaScript audit", width="800", height="212", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aHumzRfDrBcuplUDCnvf.png", alt="A screenshot of the Lighthouse Minify JavaScript audit", width="800", height="212" %}
 </figure>
 
 ## How to minify your JavaScript files

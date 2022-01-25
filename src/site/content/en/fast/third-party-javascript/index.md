@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Third-party JavaScript performance
 subhead: Find out how third-party JavaScript can affect performance and what you can do to keep it from slowing down your sites.
 authors:
@@ -29,7 +29,7 @@ Sites use these scripts for various purposes, including:
 - A/B testing scripts for experiments
 - Helper libraries (like date formatting, animation, and functional libraries)
 
-<figure class="w-figure w-figure--fullbleed">
+<figure>
   {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/uLXJ72jZAlzK56ctPwXd.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 </figure>
 

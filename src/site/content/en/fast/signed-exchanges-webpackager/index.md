@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How to set up Signed Exchanges using Web Packager
 subhead: |
   Learn how to serve signed exchanges (SXGs) using Web Packager.

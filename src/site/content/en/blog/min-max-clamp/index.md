@@ -39,20 +39,20 @@ year in version 79. This year, with Firefox
 [75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519) shipping, we now have
 browser parity for `min()`, `max()`, and `clamp()` in all evergreen browsers.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246" %}
+  <figcaption>
     <a href="https://caniuse.com/css-math-functions">Caniuse</a> support table.
   </figcaption>
 </figure>
 
 ## Usage
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-demo.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Showing how the min() function selects a value based on a list of options and its parent. <a href="https://codepen.io/una/pen/rNeGNVL">See Demo on Codepen.</a>
   </figcaption>
 </figure>
@@ -63,11 +63,11 @@ argument list of values, and the browser determines which one is either the
 smallest or largest, respectively. For example, in the case of: `min(1rem, 50%, 10vw)`, the browser calculates which of these relative units is the smallest,
 and uses that value as the actual value.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-demo.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Showing how the max() function selects a value based on a list of options and its parent. <a href="https://codepen.io/una/pen/RwaZXqR">See Demo on Codepen.</a>
   </figcaption>
 </figure>
@@ -75,11 +75,11 @@ and uses that value as the actual value.
 The `max()` function selects the largest value from a list of comma-separated
 expressions.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-demo.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Showing how the clamp() function selects a value based on a list of options and its parent. <a href="https://codepen.io/una/pen/bGpoGdJ">See Demo on Codepen.</a>
   </figcaption>
 </figure>
@@ -130,11 +130,11 @@ the width to 50%, unless 50% is smaller than `45ch`, at which point `45ch` will
 be selected, and visa versa for if 50% is wider than `75ch`. In this demo, the
 card itself is getting clamped:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/clamp-width.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using the clamp() function to limit a minimum and maximum width. <a href="https://codepen.io/una/pen/QWyLxaL">See Demo on Codepen.</a>
   </figcaption>
 </figure>
@@ -144,11 +144,11 @@ the element to always be at `50%` width, and not exceed `75ch` in width (i.e. on
 larger screens), write: `width: min(75ch, 50%);`. This essentially sets a "max"
 size by using the `min()` function.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/max-width.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using the clamp() function to limit a minimum and maximum width.
   </figcaption>
 </figure>
@@ -158,11 +158,11 @@ By the same token, you can ensure a minimum size for legible text using the
 browser selects whichever is larger, `45ch` or `50%`, meaning the element must
 be at _least_ `45ch` or larger.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-width.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using the clamp() function to limit a minimum and maximum width.
   </figcaption>
 </figure>
@@ -185,11 +185,11 @@ footer {
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/min-padding.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Setting a minimum padding for a component using the max() function. <a href="https://codepen.io/chriscoyier/pen/qBZqNKa">See Demo on Codepen.</a>
   </figcaption>
 </figure>
@@ -202,11 +202,11 @@ Riethmeuller](https://twitter.com/mikeriethmuller) popularized a technique that
 uses the `calc()` function to set a minimum font size, maximum font size, and
 allow for scaling from the min to the max.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/min-max-clamp/fliud-type.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Creating fluid typography with clamp(). <a href="https://codepen.io/una/pen/ExyYXaN">See Demo on Codepen.</a>
   </figcaption>
 </figure>

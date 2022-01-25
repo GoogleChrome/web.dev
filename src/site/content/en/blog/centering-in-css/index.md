@@ -60,9 +60,9 @@ various language modes and directions. Trustworthy and resilient center, a safe 
 I've provided some visual color hinting to help you keep some meta information
 in context:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438", class="w-screenshot" %}
-  <figcaption class="w-figcaption"></figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438" %}
+  <figcaption></figcaption>
 </figure>
 
 - A pink border indicates ownership of centering styles
@@ -77,8 +77,8 @@ Resilience Crown 👸.
 
 ### 1. Content Center
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </video>
   <figcaption>
@@ -130,8 +130,8 @@ can also benefit from `place-content` and `place-item`
 
 ### 2. Gentle Flex
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gentle-flex-ringer-cycle.mp4">
   </video>
 </figure>
@@ -180,8 +180,8 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 
 ### 3. Autobot
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/autobot-ringer-cycle.mp4">
   </video>
 </figure>
@@ -226,8 +226,8 @@ are styled with auto margins. There's something nostalgic and wonderful about
 
 ### 4. Fluffy Center
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/fluffy-center-ringer-cycle.mp4">
   </video>
 </figure>
@@ -270,8 +270,8 @@ more.
 
 ### 5. Pop & Plop
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/popnplop-ringer-cycle.mp4">
   </video>
 </figure>

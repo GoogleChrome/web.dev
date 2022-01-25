@@ -26,7 +26,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="좋은 CLS 값은 0.1 미만이고 나쁜 값은 0.25보다 크며 그 사이에는 개선이 필요합니다", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="좋은 CLS 값은 0.1 미만이고 나쁜 값은 0.25보다 크며 그 사이에는 개선이 필요합니다", width="384", height="96" %}
 </picture>
 
 열악한 CLS 값이 발생하는 일반적인 이유는 다음과 같습니다.
@@ -41,11 +41,11 @@ tags:
 
 **요약:** 이미지 및 비디오 요소에 항상 `width` 및 `height` 크기 속성을 포함하세요. 또는 [CSS 종횡비 상자](https://css-tricks.com/aspect-ratio-boxes/)를 사용하여 필요한 공간을 확보해 두는 방법도 좋습니다. 이러한 접근 방식을 통해 이미지가 로드되는 동안 브라우저가 문서에 올바른 양의 공간을 할당할 수 있습니다.
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 너비와 높이가 지정되지 않은 이미지. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true %} <figcaption> 너비와 높이가 지정되지 않은 이미지. </figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 너비와 높이가 지정된 이미지. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true %} <figcaption> 너비와 높이가 지정된 이미지. </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="이미지에 대한 치수 설정 후 누적 레이아웃 이동에 미치는 이전/이후 영향을 보여주는 Lighthouse 보고서", width="800", height="148" %} <figcaption class="w-figcaption"> 이미지 치수 설정 후 CLS에 대한 영향을 보여주는 Lighthouse 6.0. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="이미지에 대한 치수 설정 후 누적 레이아웃 이동에 미치는 이전/이후 영향을 보여주는 Lighthouse 보고서", width="800", height="148" %} <figcaption> 이미지 치수 설정 후 CLS에 대한 영향을 보여주는 Lighthouse 6.0. </figcaption></figure>
 
 ### 역사
 
@@ -166,11 +166,11 @@ img {
 
 일부 사이트에서는 광고 슬롯이 채워지지 않을 경우 초기에 슬롯을 축소하면 레이아웃 이동을 줄일 수 있다는 사실을 발견할 수도 있습니다. 게시되는 광고를 직접 제어하지 않는 한 매번 정확한 크기를 쉽게 선택할 수 있는 방법은 없습니다.
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 충분한 공간이 확보되지 않은 광고. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %} <figcaption> 충분한 공간이 확보되지 않은 광고. </figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 충분한 공간이 확보된 광고. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %} <figcaption> 충분한 공간이 확보된 광고. </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="광고와 같은 배너를 위한 공간을 확보했을 경우 누적 레이아웃 이동에 미치는 이전/이후 영향을 보여주는 Lighthouse 보고", width="800", height="148" %} <figcaption class="w-figcaption"> 이 배너에 대한 공간 확보 후 CLS에 대한 영향을 보여주는 Lighthouse 6.0.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="광고와 같은 배너를 위한 공간을 확보했을 경우 누적 레이아웃 이동에 미치는 이전/이후 영향을 보여주는 Lighthouse 보고", width="800", height="148" %} <figcaption> 이 배너에 대한 공간 확보 후 CLS에 대한 영향을 보여주는 Lighthouse 6.0.</figcaption></figure>
 
 #### 광고 슬롯을 위한 고정 공간 확보
 
@@ -192,11 +192,11 @@ img {
 
 이러한 임베드는 그 크기를 미리 알지 못하는 경우가 많습니다. 예를 들어 소셜 미디어 게시물의 경우 임베딩되는 것이 이미지인지 동영상인지 여러 줄의 텍스트인지 알 수 없습니다. 그 결과 임베드를 제공하는 플랫폼에서 항상 임베드에 대한 충분한 공간을 확보할 수 있는 것은 아니며, 이로 인해 최종적으로 로드될 때 레이아웃 이동이 발생할 수 있습니다.
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 확보된 공간이 없는 임베드. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %} <figcaption> 확보된 공간이 없는 임베드. </figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 확보된 공간이 있는 임베드 </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %} <figcaption> 확보된 공간이 있는 임베드 </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="이 임베드를 위한 공간을 확보한 경우 누적 레이아웃 이동에 미치는 이전/이후 영향을 보여주는 Lighthouse 보고", width="800", height="148" %} <figcaption class="w-figcaption"> 이 임베드에 대한 공간 확보 후 CLS에 대한 영향을 보여주는 Lighthouse 6.0. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="이 임베드를 위한 공간을 확보한 경우 누적 레이아웃 이동에 미치는 이전/이후 영향을 보여주는 Lighthouse 보고", width="800", height="148" %} <figcaption> 이 임베드에 대한 공간 확보 후 CLS에 대한 영향을 보여주는 Lighthouse 6.0. </figcaption></figure>
 
 이 문제를 해결하려면 자리 표시자 또는 대체가 있는 포함을 위한 충분한 공간을 미리 계산하여 CLS를 최소화할 수 있습니다. 포함에 사용할 수 있는 하나의 워크플로:
 
@@ -221,7 +221,7 @@ img {
 
 - "GDPR 공지"
 
-    <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> 공간이 확보된 동적 콘텐츠. </figcaption></figure>
+    <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %} <figcaption> 공간이 확보된 동적 콘텐츠. </figcaption></figure>
 
 이러한 유형의 UI 어포던스를 표시해야 하는 경우 미리 뷰포트에 충분한 공간을 확보하여(예: 자리 표시자 또는 스켈레톤 UI 사용) 로드 시 페이지의 콘텐츠가 크게 이동하는 일이 없도록 합니다.
 
@@ -231,7 +231,7 @@ img {
 - 사용자가 새 콘텐츠 로드를 시작하도록 하여 이동을 예측할 수 있도록 합니다(예: "더 로드" 또는 "새로고침" 버튼 사용). 콘텐츠가 즉시 표시되도록 사용자 상호 작용 전에 콘텐츠를 미리 가져오는 것이 좋습니다. 참고로 사용자 입력 후 500ms 이내에 발생하는 레이아웃 이동은 CLS 계산에 포함되지 않습니다.
 - 콘텐츠를 화면 밖에서 원활하게 로드하고 사용자에게 사용 가능하다는 메시지를 오버레이합니다(예: "위로 스크롤" 버튼 사용).
 
-<figure class="w-figure">{% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Twitter 및 Chloé 웹사이트로 본 예기치 않은 레이아웃 이동이 없는 동적 콘텐츠 로딩 예시", width="800", height="458" %} <figcaption class="w-figcaption"> 예기치 않은 레이아웃 이동이 없는 동적 콘텐츠 로딩 예시. 왼쪽: Twitter의 실시간 피드 콘텐츠 로딩. 오른쪽: Chloé 웹사이트의 "Load More"(더 로드하기) 예시. YNAP 팀이 <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">더 많은 콘텐츠 로드 시 CLS를 최적화한 방법</a>을 알아보세요.</figcaption></figure>
+<figure>{% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Twitter 및 Chloé 웹사이트로 본 예기치 않은 레이아웃 이동이 없는 동적 콘텐츠 로딩 예시", width="800", height="458" %} <figcaption> 예기치 않은 레이아웃 이동이 없는 동적 콘텐츠 로딩 예시. 왼쪽: Twitter의 실시간 피드 콘텐츠 로딩. 오른쪽: Chloé 웹사이트의 "Load More"(더 로드하기) 예시. YNAP 팀이 <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">더 많은 콘텐츠 로드 시 CLS를 최적화한 방법</a>을 알아보세요.</figcaption></figure>
 
 ### FOUT/FOIT를 유발하는 웹 글꼴 📝
 
@@ -270,7 +270,7 @@ CSS 속성 값을 변경하면 브라우저가 이러한 변경 사항에 반응
 
 DevTools의 [Performance 패널](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)은 Chrome 84부터 **Experience** 섹션에 레이아웃 이동을 강조 표시해줍니다. `Layout Shift` 기록의 **Summary** 보기에는 영향을 받는 부분을 보여주는 직사각형 오버레이와 함께 누적 레이아웃 이동 점수를 표시합니다.
 
-<figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience 섹션 확장 시 Chrome DevTools Performance 패널에 표시되는 Layout Shift 기록", width="800", height="438" %} <figcaption class="w-figcaption">Performance 패널에 새로운 흔적이 기록되면 결과의 <b>Experience</b> 섹션에 <code>Layout Shift</code> 기록이 붉은색 막대와 함께 표시됩니다. 해당 기록을 클릭하면 영향을 받는 요소(예: Moved from/to 항목 참조)가 드릴다운됩니다.</figcaption></figure>
+<figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience 섹션 확장 시 Chrome DevTools Performance 패널에 표시되는 Layout Shift 기록", width="800", height="438" %} <figcaption>Performance 패널에 새로운 흔적이 기록되면 결과의 <b>Experience</b> 섹션에 <code>Layout Shift</code> 기록이 붉은색 막대와 함께 표시됩니다. 해당 기록을 클릭하면 영향을 받는 요소(예: Moved from/to 항목 참조)가 드릴다운됩니다.</figcaption></figure>
 
 [Chrome User Experience Report](/chrome-ux-report-bigquery/)를 사용해 원본 수준에서 집계된 실제 CLS를 측정할 수도 있습니다. CrUX CLS 데이터는 BigQuery를 통해 제공되며 CLS 성능을 확인하기 위한 [샘플 쿼리](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)도 사용할 수 있습니다.
 

@@ -335,7 +335,7 @@ to automate running keyboard accessibility tests for toggling UI states.
 has a great guide on this I recommend reading.
 
 <figure>
-  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400", class="w-screenshot" %}
+  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400" %}
 </figure>
 
 ```js
@@ -404,7 +404,7 @@ you can allow users of assistive technology to interact with the element,
 change its value, and even cause the element's visual presentation to change accordingly.
 
 <figure>
-  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56", class="w-screenshot" %}
+  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56" %}
   <figcaption>A range slider component.</figcaption>
 </figure>
 

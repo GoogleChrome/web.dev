@@ -39,9 +39,9 @@ Notifications present small chunks of information to a user. Websites can use
 notifications to tell users about important, time-sensitive events, or actions
 the user needs to take. The look and feel of notifications varies between platforms:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yC2ZZRuLFnnYGGmPUu9h.png", alt="Examples of notifications on macOS and Android.", width="800", height="361", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">Examples of notifications on macOS and Android.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yC2ZZRuLFnnYGGmPUu9h.png", alt="Examples of notifications on macOS and Android.", width="800", height="361" %}
+  <figcaption>Examples of notifications on macOS and Android.</figcaption>
 </figure>
 
 Push messages and notifications are two separate but complementary technologies.

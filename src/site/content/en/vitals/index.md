@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web Vitals
 description: Essential metrics for a healthy site
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
@@ -14,8 +14,8 @@ tags:
 ---
 
 {% Banner 'info', 'body' %}
-  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
-  implementations of common UX patterns optimized for Core Web Vitals.
+**New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
+implementations of common UX patterns optimized for Core Web Vitals.
 {% endBanner %}
 
 Optimizing for quality of user experience is key to the long-term success of any
@@ -53,7 +53,7 @@ over time. The current set for 2020 focuses on three aspects of the user
 experience—_loading_, _interactivity_, and _visual stability_—and includes the
 following metrics (and their respective thresholds):
 
-<div class="w-stack w-stack--center w-stack--md">
+<div class="auto-grid" style="--auto-grid-min-item-size: 200px;">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
@@ -77,9 +77,9 @@ it meets the recommended targets at the 75th percentile for all of the above
 three metrics.
 
 {% Aside %}
-  To learn more about the research and methodology behind these recommendations,
-  see: [Defining the Core Web Vitals metrics
-  thresholds](/defining-core-web-vitals-thresholds/)
+To learn more about the research and methodology behind these recommendations,
+see: [Defining the Core Web Vitals metrics
+thresholds](/defining-core-web-vitals-thresholds/)
 {% endAside %}
 
 ### Tools to measure and report Core Web Vitals
@@ -100,7 +100,7 @@ them to manually instrument analytics on their pages, and powers tools like
 and Search Console's [Core Web Vitals
 report](https://support.google.com/webmasters/answer/9205520).
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <td>&nbsp;</td>
@@ -133,9 +133,9 @@ report](https://support.google.com/webmasters/answer/9205520).
 </div>
 
 {% Aside %}
-  For guidance on how to use these tools, and which tool is right for your use
-  case, see: [Getting started with measuring Web
-  Vitals](/vitals-measurement-getting-started/)
+For guidance on how to use these tools, and which tool is right for your use
+case, see: [Getting started with measuring Web
+Vitals](/vitals-measurement-getting-started/)
 {% endAside %}
 
 The data provided by Chrome User Experience Report offers a quick way to assess
@@ -168,7 +168,7 @@ function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
-      fetch('/analytics', {body, method: 'POST', keepalive: true});
+    fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
 getCLS(sendToAnalytics);
@@ -202,7 +202,7 @@ measure each of these metrics and display them to users as they browse the web.
 This extension can be helpful in understanding the performance of your own
 sites, your competitor's sites, and the web at large.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -238,10 +238,10 @@ underlying web APIs can refer to these metric guides for implementation details:
 - [Measure CLS in JavaScript](/cls/#measure-cls-in-javascript)
 
 {% Aside %}
-  For additional guidance on how to measure these metrics using popular
-  analytics services (or your own in-house analytics tools), see: [Best
-  practices for measuring Web Vitals in the
-  field](/vitals-field-measurement-best-practices/)
+For additional guidance on how to measure these metrics using popular
+analytics services (or your own in-house analytics tools), see: [Best
+practices for measuring Web Vitals in the
+field](/vitals-field-measurement-best-practices/)
 {% endAside %}
 
 #### Lab tools to measure Core Web Vitals
@@ -256,7 +256,7 @@ catch performance regressions before they happen.
 The following tools can be used to measure the Core Web Vitals in a lab
 environment:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -286,11 +286,11 @@ environment:
 </div>
 
 {% Aside %}
-  Tools like Lighthouse that load pages in a simulated environment without a
-  user cannot measure FID (there is no user input). However, the Total Blocking
-  Time (TBT) metric is lab-measurable and is an excellent proxy for FID.
-  Performance optimizations that improve TBT in the lab should improve FID in
-  the field (see performance recommendations below).
+Tools like Lighthouse that load pages in a simulated environment without a
+user cannot measure FID (there is no user input). However, the Total Blocking
+Time (TBT) metric is lab-measurable and is an excellent proxy for FID.
+Performance optimizations that improve TBT in the lab should improve FID in
+the field (see performance recommendations below).
 {% endAside %}
 
 While lab measurement is an essential part of delivering great experiences, it

@@ -19,15 +19,14 @@ tags:
 In this post I want to share thinking on a way to build a 3D game menu component. Try the
 [demo](https://gui-challenges.web.app/game-menu/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/q9gIXMmP2CcfutwyaK5F.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/game-menu/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -165,15 +164,14 @@ html {
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7k1iwE7OaEKSpq4rDCBw.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Demonstration of background changing between light and dark color preferences.
   </figcaption>
 </figure>
@@ -195,8 +193,7 @@ This is the type of impact perspective can have.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qDDlbrxpp7vNBkwv5gI7.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -227,8 +224,7 @@ its contents by changing from `stretch` to `start` for `align-items`.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Y63ZFy5AEA4VS4yVirgv.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -303,8 +299,7 @@ position. It's a great way to articulate infinite alternating animations.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/EYqJVUyybb3VV4AX9dNE.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -445,8 +440,7 @@ focus](#hover-and-focus-interaction-styles).
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/WQQvNTk8gy0dC7w54Q7w.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -523,8 +517,7 @@ layer transitions in unison to the resting place. {% endAside %}
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/ZR3M0MTBzBU3m0RoHpxp.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -558,8 +551,7 @@ rovingIndex({
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/PSF8lpd2tcmj35WIQlKT.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -572,8 +564,7 @@ It can be fun when elements are hyper aware of the pointer.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/mNtHI14zZMoX250VIIZF.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -634,8 +625,7 @@ languages.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/BtBRYNIILR1iirytTZP3.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}

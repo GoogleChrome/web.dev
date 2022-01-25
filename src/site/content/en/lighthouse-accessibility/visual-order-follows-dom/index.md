@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Visual order on the page follows DOM order
 description: |
   Learn about visual-order-follows-dom audit.

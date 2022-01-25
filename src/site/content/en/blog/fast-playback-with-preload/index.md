@@ -24,7 +24,7 @@ techniques you can use to accelerate your audio and video playback by actively
 preloading resources depending on your use case.
 
 <figure>
-  <video controls muted playsinline class="w-screenshot">
+  <video controls muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1"
             type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1"

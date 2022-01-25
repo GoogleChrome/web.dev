@@ -31,9 +31,9 @@ available in several contexts including desktop media hubs, media notifications
 on mobile, and even on wearable devices. I'll describe these customizations in
 this article.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts.", width="800", height="330" %}
-  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device.</figcaption>
+  <figcaption>Media hub on desktop, media notification on mobile, and a wearable device.</figcaption>
 </figure>
 
 ## About the Media Session API
@@ -76,9 +76,9 @@ playing. The second is how you tell `MediaSession` what needs to be controlled.
 To illustrate, the image below shows how these interfaces relate to specific
 media controls, in this case a media notification on mobile.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration.", width="800", height="353" %}
-  <figcaption class="w-figcaption">Anatomy of a media notification on mobile.</figcaption>
+  <figcaption>Anatomy of a media notification on mobile.</figcaption>
 </figure>
 
 ## Let users know what's playing
@@ -156,9 +156,9 @@ implemented by setting handlers on an appropriate object, an instance of
 buttons from a headset, another remote device, a keyboard, or interact with a
 media notification.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10.", width="800", height="450" %}
-  <figcaption class="w-figcaption">Customized media notification in Windows 10.</figcaption>
+  <figcaption>Customized media notification in Windows 10.</figcaption>
 </figure>
 
 Because some media session actions may not be supported, it is recommended to
@@ -206,14 +206,14 @@ means that the browser stops doing any default behavior and uses this as a
 signal that the website supports the media action. Hence, media action controls
 won't be shown unless the proper action handler is set.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WBZAf1ymhtXInsWumHtw.jpg",
     alt="Screenshot of the Now Playing widget in macOS Big Sur.",
     width="800",
     height="450"
   %}
-  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur.</figcaption>
+  <figcaption>Now Playing widget in macOS Big Sur.</figcaption>
 </figure>
 
 ### Play / pause
@@ -348,9 +348,9 @@ as setting the position state at an appropriate time as shown below. The
 position state is a combination of the media playback rate, duration, and
 current time.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS.", width="800", height="450" %}
-  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS.</figcaption>
+  <figcaption>Lock screen media controls in Chrome OS.</figcaption>
 </figure>
 
 The duration must be provided and positive. The position must be positive and
@@ -411,14 +411,14 @@ browser may display controls for the microphone and camera, and for hanging up.
 When the user clicks those, the website handles them through the video
 conferencing actions below.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/fXc7jqc95Oa6sKce7kpZ.jpg",
     alt="Screenshot of video conferencing controls in a Picture-in-Picture window.",
     width="748",
     height="464"
   %}
-  <figcaption class="w-figcaption">Video conferencing controls in a Picture-in-Picture window.</figcaption>
+  <figcaption>Video conferencing controls in a Picture-in-Picture window.</figcaption>
 </figure>
 
 {% Aside %}
@@ -481,12 +481,12 @@ navigator.mediaSession.setActionHandler('hangup', () => {
 Check out some [Media Session samples] featuring [Blender Foundation] and
 [Jan Morgenstern's work].
 
- <figure class="w-figure">
+ <figure>
   <video controls autoplay loop muted poster="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.jpg">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.webm" type="video/webm; codecs=vp9">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.mp4" type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     A screencast illustrating the Media Session API.
   </figcaption>
 </figure>

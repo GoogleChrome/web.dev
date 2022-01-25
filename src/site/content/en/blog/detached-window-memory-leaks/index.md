@@ -83,12 +83,12 @@ properties on the closed `Window` object, it must be kept in memory. If the wind
 JavaScript objects or iframes, that memory can't be reclaimed until there are no remaining
 JavaScript references to the window's properties.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="878" class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline width="878">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-window.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using Chrome DevTools to demonstrate how it's possible to retain a document after a window has
     been closed.
   </figcaption>
@@ -101,12 +101,12 @@ iframe's `contentWindow` or `contentDocument` even if the iframe is removed from
 changes, which prevents the document from being garbage collected since its properties can still be
 accessed.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="615" class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline width="615">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-iframe.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-iframe.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Demonstration of how an event handler can retain an iframe's document, even after navigating the
     iframe to a different URL.
   </figcaption>
@@ -152,12 +152,12 @@ clean up any references to the document. The `nextSlide()` function is still "li
 bound as a click handler in our main page, and the fact that `nextSlide` contains a reference to
 `notesWindow` means the window is still referenced and can't be garbage collected.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Illustration of how references to a window prevent it from being garbage collected once closed.
   </figcaption>
 </figure>
@@ -222,9 +222,9 @@ objects that have been created but not yet garbage-collected. Heap snapshots con
 information about objects, including their size and a list of the variables and closures that
 reference them.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="762", height="419", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="762", height="419" %}
+  <figcaption>
     A heap snapshot showing the references that retain a large object.
   </figcaption>
 </figure>
@@ -233,12 +233,12 @@ To record a heap snapshot, head over to the **Memory** tab in Chrome DevTools an
 Snapshot** in the list of available profiling types. Once the recording has finished, the
 **Summary** view shows current objects in-memory, grouped by constructor.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="640" class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline width="640">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/take-heap-snapshot.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/take-heap-snapshot.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Demonstration of taking a heap snapshot in Chrome DevTools.
   </figcaption>
 </figure>
@@ -260,9 +260,9 @@ Heap snapshots provide a high level of detail and are excellent for figuring out
 but taking a heap snapshot is a manual process. Another way to check for memory leaks is to obtain
 the currently used JavaScript heap size from the [`performance.memory` API][performance-memory-api]:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIypz58ucRgAnnNu1LwR.png", alt="A screenshot of a section of the Chrome DevTools user interface.", width="621", height="394" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Checking the used JS heap size in DevTools as a popup is created, closed and unreferenced.
   </figcaption>
 </figure>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: 'Prevent unnecessary network requests with the HTTP Cache'
 authors:
   - jeffposnick
@@ -250,9 +250,9 @@ very little data to transfer when sending this type of response, so it's usually
 much faster than having to actually send back a copy of the actual resource
 being requested.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="A diagram of a client requesting a resource and the server responding with a 304 header.", width="474", height="215" %}
-  <figcaption class="w-figcaption w-text--left">
+  <figcaption>
     The browser requests <code>/file</code> from the server and includes the <code>If-None-Match</code>
     header to instruct the server to only return the full file if the <code>ETag</code> of
     the file on the server doesn't match the browser's <code>If-None-Match</code> value. In this
@@ -308,7 +308,7 @@ If you have more time, here are further ways that you can optimize your usage of
 
 ## Appendix: `Cache-Control` examples {: #examples }
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

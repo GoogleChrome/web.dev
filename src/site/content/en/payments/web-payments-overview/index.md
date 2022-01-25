@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web Payments overview
 subhead: |
   Learn more about Web Payments and how they work.

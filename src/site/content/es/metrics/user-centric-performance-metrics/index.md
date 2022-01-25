@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Métricas de rendimiento centradas en el usuario
 authors:
   - philipwalton

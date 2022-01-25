@@ -126,9 +126,9 @@ The iPad next to my MacBook is connected to the laptop via
 [Sidecar](https://support.apple.com/en-us/HT210380), so whenever I need to, I can quickly turn the
 iPad into a second screen.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.", width="558", height="520" %}
-  <figcaption class="w-figcaption">A multi-screen setup.</figcaption>
+  <figcaption>A multi-screen setup.</figcaption>
 </figure>
 
 If I want to take advantage of the bigger screen, I can put the popup from the
@@ -354,9 +354,9 @@ did.) To keep track of the cryptocurrencies that I own, I have developed a web a
 watch the markets in all life situations, such as from the comfort of my bed, where I have a decent
 single-screen setup.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ", width="800", height="863" %}
-  <figcaption class="w-figcaption">Relaxing and watching the markets.</figcaption>
+  <figcaption>Relaxing and watching the markets.</figcaption>
 </figure>
 
 This being about crypto, the markets can get hectic at any time. Should this happen, I can quickly
@@ -366,9 +366,9 @@ me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9W
 completely off-guard and left me
 [with my hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.", width="800", height="600" %}
-  <figcaption class="w-figcaption">Panicky, witnessing the YCY bloodbath.</figcaption>
+  <figcaption>Panicky, witnessing the YCY bloodbath.</figcaption>
 </figure>
 
 You can play with the [demo][demo] embedded below, or see its [source code][demo-source] on glitch.

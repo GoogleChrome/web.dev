@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` do not have data cells they describe"
 description: |
   Learn how to make tables on your web page more accessible to assistive
@@ -26,8 +26,8 @@ that don't have the data cells they describe:
 For sure, empty columns don't fail. I've also had columns without headers, and they don't fail either.
 I've removed scope, I've tried making the tables as confusing as possible, and the audit just doesn't fail.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="td-headers-attr.png" alt="Lighthouse audit showing table headers do not have data cells">
+<figure>
+  <img src="td-headers-attr.png" alt="Lighthouse audit showing table headers do not have data cells">
 </figure>
 -->
 

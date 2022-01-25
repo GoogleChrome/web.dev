@@ -24,7 +24,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Хорошие значения fid - 2,5 секунды, низкие значения больше 4,0 секунд, и все, что находится между ними, требует улучшения", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Хорошие значения fid - 2,5 секунды, низкие значения больше 4,0 секунд, и все, что находится между ними, требует улучшения", width="384", height="96" %}
   </picture>
 
 Чтобы помочь предсказать FID в [лабораторных условиях](/how-to-measure-speed/#lab-data-vs-field-data), мы рекомендуем использовать метрику [TBT (Общее время блокировки)](/tbt/). Хотя эти метрики не идентичны, но улучшение TBT обычно приводит к улучшению FID.
@@ -46,9 +46,9 @@ tags:
 
 [**Длительные задачи**](/custom-metrics/#long-tasks-api)это периоды выполнения JavaScript, когда пользователи могут заметить, что пользовательский интерфейс не отвечает. Любой фрагмент кода, который блокирует основной поток на 50 мс или более, можно рассматривать как длительную задачу. Длительные задачипризнак потенциального раздувания JavaScript-кода (загрузка и выполнение большего количества задач, чем может потребоваться пользователю прямо сейчас). Разделение длительных задач может уменьшить задержку ввода на сайте.
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Длительные задачи в Chrome DevTools", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption"> Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">визуализирует длительные задачи</a> на панели производительности</figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Длительные задачи в Chrome DevTools", width="800", height="132" %}
+  <figcaption> Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">визуализирует длительные задачи</a> на панели производительности</figcaption>
 </figure>
 
 Значение FID должно заметно улучшиться при внедрении передовых практик, таких как разделение кода и разделение длительных задач. Хотя TBTэто не полевая метрика, но с ее помощью удобно отслеживать ход оптимизации метрик TTI (Время до интерактивности) и FID.
@@ -66,7 +66,7 @@ tags:
 
 Ниже приведены оценки TBT до и после оптимизации загрузки основных скриптов для приложения. После того как с критического этапа рендеринга была убрана ресурсоёмкая загрузка (и выполнение) скрипта для непервостепенного компонента, пользователи смогли гораздо быстрее взаимодействовать со страницей.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Улучшение показателя TBT в Lighthouse после оптимизации основного скрипта", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Улучшение показателя TBT в Lighthouse после оптимизации основного скрипта", width="800", height="148" %}
 
 ### Выборка данных может повлиять на многие аспекты готовности к взаимодействию
 
@@ -105,7 +105,7 @@ tags:
 
 На вкладке [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools можно узнать, сколько неиспользуемого кода JavaScript находится на вашей странице.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Вкладка Coverage.", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Вкладка Coverage.", width="800", height="559" %}
 
 Чтобы сократить неиспользуемый JavaScript:
 
@@ -165,7 +165,7 @@ import('module.js').then((module) => {
 
 - [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) не поддерживает FID, поскольку это полевой показатель. Однако метрику [TBT (Общее время блокировки)](/tbt/) можно использовать в качестве косвенного показателя. Оптимизация, улучшающая TBT, должна также улучшить FID в полевых условиях.
 
-    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
+    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
 - Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) предоставляет реальные значения FID, агрегированные на уровне источника.
 

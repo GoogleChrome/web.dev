@@ -52,7 +52,7 @@ When used in a six digit sequence,
 they are translated to the RGB numerical ranges which are 0-255
 which correspond to the red, green, and blue color channels respectively.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapNrPG',
@@ -74,7 +74,7 @@ Here are some key, common values added to the black hex code, `#000000`:
 - 50% alpha is **80**: `#00000080`
 - 75% alpha is **BF**: `#000000BF`
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPLXdr',
@@ -126,7 +126,7 @@ For example, to set a 50% alpha black in modern browsers, write: `rgb(0 0 0 / 50
 For wider support, using the `rgba()` function,
 write: `rgba(0, 0, 0, 50%)` or `rgba(0, 0, 0, 0.5)`.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyNomWW',
@@ -178,7 +178,7 @@ in CSS is great for defining hue because it represents the angle of the color wh
 This type accepts degrees, turns, radians and gradians.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'poRJLQo',
@@ -209,7 +209,7 @@ according to the [Web Almanac](https://almanac.httparchive.org/en/2019/css),
 are black, white, red, blue and gray.
 Our favorites include goldenrod, aliceblue, and hotpink.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELGraM'
@@ -256,7 +256,7 @@ There's lots to learn with gradients so we wrote [a whole lesson](/learn/css/gra
 Finally, `border-color`, and `outline-color` set the color for borders and outlines on your boxes.
 The `box-shadow` property also accepts color as one of the values.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgdJKd'

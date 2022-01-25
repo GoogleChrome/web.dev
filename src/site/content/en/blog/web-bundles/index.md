@@ -44,9 +44,9 @@ images, or stylesheets.
  are part of the [Web Packaging](https://github.com/WICG/webpackage)
  proposal.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nIq4lyKZAV6XgbgDgNSk.png", alt="A figure demonstrating that a Web Bundle is a collection of web resources.", width="800", height="466", style="max-width: 75%" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     How Web Bundles work
   </figcaption>
 </figure>
@@ -158,9 +158,9 @@ To try out a Web Bundle:
 1. Open `about://flags/#web-bundles`.
 1. Set the **Web Bundles** flag to **Enabled**.
 
-   <figure class="w-figure">
+   <figure>
      {% Img src="image/admin/tt32OXyh9PdrKK9KnMto.png", alt="A screenshot of about://flags", width="800", height="315" %}
-     <figcaption class="w-figcaption">
+     <figcaption>
        Enabling Web Bundles in <code>about://flags</code>
      </figcaption>
    </figure>
@@ -171,12 +171,12 @@ To try out a Web Bundle:
 
 Everything magically works.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/web-bundles/preact-todomvc.mp4"
             type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     The Preact implementation of TodoMVC working offline as a web bundle
   </figcaption>
 </figure>

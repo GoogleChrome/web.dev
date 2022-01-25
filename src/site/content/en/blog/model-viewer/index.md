@@ -143,9 +143,9 @@ and desktop. It can also manage multiple instances on a page and uses
 Observer](https://developer.mozilla.org/docs/Web/API/IntersectionObserver)
 to conserve battery power and GPU cycles when a model isn't visible.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/8jXl21iFxh7O3QeEeL0k.png", alt="Multiple spacesuit images representing responsiveness.", width="800", height="453" %}
-  <figcaption class="w-figcaption">Multiple spacesuit images representing responsiveness.</figcaption>
+  <figcaption>Multiple spacesuit images representing responsiveness.</figcaption>
 </figure>
 
 ## Looking Forward

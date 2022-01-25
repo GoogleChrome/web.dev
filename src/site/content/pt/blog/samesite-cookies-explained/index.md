@@ -32,7 +32,7 @@ Digamos que você tenha um blog no qual deseja exibir uma promoção "O que há 
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Três cookies sendo enviados para um navegador por um servidor em uma resposta HTTP", width="800", height="276", style="max-width: 60vw" %}   <figcaption class="w-figcaption">Servers set cookies using the <code>Set-Cookie</code> header.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Três cookies sendo enviados para um navegador por um servidor em uma resposta HTTP", width="800", height="276", style="max-width: 60vw" %}   <figcaption>Servers set cookies using the <code>Set-Cookie</code> header.</figcaption></figure>
 
 Quando o leitor visualizar uma página que atende a esses requisitos, ou seja, quando estiver numa conexão segura e o cookie tenha menos de um mês de vida, o navegador enviará este cabeçalho na sua solicitação HTTP:
 
@@ -40,7 +40,7 @@ Quando o leitor visualizar uma página que atende a esses requisitos, ou seja, q
 Cookie: promo_shown=1
 ```
 
-<figure class="w-figure"> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Três cookies sendo enviados de um navegador para um servidor numa solicitação HTTP", width="800", height="165", style="max-width: 60vw" %}   <figcaption class="w-figcaption">Seu navegador devolve os cookies através do cabeçalho <code>Cookie</code>.</figcaption></figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Três cookies sendo enviados de um navegador para um servidor numa solicitação HTTP", width="800", height="165", style="max-width: 60vw" %}   <figcaption>Seu navegador devolve os cookies através do cabeçalho <code>Cookie</code>.</figcaption></figure>
 
 Você também pode adicionar e ler os cookies disponíveis para esse site em JavaScript através de `document.cookie`. Atribuir um par chave=valor a `document.cookie` cria ou substitui um cookie com essa chave. Por exemplo, você pode experimentar o seguinte código no console JavaScript do seu navegador:
 
@@ -56,7 +56,7 @@ A leitura de `document.cookie` devolve todos os cookies acessíveis no contexto 
 < "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript acessando cookies no navegador", width="600", height="382", style="max-width: 35vw" %}<figcaption class="w-figcaption">JavaScript pode accessar cookies usando <code>document.cookie</code>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript acessando cookies no navegador", width="600", height="382", style="max-width: 35vw" %}<figcaption>JavaScript pode accessar cookies usando <code>document.cookie</code>.</figcaption></figure>
 
 Se você tentar isso numa seleção de sites populares, notará que a maioria deles define muito mais do que apenas três cookies. Na maioria dos casos, esses cookies são enviados a cada solicitação para esse domínio, o que tem uma série de implicações. A largura de banda de upload geralmente é mais restrita que o download para seus usuários, de modo que a sobrecarga em todas as solicitações de saída estará adicionando um atraso no seu tempo para o primeiro byte. Seja conservador no número e no tamanho dos cookies que você define. Use o atributo `Max-Age` para ajudar a garantir que os cookies não durem mais do que o necessário.
 
@@ -64,13 +64,13 @@ Se você tentar isso numa seleção de sites populares, notará que a maioria de
 
 Se você voltar para a mesma seleção de sites que estava olhando antes, deve ter percebido que havia cookies para uma variedade de domínios, não apenas aquele que você estava visitando no momento. Os cookies que correspondem ao domínio do site atual (o domínio exibido na barra de endereços do navegador) são chamados de cookies **primários.** Da mesma forma, os cookies de domínios diferentes do site atual são chamados de cookies de **terceiros.** Isto não é um rótulo absoluto, mas relativo ao contexto do usuário; o mesmo cookie pode ser original ou de terceiros, dependendo do site no qual o usuário se encontra no momento.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Três cookies sendo enviados para um navegador a partir de solicitações diferentes na mesma página", width="800", height="346", style="max-width: 60vw" %}<figcaption class="w-figcaption">Os cookies podem vir de uma variedade de domínios diferentes em uma página.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Três cookies sendo enviados para um navegador a partir de solicitações diferentes na mesma página", width="800", height="346", style="max-width: 60vw" %}<figcaption>Os cookies podem vir de uma variedade de domínios diferentes em uma página.</figcaption></figure>
 
 Continuando o exemplo acima, vamos supor que uma de suas postagens de blog tenha uma foto de um gato particularmente incrível e está hospedada em `/blog/img/amazing-cat.png`. Por ser uma imagem tão incrível, outra pessoa a usa diretamente em seu site. Se um visitante esteve no seu site e possui o cookie `promo_shown`, quando ele visualizar o `amazing-cat.png` no site da outra pessoa, esse cookie **será enviado** como parte da solicitação de imagem. Isso é completamente inútil, já que `promo_shown` não é usado para nada no site dessa outra pessoa, ele apenas acrescenta uma sobrecarga à solicitação.
 
 Se for um efeito não intencional, por que alguém o faria? É esse mecanismo que permite que os sites mantenham o estado quando estão sendo usados num contexto de terceiros. Por exemplo, se você incorporar um vídeo do YouTube no seu site, os visitantes verão uma opção "Assistir mais tarde" no player. Se o seu visitante já estiver conectado ao YouTube, essa sessão está sendo disponibilizada no player incorporado por um cookie de terceiros, o que significa que o botão "Assistir mais tarde" salvará o vídeo de uma vez ao invés de solicitar que ele faça login ou tenha que navegar para fora de sua página e de volta para o YouTube.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="O mesmo cookie sendo enviado em três contextos diferentes", width="800", height="433", style="max-width: 60vw" %}<figcaption class="w-figcaption">Um cookie em um contexto de terceiros é enviado ao visitar páginas diferentes.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="O mesmo cookie sendo enviado em três contextos diferentes", width="800", height="433", style="max-width: 60vw" %}<figcaption>Um cookie em um contexto de terceiros é enviado ao visitar páginas diferentes.</figcaption></figure>
 
 Uma das propriedades culturais da web é que ela tende a ser aberta por default. Isto é parte do que tem permitido que tantas pessoas criassem seus próprios conteúdos e aplicativos nela. No entanto, isso também trouxe uma série de questões relacionadas a segurança e privacidade. Os ataques de falsificação de solicitação entre sites (CSRF - Cross-Site Request Forgery) baseiam-se no fato de que os cookies são anexados a qualquer solicitação para uma determinada origem, independentemente de quem inicia a solicitação. Por exemplo, se você visitar `evil.example`, ele pode acionar solicitações para `your-blog.example`, e seu navegador anexará imediatamente os cookies associados. Se o seu blog não tiver cuidado com a forma como valida essas solicitações, o site `evil.example` poderá desencadear ações como excluir postagens ou adicionar conteúdo.
 
@@ -128,7 +128,7 @@ Nem `Strict` nem `Lax` são uma solução completa para a segurança do seu site
 
 Por último, existe a opção de não especificar o valor.  Anteriormente, esta era a forma de indicar implicitamente o desejo de que o cookie fosse enviado em todos os contextos. No último rascunho da [RFC6265bis,](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) isto foi explicitado pela introdução de um novo valor de `SameSite=None`. Isto significa que você pode usar `None` para comunicar claramente seu desejo intencional de que o cookie seja enviado num contexto de terceiros.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Três cookies rotulados como None, Lax ou Strict dependendo do contexto", width="800", height="456", style="max-width: 60vw" %}<figcaption class="w-figcaption"> Marque explicitamente o contexto de um cookie como <code>None</code>, <code>Lax</code> ou <code>Strict</code></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Três cookies rotulados como None, Lax ou Strict dependendo do contexto", width="800", height="456", style="max-width: 60vw" %}<figcaption> Marque explicitamente o contexto de um cookie como <code>None</code>, <code>Lax</code> ou <code>Strict</code></figcaption></figure>
 
 {% Aside %}
 

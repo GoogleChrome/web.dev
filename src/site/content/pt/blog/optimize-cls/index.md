@@ -26,7 +26,7 @@ Neste guia, veremos como otimizar causas comuns de deslocamentos de layout.
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Bons valores de CLS estão abaixo de 0,1, valores baixos são maiores que 0,25 e qualquer coisa entre precisa de melhorias", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Bons valores de CLS estão abaixo de 0,1, valores baixos são maiores que 0,25 e qualquer coisa entre precisa de melhorias", width="384", height="96" %}
 </picture>
 
 As causas mais comuns de uma CLS ruim são:
@@ -41,37 +41,33 @@ As causas mais comuns de uma CLS ruim são:
 
 **Resumo:** sempre inclua os atributos de tamanho `width` e `height` nas suas imagens e elementos de vídeo. Como alternativa, reserve o espaço necessário com as [caixas de proporção de aspecto do CSS](https://css-tricks.com/aspect-ratio-boxes/). Essa abordagem garante que o navegador possa alocar a quantidade correta de espaço no documento enquanto a imagem é carregada.
 
-  <figure class="w-figure">
+  <figure>
     {% Video
       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"],
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
-   <figcaption class="w-figcaption">
+      muted=true %}
+   <figcaption>
       Imagens sem especificação de width e height.
     </figcaption>
   </figure>
 
-  <figure class="w-figure">
+  <figure>
     {% Video
       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"],
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
-   <figcaption class="w-figcaption">
+      muted=true %}
+   <figcaption>
       Imagens com especificação de width e height.
     </figcaption>
   </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift after setting dimensions on images", width="800", height="148" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
   Impacto na CLS mostrado pelo Lighthouse 6.0 ao especificar dimensões nas imagens.
   </figcaption>
 </figure>
@@ -195,37 +191,33 @@ A boa notícia é que é possível que os sites sigam as práticas recomendadas 
 
 Alguns sites podem descobrir que o recolhimento inicial do local pode reduzir deslocamentos de layout, caso seja improvável que o local do anúncio seja preenchido. Não existe uma maneira simples de escolher o tamanho exato a cada vez, a menos que você mesmo tenha controle sobre a veiculação do anúncio.
 
-  <figure class="w-figure">
+  <figure>
     {% Video
       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"],
       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
       controls=true,
       loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
-   <figcaption class="w-figcaption">
+      muted=true %}
+   <figcaption>
       Anúncios sem espaço suficiente reservado.
     </figcaption>
   </figure>
 
-  <figure class="w-figure">
+  <figure>
       {% Video
         src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],
         poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
         controls=true,
         loop=true,
-        muted=true,
-        class="w-screenshot"
-      %}
-   <figcaption class="w-figcaption">
+        muted=true %}
+   <figcaption>
       Anúncios com espaço suficiente reservado.
     </figcaption>
   </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for banners like ads", width="800", height="148" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Impacto Lighthouse 6.0 da reserva de espaço para este banner na CLS
   </figcaption>
 </figure>
@@ -250,23 +242,23 @@ Widgets incorporáveis permitem incluir conteúdo portátil da web na sua págin
 
 Essas incorporações muitas vezes não sabem com antecedência qual será o tamanho do seu conteúdo (por exemplo, no caso de uma postagem de mídia social - ela vem com uma imagem incorporada? vídeo? múltiplas linhas de texto?). Como resultado, as plataformas que oferecem incorporações nem sempre reservam espaço suficiente para elas e podem causar deslocamentos de layout quando finalmente carregam.
 
-<figure class="w-figure">
-  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %}
+ <figcaption>
     Incorporação sem reserva de espaço.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
- <figcaption class="w-figcaption">
+<figure>
+  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %}
+ <figcaption>
   Incorporação com reserva de espaço.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for this embed on CLS", width="800", height="148" %}
-<figcaption class="w-figcaption">
+<figcaption>
   Impacto Lighthouse 6.0 na CLS da reserva de espaço para esta incorporação
 </figcaption>
 </figure>
@@ -294,9 +286,9 @@ Você provavelmente já experimentou mudanças de layout devido à IU que surge 
 
 - "Aviso RGPD"
 
-  <figure class="w-figure">
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
-   <figcaption class="w-figcaption">
+  <figure>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %}
+   <figcaption>
         Conteúdo dinâmico sem reserva de espaço.
    </figcaption>
     </figure>
@@ -309,9 +301,9 @@ Em alguns casos, adicionar conteúdo dinamicamente é uma parte importante da ex
 - Faça com que o usuário inicie o carregamento do novo conteúdo, para que ele não se surpreenda com a mudança (por exemplo, com um botão "Carregar mais" ou "Atualizar"). É recomendado pré-buscar o conteúdo antes da interação do usuário para que ele apareça imediatamente. Lembre-se que mudanças de layout que ocorrem dentro de 500 ms da entrada do usuário não são contadas para o CLS.
 - Carregue totalmente o conteúdo fora da tela e sobreponha um aviso ao usuário de que as informações estão disponíveis (por exemplo, com um botão "Rolar para cima").
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Examples of dynamic content loading without causing unexpected layout shifts from Twitter and the Chloé website", width="800", height="458" %}
-  <figcaption class="w-figcaption">Exemplos de carregamento de conteúdo dinâmico sem causar mudanças inesperadas de layout. Esquerda: Carregamento de conteúdo de feed ao vivo no Twitter. À direita: exemplo "Carregar mais" no site da Chloé. Confira como a equipe YNAP <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">otimizou para CLS ao carregar mais conteúdo</a>.</figcaption>
+  <figcaption>Exemplos de carregamento de conteúdo dinâmico sem causar mudanças inesperadas de layout. Esquerda: Carregamento de conteúdo de feed ao vivo no Twitter. À direita: exemplo "Carregar mais" no site da Chloé. Confira como a equipe YNAP <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">otimizou para CLS ao carregar mais conteúdo</a>.</figcaption>
 </figure>
 
 ### Fontes da Web que causam FOIT/FOUT
@@ -351,7 +343,7 @@ O [Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https:/
 
 O painel [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) no DevTools destaca os deslocamentos de layout na seção **Experience** a partir do Chrome 84. A tela **Summary** para um registro de `Layout Shift` inclui a pontuação do deslocamento cumulativo layout cumulativa, bem como uma sobreposição de retângulo mostrando as regiões afetadas.
 
-<figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Registros de mudança de layout exibidos no painel de desempenho do Chrome DevTools ao expandir a seção Experiência", width="800", height="438" %} <figcaption class="w-figcaption"> Depois de registrar um novo registro no painel Performance, a seção <b>Experience</b> dos resultados é preenchida com uma barra tingida de vermelho exibindo um registro de <code>Layout Shift</code> Clicar no registro permite detalhar os elementos impactados (por exemplo, observe as entradas de movimento de/para).</figcaption></figure>
+<figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Registros de mudança de layout exibidos no painel de desempenho do Chrome DevTools ao expandir a seção Experiência", width="800", height="438" %} <figcaption> Depois de registrar um novo registro no painel Performance, a seção <b>Experience</b> dos resultados é preenchida com uma barra tingida de vermelho exibindo um registro de <code>Layout Shift</code> Clicar no registro permite detalhar os elementos impactados (por exemplo, observe as entradas de movimento de/para).</figcaption></figure>
 
 A medição da CLS no mundo real agregado num nível de origem também é possível usando o [Relatório de Experiência do Usuário Chrome](/chrome-ux-report-bigquery/) (CrUX). Os dados do CrUX para CLS estão disponíveis por meio do BigQuery e um [exemplo de consulta](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) está disponível para monitorar o desempenho da CLS.
 

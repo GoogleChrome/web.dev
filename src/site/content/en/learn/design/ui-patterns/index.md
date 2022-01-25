@@ -5,7 +5,6 @@ description: >
 authors:
   - adactio
 date: 2021-12-23
-placeholder: true
 ---
 
 A design viewed on a small screen shouldn't look like a shrunk-down version of a large-screen layout. Likewise, a design viewed on a large screen shouldn't look like a blown-up version of a small-screen layout. Instead, the design needs to be flexible enough to adapt to all screen sizes. A successful responsive design makes the most of every form factor.

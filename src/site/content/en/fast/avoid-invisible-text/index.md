@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Avoid invisible text during font loading
 authors:
   - katiehempenius
@@ -35,7 +35,7 @@ you'll actually implement and maintain.
 
 ## Option #1: Use font-display
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -74,7 +74,7 @@ it's default behavior for loading fonts. Check which browsers support
 
 These are the default font-loading behaviors for common browsers:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

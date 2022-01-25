@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Using a PWA in your Android app
 authors:
   - andreban
@@ -90,9 +90,9 @@ The application must also meet additional Android-specific criteria such as [pol
   with using Trusted Web Activity.
 {% endAside %}
 
-<figure class="w-figure w-figure--center">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Z70W3aCI8ropKpMXHcz.png", alt="A screenshot showing the Lighthouse score for AirHorn, with the PWA badge and a performance score of 100.", width="800", height="141" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     The PWA badge in Lighthouse shows if your PWA passes the installability criteria.
   </figcaption>
 </figure>

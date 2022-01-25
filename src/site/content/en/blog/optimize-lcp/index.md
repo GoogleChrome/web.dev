@@ -38,7 +38,7 @@ rendering on the screen.
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96" %}
 </picture>
 
 The most common causes of a poor LCP are:
@@ -55,7 +55,7 @@ takes to render anything on the screen. A faster server response time directly
 improves every single page-load metric, including LCP.
 
 Before anything else, improve how and where your server handles your content.
-Use [**Time to First Byte**](/time-to-first-byte) (TTFB) to measure your server
+Use [**Time to First Byte**](/ttfb/) (TTFB) to measure your server
 response times. You can improve your TTFB in a number of different ways:
 
 - Optimize your server
@@ -128,14 +128,14 @@ the HTML page's content and only update the cache when the content has changed.
 The following chart shows how LCP distributions have been reduced on a site
 using this pattern:
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/uB0Sm56R88MRF16voQ1k.png",
     alt="Largest Contentful Paint distributions before and after HTML caching",
     width="800",
     height="495"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Largest Contentful Paint distribution, for page loads with and without a service worker -
     <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
   </figcaption>
@@ -187,7 +187,7 @@ page speed](/preconnect-and-dns-prefetch/)
 
 ### Use signed exchanges (SXGs)
 
-[Signed exchanges (SXGs)](https://web.dev/signed-exchanges) are a delivery
+[Signed exchanges (SXGs)](/signed-exchanges) are a delivery
 mechanism that allow for faster user experiences by providing content in an
 easily cacheable format. Specifically, [Google
 Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
@@ -234,14 +234,14 @@ minify CSS files on every build:
 - For Rollup:
   [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png",
     alt="Example of LCP improvement: Before and after minifying CSS",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of LCP improvement: Before and after minifying CSS
   </figcaption>
 </figure>
@@ -275,14 +275,14 @@ To optimize:
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
     alt="Example of LCP improvement: Before and after deferring non-critical CSS",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of LCP improvement: Before and after deferring non-critical CSS
   </figcaption>
 </figure>
@@ -297,14 +297,13 @@ CSS](/defer-non-critical-css/) guide.
 Inline any critical-path CSS used for above-the-fold content by including it
 directly in `<head>.`
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",
     alt="Critical CSS inlined",
-    width="800", height="325",
-    class="w-screenshot w-screenshot--filled"
+    width="800", height="325"
   %}
-  <figcaption class="w-figcaption">Critical CSS inlined</figcaption>
+  <figcaption>Critical CSS inlined</figcaption>
 </figure>
 
 Inlining important styles eliminates the need to make a round-trip request to
@@ -320,14 +319,14 @@ the process. Some examples:
 - [Critters](https://github.com/GoogleChromeLabs/critters) is a webpack plugin
   that inlines critical CSS and lazy-loads the rest
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/L8sc51bd3ckxwnUfczC4.png",
     alt="Example of LCP improvement: Before and after inlining critical CSS",
     width="800",
     height="175"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of LCP improvement: Before and after inlining critical CSS
   </figcaption>
 </figure>
@@ -346,11 +345,11 @@ better LCP.
 This can be accomplished by optimizing your scripts in a few different ways:
 
 - [Minify and compress JavaScript
-  files](https://web.dev/reduce-network-payloads-using-text-compression/)
+  files](/reduce-network-payloads-using-text-compression/)
 - [Defer unused
-  JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
+  JavaScript](/reduce-javascript-payloads-with-code-splitting/)
 - [Minimize unused
-  polyfills](https://web.dev/serve-modern-code-to-modern-browsers/)
+  polyfills](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}
 The [Optimize First Input Delay](/optimize-fid/) guide covers all techniques
@@ -390,7 +389,7 @@ For many sites, images are the largest element in view when the page has
 finished loading. Hero images, large carousels or banner images are all common
 examples of this.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png",
     alt="",
@@ -476,14 +475,14 @@ times and consequently LCP.
     browser. This minimizes server overhead and prevents delays when requests
     are made, especially when using high compression ratios.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",
     alt="Example of LCP improvement: Before and after Brotli compression ",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of LCP improvement: Before and after Brotli compression
   </figcaption>
 </figure>
@@ -617,14 +616,14 @@ With pre-rendering, TTI is still negatively impacted but server response times
 aren't as affected as they would be with a server-side rendering solution that
 dynamically renders each page only after it's requested.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",
     alt="Example of LCP improvement: Before and after pre-rendering",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of LCP improvement: Before and after pre-rendering
   </figcaption>
 </figure>

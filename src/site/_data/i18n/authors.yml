@@ -3573,13 +3573,11 @@ lozandier:
     en: Kevin Lozandier
   description:
     en: User Experience Engineer on the Google Responsible Innovation team
-
 mobtec:
   title:
     en: Guilherme Moser de Souza
   description:
     en: Web Developer
-
 maurizioparadisi:
   title:
     en: Maurizio Paradisi
@@ -3599,6 +3597,24 @@ maurizioparadisi:
     pt: Nossas últimas notícias, atualizações e histórias por Maurizio Paradisi.
     ru: Последние новости и статьи от Maurizio Paradisi.
     zh: Maurizio Paradisi 撰写我们的最新资讯、动态和故事。
+
+anshusharma:
+  title:
+    en: Anshu Sharma
+  description:
+    en: Head of Engineering at The Economic Times
+
+sumitgugnani:
+  title:
+    en: Sumit Gugnani
+  description:
+    en: Head of Frontend Engineering at The Economic Times
+
+prashantmishra:
+  title:
+    en: Prashant Mishra
+  description:
+    en: Web Ecosystem Consultant at Google
 
 joshuagrossberg:
   title:
