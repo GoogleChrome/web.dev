@@ -72,7 +72,7 @@ keyPath: 'id'
 
 The example creates an object store inside the `recipes` database called `desserts`, with the `id` property set as the store's index key and creates another index called `name`, based on the `name` property.
 
-Let's take a look at the Object Store that's just been created. After adding some recipes into the Object Store and opening up DevTools on Chromium-based browsers or Safari Web Inspector, this is what you should expect to see.
+Let's take a look at the object store that's just been created. After adding recipes to the object store and opening DevTools on Chromium-based browsers or Web Inspector on Safari, this is what you should expect to see:
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/0lugXC1vJqDuRlrwF01l.png", alt="Safari and Chrome showing IndexedDB contents.", width="800", height="538" %}
 
