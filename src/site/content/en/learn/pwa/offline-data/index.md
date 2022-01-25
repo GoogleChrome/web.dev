@@ -83,7 +83,7 @@ To add data:
 
 1. Start a transaction again, but this time set the mode to `readwrite`.
 1. Get the object store.
-1. Call `add` with the data you are saving. The method receives data with a dictionary structure (such as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd use `put` instead.
+1. Call `add()` with the data you are saving. The method receives data with a dictionary (such as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd call `put()` instead.
 
 
 Transactions have a `done` promise that resolves when the transaction completes successfully, or rejects with a [transaction error](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error). 
