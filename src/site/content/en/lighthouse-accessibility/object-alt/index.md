@@ -2,7 +2,7 @@
 layout: post-old
 title: "`<object>` elements do not have alt text"
 description: |
-  Learn how to improve the accessibility of object elements on your web page by
+  Learn how to improve the accessibility of `<object>` elements on your web page by
   providing alternative text.
 date: 2019-05-02
 updated: 2019-09-19
