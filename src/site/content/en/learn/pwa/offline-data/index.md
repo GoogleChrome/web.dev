@@ -28,7 +28,7 @@ Use the *Cache Storage API* for network resources, things you'd access by reques
 Use *IndexedDB* to store structured data. This includes data that needs to be searchable or combinable in a NoSQL-like manner, or other data such as user-specific data that doesn't necessarily match a URL request. Note that IndexedDB isn't designed for full-text search.
 
 {% Aside 'caution' %}
-All storage, no matter how you use it, is tied not just to the PWA it is used for, but to the PWA's origin, too. Therefore, if you deploy more than one PWA to an origin (which is not recommended), keep in mind IndexedDB databases, cache storage, and the other browser storage will share quotas across all service workers and PWAs.
+All storage, no matter how you use it, is tied not just to the PWA it is used for, but to the PWA's origin, too. Therefore, if you deploy more than one PWA to an origin (which is not recommended), keep in mind that IndexedDB databases, cache storage, and the other browser storage will share quotas across all service workers and PWAs.
 {% endAside %}
 
 ## IndexedDB
