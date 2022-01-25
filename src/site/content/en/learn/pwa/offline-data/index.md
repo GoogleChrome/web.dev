@@ -78,7 +78,7 @@ Let's take a look at the object store that's just been created. After adding rec
 
 ### Adding data
 
-IndexedDB works with transactions. Transactions group actions together, so they happen as a unit. They help ensure the database is always in a consistent state. They're also critical, if you have multiple copies of your app running, at preventing simultaneous writing to the same data.
+IndexedDB uses transactions. Transactions group actions together, so they happen as a unit. They help ensure that the database is always in a consistent state. They're also critical, if you have multiple copies of your app running, for preventing simultaneous writing to the same data.
 To add data:
 
 1. Start a transaction again, but this time set the mode to `readwrite`.
