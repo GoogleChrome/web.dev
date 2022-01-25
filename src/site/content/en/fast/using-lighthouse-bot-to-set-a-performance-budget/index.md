@@ -155,7 +155,9 @@ Firebase, you have to authorize it. How do you do that? With a Firebase token.
 
 To generate the token run this command:
 
-<pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
+```bash
+firebase login:ci
+```
 
 It will open a new tab in a browser window so that Firebase can verify you.
 After that, look back at the console, and you'll see your freshly minted token.
