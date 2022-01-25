@@ -66,10 +66,6 @@ developers to place custom content in what was previously the browser-controlled
 
 </div>
 
-{% Aside %}
-Previously, this was erroneously listed as shipping in Chromium&nbsp;99.
-{% endAside %}
-
 ## How to use Window Controls Overlay
 
 ### Adding `window-controls-overlay` to the web app manifest
