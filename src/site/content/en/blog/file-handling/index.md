@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-12-21
+updated: 2022-01-25
 tags:
   - blog
   - capabilities
@@ -142,7 +142,7 @@ with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
 {% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
-[making your app installable](/progressive-web-apps/#installable). {% endAside %}
+[making your app installable](/progressive-web-apps/#make-it-installable). {% endAside %}
 
 ### The imperative part of the File Handling API
 

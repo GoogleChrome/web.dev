@@ -18,7 +18,7 @@ description: |2
   e que, de forma transparente, volta às abordagens legadas para lidar com arquivos.
 scheduled: verdadeiro
 date: 2020-07-27
-updated: 2021-01-27
+updated: 2022-01-25
 hero: image/admin/Y4wGmGP8P0Dc99c3eKkT.jpg
 tags:
   - blog
@@ -181,7 +181,7 @@ Você pode ver o código acima em ação em uma [demonstração](https://browser
 
 ## A biblioteca browser-fs-access em liberdade
 
-Em meu tempo livre, contribuo um pouquinho para um [PWA instalável](/progressive-web-apps/#installable) chamado [Excalidraw](https://excalidraw.com/), uma ferramenta de quadro branco que permite esboçar diagramas facilmente com uma sensação de desenho à mão. É totalmente responsivo e funciona bem em uma variedade de dispositivos, desde pequenos telefones celulares a computadores com telas grandes. Isso significa que ele precisa lidar com arquivos em todas as várias plataformas, independentemente de serem ou não compatíveis com a API de acesso ao sistema de arquivos. Isso o torna um ótimo candidato para a biblioteca browser-fs-access.
+Em meu tempo livre, contribuo um pouquinho para um [PWA instalável](/progressive-web-apps/#make-it-installable) chamado [Excalidraw](https://excalidraw.com/), uma ferramenta de quadro branco que permite esboçar diagramas facilmente com uma sensação de desenho à mão. É totalmente responsivo e funciona bem em uma variedade de dispositivos, desde pequenos telefones celulares a computadores com telas grandes. Isso significa que ele precisa lidar com arquivos em todas as várias plataformas, independentemente de serem ou não compatíveis com a API de acesso ao sistema de arquivos. Isso o torna um ótimo candidato para a biblioteca browser-fs-access.
 
 Posso, por exemplo, iniciar um desenho no meu iPhone, salvá-lo (tecnicamente: baixe-o, pois o Safari não oferece suporte à API de acesso ao sistema de arquivos) na pasta Downloads do meu iPhone, abra o arquivo no meu desktop (após transferi-lo do meu telefone), modifique o arquivo e substitua-o com minhas alterações ou mesmo salve-o como um novo arquivo.
 

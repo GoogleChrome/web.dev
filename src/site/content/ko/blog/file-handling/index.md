@@ -142,7 +142,7 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 
 이 예시는 쉼표로 구분된 값을 저장한 파일(`.csv`은 `/open-csv`에서, 스케일러블 벡터 그래픽스 파일(`.svg`)은 (`.svg`)에서,  `.grafr`, `.graf`, or `.graph` 중 하나의 확장자를 사용하는 임의로 만들어진 Grafr 파일 형식은 `/open-graf`에서 처리하는 가상의 애플리케이션입니다.
 
-{% Aside %} 이 선언이 적용되려면 애플리케이션이 설치되어 있어야 합니다. [앱을 설치 가능하게 만드는 방법](/progressive-web-apps/#installable)에 대한 바로 이 사이트의 기사 시리즈에서 자세히 알아볼 수 있습니다. {% endAside %}
+{% Aside %} 이 선언이 적용되려면 애플리케이션이 설치되어 있어야 합니다. [앱을 설치 가능하게 만드는 방법](/progressive-web-apps/#make-it-installable)에 대한 바로 이 사이트의 기사 시리즈에서 자세히 알아볼 수 있습니다. {% endAside %}
 
 ### 파일 처리 API의 필수 부분
 
