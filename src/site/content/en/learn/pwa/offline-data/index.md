@@ -174,7 +174,7 @@ async function persistData() {
 }
 ```
 
-You can also check if persistent storage is already granted in the current origin using the `persisted` function of the `navigator.storage` interface. Firefox asks the user with a permission dialog if the browser should grant persistent storage. Chromium-based browsers give or deny persistence based on a [heuristic](/persistent-storage/#chrome-and-other-chromium-based-browsers) to determine the importance of the content for the user. One criteria for Google Chrome is, for example, PWA installation: if the user has installed an icon for the PWA in the operating system, the browser may grant persistent storage as one of the important metrics.
+You can also check if persistent storage is already granted in the current origin by calling `StorageManager.persisted()`. Firefox requests permission from the user to use persistent storage. Chromium-based browsers give or deny persistence based on a [heuristic](/persistent-storage/#chrome-and-other-chromium-based-browsers) to determine the importance of the content for the user. One criteria for Google Chrome is, for example, PWA installation. If the user has installed an icon for the PWA in the operating system, the browser may grant persistent storage.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/W89sHSgKqkh9xV8nVD0C.png", alt="Mozilla Firefox asking the user for storage persistence permission.", width="800", height="279" %}
 
