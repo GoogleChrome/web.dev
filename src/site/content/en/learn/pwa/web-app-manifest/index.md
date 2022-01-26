@@ -162,6 +162,7 @@ Here's an example of a maskable icon rendered in a number of commonly used shape
 
 In the following image, if you use the icon at the left as a maskable icon, you will end up with poor results on devices when a shape mask is applied. 
 
+
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/kKuLmXu1wuztin157EeD.png", alt="An icon that is not suitable for a maskable icon.", width="800", height="533" %}
 
 This image could be made usable with more padding.

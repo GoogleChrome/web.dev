@@ -132,7 +132,7 @@ async function getData() {
 [Progressive Web Apps: IndexedDB](https://developers.google.com/codelabs/pwa-training/pwa03--indexeddb#0).
 {% endAside %}
 
-## The Storage Manager 
+## The storage manager 
 
 Knowing how to manage your PWA's storage is particularly important to storing and streaming network responses correctly. 
 
