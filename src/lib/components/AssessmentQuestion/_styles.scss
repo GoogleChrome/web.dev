@@ -9,7 +9,7 @@ web-question {
 
 .web-question__content {
   display: block;
-  flex: 1 1 0;
+  flex: 1;
   height: 0; // Lets content match viewport height minus assessment header/footer
   padding: 0 1.5rem 1.5rem;
   overflow-y: auto;
