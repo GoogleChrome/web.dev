@@ -154,7 +154,7 @@ if (navigator.storage && navigator.storage.estimate) {
 
 {% Glitch 'learn-pwa-offline-data-storage' %}
 
-In Chromium DevTools, you can see your site's quota and how much storage is used, broken down by what's using it, by opening the **Storage** section in the **Application** tab.
+In Chromium DevTools, you can see your site's quota and how much storage is used broken down by what's using it, by opening the **Storage** section in the **Application** tab.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/NAXXvUU099wqtSbzvt9m.png", alt="Chrome DevTools in Application, Clear Storage section", width="800", height="567" %}
 
