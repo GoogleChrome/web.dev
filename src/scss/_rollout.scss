@@ -77,6 +77,11 @@ web-response-mc {
 
 /// SITE HEADER SEARCH OVERRIDES
 .site-header__search {
+
+  .web-search__input {
+    background: get-utility-value('bg', 'core-bg');
+  }
+
   .web-search__input-wrapper,
   web-search-results {
     position: absolute;
@@ -90,6 +95,7 @@ web-response-mc {
   }
 
   .web-search-popout {
+    background: get-utility-value('bg', 'core-bg');
     height: unset;
     line-height: 1.4;
     border: 1px solid get-utility-value('color', 'stroke');
@@ -102,16 +108,17 @@ web-response-mc {
     }
   }
 
+  .web-search-popout__heading {
+    color: get-utility-value('color', 'mid-text');
+    font-size: get-size('base');
+    padding: 0.5rem $global-gutter-narrow;
+  }
+
   .web-search-popout__list {
     @extend .stack-nav;
 
     margin: 0;
     border-block-start: 1px solid get-utility-value('color', 'stroke');
-  }
-
-  .web-search-popout__heading {
-    font-size: get-size('base');
-    padding: 0.5rem $global-gutter-narrow;
   }
 
   .web-search__input {
