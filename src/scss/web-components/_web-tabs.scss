@@ -2,7 +2,12 @@
 /// --tabs-active-color and it will override the default, which is
 /// the primary color
 web-tabs {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+web-tabs:not(:defined) {
+  display: none;
 }
 
 .web-tabs__tablist {
@@ -49,4 +54,13 @@ web-tabs {
   );
 
   @include apply-utility('color', 'core-text');
+}
+
+.web-tabs__panel {
+  height: 100%;
+  overflow: auto;
+
+  code, pre {
+    height: 100%;
+  }
 }
