@@ -164,7 +164,7 @@ Firefox and Safari don't offer a summary screen for seeing all storage quota and
 
 You can ask the browser for persistent storage on compatible platforms to avoid automatic data eviction after inactivity or on storage pressure. If granted, the browser will never evict data from storage. This protection includes the service worker registration, IndexedDB databases, and files in cache storage. Realize that users are always in charge, and they can delete the storage at any time, even if the browser has granted persistent storage.
 
-To ask for persistent storage, call the `persist` method on the `storage` interface.
+To request persistent storage, call the `StorageManager.persist()`. As before, the `StorageManager` interface is access through the `navigator.storage` property.
 
 ```js
 async function persistData() {
