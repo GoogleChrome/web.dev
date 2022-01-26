@@ -83,9 +83,9 @@ class SnackbarContainer extends BaseElement {
 
     return html`
       <web-snackbar
-        .type=${this.type}
-        .open=${this.open}
-        .stacked=${isStacked}
+        .type="${this.type}"
+        .open="${this.open}"
+        .stacked="${isStacked}"
         .action="${action}"
       ></web-snackbar>
     `;

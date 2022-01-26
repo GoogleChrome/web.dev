@@ -1,5 +1,6 @@
 web-snackbar {
   --flow-space: #{get-space('size-1')};
+  visibility: hidden;
   display: block;
   padding: $global-gutter;
   background: get-color('shades-dim');
@@ -24,5 +25,9 @@ web-snackbar {
     inset: auto auto $global-gutter $global-gutter;
     border-radius: $global-radius-large;
     max-width: 30rem;
+  }
+
+  &[open] {
+    visibility: visible;
   }
 }
