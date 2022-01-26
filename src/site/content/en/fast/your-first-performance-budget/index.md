@@ -89,7 +89,7 @@ Let's take a highly specialized search engine, Doggos.com, as an example. Doggos
 
 ## Competitive analysis
 
-Once you've analyzed your own site, it's time to analyze your competitors sites. Comparing results from websites similar to yours is a great way to figure out a performance budget. Whether you are working on an established project or starting from scratch, this is an important step. You get competitive advantage when you are faster than your competitors.
+Once you've analyzed your own site, it's time to analyze your competitors' sites. Comparing results from websites similar to yours is a great way to figure out a performance budget. Whether you are working on an established project or starting from scratch, this is an important step. You get competitive advantage when you are faster than your competitors.
 
 If you are not sure which sites to look at, here are a few tools to try:
 
@@ -298,9 +298,9 @@ When you try to build a great site, **set Lighthouse performance score budget to
 
 ## Prioritize
 
-Ask yourself what level of interaction you expect on your site. If it's a news website, users primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.com visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
+Ask yourself what level of interaction you expect on your site. If it's a news website, users' primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.com visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
 
-Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
+Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
 
 <figure>
   {% Img src="image/admin/ycZwOrFNzjdjquriM9rJ.png", alt="Device distribution data from Chrome User Experience report", width="800", height="530" %}
