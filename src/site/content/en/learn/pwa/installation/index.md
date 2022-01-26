@@ -10,7 +10,7 @@ date: 2022-01-10
 Once the user installs your PWA, it will:
 
 - Have an icon in the launcher, home screen, start menu, or launchpad.
-- Appear when users search for your app's name.
+- Appear as a result when a user searches for the app on their device.
 - Have a separate window within the operating system.
 - Have support for specific capabilities.
 
