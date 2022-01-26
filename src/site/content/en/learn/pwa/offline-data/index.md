@@ -138,7 +138,7 @@ Knowing how to manage your PWA's storage is particularly important to storing an
 
 Storage capacity is shared among all storage options, including Cache Storage, IndexedDB, Web Storage, and even the service worker file and its dependencies. 
 However, the amount of storage available varies from browser to browser. You're not likely to run out; sites could store megabytes and even gigabytes of data on some browsers. Chrome, for instance, allows the browser to use up to 80% of the total disk space, and an individual origin can use up to 60% of the entire disk space. For browsers that support the Storage API, you can know how much storage is still available for your app, its quota, and its use.
-The following example uses the Storage API to get an estimate of quota and usage, then  calculates percentage of used, and remaining number of bytes.
+The following example uses the Storage API to get estimate quota and usage, then calculates the percentage of used and remaining bytes. Note that `navigator.storage` returns an instance of `StorageManager`. There is a separate `Storage` interface and it is easy to get them confused.
 
 ```js
 if (navigator.storage && navigator.storage.estimate) {
