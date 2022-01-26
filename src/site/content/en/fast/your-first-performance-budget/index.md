@@ -35,7 +35,7 @@ extensions that could interfere with the audit.
 
 {% Img src="image/admin/VUtkCadH9vjnKSzGzd0S.png", alt="Lighthouse panel in Chrome DevTools", width="800", height="637" %}
 
-Let's take a highly specialized search engine, doggos.io, as an example. Doggos.io aims to index all dog-related things on the internet, and its most important pages are the home and results pages. Here are the FCP and TTI numbers measured for the site on desktop and mobile.
+Let's take a highly specialized search engine, Doggos.com, as an example. Doggos.com aims to index all dog-related things on the internet, and its most important pages are the home and results pages. Here are the FCP and TTI numbers measured for the site on desktop and mobile.
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ Let's take a highly specialized search engine, doggos.io, as an example. Doggos.
         <td>6,690 ms</td>
       </tr>
     </tbody>
-    <caption>Desktop analysis of doggos.io</caption>
+    <caption>Desktop analysis of Doggos.com</caption>
   </table>
 </div>
 
@@ -83,7 +83,7 @@ Let's take a highly specialized search engine, doggos.io, as an example. Doggos.
         <td>7,870 ms</td>
       </tr>
     </tbody>
-    <caption>Mobile analysis of doggos.io</caption>
+    <caption>Mobile analysis of Doggos.com</caption>
   </table>
 </div>
 
@@ -124,7 +124,7 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
         <td bgcolor="yellow"><strong>3,150 ms<strong></td>
       </tr>
       <tr>
-        <td>doggos.io</td>
+        <td>Doggos.com</td>
         <td>1,800 ms</td>
         <td>6,500 ms</td>
       </tr>
@@ -139,14 +139,14 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
         <td>7,040 ms</td>
       </tr>
     </tbody>
-    <caption>Competitive analysis of doggos.io on 3G network</caption>
+    <caption>Competitive analysis of Doggos.com on 3G network</caption>
   </table>
 </div>
 
 <figure>
   {% Img src="image/admin/Mfzr0dmMxHij9KrJraHD.jpg", alt="Doggo at a computer", width="800", height="600" %}
   <figcaption>
-    Doggos.io seems to be doing okay on the FCP metric but seriously lagging behind in TTI
+    Doggos.com seems to be doing okay on the FCP metric but seriously lagging behind in TTI
   </figcaption>
 </figure>
 
@@ -174,13 +174,13 @@ There's room for improvement and a good guideline for that is the [20% rule](htt
         <td>2,520 ms</td>
       </tr>
     </tbody>
-    <caption>Performance budget that would get doggos.com ahead of the competition</caption>
+    <caption>Performance budget that would get Doggos.com ahead of the competition</caption>
   </table>
 </div>
 
 If you are trying to optimize an existing site that goal may seem impossible to reach. This is not a sign for you to give up. Start with small steps and set a budget at 20% faster than your current speed. Keep optimizing from there.
 
-For doggos.io, a revised budget could look like this.
+For Doggos.com, a revised budget could look like this.
 
 <div class="table-wrapper">
   <table>
@@ -208,7 +208,7 @@ For doggos.io, a revised budget could look like this.
         <td>2,520 ms</td>
       </tr>
     </tbody>
-    <caption>Revised doggos.io performance budget</caption>
+    <caption>Revised Doggos.com performance budget</caption>
   </table>
 </div>
 
