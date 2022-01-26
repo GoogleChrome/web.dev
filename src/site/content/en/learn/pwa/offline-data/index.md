@@ -172,7 +172,6 @@ async function persistData() {
     const result = await navigator.storage.persist();
     console.log(`Data persisted: ${result}`);
 }
-
 ```
 
 You can also check if persistent storage is already granted in the current origin using the `persisted` function of the `navigator.storage` interface. Firefox asks the user with a permission dialog if the browser should grant persistent storage. Chromium-based browsers give or deny persistence based on a [heuristic](/persistent-storage/#chrome-and-other-chromium-based-browsers) to determine the importance of the content for the user. One criteria for Google Chrome is, for example, PWA installation: if the user has installed an icon for the PWA in the operating system, the browser may grant persistent storage as one of the important metrics.
