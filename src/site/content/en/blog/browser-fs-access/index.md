@@ -12,7 +12,7 @@ description: |
   and that transparently falls back to legacy approaches for dealing with files.
 scheduled: true
 date: 2020-07-27
-updated: 2021-01-27
+updated: 2022-01-25
 hero: image/admin/Y4wGmGP8P0Dc99c3eKkT.jpg
 tags:
   - blog
@@ -251,7 +251,7 @@ the demo cannot be embedded in this article.
 ## The browser-fs-access library in the wild
 
 In my free time, I contribute a tiny bit to an
-[installable PWA](/progressive-web-apps/#installable)
+[installable PWA](/progressive-web-apps/#make-it-installable)
 called [Excalidraw](https://excalidraw.com/),
 a whiteboard tool that lets you easily sketch diagrams with a hand-drawn feel.
 It is fully responsive and works well on a range of devices from small mobile phones to computers with large screens.

@@ -191,10 +191,13 @@ redirects:
     destination: /progressive-web-apps/
 
   - source: /installable
-    destination: /progressive-web-apps/#installable
+    destination: /progressive-web-apps/#make-it-installable
 
   - source: /discover-installable
-    destination: /progressive-web-apps/#installable
+    destination: /progressive-web-apps/#make-it-installable
+
+  - source: /progressive-web-apps/#installable
+    destination: /progressive-web-apps/#make-it-installable
 
   # Redirect for spec name changes
 

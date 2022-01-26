@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 Description: 将应用程序注册为操作系统的文件处理程序并使用适当的应用程序打开文件。
 date: 2020-10-22
-updated: 2021-12-03
+updated: 2022-01-25
 tags:
   - blog
   - capabilities
@@ -142,7 +142,7 @@ if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
 
 这是一个假设的应用程序，它可以处理 `/open-csv` 中的逗号分隔值文件 `.csv` )、`/open-svg` 中的可缩放矢量图形文件 (`.svg`)，以及 `/open-graf` 中将 `.grafr`、`.graf` 或 `.graph` 作为扩展名的 Grafr 生成文件格式。
 
-{% Aside %} 必须安装应用程序才能让声明生效。您可以在本站点上的[让应用程序可安装](/progressive-web-apps/#installable)系列文章中了解更多信息。{% endAside %}
+{% Aside %} 必须安装应用程序才能让声明生效。您可以在本站点上的[让应用程序可安装](/progressive-web-apps/#make-it-installable)系列文章中了解更多信息。{% endAside %}
 
 ### 文件处理 API 的必要部分
 
