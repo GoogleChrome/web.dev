@@ -31,9 +31,9 @@ questions:
     correctAnswers: "1,2,3"
     stem: Which of the following `background-position` declarations are valid?
     options:
-      - content: '`background-position: 25% bottom`'
+      - content: '`background-position: 50% left`'
         rationale: |
-          When CSS values are used alongside keywords, it must be preceded by a keyword.
+          When CSS values are used with keywords, the order of the values matters.
       - content: '`background-position: top right 33%`'
         rationale: |
           This positions a background image to the very top of a box and 33% from the right edge of the box.
