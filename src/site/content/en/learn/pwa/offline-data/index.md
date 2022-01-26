@@ -162,7 +162,7 @@ Firefox and Safari don't offer a summary screen for seeing all storage quota and
 
 ### Data persistence
 
-We can ask the browser for persistent storage on compatible platforms to avoid automatic data eviction after inactivity or on storage pressure. In this case, if granted, the browser will never evict the storage automatically, including service worker registration, IndexedDB databases, and files in cache storage. Users are always in charge, and they can delete the storage at any time through a setting, even if the browser has granted persistent storage.
+You can ask the browser for persistent storage on compatible platforms to avoid automatic data eviction after inactivity or on storage pressure. If granted, the browser will never evict data from storage. This protection includes the service worker registration, IndexedDB databases, and files in cache storage. Realize that users are always in charge, and they can delete the storage at any time, even if the browser has granted persistent storage.
 
 To ask for persistent storage, call the `persist` method on the `storage` interface.
 
