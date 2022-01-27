@@ -25,7 +25,7 @@ To ensure that users of all browsers can use your application, you need to figur
 Let's walk through those steps by picking some arbitrary feature set as an example. Let's say I've identified that I want to use SIMD, threads, and exception handling in my library for size and performance reasons. Their [browser support](https://webassembly.org/roadmap/) is as follows:
 
 <figure>
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2HAGqxkbSoNhK03itXBK.png", alt="", width="800", height="813" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2HAGqxkbSoNhK03itXBK.png", alt="A table showing browser support of the chosen features.", width="800", height="813" %}
   <figcaption>
     View this feature table on <a href="https://webassembly.org/roadmap/">webassembly.org/roadmap</a>.
   </figcaption>
