@@ -101,9 +101,9 @@ function Aside(content, type = 'note') {
         utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
         break;
 
-      case 'attention':
+      case 'important':
         icon = 'lightbulb.svg';
-        title = i18n(`i18n.common.attention`, locale);
+        title = i18n(`i18n.common.important`, locale);
         utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
         break;
 
