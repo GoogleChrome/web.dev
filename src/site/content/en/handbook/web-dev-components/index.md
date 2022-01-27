@@ -119,16 +119,16 @@ Use the objective aside to define the goal of a process described in the body
 copy.
 {% endAside %}
 
-### Gotcha asides
+### Attention asides
 
 ```text
-{% raw %}&#123;% Aside 'gotchas' %&#125;
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% raw %}&#123;% Aside 'attention' %&#125;
+Use the attention aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 &#123;% endAside %&#125;{% endraw %}
 ```
 
-{% Aside 'gotchas' %}
+{% Aside 'attention' %}
 Use the gotcha aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 {% endAside %}
@@ -169,7 +169,7 @@ Default banners can be added to site templates (for example, landing pages)
 to provide timely information to users (for example, an alert about an
 upcoming conference).
 Don't use default banners in the body of a post;
-instead, use the body variant, below.
+instead, use the Aside component.
 
 ```text
 {% raw %}{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}{% endraw %}
@@ -190,18 +190,10 @@ instead, use the body variant, below.
 {% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
-
-### Body banners
-
-```text
-{% raw %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endraw %}
-```
-
-{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
+{% Banner %}This is a neutral banner. It supports Markdown.{% endBanner %}
 
 ## Block quotes
 

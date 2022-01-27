@@ -18,10 +18,10 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %} This is an API guide with detailed usage examples for the **Reporting
+{% Aside 'caution' %} This is an API guide with detailed usage examples for the **Reporting
 API (v1)**, which uses the `Reporting-Endpoints` header. If you're already using the legacy
 Reporting API (`Report-To` header), head over to the [migration post](/reporting-api-migration)
-instead. {% endBanner %}
+instead. {% endAside %}
 
 Some errors only occur in production. You won't see them locally or during development because
 **real users**, **real networks**, and **real devices** change the game. The Reporting API helps
@@ -156,13 +156,13 @@ Example report
 The Reporting API can be configured to help you monitor many types of interesting warnings or issues
 that happen throughout your site:
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 [Network Error Logging](https://w3c.github.io/network-error-logging/) isn't listed because it isn't
 supported in the new version of the API. Check the [migration
 guide](/reporting-api-migration/#network-error-logging) for details.
 
-{% endBanner %}
+{% endAside %}
 
 <div>
   <table>
@@ -594,11 +594,11 @@ Document-Policy: document-write=?0;report-to=main-endpoint;
 # Deprecation reports don't need an explicit endpoint because these reports are always sent to the default endpoint
 ```
 
-{% Banner 'warning', 'body' %} Getting the `report-to` syntax right can be tricky, because not all policies use
+{% Aside  'warning' %} Getting the `report-to` syntax right can be tricky, because not all policies use
 the same header structure. Depending on the policy, the right syntax may be
 `report-to=main-endpoint` or `report-to main-endpoint`. Head over to the
-[demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples. {%
-endBanner %}
+[demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples.
+{% endAside %}
 
 ### Example code
 

@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **2021년 6월 1일:** CLS 구현이 변경되었습니다. 변경 이유에 대해 자세히 알아보려면 [진화하는 CLS 메트릭](/evolving-cls)을 확인하시기 바랍니다. {% endBanner %}
+{% Aside 'caution' %} **2021년 6월 1일:** CLS 구현이 변경되었습니다. 변경 이유에 대해 자세히 알아보려면 [진화하는 CLS 메트릭](/evolving-cls)을 확인하시기 바랍니다. {% endAside %}
 
 {% Aside 'key-term' %} 누적 레이아웃 이동(CLS)은 사용자가 예상치 못한 레이아웃 이동을 경험하는 빈도를 수량화하므로 [시각적 안정성](/user-centric-performance-metrics/#types-of-metrics)을 측정할 때 중요한 사용자 중심 메트릭입니다. CLS가 낮으면 [우수](/user-centric-performance-metrics/#questions)한 사용자 경험을 보장하는 데 도움이 됩니다. {% endAside %}
 

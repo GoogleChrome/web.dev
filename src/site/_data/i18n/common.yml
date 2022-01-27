@@ -70,6 +70,15 @@ gotchas:
   ru: Обратите внимание
   zh: 问题
 
+attention:
+  en: Attention
+  es: Atención
+  ja: 注意
+  ko: 주목
+  pt: Atenção
+  ru: Внимание
+  zh: 注意力
+
 do:
   en: Do
   es: Hacer
@@ -152,5 +161,5 @@ all:
 see_all:
   en: See all
 
-more: 
+more:
   en: More

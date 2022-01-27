@@ -10,7 +10,7 @@ web_lighthouse:
   - audio-caption
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated.{% endBanner %}
+{% Aside 'caution' %}This audit has been deprecated.{% endAside %}
 
 Captions make audio elements usable for deaf or hearing-impaired users,
 providing critical information such as who is talking, what they're saying,

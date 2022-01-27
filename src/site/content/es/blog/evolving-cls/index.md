@@ -14,7 +14,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'info', 'body' %} **2 de junio de 2021:** La actualización de CLS descrita en esta publicación ya está disponible en todas las apariencias de las herramientas web de Chrome. Consulte [La evolución de Cumulative Layout Shift: Cambio Acumulativo del diseño en las herramientas web](/cls-web-tooling/) para obtener más información. {% endBanner %}
+{% Aside %} **2 de junio de 2021:** La actualización de CLS descrita en esta publicación ya está disponible en todas las apariencias de las herramientas web de Chrome. Consulte [La evolución de Cumulative Layout Shift: Cambio Acumulativo del diseño en las herramientas web](/cls-web-tooling/) para obtener más información. {% endAside %}
 
 Nosotros (el equipo de métricas de velocidad de Chrome) recientemente presentamos nuestra investigación inicial sobre las [opciones para hacer que la métrica CLS sea más justa para las páginas que están abiertas durante mucho tiempo](/better-layout-shift-metric/). Recibimos muchos comentarios muy útiles y, después de completar el análisis a gran escala, finalizamos el cambio que planeamos realizar a la métrica: **Ventana de sesión máxima con un intervalo de 1 segundo, con un límite de 5 segundos**.
 

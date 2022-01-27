@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **1º de junho de 2021:** A implementação da CLS mudou. Para saber mais sobre os motivos por trás da mudança, veja [Evoluindo a métrica CLS](/evolving-cls). {% endBanner %}
+{% Aside 'caution' %} **1º de junho de 2021:** A implementação da CLS mudou. Para saber mais sobre os motivos por trás da mudança, veja [Evoluindo a métrica CLS](/evolving-cls). {% endAside %}
 
 {% Aside 'key-term' %} Cumulative Layout Shift (CLS), ou Mudança Cumulativa de Layout, é uma métrica importante e centrada no usuário para medir a [estabilidade visual](/user-centric-performance-metrics/#types-of-metrics) porque ajuda a quantificar a frequência com que os usuários experimentam mudanças inesperadas de layout: uma CLS baixa ajuda a garantir que a página seja [agradável](/user-centric-performance-metrics/#questions). {% endAside %}
 

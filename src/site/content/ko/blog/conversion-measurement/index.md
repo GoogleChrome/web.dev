@@ -13,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} Conversion Measurement API는 *Attribution Reporting API*로 이름이 바뀌고 더 많은 기능을 제공합니다.
+{% Aside 'caution' %} Conversion Measurement API는 *Attribution Reporting API*로 이름이 바뀌고 더 많은 기능을 제공합니다.
 
 - [Chrome 91](https://chromestatus.com/features/schedule) [이하에서 (Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md))를 실험하고 있다면 이 게시물을 읽고 API 사용 방법에 대한 자세한 내용, 사용 사례 및 지침을 확인하세요.
 - Chrome(원본 평가판)에서 실험에 사용할 수 있는 이 API(속성 보고)의 다음 버전에 관심이 있다면 [메일링 리스트에 가입](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev)하여 사용 가능한 실험에 대한 업데이트를 받으세요.
 
-{% endBanner %}
+{% endAside %}
 
 광고 캠페인의 효과를 측정하기 위해 광고주와 게시자는 광고 클릭 또는 조회가 구매 또는 가입과 같은 [전환](/digging-into-the-privacy-sandbox/#conversion)으로 이어지는 시점을 알아야 합니다. 지금까지는 이 목적에 **제3자 쿠키**가 사용되었습니다. 이제 Event Conversion Measurement API를 사용하면 여러 사이트에서 사용자를 인식하는 데 사용할 수 있는 메커니즘을 사용하지 않고도 게시자 웹사이트의 이벤트와 광고주 사이트의 후속 전환 간의 상관 관계를 파악할 수 있습니다.
 
-{% Banner 'info', 'body' %} **이 제안에 여러분의 피드백이 필요합니다!** 의견이 있으면 API 제안 저장소에 [이슈를 생성](https://github.com/WICG/conversion-measurement-api/issues/)해 주세요. {% endBanner %}
+{% Aside %} **이 제안에 여러분의 피드백이 필요합니다!** 의견이 있으면 API 제안 저장소에 [이슈를 생성](https://github.com/WICG/conversion-measurement-api/issues/)해 주세요. {% endAside %}
 
 {% Aside %} 이 API는 제3자 쿠키 또는 기타 사이트 간 추적 메커니즘 없이 제3자 사용 사례를 충족하기 위한 일련의 제안인 개인정보 보호 샌드박스의 일부입니다. 모든 제안에 대한 개요는 [개인정보 보호 샌드박스 심층 해부](/digging-into-the-privacy-sandbox)를 참조하세요. {% endAside %}
 
@@ -261,7 +261,7 @@ Chrome에서 보고서 예약은 다음과 같이 작동합니다.
 
 ## 예시
 
-{% Banner 'info', 'body' %} 실제 작동을 확인하려면 [데모](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️를 시도하고 해당하는 [코드](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)를 확인하세요. {% endBanner %}
+{% Aside %} 실제 작동을 확인하려면 [데모](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️를 시도하고 해당하는 [코드](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)를 확인하세요. {% endAside %}
 
 API가 전환을 기록하고 보고하는 방법은 다음과 같습니다. 이것이 현재 API에서 클릭-투-전환 흐름이 작동하는 방식입니다. 이 API의 향후 버전에서는 [달라질 수 있습니다](#use-cases).
 

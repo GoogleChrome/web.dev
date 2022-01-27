@@ -11,11 +11,11 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 Most of the time, `http://localhost` does what you need: in browsers, it mostly behaves like HTTPS 🔒. That's why some APIs that won't work on a deployed HTTP site, will work on `http://localhost`.
 
 What this means is that you need to use HTTPS locally **only in special cases** (see [When to use HTTPS for local development](/when-to-use-local-https)), like custom hostnames or Secure cookies across browsers. Keep reading if that's you!
-{% endBanner %}
+{% endAside %}
 
 _In this post, statements about `localhost` are valid for `127.0.0.1` and `[::1]` as well, since they both describe the local computer address, also called "loopback address". Also, to keep things simple, the port number isn't specified._
 _So when you see `http://localhost`, read it as `http://localhost:{PORT}` or `http://127.0.0.1:{PORT}`._
@@ -72,13 +72,13 @@ The mkcert we're interested in in this post is [this one](https://github.com/Fil
 
 ### Caution
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 - Never export or share the file `rootCA-key.pem` mkcert creates automatically when you run `mkcert -install`. **An attacker getting hold of this file can create on-path attacks for any site you may be visiting**. They could intercept secure requests from your machine to any site—your bank, healthcare provider, or social networks. If you need to know where `rootCA-key.pem` is located to make sure it's safe, run `mkcert -CAROOT`.
 - Only use mkcert for **development purposes**—and by extension, never ask end-users to run mkcert commands.
 - Development teams: all members of your team should install and run mkcert **separately** (not store and share the CA and certificate).
 
-{% endBanner %}
+{% endAside %}
 
 ### Setup
 
@@ -236,11 +236,11 @@ To run your local development site with HTTPS:
 3.  Configure your development server to use HTTPS and the certificate you've created in Step 2.
 4.  ✨ You're done! You can now access `https://{YOUR HOSTNAME}` in your browser, without warnings
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 Do this only for **development purposes** and **never export or share** the file `rootCA-key.pem` (if you need to know where this file is located to make sure it's safe, run `mkcert -CAROOT`).
 
-{% endBanner %}
+{% endAside %}
 
 {% endDetails %}
 

@@ -13,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} A Conversion Measurement API será renomeada para *Attribution Reporting API* e oferecerá mais recursos.
+{% Aside 'caution' %} A Conversion Measurement API será renomeada para *Attribution Reporting API* e oferecerá mais recursos.
 
 - Se você estiver experimentando a [Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md) no [Chrome 91](https://chromestatus.com/features/schedule) ou menos, leia este artigo para encontrar mais detalhes, casos de uso e instruções sobre como usar a API.
 - Se você estiver interessado na próxima iteração desta API (Attribution Reporting), que estará disponível para experimentação no Chrome (ensaio de origem), [participe da lista de e-mail](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) para ser informado de novidades sobre os experimentos disponíveis.
 
-{% endBanner %}
+{% endAside %}
 
 Para medir a eficácia das campanhas publicitárias, os anunciantes e editores precisam saber quando um clique ou visualização no anúncio leva a uma [conversão](/digging-into-the-privacy-sandbox/#conversion), como uma compra ou inscrição. Historicamente, isto é feito com **cookies de terceiros**. Agora, a Event Conversion Measurement API permite a correlação de um evento no site de um editor com uma conversão subsequente no site de um anunciante, sem envolver mecanismos que poderiam ser usados para reconhecer um usuário entre sites.
 
-{% Banner 'info', 'body' %} **Esta proposta precisa de seu feedback!** Se você quiser enviar comentários, [crie um issue](https://github.com/WICG/conversion-measurement-api/issues/) no repositório da proposta de API. {% endBanner %}
+{% Aside %} **Esta proposta precisa de seu feedback!** Se você quiser enviar comentários, [crie um issue](https://github.com/WICG/conversion-measurement-api/issues/) no repositório da proposta de API. {% endAside %}
 
 {% Aside %} Esta API é parte do Privacy Sandbox, uma série de propostas para satisfazer os casos de uso de terceiros sem cookies de terceiros ou outros mecanismos de rastreamento cross-site. Veja [Explorando a Privacy Sandbox](/digging-into-the-privacy-sandbox) para uma visão geral de todas as propostas. {% endAside %}
 
@@ -269,7 +269,7 @@ Consulte [Envio de relatórios programados](https://github.com/WICG/conversion-m
 
 ## Exemplo
 
-{% Banner 'info', 'body' %} Para ver este exemplo em ação, experimente a [demo](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ e veja o [código](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement) correspondente. {% endBanner %}
+{% Aside %} Para ver este exemplo em ação, experimente a [demo](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ e veja o [código](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement) correspondente. {% endAside %}
 
 Veja como a API registra e relata uma conversão. Observe que é dessa forma que um fluxo click-to-convert funcionaria com a API atual. As iterações futuras desta API [podem ser diferentes](#use-cases) .
 

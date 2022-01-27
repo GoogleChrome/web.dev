@@ -13,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} La API para evaluar conversiones se llamará *API de informes de atribuciones* y ofrecerá más funciones.
+{% Aside 'caution' %} La API para evaluar conversiones se llamará *API de informes de atribuciones* y ofrecerá más funciones.
 
 - Si está experimentando con la ([API para evaluar conversiones](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md)) en [Chrome 91](https://chromestatus.com/features/schedule) y versiones posteriores, lea esta publicación para encontrar más información, casos de uso e instrucciones sobre cómo utilizar la API.
 - Si está interesado en la próxima versión de esta API (Informes de atribuciones), que estará disponible para experimentar en Chrome (prueba de origen), [únase a la lista de correo](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) para recibir actualizaciones sobre los experimentos disponibles.
 
-{% endBanner %}
+{% endAside %}
 
 Para medir la eficacia de las campañas publicitarias, los anunciantes y los editores deben saber cuándo un clic en un anuncio o una visualización genera una [conversión](/digging-into-the-privacy-sandbox/#conversion), como una compra o un registro. Históricamente, esto se ha hecho con **cookies de terceros**. Ahora, la API para evaluar conversiones de eventos permite la correlación de un evento en el sitio web de un editor con una conversión posterior en el sitio de un anunciante sin involucrar mecanismos que se puedan utilizar para reconocer a un usuario en distintos sitios.
 
-{% Banner 'info', 'body' %} **Esta propuesta necesita sus comentarios.** Si tiene comentarios, [cree un problema](https://github.com/WICG/conversion-measurement-api/issues/) en el repositorio de la propuesta de la API. {% endBanner %}
+{% Aside %} **Esta propuesta necesita sus comentarios.** Si tiene comentarios, [cree un problema](https://github.com/WICG/conversion-measurement-api/issues/) en el repositorio de la propuesta de la API. {% endAside %}
 
 {% Aside %} Esta API es parte de Privacy Sandbox, una serie de propuestas para satisfacer los casos de uso de terceros sin cookies de terceros u otros mecanismos de seguimiento entre sitios. Consulte [Profundizar en la zona de pruebas de privacidad](/digging-into-the-privacy-sandbox) para obtener una descripción general de todas las propuestas. {% endAside %}
 
@@ -260,7 +260,7 @@ Consulte [Envío de informes programados](https://github.com/WICG/conversion-mea
 
 ## Ejemplo
 
-{% Banner 'info', 'body' %} Para ver esto en acción, pruebe la [demostración](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ y vea el [código](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement) correspondiente. {% endBanner %}
+{% Aside %} Para ver esto en acción, pruebe la [demostración](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ y vea el [código](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement) correspondiente. {% endAside %}
 
 Así es como la API registra e informa de una conversión. Tenga en cuenta que así es como funcionaría un flujo de conversión a través de un clic con la API actual. Las futuras iteraciones de esta API [pueden ser diferentes](#use-cases).
 

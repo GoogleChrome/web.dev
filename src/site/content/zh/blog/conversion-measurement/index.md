@@ -13,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} 事件转化测量 API 将更名为*归因报告 API* 并提供更多功能。
+{% Aside 'caution' %} 事件转化测量 API 将更名为*归因报告 API* 并提供更多功能。
 
 - 如果您正在 [Chrome 91](https://chromestatus.com/features/schedule) 及更低版本中尝试使用（[转化测量 API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md)），请阅读本篇博文，了解该 API 使用方式的更多详情、用例和说明。
 - 如果您对即将在 Chrome 中投入实验（原始试验）的该 API 的下一次迭代（归因报告）感兴趣，请[加入邮件列表](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev)获取可用实验的相关更新。
 
-{% endBanner %}
+{% endAside %}
 
 为了测量广告活动的有效性，广告商和发布商需要知道哪些广告点击或查看带来了[转化](/digging-into-the-privacy-sandbox/#conversion)（例如购买或注册）。长久以来，这都是通过**第三方 cookie** 来实现的。现在，事件转化测量 API 能够将发布商网站上的事件与广告商网站上的后续转化相关联，而无需涉及可用于跨站识别用户的机制。
 
-{% Banner 'info', 'body' %} **本提案需要您的反馈！**如果您希望发表意见，请在 API 提案的存储库中[创建问题](https://github.com/WICG/conversion-measurement-api/issues/)。{% endBanner %}
+{% Aside %} **本提案需要您的反馈！**如果您希望发表意见，请在 API 提案的存储库中[创建问题](https://github.com/WICG/conversion-measurement-api/issues/)。{% endAside %}
 
 {% Aside %}该 API 是隐私沙盒的一部分，这是一系列满足第三方用例的提案，同时无需第三方 cookie 或其他跨站跟踪机制。请参阅[深入挖掘隐私沙盒](/digging-into-the-privacy-sandbox)，了解有关全部提案的概述。{% endAside %}
 
@@ -259,7 +259,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 ## 示例
 
-{% Banner 'info', 'body' %} 如需查看实际效果，请试用[演示版](https://goo.gle/demo-event-level-conversion-measurement-api)⚡️ 并查看相应的[代码](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)。{% endBanner %}
+{% Aside %} 如需查看实际效果，请试用[演示版](https://goo.gle/demo-event-level-conversion-measurement-api)⚡️ 并查看相应的[代码](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)。{% endAside %}
 
 以下是 API 记录和报告转化的方式。请注意，这是当前 API 的点击转化流程工作方式。此 API 的未来迭代[可能会有所不同](#use-cases)。
 

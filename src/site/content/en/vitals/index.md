@@ -13,10 +13,10 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'info', 'body' %}
+{% Aside %}
 **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
 implementations of common UX patterns optimized for Core Web Vitals.
-{% endBanner %}
+{% endAside %}
 
 Optimizing for quality of user experience is key to the long-term success of any
 site on the web. Whether you're a business owner, marketer, or developer, Web

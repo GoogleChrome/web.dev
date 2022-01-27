@@ -92,8 +92,8 @@ deciding to split text or not. The CSS media query will be used to withhold
 transitions and animations, while the JavaScript media query will be used to
 withhold the HTML manipulation.
 
-{% Banner 'neutral' %} **Question:** What else should be used to withhold split
-text animations?{% endBanner %}
+{% Aside %} **Question:** What else should be used to withhold split
+text animations?{% endAside %}
 
 
 #### Preparing the CSS conditional

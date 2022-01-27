@@ -11,9 +11,9 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %} La mayoría de las veces, `http://localhost` hace lo que necesitas: en los navegadores, se comporta principalmente como HTTPS 🔒. Es por eso que algunas API que no funcionarán en un sitio que utiliza  HTTP, funcionarán en `http://localhost`.
+{% Aside 'caution' %} La mayoría de las veces, `http://localhost` hace lo que necesitas: en los navegadores, se comporta principalmente como HTTPS 🔒. Es por eso que algunas API que no funcionarán en un sitio que utiliza  HTTP, funcionarán en `http://localhost`.
 
-Lo que esto significa es que debes de usar HTTPS localmente **solo en casos especiales** (consulta [Cuándo usar HTTPS en el desarrollo local](/when-to-use-local-https)), como por ejemplo, nombres de host personalizados o asegurar cookies en todos los navegadores. ¡Sigue leyendo si esto se te hace conocido! {% endBanner %}
+Lo que esto significa es que debes de usar HTTPS localmente **solo en casos especiales** (consulta [Cuándo usar HTTPS en el desarrollo local](/when-to-use-local-https)), como por ejemplo, nombres de host personalizados o asegurar cookies en todos los navegadores. ¡Sigue leyendo si esto se te hace conocido! {% endAside %}
 
 *En esta publicación, las declaraciones sobre el `localhost` son válidas para `127.0.0.1` y `[::1]`, ya que ambas describen la dirección de la computadora local, a esta tambien se le conoce como "dirección del loopback". Además, para simplificar las cosas, no se especifica el número de puerto.**Entonces, cuando veas `http://localhost`, léelo como `http://localhost:{PORT}` o como `http://127.0.0.1:{PORT}`.*
 
@@ -46,13 +46,13 @@ Muchos sistemas operativos pueden incluir bibliotecas para producir certificados
 
 ### Precaución
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 - Nunca exportes ni compartas el archivo `rootCA-key.pem` que mkcert crea automáticamente cuando ejecutas `mkcert-install`. **Un atacante que se apodere de este archivo puede crear ataques en ruta para cualquier sitio que el esté visitando**. Ellos podrían interceptar solicitudes seguras desde tu máquina a cualquier sitio: tu banco, proveedor de atención médica o redes sociales. Si necesitas saber dónde se encuentra el `rootCA-key.pem` para asegurarte de que sea seguro, ejecuta `mkcert-CAROOT`.
 - Utiliza solo mkcert para **fines de desarrollo** y, por extensión, nunca le pidas a los usuarios finales que ejecuten comandos de mkcert.
 - Equipos de desarrollo: todos los miembros de tu equipo deben instalar y ejecutar mkcert por **separado** (no almacenar y compartir la CA y el certificado).
 
-{% endBanner %}
+{% endAside %}
 
 ### Configuración
 
@@ -202,11 +202,11 @@ Para ejecutar tu sitio de desarrollo local con HTTPS:
 
 4. ✨ ¡Ya terminaste! Ahora puedes acceder a `https://{YOUR HOSTNAME}` en tu navegador, sin advertencias
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 Solo deberías de hacer esto con **fines de desarrollo** y **nunca exportes o compartas** el archivo de `rootCA-key.pem` (si necesitas saber dónde se encuentra este archivo para asegurarse de que sea seguro, ejecuta `mkcert -CAROOT`).
 
-{% endBanner %}
+{% endAside %}
 
 {% endDetails %}
 

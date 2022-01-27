@@ -45,12 +45,12 @@ He dividido los aspectos de este componente en las siguientes secciones:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/h6LZhScslprBcFol4gGp.png", alt="Contornos coloridos y superposiciones de espacios que ayudan a mostrar todos los cuadros que componen el diseño de configuración", width="800", height="563" %}
 
-{% Banner 'neutral' %} Para resaltar tus diseños de cuadrícula:
+{% Aside %} Para resaltar tus diseños de cuadrícula:
 
 1. Abre Chrome DevTools usando `cmd+opt+i` o `ctrl+alt+i`.
 2. Selecciona la pestaña de Diseño junto a la pestaña de Estilos.
 3. En la sección de Cuadrícula, marca todos los diseños.
-4. Cambia los colores de todos los diseños. {% endBanner %}
+4. Cambia los colores de todos los diseños. {% endAside %}
 
 ### Solo por espacio
 

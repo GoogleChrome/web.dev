@@ -14,12 +14,12 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **1 de junio de 2021:** la implementación de CLS cambió. Para obtener más información sobre las razones detrás del cambio, consulte [Evolución de la métrica CLS](/evolving-cls) . {% endBanner %}
+{% Aside 'caution' %} **1 de junio de 2021:** la implementación de CLS cambió. Para obtener más información sobre las razones detrás del cambio, consulte [Evolución de la métrica CLS](/evolving-cls) . {% endAside %}
 
-{% Banner 'info', 'body' %}
+{% Aside %}
   **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
   implementations of common UX patterns optimized for Core Web Vitals.
-{% endBanner %}
+{% endAside %}
 
 {% Aside 'key-term' %} Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS)  es una métrica importante centrada en el usuario para medir [la estabilidad visual](/user-centric-performance-metrics/#types-of-metrics) porque ayuda a cuantificar la frecuencia con la que los usuarios experimentan cambios de diseño inesperados; un CLS bajo ayuda a garantizar que la página sea [agradable](/user-centric-performance-metrics/#questions) . {% endAside %}
 

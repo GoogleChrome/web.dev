@@ -14,16 +14,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} Conversion Measurement API будет переименован в *Attribution Reporting API* и получит больше функций.
+{% Aside 'caution' %} Conversion Measurement API будет переименован в *Attribution Reporting API* и получит больше функций.
 
 - Если вы экспериментируете с [Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md) в [Chrome 91](https://chromestatus.com/features/schedule) и ниже, то в этой публикации вы найдете более подробную информацию, варианты использования и инструкции к данному API.
 - Если вас интересует следующая версия этого API (Attribution Reporting), которая будет доступна для экспериментов в Chrome (как пробная версия источника), [присоединяйтесь к списку рассылки](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev), чтобы получать новости о доступных экспериментах.
 
-{% endBanner %}
+{% endAside %}
 
 Для измерения эффективности рекламных кампаний рекламодатели и издатели должны знать, когда клик на объявлении или просмотр приводит к [конверсии](/digging-into-the-privacy-sandbox/#conversion), например к покупке товара или регистрации аккаунта. Традиционно это выполнялось с помощью **сторонних файлов cookie**. Теперь же Event Conversion Measurement API позволяет сопоставить событие на сайте издателя с последующей конверсией на сайте рекламодателя без использования механизмов узнавания пользователя на разных сайтах.
 
-{% Banner 'info', 'body' %} **Нам важны отзывы об этом предложении!** Если у вас есть комментарии, [создайте тему](https://github.com/WICG/conversion-measurement-api/issues/) в репозитории предложения API. {% endBanner %}
+{% Aside %} **Нам важны отзывы об этом предложении!** Если у вас есть комментарии, [создайте тему](https://github.com/WICG/conversion-measurement-api/issues/) в репозитории предложения API. {% endAside %}
 
 {% Aside %} Этот API входит в тестовую среду конфиденциальности (Privacy Sandbox)—серию предложений для третьих лиц без использования сторонних файлов cookie и других механизмов межсайтового отслеживания. Обзор всех предложений см. в статье [«Углубляемся в тестовую среду конфиденциальности»](/digging-into-the-privacy-sandbox). {% endAside %}
 
@@ -260,7 +260,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 ## Пример
 
-{% Banner 'info', 'body' %} Чтобы увидеть, как всё это работает на практике, запустите [демоверсию](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ и изучите соответствующий [код](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {% endBanner %}
+{% Aside %} Чтобы увидеть, как всё это работает на практике, запустите [демоверсию](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ и изучите соответствующий [код](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {% endAside %}
 
 Вот как API регистрирует конверсию и сообщает о ней. Обратите внимание, что поток событий между кликом и конверсией относится только к текущей версии API. Будущие версии этого API [могут отличаться](#use-cases).
 
