@@ -866,7 +866,7 @@ contributors deserve special recognition!
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=520391
 [cr-status]: https://www.chromestatus.com/feature/6261030015467520
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/master/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/main/docs/security/permissions-for-powerful-web-platform-features.md
 [Permissions API]: https://www.w3.org/TR/permissions/
 [AbortController]: https://developer.mozilla.org/docs/Web/API/AbortController
 [Page Visibility API]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
