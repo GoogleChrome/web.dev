@@ -68,7 +68,7 @@ For narrow screens, display items in a row using flexbox. The row of items will 
 }
 ```
 
-The [`scroll-snap`](css-scroll-snap/) properties ensure that the items can be swiped in a way that feels smooth. Thanks to `scroll-snap-type: inline mandatory`, the items snap into place.
+The [`scroll-snap`](/css-scroll-snap/) properties ensure that the items can be swiped in a way that feels smooth. Thanks to `scroll-snap-type: inline mandatory`, the items snap into place.
 
 When the screen is large enough—wider than `50em` in this case—switch over to grid and display the items in rows and columns, without hiding anything.
 
