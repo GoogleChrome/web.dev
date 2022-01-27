@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2022-01-24
+updated: 2022-01-27
 hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
 thumbnail: image/admin/8tWkeYbKLxSd2YgTUSGv.jpg
 alt: A photo of NFC tags
@@ -278,7 +278,7 @@ ndef.write("Writing data on an empty NFC tag is fun!", { overwrite: false })
 To prevent malicious users from overwriting NFC tags content, it is possible to
 make NFC tags permanently read-only. This operation is a one-way process and
 cannot be reversed. Once an NFC tag has been made read-only, it can't be written
-anymore.
+to anymore.
 
 To make NFC tags read-only, first instantiate a new `NDEFReader` object. Calling
 `makeReadOnly()` returns a promise. The [user may be prompted] if access was not
