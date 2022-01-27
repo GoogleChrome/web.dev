@@ -34,6 +34,9 @@ web-select > label:after {
 
 web-select > label > span {
   flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 web-select > ul {

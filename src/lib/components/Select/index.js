@@ -240,8 +240,7 @@ class Select extends BaseElement {
         @keydown=${this.comboboxEvent}
         tabindex="0"
       >
-        ${this.selected?.innerText}
-        <span></span>
+        <span>${this.selected?.innerText}</span>
       </label>
       <ul class="web-select__options" @keydown=${this.listboxEvent}>
         ${this.options.map((o) => this.renderOptions(o))}
@@ -256,7 +255,12 @@ class Select extends BaseElement {
    * @returns {TemplateResult}
    */
   renderOptions(o) {
-    return html`<li ?selected=${o === this.selected} tabindex="0">
+    // eslint-disable-next-line lit-a11y/click-events-have-key-events
+    return html`<li
+      ?selected=${o === this.selected}
+      tabindex="0"
+      @click="${() => this.selectByOption(o)}"
+    >
       ${o.textContent}
     </li>`;
   }
