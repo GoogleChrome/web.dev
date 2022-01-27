@@ -53,7 +53,9 @@ I'll use [SIMD](https://v8.dev/features/simd) via [SSE2 emulation](https://emscr
 $ emcc main.cpp -o main.threads-simd-exceptions.mjs -pthread -msimd128 -msse2 -fwasm-exceptions
 # Second bundle: threads + SIMD + JS exceptions fallback
 $ emcc main.cpp -o main.threads-simd.mjs -pthread -msimd128 -msse2 -fexceptions
-# Third bundle: basic Wasm with JS exceptions fallback
+# Third bundle: threads + JS exception fallback
+$ emcc main.cpp -o main.threads.mjs -pthread -fexceptions
+# Fourth bundle: basic Wasm with JS exceptions fallback
 $ emcc main.cpp -o main.basic.mjs -fexceptions
 ```
 
