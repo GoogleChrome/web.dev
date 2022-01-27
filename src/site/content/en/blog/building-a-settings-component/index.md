@@ -69,13 +69,13 @@ highlighted with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
    width="800", height="563"
 %}
 
-{% Banner 'neutral' %}
+{% Aside %}
 To highlight your grid layouts:
 1. Open Chrome DevTools with `cmd+opt+i` or `ctrl+alt+i`.
 1. Select the Layout tab next to the Styles tab.
 1. Under the Grid layouts section, check on all the layouts.
 1. Change the colors of all layouts.
-{% endBanner %}
+{% endAside %}
 
 ### Just for gap
 

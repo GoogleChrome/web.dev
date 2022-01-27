@@ -21,13 +21,13 @@ feedback:
   - api
 ---
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 **更新**
 
 **2021年4月23日:** ステータスを更新し、プロセス外のiframeに関するメモを使用してAPIの範囲を明確にしました。
 
-**2021年1月20日:** `performance.measureMemory`は`performance.measureUserAgentSpecificMemory`という名称に変更され、Chrome 89では[クロスオリジン分離](/coop-coep)されたWebページでデフォルトで有効にされています。結果の形式も、Origin Trialバージョンと比較してわずかに[変更](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)されています。 {% endBanner %}
+**2021年1月20日:** `performance.measureMemory`は`performance.measureUserAgentSpecificMemory`という名称に変更され、Chrome 89では[クロスオリジン分離](/coop-coep)されたWebページでデフォルトで有効にされています。結果の形式も、Origin Trialバージョンと比較してわずかに[変更](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)されています。 {% endAside %}
 
 ブラウザーはWebページのメモリを自動的に管理します。 Webページがオブジェクトを作成するときはいつでも、ブラウザーはオブジェクトを格納するために「内部」でメモリのチャンクを割り当てます。メモリは有限のリソースであるため、ブラウザーはガベージコレクションを実行して、オブジェクトが不要になるときを検出し、基になるメモリチャンクを解放します。ただし、検出は完全ではなく、完全な検出は不可能な作業であること[が証明されました](https://en.wikipedia.org/wiki/Halting_problem)。したがって、ブラウザーは「オブジェクトが必要である」という概念を「オブジェクトが到達可能である」という概念に近似します。Webページがその変数および他の到達可能なオブジェクトのフィールドを使用してオブジェクトに到達できない場合、ブラウザーはオブジェクトを安全に再利用できます。次の例に示すように、これら2つの概念の違いにより、メモリリークが発生します。
 

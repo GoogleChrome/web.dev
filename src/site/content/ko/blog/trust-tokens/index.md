@@ -16,13 +16,13 @@ feedback:
   - api
 ---
 
-{% Banner 'caution' %} **⚠️ 경고: 앱을 업데이트해야 할 수도 있습니다!**
+{% Aside  'caution' %} **⚠️ 경고: 앱을 업데이트해야 할 수도 있습니다!**
 
 **TrustTokenV3** 는 Chromium의 신뢰 토큰 구현에 대한 이전 버전과 호환되지 않는 변경 사항 모음입니다. 변경 사항은 2021년 7월 말에 Chrome 안정화 버전에 도달한 Chrome 92에 적용되었습니다.
 
 아직 업데이트하지 않았다면 [API를 테스트하는](https://www.chromestatus.com/feature/5078049450098688) 기존 애플리케이션을 업데이트해야 합니다.
 
-자세히 알아보기: [TrustTokenV3이란 무엇입니까?](https://bit.ly/what-is-trusttokenv3) {% endBanner %}
+자세히 알아보기: [TrustTokenV3이란 무엇입니까?](https://bit.ly/what-is-trusttokenv3) {% endAside %}
 
 <br><br>
 

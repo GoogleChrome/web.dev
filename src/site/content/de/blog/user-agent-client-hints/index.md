@@ -23,7 +23,7 @@ Client-Hinweise ermöglichen es Entwicklern, aktiv Informationen über das Gerä
 
 Erfahren Sie, wie Sie die vorhandenen Funktionen, die auf dem Parsen des User-Agent-Strings basieren, aktualisieren und stattdessen User-Agent-Client-Hinweise verwenden.
 
-{% Banner 'caution', 'body' %} Wenn Sie bereits User-Agent-Client-Hinweise verwenden, beachten Sie, dass sich das Header-Format seit Chrome 90 dahingehend geändert hat, dass die Accept-CH-Token nun genau mit den zurückgesendeten Headern übereinstimmen müssen. {% endBanner %}
+{% Aside 'caution' %} Wenn Sie bereits User-Agent-Client-Hinweise verwenden, beachten Sie, dass sich das Header-Format seit Chrome 90 dahingehend geändert hat, dass die Accept-CH-Token nun genau mit den zurückgesendeten Headern übereinstimmen müssen. {% endAside %}
 
 ## Hintergrund
 

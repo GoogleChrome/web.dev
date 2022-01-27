@@ -24,7 +24,7 @@ feedback:
 
 User-Agent Client Hints를 대신 사용하기 위해 User-Agent 문자열 구문 분석에 의존하는 기존 기능을 업데이트하는 방법을 알아보세요.
 
-{% Banner 'caution', 'body' %} 이미 User-Agent Client Hints를 사용하고 있다면 향후 적용될 변경 사항에 주의하세요. `Accept-CH` 토큰이 반환된 헤더와 정확히 일치하도록 헤더 형식이 변경됩니다. 이전에는 사이트가 `Sec-CH-UA-Platform` 헤더를 수신하기 위해 `Accept-CH: UA-Platform`을 보낼 수 있었고 이제는 해당 사이트에서 `Accept-CH: Sec-CH-UA-Platform`을 보내야 합니다. User-Agent Client Hints를 이미 구현했다면 안정적인 Chromium에서 변경 사항이 완전히 배포될 때까지 두 형식을 모두 전송하세요. 업데이트에 대한 [제거 의도: User-Agent Client Hint ACCEPT-CH 토큰 이름 바꾸기](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)를 참조하세요. {% endBanner %}
+{% Aside 'caution' %} 이미 User-Agent Client Hints를 사용하고 있다면 향후 적용될 변경 사항에 주의하세요. `Accept-CH` 토큰이 반환된 헤더와 정확히 일치하도록 헤더 형식이 변경됩니다. 이전에는 사이트가 `Sec-CH-UA-Platform` 헤더를 수신하기 위해 `Accept-CH: UA-Platform`을 보낼 수 있었고 이제는 해당 사이트에서 `Accept-CH: Sec-CH-UA-Platform`을 보내야 합니다. User-Agent Client Hints를 이미 구현했다면 안정적인 Chromium에서 변경 사항이 완전히 배포될 때까지 두 형식을 모두 전송하세요. 업데이트에 대한 [제거 의도: User-Agent Client Hint ACCEPT-CH 토큰 이름 바꾸기](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)를 참조하세요. {% endAside %}
 
 ## 배경
 

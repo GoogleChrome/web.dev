@@ -17,9 +17,9 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %} This post covers how to migrate to the new version of the Reporting
+{% Aside 'caution' %} This post covers how to migrate to the new version of the Reporting
 API (v1). If you're new to the Reporting API or need detailed usage examples, head over to the [main
-post on the Reporting API](/reporting-api) instead. {% endBanner %}
+post on the Reporting API](/reporting-api) instead. {% endAside %}
 
 The [Reporting API](/reporting-api) informs you about errors that happen across your site as visitors use it. It gives
 you visibility on browser interventions, browser crashes, Content-Security-Policy violations,
@@ -54,11 +54,11 @@ Keep reading for details and example code!
 
 ## Network Error Logging
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 If you use [Network Error Logging](https://w3c.github.io/network-error-logging/), continue using
 `Report-To` (v0) because Network Error Logging isn't supported in the Reporting API v1.
-{% endBanner %}
+{% endAside %}
 
 A new mechanism for Network Error Logging will be developed. Once that becomes available, switch from Reporting API v0 to that new mechanism.
 

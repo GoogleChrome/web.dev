@@ -16,13 +16,13 @@ feedback:
   - api
 ---
 
-{% Banner 'caution' %} **⚠️警告：アプリの更新が必要になります。**
+{% Aside  'caution' %} **⚠️警告：アプリの更新が必要になります。**
 
 **TrustTokenV3は、ChromiumのTrustTokens実装**に対する下位互換性のない変更のコレクションです。変更はChrome92に到着し、2021年7月末にChromeStableに到達しました。
 
 まだ行っていない場合は、[APIをテスト](https://www.chromestatus.com/feature/5078049450098688)する既存のアプリケーションを更新する必要があります。
 
-詳細： [TrustTokenV3とは何ですか？](https://bit.ly/what-is-trusttokenv3)にご覧ください {% endBanner %}
+詳細： [TrustTokenV3とは何ですか？](https://bit.ly/what-is-trusttokenv3)にご覧ください {% endAside %}
 
 <br><br>
 

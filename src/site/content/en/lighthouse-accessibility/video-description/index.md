@@ -10,7 +10,7 @@ web_lighthouse:
   - video-description
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endBanner %}
+{% Aside 'caution' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endAside %}
 
 Audio descriptions provide relevant information for videos that dialogue
 cannot, such as facial expressions and scenes.

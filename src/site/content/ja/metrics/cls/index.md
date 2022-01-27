@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %}**2021 年 6 月 1 日:** CLS の実装が変更されました。変更の理由に関する詳細については、「[進化を続ける CLS 指標](/evolving-cls)」を参照してください。{% endBanner %}
+{% Aside 'caution' %}**2021 年 6 月 1 日:** CLS の実装が変更されました。変更の理由に関する詳細については、「[進化を続ける CLS 指標](/evolving-cls)」を参照してください。{% endAside %}
 
 {% Aside 'key-term' %}Cumulative Layout Shift (累積レイアウト シフト数、CLS) は、[視覚的な安定性](/user-centric-performance-metrics/#types-of-metrics)を測定するための重要なユーザーを中心とした指標です。これは、ユーザーが予期しないレイアウト シフトに遭遇する頻度の数値化に役立つ指標であり、CLS が低ければ低いほど、そのページが[快適](/user-centric-performance-metrics/#questions)であることが保証されます。{% endAside %}
 

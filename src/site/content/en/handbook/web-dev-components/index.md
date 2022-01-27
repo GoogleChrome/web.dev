@@ -178,30 +178,22 @@ instead, use the body variant, below.
 {% Banner %}This is an info banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Aside  'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
+{% Aside  'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Aside 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
+{% Aside 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Aside %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
-
-### Body banners
-
-```text
-{% raw %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endraw %}
-```
-
-{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
+{% Aside %}This is a neutral banner. It supports Markdown.{% endBanner %}
 
 ## Block quotes
 

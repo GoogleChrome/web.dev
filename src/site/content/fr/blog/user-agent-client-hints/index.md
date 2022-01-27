@@ -27,7 +27,7 @@ Les Client Hints (indications du client, en français) permettent aux développe
 
 Découvrez comment mettre à jour votre fonctionnalité existante qui repose sur l'analyse de la chaîne User-Agent pour utiliser User-Agent Client Hints à la place.
 
-{% Banner 'caution', 'body' %} Si vous utilisez déjà User-Agent Client Hints, notez que le format d'en-tête a changé depuis Chrome 90, de sorte que les jetons Accept-CH doivent correspondre exactement aux en-têtes renvoyés. {% endBanner %}
+{% Aside 'caution' %} Si vous utilisez déjà User-Agent Client Hints, notez que le format d'en-tête a changé depuis Chrome 90, de sorte que les jetons Accept-CH doivent correspondre exactement aux en-têtes renvoyés. {% endAside %}
 
 ## Contexte
 

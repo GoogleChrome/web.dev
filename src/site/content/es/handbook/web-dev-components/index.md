@@ -141,36 +141,36 @@ Use the codelab aside to link to an associated codelab.
 Se pueden agregar banners predeterminados a las plantillas del sitio (por ejemplo, páginas de destino) para dar información oportuna a los usuarios (por ejemplo, una alerta sobre una próxima conferencia). No use banners predeterminados en el cuerpo de una publicación; en su lugar, use la variante de cuerpo, a continuación.
 
 ```text
-{% raw %}{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner %}This is an info banner. It supports Markdown.{% endAside %}{% endraw %}
 ```
 
-{% Banner %} Este es un banner de información. Es compatible con Markdown. {% endBanner %}
+{% Banner %} Este es un banner de información. Es compatible con Markdown. {% endAside %}
 
 ```text
-{% raw %}{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Aside  'caution' %}This is a caution banner. It supports Markdown.{% endAside %}{% endraw %}
 ```
 
-{% Banner 'caution' %} Este es un banner de precaución. Es compatible con Markdown. {% endBanner %}
+{% Aside  'caution' %} Este es un banner de precaución. Es compatible con Markdown. {% endAside %}
 
 ```text
-{% raw %}{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Aside 'warning' %}This is a warning banner. It supports Markdown.{% endAside %}{% endraw %}
 ```
 
-{% Banner 'warning' %} Este es un banner de advertencia. Es compatible con Markdown. {% endBanner %}
+{% Aside 'warning' %} Este es un banner de advertencia. Es compatible con Markdown. {% endAside %}
 
 ```text
-{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Aside %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endAside %}{% endraw %}
 ```
 
-{% Banner 'neutral' %} Este es un banner neutral. Es compatible con Markdown. {% endBanner %}
+{% Aside %} Este es un banner neutral. Es compatible con Markdown. {% endAside %}
 
 ### Banners en el cuerpo
 
 ```text
-{% raw %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endraw %}
+{% raw %}{% Aside %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endAside %}{% endraw %}
 ```
 
-{% Banner 'info', 'body' %} Este es un banner de información usado en el cuerpo de una publicación. Tiene menos relleno y texto más grande. {% endBanner %}
+{% Aside %} Este es un banner de información usado en el cuerpo de una publicación. Tiene menos relleno y texto más grande. {% endAside %}
 
 ## Citas en bloque
 

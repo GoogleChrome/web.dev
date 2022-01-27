@@ -16,13 +16,13 @@ feedback:
   - api
 ---
 
-{% Banner 'caution' %} **⚠️ 警告：您可能需要更新应用程序！**
+{% Aside  'caution' %} **⚠️ 警告：您可能需要更新应用程序！**
 
 **TrustTokenV3** 是为 Chromium 的信任令牌实现的向后不兼容更改的集合。这些更改已经在 Chrome 92 中实施，从而在 2021 年 7 月底发布了 Chrome 稳定版。
 
 如果您还没有更新，则需要更新[测试 API](https://www.chromestatus.com/feature/5078049450098688) 的现有应用程序。
 
-了解更多：[什么是 TrustTokenV3？](https://bit.ly/what-is-trusttokenv3){% endBanner %}
+了解更多：[什么是 TrustTokenV3？](https://bit.ly/what-is-trusttokenv3){% endAside %}
 
 <br><br>
 
