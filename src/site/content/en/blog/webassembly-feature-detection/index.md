@@ -27,7 +27,7 @@ Let's walk through those steps by picking some arbitrary feature set as an examp
 <figure>
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2HAGqxkbSoNhK03itXBK.png", alt="", width="800", height="813" %}
   <figcaption>
-    Screenshot of the feature table from https://webassembly.org/roadmap/.
+    View this feature table on <a href="https://webassembly.org/roadmap/">webassembly.org/roadmap</a>.
   </figcaption>
 </figure>
 
