@@ -119,16 +119,16 @@ Use the objective aside to define the goal of a process described in the body
 copy.
 {% endAside %}
 
-### Gotcha asides
+### Attention asides
 
 ```text
-{% raw %}&#123;% Aside 'gotchas' %&#125;
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% raw %}&#123;% Aside 'attention' %&#125;
+Use the attention aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 &#123;% endAside %&#125;{% endraw %}
 ```
 
-{% Aside 'gotchas' %}
+{% Aside 'attention' %}
 Use the gotcha aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 {% endAside %}
@@ -178,22 +178,22 @@ instead, use the body variant, below.
 {% Banner %}This is an info banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Aside  'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Aside  'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
+{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Aside 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Aside 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
+{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Aside %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Aside %}This is a neutral banner. It supports Markdown.{% endBanner %}
+{% Banner %}This is a neutral banner. It supports Markdown.{% endBanner %}
 
 ## Block quotes
 

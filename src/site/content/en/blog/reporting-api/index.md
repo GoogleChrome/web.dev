@@ -597,8 +597,8 @@ Document-Policy: document-write=?0;report-to=main-endpoint;
 {% Aside  'warning' %} Getting the `report-to` syntax right can be tricky, because not all policies use
 the same header structure. Depending on the policy, the right syntax may be
 `report-to=main-endpoint` or `report-to main-endpoint`. Head over to the
-[demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples. {%
-endBanner %}
+[demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples.
+{% endAside %}
 
 ### Example code
 

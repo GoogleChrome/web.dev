@@ -78,7 +78,7 @@ function Aside(content, type = 'note') {
 
       case 'warning':
         utilities.icon = 'color-state-warn-text';
-        utilities.main = 'bg-state-warn-bg color-core-text';
+        utilities.main = 'bg-state-warn-bg color-state-warn-text';
         icon = 'warning.svg';
         title = i18n(`i18n.common.${type}`, locale);
         break;
@@ -98,6 +98,12 @@ function Aside(content, type = 'note') {
       case 'gotchas':
         icon = 'lightbulb.svg';
         title = i18n(`i18n.common.gotchas`, locale);
+        utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
+        break;
+
+      case 'attention':
+        icon = 'lightbulb.svg';
+        title = i18n(`i18n.common.attention`, locale);
         utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
         break;
 
