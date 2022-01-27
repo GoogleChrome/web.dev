@@ -4,7 +4,7 @@ subhead: Learn how gPhoto2 was ported to WebAssembly to control external cameras
 description: Learn how gPhoto2 was ported to WebAssembly to control external cameras over USB from a web app.
 date: 2022-01-30
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/MR4YGRvl0Z9AWT6vv3sQ.jpg
-alt: A picture of DSLR camera connected via a USB cable to a laptop. The laptop is running the Web demo mentioned in the article, which mirrors a live video feed from the camera as well as allows to tweak its settings via form controls.
+alt: A picture of DSLR camera connected via a USB cable to a laptop. The laptop is running the web demo mentioned in the article, which mirrors a live video feed from the camera and allows tweaking of its settings via form controls.
 authors:
   - rreverser
 tags:
