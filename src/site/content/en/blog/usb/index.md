@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2022-01-26
+updated: 2022-01-27
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
@@ -292,9 +292,10 @@ the amount of memory used and allows your application to report progress as the
 transfers complete.
 
 As multiple transfers submitted to an endpoint always execute in order, it is
-possible to reduce the latency of USB transfers by submitting multiple queued
-chunks. Every time a chunk is fully transmitted it will notify your code that it
-should provide more data as documented in the helper function example below.
+possible to improve throughput by submitting multiple queued chunks to avoid
+latency between USB transfers. Every time a chunk is fully transmitted it will
+notify your code that it should provide more data as documented in the helper
+function example below.
 
 ```js
 const BULK_TRANSFER_SIZE = 16 * 1024; // 16KB
