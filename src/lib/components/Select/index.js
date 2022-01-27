@@ -1,6 +1,8 @@
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 
+const keyReg = new RegExp('^(Key|Digit|Numpad)', 'i');
+
 /**
  * Element that renders a Material style select element.
  *
@@ -16,16 +18,34 @@ class Select extends BaseElement {
 
   constructor() {
     super();
+    /** If select element is open. */
     this.active = false;
+    /** The index of the currently selected option. */
     this.activeIndex = -1;
-    /** @type {HTMLOptionElement[]} */
+    /**
+     * Keeps track of first emit.
+     * Designed to prevent premature emission.
+     */
+    this.firstEmit = true;
+    /** The index of the currently focused option. */
+    this.focusedIndex = -1;
+    /**
+     * An array of all options.
+     * @type {HTMLOptionElement[]}
+     */
     this.options = [];
-    /** @type {HTMLOptionElement} */
+    /**
+     * An currently selected option.
+     * @type HTMLOptionElement
+     */
     this.selected = null;
+    /**
+     * The value of the currently selected option.
+     * @type string
+     */
     this.value = null;
 
     this.clickedInside = this.clickedInside.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   connectedCallback() {
@@ -34,20 +54,20 @@ class Select extends BaseElement {
     this.options = /** @type {HTMLOptionElement[]} */ (
       Array.from(select.children).filter((e) => e.nodeName === 'OPTION')
     );
-    this.selected = this.options.find((e) => e.selected) || this.options[0];
+    this.selectByOption(
+      this.options.find((e) => e.selected) || this.options[0],
+    );
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     document.removeEventListener('click', this.clickedInside);
-    this.removeEventListener('keydown', this.handleKeyDown);
   }
 
   /**
    * Closes drop down if user clicks outside of dropdown.
    *
    * @param {MouseEvent} e
-   * @returns
    */
   clickedInside(e) {
     const ul = this.querySelector('ul');
@@ -63,65 +83,140 @@ class Select extends BaseElement {
   }
 
   /**
-   * Handles key presses to navigate options.
+   * Handles keyboard events on combobox (label)
    *
    * @param {KeyboardEvent} e
    */
-  handleKeyDown(e) {
-    switch (e.key) {
-      case 'Escape':
-        this.toggleState();
+  comboboxEvent(e) {
+    if (this.active) {
+      return;
+    }
+    switch (e.code) {
+      case 'ArrowDown':
+        this.selectByIndex(this.activeIndex + 1);
         break;
       case 'ArrowUp':
-      case 'ArrowDown':
-        e.preventDefault();
-        const increment = e.key === 'ArrowUp' ? -1 : 1;
-        this.incrementIndex(increment);
+        this.selectByIndex(this.activeIndex - 1);
+        break;
+      case 'Enter':
+      case 'Space':
+        this.toggleState();
+        break;
+      case 'Home':
+        this.selectByIndex(0);
+        break;
+      case 'End':
+        this.selectByIndex(this.options.length - 1);
+        break;
+      default:
+        if (keyReg.test(e.code)) {
+          const key = String(e.key).toLowerCase();
+          const index = this.options.findIndex((e) =>
+            e.innerText.toLowerCase().startsWith(key),
+          );
+          if (index >= 0) {
+            this.selectByIndex(index);
+          }
+        }
         break;
     }
   }
 
   /**
-   * Update active index of options.
+   * Focuses on option element by index.
    *
    * @param {number} i
    */
-  incrementIndex(i) {
-    const lis = this.querySelectorAll('li');
-    this.activeIndex = this.activeIndex + i;
-    if (this.activeIndex < 0) {
-      this.activeIndex = 0;
-    } else if (this.activeIndex >= lis.length) {
-      this.activeIndex = lis.length - 1;
+  focusByIndex(i) {
+    if (this.active) {
+      if (i < 0) {
+        i = 0;
+      } else if (i >= this.options.length) {
+        i = this.options.length - 1;
+      }
+      const lis = this.querySelectorAll('li');
+      lis[i].focus();
+      this.focusedIndex = i;
     }
-    lis[this.activeIndex].focus();
   }
 
   /**
-   * Determing if when element is focused if it should respond to key presses.
+   * Handles keyboard events on listbox (ul).
    *
    * @param {KeyboardEvent} e
    */
-  keydownEvent(e) {
-    if (e.key === 'Enter' || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      e.preventDefault();
-      this.toggleState();
-      if (e.key === 'Enter') {
-        this.incrementIndex(1);
-      }
+  listboxEvent(e) {
+    if (!this.active) {
+      return;
+    }
+    switch (e.code) {
+      case 'Enter':
+      case 'Tab':
+      case 'Escape':
+        this.selectByIndex(this.focusedIndex);
+        const label = this.querySelector('label');
+        if (label) {
+          label.focus();
+        }
+        break;
+      case 'ArrowDown':
+        this.focusByIndex(this.focusedIndex + 1);
+        break;
+      case 'ArrowUp':
+        this.focusByIndex(this.focusedIndex - 1);
+        break;
+      case 'Home':
+      case 'PageUp':
+        this.focusByIndex(0);
+        break;
+      case 'End':
+      case 'PageDown':
+        this.focusByIndex(this.options.length - 1);
+        break;
+      default:
+        if (keyReg.test(e.code)) {
+          const key = String(e.key).toLowerCase();
+          const index = this.options.findIndex((e) =>
+            e.innerText.toLowerCase().startsWith(key),
+          );
+          if (index >= 0) {
+            this.focusByIndex(index);
+          }
+        }
+        break;
     }
   }
 
   /**
-   * Handles when an option is selected and emits result.
+   * Selects option by index and emits result.
+   *
+   * @param {number} i
+   */
+  selectByIndex(i) {
+    if (i < 0) {
+      i = 0;
+    } else if (i >= this.options.length) {
+      i = this.options.length - 1;
+    }
+    this.selectByOption(this.options[i]);
+  }
+
+  /**
+   * Selects option by element and emits result.
    *
    * @param {HTMLOptionElement} e
    */
-  selectOption(e) {
+  selectByOption(e) {
     this.selected = e;
+    this.activeIndex = this.options.findIndex((v) => v === e);
     this.value = e.value;
-    this.dispatchEvent(new Event('change'));
-    this.toggleState();
+    if (!this.firstEmit) {
+      this.dispatchEvent(new Event('change'));
+    }
+    if (this.active) {
+      this.toggleState();
+    }
+    this.firstEmit = false;
   }
 
   /**
@@ -131,12 +226,10 @@ class Select extends BaseElement {
     this.active = !this.active;
 
     if (this.active) {
+      this.focusByIndex(this.activeIndex);
       document.addEventListener('click', this.clickedInside);
-      this.addEventListener('keydown', this.handleKeyDown);
     } else {
       document.removeEventListener('click', this.clickedInside);
-      this.removeEventListener('keydown', this.handleKeyDown);
-      this.activeIndex = -1;
     }
   }
 
@@ -144,13 +237,13 @@ class Select extends BaseElement {
     return html`
       <label
         @click=${this.toggleState}
-        @keydown=${this.keydownEvent}
+        @keydown=${this.comboboxEvent}
         tabindex="0"
       >
         ${this.selected?.innerText}
         <span></span>
       </label>
-      <ul class="web-select__options">
+      <ul class="web-select__options" @keydown=${this.listboxEvent}>
         ${this.options.map((o) => this.renderOptions(o))}
       </ul>
     `;
@@ -163,12 +256,7 @@ class Select extends BaseElement {
    * @returns {TemplateResult}
    */
   renderOptions(o) {
-    return html`<li
-      ?selected=${o === this.selected}
-      tabindex="0"
-      @click=${() => this.selectOption(o)}
-      @keypress=${() => this.selectOption(o)}
-    >
+    return html`<li ?selected=${o === this.selected} tabindex="0">
       ${o.textContent}
     </li>`;
   }
