@@ -74,7 +74,7 @@ There are a few problems with this approach on the web:
 
 It's possible to adapt the build system to those differences and hardcode the list of dynamic plugins somewhere during the build, but an even easier way to solve all those issues is to avoid dynamic linking to begin with.
 
-Turns out, libtool abstracts away various [dynamic linking methods](https://www.gnu.org/software/libtool/manual/html_node/Module-loaders-for-libltdl.html) on different platforms, and even supports writing custom loaders for others. One of the built-in methods it supports is called ["Dlpreopening"](https://www.gnu.org/software/libtool/manual/html_node/Dlpreopening.html):
+Turns out, libtool abstracts away various [dynamic linking methods](https://www.gnu.org/software/libtool/manual/html_node/Module-loaders-for-libltdl.html) on different platforms, and even supports writing custom loaders for others. One of the built-in loaders it supports is called ["Dlpreopening"](https://www.gnu.org/software/libtool/manual/html_node/Dlpreopening.html):
 
 **“Libtool provides special support for dlopening libtool object and libtool library files, so that their symbols can be resolved even on platforms without any dlopen and dlsym functions.  
 …  
