@@ -131,8 +131,7 @@ granted. The promise will resolve if the following conditions are all met:
 
 - It must be called in response to a user gesture such as a touch gesture or
   mouse click.
-- User has allowed the website to interact with NFC devices when they tap their
-  phone.
+- User has allowed the website to interact with NFC devices.
 - The user's phone supports NFC.
 - The user has enabled NFC on their phone.
 
@@ -203,8 +202,7 @@ will resolve if the following conditions are all met:
 
 - It must be called in response to a user gesture such as a touch gesture or
   mouse click.
-- User has allowed the website to interact with NFC devices when they tap their
-  phone.
+- User has allowed the website to interact with NFC devices.
 - The user's phone supports NFC.
 - The user has enabled NFC on their phone.
 - User has tapped an NFC tag and an NDEF message has been successfully written.
@@ -287,8 +285,7 @@ met:
 
 - It must be called in response to a user gesture such as a touch gesture or
   mouse click.
-- User has allowed the website to interact with NFC devices when they tap their
-  phone.
+- User has allowed the website to interact with NFC devices.
 - The user's phone supports NFC.
 - The user has enabled NFC on their phone.
 - User has tapped an NFC tag and the NFC tag has been successfully made read-only.
