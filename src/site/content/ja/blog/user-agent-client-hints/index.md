@@ -24,7 +24,7 @@ Client Hints を使用することにより、開発者はユーザーの使用�
 
 User-Agent 文字列の解析に依存している既存の機能を更新し、その代替手法として User-Agent Client Hints を使用する方法について説明します。
 
-{% Banner 'caution', 'body' %}すでに User-Agent Client Hints をご利用の場合には、今後の変更にご注意ください。ヘッダーのフォーマットは変更され、`Accept-CH` トークンが返されるヘッダーに正確に一致するようになります。これまでサイトは `Sec-CH-UA-Platform` ヘッダーを受信するために `Accept-CH: UA-Platform` を送信していましたが、現在は `Accept-CH: Sec-CH-UA-Platform` を送信する必要があります。すでに User-Agent Client Hints を実装している場合には、この変更内容が安定版の Chromium で完全にロールアウトされるまでは、両方のフォーマットを送信するようにしてください。詳細については、「[削除の意図: User-Agent Client Hint ACCEPT-CH トークンの名前の変更](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)」を参照してください。{% endBanner %}
+{% Aside 'caution' %}すでに User-Agent Client Hints をご利用の場合には、今後の変更にご注意ください。ヘッダーのフォーマットは変更され、`Accept-CH` トークンが返されるヘッダーに正確に一致するようになります。これまでサイトは `Sec-CH-UA-Platform` ヘッダーを受信するために `Accept-CH: UA-Platform` を送信していましたが、現在は `Accept-CH: Sec-CH-UA-Platform` を送信する必要があります。すでに User-Agent Client Hints を実装している場合には、この変更内容が安定版の Chromium で完全にロールアウトされるまでは、両方のフォーマットを送信するようにしてください。詳細については、「[削除の意図: User-Agent Client Hint ACCEPT-CH トークンの名前の変更](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)」を参照してください。{% endAside %}
 
 ## 背景
 

@@ -11,9 +11,9 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %} 在大多数情况下，`http://localhost` 就可以满足您的需求：在浏览器中，它的行为与 HTTPS 🔒 非常类似。因此，部分无法在部署的 HTTP 网站上运行的 API 可以在 `http://localhost` 上运行。
+{% Aside 'caution' %} 在大多数情况下，`http://localhost` 就可以满足您的需求：在浏览器中，它的行为与 HTTPS 🔒 非常类似。因此，部分无法在部署的 HTTP 网站上运行的 API 可以在 `http://localhost` 上运行。
 
-这意味着您只需要**在特殊情况下才**需要在本地使用 HTTPS（请参阅[何时使用 HTTPS 进行本地开发](/when-to-use-local-https)），例如自定义主机名或跨浏览器的安全 cookie。如果您有这种需求，请继续阅读！ {% endBanner %}
+这意味着您只需要**在特殊情况下才**需要在本地使用 HTTPS（请参阅[何时使用 HTTPS 进行本地开发](/when-to-use-local-https)），例如自定义主机名或跨浏览器的安全 cookie。如果您有这种需求，请继续阅读！ {% endAside %}
 
 *在本文中，关于 `localhost` 的声明也适用于 `127.0.0.1` 和 `[::1]` ，因为它们都描述了本地计算机地址，也称为“环回地址”。此外，为简单起见，未指定端口号。**因此，请将 `http://localhost`  解读为 `http://localhost:{PORT}` 或 `http://127.0.0.1:{PORT}`。*
 
@@ -46,13 +46,13 @@ mkcert（和类似工具）具备下列几种优势：
 
 ### 警告
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 - 运行`mkcert -install`时，切勿导出或分享由 mkcert 自动创建的 `rootCA-key.pem` 。**获得此文件的攻击者可以对您可能正在访问的任何网站进行路径攻击**。他们可以拦截从您的电脑到任何网站（银行、医保供应商或社交网络）的安全请求。如果您需要知道 `rootCA-key.pem` 的位置以确保其安全，请运行 `mkcert -CAROOT` 。
 - 仅将 mkcert 用于**开发目的**，并且永远不要要求最终用户运行 mkcert 命令。
 - 开发团队：所有团队成员都应该**单独**安装和运行 mkcert（而不是存储和共享 CA 和证书）。
 
-{% endBanner %}
+{% endAside %}
 
 ### 设置
 
@@ -202,11 +202,11 @@ mkcert（和类似工具）具备下列几种优势：
 
 4. ✨全部搞定！您现在可以在浏览器中访问 `https://{YOUR HOSTNAME}`，并且不会收到任何警告了
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 请仅用于**开发目的**，**切勿导出或分享** `rootCA-key.pem` 文件（如果您需要知道此文件的位置以确保其安全，请运行`mkcert -CAROOT` ）。
 
-{% endBanner %}
+{% endAside %}
 
 {% endDetails %}
 

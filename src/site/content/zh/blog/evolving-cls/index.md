@@ -14,7 +14,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'info', 'body' %} **2021 年 6 月 2 日：**本文中描述的 CLS 更新现可在 Chrome 的 web 工具表面上使用。有关详细信息，请参阅[《Web 工具中不断发展的累积布局偏移》](/cls-web-tooling/)一文。 {% endBanner %}
+{% Aside %} **2021 年 6 月 2 日：**本文中描述的 CLS 更新现可在 Chrome 的 web 工具表面上使用。有关详细信息，请参阅[《Web 工具中不断发展的累积布局偏移》](/cls-web-tooling/)一文。 {% endAside %}
 
 我们（Chrome Speed Metrics 团队）最近概述了我们对[使 CLS 指标对长时间打开的页面更加公平选项](/better-layout-shift-metric/)的初步研究。我们收到了很多非常有用的反馈，在完成大规模分析后，最终确定了计划对指标进行的更改：**1 秒间隔的最大会话窗口，最大值为 5 秒**。
 

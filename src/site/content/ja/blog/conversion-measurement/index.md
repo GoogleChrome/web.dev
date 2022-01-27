@@ -13,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %}Conversion Measurement API は *Attribution Reporting API* に名前が変更され、さらなる機能を提供します。
+{% Aside 'caution' %}Conversion Measurement API は *Attribution Reporting API* に名前が変更され、さらなる機能を提供します。
 
 - [Chrome 91](https://chromestatus.com/features/schedule) [以下で (Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md) ) をお試しの方は、この投稿を読んで、API の詳細、使用例、手順を確認してください。
 - Chrome (オリジン トライアル) での実験に利用できるこの API (Attribution Reporting) の次のイテレーションに興味がある方は、[メーリングリストにご登録の上、利用可能な実験の最新情報をご確認ください。](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev)
 
-{% endBanner %}
+{% endAside %}
 
 広告キャンペーンの効果を測定するために、広告主とサイト運営者は、広告のクリックまたは表示が購入や申し込みなどの[コンバージョンにつながる時期を知る必要があります。](/digging-into-the-privacy-sandbox/#conversion)**歴史的に、これはサードパーティの Cookie を使用**して行われてきました。現在、Event Conversion Measurement API を使用すると、サイト間でユーザーを認識するために使用できるメカニズムを使用せずに、サイト運営者の Web サイトでのイベントとその後の広告主サイトでのコンバージョンを関連付けることができます。
 
-{% Banner 'info', 'body' %}**この提案には、皆さまからのフィードバックが必要です。**コメントをお持ちの方は、API プロポーザルのリポジトリで[課題を作成してください。](https://github.com/WICG/conversion-measurement-api/issues/) {% endBanner %}
+{% Aside %}**この提案には、皆さまからのフィードバックが必要です。**コメントをお持ちの方は、API プロポーザルのリポジトリで[課題を作成してください。](https://github.com/WICG/conversion-measurement-api/issues/) {% endAside %}
 
 {% Aside %}この API は、プライバシーサンドボックスの一部であり、サードパーティの Cookie やその他のクロスサイト追跡メカニズムを使用せずにサードパーティのユース ケースを満たす一連の提案です。すべての提案の概要については、「[Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)」を参照してください。 {% endAside %}
 
@@ -270,7 +270,7 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
 
 ## 例
 
-{% Banner 'info', 'body' %}これが実際に動作することを確認するには、[デモ](https://goo.gle/demo-event-level-conversion-measurement-api)を試して、対応する[コード](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)を確認してください。 {% endBanner %}
+{% Aside %}これが実際に動作することを確認するには、[デモ](https://goo.gle/demo-event-level-conversion-measurement-api)を試して、対応する[コード](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)を確認してください。 {% endAside %}
 
 API によりコンバージョンが記録および報告される仕組みは次のとおりです。現在の API では、「click-to-convert」のフローはこのように機能します。この API の今後のイテレーションは、これと[異なる可能性があります](#use-cases)。
 

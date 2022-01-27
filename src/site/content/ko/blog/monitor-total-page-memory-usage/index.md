@@ -25,13 +25,13 @@ feedback:
   - api
 ---
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 **업데이트**
 
 **2021년 4월 23일**: out-of-process iframe에 대한 참고 사항으로 상태를 업데이트하고 API의 범위를 명확히 했습니다.
 
-**2021년 1월 20일**: `performance.measureMemory`가 `performance.measureUserAgentSpecificMemory`로 이름이 변경되고 기본적으로 [사용 오리진 간 격리](/coop-coep) 웹 페이지에 대해 Chrome 89에서 활성화됩니다. 결과 형식도 Origin Trial 버전에 비해 약간 [변경되었습니다.](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences) {% endBanner %}
+**2021년 1월 20일**: `performance.measureMemory`가 `performance.measureUserAgentSpecificMemory`로 이름이 변경되고 기본적으로 [사용 오리진 간 격리](/coop-coep) 웹 페이지에 대해 Chrome 89에서 활성화됩니다. 결과 형식도 Origin Trial 버전에 비해 약간 [변경되었습니다.](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences) {% endAside %}
 
 브라우저는 웹 페이지의 메모리를 자동으로 관리합니다. 웹 페이지가 객체를 생성할 때마다 브라우저는 객체를 저장하기 위해 "후드 아래" 메모리 청크를 할당합니다. 메모리는 유한한 리소스이기 때문에 브라우저는 객체가 더 이상 필요하지 않은 때를 감지하고 기본 메모리 청크를 해제하기 위해 가비지 수집을 수행합니다. 하지만 탐지는 완벽하지 않으며, 완벽한 탐지는 불가능한 작업임이 [입증](https://en.wikipedia.org/wiki/Halting_problem)되었습니다. 따라서 브라우저는 "객체에 도달할 수 있음"이라는 개념으로 "객체가 필요합니다"라는 개념을 근사합니다. 웹 페이지가 해당 변수와 도달 가능한 다른 객체의 필드를 통해 객체에 도달할 수 없는 경우 브라우저는 객체를 안전하게 회수할 수 있습니다. 이 두 개념의 차이로 인해 다음 예제와 같이 메모리 누수가 발생합니다.
 

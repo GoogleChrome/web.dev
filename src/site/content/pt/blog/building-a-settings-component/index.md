@@ -45,12 +45,12 @@ Esta é a primeira demonstração do Desafio de GUI **totalmente CSS Grid** ! Aq
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/h6LZhScslprBcFol4gGp.png", alt="Contornos coloridos e sobreposições de espaçamento de lacunas que ajudam a mostrar todas as caixas que compõem o layout de configurações", width="800", height="563" %}
 
-{% Banner 'neutral' %} Para destacar seus layouts de grade:
+{% Aside %} Para destacar seus layouts de grade:
 
 1. Abra o Chrome DevTools com `cmd+opt+i` ou `ctrl+alt+i`.
 2. Selecione a guia Layout ao lado da guia Estilos.
 3. Na seção Layouts de grade, verifique todos os layouts.
-4. Altere as cores de todos os layouts. {% endBanner %}
+4. Altere as cores de todos os layouts. {% endAside %}
 
 ### Apenas para lacuna
 

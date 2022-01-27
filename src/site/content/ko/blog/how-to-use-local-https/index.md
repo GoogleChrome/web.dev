@@ -11,9 +11,9 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %} 대부분의 경우 `http://localhost`는 필요한 작업을 수행합니다. 브라우저에서는 대부분 HTTPS 🔒처럼 작동합니다. 배포된 HTTP 사이트에서 작동하지 않는 일부 API가 `http://localhost`에서 작동하기 때문입니다.
+{% Aside 'caution' %} 대부분의 경우 `http://localhost`는 필요한 작업을 수행합니다. 브라우저에서는 대부분 HTTPS 🔒처럼 작동합니다. 배포된 HTTP 사이트에서 작동하지 않는 일부 API가 `http://localhost`에서 작동하기 때문입니다.
 
-이것이 의미하는 바는 사용자 지정 호스트 이름 또는 브라우저 간 보안 쿠키와 같은 **특별한 경우에만** 로컬에서 HTTPS를 사용해야 한다는 것입니다([로컬 개발을 위해 HTTPS를 사용하는 경우](/when-to-use-local-https) 참조). 해당하는 경우 계속 읽으십시오! {% endBanner %}
+이것이 의미하는 바는 사용자 지정 호스트 이름 또는 브라우저 간 보안 쿠키와 같은 **특별한 경우에만** 로컬에서 HTTPS를 사용해야 한다는 것입니다([로컬 개발을 위해 HTTPS를 사용하는 경우](/when-to-use-local-https) 참조). 해당하는 경우 계속 읽으십시오! {% endAside %}
 
 *이 게시물에서 `localhost`에 대한 진술은 `127.0.0.1` 및 `[::1]`에도 유효합니다. 둘 다 "루프백 주소"라 하는 로컬 컴퓨터 주소를 설명하기 때문입니다. 또한 이를 간소화하기 위해 포트 번호를 지정하지 않습니다.**따라서 `http://localhost`가 표시될 경우, `http://localhost:{PORT}` 또는 `http://127.0.0.1:{PORT}`로 읽습니다.*
 
@@ -46,13 +46,13 @@ mkcert는 로컬 개발을 위한 TLS 인증서 생성에 권장하는 도구입
 
 ### 주의
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 - `mkcert -install` 실행 시 `rootCA-key.pem` mkcert가 자동으로 생성하는 파일을 내보내거나 공유하지 마십시오. **이 파일을 장악한 공격자는 사용자가 방문할 수 있는 모든 사이트에 대해 경로 내 공격을 생성할 수 있습니다** . 공격자는 사용자 컴퓨터에서 은행, 의료 서비스 제공자 또는 소셜 네트워크와 같은 모든 사이트에 대한 보안 요청을 가로챌 수 있습니다. `rootCA-key.pem`이 안전한 위치에 있는지 확인해야 하는 경우 `mkcert -CAROOT`을 실행하십시오.
 - **개발 목적**으로만 mkcert를 사용하고, 확장하여 최종 사용자에게 mkcert 명령을 실행하도록 요청하지 마십시오.
 - 개발 팀: 팀의 모든 구성원은 mkcert를 **별도로** 설치하고 실행해야 합니다(CA 및 인증서를 저장 및 공유하지 않음).
 
-{% endBanner %}
+{% endAside %}
 
 ### 설정
 
@@ -202,11 +202,11 @@ HTTPS로 로컬 개발 사이트를 실행하려면:
 
 4. ✨ 작업을 완료했습니다! 이제 경고 없이 브라우저에서 `https://{YOUR HOSTNAME}`에 액세스할 수 있습니다.
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 **개발 목적**으로만 이 작업을 수행하고 `rootCA-key.pem` 파일을 **내보내거나 공유**하지 마십시오(이 파일이 안전한지 확인하기 위해 이 파일의 위치를 알아야 하는 경우 {`mkcert -CAROOT` 실행).
 
-{% endBanner %}
+{% endAside %}
 
 {% endDetails %}
 

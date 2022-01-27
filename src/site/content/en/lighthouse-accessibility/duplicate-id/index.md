@@ -11,7 +11,7 @@ web_lighthouse:
 noindex: true
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated. Check out [`[id]` attributes on active, focusable elements are not unique](/duplicate-id-active) and [ARIA IDs are not all unique](/duplicate-id-aria) instead.{% endBanner %}
+{% Aside 'caution' %}This audit has been deprecated. Check out [`[id]` attributes on active, focusable elements are not unique](/duplicate-id-active) and [ARIA IDs are not all unique](/duplicate-id-aria) instead.{% endAside %}
 
 {% include 'content/lighthouse-accessibility/no-duplicate-ids.njk' %}
 
