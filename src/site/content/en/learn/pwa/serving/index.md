@@ -11,7 +11,7 @@ A key aspects of Progressive Web Apps is that they're reliable; they can load as
 
 ## The fetch event
 
-The `fetch` event lets us intercept every network request made by the PWA in the service worker's scope, for both same-origin and cross-origin requests. In addition to navigation and asset requests, fetching from an installed service worker allows page visits after a sites first load to be rendered without network calls.
+The [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event lets us intercept every network request made by the PWA in the service worker's scope, for both same-origin and cross-origin requests. In addition to navigation and asset requests, fetching from an installed service worker allows page visits after a site's first load to be rendered without network calls.
 
 The `fetch` handler receives all requests from an app, including URLs and HTTP headers, and lets the app developer decided how to process them.
 
@@ -50,7 +50,7 @@ You must call `respondWith()` synchronously and you must return a [Response](htt
 
 Thanks to the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API), you can create HTTP responses in your JavaScript code, and those responses can be cached using the Cache Storage API and returned as if they were coming from a web server.
 
-To create a response, create a new `Response` object, setting its body and options such as status and headers:. 
+To create a response, create a new `Response` object, setting its body and options such as status and headers:.
 
 ```js
 const simpleResponse = new Response("Body of the HTTP response");
@@ -65,7 +65,7 @@ const htmlResponse = new Response("<b>HTML</b> content", options)
 ```
 
 {% Aside 'warning' %}
-Be extra careful when creating responses with a service worker Buggy code can lead to corner cases and hard to debug issues, such as the browser being unable to load the HTML document that renders your PWA. While debugging, you can always use your browser's reload button with the Shift key pressed, which will bypass the service worker; or use service worker devtools on supported browsers as we'll see in [Tools and Debug](/learn/pwa/tools-and-debug/).
+Be extra careful when creating responses with a service worker buggy code can lead to corner cases and hard to debug issues, such as the browser being unable to load the HTML document that renders your PWA. While debugging, you can always use your browser's reload button with the Shift key pressed, which will bypass the service worker; or use service worker devtools on supported browsers as we'll see in [Tools and Debug](/learn/pwa/tools-and-debug/).
 {% endAside %}
 
 {% Glitch 'learn-pwa-serving-synthesize' %}
@@ -73,7 +73,7 @@ Be extra careful when creating responses with a service worker Buggy code can le
 
 ### Responding from the cache
 
-Now that you know how to serve HTTP responses from a service worker, 
+Now that you know how to serve HTTP responses from a service worker,
 it's time to use the [Caching Storage interface](/learn/pwa/caching) to store assets on the device.
 
 You can use the cache storage API to check if the request received from the PWA is available in the cache, and if it is, respond to `respondWith()` with it.
@@ -101,14 +101,14 @@ When using `match()` with `respondWith()`, the match promise will resolve either
 
 ## Caching strategies
 
-Serving files only from the browser cache doesn't fit every use case. For example the user or the browser can evict the cache. That's why you should define your own strategies for delivering assets for your PWA. 
+Serving files only from the browser cache doesn't fit every use case. For example the user or the browser can evict the cache. That's why you should define your own strategies for delivering assets for your PWA.
 You're not restricted to one caching strategy. You can define different ones for different URL patterns. For example, you can have one strategy for the minimum UI assets, another for API calls, and a third for image and data URLs.
-to do this, read `event.request.url` in `ServiceWorkerGlobalScope.onfetch` and parse it through regular expressions or a [URL Pattern](/urlpattern/). (At the time of writing, URL Pattern is not supported on all platforms).
+To do this, read `event.request.url` in `ServiceWorkerGlobalScope.onfetch` and parse it through regular expressions or a [URL Pattern](/urlpattern/). (At the time of writing, URL Pattern is not supported on all platforms).
 
 The most common strategies are:
 
 Cache First
-: Searches for a cached response first and falls back to the network if one isn't found.  
+: Searches for a cached response first and falls back to the network if one isn't found.
 
 Network First
 : Requests a response from the network first and if none is returned, checks for response in the cache.
@@ -122,11 +122,9 @@ Network-Only
 Cache-Only
 : Always replies with a response from the cache or errors out. The network will never be consulted. The assets that will be served using this strategy must be added to the cache before they are requested.
 
-I'll explain each in detail.
-
 ### Cache first
 
-Using this strategy, the service worker looks for the request is in the cache and returns and returns it if it's there. Otherwise it retrieves the response from the network (optionally, updating the cache for future calls). If there is neither a cache response nor a network response, the request will error. Since serving assets without going to the network tends to be faster, this strategy prioritizes performance over freshness.
+Using this strategy, the service worker looks for the matching request in the cache and returns and returns the corresponding Response if it's cached. Otherwise it retrieves the response from the network (optionally, updating the cache for future calls). If there is neither a cache response nor a network response, the request will error. Since serving assets without going to the network tends to be faster, this strategy prioritizes performance over freshness.
 
 {% Aside %}
 Remember the cache storage interface won't return a Response object. The reference will be `undefined`, if the request is not cached.

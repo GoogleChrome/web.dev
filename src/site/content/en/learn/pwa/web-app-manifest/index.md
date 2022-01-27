@@ -50,7 +50,7 @@ If your PWA includes multiple HTML pages, make sure to link its manifest to all 
 
 ### Debugging the manifest
 
-To ensure the manifest is set up correctly, you can use Inspector in Firefox and DevTools in every Chromium-based browser. 
+To ensure the manifest is set up correctly, you can use Inspector in Firefox and DevTools in every Chromium-based browser.
 
 {% Aside 'gotchas' %}
 If you see a message saying that the browser detected no manifest and you've included a `<link>` to it correctly, check to make sure you can load the manifest in the browser and that its content type is correctly set. You can also try renaming it to `manifest.json`.
@@ -103,7 +103,7 @@ The first set of fields represents the core information about your PWA. They are
 : One of `fullscreen`, `standalone`,  `minimal-ui`, or `browser`, describing how the OS should draw the PWA window. You can read more about the different display modes in the [App Design chapter](/learn/pwa/app-design/#display-modes). [Most](https://almanac.httparchive.org/en/2021/pwa#top-manifest-display-values) use cases implement `standalone`.
 
 `id`
-: A string that uniquely identifies this PWA against others that may be hosted on the same origin. If it's not set, the `start_url` will be used as a fallback value. Keep in mind that by changing the `start_url` in the future (such as when changing a query string value) you may be removing the browser's ability to detect that a PWA is already installed. 
+: A string that uniquely identifies this PWA against others that may be hosted on the same origin. If it's not set, the `start_url` will be used as a fallback value. Keep in mind that by changing the `start_url` in the future (such as when changing a query string value) you may be removing the browser's ability to detect that a PWA is already installed.
 
 {% Aside 'caution' %}
 If you published a PWA before September 2021 read about the best practice for adding an `id` property now in [Uniquely identifying PWAs with the web app manifest id property](https://developer.chrome.com/blog/pwa-manifest-id/).
@@ -115,7 +115,7 @@ Some manifest fields are not supported by every browser. When a browser doesn't 
 
 #### Icons
 
-Your PWA's icon is its visual identity across your users' devices when installed, so it's important to define at least one. Because the `icons` property is a collection of icon objects, you can define several icons in different formats to provide the best icon experience for your users. Each browser will pick one or more icons based on its needs and the operating system it's installed on, the icons closer to the specifications needed. 
+Your PWA's icon is its visual identity across your users' devices when installed, so it's important to define at least one. Because the `icons` property is a collection of icon objects, you can define several icons in different formats to provide the best icon experience for your users. Each browser will pick one or more icons based on its needs and the operating system it's installed on, the icons closer to the specifications needed.
 
 {% Aside 'caution' %}
 While PNGs can include transparency, providing transparent icons may cause unexpected issues on some operating systems. For example, iOS, iPadOS, and Android 8 and later fill in the transparency with a background color out of your control. For better compatibility, use a square non-transparent icon.
@@ -160,7 +160,7 @@ If you don't provide a maskable icon, devices that expect them may shrink your i
 
 Here's an example of a maskable icon rendered in a number of commonly used shapes:
 
-In the following image, if you use the icon at the left as a maskable icon, you will end up with poor results on devices when a shape mask is applied. 
+In the following image, if you use the icon at the left as a maskable icon, you will end up with poor results on devices when a shape mask is applied.
 
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/kKuLmXu1wuztin157EeD.png", alt="An icon that is not suitable for a maskable icon.", width="800", height="533" %}
@@ -195,7 +195,7 @@ In most cases, if your maskable icon isn't displaying well, you can improve it b
 
 ##### Icons in Safari
 
-Safari on iOS and iPadOS ignores the `icon` collection from the web app manifest and instead uses icons defined in a proprietary`<link>` element in the HTML. 
+Safari on iOS and iPadOS ignores the `icon` collection from the web app manifest and instead uses icons defined in a proprietary`<link>` element in the HTML.
 
 To define the icon, include the following in your HTML `<head>` section:
 
@@ -208,7 +208,7 @@ While it's possible to define different icons for iPhones in different resolutio
 {% Aside 'warning' %}
 Do not create rounded corners in your icon for iOS and iPadOS; they will be rounded for you.
 {% endAside %}
- 
+
 ### Recommended fields
 
 The next set of fields to include are ones that will improve your user's experience, even though they're not required for installability.
@@ -230,7 +230,7 @@ The next image shows how the `theme_color` field is used for the title bar on a 
 If you want to provide different theme colors for dark and light modes, you can override the manifest's value with a meta tag in the HTML using a media query, such as with `<meta name="theme-color" content="red" media="(prefers-color-scheme: dark)">`
 {% endAside %}
 
-When defining colors in the manifest, such as within `theme_color` and `background_color`, you should use CSS named colors, such as `salmon` or `orange`, RGB colors such as `#FF5500`, or color functions without transparency such as `rgb()` or `hsl()`. Check the [App design chapter](/learn/pwa/app-design/#theming-your-app) for more information. 
+When defining colors in the manifest, such as within `theme_color` and `background_color`, you should use CSS named colors, such as `salmon` or `orange`, RGB colors such as `#FF5500`, or color functions without transparency such as `rgb()` or `hsl()`. Check the [App design chapter](/learn/pwa/app-design/#theming-your-app) for more information.
 
 {% Aside 'warning' %}
 Do not use transparency, CSS variables, gradient functions, or color functions with transparency (such as `rgba()`) as they are not supported by most browsers. You will get inconsistent results.
@@ -242,7 +242,7 @@ Do not use transparency, CSS variables, gradient functions, or color functions w
 
 #### Splash screens
 
-On some devices, a static image is rendered while your PWA is being loaded to provide immediate feedback to the user. 
+On some devices, a static image is rendered while your PWA is being loaded to provide immediate feedback to the user.
 
 Android uses the `theme_color`, `background_color`, and `icon` values to generate the splash screen.
 
@@ -263,7 +263,7 @@ The next set of fields offers additional information about your PWA. They are al
 : The direction to display direction-capable manifest fields (such as `name`, `short_name`, and `description`). Valid values are `auto`, `ltr` (left-to-right), and `rtl` (right-to-left).
 
 `orientation`
-: Desired orientation for the app once installed. A game may set this to request a landscape-only orientation. [Several values](https://developer.mozilla.org/en-US/docs/Web/Manifest/orientation#values) are accepted, but if included it's typically `portrait` or `landscape` explicitly.
+: Desired orientation for the app once installed. A game may set this to request a landscape-only orientation. [Several values](https://developer.mozilla.org/docs/Web/Manifest/orientation#values) are accepted, but if included it's typically `portrait` or `landscape` explicitly.
 
 {% Aside %}
 The Web Application Manifest spec doesn't allow internationalization within the file to localize fields' values and images. To support multilingual PWAs with different web app manifest values you need to implement a custom solution to change those values per language. Watch [5 tips for your PWA](https://www.youtube.com/watch?v=baSiSIyTGSk&ab_channel=GoogleChromeDevelopers) for more ideas.
@@ -271,7 +271,7 @@ The Web Application Manifest spec doesn't allow internationalization within the 
 
 ### Promotional fields
 
-The fourth set of fields lets you provide promotional information about your PWA, for instance, in install flows, listings, and search results. 
+The fourth set of fields lets you provide promotional information about your PWA, for instance, in install flows, listings, and search results.
 
 `description`
 : An explanation of what the PWA does.
@@ -302,7 +302,7 @@ See these promotional fields in action:
 
 ### Capabilities Fields
 
-Finally, there are a number of fields related to different capabilities that your PWA can use in supported browsers, such as the `shortcuts`, `share_target`, `display_overrides` fields as we cover in the [Capabilities chapter](/learn/pwa/capabilities). There are also fields, like `related_apps` and `prefer_related_apps` (see the [Detection chapter](/learn/pwa/detection) for more information), to connect your PWA to installed apps, often from an app store. 
+Finally, there are a number of fields related to different capabilities that your PWA can use in supported browsers, such as the `shortcuts`, `share_target`, `display_overrides` fields as we cover in the [Capabilities chapter](/learn/pwa/capabilities). There are also fields, like `related_apps` and `prefer_related_apps` (see the [Detection chapter](/learn/pwa/detection) for more information), to connect your PWA to installed apps, often from an app store.
 
 Many new fields may appear in the future while browsers add more capabilities to Progressive Web Apps.
 

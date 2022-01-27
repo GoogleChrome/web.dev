@@ -9,10 +9,10 @@ date: 2022-01-10
 
 To build a solid offline experience, your PWA needs storage management. In the [caching chapter](/learn/pwa/caching) you learned that cache storage is one option to save data on a device. In this chapter, we'll show you how to manage offline data, including data persistence, limits, and the available tools.
 
-## Storage 
+## Storage
 Storage is not just about files and assets, but can include other types of data. On all browsers that support PWAs, the following APIs are available for on-device storage:
 
-- IndexedDB: A NoSQL object storage option for structured data and blobs (binary data).
+- [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API): A NoSQL object storage option for structured data and blobs (binary data).
 - WebStorage: A way to store key/value string pairs, using local storage or session storage. It's not available within a service worker context. This API is synchronous so it's not recommended for complex data storage.
 - Cache Storage: As covered in the [Caching module](/learn/pwa/caching).
 
@@ -32,7 +32,7 @@ All storage, no matter how you use it, is tied not just to the PWA it is used fo
 {% endAside %}
 
 ## IndexedDB
-To use IndexedDB, first open a database. This creates a new database if one does not exist.
+To use [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API), first open a database. This creates a new database if one does not exist.
 IndexedDB is an asynchronous API, but it takes a callback instead of returning a Promise. The following example uses Jake Archibald's [idb library](https://github.com/jakearchibald/idb), which is a tiny, Promise wrapper for IndexedDB. Helper libraries are not required to use IndexedDB, but if you want to use the Promise syntax the `idb` library is an option.
 
 The following example creates a database to hold cooking recipes.
@@ -41,52 +41,52 @@ The following example creates a database to hold cooking recipes.
 
 To open a database:
 
-1. Use the `openDB` function to create a new IndexedDB database called `recipes`. Because IndexedDB databases are versioned, you need to increase the version number whenever you make changes to a database. The second parameter is the database version. In the example is set to 1.
-1. An initialization object containing an `upgrade()` callback is passed to `openDB()`. The callback function is called when the database is installed for the first time or when it upgrades to a new version. This function is the only place where actions can happen. Actions might include creating new object stores (the structures IndexedDB uses to organize data), or indexes (that you'd like to search on). This is also where data migration should happen. Typically, the `upgrade()` function contains a `switch` statement without `break` statements to allow each step to happen in order based on what the old version of the database is.
+1. Use the `openDB` function to create a new IndexedDB database called `cookbook`. Because IndexedDB databases are versioned, you need to increase the version number whenever you make changes to the database structure. The second parameter is the database version. In the example is set to 1.
+1. An initialization object containing an `upgrade()` callback is passed to `openDB()`. The callback function is called when the database is installed for the first time or when it upgrades to a new version. This function is the only place where actions can happen. Actions might include creating new object stores (the structures IndexedDB uses to organize data), or indexes (that you'd like to search on). This is also where data migration should happen. Typically, the `upgrade()` function contains a `switch` statement without `break` statements to allow each step to happen in order, based on what the old version of the database is.
 
 ```js
 import { openDB } from 'idb';
 
 async function createDB() {
   // Using https://github.com/jakearchibald/idb
-  const db = await openDB('recipes', 1, {
+  const db = await openDB('cookbook', 1, {
     upgrade(db, oldVersion, newVersion, transaction) {
-      // Switch over the oldVersion, *without breaks*, to allow the database to be incrementally upgraded.  
+      // Switch over the oldVersion, *without breaks*, to allow the database to be incrementally upgraded.
     switch(oldVersion) {
      case 0:
        // Placeholder to execute when database is created (oldVersion is 0)
      case 1:
        // Create a store of objects
-       const store = db.createObjectStore('desserts', {
+       const store = db.createObjectStore('recipes', {
          // The `id` property of the object will be the key, and be incremented automatically
-           autoincrement: true,
-keyPath: 'id'
+           autoIncrement: true,
+           keyPath: 'id'
        });
-       // Create an index called `name` based on the `name` property of objects in the store
-       store.createIndex('name', 'name');
+       // Create an index called `name` based on the `type` property of objects in the store
+       store.createIndex('type', 'type');
      }
    }
   });
 }
 ```
 
-The example creates an object store inside the `recipes` database called `desserts`, with the `id` property set as the store's index key and creates another index called `name`, based on the `name` property.
+The example creates an object store inside the `cookbook` database called `recipes`, with the `id` property set as the store's index key and creates another index called `type`, based on the `type` property.
 
 Let's take a look at the object store that's just been created. After adding recipes to the object store and opening DevTools on Chromium-based browsers or Web Inspector on Safari, this is what you should expect to see:
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/0lugXC1vJqDuRlrwF01l.png", alt="Safari and Chrome showing IndexedDB contents.", width="800", height="538" %}
+{% Img src="image/SeARmcA1EicLXagFnVOe0ou9cqK2/OdDiXwJBMrsOgS1Phoz7.png", alt="Safari and Chrome showing IndexedDB contents.", width="800", height="538" %}
 
 ### Adding data
 
 IndexedDB uses transactions. Transactions group actions together, so they happen as a unit. They help ensure that the database is always in a consistent state. They're also critical, if you have multiple copies of your app running, for preventing simultaneous writing to the same data.
 To add data:
 
-1. Start a transaction again, but this time set the mode to `readwrite`.
-1. Get the object store.
-1. Call `add()` with the data you are saving. The method receives data with a dictionary (such as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd call `put()` instead.
+1. Start a transaction, the `mode` to `readwrite`.
+1. Get the object store, where you'll add data.
+1. Call `add()` with the data you are saving. The method receives data with in dictionary form (as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd call the method `put()` instead.
 
 
-Transactions have a `done` promise that resolves when the transaction completes successfully, or rejects with a [transaction error](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error). 
+Transactions have a `done` promise that resolves when the transaction completes successfully, or rejects with a [transaction error](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error).
 
 As the [IDB library documentation](https://www.npmjs.com/package/idb?activeTab=readme) explains, if you're writing to the database, `tx.done` is the signal that everything was successfully committed to the database. However, it's beneficial to await individual operations so that you can see any errors that cause the transaction to fail.
 
@@ -94,23 +94,24 @@ As the [IDB library documentation](https://www.npmjs.com/package/idb?activeTab=r
 // Using https://github.com/jakearchibald/idb
 async function addData() {
   const cookies = {
-      name: Chocolate chips cookies,
-	cook_time_minutes: 25
+      name: "Chocolate chips cookies",
+      type: "dessert"
+	    cook_time_minutes: 25
   };
-  const tx = await db.transaction('desserts', 'readwrite');
-  const store = tx.objectStore('desserts');
+  const tx = await db.transaction('recipes', 'readwrite');
+  const store = tx.objectStore('recipes');
   store.add(cookies);
   await tx.done;
 }
 ```
 
-Once you've added the cookies, the recipe will be in the database with other desserts. The ID is automatically set and incremented by indexedDB. If you run this code twice you will have two identical cookie entries.
+Once you've added the cookies, the recipe will be in the database with other recipes. The ID is automatically set and incremented by indexedDB. If you run this code twice you will have two identical cookie entries.
 
 {% Glitch 'learn-pwa-offline-data-saving' %}
 
 ### Retrieving data
 
-Here is how you get data from IndexedDB: 
+Here is how you get data from IndexedDB:
 
 1. Start a transaction and specify the object store or stores, and optionally transaction type.
 1. Call `objectStore()` from that transaction. Make sure you specify the object store name.
@@ -119,9 +120,11 @@ Here is how you get data from IndexedDB:
 ```js
 // Using https://github.com/jakearchibald/idb
 async function getData() {
-  const tx = await db.transaction('desserts', 'readonly')
-  const store = tx.objectStore('desserts');
-// Check for an existing id to get the record
+  const tx = await db.transaction('recipes', 'readonly')
+  const store = tx.objectStore('recipes');
+// Because in our case the `id` is the key, we would
+// have to know in advance the value of the id to
+// retrieve the record
   const value = await store.get([id]);
 }
 ```
@@ -132,13 +135,13 @@ async function getData() {
 [Progressive Web Apps: IndexedDB](https://developers.google.com/codelabs/pwa-training/pwa03--indexeddb#0).
 {% endAside %}
 
-## The storage manager 
+## The storage manager
 
-Knowing how to manage your PWA's storage is particularly important to storing and streaming network responses correctly. 
+Knowing how to manage your PWA's storage is particularly important to storing and streaming network responses correctly.
 
-Storage capacity is shared among all storage options, including Cache Storage, IndexedDB, Web Storage, and even the service worker file and its dependencies. 
+Storage capacity is shared among all storage options, including Cache Storage, IndexedDB, Web Storage, and even the service worker file and its dependencies.
 However, the amount of storage available varies from browser to browser. You're not likely to run out; sites could store megabytes and even gigabytes of data on some browsers. Chrome, for instance, allows the browser to use up to 80% of the total disk space, and an individual origin can use up to 60% of the entire disk space. For browsers that support the Storage API, you can know how much storage is still available for your app, its quota, and its use.
-The following example uses the Storage API to get estimate quota and usage, then calculates the percentage of used and remaining bytes. Note that `navigator.storage` returns an instance of `StorageManager`. There is a separate `Storage` interface and it is easy to get them confused.
+The following example uses the Storage API to get estimate quota and usage, then calculates the percentage used and remaining bytes. Note that `navigator.storage` returns an instance of `StorageManager`. There is a separate `Storage` interface and it is easy to get them confused.
 
 ```js
 if (navigator.storage && navigator.storage.estimate) {
@@ -149,7 +152,7 @@ if (navigator.storage && navigator.storage.estimate) {
   console.log(`You've used ${percentageUsed}% of the available storage.`);
   const remaining = quota.quota - quota.usage;
   console.log(`You can write up to ${remaining} more bytes.`);
-} 
+}
 ```
 
 {% Glitch 'learn-pwa-offline-data-storage' %}
@@ -158,11 +161,11 @@ In Chromium DevTools, you can see your site's quota and how much storage is used
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/NAXXvUU099wqtSbzvt9m.png", alt="Chrome DevTools in Application, Clear Storage section", width="800", height="567" %}
 
-Firefox and Safari don't offer a summary screen for seeing all storage quota and usage for the current origin. 
+Firefox and Safari don't offer a summary screen for seeing all storage quota and usage for the current origin.
 
 ### Data persistence
 
-You can ask the browser for persistent storage on compatible platforms to avoid automatic data eviction after inactivity or on storage pressure. If granted, the browser will never evict data from storage. This protection includes the service worker registration, IndexedDB databases, and files in cache storage. Realize that users are always in charge, and they can delete the storage at any time, even if the browser has granted persistent storage.
+You can ask the browser for persistent storage on compatible platforms to avoid automatic data eviction after inactivity or on storage pressure. If granted, the browser will never evict data from storage. This protection includes the service worker registration, IndexedDB databases, and files in cache storage. Note that users are always in charge, and they can delete the storage at any time, even if the browser has granted persistent storage.
 
 To request persistent storage, call the `StorageManager.persist()`. As before, the `StorageManager` interface is access through the `navigator.storage` property.
 
@@ -183,8 +186,8 @@ The `StorageManager` interface has `persist()` and `persisted()` methods that bo
 {% endAside %}
 
 {% Aside %}
-[Content Indexing API](/content-indexing-api/) is an experimental API that's available in some Chromium browsers which lets your PWA expose the pieces of content that you have indexed offline. 
-If you register your offline-ready content using this API, the user will see them in Downloads within the browser even when there is no network connection. 
+[Content Indexing API](/content-indexing-api/) is an experimental API that's available in some Chromium browsers which lets your PWA expose the pieces of content that you have indexed offline.
+If you register your offline-ready content using this API, the user will see them in Downloads within the browser even when there is no network connection.
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/b1o5a6iCgjqOVMVfcbuj.png", alt="The Content Indexing API results available in Chrome for Android.", width="800", height="1480" %}
 {% endAside %}
 
