@@ -41,7 +41,6 @@ cases, they can cause real damage.
 
 <figure>
   <video autoplay controls loop muted
-
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
@@ -93,7 +92,6 @@ layout shifts within that window.
 
 <figure>
   <video controls autoplay loop muted
-
     width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">

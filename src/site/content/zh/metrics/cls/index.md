@@ -23,7 +23,6 @@ tags:
 
 <figure>
   <video autoplay controls loop muted
-
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
