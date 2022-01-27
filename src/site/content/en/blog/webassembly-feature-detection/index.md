@@ -2,7 +2,7 @@
 title: WebAssembly feature detection
 subhead: Learn how to use the newest WebAssembly features while supporting users across all browsers.
 description: Learn how to use the newest WebAssembly features while supporting users across all browsers.
-date: 2022-01-20
+date: 2022-01-27
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/AQnv9b8SVDwo3y5wSQdG.png
 alt: Spectral lines of phosphorus.
 authors:
