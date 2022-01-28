@@ -70,14 +70,14 @@ gotchas:
   ru: Обратите внимание
   zh: 问题
 
-attention:
-  en: Attention
-  es: Atención
-  ja: 注意
-  ko: 주목
-  pt: Atenção
-  ru: Внимание
-  zh: 注意力
+important:
+  en: Important
+  es: Importante
+  ja: 重要
+  ko: 중요한
+  pt: Importante
+  ru: Важный
+  zh: 重要的
 
 do:
   en: Do

@@ -119,17 +119,17 @@ Use the objective aside to define the goal of a process described in the body
 copy.
 {% endAside %}
 
-### Attention asides
+### Important asides
 
 ```text
-{% raw %}&#123;% Aside 'attention' %&#125;
-Use the attention aside to indicate a common problem that the reader wouldn't know
+{% raw %}&#123;% Aside 'important' %&#125;
+Use the important aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 &#123;% endAside %&#125;{% endraw %}
 ```
 
-{% Aside 'attention' %}
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% Aside 'important' %}
+Use the important aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 {% endAside %}
 
