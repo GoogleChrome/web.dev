@@ -351,4 +351,4 @@ After that, all the operations were executing successfully without conflicts.
 
 Feel free to browse the [codebase on Github](https://github.com/GoogleChromeLabs/web-gphoto2) for more implementation insights. I also want to thank [Marcus Meissner](https://github.com/msmeissn) for maintenance of gPhoto2 and for his reviews of my upstream PRs.
 
-As shows in these posts, WebAssembly, Asyncify and Fugu APIs provide a very powerful compilation target for even the most complex applications. They allow you to take a library or an application previously built for a single platform, and port it to the web, making it available to a vastly larger number of users across desktop and mobile devices alike.
+As shows in these posts, WebAssembly, Asyncify and Fugu APIs provide a capable compilation target for even the most complex applications. They allow you to take a library or an application previously built for a single platform, and port it to the web, making it available to a vastly larger number of users across desktop and mobile devices alike.
