@@ -21,3 +21,4 @@ decor: '/images/courses/forms/card-decor.svg'
 thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/n5XVLEqt8NTQQGAANqLJ.png'
 # This is used to color the card module count
 highlight: 'magenta'
+tag: forms

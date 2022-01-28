@@ -11,7 +11,7 @@
       {# Sort courses by descending date order (most recent comes first) #}
       {% for course in coursesArr|sort(true, false, 'meta.date') %}
         {% if course.meta and not course.meta.draft %}
-          <div>
+          <div data-tag="{{ course.meta.tag }}">
             <a href="{{ course.meta.url }}" class="card" data-style="branded">
               <h3 class="visually-hidden">{{ course.meta.title }}</h3>
               <div class="card__header repel">

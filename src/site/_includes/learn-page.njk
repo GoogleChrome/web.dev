@@ -22,8 +22,27 @@ pageScripts:
   {# Hero ends #}
 
   {# Courses start #}
-  <div class="wrapper">
+  <div class="wrapper repel">
     <h2 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.courses' | i18n(locale) }}</h2>
+
+    {% set coursesArr = helpers.values(courses) %}
+    {% set coursesFilterIds = [] %}
+    {% set coursesFilterItems = [] %}
+
+    {% for course in coursesArr %}
+      {% if course.meta.tag %}
+        {% set coursesFilterIds = (coursesFilterIds.push(course.meta.tag), coursesFilterIds) %}
+      {% endif %}
+    {% endfor %}
+
+    {% set coursesFilterIds = helpers.dedupeArray(coursesFilterIds) %}
+
+    {% for id in coursesFilterIds %}
+      {% set tagTitle = ('i18n.tags.' + id + '.title') | i18n(locale) %}
+      {% set coursesFilterItems = (coursesFilterItems.push({title: tagTitle, id: id}), coursesFilterItems) %}
+    {% endfor %}
+
+    <web-courses-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{coursesFilterItems | dump}}"></web-courses-filter>
   </div>
   <div class="bg-mid-bg region gap-top-size-1">
     <div class="wrapper">
@@ -38,12 +57,12 @@ pageScripts:
     <div class="pad-block-size-1 repel">
       <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.collections' | i18n(locale) }}</h2>
 
-      {% set filterItems = [] %}
+      {% set learnFilterItems = [] %}
       {% for category, paths in learn %}
-        {% set i18nKey = 'i18n.learn.' + category %}
-        {% set filterItems = (filterItems.push({title: i18nKey | i18n(locale), id: i18nKey | i18n(locale) | slug}), filterItems) %}
+        {% set collectionTitle = ('i18n.learn.' + category) | i18n(locale) %}
+        {% set learnFilterItems = (learnFilterItems.push({title: collectionTitle , id: collectionTitle | slug}), learnFilterItems) %}
       {% endfor %}
-      <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{filterItems | dump}}"></web-learn-filter>
+      <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{learnFilterItems | dump}}"></web-learn-filter>
     </div>
   </div>
 

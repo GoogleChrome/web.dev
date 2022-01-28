@@ -21,4 +21,5 @@ module.exports = {
   hashForProd,
   values: Object.values,
   join: path.join,
+  dedupeArray: (arr) => Array.from(new Set(arr)),
 };

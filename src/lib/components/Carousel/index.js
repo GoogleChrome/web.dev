@@ -92,6 +92,9 @@ export class Carousel extends BaseElement {
       searchForElement = !(target.parentElement === this._carouselTrack);
       if (searchForElement) {
         target = target.parentElement;
+        if (!target) {
+          searchForElement = false;
+        }
       }
     } while (searchForElement);
 
@@ -125,6 +128,9 @@ export class Carousel extends BaseElement {
   _scroll(forward = true) {
     for (let i = 0; i < this._items.length; i++) {
       const item = this._items[i];
+      if (item.classList.contains('hidden-yes')) {
+        continue;
+      }
       const overflow =
         this._carouselTrack.parentElement.clientWidth -
         this._carouselTrack.clientWidth;
@@ -132,16 +138,12 @@ export class Carousel extends BaseElement {
         this._carouselTrack.scrollLeft + overflow <=
         item.offsetLeft + item.offsetWidth
       ) {
-        let index = i + (forward ? 1 : -1);
+        const list = forward
+          ? this._items.slice(i + 1)
+          : this._items.slice(0, i).reverse();
+        const scrollTo = list.find((e) => !e.classList.contains('hidden-yes'));
 
-        if (index < 0) {
-          index = 0;
-        } else if (index >= this._items.length) {
-          index = this._items.length - 1;
-        }
-
-        const scrollTo = this._items[index];
-        return this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
+        return this._carouselTrack.scrollTo((scrollTo || item).offsetLeft, 0);
       }
     }
   }

@@ -3,6 +3,7 @@
  */
 
 import '../components/Carousel';
+import '../components/CoursesFilter';
 import '../components/LearnFilter';
 
 import '../components/base';

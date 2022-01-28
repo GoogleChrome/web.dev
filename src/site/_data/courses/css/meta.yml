@@ -21,3 +21,4 @@ decor: '/images/courses/css/card-decor.svg'
 thumbnail: 'image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png'
 # This is used to color the card module count
 highlight: 'purple'
+tag: css

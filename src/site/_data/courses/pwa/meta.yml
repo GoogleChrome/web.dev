@@ -17,3 +17,4 @@ background: '/images/courses/pwa/background.svg'
 card: '/images/courses/pwa/card.svg'
 # This is used for the social media thumbnail.
 thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/NUc0UUPjUOXpaLvvEz1H.png'
+tag: progressive-web-apps

@@ -21,3 +21,4 @@ decor: '/images/courses/design/card-decor.svg'
 thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/KxnwWklPxOyH9uK87KG8.svg'
 # This is used to color the card module count
 highlight: 'green'
+tag: css
