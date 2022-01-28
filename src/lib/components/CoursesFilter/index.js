@@ -5,7 +5,7 @@ import {BaseElement} from '../BaseElement';
  * @extends {BaseElement}
  * @final
  */
-class CoursesFilter extends BaseElement {
+export class CoursesFilter extends BaseElement {
   static get properties() {
     return {
       active: {type: String},
@@ -33,7 +33,10 @@ class CoursesFilter extends BaseElement {
     this.active = id;
 
     const carousel = document.querySelector('web-carousel');
-    const carouselTrack = carousel.querySelector('.carousel__track');
+    const carouselTrack = (carousel || document).querySelector(
+      '.carousel__track',
+    );
+
     if (!carouselTrack) {
       return;
     }
