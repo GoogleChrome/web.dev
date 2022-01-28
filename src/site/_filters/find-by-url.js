@@ -15,7 +15,7 @@
  */
 
 const {defaultLocale} = require('../_data/site');
-const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}`);
+const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}/`);
 /** @type {{[url: string]: EleventyCollectionItem}} */
 let memo;
 
@@ -64,7 +64,7 @@ const findByUrl = (url) => {
     throw new Error('No collection has been memoized yet.');
   }
 
-  url = url.replace(defaultLocaleRegExp, '');
+  url = url.replace(defaultLocaleRegExp, '/');
   return memo[url];
 };
 
