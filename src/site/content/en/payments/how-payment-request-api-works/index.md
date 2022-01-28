@@ -111,10 +111,11 @@ interface.
 
 {% Aside 'warning' %}
 
-Starting from version 99, Chrome requires [a user
-activation](https://developers.google.com/web/updates/2019/01/user-activation)
-before calling `show()` method. This means the call must be encapsurated inside
-an event listener such as 'click'.
+Calling `show()` method requires [a user
+activation](https://developers.google.com/web/updates/2019/01/user-activation).
+This means the call must be encapsurated inside an event listener such as
+'click'. Note that Chrome currently bypasses this constraint, but will enforce
+it sometime in the future.
 
 {% endAside %}
 
