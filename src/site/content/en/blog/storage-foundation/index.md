@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-12-14
+updated: 2022-01-28
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -27,20 +27,20 @@ origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/2916080758722396161
 ---
 
-{% Aside %} The Storage Foundation API is part of the
-[capabilities project](/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
-
-{% Aside %} There is an ongoing effort to bring the Storage Foundation API closer to the
-origin private file system of the File System Access API. For more information, read
-[Accessing files optimized for performance from the origin private file system](/file-system/access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system). {% endAside %}
+{% Aside 'warning' %} The Storage Foundation API was part of the
+[capabilities project](/fugu-status/) and its development has now been abandoned. After carefully
+considering our options, we have decided to continue working on the features proposed by this API in
+the context of the origin private file system of the File System Access API instead. For more
+information on present use, read
+[Accessing files optimized for performance from the origin private file system](/file-system/access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
+{% endAside %}
 
 The web platform increasingly offers developers the tools they need to build fined-tuned
 high-performance applications for the web. Most notably,
-[WebAssembly](https://developer.mozilla.org/docs/WebAssembly) (Wasm) has opened the door to
-fast and powerful web applications, while technologies like [Emscripten](https://emscripten.org/)
-now allow developers to reuse tried and tested code on the web. To truly leverage this potential,
-developers must have the same power and flexibility when it comes to storage.
+[WebAssembly](https://developer.mozilla.org/docs/WebAssembly) (Wasm) has opened the door to fast and
+powerful web applications, while technologies like [Emscripten](https://emscripten.org/) now allow
+developers to reuse tried and tested code on the web. To truly leverage this potential, developers
+must have the same power and flexibility when it comes to storage.
 
 This is where the Storage Foundation API comes in. The Storage Foundation API is a new fast and
 unopinionated storage API that unlocks new and much-requested use cases for the web, such as
@@ -59,9 +59,8 @@ The web platform offers a number of storage options for developers, each of whic
 specific use-cases in mind.
 
 - Some of these options clearly do not overlap with this proposal as they only allow very small
-  amounts of data to be stored, like
-  [cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies), or the
-  [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API) consisting of
+  amounts of data to be stored, like [cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies),
+  or the [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API) consisting of
   the `sessionStorage` and the `localStorage` mechanisms.
 - Other options are already deprecated for various reasons like the
   [File and Directory Entries API](https://developer.mozilla.org/docs/Web/API/File_and_Directory_Entries_API/Introduction)
@@ -70,16 +69,15 @@ specific use-cases in mind.
   interface with the client's file system and provide access to data that may be outside of the
   origin's or even the browser's ownership. This different focus comes with stricter security
   considerations and higher performance costs.
-- The [IndexedDB API](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) can be used as
-  a backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes
+- The [IndexedDB API](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) can be used as a
+  backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes
   [IDBFS](https://emscripten.org/docs/api_reference/Filesystem-API.html), an IndexedDB-based
   persistent file system. However, since IndexedDB is fundamentally a key-value store, it comes with
   significant performance limitations. Furthermore, directly accessing subsections of a file is even
   more difficult and slower under IndexedDB.
-- Finally, the
-  [CacheStorage interface](https://developer.mozilla.org/docs/Web/API/CacheStorage) is widely
-  supported and is tuned for storing large-sized data such as web application resources, but the
-  values are immutable.
+- Finally, the [CacheStorage interface](https://developer.mozilla.org/docs/Web/API/CacheStorage) is
+  widely supported and is tuned for storing large-sized data such as web application resources, but
+  the values are immutable.
 
 The Storage Foundation API is an attempt at closing all the gaps of the previous storage options by
 allowing for the performant storage of mutable large files defined within the origin of the
@@ -165,15 +163,14 @@ faster, less reliable variant would be useful. {% endAside %}
   bytes.
 - `NativeIOFile.read(buffer, offset)`: Reads the contents of the file at the given offset through a
   buffer that is the result of transferring the given buffer, which is then left detached. Returns a
-  `NativeIOReadResult` with the transferred buffer and the number of bytes that were
-  successfully read.
+  `NativeIOReadResult` with the transferred buffer and the number of bytes that were successfully
+  read.
 
   A `NativeIOReadResult` is an object that consists of two entries:
 
-  - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView), which is
-    the result of transferring the buffer passed to `read()`. It is of the same type and length as
-    source buffer.
+  - `buffer`: An [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView),
+    which is the result of transferring the buffer passed to `read()`. It is of the same type and
+    length as source buffer.
   - `readBytes`: The number of bytes that were successfully read into `buffer`. This may be less
     than the buffer size, if an error occurs or if the read range spans beyond the end of the file.
     It is set to zero if the read range is beyond the end of the file.
@@ -185,10 +182,9 @@ faster, less reliable variant would be useful. {% endAside %}
 
   A `NativeIOWriteResult` is an object that consists of two entries:
 
-  - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView) which is
-    the result of transferring the buffer passed to `write()`. It is of the same type and length as
-    the source buffer.
+  - `buffer`: An [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView)
+    which is the result of transferring the buffer passed to `write()`. It is of the same type and
+    length as the source buffer.
   - `writtenBytes`: The number of bytes that were successfully written into `buffer`. This may be
     less than the buffer size if an error occurs.
 
@@ -214,9 +210,9 @@ it to successfully return. {% endAside %}
 {% Aside %} There is currently an
 [ongoing effort](https://docs.google.com/document/d/1g7ZCqZ5NdiU7oqyCpsc2iZ7rRAY1ZXO-9VoG4LfP7fM/edit?usp=sharing)
 to augment the
-[origin private file system](/file-system-access/#accessing-the-origin-private-file-system)
-of the [File System Access API](/file-system-access/) as to not introduce yet another entry point
-for a storage system. This article will be updated as we make progress on this. {% endAside %}
+[origin private file system](/file-system-access/#accessing-the-origin-private-file-system) of the
+[File System Access API](/file-system-access/) as to not introduce yet another entry point for a
+storage system. This article will be updated as we make progress on this. {% endAside %}
 
 ## How to use the Storage Foundation API {: #use }
 
@@ -377,5 +373,6 @@ Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on
 [cr-status]: https://chromestatus.com/feature/5670244905385984
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EStorage
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]:
+  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot]: https://developer.chrome.com/origintrials/#/view_trial/2916080758722396161
