@@ -22,7 +22,7 @@ Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
 transformed the JavaScript world for the better by allowing anyone to easily
 download and use over _half a million_ public packages. But we often include
 libraries we're not fully utilizing. To fix this issue, **analyze your bundle**
-to detect unused code. Then remove **unused** and **unneeded** libraries.
+to detect unused code. Then remove **unused** and **unnecessary** libraries.
 
 ## Analyze your bundle
 
