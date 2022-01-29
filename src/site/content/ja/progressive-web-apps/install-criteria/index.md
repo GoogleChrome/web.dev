@@ -36,7 +36,7 @@ Chrome では、プログレッシブ Web アプリは `beforeinstallprompt` イ
     - `start_url`
     - `display` - `fullscreen`、`standalone`、または `minimal-ui` のいずれかである必要があります。
     - `prefer_related_applications` が存在していないか、 `false` である
-- `fetch` ハンドラーでサービスワーカーを登録する
+- `fetch` ハンドラーをもつサービスワーカーを登録する
 
 他のブラウザにも同様のインストール基準がありますが、わずかな違いがある場合があります。詳細については、それぞれのサイトを確認してください。
 
