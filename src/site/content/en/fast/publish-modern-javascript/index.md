@@ -69,7 +69,7 @@ In other words, **ES2017 is the closest to modern syntax today**.
 
 ## Legacy JavaScript
 
-Legacy JavaScript is code that specifically avoids using all the above language
+Legacy JavaScript is a code that specifically avoids using all the above language
 features. Most developers write their source code using modern syntax, but
 compile everything to legacy syntax for increased browser support. Compiling
 to legacy syntax does increase browser support, however the effect is often
