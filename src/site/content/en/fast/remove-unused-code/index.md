@@ -103,7 +103,7 @@ that automatically remove unused code from popular libraries](https://github.com
 [Remove unused code.](/codelab-remove-unused-code)
 {% endAside %}
 
-## Remove unneeded libraries
+## Remove unnecessary libraries
 
 Not all libraries can be easily broken down into parts and selectively imported.
 In these scenarios, consider if the library could be removed entirely. Building
