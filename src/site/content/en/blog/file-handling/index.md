@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2022-01-25
+updated: 2022-01-30
 tags:
   - blog
   - capabilities
@@ -43,7 +43,7 @@ Examples of sites that may use this API include:
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | Complete                 |
 | 4. Origin trial                          | Complete                 |
-| 5. **Launch**                            | **Chromium&nbsp;98**     |
+| 5. Launch                                | Not started              |
 
 </div>
 
