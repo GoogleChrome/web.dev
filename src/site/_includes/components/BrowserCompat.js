@@ -43,10 +43,10 @@ function BrowserCompat(feature) {
         isSupported ? ` ${version}, ` : ', ',
         ariaSupported,
       ].join('');
-      return `<span class="browser-compat__icon browser-compat--${browser}">
-          <span class="w-visually-hidden">${ariaLabel}</span>
+      return `<span class="browser-compat__icon" data-browser="${browser}">
+          <span class="visually-hidden">${ariaLabel}</span>
       </span>
-      <span class="browser-compat__version browser-compat--${isSupported}">
+      <span class="browser-compat__version" ${isSupported ? 'data-compat' : ''}>
         ${version}
       </span>
       `;
@@ -62,7 +62,7 @@ function BrowserCompat(feature) {
       : '';
     const supportLabel = i18n(`i18n.browser_compat.browser_support`, locale);
     return `<div class="browser-compat">
-      <span>${supportLabel}:</span>
+      <span class="browser-compat__label">${supportLabel}:</span>
       ${compatIcons.join('')}
       ${sourceLink}
     </div>

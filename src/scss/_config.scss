@@ -200,8 +200,11 @@ $gorko-config: (
   ),
   'breakpoints': (
     'xs': '(max-width: 25em)',
+    'max-md': '(max-width: 50em)',
     'md': '(min-width: 50em)',
+    'max-lg': '(max-width: 80em)',
     'lg': '(min-width: 80em)',
+    'max-xl': '(max-width: 106em)',
     'xl': '(min-width: 106em)',
   ),
 );

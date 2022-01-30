@@ -2,33 +2,78 @@
 /// https://web.dev/design-system/pattern/browser-compat
 .browser-compat {
   --gutter: 1rem #{get-utility-value('pad-block', 'size-2')};
-}
-
-/// This should be a figcaption, so we need to normalize
-.browser-compat__label {
-  margin: 0;
-  font-style: normal;
-
-  @include apply-utility('color', 'mid-text');
-}
-
-/// List of browsers
-.browser-compat__items {
-  --gutter: 1rem #{$global-gutter};
-  padding: 0;
-  margin: 0;
-}
-
-/// the browser icon and indicator relationship
-.browser-compat__item {
   display: flex;
-  flex-shrink: 0;
-  gap: 0.5rem;
+  align-items: center;
+  color: get-utility-value('color', 'mid-text');
 
-  img {
-    display: block;
-    width: 1.5rem;
-    height: 1.5rem;
-    object-fit: cover;
+  @include media-query('max-md') {
+    flex-wrap: wrap;
+  }
+}
+
+// Icons
+.browser-compat__icon {
+  height: 24px;
+  width: 24px;
+  margin-left: 24px;
+  margin-right: 6px;
+  display: inline-block;
+  background: content-box no-repeat transparent;
+
+  &[data-browser='chrome'] {
+    background-image: url('/images/icons/chrome.svg');
+
+    @include media-query('max-md') {
+      margin-left: 0;
+    }
+  }
+
+  &[data-browser='firefox'] {
+    background-image: url('/images/icons/firefox.svg');
+  }
+
+  &[data-browser='edge'] {
+    background-image: url('/images/icons/edge.svg');
+  }
+
+  &[data-browser='safari'] {
+    background-image: url('/images/icons/safari_24x24.png');
+  }
+}
+
+// Version
+.browser-compat__version {
+  background: get-utility-value('bg', 'state-bad-bg');
+  border-radius: 100%;
+  color: get-utility-value('color', 'state-bad-text');
+  font-size: get-size('size-0');
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  min-width: 20px;
+
+  &[data-compat] {
+    background: get-utility-value('bg', 'state-good-bg');
+    color: get-utility-value('color', 'state-good-text');
+  }
+}
+
+.browser-compat__label {
+  color: get-utility-value('color', 'mid-text');
+  font-style: normal;
+  margin: 0;
+
+  @include media-query('max-md') {
+    flex: 0 0 100%;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
+.browser-compat__link {
+  margin-left: 24px;
+
+  @include media-query('max-md') {
+    margin-left: 0;
   }
 }
