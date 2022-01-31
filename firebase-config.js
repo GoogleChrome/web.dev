@@ -49,3 +49,7 @@ if (process.env.ELEVENTY_ENV === 'prod') {
 }
 
 fs.writeFileSync('./firebase.json', JSON.stringify(firebaseJson, null, 2));
+fs.writeFileSync(
+  './functions/supportedLocales.js',
+  `export default ${JSON.stringify(supportedLocales)};`,
+);
