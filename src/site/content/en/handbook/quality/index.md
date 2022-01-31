@@ -1,7 +1,7 @@
 ---
 layout: handbook
 title: Content quality guidelines
-date: 2019-10-01
+date: 2022-02-01
 description: |
   The primary guidelines for writing high-quality content.
 ---
@@ -209,7 +209,7 @@ Use a list for a set of instructions or related ideas.
 
 Include examples and figures. (See the next guideline.)
 
-### Keep it simple
+### Keep it concise {: #keep-it-simple}
 
 *Canonical example: [Code splitting with React.lazy and Suspense](/code-splitting-suspense)*
 
@@ -241,7 +241,7 @@ Explain why what you're teaching matters before jumping into the instruction. Th
 
 Indicate which details are relevant in longer code blocks by providing explanations and code highlighting. If readers don't need to understand everything about the code, tell them that—it makes the task less intimidating, especially for less experienced developers. See the [Serve responsive images](/serve-responsive-images) post for an example.
 
-When there's more than one way to solve a problem, organize them in order of simplest to most complex.
+When there's more than one way to solve a problem, organize them in order of least steps to most complex.
 
 ### Make section headings scannable
 

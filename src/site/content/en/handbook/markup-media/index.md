@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2021-03-11
+updated: 2022-02-01
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
