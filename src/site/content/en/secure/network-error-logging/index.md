@@ -4,7 +4,7 @@ title: Network Error Logging (NEL)
 authors:
   - ericbidelman
   - maudn
-date: 2021-31-01
+date: 2022-01-31
 description: Use Network Error Logging (NEL) to collect client-side network errors.
 tags:
   - monitoring

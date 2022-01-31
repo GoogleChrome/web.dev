@@ -6,7 +6,7 @@ subhead: |
 authors:
   - maudn
 date: 2021-10-19
-updated: 2021-01-31
+updated: 2022-01-31
 description: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PEgnzZFQVPhP2PyOnMm8.jpg
@@ -33,20 +33,6 @@ Some errors only occur in production. You won't see them locally or during devel
 **real users**, **real networks**, and **real devices** change the game. The Reporting API helps
 catch some of these errors⏤such as security violations or deprecated and soon-to-be-deprecated API
 calls⏤across your site, and transmits them to an endpoint you've specified.
-
-As an example, say your new site relies on `document.write()` to load
-critical scripts. New users from different parts of the world will eventually
-find your site, but they're probably on much slower connections
-than you tested with. Unbeknownst to you, your site starts breaking
-for them because of Chrome's [browser intervention](https://www.chromestatus.com/features#intervention)
-for [blocking document.write() on 2G networks](https://www.chromestatus.com/features/5718547946799104). Without the Reporting API there's no way to know
-this is happening to your precious users.
-Warnings that get logged to the DevTools console are super helpful
-but have limited value to you as the site author. That's because they're
-local to the user's browser! The Reporting API changes this. Use it to
-configure, detect, and report errors to a server. Propagate browser warnings to a backend, catch issues across
-your site before they grow out of control, and prevent future bugs before they
-happen (e.g. know about deprecated APIs ahead of their removal).
 
 It lets you declare what
 you'd like to monitor via HTTP headers, and is operated **by the browser**.
