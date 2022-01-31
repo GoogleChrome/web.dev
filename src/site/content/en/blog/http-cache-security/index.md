@@ -56,7 +56,7 @@ resources are either:
 This setup doesn't prevent an attacker from exploiting Spectre. However, it
 ensures cross-origin resources are not valuable to the attacker (= public
 resource) or allowed to be shared with the attacker (=
-[CORP](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)):cross-origin).
+`[CORP](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)):cross-origin`).
 
 ### How does HTTP caching affect Spectre?
 
@@ -66,7 +66,7 @@ attack. For example:
 1.  The credentialed resource is cached.
 1.  The attacker loads a cross-origin isolated page.
 1.  The attacker requests the resource again.
-1.  COEP:credentialless is set by the browser, so the resource is fetched
+1.  `COEP:credentialless` is set by the browser, so the resource is fetched
     without cookies. However, a cache may return the credentialled response 
     instead.
 1.  The attacker can then read the personalized resource using a Spectre
