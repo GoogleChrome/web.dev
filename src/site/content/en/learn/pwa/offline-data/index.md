@@ -81,9 +81,9 @@ Let's take a look at the object store that's just been created. After adding rec
 IndexedDB uses transactions. Transactions group actions together, so they happen as a unit. They help ensure that the database is always in a consistent state. They're also critical, if you have multiple copies of your app running, for preventing simultaneous writing to the same data.
 To add data:
 
-1. Start a transaction, the `mode` to `readwrite`.
+1. Start a transaction with the `mode` set to `readwrite`.
 1. Get the object store, where you'll add data.
-1. Call `add()` with the data you are saving. The method receives data with in dictionary form (as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd call the method `put()` instead.
+1. Call `add()` with the data you are saving. The method receives data in dictionary form (as key/value pairs) and adds it to the object store.  The dictionary must be cloneable using [Structured Cloning](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). If you wanted to update an existing object, you'd call the `put()` method instead.
 
 
 Transactions have a `done` promise that resolves when the transaction completes successfully, or rejects with a [transaction error](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error).

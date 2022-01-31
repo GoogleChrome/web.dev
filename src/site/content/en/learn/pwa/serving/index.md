@@ -124,7 +124,7 @@ Cache-Only
 
 ### Cache first
 
-Using this strategy, the service worker looks for the matching request in the cache and returns and returns the corresponding Response if it's cached. Otherwise it retrieves the response from the network (optionally, updating the cache for future calls). If there is neither a cache response nor a network response, the request will error. Since serving assets without going to the network tends to be faster, this strategy prioritizes performance over freshness.
+Using this strategy, the service worker looks for the matching request in the cache and returns the corresponding Response if it's cached. Otherwise it retrieves the response from the network (optionally, updating the cache for future calls). If there is neither a cache response nor a network response, the request will error. Since serving assets without going to the network tends to be faster, this strategy prioritizes performance over freshness.
 
 {% Aside %}
 Remember the cache storage interface won't return a Response object. The reference will be `undefined`, if the request is not cached.
