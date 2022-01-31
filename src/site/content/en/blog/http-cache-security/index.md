@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Improve security and privacy by updating HTTP Cache
-subhead: Get the 2021 Scroll Survey Report plus words from the Chrome team about how this impacts priorities and plans for Chromium and the web.
 authors:
   - arthursonzogni
 description: Forgetting or misusing the Cache-Control header might negatively impact the security of your website and your users' privacy. Get recommendations for high-value websites.
