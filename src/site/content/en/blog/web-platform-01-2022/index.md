@@ -22,7 +22,7 @@ Firefox 96 ships the color function [`hwb()`](https://developer.mozilla.org/docs
 
 {% BrowserCompat 'css.types.color.hwb' %}
 
-Also in Firefox 96 is the CSS [`color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme) property. This property gives you a way to indicate the color schemes an element can be rendered in. For example, to indicate that `.widget` can be rendered in the operating system’s light or dark modes, use the following CSS.
+Also in Firefox 96 is the CSS [`color-scheme`](https://developer.mozilla.org/docs/Web/CSS/color-scheme) property. This property gives you a way to indicate the color schemes an element can be rendered in. For example, to indicate that `.widget` can be rendered in the operating system’s light or dark modes, use the following CSS.
 
 ```css
 .widget {
@@ -44,7 +44,7 @@ Chrome 98 supports COLRv1 color gradient vector fonts as an additional new font 
 
 Read more about this new font format in [COLRv1 Color Gradient Vector Fonts in Chrome 98](https://developer.chrome.com/blog/colrv1-fonts/).
 
-Also included is the [structuredClone()](https://web.dev/structured-clone/) method for making deep copies of objects, and the CSS media queries `dynamic-range` and `video-dynamic-range`. There’s lots more that you can find by reading the [Chrome 98 beta post](https://blog.chromium.org/2022/01/chrome-98-beta-color-gradient-vector.html).
+Also included is the [structuredClone()](/structured-clone/) method for making deep copies of objects, and the CSS media queries `dynamic-range` and `video-dynamic-range`. There’s lots more that you can find by reading the [Chrome 98 beta post](https://blog.chromium.org/2022/01/chrome-98-beta-color-gradient-vector.html).
 
 [Chrome 98 DevTools](https://developer.chrome.com/blog/new-in-devtools-98/) brings you a whole raft of new features including the new [Full Accessibility Tree](https://developer.chrome.com/blog/full-accessibility-tree/).
 
