@@ -8,6 +8,7 @@
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
+import './i18n';
 
 // This hides a legacy browser warning that can appear on the /measure page
 // See .unsupported-notice in _page-header.scss
