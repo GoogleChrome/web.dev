@@ -309,3 +309,10 @@ const listener = app.listen(process.env.PORT, () => {
   console.log(`Your app is listening on port ${listener.address().port}`);
 });
 ```
+
+## Further reading
+
+- [Monitor your web application with the Reporting API](/reporting-api) (main post on the Reporting API)
+- [Migration guide from Reporting API v0 to v1](/reporting-api-migration)
+- [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
+- [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
