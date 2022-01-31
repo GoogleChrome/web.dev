@@ -3,22 +3,34 @@ const fs = require('fs');
 
 const redirectsYaml = fs.readFileSync('./redirects.yaml', 'utf8');
 const {redirects: parsedRedirects} = yaml.safeLoad(redirectsYaml);
-
+const {defaultLocale, supportedLocales} = require('./shared/locale.js');
 const firebaseJson = require('./firebase.incl.json');
-firebaseJson.hosting.redirects = parsedRedirects.reduce(
-  (redirects, redirect) => {
-    const type = [301, 302].includes(redirect.type) ? redirect.type : 301;
-    if (redirect.source && redirect.destination) {
-      redirects.push({
-        source: redirect.source,
-        destination: redirect.destination,
-        type,
-      });
-    }
-    return redirects;
-  },
-  [],
-);
+
+const redirects = [];
+
+// YAML defined redirects
+for (const redirect of parsedRedirects) {
+  const type = [301, 302].includes(redirect.type) ? redirect.type : 301;
+  if (redirect.source && redirect.destination) {
+    redirects.push({
+      source: redirect.source,
+      destination: redirect.destination,
+      type,
+    });
+  }
+}
+
+// i18n redirects
+for (const locale of supportedLocales) {
+  firebaseJson.hosting.redirects.push({
+    source: `/${locale}/:path*`,
+    destination: locale === defaultLocale ? `/:path` : `/i18n/${locale}/:path`,
+    type: 301,
+  });
+}
+
+firebaseJson.hosting.redirects = redirects;
+
 if (process.env.ELEVENTY_ENV === 'prod') {
   const hashListJson = fs.readFileSync('dist/script-hash-list.json', 'utf-8');
   const hashList = JSON.parse(hashListJson);
