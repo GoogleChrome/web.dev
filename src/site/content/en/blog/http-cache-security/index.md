@@ -40,12 +40,12 @@ vulnerability](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) a
 gain unauthorized access to cross-origin data. As a consequence, modern web
 browsers have restricted usage of some of their features&mdash;such as
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-or [high resolution timer](/blog/cross-origin-isolated-hr-timers/)&mdash;to
+or [high resolution timer](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)&mdash;to
 pages with [cross-origin
-isolation](https://web.dev/cross-origin-isolation-guide/). 
+isolation](/cross-origin-isolation-guide/). 
 
 Modern web browsers enforce [Cross-Origin Embedder Policy
-(COEP)](/blog/coep-credentialless-origin-trial/). This ensures cross-origin
+(COEP)](https://developer.chrome.com/blog/coep-credentialless-origin-trial/). This ensures cross-origin
 resources are either:
 
 *  Public resources, requested without cookies
