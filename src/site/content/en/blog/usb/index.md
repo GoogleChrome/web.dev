@@ -207,7 +207,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 .catch(error => { console.error(error); });
 ```
 
-Keep in mind that the WebUSB library I'm using here is just implementing
+Keep in mind that the WebUSB library I'm using is just implementing
 one example protocol (based on the standard USB serial protocol) and that
 manufacturers can create any set and types of endpoints they wish.
 Control transfers are especially nice for small configuration commands as
@@ -283,15 +283,15 @@ provides a ground-up example of building a USB-controlled LED device designed
 for the WebUSB API (not using an Arduino here). You'll find hardware, software,
 and firmware.
 
-### Limits on transfers size
+### Limits on transfer size
 
-Some operating systems impose limitations on how much data can be part of
+Some operating systems impose limits on how much data can be part of
 pending USB transactions. Splitting your data into smaller transactions and only
-submitting a few at a time helps avoiding those limitations. It also reduces
+submitting a few at a time helps avoid those limitations. It also reduces
 the amount of memory used and allows your application to report progress as the
 transfers complete.
 
-As multiple transfers submitted to an endpoint always execute in order, it is
+Because multiple transfers submitted to an endpoint always execute in order, it is
 possible to improve throughput by submitting multiple queued chunks to avoid
 latency between USB transfers. Every time a chunk is fully transmitted it will
 notify your code that it should provide more data as documented in the helper
