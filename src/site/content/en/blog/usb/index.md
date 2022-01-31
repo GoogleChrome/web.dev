@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2021-02-23
+updated: 2022-01-27
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
@@ -207,7 +207,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 .catch(error => { console.error(error); });
 ```
 
-Please keep in mind that the WebUSB library I'm using here is just implementing
+Keep in mind that the WebUSB library I'm using is just implementing
 one example protocol (based on the standard USB serial protocol) and that
 manufacturers can create any set and types of endpoints they wish.
 Control transfers are especially nice for small configuration commands as
@@ -282,6 +282,47 @@ You may also want to have a look at Mike Tsao's [WebLight project] which
 provides a ground-up example of building a USB-controlled LED device designed
 for the WebUSB API (not using an Arduino here). You'll find hardware, software,
 and firmware.
+
+### Limits on transfer size
+
+Some operating systems impose limits on how much data can be part of
+pending USB transactions. Splitting your data into smaller transactions and only
+submitting a few at a time helps avoid those limitations. It also reduces
+the amount of memory used and allows your application to report progress as the
+transfers complete.
+
+Because multiple transfers submitted to an endpoint always execute in order, it is
+possible to improve throughput by submitting multiple queued chunks to avoid
+latency between USB transfers. Every time a chunk is fully transmitted it will
+notify your code that it should provide more data as documented in the helper
+function example below.
+
+```js
+const BULK_TRANSFER_SIZE = 16 * 1024; // 16KB
+const MAX_NUMBER_TRANSFERS = 3;
+
+async function sendRawPayload(device, endpointNumber, data) {
+  let i = 0;
+  let pendingTransfers = [];
+  let remainingBytes = data.byteLength;
+  while (remainingBytes > 0) {
+    const chunk = data.subarray(
+      i * BULK_TRANSFER_SIZE,
+      (i + 1) * BULK_TRANSFER_SIZE
+    );
+    // If we've reached max number of transfers, let's wait.
+    if (pendingTransfers.length == MAX_NUMBER_TRANSFERS) {
+      await pendingTransfers.shift();
+    }
+    // Submit transfers that will be executed in order.
+    pendingTransfers.push(device.transferOut(endpointNumber, chunk));
+    remainingBytes -= chunk.byteLength;
+    i++;
+  }
+  // And wait for last remaining transfers to complete.
+  await Promise.all(pendingTransfers);
+}
+```
 
 ## Tips
 
