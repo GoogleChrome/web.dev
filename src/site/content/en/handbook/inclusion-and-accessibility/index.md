@@ -6,7 +6,7 @@ description: |
   Learn how to write for an international audience with varying needs and preferences.
 ---
 
-web.dev has a diverse international audience. We want all members of that
+web.dev has a diverse, international audience. We want all members of that
 audience to be able to access and understand web.dev content. This means our content should be both inclusive and accessible.
 
 This handbook covers some critical information for inclusion and accessibility.
