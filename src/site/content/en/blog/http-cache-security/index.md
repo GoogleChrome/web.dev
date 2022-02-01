@@ -100,11 +100,13 @@ by the user, and some by intermediaries.
 <figure data-size="full">
   {% Img
      class="screenshot",
-     src="image/VbsHyyQopiec0718rMq2kTE1hke2/2VVXjpJLgTwXiPEFTcAI.jpg",
+     src="image/VbsHyyQopiec0718rMq2kTE1hke2/8yvhAw0SiJi62V5yIrT3.png", 
      alt="There are often multiple layers of cache between the browser and server.",
-     width="380", height="240"
+     width="800", height="712"
   %}
-  <figcaption>There may be various layers of cache between the browser and server. For example, you may encounter a server cache, followed by a CDN and the browser cache. There may also be a local proxy setup between the CDN and browser cache.</figcaption>
+  <figcaption>
+     There may be various layers of cache between the browser and server. For example, you may encounter a server cache, followed by a CDN and the browser cache. There may also be a local proxy setup between the CDN and browser cache.
+  </figcaption>
 </figure>
 
 ### 2. SSL prevents intermediaries from caching HTTPS resources
