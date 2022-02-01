@@ -15,7 +15,7 @@ The [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event lets 
 
 The `fetch` handler receives all requests from an app, including URLs and HTTP headers, and lets the app developer decided how to process them.
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/W16FjBqEhtxIUws8H5kO.png", alt="The service worker sits between the client and the network.", width="800", height="439" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WExZeP8vV28bPDBlpxuG.png", alt="The service worker sits between the client and the network.", width="800", height="439" %}
 
 Your service worker can forward a request to the network, respond with a previously cached response, or create a new response. The choice is yours.
 Here's a simple example:
@@ -130,7 +130,7 @@ Using this strategy, the service worker looks for the matching request in the ca
 Remember the cache storage interface won't return a Response object. The reference will be `undefined`, if the request is not cached.
 {% endAside %}
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WOO3rRQZDIx2eLUBE3Wo.png", alt="The Cache First strategy", width="800", height="439" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/ki9e4T6ik7mfrN67Zysx.png", alt="The Cache First strategy", width="800", height="439" %}
 
 ```js
 self.addEventListener("fetch", event => {
@@ -151,7 +151,7 @@ self.addEventListener("fetch", event => {
 
 This strategy is the mirror of the Cache First strategy; it checks if the request can be fulfilled from the network and, if it can't, tries to retrieve it from the cache. Like cache first. If there is neither a network response nor a cache response, the request will error. Getting the response from the network is usually slower than getting it from the cache, this strategy prioritizes updated content instead of performance.
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/f0elXWiI0avF7Nb8CwCH.png", alt="The Network First strategy", width="800", height="439" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/bGCR5LiMRlt9urRcpnk4.png", alt="The Network First strategy", width="800", height="439" %}
 
 ```js
 self.addEventListener("fetch", event => {
@@ -172,7 +172,7 @@ The stale while revalidate strategy returns a cached response immediately, then 
 With this strategy, the assets are updated in the background. This means your users won't get the new version of the assets until the next time that path is requested. At that time the strategy will again check if a new version exists and the cycle repeats.
 {% endAside %}
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/XJm7wA2rCfTmhYIIXPRR.png", alt="The stale while revalidate strategy", width="800", height="439" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/C7OcnPRHNdTLe2043JHG.png", alt="The stale while revalidate strategy", width="800", height="439" %}
 
 ```js
 self.addEventListener("fetch", event => {
@@ -203,7 +203,7 @@ The Response's body is a [ReadableStream](https://developer.mozilla.org/docs/Web
 The network only strategy is similar to how browsers behave without a service worker or the Cache Storage API. Requests will only return a resource if it can be fetched from the network. This is often useful for resources like online-only API requests.
 
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/k8FNm7zopERPFRiY8p2v.png", alt="The Network only strategy", width="800", height="439" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/NGxIKl6Lq8TY9GqXT8r8.png", alt="The Network only strategy", width="800", height="439" %}
 
 
 ### Cache only
@@ -220,7 +220,7 @@ self.addEventListener("fetch", event => {
 With the cache only strategy you cache your assets before you need them, usually in the service worker's `install` event handler. Because this strategy never goes to the network, these assets will get updated only when you update your service worker and a new `install` event is fired.
 {% endAside %}
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/xzCJEYBUdof34CbhDE29.png", alt="Cache only strategy.", width="800", height="439" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/rDI3LvI9y0SBUFfRCdgm.png", alt="Cache only strategy.", width="800", height="439" %}
 
 {% Glitch 'learn-pwa-serving-cache-only' %}
 
