@@ -14,7 +14,7 @@ For more information, refer to the Google developer documentation style guide:
 
 *  [Writing inclusive documentation](https://developers.google.com/style/accessibility)
 *  [Writing for a global audience](https://developers.google.com/style/translation)
-*  [Writing accessible documentation](https://developers.google.com/style/accessibility).
+*  [Writing accessible documentation](https://developers.google.com/style/accessibility)
 
 ## Use inclusive words
 
@@ -160,7 +160,7 @@ follow accessibility best practices. At a minimum:
    elements.
 *  Don't use tabs to indent code; use spaces only.
 *  Wrap lines at 80 characters.
-*  Mark code blocks with the appropriate formatting (css, json, and more) to
+*  Mark code blocks with the appropriate formatting (CSS, JSON, and more) to
    style it appropriately.
 
 In the rare case that you need to omit an accessibility detail to better convey what you're teaching:
@@ -168,7 +168,7 @@ In the rare case that you need to omit an accessibility detail to better convey 
 1. Add a note explaining that the developer needs to include accessibility features.
 1. Link to the relevant post in the web.dev "[Accessible to all](/accessible)" collection.
 
-## Write about people
+## Writing about people
 
 There are several excellent online guides for using inclusive language when
 writing about groups of people. The [Content
@@ -189,7 +189,7 @@ third-person, be gender inclusive: use _they/them_ for singular personal pronoun
 
 {% endCompare %}
 
-## Write for an international audience
+## Writing for an international audience
 
 Avoid idioms and colloquialisms. If speakers whose first language isn't
 English aren't familiar with the idiom, they may be confused. Further, idioms
