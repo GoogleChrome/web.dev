@@ -37,19 +37,37 @@ Refer to [James Fisher's blog on Don't use simply](https://jameshfisher.com/2017
 
 ## Write readable language
 
-### Aim for a grade 8 reading level
+### Write in plain language
 
-Aim for a grade 8 reading level when possible. If you don't have a feel for
-what grade 8 texts look like, check out some [examples on
-Newsela](https://newsela.com/articles/#/rule/latest?grade_levels=8.0). You can
-also run your text through a readability test.
-*  For pieces up to 1,600 words, use [TextEvaluator](http://textevaluator.ets.org/TextEvaluator/).
-*  For pieces up to 1,000 words, use [Lexile](https://lexile.com/educators/tools-to-support-reading-at-school/tools-to-determine-a-books-complexity/the-lexile-analyzer/).
+Your content is written in plain language if your audience can:
 
-It can be difficult to write technical content for a grade 8 reading level.
-The following guidelines help keep your language as accessible as it can be.
+*  Find what they need
+*  Understand what they find the first time they read or hear it
+*  Use what they find to meet their needs
 
-Write short and clear sentences.
+It can be difficult to write technical content with this practice in mind.
+Still, it is essential we write inclusively. Use tools to assess the
+readability of your content.
+
+*  [Hemingway App](https://hemingwayapp.com/) will assess English content for
+   a reading grade level and suggest changes to phrases or voice.
+
+Refer to guidance from external sources to learn more about plain language:
+
+*  [Plain language in technical documentation](https://clickhelp.com/clickhelp-technical-writing-blog/basics-of-plain-language-in-technical-documentation/)
+   has tips and examples from ClickHelp.
+*  [Plainlanguage.gov](https://www.plainlanguage.gov/about/definitions/) offers
+   guidance to meet U.S. laws and requirements on communication.
+*  [Plainenglish.co.uk](http://www.plainenglish.co.uk/free-guides.html) offers
+   guidance from the British government.
+   
+While we primarily write content in English, there may be times when content is
+written in other languages. "Plain language" rules can apply to all languages.
+
+### Write short and clear sentences
+
+Short sentences have one subject and action. If you've connected two ideas
+that would make sense split up, consider separating into two sentences.
 
 {% Compare 'worse', 'Don\'t' %}
 > We also include an HTML table of buttons for accessibility reasons that is on top of the canvases but is made invisible using opacity: 0.
@@ -90,6 +108,7 @@ Spell out acronyms the first time they're used.
 
 {% Compare 'better', 'Do' %}
 > Web Incubation Community Groups (WICG)
+{% endCompare %}
 
 Place exceptions, edge cases, and other kinds of supplemental information right next to the primary content they're related to.
 
