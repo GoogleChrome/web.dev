@@ -55,7 +55,7 @@ resources are either:
 This setup doesn't prevent an attacker from exploiting Spectre. However, it
 ensures cross-origin resources are not valuable to the attacker (= public
 resource) or allowed to be shared with the attacker (=
-`[CORP](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)):cross-origin`).
+[`CORP: cross-origin`](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))).
 
 ### How does HTTP caching affect Spectre?
 
