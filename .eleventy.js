@@ -66,7 +66,7 @@ const tags = require('./src/site/_collections/tags');
 // Filters
 const consoleDump = require('./src/site/_filters/console-dump');
 const {i18n} = require('./src/site/_filters/i18n');
-const {getRelativePath} = require('./src/site/_filters/urls');
+const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
 const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
@@ -170,8 +170,9 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('i18n', i18n);
-  config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('findByUrl', findByUrl);
+  config.addFilter('getDefaultUrl', getDefaultUrl);
+  config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('algoliaIndexable', algoliaIndexable);
   config.addFilter('algoliaItem', algoliaItem);
