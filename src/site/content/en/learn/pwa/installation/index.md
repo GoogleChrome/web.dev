@@ -87,7 +87,7 @@ The steps to add apps to the home screen are:
 1. Click **Add**.
 On iOS and iPadOS, bookmarks to websites and PWAs look the same on the home screen.
 
-{% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/UhWxRAtIB6KQpbMYnDSe.mp4" %}
+{% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/UhWxRAtIB6KQpbMYnDSe.mp4", autoplay="true", controls="true" %}
 
 On iOS and iPadOS, only the standalone [display mode](/learn/pwa/app-design) is supported. Therefore, if you use minimal UI mode, it will fall back to a browser shortcut; if you use fullscreen, it will fall back to standalone.
 
