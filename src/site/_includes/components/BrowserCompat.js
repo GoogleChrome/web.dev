@@ -63,8 +63,7 @@ function BrowserCompat(feature) {
     const supportLabel = i18n(`i18n.browser_compat.browser_support`, locale);
     return `<div class="browser-compat">
       <span class="browser-compat__label">${supportLabel}:</span>
-      ${compatIcons.join('')}
-      ${sourceLink}
+      ${compatIcons.join('') + sourceLink}
     </div>
     `;
   }

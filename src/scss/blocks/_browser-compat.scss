@@ -2,12 +2,13 @@
 /// https://web.dev/design-system/pattern/browser-compat
 .browser-compat {
   --gutter: 1rem #{get-utility-value('pad-block', 'size-2')};
-  display: flex;
   align-items: center;
   color: get-utility-value('color', 'mid-text');
+  display: flex;
+  flex-wrap: wrap;
 
-  @include media-query('max-md') {
-    flex-wrap: wrap;
+  @include media-query('md') {
+    flex-wrap: nowrap;
   }
 }
 
@@ -22,9 +23,10 @@
 
   &[data-browser='chrome'] {
     background-image: url('/images/icons/chrome.svg');
+    margin-left: 0;
 
-    @include media-query('max-md') {
-      margin-left: 0;
+    @include media-query('md') {
+      margin-left: 24px;
     }
   }
 
@@ -60,20 +62,26 @@
 
 .browser-compat__label {
   color: get-utility-value('color', 'mid-text');
+  flex: 0 0 100%;
   font-style: normal;
   margin: 0;
+  margin-bottom: 2rem;
+  width: 100%;
 
-  @include media-query('max-md') {
-    flex: 0 0 100%;
-    margin-bottom: 2rem;
-    width: 100%;
+  @include media-query('md') {
+    margin-bottom: 0;
+    flex: none;
+    width: auto;
   }
 }
 
 .browser-compat__link {
-  margin-left: 24px;
+  flex: 0 0 100%;
+  margin-left: 0;
 
-  @include media-query('max-md') {
-    margin-left: 0;
+  @include media-query('md') {
+    flex: none;
+    margin-left: 24px;
   }
 }
+
