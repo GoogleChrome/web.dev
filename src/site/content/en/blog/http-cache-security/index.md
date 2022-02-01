@@ -35,7 +35,8 @@ Read on to learn why this matters and discover:
 ### Leaky resources from Spectre vulnerabilities
 
 The [Spectre
-vulnerability](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) allows a page to read an OS processor's memory. This means an attacker can
+vulnerability](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability))
+allows a page to read an OS process's memory. This means an attacker can
 gain unauthorized access to cross-origin data. As a consequence, modern web
 browsers have restricted usage of some of their features&mdash;such as
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
@@ -65,9 +66,9 @@ attack. For example:
 1.  The credentialed resource is cached.
 1.  The attacker loads a cross-origin isolated page.
 1.  The attacker requests the resource again.
-1.  `COEP:credentialless` is set by the browser, so the resource is fetched
-    without cookies. However, a cache may return the credentialled response 
-    instead.
+1.  [`COEP:credentialless` is set by the browser](https://developer.chrome.com/blog/coep-credentialless-origin-trial/),
+    so the resource is fetched without cookies. However, a cache may return
+    the credentialled response instead.
 1.  The attacker can then read the personalized resource using a Spectre
     attack.
 
@@ -100,10 +101,10 @@ by the user, and some by intermediaries.
   {% Img
      class="screenshot",
      src="image/VbsHyyQopiec0718rMq2kTE1hke2/2VVXjpJLgTwXiPEFTcAI.jpg",
-     alt="There are multiple layers of cache between the browser and server.",
+     alt="There are often multiple layers of cache between the browser and server.",
      width="380", height="240"
   %}
-  <figcaption>There are various layers of cache between the browser and server. This begins with a public server cache, followed by a CDN, and the browser cache. There may also be a local proxy setup between the CDN and browser cache.</figcaption>
+  <figcaption>There may be various layers of cache between the browser and server. For example, you may encounter a server cache, followed by a CDN and the browser cache. There may also be a local proxy setup between the CDN and browser cache.</figcaption>
 </figure>
 
 ### 2. SSL prevents intermediaries from caching HTTPS resources
