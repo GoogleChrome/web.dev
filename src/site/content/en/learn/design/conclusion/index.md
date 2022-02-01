@@ -24,4 +24,7 @@ Congratulations! You've made it to the end! We hope that you have enjoyed this o
 
 ## Brought to you by
 
-{% include 'partials/author-stack.njk' %}
+<!--lint disable-->
+{% from 'macros/authors.njk' import authorsMacro with context %}
+{{ authorsMacro(true, true) }}
+<!--lint enable-->
