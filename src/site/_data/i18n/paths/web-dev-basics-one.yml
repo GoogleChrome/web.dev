@@ -5,7 +5,7 @@ description:
   en: Here's a brief description.
 
 overview:
-  en: This is a longer overview. To see the full course <a href="https://developers.google.com/web">click here</a>.
+  en: This is a longer overview. To see the full course <a href="#">click here</a>.
 
 topics:
   web:
