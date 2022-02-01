@@ -1,4 +1,5 @@
 import * as functions from 'firebase-functions';
+// eslint-disable-next-line node/no-missing-import
 import supportedLocales from '../supportedLocales.js';
 
 export const i18n404 = functions.https.onRequest((request, response) => {
