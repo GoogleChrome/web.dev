@@ -46,7 +46,7 @@ Read more about this new font format in [COLRv1 Color Gradient Vector Fonts in C
 
 Also included is the [structuredClone()](/structured-clone/) method for making deep copies of objects, and the CSS media queries `dynamic-range` and `video-dynamic-range`. Find more features to test in the [Chrome 98 Beta post](https://blog.chromium.org/2022/01/chrome-98-beta-color-gradient-vector.html).
 
-[Chrome 98 DevTools](https://developer.chrome.com/blog/new-in-devtools-98/) brings you a whole raft of new features including the new [Full Accessibility Tree](https://developer.chrome.com/blog/full-accessibility-tree/).
+[Chrome 98 DevTools](https://developer.chrome.com/blog/new-in-devtools-98/) brings you a whole collection of new features including the new [Full Accessibility Tree](https://developer.chrome.com/blog/full-accessibility-tree/).
 
 Firefox 97 Beta supports the `cap` and `ic` units for [`length`](https://developer.mozilla.org/docs/Web/CSS/length), and also implements the [`scrollbar-gutter`](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) property. 
 
