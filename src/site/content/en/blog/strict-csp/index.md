@@ -560,14 +560,14 @@ local development environment, you can proceed with deploying your CSP to your
 (staging, then) production environment:
 1. (Optional) Deploy your CSP in report-only mode using the
    `Content-Security-Policy-Report-Only` header. Learn more about the [Reporting
-   API](https://developers.google.com/web/updates/2018/09/reportingapi).
+   API](/reporting-api).
    Report-only mode is handy to test a potentially breaking change like a new
    CSP in production, before actually enforcing CSP restrictions. In report-only
    mode, your CSP does not affect the behavior of your application (nothing will
    actually break). But the browser will still generate console errors and
    violation reports when patterns incompatible with CSP are encountered (so you
    can see what would have broken for your end-users).
-1. Once you're confident that your CSP won't induce breakage for your end-users,
+2. Once you're confident that your CSP won't induce breakage for your end-users,
    deploy your CSP using the `Content-Security-Policy` response header. **Only
    once you've completed this step, will CSP begin to protect your application
    from XSS**. Setting your CSP via a HTTP header server-side is more secure
