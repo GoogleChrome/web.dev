@@ -4,7 +4,6 @@
 
 import {BaseElement} from '../BaseElement';
 import {trackError, trackEvent} from '../../analytics';
-import './_styles.scss';
 
 const pTagSelector = '.subscribe__error__message';
 const hiddenClass = 'hidden-yes';

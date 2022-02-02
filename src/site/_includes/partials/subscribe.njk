@@ -40,12 +40,12 @@
         </p>
       </div>
       <div class="cluster gutter-base flex-align-start gap-top-size-2">
-        <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-        <label for="sub-newsletter" class="w-ml--std w-text--left">{{ 'i18n.subscribe.add_me' | i18n(locale) }}</label>
+        <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" type="checkbox" />
+        <label for="sub-newsletter">{{ 'i18n.subscribe.add_me' | i18n(locale) }}</label>
       </div>
       <div class="cluster gutter-base flex-align-start">
-        <input id="sub-pii-spii" name="collects-pii-spii-checkbox" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-        <label for="sub-pii-spii" class="w-ml--std w-text--left">
+        <input id="sub-pii-spii" name="collects-pii-spii-checkbox" required value="Unconfirmed" type="checkbox" />
+        <label for="sub-pii-spii">
           {{ 'i18n.subscribe.i_accept_terms' | i18n(locale) | safe}}
         </label>
       </div>
@@ -57,7 +57,7 @@
       </div>
       <div class="all-center gap-top-size-1">
         <div>
-          <div class="g-recaptcha" data-sitekey="{{ site.recaptchaSiteKey }}" data-callback="recaptchaSuccess" style="height: 78px;"></div>
+          <div class="g-recaptcha" data-sitekey="{{ site.recaptchaSiteKey }}" data-callback="recaptchaSuccess"></div>
         </div>
       </div>
       <div class="gap-top-size-2">
