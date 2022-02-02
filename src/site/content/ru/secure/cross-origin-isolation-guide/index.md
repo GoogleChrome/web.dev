@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-В этом руководстве показано, как включить межсайтовую изоляцию, которая необходима для использования [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [высокоточного таймера](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) и JS Self-Profiling API.
+В этом руководстве показано, как включить межсайтовую изоляцию, которая необходима для использования [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) и [высокоточного таймера](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/).
 
 Прежде чем включать межсайтовую изоляцию, оцените, как она повлияет на рекламные места и другие межсайтовые ресурсы на вашем сайте.
 

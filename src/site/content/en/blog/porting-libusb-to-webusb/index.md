@@ -28,7 +28,7 @@ The most important thing to do when porting a library is choosing the right demo
 
 The idea I chose was DSLR remote control. In particular, an open source project [gPhoto2](http://gphoto.org/) has been in this space long enough to reverse-engineer and implement support for a wide variety of digital cameras. It supports several protocols, but the one I was most interested in was USB support, which it performs via libusb.
 
-I'll describe the steps for building this demo in two parts. In this blog post, I'll describe how I ported libusb itself, and what tricks might be necessary to port other popular libraries to Fugu APIs. In the second post, I'll go into details on porting and integrating gPhoto2 itself.
+I'll describe the steps for building this demo in two parts. In this blog post, I'll describe how I ported libusb itself, and what tricks might be necessary to port other popular libraries to Fugu APIs. In the [second post](/porting-gphoto2-to-the-web), I'll go into details on porting and integrating gPhoto2 itself.
 
 In the end, I got a working web application that previews live feed from a DSLR and can control its settings over USB. Feel free to check out the [live](https://web-gphoto2.rreverser.com/) or the pre-recorded demo before reading up on technical details:
 
@@ -474,4 +474,4 @@ In this post I've shown how, with the help of Emscripten, Asyncify and Fugu APIs
 
 Porting such essential and widely used low-level libraries is particularly rewarding, because, in turn, it allows bringing higher-level libraries or even whole applications to the web, too. This opens experiences that were previously limited to users of one or two platforms, to all kinds of devices and operating systems, making those experiences available just a link click away.
 
-In the next post I'll walk through the steps involved in building the web gPhoto2 demo which not only retrieves device information, but extensively uses the transfer feature of libusb too. Meanwhile, I hope you found the libusb example inspiring and will try out the demo, play with the library itself, or perhaps even go ahead and port another widely used library to one of the Fugu APIs too.
+In the [next post](/porting-gphoto2-to-the-web) I'll walk through the steps involved in building the web gPhoto2 demo which not only retrieves device information, but extensively uses the transfer feature of libusb too. Meanwhile, I hope you found the libusb example inspiring and will try out the demo, play with the library itself, or perhaps even go ahead and port another widely used library to one of the Fugu APIs too.

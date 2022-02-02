@@ -10,6 +10,8 @@ const allPaths = require('../../../_data/paths');
 // =============================================================================
 
 module.exports = function () {
+  // const web_dev_basics = [allPaths['web-dev-basics-one']];
+
   const performance = [
     allPaths['learn-web-vitals'],
     allPaths['metrics'],
@@ -43,6 +45,7 @@ module.exports = function () {
 
   return {
     learn: {
+      // web_dev_basics,
       performance,
       build_excellent,
       frameworks,
