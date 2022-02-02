@@ -20,7 +20,6 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 const fs = require('fs');
 
-const toc = require('eleventy-plugin-toc');
 const markdown = require('./src/site/_plugins/markdown');
 
 const ArticleNavigation = require('./src/site/_includes/components/ArticleNavigation');
@@ -98,10 +97,7 @@ const {minifyHtml} = require('./src/site/_transforms/minify-html');
 
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
-// TODO: We should migrate all of our ToCs over to using this filter which we
-// wrote for d.c.c. Currently we're also using eleventy-plugin-toc on articles
-// but this one seems to work better.
-const {toc: courseToc} = require('webdev-infra/filters/toc');
+const {toc} = require('webdev-infra/filters/toc');
 
 // Creates a global variable for the current __dirname to make including and
 // working with files in the component library a little easier
@@ -119,13 +115,6 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
-  config.addPlugin(toc, {
-    tags: ['h2', 'h3'],
-    wrapper: 'div',
-    wrapperClass: 'w-toc__list',
-    ul: true,
-    flat: false,
-  });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
@@ -195,7 +184,7 @@ module.exports = function (config) {
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
-  config.addFilter('courseToc', courseToc);
+  config.addFilter('toc', toc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);

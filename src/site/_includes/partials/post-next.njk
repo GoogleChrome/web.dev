@@ -4,14 +4,11 @@
   Grab the ToC contents for headings ToC. This powers the list of headings
   that appears on the right-hand side of the page. Unfortunately our use of
   the word 'toc' is a bit overloaded :P
-  TODO: The courseToc filter is only used to define the ToC for courses, but
-  it's basically the same thing we use on developer.chrome.com and it would be
-  nice to use it for articles as well. Currently we have a different toc design
-  for those but it's a bit clunky and we should replace it with this.
 #}
 {% set tocContents %}
-  {{- content | courseToc | safe -}}
+  {{- content | toc | safe -}}
 {% endset %}
+{% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
 {% if hero %}
   {% Img src=hero, alt=alt or '', loading=false, class='hero-image', height='480', width='1600', sizes='100vw' %}
@@ -177,7 +174,7 @@
           </a>
         </div>
       {% endif %}
-      <div class="docked-actions flow flow-space-base">    
+      <div class="docked-actions flow flow-space-base">
         <div>
           <share-action class="gc-analytics-event fab"
             authors="{{ authors | expandAuthors(collections.authors, lang) }}"
@@ -189,11 +186,11 @@
             tabindex="0"
             role="button"
           >
-            {% include "icons/share.svg" %} 
+            {% include "icons/share.svg" %}
             <span class="fab__label">{{ 'i18n.common.share' | i18n(locale) }}</span>
           </share-action>
         </div>
-        {# Temp hidden 
+        {# Temp hidden
         <div>
           {% include 'partials/subscribe-action-next.njk' %}
         </div> #}
