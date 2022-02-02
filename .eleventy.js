@@ -22,7 +22,6 @@ const fs = require('fs');
 
 const markdown = require('./src/site/_plugins/markdown');
 
-const ArticleNavigation = require('./src/site/_includes/components/ArticleNavigation');
 const Aside = require('./src/site/_includes/components/Aside');
 const Assessment = require('./src/site/_includes/components/Assessment');
 const Author = require('./src/site/_includes/components/Author');
@@ -192,7 +191,6 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // SHORTCODES
   // ----------------------------------------------------------------------------
-  config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
