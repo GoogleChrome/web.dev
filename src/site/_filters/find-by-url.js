@@ -36,7 +36,7 @@ const memoize = (collection) => {
   memo = {};
   collection.forEach((item) => {
     if (item.url) {
-      const url = item.url.replace(defaultLocaleRegExp, '');
+      const url = item.url.replace(defaultLocaleRegExp, '/');
       if (memo[url]) {
         throw new Error(`Found duplicate post url: '${url}'`);
       }
