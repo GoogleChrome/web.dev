@@ -18,11 +18,12 @@ security of your website and your users' privacy.
 
 For personalized responses you want to keep private, we recommend you either:
 
-*  Set an appropriate [secondary cache
-   key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses).
-   If the response depends on cookies, then set `Vary: Cookie`.
 *  Prevent intermediaries from caching the resource. Set
    `Cache-Control: private`.
+*  Set an appropriate [secondary cache
+   key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses).
+   If the response varies due to cookies&mdash;which can happen when the
+   cookie stores credentials&mdash;then set `Vary: Cookie`.
 
 Read on to learn why this matters and discover:
 
