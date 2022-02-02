@@ -53,9 +53,9 @@ resources are either:
    [CORP](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
    header
 
-This setup doesn't prevent an attacker from exploiting Spectre. However, it
-ensures cross-origin resources are not valuable to the attacker (= public
-resource) or allowed to be shared with the attacker (=
+The COEP setup doesn't prevent an attacker from exploiting Spectre. However, it
+ensures cross-origin resources are not valuable to the attacker (when shared
+as public resource) or allowed to be shared with the attacker (when shared with
 [`CORP: cross-origin`](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))).
 
 ### How does HTTP caching affect Spectre?
@@ -124,7 +124,7 @@ Ultimately, some HTTPS resources may be cached by these local proxies.
 ## How HTTP cache works
 
 *  Resources are
-   [implicitly](https://httpwg.org/specs/rfc7234.html#rfc.section.3) allowed
+   [implicitly](https://datatracker.ietf.org/doc/html/rfc7234) allowed
    to be cached by default.
 *  The [primary cache
    key](https://httpwg.org/specs/rfc7234.html#rfc.section.2) consists of the
