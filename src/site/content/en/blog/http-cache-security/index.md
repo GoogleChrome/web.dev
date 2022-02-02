@@ -23,7 +23,7 @@ For personalized responses you want to keep private, we recommend you either:
 *  Set an appropriate [secondary cache
    key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses).
    If the response varies due to cookies&mdash;which can happen when the
-   cookie stores credentials&mdash;then set `Vary: Cookie`.
+   cookie stores credentials&mdash;set `Vary: Cookie`.
 
 Read on to learn why this matters and discover:
 
@@ -153,7 +153,7 @@ We recommend you take one of the following steps:
 *  Set an appropriate [secondary cache
    key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses).
    If the response varies due to cookies&mdash;which can happen when the
-   cookie stores credentials&mdash;then set `Vary: Cookie`.
+   cookie stores credentials&mdash;set `Vary: Cookie`.
 
 In particular, change the default behavior: always define `Cache-Control` or
 `Vary`.
