@@ -58,7 +58,7 @@ SVG. The SVG then adapts using its embedded styling for light and dark user
 preferences.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/c8pUK6HOlCuehgtqzFci.png",
-alt="Large and easy to distinguish light and dark favicon examples",
+alt="Large and easy to distinguish light and dark favicon examples.",
 width="800", height="450" %}
 
 <figure>
