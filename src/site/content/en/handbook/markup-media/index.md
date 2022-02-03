@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2021-03-11
+updated: 2022-02-01
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -117,7 +117,7 @@ place the shortcode snippet inside:
 
 ```md
 {% raw %}
-<figure data-size="full">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
   <figcaption>A good boy.</figcaption>
 </figure>
