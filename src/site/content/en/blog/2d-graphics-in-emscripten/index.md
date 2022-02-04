@@ -19,9 +19,9 @@ In this post you will learn a couple of methods for drawing 2D graphics to the c
 
 ## Canvas via Embind
 
-If you're starting a new project rather than trying to port an existing one, it might be easiest to use the HTML [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) via Emscripten's binding system [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html). Embind allows you to operate directly on arbitrary JavaScript values.
+If you're starting a new project rather than trying to port an existing one, it might be easiest to use the HTML [Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API) via Emscripten's binding system [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html). Embind allows you to operate directly on arbitrary JavaScript values.
 
-To understand how to use Embind, first take a look at the following [example from MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API#javascript) that finds a &lt;canvas> element, and draws some shapes on it
+To understand how to use Embind, first take a look at the following [example from MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API#javascript) that finds a &lt;canvas> element, and draws some shapes on it
 
 ```js
 const canvas = document.getElementById('canvas');
@@ -90,7 +90,7 @@ var Module = {
 
 ## OpenGL and SDL2
 
-[OpenGL](https://www.opengl.org/) is a popular cross-platform API for computer graphics. When used in Emscripten, it will take care of converting the supported subset of OpenGL operations to [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API). If your application relies on features supported in OpenGL ES 2.0 or 3.0, but not in WebGL, Emscripten can take care of emulating those too, but you need to opt-in via the [corresponding settings](https://emscripten.org/docs/porting/multimedia_and_graphics/OpenGL-support.html?highlight=sdl#opengl-es-2-0-3-0-emulation).
+[OpenGL](https://www.opengl.org/) is a popular cross-platform API for computer graphics. When used in Emscripten, it will take care of converting the supported subset of OpenGL operations to [WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API). If your application relies on features supported in OpenGL ES 2.0 or 3.0, but not in WebGL, Emscripten can take care of emulating those too, but you need to opt-in via the [corresponding settings](https://emscripten.org/docs/porting/multimedia_and_graphics/OpenGL-support.html?highlight=sdl#opengl-es-2-0-3-0-emulation).
 
 You can use OpenGL either directly or via higher-level 2D and 3D graphics libraries. A couple of those have been ported to the web with Emscripten. In this post, I'm focusing on 2D graphics, and for that [SDL2](https://www.libsdl.org/) is currently the preferred library because it's been well-tested and supports the Emscripten backend officially upstream.
 
@@ -191,7 +191,7 @@ However, the example no longer works on the web. The Emscripten-generated page f
 
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/lirjGAIzCSy3ivxyySnA.png", alt="Emscripten-generated HTML page overlaid with a 'Page Unresponsive' error dialogue suggesting to either wait for the page to become responsible or exit the page", width="800", height="397" %}
 
-What happened? I'll quote the answer from the article ["Using asynchronous web APIs from WebAssembly"](https://web.dev/asyncify/#asynchronous-model-of-the-web):
+What happened? I'll quote the answer from the article ["Using asynchronous web APIs from WebAssembly"](/asyncify/#asynchronous-model-of-the-web):
 
 **“The short version is that the browser runs all the pieces of code in sort of an infinite loop, by taking them from the queue one by one. When some event is triggered, the browser queues the corresponding handler, and on the next loop iteration it's taken out from the queue and executed. This mechanism allows simulating concurrency and running lots of parallel operations while using only a single thread.
 
@@ -203,7 +203,7 @@ There are two ways to fix this problem.
 
 #### Unblocking event loop with Asyncify
 
-First, as described in the [linked article](https://web.dev/asyncify/), you can use [Asyncify](https://emscripten.org/docs/porting/asyncify.html). It's an Emscripten feature that allows to "pause" the C or C++ program, give control back to the event loop, and wake up the program when some asynchronous operation has finished.
+First, as described in the [linked article](/asyncify/), you can use [Asyncify](https://emscripten.org/docs/porting/asyncify.html). It's an Emscripten feature that allows to "pause" the C or C++ program, give control back to the event loop, and wake up the program when some asynchronous operation has finished.
 
 Such asynchronous operation can be even "sleep for the minimum possible time", expressed via [`emscripten_sleep(0)`](https://emscripten.org/docs/api_reference/emscripten.h.html?highlight=emscripten_sleep#c.emscripten_sleep) API. By embedding it in the middle of the loop, I can ensure that the control is returned to browser's event loop on each iteration, and the page remains responsive and can handle any events:
 
