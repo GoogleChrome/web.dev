@@ -151,7 +151,7 @@ and executed, the created window will only blink briefly and immediately close u
 
 A more complete and idiomatic example would look need to wait in an event loop until the user chooses to quit the application:
 
-```cpp
+```cpp/14-20
 #include <SDL2/SDL.h>
 
 int main() {
@@ -185,7 +185,7 @@ After the image has been drawn to a window, the application now waits in a loop,
 
 Now compiling this example on Linux works as expected and shows a 300 by 300 window with a green rectangle:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/97izZqSghoHkRE0Vua3e.png", alt="A square Linux window with black background and a green rectangle", width="800", height="617" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/nUxwRMyWVmdK5zy2Kct6.png", alt="A square Linux window with black background and a green rectangle", width="400", height="440" %}
 
 However, the example no longer works on the web. The Emscripten-generated page freezes immediately during the load and never shows the rendered image:
 
@@ -207,7 +207,7 @@ First, as described in the [linked article](/asyncify/), you can use [Asyncify](
 
 Such asynchronous operation can be even "sleep for the minimum possible time", expressed via [`emscripten_sleep(0)`](https://emscripten.org/docs/api_reference/emscripten.h.html?highlight=emscripten_sleep#c.emscripten_sleep) API. By embedding it in the middle of the loop, I can ensure that the control is returned to browser's event loop on each iteration, and the page remains responsive and can handle any events:
 
-```cpp
+```cpp/23-25
 #include <SDL2/SDL.h>
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
@@ -267,7 +267,7 @@ emscripten_set_main_loop(callback, 0, true);
 
 The newly created callback won't have any access to the stack variables in the `main` function, so variables like `window` and `renderer` need to be either extracted into a heap-allocated struct and its pointer passed via [`emscripten_set_main_loop_arg`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.emscripten_set_main_loop_arg) variant of the API, or extracted into global `static` variables (I went with the latter for simplicity). The result is slightly harder to follow, but it draws the same rectangle as the last example:
 
-```cpp
+```cpp/20
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #ifdef __EMSCRIPTEN__
@@ -328,7 +328,7 @@ However, proper event loop integration - either via Asyncify or via `emscripten_
 
 For example, with a few changes to the last example you can make the rectangle move in response to keyboard events:
 
-```cpp
+```cpp/26-47
 #include <SDL2/SDL.h>
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
@@ -412,7 +412,7 @@ SDL2 abstracts away cross-platform differences and various types of media device
 
 [SDL2\_gfx](https://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/index.html) is a separate library that fills that gap. For example, it can be used to replace a rectangle in the example above with a circle:
 
-```cpp
+```cpp/15
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #ifdef __EMSCRIPTEN__
@@ -500,7 +500,7 @@ $ emcc --bind foo.cpp -o foo.html -s USE_SDL=2 -s USE_SDL_GFX=2
 
 And here are the results running on Linux:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ERTe7Nt9z5m4WnrlH5ya.png", alt="A square Linux window with black background and a green circle ", width="800", height="880" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ERTe7Nt9z5m4WnrlH5ya.png", alt="A square Linux window with black background and a green circle ", width="400", height="440" %}
 
 And on the web:
 
