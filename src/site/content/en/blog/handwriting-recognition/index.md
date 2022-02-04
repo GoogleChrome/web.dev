@@ -53,7 +53,7 @@ Example uses include:
 | 2. Create initial draft of specification | [Complete][spec]                 |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback)         |
 | 4. Origin trial                          | Complete                         |
-| 5. **Launch**                            | ** Complete** (Chromium&nbsp;99) |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;99) |
 
 </div>
 
