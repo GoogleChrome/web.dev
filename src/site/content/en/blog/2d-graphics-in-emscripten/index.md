@@ -117,7 +117,7 @@ int main() {
   SDL_CreateWindowAndRenderer(300, 300, 0, &window, &renderer);
 
   // Set a color for drawing matching the earlier `ctx.fillStyle = "green"`.
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x80, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: green */ 0x00, 0x80, 0x00, 0xFF);
   // Create and draw a rectangle like in the earlier `ctx.fillRect()`.
   SDL_Rect rect = {.x = 10, .y = 10, .w = 150, .h = 100};
   SDL_RenderFillRect(renderer, &rect);
@@ -161,7 +161,7 @@ int main() {
   SDL_Renderer *renderer;
   SDL_CreateWindowAndRenderer(300, 300, 0, &window, &renderer);
 
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x80, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: green */ 0x00, 0x80, 0x00, 0xFF);
   SDL_Rect rect = {.x = 10, .y = 10, .w = 150, .h = 100};
   SDL_RenderFillRect(renderer, &rect);
   SDL_RenderPresent(renderer);
@@ -220,7 +220,7 @@ int main() {
   SDL_Renderer *renderer;
   SDL_CreateWindowAndRenderer(300, 300, 0, &window, &renderer);
 
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x80, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: green */ 0x00, 0x80, 0x00, 0xFF);
   SDL_Rect rect = {.x = 10, .y = 10, .w = 150, .h = 100};
   SDL_RenderFillRect(renderer, &rect);
   SDL_RenderPresent(renderer);
@@ -300,7 +300,7 @@ int main() {
 
   SDL_CreateWindowAndRenderer(300, 300, 0, &window, &renderer);
 
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x80, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: green */ 0x00, 0x80, 0x00, 0xFF);
   SDL_Rect rect = {.x = 10, .y = 10, .w = 150, .h = 100};
   SDL_RenderFillRect(renderer, &rect);
   SDL_RenderPresent(renderer);
@@ -328,7 +328,7 @@ However, proper event loop integration - either via Asyncify or via `emscripten_
 
 For example, with a few changes to the last example you can make the rectangle move in response to keyboard events:
 
-```cpp/26-47
+```cpp/26
 #include <SDL2/SDL.h>
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
@@ -340,9 +340,9 @@ SDL_Renderer *renderer;
 SDL_Rect rect = {.x = 10, .y = 10, .w = 150, .h = 100};
 
 void redraw() {
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x00, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: black */ 0x00, 0x00, 0x00, 0xFF);
   SDL_RenderClear(renderer);
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x80, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: green */ 0x00, 0x80, 0x00, 0xFF);
   SDL_RenderFillRect(renderer, &rect);
   SDL_RenderPresent(renderer);
 }
@@ -426,9 +426,10 @@ SDL_Point center = {.x = 100, .y = 100};
 const int radius = 100;
 
 void redraw() {
-  SDL_SetRenderDrawColor(renderer, /* RGBA */ 0x00, 0x00, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(renderer, /* RGBA: black */ 0x00, 0x00, 0x00, 0xFF);
   SDL_RenderClear(renderer);
-  filledCircleRGBA(renderer, center.x, center.y, radius, /* RGBA */ 0x00, 0x80, 0x00, 0xFF);
+  filledCircleRGBA(renderer, center.x, center.y, radius,
+                   /* RGBA: green */ 0x00, 0x80, 0x00, 0xFF);
   SDL_RenderPresent(renderer);
 }
 
