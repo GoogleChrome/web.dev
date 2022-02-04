@@ -195,7 +195,7 @@ What happened? I'll quote the answer from the article ["Using asynchronous web A
 
 **“The short version is that the browser runs all the pieces of code in sort of an infinite loop, by taking them from the queue one by one. When some event is triggered, the browser queues the corresponding handler, and on the next loop iteration it's taken out from the queue and executed. This mechanism allows simulating concurrency and running lots of parallel operations while using only a single thread.
 
-The important thing to remember about this mechanism is that, while your custom JavaScript (or WebAssembly) code executes, the event loop is blocked [...]”**
+The important thing to remember about this mechanism is that, while your custom JavaScript (or WebAssembly) code executes, the event loop is blocked […]”**
 
 The preceding example executes an infinite event loop, while the code itself runs inside another infinite event loop, implicitly provided by the browser. The inner loop never relinquishes control to the outer one, so the browser doesn't get a chance to process external events or draw things onto the page.
 
