@@ -404,7 +404,7 @@ int main() {
 }
 ```
 
-{% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/EahORFoNjTjwRhdtuKer.mp4", autoplay, loop %}
+{% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/EahORFoNjTjwRhdtuKer.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 
 ### Drawing other shapes with SDL2\_gfx
 
