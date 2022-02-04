@@ -1,25 +1,23 @@
 ---
 title: Recognize your users' handwriting
-subhead: The Handwriting Recognition API allows you to recognize text from handwritten input as it happens.
+subhead:
+  The Handwriting Recognition API allows you to recognize text from handwritten input as it happens.
 description: |
   The Handwriting Recognition API allows web applications to use advanced handwriting recognition services to recognize text from handwritten input in real time.
 authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-updated: 2021-12-22
+updated: 2022-02-04
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/3207688834594635777
 ---
 
 {% Aside %} The Handwriting Recognition API is part of the [capabilities project](/fugu-status/) and
-is currently in development. This post will be updated as the implementation progresses.
-{% endAside %}
+launched in Chromium&nbsp;99. {% endAside %}
 
 ## What is the Handwriting Recognition API? {: #what }
 
@@ -49,37 +47,17 @@ Example uses include:
 
 <div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | [Complete][spec]         |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [In progress][ot]        |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                           |
+| ---------------------------------------- | -------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]            |
+| 2. Create initial draft of specification | [Complete][spec]                 |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)         |
+| 4. Origin trial                          | Complete                         |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;99) |
 
 </div>
 
 ## How to use the Handwriting Recognition API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the Handwriting Recognition API locally, without an origin trial token, enable
-the `#experimental-web-platform-features` flag in `about://flags`.
-
-{% Aside %} Note that the API is currently exclusive to Chrome&nbsp;OS devices. Chrome&nbsp;91
-already contained limited support for the API, but to fully experience it, we recommend you test on
-Chrome&nbsp;92 to Chrome&nbsp;98. {% endAside %}
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome&nbsp;92, the Handwriting Recognition API will be available as an origin trial on
-Chrome&nbsp;OS. The origin trial is expected to end in Chrome&nbsp;98 (February 22, 2022).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
@@ -143,7 +121,7 @@ developer:
   strokes that make them up
 
 ```js
-const {languages, alternatives, segmentationResults} =
+const { languages, alternatives, segmentationResults } =
   await navigator.queryHandwritingRecognizerSupport({
     languages: ['en'],
     alternatives: true,
@@ -200,9 +178,7 @@ canvas.addEventListener('pointerdown', (event) => {
   if (!drawing) {
     drawing = recognizer.startDrawing({
       recognitionType: 'text', // email, number, per-character
-      inputType: ['mouse', 'touch', 'pen'].find(
-        (type) => type === event.pointerType,
-      ),
+      inputType: ['mouse', 'touch', 'pen'].find((type) => type === event.pointerType),
       textContext: 'Hello, ',
       alternatives: 2,
       graphemeSet: ['f', 'i', 'z', 'b', 'u'], // for a fizz buzz entry form
@@ -282,14 +258,11 @@ canvas.addEventListener('pointerup', async (event) => {
   drawing.addStroke(activeStroke.stroke);
   activeStroke = null;
 
-  const [mostLikelyPrediction, ...lessLikelyAlternatives] =
-    await drawing.getPrediction();
+  const [mostLikelyPrediction, ...lessLikelyAlternatives] = await drawing.getPrediction();
   if (mostLikelyPrediction) {
     console.log(mostLikelyPrediction.text);
   }
-  lessLikelyAlternatives?.forEach((alternative) =>
-    console.log(alternative.text),
-  );
+  lessLikelyAlternatives?.forEach((alternative) => console.log(alternative.text));
 });
 ```
 
@@ -312,13 +285,11 @@ user-identifiable character (`grapheme`) along with its position in the recogniz
 ```js
 if (mostLikelyPrediction.segmentationResult) {
   mostLikelyPrediction.segmentationResult.forEach(
-    ({grapheme, beginIndex, endIndex, drawingSegments}) => {
+    ({ grapheme, beginIndex, endIndex, drawingSegments }) => {
       console.log(grapheme, beginIndex, endIndex);
-      drawingSegments.forEach(
-        ({strokeIndex, beginPointIndex, endPointIndex}) => {
-          console.log(strokeIndex, beginPointIndex, endPointIndex);
-        },
-      );
+      drawingSegments.forEach(({ strokeIndex, beginPointIndex, endPointIndex }) => {
+        console.log(strokeIndex, beginPointIndex, endPointIndex);
+      });
     },
   );
 }
@@ -353,11 +324,7 @@ outside, including `languages` and `recognitiontype`. You can set the content of
 `value` attribute:
 
 ```html
-<handwriting-textarea
-  languages="en"
-  recognitiontype="text"
-  value="Hello"
-></handwriting-textarea>
+<handwriting-textarea languages="en" recognitiontype="text" value="Hello"></handwriting-textarea>
 ```
 
 To be informed about any changes to the value, you can listen to the `input` event.
@@ -369,9 +336,9 @@ application, [obtain it from npm](https://www.npmjs.com/package/handwriting-text
 
 ## Security and permissions
 
-The Chromium team designed and implemented the Handwriting Recognition API using the core
-principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
-including user control, transparency, and ergonomics.
+The Chromium team designed and implemented the Handwriting Recognition API using the core principles
+defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
+control, transparency, and ergonomics.
 
 ### User control
 
@@ -440,8 +407,8 @@ This article was reviewed by [Joe Medley], Honglin Yu and Jiewei Qian. Hero imag
 [github]: https://github.com/WICG/handwriting-recognition
 [issues]: https://github.com/WICG/handwriting-recognition/issues
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]:
+  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-handwriting-recognition-api/4935
 [i2p]: https://groups.google.com/a/chromium.org/g/blink-dev/c/VXUq1UY4m7Y
 [joe medley]: https://github.com/jpmedley
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/3207688834594635777
