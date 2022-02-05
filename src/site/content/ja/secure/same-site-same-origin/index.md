@@ -123,7 +123,7 @@ tags:
   </table>
 </div>
 
-### 「計画的なsame-site」
+### 「スキームフルsame-site」
 
 {% Img src="image/admin/Y9LbVyxYzg4k6mwSEqyE.png", alt="schemeful same-site", width="677", height="105" %}
 
@@ -135,7 +135,7 @@ tags:
       <tr>
         <th>オリジンA</th>
         <th>オリジンB</th>
-        <th>オリジンAとオリジンBが「計画的なsame-site」であるかどうかの説明します</th>
+        <th>オリジンAとオリジンBが「スキームフルsame-site」であるかどうかの説明</th>
       </tr>
     </thead>
     <tbody>
@@ -147,7 +147,7 @@ tags:
       </tr>
       <tr>
         <td>https：// <strong>login</strong> .example.com：443</td>
-        <td><strong>計画的なsame-site：異なるサブドメインは重要ではありません</strong></td>
+        <td><strong>スキームフルsame-site：異なるサブドメインは重要ではありません</strong></td>
       </tr>
       <tr>
         <td><strong>http://www.example.com:443</strong></td>
@@ -155,15 +155,15 @@ tags:
       </tr>
       <tr>
         <td><strong>https://www.example.com：80</strong></td>
-        <td><strong>計画的なsame-site：異なるポートは重要ではありません</strong></td>
+        <td><strong>スキームフルsame-site：異なるポートは重要ではありません</strong></td>
       </tr>
       <tr>
         <td><strong>https://www.example.com:443</strong></td>
-        <td><strong>計画的なsame-site：完全に一致します</strong></td>
+        <td><strong>スキームフルsame-site：完全に一致します</strong></td>
       </tr>
       <tr>
         <td><strong>https://www.example.com</strong></td>
-        <td><strong>計画的なsame-site：ポートは重要ではありません</strong></td>
+        <td><strong>スキームフルsame-site：ポートは重要ではありません</strong></td>
       </tr>
     </tbody>
   </table>
