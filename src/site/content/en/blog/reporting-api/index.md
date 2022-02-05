@@ -6,7 +6,7 @@ subhead: |
 authors:
   - maudn
 date: 2021-10-19
-updated: 2021-10-19
+updated: 2022-01-31
 description: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PEgnzZFQVPhP2PyOnMm8.jpg
@@ -19,14 +19,22 @@ tags:
 ---
 
 {% Aside 'caution' %} This is an API guide with detailed usage examples for the **Reporting
-API (v1)**, which uses the `Reporting-Endpoints` header. If you're already using the legacy
-Reporting API (`Report-To` header), head over to the [migration post](/reporting-api-migration)
-instead. {% endAside %}
+API (v1)**, which uses the `Reporting-Endpoints` header.
+
+Are you already using the legacy
+Reporting API (`Report-To` header)? Head over to the [migration post](/reporting-api-migration)
+instead.
+
+Are you looking for [Network Error Logging](/network-error-logging/) documentation? Head over to [Network Error logging] instead.
+
+{% endAside %}
 
 Some errors only occur in production. You won't see them locally or during development because
 **real users**, **real networks**, and **real devices** change the game. The Reporting API helps
 catch some of these errors⏤such as security violations or deprecated and soon-to-be-deprecated API
-calls⏤across your site, and transmits them to an endpoint you've specified. It lets you declare what
+calls⏤across your site, and transmits them to an endpoint you've specified.
+
+It lets you declare what
 you'd like to monitor via HTTP headers, and is operated **by the browser**.
 
 Setting up the Reporting API gives you peace of mind that when users experience these types of

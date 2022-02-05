@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-このガイドでは、Cross-Origin Isolation (クロスオリジンアイソレーション) を有効にする方法を説明します。クロスオリジンアイソレーションは、[`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) や [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)、[高精度の高解像度タイマー](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)、JS Self-Profiling API を使用する場合に必要となります。
+このガイドでは、Cross-Origin Isolation (クロスオリジンアイソレーション) を有効にする方法を説明します。クロスオリジンアイソレーションは、[`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) や [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)、[高精度の高解像度タイマー](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)を使用する場合に必要となります。
 
 クロスオリジンアイソレーションを有効にする場合は、広告の配置など、ウェブサイト上の他のクロスオリジンリソースに与える影響を評価してください。
 

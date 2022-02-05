@@ -78,4 +78,5 @@ module.exports = {
   maps: {
     apiKey: 'AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s',
   },
+  recaptchaSiteKey: '6Lfqf9YdAAAAAKUVvj6y53E_tMMlnj8dt1fpo-FV',
 };

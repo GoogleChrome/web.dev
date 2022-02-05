@@ -67,3 +67,24 @@
     }
   }
 }
+
+
+.hero__content__img {
+  @include media-query('md') {
+    height: auto;
+    max-width: initial;
+    width: 420px;
+  }
+}
+
+.hero__content--split {
+  display: block;
+  text-align: center;
+
+  @include media-query('md') {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: initial;
+  }
+}

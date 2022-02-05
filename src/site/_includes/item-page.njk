@@ -4,10 +4,7 @@ algolia_priority: 0.9
 eleventyComputed:
   noindex: "{{ paged.index > 0 }}"
 ---
-<div class="landing-page">
-  {# Temporary disable #}
-  {# {% include 'partials/subscribe-action-next.njk' %} #}
-
+<div class="landing-page">\
   {# Hero starts #}
   <header class="region bg-mid-bg">
     <div class="wrapper">
@@ -84,4 +81,10 @@ eleventyComputed:
       </div>
     </div>
   {% endif %}
+
+  <div class="docked-actions flow flow-space-base">
+    <div>
+      {% include 'partials/subscribe-action.njk' %}
+    </div>
+  </div>
 </div>
