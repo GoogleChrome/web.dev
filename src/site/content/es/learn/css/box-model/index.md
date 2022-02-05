@@ -80,7 +80,7 @@ El área final, la **caja de margen**, es el espacio alrededor de tu caja, defin
 
 ## Una analogía útil
 
-El modelo de caja es complejo de entender, así que recapitulemos lo que haz aprendido con una analogía.
+El modelo de caja es complejo de entender, así que recapitulemos lo que has aprendido con una analogía.
 
 <figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Tres fotos con marcos", width="800", height="562" %}</figure>
 
