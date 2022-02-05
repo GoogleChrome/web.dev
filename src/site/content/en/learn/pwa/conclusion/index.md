@@ -14,7 +14,4 @@ Congratulations! You've made it to the end! We'll be adding more modules to this
 
 ## Brought to you by
 
-<!--lint disable-->
-{% from 'macros/authors.njk' import authorsMacro with context %}
-{{ authorsMacro(true, true) }}
-<!--lint enable-->
+{% include 'partials/authors-stack.njk' %}

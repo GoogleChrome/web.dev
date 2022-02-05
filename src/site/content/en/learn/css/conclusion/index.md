@@ -35,7 +35,4 @@ To continue to build your CSS skillset, here are some additional resources to ex
 
 ## Brought to you by
 
-<!--lint disable-->
-{% from 'macros/authors.njk' import authorsMacro with context %}
-{{ authorsMacro(true, true) }}
-<!--lint enable-->
+{% include 'partials/authors-stack.njk' %}
