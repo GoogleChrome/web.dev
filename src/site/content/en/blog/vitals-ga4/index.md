@@ -9,7 +9,6 @@ authors:
   - philipwalton
   - mkazi
 date: 2021-05-18
-updated: 2021-05-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: Web Vitals logo
 tags:
