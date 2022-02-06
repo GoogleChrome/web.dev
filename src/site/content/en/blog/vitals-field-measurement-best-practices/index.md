@@ -5,7 +5,7 @@ authors:
   - philipwalton
 description: How to measure Web Vitals with your current analytics tool
 date: 2020-05-27
-updated: 2022-11-30
+updated: 2021-11-30
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: How to measure Web Vitals with your current analytics tool
 tags:
