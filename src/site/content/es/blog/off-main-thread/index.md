@@ -1,5 +1,5 @@
 ---
-title: Utilice trabajadores web para ejecutar JavaScript desde el hilo principal del navegador
+title: Utilice trabajadores web para ejecutar JavaScript fuera del hilo principal del navegador
 subhead: Una arquitectura fuera del hilo principal puede mejorar significativamente la confiabilidad y la experiencia del usuario de su aplicación.
 description: El hilo principal del navegador está increíblemente sobrecargado de trabajo. Utilizando trabajadores web para cambiar el código del hilo principal, puede mejorar significativamente la confiabilidad y la experiencia del usuario de su aplicación.
 authors:
