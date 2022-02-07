@@ -1,5 +1,5 @@
 ---
-title: '2D graphics in Emscripten'
+title: 'Drawing to canvas in Emscripten'
 subhead: Learn how to render 2D graphics on the web from WebAssembly with Emscripten.
 description: Learn how to render 2D graphics to a canvas on the web from WebAssembly with Emscripten.
 date: 2022-02-10
