@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Improve security and privacy by updating HTTP Cache
+subhead: Forgetting or misusing the Cache-Control header may negatively impact the security of your website and your users' privacy.
 authors:
   - arthursonzogni
 description: Forgetting or misusing the Cache-Control header might negatively impact the security of your website and your users' privacy. Get recommendations for high-value websites.
