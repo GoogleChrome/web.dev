@@ -501,7 +501,7 @@ $ emcc --bind foo.cpp -o foo.html -s USE_SDL=2 -s USE_SDL_GFX=2
 
 And here are the results running on Linux:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ERTe7Nt9z5m4WnrlH5ya.png", alt="A square Linux window with black background and a green circle.", width="400", height="440" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ERTe7Nt9z5m4WnrlH5ya.png", alt="A square Linux window with black background and a green circle.", width="400", height="440", style="max-width:400px; margin: 0 auto;" %}
 
 And on the web:
 
