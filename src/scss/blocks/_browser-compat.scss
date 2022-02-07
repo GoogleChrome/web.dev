@@ -20,6 +20,7 @@
   margin-right: 6px;
   display: inline-block;
   background: content-box no-repeat transparent;
+  vertical-align: middle;
 
   &[data-browser='chrome'] {
     background-image: url('/images/icons/chrome.svg');
@@ -43,9 +44,13 @@
   }
 }
 
+.browser-compat__items td {
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+}
+
 .browser-compat__items {
-  display: flex;
-  align-items: center;
   margin: 1rem 1rem 1rem 0;
 }
 
