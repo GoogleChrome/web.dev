@@ -123,11 +123,11 @@ tags:
   </table>
 </div>
 
-### 「計画的なsame-site」
+### 「スキームフル same-site」
 
 {% Img src="image/admin/Y9LbVyxYzg4k6mwSEqyE.png", alt="schemeful same-site", width="677", height="105" %}
 
-「same-site」の定義は、HTTPが[脆弱なチャネル](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8)として使用されないように、 URL スキームをサイトの一部として考慮するように展開されています。ブラウザがこのように解釈すると、古い定義を参照する場合は[「スキームのないsame-site](/schemeful-samesite/)」への参照が表示され、より厳密な定義を参照する場合は「スキームのないsame-site」への参照が表示される場合があります。その場合、スキームが一致しないため`http://www.example.com`と`https://www.example.com`はcross-siteと見なされます。
+「same-site」の定義は、HTTPが[脆弱なチャネル](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8)として使用されないように、 URL スキームをサイトの一部として考慮するように展開されています。ブラウザがこの解釈に移行すると、古い定義を指す場合は「スキームレス same-site」、より厳しい定義を指す場合は[「スキームフル same-site」](/schemeful-samesite/)という表記を目にすることがあります。その場合、スキームが一致しないため`http://www.example.com`と`https://www.example.com`はcross-siteと見なされます。
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -135,7 +135,7 @@ tags:
       <tr>
         <th>オリジンA</th>
         <th>オリジンB</th>
-        <th>オリジンAとオリジンBが「計画的なsame-site」であるかどうかの説明します</th>
+        <th>オリジンAとオリジンBが「スキームフル same-site」であるかどうかの説明</th>
       </tr>
     </thead>
     <tbody>
@@ -147,7 +147,7 @@ tags:
       </tr>
       <tr>
         <td>https：// <strong>login</strong> .example.com：443</td>
-        <td><strong>計画的なsame-site：異なるサブドメインは重要ではありません</strong></td>
+        <td><strong>スキームフル same-site：異なるサブドメインは重要ではありません</strong></td>
       </tr>
       <tr>
         <td><strong>http://www.example.com:443</strong></td>
@@ -155,15 +155,15 @@ tags:
       </tr>
       <tr>
         <td><strong>https://www.example.com：80</strong></td>
-        <td><strong>計画的なsame-site：異なるポートは重要ではありません</strong></td>
+        <td><strong>スキームフル same-site：異なるポートは重要ではありません</strong></td>
       </tr>
       <tr>
         <td><strong>https://www.example.com:443</strong></td>
-        <td><strong>計画的なsame-site：完全に一致します</strong></td>
+        <td><strong>スキームフル same-site：完全に一致します</strong></td>
       </tr>
       <tr>
         <td><strong>https://www.example.com</strong></td>
-        <td><strong>計画的なsame-site：ポートは重要ではありません</strong></td>
+        <td><strong>スキームフル same-site：ポートは重要ではありません</strong></td>
       </tr>
     </tbody>
   </table>
