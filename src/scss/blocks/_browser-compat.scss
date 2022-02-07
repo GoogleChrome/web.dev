@@ -43,6 +43,12 @@
   }
 }
 
+.browser-compat__items {
+  display: flex;
+  align-items: center;
+  margin: 1rem 1rem 1rem 0;
+}
+
 // Version
 .browser-compat__version {
   border-radius: 100%;
@@ -51,6 +57,7 @@
   line-height: 20px;
   text-align: center;
   min-width: 20px;
+  display: inline-block;
 
   &[data-compat='yes'] {
     background: get-utility-value('bg', 'state-good-bg');
@@ -72,8 +79,7 @@
   color: get-utility-value('color', 'mid-text');
   flex: 0 0 100%;
   font-style: normal;
-  margin: 0;
-  margin-bottom: 2rem;
+  margin-right: 1rem;
   width: 100%;
 
   @include media-query('md') {
