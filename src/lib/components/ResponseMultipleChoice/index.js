@@ -124,7 +124,7 @@ export class ResponseMultipleChoice extends BaseResponseElement {
     } else {
       flag.textContent = 'Incorrect';
     }
-    content.prepend(flag);
+    content.append(flag);
     rationale.className = 'web-response__option-rationale';
     content.append(rationale);
 

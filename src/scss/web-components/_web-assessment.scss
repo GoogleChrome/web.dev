@@ -35,3 +35,7 @@ web-assessment {
 
   @include apply-utility('color', 'core-text');
 }
+
+.web-question__content {
+  padding: get-space('size-1') 0 0;
+}

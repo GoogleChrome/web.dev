@@ -67,11 +67,9 @@
   display: none;
 }
 
-[state='completed'] .web-response__correctness-flag,
+
 [data-role='option'][data-submitted] .web-response__correctness-flag,
-[state='completed'] .web-response__option-rationale,
 [data-role='option'][data-submitted] .web-response__option-rationale,
-[state='completed'] .web-response-tac__option-rationale,
 [data-role='option'][data-submitted] .web-response-tac__option-rationale {
   display: block;
 }
