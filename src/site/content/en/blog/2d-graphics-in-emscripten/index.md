@@ -185,7 +185,7 @@ After the image has been drawn to a window, the application now waits in a loop,
 
 Now compiling this example on Linux works as expected and shows a 300 by 300 window with a green rectangle:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/nUxwRMyWVmdK5zy2Kct6.png", alt="A square Linux window with black background and a green rectangle.", width="400", height="440"  style="max-width: 400px; margin: 0 auto" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/nUxwRMyWVmdK5zy2Kct6.png", alt="A square Linux window with black background and a green rectangle.", width="400", height="440",  style="max-width: 400px; margin: 0 auto" %}
 
 However, the example no longer works on the web. The Emscripten-generated page freezes immediately during the load and never shows the rendered image:
 
