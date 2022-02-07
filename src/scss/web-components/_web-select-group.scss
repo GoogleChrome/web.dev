@@ -58,10 +58,13 @@
 /// context (usually assesment is submitted)
 .web-select-group {
   .web-response__correctness-flag,
-  .web-response__option-rationale,
-  .web-response-tac__option-rationale {
+  .web-response__option-rationale {
     display: none;
   }
+}
+
+.web-response-tac__option-rationale {
+  display: none;
 }
 
 [state='completed'] .web-response__correctness-flag,
