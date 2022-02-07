@@ -128,7 +128,7 @@ Ultimately, some HTTPS resources may be cached by these local proxies.
    [implicitly](https://datatracker.ietf.org/doc/html/rfc7234) allowed
    to be cached by default.
 *  The [primary cache
-   key](https://httpwg.org/specs/rfc7234.html#rfc.section.2) consists of the
+   key](https://datatracker.ietf.org/doc/html/rfc7234#section-2) consists of the
    URL and the method. (URL, method)
 *  The [secondary cache
    key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses) is
