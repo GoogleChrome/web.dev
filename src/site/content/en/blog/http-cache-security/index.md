@@ -56,7 +56,7 @@ resources are either:
 
 The COEP setup doesn't prevent an attacker from exploiting Spectre. However, it
 ensures cross-origin resources are not valuable to the attacker (when shared
-as public resource) or allowed to be shared with the attacker (when shared with
+by the browser as public resource) or allowed to be shared with the attacker (when shared with
 [`CORP: cross-origin`](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))).
 
 ### How does HTTP caching affect Spectre?
