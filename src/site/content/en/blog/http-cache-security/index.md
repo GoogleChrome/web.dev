@@ -131,7 +131,7 @@ Ultimately, some HTTPS resources may be cached by these local proxies.
    key](https://datatracker.ietf.org/doc/html/rfc7234#section-2) consists of the
    URL and the method. (URL, method)
 *  The [secondary cache
-   key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses) is
+   key](https://datatracker.ietf.org/doc/html/rfc7234#section-4.1) is
    the headers included in the `Vary` header. `Vary: Cookie` indicates the
    response depends on the `Cookie`.
 *  The `Cache-Control` header gives more fine grained control.
