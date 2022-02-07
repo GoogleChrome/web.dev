@@ -148,7 +148,7 @@ How would you change the `pattern` to also allow uppercase letters?
 
 {% DetailsSummary 'h3' %} Toggle answer {% endDetailsSummary %}
 
-The correct answer is `pattern="[A-z]{2,20}"`.
+The correct answer is `pattern="[a-zA-Z]{2,20}"`.
 
 {% endDetails %}
 
