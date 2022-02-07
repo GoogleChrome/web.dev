@@ -1,4 +1,5 @@
 {% from 'macros/tag-chips.njk' import tagChips with context %}
+{% from 'macros/authors.njk' import authorsMacro with context %}
 
 {#
   Grab the ToC contents for headings ToC. This powers the list of headings
@@ -99,17 +100,7 @@
         {% SignPosts page.fileSlug %}
 
         {% if authors %}
-          <div class="cluster flow-space-size-2">
-            {% for author in authors %}
-              {% Author {
-                id: authorKey,
-                author: collections.authors[author],
-                showSocialMedia: true,
-                locale: locale
-                }
-              %}
-            {% endfor %}
-          </div>
+          {{ authorsMacro() }}
         {% endif %}
       </header>
 

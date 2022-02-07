@@ -35,4 +35,4 @@ To continue to build your CSS skillset, here are some additional resources to ex
 
 ## Brought to you by
 
-{% include 'partials/author-stack.njk' %}
+{% include 'partials/authors-stack.njk' %}
