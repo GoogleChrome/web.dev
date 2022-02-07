@@ -111,7 +111,9 @@ function BrowserCompat(feature) {
     const supportLabel = i18n(`i18n.browser_compat.browser_support`, locale);
     return `<div class="browser-compat">
       <span class="browser-compat__label">${supportLabel}:</span>
-      <table class="browser-compat__items"><tr>${compatIcons.join('')}</tr></table>
+      <table class="browser-compat__items">
+        <tr>${compatIcons.join('')}</tr>
+      </table>
       ${sourceLink}
     </div>
     `;
