@@ -64,7 +64,7 @@ however for compatibility with older browsers you may need to include other form
 {% Aside %}
 There's technically another container format, the [SVG
 font container](http://caniuse.com/svg-fonts), but IE and Firefox never supported it, and it is now deprecated in Chrome. As
-such, it's of limited use and it's intentionally omitted it in this guide.
+such, it's of limited use and it's intentionally omitted in this guide.
 {% endAside %}
 
 ### Reduce font size with compression
