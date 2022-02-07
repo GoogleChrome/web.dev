@@ -24,4 +24,4 @@ Congratulations! You've made it to the end! We hope that you have enjoyed this o
 
 ## Brought to you by
 
-{% include 'partials/author-stack.njk' %}
+{% include 'partials/authors-stack.njk' %}

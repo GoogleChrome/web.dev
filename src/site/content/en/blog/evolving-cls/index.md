@@ -14,11 +14,11 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'info', 'body' %}
+{% Aside %}
   **Jun 2, 2021:** The update to CLS described in this
   post is now available across Chrome's web tooling surfaces. See [Evolving
   Cumulative Layout Shift in web tooling](/cls-web-tooling/) for details.
-{% endBanner %}
+{% endAside %}
 
 We (the Chrome Speed Metrics Team) recently outlined our initial research into
 [options for making the CLS metric more fair to pages that are open for a long
@@ -60,12 +60,12 @@ intuitively.
 
 To review session windows, here's an example:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of a session window.
   </figcaption>
 </figure>

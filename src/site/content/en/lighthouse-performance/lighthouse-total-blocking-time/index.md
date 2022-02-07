@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Total Blocking Time
 description: |
   Learn about Lighthouse's Total Blocking Time metric and
@@ -15,8 +15,8 @@ of the Lighthouse report. Each metric captures some aspect of page load speed.
 
 The Lighthouse report displays TBT in milliseconds:
 
-<figure class="w-figure">
-  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="592", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="592" %}
 </figure>
 
 ## What TBT measures
@@ -36,7 +36,7 @@ to learn how Lighthouse score thresholds are set.
 
 This table shows how to interpret your TBT score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

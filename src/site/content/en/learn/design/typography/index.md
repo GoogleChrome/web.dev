@@ -144,7 +144,7 @@ In his classic book [*The Elements of Typographic Style*](http://webtypography.n
 
 You can't set a line length directly in CSS. There is no `line-length` property. But you can stop text from getting too wide by limiting how wide the container can be. The [`max-inline-size`](https://developer.mozilla.org/docs/Web/CSS/max-inline-size) property is perfect for this.
 
-Don't set your line-lengths with a fixed unit like `px`. Users can scale their font size up and down and your line lengths should adjust accordingly. Use a [relative unit](https://web.dev/learn/css/sizing/#relative-lengths) like `rem` or `ch`.
+Don't set your line-lengths with a fixed unit like `px`. Users can scale their font size up and down and your line lengths should adjust accordingly. Use a [relative unit](/learn/css/sizing/#relative-lengths) like `rem` or `ch`.
 
 {% Compare 'worse' %}
 

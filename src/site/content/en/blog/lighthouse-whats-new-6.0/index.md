@@ -52,7 +52,7 @@ the highlights in this article.
 ## New metrics {: #new-metrics }
 
 <figure>
-  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", class="w-screenshot" %}
+  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251" %}
 </figure>
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
@@ -262,7 +262,7 @@ you explore performance scoring. The calculator also gives you a comparison betw
 with your results populated.
 
 <figure>
-  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319", class="w-screenshot" %}
+  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319" %}
   <figcaption>Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
 </figure>
 
@@ -324,15 +324,15 @@ Start using Lighthouse CI on your project today by following our
 [getting started guide](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md).
 
 <figure data-float="left">
-  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, class="w-screenshot" %}
+  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true %}
 </figure>
 
 <figure data-float="left">
-  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, class="w-screenshot" %}
+  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true %}
 </figure>
 
 <figure>
-  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, class="w-screenshot" %}
+  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true %}
 </figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
@@ -372,7 +372,7 @@ but here are all the changes detectable by a webpage:
 As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Chrome DevTools device emulation list with Moto G4 included.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Chrome DevTools device emulation list with Moto G4 included.", width="800", height="653" %}
 </figure>
 
 ## Browser extension {: #extension }
@@ -421,7 +421,7 @@ explore in DevTools, clicking on the locations specified in the report will open
 in the **Sources** panel.
 
 <figure>
-  <video autoplay loop muted playsinline class="w-screenshot">
+  <video autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </video>
@@ -441,7 +441,7 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Displaying the original source code for report items with a "source location".
 
 <figure>
-  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", class="w-screenshot" %}
+  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566" %}
   <figcaption>The Unused JavaScript audit using source maps to show unused code in specific bundled modules.</figcaption>
 </figure>
 

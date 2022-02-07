@@ -31,11 +31,11 @@ reducing User-Agent string granularity.
 Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 If you are already using User-Agent Client Hints, be aware that since Chrome 90
 the header format has changed so the Accept-CH tokens must exactly match the
 returned headers.
-{% endBanner %}
+{% endAside %}
 
 ## Background
 

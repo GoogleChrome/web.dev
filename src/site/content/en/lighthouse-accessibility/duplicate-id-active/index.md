@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`[id]` attributes on active, focusable elements are not unique"
 description: |
   Learn how to [fix the problem identified by the audit].
@@ -19,8 +19,8 @@ all of your page's functionality.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags focusable elements that have duplicate IDs:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hAevzwng1erk5DYZjLyq.png", alt="Lighthouse audit showing focusable elements with duplicate IDs", width="800", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hAevzwng1erk5DYZjLyq.png", alt="Lighthouse audit showing focusable elements with duplicate IDs", width="800", height="185" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/focusable-els.njk' %}

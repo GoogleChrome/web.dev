@@ -26,7 +26,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="好的 LCP 值为 2.5 秒，差的值大于 4.0 秒，两者之间的任何值都需要改进", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="好的 LCP 值为 2.5 秒，差的值大于 4.0 秒，两者之间的任何值都需要改进", width="384", height="96" %}
   </picture>
 
 导致 LCP 不佳的最常见原因是：
@@ -40,7 +40,7 @@ tags:
 
 浏览器从服务器接收内容所需的时间越长，在屏幕上渲染任何内容所需的时间就越长。更快的服务器响应速度能直接改善包括 LCP 在内的各项页面加载指标。
 
-您首先需要做的是改进服务器处理内容的方式和位置。请使用[**Time to First Byte 首字节时间**](/time-to-first-byte) (TTFB) 来测量您的服务器响应时间。您可以通过多种不同的方式来改进您的 TTFB：
+您首先需要做的是改进服务器处理内容的方式和位置。请使用[**Time to First Byte 首字节时间**](/ttfb/) (TTFB) 来测量您的服务器响应时间。您可以通过多种不同的方式来改进您的 TTFB：
 
 - 优化您的服务器
 - 将用户路由到附近的 CDN
@@ -77,7 +77,7 @@ tags:
 
 下方的图表显示使用该模式能够减少网站的 LCP 分布：
 
-<figure class="w-figure">{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="HTML 缓存前后的最大内容绘制分布", width="800", height="495" %}<figcaption class="w-figcaption">最大内容绘制分布，使用（和未使用）Service Worker 进行页面加载的情况 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption></figure>
+<figure>{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="HTML 缓存前后的最大内容绘制分布", width="800", height="495" %}<figcaption>最大内容绘制分布，使用（和未使用）Service Worker 进行页面加载的情况 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption></figure>
 
 该图表显示了过去 28 天内某个网站的 LCP 分布，并且按 Service Worker 状态进行了细分。请注意，在 Service Worker 中引入优先使用缓存的 HTML 页面服务后，大多数页面加载的 LCP 值都变得更为迅速（图表的蓝色部分）。
 
@@ -111,7 +111,7 @@ tags:
 
 ### 使用签名交换（SXG）
 
-[签名交换 (SXG)](https://web.dev/signed-exchanges) 是一种交付机制，通过提供采用了易于缓存格式的内容来实现更快的用户体验。具体来说， [Google 搜索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)会缓存 SXG，有时也会预获取 SXG。对于通过 Google 搜索获得大部分流量的网站，SXG 可以是改进 LCP 的重要工具。如需了解更多信息，请参阅[签名交换](/signed-exchanges)。
+[签名交换 (SXG)](/signed-exchanges) 是一种交付机制，通过提供采用了易于缓存格式的内容来实现更快的用户体验。具体来说， [Google 搜索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)会缓存 SXG，有时也会预获取 SXG。对于通过 Google 搜索获得大部分流量的网站，SXG 可以是改进 LCP 的重要工具。如需了解更多信息，请参阅[签名交换](/signed-exchanges)。
 
 ## 阻塞渲染的 JavaScript 和 CSS {: #render-blocking-resources }
 
@@ -137,7 +137,7 @@ tags:
 - 对于 Gulp：[gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - 对于 Rollup：[rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="LCP 改进示例：削减 CSS 前后对比", width="800", height="139" %}<figcaption class="w-figcaption">LCP 改进示例：削减 CSS 前后对比</figcaption></figure>
+<figure>{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="LCP 改进示例：削减 CSS 前后对比", width="800", height="139" %}<figcaption>LCP 改进示例：削减 CSS 前后对比</figcaption></figure>
 
 {% Aside %} 如需了解更多详情，请参阅[削减 CSS](/minify-css/) 指南。{% endAside %}
 
@@ -156,7 +156,7 @@ tags:
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="LCP 改进示例：延迟加载非关键 CSS 前后对比", width="800", height="139" %}<figcaption class="w-figcaption">LCP 改进示例：延迟加载非关键 CSS 前后对比</figcaption></figure>
+<figure>{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="LCP 改进示例：延迟加载非关键 CSS 前后对比", width="800", height="139" %}<figcaption>LCP 改进示例：延迟加载非关键 CSS 前后对比</figcaption></figure>
 
 {% Aside %}如需了解更多详情，请参阅[延迟加载非关键 CSS](/defer-non-critical-css/) 指南。 {% endAside %}
 
@@ -164,7 +164,7 @@ tags:
 
 通过把用于首屏内容的任何关键路径 CSS 直接包括在`<head>`中来将这些 CSS 进行内联。
 
-<figure class="w-figure">{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="内联的关键 CSS", width="800", height="325", class="w-screenshot w-screenshot--filled" %}<figcaption class="w-figcaption">内联的关键 CSS</figcaption></figure>
+<figure>{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="内联的关键 CSS", width="800", height="325" %}<figcaption>内联的关键 CSS</figcaption></figure>
 
 将重要样式进行内联后，就不再需要通过往返请求来获取关键 CSS。延迟加载其余部分可以最大限度地减少 CSS 阻塞时间。
 
@@ -173,7 +173,7 @@ tags:
 - [Critical](https://github.com/addyosmani/critical)、[CriticalCSS](https://github.com/filamentgroup/criticalCSS) 和 [Penthouse](https://github.com/pocketjoso/penthouse) 都是提取和内联首屏 CSS 的包
 - [Critters](https://github.com/GoogleChromeLabs/critters) 是一个 webpack 插件，能够内联关键 CSS 并对其余部分进行懒加载
 
-<figure class="w-figure">{% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="LCP 改进示例：内联关键 CSS 前后对比", width="800", height="175" %}<figcaption class="w-figcaption">LCP 改进示例：内联关键 CSS 前后对比</figcaption></figure>
+<figure>{% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="LCP 改进示例：内联关键 CSS 前后对比", width="800", height="175" %}<figcaption>LCP 改进示例：内联关键 CSS 前后对比</figcaption></figure>
 
 {% Aside %}请查看[提取关键 CSS](/extract-critical-css/) 指南了解更多信息。{% endAside %}
 
@@ -183,9 +183,9 @@ tags:
 
 这可以通过优化您的脚本来实现，有如下几种不同的方式：
 
-- [削减和压缩 JavaScript 文件](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [延迟加载未使用的 JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [最大限度减少未使用的 polyfill](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [削减和压缩 JavaScript 文件](/reduce-network-payloads-using-text-compression/)
+- [延迟加载未使用的 JavaScript](/reduce-javascript-payloads-with-code-splitting/)
+- [最大限度减少未使用的 polyfill](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}[优化首次输入延迟](/optimize-fid/)指南更详细地介绍了减少 JavaScript 阻塞时间所需的全部技巧。{% endAside %}
 
@@ -211,7 +211,7 @@ tags:
 
 对于许多网站来说，在页面加载完毕后，图像会是视图中的最大元素。这种情况的常见示例包括首图、大型轮播或横幅图像。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %}<figcaption>图像为最大页面元素：<a href="https://design.google/">design.google</a></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %}<figcaption>图像为最大页面元素：<a href="https://design.google/">design.google</a></figcaption></figure>
 
 改善这些类型的图像进行加载和渲染所需的时间将直接提升 LCP 的速度。实现方式：
 
@@ -259,7 +259,7 @@ tags:
 2. 如果您需要对服务器进行修改来使其压缩文件，请考虑使用 Brotli，而不是 gzip，因为 Brotli 可以提供更好的压缩率。
 3. 选择您要使用的压缩算法后，请在构建过程中提前压缩资产，而不是在浏览器请求时实时压缩资产。这样能够最大限度地减少服务器开销并防止在发出请求时出现延迟，尤其是在使用高压缩比的情况下。
 
-<figure class="w-figure">{% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="LCP 改进示例：Brotli 压缩前后对比", width="800", height="139" %}<figcaption class="w-figcaption">LCP 改进示例：Brotli 压缩前后对比</figcaption></figure>
+<figure>{% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="LCP 改进示例：Brotli 压缩前后对比", width="800", height="139" %}<figcaption>LCP 改进示例：Brotli 压缩前后对比</figcaption></figure>
 
 {% Aside %} 如需了解更多详情，请参阅[削减和压缩网络有效负载](/reduce-network-payloads-using-text-compression/)指南。{% endAside %}
 
@@ -334,7 +334,7 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
 在使用预渲染后，TTI 仍然会受到负面影响，但服务器响应时间不会像服务端渲染解决方案（仅在接到请求后才对各个页面进行动态渲染）中那样受到很大影响。
 
-<figure class="w-figure">{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="LCP 改进示例：预渲染前后对比", width="800", height="139" %}<figcaption class="w-figcaption">LCP 改进示例：预渲染前后对比</figcaption></figure>
+<figure>{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="LCP 改进示例：预渲染前后对比", width="800", height="139" %}<figcaption>LCP 改进示例：预渲染前后对比</figcaption></figure>
 
 {% Aside %} 如需更深入地了解不同的服务端渲染架构，请查看[网络中的渲染](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)。{% endAside %}
 

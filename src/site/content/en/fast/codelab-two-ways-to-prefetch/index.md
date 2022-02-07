@@ -31,7 +31,7 @@ First establish the baseline performance:
 
 The `product-details.html` page takes about 600 ms to load:
 
-{% Img src="image/admin/MVpybZcY1aF8slLFgJ0n.png", alt="Network panel showing load times for product-details.html", width="800", height="186", class="w-screenshot" %}
+{% Img src="image/admin/MVpybZcY1aF8slLFgJ0n.png", alt="Network panel showing load times for product-details.html", width="800", height="186" %}
 
 ## Prefetch the product page with `<link rel="prefetch">`
 
@@ -65,7 +65,7 @@ To verify that prefetching is working:
 
 Now when the landing page loads, the `product-details.html` page loads too, but at the lowest priority:
 
-{% Img src="image/admin/LDkU6zNbFU7GhPuUcaCR.png", alt="Network panel showing product-details.html prefetched.", width="800", height="172", class="w-screenshot" %}
+{% Img src="image/admin/LDkU6zNbFU7GhPuUcaCR.png", alt="Network panel showing product-details.html prefetched.", width="800", height="172" %}
 
 The page is kept in the [HTTP cache](https://developer.mozilla.org/docs/Web/HTTP/Caching) for five minutes, after which the normal [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control) rules for the document apply. In this case, `product-details.html` has  a `cache-control` header with a value of `public, max-age=0`, which means that the page is kept for a total of five minutes.
 
@@ -81,7 +81,7 @@ Take a look at the **Network** panel. There are two differences compared to the 
 
 This is approximately a 98% reduction compared to the previous version, which took about 600 ms.
 
-{% Img src="image/admin/gJZPsifaqFPozkhnMznX.png", alt="Network panel showing product-details.html retrieved from prefetch cache.", width="800", height="223", class="w-screenshot" %}
+{% Img src="image/admin/gJZPsifaqFPozkhnMznX.png", alt="Network panel showing product-details.html retrieved from prefetch cache.", width="800", height="223" %}
 
 ## Extra credit: Use `prefetch` as a progressive enhancement
 
@@ -160,7 +160,7 @@ The landing page now prefetches `product-details.html` only on fast connections.
 
 You should see `product-details.html` in the Network panel:
 
-{% Img src="image/admin/NCoFDNGs0iSfBkDjiwzd.png", alt="Network panel showing product-details.html prefetched.", width="800", height="201", class="w-screenshot" %}
+{% Img src="image/admin/NCoFDNGs0iSfBkDjiwzd.png", alt="Network panel showing product-details.html prefetched.", width="800", height="201" %}
 
 To verify that the product page isn't prefetched on slow connections:
 
@@ -169,7 +169,7 @@ To verify that the product page isn't prefetched on slow connections:
 
 The **Network** panel should include only the resources for the landing page without `product-details.html`:
 
-{% Img src="image/admin/xpHuregNQIEKrVylhG3G.png", alt="Network panel showing product-details.html not being prefetched.", width="800", height="171", class="w-screenshot" %}
+{% Img src="image/admin/xpHuregNQIEKrVylhG3G.png", alt="Network panel showing product-details.html not being prefetched.", width="800", height="171" %}
 
 ## Prefetch the stylesheet for the product page with the HTTP `Link` header
 
@@ -193,11 +193,11 @@ app.get('/', function(request, response) {
 
 The `style-product.css` is now prefetched at the lowest priority after the landing page loads:
 
-{% Img src="image/admin/Memd8AIP4Yr5dhGGi240.png", alt="Network panel showing style-product.css prefetched.", width="800", height="205", class="w-screenshot" %}
+{% Img src="image/admin/Memd8AIP4Yr5dhGGi240.png", alt="Network panel showing style-product.css prefetched.", width="800", height="205" %}
 
 To navigate to the product page, click **Buy now**. Take a look at the **Network** panel:
 
-{% Img src="image/admin/12tQkKKPqx4JjaWofEYK.png", alt="Network panel showing style-product.css retrieved from prefetch cache.", width="800", height="223", class="w-screenshot" %}
+{% Img src="image/admin/12tQkKKPqx4JjaWofEYK.png", alt="Network panel showing style-product.css retrieved from prefetch cache.", width="800", height="223" %}
 
 The `style-product.css` file is retrieved from the "prefetch cache" and it took only 12 ms to load.
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Use semantic HTML for easy keyboard wins
 authors:
   - robdodson

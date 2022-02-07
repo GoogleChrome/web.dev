@@ -19,11 +19,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache"
-          },
-          {
-            "key": "Surrogate-Control",
-            "value": "max-age=600"
+            "value": "max-age=0"
           }
         ]
       }

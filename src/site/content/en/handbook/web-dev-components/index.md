@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev components
 date: 2019-06-26
-updated: 2020-07-17
+updated: 2022-01-18
 description: |
   Learn how to use web.dev's UI and content components.
 ---
@@ -11,14 +11,14 @@ The web.dev platform includes various components to make it easy for content
 contributors to include common content features, like videos, side-by-side
 comparisons, and asides.
 
-This post shows sample markup for each of web.dev's content components and provides
-guidance about how to use them effectively.
+This post shows sample markup for each of web.dev's content components and
+provides guidance about how to use them effectively.
 
 ## Component types
 
 1. [Asides](#asides)
 1. [Banners](#banners)
-1. [Block quotes](#blockquotes)
+1. [Block quotes](#block-quotes)
 1. [Browser Compatibility](#browsercompat)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
@@ -44,10 +44,9 @@ guidance about how to use them effectively.
 
 1. [w-button](#w-button)
 1. [w-columns](#w-columns)
-1. [w-stats](#w-stats)
-1. [w-tables](#w-tables)
 
 ## Asides
+
 Use asides to provide information that's related to but distinct from the
 content in the body of the post or codelab. Asides should generally be short—no
 more than 2–3 lines.
@@ -120,17 +119,17 @@ Use the objective aside to define the goal of a process described in the body
 copy.
 {% endAside %}
 
-### Gotcha asides
+### Important asides
 
 ```text
-{% raw %}&#123;% Aside 'gotchas' %&#125;
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% raw %}&#123;% Aside 'important' %&#125;
+Use the important aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 &#123;% endAside %&#125;{% endraw %}
 ```
 
-{% Aside 'gotchas' %}
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% Aside 'important' %}
+Use the important aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 {% endAside %}
 
@@ -170,7 +169,7 @@ Default banners can be added to site templates (for example, landing pages)
 to provide timely information to users (for example, an alert about an
 upcoming conference).
 Don't use default banners in the body of a post;
-instead, use the body variant, below.
+instead, use the Aside component.
 
 ```text
 {% raw %}{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}{% endraw %}
@@ -191,25 +190,15 @@ instead, use the body variant, below.
 {% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
-
-### Body banners
-
-```text
-{% raw %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endraw %}
-```
-
-{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
+{% Banner %}This is a neutral banner. It supports Markdown.{% endBanner %}
 
 ## Block quotes
-Use block quotes to emphasize a quotation that's important to
-the main idea of a post. (For example, in a case study you might include
-a quotation from someone on the partner organization's management team.)
 
-Always include a `<cite>` element indicating the quote's source
+To include quotation in the body of an article, use `<blockquote>` tag.
+You can include a `<cite>` element indicating the quote's source
 at the end of a block quote:
 
 ```html
@@ -224,6 +213,8 @@ at the end of a block quote:
 </blockquote>
 ```
 
+You can also use a shortcode:
+
 ```html
 {% raw %}{% Blockquote 'Jon Doe' %}
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
@@ -231,7 +222,47 @@ a massa sit amet ullamcorper.
 {% endBlockquote %}{% endraw %}
 ```
 
-{% Blockquote 'Jon Doe' %}
+<blockquote>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
+  </p>
+  <cite>
+    Jon Doe
+  </cite>
+</blockquote>
+
+To embed a [pull quote](https://en.wikipedia.org/wiki/Pull_quote) in an article,
+to emphasize a piece of text or a quote, you can use `pullquote` class:
+
+```html
+<blockquote data-type="pullquote">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
+  </p>
+  <cite>
+    Jon Doe
+  </cite>
+</blockquote>
+```
+
+<blockquote data-type="pullquote">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.</p>
+  <cite>Jon Doe</cite>
+</blockquote>
+
+You can also use a shortcode with a `pullquote` attribute:
+
+```html
+{% raw %}{% Blockquote 'Jon Doe', 'pullquote' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}{% endraw %}
+```
+
+{% Blockquote 'Jon Doe', 'pullquote' %}
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
 a massa sit amet ullamcorper.
 {% endBlockquote %}
@@ -257,7 +288,7 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
-[Detailed specification](design-system/component/button/)
+[Detailed specification](/design-system/component/button/)
 
 ### Text buttons
 
@@ -295,7 +326,7 @@ These buttons are shown for reference.
 
 A default icon button:
 
-[Detailed specification](design-system/component/icon-button/)
+[Detailed specification](/design-system/component/icon-button/)
 
 <div>
   <button class="icon-button" aria-label="Close">
@@ -332,7 +363,7 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 To align a label to the checkbox wrap the label and checkbox in an element with
 a `cluster gutter-base flex-align-start` class.
 
-[Detailed specification](https://web.dev/design-system/component/form-fields/#checkbox)
+[Detailed specification](/design-system/component/form-fields/#checkbox)
 
 ```html
 <div class="cluster gutter-base flex-align-start">
@@ -608,6 +639,7 @@ assumenda perspiciatis.
 ## Details
 
 ### Basic details component
+
 ```text
 {% raw %}&#123;% Details %&#125;
 
@@ -634,6 +666,7 @@ at.
 {% endDetails %}
 
 ### Details component with preview
+
 ```text/4-5
 {% raw %}&#123;% Details %&#125;
 
@@ -667,6 +700,7 @@ at.
 {% endDetails %}
 
 ### Details component with custom heading level
+
 The default heading level is `h2`.
 To ensure the `Details` component is in the correct place in the page hierarchy,
 add a custom heading argument to the `DetailsSummary` shortcode.
@@ -699,6 +733,7 @@ at.
 {% endDetails %}
 
 ### Details component in open state
+
 The `Details` component is closed by default.
 If for some reason you want it open,
 add the `open` argument to the `Details` shortcode.
@@ -898,6 +933,7 @@ console.log('hello');
 ```
 
 ## Lists
+
 See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)
 for information about when to use each list type.
 
@@ -1232,7 +1268,7 @@ the tab, e.g. the code blocks.
 <web-tabs>
   <div data-label="html">
     ```html
-    <p> I'm html</p>
+    <p>I'm html</p>
     ```
   </div>
   <div data-label="css">
@@ -1248,7 +1284,7 @@ the tab, e.g. the code blocks.
   <div data-label="html" title="t">
 
   ```html
-  <p> I'm html</p>
+  <p>I'm html</p>
   ```
 
   </div>
@@ -1266,7 +1302,7 @@ the tab, e.g. the code blocks.
 Use tooltips to provide information about UI controls
 that are too small to have a label
 
-[Detailed specification](https://web.dev/design-system/component/tooltips/)
+[Detailed specification](/design-system/component/tooltips/)
 
 ```html
 <div class="tooltip" data-alignment="">
@@ -1299,6 +1335,7 @@ that are too small to have a label
 
 
 ## Video / YouTube {: #video }
+
 See the [Images and video](/handbook/markup-media) post.
 
 # Deprecated components
@@ -1368,15 +1405,15 @@ by wrapping them in a `<div class="w-columns">` element:
 
 ```html
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
@@ -1384,15 +1421,15 @@ by wrapping them in a `<div class="w-columns">` element:
 ```
 
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
@@ -1400,369 +1437,3 @@ by wrapping them in a `<div class="w-columns">` element:
 
 At smaller viewport sizes,
 elements in a two-column layout will shift to a stacked arrangement.
-
-## w-stats
-
-Use the Stats component to call out important statistics
-about a product or service discussed in a post.
-(Stats are primarily used in case studies.)
-
-Include no more than four statistics in a single Stats component
-to avoid layout issues.
-
-```html
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p>Lower cost per conversion</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p>Higher CTR</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p>Faster load times</p>
-  </div>
-</div>
-```
-
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p>Lower cost per conversion</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p>Higher CTR</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p>Faster load times</p>
-  </div>
-</div>
-
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p>Lower cost per conversion</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p>Higher CTR</p>
-  </div>
-</div>
-
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p>Lower cost per conversion</p>
-  </div>
-</div>
-
-## w-tables
-
-Use the markup below to create a table.
-Do _not_ use Markdown syntax;
-it doesn't include the wrapper element needed
-to ensure correct whitespace around the table.
-
-```html
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>Image Format</th>
-        <th>Lossy Plugin(s)</th>
-        <th>Lossless Plugin(s)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>JPEG</td>
-        <td><a href="#">imagemin-mozjpeg</a></td>
-        <td><a href="#">imagemin-jpegtran</a></td>
-      </tr>
-      …
-    </tbody>
-    <caption>Imagemin plugins for filetypes.</caption>
-  </table>
-</div>
-```
-
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>Image Format</th>
-        <th>Lossy Plugin(s)</th>
-        <th>Lossless Plugin(s)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>JPEG</td>
-        <td><a href="#">imagemin-mozjpeg</a></td>
-        <td><a href="#">imagemin-jpegtran</a></td>
-      </tr>
-      <tr>
-        <td>PNG</td>
-        <td><a href="#">imagemin-pngquant</a></td>
-        <td><a href="#">imagemin-optipng</a></td>
-      </tr>
-      <tr>
-        <td>GIF</td>
-        <td><a href="#">imagemin-giflossy</a></td>
-        <td><a href="#">imagemin-gifsicle</a></td>
-      </tr>
-      <tr>
-        <td>SVG</td>
-        <td><a href="#">Imagemin-svgo</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>WebP</td>
-        <td><a href="#">imagemin-webp</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-    <caption>Imagemin plugins for filetypes.</caption>
-  </table>
-</div>
-
-If you want content in `<td>` elements to be vertically aligned
-to the top of the cell, add the `w-table--top-align` class
-to the `<table>` element:
-
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
-    <thead>
-      <tr>
-        <th>Tool</th>
-        <th>CLI</th>
-        <th>CI</th>
-        <th>Summary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Lighthouse</td>
-        <td>✔</td>
-        <td>✘</td>
-        <td>
-          <ul>
-            <li>Budgets for different types of resources based on their size or count</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>webpack</td>
-        <td>✔</td>
-        <td>✘</td>
-        <td>
-          <ul>
-            <li>Budgets based on sizes of assets generated by webpack</li>
-            <li>Checks uncompressed sizes</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>bundlesize</td>
-        <td>✔</td>
-        <td>✔</td>
-        <td>
-          <ul>
-            <li>Budgets based on sizes of specific resources</li>
-            <li>Checks compressed or uncompressed sizes</li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-Include code in tables using a `<code>` element:
-
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>Before</th>
-        <th>After</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>@font-face {
-  font-family: Helvetica;
-}
-</code>
-        </td>
-        <td><code>@font-face {
-  font-family: Helvetica;
-  <strong>font-display: swap;</strong>
-}
-</code>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-Tables scroll when their width is larger than that of the content column:
-
-<div class="w-table-wrapper">
-  <table>
-    <tbody>
-      <tr>
-        <th>Network</th>
-        <th>Device</th>
-        <th>JS</th>
-        <th>Images</th>
-        <th>CSS</th>
-        <th>HTML</th>
-        <th>Fonts</th>
-        <th>Total</th>
-        <th>Time to Interactive budget</th>
-      </tr>
-      <tr>
-        <td>Slow 3G</td>
-        <td>Moto G4</td>
-        <td>100</td>
-        <td>30</td>
-        <td>10</td>
-        <td>10</td>
-        <td>20</td>
-        <td>~170 KB</td>
-        <td>5s</td>
-      </tr>
-      <tr>
-        <td>Slow 4G</td>
-        <td>Moto G4</td>
-        <td>200</td>
-        <td>50</td>
-        <td>35</td>
-        <td>30</td>
-        <td>30</td>
-        <td>~345 KB</td>
-        <td>3s</td>
-      </tr>
-      <tr>
-        <td>WiFi</td>
-        <td>Desktop</td>
-        <td>300</td>
-        <td>250</td>
-        <td>50</td>
-        <td>50</td>
-        <td>100</td>
-        <td>~750 KB</td>
-        <td>2s</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
-incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
-deleniti! Atque aliquam facilis labore odio similique provident illo culpa
-assumenda perspiciatis.
-</p>
-
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th><strong>Property</strong></th>
-        <th><strong>Use</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-        <code><strong>short_name</strong></code> (required)
-        </td>
-        <td>
-          Short human-readable name for the application. This is intended for when
-          there is insufficient space to display the full name of the web
-          application, like device home screens.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>name</strong></code> (required)</td>
-        <td>Human-readable name for the site when displayed to the user.</td>
-      </tr>
-      <tr>
-        <td><code><strong>description</strong></code> (recommended)</td>
-        <td>General description of what the PWA does.</td>
-      </tr>
-      <tr>
-        <td><code><strong>icons</strong></code> (required)</td>
-        <td>
-          An array of image files that can serve as application icons. Chrome
-          requires a 192x192px and a 512x512px icon. Additional sizes are
-          optional, and recommended for those who want to ensure pixel perfect
-          icons.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>start_url</strong></code> (required)</td>
-        <td>
-          The URL that loads when a user launches the application. This has to be
-          a relative URL, relative to the manifest url.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>background_color</strong></code> (recommended)</td>
-        <td>
-          The background color used on the auto-generated splash screen when the
-          PWA is launched.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>display</strong></code> (required)</td>
-        <td>The developers' preferred display mode for the PWA.</td>
-      </tr>
-      <tr>
-        <td><code><strong>scope</strong></code> (recommended)</td>
-        <td>
-          The navigation scope of this website's context. This restricts what web
-          pages can be viewed while the manifest is applied. If the user navigates
-          outside the scope, it returns to a normal web page inside a browser
-          tab/window.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>theme_color</strong></code> (recommended)</td>
-        <td>
-          The default theme color for an application. This affects how the OS
-          displays the site. <br>
-          <ol>
-            <li>
-              On Android's task switcher, the theme color surrounds the site.
-            </li>
-            <li>On desktop, the theme color is used to style the title bar.</li>
-          </ol>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Dicta nam possimus doloribus minima repellendus!
-          <ul>
-            <li>
-              On Android's task switcher, the theme color surrounds the site.
-            </li>
-            <li>On desktop, the theme color is used to style the title bar.</li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>

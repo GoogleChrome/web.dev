@@ -53,21 +53,21 @@ overcome the issues of imprecise scrolling. In other words, scroll snapping:
 
 Paginated articles and image carousels are two common use cases for scroll
 snaps.
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/MzdzDJ2j4jJtfAYgg9e6.png", alt="Example of CSS scroll snap.", width="800", height="356" %}
-  <figcaption class="w-figcaption">Example of CSS scroll snap. At the end of
+  <figcaption>Example of CSS scroll snap. At the end of
     scrolling an image's horizontal center is aligned with the horizontal center
     of the scroll container.
   </figcaption>
 </figure>
 
 ### Shortcomings
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.mp4" type="video/mp4;">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     Snap positions get lost when resizing a window.
   </figcaption>
 </figure>
@@ -104,8 +104,8 @@ what happens when the layout changes in the following
 
 <div class="switcher">
 {% Compare 'worse', 'Snap position lost' %}
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.mp4" type="video/mp4;">
   </video>
@@ -121,8 +121,8 @@ scroll snap position was lost.
 {% endCompare %}
 
 {% Compare 'better', 'Snap position preserved' %}
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.mp4" type="video/mp4;">
   </video>
@@ -160,12 +160,12 @@ lines of CSS:
 Want to learn more? See the following [demo chat
 UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.mp4" type="video/mp4;">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Adding a new message triggers re-snap which makes it stick to the bottom in
     Chrome 81.
   </figcaption>

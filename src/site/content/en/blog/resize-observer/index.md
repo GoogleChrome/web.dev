@@ -73,7 +73,7 @@ reports the content box of an element through a property called
 object. The content box is the box in which content can be placed. It is
 the border box minus the padding.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="A diagram of the CSS box model.", width="727", height="562" %}
 </figure>
 
@@ -127,8 +127,8 @@ design breakpoints and change an element's styles. In the following
 [example](https://googlechrome.github.io/samples/resizeobserver/), the second box
 will change its border radius according to its width.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm"
             type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4"
@@ -161,8 +161,8 @@ capture by definition, but calling `appendChild()` also resizes that element
 elements. With this in mind, it takes very few lines to achieve the desired
 effect:
 
-<figure class="w-figure">
- <video controls autoplay loop muted class="w-screenshot">
+<figure>
+ <video controls autoplay loop muted>
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm"
            type="video/webm; codecs=vp8">
    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4"

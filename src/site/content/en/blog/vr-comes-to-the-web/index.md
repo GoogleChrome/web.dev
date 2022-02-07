@@ -46,9 +46,9 @@ reality to completely virtual, with degrees of immersion in between. The 'X' in
 XR is intended to reflect that thinking by being a sort of algebraic variable
 that stands for anything in the spectrum of immersive experiences.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/iQ99APUTFIgjdRPyS1C4.png", alt="A graph illustrating the spectrum of visual experiences from complete reality to completely immersive.", width="800", height="204" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     The spectrum of immersive experiences
   </figcaption>
 </figure

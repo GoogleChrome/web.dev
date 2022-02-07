@@ -5,8 +5,8 @@ description: A layout where the sidebar is given a minimum and maximum safe area
 date: 2021-11-03
 ---
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/03-sidebar-says.mp4'>
   </video>
 </figure>

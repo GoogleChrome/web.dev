@@ -66,7 +66,7 @@ The main axis is the one set by your `flex-direction` property.
 If that is `row` your main axis is along the row,
 if it is `column` your main axis is along the column.
 
-<figure class="w-figure">
+<figure>
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg",
 alt="Three boxes next to each other with an arrow, pointing left to right. The arrow is labelled Main axis",
@@ -81,7 +81,7 @@ Remember: we've got a bunch of things and we are trying to get the best layout f
 The cross axis runs in the other direction to the main axis,
 so if `flex-direction` is `row` the cross axis runs along the column.
 
-<figure class="w-figure">
+<figure>
 {% Img
   src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Three boxes of different heights, next to each other with an arrow, pointing left to right. The arrow is labelled Main axis. There's another arrow pointing top to bottom. This one is labelled Cross axis", width="800", height="320" %}
 </figure>
@@ -180,7 +180,7 @@ hard to use for some people.
 
 For more information see:
 
-- [Content reordering](https://web.dev/content-reordering/)
+- [Content reordering](/content-reordering/)
 - [Flexbox and the keyboard navigation disconnect](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### Writing modes and direction
@@ -231,14 +231,14 @@ height="382" %}
 The initial value of the `flex-wrap` property is `nowrap`.
 This means that if there is not enough space in the container the items will overflow.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg",
 alt="A flex container with nine items inside it, the items have shrunk down so one word is on a line
 but there is not enough room to show them side by side so the flex items have extended outside the
 box of the container.",
 width="800",
 height="282" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
   Once they hit min-content size flex items will start to overflow their container
   </figcaption>
 </figure>

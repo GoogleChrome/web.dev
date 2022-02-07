@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2021-02-23
+updated: 2022-01-27
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
@@ -127,9 +127,9 @@ given vendor (`vendorId`) and, optionally, product (`productId`) identifiers.
 The `classCode`, `protocolCode`, `serialNumber`, and `subclassCode` keys can
 also be defined there as well.
 
-<figure class="w-figure">
-  {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Screenshot of the USB device user prompt in Chrome", width="800", height="533", class="w-screenshot" %}
-  <figcaption class="w-figcaption">USB device user prompt.</figcaption>
+<figure>
+  {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Screenshot of the USB device user prompt in Chrome", width="800", height="533" %}
+  <figcaption>USB device user prompt.</figcaption>
 </figure>
 
 For instance, here's how to get access to a connected Arduino device configured
@@ -157,9 +157,9 @@ By the way, if a USB device announces its [support for WebUSB], as well as
 defining a landing page URL, Chrome will show a persistent notification when the
 USB device is plugged in. Clicking this notification will open the landing page.
 
-<figure class="w-figure">
-  {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", class="w-screenshot" %}
-  <figcaption class="w-figcaption">WebUSB notification.</figcaption>
+<figure>
+  {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450" %}
+  <figcaption>WebUSB notification.</figcaption>
 </figure>
 
 From there, you can simply call `navigator.usb.getDevices()` and access your
@@ -207,7 +207,7 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 .catch(error => { console.error(error); });
 ```
 
-Please keep in mind that the WebUSB library I'm using here is just implementing
+Keep in mind that the WebUSB library I'm using is just implementing
 one example protocol (based on the standard USB serial protocol) and that
 manufacturers can create any set and types of endpoints they wish.
 Control transfers are especially nice for small configuration commands as
@@ -283,23 +283,64 @@ provides a ground-up example of building a USB-controlled LED device designed
 for the WebUSB API (not using an Arduino here). You'll find hardware, software,
 and firmware.
 
+### Limits on transfer size
+
+Some operating systems impose limits on how much data can be part of
+pending USB transactions. Splitting your data into smaller transactions and only
+submitting a few at a time helps avoid those limitations. It also reduces
+the amount of memory used and allows your application to report progress as the
+transfers complete.
+
+Because multiple transfers submitted to an endpoint always execute in order, it is
+possible to improve throughput by submitting multiple queued chunks to avoid
+latency between USB transfers. Every time a chunk is fully transmitted it will
+notify your code that it should provide more data as documented in the helper
+function example below.
+
+```js
+const BULK_TRANSFER_SIZE = 16 * 1024; // 16KB
+const MAX_NUMBER_TRANSFERS = 3;
+
+async function sendRawPayload(device, endpointNumber, data) {
+  let i = 0;
+  let pendingTransfers = [];
+  let remainingBytes = data.byteLength;
+  while (remainingBytes > 0) {
+    const chunk = data.subarray(
+      i * BULK_TRANSFER_SIZE,
+      (i + 1) * BULK_TRANSFER_SIZE
+    );
+    // If we've reached max number of transfers, let's wait.
+    if (pendingTransfers.length == MAX_NUMBER_TRANSFERS) {
+      await pendingTransfers.shift();
+    }
+    // Submit transfers that will be executed in order.
+    pendingTransfers.push(device.transferOut(endpointNumber, chunk));
+    remainingBytes -= chunk.byteLength;
+    i++;
+  }
+  // And wait for last remaining transfers to complete.
+  await Promise.all(pendingTransfers);
+}
+```
+
 ## Tips
 
 Debugging USB in Chrome is easier with the internal page `about://device-log`
 where you can see all USB device related events in one single place.
 
-<figure class="w-figure">
-  {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Screenshot of the device log page to debug WebUSB in Chrome", width="800", height="442", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Device log page in Chrome for debugging the WebUSB API.</figcaption>
+<figure>
+  {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Screenshot of the device log page to debug WebUSB in Chrome", width="800", height="442" %}
+  <figcaption>Device log page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
 The internal page `about://usb-internals` also comes in handy and allows you
 to simulate connection and disconnection of virtual WebUSB devices.
 This is be useful for doing UI testing without for real hardware.
 
-<figure class="w-figure">
-  {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Screenshot of the internal page to debug WebUSB in Chrome", width="800", height="294",  class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging the WebUSB API.</figcaption>
+<figure>
+  {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Screenshot of the internal page to debug WebUSB in Chrome", width="800", height="294" %}
+  <figcaption>Internal page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
 On most Linux systems, USB devices are mapped with read-only permissions by

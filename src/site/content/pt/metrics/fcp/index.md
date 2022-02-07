@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First Contentful Paint (FCP)
 authors:
   - philipwalton
@@ -25,7 +25,7 @@ Você notará que embora parte do conteúdo tenha sido renderizado, nem todo ele
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Bons valores de FCP são 1,8 segundos ou menos, valores baixos são maiores que 3,0 segundos e qualquer coisa entre as necessidades de melhoria", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Bons valores de FCP são 1,8 segundos ou menos, valores baixos são maiores que 3,0 segundos e qualquer coisa entre as necessidades de melhoria", width="400", height="300" %}
 </picture>
 
 ### O que é uma boa pontuação de FCP?

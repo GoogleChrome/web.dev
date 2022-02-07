@@ -33,20 +33,20 @@ It's tough building a responsive navigation system. Some users will be on a keyb
 some will have powerful desktops, and some will visit from a small mobile device.
 Everyone visiting should be able to open and close the menu.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/desktop-demo-1080p.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     Desktop to mobile responsive layout demo
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/mobile-demo-1080p.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     Light and dark theme down on iOS and Android
   </figcaption>
 </figure>
@@ -94,8 +94,8 @@ then with a pseudo-class I show and hide the sidenav:
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/hash-change.mp4">
   </video>
 </figure>
@@ -126,8 +126,8 @@ children to the same grid name, placing all elements into the same space, creati
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
   </video>
 </figure>
@@ -147,11 +147,11 @@ named `[escape]`, which is used to close the menu.
 
 Adjust `2fr` & `1fr` to find the ratio you like for the menu overlay and its negative space close button.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     A demo of what happens when you change the ratio.
   </figcaption>
 </figure>
@@ -185,11 +185,11 @@ a user's operating system preference for motion (if available).
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     A demo of the interaction with and without duration applied.
   </figcaption>
 </figure>
@@ -262,11 +262,11 @@ features for free. Let's adorn our interactive elements with labels clearly arti
 </a>
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/keyboard-voiceover.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     A demo of the voiceover and keyboard interaction UX.
   </figcaption>
 </figure>

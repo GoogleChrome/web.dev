@@ -49,7 +49,7 @@ it's important to know the parts of a CSS rule.
 A CSS rule is a block of code,
 containing one or more selectors and one or more declarations.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="An image of a CSS rule with the selector .my-css-rule", width="800", height="427" %}
 </figure>
 
@@ -229,12 +229,12 @@ you have access to operators that match portions of strings inside attribute val
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Codepen {
     user: 'web-dot-dev',
     id: 'BapBbOy'
   } %}
-  <figcaption class="w-figcaption">In this demo, the `$` operator in our attribute selector gets the filetype from the `href` attribute.
+  <figcaption>In this demo, the `$` operator in our attribute selector gets the filetype from the `href` attribute.
   This makes it possible to prefix the label—based on that filetype—using a pseudo-element.</figcaption>
 </figure>
 
@@ -378,12 +378,12 @@ p strong {
 This snippet selects all `<strong>` elements
 that are child elements of `<p>` elements only, making them blue recursively.
 
-<figure class="w-figure">
+<figure>
   {% Codepen {
     user: 'web-dot-dev',
     id: 'BapBbGN'
   } %}
-  <figcaption class="w-figcaption">Because the descendant combinator is recursive,
+  <figcaption>Because the descendant combinator is recursive,
 the padding added to each child element applies, resulting in a staggered effect.</figcaption>
 </figure>
 
@@ -436,13 +436,13 @@ use a `~` character.
 How this differs is that an element just has to follow another element with the same parent,
 rather than being the next element with the same parent.
 
-<figure class="w-figure">
+<figure>
   {% Codepen {
     user: 'web-dot-dev',
     id: 'ZELzPPX',
     height: 400
   } %}
-  <figcaption class="w-figcaption">Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
+  <figcaption>Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
 </figure>
 
 This subsequent combinator provides a little less rigidity,

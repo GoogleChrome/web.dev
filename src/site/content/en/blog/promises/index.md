@@ -817,8 +817,8 @@ getJSON('story.json').then(function(story) {
 And there we have it, a fully async version of the sync version. But we can do
 better. At the moment our page is downloading like this:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
   </video>
@@ -874,8 +874,8 @@ Depending on connection, this can be seconds faster than loading one-by-one,
 and it's less code than our first try. The chapters can download in whatever
 order, but they appear on screen in the right order.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
   </video>
@@ -929,8 +929,8 @@ getJSON('story.json')
 And there we go, the best of both! It takes the same amount of time to deliver
 all the content, but the user gets the first bit of content sooner.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
   </video>

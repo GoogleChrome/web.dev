@@ -6,8 +6,8 @@ date: 2021-11-03
 height: 400
 ---
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-1.mp4'>
   </video>
 </figure>
@@ -27,8 +27,8 @@ Another classic: the 12-span grid. You can quickly write grids in CSS with the `
 
 Now you have a 12 column track grid, you can place child elements on the grid. One way to do this would be to place them using grid lines. For example, `grid-column: 1 / 13` would span all the way from the first line to the last (13th) and span 12 columns. `grid-column: 1 / 5;` would span the first four.
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/06-12-span-2.mp4'>
   </video>
 </figure>

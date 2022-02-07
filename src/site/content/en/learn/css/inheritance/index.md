@@ -45,7 +45,7 @@ article a {
 In this lesson you'll learn why that happens and
 how inheritance is a powerful feature to help you write less CSS.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYNGEbg',
@@ -78,7 +78,7 @@ html {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEKgBX',
@@ -96,7 +96,7 @@ body {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPLrLP',
@@ -120,7 +120,7 @@ p {
 Only the `<p>` will have italic text because it's the deepest nested element.
 Inheritance only flows downwards, not back up to parent elements.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEKgmK',
@@ -172,7 +172,7 @@ Every HTML element has every CSS property defined by default with an initial val
 An initial value is a property that's not inherited and shows up as a default
 if the cascade fails to calculate a value for that element.
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/OvoYqOMcdFZL7wJQIL2C.mp4" %}
 </figure>
 
@@ -182,7 +182,7 @@ This means that if a parent has `font-weight` set to `bold` all child elements w
 unless their `font-weight` is set to a different value,
 or the user agent stylesheet has a value for `font-weight` for that element.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgGPOZ'
@@ -222,7 +222,7 @@ To make the `<strong>` elements inside `.my-component` also `font-weight: 500` a
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYgNedO',
@@ -252,7 +252,7 @@ aside strong {
 This snippet will remove the bold weight from all `<strong>` elements inside an `<aside>` element and instead,
 make them normal weight, which is the initial value.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWVORZ',
@@ -287,7 +287,7 @@ aside p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjEdpjw',
@@ -319,7 +319,7 @@ aside p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgdLNB',
@@ -339,7 +339,7 @@ aside p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWpbZbB',

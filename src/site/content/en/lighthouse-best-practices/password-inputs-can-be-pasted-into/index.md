@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Prevents users from pasting into password fields
 description: |
   Learn how to improve the user experience of your site's login screen by
@@ -24,8 +24,8 @@ to remember.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags code that prevents users from pasting into password fields:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0tAkhHny7nQu4pYJ9m9E.png", alt="Lighthouse audit shows page stops users from pasting into password fields", width="800", height="163", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0tAkhHny7nQu4pYJ9m9E.png", alt="Lighthouse audit shows page stops users from pasting into password fields", width="800", height="163" %}
 </figure>
 
 Lighthouse gathers all `<input type="password">` elements,

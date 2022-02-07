@@ -78,7 +78,7 @@ a service worker.
 #### What about other workers?
 
 Support for
-[ES modules in "dedicated" workers](https://web.dev/module-workers/)—those
+[ES modules in "dedicated" workers](/module-workers/)—those
 constructed with `new Worker('...', {type: 'module'})`—is more widespread, and
 has been supported in Chrome and Edge since
 [version 80](https://chromestatus.com/feature/5761300827209728), as well as

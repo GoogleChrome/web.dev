@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: What makes a good Progressive Web App?
 authors:
   - samrichard

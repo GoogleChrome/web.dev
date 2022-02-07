@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Measuring offline usage
 subhead: >
   How to track offline usage of your site so that you can make a case as to why

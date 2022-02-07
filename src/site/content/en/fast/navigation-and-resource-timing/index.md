@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Assessing loading performance in the field with Navigation Timing and Resource Timing
 subhead: Learn the basics of using the Navigation and Resource Timing APIs to assess loading performance in the field.
 description: Learn the basics of using the Navigation and Resource Timing APIs to assess loading performance in the field.
@@ -49,7 +49,7 @@ The amount of information these APIs provide can be overwhelming, but they're yo
 
 Gathering and analyzing navigation and resource timings is sort of like archeology in that you're reconstructing the fleeting life of a network request after the fact. Sometimes it helps to visualize concepts, and where network requests are concerned, your browser's developer tools can help.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/BxgZyzAEyFnk846wvzNa.png", alt="A diagram of network timings as shown in Chrome's DevTools. The timings depicted are for request queueing, connection negotiation, the request itself, and the response in color-coded bars.", width="800", height="583" %}
   <figcaption>A visualization of a network request in the <a href="https://developer.chrome.com/docs/devtools/network/" rel="noopener">network panel of Chrome's DevTools</a></figcaption>
 </figure>

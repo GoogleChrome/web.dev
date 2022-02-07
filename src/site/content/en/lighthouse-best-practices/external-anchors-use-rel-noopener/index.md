@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Links to cross-origin destinations are unsafe
 description: |
   Learn how to safely link to resources on another host.
@@ -33,8 +33,8 @@ including Edge Legacy and Internet Explorer.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags unsafe links to cross-origin destinations:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Lighthouse audit showing unsafe links to cross-origin destinations", width="800", height="213", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Lighthouse audit showing unsafe links to cross-origin destinations", width="800", height="213" %}
 </figure>
 
 Lighthouse uses the following process to identify links as unsafe:

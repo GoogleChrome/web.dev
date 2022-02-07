@@ -81,9 +81,9 @@ Cookies may be used here to, among other things, maintain session state, store
 general preferences, enable statistics, or personalize content for users with
 existing accounts.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="Diagram of a browser window where the URL of embedded content does not match the URL of the page.", width="468", height="383", style="max-width: 35vw;" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     If the embedded content doesn't come from the same site as the top-level
     browsing context, it's third-party content.
   </figcaption>
@@ -105,9 +105,9 @@ Cookies marked as `SameSite=Lax` will be sent on safe top-level navigations,
 e.g. clicking a link to go to a different site. However something like a
 `<form>` submission via POST to a different site would not include cookies.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="Diagram of a request moving from one page to another.", width="719", height="382", style="max-width: 35vw;" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     If the incoming request uses a "safe" method then the cookies will be sent.
   </figcaption>
 </figure>

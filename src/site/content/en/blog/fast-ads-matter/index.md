@@ -43,7 +43,7 @@ tension with the user's purpose.
 
 The browser has limited resources to work with—memory, CPU, and network
 bandwidth. The more of these resources your ads consume, the longer it takes for
-your page to become visually complete and [interactive](/interactive/). This can
+your page to become visually complete and [interactive](/tti/). This can
 be a drag on user experience metrics like [session
 length](https://en.wikipedia.org/wiki/Session_(web_analytics)) and [bounce
 rate](https://en.wikipedia.org/wiki/Bounce_rate). You can improve these metrics

@@ -50,8 +50,9 @@ module.exports = {
     dimensions: {
       SIGNED_IN: 'dimension1',
       TRACKING_VERSION: 'dimension5',
+      NAVIGATION_TYPE: 'dimension6',
     },
-    version: 4,
+    version: 7,
   },
   firebase: {
     prod: {
@@ -77,4 +78,5 @@ module.exports = {
   maps: {
     apiKey: 'AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s',
   },
+  recaptchaSiteKey: '6Lfqf9YdAAAAAKUVvj6y53E_tMMlnj8dt1fpo-FV',
 };

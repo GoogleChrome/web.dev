@@ -26,7 +26,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="良好なLCP値は2.5秒、不良な値は4.0秒を超え、その間の値は改善が必要", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="良好なLCP値は2.5秒、不良な値は4.0秒を超え、その間の値は改善が必要", width="384", height="96" %}
   </picture>
 
 LCP が低下する要因としては、一般的に以下のものが考えられます。
@@ -40,7 +40,7 @@ LCP が低下する要因としては、一般的に以下のものが考えら�
 
 ブラウザーがサーバーからコンテンツを受信するのに時間がかかればかかるほど、画面に何かをレンダリングするのに時間がかかってしまいます。サーバーの応答速度を高速化することで、LCP を含むすべてのページの読み込みに関連する指標を直接的に改善することができます。
 
-何よりもまず、サーバーがコンテンツを処理する方法と場所を改善しましょう。サーバーの応答時間を測定するには、[**Time to First Byte**](/time-to-first-byte) (サーバーの初期応答時間、TTFB) を使用します。TTFB の改善には、以下のような様々な方法があります。
+何よりもまず、サーバーがコンテンツを処理する方法と場所を改善しましょう。サーバーの応答時間を測定するには、[**Time to First Byte**](/ttfb/) (サーバーの初期応答時間、TTFB) を使用します。TTFB の改善には、以下のような様々な方法があります。
 
 - サーバーを最適化する
 - ユーザーを近くの CDN にルーティングする
@@ -68,7 +68,7 @@ HTML が静的なもので、リクエストのたびに変更する必要がな
 サーバー キャッシングの適用については、ご利用のツールチェーンに応じて以下のような複数の方法が存在します。
 
 - リバース プロキシ ([Varnish](https://varnish-cache.org/)、[nginx](https://www.nginx.com/)) を構成し、キャッシュされたコンテンツを配信するか、アプリケーション サーバーの前にインストールされた場合にキャッシュ サーバーとして機能させる
-- クラウド プロバイダー ([Firebase](https://firebase.google.com/docs/hosting/manage-cache)、[AWS](https://aws.amazon.com/caching/)、[Azure](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching)) のキャッシュ動作を構成して管理する
+- クラウド プロバイダー ([Firebase](https://firebase.google.com/docs/hosting/manage-cache)、[AWS](https://aws.amazon.com/caching/)、[Azure](https://docs.microsoft.com/azure/architecture/best-practices/caching)) のキャッシュ動作を構成して管理する
 - エッジ サーバーを設置している CDN を使用し、ユーザーの近くでコンテンツをキャッシュして保存する
 
 ### HTML ページをキャッシュファーストで配信する
@@ -77,7 +77,7 @@ HTML が静的なもので、リクエストのたびに変更する必要がな
 
 このパターンを使用しているサイトで LCP の分布がどのように減少したかを、次の図に示します。
 
-<figure class="w-figure">{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="HTML キャッシングの使用前後での Largest Contentful Paint の分布の比較", width="800", height="495" %} <figcaption class="w-figcaption">Service Worker を使用している場合と、そうではない場合での Largest Contentful Paint の分布の比較 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption></figure>
+<figure>{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="HTML キャッシングの使用前後での Largest Contentful Paint の分布の比較", width="800", height="495" %} <figcaption>Service Worker を使用している場合と、そうではない場合での Largest Contentful Paint の分布の比較 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption></figure>
 
 このグラフは、過去 28 日間に渡る単一サイトでの LCP の分布を、Service Worker の状態別に示したものです。Service Worker にキャッシュファーストの HTML ページ配信が導入されると、LCP の値が高速化したページ読み込みの数が大幅に増加することにご注目ください (青いグラフで表示)。
 
@@ -111,7 +111,7 @@ HTML が静的なもので、リクエストのたびに変更する必要がな
 
 ### Signed Exchange (SXG) を使用する
 
-[Signed Exchange (SXG)](https://web.dev/signed-exchanges) は、簡単にキャッシュ可能な形式でコンテンツを配信することにより、より高速なユーザー エクスペリエンスを可能にする配信メカニズムです。具体的には、[Google 検索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)が SXG をキャッシュし、状況に応じてプリフェッチします。トラフィックの大部分を Google 検索が占めているサイトにとっては、SXG は LCP を改善するための重要なツールとなる可能性があります。詳細については、「[Signed Exchange](/signed-exchanges)」を参照してください。
+[Signed Exchange (SXG)](/signed-exchanges) は、簡単にキャッシュ可能な形式でコンテンツを配信することにより、より高速なユーザー エクスペリエンスを可能にする配信メカニズムです。具体的には、[Google 検索](https://developers.google.com/search/docs/advanced/experience/signed-exchange)が SXG をキャッシュし、状況に応じてプリフェッチします。トラフィックの大部分を Google 検索が占めているサイトにとっては、SXG は LCP を改善するための重要なツールとなる可能性があります。詳細については、「[Signed Exchange](/signed-exchanges)」を参照してください。
 
 ## レンダリングを妨げる JavaScript および CSS {: #render-blocking-resources }
 
@@ -137,7 +137,7 @@ CSS ファイルには、読みやすくするために、スペース、イン�
 - Gulp の場合: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - Rollup の場合: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="LCP の改善例: CSS の圧縮前後の比較", width="800", height="139" %} <figcaption class="w-figcaption">LCP の改善例: CSS の圧縮前後の比較</figcaption></figure>
+<figure>{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="LCP の改善例: CSS の圧縮前後の比較", width="800", height="139" %} <figcaption>LCP の改善例: CSS の圧縮前後の比較</figcaption></figure>
 
 {% Aside %}詳細については、「[CSS を圧縮する](/minify-css/)」ガイドを参照してください。{% endAside %}
 
@@ -156,16 +156,16 @@ Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-de
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="LCP の改善例: 重要でない CSS の先送り前後の比較", width="800", height="139" %} <figcaption class="w-figcaption">LCP の改善例: 重要でない CSS の先送り前後の比較</figcaption></figure>
+<figure>{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="LCP の改善例: 重要でない CSS の先送り前後の比較", width="800", height="139" %} <figcaption>LCP の改善例: 重要でない CSS の先送り前後の比較</figcaption></figure>
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
     alt="LCP の改善例: 重要でない CSS の先送り前後の比較",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP の改善例: 重要でない CSS の先送り前後の比較
   </figcaption>
 </figure>
@@ -176,14 +176,13 @@ Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-de
 
 Above the fold (アバブ・ザ・フォールド、スクロールせずに閲覧可能なサイトのファースト ビューを指す) のコンテンツに使用されているクリティカル パス CSS は、`<head>` タグ内に直接記述してインライン化します。
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",
     alt="重要なCSSがインライン化",
-    width="800", height="325",
-    class="w-screenshot w-screenshot--filled"
+    width="800", height="325"
   %}
-  <figcaption class="w-figcaption">重要なCSSがインライン化</figcaption>
+  <figcaption>重要なCSSがインライン化</figcaption>
 </figure>
 
 重要なスタイルをインライン化してしまえば、重要な CSS を取得するために順番にリクエストを行う必要がなくなります。そして、残りの部分を先送りすることによって CSS のブロック時間を最小限に抑えることができるようになります。
@@ -193,14 +192,14 @@ Above the fold (アバブ・ザ・フォールド、スクロールせずに閲�
 - [Critical](https://github.com/addyosmani/critical)、[CriticalCSS](https://github.com/filamentgroup/criticalCSS)、[Penthouse](https://github.com/pocketjoso/penthouse) は、Above the fold に含まれている CSS を抽出し、インライン化するためのパッケージです。
 - [Critters](https://github.com/GoogleChromeLabs/critters) は、クリティカル CSS をインライン化し、残りの部分の遅延読み込みを行う webpack プラグインです。
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/L8sc51bd3ckxwnUfczC4.png",
     alt="LCP の改善例: クリティカル CSS のインライン化前後の比較",
     width="800",
     height="175"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP の改善例: クリティカル CSS のインライン化前後の比較
   </figcaption>
 </figure>
@@ -213,9 +212,9 @@ Above the fold (アバブ・ザ・フォールド、スクロールせずに閲�
 
 これを行うには、以下に示す様々な方法を用いてスクリプトの最適化を行う必要があります。
 
-- [JavaScript ファイルを圧縮する](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [使用されていない JavaScript を先送りする](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [使用されていないポリフィルを最小限に抑える](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [JavaScript ファイルを圧縮する](/reduce-network-payloads-using-text-compression/)
+- [使用されていない JavaScript を先送りする](/reduce-javascript-payloads-with-code-splitting/)
+- [使用されていないポリフィルを最小限に抑える](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}「[First Input Delay を最適化する](/optimize-fid/)」ガイドでは、JavaScript によるブロック時間を短縮するために必要なすべての技術を、より詳細に説明しています。{% endAside %}
 
@@ -241,7 +240,7 @@ CSS や JavaScript によるブロック時間の増加はパフォーマンス�
 
 多くのサイトにおいて、ページの読み込みが完了した時点で最もサイズが大きい要素として表示されるのは画像です。一般的な例としては、ヒーロー画像、大きなカルーセル、バナー画像などが挙げられます。
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png",
     alt="",
@@ -297,14 +296,14 @@ Chrome 73 以降では、事前読み込みと[レスポンシブ画像](/preloa
 2. ファイルを圧縮するためにサーバーの設定を変更する必要がある場合には、gzip の代わりに圧縮率がより優れている Brotli の使用をご検討ください。
 3. 使用する圧縮アルゴリズムの選択が完了したら、ブラウザーからのリクエストがあったときにその場で圧縮するのではなく、ビルド処理の中で事前にアセットを圧縮します。これにより、サーバーのオーバーヘッドを最小限に抑え、特に高い圧縮率を使用する場合におけるリクエスト時の遅延を防ぐことができます。
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",
     alt="LCP の改善例: Brotli による圧縮の前後比較",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP の改善例: Brotli による圧縮の前後比較
   </figcaption>
 </figure>
@@ -382,14 +381,14 @@ Service Worker を使用して重要なリソースを事前にキャッシュ�
 
 事前レンダリングを使用する場合、TTI に関してはネガティブな影響を与えますが、サーバーの応答時間に関してはリクエストに応じてそれぞれのページを動的にレンダリングするサーバーサイド レンダリング ソリューションほどの影響は与えません。
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",
     alt="LCP の改善例: 事前レンダリング前後の比較",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     LCP の改善例: 事前レンダリング前後の比較
   </figcaption>
 </figure>

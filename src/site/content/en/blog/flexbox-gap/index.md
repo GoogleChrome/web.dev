@@ -34,12 +34,12 @@ adjust for the different `writing-mode` or `direction` values that you set for y
 international users. This significantly eases the burden of spacing challenges for
 the component and CSS author. **Less code scaling further.**
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/gap-i18n.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/gap-i18n.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Gap demonstrating localization support, as it handles changes to direction and writing-mode:
     <a href="https://codepen.io/argyleink/pen/MWaoZJM">Codepen</a> |
     <a href="https://twitter.com/argyleink/status/1254794309263491072?s=20">Tweet</a>
@@ -190,9 +190,9 @@ consistent. No new selectors, no new media queries, just space.
 With these updates come changes to Chromium DevTools, notice how the **Styles**
 pane handles `grid-gap` and `gap` now 👍
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/7ZxgySczxUR1qxuD8cbC.png", alt="An office with two people working at a table.", width="400", height="273" %}
-  <figcaption class="w-figcaption">Devtools shows the both <code>grid-gap<code> and <code>gap</code>, with <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax.</figcaption>
+  <figcaption>Devtools shows the both <code>grid-gap<code> and <code>gap</code>, with <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax.</figcaption>
 </figure>
 
 DevTools supports both `grid-gap` and `gap`, this is because `gap` is essentially
@@ -205,12 +205,12 @@ spaced, intrinsic layouts. In the video and following code sample below, Grid
 cannot achieve the layout that Flexbox can. Grid must have equal rows and columns,
 even if they're intrinsically assigned.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/flex-gap-v1.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/flex-gap-v1.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://twitter.com/argyleink/status/1255201934241198081?s=20">Tweet</a>
   </figcaption>
 </figure>

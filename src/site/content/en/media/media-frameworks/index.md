@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Media frameworks
 authors:
   - derekherman

@@ -21,7 +21,7 @@ origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/-5376172055173529599
 ---
 
-{% Aside %} PWAs as URL Handlers is part of the [capabilities project](https://web.dev/fugu-status/)
+{% Aside %} PWAs as URL Handlers is part of the [capabilities project](/fugu-status/)
 and is currently in development. This post will be updated as the implementation progresses.
 {% endAside %}
 

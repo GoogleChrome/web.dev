@@ -45,7 +45,7 @@ Report](https://developers.google.com/web/tools/chrome-user-experience-report)) 
 significant improvements to site speed.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JXQCBQRuezhMQhfQShXq.png", alt="The optimization efforst led to a 10% improvement on the homepage, a 13% improvement on the search page, and 3% improvement on item pages.", width="800", height="186", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JXQCBQRuezhMQhfQShXq.png", alt="The optimization efforst led to a 10% improvement on the homepage, a 13% improvement on the search page, and 3% improvement on item pages.", width="800", height="186" %}
   <figcaption>
     eBay's speed improvements.
   </figcaption>
@@ -54,7 +54,7 @@ significant improvements to site speed.
 …and their Chrome User Experience Report data highlights these improvements, too.
 
 <figure>
-  {% Img src="image/admin/YeJPjxdDBrdbgLxcbl7E.png", alt="Screenshots of PageSpeed Insights view of Chrome User Experience Report data highlighting fast FCP of 70% and fast FID of 88% for eBay.com", width="800", height="237", class="w-screenshot" %}
+  {% Img src="image/admin/YeJPjxdDBrdbgLxcbl7E.png", alt="Screenshots of PageSpeed Insights view of Chrome User Experience Report data highlighting fast FCP of 70% and fast FID of 88% for eBay.com", width="800", height="237" %}
   <figcaption>
     Chrome User Experience Report data for <a href="/fcp/">First Contentful Paint</a> and <a href="/fid/">First Input Delay</a> for the eBay.com origin.
   </figcaption>
@@ -110,7 +110,7 @@ results page is the most image-heavy page at eBay, and they were already using W
 consistent pattern.
 
 <figure>
-  {% Img src="image/admin/wxY64wQbCvgdEuI8DlUY.png", alt="Screenshots of the DevTools network panel filtered to show WebP image requests from eBay.com", width="800", height="506", class="w-screenshot" %}
+  {% Img src="image/admin/wxY64wQbCvgdEuI8DlUY.png", alt="Screenshots of the DevTools network panel filtered to show WebP image requests from eBay.com", width="800", height="506" %}
   <figcaption>
     WebP images being served to supported browsers on eBay.com.
   </figcaption>
@@ -131,7 +131,7 @@ A user session on eBay is not just one page. It is a flow. For example, the flow
 With predictive prefetch, when a user navigates to the predicted page, the assets are already in the browser cache. This is done for CSS and JavaScript assets, where the URLs can be retrieved ahead of time. One thing to note here is that it helps only on first-time navigations. On subsequent navigations, the static assets will already be in the cache.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcipECBEv200bO8CWkrs.png", alt="eBay is doing predictive prefetching of static assets. Home prefetches assets for Search, Search prefetches assets for Item, and so on. Machine-learning- and analytics-based prefetching is under consideration.", width="800", height="448", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dcipECBEv200bO8CWkrs.png", alt="eBay is doing predictive prefetching of static assets. Home prefetches assets for Search, Search prefetches assets for Item, and so on. Machine-learning- and analytics-based prefetching is under consideration.", width="800", height="448" %}
 </figure>
 
 The "cut" here is the network time for CSS and JavaScript static assets on the first navigation.
@@ -154,7 +154,7 @@ presentation](https://www.youtube.com/watch?v=ogEhUnQdQiU&t=984s), or stay tuned
 post on the topic from eBay's engineers.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6wW7yHAD7vMBDUDCzm2B.png", alt="eBay prefetches the top 5 items in search result pages for fast subsequent loads. This happens during idle time with requestIdleCallback(). This resulted in a 759ms faster median above-the-fold time, a custom metric that is similar to First Meaningful Paint. eBay saw a positive impact on conversions from prefetching.", width="800", height="451", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6wW7yHAD7vMBDUDCzm2B.png", alt="eBay prefetches the top 5 items in search result pages for fast subsequent loads. This happens during idle time with requestIdleCallback(). This resulted in a 759ms faster median above-the-fold time, a custom metric that is similar to First Meaningful Paint. eBay saw a positive impact on conversions from prefetching.", width="800", height="451" %}
 </figure>
 
 The "cut" here can either be server processing time or network time,
@@ -172,7 +172,7 @@ The "cut" here is the download start time for search result images.
 When users type in letters in the search box, suggestions pop-up. These suggestions do not change for letter combinations for at least a day. They are ideal candidates to be cached and served from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) (for a max of 24 hours), instead of requests going all the way to a data center. International markets especially benefit from CDN caching.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5HVWuq5nIvQ6aCoaltIl.png", alt="A screenshot of eBay's search box displaying autocomplete suggestions for a search query.", width="800", height="417", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5HVWuq5nIvQ6aCoaltIl.png", alt="A screenshot of eBay's search box displaying autocomplete suggestions for a search query.", width="800", height="417" %}
 </figure>
 
 There was a catch, though. eBay had some elements of personalization in the suggestions pop-up,
@@ -212,7 +212,7 @@ More importantly, eBay observed that there was a blocking third-party analytics 
 All the performance "cuts" eBay made collectively contributed towards moving the needle, and it happened over a period of time. The releases were phased in throughout the year, with each release shaving off tens of milliseconds, ultimately reaching the point where eBay is now:
 
 <figure>
-  {% Img src="image/admin/GxKfB8GHUd9cQWLb0Pkj.png", alt="Screenshots of Chrome UX Report showing field data improvements for eBay.com.", width="800", height="529", class="w-screenshot" %}
+  {% Img src="image/admin/GxKfB8GHUd9cQWLb0Pkj.png", alt="Screenshots of Chrome UX Report showing field data improvements for eBay.com.", width="800", height="529" %}
   <figcaption>
     The impact of eBay's speed efforts on their field metrics over time, as illustrated by the <a href="https://g.co/chromeuxdash">Chrome UX Report Dashboard</a>.
   </figcaption>

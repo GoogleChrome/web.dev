@@ -87,8 +87,8 @@ scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
-<figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="800", height="533" %}
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="400", height="263" %}
   <figcaption>
     Large image.
   </figcaption>
@@ -103,7 +103,7 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wBf0W2V9bVA7Clh01Rf7.png", alt="", width="400", height="78" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="400", height="263" %}
   <figcaption>
     Small image.
   </figcaption>
@@ -128,7 +128,7 @@ quam sem.
 ## Image, Inline
 
 <figure data-float="right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306" %}
   <figcaption>
     Inline right, outlined image.
   </figcaption>
@@ -149,7 +149,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure data-float="left">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306" %}
   <figcaption>
     Inline left, outlined image.
   </figcaption>
@@ -169,8 +169,8 @@ augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
 aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
-<figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+<figure data-screenshot>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
   <figcaption>
     Filled screenshot.
   </figcaption>
@@ -263,7 +263,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
     <figcaption>
       Filled screenshot.
     </figcaption>
@@ -310,7 +310,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
     <figcaption>
       Filled screenshot.
     </figcaption>

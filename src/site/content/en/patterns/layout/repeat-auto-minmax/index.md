@@ -5,8 +5,8 @@ description: A responsive layout with automatically-placed and flexible children
 date: 2021-11-03
 ---
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-1.mp4'>
   </video>
 </figure>
@@ -26,8 +26,8 @@ You are using `repeat()` again, but this time, using the `auto-fit` keyword inst
 
 With `auto-fit`, any completely empty tracks will collapse to `0` and the filled tracks will grow to take up their space. However, if you change this to `auto-fill`, empty tracks will take up the same amount of space they would do if filled:
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/07-ram-2.mp4'>
   </video>
 </figure>

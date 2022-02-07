@@ -20,7 +20,6 @@
   @include vertically-align-label();
 
   &,
-  &:link,
   &:visited {
     @include apply-utility('color', 'action-text');
   }
@@ -54,7 +53,6 @@
     @include apply-utility('bg', 'action-bg-primary');
 
     &,
-    &:link,
     &:visited {
       @include apply-utility('color', 'action-text-primary');
     }

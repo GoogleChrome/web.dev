@@ -81,7 +81,7 @@ if ('MediaStreamTrackProcessor' in window && 'MediaStreamTrackGenerator' in wind
 ### Core concepts
 
 Insertable streams for `MediaStreamTrack` builds on concepts previously proposed by
-[WebCodecs](https://web.dev/webcodecs/) and conceptually splits the `MediaStreamTrack` into two
+[WebCodecs](/webcodecs/) and conceptually splits the `MediaStreamTrack` into two
 components:
 
 - The `MediaStreamTrackProcessor`, which consumes a `MediaStreamTrack` object's source and generates

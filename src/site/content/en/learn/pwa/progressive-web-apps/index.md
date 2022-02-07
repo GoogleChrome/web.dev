@@ -238,7 +238,7 @@ macOS, Linux, and Windows 7 and 8.x
 In the following video the user installs a PWA from the browser on a desktop computer, 
 and then accesses it like any other app with its standalone window.
 
-{% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/d0cR0VyUhy30DkXEgGOt.mp4", alt="the user can install a PWA from the browser on a desktop computer, and then the user can access it like any other app with its standalone window", class="w-screenshot", autoplay="true", loop="true", muted="true" %}
+{% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/d0cR0VyUhy30DkXEgGOt.mp4", alt="the user can install a PWA from the browser on a desktop computer, and then the user can access it like any other app with its standalone window", autoplay="true", loop="true", muted="true" %}
 
 {% Aside 'caution' %}
 On desktop, Safari and Firefox do not support PWA installation. 

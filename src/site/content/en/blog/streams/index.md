@@ -7,7 +7,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-02-19
-updated: 2021-02-25
+updated: 2022-01-11
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -101,10 +101,10 @@ This will **lock** the stream, that is, make it no longer directly usable; howev
 streams**, called branches, which can be consumed independently.
 Teeing also is important because streams cannot be rewound or restarted, more about this later.
 
-<figure class="w-figure">
+<figure>
   <!-- Original source file located at https://drive.google.com/file/d/17apgoyo6E5RAA_nwwM5Xg4FGiMr8y3mk/view?usp=sharing -->
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.", width="800", height="430" %}
-  <figcaption class="w-figcaption">A pipe chain.</figcaption>
+  <figcaption>A pipe chain.</figcaption>
 </figure>
 
 ## The mechanics of a readable stream
@@ -625,6 +625,9 @@ a `WritableStream`, the underlying sink is given a corresponding `WritableStream
 instance to manipulate. The `WritableStreamDefaultController` has only one method:
 [`WritableStreamDefaultController.error()`](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/error),
 which causes any future interactions with the associated stream to error.
+`WritableStreamDefaultController` also supports a `signal` property which returns an instance of
+[`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal),
+allowing a `WritableStream` operation to be stopped if needed.
 
 ```js
 /* … */
@@ -956,7 +959,7 @@ Support for the Streams API in browsers varies. Be sure to check
 have partial implementations of certain features, so be sure to check the data thoroughly.
 
 The good news is that there is a
-[reference implementation](https://github.com/whatwg/streams/tree/master/reference-implementation)
+[reference implementation](https://github.com/whatwg/streams/tree/main/reference-implementation)
 available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
 production use.
 

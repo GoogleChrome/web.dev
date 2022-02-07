@@ -131,12 +131,12 @@ After implementing SSR, the team discovered the cause of CLS regression that ini
 Although Chrome's DevTools showed Layout Shift events, we couldn't find the reason for it at first. Though SSR itself wasn't the problem, it helped in discovering the solution later on. Fixing the code responsible for the painting delay improved layout stability of the news component.
 
 <figure>
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Active JavaScript just shows an empty page in the news section, hidding the layout jumps.", width="800", height="443", class="w-screenshot" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/X5ZgXiNPGEqz6oOlvY5v.png", alt="Active JavaScript just shows an empty page in the news section, hidding the layout jumps.", width="800", height="443" %}
   <figcaption>Finding the news painting problem with JavaScript disabled.</figcaption>
 </figure>
 
 <figure>
-  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448", class="w-screenshot" %}
+  {% Img src="image/dB6B4Sr8kaaT0KZujRBFC303oFR2/aXnxfjZCk4oZN8s6ag5o.png", alt="Disabling JavaScript revealed layout shifts, previously hidden from human eyes.", width="800", height="448" %}
   <figcaption>Fixing the news painting problem with JavaScript disabled.</figcaption>
 </figure>
 

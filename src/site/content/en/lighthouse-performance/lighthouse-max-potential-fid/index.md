@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Max Potential First Input Delay
 description: |
   Learn about Lighthouse's Max Potential First Input Delay metric and
@@ -16,8 +16,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays Max Potential FID in milliseconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VPy7DxOpD2tSd3O4Vrai.png", alt="A screenshot of the Lighthouse Max Potential First Input Delay audit.", width="800", height="588", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VPy7DxOpD2tSd3O4Vrai.png", alt="A screenshot of the Lighthouse Max Potential First Input Delay audit.", width="800", height="588" %}
 </figure>
 
 ## What Max Potential FID measures
@@ -43,9 +43,9 @@ data from the [HTTP Archive](https://httparchive.org).
 For example, if your Max Potential FID score in Lighthouse is green, it means
 that your page performs better than 90% of real websites.
 
-This table shows how to interpret your TBT score:
+This table shows how to interpret your Max Potential FID score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -101,7 +101,7 @@ about how to evaluate the FID data you collect.
 
 - [Source code for **Max Potential First Input Delay** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/max-potential-fid.js)
 - [First Input Delay][fid]
-- [Time to Interactive](/interactive/)
+- [Time to Interactive](/tti/)
 - [Are long JavaScript tasks delaying your Time to Interactive?](/long-tasks-devtools)
 - [First paint and first contentful paint][fcp]
 - [How To Think About Speed Tools][tools]

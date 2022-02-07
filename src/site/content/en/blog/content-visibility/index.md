@@ -34,9 +34,9 @@ content is off-screen, leveraging the `content-visibility` property makes the
 initial user load much faster. It also allows for faster interactions with the
 on-screen content. Pretty neat.
 
-<figure class="w-figure">
-  {% Img src="image/admin/v6WcSx9Fq76lCD0iqFCQ.jpg", alt="demo with figures representing network results", width="800", height="554", class="w-screenshot" %}
-  <figcaption class="w-figcaption">In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</figcaption>
+<figure>
+  {% Img src="image/admin/v6WcSx9Fq76lCD0iqFCQ.jpg", alt="demo with figures representing network results", width="800", height="554" %}
+  <figcaption>In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</figcaption>
 </figure>
 
 ## Browser support {: #support }
@@ -134,8 +134,8 @@ In Chromium 85-89, off-screen children within `content-visibility: auto` were ma
 
 ## Example: a travel blog {: #example }
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/content-visibility/travel_blog.mp4'>
   </video>
   <figcaption>In this example, we baseline our travel blog on the right, and apply <code>content-visibility: auto</code> to chunked areas on the left. The results show rendering times going from <b>232ms</b> to <b>30ms</b> on initial page load.</figcaption>
@@ -157,9 +157,9 @@ have changed. It updates the style and layout of any new elements, along with
 the elements that may have shifted as a result of new updates. This is rendering
 work. This takes time.
 
-<figure class="w-figure">
-  {% Img src="image/admin/57Zh2hjcXJjJIBSE648j.jpg", alt="A screenshot of a travel blog.", width="800", height="563", class="w-screenshot" %}
-  <figcaption class="w-figcaption">An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a></figcaption>
+<figure>
+  {% Img src="image/admin/57Zh2hjcXJjJIBSE648j.jpg", alt="A screenshot of a travel blog.", width="800", height="563" %}
+  <figcaption>An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a></figcaption>
 </figure>
 
 Now consider what happens if you put `content-visibility: auto` on each of the
@@ -181,9 +181,9 @@ loading. In our example, we see a boost from a **232ms** rendering time to a
 What is the work that you need to do in order to reap these benefits? First, we
 chunk the content into sections:
 
-<figure class="w-figure">
-  {% Img src="image/admin/29uexe2kBwIsrAuILPnp.jpg", alt="An annotated screenshot of chunking content into sections with a CSS class.", width="800", height="563", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a></figcaption>
+<figure>
+  {% Img src="image/admin/29uexe2kBwIsrAuILPnp.jpg", alt="An annotated screenshot of chunking content into sections with a CSS class.", width="800", height="563" %}
+  <figcaption>Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a></figcaption>
 </figure>
 
 Then, we apply the following style rule to the sections:

@@ -33,7 +33,7 @@ class Codelab extends BaseElement {
     // _isDesktop has no default value as it's only correctly set between connected/disconnected
     // callbacks via the MediaQueryList's listener.
 
-    this._mql = window.matchMedia('(min-width: 865px)');
+    this._mql = window.matchMedia('(min-width: 1000px)');
     this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
     this.snapshot = false;
   }
@@ -89,15 +89,31 @@ class Codelab extends BaseElement {
 
     if (!this._isDesktop) {
       return html`
-        <div>
-          <div class="w-aside w-aside--warning">
-            <p>
-              <strong>Warning:</strong> This Glitch isn't available on small
-              screens,
-              <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
-                open it in a new tab.</a
+        <div class="aside flow bg-state-warn-bg color-core-text">
+          <p class="cluster">
+            <span class="aside__icon box-block color-state-warn-text"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                role="img"
+                aria-label="Warning sign"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </p>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M23 21L12 2 1 21h22zm-12-3v-2h2v2h-2zm0-4h2v-4h-2v4z"
+                /></svg
+            ></span>
+            <strong>Warning</strong>
+          </p>
+          <div>
+            This Glitch isn't available on small screens,
+            <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
+              open it in a new tab.</a
+            >
           </div>
         </div>
       `;

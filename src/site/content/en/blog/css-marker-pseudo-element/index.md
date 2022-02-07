@@ -21,9 +21,9 @@ feedback:
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %}
+  <figcaption>
     <a href="https://glitch.com/edit/#!/marker-fun-example">View Source</a>
   </figcaption>
 </figure>
@@ -304,8 +304,8 @@ li::marker {
 ### Debugging
 Chrome DevTools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", style="max-inline-size: 480px" %}
 </figure>
 
 ### Future Pseudo-element styling

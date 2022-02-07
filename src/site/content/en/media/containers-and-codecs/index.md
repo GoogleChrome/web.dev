@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Containers and codecs
 authors:
   - joemedley
