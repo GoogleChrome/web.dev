@@ -59,7 +59,7 @@ emcc --bind example.cpp -o example.html
 
 Then you can serve the compiled assets with a static server and load the example in a browser:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/19fVztVUElvJ3gKfFn4f.png", alt="Emscripten-generated HTML page showing a green rectangle on a black canvas", width="800", height="370" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/19fVztVUElvJ3gKfFn4f.png", alt="Emscripten-generated HTML page showing a green rectangle on a black canvas.", width="800", height="370" %}
 
 ### Choosing the canvas element
 
@@ -137,7 +137,7 @@ emcc example.cpp -o example.html -s USE_SDL=2
 
 When the example is loaded in the browser, you'll see the familiar green rectangle:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/34ztXnZ2OZvWLwYdBzJd.png", alt="Emscripten-generated HTML page showing a green rectangle on a black square canvas", width="800", height="581" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/34ztXnZ2OZvWLwYdBzJd.png", alt="Emscripten-generated HTML page showing a green rectangle on a black square canvas.", width="800", height="581" %}
 
 This code has a couple of problems though. First, it lacks proper cleanup of allocated resources. Second, on the web, pages don't get closed automatically when an application has finished its execution, so the image on the canvas gets preserved. However, when the same code is recompiled natively with
 
@@ -185,7 +185,7 @@ After the image has been drawn to a window, the application now waits in a loop,
 
 Now compiling this example on Linux works as expected and shows a 300 by 300 window with a green rectangle:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/nUxwRMyWVmdK5zy2Kct6.png", alt="A square Linux window with black background and a green rectangle", width="400", height="440" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/nUxwRMyWVmdK5zy2Kct6.png", alt="A square Linux window with black background and a green rectangle.", width="400", height="440"  style="max-width: 400px; margin: 0 auto" %}
 
 However, the example no longer works on the web. The Emscripten-generated page freezes immediately during the load and never shows the rendered image:
 
@@ -251,7 +251,7 @@ emcc example.cpp -o example.html -s USE_SDL=2 -s ASYNCIFY
 
 And the application works as expected on the web again:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/34ztXnZ2OZvWLwYdBzJd.png", alt="Emscripten-generated HTML page showing a green rectangle on a black square canvas", width="800", height="581" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/34ztXnZ2OZvWLwYdBzJd.png", alt="Emscripten-generated HTML page showing a green rectangle on a black square canvas.", width="800", height="581" %}
 
 However, Asyncify can have non-trivial code size overhead. If it's only used for a top-level event loop in the application, a better option can be to use the [`emscripten_set_main_loop`](https://emscripten.org/docs/api_reference/emscripten.h.html#c.emscripten_set_main_loop) function.
 
@@ -320,7 +320,7 @@ Since all the control flow changes are manual and reflected in the source code, 
 emcc example.cpp -o example.html -s USE_SDL=2
 ```
 
-This example might seem useless, because it works no differently from the first version, where the rectangle was drawn on canvas successfully despite the code being a lot simpler, and the `SDL_QUIT` event - the only one handled in the `handle_events` function - is ignored on the web anyway.
+This example might seem useless, because it works no differently from the first version, where the rectangle was drawn on canvas successfully despite the code being a lot simpler, and the `SDL_QUIT` event&mdash;the only one handled in the `handle_events` function&mdash;is ignored on the web anyway.
 
 However, proper event loop integration - either via Asyncify or via `emscripten_set_main_loop` - pays off if you decide to add any kind of animation or interactivity.
 
@@ -501,10 +501,10 @@ $ emcc --bind foo.cpp -o foo.html -s USE_SDL=2 -s USE_SDL_GFX=2
 
 And here are the results running on Linux:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ERTe7Nt9z5m4WnrlH5ya.png", alt="A square Linux window with black background and a green circle", width="400", height="440" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/ERTe7Nt9z5m4WnrlH5ya.png", alt="A square Linux window with black background and a green circle.", width="400", height="440" %}
 
 And on the web:
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/92Aj9foNpDh1UWfBAnIU.png", alt="Emscripten-generated HTML page showing a green circle on a black square canvas", width="800", height="580" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/92Aj9foNpDh1UWfBAnIU.png", alt="Emscripten-generated HTML page showing a green circle on a black square canvas.", width="800", height="580" %}
 
 For more graphics primitives, check out the [auto-generated docs](https://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/index.html).
