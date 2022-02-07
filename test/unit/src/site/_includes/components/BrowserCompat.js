@@ -28,15 +28,14 @@ describe('BrowserCompat', function () {
     const compatElement = $('div');
 
     expect(compatElement.attr('class')).to.equal('browser-compat');
-    expect(compatElement.children().length).to.equal(10);
     expect(
       compatElement.children('span.browser-compat__label').length,
     ).to.equal(1);
-    expect(compatElement.children('span.browser-compat__icon').length).to.equal(
+    expect($('span.browser-compat__icon').length).to.equal(
       4,
     );
     expect(
-      compatElement.children('span.browser-compat__version').length,
+      $('span.browser-compat__version').length,
     ).to.equal(4);
     expect(compatElement.children('span.browser-compat__link').length).to.equal(
       1,
@@ -53,15 +52,14 @@ describe('BrowserCompat', function () {
     const compatElement = $('div');
 
     expect(compatElement.attr('class')).to.equal('browser-compat');
-    expect(compatElement.children().length).to.equal(10);
     expect(
       compatElement.children('span.browser-compat__label').length,
     ).to.equal(1);
-    expect(compatElement.children('span.browser-compat__icon').length).to.equal(
+    expect($('span.browser-compat__icon').length).to.equal(
       4,
     );
     expect(
-      compatElement.children('span.browser-compat__version').length,
+      $('span.browser-compat__version').length,
     ).to.equal(4);
     expect(compatElement.children('span.browser-compat__link').length).to.equal(
       1,
