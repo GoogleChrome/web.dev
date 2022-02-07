@@ -107,7 +107,7 @@ At a high-level, a CDN's performance strategy can be thought of in terms of the 
 
 As a result of this tradeoff, some CDNs use a tiered approach to caching: PoPs located close to users (also known as "edge caches") are supplemented with central PoPs that have higher cache hit ratios. When an edge cache can't find a resource, it will look to a central PoP for the resource. This approach trades slightly greater latency for a higher likelihood that the resource can be served from a CDN cache - though not necessarily an edge cache.
 
-The tradeoff between minimizing latency and minimizing cache hit ratio is a spectrum. No particular approach is universally better; however, depending on the nature of your site and its user base, you may find that one of these approaches delivers significantly better performance than the other.
+The tradeoff between minimizing latency and maximizing cache hit ratio is a spectrum. No particular approach is universally better; however, depending on the nature of your site and its user base, you may find that one of these approaches delivers significantly better performance than the other.
 
 It's also worth noting that CDN performance can vary significantly depending on geography, time of day, and even current events. Although it's always a good idea to do your own research on a CDN's performance, it can be difficult to predict the exact performance you'll get from a CDN.
 
