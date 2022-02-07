@@ -21,7 +21,7 @@ For personalized responses you want to keep private, we recommend you either:
 *  Prevent intermediaries from caching the resource. Set
    `Cache-Control: private`.
 *  Set an appropriate [secondary cache
-   key](https://httpwg.org/specs/rfc7234.html#caching.negotiated.responses).
+   key](https://datatracker.ietf.org/doc/html/rfc7234#section-4.1).
    If the response varies due to cookies&mdash;which can happen when the
    cookie stores credentials&mdash;set `Vary: Cookie`.
 
