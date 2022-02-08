@@ -32,7 +32,7 @@ SVG. Try the [demo](https://gui-challenges.web.app/svg-favicon/dist/).
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'R75ZVW4LW5o' %}
+{% YouTube '4pJahmCR8kQ' %}
 
 ## Overview
 
