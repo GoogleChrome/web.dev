@@ -319,8 +319,7 @@ for example, `"standalone"`.
 
 ## UI considerations
 
-While it may be tempting, it is not recommended to try to create classic dropdown
-menu bars in the Window Controls Overlay area. Doing so would violate the
+While it may be tempting, creating a classic dropdown menu in the Window Controls Overlay area is not recommended. Doing so would violate the
 [design guidelines on macOS](https://developer.apple.com/design/human-interface-guidelines/macos/menus/menu-bar-menus/),
 a platform on which users expect menu bars (that typically include both system-provided menus and
 custom ones) at the top of the screen.
