@@ -47,7 +47,12 @@ enhancement](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement
 you can  serve well supported `.ico` favicons, and upgrade to an `.svg` if
 available.
 
-{% BrowserCompat 'api.linkIconSVG' %}
+<!-- {% BrowserCompat 'api.linkIconSVG' %} -->
+
+{% Aside %}
+As of writing this, [SVG favicons](https://caniuse.com/link-icon-svg) 
+allowing inline media queries are supported in Firefox and Chromium based browsers.
+{% endAside %}
 
 [SVG is able](https://css-tricks.com/lodge/svg/) to scale up and down without
 quality loss, and can potentially be very small in size, they can also have
