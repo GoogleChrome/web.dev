@@ -1,5 +1,4 @@
 import {html} from 'lit-element';
-import {store} from '../../store';
 import {BaseStateElement} from '../BaseStateElement';
 import {renderReport} from 'lighthouse/dist/report/bundle.esm.js';
 import './_styles.scss';
@@ -75,11 +74,15 @@ class LighthouseViewer extends BaseStateElement {
       omitTopbar: true,
     });
     container.append(reportRootEl);
+    window.applyThemeSetting();
   };
 
-  onStateChanged() {
-    const {lighthouseResult, lighthouseError} = store.getState();
-    if (lighthouseResult && lighthouseResult.run) {
+  onStateChanged({lighthouseResult, lighthouseError}) {
+    if (
+      lighthouseResult &&
+      lighthouseResult.run &&
+      lighthouseResult !== this.lighthouseResult
+    ) {
       this.lighthouseResult = lighthouseResult;
       this.encodedUrl = encodeURIComponent(lighthouseResult.run.requestedUrl);
       const auditedOn = new Date(lighthouseResult.run.fetchTime);
