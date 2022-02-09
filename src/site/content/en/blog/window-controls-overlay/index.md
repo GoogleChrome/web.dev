@@ -321,7 +321,7 @@ for example, `"standalone"`.
 
 While it may be tempting, creating a classic dropdown menu in the Window Controls Overlay area is not recommended. Doing so would violate the
 [design guidelines on macOS](https://developer.apple.com/design/human-interface-guidelines/macos/menus/menu-bar-menus/),
-a platform on which users expect menu bars (that typically include both system-provided menus and
+a platform on which users expect menu bars (both system-provided ones and
 custom ones) at the top of the screen.
 
 {% Aside %}
