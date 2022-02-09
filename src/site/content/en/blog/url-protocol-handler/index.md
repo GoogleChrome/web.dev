@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: URL protocol handler registration for PWAs
 subhead: |
   Let installed PWAs handle links that use a specific protocol for a more integrated experience.
@@ -19,7 +19,7 @@ tags:
 ---
 
 {% Aside %} URL protocol handler registration for PWAs is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
+[capabilities project](/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
 
 ## Background on schemes (aka. protocols)
@@ -99,7 +99,7 @@ allowing the possibility for complementary user-experiences:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                       |
 | ---------------------------------------- | -------------------------------------------- |

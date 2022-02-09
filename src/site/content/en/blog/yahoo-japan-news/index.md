@@ -77,14 +77,14 @@ opportunities to improve page experience. Using these tools, they discovered
 that the article detail page had poor CLS.
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/GhORGAous9gyou5yTmHj.png", alt="Google Search Console Core Web Vitals Report showing high CLS for article details page.", class="w-screenshot", width="800", height="719" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/GhORGAous9gyou5yTmHj.png", alt="Google Search Console Core Web Vitals Report showing high CLS for article details page.", width="800", height="719" %}
   <figcaption>
     Google Search Console Core Web Vitals Report.
   </figcaption>
 </figure>
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/3YwmCzVBl78a9TdOKu90.png", alt="Lighthouse Avoid large layout shifts audit showing DOm elements that contribute the most to the CLS on the page.", class="w-screenshot", width="800", height="265" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/3YwmCzVBl78a9TdOKu90.png", alt="Lighthouse Avoid large layout shifts audit showing DOm elements that contribute the most to the CLS on the page.", width="800", height="265" %}
   <figcaption>
     Lighthouse "Avoid large layout shifts" audit shows which elements are
     contributing to CLS score and how much.
@@ -113,7 +113,7 @@ in DevTools visualizes elements that contribute to CLS by highlighting them with
 a blue rectangle whenever a layout shift happens.
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/scvRgLxkZVQoGfOtjZ4z.png", alt="Article details page with blue rectangles overlayed on the hero image and the text.", class="w-screenshot", width="376", height="668" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/scvRgLxkZVQoGfOtjZ4z.png", alt="Article details page with blue rectangles overlayed on the hero image and the text.", width="376", height="668" %}
   <figcaption>
     Visualized layout shifts.
   </figcaption>
@@ -123,7 +123,7 @@ They figured out that a layout shift occurred after the hero image at the top of
 the article was loaded for the first view.
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/HdGiCh7O8ZhqcOkfVGEv.jpg", alt="Screenshots of the article details page showing side by side comparison before and after layout shift.", class="w-screenshot", width="798", height="455" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/HdGiCh7O8ZhqcOkfVGEv.jpg", alt="Screenshots of the article details page showing side by side comparison before and after layout shift.", width="798", height="455" %}
   <figcaption>
     Layout shift on the article detail page.
   </figcaption>
@@ -148,7 +148,7 @@ loaded. This method requires knowing the aspect ratio of the image in advance,
 which they were able to get from the backend API.
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/gUbS3jB6zMBZwEU3wmW6.jpg", alt="Screenshots of the article details page showing side by side comparison before and after CLS optimization.", class="w-screenshot", width="800", height="439" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/gUbS3jB6zMBZwEU3wmW6.jpg", alt="Screenshots of the article details page showing side by side comparison before and after CLS optimization.", width="800", height="439" %}
   <figcaption>
     Left: reserved blank space for the image at the top of the page; right: the
     hero image loaded in the reserved space without layout shifts.
@@ -163,7 +163,7 @@ several
 [correlated improvements in business metrics](https://nicj.net/cumulative-layout-shift-in-the-real-world/).
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Q5pRaIvOgzb4tqgv5dWo.png", alt="Search Console report showing a significant drop in pages with performance issues.", class="w-screenshot", width="800", height="509" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Q5pRaIvOgzb4tqgv5dWo.png", alt="Search Console report showing a significant drop in pages with performance issues.", width="800", height="509" %}
   <figcaption>
     Search Console after improvements.
   </figcaption>
@@ -199,7 +199,7 @@ the
 in the context menu of Chrome Android.
 
 <figure>
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ivyeENjT9NKZLhdn9WJm.png", alt="Fast page label in Chrome on Android.", class="w-screenshot", width="400", height="600" %}
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ivyeENjT9NKZLhdn9WJm.png", alt="Fast page label in Chrome on Android.", width="400", height="600" %}
   <figcaption>
     "Fast page" label in Chrome on Android.
   </figcaption>

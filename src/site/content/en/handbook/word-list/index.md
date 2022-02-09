@@ -14,11 +14,9 @@ GDDSGWL, use the spelling that you see here.
 
 * code splitting (noun)
 * code-splitting (adj)
-* ~~code-split (verb)~~ (use _split_ instead)
 * DevTools, Chrome DevTools
 * e-commerce
 * FFmpeg
-* ~~guide~~ (use _post_ instead)
 * home screen
 * Hypertext Markup Language (HTML)
 * internet
@@ -43,3 +41,11 @@ GDDSGWL, use the spelling that you see here.
 * webpack
 * website
 * Wi-Fi
+
+## Words to avoid
+
+In this list are some words to avoid, along with alternative suggestions.
+
+* code-split (verb): use _split_
+* guide: use _post_
+* spec: use _specification_

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Richer offline experiences with the Periodic Background Sync API
 subhead:
   Sync your web app's data in the background for a more-like experience
@@ -362,9 +363,9 @@ in the periodic background sync lifecycle: registering for sync, performing a
 background sync, and unregistering. To obtain information about these events,
 click **Start recording**.
 
-<figure class="w-figure">
-  {% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="The record button in DevTools", width="708", height="90", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="The record button in DevTools", width="708", height="90" %}
+  <figcaption>
     The record button in DevTools
   </figcaption>
 </figure>
@@ -372,9 +373,9 @@ click **Start recording**.
 While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="An example of recorded periodic background sync data", width="800", height="357", class="w-screenshot", style="max-width: 75%" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="An example of recorded periodic background sync data", width="800", height="357", style="max-width: 75%" %}
+  <figcaption>
     An example of recorded periodic background sync data
   </figcaption>
 </figure>
@@ -397,8 +398,8 @@ event to use, and to trigger it as many times as you'd like.
   Manually triggering a `periodicsync` event requires Chrome 81 or later.
 {% endAside %}
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync' text field and button.", width="800", height="321", class="w-screenshot", style="max-width: 90%" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync' text field and button.", width="800", height="321", style="max-width: 90%" %}
 </figure>
 
 ## Using the DevTools interface
@@ -406,6 +407,6 @@ event to use, and to trigger it as many times as you'd like.
 Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", class="w-screenshot", style="max-width: 75%" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", style="max-width: 75%" %}
 </figure>

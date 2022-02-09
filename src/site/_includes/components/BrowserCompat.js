@@ -19,6 +19,51 @@ const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 const browsers = ['chrome', 'firefox', 'edge', 'safari'];
 
 /**
+ * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
+ * @returns {string}
+ */
+const compatVersion = (support) => {
+  if (!support.version_removed && support.version_added === 'preview') {
+    return '\uD83D\uDC41'; // 👁 eye
+  } else if (
+    !support.version_removed &&
+    typeof support.version_added === 'string'
+  ) {
+    return support.version_added;
+  } else {
+    return '\u00D7'; // × small x
+  }
+};
+
+/**
+ * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
+ * @returns {string}
+ */
+const compatProperty = (support) => {
+  if (!support.version_removed && support.version_added === 'preview') {
+    return 'preview';
+  } else if (!support.version_removed && support.version_added) {
+    return 'yes';
+  } else {
+    return 'no';
+  }
+};
+
+/**
+ * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
+ * @param {string} locale
+ * @returns {string}
+ */
+const compatAria = (support, locale) => {
+  if (!support.version_removed && support.version_added === 'preview') {
+    return i18n('i18n.browser_compat.preview', locale);
+  } else if (!support.version_removed && support.version_added) {
+    return i18n('i18n.browser_compat.supported', locale);
+  } else {
+    return i18n('i18n.browser_compat.not_supported', locale);
+  }
+};
+/**
  * A shortcode for embedding caniuse.com browser compatibility table.
  * @this {EleventyPage}
  * @param {string} feature Feature id compatible with caniuse.com.
@@ -30,24 +75,26 @@ function BrowserCompat(feature) {
 
   if (data[feature] && data[feature].support) {
     compatIcons = browsers.map((browser) => {
+      /** @type {import('@mdn/browser-compat-data/types').SimpleSupportStatement} */
       const support = Array.isArray(data[feature].support[browser])
         ? data[feature].support[browser][0]
         : data[feature].support[browser];
+
       const isSupported = support.version_added && !support.version_removed;
-      const version = isSupported ? support.version_added : '\u00D7'; // small x
-      const ariaSupported = isSupported
-        ? i18n('i18n.browser_compat.supported', locale)
-        : i18n('i18n.browser_compat.not_supported', locale);
+
       const ariaLabel = [
         browser,
-        isSupported ? ` ${version}, ` : ', ',
-        ariaSupported,
+        isSupported ? ` ${support.version_added}, ` : ', ',
+        compatAria(support, locale),
       ].join('');
-      return `<span class="browser-compat__icon browser-compat--${browser}">
-          <span class="w-visually-hidden">${ariaLabel}</span>
+
+      return `<span class="browser-compat__icon" data-browser="${browser}">
+          <span class="visually-hidden">${ariaLabel}</span>
       </span>
-      <span class="browser-compat__version browser-compat--${isSupported}">
-        ${version}
+      <span class="browser-compat__version"
+        data-compat="${compatProperty(support)}"
+      >
+        ${compatVersion(support)}
       </span>
       `;
     });
@@ -62,9 +109,9 @@ function BrowserCompat(feature) {
       : '';
     const supportLabel = i18n(`i18n.browser_compat.browser_support`, locale);
     return `<div class="browser-compat">
-      <span>${supportLabel}:</span>
-      ${compatIcons.join('')}
-      ${sourceLink}
+      <span class="browser-compat__label">${supportLabel}:</span>
+      <span class="browser-compat__items"
+        >${compatIcons.join('')}</span>${sourceLink}
     </div>
     `;
   }

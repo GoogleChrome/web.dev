@@ -1,12 +1,12 @@
 ---
-layout: post-old
+layout: post
 title: PWAs as URL Handlers
 subhead: |
   Let installed PWAs handle URLs for a more integrated experience.
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-09-14
+updated: 2021-12-14
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -21,7 +21,7 @@ origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/-5376172055173529599
 ---
 
-{% Aside %} PWAs as URL Handlers is part of the [capabilities project](https://web.dev/fugu-status/)
+{% Aside %} PWAs as URL Handlers is part of the [capabilities project](/fugu-status/)
 and is currently in development. This post will be updated as the implementation progresses.
 {% endAside %}
 
@@ -55,7 +55,7 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -218,7 +218,7 @@ email or text message should contain either of the links `https://mandymsft.gith
 
 ## Security and permissions
 
-The Chromium team has designed and implemented PWAs as URL Handlers using the core principles
+The Chromium team designed and implemented PWAs as URL Handlers using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 

@@ -4,7 +4,7 @@ subhead: Trust Tokens is a new API to enable a website to convey a limited amoun
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2021-10-28
+updated: 2021-12-10
 hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
 thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
@@ -16,85 +16,87 @@ feedback:
   - api
 ---
 
-{% Banner 'caution' %}
-**⚠️ Warning: you may need to update your app!** 
+{% Aside  'caution' %}
+**⚠️ Warning: you may need to update your app!**
 
-**TrustTokenV3** is a collection of backwards-incompatible changes to Chromium's Trust Tokens 
-implementation. The changes arrived in Chrome 92, which reached Chrome Stable towards the end of 
+**TrustTokenV3** is a collection of backwards-incompatible changes to Chromium's Trust Tokens
+implementation. The changes arrived in Chrome 92, which reached Chrome Stable towards the end of
 July 2021.
 
-If you haven't already, you will need to update existing applications 
+If you haven't already, you will need to update existing applications
 [testing the API](https://www.chromestatus.com/feature/5078049450098688).
 
 Find out more: [What's TrustTokenV3?](https://bit.ly/what-is-trusttokenv3).
-{% endBanner %}
+{% endAside %}
 
 <br><br>
 
-{% YouTube 'WnCKlNE52tc' %}
+{% YouTube
+  id='bXB1Iwq6Eq4'
+%}
 
 ## Summary
 
-Trust tokens enable an origin to issue cryptographic tokens to a user it trusts. The tokens are 
-stored by the user's browser. The browser can then use the tokens in other contexts to evaluate the 
+Trust tokens enable an origin to issue cryptographic tokens to a user it trusts. The tokens are
+stored by the user's browser. The browser can then use the tokens in other contexts to evaluate the
 user's authenticity.
 
 The Trust Token API enables trust of a user in one context to be conveyed to another context without
 identifying the user or linking the two identities.
 
-You can try out the API with our [demo](https://trust-token-demo.glitch.me), and 
-[inspect tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) in the 
+You can try out the API with our [demo](https://trust-token-demo.glitch.me), and
+[inspect tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) in the
 Chrome DevTools **Network** and **Application** tabs.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", 
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg",
   alt="Screenshot showing Trust Tokens in the Chrome DevTools Network tab.", width="800", height="584" %}
-  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
+  <figcaption>Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Screenshot showing Trust Tokens in the Chrome DevTools Application tab.", width="800", height="584" %}
-  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
+  <figcaption>Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
 </figure>
 
 {% Aside %}
-The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party 
+The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party
 cookies or other tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
-**This proposal needs your feedback!** If you have comments, please [create an issue](https://github.com/WICG/trust-token-api/issues/new) 
+**This proposal needs your feedback!** If you have comments, please [create an issue](https://github.com/WICG/trust-token-api/issues/new)
 on the [Trust Token explainer](https://github.com/WICG/trust-token-api) repository.
 {% endAside %}
 
 ## Why do we need Trust Tokens?
 
-The web needs ways to establish trust signals which show that a user is who they say they are, and 
-not a bot pretending to be a human, or a malicious third-party defrauding a real person or service. 
+The web needs ways to establish trust signals which show that a user is who they say they are, and
+not a bot pretending to be a human, or a malicious third-party defrauding a real person or service.
 Fraud protection is particularly important for advertisers, ad providers, and CDNs.
 
-Unfortunately, many existing mechanisms to gauge and propagate trustworthiness—to work out if an 
-interaction with a site is from a real human, for example—take advantage of techniques that can also 
+Unfortunately, many existing mechanisms to gauge and propagate trustworthiness—to work out if an
+interaction with a site is from a real human, for example—take advantage of techniques that can also
 be used for fingerprinting.
 
 {% Aside 'key-term' %}
-**Fingerprinting** enables sites to identify and track individual users by getting data about their 
+**Fingerprinting** enables sites to identify and track individual users by getting data about their
 device, operating system, and browser setup (such as language preferences,
-[user agent](https://developer.mozilla.org/docs/Web/API/NavigatorID/userAgent), and available 
-fonts) or changes in device state. This may be done on the server by checking request headers or on 
+[user agent](https://developer.mozilla.org/docs/Web/API/NavigatorID/userAgent), and available
+fonts) or changes in device state. This may be done on the server by checking request headers or on
 the client with JavaScript.
 
-Fingerprinting uses mechanisms that users aren't aware of and can't control. Sites such as 
-[Panopticlick](https://panopticlick.eff.org/) and [amiunique.org](https://amiunique.org/) show how 
+Fingerprinting uses mechanisms that users aren't aware of and can't control. Sites such as
+[Panopticlick](https://panopticlick.eff.org/) and [amiunique.org](https://amiunique.org/) show how
 fingerprint data can be combined to identify you as an individual.
 {% endAside %}
 
-The API must preserve privacy, enabling trust to be propagated across sites without individual user 
+The API must preserve privacy, enabling trust to be propagated across sites without individual user
 tracking.
 
 ## What's in the Trust Tokens proposal?
 
-The web relies on building trust signals to detect fraud and spamming. One way to do this is by 
-tracking browsing with global, cross-site per-user identifiers. For a privacy-preserving API, that's 
+The web relies on building trust signals to detect fraud and spamming. One way to do this is by
+tracking browsing with global, cross-site per-user identifiers. For a privacy-preserving API, that's
 not acceptable.
 
 From the proposal
@@ -124,16 +126,16 @@ The following is adapted from
 The code in this post uses updated syntax available since Chrome 88.
 {% endAside %}
 
-Imagine that a user visits a news website (`publisher.example`) which embeds advertising from a 
-third party ad network (`foo.example`). The user has previously used a social media site that issues 
+Imagine that a user visits a news website (`publisher.example`) which embeds advertising from a
+third party ad network (`foo.example`). The user has previously used a social media site that issues
 trust tokens (`issuer.example`).
 
 The sequence below shows how trust tokens work.
 
-**1.**&nbsp;The user visits `issuer.example` and performs actions that lead the site to believe they 
+**1.**&nbsp;The user visits `issuer.example` and performs actions that lead the site to believe they
 are a real human, such as account activity, or passing a CAPTCHA challenge.
 
-**2.**&nbsp;`issuer.example` verifies the user is a human, and runs the following JavaScript to 
+**2.**&nbsp;`issuer.example` verifies the user is a human, and runs the following JavaScript to
 issue a trust token to the user's browser:
 
 ```js
@@ -149,14 +151,14 @@ fetch('https://issuer.example/trust-token', {
 
 **4.**&nbsp;Some time later, the user visits `publisher.example`.
 
-**5.**&nbsp;`publisher.example` wants to know if the user is a real human. `publisher.example` trusts 
+**5.**&nbsp;`publisher.example` wants to know if the user is a real human. `publisher.example` trusts
 `issuer.example`, so they check if the user's browser has valid tokens from that origin:
 
 ```js
 document.hasTrustToken('https://issuer.example');
 ```
 
-**6.**&nbsp;If this returns a promise that resolves to `true`, that means the user has tokens from 
+**6.**&nbsp;If this returns a promise that resolves to `true`, that means the user has tokens from
 `issuer.example`, so `publisher.example` can attempt to redeem a token:
 
 ```js
@@ -172,10 +174,10 @@ trustToken: {
 With this code:
 
  1. The redeemer `publisher.example` requests a redemption.
- 1. If the redemption is successful, the issuer `issuer.example` returns a redemption record which 
+ 1. If the redemption is successful, the issuer `issuer.example` returns a redemption record which
  indicates that at some point they issued a valid token to this browser.
- 
- **7.**&nbsp;Once the promise returned by `fetch()` has resolved, the redemption record can be used 
+
+ **7.**&nbsp;Once the promise returned by `fetch()` has resolved, the redemption record can be used
  in subsequent resource requests:
 
 ```js
@@ -189,7 +191,7 @@ fetch('https://foo.example/get-content', {
 
 With this code:
 
-1. Redemption records are included as a request header `Sec-Redemption-Record`. 
+1. Redemption records are included as a request header `Sec-Redemption-Record`.
 1. `foo.example` receives the redemption record and can parse the record to determine whether
   `issuer.example` thought this user was a human.
 1. `foo.example` responds accordingly.
@@ -198,16 +200,16 @@ With this code:
 {% DetailsSummary %}
 How can a website work out whether to trust you?
 {% endDetailsSummary %}
-You might have shopping history with an e-commerce site, check-ins on a location platform, or account 
-history at a bank. Issuers might also look at other factors such as how long you've had an account, 
-or other interactions (such as CAPTCHAs or form submission) that increase the issuer's trust in the 
+You might have shopping history with an e-commerce site, check-ins on a location platform, or account
+history at a bank. Issuers might also look at other factors such as how long you've had an account,
+or other interactions (such as CAPTCHAs or form submission) that increase the issuer's trust in the
 likelihood that you're a real human.
 {% endDetails %}
 
 
 ### Trust token issuance
 
-If the user is deemed to be trustworthy by a trust token issuer such as `issuer.example`, the issuer 
+If the user is deemed to be trustworthy by a trust token issuer such as `issuer.example`, the issuer
 can fetch trust tokens for the user by making a `fetch()` request with a `trustToken` parameter:
 
 ```js
@@ -228,14 +230,14 @@ request in a `Sec-Trust-Token` header.
 
 1. Send a POST request to the endpoint provided.
 
-The endpoint responds with [blinded tokens](https://en.wikipedia.org/wiki/Blind_signature) 
-(signatures on the blind nonces), then the tokens are unblinded and stored internally together with 
+The endpoint responds with [blinded tokens](https://en.wikipedia.org/wiki/Blind_signature)
+(signatures on the blind nonces), then the tokens are unblinded and stored internally together with
 the associated nonces by the browser as trust tokens.
 
 
 ### Trust token redemption
 
-A publisher site (such as `publisher.example` in the example above) can check if there are trust 
+A publisher site (such as `publisher.example` in the example above) can check if there are trust
 tokens available for the user:
 
 ```js
@@ -255,8 +257,8 @@ fetch('issuer.example/trust-token', {
 }).then(...)
 ```
 
-The publisher can include redemption records in requests that require a trust token—such as 
-posting a comment, liking a page, or voting in a poll—by using a `fetch()` call like 
+The publisher can include redemption records in requests that require a trust token—such as
+posting a comment, liking a page, or voting in a poll—by using a `fetch()` call like
 the following:
 
 ```js
@@ -273,35 +275,35 @@ fetch('https://foo.example/post-comment', {
 Redemption records are included as a `Sec-Redemption-Record` request header.
 
 {% Aside %}
-Trust tokens are only accessible through options to Fetch, XHR, and the HTML `<iframe>` element:  
+Trust tokens are only accessible through options to Fetch, XHR, and the HTML `<iframe>` element:
 they cannot be accessed directly.
 {% endAside%}
 
 ### Privacy considerations
 
-Tokens are designed to be 'unlinkable'. An issuer can learn aggregate information about which sites 
-its users visit, but can't link issuance with redemption: when a user redeems a token, the issuer 
-can't tell the token apart from other tokens it has created. However, trust tokens currently do not 
-exist in a vacuum: there are other ways an issuer could currently—in theory—join a user's identity 
-across sites, such as third-party cookies and covert tracking techniques. It is important for sites 
-to understand this ecosystem transition as they plan their support. This is a general aspect of the 
+Tokens are designed to be 'unlinkable'. An issuer can learn aggregate information about which sites
+its users visit, but can't link issuance with redemption: when a user redeems a token, the issuer
+can't tell the token apart from other tokens it has created. However, trust tokens currently do not
+exist in a vacuum: there are other ways an issuer could currently—in theory—join a user's identity
+across sites, such as third-party cookies and covert tracking techniques. It is important for sites
+to understand this ecosystem transition as they plan their support. This is a general aspect of the
 transition for many Privacy Sandbox APIs, so not discussed further here.
 
 ### Security considerations
 
-**Trust token exhaustion:** a malicious site could deliberately deplete a user's supply of tokens 
-from a particular issuer. There are several mitigations against this kind of attack, such as 
-enabling issuers to provide many tokens at once, so users have an adequate supply of ensuring 
+**Trust token exhaustion:** a malicious site could deliberately deplete a user's supply of tokens
+from a particular issuer. There are several mitigations against this kind of attack, such as
+enabling issuers to provide many tokens at once, so users have an adequate supply of ensuring
 browsers only ever redeem one token per top-level page view.
 
-**Double-spend prevention:** malware might attempt to access all of a user's trust tokens. However, 
-tokens will run out over time, since every redemption is sent to the same token issuer, which can 
+**Double-spend prevention:** malware might attempt to access all of a user's trust tokens. However,
+tokens will run out over time, since every redemption is sent to the same token issuer, which can
 verify that each token is used only once. To mitigate risk, issuers could also sign fewer tokens.
 
 ### Request mechanisms
 
-It might be possible to allow for sending redemption records outside of `fetch()`, for example with 
-navigation requests. Sites might also be able to include issuer data in HTTP response headers to 
+It might be possible to allow for sending redemption records outside of `fetch()`, for example with
+navigation requests. Sites might also be able to include issuer data in HTTP response headers to
 enable token redemption in parallel with page loading.
 
 **To reiterate: this proposal needs your feedback!** If you have comments, please

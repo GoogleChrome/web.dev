@@ -87,7 +87,7 @@ performance.
     </ul>
   </div>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G8s0LNl7BwXuNJkCsPwV.png", alt="Script controller library improved TTI by 4 seconds", width="800", height="707", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G8s0LNl7BwXuNJkCsPwV.png", alt="Script controller library improved TTI by 4 seconds", width="800", height="707" %}
   </figure>
 </div>
 
@@ -100,7 +100,7 @@ performance.
     worker to cache the non-lite assets in the background.
   </p>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gSJXd2GT8nT7Uzsth4Gg.png", alt="Reduced app JavaScript size by 88% (from 320 KB to 37 KB). Boosted Lighthouse score by 90 points. Achieved FCP of less than 1 second. 35% CTR increase. 8% CVR increase.", width="800", height="657", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gSJXd2GT8nT7Uzsth4Gg.png", alt="Reduced app JavaScript size by 88% (from 320 KB to 37 KB). Boosted Lighthouse score by 90 points. Achieved FCP of less than 1 second. 35% CTR increase. 8% CVR increase.", width="800", height="657" %}
   </figure>
 </div>
 
@@ -139,7 +139,7 @@ performance.
     </ul>
   </div>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gObv2y7p7ozM190w61M3.png", alt="2.2 second TTI score on the homepage (Lighthouse score: 88). 1.9 second TTI score on product pages (Lighthouse score: 86).", width="800", height="1097", class="w-screenshot" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gObv2y7p7ozM190w61M3.png", alt="2.2 second TTI score on the homepage (Lighthouse score: 88). 1.9 second TTI score on product pages (Lighthouse score: 86).", width="800", height="1097" %}
   </figure>
 </div>
 

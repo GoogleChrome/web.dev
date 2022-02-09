@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How to file a good browser bug
 subhead: |
   Telling browser vendors about issues you find in their browser

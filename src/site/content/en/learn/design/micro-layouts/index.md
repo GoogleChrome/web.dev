@@ -11,7 +11,7 @@ When we think of layouts, we often think of page-level designs.
 But smaller components within the page can have their own self-contained layouts.
 
 Ideally, these component-level layouts will adjust themselves automatically, 
-regardless oftheir position on the page. 
+regardless of their position on the page. 
 There may be situations where you don't know if a component will be placed into the main content column or the sidebar or both. 
 Without knowing for sure where a component will end up, 
 you need to make sure that the component can adjust itself to its container.
@@ -59,10 +59,10 @@ h1::after {
  tab: 'result'
 } %}
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/mNjoV2ri3HmsPeRoTpTh.png", alt="Developer tools in Firefox showing a grid overlay.", width="800", height="644" %}
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/7A1UYerc4KNuuWmp3IMJ.png", alt="Developer tools in Chrome showing a grid overlay.", width="800", height="644" %}
- <figcaption class="w-figcaption">
+ <figcaption>
    Desktop browsers like Firefox and Chrome have developer tools that can show you grid lines and areas overlaid on your design. 
  </figcaption>
 </figure>
@@ -100,10 +100,10 @@ But the image never gets larger than 200 pixels.
  tab: 'result'
 } %}
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/9xyxPbFU4EUtnPGsKdQI.png", alt="Developer tools in Firefox showing a flexbox overlay.", width="800", height="644" %}
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/R7Ucm4OvYLbXGD0I3rw2.png", alt="Developer tools in Chrome showing a flexbox overlay.", width="800", height="644" %}
- <figcaption class="w-figcaption">
+ <figcaption>
    The developer tools in Firefox and Chrome can help you visualize the shape of your flexbox components. 
  </figcaption>
 </figure>

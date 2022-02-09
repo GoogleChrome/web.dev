@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: First Contentful Paint (FCP)
 authors:
   - philipwalton
@@ -25,7 +25,7 @@ First Contentful Paint (FCP) 指標は、ページの読み込みが開始され
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好なFCP値は1.8秒以下、不良な値は3.0秒を超え、その間の値は改善が必要", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好なFCP値は1.8秒以下、不良な値は3.0秒を超え、その間の値は改善が必要", width="400", height="300" %}
 </picture>
 
 ### FCP における良いスコアとは？

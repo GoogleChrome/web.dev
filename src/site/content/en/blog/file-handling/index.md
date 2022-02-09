@@ -7,11 +7,10 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-12-03
+updated: 2022-01-30
 tags:
   - blog
   - capabilities
-  # - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
@@ -36,24 +35,19 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 3. Gather feedback & iterate on design   | Complete                 |
 | 4. Origin trial                          | Complete                 |
 | 5. Launch                                | Not started              |
 
 </div>
 
 ## How to use the File Handling API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `about://flags`.
 
 ### Progressive enhancement
 
@@ -148,7 +142,7 @@ with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
 {% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
-[making your app installable](/progressive-web-apps/#installable). {% endAside %}
+[making your app installable](/progressive-web-apps/#make-it-installable). {% endAside %}
 
 ### The imperative part of the File Handling API
 
@@ -187,16 +181,16 @@ your file system, you can open the file via a double click, or a right click and
 "Excalidraw" in the context menu. You can check out the [implementation][demo-source] in the source
 code.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422" %}
+  <figcaption>
      Double click or right click a file in your operating system's file explorer.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266" %}
+  <figcaption>
      Excalidraw is the default file handler for <code>.excalidraw</code> files.
   </figcaption>
 </figure>
@@ -209,10 +203,10 @@ transparency, and ergonomics.
 
 ## Permissions, permissions persistence, and file handler updates
 
-To ensure user trust and the safety of users' files when the File Handling API is used to open a
-file, a permission prompt will be shown before a PWA can view a file. This permission prompt will be
-shown right after the user selects the PWA to open a file, so that the permission is tightly coupled
-to the action of opening a file using the PWA, making it more understandable and relevant.
+To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
+right after the user selects the PWA to open a file, so that the permission is tightly coupled to the
+action of opening a file using the PWA, making it more understandable and relevant.
 
 This permission will show every time until the user clicks to **Allow** or **Block** file handling
 for the site, or ignores the prompt three times (after which Chromium will embargo and block this

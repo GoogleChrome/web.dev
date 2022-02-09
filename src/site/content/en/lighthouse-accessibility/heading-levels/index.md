@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Headings don't skip levels
 description: |
   Learn how to make sure assistive technology users can easily navigate your
@@ -11,7 +11,7 @@ web_lighthouse:
 noindex: true
 ---
 
-{% Banner 'caution', 'body' %}This manual audit has been deprecated. Check out [the newer automated audit](/heading-order) instead.{% endBanner %}
+{% Aside 'caution' %}This manual audit has been deprecated. Check out [the newer automated audit](/heading-order) instead.{% endAside %}
 
 Users of screen readers and other assistive technologies
 often navigate an unfamiliar page by exploring headings.

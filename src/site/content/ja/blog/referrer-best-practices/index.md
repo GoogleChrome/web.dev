@@ -1,4 +1,5 @@
 ---
+layout: post
 title: リファラーとリファラーポリシーのベストプラクティス
 subhead: リファラーポリシーを設定し、送信されてくるリクエストにリファラーを使用するためのベストプラクティス。
 authors:
@@ -34,7 +35,7 @@ HTTP リクエストには、リクエストの発信元または Web ページ�
 
 以下の例では、`Referer` ヘッダーには、リクエストの発信元となる `site-one` のページの完全な URL が含まれています。
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="リファラーヘッダーを含む HTTP リクエスト。", width="800", height="573" %}
 </figure>
 
@@ -49,7 +50,7 @@ HTTP リクエストには、リクエストの発信元または Web ページ�
 
 ただし、パスとクエリ文字列を含む完全な URL が**オリジン間**を`リファラー`として送信される場合、これは**プライバシーの阻害**となるほか、**セキュリティリスク**をもたらす可能性があります。以下の URL をご覧ください。
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="パス付きの URL。さまざまなプライバシーとセキュリティのリスクにマッピングされています。", width="800", height="370" %}
 </figure>
 
@@ -67,7 +68,7 @@ URL＃6 は[機能 URL](https://www.w3.org/TR/capability-urls/) で、意図し�
 - [オリジン](/same-site-same-origin/#origin)のみ
 - 完全な URL：オリジン、パス、クエリ文字列
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Referer ヘッダーと document.referrer に含めることができるデータ。", width="800", height="255" %}
 </figure>
 
@@ -75,7 +76,7 @@ URL＃6 は[機能 URL](https://www.w3.org/TR/capability-urls/) で、意図し�
 
 リファラ―ポリシーによってリファラ―ヘッダーと `document.referrer` の使用できる URL データがどのように制限されるかを以下にまとめています。
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="セキュリティとクロスオリジンコンテキストに応じた、さまざまなリファラーポリシーとその動作。", width="800", height="537" %}
 </figure>
 
@@ -92,7 +93,7 @@ MDN で、 [ポリシーと動作の例の完全なリスト](https://developer.
 
 **リファラーポリシーが設定されていない場合は、ブラウザーのデフォルトポリシーが使用されます。**
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -172,9 +173,9 @@ HTTP ヘッダーとメタ要素はどちらもページレベルです。要素
 
 Chrome、Edge、または Firefox の開発者ツールを使用して、特定のリクエストに使用されるリファラーポリシーを確認することもできます。この記事の執筆時点では、Safari に`Referrer-Policy`ヘッダーは表示されませんが、送信された`Referer` は表示されます。
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Chrome DevTools のネットワークパネルのスクリーンショット。リファラーとリファラーポリシーを示しています。", width="800", height="416" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Chrome DevTools、リクエストが選択された<b>ネットワーク</b>パネル。
   </figcaption>
 </figure>

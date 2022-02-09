@@ -26,7 +26,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Хорошие значения CLS ниже 0,1, плохие значения больше 0,25 и все промежуточные значения требуют улучшения", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Хорошие значения CLS ниже 0,1, плохие значения больше 0,25 и все промежуточные значения требуют улучшения", width="384", height="96" %}
 </picture>
 
 Наиболее частые причины плохого показателя CLS:
@@ -41,11 +41,11 @@ tags:
 
 **Резюме:** всегда включайте атрибуты `width` и `height` для изображений и видеоэлементов. В качестве альтернативы зарезервируйте необходимое пространство с помощью [CSS-свойства aspect-ratio](https://css-tricks.com/aspect-ratio-boxes/). Такой подход гарантирует, что браузер сможет выделить правильный объем места в документе во время загрузки изображения.
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Изображения без указания высоты и ширины. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true %} <figcaption> Изображения без указания высоты и ширины. </figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Изображения с указанной шириной и высотой. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true %} <figcaption> Изображения с указанной шириной и высотой. </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="Отчет Lighthouse, показывающий значения CLS до и после установки размеров для изображений", width="800", height="148" %} <figcaption class="w-figcaption"> Lighthouse 6.0, влияние установки размеров для изображений на CLS. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="Отчет Lighthouse, показывающий значения CLS до и после установки размеров для изображений", width="800", height="148" %} <figcaption> Lighthouse 6.0, влияние установки размеров для изображений на CLS. </figcaption></figure>
 
 ### Предыстория
 
@@ -166,11 +166,11 @@ img {
 
 На некоторых сайтах уменьшить смещение макета можно за счет первоначального сворачивания места под рекламный блок, если вероятность его заполнения невелика. Не существует простого способа каждый раз выбирать точный размер, если только вы сами не контролируете показ рекламы.
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Объявления без достаточного зарезервированного места. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %} <figcaption> Объявления без достаточного зарезервированного места. </figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Объявления с достаточным зарезервированным местом. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %} <figcaption> Объявления с достаточным зарезервированным местом. </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="Отчет Lighthouse, показывающий значения CLS до и после резервирования места для рекламных баннеров", width="800", height="148" %} <figcaption class="w-figcaption"> Lighthouse 6.0, влияние резервирования места для рекламного баннера на CLS </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="Отчет Lighthouse, показывающий значения CLS до и после резервирования места для рекламных баннеров", width="800", height="148" %} <figcaption> Lighthouse 6.0, влияние резервирования места для рекламного баннера на CLS </figcaption></figure>
 
 #### Статическое резервирование места для рекламного блока
 
@@ -192,11 +192,11 @@ img {
 
 В случае встраиваемых объектов размер встраиваемого контента, как правило, не известен заранее (например, публикация в социальных сетяхбудет ли там встроенное изображение, видео или текст в несколько строк). В результате платформы, предлагающие встраивание, не всегда резервируют достаточно места для встраиваемых объектов, что может привести к смещению макета при их окончательной загрузке.
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Встраиваемые объекты без зарезервированного места. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %} <figcaption> Встраиваемые объекты без зарезервированного места. </figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Встраиваемые объекты с зарезервированным местом. </figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %} <figcaption> Встраиваемые объекты с зарезервированным местом. </figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Отчет Lighthouse, показывающий значения CLS до и после резервирования места для встраиваемого объекта", width="800", height="148" %} <figcaption class="w-figcaption"> Lighthouse 6.0, влияние резервирования места для встраиваемого объекта на CLS </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Отчет Lighthouse, показывающий значения CLS до и после резервирования места для встраиваемого объекта", width="800", height="148" %} <figcaption> Lighthouse 6.0, влияние резервирования места для встраиваемого объекта на CLS </figcaption></figure>
 
 Чтобы обойти эти проблемы, вы можете свести к минимуму CLS, предварительно вычислив размер достаточного места для встраиваемого объекта с заполнителем или резервным вариантом. Вот один из рабочих процессов, который вы можете использовать для встраиваемых объектов:
 
@@ -221,7 +221,7 @@ img {
 
 - «Уведомление о GDPR».
 
-    <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption"> Динамический контент без зарезервированного места. </figcaption></figure>
+    <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %} <figcaption> Динамический контент без зарезервированного места. </figcaption></figure>
 
 Если вам нужно отобразить эти типы возможностей пользовательского интерфейса, заранее зарезервируйте для этого достаточное пространство в области просмотра (например, с помощью заполнителя или скелета пользовательского интерфейса), чтобы при загрузке они не вызвали неожиданного смещения содержимого страницы.
 
@@ -231,7 +231,7 @@ img {
 - Попросите пользователя инициировать загрузку нового контента, чтобы он не был удивлен сдвигом (например, с помощью кнопки «Загрузить больше» или «Обновить»). Рекомендуется предварительно загрузить контент до взаимодействия с пользователем, чтобы он отображался немедленно. Напоминаем, что смещения макета, которые происходят в течение 500 мс после пользовательского ввода, не учитываются в CLS.
 - Незаметно для пользователя загружайте контент за пределами области просмотра, а затем выводите пользователю уведомление о доступности контента (например, с помощью кнопки «Прокрутить вверх»).
 
-<figure class="w-figure">{% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Примеры динамической загрузки контента без неожиданного смещения макета из сайта Twitter и сайта Chloé", width="800", height="458" %} <figcaption class="w-figcaption"> Примеры загрузки динамического контента без непредвиденных смещений макета. Слева: загрузка содержимого прямой трансляции в Twitter. Справа: пример «Загрузить больше» на сайте Chloé. Узнайте, как команда YNAP <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">оптимизировала CLS при загрузке большего количества контента</a>.</figcaption></figure>
+<figure>{% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Примеры динамической загрузки контента без неожиданного смещения макета из сайта Twitter и сайта Chloé", width="800", height="458" %} <figcaption> Примеры загрузки динамического контента без непредвиденных смещений макета. Слева: загрузка содержимого прямой трансляции в Twitter. Справа: пример «Загрузить больше» на сайте Chloé. Узнайте, как команда YNAP <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">оптимизировала CLS при загрузке большего количества контента</a>.</figcaption></figure>
 
 ### Веб-шрифты, вызывающие побочные эффекты FOIT или FOUT
 
@@ -270,7 +270,7 @@ img {
 
 Панель [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) в DevTools показывает смещения макета в разделе **Experience** в Chrome 84. Представление **Summary** для `Layout Shift` включает совокупную оценку сдвига макета, а также прямоугольное наложение, показывающее затронутые области.
 
-<figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width="800", height="438" %}<figcaption class="w-figcaption"> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
+<figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width="800", height="438" %}<figcaption> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
 
 Измерить реальные значений CLS, агрегированные на уровне источника, также можно с помощью отчета [Chrome User Experience Report](/chrome-ux-report-bigquery/). Данные CrUX CLS доступны через BigQuery, а также доступен [образец запроса](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) для проверки производительности CLS.
 

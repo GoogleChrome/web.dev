@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: User-centric performance metrics
 authors:
   - philipwalton

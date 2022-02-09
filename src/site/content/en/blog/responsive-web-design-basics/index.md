@@ -28,8 +28,8 @@ The use of mobile devices to surf the web continues to grow at an astronomical p
 
 Responsive web design, originally defined by [Ethan Marcotte in A List Apart](http://alistapart.com/article/responsive-web-design/), responds to the needs of the users and the devices they're using. The layout changes based on the size and capabilities of the device. For example, on a phone users would see content shown in a single column view; a tablet might show the same content in two columns.
 
-<figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot", playsinline=true %}
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, playsinline=true %}
 </figure>
 
 A multitude of different screen sizes exist across phones, "phablets," tablets, desktops, game consoles, TVs, and even wearables. Screen sizes are always changing, so it's important that your site can adapt to any screen size, today or in the future. In addition, devices have different features with which we interact with them. For example some of your visitors will be using a touchscreen. Modern responsive design considers all of these things to optimize the experience for everyone.
@@ -65,16 +65,16 @@ the screen's width in device-independent pixels. A device (or density) independe
 content to match different screen sizes, whether rendered on a small mobile
 phone or a large desktop monitor.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/SrMBH5gokGU06S0GsjLS.png", alt="Screenshot of a page with the text hard to read as it is very zoomed out", width="500", height="640" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     An example of how the page loads in a device without the viewport meta tag. <a href="https://without-vp-meta.glitch.me/">See this example on Glitch</a>.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/9NrJxt3aEv37A3E7km65.png", alt="Screenshot of the same page with the text at a size that can be read", width="500", height="888" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     An example of how the page loads in a device with the viewport meta tag. <a href="https://with-vp-meta.glitch.me/">See this example on Glitch</a>.
   </figcaption>
 </figure>
@@ -161,9 +161,9 @@ In the example below, you can see a two-column layout with floated elements, siz
 Once the viewport becomes smaller than the total width of the columns, we have to scroll horizontally
 to see the content.
 
-<figure class="w-figure">
-  {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Screenshot of a two-column layout with most of the second column outside the viewport", width="800", height="504", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Screenshot of a two-column layout with most of the second column outside the viewport", width="800", height="504" %}
+  <figcaption>
     A floated layout using pixels. <a href="https://layout-floats-px.glitch.me/">See this example on Glitch</a>.
   </figcaption>
 </figure>
@@ -366,9 +366,9 @@ and maintain the least number of breakpoints possible.
 Let's work through the example we saw at the beginning: the weather forecast.
 The first step is to make the forecast look good on a small screen.
 
-<figure class="w-figure">
-  {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Screenshot of a weather app at a mobile width", width="400", height="667", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Screenshot of a weather app at a mobile width", width="400", height="667" %}
+  <figcaption>
     The app at a narrow width.
   </figcaption>
 </figure>
@@ -377,9 +377,9 @@ Next, resize the browser until there is too much white space between the element
 and the forecast simply doesn't look as good.
 The decision is somewhat subjective, but above `600px` is certainly too wide.
 
-<figure class="w-figure">
-  {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Screenshot of a weather app with wide gaps between items", width="400", height="240", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Screenshot of a weather app with wide gaps between items", width="400", height="240" %}
+  <figcaption>
     The app at a point where we feel we should tweak the design.
   </figcaption>
 </figure>
@@ -463,16 +463,16 @@ Classic readability theory suggests that an ideal column should contain 70 to 80
 Thus, each time the width of a text block grows past about 10 words,
 consider adding a breakpoint.
 
-<figure class="w-figure">
-  {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Screenshot of a a page of text on a mobile device", width="400", height="488", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Screenshot of a a page of text on a mobile device", width="400", height="488" %}
+  <figcaption>
     The text as read on a mobile device.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Screenshot of a a page of text on a desktop browser", width="800", height="377", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Screenshot of a a page of text on a desktop browser", width="800", height="377" %}
+  <figcaption>
     The text as read on a desktop browser with a breakpoint added to constrain the line length.
   </figcaption>
 </figure>
@@ -514,16 +514,16 @@ You could resize your browser window to trigger the breakpoints,
 but Chrome DevTools has a built-in feature that makes it easy to see how a page looks
 under different breakpoints.
 
-<figure class="w-figure">
-  {% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.", width="800", height="522", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.", width="800", height="522" %}
+  <figcaption>
     DevTools showing the weather app as it looks at a wider viewport size.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Screenshot of DevTools with our weather app open and a width of 436 pixels selected.", width="800", height="521", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Screenshot of DevTools with our weather app open and a width of 436 pixels selected.", width="800", height="521" %}
+  <figcaption>
     DevTools showing the weather app as it looks at a narrower viewport size.
   </figcaption>
 </figure>

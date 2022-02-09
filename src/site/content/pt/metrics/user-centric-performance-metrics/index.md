@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Métricas de desempenho centradas no usuário
 authors:
   - philipwalton

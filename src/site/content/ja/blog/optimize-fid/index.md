@@ -24,7 +24,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="良いfid値は2.5秒、悪い値は4.0秒を超え、その間の値は改善が必要", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="良いfid値は2.5秒、悪い値は4.0秒を超え、その間の値は改善が必要", width="384", height="96" %}
   </picture>
 
 [ラボ](/how-to-measure-speed/#lab-data-vs-field-data)環境での FID の予測には、[Total Blocking Time (合計ブロック時間、TBT)](/tbt/) をお勧めしています。この 2 つの指標の測定対象は異なりますが、通常 TBT の改善は FID の改善に相当します。
@@ -46,9 +46,9 @@ FID が悪化する場合の主な原因には、**重い JavaScript の実行**
 
 [**長く時間がかかっているタスク**](/custom-metrics/#long-tasks-api)とは、ユーザーが UI の応答がが悪いと感じる可能性のある JavaScript の実行時間のことを指します。メイン スレッドを 50 ミリ秒以上に渡ってブロックし続けるコードは、すべて長く時間がかかっているタスクとして分類されます。長く時間がかかっているタスクは、潜在的な JavaScript の肥大化 (ユーザーがその場で必要とする以上のものを読み込み、実行すること) の兆候を示しています。長く時間がかかっているタスクを分割することにより、サイトの入力遅延を削減することができます。
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome DevTools での長く時間がかかっているタスク", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Chrome DevTools のパフォーマンス パネルで<a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">可視化された、長く時間がかかっているタスク</a></figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome DevTools での長く時間がかかっているタスク", width="800", height="132" %}
+  <figcaption>Chrome DevTools のパフォーマンス パネルで<a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">可視化された、長く時間がかかっているタスク</a></figcaption>
 </figure>
 
 コード分割や、長く時間がかかっているタスクの分割などのベスト プラクティスを採用することにより、FID は顕著に改善されるはずです。TBT はフィールド指標ではありませんが、Time to Interactive (操作可能になるまでの時間、TTI) および FID の両指標が最終的に改善されるまでの進捗状況の確認に役立ちます。
@@ -66,7 +66,7 @@ JavaScript に大きく依存している Web アプリケーションで FID �
 
 次に示すのは、あるアプリケーションのファーストパーティー スクリプトの読み込みを最適化する前後での TBT スコアの比較です。必要のないコンポーネントのために読み込み (および実行) にコストがかかっていたスクリプトをクリティカル パスから除外することにより、ユーザーはより早くページを操作できるようになりました。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="ファーストパーティー スクリプトの最適化により、Lighthouse での TBT スコアが改善されました。", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="ファーストパーティー スクリプトの最適化により、Lighthouse での TBT スコアが改善されました。", width="800", height="148" %}
 
 ### データフェッチが操作に対する準備状況の様々な側面に影響を与える可能性がある
 
@@ -105,7 +105,7 @@ JavaScript に大きく依存している Web アプリケーションで FID �
 
 Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) (カバレッジ) タブでは、Web ページで使用されていない JavaScript がどの程度存在しているかを確認することができます。
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Coverage (カバレッジ) タブ。", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Coverage (カバレッジ) タブ。", width="800", height="559" %}
 
 使用されていない JavaScript を削減する方法には、以下のものがあります。
 
@@ -165,7 +165,7 @@ FID を測定またはデバッグするためのツールは、以下のよう�
 
 - FID はフィールド指標であるため、[Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) には FID のサポートは含まれていません。ただし、その代替指標として [Total Blocking Time](/tbt/) (TBT) を使用することができます。TBT を改善することができる最適化手法であれば、実際のユーザー環境での FID も改善することができるはずです。
 
-    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0", width="800", height="309", class="w-screenshot" %}
+    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、オリジンレベルで集計された実際の環境での FID 値を提供します。
 

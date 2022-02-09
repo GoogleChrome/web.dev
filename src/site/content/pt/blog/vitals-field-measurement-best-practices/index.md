@@ -63,7 +63,7 @@ Se sua ferramenta de análise não fornecer granularidade de relatório em níve
 
 O [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report) é um exemplo dessa técnica que usa o Google Analytics. O código do relatório é [open source](https://github.com/GoogleChromeLabs/web-vitals-report), portanto, os desenvolvedores podem fazer referência a ele como um exemplo das técnicas descritas nesta seção.
 
-{img0 alt="Capturas de tela do Web Vitals<br>Report"}
+![Capturas de tela do Web Vitals Report](https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992-11eb-8f2d-182f302fb67b.png)
 
 {% Aside %} Dica: a biblioteca JavaScript [`web-vitals`](https://github.com/GoogleChrome/web-vitals) fornece um ID para cada instância de métrica relatada, permitindo a construção de distribuições na maioria das ferramentas de análise. Consulte a documentação da interface [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) para mais detalhes. {% endAside %}
 

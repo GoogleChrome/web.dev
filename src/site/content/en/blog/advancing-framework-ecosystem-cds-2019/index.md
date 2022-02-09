@@ -75,9 +75,9 @@ The Angular team has shipped a number of improvements to version 8 of the framew
 +   [Differential loading](https://angular.io/guide/deployment#differential-builds) by
     default to minimize unneeded polyfills for newer browsers.
 
-<figure class="w-figure">
-  {% Img src="image/admin/kPQFf4eoaz1wcUZULmbZ.png", alt="Graph showing bundle size reduction of angular.io with and without differential builds", width="800", height="463", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)</figcaption>
+<figure>
+  {% Img src="image/admin/kPQFf4eoaz1wcUZULmbZ.png", alt="Graph showing bundle size reduction of angular.io with and without differential builds", width="800", height="463" %}
+  <figcaption>Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)</figcaption>
 </figure>
 
 +   Support for standard dynamic import syntax for lazy-loading routes.
@@ -121,9 +121,9 @@ for comments (RFCs) and pull requests (PRs):
 3.  Improved performance metric tracking which utilizes the User Timing API
     ([PR](https://github.com/zeit/next.js/pull/8069)).
 
-<figure class="w-figure">
-  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption"><a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking</figcaption>
+<figure>
+  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543" %}
+  <figcaption><a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking</figcaption>
 </figure>
 
 We are also exploring other features to improve both the user and developer experience of using
@@ -133,9 +133,9 @@ Next.js, such as:
 +   A webpack based conformance system that analyzes all source files and generated assets to
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 
-<figure class="w-figure">
-  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">An example of a conformance build error in Next.js (prototype)</figcaption>
+<figure>
+  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367" %}
+  <figcaption>An example of a conformance build error in Next.js (prototype)</figcaption>
 </figure>
 
 ## Nuxt.js

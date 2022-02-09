@@ -19,14 +19,14 @@ where the `font-size` is a consistent `64px`, and the only difference between ea
 have an inconsistent final size. The examples on the right use `size-adjust` to
 ensure `64px` is the consistent final size.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/6xhatUhszn7M6pDFcVgV.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
    In this example Chrome DevTools CSS grid layout debug tools are used to show heights.
   </figcaption>
 </figure>
@@ -38,12 +38,12 @@ descriptor](https://drafts.csswg.org/css-fonts-5/#size-adjust-desc) called
 support). It also demonstrates a few ways to correct and normalize font sizes
 for smoother user experience, consistent design systems and more predictable
 page layout. One important use case is optimizing web font rendering to prevent
-[cumulative layout shift](/cls/) (CLS). 
+[cumulative layout shift](/cls/) (CLS).
 
 Here's an interactive [demo](https://codepen.io/argyleink/pen/rNyMjxR) of the
-problem space. Try changing the typeface with the dropdown and observe: 
+problem space. Try changing the typeface with the dropdown and observe:
 1. The height differences in the results.
-1. Visually jarring content shifts. 
+1. Visually jarring content shifts.
 1. Moving interactive target areas (the dropdown jumps around!).
 
 {% Codepen {
@@ -51,12 +51,12 @@ problem space. Try changing the typeface with the dropdown and observe:
   id: 'WNpzRKd'
 } %}
 
-{% Aside 'key-term' %} 
+{% Aside 'key-term' %}
 Font family vs Typeface: A **typeface** is referred to by
 its family name plus its font face. `Helvetica Bold` is referring to the
 specific bold typeface while `Helvetica` is generically referring to the entire
 family of 8+ typefaces (normal, bold, italic, etc). With CSS `@font-face` you'll be dealing with typefaces, even
-though to use them you need to write `font-family`. 
+though to use them you need to write `font-family`.
 {% endAside %}
 
 ## How to scale fonts with `size-adjust`
@@ -88,24 +88,25 @@ h1 {
   id: 'yLMKgRx'
 } %}
 
-{% Aside 'warning' %} 
+{% Aside 'warning' %}
 If the second headline in the above demo is not larger than the
-first one, your browser does not support `size-adjust`. 
+first one, your browser does not support `size-adjust`.
 {% endAside %}
 
 ### Mitigating CLS with seamless font swapping
+
 In the following gif, watch the examples on the left and how there's a shift
 when the font is changed. This is just a small example with a single headline
 element and the issue is very noticeable.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/6xhatUhszn7M6pDFcVgV.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     The example on the left has layout shift, the one on the right does not.
   </figcaption>
 </figure>
@@ -119,14 +120,14 @@ sacrificing your user's time to content. The problem however, is that sometimes
 when the web font loads, it shifts the entire page around since it presents at a
 slightly different box height size.
 
-<figure class="w-figure w-screenshot">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/F7CwbZuMHaapGTeXRfSJ.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     more content equals more potential layout shift when font swaps
   </figcaption>
 </figure>
@@ -138,14 +139,14 @@ change, a seamless swap. To create a seamless swap, hand adjust or try this
 calculator](https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback)
 by [Malte Ubl](https://twitter.com/cramforce).
 
-<figure class="w-figure w-screenshot">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Tw8J2e0ymyGogeA7NJjY.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Choose a <a href="https://fonts.google.com/">Google Web Font</a>, get back a pre-adjusted <code>@font-face</code> snippet.
   </figcaption>
 </figure>
@@ -158,7 +159,7 @@ I aligned two fonts to a target font size.
 ```css
 @font-face {
   font-family: 'Adjusted Arial';
-  size-adjust: 86%; 
+  size-adjust: 86%;
   src: local(Arial);
 }
 
@@ -178,7 +179,7 @@ I aligned two fonts to a target font size.
 
 You as the author determine the calibration target(s) for normalizing font
 scale. You might normalize on Times, Arial, or a system font, then adjust custom
-fonts to match. Or, you might adjust local fonts to match what you download. 
+fonts to match. Or, you might adjust local fonts to match what you download.
 
 Strategies for `size-adjust` calibration:
 1. **Remote target:**<br>Adjust local fonts towards downloaded fonts.
@@ -208,7 +209,7 @@ html {
 ```
 
 In this example, local font Arial is adjusting in anticipation of a loaded custom font, for a
-seamless swap. 
+seamless swap.
 
 This strategy has an advantage of offering designers and developers the same
 font for sizing and typography. **The brand is the calibration target.** This is
@@ -228,11 +229,11 @@ where Arial is loaded and named "Roboto-fallback":
 }
 ```
 
-{% Aside "warning" %} 
+{% Aside "warning" %}
 The order of `font-family` is critical. It's where order
 and priority go. Ensure the typeface you want the most, is first. Furthermore,
 `local(Arial)` may not be available on all your user's devices, therefore it's
-important to provide multiple fallbacks in the font-family. 
+important to provide multiple fallbacks in the font-family.
 {% endAside %}
 
 To create a fully cross platform adjustment, see the following example which provides 2 adjusted local fallback fonts in anticipation of a brand font.
@@ -295,7 +296,7 @@ properties are currently implemented in Chromium 87+, and Firefox 89+.
 alt="scissors above and blow the word overrides, demonstrating the areas the
 features can trim to", width="800", height="136" %}
 
-### `ascent-override` 
+### `ascent-override`
 
 The `ascent-override` descriptor defines the height above the baseline of a
 font.
@@ -387,7 +388,7 @@ resources:
   MDN](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust)
 - [Seamless swap @font-face
   generator](https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Montserrat)
-- [Cumulative Layout Shift (CLS) on web.dev](https://web.dev/cls/)
+- [Cumulative Layout Shift (CLS) on web.dev](/cls/)
 - [A New Way To Reduce Font Loading Impact: CSS Font Descriptors
   ](https://www.smashingmagazine.com/2021/05/reduce-font-loading-impact-css-descriptors/)
 

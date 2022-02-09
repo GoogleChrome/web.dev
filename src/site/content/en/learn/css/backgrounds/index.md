@@ -4,7 +4,7 @@ description: >
   In this module learn the ways you can style backgrounds of boxes using CSS.
 audio:
   title: 'The CSS Podcast - 053: Background'
-  src: https://traffic.libsyn.com/secure/thecsspodcast/TCP052_v1.mp3?dest-id=1891556
+  src: https://traffic.libsyn.com/secure/thecsspodcast/TCP035_v2.mp3?dest-id=1891556
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - lozandier
@@ -149,7 +149,7 @@ Order does not matter for keywords associated with different axes of position.
 
 {% CompareCaption %}
 
-When CSS values are used alongside keywords, it must be preceded by a keyword.
+When CSS values are used alongside keywords, the order matters. The first value represents the horizontal axis and the second the vertical axis.
 {% endCompareCaption %}
 
 {% endCompare%}

@@ -1,11 +1,9 @@
 import {store} from './store';
-import {saveUserUrl} from './fb';
 import {fetchReports} from './lighthouse-service';
 import {runPsi} from './psi-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
-import {trackEvent} from './analytics';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -32,9 +30,7 @@ export const requestRunPSI = store.action((state, url) => {
       lighthouseError: null,
     });
     const run = await runPsi(url);
-    const auditedOn = new Date(run.fetchTime);
     state = store.getState(); // might change during runLighthouse
-    await saveUserUrl(url, auditedOn); // write the url to Firestore
     return {
       userUrl: url,
       activeLighthouseUrl: null,
@@ -208,31 +204,5 @@ export const setLanguage = store.action((state, language) => {
   }
   return {
     currentLanguage: language,
-  };
-});
-
-export const closeToC = store.action(() => {
-  trackEvent({
-    category: 'Site-Wide Custom Events',
-    action: 'click',
-    label: 'ToC',
-    value: 0,
-  });
-  document.querySelector('main').classList.remove('w-toc-open');
-  return {
-    isTocOpened: false,
-  };
-});
-
-export const openToC = store.action(() => {
-  trackEvent({
-    category: 'Site-Wide Custom Events',
-    action: 'click',
-    label: 'ToC',
-    value: 1,
-  });
-  document.querySelector('main').classList.add('w-toc-open');
-  return {
-    isTocOpened: true,
   };
 });

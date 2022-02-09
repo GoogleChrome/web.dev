@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`[role]`s are not contained by their required parent element"
 description: |
   Learn how to improve your web page's accessibility for assistive technology
@@ -25,8 +25,8 @@ rather than the intended control.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA child roles that aren't contained by the required parent:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ENzj3jYUVvSR3n23aC6M.png", alt="Lighthouse audit showing ARIA role missing required parent role", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ENzj3jYUVvSR3n23aC6M.png", alt="Lighthouse audit showing ARIA role missing required parent role", width="800", height="206" %}
 </figure>
 
 Lighthouse uses the

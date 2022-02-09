@@ -68,17 +68,17 @@ period. This means that "invisible" text is displayed very briefly before switch
 font. If the font is not downloaded within 100ms, then the fallback font is used and no swapping
 occurs.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/WHLORYEu864QRRveFQUz.png", alt="Diagram showing previous optional font behavior when font fails to load", width="800", height="340" %}
-  <figcaption class="w-figcaption">Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>after</b> the 100ms block period</figcaption>
+  <figcaption>Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>after</b> the 100ms block period</figcaption>
 </figure>
 
 However, in the case that the font is downloaded before the 100ms block period completes, the custom
 font is rendered and used on the page.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/mordYRjmCCDtlMcNXEOU.png", alt="Diagram showing previous optional font behavior when font loads in time", width="800", height="318" %}
-  <figcaption class="w-figcaption">Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>before</b> the 100ms block period</figcaption>
+  <figcaption>Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>before</b> the 100ms block period</figcaption>
 </figure>
 
 Chrome re-renders the page **twice** in both instances, regardless of whether the fallback font
@@ -93,14 +93,14 @@ Instead, rendering is blocked until the custom font has finished loading or a ce
 has passed. This timeout period is currently set at 100ms, but may possibly change in the near
 future to optimize performance.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/zLldiq9J3duBTaeRN88e.png", alt="Diagram showing new preloaded optional font behavior when font fails to load", width="800", height="353" %}
-  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
+  <figcaption>New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/OEHClGFMFspaWjb3xXLY.png", alt="Diagram showing new preloaded optional font behavior when font loads in time", width="800", height="346" %}
-  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>before</b> the 100ms block period (no flash of invisible text)</figcaption>
+  <figcaption>New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>before</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 
 Preloading optional fonts in Chrome removes the possibility of layout jank and flash of unstyled

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Document doesn't have a `<title>` element
 description: |
   Learn about the "Document doesn't have a <title> element"
@@ -23,8 +23,8 @@ relevant to their search.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 without a `<title>` element in the page's `<head>`:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zHgXut3CQbi5wnev8ypt.png", alt="Lighthouse audit showing HTML document doesn't have a title element", width="800", height="206", class="w-screenshot w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zHgXut3CQbi5wnev8ypt.png", alt="Lighthouse audit showing HTML document doesn't have a title element", width="800", height="206" %}
 </figure>
 
 ## How to add a title

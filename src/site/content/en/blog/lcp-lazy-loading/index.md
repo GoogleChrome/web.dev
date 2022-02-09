@@ -1,4 +1,5 @@
 ---
+layout: post
 title: The performance effects of too much lazy-loading
 subhead: Data-driven advice for lazy-loading images with Core Web Vitals in mind.
 description: "Eagerly loading images within the initial viewport—while liberally lazy-loading the rest—can improve Web Vitals while loading fewer bytes."
@@ -35,15 +36,13 @@ native image lazy-loading is used by [17%](https://httparchive.org/reports/state
 of websites and adoption is growing rapidly. This much of a foothold in the ecosystem is remarkable
 for a relatively new API.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/9RDh3CEC9vb1jCjVAIIi.png",
     alt="Pie chart showing WordPress making up 84.1% of lazy-loading adoption, other CMSs 2.3%, and non-CMSs 13.5%.",
     width="800",
-    height="491",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption">
+    height="491" %}
+  <figcaption>
     Breakdown of the types of websites that make use of native image lazy-loading.
     <em>(<a href="https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-wp-cms-sql">Source</a>)</em>
   </figcaption>
@@ -56,15 +55,13 @@ CMS, and the remaining 14% don't use a known CMS. These results make clear how
 [WordPress is leading the charge](https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/)
 in adoption.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/XgHvIF8JyybNZCNwXL35.png",
     alt="Timeseries chart of lazy-loading adoption with WordPress being the predominant player compared to other CMSs and non-CMSs, with similar proportions to the previous chart. Total adoption is shown to have rapidly increased from 1% to 17% from July 2020 to June 2021.",
     width="800",
-    height="507",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption">
+    height="507" %}
+  <figcaption>
     Breakdown of the types of websites that make use of native image lazy-loading.
     <em>(<a href="https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-wp-cms-timeseries-sql">Source</a>)</em>
   </figcaption>
@@ -86,15 +83,13 @@ below uses a box-and-whisker plot to visualize the distributions of each pages' 
 the lines represent the 10th and 90th percentiles and the boxes represent the 25th and 75th
 percentiles.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/W8gsHQn1IjlRuAgnSizY.png",
     alt="Box and whisker chart showing the 10, 25, 75, and 90th percentiles for pages that do and do not use native image lazy-loading. Comparatively, the LCP distribution of pages that do not use it is faster than those that do.",
     width="800",
-    height="488",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption">
+    height="488" %}
+  <figcaption>
     Distribution of all pages' 75th percentile LCP experience, broken down by whether they use native image lazy-loading.
     <em>(<a href="https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-crux-lcp-sql">Source</a>)</em>
   </figcaption>
@@ -109,15 +104,13 @@ to lazy-loading as being the _cause_ of the slower performance. Hypothetically, 
 tend to be a bit slower, and given how much they make up the lazy-loading cohort, that could explain
 the difference. So let's try to eliminate that variability by looking only at WordPress sites.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/k1YlIULhqpx3CJV2OPYc.png",
     alt="Box and whisker chart showing the 10, 25, 75, and 90th percentiles for WordPress pages that do and do not use native image lazy-loading. Comparatively, the LCP distribution of pages that do not use it is faster than those that do, similar to the previous chart.",
     width="800",
-    height="488",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption">
+    height="488" %}
+  <figcaption>
     Distribution of WordPress pages' 75th percentile LCP experience, broken down by whether they use native image lazy-loading.
     <em>(<a href="https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-crux-lcp-wordpress-sql">Source</a>)</em>
   </figcaption>
@@ -142,7 +135,7 @@ emulated mobile devices using [WebPageTest](https://webpagetest.org/). We tested
 pages with and without lazy-loading enabled and ran each test nine times to get the median LCP value
 and number of image bytes.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -195,7 +188,7 @@ pages slightly faster. However, the difference in LCP is less than one standard 
 desktop and mobile tests, so we attribute this to variance and consider the change neutral overall.
 By comparison, the difference for archive pages is more like two to three standard deviations.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -259,7 +252,7 @@ minimal and worth simplifying the implementation in WordPress core.
 Given this new data, we created an experimental fix that avoids lazy-loading images that are above
 the fold and we tested it under the same conditions as the first A/B test.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -319,7 +312,7 @@ entirely. How could it be faster than not lazy-loading at all? One explanation i
 loading below-the-fold images, there's less network contention with the LCP image, which enables it
 to load more quickly.
 
-<div class="w-table-wrapper">
+<div>
   <table>
   <thead>
     <tr>

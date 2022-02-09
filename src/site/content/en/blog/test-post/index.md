@@ -1,4 +1,5 @@
 ---
+layout: post
 title: An example blog post used for screenshot testing.
 subhead: |
   A catchy subhead that previews the content and is a bit wordy to test what
@@ -86,9 +87,9 @@ scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
-<figure class="w-figure w-figure--fullbleed">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="800", height="533" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="400", height="263" %}
+  <figcaption>
     Large image.
   </figcaption>
 </figure>
@@ -101,9 +102,9 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wBf0W2V9bVA7Clh01Rf7.png", alt="", width="400", height="78" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="400", height="263" %}
+  <figcaption>
     Small image.
   </figcaption>
 </figure>
@@ -126,9 +127,9 @@ quam sem.
 
 ## Image, Inline
 
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306" %}
+  <figcaption>
     Inline right, outlined image.
   </figcaption>
 </figure>
@@ -147,9 +148,9 @@ augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
 aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
-<figure class="w-figure w-figure--inline-left">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure data-float="left">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306" %}
+  <figcaption>
     Inline left, outlined image.
   </figcaption>
 </figure>
@@ -168,9 +169,9 @@ augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
 aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure data-screenshot>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
+  <figcaption>
     Filled screenshot.
   </figcaption>
 </figure>
@@ -187,7 +188,7 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -261,9 +262,9 @@ quam sem.
   <li>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
-    <figcaption class="w-figcaption">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
+    <figcaption>
       Filled screenshot.
     </figcaption>
   </figure>
@@ -308,9 +309,9 @@ quam sem.
   <li>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
-    <figcaption class="w-figcaption">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475" %}
+    <figcaption>
       Filled screenshot.
     </figcaption>
   </figure>
@@ -481,25 +482,28 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">30<sub>%</sub></p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">13<sub>%</sub></p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">4<sub>x</sub></p>
+    <p>Faster load times</p>
   </div>
 </div>
 
-<div class="w-text--center">
-  <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
-    Download case study
-  </a>
+<div class="all-center">
+  <p>
+    <a href="https://example.com/some.pdf" class="button">
+      {% include "icons/download.svg" %}
+      Download case study
+    </a>
+  </p>
 </div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa

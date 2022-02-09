@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Progressive Web Apps in multi-origin sites
 subhead: Challenges and workarounds for building Progressive Web Apps in multi-origin sites.
 authors:

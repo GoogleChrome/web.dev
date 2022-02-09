@@ -26,7 +26,7 @@ Um fator que contribui para uma experiência ruim do usuário é quanto tempo le
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Bons valores de LCP são 2,5 segundos, valores baixos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Bons valores de LCP são 2,5 segundos, valores baixos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", width="384", height="96" %}
 </picture>
 
 
@@ -37,11 +37,11 @@ As causas mais comuns de uma LCP ruim são:
 - [Tempos lentos de carregamento de recursos](#slow-resource-load-times)
 - [Renderização do lado do cliente](#client-side-rendering)
 
-## Tempos de resposta lentos do servidor { :#slow-servers }
+## Tempos de resposta lentos do servidor {: #slow-servers }
 
 Quanto mais tempo leva para um navegador receber conteúdo do servidor, mais tempo leva para processar qualquer coisa na tela. Um tempo de resposta mais rápido do servidor melhora diretamente cada métrica de carregamento de página, incluindo a LCP.
 
-Antes de mais nada, melhore como e onde seu servidor lida com seu conteúdo. Use a métrica [**Time to First Byte**](/time-to-first-byte) - TTFB (tempo até o primeiro byte) para medir os tempos de resposta do servidor. Você pode melhorar sua TTFB de várias maneiras:
+Antes de mais nada, melhore como e onde seu servidor lida com seu conteúdo. Use a métrica [**Time to First Byte**](/ttfb/) - TTFB (tempo até o primeiro byte) para medir os tempos de resposta do servidor. Você pode melhorar sua TTFB de várias maneiras:
 
 - Otimizando seu servidor
 - Direcionando os usuários para um CDN próximo
@@ -69,7 +69,7 @@ Se o seu HTML é estático e não precisa ser alterado a cada solicitação, o a
 Há muitas alternativas diferentes de usar cache no servidor; a escolha depende do seu toolchain:
 
 - Configuração de proxies reversos ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) para servir conteúdo em cache ou atuar como um servidor de cache quando instalado na frente de um servidor de aplicação
-- Configuração e gerenciamento do comportamento do cache do seu provedor de nuvem ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching)
+- Configuração e gerenciamento do comportamento do cache do seu provedor de nuvem ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/azure/architecture/best-practices/caching)
 - Uso de um CDN que forneça servidores de edge para que seu conteúdo seja armazenado em cache e fique mais perto de seus usuários
 
 ### Servindo páginas HTML usando cache-first
@@ -78,7 +78,7 @@ Quando instalado, um [service worker](https://developer.mozilla.org/docs/Web/API
 
 O gráfico a seguir mostra como as distribuições de LCP foram reduzidas em um site usando este padrão:
 
-<figure class="w-figure">{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="Distribuições de Largest Contentful Paint antes e depois do uso de cache HTML", width="800", height="495" %} <figcaption class="w-figcaption"> Distribuição de Largest Contentful Paint para carregamento de páginas com e sem service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a> </figcaption></figure>
+<figure>{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="Distribuições de Largest Contentful Paint antes e depois do uso de cache HTML", width="800", height="495" %} <figcaption> Distribuição de Largest Contentful Paint para carregamento de páginas com e sem service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a> </figcaption></figure>
 
 O gráfico mostra a distribuição de LCP de um único site nos últimos 28 dias, segmentado pelo estado do service worker. Observe como aumentou o número de carregamentos de página com LCP mais rápido depois que o serviço de páginas HTML usando a estratégia cache-first foi introduzida no service worker (parte azul do gráfico).
 
@@ -112,7 +112,7 @@ Embora as duas dicas funcionem de maneira diferente, considere o uso de `dns-pre
 
 ### Usando trocas assinadas (SXGs)
 
-As [trocas assinadas (Signed Exchanged - SXG)](https://web.dev/signed-exchanges) são um mecanismo de entrega que permite experiências mais rápidas do usuário ao fornecer conteúdo em um formato facilmente armazenável em cache. Especificamente, uma [Pesquisa Google](https://developers.google.com/search/docs/advanced/experience/signed-exchange) será armazenada em cache e, às vezes, fará uma busca antecipada de SXGs. Para sites que recebem uma grande parte de seu tráfego a partir das Pesquisas Google, os SXGs podem ser uma ferramenta importante para melhorar a LCP. Para mais informações, veja [Trocas Assinadas](/signed-exchanges).
+As [trocas assinadas (Signed Exchanged - SXG)](/signed-exchanges) são um mecanismo de entrega que permite experiências mais rápidas do usuário ao fornecer conteúdo em um formato facilmente armazenável em cache. Especificamente, uma [Pesquisa Google](https://developers.google.com/search/docs/advanced/experience/signed-exchange) será armazenada em cache e, às vezes, fará uma busca antecipada de SXGs. Para sites que recebem uma grande parte de seu tráfego a partir das Pesquisas Google, os SXGs podem ser uma ferramenta importante para melhorar a LCP. Para mais informações, veja [Trocas Assinadas](/signed-exchanges).
 
 ## JavaScript e CSS que bloqueiam a renderização {: #render-blocking-resources }
 
@@ -138,14 +138,14 @@ Se você usar um empacotador de módulos ou ferramenta de build, inclua um plug-
 - Para Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - Para Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png",
     alt="Exemplo de melhoria de LCP: antes e depois de minificar CSS",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Exemplo de melhoria de LCP: antes e depois de minificar CSS
   </figcaption>
 </figure>
@@ -167,7 +167,7 @@ Para otimizar:
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Exemplo de melhoria da LCP: antes e depois de adiar CSS não crítico", width="800", height="139" %} <figcaption class="w-figcaption"> Exemplo de melhoria da LCP: antes e depois de adiar CSS não crítico </figcaption></figure>
+<figure>{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Exemplo de melhoria da LCP: antes e depois de adiar CSS não crítico", width="800", height="139" %} <figcaption> Exemplo de melhoria da LCP: antes e depois de adiar CSS não crítico </figcaption></figure>
 
 {% Aside %} Para mais detalhes, consulte o guia [Adiamento de CSS não crítico.](/defer-non-critical-css/) {% endAside %}
 
@@ -175,14 +175,13 @@ Para otimizar:
 
 Embuta qualquer CSS essencial que é usado para conteúdo acima da dobra incluindo-o diretamente no `<head>`.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",
     alt="Critical CSS inlined",
-    width="800", height="325",
-    class="w-screenshot w-screenshot--filled"
+    width="800", height="325"
   %}
-  <figcaption class="w-figcaption">CSS crítico embutido</figcaption>
+  <figcaption>CSS crítico embutido</figcaption>
 </figure>
 
 Embutir estilos importantes elimina a necessidade de fazer uma solicitação de ida e volta para buscar CSS crítico. Adiar o restante minimiza o tempo de bloqueio do CSS.
@@ -192,14 +191,14 @@ Se você não pode adicionar manualmente estilos embutidos ao seu site, use uma 
 - [Critical](https://github.com/addyosmani/critical) , [CriticalCSS](https://github.com/filamentgroup/criticalCSS) e [Penthouse](https://github.com/pocketjoso/penthouse) são pacotes que extraem e embutem CSS acima da dobra
 - [Critters](https://github.com/GoogleChromeLabs/critters) é um plugin webpack que embute CSS crítico e carrega o resto de forma lazy
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/L8sc51bd3ckxwnUfczC4.png",
     alt="Exemplo de melhoria da LCP: antes e depois de embutir CSS crítico",
     width="800",
     height="175"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Exemplo de melhoria da LCP: antes e depois de embutir CSS crítico
   </figcaption>
 </figure>
@@ -212,13 +211,13 @@ Baixe e forneça a quantidade mínima de JavaScript necessária aos usuários. R
 
 Isto pode ser feito otimizando seus scripts de maneiras diferentes:
 
-- [Minificando e comprimindo arquivos JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Adiando JavaScript não utilizado](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimizando polyfills não usados](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minificando e comprimindo arquivos JavaScript](/reduce-network-payloads-using-text-compression/)
+- [Adiando JavaScript não utilizado](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimizando polyfills não usados](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} O guia [Otimize a First Input Delay](/optimize-fid/) explora todas as técnicas necessárias para reduzir o tempo de bloqueio do JavaScript em mais detalhes. {% endAside %}
 
-## Tempos de carregamento de recursos lentos { :#slow-resource-load-times }
+## Tempos de carregamento de recursos lentos {: #slow-resource-load-times }
 
 Embora um aumento no tempo de bloqueio do CSS ou JavaScript resulte diretamente em pior desempenho, o tempo que leva para carregar vários outros tipos de recursos também pode afetar os tempos de renderização. Os tipos de elementos que afetam a LCP são:
 
@@ -240,7 +239,7 @@ O tempo que leva para carregar esses elementos, se renderizados acima da dobra, 
 
 Para muitos sites, as imagens são o maior elemento visualizado quando a página termina de carregar. Imagens de herói, carrosséis grandes ou imagens de banner são exemplos comuns.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png",
     alt="",
@@ -296,14 +295,14 @@ Comprimir seus recursos minimizará seu tamanho de entrega, melhorando o tempo d
 2. Se você precisar modificar seu servidor para compactar arquivos, considere o uso de Brotli em vez de gzip, pois ele pode fornecer melhores taxas de compactação.
 3. Depois de escolher um algoritmo de compactação para usar, compacte os ativos durante o processo de build, em vez de durante o processo em que eles são solicitados pelo navegador. Isto minimiza a sobrecarga do servidor e evita atrasos quando as solicitações forem feitas, especialmente quando estiver usando altas taxas de compactação.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",
     alt="Exemplo de melhoria de LCP: antes e depois da compressão Brotli",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Exemplo de melhoria de LCP: antes e depois da compressão Brotli
   </figcaption>
 </figure>
@@ -343,7 +342,7 @@ O pré-cache de recursos críticos usando um service worker pode reduzir seus te
 
 {% Aside %} Dê uma olhada em [Confiabilidade da rede](/reliable/) para aprender mais sobre service workers e o Workbox. {% endAside %}
 
-## Renderização lado-cliente { :#client-side-rendering }
+## Renderização lado-cliente {: #client-side-rendering }
 
 Muitos sites usam lógica JavaScript do lado do cliente para renderizar páginas diretamente no navegador. Frameworks e bibliotecas, como [React](https://reactjs.org/), [Angular](https://angular.io/) e [Vue](https://vuejs.org/), facilitaram a construção de aplicações de página única (SLA) que lidam com diferentes facetas de uma página web inteiramente no cliente, e não no servidor.
 
@@ -381,14 +380,14 @@ A pré-renderização é uma técnica separada que é menos complexa do que a re
 
 Com a pré-renderização, a TTI ainda é impactada negativamente, mas os tempos de resposta do servidor não são tão afetados como seriam com uma solução de renderização lado-servidor que renderiza dinamicamente cada página somente depois de solicitada.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",
     alt="Exemplo de melhoria de LCP: antes e depois da pré-renderização",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Exemplo de melhoria de LCP: antes e depois da pré-renderização
   </figcaption>
 </figure>

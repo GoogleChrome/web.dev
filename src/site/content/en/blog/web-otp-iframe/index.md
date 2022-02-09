@@ -96,7 +96,7 @@ things:
 * Configure permissions policy to allow the cross-origin iframe to receive OTP
   from the user directly.
 
-<figure class="w-figure">
+<figure>
 {% Video
   src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4",
   autoplay="true",
@@ -105,10 +105,8 @@ things:
   muted="true",
   preload="auto",
   width="300",
-  height="600",
-  class="w-screenshot"
-%}
-  <figcaption class="w-figcaption">
+  height="600" %}
+  <figcaption>
     WebOTP API within an iframe in action.
   </figcaption>
 </figure>
@@ -190,8 +188,8 @@ what you think.
 ## Resources
 
 * [Verify phone numbers on the web with the Web OTP
-  API](https://web.dev/web-otp/)
-* [SMS OTP form best practices](https://web.dev/sms-otp-form/)
+  API](/web-otp/)
+* [SMS OTP form best practices](/sms-otp-form/)
 * [WebOTP API](https://wicg.github.io/web-otp/)
 * [Origin-bound one-time codes delivered via
   SMS](https://wicg.github.io/sms-one-time-codes/)

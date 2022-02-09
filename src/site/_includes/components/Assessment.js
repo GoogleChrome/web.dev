@@ -28,9 +28,7 @@ const {generateImgixSrc} = require('./Img');
 function headerTemplate(assessment) {
   if (assessment.setLeader && assessment.questions.length > 1) {
     return html`
-      <div class="w-callout__blurb web-assessment__set-leader">
-        ${assessment.setLeader}
-      </div>
+      <div class="web-assessment__set-leader">${assessment.setLeader}</div>
     `;
   }
 }
@@ -213,7 +211,7 @@ module.exports = function (targetAssessment) {
 
   // prettier-ignore
   const content = html`
-    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && 'web-assessment--singleton'}" aria-label="Check your understanding">
+    <web-assessment aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;

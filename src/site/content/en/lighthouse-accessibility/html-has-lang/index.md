@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`<html>` element does not have a `[lang]` attribute"
 description: |
   Learn how to make sure assistive technologies pronounce your web page's
@@ -22,8 +22,8 @@ often making it impossible to understand the content.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages whose `<html>` element doesn't have a `lang` attribute:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h6k3xwau2Jz0GXXsM8Av.png", alt="Lighthouse audit showing the html element doesn't have a lang attribute", width="800", height="228", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h6k3xwau2Jz0GXXsM8Av.png", alt="Lighthouse audit showing the html element doesn't have a lang attribute", width="800", height="228" %}
 </figure>
 
 Note that this audit

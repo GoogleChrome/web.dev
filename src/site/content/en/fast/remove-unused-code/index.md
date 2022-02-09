@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Remove unused code
 subhead: |
   npm makes adding code to your project a breeze. But are you really using all
@@ -31,19 +31,19 @@ DevTools makes it easy to see the size of all network requests:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169" %}
 
 The [Coverage](https://developer.chrome.com/docs/devtools/coverage/)
 tab in DevTools will also tell you how much CSS and JS code in your application
 is unused.
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562" %}
 
 By specifying a full Lighthouse configuration through its Node CLI, an "Unused
 JavaScript" audit can also be used to trace how much unused code is being
 shipped with your application.
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347" %}
 
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)

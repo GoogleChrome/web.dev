@@ -1,4 +1,5 @@
 ---
+layou: post
 title: Preparing for AppCache removal
 subhead: Chrome 85 removes support for AppCache by default. Most developers should migrate off AppCache now, and not wait any longer.
 authors:
@@ -32,7 +33,7 @@ experience that AppCache had offered. See [Migration strategies](#migration-stra
 
 A "deprecated" feature still exists, but logs warning messages discouraging use. A "removed" feature no longer exists in the browser.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/UKF8cK0EwMI/m/NLhsIrs-AQAJ">Deprecation in non-secure contexts</a>
@@ -147,8 +148,8 @@ While the "reverse" origin trial officially starts with Chrome 84, you can [sign
 
 Once you've added a token to your AppCache manifest, visit `about://appcache-internals` to confirm that your local instance of Chrome (version 84 or later) has properly associated the origin trial token with your manifest's cached entries. If your origin trial is recognized, you should see a field with `Token Expires: Tue Apr 06 2021...` on that page, associated with your manifest:
 
-<figure class="w-figure">
-  {% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="about://appcache-internals interface showing a recognized token.", width="550", height="203", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="about://appcache-internals interface showing a recognized token.", width="550", height="203" %}
 </figure>
 
 ## Testing prior to removal

@@ -16,7 +16,6 @@
 
 import {BaseElement} from '../BaseElement';
 import {debounce} from '../../utils/debounce';
-import './_styles.scss';
 
 /**
  * Base element used by all self-assessment response components.

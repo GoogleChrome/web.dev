@@ -19,8 +19,8 @@ tags:
 
 由于 Google 搜索现在将核心 Web 指标作为评估 [页面体验](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 的基础，因此在最大程度上实现这些指标的可用性和可操作性就变得至关重要。
 
-<figure class="w-figure">
-  {% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="支持各项核心 Web 指标的 Chrome 和搜索工具摘要", width="800", height="509", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="支持各项核心 Web 指标的 Chrome 和搜索工具摘要", width="800", height="509" %}
 </figure>
 
 {% Aside 'key-term' %} **实验室工具**可以用于深入了解*潜在用户*可能会如何体验您的网站，并提供可重现的结果，便于调试。**实际**工具可以深入了解您的*真实用户*是如何体验您的网站的。这类测量方式通常被称为真实用户监控 (RUM)。各个[实验室或实际工具](/how-to-measure-speed/#lab-data-vs-field-data)都为您的用户体验优化提供了独特的价值。{% endAside %}
@@ -40,7 +40,7 @@ tags:
 
 灯塔是一款自动化网站审计工具，可以帮助开发者诊断问题并发掘改善网站用户体验的机会。这款工具在实验室环境中测量用户体验质量的多个维度，包括性能和可访问性。灯塔的最新版本（[6.0](/lighthouse-whats-new-6.0/)，于 2020 年 5 月中旬发布）中包括额外的审计项、新指标和新的性能分数组成。
 
-<figure class="w-figure">{% Img src="image/admin/4j72CWywp2D88Xti8zBf.png", alt="灯塔 6.0 显示最新的核心 Web 指标", width="800", height="527", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/4j72CWywp2D88Xti8zBf.png", alt="灯塔 6.0 显示最新的核心 Web 指标", width="800", height="527" %}</figure>
 
 灯塔 6.0 在报告中引入了三项新指标。其中，[Largest Contentful Paint 最大内容绘制](/lcp/) (LCP) 和 [Cumulative Layout Shift 累积布局偏移](/cls/) (CLS) 这两项新指标是核心 Web 指标的实验室执行指标，为优化用户体验提供了重要的诊断信息。鉴于这些指标对评估用户体验的重要性，我们不仅会对新指标进行测量并将结果包含在报告中，还会在计算性能分数时将其考虑在内。
 
@@ -48,7 +48,7 @@ tags:
 
 灯塔支持的所有产品都依照最新版本进行了更新，其中也包括[灯塔 CI](https://github.com/GoogleChrome/lighthouse-ci)。该产品使您能够在合并和部署拉取请求前轻松测量核心 Web 指标。
 
-<figure class="w-figure">{% Img src="image/admin/aOm5ZAIUbspjcyRMIXbn.png", alt="灯塔 CI 显示针对最大内容绘制的差异视图", width="800", height="498", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/aOm5ZAIUbspjcyRMIXbn.png", alt="灯塔 CI 显示针对最大内容绘制的差异视图", width="800", height="498" %}</figure>
 
 如需进一步了解灯塔最新更新的相关信息，请查看我们的[灯塔 6.0 新增功能](/lighthouse-whats-new-6.0/)博文。
 
@@ -58,7 +58,7 @@ tags:
 
 PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) 也已升级为在底层使用灯塔 6.0，而且目前支持在报告的实验室和实际部分测量核心 Web 指标！核心 Web 指标由蓝丝带进行了标识，如下图所示。
 
-<figure class="w-figure">{% Img src="image/admin/l1posckVsR7JeVGnk6Jv.png", alt="PageSpeed Insights 中显示的实际环境和实验室环境下的核心 Web 指标数据", width="800", height="873", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/l1posckVsR7JeVGnk6Jv.png", alt="PageSpeed Insights 中显示的实际环境和实验室环境下的核心 Web 指标数据", width="800", height="873" %}</figure>
 
 虽然[搜索控制台](https://search.google.com/search-console/)为网站所有者提供了需要重点关注的页面组的全面概览，但 PSI 有助于您识别每个页面上能够改善页面体验的机会。在 PSI 中，您可以在报告顶部清楚地看出您的页面是否满足所有核心 Web 指标的良好体验阈值，报告结果将显示为**通过核心 Web 指标评估**或**未通过核心 Web 指标评估**。
 
@@ -81,7 +81,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 下方是使用 CrUX API 来将各项核心 Web 指标可视化的[演示](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started)，其中的数据分布为**良好**、**需要改进**和**欠佳**：
 
-<figure class="w-figure">{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="显示多项核心 Web 指标的 Chrome 用户体验报告演示", width="800", height="523", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="显示多项核心 Web 指标的 Chrome 用户体验报告演示", width="800", height="523" %}</figure>
 
 在未来的版本中，我们计划扩展 API 并允许其访问更多的 CrUX 数据集维度和指标。
 
@@ -89,7 +89,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 新近重新设计的 [CrUX 仪表板](http://g.co/chromeuxdash)使您能够轻松跟踪域的性能随时间的变化，现在您还可以使用新的仪表板来监控所有核心 Web 指标的分布。要想上手使用仪表板，请查看我们在 web.dev 上的[教程](/chrome-ux-report-data-studio-dashboard/)。
 
-<figure class="w-figure">{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Chrome 用户体验报告仪表板在新着陆页面中显示核心 Web 指标", width="800", height="497", class=" w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Chrome 用户体验报告仪表板在新着陆页面中显示核心 Web 指标", width="800", height="497" %}</figure>
 
 我们引入了一个新的核心 Web 指标着陆页面，便于您对您的网站表现一目了然。我们欢迎您对所有 CrUX 工具集提出反馈意见。如需分享您的想法和疑问，请通过 [@ChromeUXReport](https://twitter.com/chromeuxreport) Twitter 帐户或 [Google 群组](https://groups.google.com/a/chromium.org/g/chrome-ux-report)联系我们。
 
@@ -99,7 +99,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 Chrome 开发者工具的**性能**面板中有一个全新的**[体验部分](https://developers.google.com/web/updates/2020/05/devtools#cls)**，可以帮助您检测意外的布局偏移。这项功能有助于查找和修复页面上导致累积布局偏移的视觉不稳定问题。
 
-<figure class="w-figure">{% Img src="image/admin/VMbZAgKCi5V6FiQyu631.png", alt="在性能面板中显示为红色记录的累积布局偏移", width="800", height="517", class="w-screenshot w-screenshot--filled" %}</figure>
+<figure>{% Img src="image/admin/VMbZAgKCi5V6FiQyu631.png", alt="在性能面板中显示为红色记录的累积布局偏移", width="800", height="517" %}</figure>
 
 选中某次特定的布局偏移，即可在**摘要**选项卡中查看其详细信息。要想直观地看到偏移本身发生的位置，请将鼠标悬停在**位移自**和**位移至**字段上。
 
@@ -107,7 +107,7 @@ Chrome 开发者工具的**性能**面板中有一个全新的**[体验部分](h
 
 总阻塞时间 (TBT) 指标可以在实验室工具中进行测量，并且是首次输入延迟的绝佳代理。TBT 测量[首次内容绘制 (FCP)](/fcp/) 和 [Time to Interactive 可交互时间 (TTI)](/tti/) 之间的总时间，这期间，主线程被阻塞的时间过长，无法作出输入响应。在实验室中改进 TBT 的性能优化应该能够改进实际情况下的 FID。
 
-<figure class="w-figure">{% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="开发者工具性能面板页脚中显示的总阻塞时间", width="800", height="517", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="开发者工具性能面板页脚中显示的总阻塞时间", width="800", height="517" %}</figure>
 
 当您测量页面性能时，TBT 现在会显示在 Chrome 开发者工具**性能**面板的页脚中：
 
@@ -123,7 +123,7 @@ Chrome 开发者工具的**性能**面板中有一个全新的**[体验部分](h
 
 搜索控制台中全新的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)可以帮助您根据 CrUX 的真实世界（实际）数据识别网站中需要重点关注的页面组。URL 性能会按状态、指标类型和 URL 组（相似网页的组）进行分组。
 
-<figure class="w-figure">{% Img src="image/admin/BjTUt0xdWXD9hrLsbhLK.png", alt="搜索控制台的全新核心 Web 指标报告", width="800", height="1000", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/BjTUt0xdWXD9hrLsbhLK.png", alt="搜索控制台的全新核心 Web 指标报告", width="800", height="1000" %}</figure>
 
 该报告基于三项核心 Web 指标：LCP、FID 和 CLS。如果一个 URL 没有针对这些指标的最小报告数据量，则报告中会将其省略。请尝试使用新报告来全面了解您的域的性能。
 
@@ -133,7 +133,7 @@ Chrome 开发者工具的**性能**面板中有一个全新的**[体验部分](h
 
 [web.dev/measure](/measure/) 使您能够测量页面在一段时间内的性能，并提供一系列建议优先考虑的改进指南和代码实验室。该工具的测量由 PageSpeed Insights 提供支持。该测量工具现在还支持各项核心 Web 指标，如下图所示：
 
-<figure class="w-figure">{% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="使用 web.dev 测量工具测量一段时间内的多项核心 Web 指标并获得优先重点方面的指导", width="800", height="459", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="使用 web.dev 测量工具测量一段时间内的多项核心 Web 指标并获得优先重点方面的指导", width="800", height="459" %}</figure>
 
 ### Web 指标扩展程序
 
@@ -141,7 +141,7 @@ Web 指标扩展程序实时测量（桌面）Google Chrome 的三项核心 Web 
 
 该扩展程序现在可以从 [Chrome 网上应用店](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)进行安装！我们希望这个扩展程序会对您有用。我们欢迎您提出任何改进意见以及对项目 [GitHub](https://github.com/GoogleChrome/web-vitals-extension/) 存储库的反馈。
 
-<figure class="w-figure">{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="使用 Web 指标 Chrome 扩展程序实时显示的核心 Web 指标", width="800", height="459", class="w-screenshot" %}</figure>
+<figure>{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="使用 Web 指标 Chrome 扩展程序实时显示的核心 Web 指标", width="800", height="459" %}</figure>
 
 #### 快速亮点
 

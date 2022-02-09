@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Melhorando a privacidade do usuário e a experiência do desenvolvedor com User-Agent Client Hints
 subhead: |-
   User-Agent Client Hints são uma nova expansão da API Client Hints, que
@@ -25,7 +26,7 @@ As Client Hints (dicas do cliente) permitem que os desenvolvedores solicitem inf
 
 Aprenda como atualizar seu código existente que depende do processamento da string User-Agent para usar, em vez disso, as User-Agent Client Hints.
 
-{% Banner 'caution', 'body' %} Se você já estiver usando as User-Agent Client Hints, às mudanças que estão previstas. O formato do cabeçalho está mudando para que os tokens `Accept-CH` correspondam exatamente aos cabeçalhos retornados. Anteriormente, um site poderia ter enviado `Accept-CH: UA-Platform` para receber o cabeçalho `Sec-CH-UA-Platform` mas agora esse site deve enviar `Accept-CH: Sec-CH-UA-Platform`. Se você já implementou User-Agent Client Hints, envie os dois formatos até que a mudança seja totalmente implementada no Chromium estável. Acesse [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para saber das atualizações. {% endBanner %}
+{% Aside 'caution' %} Se você já estiver usando as User-Agent Client Hints, às mudanças que estão previstas. O formato do cabeçalho está mudando para que os tokens `Accept-CH` correspondam exatamente aos cabeçalhos retornados. Anteriormente, um site poderia ter enviado `Accept-CH: UA-Platform` para receber o cabeçalho `Sec-CH-UA-Platform` mas agora esse site deve enviar `Accept-CH: Sec-CH-UA-Platform`. Se você já implementou User-Agent Client Hints, envie os dois formatos até que a mudança seja totalmente implementada no Chromium estável. Acesse [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para saber das atualizações. {% endAside %}
 
 ## Histórico
 
@@ -113,11 +114,11 @@ Sec-CH-UA-Mobile: ?0
 ### Cabeçalhos User-Agent de solicitação e resposta
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

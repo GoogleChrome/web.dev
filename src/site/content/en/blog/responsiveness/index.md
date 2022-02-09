@@ -99,7 +99,7 @@ most accurately reflect the interaction patterns on their pages.
 To help explain each of the following strategies, consider an example page visit
 that consists of four interactions:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th>Interaction</th>
@@ -138,7 +138,7 @@ suggests that users may not perceive latencies below certain thresholds as
 negative. Based on this research we're considering several budget strategies
 using on the following thresholds for each event type:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th>Interaction type</th>
@@ -163,7 +163,7 @@ Each of these strategies will only consider the latency that is more than the
 budget threshold per interaction. Using the example page visit above, the
 over-budget amounts would be as follows:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th>Interaction</th>

@@ -28,17 +28,16 @@ At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clo
 
 But they run a modern browser and are very affordable. For this reason, feature phones are making a resurgence in emerging markets. Their price point allows a whole new audience, who previously couldn't afford it, to come online and make use of the modern web. **[For 2019 it is projected that around 400 million feature phones will be sold in India alone][400mil]**, so users on feature phones might become a significant portion of your audience. In addition to that, connection speeds akin to 2G are the norm in emerging markets. How did we manage to make PROXX work well under feature phone conditions?
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/0Z2YqHWp5ToNzqlU40ng.mp4",
     preload="metadata",
-    class="w-screenshot",
-    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuAyD4tBgrjLsbXuFs5l.jpg",
+       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuAyD4tBgrjLsbXuFs5l.jpg",
     controls=true,
     loop=true,
     muted=true
   %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     PROXX gameplay.
   </figcaption>
 </figure>
@@ -59,25 +58,23 @@ Testing your loading performance on a _real_ device is critical. If you don't ha
 
 That being said, we're going to focus on 2G in this article because PROXX is explicitly targeting feature phones and emerging markets in its target audience. Once WebPageTest has run its test, you get a waterfall (similar to what you see in DevTools) as well as a filmstrip at the top. The film strip shows what your user sees while your app is loading. On 2G, the loading experience of the unoptimized version of PROXX is pretty bad:
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/BXNCRVkyZeVHPWJ9WGcI.mp4",
     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CuprSULvVI7IKyS35eCA.jpg",
     controls=true,
     muted=true,
-    preload="metadata",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    preload="metadata" %}
+  <figcaption>
     The filmstrip video shows what the user sees when PROXX is loading on a real, low-end device over an emulated 2G connection.
   </figcaption>
 </figure>
 
 When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the user sees absolutely nothing for over 8 seconds.** If you read [why performance matters] you know that we have now lost a good portion of our potential users due to impatience. The user needs to download all of the 62 KB of JavaScript for anything to appear on screen. The silver lining in this scenario is that the second anything appears on screen it is also interactive. Or is it?
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CwGKJEpvyPw9UmvJf3su.webp", alt="", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
 
 The [First Meaningful Paint][FMP] in the unoptimized version of PROXX is _technically_ [interactive][TTI] but useless to the user.
 
@@ -93,9 +90,9 @@ Now that we know _what_ the user sees, we need to figure out the _why_. For this
 1. There are multiple, multi-colored thin lines.
 2. JavaScript files form a chain. For example, the second resource only starts loading once the first resource is finished, and the third resource only starts when the second resource is finished.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vcd5JU5MJNr0IHyMMtAU.png", alt="", width="800", height="345" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The waterfall gives insight into which resources are loading when and how long they take.
   </figcaption>
 </figure>
@@ -125,16 +122,14 @@ Looking at the waterfall, we can see that once the first JavaScript file is done
 
 Let's take a look at what our changes have achieved. It's important to not change any other variables in our test setup that could skew the results, so we will be using [WebPageTest's simple setup][wpt simple] for the rest of this article and look at the filmstrip:
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/v76UWV9zidMILuFlLpaX.mp4",
     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjJ410ZPSr99njy4KMoh.jpg",
     controls=true,
     muted=true,
-    preload="metadata",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    preload="metadata" %}
+  <figcaption>
     We use WebPageTest's filmstrip to see what our changes have achieved.
   </figcaption>
 </figure>
@@ -159,16 +154,14 @@ There are many ways to implement a prerenderer. In PROXX we chose to use [Puppet
 
 With this in place, we can expect an improvement for our FMP. We still need to load and execute the same amount of JavaScript as before, so we shouldn't expect TTI to change much. If anything, our `index.html` has gotten bigger and might push back our TTI a bit. There's only one way to find out: running WebPageTest.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4",
     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg",
     controls=true,
     muted=true,
-    preload="metadata",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    preload="metadata" %}
+  <figcaption>
     The filmstrip shows a clear improvement for our FMP metric. TTI is mostly unaffected.
   </figcaption>
 </figure>
@@ -179,9 +172,9 @@ With this in place, we can expect an improvement for our FMP. We still need to l
 
 Another metric that both DevTools and WebPageTest give us is [Time To First Byte (TTFB)][ttfb]. This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J86O71iJ9OPjlginvwrp.svg", alt="", width="800", height="171" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The light section of a request signifies the request is waiting to receive the first byte of the response.
   </figcaption>
 </figure>
@@ -196,16 +189,14 @@ Our critical CSS is already inlined thanks to CSS Modules and our Puppeteer-base
   **Note:** In this step we also subset our font files to contain only the glyphs that we need for our landing page. I am not going to go into detail on this step as it is not easily abstracted and sometimes not even practical. We still load the full font files lazily, but they are not needed for the initial render.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4",
     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg",
     controls=true,
     muted=true,
-    preload="metadata",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    preload="metadata" %}
+  <figcaption>
     With the inlining of our JavaScript we have reduced our TTI from 8.5s to 7.2s.
   </figcaption>
 </figure>
@@ -216,18 +207,18 @@ This shaved 1 second off our TTI. We have now reached the point where our `index
 
 Yes, our `index.html` contains everything that is needed to become interactive. But on closer inspection it turns out it also contains everything else. Our `index.html` is around 43 KB. Let's put that in relation to what the user can interact with at the start: We have a form to configure the game containing a couple of components, a start button and probably some code to persist and load user settings. That's pretty much it. 43 KB seems like a lot.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PDjREt9PrWz9oqayT3CE.webp", alt="", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The landing page of PROXX. Only critical components are used here.
   </figcaption>
 </figure>
 
 To understand where our bundle size is coming from we can use a [source map explorer] or a similar tool to break down what the bundle consists of. As predicted, our bundle contains the game logic, the rendering engine, the win screen, the lose screen and a bunch of utilities. Only a small subset of these modules are needed for the landing page. Moving everything that is not strictly required for interactivity into a lazily-loaded module will decrease TTI _significantly_.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4j3GRcHylDnIuwhH8iKT.svg", alt="", width="700", height="700" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Analyzing the contents of PROXX's `index.html` shows a lot of unneeded resources. Critical resources are highlighted.
   </figcaption>
 </figure>
@@ -277,16 +268,14 @@ return (
 
 With all of this in place, we reduced our `index.html` to a mere 20 KB, less than half of the original size. What effect does this have on FMP and TTI? WebPageTest will tell!
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/byNSMGzFX0aSXRBmI1HM.mp4",
     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d2y6ZrlYkcfHTsmaP4m5.jpg",
     controls=true,
     muted=true,
-    preload="metadata",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    preload="metadata" %}
+  <figcaption>
     The filmstrip confirms: Our TTI is now at 5.4s. A drastic improvement from our original 11s.
   </figcaption>
 </figure>
@@ -334,4 +323,4 @@ Stay tuned for part 2 where we discuss how to optimize runtime performance on hy
 [preact]: /codelab-code-splitting
 [preload]:/preload-critical-assets
 [400mil]: https://www.counterpointresearch.com/more-than-a-billion-feature-phones-to-be-sold-over-next-three-years/
-[ttfb]: /time-to-first-byte
+[ttfb]: /ttfb/

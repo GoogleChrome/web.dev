@@ -40,9 +40,9 @@ Run a [Lighthouse PWA audit](/lighthouse-pwa) on your example app in Chrome DevT
 In the **PWA Optimized** section, Lighthouse reports that the example app [doesn't provide a valid
 Apple touch icon](/apple-touch-icon).
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTeobnXovn2UGJW1lhQ9.png", alt="Does not provide a valid apple-touch-icon", width="800", height="283", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTeobnXovn2UGJW1lhQ9.png", alt="Does not provide a valid apple-touch-icon", width="800", height="283" %}
+  <figcaption>
     The <b>Does not provide a valid apple-touch-icon</b> audit
   </figcaption>
 </figure>
@@ -62,9 +62,9 @@ the example app to your iOS device's home screen when an Apple touch icon hasn't
 Because the site hasn't specified an Apple touch icon, iOS just generates an icon for the site
 from the page's content.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mjkYYf7Fjpm4EwzMJ7Xc.png", alt="An auto-generated home screen icon.", width="640", height="1136", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mjkYYf7Fjpm4EwzMJ7Xc.png", alt="An auto-generated home screen icon.", width="640", height="1136" %}
+  <figcaption>
     An auto-generated home screen icon.
   </figcaption>
 </figure>
@@ -89,9 +89,9 @@ from the page's content.
   the site. If you audit the page again with Lighthouse you'll also see that the
   **Does not provide a valid `apple-touch-icon`** audit now passes.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z8nauimUFUDPY8HJDGER.png", alt="The Apple touch icon.", width="640", height="1136", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z8nauimUFUDPY8HJDGER.png", alt="The Apple touch icon.", width="640", height="1136" %}
+  <figcaption>
     The Apple touch icon.
   </figcaption>
 </figure>

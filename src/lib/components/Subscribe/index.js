@@ -4,7 +4,6 @@
 
 import {BaseElement} from '../BaseElement';
 import {trackError, trackEvent} from '../../analytics';
-import './_styles.scss';
 
 const pTagSelector = '.subscribe__error__message';
 const hiddenClass = 'hidden-yes';
@@ -26,12 +25,12 @@ class Subscribe extends BaseElement {
       'LU: Luxembourg',
       'NO: Norway',
     ];
-    this.robotName = 'is-it-just-me-or-was-this-form-filled-out-by-a-robot';
     this.processing = false;
     this.submitted = false;
     this.onError = this.onError.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
+    window['recaptchaSuccess'] = this.captchaCheck.bind(this);
   }
 
   connectedCallback() {
@@ -45,11 +44,29 @@ class Subscribe extends BaseElement {
     if (!this.submissionUrl) {
       console.warn(`No submission URL found for subscribe element.`);
     }
+    // Prevent `form.submit()` from being called as it bypasses the event listener
+    this.form.submit = () =>
+      this.onError(new Error('Please fill out the form'));
     this.form.addEventListener('submit', this.onSubmit);
   }
 
   detachedCallback() {
     this.form.removeEventListener('submit', this.onSubmit);
+    window['recaptchaSuccess'] = null;
+  }
+
+  /**
+   * Returns captcha passes, displays error if it doesn't.
+   *
+   * @returns {boolean}
+   */
+  captchaCheck() {
+    const token = window.grecaptcha.getResponse();
+    if (token.length === 0) {
+      this.onError(new Error('Please complete the reCAPTCHA.'));
+      return false;
+    }
+    return true;
   }
 
   /**
@@ -63,7 +80,7 @@ class Subscribe extends BaseElement {
     this.checkboxes.forEach((checkbox) =>
       form.set(checkbox, doubleOptIn ? 'Unconfirmed' : 'True'),
     );
-    form.delete(this.robotName);
+    form.delete('g-recaptcha-response');
     return form;
   }
 
@@ -75,7 +92,6 @@ class Subscribe extends BaseElement {
   }
 
   /**
-   *
    * @param {Error} error
    * @param {boolean} useDefault
    */
@@ -99,17 +115,11 @@ class Subscribe extends BaseElement {
 
   onSubmit(e) {
     e.preventDefault();
-    if (this.processing || this.submitted) {
+    if (this.processing || this.submitted || !this.captchaCheck()) {
       return;
     }
     this.processing = true;
     const form = new FormData(e.target);
-    const formIsRobot = String(form.get(this.robotName)).length !== 0;
-
-    if (formIsRobot) {
-      this.onSuccess(true);
-      return;
-    }
     const cleanedForm = this.cleanForm(form);
 
     this.postForm(cleanedForm)
@@ -127,16 +137,13 @@ class Subscribe extends BaseElement {
       .finally(() => (this.processing = false));
   }
 
-  onSuccess(isRobot = false) {
+  onSuccess() {
     this.submitted = true;
     this.subscribeError.classList.toggle(hiddenClass, true);
     this.subscribeError.querySelector(pTagSelector).textContent = '';
     this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    if (isRobot) {
-      return;
-    }
     trackEvent({
       category: 'web.dev',
       action: 'submit',

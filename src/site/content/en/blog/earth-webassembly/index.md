@@ -29,7 +29,7 @@ We originally wrote most of Google Earth in C++ because it was a desktop applica
 
  At the time, NaCl was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we're starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.
 
- {% Img src="image/admin/xZ614l31AdC5L8qd44Kq.webp", alt="A screenshot of Earth showing Eiffel Tower", width="800", height="447", class="w-screenshot" %}
+ {% Img src="image/admin/xZ614l31AdC5L8qd44Kq.webp", alt="A screenshot of Earth showing Eiffel Tower", width="800", height="447" %}
 
 ## A thread on threading
 

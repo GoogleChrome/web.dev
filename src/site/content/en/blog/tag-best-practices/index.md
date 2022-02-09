@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Best practices for tags and tag managers
 subhead: Optimize tags and tag managers for Core Web Vitals.
 hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/aIZgX5qHUBalZz0dUNqN.jpg
@@ -163,7 +163,7 @@ For information on using the injectScript API to convert an existing Custom HTML
 tag, see [Convert an existing
 tag](https://developers.google.com/tag-manager/templates/convert-existing-tag).
 
-If you must you use a Custom HTML tag, here are some things to keep in mind:
+If you must use a Custom HTML tag, here are some things to keep in mind:
 
 
 

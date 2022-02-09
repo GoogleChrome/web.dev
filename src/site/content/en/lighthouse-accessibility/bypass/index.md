@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: The page does not contain a heading, skip link, or landmark region
 description: |
   Learn how to improve your web page's accessibility by making it easy for
@@ -22,8 +22,8 @@ Providing a way to bypass repetitive content makes non-mouse navigation easier.
 
 Lighthouse flags pages that don't provide a way to skip repetitive content:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fJBo4Nbmlks8cj5i2UMJ.png", alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region", width="800", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fJBo4Nbmlks8cj5i2UMJ.png", alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region", width="800", height="185" %}
 </figure>
 
 Lighthouse checks that the page contains at least one of the following:

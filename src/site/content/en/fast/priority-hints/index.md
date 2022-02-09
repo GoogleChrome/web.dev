@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Optimizing resource loading with Priority Hints
 authors:
   - leenasohoni
@@ -22,7 +22,7 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UQ60oFwWrVCPbFYx3pJY.png", alt="A filmstrip view comparing two tests of the Google Flights homepage. At bottom, Priority Hints are used to boost the priority of the hero image, resulting in a 0.7 second decrease in LCP.
-", width="800", height="400", class="w-screenshot" %}
+", width="800", height="400" %}
   <figcaption>Priority Hints improving Largest Contentful Paint from 2.6&nbsp;s to 1.9&nbsp;s in a test of Google Flights</figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ The resource download sequence depends on the browser's assigned priority for ev
 
 The following table considers such factors to show how most resources are currently prioritized and sequenced in Chrome.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -262,7 +262,7 @@ When a priority hint is set on an `iframe`, the priority is applied only to the 
 
 You can apply the `importance` attribute to different resources as shown in the following figure to potentially increase or reduce their computed priority. Importance = `auto` (◉) in each row denotes the default priority for that type of resource.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

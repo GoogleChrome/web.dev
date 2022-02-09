@@ -212,7 +212,7 @@ data. Their input and output are buffers in WebGPU.
 To illustrate the use of compute shaders in WebGPU, we'll play with matrix
 multiplication, a common algorithm in machine learning illustrated below.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/q9PYk219Ykt873iQa0Vc.jpeg", alt="Matrix multiplication diagram", width="800", height="369" %}
   <figcaption>Matrix multiplication diagram</figcaption>
 </figure>
@@ -233,7 +233,7 @@ For the sake of simplicity, matrices will be represented as a list of floating
 point numbers. The first element is the number of rows, the second element the
 number of columns, and the rest is the actual numbers of the matrix.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/IUv15DMl2yDwTGxeJNux.jpeg", alt="Simple representation of a matrix in JavaScript and its equivalent in mathematical notation", width="800", height="158" %}
   <figcaption>Simple representation of a matrix in JavaScript and its equivalent in mathematical notation</figcaption>
 </figure>
@@ -450,7 +450,7 @@ and the latest one "z" is the third dimension that defaults to 1 as we don't
 need it here. In the GPU compute world, encoding a command to execute a kernel
 function on a set of data is called dispatching.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg", alt="Execution in parallel for each result matrix cell", width="800", height="530" %}
   <figcaption>Execution in parallel for each result matrix cell</figcaption>
 </figure>
@@ -512,7 +512,7 @@ Reading the result matrix is as easy as calling `gpuReadBuffer.mapAsync()` with
 the GPU buffer is now mapped. At this point, it is possible to get the mapped
 range with `gpuReadBuffer.getMappedRange()`.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/L4fXrCemYcZ5FwAcmRHH.jpeg", alt="Matrix multiplication result", width="800", height="196" %}  <figcaption>Matrix multiplication result</figcaption>
 </figure>
 

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: The user's focus is directed to new content added to the page
 description: |
   Learn how to make changes in your web app's state understandable to assistive

@@ -1,4 +1,5 @@
 ---
+layou: post
 title: Towards a better responsiveness metric
 subhead: Learn about our thoughts on measuring responsiveness and give us feedback.
 description: Learn about our thoughts on measuring responsiveness and give us feedback.
@@ -195,7 +196,7 @@ dispatched when such user interaction occurs. For instance, when a user scrolls,
 dispatched, but it happens after the screen has been updated to reflect the scrolling, so we don't
 consider it part of the interaction latency.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -494,7 +495,7 @@ const observer = new PerformanceObserver(list => {
     }
   });
 });
-observer.observe({type: "event", minDuration: 16, buffered: true});
+observer.observe({type: "event", durationThreshold: 16, buffered: true});
 // We can report maxTapDragDuration and maxKeyboardDuration when sending
 // metrics to analytics.
 ```

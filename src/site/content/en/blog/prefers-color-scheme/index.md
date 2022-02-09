@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'prefers-color-scheme: Hello darkness, my old friend'
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
 authors:
@@ -35,9 +36,9 @@ if you are only interested in working with dark mode, feel free to
 
 ### Dark mode before _Dark Mode_
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="Green screen computer monitor", width="233", height="175" %}
-  <figcaption class="w-figcaption">Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
+  <figcaption>Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
 </figure>
 
 We have gone full circle with dark mode.
@@ -48,9 +49,9 @@ on a phosphorescent screen and the phosphor used in early CRTs was green.
 Because text was displayed in green and the rest of the screen was black, these models were often referred to as
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
 
-<figure class="w-figure w-figure--inline-left">
+<figure data-float="left">
   {% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="Dark-on-white word processing", width="222", height="175" %}
-  <figcaption class="w-figcaption">Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
+  <figcaption>Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
 The subsequently introduced Color CRTs displayed multiple colors
@@ -60,9 +61,9 @@ With the advent of more sophisticated <abbr title="What You See Is What You Get"
 [desktop publishing](https://en.wikipedia.org/wiki/Desktop_publishing),
 the idea of making the virtual document resemble a physical sheet of paper became popular.
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="Dark-on-white webpage in the WorldWideWeb browser", width="233", height="175" %}
-  <figcaption class="w-figcaption">The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
+  <figcaption>The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
 </figure>
 
 This is where _dark-on-white_ as a design trend started,
@@ -80,9 +81,9 @@ These days, web pages and web apps are typically designed with dark text
 on a light background, a baseline assumption that is also hard-coded in user agent stylesheets, including
 [Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
-<figure class="w-figure w-figure--inline-left">
+<figure data-float="left">
   {% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="Smartphone used while lying in bed", width="262", height="175" %}
-  <figcaption class="w-figcaption">Smartphone used in bed (Source: Unsplash)</figcaption>
+  <figcaption>Smartphone used in bed (Source: Unsplash)</figcaption>
 </figure>
 
 The days of CRTs are long over.
@@ -114,9 +115,9 @@ Read up more on
 [user research regarding why people want dark mode and how they use it](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d).
 {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="CloseView in Mac OS System 7 with \"White on Black\" mode", width="193", height="225" %}
-  <figcaption class="w-figcaption">System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
+  <figcaption>System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
 #### Dark mode as an accessibility tool
@@ -168,7 +169,7 @@ Android case studies that focused on popular Google apps
 like YouTube have shown that the power savings can be up to 60%.
 The video below has more details on these case studies and the power savings per app.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% YouTube id='N_6sPd0Jd3g', startTime='305' %}
 </figure>
 
@@ -177,9 +178,9 @@ The video below has more details on these case studies and the power savings per
 Now that I have covered the background of why dark mode is such a big deal for many users,
 let's review how you can support it.
 
-<figure class="w-figure w-figure--inline-left">
+<figure data-float="left">
   {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings", width="218", height="250" %}
-  <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
+  <figcaption>Android&nbsp;Q dark theme settings</figcaption>
 </figure>
 
 Operating systems that support a dark mode or dark theme
@@ -189,8 +190,6 @@ and on Windows&nbsp;10, it's in the _Colors_ section and called _Choose your col
 For Android&nbsp;Q, you can find it under _Display_ as a _Dark Theme_ toggle switch (<a href="{{ 'image/admin/Yh6SEoWDK1SbqcGjlL6d.png' | imgix }}">screenshot</a>),
 and on iOS&nbsp;13, you can change the _Appearance_ in the _Display &amp; Brightness_
 section of the settings (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>).
-
-<div class="w-clearfix"></div>
 
 ## The `prefers-color-scheme` media query
 
@@ -440,19 +439,19 @@ so that they never compete with resources that are needed by the site right now.
 [why browsers download stylesheets with non-matching media queries](https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513).
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority", width="800", height="417" %}
-  <figcaption class="w-figcaption">Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption>Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority", width="800", height="417" %}
-  <figcaption class="w-figcaption">Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
+  <figcaption>Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority", width="800", height="417" %}
-  <figcaption class="w-figcaption">Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption>Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
 ### Reacting on dark mode changes
@@ -500,7 +499,7 @@ so Chrome DevTools now allows you to emulate the user's preferred color scheme
 in a way that only affects the currently visible tab.
 Open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu), start typing `Rendering`, run the `Show Rendering` command, and then change the **Emulate CSS media feature prefers-color-scheme** option.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="A screenshot of the 'Emulate CSS media feature prefers-color-scheme' option that is located in the Rendering tab of Chrome DevTools", width="800", height="552" %}
 </figure>
 
@@ -535,16 +534,16 @@ has shown that the majority of the surveyed people
 prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as _re-colorization_.
 
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     {% Img src="image/admin/qzzYCKNSwoJr9BBEQlR7.png", alt="Hero image slightly darkened in dark mode.", width="800", height="618" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Hero image slightly darkened in dark mode.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/admin/41RbLRZ5wzkoVnIRJkNl.png", alt="Regular hero image in light mode.", width="800", height="618" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Regular hero image in light mode.
     </figcaption>
   </figure>
@@ -600,16 +599,16 @@ that people don't like inversion for photos, it does work very well for most ico
 Again I use CSS variables to determine the inversion amount
 in the regular and in the [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) state.
 
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     {% Img src="image/admin/JGYFpAPi4233HrEKTQZp.png", alt="Icons are inverted in dark mode.", width="744", height="48" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Icons are inverted in dark mode.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/admin/W8AWbuqWthI6CfFsYunk.png", alt="Regular icons in light mode.", width="744", height="48" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Regular icons in light mode.
     </figcaption>
   </figure>
@@ -763,16 +762,16 @@ The demo below shows the element in action
 ></dark-mode-toggle>
 ```
 
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     {% Img src="image/admin/Xy3uus69HnrkRPO4EuRu.png", alt="<dark-mode-toggle> in light mode.", width="140", height="76" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       <code>&lt;dark-mode-toggle&gt;</code> in light mode.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/admin/glRVRJpQ9hMip6MbqY9N.png", alt="<dark-mode-toggle> in light mode.", width="140", height="76" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       <code>&lt;dark-mode-toggle&gt;</code> in dark mode.
     </figcaption>
   </figure>
@@ -784,7 +783,7 @@ is remembered even when you reload the page.
 This allows your visitors to keep their operating system in dark mode,
 but enjoy your site in light mode or vice versa.
 
-<div class="w-screenshot" style="height: 800px; width: 100%;">
+<div style="height: 800px; width: 100%;">
   {% IFrame {
     allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
     src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html'

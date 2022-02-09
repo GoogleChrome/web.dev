@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web Vitals
 description: 정상적인 사이트를 위한 필수 메트릭
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
@@ -29,7 +29,7 @@ Core Web Vitals는 모든 웹페이지에 적용되는 Web Vitals의 하위 집�
 
 Core Web Vitals를 구성하는 메트릭은 시간이 지남에 따라 [진화](#evolving-web-vitals)합니다. 2020년 현재 세트는 사용자 경험의 세 가지 측면인 *로딩*, *상호 작용*, *시각적 안정성*에 중점을 두고 있으며 다음 메트릭(및 각각의 임계값)을 포함합니다.
 
-<div class="w-stack w-stack--center w-stack--md">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="최대 콘텐츠풀 페인트 권장 임계값", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="최초 입력 지연 권장 임계값", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="누적 레이아웃 이동 권장 임계값", width="400", height="350" %}</div>
+<div class="auto-grid" style="--auto-grid-min-item-size: 200px;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="최대 콘텐츠풀 페인트 권장 임계값", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="최초 입력 지연 권장 임계값", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="누적 레이아웃 이동 권장 임계값", width="400", height="350" %}</div>
 
 - **[Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)](/lcp/)**: *로딩* 성능을 측정합니다. 우수한 사용자 경험을 제공하려면 페이지가 처음으로 로딩된 후 **2.5초** 이내에 LCP가 발생해야 합니다.
 - **[First Input Delay(최초 입력 지연, FID)](/fid/)**: *상호 작용*을 측정합니다. 우수한 사용자 경험을 제공하려면 페이지의 FID가 **100밀리초** 이하여야 합니다.
@@ -49,7 +49,7 @@ Google은 Core Web Vitals가 모든 웹 경험에 필수적이라고 생각하�
 
 [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)는 각 Core Web Vital에 대해 익명으로 실제 사용자 측정 데이터를 수집합니다. 사이트 소유자는 페이지에 대해 분석 도구를 사용할 필요 없이, 이 데이터를 활용해 신속하게 성능을 평가하고 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 및 Search Console의 [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) 같은 도구를 지원할 수 있습니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <td> </td>
@@ -115,7 +115,7 @@ getLCP(sendToAnalytics);
 
 이 확장 프로그램은 귀하의 사이트, 경쟁업체 사이트는 물론 전반적인 웹의 성능을 이해하는 데 도움이 될 수 있습니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -158,7 +158,7 @@ getLCP(sendToAnalytics);
 
 다음 도구를 사용하여 실험실 환경에서 Core Web Vitals를 측정할 수 있습니다.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "[Audit name in fail state]"
 description: |
   Learn how to [fix the problem identified by the audit].
@@ -21,8 +21,8 @@ flags [pages that do the thing the audit checks for]:
   bottom border. The width should match that of the top and bottom borders.
 -->
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="audit-slug.png" alt="Lighthouse audit showing [the problem]">
+<figure>
+  <img src="audit-slug.png" alt="Lighthouse audit showing [the problem]">
 </figure>
 
 Brief explanation of the audit. It may include various elements as needed:

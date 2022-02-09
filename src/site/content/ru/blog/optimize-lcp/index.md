@@ -26,7 +26,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Хорошие значения LCP - 2,5 секунды, низкие значения больше 4,0 секунд, и все, что находится между ними, требует улучшения", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Хорошие значения LCP - 2,5 секунды, низкие значения больше 4,0 секунд, и все, что находится между ними, требует улучшения", width="384", height="96" %}
   </picture>
 
 Наиболее частые причины плохого показателя LCP:
@@ -40,7 +40,7 @@ tags:
 
 Чем дольше браузер получает контент с сервера, тем больше времени требуется для отображения чего-либо на экране. Более быстрое время отклика сервера напрямую улучшает каждую метрику загрузки страницы, включая LCP.
 
-Прежде всего, улучшите то, как и где ваш сервер обрабатывает контент. Используйте метрику [TTFB (Время до первого байта)](/time-to-first-byte), чтобы измерить время ответа сервера. Есть несколько способов улучшить TTFB:
+Прежде всего, улучшите то, как и где ваш сервер обрабатывает контент. Используйте метрику [TTFB (Время до первого байта)](/ttfb/), чтобы измерить время ответа сервера. Есть несколько способов улучшить TTFB:
 
 - оптимизировать  сервер;
 - направлять пользователей в ближайшую CDN (географически распределённую сетевую инфраструктуру);
@@ -77,14 +77,14 @@ tags:
 
 На следующей диаграмме показано, как с помощью этого шаблона было сокращено распределение LCP на сайте:
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/uB0Sm56R88MRF16voQ1k.png",
     alt="Распределения LCP до и после кэширования HTML",
     width="800",
     height="495"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Распределение LCP для страниц, загруженных с сервис-воркером и без него<a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
   </figcaption>
 </figure>
@@ -121,7 +121,7 @@ tags:
 
 ### Использование подписанных обменов (SXG)
 
-[Подписанные обмены (SXG)](https://web.dev/signed-exchanges)это механизм доставки, который позволяет ускорить взаимодействие с пользователем, предоставляя контент в легко кешируемом формате. В частности, [Google Поиск](https://developers.google.com/search/docs/advanced/experience/signed-exchange) будет кешировать, а иногда и предварительно загружать файлы SXG. Для сайтов, которые получают большую часть своего трафика от Поиска Google, SXG могут стать важным инструментом улучшения LCP. Более подробно см. в статье [«Подписанные обмены»](/signed-exchanges).
+[Подписанные обмены (SXG)](/signed-exchanges)это механизм доставки, который позволяет ускорить взаимодействие с пользователем, предоставляя контент в легко кешируемом формате. В частности, [Google Поиск](https://developers.google.com/search/docs/advanced/experience/signed-exchange) будет кешировать, а иногда и предварительно загружать файлы SXG. Для сайтов, которые получают большую часть своего трафика от Поиска Google, SXG могут стать важным инструментом улучшения LCP. Более подробно см. в статье [«Подписанные обмены»](/signed-exchanges).
 
 ## Блокирующие рендеринг JavaScript и CSS {: #render-blocking-resources}
 
@@ -147,14 +147,14 @@ tags:
 - для Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css);
 - для Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter).
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png",
     alt="Пример улучшения LCP: до и после минификации CSS",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Пример улучшения LCP: до и после минификации CSS
   </figcaption>
 </figure>
@@ -181,14 +181,14 @@ tags:
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
     alt="Пример улучшения LCP: до и после отсрочки загрузки некритичного CSS",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Пример улучшения LCP: до и после отсрочки загрузки некритичного CSS
   </figcaption>
 </figure>
@@ -199,14 +199,13 @@ tags:
 
 Встройте любой критический CSS-код, используемый для содержимого верхней части страницы, включив его непосредственно в `<head>.`
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",
     alt="Встроенный критический CSS",
-    width="800", height="325",
-    class="w-screenshot w-screenshot--filled"
+    width="800", height="325"
   %}
-  <figcaption class="w-figcaption">Встроенный критический CSS</figcaption>
+  <figcaption>Встроенный критический CSS</figcaption>
 </figure>
 
 
@@ -217,14 +216,14 @@ tags:
 - [Critical](https://github.com/addyosmani/critical), [CriticalCSS](https://github.com/filamentgroup/criticalCSS) и [Penthouse](https://github.com/pocketjoso/penthouse)всё это пакеты, которые извлекают и встраивают верхнюю часть CSS.
 - [Critters](https://github.com/GoogleChromeLabs/critters)это плагин для веб-пакетов, который встраивает критический CSS и отлаживает загрузку прочего CSS.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/L8sc51bd3ckxwnUfczC4.png",
     alt="Пример улучшения LCP: до и после встраивания критического CSS",
     width="800",
     height="175"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Пример улучшения LCP: до и после встраивания критического CSS
   </figcaption>
 </figure>
@@ -237,9 +236,9 @@ tags:
 
 Этого можно добиться, оптимизируя скрипты несколькими различными способами:
 
-- [выполняйте минификацию и сжатие файлов JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/);
-- [отложите загрузку неиспользуемого JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/);
-- [минимизируйте неиспользуемые полифиллы](https://web.dev/serve-modern-code-to-modern-browsers/).
+- [выполняйте минификацию и сжатие файлов JavaScript](/reduce-network-payloads-using-text-compression/);
+- [отложите загрузку неиспользуемого JavaScript](/reduce-javascript-payloads-with-code-splitting/);
+- [минимизируйте неиспользуемые полифиллы](/serve-modern-code-to-modern-browsers/).
 
 {% Aside %} В статье [«Оптимизация времени ожидания до первого взаимодействия с контентом»](/optimize-fid/) более подробно описаны все методы, необходимые для уменьшения времени блокировки JavaScript. {% endAside %}
 
@@ -265,7 +264,7 @@ tags:
 
 Для многих сайтов изображениясамые крупные элементы, видимые после завершения загрузки страницы. Главные изображения, большие карусели или изображения баннеровтипичные примеры крупных элементов.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png",
     alt="",
@@ -321,14 +320,14 @@ tags:
 2. Если вам нужно внедрить сжатие файлов на сервере, рассмотрите возможность использования Brotli вместо Gzip, поскольку Brotli обеспечивает лучшую степень сжатия.
 3. После того как вы выберите алгоритм сжатия, сжимайте ресурсы заранее в процессе сборки, а не на лету, когда они запрашиваются браузером. Это минимизирует потребление ресурсов сервера и предотвратит задержки при выполнении запросов, особенно при использовании высоких степеней сжатия.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",
     alt="Пример улучшения LCP: до и после сжатия с Brotli",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Пример улучшения LCP: до и после сжатия с Brotli
   </figcaption>
 </figure>
@@ -407,14 +406,14 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 При предварительном рендеринге TTI по-прежнему подвергается негативному воздействию, но время отклика сервера не так сильно ухудшается, как при рендеринге на стороне сервера, которое динамически отображает каждую страницу только после ее запроса.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",
     alt="Пример улучшения LCP: до и после предварительного рендеринга",
     width="800",
     height="139"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Пример улучшения LCP: до и после предварительного рендеринга
   </figcaption>
 </figure>

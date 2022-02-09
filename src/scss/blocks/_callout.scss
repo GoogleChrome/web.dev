@@ -4,7 +4,6 @@
   --repel-vertical-alignment: flex-end;
 
   padding: $global-gutter;
-  max-width: $global-prose-element-max-width;
   border-radius: $global-radius-large;
 
   @include apply-utility('bg', 'mid-bg'); // For if no BG utility is added
@@ -27,6 +26,10 @@
   p {
     --flow-space: 0.2rem;
   }
+}
+
+.callout__links {
+  justify-content: end;
 }
 
 .callout__links [role='list'] {

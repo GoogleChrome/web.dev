@@ -309,7 +309,7 @@ workbox.routing.registerRoute(navigationRoute);
 
 ## Demo
 
-<figure>
+<figure data-size="full">
   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/eJgApjFLpSRFMcMyC4e0.mp4", width="300", autoplay=true, loop=true, muted=true, playsinline=true %}
   <figcaption>Offline page example as seen on www.mainlinemenswear.co.uk.</figcaption>
 </figure>
@@ -336,4 +336,4 @@ To learn more about progressive web apps and how to build them, head to the
 [Progressive Web Apps section](/progressive-web-apps/) on web.dev.
 
 To read more Progressive Web Apps case studies, browse to the
-[case studies section](https://web.dev/tags/case-study/).
+[case studies section](/tags/case-study/).

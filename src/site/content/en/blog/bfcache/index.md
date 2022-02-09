@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Back/forward cache
 subhead: Optimize your pages for instant loads when using the browser's back and forward buttons.
 description: |
@@ -48,8 +49,8 @@ page, only to realize it's not what you wanted and click the back button? In
 that moment, bfcache can make a big difference in how fast the previous page
 loads:
 
-<div class="w-table-wrapper w-table--top-align">
-  <table>
+<div class="table-wrapper">
+  <table data-alignment="top>
     <tr>
       <td width="30%"><strong><em>Without</em> bfcache enabled</strong></td>
       <td>
@@ -429,8 +430,7 @@ DevTools will attempt to navigate away and back to determine whether the page
 could be restored from bfcache.
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/QafTzULUNflaSh77zBgT.png",
-alt="Back-forward cache panel in DevTools", width="800", height="313",
-class="w-screenshot" %}
+alt="Back-forward cache panel in DevTools", width="800", height="313" %}
 
 {% Aside %}
   The Back/forward Cache feature in DevTools is currently in active development.
@@ -443,7 +443,7 @@ If successful, the panel will report "Restored from back-forward cache":
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vPwN0z95ZBTiwZIpdZT4.png",
 alt="DevTools reporting a page was successfully restored from bfcache",
-width="800", height="313", class="w-screenshot" %}
+width="800", height="313" %}
 
 If unsuccessful, the panel will indicate the page was not restored and list the
 reason why. If the reason is something you as a developer can address, that
@@ -451,7 +451,7 @@ will also be indicated:
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/ji3ew4DoP6joKdJvtGwa.png",
 alt="DevTools reporting failure to restore a page from bfcache", width="800",
-height="313", class="w-screenshot" %}
+height="313" %}
 
 In the screenshot above, the use of an `unload` event listener is
 [preventing](/bfcache/#never-use-the-unload-event) the page from being eligible

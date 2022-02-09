@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Una forma más privada de medir las conversiones de anuncios, la API para evaluar conversiones de eventos
 subhead: Una nueva API web disponible como prueba de origen mide cuando un clic en un anuncio genera una conversión, sin usar identificadores de sitios cruzados.
 authors:
@@ -12,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} La API para evaluar conversiones se llamará *API de informes de atribuciones* y ofrecerá más funciones.
+{% Aside 'caution' %} La API para evaluar conversiones se llamará *API de informes de atribuciones* y ofrecerá más funciones.
 
 - Si está experimentando con la ([API para evaluar conversiones](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md)) en [Chrome 91](https://chromestatus.com/features/schedule) y versiones posteriores, lea esta publicación para encontrar más información, casos de uso e instrucciones sobre cómo utilizar la API.
 - Si está interesado en la próxima versión de esta API (Informes de atribuciones), que estará disponible para experimentar en Chrome (prueba de origen), [únase a la lista de correo](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) para recibir actualizaciones sobre los experimentos disponibles.
 
-{% endBanner %}
+{% endAside %}
 
 Para medir la eficacia de las campañas publicitarias, los anunciantes y los editores deben saber cuándo un clic en un anuncio o una visualización genera una [conversión](/digging-into-the-privacy-sandbox/#conversion), como una compra o un registro. Históricamente, esto se ha hecho con **cookies de terceros**. Ahora, la API para evaluar conversiones de eventos permite la correlación de un evento en el sitio web de un editor con una conversión posterior en el sitio de un anunciante sin involucrar mecanismos que se puedan utilizar para reconocer a un usuario en distintos sitios.
 
-{% Banner 'info', 'body' %} **Esta propuesta necesita sus comentarios.** Si tiene comentarios, [cree un problema](https://github.com/WICG/conversion-measurement-api/issues/) en el repositorio de la propuesta de la API. {% endBanner %}
+{% Aside %} **Esta propuesta necesita sus comentarios.** Si tiene comentarios, [cree un problema](https://github.com/WICG/conversion-measurement-api/issues/) en el repositorio de la propuesta de la API. {% endAside %}
 
 {% Aside %} Esta API es parte de Privacy Sandbox, una serie de propuestas para satisfacer los casos de uso de terceros sin cookies de terceros u otros mecanismos de seguimiento entre sitios. Consulte [Profundizar en la zona de pruebas de privacidad](/digging-into-the-privacy-sandbox) para obtener una descripción general de todas las propuestas. {% endAside %}
 
@@ -45,7 +46,7 @@ Para medir la eficacia de las campañas publicitarias, los anunciantes y los edi
 
 Hoy en día, la evaluación las conversiones de los anuncios con frecuencia se basa en [cookies de terceros](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies). **Pero los navegadores están restringiendo el acceso a las mismas.**
 
-Chrome planea [eliminar la compatibilidad con las cookies de terceros](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) y [ofrece a los usuarios formas de bloquearlas si así lo desean](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari [bloquea las cookies de terceros](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [bloquea las cookies de seguimiento conocidas de terceros](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default), y Edge [ofrece prevención de seguimiento](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
+Chrome planea [eliminar la compatibilidad con las cookies de terceros](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) y [ofrece a los usuarios formas de bloquearlas si así lo desean](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari [bloquea las cookies de terceros](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [bloquea las cookies de seguimiento conocidas de terceros](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default), y Edge [ofrece prevención de seguimiento](https://support.microsoft.com/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
 
 Las cookies de terceros se están convirtiendo en una solución heredada. **Están surgiendo nuevas API con diseños específicos**, como esta, para abordar de manera que preserve la privacidad los casos de uso que resolvían las cookies de terceros.
 
@@ -64,7 +65,7 @@ Esta iteración de la API solo admite la **evaluación de conversiones a través
 
 ### Cómo funciona
 
-<figure class="w-figure">{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagrama: descripción general de los pasos de la API para evaluar conversiones", width="800", height="496" %}</figure>
+<figure>{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagrama: descripción general de los pasos de la API para evaluar conversiones", width="800", height="496" %}</figure>
 
 Esta API se puede utilizar con dos tipos de enlaces (`<a>` elementos) utilizados para publicidad:
 
@@ -123,7 +124,7 @@ Veamos un **editor** `news.example` y un **anunciante** `shoes.example`. Los scr
 
 #### Con cookies de terceros
 
-<figure class="w-figure">{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagrama: cómo las cookies de terceros permiten el reconocimiento de usuarios entre sitios", width="800", height="860" %}</figure>
+<figure>{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagrama: cómo las cookies de terceros permiten el reconocimiento de usuarios entre sitios", width="800", height="860" %}</figure>
 
 `adtech.example` basa en una **cookie de terceros que se utiliza como un identificador único entre sitios** para **reconocer a un usuario entre sitios**. Además, `adtech.example` puede acceder a **ambos** datos detallados de clics o visualizaciones y datos detallados de conversiones, y vincularlos.
 
@@ -133,7 +134,7 @@ Dado que `adtech.example` probablemente esté presente en una gran cantidad de s
 
 #### Con la API para evaluar conversiones de eventos
 
-<figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagrama: cómo la API permite evaluar conversiones sin reconocimiento de usuarios entre sitios", width="800", height="643" %} <figcaption class="w-figcaption">"ID de anuncios" en el diagrama de cookies y "ID de clics" son identificadores que permiten la asignación de datos detallados. En este diagrama, se denomina "ID de clics" porque solo es compatible con la evaluación de conversiones a través de clics.</figcaption></figure>
+<figure>{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagrama: cómo la API permite evaluar conversiones sin reconocimiento de usuarios entre sitios", width="800", height="643" %} <figcaption>"ID de anuncios" en el diagrama de cookies y "ID de clics" son identificadores que permiten la asignación de datos detallados. En este diagrama, se denomina "ID de clics" porque solo es compatible con la evaluación de conversiones a través de clics.</figcaption></figure>
 
 `adtech.example` no puede utilizar un identificador entre sitios y, por tanto, **no puede reconocer a un usuario entre sitios**.
 
@@ -160,8 +161,8 @@ Tenga en cuenta que es posible [recuperar el verdadero recuento de conversiones]
 
 Resumen de datos de clics y datos de conversión:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Datos</th>
@@ -197,12 +198,12 @@ Después del vencimiento (tiempo de clic + `impressionexpiry`), no se contabiliz
 
 En Chrome, la programación de informes funciona de la siguiente manera:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
-        <th>Dependiendo del tiempo de conversión, se envía un informe de conversión (si el navegador está abierto) ...</th>
+        <th>Dependiendo del tiempo de conversión, se envía un informe de conversión (si el navegador está abierto)…</th>
         <th>Número de ventanas de informes</th>
       </tr>
     </thead>
@@ -253,19 +254,19 @@ En Chrome, la programación de informes funciona de la siguiente manera:
   </table>
 </div>
 
-<figure class="w-figure">{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Cronología de los informes que se enviaron", width="800", height="462" %}</figure>
+<figure>{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Cronología de los informes que se enviaron", width="800", height="462" %}</figure>
 
 Consulte [Envío de informes programados](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports) para obtener más detalles sobre la sincronización.
 
 ## Ejemplo
 
-{% Banner 'info', 'body' %} Para ver esto en acción, pruebe la [demostración](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ y vea el [código](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement) correspondiente. {% endBanner %}
+{% Aside %} Para ver esto en acción, pruebe la [demostración](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ y vea el [código](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement) correspondiente. {% endAside %}
 
 Así es como la API registra e informa de una conversión. Tenga en cuenta que así es como funcionaría un flujo de conversión a través de un clic con la API actual. Las futuras iteraciones de esta API [pueden ser diferentes](#use-cases).
 
 ### Clic en el anuncio (pasos 1 al 5)
 
-<figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagrama: clics en anuncios y almacenamiento de clics", width="800", height="694" %}</figure>
+<figure>{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagrama: clics en anuncios y almacenamiento de clics", width="800", height="694" %}</figure>
 
 Un elemento publicitario `<a>` se carga en el sitio de un editor mediante `adtech.example` dentro de un iframe.
 
@@ -286,8 +287,8 @@ Los desarrolladores de la plataforma de tecnología para hacer anuncios configur
 
 Este código especifica lo siguiente:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Atributo</th>
@@ -360,7 +361,7 @@ Cuando el usuario pulsa o hace clic en el anuncio, navega al sitio del anunciant
 
 ### Conversión y programación de informes (pasos 6 al 9)
 
-<figure class="w-figure">{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagrama: conversión y programación de informes", width="800", height="639" %}</figure>
+<figure>{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagrama: conversión y programación de informes", width="800", height="639" %}</figure>
 
 Ya sea directamente después de hacer clic en el anuncio o más tarde (por ejemplo, al día siguiente), el usuario visita `advertiser.example` Por ejemplo, busca zapatos deportivos, encuentra un par que desea comprar y procede a pagar. `advertiser.example` incluyó un pixel en la página para realizar pagos:
 
@@ -406,7 +407,7 @@ Para ello, el navegador programa el envío de un **informe de conversión**, un 
 
 ### Envío del informe (pasos 10 y 11)
 
-<figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagrama: navegador enviando el informe", width="800", height="533" %}</figure>
+<figure>{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagrama: navegador enviando el informe", width="800", height="533" %}</figure>
 
 Una vez que se alcanza la hora programada para enviar el informe, el navegador envía el **informe de conversión** : envía un HTTP POST al origen del informe que se especificó en el elemento `<a>` `adtech.example` ). Por ejemplo:
 

@@ -20,4 +20,8 @@ web-subscribe {
   select {
     max-width: unset;
   }
+
+  .g-recaptcha {
+    height: 78px;
+  }
 }

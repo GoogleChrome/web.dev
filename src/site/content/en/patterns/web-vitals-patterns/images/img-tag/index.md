@@ -8,7 +8,7 @@ height: 400
 ---
 
 Setting the `width` and `height` attributes on `<img>` tags helps prevent
-[layout shifts](https://web.dev/debug-layout-shifts/). This information
+[layout shifts](/debug-layout-shifts/). This information
 allows the browser to reserve the correct amount of space for the image.
 
 * **Set the `width` and `height` attributes:** The values of these attributes should

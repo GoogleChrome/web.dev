@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Programming the mini app way
 authors:
   - thomassteiner

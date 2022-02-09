@@ -104,8 +104,8 @@ The first is to have a `<mask>` element inside the SVG and reference the ID of t
 }
 ```
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="An example of using an SVG mask", width="699", height="490", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3HnPhISiVazDTwezxfcy.jpg", alt="An example of using an SVG mask", width="699", height="490" %}
 </figure>
 
 The advantage of this approach is that the mask could be applied to any HTML element, not just an image.

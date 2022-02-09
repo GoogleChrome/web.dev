@@ -1,0 +1,15 @@
+.path__topic {
+  .prose > * {
+    margin-inline: initial;
+  }
+}
+
+.path__toc--item {
+  display: flex;
+  flex-direction: row;
+
+  svg {
+    fill: get-color('core-primary');
+    margin-right: 6px;
+  }
+}

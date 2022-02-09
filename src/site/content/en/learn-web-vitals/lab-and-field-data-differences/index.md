@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Why lab and field data can be different (and what to do about it)
 subhead: |
   Learn why tools that monitor Core Web Vitals metrics may report different numbers, and how to interpret those differences.

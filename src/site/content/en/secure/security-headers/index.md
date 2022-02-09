@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Security headers quick reference
 subhead: Learn more about headers that can keep your site safe and quickly look up the most important details.
 authors:

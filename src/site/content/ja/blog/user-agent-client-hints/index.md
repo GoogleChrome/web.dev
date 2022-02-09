@@ -1,4 +1,5 @@
 ---
+layout: post
 title: User-Agent Client Hints によるユーザーのプライバシーと開発者体験の改善
 subhead: User-Agent Client Hints は Client Hints API に新しく追加された拡張機能であり、プライバシーの保護が担保された、人間工学に基づいた方法を通して開発者がユーザーの使用ブラウザーに関する情報にアクセスできるようにします。
 authors:
@@ -23,7 +24,7 @@ Client Hints を使用することにより、開発者はユーザーの使用�
 
 User-Agent 文字列の解析に依存している既存の機能を更新し、その代替手法として User-Agent Client Hints を使用する方法について説明します。
 
-{% Banner 'caution', 'body' %}すでに User-Agent Client Hints をご利用の場合には、今後の変更にご注意ください。ヘッダーのフォーマットは変更され、`Accept-CH` トークンが返されるヘッダーに正確に一致するようになります。これまでサイトは `Sec-CH-UA-Platform` ヘッダーを受信するために `Accept-CH: UA-Platform` を送信していましたが、現在は `Accept-CH: Sec-CH-UA-Platform` を送信する必要があります。すでに User-Agent Client Hints を実装している場合には、この変更内容が安定版の Chromium で完全にロールアウトされるまでは、両方のフォーマットを送信するようにしてください。詳細については、「[削除の意図: User-Agent Client Hint ACCEPT-CH トークンの名前の変更](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)」を参照してください。{% endBanner %}
+{% Aside 'caution' %}すでに User-Agent Client Hints をご利用の場合には、今後の変更にご注意ください。ヘッダーのフォーマットは変更され、`Accept-CH` トークンが返されるヘッダーに正確に一致するようになります。これまでサイトは `Sec-CH-UA-Platform` ヘッダーを受信するために `Accept-CH: UA-Platform` を送信していましたが、現在は `Accept-CH: Sec-CH-UA-Platform` を送信する必要があります。すでに User-Agent Client Hints を実装している場合には、この変更内容が安定版の Chromium で完全にロールアウトされるまでは、両方のフォーマットを送信するようにしてください。詳細については、「[削除の意図: User-Agent Client Hint ACCEPT-CH トークンの名前の変更](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)」を参照してください。{% endAside %}
 
 ## 背景
 
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### User-Agent レスポンスとリクエスト ヘッダー
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>
