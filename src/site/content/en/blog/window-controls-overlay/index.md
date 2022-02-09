@@ -7,7 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2022-01-25
+updated: 2022-02-08
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -316,6 +316,24 @@ As a reminder, non-supporting browsers will either not consider the
 for example, `"standalone"`.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/1VonSc0jOiOureeSkqtf.png", alt="PWA running in standalone mode with the window controls overlay displayed in the body.", width="800", height="428" %}
+
+## UI considerations
+
+While it may be tempting, creating a classic dropdown menu in the Window Controls Overlay area is not recommended. Doing so would violate the
+[design guidelines on macOS](https://developer.apple.com/design/human-interface-guidelines/macos/menus/menu-bar-menus/),
+a platform on which users expect menu bars (both system-provided ones and
+custom ones) at the top of the screen.
+
+{% Aside %}
+Having a proper App Menu API, similar to [`Menu`](https://www.electronjs.org/docs/latest/api/menu)
+available to Electron.js apps, is tracked as [crbug/1295253](https://crbug.com/1295253).
+{% endAside %}
+
+If your app provides a fullscreen experience, carefully consider whether it makes sense
+for your Window Controls Overlay to be part of the fullscreen view. Potentially you may
+want to rearrange your layout when the
+[`onfullscreenchange`](https://developer.mozilla.org/docs/Web/API/Document/onfullscreenchange)
+event fires.
 
 ## Demo
 
