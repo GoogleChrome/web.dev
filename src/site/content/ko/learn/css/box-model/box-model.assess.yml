@@ -1,0 +1,26 @@
+setLeader: Test your knowledge of box model size impacting properties
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      .my-box {
+        width: 200px;
+        border: 10px solid;
+        padding: 20px;
+      }
+      ```
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How wide do you think `.my-box` will be?
+    options:
+      - content: 200px
+        rationale: |
+          Since the default value for box-sizing is content-box, padding and
+          borders will be added to the width. `200px` would be correct if the 
+          box had `box-sizing: border-box`.
+      - content: 260px
+        rationale: |
+          The default box sizing is content-box, which means padding and 
+          borders are added to the overall box.

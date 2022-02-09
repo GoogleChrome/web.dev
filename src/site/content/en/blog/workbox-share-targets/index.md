@@ -31,9 +31,9 @@ libraries for adding offline support to web apps, to create a share target URL
 that lives entirely inside your [service worker](/service-workers-cache-storage/). This lets static sites and
 single-page apps serve as share targets without a dedicated server endpoint.
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/mp2bdiP2gVeMQ4UX12vd.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     System-level share target picker with an installed PWA called
     <code>Share Target Test</code> as an option.
   </figcaption>

@@ -30,8 +30,8 @@ budgets](/fast#set-performance-budgets). Performance budgets establish
 standards for the performance of your site. More importantly, they make it is
 easy to identify and fix performance regressions before they ship.
 
-<figure class="w-figure">
-  {% Img src="image/admin/b1hw1bMU0dCIqS45XdfW.png", alt="A LightWallet report showing which assets are over the file size budget.", width="800", height="607", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/admin/b1hw1bMU0dCIqS45XdfW.png", alt="A LightWallet report showing which assets are over the file size budget.", width="800", height="607" %}
 </figure>
 
 LightWallet is available in the newest version of the Lighthouse CLI and only
@@ -55,7 +55,7 @@ library but that may soon change. This summer, Chrome will be launching support
 for the [loading](https://addyosmani.com/blog/lazy-loading/) attribute which
 brings standardized `<img>` and `<iframe>` lazy-loading to the web.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5W51sHaRUB0NEuN0MaFh.png", alt="Browser-level lazy-loading highlighting offscreen content being loaded on-demand", width="800", height="450" %}
 </figure>
 
@@ -103,8 +103,8 @@ has been updated to include `font-display` in the default code embeds (as seem
 below). We hope this will encourage more developers to try out this exciting
 addition.
 
-<figure class="w-figure">
-  {% Img src="image/admin/aJqdPp1xobaYRDNx4aJd.png", alt="Google Fonts embed code with font-display included in the URL as a query-parameter", width="800", height="528", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/aJqdPp1xobaYRDNx4aJd.png", alt="Google Fonts embed code with font-display included in the URL as a query-parameter", width="800", height="528" %}
 </figure>
 
 Here's a [demo](https://glitch.com/~truth-bookcase) on Glitch of using display

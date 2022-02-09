@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Повышение конфиденциальности пользователей и удобства разработчиков с помощью расширения User-Agent Client Hints
 subhead:
   User-Agent Client Hintsэто новое расширение API Client Hints, которое
@@ -25,7 +26,7 @@ Client Hints позволяют разработчикам активно зап
 
 Узнайте, как обновить существующий функционал, основанный на анализе строки User-Agent, чтобы вместо этого использовать User-Agent Client Hints.
 
-{% Banner 'caution', 'body' %} Если вы уже используете User-Agent Client Hints, обратите внимание на предстоящие изменения. Формат заголовков меняется, чтобы токены `Accept-CH` точно соответствовали возвращаемым заголовкам. Ранее сайт мог отправлять `Accept-CH: UA-Platform`, чтобы получить заголовок `Sec-CH-UA-Platform`, а теперь сайт должен отправить `Accept-CH: Sec-CH-UA-Platform`.  Если вы уже внедрили расширение User-Agent Client Hints, отправляйте оба формата до тех пор, пока изменение не будет полностью развернуто в стабильной версии Chromium. См. обсуждение [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ). {% endBanner %}
+{% Aside 'caution' %} Если вы уже используете User-Agent Client Hints, обратите внимание на предстоящие изменения. Формат заголовков меняется, чтобы токены `Accept-CH` точно соответствовали возвращаемым заголовкам. Ранее сайт мог отправлять `Accept-CH: UA-Platform`, чтобы получить заголовок `Sec-CH-UA-Platform`, а теперь сайт должен отправить `Accept-CH: Sec-CH-UA-Platform`.  Если вы уже внедрили расширение User-Agent Client Hints, отправляйте оба формата до тех пор, пока изменение не будет полностью развернуто в стабильной версии Chromium. См. обсуждение [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ). {% endAside %}
 
 ## Предыстория
 
@@ -113,11 +114,11 @@ Sec-CH-UA-Mobile: ?0
 ### Ответ User-Agent и заголовки запросов
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

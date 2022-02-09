@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: What are H5 and QuickApp?
 authors:
   - thomassteiner

@@ -53,14 +53,14 @@ Browser behaviour can vary for other border styles too,
 so it's important to test your site in different browsers.
 A common example of this difference is how each browser renders the `dotted` and `dashed`  styles.
 
-<figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ybLca9jmTgUtltTwfIpt.jpg",
-alt="The border demo in Chrome,
-Firefox and Safari which demonstrates the subtle differences
-in how the borders display",
-width="800",
-height="489" %}
-<figcaption class="w-caption">Borders displayed in Chrome, Firefox, and Safari.</figcaption>
+<figure>
+  {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ybLca9jmTgUtltTwfIpt.jpg",
+  alt="The border demo in Chrome,
+  Firefox and Safari which demonstrates the subtle differences
+  in how the borders display",
+  width="800",
+  height="489" %}
+  <figcaption>Borders displayed in Chrome, Firefox, and Safari.</figcaption>
 </figure>
 
 To set border style on each side of your box,

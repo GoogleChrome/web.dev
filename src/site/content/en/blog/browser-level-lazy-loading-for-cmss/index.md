@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Browser-level lazy-loading for CMSs
 subhead: Learnings for adopting the standardized loading attribute
 authors:

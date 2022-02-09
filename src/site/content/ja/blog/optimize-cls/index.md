@@ -26,7 +26,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要", width="384", height="96" %}
 </picture>
 
 
@@ -42,11 +42,11 @@ CLS が低下する要因としては、一般的に以下のものが考えら�
 
 **概要:** 画像要素や動画要素には、必ずサイズ属性 `width` と `height` を指定してください。または、[CSS を駆使したアスペクト比対応ボックス](https://css-tricks.com/aspect-ratio-boxes/)を利用して必要なスペースを確保します。この方法を使用すれば、画像の読み込み中にブラウザーがドキュメント内に適切なスペースを確保できるようになります。
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">width と height が指定されていない画像。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true %} <figcaption>width と height が指定されていない画像。</figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">width と height が指定されている画像。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true %} <figcaption>width と height が指定されている画像。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="画像へのサイズ指定前後での Cumulative Layout Shift の変化を示す Lighthouse レポート", width="800", height="148" %} <figcaption class="w-figcaption">画像へのサイズ指定が CLS に与える影響を示している Lighthouse 6.0 での測定結果。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="画像へのサイズ指定前後での Cumulative Layout Shift の変化を示す Lighthouse レポート", width="800", height="148" %} <figcaption>画像へのサイズ指定が CLS に与える影響を示している Lighthouse 6.0 での測定結果。</figcaption></figure>
 
 ### 歴史
 
@@ -167,11 +167,11 @@ img {
 
 サイトによっては、広告スロットが埋まりそうにない場合に最初に枠を潰してしまうことでレイアウト シフトを抑えられる場合があります。広告配信を自分でコントロールしない限りは、正確なサイズを毎回簡単に選択する方法はありません。
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">十分なスペースが確保されていない広告。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %} <figcaption>十分なスペースが確保されていない広告。</figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">十分なスペースが確保されている広告。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true %} <figcaption>十分なスペースが確保されている広告。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="広告などのバナー用のスペースを確保する前後での Cumulative Layout Shift の変化を示す Lighthouse レポート", width="800", height="148" %} <figcaption class="w-figcaption">バナー用のスペースの確保が CLS に与える影響を示している Lighthouse 6.0 での測定結果</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="広告などのバナー用のスペースを確保する前後での Cumulative Layout Shift の変化を示す Lighthouse レポート", width="800", height="148" %} <figcaption>バナー用のスペースの確保が CLS に与える影響を示している Lighthouse 6.0 での測定結果</figcaption></figure>
 
 #### 広告スロットのスペースを静的に確保する
 
@@ -193,11 +193,11 @@ img {
 
 こういった埋め込み要素は埋め込まれる要素の大きさを事前に把握していない場合が多く (たとえばソーシャル メディアの投稿を埋め込む場合に、画像や動画、複数行に渡るテキストなどがそこに含まれているかどうか)、そのため、埋め込みを提供しているプラットフォームがその埋め込み要素を表示するために十分なスペースを確保できない場合があり、最終的に読み込まれたときにレイアウト シフトが発生してしまう場合があります。
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">スペースを確保せずに埋め込まれる場合。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %} <figcaption>スペースを確保せずに埋め込まれる場合。</figcaption></figure>
 
-  <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">スペースが確保された状態で埋め込まれる場合。</figcaption></figure>
+  <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %} <figcaption>スペースが確保された状態で埋め込まれる場合。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="埋め込み要素のためのスペースを確保する前後での Cumulative Layout Shift の変化を示す Lighthouse レポート", width="800", height="148" %} <figcaption class="w-figcaption">埋め込み要素のためのスペースの確保が CLS に与える影響を示している Lighthouse 6.0 での測定結果</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="埋め込み要素のためのスペースを確保する前後での Cumulative Layout Shift の変化を示す Lighthouse レポート", width="800", height="148" %} <figcaption>埋め込み要素のためのスペースの確保が CLS に与える影響を示している Lighthouse 6.0 での測定結果</figcaption></figure>
 
 これを回避するためには、プレースホルダーやフォールバックを使用して埋め込み要素を表示するために十分なスペースを事前に計算し、CLS を最小限に抑える必要があります。以下に、埋め込みに利用可能なワークフローの 1 つをご紹介します。
 
@@ -222,7 +222,7 @@ img {
 
 - "GDPR に基づく通知"
 
-    <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %} <figcaption class="w-figcaption">スペースが確保されていない動的コンテンツ。</figcaption></figure>
+    <figure>{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %} <figcaption>スペースが確保されていない動的コンテンツ。</figcaption></figure>
 
 このようなタイプの UI アフォーダンスを表示しなければならない場合には、事前にビューポート内に十分なスペースを確保し (たとえば、プレースホルダーやスケルトン UI を使用しましょう)、読み込み時にページ内のコンテンツが大幅に移動してしまわないようにしましょう。
 
@@ -232,7 +232,7 @@ img {
 - 新しいコンテンツの読み込みをユーザーが主導するようにし、ユーザーがコンテンツの変化に驚かされることがないようにします (たとえば、"続きを読む" や "更新" ボタンなどを使用しましょう)。その場合に、ユーザーによる操作の前にコンテンツを事前取得しておくことで、すぐに表示されるようにすることをお勧めします。また、ユーザーが入力を行なってから 500 ミリ秒以内に発生したレイアウト シフトは CLS の対象にならないことを覚えておきましょう。
 - 画面外のコンテンツをシームレスに読み込み、ユーザーに利用可能であることをオーバーレイで通知しましょう (たとえば、"上にスクロール" ボタンなど)。
 
-<figure class="w-figure">{% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="予期しないレイアウト シフトを発生させることなく動的コンテンツを読み込む場合の例 (Twitter と Chloé の Web サイトより)", width="800", height="458" %} <figcaption class="w-figcaption">動的コンテンツを読み込んでも予期しないレイアウト シフトが発生しない場合の例。左: Twitter でのライブ フィード コンテンツの読み込み。右: Chloé の Web サイトでの "Load More" (続きを読む) の例。YNAP チームによる<a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">追加コンテンツを読み込む場合の CLS の最適化方法</a>をご確認ください。</figcaption></figure>
+<figure>{% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="予期しないレイアウト シフトを発生させることなく動的コンテンツを読み込む場合の例 (Twitter と Chloé の Web サイトより)", width="800", height="458" %} <figcaption>動的コンテンツを読み込んでも予期しないレイアウト シフトが発生しない場合の例。左: Twitter でのライブ フィード コンテンツの読み込み。右: Chloé の Web サイトでの "Load More" (続きを読む) の例。YNAP チームによる<a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">追加コンテンツを読み込む場合の CLS の最適化方法</a>をご確認ください。</figcaption></figure>
 
 ### FOIT/FOUT の原因となる Web フォント 📝
 
@@ -271,7 +271,7 @@ CSS プロパティの値が変更されると、ブラウザーがその変更�
 
 DevTools の[パフォーマンス パネル](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)では、Chrome 84 以降 **Experience** (エクスペリエンス) セクションでレイアウト シフトが強調表示されています。`Layout Shift` レコードの **Summary** (概要) ビューでは、Cumulative Layout Shift のスコアに加えて影響を受ける範囲を示す四角形のオーバーレイが表示されます。
 
-<figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience セクションを展開し、Layout Shift レコードが表示されている Chrome DevTools のパフォーマンス パネル", width="800", height="438" %} <figcaption class="w-figcaption">パフォーマンス パネルで新しいトレースを記録すると、結果を示す <b>Experience</b> セクションには <code>Layout Shift</code> レコードを表す赤色のバーが表示されます。レコードをクリックすることで、影響を受ける要素を詳細に確認することができます (例: エントリの Moved from (移動元) や Moved to (移動先) を確認する)。</figcaption></figure>
+<figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience セクションを展開し、Layout Shift レコードが表示されている Chrome DevTools のパフォーマンス パネル", width="800", height="438" %} <figcaption>パフォーマンス パネルで新しいトレースを記録すると、結果を示す <b>Experience</b> セクションには <code>Layout Shift</code> レコードを表す赤色のバーが表示されます。レコードをクリックすることで、影響を受ける要素を詳細に確認することができます (例: エントリの Moved from (移動元) や Moved to (移動先) を確認する)。</figcaption></figure>
 
 また、[Chrome User Experience Report](/chrome-ux-report-bigquery/) を使用し、オリジンレベルで集計される実際の環境での CLS を測定することも可能です。CrUX の CLS データは BigQuery を介して利用することができ、CLS のパフォーマンスを確認するための[サンプル クエリ](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)が利用可能です。
 

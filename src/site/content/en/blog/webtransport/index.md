@@ -1,17 +1,15 @@
 ---
-title: Experimenting with WebTransport
-subhead: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+title: Using WebTransport
+subhead: WebTransport is an API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 authors:
   - jeffposnick
-description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+description: WebTransport is an API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2021-09-29
+updated: 2022-01-21
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
   Photo of fast-moving traffic.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/793759434324049921
 tags:
   - blog
   - capabilities
@@ -19,18 +17,6 @@ tags:
 feedback:
   - api
 ---
-
-{% Aside 'caution' %}
-This proposal continues to change during the origin trial period. There 
-may be a divergence between the browser implementation and the information in this 
-article.
-
-For the latest on this evolving proposal, read the
-[editor's draft of WebTransport](https://w3c.github.io/webtransport/).
-
-Once the proposal stabilizes, we will update this article and associated code
-samples with up to date information.
-{% endAside %}
 
 ## Background
 
@@ -50,7 +36,7 @@ This a small list of possible ways developers might use WebTransport.
 - Receiving media streams pushed from a server with minimal latency, independent of other data streams.
 - Receiving notifications pushed from a server while a web page is open.
 
-As part of the origin trial process, we're interested in [hearing more](#feedback) about how you plan to use WebTransport.
+We're interested in [hearing more](#feedback) about how you plan to use WebTransport.
 
 {% Aside %}
 Many of the concepts in this proposal were previously experimented with as part of the earlier QuicTransport origin trial, which did not end up being released as part of Chrome.
@@ -60,15 +46,15 @@ WebTransport helps with similar use cases as QuicTransport, with the primary dif
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete](https://github.com/w3c/webtransport/blob/main/explainer.md) |
 | 2. Create initial draft of specification   | [Complete](https://w3c.github.io/webtransport/) |
-| **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
-| **4. Origin trial**                        | [**In Progress**](#register-for-ot) |
-| 5. Launch                                  | Not Started |
+| 3. Gather feedback and iterate design      | Complete |
+| 4. Origin trial                            | Complete |
+| 5. **Launch**                              | **Chromium&nbsp;97**
 
 </div>
 
@@ -110,7 +96,7 @@ The best way to experiment with WebTransport is to start up a compatible HTTP/3 
 
 WebTransport was designed on top of modern web platform primitives, like the [Streams API](https://developer.mozilla.org/docs/Web/API/Streams_API). It relies heavily on [promises](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises), and works well with [<code>async</code> and <code>await</code>](https://developer.mozilla.org/docs/Learn/JavaScript/Asynchronous/Async_await).
 
-The WebTransport [origin trial](#register-for-ot) supports three distinct types of traffic: datagrams, as well as both unidirectional and bidirectional streams.
+The current WebTransport implementation in Chromium supports three distinct types of traffic: datagrams, as well as both unidirectional and bidirectional streams.
 
 ### Connecting to a server
 
@@ -285,13 +271,22 @@ A `BidirectionalStream` is just a combination of a `SendStream` and `ReceiveStre
 
 The [WebTransport draft specification](https://wicg.github.io/web-transport/) includes a number of additional inline examples, along with full documentation for all of the methods and properties.
 
-## Enabling support during the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
 ### WebTransport in Chrome's DevTools
 
-Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
+Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) do not currently support WebTransport. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
+
+## Browser support
+
+The WebTransport features described in this article are shipping in Chrome, Edge, and other Chromium-based browsers, starting with
+[version 97](https://chromestatus.com/feature/4854144902889472).
+
+Firefox does not currently have support for WebTransport. Updates on their
+position can be found in this
+[GitHub issue](https://github.com/mozilla/standards-positions/issues/167).
+
+Safari does not currently have support for WebTransport.
+
+As with all features that do not have universal browser support, coding defensively via [feature detection](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection) is a best practice.
 
 ## Privacy and security considerations
 
@@ -299,7 +294,7 @@ See the [corresponding section](https://wicg.github.io/web-transport/#privacy-se
 
 ## Feedback  {: #feedback }
 
-The Chrome team wants to hear your thoughts and experiences using this API throughout the origin trial process.
+The Chrome team wants to hear your thoughts and experiences using this API.
 
 ### Feedback about the API design
 
@@ -317,7 +312,6 @@ File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much de
 
 Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
 
-- Be sure you have signed up for the [origin trial](https://developer.chrome.com/origintrials/#/view_trial/793759434324049921) to show your interest and provide your domain and contact info.
 - Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
   [`#WebTransport`](https://twitter.com/search?q=%23WebTransport&src=typed_query&f=live)
   and details on where and how you're using it.

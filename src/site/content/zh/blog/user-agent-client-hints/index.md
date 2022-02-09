@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 通过用户代理客户端提示改善用户隐私和开发者体验
 subhead: 用户代理客户端提示是客户端提示 API 的新扩展，能够使开发者以保护隐私和符合工效学的方式访问用户的浏览器信息。
 authors:
@@ -23,7 +24,7 @@ feedback:
 
 了解针对依赖于解析用户代理字符串的现有功能的更新方式，进而改为使用用户代理客户端提示。
 
-{% Banner 'caution', 'body' %}如果您已经在使用用户代理客户端提示，请注意即将到来的变更。我们正在对标头格式进行更改，从而使`Accept-CH`令牌与返回头完全匹配。网站在以往可以发送`Accept-CH: UA-Platform`来接收`Sec-CH-UA-Platform`标头，而网站现在应改为发送`Accept-CH: Sec-CH-UA-Platform`。如果您已经实现了用户代理客户端提示，请在这一更改在稳定的 Chromium 中完全推出前发送这两种格式。请参阅[有意向移除：重命名用户代理客户端提示 ACCEPT-CH 令牌](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)来获取更新。{% endBanner %}
+{% Aside 'caution' %}如果您已经在使用用户代理客户端提示，请注意即将到来的变更。我们正在对标头格式进行更改，从而使`Accept-CH`令牌与返回头完全匹配。网站在以往可以发送`Accept-CH: UA-Platform`来接收`Sec-CH-UA-Platform`标头，而网站现在应改为发送`Accept-CH: Sec-CH-UA-Platform`。如果您已经实现了用户代理客户端提示，请在这一更改在稳定的 Chromium 中完全推出前发送这两种格式。请参阅[有意向移除：重命名用户代理客户端提示 ACCEPT-CH 令牌](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)来获取更新。{% endAside %}
 
 ## 背景
 
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### 用户代理响应和请求标头
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

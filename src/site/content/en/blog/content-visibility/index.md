@@ -34,9 +34,9 @@ content is off-screen, leveraging the `content-visibility` property makes the
 initial user load much faster. It also allows for faster interactions with the
 on-screen content. Pretty neat.
 
-<figure class="w-figure">
-  {% Img src="image/admin/v6WcSx9Fq76lCD0iqFCQ.jpg", alt="demo with figures representing network results", width="800", height="554", class="w-screenshot" %}
-  <figcaption class="w-figcaption">In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</figcaption>
+<figure>
+  {% Img src="image/admin/v6WcSx9Fq76lCD0iqFCQ.jpg", alt="demo with figures representing network results", width="800", height="554" %}
+  <figcaption>In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</figcaption>
 </figure>
 
 ## Browser support {: #support }
@@ -113,6 +113,15 @@ As the element approaches the viewport, the browser no longer adds the `size`
 containment and starts painting and hit-testing the element's content. This
 enables the rendering work to be done just in time to be seen by the user.
 
+{% Aside 'caution' %}
+The browser is only able to skip rendering work if you are also careful not to call any DOM API that [forces some of rendering
+to occur](https://gist.github.com/paulirish/5d52fb081b3570c81e3a#file-what-forces-layout-md) on one of the skipped subtrees.
+If you're using `content-visibility` to improve performance, audit your code to make sure these APIs are not getting called.
+To help find them, Chromium will print console messages if you call one of these APIs for a subtree of an
+element with `content-visibility:hidden`. To see the messages, [turn on verbose logging](https://developer.chrome.com/docs/devtools/console/log/).
+{% endAside %}
+
+
 ## A note on accessibility
 
 One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without waiting for it to load or sacrificing rendering performance.
@@ -125,8 +134,8 @@ In Chromium 85-89, off-screen children within `content-visibility: auto` were ma
 
 ## Example: a travel blog {: #example }
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/content-visibility/travel_blog.mp4'>
   </video>
   <figcaption>In this example, we baseline our travel blog on the right, and apply <code>content-visibility: auto</code> to chunked areas on the left. The results show rendering times going from <b>232ms</b> to <b>30ms</b> on initial page load.</figcaption>
@@ -148,9 +157,9 @@ have changed. It updates the style and layout of any new elements, along with
 the elements that may have shifted as a result of new updates. This is rendering
 work. This takes time.
 
-<figure class="w-figure">
-  {% Img src="image/admin/57Zh2hjcXJjJIBSE648j.jpg", alt="A screenshot of a travel blog.", width="800", height="563", class="w-screenshot" %}
-  <figcaption class="w-figcaption">An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a></figcaption>
+<figure>
+  {% Img src="image/admin/57Zh2hjcXJjJIBSE648j.jpg", alt="A screenshot of a travel blog.", width="800", height="563" %}
+  <figcaption>An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a></figcaption>
 </figure>
 
 Now consider what happens if you put `content-visibility: auto` on each of the
@@ -172,9 +181,9 @@ loading. In our example, we see a boost from a **232ms** rendering time to a
 What is the work that you need to do in order to reap these benefits? First, we
 chunk the content into sections:
 
-<figure class="w-figure">
-  {% Img src="image/admin/29uexe2kBwIsrAuILPnp.jpg", alt="An annotated screenshot of chunking content into sections with a CSS class.", width="800", height="563", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a></figcaption>
+<figure>
+  {% Img src="image/admin/29uexe2kBwIsrAuILPnp.jpg", alt="An annotated screenshot of chunking content into sections with a CSS class.", width="800", height="563" %}
+  <figcaption>Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a></figcaption>
 </figure>
 
 Then, we apply the following style rule to the sections:
@@ -210,6 +219,19 @@ an estimate for the height and width of the sections.
 This means it will lay out as if it had a single child of "intrinsic-size"
 dimensions, ensuring that your unsized divs still occupy space.
 `contain-intrinsic-size` acts as a placeholder size in lieu of rendered content.
+
+In Chromium 98 and onward, there is a new [`auto`](https://drafts.csswg.org/css-sizing-4/#valdef-contain-intrinsic-width-auto-length)
+keyword for `contain-intrinsic-size`. When specified, the browser will remember
+the last-rendered size, if any, and use that instead of the developer-provided placeholder
+size. For example, if you specified `contain-intrinsic-size: auto 300px`, the
+element will start out with a `300px` intrinsic sizing in each dimension, but once
+the element's contents are rendered, it will retain the rendered intrinsic size.
+Any subsequent rendering size changes will also be remembered. In practice, this means that if you
+scroll an element with `content-visibilty: auto` applied, and then scroll it back
+offscreen, it will automatically retain its ideal width and height, and not revert
+to the placeholder sizing. This feature is especially useful for infinite scrollers,
+which can now automatically improve sizing estimation over time as the user
+explores the page.
 
 {% Aside %}
 We can use `IntersectionObserver` and `MutationObserver` to set

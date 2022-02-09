@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web Vitals
 description: サイトの健全性を判断するための重要な指標
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
@@ -29,7 +29,7 @@ Core Web Vitals とは、すべての Web ページに適用可能な Web Vitals
 
 Core Web Vitals を構成する指標は、時間の経過とともに[進化](#evolving-web-vitals)しています。2020 年現在のセットでは、ユーザー エクスペリエンスが持つ 3 つの観点 (*読み込み時間*、*インタラクティブ性*、*視覚的な安定性*) に焦点が当てられており、以下の指標 (および各指標のしきい値) が含まれています。
 
-<div class="w-stack w-stack--center w-stack--md">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint のしきい値に関する推奨事項", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay のしきい値に関する推奨事項", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift のしきい値に関する推奨事項", width="400", height="350" %}</div>
+<div class="auto-grid" style="--auto-grid-min-item-size: 200px;">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint のしきい値に関する推奨事項", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay のしきい値に関する推奨事項", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift のしきい値に関する推奨事項", width="400", height="350" %}</div>
 
 - **[Largest Contentful Paint (最大視覚コンテンツの表示時間、LCP)](/lcp/)**: *読み込み*のパフォーマンスを測定するための指標です。優れたユーザー エクスペリエンスを提供するためには、ページの読み込みが開始されてからの LCP を **2.5 秒**以内にする必要があります。
 - **[First Input Delay (初回入力までの遅延時間、FID)](/fid/)**: *インタラクティブ性*を測定するための指標です。優れたユーザー エクスペリエンスを提供するためには、ページの FID を **100 ミリ秒**以下にする必要があります。
@@ -49,7 +49,7 @@ Google では、Core Web Vitals をあらゆる Web エクスペリエンスに�
 
 [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、非特定化された実際のユーザーによる測定データを Core Web Vitals の各指標ごとに収集するツールです。このデータを活用すれば、サイト所有者はページに手動でアナリティクス ツールを設置しなくてもパフォーマンスをすばやく評価できるようになり、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) や Search Console の [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520)などのツールを強化することもできるようになります。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <td> </td>
@@ -115,7 +115,7 @@ getLCP(sendToAnalytics);
 
 この拡張機能は、自身が運営するサイトや競合他社のサイト、そして Web 全体のパフォーマンスを把握する場合に役立ちます。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -158,7 +158,7 @@ Core Web Vitals に関してはフィールド データの測定が何よりも
 
 ラボ環境で Core Web Vitals を測定する場合には、以下のツールが使用可能です。
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

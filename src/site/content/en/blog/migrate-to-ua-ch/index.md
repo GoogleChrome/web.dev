@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Migrate to User-Agent Client Hints
 subhead: |
   Strategies to migrate your site from relying on the user-agent string to the

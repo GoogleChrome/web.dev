@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How to measure search engine optimization with Lighthouse
 authors:
   - ekharvey

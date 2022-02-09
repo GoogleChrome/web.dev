@@ -9,14 +9,14 @@ authors:
   - robdodson
   - jiwoong
 date: 2021-11-03
---- 
-  
-Congratulations! You've made it to the end. 
-So far, you've learned a lot about forms, 
+---
+
+Congratulations! You've made it to the end.
+So far, you've learned a lot about forms,
 and hopefully you feel more comfortable now building your own forms.
 
-What's next? One of the best ways to learn is to try out what you've learned: 
-implement an HTML form of your own. 
+What's next? One of the best ways to learn is to try out what you've learned:
+implement an HTML form of your own.
 To continue to build your HTML forms knowledge, here are some additional resources to explore:
 
 ## Additional resources
@@ -36,4 +36,4 @@ To continue to build your HTML forms knowledge, here are some additional resourc
 
 ## Brought to you by
 
-{% include 'partials/author-stack.njk' %}
+{% include 'partials/authors-stack.njk' %}

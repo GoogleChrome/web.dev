@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Heading elements are not in a sequentially-descending order
 description: |
   Learn how to make sure assistive technology users can easily navigate your
@@ -17,8 +17,8 @@ web_lighthouse:
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages whose headings skip one or more levels:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Lighthouse audit showing headings that skip levels", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Lighthouse audit showing headings that skip levels", width="800", height="206" %}
 </figure>
 
 For example, using an `<h1>` element for your page title

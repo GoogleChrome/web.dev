@@ -36,14 +36,14 @@ Legibility and shorter selector conveniences are only a piece of the value that
 `:is()` and `:where()` bring to CSS. In this post, you'll discover the syntax
 and value of these two functional pseudo selectors.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/mkyjox1HJNL0AgtX25bi.mp4",
     autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     An infinite visual of before and after using <code>:is()</code>
   </figcaption>
 </figure>

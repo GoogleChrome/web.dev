@@ -66,10 +66,10 @@ span the entire system: the client and the server, the development and
 production environments, and they integrate tools such as compiler, bundler,
 linter etc.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/ARzxz7gjVfJRFwdkzQoS.png", alt="Chart that shows
   common tooling in frameworks", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Common tooling used by framework developers
   </figcaption>
 </figure>

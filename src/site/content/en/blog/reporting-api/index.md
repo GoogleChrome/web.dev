@@ -1,12 +1,12 @@
 ---
-layout: post-old
+layout: post
 title: Monitor your web application with the Reporting API
 subhead: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.
 authors:
   - maudn
 date: 2021-10-19
-updated: 2021-10-19
+updated: 2022-01-31
 description: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PEgnzZFQVPhP2PyOnMm8.jpg
@@ -18,15 +18,23 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %} This is an API guide with detailed usage examples for the **Reporting
-API (v1)**, which uses the `Reporting-Endpoints` header. If you're already using the legacy
-Reporting API (`Report-To` header), head over to the [migration post](/reporting-api-migration)
-instead. {% endBanner %}
+{% Aside 'caution' %} This is an API guide with detailed usage examples for the **Reporting
+API (v1)**, which uses the `Reporting-Endpoints` header.
+
+Are you already using the legacy
+Reporting API (`Report-To` header)? Head over to the [migration post](/reporting-api-migration)
+instead.
+
+Are you looking for [Network Error Logging](/network-error-logging/) documentation? Head over to [Network Error logging] instead.
+
+{% endAside %}
 
 Some errors only occur in production. You won't see them locally or during development because
 **real users**, **real networks**, and **real devices** change the game. The Reporting API helps
 catch some of these errors⏤such as security violations or deprecated and soon-to-be-deprecated API
-calls⏤across your site, and transmits them to an endpoint you've specified. It lets you declare what
+calls⏤across your site, and transmits them to an endpoint you've specified.
+
+It lets you declare what
 you'd like to monitor via HTTP headers, and is operated **by the browser**.
 
 Setting up the Reporting API gives you peace of mind that when users experience these types of
@@ -49,9 +57,9 @@ See the Reporting API in action starting from **[Chrome 96](https://chromestatus
 
 ## Overview
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/RgiT3KRy6w99wG1cAhha.png", alt="Diagram summarizing the steps below, from report generation to report access by the developer", width="800", height="240" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     How reports are generated and sent.
   </figcaption>
 </figure>
@@ -156,15 +164,15 @@ Example report
 The Reporting API can be configured to help you monitor many types of interesting warnings or issues
 that happen throughout your site:
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 [Network Error Logging](https://w3c.github.io/network-error-logging/) isn't listed because it isn't
 supported in the new version of the API. Check the [migration
 guide](/reporting-api-migration/#network-error-logging) for details.
 
-{% endBanner %}
+{% endAside %}
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -269,7 +277,7 @@ Example list of reports
 
 Here's the data you can find in each of these reports:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -352,9 +360,9 @@ sent to your endpoint: the formers will, the latters won't.
 
 #### Example with deprecations
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/MG8VyOfB1XDORyBFfoCm.png", alt="If the Reporting-Endpoints header is set up on your page: deprecated API called by third-party scripts running on your page will be reported to your endpoint. Deprecated API called by an iframe embedded in your page will not be reported to your endpoint. A deprecation report will be generated only if the iframe server has set up Reporting-Endpoints, and this report will be sent to whichever endpoint the iframe's server has set up.", width="800", height="280" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     If the Reporting-Endpoints header is set up on your page: deprecated API called by third-party scripts running on your page will be reported to your endpoint. Deprecated API called by an iframe embedded in your page will not be reported to your endpoint. A deprecation report will be generated only if the iframe server has set up Reporting-Endpoints, and this report will be sent to whichever endpoint the iframe's server has set up.
   </figcaption>
 </figure>
@@ -366,7 +374,7 @@ The table below sums up browser support for the **Reporting API v1**, that is wi
 same, except for one report type: Network Error Logging isn't supported in the new Reporting API.
 Read the [migration guide](/reporting-api-migration/#network-error-logging) for details.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -594,11 +602,11 @@ Document-Policy: document-write=?0;report-to=main-endpoint;
 # Deprecation reports don't need an explicit endpoint because these reports are always sent to the default endpoint
 ```
 
-{% Banner 'warning', 'body' %} Getting the `report-to` syntax right can be tricky, because not all policies use
+{% Aside  'warning' %} Getting the `report-to` syntax right can be tricky, because not all policies use
 the same header structure. Depending on the policy, the right syntax may be
 `report-to=main-endpoint` or `report-to main-endpoint`. Head over to the
-[demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples. {%
-endBanner %}
+[demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples.
+{% endAside %}
 
 ### Example code
 
@@ -657,9 +665,9 @@ As of October 2021, this feature is experimental. To use it, follow these steps:
 8. Reload your page. Reports generated by the page DevTools is open in will be listed in Chrome
    DevTools' **Application** panel, under **Reporting API**.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/SW8VwLk0GDY26pclz1RH.png", alt="Screenshot of DevTools listing the reports", width="800", height="566" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Chrome DevTools displays the reports generated on your page and their status.
   </figcaption>
 </figure>
@@ -668,7 +676,7 @@ As of October 2021, this feature is experimental. To use it, follow these steps:
 
 The **Status** column tells you if a report has been successfully sent.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>

@@ -1,4 +1,4 @@
 require('./urls');
+require('./components/Carousel');
 require('./components/LearnFilter');
-require('./components/LighthouseGauge');
 require('./components/ProgressBar');

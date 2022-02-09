@@ -2,6 +2,7 @@
 title: 'CSS Utilities'
 permalink: '/design-system/css-utilities/index.html'
 layout: 'design-system-documentation.njk'
+summary: 'Flexible utilities that solve common UI problems, using the [CUBE CSS utilities principles](https://cube.fyi/utility.html).'
 ---
 
 ## All center

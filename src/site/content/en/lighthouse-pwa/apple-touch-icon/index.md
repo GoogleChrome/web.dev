@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Does not provide a valid apple-touch-icon
 description: |
   Learn how to specify what icon your Progressive Web App displays on iOS home screens.
@@ -24,8 +24,8 @@ user experience.
 flags pages without a `<link rel="apple-touch-icon" href="/example.png">`
 tag in the `<head>`:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="Does not provide a valid apple-touch-icon", width="800", height="95", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mXGs4XSr4DXMxLk536wo.png", alt="Does not provide a valid apple-touch-icon", width="800", height="95" %}
 </figure>
 
 {% Aside %}

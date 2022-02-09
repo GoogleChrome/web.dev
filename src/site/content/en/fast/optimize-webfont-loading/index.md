@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Optimize WebFont loading and rendering
 authors:
   - ilyagrigorik

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Why HTTPS matters
 authors:
   - kaycebasques

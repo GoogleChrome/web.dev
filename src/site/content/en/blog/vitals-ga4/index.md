@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Measure and debug performance with Google Analytics 4 and BigQuery
 subhead: |
   Learn how to send Web Vitals data to Google Analytics 4 properties and export the data for analysis in BigQuery and Data Studio.
@@ -9,7 +9,6 @@ authors:
   - philipwalton
   - mkazi
 date: 2021-05-18
-updated: 2021-05-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: Web Vitals logo
 tags:

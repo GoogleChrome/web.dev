@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Best practices for fonts
 subhead: |
   Optimize web fonts for Core Web Vitals.
@@ -396,7 +396,7 @@ associated web font has not loaded. It is defined per font-face.
 There are five possible values for `font-display`:
 
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
 <table>
 <thead>
   <tr>

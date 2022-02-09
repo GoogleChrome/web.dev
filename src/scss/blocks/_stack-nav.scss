@@ -24,7 +24,8 @@
     }
   }
 
-  a:hover {
+  a:hover,
+  a[aria-selected='true'] {
     @include apply-utility('bg', 'accent-bg');
   }
 

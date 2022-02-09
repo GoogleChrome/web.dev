@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: User focus is not accidentally trapped in a region
 description: |
   Learn how to improve you web page's accessibility for keyboard users by

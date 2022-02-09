@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Improving user privacy and developer experience with User-Agent Client Hints
 subhead:
   User-Agent Client Hints are a new expansion to the Client Hints API, that
@@ -30,11 +31,11 @@ reducing User-Agent string granularity.
 Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 If you are already using User-Agent Client Hints, be aware that since Chrome 90
 the header format has changed so the Accept-CH tokens must exactly match the
 returned headers.
-{% endBanner %}
+{% endAside %}
 
 ## Background
 
@@ -177,11 +178,11 @@ are used for representing lists and booleans.
 ### User-Agent response and request headers
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>
@@ -190,7 +191,8 @@ are used for representing lists and booleans.
 | ------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Sec-CH-UA`                                 | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | List of browser brands and their significant version.                                                                                                                        |
 | `Sec-CH-UA-Mobile`                          | `?1`                                             | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).                                                                             |
-| `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | The complete version for the browser.                                                                                                                                        |
+| `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | [**Deprecated**]The complete version for the browser.                                                                                                                                        |
+| `Sec-CH-UA-Full-Version-List`               | `"Chromium";v="84.0.4143.2",`<br>`"Google Chrome";v="84.0.4143.2"` | List of browser brands and their full version.                                                                                                           |
 | `Sec-CH-UA-Platform`                        | `"Android"`                                      | The platform for the device, usually the operating system (OS).                                                                                                              |
 | `Sec-CH-UA-Platform-Version`                | `"10"`                                           | The version for the platform or OS.                                                                                                                                          |
 | `Sec-CH-UA-Arch`                            | `"arm"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
@@ -224,7 +226,7 @@ asks for the full browser version and the platform.
 
 ```text
 HTTP/1.1 200 OK
-Accept-CH: Sec-CH-UA-Full-Version
+Accept-CH: Sec-CH-UA-Full-Version-List
 ```
 
 ⬆️ _Subsequent requests_<br> The browser grants the server access to the
@@ -235,9 +237,9 @@ requests.
 GET /downloads/app1 HTTP/1.1
 Host: example.site
 
-Sec-CH-UA: "Chromium";v="93", "Google Chrome";v="93", " Not;A Brand";v="99"
+Sec-CH-UA: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
 Sec-CH-UA-Mobile: ?1
-Sec-CH-UA-Full-Version: "93.0.4577.63"
+Sec-CH-UA-Full-Version-List: " Not A;Brand";v="99.0.0.0", "Chromium";v="98.0.4738.0", "Google Chrome";v="98.0.4738.0"
 Sec-CH-UA-Platform: "Android"
 ```
 
@@ -293,16 +295,44 @@ what values, if any, are returned.
 navigator
   .userAgentData.getHighEntropyValues(
     ["architecture", "model", "bitness", "platformVersion",
-     "uaFullVersion"])
+     "fullVersionList"])
   .then(ua => { console.log(ua) });
 
 // output
 {
-  "architecture": "x86",
-  "model": "",
-  "bitness": "64",
-  "platformVersion": "",
-  "uaFullVersion": "93.0.4577.63"
+   "architecture":"x86",
+   "bitness":"64",
+   "brands":[
+      {
+         "brand":" Not A;Brand",
+         "version":"99"
+      },
+      {
+         "brand":"Chromium",
+         "version":"98"
+      },
+      {
+         "brand":"Google Chrome",
+         "version":"98"
+      }
+   ],
+   "fullVersionList":[
+      {
+         "brand":" Not A;Brand",
+         "version":"99.0.0.0"
+      },
+      {
+         "brand":"Chromium",
+         "version":"98.0.4738.0"
+      },
+      {
+         "brand":"Google Chrome",
+         "version":"98.0.4738.0"
+      }
+   ],
+   "mobile":false,
+   "model":"",
+   "platformVersion":"12.0.1"
 }
 ```
 
@@ -325,16 +355,16 @@ That means if the server sends:
 ⬇️ _Response_
 
 ```text
-Accept-CH: Sec-CH-UA-Full-Version
+Accept-CH: Sec-CH-UA-Full-Version-List
 ```
 
-Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests
+Then the browser will send the `Sec-CH-UA-Full-Version-List` header on all requests
 for that site until the browser is closed.
 
 ⬆️ _Subsequent requests_
 
 ```text
-Sec-CH-UA-Full-Version: "93.0.4577.63"
+Sec-CH-UA-Full-Version-List: " Not A;Brand";v="99.0.0.0", "Chromium";v="98.0.4738.0", "Google Chrome";v="98.0.4738.0"
 ```
 
 However, if another `Accept-CH` header is received then that will **completely
@@ -352,7 +382,7 @@ Accept-CH: Sec-CH-UA-Bitness
 Sec-CH-UA-Platform: "64"
 ```
 
-The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
+The previously asked-for `Sec-CH-UA-Full-Version-List` **will not be sent**.
 
 It's best to think of the `Accept-CH` header as specifying the complete set of
 hints desired for that page, meaning the browser then sends the specified hints

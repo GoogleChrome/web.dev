@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Media application basics
 authors:
   - joemedley

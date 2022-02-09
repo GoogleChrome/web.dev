@@ -32,7 +32,7 @@ also apply to other third-party font providers.
   download. This is important because generally browsers will not download font
   files until they know that they are used on the page. In most situations,
   inline font declarations are [preferable to using `preload` to load
-  fonts](https://web.dev/font-best-practices/#avoid-using-preload-to-load-fonts).
+  fonts](/font-best-practices/#avoid-using-preload-to-load-fonts).
 
 * **Preconnect**: The recommended way to load Google Fonts is to use the
   `<link>` tag in conjunction with `preconnect` resource hints. The `preconnect`

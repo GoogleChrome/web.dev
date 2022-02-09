@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How to set up Signed HTTP Exchanges (SXG) using nginx
 subhead: How to generate a TLS certificate with SXG extensions, install tools for generating SXG files, and configure nginx to serve SXG files.
 authors:
@@ -72,9 +72,9 @@ Make sure that:
 - The **Include the CanSignHttpExchanges extension in the certificate** checkbox is enabled,
   which is found under Additional Certificate Options.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kFWTZFXNvwkHnwRu7y8Q.png", alt="", width="718", height="133", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kFWTZFXNvwkHnwRu7y8Q.png", alt="", width="718", height="133" %}
+  <figcaption>
     The <b>Include the CanSignHttpExchanges extension in the certificate</b> checkbox.
   </figcaption>
 </figure>

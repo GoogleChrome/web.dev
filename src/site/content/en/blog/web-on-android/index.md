@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Web on Android
 subhead: How different components can be used to render web content inside Android apps.
 authors:

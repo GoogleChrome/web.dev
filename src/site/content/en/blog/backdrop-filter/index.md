@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Create OS-style backgrounds with backdrop-filter"
 subhead: |
   Blurring and color shifting behind an element.
@@ -21,19 +22,19 @@ feedback:
 ---
 Translucence, blurring, and other effects are useful ways of creating depth while keeping the context of the background content. They support a host of use cases such as frosted glass, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and so on. You may recognize these effects from two popular operating systems: [Windows 10](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) and [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/mEc6bdwB2ZX6VSXvyJEn.jpg", alt="An example of a frosted glass effect.", width="400", height="300" %}
-  <figcaption class="w-figcaption">An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.</figcaption>
+  <figcaption>An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.</figcaption>
 </figure>
 
 Historically, these techniques were difficult to implement on the web, requiring less than perfect [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter). In recent years both [Safari](https://webkit.org/blog/3632/introducing-backdrop-filters/) and Edge have provided these capabilities through the `background-filter` (and alternatively, the `-webkit-backdrop-filter`) property, which dynamically blends foreground and background colors based on filter functions. Now Chrome supports `background-filter`, starting in version 76.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink2.mp4" type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     A demonstration of the filter functions for <code>backdrop-filter</code>. Try the example on <a href="https://codepen.io/robinrendle/pen/LmzLEL" target="_blank" rel="noopener">CodePen</a>.
   </figcaption>
 </figure>
@@ -50,7 +51,7 @@ Historically, these techniques were difficult to implement on the web, requiring
 
 CSS `backdrop-filter` applies one or more effects to an element that is translucent or transparent. To understand that, consider the images below.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'No foreground transparency' %}
 {% Img src="image/admin/LOqxvB3qqVkbZBmxMmKS.png", alt="A triangle superimposed on a circle. The circle can't be seen through the triangle.", width="480", height="283" %}
 
@@ -113,12 +114,12 @@ In the following example, the frosted effect is achieved by combining color and 
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb2.mp4" type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Try this example for yourself in <a href="https://codepen.io/netsi1964/pen/JqBLPK" target="_blank" rel="noopener">CodePen</a>.
   </figcaption>
 </figure>
@@ -135,12 +136,12 @@ Sometimes you'll need multiple filters to achieve the desired effect. To do this
 
 In the following example, each of the four panes has a different combination of backdrop filters while the same set of shapes are animated behind them.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur2.mp4" type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Try this example for yourself in <a href="https://codepen.io/pepf/pen/GqZkdj" target="_blank" rel="noopener">CodePen</a>.
   </figcaption>
 </figure>
@@ -156,12 +157,12 @@ This example shows how to blur a semi-transparent background to make text readab
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal2.mp4" type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Try this <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank" rel="noopener">example</a> for yourself.
   </figcaption>
 </figure>
@@ -183,12 +184,12 @@ As stated earlier, `backdrop-filter` allows performant effects that would be dif
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color2.mp4" type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Try this example from <a href="https://www.chenhuijing.com/#%F0%9F%91%9F">Chen Hui Jing</a> in <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank" rel="noopener">Codrops</a>.
   </figcaption>
 </figure>

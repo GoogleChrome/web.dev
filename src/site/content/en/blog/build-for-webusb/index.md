@@ -1,4 +1,5 @@
 ---
+layou: post
 title: Building a device for WebUSB
 subhead: |
   Build a device to take full advantage of the WebUSB API.
@@ -85,7 +86,7 @@ binary, whichever is more readable. The USB is a little-endian bus and so any
 integer value larger than 1 byte should be sent least-significant byte first.
 {% endAside %}
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th>Value</th>
@@ -387,9 +388,9 @@ descriptors indicating support for WebUSB. For example, you can specify a
 landing page URL that the browser can direct the user to when your device is
 plugged in.
 
-<figure class="w-figure">
-  {% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", class="w-screenshot" %}
-  <figcaption class="w-figcaption">WebUSB notification.</figcaption>
+<figure>
+  {% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450" %}
+  <figcaption>WebUSB notification.</figcaption>
 </figure>
 
 The Binary device Object Store (BOS) is a concept introduced in USB 3.0 but has
@@ -397,7 +398,7 @@ also been backported to USB 2.0 devices as part of version 2.1. Declaring
 support for WebUSB starts with including the following Platform Capability
 Descriptor in the BOS descriptor:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th style="width: 33%">Value</th>
@@ -488,7 +489,7 @@ issue additional requests to the device. The only request currently specified is
 descriptors but are designed to encode URLs in the fewest bytes. A URL
 descriptor for `"https://google.com"` would look like this:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th>Value</th>
@@ -524,7 +525,7 @@ descriptor for `"https://google.com"` would look like this:
 When your device is first plugged in the browser reads the BOS descriptor by
 issuing this standard `GET_DESCRIPTOR` control transfer:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th>bmRequestType</th>
@@ -556,7 +557,7 @@ by issuing a control transfer with the `bRequest` set to the `bVendorCode` value
 from the platform capability descriptor and `wValue` set to the `iLandingPage`
 value. The request code for `GET_URL` (`0x02`) goes in `wIndex`:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th>bmRequestType</th>
@@ -743,7 +744,7 @@ compatibility descriptors as well. First extend the BOS descriptor with this
 additional platform capability descriptor. Make sure to update `wTotalLength`
 and `bNumDeviceCaps` to account for it.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th style="width: 33%">Value</th>
@@ -806,7 +807,7 @@ control transfers related to these descriptors. In this example I've picked
 `0x02`. `0x07`, placed in `wIndex`, is the command to retrieve the Microsoft OS
 2.0 Descriptor Set from the device.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th>bmRequestType</th>
@@ -836,7 +837,7 @@ driver. The registry property descriptor functions similarly to the
 `[Dev_AddReg]` section of the INF example above, setting a registry property to
 assign this function a device interface GUID.
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
     <th style="width: 33%">Value</th>

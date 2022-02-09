@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "Lighthouse accessibility scoring"
 description: |
   Learn how Lighthouse generates the accessibility score for your page.
@@ -23,7 +23,7 @@ More heavily weighted audits have a bigger effect on your score.
 [Manual audits](/lighthouse-accessibility/#additional-items-to-manually-check)
 aren't included in the table because they don't affect your score.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

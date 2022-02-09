@@ -20,14 +20,11 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 const fs = require('fs');
 
-const toc = require('eleventy-plugin-toc');
 const markdown = require('./src/site/_plugins/markdown');
 
-const ArticleNavigation = require('./src/site/_includes/components/ArticleNavigation');
 const Aside = require('./src/site/_includes/components/Aside');
 const Assessment = require('./src/site/_includes/components/Assessment');
 const Author = require('./src/site/_includes/components/Author');
-const AuthorInfo = require('./src/site/_includes/components/AuthorInfo');
 const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
 const Blockquote = require('./src/site/_includes/components/Blockquote');
@@ -67,7 +64,7 @@ const tags = require('./src/site/_collections/tags');
 // Filters
 const consoleDump = require('./src/site/_filters/console-dump');
 const {i18n} = require('./src/site/_filters/i18n');
-const {getRelativePath} = require('./src/site/_filters/urls');
+const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
 const algoliaIndexable = require('./src/site/_filters/algolia-indexable');
@@ -99,10 +96,7 @@ const {minifyHtml} = require('./src/site/_transforms/minify-html');
 
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
-// TODO: We should migrate all of our ToCs over to using this filter which we
-// wrote for d.c.c. Currently we're also using eleventy-plugin-toc on articles
-// but this one seems to work better.
-const {toc: courseToc} = require('webdev-infra/filters/toc');
+const {toc} = require('webdev-infra/filters/toc');
 
 // Creates a global variable for the current __dirname to make including and
 // working with files in the component library a little easier
@@ -120,13 +114,6 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
-  config.addPlugin(toc, {
-    tags: ['h2', 'h3'],
-    wrapper: 'div',
-    wrapperClass: 'w-toc__list',
-    ul: true,
-    flat: false,
-  });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
@@ -171,8 +158,9 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('i18n', i18n);
-  config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('findByUrl', findByUrl);
+  config.addFilter('getDefaultUrl', getDefaultUrl);
+  config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('algoliaIndexable', algoliaIndexable);
   config.addFilter('algoliaItem', algoliaItem);
@@ -195,7 +183,7 @@ module.exports = function (config) {
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
-  config.addFilter('courseToc', courseToc);
+  config.addFilter('toc', toc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
@@ -203,11 +191,9 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // SHORTCODES
   // ----------------------------------------------------------------------------
-  config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
-  config.addShortcode('AuthorInfo', AuthorInfo);
   config.addShortcode('AuthorsDate', AuthorsDate);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);

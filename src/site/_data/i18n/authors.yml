@@ -3351,7 +3351,7 @@ dandclark:
     pt: Desenvolvedor na equipe de plataforma web do Microsoft Edge
     ru: Разработчик в команде веб-платформы Microsoft Edge
     zh: Microsoft Edge 网络平台团队的开发者
-    
+
 cambickel:
   title:
     en: Camden Bickel
@@ -3537,9 +3537,9 @@ bckenny:
     en: Brendan Kenny
   description:
     en: Lighthouse lens polisher
-    
+
 alexandrawhite:
-  title: 
+  title:
     en: Alexandra White
     es: Alexandra White
     ja: Alexandra White
@@ -3557,23 +3557,27 @@ alexandrawhite:
     zh: Google 的技术撰稿人
 
 svenmay:
-  title: 
+  title:
       en: Sven May
   description:
       en: Privacy Web Ecosystem Consultant at Google
 
 denisstasyev:
-  title: 
+  title:
       en: Denis Stasyev
   description:
-      en: Software Engineer 
+      en: Software Engineer
 
 lozandier:
   title:
     en: Kevin Lozandier
   description:
     en: User Experience Engineer on the Google Responsible Innovation team
-    
+mobtec:
+  title:
+    en: Guilherme Moser de Souza
+  description:
+    en: Web Developer
 maurizioparadisi:
   title:
     en: Maurizio Paradisi
@@ -3594,8 +3598,50 @@ maurizioparadisi:
     ru: Последние новости и статьи от Maurizio Paradisi.
     zh: Maurizio Paradisi 撰写我们的最新资讯、动态和故事。
 
+anshusharma:
+  title:
+    en: Anshu Sharma
+  description:
+    en: Head of Engineering at The Economic Times
+
+sumitgugnani:
+  title:
+    en: Sumit Gugnani
+  description:
+    en: Head of Frontend Engineering at The Economic Times
+
+prashantmishra:
+  title:
+    en: Prashant Mishra
+  description:
+    en: Web Ecosystem Consultant at Google
+
+joshuagrossberg:
+  title:
+    en: Joshua Grossberg
+  description:
+    en: Chief Technology Officer of Kapwing
+
 nsull:
   title:
     en: Nicole Sullivan
   description:
     en: Product manager on the Chrome team.
+
+danielasy:
+  title:
+    en: Daniela Sayuri Yassuda
+  description:
+    en: Staff Software Engineer at QuintoAndar
+
+arthursonzogni:
+  title:
+    en: Arthur Sonzogni
+  description:
+    en: Software Engineer at Google
+
+chrispalmer:
+  title:
+    en: Chris Palmer
+  description:
+    en: Software Security Engineer at Google

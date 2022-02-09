@@ -5,8 +5,8 @@ description: Maintains the aspect ratio of an image in a card, while letting you
 date: 2021-11-03
 ---
 
-<figure class='w-figure'>
-  <video controls autoplay loop muted playsinline class='w-screenshot'>
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src='https://storage.googleapis.com/web-dev-assets/one-line-layouts/10-aspectratio.mp4'>
   </video>
 </figure>

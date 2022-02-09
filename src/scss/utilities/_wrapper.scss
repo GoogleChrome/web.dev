@@ -5,7 +5,6 @@
   margin-inline: auto;
   width: 85rem; // For no clamp support
   width: clamp(16rem, 95vw, 85rem);
-  max-width: 100%;
   padding-inline: $global-gutter;
   position: relative;
 }

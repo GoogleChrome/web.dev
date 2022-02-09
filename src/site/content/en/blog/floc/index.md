@@ -196,7 +196,7 @@ browsing history.
 {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="Diagram of the
 'browsing history space' created by a FLoC server, showing multiple segments, each with a cohort
 number.", width="400", height="359" %}
-<figcaption class="w-figcaption">The FLoC service divides up "cohort space" into
+<figcaption>The FLoC service divides up "cohort space" into
 thousands of segments (only a few are shown here).</figcaption>
 </figure>
 
@@ -227,7 +227,7 @@ people's browsers will move into and out of cohorts as their browsing interests 
 'browsing history space' created by a FLoC server, showing multiple segments, each with a cohort
 number. The diagram shows browsers belonging to users Yoshi and Alex moving from one cohort to
 another as their browsing interests change over time.", width="800", height="533" %}
-<figcaption class="w-figcaption">Yoshi's and Alex's browser cohort may change if their interests
+<figcaption>Yoshi's and Alex's browser cohort may change if their interests
 change.</figcaption>
 </figure>
 

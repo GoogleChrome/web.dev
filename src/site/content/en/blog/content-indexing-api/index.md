@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Indexing your offline-capable pages with the Content Indexing API
 subhead: Enabling service workers to tell browsers which pages work offline
 authors:
@@ -50,16 +51,16 @@ the browser. That enhancement is available in Chrome 84 and later.
 Once the index is populated with content from your PWA, as well as any other
 installed PWAs, it will be surfaced by the browser as shown below.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rJF9Cl75c7tcsBL6PQe0.png", alt="A screenshot of the Downloads menu item on Chrome's new tab page.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
-    <figcaption class="w-figcaption">
+<div class="switcher">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rJF9Cl75c7tcsBL6PQe0.png", alt="A screenshot of the Downloads menu item on Chrome's new tab page.", width="800", height="1480" %}
+    <figcaption>
       First, select the <b>Downloads</b> menu item on Chrome's new tab page.
     </figcaption>
   </figure>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VFgYcvSwBjxP0OqOAyoR.png", alt="Media and articles that have been added to the index.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
-    <figcaption class="w-figcaption">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VFgYcvSwBjxP0OqOAyoR.png", alt="Media and articles that have been added to the index.", width="800", height="1480" %}
+    <figcaption>
       Media and articles that have been added to the index will be shown in the
       <b>Articles for You</b> section.
     </figcaption>
@@ -248,8 +249,8 @@ interface with a **Delete** menu item, giving people a chance to indicate that
 they're done viewing previously indexed content. This is how the deletion
 interface looks in Chrome 80:
 
-<figure class="w-figure">
-  {% Img src="image/admin/1t7pdD45CTmo2Gqbdxro.png", alt="The delete menu item.", width="800", height="840", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/1t7pdD45CTmo2Gqbdxro.png", alt="The delete menu item.", width="800", height="840" %}
 </figure>
 
 When someone selects that menu item, your web app's service worker will receive

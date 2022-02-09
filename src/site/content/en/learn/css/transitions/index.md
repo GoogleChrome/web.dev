@@ -136,7 +136,7 @@ The [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) CSS prop
   id: 'GRErowE'
 } %}
 
-Check out [the section on transforms](/learn/css/functions/#transforms) in [our Functions module](https://web.dev/learn/css/functions/).
+Check out [the section on transforms](/learn/css/functions/#transforms) in [our Functions module](/learn/css/functions/).
 
 ### Color
 

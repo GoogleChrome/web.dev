@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-10-18
+updated: 2022-01-24
 tags:
   - blog
   - capabilities
@@ -55,7 +55,7 @@ API to ensure that people can easily manage their files. See the
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                |
 | ---------------------------------------- | --------------------- |
@@ -426,6 +426,25 @@ butDir.addEventListener('click', async () => {
 });
 ```
 
+If you additionally need to access each file via `getFile()` to, for example, obtain the individual
+file sizes, do not use `await` on each result sequentially, but rather process all files in
+parallel, for example, via `Promise.all()`.
+
+```js
+const butDir = document.getElementById('butDirectory');
+butDir.addEventListener('click', async () => {
+  const dirHandle = await window.showDirectoryPicker();
+  const promises = [];
+  for await (const entry of dirHandle.values()) {
+    if (entry.kind !== 'file') {
+      break;
+    }
+    promises.push(entry.getFile().then((file) => `${file.name} (${file.size})`));
+  }
+  console.log(await Promise.all(promises));
+});
+```
+
 ### Creating or accessing files and folders in a directory
 
 From a directory, you can create or access files and folders using the
@@ -467,6 +486,43 @@ await directoryHandle.removeEntry('Abandoned Projects.txt');
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ```
 
+### Deleting a file or folder directly
+
+If you have access to a file or directory handle, call `remove()` on a `FileSystemFileHandle` or
+`FileSystemDirectoryHandle` to remove it.
+
+```js
+// Delete a file.
+await fileHandle.remove();
+// Delete a directory.
+await directoryHandle.remove();
+```
+
+### Renaming and moving files and folders
+
+Files and folders can be renamed or moved to a new location by calling `move()` on the
+`FileSystemHandle` interface. `FileSystemHandle` has the child interfaces `FileSystemFileHandle` and
+`FileSystemDirectoryHandle`. The `move()` method takes one or two parameters. The first can either
+be a string with the new name or a `FileSystemDirectoryHandle` to the destination folder. In the
+latter case, the optional second parameter is a string with the new name, so moving and renaming can
+happen in one step.
+
+```js
+// Rename the file.
+await file.move('new_name');
+// Move the file to a new directory.
+await file.move(directory);
+// Move the file to a new directory and rename it.
+await file.move(directory, 'newer_name');
+```
+
+{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is
+temporarily disabled for folders and moves outside of the
+[origin private file system](#accessing-the-origin-private-file-system). This feature is currently
+only available in the origin private file system to those with the
+[`AccessHandles origin trial`](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625)
+enabled. {% endAside %}
+
 ### Drag and drop integration
 
 The
@@ -478,31 +534,29 @@ with file entries and directory entries respectively. The `DataTransferItem.getA
 method returns a promise with a `FileSystemFileHandle` object if the dragged item is a file, and a
 promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory. The listing
 below shows this in action. Note that the Drag and Drop interface's
-[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
-will be `"file"` for both files _and_ directories, whereas the File System Access API's
+[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind) will be
+`"file"` for both files _and_ directories, whereas the File System Access API's
 [`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
 be `"file"` for files and `"directory"` for directories.
 
-```js/13
+```js
 elem.addEventListener('dragover', (e) => {
   // Prevent navigation.
   e.preventDefault();
 });
 
 elem.addEventListener('drop', async (e) => {
-  // Prevent navigation.
   e.preventDefault();
-  // Process all of the items.
-  for (const item of e.dataTransfer.items) {
-    // Careful: `kind` will be 'file' for both file
-    // _and_ directory entries.
-    if (item.kind === 'file') {
-      const entry = await item.getAsFileSystemHandle();
-      if (entry.kind === 'directory') {
-        handleDirectoryEntry(entry);
-      } else {
-        handleFileEntry(entry);
-      }
+
+  const fileHandlesPromises = [...e.dataTransfer.items]
+    .filter((item) => item.kind === 'file')
+    .map((item) => item.getAsFileSystemHandle());
+
+  for await (const handle of fileHandlesPromises) {
+    if (handle.kind === 'directory') {
+      console.log(`Directory: ${handle.name}`);
+    } else {
+      console.log(`File: ${handle.name}`);
     }
   }
 });
@@ -532,15 +586,14 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 ## Accessing files optimized for performance from the origin private file system
 
-The origin private file system provides optional access to a special kind of file
-that is highly optimized for performance, for example, by offering in-place and exclusive write
-access to a file's content. There is an
+The origin private file system provides optional access to a special kind of file that is highly
+optimized for performance, for example, by offering in-place and exclusive write access to a file's
+content. There is an
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
 in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
 files can be accessed by exposing two new methods as part of the origin private file system:
 `createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
-(synchronous read and write operations) that are both
-exposed on `FileSystemFileHandle`.
+(synchronous read and write operations) that are both exposed on `FileSystemFileHandle`.
 
 ```js
 // Asynchronous access in all contexts:
@@ -582,9 +635,9 @@ control and transparency, and user ergonomics.
 
 ### Opening a file or saving a new file
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BtrU36qfJoC5M9AgRumF.jpg", alt="File picker to open a file for reading", width="800", height="577", linkTo=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A file picker used to open an existing file for reading.
   </figcaption>
 </figure>
@@ -595,11 +648,9 @@ context][secure-contexts]. If users change their minds, they can cancel the sele
 picker and the site does not get access to anything. This is the same behavior as that of the
 `<input type="file">` element.
 
-<div class="w-clearfix"></div>
-
-<figure class="w-figure w-figure--inline-left">
+<figure data-float="left">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577", linkTo=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A file picker used to save a file to disk.
   </figcaption>
 </figure>
@@ -608,8 +659,6 @@ Similarly, when a web app wants to save a new file, the browser will show the sa
 allowing the user to specify the name and location of the new file. Since they are saving a new file
 to the device (versus overwriting an existing file), the file picker grants the app permission to
 write to the file.
-
-<div class="w-clearfix"></div>
 
 #### Restricted folders
 
@@ -624,9 +673,9 @@ A web app cannot modify a file on disk without getting explicit permission from 
 
 #### Permission prompt
 
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", class="w-screenshot", linkTo=true %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", linkTo=true %}
+  <figcaption>
     Prompt shown to users before the browser is granted write
     permission on an existing file.
   </figcaption>
@@ -644,13 +693,11 @@ If the user chooses Cancel, and does not grant write access, the web app cannot 
 local file. It should provide an alternative method to allow the user to save their data, for
 example by providing a way to ["download" the file][download-file], saving data to the cloud, etc.
 
-<div class="w-clearfix"></div>
-
 ### Transparency
 
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", class="w-screenshot", linkTo=true %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", linkTo=true %}
+  <figcaption>
     Omnibox icon indicating the user has granted the website permission to
     save to a local file.
   </figcaption>
@@ -659,8 +706,6 @@ example by providing a way to ["download" the file][download-file], saving data 
 Once a user has granted permission to a web app to save a local file, the browser will show an icon
 in the URL bar. Clicking on the icon opens a pop-over showing the list of files the user has given
 access to. The user can easily revoke that access if they choose.
-
-<div class="w-clearfix"></div>
 
 ### Permission persistence
 

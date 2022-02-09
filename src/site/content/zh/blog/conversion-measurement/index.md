@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 测量广告转化更私密的方式：事件转化测量 API
 subhead: 一个可用作原始试验的全新网络 API，能够测量广告点击时带来的转化，而无需使用跨站标识符。
 authors:
@@ -12,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %} 事件转化测量 API 将更名为*归因报告 API* 并提供更多功能。
+{% Aside 'caution' %} 事件转化测量 API 将更名为*归因报告 API* 并提供更多功能。
 
 - 如果您正在 [Chrome 91](https://chromestatus.com/features/schedule) 及更低版本中尝试使用（[转化测量 API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md)），请阅读本篇博文，了解该 API 使用方式的更多详情、用例和说明。
 - 如果您对即将在 Chrome 中投入实验（原始试验）的该 API 的下一次迭代（归因报告）感兴趣，请[加入邮件列表](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev)获取可用实验的相关更新。
 
-{% endBanner %}
+{% endAside %}
 
 为了测量广告活动的有效性，广告商和发布商需要知道哪些广告点击或查看带来了[转化](/digging-into-the-privacy-sandbox/#conversion)（例如购买或注册）。长久以来，这都是通过**第三方 cookie** 来实现的。现在，事件转化测量 API 能够将发布商网站上的事件与广告商网站上的后续转化相关联，而无需涉及可用于跨站识别用户的机制。
 
-{% Banner 'info', 'body' %} **本提案需要您的反馈！**如果您希望发表意见，请在 API 提案的存储库中[创建问题](https://github.com/WICG/conversion-measurement-api/issues/)。{% endBanner %}
+{% Aside %} **本提案需要您的反馈！**如果您希望发表意见，请在 API 提案的存储库中[创建问题](https://github.com/WICG/conversion-measurement-api/issues/)。{% endAside %}
 
 {% Aside %}该 API 是隐私沙盒的一部分，这是一系列满足第三方用例的提案，同时无需第三方 cookie 或其他跨站跟踪机制。请参阅[深入挖掘隐私沙盒](/digging-into-the-privacy-sandbox)，了解有关全部提案的概述。{% endAside %}
 
@@ -64,7 +65,7 @@ Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromiu
 
 ### 运作方式
 
-<figure class="w-figure">{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="图解：转化测量 API 步骤概览", width="800", height="496" %}</figure>
+<figure>{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="图解：转化测量 API 步骤概览", width="800", height="496" %}</figure>
 
 此 API 可以与两类用于广告的链接（`<a>`元素）一起使用：
 
@@ -123,7 +124,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 #### 使用第三方 cookie
 
-<figure class="w-figure">{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="图解：第三方 cookie 如何实现跨站用户识别", width="800", height="860" %}</figure>
+<figure>{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="图解：第三方 cookie 如何实现跨站用户识别", width="800", height="860" %}</figure>
 
 `adtech.example`依赖一个**第三方 cookie 作为唯一的跨站标识符**来**跨站识别用户**。此外， `adtech.example`可以**同时**访问详细的点击或浏览时间数据以及详细的转化时间数据，并将数据联系起来。
 
@@ -133,7 +134,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 #### 使用事件转化测量 API
 
-<figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="图解：API 如何在避免跨站用户识别的情况下启用转化测量", width="800", height="643" %}<figcaption class="w-figcaption">cookie 图解中的"广告 ID"和"点击 ID"都是可以映射到详细数据的标识符。在这张图解中，标识符被称为"点击 ID"，因为该 API 仅支持点击型转化测量。</figcaption></figure>
+<figure>{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="图解：API 如何在避免跨站用户识别的情况下启用转化测量", width="800", height="643" %}<figcaption>cookie 图解中的"广告 ID"和"点击 ID"都是可以映射到详细数据的标识符。在这张图解中，标识符被称为"点击 ID"，因为该 API 仅支持点击型转化测量。</figcaption></figure>
 
 `adtech.example`无法使用跨站标识符，因此**无法跨站识别用户**。
 
@@ -160,8 +161,8 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 对点击数据和转化数据的总结：
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>数据</th>
@@ -196,8 +197,8 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 在 Chrome 中，报告安排的运作方式如下：
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
@@ -252,19 +253,19 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
   </table>
 </div>
 
-<figure class="w-figure">{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="何时发送什么报告的时间表", width="800", height="462" %}</figure>
+<figure>{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="何时发送什么报告的时间表", width="800", height="462" %}</figure>
 
 请参阅[发送预定报告](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports)了解有关报告时间的更多详情。
 
 ## 示例
 
-{% Banner 'info', 'body' %} 如需查看实际效果，请试用[演示版](https://goo.gle/demo-event-level-conversion-measurement-api)⚡️ 并查看相应的[代码](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)。{% endBanner %}
+{% Aside %} 如需查看实际效果，请试用[演示版](https://goo.gle/demo-event-level-conversion-measurement-api)⚡️ 并查看相应的[代码](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)。{% endAside %}
 
 以下是 API 记录和报告转化的方式。请注意，这是当前 API 的点击转化流程工作方式。此 API 的未来迭代[可能会有所不同](#use-cases)。
 
 ### 广告点击（步骤 1 到 5）
 
-<figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="图解：广告点击和点击存储", width="800", height="694" %}</figure>
+<figure>{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="图解：广告点击和点击存储", width="800", height="694" %}</figure>
 
 一个`<a>`广告元素在 iframe 中由`adtech.example`加载到发布商网站上。
 
@@ -285,8 +286,8 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 此代码指定了以下内容：
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>属性</th>
@@ -359,7 +360,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 ### 转化和报告安排（步骤 6 到 9）
 
-<figure class="w-figure">{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="图解：转化和报告安排", width="800", height="639" %}</figure>
+<figure>{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="图解：转化和报告安排", width="800", height="639" %}</figure>
 
 用户直接在点击广告后或者在点击广告的一段时间后（例如在第二天）访问`advertiser.example`，浏览运动鞋并找到他们想要购买的一双，然后前往结帐。`advertiser.example`已经在结帐页面上包含了一个像素：
 
@@ -405,7 +406,7 @@ app.get('/conversion', (req, res) => {
 
 ### 发送报告（步骤 10 和 11）
 
-<figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="图解：浏览器发送报告", width="800", height="533" %}</figure>
+<figure>{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="图解：浏览器发送报告", width="800", height="533" %}</figure>
 
 一到发送报告的预定时间，浏览器就会发送**转化报告**：浏览器会向`<a>`元素 ( `adtech.example` ) 中指定的报告域发送一个 HTTP POST。例如：
 

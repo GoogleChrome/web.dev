@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2021-09-03
+updated: 2022-01-25
 hero: image/admin/5F89q0kLUOLWvYtNJeWZ.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
@@ -77,12 +77,19 @@ Allow related domain names owned by the same entity to declare themselves as bel
 Provide privacy preserving mechanisms to support a variety of use cases such as view-through-conversion, brand, lift, and reach measurement.
 * [Attribution Reporting](https://github.com/WICG/conversion-measurement-api)<br>
 Provide privacy preserving measurement of clicks and views with event-level and aggregate reports.
-* [FLoC](https://github.com/jkarlin/floc)<br>
-The browser groups together many users with similar browsing histories into a group (or "cohort"). Advertisers can select ads for this large group based on mass observations, but cannot recognize individual people in it.
+* [Topics API](https://github.com/jkarlin/topics)<br>
+Enable interest-based advertising, without having to resort to tracking the sites a user visits. The design of the API was informed by community feedback from our earlier FLoC trials, and supersedes the [FLoC proposal](https://github.com/WICG/floc).
 * [FLEDGE](https://github.com/WICG/turtledove/blob/main/FLEDGE.md)<br>
 Provides a solution for remarketing use cases, designed so it cannot be used by third parties to track user browsing behaviour across sites.
 
 You can dive into the API proposal explainers right away, and over the coming months we'll be publishing posts about each proposal individually.
+
+We'll also be adding to our playlist of five-minute videos that give a simple explanation of each API.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen style="max-width: 100% !important"></iframe>
 
 ## Use cases and goals
 
@@ -130,8 +137,8 @@ Interest-based ad selection currently uses cookies to track user behaviour acros
 * [FLEDGE](https://github.com/WICG/turtledove/blob/main/FLEDGE.md): for **remarketing use cases**.<br> 
 The API is designed so it cannot be used by third parties to track user browsing behaviour: the user's browser, not the advertiser or ad tech platform, stores advertiser-defined interest groups that the user's browser is associated with. The user's browser combines interest group data with ad buyer/seller data and business logic to conduct an "auction" locally on the user's device to select an ad, rather than sharing data with a third party.
 
-* [FLoC](https://github.com/jkarlin/floc): for **interest-based audiences**.<br>
-The API generates clusters of similar people, known as "cohorts". Data is generated locally on the user's browser, not by a third party. The browser shares the generated cohort data, but this cannot be used to identify or track individual users. This enables companies to select ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
+* [Topics API](https://github.com/jkarlin/topics): for **interest-based audiences**.<br>
+Enable interest-based advertising, without having to resort to tracking the sites a user visits. The API proposes using machine learning to infer topics from hostnames, and a JavaScript API that returns coarse-grained topics a user might currently be interested in, based on the hostnames of sites recently visited.
 
 
 ### Combat fingerprinting
@@ -192,7 +199,7 @@ The Privacy Sandbox initiative needs your support. The API proposal [explainers]
 * [Gnatcatcher](https://github.com/bslassey/ip-blindness)
 * [Aggregated Reporting API](https://github.com/csharrison/aggregate-reporting-api)
 * [Conversion measurement](https://github.com/csharrison/conversion-measurement-api)
-* [FLoC](https://github.com/jkarlin/floc)
+* [Topics API](https://github.com/jkarlin/topics)
 * [FLEDGE](https://github.com/WICG/turtledove/blob/main/FLEDGE.md)
 
 [A Potential Privacy Model for the Web](https://github.com/michaelkleber/privacy-model) sets out the core principles underlying the APIs.

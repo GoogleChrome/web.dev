@@ -168,9 +168,9 @@ sensor in detail.
 
 ### Accelerometer and linear acceleration sensor {: #acceleration-and-linear-accelerometer-sensor }
 
- <figure class="w-figure">
+ <figure>
  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Accelerometer sensor measurements
   </figcaption>
 </figure>
@@ -207,9 +207,9 @@ of acceleration along the device's X, Y, and Z axis due to gravity.
 
 ### Gyroscope {: #gyroscope-sensor }
 
- <figure class="w-figure">
+ <figure>
   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true", loop="true", muted="true" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Gyroscope sensor measurements
   </figcaption>
 </figure>
@@ -225,9 +225,9 @@ therefore, might consume more power compared to other sensors.
 
 ### Orientation sensors {: #orientation-sensors }
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Absolute orientation sensor measurements
   </figcaption>
 </figure>
@@ -305,17 +305,17 @@ By default, [spatial sensors'](https://w3c.github.io/sensors/#spatial-sensor) re
 in a local coordinate system that is bound to the device and does not take screen orientation into
 account.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="Device coordinate system", width="800", height="520" %}
-  <figcaption class="w-figcaption">Device coordinate system</figcaption>
+  <figcaption>Device coordinate system</figcaption>
 </figure>
 
 However, many use cases like games or augmented and virtual reality require sensor readings to be
 resolved in a coordinate system that is instead bound to the screen orientation.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="Screen coordinate system", width="800", height="520" %}
-  <figcaption class="w-figcaption">Screen coordinate system</figcaption>
+  <figcaption>Screen coordinate system</figcaption>
 </figure>
 
 Previously, remapping of sensor readings to screen coordinates had to be implemented in JavaScript.
@@ -386,9 +386,9 @@ function initSensor() {
 
 The device's orientation will be reflected in 3D `model` rotation within the WebGL scene.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="Sensor updates 3D model's orientation", width="338", height="368" %}
-  <figcaption class="w-figcaption">Sensor updates orientation of a 3D model</figcaption>
+  <figcaption>Sensor updates orientation of a 3D model</figcaption>
 </figure>
 
 ### Punchmeter
@@ -423,9 +423,9 @@ this.accel.onreading = () => {
 
 The current velocity is calculated as an approximation to the integral of the acceleration function.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="Demo web application for punch speed measurement", width="338", height="347" %}
-  <figcaption class="w-figcaption">Measurement of a punch speed</figcaption>
+  <figcaption>Measurement of a punch speed</figcaption>
 </figure>
 
 ## Debugging and sensor overriding with Chrome DevTools
@@ -434,9 +434,9 @@ In some cases you don't need a physical device to play with the Generic Sensor A
 has great support for
 [simulating device orientation](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Chrome DevTools used to override the custom orientation data of a virtual phone", width="800", height="648" %}
-  <figcaption class="w-figcaption">Simulating device orientation with Chrome DevTools</figcaption>
+  <figcaption>Simulating device orientation with Chrome DevTools</figcaption>
 </figure>
 
 ## Privacy and security {: #privacy-and-security }

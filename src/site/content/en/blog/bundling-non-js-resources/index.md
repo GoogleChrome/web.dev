@@ -72,7 +72,7 @@ new Worker(new URL('./worker.js', import.meta.url));
 
 How does it work? Let's break it up. The `new URL(...)` constructor takes a relative URL as the first argument and resolves it against an absolute URL provided as the second argument. In our case, the second argument is [`import.meta.url`](https://v8.dev/features/modules#import-meta) which gives the URL of the current JavaScript module, so the first argument can be any path relative to it.
 
-It has similar tradeoffs to the [dynamic import](https://v8.dev/features/dynamic-import). While it's possible to use `import(...)` with arbitrary expressions like `import(someUrl)`, the bundlers give special treatment to a pattern with static URL `import('./some-static-url.js')` as a way to preprocess a dependency known at compile-time, yet [split it out into its own chunk](https://web.dev/reduce-javascript-payloads-with-code-splitting/) that's loaded dynamically.
+It has similar tradeoffs to the [dynamic import](https://v8.dev/features/dynamic-import). While it's possible to use `import(...)` with arbitrary expressions like `import(someUrl)`, the bundlers give special treatment to a pattern with static URL `import('./some-static-url.js')` as a way to preprocess a dependency known at compile-time, yet [split it out into its own chunk](/reduce-javascript-payloads-with-code-splitting/) that's loaded dynamically.
 
 Similarly, you can use `new URL(...)` with arbitrary expressions like `new URL(relativeUrl, customAbsoluteBase)`, yet the `new URL('...', import.meta.url)` pattern is a clear signal for bundlers to preprocess and include a dependency alongside the main JavaScript.
 
@@ -125,7 +125,7 @@ $ emcc input.cpp -o output.js -s EXPORT_ES6
 
 When using this option, the output will use the `new URL(..., import.meta.url)` pattern under the hood, so that bundlers can find the associated Wasm file automatically.
 
-You can also use this option with [WebAssembly threads](https://web.dev/webassembly-threads/#c) by adding a `-pthread` flag:
+You can also use this option with [WebAssembly threads](/webassembly-threads/#c) by adding a `-pthread` flag:
 
 ```shell
 $ emcc input.cpp -o output.mjs -pthread
@@ -149,7 +149,7 @@ $ wasm-pack build --target web
 
 The output will use the described `new URL(..., import.meta.url)` pattern, and the Wasm file will be automatically discovered by bundlers as well.
 
-If you want to use WebAssembly threads with Rust, the story is a bit more complicated. Check out the [corresponding section of the guide](https://web.dev/webassembly-threads/#rust) to learn more.
+If you want to use WebAssembly threads with Rust, the story is a bit more complicated. Check out the [corresponding section of the guide](/webassembly-threads/#rust) to learn more.
 
 Short version is that you can't use arbitrary thread APIs, but if you use [Rayon](https://github.com/rayon-rs/rayon), you can combine it with the [wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon) adapter so that it can spawn Workers on the Web. The JavaScript glue used by wasm-bindgen-rayon [also includes](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/blob/4cd0666d2089886d6e8731de2371e7210f848c5d/demo/index.js#L26) the `new URL(...)` pattern under the hood, and so the Workers will be discoverable and included by bundlers as well.
 

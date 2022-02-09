@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Insertable streams for MediaStreamTrack
 subhead: |
   The content of a `MediaStreamTrack` is exposed as a stream that can be manipulated or used to
@@ -54,7 +54,7 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -81,7 +81,7 @@ if ('MediaStreamTrackProcessor' in window && 'MediaStreamTrackGenerator' in wind
 ### Core concepts
 
 Insertable streams for `MediaStreamTrack` builds on concepts previously proposed by
-[WebCodecs](https://web.dev/webcodecs/) and conceptually splits the `MediaStreamTrack` into two
+[WebCodecs](/webcodecs/) and conceptually splits the `MediaStreamTrack` into two
 components:
 
 - The `MediaStreamTrackProcessor`, which consumes a `MediaStreamTrack` object's source and generates

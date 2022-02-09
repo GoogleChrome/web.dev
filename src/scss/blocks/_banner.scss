@@ -23,8 +23,10 @@
   margin-inline-start: auto;
   margin-block-start: auto;
 
-  button {
+  button.button {
     padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
+
+    @include apply-utility('text', 'size-0');
   }
 
   /// Let whatever button element's current hover state happen

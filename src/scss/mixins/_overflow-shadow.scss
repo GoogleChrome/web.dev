@@ -1,0 +1,25 @@
+/// OVERFLOW SHADOW
+/// Presents a shadow for horizontal overflow elements
+/// to show users that there is more content available.
+/// This mixin also applies the bouncy overflow styles.
+/// All you need to pass in is a background color, or it won't conceal
+// the shadow when there is overflow content
+@mixin overflow-shadow($background) {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /// Creates a shadow when there is overflow content to see on both inline sides
+  background: linear-gradient(to right, $background 30%, rgb(255 255 255 / 0%)),
+    linear-gradient(to right, rgb(255 255 255 / 0%), $background 70%) 0 100%,
+    radial-gradient(farthest-side at 0% 50%, rgb(0 0 0 / 20%), rgb(0 0 0 / 0%)),
+    radial-gradient(
+        farthest-side at 100% 50%,
+        rgb(0 0 0 / 20%),
+        rgb(0 0 0 / 0%)
+      )
+      0 100%;
+  background-repeat: no-repeat;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-position: 0 0, 100%, 0 0, 100%;
+  background-attachment: local, local, scroll, scroll;
+} ;

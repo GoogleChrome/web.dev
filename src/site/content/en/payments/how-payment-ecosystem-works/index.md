@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: How the payment ecosystem works
 subhead: |
   Learn more about who is involved in the Web Payments ecosystem, how they interact with each other, and how you can participate.

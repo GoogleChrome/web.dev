@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Control focus with tabindex
 authors:
   - robdodson

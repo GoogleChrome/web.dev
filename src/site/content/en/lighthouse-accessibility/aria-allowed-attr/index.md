@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: "`[aria-*]` attributes do not match their roles"
 description: |
   Learn how to improve your web page's accessibility for assistive technology
@@ -22,8 +22,8 @@ break the role, but it should still be fixed.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags mismatches between ARIA roles and `aria-*` attributes:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvvXT1n2vOJrdhotI58T.png", alt="Lighthouse audit showing an ARIA list role with an unsupported checked attribute", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvvXT1n2vOJrdhotI58T.png", alt="Lighthouse audit showing an ARIA list role with an unsupported checked attribute", width="800", height="206" %}
 </figure>
 
 Lighthouse uses the

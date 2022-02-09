@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Service worker caching and HTTP caching
 subhead: >
   The pros and cons of using consistent or different expiry logic across the service worker

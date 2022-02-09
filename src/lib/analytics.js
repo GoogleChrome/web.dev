@@ -1,4 +1,4 @@
-import {getCLS, getFID, getLCP} from 'web-vitals';
+import {getCLS, getFCP, getFID, getLCP, getTTFB} from 'web-vitals';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -113,6 +113,27 @@ store.subscribe(({isSignedIn}) => {
   ga('set', dimensions.SIGNED_IN, isSignedIn ? '1' : '0');
 });
 
+/**
+ * Add a listener to detect back/forward cache restores and track them
+ * as pageviews with the "bfcache" navigation type set (in case we need
+ * to distinguish them from regular pageviews).
+ * https://web.dev/bfcache/#how-bfcache-affects-analytics-and-performance-measurement
+ */
+window.addEventListener(
+  'pageshow',
+  /**
+   * @param {PageTransitionEvent} e
+   */
+  (e) => {
+    if (e.persisted) {
+      ga('set', dimensions.NAVIGATION_TYPE, 'bfcache');
+      ga('send', 'pageview');
+    }
+  },
+);
+
 getCLS(sendToGoogleAnalytics);
+getFCP(sendToGoogleAnalytics);
 getFID(sendToGoogleAnalytics);
 getLCP(sendToGoogleAnalytics);
+getTTFB(sendToGoogleAnalytics);

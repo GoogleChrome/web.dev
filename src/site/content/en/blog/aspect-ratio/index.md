@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'New aspect-ratio CSS property supported in Chromium, Safari Technology Preview, and Firefox Nightly'
 subhead: The new CSS property that helps maintain spacing in responsive layouts.
 authors:
@@ -30,9 +31,9 @@ Aspect ratio is most commonly expressed as two integers and a colon in the dimen
 width:height, or x:y. The most common aspect ratios for photography are 4:3 and 3:2, while video,
 and more recent consumer cameras, tend to have a 16:9 aspect ratio.
 
-<figure class="w-figure">
-  {% Img src="image/admin/od54hUUe21UABpbWxSFG.jpg", alt="Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.", width="800", height="526", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.</figcaption>
+<figure>
+  {% Img src="image/admin/od54hUUe21UABpbWxSFG.jpg", alt="Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.", width="800", height="526" %}
+  <figcaption>Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.</figcaption>
 </figure>
 
 With the advent of responsive design, maintaining aspect ratio has been increasingly important for
@@ -56,9 +57,9 @@ Defining an aspect ratio helps us with sizing media in a responsive context. Ano
 bucket is the `object-fit` property, which enables users to describe how an object (such an as image)
 within a block should fill that block:
 
-<figure class="w-figure">
-  {% Img src="image/admin/A7uj6u5MULodlw4lVsI2.jpg", alt="Object-fit demo visualization", width="800", height="236", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Showcasing various <code>object-fit</code> values. See <a href="https://codepen.io/una/pen/mdrLGjR">demo on Codepen</a>.</figcaption>
+<figure>
+  {% Img src="image/admin/A7uj6u5MULodlw4lVsI2.jpg", alt="Object-fit demo visualization", width="800", height="236" %}
+  <figcaption>Showcasing various <code>object-fit</code> values. See <a href="https://codepen.io/una/pen/mdrLGjR">demo on Codepen</a>.</figcaption>
 </figure>
 
 The `initial` and `fill` values re-adjust the image to fill the space. In our example, this causes
@@ -80,9 +81,9 @@ varying sizes that fit the UI space without cropping.
 
 ## The old hack: maintaining aspect ratio with `padding-top`
 
-<figure class="w-figure">
-  {% Img src="image/admin/j3YJicINXjly349uEEUt.jpg", alt="Using padding-top to set a 1:1 aspect ratio on post preview images within a carousel.", width="800", height="296", class="w-screenshot" %}
-  <figcaption class="w-figcaption"> Using <code>padding-top</code> to set a 1:1 aspect ratio on post preview images within a carousel.</figcaption>
+<figure>
+  {% Img src="image/admin/j3YJicINXjly349uEEUt.jpg", alt="Using padding-top to set a 1:1 aspect ratio on post preview images within a carousel.", width="800", height="296" %}
+  <figcaption> Using <code>padding-top</code> to set a 1:1 aspect ratio on post preview images within a carousel.</figcaption>
 </figure>
 
 In order to make these more responsive, we can use aspect ratio. This allows for us to set a
@@ -124,9 +125,9 @@ We could then write the following CSS:
 
 ## Maintaining aspect ratio with `aspect-ratio`
 
-<figure class="w-figure">
-  {% Img src="image/admin/XT8PbPiYx1IJq3Pvmanz.jpg", alt="Using aspect-ratio to set a 1:1 aspect ratio on post preview images within a carousel.", width="800", height="296", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Using <code>aspect-ratio</code> to set a 1:1 aspect ratio on post preview images within a carousel.</figcaption>
+<figure>
+  {% Img src="image/admin/XT8PbPiYx1IJq3Pvmanz.jpg", alt="Using aspect-ratio to set a 1:1 aspect ratio on post preview images within a carousel.", width="800", height="296" %}
+  <figcaption>Using <code>aspect-ratio</code> to set a 1:1 aspect ratio on post preview images within a carousel.</figcaption>
 </figure>
 
 Unfortunately, calculating these `padding-top` values is not very intuitive, and requires some
@@ -137,7 +138,7 @@ ratios is much more clear.
 With the same markup, we can replace: `padding-top: 56.25%` with `aspect-ratio: 16 / 9`, setting
 `aspect-ratio` to a specified ratio of `width` / `height`.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Using padding-top' %}
 ```css
 .container {
@@ -196,11 +197,11 @@ with children that you want to maintain a 1:1 aspect ratio, such as a grid of sp
 }
 ```
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/gridimages2.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Images in a grid with their parent element at various aspect ratio dimensions. <a href="https://codepen.io/una/pen/PoGddaw">See demo on Codepen.</a>
   </figcaption>
 </figure>
@@ -212,11 +213,11 @@ Another great feature of `aspect-ratio` is that it can create placeholder space 
 example, loading an asset from an API such as [Unsplash](https://source.unsplash.com/) creates a
 layout shift when the media is finished loading.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/aspect-ratio-missing.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Video of cumulative layout shift that happens when no aspect ratio is set on a loaded asset. This video is recorded with an emulated 3G network.
   </figcaption>
 </figure>
@@ -230,11 +231,11 @@ img {
 }
 ```
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/aspect-ratio-set.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Video with a set aspect ratio is set on a loaded asset. This video is recorded with an emulated 3G network. <a href="https://codepen.io/una/pen/GRjLZmG">See demo on Codepen.</a>
   </figcaption>
 </figure>

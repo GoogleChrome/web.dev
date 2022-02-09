@@ -148,16 +148,16 @@ or <kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> on Mac). Chr
 all notification events, including scheduled, displayed, and closed notifications, for three days,
 even when DevTools is closed.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Fcyc3iFPdNexgqh1peA8.png", alt="A scheduled notification event was logged to the Notifications pane of Chrome DevTools, which is located in the Application panel.", width="800", height="247" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     A scheduled notification.
   </figcaption>
 </figure>
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7Sj2NxYKbSXv4P894aLh.png", alt="A displayed notification event was logged to the Notifications pane of Chrome DevTools.", width="800", height="247" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     A displayed notification.
   </figcaption>
 </figure>
@@ -168,9 +168,9 @@ You can see Notification Triggers in action in the [demo][demo], which allows yo
 notifications, list scheduled notifications, and cancel them. The source code is available on
 [Glitch][demo-source].
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img src="image/admin/WVlem3Tf2GEEFwNVA2L1.png", alt="A screenshot of the Notification Triggers demo web app.", width="800", height="525" %}
-  <figcaption class="w-figcaption">The Notification Triggers <a href="https://notification-triggers.glitch.me/">demo</a>.</figcaption>
+  <figcaption>The Notification Triggers <a href="https://notification-triggers.glitch.me/">demo</a>.</figcaption>
 </figure>
 
 ## Security and permissions

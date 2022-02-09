@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Monitor your web page's total memory usage with `measureUserAgentSpecificMemory()`
 subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
@@ -21,7 +22,7 @@ feedback:
   - api
 ---
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
 
 **Updates**
 
@@ -31,7 +32,7 @@ feedback:
 and enabled by default in Chrome 89 for [cross-origin isolated](/coop-coep) web pages.
 The format of the result also [has changed](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)
 slightly compared to the Origin Trial version.
-{% endBanner %}
+{% endAside %}
 
 Browsers manage the memory of web pages automatically. Whenever a web page
 creates an object, the browser allocates a chunk of memory "under the hood" to
@@ -106,7 +107,7 @@ results for the same browser.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 <table>
     <thead>
       <tr>

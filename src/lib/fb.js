@@ -18,7 +18,19 @@ import {clearSignedInState} from './actions';
 
 import {trackError} from './analytics';
 
-function initialize() {
+let isInitialized = false;
+
+export function initialize() {
+  // Initialization is run lazily (only when clicking signIn or signOut)
+  // because not all pages use the sign-in components, and the Firebase
+  // auth code creates a connection to an IndexedDB database that it doesn't
+  // close, preventing any pages that run the code form being eligible for
+  // bfcache in Chrome (which hurts performance).
+  // See: https://github.com/GoogleChrome/web.dev/pull/7155/
+  if (isInitialized) {
+    return;
+  }
+
   initializeApp(firebaseConfig);
 
   let firestoreUserUnsubscribe = () => {};
@@ -114,6 +126,8 @@ function initialize() {
       };
     })();
   });
+
+  isInitialized = true;
 }
 
 /**
@@ -195,6 +209,8 @@ export async function saveUserUrl(url, auditedOn = null) {
 export async function signIn() {
   let user = null;
   try {
+    // Run the initialization code (if it hasn't already been initialized).
+    initialize();
     const provider = new GoogleAuthProvider();
     const res = await signInWithPopup(getAuth(), provider);
     user = res.user;
@@ -211,11 +227,11 @@ export async function signIn() {
  */
 export async function signOut() {
   try {
+    // Run the initialization code (if it hasn't already been initialized).
+    initialize();
     await authSignOut(getAuth());
   } catch (err) {
     console.error('signOut error', err);
     trackError(err, 'signOut');
   }
 }
-
-initialize();

@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Reduce the impact of third-party code
 description: |
   Learn how third-party code, like advertising networks and analytics services, affects page load performance,
@@ -19,8 +19,8 @@ significantly affect your page load performance](/third-party-javascript/).
 Lighthouse flags pages that have third-party code that blocks the [main thread] for 250&nbsp;ms or
 longer:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Q7GdvYGsSGwIjdWvNhTE.png", alt="A screenshot of the Lighthouse Reduce the impact of third-party code audit", width="800", height="481", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Q7GdvYGsSGwIjdWvNhTE.png", alt="A screenshot of the Lighthouse Reduce the impact of third-party code audit", width="800", height="481" %}
 </figure>
 
 A third-party script is any script hosted on a domain that's different than the domain of the URL

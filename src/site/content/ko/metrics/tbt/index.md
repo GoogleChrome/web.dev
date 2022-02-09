@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Total Blocking Time(총 차단 시간, TBT)
 authors:
   - philipwalton

@@ -28,7 +28,7 @@ button {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrgMOm',
@@ -65,12 +65,12 @@ then another `<link>` that includes CSS at the bottom of your page: the bottom `
 The same thing happens with embedded `<style>` elements, too.
 They get more specific, the further down the page they are.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'NWdPaWv'
 } %}
-  <figcaption class="w-figcaption">The button has a blue background,
+  <figcaption>The button has a blue background,
   as defined by CSS which is included by a <code>&lt;link /&gt;</code> element.
   A CSS rule that sets it to be dark is in a second linked stylesheet
   and is applied because of its later position.</figcaption>
@@ -80,12 +80,12 @@ This ordering also applies to embedded `<style>` elements.
 If they are declared before a `<link>`,
 the linked stylesheet's CSS will have the most specificity.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgbLoB'
 } %}
-<figcaption class="w-figcaption">The <code>&lt;style&gt;</code> element is declared in the <code>&lt;head&gt;</code>,
+<figcaption>The <code>&lt;style&gt;</code> element is declared in the <code>&lt;head&gt;</code>,
 while the <code>&lt;link /&gt;</code> element is declared in the <code>&lt;body&gt;</code>.
 This means it gets more specificity than the <code>&lt;style&gt;</code> element</figcaption>
 </figure>
@@ -119,7 +119,7 @@ the initial declaration will be honored, and the font-size will be 1.5rem
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgbPMP'
@@ -203,7 +203,7 @@ The **order of specificity of these origins**, from least specific, to most spec
 6. **User agent `!important`**. Any `!important` that are defined in the default CSS,
    provided by the browser.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg",
 alt="A visual demonstration of the order of origins as also explained in the list.", width="800", height="347" %}
 </figure>
@@ -236,7 +236,7 @@ its expected behaviour is to change visual state.
 Browser DevTools will typically show all CSS that could match an element,
 with those which are not being used crossed out.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png",
 alt="An image of browser DevTools with overwritten CSS crossed out", width="800", height="446" %}
 </figure>

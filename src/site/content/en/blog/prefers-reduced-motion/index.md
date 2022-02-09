@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "prefers-reduced-motion: Sometimes less movement is more"
 subhead: |
   The prefers-reduced-motion media query detects whether the user has requested
@@ -86,7 +87,7 @@ these preferences cause the operating system to not use decorative effects like 
 animations. Applications themselves can and should honor this setting, too, and remove all
 unnecessary animations.
 
-<div class="w-columns">
+<div class="switcher">
   <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="398", height="300" %}
   </figure>

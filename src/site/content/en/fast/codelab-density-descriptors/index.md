@@ -22,7 +22,7 @@ tags:
 You can use the device emulator for this. If you're looking for specific display
 densities, here are some devices to try:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tbody>
       <tr>
@@ -126,7 +126,7 @@ So how do you actually apply this information?
 In order for images to look their very best on high resolution screens, it's
 necessary to provide different image versions for different `devicePixelRatios`.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

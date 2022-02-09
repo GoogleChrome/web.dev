@@ -52,9 +52,9 @@ To request camera PTZ access, call `navigator.mediaDevices.getUserMedia()` with
 the PTZ constraints as shown below. This will prompt the user to grant both
 regular camera and camera with PTZ permissions.
 
-<figure class="w-figure">
-  {% Img src="image/admin/WmkzmVeiplCoh3HesJS5.jpg", alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.", width="800", height="382", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Camera PTZ user prompt.</figcaption>
+<figure>
+  {% Img src="image/admin/WmkzmVeiplCoh3HesJS5.jpg", alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.", width="800", height="382" %}
+  <figcaption>Camera PTZ user prompt.</figcaption>
 </figure>
 
 The returned promise will resolve with a [`MediaStream`] object used to show the
@@ -110,15 +110,13 @@ in the "Video Capture" tab; "pan tilt" and "zoom" respectively mean the camera s
 the "PanTilt (Absolute)" and "Zoom (Absolute)" [UVC controls]. The "PanTilt (Relative)"
 and "Zoom (Relative)" UVC controls are not supported in Chromium-based browsers.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4EDS8fYYifXAUY6SBaiV.png",
     alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.",
     width="800",
-    height="481",
-    class="w-screenshot"
-  %}
-  <figcaption class="w-figcaption">Internal page to debug PTZ camera support.</figcaption>
+    height="481" %}
+  <figcaption>Internal page to debug PTZ camera support.</figcaption>
 </figure>
 
 ### Control camera PTZ {: #control }
@@ -132,11 +130,11 @@ capabilities and the ranges or allowed values. Correspondingly,
 Pan, tilt, and zoom capabilities and settings are available only if supported by
 the camera and the user has granted PTZ permission to the camera.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/camera-pan-tilt-zoom/ptz_h264.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">Controlling Camera PTZ.</figcaption>
+  <figcaption>Controlling Camera PTZ.</figcaption>
 </figure>
 
 Call `videoTrack.applyConstraints()` with the appropriate [PTZ advanced

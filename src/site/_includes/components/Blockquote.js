@@ -17,7 +17,7 @@
 const {html} = require('common-tags');
 const md = require('markdown-it')();
 
-module.exports = (content, source) => {
+module.exports = (content, source, type) => {
   if (!source) {
     /* eslint-disable max-len */
     throw new Error(
@@ -26,8 +26,10 @@ module.exports = (content, source) => {
     /* eslint-enable max-len */
   }
 
+  const typeAttr = type ? `data-type="${type}"` : '';
+
   return html`
-    <blockquote>
+    <blockquote ${typeAttr}>
       ${content}
       <cite>${md.renderInline(source)}</cite>
     </blockquote>

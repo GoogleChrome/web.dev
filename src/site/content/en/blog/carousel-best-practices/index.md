@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Best practices for carousels
 subhead: Optimize carousels for performance and usability.
 authors:
@@ -21,8 +21,8 @@ products, and promotions on homepages.
 
 This article discusses performance and UX best practices for carousels.
 
-<figure class="w-figure">
-  {% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Image showing a carousel", width="629", height="420", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Image showing a carousel", width="629", height="420" %}
 </figure>
 
 ## Performance

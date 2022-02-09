@@ -1,0 +1,44 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/figure
+figure {
+  display: block;
+  width: 100%;
+
+  > *:not(figcaption) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > figcaption {
+    display: block;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+figure[data-float] {
+  width: auto;
+  max-width: calc(#{$global-prose-element-max-width} / 2);
+  margin-bottom: get-space('size-1');
+}
+
+figure[data-float='left'] {
+  float: left;
+  margin-inline-end: get-space('size-1');
+}
+
+figure[data-float='right'] {
+  float: right;
+  margin-inline-start: get-space('size-1');
+}
+
+figure[data-size='full'] {
+  > * {
+    width: 100%;
+  }
+}
+
+figure[data-screenshot] {
+  border: 1px solid var(--color-stroke);
+}

@@ -1,6 +1,5 @@
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
-import './_styles.scss';
 
 /**
  * Element that renders an assessment question shell.
@@ -44,13 +43,14 @@ export class AssessmentQuestion extends BaseElement {
       <div class="web-question__content" style="${heightStyle}">
         ${this.prerenderedChildren}
       </div>
-      <div class="web-question__footer">
-        <span></span>
+      <hr />
+      <div class="web-question__footer gap-top-size-1 ta-right">
         <button
           @click="${this.onSubmit}"
-          class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
+          class="button web-assessment__button web-question__cta gc-analytics-event"
           data-category="Self-assessments"
           data-label="CTA, ${this.id}"
+          data-type="primary"
           ?disabled="${this.state === 'unanswered'}"
         >
           ${this.ctaLabel}

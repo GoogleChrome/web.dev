@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Charset declaration is missing or occurs too late in the HTML
 description: |
   Learn how to add a character encoding declaration to your HTML.
@@ -25,8 +25,8 @@ specification solves this problem.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that do not specify their character encoding:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IERR919vogl1HyYwxvVZ.png", alt="The failing character encoding audit.", width="800", height="110", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IERR919vogl1HyYwxvVZ.png", alt="The failing character encoding audit.", width="800", height="110" %}
 </figure>
 
 Lighthouse considers the character encoding to be declared if it finds any of the following:

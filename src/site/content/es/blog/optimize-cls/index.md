@@ -24,10 +24,10 @@ Los cambios de diseño pueden distraer a los usuarios. Imagine que comenzó a le
 
 En esta guía, cubriremos la optimización de las causas comunes de los cambios de diseño.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Los valores de CLS buenos son inferiores a 0,1, los valores deficientes son superiores a 0,25 y cualquier valor intermedio debe mejorarse", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
-</picture>
+  <picture>
+    <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Los valores de CLS buenos son inferiores a 0,1, los valores deficientes son superiores a 0,25 y cualquier valor intermedio debe mejorarse", width="384", height="96" %}
+  </picture>
 
 Las causas más comunes de una CLS deficiente son:
 
@@ -41,41 +41,11 @@ Las causas más comunes de una CLS deficiente son:
 
 **Resumen:** siempre incluya los atributos de tamaño `width` y `height` en sus imágenes y elementos de video. Alternativamente, reserve el espacio necesario con [casillas de relación de aspecto en CSS](https://css-tricks.com/aspect-ratio-boxes/). Este enfoque garantiza que el navegador pueda asignar la cantidad correcta de espacio en el documento mientras se carga la imagen.
 
-<figure class="w-figure">
-  {% Video
-    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"],
-    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg",
-    controls=true,
-    loop=true,
-    muted=true,
-    class="w-screenshot"
-  %}
- <figcaption class="w-figcaption">
-    Imágenes sin ancho ni alto específico.
-  </figcaption>
-</figure>
+  <figure>   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg",     controls=true,     loop=true,     muted=true %}  <figcaption>     Imágenes sin ancho ni alto específico.   </figcaption> </figure>
 
-<figure class="w-figure">
-  {% Video
-    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"],
-    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg",
-    controls=true,
-    loop=true,
-    muted=true,
-    class="w-screenshot"
-  %}
- <figcaption class="w-figcaption">
-    Imágenes sin ancho ni alto especificado.
-  </figcaption>
-</figure>
+  <figure>   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg",     controls=true,     loop=true,     muted=true %}  <figcaption>     Imágenes sin ancho ni alto especificado.   </figcaption> </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="Informe de Lighthouse que muestra el impacto antes/después del Cumulative Layout Shift después de establecer las dimensiones en las imágenes", width="800", height="148" %}
-<figcaption class="w-figcaption">
-  Impacto de Lighthouse 6.0 en el establecimiento de las dimensiones de la imagen en CLS.
-</figcaption>
-</figure>
-
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/A2OyrzSXuW1qYGWAarGx.png", alt="Informe de Lighthouse que muestra el impacto antes/después del Cumulative Layout Shift después de establecer las dimensiones en las imágenes", width="800", height="148" %} <figcaption>   Impacto de Lighthouse 6.0 en el establecimiento de las dimensiones de la imagen en CLS. </figcaption> </figure>
 
 ### Historia
 
@@ -196,40 +166,11 @@ La buena noticia es que es posible que los sitios sigan las prácticas recomenda
 
 Algunos sitios pueden encontrar que contraer el lugar inicialmente puede reducir los cambios de diseño si es poco probable que se llene el espacio publicitario. No hay una manera fácil de elegir el tamaño exacto cada vez, a menos que usted mismo controle los servicios publicitarios.
 
-<figure class="w-figure">
-  {% Video
-    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"],
-    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
-    controls=true,
-    loop=true,
-    muted=true,
-    class="w-screenshot"
-  %}
- <figcaption class="w-figcaption">
-    Anuncios sin suficiente espacio reservado.
-  </figcaption>
-</figure>
+  <figure>   {% Video     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"],     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",     controls=true,     loop=true,     muted=true %}  <figcaption>     Anuncios sin suficiente espacio reservado.   </figcaption> </figure>
 
-<figure class="w-figure">
-    {% Video
-      src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],
-      poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
-      controls=true,
-      loop=true,
-      muted=true,
-      class="w-screenshot"
-    %}
- <figcaption class="w-figcaption">
-    Anuncios con suficiente espacio reservado.
-  </figcaption>
-</figure>
+  <figure>     {% Video       src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],       poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",       controls=true,       loop=true,       muted=true %}  <figcaption>     Anuncios con suficiente espacio reservado.   </figcaption> </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="Informe del Lighthouse que muestra el impacto antes/después del Cumulative Layout Shift para reservar el espacio para banners como anuncios", width="800", height="148" %}
-<figcaption class="w-figcaption">
-  Impacto de Lighthouse 6.0 para reservar el espacio de este banner en CLS
-</figcaption>
-</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cX6R4ACb4uVKlUb0cv1c.png", alt="Informe del Lighthouse que muestra el impacto antes/después del Cumulative Layout Shift para reservar el espacio para banners como anuncios", width="800", height="148" %} <figcaption>   Impacto de Lighthouse 6.0 para reservar el espacio de este banner en CLS </figcaption> </figure>
 
 #### Reserve de forma estática el espacio publicitario
 
@@ -251,26 +192,11 @@ Los widgets integrables le permiten incrustar contenido web portátil en su pág
 
 Estas incrustaciones con frecuencia no son conscientes del tamaño de una incrustación (por ejemplo, en el caso de una publicación en las redes sociales: ¿tiene una imagen incrustada, un video, varias filas de texto?). Como resultado, las plataformas que ofrecen incrustaciones no siempre reservan suficiente espacio para sus incrustaciones y pueden provocar cambios de diseño cuando finalmente se cargan.
 
-<figure class="w-figure">
-  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
- <figcaption class="w-figcaption">
-    Incrustar sin espacio reservado.
-  </figcaption>
-</figure>
+  <figure>   {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true %}  <figcaption>     Incrustar sin espacio reservado.   </figcaption> </figure>
 
-<figure class="w-figure">
-  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
- <figcaption class="w-figcaption">
-    Incrustar con espacio reservado.
-  </figcaption>
-</figure>
+  <figure>   {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true %}  <figcaption>     Incrustar con espacio reservado.   </figcaption> </figure>
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Informe del Lighthouse que muestra el impacto antes/después del Cumulative Layout Shift para reservar el espacio para esta incrustación en CLS", width="800", height="148" %}
-<figcaption class="w-figcaption">
-  Informe del Lighthouse 6.0 que muestra el impacto para reservar el espacio para esta incrustación en CLS
-</figcaption>
-</figure>
+<figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="Informe del Lighthouse que muestra el impacto antes/después del Cumulative Layout Shift para reservar el espacio para esta incrustación en CLS", width="800", height="148" %} <figcaption>   Informe del Lighthouse 6.0 que muestra el impacto para reservar el espacio para esta incrustación en CLS </figcaption> </figure>
 
 Para solucionar esto, puede minimizar el CLS pre-calculando el espacio suficiente para las incrustaciones con un marcador de posición o una reserva. Un flujo de trabajo que puede utilizar para las incrustaciones:
 
@@ -295,12 +221,7 @@ Probablemente haya experimentado cambios de diseño debido a la interfaz de usua
 
 - "Notificación del  GDPR"
 
-  <figure class="w-figure">
-    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
-    <figcaption class="w-figcaption">
-      Contenido dinámico sin espacio reservado.
-    </figcaption>
-  </figure>
+    <figure>   {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true %}   <figcaption>     Contenido dinámico sin espacio reservado.   </figcaption> </figure>
 
 Si necesita mostrar este tipo de posibilidades de la interfaz del usuario, reserve suficiente espacio en la ventana de visualización para ello con anticipación (por ejemplo, utilice un marcador de posición o una interfaz de usuario de esqueleto) para que cuando se cargue, no haga que el contenido de la página cambie de forma sorprendentemente.
 
@@ -310,12 +231,7 @@ En algunos casos, agregar contenido de forma dinámica es una parte importante d
 - Haga que el usuario inicie la carga de contenido nuevo, para que no se sorprenda con el cambio (por ejemplo, con un botón "Cargar más" o "Actualizar"). Se recomienda buscar previamente el contenido antes de la interacción con el usuario para que aparezca de inmediato. Como recordatorio, los cambios de diseño que ocurren dentro de los 500 ms de la entrada del usuario no cuentan para CLS.
 - Cargue sin problemas el contenido fuera de la pantalla y superponga una notificación para que el usuario sepa que está disponible (por ejemplo, con un botón "Desplazarse hacia arriba").
 
-<figure class="w-figure">
-  {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Ejemplos de carga de contenido dinámico sin provocar cambios de diseño inesperados en Twitter y el sitio web de Chloe", width="800", height="458" %}
-  <figcaption class="w-figcaption">
-    Ejemplos de carga de contenidos dinámicos sin provocar cambios inesperados en el diseño. Izquierda: carga de contenido en vivo en Twitter. Derecha: el ejemplo "obtener más información" en el sitio web de Chloé. Verifique cómo el equipo de YNAP se <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">optimizó para que CLS cargue más contenido</a>.
-  </figcaption>
-</figure>
+<figure>   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Ejemplos de carga de contenido dinámico sin provocar cambios de diseño inesperados en Twitter y el sitio web de Chloe", width="800", height="458" %}   <figcaption>     Ejemplos de carga de contenidos dinámicos sin provocar cambios inesperados en el diseño. Izquierda: carga de contenido en vivo en Twitter. Derecha: el ejemplo "obtener más información" en el sitio web de Chloé. Verifique cómo el equipo de YNAP se <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">optimizó para que CLS cargue más contenido</a>.   </figcaption> </figure>
 
 ### Fuentes web que causan FOUT/FOIT 📝
 
@@ -354,12 +270,9 @@ Me complace compartir que hay una serie de herramientas disponibles para medir y
 
 El [panel de Rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) en DevTools resalta los cambios de diseño en la sección **Experiencia a** a partir de Chrome 84. La vista del **Resumen** para un realizar un `Cambio en el diseño` incluye la puntuación de cumulative layout shift, así como una superposición rectangular que muestra las regiones afectadas.
 
-<figure class="w-figure">
-  {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Los registros de cambio de diseño se muestran en el panel de rendimiento de Chrome DevTools cuando se expande la sección Experiencia", width="800", height="438" %}
-  <figcaption class="w-figcaption">Después de registrar un nuevo seguimiento en el panel de Rendimiento, la sección <b>Experiencia</b> de los resultados se completa con una barra de color rojo que muestra un registro <code>Layout Shift</code>. Al hacer clic en el registro, se puede profundizar en los elementos impactados (por ejemplo, observar desde/hasta las entradas que se movieron).</figcaption>
-</figure>
+<figure>   {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Los registros de cambio de diseño se muestran en el panel de rendimiento de Chrome DevTools cuando se expande la sección Experiencia", width="800", height="438" %}   <figcaption>Después de registrar un nuevo seguimiento en el panel de Rendimiento, la sección <b>Experiencia</b> de los resultados se completa con una barra de color rojo que muestra un registro <code>Layout Shift</code>. Al hacer clic en el registro, se puede profundizar en los elementos impactados (por ejemplo, observar desde/hasta las entradas que se movieron).</figcaption> </figure>
 
-También es posible medir CLS del mundo real agregado un nivel de origen que utilice el [Chrome User Experience Report](/chrome-ux-report-bigquery/). Los datos de CrUX CLS están disponibles por medio de BigQuery y una [consulta de muestra](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) para ver que el rendimiento de CLS está disponible para su uso.
+También es posible medir CLS del mundo real agregado un nivel de origen que utilice el [Chrome User Experience Report](/chrome-ux-report-bigquery/). Los datos de CrUX CLS están disponibles por medio de BigQuery y una [consulta de muestra](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) para ver que el rendimiento de CLS está disponible para su uso.
 
 Espero que esto le ayude a mantener sus páginas con menos cambios :)
 

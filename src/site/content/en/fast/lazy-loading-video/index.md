@@ -1,5 +1,5 @@
 ---
-layout: post-old
+layout: post
 title: Lazy-loading video
 authors:
   - jlwagner
