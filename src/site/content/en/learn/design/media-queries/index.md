@@ -5,6 +5,7 @@ description: >
 authors:
   - adactio
 date: 2021-11-03
+updated: 2021-02-08
 ---
 
 Designers can adjust their designs to accommodate users. 
@@ -199,7 +200,7 @@ The point at which a media feature condition becomes true is called a breakpoint
 It's best to choose your breakpoints based on your content rather than popular device sizes, 
 as those are subject to change with every technology release cycle.
 
-In this example, `50em` is the point as which the lines of text become uncomfortably long. 
+In this example, `50em` is the point at which the lines of text become uncomfortably long. 
 So a breakpoint is created to make the interface more legible. 
 Using the `column-count` property, the text is divided into two columns from that point on.
 
