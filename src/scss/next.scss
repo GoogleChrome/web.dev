@@ -634,6 +634,13 @@ video {
   max-width: 100%;
 }
 
+/// Selects images that are likely to have a transparent BG and applies a
+/// theme-driven mask to them
+img[src$='.svg'],
+img[src$='.png'] {
+  background-color: get-utility-value('bg', 'transparent-img-mask');
+}
+
 /// Links
 
 a {
