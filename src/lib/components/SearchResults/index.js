@@ -108,9 +108,7 @@ export class SearchResults extends BaseElement {
    */
   scrollHitIntoView() {
     this.requestUpdate().then(() => {
-      const selected = this.renderRoot.querySelector(
-        '[aria-selected="true"]',
-      );
+      const selected = this.renderRoot.querySelector('[aria-selected="true"]');
       selected.scrollIntoView({block: 'nearest'});
       this.dispatchEvent(new CustomEvent('resultselect', {detail: {selected}}));
     });
