@@ -53,7 +53,7 @@ class CourseSearchResults extends SearchResults {
 
     return html`
       <div class="web-course-search web-search-popout">
-        <ul id="${this.id}-list" class="web-search-popout__list" role="listbox">
+        <ul id="${this.id}-list" class="stack-nav" role="listbox">
           ${this.itemsTemplate}
         </ul>
       </div>
@@ -73,18 +73,17 @@ class CourseSearchResults extends SearchResults {
       const title = this.formatAlgoliaValue(hit._highlightResult.title.value);
       const snippet = this.formatAlgoliaValue(hit._snippetResult.content.value);
       return html`
-        <li class="web-search-popout__item">
+        <li>
           <a
             id="${this.id}-link-${idx}"
-            class="web-search-popout__link flow ${idx === this.cursor
-              ? 'web-search-popout__link--active'
-              : ''}"
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
           >
-            <h3 class="text-size-1">${unsafeHTML(title)}</h3>
-            <p class="text-size-0 color-mid-text">${unsafeHTML(snippet)}</p>
+            <div class="flow flow-space-size-0">
+              <h3 class="text-size-1">${unsafeHTML(title)}</h3>
+              <p class="text-size-0 color-mid-text">${unsafeHTML(snippet)}</p>
+            </div>
           </a>
         </li>
       `;

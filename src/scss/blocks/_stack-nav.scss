@@ -37,7 +37,8 @@
     @include apply-utility('color', 'mid-text');
   }
 
-  a[aria-current='page'] {
+  a[aria-current='page'],
+  a[aria-select='true'] {
     @include apply-utility('bg', 'active-bg');
     @include apply-utility('color', 'active-text');
 
