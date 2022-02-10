@@ -138,6 +138,7 @@
     "markdown-it-attrs": "^3.0.0",
     "markdown-it-deflist": "^2.1.0",
     "mocha": "^6.2.0",
+    "module-alias": "^2.2.2",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.7",
     "npm-run-all": "^4.1.5",
@@ -164,6 +165,7 @@
     "scroll-to-bottomjs": "^1.1.0",
     "slugify": "^1.4.5",
     "striptags": "^3.2.0",
+    "typechecker": "^7.18.0",
     "typescript": "^4.0.3",
     "unified-lint-rule": "^1.0.5",
     "unist-util-generated": "^1.1.5",
@@ -188,5 +190,8 @@
   "browserslist": [
     "last 2 versions",
     "not ie <= 11"
-  ]
+  ],
+  "_moduleAliases": {
+    "lodash/isPlainObject": "./src/lib/isPlainObjectWrapper.js"
+  }
 }
