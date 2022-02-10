@@ -577,13 +577,13 @@ You can also enable the **Experimental Web Platform Features** flag in Chrome to
 
 The following is a comparison between a set of images and a script file loaded with different priorities. Note that the default priorities for images and scripts are applied on Chrome 94. On the other hand, the priority set through the importance attribute is applied when tested on Chrome 96.
 
-Specifying an origin trial token in an HTML `<meta>` element is often the quickest and most convenient method. For Priority Hints to work during the origin trial, however, you'll need to specify your token in an `Origin-Trial` HTTP response header:
+Specifying an origin trial token in an HTML `<meta>` element is often the quickest and most convenient method. In the case of Priority Hints, however, this may result in hints being overlooked for resources loaded early on during startup. For Priority Hints to work optimally, you should specify the origin trial token in an `Origin-Trial` HTTP response header:
 
 ```http
 Origin-Trial: {Replace with origin trial token}
 ```
 
-Once your application is sending that header, you can then use Priority Hints in a variety of scenarios in your HTML as needed:
+Once your application is configured to send that header, you can then use Priority Hints in a variety of scenarios in your HTML as needed:
 
 ```html
 <!-- Lower the priority of script file -->
