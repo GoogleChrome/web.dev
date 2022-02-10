@@ -4,7 +4,7 @@ subhead: Manipulating video stream components.
 description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
-updated: 2022-02-09
+updated: 2022-02-10
 hero: image/admin/I09h0la9qLPSRLZs1ruB.jpg
 alt: A roll of film.
 authors:
@@ -365,6 +365,16 @@ async function renderFrame() {
   setTimeout(renderFrame, 0);
 }
 ```
+
+## Dev Tips {: #dev-tips }
+
+Use the [Media Panel](https://developer.chrome.com/docs/devtools/media-panel/)
+in Chrome DevTools to view media logs and debug WebCodecs.
+
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/rD4O3Aqj42MAMxHbBK4X.png", alt="Screenshot of the Media Panel for debugging WebCodecs", width="800", height="375" %}
+  <figcaption>Media Panel in Chrome DevTools for debugging WebCodecs.</figcaption>
+</figure>
 
 ## Demo
 
