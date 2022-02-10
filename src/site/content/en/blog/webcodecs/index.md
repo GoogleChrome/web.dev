@@ -34,7 +34,7 @@ that modern browsers already ship with a variety of codecs (which are often
 accelerated by hardware), repackaging them as WebAssembly seems like a waste of
 human and computer resources.
 
-[WebCodecs API](https://w3c.github.io/web-codecs/) eliminates this inefficiency
+[WebCodecs API](https://w3c.github.io/webcodecs/) eliminates this inefficiency
 by giving programmers a way to use media components that are already present in
 the browser. Specifically:
 
@@ -54,7 +54,7 @@ streaming, etc.
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete](https://github.com/w3c/webcodecs/blob/main/explainer.md)        |
-| 2. Create initial draft of specification     | [Complete](https://w3c.github.io/web-codecs/)         |
+| 2. Create initial draft of specification     | [Complete](https://w3c.github.io/webcodecs/)         |
 | 3. Gather feedback & iterate on design       | Complete                     |
 | 4. Origin trial                              | Complete                     |
 | 5. Launch                                    | [Chrome 94](https://chromestatus.com/feature/5669293909868544)                    |
@@ -408,7 +408,7 @@ The Chrome team wants to hear about your experiences with the WebCodecs API.
 Is there something about the API that doesn't work like you expected? Or are
 there missing methods or properties that you need to implement your idea? Have a
 question or comment on the security model? File a spec issue on the
-corresponding [GitHub repo](https://github.com/w3c/web-codecs/issues), or add
+corresponding [GitHub repo](https://github.com/w3c/webcodecs/issues), or add
 your thoughts to an existing issue.
 
 ### Report a problem with the implementation
