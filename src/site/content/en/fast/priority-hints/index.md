@@ -8,6 +8,7 @@ authors:
 description: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 subhead: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 date: 2021-10-20
+updated: 2022-02-10
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WqBkrvs5LRwPIfrSOQyz.jpg
 alt: A photo of a brown wooden plank fence, with a signboard attached to it. The signboard reads "this way", with an arrow pointing to the right.
 tags:
@@ -576,12 +577,15 @@ You can also enable the **Experimental Web Platform Features** flag in Chrome to
 
 The following is a comparison between a set of images and a script file loaded with different priorities. Note that the default priorities for images and scripts are applied on Chrome 94. On the other hand, the priority set through the importance attribute is applied when tested on Chrome 96.
 
-Following is the relevant mark-up included in the HTML file.
+Specifying an origin trial token in an HTML `<meta>` element is often the quickest and most convenient method. In the case of Priority Hints, however, this may result in hints being overlooked for resources loaded early on during startup. For Priority Hints to work optimally, you should specify the origin trial token in an `Origin-Trial` HTTP response header:
+
+```http
+Origin-Trial: {Replace with origin trial token}
+```
+
+Once your application is configured to send that header, you can then use Priority Hints in a variety of scenarios in your HTML as needed:
 
 ```html
-<!-- include trial token in the <head> -->
-<meta http-equiv="origin-trial" content="{Replace with origin trial token}">
-
 <!-- Lower the priority of script file -->
 <script src="script.js" importance="low"></script>
 
