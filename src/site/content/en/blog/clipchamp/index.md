@@ -5,6 +5,7 @@ subhead: >
   How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
   deliver better performance and a more engaging experience to 12M users.
 date: 2020-12-08
+updated: 2022-02-10
 hero: image/admin/i9GBgCAOS5eWVBXvOT84.jpg
 thumbnail: image/admin/1tHJ6FI8tOIIgRocFkCm.jpg
 alt: Clipchamp's logo.
@@ -73,7 +74,7 @@ That insight put the pressure on Clipchamp's engineering team to come up with a
 technology that can efficiently process Gigabyte-scale media files in a web
 application. Having network bandwidth constraints in mind, we were quick to rule
 out a traditional cloud-based solution. Uploading large media files from a
-retail internet connection would invariably introduce massive waiting times
+retail internet connection would invariably introduce massive wait times
 before editing could even begin, effectively resulting in a poor user
 experience.
 
