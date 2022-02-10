@@ -271,7 +271,7 @@ parameters are given to `configure()`.
 
 The set of codec parameters varies from codec to codec. For example H.264 codec
 might need a [binary blob](https://w3c.github.io/webcodecs/#dom-videodecoderconfig-description)
-of AVVC, unless it's encoded in so called Annex B format (`encoderConfig.avc = { format: "annexb" }`).
+of AVCC, unless it's encoded in so called Annex B format (`encoderConfig.avc = { format: "annexb" }`).
 
 ```js
 const init = {
