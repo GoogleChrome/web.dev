@@ -9,7 +9,7 @@ subhead: >
 authors:
   - thomassteiner
 date: 2021-12-14
-# updated: 2021-12-14
+updated: 2022-02-10
 description: >
   Launch handler lets you control how your app is launched, for example, whether it uses an existing
   window and whether the chosen window is navigated to the launch URL.
@@ -226,7 +226,7 @@ let us know where and how you are using it.
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
-- [Launch Handler API Demo][demo] | [launch Handler API Demo source][demo-source]
+- [Launch Handler API Demo][demo] | [Launch Handler API Demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`Blink>AppManifest`][blink-component]
