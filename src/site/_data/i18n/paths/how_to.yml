@@ -1,0 +1,44 @@
+title:
+  en: How to?
+  es: ¿Como?
+  ja: どのように？
+  ko: 어떻게?
+  pt: Como?
+  ru: Как?
+  zh: 如何？
+
+description:
+  en: Recipes to solve the most common use cases.
+  es: Recetas para resolver los casos de uso más habituales.
+  ja: 最も一般的なユースケースを解決するためのレシピ。
+  ko: 가장 일반적인 사용 사례를 해결하기 위한 레시피.
+  pt: Receitas para resolver os casos de uso mais comuns.
+  ru: Рецепты для решения наиболее распространенных случаев использования.
+  zh: 解决最常见用例的食谱。
+
+overview:
+  en: Find your use case below.
+  es: Encuentre tu caso de uso a continuación.
+  ja: 以下でユースケースを見つけてください。
+  ko: 아래에서 사용 사례를 찾으십시오.
+  pt: Encontre seu caso de uso abaixo.
+  ru: Найдите свой вариант использования ниже.
+  zh: 在下面找到您的用例。
+
+topics:
+  files:
+    en: Working with files
+    es: Trabajar con archivos
+    ja: ファイルの操作
+    ko: 파일 작업
+    pt: Trabalhando com arquivos
+    ru: Работа с файлами
+    zh: 处理文件
+  clipboard:
+    en: Working with the clipboard
+    es: Trabajando con el portapapeles
+    ja: クリップボードでの作業
+    ko: 클립보드 작업
+    pt: Trabalhando com a área de transferência
+    ru: Работа с буфером обмена
+    zh: 使用剪贴板

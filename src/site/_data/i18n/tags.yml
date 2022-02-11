@@ -520,6 +520,24 @@ houdini:
     ru: Последние новости и статьи о Houdini.
     zh: 我们关于 Houdini 的最新资讯、动态和故事。
 
+how-to:
+  title:
+    en: How to?
+    es: ¿Como?
+    ja: どのように？
+    ko: 어떻게?
+    pt: Como?
+    ru: Как?
+    zh: 如何？
+  description:
+    en: Recipes to solve the most common use cases.
+    es: Recetas para resolver los casos de uso más habituales.
+    ja: 最も一般的なユースケースを解決するためのレシピ。
+    ko: 가장 일반적인 사용 사례를 해결하기 위한 레시피.
+    pt: Receitas para resolver os casos de uso mais comuns.
+    ru: Рецепты для решения наиболее распространенных случаев использования.
+    zh: 解决最常见用例的食谱。
+
 html:
   title:
     en: HTML
