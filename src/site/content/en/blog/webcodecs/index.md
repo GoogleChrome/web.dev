@@ -4,7 +4,7 @@ subhead: Manipulating video stream components.
 description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
-updated: 2022-02-09
+updated: 2022-02-10
 hero: image/admin/I09h0la9qLPSRLZs1ruB.jpg
 alt: A roll of film.
 authors:
@@ -159,7 +159,12 @@ Before encoding, `VideoEncoder` needs to be given two JavaScript objects:
     errors. These functions are developer-defined and can't be changed after
     they're passed to the `VideoEncoder` constructor.
 +   Encoder configuration object, which contains parameters for the output
-    video stream. You can change these parameters later  by calling `configure()`.
+    video stream. You can change these parameters later by calling `configure()`.
+
+The `configure()` method will throw `NotSupportedError` if the config is not
+supported by the browser. You are encouraged to call the static method
+`VideoEncoder.isConfigSupported()` with the config to check before hand whether
+the config is supported and wait for its promise.
 
 ```js
 const init = {
@@ -177,8 +182,13 @@ const config = {
   framerate: 30,
 };
 
-const encoder = new VideoEncoder(init);
-encoder.configure(config);
+const { supported } = await VideoEncoder.isConfigSupported(config);
+if (supported) {
+  const encoder = new VideoEncoder(init);
+  encoder.configure(config);
+} else {
+  // Try another config.
+}
 ```
 
 After the encoder has been set up, it's ready to accept frames via `encode()` method.
@@ -195,7 +205,7 @@ Another important detail here is that frames need to be told when they are no
 longer needed by calling `close()`.
 
 ```js
-let frame_counter = 0;
+let frameCounter = 0;
 
 const track = stream.getVideoTracks()[0];
 const trackProcessor = new MediaStreamTrackProcessor(track);
@@ -211,8 +221,8 @@ while (true) {
     // let's drop this frame.
     frame.close();
   } else {
-    frame_counter++;
-    const keyframe = frame_counter % 150 == 0;
+    frameCounter++;
+    const keyframe = frameCounter % 150 == 0;
     encoder.encode(frame, { keyFrame });
     frame.close();
   }
@@ -287,8 +297,13 @@ const config = {
   codedHeight: 480,
 };
 
-const decoder = new VideoDecoder(init);
-decoder.configure(config);
+const { supported } = await VideoDecoder.isConfigSupported(config);
+if (supported) {
+  const decoder = new VideoDecoder(init);
+  decoder.configure(config);
+} else {
+  // Try another config.
+}
 ```
 
 Once the decoder is initialized, you can start feeding it with `EncodedVideoChunk` objects.
