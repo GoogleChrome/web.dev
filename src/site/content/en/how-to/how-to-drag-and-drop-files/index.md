@@ -109,3 +109,8 @@ Glitch.
   >
   </iframe>
 </div>
+
+## Further reading
+
+- [File System Access API](/file-system-access/)
+- [Drag and Drop API](/drag-and-drop/)
