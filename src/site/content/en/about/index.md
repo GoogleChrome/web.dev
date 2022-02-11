@@ -12,7 +12,7 @@ pods:
     brand: 'lockup.svg'
     alt: 'web.dev'
     actions:
-      - text: 'How-tos'
+      - text: 'Learn'
         url: '/learn'
       - text: 'Case Studies'
         url: '/tags/case-study/'

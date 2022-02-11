@@ -9,7 +9,15 @@
     {
       "title": "i18n.paths.how_to.topics.files",
       "pathItems": [
-        "how-to-drag-and-drop-files"
+        "how-to-open-files",
+        "how-to-open-a-directory",
+        "how-to-save-a-file",
+        "how-to-drag-and-drop-files",
+        "how-to-drag-and-drop-folders",
+        "how-to-work-with-the-origin-private-file-system",
+        "how-to-share-files",
+        "how-to-receive-shared-files",
+        "how-to-handle-files-opened-from-the-file-explorer"
       ]
     },
     {
