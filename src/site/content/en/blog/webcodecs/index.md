@@ -381,6 +381,16 @@ async function renderFrame() {
 }
 ```
 
+## Dev Tips {: #dev-tips }
+
+Use the [Media Panel](https://developer.chrome.com/docs/devtools/media-panel/)
+in Chrome DevTools to view media logs and debug WebCodecs.
+
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/rD4O3Aqj42MAMxHbBK4X.png", alt="Screenshot of the Media Panel for debugging WebCodecs", width="800", height="375" %}
+  <figcaption>Media Panel in Chrome DevTools for debugging WebCodecs.</figcaption>
+</figure>
+
 ## Demo
 
 The demo below shows how animation frames from a canvas are:
