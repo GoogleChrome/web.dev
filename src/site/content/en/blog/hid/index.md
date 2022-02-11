@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2022-01-20
+updated: 2022-02-10
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -342,6 +342,31 @@ navigator.hid.addEventListener("connect", event => {
 navigator.hid.addEventListener("disconnect", event => {
   // Remove |event.device| from the UI.
 });
+```
+
+### Revoke access to an HID device {: #revoke-access }
+
+The website can clean up permissions to access an HID device it is no longer
+interested in retaining by calling `forget()` on the `HIDDevice` instance. For
+example, for an educational web application used on a shared computer with many
+devices, a large number of accumulated user-generated permissions creates a poor
+user experience.
+
+Calling `forget()` on a single `HIDDevice` instance will revoke access to all
+the HID interfaces on the same physical device.
+
+```js
+// Voluntarily revoke access to this HID device.
+await device.forget();
+```
+
+As `forget()` is available in Chrome 100 or later, check if this feature is
+supported with the following:
+
+```js
+if ("hid" in navigator && "forget" in HIDDevice.prototype) {
+  // forget() is supported.
+}
 ```
 
 ## Dev Tips {: #dev-tips }
