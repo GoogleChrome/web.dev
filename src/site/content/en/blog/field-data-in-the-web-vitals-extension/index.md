@@ -37,9 +37,7 @@ a sparkly new UI and I'm excited to show you how it works.
   controls="true",
   loop="true",
   muted="true",
-  preload="auto",
-  class="w-screenshot"
-%}
+  preload="auto" %}
 
 ## Field data from CrUX
 
@@ -59,11 +57,11 @@ metrics: [LCP](/lcp/#what-is-lcp), [FID](/fid/#what-is-fid), and
 
 ## New extension UI
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/EaVNEuQ6gxVLtHYNkSZj.png", alt="Screenshot of the
 Web Vitals extension showing an explanation of how the local LCP experience relates to real-user
-desktop data from the field.", width="800", height="549", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+desktop data from the field.", width="800", height="549" %}
+  <figcaption>
     Screenshot of the Web Vitals extension showing an explanation of how the local LCP experience
     relates to real-user desktop data from the field.
   </figcaption>
@@ -83,11 +81,11 @@ only 1% of users have similar experiences, something unusual must have happened.
 
 ## Falling back to origin-level data
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/t5SmXUJqJadNsyOi26bb.png", alt="Screenshot of the
 Web Vitals extension showing origin-level desktop field data with \"Waiting for input…\" for the
-FID results.", width="800", height="552", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+FID results.", width="800", height="552" %}
+  <figcaption>
     Screenshot of the Web Vitals extension showing origin-level desktop field data with
     "Waiting for input…" for the FID results.
   </figcaption>
@@ -106,11 +104,11 @@ to show until you interact with the page.
 
 ## Edge cases
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/qt6fmKIjPNrUsckKiUfS.png", alt="Screenshot of the
 Web Vitals extension showing only local data; field data is unavailable.",
-width="800", height="548", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+width="800", height="548" %}
+  <figcaption>
     Screenshot of the Web Vitals extension showing only local data; field data is unavailable.
   </figcaption>
 </figure>
@@ -134,11 +132,11 @@ this issue is predominantly affected by FID.
 
 ## Comparing field data from phones
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/0K0g0TD22jdNZpSe3s3p.png", alt="Screenshot of the
 Web Vitals extension showing local metrics compared to phone field data.",
-width="800", height="556", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+width="800", height="556" %}
+  <figcaption>
     Screenshot of the Web Vitals extension showing local metrics compared to phone field data.
   </figcaption>
 </figure>

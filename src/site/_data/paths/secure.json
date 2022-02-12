@@ -19,6 +19,7 @@
       "title": "i18n.paths.secure.topics.secure_connections_with_https",
       "pathItems": [
         "why-https-matters",
+        "enable-https",
         "what-is-mixed-content",
         "fixing-mixed-content",
         "when-to-use-local-https",
@@ -38,10 +39,7 @@
     },
     {
       "title": "i18n.paths.secure.topics.protect_websites_from_xss",
-      "pathItems": [
-        "trusted-types",
-        "strict-csp"
-      ]
+      "pathItems": ["trusted-types", "strict-csp"]
     },
     {
       "title": "i18n.paths.secure.topics.protect_users_from_tracking",
@@ -51,11 +49,17 @@
         "samesite-cookie-recipes",
         "referrer-best-practices",
         "trust-tokens",
-        "conversion-measurement",
-        "using-conversion-measurement",
         "user-agent-client-hints",
         "schemeful-samesite",
         "floc"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.monitor_security_violations_deprecations",
+      "pathItems": [
+        "reporting-api",
+        "reporting-api-migration",
+        "network-error-logging"
       ]
     }
   ]

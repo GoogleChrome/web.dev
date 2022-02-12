@@ -8,7 +8,6 @@ import {store} from '../../store';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
 import 'focus-visible';
-import './_styles.scss';
 
 let algoliaIndexPromise;
 
@@ -24,7 +23,7 @@ async function internalLoadAlgoliaLibrary() {
   // Create an algolia client so we can get search results.
   // These keys are safe to be public.
   const applicationID = '2JPAZHQ6K7';
-  const apiKey = '01ca870a3f1cad9984ed72419a12577c';
+  const apiKey = 'ac32acde5503ed0ab18332e0592e9919';
   const indexName = 'prod_web_dev';
   const client = algoliasearch(applicationID, apiKey);
   const index = client.initIndex(indexName);
@@ -125,10 +124,9 @@ class Search extends BaseStateElement {
     const placeholder = i18n.search[locale] || i18n.search['en'];
     const open_search = i18n.open_search[locale] || i18n.open_search['en'];
     const all_articles = i18n.all_articles[locale] || i18n.all_articles['en'];
-    const close_search = i18n.close_search[locale] || i18n.close_search['en'];
     return html`
       <button
-        class="web-search__open-btn"
+        class="web-search__open-btn icon-button color-mid-text"
         @click="${this.onOpenSearch}"
         aria-label="${open_search}"
       >
@@ -153,18 +151,6 @@ class Search extends BaseStateElement {
         aria-owns="${this.resultsEl.id}-list"
         aria-haspopup="listbox"
       >
-        <svg
-          class="web-search__search-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="24"
-          width="24"
-          aria-hidden="true"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-          />
-        </svg>
         <input
           id="web-search__input"
           class="web-search__input"
@@ -181,23 +167,6 @@ class Search extends BaseStateElement {
           @focusout="${this.onFocusOut}"
         />
       </div>
-      <button
-        @click="${this.onCloseSearch}"
-        class="web-search__close-btn"
-        aria-label="${close_search}"
-      >
-        <svg
-          class="web-search__close-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="24"
-          width="24"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-          />
-        </svg>
-      </button>
     `;
   }
 

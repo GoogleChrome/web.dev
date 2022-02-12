@@ -15,8 +15,8 @@ of the Lighthouse report. Each metric captures some aspect of page load speed.
 
 The Lighthouse report displays TBT in milliseconds:
 
-<figure class="w-figure">
-  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="592", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="592" %}
 </figure>
 
 ## What TBT measures
@@ -36,7 +36,7 @@ to learn how Lighthouse score thresholds are set.
 
 This table shows how to interpret your TBT score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -72,7 +72,7 @@ In general, the most common causes of long tasks are:
 
 * Unnecessary JavaScript loading, parsing, or execution. While analyzing your code in the Performance panel
   you might discover that the main thread is doing work that isn't really necessary to load the page.
-  [Reducing JavaScript payloads with code splitting][split], [removing unused code][unused], or 
+  [Reducing JavaScript payloads with code splitting][split], [removing unused code][unused], or
   [efficiently loading third-party JavaScript][3p] should improve your TBT score.
 * Inefficient JavaScript statements. For example, after analyzing your code in the Performance panel, suppose
   you see a call to `document.querySelectorAll('a')` that returns 2000 nodes. Refactoring your code to

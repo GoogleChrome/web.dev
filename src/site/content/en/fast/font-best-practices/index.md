@@ -27,7 +27,7 @@ of ways in which web fonts impact performance:
 *   **Delayed text rendering:** If a web font has not loaded, browsers typically
     delay text rendering. In many situations, this delays [First Contentful
     Paint (FCP)](/fcp). In some situations, this delays [Largest
-    Contentful Paint (LCP)](/lcp/). 
+    Contentful Paint (LCP)](/lcp/).
 *   **Layout shifts:** The practice of font swapping has the potential to [cause
     layout
     shifts](/debug-layout-shifts/#identifying-the-cause-of-a-layout-shift).
@@ -166,7 +166,7 @@ hint below sets up a connection for loading the font stylesheet.
 </head>
 ```
 
-To preconnect the connection that is used to download the font file, 
+To preconnect the connection that is used to download the font file,
 add a separate `preconnect` resource hint that uses the `crossorigin`
 attribute. Unlike stylesheets, font files must be sent over a [CORS
 connection](https://developer.mozilla.org/docs/Web/HTTP/CORS#what_requests_use_cors).
@@ -209,7 +209,7 @@ Generally speaking, using the
 resource hint to load fonts should be avoided. Although `preload` is highly
 effective at making fonts discoverable early in the page load process, this
 comes at the cost of taking away browser resources from the loading of other
-resources. 
+resources.
 
 In most scenarios, inlining font declarations and adjusting stylesheets is
 a more effective approach. These adjustments come closer to addressing the root
@@ -323,7 +323,7 @@ web fonts used on your site.
 A **system font** is the default font used by the user
 interface of a user's device. System fonts typically vary by operating system
 and version. Because the font is already installed, the font does not need to
-be downloaded. System fonts can work particularly well for body text. 
+be downloaded. System fonts can work particularly well for body text.
 
 
 To use the system font in your CSS, list `system-ui` as the font-family:
@@ -344,7 +344,7 @@ The idea behind **[variable
 
 We often refer to "Times New Roman" and "Helvetica" as fonts. However,
 technically speaking, these are font _families_. A family is composed of styles,
-which are particular variations of the typeface (for example, light, medium, 
+which are particular variations of the typeface (for example, light, medium,
 or bold italic). A font file contains a single style unless it is a variable font.
 A typeface is the underlying design, which can be expressed as digital fonts -
 and in physical type, like carved woodblocks or metal.
@@ -354,7 +354,7 @@ and in physical type, like carved woodblocks or metal.
 Not everyone will benefit from switching to variable fonts. [Variable
 fonts](/variable-fonts/) contain many styles, so typically have larger file
 sizes than individual non-variable fonts that only contain one style.
-Sites that will see the largest improvement from using variable fonts are 
+Sites that will see the largest improvement from using variable fonts are
 those that use (and need to use) a variety of font styles and weights.
 
 
@@ -396,7 +396,7 @@ associated web font has not loaded. It is defined per font-face.
 There are five possible values for `font-display`:
 
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
 <table>
 <thead>
   <tr>

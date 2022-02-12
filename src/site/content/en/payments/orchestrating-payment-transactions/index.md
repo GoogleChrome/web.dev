@@ -21,9 +21,9 @@ are ready to accept payment requests from merchants. This post explains how to
 orchestrate a payment transaction from a service worker during runtime (i.e.
 when a window is displayed and the user is interacting with it).
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/b0Pz24lmWMepSM6tboa1.png", alt="Orchestrating payment transactions with a service worker", width="800", height="945", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/b0Pz24lmWMepSM6tboa1.png", alt="Orchestrating payment transactions with a service worker", width="800", height="945" %}
+  <figcaption>
     Orchestrating payment transactions with a service worker
   </figcaption>
 </figure>
@@ -71,7 +71,7 @@ windows.
 The preserved `PaymentRequestEvent` contains important information about this
 transaction:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -131,12 +131,12 @@ they can authenticate, choose shipping address and options, and authorize the
 payment. We'll cover how to write the frontend code in *Handling payments on the
 payment frontend* (coming soon).
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Checkout flow with a web-based payment app.
   </figcaption>
 </figure>
@@ -184,7 +184,7 @@ class PromiseResolver {
       this.reject_ = reject;
     })
   }
-  get promise() { return this.promise_ } 
+  get promise() { return this.promise_ }
   get resolve() { return this.resolve_ }
   get reject() { return this.reject_ }
 }
@@ -294,7 +294,7 @@ Pass a
 [`PaymentHandlerResponse`](https://w3c.github.io/payment-handler/#dom-paymenthandlerresponse)
 object.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

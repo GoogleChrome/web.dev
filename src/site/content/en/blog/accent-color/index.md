@@ -20,7 +20,7 @@ a choice between few or no custom styles, or resetting input styles and
 build it up from scratch. Building it up from scratch ends up being much more
 work than anticipated. It can also lead to forgotten styles for element states
 ([indeterminate](https://developer.mozilla.org/docs/Web/CSS/:indeterminate),
-I'm looking at you), and the loss of built-in accessibility features. 
+I'm looking at you), and the loss of built-in accessibility features.
 To fully recreate what the browser provides may be more
 work than you're looking to take on.
 
@@ -33,36 +33,35 @@ specification](https://www.w3.org/TR/css-ui-4/#widget-accent) is here to tint
 elements with one line of CSS, saving you from customization efforts by
 providing a way to bring your brand into elements.
 
-<figure class="w-figure ">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png", 
-    class="w-screenshot",
-    alt="A light theme screenshot of an accent-color demo where 
-    checkbox, radio buttons, a range slider and progress element 
-    are all tinted hotpink.", 
-    width="800", height="548" 
+<figure>
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CfSS3F1XUsfCHIB86xeE.png",
+    alt="A light theme screenshot of an accent-color demo where
+    checkbox, radio buttons, a range slider and progress element
+    are all tinted hotpink.",
+    width="800", height="548"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a>
   </figcaption>
 </figure>
 
 The `accent-color` property also works with
 [`color-scheme`](/color-scheme/), allowing authors to tint both
-the light and dark elements. 
+the light and dark elements.
 In the following example the user has a dark theme active, the page uses
 `color-scheme: light dark`, and uses the same `accent-color: hotpink` for dark
 themed hotpink tinted controls.
 
-<figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png", 
-    alt="A dark theme screenshot of an accent-color demo where 
-    checkbox, radio buttons, a range slider and progress element 
-    are all tinted hotpink.", 
-    width="800", height="548" 
+<figure>
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/3gxeeZoSLY34tsMxkyt9.png",
+    alt="A dark theme screenshot of an accent-color demo where
+    checkbox, radio buttons, a range slider and progress element
+    are all tinted hotpink.",
+    width="800", height="548"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a>
   </figcaption>
 </figure>
@@ -80,7 +79,7 @@ Currently, only four elements will tint via the `accent-color` property:
 dark color schemes.
 
 {% Aside "warning" %}
-If the following demo elements are all the same color, 
+If the following demo elements are all the same color,
 then your browser doesn't support `accent-color` yet.
 {% endAside %}
 
@@ -120,12 +119,11 @@ color](https://webaim.org/articles/contrast/) to be used alongside the custom
 accent. Below is a screenshot demonstrating how Chrome 94 (left) and Firefox 92
 Nightly (right) differ in their algorithms:
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png", 
-  class="w-screenshot",
-  alt="A screenshot of Firefox and Chromium side by side, 
-  rendering a full spectrum of checkboxes in various hues and darknesses.", 
-  width="800", height="832" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DJhB56n10Eh8O29RsRdE.png",
+   alt="A screenshot of Firefox and Chromium side by side,
+  rendering a full spectrum of checkboxes in various hues and darknesses.",
+  width="800", height="832"
 %}
 
 The most important thing to take away from this, is to **trust the browser**.
@@ -146,7 +144,7 @@ minimal sandbox which tints:
 - scrollbar thumb (Firefox only)
 
 ```css
-html { 
+html {
   --brand: hotpink;
   scrollbar-color: hotpink Canvas;
 }
@@ -159,7 +157,7 @@ html {
 :is(
   ::-webkit-calendar-picker-indicator,
   ::-webkit-clear-button,
-  ::-webkit-inner-spin-button, 
+  ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button
 ) {
   color: var(--brand);
@@ -176,7 +174,7 @@ html {
 The spec does not limit the application of `accent-color` to the four elements
 shown in this article, more support could be added later. Elements like the
 selected `<option>` in a `<select>` could be highlighted with the
-`accent-color`. 
+`accent-color`.
 
 What else do you like to tint on the web? Tweet
 [@argyleink](https://twitter.com/argyleink) with your selector and it might get

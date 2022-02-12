@@ -18,8 +18,8 @@ understand your content and how it relates to other pages.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags links
 without descriptive text:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Lighthouse audit showing links don't have descriptive text", width="800", height="191", class="w-screenshot w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Lighthouse audit showing links don't have descriptive text", width="800", height="191" %}
 </figure>
 
 Lighthouse flags the following generic link text:

@@ -30,8 +30,8 @@ and the audit doesn't fail either.
 We don't have the track info in the codelab,
 which seems problematic as well.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing captions">
+<figure>
+  <img src="" alt="Lighthouse audit showing video element missing captions">
 </figure>
 -->
 

@@ -37,7 +37,7 @@ the "origin" is `https://www.example.com:443`.
 Websites that have the combination of the same scheme, hostname, and port are
 considered "same-origin". Everything else is considered "cross-origin".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -110,7 +110,7 @@ is the effective TLD and the part of the domain just before it.
 Websites that have the same eTLD+1 are considered "same-site". Websites that
 have a different eTLD+1 are "cross-site".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -162,7 +162,7 @@ same-site](/schemeful-samesite/)" referring to the stricter definition. In that
 case, `http://www.example.com` and `https://www.example.com` are considered
 cross-site because the schemes don't match.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

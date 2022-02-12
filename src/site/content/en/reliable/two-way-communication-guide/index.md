@@ -26,7 +26,7 @@ worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) context, 
 different APIs, the [Workbox library](https://developers.google.com/web/tools/workbox), as well as
 some advanced cases.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HIbZyXbQNijm1S4eQlEv.png", alt="Diagram showing a service worker and the page exchanging messages.", width="800", height="310" %}
 </figure>
 
@@ -74,7 +74,7 @@ Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API), but 
 implementation details, making it easier to use, while leveraging the [wide browser
 support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DxyWzq96JQCU3hADZiN8.png", alt="Diagram showing two-way communication between page and service worker, using Workbox Window.", width="700", height="410" %}
 </figure>
 
@@ -98,7 +98,7 @@ Differences:
   object instantiated on each side.
 - Browser support varies among them.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nPYcdQbxAezigMiuoLJg.png", alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.", width="600", height="273" %}
 </figure>
 
@@ -138,7 +138,7 @@ broadcast.onmessage = (event) => {
 As seen, there's no explicit reference to a particular context, so there's no need of obtaining a
 reference first to the service worker or any particular client.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uWl3NVD3rxbSoA0JxvuN.png", alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.", width="700", height="355" %}
 </figure>
 
@@ -196,7 +196,7 @@ self.clients.matchAll(options).then(function (clients) {
 });
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oApyHsmljr1KkBW85Wv9.png", alt="Diagram showing a service worker communicating with an array of clients.", width="500", height="348" %}
 </figure>
 
@@ -235,7 +235,7 @@ messageChannel.port1.onmessage = (event) => {
 };
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/THMp68FKAah5qYIsiFOk.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="600", height="344" %}
 </figure>
 
@@ -302,7 +302,7 @@ Google search uses Background Sync to persist failed queries due to bad connecti
 them later when the user is online. Once the operation is performed, they communicate the result to
 the user via a web push notification:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eMbvk9IRoaAggs8t5CbF.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="700", height="381" %}
 </figure>
 
@@ -359,9 +359,9 @@ bgFetch.addEventListener('progress', () => {
 });
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ii1koJyCl0drJyewTIxV.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="700", height="434" %}
-    <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).
+    <figcaption>The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).
     </figcaption>
 </figure>
 

@@ -34,9 +34,9 @@ It's easy to check an element's accessible name using Chrome's DevTools:
    behind a `»` symbol.
 1. In the **Computed Properties** dropdown, look for the **Name** property.
 
-<figure class="w-figure">
-  {% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %}
+  <figcaption>
     DevTools accessibility pane showing the computed name for a button.
   </figcaption>
 </figure>
@@ -56,7 +56,7 @@ There are different ways to add an accessible name to an element,
 depending on its type. The following table lists the most common element types
 that need accessible names and links to explanations for how to add them.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -296,9 +296,9 @@ This is especially helpful for screen readers that offer shortcuts to list all
 of the links on the page. If links are full of repetitive filler text, these
 shortcuts become much less useful:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="VoiceOver's links menu filled with the word 'here'.", width="519", height="469" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of VoiceOver, a screen reader for macOS, showing the navigate by
     links menu.
   </figcaption>
@@ -330,8 +330,8 @@ When the checkbox has been labeled correctly, the screen reader can report that
 the element has a role of checkbox, is in a checked state, and is named "Receive
 promotional offers?" like in the VoiceOver example below:
 
-<figure class="w-figure">
-  {% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="VoiceOver text output showing 'Receive promotional offers?'", width="640", height="174", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="VoiceOver text output showing 'Receive promotional offers?'", width="640", height="174" %}
 </figure>
 
 {% Assessment 'self-assessment' %}

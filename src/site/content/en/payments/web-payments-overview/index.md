@@ -53,9 +53,9 @@ experience and more secure solutions.
 <section style="display:flex;padding-bottom:32px;">
   <div style="min-width:50%">
     <h3>Easy and consistent</h3>
-    Web Payments make checkout easy for the user, by reusing stored 
-payments and address information and removing the need for the user to fill in checkout forms. 
-Since the UI is implemented by the browser natively, users see a familiar and consistent checkout 
+    Web Payments make checkout easy for the user, by reusing stored
+payments and address information and removing the need for the user to fill in checkout forms.
+Since the UI is implemented by the browser natively, users see a familiar and consistent checkout
 experience on any website that uses the standard.</div>
   <div style="min-width:50%;padding-top:32px;">
     {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/DXwSsz8wgEO3ffCT2s15.png", alt="Easy and Consistent", width="800", height="508" %}
@@ -67,7 +67,7 @@ experience on any website that uses the standard.</div>
   </div>
   <div style="min-width:50%">
     <h3>Secure and flexible</h3>
-    Web Payments provide industry-leading payment technology to the 
+    Web Payments provide industry-leading payment technology to the
 web, and can easily integrate a secure payment solution.</div>
 </section>
 

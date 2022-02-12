@@ -24,8 +24,8 @@ This causes problems for users who have installed the app to their devices.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags web apps whose start URL doesn't respond with a 200 when offline:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Lighthouse audit showing start URL doesn't respond with 200 when offline", width="800", height="76", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Lighthouse audit showing start URL doesn't respond with 200 when offline", width="800", height="76" %}
 </figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}

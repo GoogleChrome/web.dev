@@ -270,15 +270,12 @@ within 500&nbsp;ms of a user interaction and therefore don't count towards CLS.
 Hovering over a particular layout shift in the **Experience** panel highlights
 the affected DOM element.
 
-
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Uug2fnJT8mOc2YQmxo2l.png",
   alt="Screenshot of a layout shift displayed in the DevTools Network panel",
-  class="w-screenshot",
   width="724",
   height="629"
  %}
-
 
 To view more information about the layout shift, click on the layout shift, then
 open the **Summary** drawer. Changes to the element's dimensions are listed
@@ -286,26 +283,20 @@ using the format `[width, height]`; changes to the element's position are listed
 using the format `[x,y]`. The **Had recent input** property indicates whether a
 layout shift occurred within 500&nbsp;ms of a user interaction.
 
-
-
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png",
   alt="Screenshot of the DevTools 'Summary' tab for a layout shift",
-  class="w-screenshot",
   width="612",
   height="354"
  %}
-
 
 For information on the duration of a layout shift, open the **Event Log** tab.
 The duration of a layout shift can also be approximated by looking in the
 **Experience** pane for the length of the red layout shift rectangle.
 
-
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png",
   alt="Screenshot of the DevTools 'Event Log' tab for a layout shift",
-  class="w-screenshot",
   width="612",
   height="354"
  %}
@@ -370,14 +361,14 @@ insertion of a DOM element, whereas a 1&nbsp;px or 2&nbsp;px layout shift often 
 the application of conflicting CSS styles or the loading and application of a
 web font.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png",
     alt="Diagram showing a layout shift caused by a font swap",
     width="800",
     height="452"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     In this example, font swapping caused page elements to shift upwards by five pixels.
   </figcaption>
 </figure>

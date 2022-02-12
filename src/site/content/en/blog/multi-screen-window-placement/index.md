@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2021-09-02
+updated: 2021-11-10
 tags:
   - blog
   - capabilities
@@ -40,7 +40,7 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -66,8 +66,8 @@ some [changes](https://github.com/webscreens/window-placement/blob/main/CHANGES.
 article has been updated accordingly.
 
 Starting in Chromium&nbsp;93, the Multi-Screen Window Placement API will again be available as an
-origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;95 (November
-10, 2021).
+origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;96 (December
+15, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -111,17 +111,10 @@ window.screen;
   availWidth: 1680
   colorDepth: 30
   height: 1050
-  id: ""
-  internal: false
   isExtended: true
-  left: 0
   onchange: null
   orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
   pixelDepth: 30
-  primary: false
-  scaleFactor: 2
-  top: 0
-  touchSupport: false
   width: 1680
 */
 ```
@@ -133,9 +126,9 @@ The iPad next to my MacBook is connected to the laptop via
 [Sidecar](https://support.apple.com/en-us/HT210380), so whenever I need to, I can quickly turn the
 iPad into a second screen.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.", width="558", height="520" %}
-  <figcaption class="w-figcaption">A multi-screen setup.</figcaption>
+  <figcaption>A multi-screen setup.</figcaption>
 </figure>
 
 If I want to take advantage of the bigger screen, I can put the popup from the
@@ -158,7 +151,7 @@ Multi-Screen Window Placement API.
 To check if the Multi-Screen Window Placement API is supported, use:
 
 ```js
-if ('getScreens' in window) {
+if ('getScreenDetails' in window) {
   // The Multi-Screen Window Placement API is supported.
 }
 ```
@@ -194,19 +187,19 @@ window.screen.isExtended;
 // Returns `true` or `false`.
 ```
 
-### The `getScreens()` method
+### The `getScreenDetails()` method
 
 Now that I know that the current setup is multi-screen, I can obtain more information about the
-second screen using `Window.getScreens()`. Calling this function will show a permission prompt that
+second screen using `Window.getScreenDetails()`. Calling this function will show a permission prompt that
 asks me whether the site may open and place windows on my screen. The function returns a promise
-that resolves with an array of `ScreenAdvanced` objects. On my MacBook Pro 13 with a connected iPad,
-this returns an array of two `ScreenAdvanced` objects:
+that resolves with a `ScreenDetailed` object. On my MacBook Pro 13 with a connected iPad,
+this includes a `screens` field with two `ScreenDetailed` objects:
 
 ```js
-await window.getScreens();
+await window.getScreenDetails();
 /* Output from my MacBook Pro 13″ with the iPad attached:
 {
-  currentScreen: ScreenAdvanced {left: 0, top: 0, isPrimary: true, isInternal: true, devicePixelRatio: 2, …}
+  currentScreen: ScreenDetailed {left: 0, top: 0, isPrimary: true, isInternal: true, devicePixelRatio: 2, …}
   oncurrentscreenchange: null
   onscreenschange: null
   screens: [{
@@ -218,8 +211,6 @@ await window.getScreens();
     colorDepth: 30
     devicePixelRatio: 2
     height: 1050
-    id: ""
-    internal: false
     isExtended: true
     isInternal: true
     isPrimary: true
@@ -228,11 +219,7 @@ await window.getScreens();
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
     pixelDepth: 30
-    pointerTypes: []
-    primary: false
-    scaleFactor: 2
     top: 0
-    touchSupport: false
     width: 1680
   },
   {
@@ -244,8 +231,6 @@ await window.getScreens();
     colorDepth: 24
     devicePixelRatio: 2
     height: 1024
-    id: ""
-    internal: false
     isExtended: true
     isInternal: false
     isPrimary: false
@@ -254,11 +239,8 @@ await window.getScreens();
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
     pixelDepth: 24
-    pointerTypes: []
-    primary: false
-    scaleFactor: 2
     top: 0
-    touchSupport: false
+    width: 1366
   }]
 }
 */
@@ -270,9 +252,6 @@ allows me to determine exactly how the screens are arranged logically (next to e
 each other, etc.). There is also data now for each screen to show whether it is an `isInternal` one
 and whether it is an `isPrimary` one. Note that the built-in screen
 [is not necessarily the primary screen](https://osxdaily.com/2010/04/27/set-the-primary-display-mac/#:~:text=Click%20on%20the%20Display%20icon,primary%20display%20for%20your%20Mac).
-Both also have a `label` and an `id`, which, if persisted across browser sessions, allows for window
-arrangements to be restored. Information about the possible input methods are available in the
-`pointerTypes` array.
 
 The `currentScreen` field is a live object corresponding to the current `window.screen`. The object
 is updated on cross-screen window placements or device changes.
@@ -289,14 +268,14 @@ itself does not provide this data. To look up the screen details, use the live o
 `Screens` interface.
 
 ```js
-const screensInterface = await window.getScreens();
-let cachedScreensLength = screensInterface.screens.length;
-screensInterface.addEventListener('screenschange', (event) => {
-  if (screensInterface.screens.length !== cachedScreensLength) {
+const screenDetails = await window.getScreenDetails();
+let cachedScreensLength = screenDetails.screens.length;
+screenDetails.addEventListener('screenschange', (event) => {
+  if (screenDetails.screens.length !== cachedScreensLength) {
     console.log(
-      `The screen count changed from ${cachedScreensLength} to ${screensInterface.screens.length}`,
+      `The screen count changed from ${cachedScreensLength} to ${screenDetails.screens.length}`,
     );
-    cachedScreensLength = screensInterface.screens.length;
+    cachedScreensLength = screenDetails.screens.length;
   }
 });
 ```
@@ -307,9 +286,9 @@ If I am only interested in changes to the current screen (that is, the value of 
 `currentScreen`), I can listen for the `currentscreenchange` event.
 
 ```js
-const screensInterface = await window.getScreens();
-screensInterface.addEventListener('currentscreenchange', async (event) => {
-  const details = screensInterface.currentScreen;
+const screenDetails = await window.getScreenDetails();
+screenDetails.addEventListener('currentscreenchange', async (event) => {
+  const details = screenDetails.currentScreen;
   console.log('The current screen has changed.', event, details);
 });
 ```
@@ -320,7 +299,7 @@ Finally, if I am only interested in changes to a concrete screen, I can listen t
 `change` event.
 
 ```js
-const firstScreen = (await window.getScreens())[0];
+const firstScreen = (await window.getScreenDetails())[0];
 firstScreen.addEventListener('change', async (event) => {
   console.log('The first screen has changed.', event, firstScreen);
 });
@@ -340,7 +319,7 @@ fullscreen:
 
 ```js
 try {
-  const primaryScreen = (await getScreens()).screens.filter((screen) => screen.isPrimary)[0];
+  const primaryScreen = (await getScreenDetails()).screens.filter((screen) => screen.isPrimary)[0];
   await document.body.requestFullscreen({ screen: primaryScreen });
 } catch (err) {
   console.error(err.name, err.message);
@@ -353,10 +332,10 @@ It is not possible to polyfill the Multi-Screen Window Placement API, but you ca
 you can code exclusively against the new API:
 
 ```js
-if (!('getScreens' in window)) {
+if (!('getScreenDetails' in window)) {
   // Returning a one-element array with the current screen,
   // noting that there might be more.
-  window.getScreens = async () => [window.screen];
+  window.getScreenDetails = async () => [window.screen];
   // Set to `false`, noting that this might be a lie.
   window.screen.isExtended = false;
 }
@@ -369,14 +348,15 @@ non-supporting browsers.
 ## Demo
 
 If you are anything like me, you keep a close eye on the development of the various
-cryptocurrencies. (In reality I very much do not, but, for the sake of this article, just assume I
-do.) To keep track of the cryptocurrencies that I own, I have developed a web app that allows me to
+cryptocurrencies. (In reality I very much do not because I love this planet, but,
+for the sake of this article, just assume I
+did.) To keep track of the cryptocurrencies that I own, I have developed a web app that allows me to
 watch the markets in all life situations, such as from the comfort of my bed, where I have a decent
 single-screen setup.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ", width="800", height="863" %}
-  <figcaption class="w-figcaption">Relaxing and watching the markets.</figcaption>
+  <figcaption>Relaxing and watching the markets.</figcaption>
 </figure>
 
 This being about crypto, the markets can get hectic at any time. Should this happen, I can quickly
@@ -386,9 +366,9 @@ me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9W
 completely off-guard and left me
 [with my hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.", width="800", height="600" %}
-  <figcaption class="w-figcaption">Panicky, witnessing the YCY bloodbath.</figcaption>
+  <figcaption>Panicky, witnessing the YCY bloodbath.</figcaption>
 </figure>
 
 You can play with the [demo][demo] embedded below, or see its [source code][demo-source] on glitch.

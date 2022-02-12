@@ -89,9 +89,9 @@ form is submitted without the user needing to press **Continue**.
 
 The whole process is diagrammed in the image below.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     WebOTP API diagram
   </figcaption>
 </figure>
@@ -360,7 +360,7 @@ To use WebOTP API from within a cross-origin iframe, you need to do two things:
 * Configure permissions policy to allow the cross-origin iframe to receive OTP
   from the user directly.
 
-<figure class="w-figure">
+<figure>
 {% Video
   src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4",
   autoplay="true",
@@ -369,10 +369,9 @@ To use WebOTP API from within a cross-origin iframe, you need to do two things:
   muted="true",
   preload="auto",
   width="300",
-  height="600",
-  class="w-screenshot"
+  height="600"
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     WebOTP API within an iframe in action.
   </figcaption>
 </figure>

@@ -14,8 +14,8 @@ to minimize total network bytes.
 The Opportunities section of your Lighthouse report lists all text-based resources
 that aren't compressed:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="A screenshot of the Lighthouse Enable text compression audit", width="800", height="271", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZftZfKlPcEu2cs4ltwK8.png", alt="A screenshot of the Lighthouse Enable text compression audit", width="800", height="271" %}
 </figure>
 
 ## How Lighthouse handles text compression
@@ -82,9 +82,9 @@ To check if a server compressed a response:
 1. Click the **Headers** tab.
 1. Check the `content-encoding` header in the **Response Headers** section.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="The content-encoding response header", width="800", height="571", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jBKe0MYnlcQK9OLzAKTa.svg", alt="The content-encoding response header", width="800", height="571" %}
+  <figcaption>
     The <code>content-encoding</code> response header.
   </figcaption>
 </figure>

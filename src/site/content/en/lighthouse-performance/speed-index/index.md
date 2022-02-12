@@ -15,8 +15,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays Speed Index in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/LFN6FPQ2uQ4LnwcHiZWq.png", alt="A screenshot of the Lighthouse Speed Index audit", width="800", height="592", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/LFN6FPQ2uQ4LnwcHiZWq.png", alt="A screenshot of the Lighthouse Speed Index audit", width="800", height="592" %}
 </figure>
 
 ## What Speed Index measures
@@ -40,7 +40,7 @@ and the speed indices of real websites, based on
 
 This table shows how to interpret your mobile Speed Index score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

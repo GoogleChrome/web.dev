@@ -33,13 +33,13 @@ At a high-level, a browser follows the caching order below when it requests a re
     decides whether to return the resource itself based on its programmed caching strategies. Note
     that this does not happen automatically. You need to create a fetch event handler in your
     service worker and intercept network requests so that the requests are served from the service
-    worker's cache rather than the network. 
+    worker's cache rather than the network.
 1.  **HTTP cache (also known as the browser cache)**: If the resource is found in the [HTTP
     Cache](/http-cache) and has not yet expired, the browser automatically uses the
     resource from the  HTTP cache.
 1.  **Server-side:** If nothing is found in the service worker cache or the HTTP cache, the
     browser goes to the network to request the resource. If the resource isn't cached in a CDN, the
-    request must go all the way back to the origin server. 
+    request must go all the way back to the origin server.
 
 {% Img src="image/admin/vtKWC9Bg9dAMzoFKTeAM.png", alt="Caching flow", width="800", height="585" %}
 
@@ -63,7 +63,7 @@ A service worker intercepts HTTP requests with [event
 listeners](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (usually the `fetch` event). This
 [code snippet](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstrates the logic of a
 [Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)
-caching strategy. 
+caching strategy.
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="A diagram showing how service workers intercept HTTP requests", width="800", height="516" %}
 
@@ -166,7 +166,7 @@ In addition to fine-grained control of caching logic, service worker caching als
 
 The first time a browser loads a web page and related resources, it stores these resources in its
 HTTP cache. The HTTP cache is usually enabled automatically by browsers, unless it has been
-explicitly disabled by the end user. 
+explicitly disabled by the end user.
 
 Using HTTP caching means relying on the server to determine when to cache a resource and for how
 long.
@@ -237,7 +237,7 @@ short-term.
 #### Scenario: Long-term caching (Cache, falling back to network)
 
 +   When a cached resource is valid (<= 30 days): The service worker returns the cached
-    resource immediately without going to the network. 
+    resource immediately without going to the network.
 +   When a cached resource is expired (> 30 days): The service worker goes to the network to
     fetch the resource. The browser doesn't have a copy of the resource in its HTTP cache, so it
     goes server-side for the resource.
@@ -275,7 +275,7 @@ server-side.
 In all scenarios, the service worker cache can still return cached resources when the network is
 unstable. On the other hand, the HTTP cache is not reliable when the network is unstable or down.
 
-### Different cache expiry logic at the service worker cache and HTTP layers 
+### Different cache expiry logic at the service worker cache and HTTP layers
 
 To demonstrate the pros and cons, we'll again look at long-term, medium-term, and short-term
 scenarios.

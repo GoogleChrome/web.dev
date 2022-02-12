@@ -29,15 +29,15 @@ Install button in the address bar, or an Install menu item in the overflow
 menu.
 
 <div class="w-columns" >
-  <figure class="w-figure" id="browser-install-promo">
+  <figure id="browser-install-promo">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Screenshot of omnibox with install indicator visible.", width="800", height="307" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Browser provided install promotion (desktop)
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Screenshot of browser provided install promotion.", width="800", height="307" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Browser provided install promotion (mobile)
     </figcaption>
   </figure>
@@ -68,7 +68,7 @@ Other browsers have similar criteria for installation, though there may be
 minor differences. Check the respective sites for full details:
 
 * [Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
-* [Firefox](https://developer.mozilla.org/Apps/Progressive/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
+* [Firefox](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Installable_PWAs)
 * [Opera](https://dev.opera.com/articles/installable-web-apps/)
 * [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
 * [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)

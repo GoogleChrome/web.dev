@@ -19,11 +19,11 @@ tags:
 ---
 
 In the [Progressive Web Apps in multi-origin sites blog
-post](https://web.dev/multi-origin-pwas/), Demian discussed the challenges that
+post](/multi-origin-pwas/), Demian discussed the challenges that
 sites built on multiple origins face when trying to build a single Progressive
 Web App that encompasses all of them.
 
-An example of this type of site architecture is a ecommerce site where: 
+An example of this type of site architecture is a ecommerce site where:
 
 - The home page is at `https://www.example.com`.
 - The category pages are hosted at `https://category.example.com`.
@@ -37,9 +37,9 @@ avoiding this type of configuration and for those that already have sites
 built in this way, to consider migrating to a single origin site architecture
 whenever possible.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/QnwgUcEBv8o8k2XiAYbm.png", alt="Diagram showing a site divded into multiple origins and showing that technique is discouraged when building PWAs.", width="800", height="461" %}
-  <figcaption class="w-figcaption">Avoid using different origins for site sections of the same site when trying to build a unified Progresive Web App.</figcaption>
+  <figcaption>Avoid using different origins for site sections of the same site when trying to build a unified Progresive Web App.</figcaption>
 </figure>
 
 In this post, we take a look at the opposite case: instead of a single PWA
@@ -84,15 +84,15 @@ name** is a good way of establishing that relationship. For example:
 - A company wants to build separate chat, mail, and calendar apps and wants them
   to work as individual apps, tied to the company's name.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/XEwhGkkV9Bz7Z2KEJWjm.png", alt="Avoid using different origins for site sections of the same site when trying to build a unified Progresive Web App.", width="800", height="475" %}
-  <figcaption class="w-figcaption">Company that owns example.com wants to provide three independent apps or PWAs, using the same domain name to establish the relationship between them.</figcaption>
+  <figcaption>Company that owns example.com wants to provide three independent apps or PWAs, using the same domain name to establish the relationship between them.</figcaption>
 </figure>
 
 ## Using separate origins
 
 The recommended approach in cases like these is for each conceptually
-distinct app live on its own origin. 
+distinct app live on its own origin.
 
 If you want to use the same domain name inside all of them, you can do that by
 using subdomains. For example, a company that provides multiple internet apps or
@@ -127,9 +127,9 @@ If apps on subdomains want to share local data with each other they will still
 be able to do it via cookies, or for more advanced scenarios they could
 consider synchronizing the storage through a server.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/FfuseK64y4PRqXYEGEt9.png", alt="ALT_TEXT_HERE", width="800", height="421" %}
-  <figcaption class="w-figcaption">Building different PWAs in distinct origins, by using subdomains is a good practice.</figcaption>
+  <figcaption>Building different PWAs in distinct origins, by using subdomains is a good practice.</figcaption>
 </figure>
 
 ## Using the same origin
@@ -158,9 +158,9 @@ many problems and limitations, the root of which stems from the fact that the
 browser won't fully consider these to be distinct "apps", therefore **this
 approach is discouraged**.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/6HX5zEb58sEEWQoJt82m.png", alt="ALT_TEXT_HERE", width="800", height="420" %}
-  <figcaption class="w-figcaption">Using paths (overlapping or not) to provide two independent PWAs (“app1”, “app2”) under the same origin is discouraged.</figcaption>
+  <figcaption>Using paths (overlapping or not) to provide two independent PWAs (“app1”, “app2”) under the same origin is discouraged.</figcaption>
 </figure>
 
 In the next section, we analyze these challenges in more detail, and what can be
@@ -172,12 +172,12 @@ Here are some practical issues common to both same-origin approaches:
 
 - **Storage:** Cookies, local storage, and all forms of device-local storage are
   shared between apps. For that reason, if the user decides to wipe local data
-  for one app, it will wipe all the data from the origin; there's no way 
+  for one app, it will wipe all the data from the origin; there's no way
  to do this for a single app. Note that Chrome and some other
   browsers will actively prompt users to wipe local data when uninstalling one
   of the apps, and this will affect data for the other apps on the origin as
   well. Another issue is that apps will also have to share their [storage
-  quota](https://web.dev/storage-for-the-web/#how-much) which means if either of
+  quota](/storage-for-the-web/#how-much) which means if either of
   them takes up too much space, the other will be negatively impacted.
 - **Permissions:** Permissions are tied to the origin. That means if the user
   grants a permission to one app, it will apply to all apps on that origin
@@ -212,14 +212,14 @@ In practice this presents the following issues:
 - **Installation Promotion:** If the user visits the inner app (for example,
   in a web browser), when the outer app is already installed in the user's
   device, the browser won't show the install promotional banners, and the
-  [BeforeInstallPrompt event](https://web.dev/customize-install/) won't be
+  [BeforeInstallPrompt event](/customize-install/) won't be
   triggered. The reason is that the browser will check and see whether the
   current page belongs to an app that's already installed, and it will conclude
   that it is. The workaround for this is to install the inner app manually
   (via "Create Shortcut" browser menu option), or to install the inner app
   first, before the outer app.
 - **[Notification](https://developer.mozilla.org/docs/Web/API/notification)
-  and the [Badging API](https://web.dev/badging-api/)**: If the outer app is
+  and the [Badging API](/badging-api/)**: If the outer app is
   installed but the inner app is not, notifications and badges coming from the
   inner app will be erroneously attributed to the outer app (which is the
   nearest enclosing scope of an installed app). This feature works properly in
@@ -259,7 +259,7 @@ recommended over using overlapping or nested paths, like `https://example.com/`
 ## Additional resources
 
 - [Progressive Web Apps in multi-origin
-  sites](https://web.dev/multi-origin-pwas/)
+  sites](/multi-origin-pwas/)
 
 With many thanks for their technical reviews and suggestions: _Joe Medley,
 Dominick Ng, Alan Cutter, Daniel Murphy, Penny McLachlan, Thomas Steiner and

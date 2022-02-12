@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **1º de junho de 2021:** A implementação da CLS mudou. Para saber mais sobre os motivos por trás da mudança, veja [Evoluindo a métrica CLS](/evolving-cls). {% endBanner %}
+{% Aside 'caution' %} **1º de junho de 2021:** A implementação da CLS mudou. Para saber mais sobre os motivos por trás da mudança, veja [Evoluindo a métrica CLS](/evolving-cls). {% endAside %}
 
 {% Aside 'key-term' %} Cumulative Layout Shift (CLS), ou Mudança Cumulativa de Layout, é uma métrica importante e centrada no usuário para medir a [estabilidade visual](/user-centric-performance-metrics/#types-of-metrics) porque ajuda a quantificar a frequência com que os usuários experimentam mudanças inesperadas de layout: uma CLS baixa ajuda a garantir que a página seja [agradável](/user-centric-performance-metrics/#questions). {% endAside %}
 
@@ -21,12 +21,12 @@ Já aconteceu de você estar lendo um artigo online quando algo muda repentiname
 
 Na maioria das vezes, esse tipo de experiência é apenas irritante, mas, em alguns casos, pode causar danos reais.
 
-<figure class="w-figure">
-  <video autoplay controls loop muted class="w-screenshot" poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
+<figure>
+  <video autoplay controls loop muted poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">Um screencast ilustrando como a instabilidade do layout pode afetar negativamente os usuários.</figcaption></figure>
+  <figcaption>Um screencast ilustrando como a instabilidade do layout pode afetar negativamente os usuários.</figcaption></figure>
 
 O movimento inesperado do conteúdo da página geralmente ocorre porque os recursos são carregados de forma assíncrona ou os elementos do DOM são adicionados dinamicamente à página acima do conteúdo existente. O culpado pode ser uma imagem ou vídeo com dimensões desconhecidas, uma fonte que fica maior ou menor que sua substituta ou um anúncio ou widget de terceiros que se redimensiona dinamicamente.
 
@@ -44,12 +44,12 @@ Uma explosão de mudanças de layout, conhecida como [*janela de sessão*](evolv
 
 A maior explosão é a janela da sessão com a pontuação cumulativa máxima de todas as mudanças de layout dentro dessa janela.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" width="658" height="452">
+<figure>
+  <video controls autoplay loop muted width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Exemplo de janelas de sessão. As barras azuis representam as pontuações de cada mudança de layout individual.</figcaption></figure>
+  <figcaption>Exemplo de janelas de sessão. As barras azuis representam as pontuações de cada mudança de layout individual.</figcaption></figure>
 
 {% Aside 'caution' %} Anteriormente, a CLS media a soma total de *todas as pontuações de mudança de layout individuais* que ocorriam durante a existência da página. Para ver quais ferramentas ainda fornecem a capacidade de fazer benchmarks em relação à implementação original, dê uma olhada em [Evolução da Cumulative Layout Shift em ferramentas da web](/cls-web-tooling). {% endAside %}
 
@@ -59,7 +59,7 @@ Para fornecer uma boa experiência ao usuário, os sites devem se esforçar para
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Bons valores de CLS estão abaixo de 0,1, valores baixos são maiores que 0,25 e qualquer coisa entre precisa de melhorias", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Bons valores de CLS estão abaixo de 0,1, valores baixos são maiores que 0,25 e qualquer coisa entre precisa de melhorias", width="400", height="300" %}
 </picture>
 
 {% Aside %} Para saber mais sobre a pesquisa e a metodologia por trás dessa recomendação, veja: [Definindo os limites das Core Web Vitals](/defining-core-web-vitals-thresholds/) {% endAside %}

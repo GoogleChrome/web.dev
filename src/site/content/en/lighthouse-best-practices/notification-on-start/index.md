@@ -18,8 +18,8 @@ those notifications may not be relevant to your users or their needs.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that request notification permissions on load:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eKTrQAAdl1v7pQL0GYRc.png", alt="Lighthouse audit shows page requests notification permissions on load", width="800", height="213", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eKTrQAAdl1v7pQL0GYRc.png", alt="Lighthouse audit shows page requests notification permissions on load", width="800", height="213" %}
 </figure>
 
 Lighthouse checks all JavaScript executed on page load.

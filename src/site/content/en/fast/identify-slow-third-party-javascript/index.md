@@ -41,9 +41,9 @@ To run an audit:
 
 The Lighthouse **Third-party usage** audit shows a list of the third-party providers a page uses. This overview can help you better understand the big picture and identify redundant third-party code. The audit is available in the [Lighthouse extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) and will soon be added to DevTools in Chrome 77.
 
-<figure class="w-figure">
-  {% Img src="image/admin/4JXHK0FkgJIfKED16BnF.png", alt="Screenshot showing that 51 third-parties were found and a list of imaginary startups.", width="728", height="646", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/4JXHK0FkgJIfKED16BnF.png", alt="Screenshot showing that 51 third-parties were found and a list of imaginary startups.", width="728", height="646" %}
+  <figcaption>
   Third-party provider names generated with <a href="http://tiffzhang.com/startup/?s=641553836036">Startup generator</a>. Any similarity to actual startups, living or dead, is purely coincidental.
   </figcaption>
 </figure>
@@ -51,12 +51,12 @@ The Lighthouse **Third-party usage** audit shows a list of the third-party provi
 ### Reduce JavaScript execution time
 The Lighthouse [Reduce JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
-{% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Screenshot showing that the 'Show third-party resources' checkbox is checked.", width="800", height="981", class="w-screenshot" %}
+{% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Screenshot showing that the 'Show third-party resources' checkbox is checked.", width="800", height="981" %}
 
 ### Avoid enormous network payloads
 The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
-{% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Screenshot of the Chrome DevTools 'Avoid enormous network payloads' audit.", width="799", height="631", class="w-screenshot" %}
+{% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Screenshot of the Chrome DevTools 'Avoid enormous network payloads' audit.", width="799", height="631" %}
 
 ## Block network requests in Chrome DevTools
 
@@ -67,7 +67,7 @@ To enable request blocking:
 1. Right-click any request in the **Network** panel.
 1. Select **Block request URL**.
 
-{% Img src="image/admin/UbedvjrtP9si1l0X2QVA.png", alt="A screenshot of the context menu in the Chrome DevTools Performance panel. The 'Block request URL' option is highlighted.", width="800", height="529", class="w-screenshot" %}
+{% Img src="image/admin/UbedvjrtP9si1l0X2QVA.png", alt="A screenshot of the context menu in the Chrome DevTools Performance panel. The 'Block request URL' option is highlighted.", width="800", height="529" %}
 
 A **Request blocking** tab will appear in the DevTools drawer. You can manage which requests have been blocked there.
 

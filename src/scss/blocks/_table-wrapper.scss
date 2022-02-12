@@ -1,9 +1,7 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/tables
 .table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  @include overflow-shadow(#{get-utility-value('bg', 'core-bg')});
 
   table {
     min-width: 30rem;
@@ -12,6 +10,11 @@
 
   td,
   th {
-    white-space: nowrap;
+    min-width: 8rem;
+  }
+
+  [colspan],
+  [rowspan] {
+    min-width: 15rem;
   }
 }

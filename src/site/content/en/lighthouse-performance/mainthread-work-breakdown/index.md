@@ -28,8 +28,8 @@ leading to a bad experience.
 flags pages that keep the main thread busy for longer than 4&nbsp;seconds
 during load:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="A screenshot of the Lighthouse Minimize main thread work audit", width="800", height="408", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="A screenshot of the Lighthouse Minimize main thread work audit", width="800", height="408" %}
 </figure>
 
 To help you identify the sources of main thread load,
@@ -45,7 +45,7 @@ See [The anatomy of a frame](https://aerotwist.com/blog/the-anatomy-of-a-frame/)
 for an overview of how Chromium renders web pages.
 
 See [Do less main thread work](https://developers.google.com/web/tools/chrome-devtools/speed/get-started#main)
-to learn how to use Chrome DevTools to to investigate exactly what your main thread is doing
+to learn how to use Chrome DevTools to investigate exactly what your main thread is doing
 as the page loads.
 
 ### Script evaluation

@@ -37,9 +37,9 @@ your application data before it gets to a user's browser, showing modified
 information on the site or direct the user to an unintended destination. This is
 sometimes called **modification of messages**.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qrf4KBAceYxf2E5A8f6J.png", alt="modification of message", width="800", height="475" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A web site being tampered by attacker to guide user to a phishing site.
   </figcaption>
 </figure>
@@ -59,9 +59,9 @@ without you noticing.
 With a **passive attack**, the attacker tries to collect or learn information
 from the application but does not affect the application itself.
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QtAWlZRXJULRaQLQ7bKQ.png", alt="passive attack", width="547", height="344" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Attacker eavesdropping communication between a user and a server.
   </figcaption>
 </figure>

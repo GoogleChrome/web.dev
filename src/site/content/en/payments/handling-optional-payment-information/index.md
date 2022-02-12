@@ -30,9 +30,9 @@ as the hub for communication between the merchant and the payment app. This post
 explains how a payment app can pass information about the payment method,
 shipping address, or contact information to the merchant using a service worker.
 
-<figure class="w-figure">
-  {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/4XRuSFGyEE2Cjwrmu0jb.png", alt="Handling optional payment information with a service worker", width="800", height="1344", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/4XRuSFGyEE2Cjwrmu0jb.png", alt="Handling optional payment information with a service worker", width="800", height="1344" %}
+  <figcaption>
     Handling optional payment information with a service worker
   </figcaption>
 </figure>
@@ -40,7 +40,7 @@ shipping address, or contact information to the merchant using a service worker.
 ## Inform the merchant of a payment method change {: #payment-method-changes }
 Payment apps can support multiple payment instruments with different payment methods.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -83,9 +83,9 @@ methods (Credit Card Issuer 1 and Bank X). On a payment transaction, the payment
 app can let the customer pick one of the payment instruments and use it to pay
 for the merchant.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yZYmEL3y1e2cPaLNz34K.png", alt="Payment method picker UI", width="800", height="1600", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure style="width:300px; margin:auto;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yZYmEL3y1e2cPaLNz34K.png", alt="Payment method picker UI", width="800", height="1600" %}
+  <figcaption>
     Payment method picker UI
   </figcaption>
 </figure>
@@ -101,9 +101,9 @@ identifier. The service worker should invoke
 `PaymentRequestEvent.changePaymentMethod()` with the new payment method
 information.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ogXzkcdinU3RNC9cMzN0.png", alt="Inform the merchant of a payment method change", width="800", height="659", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ogXzkcdinU3RNC9cMzN0.png", alt="Inform the merchant of a payment method change", width="800", height="659" %}
+  <figcaption>
     Inform the merchant of a payment method change
   </figcaption>
 </figure>

@@ -66,9 +66,9 @@ The image below illustrates this structure. On the left is the basic container
 structure with two streams. On the right are the specifics of that structure for
 a single WebM file.
 
-<figure class="w-figure  w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QwNEBBa8LEMpedJh5imG.png", alt="Comparing media file structure with a hypothetical media file.", width="560", height="250" %}
-  <figcaption class="w-figcaption">Parts of a media file.</figcaption>
+  <figcaption>Parts of a media file.</figcaption>
 </figure>
 
 Files in WebM containers can be orders of magnitude smaller than other formats,

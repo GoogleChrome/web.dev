@@ -27,7 +27,7 @@ This post rounds up some of the research that has been done on the relationship 
 
 ## Performance is about retaining users
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   <blockquote>
     <p>
   	Performance has directly impacted the company's bottom line.
@@ -81,7 +81,7 @@ This lack of an experience is fleeting on fast connections.
 On slower connections, however, users are forced to wait.
 Users may experience more problems as page resources slowly trickle in.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="A comparison of two filmstrip reels of a page loading. The first shows a page loading on a slow connection, while the second shows the same page loading on a fast connection.", width="800", height="264" %}
   <figcaption>A comparison of page load on a very slow connection
 (top) versus a faster connection (bottom).</figcaption>

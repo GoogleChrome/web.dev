@@ -22,9 +22,9 @@ other installed app.
 In addition to the [browser provided install experience](/promote-install/#browser-promotion),
 it's possible to provide your own custom install flow, directly within your app.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Install App button provided in the Spotify PWA", width="491", height="550" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     "Install App" button provided in the Spotify PWA
   </figcaption>
 </figure>

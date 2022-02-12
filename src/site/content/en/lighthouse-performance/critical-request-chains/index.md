@@ -18,8 +18,8 @@ the more significant the impact on page load performance.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 reports critical requests loaded with a high priority:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="A screenshot of the Lighthouse Minimize critical request depth audit", width="800", height="452", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="A screenshot of the Lighthouse Minimize critical request depth audit", width="800", height="452" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}

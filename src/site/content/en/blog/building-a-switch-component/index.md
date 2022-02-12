@@ -18,15 +18,14 @@ tags:
 In this post I want to share thinking on a way to build switch components.
 [Try the demo](https://gui-challenges.web.app/switch/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nzABBfSBoy73cyYD60WR.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/switch/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -38,7 +37,7 @@ If you prefer video, here's a YouTube version of this post:
 ## Overview
 
 A [switch](https://w3c.github.io/aria/#switch) functions similar to a checkbox
-but explicitly represents boolean on and off states. 
+but explicitly represents boolean on and off states.
 
 This demo uses `<input type="checkbox" role="switch">` for the majority of its
 functionality, which has the advantage of not needing CSS or JavaScript to be
@@ -67,7 +66,7 @@ The length (`--track-size`), padding, and two colors:
   --track-color-inactive: var(--track-inactive);
   --track-color-active: var(--track-active);
 
-  @media (prefers-color-scheme: dark) { 
+  @media (prefers-color-scheme: dark) {
     --track-inactive: hsl(80 0% 35%);
     --track-active: hsl(80 60% 60%);
   }
@@ -86,7 +85,7 @@ The size, background color, and interaction highlight colors:
   --thumb-color: var(--thumb);
   --thumb-color-highlight: var(--thumb-highlight);
 
-  @media (prefers-color-scheme: dark) { 
+  @media (prefers-color-scheme: dark) {
     --thumb: hsl(0 0% 5%);
     --thumb-highlight: hsl(0 0% 100% / 25%);
   }
@@ -113,7 +112,7 @@ ambiguity, while giving the user the ability to interact with the label to
 toggle the input.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hRnaoi1lcNmpzizuUUzm.png", alt="A
-natural, unstyled label and checkbox.", class="w-screenshot", width="216",
+natural, unstyled label and checkbox.", width="216",
 height="80" %}
 
 ```html
@@ -130,7 +129,7 @@ browser manages the
 [`checked`](https://developer.mozilla.org/docs/Web/HTML/Element/input/checkbox#checked)
 property and [input
 events](https://developer.mozilla.org/docs/Web/API/HTMLElement#input_events)
-such as `oninput`and `onchanged`. 
+such as `oninput`and `onchanged`.
 
 ## Layouts
 
@@ -149,10 +148,10 @@ layouts.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/aIpui6HjdmtoELmVX59U.png",
 alt="Flexbox DevTools overlaying a horizontal label and switch, showing their layout
-distribution of space.", width="746", height="218", class="w-screenshot" %}
+distribution of space.", width="746", height="218" %}
 
 ```css
-.gui-switch { 
+.gui-switch {
   display: flex;
   align-items: center;
   gap: 2ch;
@@ -166,7 +165,7 @@ For example, to put labels above or below a switch, or to change the
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q9ouS16fND5xcqY14YVh.png",
 alt="Flexbox DevTools overlaying a vertical label and switch.", width="486",
-height="254", class="w-screenshot" %}
+height="254" %}
 
 ```html
 <label for="light-switch" class="gui-switch" style="flex-direction: column">
@@ -182,7 +181,7 @@ The checkbox input is styled as a switch track by removing its normal
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Ai9vbILT66rxmVsKgmoJ.png",
 alt="Grid DevTools overlaying the switch track, showing the named grid track
-areas with the name 'track'.", width="272", height="182", class="w-screenshot" %}
+areas with the name 'track'.", width="272", height="182" %}
 
 ```css
 .gui-switch > input {
@@ -200,7 +199,7 @@ areas with the name 'track'.", width="272", height="182", class="w-screenshot" %
 ```
 
 The track also creates a one by one single cell grid track area for a thumb to
-claim. 
+claim.
 
 ### Thumb
 
@@ -216,7 +215,7 @@ stacks on top of the track instead of below it by claiming the grid area
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/THV6KoJTUIBfSFntzcG1.png",
 alt="DevTools showing the pseudo-element thumb as positioned inside a CSS grid.",
-width="554", height="196", class="w-screenshot" %}
+width="554", height="196" %}
 
 ```css
 .gui-switch > input::before {
@@ -227,9 +226,9 @@ width="554", height="196", class="w-screenshot" %}
 }
 ```
 
-{% Aside 'warning' %} 
-Not all inputs can have pseudo-elements, 
-[learn more here](https://webplatform.news/issues/2020-08-26). 
+{% Aside 'warning' %}
+Not all inputs can have pseudo-elements,
+[learn more here](https://webplatform.news/issues/2020-08-26).
 {% endAside %}
 
 ## Styles
@@ -258,8 +257,7 @@ my own `cursor: pointer` style:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/bc6ocZIoezgR9tGXaLuC.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -271,7 +269,7 @@ interaction feedback. Be sure to provide custom alternatives if you remove them.
 
 This element's styles are mostly about its shape and color, which it accesses
 from the parent `.gui-switch` via the
-[cascade](/learn/css/the-cascade/). 
+[cascade](/learn/css/the-cascade/).
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DlRcU2fRFUNykS8mtIgZ.png",
 alt="The switch variants with custom track sizes and colors.",
@@ -297,7 +295,7 @@ custom properties. `border: none` is added since `appearance: none` doesn't
 remove the borders from the checkbox on all browsers.
 
 ### Thumb
-The thumb element is already on the right `track` but needs circle styles: 
+The thumb element is already on the right `track` but needs circle styles:
 
 ```css
 .gui-switch > input::before {
@@ -308,7 +306,7 @@ The thumb element is already on the right `track` but needs circle styles:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/2XLIMU0IzH9oHLfUso65.png",
 alt="DevTools shown highlighting the circle thumb pseudo-element.", width="504",
-height="208", class="w-screenshot" %}
+height="208" %}
 
 #### Interaction
 
@@ -322,7 +320,7 @@ motion or hover highlight styles.
   box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
 
   @media (--motionOK) { & {
-    transition: 
+    transition:
       transform var(--thumb-transition-duration) ease,
       box-shadow .25s ease;
   }}
@@ -334,7 +332,7 @@ motion or hover highlight styles.
 Custom properties provide a single source mechanism for positioning the thumb in
 the track. At our disposal are the track and thumb sizes which we'll use in
 calculations to keep the thumb properly offset and between within the track:
-`0%` and `100%`. 
+`0%` and `100%`.
 
 The `input` element owns the position variable `--thumb-position`, and the thumb
 pseudo element uses it as a `translateX` position:
@@ -370,15 +368,14 @@ may animate when changed:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2ECSW2OFiI4Fj4bSdGRF.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
 
 I thought this decoupled orchestration worked out well. The thumb element is
 only concerned with one style, a `translateX` position. The input can manage all
-the complexity and calculations. 
+the complexity and calculations.
 
 {% Aside %} This reminds me of [reactive state
 stores](https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/),
@@ -390,7 +387,7 @@ subscribers all with the correct values. {% endAside %}
 ### Vertical
 
 Supporting was done with a modifier class `-vertical` which adds a rotation with
-CSS transforms to the `input` element. 
+CSS transforms to the `input` element.
 
 A 3D rotated element does not change the overall height of the component though,
 which can throw off block layout. Account for this using the `--track-size` and
@@ -409,8 +406,7 @@ a vertical button to flow in layout as expected:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D9kVn8ESM6SPI3GaDsEm.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -439,7 +435,7 @@ think it worked out great:
 A custom property called `--isLTR` initially holds a value of `1`, meaning it's
 `true` since our layout is left-to-right by default. Then, using the CSS
 pseudo class [`:dir()`](https://developer.mozilla.org/docs/Web/CSS/:dir),
-the value is set to `-1` when the component is within a right-to-left layout. 
+the value is set to `-1` when the component is within a right-to-left layout.
 
 Put `--isLTR` into action by using it within a `calc()` inside of a transform:
 
@@ -506,7 +502,7 @@ endAside %}
 
 This state represents the `on` state. In this state, the input "track"
 background is set to the active color and the thumb position is set to "the
-end". 
+end".
 
 ```css
 .gui-switch > input:checked {
@@ -607,8 +603,7 @@ animation then provides direction towards the interactive thumb element.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/9LytLmt8m8f1QyxUCwQs.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -620,7 +615,7 @@ The "highlight" effect is done with `box-shadow`. On hover, of an non-disabled i
   box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
 
   @media (--motionOK) { & {
-    transition: 
+    transition:
       transform var(--thumb-transition-duration) ease,
       box-shadow .25s ease;
   }}
@@ -643,8 +638,7 @@ attempted and nothing happens.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/03YLvDcirYLYWE3dVx1z.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -698,7 +692,7 @@ page, but horizontal ones are custom handled.
 On setup and during drag, various computed number values will need to be grabbed
 from elements. The following JavaScript functions return computed pixel values
 given a CSS property. It's used in the setup script like this
-`getStyle(checkbox, 'padding-left')`. 
+`getStyle(checkbox, 'padding-left')`.
 
 ```js
 ​​const getStyle = (element, prop) => {
@@ -717,11 +711,11 @@ export {
 
 Notice how `window.getComputedStyle()` accepts a second argument, a target pseudo element. Pretty neat that JavaScript can read so many values from elements, even from pseudo elements.
 
-{% Aside 'warning' %} 
+{% Aside 'warning' %}
 These functions use `parseInt()` which is making an
 assumption that you are querying a value that returns a pixel value. This means
 that you cannot use these functions with `getStyle(element, "display")`, for
-example. 
+example.
 {% endAside %}
 
 ### `dragging`
@@ -731,8 +725,7 @@ from the function event handler:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/ytciNZidPZg12i8OZStU.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -763,7 +756,7 @@ keys are `.gui-switch`'s and the values are cached bounds and sizes that keep
 the script efficient. Right-to-left is handled using the same custom property
 that CSS is `--isLTR`, and is able to use it to invert logic and continue
 supporting RTL. The `event.offsetX` is valuable as well, as it contains a delta
-value useful for positioning the thumb. 
+value useful for positioning the thumb.
 
 ```js
 state.activethumb.style.setProperty('--thumb-position', `${track + pos}px`)
@@ -772,7 +765,7 @@ state.activethumb.style.setProperty('--thumb-position', `${track + pos}px`)
 This final line of CSS sets the custom property used by the thumb element. This
 value assignment would otherwise transition over time, but a previous pointer
 event has temporarily set `--thumb-transition-duration` to `0s`, removing what
-would have been a sluggish interaction. 
+would have been a sluggish interaction.
 
 ### `dragEnd`
 
@@ -812,7 +805,7 @@ const dragEnd = event => {
 
 Interaction with the element has completed, time to set the input checked
 property and remove all the gesture events. The checkbox is changed with
-`state.activethumb.checked = determineChecked()`. 
+`state.activethumb.checked = determineChecked()`.
 
 ### `determineChecked()`
 
@@ -824,7 +817,7 @@ halfway along the track:
 const determineChecked = () => {
   let {bounds} = switches.get(state.activethumb.parentElement)
 
-  let curpos = 
+  let curpos =
     Math.abs(
       parseInt(
         state.activethumb.style.getPropertyValue('--thumb-position')))
@@ -858,7 +851,7 @@ const padRelease = () => {
 ```
 
 This is to account for the label getting this later click, as it would uncheck,
-or check, the interaction a user performed. 
+or check, the interaction a user performed.
 
 If I was to do this again, I _might_ consider adjusting DOM with JavaScript
 during the UX upgrade, as to create an element that handles label clicks itself
@@ -885,9 +878,10 @@ to the community remixes section below!
 
 ### Community remixes
 
-- [@KonstantinRouda](https://twitter.com/KonstantinRouda) as their custom element: [demo](https://konrud.github.io/switch-web-component/Index.html) and [code](https://github.com/Konrud/switch-web-component)
+- [@KonstantinRouda](https://twitter.com/KonstantinRouda) with a custom element: [demo](https://konrud.github.io/switch-web-component/Index.html) and [code](https://github.com/Konrud/switch-web-component).
+- [@jhvanderschee](https://twitter.com/jhvanderschee) with a button: [Codepen](https://codepen.io/joosts/pen/MWvXxKm).
 
 ### Resources
 
 Find the `.gui-switch` [source code on
-  Github](https://github.com/argyleink/gui-challenges).
+  GitHub](https://github.com/argyleink/gui-challenges).

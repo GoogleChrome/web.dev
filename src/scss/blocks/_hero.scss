@@ -1,0 +1,96 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/hero
+.hero {
+  padding-block: get-space('size-3');
+
+  @include apply-utility('bg', 'mid-bg');
+
+  .feature-card {
+    --flow-space: #{get-space('size-1')};
+    max-width: 35rem;
+  }
+}
+
+.hero__eyebrow {
+  @include apply-utility('color', 'mid-text');
+}
+
+.hero__content {
+  margin-block-start: get-space('size-2');
+  max-width: 50ch;
+
+  h1 {
+    font-size: get-size('size-4');
+  }
+
+  .button {
+    --flow-space: #{get-space('size-2')};
+  }
+}
+
+/// Overrides a global masking for transparent images
+.hero__decor[src$='.svg'],
+.hero__decor[src$='.png'] {
+  background-color: transparent;
+}
+
+.hero__columns {
+  --switcher-target-container-width: 50rem;
+  --gutter: #{get-space('size-3')} #{get-space('size-2')};
+}
+
+/// EXCEPTIONS
+.hero[data-type='promo'] {
+  background: unset;
+}
+
+.hero[data-type='promo'] .hero__columns {
+  --switcher-vertical-alignment: stretch;
+}
+
+.hero[data-type='promo'] .hero__columns > :first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/// Reversed columns
+.hero__columns[data-direction='rev'] {
+  flex-direction: row-reverse;
+}
+
+/// RESPONSIVE ADJUSTMENTS
+@include media-query('lg') {
+  .hero {
+    .feature-card {
+      margin-inline-start: auto;
+    }
+  }
+
+  .hero__columns[data-direction='rev'] {
+    > :first-child > * {
+      margin-inline-start: auto;
+    }
+  }
+}
+
+
+.hero__content__img {
+  @include media-query('md') {
+    height: auto;
+    max-width: initial;
+    width: 420px;
+  }
+}
+
+.hero__content--split {
+  display: block;
+  text-align: center;
+
+  @include media-query('md') {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: initial;
+  }
+}

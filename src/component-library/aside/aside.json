@@ -91,6 +91,19 @@
       }
     },
     {
+      "name": "attention",
+      "title": "Attention",
+      "context": {
+        "content": "Use the gotcha aside to indicate a common problem that the reader wouldn't know without specialized knowledge of the topic.",
+        "type": "attention",
+        "title": "Attention!",
+        "icon": "lightbulb.svg",
+        "utilities": {
+          "main": "bg-tertiary-box-bg color-tertiary-box-text"
+        }
+      }
+    },
+    {
       "name": "key-term",
       "title": "Key term",
       "context": {

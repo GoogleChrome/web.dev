@@ -66,10 +66,10 @@ span the entire system: the client and the server, the development and
 production environments, and they integrate tools such as compiler, bundler,
 linter etc.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/ARzxz7gjVfJRFwdkzQoS.png", alt="Chart that shows
   common tooling in frameworks", width="800", height="450" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Common tooling used by framework developers
   </figcaption>
 </figure>
@@ -217,7 +217,8 @@ The Aurora team ([Shubhie](https://github.com/spanicker),
 [Houssein](https://github.com/housseindjirdeh),
 [Alex](https://github.com/atcastle), [Gerald](https://github.com/devknoll),
 [Ralph](https://github.com/janicklas-ralph),
-[Addy](https://github.com/addyosmani)) look forward to continuing to work
+[Addy](https://github.com/addyosmani), [Kara](https://github.com/kara),
+[Keen](https://github.com/kyliau)) look forward to continuing to work
 closely with the open-source framework community on improving user experience
 defaults in Next.js, Nuxt and Angular. We'll be growing our engagement to cover
 even more frameworks and tools over time. Watch this space for more blog posts,

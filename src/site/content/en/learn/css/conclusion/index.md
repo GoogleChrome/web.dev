@@ -10,6 +10,9 @@ authors:
   - robdodson
   - kaycebasques
   - jiwoong
+  - emmatwersky
+  - cambickel
+  - lozandier
 date: 2021-05-04
 ---
 
@@ -25,11 +28,11 @@ To continue to build your CSS skillset, here are some additional resources to ex
 
 - [CSS Documentation on MDN](https://developer.mozilla.org/docs/Web/CSS)
 - [Listen to the CSS Podcast](https://thecsspodcast.libsyn.com)
-- [CSS articles on web.dev](https://web.dev/tags/css/)
+- [CSS articles on web.dev](/tags/css/)
 - [How To Learn CSS - Smashing Magazine](https://www.smashingmagazine.com/2019/01/how-to-learn-css/)
 - [CSS-Tricks](https://css-tricks.com/tag/css/)
 - [Layout Land - Youtube](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
 
 ## Brought to you by
 
-{% include 'partials/author-stack.njk' %}
+{% include 'partials/authors-stack.njk' %}

@@ -15,9 +15,9 @@ tags:
 
 **tl;dr: Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.**
 
-If you use Lighthouse to audit your pages, you may be familiar with [Time to Interactive](/interactive), a metric representing when users can interact with your page and get a response. But did you know Long (JavaScript) Tasks can contribute heavily to a poor TTI?
+If you use Lighthouse to audit your pages, you may be familiar with [Time to Interactive](/tti/), a metric representing when users can interact with your page and get a response. But did you know Long (JavaScript) Tasks can contribute heavily to a poor TTI?
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Time to Interactive displayed in the Lighthouse Report", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4XCzYI9gaUJDTTJu9JxH.png", alt="Time to Interactive displayed in the Lighthouse Report", width="800", height="169" %}
 
 ## What are Long Tasks?
 
@@ -31,11 +31,11 @@ CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 
 
 Until now, you've needed to manually look for "long yellow blocks" of script over 50ms long in [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) or use the [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) to figure out what tasks were delaying interactivity. This could be a little cumbersome.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="A DevTools Performance panel screenshot showing the differences between short tasks and long tasks", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="A DevTools Performance panel screenshot showing the differences between short tasks and long tasks", width="800", height="450" %}
 
 To help ease your performance auditing workflow, [DevTools now visualizes Long Tasks](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Tasks (shown in gray) have red flags if they are Long Tasks.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualizing Long Tasks as gray bars in the Performance Panel with a red flag for long tasks", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualizing Long Tasks as gray bars in the Performance Panel with a red flag for long tasks", width="800", height="450" %}
 
 * Record a trace in the [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) of loading up a web page.
 * Look for a red flag in the main thread view. You should see tasks are now gray ("Task").
@@ -45,7 +45,7 @@ To help ease your performance auditing workflow, [DevTools now visualizes Long T
 
 To discover what is causing a long task, select the gray **Task** bar. In the drawer beneath, select **Bottom-Up** and **Group by Activity**. This allows you to see what activities contributed the most (in total) to the task taking so long to complete. Below, it appears to be a costly set of DOM queries.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="Selecting a long task (labelled 'Task') in DevTools allows us to drill-down into the activities that were responsible for it.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7irBiePkFJRmzKMlcJUV.png", alt="Selecting a long task (labelled 'Task') in DevTools allows us to drill-down into the activities that were responsible for it.", width="800", height="450" %}
 
 ## What are common ways to optimize Long Tasks?
 

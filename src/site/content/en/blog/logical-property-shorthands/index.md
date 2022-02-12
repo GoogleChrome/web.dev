@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Logical layout enhancements with flow-relative shorthands
 subhead: New logical property shorthands and new inset properties for Chromium.
 authors:
@@ -27,7 +28,7 @@ This catches Chromium up to Firefox, which has had support for the shorthands
 [since 66](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/66).
 Safari has them ready in their [tech preview](https://webkit.org/blog/11300/release-notes-for-safari-technology-preview-114/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t2y5tF9s3Wcp50kJJMmm.png", alt="Latin, Hebrew and Japanese are shown rending placeholder text within a device frame. Arrows and colors follow the text to help associate the 2 directions of block and inline.", width="800", height="577" %}
 </figure>
 
@@ -132,7 +133,7 @@ No new abilities shipped, but some super handy shorthands did: <br>
 If the above items do not have space between them, then `margin-block` shorthand is not supported in your browser.
 {% endAside %}
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Longhand' %}
 ```css
 margin-block-start: 2ch;
@@ -153,7 +154,7 @@ There is no shorthand for "top and bottom" or "left and right"… until now!
 You probably reference all 4 sides using the shorthand of `margin: 10px;`, and now you
 can easily reference 2 complimentary sides by using the logical property shorthand.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Longhand' %}
 ```css
 margin-inline-start: 4ch;
@@ -177,7 +178,7 @@ No new abilities shipped, but more super handy shorthands did: <br>
 
 <br>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Longhand' %}
 ```css
 padding-block-start: 2ch;
@@ -196,7 +197,7 @@ padding-block: 2ch 2ch;
 
 And the `inline` complimentary set of shorthands:
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Longhand' %}
 ```css
 padding-inline-start: 4ch;
@@ -231,7 +232,7 @@ setting sides with inset.
 
 <br>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical longhand' %}
 ```css
 position: absolute;
@@ -259,7 +260,7 @@ logical features brought by additional `inset` shorthands. These shorthands brin
 developer authoring convenience (they're shorter to type) but also increase
 the potential reach for the layout because they're flow-relative.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical longhand' %}
 ```css
 position: absolute;
@@ -278,7 +279,7 @@ inset-block: 10px;
 
 <br>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical longhand' %}
 ```css
 position: absolute;
@@ -306,7 +307,7 @@ new logical shorthands as well.
 
 <br>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical longhand' %}
 ```css
 border-top-color: hotpink;
@@ -325,7 +326,7 @@ border-block-color: hotpink hotpink;
 
 <br>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical longhand' %}
 ```css
 border-left-style: dashed;
@@ -344,7 +345,7 @@ border-inline-style: dashed dashed;
 
 <br>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical longhand' %}
 ```css
 border-left-width: 1px;
@@ -368,8 +369,8 @@ is available on MDN.
 Let's put it all together in a small example. Logical properties can layout
 an image with a caption to handle different writing and document directions.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/logical-property-figure-demo.mp4">
   </video>
 </figure>
@@ -464,11 +465,11 @@ to see which matches your toolchain and overall site strategy.
 
 ## What's next
 More of CSS will offer logical properties, it's not done yet! There's one big missing
-set of shorthands though, and a resolution is still pending in this [Github issue](https://github.com/w3c/csswg-drafts/issues/1282).
+set of shorthands though, and a resolution is still pending in this [GitHub issue](https://github.com/w3c/csswg-drafts/issues/1282).
 There is a temporary solution [in a draft](https://drafts.csswg.org/css-logical/#logical-shorthand-keyword). What if you want to style all
 logical sides of a box with a shorthand?
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Physical shorthand' %}
 ```css
 margin: 1px 2px 3px 4px;

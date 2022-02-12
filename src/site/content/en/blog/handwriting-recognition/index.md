@@ -8,19 +8,16 @@ authors:
   - christianliebel
   - thomassteiner
 date: 2021-05-17
-# updated: 2021-05-14
+updated: 2022-02-04
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/k1gdvpBMneFVrOC5h4yQ.jpg
 alt: A hand draws letters in calligraphic script on paper.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/3207688834594635777
 ---
 
 {% Aside %} The Handwriting Recognition API is part of the [capabilities project](/fugu-status/) and
-is currently in development. This post will be updated as the implementation progresses.
-{% endAside %}
+launched in Chromium&nbsp;99. {% endAside %}
 
 ## What is the Handwriting Recognition API? {: #what }
 
@@ -48,39 +45,19 @@ Example uses include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [In progress][ot]        |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                           |
+| ---------------------------------------- | -------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]            |
+| 2. Create initial draft of specification | [Complete][spec]                 |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)         |
+| 4. Origin trial                          | Complete                         |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;99) |
 
 </div>
 
 ## How to use the Handwriting Recognition API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the Handwriting Recognition API locally, without an origin trial token, enable
-the `#experimental-web-platform-features` flag in `about://flags`.
-
-{% Aside %} Note that the API is currently exclusive to Chrome&nbsp;OS devices. Chrome&nbsp;91
-already contains limited support for the API, but to fully experience it, we recommend you test on
-Chrome&nbsp;92 to Chrome&nbsp;94. {% endAside %}
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome&nbsp;92, the Handwriting Recognition API will be available as an origin trial on
-Chrome&nbsp;OS. The origin trial is expected to end in Chrome&nbsp;94 (October 13, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
@@ -359,9 +336,9 @@ application, [obtain it from npm](https://www.npmjs.com/package/handwriting-text
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the Handwriting Recognition API using the core
-principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
-including user control, transparency, and ergonomics.
+The Chromium team designed and implemented the Handwriting Recognition API using the core principles
+defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
+control, transparency, and ergonomics.
 
 ### User control
 
@@ -410,6 +387,7 @@ and let us know where and how you're using it.
 ## Helpful Links
 
 - [Explainer][explainer]
+- [Spec draft][spec]
 - [GitHub repo][github]
 - [ChromeStatus](https://www.chromestatus.com/features/5263213807534080)
 - [Chromium bug](https://crbug.com/1207667)
@@ -425,6 +403,7 @@ This article was reviewed by [Joe Medley], Honglin Yu and Jiewei Qian. Hero imag
 [Unsplash](https://unsplash.com/photos/MFvflDBZdyM).
 
 [explainer]: https://github.com/WICG/handwriting-recognition/blob/main/explainer.md
+[spec]: https://wicg.github.io/handwriting-recognition/
 [github]: https://github.com/WICG/handwriting-recognition
 [issues]: https://github.com/WICG/handwriting-recognition/issues
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
@@ -433,4 +412,3 @@ This article was reviewed by [Joe Medley], Honglin Yu and Jiewei Qian. Hero imag
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-handwriting-recognition-api/4935
 [i2p]: https://groups.google.com/a/chromium.org/g/blink-dev/c/VXUq1UY4m7Y
 [joe medley]: https://github.com/jpmedley
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/3207688834594635777

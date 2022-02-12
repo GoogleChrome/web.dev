@@ -19,8 +19,8 @@ With more and more users spending most of their time in the browser, richly inte
 
 By default, these keys are not available to the web application because they are captured by the browser or the underlying operating system. The Keyboard Lock API enables websites to use all available keys allowed by the host OS (see [Browser compatibility](#browser-compatibility)).
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6iFOOM7ImdtiMJHlbCnz.png", alt="Ubuntu Linux streamed to a browser tab in macOS Chrome (not running in full screen mode yet).", width="800", height="496", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6iFOOM7ImdtiMJHlbCnz.png", alt="Ubuntu Linux streamed to a browser tab in macOS Chrome (not running in full screen mode yet).", width="800", height="496" %}
   <figcaption>
     The problem: a streamed Ubuntu Linux remote desktop <em>not</em> running in full screen mode and <em>without</em> active keyboard lock,
     so system keys are still captured by the macOS host operating system and the experience is <em>not</em> immersive yet.
@@ -79,7 +79,7 @@ await navigator.keyboard.lock([
 ]);
 ```
 
-You can respond to captured key presses using keyboard events. 
+You can respond to captured key presses using keyboard events.
 For example this code uses the `onkeydown` event:
 
 ```js

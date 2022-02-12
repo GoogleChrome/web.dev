@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Five ways AirSHIFT improved their React app's runtime performance
 subhead: |
   A real-world case study of React SPA performance optimization.
@@ -26,28 +27,29 @@ Website performance is not just about load time. It is critical to provide a fas
 
 AirSHIFT is a desktop web application that helps store owners, like restaurants and cafes, to manage the shift work of their staff members. Built with React, the single page application provides rich client features including various grid tables of shift schedules organized by day, week, month and more.
 
-{% Img src="image/admin/q7g5sY2ix1oTwoPJX7qX.png", alt="A screenshot of the AirSHIFT web app.", width="800", height="626", class="w-screenshot" %}
+{% Img src="image/admin/q7g5sY2ix1oTwoPJX7qX.png", alt="A screenshot of the AirSHIFT web app.", width="800", height="626" %}
 
 As the Recruit Technologies engineering team added new features to the
 AirSHIFT app, they started seeing more feedback around slow performance.
 The engineering manager of AirSHIFT, Yosuke Furukawa, said:
 
-<blockquote class="w-blockquote">
-  In a user research study, we were shocked when one of the store owners said she
+<blockquote>
+  <p>In a user research study, we were shocked when one of the store owners said she
   would leave her seat to brew coffee after clicking a button, just to kill time waiting
-  for the shift table to load.
+  for the shift table to load.</p>
+  <cite></cite>
 </blockquote>
 
 After going through the research, the engineering team realized that many of their users were trying to load massive shift tables on low spec computers, such as a 1 GHz Celeron M laptop from 10 years ago.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/endless_spinner_vp9.webm"
             type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/endless_spinner_h264.mp4"
             type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     Endless spinner on low end devices.
   </figcaption>
 </figure>
@@ -56,9 +58,9 @@ The AirSHIFT app was blocking the main thread with expensive scripts,
 but the engineering team didn't realize how expensive the scripts were because they
 were developing and testing on rich spec computers with fast Wi-Fi connections.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RAi3zG4JngSi0UlSMi0a.png", alt="A chart that shows the app's runtime activity.", width="800", height="476", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RAi3zG4JngSi0UlSMi0a.png", alt="A chart that shows the app's runtime activity.", width="800", height="476" %}
+  <figcaption>
     When loading the shift table, around 80% of the load time was consumed by running scripts.
   </figcaption>
 </figure>
@@ -75,16 +77,16 @@ Displaying the shift table required multiple expensive steps: constructing the v
 
 To reduce the cost of this operation, AirSHIFT virtualized the shift table. The app now only mounts the components within the viewport and unmounts the off-screen components.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QOVmOQa0Jryhg8tKPBFs.png", alt="An annotated screenshot that demonstrates that AirSHIFT used to render content outside of the viewport.", width="800", height="306", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QOVmOQa0Jryhg8tKPBFs.png", alt="An annotated screenshot that demonstrates that AirSHIFT used to render content outside of the viewport.", width="800", height="306" %}
+  <figcaption>
     Before: Rendering all the shift table cells.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NLSdFKj1gpGBO82pfNNO.png", alt="An annotated screenshot that demonstrates that AirSHIFT now only renders content that's visible in the viewport.", width="800", height="307", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NLSdFKj1gpGBO82pfNNO.png", alt="An annotated screenshot that demonstrates that AirSHIFT now only renders content that's visible in the viewport.", width="800", height="307" %}
+  <figcaption>
     After: Only rendering the cells within the viewport.
   </figcaption>
 </figure>
@@ -95,16 +97,16 @@ In this case, AirSHIFT used [react-virtualized](https://github.com/bvaughn/react
 
 Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU slowdown + Fast 3G throttled Macbook Pro environment). This was the most impactful performance improvement in the refactoring project.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pRX1ap7tVOdAoTo35MWj.png", alt="An annotated screenshot of a Chrome DevTools Performance panel recording.", width="800", height="289", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pRX1ap7tVOdAoTo35MWj.png", alt="An annotated screenshot of a Chrome DevTools Performance panel recording.", width="800", height="289" %}
+  <figcaption>
     Before: Around 10 seconds of scripting after user input.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCy17DjlhMWXSsN1cFAZ.png", alt="Another annotated screenshot of a Chrome DevTools Performance panel recording.", width="800", height="358", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCy17DjlhMWXSsN1cFAZ.png", alt="Another annotated screenshot of a Chrome DevTools Performance panel recording.", width="800", height="358" %}
+  <figcaption>
     After: 4 seconds of scripting after user input.
   </figcaption>
 </figure>
@@ -126,9 +128,9 @@ which you can visualize from the
 of Chrome DevTools. AirSHIFT used the Timings section to find
 unnecessary logic running in React lifecycle events.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zTvUhCKRSCvZzo9mlkte.png", alt="The Timings section of the Performance panel of Chrome DevTools.", width="800", height="388", class="w-screenshot", style="max-width: 75%;" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zTvUhCKRSCvZzo9mlkte.png", alt="The Timings section of the Performance panel of Chrome DevTools.", width="800", height="388", style="max-width: 75%;" %}
+  <figcaption>
     React's User Timing events.
   </figcaption>
 </figure>
@@ -226,7 +228,7 @@ Related article: [React + Redux + Comlink = Off-main-thread](https://dassur.ma/t
 Despite the limited amount of logic they workerized as a trial, AirSHIFT shifted around 100 ms of
 their JavaScript from the main thread to the worker thread (simulated with 4x CPU throttling).
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cFIFNeEKqbyWGBEuPCy2.png", alt="A screenshot of a Chrome DevTools Performance panel recording that shows that scripting is now occurring on a web worker rather than the main thread.", width="800", height="99", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cFIFNeEKqbyWGBEuPCy2.png", alt="A screenshot of a Chrome DevTools Performance panel recording that shows that scripting is now occurring on a web worker rather than the main thread.", width="800", height="99" %}
 
 AirSHIFT is currently exploring whether they can lazy load other components
 and offload more logic to web workers to further reduce jank.
@@ -248,9 +250,9 @@ AirSHIFT is now monitoring the shift table loading event to make sure it complet
 the 75th percentile users. This is an unenforced budget for now but they are considering auto-notifications
 via Elasticsearch when they exceed their budget.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pSRqSKpmHKYGg8jalEr7.png", alt="A chart showing that the 75th percentile completes in around 2500 ms, the 50th percentile in around 1250 ms, the 25th percentile in around 750 ms, and the 10th percentile in around 500 ms.", width="800", height="549", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pSRqSKpmHKYGg8jalEr7.png", alt="A chart showing that the 75th percentile completes in around 2500 ms, the 50th percentile in around 1250 ms, the 25th percentile in around 750 ms, and the 10th percentile in around 500 ms.", width="800", height="549" %}
+  <figcaption>
     The Kibana dashboard showing daily performance data by percentiles.
   </figcaption>
 </figure>
@@ -273,7 +275,7 @@ can't be planned. They require experimentation and a trial-and-error mindset.
 AirSHIFT is now conducting internal 1-day performance hackathons to let engineers focus only on performance related work. In these hackathons they remove all constraints and respect the engineers' creativity, meaning any implementation that contributes to speed is worth considering. To accelerate the hackathon, AirSHIFT splits the group into small teams and each team competes to see who can get the biggest [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score improvement.
 The teams get very competitive! 🔥
 
-{% Img src="image/admin/A1nus9lmROXOGm9rpCsO.png", alt="Photos of the hackathon.", width="800", height="462", class="w-screenshot" %}
+{% Img src="image/admin/A1nus9lmROXOGm9rpCsO.png", alt="Photos of the hackathon.", width="800", height="462" %}
 
 ### Results
 
@@ -291,8 +293,8 @@ A good side effect was that many other engineering teams within Recruit got inte
 It was definitely not the easiest journey for AirSHIFT to work on these optimizations but it certainly paid off. Now AirSHIFT is loading the shift table within 1.5 sec in median which is a 6x improvement from their performance
 before the project.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/compare_speed_vp9.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/compare_speed_h264.mp4" type="video/mp4; codecs=h264">
   </video>
@@ -300,7 +302,8 @@ before the project.
 
 After the performance optimizations launched, one user said:
 
-<blockquote class="w-blockquote">
+<blockquote class="blockquote">
   Thank you so much for making the shift table load fast.
   Arranging the shift work is so much more efficient now.
+  <cite></cite>
 </blockquote>

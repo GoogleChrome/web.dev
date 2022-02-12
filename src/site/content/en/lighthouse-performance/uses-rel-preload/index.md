@@ -12,8 +12,8 @@ web_lighthouse:
 The Opportunities section of your Lighthouse report
 flags the third level of requests in your critical request chain as preload candidates:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="A screenshot of the Lighthouse Preload key requests audit", width="800", height="214", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="A screenshot of the Lighthouse Preload key requests audit", width="800", height="214" %}
 </figure>
 
 ## How Lighthouse flags determines preload candidates

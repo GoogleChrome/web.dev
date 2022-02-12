@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **2021 年 6 月 1 日**：CLS 的实现方式已发生变更。进一步了解变更原因，请查看[不断发展 CLS 指标](/evolving-cls)。 {% endBanner %}
+{% Aside 'caution' %} **2021 年 6 月 1 日**：CLS 的实现方式已发生变更。进一步了解变更原因，请查看[不断发展 CLS 指标](/evolving-cls)。 {% endAside %}
 
 {% Aside 'key-term' %} 累积布局偏移 (CLS) 是测量[视觉稳定性](/user-centric-performance-metrics/#types-of-metrics)的一个以用户为中心的重要指标，因为该项指标有助于量化用户经历意外布局偏移的频率，较低的 CLS 有助于确保一个页面是[令人愉悦的](/user-centric-performance-metrics/#questions)。 {% endAside %}
 
@@ -21,9 +21,8 @@ tags:
 
 大多数情况下，这些体验只是令人恼火，但在某些情况下，却可能带来真正的破坏。
 
-<figure class="w-figure">
+<figure>
   <video autoplay controls loop muted
-    class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
@@ -33,7 +32,7 @@ tags:
       src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
       type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     截屏视频说明了布局不稳定性会对用户产生怎样的负面影响。
   </figcaption>
 </figure>
@@ -54,12 +53,12 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 最大的一连串是指窗口内所有布局偏移累计分数最大的会话窗口。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" width="658" height="452">
+<figure>
+  <video controls autoplay loop muted width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">会话窗口示例。蓝色竖条代表每个单次布局偏移的分数。</figcaption></figure>
+  <figcaption>会话窗口示例。蓝色竖条代表每个单次布局偏移的分数。</figcaption></figure>
 
 {% Aside 'caution' %} 此前，CLS 测量的是整个页面生命周期内发生的*所有单次布局偏移分数*的总和。如需了解哪些工具仍然按照原方式提供测量功能，请查看[网络工具集中不断发展的累积布局偏移](/cls-web-tooling) 。 {% endAside %}
 
@@ -69,7 +68,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且介于两者之间的任何东西都需要改进", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且介于两者之间的任何东西都需要改进", width="400", height="300" %}
 </picture>
 
 {% Aside %} 如需详细了解这些建议值背后的研究和方法论，请参阅：[定义核心 Web 指标的指标阈值](/defining-core-web-vitals-thresholds/) {% endAside %}

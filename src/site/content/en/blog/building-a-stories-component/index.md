@@ -24,12 +24,12 @@ In this post I want to share thinking on building a Stories component for
 the web that is responsive, supports keyboard navigation, and works across
 browsers.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video playsinline controls autoplay loop muted>
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-desktop-demo.mp4">
   </video>
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges-stories.glitch.me/">Demo</a>
   </figcaption>
 </figure>
@@ -53,9 +53,9 @@ A Story component is fairly similar to a carousel, but allows navigating a
 multi-dimensional array as opposed to a single-dimensional array. It's as if there's a carousel inside
 each carousel. 🤯
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yVm8NC0TiAsl6hcDxys.png", alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.", width="716", height="255", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yVm8NC0TiAsl6hcDxys.png", alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.", width="716", height="255" %}
+  <figcaption>
     <span style="width: 1rem; height: 1rem; background: #EB00FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 1st carousel of friends
     <br><span style="width: 1rem; height: 1rem; background: #00D8FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 2nd "stacked" carousel of stories
     <br>👍 List in a list, aka: a multi-dimensional array
@@ -98,12 +98,12 @@ Our primary `.stories` component wrapper is a mobile-first horizontal scrollview
 }
 ```
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using Chrome DevTools'
     <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode">Device Mode</a>
     to highlight the columns created by Grid
@@ -173,18 +173,18 @@ you had to use JavaScript, and it was… tricky, to say the least. Check out
 [Introducing CSS Scroll Snap Points](https://css-tricks.com/introducing-css-scroll-snap-points/)
 by Sarah Drasner for a great breakdown of how to use them.
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Horizontal scrolling without and with <code>scroll-snap-points</code> styles.
     Without it, users can free scroll as normal. With it, the browser rests gently on each item.
   </figcaption>
 </figure>
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'parent' %}
 ```css/4-5
 .stories {

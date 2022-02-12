@@ -275,7 +275,7 @@ cookie header to the **Custom headers** field:
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Screeshot showing the 'Custom headers' field in WebPageTest", width="800", height="181", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Screeshot showing the 'Custom headers' field in WebPageTest", width="800", height="181" %}
 
 
 #### Change the test location
@@ -285,7 +285,7 @@ dropdown located on the **Advanced Testing** tab.
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Screenshot of the 'Test Location' dropdown in WebPageTest", width="800", height="267", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Screenshot of the 'Test Location' dropdown in WebPageTest", width="800", height="267" %}
 
 
 
@@ -304,7 +304,7 @@ the **Clear Storage** option in the **Lighthouse** settings panel.
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Screenshot higlighting the Lighthouse 'Clear Storage' option", width="800", height="304", class="w-screenshot" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Screenshot higlighting the Lighthouse 'Clear Storage' option", width="800", height="304" %}
 
 
 
@@ -401,7 +401,7 @@ walls](https://techcrunch.com/2020/05/06/no-cookie-consent-walls-and-no-scrollin
 Large modals can be considered a type of interstitial. Google Search [does not
 penalize](https://developers.google.com/search/blog/2016/08/helping-users-easily-access-content-on)
 the usage of interstitials when they are used to comply with legal regulations
-such as in the case of cookie banners. However, ther usage of interstitials in
+such as in the case of cookie banners. However, their usage of interstitials in
 other contexts—particularly if they are intrusive or create a poor user
 experience—may be penalized.
 {% endAside %}

@@ -55,9 +55,9 @@ TSLint works with all popular text editors and IDEs. To use it with VSCode, inst
 
 With codelyzer's accessibility checks set up, you get a popup showing accessibility errors in TypeScript files or inline templates as you code:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/XArrTmBXfijqQ8AteI76.png", alt="A screenshot of a codelyzer popup in a text editor.", width="800", height="433" %}
-  <figcaption class="w-figcaption">A codelyzer popup showing a form element labeling error.</figcaption>
+  <figcaption>A codelyzer popup showing a form element labeling error.</figcaption>
 </figure>
 
 To perform linting over the entire project (including external templates), use the `ng lint` command:

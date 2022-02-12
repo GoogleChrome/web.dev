@@ -26,7 +26,7 @@ informed about the result. Here are some examples:
 Delegating these types of non-critical tasks to the service worker has the benefit of freeing up the
 main thread for better handling more pressing tasks such as responding to user interactions.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gCpdKiIbSDZBMJEJE2tZ.png", alt="Diagram of a page requesting resources to cache to a service worker.", width="565", height="264" %}
 </figure>
 
@@ -47,7 +47,7 @@ use cases **imperative caching**.
 [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) to prefetch the
 top items in category pages to speed up subsequent navigation to product detail pages.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eNMKYuaKnlYu0N3IIhI5.png", alt="Logo of 1-800 Flowers.", width="400", height="203" %}
 </figure>
 
@@ -62,9 +62,9 @@ They use a mixed approach to decide which items to prefetch:
 They use the [Cache API](https://developer.mozilla.org/docs/Web/API/Cache) to store JSON
 responses:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FH4clAbGShyIdhj4jWdL.png", alt="Logo of 1-800 Flowers.", width="728", height="287" %}
-   <figcaption class="w-figcaption">Prefetching JSON product data from product listing pages in 1-800Flowers.com.</figcaption>
+   <figcaption>Prefetching JSON product data from product listing pages in 1-800Flowers.com.</figcaption>
 </figure>
 
 When the user clicks on an item, the JSON data associated with it can be picked up from the cache,

@@ -19,15 +19,14 @@ tags:
 In this post I want to share thinking on a way to build breadcrumb components.
 [Try the demo](https://gui-challenges.web.app/breadcrumbs/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/90PkYJ8y9wi2U1w034gv.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/breadcrumbs/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -42,13 +41,13 @@ A [breadcrumbs](https://codepen.io/search/pens?q=breadcrumbs) component shows
 where in the site hierarchy the user is. The name is from [Hansel and
 Gretel](https://en.wikipedia.org/wiki/Hansel_and_Gretel), who dropped
 breadcrumbs behind them in some dark woods and were able to find their way home
-by tracing crumbs backwards. 
+by tracing crumbs backwards.
 
 The breadcrumbs in this post are not [standard
 breadcrumbs](https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html),
 they're breadcrumb-like. They offer additional functionality by putting sibling
 pages right into the navigation with a `<select>`, making multi-tiered access
-possible. 
+possible.
 
 ### Background UX
 
@@ -58,20 +57,18 @@ rpg » indie » on sale`, as shown below.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/u3nemRGC7g39sVvPnUBh.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
 
 This breadcrumb component should enable users to move through this
 information hierarchy; jumping branches and selecting pages with speed and
-accuracy. 
+accuracy.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/69hQj4fuf6cJltEqGxDJ.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -84,7 +81,7 @@ I find it's helpful to think in terms of collections and items.
 
 A collection is an array of options to choose from. From the homepage of
 the breadcrumb prototype of this post, the collections are FPS, RPG, brawler,
-dungeon crawler, sports and puzzle. 
+dungeon crawler, sports and puzzle.
 
 ### Items
 
@@ -136,8 +133,7 @@ markup choices and how they impact the overall component.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/I8w6oe28ueaZsDiOFssl.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -159,7 +155,7 @@ without them due to the well structured markup. {% endAside %}
 It's appropriate to use the
 [`<nav>`](https://developer.mozilla.org/docs/Web/HTML/Element/nav) element
 for site navigation, which has an implicit ARIA [role of
-navigation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Navigation_Role). 
+navigation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Navigation_Role).
 In testing, I noticed that having the `role` attribute changed the way a
 screen reader interacted with the element, it was actually announced as
 navigation, and so I've chosen to add it.
@@ -170,7 +166,7 @@ When an icon is repeated on a page, the SVG
 [`<use>`](https://developer.mozilla.org/docs/Web/SVG/Element/use) element
 means that you can define the `path` once, and use it for all instances of the
 icon. This prevents the same path information from being repeated, causing
-larger documents and the potential of path inconsistency. 
+larger documents and the potential of path inconsistency.
 
 To use this technique, add a hidden SVG element to the page and wrap the icons
 in a `<symbol>` element with a unique ID:
@@ -182,12 +178,12 @@ in a `<symbol>` element with a unique ID:
     <title>A home icon</title>
     <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
   </symbol>
-  
+
   <symbol id="icon-dropdown-arrow">
     <title>A down arrow</title>
     <path d="M19 9l-7 7-7-7"/>
   </symbol>
-  
+
 </svg>
 ```
 
@@ -242,7 +238,7 @@ A link and some options is nothing special but adds more functionality to a
 simple breadcrumb. Adding a `title` to the `<select>` element is helpful for screen
 reader users, giving them information about the action of the button. However it
 provides the same help to everyone else too, you'll see it's front and center on
-iPad. One attribute provides button context to many users. 
+iPad. One attribute provides button context to many users.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/IbANGFRfyEC61P7ETlGp.png",
 alt="Screenshot with the invisible select element being hovered and its
@@ -256,8 +252,7 @@ contextual tooltip showing.", width="271", height="83" %}
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/LASjAldbKTMivtF01aWo.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -301,7 +296,7 @@ Each `.crumb` also establishes a horizontal vertically aligned layout with some
 gap, but specially targets its link children and specifies the style
 `white-space: nowrap`. This is crucial for multi-word breadcrumbs as we dont
 want them to go multi-line. Later in this post we'll add styles to handle the
-horizontal overflow this `white-space` property caused. 
+horizontal overflow this `white-space` property caused.
 
 ```css
 .crumb {
@@ -366,8 +361,7 @@ Try using this icon component from mobile!
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/n3MsbELMwsvYn355hXdi.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -376,7 +370,7 @@ Try using this icon component from mobile!
 
 Breadcrumbs should be able to represent a very long trail. I'm a fan of allowing
 things to go offscreen horizontally, when appropriate, and I felt this
-breadcrumbs component qualified well. 
+breadcrumbs component qualified well.
 
 ```css
 .breadcrumbs {
@@ -407,10 +401,10 @@ The overflow styles set up the following UX:
 #### Media queries
 
 One subtle adjustment for smaller viewports is to hide the "Home" label, leaving
-just the icon: 
+just the icon:
 
 ```css
-@media (width <= 480px) { 
+@media (width <= 480px) {
   .breadcrumbs .home-label {
     display: none;
   }
@@ -429,7 +423,7 @@ There isn't a whole lot of motion in this component, but by wrapping the
 transition in a `prefers-reduced-motion` check, we can prevent unwanted motion.
 
 ```css
-@media (prefers-reduced-motion: no-preference) { 
+@media (prefers-reduced-motion: no-preference) {
   .crumbicon {
     transition: box-shadow .2s ease;
   }
@@ -502,4 +496,4 @@ to the community remixes section below!
 
 ## Community remixes
 
-*Nothing to see here yet.*
+- [Tux Solbakk](https://github.com/tux-/) as a web component: [demo and code](https://tux-.github.io/breadcrumbs/public/index.html)

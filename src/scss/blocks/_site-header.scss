@@ -63,13 +63,55 @@
 .site-header__search {
   position: relative;
   min-width: 2.5rem;
+  z-index: 99;
 
-  /// ALL STYLES RELATED TO THE SEARCH WEB COMPONENTS
-  /// ARE CURRENTLY IN scss/_rollout.scss UNTIL FULL
-  /// ROLLOUT IS COMPLETE
+  .web-search__input-wrapper:not([aria-expanded='true']) {
+    display: none;
+  }
+
+  .web-search__input-wrapper {
+    position: absolute;
+    inset: -0.8rem 0 auto auto;
+
+    input {
+      padding-block: 0.5rem;
+    }
+  }
+
+  web-search-results {
+    position: absolute;
+    inset: 2.8rem 1rem auto auto;
+  }
+
+  .web-search-popout {
+    height: unset;
+    max-height: 16rem;
+    line-height: 1.4;
+    border: 1px solid get-utility-value('color', 'stroke');
+    border-radius: $global-radius-base;
+    padding: 0;
+    z-index: 99;
+
+    @include apply-utility('bg', 'core-bg');
+
+    a {
+      color: currentColor;
+    }
+
+    .web-search-popout__heading {
+      padding: $global-gutter-narrow;
+
+      @include apply-utility('bg', 'core-bg');
+    }
+  }
 }
 
-.cluster {
+.site-header web-search[expanded] .web-search__input-wrapper,
+.site-header web-search-results {
+  width: clamp(16rem, 40vw, 25rem);
+}
+
+.site-header .cluster {
   flex-wrap: nowrap;
 }
 
@@ -109,11 +151,11 @@
     }
   }
 
-  web-navigation-drawer[animating] [data-drawer-container] {
+  .site-header web-navigation-drawer[animating] [data-drawer-container] {
     transition: none;
   }
 
-  web-navigation-drawer[type='standard'] {
+  .site-header web-navigation-drawer[type='standard'] {
     position: static;
     pointer-events: auto;
     top: 0;
@@ -123,5 +165,18 @@
       box-shadow: none;
       transform: none;
     }
+  }
+}
+
+@include media-query('lg') {
+  /// Although the nav is centered, via flexbox, it doesn't look
+  /// optically centered, thanks to elements that vertically follow
+  /// it. This transform creates that optical adjustment
+  .site-header web-navigation-drawer[type='standard'] [data-drawer-container] {
+    transform: translateX(-1.75rem);
+  }
+
+  .site-header__link {
+    padding: 1.5em 2em;
   }
 }

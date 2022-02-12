@@ -12,7 +12,7 @@ Servers and browsers communicate with each other by sending bytes of data over t
 internet. If the server doesn't specify which [character encoding format][format] it's
 using when it sends an HTML file, the browser won't know what character each byte represents.
 The [character encoding declaration](https://html.spec.whatwg.org/multipage/semantics.html#charset)
-specification solves this problem. 
+specification solves this problem.
 
 {% Aside %}
   Theoretically, a late `<meta charset>` element (one that is not fully contained in
@@ -25,8 +25,8 @@ specification solves this problem.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that do not specify their character encoding:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IERR919vogl1HyYwxvVZ.png", alt="The failing character encoding audit.", width="800", height="110", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IERR919vogl1HyYwxvVZ.png", alt="The failing character encoding audit.", width="800", height="110" %}
 </figure>
 
 Lighthouse considers the character encoding to be declared if it finds any of the following:

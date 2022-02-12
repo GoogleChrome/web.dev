@@ -4,7 +4,7 @@ description: >
   Improve conversion rates by building better payment forms.
 authors:
   - michaelscharnagl
-date: 2021-10-11
+date: 2021-11-03
 ---
 
 {% Aside %}  
@@ -13,7 +13,7 @@ You can add payment functionality by implementing [Web Payments](/payments/),
 or using a third-party payment platform.  
 {% endAside %}
 
-The payment form is often the last step before finishing a purchase. 
+The payment form is often the last step before completing a purchase. 
 To maximize conversions, ensure your payment form is user-friendly and secure.
 
 {% Codepen {  
@@ -46,8 +46,8 @@ For example, use 'Security code',
 instead of an acronym like 'CVV' that's only used by some brands.
 
 {% Aside %}  
-Use a single `<input>` for each of the name and card number fields. 
-Keep the user in typing mode, and don't waste their time jumping between multiple name or card number fields.  
+Use a single `<input>` for each of the name and card number fields. Keep the user in typing mode, 
+and don't waste their time by forcing them to jump between multiple name or card number fields.  
 {% endAside %}
 
 ## Help users enter their payment details
@@ -69,33 +69,30 @@ Use `autocomplete="cc-name"` for the name,
 `autocomplete="cc-number"` for the card number, and `autocomplete="cc-exp"` for the expiry date.
 
 {% Aside %}  
-You can help users fill in the correct format for the expiry date by using an 
+You can help users fill in the correct format for expiry date by using an 
 [input mask](https://css-tricks.com/input-masking/). 
 Test with real users, using only your keyboard, 
 and a screen reader such as [VoiceOver](https://www.youtube.com/watch?v=5R-6WvAihms&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=6) 
 on Mac or [NVDA](https://www.nvaccess.org/) on Windows to ensure the input is still accessible.  
 {% endAside %}
 
-## Ensure users enter the correct format
+## Ensure users enter data in the correct format
 
 Use the `required` attribute for every `<input>` to ensure users fill out the complete form. 
 
-The security code can be three or four digits. 
+Payment card security codes can be three or four digits. 
 Use `minlength="3"` and `maxlength="4"` to only allow three and four digits.
-
-{% Aside %}  
-Credit card brands use different formats, 
-for example, for card numbers and security codes. 
-Always test your payment form with every card type you support. 
-Ensure your validation rules consider every possible format.  
-{% endAside %}
 
 Ensure users only enter numbers for the card number and security code. 
 Use `pattern="[0-9 ]+"` to allow users to include spaces when entering a card number, 
 since this is how the numbers are displayed on the physical cards. 
 
-Consider using [real-time validation](/learn/forms/javascript#ensure-users-are-notified-about-errors-in-real-time), 
-to help users correct invalid data even before filling out the complete payment `<form>`.
+{% Aside %}  
+Payment card brands use different formats, 
+for example, for card numbers and security codes. 
+Always test your payment form with every card type you support. 
+Ensure your validation rules consider every possible format.  
+{% endAside %}
 
 ## Resources
 

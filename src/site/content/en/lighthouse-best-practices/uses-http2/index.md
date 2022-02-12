@@ -17,8 +17,8 @@ and with less data moving over the wire.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) lists all resources not served over HTTP/2:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse audit shows resources not served over HTTP/2 ", width="800", height="191", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse audit shows resources not served over HTTP/2 ", width="800", height="191" %}
 </figure>
 
 Lighthouse gathers all resources requested by the page

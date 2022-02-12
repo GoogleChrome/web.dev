@@ -27,7 +27,7 @@ Largest Contentful Paint (LCP) 指標は、ビューポート内に表示され�
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="良好なLCP値は2.5秒、不十分な値は4.0秒を超え、その間の値は改善が必要", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="良好なLCP値は2.5秒、不十分な値は4.0秒を超え、その間の値は改善が必要", width="400", height="300" %}
 </picture>
 
 ### LCP における良いスコアとは？

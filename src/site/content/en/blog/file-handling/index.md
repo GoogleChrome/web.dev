@@ -7,15 +7,12 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-09-23
+updated: 2022-01-30
 tags:
   - blog
   - capabilities
-  # - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
 ---
 
 {% Aside %} The File Handling API is part of the [capabilities project](/fugu-status/) and is
@@ -38,35 +35,19 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | **[In progress][ot]**    |
+| 3. Gather feedback & iterate on design   | Complete                 |
+| 4. Origin trial                          | Complete                 |
 | 5. Launch                                | Not started              |
 
 </div>
 
 ## How to use the File Handling API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chromium&nbsp;92, the File Handling API will be available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Progressive enhancement
 
@@ -83,7 +64,7 @@ app, however, can be achieved through two other means:
 To check if the File Handling API is supported, use:
 
 ```javascript
-if ('launchQueue' in window) {
+if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
   // The File Handling API is supported.
 }
 ```
@@ -161,7 +142,7 @@ with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
 {% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
-[making your app installable](/progressive-web-apps/#installable). {% endAside %}
+[making your app installable](/progressive-web-apps/#make-it-installable). {% endAside %}
 
 ### The imperative part of the File Handling API
 
@@ -173,7 +154,7 @@ exactly once for each launch. In this manner, every launch is handled, regardles
 consumer was specified.
 
 ```js
-if ('launchQueue' in window) {
+if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
   launchQueue.setConsumer((launchParams) => {
     // Nothing to do when the queue is empty.
     if (!launchParams.files.length) {
@@ -200,16 +181,16 @@ your file system, you can open the file via a double click, or a right click and
 "Excalidraw" in the context menu. You can check out the [implementation][demo-source] in the source
 code.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422" %}
+  <figcaption>
      Double click or right click a file in your operating system's file explorer.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266" %}
+  <figcaption>
      Excalidraw is the default file handler for <code>.excalidraw</code> files.
   </figcaption>
 </figure>
@@ -222,10 +203,10 @@ transparency, and ergonomics.
 
 ## Permissions, permissions persistence, and file handler updates
 
-To ensure user trust and the safety of users' files when the File Handling API is used to open a
-file, a permission prompt will be shown before a PWA can view a file. This permission prompt will be
-shown right after the user selects the PWA to open a file, so that the permission is tightly coupled
-to the action of opening a file using the PWA, making it more understandable and relevant.
+To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
+right after the user selects the PWA to open a file, so that the permission is tightly coupled to the
+action of opening a file using the PWA, making it more understandable and relevant.
 
 This permission will show every time until the user clicks to **Allow** or **Block** file handling
 for the site, or ignores the prompt three times (after which Chromium will embargo and block this
@@ -334,4 +315,3 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439

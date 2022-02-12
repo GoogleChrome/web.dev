@@ -1,4 +1,5 @@
 ---
+layout: post
 title: A contact picker for the web
 subhead: The Contact Picker API provides an easy way for users to share contacts from their contact list.
 authors:
@@ -22,15 +23,14 @@ feedback:
   #video-demo { max-height: 600px; }
 </style>
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Video
     src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],
     poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",
     loop=true,
     autoplay=true,
     muted=true,
-    class="w-screenshot",
-    linkTo=true,
+       linkTo=true,
     id="video-demo",
     playsinline=true
   %}
@@ -61,7 +61,7 @@ which friends have already joined.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
@@ -178,9 +178,9 @@ a user gesture, on a [secure][secure-contexts], top-level browsing context.
 This ensures that a site can't show the picker on page load, or randomly show
 the picker without any context.
 
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Screen shot, users can choose which properties to share.", width="800", height="639", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Screen shot, users can choose which properties to share.", width="800", height="639" %}
+  <figcaption>
     Users can choose not to share some properties. In this screenshot, the
     user has unchecked the 'Phone numbers' button. Even though the site
     asked for phone numbers, they will not be shared with the site.
@@ -192,8 +192,6 @@ to select only the contacts that they need to share for that particular
 website. Users can also control which properties are shared with the site
 by toggling the property button at the top of the picker.
 
-<div class="w-clearfix"></div>
-
 ### Transparency {: #security-transparency }
 
 To clarify which contact details are being shared, the picker always
@@ -203,35 +201,31 @@ all three properties will be shown in the picker. Alternatively,
 if a site only requests `tel`, the picker will show only the name, and
 telephone numbers.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Screen shot of picker for site requesting all properties.", width="800", height="639", class="w-screenshot" %}
-    <figcaption class="w-figcaption">
+<div class="switcher">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Screen shot of picker for site requesting all properties.", width="800", height="639" %}
+    <figcaption>
       Picker, site requesting <code>name</code>, <code>email</code>, and
       <code>tel</code>, one contact selected.
     </figcaption>
   </figure>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Screen shot of picker for site requesting only phone numbers.", width="800", height="639", class="w-screenshot" %}
-    <figcaption class="w-figcaption">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Screen shot of picker for site requesting only phone numbers.", width="800", height="639" %}
+    <figcaption>
       Picker, site requesting only <code>tel</code>, one contact selected.
     </figcaption>
   </figure>
 </div>
 
-<div class="w-clearfix"></div>
-
-<figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Screen shot of picker when a contact is long-pressed.", width="800", height="389",class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Screen shot of picker when a contact is long-pressed.", width="800", height="389" %}
+  <figcaption>
     The result of a long press on a contact.
   </figcaption>
 </figure>
 
 A long press on a contact will show all of the information that will be
 shared if the contact is selected. (See the Cheshire Cat contact image.)
-
-<div class="w-clearfix"></div>
 
 ### No permission persistence {: #security-persistence }
 

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Compat 2021: Eliminating five top compatibility pain points on the web"
 subhead:
     "Google is working with other browser vendors and industry partners to fix the
@@ -15,7 +16,7 @@ authors:
 hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg"
 alt: "A puzzle with a missing piece."
 date: 2021-03-22
-updated: 2021-03-22
+updated: 2021-11-16
 tags:
   - blog
   - css
@@ -100,16 +101,16 @@ both [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) an
 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)
 have had issues with `auto-height` flex containers leading to incorrectly sized images.
 
-<div class="w-columns">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
+<div class="switcher">
+    <figure style="display: flex; flex-direction: column;">
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Stretched photo of a chessboard.", width="800", height="400" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
+        <figcaption style="margin-top: auto">
             Incorrectly sized image due to bugs.
         </figcaption>
     </figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
+    <figure style="display: flex; flex-direction: column;">
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="Chessboard.", width="800", height="800" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
+        <figcaption style="margin-top: auto">
             Correctly sized image. <br>
             Photo by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
             Mahmoudi.</a>
@@ -144,7 +145,7 @@ lacking is the ability to animate grid layouts, supported in Gecko but not
 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=204580). When supported,
 effects like this are made possible:
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4",
   height="400",
   controls=false,
@@ -153,7 +154,7 @@ effects like this are made possible:
   muted=true,
   playsinline=true
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Animated chess demo by <a
     href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen
     Hui Jing</a>.
@@ -192,22 +193,22 @@ aren't supported in Chromium, and although now
 [supported behind a flag](https://bugs.chromium.org/p/chromium/issues/detail?id=958381),
 the results are inconsistent across browsers:
 
-<div class="w-columns">
-    <figure class="w-figure">
+<div class="switcher">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             Chromium with "TablesNG"
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             Gecko
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             WebKit
         </figcaption>
     </figure>
@@ -237,7 +238,7 @@ CSS property makes it easy to maintain a consistent width-to-height ratio for
 elements, removing the need for the well-known
 [`padding-top` hack](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Using padding-top' %}
 ```css
 .container {
@@ -278,16 +279,15 @@ web. However, there still remain many areas where they don't work the same
 across browsers, notably with animations and 3D transforms. For example, a card
 flip effect can be very inconsistent across browsers:
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4",
-  class="w-screenshot",
-  controls=false,
+   controls=false,
   autoplay=true,
   loop=true,
   muted=true,
   playsinline=true
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Card flip effect in Chromium (left), Gecko (middle) and WebKit (right).
     Demo by David Baron from <a
     href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">bug
@@ -318,9 +318,16 @@ There will be regular updates about the progress here on web.dev and you can
 also follow the progress for each focus area in the [Compat 2021
 Dashboard](https://wpt.fyi/compat2021).
 
+<figure>
 <a href="https://wpt.fyi/compat2021">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9E5bMCRuPdQlGbFHZmuz.png", alt="Compat 2021 dashboard", width="800", height="778", class="w-screenshot" %}
+{% Img
+src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png",
+alt="Compat 2021 Dashboard",
+width="800",
+height="942" %}
 </a>
+<figcaption>The Compat 2021 Dashboard (screenshot taken 16 November, 2021).</figcaption>
+</figure>
 
 We hope this concerted effort among browser vendors to improve reliability and
 interoperability will help you go build amazing things on the web!

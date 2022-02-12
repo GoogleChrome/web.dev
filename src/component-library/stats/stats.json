@@ -7,7 +7,6 @@
     }
   ],
   "context": {
-    "utilities": "bg-state-good-bg color-state-good-text",
     "items": [
       {
         "stat": "30",

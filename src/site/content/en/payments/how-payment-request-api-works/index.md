@@ -6,7 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2018-09-10
-updated: 2021-10-12
+updated: 2022-01-31
 description: |
   Learn how the Payment Request API works at a high level.
 tags:
@@ -38,12 +38,12 @@ Let's look at how each parameter is built and used.
 
 The first parameter, _paymentMethods_, is a list of supported payment methods in
 an array variable. Each element in the array comprises two components,
-`supportedMethods` and, optionally, `data`. 
+`supportedMethods` and, optionally, `data`.
 
 For `supportedMethods`, the merchant needs to specify a [Payment Method
 Identifier](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier)
 such as `https://bobpay.xyz/pay`. The existence and content of `data` depends on
-the content of `supportedMethods` and payment app provider's design. 
+the content of `supportedMethods` and payment app provider's design.
 
 Both pieces of information should be provided by the payment app provider.
 
@@ -108,6 +108,16 @@ Learn more about [PaymentRequest.canMakePayment() on MDN](https://developer.mozi
 After setting the two parameters and creating the `request` object as shown
 above, you can call the `show()` method, which displays the payment app user
 interface.
+
+{% Aside 'warning' %}
+
+To call the `show()` method, you must add a [user
+activation](https://developers.google.com/web/updates/2019/01/user-activation).
+This means the call must be inside an event listener, such as
+`click`. Note that Chrome currently bypasses this constraint, but plans to enforce
+it sometime in the future.
+
+{% endAside %}
 
 ```javascript
 request.show().then(response => {

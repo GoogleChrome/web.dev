@@ -46,18 +46,18 @@ The metric scores are not visible in the report, but are calculated under the ho
   impact on user-perceived performance.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
   <a href="https://googlechrome.github.io/lighthouse/scorecalc/">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rLftIdSA8JJYruHOHrOn.png", alt="Lighthouse scoring calculator webapp", width="600", height="414" %}
   </a>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Explore scoring with the <a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse scoring calculator</a>
   </figcaption>
 </figure>
 
 ### Lighthouse 8
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -96,7 +96,7 @@ The metric scores are not visible in the report, but are calculated under the ho
 
 ### Lighthouse 6
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -150,9 +150,9 @@ a score of 99.
 Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HTTPArchive data becomes a score of 50 (the median control point), and the 8th percentile becomes a score of 90 (the good/green control point). While exploring the scoring curve plot below, note that between 0.50 and 0.92, there's a near-linear relationship between metric value and score. Around a score of 0.96 is the "point of diminishing returns" as above it, the curve pulls away, requiring increasingly more metric improvement to improve an already high score.
 
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Image of the scoring curve for TTI", width="600", height="329" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     <a href="https://www.desmos.com/calculator/o98tbeyt1t">Explore the scoring curve for TTI</a>.
   </figcaption>
 </figure>
@@ -184,7 +184,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 5
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -219,7 +219,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 3 and 4
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -253,7 +253,7 @@ We don't think users care about the historical scoring rubrics, but we'd still p
 
 ### Lighthouse 2
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

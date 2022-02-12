@@ -1,0 +1,46 @@
+setLeader: Test your knowledge of responsive web design
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: In 2021, it's a safe bet to design web pages at a fixed width?
+    options:
+      - content: "true"
+        rationale: "It's unsafe to bet on fixed width design in 2021."
+      - content: "false"
+        rationale: "🎉 Correct! The number of possible screen sizes is too great to assume visitors will come from one size."
+  - type: multiple-choice
+    cardinality: "2+"
+    correctAnswers: "0,2"
+    stem: Liquid layouts generally struggle at which kind of screen sizes?
+    options:
+      - content: "Narrow screens"
+        rationale: "🎉 Correct! The extreme size of a narrow display can make liquid layouts appear squished."
+      - content: "Average screens"
+        rationale: "Try again. Liquid layouts do well on average sized screens."
+      - content: "Wide screens"
+        rationale: "🎉 The extreme size of a wide, or even ultrawide, display can make liquid layouts appear stretches out to uncomfortable reading lengths."
+      - content: "Short screens"
+        rationale: "Try again. Short screens generally do not struggle to support liquid layouts."
+      - content: "Tall screens"
+        rationale: "Try again. Tall screens generally do not struggle to support liquid layouts."
+      - content: "All screens"
+        rationale: "Try again. Liquid layouts are a great choice for many screen sizes."
+  - type: multiple-choice
+    cardinality: "3+"
+    correctAnswers: "1,3,5"
+    stem: The original three criteria for responsive design are?
+    options:
+      - content: "Fluid typography"
+        rationale: "Try again! Fluid typography was not one of the initial criteria."
+      - content: "Fluid grids"
+        rationale: "🎉 Correct!"
+      - content: "Adaptive grids"
+        rationale: "Try again! An adaptive grid changes based on set viewport sizes."
+      - content: "Fluid media"
+        rationale: "🎉 Correct!"
+      - content: "Fixed width design"
+        rationale: "Try again! Fixed width designs refers to a design with a set, unresponsive width."
+      - content: "Media Queries"
+        rationale: "🎉 Correct!"

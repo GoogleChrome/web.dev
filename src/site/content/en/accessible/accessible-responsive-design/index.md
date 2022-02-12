@@ -19,8 +19,8 @@ but responsive design also yields a win for accessibility.
 
 Consider a site like [Udacity](https://udacity.com):
 
-<figure class="w-figure">
-  {% Img src="image/admin/5q9dDtEubSM23SzokQNu.jpg", alt="The Udacity site", width="800", height="393", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/5q9dDtEubSM23SzokQNu.jpg", alt="The Udacity site", width="800", height="393" %}
 </figure>
 
 A low-vision user who has difficulty reading small print might zoom in the page,
@@ -31,7 +31,7 @@ which is great for desktop users who require screen magnification
 and for mobile screen reader users as well. It's a win-win.
 Here's the same page magnified to 400%:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/WKHO21uWQz5lJ7Aqej1E.jpg", alt="The Udacity site zoomed to 400%", width="800", height="393" %}
 </figure>
 

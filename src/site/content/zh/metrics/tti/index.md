@@ -41,7 +41,7 @@ TTI 指标测量页面从开始加载到主要子资源完成渲染，并能够�
 
 ## 如何测量 TTI
 
-TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)进行测量。测量 TTI 的最佳方法是在您的网站上运行一次灯塔性能审计。有关使用详情，请参阅[灯塔中关于 TTI 的说明文档](/interactive/)。
+TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)进行测量。测量 TTI 的最佳方法是在您的网站上运行一次灯塔性能审计。有关使用详情，请参阅[灯塔中关于 TTI 的说明文档](/tti/)。
 
 ### 实验室工具
 

@@ -27,8 +27,8 @@ to interact with it as the developer intended.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA attributes with invalid values:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d3U3jGziH67BYcWPa1T4.png", alt="Lighthouse audit showing aria-checked without the value 'true'", width="800", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d3U3jGziH67BYcWPa1T4.png", alt="Lighthouse audit showing aria-checked without the value 'true'", width="800", height="185" %}
 </figure>
 
 Lighthouse uses the

@@ -1,7 +1,10 @@
-{# This is used on the right hand side of the page as the ToC for larger viewports #}
+{#
+  This is used on the right hand side of the page as the ToC for larger viewports.
+  Set `tocTitle` to ovverride default title of ToC.
+#}
 {% if tocContents %}
-  <nav class="course__toc toc hidden-yes xl:hidden-no" data-type="side" aria-label="{{ 'i18n.toc.on_this_page' | i18n(locale) }}">
-    <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.on_this_page' | i18n(locale) }}</div>
+  <nav class="course__toc toc over-scroll hidden-yes xl:hidden-no" data-type="side" aria-label="{{ tocTitle if tocTitle else 'i18n.toc.toc' | i18n(locale) }}">
+    <div class="course-toc__heading font-google-sans weight-medium">{{ tocTitle if tocTitle else 'i18n.toc.toc' | i18n(locale) }}</div>
     <web-scroll-spy>
       <div class="toc__wrapper flow-recursive">
         {{ tocContents | safe }}

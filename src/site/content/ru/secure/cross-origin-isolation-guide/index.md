@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-В этом руководстве показано, как включить межсайтовую изоляцию, которая необходима для использования [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [высокоточного таймера](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) и JS Self-Profiling API.
+В этом руководстве показано, как включить межсайтовую изоляцию, которая необходима для использования [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) и [высокоточного таймера](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/).
 
 Прежде чем включать межсайтовую изоляцию, оцените, как она повлияет на рекламные места и другие межсайтовые ресурсы на вашем сайте.
 
@@ -45,7 +45,7 @@ tags:
     ```
 4. Имя файла и номер строки в конце сообщения (например, `common-bundle.js:535`) указывают на источник происхождения `SharedArrayBuffer`. Если это сторонняя библиотека, попросите ее разработчика устранить проблему. Если же это часть кода вашего сайта, включите межсайтовую изоляцию, как указано ниже.
 
-<figure class="w-figure">{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Предупреждение в консоли DevTools об использовании SharedArrayBuffer без межсайтовой изоляции", width="800", height="163", class="w-screenshot" %} <figcaption> Предупреждение в консоли DevTools об использовании SharedArrayBuffer без межсайтовой изоляции. </figcaption></figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="Предупреждение в консоли DevTools об использовании SharedArrayBuffer без межсайтовой изоляции", width="800", height="163" %} <figcaption> Предупреждение в консоли DevTools об использовании SharedArrayBuffer без межсайтовой изоляции. </figcaption></figure>
 
 ### (Дополнительно) Отчеты о нежелательных функциях
 

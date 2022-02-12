@@ -90,7 +90,7 @@ images.
 Specify multiple image versions and the browser will choose the best one to
 use:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

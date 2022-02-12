@@ -127,12 +127,12 @@ the keyboard will suggest the OTP for the user to enter. It works only on Safari
 later on iOS, iPadOS, and macOS, but we strongly recommend using it, because it is an
 easy way to improve the SMS OTP experience on those platforms.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     `autocomplete="one-time-code"` in action.
   </figcaption>
 </figure>
@@ -239,12 +239,12 @@ navigator.credentials.get({
 .then(otp => input.value = otp.code);
 ```
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     WebOTP API in action.
   </figcaption>
 </figure>

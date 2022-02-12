@@ -10,7 +10,7 @@ web_lighthouse:
   - layout-table
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endBanner %}
+{% Aside 'caution' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endAside %}
 
 Tables used for layout purposes shouldn't include data elements:
 `<th>` element, `<caption>` element or `summary` attribute.
@@ -23,8 +23,8 @@ Lighthouse flags layout `<table>` elements that use `<th>`, `<caption>`, or `sum
 ***Todo*** This audit doesn't seem to be failing for me. I added `role="presentation"` to a table
 with `th` expecting this to fail, and it does not.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="layout-table.png" alt="Lighthouse audit showing presentational <table> elements incorrectly using <th>, <caption>, or [summary] attribute">
+<figure>
+  <img src="layout-table.png" alt="Lighthouse audit showing presentational <table> elements incorrectly using <th>, <caption>, or [summary] attribute">
 </figure>
 -->
 

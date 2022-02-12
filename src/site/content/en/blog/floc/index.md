@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-08-20
+updated: 2021-10-29
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -16,6 +16,13 @@ tags:
 feedback:
   - api
 ---
+
+{% Aside %}
+This post outlines the API design implemented in Chrome for the first origin trial of FLoC. 
+
+Future iterations of an API to enable interest-based advertising without third-party cookies 
+or other cross-site tracking mechanisms are currently in development.
+{% endAside %}
 
 FLoC provides a privacy-preserving mechanism for interest-based ad selection.
 
@@ -189,7 +196,7 @@ browsing history.
 {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/32k5jByqLrgwSMwb9mqo.png", alt="Diagram of the
 'browsing history space' created by a FLoC server, showing multiple segments, each with a cohort
 number.", width="400", height="359" %}
-<figcaption class="w-figcaption">The FLoC service divides up "cohort space" into
+<figcaption>The FLoC service divides up "cohort space" into
 thousands of segments (only a few are shown here).</figcaption>
 </figure>
 
@@ -220,7 +227,7 @@ people's browsers will move into and out of cohorts as their browsing interests 
 'browsing history space' created by a FLoC server, showing multiple segments, each with a cohort
 number. The diagram shows browsers belonging to users Yoshi and Alex moving from one cohort to
 another as their browsing interests change over time.", width="800", height="533" %}
-<figcaption class="w-figcaption">Yoshi's and Alex's browser cohort may change if their interests
+<figcaption>Yoshi's and Alex's browser cohort may change if their interests
 change.</figcaption>
 </figure>
 

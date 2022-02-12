@@ -38,7 +38,7 @@ can limit these calculations to moments when the user interacts with their devic
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -157,17 +157,16 @@ Starting in Chromium&nbsp;94, you can emulate idle events in DevTools without ac
 In DevTools, open the **Sensors** tab and look for **Emulate Idle Detector state**.
 You can see the various options in the video below.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/2OEuuTRnBdDoxARFejNN.mp4",
     controls=true,
     autoplay=true,
     loop=true,
     muted=true,
-    class="w-screenshot",
-    playsinline=true
+       playsinline=true
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Idle Detector state emulation in DevTools.
   </figcaption>
 </figure>

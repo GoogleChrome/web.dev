@@ -43,7 +43,7 @@ but it addresses all of these concerns and is always a better choice for display
 
 If you are sure an image is the correct option, you should carefully select the right kind of image for the job.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="Zoomed-in vector and raster images", width="585", height="313" %}
   <figcaption>Zoomed-in vector image (L) raster image (R)</figcaption>
 </figure>
@@ -75,9 +75,9 @@ There are two different kinds of pixels: CSS pixels and device pixels.
 A single CSS pixel may correspond directly to a single device pixel, or may be backed by multiple device pixels.
 What's the point? Well, the more device pixels there are, the finer the detail of the displayed content on the screen.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="Three images showing the difference between CSS pixels and device pixels.", width="470", height="205" %}
-  <figcaption class="w-figcaption">The difference between CSS pixels and device pixels.</figcaption>
+  <figcaption>The difference between CSS pixels and device pixels.</figcaption>
 </figure>
 
 High DPI (HiDPI) screens produce beautiful results, but there is one obvious tradeoff:
@@ -91,7 +91,7 @@ On the other hand, raster images pose a much larger challenge because they encod
 Hence, the larger the number of pixels, the larger the filesize of a raster image.
 As an example, let's consider the difference between a photo asset displayed at 100x100 (CSS) pixels:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
 <table>
 <thead>
   <tr>
@@ -138,7 +138,7 @@ In addition to different lossy and lossless compression algorithms,
 different image formats support different features such as animation and transparency (alpha) channels.
 As a result, the choice of the "right format" for a particular image is a combination of desired visual results and functional requirements.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
 <table>
 <thead>
   <tr>

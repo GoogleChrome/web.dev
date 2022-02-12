@@ -8,3 +8,8 @@
   flex: none;
   border-radius: 50%;
 }
+
+.avatar[data-size='large'],
+.avatar[data-size='large'] > img {
+  --avatar-size: 192px;
+}

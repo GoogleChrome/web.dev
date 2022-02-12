@@ -36,7 +36,7 @@ network](/identify-resources-via-network-panel/) guide, a navigation request is 
 potentially many requests made in the
 ["waterfall"](https://developers.google.com/web/tools/chrome-devtools/network/reference#waterfall)
 of network traffic. The HTML that you load via a navigation request kicks off the flow of all other
-requests for subresources like images, scripts, and styles. 
+requests for subresources like images, scripts, and styles.
 
 Inside of a service worker's `fetch` event handler, you can determine whether a request is a
 navigation by checking the `request.mode` property on the `FetchEvent`. If it's set to `'navigate'`,

@@ -33,7 +33,7 @@ Check out [Inspect Network Activity With Chrome DevTools](https://developers.goo
 You'll see that the only image that's being requested is `background-desktop.jpg`, which has a size of **1006KB**:
 
 <figure>
-  {% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="DevTools network trace for the unoptimized background image.", width="800", height="126", class="w-screenshot" %}
+  {% Img src="image/admin/K8P4MHp2FSnZYTw3ZVkG.png", alt="DevTools network trace for the unoptimized background image.", width="800", height="126" %}
 </figure>
 
 Resize the browser window and notice that the Network Log isn't showing any new requests being made by the page. This means that the same image background is being used for all screen sizes.
@@ -138,7 +138,7 @@ When the width of the browser screen is changed, new images are requested.
 In particular when the width is below the value defined in the mobile breakpoint (480px), you see the following Network Log:
 
 <figure>
-  {% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="DevTools network trace for the optimized background image.", width="800", height="125", class="w-screenshot" %}
+  {% Img src="image/admin/jd2kHIefYf91udpFEmvx.png", alt="DevTools network trace for the optimized background image.", width="800", height="125" %}
 </figure>
 
 The size of the new mobile background is **67% smaller** than the desktop one.

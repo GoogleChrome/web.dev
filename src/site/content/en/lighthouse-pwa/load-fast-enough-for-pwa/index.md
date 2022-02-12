@@ -24,14 +24,14 @@ to be considered a Progressive Web App. See the
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't load fast enough on mobile:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse audit showing page doesn't load fast enough on mobile", width="800", height="98", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse audit showing page doesn't load fast enough on mobile", width="800", height="98" %}
 </figure>
 
 Two main metrics affect how users perceive load time:
 
 - [First Meaningful Paint (FMP)](/first-meaningful-paint), which measures when the primary content of the page appears visually complete
-- [Time to Interactive (TTI)](/interactive), which measures when the page is fully interactive
+- [Time to Interactive (TTI)](/tti/), which measures when the page is fully interactive
 
 For example, if a page appears visually complete after 1&nbsp;second,
 but the user can't interact with it for 10&nbsp;seconds,

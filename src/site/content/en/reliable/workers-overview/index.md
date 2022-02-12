@@ -45,7 +45,7 @@ entire JavaScript scope running on a separate thread, without any shared memory.
 
 In this post you'll learn about two different types of workers (web workers and service workers), their similarities and differences, and the most common patterns for using them in production websites.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eN5kePr9U0aZMgCyekhJ.png", alt="Diagram showing two links between the Window object and a web worker and service worker.", width="728", height="418" %}
 </figure>
 
@@ -99,7 +99,7 @@ or the other:
 computations](https://www.youtube.com/watch?v=mDdgfyRB5kg&feature=youtu.be&t=875)) to a secondary
 thread, to avoid blocking the UI.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZCC24V8uqi6HfFjRzuPq.png", alt="Diagram showing a link from the Window object to a web worker.", width="500", height="175" %}
 </figure>
 
@@ -108,14 +108,14 @@ thread, to avoid blocking the UI.
   [used web workers](/proxx-announce/#web-workers) to run the game logic and state
   maintenance on a separate thread.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xXNCbahCtPrS8rw6uf1z.png", alt="A screenshot of the videogame PROXX.", width="225", height="403" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xXNCbahCtPrS8rw6uf1z.png", alt="A screenshot of the videogame PROXX.", width="225", height="403", style="width: inherit; margin: auto;" %}
 </figure>
 
 **Service workers tasks** are generally more related to acting as a network proxy, handling
 background tasks, and things like caching and offline.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GmGcVnb2y1yNc4ZIFFQ8.png", alt="A screenshot of the videogame PROXX.", width="624", height="267" %}
 </figure>
 
@@ -125,9 +125,9 @@ the [Background Fetch API](https://developers.google.com/web/updates/2018/12/bac
 be used to that end. That way, if the user closes the tab while the episode is downloading, the task
 doesn't have to be interrupted.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oUH6K2JvcmfdAynTMjxQ.png", alt="A screenshot of a Podcast PWA.", width="500", height="310" %}
-    <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).</figcaption>
+    <figcaption>The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).</figcaption>
 </figure>
 
 ## Tools and libraries {: #tools-and-libraries }
@@ -138,7 +138,7 @@ section, we'll cover two of them that take care of window to web workers and ser
 respectively: [Comlink](https://github.com/GoogleChromeLabs/comlink) and
 [Workbox](https://developers.google.com/web/tools/workbox).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MNMwX5KuJt5iOLZJbdO0.png", alt="A screenshot of the videogame PROXX.", width="500", height="269" %}
 </figure>
 

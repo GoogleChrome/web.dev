@@ -24,8 +24,8 @@ assistive technologies can't set user expectations correctly.
 Lighthouse flags list items (`<li>`) that aren't contained
 in `<ul>` or `<ol>` parent elements:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t0eKD6m7y03inCQUuyUx.png", alt="Lighthouse audit showing list item isn't contained within a parent list", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t0eKD6m7y03inCQUuyUx.png", alt="Lighthouse audit showing list item isn't contained within a parent list", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

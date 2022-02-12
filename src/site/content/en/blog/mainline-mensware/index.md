@@ -45,33 +45,33 @@ and enable them to take advantage of fast moving web technology.
 
 ## Results
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">139<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">More pages per session in PWA vs. web.</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">139<sub>%</sub></p>
+    <p>More pages per session in PWA vs. web.</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">161<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Longer session durations in PWA vs. web.</p>
+  <div class="stats__item">
+    <p class="stats__figure">161<sub>%</sub></p>
+    <p>Longer session durations in PWA vs. web.</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">10<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower bounce rate in PWA vs. web</p>
+  <div class="stats__item">
+    <p class="stats__figure">10<sub>%</sub></p>
+    <p>Lower bounce rate in PWA vs. web</p>
   </div>
 </div>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">12.5<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher average order value in PWA vs. web</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">12.5<sub>%</sub></p>
+    <p>Higher average order value in PWA vs. web</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">55<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher conversion rate in PWA vs. web.</p>
+  <div class="stats__item">
+    <p class="stats__figure">55<sub>%</sub></p>
+    <p>Higher conversion rate in PWA vs. web.</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">243<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher revenue per session in PWA vs. web.</p>
+  <div class="stats__item">
+    <p class="stats__figure">243<sub>%</sub></p>
+    <p>Higher revenue per session in PWA vs. web.</p>
   </div>
 </div>
 
@@ -309,9 +309,9 @@ workbox.routing.registerRoute(navigationRoute);
 
 ## Demo
 
-<figure class="w-figure">
+<figure data-size="full">
   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/eJgApjFLpSRFMcMyC4e0.mp4", width="300", autoplay=true, loop=true, muted=true, playsinline=true %}
-  <figcaption class="w-figcaption">Offline page example as seen on www.mainlinemenswear.co.uk.</figcaption>
+  <figcaption>Offline page example as seen on www.mainlinemenswear.co.uk.</figcaption>
 </figure>
 
 ### Reporting successful installs
@@ -336,4 +336,4 @@ To learn more about progressive web apps and how to build them, head to the
 [Progressive Web Apps section](/progressive-web-apps/) on web.dev.
 
 To read more Progressive Web Apps case studies, browse to the
-[case studies section](https://web.dev/tags/case-study/).
+[case studies section](/tags/case-study/).

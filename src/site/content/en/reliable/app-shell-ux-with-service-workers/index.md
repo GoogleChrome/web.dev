@@ -36,8 +36,8 @@ In this article we'll analyze how you can achieve an SPA-like architecture in mu
 
 [DEV](https://dev.to/) is a community where software developers write articles, take part in discussions, and build their professional profiles.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vk2qqXg5PmLV7oCR7xVh.jpg", alt="A screenshot of https://dev.to", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vk2qqXg5PmLV7oCR7xVh.jpg", alt="A screenshot of https://dev.to", width="800", height="482" %}
 </figure>
 
 Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack.
@@ -47,7 +47,7 @@ Here's how their solution works:
 1. First, they create partials of their home page for the header and the footer (`shell_top.html` and `shell_bottom.html`) and deliver them as standalone HTML snippets with an endpoint. These assets are added to the cache at the service worker `install` event (what's commonly referred to as [precaching](/precache-with-workbox/)).
 1. When a navigation request is intercepted by the service worker, they create a [streamed response](https://developer.mozilla.org/docs/Web/API/ReadableStream) by combining the cached header and footer with the main page content that just came from the server. The body is the only actual part of the page that requires fetching data from the network.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QkGCrnzggZmrp1PXrbHb.png", alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.", width="800", height="363" %}
 </figure>
 

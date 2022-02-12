@@ -1,11 +1,12 @@
 ---
+layout: post
 title: Connecting to uncommon HID devices
 subhead: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-02-27
+updated: 2022-02-10
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -32,7 +33,7 @@ way to implement device-specific logic in JavaScript.
 
 ## Suggested use cases {: #use-cases }
 
-A HID device takes input from or provides output to humans. Examples of devices
+An HID device takes input from or provides output to humans. Examples of devices
 include keyboards, pointing devices (mice, touchscreens, etc.), and gamepads.
 The [HID protocol] makes it possible to access these devices on desktop
 computers using operating system drivers. The web platform supports HID devices
@@ -50,7 +51,7 @@ of specific devices.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
@@ -69,7 +70,7 @@ Reports are the data that is exchanged between a device and a software client.
 The report descriptor describes the format and meaning of data that the device
 supports.
 
-A HID (Human Interface Device) is a type of device that takes input from or
+An HID (Human Interface Device) is a type of device that takes input from or
 provides output to humans. It also refers to the HID protocol, a standard for
 bi-directional communication between a host and a device that is designed to
 simplify the installation procedure. The HID protocol was originally developed
@@ -78,7 +79,7 @@ including Bluetooth.
 
 Applications and HID devices exchange binary data through three report types:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -108,7 +109,7 @@ device. Its structure is hierarchical and can group reports together as distinct
 collections within the top-level collection. The [format] of the descriptor is
 defined by the HID specification.
 
-A HID usage is a numeric value referring to a standardized input or output.
+An HID usage is a numeric value referring to a standardized input or output.
 Usage values allow a device to describe the intended use of the device and the
 purpose of each field in its reports. For example, one is defined for the left
 button of a mouse. Usages are also organized into usage pages, which provide an
@@ -126,13 +127,13 @@ if ("hid" in navigator) {
 }
 ```
 
-### Open a HID connection {: #open }
+### Open an HID connection {: #open }
 
 The WebHID API is asynchronous by design to prevent the website UI from
 blocking when awaiting input. This is important because HID data can be received
 at any time, requiring a way to listen to it.
 
-To open a HID connection, first access a `HIDDevice` object. For this, you can
+To open an HID connection, first access a `HIDDevice` object. For this, you can
 either prompt the user to select a device by calling
 `navigator.hid.requestDevice()`, or pick one from `navigator.hid.getDevices()`
 which returns a list of devices the website has been granted access to
@@ -169,9 +170,9 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-<figure class="w-figure">
-  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
-  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
+<figure>
+  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of an HID device prompt on a website.", width="800", height="513" %}
+  <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
@@ -180,7 +181,7 @@ description of the device's report formats.
 
 ```js
 for (let collection of device.collections) {
-  // A HID collection includes usage, usage page, reports, and subcollections.
+  // An HID collection includes usage, usage page, reports, and subcollections.
   console.log(`Usage: ${collection.usage}`);
   console.log(`Usage page: ${collection.usagePage}`);
 
@@ -219,9 +220,9 @@ contain the HID data as a [`DataView`] object (`data`), the HID device it belong
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
-<figure class="w-figure">
-  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
+<figure>
+  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575" %}
+  <figcaption>Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
 Continuing with the previous example, the code below shows you how to detect
@@ -247,7 +248,7 @@ device.addEventListener("inputreport", event => {
 
 ### Send output reports {: #send-output-reports }
 
-To send an output report to a HID device, pass the 8-bit report ID associated
+To send an output report to an HID device, pass the 8-bit report ID associated
 with the output report (`reportId`) and bytes as a [`BufferSource`] (`data`) to
 `device.sendReport()`. The returned promise resolves once the report has been
 sent. If the HID device does not use report IDs, set `reportId` to 0.
@@ -276,12 +277,12 @@ directions. They allow HID devices and applications to exchange non standardized
 HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
-<figure class="w-figure">
-  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Laptop keyboard</figcaption>
+<figure>
+  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575" %}
+  <figcaption>Laptop keyboard</figcaption>
 </figure>
 
-To send a feature report to a HID device, pass the 8-bit report ID associated
+To send a feature report to an HID device, pass the 8-bit report ID associated
 with the feature report (`reportId`) and bytes as a [`BufferSource`] (`data`) to
 `device.sendFeatureReport()`. The returned promise resolves once the report has
 been sent. If the HID device does not use report IDs, set `reportId` to 0.
@@ -314,7 +315,7 @@ for (let i = 0; i < 10; i++) {
 
 {% Glitch { id: 'webhid-apple-keyboard-backlight', path: 'script.js', height: 480, allow: 'hid' } %}
 
-To receive a feature report from a HID device, pass the 8-bit report ID
+To receive a feature report from an HID device, pass the 8-bit report ID
 associated with the feature report (`reportId`)  to
 `device.receiveFeatureReport()`. The returned promise resolves with a
 [`DataView`] object that contains the contents of the feature report. If the HID
@@ -329,7 +330,7 @@ const dataView = await device.receiveFeatureReport(/* reportId= */ 1);
 
 ### Listen to connection and disconnection {: #connection-disconnection }
 
-When the website has been granted permission to access a HID device, it can
+When the website has been granted permission to access an HID device, it can
 actively receive connection and disconnection events by listening to `"connect"`
 and `"disconnect"` events.
 
@@ -343,15 +344,58 @@ navigator.hid.addEventListener("disconnect", event => {
 });
 ```
 
+### Revoke access to an HID device {: #revoke-access }
+
+The website can clean up permissions to access an HID device it is no longer
+interested in retaining by calling `forget()` on the `HIDDevice` instance. For
+example, for an educational web application used on a shared computer with many
+devices, a large number of accumulated user-generated permissions creates a poor
+user experience.
+
+Calling `forget()` on a single `HIDDevice` instance will revoke access to all
+the HID interfaces on the same physical device.
+
+```js
+// Voluntarily revoke access to this HID device.
+await device.forget();
+```
+
+As `forget()` is available in Chrome 100 or later, check if this feature is
+supported with the following:
+
+```js
+if ("hid" in navigator && "forget" in HIDDevice.prototype) {
+  // forget() is supported.
+}
+```
+
 ## Dev Tips {: #dev-tips }
 
 Debugging HID in Chrome is easy with the internal page, `about://device-log`
 where you can see all HID and USB device related events in one single place.
 
-<figure class="w-figure">
-  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
+<figure>
+  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575" %}
+  <figcaption>Internal page in Chrome to debug HID.</figcaption>
 </figure>
+
+Check out the [HID explorer][hid-explorer] for dumping HID device
+info into a human-readable format. It maps from usage values to names for each
+HID usage.
+
+On most Linux systems, HID devices are mapped with read-only permissions by
+default. To allow Chrome to open an HID device, you will need to add a new [udev
+rule]. Create a file at `/etc/udev/rules.d/50-yourdevicename.rules` with the
+following content:
+
+```vim
+KERNEL=="hidraw*", ATTRS{idVendor}=="[yourdevicevendor]", MODE="0664", GROUP="plugdev"
+```
+
+In the line above, `[yourdevicevendor]` is `057e` if your device is a Nintendo Switch
+Joy-Con for instance. `ATTRS{idProduct}` can also be added for a more specific
+rule. Make sure your `user` is a [member] of the `plugdev` group. Then, just
+reconnect your device.
 
 ## Browser support {: #browser-support }
 
@@ -435,19 +479,22 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [Elgato Stream Deck]: https://www.elgato.com/en/gaming/stream-deck
 [Jabra headsets]: https://www.jabra.com/business/office-headsets
 [X-keys]: https://xkeys.com/xkeys.html
-[explainer]: https://github.com/WICG/webhid/blob/master/EXPLAINER.md
+[explainer]: https://github.com/WICG/webhid/blob/main/EXPLAINER.md
 [spec]: https://wicg.github.io/webhid/
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
 [the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
 [HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
 [`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
 [`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
+[hid-explorer]: https://nondebug.github.io/webhid-explorer/
 [web.dev/hid-examples]: /hid-examples/
+[udev rule]: https://www.freedesktop.org/software/systemd/man/udev.html
+[member]: https://wiki.debian.org/SystemGroups
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
-[publicly available]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_usage_and_page.cc
-[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:chrome/browser/usb/usb_blocklist.cc
-[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_blocklist.cc
+[publicly available]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_usage_and_page.cc
+[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
+[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
 [cr-dev-twitter]: https://twitter.com/chromiumdev

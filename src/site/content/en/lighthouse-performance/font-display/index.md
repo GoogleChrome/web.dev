@@ -19,8 +19,8 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags any font URLs that may flash invisible text:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}

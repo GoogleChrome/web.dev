@@ -41,9 +41,9 @@ You can set budgets for any of the following resource types:
 
 Budgets are set in a JSON file and after defining them the new "Over Budget" column tells you whether you're exceeding any limits.
 
-<figure class="w-figure">
-  {% Img src="image/admin/fsRNXJXQ5JESUuwsIlLn.png", alt="Budgets section in Lighthouse report", width="800", height="199", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/fsRNXJXQ5JESUuwsIlLn.png", alt="Budgets section in Lighthouse report", width="800", height="199" %}
+  <figcaption>
     "Budgets" section in Lighthouse report
   </figcaption>
 </figure>
@@ -56,18 +56,18 @@ Turn on [performance hints](https://webpack.js.org/configuration/performance/) i
 
 After the build step, webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
 
-<figure class="w-figure">
-  {% Img src="image/admin/G96Z2pZVL6aowVRa49rA.png", alt="Webpack output highlighting bundle.js", width="617", height="86", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/G96Z2pZVL6aowVRa49rA.png", alt="Webpack output highlighting bundle.js", width="617", height="86" %}
+  <figcaption>
     The highlighted bundle.js is bigger than your budget
   </figcaption>
 </figure>
 
 The default limit for both assets and entry-points is **250 KB**. You can set your own targets in the configuration file.
 
-<figure class="w-figure">
-  {% Img src="image/admin/StfxwSScNVzmeM70gwp4.jpg", alt="Webpack bundle size warning", width="566", height="104", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/StfxwSScNVzmeM70gwp4.jpg", alt="Webpack bundle size warning", width="566", height="104" %}
+  <figcaption>
     Webpack bundle size warning ⚠️
   </figcaption>
 </figure>
@@ -78,9 +78,9 @@ The budgets are compared against **uncompressed asset sizes**. Uncompressed [Jav
 Compressed asset sizes affect the transfer time, which is very important on slow networks.
 {% endAside %}
 
-<figure class="w-figure">
-  {% Img src="image/admin/ogH1cMiF96iyhj8CiENK.jpg", alt="Webpack performance optimization recommendation", width="556", height="84", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/ogH1cMiF96iyhj8CiENK.jpg", alt="Webpack performance optimization recommendation", width="556", height="84" %}
+  <figcaption>
     Bonus feature: webpack won’t only warn you, it will give you a recommendation on how to downsize your bundles. 💁
   </figcaption>
 </figure>
@@ -99,16 +99,16 @@ bundlesize -f "dist/bundle.js" -s 170kB
 
 Bundlesize outputs color-coded test results in one line.
 
-<figure class="w-figure">
-  {% Img src="image/admin/6YsTnhpUlzbTB1ja23yP.png", alt="Failing bundlesize CLI test", width="473", height="36", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/6YsTnhpUlzbTB1ja23yP.png", alt="Failing bundlesize CLI test", width="473", height="36" %}
+  <figcaption>
     Failing bundlesize CLI test ❌
   </figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/TjynyaIzZlRa6xE2uVcD.png", alt="Passing bundlesize CLI test", width="460", height="36", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/TjynyaIzZlRa6xE2uVcD.png", alt="Passing bundlesize CLI test", width="460", height="36" %}
+  <figcaption>
     Passing bundlesize CLI test ✔️
   </figcaption>
 </figure>
@@ -117,10 +117,10 @@ Bundlesize outputs color-coded test results in one line.
 
 You'll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request is not merged.** It works for pull requests on GitHub with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
-<figure class="w-figure">
-  {% Img src="image/admin/RKpNwfcXRoKZ34qDoxcO.jpg", alt="Bundlesize check status on Github", width="800", height="326", class="screenshot" %}
-  <figcaption class="w-figcaption">
-    Bundlesize check status on Github
+<figure>
+  {% Img src="image/admin/RKpNwfcXRoKZ34qDoxcO.jpg", alt="Bundlesize check status on GitHub", width="800", height="326", class="screenshot" %}
+  <figcaption>
+    Bundlesize check status on GitHub
   </figcaption>
 </figure>
 
@@ -132,17 +132,17 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
 
 ## Lighthouse Bot
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/5zLlIEUm06wEbu3J1WjG.png", alt="Lighthouse Bot", width="800", height="267" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
   </figcaption>
 </figure>
 
 [Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) integrates with Travis CI and enforces budgets based on any of the five Lighthouse audit categories. For example, a budget of 100 for your Lighthouse performance score. It's sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse scores take many things into account.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/6yVLSYcr0eCytJixZ1bK.png", alt="Lighthouse scores 💯", width="800", height="211", class="screenshot" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Lighthouse scores 💯
   </figcaption>
 </figure>
@@ -157,18 +157,18 @@ after_success:
 
 If the scores for a pull request on GitHub fall below the threshold you've set, **Lighthouse Bot can prevent pull request from being merged**. ⛔
 
-<figure class="w-figure">
-  {% Img src="image/admin/nVDqJAA1DZDFqpOaQA9J.png", alt="Lighthouse Bot check status on Github", width="800", height="175", class="screenshot" %}
-  <figcaption class="w-figcaption">
-    Lighthouse Bot check status on Github
+<figure>
+  {% Img src="image/admin/nVDqJAA1DZDFqpOaQA9J.png", alt="Lighthouse Bot check status on GitHub", width="800", height="175", class="screenshot" %}
+  <figcaption>
+    Lighthouse Bot check status on GitHub
   </figcaption>
 </figure>
 
 **Lighthouse Bot** then comments on your pull request with updated scores. This is a neat feature which encourages conversation about performance as code changes are happening.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/q1BUp838y2oSs70Suxyb.png", alt="Lighthouse reporting scores on pull request", width="800", height="383" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Lighthouse reporting scores on pull request 💬
   </figcaption>
 </figure>
@@ -177,7 +177,7 @@ If you find your pull request blocked by a poor Lighthouse score, run an audit w
 
 ## Summary
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <th>Tool</th>

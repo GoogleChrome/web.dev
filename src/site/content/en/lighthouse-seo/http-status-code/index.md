@@ -7,6 +7,8 @@ date: 2019-05-02
 updated: 2019-08-21
 web_lighthouse:
   - http-status-code
+codelabs:
+  - codelab-fix-sneaky-404
 ---
 
 Servers provide a three-digit [HTTP status code](https://developer.mozilla.org/docs/Web/HTTP/Status)
@@ -24,8 +26,8 @@ _Crawling_ is how a search engine updates its index of content on the web.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 that return an unsuccessful HTTP status code (in the 400s or 500s):
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/omMzgdKyzeYBQjPjQFKa.png", alt="Lighthouse audit showing search engines are struggling to index your page", width="800", height="74", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/omMzgdKyzeYBQjPjQFKa.png", alt="Lighthouse audit showing search engines are struggling to index your page", width="800", height="74" %}
 </figure>
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
@@ -43,7 +45,7 @@ another URL.
 
 {% Aside %}
 If you're
-[using Github Pages to host a single-page app](https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/),
+[using GitHub Pages to host a single-page app](https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/),
 you'll likely need to serve valid content with a 404 status code.
 {% endAside %}
 
@@ -56,5 +58,3 @@ complicated. Learn how to [fix sneaky 404s in an Express application](/codelab-f
 
 - [Source code for **Page has unsuccessful HTTP status code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
 - [HTTP response status codes](https://developer.mozilla.org/docs/Web/HTTP/Status)
-
-{% CodelabsCallout 'codelab-fix-sneaky-404', lang %}

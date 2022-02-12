@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Cómo mejorar la privacidad del usuario y la experiencia del desarrollador con las sugerencias incluidas en el repositorio User-Agent Client Hints
 subhead: Las sugerencias incluidas en el repositorio User-Agent Client Hints son una nueva expansión de la API Client Hints, la cual permite a los desarrolladores acceder a la información sobre el navegador del usuario de una forma sencilla y que mantiene la privacidad.
 authors:
@@ -23,7 +24,7 @@ Las sugerencias que se encuentran en Client Hints permiten a los desarrolladores
 
 Aprenda a actualizar las funciones existentes que se basan en analizar la cadena User-Agent para que en vez de ellas, se utilicen las sugerencias incluidas en el repositorio User-Agent Client Hints.
 
-{% Banner 'caution', 'body' %} Si ya utiliza el repositorio User-Agent Client Hints, ponga atención a los próximos cambios. El formato del encabezado está cambiando, de modo que los tokens `Accept-CH` coinciden exactamente con los encabezados devueltos. Anteriormente, un sitio habría enviado `Accept-CH: UA-Platform` para recibir el encabezado `Sec-CH-UA-Platform` y ahora ese sitio debería enviar `Accept-CH: Sec-CH-UA-Platform`. Si ya utiliza las sugerencias incluidas en User-Agent Client Hints, envíe ambos formatos hasta que la modificación se haya implementado completamente y de forma estable en Chromium. Consulte la conversación [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para conocer las actualizaciones recientes. {% endBanner %}
+{% Aside 'caution' %} Si ya utiliza el repositorio User-Agent Client Hints, ponga atención a los próximos cambios. El formato del encabezado está cambiando, de modo que los tokens `Accept-CH` coinciden exactamente con los encabezados devueltos. Anteriormente, un sitio habría enviado `Accept-CH: UA-Platform` para recibir el encabezado `Sec-CH-UA-Platform` y ahora ese sitio debería enviar `Accept-CH: Sec-CH-UA-Platform`. Si ya utiliza las sugerencias incluidas en User-Agent Client Hints, envíe ambos formatos hasta que la modificación se haya implementado completamente y de forma estable en Chromium. Consulte la conversación [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para conocer las actualizaciones recientes. {% endAside %}
 
 ## Antecedentes
 
@@ -111,11 +112,11 @@ Sec-CH-UA-Mobile: ?0
 ### Respuestas de User-Agent y encabezados de solicitud
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>

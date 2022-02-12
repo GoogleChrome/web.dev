@@ -35,9 +35,9 @@ additional origin.
 
 ## How does a resource request work on the web?
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8J6A0Bk5YXdvyoj8HVzs.png", alt="request and response", width="668", height="327" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Figure: Illustrated client request and server response
   </figcaption>
 </figure>

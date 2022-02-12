@@ -1,0 +1,91 @@
+setLeader: Test your knowledge of CSS Backgrounds
+tabLabel: question
+height: unset
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Background images are positioned in the top-left of a CSS box.
+    options:
+      - content: "True"
+        rationale: |
+          Correct!
+      - content: "False"
+        rationale: |
+           Depending on its intrinsic size an image may appear to not be in positioned in the top left corner of a CSS box, `background-position` needs to be explicitly used to change the default position of a background image.
+
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Background images are not repeated by default.
+    options:
+      - content: "False"
+        rationale: |
+          `background-repeat: no-repeat` explicitly must be used to not repeat a background-image. Additionally `background-repeat: repeat-x` and `background-repeat: repeat-y` can be used to prevent repeating in the specific axis.
+      - content: "True"
+        rationale: |
+          Correct!
+
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,2,3"
+    stem: Which of the following `background-position` declarations are valid?
+    options:
+      - content: '`background-position: 50% left`'
+        rationale: |
+          When CSS values are used with keywords, the order of the values matters.
+      - content: '`background-position: top right 33%`'
+        rationale: |
+          This positions a background image to the very top of a box and 33% from the right edge of the box.
+      - content: '`background-position: right bottom`'
+        rationale: |
+          This positions a background image to the very right and bottom of a box. Position of differing axes can be named in any order.
+      - content: '`background-position: left`'
+        rationale: |
+          This positions a background image to be at the very left of the box and centered vertically. When just one position of an axis is provided, the background image is centered in the opposite axis.
+
+  - type: think-and-check
+    stimulus: "![Demonstration of the use of CSS Clip](image/bMU6K5O6Yce7QrxAoaF3hsleaRM2/naRWTIMyG0eYo1LHwgSw.png)"
+    stem: What would be the steps to render a background like this against its content?
+    options:
+      - rationale: |
+          1. Use `background-clip: text`. [Check if the property is supported in the browsers you need to support](https://caniuse.com/background-clip-text).
+          1. Use `background-image: url(/texture.jpg)`.
+          1. Use `-webkit-text-fill-color: transparent` or semi-transparent for the background image to be seen within the text.
+
+
+  - type: multiple-choice
+    cardinarlity: "1"
+    correctAnswers: "2"
+    stem: "To set a background image to be fixed within a viewport you use:"
+    options:
+      - content: '`background-position: fixed`'
+        rationale: |
+          'This is an invalid value for the `background-position` property.'
+      - content: '`background-fixed-to-viewport: true`'
+        rationale: |
+          `background-fixed-to-viewport` doesn't exist in CSS yet.
+      - content: '`background-attachment: fixed`'
+        rationale: |
+          `background-attachment: fixed` explicitly sets the background image to be fixed within the current viewport.
+      - content:  '`background-attachment: scroll`'
+        rationale: |
+          '`background-attachment` is the property to use to set a background image to be fixed within a viewport; however `scroll` is the default value for the property that fixes the background image by default to the box unimpacted by the content within the box.'
+
+  - type: multiple-choice
+    cardinarlity: "1"
+    correctAnswers: "2"
+    stem: "The default background-origin of a background within a CSS box is:"
+    options:
+    - content: '`content-box`'
+      rationale: |
+        Valid value for `background-origin`, but isn't the default.
+    - content: '`border-box`'
+      rationale: |
+        Valid value for `background-origin`, and it's pre-arranged borders can be painted on top of backgrounds, but isn't the default.
+    - content: '`padding-box`'
+      rationale: |
+        The default value for `background-origin`. Allows the background to be rendered beyond the content and up to the border of a box.
+    - content: '`margin-box`'
+      rationale: |
+        While a recognized region of a CSS box, it is an invalid value for the `background-origin` property.

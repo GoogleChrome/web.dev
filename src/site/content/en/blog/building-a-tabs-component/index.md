@@ -21,15 +21,14 @@ In this post I want to share thinking on building a Tabs component for the web
 that is responsive, supports multiple device inputs, and works across browsers.
 Try the [demo](https://gui-challenges.web.app/tabs/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -50,14 +49,13 @@ which toggles the visibility of content in a display frame. Many different
 content areas share the same space, but are conditionally presented based on the
 button selected in the navigation.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png",
     alt="the collage is quite chaotic due to the huge diversity of styles the web has applied to the component concept",
-    class="w-screenshot",
-    width="800", height="500"
+       width="800", height="500"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A collage of tab component web design styles from over the past 10 years
   </figcaption>
 </figure>
@@ -87,15 +85,14 @@ need a list of links, which a `<nav>` is great for, and a list of `<article>`
 elements, which a `<section>` is great for. Each link hash will match a section,
 letting the browser scroll things via anchoring.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     A link button is clicked, sliding in focused content
   </figcaption>
 </figure>
@@ -162,12 +159,11 @@ There are 3 different types of scroll areas in this component:
 - Each article item <b style="color: #2FD800;">(green)</b> is vertically
   scrollable.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png",
     alt="3 colorful boxes with color matching directional arrows which outline the scroll areas and show the direction they'll scroll.",
-    class="w-screenshot",
-    width="800", height="450"
+       width="800", height="450"
   %}
 </figure>
 
@@ -229,12 +225,11 @@ The frames I've highlighted below with
 [VisBug](https://a.nerdy.dev/gimme-visbug) help us see the **windows** the
 scroll containers have created.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png",
     alt="the header and section elements have hotpink overlays on them, outlining the space they take up in the component",
-    class="w-screenshot",
-    width="800", height="620"
+       width="800", height="620"
   %}
 </figure>
 
@@ -242,7 +237,7 @@ scroll containers have created.
 
 The next layout is nearly the same: I use flex to create vertical ordering.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html/1-4
 <snap-tabs>
@@ -269,12 +264,11 @@ header {
 The `.snap-indicator` should travel horizontally with the group of links, and
 this header layout helps set that stage. No absolute positioned elements here!
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png",
     alt="the nav and span.indicator elements have hotpink overlays on them, outlining the space they take up in the component",
-    class="w-screenshot",
-    width="800", height="368"
+       width="800", height="368"
   %}
 </figure>
 
@@ -314,7 +308,7 @@ The nav links need to be laid out in a line, with no line breaks, vertically
 centered, and each link item should snap to the scroll-snap container. Swift
 work for 2021 CSS!
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html/1-4
 <nav>
@@ -349,12 +343,11 @@ direction and flow. Unique widths on nav items makes the transition between tabs
 fun as the indicator adjusts its width to the new target. Depending on how many
 elements are in here, the browser will render a scrollbar or not.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png",
     alt="the a elements of the nav have hotpink overlays on them, outlining the space they take up in the component as well as where they overflow",
-    class="w-screenshot",
-    width="800", height="327"
+       width="800", height="327"
   %}
 </figure>
 
@@ -367,7 +360,7 @@ parent as much as possible, then for its own layout, it creates a series of
 columns that are `100%` the width of the parent. Percentages work great here
 because we've written strong constraints on the parent.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html/1-4
 <section>
@@ -399,12 +392,11 @@ expansion push), which sets the row height for a set of full height columns. The
 `auto-flow` style tells the grid to always lay children out in a horizontal
 line, no wrapping, exactly what we want; to overflow the parent window.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png",
     alt="the article elements have hotpink overlays on them, outlining the space they take up in the component and where they overflow",
-    class="w-screenshot",
-    width="800", height="512"
+       width="800", height="512"
   %}
 </figure>
 
@@ -420,7 +412,7 @@ position. They are simultaneously a scroll parent and a scroll child. The
 browser is really handling some tricky touch, mouse, and keyboard interactions
 for us here.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'HTML' %}
 ```html
 <article>
@@ -453,12 +445,11 @@ how the navigation link items and the article elements snap to the inline-start
 of their respective scroll containers. It looks and feels like a harmonious
 relationship.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png",
     alt="the article element and it's child elements have hotpink overlays on them, outlining the space they take up in the component and the direction they overflow",
-    class="w-screenshot",
-    width="800", height="808"
+       width="800", height="808"
   %}
 </figure>
 
@@ -474,12 +465,11 @@ Below I've chosen in my system settings to "always show scrollbars". I think
 it's doubly important for the layout to work with this setting turned on, as it
 is for me to review the layout and the scroll orchestration.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png",
     alt="the 3 scrollbars are set to show, now consuming layout space, and our component still looks great",
-    class="w-screenshot",
-    width="500", height="607"
+       width="500", height="607"
   %}
 </figure>
 
@@ -490,14 +480,13 @@ grid parents to a layout.
 
 DevTools can help us visualize this:
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png",
     alt="the scroll areas have grid and flexbox tool overlays, outlining the space they take up in the component and the direction they overflow",
-    class="w-screenshot",
-    width="800", height="455"
+       width="800", height="455"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Chromium Devtools, showing the flexbox nav element layout full of anchor elements,
     the grid section layout full of article elements, and the article
     elements full of paragraphs and a heading element.
@@ -534,11 +523,10 @@ This keeps the `<nav>`, which acts like a
 We'll be checking the user's motion preference from both CSS and JS. There's a
 few great places to be considerate!
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
@@ -559,11 +547,10 @@ instead of blink there?
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
@@ -584,11 +571,10 @@ for users who are OK with motion.
 In Chromium Devtools, I can toggle the preference and demonstrate the 2
 different transition styles. I had a ton of fun building this.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
@@ -742,12 +728,11 @@ depending on the scroll snap position of the section scroller. The snap points
 create clear delineation between our keyframes and really add to the
 synchronized feel of the animation.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png",
     alt="active tab and inactive tab are shown with VisBug overlays which show passing contrast scores for both",
-    class="w-screenshot",
-    width="540", height="400"
+       width="540", height="400"
   %}
 </figure>
 
@@ -758,11 +743,10 @@ perfectly with scroll.
 You may not have noticed, but I'm very proud of the transition of color as the
 highlighted navigation item becomes selected.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
@@ -849,11 +833,10 @@ Our users aren't always clicking or using a keyboard, sometimes they're just
 free scrolling, as they should be able to. When the section scroller stops
 scrolling, wherever it lands needs to be matched in the top navigation bar.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
@@ -901,11 +884,10 @@ Setting the active tab starts by clearing any currently active tab, then giving
 the incoming nav item the active state attribute. The call to `scrollIntoView()`
 has a fun interaction with CSS that is worth noting.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
@@ -942,4 +924,5 @@ section below.
 
 ## Community remixes
 
-- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), & [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs)
+- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), and [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs).
+- [@jhvanderschee](https://twitter.com/jhvanderschee) with buttons: [Codepen](https://codepen.io/joosts/pen/PoKdZYP).

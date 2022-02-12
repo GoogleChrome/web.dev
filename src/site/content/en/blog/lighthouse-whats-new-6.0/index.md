@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "What's New in Lighthouse 6.0"
 subhead: New metrics, Performance score update, new audits, and more.
 authors:
@@ -50,8 +51,8 @@ the highlights in this article.
 
 ## New metrics {: #new-metrics }
 
-<figure class="w-figure">
-  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251" %}
 </figure>
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
@@ -260,9 +261,9 @@ you explore performance scoring. The calculator also gives you a comparison betw
 6 scores. When you run an audit with Lighthouse 6.0, the report comes with a link to the calculator
 with your results populated.
 
-<figure class="w-figure">
-  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
+<figure>
+  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319" %}
+  <figcaption>Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
 </figure>
 
 ## New audits {: #new-audits }
@@ -314,7 +315,7 @@ At [CDS last November](/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-relea
 we announced [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), the open source Node
 CLI and server that tracks Lighthouse results on every commit in your continuous integration
 pipeline, and we've come a long way since the alpha release. Lighthouse CI now has support
-for numerous CI providers including Travis, Circle, GitLab, and Github Actions. Ready-to-deploy
+for numerous CI providers including Travis, Circle, GitLab, and GitHub Actions. Ready-to-deploy
 [docker images](https://github.com/GoogleChrome/lighthouse-ci/tree/master/docs/recipes) make setup a
 breeze, and a comprehensive dashboard redesign now reveals trends across every category and metric
 in Lighthouse for detailed analysis.
@@ -322,24 +323,16 @@ in Lighthouse for detailed analysis.
 Start using Lighthouse CI on your project today by following our
 [getting started guide](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md).
 
-<style>
-@media (min-width: 865px) {
-  .w-figure--inline-left {
-    margin: 0 20px 40px 0;
-  }
-}
-</style>
-
-<figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, class="w-screenshot" %}
+<figure data-float="left">
+  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true %}
 </figure>
 
-<figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, class="w-screenshot" %}
+<figure data-float="left">
+  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true %}
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true %}
 </figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
@@ -378,8 +371,8 @@ but here are all the changes detectable by a webpage:
 
 As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Chrome DevTools device emulation list with Moto G4 included.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Chrome DevTools device emulation list with Moto G4 included.", width="800", height="653" %}
 </figure>
 
 ## Browser extension {: #extension }
@@ -427,12 +420,12 @@ source code and the report will state the exact file and line that's relevant. T
 explore in DevTools, clicking on the locations specified in the report will open the relevant files
 in the **Sources** panel.
 
-<figure class="w-figure">
-  <video autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-caption">
+  <figcaption>
     DevTools reveals the exact line of code that causes the issue.
   </figcaption>
 </figure>
@@ -447,9 +440,9 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Treemap visualizations highlighting the modules that require action.
 -  Displaying the original source code for report items with a "source location".
 
-<figure class="w-figure">
-  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", class="w-screenshot" %}
-  <figcaption class="w-figcaption">The Unused JavaScript audit using source maps to show unused code in specific bundled modules.</figcaption>
+<figure>
+  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566" %}
+  <figcaption>The Unused JavaScript audit using source maps to show unused code in specific bundled modules.</figcaption>
 </figure>
 
 These features will be enabled by default in a future version of Lighthouse. For now, you can view

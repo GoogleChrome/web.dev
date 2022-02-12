@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "The business impact of Core Web Vitals"
 subhead: >
   This article will help you understand how Core Web Vitals correlate with
@@ -134,9 +135,9 @@ to monitor progress and impact across teams.
 
 CWV fixes contributed to 80-100% mobile conversion rates(mCVR) and significant domain ranking uplift across Redbus’s global market properties.
 
-{% Img 
-src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/1988aZMNJ7viKhj8U3aS.png", 
-alt="192% domain ranking uplift in Columbia", 
+{% Img
+src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/1988aZMNJ7viKhj8U3aS.png",
+alt="192% domain ranking uplift in Columbia",
 width="800", height="360" %}
 
 #### Techniques
@@ -155,16 +156,16 @@ The case studies above show that you can achieve a lot
 by adopting best practices and implementing quick wins.
 Here are a few more real-world examples of this point.
 
-{% Img 
-src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/zqcmwjQjSsuTqswQOxqR.png", 
+{% Img
+src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/zqcmwjQjSsuTqswQOxqR.png",
 alt="Netzwelt saw 18 percent increase ads revenue,
 Lazada saw 3x LCP and 16.9 percent increase in conversion rate on mobile,
-GYAO saw 3.1x LCP and 108 percent improvement in click-through rate", 
+GYAO saw 3.1x LCP and 108 percent improvement in click-through rate",
 width="800", height="437" %}
 
 The above results were achieved by grabbing low hanging fruit such as:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -218,9 +219,9 @@ to audit your website and get actionable recommendations immediately.
 
 There are several more global brands which have also benefited from investing in Core Web Vitals.
 
-{% Img 
-src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/uKMplYNMdeDswi14lWhM.png", 
-alt="", 
+{% Img
+src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/uKMplYNMdeDswi14lWhM.png",
+alt="",
 width="800", height="400" %}
 
 - Tencent Video saw **70% better CTR** for videos by passing Core Web Vitals.
@@ -240,31 +241,27 @@ width="800", height="400" %}
 
 ### Step 1: Start measuring
 
-Start by measuring your site using field tools! There are various tools available, from
-both Google and other providers.
+Start by measuring field data for your site using Real User Monitoring (RUM) tools. There are various Google and third-party (3P) RUM tools available already.
 
-{% Img
-src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BZbi6hd4OUfKmwyDgQeR.png",
-alt="",
-width="800", height="459" %}
+{% Img src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/RR58abBFQBGphUgjvHaa.png", alt="RUM tools", width="800", height="397" %}
 
-#### Google tools
+#### Google RUM tools
 
 - Search Console
-- PageSpeed insights
-- web-vitals JS
-- Chrome User Experience Report
+- PageSpeed Insights
+- web-vitals JavaScript library
+- Chrome User Experience Report (CrUX)
 
-#### Third-party tools
+#### Third-party RUM tools
 
 - Cloudflare
 - New Relic
 - Akamai
 - Calibre
-- WebPageTest
 - Blue Triangle
 - Sentry
 - SpeedCurve
+- Raygun
 
 Pick the tool that works best for you.
 You can go a step further and [integrate with

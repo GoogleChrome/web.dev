@@ -32,7 +32,7 @@ In this guide we'll explore different ways in which [service workers](https://de
 
 [MercadoLibre](https://www.mercadolibre.com.ar/) is the biggest e-commerce site in Latin America. To speed up navigations, they dynamically inject `<link rel="prefetch">` tags in some parts of the flow. For example, in listing pages, they fetch the next result page as soon as the user scrolls to the bottom of the listing:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/80D6QavdktSNb6xnhXE0.png", alt="Screenshot of MercadoLibre's listing pages one and two and a Link Prefetch tag connecting both.", width="682", height="397" %}
 </figure>
 
@@ -42,13 +42,13 @@ Using service worker caching can help you extend the lifetime of prefetch resour
 
 For example, Italian sports portal [Virgilio Sport](https://sport.virgilio.it/) uses service workers to prefetch the most popular posts in their home page. They also use the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to avoid prefetching for users that are on a 2G connection.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqiSoliDKZ9SR1NX2Ek3.png", alt="Virgilio Sport logo.", width="340", height="100" %}
 </figure>
 
 As a result of this, over 3 weeks of observation Virgilio Sport witnessed load times for navigation to articles improve **78%**, and the number of article impressions increase **45%**.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wn7OR4CA21QJUYhs8OUu.png", alt="A screenshot of Virgilio Sport home and article pages, with impact metrics after prefetching.", width="536", height="442" %}
 </figure>
 
@@ -143,7 +143,7 @@ For example: to prefetch the first few products in a client-side rendered produc
 
 In cases like this, use a "page to service worker communication strategy", to delegate the task of prefetching completely to the service worker. This type of communication can be achieved by using [worker.postMessage()](https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage):
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vokHySREOo6Y3PpxzxRC.png", alt="An icon of a page making two way communication with a service worker.", width="626", height="205" %}
 </figure>
 

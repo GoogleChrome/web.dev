@@ -1,0 +1,17 @@
+// =============================================================================
+// UNRESOLVED
+//
+// Specifies behavior for unresolved elements. This uses the "unresolved"
+// class as lit doesn't render for a frame after :defined is removed.
+//
+// =============================================================================
+
+// Elements marked with the unresolved class are hidden until the JS is first
+*:not(body).unresolved {
+  display: none;
+}
+
+web-tabs.unresolved {
+  padding-top: 50px;
+  display: block;
+}

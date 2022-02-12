@@ -12,8 +12,8 @@ web_lighthouse:
 The Opportunities section of your Lighthouse report lists all key requests
 that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="A screenshot of the Lighthouse Preconnect to required origins audit", width="800", height="226", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="A screenshot of the Lighthouse Preconnect to required origins audit", width="800", height="226" %}
 </figure>
 
 ## Browser compatibility

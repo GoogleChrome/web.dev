@@ -20,15 +20,14 @@ In this post I want to share thinking on ways to solve split text animations and
 interactions for the web that are minimal, accessible, and work across browsers.
 Try the [demo](https://gui-challenges.web.app/split-text/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/H9NpmghPMDoJzJLNjk2V.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/split-text/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -58,14 +57,13 @@ Here's a general overview of the workflow and results:
 
 Here's a preview of the conditional results we're going for:
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/TIrcTqDDX0tQiRyIuin1.png",
     alt="screenshot of the Chrome devtools with the Elements panel open and reduced motion set to 'reduce' and the h1 is shown unsplit",
-    class="w-screenshot",
-    width="800", height="517"
+       width="800", height="517"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     User prefers reduced motion: text is legible / unsplit
   </figcaption>
 </figure>
@@ -74,14 +72,13 @@ If a user prefers reduced motion, we leave the HTML document alone and do no
 animation. If motion is OK, we go ahead and chop it up into pieces. Here's a
 preview of the HTML after JavaScript has split the text by letter.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/prwDis2IMcZxFD39mnWF.png",
     alt="screenshot of the Chrome devtools with the Elements panel open and reduced motion set to 'reduce' and the h1 is shown unsplit",
-    class="w-screenshot",
-    width="800", height="517"
+       width="800", height="517"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     User is OK with motion; text split into multiple <span> elements
   </figcaption>
 </figure>
@@ -95,8 +92,8 @@ deciding to split text or not. The CSS media query will be used to withhold
 transitions and animations, while the JavaScript media query will be used to
 withhold the HTML manipulation.
 
-{% Banner 'neutral' %} **Question:** What else should be used to withhold split
-text animations?{% endBanner %}
+{% Aside %} **Question:** What else should be used to withhold split
+text animations?{% endAside %}
 
 
 #### Preparing the CSS conditional
@@ -382,8 +379,7 @@ letter, I bring it forward.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/TTG7vmfEJRAlRISqqIIA.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -415,8 +411,7 @@ effect.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Y9wcyj9AMwjn2XDASL2u.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -461,15 +456,14 @@ word-animation {
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qgTmqbho48bH9VE35HYj.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Flexbox devtools showing the gap between words
   </figcaption>
 </figure>
@@ -482,8 +476,7 @@ if the device had the capability to hover.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2oIFqmTm8QIoNAhRiJQl.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -513,8 +506,7 @@ infinite animation on a regular paragraph of text.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fXANvKVQB8wiIYfaSp56.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}

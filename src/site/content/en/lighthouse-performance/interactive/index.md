@@ -22,8 +22,8 @@ nothing happens.
 
 Lighthouse displays TTI in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="592", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="592" %}
 </figure>
 
 ## What TTI measures
@@ -32,7 +32,7 @@ TTI measures how long it takes a page to become _fully_ interactive.
 A page is considered fully interactive when:
 
 - The page displays useful content, which is measured by the
-[First Contentful Paint](/first-contentful-paint),
+[First Contentful Paint](/fcp/),
 - Event handlers are registered for most visible page elements, and
 - The page responds to user interactions within 50&nbsp;milliseconds.
 
@@ -56,7 +56,7 @@ If your website's TTI is 2.2&nbsp;seconds, your TTI score is 99.
 
 This table shows how to interpret your TTI score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

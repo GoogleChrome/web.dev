@@ -4,13 +4,12 @@ subhead: Manipulating video stream components.
 description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
-updated: 2021-08-26
+updated: 2022-02-10
 hero: image/admin/I09h0la9qLPSRLZs1ruB.jpg
 alt: A roll of film.
 authors:
  - djuffin
-origin_trial:
-    url: https://developers.chrome.com/origintrials/#/view_trial/-7811493553674125311
+ - beaufortfrancois
 tags:
   - blog
   - media
@@ -35,7 +34,7 @@ that modern browsers already ship with a variety of codecs (which are often
 accelerated by hardware), repackaging them as WebAssembly seems like a waste of
 human and computer resources.
 
-[WebCodecs API](https://wicg.github.io/web-codecs/) eliminates this inefficiency
+[WebCodecs API](https://w3c.github.io/webcodecs/) eliminates this inefficiency
 by giving programmers a way to use media components that are already present in
 the browser. Specifically:
 
@@ -50,15 +49,15 @@ streaming, etc.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
-| 1. Create explainer                          | [Complete](https://github.com/WICG/web-codecs/blob/master/explainer.md)        |
-| 2. Create initial draft of specification     | [Complete](https://wicg.github.io/web-codecs/)         |
+| 1. Create explainer                          | [Complete](https://github.com/w3c/webcodecs/blob/main/explainer.md)        |
+| 2. Create initial draft of specification     | [Complete](https://w3c.github.io/webcodecs/)         |
 | 3. Gather feedback & iterate on design       | Complete                     |
 | 4. Origin trial                              | Complete                     |
-| 5. Launch                                    | Chrome 94                    |
+| 5. Launch                                    | [Chrome 94](https://chromestatus.com/feature/5669293909868544)                    |
 
 </div>
 
@@ -101,50 +100,54 @@ moved between workers.
 
 ### Encoding
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/lEovMYp8oh1JSClCLCiD.png", alt="The path from a Canvas or an ImageBitmap to the network or to storage", width="800", height="393" %}
-  <figcaption class="w-figcaption">The path from a <code>Canvas</code> or an <code>ImageBitmap</code> to the network or to storage</figcaption>
+  <figcaption>The path from a <code>Canvas</code> or an <code>ImageBitmap</code> to the network or to storage</figcaption>
 </figure>
 
 It all starts with a `VideoFrame`.
 There are three ways to construct video frames.
 + From an image source like a canvas, an image bitmap, or a video element.
 ```js
-const cnv = document.createElement('canvas');
-// draw something on the canvas
-…
-let frame_from_canvas = new VideoFrame(cnv, { timestamp: 0 });
+const canvas = document.createElement("canvas");
+// Draw something on the canvas...
+
+const frameFromCanvas = new VideoFrame(canvas, { timestamp: 0 });
 ```
 + Use `MediaStreamTrackProcessor` to pull frames from a [`MediaStreamTrack`](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
 ```js
-  const stream = await navigator.mediaDevices.getUserMedia({ … });
-  const track = stream.getTracks()[0];
+const stream = await navigator.mediaDevices.getUserMedia({…});
+const track = stream.getTracks()[0];
 
-  const media_processor = new MediaStreamTrackProcessor(track);
+const trackProcessor = new MediaStreamTrackProcessor(track);
 
-  const reader = media_processor.readable.getReader();
-  while (true) {
-      const result = await reader.read();
-      if (result.done)
-        break;
-      let frame_from_camera = result.value;
-  }
+const reader = trackProcessor.readable.getReader();
+while (true) {
+  const result = await reader.read();
+  if (result.done) break;
+  const frameFromCamera = result.value;
+}
 ```
 + Create a frame from its binary pixel representation in a [`BufferSource`](https://developer.mozilla.org/docs/Web/API/BufferSource)
 ```js
-  const pixelSize = 4;
-  const init = {timestamp: 0, codedWidth: 320, codedHeight: 200, format: 'RGBA'};
-  let data = new Uint8Array(init.codedWidth * init.codedHeight * pixelSize);
-  for (let x = 0; x < init.codedWidth; x++) {
-    for (let y = 0; y < init.codedHeight; y++) {
-      let offset = (y * init.codedWidth + x) * pixelSize;
-      data[offset] = 0x7F;      // Red
-      data[offset + 1] = 0xFF;  // Green
-      data[offset + 2] = 0xD4;  // Blue
-      data[offset + 3] = 0x0FF; // Alpha
-    }
+const pixelSize = 4;
+const init = {
+  timestamp: 0,
+  codedWidth: 320,
+  codedHeight: 200,
+  format: "RGBA",
+};
+const data = new Uint8Array(init.codedWidth * init.codedHeight * pixelSize);
+for (let x = 0; x < init.codedWidth; x++) {
+  for (let y = 0; y < init.codedHeight; y++) {
+    const offset = (y * init.codedWidth + x) * pixelSize;
+    data[offset] = 0x7f;      // Red
+    data[offset + 1] = 0xff;  // Green
+    data[offset + 2] = 0xd4;  // Blue
+    data[offset + 3] = 0x0ff; // Alpha
   }
-  let frame = new VideoFrame(data, init);
+}
+const frame = new VideoFrame(data, init);
 ```
 
 No matter where they are coming from, frames can be encoded into
@@ -156,26 +159,36 @@ Before encoding, `VideoEncoder` needs to be given two JavaScript objects:
     errors. These functions are developer-defined and can't be changed after
     they're passed to the `VideoEncoder` constructor.
 +   Encoder configuration object, which contains parameters for the output
-    video stream. You can change these parameters later  by calling `configure()`.
+    video stream. You can change these parameters later by calling `configure()`.
+
+The `configure()` method will throw `NotSupportedError` if the config is not
+supported by the browser. You are encouraged to call the static method
+`VideoEncoder.isConfigSupported()` with the config to check before hand whether
+the config is supported and wait for its promise.
 
 ```js
 const init = {
   output: handleChunk,
   error: (e) => {
     console.log(e.message);
-  }
+  },
 };
 
-let config = {
-  codec: 'vp8',
+const config = {
+  codec: "vp8",
   width: 640,
   height: 480,
   bitrate: 2_000_000, // 2 Mbps
   framerate: 30,
 };
 
-let encoder = new VideoEncoder(init);
-encoder.configure(config);
+const { supported } = await VideoEncoder.isConfigSupported(config);
+if (supported) {
+  const encoder = new VideoEncoder(init);
+  encoder.configure(config);
+} else {
+  // Try another config.
+}
 ```
 
 After the encoder has been set up, it's ready to accept frames via `encode()` method.
@@ -192,64 +205,58 @@ Another important detail here is that frames need to be told when they are no
 longer needed by calling `close()`.
 
 ```js
-let frame_counter = 0;
+let frameCounter = 0;
 
 const track = stream.getVideoTracks()[0];
-const media_processor = new MediaStreamTrackProcessor(track);
+const trackProcessor = new MediaStreamTrackProcessor(track);
 
-const reader = media_processor.readable.getReader();
+const reader = trackProcessor.readable.getReader();
 while (true) {
-    const result = await reader.read();
-    if (result.done)
-      break;
+  const result = await reader.read();
+  if (result.done) break;
 
-    let frame = result.value;
-    if (encoder.encodeQueueSize > 2) {
-      // Too many frames in flight, encoder is overwhelmed
-      // let's drop this frame.
-      frame.close();
-    } else {
-      frame_counter++;
-      const insert_keyframe = (frame_counter % 150) == 0;
-      encoder.encode(frame, { keyFrame: insert_keyframe });
-      frame.close();
-    }
+  const frame = result.value;
+  if (encoder.encodeQueueSize > 2) {
+    // Too many frames in flight, encoder is overwhelmed
+    // let's drop this frame.
+    frame.close();
+  } else {
+    frameCounter++;
+    const keyframe = frameCounter % 150 == 0;
+    encoder.encode(frame, { keyFrame });
+    frame.close();
+  }
 }
 ```
 
 Finally it's time to finish encoding code by writing a function that handles
 chunks of encoded video as they come out of the encoder.
 Usually this function would be sending data chunks over the network or [muxing
-](https://en.wikipedia.org/wiki/Multiplexing#Video_processing)them into a media
+](https://en.wikipedia.org/wiki/Multiplexing#Video_processing) them into a media
 container for storage.
 
 ```js
 function handleChunk(chunk, metadata) {
-
   if (metadata.decoderConfig) {
     // Decoder needs to be configured (or reconfigured) with new parameters
     // when metadata has a new decoderConfig.
     // Usually it happens in the beginning or when the encoder has a new
     // codec specific binary configuration. (VideoDecoderConfig.description).
-    fetch('/upload_extra_data',
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/octet-stream' },
-      body: metadata.decoderConfig.description
+    fetch("/upload_extra_data", {
+      method: "POST",
+      headers: { "Content-Type": "application/octet-stream" },
+      body: metadata.decoderConfig.description,
     });
   }
 
   // actual bytes of encoded data
-  let chunkData = new Uint8Array(chunk.byteLength);
+  const chunkData = new Uint8Array(chunk.byteLength);
   chunk.copyTo(chunkData);
 
-  let timestamp = chunk.timestamp;        // media time in microseconds
-  let is_key = chunk.type == 'key';       // can also be 'delta'
-  fetch(`/upload_chunk?timestamp=${timestamp}&type=${chunk.type}`,
-  {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/octet-stream' },
-    body: chunkData
+  fetch(`/upload_chunk?timestamp=${chunk.timestamp}&type=${chunk.type}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/octet-stream" },
+    body: chunkData,
   });
 }
 ```
@@ -263,9 +270,9 @@ await encoder.flush();
 
 ### Decoding
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/fzi3E4v2jJJj5QAlhoRG.png", alt="The path from the network or storage to a Canvas or an ImageBitmap.", width="800", height="419" %}
-  <figcaption class="w-figcaption">The path from the network or storage to a <code>Canvas</code> or an <code>ImageBitmap</code>.</figcaption>
+  <figcaption>The path from the network or storage to a <code>Canvas</code> or an <code>ImageBitmap</code>.</figcaption>
 </figure>
 
 Setting up a `VideoDecoder` is similar to what's been done for the
@@ -273,25 +280,30 @@ Setting up a `VideoDecoder` is similar to what's been done for the
 parameters are given to `configure()`.
 
 The set of codec parameters varies from codec to codec. For example H.264 codec
-might need a [binary blob](https://wicg.github.io/web-codecs/#dom-audiodecoderconfig-description)
-of avcC, unless it's encoded in so called AnnexB format ( `encoderConfig.avc = { format: "annexb" }` ).
+might need a [binary blob](https://w3c.github.io/webcodecs/#dom-videodecoderconfig-description)
+of AVCC, unless it's encoded in so called Annex B format (`encoderConfig.avc = { format: "annexb" }`).
 
 ```js
 const init = {
   output: handleFrame,
   error: (e) => {
     console.log(e.message);
-  }
+  },
 };
 
 const config = {
-  codec: 'vp8',
+  codec: "vp8",
   codedWidth: 640,
-  codedHeight: 480
+  codedHeight: 480,
 };
 
-let decoder = new VideoDecoder(init);
-decoder.configure(config);
+const { supported } = await VideoDecoder.isConfigSupported(config);
+if (supported) {
+  const decoder = new VideoDecoder(init);
+  decoder.configure(config);
+} else {
+  // Try another config.
+}
 ```
 
 Once the decoder is initialized, you can start feeding it with `EncodedVideoChunk` objects.
@@ -307,19 +319,19 @@ All of the things said above about error reporting and the asynchronous nature
 of encoder's methods are equally true for decoders as well.
 
 ```js
-let responses = await downloadVideoChunksFromServer(timestamp);
+const responses = await downloadVideoChunksFromServer(timestamp);
 for (let i = 0; i < responses.length; i++) {
-  let chunk = new EncodedVideoChunk({
+  const chunk = new EncodedVideoChunk({
     timestamp: responses[i].timestamp,
-    type: (responses[i].key ? 'key' : 'delta'),
-    data: new Uint8Array ( responses[i].body )
+    type: responses[i].key ? "key" : "delta",
+    data: new Uint8Array(responses[i].body),
   });
   decoder.decode(chunk);
 }
 await decoder.flush();
 ```
 Now it's time to show how a freshly decoded frame can be shown on the page. It's
-better to make sure that the decoder output callback  (`handleFrame()`)
+better to make sure that the decoder output callback (`handleFrame()`)
 quickly returns. In the example below, it only adds a frame to the queue of
 frames ready for rendering.
 Rendering happens separately, and consists of two steps:
@@ -332,50 +344,52 @@ before the garbage collector gets to it, this will reduce the average amount of
 memory used by the web application.
 
 ```js
-let cnv = document.getElementById('canvas_to_render');
-let ctx = cnv.getContext('2d');
-let ready_frames = [];
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let pendingFrames = [];
 let underflow = true;
-let time_base = 0;
+let baseTime = 0;
 
 function handleFrame(frame) {
-  ready_frames.push(frame);
-  if (underflow)
-    setTimeout(render_frame, 0);
+  pendingFrames.push(frame);
+  if (underflow) setTimeout(renderFrame, 0);
 }
 
-function delay(time_ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, time_ms);
-  });
+function calculateTimeUntilNextFrame(timestamp) {
+  if (baseTime == 0) baseTime = performance.now();
+  let mediaTime = performance.now() - baseTime;
+  return Math.max(0, timestamp / 1000 - mediaTime);
 }
 
-function calculateTimeTillNextFrame(timestamp) {
-  if (time_base == 0)
-    time_base = performance.now();
-  let media_time = performance.now() - time_base;
-  return Math.max(0, (timestamp / 1000) - media_time);
-}
+async function renderFrame() {
+  underflow = pendingFrames.length == 0;
+  if (underflow) return;
 
-async function render_frame() {
-  if (ready_frames.length == 0) {
-    underflow = true;
-    return;
-  }
-  let frame = ready_frames.shift();
-  underflow = false;
+  const frame = pendingFrames.shift();
 
   // Based on the frame's timestamp calculate how much of real time waiting
   // is needed before showing the next frame.
-  let time_till_next_frame = calculateTimeTillNextFrame(frame.timestamp);
-  await delay(time_till_next_frame);
+  const timeUntilNextFrame = calculateTimeUntilNextFrame(frame.timestamp);
+  await new Promise((r) => {
+    setTimeout(r, timeUntilNextFrame);
+  });
   ctx.drawImage(frame, 0, 0);
   frame.close();
 
   // Immediately schedule rendering of the next frame
-  setTimeout(render_frame, 0);
+  setTimeout(renderFrame, 0);
 }
 ```
+
+## Dev Tips {: #dev-tips }
+
+Use the [Media Panel](https://developer.chrome.com/docs/devtools/media-panel/)
+in Chrome DevTools to view media logs and debug WebCodecs.
+
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/rD4O3Aqj42MAMxHbBK4X.png", alt="Screenshot of the Media Panel for debugging WebCodecs", width="800", height="375" %}
+  <figcaption>Media Panel in Chrome DevTools for debugging WebCodecs.</figcaption>
+</figure>
 
 ## Demo
 
@@ -419,7 +433,7 @@ The Chrome team wants to hear about your experiences with the WebCodecs API.
 Is there something about the API that doesn't work like you expected? Or are
 there missing methods or properties that you need to implement your idea? Have a
 question or comment on the security model? File a spec issue on the
-corresponding [GitHub repo](https://github.com/WICG/web-codecs/issues), or add
+corresponding [GitHub repo](https://github.com/w3c/webcodecs/issues), or add
 your thoughts to an existing issue.
 
 ### Report a problem with the implementation
@@ -437,7 +451,7 @@ Chrome team to prioritize features and shows other browser vendors how critical
 it is to support them.
 
 Send emails to [media-dev@chromium.org](mailto:media-dev@chromium.org) or send a tweet
-to [@ChromiumDev][cr-dev-twitter] using the hashtag
+to [@ChromiumDev](https://twitter.com/ChromiumDev) using the hashtag
 [`#WebCodecs`](https://twitter.com/search?q=%23WebCodecs&src=typed_query&f=live)
 and let us know where and how you're using it.
 

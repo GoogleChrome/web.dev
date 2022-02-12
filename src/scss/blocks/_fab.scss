@@ -2,7 +2,7 @@
 /// https://web.dev/design-system/component/fab
 .fab {
   position: relative;
-  padding: 0.8em;
+  padding: 0.8em 1em 0.8em 0.8em;
   border-radius: 3em;
   flex: none;
 
@@ -15,17 +15,18 @@
 }
 
 .fab__label {
-  /// By default (small viewport), the
-  /// label is hidden
+  text-transform: uppercase;
+  // By default (small viewport), the
+  // label is hidden
   @extend .visually-hidden;
 
-  /// If this isn't a icon only context,
-  /// show the label where there is more space
+  // If this isn't a icon only context,
+  // show the label where there is more space
   @include media-query('md') {
     .fab:not([data-icon-only]) & {
-      clip: none;
-      position: static;
-      width: unset;
+      height: auto;
+      position: initial;
+      width: auto;
     }
   }
 }

@@ -21,8 +21,8 @@ Also, most mobile devices don't support plugins, which
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 that use plugins:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lL85pZVbdytWgeGIL8wB.png", alt="Lighthouse audit showing document uses plugins", width="800", height="163", class="w-screenshot w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lL85pZVbdytWgeGIL8wB.png", alt="Lighthouse audit showing document uses plugins", width="800", height="163" %}
 </figure>
 
 Lighthouse checks the page for elements that commonly represent plugins:

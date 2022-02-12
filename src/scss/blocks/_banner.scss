@@ -3,11 +3,12 @@
 .banner {
   --gutter: 0.5rem;
 
-  padding: $global-gutter;
+  padding: 1.5em $global-gutter;
   display: flex;
   gap: 0 $global-gutter;
   flex-wrap: wrap;
   align-items: flex-start;
+  font-size: get-size('size-0');
 }
 
 .banner__content {
@@ -22,8 +23,10 @@
   margin-inline-start: auto;
   margin-block-start: auto;
 
-  button {
+  button.button {
     padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
+
+    @include apply-utility('text', 'size-0');
   }
 
   /// Let whatever button element's current hover state happen
@@ -45,4 +48,11 @@
   max-height: 2.5em;
   /// A slightly lighter background, regardless of current color
   background: rgba(255, 255, 255, 0.5);
+}
+
+/// Hides banner in print mode
+@media print {
+  .banner {
+    display: none !important;
+  }
 }

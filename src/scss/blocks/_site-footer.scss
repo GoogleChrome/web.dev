@@ -9,8 +9,9 @@
     padding: 0;
   }
 
-  li a:link,
-  li a:visited {
+  li a,
+  li a:visited,
+  theme-toggle {
     font-size: get-size('size-0');
     @include apply-utility('color', 'mid-text');
 
@@ -39,5 +40,6 @@
 
   img {
     display: block;
+    background: transparent;
   }
 }

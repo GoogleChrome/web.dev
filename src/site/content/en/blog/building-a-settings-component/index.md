@@ -22,15 +22,14 @@ In this post I want to share thinking on building a Settings component for the
 web that is responsive, supports multiple device inputs, and works across
 browsers. Try the [demo](https://gui-challenges.web.app/settings/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/WuIwd9jPb30KmmnjJn75.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/settings/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -67,17 +66,16 @@ highlighted with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/h6LZhScslprBcFol4gGp.png",
   alt="Colorful outlines and gap spacing overlays that help show all the boxes that make up the settings layout",
-  class="w-screenshot",
-  width="800", height="563"
+   width="800", height="563"
 %}
 
-{% Banner 'neutral' %}
+{% Aside %}
 To highlight your grid layouts:
 1. Open Chrome DevTools with `cmd+opt+i` or `ctrl+alt+i`.
 1. Select the Layout tab next to the Styles tab.
 1. Under the Grid layouts section, check on all the layouts.
 1. Change the colors of all layouts.
-{% endBanner %}
+{% endAside %}
 
 ### Just for gap
 
@@ -104,7 +102,7 @@ Five layouts use this strategy, here's all of them displayed:
 The `fieldset` element, which contains each input group (`.fieldset-item`), is using `gap: 1px` to
 create the hairline borders between elements. No tricky border solution!
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'Filled gap' %}
 
 ```css
@@ -164,8 +162,7 @@ that the children are centered vertically and horizontally in both one and two c
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IQI2PofA6gpNFUkDrvKo.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -216,8 +213,7 @@ Let me show you the layout with and without the style applied:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gdldf7hyaBrHWwxQbSaT.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -359,14 +355,14 @@ that caters to how we percieve color, not how we measure color with math (like
 255). This gives it a distinct advantage as humans can write it more easily and other
 humans will be in tune with these adjustments.
 
-<figure class="w-figure w-screenshot">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/160dWLSrMhFISwWMVd4w.png",
     alt="A screenshot of pod.link/csspodcast webpage, with Color 2: Perception episode pulled up",
     width="800",
     height="329"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Learn about perceptual color (and more!) on the <a href="https://pod.link/thecsspodcast">CSS Podcast</a>
   </figcaption>
 </figure>
@@ -418,8 +414,7 @@ have to specify in CSS or HTML that your design uses them.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/0VVtEAWM6jHeIxahqnFy.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -467,8 +462,7 @@ that is through colorful UI interactions.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pm75QwVToKkiqedqPtmm.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true",
   width="480px"
@@ -525,6 +519,7 @@ There's 3 parts to this element we need to customize:
 1. [Thumb](#thumb-styles)
 
 ### Range element styles
+
 ```css
 input[type="range"] {
   /* style setting variables */
@@ -577,13 +572,13 @@ full width color, waiting for transparency to reveal it.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/aiAL28AkDRZvaAZNEbW8.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
 
 #### Track fill style
+
 My design **does require JavaScript** in order to maintain the fill style. There
 are CSS only strategies but they require the thumb element to be the same height
 as the track, and I wasn't able to find a harmony within those limits.
@@ -683,8 +678,7 @@ thumb element. Then I change and transition it's spread size on hover.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/s835RbH88L5bxjl5bMFl.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -758,13 +752,12 @@ checkboxes via their associated labels.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7GYIFNjNCBdj13juFO7S.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'better', 'input' %}
 
 ```html
@@ -818,7 +811,7 @@ input[type="checkbox"]::before {
   block-size: var(--thumb-highlight-size);
   clip-path: circle(50%);                     /* circle shape */
   position: absolute;                         /* this is why position relative on parent */
-  top: 50%;                                   /* pop and plop technique (https://web.dev/centering-in-css/#5.-pop-and-plop) */
+  top: 50%;                                   /* pop and plop technique (/centering-in-css/#5.-pop-and-plop) */
   left: 50%;
   background: var(--thumb-highlight-color);
   transform-origin: center center;            /* goal is a centered scaling circle */
@@ -849,8 +842,7 @@ after I fixed it:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Spdpw5P1MD8ceazneRXo.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -894,8 +886,7 @@ in this case the icon next to the slider:
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fVjqHRZHQixAaxjeAvDP.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true",
   width="480px"
@@ -948,8 +939,7 @@ an object into a table for easy review before submitting to a server.
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hFAyIOpOSdiczdf4AtIj.png",
   alt="A screenshot of the console.table() results, where the form data is shown in a table",
-  class="w-screenshot",
-  width="800", height="285"
+   width="800", height="285"
 %}
 
 ## Conclusion

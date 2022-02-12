@@ -26,21 +26,21 @@ When you open a web page, the browser requests the HTML document from a server, 
 
 Preloading is best suited for resources typically discovered late by the browser.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Screenshot of Chrome DevTools Network panel.", width="701", height="509" %}
-<figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
+<figcaption>In this example, Pacifico font is defined in the stylesheet with a <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
 </figure>
 
 By preloading a certain resource, you are telling the browser that you would like to fetch it sooner than the browser would otherwise discover it because you are certain that it is important for the current page.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Screenshot of Chrome DevTools Network panel after applying preloading.", width="701", height="509" %}
-<figcaption class="w-figcaption">In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
+<figcaption>In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
 </figure>
 
 The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](/uses-rel-preload) audit to identify which resources to preload.
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse's preload key requests audit.", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse's preload key requests audit.", width="745", height="97" %}
 
 You can preload resources by adding a `<link>` tag with `rel="preload"` to the head of your HTML document:
 
@@ -51,14 +51,14 @@ You can preload resources by adding a `<link>` tag with `rel="preload"` to the h
 The browser caches preloaded resources so they are available immediately when needed. (It doesn't execute the scripts or apply the stylesheets.)
 
 {% Aside %}
-After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](/interactive) and [First Contentful Paint](/first-contentful-paint).
+After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](/tti/) and [First Contentful Paint](/fcp/).
 {% endAside %}
 
 Resource hints, for example, [`preconnect`](/preconnect-and-dns-prefetch)and [`prefetch`](/link-prefetch), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources.
 
 Unused preloads trigger a Console warning in Chrome, approximately 3 seconds after the `load` event.
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228" %}
 
 {% Aside %}
 [`preload` is supported](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.

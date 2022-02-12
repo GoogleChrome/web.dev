@@ -89,9 +89,9 @@ values that were used previously in form inputs that also had `autocomplete="nam
 isn't just guessing what might be appropriate: you have control. You'll also see the **Manage…**
 option to view and edit the names and addresses stored by your browser.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uSc6aqRgHoL2qIDyj803.jpg", alt="Two screenshots of Chrome on an Android phone showing a form with a single input, with and without an autocomplete value. One shows browser UI heuristicically suggestions values; the other shows UI when there are stored autocomplete values.", width="800", height="684" %}
-  <figcaption class="w-figcaption">UI for autofill with guessed values, versus autocomplete.</figcaption>
+  <figcaption>UI for autofill with guessed values, versus autocomplete.</figcaption>
 </figure>
 
 {% Aside %}
@@ -217,9 +217,9 @@ There are two attributes that can improve the user experience of entering a tele
 * `enterkeyhint="done"` sets the mobile keyboard enter key label to show that this is the last
 field and the form can now be submitted (the default is `next`).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vReqMRQjLSI7e6UQ5WwX.png", alt="Two screenshots of a form on Android showing how the enterkeyhint input attribute changes the enter key button icon.", width="800", height="684" %}
-  <figcaption class="w-figcaption">Use the enterkeyhint attribute to set the Enter button label:
+  <figcaption>Use the enterkeyhint attribute to set the Enter button label:
     'next' and 'done'.</figcaption>
 </figure>
 

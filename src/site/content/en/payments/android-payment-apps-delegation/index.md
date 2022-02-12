@@ -99,7 +99,7 @@ The `callingPackageName` used for the service's start intent can have one of the
 following values depending on the browser that has initiated the payment
 request.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

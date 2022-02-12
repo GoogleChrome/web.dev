@@ -166,16 +166,16 @@ The available configuration options of the component are all listed in the
 [component preview with simulator](https://herbox-embed.alipay.com/s/doc-image?chInfo=openhome-doc&theme=light)
 makes the code immediately tangible.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t2Y6WWsRhp6LjThxROUo.png", alt="Alipay component documentation with embedded component preview, showing a code editor with simulator that shows the component rendered on a simulated iPhone 6.", width="800", height="510" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Alipay component documentation with embedded component preview.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xu2F51XL9Z0M3Z9n6n2O.png", alt="Alipay component preview running in a separate browser tab showing a code editor with simulator that shows the component rendered on a simulated iPhone 6.", width="800", height="514" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Alipay component preview popped out into its own tab.
   </figcaption>
 </figure>
@@ -183,9 +183,9 @@ makes the code immediately tangible.
 Each component also has a QR code that can be scanned with the Alipay app that opens the component
 example in a self-contained minimal example.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gaWqLG5GqeqqfbhWz8D1.png", alt="Alipay's `image` component previewed on a real device after scanning a QR code in the documentation.", width="300", height="649" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Preview of the Alipay <code>&lt;image&gt;</code> component on a real device after following a <a href="https://qr.alipay.com/s6x01278ucjhjyknjd5ow53">QR code link</a> from the docs.
   </figcaption>
 </figure>

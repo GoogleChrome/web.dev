@@ -14,12 +14,12 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **1 de junio de 2021:** la implementación de CLS cambió. Para obtener más información sobre las razones detrás del cambio, consulte [Evolución de la métrica CLS](/evolving-cls) . {% endBanner %}
+{% Aside 'caution' %} **1 de junio de 2021:** la implementación de CLS cambió. Para obtener más información sobre las razones detrás del cambio, consulte [Evolución de la métrica CLS](/evolving-cls) . {% endAside %}
 
-{% Banner 'info', 'body' %}
-  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for 
+{% Aside %}
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
   implementations of common UX patterns optimized for Core Web Vitals.
-{% endBanner %}
+{% endAside %}
 
 {% Aside 'key-term' %} Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS)  es una métrica importante centrada en el usuario para medir [la estabilidad visual](/user-centric-performance-metrics/#types-of-metrics) porque ayuda a cuantificar la frecuencia con la que los usuarios experimentan cambios de diseño inesperados; un CLS bajo ayuda a garantizar que la página sea [agradable](/user-centric-performance-metrics/#questions) . {% endAside %}
 
@@ -27,12 +27,12 @@ tags:
 
 La mayoría de las veces, este tipo de experiencias son simplemente molestas, pero en algunos casos, pueden causar un daño real.
 
-<figure class="w-figure">
-  <video autoplay controls loop muted class="w-screenshot" poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
+<figure>
+  <video autoplay controls loop muted poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">Un screencast que ilustra cómo la inestabilidad del diseño puede afectar negativamente a los usuarios.</figcaption></figure>
+  <figcaption>Un screencast que ilustra cómo la inestabilidad del diseño puede afectar negativamente a los usuarios.</figcaption></figure>
 
 El desplazamiento inesperado del contenido de una página generalmente ocurre porque los recursos se cargan de forma asincrónica o los elementos DOM se agregan dinámicamente a la página por encima del contenido actual. El culpable puede ser una imagen o un video con dimensiones desconocidas, una fuente que se muestra más grande o más pequeña que su alternativa, o un anuncio o widget de terceros que cambia de tamaño de forma dinámica.
 
@@ -50,12 +50,12 @@ Una ráfaga de cambios de diseño, conocida como [*ventana de sesión*](evolving
 
 La ráfaga más grande es la ventana de sesión con la puntuación acumulada máxima de todos los cambios de diseño dentro de esa ventana.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" width="658" height="452">
+<figure>
+  <video controls autoplay loop muted width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">Ejemplo de ventanas de sesión. Las barras azules representan las puntuaciones de cada cambio de diseño individual.</figcaption></figure>
+  <figcaption>Ejemplo de ventanas de sesión. Las barras azules representan las puntuaciones de cada cambio de diseño individual.</figcaption></figure>
 
 {% Aside 'caution' %} Anteriormente, CLS medía la suma total de *todas las puntuaciones de cambio de diseño individuales* que se producían durante toda la vida útil de la página. Para ver qué herramientas aún brindan la capacidad de comparar con la implementación original, consulte [Evolución del cambio de diseño acumulativo en las herramientas web](/cls-web-tooling) . {% endAside %}
 
@@ -65,7 +65,7 @@ Para proporcionar una buena experiencia de usuario, los sitios deben esforzarse 
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Los valores de CLS buenos son inferiores a 0,1, los valores deficientes son superiores a 0,25 y cualquier valor intermedio debe mejorarse", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Los valores de CLS buenos son inferiores a 0,1, los valores deficientes son superiores a 0,25 y cualquier valor intermedio debe mejorarse", width="400", height="300" %}
 </picture>
 
 {% Aside %} Para obtener más información sobre la investigación y la metodología detrás de esta recomendación, consulte: [Definición de los umbrales de las métricas de Core Web Vitals](/defining-core-web-vitals-thresholds/) {% endAside %}

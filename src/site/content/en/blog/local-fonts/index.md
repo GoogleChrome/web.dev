@@ -99,9 +99,9 @@ abused for browser fingerprinting. Turns out, the list of fonts a user has insta
 identifying. A lot of companies have their own corporate fonts that are installed on employees'
 laptops. For example, Google has a corporate font called _Google Sans_.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420" %}
+  <figcaption>
     The Google Sans font installed on a Google employee's laptop.
   </figcaption>
 </figure>
@@ -156,7 +156,7 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 
 ### Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                                                                          |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |

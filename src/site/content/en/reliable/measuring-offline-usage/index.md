@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Measuring offline usage
-subhead: > 
+subhead: >
   How to track offline usage of your site so that you can make a case as to why
   your site needs a better offline experience.
-description: > 
+description: >
   How to track offline usage of your site so that you can make a case as to why
   your site needs a better offline experience.
 authors:
@@ -82,7 +82,7 @@ This tracks all existing events and pageview pings while being offline, but you 
 they happened offline (as they are just replayed as-is). For this
 [you can manipulate tracking requests with Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics#using_a_custom_dimension_to_track_online_vs_offline_interactions)
 by adding an `offline` flag to the analytics ping, using a custom dimension (`cd1` in the code
-sample below): 
+sample below):
 
 ```js
 import * as googleAnalytics from 'workbox-google-analytics';
@@ -155,7 +155,7 @@ setCatchHandler(({ event }) => {
 
 Rather than listening to all failed requests, another way is to catch errors on specific routes
 only. As an example, if we want to report errors happening on routes to `/products/*` only, we can
-add a check in `setCatchHandler` which filters the URI with a regular expression.  
+add a check in `setCatchHandler` which filters the URI with a regular expression.
 A cleaner solution is to implement registerRoute with a custom handler. This encapsulates the
 business logic into a separate route, with better maintainability in more complex service workers:
 

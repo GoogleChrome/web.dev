@@ -34,9 +34,9 @@ way as platform-specific apps.
 
 ## Concepts and usage
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="System-level share target picker with an installed PWA as an option.", width="370", height="349" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     System-level share target picker with an installed PWA as an option.
   </figcaption>
 </figure>
@@ -52,8 +52,6 @@ Web share has the following capabilities and limitations:
   Chrome OS, and Chrome on Windows. Chrome on MacOS is still in development. See
   [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)
   for details.
-
-<div class="w-clearfix"></div>
 
 ### Sharing links and text
 
@@ -126,9 +124,9 @@ More file types may be added in the future.
 
 ## Santa Tracker case study
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="The Santa Tracker app showing a share button.", width="343", height="600" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     Santa Tracker share button.
   </figcaption>
 </figure>
@@ -147,8 +145,6 @@ saving precious pixels.
 They also found that users shared with Web Share around 20% more than
 users without the API enabled. Head to
 [Santa Tracker](https://santatracker.google.com/) to see Web Share in action.
-
-<div class="w-clearfix"></div>
 
 ## Browser support
 

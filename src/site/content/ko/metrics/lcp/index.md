@@ -27,7 +27,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="좋은 LCP 값은 2.5초이고 나쁜 값은 4.0초보다 크며 그 사이인 경우 개선이 필요함", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="좋은 LCP 값은 2.5초이고 나쁜 값은 4.0초보다 크며 그 사이인 경우 개선이 필요함", width="400", height="300" %}
 </picture>
 
 ### 좋은 LCP 점수는 무엇인가요?

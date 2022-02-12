@@ -19,11 +19,11 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache"
+            "value": "max-age=0"
           },
           {
-            "key": "Surrogate-Control",
-            "value": "max-age=600"
+            "key": "Origin-Trial",
+            "value": "AroL15qduRNqNxaVOrRCcy3Lg2qmVISGidsHrfTRIwaZgUoJqZfqGYBAcqTKWf+6SgVWVbHV/OWkQCUy/ut0PwAAAABReyJvcmlnaW4iOiJodHRwczovL3dlYi5kZXY6NDQzIiwiZmVhdHVyZSI6IlByaW9yaXR5SGludHNBUEkiLCJleHBpcnkiOjE2NDc5OTM1OTl9"
           }
         ]
       }

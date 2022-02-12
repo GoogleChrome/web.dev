@@ -102,9 +102,9 @@ this approach to website usability: [Don't make me think!](https://uxplanet.org/
 convince others on your web team, use [analytics](#analytics-rum) to show the impact of different
 options.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="Two screenshots of a mockup ecommerce website viewed on an Android phone. The one on the left uses an icon for the sign-in link that's somewhat ambiguous; the one on the right simply says 'Sign in'", width="800", height="737" %}
-  <figcaption class="w-figcaption">Make sign-in obvious. An icon may be ambiguous, but a <b>Sign
+  <figcaption>Make sign-in obvious. An icon may be ambiguous, but a <b>Sign
   in</b> button or link is obvious.</figcaption>
 </figure>
 
@@ -116,9 +116,9 @@ common pattern now, and your users are likely to understand it, but you can use
 [interaction analytics](#analytics-rum) to monitor whether or not a single button works best.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Screenshots of sign-in for Gmail: one page, showing Sign in button, when clicked leads to form that also has a Create account link.", width="800", height="545" %}
-  <figcaption class="w-figcaption">The Gmail sign-in page has a link to create an account.<br>
+  <figcaption>The Gmail sign-in page has a link to create an account.<br>
     At window sizes larger than shown here, Gmail displays a <b>Sign in</b> link and a <b>Create an
   account</b> button.</figcaption>
 </figure>
@@ -146,11 +146,11 @@ obvious how to [change or reset passwords](#password-change).
 In the sign-up flow, your job is to minimize complexity and keep the user focused. Cut the clutter.
 This is not the time for distractions and temptations!
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/avoid-distractions.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Don't distract users from completing sign-up.</figcaption>
+  <figcaption>Don't distract users from completing sign-up.</figcaption>
 </figure>
 
 On sign-up, ask for as little as possible. Collect additional user data (such as name and address)
@@ -165,11 +165,11 @@ once they respond. This is a common sign-up pattern: users are used to it.
 You may want to consider password-free sign-in by sending users a code every time they sign in on
 a new device or browser. Sites such as Slack and Medium use a version of this.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/medium-sign-in.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Password-free sign-in on medium.com.</figcaption>
+  <figcaption>Password-free sign-in on medium.com.</figcaption>
 </figure>
 
 As with federated login, this has the added benefit that you don't have to manage user passwords.
@@ -245,11 +245,11 @@ If you do reject the password that a user proposes, tell them specifically why i
 as soon as the user has entered a value—not after they've submitted the sign-up form and had to
 wait for a response from your server.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/password-validation.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Be clear why a password is rejected.</figcaption>
+  <figcaption>Be clear why a password is rejected.</figcaption>
 </figure>
 
 ## Don't prohibit password pasting {: #allow-password-pasting}
@@ -280,9 +280,9 @@ If possible you should also monitor for passwords that become compromised becaus
 You should also provide your users with access to their account login history, showing them where
 and when a login happened.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Gmail account activity page", width="800", height="469" %}
-  <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB"
+  <figcaption><a href="https://support.google.com/mail/answer/45938?hl=en-GB"
     title="Find out how to view Gmail account activity.">Gmail account activity page</a>.</figcaption>
 </figure>
 
@@ -312,9 +312,9 @@ Many users prefer to log in to websites using an email address and password sign
 However, you should also enable users to log in via a third party identity provider, also known as
 federated login.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="WordPress login page", width="800", height="513" %}
-  <figcaption class="w-figcaption">WordPress login page, with Google and Apple login options.</figcaption>
+  <figcaption>WordPress login page, with Google and Apple login options.</figcaption>
 </figure>
 
 This approach has several advantages. For users who create an account using federated login, you
@@ -342,9 +342,9 @@ can help.
 Many users share devices and swap between accounts using the same browser. Whether users access
 federated login or not, you should make account switching simple.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, showing account switching", width="800", height="494" %}
-  <figcaption class="w-figcaption">Account switching on Gmail.</figcaption>
+  <figcaption>Account switching on Gmail.</figcaption>
 </figure>
 
 ## Consider offering multi-factor authentication {: #multi-factor-authentication}

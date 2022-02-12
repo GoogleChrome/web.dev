@@ -39,9 +39,9 @@ run periodically across multiple browsers and results are available on the
  is one of the signals we use to see the progress of our effort. Fewer differences between browsers
  in test results means greater interoperability of a web feature across multiple browsers.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/Wd2sVnt4VLho4jgp7UtIyWFceE02/CFL9C7UHKSrAgI5rLrvv.jpg", alt="Caption: a snapshot of Compat 2021 Dashboard (experimental browsers)", width="800", height="538" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A snapshot of <a href="https://wpt.fyi/compat2021">Compat 2021 Dashboard</a> (experimental browsers).
   </figcaption>
 </figure>

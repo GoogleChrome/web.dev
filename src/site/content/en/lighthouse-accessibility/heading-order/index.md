@@ -17,8 +17,8 @@ web_lighthouse:
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages whose headings skip one or more levels:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Lighthouse audit showing headings that skip levels", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Lighthouse audit showing headings that skip levels", width="800", height="206" %}
 </figure>
 
 For example, using an `<h1>` element for your page title
@@ -64,7 +64,7 @@ You can also use tools like Microsoft's
 to visualize your page structure and catch out-of-order heading elements.
 
 {% Aside 'caution' %}
-Less experienced developers sometimes skip heading levels
+Developers sometimes skip heading levels
 to achieve a desired visual style.
 For example, they may use an `<h3>` element
 because they feel the `<h2>` text is too large.

@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **2021년 6월 1일:** CLS 구현이 변경되었습니다. 변경 이유에 대해 자세히 알아보려면 [진화하는 CLS 메트릭](/evolving-cls)을 확인하시기 바랍니다. {% endBanner %}
+{% Aside 'caution' %} **2021년 6월 1일:** CLS 구현이 변경되었습니다. 변경 이유에 대해 자세히 알아보려면 [진화하는 CLS 메트릭](/evolving-cls)을 확인하시기 바랍니다. {% endAside %}
 
 {% Aside 'key-term' %} 누적 레이아웃 이동(CLS)은 사용자가 예상치 못한 레이아웃 이동을 경험하는 빈도를 수량화하므로 [시각적 안정성](/user-centric-performance-metrics/#types-of-metrics)을 측정할 때 중요한 사용자 중심 메트릭입니다. CLS가 낮으면 [우수](/user-centric-performance-metrics/#questions)한 사용자 경험을 보장하는 데 도움이 됩니다. {% endAside %}
 
@@ -21,12 +21,12 @@ tags:
 
 대부분의 경우 이러한 경험은 짜증스러운 정도에서 그치지만, 경우에 따라 실제 피해를 겪게 될 수 있습니다.
 
-<figure class="w-figure">
-  <video autoplay controls loop muted class="w-screenshot" poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
+<figure>
+  <video autoplay controls loop muted poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">불안정한 레이아웃이 사용자에게 어떻게 부정적인 영향을 미칠 수 있는지 보여주는 스크린캐스트.</figcaption></figure>
+  <figcaption>불안정한 레이아웃이 사용자에게 어떻게 부정적인 영향을 미칠 수 있는지 보여주는 스크린캐스트.</figcaption></figure>
 
 페이지 콘텐츠의 예기치 않은 이동은 일반적으로 리소스가 비동기식으로 로드되거나 DOM 요소가 기존 콘텐츠 위의 페이지에 동적으로 추가되기 때문에 발생합니다. 원인은 알 수 없는 크기의 이미지나 동영상, 대체 크기보다 크거나 작게 렌더링되는 글꼴, 동적으로 크기가 조정되는 타사 광고 또는 위젯일 수 있습니다.
 
@@ -44,12 +44,12 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 
 가장 큰 버스트는 해당 기간 내 모든 레이아웃 이동에 대해 누적 점수가 최대인 세션 기간입니다.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" width="658" height="452">
+<figure>
+  <video controls autoplay loop muted width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">세션 기간의 예시입니다. 파란색 막대는 개별 레이아웃 이동의 점수를 나타냅니다.</figcaption></figure>
+  <figcaption>세션 기간의 예시입니다. 파란색 막대는 개별 레이아웃 이동의 점수를 나타냅니다.</figcaption></figure>
 
 {% Aside 'caution' %} 이전 CLS는 페이지의 전체 수명 동안 발생한 *모든 개별 레이아웃 이동 점수*의 합계를 측정했습니다. 원래 구현과 비교하여 벤치마킹할 수 있는 기능을 제공하는 도구가 무엇인지 확인하려면 [웹 도구에서 진화하는 누적 레이아웃 이동](/cls-web-tooling)을 참조하세요. {% endAside %}
 
@@ -59,8 +59,8 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="양호한 CLS 값은 0.1 미만이고 불량한 값은 0.25보다 크며 그 사이에는 개선이 필요합니다", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
-</picture>  
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="양호한 CLS 값은 0.1 미만이고 불량한 값은 0.25보다 크며 그 사이에는 개선이 필요합니다", width="400", height="300" %}
+</picture>
 
 {% Aside %} 이러한 권장 사항의 기반이 되는 연구 및 방법론에 대해 자세히 알아보려면 [Core Web Vitals 메트릭 임계값 정의](/defining-core-web-vitals-thresholds/)를 참조하시기 바랍니다. {% endAside %}
 

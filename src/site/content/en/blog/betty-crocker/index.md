@@ -1,4 +1,5 @@
 ---
+layout: post
 title: |
   Wake Lock API case study: 300% increase in purchase intent indicators on BettyCrocker.com
 subhead: |
@@ -128,19 +129,19 @@ the three sites do have a shared code base,
 so they were able to implement the component once, and deploy it everywhere,
 as shown in the screenshots below.
 
-<figure class="w-figure">
-  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170", class="w-screenshot" %}
-  <figcaption class="w-figcaption">BettyCrocker.com wake lock toggle.</figcaption>
+<figure>
+  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170" %}
+  <figcaption>BettyCrocker.com wake lock toggle.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Pillsbury.com wake lock toggle.</figcaption>
+<figure>
+  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152" %}
+  <figcaption>Pillsbury.com wake lock toggle.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Tablespoon.com wake lock toggle.</figcaption>
+<figure>
+  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152" %}
+  <figcaption>Tablespoon.com wake lock toggle.</figcaption>
 </figure>
 
 When developing the component based on the new site's modernized framework,
@@ -318,18 +319,18 @@ BettyCrocker.com reported the following metrics:
   than for those not using the wake lock feature.
 - Indicators of purchase intent were about 300% higher for wake lock users compared to all users.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">3.1<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Longer session duration</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">3.1<sub>×</sub></p>
+    <p>Longer session duration</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">50<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower bounce rate</p>
+  <div class="stats__item">
+    <p class="stats__figure">50<sub>%</sub></p>
+    <p>Lower bounce rate</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">300<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher purchase intent indicators</p>
+  <div class="stats__item">
+    <p class="stats__figure">300<sub>%</sub></p>
+    <p>Higher purchase intent indicators</p>
   </div>
 </div>
 

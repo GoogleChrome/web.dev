@@ -25,7 +25,7 @@ Notará que, aunque se ha renderizado parte del contenido, no se ha renderizado 
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400" height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Los buenos valores de FCP son 1,8 segundos o menos, los valores malos son superiores a 3,0 segundos y cualquier cosa intermedia necesita mejora", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Los buenos valores de FCP son 1,8 segundos o menos, los valores malos son superiores a 3,0 segundos y cualquier cosa intermedia necesita mejora", width="400", height="300" %}
 </picture>
 
 ### ¿Qué es una buena puntuación FCP?
@@ -100,7 +100,7 @@ Para saber cómo mejorar la FCP en general (para cualquier sitio), consulte las 
 - [Minificar CSS](/unminified-css/)
 - [Eliminar CSS no utilizado](/unused-css-rules/)
 - [Preconectar a los orígenes requeridos](/uses-rel-preconnect/)
-- [Reducir los tiempos de respuesta del servidor (TTFB)](/time-to-first-byte/)
+- [Reducir los tiempos de respuesta del servidor (TTFB)](/ttfb/)
 - [Evitar los redireccionamientos de varias páginas](/redirects/)
 - [Precargar solicitudes clave](/uses-rel-preload/)
 - [Evitar cargas útiles de red enormes](/total-byte-weight/)

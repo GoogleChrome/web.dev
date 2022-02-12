@@ -109,8 +109,8 @@ checks won't work.
 Save bandwidth and make your site feel more responsive: use media fragments to
 add start and end times to the video element.
 
-<figure class="w-figure">
-  <video controls class="w-screenshot" width="100%">
+<figure>
+  <video controls width="100%">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
     <p>This browser does not support the video element.</p>
@@ -142,9 +142,9 @@ verify that it says `bytes`. In the image, I've drawn a red box around this
 header. If you do not see `bytes` as the value, you'll need to contact your
 hosting provider.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools screenshot: Accept-Ranges: bytes.", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">Chrome DevTools screenshot: Accept-Ranges: bytes.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/20DlLyicG5PAo6TXBKh3.png", alt="Chrome DevTools screenshot: Accept-Ranges: bytes.", width="800", height="480" %}
+  <figcaption>Chrome DevTools screenshot: Accept-Ranges: bytes.</figcaption>
 </figure>
 
 ### Include a poster image
@@ -166,7 +166,7 @@ For more information see [Efficiently encode images].
 
 <div class="w-columns">
 {% Compare 'worse' %}
-<figure class="w-figure" w-figure--inline-left>
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R8VNeplKwajJhOuVkPDT.png", alt="Without a fallback poster, the video just looks broken.", width="360", height="600" %}
 </figure>
 
@@ -177,7 +177,7 @@ Without a fallback poster, the video just looks broken.
 {% endCompare %}
 
 {% Compare 'better' %}
-<figure class="w-figure" w-figure--inline-right>
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rNhydHVGeL2P0sQ0je5k.png", alt="A fallback poster makes it seem as if the first frame has been captured.", width="360", height="600" %}
 </figure>
 
@@ -195,14 +195,14 @@ container, making it impossible for the user to see the content or use the
 controls.
 
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport.", width="338", height="600" %}
-    <figcaption class="w-figcaption">Android Chrome screenshot, portrait: unstyled video element overflows
+    <figcaption>Android Chrome screenshot, portrait: unstyled video element overflows
     viewport.</figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome screenshot, landscape: unstyled video element overflows viewport.", width="800", height="450" %}
-    <figcaption class="w-figcaption">Android Chrome screenshot, landscape: unstyled video element overflows
+    <figcaption>Android Chrome screenshot, landscape: unstyled video element overflows
     viewport.</figcaption>
   </figure>
 </div>
@@ -275,13 +275,13 @@ Safari on iPhone does a good job of switching between portrait and landscape
 orientation:
 
 <div class="w-columns">
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Screenshot of video playing in Safari on iPhone, portrait.", width="338", height="600", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, portrait.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AmHneDShMOioWZwYG2kF.png", alt="Screenshot of video playing in Safari on iPhone, portrait.", width="338", height="600" %}
+  <figcaption>Screenshot of video playing in Safari on iPhone, portrait.</figcaption>
 </figure>
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="Screenshot of video playing in Safari on iPhone, landscape.", width="600", height="338", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, landscape.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MZwkLJaXVk4g8lruhiKZ.png", alt="Screenshot of video playing in Safari on iPhone, landscape.", width="600", height="338" %}
+  <figcaption>Screenshot of video playing in Safari on iPhone, landscape.</figcaption>
 </figure>
 </div>
 
@@ -289,9 +289,9 @@ Device orientation on an iPad and Chrome on Android can be problematic.
 For example, without any customization a video playing on an iPad in landscape
 orientation looks like this:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="Screenshot of video playing in Safari on iPad, landscape.", width="600", height="450", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPad, landscape.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9FsExgY6cJFfMkxOPNkl.png", alt="Screenshot of video playing in Safari on iPad, landscape.", width="600", height="450" %}
+  <figcaption>Screenshot of video playing in Safari on iPad, landscape.</figcaption>
 </figure>
 
 Setting the video `width: 100%` or `max-width: 100%` with CSS can resolve

@@ -37,8 +37,8 @@ You can find that in the **Network** panel in Chrome DevTools.
 Here's what it looks like:
 
 
-<figure class="w-figure">
-    {% Img src="image/admin/oqcdfVAVj2RajVWfs6ap.png", alt="An example of how priorities are displayed in Chrome Developer Tools", width="800", height="249", class="w-screenshot" %}
+<figure>
+    {% Img src="image/admin/oqcdfVAVj2RajVWfs6ap.png", alt="An example of how priorities are displayed in Chrome Developer Tools", width="800", height="249" %}
   <figcaption>
     The <b>Priority</b> column, which is hidden by default (see
     <a href="https://developers.google.com/web/tools/chrome-devtools/network/reference#columns">

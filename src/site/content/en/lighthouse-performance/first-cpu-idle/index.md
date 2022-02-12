@@ -11,10 +11,10 @@ web_lighthouse:
 
 {% Aside 'caution' %}
   First CPU Idle is deprecated in Lighthouse 6.0. While some have found that First CPU Idle
-  offers a more meaningful measurement than [Time To Interactive](/interactive), the difference
-  isn't significant enough to justify maintaining two similar metrics. Moving forward, 
+  offers a more meaningful measurement than [Time To Interactive](/tti/), the difference
+  isn't significant enough to justify maintaining two similar metrics. Moving forward,
   consider using [Total Blocking Time](/lighthouse-total-blocking-time/) and
-  [Time To Interactive](/interactive) instead.
+  [Time To Interactive](/tti/) instead.
 {% endAside %}
 
 First CPU Idle is one of six metrics
@@ -23,8 +23,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays First CPU Idle in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Du6ioJcZ6qNBBniOIKN2.png", alt="A screenshot of the Lighthouse First CPU Idle audit", width="800", height="588", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Du6ioJcZ6qNBBniOIKN2.png", alt="A screenshot of the Lighthouse First CPU Idle audit", width="800", height="588" %}
 </figure>
 
 ## What First CPU Idle measures
@@ -38,7 +38,7 @@ A page is considered minimally interactive when:
 
 {% Aside %}
 Both First CPU Idle and
-[Time to Interactive](/interactive)
+[Time to Interactive](/tti/)
 measure when the page is ready for user input.
 First CPU Idle occurs when the user can _start_ to interact with the page;
 TTI occurs when the user is _fully_ able to interact with the page.
@@ -58,7 +58,7 @@ your First CPU Idle score is 95.
 
 This table shows how to interpret your First CPU Idle score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -101,6 +101,6 @@ largely the same as the strategies for improving TTI.
 - [Source code for **First CPU Idle** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-cpu-idle.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
-- [Time to Interactive](/interactive/)
+- [Time to Interactive](/tti/)
 
 [tti]: /interactive/#how-to-improve-your-tti-score

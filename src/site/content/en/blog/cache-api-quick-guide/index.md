@@ -1,4 +1,5 @@
 ---
+layou: post
 title: "The Cache API: A quick guide"
 subhead: Learn how to use the Cache API to make your application data available offline.
 authors:

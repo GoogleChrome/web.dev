@@ -1,5 +1,5 @@
 $course-header-height: 144px;
-$course-search-height: 48px;
+$course-search-height: 58px;
 $course-side-vert-space: 20px;
 
 .course {
@@ -32,6 +32,11 @@ $course-side-vert-space: 20px;
     }
   }
 
+  // Placeholder items have slightly dimmed look and feel
+  .is-placeholder span {
+    @include apply-utility('color', 'mid-text');
+  }
+
   // Allows the sidebar elements to place and flex themselves
   web-navigation-drawer > * {
     display: flex;
@@ -47,7 +52,7 @@ $course-side-vert-space: 20px;
     left: 0;
     z-index: 10;
     /// Shorter left pad accounts for the burger menu button
-    padding: 0.5rem $global-gutter 0.5rem 1rem;
+    padding: 0.8rem $global-gutter 0.8rem 1rem;
     box-shadow: 0 0 10px rgba(0 0 0 / 20%);
     background-position: top right;
     background-size: auto 100%;
@@ -61,8 +66,8 @@ $course-side-vert-space: 20px;
     /// Targets the logo
     > svg[role='img'] {
       display: block;
-      width: 6rem;
-      height: auto;
+      width: 8rem;
+      height: 1.5rem;
     }
   }
 
@@ -106,8 +111,10 @@ $course-side-vert-space: 20px;
 }
 
 .course__side-title {
-  height: 40px;
-  margin: auto 0 20px;
+  margin: auto 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 
   > svg {
     height: 100%;
@@ -126,6 +133,11 @@ $course-side-vert-space: 20px;
 .course__toc {
   position: sticky;
   top: get-space('size-1');
+  max-height: 90vh;
+
+  .toc__wrapper {
+    max-width: 18rem;
+  }
 }
 
 .course__intro {
@@ -163,6 +175,9 @@ web-search.course__search {
   display: block;
   height: $course-search-height;
   padding: 0 $global-gutter-narrow;
+  // Prevent this from being squished by flex grow around us.
+  // This ensures that the search box doesn't grow as it appears.
+  min-height: $course-search-height;
 
   .web-search__input-wrapper {
     display: flex;
@@ -177,10 +192,16 @@ web-search.course__search {
 
 .web-search-popout {
   height: 100%;
-  padding-top: 0;
+  padding-top: 0.5rem;
 }
 
 .course {
+  /// Search is always visible so this doesn't need to show
+  .web-search__open-btn,
+  .web-search__search-icon {
+    display: none;
+  }
+
   .web-search-popout {
     position: absolute;
 
@@ -193,37 +214,20 @@ web-search.course__search {
     left: 0;
     bottom: 0;
     width: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
-    @include apply-utility('bg', 'mid-bg');
-  }
+    @include apply-utility('bg', 'core-bg');
 
-  .web-search-popout__list {
-    max-height: 100%;
-    padding: 0;
-    margin: 0;
-
-    li + li {
-      margin-top: get-space('base');
+    /// Adds space to the bottom of the last item, to assist with overscroll behaviour
+    .stack-nav li:last-child {
+      margin-bottom: get-space('size-3');
     }
-  }
-
-  .web-search-popout__link {
-    --flow-space: 0.5rem;
-
-    text-decoration: none;
-
-    @include apply-utility('color', 'core-text');
-  }
-
-  .web-search-popout__snippet {
-    font-size: get-size('size-0');
-    margin: 0;
-
-    @include apply-utility('color', 'mid-text');
   }
 
   .web-course-search__no-results {
     text-align: center;
+    padding-top: get-space('size-3');
   }
 
   /// Responsive adjustments for navigation drawer

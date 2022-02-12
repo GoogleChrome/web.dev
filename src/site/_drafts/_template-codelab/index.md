@@ -74,11 +74,11 @@ synchronized with every other person using the application. 🐈
 - Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 - Click on the **Network** tab.
 
-<img class="w-screenshot" src="./network.png" alt="Network tab">
+<img src="./network.png" alt="Network tab">
 
 Make sure `Disable Cache` is checked and reload the app.
 
-<img class="w-screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
+<img src="./main-bundle.png" alt="Original bundle size of 992 KB">
 
 Almost 1 MB worth of JavaScript is being shipped to load this simple application!
 
@@ -167,7 +167,7 @@ Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
 Hovering over any of the packages shows its size represented in three
 different ways:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>

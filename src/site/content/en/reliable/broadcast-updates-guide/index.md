@@ -22,7 +22,7 @@ tabs it controls to inform of a certain event. Examples include:
   showing an indication, like: **"The app is now ready to work offline"**, or **"New version of the
   content available"**.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RpZYhHYGpPY9e3AjxuaQ.png", alt="Diagram showing a service worker communicating with the page to send an update.", width="550", height="318" %}
 </figure>
 
@@ -47,9 +47,9 @@ important service worker lifecycle moments from the page ("installed", "controll
 "activated"). That way when a new service worker comes into play, it shows an **"Update Available"**
 banner, so that they can refresh the PWA and access the latest features:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/I8TQ9quakuxJc4l6aNvW.png", alt="A screenshot of Tinder's webapp 'Update Available' functionality.", width="650", height="366" %}
-  <figcaption class="w-figcaption">In the Tinder PWA, the service worker tells the page that a new version is ready, and the page shows users a "Update Available" banner.</figcaption>
+  <figcaption>In the Tinder PWA, the service worker tells the page that a new version is ready, and the page shows users a "Update Available" banner.</figcaption>
 </figure>
 
 ### Squoosh {: #squoosh }
@@ -58,9 +58,9 @@ In the [Squoosh PWA](https://squoosh.app/), when the service worker has cached a
 assets to make it work offline, it sends a message to the page to show a "Ready to work offline"
 toast, letting the user know about the feature:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tRM8WvCI0aEdVGWGDpLS.png", alt="A screenshot of Squoosh webapp 'Ready to work offline' functionality.", width="550", height="380" %}
-  <figcaption class="w-figcaption">In the Squoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays "Ready to work offline" toast.
+  <figcaption>In the Squoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays "Ready to work offline" toast.
 </figcaption>
 </figure>
 

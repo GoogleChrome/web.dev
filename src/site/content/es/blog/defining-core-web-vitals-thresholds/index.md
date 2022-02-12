@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Definición de los umbrales de las métricas de Core Web Vitals
 subhead: La investigación y la metodología detrás de los umbrales de Core Web Vitals
 authors:
@@ -22,9 +23,15 @@ En el 2020 las Core Web Vitals son tres métricas: Largest Contentful Paint : De
 
 Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el rendimiento como "bueno", "necesita mejorar" o "deficiente":
 
-<div class="w-stack w-stack--center w-stack--md">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones del umbral de Largest Contentful Paint", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones del umbral de First Input Delay", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones del umbral de Cumulative Layout Shift", width="400", height="350" %}</div>
+<style>
+  .cluster > img {
+    max-width: 30%;
+  }
+</style>
+<div class="cluster">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones del umbral de Largest Contentful Paint", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones del umbral de First Input Delay", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones del umbral de Cumulative Layout Shift", width="400", height="350" %}</div>
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <tr>
       <th> </th>
@@ -77,7 +84,7 @@ Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el ren
 <h3 data-md-type="header" data-md-header-level="3">Viabilidad</h3>
 <p data-md-type="paragraph">Utilizando los datos de CrUX, podemos determinar el porcentaje de orígenes en la web que cumplen nuestros umbrales candidatos a LCP "buenos".</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de orígenes CrUX clasificados como "buenos" (para los umbrales LCP candidatos)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -109,7 +116,7 @@ Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el ren
 <p data-md-type="paragraph">Además, para garantizar que el umbral elegido se pueda alcanzar de forma constante para los sitios bien optimizados, analizamos el rendimiento de LCP para los sitios de mejor rendimiento en la web, para determinar qué umbrales se pueden alcanzar de forma coherente para estos sitios. Específicamente, nuestro objetivo es identificar un umbral que se pueda alcanzar de manera consistente en el percentil 75 para los sitios con mayor rendimiento. Descubrimos que los umbrales de 1.5 y 2 segundos no se pueden alcanzar de forma sistemática, mientras que los de 2.5 segundos sí se pueden alcanzar de forma sistemática.</p>
 <p data-md-type="paragraph">Para identificar un umbral "deficiente" para LCP, utilizamos los datos de CrUX para identificar un umbral que cumple la mayoría de los orígenes:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de orígenes CrUX clasificados como "deficientes" (para los umbrales LCP candidatos)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -143,13 +150,13 @@ Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el ren
 <h3 data-md-type="header" data-md-header-level="3">Calidad de la experiencia</h3>
 <p data-md-type="paragraph">La investigación es razonablemente consistente al concluir que los retrasos en la retroalimentación visual de hasta unos 100 ms se perciben como causados por una fuente asociada, como una entrada del usuario. Esto sugiere que un umbral "bueno" para First Input Delay de 100 ms probablemente sea apropiado como nivel mínimo: si la demora para procesar la entrada excede los 100 ms, no hay posibilidad de que otros pasos de procesamiento y renderización se completen a tiempo.</p>
 <p data-md-type="paragraph">El citado <a href="https://www.nngroup.com/articles/response-times-3-important-limits/" data-md-type="link">Response Times: The 3 Important Limits</a> de Jakob define 0.1 segundos como el límite para que el usuario sienta que el sistema reacciona instantáneamente. Nielsen cita a Miller y Card, que cita el trabajo de Michotte de 1962 <a href="https://psycnet.apa.org/record/1964-05029-000" data-md-type="link">La percepción de la causalidad</a>. En la investigación de Michotte, a los participantes del experimento se les muestran "dos objetos en una pantalla. El objeto A se pone en marcha y se mueve hacia B. Se detiene en el momento en que entra en contacto con B, mientras que este último comienza y se aleja de A". Michotte varía el intervalo de tiempo entre el momento en que el objeto A se detiene y el momento en que el objeto B comienza a moverse. Michotte encuentra que, para retrasos de hasta aproximadamente 100 ms, los participantes tienen la impresión de que el Objeto A causa el movimiento del Objeto B. Para los retrasos de aproximadamente 100 ms a 200 ms, la percepción de la causalidad es mixta, y para los retrasos de más de 200 ms, el movimiento del objeto B ya no se considera causado por el objeto A.</p>
-<p data-md-type="paragraph">Del mismo modo, Miller define un umbral de respuesta para "Respuesta a la activación del control" como "la indicación de acción dada, normalmente, por el movimiento de una llave, interruptor u otro miembro del control que indica que fue físicamente activado. Esta respuesta debe ser ... percibida como parte de la acción mecánica inducida por el operador. Demora de tiempo: No más de 0.1 segundos" y posteriormente "el retraso entre presionar una tecla y la retroalimentación visual no debe ser mayor de 0.1 a 0.2 segundos ".</p>
+<p data-md-type="paragraph">Del mismo modo, Miller define un umbral de respuesta para "Respuesta a la activación del control" como "la indicación de acción dada, normalmente, por el movimiento de una llave, interruptor u otro miembro del control que indica que fue físicamente activado. Esta respuesta debe ser … percibida como parte de la acción mecánica inducida por el operador. Demora de tiempo: No más de 0.1 segundos" y posteriormente "el retraso entre presionar una tecla y la retroalimentación visual no debe ser mayor de 0.1 a 0.2 segundos ".</p>
 <p data-md-type="paragraph">Más recientemente, en <a href="https://dl.acm.org/doi/10.1145/2611387" data-md-type="link">Towards the Temporally Perfect Virtual Button</a>, Kaaresoja et al investigaron la percepción de simultaneidad entre pulsar un botón virtual en una pantalla táctil y la retroalimentación visual posterior que indica que el botón se pulsó, con varios retrasos. Cuando el retraso entre pulsar el botón y la retroalimentación visual fue de 85 ms o menos, los participantes informaron que la retroalimentación visual apareció simultáneamente con la pulsación del botón el 75% de las veces. Además, para retrasos de 100 ms o menos, los participantes informaron una calidad percibida consistentemente alta al pulsar el botón, con una calidad percibida cayendo para demoras de 100 ms a 150 ms, y alcanzando niveles muy bajos para demoras de 300 ms.</p>
 <p data-md-type="paragraph">Teniendo en cuenta lo anterior, llegamos a la conclusión de que la investigación apunta a un rango de valores de alrededor de 100ms como un umbral de  First Input Delay apropiado para Web Vitals. Además, dado que los usuarios informaron de niveles de calidad bajos para retrasos de 300 ms o más, 300 ms se presenta como un umbral "deficiente" de forma razonable.</p>
 <h3 data-md-type="header" data-md-header-level="3">Viabilidad</h3>
 <p data-md-type="paragraph">Utilizando los datos de CrUX, determinamos que la mayoría de los orígenes en la web cumplen el umbral de 100 ms de FID "bueno" en el percentil 75:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de orígenes CrUX clasificados como "buenos" para el umbral FID de 100ms</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th></th>
@@ -173,7 +180,7 @@ Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el ren
 <h3 data-md-type="header" data-md-header-level="3">Viabilidad</h3>
 <p data-md-type="paragraph">Según los datos de CrUX, podemos ver que casi el 50% de los orígenes tienen CLS de 0.05 o menos.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de orígenes CrUX clasificados como "buenos" (para los umbrales CLS candidatos)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>
@@ -198,7 +205,7 @@ Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el ren
 <p data-md-type="paragraph">Si bien los datos de CrUX sugieren que 0.05 podría ser un umbral razonablemente "bueno" de CLS, reconocemos que hay algunos casos de uso en los que actualmente es difícil evitar cambios de diseño disruptivos. Por ejemplo, en el caso de los contenidos incrustados de terceros, como las incrustaciones de redes sociales, a veces no se conoce la altura del contenido incrustado hasta que termina de cargarse, lo que puede provocar un cambio de diseño superior a 0.05. Por lo tanto, llegamos a la conclusión de que, si bien muchos orígenes alcanzan el umbral de 0.05, el umbral CLS es ligeramente menos estricto ya que con 0.1 logra un mejor equilibrio entre la calidad de la experiencia y la viabilidad. Esperamos que, en el futuro, el ecosistema web identifique soluciones para abordar los cambios de diseño causados por incrustaciones de terceros, lo que permitiría usar un umbral CLS "bueno" más estricto de 0.05 o 0 en una iteración futura de Core Web Vitals.</p>
 <p data-md-type="paragraph">Además, para determinar un umbral "deficiente" para CLS, utilizamos datos de CrUX para identificar un umbral que cumple con la mayoría de los orígenes:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de orígenes CrUX clasificados como "deficientes" (para los umbrales CLS candidatos)</strong></p>
-<div data-md-type="block_html"><div class="w-table-wrapper">
+<div data-md-type="block_html"><div>
   <table>
     <tr>
       <th> </th>

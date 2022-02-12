@@ -18,15 +18,14 @@ tags:
 In this post I want to share thinking on a way to build a multi-select component. Try the
 [demo](https://gui-challenges.web.app/multi-select/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nYQfioJpi2xziWrsMQ8Q.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/multi-select/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -51,7 +50,7 @@ varying input types. This will be delivered with an adaptable and responsive
 pair of components. A traditional sidebar of checkboxes for desktop, keyboard
 and screen readers, and a [`<select
 multiple>`](https://developer.mozilla.org/docs/Web/HTML/Attributes/multiple)
-for touch users. 
+for touch users.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/784yEixWzAhzh8GqUhLM.png",
 alt="Comparison screenshot showing desktop light and dark with a sidebar of
@@ -78,8 +77,7 @@ Below is a demonstration of how to use a `<select multiple>` from the keyboard.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Ahh0DJ7upPdNox1hFjM0.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true",
   width="640"
@@ -92,8 +90,7 @@ still not as usable as a sidebar of checkboxes.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7FXTAv3VQ2xzJnLZDZWk.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
@@ -149,12 +146,11 @@ can space them evenly and maintain alignment when labels go multiline.
 </form>
 ```
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/vOw5gp1GmYtJ5JPSh7JI.png", 
-  class="w-screenshot",
-  alt="A screenshot with an informative overlay for the legend and 
-  fieldset elements, shows color and element name.", 
-  width="800", height="616" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/vOw5gp1GmYtJ5JPSh7JI.png",
+   alt="A screenshot with an informative overlay for the legend and
+  fieldset elements, shows color and element name.",
+  width="800", height="616"
 %}
 
 ### `<select multiple>` component
@@ -203,11 +199,10 @@ elements for the filter.
 </form>
 ```
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pjCjCZAnNgHItIYSin1w.png", 
-  class="w-screenshot",
-  alt="A screenshot of the desktop rendering of a multi-select element.", 
-  width="554", height="320" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/pjCjCZAnNgHItIYSin1w.png",
+   alt="A screenshot of the desktop rendering of a multi-select element.",
+  width="554", height="320"
 %}
 
 ### Tracking input with counters to inform assistive technology
@@ -236,7 +231,7 @@ aside {
 ```
 
 By default, the count will be `0`, which is great, nothing is `:checked` by
-default in this design. 
+default in this design.
 
 Next, to increment our newly created counter, we'll target children of the
 `<aside>` element that are `:checked`. As the user changes the state of inputs,
@@ -244,7 +239,7 @@ the `filters` counter will tally up.
 
 ```css
 aside :checked {
-  counter-increment: filters; 
+  counter-increment: filters;
 }
 ```
 
@@ -266,11 +261,10 @@ reader. This is a good start, but we can do better, like share the tally of
 results the filters have updated. We'll do this work from JavaScript, as it's
 outside what counters can do.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ae97QeV86HFYr3xnmwrQ.png", 
-  class="w-screenshot",
-  alt="A screenshot of the MacOS screen reader announcing number of active filters.", 
-  width="800", height="177" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ae97QeV86HFYr3xnmwrQ.png",
+   alt="A screenshot of the MacOS screen reader announcing number of active filters.",
+  width="800", height="177"
 %}
 
 #### Nesting excitement
@@ -284,7 +278,7 @@ aside {
   counter-reset: filters;
 
   & :checked {
-    counter-increment: filters; 
+    counter-increment: filters;
   }
 
   & #applied-filters::before {
@@ -295,13 +289,12 @@ aside {
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/abxqZy9rht1fypkWX39e.mp4",
-  class="w-screenshot",
-  autoplay="true",
+   autoplay="true",
   loop="true",
   muted="true"
 %}
 
-{% Aside %} 
+{% Aside %}
 I pass my nesting syntax through this [PostCSS Nesting
 plugin](https://github.com/csstools/postcss-nesting) so it works in browsers
 today.
@@ -351,11 +344,10 @@ to have a mouse or other high precision input device connected.
 
 The default styling and layout of a `<fieldset>` with a `<legend>` is unique:
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/YGuj5hH6ZuYW08YD1S1C.png", 
-  class="w-screenshot",
-  alt="A screenshot of the default styles for a fieldset and legend.", 
-  width="568", height="550" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/YGuj5hH6ZuYW08YD1S1C.png",
+   alt="A screenshot of the default styles for a fieldset and legend.",
+  width="568", height="550"
 %}
 
 Normally, to space my child elements I'd use the `gap` property, but the unique
@@ -377,11 +369,10 @@ fieldset {
 This skips the `<legend>` from having it's space adjusted by targeting just the
 `<div>` children.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DwfZaTP6Yui32K0RKAZl.png", 
-  class="w-screenshot",
-  alt="Screenshot showing the margin spacing between inputs but not the legend.", 
-  width="768", height="602" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DwfZaTP6Yui32K0RKAZl.png",
+   alt="Screenshot showing the margin spacing between inputs but not the legend.",
+  width="768", height="602"
 %}
 
 ### The filter label and checkbox
@@ -398,15 +389,14 @@ fieldset > div {
 }
 ```
 
-<figure class="w-figure w-figure--fullbleed">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/29BmNgNWDGZjMz5gxqIY.png", 
-    class="w-screenshot",
-    alt="Screenshot showing how the checkmark aligns to 
-    the first line of text in a multi-line wrapping scenario.", 
-    width="800", height="448" 
+<figure data-size="full">
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/29BmNgNWDGZjMz5gxqIY.png",
+       alt="Screenshot showing how the checkmark aligns to
+    the first line of text in a multi-line wrapping scenario.",
+    width="800", height="448"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Play more in this <a href="https://codepen.io/argyleink/pen/VwWqwqe">Codepen</a>
   </figcaption>
 </figure>
@@ -414,7 +404,7 @@ fieldset > div {
 ### The animated grid
 
 The layout animation is done by [Isotope](https://isotope.metafizzy.co/). A
-performant and powerful plugin for interactive sort and filter. 
+performant and powerful plugin for interactive sort and filter.
 
 ## JavaScript
 
@@ -429,12 +419,11 @@ don't
 same. With some JavaScript though, we can
 [normalize](https://en.wikipedia.org/wiki/Database_normalization) the data.
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uBPBUzFc45v13Effbz8P.png", 
-  class="w-screenshot",
-  alt="Screenshot of the DevTools JavaScript console which 
-  shows the goal, normalized data results.", 
-  width="800", height="355" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uBPBUzFc45v13Effbz8P.png",
+   alt="Screenshot of the DevTools JavaScript console which
+  shows the goal, normalized data results.",
+  width="800", height="355"
 %}
 
 I chose to align the `<select>` element data structure to the grouped checkboxes
@@ -462,7 +451,7 @@ on what to filter by.
 
 The element is only tallying and announcing filter count based on checkbox
 interaction but I felt it was a good idea to additionally share the number of
-results and ensure the `<select>` element choices are counted as well. 
+results and ensure the `<select>` element choices are counted as well.
 
 #### `<select>` element choice reflected in the `counter()`
 
@@ -495,11 +484,10 @@ document
 
 Altogether this work completes the announcement "2 filters giving 25 results".
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/RHqlVps5uIO9pg4SLVmu.png", 
-  class="w-screenshot",
-  alt="A screenshot of the MacOS screen reader announcing results.", 
-  width="800", height="177" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/RHqlVps5uIO9pg4SLVmu.png",
+   alt="A screenshot of the MacOS screen reader announcing results.",
+  width="800", height="177"
 %}
 
 Now our excellent assistive technology experience will be delivered to all the

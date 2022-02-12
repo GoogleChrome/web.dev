@@ -30,9 +30,9 @@ as well as ByteDance's [Douyin](https://www.douyin.com/) (抖音), which you mig
 The first three are commonly also referred to as BAT, derived from **B**(aidu)**A**(libaba)**T**(encent).
 Super apps have taken the Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKmUgG231MtQ2nEo1P0K.PNG", alt="List of recently launched mini apps in the WeChat super app.", width=300, height=649 %}
-  <figcaption class="w-figcaption">The WeChat super app showing recently launched mini apps.</figcaption>
+  <figcaption>The WeChat super app showing recently launched mini apps.</figcaption>
 </figure>
 
 ### A few words about super app platforms
@@ -72,9 +72,9 @@ Since the user interface of many super apps is Chinese-only, use the
 mode with a secondary phone (given you have one) to understand what is going on if you do not speak Chinese.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSLjHjkFgscBC2j2d6j9.png", alt="A secondary phone running Google Translate in camera mode live-translating the user interface of a Chinese mini app running on the primary phone.", width="300", height="520" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Using Google Translate in camera mode to live-translate a Chinese mini app.
   </figcaption>
 </figure>

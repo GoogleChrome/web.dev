@@ -70,6 +70,15 @@ gotchas:
   ru: Обратите внимание
   zh: 问题
 
+important:
+  en: Important
+  es: Importante
+  ja: 重要
+  ko: 중요한
+  pt: Importante
+  ru: Важный
+  zh: 重要的
+
 do:
   en: Do
   es: Hacer
@@ -144,3 +153,13 @@ share:
 
 sign_in:
   en: Sign in
+
+all:
+  en: All
+  es: Todos
+
+see_all:
+  en: See all
+
+more:
+  en: More

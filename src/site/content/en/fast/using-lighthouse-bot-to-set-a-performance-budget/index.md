@@ -28,9 +28,9 @@ that you won't accidentally downgrade performance without noticing. You can
 so that it won't allow merging pull-requests if the Lighthouse scores fall below
 the threshold you've set (e.g. < 96/100).
 
-<figure class="w-figure">
-  {% Img src="image/admin/LIEdWOuIGubFE0JgBM5Y.png", alt="Failing Lighthouse Bot checks on GitHub", width="800", height="360", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Lighthouse Bot checks on GitHub.</figcaption>
+<figure>
+  {% Img src="image/admin/LIEdWOuIGubFE0JgBM5Y.png", alt="Failing Lighthouse Bot checks on GitHub", width="800", height="360" %}
+  <figcaption>Lighthouse Bot checks on GitHub.</figcaption>
 </figure>
 
 {% Aside %}
@@ -155,7 +155,9 @@ Firebase, you have to authorize it. How do you do that? With a Firebase token.
 
 To generate the token run this command:
 
-<pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
+```bash
+firebase login:ci
+```
 
 It will open a new tab in a browser window so that Firebase can verify you.
 After that, look back at the console, and you'll see your freshly minted token.
@@ -163,7 +165,7 @@ Copy it and go back to Travis.
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
 
-{% Img src="image/admin/uU7MBc5NdBDZch3ZE3Zd.png", alt="", width="789", height="233", class="w-screenshot" %}
+{% Img src="image/admin/uU7MBc5NdBDZch3ZE3Zd.png", alt="", width="789", height="233" %}
 
 Paste the token in the value field, name the variable `FIREBASE_TOKEN`, and add it.
 
@@ -189,7 +191,7 @@ It just needs an invitation to your repo.
 
 On GitHub, go to your project's settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
-{% Img src="image/admin/H2aLCOr36UDwm5Yk1k9r.png", alt="Lighthouse bot collaborator status", width="800", height="298", class="w-screenshot" %}
+{% Img src="image/admin/H2aLCOr36UDwm5Yk1k9r.png", alt="Lighthouse bot collaborator status", width="800", height="298" %}
 
 Approving these requests is a manual process so they don't always happen
 instantly. Before you start testing, make sure lighthousebot has approved its
@@ -200,7 +202,7 @@ and you'll get a Lighthouse Bot key in your inbox. 📬
 
 On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_KEY`:
 
-{% Img src="image/admin/0XCrRSbUg1Sdca8k9xK9.jpg", alt="", width="800", height="127", class="w-screenshot" %}
+{% Img src="image/admin/0XCrRSbUg1Sdca8k9xK9.jpg", alt="", width="800", height="127" %}
 
 {% Aside %}
 You can reuse this same key for other projects.
@@ -255,14 +257,14 @@ Travis log.
 To trigger the Lighthouse Bot test:
 
 1. Checkout a new branch
-2. Push it to Github
+2. Push it to GitHub
 3. Make a pull request
 
 Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤
 
-{% Img src="image/admin/SmWHb70YqVfagXI3f03D.png", alt="Passing Lighthouse scores", width="586", height="329", class="w-screenshot" %}
+{% Img src="image/admin/SmWHb70YqVfagXI3f03D.png", alt="Passing Lighthouse scores", width="586", height="329" %}
 
-{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing Github checks", width="462", height="189", class="w-screenshot" %}
+{% Img src="image/admin/ZrPGH5OGEY5Y4e9ntUBK.png", alt="Passing GitHub checks", width="462", height="189" %}
 
 The performance score is great, the app is under budget, and the check has passed!
 

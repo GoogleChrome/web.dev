@@ -6,21 +6,22 @@
 
   --flow-space: #{get-space('size-1')};
 
-  > * {
-    margin-inline: auto;
-    max-width: $global-prose-element-max-width;
-  }
+  max-width: $global-prose-element-max-width;
+  display: flow-root;  // Clear floats
 
   p:empty {
     display: none;
   }
 
-  > img {
+  > img,
+  > table {
     width: 100%;
   }
 
   /// Add more space to elements that follow figures etc
+  pre,
   pre + *,
+  figure,
   figure + *,
   h2,
   h3,
@@ -36,6 +37,12 @@
     --flow-space: 1rem;
   }
 
+  /// Stacked headings need to maintain larger spacing, however
+  h2 + h3,
+  h3 + h4 {
+    --flow-space: #{get-space('size-1')};
+  }
+
   /// Details gets more surrounding space, but the inner elements
   /// should all be equal
   details,
@@ -47,32 +54,50 @@
     --flow-space: #{get-space('size-1')};
   }
 
-  /// Keeps figures and embeds at a reasonable size and
-  /// makes sure their content fills them
-  figure,
-  iframe {
-    max-width: $global-prose-element-max-width;
+  :not([class]) li {
+    @extend .flow;
 
-    > * {
-      width: 100%;
-    }
+    line-height: unset;
   }
 
-  figcaption {
-    max-width: 60ch;
+  /// Modidifies the custom list style positions to
+  /// work with the larger line heights
+  ul > li::before {
+    inset: 1.2ex 0 0 0;
+  }
+
+  ol > li::before {
+    line-height: 1.1;
+    inset: 0.25ex 0 0 0;
   }
 
   /// An anchor that starts with a hash is a
   /// skip link, so it needs to be visually hidden
   /// until focused or hovered
   :is(h2, h3, h4, h5, h6) a[href^='#'] {
-    font-size: 0.7em;
+    font-size: 0.9em;
     text-decoration: none;
     color: transparent;
+    transform: translateY(-0.2ex);
   }
 
-  :is(h2, h3, h4, h5, h6) :hover a[href^='#'],
+  :is(h2, h3, h4, h5, h6):hover a[href^='#'],
   :is(h2, h3, h4, h5, h6) a[href^='#']:focus {
     @include apply-utility('color', 'mid-text');
+  }
+
+  /// Misc elements that need adjusting in this context
+  .banner {
+    font-size: get-size('base');
+  }
+
+  .banner,
+  .banner + * {
+    --flow-space: #{get-space('size-2')};
+  }
+
+  .stats {
+    --auto-grid-min-item-size: 12rem;
+    padding: 1em;
   }
 }

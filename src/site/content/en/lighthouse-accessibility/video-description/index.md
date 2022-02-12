@@ -10,7 +10,7 @@ web_lighthouse:
   - video-description
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endBanner %}
+{% Aside 'caution' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endAside %}
 
 Audio descriptions provide relevant information for videos that dialogue
 cannot, such as facial expressions and scenes.
@@ -26,8 +26,8 @@ But no matter what, they seem to pass
 even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1)
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing audio descriptions">
+<figure>
+  <img src="" alt="Lighthouse audit showing video element missing audio descriptions">
 </figure>
 -->
 

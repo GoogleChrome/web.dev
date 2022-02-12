@@ -42,7 +42,7 @@ Every payment app needs to provide the following:
   provided by a third party)
 - Web app manifest
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kvLIMUysDNEG3IfPxKz6.png", alt="Diagram: How a browser discovers the payment app from a URL-based payment method identifier", width="800", height="587" %}
 </figure>
 
@@ -115,7 +115,7 @@ manifest body.
 A payment method manifest has two fields, `default_applications` and
 `supported_origins`.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -253,7 +253,7 @@ Typical web app manifest would look like this:
 The information described in a web app manifest is also used to define how a
 payment app appears in the Payment Request UI.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -331,9 +331,9 @@ payment app appears in the Payment Request UI.
   </table>
 </div>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Payment app with an icon.", width="800", height="237", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Payment app with an icon.", width="800", height="237" %}
+  <figcaption>
     Payment app label and icon.
   </figcaption>
 </figure>
@@ -402,12 +402,12 @@ Request API displays a browser-provided UI called the "Payment Request UI". This
 UI allows users to choose a payment app. After pressing the **Continue** button
 in the Payment Request UI, the selected payment app is launched.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Payment Request UI intervenes before launching the payment app.
   </figcaption>
 </figure>
@@ -418,12 +418,12 @@ the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `show()` is called.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Skip the Payment Request UI and launch the payment app directly.
   </figcaption>
 </figure>

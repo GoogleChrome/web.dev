@@ -1,70 +1,90 @@
 ---
-layout: default
-renderData:
+layout: default-next
+algolia_priority: 1.1
+eleventyComputed:
   title: "{{paths[pathName].title | i18n(locale)}}"
   description: "{{paths[pathName].description | i18n(locale)}}"
   hero: "{{paths[pathName].cover}}"
 ---
 
+{% from 'macros/icon.njk' import svg with context %}
 {% set path = paths[pathName] %}
-{% set topics = path.topics | removeDrafts(lang) %}
+{% set topics = path.topics | removeDrafts %}
 
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
-<div class="path-landing-page">
-  <header class="w-masthead-path">
-    <div class="w-masthead-path__container">
-      <div class="w-masthead-path__left">
-        <h1 class="w-masthead-path__headline no-link">{{path.title | i18n(locale)}}</h1>
-        <p class="w-masthead-path__description">{{path.description | i18n(locale)}}</p>
+<header class="hero">
+  <div class="wrapper">
+    <div class="hero__content--split">
+      <div>
+        <h1 class="text-size-6">{{path.title | i18n(locale)}}</h1>
+        <p>{{path.description | i18n(locale)}}</p>
       </div>
-      <div class="w-masthead-path__right">
-        {% if path.cover %}
+      {% if path.cover %}
+        <div class="all-center">
           {% Img
+            importance="high",
             height=220,
             width=330,
             src=path.cover,
             alt="Collection cover image",
-            class="w-masthead-path__image"
+            class="hero__content__img"
           %}
-        {% endif %}
-      </div>
-    </div>
-  </header>
-
-  {% if path.draft and site.env === 'dev' %}
-    <div class="w-banner w-banner--warning w-banner--body">
-      🚨 This path is a draft! 🚨
-    </div>
-  {% endif %}
-
-  <section class="w-layout-container w-path-intro">
-    <div class="w-path-intro__overview">
-      <h2 class="w-headline--three no-link">Overview</h2>
-      <div class="w-path-intro__overview-text">{{path.overview | i18n(locale)}}</div>
-      {% if path.youtubeId %}
-        <figure class="w-figure">
-          {% YouTube path.youtubeId %}
-        </figure>
+        </div>
       {% endif %}
     </div>
-    <div class="w-path-intro__learn">
-      <h2 class="w-headline--three no-link">Table of Contents</h2>
-      <ul class="w-icon-list">
-        {% for topic in topics %}
-          <li class="w-icon-list__item w-icon-list__item--check">
-            <a class="w-path-link" href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
-          </li>
-	      {% endfor %}
-      </ul>
+  </div>
+</header>
+
+{% if path.draft and site.env === 'dev' %}
+  <div class="banner bg-state-bad-bg color-core-text" role="banner">
+    <div class="banner__content flow">
+      🚨 This path is a draft! 🚨
     </div>
-  </section>
+  </div>
+{% endif %}
 
-  <hr>
-
-  <section class="w-layout-container">
-    {% for topic in topics %}
-      {% include 'partials/topic.njk' %}
-    {% endfor %}
-  </section>
+<div class="wrapper pad-block-size-1">
+  <div class="sidebar" data-direction="rtl">
+    <div class="pad-block-size-1 flow">
+      <h2>Overview</h2>
+      <p>{{path.overview | i18n(locale) | safe}}</p>
+      {% if path.youtubeId %}
+        {% YouTube path.youtubeId %}
+      {% endif %}
+    </div>
+    <div class="pad-block-size-1">
+      <div class="toc">
+        <div class="toc__content">
+          <h2 class="toc__header">Table of Contents</h2>
+          <ul class="toc__list">
+            {% for topic in topics %}
+              <li>
+                <div class="path__toc--item">
+                  {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
+                  <a href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
+                </div>
+              </li>
+              {% if topic.subtopics %}
+                {% for section in topic.subtopics %}
+                  <li>
+                    <div class="path__toc--item">
+                      {{ svg('../../images/icons/done.svg', {label: 'done'}) }}
+                      <a href="#{{ section.title | i18n(locale) | slug }}">{{ section.title | i18n(locale) }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<hr/>
+
+{% for topic in topics %}
+  <div class="path__topic">
+    {% include 'partials/topic.njk' %}
+  </div>
+{% endfor %}

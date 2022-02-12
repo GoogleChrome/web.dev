@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-09-06
+updated: 2021-10-21
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -32,13 +32,18 @@ and the Samsung browser. Safari has partial support.
 The manifest file can have any name, but is commonly named `manifest.json` and
 served from the root (your website's top-level directory). The specification
 suggests the extension should be `.webmanifest`, but browsers also support
-`.json` extensions, which is may be easier for developers to understand.
+`.json` extensions, which may be easier for developers to understand.
 
 ```json
 {
   "short_name": "Weather",
   "name": "Weather: Do I need an umbrella?",
   "icons": [
+    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
     {
       "src": "/images/icons-192.png",
       "type": "image/png",
@@ -95,6 +100,21 @@ You must provide at least the `short_name` or `name` property. If both are
 provided, `short_name` is used on the user's home screen, launcher, or other
 places where space may be limited. `name` is used when the app is installed.
 
+{% Aside %}
+Operating systems usually expect to have a title for each app window. This
+title is displayed in various window-switching surfaces such as
+<kbd>alt</kbd>+<kbd>tab</kbd>, overview mode, and the shelf window list.
+
+For PWAs running in standalone mode, Chromium will prepend the `short_name`
+(or, if `short_name` is not set, alternatively the `name`) to what is
+specified in the `<title>` of the HTML document to prevent disguies attacks
+where standalone apps might try to be mistaken, for example, for operating
+system dialogs.
+
+In consequence, developers should _not_ repeat the
+application name in the `<title>` when the app is running in standalone mode.
+{% endAside %}
+
 #### `icons` {: #icons }
 
 When a user installs your PWA, you can define a set of icons for the browser
@@ -106,11 +126,22 @@ include the `src`, a `sizes` property, and the `type` of image. To use
 icons on Android, you'll also need to add `"purpose": "any maskable"` to the
 `icon` property.
 
-For Chrome, you must provide at least a 192x192 pixel icon, and a 512x512
+For Chromium, you must provide at least a 192x192 pixel icon, and a 512x512
 pixel icon. If only those two icon sizes are provided, Chrome will
 automatically scale the icons to fit the device. If you'd prefer to scale your
 own icons, and adjust them for pixel-perfection, provide icons in increments
 of 48dp.
+
+{% Aside %}
+Chromium-based browsers also support SVG icons that can be scaled arbitrarily
+without looking pixelated and that support advanced features like
+[being responsive to `prefers-color-scheme`](https://blog.tomayac.com/2021/07/21/dark-mode-web-app-manifest-app-icons/),
+with the important caveat that the icons do not update live, but remain in the
+state they were in at install time.
+
+To be on the safe side, you should always specify a rasterized icon as a
+fallback for browsers that do not support SVG icons.
+{% endAside %}
 
 #### `start_url` {: #start-url }
 
@@ -133,7 +164,7 @@ You can customize what browser UI is shown when your app is launched. For
 example, you can hide the address bar and browser chrome. Games can even
 be made to launch full screen.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table id="display-params">
     <thead>
       <tr>
@@ -155,8 +186,8 @@ be made to launch full screen.
           Opens the web app to look and feel like a standalone
           app. The app runs in its own window, separate from the browser, and
           hides standard browser UI elements like the URL bar.
-          <figure class="w-figure">
-            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196", class="w-screenshot" %}
+          <figure>
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196" %}
           </figure>
         </td>
       </tr>
@@ -166,8 +197,8 @@ be made to launch full screen.
           This mode is similar to <code>standalone</code>, but provides the
           user a minimal set of UI elements for controlling navigation (such
           as back and reload).
-          <figure class="w-figure">
-            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196", class="w-screenshot" %}
+          <figure>
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196" %}
           </figure>
         </td>
       </tr>
@@ -250,8 +281,8 @@ The `theme_color` sets the color of the tool bar, and may be reflected in
 the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196" %}
 </figure>
 
 As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust this color based on a
@@ -315,8 +346,8 @@ include `crossorigin="use-credentials"` in the manifest tag.
 To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601" %}
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -343,8 +374,6 @@ a smooth transition from the splash screen to your app.
 Chrome will choose the icon that closely matches the device resolution for the
 device. Providing 192px and 512px icons is sufficient for most cases, but
 you can provide additional icons for pixel perfection.
-
-<div class="w-clearfix">&nbsp;</div>
 
 ## Further reading
 

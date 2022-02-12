@@ -28,8 +28,8 @@ Most browsers support passive event listeners. See
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags event listeners that may delay page scrolling:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance", width="800", height="213", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance", width="800", height="213" %}
 </figure>
 
 Lighthouse uses the following process

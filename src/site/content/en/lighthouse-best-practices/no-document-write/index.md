@@ -33,8 +33,8 @@ data from the network to be reparsed.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
 calls to `document.write()` that weren't blocked by Chrome:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="Lighthouse audit showing usage of document.write", width="800", height="213", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="Lighthouse audit showing usage of document.write", width="800", height="213" %}
 </figure>
 
 For the most problematic uses,

@@ -405,7 +405,7 @@ it as a primitive.
 There are ongoing discussions about using `URLPattern` for proposed features
 like
 [service worker scope pattern matching](https://github.com/WICG/urlpattern/blob/main/explainer.md),
-[PWAs as file handlers](https://web.dev/pwa-url-handler/#the-web-app-origin-association-file),
+[PWAs as file handlers](/pwa-url-handler/#the-web-app-origin-association-file),
 and
 [speculative prefetching](https://github.com/jeremyroman/alternate-loading-modes/blob/main/triggers.md).
 

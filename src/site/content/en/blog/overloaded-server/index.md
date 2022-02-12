@@ -115,9 +115,9 @@ CDNs benefit from scale, so operating your own CDN rarely makes sense. A basic C
 
 Identify resources that are not being served from a CDN (but should be) by running [WebPageTest](https://webpagetest.org/). On the results page, click on the square above 'Effective use of CDN' to see the list of resources that should be served from a CDN.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109" %}
+  <figcaption>
    WebPageTest results
   </figcaption>
 </figure>
@@ -136,7 +136,7 @@ The decision to scale compute resources should be made carefully. Although it is
 
 #### Diagnose
 
-A high [Time To First Byte](/time-to-first-byte/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
+A high [Time To First Byte](/ttfb/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
 
 To investigate further, use a monitoring tool to assess CPU usage. If current or anticipated CPU usage exceeds 80% you should consider increasing your servers.
 

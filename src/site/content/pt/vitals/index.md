@@ -29,7 +29,7 @@ As Core Web Vitals são o subconjunto de Web Vitals que se aplica a todas as pá
 
 As métricas que constituem as Core Web Vitals irão [evoluir](#evolving-web-vitals) com o tempo. O conjunto atual para 2020 se concentra em três aspectos da experiência do usuário: *carregamento* , *interatividade* e *estabilidade visual* e inclui as seguintes métricas (e seus respectivos limites):
 
-<div class="w-stack w-stack--center w-stack--md">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendações de limites para Largest Contentful Paint", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendações de limites para First Input Delay", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendações de limites para Cumulative Layout Shift", width="400", height="350" %}</div>
+<div class="auto-grid" style="--auto-grid-min-item-size: 200px;">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendações de limites para Largest Contentful Paint", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendações de limites para First Input Delay", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendações de limites para Cumulative Layout Shift", width="400", height="350" %}</div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)**, ou Maior renderização de conteúdo, mede o desempenho do *carregamento.* Para fornecer uma boa experiência ao usuário, o LCP deve ocorrer dentro de **2,5 segundos** após o início do carregamento da página.
 - **[First Input Delay (FID)](/fid/)**, ou Atraso da primeira entrada, mede a *interatividade* . Para fornecer uma boa experiência do usuário, as páginas devem ter um FID de **100 milissegundos** ou menos.
@@ -49,7 +49,7 @@ O Google acredita que as Core Web Vitals são essenciais para todas as experiên
 
 O [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) coleta dados anônimos de medição de usuários reais para cada Core Web Vital. Esses dados permitem que os proprietários de sites avaliem rapidamente seu desempenho sem a necessidade de instrumentar manualmente as análises nas suas páginas, além de servir a ferramentas como o [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) e o [relatório Core Web Vitals do](https://support.google.com/webmasters/answer/9205520) Console de Busca.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tr>
       <td> </td>
@@ -115,7 +115,7 @@ Você também pode relatar sobre cada uma das Core Web Vitals sem escrever nenhu
 
 Essa extensão pode ser útil para entender o desempenho de seus próprios sites, dos sites de seus concorrentes e da web em geral.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -158,7 +158,7 @@ A medição em laboratório é a melhor maneira de testar o desempenho dos recur
 
 As seguintes ferramentas podem ser usadas para medir as Core Web Vitals num ambiente de laboratório:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -205,7 +205,7 @@ Embora as Core Web Vitals sejam as métricas críticas para compreender e propor
 
 Essas outras Web Vitals geralmente servem como proxy ou métricas suplementares para as Core Web Vitals, para ajudar a capturar uma parte maior da experiência ou para ajudar no diagnóstico de um problema específico.
 
-Por exemplo, as métricas [Time to First Byte (TTFB)](/time-to-first-byte/), ou Tempo até primeiro byte e [First Contentful Paint (FCP)](/fcp/) são ambas aspectos vitais da experiência de *carregamento* e são úteis no diagnóstico de problemas com LCP ([tempos de resposta](/overloaded-server/) lentos do servidor ou [recursos bloqueadores da renderização](/render-blocking-resources/), respectivamente) .
+Por exemplo, as métricas [Time to First Byte (TTFB)](/ttfb/), ou Tempo até primeiro byte e [First Contentful Paint (FCP)](/fcp/) são ambas aspectos vitais da experiência de *carregamento* e são úteis no diagnóstico de problemas com LCP ([tempos de resposta](/overloaded-server/) lentos do servidor ou [recursos bloqueadores da renderização](/render-blocking-resources/), respectivamente) .
 
 Da mesma forma, métricas como [Total Blocking Time (TBT)](/tbt/) e [Time to Interactive (TTI)](/tti/), ou Tempo até a interatividade são medidas de laboratório que são vitais para detectar e diagnosticar possíveis *problemas de interatividade* que afetarão a FID. No entanto, elas não fazem parte do conjunto Core Web Vitals porque não são mensuráveis em campo, nem refletem um resultado [centrado no usuário.](/user-centric-performance-metrics/#how-metrics-are-measured)
 

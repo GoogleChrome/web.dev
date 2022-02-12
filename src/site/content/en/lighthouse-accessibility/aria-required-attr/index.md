@@ -24,8 +24,8 @@ assistive technology users won't be able to successfully interact with them.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA roles that don't have the required states and properties:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EF8Fjn4V8r1rR6JoZtIc.png", alt="Lighthouse audit showing ARIA role missing required states and properties", width="800", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EF8Fjn4V8r1rR6JoZtIc.png", alt="Lighthouse audit showing ARIA role missing required states and properties", width="800", height="185" %}
 </figure>
 
 Lighthouse uses the

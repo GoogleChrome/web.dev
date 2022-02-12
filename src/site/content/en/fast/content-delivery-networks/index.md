@@ -36,13 +36,13 @@ Although it may seem non-intuitive, using a CDN to deliver resources (even uncac
 When a CDN is used to deliver resources from the origin, a new connection is established between the client and a nearby CDN server. The remainder of the journey (in other words, the data transfer between the CDN server and origin) occurs over the CDN's network - which often includes existing, persistent connections with the origin. The benefits of this are twofold: terminating the new connection as close to the user as possible eliminates unnecessary connection setup costs (establishing a new connection is expensive and requires multiple roundtrips); using a pre-warmed connection allows data to be immediately transferred at the maximum possible throughput.
 
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/M9kzM7J7FenUyO7E9MF0.png", alt="Comparison of connection setup with and without a CDN", width="800", height="512" %}
 </figure>
 
 Some CDNs improve upon this even further by routing traffic to the origin through multiple CDN servers spread across the Internet. Connections between CDN servers occur over reliable and highly optimized routes, rather than routes determined by the [Border Gateway Protocol (BGP)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol). Although BGP is the internet's de facto routing protocol, its routing decisions are not always performance-oriented. Therefore, BGP-determined routes are likely to be less performant than the finely-tuned routes between CDN servers.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ZLMPFySQgBkpWvgujuJP.png", alt="Comparison of connection setup with and without a CDN", width="800", height="449" %}
 </figure>
 
@@ -107,7 +107,7 @@ At a high-level, a CDN's performance strategy can be thought of in terms of the 
 
 As a result of this tradeoff, some CDNs use a tiered approach to caching: PoPs located close to users (also known as "edge caches") are supplemented with central PoPs that have higher cache hit ratios. When an edge cache can't find a resource, it will look to a central PoP for the resource. This approach trades slightly greater latency for a higher likelihood that the resource can be served from a CDN cache - though not necessarily an edge cache.
 
-The tradeoff between minimizing latency and minimizing cache hit ratio is a spectrum. No particular approach is universally better; however, depending on the nature of your site and its user base, you may find that one of these approaches delivers significantly better performance than the other.
+The tradeoff between minimizing latency and maximizing cache hit ratio is a spectrum. No particular approach is universally better; however, depending on the nature of your site and its user base, you may find that one of these approaches delivers significantly better performance than the other.
 
 It's also worth noting that CDN performance can vary significantly depending on geography, time of day, and even current events. Although it's always a good idea to do your own research on a CDN's performance, it can be difficult to predict the exact performance you'll get from a CDN.
 
@@ -220,7 +220,7 @@ TLS 1.3 is the newest version of [Transport Layer Security (TLS)](https://en.wik
 
 TLS 1.3 shortens the TLS handshake from two roundtrips to one. For connections using HTTP/1 or HTTP/2, shortening the TLS handshake to one roundtrip effectively reduces connection setup time by 33%.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/FnCSj1W23jXaiOWCp0Bw.png", alt="Comparison of the TLS 1.2 and TLS 1.3 handshakes", width="800", height="448" %}
 </figure>
 
@@ -259,7 +259,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
 
     HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (HTTP/3 uses UDP via [QUIC](https://en.wikipedia.org/wiki/QUIC)) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/B7YKfqGG4eS2toSoTDdS.png", alt="Diagram showing the differences in data transmission between HTTP/1, HTTP/2, and HTTP/3", width="800", height="449" %}
 </figure>
 
@@ -267,7 +267,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
 
     HTTP/3 uses TLS 1.3 and therefore shares its performance benefits: establishing a new connection only requires a single round-trip and resuming an existing connection does not require any roundtrips.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/7ffDEjblsisTNsfkynt6.png", alt="Comparison of connection resumption between TLS 1.2, TLS 1.3, TLS 1.3 0-RTT, and HTTP/3", width="800", height="400" %}
 </figure>
 

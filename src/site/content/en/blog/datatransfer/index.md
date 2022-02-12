@@ -39,9 +39,9 @@ applications on desktop. Transferring data between applications doesn't need to 
 tightly coupled integrations anymore. Instead you can give the user the full control to transfer their
 data to wherever they would like.
 
-<figure class="w-figure">
+<figure>
   {% YouTube 'EYMgUhn_Zdo' %}
-  <figcaption class="w-figcaption">An example of interactions that are possible with the DataTransfer API.</figcaption>
+  <figcaption>An example of interactions that are possible with the DataTransfer API.</figcaption>
 </figure>
 
 ## Transferring data
@@ -49,7 +49,7 @@ data to wherever they would like.
 To get started with transferring data, you'll need to implement drag-drop or copy-paste. The examples
 below show drag-drop interactions, but the process for copy-paste is similar. If
 you are unfamiliar with the Drag and Drop API, there's a great article
-[explaining HTML5 Drag and Drop](https://web.dev/drag-and-drop/) that details the ins and outs.
+[explaining HTML5 Drag and Drop](/drag-and-drop/) that details the ins and outs.
 
 By providing [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
 Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime-types used in the
@@ -112,7 +112,7 @@ the `dataTransfer` property is named `clipboardData` for clipboard events.
 // Listen to copy-paste events on the document.
 document.addEventListener('copy', (event) => {
   const copySource = document.querySelector('#copySource');
-  // Only copy when the `activeElement` (i.e., focused element) is, 
+  // Only copy when the `activeElement` (i.e., focused element) is,
   // or is within, the `copySource` element.
   if (copySource.contains(document.activeElement)) {
     event.clipboardData.setData('text/plain', 'Foo bar');

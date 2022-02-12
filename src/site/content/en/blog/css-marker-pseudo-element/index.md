@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Custom bullets with CSS ::marker
 subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>.
 authors:
@@ -20,9 +21,9 @@ feedback:
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOmqXrog0YoriZqqIzEZ.png", alt="", width="665", height="384" %}
+  <figcaption>
     <a href="https://glitch.com/edit/#!/marker-fun-example">View Source</a>
   </figcaption>
 </figure>
@@ -177,7 +178,7 @@ Changing the contents of a `::marker` is done with `content` as opposed to `list
 
 Also, note how the disallowed `background` property has no effect.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'List Styles' %}
 ```css
 li:nth-child(1) {
@@ -303,8 +304,8 @@ li::marker {
 ### Debugging
 Chrome DevTools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", style="max-inline-size: 480px" %}
 </figure>
 
 ### Future Pseudo-element styling

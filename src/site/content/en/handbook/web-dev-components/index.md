@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev components
 date: 2019-06-26
-updated: 2020-07-17
+updated: 2022-01-18
 description: |
   Learn how to use web.dev's UI and content components.
 ---
@@ -11,14 +11,14 @@ The web.dev platform includes various components to make it easy for content
 contributors to include common content features, like videos, side-by-side
 comparisons, and asides.
 
-This post shows sample markup for each of web.dev's content components and provides
-guidance about how to use them effectively.
+This post shows sample markup for each of web.dev's content components and
+provides guidance about how to use them effectively.
 
 ## Component types
 
 1. [Asides](#asides)
 1. [Banners](#banners)
-1. [Block quotes](#blockquotes)
+1. [Block quotes](#block-quotes)
 1. [Browser Compatibility](#browsercompat)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
@@ -40,7 +40,13 @@ guidance about how to use them effectively.
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
+## Deprecated components
+
+1. [w-button](#w-button)
+1. [w-columns](#w-columns)
+
 ## Asides
+
 Use asides to provide information that's related to but distinct from the
 content in the body of the post or codelab. Asides should generally be short—no
 more than 2–3 lines.
@@ -113,17 +119,17 @@ Use the objective aside to define the goal of a process described in the body
 copy.
 {% endAside %}
 
-### Gotcha asides
+### Important asides
 
 ```text
-{% raw %}&#123;% Aside 'gotchas' %&#125;
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% raw %}&#123;% Aside 'important' %&#125;
+Use the important aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 &#123;% endAside %&#125;{% endraw %}
 ```
 
-{% Aside 'gotchas' %}
-Use the gotcha aside to indicate a common problem that the reader wouldn't know
+{% Aside 'important' %}
+Use the important aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
 {% endAside %}
 
@@ -163,7 +169,7 @@ Default banners can be added to site templates (for example, landing pages)
 to provide timely information to users (for example, an alert about an
 upcoming conference).
 Don't use default banners in the body of a post;
-instead, use the body variant, below.
+instead, use the Aside component.
 
 ```text
 {% raw %}{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}{% endraw %}
@@ -184,25 +190,15 @@ instead, use the body variant, below.
 {% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
 ```text
-{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+{% raw %}{% Banner %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
 ```
 
-{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
-
-### Body banners
-
-```text
-{% raw %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endraw %}
-```
-
-{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
+{% Banner %}This is a neutral banner. It supports Markdown.{% endBanner %}
 
 ## Block quotes
-Use block quotes to emphasize a quotation that's important to
-the main idea of a post. (For example, in a case study you might include
-a quotation from someone on the partner organization's management team.)
 
-Always include a `<cite>` element indicating the quote's source
+To include quotation in the body of an article, use `<blockquote>` tag.
+You can include a `<cite>` element indicating the quote's source
 at the end of a block quote:
 
 ```html
@@ -217,6 +213,8 @@ at the end of a block quote:
 </blockquote>
 ```
 
+You can also use a shortcode:
+
 ```html
 {% raw %}{% Blockquote 'Jon Doe' %}
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
@@ -224,7 +222,47 @@ a massa sit amet ullamcorper.
 {% endBlockquote %}{% endraw %}
 ```
 
-{% Blockquote 'Jon Doe' %}
+<blockquote>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
+  </p>
+  <cite>
+    Jon Doe
+  </cite>
+</blockquote>
+
+To embed a [pull quote](https://en.wikipedia.org/wiki/Pull_quote) in an article,
+to emphasize a piece of text or a quote, you can use `pullquote` class:
+
+```html
+<blockquote data-type="pullquote">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
+  </p>
+  <cite>
+    Jon Doe
+  </cite>
+</blockquote>
+```
+
+<blockquote data-type="pullquote">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.</p>
+  <cite>Jon Doe</cite>
+</blockquote>
+
+You can also use a shortcode with a `pullquote` attribute:
+
+```html
+{% raw %}{% Blockquote 'Jon Doe', 'pullquote' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}{% endraw %}
+```
+
+{% Blockquote 'Jon Doe', 'pullquote' %}
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
 a massa sit amet ullamcorper.
 {% endBlockquote %}
@@ -250,33 +288,36 @@ the ID is `api.BackgroundFetchEvent`:
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
+[Detailed specification](/design-system/component/button/)
+
 ### Text buttons
 
 <div>
-  <button class="w-button">
+  <button class="button">
     Text button
   </button>
-  <button class="w-button w-button--with-icon" data-icon="file_download">
+  <button class="button">
+    {% include "icons/" ~ 'plus.svg' %}
     Text button with icon
   </button>
 </div>
-<br>
 
 <div>
-  <button class="w-button w-button--primary">
+  <button class="button" data-type="primary">
     Primary button
   </button>
-  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+  <button class="button" data-type="primary">
+    {% include "icons/" ~ 'plus.svg' %}
     Primary button with icon
   </button>
 </div>
-<br>
 
 <div>
-  <button class="w-button w-button--secondary">
+  <button class="button" data-type="secondary">
     Secondary button
   </button>
-  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+  <button class="button" data-type="secondary">
+    {% include "icons/" ~ 'plus.svg' %}
     Secondary button with icon
   </button>
 </div>
@@ -285,21 +326,20 @@ These buttons are shown for reference.
 
 A default icon button:
 
+[Detailed specification](/design-system/component/icon-button/)
+
 <div>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    <span role="tooltip" class="w-tooltip">
-      Justify
-    </span>
+  <button class="icon-button" aria-label="Close">
+    {% include "icons/close.svg" %}
   </button>
 </div>
 
-A round icon button:
+An icon button with tooltip:
 
 <div>
-  <button class="w-button--icon w-button--round" data-icon="close">
-    <span role="tooltip" class="w-tooltip">
-      Close
-    </span>
+  <button class="icon-button tooltip" aria-labelledby="icon-button-toolip">
+    {% include "icons/close.svg" %}
+    <span class="tooltip__content" id="icon-button-toolip">Close</span>
   </button>
 </div>
 
@@ -320,23 +360,22 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 
 ## Checkbox
 
-The [Newsletter](/newsletter) page uses a new material styled checkbox.
-You can use it simply and easily by just adding the class `w-chechbox`
-to an `input[type=checkbox]` element. However to align a label to to the
-checkbox you'll want to wrap the label and checkbox in a `div.w-display--inline-flex`
-element, and add the `w-ml--l` class to the label. See below:
+To align a label to the checkbox wrap the label and checkbox in an element with
+a `cluster gutter-base flex-align-start` class.
 
-<div class="w-display--inline-flex">
-  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
-</div>
+[Detailed specification](/design-system/component/form-fields/#checkbox)
 
 ```html
-<div class="w-display--inline-flex">
-  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
+<div class="cluster gutter-base flex-align-start">
+  <input id="myCheckbox" type="checkbox" />
+  <label for="myCheckbox">Lorem ipsum dolor sit amet</label>
 </div>
 ```
+
+<div class="cluster gutter-base flex-align-start">
+  <input id="myCheckbox" type="checkbox" />
+  <label for="myCheckbox">Lorem ipsum dolor sit amet</label>
+</div>
 
 ## Code pattern {: #codepattern }
 
@@ -394,42 +433,43 @@ the tech writing team to get access to the login and password.
 ## Columns
 
 Any elements can be placed in a two-column layout
-by wrapping them in a `<div class="w-columns">` element:
+by wrapping them in a `<div class="switcher">` element.
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.
+
+[Detailed specification](/design-system/css-compositions/#switcher)
 
 ```html
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     <img src="./image-small.png" alt="">
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
 </div>
 ```
 
-<div class="w-columns">
-  <figure class="w-figure">
+<div class="switcher">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Small image.
     </figcaption>
   </figure>
 </div>
-
-At smaller viewport sizes,
-elements in a two-column layout will shift to a stacked arrangement.
 
 ## Code
 
@@ -542,7 +582,7 @@ at.
 ### Compare in columns
 
 ````html
-<div class="w-columns">
+<div class="switcher">
 {% raw %}{% Compare 'worse' %}
 ```text
 Bad code example
@@ -567,7 +607,7 @@ Explanation of why `example` is good.
 </div>
 ````
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse' %}
 ```text
 Bad code example
@@ -599,6 +639,7 @@ assumenda perspiciatis.
 ## Details
 
 ### Basic details component
+
 ```text
 {% raw %}&#123;% Details %&#125;
 
@@ -625,6 +666,7 @@ at.
 {% endDetails %}
 
 ### Details component with preview
+
 ```text/4-5
 {% raw %}&#123;% Details %&#125;
 
@@ -658,6 +700,7 @@ at.
 {% endDetails %}
 
 ### Details component with custom heading level
+
 The default heading level is `h2`.
 To ensure the `Details` component is in the correct place in the page hierarchy,
 add a custom heading argument to the `DetailsSummary` shortcode.
@@ -690,6 +733,7 @@ at.
 {% endDetails %}
 
 ### Details component in open state
+
 The `Details` component is closed by default.
 If for some reason you want it open,
 add the `open` argument to the `Details` shortcode.
@@ -889,6 +933,7 @@ console.log('hello');
 ```
 
 ## Lists
+
 See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)
 for information about when to use each list type.
 
@@ -938,6 +983,7 @@ Second Term
 : This is another definition of the second term.
 
 ## Stats
+
 Use the Stats component to call out important statistics
 about a product or service discussed in a post.
 (Stats are primarily used in case studies.)
@@ -945,65 +991,83 @@ about a product or service discussed in a post.
 Include no more than four statistics in a single Stats component
 to avoid layout issues.
 
+[Detailed specification](/design-system/component/stats/)
+
 ```html
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 ```
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 
+Stats component with applied utility class `bg-state-good-bg color-state-good-text`:
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats bg-state-good-bg color-state-good-text">
+  <div class="stats__item">
+    <p class="stats__figure">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-</div>
-
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+  <div class="stats__item">
+    <p class="stats__figure">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 
 ## Tables
 
@@ -1012,98 +1076,88 @@ Do _not_ use Markdown syntax;
 it doesn't include the wrapper element needed
 to ensure correct whitespace around the table.
 
-```html
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>Image Format</th>
-        <th>Lossy Plugin(s)</th>
-        <th>Lossless Plugin(s)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>JPEG</td>
-        <td><a href="#">imagemin-mozjpeg</a></td>
-        <td><a href="#">imagemin-jpegtran</a></td>
-      </tr>
-      …
-    </tbody>
-    <caption>Imagemin plugins for filetypes.</caption>
-  </table>
-</div>
-```
+[Detailed specification](/design-system/component/tables/)
 
-<div class="w-table-wrapper">
+```html
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
         <th>Image Format</th>
         <th>Lossy Plugin(s)</th>
-        <th>Lossless Plugin(s)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>JPEG</td>
         <td><a href="#">imagemin-mozjpeg</a></td>
-        <td><a href="#">imagemin-jpegtran</a></td>
       </tr>
       <tr>
         <td>PNG</td>
         <td><a href="#">imagemin-pngquant</a></td>
-        <td><a href="#">imagemin-optipng</a></td>
       </tr>
       <tr>
         <td>GIF</td>
         <td><a href="#">imagemin-giflossy</a></td>
-        <td><a href="#">imagemin-gifsicle</a></td>
-      </tr>
-      <tr>
-        <td>SVG</td>
-        <td><a href="#">Imagemin-svgo</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>WebP</td>
-        <td><a href="#">imagemin-webp</a></td>
-        <td></td>
       </tr>
     </tbody>
-    <caption>Imagemin plugins for filetypes.</caption>
+    <caption>
+      Imagemin plugins for filetypes.
+    </caption>
+  </table>
+</div>
+```
+
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Image Format</th>
+        <th>Lossy Plugin(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><a href="#">imagemin-mozjpeg</a></td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td><a href="#">imagemin-pngquant</a></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><a href="#">imagemin-giflossy</a></td>
+      </tr>
+    </tbody>
+    <caption>
+      Imagemin plugins for filetypes.
+    </caption>
   </table>
 </div>
 
-If you want content in `<td>` elements to be vertically aligned
-to the top of the cell, add the `w-table--top-align` class
-to the `<table>` element:
-
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div class="table-wrapper scrollbar">
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>Tool</th>
-        <th>CLI</th>
-        <th>CI</th>
         <th>Summary</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Lighthouse</td>
-        <td>✔</td>
-        <td>✘</td>
         <td>
           <ul>
-            <li>Budgets for different types of resources based on their size or count</li>
+            <li>
+              Budgets for different types of resources based on their size or
+              count
+            </li>
           </ul>
         </td>
       </tr>
       <tr>
         <td>webpack</td>
-        <td>✔</td>
-        <td>✘</td>
         <td>
           <ul>
             <li>Budgets based on sizes of assets generated by webpack</li>
@@ -1111,29 +1165,19 @@ to the `<table>` element:
           </ul>
         </td>
       </tr>
-      <tr>
-        <td>bundlesize</td>
-        <td>✔</td>
-        <td>✔</td>
-        <td>
-          <ul>
-            <li>Budgets based on sizes of specific resources</li>
-            <li>Checks compressed or uncompressed sizes</li>
-          </ul>
-        </td>
-      </tr>
     </tbody>
+    <caption>
+      A table with the cell content vertically aligned by data-alignment="top" exception.
+    </caption>
   </table>
 </div>
 
-Include code in tables using a `<code>` element:
-
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
-        <th>Before</th>
-        <th>After</th>
+        <th>Option 1</th>
+        <th>Option 2</th>
       </tr>
     </thead>
     <tbody>
@@ -1151,12 +1195,13 @@ Include code in tables using a `<code>` element:
         </td>
       </tr>
     </tbody>
+    <caption>
+      Table using a `code` element.
+    </caption>
   </table>
 </div>
 
-Tables scroll when their width is larger than that of the content column:
-
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tbody>
       <tr>
@@ -1204,101 +1249,9 @@ Tables scroll when their width is larger than that of the content column:
         <td>2s</td>
       </tr>
     </tbody>
-  </table>
-</div>
-
-<p>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
-incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
-deleniti! Atque aliquam facilis labore odio similique provident illo culpa
-assumenda perspiciatis.
-</p>
-
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th><strong>Property</strong></th>
-        <th><strong>Use</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-        <code><strong>short_name</strong></code> (required)
-        </td>
-        <td>
-          Short human-readable name for the application. This is intended for when
-          there is insufficient space to display the full name of the web
-          application, like device home screens.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>name</strong></code> (required)</td>
-        <td>Human-readable name for the site when displayed to the user.</td>
-      </tr>
-      <tr>
-        <td><code><strong>description</strong></code> (recommended)</td>
-        <td>General description of what the PWA does.</td>
-      </tr>
-      <tr>
-        <td><code><strong>icons</strong></code> (required)</td>
-        <td>
-          An array of image files that can serve as application icons. Chrome
-          requires a 192x192px and a 512x512px icon. Additional sizes are
-          optional, and recommended for those who want to ensure pixel perfect
-          icons.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>start_url</strong></code> (required)</td>
-        <td>
-          The URL that loads when a user launches the application. This has to be
-          a relative URL, relative to the manifest url.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>background_color</strong></code> (recommended)</td>
-        <td>
-          The background color used on the auto-generated splash screen when the
-          PWA is launched.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>display</strong></code> (required)</td>
-        <td>The developers' preferred display mode for the PWA.</td>
-      </tr>
-      <tr>
-        <td><code><strong>scope</strong></code> (recommended)</td>
-        <td>
-          The navigation scope of this website's context. This restricts what web
-          pages can be viewed while the manifest is applied. If the user navigates
-          outside the scope, it returns to a normal web page inside a browser
-          tab/window.
-        </td>
-      </tr>
-      <tr>
-        <td><code><strong>theme_color</strong></code> (recommended)</td>
-        <td>
-          The default theme color for an application. This affects how the OS
-          displays the site. <br>
-          <ol>
-            <li>
-              On Android's task switcher, the theme color surrounds the site.
-            </li>
-            <li>On desktop, the theme color is used to style the title bar.</li>
-          </ol>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Dicta nam possimus doloribus minima repellendus!
-          <ul>
-            <li>
-              On Android's task switcher, the theme color surrounds the site.
-            </li>
-            <li>On desktop, the theme color is used to style the title bar.</li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
+    <caption>
+      Tables scroll when their width is larger than that of the content column.
+    </caption>
   </table>
 </div>
 
@@ -1315,7 +1268,7 @@ the tab, e.g. the code blocks.
 <web-tabs>
   <div data-label="html">
     ```html
-    <p> I'm html</p>
+    <p>I'm html</p>
     ```
   </div>
   <div data-label="css">
@@ -1331,7 +1284,7 @@ the tab, e.g. the code blocks.
   <div data-label="html" title="t">
 
   ```html
-  <p> I'm html</p>
+  <p>I'm html</p>
   ```
 
   </div>
@@ -1347,53 +1300,140 @@ the tab, e.g. the code blocks.
 ## Tooltips
 
 Use tooltips to provide information about UI controls
-that are too small to have a label:
+that are too small to have a label
+
+[Detailed specification](/design-system/component/tooltips/)
 
 ```html
-<button class="w-button--icon" data-icon="format_align_left">
-  {% raw %}{% Tooltip 'Left align' %}{% endraw %}
-</button>
+<div class="tooltip" data-alignment="">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% raw %}{% include "icons/plus.svg" %}{% endraw %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Standard alignment</span
+  >
+</div>
 ```
 
+<div class="tooltip" data-alignment="right">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% include "icons/plus.svg" %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Right alignment</span
+  >
+</div>
+
+<div class="tooltip" data-alignment="">
+  <button class="fab" aria-labelledby="mytooltip">
+    {% include "icons/plus.svg" %}
+  </button>
+  <span class="tooltip__content" role="tooltip" id="mytooltip"
+    >Standard alignment</span
+  >
+</div>
+
+
+## Video / YouTube {: #video }
+
+See the [Images and video](/handbook/markup-media) post.
+
+# Deprecated components
+
+## w-buttons
+
+In general, you shouldn't need to add buttons to your posts.
+These buttons are shown for reference.
+
+### Text buttons
+
 <div>
-  <button class="w-button--icon" data-icon="format_align_left">
-    {% Tooltip 'Left align' %}
+  <button class="w-button">
+    Text button
   </button>
-  <button class="w-button--icon" data-icon="format_align_center">
-    {% Tooltip 'Center align' %}
+  <button class="w-button w-button--with-icon" data-icon="file_download">
+    Text button with icon
   </button>
-  <button class="w-button--icon" data-icon="format_align_right">
-    {% Tooltip 'Right align' %}
+</div>
+<br>
+
+<div>
+  <button class="w-button w-button--primary">
+    Primary button
   </button>
-  <button class="w-button--icon" data-icon="format_align_justify">
-    {% Tooltip 'Justify' %}
+  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+    Primary button with icon
+  </button>
+</div>
+<br>
+
+<div>
+  <button class="w-button w-button--secondary">
+    Secondary button
+  </button>
+  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+    Secondary button with icon
   </button>
 </div>
 
-You can left- or right-align a tooltip to its parent
-by adding a `left` or `right` argument to the shortcode:
+### Icon buttons
+
+A default icon button:
+
+<div>
+  <button class="w-button--icon" data-icon="format_align_justify">
+    <span role="tooltip" class="w-tooltip">
+      Justify
+    </span>
+  </button>
+</div>
+
+A round icon button:
+
+<div>
+  <button class="w-button--icon w-button--round" data-icon="close">
+    <span role="tooltip" class="w-tooltip">
+      Close
+    </span>
+  </button>
+</div>
+
+## w-columns
+
+Any elements can be placed in a two-column layout
+by wrapping them in a `<div class="w-columns">` element:
 
 ```html
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
-</button>
+<div class="w-columns">
+  <figure>
+    <img src="./image-small.png" alt="">
+    <figcaption>
+      Small image.
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="./image-small.png" alt="">
+    <figcaption>
+      Small image.
+    </figcaption>
+  </figure>
+</div>
 ```
 
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse', 'left' %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse' %}
-</button>
-<button class="w-button--icon" data-icon="unfold_less">
-  {% Tooltip 'Collapse', 'right' %}
-</button>
+<div class="w-columns">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
+    <figcaption>
+      Small image.
+    </figcaption>
+  </figure>
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
+    <figcaption>
+      Small image.
+    </figcaption>
+  </figure>
+</div>
 
-## Video / YouTube {: #video }
-See the [Images and video](/handbook/markup-media) post.
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.

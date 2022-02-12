@@ -17,15 +17,14 @@ tags:
 In this post I want to share thinking on ways to manage multiple color schemes
 in CSS. [Try the demo](https://gui-challenges.web.app/color-schemes/dist/).
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/b2EpUdydz61rRc11XdkH.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://gui-challenges.web.app/color-schemes/dist/">Demo</a>
   </figcaption>
 </figure>
@@ -47,11 +46,11 @@ front. Not until the very end are they used to change the page.
 ### The Brand
 
 Often, a brand color has already been established and is delivered as
-[hex](https://web.dev/learn/css/color/#hex-colors) or
-[rgb](https://web.dev/learn/css/color/#rgb-(red-green-blue)). This GUI Challenge
+[hex](/learn/css/color/#hex-colors) or
+[rgb](/learn/css/color/#rgb-(red-green-blue)). This GUI Challenge
 has a base brand color of `#0af`. Firstly, for this color system, the hex value
 needs converted to
-[hsl](https://web.dev/learn/css/color/#hsl-(hue-saturation-lightness)).
+[hsl](/learn/css/color/#hsl-(hue-saturation-lightness)).
 
 ```css/2
 * {
@@ -184,13 +183,13 @@ all in one place in the CSS.
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/f0H9hh4Qi0aQ61hZwOlU.png",
     alt="screenshot of the light colors all together",
     width="800", height="144"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/argyleink/pen/WNpyypP">Sandbox on CodePen</a>
   </figcaption>
 </figure>
@@ -286,10 +285,10 @@ devtools, which do you prefer?!
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/CHAQlRXJKvclpyaChVyv.png",
 alt="screenshot of the dark colors all together", width="800", height="160" %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/argyleink/pen/WNpyypP">Sandbox on CodePen</a>
   </figcaption>
 </figure>
@@ -298,7 +297,7 @@ alt="screenshot of the dark colors all together", width="800", height="160" %}
 
 This color scheme is all about orchestrating lightness and saturation. There
 should be enough saturation present to still have a hue visible, but should also
-just barely pass [contrast scores](https://web.dev/color-contrast/) since it's
+just barely pass [contrast scores](/color-contrast/) since it's
 intended to be dim and low contrast anyway.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/QjvjPLubdap7v7s9vAEh.png",
@@ -362,10 +361,10 @@ alt="preview of the end results from the dim theme", width="800", height="485"
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/MCCNiyM5zQwnVlr86O8k.png",
 alt="screenshot of the dim colors all together", width="800", height="150" %}
-  <figcaption class="w-figure">
+  <figcaption>
     <a href="https://codepen.io/argyleink/pen/WNpyypP">Sandbox on CodePen</a>
   </figcaption>
 </figure>
@@ -382,15 +381,14 @@ subtle lever to adjust in case scores are poor.
 I call it "bump bump til ya pass", which is the interaction of bumping the
 lightness value until a tool shows I'm passing.
 
-<figure class="w-figure">
+<figure>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/DQ0fOGl9Bg8Uy7ErdBPA.mp4",
-    class="w-screenshot",
-    autoplay="true",
+       autoplay="true",
     loop="true",
     muted="true"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     shift + down arrow is pressed to lower the lightness and increase contrast until passing
   </figcaption>
 </figure>
@@ -419,13 +417,13 @@ Each of the themes created in this challenge pass contrast scores. The dim color
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zrOv3KCNHU8lXELRTkvF.png",
     alt="Screenshot of the dim surface and text pairings",
     width="800", height="560"
   %}
-  <figcaption class="w-figure">
+  <figcaption>
     Screenshot of the dim surface and text pairings with <a href="https://a.nerdy.dev/gimme-visbug">VisBug</a>
   </figcaption>
 </figure>
@@ -590,6 +588,7 @@ needed, and should never need to worry about themes again.
 } %}
 
 ## Conclusion
+
 Now that you know how I did it, how would you?! 🙂
 
 Let's diversify our approaches and learn all the ways to build on the web.
@@ -597,6 +596,7 @@ Create a Codepen or host your own demo, tweet me with it, and I'll add it to the
 Community remixes section below.
 
 ### Source
+
 - [GUI Challenges source on GitHub](https://github.com/argyleink/gui-challenges)
 - [Color scheme Codepen starter](https://codepen.io/argyleink/pen/vYxrrpd)
 

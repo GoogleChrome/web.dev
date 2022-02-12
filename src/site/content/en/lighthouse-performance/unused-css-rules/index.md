@@ -14,8 +14,8 @@ all stylesheets with unused CSS with a potential savings of 2 KiB or more.
 Remove the unused CSS
 to reduce unnecessary bytes consumed by network activity:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="A screenshot of the Lighthouse Remove unused CSS audit", width="800", height="235", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="A screenshot of the Lighthouse Remove unused CSS audit", width="800", height="235" %}
 </figure>
 
 
@@ -56,9 +56,9 @@ the more time that a browser might potentially need to spend calculating the sty
 The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS.
 See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: Coverage tab", width="800", height="407", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: Coverage tab", width="800", height="407" %}
+  <figcaption>
     Chrome DevTools: Coverage tab.
   </figcaption>
 </figure>

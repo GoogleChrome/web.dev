@@ -20,9 +20,9 @@ feedback:
 
 ## What is the App Badging API? {: #what }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Example of Twitter with eight notifications and another app showing a flag type badge.", width="600", height="189" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of Twitter with eight notifications and another app showing a flag
     type badge.
   </figcaption>
@@ -53,7 +53,7 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |

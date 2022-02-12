@@ -65,6 +65,7 @@ module.exports = {
     STROKE: 'stroke',
     TERTIARY_BOX_BG: 'tertiary-box-bg',
     TERTIARY_BOX_TEXT: 'tertiary-box-text',
+    TRANSPARENT_IMG_MASK: 'transparent-img-mask',
   },
   getDark() {
     return {
@@ -85,7 +86,7 @@ module.exports = {
       ACTION_BG: 'shades-dim',
       ACTION_BG_ALT: 'shades-dim',
       ACTION_BG_PRIMARY: 'core-primary-dim',
-      ACTION_BG_HOVER: 'shades-gray',
+      ACTION_BG_HOVER: 'shades-gray-glare',
       ACTION_TEXT: 'core-primary-glare',
       ACTION_TEXT_PRIMARY: 'core-primary-bright',
       ACTION_TEXT_ALT: 'shades-light',
@@ -123,6 +124,7 @@ module.exports = {
       STROKE: 'shades-gray',
       TERTIARY_BOX_TEXT: 'core-tertiary-glare',
       TERTIARY_BOX_BG: 'core-tertiary-dim',
+      TRANSPARENT_IMG_MASK: 'shades-gray-glare',
     };
   },
   getLight() {
@@ -182,6 +184,7 @@ module.exports = {
       SYNTAX_QUATERNARY: 'code-quaternary',
       TERTIARY_BOX_TEXT: 'core-tertiary',
       TERTIARY_BOX_BG: 'core-tertiary-bright',
+      TRANSPARENT_IMG_MASK: 'shades-light-bright',
     };
   },
   generate() {
@@ -194,6 +197,12 @@ module.exports = {
         name: 'dark-toggle',
         key: 'prefix',
         value: '[data-user-theme="dark"]',
+        tokens: this.getDark(),
+      },
+      {
+        name: 'dark',
+        key: 'prefers-color-scheme',
+        value: 'dark',
         tokens: this.getDark(),
       },
       {

@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-08-18
+updated: 2021-11-18
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -65,7 +65,7 @@ communication between the website and the device that it is controlling.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
@@ -97,13 +97,15 @@ received at any time, requiring a way to listen to it.
 
 To open a serial port, first access a `SerialPort` object. For this, you can
 either prompt the user to select a single serial port by calling
-`navigator.serial.requestPort()`, or pick one from `navigator.serial.getPorts()`
-which returns a list of serial ports the website has been granted access to
-previously.
+`navigator.serial.requestPort()` in response to a user gesture such as touch
+or mouse click, or pick one from `navigator.serial.getPorts()` which returns
+a list of serial ports the website has been granted access to.
 
 ```js
-// Prompt user to select any serial port.
-const port = await navigator.serial.requestPort();
+document.querySelector('button').addEventListener('click', async () => {
+  // Prompt user to select any serial port.
+  const port = await navigator.serial.requestPort();
+});
 ```
 
 ```js
@@ -129,9 +131,9 @@ const port = await navigator.serial.requestPort({ filters });
 const { usbProductId, usbVendorId } = port.getInfo();
 ```
 
-<figure class="w-figure">
-  {% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513", class="w-screenshot" %}
-  <figcaption class="w-figcaption">User prompt for selecting a BBC micro:bit</figcaption>
+<figure>
+  {% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513" %}
+  <figcaption>User prompt for selecting a BBC micro:bit</figcaption>
 </figure>
 
 Calling `requestPort()` prompts the user to select a device and returns a
@@ -446,9 +448,9 @@ assembly line: as a widget comes down the line, each step in the line modifies
 the widget, so that by the time it gets to its final destination, it's a fully
 functioning widget.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="Photo of an aeroplane factory", width="800", height="519" %}
-  <figcaption class="w-figcaption">World War II Castle Bromwich Aeroplane Factory</figcaption>
+  <figcaption>World War II Castle Bromwich Aeroplane Factory</figcaption>
 </figure>
 
 For example, consider how to create a transform stream class that consumes a
@@ -511,9 +513,9 @@ Debugging the Web Serial API in Chrome is easy with the internal page,
 `about://device-log` where you can see all serial device related events in one
 single place.
 
-<figure class="w-figure">
-  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
+<figure>
+  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547" %}
+  <figcaption>Internal page in Chrome for debugging the Web Serial API.</figcaption>
 </figure>
 
 ## Codelab {: #codelab }

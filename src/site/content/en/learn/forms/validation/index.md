@@ -4,7 +4,7 @@ description: >
   Learn how to validate your forms on the frontend.
 authors:
   - michaelscharnagl
-date: 2021-09-16
+date: 2021-11-03
 ---
 
 Browsers have built-in features for validation to check that users have entered data in the correct format.
@@ -41,7 +41,7 @@ You also need to specify which fields are mandatory.
 } %}
 
 Try to submit this form without entering any data.
-Do you see an error message attached to the input telling you that the field is required?
+Do you see an error message attached to the `<input>` telling you that the field is required?
 
 This happens because of the `required` attribute.
 
@@ -62,7 +62,7 @@ later in this module.
 {% endAside %}
 
 You already learned that you can use many more types, for example, `type="email"`.
-Let's have a look at a required email input.
+Let's have a look at a required email `<input>`.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -74,10 +74,10 @@ Try to submit this form without entering any data.
 Is there any difference from the demo before?
 Now insert your name in the email field and try to submit.
 You see a different error message. How is that possible?
-That's because the value you entered isn't a valid email address.
+You get a different message because the value you entered isn't a valid email address.
 
 The `required` attribute tells the browser that the field is mandatory.
-The browser also tests if the entered data matches the format of the type.
+The browser also tests if the entered data matches the format of the `type`.
 The email field shown in the example is only valid if it's not empty and if the entered data is a valid email address.
 
 ## Help the user enter the correct format
@@ -148,7 +148,7 @@ How would you change the `pattern` to also allow uppercase letters?
 
 {% DetailsSummary 'h3' %} Toggle answer {% endDetailsSummary %}
 
-The correct answer is `pattern="[A-z]{4,20}"`.
+The correct answer is `pattern="[a-zA-Z]{2,20}"`.
 
 {% endDetails %}
 
@@ -186,7 +186,8 @@ Wouldn't it be great to adapt the appearance of the element when this happens?
 {% Codepen {
   user: 'web-dot-dev',
   id: 'd6bb0f27d1faac3ffd3b594a81fad396',
-  height: 300
+  height: 300,
+  tab: 'css,result'
 } %}
 
 You can use the `:invalid` [pseudo-class](/learn/css/pseudo-classes/)
@@ -247,7 +248,7 @@ This example shows the message `Please enter your name.` if the input is invalid
   height: 300
 } %}
 
-Open the demo in different browsers,
+[Open the demo](https://codepen.io/web-dot-dev/pen/7ea31257d7cd8fc28792c7f5cdaba97b) in different browsers,
 you should see the same message everywhere.
 Now, try to remove the JavaScript and try again.
 You see the default error messages again.
@@ -263,10 +264,12 @@ and validate the input immediately when a user leaves a form field.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'b7ed22a0539f9beef4dc03380f51f224',
-  height: 300
+  height: 300,
+  tab: 'js,result'
 } %}
 
-Click the form field in the demo, enter "web" and click somewhere else on the page.
+Click the form field in the [demo](https://codepen.io/web-dot-dev/pen/b7ed22a0539f9beef4dc03380f51f224), 
+enter "web" and click somewhere else on the page.
 You see the native error message for `minlength` below the form field.
 
 Learn more about implementing

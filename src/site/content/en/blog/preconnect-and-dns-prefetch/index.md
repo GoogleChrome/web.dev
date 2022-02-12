@@ -56,14 +56,14 @@ chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/
 
 Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/PsP4qymb1gIp8Ip2sD9W.png", alt="A url of a script with the version name.", width="450", height="50" %}
 <figcaption>An example of a versioned URL.</figcaption>
 </figure>
 
 The other common case is loading images from an [image CDN](/image-cdns), where the exact path for an image depends on media queries or runtime feature checks on the user's browser.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/Xx4ai7tzSq12DJsQXaL1.png", alt="An image CDN URL with the parameters size=300x400 and quality=auto.", width="800", height="52" %}
 <figcaption>An example of an image CDN URL.</figcaption>
 </figure>

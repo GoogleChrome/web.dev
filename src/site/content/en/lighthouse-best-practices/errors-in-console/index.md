@@ -24,8 +24,8 @@ An `Error` message means there's a problem on your page that you need to resolve
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags all browser errors logged to the console:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Lighthouse audit showing browser errors in the console", width="800", height="247", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Lighthouse audit showing browser errors in the console", width="800", height="247" %}
 </figure>
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
@@ -46,8 +46,8 @@ to help you track down the cause of errors:
 
 For example, this screenshot shows a page with two errors:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="An example of errors in the Chrome DevTools Console", width="800", height="505", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KBP4iOO12CqHURgmjxaY.png", alt="An example of errors in the Chrome DevTools Console", width="800", height="505" %}
 </figure>
 
 In the example above, the first error comes from a web developer

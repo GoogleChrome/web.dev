@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Introduction to variable fonts on the web
 subhead: A new font specification that can significantly reduce font file sizes
 description: >
@@ -10,7 +11,7 @@ authors:
   - dcrossland
   - roeln
 date: 2018-02-19
-updated: 2020-08-17
+updated: 2022-01-19
 hero: image/admin/SHy7jOlEVPU1lsyfgvlG.jpg
 tags:
   - blog
@@ -46,9 +47,9 @@ family is the complete set of styles.
 Before variable fonts, each style was implemented as a separate font file. With
 variable fonts, all styles can be contained in a single file.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="A specimen composition and list of different styles of the Roboto family", width="800", height="600" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     Left: a specimen of the Roboto typeface family. Right: named styles within the family.
   </figcaption>
 </figure>
@@ -99,9 +100,9 @@ has three styles for its **Weight** axis. The Regular style is at the center,
 and there are two styles at the opposite ends of the axis, one lighter and
 the other heavier. Between these, you can choose from 900 instances:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="The letter 'A' shown in different weights", width="800", height="218" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     Above: Illustrated anatomy of the Weight axis for the typeface Roboto.
   </figcaption>
 </figure>
@@ -112,8 +113,8 @@ Width axis: the Regular is at the center of the axis, and two styles, narrower
 and wider, are at each end. These provide all the widths of the Regular style,
 and combine with the Weight axis to provide all the widths for every weight.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure data-size="full">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-dance.mp4" type="video/mp4">
   </video>
   <figcaption>
@@ -139,9 +140,9 @@ that typically define a Roman lowercase "n" do not match the contours used to
 define an Italic lowercase "n". Instead of interpolating one contour to the
 other, the **Italic** axis toggles from Roman to Italic contours.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="Example of the Weight Axes for the typeface Amstelvar", width="800", height="520" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Amstelvar's "n" contours in Italic (12 point, regular weight, normal width),
     and in Roman. Image supplied by David Berlow, type designer and typographer
     at Font Bureau.
@@ -182,7 +183,7 @@ hairline weight at 1 that goes all the up to 900.
 The five registered axes have 4-character lowercase tags that are used to
 set their values in CSS:
 
-<table class="responsive">
+<table>
 	<tbody>
 		<tr>
 			<th colspan="2">Axis names and CSS values</th>
@@ -247,7 +248,7 @@ illegible.
 
 ### Exciting expression
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rh7wLaBLauEF02D2dqMC.png", alt="Grass example by Mandy Michael", width="495", height="174" %}
 </figure>
 
@@ -261,16 +262,15 @@ You can view the working example and source code for the above sample
 
 ### Animation
 
-<figure class="w-figure">
+<figure>
   {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4",
-  class="w-screenshot",
-  controls=false,
+   controls=false,
   autoplay=true,
   loop=true,
   muted=true,
   playsinline=true
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Typeface Zycon, designed for animation by David Berlow, type designer and
     typographer at Font Bureau.
   </figcaption>
@@ -285,22 +285,22 @@ Praxis](https://www.axis-praxis.org/specimens/zycon).
 color icon font, based on Material Design Icons. Anicons is an experiment that
 combines two cutting edge font technologies: variable fonts and color fonts.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     A few examples of hover animations from Anicon's color icon font
   </figcaption>
 </figure>
 
 ### Finesse
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Amstelvar using little bits of XTRA in opposite directions so the words' widths are evened out
   </figcaption>
 </figure>
@@ -380,11 +380,11 @@ can set any value within the font's Width range:
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-weight.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Roboto Flex' Weight axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -402,11 +402,11 @@ Likewise, we can set `font-stretch` with keywords (`condensed`,
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-width.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Roboto Flex' Width axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -440,11 +440,11 @@ i, em, .italic {
 }
 ```
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-slant.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Roboto Flex' Slant axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -456,9 +456,9 @@ headline). Fonts can respond to these size changes by changing its letter shapes
 to better suit its size. A small size might be better off without fine details,
 while a large size might benefit from more details and thinner strokes.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="The letter 'a' shown at different optical sizes", width="800", height="147" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The letter 'a' in Roboto Flex at different pixel sizes, then scaled to be the same size,
     shows the differences in design.
     <a href="https://codepen.io/RoelN/pen/PoPvdeV">Try it yourself on Codepen</a>
@@ -497,11 +497,11 @@ you can avoid being forced to fiddle with changes to Weight axis that affects
 the overall width, and then changes to the Width axis that affect the overall
 weight.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/roboto-flex-grade.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Roboto Flex' Grade axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -679,24 +679,26 @@ variable fonts as progressive enhancement:
 
 ```css
 /* Set up Roboto for old browsers, only regular + bold */
-@font-face {
-  font-family: Roboto;
-  src: url('Roboto-Regular.woff2');
-  font-weight: normal;
-}
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: Roboto;
+    src: url('Roboto-Regular.woff2');
+    font-weight: normal;
+  }
 
-@font-face {
-  font-family: Roboto;
-  src: url('Roboto-Bold.woff2');
-  font-weight: bold;
-}
+  @font-face {
+    font-family: Roboto;
+    src: url('Roboto-Bold.woff2');
+    font-weight: bold;
+  }
 
-body {
-  font-family: Roboto;
-}
+  body {
+    font-family: Roboto;
+  }
 
-.super-bold {
-  font-weight: bold;
+  .super-bold {
+    font-weight: bold;
+  }
 }
 
 /* Set up Roboto for modern browsers, all weights */
@@ -718,6 +720,11 @@ body {
 For older browsers, text with the class `.super-bold` will get rendered in the
 normal bold, as that's the only bold font we have available. When variable fonts
 are supported, we can actually use the heaviest weight of 1000.
+
+The `@supports` rule is not supported by Internet Explorer, so this browser would
+not show any styling. If this is a problem, you could always use one of the
+[oldschool hacks](https://stackoverflow.com/a/20541859/6255000) to target relevant
+older browsers.
 
 If you are using the Google Fonts API, it will take care of loading the proper
 fonts for your visitor's browsers. Say you request the font Oswald in weight

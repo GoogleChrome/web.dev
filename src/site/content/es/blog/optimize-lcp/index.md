@@ -26,7 +26,7 @@ Uno de los factores que contribuyen a una mala experiencia de usuario es el tiem
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Los valores buenos de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Los valores buenos de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width="384", height="96" %}
 </picture>
 
 Las causas más comunes de una LCP deficiente son:
@@ -40,7 +40,7 @@ Las causas más comunes de una LCP deficiente son:
 
 Cuanto más tarda un navegador en recibir el contenido del servidor, más tiempo tarda en renderizar cualquier cosa en la pantalla. Un tiempo de respuesta del servidor más rápido mejora directamente cada métrica de carga de la página, incluido el LCP.
 
-Antes que nada, mejore cómo y dónde su servidor maneja su contenido. Utilice [**Time to First Byte: Tiempo hasta el primer byte**](/time-to-first-byte) (TTFB) para medir los tiempos de respuesta de su servidor. Puede mejorar su TTFB de varias formas:
+Antes que nada, mejore cómo y dónde su servidor maneja su contenido. Utilice [**Time to First Byte: Tiempo hasta el primer byte**](/ttfb/) (TTFB) para medir los tiempos de respuesta de su servidor. Puede mejorar su TTFB de varias formas:
 
 - <a>Optimizar su servidor</a>
 - Enrutar a los usuarios a una CDN cercana
@@ -68,7 +68,7 @@ Si su HTML es estática y no necesita cambiar en cada solicitud, el almacenamien
 Dependiendo de su cadena de herramientas, hay muchas maneras diferentes de aplicar el almacenamiento en el caché del servidor:
 
 - Configure proxies inversos ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) para publicar contenido en el caché o actuar como un servidor del caché cuando se instala frente a un servidor de aplicaciones
-- Configure y administre el comportamiento del caché de su proveedor en la nube ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching))
+- Configure y administre el comportamiento del caché de su proveedor en la nube ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/azure/architecture/best-practices/caching))
 - Utilice una CDN que proporcione servidores perimetrales para que su contenido se almacene en el caché y esté más cerca de sus usuarios
 
 ### Publicar las páginas HTML en cache-first
@@ -77,15 +77,15 @@ Cuando se instala, un [service worker](https://developer.mozilla.org/docs/Web/AP
 
 En la siguiente gráfica se muestra cómo se han reducido las distribuciones de LCP en un sitio utilizando este patrón:
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/admin/uB0Sm56R88MRF16voQ1k.png",
     alt="Las distribuciones de Largest Contentful Paint antes y después de utilizar el almacenamiento en el caché de HTML",
     width="800",
     height="495"
   %}
-  <figcaption class="w-figcaption">
-    La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker - 
+  <figcaption>
+    La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker -
     <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
   </figcaption>
 </figure>
@@ -122,7 +122,7 @@ Aunque ambas sugerencias funcionan de manera diferente, considere utilizar `dns-
 
 ### Utilizar intercambios firmados (SXG)
 
-[Los intercambios firmados (SXG)](https://web.dev/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
+[Los intercambios firmados (SXG)](/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
 
 ## Renderización que bloquea JavaScript y CSS {: #render-blocking-resources }
 
@@ -148,7 +148,7 @@ Si utiliza un agrupador de módulos o una herramienta de compilación, incluya u
 - Para Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - Para Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="Ejemplo de mejora de LCP: antes y después de minificar CSS", width="800", height="139" %}<figcaption class="w-figcaption"> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
+<figure>{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="Ejemplo de mejora de LCP: antes y después de minificar CSS", width="800", height="139" %}<figcaption> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la guía [Minify CSS](/minify-css/). {% endAside %}
 
@@ -168,7 +168,7 @@ Para optimizar:
 <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
 ```
 
-<figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico </figcaption></figure>
+<figure>{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico", width="800", height="139" %} <figcaption> Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico </figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la guía [Retrasar CSS no crítico](/defer-non-critical-css/). {% endAside %}
 
@@ -176,7 +176,7 @@ Para optimizar:
 
 Estilos integrados en el código de cualquier CSS de ruta crítica que se utilice para el contenido de la mitad superior de la página que lo incluya directamente en el `<head>.`
 
-<figure class="w-figure">{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="CSS crítico con estilos integrados en el código", width="800", height="325", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">CSS crítico con estilos integrados en el código</figcaption></figure>
+<figure>{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="CSS crítico con estilos integrados en el código", width="800", height="325" %} <figcaption>CSS crítico con estilos integrados en el código</figcaption></figure>
 
 La inserción de estilos importantes elimina la necesidad de realizar una solicitud de ida y vuelta para obtener CSS crítico. Retrasar el resto minimiza el tiempo de bloqueo de CSS.
 
@@ -185,7 +185,7 @@ Si no puede agregar manualmente estilos integrados en el código a su sitio, uti
 - [Critical](https://github.com/addyosmani/critical) , [CriticalCSS](https://github.com/filamentgroup/criticalCSS) y [Penthouse](https://github.com/pocketjoso/penthouse) son paquetes que extraen e incorporan estilos integrados en el código de CSS, en la parte superior de la página.
 - [Critters](https://github.com/GoogleChromeLabs/critters) es un complemento de webpack que integra estilos integrados en el código de CSS crítico y carga diferida de REST
 
-<figure class="w-figure">{% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="Ejemplo de como mejorar LCP antes y después de incorporar estilos integrados en el código de CSS crítico", width="800", height="175" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP antes y después de incorporar estilos integrados en el código de CSS crítico </figcaption></figure>
+<figure>{% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="Ejemplo de como mejorar LCP antes y después de incorporar estilos integrados en el código de CSS crítico", width="800", height="175" %} <figcaption> Ejemplo de como mejorar LCP antes y después de incorporar estilos integrados en el código de CSS crítico </figcaption></figure>
 
 {% Aside %} Eche un vistazo a la guía sobre [Cómo extraer CSS crítico](/extract-critical-css/) para obtener más información. {% endAside %}
 
@@ -195,9 +195,9 @@ Descargue y publique la cantidad mínima de JavaScript necesaria a los usuarios.
 
 Esto se puede lograr optimizando sus scripts de diferentes formas:
 
-- [Minificar y comprimir archivos JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Retrasar JavaScript no utilizado](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimice los polyfills no utilizados](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minificar y comprimir archivos JavaScript](/reduce-network-payloads-using-text-compression/)
+- [Retrasar JavaScript no utilizado](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimice los polyfills no utilizados](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %} La guía [Optimizar First Input Delay](/optimize-fid/) cubre todas las técnicas necesarias para reducir el tiempo de bloqueo de JavaScript con un poco más de detalle. {% endAside %}
 
@@ -223,7 +223,7 @@ El tiempo que se tarda en cargar estos elementos si se renderizan en la mitad su
 
 En muchos sitios, las imágenes son el elemento más grande a la vista cuando la página terminó de cargarse. En las imágenes hero los grandes carruseles o los banners son ejemplos comunes de esto.
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %} <figcaption>Imagen como elemento más grande de la página: <a href="https://design.google/">design.google</a></figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %} <figcaption>Imagen como elemento más grande de la página: <a href="https://design.google/">design.google</a></figcaption></figure>
 
 Mejorar el tiempo que se tarda en cargar y renderizar este tipo de imágenes acelerará directamente la LCP. Para hacer esto:
 
@@ -271,7 +271,7 @@ La compresión de sus recursos minimizará su tamaño de entrega, mejorando los 
 2. Si necesita modificar su servidor para comprimir los archivos, considere la posibilidad de utilizar Brotli en vez de gzip, ya que puede proporcionar mejores índices de compresión.
 3. Una vez que elija un algoritmo de compresión, comprima los activos con anticipación durante el proceso de creación en vez de hacerlo sobre la marcha, según lo solicite el navegador. Esto minimiza la sobrecarga del servidor y se evitan retrasos en las solicitudes, especialmente cuando se utilizan índices de compresión elevados.
 
-<figure class="w-figure">{% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="Ejemplo de como mejorar LCP: antes y después de utilizar la compresión Brotli", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de utilizar la compresión Brotli </figcaption></figure>
+<figure>{% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="Ejemplo de como mejorar LCP: antes y después de utilizar la compresión Brotli", width="800", height="139" %} <figcaption> Ejemplo de como mejorar LCP: antes y después de utilizar la compresión Brotli </figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la guía [Minificar y comprimir cargas útiles de la red](/reduce-network-payloads-using-text-compression/). {% endAside %}
 
@@ -346,7 +346,7 @@ La renderización previa es una técnica independiente que es menos compleja que
 
 Con la renderización previa, la TTI sigue teniendo un impacto negativo, pero los tiempos de respuesta del servidor no se ven tan afectados como lo harían con una solución de la renderización del lado del servidor que renderiza dinámicamente cada página solo después de que se solicita.
 
-<figure class="w-figure">{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa </figcaption></figure>
+<figure>{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa", width="800", height="139" %} <figcaption> Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa </figcaption></figure>
 
 {% Aside %} Para profundizar en las diferentes arquitecturas de renderización de servidores, eche un vistazo a la [Renderización en la web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
 

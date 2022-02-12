@@ -35,9 +35,9 @@ need. Where images are concerned, "non-critical" is often synonymous with
 improvement, you may have seen some guidance in this realm in the form of the
 [Defer offscreen images audit](/offscreen-images/):
 
-<figure class="w-figure">
-  {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="A screenshot of the Defer offscreen images audit in Lighthouse.", width="800", height="102", class="w-screenshot" %}
-  <figcaption class="w-figcaption">One of Lighthouse's performance audits is to
+<figure>
+  {% Img src="image/admin/63NnMISWUUWD3mvAliwe.png", alt="A screenshot of the Defer offscreen images audit in Lighthouse.", width="800", height="102" %}
+  <figcaption>One of Lighthouse's performance audits is to
 identify off screen images, which are candidates for lazy-loading.</figcaption>
 </figure>
 
@@ -53,9 +53,9 @@ An example of image lazy-loading can be found on the popular publishing platform
 page load, and replaces them with lazily-loaded images as they're scrolled into
 the viewport.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/p5ahQ67QtZ20bgto7Kpy.jpg", alt="A screenshot of the website Medium in the browsing, demonstrating lazy-loading in action. The blurry placeholder is on the left, and the loaded resource is on the right.", width="800", height="493" %}
-  <figcaption class="w-figcaption">An example of image lazy-loading in action. A
+  <figcaption>An example of image lazy-loading in action. A
 placeholder image is loaded at page load (left), and when scrolled into the
 viewport, the final image loads at the time of need.</figcaption>
 </figure>

@@ -18,8 +18,8 @@ icon, it ensures that the icon takes up all of the space that Android provides f
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that do not have maskable icon support:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="The maskable icon audit in the Lighthouse Report UI.", width="800", height="110", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="The maskable icon audit in the Lighthouse Report UI.", width="800", height="110" %}
 </figure>
 
 In order to pass the audit:

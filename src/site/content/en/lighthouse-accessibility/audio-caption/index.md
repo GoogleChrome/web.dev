@@ -10,7 +10,7 @@ web_lighthouse:
   - audio-caption
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated.{% endBanner %}
+{% Aside 'caution' %}This audit has been deprecated.{% endAside %}
 
 Captions make audio elements usable for deaf or hearing-impaired users,
 providing critical information such as who is talking, what they're saying,
@@ -25,8 +25,8 @@ Lighthouse flags `<audio>` elements that are missing `<track>` elements.
 But no matter what, it seems to pass,
 even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets)
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing Audio element missing captions">
+<figure>
+  <img src="" alt="Lighthouse audit showing Audio element missing captions">
 </figure>
 -->
 

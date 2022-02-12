@@ -21,7 +21,7 @@ This guide explains how to achieve that with `<link rel=prefetch>`, a [resource 
 
 ## Improve navigations with `rel=prefetch`
 
-Adding `<link rel=prefetch>` to a web page tells the browser to download entire pages, or some of the resources (like scripts or CSS files), that the user might need in the future. This can improve metrics like [First Contentful Paint](/first-contentful-paint) and [Time to Interactive](/interactive/) and can often make subsequent navigations appear to load instantly.
+Adding `<link rel=prefetch>` to a web page tells the browser to download entire pages, or some of the resources (like scripts or CSS files), that the user might need in the future. This can improve metrics like [First Contentful Paint](/fcp/) and [Time to Interactive](/tti/) and can often make subsequent navigations appear to load instantly.
 
 ```html
 <link rel="prefetch" href="/articles/" as="document">

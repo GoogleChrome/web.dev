@@ -24,8 +24,8 @@ for updates.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't apply a theme to the address bar:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse audit showing address bar isn't themed to the page's colors", width="800", height="98", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse audit showing address bar isn't themed to the page's colors", width="800", height="98" %}
 </figure>
 
 The audit fails if Lighthouse doesn't find a `theme-color` meta tag in the page's

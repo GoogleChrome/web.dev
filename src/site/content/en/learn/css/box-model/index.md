@@ -36,7 +36,7 @@ The box model is a core foundation of CSS and understanding how it works,
 how it is affected by other aspects of CSS and importantly,
 how you can control it will help you to write more predictable CSS.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRemxN',
@@ -63,12 +63,12 @@ using **intrinsic sizing**.
 
 Let's quickly look at the difference, using a demo to help us.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpoMBL'
 } %}
-  <figcaption class="w-figcaption">Notice that when the box is using extrinsic sizing,
+  <figcaption>Notice that when the box is using extrinsic sizing,
   there's a limit of how much content you can add before it overflows out of the box's bounds.
   This makes the word, "awesome", overflow.</figcaption>
 </figure>
@@ -88,7 +88,7 @@ This allows the box to fit around "CSS is awesome", perfectly.
 
 Let's look at something more complex to see the impact of different sizing on real content:
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvgwOJV',
@@ -132,14 +132,14 @@ intrinsic sizing provides the most flexibility, most of the time.
 
 Boxes are made up of distinct box model areas that all do a specific job.
 
-<figure class='w-figure'>
+<figure>
 {% Img
   src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg",
   alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box",
   width="800",
   height="547"
 %}
-  <figcaption class="w-figcaption">The four main areas of the box model: content box, padding box, border box and
+  <figcaption>The four main areas of the box model: content box, padding box, border box and
   margin box.</figcaption>
 </figure>
 
@@ -155,7 +155,7 @@ it creates.
 If our box has overflow rules set, such as `overflow: auto` or `overflow: scroll`,
 the scrollbars will occupy this space too.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BaReoEV'
@@ -177,7 +177,7 @@ so they don't affect the size of our box.
 You could have an `outline-width` of `200px` on our box and everything inside and including the
 border box would be exactly the same size.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWprGea'
@@ -189,7 +189,7 @@ border box would be exactly the same size.
 The box model is complex to understand,
 so let's recap what you've learned with an analogy.
 
-<figure class='w-figure'>
+<figure>
 {% Img
   src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg",
   alt="Three photo frames",
@@ -222,8 +222,8 @@ Go ahead and try this in your own browser:
 1. [Select an element](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 1. Show the box model debugger
 
-<figure class='w-figure'>
-{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}
+<figure>
+{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}
 </figure>
 
 ## Controlling the box model
@@ -288,7 +288,7 @@ Check out how this works in the following interactive demo.
 Notice that when you toggle the `box-sizing` value
 it shows—via a blue background—which CSS is being applied _inside_ our box.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'oNBvVpM',

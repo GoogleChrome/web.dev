@@ -27,9 +27,9 @@ performance problems on the web today. [EStimator.dev](http://estimator.dev/) is
 a simple web-based tool that calculates the size and performance improvement a
 site could achieve by delivering modern JavaScript syntax.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure>
   {% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript.", width="800", height="785" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     EStimator.dev
   </figcaption>
 </figure>
@@ -245,12 +245,12 @@ the modern and legacy outputs. Finally, polyfills needed by the generated
 legacy bundles are extracted into a dedicated script so they are never
 duplicated or unnecessarily loaded in newer browsers.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-publish-modern-javascript/transpile-before-after.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Comparison: transpiling source modules twice versus transpiling generated bundles.
   </figcaption>
 </figure>

@@ -78,7 +78,7 @@ function Aside(content, type = 'note') {
 
       case 'warning':
         utilities.icon = 'color-state-warn-text';
-        utilities.main = 'bg-state-warn-bg color-core-text';
+        utilities.main = 'bg-state-warn-bg color-state-warn-text';
         icon = 'warning.svg';
         title = i18n(`i18n.common.${type}`, locale);
         break;
@@ -101,6 +101,12 @@ function Aside(content, type = 'note') {
         utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
         break;
 
+      case 'important':
+        icon = 'lightbulb.svg';
+        title = i18n(`i18n.common.important`, locale);
+        utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
+        break;
+
       case 'key-term':
         icon = 'highlighter.svg';
         title = i18n(`i18n.common.key_term`, locale);
@@ -118,10 +124,12 @@ function Aside(content, type = 'note') {
 ${
   title.length
     ? `<p class="cluster ${utilities.title}">
-${getIcon()}<strong>${title}</strong></p>`
+<span class="aside__icon box-block ${utilities.icon}">${getIcon()}</span>
+<strong>${title}</strong></p>`
     : ''
 }
 <div class="${utilities.body} flow">
+
 ${content}
 </div></aside>`;
   }

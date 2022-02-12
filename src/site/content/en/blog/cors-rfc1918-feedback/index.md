@@ -106,9 +106,9 @@ prefix (`fe80::/10`) defined in section 2.5.6 of
 **A public network**
 All others.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/kYpJXAxP6a3hphO4uzZX.png", alt="Relationship between public, private, local networks in CORS-RFC1918", width="800", height="512" %}
-  <figcaption class="w-figcaption">Relationship between public, private, local networks in CORS-RFC1918.</figcaption>
+  <figcaption>Relationship between public, private, local networks in CORS-RFC1918.</figcaption>
 </figure>
 
 ## Chrome's plans to enable CORS-RFC1918
@@ -126,17 +126,17 @@ will be blocked.
 Starting from Chrome 88, CORS-RFC1918 errors will be reported as CORS policy
 errors in the console.
 
-<figure class="w-figure">
-  {% Img src="image/admin/enzkNhWMHMkSla8q35OB.png", alt="CORS-RFC1918 errors will be reported as CORS policy errors in the console.", width="800", height="377", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">CORS-RFC1918 errors will be reported as CORS policy errors in the <b>Console</b>.</figcaption>
+<figure>
+  {% Img src="image/admin/enzkNhWMHMkSla8q35OB.png", alt="CORS-RFC1918 errors will be reported as CORS policy errors in the console.", width="800", height="377" %}
+  <figcaption>CORS-RFC1918 errors will be reported as CORS policy errors in the <b>Console</b>.</figcaption>
 </figure>
 
 In the **Network** panel of Chrome DevTools you can enable the **Blocked Requests**
 checkbox to focus in on blocked requests:
 
-<figure class="w-figure">
-  {% Img src="image/admin/UM8ynEAc5uawNBdtHizX.png", alt="CORS-RFC1918 errors will also be reported as CORS error errors in the Network panel.", width="800", height="406", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">CORS-RFC1918 errors will also be reported as CORS error errors in the <b>Network</b> panel.</figcaption>
+<figure>
+  {% Img src="image/admin/UM8ynEAc5uawNBdtHizX.png", alt="CORS-RFC1918 errors will also be reported as CORS error errors in the Network panel.", width="800", height="406" %}
+  <figcaption>CORS-RFC1918 errors will also be reported as CORS error errors in the <b>Network</b> panel.</figcaption>
 </figure>
 
 In Chrome 87, CORS-RFC1918 errors are only reported in the DevTools Console as

@@ -140,9 +140,9 @@ when inspected with Chrome DevTools (393px / 750rpx \* 200rpx ≈ 104px). In And
 is called
 [density-independent pixel](https://developer.android.com/training/multiscreen/screendensities#TaskUseDP).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/n26ptkMoSfiTDanfFh5F.png", alt="Inspecting a view with Chrome DevTools whose responsive pixel padding was specified with `200rpx` shows that it is actually `104px` on a Pixel 3a device.", width="800", height="385" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Inspecting the actual padding on a Pixel 3a device with Chrome DevTools.
   </figcaption>
 </figure>

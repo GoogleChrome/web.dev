@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Blibli's PWA generates 10x more revenue per user than their previous mobile website"
 subhead: "How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session."
 authors:
@@ -25,18 +26,18 @@ With that insight, Blibli embarked on a journey to develop a better web
 experience and improve conversions. As a result, they were able to achieve some
 exceptional results:
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">42<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Reduction in bounce rates</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">42<sub>%</sub></p>
+    <p>Reduction in bounce rates</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">8<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">Better mCVR in installed PWA compared to browser mobile web</p>
+  <div class="stats__item">
+    <p class="stats__figure">8<sub>x</sub></p>
+    <p>Better mCVR in installed PWA compared to browser mobile web</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">2.5<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">More pages/sessions on installed PWA</p>
+  <div class="stats__item">
+    <p class="stats__figure">2.5<sub>x</sub></p>
+    <p>More pages/sessions on installed PWA</p>
   </div>
 </div>
 
@@ -62,7 +63,7 @@ mobile web platform. This included:
 +   A lite version of the home page for new users with a
     [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
     to cache critical assets for subsequent navigation.
-+   A [Progressive Web App](https://web.dev/progressive-web-apps/) (PWA) for
++   A [Progressive Web App](/progressive-web-apps/) (PWA) for
     returning users.
 
 ### User flow
@@ -70,9 +71,9 @@ mobile web platform. This included:
 New visitors are presented with a lightweight page which is three times faster
 when compared to the old home page.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/bfL1ZGsRjv3QcbACnRGu.png", alt="A lightweight page that is three times faster than the old.", width="800", height="1422", params={w: '400' } %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A lightweight page that is three times faster than the old.
   </figcaption>
 </figure>
@@ -80,12 +81,12 @@ when compared to the old home page.
 On subsequent pages, Blibli prompts users to add the PWA shortcut
 to their home screen.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" style="width:800px;">
+<figure>
+  <video controls autoplay loop muted style="width:800px;">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/save-to-home-screen.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/save-to-home-screen.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     The add to home screen prompt.
   </figcaption>
 </figure>
@@ -93,9 +94,9 @@ to their home screen.
 If users lose the network connection, they are presented with an elegant offline
 fallback page.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/biDb6f1owQWxmRNXUauu.png", alt="An elegent offline fallback page.", width="800", height="468" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     An elegent offline fallback page.
   </figcaption>
 </figure>
@@ -104,12 +105,12 @@ Blibli's lite page created a first impression that Blibli.com is fast and
 responsive. Moreover, the lite page streamlined the number of features by only
 focusing on those that deliver the value proposition of Blibli.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot"  style="width:800px;">
+<figure>
+  <video controls autoplay loop muted style="width:800px;">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/responsive-comparison.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/responsive-comparison.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Comparison of loading times before and after streamlining.
   </figcaption>
 </figure>
@@ -118,9 +119,9 @@ Blibli's PWA is installable, giving it an app-like look and feel. It is also
 fast and reliable which was achieved using service worker caching and graceful
 offline fallback.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ONCtI6MryOS5wCLPd3Ep.jpeg", alt="The offline fallback", width="800", height="1778" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The offline fallback.
   </figcaption>
 </figure>
@@ -134,7 +135,7 @@ them with a seamless app-like experience.
 ### Set performance budgets
 
 Blibli made performance budgeting a performance standard within the tech
-development and management, where the standard was reviewed on a regular basis. 
+development and management, where the standard was reviewed on a regular basis.
 It's set as the KPI of internal tech development, with the guidance
 of top management to ensure the best platform for all of our users.
 

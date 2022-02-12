@@ -54,7 +54,7 @@ because the scheme is different.
 Generally, embedding a cross-origin resource is permitted, while reading a
 cross-origin resource is blocked.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tbody>
     <tr>
@@ -105,9 +105,9 @@ cross-origin resource is blocked.
 
 ### How to prevent Clickjacking
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jFXSbDjBonhdGD65rCc1.png", alt="clickjacking", width="800", height="408" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Figure: Clickjacking mechanism illustrated in 3 separate layers (base site,
     iframed site, transparent button).
   </figcaption>

@@ -50,12 +50,12 @@ space is even better. For an entirely-within-the-browser 3D and AR Chrome
 Android supports [augmented
 reality](https://modelviewer.dev/examples/augmented-reality.html) using WebXR .
 
-<figure class="w-figure w-figure--inline-right">
-  <video controls muted class="w-screenshot">
+<figure>
+  <video controls muted>
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     A demonstration of the <code>&lt;model-viewer></code> AR capability.
   </figcaption>
 </figure>
@@ -124,9 +124,9 @@ the model. Annotations also work in AR.
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/annotations.html" frameborder="0" allowfullscreen></iframe> -->
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/CG1JQXZP9Gncr7qLz5JZ.png", alt="A space suit with an annotation.", width="800", height="839" %}
-  <figcaption class="w-figcaption">A space suit with an annotation.</figcaption>
+  <figcaption>A space suit with an annotation.</figcaption>
 </figure>
 
 See the [annotations documentation
@@ -159,9 +159,9 @@ recent improvements.
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe> -->
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/ZAID4J5TsJTcJs3qPNTp.png", alt="A 3D model of a well-worn  helmet.", width="800", height="809" %}
-  <figcaption class="w-figcaption">A 3D model of a well-worn  helmet.</figcaption>
+  <figcaption>A 3D model of a well-worn  helmet.</figcaption>
 </figure>
 
 ### Stability
@@ -174,7 +174,7 @@ priority, so breaking changes will be avoided until version 2.0 is released.
 `<model-viewer>` version 1.0 includes the most-requested capabilities, but the
 team is not done yet. More features will be added, as will improvements in
 performance, stability, documentation, and tooling. If you have suggestions,
-file an [issue in Github](https://github.com/google/model-viewer/issues); also,
+file an [issue in GitHub](https://github.com/google/model-viewer/issues); also,
 PRs are always welcome. You can stay connected by following [`<model-viewer>` on
 Twitter](https://twitter.com/modelviewer) and checking out the [community chat
 on Spectrum](https://spectrum.chat/model-viewer?tab=posts).

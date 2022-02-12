@@ -21,15 +21,15 @@ your page more mobile-friendly and accessible.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 with tap targets that are too small or too close together:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Lighthouse audit showing inappropriately sized tap targets", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Lighthouse audit showing inappropriately sized tap targets", width="800", height="206" %}
 </figure>
 
 Targets that are smaller than 48&nbsp;px by 48&nbsp;px or closer than 8&nbsp;px
 apart fail the audit. When the audit fails, Lighthouse lists the results in a
 table with three columns:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tbody>
       <tr>
@@ -57,9 +57,9 @@ Tap targets that are 48&nbsp;px by 48&nbsp;px never fail the audit. If you have
 elements that shouldn't _appear_ any bigger (for example, icons), try increasing
 the `padding` property:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="Appropriately-sized tap targets", width="800", height="419", class="w-screenshot w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ggUhPDcAaExFfcmm8kaF.jpg", alt="Appropriately-sized tap targets", width="800", height="419" %}
+  <figcaption>
     Use <code>padding</code> to make tap targets bigger without changing the appearance of an element.
   </figcaption>
 </figure>

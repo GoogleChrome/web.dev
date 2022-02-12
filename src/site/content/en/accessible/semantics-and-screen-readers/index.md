@@ -22,9 +22,9 @@ Before diving into semantics, it's helpful to understand another term:
 **affordances**. An affordance is any object that offers, or affords, its user
 the opportunity to perform an action. A classic example is the teapot:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/EXqR31Kq3mosH6jv6jiG.png", alt="", width="640", height="446" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A teapot's handle is a natural affordance.
   </figcaption>
 </figure>

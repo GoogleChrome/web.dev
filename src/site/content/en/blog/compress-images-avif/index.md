@@ -40,19 +40,19 @@ While the exact savings will depend on the content, encoding settings, and quali
 [others](https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4)
 have seen >50% savings vs. JPEG.
 
-<div class="w-columns">
-<figure class="w-figure">
+<div class="switcher">
+<figure>
   <a href="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/kVqh1xli2O6mqKF3fQNx.avif" target="_blank">
     <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/kVqh1xli2O6mqKF3fQNx.avif" width="1120" height="840" alt="The image using AVIF">
   </a>
-  <figcaption class="w-figcaption">
+  <figcaption>
   1120 x 840 AVIF at 18,769 bytes (click to enlarge)
 </figure>
-<figure class="w-figure">
+<figure>
   <a href="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" target="_blank">
     <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" width="1120" height="840" alt="The image using JPEG">
   </a>
-  <figcaption class="w-figcaption">
+  <figcaption>
   1120 x 840 JPEG at 20,036 bytes (click to enlarge)
   </figcaption>
 </figure>
@@ -89,13 +89,13 @@ These include:
 - 5x reduction in memory usage.
 - 6.5x reduction in CPU usage, as shown in the chart below.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/mJJfiNsC7Qgl98IJ1LNi.png",
   alt="",
   width="800",
   height="467" %}
 
-  <figcaption class="w-figcaption">Using speed=6, cq-level=18, for 8.1 MP images</figcaption>
+  <figcaption>Using speed=6, cq-level=18, for 8.1 MP images</figcaption>
 </figure>
 
 These changes massively reduce the cost of encoding AVIF—
@@ -241,7 +241,7 @@ avifenc uses the command-line structure:
 
 The basic parameters for avifenc used in this tutorial are:
 
-<table class="w-table">
+<table>
   <thead>
     <tr>
       <th>avifenc</th>
@@ -351,5 +351,5 @@ and optimizations and tooling integrations are actively being developed.
 If you have questions, comments, or feature requests,
 reach out on the
 [av1-discuss mailing list](https://groups.google.com/a/aomedia.org/g/av1-discuss),
-[AOM Github community](https://github.com/AOMediaCodec/community/wiki), and
+[AOM GitHub community](https://github.com/AOMediaCodec/community/wiki), and
 [AVIF wiki](https://github.com/AOMediaCodec/av1-avif/wiki).

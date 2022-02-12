@@ -96,9 +96,9 @@ scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   <img src="a.jpg" alt="">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     Large image.
   </figcaption>
 </figure>
@@ -111,9 +111,9 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<figure class="w-figure">
+<figure>
   <img src="image-small.png" alt="" width="400">
-  <figcaption class="w-figcaption">
+  <figcaption>
     Small image.
   </figcaption>
 </figure>
@@ -136,9 +136,9 @@ quam sem.
 
 ## Image, Inline
 
-<figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
-  <figcaption class="w-figcaption">
+<figure data-float="right">
+  <img src="image-inline.png" alt="" width="200">
+  <figcaption>
     Inline right, outlined image.
   </figcaption>
 </figure>
@@ -157,9 +157,9 @@ augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
 aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
-<figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
-  <figcaption class="w-figcaption">
+<figure data-float="left">
+  <img src="image-inline.png" alt="" width="200">
+  <figcaption>
     Inline left, outlined image.
   </figcaption>
 </figure>
@@ -178,9 +178,9 @@ augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
 aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
-  <figcaption class="w-figcaption">
+<figure>
+  <img src="image-screenshot.png" alt="">
+  <figcaption>
     Filled screenshot.
   </figcaption>
 </figure>
@@ -197,7 +197,7 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper scrollbar">
   <table>
     <thead>
       <tr>
@@ -271,9 +271,9 @@ quam sem.
   <li>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
-    <figcaption class="w-figcaption">
+  <figure>
+    <img src="image-screenshot.png" alt="">
+    <figcaption>
       Filled screenshot.
     </figcaption>
   </figure>
@@ -318,9 +318,9 @@ quam sem.
   <li>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
-    <figcaption class="w-figcaption">
+  <figure>
+    <img src="image-screenshot.png" alt="">
+    <figcaption>
       Filled screenshot.
     </figcaption>
   </figure>
@@ -486,18 +486,18 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">30<sub>%</sub></p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item">
+    <p class="stats__figure">13<sub>%</sub></p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item">
+    <p class="stats__figure">4<sub>x</sub></p>
+    <p>Faster load times</p>
   </div>
 </div>
 

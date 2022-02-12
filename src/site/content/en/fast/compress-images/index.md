@@ -99,7 +99,7 @@ This can be an important constraint for large images and devices which do not ha
 &mdash;for example, low-end mobile devices.
 {% endAside %}
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
 <table>
 <thead>
   <tr>
@@ -149,7 +149,7 @@ What if you reduce the palette to 256 colors?
 Then you would only need 8 bits in total for the RGB channels and immediately save two bytes per pixel&mdash;that's 50% compression savings over the original 4 bytes per pixel format!
 
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ssek7uXzhs67joEbp0P8.png", alt="Compression artifacts", width="612", height="266" %}
   <figcaption>Left to right (PNG): 32-bit (16M colors), 7-bit (128 colors), 5-bit (32 colors).</figcaption>
 </figure>

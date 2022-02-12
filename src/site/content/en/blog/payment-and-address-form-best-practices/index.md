@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-09
-updated: 2021-09-29
+updated: 2021-11-30
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: image/admin/dbYeeV2PCRZNY6RRvQd2.jpg
 thumbnail: image/admin/jy8z8lRuLmmnyytD5xwl.jpg
@@ -170,14 +170,14 @@ difficult and missing or invalid form data may not be visible on the user's scre
 attempt to submit a form.
 
 {% Aside 'caution' %}
-The default type for a button in a form is `submit`. If you want to add another button in a form 
-(for **Show password**, for example) add `type="button"`. Otherwise clicking or tapping on the 
-button will submit the form. 
+The default type for a button in a form is `submit`. If you want to add another button in a form
+(for **Show password**, for example) add `type="button"`. Otherwise clicking or tapping on the
+button will submit the form.
 
-Pressing the `Enter` key while any form field has focus simulates a click on the first `submit` 
-button in the form. If you include a button in your form before the **Submit** button, and don't 
-specify the type, that button will have the default type for buttons in a form (`submit`) and 
-receive the click event before the form is submitted. For an example of this, see our 
+Pressing the `Enter` key while any form field has focus simulates a click on the first `submit`
+button in the form. If you include a button in your form before the **Submit** button, and don't
+specify the type, that button will have the default type for buttons in a form (`submit`) and
+receive the click event before the form is submitted. For an example of this, see our
 [demo](https://enter-button.glitch.me/): fill in the form, then press `Enter`.
 {% endAside %}
 
@@ -192,11 +192,11 @@ to provide the right keyboard on mobile and enable basic built-in validation by 
 
 For example, use `type="email"` for email addresses and `type="tel"` for phone numbers.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of 
-  Android phones, showing a keyboard appropriate for entering an email address (using type=email) 
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of
+  Android phones, showing a keyboard appropriate for entering an email address (using type=email)
   and for entering a telephone number (with type=tel).", width="800", height="683" %}
-  <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
+  <figcaption>Keyboards appropriate for email and telephone.</figcaption>
 </figure>
 
 {: #inputmode-attribute}
@@ -253,9 +253,9 @@ By default, set the billing address to be the same as the delivery address. Redu
 providing a link to edit the billing address (or use [`summary` and `details` elements](https://simpl.info/details/))
 rather than displaying the billing address in a form.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Example checkout page showing link to change billing address.", width="800", height="250" %}
-  <figcaption class="w-figcaption">Add a link to review billing.</figcaption>
+  <figcaption>Add a link to review billing.</figcaption>
 </figure>
 
 Use appropriate autocomplete values for the billing address, just as you do for shipping address,
@@ -317,9 +317,9 @@ multiple comma-separated email addresses in a single input.
 On form submission, browsers automatically set focus on fields with problematic or missing required
 values. No JavaScript required!
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="500", height="483", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="500", height="483" %}
+  <figcaption>Basic built-in validation by the browser.</figcaption>
 </figure>
 
 Validate inline and provide feedback to the user as they enter data, rather than providing a list of
@@ -376,9 +376,9 @@ For an online store, the simplest way to reduce form friction is to make guest c
 Don't force users to create an account before making a purchase. Not allowing guest checkout is cited
 as a major reason for shopping cart abandonment.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Reasons for shopping cart abandonment during checkout.", width="800", height="503", class="w-screenshot" %}
-  <figcaption class="w-figcaption">From <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Reasons for shopping cart abandonment during checkout.", width="800", height="503" %}
+  <figcaption>From <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption>
 </figure>
 
 You can offer account sign-up after checkout.  At that point, you already have most of the data you
@@ -395,19 +395,19 @@ You can make your checkout process feel less complex by showing progress and mak
 needs to be done next. The video below shows how UK retailer [johnlewis.com](https://www.johnlewis.com)
 achieves this.
 
-<figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %}
-  <figcaption class="w-figcaption">Show checkout progress.</figcaption>
+<figure>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png", playsinline=true %}
+  <figcaption>Show checkout progress.</figcaption>
 </figure>
 
 You need to maintain momentum! For each step towards payment, use page headings and descriptive
 button values that make it clear what needs to be done now, and what checkout step is next.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Give form buttons meaningful names that show what's next.</figcaption>
+  <figcaption>Give form buttons meaningful names that show what's next.</figcaption>
 </figure>
 
 Use the `enterkeyhint` attribute on form inputs to set the mobile keyboard enter key label. For
@@ -415,9 +415,9 @@ example, use `enterkeyhint="previous"` and `enterkeyhint="next"` within a multi-
 `enterkeyhint="done"` for the final input in the form, and `enterkeyhint="search"` for a search
 input.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Two screenshots of an address form on Android showing how the enterkeyhint input attribute changes the enter key button icon.", width="800", height="684", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Enter key buttons on Android: 'next' and 'done'.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Two screenshots of an address form on Android showing how the enterkeyhint input attribute changes the enter key button icon.", width="800", height="684" %}
+  <figcaption>Enter key buttons on Android: 'next' and 'done'.</figcaption>
 </figure>
 
 The `enterkeyhint` attribute is [supported on Android and iOS](https://caniuse.com/mdn-html_global_attributes_enterkeyhint).
@@ -435,25 +435,25 @@ avoid interrupting progress towards conversion.
 Limit potential exit points by removing visual clutter and distractions such as product promotions.
 Many successful retailers even remove navigation and search from checkout.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Two screenshots on mobile showing progress through johnlewis.com checkout. Search, navigation and other distractions are removed.", width="800", height="683", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Search, navigation and other distractions removed for checkout.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Two screenshots on mobile showing progress through johnlewis.com checkout. Search, navigation and other distractions are removed.", width="800", height="683" %}
+  <figcaption>Search, navigation and other distractions removed for checkout.</figcaption>
 </figure>
 
 Keep the journey focused. This is not the time to tempt users to do something else!
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Screenshot of checkout page on mobile showing distracting promotion for FREE STICKERS.", width="350", height="735", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Screenshot of checkout page on mobile showing distracting promotion for FREE STICKERS.", width="350", height="735" %}
+  <figcaption>Don't distract customers from completing their purchase.</figcaption>
 </figure>
 
 For returning users you can simplify the checkout flow even more, by hiding data they don't need to
 see. For example: display the delivery address in plain text (not in a form) and allow users to
 change it via a link.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Screenshot of 'Review order' section of checkout page, showing text in plain text, with links to change delivery address, payment method and billing address, which are not displayed.", width="450", height="219", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Screenshot of 'Review order' section of checkout page, showing text in plain text, with links to change delivery address, payment method and billing address, which are not displayed.", width="450", height="219" %}
+  <figcaption>Hide data customers don't need to see.</figcaption>
 </figure>
 
 ## Make it easy to enter name and address {: #address-forms}
@@ -483,7 +483,7 @@ Use `name` for a full name:
 <input autocomplete="name" ...>
 ```
 
-If you really do have a good reason to split out name parts, make sure to to use appropriate
+If you really do have a good reason to split out name parts, make sure to use appropriate
 autocomplete values:
 
 * `honorific-prefix`
@@ -519,11 +519,11 @@ Unicode in regular expressions is well supported by modern browsers.
 {% endCompare %}
 
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Unicode letter matching compared to Latin-only letter matching.</figcaption>
+  <figcaption>Unicode letter matching compared to Latin-only letter matching.</figcaption>
 </figure>
 
 {% Aside %}
@@ -635,22 +635,22 @@ for some use cases, but you should be aware of the potential downsides.
 Postal code address suggestion doesn't work for all countries—and in some regions, post codes can
 include a large number of potential addresses.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">ZIP or postal codes may include a lot of addresses!</figcaption>
+  <figcaption>ZIP or postal codes may include a lot of addresses!</figcaption>
 </figure>
 
 It's difficult for users to select from a long list of addresses—especially on mobile if they're
 rushed or stressed. It can be easier and less error prone to let users take advantage of autofill,
 and enter their complete address filled with a single tap or click.
 
-<figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+<figure>
+   <video controls autoplay loop muted>
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">A single name input enables one-tap (one-click) address entry.</figcaption>
+  <figcaption>A single name input enables one-tap (one-click) address entry.</figcaption>
 </figure>
 
 
@@ -687,9 +687,9 @@ payment card details are available from autocomplete but a user is forced to fin
 payment card to look up an expiry date because autofill didn't work for a custom element, you're
 likely to lose a sale. Consider using standard HTML elements instead, and style them accordingly.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Screenshot of payment form showing custom elements for card expiry date that interrupt autofill.", width="800", height="916" %}
-  <figcaption class="w-figcaption">Autocomplete filled all the fields—except the expiry date!</figcaption>
+  <figcaption>Autocomplete filled all the fields—except the expiry date!</figcaption>
 </figure>
 
 ### Use a single input for payment card and phone numbers {: #single-number-input}
@@ -698,9 +698,9 @@ For payment card and phone numbers use a single input: don't split the number in
 it easier for users to enter data, makes validation simpler, and enables browsers to autofill.
 Consider doing the same for other numeric data such as PIN and bank codes.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Screenshot of payment form showing a credit card field split into four input elements.", width="800", height="833" %}
-  <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
+  <figcaption>Don't use multiple inputs for a credit card number.</figcaption>
 </figure>
 
 ### Validate carefully {: #validate}
@@ -739,9 +739,9 @@ It's particularly important to test address and payment forms on the platforms m
 your users, since form element functionality and appearance may vary, and differences in viewport
 size can lead to problematic positioning. BrowserStack enables [free testing for open source projects](https://www.browserstack.com/open-source) on a range of devices and browsers.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Screenshots of a payment form, payment-form.glitch.me, on iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7", width="800", height="707" %}
-  <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding for
+  <figcaption>The same page on iPhone 7 and iPhone 11.<br>Reduce padding for
     smaller mobile viewports to ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
 </figure>
 

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP)
 subhead: How to deploy a CSP based on script nonces or hashes as a defense-in-depth against cross-site scripting.
 description: |
@@ -74,7 +75,7 @@ This makes allowlist CSPs generally ineffective at preventing attackers from
 exploiting XSS. That's why it's recommended to use a strict CSP based on
 cryptographic nonces or hashes, which avoids the pitfalls outlined above.
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Allowlist CSP' %}
 - Doesn't effectively protect your site. ❌
 - Must be highly customized. 😓
@@ -166,7 +167,7 @@ against XSS.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png",
 alt="Lighthouse report warning that no CSP is found in enforcement mode.",
-width="730", height="78", class="w-screenshot" %}
+width="730", height="78" %}
 
 ### Step 1: Decide if you need a nonce- or hash-based CSP
 
@@ -183,7 +184,7 @@ There are two types of strict CSPs, nonce- and hash-based. Here's how they work:
 
 Criteria for choosing a strict CSP approach:
 
-<div class="w-table-wrapper">
+<div>
   <table>
       <caption>Criteria for choosing a strict CSP approach</caption>
       <thead>
@@ -446,8 +447,7 @@ If you enabled CSP in the previous step, you'll be able to see CSP violations in
 the console every time CSP blocks an incompatible pattern.
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg",
-alt="CSP violation reports in the Chrome developer console.",
-class="w-screenshot", width="800", height="235" %}
+alt="CSP violation reports in the Chrome developer console.", width="800", height="235" %}
 
 In most cases, the fix is straightforward:
 
@@ -560,14 +560,14 @@ local development environment, you can proceed with deploying your CSP to your
 (staging, then) production environment:
 1. (Optional) Deploy your CSP in report-only mode using the
    `Content-Security-Policy-Report-Only` header. Learn more about the [Reporting
-   API](https://developers.google.com/web/updates/2018/09/reportingapi).
+   API](/reporting-api).
    Report-only mode is handy to test a potentially breaking change like a new
    CSP in production, before actually enforcing CSP restrictions. In report-only
    mode, your CSP does not affect the behavior of your application (nothing will
    actually break). But the browser will still generate console errors and
    violation reports when patterns incompatible with CSP are encountered (so you
    can see what would have broken for your end-users).
-1. Once you're confident that your CSP won't induce breakage for your end-users,
+2. Once you're confident that your CSP won't induce breakage for your end-users,
    deploy your CSP using the `Content-Security-Policy` response header. **Only
    once you've completed this step, will CSP begin to protect your application
    from XSS**. Setting your CSP via a HTTP header server-side is more secure

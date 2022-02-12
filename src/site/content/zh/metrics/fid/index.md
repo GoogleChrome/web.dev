@@ -31,7 +31,7 @@ FID 测量从用户第一次与页面交互（例如当他们单击链接、点�
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="好的 fid 值为 2.5 秒，差的值大于 4.0 秒，中间的任何值都需要改进", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="好的 fid 值为 2.5 秒，差的值大于 4.0 秒，中间的任何值都需要改进", width="400", height="300" %}
 </picture>
 
 ### 怎样算是良好的 FID 分数？

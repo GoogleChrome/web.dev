@@ -74,12 +74,12 @@ install the app as soon as they want to download their first video. This is a
 good point in time to prompt for install because the user has expressed a clear intention to
 use the app offline.
 
-<figure class="w-figure">
-  <div class="w-columns">
+<figure>
+  <div class="switcher">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sj4J2JMlYdgf4BrhaRsT.jpg", alt="Custom invitation to install.", width="800", height="1595" %}
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FT4Xt5xpjCp57C8BwLtn.jpg", alt="Custom install prompt being triggered when downloading a video for offline consumption.", width="800", height="1595" %}
   </div>
-  <figcaption class="w-figcaption">Custom install prompt being triggered when downloading a video for offline consumption.</figcaption>
+  <figcaption>Custom install prompt being triggered when downloading a video for offline consumption.</figcaption>
 </figure>
 
 ## Building an offline page to access downloads
@@ -89,12 +89,12 @@ page that is not available in offline mode, a special page is shown instead that
 lists all videos that have previously been downloaded or (in case no content has
 been downloaded yet) a short explanation of the offline feature.
 
-<figure class="w-figure">
-  <div class="w-columns">
+<figure>
+  <div class="switcher">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FcWDhtuSSpHg04krFqUD.png", alt="Offline page showing all content available for watching offline.", width="800", height="1418" %}
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PUvFyyaVfhh7PFyXDwCo.png", alt="Offline page showing that no content is available for watching offline.", width="800", height="1423" %}
   </div>
-  <figcaption class="w-figcaption">Offline page showing all content available for watching offline.</figcaption>
+  <figcaption>Offline page showing all content available for watching offline.</figcaption>
 </figure>
 
 ## Using frame loading rate for adaptive features

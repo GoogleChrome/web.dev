@@ -1,0 +1,19 @@
+{#
+  Displays many authors.
+  @param {boolean} stacked Flag if authors should be stacked
+  @param {boolean} showDescription Flag if authors description should be shown
+#}
+{% macro authorsMacro(stacked=false, showDescription=false) %}
+{% set conatinerClass = "flow" if stacked else "cluster flow-space-size-2" %}
+<div class="{{conatinerClass}}">
+  {%- for author in authors -%}
+    {% Author {
+      id: author,
+      author: collections.authors[author],
+      showSocialMedia: true,
+      showDescription: showDescription,
+      locale: locale
+    } %}
+  {%- endfor -%}
+</div>
+{% endmacro %}

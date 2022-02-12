@@ -52,9 +52,9 @@ In this section we'll explore different ways of maximizing the installation rate
 
 Once a PWA meets the [installability criteria](/install-criteria/), most browsers will show an indication that the PWA is installable. For example, Desktop Chrome will show an installable icon in the address bar, and on mobile, it will show a mini-infobar:
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="Standard Chrome install prompt called mini-infobar", width="800", height="417" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The mini-infobar
   </figcaption>
 </figure>
@@ -95,12 +95,12 @@ To address this, some companies are leveraging their PWA to provide a lightweigh
 
 Oyo, one of India's largest hospitality companies, built a [Lite version of their app](/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     OYO Lite in action.
   </figcaption>
 </figure>

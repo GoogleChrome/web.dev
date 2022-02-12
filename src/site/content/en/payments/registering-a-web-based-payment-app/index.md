@@ -150,7 +150,7 @@ contains details about the instrument.
   );
 ```
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -270,9 +270,9 @@ easier local development. Open DevTools on the merchant context and go to the
 from other domains" and click the "Record" button to start capturing events sent
 to the service worker that handles payments.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FixX1Ld3y0Vgb4ZcSBGc.png", alt="A screenshot of Payment Handler event logging.", width="800", height="585", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FixX1Ld3y0Vgb4ZcSBGc.png", alt="A screenshot of Payment Handler event logging.", width="800", height="585" %}
+  <figcaption>
     Payment Handler event logging.
   </figcaption>
 </figure>

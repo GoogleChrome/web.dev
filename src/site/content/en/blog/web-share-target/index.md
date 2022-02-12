@@ -36,9 +36,9 @@ files, links, or text using the Web Share API. See
 [Web Share API](/web-share/) for details.
 {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     System-level share target picker with an installed PWA as an option.
   </figcaption>
 </figure>
@@ -241,9 +241,9 @@ self.addEventListener('fetch', event => {
 
 ### Verifying shared content
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="280" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     The sample sharing target app.
   </figcaption>
 </figure>
@@ -255,8 +255,6 @@ For example, on Android, the [`url` field will be
 empty](https://bugs.chromium.org/p/chromium/issues/detail?id=789379) because
 it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
-
-<div class="w-clearfix"></div>
 
 ## Browser support
 

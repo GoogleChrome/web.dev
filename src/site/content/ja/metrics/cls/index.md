@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %}**2021 年 6 月 1 日:** CLS の実装が変更されました。変更の理由に関する詳細については、「[進化を続ける CLS 指標](/evolving-cls)」を参照してください。{% endBanner %}
+{% Aside 'caution' %}**2021 年 6 月 1 日:** CLS の実装が変更されました。変更の理由に関する詳細については、「[進化を続ける CLS 指標](/evolving-cls)」を参照してください。{% endAside %}
 
 {% Aside 'key-term' %}Cumulative Layout Shift (累積レイアウト シフト数、CLS) は、[視覚的な安定性](/user-centric-performance-metrics/#types-of-metrics)を測定するための重要なユーザーを中心とした指標です。これは、ユーザーが予期しないレイアウト シフトに遭遇する頻度の数値化に役立つ指標であり、CLS が低ければ低いほど、そのページが[快適](/user-centric-performance-metrics/#questions)であることが保証されます。{% endAside %}
 
@@ -21,12 +21,12 @@ tags:
 
 ほとんどの場合、こういったユーザー体験は単に煩わしいだけなのですが、中には実害をもたらしてしまう場合もあります。
 
-<figure class="w-figure">
-  <video autoplay controls loop muted class="w-screenshot" poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
+<figure>
+  <video autoplay controls loop muted poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">レイアウトの不安定さがユーザーにネガティブな影響を及ぼす状況について説明しているスクリーンキャスト。</figcaption></figure>
+  <figcaption>レイアウトの不安定さがユーザーにネガティブな影響を及ぼす状況について説明しているスクリーンキャスト。</figcaption></figure>
 
 ページ コンテンツの予期しない移動は、一般的にリソースが非同期的に読み込まれたり、ページ上の既存のコンテンツの上側に DOM 要素が動的に追加されたりする場合に発生します。原因としては、サイズが明示されていない画像や動画、フォールバックとして用意されているフォントよりも大きく、または小さくレンダリングされるフォント、動的にサイズが変更されるサードパーティ製の広告やウィジェットなどが考えられます。
 
@@ -44,12 +44,12 @@ CLS は、ページの表示中に発生した[予期しない](/cls/#expected-v
 
 そして最大バーストとは、そのウィンドウで発生したすべてのレイアウト シフトを累積したスコアが最大となるセッション ウィンドウのことを指します。
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot" width="658" height="452">
+<figure>
+  <video controls autoplay loop muted width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">セッション ウィンドウの例。青いバーは、個々のレイアウト シフトのスコアを表しています。</figcaption></figure>
+  <figcaption>セッション ウィンドウの例。青いバーは、個々のレイアウト シフトのスコアを表しています。</figcaption></figure>
 
 {% Aside 'caution' %}以前の CLS は、ページの表示期間全体で発生した*個々のレイアウト シフト スコアすべて*の合計値を測定していました。オリジナルの実装に対応可能なベンチマーク機能を現在も提供しているツールを確認するには、「[進化を続ける Web ツールでの Cumulative Layout Shift](/cls-web-tooling)」を参照してください。{% endAside %}
 
@@ -59,7 +59,7 @@ CLS は、ページの表示中に発生した[予期しない](/cls/#expected-v
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要", width="400", height="300" %}
 </picture>
 
 {% Aside %}この推奨事項の根拠となる調査および方法論に関する詳細については、「[Core Web Vitals 指標のしきい値の定義](/defining-core-web-vitals-thresholds/)」を参照してください。{% endAside %}

@@ -16,8 +16,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays LCP in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/NcBzUBQFmSzhZaxshxLS.png", alt="A screenshot of the Lighthouse Largest Contentful Paint audit", width="800", height="592", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/NcBzUBQFmSzhZaxshxLS.png", alt="A screenshot of the Lighthouse Largest Contentful Paint audit", width="800", height="592" %}
 </figure>
 
 ## What LCP measures
@@ -34,7 +34,7 @@ Browser support for LCP launched in [Chrome 77][launch]. Lighthouse extracts LCP
 
 The table below shows how to interpret your LCP score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -68,7 +68,7 @@ See [How to improve Largest Contentful Paint on your site][improve].
 ## Resources
 
 - [Source code for **Largest Contentful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/largest-contentful-paint.js)
-- [Largest Contentful Paint](/largest-contentful-paint/)
+- [Largest Contentful Paint](/lcp/)
 - [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)
 - [New in Chrome 77: Largest Contentful Paint][launch]
 

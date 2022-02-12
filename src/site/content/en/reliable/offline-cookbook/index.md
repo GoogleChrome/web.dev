@@ -23,9 +23,9 @@ them separately. First up, caching, when should it be done?
 
 ### On install—as a dependency {: #on-install-as-dependency }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CLdlCeKfoOPfpYDx1s0p.png", alt="On install - as a dependency.", width="800", height="498" %}
-  <figcaption class="w-figcaption">On install - as a dependency.</figcaption>
+  <figcaption>On install - as a dependency.</figcaption>
 </figure>
 
 Service Worker gives you an `install` event. You can use this to get stuff ready, stuff that must be
@@ -64,9 +64,9 @@ On [trained-to-thrill][ttt] I use this to
 
 ### On install—not as a dependency {: #on-install-not }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/S5L9hw95GKGWS1l0ImGl.png", alt="On install - not as a dependency.", width="800", height="500" %}
-  <figcaption class="w-figcaption">On install - not as a dependency.</figcaption>
+  <figcaption>On install - not as a dependency.</figcaption>
 </figure>
 
 This is similar to above, but won't delay install completing and won't cause installation to fail if caching
@@ -105,9 +105,9 @@ supported on Chromium forks.
 
 ### On activate {: #on-activate }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUH91vKtMTLXNgpHmID2.png", alt="On activate.", width="800", height="500" %}
-  <figcaption class="w-figcaption">On activate.</figcaption>
+  <figcaption>On activate.</figcaption>
 </figure>
 
 **Ideal for:** clean-up and migration.
@@ -147,9 +147,9 @@ On [trained-to-thrill][ttt] I use this to
 
 ### On user interaction {: #on-user-interaction }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/q5uUUHvxb3Is8N5Toxja.png", alt="On user interaction.", width="800", height="222" %}
-  <figcaption class="w-figcaption">On user interaction.</figcaption>
+  <figcaption>On user interaction.</figcaption>
 </figure>
 
 **Ideal for:** when the whole site can't be taken offline, and you chose to allow the user to select
@@ -183,9 +183,9 @@ need to involve the service worker to add things to the cache.
 
 ### On network response {: #on-network-response }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/86mv3BK2kjWi8Dm1KWpr.png", alt="On network response.", width="800", height="390" %}
-  <figcaption class="w-figcaption">On network response.</figcaption>
+  <figcaption>On network response.</figcaption>
 </figure>
 
 **Ideal for:** frequently updating resources such as a user's inbox, or article contents. Also
@@ -225,9 +225,9 @@ On [trained-to-thrill][ttt] I use this to
 
 ### Stale-while-revalidate {: #stale-while-revalidate }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6GyjQkG2pI5tV1xirXSX.png", alt="Stale-while-revalidate.", width="800", height="388" %}
-  <figcaption class="w-figcaption">Stale-while-revalidate.</figcaption>
+  <figcaption>Stale-while-revalidate.</figcaption>
 </figure>
 
 **Ideal for:** frequently updating resources where having the very latest version is non-essential.
@@ -255,9 +255,9 @@ This is very similar to HTTP's [stale-while-revalidate](https://www.mnot.net/blo
 
 ### On push message {: #on-push-message }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="On push message.", width="800", height="498" %}
-  <figcaption class="w-figcaption">On push message.</figcaption>
+  <figcaption>On push message.</figcaption>
 </figure>
 
 The [Push API](https://developers.google.com/web/fundamentals/push-notifications) is another feature built on top of
@@ -313,9 +313,9 @@ self.addEventListener('notificationclick', function (event) {
 
 ### On background-sync {: #on-background-sync }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="On background-sync.", width="800", height="219" %}
-  <figcaption class="w-figcaption">On background-sync.</figcaption>
+  <figcaption>On background-sync.</figcaption>
 </figure>
 
 [Background sync](https://developers.google.com/web/updates/2015/12/background-sync) is another feature built on top of
@@ -395,9 +395,9 @@ when and how. Here are a few patterns for handling requests:
 
 ### Cache only {: #cache-only }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ppXImAnXW7Grk4igLRTj.png", alt="Cache only.", width="800", height="272" %}
-  <figcaption class="w-figcaption">Cache only.</figcaption>
+  <figcaption>Cache only.</figcaption>
 </figure>
 
 **Ideal for:** anything you'd consider static to a particular "version" of your site. You should
@@ -416,9 +416,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Network only {: #network-only }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5piPzi4NRGcgy1snmlEW.png", alt="Network only.", width="800", height="272" %}
-  <figcaption class="w-figcaption">Network only.</figcaption>
+  <figcaption>Network only.</figcaption>
 </figure>
 
 **Ideal for:** things that have no offline equivalent, such as analytics pings, non-GET requests.
@@ -436,9 +436,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Cache, falling back to network {: #cache-falling-back-to-network }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMXq6ya5HdjkNeGjTlAN.png", alt="Cache, falling back to network.", width="800", height="395" %}
-  <figcaption class="w-figcaption">Cache, falling back to network.</figcaption>
+  <figcaption>Cache, falling back to network.</figcaption>
 </figure>
 
 **Ideal for:** building offline-first. In such cases, this is how you'll handle the majority of
@@ -459,9 +459,9 @@ for anything not-cached (which includes all non-GET requests, as they cannot be 
 
 ### Cache and network race {: #cache-and-network-race }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6xbmOpm4GbayBJHChNW.png", alt="Cache and network race.", width="800", height="427" %}
-  <figcaption class="w-figcaption">Cache and network race.</figcaption>
+  <figcaption>Cache and network race.</figcaption>
 </figure>
 
 **Ideal for:** small assets where you're chasing performance on devices with slow disk access.
@@ -492,9 +492,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Network falling back to cache {: #network-falling-back-to-cache }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/efLECR7ZqNiPjmAzvEzO.png", alt="Network falling back to cache.", width="800", height="388" %}
-  <figcaption class="w-figcaption">Network falling back to cache.</figcaption>
+  <figcaption>Network falling back to cache.</figcaption>
 </figure>
 
 **Ideal for:** a quick-fix for resources that update frequently, outside of the "version" of the
@@ -521,9 +521,9 @@ self.addEventListener('fetch', function (event) {
 
 ### Cache then network {: #cache-then-network }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BjxBlbCf14ed9FBQRS6E.png", alt="Cache then network.", width="800", height="478" %}
-  <figcaption class="w-figcaption">Cache then network.</figcaption>
+  <figcaption>Cache then network.</figcaption>
 </figure>
 
 **Ideal for:** content that updates frequently. E.g. articles, social media timelines, and games.
@@ -604,9 +604,9 @@ and abusing the Accept header to tell the Service Worker where to get the result
 
 ### Generic fallback {: #generic-fallback }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URF7IInbQtWL6GZK9GW3.png", alt="Generic fallback.", width="800", height="389" %}
-  <figcaption class="w-figcaption">Generic fallback.</figcaption>
+  <figcaption>Generic fallback.</figcaption>
 </figure>
 
 If you fail to serve something from the cache and/or network you may want to provide a generic
@@ -644,9 +644,9 @@ retained.
 
 ### Service worker-side templating {: #Service Worker-side-templating }
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/o5SqtDczlvhw6tPJkr2z.png", alt="ServiceWorker-side templating.", width="800", height="463" %}
-  <figcaption class="w-figcaption">ServiceWorker-side templating.</figcaption>
+  <figcaption>ServiceWorker-side templating.</figcaption>
 </figure>
 
 **Ideal for:** pages that cannot have their server response cached.

@@ -24,7 +24,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width="384", height="96" %}
 </picture>
 
 Para predecir la FID en el [laboratorio](/how-to-measure-speed/#lab-data-vs-field-data), recomendamos que se utilice el [Total Blocking Time: Tiempo de bloqueo total (TBT)](/tbt/). Ambas métricas miden cosas diferentes, pero las mejoras en el TBT generalmente coinciden con mejoras en la FID.
@@ -46,7 +46,7 @@ Si ya intentó reducir la cantidad de procesos en JavaScript que se cargan en un
 
 Las [**tareas largas**](/custom-metrics/#long-tasks-api) son periodos de ejecución en JavaScript donde los usuarios pueden descubir que su interfaz de usuario no responde. Cualquier fragmento de código que bloquee el subproceso principal durante 50 ms o más se puede caracterizar como una tarea larga. Las tareas largas son una señal de que posiblemente JavaScript se esté utilizando en exceso (cargar y ejecutar más de lo que un usuario necesite en ese momento). Dividir las tareas largas podría reducir el retraso al entrar en su sitio.
 
-<figure class="w-figure">{% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Tareas largas en Chrome DevTools", width="800", height="132", class="w-screenshot" %} <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">permite visualizar las tareas largas</a> en el panel de rendimiento</figcaption></figure>
+<figure>{% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Tareas largas en Chrome DevTools", width="800", height="132" %} <figcaption>Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">permite visualizar las tareas largas</a> en el panel de rendimiento</figcaption></figure>
 
 La FID debería mejorar notablemente a medida que implemente las mejores prácticas, como separar el código y dividir sus tareas largas. Si bien el TBT no es una métrica de campo, es útil para verificar el progreso hacia las mejoras finales tanto del Time To Interactive: Tiempo para interactuar (TTI) como de la FID.
 
@@ -63,7 +63,7 @@ Hay una gran cantidad de causas frecuentes para que la FID y el TBT tengan punta
 
 A continuación, se muestran las puntuaciones del TBT antes y después de optimizar la carga de scripts en el origen para una aplicación. Al mover la costosa carga de scripts (y su ejecución) para un componente no esencial fuera de la ruta crítica, los usuarios pudieron interactuar con la página mucho tiempo antes.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Mejoras en la puntuación del TBT en Lighthouse después de optimizar el script en el origen", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Mejoras en la puntuación del TBT en Lighthouse después de optimizar el script en el origen", width="800", height="148" %}
 
 ### La búsqueda de datos puede afectar muchos aspectos de la preparación para la interacción
 
@@ -102,7 +102,7 @@ De forma predeterminada, todo JavaScript bloquea el renderizado. Cuando el naveg
 
 La pestaña [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) en Chrome DevTools puede indicarle el porcentaje de JavaScript que no está en uso en su página web.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="La pestaña Coverage", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="La pestaña Coverage", width="800", height="559" %}
 
 Para reducir el porcentaje de JavaScript que no está en uso:
 
@@ -162,7 +162,7 @@ Hay una gran variedad de herramientas disponibles para medir y depurar FID:
 
 - [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) no incluye soporte para FID ya que es una métrica de campo. Sin embargo, el [Total Blocking Time](/tbt/) (TBT) se puede utilizar como un proxy. Las optimizaciones que mejoran el TBT también deberían mejorar la FID en el campo.
 
-{% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
+{% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
 - El [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) proporciona los valores FID del mundo real agrupados a nivel del origen.
 

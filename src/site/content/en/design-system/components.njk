@@ -24,7 +24,7 @@ pageScripts:
   </nav>
   {% endif %}
 
-  <div class="region"> 
+  <div class="breakout pad-block-size-2"> 
     {{ designSystemComponent(item.previewUrl, item.markup, item.rendered, item.handle) }}  
   </div>
 
@@ -49,7 +49,7 @@ pageScripts:
     <h2>Variants</h2>
     {% for variant in item.variants %}
     <h3 id="{{ variant.data.title | slug }}">{{ variant.data.title }}</h3>
-    <div class="flow-space-size-1">
+    <div class="breakout gap-top-size-1">
       {{ designSystemComponent(variant.previewUrl, variant.markup, variant.rendered, variant.handle) }} 
     </div>
     {% endfor %}

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: '@property: giving superpowers to CSS variables'
 subhead: The Houdini Properties and Values API is coming to your CSS file in Chromium 85.
 authors:
@@ -38,7 +39,7 @@ it inherit the value from it's parent or not?). The current way to do this is
 through `CSS.registerProperty()` in JavaScript, but in Chromium 85 and later, the
 `@property` syntax will be supported in your CSS files:
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Separate JavaScript file (Chromium 78)' %}
 ```js
 CSS.registerProperty({
@@ -126,20 +127,20 @@ To illustrate this point, I'll show you how to animate a gradient. Currently,
 there is no way to smoothly animate (or interpolate) between gradient values, as
 each gradient declaration is parsed as a string.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/support1.gif">
-  <figcaption class="w-figcaption">
+<figure>
+  <img src="https://storage.googleapis.com/web-dev-assets/at-property/support1.gif">
+  <figcaption>
     Using a custom property with a "number" syntax, the gradient on the left shows a smooth
     transition between stop values. The gradient on the right uses a default custom property
     (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
 
-<!-- <figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<!-- <figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/support1.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Using a custom property with a "number" syntax, the gradient on the left shows a smooth
     transition between stop values. The gradient on the right uses a default custom property
     (no syntax defined) and shows an abrupt transition.
@@ -185,25 +186,25 @@ And then when it comes time to animate it, you can update the value from the ini
 
 This will now enable that smooth gradient transition.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/demo.gif">
-  <figcaption class="w-figcaption">
+<figure>
+  <img src="https://storage.googleapis.com/web-dev-assets/at-property/demo.gif">
+  <figcaption>
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
 </figure>
 
 <!--
-<figure class="w-figure">
-  <video controls autoplay loop muted playsinline class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/demo.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
 </figure>
 -->
 
-## Conclusion 
+## Conclusion
 
 The `@property` rule makes an exciting technology even more accessible by
 allowing you to write semantically meaningful CSS within CSS itself. To learn

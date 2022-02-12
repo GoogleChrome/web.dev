@@ -24,7 +24,8 @@
     }
   }
 
-  a:hover {
+  a:hover,
+  a[aria-selected='true'] {
     @include apply-utility('bg', 'accent-bg');
   }
 
@@ -36,7 +37,8 @@
     @include apply-utility('color', 'mid-text');
   }
 
-  a[aria-current='page'] {
+  a[aria-current='page'],
+  a[aria-select='true'] {
     @include apply-utility('bg', 'active-bg');
     @include apply-utility('color', 'active-text');
 
@@ -68,6 +70,11 @@
   [aria-current='page'] & {
     color: currentColor;
   }
+}
+
+// Smaller font size for placeholder meta
+.is-placeholder .stack-nav__meta {
+  font-size: 0.7em;
 }
 
 .stack-nav__heading {

@@ -36,7 +36,7 @@ To see it in action, here's an app bundled with
 kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
-  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567" %}
 </a>
 
 ## Set the performance budget
@@ -152,7 +152,7 @@ the homepage of the repository.
 
 You'll now see status checks in progress on the pull request page.
 
-{% Img src="image/admin/SrdHGr9z5QY1vEfBwNIY.png", alt="Github checks in progress", width="774", height="351" %}
+{% Img src="image/admin/SrdHGr9z5QY1vEfBwNIY.png", alt="GitHub checks in progress", width="774", height="351" %}
 
 It won't take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle

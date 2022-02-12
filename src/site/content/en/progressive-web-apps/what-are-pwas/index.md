@@ -32,9 +32,9 @@ like take pictures, see playing songs listed on the home screen, or control song
 playback while in another app. Platform-specific applications feel like _part_ of the
 device they run on.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DKtUFjXLJbiiruKA9P1.svg", alt="A graph illustrating the relative capabilites and reach of platform-specific apps, with high capabilities, web apps, with high reach, and progressive web apps, which have both high capabilities and high reach.", width="370", height="367" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     Capabilities vs. reach of platform-specific apps, web app, and progressive web apps.
   </figcaption>
 </figure>

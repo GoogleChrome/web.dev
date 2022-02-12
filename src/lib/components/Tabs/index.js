@@ -3,7 +3,6 @@ import {BaseElement} from '../BaseElement';
 import {checkOverflow} from '../../utils/check-overflow';
 import {generateIdSalt} from '../../utils/generate-salt';
 import 'focus-visible';
-import './_styles.scss';
 
 /**
  * Element that wraps each child element in a tab panel

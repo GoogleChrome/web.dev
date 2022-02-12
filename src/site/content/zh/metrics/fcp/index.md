@@ -25,7 +25,7 @@ tags:
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好的 FCP 值是 1.8 秒或更短，差的值大于 3.0 秒，中间的任何东西都需要改进", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好的 FCP 值是 1.8 秒或更短，差的值大于 3.0 秒，中间的任何东西都需要改进", width="400", height="300" %}
 </picture>
 
 ### 怎样算是良好的 FCP 分数？
@@ -102,7 +102,7 @@ getFCP(console.log);
 - [缩小 CSS](/unminified-css/)
 - [移除未使用的 CSS](/unused-css-rules/)
 - [预连接到所需的来源](/uses-rel-preconnect/)
-- [减少服务器响应时间 (TTFB)](/time-to-first-byte/)
+- [减少服务器响应时间 (TTFB)](/ttfb/)
 - [避免多个页面重定向](/redirects/)
 - [预加载关键请求](/uses-rel-preload/)
 - [避免巨大的网络负载](/total-byte-weight/)

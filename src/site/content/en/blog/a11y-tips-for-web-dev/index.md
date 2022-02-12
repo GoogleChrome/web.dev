@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Accessibility tips for web developers
 subhead: Improving accessibility makes your site more useable for everyone.
 description: |
@@ -38,7 +39,7 @@ Moreover, sites should be usable by the broadest group of users,
 including those with disabilities.
 Here's a sample of just a few disabilities your users may have:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -267,9 +268,9 @@ First, ensure that you have a sensible focus target for each component.
 For example, a complex component like a menu may be one focus target within a page
 but should then manage focus within itself so that the active menu item always takes focus.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/8zpJMaaY0DuAHdugbSr3.png", alt="A screenshot of a menu and submenu that requires focus management.", width="800", height="377" %}
-  <figcaption class="w-figcaption">Managing focus within a complex element.</figcaption>
+  <figcaption>Managing focus within a complex element.</figcaption>
 </figure>
 
 ### Using tabindex
@@ -333,8 +334,8 @@ to automate running keyboard accessibility tests for toggling UI states.
 [WalkMe Engineering](https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032)
 has a great guide on this I recommend reading.
 
-<figure class="w-figure">
-  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400" %}
 </figure>
 
 ```js
@@ -402,9 +403,9 @@ By binding these attributes to the relevant properties on your custom component,
 you can allow users of assistive technology to interact with the element,
 change its value, and even cause the element's visual presentation to change accordingly.
 
-<figure class="w-figure">
-  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56", class="w-screenshot" %}
-  <figcaption class="w-figcaption">A range slider component.</figcaption>
+<figure>
+  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56" %}
+  <figcaption>A range slider component.</figcaption>
 </figure>
 
 ```html
@@ -421,9 +422,9 @@ provide labels and values for each slice
 so users who have visual impairments can understand the information
 even if they can't tell where the slices begin and end:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/4DlbNfCX7AYYrPSpQg4L.png", alt="A pie chart with labels and values to ensure accessibility.", width="500", height="442" %}
-  <figcaption class="w-figcaption">An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
+  <figcaption>An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
 </figure>
 
 ### Is there sufficient contrast between text and images and their background?

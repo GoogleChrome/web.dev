@@ -27,9 +27,9 @@ each of these contexts, so performance goals are defined based on the context
 and [UX research on how users perceive
 delays](https://www.nngroup.com/articles/response-times-3-important-limits/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="The 4 parts of the RAIL performance model: response, animation, idle, and load.", width="800", height="290" %}
-  <figcaption class="w-figcaption">The 4 parts of the RAIL performance model
+  <figcaption>The 4 parts of the RAIL performance model
 </figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ delays](https://www.nngroup.com/articles/response-times-3-important-limits/).
 Make users the focal point of your performance effort. The table below describes
 key metrics of how users perceive performance delays:
 
-<table class="w-table-wrapper">
+<table class="table-wrapper">
   <thead>
   User perception of performance delays
   </thead>
@@ -118,9 +118,9 @@ actual input handling. This effect is visualized in the diagram below which
 shows how input received during an idle task is queued, reducing the available
 processing time:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagram showing how input received during an idle task is queued, reducing available input processing time to 50ms", width="800", height="400" %}
-  <figcaption class="w-figcaption">How idle tasks affect input response budget.</figcaption>
+  <figcaption>How idle tasks affect input response budget.</figcaption>
 </figure>
 
 ## Animation: produce a frame in 10&nbsp;ms
@@ -185,7 +185,7 @@ viewability](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/re
 
 * Optimize for fast loading performance relative to the device and network
   capabilities of your users. Currently, a good target for first loads is to
-  load the page and be [interactive](/interactive/) in [5 seconds
+  load the page and be [interactive](/tti/) in [5 seconds
   or less on mid-range mobile devices with slow 3G
   connections](/performance-budgets-101/#establish-a-baseline).
 

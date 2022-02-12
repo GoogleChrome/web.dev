@@ -12,13 +12,11 @@ alt: A pressure gauge and pipes.
 tags:
   - blog
   - capabilities
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/1838594547874004993
 ---
 
 {% Aside %}
 The Compute Pressure API is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in
+[capabilities project](/fugu-status/) and is currently in
 development. This post will be updated as the implementation progresses.
 {% endAside %}
 
@@ -194,9 +192,9 @@ ranges 0.0 to 0.5, 0.5 to 0.75, 0.75 to 0.9, and 0.9 to 1.0. To represent bucket
 membership, the value reported to the callback is the average between
 the lower and upper bounds for the bucket.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/FNkVSAX8UDTTQWQkKftSgGe9clO2/VUrr3MykViLDtHuTkjYG.svg", alt="A diagram illustrating the bucketing for different actual CPU utilizations", width="800", height="549" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     This diagram illustrates the relationship between three thresholds and the
     four buckets that they form.
   </figcaption>
@@ -231,30 +229,19 @@ will display an ongoing readout of your device's CPU utilization and speed.
 
 ## API status
 
-<div class="w-table-wrapper">
+<div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete](https://github.com/oyiptong/compute-pressure/blob/main/README.md)    |
-| 2. Create initial draft of specification | [In Progress](https://oyiptong.github.io/compute-pressure/)      |
-| 3. Gather feedback & iterate on design   | In progress |
-| 4. **Origin trial**                      | [In progress](#ot)    |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                                                                       |
+| ---------------------------------------- | ---------------------------------------------------------------------------- |
+| 1. Create explainer                      | [Complete](https://github.com/oyiptong/compute-pressure/blob/main/README.md) |
+| 2. Create initial draft of specification | [In Progress](https://github.com/WICG/compute-pressure/)                     |
+| 3. Gather feedback and iterate on design   | In progress                                                                  |
+| 4. Origin trial                          | Complete                                                                     |
+| 5. Launch                                | Not started                                                                  |
 
 </div>
 
 ## API Availability
-
-### Enabling support during the origin trial phase {: #ot }
-
-Starting in Chrome 92, the Compute Pressure API can be used as part of an origin
-trial.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Enabling via about://flags
 

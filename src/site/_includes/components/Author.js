@@ -15,17 +15,21 @@
  */
 
 const {html} = require('common-tags');
-const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
 const {i18n} = require('../../_filters/i18n');
+const {defaultLocale} = require('../../_data/site');
 
-module.exports = ({
+/**
+ * @param {AuthorParam} param0
+ * @returns {string}
+ */
+function Author({
   id,
   author,
-  locale,
+  locale = defaultLocale,
   showSocialMedia = false,
-  small = false,
-}) => {
+  showDescription = false,
+}) {
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +
@@ -48,17 +52,35 @@ module.exports = ({
     alt: title,
     width: '64',
     height: '64',
-    class: `w-author__image${small ? ' w-author__image--small' : ''}`,
     params: {
       fit: 'crop',
       h: '64',
       w: '64',
     },
   });
+
   return html`
-    <div class="w-author">
-      <a href="${author.href}">${img}</a>
-      ${AuthorInfo({author, title, showSocialMedia})}
+    <div class="author">
+      <a class="avatar" href="${author.href}"> ${img} </a>
+      <div class="flow">
+        <cite class="author__name">
+          <a href="${author.href}">${title}</a>
+        </cite>
+        ${showDescription &&
+        html`<p class="author__bio">${i18n(author.description, locale)}</p>`}
+        ${showSocialMedia &&
+        html` <div class="author__links cluster">
+          ${author.twitter &&
+          `<a href="https://twitter.com/${author.twitter}">Twitter</a>`}
+          ${author.github &&
+          `<a href="https://github.com/${author.github}">GitHub</a>`}
+          ${author.glitch &&
+          `<a href="https://glitch.com/@${author.glitch}">Glitch</a>`}
+          ${author.homepage && `<a href="${author.homepage}">Homepage</a>`}
+        </div>`}
+      </div>
     </div>
   `;
-};
+}
+
+module.exports = Author;

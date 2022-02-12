@@ -24,7 +24,7 @@ tags:
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="좋은 fid 값은 2.5초이고, 나쁨 값은 4.0초보다 크며 그 사이에는 개선이 필요합니다.", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="좋은 fid 값은 2.5초이고, 나쁨 값은 4.0초보다 크며 그 사이에는 개선이 필요합니다.", width="384", height="96" %}
   </picture>
 
 [실험실](/how-to-measure-speed/#lab-data-vs-field-data)에서 FID를 예측하는 데 활용할 만한 메트릭은 [Total Blocking Time(총 차단 시간, TBT)](/tbt/)입니다. 둘은 서로 다른 부분을 측정하지만, TBT를 개선하면 일반적으로 FID도 개선됩니다.
@@ -46,12 +46,12 @@ tags:
 
 [**긴 작업**](/custom-metrics/#long-tasks-api)이란 사용자가 UI가 응답하지 않는다는 것을 발견할 수 있는 JavaScript 실행 기간입니다. 50ms 이상 메인 스레드를 차단하는 모든 코드는 긴 작업이라고 볼 수 있으며 사용자가 현재 필요로 하는 것보다 더 많은 것을 로드 및 실행해 JavaScript가 팽창할 가능성이 있음을 나타내는 신호일 수 있습니다. 그러므로 긴 작업을 분할하면 사이트의 입력 지연을 줄일 수 있습니다.
 
-<figure class="w-figure">{% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome DevTools의 긴 작업", width="800", height="132", class="w-screenshot" %} <figcaption class="w-figcaption">Chrome DevTools의 Performance 패널에서 <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">긴 작업을 시각화</a>한 모습</figcaption></figure>
+<figure>{% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome DevTools의 긴 작업", width="800", height="132" %} <figcaption>Chrome DevTools의 Performance 패널에서 <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">긴 작업을 시각화</a>한 모습</figcaption></figure>
 
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome DevTools의 긴 작업", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Chrome DevTools의 Performance 패널에서 <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">긴 작업을 시각화</a>한 모습</figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Chrome DevTools의 긴 작업", width="800", height="132" %}
+  <figcaption>Chrome DevTools의 Performance 패널에서 <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">긴 작업을 시각화</a>한 모습</figcaption>
 </figure>
 
 FID는 코드 분할 및 긴 작업 세분화와 같은 모범 사례를 채택하면 눈에 띄게 개선됩니다. TBT는 필드 메트릭이 아니지만 궁극적으로 Time To Interactive(상호 작용까지의 시간, TTI)와 FID를 모두 개선하기 위한 진행 상황을 확인하는 데 유용합니다.
@@ -69,7 +69,7 @@ JavaScript에 크게 의존하는 웹 앱에서 FID 및 TBT 점수가 좋지 않
 
 다음은 애플리케이션에 대한 자사 스크립트 로딩을 최적화하기 전과 후의 TBT 점수입니다. 중요하지 않은 구성 요소에 대해 비용이 많이 드는 스크립트 로드(및 실행)를 이동함으로써 사용자는 페이지와 훨씬 더 빨리 상호 작용할 수 있게 되었습니다.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="자사 스크립트 최적화 후 개선된 Lighthouse의 TBT 점수.", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="자사 스크립트 최적화 후 개선된 Lighthouse의 TBT 점수.", width="800", height="148" %}
 
 ### 상호 작용 준비의 여러 측면에 영향을 주는 데이터 가져오기
 
@@ -108,7 +108,7 @@ JavaScript에 크게 의존하는 웹 앱에서 FID 및 TBT 점수가 좋지 않
 
 Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) 탭을 보면 웹 페이지에서 사용되지 않는 JavaScript가 어느 정도인지 파악할 수 있습니다.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Coverage 탭.", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Coverage 탭.", width="800", height="559" %}
 
 사용하지 않는 JavaScript를 줄이는 방법은 다음과 같습니다.
 
@@ -168,7 +168,7 @@ FID를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
 - [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse)은 필드 메트릭인 FID에 대한 지원을 포함하지 않습니다. 그러나 [총 차단 시간](/tbt/)(TBT)를 그 대체제로 사용할 수 있습니다. TBT를 개선하는 최적화는 필드에서 FID도 개선합니다.
 
-    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
+    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 FID 값을 제공합니다.
 

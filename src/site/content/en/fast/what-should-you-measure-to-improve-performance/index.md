@@ -18,9 +18,9 @@ tags:
 The different steps of a purchase funnel are prone to performance issues in
 different ways, and therefore need different measurement and optimizations:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/87cAGdJAnPggf8Yt58ID.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A conversion funnel.
   </figcaption>
 </figure>
@@ -61,7 +61,7 @@ provides a good overview.
 
 From a user perspective the most important metrics are:
 
-+   **[First Contentful Paint (FCP)](/first-contentful-paint):**
++   **[First Contentful Paint (FCP)](/fcp/):**
     The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
 +   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**
@@ -181,9 +181,9 @@ an eye on this though, and a great lab test tool for repeat visits is
 [WebPageTest](https://www.webpagetest.org/), which has a dedicated option for a
 direct repeat visit:
 
-<figure class="w-figure">
-  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650" %}
+  <figcaption>
     Webpagetest offers options to test first load and repeat load as well
   </figcaption>
 </figure>
@@ -192,9 +192,9 @@ To get a better feeling for repeat visit performance in the field use your
 analytics package of choice to segment your performance metrics by user type.
 Here is an example of such a report in Google Analytics:
 
-<figure class="w-figure">
-  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--center">
+<figure>
+  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444" %}
+  <figcaption>
     A Google Analytics custom report can be used to report speed metrics for new and returning users.
   </figcaption>
 </figure>

@@ -21,12 +21,12 @@ web a built-in browser-based interface that allows users to enter required payme
 information easier than ever before. The API can also invoke platform-specific payment
 apps.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">Checkout flow with platform-specific Google Pay app that uses Web Payments</a>.
+  <figcaption>Checkout flow with platform-specific Google Pay app that uses Web Payments</a>.
   </figcaption>
 </figure>
 

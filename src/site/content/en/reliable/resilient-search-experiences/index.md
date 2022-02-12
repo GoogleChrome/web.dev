@@ -42,7 +42,7 @@ For concrete application of this technique let's take a look at Google Search fo
 When visiting the Google Search web app and going offline, instead of showing the standard network error page, the site serves a custom offline response, but allows users to enter their search query immediately.
 The page also prompts the user to opt-in for notifications, to receive a link to the search results page once the connection is recovered.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TqDtqgbKOsxRFnr2lNSy.png", alt="A screenshot of the background retry interface in Google Search.", width="257", height="475" %}
 </figure>
 

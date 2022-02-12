@@ -25,9 +25,9 @@ Unused JavaScript can slow down your page load speed:
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags every JavaScript file with more than 20 kibibytes of unused code:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="A screenshot of the audit.", width="800", height="332", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jYbX7CFrcOaaqMHaHa6f.jpg", alt="A screenshot of the audit.", width="800", height="332" %}
+  <figcaption>
     Click a value in the <b>URL</b> column to open the script's
     source code in a new tab.
   </figcaption>
@@ -86,6 +86,9 @@ If you are not server-side rendering, [split your JavaScript
 bundles](/code-splitting-suspense/) with `React.lazy()`.
 Otherwise, code-split using a third-party library such as
 [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/).
+
+### Vue
+If you are not server-side rendering and using the [Vue router](https://next.router.vuejs.org), split the bundles by [lazy loading routes](https://next.router.vuejs.org/guide/advanced/lazy-loading.html).
 
 ### WordPress
 

@@ -14,8 +14,8 @@ all unminified CSS files,
 along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte)
 when these files are minified:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C1ah0bnY6JQsffdO446S.png", alt="A screenshot of the Lighthouse Minify CSS audit", width="800", height="212", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C1ah0bnY6JQsffdO446S.png", alt="A screenshot of the Lighthouse Minify CSS audit", width="800", height="212" %}
 </figure>
 
 

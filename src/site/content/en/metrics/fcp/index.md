@@ -43,7 +43,7 @@ loading.
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300" %}
 </picture>
 
 ### What is a good FCP score?
@@ -156,7 +156,7 @@ performance guides:
 - [Minify CSS](/unminified-css/)
 - [Remove unused CSS](/unused-css-rules/)
 - [Preconnect to required origins](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
+- [Reduce server response times (TTFB)](/ttfb/)
 - [Avoid multiple page redirects](/redirects/)
 - [Preload key requests](/uses-rel-preload/)
 - [Avoid enormous network payloads](/total-byte-weight/)

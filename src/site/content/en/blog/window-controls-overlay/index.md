@@ -7,14 +7,12 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-08-06
+updated: 2022-02-08
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KEHQXWqr6s7VnEfTqVOC.jpeg
 alt: Kid drawing, crafting, and painting rocks.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
@@ -56,33 +54,17 @@ developers to place custom content in what was previously the browser-controlled
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | [**In progress**][ot]    |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                             |
+| ---------------------------------------- | ---------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]              |
+| 2. Create initial draft of specification | [Complete][spec]                   |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)           |
+| 4. Origin trial                          | Complete                           |
+| 5. **Launch**                            | **Complete** (in Chromium&nbsp;99) |
 
 </div>
-
-### Enabling via about://flags
-
-To experiment with Window Controls Overlay locally, without an origin trial token, enable the
-`#enable-desktop-pwas-window-controls-overlay` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome&nbsp;93, Window Controls Overlay will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome&nbsp;95 (expected in November 10, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## How to use Window Controls Overlay
 
@@ -108,22 +90,20 @@ The window controls overlay will be visible only when all of the following condi
 The result of this is an empty title bar area with the regular window controls on the left or the
 right, depending on the operating system.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/7slf2HkHYGyhhLzdBz9Q.png", alt="App window with an empty titlebar with the window controls on the right.", width="800", height="112" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/zVuuiMs37fGrDK8J7PXK.png", alt="App window with an empty titlebar with the window controls on the left.", width="800", height="182" %}
 
 ### Moving content into the title bar
 
 Now that there is space in the title bar, you can move something there. For this article, I have
-built a Chuck Norris jokes PWA. A useful feature for this app may be a search for words in jokes.
-Fun fact: Chuck Norris has installed this PWA on his iPhone and has let me know he loves the push
-notifications he receives whenever a new joke is submitted. The HTML for the search feature looks
-like this:
+built a Wikimedia Featured Content PWA. A useful feature for this app may be a search for words in
+the article titles. The HTML for the search feature looks like this:
 
 ```html
 <div class="search">
-  <img src="chuck-norris.png" alt="Chuck Norris" width="32" height="32" />
+  <img src="logo.svg" alt="Wikimedia logo." width="32" height="32" />
   <label>
     <input type="search" />
-    Search words in jokes
+    Search words in articles
   </label>
 </div>
 ```
@@ -136,10 +116,10 @@ To move this `div` up into the title bar, some CSS is needed:
   position: fixed;
   /**
    * Gradient, because why not. Endless opportunities.
-   * The gradient ends in maroon, which happens to be the app's
-   * `<meta name="theme-color" content="maroon">`.
+   * The gradient ends in `#36c`, which happens to be the app's
+   * `<meta name="theme-color" content="#36c">`.
    */
-  background-image: linear-gradient(90deg, #131313, 33%, maroon);
+  background-image: linear-gradient(90deg, #36c, #131313, 33%, #36c);
   /* Use the environment variable for the left anchoring with a fallback. */
   left: env(titlebar-area-x, 0);
   /* Use the environment variable for the top anchoring with a fallback. */
@@ -155,7 +135,7 @@ You can see the effect of this code in the screenshot below. The title bar is fu
 you resize the PWA window, the title bar reacts as if it were composed of regular HTML content,
 which, in fact, it is.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/5dc2j3CfrKczvTaASvKE.png", alt="App window with a search bar in the title bar.", width="800", height="112" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/z59JyFopfQC35WrEyA6g.png", alt="App window with a search bar in the title bar.", width="800", height="182" %}
 
 ### Determining which parts of the title bar are draggable
 
@@ -179,11 +159,9 @@ input {
 }
 ```
 
-{% Aside %}
-For now, `app-region` has not been standardized yet, so the plan is to continue using the prefixed
-`-webkit-app-region` until `app-region` is standardized. Currently, only `-webkit-app-region` is
-supported in the browser.
-{% endAside %}
+{% Aside %} For now, `app-region` has not been standardized yet, so the plan is to continue using
+the prefixed `-webkit-app-region` until `app-region` is standardized. Currently, only
+`-webkit-app-region` is supported in the browser. {% endAside %}
 
 With this CSS in place, the user can drag the app window as usual by dragging the `div`, the `img`,
 or the `label`. Only the `input` element is interactive so the search query can be entered.
@@ -207,12 +185,11 @@ position, too, based on the platform. This means that the linear gradient backgr
 be dynamically adapted to run from `#131313`→`maroon` or `maroon`→`#131313`→`maroon`, so that it
 blends in with the title bar's `maroon` background color that is determined by
 `<meta name="theme-color" content="maroon">`. This can be achieved by querying the
-[`getBoundingClientRect()`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
-API on the `navigator.windowControlsOverlay` property.
+`getTitlebarAreaRect()` API on the `navigator.windowControlsOverlay` property.
 
 ```js
 if ('windowControlsOverlay' in navigator) {
-  const { x } = navigator.windowControlsOverlay.getBoundingClientRect();
+  const { x } = navigator.windowControlsOverlay.getTitlebarAreaRect();
   // Window controls are on the right (like on Windows).
   // Chrome menu is left of the window controls.
   // [ windowControlsOverlay___________________ […] [_] [■] [X] ]
@@ -237,12 +214,12 @@ modified code now uses two classes that the code above sets dynamically.
 ```css
 /* For macOS: */
 .search-controls-left {
-  background-image: linear-gradient(90deg, maroon, 45%, #131313, 90%, maroon);
+  background-image: linear-gradient(90deg, #36c, 45%, #131313, 90%, #36c);
 }
 
 /* For Windows: */
 .search-controls-right {
-  background-image: linear-gradient(90deg, #131313, 33%, maroon);
+  background-image: linear-gradient(90deg, #36c, #131313, 33%, #36c);
 }
 ```
 
@@ -266,13 +243,13 @@ window controls overlay would still report `true`. {% endAside %}
 
 ### Being notified of geometry changes
 
-Querying the window controls overlay area with `getBoundingClientRect()` can suffice for one-off
+Querying the window controls overlay area with `getTitlebarAreaRect()` can suffice for one-off
 things like setting the correct background image based on where the window controls are, but in
 other cases, more fine-grained control is necessary. For example, a possible use case could be to
 adapt the window controls overlay based on the available space and to add a joke right in the window
 control overlay when there is enough space.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Unm5S2dB3szfFF2YCcFO.png", alt="Window controls overlay area on wide window displaying an additional joke (which reads Chuck Norris can find a word that rhymes with orange.)", width="800", height="73" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/uDWjKo827ntEHp5S8tyW.png", alt="Window controls overlay area on narrow window with shortened text.", width="800", height="303" %}
 
 You can be notified of geometry changes by subscribing to
 `navigator.windowControlsOverlay.ongeometrychange` or by setting up an event listener for the
@@ -299,7 +276,7 @@ const debounce = (func, wait) => {
 
 if ('windowControlsOverlay' in navigator) {
   navigator.windowControlsOverlay.ongeometrychange = debounce((e) => {
-    span.hidden = e.boundingRect.width < 800;
+    span.hidden = e.titlebarAreaRect.width < 800;
   }, 250);
 }
 ```
@@ -312,7 +289,7 @@ Rather than assigning a function to `ongeometrychange`, you can also add an even
 navigator.windowControlsOverlay.addEventListener(
   'geometrychange',
   debounce((e) => {
-    span.hidden = e.boundingRect.width < 800;
+    span.hidden = e.titlebarAreaRect.width < 800;
   }, 250),
 );
 ```
@@ -331,14 +308,32 @@ will kick in for the positioning. On supporting browsers, you can also decide to
 HTML designated for the window controls overlay by checking the overlay's `visible` property, and if
 it reports `false`, then hiding that HTML content.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/jgS3hkEbaJ8bU2Jl9Pdz.png", alt="PWA running in a browser tab with the window controls overlay displayed in the body.", width="800", height="118" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/2rAm7saFWnCnaIzukTlO.png", alt="PWA running in a browser tab with the window controls overlay displayed in the body.", width="800", height="428" %}
 
 As a reminder, non-supporting browsers will either not consider the
 [`"display_override"`](/display-override/) web app manifest property at all, or not recognize the
 `"window-controls-overlay"` and thus use the next possible value according to the fallback chain,
 for example, `"standalone"`.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/MMgzCRS0207kFpQnNwgb.png", alt="PWA running in standalone mode with the window controls overlay displayed in the body.", width="800", height="99" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/1VonSc0jOiOureeSkqtf.png", alt="PWA running in standalone mode with the window controls overlay displayed in the body.", width="800", height="428" %}
+
+## UI considerations
+
+While it may be tempting, creating a classic dropdown menu in the Window Controls Overlay area is not recommended. Doing so would violate the
+[design guidelines on macOS](https://developer.apple.com/design/human-interface-guidelines/macos/menus/menu-bar-menus/),
+a platform on which users expect menu bars (both system-provided ones and
+custom ones) at the top of the screen.
+
+{% Aside %}
+Having a proper App Menu API, similar to [`Menu`](https://www.electronjs.org/docs/latest/api/menu)
+available to Electron.js apps, is tracked as [crbug/1295253](https://crbug.com/1295253).
+{% endAside %}
+
+If your app provides a fullscreen experience, carefully consider whether it makes sense
+for your Window Controls Overlay to be part of the fullscreen view. Potentially you may
+want to rearrange your layout when the
+[`onfullscreenchange`](https://developer.mozilla.org/docs/Web/API/Document/onfullscreenchange)
+event fires.
 
 ## Demo
 
@@ -348,17 +343,17 @@ the actual Window Controls Overlay experience, you need to install the app and s
 [flag](#enabling-via-chrome:flags). You can see two screenshots of what to expect below. The
 [source code](https://glitch.com/edit/#!/window-controls-overlay) of the app is available on Glitch.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/lbwvSfjfLzPUSCDfDFDE.png", alt="Chuck Norris jokes demo app with Window Controls Overlay.", width="400", height="312" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/g8uxpFCkWhmFUkrIAVrJ.png", alt="Wikimedia Featured Content demo app with Window Controls Overlay.", width="800", height="543" %}
 
 The search feature in the window controls overlay is fully functional:
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/KpJcvlSpdiVw4wG9zPt3.png", alt="Chuck Norris jokes demo app with Window Controls Overlay and active search for the term 'canyon' highlighting one of the jokes with the matched term.", width="400", height="312" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/J3nvcwbrHznRFw5ZxaJS.png", alt="Wikimedia Featured Content demo app with Window Controls Overlay and active search for the term 'cleopa…' highlighting one of the articles with the matched term 'Cleopatra'.", width="800", height="543" %}
 
 ## Security considerations
 
-The Chromium team has designed and implemented the Window Controls Overlay API using the core
-principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
-including user control, transparency, and ergonomics.
+The Chromium team designed and implemented the Window Controls Overlay API using the core principles
+defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
+control, transparency, and ergonomics.
 
 ### Spoofing
 
@@ -380,9 +375,9 @@ text to prevent a malicious website from appending the unsafe origin with a trus
 Enabling the window controls overlay and draggable regions do not pose considerable privacy concerns
 other than feature detection. However, due to differing sizes and positions of the window controls
 buttons across operating systems, the JavaScript API for
-<code>navigator.<wbr>windowControlsOverlay.<wbr>getBoundingClientRect()</code> will return a
-[`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions
-will reveal information about the operating system upon which the browser is running. Currently,
+<code>navigator.<wbr>windowControlsOverlay.<wbr>getTitlebarAreaRect()</code> will return a
+[`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions will
+reveal information about the operating system upon which the browser is running. Currently,
 developers can already discover the OS from the user agent string, but due to fingerprinting
 concerns, there is discussion about freezing the UA string and unifying OS versions. There is an
 ongoing effort with the community to understand how frequently the size of the window controls
@@ -400,7 +395,7 @@ title bar, even if it meets the above criteria and is launched with the window c
 This is to accommodate the black bar that appears on navigation to a different origin. After
 navigating back to the original origin, the window controls overlay will be used again.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/8Yn3rH0FirYKgiHKUCA7.png", alt="Black URL bar for out-of-origin navigation.", width="800", height="169" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oUxysbNURuPZgAodB5hU.png", alt="Black URL bar for out-of-origin navigation.", width="800", height="543" %}
 
 ## Feedback {: #feedback }
 
@@ -432,6 +427,7 @@ hashtag and let us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Explainer][explainer]
+- [Spec draft][spec]
 - [Chromium bug](https://crbug.com/937121)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/5741247866077184)
 - [TAG review](https://github.com/w3ctag/design-reviews/issues/481)
@@ -441,13 +437,13 @@ hashtag and let us know where and how you're using it.
 
 Window Controls Overlay was implemented and specified by
 [Amanda Baker](https://www.linkedin.com/in/amanda-baker-20a2b962/) from the Microsoft Edge team.
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley) and [Kenneth Rohde Christiansen](https://github.com/kenchris).
-Hero image by [Sigmund](https://unsplash.com/@sigmund) on
-[Unsplash](https://unsplash.com/photos/OV44gxH71DU).
+This article was reviewed by [Joe Medley](https://github.com/jpmedley) and
+[Kenneth Rohde Christiansen](https://github.com/kenchris). Hero image by
+[Sigmund](https://unsplash.com/@sigmund) on [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
 [explainer]: https://github.com/WICG/window-controls-overlay/blob/main/explainer.md
+[spec]: https://wicg.github.io/window-controls-overlay/
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
+[powerful-apis]:
+  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md

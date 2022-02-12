@@ -69,8 +69,8 @@ still use this setup. For a test to pass, only publicly documented features of t
 for the tool can be used. After the initial set of tests were written, we worked with the build tool
 authors to make sure we used their tools correctly and represented them fairly.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0OauqO2tSeOTDpDGutmk.jpg", alt="A screenshot of tooling.report.", width="800", height="394", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0OauqO2tSeOTDpDGutmk.jpg", alt="A screenshot of tooling.report.", width="800", height="394" %}
 </figure>
 
 ## We only use ${tool_name}, should I still care?

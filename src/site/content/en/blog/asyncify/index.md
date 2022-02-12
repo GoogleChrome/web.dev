@@ -84,7 +84,7 @@ need to read data from some storage.
 The web has a variety of different storage options you could map to, such as in-memory storage (JS
 objects), [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage),
 [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API), server-side storage,
-and a new [File System Access API](https://web.dev/file-system-access/).
+and a new [File System Access API](/file-system-access/).
 
 However, only two of those APIs—the in-memory storage and the `localStorage`—can be used
 synchronously, and both are the most limiting options in what you can store and for how long. All
@@ -361,7 +361,7 @@ WebAssembly code. Again, in the C / C++ case this would be included by Emscripte
 custom JavaScript glue code that would handle arbitrary WebAssembly files. We've created a library
 just for that.
 
-You can find it on Github at
+You can find it on GitHub at
 [https://github.com/GoogleChromeLabs/asyncify](https://github.com/GoogleChromeLabs/asyncify) or npm
 under the name [`asyncify-wasm`](https://www.npmjs.com/package/asyncify-wasm).
 
@@ -469,7 +469,7 @@ to the cost of the actual work, it's usually negligible.
 Now that you've looked at the simple examples, I'll move on to more complicated scenarios.
 
 As mentioned in the beginning of the article, one of the storage options on the web is an
-asynchronous [File System Access API](https://web.dev/file-system-access/). It provides access to a
+asynchronous [File System Access API](/file-system-access/). It provides access to a
 real host filesystem from a web application.
 
 On the other hand, there is a de-facto standard called [WASI](https://github.com/WebAssembly/WASI)
@@ -497,7 +497,7 @@ use more niche APIs on the web.
 
 For example, also with the help of Asyncify, it's possible to map
 [libusb](https://github.com/libusb/libusb)—probably the most popular native library for working with
-USB devices—to a [WebUSB API](https://web.dev/usb/), which gives asynchronous access to such devices
+USB devices—to a [WebUSB API](/usb/), which gives asynchronous access to such devices
 on the web. Once mapped and compiled, I got standard libusb tests and examples to run against chosen
 devices right in the sandbox of a web page.
 

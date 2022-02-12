@@ -15,15 +15,15 @@ The Opportunities section of your Lighthouse report lists all images
 in older image formats,
 showing potential savings gained by serving AVIF versions of those images:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="A screenshot of the Lighthouse Serve images in modern formats audit", width="800", height="306", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="A screenshot of the Lighthouse Serve images in modern formats audit", width="800", height="306" %}
 </figure>
 
 ## Why serve images in AVIF or WebP format?
 
 AVIF and WebP are image formats that have superior compression and quality characteristics compared to their older JPEG and PNG counterparts. Encoding your images in these formats rather than JPEG or PNG means that they will load faster and consume less cellular data.
 
-AVIF is supported in Chrome and Opera and offers smaller file sizes compared to other formats with the same quality settings.
+AVIF is supported in Chrome, Firefox, and Opera and offers smaller file sizes compared to other formats with the same quality settings.
 See [Serving AVIF Images Codelab](https://codelabs.developers.google.com/codelabs/avif) for more on AVIF.
 
 WebP is supported in the latest versions of Chrome, Firefox, Safari, Edge, and Opera and provides better lossy and lossless compression for images on the web.

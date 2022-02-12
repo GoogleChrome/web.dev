@@ -15,11 +15,11 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %}
+{% Aside 'caution' %}
   **Jun 1, 2021:** The implementation of CLS has changed.
   To learn more about the reasons behind the change, check out [Evolving the
   CLS metric](/evolving-cls).
-{% endBanner %}
+{% endAside %}
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
@@ -39,9 +39,8 @@ else!
 Most of the time these kinds of experiences are just annoying, but in some
 cases, they can cause real damage.
 
-<figure class="w-figure">
+<figure>
   <video autoplay controls loop muted
-    class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
@@ -51,7 +50,7 @@ cases, they can cause real damage.
       src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
       type="video/mp4; codecs=h264">
   </video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     A screencast illustrating how layout instability can negatively affect
     users.
   </figcaption>
@@ -91,14 +90,13 @@ shift and a maximum of 5 seconds for the total window duration.
 The largest burst is the session window with the maximum cumulative score of all
 layout shifts within that window.
 
-<figure class="w-figure">
+<figure>
   <video controls autoplay loop muted
-    class="w-screenshot"
     width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Example of session windows. Blue bars represent the scores of each individual layout shift.
   </figcaption>
 </figure>
@@ -119,7 +117,7 @@ across mobile and desktop devices.
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300" %}
 </picture>
 
 {% Aside %}
@@ -445,12 +443,12 @@ for a complete example of how to measure CLS in JavaScript.
 
 ## How to improve CLS
 
-{% Banner 'info', 'body' %}
+{% Aside %}
   **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
   implementations of common UX patterns optimized for Core Web Vitals. This
   collection includes patterns that are often tricky to implement without layout
   shifts.
-{% endBanner %}
+{% endAside %}
 
 For most websites, you can avoid all unexpected layout shifts by sticking to a
 few guiding principles:

@@ -24,7 +24,7 @@ A [First Input Delay](/fid/) - FID (atraso da primeira entrada) é uma métrica 
 
   <picture>
     <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Bons valores de fid são 2,5 segundos, valores fracos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Bons valores de fid são 2,5 segundos, valores fracos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", width="384", height="96" %}
   </picture>
 
 Para ajudar a prever a FID no [laboratório](/how-to-measure-speed/#lab-data-vs-field-data) , recomendamos a métrica [Total Blocking Time - TBT (tempo total de bloqueio)](/tbt/). Elas medem coisas diferentes, mas melhorias na TBT geralmente correspondem a melhorias na FID.
@@ -46,9 +46,9 @@ Se você já tentou reduzir a quantidade de JavaScript que carrega numa única p
 
 [**Tarefas Longas**](/custom-metrics/#long-tasks-api) são aqueles períodos de execução de JavaScript onde os usuários podem perceber que sua interface não responde. Qualquer pedaço de código que bloqueie a thread principal por 50 ms ou mais pode ser caracterizado como uma Tarefa Longa. Tarefas Longas são um sinal de potencial inchaço do JavaScript (carregar e executar mais do que o usuário pode precisar naquele instante). A divisão das tarefas longas poderá reduzir o atraso de entrada no seu site.
 
-<figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Tarefas Longas em Chrome DevTools", width="800", height="132", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualiza tarefas longas</a> no painel Performance</figcaption>
+<figure>
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Tarefas Longas em Chrome DevTools", width="800", height="132" %}
+  <figcaption>Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualiza tarefas longas</a> no painel Performance</figcaption>
 </figure>
 
 A FID deve melhorar visivelmente à medida que você adota práticas recomendadas, como divisão de código e divisão de tarefas longas. Embora a TBT não seja uma métrica de campo, é útil para verificar o progresso no sentido de melhorar a Time to Interactive - TTI (tempo até interatividade) e a FID.
@@ -66,7 +66,7 @@ Existem várias causas comuns para pontuações baixas de FID e TBT em aplicativ
 
 Abaixo estão as pontuações de TBT antes e depois de otimizar o carregamento do script original para uma aplicação. Ao transferir o carregamento (e execução) de scripts caros de um componente não essencial para fora do seu caminho crítico, os usuários foram capazes de interagir com a página muito mais cedo.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Melhorias na pontuação de TBT no Lighthouse depois de otimizar um script primário.", width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Melhorias na pontuação de TBT no Lighthouse depois de otimizar um script primário.", width="800", height="148" %}
 
 ### A transferência de dados pode afetar diversos aspectos da prontidão da interação
 
@@ -105,7 +105,7 @@ Por default, todo JavaScript bloqueia a renderização. Quando o navegador encon
 
 A aba [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) no Chrome DevTools pode informar quanto JavaScript não está sendo usado na sua página da web.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="A aba Coverage.", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="A aba Coverage.", width="800", height="559" %}
 
 Para reduzir o JavaScript não utilizado:
 
@@ -165,7 +165,7 @@ Uma série de ferramentas estão disponíveis para medir e depurar a FID:
 
 - O [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) não inclui suporte para FID, já que é uma métrica de campo. No entanto, o [Total Blocking Time](/tbt/) (TBT) pode ser usado como proxy. As otimizações que melhoram a TBT também devem melhorar a FID em campo.
 
-    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
+    {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
 - O [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) fornece valores de FID do mundo real agregados no nível de origem
 

@@ -33,6 +33,12 @@ Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 git clone https://github.com/GoogleChrome/web.dev.git
 ```
 
+### Change directory into the folder created
+
+```bash
+cd web.dev 
+```
+
 ### Install dependencies
 
 ```bash

@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-이 가이드에서는 출처 간 격리를 이용하는 방법을 보여줍니다. [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [높은 정밀도의 고해상도 타이머](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) 또는 JS Self-Profiling API를 사용하려면 출처 간 격리가 필요합니다.
+이 가이드에서는 출처 간 격리를 이용하는 방법을 보여줍니다. [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) 또는 [높은 정밀도의 고해상도 타이머](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)를 사용하려면 출처 간 격리가 필요합니다.
 
 출처 간 격리를 이용하려는 경우, 이것이 광고 배치와 같은 웹사이트의 다른 출처 간 리소스에 미치는 영향을 평가하세요.
 
@@ -45,7 +45,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
     ```
 4. 메시지 끝에 있는 파일 이름과 줄 번호(예: `common-bundle.js:535`)는 `SharedArrayBuffer`가 어디서 출처했는지를 나타냅니다. 제3자 라이브러리인 경우 개발자에게 연락해 문제를 해결하세요. 웹사이트의 일부로 구현된 경우라면 아래 가이드에 따라 출처 간 격리를 활성화하세요.
 
-<figure class="w-figure">{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="출처 간 격리 없이 SharedArrayBuffer를 사용할 때 DevTools 콘솔 경고", width="800", height="163", class="w-screenshot" %} <figcaption>출처 간 격리 없이 SharedArrayBuffer를 사용할 때 DevTools 콘솔 경고</figcaption></figure>
+<figure>{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="출처 간 격리 없이 SharedArrayBuffer를 사용할 때 DevTools 콘솔 경고", width="800", height="163" %} <figcaption>출처 간 격리 없이 SharedArrayBuffer를 사용할 때 DevTools 콘솔 경고</figcaption></figure>
 
 ### (고급) 사용 중단 보고 사용
 

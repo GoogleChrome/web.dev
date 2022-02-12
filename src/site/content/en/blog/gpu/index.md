@@ -7,7 +7,7 @@ authors:
   - beaufortfrancois
   - cwallez
 date: 2021-08-26
-updated: 2021-09-06
+updated: 2021-11-24
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
@@ -30,9 +30,9 @@ stack_overflow_tag: webgpu
 specifically Direct3D 12, Metal, and Vulkan, for performing rendering and
 computation operations on a graphics processing unit (GPU).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram showing WebGPUs connection between OS APIs and Direct3D 12, Metal, and Vulkan.", width="800", height="313" %}
-  <figcaption class="w-figcaption">WebGPU architecture diagram</figcaption>
+  <figcaption>WebGPU architecture diagram</figcaption>
 </figure>
 
 This goal is similar to the [WebGL] family of APIs, but WebGPU enables access to
@@ -56,16 +56,16 @@ shader for Web developers. New 3D experiences can be built today on [Babylon.js
 Playground].
 {% endBlockquote %}
 
-<figure class="w-figure">
+<figure>
   {% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A Babylon.js demo of a rough sea being simulated using WebGPU's compute shader capability.
   </figcaption>
 </figure>
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
@@ -87,11 +87,7 @@ To experiment with WebGPU locally, without an origin trial token, enable the
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;94, WebGPU is available as an origin trial in Chrome. The
-origin trial is expected to end in Chrome&nbsp;97 (Jan 26, 2022).
-
-{% Aside 'caution' %}
-Server-side A/B testing will be used to progressively rollout WebGPU in Chrome.
-{% endAside %}
+origin trial is expected to end in Chrome&nbsp;101 (May 18, 2022).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -125,6 +121,7 @@ WebGPU.
 - [WebGPU for Metal Developers, Part One]
 - [Learn what key data structures and types are needed to draw in WebGPU]
 - [WebGPU Explainer]
+- [WebGPU Best Practices]
 
 ## Browser support {: #browser-support }
 
@@ -221,6 +218,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [WebGPU for Metal Developers, Part One]: https://metalbyexample.com/webgpu-part-one/
 [Learn what key data structures and types are needed to draw in WebGPU]: https://alain.xyz/blog/raw-webgpu
 [WebGPU Explainer]: https://gpuweb.github.io/gpuweb/explainer/
+[WebGPU Best Practices]: https://toji.github.io/webgpu-best-practices/
 [Origin Trial Caveats document]: https://hackmd.io/QcdsK_g7RVKRCIIBqgs5Hw
 [Safari]: https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/
 [Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/

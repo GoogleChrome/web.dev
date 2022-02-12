@@ -27,14 +27,11 @@ CSS_ORIGIN: 'next'
   Grab the ToC contents for headings ToC. This powers the list of headings
   that appears on the right-hand side of the page. Unfortunately our use of
   the word 'toc' is a bit overloaded :P
-  TODO: The courseToc filter is only used to define the ToC for courses, but
-  it's basically the same thing we use on developer.chrome.com and it would be
-  nice to use it for articles as well. Currently we have a different toc design
-  for those but it's a bit clunky and we should replace it with this.
 #}
 {% set tocContents %}
-  {{- content | courseToc | safe -}}
+  {{- content | toc | safe -}}
 {% endset %}
+{% set tocTitle = 'i18n.toc.on_this_page' | i18n(locale) %}
 
 <a class="skip-link button" data-type="primary" href="#main">Skip to main</a>
 
@@ -50,8 +47,8 @@ CSS_ORIGIN: 'next'
     <div class="course__main">
       {% include 'partials/course-app-bar.njk' %}
       <div class="sticky-observer"></div>
-      <div class="wrapper gap-top-size-2">
-        <div class="sidebar flex-align-start flex-dir-rev">
+      <div class="gap-top-size-2">
+        <div class="sidebar flex-align-start flex-dir-rev flex-wrap-no">
           {% include 'partials/toc-side.njk' %}
           <main id="main">
             <div class="prose">

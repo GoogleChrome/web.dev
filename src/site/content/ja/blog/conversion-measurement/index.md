@@ -1,4 +1,5 @@
 ---
+layout: post
 title: よりプライベートな広告コンバージョンの測定方法である Event Conversion Measurement API について
 subhead: オリジン トライアルとして利用可能な新しい Web API がクロスサイト ID を使用せずに、広告のクリックがコンバージョンにつながるタイミングを測定します。
 authors:
@@ -12,16 +13,16 @@ tags:
   - privacy
 ---
 
-{% Banner 'caution', 'body' %}Conversion Measurement API は *Attribution Reporting API* に名前が変更され、さらなる機能を提供します。
+{% Aside 'caution' %}Conversion Measurement API は *Attribution Reporting API* に名前が変更され、さらなる機能を提供します。
 
 - [Chrome 91](https://chromestatus.com/features/schedule) [以下で (Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md) ) をお試しの方は、この投稿を読んで、API の詳細、使用例、手順を確認してください。
 - Chrome (オリジン トライアル) での実験に利用できるこの API (Attribution Reporting) の次のイテレーションに興味がある方は、[メーリングリストにご登録の上、利用可能な実験の最新情報をご確認ください。](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev)
 
-{% endBanner %}
+{% endAside %}
 
 広告キャンペーンの効果を測定するために、広告主とサイト運営者は、広告のクリックまたは表示が購入や申し込みなどの[コンバージョンにつながる時期を知る必要があります。](/digging-into-the-privacy-sandbox/#conversion)**歴史的に、これはサードパーティの Cookie を使用**して行われてきました。現在、Event Conversion Measurement API を使用すると、サイト間でユーザーを認識するために使用できるメカニズムを使用せずに、サイト運営者の Web サイトでのイベントとその後の広告主サイトでのコンバージョンを関連付けることができます。
 
-{% Banner 'info', 'body' %}**この提案には、皆さまからのフィードバックが必要です。**コメントをお持ちの方は、API プロポーザルのリポジトリで[課題を作成してください。](https://github.com/WICG/conversion-measurement-api/issues/) {% endBanner %}
+{% Aside %}**この提案には、皆さまからのフィードバックが必要です。**コメントをお持ちの方は、API プロポーザルのリポジトリで[課題を作成してください。](https://github.com/WICG/conversion-measurement-api/issues/) {% endAside %}
 
 {% Aside %}この API は、プライバシーサンドボックスの一部であり、サードパーティの Cookie やその他のクロスサイト追跡メカニズムを使用せずにサードパーティのユース ケースを満たす一連の提案です。すべての提案の概要については、「[Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)」を参照してください。 {% endAside %}
 
@@ -45,7 +46,7 @@ tags:
 
 今日、広告コンバージョンの測定は、多くの場合、 [サードパーティ Cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies) に依存しています。**しかし、ブラウザーはこれらへのアクセスを制限しています。**
 
-[Chromeは、サードパーティ Cookie のサポートを段階的に廃止することを](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)計画しており[、ユーザーが選択した場合に](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en) Cookie をブロックする方法を提供します。 Safari は[サードパーティ Cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/) をブロックし、Firefox は[既知のサードパーティ追跡 Cookie をブロックし](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)、また Edge は[追跡防止を提供します](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)。
+[Chromeは、サードパーティ Cookie のサポートを段階的に廃止することを](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)計画しており[、ユーザーが選択した場合に](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en) Cookie をブロックする方法を提供します。 Safari は[サードパーティ Cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/) をブロックし、Firefox は[既知のサードパーティ追跡 Cookie をブロックし](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)、また Edge は[追跡防止を提供します](https://support.microsoft.com/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)。
 
 サードパーティ Cookie はレガシー ソリューションになりつつあります。**このような新しい専用の API** は、サードパーティ Cookie が解決したユース ケースにプライバシーを保護する方法で対処する目的で使用が広まっています。
 
@@ -64,7 +65,7 @@ tags:
 
 ### 使い方
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="図：変換測定 API ステップの概要", width="800", height="496" %}
 </figure>
 
@@ -125,7 +126,7 @@ Safari で使用される Web ブラウザー エンジンである  WebKit に�
 
 #### サードパーティ Cookie を使用
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="図：サードパーティ Cookie がクロスサイト ユーザーの認識を可能にする方法", width="800", height="860" %}
 </figure>
 
@@ -137,9 +138,9 @@ Safari で使用される Web ブラウザー エンジンである  WebKit に�
 
 #### Event Conversion Measurement API を使用
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="図：API がクロスサイトユーザー認識なしでコンバージョン測定を可能にする方法", width="800", height="643" %}
-  <figcaption class="w-figcaption">Cookie 図の「広告 ID」と「クリック ID」はどちらも、詳細データへのマッピングを可能にする識別子です。この図では、クリックスルー コンバージョン測定のみがサポートされているため、「クリック ID」と呼ばれています。</figcaption>
+  <figcaption>Cookie 図の「広告 ID」と「クリック ID」はどちらも、詳細データへのマッピングを可能にする識別子です。この図では、クリックスルー コンバージョン測定のみがサポートされているため、「クリック ID」と呼ばれています。</figcaption>
 </figure>
 
 `adtech.example` はクロスサイト識別子を使用できないため、**サイト間でユーザーを認識できません**。
@@ -167,8 +168,8 @@ Event Conversion Measurement API などのサードパーティ Cookie に代わ
 
 クリック データとコンバージョン データの合計:
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>データ</th>
@@ -203,8 +204,8 @@ Event Conversion Measurement API などのサードパーティ Cookie に代わ
 
 Chromeでは、レポートのスケジュールは次のように機能します。
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
@@ -261,7 +262,7 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
   </table>
 </div>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="どのレポートがいつ送信されるかを示すクロノロジー", width="800", height="462" %}
 </figure>
 
@@ -269,13 +270,13 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
 
 ## 例
 
-{% Banner 'info', 'body' %}これが実際に動作することを確認するには、[デモ](https://goo.gle/demo-event-level-conversion-measurement-api)を試して、対応する[コード](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)を確認してください。 {% endBanner %}
+{% Aside %}これが実際に動作することを確認するには、[デモ](https://goo.gle/demo-event-level-conversion-measurement-api)を試して、対応する[コード](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)を確認してください。 {% endAside %}
 
 API によりコンバージョンが記録および報告される仕組みは次のとおりです。現在の API では、「click-to-convert」のフローはこのように機能します。この API の今後のイテレーションは、これと[異なる可能性があります](#use-cases)。
 
 ### 広告クリック (ステップ 1 から 5)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="図：広告クリックとクリック ストレージ", width="800", height="694" %}
 </figure>
 
@@ -298,8 +299,8 @@ API によりコンバージョンが記録および報告される仕組みは�
 
 このコードは以下を指定します：
 
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
+<div>
+  <table data-alignment="top">
     <thead>
       <tr>
         <th>属性</th>
@@ -373,7 +374,7 @@ API によりコンバージョンが記録および報告される仕組みは�
 
 ### 変換とレポートのスケジュール (ステップ 6 から 9)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="図: 変換とレポートのスケジュール", width="800", height="639" %}
 </figure>
 
@@ -421,7 +422,7 @@ app.get('/conversion', (req, res) => {
 
 ### レポートの送信 (ステップ 10 および 11)
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="図: レポートを送信するブラウザー", width="800", height="533" %}
 </figure>
 

@@ -5,6 +5,8 @@
   {% include "partials/theme-script.njk" %}
   {# hashForProd() will cache bust the css in dev with a random string. #}
   <link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
+  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/legacy-rollout.css') }}">
+  <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
 {% else %}
   {% if process.env.ELEVENTY_ENV === 'prod' %}
     {# CSS will be injected by purify-css transform. #}
@@ -19,6 +21,7 @@
 
 <link rel="preload" as="font" crossorigin href="/fonts/google-sans/regular/latin.woff2">
 <link rel="preload" as="font" crossorigin href="/fonts/google-sans/bold/latin.woff2">
+<link rel="preconnect" href="https://{{site.imgixDomain}}">
 
 <meta name="theme-color" content="#fff"/>
 
@@ -29,7 +32,7 @@
   <meta name="offline" content="true" />
 {%- endif %}
 
-{% Meta locale, page, collections, renderData %}
+{% Meta locale, page, renderData %}
 
 <link rel="manifest" href="/manifest.webmanifest" />
 {# Include default icon even though we have a manifest #}
@@ -85,6 +88,7 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
 {% endfor %}
 {# {% if process.env.ELEVENTY_ENV === 'prod' %} #}
   loadScript('https://www.google-analytics.com/analytics.js', null);
+  loadScript('https://www.google.com/recaptcha/api.js', null);
 {# {% endif %} #}
 {% endset %}
 <script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>

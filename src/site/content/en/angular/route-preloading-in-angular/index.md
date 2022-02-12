@@ -55,14 +55,14 @@ Now serve the application and look at the **Network** panel in Chrome DevTools:
 
 You should see that the router downloaded `nyan-nyan-module.js` and `about-about-module.js` in the background when you opened the application:
 
-<figure class="w-figure w-figure--fullbleed">
+<figure>
 {% Video
   src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/TVi6LCasiwZI1hxJrBOL.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/e9h6JBVl8TUGMWOSAWyC.mp4"],
   controls="true",
   loop="true",
   muted="true"
 %}
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+ <figcaption>
     The PreloadAllModules strategy in action.
   </figcaption>
 </figure>
@@ -104,14 +104,14 @@ export class AppModule {}
 
 Now when you open the application again, you'll notice that the router only preloads `nyan-nyan-module.js` since the button in the center of the page has a router link to it. And when you open the side navigation, you'll notice that the router then preloads the "About" route:
 
-<figure class="w-figure w-figure--fullbleed">
+<figure>
 {% Video
   src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/dfZkoiQyNh4fUj4DJjrc.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/SkNp99W1Bv2tsaRgOwoe.mp4"],
   controls="true",
   loop="true",
   muted="true"
 %}
- <figcaption class="w-figcaption w-figcaption--fullbleed">
+ <figcaption>
     A demo of the quicklink preloading strategy.
   </figcaption>
 </figure>
