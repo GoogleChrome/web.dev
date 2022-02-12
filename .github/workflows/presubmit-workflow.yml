@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       isPresubmit: ${{ steps.presubmit.outputs.isPresubmit }}
-    steps:
+    steps: 
       - name: Checkout
         uses: actions/checkout@v2
-        with:
+        with: 
           fetch-depth: 1
 
       - name: Install dependencies
