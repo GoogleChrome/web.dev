@@ -178,7 +178,7 @@ need to collaborate.
 -  **Go through the list of scripts and give your view on each script**.
    For instance, are any of the nice-to-have scripts very damaging to site
    performance? By receiving recommendations it's easier for the marketing team to prioritize, and
-   by hearing about what is business-critical for them it's easier for you understand their point of
+   by hearing about what is business-critical for them it's easier for you to understand their point of
    view.
 -  **Discuss the following topics**:
    -  Are the benefits of the data collected leading to an uplift in conversions that exceeds
