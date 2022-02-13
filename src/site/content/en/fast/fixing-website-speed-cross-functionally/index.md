@@ -193,7 +193,7 @@ need to collaborate.
 
 {% Aside %}
 One common challenge is that be that people become defensive when approached with suggestions.
-The key might be to always emphasise respect for the knowledge areas of other departments.
+The key might be to always emphasize respect for the knowledge areas of other departments.
 By formulating that you want to understand and listen, an openness can be created for listening
 to your ideas as well. And finally, try inviting other teams to social gatherings or coffee and
 bakery with different discussion topics. Sometimes the most powerful meetings take place outside the meeting room.
