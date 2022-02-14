@@ -42,3 +42,11 @@ topics:
     pt: Trabalhando com a área de transferência
     ru: Работа с буфером обмена
     zh: 使用剪贴板
+  system:
+    en: Integrating with the system
+    es: Integrandose con el sistema
+    ja: システムとの統合
+    ko: 시스템과 통합
+    pt: Integrando com o sistema
+    ru: Интеграция с системой
+    zh: 与系统集成

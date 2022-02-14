@@ -13,7 +13,7 @@
         "how-to-open-a-directory",
         "how-to-save-a-file",
         "how-to-drag-and-drop-files",
-        "how-to-drag-and-drop-folders",
+        "how-to-drag-and-drop-directories",
         "how-to-work-with-the-origin-private-file-system",
         "how-to-share-files",
         "how-to-receive-shared-files",
@@ -23,7 +23,22 @@
     {
       "title": "i18n.paths.how_to.topics.clipboard",
       "pathItems": [
-        "how-to-copy-images"
+        "how-to-copy-text",
+        "how-to-copy-images",
+        "how-to-copy-generic-data",
+        "how-to-paste-text",
+        "how-to-paste-images",
+        "how-to-paste-generic-data",
+        "how-to-paste-files"
+      ]
+    },
+    {
+      "title": "i18n.paths.how_to.topics.system",
+      "pathItems": [
+        "how-to-get-contacts-from-the-address-book",
+        "how-to-set-an-app-badge",
+        "how-to-customize-the-window-title-bar",
+        "how-to-create-app-icon-shortcuts"
       ]
     }
   ]

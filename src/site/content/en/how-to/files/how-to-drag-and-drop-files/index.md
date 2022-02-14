@@ -1,13 +1,15 @@
 ---
 layout: post
-title: How to drag and drop folders
+title: How to drag and drop files
 date: 2022-02-11
 authors:
   - thomassteiner
 description: |
-  Learn how to drag and drop folders into the browser.
+  Learn how to drag and drop files into the browser.
 tags:
   - how-to
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KCv8lABRHGUhhCznlMUB.jpg
+alt: Pensive woman.
 ---
 
 The
@@ -35,16 +37,15 @@ be `"file"` for files and `"directory"` for directories.
 
 ## The classic way
 
-### Using the non-standard `DataTransferItem.webkitGetAsEntry()` method
+### Using the classic `DataTransferItem.getAsFile()` method
 
-The `DataTransferItem.webkitGetAsEntry()` method returns the drag data item's `FileSystemFileEntry`
-if the item is a file, and `FileSystemDirectoryEntry` if the item is a directory. While you can read
-the file or directory, there is no way to write back to them. This method has the disadvantage that
-is not on the standards track, but has the advantage that it supports directories.
+The `DataTransferItem.getAsFile()` method returns the drag data item's `File` object. If the item is
+not a file, this method returns `null`. While you can read the file, there is no way to write back
+to it. This method has the disadvantage that it does not support directories.
 
-{% BrowserCompat 'api.DataTransferItem.webkitGetAsEntry' %}
+{% BrowserCompat 'api.DataTransferItem.getAsFile' %}
 
-## Progressively enhanced drag and drop
+## Progressive enhancement
 
 The snippet below uses the modern File System Access API's
 `DataTransferItem.getAsFileSystemHandle()` method when it is supported, then falls back to the
@@ -52,16 +53,14 @@ non-standard `DataTransferItem.webkitGetAsEntry()` method, and finally falls bac
 `DataTransferItem.getAsFile()` method. Be sure to check the type of each `handle`, since it could be
 either of:
 
-- `FileSystemDirectoryHandle` when the modern code path is chosen.
-- `FileSystemDirectoryEntry` when the non-standard code path is chosen.
+- `FileSystemFileHandle` when the modern code path is chosen.
+- `File` when the classic code path is chosen.
 
 All types have a `name` property, so logging it is fine and will always work.
 
 ```js
 const supportsFileSystemAccessAPI =
   'getAsFileSystemHandle' in DataTransferItem.prototype;
-const supportsWebkitGetAsEntry =
-  'webkitGetAsEntry' in DataTransferItem.prototype;
 
 const elem = document.querySelector('main');
 
@@ -80,11 +79,6 @@ elem.addEventListener('dragleave', (e) => {
 
 elem.addEventListener('drop', async (e) => {
   e.preventDefault();
-  if (!supportsFileSystemAccessAPI && !supportsWebkitGetAsEntry) {
-    // Cannot handle directories.
-    return;
-  }
-
   elem.style.outline = '';
 
   const fileHandlesPromises = [...e.dataTransfer.items]
@@ -92,12 +86,12 @@ elem.addEventListener('drop', async (e) => {
     .map((item) =>
       supportsFileSystemAccessAPI
         ? item.getAsFileSystemHandle()
-        : item.webkitGetAsEntry(),
+        : item.getAsFile(),
     );
 
   for await (const handle of fileHandlesPromises) {
-    if (handle.kind === 'directory' || handle.isDirectory) {
-      console.log(`Directory: ${handle.name}`);
+    if (handle.kind === 'file' || handle.isFile) {
+      console.log(`File: ${handle.name}`);
     }
   }
 });
@@ -106,13 +100,13 @@ elem.addEventListener('drop', async (e) => {
 ## Demo
 
 You can see the above snippet in action in the
-[demo](https://how-to-series.glitch.me/drag-and-drop-folders.html) embedded below and explore
-the [source code](https://glitch.com/edit/#!/how-to-series?path=drag-and-drop-folders.js) on
+[demo](https://how-to-series.glitch.me/drag-and-drop-files.html) embedded below and explore
+the [source code](https://glitch.com/edit/#!/how-to-series?path=drag-and-drop-files.js) on
 Glitch.
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://how-to-series.glitch.me/drag-and-drop-folders.html"
+    src="https://how-to-series.glitch.me/drag-and-drop-files.html"
     style="height: 100%; width: 100%; border: 0;"
   >
   </iframe>
@@ -122,3 +116,8 @@ Glitch.
 
 - [File System Access API](/file-system-access/)
 - [Drag and Drop API](/drag-and-drop/)
+
+## Acknowledgements
+
+Hero image by [Eunice Lituañas](https://unsplash.com/@euniveeerse)
+on [Unsplash](https://unsplash.com/photos/bpxgyD4YYt4).
