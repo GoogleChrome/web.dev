@@ -178,7 +178,7 @@ need to collaborate.
 -  **Go through the list of scripts and give your view on each script**.
    For instance, are any of the nice-to-have scripts very damaging to site
    performance? By receiving recommendations it's easier for the marketing team to prioritize, and
-   by hearing about what is business-critical for them it's easier for you understand their point of
+   by hearing about what is business-critical for them it's easier for you to understand their point of
    view.
 -  **Discuss the following topics**:
    -  Are the benefits of the data collected leading to an uplift in conversions that exceeds
@@ -193,7 +193,7 @@ need to collaborate.
 
 {% Aside %}
 One common challenge is that be that people become defensive when approached with suggestions.
-The key might be to always emphasise respect for the knowledge areas of other departments.
+The key might be to always emphasize respect for the knowledge areas of other departments.
 By formulating that you want to understand and listen, an openness can be created for listening
 to your ideas as well. And finally, try inviting other teams to social gatherings or coffee and
 bakery with different discussion topics. Sometimes the most powerful meetings take place outside the meeting room.
