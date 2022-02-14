@@ -61,7 +61,7 @@ The [`<details>`](https://developer.mozilla.org/docs/Web/HTML/Element/details) e
 </figure>
 ```
 
-This is the [`<figure>`](https://developer.mozilla.org/docs/Web/HTML/Element/figure) element in action. Here you see that `<figure>`, used alongside with the [`<figcaption>`](https://developer.mozilla.org/docs/Web/HTML/Element/figcaption)` element, can be used to enhance the visual experience. 
+This is the [`<figure>`](https://developer.mozilla.org/docs/Web/HTML/Element/figure) element in action. Here you see that `<figure>`, used alongside with the [`<figcaption>`](https://developer.mozilla.org/docs/Web/HTML/Element/figcaption) element, can be used to enhance the visual experience. 
 
 You see images all over the web, and other helpful visual data all the time. Visual elements help attract the attention of the visitor and create a great user experience. The `<figure>` element is a way of labeling an image, table, chart etc. It works by creating self contained content in relation to the main content. 
 
