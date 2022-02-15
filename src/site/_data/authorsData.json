@@ -1169,5 +1169,16 @@
   "chrispalmer": {
     "country": "US",
     "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/7OUAnF3abartcOzqxQqi.jpeg"
+  },
+  "abeyad": {
+    "country": "US",
+    "twitter": "alibeyad",
+    "github": "abeyad",
+    "image": "image/BLBNCWcM57UxCqJ0LsNECuVCaxD2/GR8cNgtWyPyXDqI4d61Q.jpeg"
+  },
+  "karldubost": {
+    "github": "karlcow",
+    "homepage": "https://www.otsukare.info",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/dsNUPCYy6gvrU9EEAhaI.jpeg"
   }
 }
