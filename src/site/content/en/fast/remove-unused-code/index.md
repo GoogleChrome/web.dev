@@ -22,7 +22,7 @@ Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
 transformed the JavaScript world for the better by allowing anyone to easily
 download and use over _half a million_ public packages. But we often include
 libraries we're not fully utilizing. To fix this issue, **analyze your bundle**
-to detect unused code. Then remove **unused** and **unneeded** libraries.
+to detect unused code. Then remove **unused** and **unnecessary** libraries.
 
 ## Analyze your bundle
 
@@ -103,7 +103,7 @@ that automatically remove unused code from popular libraries](https://github.com
 [Remove unused code.](/codelab-remove-unused-code)
 {% endAside %}
 
-## Remove unneeded libraries
+## Remove unnecessary libraries
 
 Not all libraries can be easily broken down into parts and selectively imported.
 In these scenarios, consider if the library could be removed entirely. Building
