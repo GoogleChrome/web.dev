@@ -8,22 +8,24 @@ authors:
   - thomassteiner
 description: The prefers-reduced-motion media query detects whether the user has requested that the system minimize the amount of animation or motion it uses. This is for users who either require or prefer minimized animations; for example people with vestibular disorders often desire animations to be kept to a minimum.
 date: 2019-03-11
-updated: 2019-12-10
+updated: 2022-02-16
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
   - css
 hero: image/admin/LI2vYKZwQ98w3MLtUF8V.jpg
-alt: Time-lapse of woman in a train
+alt: Time-lapse of woman in a train.
 feedback:
   - api
 ---
 
 Not everyone likes decorative animations or transitions, and some users outright
 experience motion sickness when faced with parallax scrolling, zooming effects, and so on.
-Chrome 74 supports a user preference media query `prefers-reduced-motion`
-that lets you design a motion-reduced variant of your site for users who have expressed this
+The user preference media query `prefers-reduced-motion`
+lets you design a motion-reduced variant of your site for users who have expressed this
 preference.
+
+{% BrowserCompat 'css.at-rules.media.prefers-reduced-motion' %}
 
 ## Too much motion in real life and on the web
 
@@ -33,7 +35,7 @@ many moving targets, I fail to focus on anything, and end up lost and with a fee
 visual overload, almost like staring at an anthill 🐜.
 
 <figure>
-  {% Img src="image/admin/JA5v1s8gSBk70eJBB8xW.jpg", alt="Throng of feet of ice skating people", width="580", height="320" %}
+  {% Img src="image/admin/JA5v1s8gSBk70eJBB8xW.jpg", alt="Throng of feet of ice skating people.", width="580", height="320" %}
   <figcaption>Visual overload in real life.</figcaption>
 </figure>
 
@@ -46,7 +48,7 @@ disabling certain purely decorative effects, to completely redesigning a page fo
 
 Before I dive into the feature, let's take one step back and think of what animations are used for
 on the web. If you want, you can also skip the background information and
-[jump right into the technical details](#working_with_the_media_query) below.
+[jump right into the technical details](#working-with-the-media-query) below.
 
 ## Animation on the web
 
@@ -113,11 +115,6 @@ animation or motion it uses. It can take two possible values:
   movement is removed.
 
 ## Working with the media query
-
-{% Aside %}
-  See [Can I use prefers-reduced-motion media query?](https://caniuse.com/#feat=prefers-reduced-motion)
-  to find out which browsers support `prefers-reduced-motion`.
-{% endAside %}
 
 As with all media queries, `prefers-reduced-motion` can be checked from a CSS context and from a
 JavaScript context.
@@ -231,7 +228,6 @@ like
 contrast between adjacent colors), and
 [`inverted-colors`](https://drafts.csswg.org/mediaqueries-5/#inverted)
 (detects if the user prefers inverted colors).
-👀 Watch this space, we will definitely let you know once they launch in Chrome!
 
 ## (Bonus) Forcing reduced motion on all websites
 
