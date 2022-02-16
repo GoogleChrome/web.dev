@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2021-05-19
+updated: 2022-01-11
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -54,7 +54,9 @@ it will fire the `beforeinstallprompt` event and show the in-browser install
 promotion:
 
 * The web app is not already installed
-* Meets a user engagement heuristic
+* Meets the user engagement heuristics:
+  * The user needs to have clicked or tapped on the page at least once (at any time, even during a previous page load)
+  * The user needs to have spent at least 30 seconds viewing the page (at any time)
 * Be served over HTTPS
 * Includes a [web app manifest][add-manifest] that includes:
   * `short_name` or `name`
