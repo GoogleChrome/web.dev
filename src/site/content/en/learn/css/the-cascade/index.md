@@ -115,7 +115,7 @@ the initial declaration will be honored, and the font-size will be 1.5rem
 ```css
 .my-element {
   font-size: 1.5rem;
-  font-size: clamp(1.5rem, calc(1rem + 3vw), 2rem);
+  font-size: clamp(1.5rem, 1rem + 3vw, 2rem);
 }
 ```
 
