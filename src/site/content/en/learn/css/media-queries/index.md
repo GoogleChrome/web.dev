@@ -192,9 +192,9 @@ The following demo uses `min-width` and `max-width` to classify whether a viewpo
 
 
 {% Aside %}
-While it’s common to initially resort to the use of media queries  for layout they may not be necessary. This is especially true for components where [CSS grid](https://web.dev/learn/css/grid/) or [Flexbox](/learn/css/flexbox/) can be used instead. 
+While it’s common to initially resort to the use of media queries  for layout they may not be necessary. This is especially true for components where [CSS grid](/learn/css/grid/) or [Flexbox](/learn/css/flexbox/) can be used instead. 
 
-Check out [Do you need a media query?](https://web.dev/learn/design/macro-layouts/#do-you-need-a-media-query) for more.
+Check out [Do you need a media query?](/learn/design/macro-layouts/#do-you-need-a-media-query) for more.
  {% endAside %}
 
 
@@ -292,7 +292,7 @@ The following two code snippets are accordingly not equivalent
 ```
 
 ## Resources
-* [Web.dev’s Learn Responsive Web Design Course](https://web.dev/learn/design/)
+* [Web.dev’s Learn Responsive Web Design Course](/learn/design/)
 
 *  [MDN’s Beginner’s guide to using Media Queries]([Beginner’s guide to media queries - Learn web development | MDN](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Media_queries)
 
