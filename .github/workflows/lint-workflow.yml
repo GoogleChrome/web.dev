@@ -14,8 +14,8 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Install
-        run: npm ci
+      - name: Install 
+        run: npm ci 
 
       # Checks to see if any files in the PR match one of the listed file types.
       # We can use this filter to decide whether or not to run linters or tests.
