@@ -50,7 +50,7 @@ Also included is the [structuredClone()](/structured-clone/) method for making d
 
 Firefox 97 Beta supports the `cap` and `ic` units for [`length`](https://developer.mozilla.org/docs/Web/CSS/length), and also implements the [`scrollbar-gutter`](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) property. 
 
-There is a whole collection of good things included in Safari 15.4 Beta. Features include implementation of the [::backdrop](https://developer.mozilla.org/docs/Web/CSS/::backdrop) pseudo-element, [::focus-visible](https://developer.mozilla.org/docs/Web/CSS/:focus-visible) pseudo-class, the [accent-color](/accent-color/) property, and CSS Containment with the [contain](https://developer.mozilla.org/docs/Web/CSS/contain) property. This beta also includes the HTML [&lt;dialog&gt;](https://developer.mozilla.org/docs/Web/HTML/Element/dialog) element, the `lazy` attribute on images to enable [lazy-loading](/browser-level-image-lazy-loading/), plus support for Web App Manifest icons.
+There is a whole collection of good things included in Safari 15.4 Beta. Features include implementation of the [::backdrop](https://developer.mozilla.org/docs/Web/CSS/::backdrop) pseudo-element, [:focus-visible](https://developer.mozilla.org/docs/Web/CSS/:focus-visible) pseudo-class, the [accent-color](/accent-color/) property, and CSS Containment with the [contain](https://developer.mozilla.org/docs/Web/CSS/contain) property. This beta also includes the HTML [&lt;dialog&gt;](https://developer.mozilla.org/docs/Web/HTML/Element/dialog) element, the `lazy` attribute on images to enable [lazy-loading](/browser-level-image-lazy-loading/), plus support for Web App Manifest icons.
 
 All of these beta features will land in stable browsers soon.
 
