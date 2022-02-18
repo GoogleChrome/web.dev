@@ -1,0 +1,67 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+{% macro stackLink(url, pageUrl, text) %}
+  <a class="repel" href="{{ url }}" {% if url == pageUrl %}aria-current="page"{% endif %}>{{ text }}</a> 
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    {% include 'partials/head.njk' %}
+    <!-- some hacky styles to get through this populating effort -->
+  </head>
+  <body class="design-system">
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
+
+    <a class="skip-link button" href="#main">Skip to main</a>
+
+    <div class="flex-auto box-flex flex-dir-column">
+      <div class="sidebar flex-auto">
+        <nav class="flow bg-mid-bg pad-block-size-1" aria-label="design system">
+          <div class="repel pad-inline-base flex-align-end">
+            <div class="brand">
+              {{ svg('../../images/lockup.svg', {label: 'web.dev'}) }}
+              <p class="brand__byline">Design System</p>
+            </div>
+            <div>
+              {% include "partials/standard-theme-toggle.njk" %}
+            </div>
+          </div>
+          <ul class="stack-nav flow-space-size-2" role="list">
+            {% for link in sideLinks %}
+              <li>{{ stackLink(link.url, page.url, link.text)}}</li>
+            {% endfor %}
+          </ul>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">CSS</h2>
+          <ul class="stack-nav" role="list">
+            {% for link in cssLinks %}
+              <li>{{ stackLink(link.url, page.url, link.text)}}</li>
+            {% endfor %}
+          </ul>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">Component Library</h2>
+          <ul class="stack-nav" role="list">
+            {% for item in design.components.items %}
+              <li>{{ stackLink(item.url, page.url, item.data.title) }}</li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <div class="pad-block-size-1">
+          <article class="prose">
+            <h1>{{ pageTitle if pageTitle else title }}</h1>
+            {% if summary %}
+              <p>{{ summary | md | safe }}</p>
+            {% endif %}
+            {% block inner %}
+            {% endblock %}
+          </article>
+        </div>
+      </div>
+    </div>
+    {% include 'partials/site-footer.njk' %}
+  </body>
+</html>

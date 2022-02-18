@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Time to Interactive metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2021-06-04
 web_lighthouse:
   - interactive
 ---
@@ -22,8 +22,8 @@ nothing happens.
 
 Lighthouse displays TTI in seconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="588", class="w-screenshot" %}
+<figure>
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/JtyY7nYUTCt2Q9oFYvEL.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="592" %}
 </figure>
 
 ## What TTI measures
@@ -32,7 +32,7 @@ TTI measures how long it takes a page to become _fully_ interactive.
 A page is considered fully interactive when:
 
 - The page displays useful content, which is measured by the
-[First Contentful Paint](/first-contentful-paint),
+[First Contentful Paint](/fcp/),
 - Event handlers are registered for most visible page elements, and
 - The page responds to user interactions within 50&nbsp;milliseconds.
 
@@ -56,7 +56,7 @@ If your website's TTI is 2.2&nbsp;seconds, your TTI score is 99.
 
 This table shows how to interpret your TTI score:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -116,7 +116,7 @@ can be a good proxy for TTI.
 ## Resources
 
 - [Source code for **Time to Interactive** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
-- [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
+- [Lighthouse Scoring Guide](/performance-scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
 - [Reduce JavaScript Payloads with Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)

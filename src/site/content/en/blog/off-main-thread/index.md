@@ -70,7 +70,7 @@ but unlike OS threading they can't share variables.
 
 {% Aside %}
 Don't confuse web workers with [service workers](/service-workers-cache-storage)
-or [worklets](https://developer.mozilla.org/en-US/docs/Web/API/Worklet).
+or [worklets](https://developer.mozilla.org/docs/Web/API/Worklet).
 While the names are similar, the functionality and uses are different.
 {% endAside %}
 
@@ -82,7 +82,7 @@ const worker = new Worker("./worker.js");
 ```
 
 Communicate with the web worker by sending messages via the
-[`postMessage` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+[`postMessage` API](https://developer.mozilla.org/docs/Web/API/Window/postMessage).
 Pass the message value as a parameter in the `postMessage` call
 and then add a message event listener to the worker:
 
@@ -174,9 +174,9 @@ except that every function returns a promise for a value rather than the value i
 ## What code should you move to a web worker?
 
 Web workers don't have access to the DOM and many APIs
-like [WebUSB](https://developer.mozilla.org/en-US/docs/Web/API/USB),
-[WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API), or
-[Web Audio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API),
+like [WebUSB](https://developer.mozilla.org/docs/Web/API/USB),
+[WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API), or
+[Web Audio](https://developer.mozilla.org/docs/Web/API/Web_Audio_API),
 so you can't put pieces of your app that rely on such access in a worker.
 Still, every small piece of code moved to a worker buys more headroom
 on the main thread for stuff that _has_ to be there—like updating the user interface.
@@ -223,12 +223,12 @@ the UI is frozen for six seconds after the user interacts with it.
 There's no feedback, and the user has to wait for the full six seconds
 before being able to do something else.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     UI response time in the <strong>non-OMT</strong> version of PROXX.
   </figcaption>
 </figure>
@@ -242,12 +242,12 @@ The user therefore knows that something is happening
 and can continue playing as the UI updates,
 making the game feel considerably better.
 
-<figure class="w-figure">
-  <video controls muted class="w-screenshot" style="max-width: 400px;">
+<figure>
+  <video controls muted style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     UI response time in the <strong>OMT</strong> version of PROXX.
   </figcaption>
 </figure>
@@ -290,7 +290,7 @@ There's more detail in the talk, but, in general,
 you shouldn't break your performance budget
 if your object's stringified JSON representation is less than 10&nbsp;KB.
 If you need to copy larger objects, consider using
-[ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
+[ArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 or [WebAssembly](https://webassembly.org/).
 You can read more about this issue in
 [this blog post about `postMessage` performance](https://dassur.ma/things/is-postmessage-slow).
@@ -315,8 +315,8 @@ Also, OMT has secondary benefits:
 
 *   It moves JavaScript execution costs to a separate thread.
 *   It moves _parsing_ costs, meaning UI might boot up faster.
-    That might reduce [First Contentful Paint](/first-contentful-paint)
-    or even [Time to Interactive](/interactive),
+    That might reduce [First Contentful Paint](/fcp/)
+    or even [Time to Interactive](/tti/),
     which can in turn increase your
     [Lighthouse](https://developers.google.com/web/tools/lighthouse) score.
 

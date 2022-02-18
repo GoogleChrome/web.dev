@@ -1,0 +1,24 @@
+/// SCROLLBAR UTILITY
+/// Info: https://web.dev/design-system/css-utilities/#scrollbar
+.scrollbar {
+  scrollbar-color: get-utility-value('bg', 'core-bg')
+    get-utility-value('bg', 'stroke');
+}
+
+.scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  border: 1px solid get-utility-value('bg', 'stroke');
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  @include apply-utility('bg', 'stroke');
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  @include apply-utility('bg', 'action-bg-hover');
+}

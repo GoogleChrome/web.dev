@@ -12,7 +12,7 @@ description: |
   payment app. Learn how to set up a payment method and get your payment app
   ready for merchants and customers to make payments.
 date: 2020-05-25
-updated: 2020-07-17
+updated: 2021-09-14
 tags:
   - payments
 feedback:
@@ -42,7 +42,7 @@ Every payment app needs to provide the following:
   provided by a third party)
 - Web app manifest
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kvLIMUysDNEG3IfPxKz6.png", alt="Diagram: How a browser discovers the payment app from a URL-based payment method identifier", width="800", height="587" %}
 </figure>
 
@@ -115,7 +115,7 @@ manifest body.
 A payment method manifest has two fields, `default_applications` and
 `supported_origins`.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -200,7 +200,7 @@ documentation](https://github.com/w3c/payment-request-info/wiki/PaymentMethodPra
 
 ## Step 3: Serve a web app manifest
 
-A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is
+A [web app manifest](https://developer.mozilla.org/docs/Web/Manifest) is
 used to define a web app as the name suggests. It's a widely used manifest file
 to [define a Progressive Web App (PWA)](/add-manifest/).
 
@@ -230,14 +230,6 @@ Typical web app manifest would look like this:
     "scope": "/",
     "use_cache": false
   },
-  "payment": {
-    "supported_delegations": [
-      "shippingAddress",
-      "payerName",
-      "payerEmail",
-      "payerPhone"
-    ]
-  },
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#3f51b5",
@@ -261,7 +253,7 @@ Typical web app manifest would look like this:
 The information described in a web app manifest is also used to define how a
 payment app appears in the Payment Request UI.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -290,7 +282,7 @@ payment app appears in the Payment Request UI.
       </tr>
       <tr>
         <td>
-          <code><a href="https://developer.mozilla.org/docs/Web/Manifest/serviceworker">serviceworker</a></code>
+          <code><a href="https://developer.mozilla.org/docs/Web/API/Service_Worker_API">serviceworker</a></code>
         </td>
         <td>
         Used to detect the service worker that runs as the web-based payment
@@ -322,7 +314,7 @@ payment app appears in the Payment Request UI.
         </td>
         <td>
         Used to detect the app that acts as the OS-provided payment app.
-        Find more details at <a href="/native-payment-apps-overview">Android
+        Find more details at <a href="/android-payment-apps-developers-guide/">Android
         payment apps developer guide</a>.
         </td>
       </tr>
@@ -334,24 +326,14 @@ payment app appears in the Payment Request UI.
         Used to determine which payment app to launch when both an OS-provided payment app and a web-based payment app are available.
         </td>
       </tr>
-      <tr>
-        <td>
-          <code><a href="https://github.com/sahel-sh/shipping-contact-delegation/blob/master/Explainer.md#edit-just-in-time-jit-installation">payment.supported_delegations</a></code>
-        </td>
-        <td>
-        A string array used to determine the additional information that the
-        payment app can provide. <code>shippingAddress</code>, <code>payerName</code>, <code>payerEmail</code>,
-        and <code>payerPhone</code> are valid values.
-        </td>
-      </tr>
     </tbody>
     <caption>Important web app manifest fields</caption>
   </table>
 </div>
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Payment app with an icon.", width="800", height="237", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lyP2t7T5R5bVzqh0LUTx.png", alt="Payment app with an icon.", width="800", height="237" %}
+  <figcaption>
     Payment app label and icon.
   </figcaption>
 </figure>
@@ -412,18 +394,20 @@ advance. [It can be registered just-in-time](#jit-register).
 
 
 ## Understanding the special optimizations
-### How browsers can skip the Payment Request UI and launch a payment app directly
-In Chrome, when `show()` method of `PaymentRequest` is called, the Payment Request API displays a
-browser-provided UI called the "Payment Request UI". This UI allows users to
-choose a payment app, shipping options and delivery address, and payer's contact
-information. After pressing the **Continue** button in the Payment Request UI, the selected payment app is launched.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+### How browsers can skip the Payment Request UI and launch a payment app directly
+
+In Chrome, when `show()` method of `PaymentRequest` is called, the Payment
+Request API displays a browser-provided UI called the "Payment Request UI". This
+UI allows users to choose a payment app. After pressing the **Continue** button
+in the Payment Request UI, the selected payment app is launched.
+
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Payment Request UI intervenes before launching the payment app.
   </figcaption>
 </figure>
@@ -434,12 +418,12 @@ the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `show()` is called.
 
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure style="width:300px; margin:auto;">
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     Skip the Payment Request UI and launch the payment app directly.
   </figcaption>
 </figure>
@@ -448,8 +432,6 @@ To launch a payment app directly, the following conditions must be met:
 - `show()` is triggered with a user gesture (for example, a mouse click).
 - There is only a single payment app that:
     - Supports the requested payment method identifier.
-    - Can fulfill all the delegated requirements (such as shipping address,
-      payer's phone number, or payer's name).
 
 {% Aside %}
 Safari currently only supports Apple Pay so it always launches the app directly,
@@ -457,6 +439,7 @@ skipping the Payment Request UI.
 {% endAside %}
 
 ### When is a web-based payment app registered just-in-time (JIT)? {: #jit-register}
+
 Web-based payment apps can be launched without the user's explicit prior visit
 to the payment app website and registering the service worker. The service
 worker can be registered just-in-time when the user chooses to pay with the

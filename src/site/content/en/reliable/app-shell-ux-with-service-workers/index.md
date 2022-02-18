@@ -23,7 +23,7 @@ tags:
 
 [Single-page app (SPA)](https://en.wikipedia.org/wiki/Single-page_application) is an architectural pattern in which the browser runs JavaScript code to update the existing page when the user visits a different section of the site, as opposed to loading an entire new page.
 
-This means that the web app doesn't perform an actual page reload. The [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) is used instead to navigate back and forth through the user's history and manipulate the contents of the history stack.
+This means that the web app doesn't perform an actual page reload. The [History API](https://developer.mozilla.org/docs/Web/API/History_API) is used instead to navigate back and forth through the user's history and manipulate the contents of the history stack.
 
 Using this type of architecture can provide an [app shell UX](https://developers.google.com/web/fundamentals/architecture/app-shell) that's fast, reliable, and usually consumes less data when navigating.
 
@@ -36,8 +36,8 @@ In this article we'll analyze how you can achieve an SPA-like architecture in mu
 
 [DEV](https://dev.to/) is a community where software developers write articles, take part in discussions, and build their professional profiles.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vk2qqXg5PmLV7oCR7xVh.jpg", alt="A screenshot of https://dev.to", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vk2qqXg5PmLV7oCR7xVh.jpg", alt="A screenshot of https://dev.to", width="800", height="482" %}
 </figure>
 
 Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack.
@@ -45,9 +45,9 @@ Their architecture is a multi-page app based on traditional backend templating t
 Here's how their solution works:
 
 1. First, they create partials of their home page for the header and the footer (`shell_top.html` and `shell_bottom.html`) and deliver them as standalone HTML snippets with an endpoint. These assets are added to the cache at the service worker `install` event (what's commonly referred to as [precaching](/precache-with-workbox/)).
-1. When a navigation request is intercepted by the service worker, they create a [streamed response](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) by combining the cached header and footer with the main page content that just came from the server. The body is the only actual part of the page that requires fetching data from the network.
+1. When a navigation request is intercepted by the service worker, they create a [streamed response](https://developer.mozilla.org/docs/Web/API/ReadableStream) by combining the cached header and footer with the main page content that just came from the server. The body is the only actual part of the page that requires fetching data from the network.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QkGCrnzggZmrp1PXrbHb.png", alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.", width="800", height="363" %}
 </figure>
 
@@ -121,7 +121,7 @@ workbox.precaching.precacheAndRoute([
 
 #### Streaming
 
-Next, add the service worker logic so that the precached partial HTML can be sent back to the web app immediately. This is a crucial part of being reliably fast. Using the [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) within our service worker makes that possible.
+Next, add the service worker logic so that the precached partial HTML can be sent back to the web app immediately. This is a crucial part of being reliably fast. Using the [Streams API](https://developer.mozilla.org/docs/Web/API/Streams_API) within our service worker makes that possible.
 [Workbox Streams](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-streams) abstracts the details of how streaming works. The package lets you pass to the library a mix of streaming sources, both from caches and runtime data that might come from the network. Workbox takes care of coordinating the individual sources and stitching them together into a single, streaming response.
 
 First, set up the strategies in Workbox to handle the different sources that will make up the streaming response.

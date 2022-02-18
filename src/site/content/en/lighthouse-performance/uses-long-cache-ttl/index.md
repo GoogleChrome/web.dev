@@ -23,21 +23,21 @@ the browser uses its local copy rather than getting it from the network.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags all static resources that aren't cached:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit", width="800", height="490", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit", width="800", height="490" %}
 </figure>
 
 Lighthouse considers a resource cacheable
 if all the following conditions are met:
 
 - The resource is a font, image, media file, script, or stylesheet.
-- The resource has a `200`, `203`, or `206` [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+- The resource has a `200`, `203`, or `206` [HTTP status code](https://developer.mozilla.org/docs/Web/HTTP/Status).
 - The resource doesn't have an explicit no-cache policy.
 
 When a page fails the audit,
 Lighthouse lists the results in a table with three columns:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <tbody>
       <tr>
@@ -105,8 +105,8 @@ open the **Network** tab in Chrome DevTools:
 
 The **Size** column in Chrome DevTools can help you verify that a resource has been cached:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="The Size column.", width="800", height="565", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="The Size column.", width="800", height="565" %}
 </figure>
 
 Chrome serves the most requested resources from the memory cache, which is very fast,
@@ -118,9 +118,9 @@ check its HTTP header data:
 1. Click the URL of the request, under the **Name** column of the Requests table.
 1. Click the **Headers** tab.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspecting the Cache-Control header via the Headers tab", width="800", height="597", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspecting the Cache-Control header via the Headers tab", width="800", height="597" %}
+  <figcaption>
     Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab.
   </figcaption>
 </figure>
@@ -145,4 +145,4 @@ See [Browser Caching](https://wordpress.org/support/article/optimization/#browse
 
 - [Source code for **Serve static assets with an efficient cache policy** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Cache-Control specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-- [Cache-Control (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)
+- [Cache-Control (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

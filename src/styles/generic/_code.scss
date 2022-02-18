@@ -80,16 +80,21 @@ pre code {
 
 // It's not uncommon to have code in markdown headings.
 // In these cases we should remove the border.
+// There is also a utility class, .unstyled-code, that can be used
+// if we're using <code> blocks in new contexts.
+// For example: <span class="unstyled-code">{{ description | md | safe }}</span>
 h1 code,
 h2 code,
 h3 code,
 h4 code,
 h5 code,
-h6 code {
+h6 code,
+.unstyled-code code {
   background: transparent;
   border: 0;
   color: inherit;
   font-size: inherit;
+  font-style: inherit;
   margin: 0;
   padding: 0;
   white-space: normal;
@@ -102,7 +107,7 @@ cite code {
   font-size: .9em;
 }
 
-// Github-like theme for Prism.js
+// GitHub-like theme for Prism.js
 // @author Luke Askew http://github.com/lukeaskew
 
 // Token colors

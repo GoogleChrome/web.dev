@@ -28,7 +28,7 @@ it slows down your page performance in several ways:
 
   JavaScript is also executed on the main thread.
   If your page runs a lot of code before it's really needed,
-  that also delays your [Time To Interactive](/interactive),
+  that also delays your [Time To Interactive](/tti/),
   which is one of the key metrics related to how users perceive your page speed.
 
 - **Memory cost**
@@ -44,8 +44,8 @@ it slows down your page performance in several ways:
 shows a warning when JavaScript execution takes longer than 2&nbsp;seconds.
 The audit fails when execution takes longer than 3.5&nbsp;seconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="A screenshot of the Lighthouse Reduce JavaScript execution time audit", width="800", height="321", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BoomMoQNycPXsy34DZZs.png", alt="A screenshot of the Lighthouse Reduce JavaScript execution time audit", width="800", height="321" %}
 </figure>
 
 To help you identify the biggest contributors to execution time,

@@ -1,13 +1,17 @@
 ---
 title: Flexbox
-description:
+description: >
+  Flexbox is a layout mechanism designed for laying out groups of items in one dimension.
+  Learn how to use it in this module.
+audio:
+  title: 'The CSS Podcast - 010: Flexbox'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_010_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - rachelandrew
   - andybell
 date: 2021-04-21
 ---
-
-# Flexbox
 
 A design pattern that can be tricky in responsive design is a sidebar that sits inline with some
 content. Where there is viewport space,
@@ -17,7 +21,8 @@ that rigid layout can become problematic.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'poRENWv'
+  id: 'poRENWv',
+  height: 420
 } %}
 
 The Flexible Box Layout Model (flexbox) is a layout model designed for one-dimensional content.
@@ -33,7 +38,8 @@ you can instead provide flexible boundaries to hint how the content could displa
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxgERMp'
+  id: 'xxgERMp',
+  height: 400
 } %}
 
 ## What can you do with a flex layout?
@@ -60,7 +66,7 @@ The main axis is the one set by your `flex-direction` property.
 If that is `row` your main axis is along the row,
 if it is `column` your main axis is along the column.
 
-<figure class="w-figure">
+<figure>
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg",
 alt="Three boxes next to each other with an arrow, pointing left to right. The arrow is labelled Main axis",
@@ -75,7 +81,7 @@ Remember: we've got a bunch of things and we are trying to get the best layout f
 The cross axis runs in the other direction to the main axis,
 so if `flex-direction` is `row` the cross axis runs along the column.
 
-<figure class="w-figure">
+<figure>
 {% Img
   src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Three boxes of different heights, next to each other with an arrow, pointing left to right. The arrow is labelled Main axis. There's another arrow pointing top to bottom. This one is labelled Cross axis", width="800", height="320" %}
 </figure>
@@ -135,10 +141,10 @@ the items display as a row because the initial value of `flex-direction` is `row
 If you want a row then you don't need to add the property.
 To change the direction, add the property and one of the four values:
 
-- `row`: the items lay out as a row
-- `row-reverse:` the items lay out as a row from the end of the flex container
-- `column`: the items lay out as a column
-- `column-reverse` : the items lay out as a column from the end of the flex container
+- `row`: the items lay out as a row.
+- `row-reverse:` the items lay out as a row from the end of the flex container.
+- `column`: the items lay out as a column.
+- `column-reverse` : the items lay out as a column from the end of the flex container.
 
 You can try out all of the values using our group of items in the demo below.
 
@@ -174,7 +180,7 @@ hard to use for some people.
 
 For more information see:
 
-- [Content reordering](https://web.dev/content-reordering/)
+- [Content reordering](/content-reordering/)
 - [Flexbox and the keyboard navigation disconnect](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/)
 
 ### Writing modes and direction
@@ -196,7 +202,8 @@ Try changing the `flex-direction` in this demo which is using a vertical writing
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRaPXX'
+  id: 'qBRaPXX',
+  height: 600
 } %}
 
 Therefore the way flex items behave by default is linked to the writing mode of the document.
@@ -224,14 +231,14 @@ height="382" %}
 The initial value of the `flex-wrap` property is `nowrap`.
 This means that if there is not enough space in the container the items will overflow.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg",
 alt="A flex container with nine items inside it, the items have shrunk down so one word is on a line
 but there is not enough room to show them side by side so the flex items have extended outside the
 box of the container.",
 width="800",
 height="282" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
   Once they hit min-content size flex items will start to overflow their container
   </figcaption>
 </figure>
@@ -250,7 +257,8 @@ To cause the items to wrap add `flex-wrap: wrap` to the flex container.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRGdNZ'
+  id: 'WNRGdNZ',
+  height: 601
 } %}
 
 When a flex container wraps it creates multiple **flex lines**.
@@ -309,13 +317,13 @@ as the space that is shared between the items is shared out _after_ each item is
 max-content size.
 So a large item will gain more space.
 To force all of the items to be a consistent size and ignore the size of the content change
-`flex:auto` to `flex: 1`. in the demo.
+`flex:auto` to `flex: 1` in the demo.
 
 This unpacks to:
 
 - `flex-grow: 1`: items can grow larger than their `flex-basis`.
-- `flex-shrink: 0`: items can't shrink smaller than their `flex-basis`.
-- `flex-basis: 0`: items have a base size of `0`
+- `flex-shrink: 1`: items can shrink smaller than their `flex-basis`.
+- `flex-basis: 0`: items have a base size of `0`.
 
 Using `flex: 1` says that all items have zero size,
 therefore all of the space in the flex container is available to be distributed.
@@ -434,7 +442,7 @@ and the items line up at the end of the container and the spare space is placed 
 You can also distribute the space between the items with `justify-content: space-between`.
 
 Try some of the values in the demo,
-and [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) for the full set of
+and [see MDN](https://developer.mozilla.org/docs/Web/CSS/justify-content) for the full set of
 possible values.
 
 {% Codepen {
@@ -460,7 +468,8 @@ Try the different values, this time with a flexbox column layout.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgwLgz'
+  id: 'bGgwLgz',
+  height: 600
 } %}
 
 ## Distributing space between flex lines
@@ -535,7 +544,7 @@ Use any of the following values to align the item:
 - `stretch`
 - `baseline`
 
-See [the full list of values on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self).
+See [the full list of values on MDN](https://developer.mozilla.org/docs/Web/CSS/align-self).
 
 The next demo has a single line of flex items with `flex-direction: row`.
 The last item defines the height of the flex container.
@@ -544,7 +553,8 @@ Try changing the value on that property to see how it moves within it's space on
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'RwKGQee'
+  id: 'RwKGQee',
+  height: 600
 } %}
 
 The `align-self` property is applied to individual items.
@@ -563,7 +573,8 @@ axis as a group.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWdKmby'
+  id: 'QWdKmby',
+  height: 600
 } %}
 
 ## Why is there no justify-self in flexbox?
@@ -617,7 +628,7 @@ If you need to align something it's a great way to do it.
 
 ## Resources
 
-- [MDN CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout) includes a series of detailed guides with examples.
+- [MDN CSS Flexible Box Layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout) includes a series of detailed guides with examples.
 - [CSS Tricks Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [What Happens When You Create a Flexbox Flex Container](https://www.smashingmagazine.com/2018/08/flexbox-display-flex-container/)
 - [Everything You Need To Know About Alignment In Flexbox](https://www.smashingmagazine.com/2018/08/flexbox-alignment/)

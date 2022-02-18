@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-03-03
+updated: 2021-11-18
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -65,7 +65,7 @@ communication between the website and the device that it is controlling.
 
 ## Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
@@ -97,13 +97,15 @@ received at any time, requiring a way to listen to it.
 
 To open a serial port, first access a `SerialPort` object. For this, you can
 either prompt the user to select a single serial port by calling
-`navigator.serial.requestPort()`, or pick one from `navigator.serial.getPorts()`
-which returns a list of serial ports the website has been granted access to
-previously.
+`navigator.serial.requestPort()` in response to a user gesture such as touch
+or mouse click, or pick one from `navigator.serial.getPorts()` which returns
+a list of serial ports the website has been granted access to.
 
 ```js
-// Prompt user to select any serial port.
-const port = await navigator.serial.requestPort();
+document.querySelector('button').addEventListener('click', async () => {
+  // Prompt user to select any serial port.
+  const port = await navigator.serial.requestPort();
+});
 ```
 
 ```js
@@ -129,9 +131,9 @@ const port = await navigator.serial.requestPort({ filters });
 const { usbProductId, usbVendorId } = port.getInfo();
 ```
 
-<figure class="w-figure">
-  {% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513", class="w-screenshot" %}
-  <figcaption class="w-figcaption">User prompt for selecting a BBC micro:bit</figcaption>
+<figure>
+  {% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513" %}
+  <figcaption>User prompt for selecting a BBC micro:bit</figcaption>
 </figure>
 
 Calling `requestPort()` prompts the user to select a device and returns a
@@ -168,7 +170,7 @@ Input and output streams in the Web Serial API are handled by the Streams API.
 
 {% Aside %}
 If streams are new to you, check out [Streams API
-concepts](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts).
+concepts](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts).
 This article barely scratches the surface of streams and stream handling.
 {% endAside %}
 
@@ -446,9 +448,9 @@ assembly line: as a widget comes down the line, each step in the line modifies
 the widget, so that by the time it gets to its final destination, it's a fully
 functioning widget.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="Photo of an aeroplane factory", width="800", height="519" %}
-  <figcaption class="w-figcaption">World War II Castle Bromwich Aeroplane Factory</figcaption>
+  <figcaption>World War II Castle Bromwich Aeroplane Factory</figcaption>
 </figure>
 
 For example, consider how to create a transform stream class that consumes a
@@ -508,12 +510,12 @@ const [appReadable, devReadable] = port.readable.tee();
 ## Dev Tips {: #dev-tips }
 
 Debugging the Web Serial API in Chrome is easy with the internal page,
-`chrome://device-log` where you can see all serial device related events in one
+`about://device-log` where you can see all serial device related events in one
 single place.
 
-<figure class="w-figure">
-  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
+<figure>
+  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547" %}
+  <figcaption>Internal page in Chrome for debugging the Web Serial API.</figcaption>
 </figure>
 
 ## Codelab {: #codelab }
@@ -602,24 +604,24 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
-[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md
-[spec]: https://reillyeon.github.io/serial/
-[default values]: https://reillyeon.github.io/serial/#dom-serialoptions
-[Streams API concepts]: https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts
-[ReadableStream]: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
-[WritableStream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
+[explainer]: https://github.com/WICG/serial/blob/main/EXPLAINER.md
+[spec]: https://github.com/WICG/serial
+[default values]: https://wicg.github.io/serial/#serialoptions-dictionary
+[Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
+[ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
+[WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
-[output signals]: https://reillyeon.github.io/serial/#serialoutputsignals-dictionary
-[input signals]: https://reillyeon.github.io/serial/#serialinputsignals-dictionary
+[output signals]: https://wicg.github.io/serial/#serialoutputsignals-dictionary
+[input signals]: https://wicg.github.io/serial/#serialinputsignals-dictionary
 [BBC micro:bit]: https://microbit.org/
 [Google Developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
 [Serial API polyfill]: https://github.com/google/web-serial-polyfill
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[security]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md#security-considerations
-[privacy]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md#privacy-considerations
-[transform stream]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
-[transform streams]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
+[security]: https://wicg.github.io/serial/#security
+[privacy]: https://wicg.github.io/serial/#privacy
+[transform stream]: https://developer.mozilla.org/docs/Web/API/TransformStream
+[transform streams]: https://developer.mozilla.org/docs/Web/API/TransformStream
 [issues]: https://github.com/wicg/serial/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESerial
 [cr-dev-twitter]: https://twitter.com/chromiumdev

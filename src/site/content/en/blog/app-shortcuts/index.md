@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2021-04-06
+updated: 2021-10-12
 hero: image/admin/1ekafMZjtzcd0G3TLQJ4.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -21,11 +21,6 @@ To improve users' productivity and facilitate re-engagement with key tasks, the
 web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
 
-{% Aside %}
-At the time of writing, app shortcuts are available on Android (Chrome 84),
-Windows (Chrome 85 and Edge 85), and Chrome OS (Chrome 92).
-{% endAside %}
-
 This article will teach you how to define those app shortcuts. Additionally,
 you'll learn some associated best practices.
 
@@ -40,14 +35,14 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 (Windows) or dock (macOS) on the user's desktop, or long pressing the app's
 launcher icon on Android.
 
-<figure class="w-figure">
-  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420", class="w-screenshot" %}
-  <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
+<figure>
+  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420" %}
+  <figcaption>App shortcuts menu opened on Android</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420", class="w-screenshot" %}
-  <figcaption class="w-figcaption">App shortcuts menu opened on Windows</figcaption>
+<figure>
+  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420" %}
+  <figcaption>App shortcuts menu opened on Windows</figcaption>
 </figure>
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
@@ -150,9 +145,9 @@ must be at least 72 by 72 pixels. (This is derived from the
 To verify your app shortcuts are setup correctly, use the **Manifest** pane in the
 **Application** panel of DevTools.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Screenshot of app shortcuts in DevTools", width="800", height="534" %}
-  <figcaption class="w-figcaption">App shortcuts shown in DevTools</figcaption>
+  <figcaption>App shortcuts shown in DevTools</figcaption>
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -173,6 +168,11 @@ number of app shortcuts displayed varies depending on the platform. Chrome and
 Edge on Windows for instance limit the number of app shortcuts to 10 while
 Chrome for Android only takes the first 4 app shortcuts into account.
 
+{% Aside %}
+Chrome 92 for Android 7 now allow only 3 app shortcuts. A shortcut to the site
+settings was added, taking one of the available shortcut slots for the app.
+{% endAside %}
+
 ### Use distinct app shortcut names
 
 You should not rely on icons to differentiate app shortcuts as they may not
@@ -188,13 +188,11 @@ You should annotate app shortcuts `url` entries like you would do with
 ## Browser support
 
 App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
-Edge 85), and Chrome OS (Chrome 92 behind the experimental
-`chrome://flags/#enable-desktop-pwas-app-icon-shortcuts-menu-ui` flag).
-More desktop platform support will follow.
+Edge 85), Chrome OS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
 
-<figure class="w-figure">
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450", class="w-screenshot" %}
-  <figcaption class="w-figcaption">App shortcuts menu opened on Chrome OS</figcaption>
+<figure>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450" %}
+  <figcaption>App shortcuts menu opened on Chrome OS</figcaption>
 </figure>
 
 ## Trusted Web Activity support
@@ -214,8 +212,8 @@ behaviors.
 
 ## Sample
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot"
+<figure>
+  <video controls autoplay loop muted
     src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
   </video>
 </figure>

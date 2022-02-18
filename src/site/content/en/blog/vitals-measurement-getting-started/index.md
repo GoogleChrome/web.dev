@@ -1,6 +1,5 @@
 ---
-title: |
-  Getting started with measuring Web Vitals
+title: Getting started with measuring Web Vitals
 authors:
   - katiehempenius
 date: 2020-05-27

@@ -22,8 +22,8 @@ and others will read both labels.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags form elements that have more than one label:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XO2Y33NoSzSis8zNH8kv.png", alt="Lighthouse audit showing form elements with multiple labels", width="800", height="259", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XO2Y33NoSzSis8zNH8kv.png", alt="Lighthouse audit showing form elements with multiple labels", width="800", height="259" %}
 </figure>
 
 There are several common scenarios that cause this audit to fail:

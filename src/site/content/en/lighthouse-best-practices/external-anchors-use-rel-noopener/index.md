@@ -33,8 +33,8 @@ including Edge Legacy and Internet Explorer.
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags unsafe links to cross-origin destinations:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Lighthouse audit showing unsafe links to cross-origin destinations", width="800", height="213", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Lighthouse audit showing unsafe links to cross-origin destinations", width="800", height="213" %}
 </figure>
 
 Lighthouse uses the following process to identify links as unsafe:
@@ -77,6 +77,5 @@ post for more information.
 
 ## Resources
 
-- [Source code for **Links to cross-origin destinations are unsafe** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [Share cross-origin resources safely](/cross-origin-resource-sharing/)
 - [Site isolation for web developers](https://developers.google.com/web/updates/2018/07/site-isolation)

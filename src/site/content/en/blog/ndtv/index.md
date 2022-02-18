@@ -1,4 +1,5 @@
 ---
+layout: post
 title: NDTV achieved a 55% improvement in LCP by optimizing for Core Web Vitals
 subhead: >
   NDTV enhanced user experience and thus retention by optimizing for Web Vitals.
@@ -30,14 +31,14 @@ with a 50% reduction in bounce rates.
   the only cause of the bounce rate reduction.
 {% endAside %}
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">55<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Improvement in LCP</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">55<sub>%</sub></p>
+    <p>Improvement in LCP</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">50<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Reduction in bounce rates</p>
+  <div class="stats__item">
+    <p class="stats__figure">50<sub>%</sub></p>
+    <p>Reduction in bounce rates</p>
   </div>
 </div>
 
@@ -57,7 +58,7 @@ team analyzed potential improvement areas on the site. These clearly defined opt
 helped them re-prioritize high-impact tasks and achieve immediate results in the improvement of Core
 Web Vitals. Optimizations included:
 
-<div class="w-columns">
+<div class="switcher">
   <ul>
     <li>
       <b>Prioritizing the largest content block</b> by
@@ -86,8 +87,8 @@ Web Vitals. Optimizations included:
       <b><a href="/uses-rel-preconnect/">Preconnecting</a></b> to origins delivering critical assets.
     </li>
   </ul>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h8k2D4AqsGbeDtpjsfNe.png", alt="A summary of the optimizations: Largest Contentful Paint, Caching, CSS, vector graphics, lazily loaded JS and CSS, preconnecting.", width="800", height="920", class="w-screenshot" %}
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h8k2D4AqsGbeDtpjsfNe.png", alt="A summary of the optimizations: Largest Contentful Paint, Caching, CSS, vector graphics, lazily loaded JS and CSS, preconnecting.", width="800", height="920" %}
   </figure>
 </div>
 
@@ -96,7 +97,7 @@ Web Vitals. Optimizations included:
 Web Vitals equipped the team with metric-driven signals to expedite the
 process of improving user experience.
 
-<div class="w-columns">
+<div class="switcher">
   <p>
     Before beginning the optimization project, the NDTV team benchmarked their LCP
     score at 3.0 seconds (for the 75th percentile of their users, based on
@@ -104,11 +105,11 @@ process of improving user experience.
     After the optimization project, it was down to 1.6 seconds.
     They also reduced their <a href="/cls">Cumulative Layout Shift</a> (CLS) score to
     0.05. Other metrics on WebPageTest like
-    "<a href="/time-to-first-byte">First Byte Time</a>" and "Effective use of
+    "<a href="/ttfb/">First Byte Time</a>" and "Effective use of
     <a href="/content-delivery-networks/">CDN</a>" improved to an A grade.
   </p>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WSQ9ATmLBzHmNtTWBIf8.png", alt="0.05 CLS score.", width="800", height="370", class="w-screenshot" %}
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WSQ9ATmLBzHmNtTWBIf8.png", alt="0.05 CLS score.", width="800", height="370" %}
   </figure>
 </div>
 
@@ -130,7 +131,7 @@ few weeks of kicking off their optimization work.
 
 ## Overall business results
 
-<div class="w-columns">
+<div class="switcher">
   <ul>
     <li>55% improvement in LCP as a result of optimizing for Core Web Vitals.</li>
     <li>
@@ -142,8 +143,8 @@ few weeks of kicking off their optimization work.
       revenue for their website.
     </li>
   </ul>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lN46T0iOTj45lSOkE8mo.png", alt="55% improvement in LCP. 50% reduction in bounce rate. Increased engagement and consumption.", width="800", height="825", class="w-screenshot" %}
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lN46T0iOTj45lSOkE8mo.png", alt="55% improvement in LCP. 50% reduction in bounce rate. Increased engagement and consumption.", width="800", height="825" %}
   </figure>
 </div>
 

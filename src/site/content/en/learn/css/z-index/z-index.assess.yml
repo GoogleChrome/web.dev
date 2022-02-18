@@ -1,0 +1,48 @@
+setLeader: Test your knowledge of z-index
+tabLabel: question
+questions:
+  - type: multiple-choice
+    stimulus: |
+      ```html
+      <section>
+        <article>1</article>
+        <article>2</article>
+        <article>3</article>
+        <article>4</article>
+      </section>
+      ```
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: Which article is on top by default?
+    options:
+      - content: "1"
+        rationale: "It's in the very back."
+      - content: "2"
+        rationale: "Try again!"
+      - content: "3"
+        rationale: "Try again!"
+      - content: "4"
+        rationale: "Last in the document sits on top yep!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: If z-index isn't working, what property should you inspect on your element?
+    options:
+      - content: "`display`"
+        rationale: "Not the likely property for why z-index isn't working."
+      - content: "`relative`"
+        rationale: "This is a CSS value, not a property."
+      - content: "`position`"
+        rationale: "Make sure this is set to something other than `static`."
+      - content: "`animation`"
+        rationale: "Not the likely property for why z-index isn't working."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "Do flexbox and grid need `position: relative`?"
+    options:
+      - content: "Yes"
+        rationale: "These display types do not need it."
+      - content: "No"
+        rationale: "Using z-index inside a flexbox or grid layout will work
+        without `position: relative`."

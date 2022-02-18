@@ -36,14 +36,14 @@ To run a Lighthouse audit on this site:
 
 {% Img src="image/admin/bk0impRv9Mo0yDpbuIQi.png", alt="Audits panel of Chrome DevTools, powered by Lighthouse", width="800", height="1068" %}
 
-When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/first-contentful-paint/) is high and why overall performance score is not great.
+When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/fcp/) is high and why overall performance score is not great.
 
-{% Img src="image/admin/otfxnEjhjP9cNpSF8W4o.png", alt="Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app", width="710", height="356", class="w-screenshot" %}
+{% Img src="image/admin/otfxnEjhjP9cNpSF8W4o.png", alt="Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app", width="710", height="356" %}
 
 Lighthouse is here to help you fix performance issues, so look for solutions in the **Opportunities** section. **Eliminate render-blocking resources** is listed as an opportunity and that's where Critical shines!
 
 
-{% Img src="image/admin/L0i6jb8G1eT0vr2V45vH.png", alt="Lighthouse audit 'Opportunities' section listing 'Eliminate render-blocking resources'", width="743", height="449", class="w-screenshot" %}
+{% Img src="image/admin/L0i6jb8G1eT0vr2V45vH.png", alt="Lighthouse audit 'Opportunities' section listing 'Eliminate render-blocking resources'", width="743", height="449" %}
 
 ## Optimize
 
@@ -71,7 +71,7 @@ Error handling isn't mandatory, but it's an easy way to gauge the operation succ
 
 ### Configure Critical
 
-The table below contains some useful Critical options. You can check out all of the [available options on Github](https://github.com/addyosmani/critical#usage).
+The table below contains some useful Critical options. You can check out all of the [available options on GitHub](https://github.com/addyosmani/critical#usage).
 
 <table>
     <th>Option</th>
@@ -168,9 +168,9 @@ npm run critical
 refresh
 ```
 
-<figure class="w-figure">
-  {% Img src="image/admin/alfJqwxI2WU3bUOT4xUZ.png", alt="Success message saying 'Generated critical CSS' in the console]()", width="243", height="45" %}
-  <figcaption class="w-figcaption">Success message in the console</figcaption>
+<figure data-size="full">
+  {% Img src="image/admin/alfJqwxI2WU3bUOT4xUZ.png", alt="Success message saying 'Generated critical CSS' in the console]()", width="243", height="45", class="fixed-width-img" %}
+  <figcaption>Success message in the console</figcaption>
 </figure>
 
 {% Aside 'note' %}
@@ -179,16 +179,16 @@ Glitch console and editor don't automatically sync, so `refresh` command is necc
 
 Now in the `<head>` tag of `index.html`, generated critical CSS is inlined between `<style>` tags, followed by a script that loads the rest of the CSS asynchronously.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/NEQAkJJDV712y944PAxo.png", alt="index.html with inlined critical CSS", width="800", height="325" %}
-  <figcaption class="w-figcaption">Inlined critical CSS</figcaption>
+  <figcaption>Inlined critical CSS</figcaption>
 </figure>
 
 ## Measure again
 
 Follow the steps from the beginning of the codelab to run Lighthouse performance audit again. The results you get will look similar to this:
 
- {% Img src="image/admin/7be1SdC4JpavF7338VuT.png", alt="Lighthouse audit showing performance score of 100, FCP 0.9 seconds and improved filmstrip view of loading the app", width="716", height="407", class="w-screenshot" %}
+ {% Img src="image/admin/7be1SdC4JpavF7338VuT.png", alt="Lighthouse audit showing performance score of 100, FCP 0.9 seconds and improved filmstrip view of loading the app", width="716", height="407" %}
 
 {% Aside 'success' %}
 The filmstrip view shows that content is rendered much sooner and this is reflected in improved paint metrics. And "Eliminate render-blocking resources" has been eliminated! 🎉

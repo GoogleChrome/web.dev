@@ -38,14 +38,14 @@ conversion rates, and revenue per user.
 The results were clear.
 A 100 milliseconds page load time improvement led to increased engagement with lower bounce rate and a 0.7% uplift in revenue per session.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">100<sub class="w-stat__sub">ms</sub></p>
-    <p class="w-stat__desc">Page load time improvement</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">100<sub>ms</sub></p>
+    <p>Page load time improvement</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">0.7<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Increased revenue per session</p>
+  <div class="stats__item">
+    <p class="stats__figure">0.7<sub>%</sub></p>
+    <p>Increased revenue per session</p>
   </div>
 </div>
 
@@ -113,15 +113,15 @@ Now we are able to report Lighthouse metrics as GitHub status checks.
 These cause the CI pipeline to fail if they do not meet the performance thresholds,
 with a link to the detailed Lighthouse reports as shown in the following images.
 
-<figure class="w-figure">
-  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/vPqK9LEp3dKrHSSqULRe.png", alt="Image of GitHub UI showing lines of successful checks.", width="800", height="126", class="w-screenshot" %}
+<figure>
+  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/vPqK9LEp3dKrHSSqULRe.png", alt="Image of GitHub UI showing lines of successful checks.", width="800", height="126" %}
   <figcaption>Lighthouse CI GitHub status checks make it easy for developers
     to understand the regression and address it before it reaches production.</figcaption>
 </figure>
 
 
-<figure class="w-figure">
-  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PRQBzVBLG7wG1Ftngp6B.png", alt="Comparison image in Lighthouse CI showing how the commit compares to the main branch", width="800", height="370", class="w-screenshot" %}
+<figure>
+  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PRQBzVBLG7wG1Ftngp6B.png", alt="Comparison image in Lighthouse CI showing how the commit compares to the main branch", width="800", height="370" %}
   <figcaption>Lighthouse CI detailed commit report compared to the main branch.</figcaption>
 </figure>
 

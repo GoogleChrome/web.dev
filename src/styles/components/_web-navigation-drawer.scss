@@ -19,18 +19,18 @@
 
 // The navigation drawer has two types: standard and modal.
 //
+// modal (default)
+// -----
+// Modal navigation drawers block interaction with the rest of an app’s content
+// with a scrim. They are elevated above most of the app’s UI and don’t affect
+// the screen’s layout grid.
+//
 // standard
 // --------
 // Standard navigation drawers allow users to simultaneously access drawer
 // destinations and app content. They are often co-planar with app content and
 // affect the screen’s layout grid. They can be used on tablet and desktop only.
 // On mobile, they switch to a modal behavior.
-//
-// modal (default)
-// -----
-// Modal navigation drawers block interaction with the rest of an app’s content
-// with a scrim. They are elevated above most of the app’s UI and don’t affect
-// the screen’s layout grid.
 
 web-navigation-drawer {
   display: block;

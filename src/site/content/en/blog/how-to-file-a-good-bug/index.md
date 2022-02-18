@@ -194,5 +194,5 @@ reproducing the issue, they may reach out.
 [cr-bug]: https://crbug.com/
 [moz-bug]: https://bugzilla.mozilla.org/
 [wk-bug]: https://bugs.webkit.org/
-[mdn-bug-report]: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines
-[mdn-reduced-testcase]: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Reducing_testcases
+[mdn-bug-report]: https://developer.mozilla.org/docs/Mozilla/QA/Bug_writing_guidelines
+[mdn-reduced-testcase]: https://developer.mozilla.org/docs/Mozilla/QA/Reducing_testcases

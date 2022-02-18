@@ -1,0 +1,9 @@
+/// FOCUS RING
+/// Info: https://web.dev/design-system/css-utilities/#focus-ring
+.focus-ring:focus-visible,
+:focus-visible + .focus-ring {
+  outline: 2px solid transparent;
+  box-shadow: 0px 0px 0px 2px
+      var(--focus-ring-padding-color, var(--color-core-bg)),
+    0px 0px 0px 4px var(--color-focus-ring);
+}

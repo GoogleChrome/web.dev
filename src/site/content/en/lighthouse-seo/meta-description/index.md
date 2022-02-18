@@ -19,8 +19,8 @@ traffic.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 without a meta description:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Lighthouse audit showing the document doesn't have a meta description", width="800", height="74", class="w-screenshot w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Lighthouse audit showing the document doesn't have a meta description", width="800", height="74" %}
 </figure>
 
 The audit fails if:
@@ -70,7 +70,7 @@ Too vague.
 {% Compare 'better' %}
 ```html
 <meta
-  name="description"           
+  name="description"
   content="Mary's simple recipe for maple bacon donuts
            makes a sticky, sweet treat with just a hint
            of salt that you'll keep coming back for.">

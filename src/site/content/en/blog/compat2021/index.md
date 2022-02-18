@@ -1,13 +1,14 @@
 ---
-title: "Compat2021: Eliminating five top compatibility pain points on the web"
+layout: post
+title: "Compat 2021: Eliminating five top compatibility pain points on the web"
 subhead:
     "Google is working with other browser vendors and industry partners to fix the
-    top five browser compatibility pain points for web developers: CSS Flexbox,
+    top five browser compatibility pain points for web developers: CSS flexbox,
     CSS Grid, `position: sticky`, `aspect-ratio`, and CSS transforms."
 description:
     "Learn more about how Google is working with other browser vendors and
     industry partners to fix the top five browser compatibility pain points for
-    web developers: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio,
+    web developers: CSS flexbox, CSS Grid, position: sticky, aspect-ratio,
     and CSS transforms."
 authors:
   - robertnyman
@@ -15,16 +16,16 @@ authors:
 hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg"
 alt: "A puzzle with a missing piece."
 date: 2021-03-22
-updated: 2021-03-22
+updated: 2021-11-16
 tags:
   - blog
-  - CSS
+  - css
 ---
 
 
 Google is working with other browser vendors and industry partners to fix the
 top five browser compatibility pain points for web developers. The areas of focus
-are CSS Flexbox, CSS Grid, `position: sticky`, `aspect-ratio`, and CSS
+are CSS flexbox, CSS Grid, `position: sticky`, `aspect-ratio`, and CSS
 transforms. Check out [How you can contribute and follow along](#contribute) to
 learn how to get involved.
 
@@ -46,7 +47,7 @@ surveys.
 
 The goal in 2021 is to eliminate browser compatibility problems in five key focus
 areas so developers can confidently build on them as reliable foundations. This
-effort is called [**#Compat2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
+effort is called [**#Compat 2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
 
 ## Choosing what to focus on
 
@@ -58,7 +59,7 @@ for developers.
 The compatibility project uses multiple criteria influencing which areas to
 prioritize, and some are:
 
-+   Feature usage. For example, Flexbox is used in
++   Feature usage. For example, flexbox is used in
     [75%](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
     of all page views, and adoption is growing strongly in [HTTP
     Archive](https://almanac.httparchive.org/en/2020/css#layout).
@@ -74,7 +75,7 @@ prioritize, and some are:
     +   [State of CSS](https://2020.stateofcss.com/en-US/features/)
         most known and used features
 
-+   Test results from [web-platform-tests](https://github.com/web-platform-tests/wpt#the-web-platform-tests-project). For example, [Flexbox on
++   Test results from [web-platform-tests](https://github.com/web-platform-tests/wpt#the-web-platform-tests-project). For example, [flexbox on
     wpt.fyi](https://wpt.fyi/results/css/css-flexbox).
 +   [Can I use](https://caniuse.com/)'s most-searched-for features.
 
@@ -90,9 +91,9 @@ helping tackle and track the identified issues.
 
 Here are the areas which are committed to being fixed in 2021.
 
-### CSS Flexbox
+### CSS flexbox
 
-[CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+[CSS flexbox](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout)
 is
 [widely used](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
 on the web and there are still some major challenges for developers. For example,
@@ -100,16 +101,16 @@ both [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) an
 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)
 have had issues with `auto-height` flex containers leading to incorrectly sized images.
 
-<div class="w-columns">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
+<div class="switcher">
+    <figure style="display: flex; flex-direction: column;">
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Stretched photo of a chessboard.", width="800", height="400" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
+        <figcaption style="margin-top: auto">
             Incorrectly sized image due to bugs.
         </figcaption>
     </figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
+    <figure style="display: flex; flex-direction: column;">
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="Chessboard.", width="800", height="800" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
+        <figcaption style="margin-top: auto">
             Correctly sized image. <br>
             Photo by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
             Mahmoudi.</a>
@@ -118,7 +119,7 @@ have had issues with `auto-height` flex containers leading to incorrectly sized 
 </div>
 
 
-[Igalia's Flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
+[Igalia's flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
 blog post dives deeper into these issues with many more examples.
 
 #### Why it is prioritized
@@ -135,7 +136,7 @@ blog post dives deeper into these issues with many more examples.
 
 ### CSS Grid
 
-[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) is
+[CSS Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) is
 a core building block for modern web layouts, replacing many older techniques
 and workarounds. As adoption is growing, it needs to be rock solid, so that
 differences between browsers is never a reason to avoid it. One area that's
@@ -144,7 +145,7 @@ lacking is the ability to animate grid layouts, supported in Gecko but not
 [WebKit](https://bugs.webkit.org/show_bug.cgi?id=204580). When supported,
 effects like this are made possible:
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4",
   height="400",
   controls=false,
@@ -153,7 +154,7 @@ effects like this are made possible:
   muted=true,
   playsinline=true
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Animated chess demo by <a
     href="https://chenhuijing.com/blog/recreating-the-fools-mate-chess-move-with-css-grid/">Chen
     Hui Jing</a>.
@@ -174,15 +175,15 @@ effects like this are made possible:
 
 {% Aside %}
 While a newer feature like
-[subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+[subgrid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
 is important for developers, it isn't a part of this specific effort. To follow
 along, see
-[Subgrid compat on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility).
+[Subgrid compat on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility).
 {% endAside %}
 
 ### CSS position: sticky
 
-[Sticky positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky_positioning)
+[Sticky positioning](https://developer.mozilla.org/docs/Web/CSS/position#sticky_positioning)
 allows content to stick to the edge of the viewport and is commonly used
 for headers that are always visible at the top of the viewport. While supported
 in all browsers, there are common use cases where it doesn't work as intended.
@@ -192,22 +193,22 @@ aren't supported in Chromium, and although now
 [supported behind a flag](https://bugs.chromium.org/p/chromium/issues/detail?id=958381),
 the results are inconsistent across browsers:
 
-<div class="w-columns">
-    <figure class="w-figure">
+<div class="switcher">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             Chromium with "TablesNG"
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             Gecko
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure>
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %}
-        <figcaption class="w-figcaption">
+        <figcaption>
             WebKit
         </figcaption>
     </figure>
@@ -232,12 +233,12 @@ demo</a> by Rob Flack.
 ### CSS aspect-ratio property
 
 The new
-[`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
+[`aspect-ratio`](https://developer.mozilla.org/docs/Web/CSS/aspect-ratio)
 CSS property makes it easy to maintain a consistent width-to-height ratio for
 elements, removing the need for the well-known
 [`padding-top` hack](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
 
-<div class="w-columns">
+<div class="switcher">
 {% Compare 'worse', 'Using padding-top' %}
 ```css
 .container {
@@ -272,22 +273,21 @@ we want to make sure it's solid in all common scenarios and across browsers.
 
 ### CSS transforms
 
-[CSS transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+[CSS transforms](https://developer.mozilla.org/docs/Web/CSS/transform)
 have been supported in all browsers for many years and are widely used on the
 web. However, there still remain many areas where they don't work the same
 across browsers, notably with animations and 3D transforms. For example, a card
 flip effect can be very inconsistent across browsers:
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RhyPpk7dUooEobKZ3VOC.mp4",
-  class="w-screenshot",
-  controls=false,
+   controls=false,
   autoplay=true,
   loop=true,
   muted=true,
   playsinline=true
 %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Card flip effect in Chromium (left), Gecko (middle) and WebKit (right).
     Demo by David Baron from <a
     href="https://bugs.chromium.org/p/chromium/issues/detail?id=1008483#c42">bug
@@ -318,9 +318,16 @@ There will be regular updates about the progress here on web.dev and you can
 also follow the progress for each focus area in the [Compat 2021
 Dashboard](https://wpt.fyi/compat2021).
 
+<figure>
 <a href="https://wpt.fyi/compat2021">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9E5bMCRuPdQlGbFHZmuz.png", alt="Compat 2021 dashboard", width="800", height="778", class="w-screenshot" %}
+{% Img
+src="image/kheDArv5csY6rvQUJDbWRscckLr1/BgX0dnesIhLaFAKyILzk.png",
+alt="Compat 2021 Dashboard",
+width="800",
+height="942" %}
 </a>
+<figcaption>The Compat 2021 Dashboard (screenshot taken 16 November, 2021).</figcaption>
+</figure>
 
 We hope this concerted effort among browser vendors to improve reliability and
 interoperability will help you go build amazing things on the web!

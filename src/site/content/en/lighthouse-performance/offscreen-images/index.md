@@ -14,10 +14,10 @@ all offscreen or hidden images in your page
 along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
 Consider lazy-loading these images
 after all critical resources have finished loading
-to lower [Time to Interactive](/interactive):
+to lower [Time to Interactive](/tti/):
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="A screenshot of the Lighthouse Defer offscreen images audit", width="800", height="416", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="A screenshot of the Lighthouse Defer offscreen images audit", width="800", height="416" %}
 </figure>
 
 See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).

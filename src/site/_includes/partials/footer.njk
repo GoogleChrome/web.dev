@@ -19,16 +19,22 @@
         </ul>
       </li>
       <li class="w-footer__linkbox">
-        <h3 class="w-footer__linkbox-heading">Related content</h3>
+        <h3 class="w-footer__linkbox-heading">{{ 'i18n.footer.related_content' | i18n(locale) }}</h3>
         <ul class="w-footer__linkbox-list">
-          <li class="w-footer__linkbox-item">
-            <a href="https://developers.google.com/web/updates/" class="w-footer__linkbox-link"
+         <li class="w-footer__linkbox-item">
+            <a href="https://developer.chrome.com/" class="w-footer__linkbox-link"
               data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
-              {{ 'i18n.footer.updates' | i18n(locale) }}
+              {{ 'i18n.footer.developer_chrome_com' | i18n(locale) }}
             </a>
           </li>
           <li class="w-footer__linkbox-item">
-            <a href="https://developers.google.com/web/" class="w-footer__linkbox-link"
+            <a href="https://blog.chromium.org/" class="w-footer__linkbox-link"
+              data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
+              {{ 'i18n.footer.chrome_updates' | i18n(locale) }}
+            </a>
+          </li>
+          <li class="w-footer__linkbox-item">
+            <a href="https://developers.google.com/web/fundamentals" class="w-footer__linkbox-link"
               data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)">
               {{ 'i18n.footer.web_fundamentals' | i18n(locale) }}
             </a>
@@ -40,15 +46,15 @@
             </a>
           </li>
           <li class="w-footer__linkbox-item">
-            <a href="https://devwebfeed.appspot.com/" class="w-footer__linkbox-link"
-              data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)">
-              DevWeb Content Firehose
-            </a>
-          </li>
-          <li class="w-footer__linkbox-item">
             <a href="/podcasts/" class="w-footer__linkbox-link"
               data-category="Podcasts" data-label="Footer Link (index 5)">
               {{ 'i18n.footer.podcasts' | i18n(locale) }}
+            </a>
+          </li>
+          <li class="w-footer__linkbox-item">
+            <a href="/shows/" class="w-footer__linkbox-link"
+              data-category="Shows" data-label="Footer Link (index 6)">
+              {{ 'i18n.footer.shows' | i18n(locale) }}
             </a>
           </li>
         </ul>
@@ -57,7 +63,7 @@
         <h3 class="w-footer__linkbox-heading">{{ 'i18n.footer.connect' | i18n(locale) }}</h3>
         <ul class="w-footer__linkbox-list">
           <li class="w-footer__linkbox-item">
-            <a href="https://www.twitter.com/@ChromiumDev" class="w-footer__linkbox-link"
+            <a href="https://www.twitter.com/ChromiumDev" class="w-footer__linkbox-link"
               data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)">
               Twitter
             </a>
@@ -82,7 +88,7 @@
       </a>
       <ul class="w-footer__utility-list">
         <li class="w-footer__utility-item">
-          <a class="w-footer__utility-link" href="https://developer.chrome.com/home"
+          <a class="w-footer__utility-link" href="https://developer.chrome.com/"
             data-category="Site-Wide Custom Events" data-label="Footer Chrome Link">
             Chrome
           </a>
@@ -132,7 +138,7 @@
           and code samples are licensed under the
           <a href="https://www.apache.org/licenses/LICENSE-2.0">
           Apache 2.0 License</a>. For details, see the
-          <a href="https://developers.google.com/site-policies">
+          <a href="https://developers.google.com/terms/site-policies">
           Google Developers Site Policies</a>.
         </p>
       </div>

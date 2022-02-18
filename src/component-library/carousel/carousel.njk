@@ -1,0 +1,40 @@
+<web-carousel>
+  <div class="carousel">
+    <button class="icon-button" data-direction="prev" aria-label="back">
+      {% include "icons/carat-back.svg" %}
+    </button>
+    <div class="carousel__track reel" data-scroll="snap">
+      {% for item in data.items %}
+        {# Note, we're just repeating the same content in an iteration #}
+        <div>
+          <a href="#" class="card" data-style="branded">
+            <div class="card__header repel">
+              <p class="color-mid-text">Course</p>
+              <div class="t-color-shades-light-bright counter t-bg-core-primary">
+                <span class="counter__content">24</span>
+                {% include "icons/mortarboard.svg" %}
+              </div>
+            </div>
+            <img src="/images/courses/css/card.svg" alt="Learn CSS branding" />
+            <div class="card__content flow">
+              <h3 class="visually-hidden">Learn CSS</h3>
+              <img
+                class="card__logo"
+                src="/images/courses/css/logo.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <p class="text-size-0">
+                Let’s gleefully breakdown complex aspects of CSS into digestible episodes
+                covering everything from accessibility to z-index.
+              </p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="icon-button" data-direction="next" aria-label="forward">
+      {% include "icons/carat-forward.svg" %}
+    </button>
+  </div>
+</web-carousel>

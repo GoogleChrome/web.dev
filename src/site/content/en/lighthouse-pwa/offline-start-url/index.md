@@ -14,7 +14,7 @@ The [manifest](/add-manifest) for a [Progressive Web App](/what-are-pwas/) (PWA)
 which indicates the URL to be loaded when the user launches the app.
 
 If the browser doesn't receive an
-[HTTP&nbsp;200 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses)
+[HTTP&nbsp;200 response](https://developer.mozilla.org/docs/Web/HTTP/Status#Successful_responses)
 when accessing an app from the `start_url`,
 either the `start_url` isn't correct, or the page isn't accessible offline.
 This causes problems for users who have installed the app to their devices.
@@ -24,8 +24,8 @@ This causes problems for users who have installed the app to their devices.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags web apps whose start URL doesn't respond with a 200 when offline:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Lighthouse audit showing start URL doesn't respond with 200 when offline", width="800", height="76", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Lighthouse audit showing start URL doesn't respond with 200 when offline", width="800", height="76" %}
 </figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}

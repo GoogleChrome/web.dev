@@ -59,15 +59,8 @@ export class NavigationDrawer extends BaseStateElement {
     this.type = null;
     this._open = false;
     this.animating = false;
-    this.startX_ = 0;
-    this.currentX_ = 0;
-    this.touchingSideNav_ = false;
 
-    this.onTouchStart = this.onTouchStart.bind(this);
-    this.onTouchMove = this.onTouchMove.bind(this);
-    this.onTouchEnd = this.onTouchEnd.bind(this);
     this.onTransitionEnd = this.onTransitionEnd.bind(this);
-    this.drag = this.drag.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
   }
 
@@ -91,9 +84,6 @@ export class NavigationDrawer extends BaseStateElement {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', closeNavigationDrawer);
     this.addEventListener('click', closeNavigationDrawer);
-    this.addEventListener('touchstart', this.onTouchStart, {passive: true});
-    this.addEventListener('touchmove', this.onTouchMove, {passive: true});
-    this.addEventListener('touchend', this.onTouchEnd);
   }
 
   onStateChanged({isNavigationDrawerOpen, currentUrl}) {
@@ -122,52 +112,6 @@ export class NavigationDrawer extends BaseStateElement {
         updated.setAttribute('aria-current', 'page');
       }
     }
-  }
-
-  onTouchStart(e) {
-    if (!this.open || this.animating) {
-      return;
-    }
-
-    this.startX_ = e.touches[0].pageX;
-    this.currentX_ = this.startX_;
-
-    this.touchingSideNav_ = true;
-    requestAnimationFrame(this.drag);
-  }
-
-  onTouchMove(e) {
-    if (!this.touchingSideNav_) {
-      return;
-    }
-
-    this.currentX_ = e.touches[0].pageX;
-  }
-
-  onTouchEnd() {
-    if (!this.touchingSideNav_) {
-      return;
-    }
-
-    this.touchingSideNav_ = false;
-
-    const translateX = Math.min(0, this.currentX_ - this.startX_);
-    this.drawerContainer.style.transform = '';
-
-    if (translateX < 0) {
-      closeNavigationDrawer();
-    }
-  }
-
-  drag() {
-    if (!this.touchingSideNav_) {
-      return;
-    }
-
-    requestAnimationFrame(this.drag);
-
-    const translateX = Math.min(0, this.currentX_ - this.startX_);
-    this.drawerContainer.style.transform = `translateX(${translateX}px)`;
   }
 
   onBlockClicks(e) {

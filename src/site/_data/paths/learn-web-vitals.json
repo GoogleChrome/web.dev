@@ -8,7 +8,8 @@
         {
             "title": "i18n.paths.learn_web_vitals.topics.overview",
             "pathItems": [
-                "vitals"
+                "vitals",
+                "vitals-business-impact"
             ]
         },
         {
@@ -31,6 +32,7 @@
         {
             "title": "i18n.paths.learn_web_vitals.topics.debug_web_vitals",
             "pathItems": [
+                "lab-and-field-data-differences",
                 "debug-layout-shifts",
                 "debug-web-vitals-in-the-field"
             ]
@@ -46,12 +48,20 @@
         {
             "title": "i18n.paths.learn_web_vitals.topics.best_practices",
             "pathItems": [
+                {
+                    "title": "UX patterns optimized for Core Web Vitals",
+                    "url": "/patterns/web-vitals-patterns"
+                },
                 "carousel-best-practices",
                 "cookie-notice-best-practices",
+                "font-best-practices",
+                "tag-best-practices",
+                "embed-best-practices",
                 {
                     "title": "Infinite scroll without layout shifts",
                     "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"
-                }
+                },
+                "css-web-vitals"
             ]
         }
     ]

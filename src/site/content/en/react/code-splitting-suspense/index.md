@@ -103,8 +103,8 @@ To better demonstrate how this works:
 The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="DevTools network panel showing one chunk.js file being downloaded", width="800", height="478", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ga9IsnuJoJdnUfE6sGee.png", alt="DevTools network panel showing one chunk.js file being downloaded", width="800", height="478" %}
 </figure>
 
 {% Aside %}

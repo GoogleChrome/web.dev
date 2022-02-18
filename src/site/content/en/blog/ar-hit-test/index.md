@@ -13,7 +13,7 @@ description:
 tags:
   - blog
   - augmented-reality
-  - hit-test
+  # - hit-test
   - virtual-reality
   - webxr
 ---
@@ -65,9 +65,9 @@ placed on the surface at the reticle location and orientation of the reticle
 point, regardless of where you tapped the screen. The reticle continues to move
 with your device.
 
-<figure class="w-figure  w-figure--right">
+<figure data-float="right">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/42fbB0q2WTa9ytTm8NZN.png", alt="A reticle rendered on a wall, Lax, or Strict depending on their context", width="800", height="1422", style="max-width: 60vw;" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The reticle is a temporary image that aids in placing an object in augmented reality.
   </figcaption>
 </figure>
@@ -303,7 +303,7 @@ function onSelect(event) {
 The best way to get a handle on this is to step through the [sample
 code](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html) or
 try out the
-[codelab](https://codelabs.developers.google.com/codelabs/ar-with-webxr). I hope
+[codelab](https://codelabs.developers.google.com/ar-with-webxr). I hope
 I've given you enough background to make sense of both.
 
 We're not done building immersive web APIs, not by a long shot. We'll publish

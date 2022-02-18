@@ -14,8 +14,8 @@ web_lighthouse:
 reports how many network requests were made and
 how much data was transferred while your page loaded:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eodyrn28QIAVHKM6D2fo.png", alt="A screenshot of the Lighthouse Keep request counts low and transfer sizes small audit", width="800", height="459", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eodyrn28QIAVHKM6D2fo.png", alt="A screenshot of the Lighthouse Keep request counts low and transfer sizes small audit", width="800", height="459" %}
 </figure>
 
 * The **Requests** and **Transfer Size** values for the **Total** row are computed by adding the values

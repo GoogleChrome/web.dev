@@ -18,7 +18,8 @@
       "pathItems": [
         "is-on-https",
         "external-anchors-use-rel-noopener",
-        "no-vulnerable-libraries"
+        "no-vulnerable-libraries",
+        "csp-xss"
       ]
     },
     {

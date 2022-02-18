@@ -9,6 +9,7 @@ description: >
   Mainline Menswear implements a Progressive Web App (PWA) and sees a 55% conversion rate uplift for
   users that installed the app with caching and offline capabilities.
 date: 2021-04-20
+updated: 2021-05-19
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/Yz5G0leLpdHLidygym31.jpg
 tags:
   - blog
@@ -44,33 +45,33 @@ and enable them to take advantage of fast moving web technology.
 
 ## Results
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">139<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">More pages per session in PWA vs. web.</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">139<sub>%</sub></p>
+    <p>More pages per session in PWA vs. web.</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">161<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Longer session durations in PWA vs. web.</p>
+  <div class="stats__item">
+    <p class="stats__figure">161<sub>%</sub></p>
+    <p>Longer session durations in PWA vs. web.</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">10<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower bounce rate in PWA vs. web</p>
+  <div class="stats__item">
+    <p class="stats__figure">10<sub>%</sub></p>
+    <p>Lower bounce rate in PWA vs. web</p>
   </div>
 </div>
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">12.5<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher average order value in PWA vs. web</p>
+<div class="stats">
+  <div class="stats__item">
+    <p class="stats__figure">12.5<sub>%</sub></p>
+    <p>Higher average order value in PWA vs. web</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">55<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher conversion rate in PWA vs. web.</p>
+  <div class="stats__item">
+    <p class="stats__figure">55<sub>%</sub></p>
+    <p>Higher conversion rate in PWA vs. web.</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">243<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher revenue per session in PWA vs. web.</p>
+  <div class="stats__item">
+    <p class="stats__figure">243<sub>%</sub></p>
+    <p>Higher revenue per session in PWA vs. web.</p>
   </div>
 </div>
 
@@ -90,7 +91,7 @@ service worker file that they weren't able to or had issues with when using the 
 One such optimization was around the [offline functionality](#providing-offline-functionality) of
 the site like, for example, serving a default offline page and gathering analytics while offline.
 
-### Anatomy of the web application manifest
+### Anatomy of the web app manifest
 
 The team generated a manifest with icons for different mobile app icon sizes and other web app
 details like `name`, `description` and `theme_color`:
@@ -112,7 +113,7 @@ details like `name`, `description` and `theme_color`:
 ```
 
 The web app, once installed, can be launched from the home screen without the browser getting in the
-way. This is achieved by adding the `display` parameter in the web application manifest file:
+way. This is achieved by adding the `display` parameter in the web app manifest file:
 
 ```json
 {
@@ -131,7 +132,7 @@ the manifest:
 ```
 
 {% Aside %} See [Add a web app manifest](/add-manifest/) for a more in-depth explanation of all the
-web application manifest fields. {% endAside %}
+web app manifest fields. {% endAside %}
 
 ### Runtime caching for faster navigations
 
@@ -140,8 +141,8 @@ experience for returning users.
 
 For caching on the web, there are quite a few
 [different approaches](https://dev.to/jonchen/service-worker-caching-and-http-caching-p82). The team
-is using a mix of the [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) and
-the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) for caching assets on the
+is using a mix of the [HTTP cache](https://developer.mozilla.org/docs/Web/HTTP/Caching) and
+the [Cache API](https://developer.mozilla.org/docs/Web/API/Cache) for caching assets on the
 client side.
 
 The Cache API gives Mainline Menswear finer control over the cached assets, allowing them to apply
@@ -308,9 +309,9 @@ workbox.routing.registerRoute(navigationRoute);
 
 ## Demo
 
-<figure class="w-figure">
+<figure data-size="full">
   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/eJgApjFLpSRFMcMyC4e0.mp4", width="300", autoplay=true, loop=true, muted=true, playsinline=true %}
-  <figcaption class="w-figcaption">Offline page example as seen on www.mainlinemenswear.co.uk.</figcaption>
+  <figcaption>Offline page example as seen on www.mainlinemenswear.co.uk.</figcaption>
 </figure>
 
 ### Reporting successful installs
@@ -335,4 +336,4 @@ To learn more about progressive web apps and how to build them, head to the
 [Progressive Web Apps section](/progressive-web-apps/) on web.dev.
 
 To read more Progressive Web Apps case studies, browse to the
-[case studies section](https://web.dev/tags/case-study/).
+[case studies section](/tags/case-study/).

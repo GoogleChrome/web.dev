@@ -2,23 +2,21 @@
 layout: handbook
 title: Word list
 date: 2019-06-26
-updated: 2020-07-15
+updated: 2020-09-14
 description: |
   Spelling, punctuation, and capitalization for words and phrases commonly used on web.dev.
 ---
 
 This word list tells you how to spell, punctuate, and capitalize common words in web.dev content.
-This word list supplements the [Google Developer Documentation Style Guide Word List][list] (GDDSGWL).
+This word list supplements the [Google Developer Documentation Style Guide Word List](https://developers.google.com/style/word-list) (GDDSGWL).
 If a word is listed in the GDDSGWL but not here, use that spelling. If a word is listed both here and the
 GDDSGWL, use the spelling that you see here.
 
 * code splitting (noun)
 * code-splitting (adj)
-* ~~code-split (verb)~~ (use _split_ instead)
 * DevTools, Chrome DevTools
 * e-commerce
 * FFmpeg
-* ~~guide~~ (use _post_ instead)
 * home screen
 * Hypertext Markup Language (HTML)
 * internet
@@ -34,6 +32,7 @@ GDDSGWL, use the spelling that you see here.
 * referer (so spelled when referring to [the HTTP header](https://tools.ietf.org/html/rfc7231#section-5.5.2))
 * round trip (noun)
 * round-trip (adj)
+* service workers
 * web
 * web app manifest
 * web page
@@ -42,3 +41,11 @@ GDDSGWL, use the spelling that you see here.
 * webpack
 * website
 * Wi-Fi
+
+## Words to avoid
+
+In this list are some words to avoid, along with alternative suggestions.
+
+* code-split (verb): use _split_
+* guide: use _post_
+* spec: use _specification_

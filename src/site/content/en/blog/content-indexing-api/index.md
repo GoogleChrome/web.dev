@@ -1,18 +1,19 @@
 ---
+layout: post
 title: Indexing your offline-capable pages with the Content Indexing API
 subhead: Enabling service workers to tell browsers which pages work offline
 authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2021-02-23
+updated: 2021-06-14
 tags:
   - blog
   - capabilities
   - service-worker
-  - chrome80
-  - index
-  - caching
+  - chrome-80
+  # - index
+  # - caching
 hero: image/admin/tuIkBEm2DdHBYy62dDac.jpg
 alt: Index cards in a filing cabinet.
 feedback:
@@ -33,7 +34,7 @@ of the current state of your network connection. Technologies like [service
 workers](https://developers.google.com/web/fundamentals/primers/service-workers),
 the [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api),
-and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+and [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)
 provide you with the building blocks for storing and serving data when folks
 interact directly with a PWA. But building a high-quality, offline-first PWA is
 only part of the story. If folks don't realize that a web app's content is
@@ -50,16 +51,16 @@ the browser. That enhancement is available in Chrome 84 and later.
 Once the index is populated with content from your PWA, as well as any other
 installed PWAs, it will be surfaced by the browser as shown below.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rJF9Cl75c7tcsBL6PQe0.png", alt="A screenshot of the Downloads menu item on Chrome's new tab page.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
-    <figcaption class="w-figcaption">
+<div class="switcher">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rJF9Cl75c7tcsBL6PQe0.png", alt="A screenshot of the Downloads menu item on Chrome's new tab page.", width="800", height="1480" %}
+    <figcaption>
       First, select the <b>Downloads</b> menu item on Chrome's new tab page.
     </figcaption>
   </figure>
-  <figure class="w-figure">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VFgYcvSwBjxP0OqOAyoR.png", alt="Media and articles that have been added to the index.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
-    <figcaption class="w-figcaption">
+  <figure>
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VFgYcvSwBjxP0OqOAyoR.png", alt="Media and articles that have been added to the index.", width="800", height="1480" %}
+    <figcaption>
       Media and articles that have been added to the index will be shown in the
       <b>Articles for You</b> section.
     </figcaption>
@@ -87,7 +88,7 @@ The best way to get a feel for the Content Indexing API is to try a sample
 application.
 
 1. Make sure that you're using a supported browser and platform. Currently,
-   that's limited to **Chrome 84 or later on Android**. Go to `chrome://version` to see
+   that's limited to **Chrome 84 or later on Android**. Go to `about://version` to see
    what version of Chrome you're running.
 1. Visit [https://contentindex.dev](https://contentindex.dev)
 1. Click the `+` button next to one or more of the items on the list.
@@ -133,11 +134,11 @@ belonging to a completely different domain into the content index.
 The Content Indexing API supports three operations: adding, listing, and
 removing metadata. These methods are exposed from a new property, `index`, that
 has been added to the
-<code>[ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration)</code>
+<code>[ServiceWorkerRegistration](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)</code>
 interface.
 
 The first step in indexing content is getting a reference to the current
-[`ServiceWorkerRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration). Using <code>[navigator.serviceWorker.ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)</code> is the most straightforward way:
+[`ServiceWorkerRegistration`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration). Using <code>[navigator.serviceWorker.ready](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)</code> is the most straightforward way:
 
 ```js
 const registration = await navigator.serviceWorker.ready;
@@ -151,7 +152,7 @@ if ('index' in registration) {
 If you're making calls to the Content Indexing API from within a service worker,
 rather than inside a web page, you can refer to the `ServiceWorkerRegistration`
 directly via `registration`. It will [already be
-defined](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration)
+defined](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/registration)
 as part of the `ServiceWorkerGlobalScope.`
 
 ### Adding to the index {: #adding-items }
@@ -248,8 +249,8 @@ interface with a **Delete** menu item, giving people a chance to indicate that
 they're done viewing previously indexed content. This is how the deletion
 interface looks in Chrome 80:
 
-<figure class="w-figure">
-  {% Img src="image/admin/1t7pdD45CTmo2Gqbdxro.png", alt="The delete menu item.", width="800", height="840", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/1t7pdD45CTmo2Gqbdxro.png", alt="The delete menu item.", width="800", height="840" %}
 </figure>
 
 When someone selects that menu item, your web app's service worker will receive
@@ -276,7 +277,7 @@ self.addEventListener('contentdelete', (event) => {
   interaction with the browser's built-in user interface. It is _not_ fired when
   `registration.index.delete()` is called. If your web app triggers the index
   deletion using that API method, it should also [clean up cached
-  content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the
+  content](https://developer.mozilla.org/docs/Web/API/Cache/delete) at the
   same time.
 {% endAside %}
 
@@ -286,7 +287,7 @@ Is there something about the API that's awkward or doesn't work as expected? Or
 are there missing pieces that you need to implement your idea?
 
 File an issue on the [Content Indexing API explainer GitHub
-repo](https://github.com/wicg/content-index/issues), or add your thoughts
+repo](https://github.com/WICG/content-index/issues), or add your thoughts
 to an existing issue.
 
 ### Problem with the implementation? {: #feedback-implementation }
@@ -310,10 +311,10 @@ to support them.
 ## What are some security and privacy implications of content indexing? {: #security-privacy }
 
 Check out [the
-answers](https://github.com/wicg/content-index/blob/master/SECURITY_AND_PRIVACY.md)
+answers](https://github.com/WICG/content-index/blob/main/SECURITY_AND_PRIVACY.md)
 provided in response to the W3C's [Security and Privacy
 questionnaire](https://www.w3.org/TR/security-privacy-questionnaire/). If you
 have further questions, please start a discussion via the project's [GitHub
-repo](https://github.com/wicg/content-index/issues).
+repo](https://github.com/WICG/content-index/issues).
 
 _Hero image by Maksym Kaharlytskyi on [Unsplash](https://unsplash.com/photos/Q9y3LRuuxmg)._

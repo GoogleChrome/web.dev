@@ -1,0 +1,58 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/banner
+.banner {
+  --gutter: 0.5rem;
+
+  padding: 1.5em $global-gutter;
+  display: flex;
+  gap: 0 $global-gutter;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  font-size: get-size('size-0');
+}
+
+.banner__content {
+  @include apply-utility('leading', 'short');
+}
+
+.banner__actions {
+  $banner-actions-button-padding-x: 1rem;
+  $banner-actions-button-padding-y: 0.8rem;
+
+  flex: none; /// We don't want this to shrink
+  margin-inline-start: auto;
+  margin-block-start: auto;
+
+  button.button {
+    padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
+
+    @include apply-utility('text', 'size-0');
+  }
+
+  /// Let whatever button element's current hover state happen
+  button:not(:hover) {
+    background: transparent;
+  }
+}
+
+/// If the content has a cluster on it,
+/// we need to make some adjustments
+.banner__content.cluster {
+  --gutter: #{$global-gutter};
+
+  flex-wrap: nowrap;
+}
+
+.banner__img {
+  max-width: 2.5em;
+  max-height: 2.5em;
+  /// A slightly lighter background, regardless of current color
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/// Hides banner in print mode
+@media print {
+  .banner {
+    display: none !important;
+  }
+}

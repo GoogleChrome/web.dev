@@ -35,7 +35,7 @@ you'll actually implement and maintain.
 
 ## Option #1: Use font-display
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -63,7 +63,7 @@ you'll actually implement and maintain.
   </table>
 </div>
 
-[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+[`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 is an API for specifying font display strategy. `swap` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.
@@ -74,7 +74,7 @@ it's default behavior for loading fonts. Check which browsers support
 
 These are the default font-loading behaviors for common browsers:
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

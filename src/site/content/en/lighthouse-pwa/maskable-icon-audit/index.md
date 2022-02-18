@@ -10,7 +10,7 @@ date: 2020-05-06
 
 [Maskable icons][guide] is a new icon format that ensures that your PWA icon looks
 great on all Android devices. On newer Android devices, PWA icons that don't follow
-the maskable icon format are a given a white background. When you use a maskable
+the maskable icon format are given a white background. When you use a maskable
 icon, it ensures that the icon takes up all of the space that Android provides for it.
 
 ## How the Lighthouse maskable icon audit fails
@@ -18,8 +18,8 @@ icon, it ensures that the icon takes up all of the space that Android provides f
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that do not have maskable icon support:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="The maskable icon audit in the Lighthouse Report UI.", width="800", height="110", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="The maskable icon audit in the Lighthouse Report UI.", width="800", height="110" %}
 </figure>
 
 In order to pass the audit:

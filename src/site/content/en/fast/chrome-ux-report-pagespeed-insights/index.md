@@ -21,21 +21,21 @@ to show how real users experience the page and the origin in
 aggregate. In this guide, learn how to use PSI to extract insights from CrUX
 and better understand the user experience.
 
-{% Img src="image/admin/8ORarOdBzgJ5FAMkws7p.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="703", class="w-screenshot" %}
+{% Img src="image/admin/8ORarOdBzgJ5FAMkws7p.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="703" %}
 
 ## Reading the data
 
 To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
 and enter the URL of the page you want to test.
 
-{% Img src="image/admin/5bnx9Xt0LT2XWk8Gpy3s.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="203", class="w-screenshot" %}
+{% Img src="image/admin/5bnx9Xt0LT2XWk8Gpy3s.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="203" %}
 
 After a few seconds, Lighthouse
 audits will be performed and you will see sections for Field and Lab data. CrUX
 is a collection of real user experiences from the field, while Lighthouse is a
 controlled test in the lab.
 
-{% Img src="image/admin/bKoL7v3vnO6Ttl70FkZe.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="296", class="w-screenshot" %}
+{% Img src="image/admin/bKoL7v3vnO6Ttl70FkZe.png", alt="Field data from CrUX in PageSpeed Insights", width="800", height="296" %}
 
 In the **Field Data** section, you'll see four metrics:
 [First Contentful Paint](/fcp/) (FCP), [First Input Delay](/fid/) (FID),
@@ -97,7 +97,7 @@ user experiences across all pages of an origin. You can get the same stats for a
 closely aligned with what is available on [BigQuery](/chrome-ux-report-bigquery/), while the page-level
 performance is not made available to query.
 
-{% Img src="image/admin/7Xr7VVdZMbRlEMlgq3cj.png", alt="Origin CrUX performance in PageSpeed Insights", width="800", height="371", class="w-screenshot" %}
+{% Img src="image/admin/7Xr7VVdZMbRlEMlgq3cj.png", alt="Origin CrUX performance in PageSpeed Insights", width="800", height="371" %}
 
 There is one major difference between the origin-level data on PSI versus
 BigQuery. The datasets on BigQuery are released once a month and encompass the data from the previous calendar month. For example, the 202005 dataset
@@ -113,7 +113,7 @@ If the URL you entered is not available in CrUX, you will see a null response
 like the one below, indicating that there is not enough field data.
 Lab data from Lighthouse is still available to give you an approximation of the page's performance.
 
-{% Img src="image/admin/TQSwqryJR9phVV5vjDs4.png", alt="No CrUX data on PageSpeed Insights", width="800", height="202", class="w-screenshot" %}
+{% Img src="image/admin/TQSwqryJR9phVV5vjDs4.png", alt="No CrUX data on PageSpeed Insights", width="800", height="202" %}
 
 ## FAQ
 

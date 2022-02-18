@@ -14,8 +14,8 @@ that aren't appropriately sized,
 along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
 Resize these images to save data and improve page load time:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="A screenshot of the Lighthouse Properly size images audit", width="800", height="264", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GK6XQhAJcjZsYJe8myka.png", alt="A screenshot of the Lighthouse Properly size images audit", width="800", height="264" %}
 </figure>
 
 

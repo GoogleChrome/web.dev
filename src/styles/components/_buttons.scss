@@ -202,7 +202,7 @@
   height: 24px;
   margin-right: 16px;
   // To prevent screen readers from reading icon names.
-  speak: none;
+  speak: never;
   width: 24px;
 }
 
@@ -215,12 +215,4 @@
   height: 32px;
   text-transform: initial;
   letter-spacing: initial;
-}
-
-// A reset class that can be used to strip out the UA default button styles.
-.button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
 }

@@ -41,7 +41,7 @@ own CSS, and don't skip levels.
 For example, this site has a section called "IN THE NEWS", followed by two
 headlines:
 
-{% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="A news site with a headline, hero image, and subsections.", width="800", height="414", class="w-screenshot" %}
+{% Img src="image/admin/CdBjBuUo2yVVHWVFnQzx.png", alt="A news site with a headline, hero image, and subsections.", width="800", height="414" %}
 
 The section heading, "IN THE NEWS", could be an `h2`, and the supporting
 headlines could both be `h3`'s.

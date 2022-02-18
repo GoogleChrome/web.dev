@@ -1,0 +1,29 @@
+setLeader: Test your knowledge of filters
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,4,5"
+    stem: Which of following are CSS filter functions?
+    options:
+      - content: "`grayscale()`"
+        rationale: "🎉"
+      - content: "`invert()`"
+        rationale: "🎉"
+      - content: "`flip()`"
+        rationale: "Try again!"
+      - content: "`multiply()`"
+        rationale: "Try again!"
+      - content: "`blur()`"
+        rationale: "🎉"
+      - content: "`brightness()`"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Can CSS use SVG filters?
+    options:
+      - content: "Yes"
+        rationale: "The `url()` filter function enables this"
+      - content: "No"
+        rationale: "Try again!"

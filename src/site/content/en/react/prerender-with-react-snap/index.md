@@ -23,8 +23,8 @@ times in your application.
 Here's a comparison of the same application with and without pre-rendering
 loaded on a simulated 3G connection and mobile device:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t5OiDw1VGxrbqbcxMh3J.gif", alt="A side by side loading comparison. The version using pre-rendering loads 4.2 seconds faster.", width="600", height="435", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t5OiDw1VGxrbqbcxMh3J.gif", alt="A side by side loading comparison. The version using pre-rendering loads 4.2 seconds faster.", width="600", height="435" %}
 </figure>
 
 {% Aside %}
@@ -113,7 +113,7 @@ each route that is crawled. You can take a look at what the HTML payload looks
 like by clicking the URL of the HTML request and then clicking the **Previews**
 tab within Chrome DevTools.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5U36PBU7H7Boswn5Gfq.png", alt="A before and after comparison. The after shot shows content has rendered.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5U36PBU7H7Boswn5Gfq.png", alt="A before and after comparison. The after shot shows content has rendered.", width="800", height="450" %}
 
 {% Aside %}
   `react-snap` can be used for other frameworks than React! This includes Vue
@@ -144,7 +144,7 @@ following in your `package.json` file:
 
 Taking a look at the response preview in Chrome DevTools will now show the styled page with critical CSS inlined.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sgxwVZfvpYchXnn1mQrY.png", alt="A before and after comparison. The after shot shows content has rendered and is styled because of inlined critical CSS.", width="800", height="450", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sgxwVZfvpYchXnn1mQrY.png", alt="A before and after comparison. The after shot shows content has rendered and is styled because of inlined critical CSS.", width="800", height="450" %}
 
 {% Aside 'caution' %}
   The `inlineCSS` option is still experimental. It is worth double-checking to

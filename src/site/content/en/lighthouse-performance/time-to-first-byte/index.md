@@ -13,8 +13,8 @@ reports Time to First Byte,
 the time that it takes for a user's browser
 to receive the first byte of page content:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0P3MeqXSwGIL7fJbBRj.png", alt="A screenshot of the Lighthouse Server response times are low (TTFB) audit", width="800", height="95", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0P3MeqXSwGIL7fJbBRj.png", alt="A screenshot of the Lighthouse Server response times are low (TTFB) audit", width="800", height="95" %}
 </figure>
 
 ## Slow server response times affect performance

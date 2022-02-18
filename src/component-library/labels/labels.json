@@ -1,0 +1,5 @@
+{
+  "title": "Labels",
+  "summary": "Add a `.label` class to an element and it’ll reduce its contrast and spacing.",
+  "context": {}
+}

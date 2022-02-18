@@ -1,23 +1,29 @@
-<div class="w-topic">
-  <h2 id="{{ topic.title | slug }}" class="no-link w-headline--three w-topic__header">
-    {{ topic.title | i18n(locale)}}
-    <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
-  </h2>
-  <ul class="w-path-list">
-    {% if topic.pathItems %}
-      {% set section = topic %}
-      {% include 'partials/item.njk' %}
-    {% endif %}
-  </ul>
-  {% if topic.subtopics %}
-    {% for section in topic.subtopics %}
-      <h3 id="{{ section.title | slug }}" class="no-link w-headline--four w-topic__subtopic-header">
-        {{ section.title | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ section.title | slug }}" aria-hidden="true">#</a>
-      </h3>
-      <ul class="w-path-list">
+<div class="wrapper pad-block-size-1">
+  <div class="prose">
+    <h2 id="{{ topic.title | i18n(locale) | slug }}" class="text-size-2">
+      {{ topic.title | i18n(locale) }}
+      <a href="#{{ topic.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
+    </h2>
+    <ul>
+      {% if topic.pathItems %}
+        {% set section = topic %}
         {% include 'partials/item.njk' %}
-      </ul>
-    {% endfor %}
-  {% endif %}
+      {% endif %}
+    </ul>
+  </div>
 </div>
+{% if topic.subtopics %}
+  {% for section in topic.subtopics %}
+    <div class="wrapper pad-block-size-1">
+      <div class="prose">
+        <h3 id="{{ section.title | i18n(locale) | slug }}" class="text-size-1">
+          {{ section.title | i18n(locale) }}
+          <a href="#{{ section.title | i18n(locale) | slug }}" aria-hidden="true" class="color-mid-text">#</a>
+        </h3>
+        <ul>
+          {% include 'partials/item.njk' %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}

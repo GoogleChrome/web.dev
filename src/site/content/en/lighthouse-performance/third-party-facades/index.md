@@ -20,9 +20,9 @@ A *facade* is a static element which looks similar to the actual embedded third-
 
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvQ4fxFUG5MIXtUfi77Z.jpg", alt="An example of loading YouTube embedded player with a facade. The facade weighs 3 KB and the player weighing 540 KB is loaded on interaction.", width="800", height="521" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Loading YouTube embedded player with a facade.
   </figcaption>
 </figure>
@@ -37,9 +37,9 @@ The data about deferrable products and available facades is [maintained in third
 The audit fails if the page loads resources belonging to one of these third-party embeds.
 
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Lighthouse third-party facade audit highlighting Vimeo embedded player and Drift live chat.", width="800", height="517", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/R0osncucBqYCIZfC85Hu.jpg", alt="Lighthouse third-party facade audit highlighting Vimeo embedded player and Drift live chat.", width="800", height="517" %}
+  <figcaption>
     Lighthouse third-party facade audit.
   </figcaption>
 </figure>

@@ -14,7 +14,7 @@ description: |
   given by Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - web-components
+  # - web-components
 ---
 
 
@@ -26,8 +26,8 @@ At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Sa
 
 If you've used the web today, you've probably used web components. By our count, somewhere between 5% and 8% of all page loads today use one or more web components. That makes web components one of the most successful new web platform features shipped in the last five years.
 
-<figure class="w-figure w-figure--fullbleed">
-  {% Img src="image/admin/RYVwr119hwQIps5UL0u4.png", alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.", width="800", height="493", class="w-screenshot" %}
+<figure data-size="full">
+  {% Img src="image/admin/RYVwr119hwQIps5UL0u4.png", alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.", width="800", height="493" %}
 </figure>
 
 You can find web components on sites you probably use every day, like YouTube and GitHub. They're also used on many news and publishing sites built with [AMP](http://amp.dev)—AMP components are also web components. And many enterprises are also adopting web components.
@@ -77,7 +77,7 @@ AMP is a great example of how quickly and easily Web Components slotted into the
 
 More and more companies are unifying the way they present themselves using a design system—a set of components and guidelines that define the common look and feel for an organization's sites and applications. Web components are a great fit here, too.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure data-size="full">
   {% Img src="image/admin/xFG8pvgZDYTWQvx4W5i2.png", alt="The material design homepage, https://material.io.", width="800", height="736" %}
 </figure>
 
@@ -143,7 +143,7 @@ More resources:
 
 *   [open-wc.org](https://open-wc.org/) features great getting started information, as well as tips and default configurations for build and development tooling.
 *   [Web Fundamentals](https://developers.google.com/web/fundamentals/web-components/) provides primers on the basic web components APIs, and best practices for designing web components.
-*   [MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components) provides reference docs for the web components APIs, plus some tutorials. \
+*   [MDN](https://developer.mozilla.org/docs/Web/Web_Components) provides reference docs for the web components APIs, plus some tutorials. \
 
 _Hero image by Jason Tuinstra on Unsplash._
 

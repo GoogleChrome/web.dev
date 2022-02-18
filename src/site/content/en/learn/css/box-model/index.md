@@ -1,12 +1,16 @@
 ---
 title: Box Model
-description:
+description: >
+  Everything displayed by CSS is a box.
+  Understanding how the CSS Box Model works is therefore a core foundation of CSS.
+audio:
+  title: 'The CSS Podcast - 001: The Box Model'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_001_v2.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
 ---
-
-# The box model
 
 Say you have this bit of HTML:
 
@@ -25,17 +29,18 @@ p {
 }
 ```
 
-The content would break out of your element and it would be 140px wide,
+The content would break out of your element and it would be 142px wide,
 rather than 100px.
 Why is that?
 The box model is a core foundation of CSS and understanding how it works,
 how it is affected by other aspects of CSS and importantly,
 how you can control it will help you to write more predictable CSS.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRemxN'
+  id: 'WNRemxN',
+  height: 300
 } %}
 </figure>
 
@@ -58,7 +63,7 @@ using **intrinsic sizing**.
 
 Let's quickly look at the difference, using a demo to help us.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpoMBL'
@@ -76,17 +81,18 @@ so it overflows outside of the parent box's **border box** (more on this later i
 One way to prevent this overflow is to allow the box to be intrinsically sized by either
 unsetting the width,
 or in this case,
-setting the `width` to be `max-content`.
-The `max-content` keyword tells the box to only be as wide as the intrinsic maximum width of
+setting the `width` to be `min-content`.
+The `min-content` keyword tells the box to only be as wide as the intrinsic minimum width of
 its content (the word "awesome").
 This allows the box to fit around "CSS is awesome", perfectly.
 
 Let's look at something more complex to see the impact of different sizing on real content:
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'wvgwOJV'
+  id: 'wvgwOJV',
+  height: 650
 } %}
 </figure>
 
@@ -101,7 +107,7 @@ but this isn't the case when intrinsic sizing is toggled on.
 
 By default, this element has a set `width` and `height`—both `400px`.
 These dimensions give strict bounds to everything inside the element,
-which will be honoured unless the content is too large for the box in which case visible overflow
+which will be honored unless the content is too large for the box in which case visible overflow
 will happen.
 You can see this in action by changing the content of the caption,
 under the flower picture to something that exceeds the height of the box, which is a few lines of
@@ -113,12 +119,12 @@ You can manage how an element handles overflow content, using the `overflow` pro
 {% endAside %}
 
 When you switch to intrinsic sizing,
-we're letting the browser make decisions for us,
+you are letting the browser make decisions for you,
 based on the box's content size.
 It's much more difficult for there to be overflow with intrinsic sizing because our box will resize
 with its content,
 rather than try to size the content.
-It's important to remember that this is the default, flexible behaviour of a browser.
+It's important to remember that this is the default, flexible behavior of a browser.
 Though extrinsic sizing gives more control on the surface,
 intrinsic sizing provides the most flexibility, most of the time.
 
@@ -126,7 +132,7 @@ intrinsic sizing provides the most flexibility, most of the time.
 
 Boxes are made up of distinct box model areas that all do a specific job.
 
-<figure class='w-figure'>
+<figure>
 {% Img
   src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg",
   alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box",
@@ -143,35 +149,35 @@ so is usually the most variably sized area.
 
 The **padding box** surrounds the content box
 and is the space created by
-the [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) property.
+the [`padding`](https://developer.mozilla.org/docs/Web/CSS/padding) property.
 Because padding is inside the box, the background of the box will be visible in the space that
 it creates.
 If our box has overflow rules set, such as `overflow: auto` or `overflow: scroll`,
 the scrollbars will occupy this space too.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGNmgGW'
+  id: 'BaReoEV'
 } %}
 </figure>
 
 The **border box** surrounds the padding box and its space is occupied by the `border` value.
 The border box is the bounds of your box and the **border edge** is the limit of what you can
-visually see. The [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+visually see. The [`border`](https://developer.mozilla.org/docs/Web/CSS/border)
 property is used to visually frame an element.
 
 The final area, the **margin box**, is the space around your box,
 defined by the `margin` rule on your box.
 Properties such as
-[`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) and
-[`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+[`outline`](https://developer.mozilla.org/docs/Web/CSS/outline) and
+[`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
 occupy this space too because they are painted on top,
 so they don't affect the size of our box.
 You could have an `outline-width` of `200px` on our box and everything inside and including the
 border box would be exactly the same size.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'XWprGea'
@@ -183,7 +189,7 @@ border box would be exactly the same size.
 The box model is complex to understand,
 so let's recap what you've learned with an analogy.
 
-<figure class='w-figure'>
+<figure>
 {% Img
   src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg",
   alt="Three photo frames",
@@ -200,7 +206,7 @@ To break this analogy down:
 
 - The content box is the artwork.
 - The padding box is the white matte, between the frame and the artwork.
-- The border box is the the frame, providing a literal border for the artwork.
+- The border box is the frame, providing a literal border for the artwork.
 - The margin box is the space between each frame.
 - The shadow occupies the same space as the margin box.
 
@@ -216,8 +222,8 @@ Go ahead and try this in your own browser:
 1. [Select an element](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 1. Show the box model debugger
 
-<figure class='w-figure'>
-{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4" %}
+<figure>
+{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}
 </figure>
 
 ## Controlling the box model
@@ -237,7 +243,7 @@ and a `<span>` has a default `display` value of `inline`.
 An `inline` element has block margin,
 but other elements won't respect it.
 Use `inline-block`, and those elements will respect the block margin,
-while the element maintains most of the same behaviours it did as an `inline` element.
+while the element maintains most of the same behaviors it had as an `inline` element.
 A `block` item will, by default,
 fill the available **inline space**,
 whereas a `inline` and `inline-block` elements will only be as large as their content.
@@ -274,7 +280,7 @@ by making the following modification to use the alternative box model, `border-b
 ```
 
 This alternative box model tells CSS to apply the `width` to the border box instead of the
-content box.vThis means that our `border` and `padding` get _pushed in_,
+content box. This means that our `border` and `padding` get _pushed in_,
 and as a result,
 when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
@@ -282,10 +288,11 @@ Check out how this works in the following interactive demo.
 Notice that when you toggle the `box-sizing` value
 it shows—via a blue background—which CSS is being applied _inside_ our box.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'oNBvVpM'
+  id: 'oNBvVpM',
+  height: 650
 } %}
 </figure>
 
@@ -307,8 +314,8 @@ developers often add this rule to resets and normalizers,
 
 ## Resources
 
-- [Introduction to the box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-- [What are browser developer tools?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
+- [Introduction to the box model](https://developer.mozilla.org/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [What are browser developer tools?](https://developer.mozilla.org/docs/Learn/Common_questions/What_are_browser_developer_tools)
 
 ### User agent stylesheets
 

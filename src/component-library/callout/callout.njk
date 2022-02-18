@@ -1,0 +1,28 @@
+<aside class="callout {{ data.utilities }}">
+  <div class="repel">
+    <div class="callout__content flow">
+      {% if data.branding %}
+        <div class="callout__branding cluster gutter-base">
+          {% if data.icon %}
+            {% include "icons/" + data.icon %}
+          {% endif %}
+          {{ data.branding }}
+        </div>
+      {% endif %}
+      <h2 class="callout__title">{{ data.title }}</h2>
+      <p>{{ data.summary }}</p>
+    </div>
+    <nav class="callout__links repel" aria-label="{{ data.title }} links">
+      <ul role="list">
+        {% for item in data.links %}
+          <li>
+            <a href="{{ item.url }}" {% if item.active %}aria-current="page"{% endif %}>
+              <span>{{ item.text }}</span>
+              {% include "icons/carat-forward.svg" %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</aside>

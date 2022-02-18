@@ -17,9 +17,9 @@ Lighthouse Performance score.
 The browser's algorithms for converting HTML, CSS, and JavaScript into pixels are collectively known
 as the _rendering pipeline_.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="The rendering pipeline consists of the following sequential steps: JavaScript, Style, Layout, Paint, Composite.", width="800", height="122" %}
-  <figcaption class="w-figcaption">The rendering pipeline.</figcaption>
+  <figcaption>The rendering pipeline.</figcaption>
 </figure>
 
 It's OK if you don't understand what each step of the rendering pipeline means. The key thing to

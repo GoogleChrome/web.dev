@@ -23,7 +23,7 @@ tags:
 Recently, I published [Virtual reality comes to the
 web](/vr-comes-to-the-web/), an article that introduced basic
 concepts behind the [WebXR Device
-API](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API). I
+API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API). I
 also provided instructions for requesting, entering, and ending an XR session.
 
 This article describes the frame loop, which is a user-agent controlled
@@ -38,7 +38,7 @@ a WebXR App. Fortunately many frameworks provide a layer of abstraction on top
 of WebGL and WebGL2. Such frameworks include [three.js](https://threejs.org/),
 [babylonjs](https://www.babylonjs.com/), and
 [PlayCanvas](https://playcanvas.com/), while [A-Frame](https://aframe.io/) and
-[React 360](https://facebook.github.io/react-360/) are designed for interacting
+[React 360](https://github.com/facebookarchive/react-360) was designed for interacting
 with WebXR.
 
 This article is neither a WebGL nor a framework tutorial. It explains basics of
@@ -118,9 +118,9 @@ Notice the relationship between `XRWebGLLayer` and `WebGLRenderingContext`. One
 corresponds to the viewer's device and the other corresponds to the web page.
 `WebGLFramebuffer` and `XRViewport` are passed from the former to the latter.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/ZdH8cIApe8jUr7F1WNgC.png", alt="The relationship between XRWebGLLayer and WebGLRenderingContext", width="711", height="94" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     The relationship between <code>XRWebGLLayer</code> and <code>WebGLRenderingContext</code>
   </figcaption>
 </figure>
@@ -157,7 +157,7 @@ Because steps 1 and 2a were covered in the previous article, I'll start at step
 It probably goes without saying. To draw anything in AR or VR, I need to know
 where the viewer is and where they're looking. The viewer's position and
 orientation are provided by an [XRViewerPose
-object](https://developer.mozilla.org/en-US/docs/Web/API/XRViewerPose). I
+object](https://developer.mozilla.org/docs/Web/API/XRViewerPose). I
 get the viewer's pose by calling `XRFrame.getViewerPose()` on the current
 animation frame. I pass it the reference space I acquired when I set up the
 session. The values returned by this object are always relative to the reference
@@ -177,7 +177,7 @@ function onXRFrame(hrTime, xrFrame) {
 ```
 
 There's one viewer pose that represents the user's overall position, meaning
-either the viewer's head or the the phone camera in the case of a smartphone.
+either the viewer's head or the phone camera in the case of a smartphone.
 The pose tells your application where the viewer is. Actual image rendering uses
 `XRView` objects, which I'll get to in a bit.
 
@@ -311,7 +311,7 @@ top](#what-this-article-is-not).
 
 This is not the end of WebXR updates or articles. You can find a [reference for
 all of WebXR's interfaces and
-members](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
+members](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API)
 at MDN. For upcoming enhancements to the interfaces themselves, follow
 individual features on [Chrome
 Status](https://www.chromestatus.com/features#WebXR).

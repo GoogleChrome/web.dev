@@ -34,7 +34,7 @@ const rules = {
     return `<web-copy-code>${fenced}</web-copy-code>`;
   },
   table_close: () => '</table>\n</div>',
-  table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  table_open: () => '<div class="table-wrapper scrollbar">\n<table>\n',
 };
 
 mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};

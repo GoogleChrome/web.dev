@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const {compressImagesTransform} = require('./utils');
 
 /**
  * These are global images used in CSS and base HTML, such as author profiles.
@@ -7,11 +6,7 @@ const {compressImagesTransform} = require('./utils');
  *
  * @returns {NodeJS.ReadWriteStream}
  */
-const copyGlobalImages = () => {
-  return gulp
-    .src(['./src/images/**/*'])
-    .pipe(compressImagesTransform(1.0, 0.8))
-    .pipe(gulp.dest('./dist/images'));
-};
+const copyGlobalImages = () =>
+  gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
 
 module.exports = copyGlobalImages;

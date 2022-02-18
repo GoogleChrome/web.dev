@@ -20,8 +20,8 @@ element hides your entire web page from assistive technology users.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/enyVVcLr73lIw7qMyndR.png", alt="Lighthouse audit showing that a page's body element has the aria-hidden attribute", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/enyVVcLr73lIw7qMyndR.png", alt="Lighthouse audit showing that a page's body element has the aria-hidden attribute", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

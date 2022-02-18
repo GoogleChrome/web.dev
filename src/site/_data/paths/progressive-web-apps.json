@@ -69,6 +69,7 @@
       "pathItems": [
         "manifest-updates",
         "multi-origin-pwas",
+        "building-multiple-pwas-on-the-same-domain",
         "offline-ux-design-guidelines"
       ]
     },

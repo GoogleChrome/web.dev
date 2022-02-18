@@ -8,7 +8,7 @@ web-snackbar-container {
   pointer-events: none;
   position: fixed;
   right: 0;
-  z-index: 300;
+  z-index: 1000;
 
   @include bp(sm) {
     margin: 8px;

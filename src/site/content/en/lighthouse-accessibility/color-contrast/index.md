@@ -28,8 +28,8 @@ you've probably experienced the need for text with sufficient contrast.
 Lighthouse flags text whose background and
 foreground colors don't have a sufficiently high contrast ratio:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Lighthouse audit showing background and foreground colors do not have sufficient contrast ratio", width="800", height="343", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hD4Uc22QqAdrBLdRPhJe.png", alt="Lighthouse audit showing background and foreground colors do not have sufficient contrast ratio", width="800", height="343" %}
 </figure>
 
 To evaluate text's color contrast, Lighthouse uses
@@ -69,8 +69,8 @@ The color picker tells you whether the element
 meets color contrast requirements,
 taking font size and weight into account:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Screenshot of Chrome DevTools color picker with color contrast information highlighted", width="298", height="430", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/osaU6NOcyElBALiXmRa5.png", alt="Screenshot of Chrome DevTools color picker with color contrast information highlighted", width="298", height="430" %}
 </figure>
 
 You can use the color picker to adjust the color
@@ -78,8 +78,8 @@ until its contrast is high enough.
 It's easiest to make adjustments in the HSL color format.
 Switch to that format by clicking the toggle button on the right of the picker:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Screenshot of Chrome DevTools color picker with the color format toggle highlighted", width="298", height="430", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uUGdLr7fYCrmqtCrtpJK.png", alt="Screenshot of Chrome DevTools color picker with the color format toggle highlighted", width="298", height="430" %}
 </figure>
 
 Once you have a passing color value, update your project's CSS.
@@ -90,8 +90,8 @@ as do UI elements and images.
 For text on an image, you can use DevTools' background color picker to check
 the background that the text appears on:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Screenshot of Chrome DevTools background color picker", width="301", height="431", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PFznOtjzMF3nZy3IsCtW.png", alt="Screenshot of Chrome DevTools background color picker", width="301", height="431" %}
 </figure>
 
 For other cases, consider using a tool like the Paciello Group's

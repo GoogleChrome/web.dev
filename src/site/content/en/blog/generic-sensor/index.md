@@ -16,7 +16,7 @@ date: 2017-09-18
 updated: 2021-02-17
 tags:
   - blog
-  - sensors
+  # - sensors
   - devices
   - capabilities
 hero: image/admin/2AGc7aV66zc69fiqNJBZ.jpg
@@ -48,8 +48,8 @@ provides a ready-to-use four-by-four rotation matrix based on the data obtained 
 accelerometer, gyroscope, and magnetometer.
 
 You might think that the web platform already provides sensor data and you are absolutely right! For
-instance, [`DeviceMotion`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) and
-[`DeviceOrientation`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent)
+instance, [`DeviceMotion`](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent) and
+[`DeviceOrientation`](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent)
 events expose motion sensor data. So why do we need a new API?
 
 Comparing to the existing interfaces, Generic Sensor API provides a great number of advantages:
@@ -168,14 +168,14 @@ sensor in detail.
 
 ### Accelerometer and linear acceleration sensor {: #acceleration-and-linear-accelerometer-sensor }
 
- <figure class="w-figure">
+ <figure>
  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Accelerometer sensor measurements
   </figcaption>
 </figure>
 
-The [`Accelerometer`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer) sensor
+The [`Accelerometer`](https://developer.mozilla.org/docs/Web/API/Accelerometer) sensor
 measures acceleration of a device hosting the sensor on three axes (X, Y, and Z). This sensor is an
 inertial sensor, meaning that when the device is in linear free fall, the total measured
 acceleration would be 0 m/s<sup>2</sup>, and when a device lying flat on a table, the acceleration
@@ -189,7 +189,7 @@ orientation. Quite often, accelerometer measurements are combined with data from
 create fusion sensors, such as, orientation sensors.
 
 The
-[`LinearAccelerationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/LinearAccelerationSensor)
+[`LinearAccelerationSensor`](https://developer.mozilla.org/docs/Web/API/LinearAccelerationSensor)
 measures acceleration that is applied to the device hosting the sensor, excluding the contribution
 of gravity. When a device is at rest, for instance lying flat on the table, the sensor would measure
 ≈ 0 m/s<sup>2</sup> acceleration on three axes.
@@ -205,20 +205,16 @@ terms of API ergonomics. The
 [`GravitySensor`](https://w3c.github.io/accelerometer/#gravitysensor-interface) returns the effect
 of acceleration along the device's X, Y, and Z axis due to gravity.
 
-{% Aside %}
-  `GravitySensor` is expected to ship in Chrome&nbsp;91.
-{% endAside %}
-
 ### Gyroscope {: #gyroscope-sensor }
 
- <figure class="w-figure">
+ <figure>
   {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true", loop="true", muted="true" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Gyroscope sensor measurements
   </figcaption>
 </figure>
 
-The [`Gyroscope`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope) sensor measures
+The [`Gyroscope`](https://developer.mozilla.org/docs/Web/API/Gyroscope) sensor measures
 angular velocity in radians per second around the device's local X, Y, and Z axis. Most consumer
 devices have mechanical ([MEMS](https://en.wikipedia.org/wiki/Microelectromechanical_systems))
 gyroscopes, which are inertial sensors that measure rotation rate based on
@@ -229,27 +225,27 @@ therefore, might consume more power compared to other sensors.
 
 ### Orientation sensors {: #orientation-sensors }
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Absolute orientation sensor measurements
   </figcaption>
 </figure>
 
 The
-[`AbsoluteOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/AbsoluteOrientationSensor)
+[`AbsoluteOrientationSensor`](https://developer.mozilla.org/docs/Web/API/AbsoluteOrientationSensor)
 is a fusion sensor that measures rotation of a device in relation to the Earth's coordinate system,
 while the
-[`RelativeOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/RelativeOrientationSensor)
+[`RelativeOrientationSensor`](https://developer.mozilla.org/docs/Web/API/RelativeOrientationSensor)
 provides data representing rotation of a device hosting motion sensors in relation to a stationary
 reference coordinate system.
 
 All modern 3D JavaScript frameworks support [quaternions](https://en.wikipedia.org/wiki/Quaternion)
 and [rotation matrices](https://en.wikipedia.org/wiki/Rotation_matrix) to represent rotation;
 however, if you use WebGL directly, the `OrientationSensor` conveniently has both a
-[`quaternion` property](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion)
+[`quaternion` property](https://developer.mozilla.org/docs/Web/API/OrientationSensor/quaternion)
 and a
-[`populateMatrix()` method](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/populateMatrix).
+[`populateMatrix()` method](https://developer.mozilla.org/docs/Web/API/OrientationSensor/populateMatrix).
 Here are few snippets:
 
 **[three.js](https://threejs.org/docs/index.html#api/core/Object3D.quaternion)**
@@ -275,7 +271,7 @@ sensor_rel.onreading = () => {
 sensorRel.start();
 ```
 
-**[BABYLON](http://doc.babylonjs.com/classes/3.0/abstractmesh#rotationquaternion-quaternion-classes-3-0-quaternion-)**
+**[BABYLON](https://doc.babylonjs.com/typedoc/classes/babylon.abstractmesh#rotationquaternion)**
 
 ```js
 const mesh = new BABYLON.Mesh.CreateCylinder('mesh', 0.9, 0.3, 0.6, 9, 1, scene);
@@ -309,17 +305,17 @@ By default, [spatial sensors'](https://w3c.github.io/sensors/#spatial-sensor) re
 in a local coordinate system that is bound to the device and does not take screen orientation into
 account.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="Device coordinate system", width="800", height="520" %}
-  <figcaption class="w-figcaption">Device coordinate system</figcaption>
+  <figcaption>Device coordinate system</figcaption>
 </figure>
 
 However, many use cases like games or augmented and virtual reality require sensor readings to be
 resolved in a coordinate system that is instead bound to the screen orientation.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="Screen coordinate system", width="800", height="520" %}
-  <figcaption class="w-figcaption">Screen coordinate system</figcaption>
+  <figcaption>Screen coordinate system</figcaption>
 </figure>
 
 Previously, remapping of sensor readings to screen coordinates had to be implemented in JavaScript.
@@ -390,9 +386,9 @@ function initSensor() {
 
 The device's orientation will be reflected in 3D `model` rotation within the WebGL scene.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="Sensor updates 3D model's orientation", width="338", height="368" %}
-  <figcaption class="w-figcaption">Sensor updates orientation of a 3D model</figcaption>
+  <figcaption>Sensor updates orientation of a 3D model</figcaption>
 </figure>
 
 ### Punchmeter
@@ -427,9 +423,9 @@ this.accel.onreading = () => {
 
 The current velocity is calculated as an approximation to the integral of the acceleration function.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="Demo web application for punch speed measurement", width="338", height="347" %}
-  <figcaption class="w-figcaption">Measurement of a punch speed</figcaption>
+  <figcaption>Measurement of a punch speed</figcaption>
 </figure>
 
 ## Debugging and sensor overriding with Chrome DevTools
@@ -438,9 +434,9 @@ In some cases you don't need a physical device to play with the Generic Sensor A
 has great support for
 [simulating device orientation](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Chrome DevTools used to override the custom orientation data of a virtual phone", width="800", height="648" %}
-  <figcaption class="w-figcaption">Simulating device orientation with Chrome DevTools</figcaption>
+  <figcaption>Simulating device orientation with Chrome DevTools</figcaption>
 </figure>
 
 ## Privacy and security {: #privacy-and-security }

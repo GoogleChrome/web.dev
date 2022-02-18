@@ -26,9 +26,9 @@ However, in the following cases, you'll need HTTPS for local development:
 - Using third-party libraries or APIs that require HTTPS
 - Using a custom hostname
 
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/admin/ifswaep3VUkY7cjArbIc.png", alt="A list of cases when you need to use HTTPS for local development.", width="800", height="450" %}
-    <figcaption class="w-figcaption">When to use HTTPS for local development.</figcaption>
+    <figcaption>When to use HTTPS for local development.</figcaption>
   </figure>
 
 {% Aside %}
@@ -49,7 +49,7 @@ If your production website doesn't use HTTPS, [make it a priority](/why-https-ma
 
 Browsers treat `http://localhost` in a special way: **although it's HTTP, it mostly behaves like an HTTPS site**.
 
-On `http://localhost`, Service Workers, Sensor APIs, Authentication APIs, Payments, and [other features that require certain security guarantees](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) are supported and behave exactly like on an HTTPS site.
+On `http://localhost`, Service Workers, Sensor APIs, Authentication APIs, Payments, and [other features that require certain security guarantees](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) are supported and behave exactly like on an HTTPS site.
 
 ## When to use HTTPS for local development
 
@@ -57,19 +57,19 @@ You may encounter special cases where `http://localhost` _doesn't_ behave like a
 
 You need to use HTTPS for local development in the following cases:
 
-- You need to [set a cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) locally that is `Secure`, or `SameSite:none`, or has the `__Host` prefix. `Secure` cookies are set only on HTTPS, but not on `http://localhost` for all browsers. And because `SameSite:none` and `__Host` also require the cookie to be `Secure`, setting such cookies on your local development site requires HTTPS as well.
+- You need to [set a cookie](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie) locally that is `Secure`, or `SameSite:none`, or has the `__Host` prefix. `Secure` cookies are set only on HTTPS, but not on `http://localhost` for all browsers. And because `SameSite:none` and `__Host` also require the cookie to be `Secure`, setting such cookies on your local development site requires HTTPS as well.
 
   {% Aside 'gotchas' %}
   When it comes to setting `Secure` cookies locally, not all browsers behave in the same way! For example, Chrome and Safari don't set `Secure` cookies on localhost, but Firefox does. In Chrome, this is considered a [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1056543&q=localhost%20secure%20cookie&can=2).
   {% endAside %}
 
-- You need to debug locally an issue that only occurs on an HTTPS website but not on an HTTP site, not even `http://localhost`, such as a [mixed-content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content) issue.
+- You need to debug locally an issue that only occurs on an HTTPS website but not on an HTTP site, not even `http://localhost`, such as a [mixed-content](https://developer.mozilla.org/docs/Web/Security/Mixed_content) issue.
 - You need to locally test or reproduce a behaviour specific to HTTP/2 or newer. For example, if you need to test loading performance on HTTP/2 or newer. Insecure HTTP/2 or newer is not supported, not even on `localhost`.
 - You need to locally test third-party libraries or APIs that require HTTPS (for example OAuth).
 - You're not using `localhost`, but a custom host name for local development, for example `mysite.example`. Typically, this means you've overridden your local hosts file:
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/admin/i7dPGFARXLbg9oIAUol2.jpg", alt="Screenshot of a terminal editing a hosts file", width="740", height="318" %}
-    <figcaption class="w-figcaption">Editing a hosts file to add a custom hostname.</figcaption>
+    <figcaption>Editing a hosts file to add a custom hostname.</figcaption>
   </figure>
 
   In this case, Chrome, Edge, Safari, and Firefox by default do _not_ consider `mysite.example` to be secure, even though it's a local site. So it won't behave like an HTTPS site.
@@ -91,7 +91,7 @@ If you need to use HTTPS for local development, head over to [How to use HTTPS f
 
 ## Learn more
 
-- [Secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
+- [Secure contexts](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts)
 - [localhost as a secure context](https://www.w3.org/TR/secure-contexts/#localhost)
 - [localhost as a secure context in Chrome](https://www.chromestatus.com/feature/6269417340010496)
 

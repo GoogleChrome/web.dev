@@ -1,0 +1,9 @@
+:root {
+  --list-separator: '·';
+  --list-separator-gap: #{get-size(200)};
+}
+
+.list-separator li + li::before {
+  content: var(--list-separator);
+  margin: 0 var(--list-separator-gap);
+}

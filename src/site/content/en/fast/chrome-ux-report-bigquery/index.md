@@ -39,7 +39,7 @@ SELECT COUNT(DISTINCT origin) FROM `chrome-ux-report.all.201809`
 To run the query, enter it into the query editor and press the
 "Run query" button:
 
-{% Img src="image/admin/aZp9WdPcgiTa7j7R1cAP.png", alt="Enter a simple query into editor and press Run.", width="800", height="430", class="w-screenshot" %}
+{% Img src="image/admin/aZp9WdPcgiTa7j7R1cAP.png", alt="Enter a simple query into editor and press Run.", width="800", height="430" %}
 
 There are two parts to this query:
 
@@ -110,7 +110,7 @@ WHERE
   fcp.start = 0
 ```
 
-{% Img src="image/admin/ReMoTLXeKjiMqC95PJoV.png", alt="Querying CrUX FCP on BigQuery", width="800", height="670", class="w-screenshot" %}
+{% Img src="image/admin/ReMoTLXeKjiMqC95PJoV.png", alt="Querying CrUX FCP on BigQuery", width="800", height="670" %}
 
 The result is `0.0013`, meaning that 0.13% of user experiences on this origin
 are between 0 and 100ms on 4G and on a phone. If we want to generalize our
@@ -129,7 +129,7 @@ WHERE
   fcp.start = 0
 ```
 
-{% Img src="image/admin/SaNxd4ZfYHaBGgz8yUJM.png", alt="Summing CrUX FCP on BigQuery", width="800", height="676", class="w-screenshot" %}
+{% Img src="image/admin/SaNxd4ZfYHaBGgz8yUJM.png", alt="Summing CrUX FCP on BigQuery", width="800", height="676" %}
 
 The result is `0.0399`, or 3.99% across all devices and connection types.
 Let's modify the query slightly and add up the densities for all bins that are
@@ -146,7 +146,7 @@ WHERE
   fcp.start < 1000
 ```
 
-{% Img src="image/admin/jkK04PN5sGQxaYnLwmh3.png", alt="Querying fast FCP on BigQuery", width="800", height="672", class="w-screenshot" %}
+{% Img src="image/admin/jkK04PN5sGQxaYnLwmh3.png", alt="Querying fast FCP on BigQuery", width="800", height="672" %}
 
 This gives us `0.3913`. In other words, 39.13% of the FCP user experiences on
 developers.google.com are considered "fast" according to the FCP range
@@ -175,7 +175,7 @@ ORDER BY
   yyyymm
 ```
 
-{% Img src="image/admin/yynnLgYHstp0307DmkBv.png", alt="Querying a timeseries of CrUX FCP on BigQuery", width="800", height="1219", class="w-screenshot" %}
+{% Img src="image/admin/yynnLgYHstp0307DmkBv.png", alt="Querying a timeseries of CrUX FCP on BigQuery", width="800", height="1219" %}
 
 Here, we see that the percent of fast FCP experiences varies by a few percentage
 points each month.

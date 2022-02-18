@@ -1,12 +1,17 @@
 ---
 title: Selectors
-description:
+description: >
+  To apply CSS to an element you need to select it.
+  CSS provides you with a number of different ways to do this,
+  and you can explore them in this module.
+audio:
+  title: 'The CSS Podcast - 002: Selectors'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_002_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
 ---
-
-# Selectors
 
 If you've got some text that you only want to be larger and red if it's the first paragraph of an article,
 how do you do that?
@@ -33,7 +38,8 @@ to help solve situations like this.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWprGYz'
+  id: 'XWprGYz',
+  height: 250
 } %}
 
 ## The parts of a CSS rule
@@ -43,7 +49,7 @@ it's important to know the parts of a CSS rule.
 A CSS rule is a block of code,
 containing one or more selectors and one or more declarations.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="An image of a CSS rule with the selector .my-css-rule", width="800", height="427" %}
 </figure>
 
@@ -60,7 +66,7 @@ classes, IDs, and other attributes which may be added to an HTML tag.
 
 ### Universal selector
 
-A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)—also known as a wildcard—matches any element.
+A [universal selector](https://developer.mozilla.org/docs/Web/CSS/Universal_selectors)—also known as a wildcard—matches any element.
 
 ```css
 * {
@@ -72,7 +78,7 @@ This rule causes every HTML element on the page to have hotpink text.
 
 ### Type selector
 
-A [type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors)
+A [type selector](https://developer.mozilla.org/docs/Web/CSS/Type_selectors)
 matches a HTML element directly.
 
 ```css
@@ -81,13 +87,13 @@ section {
 }
 ```
 
-This rule causes every `<section`> element to have `2em` of `padding` on all sides.
+This rule causes every `<section>` element to have `2em` of `padding` on all sides.
 
 ### Class selector
 
 A HTML element can have one or more items defined in their `class` attribute.
 The
-[class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
+[class selector](https://developer.mozilla.org/docs/Web/CSS/Class_selectors)
 matches any element that has that class applied to it.
 
 ```html
@@ -130,7 +136,7 @@ You can read more [in the specification](https://www.w3.org/TR/CSS21/syndata.htm
 
 An HTML element with an `id` attribute should be the only element on a page with that ID value.
 You select elements with an
-[ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) like this:
+[ID selector](https://developer.mozilla.org/docs/Web/CSS/ID_selectors) like this:
 
 ```css
 #rad {
@@ -159,7 +165,7 @@ avoid applying styles with the `id` selector as it means you can't re-use those 
 
 You can look for elements that have a certain HTML attribute,
 or have a certain value for an HTML attribute,
-using the [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors).
+using the [attribute selector](https://developer.mozilla.org/docs/Web/CSS/Attribute_selectors).
 Instruct CSS to look for attributes by wrapping the selector with square brackets (`[ ]`).
 
 ```css
@@ -207,7 +213,7 @@ Along with case operators,
 you have access to operators that match portions of strings inside attribute values.
 
 ```css
-/* A href that contains “example.com” */
+/* A href that contains "example.com" */
 [href*='example.com'] {
   color: red;
 }
@@ -223,12 +229,12 @@ you have access to operators that match portions of strings inside attribute val
 }
 ```
 
-<figure class="w-figure">
+<figure>
   {% Codepen {
     user: 'web-dot-dev',
     id: 'BapBbOy'
   } %}
-  <figcaption class="w-figcaption">In this demo, the `$` operator in our attribute selector gets the filetype from the `href` attribute.
+  <figcaption>In this demo, the `$` operator in our attribute selector gets the filetype from the `href` attribute.
   This makes it possible to prefix the label—based on that filetype—using a pseudo-element.</figcaption>
 </figure>
 
@@ -240,14 +246,14 @@ You can group multiple selectors by separating them with commas:
 ```css
 strong,
 em,
-.my-element,
+.my-class,
 [lang] {
   color: red;
 }
 ```
 
 This example extends the color change to both `<strong>` elements and `<em>` elements.
-It's also extended to a class named `.my-class`,and an element that has a `lang` attribute.
+It's also extended to a class named `.my-class`, and an element that has a `lang` attribute.
 
 {% Assessment 'simple-selectors' %}
 
@@ -278,9 +284,7 @@ p:nth-child(even) {
 }
 ```
 
-For more on pseudo-classes, check out lesson 15.
-
-@@TO DO link up to lesson 15
+Find out more in the [pseudo-classes module](/learn/css/pseudo-classes).
 
 ### Pseudo-element
 
@@ -327,9 +331,7 @@ You can also use `::selection` to style the content that has been highlighted by
 }
 ```
 
-For more on pseudo-elements, check out lesson 14.
-
-@@TO DO link up to lesson 14
+Learn more in the [module on pseudo-elements](/learn/css/pseudo-elements).
 
 {% Assessment 'pseudo-selectors' %}
 
@@ -342,7 +344,8 @@ This is where complex selectors step in to help.
 It's worth remembering at this point that although the following selectors give us more power,
 we can only **cascade downwards**, selecting child elements.
 We are not able to target upwards and select a parent element.
-We cover what the cascade is and how it works in a later lesson.
+We cover what the cascade is and how it works
+[in a later lesson](/learn/css/the-cascade).
 
 ### Combinators
 
@@ -375,12 +378,12 @@ p strong {
 This snippet selects all `<strong>` elements
 that are child elements of `<p>` elements only, making them blue recursively.
 
-<figure class="w-figure">
+<figure>
   {% Codepen {
     user: 'web-dot-dev',
     id: 'BapBbGN'
   } %}
-  <figcaption class="w-figcaption">Because the descendant combinator is recursive,
+  <figcaption>Because the descendant combinator is recursive,
 the padding added to each child element applies, resulting in a staggered effect.</figcaption>
 </figure>
 
@@ -433,12 +436,13 @@ use a `~` character.
 How this differs is that an element just has to follow another element with the same parent,
 rather than being the next element with the same parent.
 
-<figure class="w-figure">
+<figure>
   {% Codepen {
     user: 'web-dot-dev',
-    id: 'ZELzPPX'
+    id: 'ZELzPPX',
+    height: 400
   } %}
-  <figcaption class="w-figcaption">Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
+  <figcaption>Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
 </figure>
 
 This subsequent combinator provides a little less rigidity,
@@ -484,15 +488,13 @@ a.my-class {
 
 This wouldn't apply a red color to all links
 and it would also only apply the red color to `.my-class` **if** it was on an `<a>` element.
-For more on specificity, see module 3.
-
-@@TO DO link
+For more on this, see the [specificity module](/learn/css/specificity).
 
 {% Assessment 'complex-selectors' %}
 
 ## Resources
 
-- [CSS selectors reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [CSS selectors reference](https://developer.mozilla.org/docs/Web/CSS/CSS_Selectors)
 - [Interactive selectors game](https://flukeout.github.io/)
-- [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
-- [A tool that translates CSS selectors into plain-english explainers](https://hugogiraudel.github.io/selectors-explained/)
+- [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
+- [A tool that translates CSS selectors into plain-english explainers](https://kittygiraudel.github.io/selectors-explained/)

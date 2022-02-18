@@ -1,12 +1,16 @@
 ---
 title: Color
-description:
+description: >
+  There are several different ways to specify color in CSS.
+  In this module we take a look at the most commonly used color values.
+audio:
+  title: 'The CSS Podcast - 006: Color Part One'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_006_v3.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-01
 ---
-
-# Color
 
 Color is an important part of any website and in CSS there are many options for color types,
 functions and treatments.
@@ -14,9 +18,9 @@ functions and treatments.
 How do you decide which color type to use?
 How do you make your colors semi-transparent?
 In this lesson,
-you're going to learn about what options you have to help you make the right decisions for your project and team.
+you're going to learn which options you have to help you make the right decisions for your project and team.
 
-CSS has [various different data types](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types),
+CSS has [various different data types](https://developer.mozilla.org/docs/Web/CSS/CSS_Types),
 such as strings and numbers.
 Color is one of these types and uses other types,
 such as numbers for its own definitions.
@@ -48,10 +52,11 @@ When used in a six digit sequence,
 they are translated to the RGB numerical ranges which are 0-255
 which correspond to the red, green, and blue color channels respectively.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'BapNrPG'
+  id: 'BapNrPG',
+  height: 430
 } %}
 </figure>
 
@@ -69,10 +74,11 @@ Here are some key, common values added to the black hex code, `#000000`:
 - 50% alpha is **80**: `#00000080`
 - 75% alpha is **BF**: `#000000BF`
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPLXdr'
+  id: 'VwPLXdr',
+  height: 540
 } %}
 </figure>
 
@@ -101,7 +107,7 @@ h1 {
 ```
 
 RGB colors are defined with the
-[`rgb()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb()>) color function,
+[`rgb()`](<https://developer.mozilla.org/docs/Web/CSS/color_value/rgb()>) color function,
 using either numbers or percentages as parameters.
 The numbers need to be within the **0-255** range and the percentages are between **0% and 100%‌**.
 RGB works on the 0-255 scale,
@@ -114,16 +120,17 @@ White is the exact opposite: `rgb(255, 255, 255)` or `rgb(100%, 100%, 100%)`.
 
 An alpha is set in `rgb()` in one of two ways.
 Either add a `/` **after** the red, green and blue parameters,
-or use the [`rgba()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgba()>) function.
+or use the [`rgba()`](<https://developer.mozilla.org/docs/Web/CSS/color_value/rgba()>) function.
 The alpha can be defined with a percentage or a decimal between 0 and 1.
 For example, to set a 50% alpha black in modern browsers, write: `rgb(0 0 0 / 50%)` or `rgb(0 0 0 / 0.5)`.
 For wider support, using the `rgba()` function,
 write: `rgba(0, 0, 0, 50%)` or `rgba(0, 0, 0, 0.5)`.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'dyNomWW'
+  id: 'dyNomWW',
+  height: 430
 } %}
 </figure>
 
@@ -156,7 +163,7 @@ A fully desaturated color (with a saturation of `0%`) will appear grayscale.
 And finally, lightness is the parameter which describes the scale from white to black of added light.
 A lightness of `100%` will always give you white.
 
-Using the [`hsl()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>) color function,
+Using the [`hsl()`](<https://developer.mozilla.org/docs/Web/CSS/color_value/hsl()>) color function,
 you define a true black by writing `hsl(0 0% 0%)`, or even `hsl(0deg 0% 0%)`.
 This is because the hue parameter defines the degree on the color wheel,
 which if you use the number type, is **0-360**.
@@ -166,42 +173,43 @@ Both saturation and lightness are defined with percentages.
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/RhVxWSZ6bH35eBdN6Prj.svg", alt="The HSL color function broken down visually. The hue uses the color wheel. The saturation shows grey blending into teal. The lightness shows black into white.", width="800", height="478" %}
 
 {% Aside %}
-[The angle type](https://developer.mozilla.org/en-US/docs/Web/CSS/angle)
+[The angle type](https://developer.mozilla.org/docs/Web/CSS/angle)
 in CSS is great for defining hue because it represents the angle of the color wheel really well.
 This type accepts degrees, turns, radians and gradians.
 {% endAside %}
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'poRJLQo'
+  id: 'poRJLQo',
+  height: 430
 } %}
 </figure>
 
 Alpha is defined in `hsl()`,
 in the same way as `rgb()` by adding a `/` after the hue, saturation and lightness parameters _or_ by using the
-[`hsla()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla()>) function.
+[`hsla()`](<https://developer.mozilla.org/docs/Web/CSS/color_value/hsla()>) function.
 The alpha can be defined with a percentage or a decimal between 0 and 1.
 For example, to set a 50% alpha black, use: `hsl(0 0% 0% / 50%)` or `hsl(0 0% 0% / 0.5)`.
 Using the `hsla()` function, write: `hsla(0, 0%, 0%, 50%)` or `hsla(0, 0%, 0%, 0.5)`.
 
 {% Aside %}
 There are some newer color types coming to CSS.
-These include [lab()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()>)
-and [lch()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()>),
+These include [lab()](<https://developer.mozilla.org/docs/Web/CSS/color_value/lab()>)
+and [lch()](<https://developer.mozilla.org/docs/Web/CSS/color_value/lch()>),
 which allow a far wider range of color to be specified than is possible in RGB.
 {% endAside %}
 
 ## Color Keywords
 
-There are [148 named colors in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#color_keywords).
+There are [148 named colors in CSS](https://developer.mozilla.org/docs/Web/CSS/color_value#color_keywords).
 These are plain English names such as purple, tomato and goldenrod.
 Some of the most popular names,
 according to the [Web Almanac](https://almanac.httparchive.org/en/2019/css),
 are black, white, red, blue and gray.
 Our favorites include goldenrod, aliceblue, and hotpink.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELGraM'
@@ -231,7 +239,7 @@ however you will often see system colors with capitalization in order to differe
 ## Where to use color in CSS rules
 
 If a CSS property accepts the
-[`<color>`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) data type as a value,
+[`<color>`](https://developer.mozilla.org/docs/Web/CSS/color_value) data type as a value,
 it will accept any of the above methods of expressing color.
 For styling text, use the `color`, `text-shadow` and `text-decoration-color` properties
 which all accept color as the value or color as part of the value.
@@ -242,15 +250,13 @@ Gradients are a type of image that can be programmatically defined in CSS.
 Gradients accept two or more colors in any combination of color format, such as hex, rgb or hsl.
 
 {% Aside %}
-There's lots to learn with gradients so we wrote a whole lesson on how to use them.
-
-@@TODO link to gradients lesson
+There's lots to learn with gradients so we wrote [a whole lesson](/learn/css/gradients) on how to use them.
 {% endAside %}
 
 Finally, `border-color`, and `outline-color` set the color for borders and outlines on your boxes.
 The `box-shadow` property also accepts color as one of the values.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGgdJKd'

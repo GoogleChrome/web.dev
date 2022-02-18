@@ -1,0 +1,29 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/stats
+.stats {
+  @extend .auto-grid;
+
+  --auto-grid-placement: auto-fit;
+  --auto-grid-gutter: 0;
+
+  padding: 2em 2em 3em 2em;
+
+  @include apply-utility('bg', 'state-good-bg');
+  @include apply-utility('color', 'state-good-text');
+
+  &__item {
+    @extend .flow;
+
+    --flow-space: 0.3rem;
+
+    padding: 2em;
+    text-align: center;
+
+    @include apply-utility('leading', 'flat');
+  }
+
+  &__figure {
+    @include apply-utility('font', 'brand');
+    @include apply-utility('text', 'size-6');
+  }
+}

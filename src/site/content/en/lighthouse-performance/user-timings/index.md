@@ -15,7 +15,7 @@ web_lighthouse:
 Making your web app fast and responsive is crucial for a good user experience.
 The first step in improving performance is identifying where time is being spent.
 
-The [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
+The [User Timing API](https://developer.mozilla.org/docs/Web/API/User_Timing_API)
 gives you a way to measure your app's JavaScript performance.
 You do that by inserting API calls in your JavaScript and then
 extracting detailed timing data that you can use to optimize your code.
@@ -32,8 +32,8 @@ and measures (that is, measurements of the elapsed time between marks),
 you'll see them in your
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) report:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PWzo7o0AN7SpBeGKG2OD.png", alt="A screenshot of the Lighthouse User Timing marks and measures audit", width="800", height="408", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PWzo7o0AN7SpBeGKG2OD.png", alt="A screenshot of the Lighthouse User Timing marks and measures audit", width="800", height="408" %}
 </figure>
 
 Lighthouse extracts User Timing data from
@@ -56,5 +56,5 @@ your components.
 ## Resources
 
 - [Source code for **User Timing marks and measures** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)
-- [User Timing API (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
+- [User Timing API (MDN)](https://developer.mozilla.org/docs/Web/API/User_Timing_API)
 - [User Timing API (HTML5 Rocks)](https://www.html5rocks.com/en/tutorials/webperformance/usertiming/)

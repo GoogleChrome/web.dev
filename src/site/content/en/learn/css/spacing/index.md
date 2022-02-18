@@ -1,6 +1,12 @@
 ---
 title: Spacing
-description:
+description: >
+  Find out how to select the best method of spacing elements,
+  taking into consideration the layout method you are using and component that you need to build.
+audio:
+  title: 'The CSS Podcast - 013: Spacing'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_013_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-27
@@ -26,15 +32,15 @@ each with its own strengths and caveats.
 ## HTML spacing
 
 HTML itself provides some methods to space elements.
-The `<br />` and `<hr />` elements allow you to space elements in the block direction,
+The `<br>` and `<hr>` elements allow you to space elements in the block direction,
 which if you are in a latin-based language,
 is top-to-bottom.
 
-If you use a `<br />` element,
+If you use a `<br>` element,
 it will create a line-break,
 just like if you were to press your enter key in a word processor.
 
-The `<hr />` creates a horizontal line with space either-side, known as `margin`.
+The `<hr>` creates a horizontal line with space either-side, known as `margin`.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -91,13 +97,13 @@ The `margin` shorthand can also be used with one, two, or three values.
 Adding a fourth value lets you set each individual side.
 These are applied as follows:
 
-- One value will be applied to all sides. (`margin: 20px`)
+- One value will be applied to all sides. (`margin: 20px`).
 - Two values: the first value will be applied to the top and bottom sides,
 and the second value will be applied to the left and right sides.
 (`margin: 20px 40px`)
 - Three values: the first value is `top`,
 the second value is `left` **and** `right`,
-and the third value is `bottom`. (`margin: 20px 40px 30px`)
+and the third value is `bottom`. (`margin: 20px 40px 30px`).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -306,12 +312,12 @@ will only apply the directional values when it is in its docked/stuck state.
 } %}
 
 In the [logical properties](/learn/css/logical-properties) module,
-you learn about the `inset` property,
-which allows you to set directional values that honor writing mode.
+you learn about the `inset-block` and `inset-inline` properties,
+which allow you to set directional values that honor writing mode.
 
-The `inset` order of properties is the same as TRouBLe with `margin` and `padding`
-but instead of `top`, `right`, `bottom` and `left`,
-it is `block-start`, `inline-end`, `block-end` and `inline-start`
+Both properties are shorthands combining the `start` and `end` values
+and as such accept either one value to be set for `start` and `end` or
+two individual values.
 
 ## Grid and flexbox
 
@@ -342,9 +348,8 @@ to help you create a consistent user interface that has good flow and rhythm.
 A good way to achieve this is use consistent measures for your spacing.
 
 For example, you could commit to using `20px`
-as a consistent measure for all gaps between elements—
-known as gutters—s
-o all layouts look and feel consistent.
+as a consistent measure for all gaps between elements—known as gutters—so
+all layouts look and feel consistent.
 You could also decide to use `1em` as the vertical spacing between flow content,
 which would achieve consistent spacing based on the element's `font-size`.
 Whatever you choose,

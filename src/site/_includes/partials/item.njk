@@ -1,25 +1,22 @@
 {% for pathItem in section.pathItems %}
-  {% set url = ['', lang, pathItem, ''] | join('/') %}
+  {% set url = ['', 'i18n', lang, pathItem, ''] | join('/') %}
   {% set item = url | findByUrl %}
+  {# Add a default language fallback in case the article is not translated. #}
+  {% if not item %}
+    {% set url = ['', 'en', pathItem, ''] | join('/') %}
+    {% set item = url | findByUrl %}
+  {% endif %}
   {% if pathItem.url %}
-    <li class="w-path-listitem">
-      <a
-        class="w-path-link w-path-link--external"
-        href="{{ pathItem.url }}"
-      >
-        {{ pathItem.title }}
+    <li>
+      <a href="{{ pathItem.url }}">
+        {{ pathItem.title | trim }}
       </a>
     </li>
   {% elif item %}
-    {% if item.data.draft %}
-      {# noop #}
-    {% else %}
-      <li class="w-path-listitem">
-        <a
-          class="w-path-link"
-          href="{{ item.url }}"
-        >
-          {{ item.data.title | md | safe }}
+    {% if not item.data.draft %}
+      <li>
+        <a href="{{ item.url | getDefaultUrl }}">
+          {{ item.data.title | trim | md({linkify: false}) | safe }}
         </a>
       </li>
     {% endif %}

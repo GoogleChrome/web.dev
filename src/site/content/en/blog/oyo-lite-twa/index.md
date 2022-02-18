@@ -14,7 +14,7 @@ description: |
   dramatically increase user engagement and keep file size low.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - twa
+  # - twa
   - case-study
 ---
 
@@ -80,7 +80,7 @@ of the platform-specific and web app worlds:
 Running in Chrome also has a number of handy perks.
 For example, TWAs share Chrome's storage,
 including cookies, passwords, and anything stored using the
-[Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+[Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API).
 One benefit of this setup is that users stay logged in
 across the browser and the TWA app.
 
@@ -129,12 +129,12 @@ Here's what the OYO team did:
 * Created a custom splash screen.
 
 And here's the result:
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </video>
- <figcaption class="w-figcaption">
+ <figcaption>
     OYO Lite in action.
   </figcaption>
 </figure>

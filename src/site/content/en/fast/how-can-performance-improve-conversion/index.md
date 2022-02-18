@@ -12,16 +12,16 @@ description: |
 tags:
   - blog
   - performance
-  - e-commerce
+  # - e-commerce
 ---
 
 In our other e-commerce guides you have learned about [what you should measure
 to improve performance](/what-should-you-measure-to-improve-performance/), and
 [how to measure and report metrics to build a performance culture](/how-to-report-metrics/).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/tRFlwIEQJcf52vGBEoDp.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A conversion funnel.
   </figcaption>
 </figure>
@@ -41,14 +41,14 @@ Make sure to use appropriate tools as described in [Fast Load Times](/fast) to o
 
 After getting users to your site, you need to keep them engaged with your content, which you can verify in your analytics of choice by looking at session length, time-on-page, pages-per-session and general [user flows](https://support.google.com/analytics/answer/1709395?hl=en).
 
-<figure class="w-figure">
-  {% Img src="image/admin/Apz0cUkUGVR7m9gKepkt.png", alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.", width="800", height="416", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/admin/Apz0cUkUGVR7m9gKepkt.png", alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.", width="800", height="416" %}
+  <figcaption>
     A user flow through the funnel as seen by Google Analytics.
   </figcaption>
 </figure>
 
-Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
+Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
 
 ## Conversion
 
@@ -64,9 +64,9 @@ Make sure to optimize for fast repeat loads and smooth UX flows to increase chan
 
 E-commerce sites always strive for conversions, which are at the end of a purchase funnel. Every step along the funnel needs to be optimized for website speed to minimize bounce rates and drop-offs, and for each step there are different things to optimize, different pitfalls and culprits:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/tRFlwIEQJcf52vGBEoDp.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     An e-commerce funnel showing which metric to optimize in which step.
   </figcaption>
 </figure>

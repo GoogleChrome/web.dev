@@ -1,5 +1,4 @@
 require('./urls');
-require('./utils/firebase-loader');
-require('./components/LighthouseGauge');
-require('./components/LivestreamContainer');
+require('./components/Carousel');
+require('./components/LearnFilter');
 require('./components/ProgressBar');

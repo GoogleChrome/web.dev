@@ -12,14 +12,14 @@ description: |
   and that transparently falls back to legacy approaches for dealing with files.
 scheduled: true
 date: 2020-07-27
-updated: 2021-01-27
+updated: 2022-01-25
 hero: image/admin/Y4wGmGP8P0Dc99c3eKkT.jpg
 tags:
   - blog
   - progressive-web-apps
   - capabilities
-  - file-system
-  - file-system-access
+  # - file-system
+  # - file-system-access
 feedback:
   - api
 ---
@@ -40,13 +40,13 @@ The moment you look closer, though, all that glitters is not gold.
 ### Opening files
 
 As a developer, you can open and read files via the
-[`<input type="file">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
+[`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file)
 element.
 In its simplest form, opening a file can look something like the code sample below.
-The `input` object gives you a [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList),
+The `input` object gives you a [`FileList`](https://developer.mozilla.org/docs/Web/API/FileList),
 which in the case below consists of just one
-[`File`](https://developer.mozilla.org/en-US/docs/Web/API/File).
-A `File` is a specific kind of [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob),
+[`File`](https://developer.mozilla.org/docs/Web/API/File).
+A `File` is a specific kind of [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob),
 and can be used in any context that a Blob can.
 
 ```js
@@ -65,7 +65,7 @@ const openFile = async () => {
 ### Opening directories
 
 For opening folders (or directories), you can set the
-[`<input webkitdirectory>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-webkitdirectory)
+[`<input webkitdirectory>`](https://developer.mozilla.org/docs/Web/HTML/Element/input#attr-webkitdirectory)
 attribute.
 Apart from that, everything else works the same as above.
 Despite its vendor-prefixed name,
@@ -75,10 +75,10 @@ Despite its vendor-prefixed name,
 
 For saving a file, traditionally, you are limited to *downloading* a file,
 which works thanks to the
-[`<a download>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-download:~:text=download)
+[`<a download>`](https://developer.mozilla.org/docs/Web/HTML/Element/a#attr-download:~:text=download)
 attribute.
 Given a Blob, you can set the anchor's `href` attribute to a `blob:` URL that you can get from the
-[`URL.createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
+[`URL.createObjectURL()`](https://developer.mozilla.org/docs/Web/API/URL/createObjectURL)
 method.
 {% Aside 'caution' %}
 To prevent memory leaks, always revoke the URL after the download.
@@ -169,9 +169,9 @@ const saveFile = async (blob) => {
 As perfectly fine as the File System Access API is,
 it's [not yet  widely available](https://caniuse.com/native-filesystem-api).
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.", width="800", height="224", class="w-screenshot" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.", width="800", height="224" %}
+  <figcaption>
     Browser support table for the File System Access API.
     (<a href="https://caniuse.com/native-filesystem-api">Source</a>)
   </figcaption>
@@ -188,7 +188,7 @@ library is my answer to this challenge.
 
 Since the File System Access API is still likely to change in the future,
 the browser-fs-access API is not modeled after it.
-That is, the library is not a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill),
+That is, the library is not a [polyfill](https://developer.mozilla.org/docs/Glossary/Polyfill),
 but rather a [ponyfill](https://github.com/sindresorhus/ponyfill).
 You can (statically or dynamically) exclusively import whatever functionality you need to keep your app as small as possible.
 The available methods are the aptly named
@@ -251,7 +251,7 @@ the demo cannot be embedded in this article.
 ## The browser-fs-access library in the wild
 
 In my free time, I contribute a tiny bit to an
-[installable PWA](/progressive-web-apps/#installable)
+[installable PWA](/progressive-web-apps/#make-it-installable)
 called [Excalidraw](https://excalidraw.com/),
 a whiteboard tool that lets you easily sketch diagrams with a hand-drawn feel.
 It is fully responsive and works well on a range of devices from small mobile phones to computers with large screens.
@@ -264,24 +264,24 @@ save it (technically: download it, since Safari does not support the File System
 to my iPhone Downloads folder, open the file on my desktop (after transferring it from my phone),
 modify the file, and overwrite it with my changes, or even save it as a new file.
 
-<figure class="w-figure">
-  {% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="An Excalidraw drawing on an iPhone.", width="300", height="649", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Starting an Excalidraw drawing on an iPhone where the File System Access API is not supported, but where a file can be saved (downloaded) to the Downloads folder.</figcaption>
+<figure>
+  {% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="An Excalidraw drawing on an iPhone.", width="300", height="649" %}
+  <figcaption>Starting an Excalidraw drawing on an iPhone where the File System Access API is not supported, but where a file can be saved (downloaded) to the Downloads folder.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="The modified Excalidraw drawing on Chrome on the desktop.", width="800", height="592", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Opening and modifying the Excalidraw drawing on the desktop where the File System Access API is supported and thus the file can be accessed via the API.</figcaption>
+<figure>
+  {% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="The modified Excalidraw drawing on Chrome on the desktop.", width="800", height="592" %}
+  <figcaption>Opening and modifying the Excalidraw drawing on the desktop where the File System Access API is supported and thus the file can be accessed via the API.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Overwriting the original file with the modifications.", width="800", height="585", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Overwriting the original file with the modifications to the original Excalidraw drawing file. The browser shows a dialog asking me whether this is fine.</figcaption>
+<figure>
+  {% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Overwriting the original file with the modifications.", width="800", height="585" %}
+  <figcaption>Overwriting the original file with the modifications to the original Excalidraw drawing file. The browser shows a dialog asking me whether this is fine.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Saving the modifications to a new Excalidraw drawing file.", width="800", height="592", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Saving the modifications to a new Excalidraw file. The original file remains untouched.</figcaption>
+<figure>
+  {% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Saving the modifications to a new Excalidraw drawing file.", width="800", height="592" %}
+  <figcaption>Saving the modifications to a new Excalidraw file. The original file remains untouched.</figcaption>
 </figure>
 
 ### Real life code sample
@@ -334,14 +334,14 @@ you can show a **Save As** button in addition to a **Save** button.
 The screenshots below show the difference between Excalidraw's responsive main app toolbar on iPhone and on Chrome desktop.
 Note how on iPhone the **Save As** button is missing.
 
-<figure class="w-figure">
-  {% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar on iPhone with just a 'Save' button.", width="300", height="226", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Excalidraw app toolbar on iPhone with just a <strong>Save</strong> button.</figcaption>
+<figure>
+  {% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar on iPhone with just a 'Save' button.", width="300", height="226" %}
+  <figcaption>Excalidraw app toolbar on iPhone with just a <strong>Save</strong> button.</figcaption>
 </figure>
 
-<figure class="w-figure">
-  {% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Excalidraw app toolbar on Chrome desktop with a 'Save' and a 'Save As' button.", width="300", height="66", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Excalidraw app toolbar on Chrome  with a <strong>Save</strong> and a focused <strong>Save As</strong> button.</figcaption>
+<figure>
+  {% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Excalidraw app toolbar on Chrome desktop with a 'Save' and a 'Save As' button.", width="300", height="66" %}
+  <figcaption>Excalidraw app toolbar on Chrome  with a <strong>Save</strong> and a focused <strong>Save As</strong> button.</figcaption>
 </figure>
 
 ## Conclusions

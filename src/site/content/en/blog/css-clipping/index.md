@@ -83,10 +83,10 @@ The `clip-path` property does not require the element to be floated.
 
 The full list of basic shapes is:
 
-- [`inset()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#inset)
-- [`circle()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#circle)
-- [`ellipse()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#ellipse)
-- [`polygon()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#polygon)
+- [`inset()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#inset)
+- [`circle()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#circle)
+- [`ellipse()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#ellipse)
+- [`polygon()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#polygon)
 
 ### `inset()`
 
@@ -130,8 +130,8 @@ Be aware with all of these values that the shape will be clipped by the margin b
 If you create a circle on an image,
 and that shape would extend outside of the natural size of the image, you will get a flat edge.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sQPOF6oaR31kjSVGzztu.jpg", alt="A clipped circle with flat edges", width="800", height="427", class="w-screenshot",style="max-inline-size: 480px" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sQPOF6oaR31kjSVGzztu.jpg", alt="A clipped circle with flat edges", width="800", height="427",style="max-inline-size: 480px" %}
   <figcaption>The image used earlier now has <code>circle(50%)</code> applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
 </figure>
 
@@ -171,7 +171,7 @@ then copy and paste the code into your own project.
 
 ## Shapes from box values
 
-Also defined in CSS Shapes are shapes from [box values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/From_box_values).
+Also defined in CSS Shapes are shapes from [box values](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/From_box_values).
 These relate to the CSS Box Model -- the content box, padding box, border box,
 and margin box with keyword values of `content-box`, `border-box`, `padding-box`, and `margin-box`.
 

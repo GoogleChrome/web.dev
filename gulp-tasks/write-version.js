@@ -1,7 +1,3 @@
-const {execSync} = require('child_process');
-
-const isProd = process.env.ELEVENTY_ENV === 'prod';
-
 /**
  * Write the HEAD SHA to the `dist` on prod builds.
  * This is used for cloud build to compare the currently
@@ -9,10 +5,14 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
  *
  * @returns {Promise<void>}
  */
+const fs = require('fs');
+const {execSync} = require('child_process');
 const writeVersion = async () => {
-  if (isProd) {
+  if (process.env.ELEVENTY_ENV === 'prod') {
+    // Verify dist directory exists
     const version = execSync('git rev-parse HEAD').toString().trim();
-    require('fs').writeFileSync('./dist/version', version);
+    fs.mkdirSync('./dist', {recursive: true});
+    fs.writeFileSync('./dist/version', version);
   }
 };
 

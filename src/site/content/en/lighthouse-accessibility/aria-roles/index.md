@@ -22,8 +22,8 @@ or interact with it as the developer intended.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA roles with invalid values:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8Qd5Rfq5WUWJa1ZF6z0A.png", alt="Lighthouse audit showing ARIA role has invalid values", width="800", height="185", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8Qd5Rfq5WUWJa1ZF6z0A.png", alt="Lighthouse audit showing ARIA role has invalid values", width="800", height="185" %}
 </figure>
 
 Lighthouse uses the

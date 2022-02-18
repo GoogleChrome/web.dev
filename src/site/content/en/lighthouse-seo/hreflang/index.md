@@ -18,12 +18,12 @@ a page so that they can display the correct version for each language or region.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
 incorrect `hreflang` links:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9SqStqAKEC9FyHAC2TRQ.png", alt="Lighthouse audit showing incorrect hreflang links", width="800", height="185", class="w-screenshot w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9SqStqAKEC9FyHAC2TRQ.png", alt="Lighthouse audit showing incorrect hreflang links", width="800", height="185" %}
 </figure>
 
 Lighthouse checks for `hreflang` links
-in the page's `head` and in its [response headers](https://developer.mozilla.org/en-US/docs/Glossary/Response_header).
+in the page's `head` and in its [response headers](https://developer.mozilla.org/docs/Glossary/Response_header).
 
 Lighthouse then checks for valid language codes within the `hreflang`links.
 Lighthouse reports any `hreflang` links with invalid language codes.

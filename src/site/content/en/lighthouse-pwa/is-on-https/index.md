@@ -24,8 +24,8 @@ For more information about why all sites should be protected with HTTPS, see
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that aren't on HTTPS:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="Lighthouse audit showing page isn't on HTTPS", width="800", height="139", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="Lighthouse audit showing page isn't on HTTPS", width="800", height="139" %}
 </figure>
 
 Lighthouse waits for an event from the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)

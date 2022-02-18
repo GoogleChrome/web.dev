@@ -22,8 +22,8 @@ providing a branded, engaging experience.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't have a custom splash screen:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse audit showing site isn't configured for a custom splash screen", width="800", height="98", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKrrTDSCZ0XLZ7ABKlZt.png", alt="Lighthouse audit showing site isn't configured for a custom splash screen", width="800", height="98" %}
 </figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}

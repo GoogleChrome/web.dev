@@ -1,0 +1,15 @@
+/// WEB SEARCH and WEB SEARCH RESULTS
+/// Styles for both are here for brevity
+
+web-search {
+  position: relative;
+
+  .icon-button svg {
+    transform: translateY(2px); // Optical adjustment
+  }
+}
+
+web-search-results .stack-nav {
+  list-style: none;
+  margin: 0;
+}

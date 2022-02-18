@@ -15,8 +15,8 @@ The goal is to reduce the impact of these render-blocking URLs
 by inlining critical resources, deferring non-critical resources,
 and removing anything unused.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8xAmOUQsM8sfEAgzLBis.png", alt="A screenshot of the Lighthouse Eliminate render-blocking resources audit", width="800", height="271", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8xAmOUQsM8sfEAgzLBis.png", alt="A screenshot of the Lighthouse Eliminate render-blocking resources audit", width="800", height="271" %}
 </figure>
 
 
@@ -35,20 +35,20 @@ A `<link rel="stylesheet">` tag that:
 
 * Does not have a `disabled` attribute. When this attribute is present,
   the browser does not download the stylesheet.
-* Does not have a `media` attribute that matches the user's device.
+* Does not have a `media` attribute that matches the user's device specifically. `media="all"` is considered render-blocking.
 
 ## How to identify critical resources
 
 The first step to reducing the impact of render-blocking resources,
 is to identify what's critical and what's not.
-Use the [Coverage tab](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+Use the [Coverage tab](https://developer.chrome.com/docs/devtools/coverage/)
 in Chrome DevTools to identify non-critical CSS and JS.
 When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: Coverage tab", width="800", height="407", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: Coverage tab", width="800", height="407" %}
+  <figcaption>
     Chrome DevTools: Coverage tab.
   </figcaption>
 </figure>

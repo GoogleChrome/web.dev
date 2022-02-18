@@ -118,9 +118,9 @@ Moreover, every initial page load in Next.js is **server-side rendered**. If you
 the Network panel in DevTools, you can see the initial request for the document returns
 a fully server-rendered page.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bq2tjbZwvpwqQhFsHp0Q.png", alt="The Preview tab of the Network panel shows that Next.js returns visually complete HTML when a page is requested.", width="800", height="529" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     The Preview tab of the Network panel shows that Next.js returns visually complete
     HTML when a page is requested.
   </figcaption>

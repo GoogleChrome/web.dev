@@ -20,8 +20,8 @@ In [Next.js](https://nextjs.org/), you don't need to set up routing manually.
 Next.js uses file-system-based routing, which lets you just create files and folders
 inside the `./pages/` directory:
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cwpyvEgBCIbkqrbsbL0.png", alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.", width="376", height="348", class="w-screenshot" %}
+<figure>
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cwpyvEgBCIbkqrbsbL0.png", alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.", width="376", height="348" %}
 </figure>
 
 To link to different pages, use the
@@ -68,10 +68,10 @@ downloaded too:
 ## How automatic prefetching works
 
 Next.js prefetches only links that appear in the viewport and uses the [Intersection
-Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)
 to detect them. It also disables prefetching when the network connection is slow
 or when users have
-[`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data)
+[`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data)
 turned on. Based on these checks, Next.js dynamically injects [`<link
 rel="preload">`](/preload-critical-assets/) tags to download components for
 subsequent navigations.

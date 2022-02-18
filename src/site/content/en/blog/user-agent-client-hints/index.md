@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Improving user privacy and developer experience with User-Agent Client Hints
 subhead:
   User-Agent Client Hints are a new expansion to the Client Hints API, that
@@ -8,10 +9,10 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2021-02-12
+updated: 2021-09-10
 hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
 thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
-alt: A variety of different footprints in the snow. A hint at who's been there.
+alt: A blueprint of a bridge and some vintage drafting tools.
 tags:
   - blog
   - privacy
@@ -30,17 +31,11 @@ reducing User-Agent string granularity.
 Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
 
-{% Banner 'caution', 'body' %}
-If you are already using User-Agent Client Hints, pay attention to the upcoming
-changes. The header format is changing so the `Accept-CH` tokens exactly match
-the returned headers. Previously a site could have sent `Accept-CH: UA-Platform`
-to receive the `Sec-CH-UA-Platform` header and now that site should send
-`Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client
-Hints, send both formats until the change has fully rolled out in stable
-Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH
-tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)
-for updates.
-{% endBanner %}
+{% Aside 'caution' %}
+If you are already using User-Agent Client Hints, be aware that since Chrome 90
+the header format has changed so the Accept-CH tokens must exactly match the
+returned headers.
+{% endAside %}
 
 ## Background
 
@@ -83,7 +78,7 @@ ratio" is, the more unique your requests are, the easier it is for servers to
 covertly track you.
 
 The User-Agent string enables many legitimate [use
-cases](https://github.com/WICG/ua-client-hints/blob/master/README.md#use-cases),
+cases](https://wicg.github.io/ua-client-hints/#use-cases),
 and serves an important purpose for developers and site owners. However, it is
 also critical that users' privacy is protected against covert tracking methods,
 and sending UA information by default goes against that goal.
@@ -101,7 +96,7 @@ Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-gra
 enable access to the same information but in a more privacy-preserving way, in
 turn enabling browsers to eventually reduce the User-Agent string's default of
 broadcasting everything. [Client
-Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) enforce a
+Hints](https://datatracker.ietf.org/doc/html/rfc8942) enforce a
 model where the server must ask the browser for a set of data about the client
 (the hints) and the browser applies its own policies or user configuration to
 determine what data is returned. This means that rather than exposing **all**
@@ -151,7 +146,7 @@ progressive enhancement before going down this route.
 User-Agent Client Hints expand the range of properties with the `Sec-CH-UA`
 prefix that can be specified via the `Accept-CH` server response header. For all
 the details, start with [the
-explainer](https://github.com/WICG/ua-client-hints/blob/master/README.md) and
+explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and
 then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
 {% Aside %}
@@ -159,27 +154,19 @@ Client Hints are **only sent over secure connections**, so make sure you have
 [migrated your site to HTTPS](/why-https-matters).
 {% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it all
-works.
+## User-Agent Client Hints from Chromium 89
 
-## User-Agent Client Hints from Chromium 84
-
-User-Agent Client Hints will only be enabled gradually on Chrome Stable as
-[compatibility
-concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
-resolved. To force the functionality on for testing:
-
-- Use Chrome 84 **beta** or equivalent.
-- Enable the `chrome://flags/#enable-experimental-web-platform-features` flag.
+User-Agent Client Hints have been default enabled in Chrome since version 89.
 
 By default, the browser returns the browser brand, significant / major version,
-and an indicator if the client is a mobile device:
+platform, and an indicator if the client is a mobile device:
 
 ⬆️ _All requests_
 
 ```text
-Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
+Sec-CH-UA: "Chromium";v="93", "Google Chrome";v="93", " Not;A Brand";v="99"
 Sec-CH-UA-Mobile: ?0
+Sec-CH-UA-Platform: "macOS"
 ```
 
 {% Aside 'caution' %}
@@ -191,11 +178,11 @@ are used for representing lists and booleans.
 ### User-Agent response and request headers
 
 <style>
-.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+.table-wrapper th:nth-of-type(1), .table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
-.w-table-wrapper td {
+.table-wrapper td {
   padding: 4px 8px 4px 0;
 }
 </style>
@@ -204,11 +191,13 @@ are used for representing lists and booleans.
 | ------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Sec-CH-UA`                                 | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | List of browser brands and their significant version.                                                                                                                        |
 | `Sec-CH-UA-Mobile`                          | `?1`                                             | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).                                                                             |
-| `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | The complete version for the browser.                                                                                                                                        |
+| `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | [**Deprecated**]The complete version for the browser.                                                                                                                                        |
+| `Sec-CH-UA-Full-Version-List`               | `"Chromium";v="84.0.4143.2",`<br>`"Google Chrome";v="84.0.4143.2"` | List of browser brands and their full version.                                                                                                           |
 | `Sec-CH-UA-Platform`                        | `"Android"`                                      | The platform for the device, usually the operating system (OS).                                                                                                              |
 | `Sec-CH-UA-Platform-Version`                | `"10"`                                           | The version for the platform or OS.                                                                                                                                          |
 | `Sec-CH-UA-Arch`                            | `"arm"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
 | `Sec-CH-UA-Model`                           | `"Pixel 3"`                                      | The device model.                                                                                                                                                            |
+| `Sec-CH-UA-Bitness`                         | `"64"`                                           | The underlying architecture's bitness (i.e., the size in bits of an integer or memory address)                                                                               |
 
 {% Aside 'gotchas' %}
 Privacy and compatibility considerations mean the value may be blank, not
@@ -227,8 +216,9 @@ page from the site and sends its default basic User-Agent.
 GET /downloads HTTP/1.1
 Host: example.site
 
-Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
-Sec-CH-UA-Mobile: ?0
+Sec-CH-UA: "Chromium";v="93", "Google Chrome";v="93", " Not;A Brand";v="99"
+Sec-CH-UA-Mobile: ?1
+Sec-CH-UA-Platform: "Android"
 ```
 
 ⬇️ _Response from server_<br> The server sends the page back and additionally
@@ -236,29 +226,29 @@ asks for the full browser version and the platform.
 
 ```text
 HTTP/1.1 200 OK
-Accept-CH: Sec-CH-UA-Full-Version, Sec-CH-UA-Platform
+Accept-CH: Sec-CH-UA-Full-Version-List
 ```
 
 ⬆️ _Subsequent requests_<br> The browser grants the server access to the
 additional information and sends the extra hints back in all subsequent
-responses.
+requests.
 
 ```text
 GET /downloads/app1 HTTP/1.1
 Host: example.site
 
-Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
-Sec-CH-UA-Mobile: ?0
-Sec-CH-UA-Full-Version: "84.0.4143.2"
+Sec-CH-UA: " Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"
+Sec-CH-UA-Mobile: ?1
+Sec-CH-UA-Full-Version-List: " Not A;Brand";v="99.0.0.0", "Chromium";v="98.0.4738.0", "Google Chrome";v="98.0.4738.0"
 Sec-CH-UA-Platform: "Android"
 ```
 
 ### JavaScript API
 
 Alongside the headers, the User-Agent can also be accessed in JavaScript via
-`navigator.userAgentData`. The default `Sec-CH-UA` and `Sec-CH-UA-Mobile` header
-information can be accessed via the `brands` and `mobile` properties,
-respectively:
+`navigator.userAgentData`. The default `Sec-CH-UA`, `Sec-CH-UA-Mobile`, and
+`Sec-CH-UA-Platform` header information can be accessed via the `brands` and
+`mobile` properties, respectively:
 
 ```js
 // Log the brand data
@@ -268,11 +258,15 @@ console.log(navigator.userAgentData.brands);
 [
   {
     brand: 'Chromium',
-    version: '84',
+    version: '93',
   },
   {
     brand: 'Google Chrome',
-    version: '84',
+    version: '93',
+  },
+  {
+    brand: ' Not;A Brand',
+    version: '99',
   },
 ];
 
@@ -281,6 +275,12 @@ console.log(navigator.userAgentData.mobile);
 
 // output
 false;
+
+// Log the platform value
+console.log(navigator.userAgentData.platform);
+
+// output
+"macOS";
 ```
 
 The additional values are accessed via the `getHighEntropyValues()` call. The
@@ -294,17 +294,45 @@ what values, if any, are returned.
 // Log the full user-agent data
 navigator
   .userAgentData.getHighEntropyValues(
-    ["architecture", "model", "platform", "platformVersion",
-     "uaFullVersion"])
+    ["architecture", "model", "bitness", "platformVersion",
+     "fullVersionList"])
   .then(ua => { console.log(ua) });
 
 // output
 {
-  "architecture": "x86",
-  "model": "",
-  "platform": "Linux",
-  "platformVersion": "",
-  "uaFullVersion": "84.0.4143.2"
+   "architecture":"x86",
+   "bitness":"64",
+   "brands":[
+      {
+         "brand":" Not A;Brand",
+         "version":"99"
+      },
+      {
+         "brand":"Chromium",
+         "version":"98"
+      },
+      {
+         "brand":"Google Chrome",
+         "version":"98"
+      }
+   ],
+   "fullVersionList":[
+      {
+         "brand":" Not A;Brand",
+         "version":"99.0.0.0"
+      },
+      {
+         "brand":"Chromium",
+         "version":"98.0.4738.0"
+      },
+      {
+         "brand":"Google Chrome",
+         "version":"98.0.4738.0"
+      }
+   ],
+   "mobile":false,
+   "model":"",
+   "platformVersion":"12.0.1"
 }
 ```
 
@@ -314,8 +342,7 @@ You can try out both the headers and the JavaScript API on your own device at
 [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
 {% Aside %}
-Ensure you're using Chrome 84 Beta or equivalent with
-`chrome://flags/#enable-experimental-web-platform-features` enabled.
+Ensure you're using Chrome 89 or above.
 {% endAside %}
 
 ### Hint life-time and resetting
@@ -328,16 +355,16 @@ That means if the server sends:
 ⬇️ _Response_
 
 ```text
-Accept-CH: Sec-CH-UA-Full-Version
+Accept-CH: Sec-CH-UA-Full-Version-List
 ```
 
-Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests
+Then the browser will send the `Sec-CH-UA-Full-Version-List` header on all requests
 for that site until the browser is closed.
 
 ⬆️ _Subsequent requests_
 
 ```text
-Sec-CH-UA-Full-Version: "84.0.4143.2"
+Sec-CH-UA-Full-Version-List: " Not A;Brand";v="99.0.0.0", "Chromium";v="98.0.4738.0", "Google Chrome";v="98.0.4738.0"
 ```
 
 However, if another `Accept-CH` header is received then that will **completely
@@ -346,16 +373,16 @@ replace** the current hints the browser is sending.
 ⬇️ _Response_
 
 ```text
-Accept-CH: Sec-CH-UA-Platform
+Accept-CH: Sec-CH-UA-Bitness
 ```
 
 ⬆️ _Subsequent requests_
 
 ```text
-Sec-CH-UA-Platform: "Android"
+Sec-CH-UA-Platform: "64"
 ```
 
-The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
+The previously asked-for `Sec-CH-UA-Full-Version-List` **will not be sent**.
 
 It's best to think of the `Accept-CH` header as specifying the complete set of
 hints desired for that page, meaning the browser then sends the specified hints
@@ -384,21 +411,21 @@ want to optimize are on `https://downloads.example.com` they **will not**
 receive any hints.
 
 To allow hints on cross-origin requests each hint and origin must be specified
-by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you
+by a `Permissions-Policy` header. To apply this to a User-Agent Client Hint, you
 need to lowercase the hint and remove the `sec-` prefix. For example:
 
 ⬇️ _Response from `example.com`_
 
 ```text
-Accept-CH: Sec-CH-UA-Platform, DPR
-Feature-Policy: ch-ua-platform downloads.example.com;
-                ch-dpr cdn.provider img.example.com
+Accept-CH: Sec-CH-UA-Platform-Version, DPR
+Permissions-Policy: ch-ua-platform-version=(self "downloads.example.com"),
+                    ch-dpr=(self "cdn.provider" "img.example.com");
 ```
 
 ⬆️ _Request to `downloads.example.com`_
 
 ```text
-Sec-CH-UA-Platform: "Android"
+Sec-CH-UA-Platform-Version: "10"
 ```
 
 ⬆️ _Requests to `cdn.provider` or `img.example.com`_
@@ -424,7 +451,7 @@ enables. It's a maintenance overhead to ensure that your detection is
 comprehensive and remains up-to-date.
 
 With these caveats in mind, the [User-Agent Client Hints repo lists some valid
-use cases](https://github.com/WICG/ua-client-hints#use-cases) for sites.
+use cases](https://wicg.github.io/ua-client-hints/#use-cases) for sites.
 
 ## What happens to the User-Agent string?
 
@@ -434,20 +461,21 @@ while not causing undue disruption on existing sites. Introducing User-Agent
 Client Hints now gives you a chance to understand and experiment with the new
 capability, before any changes are made to User-Agent strings.
 
-[Eventually](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ),
+[Eventually](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html),
 the information in the User-Agent string will be reduced so it maintains the
 legacy format while only providing the same high-level browser and significant
 version information as per the default hints. In Chromium, this change has been
-deferred until at least 2021 to provide additional time for the ecosystem to
+deferred until at least 2022 to provide additional time for the ecosystem to
 evaluate the new User Agent Client Hints capabilities.
 
 You can test a version of this by enabling the
-`chrome://flags/#freeze-user-agent` flag from Chrome 84. This will return a
-string with the historical entries for compatibility reasons, but with sanitized
-specifics. For example, something like:
+`about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was
+named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will
+return a string with the historical entries for compatibility reasons, but with
+sanitized specifics. For example, something like:
 
 ```text
-Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.0.0 Mobile Safari/537.36
+Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
 _Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

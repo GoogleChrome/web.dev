@@ -19,9 +19,9 @@ find and use. Even with browser promotion, some users don't realize that
 they can install a PWA, so it can be helpful to provide an in-app experience
 that you can use to promote and enable installation of your PWA.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="Screenshot of simple install button in PWA.", width="800", height="368" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A simple install button provided within your PWA.
   </figcaption>
 </figure>
@@ -31,8 +31,6 @@ ways to promote the installation of your PWA. Regardless of which pattern, *or
 patterns* you use,  they all lead to the same code that triggers the install
 flow, documented in
 [How to provide your own in-app install experience](/customize-install/).
-
-<div class="w-clearfix">&nbsp;</div>
 
 ## PWA install promotion best practices {: #best-practices }
 
@@ -60,21 +58,19 @@ automatically indicate to the user that your Progressive Web App is
 installable. For example, desktop Chrome shows an install button in the omnibox.
 
 <div class="w-columns">
-  <figure class="w-figure" id="browser-install-promo">
+  <figure id="browser-install-promo">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Screenshot of omnibox with install indicator visible.", width="800", height="307" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Browser provided install promotion (desktop)
     </figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Screenshot of browser provided install promotion.", width="800", height="307" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       Browser provided install promotion (mobile)
     </figcaption>
   </figure>
 </div>
-
-<div class="w-clearfix">&nbsp;</div>
 
 Chrome for Android will show a mini-infobar to the user, though this can be
 prevented by calling `preventDefault()` on the `beforeinstallprompt` event.
@@ -93,8 +89,6 @@ Sites which are thoughtful about when they trigger promotion UI achieve a
 larger number of installs and avoid interfering with the journeys of users
 who aren't interested in installation.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ### Simple install button {: #simple-button }
 
 The simplest possible UX is to include an 'Install' or 'Get app' button at an
@@ -102,14 +96,12 @@ appropriate location in your web content. Ensure the button doesn't block
 other important functionality and is out of the way of the user's journey
 through your application.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Custom install button", width="800", height="448" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Simple install button
   </figcaption>
 </figure>
-
-<div class="w-clearfix">&nbsp;</div>
 
 ### Fixed header {: #header }
 
@@ -118,9 +110,9 @@ header content often includes site branding such as a logo and the hamburger
 menu. Headers may be `position:fixed` or not depending on your site's
 functionality and user needs.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Custom install button in header", width="800", height="448" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Custom install button in header
   </figcaption>
 </figure>
@@ -131,9 +123,9 @@ return to your experience. Pixels in your PWA header are precious,
 so make sure your installation call to action is appropriately sized, of greater
 importance than other possible header content, and unintrusive.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Custom install button in header", width="800", height="430" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Custom install button in header
   </figcaption>
 </figure>
@@ -149,13 +141,11 @@ Make sure you:
   to offer your user in the header, and weigh the priority of the install
   promotion relative to other options.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ### Navigation menu {: #nav }
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Custom install button in nav menu", width="800", height="1117" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Add an install button/promotion in a slide out navigation menu.
   </figcaption>
 </figure>
@@ -170,17 +160,15 @@ Make sure you:
 * Offer a short, relevant pitch for why the user would benefit from
   installing your PWA.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ### Landing page {: #landing }
 
 The purpose of a landing page is to promote your products and services,
 so this is one place where it is appropriate to go large with promoting
 the benefits of installing your PWA.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="Custom install prompt on landing page", width="800", height="1117" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Custom install prompt on landing page
   </figcaption>
 </figure>
@@ -198,13 +186,11 @@ Make sure you:
 * Consider adding an install promotion in the part of your app where users spend
   most of their time.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ### Install banner {: #banner }
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Custom install banner at top of page.", width="800", height="1000" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A dismissible banner at the top of the page.
   </figcaption>
 </figure>
@@ -225,8 +211,6 @@ Make sure you:
   iOS/Android app by mentioning that it uses almost no storage on the user's
   device or that it will install instantly without a store redirect.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ### Temporary UI {: #temporary-ui }
 
 Temporary UI, such as the [Snackbar](https://material.io/components/snackbars/)
@@ -235,9 +219,9 @@ action. In this case, install the app. When used properly, these kinds of UI
 patterns don't interrupt the user flow, and are typically automatically
 dismissed if ignored by the user.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="Custom install banner as snackbar.", width="800", height="448" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A dismissible snackbar indicating the PWA is installable.
   </figcaption>
 </figure>
@@ -250,9 +234,9 @@ PWA. Therefore, it's best to wait until you have strong interest signals from
 the user before using this pattern, for example, repeat visits, a user sign
 in, or similar conversion event.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="Custom install banner as snackbar.", width="800", height="424" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     A dismissible snackbar indicating the PWA is installable.
   </figcaption>
 </figure>
@@ -266,8 +250,6 @@ Make sure you:
   using this pattern, for example, repeat visits, a user sign in,
   or similar conversion event.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ## After conversion
 
 Immediately after a user conversion event, for example after a purchase on
@@ -275,18 +257,18 @@ an e-commerce site, is an excellent opportunity to promote the installation of
 your PWA. The user is clearly engaged with your content, and a conversion
 often signals that the user will engage with your services again.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="Screenshot of install promotion after conversion.", width="800", height="448" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Install promotion after user has completed purchase.
   </figcaption>
 </figure>
 
 ### Booking or checkout journey {: #journey }
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt="Install promotion after a user journey.", width="800", height="1419" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Install promotion after a user journey.
   </figcaption>
 </figure>
@@ -308,16 +290,14 @@ Make sure you:
   above, notice how the key call to action to checkout is above the
   app install promotion.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ### Sign up, sign in, or sign out flow {: #sign-up}
 
 This promotion is a special case of the [journey](#journey) promotional
 pattern where the promotion card can be more prominent.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="Custom install button on the sign up page.", width="800", height="1117" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Custom install button on the sign up page.
   </figcaption>
 </figure>
@@ -336,8 +316,6 @@ Make sure you:
 * Consider adding an additional install promotion within the signed-in areas
   of your app.
 
-<div class="w-clearfix">&nbsp;</div>
-
 ## Inline promotional patterns
 
 Inline promotional techniques interweave promotions with site content. This
@@ -350,9 +328,9 @@ it, but not so much that it detracts from the quality of your user experience.
 An in-feed install promotion appears between news articles or other lists of
 information cards in your PWA.
 
-<figure class="w-figure w-figure--inline-right">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="Install promotion within content feed.", width="800", height="1000" %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     Install promotion within content feed.
   </figcaption>
 </figure>

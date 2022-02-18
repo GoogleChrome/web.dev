@@ -1,0 +1,67 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/toc
+.toc {
+  --toc-vert-space: 0.5rem;
+
+  font-size: get-size('base');
+
+  a {
+    @include apply-utility('color', 'mid-text');
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+.toc__list {
+  list-style: none;
+  padding: 0;
+}
+
+.toc__list li {
+  padding-block: calc(var(--toc-vert-space) / 2);
+  position: relative;
+
+  @include apply-utility('weight', 'medium');
+}
+
+.toc__list .toc__list {
+  margin-block: var(--toc-vert-space);
+}
+
+.toc__list .toc__list li {
+  padding-inline-start: $global-gutter-narrow;
+  border-inline-start: 1px solid get-utility-value('color', 'stroke');
+
+  @include apply-utility('weight', 'regular');
+
+  /// Removes the space as negative margin to prevent double spacing
+  &:last-of-type {
+    margin-block-end: calc(var(--toc-vert-space) * -1);
+  }
+}
+
+.toc__header {
+  font-size: get-size('size-1');
+}
+
+.toc .w-scroll-spy__active, .toc .toc__active {
+  @include apply-utility('color', 'action-text');
+  @include apply-utility('weight', 'bold');
+}
+
+/// An active style for nested list items
+.toc__list .toc__list li .w-scroll-spy__active::before,
+.toc__list .toc__list li .toc__active::before {
+  /// The list element is the relative parent, allowing
+  /// this additional border style to "break out" of the
+  /// anchor element that this active state is applied to
+  content: '';
+  display: block;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  inset: 0 auto 0 -1px;
+  background: currentColor;
+}

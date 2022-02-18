@@ -1,0 +1,60 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/compare
+.compare {
+  --compare-highlight-color: #{get-utility-value('color', 'state-info-text')};
+
+  /// It's really important than this space is controlled, regardless of context
+  --flow-space: #{get-space('base')} !important;
+}
+
+.compare__label {
+  color: var(--compare-highlight-color);
+  font-size: get-size('size-2');
+
+  @include apply-utility('font', 'brand');
+}
+
+.compare__caption {
+  --flow-space: 1rem;
+
+  text-align: left;
+  font-style: normal;
+  margin-inline-start: 0;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1ch;
+  border-inline-start: 3px solid var(--compare-highlight-color);
+
+  @include apply-utility('color', 'mid-text');
+
+  /// Ensures paragraphs flow into each other rather than act like blocks
+  > * {
+    display: inline;
+  }
+}
+
+/// TYPE EXCEPTIONS
+.compare[data-type='better'] {
+  --compare-highlight-color: #{get-utility-value('color', 'state-good-text')};
+}
+
+.compare[data-type='worse'] {
+  --compare-highlight-color: #{get-utility-value('color', 'state-bad-text')};
+}
+
+/// PROSE RULES
+/// for longform text contexts
+
+/// Adds spacing around compare and compare groups
+.prose > *:not(.compare) + .compare,
+.prose > .compare + .compare {
+  margin-block-start: get-space('size-2');
+}
+
+.prose > .compare + *:not(.compare) {
+  margin-block-start: get-space('size-3');
+}
+
+.prose figure.compare {
+  border: none;
+  padding: 0;
+}

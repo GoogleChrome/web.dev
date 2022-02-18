@@ -27,7 +27,7 @@ If you see a "Project has been suspended" message when opening a new project, co
 their public forum or by emailing `support@glitch.com`. You should receive a reply soon with steps
 you can take to fix your project.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FZdKu2XfMTu9XNWaljfJ.png", alt="Suspended-project", width="800", height="453", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FZdKu2XfMTu9XNWaljfJ.png", alt="Suspended-project", width="800", height="453" %}
 
 ## Exceeding disk usage
 

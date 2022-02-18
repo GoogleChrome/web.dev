@@ -19,8 +19,8 @@ can properly announce them.
 
 Lighthouse reports when definition list items are not wrapped in `<dl>` elements:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EwELO9eYuXEqMQmySCG8.png", alt="Lighthouse audit showing definition list items are not wrapped in <dl> elements", width="800", height="365", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EwELO9eYuXEqMQmySCG8.png", alt="Lighthouse audit showing definition list items are not wrapped in <dl> elements", width="800", height="365" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

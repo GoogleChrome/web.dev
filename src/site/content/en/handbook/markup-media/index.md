@@ -2,23 +2,31 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2021-03-11
+updated: 2022-02-01
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
 
 ## Images and video
-### Navigate to the media uploader
+
+### Dimensions
+
+- Hero images should be 3200px wide by 960px tall.
+- Thumbnail images should be 376px wide by 240px tall.
+- Content images should be no wider than 1600px.
+- Author images should be a 384px square.
+
+### Using the images CDN
+
+All images on web.dev are required to use our image CDN so we can optimize
+them for users on different devices.
 
 Visit [the image uploader page](https://web-dev-uploads.web.app/) and
 sign-in using your Google corporate account. Note that this page only allows
 Googlers access, so signing in with a personal account will fail.
 
-{% Aside 'caution' %}
-There are different uploaders for web.dev and developer.chrome.com:
-* [web.dev uploader](https://web-dev-uploads.web.app/uploader)
-* [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/)
-{% endAside %}
+If you're not a Googler, reach out to your Google contact to see about getting
+access to the CDN.
 
 ### Choose a file
 
@@ -81,11 +89,15 @@ an image on its horitonzal axis you would do:
 %}{% endraw%}
 ```
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
-Original
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>Original</figcaption>
+</figure>
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240", params={flip: 'h'} %}
-Flipped
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240", params={flip: 'h'} %}
+  <figcaption>Flipped</figcaption>
+</figure>
 
 {% Aside %}
 Please call out in a review if you're calling a specific Imgix API, so we can be
@@ -104,25 +116,33 @@ To include a caption along with an image, use `<figure>` with `<figcaption>` and
 place the shortcode snippet inside:
 
 ```md
-<figure class="w-figure">
-{% raw %}{% Img
-  src="image/foR0vJZKULb5AGJExlazy1xYDgI2/iuwBXAyKJMz4b7oRyIdI.jpg",
-  alt="ALT_TEXT_HERE",
-  width="380",
-  height="240",
-%}{% endraw%}
-  <figcaption class="w-figcaption">
-    A good boy.
-  </figcaption>
+{% raw %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
 </figure>
+{% endraw%}
 ```
 
-<figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg",
-alt="ALT_TEXT_HERE", width="380", height="240" %}
-  <figcaption class="w-figcaption">
-    A good boy.
-  </figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
+</figure>
+
+If you would like an image to stretch to the full width of the content, you can apply the `data-size="full"` attribute to the `<figure>` element.
+
+```md
+{% raw %}
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
+</figure>
+{% endraw%}
+```
+
+<figure data-size="full">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption>A good boy.</figcaption>
 </figure>
 
 ### YouTube
@@ -137,3 +157,15 @@ Use the {% raw %}`{% YouTube %}`{% endraw %} shortcode to embed a YouTube video.
 ```
 
 {% YouTube "qPD2yc8BoDk" %}
+
+Use the {% raw %}`{% YouTubePlaylist %}`{% endraw %} shortcode to embed a YouTube
+playlist iframe.
+
+```md
+{% raw %}{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv' %}
+
+<!-- You can pass allow, src, style and title as options in a second param -->
+{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv', {title: "My title"} %}{% endraw %}
+```
+
+{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv', {title: "My title"} %}

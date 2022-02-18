@@ -19,8 +19,8 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags any font URLs that may flash invisible text:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -42,7 +42,7 @@ you can avoid FOIT in most modern browsers:
 }
 ```
 
-The [font-display API](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+The [font-display API](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 specifies how a font is displayed.
 `swap` tells the browser that text using the font should be displayed immediately using a system font.
 Once the custom font is ready, it replaces the system font.
@@ -58,7 +58,7 @@ Use `<link rel="preload" as="font">` to fetch your font files earlier. Learn mor
 
 ### Google Fonts
 
-Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
+Add the `&display=swap` [parameter](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 ```

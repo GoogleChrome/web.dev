@@ -12,8 +12,8 @@ description: |
 tags:
   - blog
   - webassembly
-  - Earth
-  - Web App
+  # - Earth
+  # - Web App
   - case-study
 ---
 
@@ -29,7 +29,7 @@ We originally wrote most of Google Earth in C++ because it was a desktop applica
 
  At the time, NaCl was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we're starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.
 
- {% Img src="image/admin/xZ614l31AdC5L8qd44Kq.webp", alt="A screenshot of Earth showing Eiffel Tower", width="800", height="447", class="w-screenshot" %}
+ {% Img src="image/admin/xZ614l31AdC5L8qd44Kq.webp", alt="A screenshot of Earth showing Eiffel Tower", width="800", height="447" %}
 
 ## A thread on threading
 
@@ -61,6 +61,6 @@ Safari has a strong implementation of WebAssembly, but it lacks full support for
 ## Looking forward to more adoption of WebAssembly features
 It's been a long road to make Earth available on the web. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard.
 
-We still have a ways to go for WebAssembly and Earth. Specifically, we'd like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for source-language code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we're on the right track: WebAssembly is the long-term future for Earth on the web.
+We still have a ways to go for WebAssembly and Earth. Specifically, we'd like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for source-language code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we're on the right track: WebAssembly is the long-term future for Earth on the web.
 
 Please take a moment to try our [beta](https://g.co/earth/beta). Let us know how it works for you by leaving feedback directly in Earth.

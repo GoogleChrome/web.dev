@@ -1,15 +1,15 @@
 ---
 title: Receiving shared data with the Web Share Target API
-subhead: Sharing on mobile made simple with the Web Share Target API
+subhead: Sharing on mobile and desktop made simple with the Web Share Target API
 authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-02-09
+updated: 2021-06-07
 hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
-  On a mobile device, sharing should be as simple as clicking the Share button,
+  On a mobile or desktop device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
   allows installed web apps to register with the underlying operating system to receive shared content.
 tags:
@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-On a mobile device, sharing should be as straightforward as clicking the **Share** button,
+On a mobile or desktop device, sharing should be as straightforward as clicking the **Share** button,
 choosing an app, and choosing who to share with. For example, you may want to
 share an interesting article, either by emailing it to friends or tweeting it to
 the world.
@@ -36,9 +36,9 @@ files, links, or text using the Web Share API. See
 [Web Share API](/web-share/) for details.
 {% endAside %}
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     System-level share target picker with an installed PWA as an option.
   </figcaption>
 </figure>
@@ -241,9 +241,9 @@ self.addEventListener('fetch', event => {
 
 ### Verifying shared content
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="280" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     The sample sharing target app.
   </figcaption>
 </figure>
@@ -255,8 +255,6 @@ For example, on Android, the [`url` field will be
 empty](https://bugs.chromium.org/p/chromium/issues/detail?id=789379) because
 it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
-
-<div class="w-clearfix"></div>
 
 ## Browser support
 
@@ -273,7 +271,16 @@ potential target for receiving shared data.
 - [Squoosh](https://github.com/GoogleChromeLabs/squoosh)
 - [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)
 
+### Show support for the API
 
+Are you planning to use the Web Share Target API? Your public support helps the Chromium team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebShareTarget`](https://twitter.com/search?q=%23WebShareTarget&src=recent_search_click&f=live)
+and let us know where and how you're using it.
+
+[cr-dev-twitter]: https://twitter.com/ChromiumDev
 [spec]: https://wicg.github.io/web-share-target/
 [demo]: https://web-share.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/web-share?path=index.html
@@ -284,4 +291,4 @@ potential target for receiving shared data.
 [wicg-discourse]: https://discourse.wicg.io/t/web-share-target-api-for-websites-to-receive-shared-content/1854
 [manifest]:/add-manifest/
 [installability]:https://developers.google.com/web/fundamentals/app-install-banners/#criteria
-[encoding]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype
+[encoding]:https://developer.mozilla.org/docs/Web/HTML/Element/form#attr-enctype

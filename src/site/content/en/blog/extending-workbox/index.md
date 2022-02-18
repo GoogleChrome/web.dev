@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Extending Workbox
 subhead: >
   Write your own reusable, shareable strategies and plugins.
@@ -50,8 +51,8 @@ But what if you wanted to go beyond those common caching scenarios? Let's cover
 writing your own custom caching strategies.
 [Workbox v6](https://github.com/GoogleChrome/workbox/releases/tag/v6.0.0) offers
 a new [`Strategy` base class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy) that sits in front of lower-level APIs, like
-[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and
-[Cache Storage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage).
+[Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) and
+[Cache Storage](https://developer.mozilla.org/docs/Web/API/CacheStorage).
 You can extend the `Strategy` base class, and then implement your own logic in
 the [`_handle()` method](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy#_handle).
 
@@ -141,7 +142,7 @@ class CacheNetworkRace extends Strategy {
         if (results[0].status === 'rejected' &&
             !results[1].value) {
           reject(results[0].reason);
-        }  
+        }
       });
     });
   }
@@ -161,7 +162,7 @@ plugin lifecycle callbacks that we'll describe soon.
 
 A `StrategyHandler` instance supports the following methods:
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -241,7 +242,7 @@ Here's an overview of all the events that a plugin could listen to. Technical
 details about implementing callbacks for these events is in the
 [Workbox documentation](https://developers.google.com/web/tools/workbox/guides/using-plugins).
 
-<div class="w-table-wrapper">
+<div>
   <table>
     <thead>
       <tr>
@@ -306,7 +307,7 @@ When writing your own plugin, you'll only implement callbacks for the limited
 number of events that match your purpose—there's no need to add in callbacks for
 _all_ of the possible events. Additionally, it's up to you whether you implement
 your plugin as an
-<code>[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)</code>
+<code>[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)</code>
 with properties that match the lifecycle event names, or as a class that exposes
 methods with those names.
 

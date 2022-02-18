@@ -5,7 +5,7 @@ authors:
   - thomassteiner
   - petelepage
 date: 2020-09-24
-updated: 2021-03-24
+updated: 2021-05-19
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
@@ -18,30 +18,30 @@ Slack, or launch Zoom. You might not get anything particularly meaningful or eve
 be unable to achieve what you wanted to achieve, but at least you get _something_ and the app is in
 control.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-apps-wrapper">
+<figure role="group" aria-labelledby="fig-apps-wrapper">
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-assistant" style="display: inline-block">
+  <figure role="group" aria-labelledby="fig-assistant" style="display: inline-block">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gr49coayhLfP1UVJ2EeR.jpg", alt="Google Assistant mobile app while offline.", width="621", height="1344" %}
-    <figcaption class="w-figcaption" id="fig-assistant">
+    <figcaption id="fig-assistant">
       Google Assistant.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-slack" style="display: inline-block">
+  <figure role="group" aria-labelledby="fig-slack" style="display: inline-block">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D4P00CQ15IE0plUEY3di.jpg", alt="Slack mobile app while offline.", width="621", height="1344" %}
-    <figcaption class="w-figcaption" id="fig-slack">
+    <figcaption id="fig-slack">
       Slack.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-zoom" style="display: inline-block">
+  <figure role="group" aria-labelledby="fig-zoom" style="display: inline-block">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gw1LQG4JNYUDxQ2NOJHC.jpg", alt="Zoom mobile app while offline.", width="621", height="1344" %}
-    <figcaption class="w-figcaption" id="fig-zoom">
+    <figcaption id="fig-zoom">
       Zoom.
     </figcaption>
   </figure>
 
-  <figcaption class="w-figcaption" id="fig-apps-wrapper">
+  <figcaption id="fig-apps-wrapper">
     With platform-specific apps, even when you do not have a network connection, you never get nothing.
   </figcaption>
 
@@ -50,23 +50,23 @@ control.
 In contrast, on the Web, traditionally you get nothing when you are offline. Chrome gives you
 the [offline dino game](https://www.blog.google/products/chrome/chrome-dino/), but that is it.
 
-<figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper">
+<figure role="group" aria-labelledby="fig-offline-wrapper">
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">
+  <figure role="group" aria-labelledby="fig-chrome-ios" style="display: inline-block">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yEf0wzIQ1hIf85xtUwse.png", alt="Google Chrome mobile app showing the offline dino game.", width="800", height="1731" %}
-    <figcaption class="w-figcaption" id="fig-chrome-ios">
+    <figcaption id="fig-chrome-ios">
       Google Chrome for iOS.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-chrome" style="display: inline-block">
+  <figure role="group" aria-labelledby="fig-chrome" style="display: inline-block">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vrqfLVP132LcydIWcYbh.png", alt="Google Chrome desktop app showing the offline dino game.", width="800", height="607" %}
-    <figcaption class="w-figcaption" id="fig-chrome">
+    <figcaption id="fig-chrome">
       Google Chrome for macOS.
     </figcaption>
   </figure>
 
-  <figcaption class="w-figcaption" id="fig-offline-wrapper">
+  <figcaption id="fig-offline-wrapper">
     On the Web, when you do not have a network connection, by default you get nothing.
   </figcaption>
 
@@ -81,9 +81,9 @@ that the user is currently offline, but it can just as well be a more creative s
 example, the famous [trivago offline maze game](https://www.trivago.com/offline) with a manual
 **Reconnect** button and an automatic reconnection attempt countdown.
 
-<figure class="w-figure">
+<figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yvun9EV5758sRO9wSgY.png", alt="The trivago offline page with the trivago offline maze.", width="800", height="616" %}
-    <figcaption class="w-figcaption">
+    <figcaption>
       The trivago offline maze.
     </figcaption>
   </figure>
@@ -206,7 +206,7 @@ self.addEventListener("fetch", (event) => {
 The `offline.html` file is where you can get creative and adapt it to your needs and add your
 branding. The example below shows the bare minimum of what is possible.
 It demonstrates both manual reload based on a button press as well as automatic reload
-based on the [`online` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event)
+based on the [`online` event](https://developer.mozilla.org/docs/Web/API/Window/online_event)
 and regular server polling.
 
 {% Aside 'gotchas' %} You need to cache all resources required by your offline page. One
@@ -256,7 +256,7 @@ do in the example below. {% endAside %}
       document.querySelector("button").addEventListener("click", () => {
         window.location.reload();
       });
-      
+
       // Listen to changes in the network state, reload when online.
       // This handles the case when the device is completely offline.
       window.addEventListener('online', () => {
@@ -305,7 +305,7 @@ Glitch.
 ### Side note on making your app installable
 
 Now that your site has an offline fallback page, you might wonder about next steps. To make
-your app installable, you need to add a [Web App Manifest](/add-manifest/) and optionally come up
+your app installable, you need to add a [web app manifest](/add-manifest/) and optionally come up
 with an [install strategy](/define-install-strategy/).
 
 ### Side note on serving an offline fallback page with Workbox.js

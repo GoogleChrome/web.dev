@@ -26,21 +26,21 @@ When you open a web page, the browser requests the HTML document from a server, 
 
 Preloading is best suited for resources typically discovered late by the browser.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/Ad9PLq3DcQt9Ycp63z6O.png", alt="Screenshot of Chrome DevTools Network panel.", width="701", height="509" %}
-<figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
+<figcaption>In this example, Pacifico font is defined in the stylesheet with a <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
 </figure>
 
 By preloading a certain resource, you are telling the browser that you would like to fetch it sooner than the browser would otherwise discover it because you are certain that it is important for the current page.
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/admin/PgRbERrxLGfF439yBMeY.png", alt="Screenshot of Chrome DevTools Network panel after applying preloading.", width="701", height="509" %}
-<figcaption class="w-figcaption">In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
+<figcaption>In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
 </figure>
 
 The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](/uses-rel-preload) audit to identify which resources to preload.
 
-{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse's preload key requests audit.", width="745", height="97", class="w-screenshot" %}
+{% Img src="image/admin/BPUTHBNZFbeXqb0dVx2f.png", alt="Lighthouse's preload key requests audit.", width="745", height="97" %}
 
 You can preload resources by adding a `<link>` tag with `rel="preload"` to the head of your HTML document:
 
@@ -51,17 +51,17 @@ You can preload resources by adding a `<link>` tag with `rel="preload"` to the h
 The browser caches preloaded resources so they are available immediately when needed. (It doesn't execute the scripts or apply the stylesheets.)
 
 {% Aside %}
-After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](/interactive) and [First Contentful Paint](/first-contentful-paint).
+After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](/tti/) and [First Contentful Paint](/fcp/).
 {% endAside %}
 
 Resource hints, for example, [`preconnect`](/preconnect-and-dns-prefetch)and [`prefetch`](/link-prefetch), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources.
 
 Unused preloads trigger a Console warning in Chrome, approximately 3 seconds after the `load` event.
 
-{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228", class="w-screenshot" %}
+{% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228" %}
 
 {% Aside %}
-[`preload` is supported](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.
+[`preload` is supported](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.
 {% endAside %}
 
 ## Use cases
@@ -95,14 +95,14 @@ The simplest way to implement `preload` is to add a `<link>` tag to the `<head>`
 </head>
 ```
 
-Supplying the `as` attribute helps the browser set the priority of the prefetched resource according to its type, set the right headers, and determine whether the resource already exists in the cache. Accepted values for this attribute include: `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
+Supplying the `as` attribute helps the browser set the priority of the prefetched resource according to its type, set the right headers, and determine whether the resource already exists in the cache. Accepted values for this attribute include: `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes).
 
 {% Aside %}
 Take a look at the [Chrome Resource Priorities and Scheduling](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit) document to learn more about how the browser prioritizes different types of resources.
 {% endAside %}
 
 {% Aside 'caution' %}
-Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) where the browser doesn't know what it is fetching so it can't determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
+Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) where the browser doesn't know what it is fetching so it can't determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
 {% endAside %}
 
 Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with `preload`:
@@ -115,13 +115,13 @@ Some types of resources, such as fonts, are loaded in [anonymous mode](https://w
 Fonts preloaded without the `crossorigin` attribute will be fetched twice!
 {% endAside %}
 
-`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
+`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/link#attr-type), which contains the [MIME type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
 
 {% Aside 'codelab' %}
 [Improve the performance of a page by preloading web fonts](/codelab-preload-web-fonts).
 {% endAside %}
 
-You can also preload any type of resource via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
+You can also preload any type of resource via the [`Link` HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link):
 
 `Link: </css/style.css>; rel="preload"; as="style"`
 

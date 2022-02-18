@@ -53,14 +53,14 @@ app](https://ericbidelman.tumblr.com/post/149032341876/observing-your-web-app))
 because I found it fascinating how many APIs there are for monitoring the
 "stuff" that happens in a web app. For example, there are APIs that can observe
 information about the DOM:
-[`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver),
-[`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver),
-[`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`ResizeObserver`](https://developer.mozilla.org/docs/Web/API/ResizeObserver),
+[`IntersectionObserver`](https://developer.mozilla.org/docs/Web/API/IntersectionObserver),
+[`MutationObserver`](https://developer.mozilla.org/docs/Web/API/MutationObserver).
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 captures performance measurements. And methods like
-[`window.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror)
+[`window.onerror`](https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onerror)
 and
-[`window.onunhandledrejection`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection)
+[`window.onunhandledrejection`](https://developer.mozilla.org/docs/Web/API/WindowEventHandlers/onunhandledrejection)
 even let us know when something goes wrong.
 
 However, there are other types of warnings which are not captured by the
@@ -68,8 +68,8 @@ existing APIs. When your site uses a deprecated API or runs up against a
 [browser intervention][interventions], DevTools is the first to tell you about
 them:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VJmhfngEVxQBSc9im0pg.png", alt="DevTools Console warnings for deprecations and interventions.", width="800", height="79", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VJmhfngEVxQBSc9im0pg.png", alt="DevTools Console warnings for deprecations and interventions.", width="800", height="79" %}
   <figcaption>Browser-initiated warnings in the DevTools Console.</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ sleep wondering if users are hitting unexpected issues on your live site.
 
 {% Aside 'key-term' %}
 `ReportingObserver` is part of a larger spec, the [Reporting
-API](https://developers.google.com/web/updates/2018/09/reportingapi), which provides a common way to send
+API](/reporting-api), which provides a common way to send
 these different reports to a back end. The Reporting API is a generic framework
 to specify a set of server endpoints to report issues to.
 {% endAside %}

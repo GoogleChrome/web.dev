@@ -23,8 +23,8 @@ feedback:
 Browser-level support for lazy-loading images is now supported on the web! This video shows
 a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </video>
@@ -36,7 +36,7 @@ without the need to write custom lazy-loading code or use a separate JavaScript 
 ## Browser compatibility
 
 `<img loading=lazy>` is supported by most popular Chromium-powered browsers (Chrome, Edge, Opera)
-and [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/75#HTML).
+and [Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/75#HTML).
 The implementation for WebKit (Safari) [is in progress](https://bugs.webkit.org/show_bug.cgi?id=200764).
 [caniuse.com](https://caniuse.com/#feat=loading-lazy-attr) has detailed information on cross-browser
 support. Browsers that do not support the `loading` attribute simply ignore it without side-effects.
@@ -114,7 +114,7 @@ begin loading.
 In Chrome 77+, you can experiment with these different thresholds by [throttling the
 network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in DevTools. In
 the meantime, you will need to override the effective connection type of the browser using the
-`chrome://flags/#force-effective-connection-type` flag.
+`about://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
 ## Improved data-savings and distance-from-viewport thresholds
@@ -130,13 +130,13 @@ You can find a comparison between the old vs. new distance-from-viewport thresho
 
 Old thresholds. vs new thresholds:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="The new and improved thresholds for image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px", width="800", height="460" %}
 </figure>
 
 and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions", width="800", height="355" %}
 </figure>
 

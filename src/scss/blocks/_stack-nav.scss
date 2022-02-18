@@ -1,0 +1,85 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/stack-nav
+.stack-nav,
+.stack-nav__list {
+  padding: 0;
+}
+
+.stack-nav {
+  --gutter: 0.5rem #{$global-gutter};
+
+  a {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    font-size: 0.9em;
+    line-height: 1.2;
+    padding: 1.2em $global-gutter-narrow;
+    text-decoration: none;
+
+    @include apply-utility('bg', 'action-bg-alt');
+    @include apply-utility('color', 'action-text-alt');
+
+    &:not([class]) {
+      display: block; // For if there's no composition class added
+    }
+  }
+
+  a:hover,
+  a[aria-selected='true'] {
+    @include apply-utility('bg', 'accent-bg');
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+
+    @include apply-utility('color', 'mid-text');
+  }
+
+  a[aria-current='page'],
+  a[aria-select='true'] {
+    @include apply-utility('bg', 'active-bg');
+    @include apply-utility('color', 'active-text');
+
+    svg {
+      color: currentColor;
+    }
+  }
+
+  .cluster {
+    --gutter: 0.5rem 1.2rem;
+
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .cluster:last-of-type {
+    --gutter: 0.5rem 0.8rem;
+  }
+}
+
+.stack-nav__meta {
+  transform: translateY(0.45ex); /// optical adjustment
+  flex: none;
+  font-size: 0.8em;
+
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('font', 'mono');
+
+  [aria-current='page'] & {
+    color: currentColor;
+  }
+}
+
+// Smaller font size for placeholder meta
+.is-placeholder .stack-nav__meta {
+  font-size: 0.7em;
+}
+
+.stack-nav__heading {
+  font-size: get-size('size-2');
+  padding-inline-start: $global-gutter-narrow;
+
+  @include apply-utility('gap-top', 'size-1');
+}

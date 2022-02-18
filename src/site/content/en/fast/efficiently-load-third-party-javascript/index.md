@@ -12,7 +12,7 @@ alt: Aerial view of shipping containers.
 codelabs: codelab-optimize-third-party-javascript
 tags:
   - performance
-  - third-party
+  # - third-party
   - javascript
 ---
 
@@ -48,13 +48,13 @@ The difference between `async` and `defer` is when they start executing the scri
 
 ### `async`
 
-Scripts with the `async` attribute execute at the first opportunity after they finish downloading and before the window's [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) event. This means it's possible (and likely) that `async` scripts will not be executed in the order in which they appear in the HTML. It also means they can interrupt DOM building if they finish downloading while the parser is still at work.
+Scripts with the `async` attribute execute at the first opportunity after they finish downloading and before the window's [load](https://developer.mozilla.org/docs/Web/Events/load) event. This means it's possible (and likely) that `async` scripts will not be executed in the order in which they appear in the HTML. It also means they can interrupt DOM building if they finish downloading while the parser is still at work.
 
 {% Img src="image/admin/tCqsJ3E7m4lpKOprXu5B.png", alt="Diagram of parser blocking script with async attribute", width="800", height="252" %}
 
 ### `defer`
 
-Scripts with the `defer` attribute execute after HTML parsing is completely finished, but before the [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) event. `defer` guarantees scripts will be executed in the order they appear in the HTML and will not block the parser.
+Scripts with the `defer` attribute execute after HTML parsing is completely finished, but before the [`DOMContentLoaded`](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) event. `defer` guarantees scripts will be executed in the order they appear in the HTML and will not block the parser.
 
 {% Img src="image/admin/Eq0mcvDALKibHe15HspN.png", alt="Diagram of parser flow with a script with defer attribute", width="800", height="253" %}
 
@@ -73,7 +73,7 @@ Analytics scripts are usually loaded early so you don't miss any valuable analyt
 
 You can save 100–500 ms by [establishing early connections](/preconnect-and-dns-prefetch/) to important third-party origins.
 
-Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) types can help here:
+Two [`<link>`](https://developer.mozilla.org/docs/Web/HTML/Element/link) types can help here:
 
 * `preconnect`
 
@@ -111,7 +111,7 @@ The `preconnect` hint is best used for only the most critical connections; for l
 
 Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
 
-<figure class='w-figure w-figure--inline-left'>
+<figure data-float="left">
 {% Img src="image/admin/uzPZzkgzfrv2Oy3UQPrN.png", alt="A diagram of a webpage shown on a mobile device with scrollable content extending beyond the screen. The content that's below-the-fold is desaturated because it's not loaded yet.", width="366", height="438" %}
 </figure>
 

@@ -17,21 +17,10 @@
 declare global {
   export interface AuthorsDataItem {
     country?: string;
-    descriptions?: {
-      [lng: string]: string;
-    };
     github?: string;
     glitch?: string;
     homepage?: string;
-    image: string;
-    name: {
-      given: string;
-      family: string;
-    };
-    org?: {
-      name?: string;
-      unit?: string;
-    };
+    image?: string;
     twitter?: string;
   };
   export interface AuthorsData {

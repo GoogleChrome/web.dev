@@ -41,7 +41,7 @@ metrics: [First Meaningful Paint](/first-meaningful-paint/),
 [Estimated Input Latency](/estimated-input-latency/), Observed
 Load ([Avg. Page Load Time](https://support.google.com/analytics/answer/2383341)
 in Google Analytics), and Max Server Latency ([Time To First
-Byte](/time-to-first-byte/)).
+Byte](/ttfb/)).
 Every page across the user journey had to improve each of these metrics by 0.1
 seconds in order for these positive impacts to be observed.
 

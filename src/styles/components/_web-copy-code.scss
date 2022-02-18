@@ -1,0 +1,43 @@
+@import '../tools/mixins';
+
+web-copy-code {
+  display: block;
+
+  &:active,
+  &:focus,
+  &:hover {
+    .web-copy-code__button {
+      opacity: 1;
+    }
+  }
+
+  .web-copy-code__button {
+    color: $GREY_900;
+    height: 48px;
+    margin: 8px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 48px;
+
+    &::before {
+      @include font-material-icon();
+      content: 'content_copy';
+    }
+
+    &:focus,
+    &:hover {
+      background-color: rgba($WEB_SECONDARY_COLOR, 0.2);
+      opacity: 1;
+    }
+
+    &:active {
+      background-color: rgba($WEB_SECONDARY_COLOR, 0.4);
+      opacity: 1;
+    }
+  }
+
+  pre {
+    min-height: 64px;
+  }
+}

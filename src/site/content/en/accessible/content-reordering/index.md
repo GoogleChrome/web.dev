@@ -84,8 +84,8 @@ try the Tab Stop checker in the [Accessibility Insights](https://accessibilityin
 The image below shows the CSS Grid example in that tool.
 You can see how the focus has to jump around the layout.
 
-<figure class="w-figure" style="max-width: 600px">
-  {% Img src="image/admin/n0i0TJf3OdZYvwswrHDV.jpg", alt="A screenshot of the Accessibility Insights Tool demonstrating the confusing order of items.", width="800", height="919", class="w-screenshot" %}
+<figure style="max-width: 600px">
+  {% Img src="image/admin/n0i0TJf3OdZYvwswrHDV.jpg", alt="A screenshot of the Accessibility Insights Tool demonstrating the confusing order of items.", width="800", height="919" %}
 </figure>
 
 ## Content reordering and responsive web design

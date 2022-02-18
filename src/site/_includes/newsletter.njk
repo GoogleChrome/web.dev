@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: default-next
 pageScripts:
   - '/js/newsletter.js'
 ---
-{% include 'partials/newsletter.njk' %}
+<web-newsletter>
+  <iframe frameborder="0" scrolling="yes" width="100%" height="1000px" srcdoc="{{ content }}"></iframe>
+</web-newsletter>

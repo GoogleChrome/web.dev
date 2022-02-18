@@ -20,8 +20,8 @@ to see the contents of a web page.
 
 Lighthouse flags pages that disable browser zooming:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Lighthouse audit showing the viewport disables text scaling and zooming", width="800", height="227", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/84cMMpBDm0rDl6hQISci.png", alt="Lighthouse audit showing the viewport disables text scaling and zooming", width="800", height="227" %}
 </figure>
 
 A page fails the audit if it contains a `<meta name="viewport">` tag with either of the following:

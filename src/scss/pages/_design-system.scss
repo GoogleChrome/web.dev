@@ -1,0 +1,55 @@
+.design-system {
+  --sidebar-content-min-width: 60%;
+  --sidebar-target-width: 25rem;
+  --switcher-target-container-width: 0rem;
+
+  .sidebar > nav {
+    outline: 1px solid var(--color-stroke);
+  }
+
+  // Optical adjustment
+  .sidebar theme-toggle {
+    display: block;
+    transform: translateY(3px);
+  }
+
+  nav.cluster {
+    gap: 0.5rem $global-gutter;
+  }
+
+  details {
+    max-width: 50rem;
+  }
+
+  .prose {
+    iframe {
+      max-width: unset;
+    }
+  }
+}
+
+.design-system__swatch {
+  aspect-ratio: 1/1;
+  width: 3rem;
+  border: 1px solid var(--color-stroke);
+  flex-shrink: 0;
+}
+
+.design-system__preview-frame {
+  width: 100%;
+  min-height: 500px;
+  border: 1px solid var(--color-stroke);
+  resize: both;
+
+  &[data-size='tall'] {
+    min-height: 800px;
+  }
+}
+
+.design-system .breakout {
+  max-width: 70rem;
+
+  details {
+    margin-inline: auto;
+  }
+}

@@ -304,7 +304,7 @@ You can customize the notification in lots of ways. See the parameters of
 
 {% Aside 'gotchas' %}
   The call to 
-  [`self.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) 
+  [`self.skipWaiting()`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) 
   in your service worker's `install` listener is important to understand. See 
   [Skip the waiting phase](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase) 
   for an explanation. Without it, the code changes that you make to your service worker
@@ -343,6 +343,6 @@ event.waitUntil(self.clients.openWindow('https://web.dev'));
 * Try out [Notification Generator](https://tests.peter.sh/notification-generator/)
   to test out all the ways you can customize notifications.
 
-[showNotification]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification
-[skipWaiting]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting
+[showNotification]: https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification
+[skipWaiting]: https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting
 [skip]: https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase

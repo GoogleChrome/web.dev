@@ -1,12 +1,16 @@
 ---
 title: Inheritance
-description:
+description: >
+  Some CSS properties inherit if you don't specify a value for them.
+  Find out how this works, and how to use it to your advantage in this module.
+audio:
+  title: 'The CSS Podcast - 005: Inheritance'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_005_v1.2.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Inheritance
 
 Say you just wrote some CSS to make elements look like a button.
 
@@ -41,10 +45,11 @@ article a {
 In this lesson you'll learn why that happens and
 how inheritance is a powerful feature to help you write less CSS.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNGEbg'
+  id: 'zYNGEbg',
+  height: 400
 } %}
 </figure>
 
@@ -73,10 +78,11 @@ html {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEKgBX'
+  id: 'JjEKgBX',
+  height: 200
 } %}
 </figure>
 
@@ -90,10 +96,11 @@ body {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPLrLP'
+  id: 'VwPLrLP',
+  height: 200
 } %}
 </figure>
 
@@ -113,10 +120,12 @@ p {
 Only the `<p>` will have italic text because it's the deepest nested element.
 Inheritance only flows downwards, not back up to parent elements.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEKgmK'
+  id: 'JjEKgmK',
+  tab: 'css,result',
+  height: 400
 } %}
 </figure>
 
@@ -127,35 +136,35 @@ but there are a lot that are.
 For reference, here is the entire list of inheritable properties,
 taken from the W3 reference of all CSS properties:
 
-- [azimuth](https://developer.mozilla.org/en-US/docs/Web/CSS/azimuth)
-- [border-collapse](https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse)
-- [border-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing)
-- [caption-side](https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side)
-- [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
-- [cursor](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
-- [direction](https://developer.mozilla.org/en-US/docs/Web/CSS/direction)
-- [empty-cells](https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells)
-- [font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
-- [font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)
-- [font-style](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)
-- [font-variant](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant)
-- [font-weight](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)
-- [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
-- [letter-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
-- [line-height](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height)
-- [list-style-image](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image)
-- [list-style-position](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position)
-- [list-style-type](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
-- [list-style](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style)
-- [orphans](https://developer.mozilla.org/en-US/docs/Web/CSS/orphans)
-- [quotes](https://developer.mozilla.org/en-US/docs/Web/CSS/quotes)
-- [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
-- [text-indent](https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent)
-- [text-transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
-- [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
-- [white-space](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
-- [widows](https://developer.mozilla.org/en-US/docs/Web/CSS/widows)
-- [word-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
+- [azimuth](https://developer.mozilla.org/docs/Web/SVG/Attribute/azimuth)
+- [border-collapse](https://developer.mozilla.org/docs/Web/CSS/border-collapse)
+- [border-spacing](https://developer.mozilla.org/docs/Web/CSS/border-spacing)
+- [caption-side](https://developer.mozilla.org/docs/Web/CSS/caption-side)
+- [color](https://developer.mozilla.org/docs/Web/CSS/color)
+- [cursor](https://developer.mozilla.org/docs/Web/CSS/cursor)
+- [direction](https://developer.mozilla.org/docs/Web/CSS/direction)
+- [empty-cells](https://developer.mozilla.org/docs/Web/CSS/empty-cells)
+- [font-family](https://developer.mozilla.org/docs/Web/CSS/font-family)
+- [font-size](https://developer.mozilla.org/docs/Web/CSS/font-size)
+- [font-style](https://developer.mozilla.org/docs/Web/CSS/font-style)
+- [font-variant](https://developer.mozilla.org/docs/Web/CSS/font-variant)
+- [font-weight](https://developer.mozilla.org/docs/Web/CSS/font-weight)
+- [font](https://developer.mozilla.org/docs/Web/CSS/font)
+- [letter-spacing](https://developer.mozilla.org/docs/Web/CSS/letter-spacing)
+- [line-height](https://developer.mozilla.org/docs/Web/CSS/line-height)
+- [list-style-image](https://developer.mozilla.org/docs/Web/CSS/list-style-image)
+- [list-style-position](https://developer.mozilla.org/docs/Web/CSS/list-style-position)
+- [list-style-type](https://developer.mozilla.org/docs/Web/CSS/list-style-type)
+- [list-style](https://developer.mozilla.org/docs/Web/CSS/list-style)
+- [orphans](https://developer.mozilla.org/docs/Web/CSS/orphans)
+- [quotes](https://developer.mozilla.org/docs/Web/CSS/quotes)
+- [text-align](https://developer.mozilla.org/docs/Web/CSS/text-align)
+- [text-indent](https://developer.mozilla.org/docs/Web/CSS/text-indent)
+- [text-transform](https://developer.mozilla.org/docs/Web/CSS/text-transform)
+- [visibility](https://developer.mozilla.org/docs/Web/CSS/visibility)
+- [white-space](https://developer.mozilla.org/docs/Web/CSS/white-space)
+- [widows](https://developer.mozilla.org/docs/Web/CSS/widows)
+- [word-spacing](https://developer.mozilla.org/docs/Web/CSS/word-spacing)
 
 ## How inheritance works
 
@@ -163,7 +172,7 @@ Every HTML element has every CSS property defined by default with an initial val
 An initial value is a property that's not inherited and shows up as a default
 if the cascade fails to calculate a value for that element.
 
-<figure class="w-figure">
+<figure>
 {% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/OvoYqOMcdFZL7wJQIL2C.mp4" %}
 </figure>
 
@@ -173,7 +182,7 @@ This means that if a parent has `font-weight` set to `bold` all child elements w
 unless their `font-weight` is set to a different value,
 or the user agent stylesheet has a value for `font-weight` for that element.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
   id: 'xxgGPOZ'
@@ -213,10 +222,11 @@ To make the `<strong>` elements inside `.my-component` also `font-weight: 500` a
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'eYgNedO'
+  id: 'eYgNedO',
+  height: 400
 } %}
 </figure>
 
@@ -242,10 +252,12 @@ aside strong {
 This snippet will remove the bold weight from all `<strong>` elements inside an `<aside>` element and instead,
 make them normal weight, which is the initial value.
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'OJWVORZ'
+  id: 'OJWVORZ',
+  tab: 'css,result',
+  height: 300
 } %}
 </figure>
 
@@ -275,10 +287,12 @@ aside p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEdpjw'
+  id: 'JjEdpjw',
+  tab: 'css,result',
+  height: 400
 } %}
 </figure>
 
@@ -305,10 +319,11 @@ aside p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgdLNB'
+  id: 'bGgdLNB',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -324,10 +339,11 @@ aside p {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWpbZbB'
+  id: 'XWpbZbB',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -335,5 +351,5 @@ aside p {
 
 ## Resources
 
-- [MDN reference on computed values](https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value)
+- [MDN reference on computed values](https://developer.mozilla.org/docs/Web/CSS/computed_value)
 - [An article on how inheritance can be useful in modular front-ends](https://www.smashingmagazine.com/2016/11/css-inheritance-cascade-global-scope-new-old-worst-best-friends/)

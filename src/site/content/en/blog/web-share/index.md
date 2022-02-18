@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2021-03-10
+updated: 2021-07-09
 hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -34,9 +34,9 @@ way as platform-specific apps.
 
 ## Concepts and usage
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="System-level share target picker with an installed PWA as an option.", width="370", height="349" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     System-level share target picker with an installed PWA as an option.
   </figcaption>
 </figure>
@@ -50,10 +50,8 @@ Web share has the following capabilities and limitations:
 * It can share, URLs, text, or files.
 * As of January 2021, it is available on Safari, Android in Chromium forks,
   Chrome OS, and Chrome on Windows. Chrome on MacOS is still in development. See
-  [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#Browser_compatibility)
+  [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)
   for details.
-
-<div class="w-clearfix"></div>
 
 ### Sharing links and text
 
@@ -126,9 +124,9 @@ More file types may be added in the future.
 
 ## Santa Tracker case study
 
-<figure class="w-figure w-figure--inline-right">
+<figure data-float="right">
   {% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="The Santa Tracker app showing a share button.", width="343", height="600" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption>
     Santa Tracker share button.
   </figcaption>
 </figure>
@@ -148,8 +146,6 @@ They also found that users shared with Web Share around 20% more than
 users without the API enabled. Head to
 [Santa Tracker](https://santatracker.google.com/) to see Web Share in action.
 
-<div class="w-clearfix"></div>
-
 ## Browser support
 
 Browser support for the Web Share API is nuanced, and it's recommended that you use feature
@@ -163,12 +159,24 @@ As of early 2021, using the API to share title, text, and URL is supported by:
 
 Using the API to share files is supported by:
 
+- Safari 15 or later on macOS and iOS.
 - Chrome 75 or later on Android, and 89 or later on Chrome OS and Windows.
 
 (Most Chromium-based browsers, like Edge, have the same support for this feature as the
 corresponding version of Chrome.)
 
+### Show support for the API
+
+Are you planning to use the Web Share API? Your public support helps the Chromium team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebShare`](https://twitter.com/search?q=%23WebShare&src=recent_search_click&f=live)
+and let us know where and how you're using it.
+
 ## Helpful Links
 
 - [Web Share Demos](https://w3c.github.io/web-share/demos/share-files.html)
 - [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)
+
+[cr-dev-twitter]: https://twitter.com/ChromiumDev

@@ -1,0 +1,11 @@
+<div class="aside flow {{ data.utilities.main }}">
+  {% if data.title %}
+  <p class="cluster {{ data.utilities.title }}">
+    {% if data.icon %}
+      <span class="aside__icon box-block {{ data.utilities.icon }}">{% include "icons/" ~ data.icon %}</span>
+    {% endif %}
+    <strong>{{ data.title }}</strong>
+  </p> 
+  {% endif %}
+  <div class="{{ data.utilities.body }}">{{ data.content | md | safe }}</div>
+</div>

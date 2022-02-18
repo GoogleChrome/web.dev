@@ -23,13 +23,13 @@ iframes.
 {% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Origin", width="680", height="100" %}
 
 "Origin" is a combination of a
-[scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
+[scheme](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
 (also known as the
-[protocol](https://developer.mozilla.org/en-US/docs/Glossary/Protocol), for
-example [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) or
-[HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)),
+[protocol](https://developer.mozilla.org/docs/Glossary/Protocol), for
+example [HTTP](https://developer.mozilla.org/docs/Glossary/HTTP) or
+[HTTPS](https://developer.mozilla.org/docs/Glossary/HTTPS)),
 [hostname](https://en.wikipedia.org/wiki/Hostname), and
-[port](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port)
+[port](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Port)
 (if specified). For example, given a URL of `https://www.example.com:443/foo` ,
 the "origin" is `https://www.example.com:443`.
 
@@ -37,7 +37,7 @@ the "origin" is `https://www.example.com:443`.
 Websites that have the combination of the same scheme, hostname, and port are
 considered "same-origin". Everything else is considered "cross-origin".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -110,7 +110,7 @@ is the effective TLD and the part of the domain just before it.
 Websites that have the same eTLD+1 are considered "same-site". Websites that
 have a different eTLD+1 are "cross-site".
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -162,7 +162,7 @@ same-site](/schemeful-samesite/)" referring to the stricter definition. In that
 case, `http://www.example.com` and `https://www.example.com` are considered
 cross-site because the schemes don't match.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>

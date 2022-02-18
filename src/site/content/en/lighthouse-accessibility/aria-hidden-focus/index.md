@@ -23,8 +23,8 @@ which can cause confusion.
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags focusable elements that have parents with the `aria-hidden="true"` attribute:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Lighthouse audit showing focusable elements that have parents with the aria-hidden attribute", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Lighthouse audit showing focusable elements that have parents with the aria-hidden attribute", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/focusable-els.njk' %}

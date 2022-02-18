@@ -1,0 +1,15 @@
+<div class="flow">
+  {% for item in data.items %}
+  <figure class="compare flow" data-type="{{ item.type }}">
+    <p class="compare__label">
+      {{ item.label }}
+    </p>
+    <pre class="compare__code">{{ item.code | md | safe }}</pre>
+    {% if item.caption %}
+      <figcaption class="compare__caption">
+        <p>— {{ item.caption | md | safe }}</p>
+      </figcaption>
+    {% endif %}
+  </figure>
+  {% endfor %}
+</div>

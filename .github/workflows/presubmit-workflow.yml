@@ -1,0 +1,81 @@
+name: Presubmit
+on:
+  pull_request:
+    types: [labeled, opened, reopened, synchronize]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      isPresubmit: ${{ steps.presubmit.outputs.isPresubmit }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: npm ci --prefix .github/actions/presubmit
+
+      - name: Check if presubmit
+        id: presubmit
+        uses: ./.github/actions/presubmit
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
+
+  presubmit:
+    needs: check
+    if: ${{ needs.check.outputs.isPresubmit == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max_old_space_size=4096
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run a staging build of site
+        run: npm run build
+        env:
+          ELEVENTY_ENV: staging
+
+      # Checks to see if any files in the PR match one of the listed file types.
+      # We can use this filter to decide whether or not to run linters or tests.
+      # You can check if a file with a listed file type is in the PR by doing:
+      # if: ${{ steps.filter.outputs.md == 'true' }}
+      # This will return true if there's a markdown file that was changed
+      # in the PR.
+      - uses: dorny/paths-filter@v2.2.1
+        id: filter
+        with:
+          filters: |
+            js:
+              - '**/*.js'
+            json:
+              - '**/*.json'
+            yml:
+              - '**/*.yml'
+            scss:
+              - '**/*.scss'
+            njk:
+              - '**/*.njk'
+            packageJson:
+              - 'package.json'
+
+      # Only run tests if the PR touches behavior related files.
+
+      - name: Test
+        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' || steps.filter.outputs.yml == 'true' || steps.filter.outputs.njk == 'true'}}
+        run: npm run test
+
+      - name: Lighthouse CI
+        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.packageJson == 'true' || steps.filter.outputs.njk == 'true' || steps.filter.outputs.scss == 'true'}}
+        env:
+          LHCI_SERVER: ${{ secrets.LHCI_SERVER }}
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+        run: |
+          npx @lhci/cli@0.8.x autorun --config=./tools/lhci/lighthouserc.js

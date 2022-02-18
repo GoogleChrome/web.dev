@@ -28,8 +28,8 @@ You can adjust the results to factor in purchasing power.
 shows the total size in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) of all resources requested by your page.
 The largest requests are presented first:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="A screenshot of the Lighthouse Avoid enormous network payloads audit", width="800", height="518", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="A screenshot of the Lighthouse Avoid enormous network payloads audit", width="800", height="518" %}
 </figure>
 
 Based on [HTTP Archive data](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal),
@@ -44,7 +44,7 @@ Lighthouse flags pages whose total network requests exceed 5,000&nbsp;KiB.
 Aim to keep your total byte size below 1,600&nbsp;KiB.
 This target is based on the amount of data that can be
 theoretically downloaded on a 3G connection
-while still achieving a [Time to Interactive](/interactive) of 10&nbsp;seconds or less.
+while still achieving a [Time to Interactive](/tti/) of 10&nbsp;seconds or less.
 
 Here are some ways to keep payload size down:
 - Defer requests until they're needed.

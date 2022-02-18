@@ -22,7 +22,7 @@ Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
 transformed the JavaScript world for the better by allowing anyone to easily
 download and use over _half a million_ public packages. But we often include
 libraries we're not fully utilizing. To fix this issue, **analyze your bundle**
-to detect unused code. Then remove **unused** and **unneeded** libraries.
+to detect unused code. Then remove **unused** and **unnecessary** libraries.
 
 ## Analyze your bundle
 
@@ -31,19 +31,19 @@ DevTools makes it easy to see the size of all network requests:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
 
-{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169", class="w-screenshot" %}
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169" %}
 
-The [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+The [Coverage](https://developer.chrome.com/docs/devtools/coverage/)
 tab in DevTools will also tell you how much CSS and JS code in your application
 is unused.
 
-{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562" %}
 
 By specifying a full Lighthouse configuration through its Node CLI, an "Unused
 JavaScript" audit can also be used to trace how much unused code is being
 shipped with your application.
 
-{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347", class="w-screenshot" %}
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347" %}
 
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
@@ -103,7 +103,7 @@ that automatically remove unused code from popular libraries](https://github.com
 [Remove unused code.](/codelab-remove-unused-code)
 {% endAside %}
 
-## Remove unneeded libraries
+## Remove unnecessary libraries
 
 Not all libraries can be easily broken down into parts and selectively imported.
 In these scenarios, consider if the library could be removed entirely. Building

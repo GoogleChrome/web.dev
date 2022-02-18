@@ -21,8 +21,8 @@ Lighthouse flags `<dl>` elements that don't
 contain properly ordered `<dt>` and `<dd>` groups,
 `<script>`, or `<template>` elements:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7PIfPwOqBuptPXkECl2J.png", alt="Lighthouse audit showing definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements", width="800", height="223", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7PIfPwOqBuptPXkECl2J.png", alt="Lighthouse audit showing definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements", width="800", height="223" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

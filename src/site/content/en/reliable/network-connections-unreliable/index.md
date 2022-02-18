@@ -48,8 +48,8 @@ conditions.
 ## Reliable is achievable
 
 The good news is that the modern web platform provides technologies—such as
-[service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) and the
-[Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)—that
+[service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) and the
+[Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage)—that
 can serve as the building blocks for creating reliable web applications. They
 allow you to write code which sits between your web app and the network. In
 many cases, you can bypass the network entirely, and instead use previously
@@ -67,8 +67,8 @@ carefully crafted offline experience?
 specific test that is of particular interest when building a reliable web app:
 **Responds with a 200 OK while offline**:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5bc5TNicZiBgDdWkgAXg.png", alt="Lighthouse's progressive web app report showing a passing responds with a 200 when offline audit.", width="800", height="253", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5bc5TNicZiBgDdWkgAXg.png", alt="Lighthouse's progressive web app report showing a passing responds with a 200 when offline audit.", width="800", height="253" %}
 </figure>
 
 {% Aside %}

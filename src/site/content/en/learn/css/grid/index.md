@@ -1,6 +1,13 @@
 ---
 title: Grid
-description:
+description: >
+  CSS Grid Layout provides a two dimensional layout system,
+  controlling layout in rows and columns.
+  In this module discover everything grid has to offer.
+audio:
+  title: 'The CSS Podcast - 011: Grid'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_011_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - rachelandrew
   - andybell
@@ -55,8 +62,8 @@ Grid comes with a bunch of new terminology as it's the first time CSS has had a 
 
 A grid is made up of lines,
 which run horizontally and vertically.
-If your grid has three columns,
-it will have four column lines including the one after the last column.
+If your grid has four columns,
+it will have five column lines including the one after the last column.
 
 Lines are numbered starting from 1,
 with the numbering following the writing mode and script direction of the component.
@@ -178,13 +185,13 @@ Highlight the grid by selecting the grid badge in the DOM, next to the `.contain
 Inside the Layout tab,
 select **Display Line Numbers** in the dropdown to see the line numbers on your grid.
 
-<figure class="w-figure">
+<figure>
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/YxpjWBUDsqQB2fr6rzU3.jpg",
 alt="As described in the caption and instructions",
 width="800",
 height="449" %}
-<figcaption class="w-figcaption">
+<figcaption>
 A grid highlighted in Chrome DevTools showing line numbers, cells and tracks.
 </figcaption>
 </figure>
@@ -200,19 +207,19 @@ not just grid tracks.
 
 - `min-content`
 - `max-content`
-- the `fit-content()` function
+- `fit-content()`
 
-The [`min-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content)
+The [`min-content`](https://developer.mozilla.org/docs/Web/CSS/min-content)
 keyword will make a track as small as it can be without the track content overflowing.
 Changing the example grid layout to have three column tracks all at `min-content` size
 will mean they become as narrow as the longest word in the track.
 
-The [`max-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content)
+The [`max-content`](https://developer.mozilla.org/docs/Web/CSS/max-content)
 keyword has the opposite effect.
 The track will become as wide enough for all of the content to display in one long unbroken string.
 This might cause overflows as the string will not wrap.
 
-The [`fit-content()`](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content())
+The [`fit-content()`](https://developer.mozilla.org/docs/Web/CSS/fit-content())
 function acts like `max-content` at first.
 However, once the track reaches the size that you pass into the function,
 the content starts to wrap.
@@ -272,7 +279,7 @@ This function means that you can set a minimum and a maximum size for a track.
 This can be quite useful.
 If we take the example of the `fr` unit above which distributes remaining space,
 it could be written out using
-[`minmax()`](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax()) as `minmax(auto, 1fr)`.
+[`minmax()`](https://developer.mozilla.org/docs/Web/CSS/minmax()) as `minmax(auto, 1fr)`.
 Grid looks at the intrinsic size of the content,
 then distributes available space after giving the content enough room.
 This means that you might not get tracks that each have an equal share
@@ -310,7 +317,7 @@ you could use the following CSS.
 ```
 
 Or, you could write it out using
-[`repeat()`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat()):
+[`repeat()`](https://developer.mozilla.org/docs/Web/CSS/repeat()):
 
 ```css
 .container {
@@ -352,7 +359,7 @@ The tracks are not flexible however.
 You will get a gap on the end until there is enough space for another 200 pixel track.
 If you add the `minmax()` function,
 you can request as many tracks as will fit with a minimum size of 200 pixels and a maximum of 1fr.
-Grid then lays out the 200 pixel tracks and whatever space is left over is distributed equally to them.
+Grid then lays out the 200 pixel tracks and whatever space is leftover is distributed equally to them.
 
 This creates a two-dimensional responsive layout with no need for any media queries.
 
@@ -458,15 +465,15 @@ but you always have access to those numbered lines.
 
 The properties that you can use to place items by line number are:
 
-- [`grid-column-start`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start)
-- [`grid-column-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end)
-- [`grid-row-start`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start)
-- [`grid-row-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end)
+- [`grid-column-start`](https://developer.mozilla.org/docs/Web/CSS/grid-column-start)
+- [`grid-column-end`](https://developer.mozilla.org/docs/Web/CSS/grid-column-end)
+- [`grid-row-start`](https://developer.mozilla.org/docs/Web/CSS/grid-row-start)
+- [`grid-row-end`](https://developer.mozilla.org/docs/Web/CSS/grid-row-end)
 
 They have shorthands which allow you to set both start and end lines at once:
 
-- [`grid-column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
-- [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
+- [`grid-column`](https://developer.mozilla.org/docs/Web/CSS/grid-column)
+- [`grid-row`](https://developer.mozilla.org/docs/Web/CSS/grid-row)
 
 To place your item set the start and end lines of the grid area that it should be placed into.
 
@@ -558,9 +565,9 @@ there is no way to reach the end of the grid using `-1`.
 The tracks created in the implicit grid will be auto-sized by default.
 However if you want to control the sizing of the rows,
 use the
-[`grid-auto-rows`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows) property,
+[`grid-auto-rows`](https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows) property,
 and for columns
-[`grid-auto-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns).
+[`grid-auto-columns`](https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns).
 
 To create all implicit rows at a minimum size of `10em` and a maximum size of `auto`:
 
@@ -617,7 +624,7 @@ You can also name areas of the grid and place items onto those named areas.
 This is a lovely technique as it allows you to see what your component looks like right there in the CSS.
 
 To start, give the direct children of your grid container a name using the
-[`grid-area`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area) property:
+[`grid-area`](https://developer.mozilla.org/docs/Web/CSS/grid-area) property:
 
 ```css
 header {
@@ -637,10 +644,10 @@ footer {
 }
 ```
 
-The name can be anything you like other than the keyword `span`.
+The name can be anything you like other than the keywords `auto` and `span`.
 Once all of your items are named,
 use the
-[`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
+[`grid-template-areas`](https://developer.mozilla.org/docs/Web/CSS/grid-template-areas)
 property to define which grid cells each item will span.
 Each row is defined within quotes.
 
@@ -700,7 +707,7 @@ Whether you want to use them or prefer to use longhands is up to you.
 
 ### `grid-template`
 
-The [`grid-template`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template)
+The [`grid-template`](https://developer.mozilla.org/docs/Web/CSS/grid-template)
 property is a shorthand for `grid-template-rows`, `grid-template-columns` and `grid-template-areas`.
 The rows are defined first,
 along with the value of `grid-template-areas`.
@@ -718,7 +725,7 @@ Column sizing is added after a `/`.
 
 ### `grid` property
 
-The [`grid`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
+The [`grid`](https://developer.mozilla.org/docs/Web/CSS/grid)
 shorthand can be used in exactly the same way as the `grid-template` shorthand.
 When used in this way it will reset the other grid properties that it accepts to their initial values.
 The full set being:
@@ -735,7 +742,7 @@ for example:
 
 ```css
 .container {
-    dislay: grid;
+    display: grid;
     grid: repeat(2, 80px) / auto-flow  120px;
 }
 ```
@@ -750,14 +757,14 @@ the direction in which sentences run in your writing mode.
 The properties which begin with `align-` are used on the block axis,
 the direction in which blocks are laid out in your writing mode.
 
-- [`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
-and [`align-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content):
+- [`justify-content`](https://developer.mozilla.org/docs/Web/CSS/justify-content)
+and [`align-content`](https://developer.mozilla.org/docs/Web/CSS/align-content):
 distribute additional space in the grid container around or between tracks.
-- [`justify-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self) and
-[`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self):
+- [`justify-self`](https://developer.mozilla.org/docs/Web/CSS/justify-self) and
+[`align-self`](https://developer.mozilla.org/docs/Web/CSS/align-self):
 are applied to a grid item to move it around inside the grid area it is placed in.
-- [`justify-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items) and
-[`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items):
+- [`justify-items`](https://developer.mozilla.org/docs/Web/CSS/justify-items) and
+[`align-items`](https://developer.mozilla.org/docs/Web/CSS/align-items):
 are applied to the grid container to set all of the `justify-self` properties on the items.
 
 ### Distributing extra space
@@ -797,7 +804,7 @@ instead the items are being moved around inside the defined area.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjjMVd',
+  id: 'YzZOOXB',
   height: 650
 } %}
 
@@ -808,7 +815,7 @@ instead the items are being moved around inside the defined area.
 This guide has given you an overview of the different parts of the grid layout specification.
 To find out more, take a look at the following resources.
 
-- [MDN CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- [MDN CSS Grid Layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Creating a Grid Container](https://www.smashingmagazine.com/2020/01/understanding-css-grid-container/)
 - [A comprehensive collection of grid learning material](https://gridbyexample.com/)

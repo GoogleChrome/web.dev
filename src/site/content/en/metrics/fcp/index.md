@@ -41,6 +41,18 @@ Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
+<picture>
+  <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300" %}
+</picture>
+
+### What is a good FCP score?
+
+To provide a good user experience, sites should strive to have a First
+Contentful Paint of **1.8 seconds** or less. To ensure you're hitting this
+target for most of your users, a good threshold to measure is the **75th
+percentile** of page loads, segmented across mobile and desktop devices.
+
 ## How to measure FCP
 
 FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
@@ -67,7 +79,7 @@ available in the following tools:
 To measure FCP in JavaScript, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
 create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for a `paint` entry with the name `first-contentful-paint` and logs
 it to the console.
 
@@ -144,7 +156,7 @@ performance guides:
 - [Minify CSS](/unminified-css/)
 - [Remove unused CSS](/unused-css-rules/)
 - [Preconnect to required origins](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
+- [Reduce server response times (TTFB)](/ttfb/)
 - [Avoid multiple page redirects](/redirects/)
 - [Preload key requests](/uses-rel-preload/)
 - [Avoid enormous network payloads](/total-byte-weight/)

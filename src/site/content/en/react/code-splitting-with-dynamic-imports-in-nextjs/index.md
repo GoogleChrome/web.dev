@@ -46,7 +46,7 @@ This post includes several versions of a sample app that consists of a simple
 page with one button. When you click the button, you get to see a cute puppy. As
 you move through each version of the app, you'll see how dynamic imports are
 different from [static
-imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+imports](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import)
 and how to work with them.
 
 In the first version of the app, the puppy lives in `components/Puppy.js`. To
@@ -77,14 +77,14 @@ To see how Next.js bundles the app, inspect the network trace in DevTools:
 When you load the page, all the necessary code, including the `Puppy.js`
 component, is bundled in `index.js`:
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6KWlTYFhoIEIGqnuMwlh.png", alt="DevTools Network tab showing showing six JavaScript files: index.js, app.js, webpack.js, main.js, 0.js and the dll (dynamic-link library) file.", width="800", height="665" %}
 </figure>
 
 When you press the **Click me** button, only the request for the puppy JPEG is
 added to the **Network** tab:
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7MkXVqnqfIbW74VV48kB.png", alt="DevTools Network tab after the button click, showing the same six JavaScript files and one image.", width="800", height="665" %}
 </figure>
 
@@ -119,14 +119,14 @@ When you first load the app, only `index.js` is downloaded. This time it's
 0.5&nbsp;KB smaller (it went down from 37.9&nbsp;KB to 37.4&nbsp;KB) because it
 doesn't include the code for the `Puppy` component:
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K7Ii3bxUkb37LrZjjWT1.png", alt="DevTools Network showing the same six JavaScript files, except index.js is now 0.5 KB smaller.", width="800", height="665" %}
 </figure>
 
 The `Puppy` component is now in a separate chunk, `1.js`, which is loaded only
 when you press the button:
 
-<figure class="w-figure">
+<figure>
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DfVDv5poQmwXwOKmnvd.png", alt="DevTools Network tab after the button click, showing the additional 1.js file and the image added to the bottom of the file list.", width="800", height="665" %}
 </figure>
 
@@ -171,7 +171,7 @@ DevTools:
 Now when you click the button it takes a while to load the component and the app
 displays the "Loading…" message in the meantime.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="A dark screen with the text \"Loading...\".", width="800", height="663" %}
 </figure>
 

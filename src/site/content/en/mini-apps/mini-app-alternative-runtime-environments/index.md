@@ -4,7 +4,7 @@ title: Other mini app runtime environments
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-09-07
 description: |
   This chapter presents a number of runtime environments for mini apps that are not mobile devices.
 tags:
@@ -31,9 +31,9 @@ a collaboration with Tencent branded as WeScenario, which,
 leading auto companies in the world, and [bring the WeScenario] ecosystem of social, content and
 services to more than 110 mainstream automobile models"_.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AX07xQlEHL7MDjPo1U1H.jpg", alt="Dashboard of a Tencent car showing two rows of mini app icons.", width="800", height="533" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Landing page of Tencent WeScenario (Source: <a href="https://www.press.bmwgroup.com/china/article/detail/T0313254ZH_CN/%E2%80%9C2020-%E5%AE%9D%E9%A9%AC%E7%A7%91%E6%8A%80%E6%97%A5%E2%80%9D%E5%9C%A8%E7%BA%BF%E5%8F%91%E5%B8%83%E5%A4%9A%E6%AC%BE%E8%BD%A6%E5%86%85%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81">BMW</a>).
   </figcaption>
 </figure>
@@ -54,9 +54,9 @@ account. This will result in a message that you can then open on the desktop cli
 the mini app will then be directly clickable and runnable. In other cases, you have to forward the
 chat history to yourself again from a mobile device.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLbYBpAoSvbc1Qjc9Ub0.png", alt="The WeChat macOS desktop client showing a chat with oneself with a shared mini app and a chat history as the two visible messages.", width="800", height="602" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Sharing a mini app with oneself in the WeChat macOS desktop client.
   </figcaption>
 </figure>
@@ -65,16 +65,16 @@ On Windows, the workaround to share mini apps with oneself is not necessary, sin
 dedicated mini apps panel that shows the user's recently used mini apps and also includes an app
 search where new mini apps can be discovered.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NQCoGaAWcbuiO37dCNY5.png", alt="The mini app panel in the WeChat Windows client showing the user's recently used mini apps.", width="800", height="531" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The mini app panel in the WeChat Windows client.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/H5nqmnoK9JjLcu8mWDSH.png", alt="The mini app search in the WeChat Windows client showing mini apps listed in various categories like games, business, education, etc.", width="800", height="576" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The mini app search in the WeChat Windows client.
   </figcaption>
 </figure>
@@ -86,16 +86,16 @@ app gets closed. On Windows, mini app icons can be pinned to the taskbar, but ca
 macOS, the title of the app is always "WeChat" and not the actual title of the app, whereas the
 title is displayed correctly on Windows.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nrvwtwOWot6eZI40evfp.png", alt="The macOS multitask switcher includes mini apps alongside regular macOS app.", width="800", height="79" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The Starbucks app is a mini app and can be multitasked to like any regular macOS app.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fG4cpJgpyXeqvjn4lF3v.png", alt="The Starbucks mini app icon on the macOS Dock with a WeChat title.", width="646", height="412" %}
-  <figcaption class="w-figure">
+  <figcaption>
    Mini apps on macOS have WeChat as their title.
   </figcaption>
 </figure>
@@ -104,16 +104,16 @@ Most mini apps are not optimized for desktop yet and run in a fixed, non-resizab
 includes the well-known UI affordances and permission prompts as on mobile (see
 [The user experience](/mini-app-about/#the-user-experience)).
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uorcciuZIL8sadxTjXbv.png", alt="The Starbucks mini app running on macOS asking for the user profile permission which the user can grant via a prompt shown at the bottom.", width="300", height="484" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The Starbucks mini app running on macOS asking for the user profile permission.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UGufvRnoaAGm8A3qQG4a.png", alt="The Starbucks mini app running on macOS showing the home screen of the app.", width="300", height="484" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The Starbucks mini app running on macOS in a fixed, non-resizable window.
   </figcaption>
 </figure>
@@ -121,23 +121,23 @@ includes the well-known UI affordances and permission prompts as on mobile (see
 Responsive mini apps that are optimized for the desktop (apart from for mobile) can be displayed in
 a wider window that on macOS is currently still fixed, but that on Windows is flexibly resizable.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cUMqQ75zPeCDNTcCWF5D.png", alt="The WeChat components demo app in a responsive app window that can be resized and that by default is wider than the usual mobile screen.", width="800", height="620" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The WeChat components demo app in a responsive app window.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rPbojIjBGKbNtDviB0MJ.png", alt="The WeChat components demo app in a narrow window showing three boxes A, B, and C stacked on top of each other.", width="300", height="614" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The WeChat components demo app in a narrow app window.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xnlacc8Xm1eNMCuajYYL.png", alt="The WeChat components demo app in a wide window showing three boxes A, B, and C with A stacked on top of B and C on the side.", width="600", height="565" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The WeChat components demo app in a wide app window.
   </figcaption>
 </figure>
@@ -146,9 +146,9 @@ Mini app permission settings on macOS can be changed via the context menu. On Wi
 seem to be possible and the location reported by the demo app appears to be the coarse location that
 Windows allows apps to obtain without asking for permission.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rHyiTGbMauqbSFWBFlMW.png", alt="The WeChat components demo app running on macOS showing two checkboxes for the location and user info permission.", width="500", height="384" %}
-  <figcaption class="w-figure">
+  <figcaption>
     WeChat mini app settings on macOS.
   </figcaption>
 </figure>
@@ -167,9 +167,9 @@ create their mini apps in an IDE of their own choosing and can then test them in
 special development mode. Debugging happens through Chrome Dev Tools. A
 [demo app](https://mp.360.cn/examples/appdemo.zip) is available for getting started.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IdHpN4GhVWDZ5gmSZ4Jb.png", alt="A 360 mini app running in 360 Secure Browser being debugged with Chrome Dev Tools.", width="800", height="402" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Debugging a 360 mini app using Chrome Dev Tools.
   </figcaption>
 </figure>
@@ -178,9 +178,9 @@ special development mode. Debugging happens through Chrome Dev Tools. A
 Via the context menu, a home screen icon can be added that allows for mini apps to be launched from
 the desktop.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M4MPV6TXwsLC6lFn9Jgi.png", alt="A 360 video mini app running in fullscreen mode showing various thumbnails of videos to watch.", width="800", height="402" %}
-  <figcaption class="w-figure">
+  <figcaption>
     360 mini app running in fullscreen mode.
   </figcaption>
 </figure>
@@ -213,16 +213,16 @@ To get a feel for the platform, you can test the
 [LINE Playground app](https://liff.line.me/1653544369-LP5XbPYw) in the browser and the LINE app if
 you have a LINE account.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YIlFjXgZhq8ROMrPA1BO.png", alt="The LINE Playground demo app running on an iOS device showing `liff.getOS()` returning 'ios'.", width="300", height="649" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The LINE Playground demo app running on an iOS device.
   </figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UPwJbVhssGfA4IQ89kEo.png", alt="The LINE Playground demo app running in the web browser showing `liff.getOS()` returning 'web'.", width="800", height="510" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The LINE Playground demo app running in the web browser.
   </figcaption>
 </figure>
@@ -236,9 +236,9 @@ can easily share a "Spot" (as the app calls it) on their favorite messaging app 
 using HTML and JavaScript, so existing investments into mobile websites or PWAs can be easily
 transformed into a Spot by "adding a few lines of JavaScript" according to the announcement post.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T4OLZX8PIFjFq3gVzUmo.png", alt="The Eat.fit mini app running in the Google Pay super app showing the sign-in bottom sheet.", width="300", height="637" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The Eat.fit mini app running in the Google Pay super app (Source: <a href="https://developers.google.com/pay/spot">Google</a>).
   </figcaption>
 </figure>
@@ -251,10 +251,25 @@ chat app [Snapchat](https://www.snapchat.com/). Snap has announced
 HTML5, so they are easy to develop. Plus, they work for all Snapchatters, on any kind of device,
 with no installation required.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vM5d0wK5fCQSV0VyP7HA.png", alt="The Atom Tickets mini app running in Snapchat showing three snapchat users reserving their seats in a movie theater.", width="320", height="470" %}
-  <figcaption class="w-figure">
+  <figcaption>
    The Atom Tickets mini app running in Snapchat (Source: <a href="https://minis.snapchat.com/">Snap</a>).
+  </figcaption>
+</figure>
+
+### VK Mini Apps
+
+The Russian social networking platform [VK](https://vk.com/mini-apps) runs a [mini app program](https://vk.com/mini-apps)
+that allows developers to [build](https://vk.com/dev/vk_apps_docs) mini apps that tie in deeply with the social network.
+VK mini apps work on both VK's platform-specific mobile apps, as well as on the desktop website.
+Apart from several of the brand's other platforms like [Mail.ru](https://mail.ru/), VK mini apps are also integrated in the
+[Atom browser](https://browser.ru/).
+
+<figure>
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/tZJgYpdjurBVfhInqWRo.webp", alt="The Все аптеки mini app running in VK.", width="460", height="948" %}
+  <figcaption>
+    The Все аптеки mini app running in VK (Source: <a href="https://vk.com/mini-apps">VK</a>).
   </figcaption>
 </figure>
 

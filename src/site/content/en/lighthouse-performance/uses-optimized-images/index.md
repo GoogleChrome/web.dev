@@ -13,8 +13,8 @@ The Opportunities section of your Lighthouse report lists
 all unoptimized images, with potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
 Optimize these images so that the page loads faster and consumes less data:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="A screenshot of the Lighthouse Efficiently encode images audit", width="800", height="263", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZbPSZtjpa7j4I1k8DylI.png", alt="A screenshot of the Lighthouse Efficiently encode images audit", width="800", height="263" %}
 </figure>
 
 

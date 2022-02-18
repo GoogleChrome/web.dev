@@ -1,11 +1,11 @@
 ---
-layout: post 
-title: "Broadcast updates to pages with service workers" 
+layout: post
+title: "Broadcast updates to pages with service workers"
 authors:
   - demianrenzulli
-  - andrewguan 
+  - andrewguan
 date: 2020-12-08
-description: | 
+description: |
   How service workers can proactively communicate with the page to inform about certain events.
 tags:
   - service-worker
@@ -22,8 +22,8 @@ tabs it controls to inform of a certain event. Examples include:
   showing an indication, like: **"The app is now ready to work offline"**, or **"New version of the
   content available"**.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RpZYhHYGpPY9e3AjxuaQ.png", alt="Diagram showing a service worker communicating with the page to send an update.", width="800", height="462" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RpZYhHYGpPY9e3AjxuaQ.png", alt="Diagram showing a service worker communicating with the page to send an update.", width="550", height="318" %}
 </figure>
 
 We'll call these types of use cases where the service worker doesn't need to receive a message from
@@ -47,9 +47,9 @@ important service worker lifecycle moments from the page ("installed", "controll
 "activated"). That way when a new service worker comes into play, it shows an **"Update Available"**
 banner, so that they can refresh the PWA and access the latest features:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/I8TQ9quakuxJc4l6aNvW.png", alt="A screenshot of Tinder's webapp 'Update Available' functionality.", width="800", height="451" %}
-  <figcaption class="w-figcaption">In the Tinder PWA, the service worker tells the page that a new version is ready, and the page shows users a "Update Available" banner.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/I8TQ9quakuxJc4l6aNvW.png", alt="A screenshot of Tinder's webapp 'Update Available' functionality.", width="650", height="366" %}
+  <figcaption>In the Tinder PWA, the service worker tells the page that a new version is ready, and the page shows users a "Update Available" banner.</figcaption>
 </figure>
 
 ### Squoosh {: #squoosh }
@@ -58,9 +58,9 @@ In the [Squoosh PWA](https://squoosh.app/), when the service worker has cached a
 assets to make it work offline, it sends a message to the page to show a "Ready to work offline"
 toast, letting the user know about the feature:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tRM8WvCI0aEdVGWGDpLS.png", alt="A screenshot of Squoosh webapp 'Ready to work offline' functionality.", width="800", height="553" %}
-  <figcaption class="w-figcaption">In the Squoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays "Ready to work offline" toast.
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tRM8WvCI0aEdVGWGDpLS.png", alt="A screenshot of Squoosh webapp 'Ready to work offline' functionality.", width="550", height="380" %}
+  <figcaption>In the Squoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays "Ready to work offline" toast.
 </figcaption>
 </figure>
 
@@ -71,8 +71,8 @@ toast, letting the user know about the feature:
 `workbox-window` provides a straightforward interface to listen to [important service worker lifecycle
 events](https://developers.google.com/web/tools/workbox/modules/workbox-window#important_service_worker_lifecycle_moments).
 Under the hood, the library uses client-side APIs like
-[`updatefound`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
-and [statechange](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
+[`updatefound`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
+and [statechange](https://developer.mozilla.org/docs/Web/API/ServiceWorker/onstatechange)
 and provides higher level event listeners in the `workbox-window` object, making it easier for the
 user to consume these events.
 
@@ -143,7 +143,7 @@ APIs to implement **"broadcast updates"**:
 ### Broadcast Channel API {: #broadcast-channel-api }
 
 The service worker creates a [BroadcastChannel
-object](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) and starts sending
+object](https://developer.mozilla.org/docs/Web/API/BroadcastChannel) and starts sending
 messages to it. Any context (e.g. page) interested in receiving these messages can instantiate a
 `BroadcastChannel` object and implement a message handler to receive messages.
 
@@ -177,9 +177,9 @@ This is a simple technique, but its limitation is browser support: at the moment
 
 ### Client API {: #client-api }
 
-The [Client API](https://developer.mozilla.org/en-US/docs/Web/API/Client) provides a straightforward
+The [Client API](https://developer.mozilla.org/docs/Web/API/Client) provides a straightforward
 way of communicating with multiple clients from the service worker by iterating over an array of
-[`Client`](https://developer.mozilla.org/en-US/docs/Web/API/Client) objects.
+[`Client`](https://developer.mozilla.org/docs/Web/API/Client) objects.
 
 Use the following service worker code to send a message to the last focused tab:
 
@@ -198,9 +198,9 @@ The page implements a message handler to intercept these messages:
 ```javascript
 // Listen to messages
 navigator.serviceWorker.onmessage = (event) => {
-     if (event.data && event.data.type === 'MSG_ID') { 
+     if (event.data && event.data.type === 'MSG_ID') {
          // Process response
-   } 
+   }
 };
 ```
 
@@ -210,7 +210,7 @@ using it.
 
 ### Message Channel {: #message-channel }
 
-[Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) requires
+[Message Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API) requires
 an initial configuration step, by passing a port from the page to the service worker, to establish a
 communication channel between them. The page instantiates a `MessageChannel` object and passes a
 port to the service worker, via the `postMessage()` interface:

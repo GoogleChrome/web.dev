@@ -169,6 +169,6 @@ systemctl status thumbor.service
 
 If you've successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
 
-<figure class="w-figure">
-  {% Img src="image/admin/e04pxe6uE090ewJ3WWPX.jpg", alt="Systemctl displaying the status of Thumbor", width="466", height="164", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/e04pxe6uE090ewJ3WWPX.jpg", alt="Systemctl displaying the status of Thumbor", width="466", height="164" %}
 </figure>

@@ -69,8 +69,7 @@ Consider the following report from PageSpeed Insights for the URL:
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/nZjd6rXrOgW5VUsm5fyx.png",
    alt="A PageSpeed Insights Report with different CLS values",
    width="800",
-   height="587",
-   class="w-screenshot" %}
+   height="587" %}
 
 The value reported for CLS from the lab (Lighthouse) compared to the CLS from
 the field (CrUX data) are quite different, and this makes sense if you consider
@@ -131,11 +130,11 @@ to CLS and returns the largest source element from the largest shift:
 
 ```js
 function getCLSDebugTarget(entries) {
-  const largestShift = entries.reduce((a, b) => {
+  const largestEntry = entries.reduce((a, b) => {
     return a && a.value > b.value ? a : b;
   });
-  if (largestShift && largestShift.sources) {
-    const largestSource = largestShift.sources.reduce((a, b) => {
+  if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
+    const largestSource = largestEntry.sources.reduce((a, b) => {
       return a.node && a.previousRect.width * a.previousRect.height >
           b.previousRect.width * b.previousRect.height ? a : b;
     });
@@ -274,7 +273,7 @@ function wasFIDBeforeDCL(fidEntry) {
   the `DOMContentLoaded` event may not be a useful signal. Instead, you can
   consider using the `load` event or—if there's a particular script you know
   takes a while to execute—you can use the [Resource
-  Timing](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)
+  Timing](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)
   entry for that script.
 {% endAside %}
 
@@ -382,7 +381,7 @@ function getDebugInfo(name, entries = []) {
       };
     } else if (name === 'CLS') {
       const largestEntry = getLargestLayoutShiftEntry(entries);
-      if (largestEntry && largestEntry.sources) {
+      if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
         const largestSource = getLargestLayoutShiftSource(largestEntry.sources);
         if (largestSource) {
           return {

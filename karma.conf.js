@@ -24,7 +24,7 @@ module.exports = function (config) {
   // Default options are for quick mode.
   const opts = {
     browsers: ['ChromeHeadless'],
-    files: ['dist/test/index.js'],
+    files: ['.tmp/test/index.js', 'dist/css/next.css'],
     frameworks: ['mocha'], // use the mocha test frameworkl
     reporters: ['spec'], // report results in these formats.
     singleRun: true, // set this to false to leave the browser open.

@@ -66,7 +66,7 @@ When running this script be aware that:
 
 
 *   The `buffered: true` option indicates that the
-    [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+    [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
     should check the browser's [performance entry
     buffer](https://www.w3.org/TR/performance-timeline-2/#dfn-performance-entry-buffer)
     for performance entries that were created before the observer's
@@ -121,7 +121,7 @@ debugging layout shifts:
 |`value`| The `value` property reports the [layout shift score](/cls/#layout-shift-score) for a particular layout shift.|
 |`hadRecentInput`| The `hadRecentInput` property indicates whether a layout shift occurred within 500 milliseconds of user input.|
 |`startTime`| The `startTime` property indicates when a layout shift occurred. `startTime` is indicated in milliseconds and is measured relative to the [time that the page load was initiated](https://www.w3.org/TR/hr-time-2/#sec-time-origin).|
-|`duration`| The `duration` property will always be set to `0`. This property is inherited from the [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) interface (the `LayoutShift` interface extends the `PerformanceEntry` interface). However, the concept of duration does not apply to layout shift events, so it is set to `0`. For information on the `PerformanceEntry` interface, refer to the [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).|
+|`duration`| The `duration` property will always be set to `0`. This property is inherited from the [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) interface (the `LayoutShift` interface extends the `PerformanceEntry` interface). However, the concept of duration does not apply to layout shift events, so it is set to `0`. For information on the `PerformanceEntry` interface, refer to the [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).|
 
 {% Aside %}
 The [Web Vitals
@@ -189,6 +189,14 @@ the node.
 If all properties of `previousRect` are set to 0 this means that the element has
 shifted into view. If all properties of `currentRect` are set to 0 this means
 that the element has shifted out of view.
+
+{% Aside 'caution' %}
+Layout Instability API currently does not ignore elements that shifted but were not
+visible due to another element being positioned in front of them.
+Use `display: none`, `visibility: hidden`, or `opacity: 0` to avoid layout shifts in
+cases where you need to run layout on some elements before you make them visible to
+the user.
+{% endAside %}
 
 One of the most important things to understand when interpreting these outputs
 is that elements listed as _sources_ are the elements that shifted during the
@@ -262,15 +270,12 @@ within 500&nbsp;ms of a user interaction and therefore don't count towards CLS.
 Hovering over a particular layout shift in the **Experience** panel highlights
 the affected DOM element.
 
-
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Uug2fnJT8mOc2YQmxo2l.png",
   alt="Screenshot of a layout shift displayed in the DevTools Network panel",
-  class="w-screenshot",
   width="724",
   height="629"
  %}
-
 
 To view more information about the layout shift, click on the layout shift, then
 open the **Summary** drawer. Changes to the element's dimensions are listed
@@ -278,26 +283,20 @@ using the format `[width, height]`; changes to the element's position are listed
 using the format `[x,y]`. The **Had recent input** property indicates whether a
 layout shift occurred within 500&nbsp;ms of a user interaction.
 
-
-
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png",
   alt="Screenshot of the DevTools 'Summary' tab for a layout shift",
-  class="w-screenshot",
   width="612",
   height="354"
  %}
-
 
 For information on the duration of a layout shift, open the **Event Log** tab.
 The duration of a layout shift can also be approximated by looking in the
 **Experience** pane for the length of the red layout shift rectangle.
 
-
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png",
   alt="Screenshot of the DevTools 'Event Log' tab for a layout shift",
-  class="w-screenshot",
   width="612",
   height="354"
  %}
@@ -362,14 +361,14 @@ insertion of a DOM element, whereas a 1&nbsp;px or 2&nbsp;px layout shift often 
 the application of conflicting CSS styles or the loading and application of a
 web font.
 
-<figure class="w-figure">
+<figure>
   {% Img
     src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png",
     alt="Diagram showing a layout shift caused by a font swap",
     width="800",
     height="452"
   %}
-  <figcaption class="w-figcaption">
+  <figcaption>
     In this example, font swapping caused page elements to shift upwards by five pixels.
   </figcaption>
 </figure>
@@ -408,7 +407,7 @@ Some animation effects can [trigger
 layout](https://gist.github.com/paulirish/5d52fb081b3570c81e3a). A common
 example of this is when DOM elements are 'animated' by incrementing properties
 like `top` or `left` rather than using CSS's
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform)
 property. Read [How to create high-performance CSS animations](/animations-guide/)
 for more information.
 

@@ -1,19 +1,54 @@
 title:
   en: Media
+  es: Multimedia
+  ja: メディア
+  ko: 미디어
+  pt: Mídia
+  ru: Медиаконтент
+  zh: 媒体
 
 description:
   en: Add audio and video to your web sites
+  es: Agregue audio y video a sus sitios web
+  ja: Web サイトに音声や動画を追加する
+  ko: 웹 사이트에 오디오 및 비디오 추가
+  pt: Adicione áudio e vídeo aos seus sites
+  ru: Добавляйте аудио и видео на свои сайты
+  zh: 将音频和视频添加到您的网站
 
 overview:
-  en: Learn to add media capabilities to your website using either basic markdown or a media framework such as Google's Shaka Player, JW Player or Video.js.
+  en: Learn to add media capabilities to your site using either basic HTML or a media framework such as Shaka Player, JW Player, or Video.js.
+  es: Aprenda cómo agregar funcionalidades multimedia a su sitio web utilizando HTML básico o una estructura multimedia como Shaka Player, JW Player o Video.js.
+  ja: 基本的な HTML、Shaka Player、JW Player、Video.js などのメディアフレームワークを使用し、サイトにメディア機能を追加する方法について説明します。
+  ko: 기본 HTML, 또는 Shaka Player, JW Player, Video.js와 같은 미디어 프레임워크를 사용하여 사이트에 미디어 기능을 추가하는 방법을 알아보세요.
+  pt: Aprenda a adicionar recursos de mídia a seu site usando HTML básico ou um framework de mídia como Shaka Player, JW Player ou Video.js.
+  ru: Узнайте, как добавлять на сайты мультимедийные возможности, используя базовый HTML или мультимедийные фреймворки, такие как Shaka Player, JW Player или Video.js.
+  zh: 学习使用基本的 HTML 或媒体框架（如 Shaka Player、JW Player 或 Video.js）向您的网站添加媒体功能。
 
 topics:
   concepts:
     en: Concepts
+    es: Conceptos
+    ja: コンセプト
+    ko: 컨셉
+    pt: Conceitos
+    ru: Общие принципы
+    zh: 概念
 
   prepare_media_files_for_the_web:
     en: Prepare media files for the web
+    es: Prepare archivos multimedia para la web
+    ja: Web 用にメディアファイルを準備する
+    ko: 웹용 미디어 파일 준비
+    pt: Prepare arquivos de mídia para a web
+    ru: Подготовка медиафайлов для размещения на веб-страницах
+    zh: 准备网络媒体文件
 
   add_media_to_a_web_page:
     en: Add media to a web page
-
+    es: Agregue contenido multimedia a una página web
+    ja: Web ページにメディアを追加する
+    ko: 웹 페이지에 미디어 추가
+    pt: Adicione mídia a uma página web
+    ru: Добавление медиаконтента на веб-страницу
+    zh: 将媒体添加到网页

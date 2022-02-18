@@ -18,6 +18,8 @@
 
   &__thumbnail {
     object-fit: cover;
+    // Ensure the logo text does not get cropped when the card size shrinks.
+    object-position: left;
     width: 100%;
     border: 1px solid $GREY_300;
     height: 192px;

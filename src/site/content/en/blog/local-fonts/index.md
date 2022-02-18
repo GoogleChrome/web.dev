@@ -14,7 +14,7 @@ description: >
   The Local Fonts API enumerates the user's installed local fonts and provides low-level access to
   the various TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2021-03-31
+updated: 2021-07-30
 hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
@@ -30,7 +30,7 @@ development. This post will be updated as the implementation progresses. {% endA
 ## Web safe fonts
 
 If you have been doing web development long enough, you may remember the so-called
-[web safe fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts).
+[web safe fonts](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts).
 These fonts are known to be available on nearly all instances of the most used operating systems
 (namely Windows, macOS, the most common Linux distributions, Android, and iOS). In the early 2000s,
 Microsoft even spearheaded an
@@ -40,7 +40,7 @@ objective that _"whenever you visit a Web site that specifies them, you'll see p
 site designer intended"_. Yes, this included sites set in
 [Comic Sans MS](https://docs.microsoft.com/en-us/typography/font-list/comic-sans-ms). Here is a
 classic web safe font stack (with the ultimate fallback of whatever
-[`sans-serif`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=sans%2Dserif,-Glyphs)
+[`sans-serif`](https://developer.mozilla.org/docs/Web/CSS/font-family#<generic-name>:~:text=sans%2Dserif,-Glyphs)
 font) might look like this:
 
 ```css
@@ -52,10 +52,10 @@ body {
 ## Web fonts
 
 The days where web safe fonts really mattered are long gone. Today, we have
-[web fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts), some of
+[web fonts](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Web_fonts), some of
 which are even [variable fonts](/variable-fonts/) that we can tweak further by changing the values
 for the various exposed axes. You can use web fonts by declaring an
-[`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) block at the start of
+[`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face) block at the start of
 the CSS, which specifies the font file(s) to download:
 
 ```css
@@ -66,7 +66,7 @@ the CSS, which specifies the font file(s) to download:
 ```
 
 After this, you can then use the custom web font by specifying the
-[`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family), as normal:
+[`font-family`](https://developer.mozilla.org/docs/Web/CSS/font-family), as normal:
 
 ```css
 body {
@@ -77,11 +77,11 @@ body {
 ## Local fonts as fingerprint vector
 
 Most web fonts come from, well, the web. An interesting fact, though, is that the
-[`src`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src) property in the
+[`src`](https://developer.mozilla.org/docs/Web/CSS/@font-face/src) property in the
 `@font-face` declaration, apart from the
-[`url()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src#Values:~:text=%3Curl%3E%20%5B%20format(%20%3Cstring%3E%23%20)%20%5D%3F,-Specifies>)
+[`url()`](<https://developer.mozilla.org/docs/Web/CSS/@font-face/src#Values:~:text=%3Curl%3E%20%5B%20format(%20%3Cstring%3E%23%20)%20%5D%3F,-Specifies>)
 function, also accepts a
-[`local()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src#format():~:text=downloaded.-,%3Cfont%2Dface%2Dname%3E>)
+[`local()`](<https://developer.mozilla.org/docs/Web/CSS/@font-face/src#format():~:text=downloaded.-,%3Cfont%2Dface%2Dname%3E>)
 function. This allows custom fonts to be loaded (surprise!) locally. If the user happens to have
 _FlamboyantSansSerif_ installed on their operating system, the local copy will be used rather than
 it being downloaded:
@@ -99,9 +99,9 @@ abused for browser fingerprinting. Turns out, the list of fonts a user has insta
 identifying. A lot of companies have their own corporate fonts that are installed on employees'
 laptops. For example, Google has a corporate font called _Google Sans_.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420", class="w-screenshot w-screenshot--filled" %}
-  <figcaption class="w-figcaption">
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420" %}
+  <figcaption>
     The Google Sans font installed on a Google employee's laptop.
   </figcaption>
 </figure>
@@ -156,35 +156,24 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 
 ### Current status {: #status }
 
-<div class="w-table-wrapper">
+<div>
 
 | Step                                     | Status                                                                                          |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 1. Create explainer                      | [Complete][explainer]                                                                           |
 | 2. Create initial draft of specification | [In progress][spec]                                                                             |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)                                                                        |
-| **4. Origin trial**                      | **[In progress](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)** |
+| 3. **Gather feedback & iterate on design**   | [**In progress**](#feedback)                                                                        |
+| 4. Origin trial                     | Complete |
 | 5. Launch                                | Not started                                                                                     |
 
 </div>
 
 ### How to use the Local Font Access API
 
-#### Enabling via chrome://flags
+#### Enabling via about://flags
 
 To experiment with the Local Font Access API locally, enable the `#font-access` flag in
-`chrome://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome 87, the Local Font Access API will be available as an origin trial in Chrome. The
-origin trial is expected to end in Chrome 89 (April 7, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
+`about://flags`.
 
 #### Feature detection
 

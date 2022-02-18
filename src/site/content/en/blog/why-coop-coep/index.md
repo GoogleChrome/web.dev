@@ -2,20 +2,20 @@
 title: Why you need "cross-origin isolated" for powerful features
 subhead: >
   Learn why cross-origin isolation is needed to use powerful features such as
-  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, high
-  resolution timer with better precision and the JS Self-Profiling API.
+  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()` and high
+  resolution timer with better precision.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Learn why cross-origin isolation is needed to use
-  powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`,
-  high resolution timer with better precision and the JS Self-Profiling API.
+  powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`
+  and high resolution timer with better precision.
 authors:
   - agektmr
   - domenic
 hero: image/admin/h8g1TQjkfkJSpWJrPakB.jpg
 date: 2020-05-04
-updated: 2021-04-12
+updated: 2021-08-05
 tags:
   - blog
   - security
@@ -106,10 +106,10 @@ This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
 dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()`, [high resolution
-timers](https://www.w3.org/TR/hr-time/) with better precision and the JS
-Self-Profiling API which could otherwise be used for Spectre-like attacks. It
-also prevents modifying `document.domain`.
+`performance.measureUserAgentSpecificMemory()` and [high resolution
+timers](https://www.w3.org/TR/hr-time/) with better precision which could
+otherwise be used for Spectre-like attacks. It also prevents modifying
+`document.domain`.
 
 ### Cross Origin Embedder Policy {: #coep }
 [Cross Origin Embedder
@@ -135,7 +135,7 @@ Cross Origin Resource Sharing (CORS) or Cross Origin Resource Policy (CORP).
 
 ### Cross Origin Resource Sharing {: #cors }
 If a cross origin resource supports [Cross Origin Resource Sharing
-(CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), you may use the
+(CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS), you may use the
 [`crossorigin`
 attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
 to load it to your web page without being blocked by COEP.
@@ -152,11 +152,11 @@ prevents the image from being loaded unless it sets CORS headers.
 Similarly, you may fetch cross origin data through the `fetch()` method, which
 doesn't require special handling as long as the server responds with [the right
 HTTP
-headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers).
+headers](https://developer.mozilla.org/docs/Web/HTTP/CORS#The_HTTP_response_headers).
 
 ### Cross Origin Resource Policy {: #corp }
 [Cross Origin Resource Policy
-(CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_%28CORP%29)
+(CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
 was originally introduced as an opt-in to protect your resources from being
 loaded by another origin. In the context of COEP, CORP can specify the resource
 owner's policy for who can load a resource.
@@ -231,7 +231,7 @@ browsing context group unless the opener itself has a COOP of `same-origin`.
 
 {% Aside %}
 The
-[`noopener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)
+[`noopener`](https://developer.mozilla.org/docs/Web/API/Window/open#Window_features)
 attribute has a similar effect to what you would expect from COOP except that it
 works only from the opener side. (You can't disassociate your window when it is opened
 by a third party.) When you attach `noopener` by doing something such as
@@ -246,13 +246,12 @@ protect your website in browsers that don't support COOP.
 ## Summary {: #summary }
 
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()`, [high resolution
-timers](https://www.w3.org/TR/hr-time/) with better precision or JS
-Self-Profiling API, just remember that your document needs to use both COEP with
-the value of `require-corp` and COOP with the value of `same-origin`. In the
-absence of either, the browser will not guarantee sufficient isolation to safely
-enable those powerful features. You can determine your page's situation by
-checking if
+`performance.measureUserAgentSpecificMemory()` or [high resolution
+timers](https://www.w3.org/TR/hr-time/) with better precision, just remember
+that your document needs to use both COEP with the value of `require-corp` and
+COOP with the value of `same-origin`. In the absence of either, the browser will
+not guarantee sufficient isolation to safely enable those powerful features. You
+can determine your page's situation by checking if
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
 returns `true`.
 

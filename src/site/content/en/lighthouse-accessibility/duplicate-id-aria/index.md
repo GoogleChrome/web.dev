@@ -24,8 +24,8 @@ which may not be what you intended.
 flags elements that share an ID referred to
 by another element's `aria-labelledby` attribute:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Yfs0KHGsKcZg6XbeYuXQ.png", alt="Lighthouse audit showing ARIA elements with duplicate IDs", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Yfs0KHGsKcZg6XbeYuXQ.png", alt="Lighthouse audit showing ARIA elements with duplicate IDs", width="800", height="206" %}
 </figure>
 
 This audit is similar to the

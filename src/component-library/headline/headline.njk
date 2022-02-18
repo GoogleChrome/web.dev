@@ -1,0 +1,9 @@
+<div class="headline all-center flow">
+  <h2 class="headline__title">{{ data.title }}</h2>
+  <p>{{ data.summary }}</p>
+  {% if data.action %}
+    <div class="headline__action">
+      <a href="{{ data.action.url }}">{{ data.action.text }}</a>
+    </div>
+  {% endif %}
+</div>

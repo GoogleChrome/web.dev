@@ -192,7 +192,7 @@ right, up, and backward, respectively.
 
 The coordinates returned by `XRFrame.getViewerPose()` depend on the requested
 [reference space
-type](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace#Reference_space_types).
+type](https://developer.mozilla.org/docs/Web/API/XRReferenceSpace#Reference_space_types).
 More about that when we get to the frame loop. Right now we need to select a
 reference type that's appropriate for augmented reality. Again, this uses my
 convenience property.

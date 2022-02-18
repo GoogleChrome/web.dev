@@ -10,13 +10,13 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api
 ---
 
-This post explains how to set up route-level [code splitting](/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](/interactive).
+This post explains how to set up route-level [code splitting](/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](/tti/).
 
 _You can find the code samples from this article on [GitHub](https://github.com/mgechev/code-splitting-web-dev). The eager routing example is available in the [eager branch](https://github.com/mgechev/code-splitting-web-dev/tree/eager). The route-level code splitting example is in the [lazy branch](https://github.com/mgechev/code-splitting-web-dev/tree/lazy)._
 
@@ -34,7 +34,7 @@ The most efficient way to shrink JavaScript bundles without sacrificing features
 
 {% Aside 'note' %}
 
-By using code splitting, [Twitter and Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observed improvements of up to 50% for their [Time to Interactive](/interactive).
+By using code splitting, [Twitter and Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observed improvements of up to 50% for their [Time to Interactive](/tti/).
 
 {% endAside %}
 

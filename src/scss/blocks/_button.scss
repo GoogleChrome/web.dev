@@ -1,0 +1,10 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/button
+.button {
+  text-transform: uppercase;
+  letter-spacing: 0.03ch;
+  border-radius: $global-radius-base;
+  padding: 1.4em 1em;
+
+  @include button-base-styles();
+}

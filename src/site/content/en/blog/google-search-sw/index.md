@@ -4,6 +4,7 @@ subhead: The story of what shipped, how the impact was measured, and the tradeof
 authors:
   - jeffposnick
 date: 2019-06-20
+updated: 2021-10-29
 hero: image/admin/SEsw9jtfge6PSYNqTkUl.jpg
 alt: An illustration of a service worker interacting with a cache.
 description: |
@@ -250,7 +251,7 @@ all of whom live under a common URL.
 
 Users can sign in to Google Search using their Google Accounts, and their search
 results experience may be customized based on their particular account data.
-Logged in users are identified by specific [browser cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies),
+Logged in users are identified by specific [browser cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies),
 which is a venerable and widely-supported standard.
 
 One downside of using browser cookies, though, is that they are not exposed
@@ -274,7 +275,7 @@ Rather than wait for experimental APIs to launch and provide direct access to
 the browser's cookies inside of a service worker, the Google Search team went
 with a stop-gap solution: whenever a page controlled by the service worker is
 loaded, the page reads the relevant cookies and uses
-[`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage)
+[`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
 to send them to the service worker.
 
 The service worker then checks the current cookie value against the value
@@ -363,13 +364,13 @@ received by the endpoint that dynamically generates the service worker script.
 
 Additionally, an ETag header is set on the service worker script's HTTP
 response, ensuring that when an update check is made after 25 minutes has
-passed, the server can respond efficiently with an [HTTP 304](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304)
+passed, the server can respond efficiently with an [HTTP 304](https://developer.mozilla.org/docs/Web/HTTP/Status/304)
 response if there haven't been any updates to the service worker deployed in the
 interim.
 
 While some interactions within the Google Search web app use single page
 app-style navigations (i.e. via the
-[History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries)),
+[History API](https://developer.mozilla.org/docs/Web/API/History_API#Adding_and_modifying_history_entries)),
 for the most part, Google Search is a traditional web app that uses "real"
 navigations. This comes into play when the team decided that it would be
 effective to use two options that accelerate the service worker update
@@ -466,3 +467,5 @@ service worker implementation, and for sharing the background material that went
 into writing this article. Particular thanks goes to Philippe Golle, Rajesh
 Jagannathan, R. Samuel Klatchko, Andy Martone, Leonardo Peña, Rachel Shearer,
 Greg Terrono, and Clay Woolam.
+
+_Update (Oct. 2021): Since this article was originally published, the Google Search team has reevaluated the benefits and tradeoffs of their current service worker architecture. The service worker described above is being retired. As the Google Search web infrastructure evolves, the team may revisit their service worker design._

@@ -14,7 +14,7 @@ updated: 2021-01-25
 tags:
   - blog
   - capabilities
-  - hid
+  # - hid
   - games
   - devices
 hero: image/admin/8TCwHOfb8SUWaVEtCx6j.jpg

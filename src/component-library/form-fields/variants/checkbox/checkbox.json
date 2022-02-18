@@ -1,0 +1,8 @@
+{
+  "title": "Checkbox",
+  "context": {
+    "name": "myCheckbox",
+    "id": "myCheckbox",
+    "label": "Lorem ipsum dolor sit amet"
+  }
+}

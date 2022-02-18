@@ -1,0 +1,16 @@
+---
+noindex: true
+permalink: "/pages.json"
+---
+{% if site.env === 'prod' %}
+  {% set posts = collections.all | livePosts | algoliaIndexable %}
+{% else %}
+  {% set posts = [] %}
+{% endif %}
+
+[
+  {% for post in posts %}
+    {{ post | algoliaItem | dump | safe }}
+    {{ "" if loop.last else "," }}
+  {% endfor %}
+]

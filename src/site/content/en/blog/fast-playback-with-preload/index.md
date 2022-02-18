@@ -13,7 +13,7 @@ date: 2017-08-17
 updated: 2020-11-16
 tags:
   - media
-  - video
+  # - video
   - performance
   - network
 ---
@@ -23,14 +23,14 @@ audio. [That's a known fact][thats-a-known-fact]. In this article I'll explore
 techniques you can use to accelerate your audio and video playback by actively
 preloading resources depending on your use case.
 
-<figure class="w-figure">
-  <video controls muted playsinline class="w-screenshot">
+<figure>
+  <video controls muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1"
             type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1"
             type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">
+  <figcaption>
     <p>Credits: copyright Blender Foundation | <a href="http://www.blender.org">www.blender.org </a>.</p>
   </figcaption>
 </figure>
@@ -127,7 +127,7 @@ list, duration, and so on) is desirable. Note that starting in [Chrome
 previously).
 
 
-```js
+```html
 <video id="video" preload="metadata" src="file.mp4" controls></video>
 
 <script>
@@ -144,7 +144,7 @@ Setting the `preload` attribute to `auto` indicates that the browser may cache
 enough data that complete playback is possible without requiring a stop for
 further buffering.
 
-```js
+```html
 <video id="video" preload="auto" src="file.mp4" controls></video>
 
 <script>
@@ -234,7 +234,7 @@ with the MSE JavaScript API, see [MSE basics][mse-basics].
 For the sake of simplicity, let's assume the entire video has been split into
 smaller files like `file_1.webm`, `file_2.webm`, `file_3.webm`, etc.
 
-```js
+```html
 <link rel="preload" as="fetch" href="https://cdn.com/file_1.webm">
 
 <video id="video" controls></video>
@@ -298,13 +298,13 @@ function preloadFirstSegmentSupported() {
 
 Before we dive into the [Cache API][cache-api] and service workers, let's see
 how to manually buffer a video with MSE. The example below assumes that your web
-server supports HTTP [`Range`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range)
+server supports HTTP [`Range`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Range)
 requests but this would be pretty similar with file
 segments. Note that some middleware libraries such as [Google's Shaka
 Player][shaka-player], [JW Player][jw-player], and [Video.js][video-js] are
 built to handle this for you.
 
-```js
+```html
 <video id="video" controls></video>
 
 <script>
@@ -593,15 +593,15 @@ requests.
 [shakaplayer]: https://github.com/google/shaka-player/blob/master/docs/tutorials/service-worker.md
 [sample-media-app]: https://github.com/GoogleChrome/sample-media-pwa
 [ranged-response.js]: https://github.com/GoogleChrome/sample-media-pwa/blob/master/src/client/scripts/ranged-response.js
-[cache-api]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[cache-api]: https://developer.mozilla.org/docs/Web/API/Cache
 [yet]: https://github.com/whatwg/fetch/issues/144
 [shaka-player]: https://github.com/google/shaka-player
 [jw-player]: https://developer.jwplayer.com/
 [video-js]: http://videojs.com/
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
 [fast-light]: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data
-[mse-basics]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API
+[mse-basics]: https://developer.mozilla.org/docs/Web/API/Media_Source_Extensions_API
 [preload]: /video-and-source-tags/#preload
 [thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/
-[browser-compatibility]: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility
+[browser-compatibility]: https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility
 [android-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=612909

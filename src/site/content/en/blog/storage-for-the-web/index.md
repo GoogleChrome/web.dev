@@ -10,8 +10,8 @@ tags:
   - blog
   - progressive-web-apps
   - storage
-  - indexeddb
-  - cachestorage
+  # - indexeddb
+  # - cachestorage
   - memory
 hero: image/admin/c8u2hKEFoFfgTsmcKeuK.jpg
 alt: Stack of shipping containers
@@ -300,18 +300,18 @@ The hero image is by Guillaume Bolduc on
 
 [mdn-sessionstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/sessionStorage
 [mdn-localstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/localStorage
-[mdn-indexeddb]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
-[mdn-storagemanager]: https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
-[mdn-fileapi]: https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction
-[mdn-appcache]: https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache
-[mdn-cookies]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+[mdn-indexeddb]: https://developer.mozilla.org/docs/Web/API/IndexedDB_API
+[mdn-storagemanager]: https://developer.mozilla.org/docs/Web/API/StorageManager/estimate
+[mdn-fileapi]: https://developer.mozilla.org/docs/Web/API/File_and_Directory_Entries_API/Introduction
+[mdn-appcache]: https://developer.mozilla.org/docs/Web/API/Window/applicationCache
+[mdn-cookies]: https://developer.mozilla.org/docs/Web/HTTP/Cookies
 [cache-primer]: https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
 [sw-primer]: https://developers.google.com/web/fundamentals/primers/service-workers
 [idb-wrapper]: https://www.npmjs.com/package/idb
 [w3c-websql]: https://www.w3.org/TR/webdatabase/
 [caniuse-fs]: https://caniuse.com/#feat=filesystem
 [caniuse-sm]: https://caniuse.com/#feat=mdn-api_storagemanager
-[ff-usage-limits]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria#Storage_limits
+[ff-usage-limits]: https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria#Storage_limits
 [persistent-storage]: https://developers.google.com/web/updates/2016/06/persistent-storage
 [storage-abuser]: http://demo.agektmr.com/storage/
 [webkit-itp-blog]: https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/

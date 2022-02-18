@@ -1,0 +1,207 @@
+/**
+ * IMPORTED TOKENS
+ * These are generated with the design tokens data
+*/
+@import 'tokens';
+
+/**
+ * IMPORTED THEMES
+ * These themes are for dark/light mode and abstract CSS Custom
+ * property references to design tokens into more contextual references
+*/
+@import 'themes';
+
+/**
+ * CORE CONFIG
+ * This powers everything from utility class generation to breakpoints
+ * to enabling/disabling pre-built components/utilities.
+ */
+$gorko-config: (
+  'css-vars': (
+    'color': $gorko-colors,
+    'themes': $gorko-themes,
+  ),
+  'bg': (
+    'items': $gorko-theme-keys,
+    'output': 'standard',
+    'property': 'background',
+  ),
+  't-bg': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'background',
+  ),
+  'box': (
+    'items': (
+      'hidden': 'none',
+      'block': 'block',
+      'inline-block': 'inline-block',
+      'flex': 'flex',
+    ),
+    'output': 'responsive',
+    'property': 'display',
+  ),
+  'color': (
+    'items': $gorko-theme-keys,
+    'output': 'standard',
+    'property': 'color',
+  ),
+  't-color': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'color',
+  ),
+  'flex-dir': (
+    'items': (
+      'row': 'row',
+      'rev': 'row-reverse',
+      'column': 'column',
+    ),
+    'output': 'standard',
+    'property': 'flex-direction',
+  ),
+  'flex': (
+    'items': (
+      'none': 'none',
+      'auto': 'auto',
+    ),
+    'output': 'standard',
+    'property': 'flex',
+  ),
+  'flex-align': (
+    'items': (
+      'baseline': 'baseline',
+      'start': 'flex-start',
+      'center': 'center',
+      'end': 'flex-end',
+    ),
+    'output': 'responsive',
+    'property': 'align-items',
+  ),
+  'flex-justify': (
+    'items': (
+      'baseline': 'baseline',
+      'start': 'flex-start',
+      'center': 'center',
+      'end': 'flex-end',
+    ),
+    'output': 'responsive',
+    'property': 'justify-content',
+  ),
+  'flex-wrap': (
+    'items': (
+      'yes': 'wrap',
+      'no': 'nowrap',
+    ),
+    'output': 'responsive',
+    'property': 'flex-wrap',
+  ),
+  'flow-space': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': '--flow-space',
+  ),
+  'font': (
+    'items': $gorko-fonts,
+    'output': 'standard',
+    'property': 'font-family',
+  ),
+  'gap-inline': (
+    'items':
+      map-merge(
+        $gorko-space-scale,
+        (
+          'auto': 'auto',
+        )
+      ),
+    'output': 'standard',
+    'property': 'margin-inline',
+  ),
+  'gap-top': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'margin-top',
+  ),
+  'gap-bottom': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'margin-bottom',
+  ),
+  'gutter': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': '--gutter',
+  ),
+  'hidden': (
+    'items': (
+      'yes': 'none',
+      'no': 'revert',
+    ),
+    'output': 'responsive',
+    'property': 'display',
+  ),
+  'leading': (
+    'items': (
+      'flat': '1.2',
+      'short': '1.35',
+      'regular': '1.7',
+    ),
+    'output': 'standard',
+    'property': 'line-height',
+  ),
+  'measure': (
+    'items': (
+      'short': '40ch',
+      'long': '65ch',
+    ),
+    'output': 'standard',
+    'property': 'max-width',
+  ),
+  'pad': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'padding',
+  ),
+  'pad-block': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'padding-block',
+  ),
+  'pad-inline': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'padding-inline',
+  ),
+  'ta': (
+    'items': (
+      'center': 'center',
+      'left': 'left',
+      'right': 'right',
+    ),
+    'output': 'standard',
+    'property': 'text-align',
+  ),
+  'text': (
+    'items': $gorko-size-scale,
+    'output': 'standard',
+    'property': 'font-size',
+  ),
+  'tt': (
+    'items': (
+      'upper': 'uppercase',
+    ),
+    'output': 'standard',
+    'property': 'text-transform',
+  ),
+  'weight': (
+    'items': $gorko-font-weights,
+    'output': 'standard',
+    'property': 'font-weight',
+  ),
+  'breakpoints': (
+    'xs': '(max-width: 25em)',
+    'md': '(min-width: 50em)',
+    'lg': '(min-width: 80em)',
+    'xl': '(min-width: 106em)',
+  ),
+);

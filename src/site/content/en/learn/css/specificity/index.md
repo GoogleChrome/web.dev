@@ -1,12 +1,15 @@
 ---
 title: Specificity
-description:
+description: >
+  This module takes a deeper look at specificity, a key part of the cascade.
+audio:
+  title: 'The CSS Podcast - 003: Specificity'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_003_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Specificity
 
 Suppose that you're working with the following HTML and CSS:
 
@@ -33,10 +36,11 @@ is the key to understanding how CSS decides between competing rules.
 Specificity is one of the four distinct stages of the cascade,
 which was covered in the last module, on [the cascade](/learn/css/the-cascade/).
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNKMXm'
+  id: 'YzNKMXm',
+  height: 200
 } %}
 </figure>
 
@@ -61,7 +65,7 @@ You add all of these points up to calculate a selector's overall specificity.
 
 ### Universal selector
 
-A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) (`*`)
+A [universal selector](https://developer.mozilla.org/docs/Web/CSS/Universal_selectors) (`*`)
 has **no specificity** and gets **0 points**.
 This means that any rule with 1 or more points will override it
 
@@ -73,8 +77,8 @@ This means that any rule with 1 or more points will override it
 
 ### Element or pseudo-element selector
 
-An [element](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) (type)
-or [pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+An [element](https://developer.mozilla.org/docs/Web/CSS/Type_selectors) (type)
+or [pseudo-element](https://developer.mozilla.org/docs/Web/CSS/Pseudo-elements)
 selector gets **1 point of specificity** .
 
 #### Type selector
@@ -93,10 +97,11 @@ div {
 }
 ```
 
-### Class, attribute or pseudo-class selector
+### Class, pseudo-class, or attribute selector
 
-A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
-[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) selector gets **10 points of specificity**.
+A [class](https://developer.mozilla.org/docs/Web/CSS/Class_selectors),
+[pseudo-class](https://developer.mozilla.org/docs/Web/CSS/Pseudo-classes) or
+[attribute](https://developer.mozilla.org/docs/Web/CSS/Attribute_selectors) selector gets **10 points of specificity**.
 
 #### Class selector
 
@@ -122,7 +127,7 @@ A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
 }
 ```
 
-The [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not)
+The [`:not()`](https://developer.mozilla.org/docs/Web/CSS/:not)
 pseudo-class itself adds nothing to the specificity calculation.
 However, the selectors passed in as arguments do get added to the specificity calculation.
 
@@ -137,7 +142,7 @@ because it has one type selector (`div`) and one class _inside_ the `:not()`.
 
 ### ID selector
 
-An [ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors)
+An [ID](https://developer.mozilla.org/docs/Web/CSS/ID_selectors)
 selector gets **100 points of specificity**,
 as long as you use an ID selector (`#myID`) and not an attribute selector (`[id="myID"]`).
 
@@ -272,10 +277,11 @@ With HTML that looks like this:
 <button class="my-button" onclick="alert('hello')">Click me</button>
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpoxdR'
+  id: 'abpoxdR',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -300,10 +306,11 @@ button[onclick] {
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXBJ'
+  id: 'zYNOXBJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -334,10 +341,11 @@ Let's stay with the button example for now and switch the CSS around to this:
 The button has a grey background,
 because **both selectors have an identical specificity score** (`0-1-0`).
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXKJ'
+  id: 'zYNOXKJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -354,10 +362,11 @@ the button would then be blue.
 }
 ```
 
-<figure class="w-figure">
+<figure>
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNReWRO'
+  id: 'WNReWRO',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -368,6 +377,6 @@ To do so it must match the specificity of another selector that targets the same
 
 - [CSS SpeciFISHity](http://specifishity.com)
 - [Specificity Calculator](https://specificity.keegan.st)
-- [MDN Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+- [MDN Specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity)
 - [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
 - [Another Specificity Calculator](https://polypane.app/css-specificity-calculator)

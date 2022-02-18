@@ -1,0 +1,50 @@
+/// CARD BASE STYLES
+/// Consistent, base styles that can be shared
+/// between card-type elements
+@mixin card-base-styles() {
+  /// Flex layout allows the content to grow so where you have a grid
+  /// of cards, the actions will all be aligned
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: $global-gutter-narrow;
+  border: 1px solid get-utility-value('color', 'stroke');
+  border-radius: $global-radius-large;
+  max-width: 37rem;
+  text-decoration: none;
+  word-break: break-word;
+
+  @include apply-utility('bg', 'core-bg');
+
+  // This lets text keep its selectable state
+  a:not([class*='action']),
+  p,
+  h2,
+  h3,
+  h4 {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:link:hover {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
+      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%),
+      0px 0px 0px 2px var(--color-focus-ring);
+    transition: transform $global-transition-movement,
+      box-shadow $global-transition-movement, background $global-transition-fade,
+      border-color $global-transition-fade;
+    border-color: get-utility-value('bg', 'mid-bg');
+  }
+
+  &:link,
+  &:visited {
+    @include apply-utility('color', 'core-text');
+  }
+
+  > img:not([class]) {
+    height: 15rem;
+    object-fit: cover;
+    margin-inline: auto;
+  }
+}

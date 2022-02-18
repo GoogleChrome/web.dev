@@ -19,9 +19,9 @@ In order to answer this question, let me use the Apple [Podcasts](https://suppor
 It is available on macOS on desktop and on iOS (and iPadOS respectively) on mobile.
 While Podcasts is a media application, the core ideas I illustrate with its help apply to other categories of apps, too.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aNYiT2EkVkjNplAIKbLU.png", alt="An iPhone and a MacBook side by side, both running the Podcasts application.", width="800", height="617" %}
-  <figcaption class="w-figcaption">Apple Podcasts on iPhone and on macOS (<a href="https://support.apple.com/en-us/HT201859">Source</a>).</figcaption>
+  <figcaption>Apple Podcasts on iPhone and on macOS (<a href="https://support.apple.com/en-us/HT201859">Source</a>).</figcaption>
 </figure>
 
 {% Aside 'caution' %}
@@ -35,9 +35,9 @@ or functionalities. Be sure to carefully review the compatibility notes in the l
 
 If you take a step back and think of some of the platform-specific applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMbGLQkbLROxmUMdxLET.png", alt="The Podcasts app showing a 'Cannot connect right now.' info message when no network connection is available.", width="800", height="440" %}
-  <figcaption class="w-figcaption">Podcasts app without network connection.</figcaption>
+  <figcaption>Podcasts app without network connection.</figcaption>
 </figure>
 
 {% Details %}
@@ -56,9 +56,9 @@ If you take a step back and think of some of the platform-specific applications 
 While offline, via the left-hand drawer, I can still navigate to the **Downloaded** section and enjoy downloaded podcast episodes that are ready to be played
 and are displayed with all metadata like artwork and descriptions.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="Podcasts app with a downloaded episode of a podcast playing.", width="800", height="440" %}
-  <figcaption class="w-figcaption">Downloaded podcast episodes can be played even without network.</figcaption>
+  <figcaption>Downloaded podcast episodes can be played even without network.</figcaption>
 </figure>
 
 {% Details %}
@@ -79,9 +79,9 @@ and are displayed with all metadata like artwork and descriptions.
 
 When I am back online, I can of course search for content with a query like `http 203`, and when I decide to subscribe to the search result, the [HTTP 203 podcast](/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WbCk4nPpBS3zwkPVRGuo.png", alt="The Podcasts app downloading the latest episode of a podcast immediately after subscribing.", width="800", height="658" %}
-  <figcaption class="w-figcaption">After subscribing to a podcast, the latest episode is immediately downloaded.</figcaption>
+  <figcaption>After subscribing to a podcast, the latest episode is immediately downloaded.</figcaption>
 </figure>
 
 {% Details %}
@@ -97,9 +97,9 @@ When I am back online, I can of course search for content with a query like `htt
 
 The Podcasts app integrates naturally with other applications. For example, when I right-click an episode that I like, I can share it to other apps on my device, like the Messages app. It also naturally integrates with the system clipboard. I can right-click any episode and copy a link to it.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gKeFGOAZ2muuYeDNFbBW.png", alt="The Podcasts app's context menu invoked on a podcast episode with the 'Share Episode > Messages' option selected.", width="800", height="392" %}
-  <figcaption class="w-figcaption">Sharing a podcast episode to the Messages app.</figcaption>
+  <figcaption>Sharing a podcast episode to the Messages app.</figcaption>
 </figure>
 
 {% Details %}
@@ -120,9 +120,9 @@ The Podcasts app integrates naturally with other applications. For example, when
 
 In the Podcasts app's settings, I can configure the app to download new episodes automatically. Like that, I do not even have to think about it, updated content will always just be there. Magic.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iTKgVVjX0EM0RQS3ap4X.png", alt="The Podcasts app's settings menu in the 'General' section where the 'Refresh Podcasts' option is set to 'Every Hour'.", width="800", height="465" %}
-  <figcaption class="w-figcaption">Podcasts configured to check for new podcast episode every hour.</figcaption>
+  <figcaption>Podcasts configured to check for new podcast episode every hour.</figcaption>
 </figure>
 
 {% Details %}
@@ -138,9 +138,9 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 
 At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop and vice versa. The play state is kept in sync, and listened-to episodes are automatically deleted.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uVJJ40Zxi5jx1AP1jd9U.png", alt="The Podcasts app's settings menu in the 'Advanced' section where the 'Sync subscriptions across devices' option is activated.", width="800", height="525" %}
-  <figcaption class="w-figcaption">State is synchronized over the cloud.</figcaption>
+  <figcaption>State is synchronized over the cloud.</figcaption>
 </figure>
 
 {% Details %}
@@ -155,9 +155,9 @@ At the same time, my subscriptions are synchronized across all devices I own. In
 When I am busy with another application, say, reading a news page in the Chrome browser, I can still control the Podcasts app with the media keys on my laptop.
 There is no need to switch to the app just to skip forward or backward.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TqRtzNtfhahjX93hI1P6.png", alt="Apple MacBook Pro Magic Keyboard with annotated media keys.", width="800", height="406" %}
-  <figcaption class="w-figcaption">The media keys allow for controlling the Podcasts app (<a href="https://support.apple.com/guide/macbook-pro/magic-keyboard-apdd0116a6a2/mac">Source</a>).</figcaption>
+  <figcaption>The media keys allow for controlling the Podcasts app (<a href="https://support.apple.com/guide/macbook-pro/magic-keyboard-apdd0116a6a2/mac">Source</a>).</figcaption>
 </figure>
 
 {% Details %}
@@ -168,7 +168,7 @@ There is no need to switch to the app just to skip forward or backward.
   Like that, users can make use of the hardware media keys on their physical keyboards, headphones, or even control the web app
   from the software media keys on their smartwatches.
   An additional idea to smooth seeking operations is to send a
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">vibration pattern</a>
+  <a href="https://developer.mozilla.org/docs/Web/API/Vibration_API">vibration pattern</a>
   when the user seeks over a significant part of the content, for example, passing the opening credits or a chapter boundary.
 {% endDetails %}
 
@@ -176,9 +176,9 @@ There is no need to switch to the app just to skip forward or backward.
 
 Of course I can always multitask back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop or application dock so Podcasts can be launched immediately when I feel like it.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5EzElV5BGweYXLAqF4u.png", alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts app.", width="800", height="630", class="w-screenshot" %}
-  <figcaption class="w-figcaption w-figcaption--fullbleed">Multitasking back to the Podcasts app.</figcaption>
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5EzElV5BGweYXLAqF4u.png", alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts app.", width="800", height="630" %}
+  <figcaption>Multitasking back to the Podcasts app.</figcaption>
 </figure>
 
 {% Details %}
@@ -195,9 +195,9 @@ Of course I can always multitask back to the Podcasts app from anywhere. The app
 
 The most common app actions, **Search** for new content and **Check for New Episodes**, are available right from the context menu of the app in the Dock. Via the **Options** menu, I can also decide to open the app at login time.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SnA6Thz5xaopuTWRzWgQ.png", alt="Podcasts app icon context menu showing the 'Search' and 'Check for New Episodes' options.", width="534", height="736" %}
-  <figcaption class="w-figcaption">Quick actions are immediately available right from the app icon.</figcaption>
+  <figcaption>Quick actions are immediately available right from the app icon.</figcaption>
 </figure>
 
 {% Details %}
@@ -214,9 +214,9 @@ The most common app actions, **Search** for new content and **Check for New Epis
 
 Other iOS applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [`podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903`](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/x8mjOWiMO4CVigvtV8Kg.png", alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.", width="800", height="492" %}
-  <figcaption class="w-figcaption">The Podcasts app can be opened right from the browser.</figcaption>
+  <figcaption>The Podcasts app can be opened right from the browser.</figcaption>
 </figure>
 
 {% Details %}
@@ -225,7 +225,7 @@ Other iOS applications and even websites or emails can integrate with the Podcas
 {% endDetailsSummary %}
   Handling fully custom URL schemes is not yet possible, but there is ongoing work on a proposal for
   <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md">URL Protocol Handling</a>
-  for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
+  for PWAs. Currently, <a href="https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
 {% endDetails %}
 
 ## Local file system integration
@@ -233,9 +233,9 @@ Other iOS applications and even websites or emails can integrate with the Podcas
 You may not immediately think of it, but the Podcasts app naturally integrates with the local file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
 Other storage mechanisms than files are referenced in the [offline content](#offline-content-available-and-media-playable) section.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Og60tp5kB9lVZsi3Prdt.png", alt="The macOS Finder navigated to the Podcasts app's system directory.", width="800", height="337" %}
-  <figcaption class="w-figcaption">Podcast episodes are stored in a special system app folder.</figcaption>
+  <figcaption>Podcast episodes are stored in a special system app folder.</figcaption>
 </figure>
 
 {% Details %}
@@ -253,13 +253,13 @@ Other storage mechanisms than files are referenced in the [offline content](#off
 There is a more subtle thing that is self-evident for an iOS application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <div class="w-columns">
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OApP9uGUje6CkS7cKcZh.png", alt="The Podcasts app in dark mode.", width="800", height="463" %}
-    <figcaption class="w-figcaption">The Podcasts app supports light and dark mode.</figcaption>
+    <figcaption>The Podcasts app supports light and dark mode.</figcaption>
   </figure>
-  <figure class="w-figure">
+  <figure>
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cnVihfFR2anSBlIVfCSW.png", alt="The Podcasts app in light mode.", width="800", height="463" %}
-    <figcaption class="w-figcaption">The app uses the default system font.</figcaption>
+    <figcaption>The app uses the default system font.</figcaption>
   </figure>
 </div>
 
@@ -267,33 +267,33 @@ There is a more subtle thing that is self-evident for an iOS application like Po
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  By leveraging the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"><code>user-select</code></a>
-  CSS property with the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
+  By leveraging the <a href="https://developer.mozilla.org/docs/Web/CSS/user-select"><code>user-select</code></a>
+  CSS property with the value of <a href="https://developer.mozilla.org/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
   you can protect UI elements from being accidentally selected.
   Be sure, though, to not abuse this property for making <em>app contents</em> unselectable.
   It should only be used for UI elements like button texts, etc.
-  The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
-  value for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
+  The <a href="https://developer.mozilla.org/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
+  value for the <a href="https://developer.mozilla.org/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
   specify the default UI font of the system to be used for your app.
   Finally, your app can obey to the user's color scheme preference by respecting their <a href="/prefers-color-scheme/"><code>prefers-color-scheme</code></a> choice, with an optional <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">dark mode toggle</a>
   to override it.
   Another thing to decide on might be what the browser should do when reaching
   the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
-  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
+  This is possible with the <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
 {% endDetails %}
 
 ## Customized title bar
 
 When you look at the Podcasts app window, you notice that it does not have a classic integrated title bar and toolbar, like, for example, the Safari browser window, but a customized experience that looks like a sidebar docked to the main player window.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cB7G2e31JXU71EfvhG3i.png", alt="The Safari browser's integrated tile bar and toolbar.", width="800", height="40" %}
-  <figcaption class="w-figcaption"></figcaption>
+  <figcaption></figcaption>
 </figure>
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mFvLbyQ90wsDPQ9l86s3.png", alt="The Podcasts app's customized split customized title bar.", width="800", height="43" %}
-  <figcaption class="w-figcaption">Customized title bars of Safari and Podcasts.</figcaption>
+  <figcaption>Customized title bars of Safari and Podcasts.</figcaption>
 </figure>
 
 {% Details %}
@@ -310,9 +310,9 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 
 In-app animations are snappy and smooth in Podcasts. For example, when I open the **Episode Notes** drawer on the right, it elegantly slides in. When I remove one episode from my downloads, the remaining episodes float up and consume the screen real estate that was freed by the deleted episode.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ucob9t4Ga3jMK20RVvSD.png", alt="The Podcasts app with the 'Episode Notes' drawer expanded.", width="800", height="463" %}
-  <figcaption class="w-figcaption">In-app animations like when opening a drawer are snappy.</figcaption>
+  <figcaption>In-app animations like when opening a drawer are snappy.</figcaption>
 </figure>
 
 {% Details %}
@@ -322,16 +322,16 @@ In-app animations are snappy and smooth in Podcasts. For example, when I open th
   Performant animations on the web are certainly possible if you take into account a number of best practices
   outlined in the article <a href="https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance">Animations and Performance</a>.
   Scroll animations as commonly seen in paginated content or media carousels can be massively improved by using the <a href="https://developers.google.com/web/updates/2018/07/css-scroll-snap">CSS Scroll Snap</a> feature.
-  For full control, you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a>.
+  For full control, you can use the <a href="https://developer.mozilla.org/docs/Web/API/Web_Animations_API">Web Animations API</a>.
 {% endDetails %}
 
 ## Content surfaced outside of app
 
 The Podcasts app on iOS can surface content in other locations than the actual application, for example, in the system's Widgets view, or in the form of a Siri Suggestion. Having proactive, usage-based calls-to-action that just require a tap to interact with can greatly increase the re-engagement rate of an app like Podcasts.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w8zhRHcKzRfgjXZu7y4h.png", alt="iOS Widget view showing the Podcasts app suggesting a new episode of a podcast.", width="751", height="1511" %}
-  <figcaption class="w-figcaption">App content is surfaced outside of the main Podcasts app.</figcaption>
+  <figcaption>App content is surfaced outside of the main Podcasts app.</figcaption>
 </figure>
 
 {% Details %}
@@ -350,9 +350,9 @@ The Podcasts app on iOS can surface content in other locations than the actual a
 
 When a podcast episode is playing, the Podcasts app shows a beautiful control widget on the lock screen that features metadata like the episode artwork, the episode title, and the podcast name.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Lr9R2zpjDEgHtyJ7hjHf.png", alt="iOS media playback widget on the lock screen showing a podcast episode with rich metadata.", width="751", height="1511" %}
-  <figcaption class="w-figcaption">Media playing in the app can be controlled from the lock screen.</figcaption>
+  <figcaption>Media playing in the app can be controlled from the lock screen.</figcaption>
 </figure>
 
 {% Details %}
@@ -370,9 +370,9 @@ Push notifications have become a bit of an annoyance on the web
 But if used properly, they can add a lot of value.
 For example, the iOS Podcasts app can optionally notify me of new episodes of podcasts I am subscribed to or recommend new ones, as well as alert me of new app features.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IFnNRo6BnHL6BxDmiqF7.png", alt="iOS Podcasts app in the 'Notifications' settings screen showing the 'New Episodes' notifications toggle activated.", width="751", height="1511" %}
-  <figcaption class="w-figcaption">Apps can send push notifications to inform the user about new content.</figcaption>
+  <figcaption>Apps can send push notifications to inform the user about new content.</figcaption>
 </figure>
 
 {% Details %}
@@ -389,9 +389,9 @@ For example, the iOS Podcasts app can optionally notify me of new episodes of po
 
 Whenever there are new episodes available for one of the podcasts I am subscribed to, an app icon badge on the Podcasts home screen icon appears, again encouraging me to re-engage with the app in a way that is not intrusive.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3smO2sJz5oMwy4RYpQoF.png", alt="iOS settings screen showing the 'Badges' toggle activated.", width="751", height="1511" %}
-  <figcaption class="w-figcaption">Badges are a subtle way for applications to inform users about new content.</figcaption>
+  <figcaption>Badges are a subtle way for applications to inform users about new content.</figcaption>
 </figure>
 
 {% Details %}
@@ -408,9 +408,9 @@ Whenever there are new episodes available for one of the podcasts I am subscribe
 When podcast media is playing, the screen may turn off, but the system will not enter standby mode.
 Apps can optionally keep the screen awake, too, for example to display lyrics or captions.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CRkipfmdkLJrND83qvQw.png", alt="macOS Preferences in the 'Energy Saver' section.", width="800", height="573" %}
-  <figcaption class="w-figcaption">Apps can keep the screen awake.</figcaption>
+  <figcaption>Apps can keep the screen awake.</figcaption>
 </figure>
 
 {% Details %}
@@ -426,9 +426,9 @@ Apps can optionally keep the screen awake, too, for example to display lyrics or
 While the Podcasts app is part of the macOS desktop experience, on iOS it needs to be installed from the App Store.
 A quick search for `podcast`, `podcasts`, or `apple podcasts` immediately turns the app up in the App Store.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZLr5quaQWA9VJGAHNrLd.png", alt="iOS App Store search for 'podcasts' reveals the Podcasts app.", width="751", height="1511" %}
-  <figcaption class="w-figcaption">Users have learned to discover apps in app stores.</figcaption>
+  <figcaption>Users have learned to discover apps in app stores.</figcaption>
 </figure>
 
 {% Details %}
@@ -446,7 +446,7 @@ A quick search for `podcast`, `podcasts`, or `apple podcasts` immediately turns 
 
 The table below shows a compact overview of all features and provides a list of useful resources for realizing them on the web.
 
-<div class="w-table-wrapper">
+<div class="table-wrapper">
   <table>
     <thead>
       <tr>
@@ -576,7 +576,7 @@ The table below shows a compact overview of all features and provides a list of 
             </li>
             <li>
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"
+                href="https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler"
                 ><code>registerProtocolHandler()</code></a
               >
             </li>
@@ -602,12 +602,12 @@ The table below shows a compact overview of all features and provides a list of 
           <ul>
             <li>
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"
+                href="https://developer.mozilla.org/docs/Web/CSS/user-select#Syntax:~:text=none,-The"
                 ><code>user-select: none</code></a
               >
             </li>
             <li>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"
+              <a href="https://developer.mozilla.org/docs/Web/CSS/font-family"
                 ><code>font-family: system-ui</code></a
               >
             </li>
@@ -651,7 +651,7 @@ The table below shows a compact overview of all features and provides a list of 
               >
             </li>
             <li>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+              <a href="https://developer.mozilla.org/docs/Web/API/Web_Animations_API"
                 >Web Animations API</a
               >
             </li>
@@ -749,7 +749,7 @@ This article was reviewed by
 [Joe Medley](/authors/joemedley/),
 [Joshua Bell](https://github.com/inexorabletash),
 [Dion Almaer](https://blog.almaer.com/),
-[Ade Oshineye](http://www.oshineye.com/),
+[Ade Oshineye](https://blog.oshineye.com/),
 [Pete LePage](/authors/petelepage/),
 [Sam Thorogood](/authors/samthor/),
 [Reilly Grant](https://github.com/reillyeon),

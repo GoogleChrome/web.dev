@@ -41,8 +41,6 @@ declare global {
      */
     data: {
       authorsData: AuthorsData;
-      resourceCSS: TODO;
-      resourceJS: TODO;
       tagsData: TagsData;
       paths: TODO;
       countries: TODO;
@@ -75,11 +73,13 @@ declare global {
         url: string;
         outputPath: string;
       };
+      renderData?: {
+        [key: string]: TODO;
+      };
+      pagination?: {
+        [key: string]: TODO;
+      };
       collections: TODO;
-      /**
-       * Tells Algolia not index this page.
-       */
-      disable_algolia?: boolean;
       /**
        * Hero image of page.
        */
@@ -91,7 +91,7 @@ declare global {
       /**
        * Tells search engines not to index page (this includes algolia)
        */
-      noindex?: boolean;
+      noindex?: boolean|string;
       /**
        * When the post was last updated.
        */
@@ -100,6 +100,18 @@ declare global {
        * If post is a draft.
        */
       draft?: boolean;
+      /**
+       * If the post should be excluded from /authors/ pages.
+       */
+      excludeFromAuthors?: boolean;
+      /**
+       * If the post should be excluded from /tags/ pages.
+       */
+      excludeFromTags?: boolean;
+      /**
+       * How Algolia should prioritize a page. 1 is average, higher is better.
+       */
+      algolia_priority: number;
     };
     /**
      * The rendered content of this template. This does not include layout wrappers.

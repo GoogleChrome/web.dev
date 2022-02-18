@@ -1,0 +1,17 @@
+share-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  color: var(--color-mid-text);
+
+  &:hover {
+    filter: invert(0.05);
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    transform: translateY(-0.05ex); // optical adjustment
+  }
+}

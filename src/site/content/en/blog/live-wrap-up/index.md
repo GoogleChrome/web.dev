@@ -51,7 +51,7 @@ Vitals](/vitals/#core-web-vitals) metrics as its foundation.
 The three pillars of the 2020 Core Web Vitals are loading, interactivity, and visual stability of
 page content, which are captured by the following metrics:
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/kzOdl2pRyEEPEQI0U2lQ.png", alt="An illustration of the Core Web Vitals.", width="800", height="232" %}
 </figure>
 
@@ -83,8 +83,8 @@ We designed a suite of tests to determine which build tools allow you to follow
 web development best practices. We worked with the build tool authors to
 make sure we used their tools correctly and represented them fairly.
 
-<figure class="w-figure">
-  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", class="w-screenshot" %}
+<figure>
+  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316" %}
 </figure>
 
 The initial release of tooling.report covers webpack v4, Rollup v2, Parcel v2, and Browserify with Gulp,
@@ -187,8 +187,8 @@ critical issues to start with: [cookie problems](/samesite-cookies-explained),
 and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and fixing
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 
-<figure class="w-figure">
-  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535" %}
 </figure>
 
 Moreover, with the [Core Web Vitals](/vitals/#core-web-vitals) becoming one of the
@@ -203,8 +203,8 @@ emulate blurred vision and other types of vision deficiencies. You
 can learn more about this and many other features in the [What's new in
 DevTools](https://youtu.be/6yrJZHqJe2k) session.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3gTvVdPvTN3IUyhSN8gn.png", alt="A screenshot of the vision deficiencies emulator.", width="800", height="509", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3gTvVdPvTN3IUyhSN8gn.png", alt="A screenshot of the vision deficiencies emulator.", width="800", height="509" %}
 </figure>
 
 ### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
@@ -236,8 +236,8 @@ And finally, Lighthouse added a bunch of [new
 audits](/lighthouse-whats-new-6.0/#new-audits), with a focus on JavaScript analysis
 and accessibility.
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qAVFUVHR7Ad0tm05J1d3.png", alt="A list of the new audits.", width="800", height="450", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qAVFUVHR7Ad0tm05J1d3.png", alt="A list of the new audits.", width="800", height="450" %}
 </figure>
 
 Learn more by watching the [What's new in speed tooling](https://youtu.be/yDHfrhCGFQw)

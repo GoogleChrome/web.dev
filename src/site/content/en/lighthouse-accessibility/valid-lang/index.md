@@ -22,8 +22,8 @@ to ensure that the section in the new language is pronounced correctly.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags elements that have a `lang` attribute with an invalid value:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0nINILzsfWRPuAtqiExn.png", alt="Lighthouse audit showing elements with an invalid value for the lang attribute", width="800", height="206", class="w-screenshot" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0nINILzsfWRPuAtqiExn.png", alt="Lighthouse audit showing elements with an invalid value for the lang attribute", width="800", height="206" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

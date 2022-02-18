@@ -55,8 +55,6 @@ const initialState = {
   showingSnackbar: false,
   snackbarType: null,
 
-  userPreferredLanguage: '',
-
   // Used to override the current time for web.dev/LIVE testing.
   timeOffset,
 

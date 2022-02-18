@@ -1,0 +1,56 @@
+setLeader: Test your knowledge of overflow
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Text overflow and element overflow are the same?
+    options:
+      - content: "true"
+        rationale: "Text overflow is special when compared
+        to element overflow."
+      - content: "false"
+        rationale: "Text overflow is generally about inline overflow, 
+        where element overflow is about block overflow."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: "The `overflow` property accepts 2 keywords,
+        the first keyword is for which axis?"
+    options:
+      - content: "horizontal"
+        rationale: "🎉"
+      - content: "vertical"
+        rationale: "Almost always, when passing two shorthand values,
+        the first is horizontal."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "Which space in the box model do scrollbars
+    consume when showing and inline?"
+    options:
+      - content: "content box"
+        rationale: "Try again!"
+      - content: "padding box"
+        rationale: "Scrollbars in `overlay` mode will overlap the padding, 
+        and when in `inline` mode will add to the padding."
+      - content: "border box"
+        rationale: "Try again!"
+      - content: "margin box"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "To trap extra momentum from scrolling in a
+    nested implicit scroller, which property would you use?"
+    options:
+      - content: "`scroll-behavior`"
+        rationale: "Try again!"
+      - content: "`scroll-hint`"
+        rationale: "Try again!"
+      - content: "`overscroll-behavior`"
+        rationale: "Setting this property to `contain` will trap scrolling."
+      - content: "`scroll-padding`"
+        rationale: "Try again!"
+      - content: "`overscroll-effect`"
+        rationale: "Try again!"

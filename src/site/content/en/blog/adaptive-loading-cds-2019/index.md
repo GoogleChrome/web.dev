@@ -58,16 +58,16 @@ experience to users' constraints can include:
 The signals you can use for adaptive loading are:
 
 * Network—for fine-tuning data transfer to use less bandwidth (via
-  [`navigator.connection.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType)).
+  [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType)).
   You can also leverage the user's Data Saver preferences (via
   [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data#detecting_the_save-data_setting)).
 
 * Memory—for reducing memory consumption on low-end devices (via
-  [`navigator.deviceMemory`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory)).
+  [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory)).
 
 * CPU core count—for limiting costly JavaScript execution and reducing CPU
   intensive logic when a device can't handle it well (via
-  [`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
+  [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
 
 
 There are two places where you can make a decision about what to serve to users:
@@ -106,10 +106,10 @@ network effective type changes.
 
 React Adaptive Loading Hooks & Utilities are implemented using web platform APIs
 ([Network
-Information](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API),
+Information](https://developer.mozilla.org/docs/Web/API/Network_Information_API),
 [Device Memory](https://developers.google.com/web/updates/2017/12/device-memory)
 and [Hardware
-Concurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
+Concurrency](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
 You can use the same APIs to apply adaptive loading concepts to other frameworks
 and libraries, such as
 [Angular](https://netbasal.com/connection-aware-components-in-angular-3a66bb0bab6f),
@@ -141,11 +141,11 @@ opening your DevTools **Network** panel and looking at the difference in the amo
 of data transferred as you scroll while Save Data is disabled versus when it's
 enabled.
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+  <figure>
+    <video controls autoplay loop muted>
       <source src="https://storage.googleapis.com/web-dev-assets/adaptive-loading-cds-2019/twitter-save-data.mp4" type="video/mp4">
     </video>
-     <figcaption class="w-figcaption">
+     <figcaption>
       A screencast comparing scrolling the Twitter timeline with Data Saver on and off. With Data Saver on, only image previews are loaded and videos don't autoplay.
     </figcaption>
   </figure>
@@ -172,7 +172,7 @@ and limit loading the next image in the carousel to loading images one at a time
 as users swipe. After implementing these optimizations, they've seen significant
 improvements in average swipe count in countries such as Indonesia.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N1xJkEMQ9rE513TNm8va.png", alt="A screenshot of two versions of Tinder chat: with autoplaying video and with a video with play button overlay. A screenshot of a Tinder profile with caption 'Limit carousel images on Data Saver or 3G'. A code snippet for prefetching in-viewport videos only on 4G.", width="800", height="445", style="max-width: 75%" %}
 </figure>
 

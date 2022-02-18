@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 const {html} = require('common-tags');
-const path = require('path');
 const {generateImgixSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
+const {getTranslatedUrls} = require('../../_filters/urls');
 const {findByUrl} = require('../../_filters/find-by-url');
-const {supportedLocales} = require('../../../../shared/locale');
 
-const i18nLocales = supportedLocales.filter((locale) => locale !== 'en');
 const i18nRegex = /i18n\/\w+\//;
 
-module.exports = (locale, page, collections, renderData = {}) => {
+module.exports = (locale, page, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
   const pageData = {
-    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...findByUrl(page.url)?.data,
     ...renderData,
     page,
   };
@@ -62,18 +59,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
 
-    // If the page doesn't have social media images, a hero, or a thumbnail,
-    // fallback to using the site's default thumbnail.
-    // Return a full path to the image using our image CDN.
-    if (!thumbnail) {
-      thumbnail = new URL(site.thumbnail, site.imageCdn);
-    } else {
-      thumbnail = new URL(generateImgixSrc(thumbnail));
-    }
-    thumbnail.searchParams.set('auto', 'format');
-    thumbnail.searchParams.set('fit', 'max');
-    thumbnail.searchParams.set('w', 1200);
-    thumbnail = thumbnail.toString();
+    thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
+      fit: 'max',
+      w: 1200,
+      fm: 'auto',
+    });
 
     return {title, description, thumbnail, alt};
   }
@@ -147,25 +137,20 @@ module.exports = (locale, page, collections, renderData = {}) => {
       : pageUrl;
 
     // Find i18n equivalents of the current url and check if they exist.
-    const langhrefs = i18nLocales
-      .map((locale) => [locale, path.join('/', 'i18n', locale, url)])
-      // Filter out i18n urls that do not have an existing translated file.
-      .filter((langhref) => !!findByUrl(langhref[1]))
-      .map((langhref) => {
-        const href = new URL(langhref[1], site.url).href;
-        return `<link rel="alternate" hreflang="${langhref[0]}" href="${href}" />`;
-      });
-
+    const langhrefs = getTranslatedUrls(pageUrl).map((langhref) => {
+      const href = new URL(langhref[1], site.url).href;
+      return `<link rel="alternate" hreflang="${langhref[0]}" href="${href}" />`;
+    });
     // If some i18n equivalents are found, add also the default language (en).
     if (langhrefs.length) {
       const enHref = new URL(url, site.url).href;
       langhrefs.push(`<link rel="alternate" hreflang="en" href="${enHref}" />`);
     }
-    return langhrefs.join('');
+    return langhrefs.join('\n');
   }
 
   function renderCanonicalMeta() {
-    return html` <link rel="canonical" href="${canonical}" /> `;
+    return html` <link rel="canonical" href="${canonical}" />`;
   }
 
   function renderRSS() {

@@ -5,8 +5,9 @@ subhead: What it takes to change icons, shortcuts, colors, and other metadata fo
 authors:
   - petelepage
   - ajara
+  - beaufortfrancois
 date: 2020-10-14
-updated: 2021-04-05
+updated: 2021-10-26
 description: What it takes to change icons, shortcuts, colors, and other metadata in your web app manifest for your PWA.
 tags:
   - progressive-web-apps
@@ -51,6 +52,7 @@ Once installed, all fields from the new manifest (except `name`, `short_name`,
 * `scope`
 * `shortcuts`
 * `theme_color`
+* `file_handlers`
 
 {% Aside 'caution' %}
 Changes to `name`, `short_name`, `icons` and `start_url` are **not**
@@ -70,15 +72,17 @@ preference is always respected.
 
 ### Testing manifest updates {: #cr-desktop-test }
 
-The `chrome://internals/web-app` page (available in Chrome 85 or later),
+The `about://internals/web-app` page (available in Chrome 85 or later),
 includes detailed information about all of the PWAs installed on the device,
 and can help you understand when the manifest was last updated, how often
 it's updated, and more.
 
-To manually force Chrome to check for an updated manifest, restart Chrome
-(use `chrome://restart`), this resets the timer so that Chrome will check for
-an updated manifest when the PWA is next launched. Then launch the PWA.
-After closing the PWA, it should be updated with the new manifest properties.
+To manually force Chrome to check for an updated manifest, you can either launch
+Chrome with the [command line flag][flag] `--disable-manifest-update-throttle`
+or restart Chrome (use `about://restart`), this resets the timer so that Chrome
+will check for an updated manifest when the PWA is next launched. Then launch
+the PWA. After closing the PWA, it should be updated with the new manifest
+properties.
 
 ### References {: #cr-desktop-ref }
 
@@ -118,7 +122,7 @@ on Android Chrome, though work is underway to support them.
 
 ### Testing manifest updates {: #cr-android-test }
 
-The `chrome://webapks` page includes detailed information about all of the
+The `about://webapks` page includes detailed information about all of the
 PWAs installed on the device, and can tell you when the manifest was last
 updated, how often it's updated, and more.
 
@@ -128,7 +132,7 @@ local manifest do the following:
 1. Plug in the device and ensure it's connected to WiFi.
 2. Use the Android task manager to shut down the PWA, then use the App panel
    in Android settings to force stop the PWA.
-3. In Chrome, open `chrome://webapks` and click the "Update" button for the
+3. In Chrome, open `about://webapks` and click the "Update" button for the
    PWA. "Update Status" should change to "Pending".
 4. Launch the PWA, and verify it's loaded properly.
 5. Use the Android task manager to shut down the PWA, then use the App panel
@@ -141,5 +145,6 @@ The PWA usually updates within a few minutes, once the update has completed,
 
 * [`UpdateReason` enum][update-enum] for Chrome on Android
 
+[flag]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags
 [updatable-manifest-doc]: https://docs.google.com/document/d/1twU_yAoTDp4seZMmqrDzJFQtrM7Z60jXHkXjMIO2VpM/preview
 [update-enum]: https://cs.chromium.org/chromium/src/chrome/browser/android/webapk/webapk.proto?l=35

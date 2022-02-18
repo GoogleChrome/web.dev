@@ -120,7 +120,7 @@ want to interact with. We'll be working mobile-first today.
 For our `<div class="stories">` container we want a horizontal scrolling container.
 We can achieve this by:
 
-* Making the container a [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+* Making the container a [Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
 * Setting each child to fill the row track
 * Making the width of each child the width of a mobile device viewport
 
@@ -129,9 +129,9 @@ one, until it's placed all the HTML elements in your markup.
 
 <!-- TODO(kayce): Resize this screenshot so there's less whitespace -->
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/admin/oLbxOrfO2rUqmxnnleXw.png", alt="Chrome and DevTools open with a grid visual showing the full width layout", width="800", height="465" %}
-  <figcaption class="w-figcaption">Chrome DevTools showing grid column overflow, making a horizontal scroller.</figcaption>
+  <figcaption>Chrome DevTools showing grid column overflow, making a horizontal scroller.</figcaption>
 </figure>
 
 Add the following CSS to the bottom of `app/css/index.css`:
@@ -188,8 +188,8 @@ Your app doesn't work yet, but the video below shows what happens when
 scroll snaps to the next story. When disabled, the browser uses its
 default scrolling behavior.
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
   </video>
@@ -342,8 +342,8 @@ The interactions of a Stories component are quite simple to the user: tap on the
 right to go forward, tap on the left to go back. Simple things for users tends
 to be hard work for developers. We'll take care of lots of it, though.
 
-<figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
+<figure>
+  <video playsinline controls autoplay loop muted>
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-desktop-demo.mp4">
   </video>

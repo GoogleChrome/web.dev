@@ -4,7 +4,7 @@ title: What are mini apps?
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-10-28
 description: |
   This chapter introduces the concept of mini apps and provides examples of their look and feel.
 tags:
@@ -18,7 +18,8 @@ tags:
 
 ## Building blocks and compatibility
 
-Mini apps are small (commonly less than 4MB) apps that require a
+Mini apps are small (commonly [2-4&nbsp;MB](https://www.w3.org/2021/10/MiniApp-Overview-breakout.pdf))
+apps that require a
 [super app](/mini-app-super-apps/#for-mini-apps-you-need-super-apps)
 to run. What they have in
 common, independent of the super app, is that they are built with ("dialects" of) the web
@@ -38,9 +39,9 @@ branded 2D barcode for
 scanned with the WeChat super app, the mini app launches directly.
 Other super apps will typically not be able to recognize the barcode.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SOisfOqKQWr0GZZvUaqn.jpg", alt="WeChat-branded 2d barcode.", width="250", height="250" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Scanning this 2d barcode with the WeChat app launches a demo mini app.
   </figcaption>
 </figure>
@@ -62,9 +63,9 @@ favorites list or the home screen, reporting abusive apps, providing feedback, a
 screenshot below shows a shopping mini app running in the context of the Alipay super app with the
 action menu opened.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PkjzF8AyxDVIAMZmhVrr.jpg", alt="The Alipay super app running a shopping mini app with highlighted top bar, action menu button, and close button. The action menu is opened.", width="300", height="649" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Opened action menu of a shopping mini app running in the Alipay super app.
   </figcaption>
 </figure>
@@ -80,9 +81,9 @@ This is similar to what Apple incentivizes with its
 [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/),
 and Google with its [Design for Android](https://developer.android.com/design) recommendations.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nFVCU3HqKERzl7Lops6Q.png", alt="The Douyin demo mini app showcasing the Douyin slider (carousel) component with toggles for auto-advance, dot indicators, etc.", width="300", height="617" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Douyin's slider (carousel) component with various options.
   </figcaption>
 </figure>
@@ -106,9 +107,9 @@ page of the mini app, so deep-linking into specific pages of mini apps is possib
 mini apps can declare which of their pages should be indexable by the super app provider's mini app
 crawler.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZKLNvNnm3Rr6aBmYbons.png", alt="macOS Finder showing a folder containing cached WeChat mini app `.wxapkg` files.", width="800", height="465" %}
-  <figcaption class="w-figure">
+  <figcaption>
     Mini apps are cached as encrypted packaged apps.
   </figcaption>
 </figure>
@@ -133,13 +134,13 @@ as it asks the user for permission to share their location. In some super apps, 
 imperative API that mini apps can leverage to request permissions without immediately using them, or
 to only check the status of a permission. This may even include an API to open the central super app
 permission settings, which corresponds to
-[Chrome's _Site Settings_](chrome://settings/content/siteDetails?site=https%3A%2F%2Fexample.com%2F).
+[Chrome's _Site Settings_](about://settings/content/siteDetails?site=https%3A%2F%2Fexample.com%2F).
 Mini apps also have to declare beforehand the origins of all servers that they potentially will
 request data from.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8To8DiUqnP4qqFfpPNqk.png", alt="The Douyin demo mini app showing a geolocation prompt with two options: 'Not Allowed' and 'Allowed'.", width="300", height="617" %}
-  <figcaption class="w-figure" >
+  <figcaption>
     The Douyin demo mini app asking for the geolocation permission.
   </figcaption>
 </figure>
@@ -161,9 +162,9 @@ access, screen brightness control, file system access, vibration hardware for ph
 camera and microphone access, screen recording and screenshot creation, network status, UDP sockets,
 barcode scanning, device memory information, and more.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNEKyoLVeq3IUKGXEZEZ.png", alt="The WeChat demo mini app showing a slider that controls the screen brightness of the device moved all the way to the maximum.", width="300", height="649" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The WeChat demo mini app setting the device's screen brightness to the maximum.
   </figcaption>
 </figure>
@@ -189,9 +190,9 @@ all without ever having to force the user to painfully fill out forms. Below, yo
 Walmart mini app running in WeChat, opened for the very first time, greeting me with a familiar
 face.
 
-<figure class="w-figure">
+<figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HzPx6ZSqQWvsUDT04ex2.png", alt="The Walmart mini app showing the author's face and name on the 'Me' tab.", width="300", height="649" %}
-  <figcaption class="w-figure">
+  <figcaption>
     The Walmart mini app with a personalized "Me" view on the first visit.
   </figcaption>
 </figure>

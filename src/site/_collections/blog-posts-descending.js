@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {livePosts} = require('../_filters/live-posts');
+const {isLive} = require('../_filters/is-live');
 
 /**
  * @param {EleventyCollectionObject} collection
@@ -22,5 +22,5 @@ const {livePosts} = require('../_filters/live-posts');
  */
 module.exports = (collection) => {
   const tag = process.env.PERCY ? 'test-post' : 'blog';
-  return collection.getFilteredByTag(tag).filter(livePosts).reverse();
+  return collection.getFilteredByTag(tag).filter(isLive).reverse();
 };

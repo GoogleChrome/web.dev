@@ -16,8 +16,8 @@ Each metric captures some aspect of page load speed.
 
 The Lighthouse reports displays Estimated Input Latency in milliseconds:
 
-<figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ofvYff7EQ5oDMME20mmF.png", alt="A screenshot of the Lighthouse Estimated Input Latency audit", width="800", height="512", class="w-screenshot w-screenshot--filled" %}
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ofvYff7EQ5oDMME20mmF.png", alt="A screenshot of the Lighthouse Estimated Input Latency audit", width="800", height="512" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -29,7 +29,7 @@ during the busiest 5&nbsp;second window of page load.
 The timing of this audit is from
 [First Meaningful Paint](/first-meaningful-paint)
 to the end of the trace, which is roughly 5&nbsp;seconds after
-[Time to Interactive](/interactive).
+[Time to Interactive](/tti/).
 If your latency is higher than 50&nbsp;ms, users may perceive your app as laggy.
 
 The [RAIL performance model](https://developers.google.com/web/fundamentals/performance/rail)

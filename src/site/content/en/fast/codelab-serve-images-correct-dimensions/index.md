@@ -22,7 +22,7 @@ for most websites, using a tool like Lighthouse to automate this is essential.
 {% Instruction 'audit-performance', 'ol' %}
 1. Look for the results of the **Properly Size Images** audit.
 
-{% Img src="image/admin/rGu0xlOX97DGQlujoHad.png", alt="The properly size images audit failing in Lighthouse.", width="800", height="320", class="w-screenshot" %}
+{% Img src="image/admin/rGu0xlOX97DGQlujoHad.png", alt="The properly size images audit failing in Lighthouse.", width="800", height="320" %}
 
 The Lighthouse audit shows that both of this page's images need to be resized.
 
@@ -32,7 +32,7 @@ Start at the top of the page and fix the logo image.
 
 - Inspect `flower_logo.png` in the DevTools Elements panel.
 
-{% Img src="image/admin/W7Ig8iyp6dKpQyNkJX3S.png", alt="The DevTools elements panel", width="800", height="316", class="w-screenshot" %}
+{% Img src="image/admin/W7Ig8iyp6dKpQyNkJX3S.png", alt="The DevTools elements panel", width="800", height="316" %}
 
 This is the CSS for `flower_logo.png`:
 
@@ -62,7 +62,7 @@ Next, fix the photo of the purple flowers.
 
 - Inspect `flower_photo.jpg` in the DevTools elements panel.
 
-{% Img src="image/admin/zGpgvrz00hsMHKYvQoyU.png", alt="The DevTools elements panel", width="800", height="275", class="w-screenshot" %}
+{% Img src="image/admin/zGpgvrz00hsMHKYvQoyU.png", alt="The DevTools elements panel", width="800", height="275" %}
 
 This is the CSS for `flower_photo.jpg`:
 
@@ -76,7 +76,7 @@ This is the CSS for `flower_photo.jpg`:
 
 `50vw` sets the CSS width of `flower_photo.jpg` to "half the width of
 the browser."
-([1vw](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+([1vw](https://developer.mozilla.org/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
 is equal to 1% the width of the browser).
 
 The ideal size for this image would depend on the device it is being viewed on,
@@ -84,7 +84,7 @@ so you should resize it to a size that works well for most of your users. You
 can check your analytics data to learn which screen resolutions are common
 amongst your users:
 
-{% Img src="image/admin/6j3106xF9uxWCZGh7PrL.png", alt="Google analytics of screen resolutions.", width="684", height="865", class="w-screenshot" %}
+{% Img src="image/admin/6j3106xF9uxWCZGh7PrL.png", alt="Google analytics of screen resolutions.", width="684", height="865" %}
 
 This data indicates that 95%+ of the visitors to this site use screen
 resolutions 1920 pixels wide or less.
@@ -118,7 +118,7 @@ for when you only care about an image's dimensions in one direction.
 - Re-run the Lighthouse Performance audit to verify that you have successfully
 re-sized the images.
 
-{% Img src="image/admin/ShzwI5v2hLhHR7CGDRqV.png", alt="Lighthouse properly size images audit.", width="800", height="271", class="w-screenshot" %}
+{% Img src="image/admin/ShzwI5v2hLhHR7CGDRqV.png", alt="Lighthouse properly size images audit.", width="800", height="271" %}
 
 … And it fails! Why is that?
 
