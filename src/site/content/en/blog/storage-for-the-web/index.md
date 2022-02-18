@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2021-02-11
+updated: 2022-02-18
 tags:
   - blog
   - progressive-web-apps
