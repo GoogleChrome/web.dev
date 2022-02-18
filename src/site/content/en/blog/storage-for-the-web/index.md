@@ -122,7 +122,8 @@ to allow it to store up to 100MB, then ask again at 50MB increments.
 
 Today, most modern browsers will not prompt the user, and will allow a site
 to use up to its allotted quota. The exception appears to be Safari, which
-prompts at 750MB, asking permission to store up to 1.1GB. If an origin
+prompts when the storage quota is exceeded, requesting permission to increase
+the allocated quota. If an origin
 attempts to use more than its allotted quota, further attempts to write data
 will fail.
 
