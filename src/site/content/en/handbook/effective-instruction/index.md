@@ -23,7 +23,7 @@ often referenced on the site (for example, instructions about opening Glitch or
 Chrome DevTools). This approach provides a consistent user experience and makes
 it easy to update instructions across the site when needed.
 
-## Inclusive instruction.
+## Inclusive instruction
 
 Be mindful of [voice](/handbook/voice). To avoid alienating your readers, try to
 strike a balance between showing expertise and humility.
