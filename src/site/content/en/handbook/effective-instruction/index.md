@@ -36,6 +36,9 @@ Our readers have different educational backgrounds and experiences. A person may
 be an expert of their own industry but not know anything about the topic
 discussed in an article.
 
+Learn more about [inclusion and
+accessibility](handbook/inclusion-and-accessibility).
+
 ## Test and seek feedback
 
 To write the best instructions, it's important to test your steps and seek
