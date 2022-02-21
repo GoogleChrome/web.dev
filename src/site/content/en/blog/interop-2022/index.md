@@ -114,14 +114,14 @@ Browser vendors and other stakeholders will collaborate on improving the tests a
 
 ## Measuring success and tracking progress
 
-{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/YSLThucidlfsbtruHrkK.png", alt="The scores per browser - 72 for Chrome and Edge, 74 for Firefox, 72 for Safari Technology Preview.", width="800", height="366" %}
+{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/MfdXmrXC3aspp2CIQCdb.png", alt="The scores per browser - 71 for Chrome and Edge, 74 for Firefox, 73 for Safari Technology Preview.", width="800", height="374" %}
 
 The existing [web-platform-tests dashboard](https://wpt.fyi/) will be used to track the progress in the 15 focus areas. For each area, a set of tests have been identified. Browsers are then scored against these tests, giving a score for each area and an overall score for all 15 areas.
 
 To follow along and track the progress, check out the [Interop 2022 dashboard](https://wpt.fyi/interop-2022). Over the course of the year, you can follow along and see how the platform you build for is improving. 
 
 <figure>
-  {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/FWFA2iKpQqJc3KpEHIij.png", alt="An image of a table with scores for many areas for all major web browsers", width="800", height="530" %}
+  {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/jrtdwPgBhznFQ5u8cZmk.png", alt="An image of a table with scores for many areas for all major web browsers", width="800", height="1146" %}
   <figcaption><a href="https://wpt.fyi/interop-2022">See all browser scores per focus area on wpt.fyi/interop-2022.</a></figcaption> 
 </figure>
 
