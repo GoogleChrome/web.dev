@@ -24,17 +24,17 @@ For the first time ever, all major browser vendors, and other stakeholders, have
 
 ## It all started in 2019
 
-Back in 2019 Mozilla, Google and others started [a major effort](https://insights.developer.mozilla.org/) to understand developers’ pain points, in the form of the [MDN Developer Needs Assessment surveys](https://insights.developer.mozilla.org/), and the deep-dive [Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html). These reports gave us detailed and actionable information to address top challenges for developers with the web platform, and led to the [Compat 2021 effort](https://web.dev/compat2021/).
+Back in 2019 Mozilla, Google and others started [a major effort](https://insights.developer.mozilla.org/) to understand developers’ pain points, in the form of the [MDN Developer Needs Assessment surveys](https://insights.developer.mozilla.org/), and the deep-dive [Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html). These reports gave us detailed and actionable information to address top challenges for developers with the web platform, and led to the [Compat 2021 effort](/compat2021/).
 
 Among other things, Compat 2021 led to creating a solid foundation for powerful features such as [CSS Grid](https://wpt.fyi/compat2021?feature=css-grid) ([12% usage and steadily growing](https://chromestatus.com/metrics/feature/timeline/popularity/1693)) and [CSS flexbox](https://wpt.fyi/compat2021?feature=css-flexbox) ([77% usage](https://chromestatus.com/metrics/feature/timeline/popularity/1692)), including the `gap` property in flexbox, which solves a top paint point for developers when adopting new layout methods.
 
-We were delighted to reach [a score of over 90%](https://web.dev/compat2021-holiday-update/) across all implementations at the end of 2021!
+We were delighted to reach [a score of over 90%](/compat2021-holiday-update/) across all implementations at the end of 2021!
 
 ## What is Interop 2022?
 
 Interop 2022 is a benchmark, agreed on by representatives of three major browser implementations, and developed through a process of [public nomination](https://github.com/web-platform-tests/interop-2022/labels/proposal) and review with input from [supporters](https://github.com/web-platform-tests/interop-2022/blob/main/supporters.md) [Apple](https://webkit.org/blog/12288/working-together-on-interop-2022/), [Bocoup](https://bocoup.com/blog/interop-2022), Google, [Igalia](https://igalia.com/2022/02/22/Igalia-and-Interop-2022), [Microsoft](https://aka.ms/microsoft-interop2022) and [Mozilla](https://hacks.mozilla.org/2022/02/interop-2022/).
 
-The benchmark focuses on 15 areas, [identified by developers](https://web.dev/state-of-css-2021/) as being particularly troublesome when they are missing or have compatibility issues across browsers. All browser vendors have agreed to focus on these areas, and everyone involved is excited to get started on making the experience of developing for the web measurably better.
+The benchmark focuses on 15 areas, [identified by developers](/state-of-css-2021/) as being particularly troublesome when they are missing or have compatibility issues across browsers. All browser vendors have agreed to focus on these areas, and everyone involved is excited to get started on making the experience of developing for the web measurably better.
 
 {% Aside %}
 The terms "compatibility" and "interoperability" are typically distinguished by browser vendors, where compat refers to site compat, and interop refers to two or more browsers behaving the same. In that terminology,this effort is about interoperability and so the project has aligned with that naming.
@@ -69,7 +69,7 @@ Additionally, the cross vendor team behind Interop 2022 will collaborate on rese
 
 ### Scrolling
 
-The [2021 Scroll Survey Report](/2021-scroll-survey-report/) confirms that scrolling features and scrolling compatibility are difficult to implement and have many areas for improvement. We’ll focus on [scroll snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap), [scroll-behavior](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior), and [overscroll-behavior](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) to help scrolling be more consistent and smooth across platforms.
+The [2021 Scroll Survey Report](/2021-scroll-survey-report/) confirms that scrolling features and scrolling compatibility are difficult to implement and have many areas for improvement. We’ll focus on [scroll snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap), [scroll-behavior](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior), and [overscroll-behavior](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) to help scrolling be more consistent and smooth across platforms.
 
 We are also exploring new [scroll snap feature proposals](https://github.com/argyleink/ScrollSnapExplainers). 
 
@@ -132,7 +132,7 @@ In essence, the goal is to make the web platform more usable and reliable for de
 
 ## Let us know what you think
 
-If you have feedback on the improvements made during [Compat 2021](https://web.dev/compat2021/), or on any of the features included in Interop 2022, we would love to hear from you. Which of these features will make the most difference to your work? What are you really excited about? [File issues for the GitHub repo](https://github.com/web-platform-tests/interop-2022/issues/) or [let us know on Twitter](https://twitter.com/chromiumdev).
+If you have feedback on the improvements made during [Compat 2021](/compat2021/), or on any of the features included in Interop 2022, we would love to hear from you. Which of these features will make the most difference to your work? What are you really excited about? [File issues for the GitHub repo](https://github.com/web-platform-tests/interop-2022/issues/) or [let us know on Twitter](https://twitter.com/chromiumdev).
 
 More about Interop 2022 from:
 
