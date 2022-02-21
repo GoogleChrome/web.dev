@@ -12,7 +12,6 @@ authors:
 hero: "image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/xv75zUKa4jUR2xGMZ7Xb.jpg"
 alt: "A picture of a brick wall."
 date: 2022-02-16
-updated: 2022-02-16
 tags:
   - blog
   - css
