@@ -112,7 +112,7 @@ Browser vendors and other stakeholders will collaborate on improving the tests a
 
 ## Measuring success and tracking progress
 
-{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/YSLThucidlfsbtruHrkK.png", alt="An image showing scores per browser", width="800", height="366" %}
+{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/YSLThucidlfsbtruHrkK.png", alt="The scores per browser - 72 for Chrome and Edge, 74 for Firefox, 72 for Safari Technology Preview.", width="800", height="366" %}
 
 The existing [web-platform-tests dashboard](https://wpt.fyi/) will be used to track the progress in the 15 focus areas. For each area, a set of tests have been identified. Browsers are then scored against these tests, giving a score for each area and an overall score for all 15 areas.
 
