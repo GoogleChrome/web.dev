@@ -61,7 +61,7 @@ These functions support expanded color spaces (LAB, LCH, and P3), in addition to
 
 Difficulties dealing with viewport sizing are prominent in both the [MDN Browser Compatibility Report 2020](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html#findings-viewport) and the new [State of CSS 2021](https://2021.stateofcss.com/en-US/opinions/#browser_interoperability_features) survey. [CSS Values and Units Level 4](https://drafts.csswg.org/css-values-4/#viewport-relative-lengths) adds new units for the largest, smallest, and dynamic viewport sizes, `lv*`, `sv*`, and `dv*`. These units will make it easier to create layouts that fill the visible viewport on mobile devices while taking the address bar into account.
 
-{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/JUvvIgXen1zmHFH53CBS.png", alt="AN image showing the different parts of the viewport for each type of viewport unit", width="800", height="664" %}
+{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/JUvvIgXen1zmHFH53CBS.png", alt="The different parts of the viewport for each type of viewport unit.", width="800", height="664" %}
 
 Additionally, the cross vendor team behind Interop 2022 will collaborate on researching and improving the state of interoperability of existing viewport measurement features, including the existing `vh` unit.
 
