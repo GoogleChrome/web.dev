@@ -80,7 +80,6 @@ For example, the following three card components have a header and footer aligne
 
 {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/QIrr5x5M7qCIo8rHMpOC.png", alt="A picture of a three card component where the headers and footers are aligned between the cards", width="800", height="205" %}
 
-Codepen: [https://codepen.io/rachelandrew/pen/yLzgowp](https://codepen.io/rachelandrew/pen/yLzgowp)
 
 ### Also included
 
