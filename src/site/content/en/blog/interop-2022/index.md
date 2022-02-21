@@ -122,7 +122,7 @@ To follow along and track the progress, check out the [Interop 2022 dashboard](h
 
 ## What will all this mean for developers?
 
-The goal of these multi-year interoperability efforts, in the form of Compat 2021, Interop 2022 and much more, is to fully acknowledge and address the pain points developers have experienced through for many years. And it’s not a one-browser effort but rather a strong collaboration between all major browser vendors and friends for improving the web platform across the board.
+The goal of these multi-year interoperability efforts, in the form of Compat 2021, Interop 2022 and much more, is to fully acknowledge and address the pain points developers have experienced through for many years. And it's not a one-browser effort but rather a strong collaboration between all major browser vendors and friends for improving the web platform across the board.
 
 In essence, the goal is to make the web platform more usable and reliable for developers, so that they can spend more time building great web experiences instead of working around browser inconsistencies.
 
