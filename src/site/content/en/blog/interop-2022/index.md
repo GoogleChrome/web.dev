@@ -103,7 +103,7 @@ The following areas made great progress through the Compat 2021 project, but the
 
 In addition to the 15 focus areas, Interop 2022 includes three investigation efforts. These are areas that are problematic and need improvement, but where the current state of the specifications or tests aren’t yet good enough to be able to score progress using test results:
 
-- Editing, contenteditable and execCommand
+- Editing, `contenteditable` and `execCommand`
 - Pointer and Mouse Events
 - Viewport Measurement
 
