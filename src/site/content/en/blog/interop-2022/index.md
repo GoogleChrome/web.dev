@@ -117,7 +117,10 @@ The existing [web-platform-tests dashboard](https://wpt.fyi/) will be used to tr
 
 To follow along and track the progress, check out the [Interop 2022 dashboard](https://wpt.fyi/interop-2022). Over the course of the year, you can follow along and see how the platform you build for is improving. 
 
-{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/FWFA2iKpQqJc3KpEHIij.png", alt="An image of a table with scores for many areas for all major web browsers", width="800", height="530" %}
+<figure>
+  {% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/FWFA2iKpQqJc3KpEHIij.png", alt="An image of a table with scores for many areas for all major web browsers", width="800", height="530" %}
+  <figcaption><a href="https://wpt.fyi/interop-2022">See all browser scores per focus area on wpt.fyi/interop-2022.</a></figcaption> 
+</figure>
 
 ## What will all this mean for developers?
 
