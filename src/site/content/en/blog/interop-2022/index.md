@@ -67,7 +67,7 @@ Additionally, the cross vendor team behind Interop 2022 will collaborate on rese
 
 ### Scrolling
 
-The [2021 Scroll Survey Report](/2021-scroll-survey-report/) confirms that scrolling features and scrolling compatibility are difficult to implement and have many areas for improvement. We’ll focus on [scroll snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap), [scroll-behavior](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior), and [overscroll-behavior](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) to help scrolling be more consistent and smooth across platforms.
+The [2021 Scroll Survey Report](/2021-scroll-survey-report/) confirms that scrolling features and scrolling compatibility are difficult to implement and have many areas for improvement. We'll focus on [scroll snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap), [scroll-behavior](https://developer.mozilla.org/docs/Web/CSS/scroll-behavior), and [overscroll-behavior](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) to help scrolling be more consistent and smooth across platforms.
 
 We are also exploring new [scroll snap feature proposals](https://github.com/argyleink/ScrollSnapExplainers). 
 
