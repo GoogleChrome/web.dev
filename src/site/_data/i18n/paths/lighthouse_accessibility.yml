@@ -26,6 +26,9 @@ overview:
   zh: 这些检查能够突出可以改进您的 Web 应用无障碍功能的机会。只有一部分无障碍功能问题可以被自动检测到，所以我们也鼓励您进行人工测试。
 
 topics:
+  a11y_overview:
+    en: Accessibility Overview
+
   audit_scoring:
     en: Audit scoring
     es: Puntuación de la auditoría
