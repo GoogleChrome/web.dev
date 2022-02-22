@@ -6,7 +6,7 @@ hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2021-10-26
+updated: 2022-02-22
 tags:
   - metrics
   - performance
@@ -165,6 +165,8 @@ documentation for complete
 import {getCLS, getFID, getLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
+  if (navigator.doNotTrack === "1") return
+
   const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
