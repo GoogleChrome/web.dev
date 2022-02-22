@@ -508,7 +508,7 @@ To stop preloaded resources from competing with other critical resources, you co
 <link rel="preload" href="/js/script.js" as="script" importance="low">
 
 <!-- Preload CSS and hero images without blocking other resources -->
-<link rel="preload" as="style" href="theme.css" importance="low" onload="this.rel=stylesheet">
+<link rel="preload" as="style" href="theme.css" importance="low" onload="this.rel='stylesheet'">
 ```
 
 #### Reprioritize scripts
