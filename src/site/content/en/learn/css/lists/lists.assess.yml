@@ -34,7 +34,7 @@ questions:
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "0,2,4"
-    stem: "Which two styles in this list will not apply styles to a ::marker?"
+    stem: "Which two styles in this list will apply styles to a ::marker?"
     options:
       - content: "`transition`"
         rationale: "Correct!"
