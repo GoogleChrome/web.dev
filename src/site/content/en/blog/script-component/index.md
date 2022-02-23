@@ -39,7 +39,6 @@ While there are [best practices](/fast/#optimize-your-third-party-resources) to 
 * Newer third-party libraries are introduced frequently.
 * Varying business requirements related to the same third-party makes it difficult for developers to standardize its use.
 
-
 ## Aurora’s focus on third-party scripts
 
 Part of Aurora's [collaboration](/introducing-aurora/#aurora:-a-collaboration-between-chrome-and-open-source-web-frameworks-and-tools) with open source web frameworks and tools is to provide strong defaults and opinionated tooling to help developers improve aspects of the user experience such as performance, accessibility, security, and mobile readiness. In 2021, we were focused on helping framework stacks improve user experience and their [Core Web Vitals](/vitals/) metrics. 
