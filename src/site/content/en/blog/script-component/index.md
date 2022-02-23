@@ -60,7 +60,7 @@ The [available guidance](/efficiently-load-third-party-javascript/) to reduce th
        <script src="https://example.com/script2.js" async></script> 
     ```
 
-2. Establish early connections to required origins using preconnect and dns-prefetch. This allows critical scripts to start downloading earlier.
+2. [Establish early connections to required origins](/preconnect-and-dns-prefetch/) using preconnect and dns-prefetch. This allows critical scripts to start downloading earlier.
 
     ```html
        <head>
