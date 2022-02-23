@@ -135,8 +135,6 @@ Third-party scripts were added to the commerce app template for the demo as give
 </table>
 </div>
 
-
-
 The following comparison shows the visual progress for both versions of the [Next.js commerce starter-kit](https://demo.vercel.store/). As seen, LCP occurs nearly 1s earlier with the Script component enabled with the right loading strategy.
 
 <figure>
