@@ -53,7 +53,7 @@ To address the issue of main-thread blocking third-party scripts used in an appl
 
 The [available guidance](/efficiently-load-third-party-javascript/) to reduce the impact of render-blocking scripts provides the following methods for efficiently loading and sequencing third-party scripts:
 
-1. Use the `async` or `defer` attribute with `<script>` tags that tell the browser to load non-critical third-party scripts without blocking the document parser. Scripts not required for initial page load or the first user interaction  may be considered non-critical.
+1. Use the `async` or `defer` attribute with `<script>` tags that tell the browser to load non-critical third-party scripts without blocking the document parser. Scripts not required for initial page load or the first user interaction may be considered non-critical.
 
     ```html
        <script src="https://example.com/script1.js" defer></script>
