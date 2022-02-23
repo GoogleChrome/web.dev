@@ -17,7 +17,6 @@ tags:
 
 Around [45%](https://almanac.httparchive.org/en/2021/third-parties#fig-3) of requests from websites served on mobile and desktop are third-party requests of which [33% are scripts](https://almanac.httparchive.org/en/2021/third-parties#fig-9). The size, latency, and loading of third-party scripts can significantly affect a site's performance. The Next.js Script component comes with baked-in best practices and defaults to help developers introduce third-party scripts in their applications while addressing potential performance issues out of the box. 
 
-
 ## Third-party scripts and their impact on performance
 
 [Third-party scripts](/third-party-javascript/) allow web developers to leverage existing solutions to implement common features and reduce development time. But the creators of these scripts typically do not have any incentive to consider the performance impact on the consuming website. These scripts are also a blackbox to developers who use them. 
