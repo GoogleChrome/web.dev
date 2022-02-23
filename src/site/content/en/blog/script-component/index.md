@@ -34,7 +34,7 @@ It's important to consider the resource loading sequence of your page so that cr
 
 While there are [best practices](/fast/#optimize-your-third-party-resources) to reduce the impact of third parties, not everyone may be aware of how to implement them for every third-party they use. This can be complicated because:
 
-* On average, websites use [21 to 23 different third parties](https://almanac.httparchive.org/en/2021/third-parties#fig-4) - including scripts — on mobile and desktop. Usage and recommendations may differ for each.
+* On average, websites use [21 to 23 different third parties](https://almanac.httparchive.org/en/2021/third-parties#fig-4)&mdash;including scripts&mdash;on mobile and desktop. Usage and recommendations may differ for each.
 * Implementing many third-parties can differ based on whether a particular framework or UI library is used. 
 * Newer third-party libraries are introduced frequently.
 * Varying business requirements related to the same third-party makes it difficult for developers to standardize its use.
