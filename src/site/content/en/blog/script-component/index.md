@@ -3,7 +3,6 @@ layout: post
 title: Optimizing third-party script loading in Next.js
 subhead: Understand the vision behind the Next.js’ Script component, which provides a built-in solution to optimize the loading of third-party scripts.
 date: 2022-02-23
-updated: 2021-02-23
 authors:
   - leenasohoni
   - houssein
@@ -156,7 +155,7 @@ Third-party scripts were added to the demo blog app as given below.
     <tbody>
         <tr>
             <td>Google Tag Manager with async</td>
-            <td rowspan="2" >Script component with strategy = lazyonload for each of the four scripts
+            <td rowspan="2">Script component with strategy = lazyonload for each of the four scripts
             </td>
         </tr>
         <tr>
@@ -178,13 +177,11 @@ Third-party scripts were added to the demo blog app as given below.
 
 {% Img src="image/IypihH3o5cSpEMVp5i08dp69otp2/BAWQVlyBX1UUJOMyrBJm.gif", alt="Video showing loading progress with and without the Script component ", width="800", height="306" %}
 
-As seen in the video, FCP occurs at 0.4s on the page without the Script component and 0.9 sec with the Script component. 
-
+As seen in the video, [First Contentful Paint (FCP)](/fcp/) occurs at 0.4 seconds on the page without the Script component and 0.9 seconds with the Script component. 
 
 ## What’s next for the Script component
 
 While the strategy options for `afterInteractive` and `lazyOnload` provide significant control over render-blocking scripts, we are also exploring other options that would increase the utility of the Script component. 
-
 
 ### Using web workers
 
@@ -192,27 +189,23 @@ While the strategy options for `afterInteractive` and `lazyOnload` provide signi
 
 With the current implementation of the Next.js script component, we recommend deferring these scripts on the main thread by setting the strategy to `afterInteractive` or `lazyOnload`. In the future, we propose introducing a new strategy option, `'worker'`, which will allow Next.js to use PartyTown or a custom solution to run scripts on web workers. We welcome comments from developers on this [RFC](https://github.com/vercel/next.js/discussions/31517).
 
-
 ### Minimizing CLS
 
 Third-party embeds like advertisements, video, or social media feed embeds can cause layout shifts when lazy-loaded. This affects the user experience and the [Cumulative Layout Shift (CLS)](/cls/) metric for the page. CLS can be minimized by specifying the size of the container where the embed will load. 
 
-The Script component may be used to load embeds that can cause CLS. We are considering augmenting it to provide configuration options that will help reduce the CLS. This could be made available within the Script component itself or as a companion component.    
-
+The Script component may be used to load embeds that can cause layout shifts. We are considering augmenting it to provide configuration options that will help reduce the CLS. This could be made available within the Script component itself or as a companion component.    
 
 ### Wrapper components
 
-The syntax and loading strategy for including popular third-party scripts such as Google Analytics or Google Tag Manager (GTM) is usually fixed. These can be further encapsulated in individual wrapper components for each type of script. Only a minimal set of application-specific attributes (such as tracking Id) will be available to developers. Wrapper components will help developers by:
+The syntax and loading strategy for including popular third-party scripts such as Google Analytics or Google Tag Manager (GTM) is usually fixed. These can be further encapsulated in individual wrapper components for each type of script. Only a minimal set of application-specific attributes (such as tracking ID) will be available to developers. Wrapper components will help developers by:
 
 1. Making it easier for them to include popular script tags.
 2. Ensuring that the framework uses the most optimal strategy under the hood.
 
-
 ## Conclusion
 
-Third-party scripts are usually created to include specific features in the consuming website. To reduce the impact of non-critical scripts, we recommend deferring them - which the Next.js Script component does by default. Developers have the assurance that included scripts will not delay critical functionality unless they explicitly apply the `beforeInteractive` strategy. Like the Next.js Script component, framework developers can also consider building these features in other frameworks. We are actively exploring landing a similar component with the Nuxt.js team. Based on feedback, we also hope to enhance the [Script component](https://github.com/vercel/next.js/blob/canary/packages/next/client/script.tsx) further to cover additional use cases.
-
+Third-party scripts are usually created to include specific features in the consuming website. To reduce the impact of non-critical scripts, we recommend deferring them&mdash;which the Next.js Script component does by default. Developers have the assurance that included scripts will not delay critical functionality unless they explicitly apply the `beforeInteractive` strategy. Like the Next.js Script component, framework developers can also consider building these features in other frameworks. We are actively exploring landing a similar component with the Nuxt.js team. Based on feedback, we also hope to enhance the [Script component](https://github.com/vercel/next.js/blob/canary/packages/next/client/script.tsx) further to cover additional use cases.
 
 ## Acknowledgments
 
-Thank you to [Kara Erickson](/authors/karaerickson/), [Janicklas Ralph](https://github.com/janicklas-ralph), [Katie Hempenius](/authors/katiehempenius/), [Philip Walton](/authors/philipwalton/), [Jeremy Wagner](/authors/jlwagner/), and [Addy Osmani](/authors/addyosmani/) for their inputs and feedback on this post.  
+Thank you to [Kara Erickson](/authors/karaerickson/), [Janicklas Ralph](https://github.com/janicklas-ralph), [Katie Hempenius](/authors/katiehempenius/), [Philip Walton](/authors/philipwalton/), [Jeremy Wagner](/authors/jlwagner/), and [Addy Osmani](/authors/addyosmani/) for their feedback on this post.  
