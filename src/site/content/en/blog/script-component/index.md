@@ -81,7 +81,7 @@ The Script component builds on the HTML &lt;script&gt; tag and provides an optio
 
 
 ```html
-// example for beforeInteractive
+// Example for beforeInteractive:
 <Script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserverEntry%2CIntersectionObserver" strategy="beforeInteractive" />
 
 // example for afterInteractive (default)
