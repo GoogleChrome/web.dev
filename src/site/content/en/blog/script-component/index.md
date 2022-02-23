@@ -87,7 +87,7 @@ The Script component builds on the HTML &lt;script&gt; tag and provides an optio
 // Example for afterInteractive (default):
 <Script src="https://example.com/samplescript.js" />
 
-// example for lazyonload
+// Example for lazyonload:
 <Script src="https://connect.facebook.net/en_US/sdk.js" strategy="lazyOnload" />
 ```
 
