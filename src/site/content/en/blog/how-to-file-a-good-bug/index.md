@@ -8,7 +8,7 @@ authors:
   - robertnyman
   - petelepage
 date: 2020-06-15
-updated: 2020-06-15
+updated: 2022-02-22
 description: |
   Telling browser vendors about issues you find in their browser,
   on a specific device or platform is an integral part of making
@@ -152,20 +152,20 @@ What steps will reproduce the problem?
 3. Click Install on the browser modal install confirmation.
 ```
 
-And finally, describe the *actual*, and *expected* result.
+And finally, describe the *expected*, and *actual* result.
 
 ```text
-What is the actual result? In the console:
-0. INSTALL: Available (logged when `beforeinstallprompt` event fired)
-1. INSTALL: Success (logged when `appinstalled` event fired)
-2. INSTALL_PROMPT_RESPONSE: {outcome: "accepted", platform: "web"}
-   (logged when beforeinstallprompt.prompt()` resolves)
-
 What is the expected result? In the console:
 0. INSTALL: Available (logged when `beforeinstallprompt` event fired)
 1. INSTALL_PROMPT_RESPONSE: {outcome: "accepted", platform: "web"}
    (logged when beforeinstallprompt.prompt()` resolves)
 2. INSTALL: Success (logged when `appinstalled` event fired)
+
+What is the actual result? In the console:
+0. INSTALL: Available (logged when `beforeinstallprompt` event fired)
+1. INSTALL: Success (logged when `appinstalled` event fired)
+2. INSTALL_PROMPT_RESPONSE: {outcome: "accepted", platform: "web"}
+   (logged when beforeinstallprompt.prompt()` resolves)
 ```
 
 For more information, check out [Bug report writing guidelines][mdn-bug-report]
