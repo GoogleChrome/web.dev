@@ -4,7 +4,7 @@ title: How Progressive Web Apps can drive business success
 authors:
   - sfourault
 date: 2020-05-20
-updated: 2020-05-20
+updated: 2022-02-23
 description: Build a solid business case for your PWA. Learn when you should invest, and how you can measure its success.
 tags:
   - progressive-web-apps
@@ -42,7 +42,7 @@ When doing user research, we find some interesting patterns:
 * Fifty percent of smartphone users are more likely to use a company's mobile
   site when browsing or shopping because they
   [don't want to download an app][twg-shopping].
-* One of the top reasons for uninstalling an app is the
+* One of the top reasons for uninstalling an app is
   [limited storage][twg-uninstall] (whereas an installed PWA usually takes
   less than 1MB).
 * Smartphone users are more likely to purchase from mobile sites that
