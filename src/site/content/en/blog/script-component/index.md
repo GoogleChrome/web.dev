@@ -123,7 +123,7 @@ Third-party scripts were added to the commerce app template for the demo as give
     <tbody>
         <tr>
             <td>Google Tag Manager with async</td>
-            <td rowspan="2" >Script component with strategy = afterInteractive for both scripts
+            <td rowspan="2">Script component with strategy = afterInteractive for both scripts
             </td>
         </tr>
         <tr>
