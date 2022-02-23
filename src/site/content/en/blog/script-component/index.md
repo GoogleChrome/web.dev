@@ -77,7 +77,7 @@ The [available guidance](/efficiently-load-third-party-javascript/) to reduce th
 
 The [Next.js Script component](https://nextjs.org/docs/basic-features/script) implements the above methods for sequencing scripts and provides a template for developers to define their loading strategy. Once the suitable strategy is specified, it will load optimally without blocking other critical resources. 
 
-The Script component builds on the HTML &lt;script> tag and provides an option to set the loading priority for third-party scripts using the strategy attribute.
+The Script component builds on the HTML &lt;script&gt; tag and provides an option to set the loading priority for third-party scripts using the strategy attribute.
 
 
 ```html
