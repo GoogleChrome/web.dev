@@ -97,7 +97,7 @@ The strategy attribute can take three values.
 
 2. **`afterInteractive`**: This is the default strategy applied and is equivalent to loading a script with the defer attribute. It should be used for scripts that the browser can run after the page is interactive&mdash;for example, analytics scripts. Next.js injects these scripts on the client-side, and they run after the page is hydrated. Thus, unless otherwise specified, all third-party scripts defined using the Script component are deferred by Next.js, thereby providing a strong default.  
 
-3. **lazyOnload**: This option may be used to lazy-load low-priority scripts when the browser is idle. The functionality provided by such scripts is not required immediately after the page becomes interactive - for example, chat or social media plug-ins.
+3. **`lazyOnload`**: This option may be used to lazy-load low-priority scripts when the browser is idle. The functionality provided by such scripts is not required immediately after the page becomes interactive&mdash;for example, chat or social media plug-ins.
 
 Developers can tell Next.js how their application uses a script by specifying the strategy. This allows the framework to apply optimizations and best practices to load the script while ensuring the best loading sequence. 
 
