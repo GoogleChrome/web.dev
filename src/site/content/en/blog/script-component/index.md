@@ -175,7 +175,9 @@ Third-party scripts were added to the demo blog app as given below.
 </table>
 </div>
 
-{% Img src="image/IypihH3o5cSpEMVp5i08dp69otp2/BAWQVlyBX1UUJOMyrBJm.gif", alt="Video showing loading progress with and without the Script component ", width="800", height="306" %}
+<figure>
+  {% Img src="image/IypihH3o5cSpEMVp5i08dp69otp2/BAWQVlyBX1UUJOMyrBJm.gif", alt="Video showing loading progress with and without the Script component.", width="800", height="306" %}
+</figure>
 
 As seen in the video, [First Contentful Paint (FCP)](/fcp/) occurs at 0.4 seconds on the page without the Script component and 0.9 seconds with the Script component. 
 
