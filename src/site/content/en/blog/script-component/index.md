@@ -93,7 +93,7 @@ The Script component builds on the HTML &lt;script&gt; tag and provides an optio
 
 The strategy attribute can take three values.
 
-1. **beforeInteractive**: This option may be used for critical scripts that should execute before the page becomes interactive. Next.js ensures that such scripts are injected into the initial HTML on the server and executed before other self-bundled JavaScript. Consent management, bot detection scripts, or helper libraries required to render critical content are good candidates for this strategy.
+1. **`beforeInteractive`**: This option may be used for critical scripts that should execute before the page becomes interactive. Next.js ensures that such scripts are injected into the initial HTML on the server and executed before other self-bundled JavaScript. Consent management, bot detection scripts, or helper libraries required to render critical content are good candidates for this strategy.
 
 2. **afterInteractive**: This is the default strategy applied and is equivalent to loading a script with the defer attribute. It should be used for scripts that the browser can run after the page is interactive - for example, analytics scripts. Next.js injects these scripts on the client-side, and they run after the page is hydrated. Thus, unless otherwise specified, all third-party scripts defined using the Script component are deferred by Next.js, thereby providing a strong default.  
 
