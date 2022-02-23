@@ -101,7 +101,7 @@ The strategy attribute can take three values.
 
 Developers can tell Next.js how their application uses a script by specifying the strategy. This allows the framework to apply optimizations and best practices to load the script while ensuring the best loading sequence. 
 
-{% Aside %}
+{% Aside 'caution' %}
 Since the default strategy used is `afterInteractive`, developers must remember to set the strategy to `beforeInteractive` for scripts necessary for rendering the page.
 {% endAside %}
 
