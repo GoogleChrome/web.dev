@@ -4,6 +4,7 @@ authors:
   - firt
 description: A course that breaks down every aspect of modern progressive web app development.
 date: 2021-11-03
+updated: 2022-02-23
 ---
 
 ## Welcome to Learn Progressive Web Apps!
@@ -35,7 +36,7 @@ Check out [Learn CSS](/learn/css), and the
 [HTML](https://developer.mozilla.org/docs/Learn/HTML) and 
 [JavaScript](https://developer.mozilla.org/docs/Learn/JavaScript) courses on MDN.
 
-**The first three modules are available now**, with the rest to follow soon.
+**The first eight modules are available now**. The rest are in progress.
 
 Here's what you'll learn:
 
