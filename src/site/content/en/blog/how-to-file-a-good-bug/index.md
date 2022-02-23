@@ -8,7 +8,7 @@ authors:
   - robertnyman
   - petelepage
 date: 2020-06-15
-updated: 2021-05-02
+updated: 2022-02-22
 description: |
   Telling browser vendors about issues you find in their browser,
   on a specific device or platform is an integral part of making
