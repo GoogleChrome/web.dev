@@ -9,7 +9,7 @@ authors:
 description: |
   This article discusses the Next.js Script component and demonstrates how it can be used for better sequencing of third-party scripts.
 hero: image/IypihH3o5cSpEMVp5i08dp69otp2/sNDY4XVK4gyGHNKfdyJB.jpeg
-alt: A child arranging Jenga blocks
+alt: A child arranging Jenga blocks.
 tags:
   - blog
 ---
@@ -176,7 +176,7 @@ Third-party scripts were added to the demo blog app as given below.
 </div>
 
 <figure>
-  {% Img src="image/IypihH3o5cSpEMVp5i08dp69otp2/BAWQVlyBX1UUJOMyrBJm.gif", alt="Video showing loading progress with and without the Script component.", width="800", height="306" %}
+  {% Img src="image/IypihH3o5cSpEMVp5i08dp69otp2/BAWQVlyBX1UUJOMyrBJm.gif", alt="Video showing the loading progress for the index page with and without the Script component. There is a 0.5 seconds improvement in FCP with the Script component.", width="800", height="306" %}
 </figure>
 
 As seen in the video, [First Contentful Paint (FCP)](/fcp/) occurs at 0.4 seconds on the page without the Script component and 0.9 seconds with the Script component. 
