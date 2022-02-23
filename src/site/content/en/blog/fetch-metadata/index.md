@@ -27,8 +27,9 @@ It is common for resources exposed by a given web application to only be loaded 
 
 ## Browser compatibility {: #compatibility }
 
-Fetch Metadata request headers are supported as of Chrome 76 and in other Chromium-based browsers, and are under development in Firefox.
-See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site#Browser_compatibility) for up-to-date browser support information.
+Fetch Metadata request headers are supported as of Firefox 90 and as of Chrome 76 in all Chromium-based browsers.
+
+{% BrowserCompat 'http.headers.sec-fetch-site' %}
 
 ## Background
 
@@ -109,7 +110,7 @@ if not req['sec-fetch-site']:
  ```
 
 {% Aside 'caution' %}
-Since Fetch Metadata is only supported in Chromium-based browsers,
+Since Fetch Metadata is not supported in all browsers,
 it should be used as a
 [defense-in-depth protection](https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/Building_Secure_and_Reliable_Systems.pdf#page=181)
 and not as your primary line of defense.
@@ -214,6 +215,7 @@ It's recommended that you test your policy in a side-effect free way by first en
 From our experience of rolling out a Fetch Metadata Resource Isolation Policy at Google, most applications are by default compatible with such a policy and rarely require exempting endpoints to allow cross-site traffic.
 
 ### Enforcing a Resource Isolation Policy
+
 After you've checked that your policy doesn't impact legitimate production traffic, you're ready to enforce restrictions, guaranteeing that other sites will not be able to request your resources and protecting your users from cross-site attacks.
 
 {% Aside 'caution' %}
