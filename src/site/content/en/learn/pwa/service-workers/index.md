@@ -5,6 +5,7 @@ description: >
 authors:
   - firt
 date: 2021-12-03
+updated: 2022-02-23
 ---
 
 Users expect apps to start on slow or flaky network connections, or even when offline.
@@ -56,8 +57,8 @@ In Safari:
 1. Check that an entry with the current origin appears in the submenu. It opens an inspector over the service worker's context.
 
 <figure>
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/QMsYbKeQ6OJSm0FeqFxG.png", alt="Service Worker developer tools on Chrome, Firefox and Safari.", width="800", height="296" %}
-  <figcaption>Service Worker developer tools on Chrome, Firefox and Safari.</figcaption>
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/QMsYbKeQ6OJSm0FeqFxG.png", alt="Service worker developer tools on Chrome, Firefox and Safari.", width="800", height="296" %}
+  <figcaption>Service worker developer tools on Chrome, Firefox and Safari.</figcaption>
 </figure>
 
 {% Aside %}
@@ -126,11 +127,11 @@ Service workers don't live indefinitely. While exact timings differ between brow
 
 With a registered and active service worker, you have a thread with a completely different execution lifecycle than the main one on your PWA. However, by default, the service worker file itself has no behavior. It won't cache or serve any resources, as this has to be done by your code. You'll find out how in the following chapters.
 
-Service Worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities) chapter.
+Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities) chapter.
 
 ##  Resources
 
-- [MDN Service Worker API](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
+- [Service Worker API (MDN)](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
 - [Service Worker mindset](/service-worker-mindset/)
 - [WebKit Workers at your service](https://webkit.org/blog/8090/workers-at-your-service/)
 - [ES Modules in Service Workers](/es-modules-in-sw/)
