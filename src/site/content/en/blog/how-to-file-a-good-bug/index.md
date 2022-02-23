@@ -98,7 +98,7 @@ bug getting fixed.
 Here are a few tips for minimizing a test case:
 
 * Download the web page, add
-  [`<base href="https://original.url">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
+  [`<base href="https://original.url">`](https://developer.mozilla.org/docs/Web/HTML/Element/base)
   and verify that the bug exists locally. This may require a live HTTPS server if the
   URL uses HTTPS.
 * Test the local files on the latest builds of as many browsers as you can.
