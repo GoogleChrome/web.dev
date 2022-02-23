@@ -48,7 +48,6 @@ One of the most significant steps towards achieving our goal to improve framewor
 
 To address the issue of main-thread blocking third-party scripts used in an application, we built the [Script component](https://nextjs.org/docs/basic-features/script). The component encapsulates sequencing features to provide developers with better controls for third-party script loading.
 
-
 ## Sequencing third-party scripts without a framework component
 
 The [available guidance](/efficiently-load-third-party-javascript/) to reduce the impact of render-blocking scripts provides the following methods for efficiently loading and sequencing third-party scripts:
