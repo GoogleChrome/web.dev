@@ -5,7 +5,7 @@ subhead: Seamless reusable styles.
 authors:
   - developit
 date: 2019-02-08
-updated: 2021-08-27
+updated: 2022-02-23
 description: Constructable Stylesheets provide a seamless way to create and distribute styles to documents or shadow roots without worrying about FOUC.
 tags:
   - blog
@@ -61,7 +61,7 @@ preload stylesheets without injecting them into the DOM.
 ## Constructing a stylesheet
 
 Rather than introducing a new API to accomplish this, the [Constructable
-StyleSheets](https://drafts.csswg.org/cssom/#dom-cssstylesheet-cssstylesheet)
+StyleSheets](https://www.w3.org/TR/cssom-1/#dom-cssstylesheet-cssstylesheet)
 specification makes it possible to create stylesheets imperatively by invoking
 the `CSSStyleSheet()` constructor. The resulting CSSStyleSheet object has two
 new methods that make it safer to add and update stylesheet rules without
@@ -109,7 +109,7 @@ ignored with a warning as of Chrome 84.
 ## Using constructed stylesheets
 
 The second new feature introduced by Constructable StyleSheets is an
-[adoptedStyleSheets](https://drafts.csswg.org/cssom/#extensions-to-the-document-or-shadow-root-interface)
+[adoptedStyleSheets](https://www.w3.org/TR/cssom-1/#extensions-to-the-document-or-shadow-root-interface)
 property available on [Shadow
 Roots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
 and [Documents](https://developer.mozilla.org/en/docs/Web/API/Document). This
