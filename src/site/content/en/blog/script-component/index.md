@@ -30,7 +30,7 @@ Third-party libraries required for layout should be loaded early to render the p
   {% Img src="image/IypihH3o5cSpEMVp5i08dp69otp2/nzgIO68cBW9y5xCsW0g6.png", alt="Lighthouse audits for Eliminate render-blocking resources and Minimize third-party usage", width="800", height="301" %}
 </figure>
 
-It's important to consider the resource loading sequence of your page so that critical resources are not delayed and non-critical resources do not block the critical resources.
+It's important to consider the resource loading sequence of your page so that critical resources are not delayed and non-critical resources do not block critical resources.
 
 While there are [best practices](/fast/#optimize-your-third-party-resources) to reduce the impact of third parties, not everyone may be aware of how to implement them for every third-party they use. This can be complicated because:
 
