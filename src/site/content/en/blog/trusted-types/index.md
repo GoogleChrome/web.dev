@@ -121,7 +121,7 @@ You can deploy a report collector
 or use one of the commercial equivalents.
 You can also debug the violations in the browser:
 ```js
-window.addEventListener('securitypolicyviolation',
+document.addEventListener('securitypolicyviolation',
     console.error.bind(console));
 ```
 
