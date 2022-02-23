@@ -111,8 +111,6 @@ Using the Script component, developers can place a third-party script anywhere i
 
 We used the templates for the Next.js [commerce app](https://nextjs.org/commerce) and [starter blog](https://github.com/vercel/next-learn/tree/dependabot/npm_and_yarn/seo/demo/next-12.1.0/basics/learn-starter) to create two demo apps that helped measure the impact of including third-party scripts. Commonly used third-parties for Google Tag Manager and social media embeds were included on the pages of these apps directly at first and then through the Script component. We then compared the performance of these pages on [WebPageTest](https://www.webpagetest.org/).
 
-
-
 ### Third-party scripts in a Next.js commerce app
 
 Third-party scripts were added to the commerce app template for the demo as given below. 
