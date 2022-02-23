@@ -29,7 +29,7 @@ It is common for resources exposed by a given web application to only be loaded 
 
 Fetch Metadata request headers are supported as of Firefox 90 and as of Chrome 76 in all Chromium-based browsers.
 
-{% BrowserCompat 'http.sec-fetch-site' %}
+{% BrowserCompat 'http.headers.sec-fetch-site' %}
 
 ## Background
 
