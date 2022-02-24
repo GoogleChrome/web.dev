@@ -1,6 +1,13 @@
-console.log('This JS is displayed in the samples area of a CodePattern.');
+for (let i = 0 ; i < document.scripts.length; i++ ) {
+  document.scripts[i].src.startsWith('http')
+}
 
-/**
- * This file is ignored and not automatically included inside "demo.html",
- * because this pattern demo is defined as a standalone, full HTML page.
- */
+console.log(Highcharts)
+
+document.addEventListener('DOMContentLoaded', function() {
+ console.log('hi')
+ console.log(Highcharts)
+
+
+
+})

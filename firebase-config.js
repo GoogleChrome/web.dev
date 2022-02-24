@@ -21,12 +21,15 @@ firebaseJson.hosting.redirects = parsedRedirects.reduce(
 );
 if (process.env.ELEVENTY_ENV === 'prod') {
   const hashListJson = fs.readFileSync('dist/script-hash-list.json', 'utf-8');
+  const scriptListJson = fs.readFileSync('dist/script-url-list.json', 'utf-8');
   const hashList = JSON.parse(hashListJson);
+  const scriptList = JSON.parse(scriptListJson);
   firebaseJson.hosting.headers[0].headers.push({
     key: 'Content-Security-Policy',
     value:
       `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
       `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'; ` +
+      `script-src 'self' ${scriptList.join(' ')} ;` +
       `frame-ancestors 'self'; ` +
       `report-uri https://csp.withgoogle.com/csp/webdev`,
   });

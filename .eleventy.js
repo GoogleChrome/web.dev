@@ -87,7 +87,7 @@ const stripBlog = require('./src/site/_filters/strip-blog');
 const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
-const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
+const {cspHash, cspScript, getHashList, getScriptList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
@@ -187,6 +187,7 @@ module.exports = function (config) {
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
+  config.addFilter('cspScript', cspScript);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -251,6 +252,10 @@ module.exports = function (config) {
       fs.writeFileSync(
         'dist/script-hash-list.json',
         JSON.stringify(getHashList()),
+      );
+      fs.writeFileSync(
+        'dist/script-url-list.json',
+        JSON.stringify(getScriptList()),
       );
     });
   }

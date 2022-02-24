@@ -63,6 +63,9 @@ the children of an authorized script to run. #}
 function loadScript(url, type) {
   const s = document.createElement('script');
   s.src = url;
+  s.onload = () => {
+    document.dispatchEvent(new CustomEvent('scriptLoaded', {detail: {url}}));
+  }
   if (type) {
     s.type = type;
   }
@@ -89,6 +92,12 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
 {% else %}
   loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
 {% endfor %}
+
+{% for item in myScripts %}
+  loadScript('{{ helpers.hashForProd(item) }}');
+{% endfor %}
+
+
 {# {% if process.env.ELEVENTY_ENV === 'prod' %} #}
   loadScript('https://www.google-analytics.com/analytics.js', null);
   loadScript('https://www.google.com/recaptcha/api.js', null);
