@@ -164,6 +164,7 @@
     "scroll-to-bottomjs": "^1.1.0",
     "slugify": "^1.4.5",
     "striptags": "^3.2.0",
+    "truncate-utf8-bytes": "^1.0.2",
     "typescript": "^4.0.3",
     "unified-lint-rule": "^1.0.5",
     "unist-util-generated": "^1.1.5",

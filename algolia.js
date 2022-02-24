@@ -19,16 +19,17 @@ require('dotenv').config();
 const algoliasearch = require('algoliasearch');
 const fs = require('fs');
 const path = require('path');
+const truncateUTF8Bytes = require('truncate-utf8-bytes');
 
 const {sizeOfJSONInBytes} = require('./shared/sizeOfJSONInBytes');
 const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
 const maxChunkSizeInMB = maxChunkSizeInBytes / 1000000;
-// This limit is set by our current Algolia plan (with ~50 bytes of headroom).
+// This limit is set by our current Algolia plan (with some headroom).
 // The restriction applies to the size of the JSON serialization of each item.
 // See https://support.algolia.com/hc/en-us/articles/4406981897617-Is-there-a-size-limit-for-my-index-records-#:~:text=The%20record%20size%20limit%20is%20based%20on%20the%20size%20of%20this%20final%20JSON%20file.
-const maxItemSizeInBytes = 9950;
+const maxItemSizeInBytes = 9000;
 
 /**
  * If needed, trims size of an AlgoliaItem so that its JSON serialization is
@@ -44,13 +45,10 @@ const trimBytes = (item) => {
   if (currentSizeInBytes > maxItemSizeInBytes) {
     const bytesToRemove = currentSizeInBytes - maxItemSizeInBytes;
     const contentSizeInBytes = sizeOfJSONInBytes(item.content);
-    // Calculate what percentage of the content can stay.
-    const percentToKeep =
-      (contentSizeInBytes - bytesToRemove) / contentSizeInBytes;
 
-    item.content = item.content.slice(
-      0,
-      Math.floor(item.content.length * percentToKeep),
+    item.content = truncateUTF8Bytes(
+      item.content,
+      contentSizeInBytes - bytesToRemove,
     );
   }
 

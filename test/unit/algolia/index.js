@@ -8,8 +8,14 @@ const {
   trimBytes,
 } = require('../../../algolia');
 
+// The trimming might not result in a string with the exact number of bytes,
+// since it honors multi-byte characters. Rather than testing for an exact
+// byte size, test that the trimmed object is within a small threshold.
+const BYTE_THRESHOLD = 4;
+
 /**
  * Returns the size in bytes of an UTF-8 encoded string.
+ * (This differs from sizeOfJSONInBytes(), which stringifies the input first.)
  *
  * @param {string} str
  * @return {number}
@@ -51,7 +57,7 @@ describe('Algolia Unit Tests', function () {
 
         expect(
           Math.abs(trimmedSizeInBytes - maxItemSizeInBytes),
-        ).to.be.lessThanOrEqual(sizeOfStringInBytes(character));
+        ).to.be.lessThanOrEqual(BYTE_THRESHOLD);
         expect(trimmedItem).not.to.eql(mockItem);
       });
 
@@ -64,7 +70,7 @@ describe('Algolia Unit Tests', function () {
 
         expect(
           Math.abs(trimmedSizeInBytes - maxItemSizeInBytes),
-        ).to.be.lessThanOrEqual(sizeOfStringInBytes(character));
+        ).to.be.lessThanOrEqual(BYTE_THRESHOLD);
         expect(trimmedItem).not.to.eql(mockItem);
       });
 
