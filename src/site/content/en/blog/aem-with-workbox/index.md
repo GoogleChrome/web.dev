@@ -5,7 +5,7 @@ description: >
   Progressive Web Apps leverage what the modern web can do. Adobe used Workbox to bring those capabilities to Adobe Experience Manager.
 authors:
   - joemedley
-date: 2022-02-24
+date: 2022-03-04
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - case-study
@@ -21,26 +21,26 @@ Progressive Web Apps leverage what the modern web can do. They are installable o
 
 To enhance a web app into a Progressive Web App requires adding two artifacts:
 
-- A web app manifest: a JSON configuration file that defines the app's entry point URL, the icon used to represent the PWA and other configuration that describe how the application looks and behaves
+- A web app manifest: a JSON configuration file that defines the app's entry point URL, the icon used to represent the PWA and other configuration that describe how the application looks and behaves.
 - A service worker: a script that provides background services that enrich your PWA by defining resources your PWA uses and the strategies to access them.
 
 ## What is a service worker?
 
-At its core, a service worker is just a script that your browser runs independently as you interact with your web application. An active service worker provides services such as smart caching using the Cache API, keeping data up to date using the BackGround Sync API and integration with push notifications. A service worker with the right caching strategy provides  stable and reliable user experiences for various scenarios, returning pre-cached resources instantly, storing data in cache and updating resources when connected to the web.
+At its core, a service worker is just a script that your browser runs independently as you interact with your web application. An active service worker provides services such as smart caching using the Cache API, keeping data up to date using the BackGround Sync API and integrating with push notifications. A service worker with the right caching strategy provides stable and reliable user experiences for various scenarios, returning pre-cached resources instantly, storing data in cache and updating resources when connected to the web.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/j97xB2WYaExyh8SbI3pw.png", alt="What is a service worker?", width="800", height="369" %}
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="400", height="94" %}
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47" %}
 
-Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc…) are requested from the network or cache, even allowing you to return cached content when offline! With Workbox, you can quickly set up and manage both, and more, with production-ready code.
+Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc.) are requested from the network or cache, even allowing you to return cached content when offline. With Workbox, you can quickly set up and manage both, and more, with production-ready code.
 
 ## Upgrading an AEM site to a PWA
 
 [Adobe Experience Manager](https://business.adobe.com/products/experience-manager/sites/aem-sites ) (AEM) is a comprehensive content management solution for building websites, mobile apps, forms, and digital signage. It makes it easy to manage your marketing content and assets.
 
-While AEM provides a rich library to build web applications, until now it's been difficult to build a PWA by adding a service worker and a manifest.
+While AEM provides a rich library for building web applications, until now it's been difficult to build a PWA by adding a service worker and a manifest.
 
-Adobe Experience Manager Sites is the UI building tool that is part of Adobe Experience Manager. When used with Adobe Experience Manager as a Cloud Service, AEM Sites makes it easy to convert any existing AEM website or single page application into an installable offline enabled Progressive Web App with just configuration and no coding. It uses Workbox to deliver the best practices for Progressive Web Apps and abstracts the complexities of writing boilerplate manifests and service workers.
+Adobe Experience Manager Sites is the UI building tool that is part of Adobe Experience Manager. When used with Adobe Experience Manager as a cloud service, AEM Sites makes it easy to convert any existing AEM website or single page application into an installable offline-enabled Progressive Web App with just configuration and no coding. It uses Workbox to deliver the best practices for Progressive Web Apps and abstracts the complexities of writing boilerplate manifests and service workers.
 
 AEM supports localization of content which means you can have different branding and even different offline content for different locales. To do this build different PWA configurations for each language master.
 
@@ -57,7 +57,7 @@ The [web app manifest](/add-manifest/) is a JSON file that contains properties t
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the installable experience.", width="800", height="634" %}
 
 
-The startup URL is the entry point of your PWA. When a user taps on the the PWA icon on their phone, they will be accessing the startup URL. The display mode configures whether the app is a windowed or fullscreen experience. You can also specify the screen orientation of the application. The theme color is the color of the window/toolbar while the background color is the color of the splash screen when the application is launched.  The icon is the image that is shown on the devices home or application drawer when the application is installed on the device. The configuration shown in the image generates the  manifest JSON shown below.
+The start URL is the entry point of your PWA. When a user taps on the the PWA icon on their phone, they will be accessing the startup URL. The display mode configures whether the app is a windowed or fullscreen experience. You can also specify the screen orientation of the application. The theme color is the color of the window and toolbar while the background color is the color of the splash screen when the application is launched. The icon is the image that is shown on the devices home screen or application drawer when the application is installed on the device. The configuration shown in the image generates the manifest JSON shown below.
 
 ```json
 {
@@ -79,30 +79,29 @@ The startup URL is the entry point of your PWA. When a user taps on the the PWA 
 }
 ```
 
-The start URL can be different from the default landing page for your domain. By changing the start_url parameter, you can direct your users directly to the application experience rather than the default page a non-authenticated or new user would be presented. This provides PWA users with a smoother, more app-like experience.
+The start URL can be different from the default landing page for your domain. By changing the `start_url` parameter, you can send your users directly to the application experience rather than the default page a non-authenticated or new user would be presented. This provides PWA users with a smoother, more app-like experience.
 
-AEM understands that different locales can have different look and feel. You can configure different properties, colors and icons for different locales or languages and then synchronize the configuration with the linked pages.
+AEM understands that different locales can have a different look and feel. You can configure different properties, colors, and icons for different locales or languages and then synchronize the configuration with the linked pages.
 
-Once the PWA is accessed on the browser, you can right click and inspect to bring up DevTools and view the manifest under the "Applications" tab.
+Once the PWA is accessed on the browser, you can right click and inspect to bring up DevTools and view the manifest under the Applications panel.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/xWxP7YILDgejrdtbq0hh.png", alt="A PWA in the DevTools Application tab.", width="800", height="966" %}
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/xWxP7YILDgejrdtbq0hh.png", alt="A PWA in the DevTools Application panel.", width="800", height="966" %}
 
 ### Configure the service worker
 
 You can configure the content to cache and the caching strategy to use.
 
-If you have been using service workers you may be familiar with [caching strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies). Caching strategies specify which resources to cache and whether to look for those resources in cache first, network first, cache with a network fallback. You can then choose the resources to pre-cache that will be added to the cache when the service worker is installed. AEM Application service workers implement a [warm cache strateg](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#warm_the_runtime_cache)y which means your experience will not break even if you specify a missing
-or broken path.
+If you have been using service workers you may be familiar with [caching strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies). Caching strategies specify which resources to cache and whether to look for those resources in the cache first, the network first, or in the cache with a network fallback. You can then choose the resources to pre-cache when the service worker is installed. AEM Application service workers implement a [warm cache strategy](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#warm_the_runtime_cache) which means user's experience will not break even if you specify a missing or broken path.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/GY9pDPqKTuux6jR26ZZZ.png", alt="Advanced cache management configuration.", width="800", height="753" %}
 
-In AEM, the term "clientlibs" refers to Client-side Libraries-the combination of related JavaScript, CSS and static resources that have been added to your project that are served to and utilized by the client web browser. You can easily set your client side libraries to be used offline by specifying those libraries in the UI.
+In AEM, the term "clientlibs" refers to client-side Libraries: the combination of related JavaScript, CSS, and static resources that have been added to your project that are served to and utilized by the client web browser. You can easily set your client-side libraries to be used offline by specifying those libraries in the user interface.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/9jrYgsiQzPecwYPVdCEw.png", alt="The client side libraries dialog box.", width="800", height="634" %}
 
-You can also include third party resources such as fonts. This offline cache configuration provides configuration information to a service worker that is generated for your application that internally uses workbox. That is pretty much all there is to make your application installable. Once installed, the application icon will show up on your mobile device home screen just like native apps. Clicking on the icon will access the wknd site.
+You can also include third-party resources such as fonts. This offline cache configuration provides configuration information to a service worker that is generated for your application that internally uses workbox. That is pretty much all there is to make your application installable. Once installed, the application icon will show up on your mobile device home screen just like a platform app. Clicking the icon will access the wknd site.
 
-Please note that you can change your content or these settings at any time. When you publish your changes, the service worker will be updated at the client by the browser and a message will be presented to the user that a newer version of the PWA is available. The user can click the message to reload the application and get the latest updates. You can open the browser developer tools and applications tab to view the service worker details.
+Please note that you can change your content or these settings at any time. When you publish your changes, the service worker will be updated at the client by the browser and a message will be presented to the user that a newer version of the PWA is available. The user can click the message to reload the application and get the latest updates. You can open the browser developer tools and applications panel to view the service worker details.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4trs4SyeqTJN7HQQTXst.png", alt="The DevTools service worker panel.", width="800", height="575" %}
 
@@ -114,17 +113,15 @@ You can expand cache storage to view the content that has been cached locally
 
 It's time to look at the results of your hard work. With just configuration and without coding you have just enhanced your AEM site to become a Progressive Web App.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="728", height="1196" %}
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="364", height="598" %}
 
 Chrome developer tools provide a lighthouse audit that lets you check how compliant your web application and configuration is with Progressive Web App standards.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/MGOAltGvFK3MCJLgFznv.png", alt="A lighthouse audit.", width="800", height="694" %}
 
-Page Break
-
 ## Conclusion
 
-Progressive Web Apps provide an app-like experience for your website, that uses the cross platform and open nature of the web, at a lower cost of development and maintenance, while providing control over distribution. This enhances engagement, retention and most importantly drives higher conversion rates. AEM in conjunction with Workbox makes it easy to enhance your existing site into a PWA with just configuration and no coding.
+Progressive Web Apps provide an app-like experience for your website, that uses the cross platform and open nature of the web, at a lower cost of development and maintenance, while providing control over distribution. This enhances engagement, retention, and most importantly drives higher conversion rates. AEM in conjunction with Workbox makes it easy to enhance your existing site into a PWA with just configuration and no coding.
 
 ## References
 
