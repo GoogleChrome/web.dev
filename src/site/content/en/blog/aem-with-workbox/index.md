@@ -6,6 +6,8 @@ description: >
 authors:
   - joemedley
 date: 2022-03-04
+hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/RKF1rl4ItVpoMj7TRZHG.png
+alt: The Adobe Experience Manager logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - case-study
