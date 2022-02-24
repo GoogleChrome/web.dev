@@ -1,5 +1,5 @@
 name: Lint Tags
-description: "Lint tags in posts"
+description: 'Lint tags in posts'
 runs:
-  using: "node12"
-  main: "index.js"
+  using: 'node16'
+  main: 'index.js'

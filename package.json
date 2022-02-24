@@ -183,10 +183,13 @@
   },
   "private": true,
   "engines": {
-    "node": "14.x"
+    "node": ">=14"
   },
   "browserslist": [
     "last 2 versions",
     "not ie <= 11"
-  ]
+  ],
+  "volta": {
+    "node": "16.14.0"
+  }
 }
