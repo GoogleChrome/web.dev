@@ -14,4 +14,6 @@
  * limitations under the License.
  */
 
-require('./algolia').index();
+require('./algolia')
+  .index()
+  .catch((e) => console.error(JSON.stringify(e, null, 2)));
