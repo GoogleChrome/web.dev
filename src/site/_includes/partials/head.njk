@@ -94,7 +94,7 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
 {% endfor %}
 
 {% for item in myScripts %}
-  loadScript('{{ helpers.hashForProd(item) }}');
+  loadScript('{{ helpers.hashForProd(item) }}', 'module');
 {% endfor %}
 
 
