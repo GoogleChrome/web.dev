@@ -2,7 +2,7 @@
 layout: post
 title: Optimizing third-party script loading in Next.js
 subhead: Understand the vision behind the Next.js’ Script component, which provides a built-in solution to optimize the loading of third-party scripts.
-date: 2022-02-23
+date: 2022-02-24
 authors:
   - leenasohoni
   - houssein
