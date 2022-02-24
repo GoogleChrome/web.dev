@@ -1,24 +1,28 @@
 ---
+layout: post
 title: A modern web experience on Adobe Experience Manager with WorkBox
 description: >
-  Progressive web apps (PWAs) leverage what the modern web can do. Adobe used Workbox to bring those capabilities to Adobe Experience Manager.
+  Progressive Web Apps leverage what the modern web can do. Adobe used Workbox to bring those capabilities to Adobe Experience Manager.
 authors:
   - joemedley
-date: 2022-03-04
+date: 2022-02-24
+tags:
+  - blog # blog is a required tag for the article to show up in the blog.
+  - case-study
 ---
 
 If you are a technical lead or digital marketing analyst interested in providing a modern Web experience to your Adobe Experience Manager (AEM) web application and have been looking for your options in doing so, then you have come to the right article. This will cover what Progressive Web Apps (PWA) are and what you need to create a PWA in AEM leveraging the WorkBox library through configuration, without coding.
 
 ## Why PWA?
 
-Progressive web apps (PWAs) leverage what the modern web can do. They are installable on your device, load quickly, with subsequent visits loading instantly. They respond to input quickly. They work well on an unreliable connection or when offline. PWAs use modern APIs to provide an engaging app-like experience with an optional full screen UI, background updating and offline access to data.
+Progressive Web Apps leverage what the modern web can do. They are installable on your device, load quickly, with subsequent visits loading instantly. They respond to input quickly. They work well on an unreliable connection or when offline. PWAs use modern APIs to provide an engaging app-like experience with an optional full screen UI, background updating, and offline access to data.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/OktJivHyntcGzX1VSdym.png", alt="From web app to Progressive Web App.", width="800", height="477" %}
 
-To enhance a web app into a Progressive Web APP requires adding two artifacts:
+To enhance a web app into a Progressive Web App requires adding two artifacts:
 
--   Manifest – A JSON configuration file that defines the entry point URL, the icon used to represent the PWA and other configurations that describe how the application looks and behaves
--   Service worker – A script that provides background services that enrich your PWA by defining resources your PWA uses and the strategies to access them.
+- A web app manifest: a JSON configuration file that defines the app's entry point URL, the icon used to represent the PWA and other configuration that describe how the application looks and behaves
+- A service worker: a script that provides background services that enrich your PWA by defining resources your PWA uses and the strategies to access them.
 
 ## What is a service worker?
 
@@ -28,7 +32,7 @@ At its core, a service worker is just a script that your browser runs independen
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="400", height="94" %}
 
-Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](https://web.dev/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc…) are requested from the network or cache, even allowing you to return cached content when offline! With Workbox, you can quickly set up and manage both, and more, with production-ready code.
+Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc…) are requested from the network or cache, even allowing you to return cached content when offline! With Workbox, you can quickly set up and manage both, and more, with production-ready code.
 
 ## Upgrading an AEM site to a PWA
 
@@ -36,19 +40,19 @@ Service workers can be hard to write from scratch. Workbox was created to make i
 
 While AEM provides a rich library to build web applications, until now it's been difficult to build a PWA by adding a service worker and a manifest.
 
-Adobe Experience Manager Sites is the UI building tool that is part of Adobe Experience Manager. When used with Adobe Experience Manager as a Cloud Service, AEM Sites makes it easy to convert any existing AEM website or single page application into an installable offline enabled progressive web app with just configuration and no coding. It uses Workbox to deliver the best practices for progressive web apps and abstracts the complexities of writing boilerplate manifests and service workers.
+Adobe Experience Manager Sites is the UI building tool that is part of Adobe Experience Manager. When used with Adobe Experience Manager as a Cloud Service, AEM Sites makes it easy to convert any existing AEM website or single page application into an installable offline enabled Progressive Web App with just configuration and no coding. It uses Workbox to deliver the best practices for Progressive Web Apps and abstracts the complexities of writing boilerplate manifests and service workers.
 
 AEM supports localization of content which means you can have different branding and even different offline content for different locales. To do this build different PWA configurations for each language master.
 
 ### Getting started with PWA configuration on AEM
 
-Log into Adobe Experience Manager as a Cloud Service and select any Adobe Experience Manager Sites page or language master and click properties. You should see a tab called Progressive Web App. (Note: if you do not see this tab, please contact Adobe to enable this feature.) You can configure the installation and the look and feel of your progressive web apps with just a few clicks.
+Log into Adobe Experience Manager as a Cloud Service and select any Adobe Experience Manager Sites page or language master and click properties. You should see a tab called Progressive Web App. (Note: if you do not see this tab, please contact Adobe to enable this feature.) You can configure the installation and the look and feel of your Progressive Web Apps with just a few clicks.
 
 If you've completed AEM Sites tutorials you have likely seen the WKND site before. This article uses the [WKND](https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) demo as the starting point. When you are done you will have updated WKND from a web app to a PWA using WorkBox.
 
 ### Configure the manifest
 
-The [web application manifest](https://web.dev/add-manifest/) is a JSON file that contains properties that describe the look and behavior of a PWA. Adobe Experience Manager Sites provides a friendly user interface to configure the properties.
+The [web app manifest](/add-manifest/) is a JSON file that contains properties that describe the look and behavior of a PWA. Adobe Experience Manager Sites provides a friendly user interface to configure the properties.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the installable experience.", width="800", height="634" %}
 
@@ -108,11 +112,11 @@ You can expand cache storage to view the content that has been cached locally
 
 ### The results
 
-It's time to look at the results of your hard work. With just configuration and without coding you have just enhanced your AEM site to become a progressive web app.
+It's time to look at the results of your hard work. With just configuration and without coding you have just enhanced your AEM site to become a Progressive Web App.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="728", height="1196" %}
 
-Chrome developer tools provide a lighthouse audit that lets you check how compliant your web application and configuration is with progressive web app standards.
+Chrome developer tools provide a lighthouse audit that lets you check how compliant your web application and configuration is with Progressive Web App standards.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/MGOAltGvFK3MCJLgFznv.png", alt="A lighthouse audit.", width="800", height="694" %}
 
@@ -120,16 +124,16 @@ Page Break
 
 ## Conclusion
 
-Progressive web apps provide an app-like experience for your website, that uses the cross platform and open nature of the web, at a lower cost of development and maintenance, while providing control over distribution. This enhances engagement, retention and most importantly drives higher conversion rates. AEM in conjunction with Workbox makes it easy to enhance your existing site into a PWA with just configuration and no coding.
+Progressive Web Apps provide an app-like experience for your website, that uses the cross platform and open nature of the web, at a lower cost of development and maintenance, while providing control over distribution. This enhances engagement, retention and most importantly drives higher conversion rates. AEM in conjunction with Workbox makes it easy to enhance your existing site into a PWA with just configuration and no coding.
 
-References
+## References
 
 * [WKND Tutorial](https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)
 * [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers)
-* [Cache API](https://web.dev/cache-api-quick-guide/)
-* [Web application manifest ](https://web.dev/add-manifest/)
+* [Cache API](/cache-api-quick-guide/)
+* [Web application manifest](/add-manifest/)
 * Learn more about Adobe Experience Manager Sites: [https://business.adobe.com/products/experience-manager/sites/aem-sites](https://business.adobe.com/products/experience-manager/sites/aem-sites)
 * Learn more about Workbox: [https://developers.google.com/web/tools/workbox/guides/get-started](https://developers.google.com/web/tools/workbox/guides/get-started)
 * Workbox Caching strategies: [https://developers.google.com/web/tools/workbox/modules/workbox-strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
-* Learn more about Progressive web apps: [https://web.dev/progressive-web-apps/](https://web.dev/progressive-web-apps/)
+* Learn more about [Progressive Web Apps](/progressive-web-apps/)
 
