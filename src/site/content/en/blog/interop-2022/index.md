@@ -55,7 +55,7 @@ There are two functions defined in [CSS Color Level 5](https://drafts.csswg.org/
 - `color-mix()`: Takes two colors and returns the result of mixing them in a specified color space by a specified amount.
 - `color-contrast()`: Selects from a list of colors the color with the highest contrast to a specified single color.
 
-These functions support expanded color spaces (LAB, LCH, and P3), in addition to HSL and sRGB, they default to the uniform LCH color space. 
+These functions support expanded color spaces (LAB, LCH, and P3), and in addition to HSL and sRGB, they default to the uniform LCH color space. 
 
 ### New viewport units
 
