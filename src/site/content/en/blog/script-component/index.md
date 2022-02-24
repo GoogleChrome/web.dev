@@ -8,7 +8,7 @@ authors:
   - houssein
 description: |
   This article discusses the Next.js Script component and demonstrates how it can be used for better sequencing of third-party scripts.
-hero: image/IypihH3o5cSpEMVp5i08dp69otp2/sNDY4XVK4gyGHNKfdyJB.jpeg
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/I71rvvFlEORPhGILHsZX.jpg
 alt: A child arranging Jenga blocks.
 tags:
   - blog
