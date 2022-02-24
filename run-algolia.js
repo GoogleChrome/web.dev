@@ -16,4 +16,8 @@
 
 require('./algolia')
   .index()
-  .catch((e) => console.error(JSON.stringify(e, null, 2)));
+  .catch((error) => {
+    console.error(JSON.stringify(error, null, 2));
+    // We want to explicitly exit with a non-0 code here, to indicate failure.
+    process.exit(1); // eslint-disable-line no-process-exit
+  });
