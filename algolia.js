@@ -156,7 +156,7 @@ async function index() {
 
     console.log('Updated algolia data.');
 
-    console.log('Deleting old data no longer in algolia.json.');
+    console.log('Deleting old data no longer in pages.json.');
     await index.deleteBy({
       filters: `indexedOn < ${indexedOn.getTime()}`,
     });
