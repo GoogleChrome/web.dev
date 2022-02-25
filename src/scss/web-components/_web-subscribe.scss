@@ -23,5 +23,7 @@ web-subscribe {
 
   .g-recaptcha {
     height: 78px;
+    width: max-content;
+    margin-inline: auto;
   }
 }
