@@ -13,36 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 require('dotenv').config();
+
 const algoliasearch = require('algoliasearch');
-const byteof = require('byteof');
 const fs = require('fs');
 const path = require('path');
+const truncateUTF8Bytes = require('truncate-utf8-bytes');
 
+const {sizeOfJSONInBytes} = require('./shared/sizeOfJSONInBytes');
 const {defaultLocale, supportedLocales} = require('./shared/locale');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
 const maxChunkSizeInMB = maxChunkSizeInBytes / 1000000;
-const maxItemSizeInBytes = 7000; // 7,000
+// This limit is set by our current Algolia plan (with some headroom).
+// The restriction applies to the size of the JSON serialization of each item.
+// See https://support.algolia.com/hc/en-us/articles/4406981897617-Is-there-a-size-limit-for-my-index-records-#:~:text=The%20record%20size%20limit%20is%20based%20on%20the%20size%20of%20this%20final%20JSON%20file.
+const maxItemSizeInBytes = 9000;
 
 /**
- * Trim byte size of Algoia Collection Item.
+ * If needed, trims size of an AlgoliaItem so that its JSON serialization is
+ * under the byte limit.
  *
  * @param {AlgoliaItem} item
  * @return {AlgoliaItem}
  */
 const trimBytes = (item) => {
-  const currentSizeInBytes = byteof(item);
-  // Calculate how many characters needs to be removed to get to right size
-  const bytesToRemove = currentSizeInBytes - maxItemSizeInBytes;
-  const contentBytes = byteof(item.content);
-  // Calculate what percentage of description can stay in order to get it to right size
-  const percentageToRemove = (contentBytes - bytesToRemove) / contentBytes;
+  const currentSizeInBytes = sizeOfJSONInBytes(item);
 
-  item.content = item.content.slice(
-    0,
-    Math.floor(item.content.length * percentageToRemove),
-  );
+  // If the item is too big, trim the content before returning it.
+  if (currentSizeInBytes > maxItemSizeInBytes) {
+    const bytesToRemove = currentSizeInBytes - maxItemSizeInBytes;
+    const contentSizeInBytes = sizeOfJSONInBytes(item.content);
+
+    item.content = truncateUTF8Bytes(
+      item.content,
+      contentSizeInBytes - bytesToRemove,
+    );
+  }
 
   return item;
 };
@@ -58,7 +66,7 @@ const chunkAlgolia = (arr) => {
   let tempSizeInBytes = 0;
   let temp = [];
   for (const arrItem of arr) {
-    const currentSizeInBytes = byteof(arrItem);
+    const currentSizeInBytes = sizeOfJSONInBytes(arrItem);
 
     if (currentSizeInBytes >= maxChunkSizeInBytes) {
       throw new Error(
@@ -112,11 +120,11 @@ async function index() {
     return trimBytes(item);
   });
 
+  // Skip indexing unless the environment is configured.
   if (!process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY) {
     throw new Error(
       'Missing Algolia environment variables, skipping indexing.',
     );
-    // Ok, not a test, we got the keys, DO IT!
   } else {
     const chunkedAlgoliaData = chunkAlgolia(algoliaData);
     const postsCount = algoliaData.length;
@@ -139,7 +147,7 @@ async function index() {
       customRanking: ['desc(priority)'],
     });
 
-    // Update algolia index with new data
+    // Update the Algolia index with new data
     for (let i = 0; i < chunkedAlgoliaData.length; i++) {
       await index.saveObjects(chunkedAlgoliaData[i], {
         autoGenerateObjectIDIfNotExist: true,
@@ -148,7 +156,7 @@ async function index() {
 
     console.log('Updated algolia data.');
 
-    console.log('Deleting old data no longer in algolia.json.');
+    console.log('Deleting old data no longer in pages.json.');
     await index.deleteBy({
       filters: `indexedOn < ${indexedOn.getTime()}`,
     });

@@ -1,6 +1,6 @@
-const byteof = require('byteof');
 const {expect} = require('chai');
 
+const {sizeOfJSONInBytes} = require('../../../shared/sizeOfJSONInBytes');
 const {
   chunkAlgolia,
   maxChunkSizeInBytes,
@@ -8,73 +8,108 @@ const {
   trimBytes,
 } = require('../../../algolia');
 
+// The trimming might not result in a string with the exact number of bytes,
+// since it honors multi-byte characters. Rather than testing for an exact
+// byte size, test that the trimmed object is within a small threshold.
+const BYTE_THRESHOLD = 4;
+
 /**
- * Very simple to mock an object, only accepts even byte sizes.
- * @param {number} length
- * @returns {AlgoliaItem}
+ * Returns the size in bytes of an UTF-8 encoded string.
+ * (This differs from sizeOfJSONInBytes(), which stringifies the input first.)
+ *
+ * @param {string} str
+ * @return {number}
  */
-const createAlgoliaItem = (length) => {
-  if (length % 2 !== 0) {
-    throw new Error('Please only input even numbers into this function');
-  }
-  length = length / 2;
-  const content = Array.from({length}, () => 'a').join('');
-  return /** @type {AlgoliaItem} */ ({content});
+const sizeOfStringInBytes = (str) => {
+  return Buffer.byteLength(str, 'utf8');
 };
 
-describe('algolia', function () {
-  describe('trimBytes', function () {
-    it('trims content if bytes twice `maxItemSizeInBytes`', function () {
-      const mockItemSize = maxItemSizeInBytes * 2;
-      const mockItem = createAlgoliaItem(mockItemSize);
-      expect(byteof(mockItem)).to.equal(mockItemSize);
+/**
+ * Very simple mock of an AlgoliaItem, including some metadata, with an
+ * approximate size of contentLengthInBytes, plus a 10 character title.
+ *
+ * @param {string} character
+ * @param {number} contentLengthInBytes
+ * @returns {AlgoliaItem}
+ */
+const createAlgoliaItem = (character, contentLengthInBytes) => {
+  const characterSizeInBytes = sizeOfStringInBytes(character);
 
-      const trimmedItem = trimBytes(mockItem);
-      expect(byteof(trimmedItem)).to.equal(maxItemSizeInBytes);
+  // repeat() will automatically truncate any decimal values.
+  const content = character.repeat(contentLengthInBytes / characterSizeInBytes);
+  const title = character.repeat(10);
+
+  return /** @type {AlgoliaItem} */ ({content, title});
+};
+
+describe('Algolia Unit Tests', function () {
+  // a is 1 byte, é is 2 bytes, and 豊 is 3 bytes.
+  // These tests confirm that trimming content using characters with various
+  // underlying sizes happens within a threshold of the size of each character.
+  for (const character of ['a', 'é', '豊']) {
+    describe(`trimBytes for character '${character}'`, function () {
+      it(`trims if the content is twice 'maxItemSizeInBytes'`, function () {
+        const mockItem = createAlgoliaItem(character, maxItemSizeInBytes * 2);
+
+        // Modify a copy of the mock item for later comparison.
+        const trimmedItem = trimBytes(Object.assign({}, mockItem));
+        const trimmedSizeInBytes = sizeOfJSONInBytes(trimmedItem);
+
+        expect(
+          Math.abs(trimmedSizeInBytes - maxItemSizeInBytes),
+        ).to.be.lessThanOrEqual(BYTE_THRESHOLD);
+        expect(trimmedItem).not.to.eql(mockItem);
+      });
+
+      it(`trims if the content is equal to 'maxItemSizeInBytes'`, function () {
+        const mockItem = createAlgoliaItem(character, maxItemSizeInBytes);
+
+        // Modify a copy of the mock item for later comparison.
+        const trimmedItem = trimBytes(Object.assign({}, mockItem));
+        const trimmedSizeInBytes = sizeOfJSONInBytes(trimmedItem);
+
+        expect(
+          Math.abs(trimmedSizeInBytes - maxItemSizeInBytes),
+        ).to.be.lessThanOrEqual(BYTE_THRESHOLD);
+        expect(trimmedItem).not.to.eql(mockItem);
+      });
+
+      it(`doesn't modify content if it's under 'maxItemSizeInBytes'`, function () {
+        const mockItem = createAlgoliaItem(character, maxItemSizeInBytes / 2);
+
+        // Modify a copy of the mock item for later comparison.
+        const trimmedItem = trimBytes(Object.assign({}, mockItem));
+        const trimmedSizeInBytes = sizeOfJSONInBytes(trimmedItem);
+
+        expect(trimmedSizeInBytes).to.be.lessThanOrEqual(maxItemSizeInBytes);
+        expect(trimmedItem).to.eql(mockItem);
+      });
     });
-
-    it('trims content if bytes equal to `maxItemSizeInBytes`', function () {
-      const mockItem = createAlgoliaItem(maxItemSizeInBytes);
-      expect(byteof(mockItem)).to.equal(maxItemSizeInBytes);
-
-      const trimmedItem = trimBytes(mockItem);
-      expect(byteof(trimmedItem)).to.equal(maxItemSizeInBytes);
-    });
-
-    it("doesn't modify content if bytes under `maxItemSizeInBytes`", function () {
-      const mockItemSize = maxItemSizeInBytes - 2;
-      const mockItem = createAlgoliaItem(mockItemSize);
-      expect(byteof(mockItem)).to.equal(mockItemSize);
-
-      const trimmedItem = trimBytes(mockItem);
-      expect(byteof(trimmedItem)).to.equal(mockItemSize);
-      expect(trimmedItem).to.equal(mockItem);
-    });
-  });
+  }
 
   describe('chunkAlgolia', function () {
     it('returns more than one array if bytes twice `maxItemSizeInBytes`', function () {
       const length = Math.ceil((maxChunkSizeInBytes * 2) / maxItemSizeInBytes);
       const mockItems = Array.from({length}, () =>
-        createAlgoliaItem(maxItemSizeInBytes),
+        createAlgoliaItem('a', maxItemSizeInBytes),
       );
       const chunkedmockItems = chunkAlgolia(mockItems);
       expect(chunkedmockItems.length).to.be.above(1);
     });
 
     it('returns one array if less than `maxItemSizeInBytes`', function () {
-      const mockItems = [createAlgoliaItem(maxChunkSizeInBytes - 2)];
+      const mockItems = [createAlgoliaItem('a', maxChunkSizeInBytes / 2)];
       const chunkedmockItems = chunkAlgolia(mockItems);
       expect(chunkedmockItems.length).to.be.equal(1);
     });
 
     it('throws error if an element is equal to `maxItemSizeInBytes`', function () {
-      const mockItems = [createAlgoliaItem(maxChunkSizeInBytes)];
+      const mockItems = [createAlgoliaItem('a', maxChunkSizeInBytes)];
       expect(() => chunkAlgolia(mockItems)).to.throw();
     });
 
     it('throws error if an element is larger than `maxItemSizeInBytes`', function () {
-      const mockItems = [createAlgoliaItem(maxChunkSizeInBytes * 2)];
+      const mockItems = [createAlgoliaItem('a', maxChunkSizeInBytes * 2)];
       expect(() => chunkAlgolia(mockItems)).to.throw();
     });
   });
