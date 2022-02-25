@@ -150,6 +150,14 @@ $course-side-vert-space: 20px;
 
 /// RESPONSIVE STYLES
 .course {
+  @include media-query('md') {
+    &__sidebar {
+      max-width: var(--sidebar-target-width);
+    }
+  }
+}
+
+.course {
   @include media-query('lg') {
     --web-navigation-drawer-width: 100%;
 
