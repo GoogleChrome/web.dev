@@ -50,4 +50,4 @@ Se você não puder corrigir um erro, considere envolvê-lo em uma [`try…catch
 - [O código-fonte dos **erros do navegador foi registrado na** auditoria do console](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
 - [Visão geral do console](https://developers.google.com/web/tools/chrome-devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
-- [tente ... pegar](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)
+- [tente…pegar](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)
