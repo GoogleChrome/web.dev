@@ -199,9 +199,8 @@ Exchanges](/signed-exchanges).
 ## Render blocking JavaScript and CSS {: #render-blocking-resources }
 
 Before a browser can render any content, it needs to parse HTML markup into a
-DOM tree. The HTML parser will pause if it encounters any external stylesheets
-(`<link rel="stylesheet">`) or synchronous JavaScript tags (`<script
-src="main.js">`).
+DOM tree. The HTML parser will pause if it encounters any synchronous JavaScript tags (`<script
+src="main.js">`), which may also be blocked on css processing.
 
 Scripts and stylesheets are both render blocking resources which delay FCP, and
 consequently LCP. Defer any non-critical JavaScript and CSS to speed up loading
