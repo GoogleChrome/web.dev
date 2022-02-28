@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2022-01-27
+updated: 2022-02-25
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
@@ -282,6 +282,27 @@ You may also want to have a look at Mike Tsao's [WebLight project] which
 provides a ground-up example of building a USB-controlled LED device designed
 for the WebUSB API (not using an Arduino here). You'll find hardware, software,
 and firmware.
+
+### Revoke access to a USB device {: #revoke-access }
+
+The website can clean up permissions to access a USB device it no longer needs
+by calling `forget()` on the `USBDevice` instance. For example, for an
+educational web application used on a shared computer with many devices, a large
+number of accumulated user-generated permissions creates a poor user experience.
+
+```js
+// Voluntarily revoke access to this USB device.
+await device.forget();
+```
+
+As `forget()` is available in Chrome 101 or later, check if this feature is
+supported with the following:
+
+```js
+if ("usb" in navigator && "forget" in USBDevice.prototype) {
+  // forget() is supported.
+}
+```
 
 ### Limits on transfer size
 
