@@ -45,15 +45,15 @@ Cookie: promo_shown=1
 また、`document.cookie` を使用してそのサイトで利用可能な Cookie を JavaScript で追加したり、読み取ったりすることができます。`document.cookie` に代入を行うと、そのキーで Cookie を作成したり、上書きしたりすることができます。たとえば、ブラウザーの JavaScript コンソールで以下のものを試してみてください。
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 `document.cookie` を読み取ると、現在のコンテキストでアクセス可能なすべての Cookie が、それぞれの Cookie がセミコロンで区切られた形式で出力されます。
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="ブラウザー内の Cookie にアクセスする JavaScript", width="600", height="382", style="max-width: 35vw" %} <figcaption>JavaScript は <code>document.cookie</code> を使用して Cookie にアクセスすることができます。</figcaption></figure>
@@ -109,7 +109,10 @@ Set-Cookie: promo_shown=1; SameSite=Strict
 ```html
 <p>この素晴らしい猫を見て！</p>
 <img src="https://blog.example/blog/img/amazing-cat.png" />
-<p>この<a href="https://blog.example/blog/cat.html">記事</a>を読んでみてください。</p>
+<p>
+  この<a href="https://blog.example/blog/cat.html">記事</a
+  >を読んでみてください。
+</p>
 ```
 
 そして、Cookie は次のように設定されています。
@@ -241,6 +244,6 @@ Chrome、Safari、UC ブラウザーを含む数多くのブラウザーの旧�
 
 前述した `SameSite=None` についての変更やブラウザーの動作の違いを上手に処理するための Cookie の更新方法の詳細については、次の記事「[SameSite Cookie のレシピ](/samesite-cookie-recipes)」を参照してください。
 
-*Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner、Vivek Sekhar のご意見およびご協力に、心より感謝申し上げます。*
+_Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner、Vivek Sekhar のご意見およびご協力に、心より感謝申し上げます。_
 
-*クッキーのヒーロー画像の提供: [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) の [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_クッキーのヒーロー画像の提供: [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) の [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

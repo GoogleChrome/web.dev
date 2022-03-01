@@ -45,15 +45,15 @@ Cookie: promo_shown=1
 `document.cookie`를 사용하여 JavaScript에서 해당 사이트에 사용할 수 있는 쿠키를 추가하고 읽을 수도 있습니다. `document.cookie`에 할당을 하면 해당 키를 포함한 쿠키가 생성되거나 재정의됩니다. 예를 들어 브라우저의 JavaScript 콘솔에서 다음을 시도할 수 있습니다.
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 `document.cookie`를 읽으면 현재 컨텍스트에서 액세스할 수 있는 모든 쿠키가 출력되며 각 쿠키는 세미콜론으로 구분됩니다.
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="브라우저 내에서 쿠키에 액세스하는 JavaScript", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript는 <code>document.cookie</code>를 사용하여 쿠키에 액세스할 수 있습니다.</figcaption></figure>
@@ -241,6 +241,6 @@ Chrome, Safari 및 UC 브라우저를 비롯한 이전 버전의 여러 브라�
 
 `SameSite=None`에 대한 이러한 변경 사항과 브라우저 동작의 차이를 성공적으로 처리하도록 쿠키를 업데이트하는 방법에 대한 자세한 내용은 후속 게시물, [SameSite 쿠키 레시피](/samesite-cookie-recipes)를 참조하세요.
 
-*Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, Vivek Sekhar의 기여와 피드백에 감사드립니다.*
+_Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, Vivek Sekhar의 기여와 피드백에 감사드립니다._
 
-*[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)의 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)가 제공한 쿠키 영웅 이미지*
+_[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)의 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)가 제공한 쿠키 영웅 이미지_

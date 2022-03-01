@@ -50,7 +50,7 @@ that moment, bfcache can make a big difference in how fast the previous page
 loads:
 
 <div class="table-wrapper">
-  <table data-alignment="top>
+  <table data-alignment="top">
     <tr>
       <td width="30%"><strong><em>Without</em> bfcache enabled</strong></td>
       <td>
@@ -170,9 +170,9 @@ site's bfcache hit rate, you'd need to use the `pageshow` event. In some cases,
 you might need to use both.
 
 {% Aside %}
-  See [Implications for performance and
-  analytics](#how-bfcache-affects-analytics-and-performance-measurement) for
-  more details on bfcache measurement best practices.
+See [Implications for performance and
+analytics](#how-bfcache-affects-analytics-and-performance-measurement) for
+more details on bfcache measurement best practices.
 {% endAside %}
 
 #### Observe when a page is entering bfcache
@@ -247,9 +247,9 @@ warn developers if any JavaScript on their pages (including that from
 third-party libraries) adds an <code>unload</code> event listener.
 
 {% Aside 'warning' %}
-  Never add an `unload` event listener! Use the `pagehide` event instead.
-  Adding an `unload` event listener will make your site slower in Firefox, and
-  the code won't even run most of the time in Chrome and Safari.
+Never add an `unload` event listener! Use the `pagehide` event instead.
+Adding an `unload` event listener will make your site slower in Firefox, and
+the code won't even run most of the time in Chrome and Safari.
 {% endAside %}
 
 #### Only add `beforeunload` listeners conditionally
@@ -265,25 +265,28 @@ recommended that you only add `beforeunload` listeners when a user has unsaved
 changes and then remove them immediately after the unsaved changes are saved.
 
 {% Compare 'worse' %}
+
 ```js
 window.addEventListener('beforeunload', (event) => {
   if (pageHasUnsavedChanges()) {
     event.preventDefault();
-    return event.returnValue = 'Are you sure you want to exit?';
+    return (event.returnValue = 'Are you sure you want to exit?');
   }
 });
 ```
+
 {% CompareCaption %}
-  The code above adds a `beforeunload` listener unconditionally.
+The code above adds a `beforeunload` listener unconditionally.
 {% endCompareCaption %}
 {% endCompare %}
 
 {% Compare 'better' %}
+
 ```js
 function beforeUnloadListener(event) {
   event.preventDefault();
-  return event.returnValue = 'Are you sure you want to exit?';
-};
+  return (event.returnValue = 'Are you sure you want to exit?');
+}
 
 // A function that invokes a callback when the page has unsaved changes.
 onPageHasUnsavedChanges(() => {
@@ -295,19 +298,19 @@ onAllChangesSaved(() => {
   window.removeEventListener('beforeunload', beforeUnloadListener);
 });
 ```
+
 {% CompareCaption %}
-  The code above only adds the `beforeunload` listener when it's needed (and
-  removes it when it's not).
+The code above only adds the `beforeunload` listener when it's needed (and
+removes it when it's not).
 {% endCompareCaption %}
 {% endCompare %}
-
 
 ### Avoid window.opener references
 
 In some browsers (including Chromium-based browsers) if a page was opened using
 <code>[window.open()](https://developer.mozilla.org/docs/Web/API/Window/open)</code>
 or (in [Chromium-based browsers prior to version 88](https://crbug.com/898942)) from a link with
-<code>[target=_blank](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)</code>—without
+<code>[target=\_blank](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)</code>—without
 specifying
 <code>[rel="noopener"](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener)</code>—then
 the opening page will have a reference to the window object of the opened page.
@@ -342,15 +345,15 @@ other tabs from running.
 As a result, some browsers will not attempt to put a page in bfcache in the
 following scenarios:
 
-*   Pages with an open [IndexedDB
-    connection](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
-*   Pages with in-progress
-    [fetch()](https://developer.mozilla.org/docs/Web/API/Fetch_API) or
-    [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
-*   Pages with an open
-    [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSocket) or
-    [WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
-    connection
+- Pages with an open [IndexedDB
+  connection](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
+- Pages with in-progress
+  [fetch()](https://developer.mozilla.org/docs/Web/API/Fetch_API) or
+  [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
+- Pages with an open
+  [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSocket) or
+  [WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
+  connection
 
 If your page is using any of these APIs, it's best to always close connections
 and remove or disconnect observers during the `pagehide` or `freeze` event. That
@@ -381,7 +384,7 @@ function openDB() {
 // Close the connection to the database when the user is leaving.
 window.addEventListener('pagehide', () => {
   if (dbPromise) {
-    dbPromise.then(db => db.close());
+    dbPromise.then((db) => db.close());
     dbPromise = null;
   }
 });
@@ -433,10 +436,10 @@ could be restored from bfcache.
 alt="Back-forward cache panel in DevTools", width="800", height="313" %}
 
 {% Aside %}
-  The Back/forward Cache feature in DevTools is currently in active development.
-  We strongly encourage developers to test their pages in Chrome Canary to
-  ensure they're running the latest version of DevTools and getting the most
-  up-to-date bfcache recommendations.
+The Back/forward Cache feature in DevTools is currently in active development.
+We strongly encourage developers to test their pages in Chrome Canary to
+ensure they're running the latest version of DevTools and getting the most
+up-to-date bfcache recommendations.
 {% endAside %}
 
 If successful, the panel will report "Restored from back-forward cache":
@@ -458,15 +461,19 @@ In the screenshot above, the use of an `unload` event listener is
 for bfcache. You can fix that by switching from `unload` to using `pagehide` instead:
 
 {% Compare 'worse' %}
+
 ```js
 window.addEventListener('unload', ...);
 ```
+
 {% endCompare %}
 
 {% Compare 'better' %}
+
 ```js
 window.addEventListener('pagehide', ...);
 ```
+
 {% endCompare %}
 
 ## How bfcache affects analytics and performance measurement
@@ -529,11 +536,11 @@ For user-centric metrics like the [Core Web Vitals](/vitals/), a better option
 is to report a value that more accurately represents what the user experiences.
 
 {% Aside 'caution' %}
-  The `back_forward` navigation type in the [Navigation Timing
-  API](https://www.w3.org/TR/navigation-timing-2/#sec-performance-navigation-types)
-  is not to be confused with bfcache restores. The Navigation Timing API only
-  annotates page loads, whereas bfcache restores are re-using a page loaded from
-  a previous navigation.
+The `back_forward` navigation type in the [Navigation Timing
+API](https://www.w3.org/TR/navigation-timing-2/#sec-performance-navigation-types)
+is not to be confused with bfcache restores. The Navigation Timing API only
+annotates page loads, whereas bfcache restores are re-using a page loaded from
+a previous navigation.
 {% endAside %}
 
 ### Impact on Core Web Vitals
@@ -554,18 +561,18 @@ And while there aren't (yet) dedicated web performance APIs for measuring these
 metrics after bfcache restores, their values can be approximated using existing
 web APIs.
 
-*   For [Largest Contentful Paint (LCP)](/lcp/), you can use the delta between
-    the `pageshow` event's timestamp and the timestamp of the next painted frame
-    (since all elements in the frame will be painted at the same time). Note
-    that in the case of a bfcache restore, LCP and FCP will be the same.
-*   For [First Input Delay (FID)](/fid/), you can re-add the event listeners
-    (the same ones used by the [FID
-    polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
-    `pageshow` event, and report FID as the delay of the first input after the
-    bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
-    your existing Performance Observer; all you have to do is reset the current
-    CLS value to 0.
+- For [Largest Contentful Paint (LCP)](/lcp/), you can use the delta between
+  the `pageshow` event's timestamp and the timestamp of the next painted frame
+  (since all elements in the frame will be painted at the same time). Note
+  that in the case of a bfcache restore, LCP and FCP will be the same.
+- For [First Input Delay (FID)](/fid/), you can re-add the event listeners
+  (the same ones used by the [FID
+  polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
+  `pageshow` event, and report FID as the delay of the first input after the
+  bfcache restore.
+- For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
+  your existing Performance Observer; all you have to do is reset the current
+  CLS value to 0.
 
 For more details on how bfcache affects each metric, refer to the individual
 Core Web Vitals [metric guides pages](/vitals/#core-web-vitals). And for a
@@ -574,23 +581,23 @@ refer to the [PR adding them to the web-vitals JS
 library](https://github.com/GoogleChrome/web-vitals/pull/87).
 
 {% Aside %}
-  As of `v1`, the [web-vitals](https://github.com/GoogleChrome/web-vitals)
-  JavaScript library [supports bfcache
-  restores](https://github.com/GoogleChrome/web-vitals/pull/87) in the metrics
-  it reports. Developers using `v1` or greater should not need to update their
-  code.
+As of `v1`, the [web-vitals](https://github.com/GoogleChrome/web-vitals)
+JavaScript library [supports bfcache
+restores](https://github.com/GoogleChrome/web-vitals/pull/87) in the metrics
+it reports. Developers using `v1` or greater should not need to update their
+code.
 {% endAside %}
 
 ## Additional Resources
 
-*   [Firefox
-    Caching](https://developer.mozilla.org/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
-    _(bfcache in Firefox)_
-*   [Page Cache](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/)
-    _(bfcache in Safari)_
-*   [Back/forward cache: web exposed
-    behavior](https://docs.google.com/document/d/1JtDCN9A_1UBlDuwkjn1HWxdhQ1H2un9K4kyPLgBqJUc/edit?usp=sharing)
-    _(bfcache differences across browsers)_
-*   [bfcache
-    tester](https://back-forward-cache-tester.glitch.me/?persistent_logs=1)
-    _(test how different APIs and events affect bfcache in browsers)_
+- [Firefox
+  Caching](https://developer.mozilla.org/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
+  _(bfcache in Firefox)_
+- [Page Cache](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/)
+  _(bfcache in Safari)_
+- [Back/forward cache: web exposed
+  behavior](https://docs.google.com/document/d/1JtDCN9A_1UBlDuwkjn1HWxdhQ1H2un9K4kyPLgBqJUc/edit?usp=sharing)
+  _(bfcache differences across browsers)_
+- [bfcache
+  tester](https://back-forward-cache-tester.glitch.me/?persistent_logs=1)
+  _(test how different APIs and events affect bfcache in browsers)_

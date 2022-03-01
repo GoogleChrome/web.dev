@@ -6,7 +6,7 @@ authors:
 date: 2020-05-05
 updated: 2020-08-20
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
-alt: '"LCP を最適化する" のバナー画像'
+alt: LCP を最適化する のバナー画像
 description: Largest Contentful Paint (最大視覚コンテンツの表示時間、LCP) は、ページのメイン コンテンツの画面へのレンダリングが完了したタイミングを判断するために使用されます。この記事では、応答に時間がかかっているサーバー、リソースの読み込み時間、クライアントサイドでのレンダリングなどを改善することによって LCP を最適化する方法について説明します。
 tags:
   - blog
@@ -153,7 +153,12 @@ Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-de
 - 初期のレンダリングに使用されない CSS については、`rel="preload"` や `onload` を活用した [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) を使用し、非同期でファイルを読み込みます。
 
 ```html
-<link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
+<link
+  rel="preload"
+  href="stylesheet.css"
+  as="style"
+  onload="this.rel='stylesheet'"
+/>
 ```
 
 <figure>{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="LCP の改善例: 重要でない CSS の先送り前後の比較", width="800", height="139" %} <figcaption>LCP の改善例: 重要でない CSS の先送り前後の比較</figcaption></figure>
@@ -225,7 +230,7 @@ CSS や JavaScript によるブロック時間の増加はパフォーマンス�
 - `<img>` 要素
 - `<svg>` 要素内の `<image>` 要素
 - `<video>` 要素 ([ポスター](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster)画像が LCP の測定に使用されます)
-- ([CSS グラデーション](https://developer.mozilla.org/docs/Web/CSS/url())とは対照的に、) <a><code>url()</code></a> 関数を介して読み込まれた背景画像が含まれている要素
+- ([CSS グラデーション](<https://developer.mozilla.org/docs/Web/CSS/url()>)とは対照的に、) <a><code>url()</code></a> 関数を介して読み込まれた背景画像が含まれている要素
 - テキスト ノードやその他のインラインレベルのテキスト要素を含む[ブロックレベル](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)要素。
 
 これらの要素が Above the fold でレンダリングされた場合、その読み込みにかかる時間は LCP に直接影響を及ぼします。これらのファイルの読み込みを可能な限り高速化するには、以下のような方法があります。
@@ -401,12 +406,12 @@ LCP を測定またはデバッグするためのツールは、以下のよう�
 
 - [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) では、ラボ設定での LCP の測定がサポートされています。
 
-    {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
+  {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
 - Chrome DevTools の [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) (パフォーマンス) パネルの **Timings** (タイミング) セクションには LCP マーカーが含まれており、**Related Node** (関連するノード) フィールドにカーソルを置くことで LCP に関連する要素を表示することができます。
 
-    {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools での LCP", width="800", height="509" %}
+  {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools での LCP", width="800", height="509" %}
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、オリジンレベルで集計された実際の環境での LCP 値を提供します。
 
-*レビューしていただいた Philip Walton、Katie Hempenius、Kayce Basques、Ilya Grigorik には、心より感謝申し上げます。*
+_レビューしていただいた Philip Walton、Katie Hempenius、Kayce Basques、Ilya Grigorik には、心より感謝申し上げます。_

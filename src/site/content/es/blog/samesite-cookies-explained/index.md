@@ -45,20 +45,20 @@ Cookie: promo_shown=1
 También puede agregar y leer las cookies disponibles para ese sitio en JavaScript usando `document.cookie` . Hacer una asignación hacia `document.cookie` creará o anulará una cookie con esa clave. Por ejemplo, intente hacer lo siguiente en la consola JavaScript de su navegador:
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 La lectura de `document.cookie` generará todas las cookies a las que se tiene acceso en el contexto actual, donde cada cookie estará separada por un punto y coma:
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript tiene acceso a las cookies dentro del navegador", width="600", height="382", style="max-width: 35vw" %} <figcaption> JavaScript puede acceder a las cookies mediante <code>document.cookie</code>. </figcaption></figure>
 
-Si prueba esto en una selección de sitios populares, notará que la mayoría de ellos establecen significativamente más de tres cookies. En la mayoría de los casos, esas cookies se envían a ese dominio a partir de cada solicitud, lo cual tiene varias implicaciones. El ancho de banda que se emplea para la carga suele estar más restringido para sus usuarios que la descarga, de modo que la sobrecarga en todas las solicitudes que salen agrega un retraso en el tiempo que transcurre hasta llegar al primer byte. Por este motivo, sugerimos que sea conservador en la cantidad y el tamaño de las cookies que establezca. Utilice el  atributo `Max-Age` para garantizar que las cookies no permanezcan más tiempo del necesario.
+Si prueba esto en una selección de sitios populares, notará que la mayoría de ellos establecen significativamente más de tres cookies. En la mayoría de los casos, esas cookies se envían a ese dominio a partir de cada solicitud, lo cual tiene varias implicaciones. El ancho de banda que se emplea para la carga suele estar más restringido para sus usuarios que la descarga, de modo que la sobrecarga en todas las solicitudes que salen agrega un retraso en el tiempo que transcurre hasta llegar al primer byte. Por este motivo, sugerimos que sea conservador en la cantidad y el tamaño de las cookies que establezca. Utilice el atributo `Max-Age` para garantizar que las cookies no permanezcan más tiempo del necesario.
 
 ## ¿Qué son las cookies propias y de terceros?
 
@@ -246,6 +246,6 @@ Varias versiones antiguas de los navegadores, entre los que se incluyen Chrome, 
 
 Si desea obtener más información sobre la manera exacta para actualizar sus cookies e implementar con éxito estos cambios en `SameSite=None`, así como la diferencia en el comportamiento del navegador, vaya al artículo de seguimiento, [Recetas para usar las cookies en SameSite](/samesite-cookie-recipes).
 
-*Me gustaría agradecer a Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner y Vivek Sekhar por todas sus contribuciones y valiosos comentarios.*
+_Me gustaría agradecer a Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner y Vivek Sekhar por todas sus contribuciones y valiosos comentarios._
 
-*Imagen Cookie hero realizada por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) en [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Imagen Cookie hero realizada por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) en [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

@@ -45,15 +45,15 @@ Cookie: promo_shown=1
 Você também pode adicionar e ler os cookies disponíveis para esse site em JavaScript através de `document.cookie`. Atribuir um par chave=valor a `document.cookie` cria ou substitui um cookie com essa chave. Por exemplo, você pode experimentar o seguinte código no console JavaScript do seu navegador:
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 A leitura de `document.cookie` devolve todos os cookies acessíveis no contexto atual, com cada cookie separado por um ponto e vírgula:
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript acessando cookies no navegador", width="600", height="382", style="max-width: 35vw" %}<figcaption>JavaScript pode accessar cookies usando <code>document.cookie</code>.</figcaption></figure>
@@ -126,7 +126,7 @@ Nem `Strict` nem `Lax` são uma solução completa para a segurança do seu site
 
 {% endAside %}
 
-Por último, existe a opção de não especificar o valor.  Anteriormente, esta era a forma de indicar implicitamente o desejo de que o cookie fosse enviado em todos os contextos. No último rascunho da [RFC6265bis,](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) isto foi explicitado pela introdução de um novo valor de `SameSite=None`. Isto significa que você pode usar `None` para comunicar claramente seu desejo intencional de que o cookie seja enviado num contexto de terceiros.
+Por último, existe a opção de não especificar o valor. Anteriormente, esta era a forma de indicar implicitamente o desejo de que o cookie fosse enviado em todos os contextos. No último rascunho da [RFC6265bis,](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) isto foi explicitado pela introdução de um novo valor de `SameSite=None`. Isto significa que você pode usar `None` para comunicar claramente seu desejo intencional de que o cookie seja enviado num contexto de terceiros.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Três cookies rotulados como None, Lax ou Strict dependendo do contexto", width="800", height="456", style="max-width: 60vw" %}<figcaption> Marque explicitamente o contexto de um cookie como <code>None</code>, <code>Lax</code> ou <code>Strict</code></figcaption></figure>
 
@@ -241,6 +241,6 @@ Várias versões mais antigas de navegadores, incluindo Chrome, Safari e navegad
 
 Para mais detalhes sobre como atualizar seus cookies para lidar com essas mudanças de `SameSite=None` e as diferenças de comportamento em diferentes navegadores, acesse o artigo seguinte, [Receitas de cookies SameSite](/samesite-cookie-recipes).
 
-*Muito obrigado pelas contribuições e feedback de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner e Vivek Sekhar*
+_Muito obrigado pelas contribuições e feedback de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner e Vivek Sekhar_
 
-*Imagem do Cookie Hero por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) no [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Imagem do Cookie Hero por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) no [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

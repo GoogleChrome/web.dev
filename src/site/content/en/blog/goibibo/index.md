@@ -5,7 +5,7 @@ subhead: Bridging the gap between web and iOS/Android experiences to delight use
 date: 2020-09-29
 hero: image/admin/373gEGS1WasAvqbvVoH9.png
 thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
-alt: An illustration of a smartphone next to the text "Scale on web"
+alt: An illustration of a smartphone next to the text 'Scale on web'
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
   conversions by building reliable user experiences between their PWA and iOS/Android apps.
@@ -40,16 +40,16 @@ In their journey to improve user experience, Goibibo noticed a few trends:
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0dmwrJViuhgA3I4IDCkj.png", alt="Goibibo's PWA.", width="800", height="1624" %}
 </figure>
 
-* With users either already shifted or quickly shifting to mobile, their initial strategy
+- With users either already shifted or quickly shifting to mobile, their initial strategy
   towards mobile web was to build a lightweight and functional application. This worked, with
   search-to-details-page conversions equalizing on web and iOS/Android, but the iOS/Android apps
   won in all further steps of the conversion funnel.
 
-* There were significant drop offs at the payment stage of the PWA compared to their
+- There were significant drop offs at the payment stage of the PWA compared to their
   iOS/Android apps. This was when they decided to invest in their PWA with the goal of letting
   users experience the same UX on their PWA as on their iOS/Android apps.
 
-* They also noticed nearly 20% of their users were starting a session on the web and
+- They also noticed nearly 20% of their users were starting a session on the web and
   converting on the app. This reiterated their belief that a chunk of users will go untapped
   without an aligned PWA and iOS/Android app strategy.
 
@@ -123,10 +123,10 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 ## Overall business results {: #results }
 
-+   Iterations to PWA interfaces resulted in a 60% jump in conversion rate (compared to the
-    previous mobile web flow) and delighted users.
-+   [New web capabilities](/fugu-status/) improved UX and caused a 20% increase
-    in logged-in users (who convert 6x more).
+- Iterations to PWA interfaces resulted in a 60% jump in conversion rate (compared to the
+  previous mobile web flow) and delighted users.
+- [New web capabilities](/fugu-status/) improved UX and caused a 20% increase
+  in logged-in users (who convert 6x more).
 
 <blockquote>
   <p style="font-style: italic; font-size: 1.5rem;">

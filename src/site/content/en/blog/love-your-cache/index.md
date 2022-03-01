@@ -11,7 +11,7 @@ authors:
   - samthor
 date: 2020-12-11
 hero: image/admin/VKYTBR0Ri5I7Jz7Ob2Fa.jpg
-alt: Overhead power line for a train with a number "2"
+alt: Overhead power line for a train with a number '2'
 tags:
   - blog
   - performance
@@ -243,20 +243,22 @@ event.
 Aside from HTML, some other options for files that live in the middle ground
 include:
 
--  In general, look for assets that don't affect others
-   -  For example: avoid CSS, as it causes changes in how your HTML is
-      rendered
+- In general, look for assets that don't affect others
 
--  Large images that are used as part of timely articles
-   -  Your users probably aren't going to visit any single article more
-      than a handful of times, so don't cache photos or hero images forever and
-      waste storage
+  - For example: avoid CSS, as it causes changes in how your HTML is
+    rendered
 
--  An asset which represents something that itself has lifetime
-   -  JSON data about the weather might only be published every hour, so
-      you can cache the previous result for an hour—it won't change in your window
-   -  Builds of an open-source project might be rate-limited, so cache a
-      build status image until it's possible that the status might change
+- Large images that are used as part of timely articles
+
+  - Your users probably aren't going to visit any single article more
+    than a handful of times, so don't cache photos or hero images forever and
+    waste storage
+
+- An asset which represents something that itself has lifetime
+  - JSON data about the weather might only be published every hour, so
+    you can cache the previous result for an hour—it won't change in your window
+  - Builds of an open-source project might be rate-limited, so cache a
+    build status image until it's possible that the status might change
 
 ## Summary
 

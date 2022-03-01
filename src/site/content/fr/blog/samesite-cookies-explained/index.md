@@ -6,7 +6,7 @@ authors:
 date: 2019-05-07
 updated: 2020-05-28
 hero: image/admin/UTOC41rgCccAqVNbJlyK.jpg
-description:  "Apprenez à marquer vos cookies pour une utilisation propriétaire et tierce avec l'attribut SameSite. Vous pouvez améliorer la sécurité de votre site en utilisant les valeurs Lax et Strict de SameSite pour améliorer la protection contre les attaques CSRF. La spécification du nouvel attribut None vous permet de marquer explicitement vos cookies pour une utilisation intersites."
+description: "Apprenez à marquer vos cookies pour une utilisation propriétaire et tierce avec l'attribut SameSite. Vous pouvez améliorer la sécurité de votre site en utilisant les valeurs Lax et Strict de SameSite pour améliorer la protection contre les attaques CSRF. La spécification du nouvel attribut None vous permet de marquer explicitement vos cookies pour une utilisation intersites."
 tags:
   - blog
   - security
@@ -45,15 +45,15 @@ Cookie: promo_shown=1
 Vous pouvez également ajouter et lire les cookies disponibles sur ce site en JavaScript à l'aide de `document.cookie`. Effectuer une affectation à `document.cookie` créera ou remplacera un cookie avec cette clé. Par exemple, vous pouvez essayer ce qui suit dans la console JavaScript de votre navigateur :
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 La lecture de `document.cookie` affichera tous les cookies accessibles dans le contexte actuel, chaque cookie étant séparé par un point-virgule :
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript accédant aux cookies dans le navigateur", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript peut accéder aux cookies en utilisant <code>document.cookie</code>.</figcaption></figure>
@@ -78,7 +78,7 @@ Les utilisateurs sont également de plus en plus conscients de la manière dont 
 
 ## Indiquez explicitement l'utilisation des cookies avec l'attribut `SameSite`
 
-L'introduction de l'attribut `SameSite` (défini dans  [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00)) vous permet de déclarer si votre cookie doit être restreint à un contexte propriétaire ou de même site. Il est utile de comprendre exactement ce que "site" signifie ici. Le site est la combinaison du suffixe de domaine et de la partie du domaine juste avant. Par exemple, le domaine `www.web.dev` fait partie du site `web.dev`.
+L'introduction de l'attribut `SameSite` (défini dans [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00)) vous permet de déclarer si votre cookie doit être restreint à un contexte propriétaire ou de même site. Il est utile de comprendre exactement ce que "site" signifie ici. Le site est la combinaison du suffixe de domaine et de la partie du domaine juste avant. Par exemple, le domaine `www.web.dev` fait partie du site `web.dev`.
 
 {% Aside 'key-term' %}
 
@@ -241,6 +241,6 @@ Un certain nombre d'anciennes versions de navigateurs, notamment Chrome, Safari 
 
 Pour plus de détails sur comment mettre à jour vos cookies pour gérer les modifications apportées à `SameSite=None` et la différence de comportement des navigateurs, consultez l'article suivant : [Recettes pour utiliser les cookies SameSite](/samesite-cookie-recipes).
 
-*Merci pour les contributions et les commentaires de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner et Vivek Sekhar*
+_Merci pour les contributions et les commentaires de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner et Vivek Sekhar_
 
-*Cookie hero image par [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Cookie hero image par [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

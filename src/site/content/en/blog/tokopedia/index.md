@@ -7,7 +7,7 @@ subhead: >
 date: 2020-10-13
 hero: image/admin/MaUpfoZXyw4uhTEBLuV1.png
 thumbnail: image/admin/SI5jNv7NqnjkfIIXyZOa.png
-alt: An illustration of e-commerce icons next to the text "Scale on web"
+alt: An illustration of e-commerce icons next to the text 'Scale on web'
 description: >
   Creating a web performance dashboard and optimizing JavaScript, resources, and the
   homepage to achieve business success.
@@ -20,7 +20,7 @@ tags:
 ---
 
 Tokopedia is one of the largest e-commerce companies in Indonesia. With 2.7M+ nationwide merchant
-networks, 18M+ product listings, and 50M+ monthly visitors, the web team knew  that investment in
+networks, 18M+ product listings, and 50M+ monthly visitors, the web team knew that investment in
 web performance was essential. By building a performance-first culture, they achieved a 35% increase
 in click-through rates (CTR) and an 8% increase in conversions (CVR).
 

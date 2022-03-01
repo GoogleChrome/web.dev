@@ -1,7 +1,6 @@
 ---
 title: SameSite cookies explained
-subhead:
-  Secure your site by learning how to explicitly mark your cross-site cookies.
+subhead: Secure your site by learning how to explicitly mark your cross-site cookies.
 authors:
   - rowan_m
 date: 2019-05-07
@@ -24,10 +23,11 @@ feedback:
 
 {% Aside %}
 This article is part of a series on the `SameSite` cookie attribute changes:
+
 - [SameSite cookies explained](/samesite-cookies-explained/)
 - [SameSite cookies recipes](/samesite-cookie-recipes/)
 - [Schemeful Same-Site](/schemeful-samesite)
-{% endAside %}
+  {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web
 sites. Over the years their capabilities have grown and evolved, but left the
@@ -81,16 +81,16 @@ override a cookie with that key. For example, you can try the following in your
 browser's JavaScript console:
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 Reading `document.cookie` will output all the cookies accessible in the current
 context, with each cookie separated by a semicolon:
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>

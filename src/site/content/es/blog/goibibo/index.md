@@ -5,7 +5,7 @@ subhead: Cerrando la brecha entre la web y las experiencias de iOS y Android par
 date: 2020-09-29
 hero: image/admin/373gEGS1WasAvqbvVoH9.png
 thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
-alt: Una ilustración de un teléfono inteligente junto al texto "Escala en la web"
+alt: Una ilustración de un teléfono inteligente junto al texto 'Escala en la web'
 description: Descubre cómo Goibibo, la principal empresa de viajes en línea de la India, logró un aumento del 60% en conversiones mediante la creación de experiencias de usuario fiables entre sus aplicaciones PWA y las de iOS y Android.
 tags:
   - blog

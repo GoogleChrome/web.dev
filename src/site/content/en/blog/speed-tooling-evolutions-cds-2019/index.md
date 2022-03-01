@@ -1,5 +1,5 @@
 ---
-title: "Speed tooling evolutions: highlights from Chrome Developer Summit 2019"
+title: 'Speed tooling evolutions: highlights from Chrome Developer Summit 2019'
 subhead: New performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and more.
 authors:
   - egsweeny
@@ -85,9 +85,7 @@ movement of content can be very frustrating and this new metric helps you
 address that problem by measuring how often it's occurring for your users.
 
 <figure>
-  <video autoplay controls loop muted
-   
-    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
+  <video autoplay controls loop muted poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
       src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"

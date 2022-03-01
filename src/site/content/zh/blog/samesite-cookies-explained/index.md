@@ -45,15 +45,15 @@ Cookie: promo_shown=1
 您还可以使用`document.cookie`在 JavaScript 中添加和读取该网站可用的 cookie。对`document.cookie`进行赋值将创建或覆盖一个带有该键的 cookie。例如，您可以在浏览器的 JavaScript 控制台中尝试以下操作：
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 读取`document.cookie`将输出当前上下文中可访问的所有 cookie，每个 cookie 用分号进行分隔：
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript 在浏览器中访问 cookie", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript 可以使用<code>document.cookie</code>访问 cookie。</figcaption></figure>
@@ -241,6 +241,6 @@ Set-Cookie: widget_session=abc123; SameSite=None; Secure
 
 如需了解如何更新 cookie 来妥善处理对`SameSite=None`的这些更改，以及如何处理浏览器行为差异的更多详情，请访问后续文章 [SameSite cookie 配方](/samesite-cookie-recipes)。
 
-*感谢 Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner 和 Vivek Sekhar 的贡献和反馈*
+_感谢 Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner 和 Vivek Sekhar 的贡献和反馈_
 
-*Cookie 首图作者：[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 上的 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Cookie 首图作者：[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 上的 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

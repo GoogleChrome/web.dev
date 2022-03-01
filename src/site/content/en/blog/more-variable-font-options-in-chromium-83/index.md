@@ -9,7 +9,7 @@ date: 2020-05-21
 updated: 2020-05-26
 hero: image/admin/RgpA9x73j3OnnrC8z97g.jpg
 thumbnail: image/admin/h1iXgLXRrxjunx2PhoPB.jpg
-alt: A bright pink and purple gradient with "macOS Catalina system-ui" going from thin to think from left to right, demonstrating some of the new variation settings
+alt: A bright pink and purple gradient with 'macOS Catalina system-ui' going from thin to think from left to right, demonstrating some of the new variation settings
 tags:
   - blog
   - css
@@ -35,29 +35,27 @@ This post assumes that you're already familiar with variable fonts. If not, chec
 {% YouTube 'B42rUMdcB7c' %}
 
 ### Browser compatibility
+
 At the time of writing, `system-ui` has support from Chromium (since 56), Edge (since 79), Safari (since 11), and from Firefox (since 43) but with the `-apple-system` keyword. See [Can I use variable fonts?](https://caniuse.com/#feat=variable-fonts) for updates.
-
-
 
 ## New powers {: #new-powers }
 
 The new abilities that Catalina brought to the system font are now available to web developers as of Chromium 83. The `system-ui` font now **has more variable settings**: optical sizing and 2 unique weight adjustments:
 
 {% Compare 'worse', 'Mojave' %}
+
 ```css
 h1 {
   font-family: system-ui;
   font-weight: 700;
-  font-variation-settings:
-    'wght' 750
-  ;
+  font-variation-settings: 'wght' 750;
 }
-
 ```
 
 {% endCompare %}
 
 {% Compare 'better', 'Catalina' %}
+
 ```css/5-7
 h1 {
   font-family: system-ui;
@@ -82,9 +80,8 @@ On Mojave, `system-ui` is a variable font with only `wght` settings. While `syst
 
 Looks like some neat progressive enhancement design opportunities to me! Really dig into the subtleties of the system font if you want.
 
+### `wght` {: #wght }
 
-
-### `wght`  {: #wght }
 Accepts a font weight between `0` and `900` and is applied equally to all characters.
 
 ```css
@@ -100,6 +97,7 @@ font-variation-settings: 'wght' 750;
 </figure>
 
 ### `opsz` {: #opsz }
+
 Optical sizing is similar to kerning or letter-spacing, but the spacing is done by a human eye instead of math. A value of `19` or below is intended for text and body copy spacing, while `20` or above is for spacing display headers and titles.
 
 ```css
@@ -115,6 +113,7 @@ font-variation-settings: 'opsz' 20;
 </figure>
 
 ### `GRAD`
+
 Similar to weight, but without touching horizontal spacing. It accepts values between `400` and `1000`.
 
 ```css
@@ -130,6 +129,7 @@ font-variation-settings: 'GRAD' 500;
 </figure>
 
 ### `YAXS`
+
 Stretches the glyph vertically. It accepts values between `400` and `1000`.
 
 ```css
@@ -145,6 +145,7 @@ font-variation-settings: 'YAXS' 500;
 </figure>
 
 ### Combining the options
+
 With a few lines of CSS, we can tweak the font settings into a bold of our choice or try out other interesting combinations:
 
 ```css
