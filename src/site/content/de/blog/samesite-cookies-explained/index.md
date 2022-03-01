@@ -45,15 +45,15 @@ Cookie: promo_shown=1
 Sie können die für diese Site verfügbaren Cookies auch per JavaScript mit `document.cookie` hinzufügen und lesen. Durch eine Zuweisung an `document.cookie` wird ein Cookie mit diesem Schlüssel erstellt oder überschrieben. Sie können beispielsweise Folgendes in der JavaScript-Konsole Ihres Browsers versuchen:
 
 ```text
-document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-↪️ "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 Beim Lesen von `document.cookie` werden alle im aktuellen Kontext zugänglichen Cookies ausgegeben, wobei jedes Cookie durch ein Semikolon getrennt ist:
 
 ```text
-document.cookie;
-↪️ "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript greift auf Cookies im Browser zu", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript kann mit <code>document.cookie</code> auf Cookies zugreifen.</figcaption></figure>
