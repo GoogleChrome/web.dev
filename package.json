@@ -86,7 +86,7 @@
     "@google-cloud/cloudbuild": "^2.6.0",
     "@google-cloud/error-reporting": "^2.0.3",
     "@google-cloud/secret-manager": "^3.10.0",
-    "@mdn/browser-compat-data": "^4.1.6",
+    "@mdn/browser-compat-data": "^4.1.10",
     "@percy/cli": "^1.0.0-beta.71",
     "@percy/puppeteer": "^2.0.0",
     "@rollup/plugin-commonjs": "^21.0.1",
