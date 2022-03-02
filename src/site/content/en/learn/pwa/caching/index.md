@@ -5,6 +5,7 @@ description: >
 authors:
   - firt
 date: 2021-12-03
+updated: 2022-03-02
 ---
 
 Cache storage is a powerful tool. It makes your apps less dependent on network conditions. With good use of caches you can make your web app available offline and serve your assets as fast as possible in any network condition. As mentioned in [Assets and Data](/learn/pwa/assets-and-data/) you can decide the best strategy for caching the necessary assets. To manage the cache your service worker interacts with the [Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage).
@@ -46,7 +47,7 @@ While being offline-capable is one of the requirements for a Progressive Web App
 Your PWA should not render a browser's error message saying that the web rendering engine couldn't load the page. Instead use your service worker to show your own messaging, avoiding a generic and confusing browser error.
 
 {% Aside 'caution' %}
-If you [publish your PWA to Google Play Store](https://chromeos.dev/en/publish/pwa-in-play), your PWA should never render an HTTP error message from the browser to avoid penalizations within the store listings. Check [Changes to Quality Criteria for PWAs]( https://blog.chromium.org/2020/06/changes-to-quality-criteria-for-pwas.html) for more information.
+If you [publish your PWA to Google Play Store](https://chromeos.dev/en/publish/pwa-in-play), your PWA should never render an HTTP error message from the browser to avoid penalizations within the store listings. Check [Changes to Quality Criteria for PWAs](https://blog.chromium.org/2020/06/changes-to-quality-criteria-for-pwas.html) for more information.
 {% endAside %}
 
 There are many different caching strategies you could use depending on the needs of your PWA. That's why it is important to design your cache usage to provide a fast and reliable experience. For example if all your app assets will download fast, don't consume a lot of space, and don't need to be updated in every request, caching all your assets would be a valid strategy. If on the other hand you have resources that need to be the latest version you might want to consider not caching those assets at all.
