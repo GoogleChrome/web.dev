@@ -1,4 +1,52 @@
 {
+  "paulkinlan": {
+    "homepage": "https://paul.kinlan.me/",
+    "twitter": "paul_kinlan"
+  },
+  "dalecurtis": {
+    "github": "https://github.com/dalecurtis",
+    "twitter": "dalecurtis"
+  },
+  "mscales": {
+    "twitter": "wibblymat"
+  },
+  "ewagasperowicz": {
+    "twitter": "devnook"
+  },
+  "alexdanilo": {
+    "twitter": "alexanderdanilo"
+  },
+  "taylorsavage": {
+    "twitter": "taylorthesavage"
+  },
+  "umarhansa": {
+    "homepage": "https://umaar.com/",
+    "twitter": "umaar"
+  },
+  "ilmariheikkinen": {
+    "homepage": "http://fhtr.org/",
+    "twitter": "ilmarihei"
+  },
+  "mikewest": {
+    "homepage": "https://mikewest.org/",
+    "twitter": "mikewest"
+  },
+  "samthorogood": {
+    "homepage": "https://whistlr.info/",
+    "twitter": "samthor"
+  },
+  "aliceboxhall": {
+    "twitter": "sundress"
+  },
+  "jeremywagner": {
+    "homepage": "https://jeremywagner.me/",
+    "github": "malchata",
+    "twitter": "malchata"
+  },
+  "eligrey": {
+    "homepage": "https://eligrey.com/",
+    "twitter": "sephr"
+  },
   "jakearchibald": {
     "country": "UK",
     "homepage": "https://jakearchibald.com/",
