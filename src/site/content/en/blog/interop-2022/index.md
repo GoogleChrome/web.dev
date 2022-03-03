@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Interop 2022: browsers working together to improve the web for developers"
-subhead:
-    "For the first time ever, all major browser vendors, and other stakeholders, have come together to solve the top browsers compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas. In this article, find out how we got here, what the project focuses on, how success will be measured, and how you can track progress."
 description:
     "Learn more about how all browser vendors, and other stakeholders, have come together to solve the top browsers compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas."
 authors:
@@ -18,6 +16,8 @@ tags:
 ---
 
 {% Banner %}Due to the Russian invasion of Ukraine, we have been postponing this announcement. However, since this work has now begun and you will see changes as a web developer, we wanted to highlight this cross-browser effort to make the web more interoperable and better for everyone.{% endBanner %}
+
+For the first time ever, all major browser vendors, and other stakeholders, have come together to solve the top browsers compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas. In this article, find out how we got here, what the project focuses on, how success will be measured, and how you can track progress.
 
 ## It all started in 2019
 
