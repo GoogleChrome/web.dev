@@ -17,6 +17,8 @@ tags:
   - css
 ---
 
+{% Banner %}Due to the Russian invasion of Ukraine, we have been postponing this announcement. However, since this work has now begun and you will see changes as a web developer, we wanted to highlight this cross-browser effort to make the web more interoperable and better for everyone.{% endBanner %}
+
 ## It all started in 2019
 
 Back in 2019 Mozilla, Google, and others started [a major effort](https://insights.developer.mozilla.org/) to understand developers' pain points, in the form of the [MDN Developer Needs Assessment surveys](https://insights.developer.mozilla.org/), and the deep-dive [Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html). These reports gave us detailed and actionable information to address top challenges for developers with the web platform, and led to the [Compat 2021 effort](/compat2021/).
