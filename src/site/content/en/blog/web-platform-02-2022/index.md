@@ -30,7 +30,7 @@ Firefox 97 includes [Cascade Layers](https://developer.mozilla.org/docs/Web/CSS/
 }
 ```
 
-Firefox is the first browser to land this in a release version. However, check out the section of this post on [beta releases](/#beta-browser-releases), as it won’t be too long before this feature is available everywhere.
+Firefox is the first browser to land this in a release version. However, check out the section of this post on [beta releases](#beta-browser-releases), as it won't be too long before this feature is available everywhere. Find out more about Cascade Layers in [Cacade layers are coming to your browser](https://developer.chrome.com/blog/cascade-layers/).
 
 {% BrowserCompat 'css.at-rules.layer' %}
 
