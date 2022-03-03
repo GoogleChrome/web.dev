@@ -29,7 +29,7 @@ We were delighted to reach [a score of over 90%](/compat2021-holiday-update/) ac
 
 ## What is Interop 2022?
 
-Interop 2022 is a benchmark, agreed on by representatives of three major browser implementations, and developed through a process of [public nomination](https://github.com/web-platform-tests/interop-2022/labels/proposal) and review with input from [supporters](https://github.com/web-platform-tests/interop-2022/blob/main/supporters.md) [Apple](https://webkit.org/blog/12288/working-together-on-interop-2022/), [Bocoup](https://bocoup.com/blog/interop-2022), Google, [Igalia](https://igalia.com/2022/02/22/Igalia-and-Interop-2022), [Microsoft](https://aka.ms/microsoft-interop2022), and [Mozilla](https://hacks.mozilla.org/2022/02/interop-2022/).
+Interop 2022 is a benchmark, agreed on by representatives of three major browser implementations, and developed through a process of [public nomination](https://github.com/web-platform-tests/interop-2022/labels/proposal) and review with input from [supporters](https://github.com/web-platform-tests/interop-2022/blob/main/supporters.md) [Apple](https://webkit.org/blog/12288/working-together-on-interop-2022/), [Bocoup](https://bocoup.com/blog/interop-2022), Google, [Igalia](https://igalia.com/news/interop2022.html), [Microsoft](https://aka.ms/microsoft-interop2022), and [Mozilla](https://hacks.mozilla.org/2022/03/interop-2022/).
 
 The benchmark focuses on 15 areas, [identified by developers](/state-of-css-2021/) as being particularly troublesome when they are missing or have compatibility issues across browsers. All browser vendors have agreed to focus on these areas, and everyone involved is excited to get started on making the experience of developing for the web measurably better.
 
@@ -140,6 +140,6 @@ More about Interop 2022 from:
 
 - [Apple](https://webkit.org/blog/12288/working-together-on-interop-2022/)
 - [Bocoup](https://bocoup.com/blog/interop-2022)
-- [Igalia](https://igalia.com/2022/02/22/Igalia-and-Interop-2022)
+- [Igalia](https://igalia.com/news/interop2022.html)
 - [Microsoft](https://aka.ms/microsoft-interop2022)
-- [Mozilla](https://hacks.mozilla.org/2022/02/interop-2022/)
+- [Mozilla](https://hacks.mozilla.org/2022/03/interop-2022/)
