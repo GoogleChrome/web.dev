@@ -2,7 +2,7 @@
 layout: post
 title: "New to the web platform in February"
 subhead: >
-  Discover some of the interesting features thatlanded in stable and beta web browsers during February 2022. 
+  Discover some of the interesting features that landed in stable and beta web browsers during February 2022. 
 description: >
   Discover some of the interesting features that landed in stable and beta web browsers during February 2022.
 date: 2022-03-02
