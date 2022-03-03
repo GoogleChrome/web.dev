@@ -102,7 +102,7 @@ if ('launchQueue' in window && 'targetURL' in LaunchParams.prototype) {
 ### The `launch_handler` manifest member
 
 To declaratively specify the launch behavior of your app, add the `launch_handler` manifest member
-to your manifest. It has one sub-field, `route_to`. It lets
+to your manifest. It has one subfield, `route_to`. It lets
 you control whether a new or an existing client should be launched, and how and if this
 client should be navigated. The Web App Manifest excerpt below shows a file with
 exemplary values that would always route all launches to a new client.
@@ -136,7 +136,7 @@ valid value will be used. This is to allow new values to be added to the spec wi
 backwards compatibility with existing implementations.
 
 For example, if the hypothetical value `"matching-url-client"` were added, sites would specify
-`"route_to": ["matching-url-client", "existing-client-navigate"]` to continue to control the
+`"route_to": ["matching-url-client", "existing-client-navigate"]` to continue controlling the
 behavior of older browsers that did not support `"matching-url-client"`.
 
 ### The `window.launchQueue` interface
