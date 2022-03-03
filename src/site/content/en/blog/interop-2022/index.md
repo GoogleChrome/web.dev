@@ -17,9 +17,6 @@ tags:
   - css
 ---
 
-For the first time ever, all major browser vendors, and other stakeholders, have come together to solve the top browsers compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas. In this article, find out how we got here, what the project focuses on, how success will be measured, and how you can track progress.
-
-
 ## It all started in 2019
 
 Back in 2019 Mozilla, Google, and others started [a major effort](https://insights.developer.mozilla.org/) to understand developers' pain points, in the form of the [MDN Developer Needs Assessment surveys](https://insights.developer.mozilla.org/), and the deep-dive [Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html). These reports gave us detailed and actionable information to address top challenges for developers with the web platform, and led to the [Compat 2021 effort](/compat2021/).
