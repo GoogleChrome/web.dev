@@ -84,15 +84,15 @@ of the Search Console:*
   infected URLs you saw before.
 2. Select **Request a review**.
 
-    In order to submit a review, we ask that you provide more information on
-    what you did to remove the policy violation from your site. For example,
-    "I removed the 3rd-party code that was distributing malware on my
-    website and replaced it with a more modern version of the code".
+In order to submit a review, we ask that you provide more information on
+what you did to remove the policy violation from your site. For example,
+"I removed the 3rd-party code that was distributing malware on my
+website and replaced it with a more modern version of the code".
 
 
-*You did not receive a malware or unwanted software notification in the
+You did not receive a malware or unwanted software notification in the
 [**Security Issues report**](https://www.google.com/webmasters/tools/security-issues)
-of the Search Console, but you received a notification in your AdWords account:*
+of the Search Console, but you received a notification in your AdWords account:
 
 1. Request a review through the
   [AdWords support center](https://support.google.com/adwords/contact/site_policy).
@@ -100,9 +100,9 @@ of the Search Console, but you received a notification in your AdWords account:*
 
 #### C. Phishing or Social Engineering
 
-*You received a phishing notification in the
+You received a phishing notification in the
 [**Security Issues report**](https://www.google.com/webmasters/tools/security-issues)
-of the Search Console:*
+of the Search Console:
 
 1. Open the
   [**Security Issues report**](https://www.google.com/webmasters/tools/security-issues)
@@ -110,9 +110,7 @@ of the Search Console:*
   infected URLs you saw before.
 2. Select **Request a review**.
 
-    In order to submit a review, we ask you to provide more information on
-    what you did to remove the policy violation from your site. For example,
-    "I removed the page that was asking users to enter personal information".
+In order to submit a review, we ask you to provide more information on what you did to remove the policy violation from your site. For example, "I removed the page that was asking users to enter personal information".
 
 3. You can also request the review at
   [google.com/safebrowsing/report_error/](https://www.google.com/safebrowsing/report_error/).
@@ -145,18 +143,18 @@ caution to protect users.
 
 ### Final steps
 
-* **If your request was approved,** verify that your site works as expected:
+* **If your request was approved** verify that your site works as expected:
   pages load properly and links are clickable. To keep your site safe,
   we encourage all site owners to implement the maintenance and security
   plan created in [Clean and maintain your site](/secure/clean-and-maintain-your-site/).
-
-    For more information, consider the following resources from
+  
+  For more information, consider the following resources from
     [StopBadware](https://www.stopbadware.org):
 
       * [Preventing badware: basics](https://www.stopbadware.org/prevent-badware-basics)
       * [Additional resources: hacked sites](https://www.stopbadware.org/hacked-sites-resources)
 
-* **If your request wasn't approved,** reassess your site for
+* **If your request wasn't approved** reassess your site for
   [malware](/secure/hacked-with-malware/) or [spam](/secure/hacked-with-spam/), or for any
   modifications or new files created by the hacker. Alternatively, you
   can consider requesting more help from

@@ -17,7 +17,7 @@ the damaged files on your site. You'll use this list in a later step,
 
 {% Aside %}
 If your site was affected by malware and is flagged with the warning
-_"This site may harm your computer"_ in search results, please see the
+_"This site may harm your computer"_ in search results, see the
 corresponding article,
 [Assess malware damage (Hacked with malware)](/secure/hacked-with-malware/).
 {% endAside %}

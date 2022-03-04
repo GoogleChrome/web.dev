@@ -53,6 +53,7 @@ providers have detailed documentation on how to resolve hacked cases. You
 can also seek help from a trusted security professional.
 
 ## How can I reproduce the warnings displayed to the users of my site?
+
 Safe Browsing displays warnings based on the user's browsing context. As a webmaster,
 you may not be able to easily reproduce the warnings in your own browsing.
 The Search Console [Security

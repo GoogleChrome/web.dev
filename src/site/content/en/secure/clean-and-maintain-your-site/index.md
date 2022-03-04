@@ -171,18 +171,22 @@ $passwd admin1
     * One of your backups will be a disk image or "clone version" of your site.
       This format makes restoring content even simpler. You can leave the disk
       image aside for an emergency. On a Unix-based system, making a disk image could be:
+
 ```shell
 dd if=/dev/sda bs=1024 conv=noerror,sync | gzip -c -9 \
 > /mirror/full-backup-20120125-infected.gz
 ```
+
     * The other backup will be a file system copy from your server, including
       images and media files. If you have a database, backup the database as
       well.
+
 ```shell
 tar -pczf full-backup-20120125-infected.tar.gz www/
 mysqldump -u root -p --all-databases | gzip -9 \
 > fulldb_backup-20120125-infected.sql
 ```
+
     * If you don't have a disk image, make two backups of the database and
       two backups of the filesystem.
 2. Clean the site's content on the new backup filesystem copy (not the server
@@ -199,11 +203,12 @@ mysqldump -u root -p --all-databases | gzip -9 \
     4. Correct the vulnerability if it exists in your code or cracked
        passwords. Input validation libraries or security audits may be of help.
     5. If your site has a database, begin cleaning up hacker-modified records
-       in your backup. Just before you think you're done, perform a sanity
+       in your backup. Just before you think you're done, perform a
        check on more of the records to make sure it looks clean.
     6. Change the passwords one more time for all accounts related to the
-       site (e.g., logins for FTP access, database access, system
+       site (for example, logins for FTP access, database access, system
        administrators, and CMS accounts). On Unix-based systems:
+
 ```shell
 $passwd admin1
 ```
@@ -267,4 +272,4 @@ Make sure you can answer "yes" to the following questions:
 * Did I fix the root cause vulnerability that allowed my site to be hacked? 
 * Do I have a plan to keep my site secure?
 
-You can now bring your site back online
+You can now bring your site back online.
