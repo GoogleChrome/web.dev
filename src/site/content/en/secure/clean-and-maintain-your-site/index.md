@@ -164,22 +164,16 @@ $passwd admin1
 
 #### No backup available
 
-1. Make two backups of your site even though it's still infected. Having an
-   extra backup will help recover accidentally deleted content, or allow you
-   to revert and try again if things go awry. Label each backup with
-   "infected" for future reference.
-    * One of your backups will be a disk image or "clone version" of your site.
-      This format makes restoring content even simpler. You can leave the disk
-      image aside for an emergency. On a Unix-based system, making a disk image could be:
+Make two backups of your site even though it's still infected. Having an extra backup will help recover accidentally deleted content, or allow you  to revert and try again if things go awry. Label each backup with "infected" for future reference.
+   
+One of your backups will be a disk image or "clone version" of your site. This format makes restoring content even simpler. You can leave the disk image aside for an emergency. On a Unix-based system, making a disk image could be:
 
 ```shell
 dd if=/dev/sda bs=1024 conv=noerror,sync | gzip -c -9 \
 > /mirror/full-backup-20120125-infected.gz
 ```
 
-    * The other backup will be a file system copy from your server, including
-      images and media files. If you have a database, backup the database as
-      well.
+The other backup will be a file system copy from your server, including images and media files. If you have a database, backup the database as well.
 
 ```shell
 tar -pczf full-backup-20120125-infected.tar.gz www/
@@ -187,34 +181,22 @@ mysqldump -u root -p --all-databases | gzip -9 \
 > fulldb_backup-20120125-infected.sql
 ```
 
-    * If you don't have a disk image, make two backups of the database and
-      two backups of the filesystem.
-2. Clean the site's content on the new backup filesystem copy (not the server
-   itself)
-    1. If your earlier investigation found too lenient file permissions, go
-       ahead and correct them. Make sure you do this on the backup copy,
-       not the server itself.
-    2. Also on the backup copy, clean all files corresponding to the URLs
-       discovered as compromised from [Assess the damage](hacked_with_spam).
-       These may be server configuration files, JavaScript, HTML, PHP.
-    3. Make sure to also remove (serve a 404 response) for new files created
-       by the hacker (which you may or may not have submitted using the URL
-       Removal tool in Search Console.)
-    4. Correct the vulnerability if it exists in your code or cracked
-       passwords. Input validation libraries or security audits may be of help.
-    5. If your site has a database, begin cleaning up hacker-modified records
-       in your backup. Just before you think you're done, perform a
-       check on more of the records to make sure it looks clean.
-    6. Change the passwords one more time for all accounts related to the
-       site (for example, logins for FTP access, database access, system
-       administrators, and CMS accounts). On Unix-based systems:
+If you don't have a disk image, make two backups of the database and two backups of the filesystem.
+
+Clean the site's content on the new backup filesystem copy (not the server itself)
+    
+1. If your earlier investigation found too lenient file permissions, go ahead and correct them. Make sure you do this on the backup copy, not the server itself.
+2. Also on the backup copy, clean all files corresponding to the URLs discovered as compromised from [Assess the damage](/secure/hacked-with-spam/). These may be server configuration files, JavaScript, HTML, PHP.
+3. Make sure to also remove (serve a 404 response) for new files created by the hacker (which you may or may not have submitted using the URL Removal tool in Search Console.)
+4. Correct the vulnerability if it exists in your code or cracked passwords. Input validation libraries or security audits may be of help.
+5. If your site has a database, begin cleaning up hacker-modified records in your backup. Just before you think you're done, perform a check on more of the records to make sure it looks clean.
+6. Change the passwords one more time for all accounts related to the site (for example, logins for FTP access, database access, system administrators, and CMS accounts). On Unix-based systems:
 
 ```shell
 $passwd admin1
 ```
-    7. At this point, the once-infected backup copy of your site should
-       contain only clean data. Keep this clean copy on the side and move
-       to action #5.
+At this point, the once-infected backup copy of your site should contain only clean data. Keep this clean copy on the side and move
+to action #5.
 
 ### 5. Eliminate unnecessary software
 
@@ -238,6 +220,7 @@ This can increase security and simplify future maintenance.
 3. Perform one last change of passwords for all accounts related to the
    site (e.g., logins for FTP access, database access, system administrators,
    and CMS accounts). On Unix-based systems:
+   
 ```shell
 passwd admin1
 ```
