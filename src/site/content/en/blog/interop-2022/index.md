@@ -16,7 +16,7 @@ tags:
   - css
 ---
 
-For the first time ever, all major browser vendors, and other stakeholders, have come together to solve the top browsers compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas. In this article, find out how we got here, what the project focuses on, how success will be measured, and how you can track progress.
+For the first time ever, all major browser vendors, and other stakeholders, have come together to solve the top browsers' compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas. In this article, find out how we got here, what the project focuses on, how success will be measured, and how you can track progress.
 
 ## It all started in 2019
 
@@ -30,10 +30,10 @@ We were delighted to reach [a score of over 90%](/compat2021-holiday-update/) ac
 
 Interop 2022 is a benchmark, agreed on by representatives of three major browser implementations, and developed through a process of [public nomination](https://github.com/web-platform-tests/interop-2022/labels/proposal) and review with input from [supporters](https://github.com/web-platform-tests/interop-2022/blob/main/supporters.md) [Apple](https://webkit.org/blog/12288/working-together-on-interop-2022/), [Bocoup](https://bocoup.com/blog/interop-2022), Google, [Igalia](https://igalia.com/news/interop2022.html), [Microsoft](https://aka.ms/microsoft-interop2022), and [Mozilla](https://hacks.mozilla.org/2022/03/interop-2022/).
 
-The benchmark focuses on 15 areas, [identified by developers](/state-of-css-2021/) as being particularly troublesome when they are missing or have compatibility issues across browsers. All browser vendors have agreed to focus on these areas, and everyone involved is excited to get started on making the experience of developing for the web measurably better.
+The benchmark focuses on 15 areas [identified by developers](/state-of-css-2021/) as being particularly troublesome when they are missing, or that have compatibility issues across browsers. All browser vendors have agreed to focus on these areas, and everyone involved is excited to get started on making the experience of developing for the web measurably better.
 
 {% Aside %}
-The terms "compatibility" and "interoperability" are typically distinguished by browser vendors, where compat refers to site compat, and interop refers to two or more browsers behaving the same. In that terminology,this effort is about interoperability and so the project has aligned with that naming.
+The terms "compatibility" and "interoperability" are typically distinguished by browser vendors, where compatibility refers to site compatibility, and interoperability refers to two or more browsers behaving the same. This effort is about interoperability, and so the project has aligned with that naming.
 {% endAside %}
 
 ## The 15 areas of focus
@@ -46,7 +46,7 @@ The following features will be the focus of Interop 2022. They include 10 new ar
 
 ### Color spaces and CSS color functions
 
-To use color functions in a design system, you currently need to rely on Sass, PostCSS, or `calc()` on HSL values. Color functions built into CSS mean that colors can be dynamically updated, and new color spaces remove the restriction to the sRGB gamut, and perceptual limitations of HSL.
+To use color functions in a design system, you currently need to rely on Sass, PostCSS, or `calc()` on HSL values. Color functions built into CSS means that colors can be dynamically updated, and new color spaces remove the restriction to the sRGB gamut, and perceptual limitations of HSL.
 
 There are two functions defined in [CSS Color Level 5](https://drafts.csswg.org/css-color-5/) that enable more dynamic theming on the web platform:
 
@@ -125,7 +125,7 @@ To follow along and track the progress, check out the [Interop 2022 dashboard](h
 
 ## What will all this mean for developers?
 
-The goal of these multi-year interoperability efforts, in the form of Compat 2021, Interop 2022 and much more, is to fully acknowledge and address the pain points developers have experienced through for many years. And it's not a one-browser effort but rather a strong collaboration between all major browser vendors and friends for improving the web platform across the board.
+The goal of these multi-year interoperability efforts, in the form of Compat 2021, Interop 2022 and much more, is to fully acknowledge and address the pain points developers have experienced for many years. And it's not a one-browser effort but rather a strong collaboration between all major browser vendors and friends for improving the web platform across the board.
 
 In essence, the goal is to make the web platform more usable and reliable for developers, so that they can spend more time building great web experiences instead of working around browser inconsistencies.
 
