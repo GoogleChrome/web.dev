@@ -2,7 +2,7 @@
 layout: post
 title: Richer offline experiences with the Periodic Background Sync API
 subhead:
-  Sync your web app's data in the background for a more-like experience
+  Sync your web app's data in the background for a more app-like experience
 authors:
   - jeffposnick
   - joemedley
@@ -10,8 +10,6 @@ date: 2019-11-10
 updated: 2020-08-18
 hero: image/admin/Bz7MndcsUGPLAnQwIMfJ.jpg
 alt: Colorful airplanes flying in sync
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905
 description: |
   Periodic Background Sync enables web applications to periodically
   synchronize data in the background, bringing web apps closer to the behavior
