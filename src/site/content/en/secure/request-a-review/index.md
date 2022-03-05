@@ -16,7 +16,7 @@ dangerous or possibly deceptive to users.
 
 ## You'll need
 
-*   Knowledge of shell/terminal commands
+* Knowledge of shell/terminal commands
 
 ## What you'll do
 
@@ -143,19 +143,15 @@ caution to protect users.
 
 ### Final steps
 
-* **If your request was approved** verify that your site works as expected:
-  pages load properly and links are clickable. To keep your site safe,
-  we encourage all site owners to implement the maintenance and security
-  plan created in [Clean and maintain your site](/secure/clean-and-maintain-your-site/).
+#### If your request was approved
+
+Verify that your site works as expected: pages load properly and links are clickable. To keep your site safe, we encourage all site owners to implement the maintenance and security plan created in [Clean and maintain your site](/secure/clean-and-maintain-your-site/).
   
-  For more information, consider the following resources from
-    [StopBadware](https://www.stopbadware.org):
+For more information, consider the following resources from [StopBadware](https://www.stopbadware.org):
 
-      * [Preventing badware: basics](https://www.stopbadware.org/prevent-badware-basics)
-      * [Additional resources: hacked sites](https://www.stopbadware.org/hacked-sites-resources)
+* [Preventing badware: basics](https://www.stopbadware.org/prevent-badware-basics)
+* [Additional resources: hacked sites](https://www.stopbadware.org/hacked-sites-resources)
 
-* **If your request wasn't approved** reassess your site for
-  [malware](/secure/hacked-with-malware/) or [spam](/secure/hacked-with-spam/), or for any
-  modifications or new files created by the hacker. Alternatively, you
-  can consider requesting more help from
-  [specialists in your support team](/secure/build-your-support-team/).
+#### If your request was not approved
+
+Reassess your site for [malware](/secure/hacked-with-malware/) or [spam](/secure/hacked-with-spam/), or for any modifications or new files created by the hacker. Alternatively, you can consider requesting more help from [specialists in your support team](/secure/build-your-support-team/).

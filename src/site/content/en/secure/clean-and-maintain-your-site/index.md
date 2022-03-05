@@ -195,6 +195,7 @@ Clean the site's content on the new backup filesystem copy (not the server itsel
 ```shell
 $passwd admin1
 ```
+
 At this point, the once-infected backup copy of your site should contain only clean data. Keep this clean copy on the side and move
 to action #5.
 
@@ -220,7 +221,7 @@ This can increase security and simplify future maintenance.
 3. Perform one last change of passwords for all accounts related to the
    site (e.g., logins for FTP access, database access, system administrators,
    and CMS accounts). On Unix-based systems:
-   
+
 ```shell
 passwd admin1
 ```
