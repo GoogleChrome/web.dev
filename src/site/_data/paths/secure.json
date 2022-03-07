@@ -61,6 +61,27 @@
         "reporting-api-migration",
         "network-error-logging"
       ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.help_ive_been_hacked",
+      "pathItems": [
+        "hacked",
+        "how-do-i-know-if-my-site-was-hacked",
+        "top-ways-sites-get-hacked-by-spammers",
+        "build-a-support-team",
+        "quarantine-your-site",
+        "use-search-console",
+        "assess-spam-damage",
+        "fixing-the-japanese-kayword-hack",
+        "fixing-the-gibberish-hack",
+        "fixing-the-cloaked-keywords-hack",
+        "hacked-with-malware",
+        "identify-the-vulnerability",
+        "clean-and-maintain-your-site",
+        "request-a-review",
+        "glossary-for-hacked-sites",
+        "faq-for-hacked-sites"
+      ]
     }
   ]
 }
