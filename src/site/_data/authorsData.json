@@ -1,4 +1,65 @@
 {
+  "paulkinlan": {
+    "homepage": "https://paul.kinlan.me/",
+    "twitter": "paul_kinlan",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/0O1ZGr2P0l9oTKabyUK5.jpeg"
+  },
+  "dalecurtis": {
+    "github": "https://github.com/dalecurtis",
+    "twitter": "dalecurtis",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/htLpTCWkW3Z6kcuo1Hef.jpeg"
+  },
+  "mscales": {
+    "twitter": "wibblymat",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/z8HZkmZsSLmcKCj0c89W.jpeg"
+  },
+  "ewagasperowicz": {
+    "twitter": "devnook",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/K5zWxdTH5JagItd1w8Vm.jpeg"
+  },
+  "alexdanilo": {
+    "twitter": "alexanderdanilo",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/3EIOmsgE36khub8NbZgE.jpeg"
+  },
+  "taylorsavage": {
+    "twitter": "taylorthesavage",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rGy547i80kDDHCjlAOdD.jpeg"
+  },
+  "umarhansa": {
+    "homepage": "https://umaar.com/",
+    "twitter": "umaar",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/8Q36Mw54GMn4ag6m60nx.jpeg"
+  },
+  "ilmariheikkinen": {
+    "homepage": "http://fhtr.org/",
+    "twitter": "ilmarihei",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7cfol9s4qh9MOWWhNosR.jpeg"
+  },
+  "mikewest": {
+    "homepage": "https://mikewest.org/",
+    "twitter": "mikewest",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/lXPOi8zfvtTDXy2kSHVh.jpeg"
+  },
+  "samthorogood": {
+    "homepage": "https://whistlr.info/",
+    "twitter": "samthor",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/lnlpPLdWVs9KlivW4K8A.jpeg"
+  },
+  "aliceboxhall": {
+    "twitter": "sundress",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/X7V1IaSbxjs1E7w8BBrH.jpeg"
+  },
+  "jeremywagner": {
+    "homepage": "https://jeremywagner.me/",
+    "github": "malchata",
+    "twitter": "malchata",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/nhsQjB2GJxMHBXhGp4DC.jpeg"
+  },
+  "eligrey": {
+    "homepage": "https://eligrey.com/",
+    "twitter": "sephr",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/KCVBACTJTdRvr20r751u.jpeg"
+  },
   "jakearchibald": {
     "country": "UK",
     "homepage": "https://jakearchibald.com/",
