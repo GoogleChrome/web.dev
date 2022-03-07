@@ -32,7 +32,7 @@ Cookie 是一种可用于向网站添加持久状态的方法。多年来，虽�
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="单次响应中从服务器发送到浏览器的三个 cookie", width="800", height="276", style="max-width: 60vw" %}<figcaption>服务器使用<code>Set-Cookie</code>标头设置 cookie。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="单次响应中从服务器发送到浏览器的三个 cookie", width="800", height="276", style="max-width: 35vw" %}<figcaption>服务器使用<code>Set-Cookie</code>标头设置 cookie。</figcaption></figure>
 
 当您的读者查看的页面满足这些要求，即他们处于安全连接上且 cookie 还不到一个月，那么他们的浏览器将在其请求中发送此标头：
 
@@ -40,20 +40,20 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 Cookie: promo_shown=1
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="单次请求中从浏览器向服务器发送的三个 cookie", width="800", height="165", style="max-width: 60vw" %}<figcaption>您的浏览器会在<code>Cookie</code>标头中发回 cookie。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="单次请求中从浏览器向服务器发送的三个 cookie", width="800", height="165", style="max-width: 35vw" %}<figcaption>您的浏览器会在<code>Cookie</code>标头中发回 cookie。</figcaption></figure>
 
 您还可以使用`document.cookie`在 JavaScript 中添加和读取该网站可用的 cookie。对`document.cookie`进行赋值将创建或覆盖一个带有该键的 cookie。例如，您可以在浏览器的 JavaScript 控制台中尝试以下操作：
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 读取`document.cookie`将输出当前上下文中可访问的所有 cookie，每个 cookie 用分号进行分隔：
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript 在浏览器中访问 cookie", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript 可以使用<code>document.cookie</code>访问 cookie。</figcaption></figure>
@@ -64,13 +64,13 @@ Cookie: promo_shown=1
 
 如果再回到您之前查看的那几个网站，您可能会注意到不仅仅是您当前访问的域名有 cookie，许多域名都有 cookie。与当前网站的域名（即浏览器地址栏中显示的内容）相匹配的 cookie 被称为**第一方** cookie。同样，来自当前网站以外域名的 cookie 被称为**第三方** cookie。这不是一个绝对的标签，而是相对于用户上下文来决定的。同一个 cookie 可以是第一方的，也可以是第三方的，具体取决于用户当时所在的网站。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="三个 cookies 在同一页面的不同请求下被发送到浏览器", width="800", height="346", style="max-width: 60vw" %}<figcaption> Cookie 可能来自同一个页面上的多个不同域名。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="三个 cookies 在同一页面的不同请求下被发送到浏览器", width="800", height="346", style="max-width: 35vw" %}<figcaption> Cookie 可能来自同一个页面上的多个不同域名。</figcaption></figure>
 
 继续上面的例子，假设您的一篇博文中有一张非常独特的猫的照片，而这张照片被托管在`/blog/img/amazing-cat.png`。因为照片十分令人惊叹，其他人直接在他们的网站上使用了该照片。如果访问者访问过您的博客并拥有`promo_shown` cookie，那么当他们在其他人的网站上浏览`amazing-cat.png`时，就会在图像请求中**发送**该 cookie。这对任何一方都不是特别有用，因为`promo_shown`在其他人的网站上不用于任何内容，只是增加了请求的开销。
 
 如果这样的效果并不是您的意图，那您为什么要这样做呢？正是这种机制允许网站在被用于第三方上下文时能够保持状态。例如，如果您在网站上嵌入了一个 YouTube 视频，那么访问者将在播放器中看到"稍后观看"选项。如果您的访问者已经登录了 YouTube，那么该会话将通过第三方 cookie 在嵌入式播放器中提供，也就意味着"稍后观看"按钮只会一次性保存视频，而不是提示他们进行登录或必须引导他们离开您的页面并回到 YouTube。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="在三个不同上下文中发送的相同 cookie", width="800", height="433", style="max-width: 60vw" %}<figcaption>访问不同页面时会发送第三方上下文中的 cookie。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="在三个不同上下文中发送的相同 cookie", width="800", height="433", style="max-width: 35vw" %}<figcaption>访问不同页面时会发送第三方上下文中的 cookie。</figcaption></figure>
 
 网络的其中一项文化属性就是它在默认情况下往往是开放的。这也是如此多的人得以在网络上创建自己的内容和应用程序的一部分原因。然而，这也带来了许多安全和隐私问题。跨站请求伪造 (CSRF) 攻击依赖于这样一个事实，即 cookie 会被附加到一个给定域名的任何请求（无论是谁发起请求）。例如，如果您访问`evil.example`，那么它就可以触发对`your-blog.example`的请求，并且您的浏览器会欣然附加相关的 cookie。如果您的博客对验证这些请求的方式没有多加留心，那么`evil.example`可能会触发删除帖子或添加自己的内容等操作。
 
@@ -128,7 +128,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 最后，您还可以选择不指定值，而该做法在以前表示隐含地声明您希望在所有上下文中发送 cookie。在 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) 的最新一稿中，我们通过引入`SameSite=None`这个新的值来明确了这一点。这意味着您可以使用`None`来显式表示您有意希望在第三方上下文中发送 cookie。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="三个根据相应上下文标记为 None、Lax 或 Strict 的 cookie", width="800", height="456", style="max-width: 60vw" %}<figcaption>将 cookie 的上下文显式标记为<code>None</code>、<code>Lax</code>或<code>Strict</code>。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="三个根据相应上下文标记为 None、Lax 或 Strict 的 cookie", width="800", height="456", style="max-width: 35vw" %}<figcaption>将 cookie 的上下文显式标记为<code>None</code>、<code>Lax</code>或<code>Strict</code>。</figcaption></figure>
 
 {% Aside %}
 
@@ -241,6 +241,6 @@ Set-Cookie: widget_session=abc123; SameSite=None; Secure
 
 如需了解如何更新 cookie 来妥善处理对`SameSite=None`的这些更改，以及如何处理浏览器行为差异的更多详情，请访问后续文章 [SameSite cookie 配方](/samesite-cookie-recipes)。
 
-*感谢 Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner 和 Vivek Sekhar 的贡献和反馈*
+_感谢 Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner 和 Vivek Sekhar 的贡献和反馈_
 
-*Cookie 首图作者：[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 上的 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Cookie 首图作者：[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 上的 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
