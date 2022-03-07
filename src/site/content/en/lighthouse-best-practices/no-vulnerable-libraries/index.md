@@ -29,7 +29,7 @@ To detect vulnerable libraries, Lighthouse:
 
 - Runs [Library Detector For Chrome](https://www.npmjs.com/package/js-library-detector).
 - Checks the list of detected libraries against
-[snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all).
+[snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all&utm_source=web.dev).
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
