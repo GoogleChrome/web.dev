@@ -14,7 +14,7 @@ tags:
 ---
 
 {% Aside 'important' %}
-We have chosen option 2 of [high quantile approximation](/responsiveness/#high-quantile-approximation) as a candidate for the new responsiveness metric, with [maximum event duration](/responsiveness/#measure-interaction-latency) being the definition for event interaction. The `experimental.responsiveness` table in the February 2022 CrUX dataset will include this new metric when it releases on 8 March, 2022.
+We have chosen option 2 of [high quantile approximation](/responsiveness/#high-quantile-approximation) as the candidate for the new responsiveness metric, with [maximum event duration](/responsiveness/#measure-interaction-latency) being the definition for event interaction. This metric will be available as `experimental.responsiveness` starting in the February 2022 CrUX BigQuery dataset, released on March 8, 2022.
 {% endAside %}
 
 Earlier this year, the Chrome Speed Metrics Team shared [some of the
