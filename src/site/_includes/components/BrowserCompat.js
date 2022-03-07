@@ -30,7 +30,7 @@ const compatVersion = (support, release) => {
   } else if (
     !support.version_removed &&
     typeof support.version_added === 'string' &&
-    release.status === 'current'
+    (release.status === 'current' || release.status === 'retired')
   ) {
     return support.version_added;
   } else {
@@ -49,7 +49,7 @@ const compatProperty = (support, release) => {
   } else if (
     !support.version_removed &&
     support.version_added &&
-    release.status === 'current'
+    (release.status === 'current' || release.status === 'retired')
   ) {
     return 'yes';
   } else {
@@ -69,7 +69,7 @@ const compatAria = (support, release, locale) => {
   } else if (
     !support.version_removed &&
     support.version_added &&
-    release.status === 'current'
+    (release.status === 'current' || release.status === 'retired')
   ) {
     return i18n('i18n.browser_compat.supported', locale);
   } else {
