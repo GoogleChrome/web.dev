@@ -10,7 +10,7 @@ authors:
 hero: "image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/xv75zUKa4jUR2xGMZ7Xb.jpg"
 alt: "A picture of a brick wall."
 date: 2022-03-03
-updated: 2022-03-04
+updated: 2022-03-07
 tags:
   - blog
   - css
@@ -77,7 +77,9 @@ The [`subgrid`](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgr
 For example, the following three card components have a header and footer aligned with the adjacent card headers and footers, even though each card has an independent grid. This pattern works because each card is an item that spans three rows of the parent grid, then uses subgrid to inherit those rows into the card.
 
 <figure>
-{% Img src="image/RYmV5NPuMZRoF3PVwIXTUpdYeQ23/QIrr5x5M7qCIo8rHMpOC.png", alt="A three card component where the headers and footers are aligned between the cards.", width="800", height="205" %}
+
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/ivdTy7gKtAg7xTy9hxoU.png", alt="A three card component where the headers and footers are aligned between the cards.", width="800", height="209" %}
+
   <figcaption><a href="https://codepen.io/web-dot-dev/pen/XWzqrLR">See this on CodePen</a>.</figcaption>
 </figure>
 
