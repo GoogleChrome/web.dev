@@ -25,7 +25,7 @@ Progressive Web Apps leverage what the modern web can do. They are installable o
 
 To enhance a web app into a Progressive Web App requires adding two artifacts:
 
-- A web app manifest: a JSON configuration file that defines the app's entry point URL, the icon used to represent the PWA and other configuration that describe how the application looks and behaves.
+- A [web app manifest](/add-manifest/): a JSON configuration file that defines the app's entry point URL, the icon used to represent the PWA and other configuration that describe how the application looks and behaves.
 - A service worker: a script that provides background services that enrich your PWA by defining resources your PWA uses and the strategies to access them.
 
 ## What is a service worker?
