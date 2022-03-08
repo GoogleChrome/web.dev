@@ -1,6 +1,7 @@
 ---
 patternId: example-set/full-html-demo
 draft: true
+noindex: true
 ---
 
 <!--

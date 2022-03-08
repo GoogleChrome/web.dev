@@ -1,6 +1,7 @@
 ---
 patternId: example-set/graph
 layout: demo
+noindex: true
 pageScripts:
   - https://code.highcharts.com/highcharts.js
   - https://code.highcharts.com/modules/sankey.js

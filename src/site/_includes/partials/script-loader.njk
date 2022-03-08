@@ -58,11 +58,5 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
   loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
 {% endfor %}
 
-
-
-{# {% if process.env.ELEVENTY_ENV === 'prod' %} #}
-  loadScript('https://www.google-analytics.com/analytics.js', null);
-  loadScript('https://www.google.com/recaptcha/api.js', null);
-{# {% endif %} #}
 {% endset %}
 <script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>
