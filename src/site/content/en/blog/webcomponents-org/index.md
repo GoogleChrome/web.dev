@@ -24,7 +24,7 @@ can have properties and methods, fire and respond to events, and even have an
 encapsulated style and DOM trees to bring along their own look and feel.
 
 <figure>
-  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xJG9oEv9gPswKbN6hyzo.gif", alt="animation of paper-progress element", width="576", height="174" %}
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xJG9oEv9gPswKbN6hyzo.gif", alt="Animation of paper-progress element.", width="576", height="174" %}
 </figure>
 
 By providing a platform-based, low-level component model, Web Components let you

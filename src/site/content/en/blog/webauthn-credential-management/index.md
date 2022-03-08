@@ -107,10 +107,9 @@ Previously we have been guiding developers to feature detect the CM API with
 following code:
 
 ```js
-    if (navigator.credentials && navigator.credentials.preventSilentAccess) {
-      // Use CM API
-    }
-```
+if (navigator.credentials && navigator.credentials.preventSilentAccess) {
+  // Use CM API
+}
 
 But as you can see from the descriptions above, the `navigator.credentials` is
 now expanded to support public-key credentials in addition to password

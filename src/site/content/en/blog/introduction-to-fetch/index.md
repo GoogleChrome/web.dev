@@ -127,8 +127,8 @@ response.
 
 If a request is made for a resource on another origin which returns [the CORs headers](https://enable-cors.org/), then the type is `cors`. `cors` and `basic`
 responses are almost identical except that a `cors` response restricts the
-headers you can view to \`Cache-Control\`, \`Content-Language\`,
-\`Content-Type\`, \`Expires\`, \`Last-Modified\`, and \`Pragma\`.
+headers you can view to `Cache-Control`, `Content-Language`,
+`Content-Type`, `Expires`, `Last-Modified`, and `Pragma`.
 
 An `opaque` response is for a request made for a resource on a different origin
 that doesn't return CORS headers. With an opaque response we won't be able to

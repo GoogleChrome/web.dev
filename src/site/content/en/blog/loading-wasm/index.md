@@ -102,9 +102,11 @@ This change also allows us to get rid of the intermediate array buffer, since we
 })();
 ```
 
-Note: The server must be configured to serve the `.wasm` file with the correct MIME type by sending
+{% Aside %}
+The server must be configured to serve the `.wasm` file with the correct MIME type by sending
 the `Content-Type: application/wasm` header. In previous examples, this wasn’t necessary since we
 were passing the response bytes as an array buffer, and so no MIME type checking took place.
+{% endAside %}
 
 The `WebAssembly.compileStreaming` API also accepts a promise that resolves to a `Response`
 instance. If you don’t have a need for `response` elsewhere in your code, you can pass the promise
