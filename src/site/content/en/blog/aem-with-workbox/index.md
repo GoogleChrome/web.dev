@@ -103,7 +103,9 @@ You can configure the content to cache and the caching strategy to use.
 
 If you have been using service workers you may be familiar with [caching strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/). Caching strategies specify which resources to cache and whether to look for those resources in the cache first, the network first, or in the cache with a network fallback. You can then choose the resources to pre-cache when the service worker is installed. AEM Application service workers implement a [warm cache strategy](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#warming-the-runtime-cache) which means user's experience will not break even if you specify a missing or broken path.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/GY9pDPqKTuux6jR26ZZZ.png", alt="Advanced cache management configuration.", width="800", height="753" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/GY9pDPqKTuux6jR26ZZZ.png", alt="Advanced cache management configuration.", width="800", height="753" %}
+</figure>
 
 In AEM, the term "clientlibs" refers to client-side Libraries: the combination of related JavaScript, CSS, and static resources that have been added to your project that are served to and utilized by the client web browser. You can easily set your client-side libraries to be used offline by specifying those libraries in the user interface.
 
