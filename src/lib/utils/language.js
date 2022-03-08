@@ -22,6 +22,20 @@ const languageNames = {
 };
 
 /**
+ * A map of script groups to their language codes.
+ * @const
+ */
+const scriptGroups = {
+  latin: ['cs', 'de', 'en', 'es', 'fr', 'it', 'no', 'pl', 'pt', 'sv'],
+  cyrillic: ['bg', 'ru'],
+  nonAlphabetic: ['ta', 'zh'],
+  arabic: 'fa',
+  devanagari: 'hi',
+  kanji: 'ja',
+  hangul: 'ko',
+};
+
+/**
  * A default language for the site.
  * @const
  */
@@ -47,4 +61,5 @@ module.exports = {
   defaultLanguage,
   isValidLanguage,
   supportedLanguages,
+  scriptGroups,
 };
