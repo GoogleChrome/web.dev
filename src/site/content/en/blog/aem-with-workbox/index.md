@@ -19,7 +19,9 @@ If you are a technical lead or digital marketing analyst interested in providing
 
 Progressive Web Apps leverage what the modern web can do. They are installable on your device, load quickly, with subsequent visits loading instantly. They respond to input quickly. They work well on an unreliable connection or when offline. PWAs use modern APIs to provide an engaging app-like experience with an optional full screen UI, background updating, and offline access to data.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/OktJivHyntcGzX1VSdym.png", alt="From web app to Progressive Web App.", width="800", height="477" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/OktJivHyntcGzX1VSdym.png", alt="From web app to Progressive Web App.", width="800", height="477" %}
+</figure>
 
 To enhance a web app into a Progressive Web App requires adding two artifacts:
 
