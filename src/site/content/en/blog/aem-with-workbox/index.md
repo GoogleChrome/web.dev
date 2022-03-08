@@ -34,7 +34,9 @@ At its core, a service worker is just a script that your browser runs independen
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/j97xB2WYaExyh8SbI3pw.png", alt="What is a service worker?", width="800", height="369" %}
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47" %}
+</figure>
 
 Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc.) are requested from the network or cache, even allowing you to return cached content when offline. With Workbox, you can quickly set up and manage both, and more, with production-ready code.
 
