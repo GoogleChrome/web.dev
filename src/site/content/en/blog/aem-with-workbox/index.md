@@ -121,7 +121,7 @@ Please note that you can change your content or these settings at any time. When
   {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4trs4SyeqTJN7HQQTXst.png", alt="The DevTools service worker panel.", width="800", height="575" %}
 </figure>
 
-You can expand cache storage to view the content that has been cached locally
+You can expand cache storage to view the content that has been cached locally:
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/vNL5kbPDYti0GEkiJNBq.png", alt="The cache storage view in DevTools.", width="800", height="398" %}
 
