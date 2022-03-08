@@ -57,7 +57,7 @@ makes that an ideal candidate for trying to compile it into WebAssembly so
 we can experiment with it in the browser.
 
 <figure>
-{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Nxc2in5sTnWc8T1slk0h.png", alt="Bunny movie image", width="360", height="240" %}
+{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Nxc2in5sTnWc8T1slk0h.png", alt="Bunny movie image.", width="360", height="240" %}
 </figure>
 
 
@@ -70,7 +70,7 @@ looking at this code, two things stand out:
 
 
 
-1.  The source tree is built using a tool called **<code>cmake</code>**; and
+1.  The source tree is built using a tool called `cmake`; and
 1.  There are a number of examples that all assume some kind of file-based interface.
 
 All the examples that get built by default can be run on the command line, and
@@ -79,13 +79,13 @@ So, the interface we're going to build to make it run in the browser could be
 useful for many other command line tools.
 
 
-### Using **<code>cmake</code>** to build the source code
+### Using `cmake` to build the source code
 
 Fortunately, the AV1 authors have been experimenting with
 [Emscripten](http://kripken.github.io/emscripten-site/), the SDK we're going to
 use to build our WebAssembly version. In the root of the
 [AV1 repository](https://aomedia.googlesource.com/aom/+/master), the file
-**<code>CMakeLists.txt</code>** contains these build rules:
+`CMakeLists.txt`contains these build rules:
 
 
 ```wasm
@@ -107,13 +107,13 @@ endif()
 
 
 The Emscripten toolchain can generate output in two formats, one is called
-**<code>[asm.js](http://asmjs.org/)</code>** and the other is WebAssembly.
+`[asm.js](http://asmjs.org/)` and the other is WebAssembly.
 We'll be targeting WebAssembly as it produces smaller output and can run
 faster. These existing build rules are meant to compile an
-<strong><code>asm.js</code></strong> version of the library for use in an
+`asm.js` version of the library for use in an
 inspector application that's leveraged to look at the content of a video
 file. For our usage, we need WebAssembly output so we add these lines just
-before the closing <strong><code>endif()</code></strong> statement in the
+before the closing `endif()`statement in the
 rules above.
 
 
@@ -129,15 +129,15 @@ It's important to create a build directory that's separate from the
 source code tree, and run all the commands below inside that build directory.
 {% endAside %}
 
-Building with **<code>cmake</code>** means first generating some
-<strong><code>Makefiles</code></strong> by running
-<strong><code>cmake</code></strong> itself, followed by running the command
-<strong><code>make</code></strong> which will perform the compilation step.
-Note, that since we are using <em>Emscripten</em> we need to use the
-<em>Emscripten</em> compiler toolchain rather than the default host compiler.
-That's achieved by using <strong><code>Emscripten.cmake</code></strong> which
-is part of the <em>[Emscripten SDK](https://github.com/juj/emsdk)</em> and
-passing it's path as a parameter to <strong><code>cmake</code></strong> itself.
+Building with `cmake` means first generating some
+`Makefiles` by running
+`cmake` itself, followed by running the command
+`make` which will perform the compilation step.
+Note, that since we are using Emscripten we need to use the
+Emscripten compiler toolchain rather than the default host compiler.
+That's achieved by using `Emscripten.cmake` which
+is part of the [Emscripten SDK](https://github.com/juj/emsdk) and
+passing it's path as a parameter to `cmake` itself.
 The command line below is what we use to generate the Makefiles:
 
 
@@ -151,9 +151,9 @@ cmake path/to/aom \
 ```
 
 
-The parameter **<code>path/to/aom</code>** should be set to the full path of
+The parameter `path/to/aom` should be set to the full path of
 the location of the AV1 library source files. The
-**<code>path/to/emsdk-portable/…/Emscripten.cmake</code>** parameter needs
+`path/to/emsdk-portable/…/Emscripten.cmake` parameter needs
 to be set to the path for the Emscripten.cmake toolchain description file.
 
 For convenience we use a shell script to locate that file:
@@ -168,12 +168,12 @@ echo $EMCMAKE_LOC
 ```
 
 
-If you look at the top-level **<code>Makefile</code>** for this project, you
+If you look at the top-level `Makefile` for this project, you
 can see how that script is used to configure the build.
 
-Now that all of the setup has been done, we simply call **<code>make</code>**
+Now that all of the setup has been done, we simply call `make`
 which will build the entire source tree, including samples, but most
-importantly generate <strong><code>libaom.a</code></strong> which contains the
+importantly generate `libaom.a` which contains the
 video decoder compiled and ready for us to incorporate into our project.
 
 
@@ -185,12 +185,12 @@ can display in the browser.
 
 Taking a look inside the AV1 code tree, a good starting point is an example
 video decoder which can be found in the file
-**<code>[simple_decoder.c](https://aomedia.googlesource.com/aom/+/master/examples/simple_decoder.c)</code>**.
+`[simple_decoder.c](https://aomedia.googlesource.com/aom/+/master/examples/simple_decoder.c)`.
 That decoder reads in an [IVF](https://wiki.multimedia.cx/index.php/IVF) file
 and decodes it into a series of images that represent the frames in the video.
 
 We implement our interface in the source file
-**<code>[decode-av1.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/decode-av1.c)</code>**.
+`[decode-av1.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/decode-av1.c)`.
 
 Since our browser can't read files from the file system, we need to design some
 form of interface that lets us abstract away our I/O so that we can build
@@ -214,22 +214,22 @@ void        DS_set_blob(DATA_Source *ds, void *buf, size_t len);
 ```
 
 
-The **<code>open/read/empty/close</code>** functions look a lot like normal
+The `open/read/empty/close` functions look a lot like normal
 file I/O operations which allows us to map them easily onto file I/O for a
 command line application, or implement them some other way when run inside
-a browser. The <strong><code>DATA_Source</code></strong> type is opaque from
+a browser. The `DATA_Source` type is opaque from
 the JavaScript side, and just serves to encapsulate the interface. Note, that
 building an API that closely follows file semantics makes it easy to reuse in
 many other code-bases that are intended to be  used from a command line
 (e.g. diff, sed, etc.).
 
-We also need to define a helper function called **<code>DS_set_blob</code>**
+We also need to define a helper function called `DS_set_blob`
 that binds raw binary data to our stream I/O functions. This lets the blob be
 'read' as if it's a stream (i.e. looking like a sequentially read file).
 
 Our example implementation enables reading the passed in blob  as if it was a
 sequentially read data source. The reference code can be found in the file
-**<code>[blob-api.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/blob-api.c)</code>**,
+`[blob-api.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/blob-api.c)`,
 and the entire implementation is just this:
 
 
@@ -299,7 +299,7 @@ In this example we've been emulating a stream based API as the interface to
 the AV1 library. So, logically it makes sense to build a test harness that we
 can use to build a version of our API that runs on the command line and does
 actual file I/O under the hood by implementing the file I/O itself underneath
-our **<code>DATA_Source</code>** API.
+our `DATA_Source` API.
 
 The stream I/O code for our test harness is straightforward, and looks like
 this:
@@ -332,7 +332,7 @@ By abstracting the stream interface we can build our WebAssembly module to
 use binary data blobs when in the browser, and interface to real files when
 we build the code to test from the command line. Our test harness code can be
 found in the example source file
-**<code>[test.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/test.c)</code>**.
+`[test.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/test.c)`.
 
 
 ## Implementing a buffering mechanism for multiple video frames
@@ -350,7 +350,7 @@ interface to support streaming input from a server, then we need to have the
 buffering mechanism in place.
 
 The code in
-**<code>[decode-av1.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/decode-av1.c)</code>**
+`[decode-av1.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/decode-av1.c)`
 for reading frames of video data from the AV1 library and storing in the buffer
 as this:
 
@@ -401,9 +401,9 @@ and also each U or V value corresponds to 4 pixels in the actual output image.
 This all means we need to color convert the image before we can pass it to
 WebGL for display.
 
-To do so, we implement a function **<code>AVX_YUV_to_RGB()</code>** which you
+To do so, we implement a function `AVX_YUV_to_RGB()` which you
 can find in the source file
-<strong><code>[yuv-to-rgb.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/yuv-to-rgb.c)</code></strong>.
+`[yuv-to-rgb.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/yuv-to-rgb.c)`.
 That function converts the output from the AV1 decoder into something we can
 pass to WebGL. Note, that when we call this function from JavaScript we need
 to make sure that the memory we're writing the converted image into has been
@@ -413,22 +413,22 @@ paint it to the screen is this:
 
 
 ```javascript
-        function show_frame(af) {
-            if (rgb_image != 0) {
-                // Convert The 16-bit YUV to 8-bit RGB
-                let buf = Module._AVX_Video_Frame_get_buffer(af);
-                Module._AVX_YUV_to_RGB(rgb_image, buf, WIDTH, HEIGHT);
-                // Paint the image onto the canvas
-                drawImageToCanvas(new Uint8Array(Module.HEAPU8.buffer,
-                       rgb_image, 3 * WIDTH * HEIGHT), WIDTH, HEIGHT);
-            }
-        }
+function show_frame(af) {
+    if (rgb_image != 0) {
+        // Convert The 16-bit YUV to 8-bit RGB
+        let buf = Module._AVX_Video_Frame_get_buffer(af);
+        Module._AVX_YUV_to_RGB(rgb_image, buf, WIDTH, HEIGHT);
+        // Paint the image onto the canvas
+        drawImageToCanvas(new Uint8Array(Module.HEAPU8.buffer,
+                rgb_image, 3 * WIDTH * HEIGHT), WIDTH, HEIGHT);
+    }
+}
 ```
 
 
 The `drawImageToCanvas()` function that implements the WebGL painting can be
 found in the source file
-**<code>[draw-image.js](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/draw-image.js)</code>**
+`[draw-image.js](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/draw-image.js)`
 for reference.
 
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Accessibility for teams
-subhead: How to incorporate accessibility into your team's process..
+subhead: How to incorporate accessibility into your team's process.
 description: |
   How to incorporate accessibility into your team's process.
 authors:
@@ -81,7 +81,6 @@ There are a number of accessibility checklists out there, a few industry
 examples include:
 
 [WebAIM WCAG Checklist](https://webaim.org/standards/wcag/checklist)
-
 [Vox Accessibility Guidelines](https://accessibility.voxmedia.com)
 
 With a checklist in hand, you can look over your primary and secondary actions
@@ -268,7 +267,7 @@ expected to support.
 </figure>
 
 To learn more about adding keyboard support to an element, take a look at the
-[roving tabindex](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex#managing_focus_in_components)
+[roving tabindex]((https://web.dev/control-focus-with-tabindex/#create-accessible-components-with-%22roving-tabindex%22))
 section in Google’s Accessibility Fundamentals docs.
 
 ### ARIA roles and attributes are applied as needed
@@ -333,5 +332,4 @@ out a few key items that each team member can use to quickly ramp up on the
 subject and hopefully improve the overall experience of their app.
 
 To learn more about accessibility, be sure to check out [our free Udacity
-course](https://bit.ly/web-a11y) and browse [the accessibility docs](https://developers.google.com/web/fundamentals/accessibility/)
-available here on Web Fundamentals.
+course](https://bit.ly/web-a11y) and browse [the accessibility docs](/accessible/) available here on web.dev.

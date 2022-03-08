@@ -22,11 +22,11 @@ you have to manually declare which functions of your wasm module you are using.
 To refresh your mind, this is the code snippet I am talking about:
 
 ```js
-    const api = {
-      version: Module.cwrap('version', 'number', []),
-      create_buffer: Module.cwrap('create_buffer', 'number', ['number', 'number']),
-      destroy_buffer: Module.cwrap('destroy_buffer', '', ['number']),
-    };
+const api = {
+    version: Module.cwrap('version', 'number', []),
+    create_buffer: Module.cwrap('create_buffer', 'number', ['number', 'number']),
+    destroy_buffer: Module.cwrap('destroy_buffer', '', ['number']),
+};
 ```
 
 Here we declare the names of the functions that we marked with
@@ -130,9 +130,11 @@ of the box. But more importantly, we don't have to worry about manually copying
 chunks of memory to make strings work! embind gives you that for free, along
 with type checks:
 
-![DevTools errors when you invoke a function with the wrong number of arguments
+<figure>
+{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/j2YpEGF6Itd8ITPTqfvT.png", alt="DevTools errors when you invoke a function with the wrong number of arguments
 or the arguments have the wrong
-type](https://developers.google.com/web/updates/images/2018/08/embind/error.png)
+type", width="800", height="570" %}
+</figure>
 
 This is pretty great as we can catch some errors early instead of dealing with
 the occasionally quite unwieldy wasm errors.
