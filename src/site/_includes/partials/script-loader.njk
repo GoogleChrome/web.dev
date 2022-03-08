@@ -37,11 +37,6 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
 {# Add a facility for pages to declare an array of script paths. #}
 {# If no scripts are declared we will use the default page script. #}
 {# default.js loads the basic set of custom elements that all pages need. #}
-{% for item in pageScripts %}
-  loadScript('{{ helpers.hashForProd(item) }}', 'module');
-{% else %}
-  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
-{% endfor %}
 
 {# Dispatch event to notify that all pageScripts got loaded. #}
 {% if pageScripts %}
@@ -57,6 +52,13 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
     }
   })
 {% endif %}
+{% for item in pageScripts %}
+  loadScript('{{ helpers.hashForProd(item) }}', 'module');
+{% else %}
+  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
+{% endfor %}
+
+
 
 {# {% if process.env.ELEVENTY_ENV === 'prod' %} #}
   loadScript('https://www.google-analytics.com/analytics.js', null);
