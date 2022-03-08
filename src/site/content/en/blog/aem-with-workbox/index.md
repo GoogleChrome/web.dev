@@ -109,7 +109,9 @@ If you have been using service workers you may be familiar with [caching strateg
 
 In AEM, the term "clientlibs" refers to client-side Libraries: the combination of related JavaScript, CSS, and static resources that have been added to your project that are served to and utilized by the client web browser. You can easily set your client-side libraries to be used offline by specifying those libraries in the user interface.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/9jrYgsiQzPecwYPVdCEw.png", alt="The client side libraries dialog box.", width="800", height="634" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/9jrYgsiQzPecwYPVdCEw.png", alt="The client side libraries dialog box.", width="800", height="634" %}
+</figure>
 
 You can also include third-party resources such as fonts. This offline cache configuration provides configuration information to a service worker that is generated for your application that internally uses workbox. That is pretty much all there is to make your application installable. Once installed, the application icon will show up on your mobile device home screen just like a platform app. Clicking the icon will access the wknd site.
 
