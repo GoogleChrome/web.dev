@@ -62,7 +62,9 @@ If you've completed AEM Sites tutorials you have likely seen the WKND site befor
 
 The [web app manifest](/add-manifest/) is a JSON file that contains properties that describe the look and behavior of a PWA. Adobe Experience Manager Sites provides a friendly user interface to configure the properties.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the installable experience.", width="800", height="634" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the installable experience.", width="800", height="634" %}
+</figure>
 
 
 The start URL is the entry point of your PWA. When a user taps on the the PWA icon on their phone, they will be accessing the startup URL. The display mode configures whether the app is a windowed or fullscreen experience. You can also specify the screen orientation of the application. The theme color is the color of the window and toolbar while the background color is the color of the splash screen when the application is launched. The icon is the image that is shown on the devices home screen or application drawer when the application is installed on the device. The configuration shown in the image generates the manifest JSON shown below.
