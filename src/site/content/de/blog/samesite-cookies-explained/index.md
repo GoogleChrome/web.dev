@@ -32,7 +32,7 @@ Angenommen, Sie haben einen Blog, in dem Sie Ihren Benutzern eine „Neuigkeiten
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Drei Cookies werden von einem Server in einer Antwort an einen Browser gesendet", width="800", height="276", style="max- Breite: 60vw" %}<figcaption> Server setzen Cookies mithilfe des <code>Set-Cookie</code>-Headers.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Drei Cookies werden von einem Server in einer Antwort an einen Browser gesendet", width="800", height="276", style="max-width: 35vw" %}<figcaption> Server setzen Cookies mithilfe des <code>Set-Cookie</code>-Headers.</figcaption></figure>
 
 Wenn sich Ihre Besucher eine Seite ansehen, die diese Anforderungen erfüllt, z. B. wenn eine sichere Verbindung besteht und das Cookie weniger als einen Monat alt ist, senden die Browser diesen Header in der Anfrage:
 
@@ -40,20 +40,20 @@ Wenn sich Ihre Besucher eine Seite ansehen, die diese Anforderungen erfüllt, z.
 Cookie: promo_shown=1
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Drei Cookies werden in einer Anfrage von einem Browser an einen Server gesendet", width="800", height="165", style="max- Breite: 60vw" %}<figcaption> Ihr Browser sendet Cookies im <code>Cookie</code>-Header zurück.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Drei Cookies werden in einer Anfrage von einem Browser an einen Server gesendet", width="800", height="165", style="max-width: 35vw" %}<figcaption> Ihr Browser sendet Cookies im <code>Cookie</code>-Header zurück.</figcaption></figure>
 
 Sie können die für diese Site verfügbaren Cookies auch per JavaScript mit `document.cookie` hinzufügen und lesen. Durch eine Zuweisung an `document.cookie` wird ein Cookie mit diesem Schlüssel erstellt oder überschrieben. Sie können beispielsweise Folgendes in der JavaScript-Konsole Ihres Browsers versuchen:
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 Beim Lesen von `document.cookie` werden alle im aktuellen Kontext zugänglichen Cookies ausgegeben, wobei jedes Cookie durch ein Semikolon getrennt ist:
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript greift auf Cookies im Browser zu", width="600", height="382", style="max-width: 35vw" %}<figcaption> JavaScript kann mit <code>document.cookie</code> auf Cookies zugreifen.</figcaption></figure>
@@ -64,13 +64,13 @@ Wenn Sie dies auf einer Auswahl beliebter Websites ausprobieren, werden Sie fest
 
 Wenn Sie einer Auswahl von Webseiten zurückkehren, die Sie bereits zuvor besucht haben, dann ist Ihnen wahrscheinlich aufgefallen, dass Cookies für eine Vielzahl von Domains vorhanden sind, und nicht nur für die, die Sie gerade besuchen. So werden Cookies für die Domain der aktuell besuchten und in der Adresszeile des Browsers angezeigten Seite, als **Erstanbieter**-Cookies bezeichnet. Cookies von anderen Domains als der aktuellen Webseite werden als **Drittanbieter**-Cookies bezeichnet. Dies sind keine absoluten Bezeichnungen, sondern sie sind relativ zum Kontext des Benutzers aufzufassen. Ein und derselbe Cookie kann entweder ein Erstanbieter- oder ein Drittanbieter-Cookie sein, je nachdem, auf welcher Website sich der Benutzer gerade befindet.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Drei Cookies werden über verschiedene Anfragen einer Seite an einen Browser gesendet", width="800", height="346", style="max -Breite: 60vw" %}<figcaption> Cookies auf einer Seite können von einer Vielzahl unterschiedlicher Domains stammen.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Drei Cookies werden über verschiedene Anfragen einer Seite an einen Browser gesendet", width="800", height="346", style="max-width: 35vw" %}<figcaption> Cookies auf einer Seite können von einer Vielzahl unterschiedlicher Domains stammen.</figcaption></figure>
 
 Führen wir einmal das oben angefangene Beispiel weiter, und nehmen an, einer Ihrer Blog-Posts würde unter `/blog/img/amazing-cat.png` gehostet und ein Bild einer besonders tollen Katze enthalten. Weil es ein so tolles Bild ist, verwendet es eine andere Person direkt auf ihrer eigenen Website. Wenn ein Besucher Ihren Blog besucht hat und der Cookie die `promo_shown` vorhanden ist, dann wird, wenn sie `amazing-cat.png` auf der Website der anderen Person betrachten, das Cookie für das Bild in der Anfrage **mitübertragen**. Dies ist für niemanden besonders nützlich, da `promo_shown` für nichts auf der Webseite dieser anderen Person verwendet wird, es fügt der Anfrage lediglich Overhead hinzu.
 
 Wenn dies also ein unbeabsichtigter Effekt ist, warum sollten Sie das tun? Dieser Mechanismus ermöglicht es Webseiten, Ihren Zustand beizubehalten, wenn sie in einem Drittanbieterkontext verwendet werden. Wenn Sie beispielsweise ein YouTube-Video auf Ihrer Website einbetten, sehen Besucher im Player die Option „Später ansehen“. Ist Ihr Besucher bereits bei YouTube angemeldet, wird diese Sitzung im eingebetteten Player durch einen Drittanbieter-Cookie zur Verfügung gestellt. Dies bedeutet, dass die Schaltfläche „Später ansehen“ das Video in einem Schritt speichert, anstatt ihn zur Anmeldung aufzufordern oder von Ihrer Seite weg zu YouTube zu navigieren.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="Dasselbe Cookie wird in drei verschiedenen Kontexten gesendet", width="800", height="433", style="max-width: 60vw" %}<figcaption> Beim Besuch verschiedener Seiten wird ein Cookie im Drittanbieterkontext gesendet.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="Dasselbe Cookie wird in drei verschiedenen Kontexten gesendet", width="800", height="433", style="max-width: 35vw" %}<figcaption> Beim Besuch verschiedener Seiten wird ein Cookie im Drittanbieterkontext gesendet.</figcaption></figure>
 
 Eine der kulturellen Eigenschaften des Webs ist, dass es in der Regel offen ist. Dies ist einer der Gründe, aus denen so vielen Menschen ermöglicht wurde, dort ihre eigenen Inhalte und Apps zu erstellen. Andererseits hat dies jedoch auch eine Reihe von Sicherheits- und Datenschutzbedenken mit sich gebracht. Cross-Site Request Forgery-Angriffe (CSRF) beruhen darauf, dass Cookies für alle Anfragen mit beliebigen Zielen angehängt werden, unabhängig davon, wer diese Anfragen initiiert. Wenn Sie beispielsweise `evil.example` besuchen, kann diese Seite Anfragen für `your-blog.example` auslösen und Ihr Browser würde dazu ohne weiteres die zugehörigen Cookies anhängen. Wenn Ihr Blog also nicht sicherstellt, dass diese Anfragen korrekt validiert werden, dann kann `evil.example` Aktionen wie das Löschen von Beiträgen oder das Hinzufügen eigener Inhalte auslösen.
 
@@ -128,7 +128,7 @@ Weder `Strict` noch `Lax` sind eine Komplettlösung für die Sicherheit Ihrer We
 
 Schließlich besteht die Möglichkeit, den Wert nicht anzugeben, was bislang implizit bedeutete, dass das Cookie in allen Kontexten gesendet werden soll. Im neuesten Entwurf von [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) wird dies durch die Einführung eines neuen Wertes von `SameSite=None` explizit festgelegt. Das bedeutet, dass Sie mit `None` klar kommunizieren können, dass Sie das Cookie absichtlich im Drittanbieterkontext senden möchten.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Drei Cookies mit den kontextabhängigen Bezeichnungen „None“, „Lax“ oder „Strict“", width="800", height="456", style="max- Breite: 60vw" %}<figcaption> Geben Sie den Kontext eines Cookies explizit als <code>None</code> , <code>Lax</code> oder <code>Strict</code> an.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Drei Cookies mit den kontextabhängigen Bezeichnungen „None“, „Lax“ oder „Strict“", width="800", height="456", style="max-width: 35vw" %}<figcaption> Geben Sie den Kontext eines Cookies explizit als <code>None</code> , <code>Lax</code> oder <code>Strict</code> an.</figcaption></figure>
 
 {% Aside %}
 
@@ -241,6 +241,6 @@ Eine Reihe älterer Browserversionen, einschließlich Versionen der Browser Chro
 
 Weitere Informationen dazu, wie Sie Ihre Cookies genau aktualisieren, um diese Änderungen zu `SameSite=None` und den einhergehenden Unterschied im Browserverhalten zu berücksichtigen, finden Sie im Folgeartikel [SameSite-Cookie-Rezepte](/samesite-cookie-recipes) .
 
-*Herzlichen Dank für Beiträge und Feedback von Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner und Vivek Sekhar*
+_Herzlichen Dank für Beiträge und Feedback von Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner und Vivek Sekhar_
 
-*Cookie-Held-Bild von [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) auf [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Cookie-Held-Bild von [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) auf [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

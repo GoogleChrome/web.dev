@@ -1,3 +1,81 @@
+paulkinlan:
+  title:
+    en: Paul Kinlan
+  description:
+    en: Paul is a Developer Advocate
+
+dalecurtis:
+  title:
+    en: Dale Curtis
+  description:
+    en: Dale is a Senior Software Engineer
+
+mscales:
+  title:
+    en: Mat Scales
+  description:
+    en: Mat is a contributor to web.dev
+
+ewagasperowicz:
+  title:
+    en: Ewa Gasperowicz
+  description:
+    en: Ewa is a contributor to web.dev
+
+alexdanilo:
+  title:
+    en: Alex Danilo
+  description:
+    en: Alex is a contributor to web.dev
+
+taylorsavage:
+  title:
+    en: Taylor Savage
+  description:
+    en: Taylor is a PM on the Chrome Team, focusing on Web Components and Polymer.
+
+umarhansa:
+  title:
+    en: Umar Hansa
+  description:
+    en: Umar is a front-end web developer
+
+ilmariheikkinen:
+  title:
+    en: Ilmari Heikkinen
+  description:
+    en: Ilmari is a contributor to web.dev
+
+mikewest:
+  title:
+    en: Mike West
+  description:
+    en: Mike is a contributor to web.dev
+
+samthorogood:
+  title:
+    en: Sam Thorogood
+  description:
+    en: Evangelises Chrome and the mobile web in the Developer Relations team at Google.
+
+aliceboxhall:
+  title:
+    en: Alice Boxhall
+  description:
+    en: Alice is a contributor to web.dev
+
+jeremywagner:
+  title:
+    en: Jeremy Wagner
+  description:
+    en: Jeremy is a contributor to web.dev
+
+eligrey:
+  title:
+    en: Eli Grey
+  description:
+    en: Eli is a Developer
+
 jakearchibald:
   title:
     en: Jake Archibald

@@ -32,7 +32,7 @@ Cookie は Web サイトに永続的な状態を付与するために利用可�
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="サーバーからブラウザーへとレスポンスで送信される 3 つの Cookie", width="800", height="276", style="max-width: 60vw" %} <figcaption>サーバーは <code>Set-Cookie</code> ヘッダーを使用して Cookie を設定します。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="サーバーからブラウザーへとレスポンスで送信される 3 つの Cookie", width="800", height="276", style="max-width: 35vw" %} <figcaption>サーバーは <code>Set-Cookie</code> ヘッダーを使用して Cookie を設定します。</figcaption></figure>
 
 ページの読者がこれらの条件を満たしているページを閲覧した場合、つまり、安全な接続が確立され、Cookie が 1 か月以内に作成されたものである場合、読者のブラウザーはリクエストで次のヘッダーを送信します。
 
@@ -40,20 +40,20 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 Cookie: promo_shown=1
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="1 回のリクエストでブラウザーからサーバーへと送信される 3 つの Cookie", width="800", height="165", style="max-width: 60vw" %} <figcaption>ブラウザーは、<code>Cookie</code> ヘッダーで Cookie を送り返します。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="1 回のリクエストでブラウザーからサーバーへと送信される 3 つの Cookie", width="800", height="165", style="max-width: 35vw" %} <figcaption>ブラウザーは、<code>Cookie</code> ヘッダーで Cookie を送り返します。</figcaption></figure>
 
 また、`document.cookie` を使用してそのサイトで利用可能な Cookie を JavaScript で追加したり、読み取ったりすることができます。`document.cookie` に代入を行うと、そのキーで Cookie を作成したり、上書きしたりすることができます。たとえば、ブラウザーの JavaScript コンソールで以下のものを試してみてください。
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 `document.cookie` を読み取ると、現在のコンテキストでアクセス可能なすべての Cookie が、それぞれの Cookie がセミコロンで区切られた形式で出力されます。
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="ブラウザー内の Cookie にアクセスする JavaScript", width="600", height="382", style="max-width: 35vw" %} <figcaption>JavaScript は <code>document.cookie</code> を使用して Cookie にアクセスすることができます。</figcaption></figure>
@@ -64,13 +64,13 @@ Cookie: promo_shown=1
 
 以前閲覧していたサイトに戻ってみると、現在アクセスしているサイトだけでなくさまざまなドメインを対象とした Cookie があることにお気付きになるかもしれません。現在訪問中のサイト (ブラウザーのアドレス バーに表示されているサイト) のドメインに一致する Cookie は、**ファーストパーティ** Cookie と呼ばれ、同様に現在訪問中のサイト以外のドメインからの Cookie は **サードパーティ** Cookie と呼ばれます。これは絶対的な分類ではなく、ユーザーのコンテキストに応じた相対的なものです。同じ Cookie でも、ユーザーがその時点でどのサイトにいるかによってファーストパーティ Cookie であったり、サードパーティ Cookie であったりします。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="同じページ内の異なるリクエストからブラウザに送信される 3 つの Cookie", width="800", height="346", style="max-width: 60vw" %} <figcaption>Cookie は 1 つのページ内にある様々なドメインから送信されてくる可能性があります。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="同じページ内の異なるリクエストからブラウザに送信される 3 つの Cookie", width="800", height="346", style="max-width: 35vw" %} <figcaption>Cookie は 1 つのページ内にある様々なドメインから送信されてくる可能性があります。</figcaption></figure>
 
 前述した例において、あなたが運営するブログ記事の中に特に素晴らしい猫の写真があり、それが `/blog/img/amazing-cat.png` でホストされているとします。そして、その画像があまりにも素晴らしい画像であるために、他の人物がその人が運営するサイトで直接その画像を使用しているとします。もしもサイトの訪問者があなたのブログを過去に訪問したことがあり、`promo_shown` の Cookie を保持している場合、他者が運営するサイトで `amazing-cat.png` を閲覧すると、その画像へのリクエストで Cookie が**送信されます**。この場合、`promo_shown` が他者が運営するサイトで何かに使用されるわけではないために特に有益性はなく、リクエストにオーバーヘッドを加えるだけのものになってしまっています。
 
 この動作が意図しないものであるとすれば、なぜこのような動作をするのでしょうか？実はこのメカニズムにより、サイトがサードパーティのコンテキストで使用されている場合でもサイトの状態を維持することができるようになるのです。たとえば、YouTube の動画がサイトに埋め込まれている場合、訪問者のプレーヤーには "後で見る" というオプションが表示されます。訪問者がすでに YouTube にサインインしている場合には、そのセッションはサードパーティ Cookie によって埋め込みプレーヤー内で利用できるようになっています。つまり、サインインを促されたり、閲覧しているページから YouTube へと移動させられたりすることもなく "後で見る" ボタンを使用して動画をすぐに保存できるようになっているのです。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="3 つの異なるコンテキストで送信されている同じ Cookie", width="800", height="433", style="max-width: 60vw" %} <figcaption>サードパーティ コンテキストの Cookie は、様々なページ訪問において送信されます。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="3 つの異なるコンテキストで送信されている同じ Cookie", width="800", height="433", style="max-width: 35vw" %} <figcaption>サードパーティ コンテキストの Cookie は、様々なページ訪問において送信されます。</figcaption></figure>
 
 Web の文化的特性の 1 つに、元来オープンであるという傾向が挙げられます。これにより、多くの人々が独自のコンテンツやアプリケーションを作成することが可能となりました。しかしながらその一方で、セキュリティやプライバシーの面での懸念も数多く生じています。クロスサイト リクエスト フォージェリ (CSRF) 攻撃は、誰がリクエストを開始したかに関わらず特定のオリジンに対するリクエストに Cookie が添付されてしまうという動作を悪用しています。たとえば、あなたが `evil.example` にアクセスすると、`your-blog.example` (あなたのブログのドメイン) へのリクエストが誘発され、あなたのブラウザーが関連する Cookie を喜んで添付してしまったりする可能性があります。あなたのブログにおいてこういったリクエストの検証に注意が払われていなかった場合には、`evil.example` が記事の削除や独自コンテンツの追加などのアクションを起こしてしまう可能性があります。
 
@@ -109,7 +109,10 @@ Set-Cookie: promo_shown=1; SameSite=Strict
 ```html
 <p>この素晴らしい猫を見て！</p>
 <img src="https://blog.example/blog/img/amazing-cat.png" />
-<p>この<a href="https://blog.example/blog/cat.html">記事</a>を読んでみてください。</p>
+<p>
+  この<a href="https://blog.example/blog/cat.html">記事</a
+  >を読んでみてください。
+</p>
 ```
 
 そして、Cookie は次のように設定されています。
@@ -128,7 +131,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 最後に、値を指定しないというオプションについてですが、このオプションはこれまで、すべてのコンテキストでの Cookie の送信を暗黙的に表明する方法でした。そして [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) の最新版のドラフトでは `SameSite=None` という新しい値が導入され、これが明示されるようになりました。つまり、`None` という値を使用することでサードパーティのコンテキストでの Cookie の意図的な送信を明示的に伝えることができるようになったのです。
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="コンテキストに応じて None、Lax、Strict と表示されている 3 つのクッキー", width="800", height="456", style="max-width: 60vw" %} <figcaption>Cookie のコンテキストを <code>None</code>、<code>Lax</code>、<code>Strict</code> として明示的にマークします。</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="コンテキストに応じて None、Lax、Strict と表示されている 3 つのクッキー", width="800", height="456", style="max-width: 35vw" %} <figcaption>Cookie のコンテキストを <code>None</code>、<code>Lax</code>、<code>Strict</code> として明示的にマークします。</figcaption></figure>
 
 {% Aside %}
 
@@ -241,6 +244,6 @@ Chrome、Safari、UC ブラウザーを含む数多くのブラウザーの旧�
 
 前述した `SameSite=None` についての変更やブラウザーの動作の違いを上手に処理するための Cookie の更新方法の詳細については、次の記事「[SameSite Cookie のレシピ](/samesite-cookie-recipes)」を参照してください。
 
-*Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner、Vivek Sekhar のご意見およびご協力に、心より感謝申し上げます。*
+_Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner、Vivek Sekhar のご意見およびご協力に、心より感謝申し上げます。_
 
-*クッキーのヒーロー画像の提供: [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) の [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_クッキーのヒーロー画像の提供: [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) の [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_

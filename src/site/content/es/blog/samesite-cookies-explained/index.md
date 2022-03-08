@@ -32,7 +32,7 @@ Supongamos que tiene un blog en el que desea mostrar un promocional de "Novedade
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Se envían tres cookies a un navegador desde la respuesta contenida en un servidor", width="800", height="276", style="max-width: 60vw" %} <figcaption> Los servidores deben establecer las cookies mediante el encabezado <code>Set-Cookie</code>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="Se envían tres cookies a un navegador desde la respuesta contenida en un servidor", width="800", height="276", style="max-width: 35vw" %} <figcaption> Los servidores deben establecer las cookies mediante el encabezado <code>Set-Cookie</code>. </figcaption></figure>
 
 Cuando su lector vea una página que cumpla con esos requisitos, es decir, se encuentra en una conexión segura y la cookie tiene menos de un mes de antigüedad, entonces su navegador enviará el siguiente encabezado en su solicitud:
 
@@ -40,32 +40,32 @@ Cuando su lector vea una página que cumpla con esos requisitos, es decir, se en
 Cookie: promo_shown=1
 ```
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Se envían tres cookies desde un navegador a un servidor mediante una solicitud", width="800", height="165", style="max-width: 60vw" %} <figcaption> Su navegador devuelve las cookies con el encabezado <code>Cookie</code>.</figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="Se envían tres cookies desde un navegador a un servidor mediante una solicitud", width="800", height="165", style="max-width: 35vw" %} <figcaption> Su navegador devuelve las cookies con el encabezado <code>Cookie</code>.</figcaption></figure>
 
 También puede agregar y leer las cookies disponibles para ese sitio en JavaScript usando `document.cookie` . Hacer una asignación hacia `document.cookie` creará o anulará una cookie con esa clave. Por ejemplo, intente hacer lo siguiente en la consola JavaScript de su navegador:
 
 ```text
-> document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
-< "promo_shown=1; Max-Age=2600000; Secure"
+→ document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
+← "promo_shown=1; Max-Age=2600000; Secure"
 ```
 
 La lectura de `document.cookie` generará todas las cookies a las que se tiene acceso en el contexto actual, donde cada cookie estará separada por un punto y coma:
 
 ```text
-> document.cookie;
-< "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
+→ document.cookie;
+← "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mbV00Gy5VAPTUls0i7cM.png", alt="JavaScript tiene acceso a las cookies dentro del navegador", width="600", height="382", style="max-width: 35vw" %} <figcaption> JavaScript puede acceder a las cookies mediante <code>document.cookie</code>. </figcaption></figure>
 
-Si prueba esto en una selección de sitios populares, notará que la mayoría de ellos establecen significativamente más de tres cookies. En la mayoría de los casos, esas cookies se envían a ese dominio a partir de cada solicitud, lo cual tiene varias implicaciones. El ancho de banda que se emplea para la carga suele estar más restringido para sus usuarios que la descarga, de modo que la sobrecarga en todas las solicitudes que salen agrega un retraso en el tiempo que transcurre hasta llegar al primer byte. Por este motivo, sugerimos que sea conservador en la cantidad y el tamaño de las cookies que establezca. Utilice el  atributo `Max-Age` para garantizar que las cookies no permanezcan más tiempo del necesario.
+Si prueba esto en una selección de sitios populares, notará que la mayoría de ellos establecen significativamente más de tres cookies. En la mayoría de los casos, esas cookies se envían a ese dominio a partir de cada solicitud, lo cual tiene varias implicaciones. El ancho de banda que se emplea para la carga suele estar más restringido para sus usuarios que la descarga, de modo que la sobrecarga en todas las solicitudes que salen agrega un retraso en el tiempo que transcurre hasta llegar al primer byte. Por este motivo, sugerimos que sea conservador en la cantidad y el tamaño de las cookies que establezca. Utilice el atributo `Max-Age` para garantizar que las cookies no permanezcan más tiempo del necesario.
 
 ## ¿Qué son las cookies propias y de terceros?
 
 Si regresa a la misma selección de sitios que veía antes, probablemente notó que había cookies para una gran variedad de dominios, no solo el que visitaba en ese momento. A las cookies que coinciden con el dominio del sitio actual, es decir, el que se muestra en la barra de direcciones del navegador, se les conoce como **cookies propias**. De manera similar, las cookies cuyos dominios son distintos al del sitio que se visita en ese momento se denominan cookies de **terceros**. Esta no es una una forma para denominarlas que pueda usarse en todos los casos, pero es relativa al contexto del usuario. Es decir, la misma cookie puede ser propia o de terceros, según el sitio donde se encuentre el usuario en ese momento.
 
 <figure>
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Se envían tres cookies a un navegador desde diferentes solicitudes en la misma página", width="800", height="346", style="max-width: 60vw" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Se envían tres cookies a un navegador desde diferentes solicitudes en la misma página", width="800", height="346", style="max-width: 35vw" %}
   <figcaption>
     Las cookies pueden provenir de una gran variedad de dominios diferentes en una misma página.
   </figcaption>
@@ -75,7 +75,7 @@ Para continuar con el ejemplo anterior, digamos que una de las publicaciones de 
 
 Si ese es un efecto no deseado, ¿por qué querría hacer eso? Este es el mecanismo que permite a los sitios mantener su estado cuando se utilizan en un contexto de terceros. Por ejemplo, si inserta un video de YouTube en su sitio, los visitantes verán la opción "Ver más tarde" en el reproductor. Si su visitante ya inició sesión en YouTube, esa sesión estará disponible en el reproductor integrado mediante una cookie de terceros, lo cual significa que el botón "Ver más tarde" simplemente guardará el video, en lugar de pedirle que inicie sesión o sea necesario que navegue fuera de su página y regrese de nuevo a YouTube.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="La misma cookie se envía en tres contextos diferentes", width="800", height="433", style="max-width: 60vw" %} <figcaption> Cuando visita diferentes páginas se envía una cookie en el contexto de terceros. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="La misma cookie se envía en tres contextos diferentes", width="800", height="433", style="max-width: 35vw" %} <figcaption> Cuando visita diferentes páginas se envía una cookie en el contexto de terceros. </figcaption></figure>
 
 Una de las propiedades culturales de la web es que tiende a estar abierta de forma predeterminada. Esto es parte de lo que ha hecho posible que muchas personas creen allí su propio contenido y aplicaciones. Sin embargo, esto también ha generado una serie de problemas relacionados con la seguridad y la privacidad. Los ataques de falsificación de solicitudes entre sitios (CSRF) se basan en el hecho de que las cookies se adjuntan a cualquier solicitud con un origen determinado, sin importar quién inicie la solicitud. Por ejemplo, si visita `evil.example`, esto puede desencadenar solicitudes en `your-blog.example`, y su navegador adjuntará con gusto las cookies asociadas. Si su blog no tiene cuidado con la forma en que valida esas solicitudes, entonces la visita a `evil.example` podría desencadenar acciones como la eliminación de publicaciones o la adición de su propio contenido.
 
@@ -133,7 +133,7 @@ Ni `Strict` ni `Lax` son una solución integral para mantener la seguridad de su
 
 Finalmente existe la opción de no especificar el valor, que hasta el momento era la forma de indicar implícitamente que la cookie debe enviarse en todos los contextos. En el último borrador de la extensión [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) esto se hace explícito al introducir un nuevo valor para `SameSite=None`. De modo que puede usar `None` para comunicar claramente que la cookie debe enviarse intencionalmente en un contexto de terceros.
 
-<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Las tres cookies se etiquetaron como None, Lax, o Strict dependiendo de su contexto", width="800", height="456", style="max-width: 60vw" %} <figcaption> El contexto de una cookie se indica explícitamente como <code>None</code>, <code>Lax</code>, o <code>Strict</code>. </figcaption></figure>
+<figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="Las tres cookies se etiquetaron como None, Lax, o Strict dependiendo de su contexto", width="800", height="456", style="max-width: 35vw" %} <figcaption> El contexto de una cookie se indica explícitamente como <code>None</code>, <code>Lax</code>, o <code>Strict</code>. </figcaption></figure>
 
 {% Aside %}
 
@@ -246,6 +246,6 @@ Varias versiones antiguas de los navegadores, entre los que se incluyen Chrome, 
 
 Si desea obtener más información sobre la manera exacta para actualizar sus cookies e implementar con éxito estos cambios en `SameSite=None`, así como la diferencia en el comportamiento del navegador, vaya al artículo de seguimiento, [Recetas para usar las cookies en SameSite](/samesite-cookie-recipes).
 
-*Me gustaría agradecer a Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner y Vivek Sekhar por todas sus contribuciones y valiosos comentarios.*
+_Me gustaría agradecer a Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner y Vivek Sekhar por todas sus contribuciones y valiosos comentarios._
 
-*Imagen Cookie hero realizada por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) en [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Imagen Cookie hero realizada por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) en [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
