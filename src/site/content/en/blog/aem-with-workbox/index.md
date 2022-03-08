@@ -123,7 +123,9 @@ Please note that you can change your content or these settings at any time. When
 
 You can expand cache storage to view the content that has been cached locally:
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/vNL5kbPDYti0GEkiJNBq.png", alt="The cache storage view in DevTools.", width="800", height="398" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/vNL5kbPDYti0GEkiJNBq.png", alt="The cache storage view in DevTools.", width="800", height="398" %}
+</figure>
 
 ### The results
 
