@@ -32,7 +32,9 @@ To enhance a web app into a Progressive Web App requires adding two artifacts:
 
 At its core, a service worker is just a script that your browser runs independently as you interact with your web application. An active service worker provides services such as smart caching using the [Cache API](/cache-api-quick-guide/), keeping data up to date using the [Background Sync API](/periodic-background-sync/), and integrating with push notifications. A service worker with the right caching strategy provides stable and reliable user experiences for various scenarios, returning pre-cached resources instantly, storing data in cache, and updating resources when connected to the web.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/j97xB2WYaExyh8SbI3pw.png", alt="What is a service worker?", width="800", height="369" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/j97xB2WYaExyh8SbI3pw.png", alt="What is a service worker?", width="800", height="369" %}
+</figure>
 
 <figure>
   {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47" %}
