@@ -117,7 +117,9 @@ You can also include third-party resources such as fonts. This offline cache con
 
 Please note that you can change your content or these settings at any time. When you publish your changes, the service worker will be updated at the client by the browser and a message will be presented to the user that a newer version of the PWA is available. The user can click the message to reload the application and get the latest updates. You can open the browser developer tools and applications panel to view the service worker details.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4trs4SyeqTJN7HQQTXst.png", alt="The DevTools service worker panel.", width="800", height="575" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4trs4SyeqTJN7HQQTXst.png", alt="The DevTools service worker panel.", width="800", height="575" %}
+</figure>
 
 You can expand cache storage to view the content that has been cached locally
 
