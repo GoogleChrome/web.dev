@@ -141,7 +141,7 @@ Chrome developer tools provide a lighthouse audit that lets you check how compli
 
 ## Conclusion
 
-Progressive Web Apps provide an app-like experience for your website, that uses the cross platform and open nature of the web, at a lower cost of development and maintenance, while providing control over distribution. This enhances engagement, retention, and most importantly drives higher conversion rates. AEM in conjunction with Workbox makes it easy to enhance your existing site into a PWA with just configuration and no coding.
+Progressive Web Apps provide an app-like experience for your website, that uses the cross platform and open nature of the web at a lower cost of development and maintenance while providing control over distribution. This enhances engagement, retention, and most importantly, drives higher conversion rates. AEM in conjunction with Workbox makes it easy to enhance your existing site into a PWA with just configuration and no coding.
 
 ## References
 
