@@ -93,7 +93,9 @@ AEM understands that different locales can have a different look and feel. You c
 
 Once the PWA is accessed on the browser, you can right click and inspect to bring up DevTools and view the manifest under the Applications panel.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/xWxP7YILDgejrdtbq0hh.png", alt="A PWA in the DevTools Application panel.", width="800", height="966" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/xWxP7YILDgejrdtbq0hh.png", alt="A PWA in the DevTools Application panel.", width="800", height="966" %}
+</figure>
 
 ### Configure the service worker
 
