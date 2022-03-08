@@ -44,7 +44,7 @@ Service workers can be hard to write from scratch. Workbox was created to make i
 
 ## Upgrading an AEM site to a PWA
 
-[Adobe Experience Manager](https://business.adobe.com/products/experience-manager/sites/aem-sites ) (AEM) is a comprehensive content management solution for building websites, mobile apps, forms, and digital signage. It makes it easy to manage your marketing content and assets.
+[Adobe Experience Manager](https://business.adobe.com/products/experience-manager/sites/aem-sites) (AEM) is a comprehensive content management solution for building websites, mobile apps, forms, and digital signage. It makes it easy to manage your marketing content and assets.
 
 While AEM provides a rich library for building web applications, until now it's been difficult to build a PWA by adding a service worker and a manifest.
 
