@@ -101,7 +101,7 @@ Once the PWA is accessed on the browser, you can right click and inspect to brin
 
 You can configure the content to cache and the caching strategy to use.
 
-If you have been using service workers you may be familiar with [caching strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies). Caching strategies specify which resources to cache and whether to look for those resources in the cache first, the network first, or in the cache with a network fallback. You can then choose the resources to pre-cache when the service worker is installed. AEM Application service workers implement a [warm cache strategy](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#warm_the_runtime_cache) which means user's experience will not break even if you specify a missing or broken path.
+If you have been using service workers you may be familiar with [caching strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/). Caching strategies specify which resources to cache and whether to look for those resources in the cache first, the network first, or in the cache with a network fallback. You can then choose the resources to pre-cache when the service worker is installed. AEM Application service workers implement a [warm cache strategy](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#warming-the-runtime-cache) which means user's experience will not break even if you specify a missing or broken path.
 
 {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/GY9pDPqKTuux6jR26ZZZ.png", alt="Advanced cache management configuration.", width="800", height="753" %}
 
