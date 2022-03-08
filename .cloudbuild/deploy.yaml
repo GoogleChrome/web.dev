@@ -5,7 +5,7 @@ steps:
   - name: node:16
     id: 'Install dependencies'
     entrypoint: npm
-    args: ['ci']
+    args: ['ci', '--production']
 
   - name: node:16
     id: 'Generate .env file'
