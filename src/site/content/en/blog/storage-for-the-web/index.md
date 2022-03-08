@@ -98,7 +98,7 @@ device.
   * In Incognito Mode, Chrome reduces the amount of storage an origin can use
     to approximately 5% of the total disk space.
   * If the user has enabled "Clear cookies and site data when you close all
-    windows" in Chrome, the storage quota is significantly reduced to an
+    windows" in Chrome, the storage quota is significantly reduced to a
     maximum of approximately 300MB.
   * See [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for
     details about Chrome's implementation.
