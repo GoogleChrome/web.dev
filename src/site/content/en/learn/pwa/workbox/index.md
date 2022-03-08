@@ -5,6 +5,7 @@ description: >
 authors:
   - firt
 date: 2022-01-10
+updated: 2022-02-23
 ---
 
 Maintaining your service worker and cache storage logic can be a challenge as your PWA grows. [Workbox](https://developer.chrome.com/docs/workbox/what-is-workbox/), is a set of open-source libraries to help with that. Workbox encapsulates the low-level APIs, like the Service Worker API and Cache Storage API, and exposes more developer-friendly interfaces.
@@ -112,7 +113,7 @@ First, during the service worker's install lifecycle, the `offline-fallbacks` ca
 ```js
 import { setCatchHandler } from 'workbox-routing';
 
-// Warm the cache when the Service Worker installs
+// Warm the cache when the service worker installs
 self.addEventListener('install', event => {
   const files = ['/offline.html']; // you can add more resources here
   event.waitUntil(

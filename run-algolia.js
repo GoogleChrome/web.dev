@@ -14,4 +14,10 @@
  * limitations under the License.
  */
 
-require('./algolia').index();
+require('./algolia')
+  .index()
+  .catch((error) => {
+    console.error(JSON.stringify(error, null, 2));
+    // We want to explicitly exit with a non-0 code here, to indicate failure.
+    process.exit(1); // eslint-disable-line no-process-exit
+  });

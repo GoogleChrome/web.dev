@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2021-11-02
+updated: 2022-02-21
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -169,7 +169,7 @@ You can see a demo of URL protocol handler registration for PWAs on Glitch.
    protocol handler for the `web+coffee` protocol. If you agree, the PWA will open and show the
    selected coffee.
 1. To compare with the traditional flow that uses `navigator.registerProtocolHandler()`, click
-   the \*_Register protocol handler_ button in the PWA. Then in the browser tab click the third link
+   the _Register protocol handler_ button in the PWA. Then in the browser tab click the third link
    (chai). It will likewise show a prompt, but then open the PWA in a tab, not in a browser window.
 1. Send yourself a message on a platform-specific application like Skype on Windows with a link like
    `<a href="web+coffee://americano">Americano</a>` and click it. It should likewise open the

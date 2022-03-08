@@ -1,7 +1,7 @@
 ---
 title: Responsive images
 description: >
-  Give your visitors the most appropriate images for their devices and screens. 
+  Give your visitors the most appropriate images for their devices and screens.
 authors:
   - adactio
 date: 2021-12-09
@@ -23,7 +23,7 @@ img {
 ```
 
 {% Aside %}
-You can use `max-width` instead of `max-inline-size` if you prefer, but remember it's good to get in the habit of thinking in terms of [logical properties](/internationalization/#logical-properties).
+You can use `max-width` instead of `max-inline-size` if you prefer, but remember it's good to get in the habit of thinking in terms of [logical properties](/learn/design/internationalization/#logical-properties).
 {% endAside %}
 
 You can apply the same rule to other kinds of embedded content too, like videos and iframes.
@@ -86,7 +86,7 @@ img {
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/VCC9WmZ2BFqLrkRlFViy.jpg", alt="Profile of a happy-looking handsome dog with a ball in its mouth; there is extra space on either side of the image.", width="800", height="400" %}
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/FgeMDACB094Myj6cVCZu.jpg", alt="Profile of a happy-looking handsome dog with a ball in its mouth; the image has been cropped at the top and bottom.", width="800", height="400" %}
  <figcaption>
-   The same image with two different values for `object-fit` applied. The first has an `object-fit` value of `contain`. The second has an `object-fit` value of `cover`. 
+   The same image with two different values for `object-fit` applied. The first has an `object-fit` value of `contain`. The second has an `object-fit` value of `cover`.
  </figcaption>
 </figure>
 
@@ -216,7 +216,7 @@ In this example, the metadata describes the width of each width using the `w` un
  height="200"
  loading="lazy"
  decoding="async"
- srcset="small-image.png 300w, 
+ srcset="small-image.png 300w,
   medium-image.png 600w,
   large-image.png 1200w"
 >
@@ -346,11 +346,11 @@ element {
 ```
 The browser will choose the most appropriate image for the device's pixel density.
 
-There are many factors to consider when you're adding images to your site: 
+There are many factors to consider when you're adding images to your site:
 
 Reserving the right space for each image.
 Figuring out how many sizes you need.
-Deciding whether the image is content or decorative. 
+Deciding whether the image is content or decorative.
 
 It's worth spending the time to get images right. Poor image strategies are responsible for frustration and annoyance for users. A good image strategy makes your site feel snappy and sharp, regardless of the user's device or network connection.
 

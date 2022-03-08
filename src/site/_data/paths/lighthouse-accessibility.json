@@ -6,6 +6,12 @@
   "overview": "i18n.paths.lighthouse_accessibility.overview",
   "topics": [
     {
+      "title": "i18n.paths.lighthouse_accessibility.topics.a11y_overview",
+      "pathItems": [
+        "accessible"
+      ]
+    },
+    {
       "title": "i18n.paths.lighthouse_accessibility.topics.audit_scoring",
       "pathItems": [
         "accessibility-scoring"

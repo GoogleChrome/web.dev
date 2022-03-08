@@ -107,7 +107,7 @@ title is displayed in various window-switching surfaces such as
 
 For PWAs running in standalone mode, Chromium will prepend the `short_name`
 (or, if `short_name` is not set, alternatively the `name`) to what is
-specified in the `<title>` of the HTML document to prevent disguies attacks
+specified in the `<title>` of the HTML document to prevent disguise attacks
 where standalone apps might try to be mistaken, for example, for operating
 system dialogs.
 

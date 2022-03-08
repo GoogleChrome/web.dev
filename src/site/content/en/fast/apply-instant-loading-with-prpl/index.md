@@ -146,3 +146,5 @@ noticeable performance improvements.
 +  **Render** the initial route as soon as possible.
 +  **Pre-cache** remaining assets.
 +  **Lazy load** other routes and non-critical assets.
+
+You can read up more about [PRPL](https://www.patterns.dev/posts/prpl/) patterns.

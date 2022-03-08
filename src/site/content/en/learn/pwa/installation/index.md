@@ -5,6 +5,7 @@ description: >
 authors:
   - firt
 date: 2022-01-10
+updated: 2022-02-23
 ---
 
 Once the user installs your PWA, it will:
@@ -21,7 +22,7 @@ While installation differs per browser and operating system, you don't need to c
 ## Installation criteria
 
 Every browser has a criterion that marks when a website or web app is a Progressive Web App and can be installed for a standalone experience.
-The metadata for your PWA is set by a JSON-based file known as the Web App Manifest, which we will cover in detail in the [next module](/learn/pwa/web-app-manifest/). 
+The metadata for your PWA is set by a JSON-based file known as the Web App Manifest, which we will cover in detail in the [next module](/learn/pwa/web-app-manifest/).
 
 As a minimum requirement for installability, most browsers that support it use the Web App Manifest file and certain properties such as the name of the app, and configuration of the installed experience. An exception to this is Safari for macOS, which does not support installability.
 
@@ -29,7 +30,7 @@ Chromium-based browsers on desktop and Android, including Google Chrome, Samsung
 
 - Serving the web app on HTTPS.
 - At least one icon in the correct format and size.
-- A registered service worker. 
+- A registered service worker.
 - A `fetch` event handler in the service worker to provide a basic offline experience.
 
 Because the test that a PWA meets installability requirements can take several seconds, installability itself may not be available as soon as a URLs response is received.
@@ -75,7 +76,7 @@ After installing an app on the desktop, users can navigate to `about:apps`, righ
 
 ### iOS and iPadOS installation
 
-A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your Web App Manifest. Safari will use information to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the home screen will be a screenshot of your PWA when the user installed it. 
+A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your Web App Manifest. Safari will use information to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the home screen will be a screenshot of your PWA when the user installed it.
 
 It's important to understand that PWA installation is only available if the user browses your website from Safari. Other browsers available in the App Store, such as Google Chrome, Firefox, Opera, or Microsoft Edge, cannot install a PWA on the home screen.
 
@@ -101,7 +102,7 @@ PWAs installed on iOS and iPadOS:
 - Don't appear in App Gallery's categories folders.
 - Lack support for capabilities such as badging and app shortcuts.
 
-Incidentally, Safari uses a native technology known as [Web Clips](https://developer.apple.com/documentation/devicemanagement/webclip) to create the PWA icons in the operating system. They are just XML files in Apple's Property List format stored in the filesystem. 
+Incidentally, Safari uses a native technology known as [Web Clips](https://developer.apple.com/documentation/devicemanagement/webclip) to create the PWA icons in the operating system. They are just XML files in Apple's Property List format stored in the filesystem.
 
 {% Aside 'gotchas' %}
 When users use the PWA, they are not using an instance of the Safari app (like they use an instance of Chrome when doing so), they are using something known as *Web.app*, so you should expect slight differences between your PWA rendered in Safari and a PWA window. Both Safari and Web.app use the same core from WebKit and the same JavaScript runtime, but they run in different processes and may have different implementations, such as having isolated storage.
@@ -118,7 +119,7 @@ In the following image you can see two different versions of an installation dia
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/qqVFLVmurQkr5RGauvGK.png", alt="Mini info bar and installation dialogs on Android.", width="800", height="417" %}
 
-Depending on the device and browser, your PWA will either be installed as a WebAPK, a shortcut, or a QuickApp. 
+Depending on the device and browser, your PWA will either be installed as a WebAPK, a shortcut, or a QuickApp.
 
 #### WebAPKs
 
@@ -128,7 +129,7 @@ When a user installs a PWA from Google Chrome and a WebAPK is used, the minting 
 
 PWAs installed via WebAPK:
 
-- Have an icon in the Launcher and Home Screen.
+- Have an icon in the app launcher and home screen.
 - Appear on Settings, Apps.
 - Can have several capabilities, such as [badging](/badging-api/), [app shortcuts](/app-shortcuts/), and [capture links within the OS](/declarative-link-capturing/).
 - Can [update](/manifest-update) the icon and app's metadata.
@@ -170,7 +171,7 @@ If you provide instructions to the user, remember that menu items' names vary by
 
 ## App catalogs and stores
 
-Your PWA can also be listed in app catalogs and stores to increase its reach and let users find it in the same place they find other apps. 
+Your PWA can also be listed in app catalogs and stores to increase its reach and let users find it in the same place they find other apps.
 Most app catalogs and stores support technologies that let you publish a package that doesn't include the whole web app (such as your HTML and assets). These technologies let you create just a launcher to a standalone web rendering engine that will load the app and let the service worker cache the necessary assets.
 
 The app catalogs and stores that support publishing a PWA are:
@@ -184,13 +185,13 @@ The app catalogs and stores that support publishing a PWA are:
 If you want to learn more about how to publish a PWA to app catalogs and stores, check out [BubbleWrap CLI](https://github.com/GoogleChromeLabs/bubblewrap) and [PWA Builder](https://pwabuilder.com).
 
 {% Aside 'warning' %}
-Some app catalogs and stores have technical or business requirements that before your PWA is accepted for publication. Check each store's requirements before starting. 
+Some app catalogs and stores have technical or business requirements that before your PWA is accepted for publication. Check each store's requirements before starting.
 {% endAside %}
 
 ##  Resources
 
 - [What does it take to be installable](/install-criteria/)
-- [WebAPKs on Android](https://developers.google.com/web/fundamentals/integration/webapks) 
+- [WebAPKs on Android](https://developers.google.com/web/fundamentals/integration/webapks)
 - [Patterns for promoting PWA installation](/promote-install/)
 - [Using a PWA in your Android app](/using-a-pwa-in-your-android-app/)
 - [List your Progressive Web App in Google Play](https://chromeos.dev/en/publish/pwa-in-play)

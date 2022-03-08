@@ -79,7 +79,7 @@ view modes, views, or images uploaded through the WYSIWYG editor.
 
 ### Gatsby
 
-Use the [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) plugin to
+Use the [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) plugin to
 generate multiple smaller images for smartphones and tablets. It can also create
 SVG image placeholders for efficient lazy loading.
 

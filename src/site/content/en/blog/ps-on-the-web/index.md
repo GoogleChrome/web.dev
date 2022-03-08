@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Photoshop's journey to the web
+subhead: >
+  The idea of running software as complex as Photoshop directly in the browser would have been hard to imagine just a few years ago. However, by using various new standardized web technologies, Adobe has now brought a public beta of Photoshop to the web.
 authors:
   - nattestad
   - nabeelalshamma
 description: >
   Over the last three years, Chrome has been working to empower web applications that want to push the boundaries of what's possible in the browser. One such web application has been Photoshop. The idea of running software as complex as Photoshop directly in the browser would have been hard to imagine just a few years ago. However, by using various new standardized web technologies, Adobe has now brought a public beta of Photoshop to the web.
 date: 2021-10-26
-updated: 2021-11-17
+updated: 2022-02-14
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/pYiISdhsJe3oEL871Dqp.png
 alt: A part of Photoshop's user interface.
 tags:

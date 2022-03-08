@@ -112,10 +112,15 @@ You can also define your own error message:
 } %}
 
 This example needs more changes to connect the error message to the form control.
-First, use the `aria-describedby`
+
+A simple approach is to use the `aria-describedby`
 attribute on the form control that matches the `id` on the error message element.
-Next, use [`aria-live="assertive"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) for the error message.
+Then, use [`aria-live="assertive"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) for the error message.
 ARIA live regions announce an error to screen reader users the moment the error is shown.
+
+The problem with this approach for forms with multiple fields, 
+is that `aria-live` will usually only announce the first error in the case of multiple errors. 
+As explained in [this article about multiple `aria-live` announcements on the same action](https://gaurav5430.medium.com/quick-accessibility-wins-multiple-aria-live-on-single-action-caveat-b79a6f41e7cc) you could create a single message by concatenating all the errors. Another approach would be to announce that there are errors, then announce individual errors when the field is focused.
 
 ## Ensure users recognize errors
 

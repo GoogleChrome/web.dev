@@ -146,7 +146,7 @@ the length of `QUANTUM` as well.
 
 By default, "continuous" events are not returned from `isInputPending()`. These
 include `mousemove`, `pointermove`, and others. If you're interested in yielding for
-these as well, no problem. By providing a dictionary to `isInputPending()` with
+these as well, no problem. By providing an object to `isInputPending()` with
 `includeContinuous` set to `true`, we're good to go:
 
 ```js

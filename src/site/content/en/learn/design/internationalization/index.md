@@ -171,7 +171,7 @@ Here, the text "Deutsche Version" is marked up as being in the German language, 
 You can also use the `hreflang` attribute on the `link` element. This goes in the `head` of your document:
 
 ```html
-<link href="/path/to/german/version" rel="alternate" lang="de">
+<link href="/path/to/german/version" rel="alternate" hreflang="de">
 ```
 But unlike the `lang` attribute, which can go on any element, `hreflang` can only be applied to `a` and `link` elements.
 

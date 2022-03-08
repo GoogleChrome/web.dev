@@ -7,7 +7,7 @@ authors:
   - maudn
   - arturjanc
 date: 2021-05-18
-updated: 2021-08-05
+updated: 2022-02-14
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/E3BVnrBFNV6w2Uqxn3bQ.jpg
 alt: A keylock in front of compressed code
 description: |
@@ -257,7 +257,7 @@ Use DevTools to see how it's used.
 
 ### Supported browsers
 
-Chrome, Firefox, Edge, Safari
+{% BrowserCompat 'http.headers.csp.Content-Security-Policy' %}
 
 {% Aside 'gotchas' %}
 
@@ -273,9 +273,6 @@ Chrome, Firefox, Edge, Safari
   certain unsafe patterns.
 
 {% endAside %}
-
-See [more
-compatibilities](https://developer.mozilla.org/docs/Web/HTTP/CSP#browser_compatibility).
 
 ### Other things to note about CSP
 
@@ -429,9 +426,7 @@ How to use Trusted Types
 
 ### Supported browsers
 
-Chrome, Edge
-
-See [more compatibilities](https://caniuse.com/?search=trusted%20types).
+{% BrowserCompat 'http.headers.csp.Content-Security-Policy.trusted-types' %}
 
 ### Learn more
 
@@ -489,10 +484,7 @@ Content-Type: text/html; charset=utf-8
 
 ### Supported browsers
 
-Chrome, Firefox, Safari, Edge
-
-See [more
-compatibilities](https://caniuse.com/mdn-http_headers_x-content-type-options).
+{% BrowserCompat 'http.headers.X-Content-Type-Options' %}
 
 ### Learn more
 
@@ -576,10 +568,7 @@ explicitly opt-in to be embedded.
 
 ### Supported browsers
 
-Chrome, Firefox, Safari, Edge
-
-See [more
-compatibilities](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#browser_compatibility).
+{% BrowserCompat 'http.headers.X-Frame-Options' %}
 
 ### Learn more
 
@@ -675,10 +664,7 @@ To learn more about the difference between same-origin and same-site, check out
 
 ### Supported browsers
 
-Chrome, Firefox, Safari, Edge
-
-See [more
-compatibilities](https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).
+{% BrowserCompat 'http.headers.Cross-Origin-Resource-Policy' %}
 
 ### Learn more
 
@@ -802,10 +788,7 @@ Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop"
 
 ### Supported browsers
 
-Chrome, Firefox, Edge
-
-See [more
-compatibilities](https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).
+{% BrowserCompat 'http.headers.Cross-Origin-Opener-Policy' %}
 
 ### Learn more
 
@@ -933,10 +916,7 @@ Access-Control-Max-Age: 86400
 
 ### Supported browsers
 
-Chrome, Firefox, Safari, Edge
-
-See [more
-compatibilities](https://caniuse.com/mdn-http_headers_content-length_cors_response_safelist).
+{% BrowserCompat 'http.headers.Access-Control-Allow-Origin' %}
 
 ### Learn more
 
@@ -1021,10 +1001,7 @@ Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep"
 
 ### Supported browsers
 
-Chrome, Firefox, Edge
-
-See [more
-compatibilities](https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).
+{% BrowserCompat 'http.headers.Cross-Origin-Embedder-Policy' %}
 
 ### Learn more
 * [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/)
@@ -1067,9 +1044,7 @@ Strict-Transport-Security: max-age=31536000
 
 ### Supported browsers
 
-Chrome, Firefox, Safari, Edge
-
-See [more compatibilities](https://caniuse.com/stricttransportsecurity).
+{% BrowserCompat 'http.headers.Strict-Transport-Security' %}
 
 ### Learn more
 * [Strict-Transport-Security -

@@ -57,7 +57,6 @@
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "algoliasearch": "^4.8.6",
     "babel-eslint": "^10.0.3",
-    "byteof": "^0.1.1",
     "firebase": "^9.0.0-beta.7",
     "focus-visible": "^5.0.2",
     "idb-keyval": "^3.2.0",
@@ -87,7 +86,7 @@
     "@google-cloud/cloudbuild": "^2.6.0",
     "@google-cloud/error-reporting": "^2.0.3",
     "@google-cloud/secret-manager": "^3.10.0",
-    "@mdn/browser-compat-data": "^4.1.6",
+    "@mdn/browser-compat-data": "^4.1.10",
     "@percy/cli": "^1.0.0-beta.71",
     "@percy/puppeteer": "^2.0.0",
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -164,6 +163,7 @@
     "scroll-to-bottomjs": "^1.1.0",
     "slugify": "^1.4.5",
     "striptags": "^3.2.0",
+    "truncate-utf8-bytes": "^1.0.2",
     "typescript": "^4.0.3",
     "unified-lint-rule": "^1.0.5",
     "unist-util-generated": "^1.1.5",
@@ -183,10 +183,13 @@
   },
   "private": true,
   "engines": {
-    "node": "14.x"
+    "node": ">=14"
   },
   "browserslist": [
     "last 2 versions",
     "not ie <= 11"
-  ]
+  ],
+  "volta": {
+    "node": "16.14.0"
+  }
 }

@@ -26,8 +26,8 @@ Specifically, for the same physical distance that you move the mouse, the
 pointer on screen travels further if the distance was traveled faster.
 
 Operating systems enable mouse acceleration by default. For some [first-party
-perspective] games, commonly first party shooters (FPS), raw mouse input data is
-used to control camera rotation without an acceleration adjustment. The same
+perspective] games, commonly first person shooters (FPS), raw mouse input data
+is used to control camera rotation without an acceleration adjustment. The same
 physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 

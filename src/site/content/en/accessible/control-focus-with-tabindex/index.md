@@ -48,10 +48,12 @@ Insert an element into the natural tab order using `tabindex="0"`. For example:
 
 To focus an element, press the `Tab` key or call the element's `focus()` method.
 
-{% Glitch {
-  id: 'tabindex-zero',
-  path: 'index.html',
-  height: 346
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'XWzzMqp',
+  height: 360,
+  theme: 'dark',
+  tab: 'result'
 } %}
 
 ## Remove an element from the tab order
@@ -65,10 +67,12 @@ Remove an element using `tabindex="-1"`. For example:
 This removes an element from the natural tab order, but the element can still be
 focused by calling its `focus()` method.
 
-{% Glitch {
-  id: 'tabindex-negative-one',
-  path: 'index.html',
-  height: 346
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'BammWGg',
+  height: 360,
+  theme: 'dark',
+  tab: 'result'
 } %}
 
 Note that applying `tabindex="-1"` to an element doesn't affect its children;
@@ -135,10 +139,12 @@ method on it.
 </div>
 ```
 
-{% Glitch {
-  id: 'roving-tabindex',
-  path: 'index.html',
-  height: 346
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'LYOOWam',
+  height: 360,
+  theme: 'dark',
+  tab: 'result'
 } %}
 
 {% Aside %}
