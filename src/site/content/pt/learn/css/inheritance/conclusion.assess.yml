@@ -21,8 +21,7 @@ questions:
     cardinality: '1'
     correctAnswers: '1'
     stem: |
-      Qual valor se comporta como `inherit` a menos que não haja nada para herdar e
-      então se comporta como `initial`?
+      Qual valor se comporta como `inherit` e quando não há nada para herdar se comporta como `initial`?
     options:
       - content: '`reset`'
         rationale: 'incorreto, tente novamente!'

@@ -70,7 +70,7 @@ usando este trecho de HTML:
 
 O elemento raiz (`<html>`) não herdará nada porque é o primeiro elemento do documento.
 Adicione um pouco de CSS no elemento HTML,
-e ele passará para a hierarquia do documento, cascata a baixo:
+e ele começará a se propagar pelo documento.
 
 ```css
 html {
@@ -108,7 +108,7 @@ body {
 Como essa demonstração define o tamanho da fonte no elemento `body`,
 o elemento `html` ainda terá o tamanho da fonte inicial definido pelo navegador (user agent stylesheet),
 mas o `article` e `p` herdarão o tamanho da fonte declarado no `body`.
-Isso só ocorre porque a herança flui cascata a baixo.
+Isso ocorre porque a herança propaga apenas para baixo.
 {% endAside %}
 
 ```css
@@ -118,7 +118,7 @@ p {
 ```
 
 Apenas o `<p>` terá texto em itálico porque é o elemento aninhado mais profundo.
-A herança flui apenas para baixo, e não para cima, para os elementos pai.
+A herança propaga apenas para baixo, e não para cima, para os elementos pai.
 
 <figure>
 {% Codepen {
@@ -170,14 +170,14 @@ retirado da referência W3 de todas as propriedades CSS:
 
 Cada elemento HTML tem propriedades CSS definidas com um valor inicial por padrão.
 Um valor inicial é uma propriedade que não é herdada e aparece como padrão
-caso a cascata não calcule um valor para esse elemento.
+caso a cascata não compute um valor para esse elemento.
 
 <figure>
 {% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/OvoYqOMcdFZL7wJQIL2C.mp4" %}
 </figure>
 
-Propriedades podem ser herdadas cascata a baixo,
-e os elementos filho obterão um valor calculado que representa o valor de seu pai.
+Propriedades podem ser herdadas em sua propagação para baixo,
+e os elementos filho obterão um valor computado que representa o valor de seu pai.
 Isso significa que, se um pai tiver `font-weight` definido como `bold`, todos os elementos filho estarão em negrito,
 a menos que o `font-weight` seja definido com um valor diferente,
 ou o `user agent stylesheet` tenha um valor de `font-weight` para esse elemento.
@@ -195,7 +195,7 @@ A herança pode afetar os elementos de maneiras inesperadas, então o CSS tem fe
 
 ### A palavra-chave `inherit`
 
-Você pode fazer qualquer propriedade herdar o valor calculado de seu pai com a palavra-chave `inherit`.
+Você pode fazer qualquer propriedade herdar o valor computado de seu pai com a palavra-chave `inherit`.
 Uma maneira útil de usar essa palavra-chave é criar exceções.
 
 ```css
@@ -249,8 +249,8 @@ aside strong {
 }
 ```
 
-Este trecho removerá o peso bold de todos os elementos `<strong>` dentro de um elemento `<aside>` e, em vez disso,
-tornará todos em peso normal, que é o valor inicial.
+Esse trecho removerá o negrito de todos os elementos `<strong>` dentro de um elemento `<aside>` e, em vez disso,
+tornará todos em normal, que é o valor inicial.
 
 <figure>
 {% Codepen {
@@ -296,7 +296,7 @@ aside p {
 } %}
 </figure>
 
-Agora, o `margin` é removido e a `color` volta a ser o valor herdado calculado.
+Agora, o `margin` é removido e a `color` volta a ser o valor computado herdado.
 
 Você também pode usar o valor `unset` com a propriedade `all`.
 Voltando ao exemplo acima,
@@ -312,7 +312,7 @@ p {
 	border: 1px solid;
 }
 
-/* Nem todas as propriedades são calculadas */
+/* Nem todas as propriedades são computadas */
 aside p {
 	margin: unset;
 	color: unset;
