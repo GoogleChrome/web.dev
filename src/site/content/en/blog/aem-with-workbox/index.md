@@ -149,6 +149,7 @@ Progressive Web Apps provide an app-like experience for your website, that uses 
 * [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers)
 * [Cache API](/cache-api-quick-guide/)
 * [Web application manifest](/add-manifest/)
+* [Adaptive icon support in PWAs with maskable icons](/maskable-icon/)
 * Learn more about Adobe Experience Manager Sites: [https://business.adobe.com/products/experience-manager/sites/aem-sites](https://business.adobe.com/products/experience-manager/sites/aem-sites)
 * Learn more about Workbox: [https://developers.google.com/web/tools/workbox/guides/get-started](https://developers.google.com/web/tools/workbox/guides/get-started)
 * Workbox Caching strategies: [https://developers.google.com/web/tools/workbox/modules/workbox-strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
