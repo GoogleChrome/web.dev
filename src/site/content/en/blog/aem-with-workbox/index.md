@@ -4,13 +4,15 @@ title: A modern web experience on Adobe Experience Manager with WorkBox
 description: >
   Progressive Web Apps leverage what the modern web can do. Adobe used Workbox to bring those capabilities to Adobe Experience Manager.
 authors:
-  - joemedley
-date: 2022-03-04
+  - kbalasub
+  - sdenaro
+date: 2022-03-14
 hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/RKF1rl4ItVpoMj7TRZHG.png
 alt: The Adobe Experience Manager logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - case-study
+  - workbox
 ---
 
 If you are a technical lead or digital marketing analyst interested in providing a modern Web experience to your Adobe Experience Manager (AEM) web application and have been looking for your options in doing so, then you have come to the right article. This will cover what Progressive Web Apps (PWA) are and what you need to create a PWA in AEM leveraging the WorkBox library through configuration, without coding.
@@ -20,25 +22,23 @@ If you are a technical lead or digital marketing analyst interested in providing
 Progressive Web Apps leverage what the modern web can do. They are installable on your device, load quickly, with subsequent visits loading instantly. They respond to input quickly. They work well on an unreliable connection or when offline. PWAs use modern APIs to provide an engaging app-like experience with an optional full screen UI, background updating, and offline access to data.
 
 <figure>
-  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/OktJivHyntcGzX1VSdym.png", alt="From web app to Progressive Web App.", width="800", height="477" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/xkDFjbziiPKvr2TLiAXF.png", alt="From web app to Progressive Web App.", width="800", height="477" %}
 </figure>
 
 To enhance a web app into a Progressive Web App requires adding two artifacts:
 
 - A [web app manifest](/add-manifest/): a JSON configuration file that defines the app's entry point URL, the icon used to represent the PWA and other configuration that describe how the application looks and behaves.
-- A service worker: a script that provides background services that enrich your PWA by defining resources your PWA uses and the strategies to access them.
+- A [service worker](/learn/pwa/): a script that provides background services that enrich your PWA by defining resources your PWA uses and the strategies to access them.
 
 ## What is a service worker?
 
 At its core, a service worker is just a script that your browser runs independently as you interact with your web application. An active service worker provides services such as smart caching using the [Cache API](/cache-api-quick-guide/), keeping data up to date using the [Background Sync API](/periodic-background-sync/), and integrating with push notifications. A service worker with the right caching strategy provides stable and reliable user experiences for various scenarios, returning pre-cached resources instantly, storing data in cache, and updating resources when connected to the web.
 
 <figure>
-  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/j97xB2WYaExyh8SbI3pw.png", alt="What is a service worker?", width="800", height="369" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/j97xB2WYaExyh8SbI3pw.png", alt="A service worker lives on the client, but proxies the network.", width="800", height="369" %}
 </figure>
 
-<figure>
-  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47" %}
-</figure>
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/4izQ6TMiE9PHdRTor7b2.png", alt="Workbox Logo", width="200", height="47" style="max-width: 200px; margin: 0 auto;" %}
 
 Service workers can be hard to write from scratch. Workbox was created to make it easier. Workbox is a set of libraries to help you write and manage [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) and caching with the [Cache Storage API](/cache-api-quick-guide/). Service workers and the Cache Storage API, when used together, control how assets (HTML, CSS, JS, images, etc.) are requested from the network or cache, even allowing you to return cached content when offline. With Workbox, you can quickly set up and manage both, and more, with production-ready code.
 
@@ -63,7 +63,7 @@ If you've completed AEM Sites tutorials you have likely seen the WKND site befor
 The [web app manifest](/add-manifest/) is a JSON file that contains properties that describe the look and behavior of a PWA. Adobe Experience Manager Sites provides a friendly user interface to configure the properties.
 
 <figure>
-  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the installable experience.", width="800", height="634" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mhq0Kyzn88zfryTFpQgU.png", alt="Configuring the manifest in the installable experience dialog box.", width="800", height="634" %}
 </figure>
 The start URL is the entry point of your PWA. When a user taps on the the PWA icon on their phone, they will be accessing the startup URL. The display mode configures whether the app is a windowed or fullscreen experience. You can also specify the screen orientation of the application. The theme color is the color of the window and toolbar while the background color is the color of the splash screen when the application is launched. The icon is the image that is shown on the devices home screen or application drawer when the application is installed on the device. The configuration shown in the image generates the manifest JSON shown below.
 
@@ -104,7 +104,7 @@ You can configure the content to cache and the caching strategy to use.
 If you have been using service workers you may be familiar with [caching strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/). Caching strategies specify which resources to cache and whether to look for those resources in the cache first, the network first, or in the cache with a network fallback. You can then choose the resources to pre-cache when the service worker is installed. AEM Application service workers implement a [warm cache strategy](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#warming-the-runtime-cache) which means user's experience will not break even if you specify a missing or broken path.
 
 <figure>
-  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/GY9pDPqKTuux6jR26ZZZ.png", alt="Advanced cache management configuration.", width="800", height="753" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/GY9pDPqKTuux6jR26ZZZ.png", alt="Configuring the service worker using the Cache Management (Advanced) dialog box.", width="800", height="753" %}
 </figure>
 
 In AEM, the term "clientlibs" refers to client-side Libraries: the combination of related JavaScript, CSS, and static resources that have been added to your project that are served to and utilized by the client web browser. You can easily set your client-side libraries to be used offline by specifying those libraries in the user interface.
@@ -131,7 +131,7 @@ You can expand cache storage to view the content that has been cached locally:
 
 It's time to look at the results of your hard work. With just configuration and without coding you have just enhanced your AEM site to become a Progressive Web App.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="364", height="598" %}
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="385", height="633" style="max-width: 385; margin: 0 auto;" %}
 
 Chrome developer tools provide a lighthouse audit that lets you check how compliant your web application and configuration is with Progressive Web App standards.
 
