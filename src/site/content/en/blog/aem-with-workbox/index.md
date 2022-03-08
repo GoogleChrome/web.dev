@@ -135,7 +135,9 @@ It's time to look at the results of your hard work. With just configuration and 
 
 Chrome developer tools provide a lighthouse audit that lets you check how compliant your web application and configuration is with Progressive Web App standards.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/MGOAltGvFK3MCJLgFznv.png", alt="A lighthouse audit.", width="800", height="694" %}
+<figure>
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/MGOAltGvFK3MCJLgFznv.png", alt="A lighthouse audit.", width="800", height="694" %}
+</figure>
 
 ## Conclusion
 
