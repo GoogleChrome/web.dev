@@ -15,10 +15,10 @@
  */
 
 const {html} = require('common-tags');
+
+const {defaultLanguage} = require('../../../lib/utils/language');
 const {findByUrl} = require('../../_filters/find-by-url');
 const md = require('../../_filters/md');
-
-const DEFAULT_LANGUAGE_CODE = 'en';
 
 /**
  * Find matching collection items given a language code.
@@ -45,10 +45,10 @@ function CodelabsCallout(slugs, lang) {
   slugs = slugs instanceof Array ? slugs : [slugs];
 
   let codelabs = filterCodelabsByLang(slugs, lang);
-  // If there's no language-specific codelab, returning the English-language
-  // one is preferable.
+  // If there's no language-specific codelab, returning the default (English)
+  // language one is preferable.
   if (codelabs.length === 0) {
-    codelabs = filterCodelabsByLang(slugs, DEFAULT_LANGUAGE_CODE);
+    codelabs = filterCodelabsByLang(slugs, defaultLanguage);
   }
   // If there's still no codelabs found, return an empty string (not undefined).
   if (codelabs.length === 0) {
