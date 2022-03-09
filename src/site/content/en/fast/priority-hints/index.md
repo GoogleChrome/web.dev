@@ -246,7 +246,8 @@ Here are a few examples of using the `fetchpriority` attribute in markup and the
 <link rel="preload" href="/js/script.js" as="script" fetchpriority="low">
 
 <script>
-  fetch('https://example.com/', {priority: 'low'}).then(data => {
+  fetch('https://example.com/', {priority: 'low'})
+  .then(data => {
     // Trigger a low priority fetch
   });
 </script>
