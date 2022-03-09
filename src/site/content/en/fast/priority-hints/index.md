@@ -565,7 +565,7 @@ With the fix in Chrome 95 and the enhancement for priority hints, we hope that d
 - Image preloads will have a low priority (without priority hints) and should be ordered relative to async scripts and other low or lowest priority tags.
 
 ## History
-Priority hints was first experimented with in Chrome as an origin trial in 2018 and then again in 2021 using the `importance` attribute. The interface has since changed to `fetchpriority` for HTML and `priority` for JavaScript's fetch() API as part of the web standards process.
+Priority hints was first experimented with in Chrome as an origin trial in 2018 and then again in 2021 using the `importance` attribute. The interface has since changed to `fetchpriority` for HTML and `priority` for JavaScript's Fetch API as part of the web standards process.
 
 ## Conclusion
 
