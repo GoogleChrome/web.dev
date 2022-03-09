@@ -39,7 +39,7 @@ Historically, developers have had some, but limited, influence over resource pri
 
 Priority hints are a markup-based signal (available through the `fetchpriority` attribute) that developers can use to indicate the relative priority of a particular resource. You can also use these hints via JavaScript and the [Fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) with the `priority` proprty to influence the priority of resource fetches made for data. Priority hints can also complement preload. Take a Largest Contentful Paint image, which, when preloaded, will still get a low priority. If it is pushed back by other early low-priority resources, using Priority Hints can still help how soon the image gets loaded.
 
-Priority Hints are [available](https://www.chromestatus.com/feature/5273474901737472) in Chrome 101+.
+Priority Hints are [available](https://www.chromestatus.com/feature/5273474901737472) in Chrome 101 or later.
 
 ## Resource priority
 
