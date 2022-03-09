@@ -563,6 +563,9 @@ With the fix in Chrome 95 and the enhancement for priority hints, we hope that d
 - Import preloads (dynamic import() or modulepreload) should be done after the script tag that needs the import (so the actual script gets loaded/parsed first). Basically, if the script tag loads a script that will trigger the load of dependencies, make sure the `<link rel=preload>` for the dependencies is after the parent script tag, otherwise the dependencies may end up loading before the main script. In the proper order, the main script can be parsed/eval'd while the dependencies are loading.
 - Image preloads will have a low priority (without priority hints) and should be ordered relative to async scripts and other low or lowest priority tags.
 
+## History
+Priority hints was first experimented with in Chrome as an origin trial in 2018 and then again in 2021 using the `importance` attribute. The interface has since changed to `fetchpriority` for HTML and `priority` for JavaScript's fetch() API as part of the web standards process.
+
 ## Conclusion
 
 Developers are likely to be interested in priority hints with the fixes in preload behavior and the recent focus on Core Web Vitals and LCP. They now have additional knobs available to achieve their desired loading sequence.
