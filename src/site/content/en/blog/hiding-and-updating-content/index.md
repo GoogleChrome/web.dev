@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hiding and Updating Content
+title: Hiding and updating content
 subhead: Hiding content from assistive technology
 description: Hiding content from assistive technology
 authors:

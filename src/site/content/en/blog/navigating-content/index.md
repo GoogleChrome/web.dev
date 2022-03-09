@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Semantics and Navigating Content
+title: Semantics and navigating content
 subhead: The role of semantics in page navigation
 description: The role of semantics in page navigation
 authors:

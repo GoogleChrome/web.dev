@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ARIA Labels and Relationships
+title: ARIA labels and relationships
 subhead: Using ARIA labels to create accessible element descriptions
 description: Using ARIA labels to create accessible element descriptions
 authors:

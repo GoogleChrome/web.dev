@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Semantics
+title: Introduction to semantics
 subhead: Introduction to semantics and assistive technology
 description: Introduction to semantics and assistive technology
 authors:
