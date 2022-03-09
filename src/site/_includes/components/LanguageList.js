@@ -13,49 +13,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const path = require('path');
-const {getTranslatedUrls, getDefaultUrl} = require('../../_filters/urls');
+
+const {
+  defaultLanguage,
+  languageNames,
+  languageOrdering,
+} = require('../../../lib/utils/language');
+const {
+  getDefaultUrl,
+  getLocaleSpecificUrl,
+  getTranslatedUrls,
+} = require('../../_filters/urls');
 const {i18n} = require('../../_filters/i18n');
-const {languageNames, scriptGroups} = require('../../../lib/utils/language');
 
 module.exports = (url, lang) => {
-  let langhrefs = getTranslatedUrls(url).filter(
-    (langhref) => langhref[0] !== lang,
+  const langHrefs = getTranslatedUrls(url).filter(
+    (langHref) => langHref[0] !== lang,
   );
 
-  if (langhrefs.length) {
-    const enHref = path.join('/', 'i18n', 'en', getDefaultUrl(url));
-    langhrefs.push(['en', enHref]);
-    langhrefs = langhrefs
-      .sort((a, b) => {
-        if (
-          scriptGroups.latin.includes(a[0]) &&
-          !scriptGroups.latin.includes(b[0])
-        ) {
-          return -1;
-        }
-      })
-      .sort((a, b) => {
-        if (
-          scriptGroups.latin.includes(a[0]) &&
-          scriptGroups.latin.includes(b[0])
-        ) {
-          return a[0].localeCompare(b[0]);
-        }
-      })
-      .map((langhref) => {
-        const href = langhref[1];
-        return `<a class="w-post-signpost__link"
-          translate="no"
-          lang="${langhref[0]}"
-          href="${href}">
-        ${languageNames[langhref[0]]}</a>`;
-      });
+  // Exit early if there are no translations.
+  if (langHrefs.length === 0) {
+    return '';
   }
 
+  // Ensure that the default (English) translation is added as well.
+  const defaultHref = getLocaleSpecificUrl(defaultLanguage, getDefaultUrl(url));
+  langHrefs.push([defaultLanguage, defaultHref]);
+
+  // Sort the list of languages with a specific ordering.
+  // C.f. https://github.com/GoogleChrome/web.dev/issues/7430
+  langHrefs.sort((a, b) => {
+    const indexOfA = languageOrdering.indexOf(a[0]);
+    const indexOfB = languageOrdering.indexOf(b[0]);
+    return indexOfA > indexOfB ? 1 : -1;
+  });
+
+  const languageLinks = langHrefs.map((langHref) => {
+    const href = langHref[1];
+    return `<a class="w-post-signpost__link"
+      translate="no"
+      lang="${langHref[0]}"
+      href="${href}">${languageNames[langHref[0]]}</a>`;
+  });
+
   const availableIn = i18n('i18n.post.available_in', lang);
-  return langhrefs.length
-    ? `<span class="w-post-signpost__title">${availableIn}:
-    ${langhrefs.join(', ')}</span>`
-    : '';
+  const listFormat = new Intl.ListFormat(lang);
+
+  return `<span class="w-post-signpost__title">
+    ${availableIn}:
+    ${listFormat.format(languageLinks)}
+  </span>`;
 };

@@ -22,18 +22,23 @@ const languageNames = {
 };
 
 /**
- * A map of script groups to their language codes.
+ * When we display a list of translations available for a given page,
+ * use this ordering for the names of the languages.
+ * See https://github.com/GoogleChrome/web.dev/issues/7430
  * @const
  */
-const scriptGroups = {
-  latin: ['cs', 'de', 'en', 'es', 'fr', 'it', 'no', 'pl', 'pt', 'sv'],
-  cyrillic: ['bg', 'ru'],
-  nonAlphabetic: ['ta', 'zh'],
-  arabic: 'fa',
-  devanagari: 'hi',
-  kanji: 'ja',
-  hangul: 'ko',
-};
+const languageOrdering = [
+  'de',
+  'en',
+  'es',
+  'fr',
+  'pl',
+  'pt',
+  'ru',
+  'zh',
+  'ja',
+  'ko',
+];
 
 /**
  * A default language for the site.
@@ -57,9 +62,9 @@ function isValidLanguage(lang) {
 }
 
 module.exports = {
-  languageNames,
   defaultLanguage,
   isValidLanguage,
+  languageNames,
+  languageOrdering,
   supportedLanguages,
-  scriptGroups,
 };
