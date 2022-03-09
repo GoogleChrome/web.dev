@@ -567,6 +567,9 @@ With the fix in Chrome 95 and the enhancement for priority hints, we hope that d
 ## History
 Priority hints was first experimented with in Chrome as an origin trial in 2018 and then again in 2021 using the `importance` attribute. The interface has since changed to `fetchpriority` for HTML and `priority` for JavaScript's Fetch API as part of the web standards process.
 
+## Browser Compatibility
+As of this writing, priority hints are only available in Chromium-based browsers. Other browser engines or earlier versions of Chromium browsers will ignore the attribute and use their default prioritization heuristics.
+
 ## Conclusion
 
 Developers are likely to be interested in priority hints with the fixes in preload behavior and the recent focus on Core Web Vitals and LCP. They now have additional knobs available to achieve their desired loading sequence.
