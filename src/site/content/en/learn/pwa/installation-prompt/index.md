@@ -144,7 +144,7 @@ Check out these libraries for help with rendering a custom install prompt:
 
 ##  Resources
 
-- [Patterns for Promoting PWA installation](https://web.dev/promote-install/)
-- [How to provide your own in-app install experience](https://web.dev/customize-install/)
-- [MDN: Add to Home Screen](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen)
+- [Patterns for Promoting PWA installation](/promote-install/)
+- [How to provide your own in-app install experience](/customize-install/)
+- [MDN: Add to Home Screen](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Add_to_home_screen)
 - [Web Manifest Incubations](https://wicg.github.io/manifest-incubations/)
