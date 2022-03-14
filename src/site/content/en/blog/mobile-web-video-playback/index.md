@@ -679,6 +679,8 @@ shows up on lock screens.
 
 {% Video src="video/C47gYyWYVMMhDmtYSLOWazuyePF2/28hm3HHyO9dHKrCYJdDA.webm", muted="true", controls="true" %}
 
+## Feedback {: #feedback }
+
 [sample]: https://googlesamples.github.io/web-fundamentals/fundamentals/media/mobile-web-video-playback.html
 [the code]: https://github.com/googlesamples/web-fundamentals/tree/gh-pages/fundamentals/media/mobile-web-video-playback.html
 [tiny shim]: https://github.com/googlesamples/web-fundamentals/tree/gh-pages/fundamentals/media/tiny-fullscreen-shim.js
@@ -691,5 +693,3 @@ shows up on lock screens.
 [page visibility api]: https://www.w3.org/TR/page-visibility/
 [intersection observer api]: https://web.dev/intersectionobserver
 [media session api]: https://web.dev/media-session
-
-## Feedback {: #feedback }

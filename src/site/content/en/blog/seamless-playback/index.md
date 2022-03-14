@@ -11,7 +11,7 @@ updated: 2021-05-04
 
 ## Introduction
 
-[Media Source Extensions (MSE)](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API)
+[Media Source Extensions (MSE)](https://developer.mozilla.org/docs/Web/API/Media_Source_Extensions_API)
 provide extended buffering and playback control for the HTML5 `<audio>` and
 `<video>` elements. While originally developed to facilitate
 [Dynamic Adaptive Streaming over HTTP (DASH)](http://dashif.org/about/)
@@ -59,7 +59,7 @@ regard for the audio segments before or after it.
 First, let's backtrack and cover the basic setup of a `MediaSource` instance.
 Media Source Extensions, as the name implies, are just extensions to the
 existing media elements. Below, we're assigning an
-[`Object URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL.createObjectURL),
+[`Object URL`](https://developer.mozilla.org/docs/Web/API/URL.createObjectURL),
 representing our `MediaSource` instance, to the source attribute of an audio
 element; just like you would set a standard URL.
 

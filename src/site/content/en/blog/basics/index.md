@@ -75,7 +75,7 @@ reading now. If you want a more detailed explanation, then please keep reading.
 I'm going to walk through this chain by building a basic MSE example. Each of
 the build steps will add code to the previous step.
 
-### A note about clarity
+## A note about clarity
 
 Will this article tell you everything you need to know about playing media on a
 web page? No, it's only intended to help you understand more complicated code
@@ -117,7 +117,7 @@ Here are some things I'd recommend in a production usage of MSE related APIs:
   can be useful to determine the root cause of the failure, especially for
   errors that are hard to reproduce in test environments.
 
-## Attach a MediaSource instance to a media element
+### Attach a MediaSource instance to a media element
 
 As with many things in web development these days, you start with feature
 detection. Next, get a media element, either an `<audio>` or `<video>` element.
@@ -197,7 +197,7 @@ connected to a `MediaSource` instance. Calling this method doesn't destroy any
 objects. It _does_ allow the platform to handle garbage collection at an
 appropriate time, which is why I'm calling it immediately.
 
-## Create a SourceBuffer
+### Create a SourceBuffer
 
 Now it's time to create the `SourceBuffer`, which is the object that actually
 does the work of shuttling data between media sources and media elements. A
@@ -241,11 +241,11 @@ function sourceOpen(e) {
 }
 ```
 
-## Get the media file
+### Get the media file
 
 If you do an internet search for MSE examples, you'll find plenty that retrieve
 media files using XHR. To be more cutting edge,
-I'm going to use the [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/GlobalFetch)
+I'm going to use the [Fetch](https://developer.mozilla.org/docs/Web/API/GlobalFetch)
 API and the [Promise](/web/fundamentals/getting-started/primers/promises) it
 returns. If you're trying to do this in Safari, it won't work without a
 `fetch()` polyfill.
@@ -285,7 +285,7 @@ _while media are playing_. You may have heard the terms DASH or HLS, which are
 two methods of accomplishing this. A full discussion of this topic is beyond the
 scope of this introduction.
 
-## Process the response object
+### Process the response object
 
 The code looks almost done, but the media doesn't play. We need to get media
 data from the `Response` object to the `SourceBuffer`.
@@ -341,7 +341,7 @@ function sourceOpen(e) {
 }
 ```
 
-## The final version
+#### The final version
 
 Here's the complete code example. I hope you have learned something about Media
 Source Extensions.
@@ -378,4 +378,4 @@ function sourceOpen(e) {
 }
 ```
 
-## Feedback {: #feedback }
+#### Feedback {: #feedback }
