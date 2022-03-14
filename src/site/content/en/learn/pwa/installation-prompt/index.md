@@ -5,6 +5,7 @@ description: >
 authors:
   - firt
 date: 2022-03-09
+updated: 2022-03-14
 ---
 
 Users may not be familiar with the PWA install process. As the developer, you will understand when it is the right time to invite the user to install the app. The default browser installation prompts can also be enhanced. Let's check out the tools available.
@@ -23,16 +24,16 @@ See promotional fields in action:
 
 {% Glitch 'mlearn-pwa-web-app-manifest-promotional' %}
 
-## The `beforeinstallprompt` event
+## The beforeinstallprompt event
 
 The browser's installation prompts are the first step in getting  users to install your PWA. To implement your own install experience, your app still needs to pass the install criteria: when the browser detects that your app is installable, it fires the `beforeinstallprompt` event. You need to implement this event handler to customize the user's experience. Here's how:
 
-1. Listen for the `beforeinstallprompt` event. 
-1. Save it (you'll need it later). 
+1. Listen for the `beforeinstallprompt` event.
+1. Save it (you'll need it later).
 1. Trigger it from your UI.
 
 {% Aside 'caution' %}
-Note that not all browsers support this event, and it has been moved from the Web App Manifest spec to a [separate incubator](https://wicg.github.io/manifest-incubations/).
+Not all browsers support this event, and it has been moved from the Web App Manifest spec to a [separate incubator](https://wicg.github.io/manifest-incubations/).
 {% endAside %}
 
 Check the code below for an example of an event listener for the `beforeinstallprompt` event, its capture and later custom use.
@@ -46,7 +47,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Save the event because you'll need to trigger it later.
   deferredPrompt = e;
   // Show your customized install prompt for your PWA
-  // Your own UI doesn't have to be a single element, you 
+  // Your own UI doesn't have to be a single element, you
   // can have buttons in different locations, or wait to prompt
   // as part of a critical journey.
   showInAppInstallPromotion();
@@ -64,7 +65,7 @@ You can only call `prompt()` on the deferred event once. If the user dismisses i
 The event will not fire if:
 
 - The user has already installed the current PWA (valid only for desktop and WebAPK on Android).
-- The app does not pass the [PWA installation criteria](/learn/pwa/installation/#installation-criteria). 
+- The app does not pass the [PWA installation criteria](/learn/pwa/installation/#installation-criteria).
 - The PWA is not installable on the current device for other reasons (for example, a device in kiosk mode or without permissions).
 
 {% Aside 'gotchas' %}
@@ -78,7 +79,7 @@ You can choose to display install hints anywhere in your app. Some common patter
 
 ### Gathering analytics
 
-Using analytics will help you to understand better where and when to present your prompts. You can use the `userChoice` property from the `beforeinstallprompt` event; `userChoice` is a promise that will resolve with the action the user took. 
+Using analytics will help you to understand better where and when to present your prompts. You can use the `userChoice` property from the `beforeinstallprompt` event; `userChoice` is a promise that will resolve with the action the user took.
 
 ```js
 // Gather the data from your custom install UI event listener
@@ -123,7 +124,7 @@ To render the element only in browser mode, use the`display-mode` media query:
 @media (display-mode: browser) {
    #installInstructions {
      display: block
-   } 
+   }
 }
 ```
 
