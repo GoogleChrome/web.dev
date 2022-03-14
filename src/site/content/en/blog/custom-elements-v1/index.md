@@ -22,15 +22,13 @@ our apps.
 
 ## Introduction
 
-Note: This article describes the new <a
-href="https://html.spec.whatwg.org/multipage/scripting.html#custom-elements"
-target="_blank">Custom Elements spec</a>. If you've been using custom elements,
-chances are you're familiar with the <a
-href="https://www.chromestatus.com/features/4642138092470272">version 0 that
-shipped in Chrome 33</a>. The concepts are the same, but the version 1 spec has
+{% Aside %}
+This article describes the new [Custom Elements spec](https://html.spec.whatwg.org/multipage/scripting.html#custom-elements). If you've been using custom elements,
+chances are you're familiar with the [version 0 that shipped in Chrome 33](https://www.chromestatus.com/features/4642138092470272). The concepts are the same, but the version 1 spec has
 important API differences. Keep reading to see what's new or check out the
-section on <a href="#historysupport">History and browser support</a> for more
+section on [History and browser support](#historysupport) for more
 info.
+{% endAside %}
 
 The browser gives us an excellent tool for structuring web applications. It's
 called HTML.  You may have heard of it! It's declarative, portable, well
@@ -152,7 +150,7 @@ The entire DOM API is available inside element code. Use `this` to access the
 element's properties, inspect its children (`this.children`), query nodes
 (`this.querySelectorAll('.items')`), etc.
 
-**Rules on creating custom elements**
+## Rules on creating custom elements
 
 1. The name of a custom element **must contain a dash (-)**. So `<x-tags>`,
    `<my-element>`, and `<my-awesome-app>` are all valid names, while `<tabs>`
@@ -165,7 +163,7 @@ element's properties, inspect its children (`this.children`), query nodes
 3. Custom elements cannot be self-closing because HTML only allows [a few
    elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements)
    to be self-closing. Always write a closing tag
-   (<code>&lt;app-drawer&gt;&lt;/app-drawer&gt;</code>).
+   (`<app-drawer></app-drawer>`).
 
 ## Custom element reactions
 
