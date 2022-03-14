@@ -16,7 +16,7 @@ tags:
 Modern browsers make it easy to customize certain components, like icons, the address bar color, and even add things like custom tiles. These simple tweaks can increase engagement and bring users back to your site.
 
 
-## Provide great icons & tiles 
+## Provide great icons and tiles 
 
 When a user visits your webpage, the browser tries to fetch an icon from the HTML. The icon may show up in many places, including the browser tab, recent app switch, the new (or recently visited) tab page, and more.
 
@@ -38,7 +38,7 @@ element of each page.
 ```
 
 
-### Chrome & Opera
+### Chrome and Opera
 
 Chrome and Opera uses `icon.png`, which is scaled to the necessary size by 
 the device. To prevent automatic scaling, you can also provide additional 
@@ -65,7 +65,7 @@ Previously, Safari for iOS would consider the `-precomposed` keyword to avoid
 adding visual effects, but it hasn't been necessary since iOS 7. 
     
 
-### Internet Explorer & Windows Phone
+### Internet Explorer and Windows Phone
 
 Windows 8's new home screen experience supports four different layouts for 
 pinned sites, and requires four icons. You can leave out the relevant meta 
