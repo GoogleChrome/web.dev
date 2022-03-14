@@ -94,7 +94,7 @@ device.
 * Chrome allows the browser to use up to 80% of total disk space. An origin can
   use up to 60% of the total disk space. You can use the [StorageManager
   API](#check) to determine the maximum quota available. Other Chromium-based
-  browsers may allow the browser to use more storage.
+  browsers may be different.
   * In incognito mode, Chrome reduces the amount of storage an origin can use
     to approximately 5% of the total disk space.
   * If the user has enabled "Clear cookies and site data when you close all
