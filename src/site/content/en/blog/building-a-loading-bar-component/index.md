@@ -40,7 +40,7 @@ If you prefer video, here's a YouTube version of this post:
 ## Overview
 
 The
-[`<progress>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+[`<progress>`](https://developer.mozilla.org/docs/Web/HTML/Element/progress)
 element provides visual and audible feedback to users about completion. This
 visual feedback is valuable for scenarios such as: progress through a form,
 displaying downloading or uploading information, or even showing that the
@@ -69,7 +69,7 @@ modernize the component and have it fit better within design systems.
 ## Markup
 
 I chose to wrap the `<progress>` element in a
-[`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) so
+[`<label>`](https://developer.mozilla.org/docs/Web/HTML/Element/label) so
 I could skip the [explicit relationship attributes in favor of an implicit
 relationship](https://css-tricks.com/html-inputs-and-labels-a-love-story/#aa-how-to-pair-a-label-and-an-input).
 I've also labeled a parent element affected by the loading state, so screen
@@ -80,7 +80,7 @@ reader technologies can relay that information back to a user.
 ```
 
 If there is no `value`, then the element's progress is
-[indeterminate](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate).
+[indeterminate](https://developer.mozilla.org/docs/Web/CSS/:indeterminate).
 The `max` attribute defaults to 1, so progress is between 0 and 1. Setting `max`
 to 100, for example, would set the range to 0-100. I chose to stay within the 0
 and 1 limits, translating progress values to 0.5 or 50%.
@@ -94,7 +94,7 @@ In a implicit relationship, a progress element is wrapped by a label like this:
 ```
 
 In my demo I chose to include the label for [screen readers
-only](https://webaim.org/techniques/css/invisiblecontent/#:~:text=receive%20keyboard%20focus.-,CSS%20clip,-%7Bclip%3A%20rect(1px).
+only](https://webaim.org/techniques/css/invisiblecontent/).
 This is done by wrapping the label text in a `<span>` and applying some styles
 to it so that it's effectively off screen:
 
@@ -132,11 +132,11 @@ With the following accompanying CSS from [WebAIM](https://webaim.org/):
 If you have healthy vision, it can be easy to associate a progress indicator
 with related elements and page areas, but for visually impaired users, it's not
 so clear. Improve this by assigning the
-[`aria-busy`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-busy)
+[`aria-busy`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-busy)
 attribute to the top-most element that will change when loading is complete.
 Furthermore, indicate a relationship between the progress and the loading zone
 with
-[`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
+[`aria-describedby`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
 
 ```html
 <main id="loading-zone" aria-busy="true">
@@ -211,7 +211,7 @@ progress {
 ```
 
 The value of `1e3px` for `_radius` uses [scientific number
-notation](https://developer.mozilla.org/en-US/docs/Web/CSS/number) to express a
+notation](https://developer.mozilla.org/docs/Web/CSS/number) to express a
 large number so the `border-radius` is always rounded. It's equivalent to
 `1000px`. I like to use this because my aim is to use a value large enough that
 I can set it and forget it (and it's shorter to write than `1000px`). It is also
@@ -267,7 +267,7 @@ special browser-specific selectors.
 #### Light and dark browser styles
 
 To opt your site into a dark and light adaptive `<progress>` element,
-[`color-scheme`](https://web.dev/color-scheme/) is all that is required.
+[`color-scheme`](/color-scheme/) is all that is required.
 
 ```css
 progress {
@@ -291,7 +291,7 @@ progress {
 
 #### Single property progress filled color
 
-To tint a `<progress>` element, use [`accent-color`](https://web.dev/accent-color/).
+To tint a `<progress>` element, use [`accent-color`](/accent-color/).
 
 ```css
 progress {
@@ -320,7 +320,7 @@ Notice the track background color changes from light to dark depending on the
 
 Set two custom properties on the `<progress>` element, one for the track color
 and the other for the track progress color. Inside the
-[`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+[`prefers-color-scheme`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme)
 media query, provide new color values for the track and track progress.
 
 ```css
@@ -353,7 +353,7 @@ contrast between your track and progress colors.
 
 Earlier we gave the element a negative tab index so it could be programmatically
 focused. Use
-[`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+[`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible)
 to customize focus to opt into the smarter focus ring style. With this, a mouse
 click and focus won't show the focus ring, but keyboard clicks will. The
 [YouTube video](#todo) goes into this in more depth and is worth reviewing.
@@ -468,7 +468,7 @@ set of permitted CSS properties.
 ### Animating the track filling up
 
 Adding a transition to the
-[`inline-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size) of
+[`inline-size`](https://developer.mozilla.org/docs/Web/CSS/inline-size) of
 the progress element works for Chromium but not for Safari. Firefox also does
 not use a transition property on it's `::-moz-progress-bar`.
 
@@ -493,7 +493,7 @@ forth for all three browsers.
 Custom properties are great for many things, but one of my favorites is simply
 giving a name to an otherwise magical looking CSS value. Following is a fairly
 complex
-[`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient()),
+[`linear-gradient`](https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient()),
 but with a nice name. Its purpose and use cases can be clearly understood.
 
 ```css
@@ -601,7 +601,7 @@ const state = {
 
 The demo offers buttons for controlling the progress; they update `state.val`
 and then call a function for updating the
-[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).
+[DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model).
 
 ```js
 document.querySelector('#complete').addEventListener('click', e => {
