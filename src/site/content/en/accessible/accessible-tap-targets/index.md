@@ -70,7 +70,7 @@ your design based on actual device capabilities.
 One of the media features we can now test for with media queries
 is whether the user's *primary input* is a touchscreen (`pointer`) and
 whether *any* of the currently detected inputs is a touchscreen (`any-pointer`).
-The `pointer` and `any-pointer` feature will return `fine` or `coarse`.
+The `pointer` and `any-pointer` features will return `fine` or `coarse`.
 A fine pointer will be someone using a mouse or trackpad,
 even if that mouse is connected via Bluetooth to a phone.
 A `coarse` pointer indicates a touchscreen,
