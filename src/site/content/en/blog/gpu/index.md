@@ -7,7 +7,7 @@ authors:
   - beaufortfrancois
   - cwallez
 date: 2021-08-26
-updated: 2021-11-24
+updated: 2022-03-10
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
@@ -116,6 +116,7 @@ requires understanding key concepts before diving into it. That's why I'll link
 to existing high-quality content in this article for you to get started with
 WebGPU.
 
+- [WebGPU — All of the cores, none of the canvas]
 - [Get started with GPU Compute on the web]
 - [A Taste of WebGPU in Firefox]
 - [WebGPU for Metal Developers, Part One]
@@ -213,6 +214,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [WebGL]: https://developer.mozilla.org/docs/Web/API/WebGL_API
 [W3C's "GPU for the Web" Community Group]: https://www.w3.org/community/gpu/
 [Babylon.js Playground]: https://playground.babylonjs.com/#XCNL7Y
+[WebGPU — All of the cores, none of the canvas]: https://surma.dev/things/webgpu/
 [Get started with GPU Compute on the web]: /gpu-compute/
 [A Taste of WebGPU in Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 [WebGPU for Metal Developers, Part One]: https://metalbyexample.com/webgpu-part-one/
