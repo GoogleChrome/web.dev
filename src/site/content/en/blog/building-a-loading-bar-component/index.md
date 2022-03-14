@@ -486,7 +486,12 @@ Here I get a bit more creative so I can provide an animation. A pseudo-element
 for Chromium is created and a gradient is applied that is animated back and
 forth for all three browsers.
 
-[todo video] 
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/VPkH1KWsvUyNrdmc13k1.mp4",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
 
 #### The custom properties
 
