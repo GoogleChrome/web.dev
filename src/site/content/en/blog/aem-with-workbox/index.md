@@ -12,7 +12,6 @@ alt: The Adobe Experience Manager logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - case-study
-  - workbox
 ---
 
 If you are a technical lead or digital marketing analyst interested in providing a modern Web experience to your Adobe Experience Manager (AEM) web application and have been looking for your options in doing so, then you have come to the right article. This will cover what Progressive Web Apps (PWA) are and what you need to create a PWA in AEM leveraging the WorkBox library through configuration, without coding.
