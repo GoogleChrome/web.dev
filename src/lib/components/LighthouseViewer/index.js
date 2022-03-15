@@ -38,10 +38,15 @@ class LighthouseViewer extends BaseStateElement {
           />
         </svg>`
       : '';
+    // Hardcode "central United States" based on the current region for
+    // https://lighthouse-dot-webdotdevsite.appspot.com/. If the AppEngine
+    // instance ever moves, we'll need to update this.
+    // See https://github.com/GoogleChrome/web.dev/issues/4321
     return html`
       <div class="text-size-0">
         <span ?hidden="${this.metaHidden}">
-          <span>Audited on:</span> <span>${this.auditedOn}</span>
+          Audited on ${this.auditedOn} using a client in the central
+          United States.
           <a
             title="View latest Lighthouse report"
             href="#"
