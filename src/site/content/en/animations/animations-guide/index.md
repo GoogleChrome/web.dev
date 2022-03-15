@@ -268,26 +268,6 @@ can help you to understand where the browser is spending time.
 If you see entries for [**Recalculate Style**](https://developer.mozilla.org/docs/Tools/Performance/Scenarios/Animating_CSS_properties)
 then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
 
-<figure>
-  <img
-       src="waterfall-before.jpg"
-       alt="The Waterfall panel shows many entries for Recalculate Style.">
-  <figcaption>
-    The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
-    example causes style recalculation.
-  </figcaption>
-</figure>
-
-<figure>
-  <img
-       src="waterfall-after.jpg"
-       alt="The Waterfall panel shows no entries for Recalculate Style.">
-  <figcaption>
-    The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
-    example does not cause style recalculation.
-  </figcaption>
-</figure>
-
 ### Check if an animation is dropping frames {: #fps }
 
 1. Open the [**Rendering** tab][rendering] of Chrome DevTools.
