@@ -35,7 +35,7 @@ source](https://github.com/argyleink/gui-challenges)!
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'kZiS1QStIWc' %}
+{% YouTube 'TD1QxlGgIPk' %}
 
 ## Overview
 
@@ -356,7 +356,7 @@ focused. Use
 [`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible)
 to customize focus to opt into the smarter focus ring style. With this, a mouse
 click and focus won't show the focus ring, but keyboard clicks will. The
-[YouTube video](#todo) goes into this in more depth and is worth reviewing.
+[YouTube video](https://youtu.be/TD1QxlGgIPk) goes into this in more depth and is worth reviewing.
 
 ```css
 progress:focus-visible {
