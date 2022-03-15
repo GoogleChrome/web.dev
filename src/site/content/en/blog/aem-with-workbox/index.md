@@ -6,8 +6,8 @@ description: >
 authors:
   - kbalasub
   - sdenaro
-date: 2022-03-14
-hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/RKF1rl4ItVpoMj7TRZHG.png
+date: 2022-03-15
+hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/DYLQrK14PjcDGMLjJy7C.png
 alt: The Adobe Experience Manager logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
