@@ -62,9 +62,15 @@ In that Panel you get the actual size of the inspected element.
 
 ## Using media queries to detect touchscreen use
 
+Instead of simply testing for viewport dimensions, and then guessing
+that small dimensions are likely to be phones or tablets, which in turn
+use a touchscreen, there are now more robust ways to adapt
+your design based on actual device capabilities.
+
 One of the media features we can now test for with media queries
-is whether the user's primary input is a touchscreen.
-The `pointer` feature will return `fine` or `coarse`.
+is whether the user's *primary input* is a touchscreen (`pointer`) and
+whether *any* of the currently detected inputs is a touchscreen (`any-pointer`).
+The `pointer` and `any-pointer` features will return `fine` or `coarse`.
 A fine pointer will be someone using a mouse or trackpad,
 even if that mouse is connected via Bluetooth to a phone.
 A `coarse` pointer indicates a touchscreen,
@@ -72,15 +78,14 @@ which could be a mobile device but may also be a laptop screen or large tablet.
 
 If you are adjusting your CSS within a media query to increase the touch target,
 testing for a coarse pointer allows you to increase the tap targets for all touchscreen users.
-This gives the larger tap area whether the device is a phone or larger device,
-while testing for width only gives you mobile users.
+This gives the larger tap area whether the device is a phone or larger device.
 
 ```css
 .container a {
   padding: .2em;
 }
 
-@media (pointer: coarse) {
+@media (any-pointer: coarse) {
   .container a {
     padding: .8em;
   }
