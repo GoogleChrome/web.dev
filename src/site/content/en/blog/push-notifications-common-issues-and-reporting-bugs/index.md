@@ -15,7 +15,7 @@ do if you've found a bug in Chrome or Firefox.
 Before we dive into debugging push, you may be hitting issues with debugging
 service workers themselves, the file not updating, failing to register or
 generally just unusual behavior. There is an
-[awesome document on debugging service workers](https://web.dev/codelabs-debugging-service-workers/)
+[awesome document on debugging service workers](/web/fundamentals/getting-started/codelabs/debugging-service-workers/)
 that I strongly recommend checking out if you are new to
 service worker development.
 
@@ -217,7 +217,7 @@ console like so:
 
 To check if this is the issue in Chrome, do the following:
 
-1. Go to chrome://gcm-internals and click the "Start Recording" button.
+1. Go to about://gcm-internals and click the "Start Recording" button.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VH4juz336de2yiInKjUO.png", alt="Chrome GCM internals record", width="800", height="226" %}
 
@@ -241,7 +241,7 @@ seeing any decryption errors, then the browser may be failing to connect to
 a push service.
 
 In Chrome, you can check whether the browser is receiving messages by examining
-the 'Receive Message Log' (sic) in `chrome://gcm-internals`.
+the 'Receive Message Log' (sic) in `about://gcm-internals`.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/vRKzAO05KD5vUpQ6nL3z.png", alt="GCM internals receive message log", width="800", height="117" %}
 
