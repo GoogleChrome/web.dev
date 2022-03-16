@@ -225,7 +225,7 @@ granted access, they won't be asked again, however, if they reject access,
 you can't ask the user for permission again.
 
 {% Aside 'warning' %}
-Warning: Asking for access to the microphone on page load will result in most of your users
+Asking for access to the microphone on page load will result in most of your users
 rejecting access to the mic.
 {% endAside %}
 

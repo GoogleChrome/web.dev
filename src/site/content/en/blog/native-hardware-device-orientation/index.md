@@ -18,7 +18,7 @@ help create more accurate turn-by-turn navigation or provide information about
 a specific location.
 
 {% Aside 'caution' %}
-Caution: Not all browsers use the same coordinate system, and they may report different values under identical situations. This has improved over time, but be sure to test your situation.
+Not all browsers use the same coordinate system, and they may report different values under identical situations. This has improved over time, but be sure to test your situation.
 {% endAside %}
 
 ##TL;DR
@@ -36,7 +36,6 @@ it is important to understand the values provided.
 The Earth coordinate frame, described by the values `X`, `Y`, and `Z`, is aligned
 based on gravity and standard magnetic orientation.
 
-<div class="table-wrapper scrollbar">
 <table>
 <tr><th colspan="2">Coordinate system</th></tr>
 <tr>
@@ -54,7 +53,6 @@ based on gravity and standard magnetic orientation.
   </td>
 </tr>
 </table>
-</div>
 
 ### Device coordinate frame
 
@@ -71,7 +69,6 @@ based on gravity and standard magnetic orientation.
 The device coordinate frame, described by the values `x`, `y`, and `z`, is aligned
 based on the center of the device.
 
-<div class="table-wrapper scrollbar">
 <table>
     <tr><th colspan="2">Coordinate system</th></tr>
     <tr>
@@ -89,7 +86,6 @@ based on the center of the device.
     </td>
     </tr>
 </table>
-</div>
 
 On a phone or tablet, the orientation of the device is based on the typical
 orientation of the screen. For phones and tablets, it is based on the device
@@ -231,7 +227,6 @@ gravity, [`rotationRate`](#rotation-data), and `interval`.
 For example, let's take a look at a phone, lying on a flat table, with its
 screen facing up.
 
-<div class="table-wrapper scrollbar">
 <table>
   <thead>
     <tr>
@@ -268,12 +263,10 @@ screen facing up.
     </tr>
   </tbody>
 </table>
-</div>
 
 Conversely, if the phone were held so the screen was perpendicular to the
 ground, and was directly visible to the viewer:
 
-<div class="table-wrapper scrollbar">
 <table>
   <thead>
     <tr>
@@ -310,7 +303,6 @@ ground, and was directly visible to the viewer:
     </tr>
   </tbody>
 </table>
-</div>
 
 #### Sample: Calculating the maximum acceleration of an object
 

@@ -38,7 +38,7 @@ JS API's that you need to care about when building a fullscreen experience are:
   returns true if any of the elements are in fullscreen mode.
 
 {% Aside %}
-Note: You will notice that in the prefixed versions there is a lot of
+You will notice that in the prefixed versions there is a lot of
 inconsistency between the casing of the 'S' in screen. This is awkward, but
 this is the problem with specs that are in flight.
 {% endAside %}
@@ -67,10 +67,6 @@ fullscreen mode.
 
 The above example is a little contrived; I've hidden all the complexity around
 the use of vendor prefixes.
-
-{% Aside %}
-Note: Damn you, vendor prefixes!
-{% endAside %}
 
 The actual code is a lot more complex. <a
 href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode">Mozilla
@@ -235,11 +231,15 @@ the home screen and have them launch as full-screen web apps.
 <meta name="apple-mobile-web-app-capable" content="yes" />
 ```
 
-> If content is set to yes, the web application runs in full-screen mode;
-> otherwise, it does not. The default behavior is to use Safari to display web
-> content. You can determine whether a webpage is displayed in full-screen mode
-> using the window.navigator.standalone read-only Boolean JavaScript property.
-> <a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">Apple</a>
+<blockquote>
+<p>If content is set to yes, the web application runs in full-screen mode;
+otherwise, it does not. The default behavior is to use Safari to display web
+content. You can determine whether a webpage is displayed in full-screen mode
+using the window.navigator.standalone read-only Boolean JavaScript property.</p>
+<cite>
+<a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">Apple</a>
+</cite>
+</blockquote>
 
 #### Chrome for Android
 
@@ -251,10 +251,14 @@ similar to the iOS Safari model.
 <meta name="mobile-web-app-capable" content="yes" />
 ```
 
-> You can set up your web app to have an application shortcut icon added to a
-> device's home screen, and have the app launch in full-screen "app mode" using
-> Chrome for Android's "Add to Home screen" menu item.
-> <a href="https://developers.chrome.com/multidevice/android/installtohomescreen">Google Chrome</a>
+<blockquote>
+<p>You can set up your web app to have an application shortcut icon added to a
+device's home screen, and have the app launch in full-screen "app mode" using
+Chrome for Android's "Add to Home screen" menu item.</p>
+<cite>
+<a href="https://developers.chrome.com/multidevice/android/installtohomescreen">Google Chrome</a>
+</cite>
+</blockquote>
 
 A better option is to use the Web App Manifest.
 
