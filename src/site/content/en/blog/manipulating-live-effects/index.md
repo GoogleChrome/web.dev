@@ -65,7 +65,7 @@ pixel. Each of the four elements represents amount of red, green, blue, and alph
 in that order. The pixels are ordered starting from the top-left corner and working left to right
 and top to bottom.
 
-```text
+<pre>
 pixels[0] = red value for pixel 0
 pixels[1] = green value for pixel 0
 pixels[2] = blue value for pixel 0
@@ -80,7 +80,7 @@ pixels[10] = blue value for pixel 2
 pixels[11] = alpha value for pixel 2
 pixels[12] = red value for pixel 3
 ...
-```
+</pre>
 
 To find the index for any given pixel from its coordinates, there is a simple formula.
 
@@ -141,8 +141,6 @@ using two floating-point coordinates between 0 (left or bottom) and 1 (right or 
 
 If you want to read the texture based on pixel coordinates then you need to pass the size of the
 texture in pixels as a uniform vector so that you can do the conversion for each pixel.
-
-**fragment shader**
 
 ```js
     varying vec2 pixelCoords;
@@ -256,21 +254,21 @@ The level of influence that each input pixel has on the output is called a _weig
 The weights can be represented by a matrix, called a kernel, with the central value corresponding
 to the current pixel. For example, this is the kernel for a 3x3 Gaussian blur.
 
-```text
+<pre>
     | 0  1  0 |
     | 1  4  1 |
     | 0  1  0 |
-```
+</pre>
 
 So let's say that you want to calculate the output color of the pixel at (23, 19). Take the 8
 pixels surrounding (23, 19) as well as the pixel itself, and multiply the color values for each of
 them by the corresponding weight.
 
-```text
+<pre>
     (22, 18) x 0    (23, 18) x 1    (24, 18) x 0
     (22, 19) x 1    (23, 19) x 4    (24, 19) x 1
     (22, 20) x 0    (23, 20) x 1    (24, 20) x 0
-```
+</pre>
 
 Sum them all together then divide the result by 8, which is the sum of the weights. You can see how
 the result will be a pixel that is mostly the original, but with the nearby pixels bleeding in.

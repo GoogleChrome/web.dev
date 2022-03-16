@@ -25,36 +25,28 @@ browser does not support encrypted media, it will not be able to play encrypted
 media, but EME is not required for HTML spec compliance. From
 [the EME spec](https://w3c.github.io/encrypted-media/):
 
-{% Banner %}
 This proposal extends
 [HTMLMediaElement](http://www.w3.org/TR/html5/embedded-content-0.html#htmlmediaelement)
 providing APIs to control playback of protected content.
-{% endBanner %}
 
-{% Banner %}
 The API supports use cases ranging from simple clear key decryption to high
 value video (given an appropriate user agent implementation). License/key
 exchange is controlled by the application, facilitating the development of
 robust playback applications supporting a range of content decryption and
 protection technologies.
-{% endBanner %}
 
-{% Banner %}
 This specification does not define a content protection or Digital Rights
 Management system. Rather, it defines a common API that may be used to
 discover, select and interact with such systems as well as with simpler
 content encryption systems. Implementation of Digital Rights Management is not
 required for compliance with this specification: only the Clear Key system is
 required to be implemented as a common baseline.
-{% endBanner %}
 
-{% Banner %}
 The common API supports a simple set of content encryption capabilities,
 leaving application functions such as authentication and authorization to page
 authors. This is achieved by requiring content protection system-specific
 messaging to be mediated by the page rather than assuming out-of-band
 communication between the encryption system and a license or other server.
-{% endBanner %}
 
 EME implementations use the following external components:
 
@@ -81,7 +73,6 @@ determines the user's identity and privileges.
 Here's how the components of EME interact, corresponding to the
 [code example below](#getting_a_key_from_a_license_server):
 
-{% Banner %}
 If multiple formats or codecs are available,
 [MediaSource.isTypeSupported()](https://www.w3.org/TR/media-source/#dom-mediasource-istypesupported) or
 [HTMLMediaElement.canPlayType()](https://dev.w3.org/html5/spec-preview/media-elements.html#dom-navigator-canplaytype)
@@ -91,21 +82,16 @@ unencrypted content. It's best to negotiate a MediaKeys configuration before
 selecting a format and codec. If the application waits for the encrypted event
 but then MediaKeys shows it can't handle the chosen format/codec, it may be
 too late to switch without interrupting playback.
-{% endBanner %}
 
-{% Banner %}
 The recommended flow is to negotiate MediaKeys first, using
 MediaKeysSystemAccess.getConfiguration() to find out the negotiated
 configuration.
-{% endBanner %}
 
-{% Banner %}
 If there is only one format/codec to choose from, then there's no need for
 getConfiguration(). However, it's still preferable to set up MediaKeys first.
 The only reason to wait for the encrypted event is if there is no way of
 knowing whether the content is encrypted or not, but in practice that's
 unlikely.
-{% endBanner %}
 
 1. A web application attempts to play audio or video that has one or more
    encrypted streams.
@@ -149,17 +135,13 @@ unlikely.
 
 Media playback resumes.
 
-{% Banner %}
 How does the browser know that media is encrypted?
-{% endBanner %}
 
-{% Banner %}
 This information is in the metadata of the media container file, which will be
 in a format such as ISO BMFF or WebM. For ISO BMFF this means header metadata,
 called the protection scheme information box. WebM uses the Matroska
 ContentEncryption element, with some WebM-specific additions. Guidelines are
 provided for each container in an EME-specific registry.
-{% endBanner %}
 
 Note that there may be multiple messages between the CDM and the license server,
 and all communication in this process is opaque to the browser and application:
@@ -478,7 +460,6 @@ DASH does what it says on the tin:
 
 The BBC has begun [providing test streams using DASH](http://bbc.co.uk/rd/blog/2013/09/mpeg-dash-test-streams):
 
-{% Banner %}
 The media is encoded a number of times at different bitrates. Each encoding is
 called a Representation. These are split into a number of Media Segments. The
 client plays a programme by requesting segments, in order, from a
@@ -492,7 +473,6 @@ Initialization Segment. This can be thought of as a header, containing
 information about the encoding, frame sizes, etc. A client needs to obtain
 this for a given representation before consuming media segments from that
 representation.
-{% endBanner %}
 
 To summarize:
 

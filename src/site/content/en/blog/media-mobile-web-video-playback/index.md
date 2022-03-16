@@ -117,7 +117,7 @@ playPauseButton.addEventListener('click', function (event) {
 ```
 
 {% Aside %}
-Note: I call `event.stopPropagation()` to prevent parent handlers (e.g. video
+I call `event.stopPropagation()` to prevent parent handlers (e.g. video
 controls) from being notified of the click event.
 {% endAside %}
 
@@ -248,7 +248,7 @@ on other browsers.
 ```
 
 {% Aside 'caution' %}
-Caution: Set `playsinline` only if you provide your own media controls or show
+Set `playsinline` only if you provide your own media controls or show
 native controls with `<video controls>`.
 {% endAside %}
 
@@ -263,7 +263,7 @@ document. Otherwise, request fullscreen on the video container with the method
 the video element only on iOS.
 
 {% Aside %}
-Note: I'm going to use a [tiny shim] for the Fullscreen API in code snippets below that
+I'm going to use a [tiny shim] for the Fullscreen API in code snippets below that
 will take care of prefixes as the API is not unprefixed yet at that time. You
 may want to use [screenfull.js] wrapper as well.
 {% endAside %}
@@ -334,7 +334,7 @@ if ('orientation' in screen) {
 ```
 
 {% Aside %}
-Note: This may silently fail in browsers that don't [allow requesting
+This may silently fail in browsers that don't [allow requesting
 fullscreen from the orientation change
 event](https://github.com/whatwg/fullscreen/commit/e5e96a9).
 {% endAside %}
@@ -472,7 +472,7 @@ document.addEventListener('visibilitychange', function () {
 ```
 
 {% Aside %}
-Note: Chrome for Android already pauses videos when page is hidden.
+Chrome for Android already pauses videos when page is hidden.
 {% endAside %}
 
 ### Show/hide mute button on video visibility change
@@ -487,7 +487,7 @@ the bottom right corner of the page to give user control over video sound. The
 `volumechange` video event is used to update the mute button styling.
 
 {% Aside %}
-Note: If there are a lot of videos on a page, and it is using the Intersection
+If there are a lot of videos on a page, and it is using the Intersection
 Observer API to pause / mute offscreen video, you may want to reset video
 source with `video.src = null` instead since it will release significant
 resources in an infinite scroll case.
@@ -528,7 +528,7 @@ and pause the other ones automatically so that user doesn't have to hear
 multiple audio tracks playing simultaneously.
 
 ```js
-// Note: This array should be initialized once all videos have been added.
+// This array should be initialized once all videos have been added.
 var videos = Array.from(document.querySelectorAll('video'));
 
 videos.forEach(function (video) {
