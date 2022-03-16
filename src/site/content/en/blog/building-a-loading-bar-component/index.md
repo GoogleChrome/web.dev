@@ -29,7 +29,7 @@ source](https://github.com/argyleink/gui-challenges)!
     muted="true"
   %}
   <figcaption>
-    Light and dark, indeterminate, increasing, and completion demoed on Chrome
+    Light and dark, indeterminate, increasing, and completion demoed on Chrome.
   </figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ modernize the component and have it fit better within design systems.
   %}
   <figcaption>
     Demo shown across Firefox, Safari, iOS Safari, 
-    Chrome, and Android Chrome in light and dark schemes
+    Chrome, and Android Chrome in light and dark schemes.
   </figcaption>
 </figure>
 
@@ -248,8 +248,8 @@ progress[max="100"][value="100"]::before {
 
 {% Aside %} 
 These selectors only work if `max` is unset or is `100`. Selectors
-will need to be updated if your progress element has a different maximum. {%
-endAside %}
+will need to be updated if your progress element has a different maximum. 
+{% endAside %}
 
 {% Img 
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/TqbVcyeiGuwZKy7o9cnM.png", 
@@ -379,10 +379,10 @@ browser exposes. Using the progress element is a single tag, but it's made of a
 few child elements that are exposed via CSS pseudo selectors. Chrome DevTools
 will show these elements to you if you enable the setting:
 
-1. Right-click on your page and select "Inspect Element" to bring up DevTools.
+1. Right-click on your page and select **Inspect Element** to bring up DevTools.
 1. Click the Settings gear in the top-right corner of the DevTools window.
-1. Under the "Elements" heading, find and enable the "Show user agent shadow
-   DOM" checkbox.
+1. Under the **Elements** heading, find and enable the **Show user agent shadow
+   DOM** checkbox.
 
 {% Img 
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GBrWTQonKg4Z6e3yCZmJ.png", 
