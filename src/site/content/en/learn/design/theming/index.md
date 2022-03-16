@@ -176,7 +176,7 @@ button {
  tab: 'css,result'
 } %}
 
-See [building a color scheme](​​/building-a-color-scheme/) for more advanced examples of theming with custom properties.
+See [building a color scheme](/building-a-color-scheme/) for more advanced examples of theming with custom properties.
 
 ## Images
 
