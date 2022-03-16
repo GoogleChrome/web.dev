@@ -72,7 +72,7 @@ Here's its service worker, `sw.js`:
 
 ```js
 self.addEventListener('install', event => {
-  console.log('V1 installing...');
+  console.log('V1 installing…');
 
   // cache a cat SVG
   event.waitUntil(
@@ -169,7 +169,7 @@ Let's say we changed our service worker script to respond with a picture of a ho
 const expectedCaches = ['static-v2'];
 
 self.addEventListener('install', event => {
-  console.log('V2 installing...');
+  console.log('V2 installing…');
 
   // cache a horse SVG into a new cache, static-v2
   event.waitUntil(
@@ -208,7 +208,7 @@ self.addEventListener('fetch', event => {
 **Note:** I have no strong opinions on horses.
 {% endAside %}
 
-[Check out a demo of the above](https://service-worker-lifecycle-demos.glitch.me/main/v2.html). You should still see an image of a cat. Here's why...
+[Check out a demo of the above](https://service-worker-lifecycle-demos.glitch.me/main/v2.html). You should still see an image of a cat. Here's why…
 
 ### Install
 
@@ -280,7 +280,7 @@ As I mentioned earlier, the browser checks for updates automatically after navig
 
 ```js
 navigator.serviceWorker.register('/sw.js').then(reg => {
-  // sometime later...
+  // sometime later…
   reg.update();
 });
 ```
