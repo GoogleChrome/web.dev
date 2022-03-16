@@ -6,8 +6,9 @@ authors:
   - megginkearney
   - rachelandrew
   - robdodson
+  - patrickhlauke
 date: 2020-03-31
-updated: 2020-05-29
+updated: 2022-03-16
 description: |
   It's important that interactive elements have enough space around them, when used on a mobile or touchscreen device. This will help everyone, but especially those with motor impairments.
 tags:
