@@ -77,13 +77,13 @@ the site loads results in a poor user experience.
 
 <div class="switcher">
 <figure>
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/qn1gpMoMl6ho9iXZotf9.png", alt="sw navigation good", width="325", height="550" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/qn1gpMoMl6ho9iXZotf9.png", alt="A site requesting permission on a store finder page.", width="325", height="550" %}
 <figcaption class="success">
     <b>DO</b>: Always request access to location on a user gesture.
     </figcaption>
 </figure>
 <figure id="fig1">
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/IjhzpxZecuHdV0tUCIxm.png", alt="sw navigation bad", width="325", height="550" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/IjhzpxZecuHdV0tUCIxm.png", alt="A site requesting permission on the homepage.", width="325", height="550" %}
 <figcaption class="warning">
     <b>DON'T</b>: Ask for it on the homepage, as the site loads; this results in a poor user experience.
 </figcaption>
@@ -112,13 +112,13 @@ devices, such as a range finder, or an explicit call to action such as
 
 <div class="switcher">
   <figure>
-    {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ZuaG9vfBWZTXrYR2486u.png", alt="indication", width="800", height="170" %}
+    {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ZuaG9vfBWZTXrYR2486u.png", alt="A range finder.", width="800", height="170" %}
     <figcaption>
       Use a range finder
      </figcaption>
   </figure>
   <figure>
-    {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/rlGQ3rvswe4M1nhKeYw8.png", alt="near me", width="740", height="314" %}
+    {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/rlGQ3rvswe4M1nhKeYw8.png", alt="A form with a find near me button.", width="740", height="314" %}
     <figcaption>
       A specific call to action to find near me
     </figcaption>
@@ -398,7 +398,7 @@ window.onload = function () {
 ## Emulate geolocation with Chrome DevTools {: #devtools }
 
 <figure>
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/oaYG0aQF2b5tRBD6WVnu.png", alt="sensor drawer", width="800", height="454" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/oaYG0aQF2b5tRBD6WVnu.png", alt="The sensor drawer in DevTools.", width="800", height="454" %}
 </figure>
 
 Once you've got geolocation set up, you'll want to:
