@@ -371,6 +371,6 @@ navigator.serviceWorker.addEventListener('controllerchange', () => {
 });
 ```
 
-## You survived!
+## The lifecycle goes ever on
 
-Phew! That was a lot of technical theory. Stay tuned in the coming weeks where we'll dive into some practical applications of the above.
+As you can see, it pays to understand the service worker lifecycle&mdash;and with that understanding, service worker behaviors should seem more logical, and less mysterious. That knowledge will give you more confidence as you deploy and update service workers.
