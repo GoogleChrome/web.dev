@@ -63,7 +63,7 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   import('library.moduleA')
     .then(module => module.default) // using the default export
-    .then(someFunction())
+    .then(() => someFunction())
     .catch(handleError());
 });
 
