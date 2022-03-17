@@ -87,7 +87,7 @@ and 1 limits, translating progress values to 0.5 or 50%.
 
 ### Label-wrapped progress
 
-In a implicit relationship, a progress element is wrapped by a label like this:
+In an implicit relationship, a progress element is wrapped by a label like this:
 
 ```html
 <label>Loading progress<progress></progress></label>
@@ -223,7 +223,7 @@ things easy, such as not needing to pass `border-radius` values down to the
 track, and track fill elements; but it also meant no children of the progress
 could live outside of the element. Another iteration on this custom progress
 element could be done without `overflow: hidden` and it may open up some
-opportunities for animations or better competition states.
+opportunities for animations or better completion states.
 
 #### Progress complete
 
@@ -353,10 +353,11 @@ contrast between your track and progress colors.
 
 Earlier we gave the element a negative tab index so it could be programmatically
 focused. Use
-[`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible)
-to customize focus to opt into the smarter focus ring style. With this, a mouse
+[`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible) to
+customize focus to opt into the smarter focus ring style. With this, a mouse
 click and focus won't show the focus ring, but keyboard clicks will. The
-[YouTube video](https://youtu.be/TD1QxlGgIPk) goes into this in more depth and is worth reviewing.
+[YouTube video](https://youtu.be/TD1QxlGgIPk) goes into this in more depth and
+is worth reviewing.
 
 ```css
 progress:focus-visible {
