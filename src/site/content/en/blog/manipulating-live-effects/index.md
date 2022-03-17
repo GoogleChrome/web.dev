@@ -143,18 +143,16 @@ If you want to read the texture based on pixel coordinates then you need to pass
 texture in pixels as a uniform vector so that you can do the conversion for each pixel.
 
 ```js
-    varying vec2 pixelCoords;
+varying vec2 pixelCoords;
 
-    uniform vec2 textureSize;
-    uniform sampler2D textureSampler;
+uniform vec2 textureSize;
+uniform sampler2D textureSampler;
 
-    main() {
-      vec2 textureCoords = pixelCoords / textureSize;
-      vec4 textureColor = texture2D(textureSampler, textureCoords);
-      gl_FragColor = textureColor;
-    }
-```
-
+main() {
+  vec2 textureCoords = pixelCoords / textureSize;
+  vec4 textureColor = texture2D(textureSampler, textureCoords);
+  gl_FragColor = textureColor;
+ }
 Pretty much every kind of 2D image manipulation that you might want to do can be done in the
 fragment shader, and all of the other WebGL parts can be abstracted away. You can see [the
 abstraction layer](https://github.com/GoogleChromeLabs/snapshot/blob/master/src/filters/image-shader.ts) (in
