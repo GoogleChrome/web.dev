@@ -1,5 +1,5 @@
 ---
-title: Notification Behavior
+title: Notification behavior
 authors:
   - mattgaunt
 date: 2016-06-30
@@ -242,7 +242,7 @@ registration.showNotification(title, options);
 
 Note: If you define both `silent` and `renotify`, `silent` will take precedence.
 
-## Requires Interaction
+## Requires interaction
 
 Chrome on desktop will show notifications for a set time period before hiding them. Chrome on
 Android doesn't have this behavior. Notifications are displayed until

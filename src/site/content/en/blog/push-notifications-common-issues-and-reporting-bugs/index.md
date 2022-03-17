@@ -50,7 +50,7 @@ Mozilla AutoPush Service have great error messages.** If you get stuck and
 are not sure what the problem is, then test in Firefox and see if you
 get a more helpful error message.
 
-## Authorization Issues
+## Authorization issues
 
 Authorization issues are one of the most common issues developers hit when
 starting out with web push. This is normally a problem with the configuration of a
@@ -62,7 +62,7 @@ The easiest way to support push in both Firefox and Chrome is to supply an
 any discrepancy between your front end and server's keys will result in an
 authorization error.
 
-### On Chrome + FCM
+### On Chrome and FCM
 
 For Chrome, which uses FCM as a push service, you'll receive an
 `UnauthorizedRegistration` response from FCM for a range of different
@@ -157,7 +157,7 @@ AutoPush:
 }
 ```
 
-## HTTP Status Codes
+## HTTP status codes
 
 There are a range of issues that can result in a non-201 response code from a
 push service. Below is a list of HTTP status codes and what they mean in relation
@@ -203,7 +203,7 @@ spec](https://tools.ietf.org/html/draft-ietf-webpush-protocol) to see if the
 status code is referenced along with a scenario of when that status code can
 be used.
 
-## Payload Encryption Issue
+## Payload encryption issue
 
 If you can successfully trigger a push message (i.e. send a message to a web
 push service and receive a 201 response code) but the push event never fires in
@@ -213,17 +213,17 @@ decrypt the message it received.
 If this is the case, you should see an error message in Firefox's DevTools
 console like so:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/g8VpxsP7PMWPSdtSvAkY.png", alt="Firefox DevTools with decryption message", width="800", height="269" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/g8VpxsP7PMWPSdtSvAkY.png", alt="Firefox DevTools with decryption message.", width="800", height="269" %}
 
 To check if this is the issue in Chrome, do the following:
 
 1. Go to about://gcm-internals and click the "Start Recording" button.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VH4juz336de2yiInKjUO.png", alt="Chrome GCM internals record", width="800", height="226" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VH4juz336de2yiInKjUO.png", alt="Chrome GCM internals record.", width="800", height="226" %}
 
 1. Trigger a push message, and look under the "Message Decryption Failure Log".
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/DszP9aaiMTmX5LdTXKPx.png", alt="GCM internals decryption log", width="800", height="155" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/DszP9aaiMTmX5LdTXKPx.png", alt="GCM internals decryption log.", width="800", height="155" %}
 
 If there is an issue with the decryption of the payload, you'll see an error
 similar to the one displayed above. (Notice the `AES-GCM decryption failed`
@@ -234,7 +234,7 @@ There are a few tools which may help debug encryption if this is your issue:
 - [Push Encryption Verifier tool by Peter Beverloo](https://tests.peter.sh/push-encryption-verifier/).
 - [Web Push: Data Encryption Test Page by Mozilla](https://mozilla-services.github.io/WebPushDataTestPage/)
 
-## Connection Issue
+## Connection issue
 
 If you aren't receiving a push event in your service worker and you aren't
 seeing any decryption errors, then the browser may be failing to connect to
@@ -243,18 +243,18 @@ a push service.
 In Chrome, you can check whether the browser is receiving messages by examining
 the 'Receive Message Log' (sic) in `about://gcm-internals`.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/vRKzAO05KD5vUpQ6nL3z.png", alt="GCM internals receive message log", width="800", height="117" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/vRKzAO05KD5vUpQ6nL3z.png", alt="GCM internals receive message log.", width="800", height="117" %}
 
 If you aren't seeing the message arrive in a timely fashion, then make sure that
 the connection status of your browser is `CONNECTED`:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/YdYj19Kn0zl6Jlfbm9hg.png", alt="GCM internals connection state", width="584", height="246" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/YdYj19Kn0zl6Jlfbm9hg.png", alt="GCM internals connection state.", width="584", height="246" %}
 
 If it's **not** 'CONNECTED', you may need to delete your current profile and
 [create a new one](https://support.google.com/chrome/answer/2364824). If that
 still doesn't solve the issue, please raise a bug report as suggested below.
 
-## Raising Bug Reports
+## Raising bug reports
 
 If none of the above helps with your issue and there is no sign of what the
 problem could be, please raise an issue against the browser you are having an

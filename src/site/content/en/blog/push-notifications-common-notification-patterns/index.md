@@ -1,5 +1,5 @@
 ---
-title: Common Notification Patterns
+title: Common notification patterns
 authors:
   - mattgaunt
 date: 2016-06-30
@@ -187,7 +187,7 @@ If we can't find a matching client, we open a new window, same as in the previou
 ```
 
 {% Aside %}
-Note: We are returning the promise for `matchingClient.focus()` and
+We are returning the promise for `matchingClient.focus()` and
 `clients.openWindow()` so that the promises are accounted for in our promise
 chain.
 {% endAside %}
@@ -275,11 +275,11 @@ are no notifications, we create a new notification with a `newMessageCount` of 1
 
 The result is that the first message would look like this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/plgFelmhahN06Unqr2dr.png", alt="First notification without merging", width="380", height="116" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/plgFelmhahN06Unqr2dr.png", alt="First notification without merging.", width="380", height="116" %}
 
 A second notification would collapse the notifications into this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/bKoZiyLJI8DVYOPQBIGv.png", alt="Second notification with merging", width="380", height="121" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/bKoZiyLJI8DVYOPQBIGv.png", alt="Second notification with merging.", width="380", height="121" %}
 
 The nice thing with this approach is that if your user witnesses the
 notifications appearing one over the other, it'll look and feel more cohesive

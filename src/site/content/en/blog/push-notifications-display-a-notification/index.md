@@ -23,7 +23,7 @@ to test them out for yourself then click the button below.
 The API for showing a notification is simply:
 
 ```xml
-    <ServiceWorkerRegistration>.showNotification(<title>, <options>);
+<ServiceWorkerRegistration>.showNotification(<title>, <options>);
 ```
 
 Where the title is a string and options can be any of the following:
@@ -56,9 +56,9 @@ Where the title is a string and options can be any of the following:
 
 First let's look at the visual options.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ZVIQcUqIlNerdPiqOM9C.png", alt="Dissection of the UI of a Notification", width="800", height="284" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ZVIQcUqIlNerdPiqOM9C.png", alt="Dissection of the UI of a Notification.", width="800", height="284" %}
 
-### Title and Body Options
+### Title and body options
 
 The title and body options are exactly as they sound, two different pieces of text to display
 on the notification.
@@ -75,22 +75,22 @@ registration.showNotification(title, options);
 
 We'd get this notification on Chrome:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/BZnd4sFC3XMq8yPUkYVz.png", alt="Notification with title and body text on Chrome on Linux", width="380", height="117" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/BZnd4sFC3XMq8yPUkYVz.png", alt="Notification with title and body text on Chrome on Linux.", width="380", height="117" %}
 
 On Firefox on Linux it would look like this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with title and body text on Firefox on Linux", width="521", height="74" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with title and body text on Firefox on Linux.", width="521", height="74" %}
 
 I was curious about what would happen if I added lots of text and this was the result:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/MjZfnuD9h6MJLjv9enVi.png", alt="Notification with long title and body text on Chrome on Linux", width="380", height="156" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/MjZfnuD9h6MJLjv9enVi.png", alt="Notification with long title and body text on Chrome on Linux.", width="380", height="156" %}
 
 Interestingly, Firefox on Linux collapses the body text until you hover the notification,
 causing the notification to expand.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with long title and body text on Firefox on Linux", width="521", height="74" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/hyJWXo3xO7AlrlE3I61F.png", alt="Notification with long title and body text on Firefox on Linux.", width="521", height="74" %}
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/Huyo4xr85SwcmPN9zSly.png", alt="Notification with long title and body text on Firefox on Linux while hovering over the notification with the mouse cursor", width="521", height="159" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/Huyo4xr85SwcmPN9zSly.png", alt="Notification with long title and body text on Firefox on Linux while hovering over the notification with the mouse cursor.", width="521", height="159" %}
 
 The reason I've included these examples is twofold. There will be differences
 between browsers. Just looking at text, Firefox and Chrome look and act
@@ -99,9 +99,9 @@ custom UI for all platforms whereas Firefox uses the system notifications on
 my Linux machine. The same notifications on Windows with Firefox look
 like this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with title and body text on Firefox on Windows", width="562", height="281" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with title and body text on Firefox on Windows.", width="562", height="281" %}
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with long title and body text on Firefox on Windows", width="562", height="281" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/OQRchMO68ph6UV2Lovy0.png", alt="Notification with long title and body text on Firefox on Windows.", width="562", height="281" %}
 
 ### Icon
 
@@ -119,11 +119,11 @@ registration.showNotification(title, options);
 
 On Chrome we get this notification on Linux:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RBQH1QGLIRT9HxJTDjkj.png", alt="Notification with icon on Chrome on Linux", width="380", height="100" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RBQH1QGLIRT9HxJTDjkj.png", alt="Notification with icon on Chrome on Linux.", width="380", height="100" %}
 
 and on Firefox:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/EoS5ydulQRjq1nxTJxrA.png", alt="Notification with icon on Firefox on Linux", width="522", height="75" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/EoS5ydulQRjq1nxTJxrA.png", alt="Notification with icon on Firefox on Linux.", width="522", height="75" %}
 
 Sadly there aren't any solid guidelines for what size image to use for an icon.
 
@@ -134,7 +134,7 @@ If we assume the highest pixel ratio for a device will be 3, an icon size
 of 192px or more is a safe bet.
 
 {% Aside %}
-Note: Some browsers may require the image be served over HTTPS. Be aware of this
+Some browsers may require the image be served over HTTPS. Be aware of this
 if you intend to use a third-party image.
 {% endAside %}
 
@@ -153,7 +153,7 @@ registration.showNotification(title, options);
 
 At the time of writing the badge is only used on Chrome for Android.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/LaAYwycbWMn8SCro7fyo.png", alt="Notification with badge on Chrome for Android", width="800", height="248" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/LaAYwycbWMn8SCro7fyo.png", alt="Notification with badge on Chrome for Android.", width="800", height="248" %}
 
 On other browsers (or Chrome without the badge), you'll see an icon of the browser.
 
@@ -182,11 +182,11 @@ registration.showNotification(title, options);
 
 On desktop the notification will look like this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VF32ZZXDZj2xO7dJdR3W.png", alt="Notification with image on Chrome on Linux", width="800", height="554" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VF32ZZXDZj2xO7dJdR3W.png", alt="Notification with image on Chrome on Linux.", width="800", height="554" %}
 
 On Android the cropping and ratio are different.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/xF6oPjieHKCqtvrsWfM7.png", alt="Notification with image on Chrome for Android", width="380", height="340" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/xF6oPjieHKCqtvrsWfM7.png", alt="Notification with image on Chrome for Android.", width="380", height="340" %}
 
 Given the differences in ratio between desktop and mobile, it's extremely hard to suggest
 guidelines.
@@ -240,13 +240,11 @@ if (maxVisibleActions < 4) {
   options.body =
     `This notification can display up to ` + `${maxVisibleActions} actions.`;
 }
-```
 
 registration.showNotification(title, options);
-
 At the time of writing only Chrome and Opera for Android support actions.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/GI8sj9krxVtxWVeHGuvs.png", alt="Notification with actions on Chrome for Android", width="800", height="296" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/GI8sj9krxVtxWVeHGuvs.png", alt="Notification with actions on Chrome for Android.", width="800", height="296" %}
 
 For each action you can define a title, an "action" (which is essentially an ID) and an icon.
 The title and icon is what you can see in the notification. The ID is used when detecting that
@@ -260,7 +258,7 @@ On desktop, the action button icons display their colors (see the pink doughnut 
 
 On Android Marshmallow, the icons are colored to match the system color scheme:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/REyUtJ7icGvOoepXgpLQ.png", alt="Notification with actions on Chrome on Linux", width="380", height="178" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/REyUtJ7icGvOoepXgpLQ.png", alt="Notification with actions on Chrome on Linux.", width="380", height="178" %}
 
 Chrome will hopefully change it's behavior on desktop to match Android (i.e. apply the
 appropriate color scheme to make the icons match the system look and feel). In the meantime, you can
@@ -301,16 +299,16 @@ The parameter should be set to either `auto`, `ltr` or `rtl`.
 
 A right-to-left language used on Chrome on Linux looks like this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/epWm0UDjQzcRMz37uaaa.png", alt="Notification with right-to-left language on Chrome on Linux", width="380", height="234" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/epWm0UDjQzcRMz37uaaa.png", alt="Notification with right-to-left language on Chrome on Linux.", width="380", height="234" %}
 
 On Firefox (while hovering over it) you'll get this:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ncKq2yMj7ipFkGGOWKBr.png", alt="Notification with right-to-left language on Firefox on Linux", width="521", height="102" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ncKq2yMj7ipFkGGOWKBr.png", alt="Notification with right-to-left language on Firefox on Linux.", width="521", height="102" %}
 
 ### Vibrate
 
 {% Aside 'caution' %}
-Caution: Support for [`vibrate` has been deprecated](https://crbug.com/971422)
+Support for [`vibrate` has been deprecated](https://crbug.com/971422)
 on Android O or later.
 {% endAside %}
 
@@ -388,7 +386,7 @@ Some common pitfalls to avoid:
   read it.' use a title of 'John just sent a new message' and set the body of the notification to
   part of the message.
 
-## Browsers and Feature Detection
+## Browsers and feature detection
 
 At the time of writing, there is a pretty big disparity between Chrome and Firefox in terms of
 feature support for notifications.

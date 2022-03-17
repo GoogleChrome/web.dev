@@ -1,5 +1,5 @@
 ---
-title: How Push Works
+title: How push works
 authors:
   - mattgaunt
 date: 2016-06-30
@@ -45,7 +45,7 @@ subscription to a database and use it to send a push message to that user.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/3eZW2SvRzowpHsYxhUwr.svg", alt="Make sure you send the PushSubscription to your backend.", width="800", height="213" %}
 
-## Step 2: Send a Push Message
+## Step 2: Send a push message
 
 When you want to send a push message to your users you need to make an API call to a push
 service. This API call would include what data to send, who to send the message to and any
@@ -54,12 +54,10 @@ criteria about how to send the message. Normally this API call is done from your
 Some questions you might be asking yourself:
 
 - Who and what is the push service?
-
 - What does the API look like? Is it JSON, XML, something else?
-
 - What can the API do?
 
-### Who and What is the Push Service?
+### Who and what is the push service?
 
 A push service receives a network request, validates it and delivers a push message to the appropriate browser. If the browser is offline, the message is queued until the the browser comes online.
 
@@ -124,9 +122,9 @@ The instructions include details like:
 
 - Give a push message a "topic" name which will replace any pending message with this new message.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/f42EMdaS3bjYhIw47E1J.svg", alt="When your server wishes to send a push message, it makes a web push protocol request to a push service", width="800", height="220" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/f42EMdaS3bjYhIw47E1J.svg", alt="When your server wishes to send a push message, it makes a web push protocol request to a push service.", width="800", height="220" %}
 
-### Step 3: Push Event on the User's Device
+### Step 3: Push event on the user's device
 
 Once we've sent a push message, the push service will keep your message on its server until
 one of following events occurs:
