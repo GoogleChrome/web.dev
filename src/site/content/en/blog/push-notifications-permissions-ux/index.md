@@ -20,7 +20,7 @@ permission, so let's take a brief aside to look at both good and bad UX.
 There have been a few common patterns emerging that should guide and help you when
 deciding what is best for your users and use case.
 
-### Value Proposition
+### Value proposition
 
 Ask users to subscribe to push at a time when the benefit is obvious.
 
@@ -37,7 +37,7 @@ There are a range of situations where this approach works:
 These are all points where the user has invested in your service and there
 is a clear value proposition for them to enable push notifications.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/LC9ub0f2q77XwKpBM8Hu.png", alt="Owen Campbell-Moore's example of good UX for push", width="800", height="1352" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/LC9ub0f2q77XwKpBM8Hu.png", alt="Owen Campbell-Moore's example of good UX for push.", width="800", height="1352" %}
 
 created a mock of a hypothetical airline
 website to demonstrate this approach.
@@ -47,7 +47,7 @@ delays.
 
 Note that this is a custom UI from the website.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/Kt3PPi4trxkE6K85DtgR.png", alt="Owen Campbell-Moore's example of good UX for the permission prompt", width="800", height="1352" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/Kt3PPi4trxkE6K85DtgR.png", alt="Owen Campbell-Moore's example of good UX for the permission prompt.", width="800", height="1352" %}
 
 Another nice touch to Owen's demo is that if the user clicks to enable
 notifications, the site adds a semi-transparent overlay on the entire page when
@@ -57,7 +57,7 @@ permission prompt.
 The alternative to this example, the **bad UX** for asking permission, is to request
 permission as soon as a user lands on the airline's site.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/mgcQQkVIletBpXFUrmGX.png", alt="Owen Campbell-Moore's example of bad UX for push", width="800", height="1371" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/mgcQQkVIletBpXFUrmGX.png", alt="Owen Campbell-Moore's example of bad UX for push.", width="800", height="1371" %}
 
 This approach provides no context as to why notifications are needed or
 useful to the user. The user is also blocked from achieving their original
@@ -95,18 +95,18 @@ You can move notifications into a settings panel, giving users an easy way
 to enable and disable push messaging, without the need of cluttering your
 web app's UI.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/l4PARykO7nv9Z5ogOR6D.png", alt="When you first load the page, no prompt, just calm on Google IO", width="800", height="1388" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/l4PARykO7nv9Z5ogOR6D.png", alt="When you first load the page, there is no prompt.", width="800", height="1388" %}
 
 A good example of this is .
 When you first load up the Google I/O site, you aren't asked to do anything,
 the user is left to explore the site.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/eLcOvHOUA2L5hRpa2AHO.png", alt="Settings panel on Google IO's web app for push messaging", width="800", height="1388" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/eLcOvHOUA2L5hRpa2AHO.png", alt="The settings panel on Google IO's web app for push messaging.", width="800", height="1388" %}
 
 After a few visits, clicking the menu item on the right reveals a settings
 panel allowing the user to set up and manage notifications.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/oYEbRCEdXeUOrHOY2fCa.png", alt="Google IO's web app displaying the permission prompt", width="800", height="1388" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/oYEbRCEdXeUOrHOY2fCa.png", alt="Google IO's web app displaying the permission prompt.", width="800", height="1388" %}
 
 Clicking on the checkbox displays the permission prompt. No hidden surprises.
 
@@ -114,7 +114,7 @@ After the permission has been granted, the checkbox is checked and the user
 is good to go. The great thing about this UI is that users can enable and
 disable notifications from one location on the website.
 
-### Passive Approach
+### Passive approach
 
 One of the easiest ways to offer push to a user is to have a button
 or toggle switch that enables / disables push messages in a location
@@ -141,7 +141,7 @@ changes and maintains state throughout the site.
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/lLVT0jG2MY1DvLJZzkeu.png", alt="Example of Gauntface.com with notifications
 enabled", width="800", height="483" %}
 
-### The Bad UX
+### The bad UX
 
 Those are some of the common practices I've noticed on the web. Sadly, there is one very common
 bad practice.
@@ -161,7 +161,7 @@ browser's UI and doing so is not easy, obvious or fun for the user.
 No matter what, don't ask for permission as soon as the user opens your site, consider some
 other UI or approach that has an incentive for the user to grant permission.
 
-### Offer a Way Out
+### Offer a way out
 
 In addition to considering the UX to subscribe a user to push, **please** consider how a user
 should unsubscribe or opt out of push messaging.

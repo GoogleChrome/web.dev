@@ -19,7 +19,7 @@ creates a lot of interesting use cases, such as integrating with backend systems
 You need to be aware of many things when using the Geolocation API. This guide walks you through the common use cases and solutions.
 
 {% Aside %}
-Note: As of Chrome 50, the [Geolocation API only works on secure contexts (HTTPS)](/web/updates/2016/04/geolocation-on-secure-contexts-only). If your site is hosted on a non-secure origin (such as `HTTP`), any requests for the user's location **no longer** function.
+As of Chrome 50, the [Geolocation API only works on secure contexts (HTTPS)](/web/updates/2016/04/geolocation-on-secure-contexts-only). If your site is hosted on a non-secure origin (such as `HTTP`), any requests for the user's location **no longer** function.
 {% endAside %}
 
 ### TL;DR

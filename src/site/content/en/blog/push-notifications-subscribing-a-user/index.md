@@ -13,7 +13,7 @@ get our hands on a `PushSubscription`.
 The JavaScript API to do this is reasonably straight forward, so let's step
 through the logic flow.
 
-## Feature Detection
+## Feature detection
 
 First we need to check if the current browser actually supports push messaging. We can check if
 push is supported with two simple checks.
@@ -37,7 +37,7 @@ While browser support is growing quickly for both service worker and
 push messaging, it's always a good idea to feature detect for both and
 [progressively enhance](https://en.wikipedia.org/wiki/Progressive_enhancement).
 
-## Register a Service Worker
+## Register a service worker
 
 With the feature detect we know that both service workers and Push are supported. The next step
 is to "register" our service worker.
@@ -80,7 +80,7 @@ will take the following steps after calling `register()`:
 When `register()` does resolve, it returns a `ServiceWorkerRegistration`. We'll use this
 registration to access the [PushManager API](https://developer.mozilla.org/docs/Web/API/PushManager).
 
-## Requesting Permission
+## Requesting permission
 
 We've registered our service worker and are ready to subscribe the user, the next step is to get
 permission from the user to send them push messages.
@@ -111,7 +111,7 @@ function askPermission() {
 In the above code, the important snippet of code is the call to
 `Notification.requestPermission()`. This method will display a prompt to the user:
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VpF84naCF2Ri7mF3MlhW.png", alt="Permission Prompt on Desktop and Mobile Chrome", width="800", height="251" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/VpF84naCF2Ri7mF3MlhW.png", alt="Permission prompt on desktop and mobile Chrome.", width="800", height="251" %}
 
 Once the user interacted with the permission prompt by pressing Allow, Block, or just closing it,
 we'll be given the result as a string: `'granted'`, `'default'` or `'denied'`.
@@ -130,7 +130,7 @@ they _know_ why the permission is being asked.
 
 We'll look at how some popular sites ask for permission later on.
 
-## Subscribe a User with PushManager
+## Subscribe a user with PushManager
 
 Once we have our service worker registered and we've got permission, we can subscribe a user by
 calling `registration.pushManager.subscribe()`.
@@ -164,7 +164,7 @@ required and optional parameters.
 
 Lets look at all the options we can pass in.
 
-### userVisibleOnly Options
+### userVisibleOnly options
 
 When push was first added to browsers, there was uncertainty about whether developers should be
 able to send a push message and not show a notification. This is commonly referred to as silent
@@ -190,7 +190,7 @@ It's currently looking like blanket silent push will never be implemented in Chr
 spec authors are exploring the notion of a budget API which will allow web apps a certain
 number of silent push messages based on the usage of a web app.
 
-### applicationServerKey Option
+### applicationServerKey option
 
 We briefly mentioned "application server keys" in the previous section. "Application
 server keys" are used by a push service to identify the application subscribing a user and
@@ -215,7 +215,7 @@ The diagram below illustrates these steps.
    `subscribe()` promise.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/nHEwbmGFjtttom6DTFAw.svg", alt="Illustration of the public application server key is used in subscribe
-method", width="800", height="264" %}
+method.", width="800", height="264" %}
 
 When you later want to send a push message, you'll need to create an **Authorization** header
 which will contain information signed with your application server's **private key**. When the
@@ -237,7 +237,7 @@ the [VAPID spec](https://tools.ietf.org/html/draft-thomson-webpush-vapid).
 Whenever you read something referring to _"application server keys"_ or
 _"VAPID keys"_, just remember that they are the same thing.
 
-### How to Create Application Server Keys
+### How to create application server keys
 
 You can create a public and private set of application server keys by visiting
 [web-push-codelab.glitch.me](https://web-push-codelab.glitch.me/) or you can use the
@@ -310,7 +310,7 @@ to this URL.
 The `keys` object contains the values used to encrypt message data sent with a push message
 (which we'll discuss later on in this section).
 
-## Send a Subscription to Your Server
+## Send a subscription to Your Server
 
 Once you have a push subscription you'll want to send it to your server. It's up to you how you
 do that but a tiny tip is to use `JSON.stringify()` to get all the necessary data out of the

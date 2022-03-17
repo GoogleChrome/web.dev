@@ -43,7 +43,7 @@ We'll go through the following steps:
 1. Send a subscription to our backend and save it.
 1. Retrieve saved subscriptions and trigger a push message.
 
-## Saving Subscriptions
+## Saving subscriptions
 
 Saving and querying `PushSubscription`'s from a database will vary depending on
 your server side language and database choice, but it might be useful to see
@@ -155,7 +155,7 @@ function saveSubscriptionToDatabase(subscription) {
 }
 ```
 
-## Sending Push Messages
+## Sending push messages
 
 When it comes to sending a push message, we ultimately need some event to trigger the process of
 sending a message to users. A common approach is creating an admin page that let's you
@@ -289,7 +289,7 @@ We'll cover some of the other status codes in the next section when we look at t
 protocol in more detail.
 
 {% Aside %}
-Note: If you hit problems at this stage, it's worth looking at the error logs from Firefox before
+If you hit problems at this stage, it's worth looking at the error logs from Firefox before
 Chrome. The Mozilla push service has much more helpful error messages compared to Chrome / FCM.
 {% endAside %}
 
