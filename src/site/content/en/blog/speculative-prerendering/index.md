@@ -398,7 +398,7 @@ methods to measure the performance of the origin trial.
 ### Demo
 
 To check out a
-[simple demo for the prerendering trial](https://prerender2-specrules.glitch.me/),
+[simple demo for the prerendering trial](https://prerender2-speculationrules.glitch.me/),
 [enable the `enable-prerender2` flag in Chrome](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 You will need to enable this for the demo to work.
 
