@@ -5,6 +5,7 @@ description: >
 authors:
   - adactio
 date: 2021-12-23
+updated: 2022-03-18
 ---
 
 A design viewed on a small screen shouldn't look like a shrunk-down version of a large-screen layout. Likewise, a design viewed on a large screen shouldn't look like a blown-up version of a small-screen layout. Instead, the design needs to be flexible enough to adapt to all screen sizes. A successful responsive design makes the most of every form factor.
@@ -49,14 +50,14 @@ What's true of navigation is also true of other content: try not to hide anythin
 
 That said, when space is at a premium, carousels can prevent a page getting too long and cluttered. You could employ a hybrid approach: show content in a carousel for small screens, but display the same content in a grid for larger screens.
 
-For narrow screens, display items in a row using flexbox. The row of items will extend beyond the edge of the screen. Use `overflow-inline: auto` to allow horizontal swiping.
+For narrow screens, display items in a row using flexbox. The row of items will extend beyond the edge of the screen. Use `overflow-x: auto` to allow horizontal swiping.
 
 ```css
 @media (max-width: 50em) {
   .cards {
     display: flex;
     flex-direction: row;
-    overflow-inline: auto;
+    overflow-x: auto;
     scroll-snap-type: inline mandatory;
     scroll-behavior: smooth;
   }
@@ -67,6 +68,10 @@ For narrow screens, display items in a row using flexbox. The row of items will 
   }
 }
 ```
+
+{% Aside %}
+The logical version of `overflow-x` is [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) which would better match with the value for `scroll-snap-type`. This example uses the physical version for better cross-browser support.
+{% endAside %}
 
 The [`scroll-snap`](/css-scroll-snap/) properties ensure that the items can be swiped in a way that feels smooth. Thanks to `scroll-snap-type: inline mandatory`, the items snap into place.
 
