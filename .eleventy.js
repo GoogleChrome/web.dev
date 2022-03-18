@@ -50,6 +50,7 @@ const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const Tooltip = require('./src/site/_includes/components/Tooltip');
+const Widget = require('./src/site/_includes/components/Widget');
 const {Video} = require('./src/site/_includes/components/Video');
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
@@ -218,6 +219,7 @@ module.exports = function (config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('StackOverflow', StackOverflow);
   config.addShortcode('Tooltip', Tooltip);
+  config.addShortcode('Widget', Widget);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
   config.addShortcode('YouTubePlaylist', YouTubePlaylist);
