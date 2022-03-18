@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'dark'
-  title: 'A celebration of web design'
-  eyebrow: 'Event'
-  url: 'https://designcember.com'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/eLup3ce5FiasuQ3DX61F.jpg?auto=format'
+  title: 'Explore structured learning paths to learn new skills'
+  eyebrow: 'Learn'
+  url: '/learn'
+  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
