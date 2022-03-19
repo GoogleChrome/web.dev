@@ -287,11 +287,11 @@ O Roboto Flex oferece alguns eixos personalizados, e o mais importante é o Grad
   </source></video>
   <figcaption>Eixo Grade do Roboto Flex sendo alterado do mínimo para o máximo.</figcaption></figure>
 
-Como `GRAD` é um eixo personalizado, com um intervalo de -1 a 1, precisamos usá-lo com `font-variation-settings`:
+Como `GRAD` é um eixo personalizado, com um intervalo de -200 a 150, precisamos usá-lo com `font-variation-settings`:
 
 ```css
 .grade-light {
-	font-variation-settings: `GRAD` -1;
+	font-variation-settings: `GRAD` -200;
 }
 
 .grade-normal {
@@ -299,7 +299,7 @@ Como `GRAD` é um eixo personalizado, com um intervalo de -1 a 1, precisamos us�
 }
 
 .grade-heavy {
-	font-variation-settings: `GRAD` 1;
+	font-variation-settings: `GRAD` 150;
 }
 ```
 
@@ -323,7 +323,7 @@ No entanto, existe um pequeno problema em usar `font-variation-settings`. Cada p
 </span>
 ```
 
-Primeiro, o navegador aplicará `font-variation-settings: 'slnt' 10` da classe `.slanted`. Em seguida, aplicará `font-variation-settings: 'GRAD' -1` da classe `.grade-light`. Mas isto vai redefinir o `slnt` de volta ao seu default, que é 0! O resultado será um texto com uma graduação leve, mas que não será inclinado.
+Primeiro, o navegador aplicará `font-variation-settings: 'slnt' 10` da classe `.slanted`. Em seguida, aplicará `font-variation-settings: 'GRAD' -200` da classe `.grade-light`. Mas isto vai redefinir o `slnt` de volta ao seu default, que é 0! O resultado será um texto com uma graduação leve, mas que não será inclinado.
 
 Por sorte, podemos contornar isso usando variáveis CSS:
 
@@ -340,7 +340,7 @@ Por sorte, podemos contornar isso usando variáveis CSS:
 }
 
 .grade-light {
-	--grad: -1;
+	--grad: -200;
 }
 
 .grade-normal {
@@ -348,7 +348,7 @@ Por sorte, podemos contornar isso usando variáveis CSS:
 }
 
 .grade-heavy {
-	--grad: 1;
+	--grad: 150;
 }
 
 /* Aplique quaisquer valores armazenados nas variaveis CSS */
