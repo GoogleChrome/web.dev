@@ -458,7 +458,7 @@ and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Pu
   https://discourse.wicg.io/t/proposal-supporting-window-placement-on-multi-screen-devices/3948
 [cr-bug]: https://crbug.com/897300
 [cr-status]: https://chromestatus.com/feature/5252960583942144
-[blink-component]: https://bugs.chromium.org/p/chromium/issues/list?q=component:Blink%3EWindowDialog
+[blink-component]: https://bugs.chromium.org/p/chromium/issues/list?q=component:Blink%3EScreen%3EMultiScreen
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
