@@ -17,17 +17,23 @@
 import {BaseElement} from '../BaseElement';
 
 /**
- * Element that adds active classes to its children when the user scrolls to
- * a heading this child points to.
+ * Element that fires a 'viewport-entry' event when user scrolls
+ * an observed element into a focus area. The ibserved elements can be
+ * configured by passing a css selector as an element's param.
  * @extends {BaseElement}
- * @final
  */
-class ScrollSpy extends BaseElement {
+export class ScrollSpy extends BaseElement {
+  static get properties() {
+    return {
+      // CSS selector for selecting items to observe.
+      selector: {type: String, reflect: true},
+    };
+  }
+
   constructor() {
     super();
     this.scrollSpy = this.scrollSpy.bind(this);
-    this.tocActiveClass = 'w-scroll-spy__active';
-    this.tocVisibleClass = 'w-scroll-spy__visible';
+    this.selector = '[data-scrollspy]';
   }
 
   connectedCallback() {
@@ -37,15 +43,12 @@ class ScrollSpy extends BaseElement {
     if (!this.articleContent) {
       return;
     }
-
-    this.headings = this.articleContent.querySelectorAll(
-      'h1[id], h2[id], h3[id]',
-    );
-
+    this.items = this.articleContent.querySelectorAll(this.selector);
     this.observer = new IntersectionObserver(this.scrollSpy, {
+      // Observe the upper parth of the viewport (user's focus area)
       rootMargin: '0px 0px -80% 0px',
     });
-    this.headings.forEach((heading) => this.observer.observe(heading));
+    this.items.forEach((item) => this.observer.observe(item));
   }
 
   disconnectedCallback() {
@@ -53,41 +56,15 @@ class ScrollSpy extends BaseElement {
     this.observer.disconnect();
   }
 
-  scrollSpy(headings) {
-    const links = new Map(
-      [...this.querySelectorAll('a')].map((l) => [l.getAttribute('href'), l]),
-    );
-    for (const heading of headings) {
-      const href = `#${heading.target.getAttribute('id')}`;
-      const link = links.get(href);
-
-      if (link) {
-        if (heading.intersectionRatio > 0) {
-          link.classList.add(this.tocVisibleClass);
-          this.previouslyActiveHeading = heading.target.getAttribute('id');
-        } else {
-          link.classList.remove(this.tocVisibleClass);
-        }
-      }
-
-      const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);
-
-      links.forEach((link) => {
-        link.classList.remove(this.tocActiveClass, this.tocVisibleClass);
-      });
-
-      if (firstVisibleLink) {
-        firstVisibleLink.classList.add(this.tocActiveClass);
-      }
-
-      if (!firstVisibleLink && this.previouslyActiveHeading) {
-        const last = this.querySelector(
-          `a[href="#${this.previouslyActiveHeading}"]`,
-        );
-        last.classList.add(this.tocActiveClass);
-      }
-    }
+  scrollSpy(items) {
+    const event = new CustomEvent('viewport-entry', {
+      detail: {
+        target: items[0].target,
+        isIntersecting: items[0].isIntersecting,
+      },
+    });
+    document.dispatchEvent(event);
   }
 }
 
-customElements.define('web-scroll-spy', ScrollSpy);
+customElements.define('scroll-spy', ScrollSpy);

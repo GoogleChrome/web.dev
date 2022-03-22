@@ -5,10 +5,10 @@
 {% if tocContents %}
   <nav class="course__toc toc over-scroll hidden-yes xl:hidden-no" data-type="side" aria-label="{{ tocTitle if tocTitle else 'i18n.toc.toc' | i18n(locale) }}">
     <div class="course-toc__heading font-google-sans weight-medium">{{ tocTitle if tocTitle else 'i18n.toc.toc' | i18n(locale) }}</div>
-    <web-scroll-spy>
+    <toc-scroll-spy>
       <div class="toc__wrapper flow-recursive">
         {{ tocContents | safe }}
       </div>
-    </web-scroll-spy>
+    </toc-scroll-spy>
   </nav>
 {% endif %}
