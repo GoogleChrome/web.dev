@@ -463,5 +463,4 @@ and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Pu
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [tag-review]: https://github.com/w3ctag/design-reviews/issues/602
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191
 [i2e]: https://groups.google.com/a/chromium.org/g/blink-dev/c/C6xw8i1ZIdE/m/TJsr0zXxBwAJ
