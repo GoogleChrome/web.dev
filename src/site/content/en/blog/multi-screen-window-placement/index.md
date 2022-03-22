@@ -211,7 +211,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: false
     isPrimary: false
-    label: "Internal Display 2"
+    label: "External Display 1"
     left: 1680
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
