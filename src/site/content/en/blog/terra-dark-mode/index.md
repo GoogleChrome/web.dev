@@ -176,7 +176,7 @@ As a complement of this strategy they provide additional configuration options i
   <figcaption>Terra's themes configurations allow users to choose between "Dark" and "Light" themes or rely on the device's settings.</figcaption>
 </figure>
 
-This is how Terra's "Night Mode" looks like:
+This is how Terra's "Night Mode" looks:
 
 <figure>
   {% Img src="image/26V1DWN36MZr3mUo8ChSBlCpzp43/QRW06FYeMghUI8obAQWC.png", alt="Screenshot of Terra's dark theme.", width="286", height="468", style="max-width: 286px; margin: 0 auto;" %}
