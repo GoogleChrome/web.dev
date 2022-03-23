@@ -7,7 +7,7 @@ authors:
   - beaufortfrancois
   - cwallez
 date: 2021-08-26
-updated: 2022-03-10
+updated: 2022-03-23
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
@@ -87,7 +87,7 @@ To experiment with WebGPU locally, without an origin trial token, enable the
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;94, WebGPU is available as an origin trial in Chrome. The
-origin trial is expected to end in Chrome&nbsp;101 (May 18, 2022).
+origin trial is expected to end in Chrome&nbsp;105 (Sep 21, 2022).
 
 {% include 'content/origin-trials.njk' %}
 
