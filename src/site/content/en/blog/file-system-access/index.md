@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-03-21
+updated: 2022-03-23
 tags:
   - blog
   - capabilities
@@ -608,7 +608,7 @@ await reader.read(buffer, { at: 1 });
 // (Read and write operations are synchronous,
 // but obtaining the handle is asynchronous.)
 // Synchronous access exclusively in Worker contexts
-const handle = await file.createSyncAccessHandle();
+const handle = await file.createSyncAccessHandle({mode: 'in-place'});
 const writtenBytes = handle.write(buffer);
 const readBytes = handle.read(buffer, { at: 1 });
 ```
