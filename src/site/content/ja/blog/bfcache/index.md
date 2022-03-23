@@ -34,10 +34,11 @@ bfcacheは、ユーザーが移動しているときにページの完全なス�
 Webサイトにアクセスし、リンクをクリックして別のページに移動したことがありますが、それが目的のページではないことに気づき、[戻る] ボタンをクリックしたことが何度もあることでしょう。その瞬間、bfcacheは前のページの読み込み速度に大きな違いをもたらす可能性があります。
 
 <div class="table-wrapper">
-  <table data-alignment="top>
+  <table data-alignment="top">
     <tr>
-      <td width=">
-<strong>bfcacheが有効になってい<em>ない</em></strong>
+      <td width="30%">
+        <strong>bfcacheが有効になってい<em>ない</em></strong>
+      </td>
       <td>前のページを読み込む新しい要求が開始され、そのページが繰り返しアクセスできるように<a href="/reliable/#the-options-in-your-caching-toolbox">最適化</a>されているかどうかに応じて、ブラウザーはダウンロードされたばかりのリソースの一部 (またはすべて) を再ダウンロード、再解析、および再実行しなければならない場合があります。</td>
     <tr>
       <td><strong>bfcacheを有効に<em>すると</em></strong></td>
