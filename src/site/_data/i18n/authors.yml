@@ -3759,3 +3759,10 @@ patrickhlauke:
     en: Patrick H. Lauke
   description:
     en: Patrick is a Web Evangelist
+
+kevinkiklee:
+  title:
+    en: 'Kevin K. Lee'
+    ko: '이경인'
+  description:
+    en: "Developer Relations Engineer, Google Chrome"
