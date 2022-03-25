@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-const minify = require('html-minifier').minify;
-// const htmlMinifier = require('@minify-html/js');
+const htmlMinifier = require('@minify-html/js');
 const path = require('path');
 const {URL} = require('url');
 const stagingUrls =
@@ -26,9 +25,9 @@ const stagingUrls =
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
-// const config = htmlMinifier.createConfiguration({
-//   // See https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html
-// });
+const config = htmlMinifier.createConfiguration({
+  // See https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html
+});
 
 const minifyHtml = (content, outputPath) => {
   if (
@@ -36,18 +35,7 @@ const minifyHtml = (content, outputPath) => {
     (isStaging && stagingUrls.includes(outputPath))
   ) {
     try {
-      content = minify(content, {
-        removeAttributeQuotes: true,
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        removeComments: true,
-        sortClassName: true,
-        sortAttributes: true,
-        html5: true,
-        decodeEntities: true,
-      });
-      return content;
-      // content = htmlMinifier.minify(content, config);
+      content = htmlMinifier.minify(content, config);
     } catch (err) {
       console.warn(err, 'while minifying', outputPath);
     }
