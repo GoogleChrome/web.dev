@@ -27,7 +27,7 @@ While Podcasts is a media application, the core ideas I illustrate with its help
 {% Aside 'caution' %}
 Each iOS/Android/desktop app feature that is listed below has a **How to do this on the web**
 component that you can open for more details.
-Please note that not all browsers on the various operating systems support all the listed APIs
+Note that not all browsers on the various operating systems support all the listed APIs
 or functionalities. Be sure to carefully review the compatibility notes in the linked articles.
 {% endAside %}
 
