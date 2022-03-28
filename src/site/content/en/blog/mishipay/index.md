@@ -85,13 +85,7 @@ our platform-specific applications.
 
 To enable this feature, we rely on the
 [`getCurrentPosition()`](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition)
-API along with an IP-based fallback solution. This approach worked well in the earlier versions of
-the app, but was later proven to be a huge pain point for MishiPay's users for the following
-reasons: 
-* Location inaccuracies in the IP-based fallback solutions.
-* A growing listing of MishiPay-enabled stores per region requires users to scroll a list and identify the correct
-store.
-* Users accidentally occasionally choose the wrong store, causing the purchases to be recorded incorrectly.
+API along with an IP-based fallback solution.
 
 ```js
 const geoOptions = {
@@ -115,9 +109,6 @@ window.navigator.geolocation.getCurrentPosition(
   },
   geoOptions,
 );
-```
-
-To address these issues, we embedded unique geolocated QR codes on the in-store displays for
 each store. It paved the way for a faster onboarding experience. Users simply scan the geolocated QR
 codes printed on marketing material present in the stores to access the Scan & Go web application.
 This way, they can avoid typing in the web address `mishipay.shop` to access the service.
