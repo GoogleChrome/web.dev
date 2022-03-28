@@ -272,7 +272,8 @@ if (!('BarceodeDetector' in window)) {
   return;
 }
 // Check supported barcode formats.
-BarcodeDetector.getSupportedFormats().then((supportedFormats) => {
+BarcodeDetector.getSupportedFormats()
+.then((supportedFormats) => {
   supportedFormats.forEach((format) => console.log(format));
 });
 ```
