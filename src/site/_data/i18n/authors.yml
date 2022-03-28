@@ -4,6 +4,12 @@ iamakulov:
   description:
     en: Contracting software engineer · Blogging, open source, performance, UX
 
+pbakaus: 
+  title:
+    en: Paul Bakaus
+  description:
+    en: Open Web Developer Advocate at Google • Tools, Performance, Animation, UX
+
 paulkinlan:
   title:
     en: Paul Kinlan
@@ -3753,3 +3759,17 @@ kbalasub:
     en: Kalyanaraman Balasubramaniam Krishnan
   description:
     en: Kalyan is a Sr. Computer Scientist at Adobe
+
+patrickhlauke:
+  title:
+    en: Patrick H. Lauke
+  description:
+    en: Patrick is a Web Evangelist
+
+kevinkiklee:
+  title:
+    en: Kevin K. Lee
+    ko: 이경인
+  description:
+    en: Developer Relations Engineer, Google Chrome
+    ko: Google Chrome의 개발자 관계 엔지니어

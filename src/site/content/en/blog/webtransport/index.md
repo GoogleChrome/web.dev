@@ -117,7 +117,7 @@ const transport = new WebTransport(url);
 transport.closed.then(() => {
   console.log(`The HTTP/3 connection to ${url} closed gracefully.`);
 }).catch((error) => {
-  console.error('The HTTP/3 connection to ${url} closed due to ${error}.');
+  console.error(`The HTTP/3 connection to ${url} closed due to ${error}.`);
 });
 
 // Once .ready fulfills, the connection can be used.

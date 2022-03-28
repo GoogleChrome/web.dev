@@ -1,13 +1,14 @@
 ---
 title: Update
 description: >
-  Chances are your PWA needs updating. This chapter gives you the tools to update different parts of your PWA, from assets to metadata. 
+  Chances are your PWA needs updating. This chapter gives you the tools to update different parts of your PWA, from assets to metadata.
 authors:
   - firt
-date: 2022-03-07
+date: 2022-03-10
+updated: 2022-03-14
 ---
 
-You have published your PWA: some users use it from the browser, others install it on their devices. When you update the app, it's important to apply best practices, to avoid pitfalls.
+You have published your PWA: some users use it from the browser, others install it on their devices. When you update the app, it's important to apply best practices to avoid pitfalls.
 
 You may update:
 
@@ -16,7 +17,7 @@ You may update:
 * The service worker file, or its dependencies.
 * Manifest metadata.
 
-Let's check out the best practices for each of these elements. 
+Let's check out the best practices for each of these elements.
 
 ## Updating data
 
@@ -25,9 +26,9 @@ To update data, such as that stored in IndexedDB, you can use tools such as Fetc
 On compatible browsers, there are options to sync data, not only when the user opens the PWA but also in the background. These options are:
 
 * [Background synchronization](https://developer.mozilla.org/docs/Web/API/Background_Synchronization_API): saves requests that failed and retries them using sync from the service worker.
-* [Web periodic background Sync](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API): syncs data periodically in the background, at specific times, allowing the app to provide updated data even if the user hasn't opened the app yet. 
-* [Background Fetch](https://developer.mozilla.org/docs/Web/API/Background_Fetch_API):  downloads large files, even when the PWA is closed.
-* [Web push](https://developer.mozilla.org/docs/Web/API/Push_API):  sends a message from the server that wakes up the service worker and notifies the user. This is commonly called a 'push notification'. This API requires the user's permission.
+* [Web periodic background sync](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API): syncs data periodically in the background, at specific times, allowing the app to provide updated data even if the user hasn't opened the app yet.
+* [Background Fetch](https://developer.mozilla.org/docs/Web/API/Background_Fetch_API): downloads large files, even when the PWA is closed.
+* [Web push](https://developer.mozilla.org/docs/Web/API/Push_API): sends a message from the server that wakes up the service worker and notifies the user. This is commonly called a 'push notification'. This API requires the user's permission.
 
 All these APIs are executed from the service worker context. They are currently available only on Chromium-based browsers, on Android, and desktop operating systems. When you use one of these APIs, you can run code in the service worker thread; for example, to download data from your server and update your IndexedDB data.
 
@@ -44,8 +45,8 @@ Updating assets includes any changes to files you use to render the app's interf
 Here are some common patterns to handle app updates, but you can always customize the process to your own needs:
 
 * Full update: every change, even a minor one, triggers the replacement of the entire cache content. This pattern mimics how device-specific apps handle updates, and it will consume more bandwidth and will take more time.
-* Changed assets update: only the assets that have changed since the last update get replaced in cache. It is often implemented using a library such as [Workbox](/learn/pwa/workbox). It involves creating a list of cached files, a hash representation of the file, and timestamps. With this information, the service worker compares this list with the cached assets and decides which assets to update. 
-* Individual assets update: each asset is updated individually when it changes. The stale while revalidate strategy described in the [serve chapter](/learn/pwa/serve) is an example of updating assets individually.
+* Changed assets update: only the assets that have changed since the last update get replaced in cache. It is often implemented using a library such as [Workbox](/learn/pwa/workbox). It involves creating a list of cached files, a hash representation of the file, and timestamps. With this information, the service worker compares this list with the cached assets and decides which assets to update.
+* Individual assets update: each asset is updated individually when it changes. The stale while revalidate strategy described in the [Serving chapter](/learn/pwa/serve) is an example of updating assets individually.
 
 ### When to update
 
@@ -93,8 +94,8 @@ async function detectSWUpdate() {
     newSW.addEventListener("statechange", event => {
       if (newSW.state == "installed") {
          // New service worker is installed, but waiting activation
-      } 
-    }); 
+      }
+    });
   })
 }
 ```
@@ -113,7 +114,7 @@ This warning comes from [service worker lifecycle](https://developers.google.com
 ```js
 self.addEventListener("install", event => {
    // forces a service worker to activate immediately
-   self.skipWaiting(); 
+   self.skipWaiting();
   });
 
 self.addEventListener("activate", event => {
@@ -159,7 +160,7 @@ Some additional notes about the process:
 If the user doesn't open your PWA, its WebAPK won't be updated.
 If the server doesn't respond with the manifest file (there is a 404 error), Chrome won't check for updates for a minimum of 30 days, even if the user opens the PWA.
 
-Go to `about:webapks` on Chrome on Android to see the status of the needing update flag, and request an update. In the [Tools and Debug chapter](/learn/pwa/tools-and-debug), you can read more about this debug tool.
+Go to `about:webapks` in Chrome on Android to see the status of the "needing update" flag, and request an update. In the [Tools and debug chapter](/learn/pwa/tools-and-debug), you can read more about this debugging tool.
 
 
 ### Samsung Internet on Android with WebAPK
@@ -185,9 +186,9 @@ To inform the user, there are these options:
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/s20eK3XJWqdxYvH4HwZV.png", alt="An update notification shown in the DOM.", width="800", height="821" %}.
 
 
-### More about the badging API
+### More about the Badging API
 
-The [app badging API](/badging-api/) lets you mark your PWA's icon with a badge number, or a badge dot on compatible browsers. A badge dot is a tiny mark within the installed icon that expresses something is waiting inside the app.
+The [Badging API](/badging-api/) lets you mark your PWA's icon with a badge number, or a badge dot on compatible browsers. A badge dot is a tiny mark within the installed icon that expresses something is waiting inside the app.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/yicjcQZkdbS2sj732BEp.webp", alt="Example of Twitter with eight notifications and another app showing a flag type badge.", width="800", height="252" %}
 
