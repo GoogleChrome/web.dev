@@ -327,7 +327,7 @@ recommend.
 
 All the above libraries are full-fledged SDKs that compose all the layers discussed above. They
 also expose interfaces to support various scanning operations. Depending on the barcode formats
-needed for the business case, a decision can be between Wasm and non-Wasm solutions. Despite the
+and detection speed needed for the business case, a decision can be between Wasm and non-Wasm solutions. Despite the
 overhead of requiring an additional resource (Wasm) to decode the barcode, Wasm solutions outperform
 the non-Wasm solution in terms of accuracy.
 
