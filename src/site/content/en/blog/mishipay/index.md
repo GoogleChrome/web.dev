@@ -343,3 +343,8 @@ experience, it is counterintuitive to wait for a download
 before they can use an application. This is where our PWA helps.
 By eliminating the barrier to entry, we have increased our transactions by 10 times and enabled our users
 to save 2.5 years of waiting in the queue.
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley).
