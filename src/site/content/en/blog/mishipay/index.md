@@ -150,7 +150,7 @@ For detecting the barcodes from a given video stream, we need to periodically ca
 transfer them to the decoder layer. To capture a frame, we simply draw the streams from
 `VideoElement` onto an `HTMLCanvasElement` using the
 [`drawImage()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
-method of the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+method of the [Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API).
 
 ```js
 /**
@@ -183,7 +183,7 @@ a strategy for some optimization gains on the CPU-intensive pre-processing tasks
 
 The final layer is the decoder layer that is responsible for decoding the barcodes from the frames
 captured by the processing layer. Thanks to the
-[Shape Detection API](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API),
+[Shape Detection API](https://developer.mozilla.org/docs/Web/API/Barcode_Detection_API),
 starting from Chromium&nbsp;83, the browser itself supports the functionality of decoding a barcode
 from an `ImageBitmapSource`, which can be an `img` element, an SVG `image` element, a `video`
 element, a `canvas` element, a `Blob` object, an `ImageData` object, or an `ImageBitmap` object.
