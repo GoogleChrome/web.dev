@@ -25,8 +25,9 @@ in-store queuing costs the global retail sector about $200 billion annually.
 Our technology relies on device hardware capabilities such as GPS sensors and cameras that allow
 users to locate MishiPay-enabled stores, scan item barcodes within the physical store, and then pay
 using the digital payment method of their choice. The initial versions of our Scan & Go technology
-were platform-specific iOS and Android applications, and early adopters loved the technology.
-Read on to learn how switching to a PWA increased transactions by 10 times and saved 2.5 years of queuing!
+were platform-specific iOS and Android applications, and early adopters loved the technology. Read
+on to learn how switching to a PWA increased transactions by 10 times and saved 2.5 years of
+queuing!
 
 <ul class="stats">
   <div class="stats__item">
@@ -45,17 +46,17 @@ Read on to learn how switching to a PWA increased transactions by 10 times and s
 
 ## Challenge
 
-Users find our technology extremely helpful when waiting in a queue or check-out line, as it allows them to skip
-the queue and have a smooth in-store experience. But the hassle of downloading an Android or iOS
-application made users not choose our technology despite the value. It was a growing challenge for
-MishiPay, and we needed to increase user adoption with a lower barrier of entry.
+Users find our technology extremely helpful when waiting in a queue or check-out line, as it allows
+them to skip the queue and have a smooth in-store experience. But the hassle of downloading an
+Android or iOS application made users not choose our technology despite the value. It was a growing
+challenge for MishiPay, and we needed to increase user adoption with a lower barrier of entry.
 
 ## Solution
 
-Our efforts at building and launching the PWA helped us remove the installation hassle and encouraged new users
-to try our technology inside a physical store, skip the queue, and have a seamless shopping
-experience. Since the launch, we have seen a massive spike in user adoption with our PWA compared to
-our platform-specific applications.
+Our efforts at building and launching the PWA helped us remove the installation hassle and
+encouraged new users to try our technology inside a physical store, skip the queue, and have a
+seamless shopping experience. Since the launch, we have seen a massive spike in user adoption with
+our PWA compared to our platform-specific applications.
 
 <div class="switcher">
   <figure>
@@ -109,7 +110,19 @@ window.navigator.geolocation.getCurrentPosition(
   },
   geoOptions,
 );
-each store. It paved the way for a faster onboarding experience. Users simply scan the geolocated QR
+```
+
+This approach worked well in the earlier versions of the app, but was later proven to be a huge pain
+point for MishiPay's users for the following reasons:
+
+- Location inaccuracies in the IP-based fallback solutions.
+- A growing listing of MishiPay-enabled stores per region requires users to scroll a list and
+  identify the correct store.
+- Users accidentally occasionally choose the wrong store, causing the purchases to be recorded
+  incorrectly.
+
+To address these issues, we embedded unique geolocated QR codes on the in-store displays for each
+store. It paved the way for a faster onboarding experience. Users simply scan the geolocated QR
 codes printed on marketing material present in the stores to access the Scan & Go web application.
 This way, they can avoid typing in the web address `mishipay.shop` to access the service.
 
@@ -122,22 +135,21 @@ This way, they can avoid typing in the web address `mishipay.shop` to access the
 
 ### Scanning products
 
-A core feature in the MishiPay app is the barcode scanning as this empowers our users to scan
-their own purchases and see the running total even before they would otherwise have reached a cash register.
+A core feature in the MishiPay app is the barcode scanning as this empowers our users to scan their
+own purchases and see the running total even before they would otherwise have reached a cash
+register.
 
-To build a scanning experience on the web, we have identified three core
-layers.
+To build a scanning experience on the web, we have identified three core layers.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/jRJeqbGW7yqU8VpdbjBO.png", alt="Diagram showing the three main thread layers: video stream, processing layer, and decoder layer.", width="800", height="358" %}
 
 ### Video stream
 
 With the help of the
-[`getUserMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia) method, we can
-access the user's rear view camera with the constraints listed below. Invoking the method
-automatically triggers a prompt for users to accept or deny access to
-their camera. Once we have access to the video stream, we can relay it to a video element as shown
-below:
+[`getUserMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia) method, we
+can access the user's rear view camera with the constraints listed below. Invoking the method
+automatically triggers a prompt for users to accept or deny access to their camera. Once we have
+access to the video stream, we can relay it to a video element as shown below:
 
 ```js
 /**
@@ -149,7 +161,7 @@ const videoEle = document.getElementById('videoElement');
 const canvasCtx = canvasEle.getContext('2d');
 fetchVideoStream();
 function fetchVideoStream() {
-  let constraints = {video: {facingMode: 'environment'}};
+  let constraints = { video: { facingMode: 'environment' } };
   if (navigator.mediaDevices !== undefined) {
     navigator.mediaDevices
       .getUserMedia(constraints)
@@ -171,9 +183,9 @@ function fetchVideoStream() {
 
 ### Processing layer
 
-For detecting a barcode in a given video stream, we need to periodically capture frames and
-transfer them to the decoder layer. To capture a frame, we simply draw the streams from
-`VideoElement` onto an `HTMLCanvasElement` using the
+For detecting a barcode in a given video stream, we need to periodically capture frames and transfer
+them to the decoder layer. To capture a frame, we simply draw the streams from `VideoElement` onto
+an `HTMLCanvasElement` using the
 [`drawImage()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
 method of the [Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API).
 
@@ -196,21 +208,22 @@ async function captureFrames() {
 ```
 
 For advanced use cases, this layer also performs some pre-processing tasks such as cropping,
-rotating, or converting to grayscale. These tasks can be CPU-intensive and result in the
-application being unresponsive given that barcode scanning is a long-running operation. With the help of
-the [OffscreenCanvas](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) API, we can
-offload the CPU-intensive task to a web worker. On devices that support hardware graphics
-acceleration, WebGL API and its
-[`WebGL2RenderingContext`](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext) can optimize gains on the CPU-intensive pre-processing tasks.
+rotating, or converting to grayscale. These tasks can be CPU-intensive and result in the application
+being unresponsive given that barcode scanning is a long-running operation. With the help of the
+[OffscreenCanvas](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) API, we can offload
+the CPU-intensive task to a web worker. On devices that support hardware graphics acceleration,
+WebGL API and its
+[`WebGL2RenderingContext`](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext) can
+optimize gains on the CPU-intensive pre-processing tasks.
 
 ### Decoder layer
 
 The final layer is the decoder layer which is responsible for decoding barcodes from the frames
 captured by the processing layer. Thanks to the
-[Shape Detection API](https://developer.mozilla.org/docs/Web/API/Barcode_Detection_API)
-(which is not yet available on all browsers) the browser itself decodes the barcode
-from an `ImageBitmapSource`, which can be an `img` element, an SVG `image` element, a `video`
-element, a `canvas` element, a `Blob` object, an `ImageData` object, or an `ImageBitmap` object.
+[Shape Detection API](https://developer.mozilla.org/docs/Web/API/Barcode_Detection_API) (which is
+not yet available on all browsers) the browser itself decodes the barcode from an
+`ImageBitmapSource`, which can be an `img` element, an SVG `image` element, a `video` element, a
+`canvas` element, a `Blob` object, an `ImageData` object, or an `ImageBitmap` object.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/GR4od5fHOxys6lrxttPn.png", alt="Diagram showing the three main thread layers: video stream, processing layer, and Shape Detection API.", width="800", height="358" %}
 
@@ -248,11 +261,10 @@ async function decodeBarcode(canvas) {
 }
 ```
 
-For devices that don't support the Shape Detection API yet, we need a fallback solution to
-decode the barcodes. The Shape Detection API exposes a
+For devices that don't support the Shape Detection API yet, we need a fallback solution to decode
+the barcodes. The Shape Detection API exposes a
 [`getSupportedFormats()`](https://developer.mozilla.org/docs/Web/API/BarcodeDetector/getSupportedFormats)
-method which helps switch between the Shape
-Detection API and the fallback solution.
+method which helps switch between the Shape Detection API and the fallback solution.
 
 ```js
 // Feature detection.
@@ -260,8 +272,7 @@ if (!('BarceodeDetector' in window)) {
   return;
 }
 // Check supported barcode formats.
-BarcodeDetector.getSupportedFormats()
-.then((supportedFormats) => {
+BarcodeDetector.getSupportedFormats().then((supportedFormats) => {
   supportedFormats.forEach((format) => console.log(format));
 });
 ```
@@ -316,11 +327,11 @@ recommend.
   </table>
 </div>
 
-All the above libraries are full-fledged SDKs that compose all the layers discussed above. They
-also expose interfaces to support various scanning operations. Depending on the barcode formats
-and detection speed needed for the business case, a decision can be between Wasm and non-Wasm solutions. Despite the
-overhead of requiring an additional resource (Wasm) to decode the barcode, Wasm solutions outperform
-the non-Wasm solution in terms of accuracy.
+All the above libraries are full-fledged SDKs that compose all the layers discussed above. They also
+expose interfaces to support various scanning operations. Depending on the barcode formats and
+detection speed needed for the business case, a decision can be between Wasm and non-Wasm solutions.
+Despite the overhead of requiring an additional resource (Wasm) to decode the barcode, Wasm
+solutions outperform the non-Wasm solution in terms of accuracy.
 
 [Scandit](https://docs.scandit.com/stable/web/) was our primary choice. It supports all barcode
 formats required for our business use cases; it beats all the available open-source libraries in
@@ -329,22 +340,20 @@ scanning speed.
 ## Future of scanning
 
 Once the Shape Detection API is fully supported by all major browsers, we could potentially have a
-new HTML element `<scanner>` that has the capabilities required for a barcode scanner. Engineering at MishiPay believes
-there is a solid use case for the barcode scanning functionality to be a new HTML element due to the
-growing number of open source and licensed libraries that are enabling experiences such as Scan & Go
-and many others.
+new HTML element `<scanner>` that has the capabilities required for a barcode scanner. Engineering
+at MishiPay believes there is a solid use case for the barcode scanning functionality to be a new
+HTML element due to the growing number of open source and licensed libraries that are enabling
+experiences such as Scan & Go and many others.
 
 ## Conclusion
 
 App fatigue is an issue that developers face when their products enter the market. Users often want
-to understand the value that an application gives them before they download it.
-In a store, where MishiPay saves shoppers' time and improves their
-experience, it is counterintuitive to wait for a download
-before they can use an application. This is where our PWA helps.
-By eliminating the barrier to entry, we have increased our transactions by 10 times and enabled our users
-to save 2.5 years of waiting in the queue.
+to understand the value that an application gives them before they download it. In a store, where
+MishiPay saves shoppers' time and improves their experience, it is counterintuitive to wait for a
+download before they can use an application. This is where our PWA helps. By eliminating the barrier
+to entry, we have increased our transactions by 10 times and enabled our users to save 2.5 years of
+waiting in the queue.
 
 ## Acknowledgements
 
-This article was reviewed by
-[Joe Medley](https://github.com/jpmedley).
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
