@@ -4,7 +4,7 @@ title: YAML front matter
 subhead: |
   Reference documentation for web.dev's YAML front matter properties.
 date: 2021-03-03
-updated: 2022-03-15
+updated: 2022-03-28
 description: |
   Reference documentation for web.dev's YAML front matter properties.
 ---
