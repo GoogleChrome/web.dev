@@ -4,7 +4,7 @@ subhead: Learn how switching to PWA helped MishiPay's business.
 authors:
   - nikilmathew
   - thomassteiner
-description:
+description: Learn how MishiPay's PWA increases transactions 10 times and saves 2.5 years of queuing.
 date: 2022-03-28
 # updated: 2022-03-28
 tags:
