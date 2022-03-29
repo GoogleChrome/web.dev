@@ -768,4 +768,4 @@ to the community remixes section below!
 
 ## Community remixes
 
-*nothing to see here yet*
+- [Varun KS](https://twitter.com/VarunKS20161856) - [source](https://github.com/KSVarun/progress-loader-GUI-challenge) and [demo](https://ksvarun.github.io/progress-loader-GUI-challenge/)
