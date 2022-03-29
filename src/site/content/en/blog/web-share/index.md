@@ -154,9 +154,9 @@ Here's a rough outline of support for this feature. For detailed information, fo
 
 <dl>
   <dt><code>navigator.canShare()</code></dt>
-  <dd>{% BrowserCompat 'api.navigator.canShare' %}</dd>
+  <dd>{% BrowserCompat 'api.Navigator.canShare' %}</dd>
   <dt><code>navigator.share()</code></dt>
-  <dd>{% BrowserCompat 'api.navigator.share' %}</dd>
+  <dd>{% BrowserCompat 'api.Navigator.share' %}</dd>
 </dl>
 
 ## Show support for the API
