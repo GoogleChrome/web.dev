@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2021-10-12
+updated: 2022-03-29
 hero: image/admin/1ekafMZjtzcd0G3TLQJ4.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -21,7 +21,7 @@ To improve users' productivity and facilitate re-engagement with key tasks, the
 web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
 
-This article will teach you how to define those app shortcuts. Additionally,
+This article will teach you how to define app shortcuts. Additionally,
 you'll learn some associated best practices.
 
 ## About app shortcuts
@@ -50,7 +50,7 @@ installed on the user's desktop or mobile device. Check out [What does it take
 to be installable?] to learn about installability requirements.
 
 Each app shortcut expresses a user intent, each of which is associated with a
-URL within the [scope] of your web app. The URL is opened when users activate
+URL within the [scope] of your web app. The URL is opened when a user activate
 the app shortcut. Examples of app shortcuts include the following:
 
 - Top-level navigation items (e.g., home, timeline, recent orders)
