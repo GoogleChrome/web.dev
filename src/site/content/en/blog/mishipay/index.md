@@ -12,7 +12,7 @@ tags:
   - capabilities
   - case-study
   - progressive-web-apps
-hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/jyVxx3oZ5TiBF0CP4C1O.jpeg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/G1Q7oGsqt7t33ctT4de2.png
 alt: MishiPay company logo over crowded street.
 ---
 
@@ -278,7 +278,7 @@ BarcodeDetector.getSupportedFormats()
 });
 ```
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oYmpkpsdwmtA8e440F9I.png", alt="Flow diagram showing how, dependent on Barcode Detector support and the supported barcode formats, either the Shape Detection API or the fallback solution  is being used.", width="800", height="404" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/GmrPC7mFTdtsEdS1BDWp.png", alt="Flow diagram showing how, dependent on Barcode Detector support and the supported barcode formats, either the Shape Detection API or the fallback solution  is being used.", width="800", height="404" %}
 
 ### Fallback solution
 
