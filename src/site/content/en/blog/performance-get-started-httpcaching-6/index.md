@@ -13,7 +13,7 @@ where it can retrieve a resource from, and that can make a big difference in you
 load speed.
 
 The first time a browser loads a web page, it stores the page resources in the
-[HTTP Cache](/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
+[HTTP Cache](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
 The next time the browser hits that page, it
 can look in the cache for resources that were previously fetched and retrieve them from disk,
 often faster than it can download them from the network.
