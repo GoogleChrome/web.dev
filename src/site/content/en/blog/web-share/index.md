@@ -150,7 +150,7 @@ Browser support for the Web Share API is nuanced, and it's recommended that you 
 detection (as described in the earlier code samples) instead of assuming that a particular method is
 supported.
 
-Here's a rough outline of support for this feature. For detailed information, follow the support link.
+Here's a rough outline of support for this feature. For detailed information, follow either of the support links.
 
 <dl>
   <dt><code>navigator.canShare()</code></dt>
