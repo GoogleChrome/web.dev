@@ -12,7 +12,7 @@ tags:
   - capabilities
   - case-study
   - progressive-web-apps
-hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/G1Q7oGsqt7t33ctT4de2.png
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/CZo4R87iOBYiRpIq6NcP.jpg
 alt: MishiPay company logo over crowded street.
 ---
 
