@@ -36,9 +36,9 @@ abandon sites</a> that take longer than three seconds to load</td>
 </tr>
 <tr>
 <td>Reduce page weight</td>
-<td>• Reduce data cost for users with capped data plans<br><br>
-• Reduce web app storage requirements — particularly important for users on low-spec devices<br><br>
-• Reduce hosting and serving costs<br><br>
+<td>• Reduce data cost for users with capped data plans
+• Reduce web app storage requirements — particularly important for users on low-spec devices
+• Reduce hosting and serving costs
 • Improve serving performance, reliability and resilience</td>
 <td>Set a page weight budget: for example, first load under 400 kB. Check for heavy JavaScript.
   Check file sizes to find bloated images, media, HTML, CSS and JavaScript. Find images that could
@@ -48,8 +48,8 @@ abandon sites</a> that take longer than three seconds to load</td>
 <tr>
 <td>Reduce resource requests</td>
 <td>• Reduce
-  <a href="https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/">latency issues</a><br><br>
-• Reduce serving costs<br><br>
+  <a href="https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/">latency issues</a>
+• Reduce serving costs
 • Improve serving performance, reliability and resilience</td>
 <td>Look for excessive or unnecessary requests for any type of resource. For example: files that are
 loaded repeatedly, JavaScript that is loaded in multiple versions, CSS that is never used, images
@@ -87,30 +87,20 @@ There is a wide range of tools and techniques for auditing websites:
 - Manual tests
 
 Below you'll learn which approach is relevant for each type of audit.
-<br><br>
 
 {% Aside %}
-<strong>Images constitute by far the
-<a href="http://httparchive.org/interesting.php#bytesperpage">most weight</a> and
-<a href="http://httparchive.org/trends.php#bytesImg&reqImg">most requests</a> for
-most web pages.</strong>
+**Images constitute by far the [most weight](http://httparchive.org/interesting.php#bytesperpage) and [most requests](http://httparchive.org/trends.php#bytesImg&reqImg) for most web pages.**
 
-  <p><a href="https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/">Latency
-  gets worse as connectivity gets worse</a> so excessive image file requests are an increasing
-  problem as the web goes mobile. Images also consume power: more image requests, more radio usage,
-  more flat batteries. <a href="http://httparchive.org/trends.php#bytesImg&reqImg">Even just to
-  render images takes power</a> – and this is proportional to the size and quantity of images.</p>
+[Latency gets worse as connectivity gets worse](https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/) so excessive image file requests are an increasing
+problem as the web goes mobile. Images also consume power: more image requests, more radio usage,
+more flat batteries. [Even just to render images takes power](http://httparchive.org/trends.php#bytesImg&reqImg) – and this is proportional to the size and quantity of images.
 
-  <p>Likewise for memory: small increases in pixel dimensions result in big increases in memory
-    usage. With images on mobile — especially on low-spec devices —
-    <a href="https://timkadlec.com/2013/11/why-we-need-responsive-images-part-deux/">memory can
-    become the new bottleneck</a>. Bloated images are also problematic for users on capped data
-  plans.</p>
+Likewise for memory: small increases in pixel dimensions result in big increases in memory
+usage. With images on mobile — especially on low-spec devices — [memory can become the new bottleneck](https://timkadlec.com/2013/11/why-we-need-responsive-images-part-deux/). Bloated images are also problematic for users on capped data
+plans.
 
-  <p><a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/content#viewport">Remove
-  redundant images</a>! If you can't get rid of them, optimize: increase compression as much as
-possible, reduce pixel dimensions, and use the format that gives you the smallest file sizes.
-Optimizing 'hero images' such as banners and backgrounds is an easy, one-off win.</p>
+[Remove redundant images](https://developers.google.com/web/fundamentals/design-and-ui/responsive/content#viewport)! If you can't get rid of them, optimize: increase compression as much as possible, reduce pixel dimensions, and use the format that gives you the smallest file sizes.
+Optimizing 'hero images' such as banners and backgrounds is an easy, one-off win.
 {% endAside %}
 
 ## Record resource requests: number, size, type and timing
@@ -170,28 +160,27 @@ assets and layouts for different devices. You may need to test on actual hardwar
 [remote debugging](/web/tools/chrome-devtools/remote-debugging/),
 not just with device simulation.
 
-<div class="note">
+{% Aside %}
 
-  <p><strong>You can often use browser tools to spot problems simply by checking network responses
-  and ordering by size.</strong></p>
+**You can often use browser tools to spot problems simply by checking network responses and ordering by size.**
 
-  <p>For example: the 349KB PNG here looked like it could be a problem:</p>
+For example: the 349KB PNG here looked like it could be a problem:
 
-  <figure>
-    {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ajIej5qg2qPKZGnwgbyk.png", alt="Chrome DevTools Network panel showing a large file", width="479", height="242" %}
-  </figure>
+<figure>
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/ajIej5qg2qPKZGnwgbyk.png", alt="Chrome DevTools Network panel showing a large file", width="479", height="242" %}
+</figure>
 
-  <p>Sure enough, it turned out the image was 1600px wide, whereas the maximum display width of the
-  element was only 400px. Decompressed, the image needed over 4MB of memory, which is a lot on a
-mobile phone.</p>
+Sure enough, it turned out the image was 1600px wide, whereas the maximum display width of the
+element was only 400px. Decompressed, the image needed over 4MB of memory, which is a lot on a
+mobile phone.
 
-  <p>Resaving the image as an 800px wide JPEG (to cope with 400px display width on 2x screens) and
-    optimizing with <a href="https://imageoptim.com/">ImageOptim</a> resulted in a 17KB file:
-    compare the <a href="https://drive.google.com/open?id=0B9xlQg9Xpugsb0VpQldsN3YwSEE">original PNG</a> with the <a href="https://drive.google.com/open?id=0B9xlQg9XpugsTlBVNlQ1bUdQa0U">optimized JPEG</a>.</p>
+Resaving the image as an 800px wide JPEG (to cope with 400px display width on 2x screens) and
+optimizing with [ImageOptim](https://imageoptim.com/) resulted in a 17KB file:
+compare the [original PNG](https://drive.google.com/open?id=0B9xlQg9Xpugsb0VpQldsN3YwSEE) with the [optimized JPEG](https://drive.google.com/open?id=0B9xlQg9XpugsTlBVNlQ1bUdQa0U).</p>
 
-  <p>That's a 95% improvement!</p>
+That's a 95% improvement!
 
-</div>
+{% endAside %}
 
 ## Check memory and CPU load
 
@@ -203,7 +192,7 @@ web page's requirements.
 <figure>
   {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/BwWPMsK66mrAbfewiEpA.png", alt="Chrome Task Manager showing memory and CPU usage for
   the four open browser tabs", width="655", height="278" %}
-  <figcaption><em>Chrome's Task Manager — watch out for memory and CPU hogs!</em></figcaption>
+  <figcaption>Chrome's Task Manager — watch out for memory and CPU hogs!</figcaption>
 </figure>
 
 ## Test first and subsequent load performance
@@ -215,20 +204,15 @@ caching, time to first byte, and if your site makes effective use of CDNs.
 
 {% Aside %}
 
-  <p><strong>It's simple to enable static-content caching so browsers can cache assets the first
-  time they're requested, by configuring your server to include appropriate headers.</strong></p>
+**It's simple to enable static-content caching so browsers can cache assets the first
+time they're requested, by configuring your server to include appropriate headers.**
 
-  <p>If a browser can cache resources, it won't need to retrieve them from the network on subsequent
-    visits. This improves load speed, cuts data cost and reduces network and server load — even for
-    browsers that don't support caching via a service worker.
-    <a href="https://jakearchibald.com/2016/caching-best-practices/">Even if you're using the Cache
-    API</a> it's important to enable browser caching.</p>
+If a browser can cache resources, it won't need to retrieve them from the network on subsequent
+visits. This improves load speed, cuts data cost and reduces network and server load — even for
+browsers that don't support caching via a service worker.
+[Even if you're using the Cache API](https://jakearchibald.com/2016/caching-best-practices/) it's important to enable browser caching.
 
-  <p>To find out more, take a look at
-    <a href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching">PageSpeed
-    Tools</a> and the resources on
-    <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">Web Fundamentals</a>
-  (in particular, the 'Invalidating and updating cached responses' section).</p>
+To find out more, take a look at [PageSpeed Tools](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching) and the resources on [Web Fundamentals](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) (in particular, the 'Invalidating and updating cached responses' section).
 
 {% endAside %}
 
@@ -239,7 +223,7 @@ caching, time to first byte, and if your site makes effective use of CDNs.
   Pagespeed Insights tool [now includes Chrome User Experience report data](https://webmasters.googleblog.com/2018/01/real-world-data-in-pagespeed-insights.html?m=1)
   highlighting real-world performance stats.
 - **Lighthouse**: save reports from the Chrome DevTools Audit panel by clicking on the
-download button:<br><br>
+download button:
 <figure>
   {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/fcXsYtUzSNLnYZgZAwQN.png", alt="Chrome Lighthouse button for downloading reports", width="800", height="225" %}
 </figure>
@@ -260,8 +244,7 @@ the share button again in the new window and Save as Gist.
 <figure>
   {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/pKYiZ9JL0bI1FfqUkC2u.png", alt="Screenshot showing how to export a Chrome Lighthouse
   report as a gist", width="800", height="346" %}
-  <figcaption><em>Export a report to a gist from the Lighthouse Chrome Extension — click the share
-  button</em></figcaption>
+  <figcaption>Export a report to a gist from the Lighthouse Chrome Extension — click the share button</figcaption>
 </figure>
 
 ## Use analytics, event tracking and business metrics to track real-world performance
@@ -285,12 +268,11 @@ You can keep an eye on Google Analytics
 [Site Speed](https://support.google.com/analytics/answer/1205784) to check how
 performance metrics correlate with business metrics. For example: 'how fast did the homepage load?'
 compared to 'did entry via the home page result in a sale?'
-<br><br>
 
 <figure>
   {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/jw1eTOeLv1S7jqrgQxlU.png", alt="Screenshot showing Google Analytics Site Speed", width="800", height="417" %}
 </figure>
-<br>
+
 Google Analytics uses data from the
 [Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API).
 
@@ -318,8 +300,7 @@ or your own metrics, for example:
 ```
 
 You can also use ReportingObserver to check for browser deprecation and intervention warnings.
-This is one of [many APIs for getting real-world, live measurements from actual
-users](/web/updates/2018/07/reportingobserver).
+This is one of [many APIs for getting real-world, live measurements from actual users](/web/updates/2018/07/reportingobserver).
 
 ## Real-world experience: screen and video recording
 

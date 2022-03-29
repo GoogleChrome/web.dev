@@ -44,7 +44,7 @@ CSS to the browser as quickly as possible.
 Let’s start with the simplest possible case: a plain HTML page with some text
 and a single image. How does the browser process this page?
 
-<img src="images/full-process.png" alt="DOM construction process">
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/cSL20piziX7XLekCPCuD.png", alt="DOM construction process", width="800", height="443" %}
 
 1. **Conversion:** The browser reads the raw bytes of HTML off the disk or
    network, and translates them to individual characters based on specified
