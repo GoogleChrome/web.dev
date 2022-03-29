@@ -21,12 +21,11 @@ Async functions work like this:
 
 ```js
 async function myFirstAsyncFunction() {
-    try {
+  try {
     const fulfilledValue = await promise;
-    }
-    catch (rejectedValue) {
+  } catch (rejectedValue) {
     // …
-    }
+  }
 }
 ```
 
@@ -47,12 +46,12 @@ using promises:
 
 ```js
 function logFetch(url) {
-    return fetch(url)
+  return fetch(url)
     .then(response => response.text())
     .then(text => {
-        console.log(text);
+      console.log(text);
     }).catch(err => {
-        console.error('fetch failed', err);
+      console.error('fetch failed', err);
     });
 }
 ```
@@ -61,13 +60,12 @@ And here's the same thing using async functions:
 
 ```js
 async function logFetch(url) {
-    try {
+  try {
     const response = await fetch(url);
     console.log(await response.text());
-    }
-    catch (err) {
+  } catch (err) {
     console.log('fetch failed', err);
-    }
+  }
 }
 ```
 
@@ -88,25 +86,25 @@ whatever the async function throws. So with:
 ```js
 // wait ms milliseconds
 function wait(ms) {
-    return new Promise(r => setTimeout(r, ms));
+  return new Promise(r => setTimeout(r, ms));
 }
 
 async function hello() {
-    await wait(500);
-    return 'world';
+  await wait(500);
+  return 'world';
 }
 ```
 
-…calling `hello()` returns a promise that *fulfills* with `"world"`.
+Calling `hello()` returns a promise that *fulfills* with `"world"`.
 
 ```js
 async function foo() {
-    await wait(500);
-    throw Error('bar');
+  await wait(500);
+  throw Error('bar');
 }
 ```
 
-…calling `foo()` returns a promise that *rejects* with `Error('bar')`.
+Calling `foo()` returns a promise that *rejects* with `Error('bar')`.
 
 ## Example: Streaming a response
 
@@ -121,20 +119,20 @@ Here it is with promises:
 
 ```js
 function getResponseSize(url) {
-    return fetch(url).then(response => {
+  return fetch(url).then(response => {
     const reader = response.body.getReader();
     let total = 0;
 
     return reader.read().then(function processResult(result) {
-        if (result.done) return total;
+      if (result.done) return total;
 
-        const value = result.value;
-        total += value.length;
-        console.log('Received chunk', value);
+      const value = result.value;
+      total += value.length;
+      console.log('Received chunk', value);
 
-        return reader.read().then(processResult);
-    })
+      return reader.read().then(processResult);
     });
+  });
 }
 ```
 
@@ -148,20 +146,20 @@ Let's try that again with async functions:
 
 ```js
 async function getResponseSize(url) {
-    const response = await fetch(url);
-    const reader = response.body.getReader();
-    let result = await reader.read();
-    let total = 0;
+  const response = await fetch(url);
+  const reader = response.body.getReader();
+  let result = await reader.read();
+  let total = 0;
 
-    while (!result.done) {
+  while (!result.done) {
     const value = result.value;
     total += value.length;
     console.log('Received chunk', value);
     // get the next result
     result = await reader.read();
-    }
+  }
 
-    return total;
+  return total;
 }
 ```
 
@@ -186,8 +184,8 @@ with other function syntax:
 ```js
 // map some URLs to json-promises
 const jsonPromises = urls.map(async url => {
-    const response = await fetch(url);
-    return response.json();
+  const response = await fetch(url);
+  return response.json();
 });
 ```
 
@@ -197,15 +195,14 @@ sees it as a function that returns a promise. It won't wait for the first
 function to complete before calling the second.
 {% endAside %}
 
-
 ### Object methods
 
 ```js
 const storage = {
-    async getAvatar(name) {
+  async getAvatar(name) {
     const cache = await caches.open('avatars');
     return cache.match(`/avatars/${name}.jpg`);
-    }
+  }
 };
 
 storage.getAvatar('jaffathecake').then(…);
@@ -215,14 +212,14 @@ storage.getAvatar('jaffathecake').then(…);
 
 ```js
 class Storage {
-    constructor() {
+  constructor() {
     this.cachePromise = caches.open('avatars');
-    }
+  }
 
-    async getAvatar(name) {
+  async getAvatar(name) {
     const cache = await this.cachePromise;
     return cache.match(`/avatars/${name}.jpg`);
-    }
+  }
 }
 
 const storage = new Storage();
@@ -240,9 +237,9 @@ opportunity to do things in parallel.
 
 ```js
 async function series() {
-    await wait(500); // Wait 500ms…
-    await wait(500); // …then wait another 500ms.
-    return "done!";
+  await wait(500); // Wait 500ms…
+  await wait(500); // …then wait another 500ms.
+  return "done!";
 }
 ```
 
@@ -250,11 +247,11 @@ The above takes 1000ms to complete, whereas:
 
 ```js
 async function parallel() {
-    const wait1 = wait(500); // Start a 500ms timer asynchronously…
-    const wait2 = wait(500); // …meaning this timer happens in parallel.
-    await wait1; // Wait 500ms for the first timer…
-    await wait2; // …by which time this timer has already finished.
-    return "done!";
+  const wait1 = wait(500); // Start a 500ms timer asynchronously…
+  const wait2 = wait(500); // …meaning this timer happens in parallel.
+  await wait1; // Wait 500ms for the first timer…
+  await wait2; // …by which time this timer has already finished.
+  return "done!";
 }
 ```
 
@@ -270,16 +267,16 @@ correct order.
 
 ```js
 function logInOrder(urls) {
-    // fetch all the URLs
-    const textPromises = urls.map(url => {
+  // fetch all the URLs
+  const textPromises = urls.map(url => {
     return fetch(url).then(response => response.text());
-    });
+  });
 
-    // log them in order
-    textPromises.reduce((chain, textPromise) => {
+  // log them in order
+  textPromises.reduce((chain, textPromise) => {
     return chain.then(() => textPromise)
-        .then(text => console.log(text));
-    }, Promise.resolve());
+      .then(text => console.log(text));
+  }, Promise.resolve());
 }
 ```
 
@@ -294,10 +291,10 @@ Not recommended - too sequential
 
 ```js
 async function logInOrder(urls) {
-    for (const url of urls) {
+  for (const url of urls) {
     const response = await fetch(url);
     console.log(await response.text());
-    }
+  }
 }
 ```
 {% endCompare %}
@@ -311,16 +308,16 @@ Recommended - nice and parallel
 
 ```js
 async function logInOrder(urls) {
-    // fetch all the URLs in parallel
-    const textPromises = urls.map(async url => {
+  // fetch all the URLs in parallel
+  const textPromises = urls.map(async url => {
     const response = await fetch(url);
     return response.text();
-    });
+  });
 
-    // log them in sequence
-    for (const textPromise of textPromises) {
+  // log them in sequence
+  for (const textPromise of textPromises) {
     console.log(await textPromise);
-    }
+  }
 }
 ```
 {% endCompare %}
@@ -356,8 +353,8 @@ and use it yourself. Instead of:
 
 ```js
 async function slowEcho(val) {
-    await wait(1000);
-    return val;
+  await wait(1000);
+  return val;
 }
 ```
 
@@ -366,8 +363,8 @@ and write:
 
 ```js
 const slowEcho = createAsyncFunction(function*(val) {
-    yield wait(1000);
-    return val;
+  yield wait(1000);
+  return val;
 });
 ```
 

@@ -24,7 +24,7 @@ the application for a specific environment:
 ```js
 // webpack.config.js
 module.exports = {
-    mode: 'production',
+  mode: 'production',
 };
 ```
 
@@ -52,14 +52,14 @@ so on. Like this:
 ```js
 // Original code
 function map(array, iteratee) {
-    let index = -1;
-    const length = array == null ? 0 : array.length;
-    const result = new Array(length);
+  let index = -1;
+  const length = array == null ? 0 : array.length;
+  const result = new Array(length);
 
-    while (++index < length) {
+  while (++index < length) {
     result[index] = iteratee(array[index], index, array);
-    }
-    return result;
+  }
+  return result;
 }
 ```
 
@@ -85,7 +85,7 @@ The bundle-level minification compresses the whole bundle after compilation. Her
     // comments.js
     import './comments.css';
     export function render(data, target) {
-    console.log('Rendered!');
+      console.log('Rendered!');
     }
     ```
 
@@ -128,9 +128,9 @@ section of the config:
 const webpack = require('webpack');
 
 module.exports = {
-    plugins: [
+  plugins: [
     new webpack.optimize.UglifyJsPlugin(),
-    ],
+  ],
 };
 ```
 

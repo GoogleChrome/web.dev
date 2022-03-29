@@ -86,11 +86,11 @@ To configure it:
     ```json
     // package.json
     {
-    "bundlesize": [
+      "bundlesize": [
         {
-        "path": "./dist/*"
+          "path": "./dist/*"
         }
-    ]
+      ]
     }
     ```
 
@@ -128,32 +128,32 @@ To configure it:
     ```json
     // package.json
     {
-    "bundlesize": [
+      "bundlesize": [
         {
-        "path": "./dist/*.png",
-        "maxSize": "16 kB",
+          "path": "./dist/*.png",
+          "maxSize": "16 kB",
         },
         {
-        "path": "./dist/main.*.js",
-        "maxSize": "20 kB",
+          "path": "./dist/main.*.js",
+          "maxSize": "20 kB",
         },
         {
-        "path": "./dist/vendor.*.js",
-        "maxSize": "35 kB",
+          "path": "./dist/vendor.*.js",
+          "maxSize": "35 kB",
         }
-    ]
+      ]
     }   
     ```
 
 1. Add an npm script to run the check:
 
     ```json
-        // package.json
-        {
-        "scripts": {
-            "check-size": "bundlesize"
-        }
-        }
+    // package.json
+    {
+      "scripts": {
+        "check-size": "bundlesize"
+      }
+    }
     ```
 
 1. Configure the CI to execute `npm run check-size` on each push. (And [integrate `bundlesize` with GitHub](https://github.com/siddharthkp/bundlesize#2-build-status) if you’re developing the project on it.)
@@ -208,9 +208,9 @@ add a plugin to the webpack config:
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    plugins: [
+  plugins: [
     new BundleAnalyzerPlugin(),
-    ],
+  ],
 };
 ```
 
@@ -232,12 +232,10 @@ Here’s what to look for in the report:
 - **Large dependencies.** Why are they so large? Are there smaller alternatives (e.g., Preact
 instead of React)? Do you use all the code it includes (e.g., Moment.js includes a lot of locales
 [that are often not used and could be dropped](https://github.com/GoogleChromeLabs/webpack-libs-optimizations#moment))?
-
 - **Duplicated dependencies.** Do you see the same library repeating in multiple files? (Use, e.g.,
 the `optimization.splitChunks.chunks` option – in webpack 4 – or the `CommonsChunkPlugin` –
 in webpack 3 – to move it into a common file.) Or does the bundle have multiple versions
 of the same library?
-
 - **Similar dependencies.** Are there similar libraries that do approximately the same job? (E.g.
 `moment` and `date-fns`, or `lodash` and `lodash-es`.) Try sticking with a single tool.
 
@@ -247,6 +245,5 @@ bundles](https://medium.com/webpack/webpack-bits-getting-the-most-out-of-the-com
 ## Summing up
 
 - Use `webpack-dashboard` and `bundlesize` to stay tuned of how large your app is
-
 - Dig into what builds up the size with `webpack-bundle-analyzer`
 
