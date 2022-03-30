@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Learn how MishiPay's PWA increases transactions 10 times and saves 2.5 years of queuing.
 date: 2022-03-28
-# updated: 2022-03-28
+updated: 2022-03-30
 tags:
   - blog
   - capabilities
@@ -58,20 +58,12 @@ encouraged new users to try our technology inside a physical store, skip the que
 seamless shopping experience. Since the launch, we have seen a massive spike in user adoption with
 our PWA compared to our platform-specific applications.
 
-<div class="switcher">
-  <figure>
-    {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/cs0PXp0masvpoIqD9Dfw.mp4", autoplay=true, muted=true, playsinline=true, loop=true, width=332, height=720 %}
-    <figcaption>
-      Installing and launching the Android app (slower).
-    </figcaption>
-  </figure>
-  <figure>
-    {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/F4krjSntmEbFzhE2XXyc.mp4", autoplay=true, muted=true, playsinline=true, loop=true, width=332, height=720 %}
-    <figcaption>
-      Directly launching the PWA (faster).
-    </figcaption>
-  </figure>
-</div>
+<figure>
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/jtJZ418n11SOtHLTsOht.mp4", autoplay=true, muted=true, playsinline=true, loop=true %}
+  <figcaption>
+    Side-by-side comparison of directly launching the PWA (left, faster) vs. installing and launching the Android app (right, slower).
+  </figcaption>
+</figure>
 
 <figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/I5FMltbcuDHqgqEQMyqA.png", alt="Transactions by platform. ¡OS: 16397 (3.98%). Android: 13769 (3.34%). Web: 382184 (92.68%).", width="300", height="415" %}
