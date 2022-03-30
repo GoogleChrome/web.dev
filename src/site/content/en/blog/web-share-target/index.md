@@ -210,11 +210,6 @@ page so that it will load quickly and work reliably, even if the user is offline
 [Workbox](https://developers.google.com/web/tools/workbox/) is a tool that can help you
 [implement precaching](/precache-with-workbox/) in your service worker.
 
-{% Aside 'caution' %}
-Per the spec, when the `method` is `"GET"`, user agents are permitted to truncate any of `title`, `text`, or `url` they are larger than 2000 bytes.
-If you expect to exceed this, use `"POST"` as described below.
-{% endAside %}
-
 ### Processing POST shares
 
 If your `method` is `"POST"`, as it would be if your target app accepts a saved
