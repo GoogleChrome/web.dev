@@ -36,7 +36,7 @@ Check out [Learn CSS](/learn/css), and the
 [HTML](https://developer.mozilla.org/docs/Learn/HTML) and
 [JavaScript](https://developer.mozilla.org/docs/Learn/JavaScript) courses on MDN.
 
-**The first eight modules are available now**. The rest are in progress.
+**The first sixteen modules are available now**. The rest are in progress.
 
 Here's what you'll learn:
 

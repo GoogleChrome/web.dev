@@ -78,6 +78,26 @@ Set `ELEVENTY_ENV=prod` to force production builds. This is the default when
 running "stage" or "deploy". No other options for `ELEVENTY_ENV` are supported,
 although our Eleventy site config will default to 'dev' if unspecified.
 
+The production build currently requires a _lot_ of memory, to the point where
+`node` might exit with errors along the line of
+
+```sh
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+
+v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]
+```
+
+The exact amount of heap space required varies from computer to computer and version
+of `node`. If you need a local production build, but run out of memory, you can
+increase the heap size by adding `--node-options '--max_old_space_size=8192'` (to
+[assign 8gb of heap space](https://stackoverflow.com/questions/48387040/how-do-i-determine-the-correct-max-old-space-size-for-node-js/48392705#48392705))
+to the [`npm` command](https://docs.npmjs.com/cli/v8/using-npm/config#node-options),
+prior to `run`. For instance:
+
+```sh
+ELEVENTY_ENV=prod npm --node-options '--max_old_space_size=8192' run build
+```
+
 ## Staging 🕺
 
 When you send in a pull request it will be automatically staged for you. Keep an
