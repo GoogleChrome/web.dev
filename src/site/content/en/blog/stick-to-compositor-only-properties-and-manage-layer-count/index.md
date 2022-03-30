@@ -49,7 +49,7 @@ As we mentioned in the “[Simplify paint complexity and reduce paint areas](htt
 
 ```css
 .moving-element {
-    will-change: transform;
+  will-change: transform;
 }
 ```
 
@@ -57,12 +57,8 @@ Or, for older browsers, or those that don’t support will-change:
 
 ```css
 .moving-element {
-    transform: translateZ(0);
+  transform: translateZ(0);
 }
-```
-
-
-This gives the browser the forewarning that changes are incoming and, depending on what you plan to change, the browser can potentially make provisions, such as creating compositor layers.
 
 ## Manage layers and avoid layer explosions
 
@@ -70,8 +66,8 @@ It’s perhaps tempting, then, knowing that layers often help performance, to pr
 
 ```css
 * {
-    will-change: transform;
-    transform: translateZ(0);
+  will-change: transform;
+  transform: translateZ(0);
 }
 ```
 
@@ -81,9 +77,9 @@ Warning: Do not promote elements unnecessarily.
 
 ## Use Chrome DevTools to understand the layers in your app
 
-  <figure>
-    {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/QNAAH0VJDRjtu9iC6KVE.jpg", alt="The toggle for the paint profiler in Chrome DevTools.", width="278", height="129" %}
-  </figure>
+<figure>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/QNAAH0VJDRjtu9iC6KVE.jpg", alt="The toggle for the paint profiler in Chrome DevTools.", width="278", height="129" %}
+</figure>
 
 To get an understanding of the layers in your application, and why an element has a layer you must enable the Paint profiler in Chrome DevTools’ Timeline:
 

@@ -41,11 +41,8 @@ You can also trigger paint if you change non-geometric properties, like backgrou
 
 ## Use Chrome DevTools to quickly identify paint bottlenecks
 
-
-
 You can use Chrome DevTools to quickly identify areas that are being painted. [Open the Rendering tab][renderingtab]
 and then enable **Paint Flashing**.
-
 
 With this option switched on Chrome will flash the screen green whenever painting happens. If you’re seeing the whole screen flash green, or areas of the screen that you didn’t think should be painted, then you should dig in a little further.
 
@@ -67,7 +64,7 @@ The best way to create a new layer is to use the `will-change` CSS property. Thi
 
 ```css
 .moving-element {
-    will-change: transform;
+  will-change: transform;
 }
 ```
 
@@ -75,7 +72,7 @@ For browsers that don’t support `will-change`, but benefit from layer creation
 
 ```css
 .moving-element {
-    transform: translateZ(0);
+  transform: translateZ(0);
 }
 ```
 
@@ -93,11 +90,9 @@ Reducing paint areas is often a case of orchestrating your animations and transi
 
 ## Simplify paint complexity
 
-
-<figure>{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/NMsTYj8K5odtsK3FvEVU.jpg", alt="The time taken to paint part of the screen.", width="248", height="181" %}  </figure>
-
-
-
+<figure>
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/NMsTYj8K5odtsK3FvEVU.jpg", alt="The time taken to paint part of the screen.", width="248", height="181" %}
+</figure>
 
 When it comes to painting, some things are more expensive than others. For example, anything that involves a blur (like a shadow, for example) is going to take longer to paint than -- say -- drawing a red box. In terms of CSS, however, this isn’t always obvious: `background: red;` and `box-shadow: 0, 4px, 4px, rgba(0,0,0,0.5);` don’t necessarily look like they have vastly different performance characteristics, but they do.
 

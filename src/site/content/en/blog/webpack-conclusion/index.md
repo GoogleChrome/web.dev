@@ -18,13 +18,10 @@ Summing up:
 
 * **Cut unnecessary bytes.** Compress everything, strip unused code, be wise when adding
   dependencies
-
 * **Split code by routes.** Load only what’s really necessary right now and lazy-load other stuff
   later
-
 * **Cache code.** Some parts of your app are updated less often than other ones. Separate these
   parts into files so that they are only re-downloaded when necessary
-
 * **Keep track of the size.** Use tools like
   [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard/) and
   [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)

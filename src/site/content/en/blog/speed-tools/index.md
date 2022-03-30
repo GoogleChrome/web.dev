@@ -36,7 +36,6 @@ Good user experience is not captured by a single point in time. It's composed of
 a series of key milestones in your users' journey. Understand the different
 metrics and track the ones that are important to your users' experience.
 
-
 ### Myth 2
 
 <figure>
@@ -79,6 +78,7 @@ predefined device and network settings. This offers reproducible results and
 debugging capabilities to help identify, isolate, and fix performance issues.
 
 {% Compare 'better' %}
+
 #### Strengths
 
 - Helpful for debugging performance issues
@@ -87,6 +87,7 @@ debugging capabilities to help identify, isolate, and fix performance issues.
 {% endCompare %}
 
 {% Compare 'worse' %}
+
 #### Limitations
 
 - Might not capture real-world bottlenecks
@@ -105,13 +106,13 @@ Tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and
 devices.", width="800", height="689", class="float-right" %}
 </figure>
 
-
 (Also called Real User Monitoring or RUM)
 
 Field data is performance data collected from real page loads your users are
 experiencing in the wild.
 
 {% Compare 'better' %}
+
 #### Strengths
 
 - Captures true real-world user experience
@@ -119,12 +120,12 @@ experiencing in the wild.
 {% endCompare %}
 
 {% Compare 'worse' %}
+
 #### Limitations {: .compare-worse }
 
 - Restricted set of metrics
 - Limited debugging capabilities
 {% endCompare %}
-
 
 {% Aside %}
 Public data sets like [Chrome User Experience
@@ -135,6 +136,7 @@ data.
 
 ## What are the different performance tools?
 
+<div class="table-wrapper scrollbar">
 <table>
     <tbody>
         <tr>
@@ -195,7 +197,7 @@ data.
         </tr>
     </tbody>
 </table>
-
+</div>
 
 ## So you're…
 
@@ -221,7 +223,6 @@ page’s mobile loading time alongside industry benchmarks and to learn how simp
 fixes can speed up your site and decrease visitor loss; TestMySite is currently
 powered by WebPageTest and PageSpeed Insights.
 
-
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/c9spNOrIojgpHghKiZJY.svg", alt="Icon of a laptop with the Chrome logo behind and slightly above
 it.", width="366", height="366", class="float-right" %}
@@ -234,7 +235,6 @@ against top industry trends and guidelines.**
 **[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)** helps you understand the
 real-world performance of your site, as experienced by Chrome users, and
 recommends optimization opportunities.
-
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/Nj1NljG9QGhzSMWkG36E.svg", alt="Icon of a Lighthouse audit
