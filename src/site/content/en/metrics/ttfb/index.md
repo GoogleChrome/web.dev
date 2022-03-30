@@ -4,6 +4,7 @@ title: Time to First Byte (TTFB)
 authors:
   - jlwagner
 date: 2021-10-26
+updated: 2021-03-30
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -96,7 +97,7 @@ new PerformanceObserver((entryList) => {
   for (const entry of entries) {
     // Some resources may have a responseStart value of 0, due
     // to the resource being cached, or a cross-origin resource
-    // being served without a Timing-Origin-Allow header set.
+    // being served without a Timing-Allow-Origin header set.
     if (entry.responseStart > 0) {
       console.log(`TTFB: ${entry.responseStart}`, entry.name);
     }
