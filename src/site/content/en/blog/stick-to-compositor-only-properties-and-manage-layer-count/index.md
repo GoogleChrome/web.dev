@@ -45,7 +45,7 @@ Note: If you’re concerned that you may not be able to limit your animations to
 
 ## Promote elements that you plan to animate
 
-As we mentioned in the “[Simplify paint complexity and reduce paint areas](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)” section, you should promote elements that you plan to animate (within reason, don’t overdo it!) to their own layer:
+As we mentioned in the "[Simplify paint complexity and reduce paint areas](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)" section, you should promote elements that you plan to animate (within reason, don’t overdo it!) to their own layer:
 
 ```css
 .moving-element {
