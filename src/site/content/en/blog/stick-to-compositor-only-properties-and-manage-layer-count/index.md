@@ -53,7 +53,7 @@ As we mentioned in the “[Simplify paint complexity and reduce paint areas](htt
 }
 ```
 
-Or, for older browsers, or those that don’t support will-change:
+Or, for older browsers, or those that don't support will-change:
 
 ```css
 .moving-element {
