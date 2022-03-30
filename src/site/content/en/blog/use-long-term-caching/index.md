@@ -20,8 +20,6 @@ client and avoid re-downloading them every time.
 
 The common approach of doing caching is to:
 
-
-
 1. tell the browser to cache a file for a very long time (e.g., a year):
 
     ```http
@@ -58,9 +56,8 @@ file hash. To include the hash into the file name, use
 module.exports = {
   entry: './index.js',
   output: {
-    filename: 'bundle.<strong>[chunkhash]</strong>.js',
-        // → bundle.8e0d62a03.js
-  },
+    filename: 'bundle.[chunkhash].js' // → bundle.8e0d62a03.js
+  }
 };
 ```
 
@@ -81,7 +78,7 @@ complex, then it should be enough for you:
 
 ```html
 <!-- index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <!-- ... -->
 <script src="bundle.8e0d62a03.js"></script>
 ```
@@ -94,10 +91,10 @@ without hash and file names with hash. Use this JSON on the server to find out
 which file to work with:
 
 ```json
-    // manifest.json
-    {
-      "bundle.js": "bundle.8e0d62a03.js"
-    }
+// manifest.json
+{
+  "bundle.js": "bundle.8e0d62a03.js"
+}
 ```
 
 ### Further reading
@@ -121,15 +118,15 @@ To extract dependencies into a separate chunk, perform three steps:
 1. Replace the output filename with `[name].[chunkname].js`:
 
     ```js
-        // webpack.config.js
-        module.exports = {
-        output: {
-            // Before
-            filename: 'bundle.[chunkhash].js',
-            // After
-            filename: '[name].[chunkhash].js',
-        },
-        };
+    // webpack.config.js
+    module.exports = {
+      output: {
+        // Before
+        filename: 'bundle.[chunkhash].js',
+        // After
+        filename: '[name].[chunkhash].js'
+      }
+    };
     ```
     
     When webpack builds the app, it replaces [`[name]`](https://webpack.js.org/configuration/output/#output-filename)
@@ -141,12 +138,12 @@ To extract dependencies into a separate chunk, perform three steps:
     ```js
     // webpack.config.js
     module.exports = {
-    // Before
-    entry: './index.js',
-    // After
-    entry: {
-        main: './index.js',
-    },
+      // Before
+      entry: './index.js',
+      // After
+      entry: {
+        main: './index.js'
+      }
     };
     ```
 
@@ -162,11 +159,11 @@ To extract dependencies into a separate chunk, perform three steps:
     ```js
     // webpack.config.js (for webpack 4)
     module.exports = {
-    optimization: {
+      optimization: {
         splitChunks: {
-        chunks: 'all',
+          chunks: 'all'
         }
-    },
+      }
     };
     ```
     
@@ -180,17 +177,16 @@ To extract dependencies into a separate chunk, perform three steps:
     ```js
     // webpack.config.js (for webpack 3)
     module.exports = {
-    plugins: [
+      plugins: [
         new webpack.optimize.CommonsChunkPlugin({
         // A name of the chunk that will include the dependencies.
         // This name is substituted in place of [name] from step 1
         name: 'vendor',
 
         // A function that determines which modules to include into this chunk
-        minChunks: module => module.context &&
-            module.context.includes('node_modules'),
-        }),
-    ],
+        minChunks: module => module.context && module.context.includes('node_modules'),
+        })
+      ]
     };
     ```
 
@@ -203,13 +199,13 @@ After these changes, each build will generate two files instead of one: `main.[c
 the vendor bundle might not be generated if dependencies are small – and that’s fine:
 
 ```shell
-    $ webpack
-    Hash: ac01483e8fec1fa70676
-    Version: webpack 3.8.1
-    Time: 3816ms
-                            Asset   Size  Chunks             Chunk Names
-    ./main.00bab6fd3100008a42b0.js  82 kB       0  [emitted]  main
-    ./vendor.d9e134771799ecdf9483.js  47 kB       1  [emitted]  vendor
+$ webpack
+Hash: ac01483e8fec1fa70676
+Version: webpack 3.8.1
+Time: 3816ms
+                        Asset      Size  Chunks             Chunk Names
+ ./main.00bab6fd3100008a42b0.js   82 kB       0  [emitted]  main
+./vendor.d9e134771799ecdf9483.js  47 kB       1  [emitted]  vendor
 ```
 
 The browser would cache these files separately – and redownload only code that changes.
@@ -265,9 +261,9 @@ achieved by enabling the `optimization.runtimeChunk` option:
 ```js
 // webpack.config.js (for webpack 4)
 module.exports = {
-    optimization: {
-    runtimeChunk: true,
-    },
+  optimization: {
+    runtimeChunk: true
+  }
 };
 ```
 
@@ -276,24 +272,20 @@ module.exports = {
 ```js
 // webpack.config.js (for webpack 3)
 module.exports = {
-    plugins: [
+  plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-
-        minChunks: module => module.context &&
-        module.context.includes('node_modules'),
+      name: 'vendor',
+      minChunks: module => module.context && module.context.includes('node_modules')
     }),
-
     // This plugin must come after the vendor one (because webpack
     // includes runtime into the last chunk)
     new webpack.optimize.CommonsChunkPlugin({
-        name: 'runtime',
-
-        // minChunks: Infinity means that no app modules
-        // will be included into this chunk
-        minChunks: Infinity,
-    }),
-    ],
+      name: 'runtime',
+      // minChunks: Infinity means that no app modules
+      // will be included into this chunk
+      minChunks: Infinity
+    })
+  ]
 };
 ```
 
@@ -322,13 +314,10 @@ Include them into `index.html` in the reverse order – and you’re done:
 ### Further reading
 
 * Webpack guide [on long term caching](https://webpack.js.org/guides/caching/)
-
 * Webpack docs [about webpack runtime and
   manifest](https://webpack.js.org/concepts/manifest/)
-
 * [“Getting the most out of the
   CommonsChunkPlugin”](https://medium.com/webpack/webpack-bits-getting-the-most-out-of-the-commonschunkplugin-ab389e5f318)
-
 * [How `optimization.splitChunks` and `optimization.runtimeChunk` work](https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693)
 
 ## Inline webpack runtime to save an extra HTTP request
@@ -369,12 +358,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 module.exports = {
-    plugins: [
+  plugins: [
     new HtmlWebpackPlugin({
-        inlineSource: 'runtime~.+\\.js',
+      inlineSource: 'runtime~.+\\.js',
     }),
-    new InlineSourcePlugin(),
-    ],
+    new InlineSourcePlugin()
+  ]
 };
 ```
 
@@ -391,9 +380,9 @@ module.exports = {
     const ManifestPlugin = require('webpack-manifest-plugin');
 
     module.exports = {
-    plugins: [
-        new ManifestPlugin(),
-    ],
+      plugins: [
+        new ManifestPlugin()
+      ]
     };
     ```
 
@@ -402,7 +391,7 @@ module.exports = {
     ```json
     // manifest.json
     {
-    "runtime~main.js": "runtime~main.8e0d62a03.js"
+      "runtime~main.js": "runtime~main.8e0d62a03.js"
     }
     ```
 
@@ -412,15 +401,14 @@ module.exports = {
     // server.js
     const fs = require('fs');
     const manifest = require('./manifest.json');
-
     const runtimeContent = fs.readFileSync(manifest['runtime~main.js'], 'utf-8');
 
     app.get('/', (req, res) => {
-    res.send(`
+      res.send(`
         …
-        &lt;script>${runtimeContent}&lt;/script>
+        <script>${runtimeContent}</script>
         …
-    `);
+      `);
     });
     ```
 
@@ -430,13 +418,13 @@ module.exports = {
 
     ```js
     module.exports = {
-    plugins: [
+      plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-        name: 'runtime',
-        minChunks: Infinity,
-        filename: 'runtime.js',
-        }),
-    ],
+          name: 'runtime',
+          minChunks: Infinity,
+          filename: 'runtime.js'
+        })
+      ]
     };
     ```
 
@@ -448,11 +436,11 @@ module.exports = {
     const runtimeContent = fs.readFileSync('./runtime.js', 'utf-8');
 
     app.get('/', (req, res) => {
-    res.send(`
+      res.send(`
         …
-        &lt;script>${runtimeContent}&lt;/script>
+        <script>${runtimeContent}</script>
         …
-    `);
+      `);
     });
     ```
 
@@ -462,7 +450,6 @@ Sometimes, a page has more and less important parts:
 
 * If you load a video page on YouTube, you care more about the video than about
   comments. Here, the video is more important than comments.
-
 * If you open an article on a news site, you care more about the text of the
   article than about ads. Here, the text is more important than ads.
 
@@ -485,9 +472,9 @@ renderVideoPlayer();
 
 // …Custom event listener
 onShowCommentsClick(() => {
-    import('./comments').then((comments) => {
+  import('./comments').then((comments) => {
     comments.renderComments();
-    });
+  });
 });
 ```
 
@@ -524,7 +511,6 @@ plugin.
 
 * Webpack docs [for the `import()`
   function](https://webpack.js.org/api/module-methods/#import-)
-
 * The JavaScript proposal [for implementing the `import()`
   syntax](https://github.com/tc39/proposal-dynamic-import)
 
@@ -557,7 +543,6 @@ it might have an existing solution for this:
 * [“Code
   Splitting”](https://reacttraining.com/react-router/web/guides/code-splitting)
   in `react-router`'s docs (for React)
-
 * [“Lazy Loading
   Routes”](https://router.vuejs.org/en/advanced/lazy-loading.html) in
   `vue-router`'s docs (for Vue.js)
@@ -572,11 +557,11 @@ should have three entries:
 ```js
 // webpack.config.js
 module.exports = {
-    entry: {
+  entry: {
     home: './src/Home/index.js',
     article: './src/Article/index.js',
     profile: './src/Profile/index.js'
-    },
+  }
 };
 ```
 
@@ -611,9 +596,9 @@ points will include a copy of Lodash. To solve this, **in webpack 4,** add the
 module.exports = {
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: 'all'
     }
-  },
+  }
 };
 ```
 
@@ -625,14 +610,13 @@ Or, **in webpack 3,** use the [`CommonsChunkPlugin`](https://webpack.js.org/plug
 
 ```js
 module.exports = {
-    plugins: [
+  plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-        name: 'common',
-        minChunks: 2,    // 2 is the default value
-    }),
-    ],
+      name: 'common',
+      minChunks: 2    // 2 is the default value
+    })
+  ]
 };
-```
 
 Feel free to play with the `minChunks` value to find the best one. Generally,
 you want to keep it small, but increase if the number of chunks grows. For
@@ -644,13 +628,10 @@ inflating it too much.
 
 * Webpack docs [about the concept of entry
   points](https://webpack.js.org/concepts/entry-points/)
-
 * Webpack docs [about the
   CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/)
-
 * [“Getting the most out of the
   CommonsChunkPlugin”](https://medium.com/webpack/webpack-bits-getting-the-most-out-of-the-commonschunkplugin-ab389e5f318)
-
 * [How `optimization.splitChunks` and `optimization.runtimeChunk` work](https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693)
 
 ## Make module ids more stable
@@ -763,9 +744,9 @@ To enable the plugin, add it to the `plugins` section of the config:
 ```js
 // webpack.config.js
 module.exports = {
-    plugins: [
-    new webpack.HashedModuleIdsPlugin(),
-    ],
+  plugins: [
+    new webpack.HashedModuleIdsPlugin()
+  ]
 };
 ```
 

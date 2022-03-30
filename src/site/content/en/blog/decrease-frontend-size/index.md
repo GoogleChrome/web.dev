@@ -155,15 +155,14 @@ the minifier can’t minify. For example, when you import a CSS file with
 ```css
 /* comments.css */
 .comment {
-    color: black;
+  color: black;
 }
-
 ```
 
 ```js
-/ minified bundle.js (part of)
+// minified bundle.js (part of)
 exports=module.exports=__webpack_require__(1)(),
-exports.push([module.i,<strong>".comment {\r\n  color: black;\r\n}"</strong>,""]);
+exports.push([module.i,".comment {\r\n  color: black;\r\n}",""]);
 ```
 
 The minifier can’t compress this code because it’s a string. To minify the file content, we need to
@@ -178,19 +177,16 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          { loader: 'css-loader', options: <strong>{ minimize: true }</strong> },
+          { loader: 'css-loader', options: { minimize: true } },
         ],
       },
     ],
   },
 };
 
-```
-
 ### Further reading
 
 * [The UglifyJsPlugin docs](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
-
 * Other popular minifiers: [Babel
   Minify](https://github.com/webpack-contrib/babel-minify-webpack-plugin), [Google Closure
   Compiler](https://github.com/roman01la/webpack-closure-compiler)
@@ -216,20 +212,19 @@ warnings:
 // vue/dist/vue.runtime.esm.js
 // …
 if (process.env.NODE_ENV !== 'production') {
-    warn('props must be strings when using array syntax.');
+  warn('props must be strings when using array syntax.');
 }
 // …
 ```
 
 React works similarly – it loads a development build that includes the warnings:
 
-
 ```js
 // react/index.js
 if (process.env.NODE_ENV === 'production') {
-    module.exports = require('./cjs/react.production.min.js');
+  module.exports = require('./cjs/react.production.min.js');
 } else {
-    module.exports = require('./cjs/react.development.js');
+  module.exports = require('./cjs/react.development.js');
 }
 
 // react/cjs/react.development.js
@@ -249,27 +244,26 @@ the `optimization.nodeEnv: 'production'` option:
 ```js
 // webpack.config.js (for webpack 4)
 module.exports = {
-    optimization: {
+  optimization: {
     nodeEnv: 'production',
     minimize: true,
-    },
+  },
 };
 ```
 
 **In webpack 3,** use the [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/) instead:
-
 
 ```js
 // webpack.config.js (for webpack 3)
 const webpack = require('webpack');
 
 module.exports = {
-    plugins: [
+  plugins: [
     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"',
+      'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.UglifyJsPlugin(),
-    ],
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 };
 ```
 
@@ -277,17 +271,16 @@ Both the `optimization.nodeEnv` option and the `DefinePlugin` work the same way 
 they replace all occurrences of `process.env.NODE_ENV` with the specified value. With the
 config from above:
 
-
 1. Webpack will replace all occurrences of `process.env.NODE_ENV` with
     `"production"`:
 
     ```js
     // vue/dist/vue.runtime.esm.js
     if (typeof val === 'string') {
-    name = camelize(val);
-    res[name] = { type: null };
-    } else if (<strong>process.env.NODE_ENV !== 'production'</strong>) {
-    warn('props must be strings when using array syntax.');
+      name = camelize(val);
+      res[name] = { type: null };
+    } else if (process.env.NODE_ENV !== 'production') {
+      warn('props must be strings when using array syntax.');
     }
     ```
 
@@ -296,10 +289,10 @@ config from above:
     ```js
     // vue/dist/vue.runtime.esm.js
     if (typeof val === 'string') {
-    name = camelize(val);
-    res[name] = { type: null };
-    } else if (<strong>"production" !== 'production'</strong>) {
-    warn('props must be strings when using array syntax.');
+      name = camelize(val);
+      res[name] = { type: null };
+    } else if ("production" !== 'production') {
+      warn('props must be strings when using array syntax.');
     }
     ```
 
@@ -310,10 +303,10 @@ config from above:
     ```js
     // vue/dist/vue.runtime.esm.js
     if (typeof val === 'string') {
-    name = camelize(val);
-    res[name] = { type: null };
+      name = camelize(val);
+      res[name] = { type: null };
     } else if ("production" !== 'production') {
-    warn('props must be strings when using array syntax.');
+      warn('props must be strings when using array syntax.');
     }
     ```
 
@@ -322,16 +315,14 @@ config from above:
     ```js
     // vue/dist/vue.runtime.esm.js (without minification)
     if (typeof val === 'string') {
-    name = camelize(val);
-    res[name] = { type: null };
+      name = camelize(val);
+      res[name] = { type: null };
     }
     ```
-
 
 ### Further reading
 
 * [What “environment variables” are](https://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them)
-
 * Webpack docs about: [`DefinePlugin`](https://webpack.js.org/plugins/define-plugin/),
   [`EnvironmentPlugin`](https://webpack.js.org/plugins/environment-plugin/)
 
@@ -392,10 +383,8 @@ Any minifier that supports dead code removal
 or [Google Closure Compiler plugin](https://github.com/roman01la/webpack-closure-compiler))
 will do the trick.
 
-
 {% Aside 'warning' %}
 Don’t accidentally compile ES modules into CommonJS ones.
-
 
 If you use Babel with `babel-preset-env` or `babel-preset-es2015`, check the settings of these
 presets. By default, they transpile ES’ `import` and `export` to CommonJS’ `require` and
@@ -460,7 +449,6 @@ download/parse time of your bundle and memory consumption. Make sure to not embe
 lot of them – or increased bundle time would outweigh the benefit of inlining.
 {% endAside %}
 
-
 [`svg-url-loader`](https://github.com/bhovhannes/svg-url-loader) works just like `url-loader` –
 except that it encodes files with the [URL
 encoding](https://developer.mozilla.org/docs/Glossary/percent-encoding) instead of the Base64
@@ -469,18 +457,18 @@ more size-effective.
 
 ```js
 module.exports = {
-    module: {
+  module: {
     rules: [
-        {
+      {
         test: /\.svg$/,
         loader: "svg-url-loader",
         options: {
-            limit: 10 * 1024,
-            noquotes: true,
-        },
-        },
-    ],
-    },
+          limit: 10 * 1024,
+          noquotes: true
+        }
+      }
+    ]
+  }
 };
 ```
 
@@ -500,16 +488,16 @@ one for SVG ones), we’ll include this loader as a separate rule with [`enforce
 ```js
 // webpack.config.js
 module.exports = {
-module: {
+  module: {
     rules: [
-    {
+      {
         test: /\.(jpe?g|png|gif|svg)$/,
         loader: 'image-webpack-loader',
         // This will apply the loader before the other ones
-        enforce: 'pre',
-    },
-    ],
-},
+        enforce: 'pre'
+      }
+    ]
+  }
 };
 ```
 
@@ -522,7 +510,6 @@ optimization](https://images.guide/).
 
 * ["What is base64 encoding used
   for?"](https://stackoverflow.com/questions/201479/what-is-base-64-encoding-used-for)
-
 * Addy Osmani’s [guide on image optimization](https://images.guide/)
 
 ## Optimize dependencies
@@ -560,7 +547,7 @@ render();
 
 // comments.js
 export function render(data, target) {
-    console.log('Rendered!');
+  console.log('Rendered!');
 }
 ```
 ↓
@@ -569,22 +556,18 @@ export function render(data, target) {
 // bundle.js (part  of)
 /* 0 */
 (function(module, __webpack_exports__, __webpack_require__) {
-
-    "use strict";
-    Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-    var __WEBPACK_IMPORTED_MODULE_0__comments_js__ = __webpack_require__(1);
-    Object(__WEBPACK_IMPORTED_MODULE_0__comments_js__["a" /* render */])();
-
+  "use strict";
+  Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+  var __WEBPACK_IMPORTED_MODULE_0__comments_js__ = __webpack_require__(1);
+  Object(__WEBPACK_IMPORTED_MODULE_0__comments_js__["a" /* render */])();
 }),
 /* 1 */
 (function(module, __webpack_exports__, __webpack_require__) {
-
-    "use strict";
-    __webpack_exports__["a"] = render;
-    function render(data, target) {
+  "use strict";
+  __webpack_exports__["a"] = render;
+  function render(data, target) {
     console.log('Rendered!');
-    }
-
+  }
 })
 ```
 In the past, this was required to isolate CommonJS/AMD modules from each other. However, this added
@@ -602,7 +585,7 @@ render();
 
 // comments.js
 export function render(data, target) {
-    console.log('Rendered!');
+  console.log('Rendered!');
 }
 ```
 
@@ -615,18 +598,16 @@ export function render(data, target) {
 // bundle.js (part of; compiled with ModuleConcatenationPlugin)
 /* 0 */
 (function(module, __webpack_exports__, __webpack_require__) {
+  "use strict";
+  Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-    "use strict";
-    Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-
-    // CONCATENATED MODULE: ./comments.js
+  // CONCATENATED MODULE: ./comments.js
     function render(data, target) {
     console.log('Rendered!');
-    }
+  }
 
-    // CONCATENATED MODULE: ./index.js
-    render();
-
+  // CONCATENATED MODULE: ./index.js
+  render();
 })
 ```
 
@@ -640,9 +621,9 @@ To turn on this behavior, **in webpack 4**, enable the `optimization.concatenate
 ```js
 // webpack.config.js (for webpack 4)
 module.exports = {
-    optimization: {
-    concatenateModules: true,
-    },
+  optimization: {
+    concatenateModules: true
+  }
 };
 ```
 
@@ -653,9 +634,9 @@ module.exports = {
 const webpack = require('webpack');
 
 module.exports = {
-    plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    ],
+  plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ]
 };
 ```
 
@@ -670,10 +651,8 @@ enabled in production.
 
 * Webpack docs [for the
   ModuleConcatenationPlugin](https://webpack.js.org/plugins/module-concatenation-plugin/)
-
 * [“Brief introduction to scope
   hoisting”](https://medium.com/webpack/brief-introduction-to-scope-hoisting-in-webpack-8435084c171f)
-
 * Detailed description of [what this plugin
   does](https://medium.com/webpack/webpack-freelancing-log-book-week-5-7-4764be3266f5)
 
@@ -701,10 +680,10 @@ dependency names to variable names:
 ```js
 // webpack.config.js
 module.exports = {
-    externals: {
+  externals: {
     'react': 'React',
-    'react-dom': 'ReactDOM',
-    },
+    'react-dom': 'ReactDOM'
+  }
 };
 ```
 
@@ -714,14 +693,14 @@ replaced with something like this:
 ```js
 // bundle.js (part of)
 (function(module, exports) {
-    // A module that exports `window.React`. Without `externals`,
-    // this module would include the whole React bundle
-    module.exports = React;
+  // A module that exports `window.React`. Without `externals`,
+  // this module would include the whole React bundle
+  module.exports = React;
 }),
 (function(module, exports) {
-    // A module that exports `window.ReactDOM`. Without `externals`,
-    // this module would include the whole ReactDOM bundle
-    module.exports = ReactDOM;
+  // A module that exports `window.ReactDOM`. Without `externals`,
+  // this module would include the whole ReactDOM bundle
+  module.exports = ReactDOM;
 })
 ```
 
@@ -736,12 +715,17 @@ To do this, compile the webpack code as an AMD bundle and alias modules to libra
 ```js
 // webpack.config.js
 module.exports = {
-    output: { libraryTarget: 'amd' },
-
-    externals: {
-    'react': { amd: '/libraries/react.min.js' },
-    'react-dom': { amd: '/libraries/react-dom.min.js' },
+  output: {
+    libraryTarget: 'amd'
+  },
+  externals: {
+    'react': {
+      amd: '/libraries/react.min.js'
     },
+    'react-dom': {
+      amd: '/libraries/react-dom.min.js'
+    }
+  }
 };
 ```
 
