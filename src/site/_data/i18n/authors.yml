@@ -4,7 +4,7 @@ iamakulov:
   description:
     en: Contracting software engineer · Blogging, open source, performance, UX
 
-pbakaus: 
+pbakaus:
   title:
     en: Paul Bakaus
   description:
@@ -3554,7 +3554,7 @@ firt:
   title:
     en: Maximiliano Firtman
   description:
-    en:  Author of Hacking Web Performance from O'Reilly
+    en: Author of Hacking Web Performance from O'Reilly
 
 patrickbrosset:
   title:
@@ -3648,15 +3648,15 @@ alexandrawhite:
 
 svenmay:
   title:
-      en: Sven May
+    en: Sven May
   description:
-      en: Privacy Web Ecosystem Consultant at Google
+    en: Privacy Web Ecosystem Consultant at Google
 
 denisstasyev:
   title:
-      en: Denis Stasyev
+    en: Denis Stasyev
   description:
-      en: Software Engineer
+    en: Software Engineer
 
 lozandier:
   title:
@@ -3737,16 +3737,16 @@ chrispalmer:
     en: Software Security Engineer at Google
 
 karldubost:
- title:
-   en: Karl Dubost
- description:
-   en: Web Compatibility Engineering Manager at Mozilla
+  title:
+    en: Karl Dubost
+  description:
+    en: Web Compatibility Engineering Manager at Mozilla
 
 abeyad:
- title:
-   en: Ali Beyad
- description:
-   en: Software Engineer
+  title:
+    en: Ali Beyad
+  description:
+    en: Software Engineer
 
 sdenaro:
   title:
@@ -3773,3 +3773,9 @@ kevinkiklee:
   description:
     en: Developer Relations Engineer, Google Chrome
     ko: Google Chrome의 개발자 관계 엔지니어
+
+nikilmathew:
+  title:
+    en: Nikil Mathew
+  description:
+    en: Lead Software engineer at Mishipay
