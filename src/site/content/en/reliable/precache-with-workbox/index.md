@@ -31,10 +31,10 @@ if you had to manage the versioning and updating of these files on your own.
 
 Precaching is driven by a list of URLs and associated versioning information for
 each URL. Taken together, this information is known as a
-[**precache manifest**](https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list).
+[**precache manifest**](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/#explanation-of-the-precache-list).
 The manifest is the "source of truth" for the state of everything meant to be in
 the precache for a given version of a web app. A precache manifest, in the
-format used by [Workbox](https://developers.google.com/web/tools/workbox/),
+format used by [Workbox](https://developer.chrome.com/docs/workbox/),
 looks something like:
 
 ```js
@@ -66,7 +66,7 @@ assets are cached, they need to respond to outgoing requests. That requires a
 been precached, and return those cached responses reliably, bypassing the
 network in the process. Since the service worker checks the cache for responses
 (and uses those before the network), this is called a
-[**cache-first strategy**](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network).
+[**cache-first strategy**](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network).
 
 ## Efficient updates
 

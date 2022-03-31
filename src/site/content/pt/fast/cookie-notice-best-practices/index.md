@@ -91,7 +91,7 @@ Estes são alguns dos problemas de mudança de layout mais comuns associados a a
 Essas técnicas exigem mais trabalho para serem implementadas, mas podem otimizar ainda mais o carregamento de scripts de aviso de cookie:
 
 - Armazenar em cache e servir scripts de aviso de cookie de terceiros a partir de seus próprios servidores pode melhorar a velocidade de entrega desses recursos.
-- O uso de [service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers) pode permitir mais controle sobre a [busca e o armazenamento em cache de scripts de terceiros](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests) , como scripts de aviso de cookie.
+- O uso de [service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers) pode permitir mais controle sobre a [busca e o armazenamento em cache de scripts de terceiros](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations) , como scripts de aviso de cookie.
 
 ## Medição de desempenho
 

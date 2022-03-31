@@ -21,7 +21,7 @@ tags:
 ---
 
 In this article, we're going to take a quick tour of some ways of extending
-[Workbox](https://developers.google.com/web/tools/workbox). By the end, you'll
+[Workbox](https://developer.chrome.com/docs/workbox/). By the end, you'll
 be writing your own strategies and plugins, and hopefully sharing them with the
 world.
 
@@ -35,14 +35,14 @@ Dev Summit talk covering the same material:
 At its core, Workbox is a set of libraries to help with common service worker
 caching scenarios. And when we've written about Workbox in the past, the
 emphasis has been on "common" scenarios. For most developers, the
-[caching strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
+[caching strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/)
 that Workbox already provides will handle your caching needs.
 
 The built-in strategies include
-[stale-while-revalidate](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate),
+[stale-while-revalidate](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#stale-while-revalidate),
 where a cached response is used to respond to a request immediately, while the
 cache is also updated so that it's fresh the next time around. They also include
-[network-first](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_first_network_falling_back_to_cache),
+[network-first](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#network-first-network-falling-back-to-cache),
 falling back to the cache when the network is unavailable, and a few more.
 
 ## Custom strategies
@@ -50,11 +50,11 @@ falling back to the cache when the network is unavailable, and a few more.
 But what if you wanted to go beyond those common caching scenarios? Let's cover
 writing your own custom caching strategies.
 [Workbox v6](https://github.com/GoogleChrome/workbox/releases/tag/v6.0.0) offers
-a new [`Strategy` base class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy) that sits in front of lower-level APIs, like
+a new [`Strategy` base class](https://developer.chrome.com/docs/workbox/reference/workbox-strategies/#type-Strategy) that sits in front of lower-level APIs, like
 [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) and
 [Cache Storage](https://developer.mozilla.org/docs/Web/API/CacheStorage).
 You can extend the `Strategy` base class, and then implement your own logic in
-the [`_handle()` method](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy#_handle).
+the [`_handle()` method](https://developer.chrome.com/docs/workbox/reference/workbox-strategies/#type-Strategy).
 
 ### Handle simultaneous, duplicate requests with DedupeNetworkFirst
 
@@ -64,10 +64,10 @@ of the response is then used to fulfill all of the in-flight requests, saving
 bandwidth that would otherwise be wasted.
 
 Here's the code you can use to implement that, by extending the [`NetworkFirst`
-strategy](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.NetworkFirst) (which itself extends the `Strategy` base):
+strategy](https://developer.chrome.com/docs/workbox/reference/workbox-strategies/#type-NetworkFirst) (which itself extends the `Strategy` base):
 
 ```javascript
-// See https://developers.google.com/web/tools/workbox/guides/using-bundlers
+// See https://developer.chrome.com/docs/workbox/the-ways-of-workbox/#using-a-bundler
 import {NetworkFirst} from 'workbox-strategies';
 
 class DedupeNetworkFirst extends NetworkFirst {
@@ -117,7 +117,7 @@ stale-while-revalidate, where both the network and cache are checked at the same
 time, with a race to see which will return a response first.
 
 ```javascript
-// See https://developers.google.com/web/tools/workbox/guides/using-bundlers
+// See https://developer.chrome.com/docs/workbox/the-ways-of-workbox/#using-a-bundler
 import {Strategy} from 'workbox-strategies';
 
 // Instead of extending an existing strategy,
@@ -152,7 +152,7 @@ class CacheNetworkRace extends Strategy {
 ## StategyHandler: the recommended approach for creating custom strategies
 
 Although it's not required, it's strongly recommended that when interacting with
-the network or cache, you use the instance of the [`StrategyHandler` class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.StrategyHandler) that's
+the network or cache, you use the instance of the [`StrategyHandler` class](https://developer.chrome.com/docs/workbox/reference/workbox-strategies/#type-StrategyHandler) that's
 passed to your `_handle()` method. It's the second parameter, called `handler`
 in the example code.
 
@@ -198,11 +198,11 @@ Writing a Workbox strategy class is a great way to package up response logic in
 a reusable, and shareable, form. But once you've written one, how do you use it
 within your larger Workbox service worker? That's the best part—you can drop any
 of these strategies directly into your existing Workbox
-[routing rules](https://developers.google.com/web/tools/workbox/guides/route-requests),
+[routing rules](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#applying-caching-strategies-with-route-matching),
 just like any of the "official" strategies.
 
 ```javascript
-// See https://developers.google.com/web/tools/workbox/guides/using-bundlers
+// See https://developer.chrome.com/docs/workbox/the-ways-of-workbox/#using-a-bundler
 import {ExpirationPlugin} from 'workbox-expiration';
 import {registerRoute} from 'workbox-routing';
 
@@ -224,7 +224,7 @@ registerRoute(
 A properly written strategy should automatically work with all plugins as well.
 This applies to the standard plugins that Workbox provides, like the one that
 handles
-[cache expiration](https://developers.google.com/web/tools/workbox/modules/workbox-expiration).
+[cache expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/).
 But you're not limited to using the standard set of plugins! Another great way
 to extend Workbox is to write your own reusable plugins.
 
@@ -240,7 +240,7 @@ request fails, or when a cached response is about to be returned to the page.
 
 Here's an overview of all the events that a plugin could listen to. Technical
 details about implementing callbacks for these events is in the
-[Workbox documentation](https://developers.google.com/web/tools/workbox/guides/using-plugins).
+[Workbox documentation](https://developer.chrome.com/docs/workbox/using-plugins/).
 
 <div>
   <table>
@@ -359,7 +359,7 @@ wondering which one to write for a given use case.
 A good rule of thumb is to sketch out a diagram of your desired request and
 response flow, taking into account the network and cache interactions. Then,
 compare that to the
-[diagrams](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
+[diagrams](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/)
 of the built-in strategies. If your diagram has a set of connections then that's
 fundamentally different, that's a sign that a custom strategy is the best
 solution.

@@ -33,7 +33,7 @@ tags:
 
 <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/onUIDiaFNNHOmnwXzRh1.png", alt="Приложение Podcasts, воспроизводящее скачанный выпуск подкаста.", width="800", height="440" %} <figcaption>Скачанные выпуски подкастов можно воспроизводить даже без подключения к сети.</figcaption></figure>
 
-{% Details %} {% DetailsSummary %} Как реализовать эту функцию в веб-приложении {% endDetailsSummary %} Ранее скачанный мультимедийный контент можно воспроизводить из кеша, например при помощи рецепта <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Serve cached audio and video</a> («Воспроизведение кешированного аудио и видео») из библиотеки <a href="https://developers.google.com/web/tools/workbox">Workbox</a>. Другие типы контента всегда можно сохранить либо в кеше, либо в IndexedDB. Подробнее о том, в каких случаях следует использовать различные технологии хранения данных, см. в статье <a href="/storage-for-the-web/">Хранение данных в веб-браузере</a>. Если вам нужно хранить данные без риска их потери при нехватке доступного объема памяти, используйте <a href="/persistent-storage/">Persistent Storage API</a>. {% endDetails %}
+{% Details %} {% DetailsSummary %} Как реализовать эту функцию в веб-приложении {% endDetailsSummary %} Ранее скачанный мультимедийный контент можно воспроизводить из кеша, например при помощи рецепта <a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Serve cached audio and video</a> («Воспроизведение кешированного аудио и видео») из библиотеки <a href="https://developer.chrome.com/docs/workbox/">Workbox</a>. Другие типы контента всегда можно сохранить либо в кеше, либо в IndexedDB. Подробнее о том, в каких случаях следует использовать различные технологии хранения данных, см. в статье <a href="/storage-for-the-web/">Хранение данных в веб-браузере</a>. Если вам нужно хранить данные без риска их потери при нехватке доступного объема памяти, используйте <a href="/persistent-storage/">Persistent Storage API</a>. {% endDetails %}
 
 ## Автоматическое фоновое скачивание
 
@@ -209,8 +209,8 @@ Push-уведомления в Интернете стали довольно н
         <td><a href="#offline-content-available-and-media-playable">Доступ к контенту и воспроизведение медиафайлов в офлайн-режиме</a></td>
         <td>
           <ul>
-            <li><a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Воспроизведение кешированного аудио и видео</a></li>
-            <li><a href="https://developers.google.com/web/tools/workbox">Библиотека Workbox</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Воспроизведение кешированного аудио и видео</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">Библиотека Workbox</a></li>
             <li><a href="/storage-for-the-web/">Storage API</a></li>
             <li><a href="/persistent-storage/">Persistent Storage API</a></li>
           </ul>

@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-请务必使用服务工作进程来[预缓存](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)`action`页面，以便它能够快速加载并可靠地工作，即便用户处于离线状态。[Workbox](/precache-with-workbox/) 这个工具可以帮您在服务工作进程中[实现预缓存](https://developers.google.com/web/tools/workbox/)。
+请务必使用服务工作进程来[预缓存](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)`action`页面，以便它能够快速加载并可靠地工作，即便用户处于离线状态。[Workbox](/precache-with-workbox/) 这个工具可以帮您在服务工作进程中[实现预缓存](https://developer.chrome.com/docs/workbox/)。
 
 ### 处理 POST 分享
 

@@ -51,7 +51,7 @@ resilience](/reliable/) for dependability.
 ### Caching strategies
 
 To mitigate network issues and improve user experience, the JD.ID team used
-[Workbox](https://developers.google.com/web/tools/workbox) to ensure its PWA
+[Workbox](https://developer.chrome.com/docs/workbox/) to ensure its PWA
 performed well even when the user was offline or on a bad network. Workbox made
 it easier to execute their PWA caching strategy, which consisted of 3 parts:
 
