@@ -293,7 +293,7 @@ selectors](https://drafts.csswg.org/selectors/).
 An initial implementation for prerendering that covers some of the previously
 discussed features is available as a
 [Chrome origin trial](https://developer.chrome.com/origintrials/#/view_trial/1325184190353768449)
-which will run from Chrome 94 to 98. Following are the
+which will run from Chrome 94 to 100 (Android only). Following are the
 [key features](https://github.com/mfalken/alternate-loading-modes/blob/chrome-origin-trial/same-origin-explainer.md)
 included in this trial.
 
@@ -398,7 +398,7 @@ methods to measure the performance of the origin trial.
 ### Demo
 
 To check out a
-[simple demo for the prerendering trial](https://prerender2-specrules.glitch.me/),
+[simple demo for the prerendering trial](https://prerender2-speculationrules.glitch.me/),
 [enable the `enable-prerender2` flag in Chrome](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 You will need to enable this for the demo to work.
 

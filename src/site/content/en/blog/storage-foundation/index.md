@@ -32,7 +32,7 @@ origin_trial:
 considering our options, we have decided to continue working on the features proposed by this API in
 the context of the origin private file system of the File System Access API instead. For more
 information on present use, read
-[Accessing files optimized for performance from the origin private file system](/file-system/access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
+[Accessing files optimized for performance from the origin private file system](/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
 {% endAside %}
 
 The web platform increasingly offers developers the tools they need to build fined-tuned

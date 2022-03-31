@@ -8,14 +8,14 @@ description: |
   Learn how to make your Progressive Web App feel like a "real" app by understanding
   how to implement platform-specific app patterns with web technologies.
 date: 2020-06-15
-updated: 2020-07-23
+updated: 2022-03-25
 tags:
   - capabilities
 ---
 
 When you play Progressive Web App buzzword bingo, it is a safe bet to set on "PWAs are just websites". Microsoft's PWA documentation [agrees](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), we [say it](/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) on this very site, and even PWA nominators Frances Berriman and Alex Russell [write so](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites), too. Yes, PWAs are just websites, but they are also way more than that. If done right, a PWA will not feel like a website, but like a "real" app. Now what does it mean to feel like a real app?
 
-In order to answer this question, let me use the Apple [Podcasts](https://support.apple.com/en-us/HT201859) app as an example.
+To answer this question, let me use the Apple [Podcasts](https://support.apple.com/en-us/HT201859) app as an example.
 It is available on macOS on desktop and on iOS (and iPadOS respectively) on mobile.
 While Podcasts is a media application, the core ideas I illustrate with its help apply to other categories of apps, too.
 
@@ -27,13 +27,13 @@ While Podcasts is a media application, the core ideas I illustrate with its help
 {% Aside 'caution' %}
 Each iOS/Android/desktop app feature that is listed below has a **How to do this on the web**
 component that you can open for more details.
-Please note that not all browsers on the various operating systems support all the listed APIs
+Note that not all browsers on the various operating systems support all the listed APIs
 or functionalities. Be sure to carefully review the compatibility notes in the linked articles.
 {% endAside %}
 
 ## Capable of running offline
 
-If you take a step back and think of some of the platform-specific applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
+If you take a step back and think of the platform-specific applications you have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMbGLQkbLROxmUMdxLET.png", alt="The Podcasts app showing a 'Cannot connect right now.' info message when no network connection is available.", width="800", height="440" %}
@@ -136,7 +136,7 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 
 ## State synchronized over the cloud
 
-At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop and vice versa. The play state is kept in sync, and listened-to episodes are automatically deleted.
+At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop. The play state is kept in sync, and listened-to episodes are automatically deleted.
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uVJJ40Zxi5jx1AP1jd9U.png", alt="The Podcasts app's settings menu in the 'Advanced' section where the 'Sync subscriptions across devices' option is activated.", width="800", height="525" %}

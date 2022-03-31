@@ -34,12 +34,13 @@ bfcache는 사용자가 다른 곳으로 이동할 때 페이지의 전체 스�
 웹사이트를 방문하고 다른 페이지로 이동하기 위해 링크를 클릭한 적이 몇 번이나 있었는데, 원하는 페이지가 아님을 깨닫고 뒤로 버튼을 클릭했습니까? 그 순간에 bfcache는 이전 페이지가 로드되는 속도에 큰 차이를 만들 수 있습니다.
 
 <div class="table-wrapper">
-  <table data-alignment="top&gt;
-    &lt;tr&gt;
-      &lt;td width=">
-<strong>bfcache가 활성화되지 <em>않은 경우</em></strong>
+  <table data-alignment="top">
+    <tr>
+      <td width="30%">
+        <strong>bfcache가 활성화되지 <em>않은 경우</em></strong>
+      </td>
       <td>이전 페이지를 로드하기 위해 새 요청이 시작되고 해당 페이지가 반복 방문에 대해 얼마나 <a href="/reliable/#the-options-in-your-caching-toolbox">최적화</a>되었는지에 따라 브라우저는 리소스의 일부(또는 전체)를 다시 다운로드하고, 다시 구문 분석하고, 다시 실행해야 할 수 있습니다. 방금 다운로드했습니다.</td>
-    
+    </tr>
     <tr>
       <td><strong>bfcache가 활성화된 <em>경우</em></strong></td>
       <td>이전 페이지를 로드하는 것은 <em>본질적으로 즉각적입니다</em> . 네트워크에 전혀 연결하지 않고도 전체 페이지를 메모리에서 복원할 수 있기 때문입니다.</td>

@@ -818,7 +818,7 @@ While reports are sent in both cases, `-Report-Only` headers do not enforce the 
 The [`ReportingObserver`](/reporting-observer) JavaScript API can help you observe client-side
 warnings.
 
-`ReportingObserver` and the `Reporting-Enpoints` header generate reports that look the same, but they enable slightly different uses cases.
+`ReportingObserver` and the `Reporting-Endpoints` header generate reports that look the same, but they enable slightly different uses cases.
 
 Use `ReportingObserver` if:
 
