@@ -6,7 +6,7 @@ subhead: >
 description: >
   Discover some of the interesting features that landed in stable and beta web browsers during March 2022.
 date: 2022-03-31
-hero: image/kheDArv5csY6rvQUJDbWRscckLr1/PP0tuaoQwnakBvk1LFMT.jpg
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/PTLdV9YgDfQdXSW9PnL2.jpg
 alt: A DJ cross-fading tracks.
 authors:
   - rachelandrew
@@ -31,11 +31,11 @@ Chrome 100 includes the new value of `plus-lighter` for the CSS [mix-blend-mode]
 
 {% BrowserCompat 'css.properties.mix-blend-mode.plus-lighter' %}
 
-Safari 15.4 includes the [contain](https://developer.mozilla.org/docs/Web/CSS/contain) property, allowing for CSS containment. 
+Safari 15.4 includes the [`contain`](https://developer.mozilla.org/docs/Web/CSS/contain) property, allowing for CSS containment. 
 
 {% BrowserCompat 'css.properties.contain' %}
 
-Also in Safari 15.4 is [accent-color](/accent-color/), which gives control over the accent color used on some form controls. 
+Also in Safari 15.4 is [`accent-color`](/accent-color/), which gives control over the accent color used on some form controls. 
 
 {% BrowserCompat 'css.properties.accent-color' %}
 
@@ -63,7 +63,7 @@ h1 {
 
 {% BrowserCompat 'css.types.color.hwb' %}
 
-Firefox 99 includes the [pdfViewerEnabled](https://developer.mozilla.org/docs/Web/API/Navigator/pdfViewerEnabled) property of the Navigator interface. This property indicates if the browser supports inline display of PDF files.
+Firefox 99 includes the [`pdfViewerEnabled`](https://developer.mozilla.org/docs/Web/API/Navigator/pdfViewerEnabled) property of the Navigator interface. This property indicates if the browser supports inline display of PDF files.
 
 ```
 if (!navigator.pdfViewerEnabled) {
