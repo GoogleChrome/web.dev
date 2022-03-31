@@ -137,11 +137,11 @@ whether to implement a service worker-based approach, or just rely on the
 * You're already using a service worker in your web app.
 * You need fine-grained control over the contents of your caches, and want to
   implement something like a least-recently used expiration policy. Workbox's
-  [Cache Expiration](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration)
+  [Cache Expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/)
   module can help with this.
 * You want to be notified when a stale response changes in the background during
   the revalidation step. Workbox's
-  [Broadcast Cache Update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
+  [Broadcast Cache Update](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/)
   module can help with this.
 * You need this `stale-while-revalidate` behavior in all modern browsers.
 

@@ -54,7 +54,7 @@ Você não pode ter um PWA sem um [service worker](https://developers.google.com
 
 ### Gere-o se puder {: #generate }
 
-Evite escrever um script de service worker manualmente. Escrever service workers manualmente requer o gerenciamento manual de recursos em cache e reescrever a lógica que é comum à maioria das bibliotecas de service workers, como o [Workbox](https://developers.google.com/web/tools/workbox/).
+Evite escrever um script de service worker manualmente. Escrever service workers manualmente requer o gerenciamento manual de recursos em cache e reescrever a lógica que é comum à maioria das bibliotecas de service workers, como o [Workbox](https://developer.chrome.com/docs/workbox/).
 
 Dito isso, devido à nossa pilha de tecnologia interna, não podíamos usar uma biblioteca para gerar e gerenciar nosso service worker. Nossos aprendizados abaixo às vezes refletem isso. Acesse [Armadilhas para service workers não gerados](#pitfalls) para ler mais.
 
@@ -109,7 +109,7 @@ Com o lançamento da [API de armazenamento de cookies](https://developers.google
 
 ### Certifique-se de que o script do service worker mude se algum arquivo estático em cache for alterado {: #regeneration}
 
-Um padrão PWA comum é um service worker instalar todos os arquivos de aplicativos estáticos durante sua `install`, o que permite que os clientes acessem o cache da API de armazenamento em cache diretamente para todas as visitas subsequentes. Os service workers são instalados apenas quando o navegador detecta que o script do service worker mudou de alguma forma, portanto, tínhamos que garantir que o próprio arquivo de script do service worker mudasse de alguma forma quando um arquivo em cache fosse alterado. Fizemos isso manualmente incorporando um hash do conjunto de arquivos de recursos estáticos em nosso script do service worker, de forma que cada versão produzisse um arquivo JavaScript distinto do service worker. As bibliotecas de service workers, como [Workbox,](https://developers.google.com/web/tools/workbox/) automatizam esse processo para você.
+Um padrão PWA comum é um service worker instalar todos os arquivos de aplicativos estáticos durante sua `install`, o que permite que os clientes acessem o cache da API de armazenamento em cache diretamente para todas as visitas subsequentes. Os service workers são instalados apenas quando o navegador detecta que o script do service worker mudou de alguma forma, portanto, tínhamos que garantir que o próprio arquivo de script do service worker mudasse de alguma forma quando um arquivo em cache fosse alterado. Fizemos isso manualmente incorporando um hash do conjunto de arquivos de recursos estáticos em nosso script do service worker, de forma que cada versão produzisse um arquivo JavaScript distinto do service worker. As bibliotecas de service workers, como [Workbox,](https://developer.chrome.com/docs/workbox/) automatizam esse processo para você.
 
 ### Teste de unidades {: #unit-testing}
 

@@ -128,7 +128,7 @@ AppCache 매니페스트에 토큰을 추가한 후에는 `about://appcache-inte
 
 우리는 전체 AppCache 인터페이스를 복제하지는 않지만 서비스 작업자를 사용하여 AppCache의 일부 기능을 복제하는 [폴리필](https://github.com/GoogleChromeLabs/sw-appcache-behavior)을 제공했습니다. 이는 특히 `window.applicationCache` 인터페이스 또는 관련 AppCache 이벤트를 대체하지 않습니다.
 
-더 복잡한 경우에는 [Workbox](https://developers.google.com/web/tools/workbox/)와 같은 라이브러리를 사용하여 여러분의 웹 앱용 최신 서비스 작업자를 쉽게 만들 수 있습니다.
+더 복잡한 경우에는 [Workbox](https://developer.chrome.com/docs/workbox/)와 같은 라이브러리를 사용하여 여러분의 웹 앱용 최신 서비스 작업자를 쉽게 만들 수 있습니다.
 
 ### 상호 배타적인 서비스 작업자와 AppCache
 
@@ -172,7 +172,7 @@ Android 애플리케이션의 일부 개발자는 Chrome [WebView](https://devel
 ### 도구
 
 - [AppCache 폴리필](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA 빌더](https://www.pwabuilder.com/)
 
 ## 지원 받기
