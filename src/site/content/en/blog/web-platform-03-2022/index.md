@@ -51,7 +51,7 @@ Safari 15.4 also completed support for the [`:focus-visible`](https://developer.
 
 Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release.
 
-New betas in March were Chrome 101, and [Firefox 99](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/99). 
+New betas in March were [Chrome 101](https://blog.chromium.org/2022/03/chrome-101-federated-credential.html), and [Firefox 99](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/99). 
 
 Chrome 101 beta includes [hwb color notation](https://developer.mozilla.org/docs/Web/CSS/color_value/hwb). This specifies color according to its hue, whiteness, and blackness. As with other color notation, an optional alpha component specifies opacity.
 
@@ -65,7 +65,7 @@ h1 {
 
 Firefox 99 includes the [`pdfViewerEnabled`](https://developer.mozilla.org/docs/Web/API/Navigator/pdfViewerEnabled) property of the Navigator interface. This property indicates if the browser supports inline display of PDF files.
 
-```
+```js
 if (!navigator.pdfViewerEnabled) {
   // The browser does not support inline viewing of PDF files.
 }
