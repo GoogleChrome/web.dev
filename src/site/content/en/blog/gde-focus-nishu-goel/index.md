@@ -27,7 +27,7 @@ Nishu Goel is a renowned web engineer from India, Google Developer Expert for An
 
 In 2018, my professional career took off, and I started working with Angular. Angular became the primary technology that connected me to the GDE program. Around the same time, I started writing blog posts and creating content around the subject I was working on and learning . Dhananjay Kumar helped me get started on this journey and ensured to keep me on track. My first articles tackled the basics of Angular. Soon after I started speaking at events-the first one being ngNepal, Nepal's Angular Conference. This led to more speaking invitations about Angular and web technologies. 
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/ujceg3BgclYOgIwDjtt7.jpeg", alt="ALT_TEXT_HERE", width="800", height="533" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/ujceg3BgclYOgIwDjtt7.jpeg", alt="Nishu and other people from ng-india.", width="800", height="533" %}
 
 **Monika**: What's your professional experience technology-wise?
 
