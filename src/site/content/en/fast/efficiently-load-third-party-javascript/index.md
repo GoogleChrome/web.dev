@@ -107,6 +107,7 @@ The `preconnect` hint is best used for only the most critical connections; for l
 <link rel="preconnect" href="http://example.com">
 <link rel="dns-prefetch" href="http://example.com">
 ```
+
 ## Lazy-load third-party resources
 
 Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
