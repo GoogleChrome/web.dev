@@ -241,9 +241,9 @@ Looking at the [encoding API of
 libwebp](/speed/webp/docs/api#simple_encoding_api),
 it expects an array of bytes in RGB, RGBA, BGR or BGRA. Luckily, the Canvas API
 has
-[`getImageData()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData),
+[`getImageData()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData),
 that gives us an
-[Uint8ClampedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray)
+[Uint8ClampedArray](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray)
 containing the image data in RGBA:
 
 ```js
@@ -440,7 +440,7 @@ environment:
 
 - Firstly, there is `env.memory`. The Wasm module is unaware of the outside
   world so to speak, so it needs to get some memory to work with. Enter
-  [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory).
+  [`WebAssembly.Memory`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory).
   It represents a (optionally growable) piece of linear memory. The sizing
   parameters are in "in units of WebAssembly pages", meaning the code above
   allocates 1 page of memory, with each page having a size of 64
