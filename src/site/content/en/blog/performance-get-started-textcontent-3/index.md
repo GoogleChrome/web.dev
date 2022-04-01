@@ -153,7 +153,7 @@ when it is requested. Different server types, of course, have different setup re
 You configure the Apache server, for example, via the `.htaccess` file, which would include
 something like this.
 
-```apacheapacheconf
+```apacheconf
 <IfModule deflate_module>
     # Enable compression for the following file types
     AddOutputFilterByType        	\
