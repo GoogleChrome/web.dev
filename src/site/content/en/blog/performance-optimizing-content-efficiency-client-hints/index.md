@@ -152,9 +152,9 @@ the _extrinsic size_ of that `<img>` element becomes 256x192.
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/mYLOc0CZtVxXCNDoHcsK.svg", alt="An illustration of intrinsic size versus
 extrinsic size. A box sized 320x240 pixels is shown with a label of "INTRINSIC
 SIZE". Within it is a smaller box sized at 256x192 pixels, which represents an
-HTML &lt;img&gt; element with CSS applied to it. This box is labeled "EXTRINSIC
+HTML img element with CSS applied to it. This box is labeled "EXTRINSIC
 SIZE". To the right is a box containing CSS applied to the element which
-modifies the &lt;img&gt; element's layout so that its extrinsic size differs
+modifies the img element's layout so that its extrinsic size differs
 from its intrinsic size.", width="265", height="150" %}
   <figcaption><em><strong>Figure 1</strong>. An illustration of intrinsic versus
 extrinsic size. An image gains its extrinsic size after layout factors have been
