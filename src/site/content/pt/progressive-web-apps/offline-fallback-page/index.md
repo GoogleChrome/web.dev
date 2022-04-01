@@ -242,6 +242,6 @@ Agora que seu site tem uma página de fallback off-line, você pode estar se per
 
 ### Observação na lateral sobre a exibição de uma página substituta off-line com o Workbox.js
 
-Você deve ter ouvido falar do [Workbox.js](https://developers.google.com/web/tools/workbox). Workbox.js é um conjunto de bibliotecas de JavaScript para adicionar suporte off-line a aplicativos da web. Se você preferir escrever menos código de trabalho de serviço, pode usar a receita do Workbox.js apenas para uma [página off-line](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
+Você deve ter ouvido falar do [Workbox.js](https://developer.chrome.com/docs/workbox/). Workbox.js é um conjunto de bibliotecas de JavaScript para adicionar suporte off-line a aplicativos da web. Se você preferir escrever menos código de trabalho de serviço, pode usar a receita do Workbox.js apenas para uma [página off-line](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only).
 
 A seguir, aprenda [a definir uma estratégia de instalação](/define-install-strategy/) para seu aplicativo.

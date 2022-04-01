@@ -162,7 +162,7 @@ Service workers, which are [widely supported in current browsers](https://develo
 
 We've provided a [polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior) that uses a service worker to replicate some of the functionality of AppCache, though it does not replicate the entire AppCache interface. In particular, it does not provide a replacement for the `window.applicationCache` interface or the related AppCache events.
 
-For more complex cases, libraries like [Workbox](https://developers.google.com/web/tools/workbox/) provide an easy way to create a modern service worker for your web app.
+For more complex cases, libraries like [Workbox](https://developer.chrome.com/docs/workbox/) provide an easy way to create a modern service worker for your web app.
 
 ### Service workers and AppCache are mutually exclusive
 
@@ -206,7 +206,7 @@ Here are some resources for developers migrating from AppCache to service worker
 ### Tools
 
 - [AppCache Polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA Builder](https://www.pwabuilder.com/)
 
 ## Getting help

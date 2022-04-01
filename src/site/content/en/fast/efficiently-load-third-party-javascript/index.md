@@ -107,6 +107,7 @@ The `preconnect` hint is best used for only the most critical connections; for l
 <link rel="preconnect" href="http://example.com">
 <link rel="dns-prefetch" href="http://example.com">
 ```
+
 ## Lazy-load third-party resources
 
 Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
@@ -159,4 +160,4 @@ Manually updating scripts can add a lot of overhead to your development process 
 
 ### Use service workers to cache scripts from third-party servers
 
-An alternative to self-hosting that allows you greater control over caching while still getting the third-party CDN benefits is [using service workers to cache scripts from third-party servers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests). This gives you control over how often scripts are re-fetched from the network and makes it possible to create a loading strategy that throttles requests for non-essential third-party resources until the page reaches a key user moment. Using `preconnect` to establish early connections in this case can also mitigate the network costs to an extent.
+An alternative to self-hosting that allows you greater control over caching while still getting the third-party CDN benefits is [using service workers to cache scripts from third-party servers](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations). This gives you control over how often scripts are re-fetched from the network and makes it possible to create a loading strategy that throttles requests for non-essential third-party resources until the page reaches a key user moment. Using `preconnect` to establish early connections in this case can also mitigate the network costs to an extent.

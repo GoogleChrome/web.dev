@@ -139,7 +139,7 @@ setCatchHandler(async (options) => {
 
 ## Recipes
 
-Several routing and caching patterns, like `NetworkFirst` navigations and offline fallbacks, are common enough to be encapsulated into reusable recipes. Check [workbox-recipes](https://developers.google.com/web/tools/workbox/modules/workbox-recipes) as they can help you if they provide a solution suitable for your architecture. They are usually available as one line of code that you need to add to your service worker's code.
+Several routing and caching patterns, like `NetworkFirst` navigations and offline fallbacks, are common enough to be encapsulated into reusable recipes. Check [workbox-recipes](https://developer.chrome.com/docs/workbox/modules/workbox-recipes/) as they can help you if they provide a solution suitable for your architecture. They are usually available as one line of code that you need to add to your service worker's code.
 
 ### Caching and updating assets
 
@@ -147,6 +147,7 @@ Caching assets also involves updating them. Workbox helps with updating your ass
 You'll learn more about updating in the [Update chapter](/learn/pwa/update).
 
 ## Play with Workbox
+
 You can play with Workbox right away using the following code lab:
 
 {% Aside 'codelab' %}

@@ -62,14 +62,14 @@ such as fine-grained control over exactly what is cached and how caching is done
 A service worker intercepts HTTP requests with [event
 listeners](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (usually the `fetch` event). This
 [code snippet](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstrates the logic of a
-[Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)
+[Cache-First](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network)
 caching strategy.
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="A diagram showing how service workers intercept HTTP requests", width="800", height="516" %}
 
-It's highly recommended to use [Workbox](https://developers.google.com/web/tools/workbox) to avoid
+It's highly recommended to use [Workbox](https://developer.chrome.com/docs/workbox/) to avoid
 reinventing the wheel. For example, you can
-[register resource URL paths with a single line of regex code](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route).
+[register resource URL paths with a single line of regex code](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route).
 
 ```js
 import {registerRoute} from 'workbox-routing';
