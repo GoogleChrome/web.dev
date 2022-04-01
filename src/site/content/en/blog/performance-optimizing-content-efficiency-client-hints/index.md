@@ -3,7 +3,7 @@ title: Adapting to Users with Client Hints
 description: >
   Client hints are a set of HTTP request headers we can use to change how we deliver page resources based on characteristics of a user's device and network connection. In this article, you'll learn all about client hints, how they work, and a few ideas on how you can use them to make your site faster for users.
 authors:
-  - jeremywagner
+  - jlwagner
 date: 2018-11-22
 updated: 2021-02-17
 ---
