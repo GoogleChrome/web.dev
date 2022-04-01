@@ -204,6 +204,7 @@ one test's procedures or results from contaminating another test.
 
 Here are the results of the improvements for each image.
 
+<div class="table-wrapper scrollbar">
 <table>
   <tr>
     <th>Original image</th>
