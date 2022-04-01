@@ -50,9 +50,7 @@ to list here. For this article, we will use three online services to help us see
 of our improvement efforts.
 
 - [Google PageSpeed Insights](http://tinyurl.com/m65jex6)
-
 - [WebPageTest](https://www.webpagetest.org/)
-
 - [Pingdom](https://tools.pingdom.com/)
 
 Why three tools? Because different testing services use different methods and algorithms
