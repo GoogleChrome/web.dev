@@ -17,7 +17,7 @@ tags:
 
 ## Stable browser releases
 
-In February, [Chrome 99](https://developer.chrome.com/blog/new-in-chrome-99/), [Chrome 100](https://developer.chrome.com/blog/new-in-chrome-100/), [Firefox 98](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/98), and [Safari 15.4](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes) became stable. This brought a whole batch of new features to the platform, and many of these additions meant that the feature became available in all three browser engines. In this post I've concentrated on those additions that give us interoperability cross-browser, but do check out the release notes to see all of the features added to each engine. 
+In March, [Chrome 99](https://developer.chrome.com/blog/new-in-chrome-99/), [Chrome 100](https://developer.chrome.com/blog/new-in-chrome-100/), [Firefox 98](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/98), and [Safari 15.4](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes) became stable. This brought a whole batch of new features to the platform, and many of these additions meant that the feature became available in all three browser engines. In this post I've concentrated on those additions that give us interoperability cross-browser, but do check out the release notes to see all of the features added to each engine. 
 
 {% Aside %}
 With Chrome reaching version 100 we had a look back at some of the fun, cool, and interesting things that have happened over the past 14 years. Take a look at [#100CoolWebMoments](https://developer.chrome.com/100/).
