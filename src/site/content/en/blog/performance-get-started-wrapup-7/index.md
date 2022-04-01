@@ -193,13 +193,9 @@ Based on the techniques discussed in the **Graphical Content** article, we appli
 improvements to the images (even the small ones), including:
 
 - physical resizing,
-
 - establishing best format,
-
 - reducing quality,
-
 - compression, and
-
 - removing metadata.
 
 **Note:** For this and all subsequent tests in this article, we always started with the
