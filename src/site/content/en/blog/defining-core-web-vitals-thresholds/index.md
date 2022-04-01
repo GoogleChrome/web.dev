@@ -74,7 +74,8 @@ performance as either "good", "needs improvement", or "poor":
       <td>>0.25</td>
       <td>75</td>
     </tr>
-</table>
+  </table>
+</div>
 
 Additionally, to classify the overall performance of a page or site, we use the
 75th percentile value of all page views to that page or site. In other words, if
