@@ -96,7 +96,7 @@ new PerformanceObserver((entryList) => {
   for (const entry of entries) {
     // Some resources may have a responseStart value of 0, due
     // to the resource being cached, or a cross-origin resource
-    // being served without a Timing-Origin-Allow header set.
+    // being served without a Timing-Allow-Origin header set.
     if (entry.responseStart > 0) {
       console.log(`TTFB: ${entry.responseStart}`, entry.name);
     }
