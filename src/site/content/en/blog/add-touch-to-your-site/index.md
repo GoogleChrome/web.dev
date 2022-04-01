@@ -14,7 +14,6 @@ tags:
 
 {% YouTube id="Rwc4fHUnGuU" %}
 
-
 Touchscreens are available on more and more devices, ranging from phones to
 desktop screens. When your users choose to interact with your UI, your app
 should respond to their touch in intuitive ways.
@@ -38,11 +37,11 @@ to the following pseudo classes `:hover`, `:focus` and `:active` as shown below:
 }
 
 .btn:hover {
-  background-color: #296CDB;
+  background-color: #296cdb;
 }
 
 .btn:focus {
-  background-color: #0F52C1;
+  background-color: #0f52c1;
 
   /* The outline parameter suppresses the border
   color / outline when focused */
@@ -50,7 +49,7 @@ to the following pseudo classes `:hover`, `:focus` and `:active` as shown below:
 }
 
 .btn:active {
-  background-color: #0039A8;
+  background-color: #0039a8;
 }
 
 ```
@@ -68,9 +67,11 @@ after it's been tapped.
 Consider carefully what styles you set and how they will look to the user after
 they finish their touch.
 
-Note: Anchor tags and buttons may have different behavior
+{% Aside %}
+Anchor tags and buttons may have different behavior
 in different browsers, so assume in some cases **hover**
 will remain and in others **focus** will remain.
+{% endAside %}
 
 ### Suppressing default browser styles
 
@@ -87,7 +88,7 @@ element when an element is focused. You can suppress it with:
 .btn:focus {
     outline: 0;
 
-    // Add replacement focus styling here (i.e. border)
+    /* Add replacement focus styling here (i.e. border) */
 }
 ```
 
@@ -150,8 +151,10 @@ for users if they *want* to select the text in the element.
 So make sure you use it with caution and sparingly.
 
 ```css
-user-select: none;
-```
+/* Example: dDisable selecting text on a paragraph element: *?
+p.disable-text-selection {
+  user-select: none;
+}
 
 ## Implement custom gestures
 
@@ -201,7 +204,6 @@ element.
 
 This is more flexible for users, but complicates the logic for manipulating
 the UI and is less resilient to user error.
-
 
 ### Add event listeners
 
@@ -323,7 +325,7 @@ when the gesture has finished like so:
 this.handleGestureEnd = function(evt) {
   evt.preventDefault();
 
-  if(evt.touches && evt.touches.length > 0) {
+  if (evt.touches && evt.touches.length > 0) {
     return;
   }
 
@@ -359,7 +361,6 @@ move and end events to the document once a gesture begins.
 `touchstart`", width="282", height="500" %}
 </figure>
 
-
 ### Responding to touch efficiently
 
 Now that we have the start and end events taken care of we can actually
@@ -378,7 +379,7 @@ If the event is a `PointerEvent` or `MouseEvent` it extracts `clientX` and
 function getGesturePointFromEvent(evt) {
     var point = {};
 
-    if(evt.targetTouches) {
+    if (evt.targetTouches) {
       // Prefer Touch Events
       point.x = evt.targetTouches[0].clientX;
       point.y = evt.targetTouches[0].clientY;
@@ -430,7 +431,7 @@ In our demo, we store the initial touch position in `handleGestureStart()` (look
 this.handleGestureStart = function(evt) {
   evt.preventDefault();
 
-  if(evt.touches && evt.touches.length > 1) {
+  if (evt.touches && evt.touches.length > 1) {
     return;
   }
 
@@ -457,13 +458,13 @@ before requesting an animation frame if we need to, passing in our
 this.handleGestureMove = function (evt) {
   evt.preventDefault();
 
-  if(!initialTouchPos) {
+  if (!initialTouchPos) {
     return;
   }
 
   lastTouchPos = getGesturePointFromEvent(evt);
 
-  if(rafPending) {
+  if (rafPending) {
     return;
   }
 
@@ -490,14 +491,14 @@ the next touch event to request a new animation frame.
 
 ```js
 function onAnimFrame() {
-  if(!rafPending) {
+  if (!rafPending) {
     return;
   }
 
   var differenceInX = initialTouchPos.x - lastTouchPos.x;
-
   var newXTransform = (currentXPosition - differenceInX)+'px';
   var transformStyle = 'translateX('+newXTransform+')';
+
   swipeFrontElement.style.webkitTransform = transformStyle;
   swipeFrontElement.style.MozTransform = transformStyle;
   swipeFrontElement.style.msTransform = transformStyle;
@@ -515,8 +516,10 @@ prevent the browser from doing anything with a users' touch, allowing us
 to intercept all of the touch events.
 
 ```css
-/* Pass all touches to javascript */
-touch-action: none;
+/* Pass all touches to javascript: */
+button.custom-touch-logic {
+  touch-action: none;
+}
 ```
 
 Using `touch-action: none` is somewhat a nuclear option as it prevents all
@@ -525,14 +528,15 @@ below is a better solution.
 
 `touch-action` allows you to disable gestures implemented by a browser.
 For example, IE10+ supports a double-tap to zoom gesture. By setting a
-touch-action of `manipulation` you prevent the default double-tap
+`touch-action` of `manipulation` you prevent the default double-tap
 behavior.
 
 This allows you to implement a double-tap gesture yourself.
 
-Below is a list of commonly used touch-action values:
+Below is a list of commonly used `touch-action` values:
 
-<table class="responsive">
+<div class="table-wrapper scrollbar">
+<table>
   <thead>
     <tr>
       <th colspan="2">Touch Action Parameters</th>
@@ -563,19 +567,19 @@ Below is a list of commonly used touch-action values:
     </tr>
   </tbody>
 </table>
+</div>
 
 ## Supporting older versions of IE
 
 If you want to support IE10, you'll need to handle vendor prefixed versions of
 `PointerEvents`.
 
-
 To check for support of `PointerEvents` you'd typically look for
 `window.PointerEvent`, but in IE10, you'd look for
 `window.navigator.msPointerEnabled`.
 
-The event names with vendor prefixes are: 'MSPointerDown', 'MSPointerUp' and
-'MSPointerMove'.
+The event names with vendor prefixes are: `'MSPointerDown'`, `'MSPointerUp'` and
+`'MSPointerMove'`.
 
 The example below shows you how to check for support and switch
 the event names.
@@ -585,7 +589,7 @@ var pointerDownName = 'pointerdown';
 var pointerUpName = 'pointerup';
 var pointerMoveName = 'pointermove';
 
-if(window.navigator.msPointerEnabled) {
+if (window.navigator.msPointerEnabled) {
   pointerDownName = 'MSPointerDown';
   pointerUpName = 'MSPointerUp';
   pointerMoveName = 'MSPointerMove';
@@ -593,7 +597,7 @@ if(window.navigator.msPointerEnabled) {
 
 // Simple way to check if some form of pointerevents is enabled or not
 window.PointerEventsSupport = false;
-if(window.PointerEvent || window.navigator.msPointerEnabled) {
+if (window.PointerEvent || window.navigator.msPointerEnabled) {
   window.PointerEventsSupport = true;
 }
 ```
@@ -605,6 +609,7 @@ Microsoft](https://msdn.microsoft.com/library/dn304886(v=vs.85).aspx).
 
 ### Pseudo classes for touch states
 
+<div class="table-wrapper scrollbar">
 <table>
   <thead>
     <tr>
@@ -650,17 +655,18 @@ Microsoft](https://msdn.microsoft.com/library/dn304886(v=vs.85).aspx).
     </tr>
   </tbody>
 </table>
-
+</div>
 
 The definitive touch events reference can be found here:
-[w3 Touch Events](http://www.w3.org/TR/touch-events/).
+[W3C Touch Events](http://www.w3.org/TR/touch-events/).
 
 ### Touch, mouse, and pointer events
 
 These events are the building blocks for adding new gestures into your
 application:
 
-<table class="responsive">
+<div class="table-wrapper scrollbar">
+<table>
   <thead>
     <tr>
       <th colspan="2">Touch, Mouse, Pointer Events</th>
@@ -712,12 +718,14 @@ application:
     </tr>
   </tbody>
 </table>
+</div>
 
 ### Touch lists
 
 Each touch event includes three list attributes:
 
-<table class="responsive">
+<div class="table-wrapper scrollbar">
+<table>
   <thead>
     <tr>
       <th colspan="2">Touch Event Attributes</th>
@@ -774,6 +782,7 @@ Each touch event includes three list attributes:
     </tr>
   </tbody>
 </table>
+</div>
 
 ### Enabling active state support on iOS
 
@@ -788,9 +797,9 @@ in the DOM, however this may have performance issues when scrolling the page.
 
 ```js
 window.onload = function() {
-    if(/iP(hone|ad)/.test(window.navigator.userAgent)) {
+  if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
     document.body.addEventListener('touchstart', function() {}, false);
-    }
+  }
 };
 ```
 
@@ -799,12 +808,13 @@ elements in the page, alleviating some of the performance concerns.
 
 ```js
 window.onload = function() {
-    if(/iP(hone|ad)/.test(window.navigator.userAgent)) {
+  if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
     var elements = document.querySelectorAll('button');
     var emptyFunction = function() {};
-    for(var i = 0; i < elements.length; i++) {
+
+    for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('touchstart', emptyFunction, false);
     }
-    }
+  }
 };
 ```
