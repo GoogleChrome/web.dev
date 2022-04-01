@@ -111,7 +111,7 @@ using the [Cache Storage API](https://developers.google.com/web/fundamentals/ins
 
 To use the API your app must have a service worker and URLs that are navigable
 offline. If your web app does not currently have a service worker, the [Workbox
-libraries](https://developers.google.com/web/tools/workbox/) can simplify
+libraries](https://developer.chrome.com/docs/workbox/) can simplify
 creating one.
 
 ### What type of URLs can be indexed as offline-capable? {: #offline-capable-urls }

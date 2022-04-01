@@ -87,7 +87,7 @@ Estos son algunos de los problemas más comunes en los cambios de diseño asocia
 Estas técnicas necesitan más trabajo para implementarse, pero pueden optimizar aún más la carga de los scripts de aviso de cookies:
 
 - El almacenamiento en caché y el servicio de scripts de aviso de cookies de terceros desde sus propios servidores puede mejorar la velocidad de entrega de estos recursos.
-- El uso de [service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers) puede permitirle un mayor control sobre la [obtención y almacenamiento del caché de scripts de terceros](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests) como los scripts de aviso de cookies.
+- El uso de [service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers) puede permitirle un mayor control sobre la [obtención y almacenamiento del caché de scripts de terceros](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations) como los scripts de aviso de cookies.
 
 ## Evaluación del desempeño
 

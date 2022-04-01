@@ -25,7 +25,7 @@ The current version of the training is divided into six slide decks, ready for y
 To go along with this new material, there are eight new codelabs that will guide you through turning a web app into a Progressive Web App with deep device integration, using the concepts taught throughout the slide decks. You can jump into any codelab and work on it individually, or you can go through them one after another; the choice is yours. They are:
 
 - [Going Offline](https://developers.google.com/codelabs/pwa-training/pwa03--going-offline#0) - Basics of writing a service worker to cache and serve content offline
-- [Working with Workbox](https://developers.google.com/codelabs/pwa-training/pwa03--working-with-workbox) - Using [Workbox](https://developers.google.com/web/tools/workbox) to write your service worker
+- [Working with Workbox](https://developers.google.com/codelabs/pwa-training/pwa03--working-with-workbox) - Using [Workbox](https://developer.chrome.com/docs/workbox/) to write your service worker
 - [IndexedDB](https://developers.google.com/codelabs/pwa-training/pwa03--indexeddb) - Using IndexedDB to store and retrieve data
 - [Tab to Taskbar](https://developers.google.com/codelabs/pwa-training/pwa04--tab-to-taskbar) - Making your web app installable and providing app shortcuts
 - [Prompting and Measuring Install](https://developers.google.com/codelabs/pwa-training/pwa04--prompt-measure-install#5) - Adding in-app install prompts, and where to put success tracking

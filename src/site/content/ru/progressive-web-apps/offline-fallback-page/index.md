@@ -242,6 +242,6 @@ self.addEventListener("fetch", (event) => {
 
 ### Примечание о том, как передавать резервную страницу для автономного режима с помощью Workbox.js
 
-Возможно, вы слышали о [Workbox.js](https://developers.google.com/web/tools/workbox). Workbox.js — это набор библиотек JavaScript для поддержки автономного режима в веб-приложениях. Если вы не хотите самостоятельно писать код служебного сценария, вы можете использовать рецепт Workbox.js [только для оффлайн-страницы](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
+Возможно, вы слышали о [Workbox.js](https://developer.chrome.com/docs/workbox/). Workbox.js — это набор библиотек JavaScript для поддержки автономного режима в веб-приложениях. Если вы не хотите самостоятельно писать код служебного сценария, вы можете использовать рецепт Workbox.js [только для оффлайн-страницы](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only).
 
 Далее узнайте, [как разработать стратегию установки](/define-install-strategy/) для приложения.

@@ -116,7 +116,7 @@ on the
 [Vanilla JS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-vanilla)
 for [Vite.js](https://github.com/vitejs/vite) and uses the popular
 [Vite plugin PWA](https://github.com/antfu/vite-plugin-pwa), which creates a service worker that
-uses [Workbox.js](https://developers.google.com/web/tools/workbox) under the hood. Workbox is a set
+uses [Workbox.js](https://developer.chrome.com/docs/workbox/) under the hood. Workbox is a set
 of libraries that can power a production-ready service worker for Progressive Web Apps, This pattern
 may not necessarily work for all apps, but for SVGcode's use case it's great.
 

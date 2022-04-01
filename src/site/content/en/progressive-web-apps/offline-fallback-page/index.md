@@ -310,9 +310,9 @@ with an [install strategy](/define-install-strategy/).
 
 ### Side note on serving an offline fallback page with Workbox.js
 
-You may have heard of [Workbox.js](https://developers.google.com/web/tools/workbox).
+You may have heard of [Workbox.js](https://developer.chrome.com/docs/workbox/).
 Workbox.js is a set of JavaScript libraries for adding offline support to web apps. If you prefer to
 write less service worker code yourself, you can use the Workbox.js recipe for an
-[offline page only](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
+[offline page only](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only).
 
 Up next, learn [how to define an install strategy](/define-install-strategy/) for your app.
