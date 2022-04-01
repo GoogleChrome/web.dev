@@ -14,6 +14,7 @@ What does a modern web application look like? [HTTP Archive](http://httparchive.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/JqsYuCtNUMTMm3KsDp5u.png", alt="HTTP Archive trends", width="597", height="217" %}
 
+<div class="table-wrapper scrollbar">
 <table class="">
 <colgroup><col span="1"><col span="1"><col span="1"><col span="1"></colgroup>
 <thead>
@@ -61,6 +62,7 @@ What does a modern web application look like? [HTTP Archive](http://httparchive.
   <td data-th="90%"><strong>3486 KB</strong></td>
 </tr>
 </table>
+</div>
 
 The above data captures the trend in growth of number of downloaded bytes for popular destinations on the web between January 2013 and January 2014. Of course, not every site grows at the same rate or requires the same amount of data, hence the reason why we are highlighting the different quantiles within the distribution: 50th (median), 75th, and 90th.
 
@@ -69,5 +71,3 @@ A median site at the beginning of 2014 is composed of 75 requests that add up to
 Unlike their desktop counterparts, web applications do not require a separate installation process: enter the URL and we are up and running -- that’s a key feature of the web. However, to make this happen **we often have to fetch dozens, and sometime hundreds, of various resources, all of which can add up to megabytes of data and must come together in hundreds of milliseconds to facilitate the instant web experience we are aiming for.**
 
 Achieving an instant web experience in light of these requirements is no small feat, which is why optimizing content efficiency is critical: eliminating unnecessary downloads, optimizing transfer encoding of each resource through various compression techniques, and leveraging caching whenever possible to eliminate redundant downloads.
-
-## Feedback {: #feedback }

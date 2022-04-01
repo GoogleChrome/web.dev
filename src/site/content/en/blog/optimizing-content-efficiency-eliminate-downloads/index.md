@@ -29,4 +29,3 @@ Too often, pages contain resources that are unnecessary, or worse, that hinder p
 
 Determining whether to eliminate unnecessary downloads often requires a lot of careful thinking and measurement. For best results, periodically inventory and revisit these questions for every asset on your pages.
 
-## Feedback {: #feedback }
