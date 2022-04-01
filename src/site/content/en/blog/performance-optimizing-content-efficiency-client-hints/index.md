@@ -720,5 +720,3 @@ _Thank you to [Ilya Grigorik](https://twitter.com/igrigorik), [Eric
 Portis](https://twitter.com/etportis), [Jeff Posnick](https://twitter.com/jeffposnick), [Yoav
 Weiss](https://twitter.com/yoavweiss), and [Estelle Weyl](https://twitter.com/estellevw) for their
 valuable feedback and edits on this article._
-
-## Feedback {: #feedback .hide-from-toc }
