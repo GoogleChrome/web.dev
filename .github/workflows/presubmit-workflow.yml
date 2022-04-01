@@ -9,9 +9,7 @@ jobs:
       isPresubmit: ${{ steps.presubmit.outputs.isPresubmit }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: npm ci --prefix .github/actions/presubmit
@@ -31,9 +29,13 @@ jobs:
       NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 1
+          node-version: 'v16.14.2'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
