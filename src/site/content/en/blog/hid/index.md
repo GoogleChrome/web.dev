@@ -175,7 +175,7 @@ const devices = await navigator.hid.getDevices();
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
-You can also use the optional "exclusionFilters" key in 
+You can also use the optional `exclusionFilters` key in 
 `navigator.hid.requestDevice()` to exclude some devices from the browser picker
 that are known to be malfunctioning for instance.
 
