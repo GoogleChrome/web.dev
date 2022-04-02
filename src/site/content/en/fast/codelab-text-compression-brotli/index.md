@@ -136,14 +136,14 @@ var shrinkRay = require('shrink-ray');
 
 And add it as a middleware before `express.static` is mounted:
 
-```js/6
+```js/4
 //...
 var app = express();
 
-app.use(express.static('public'));
-
 // compress all requests
 app.use(shrinkRay());
+
+app.use(express.static('public'));
 ```
 
 Now reload the app, and take a look at the bundle size in the Network panel:
