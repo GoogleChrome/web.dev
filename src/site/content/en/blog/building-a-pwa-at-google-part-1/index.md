@@ -72,7 +72,7 @@ complexity.
 
 Avoid writing a service worker script by hand. Writing service workers by hand requires manually
 managing cached resources and rewriting logic that is common to most service workers libraries, such
-as [Workbox](https://developers.google.com/web/tools/workbox/).
+as [Workbox](https://developer.chrome.com/docs/workbox/).
 
 Having said that, due to our internal tech stack we could not use a library to generate and manage
 our service worker. Our learnings below will at times reflect that. Go to [Pitfalls for
@@ -202,7 +202,7 @@ worker script has changed in some way, so we had to ensure the service worker sc
 changed in some way when a cached file changed. We did this manually by embedding a hash of the
 static resource fileset within our service worker script, so every release produced a distinct
 service worker JavaScript file. Service worker libraries like
-[Workbox](https://developers.google.com/web/tools/workbox/) automate this process for you.
+[Workbox](https://developer.chrome.com/docs/workbox/) automate this process for you.
 
 ### Unit testing {: #unit-testing }
 

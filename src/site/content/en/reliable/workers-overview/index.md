@@ -136,7 +136,7 @@ Window and worker communication can be implemented by using different lower leve
 there are libraries that abstract this process, taking care of the most common use cases. In this
 section, we'll cover two of them that take care of window to web workers and service workers
 respectively: [Comlink](https://github.com/GoogleChromeLabs/comlink) and
-[Workbox](https://developers.google.com/web/tools/workbox).
+[Workbox](https://developer.chrome.com/docs/workbox/).
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MNMwX5KuJt5iOLZJbdO0.png", alt="A screenshot of the videogame PROXX.", width="500", height="269" %}
@@ -152,9 +152,9 @@ and code samples can be found [here](https://surma.dev/things/when-workers/).
 
 ### Workbox {: #workbox }
 
-[Workbox](https://developers.google.com/web/tools/workbox) is a popular library to build websites
+[Workbox](https://developer.chrome.com/docs/workbox/) is a popular library to build websites
 that use service workers. It packages a set of best practices around things like caching, offline,
-background synchronization, etc. The [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) module provides a
+background synchronization, etc. The [`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) module provides a
 convenient way to exchange messages between the service worker and the page.
 
 ## Next steps {: #next-steps }

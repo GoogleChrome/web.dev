@@ -240,6 +240,6 @@ self.addEventListener("fetch", (event) => {
 
 ### Workbox.jsでオフラインフォールバックページを提供する際の補足
 
-[Workbox.js](https://developers.google.com/web/tools/workbox)について聞いたことがあるかもしれません。Workbox.jsは、Webアプリにオフラインサポートを追加するためのJavaScriptライブラリのセットです。自分で作成するServiceWorkerコードを減らしたい場合は、[オフラインページでのみ](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only)Workbox.jsレシピを使用できます。
+[Workbox.js](https://developer.chrome.com/docs/workbox/)について聞いたことがあるかもしれません。Workbox.jsは、Webアプリにオフラインサポートを追加するためのJavaScriptライブラリのセットです。自分で作成するServiceWorkerコードを減らしたい場合は、[オフラインページでのみ](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only)Workbox.jsレシピを使用できます。
 
 次は、アプリの[インストール戦略を定義する方法](/define-install-strategy/)について学習します。

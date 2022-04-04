@@ -292,7 +292,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 Service Worker 可用于完成许多有用的任务，其中包括本文前面提到的提供较小的 HTML 响应。Service Worker 还可用于缓存任何静态资源，并在收到重复请求时将资源直接提供给浏览器，而无需通过网络。
 
-使用 Service Worker 预缓存关键资源可以显著减少资源加载时间，特别是对于使用较弱连接重新加载网页（甚至离线访问）的用户。与自己编写自定义 Service Worker 来更新预缓存资产相比，诸如 [Workbox](https://developers.google.com/web/tools/workbox/) 这样的库可以使整个过程更加容易。
+使用 Service Worker 预缓存关键资源可以显著减少资源加载时间，特别是对于使用较弱连接重新加载网页（甚至离线访问）的用户。与自己编写自定义 Service Worker 来更新预缓存资产相比，诸如 [Workbox](https://developer.chrome.com/docs/workbox/) 这样的库可以使整个过程更加容易。
 
 {% Aside %}请查看[网络可靠性](/reliable/)，了解 Service Worker 和 Workbox 的更多相关信息。{% endAside %}
 

@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Asegúrese de utilizar un service worker para [almacenar previamente](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) la página de `action` para que se cargue rápidamente y funcione de manera confiable, incluso si el usuario no está conectado. [Workbox](https://developers.google.com/web/tools/workbox/) es una herramienta que puede ayudarlo a [implementar el almacenamiento previo en caché](/precache-with-workbox/) en su service worker.
+Asegúrese de utilizar un service worker para [almacenar previamente](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) la página de `action` para que se cargue rápidamente y funcione de manera confiable, incluso si el usuario no está conectado. [Workbox](https://developer.chrome.com/docs/workbox/) es una herramienta que puede ayudarlo a [implementar el almacenamiento previo en caché](/precache-with-workbox/) en su service worker.
 
 ### Procesamiento de recursos compartidos POST
 

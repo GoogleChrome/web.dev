@@ -20,7 +20,7 @@ feedback:
   first.
 {% endAside %}
 
-[`Workbox`](https://developers.google.com/web/tools/workbox/) is built into
+[`Workbox`](https://developer.chrome.com/docs/workbox/) is built into
 Create React App (CRA) with a default configuration that precaches all the
 static assets in your application with every build.
 
@@ -40,7 +40,7 @@ ability to surface content when the user is offline.
 
 **Workbox** is a collection of tools that allow you create and maintain service
 workers. In CRA, the
-[`workbox-webpack-plugin`](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
+[`workbox-webpack-plugin`](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/)
 is already included into the production build and only needs to be enabled in
 the `src/index.js` file in order to register a new service worker with every
 build:

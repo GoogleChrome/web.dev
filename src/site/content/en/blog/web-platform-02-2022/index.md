@@ -12,11 +12,12 @@ authors:
   - rachelandrew
 tags:
   - blog
+  - new-to-the-web
 ---
 
 ## Stable browser releases
 
-In January, Chrome 98 and Firefox 97 became stable.
+In February, Chrome 98 and Firefox 97 became stable.
 
 Chrome 98 shipped the `self.structuredClone` method. It creates a deep clone of a value using the structured clone algorithm. [Read more about `structuredClone()`](/structured-clone/).
 
@@ -54,7 +55,7 @@ Read more about this new font format in [COLRv1 Color Gradient Vector Fonts in C
 
 Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release.
 
-New betas in January were [Chrome 99](https://blog.chromium.org/2022/02/chrome-99-css-cascade-layers-new-picker.html), and [Firefox 98](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/98). Safari Beta 15.4 is still ongoing, I covered some of the things included [last month](/web-platform-01-2022/).
+New betas in February were [Chrome 99](https://blog.chromium.org/2022/02/chrome-99-css-cascade-layers-new-picker.html), and [Firefox 98](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/98). Safari Beta 15.4 is still ongoing, I covered some of the things included [last month](/web-platform-01-2022/).
 
 Chrome 99 includes Cascade Layers, with Cascade Layers also in [Safari Beta 15.4](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes) we can expect to see this feature in all evergreen browsers very soon.
 

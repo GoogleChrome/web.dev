@@ -128,7 +128,7 @@ TOKEN_GOES_HERE
 
 我们提供了一个 [Polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior)，它使用 Service worker 来复制 AppCache 的一些功能，但它不会复制整个 AppCache 接口。特别是，它不提供 `window.applicationCache` 接口或相关 AppCache 事件的替代。
 
-对于更复杂的情况，像 [Workbox](https://developers.google.com/web/tools/workbox/) 这样的库提供了一种简单的方法来为您的 Web 应用创建现代 Service worker。
+对于更复杂的情况，像 [Workbox](https://developer.chrome.com/docs/workbox/) 这样的库提供了一种简单的方法来为您的 Web 应用创建现代 Service worker。
 
 ### Service worker 和 AppCache 不能同时使用
 
@@ -172,7 +172,7 @@ Safari 在 2018 年初[弃用了 AppCache](https://bugs.webkit.org/show_bug.cgi?
 ### 工具
 
 - [AppCache Polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA 生成器](https://www.pwabuilder.com/)
 
 ## 获得帮助

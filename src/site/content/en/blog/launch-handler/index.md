@@ -9,7 +9,7 @@ subhead: >
 authors:
   - thomassteiner
 date: 2021-12-14
-updated: 2022-02-10
+updated: 2022-03-03
 description: >
   Launch handler lets you control how your app is launched, for example, whether it uses an existing
   window and whether the chosen window is navigated to the launch URL.
@@ -102,58 +102,47 @@ if ('launchQueue' in window && 'targetURL' in LaunchParams.prototype) {
 ### The `launch_handler` manifest member
 
 To declaratively specify the launch behavior of your app, add the `launch_handler` manifest member
-to your manifest. It has two sub-fields, `route_to` and `navigate_existing_client`. The former lets
-you control whether a new or an existing client should be launched, and the latter how and if this
+to your manifest. It has one subfield, `route_to`. It lets
+you control whether a new or an existing client should be launched, and how and if this
 client should be navigated. The Web App Manifest excerpt below shows a file with
 exemplary values that would always route all launches to a new client.
 
 ```json
 {
   "launch_handler": {
-    "route_to": "new-client",
-    "navigate_existing_client": "always"
+    "route_to": "new-client"
   }
 }
 ```
 
 If unspecified, `launch_handler` defaults to
-`{"route_to": "auto", "navigate_existing_client": "always"}`. The allowed values for the sub-fields
+`{"route_to": "auto"}`. The allowed values for the sub-fields
 are as follows:
 
 - `route_to`:
-
+  - `auto`: The behavior is up to the user agent to decide what works best for the platform. For
+    example, mobile devices only support single clients and would use `existing-client-navigate`,
+    while desktop devices support multiple windows and would use `new-client` to avoid data loss.
   - `new-client`: A new browsing context is created in a web app window to load the launch's target
     URL.
-  - `existing-client`: An existing browsing context is used, specifically the one most recently used. How the launch is handled within that
-    browsing context depends on `navigate_existing_client`.
-  - `auto`: The behavior is up to the user agent to decide what works best for the platform. For
-    example, mobile devices only support single clients and would use `existing-client`, while
-    desktop devices support multiple windows and would use `new-client` to avoid data loss.
+  - `existing-client-navigate`: The most recently interacted with browsing context in a web app
+    window is navigated to the launch's target URL.
+  - `existing-client-retain`: The most recently interacted with browsing context in a web app
+    window is chosen to handle the launch. A new `LaunchParams` with its `targetURL` set to the
+    launch URL will be enqueued in the document's `window.launchQueue`.
 
-- `navigate_existing_client`:
-  - `always`: Existing browsing contexts chosen for launch will navigate the browsing context to the
-    launch's target URL.
-  - `never`: Existing browsing contexts chosen for launch will not be navigated and instead have
-    `targetURL` in the enqueued `LaunchParams` set to the launch's target URL.
-
-{% Aside 'warning' %}
-Careful, setting `navigate_existing_client` to `always` can cause data loss. Only use this
-when it is safe to do so (for example, in a music player), or make sure the user's data gets
-saved before navigating away from the previous location.
-{% endAside%}
-
-Both `route_to` and `navigate_existing_client` also accept a list (array) of values, where the first
+The property `route_to` also accepts a list (array) of values, where the first
 valid value will be used. This is to allow new values to be added to the spec without breaking
 backwards compatibility with existing implementations.
 
 For example, if the hypothetical value `"matching-url-client"` were added, sites would specify
-`"route_to": ["matching-url-client", "existing-client"]` to continue to control the behavior of
-older browsers that did not support `"matching-url-client"`.
+`"route_to": ["matching-url-client", "existing-client-navigate"]` to continue controlling the
+behavior of older browsers that did not support `"matching-url-client"`.
 
 ### The `window.launchQueue` interface
 
 If the app has declared that it wants to handle launches in an existing client (by specifying
-`"route_to": "existing-client"`), it can imperatively do something with incoming launch URLs.
+`"route_to": "existing-client-retain"`), it can imperatively do something with incoming launch URLs.
 This is where the `launchQueue` comes into play. To access launch target URLs, a site needs to
 specify a consumer for the `window.launchQueue` object, which is then passed the target URL via the
 `launchParams.targetURL` field. Launches are queued until they are handled by the specified

@@ -54,7 +54,7 @@ Service workers allow Google Search to provide a [meaningful offline experience]
 
 ## Implement resilient search experiences with Workbox
 
-While Google Search implements this functionality without using Workbox, the [Workbox library](https://developers.google.com/web/tools/workbox) makes it easier by providing a [Background Sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync), which takes care of many implementation details for us.
+While Google Search implements this functionality without using Workbox, the [Workbox library](https://developer.chrome.com/docs/workbox/) makes it easier by providing a [Background Sync module](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/), which takes care of many implementation details for us.
 
 {% Img src="image/admin/X06meG8U60SABUabxwHb.png", alt="A service worker and a cache object communicating with each other.", width="800", height="383" %}
 
@@ -66,7 +66,7 @@ import {registerRoute} from 'workbox-routing';
 import {NetworkOnly} from 'workbox-strategies';
 ```
 
-Next, create an instance of the [workbox.backgroundSync plugin](https://developers.google.com/web/tools/workbox/reference-docs/v4/workbox.backgroundSync.Plugin), to automatically add failed requests to a queue, so they can be retried later:
+Next, create an instance of the [workbox.backgroundSync plugin](https://developer.chrome.com/docs/workbox/reference/workbox-background-sync/#type-BackgroundSyncPlugin), to automatically add failed requests to a queue, so they can be retried later:
 
 ```javascript
 const bgSyncPlugin = new workbox.backgroundSync.Plugin('offlineQueryQueue', {
@@ -95,7 +95,7 @@ The plugin receives the following parameters:
 - `maxRetentionTime`: The amount of time in minutes a request may be retried, after which point they will be discarded.
 - `onSync`: The callback that will be triggered when the connection is recovered. At that point, each failed request can be dequeued and processed, by calling `queue.shiftRequest()`.
 
-Finally, define a [networkOnly](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_only) runtime caching strategy for requests to the search URL (e.g. `/search_action`) and pass it the `bgSyncPlugin` defined previously:
+Finally, define a [networkOnly](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#network-only) runtime caching strategy for requests to the search URL (e.g. `/search_action`) and pass it the `bgSyncPlugin` defined previously:
 
 ```javascript
 workbox.routing.registerRoute(

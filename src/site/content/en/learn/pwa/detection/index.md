@@ -4,7 +4,8 @@ description: >
   Identifying how your users interact with your app is useful in customizing and improving the user experience. For example, you can check whether your app is already installed on the user's device and implement features such as transferring navigation to the standalone app from the browser.
 authors:
   - firt
-date: 2022-03-07
+date: 2022-03-10
+updated: 2022-03-14
 ---
 
 You can detect if the user is using your PWA in the browser or in standalone mode. On Chromium-based browsers (Android and desktop), you can also detect the following events:
@@ -19,7 +20,7 @@ You can use this data for analytics, to understand your user's preferences, and 
 
 ## Detecting display mode
 
-To track how users launch your PWA, you can use `matchMedia()` to test the `display-mode` media query. 
+To track how users launch your PWA, you can use `matchMedia()` to test the `display-mode` media query.
 
 ```js
 window.addEventListener('DOMContentLoaded', () => {
@@ -42,7 +43,7 @@ If you use a query parameter on your `start_url` to capture metrics, make sure t
 
 ## App installation
 
-When a user accepts the install prompt in the browser, the `appinstalled` event fires on Chromium-based browsers. A great use for this event handler is to remove any in-app installation promotion you've added. 
+When a user accepts the install prompt in the browser, the `appinstalled` event fires on Chromium-based browsers. A great use for this event handler is to remove any in-app installation promotion you've added.
 
 ```js
 window.addEventListener('appinstalled', () => {
@@ -67,17 +68,17 @@ Users can use your PWA within the browser and in the installed standalone form. 
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/260YbAY9W4qFitqUHhQ5.png", alt="Navigation transfer between a browser tab and a PWA window.", width="800", height="321" %}
 
-On Android, there is a menu item similar to the one on desktop from the browser that transfers the navigation to the app. In this case, the current URL is opened but it will be a new page navigation in the app. 
+On Android, there is a menu item similar to the one on desktop from the browser that transfers the navigation to the app. In this case, the current URL is opened but it will be a new page navigation in the app.
 
 In the following image you can see the menu item in Android when the app is already installed.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/rpMHjK1uhwwJONJKTj2r.png", alt="Chrome on Android shows menu item to open a new navigation in a PWA window.", width="800", height="1689" %}
 
-### Transfer after installation 
+### Transfer after installation
 
 From desktop browsers, the current navigation is immediately transferred to the app on installation. The browser's tab is closed, and the newly installed app is opened, continuing what the user was doing.
 
-On mobile browsers, your current navigation stays in the browser when you install the app. If the users want to move to the app, they need to open the app manually, and it will be a new navigation. 
+On mobile browsers, your current navigation stays in the browser when you install the app. If the users want to move to the app, they need to open the app manually, and it will be a new navigation.
 
 ### Detecting the transfer
 
@@ -104,8 +105,8 @@ When a user opens the installed icon, no storage is shared with Safari. If your 
 
 ## Related applications
 
-A website indicates a relationship with an app via the manifest. To do so, use the [`related_applications` member](https://developer.mozilla.org/docs/Web/Manifest/related_applications) of the Web App Manifest spec. 
-The `related_applications` key is an array of objects that represent each related application. Each entry contains `platform`, `url`, and an optional `id`. 
+A website indicates a relationship with an app via the manifest. To do so, use the [`related_applications` member](https://developer.mozilla.org/docs/Web/Manifest/related_applications) of the Web App Manifest spec.
+The `related_applications` key is an array of objects that represent each related application. Each entry contains `platform`, `url`, and an optional `id`.
 
 These are the possible [platform values](https://github.com/w3c/manifest/wiki/Platforms):
 * `play`: Google Play apps (Android and ChromeOS).
@@ -118,7 +119,7 @@ These are the possible [platform values](https://github.com/w3c/manifest/wiki/Pl
 
 When the user installs an app, you can redirect the user to a related app if you set the `prefer_related_applications` field to `true` in your manifest. With this setup, on compatible browsers the install flows won't install the PWA; instead they trigger a store installation from the `url` or `id` that you specified in the `related_applications` entry.
 
-The related application could be your PWA and it will be installed via an app store. One advantage of this configuration is that, at the moment, only apps installed through the app store are recovered with a backup or when you switch to a new device. 
+The related application could be your PWA and it will be installed via an app store. One advantage of this configuration is that, at the moment, only apps installed through the app store are recovered with a backup or when you switch to a new device.
 
 ```json
 {
@@ -146,10 +147,10 @@ Safari doesn't support the `related_applications` member, but it offers [Smart A
 The [`getInstalledRelatedApps()`](/get-installed-related-apps/) method allows your website to check whether your iOS/Android/desktop app or PWA is installed on the user's device.
 
 Checking if a related app is installed already helps you to implement features such as hiding custom-installed prompts or redirecting the user directly to the installed app, instead of going to a general purpose website.
-To use the `getInstalledRelatedApps()` method, both the installed app and the website need to configure their connection with each other. Each app, depending on its platform, includes metadata to recognize the website and the website includes the expected installed app in the `related_applications` field in the manifest. 
+To use the `getInstalledRelatedApps()` method, both the installed app and the website need to configure their connection with each other. Each app, depending on its platform, includes metadata to recognize the website and the website includes the expected installed app in the `related_applications` field in the manifest.
 
-Tools such as[BubbleWrap](https://github.com/GoogleChromeLabs/bubblewrap) or [PWA Builder](https://www.pwabuilder.com/), which allow you to publish your PWA to app stores, already add the required metadata so your website can use `getInstalledRelatedApps()` right away. 
-To detect whether a PWA is already installed using `getInstalledRelatedApps()`, define `webapp` in the manifest `related_applications` field with the URL to your manifest: 
+Tools such as[BubbleWrap](https://github.com/GoogleChromeLabs/bubblewrap) or [PWA Builder](https://www.pwabuilder.com/), which allow you to publish your PWA to app stores, already add the required metadata so your website can use `getInstalledRelatedApps()` right away.
+To detect whether a PWA is already installed using `getInstalledRelatedApps()`, define `webapp` in the manifest `related_applications` field with the URL to your manifest:
 
 ```json
 ...
@@ -167,7 +168,7 @@ const relatedApps = await navigator.getInstalledRelatedApps();
 const PWAisInstalled = relatedApps.length > 0;
 ```
 
-#### Detect installation from outside the PWA's scope 
+#### Detect installation from outside the PWA's scope
 
 From Chrome on Android 89, you can detect if a PWA is installed, even from outside the PWA's scope. Your PWA must set a JSON file within the `/.well-known/` folder, giving permission to the other scope, as described in [this article](/get-installed-related-apps/#check-pwa-out-of-scope).
 

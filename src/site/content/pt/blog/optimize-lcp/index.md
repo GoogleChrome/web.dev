@@ -338,7 +338,7 @@ Uma lista de propriedades úteis que você pode usar:
 
 Os service workers podem ser usados para muitas tarefas úteis, incluindo a entrega de respostas HTML menores, conforme mencionado anteriormente neste artigo. Eles também podem ser usados para armazenar em cache qualquer recurso estático que possa ser servido ao navegador em vez de ser transferido pela rede em solicitações repetidas.
 
-O pré-cache de recursos críticos usando um service worker pode reduzir seus tempos de carregamento significativamente, especialmente para usuários que recarregam a página web com uma conexão mais fraca (ou mesmo a acessam offline). Bibliotecas como a [Workbox](https://developers.google.com/web/tools/workbox/) podem deixar o processo de atualização de ativos pré-armazenados mais fácil do que escrever um service worker personalizado para lidar com isso você mesmo.
+O pré-cache de recursos críticos usando um service worker pode reduzir seus tempos de carregamento significativamente, especialmente para usuários que recarregam a página web com uma conexão mais fraca (ou mesmo a acessam offline). Bibliotecas como a [Workbox](https://developer.chrome.com/docs/workbox/) podem deixar o processo de atualização de ativos pré-armazenados mais fácil do que escrever um service worker personalizado para lidar com isso você mesmo.
 
 {% Aside %} Dê uma olhada em [Confiabilidade da rede](/reliable/) para aprender mais sobre service workers e o Workbox. {% endAside %}
 
