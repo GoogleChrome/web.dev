@@ -4,6 +4,7 @@ title: YAML front matter
 subhead: |
   Reference documentation for web.dev's YAML front matter properties.
 date: 2021-03-03
+updated: 2022-03-28
 description: |
   Reference documentation for web.dev's YAML front matter properties.
 ---
@@ -283,7 +284,7 @@ A page's full list of tags is shown at the bottom of its main content:
 ### Supported keywords {: #supported-keywords }
 
 Make sure tags added to the page are listed in
-[`tagsData.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/tagsData.json).
+[`tags.yaml`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/i18n/tags.yaml).
 
 ## `thumbnail`: present a slightly different version of the hero on the homepages {: #thumbnail }
 

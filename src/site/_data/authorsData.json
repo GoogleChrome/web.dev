@@ -4,6 +4,17 @@
     "twitter": "mustafa_x",
     "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/zL9KZGMmN6NIfAxwSMfx.jpeg"
   },
+  "iamakulov": {
+    "homepage": "https://iamakulov.com/",
+    "github": "iamakulov",
+    "twitter": "iamakulov",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wGLbfEs3xyBlmA4lqviX.jpg"
+  },
+  "pbakaus": {
+    "homepage": "https://paulbakaus.com/",
+    "twitter": "pbakaus",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/dmZ5xayLJVUioaNSvtmB.jpeg"
+  },
   "paulkinlan": {
     "homepage": "https://paul.kinlan.me/",
     "twitter": "paul_kinlan",
@@ -618,7 +629,7 @@
     "image": "image/admin/KxIs73yjsWwzEPHQaHEA.jpg"
   },
   "nabeelalshamma": {
-    "image" : "image/8WbTDNrhLsU0El80frMBGE4eMCD3/gZlM5s1kj09oCG5h2buz.jpeg",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/gZlM5s1kj09oCG5h2buz.jpeg",
     "github": "alshamma",
     "linkedin": "https://www.linkedin.com/in/alshamma/"
   },
@@ -1093,7 +1104,7 @@
     "country": "DE",
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OZvyDgCkUQAIA87UJV7A.jpg"
   },
-  "leenasohoni":{
+  "leenasohoni": {
     "country": "Singapore",
     "twitter": "leena_sohoni",
     "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/VXCjCzLEGWApTkZkNZkR.JPG"
@@ -1163,11 +1174,11 @@
     "image": "image/MtjnObpuceYe3ijODN3a79WrxLU2/sWOfAs4f2WyQMMF9xt1A.jpg"
   },
   "alexandrawhite": {
-     "country": "US",
-     "github": "heyawhite",
-     "twitter": "heyawhite",
-     "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/tKKMrgVB852NNd1UMRzN.png"
-   },
+    "country": "US",
+    "github": "heyawhite",
+    "twitter": "heyawhite",
+    "image": "image/VbsHyyQopiec0718rMq2kTE1hke2/tKKMrgVB852NNd1UMRzN.png"
+  },
   "svenmay": {
     "country": "DE",
     "github": "Svenmay",
@@ -1259,5 +1270,22 @@
   "kbalasub": {
     "country": "US",
     "github": "kbalasub"
+  },
+  "patrickhlauke": {
+    "github": "patrickhlauke",
+    "country": "UK",
+    "homepage": "https://www.splintered.co.uk/"
+  },
+  "kevinkiklee": {
+    "country": "US",
+    "twitter": "kevinkiklee",
+    "github": "kevinkiklee",
+    "glitch": "kevinkiklee",
+    "image": "image/hVf1flv5Jdag8OQKYqOcJgWUvtz1/8bRRaZVXzJKCDu0RlK1Y.jpg"
+  },
+  "nikilmathew": {
+    "twitter": "nikil_mathew",
+    "linkedin": "https://www.linkedin.com/in/nikilmat/",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/mc2N7pSjT8K7WBi8PR6L.jpeg"
   }
 }

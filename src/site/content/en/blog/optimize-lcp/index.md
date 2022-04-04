@@ -539,7 +539,7 @@ network on repeat requests.
 Precaching critical resources using a service worker can reduce their load times
 significantly, especially for users who reload the web page with a weaker
 connection (or even access it offline). Libraries like
-[Workbox](https://developers.google.com/web/tools/workbox/) can make the process
+[Workbox](https://developer.chrome.com/docs/workbox/) can make the process
 of updating precached assets easier than writing a custom service worker to
 handle this yourself.
 

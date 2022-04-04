@@ -339,7 +339,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 この記事の前半で説明したように、Service Worker は比較的小さな HTML レスポンスの配信などを含む数多くの便利なタスクに利用が可能です。また、これを利用して静的なリソースをブラウザーにキャッシュし、繰り返しリクエストされる場合にネットワークを経由せずにリソースを提供することも可能です。
 
-Service Worker を使用して重要なリソースを事前にキャッシュしておくと、特に接続状態が悪い中で Web ページを再読み込みするユーザー (またはオフラインでアクセスするユーザー) の読み込み時間を大幅に削減することができます。また、[Workbox](https://developers.google.com/web/tools/workbox/) のようなライブラリを使用すれば、事前にキャッシュされたアセットの更新処理を自分で Service Worker を記述して処理するよりも簡単に行うことができます。
+Service Worker を使用して重要なリソースを事前にキャッシュしておくと、特に接続状態が悪い中で Web ページを再読み込みするユーザー (またはオフラインでアクセスするユーザー) の読み込み時間を大幅に削減することができます。また、[Workbox](https://developer.chrome.com/docs/workbox/) のようなライブラリを使用すれば、事前にキャッシュされたアセットの更新処理を自分で Service Worker を記述して処理するよりも簡単に行うことができます。
 
 {% Aside %}Service Worker と Workbox については、「[ネットワークの信頼性](/reliable/)」を参照してください。{% endAside %}
 

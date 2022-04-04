@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2022-02-10
+updated: 2022-03-31
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -174,6 +174,20 @@ const devices = await navigator.hid.getDevices();
   {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of an HID device prompt on a website.", width="800", height="513" %}
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
+
+You can also use the optional `exclusionFilters` key in 
+`navigator.hid.requestDevice()` to exclude some devices from the browser picker
+that are known to be malfunctioning for instance.
+
+```js
+// Request access to a device with vendor ID 0xABCD. The device must also have
+// a collection with usage page Consumer (0x000C) and usage ID Consumer
+// Control (0x0001). The device with product ID 0x1234 is malfunctioning.
+const [device] = await navigator.hid.requestDevice({
+  filters: [{ vendorId: 0xabcd, usagePage: 0x000c, usage: 0x0001 }],
+  exclusionFilters: [{ vendorId: 0xabcd, productId: 0x1234 }],
+});
+```
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
 identification. Its `collections` attribute is initialized with a hierarchical

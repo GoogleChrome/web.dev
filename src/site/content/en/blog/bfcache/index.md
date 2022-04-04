@@ -50,7 +50,7 @@ that moment, bfcache can make a big difference in how fast the previous page
 loads:
 
 <div class="table-wrapper">
-  <table data-alignment="top>
+  <table data-alignment="top">
     <tr>
       <td width="30%"><strong><em>Without</em> bfcache enabled</strong></td>
       <td>

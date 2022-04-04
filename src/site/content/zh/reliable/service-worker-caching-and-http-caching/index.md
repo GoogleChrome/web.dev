@@ -38,11 +38,11 @@ Service Worker 拦截网络类型的 HTTP 请求并使用[缓存策略](https://
 
 #### 控制 Service Worker 缓存
 
-Service Worker 使用[事件侦听器](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)（通常是 `fetch` 事件）拦截 HTTP 请求。以下[代码片段](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)演示了[缓存优先](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)这一缓存策略的逻辑。
+Service Worker 使用[事件侦听器](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)（通常是 `fetch` 事件）拦截 HTTP 请求。以下[代码片段](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)演示了[缓存优先](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network)这一缓存策略的逻辑。
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="该图展示了 Service Worker 如何拦截 HTTP 请求", width="800", height="516" %}
 
-强烈建议使用[工具箱](https://developers.google.com/web/tools/workbox)以免白费力气重复工作。例如，您可以[使用一行正则表达式代码来注册资源 URL 路径](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route)。
+强烈建议使用[工具箱](https://developer.chrome.com/docs/workbox/)以免白费力气重复工作。例如，您可以[使用一行正则表达式代码来注册资源 URL 路径](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route)。
 
 ```js
 import {registerRoute} from 'workbox-routing';
