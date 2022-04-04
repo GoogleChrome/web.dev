@@ -10,6 +10,7 @@ description: >
   operation. It may hold one or more data items, each of one or more data types. This article
   explains what developers can do with the DataTransfer API.
 date: 2021-04-21
+updated: 2022-04-05
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/QDbWuORGDrUkKquHEeAU.jpeg
 thumbnail: image/Fu4piJdkAKgtrxhf0aLliUyaEXt1/oUzqAGoZ709h6duNSOUo.webp
 tags:
@@ -18,45 +19,46 @@ tags:
 ---
 
 You might have heard about the
-[DataTransfer API](https://developer.mozilla.org/docs/Web/API/DataTransfer) before, that is
+[DataTransfer API](https://developer.mozilla.org/docs/Web/API/DataTransfer), which is
 part of the
 [HTML5 Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
 and [Clipboard events](https://developer.mozilla.org/docs/Web/API/Element/copy_event). It can
 be used to transfer data between source and receiving targets. This API
 [ready to use](https://caniuse.com/mdn-api_datatransfer_setdata) in all modern desktop browsers.
 
-The drag-drop and copy-paste interactions are often used for interactions within a page,
-transferring a simple text from A to B. But what is oftentimes overlooked is the ability to use
+The drag-drop and copy-paste interactions are often used for interactions within a page
+to transfer simple text from A to B. But what is oftentimes overlooked is the ability to use
 these same interactions to go beyond the browser window.
 
 Both the browser's built-in drag-and-drop as well as the copy-paste interactions can communicate
 with other (web) applications, not tied to any origin. The API has support for providing multiple
-data entries that can have different behaviors based on where data is transferred to. Your
+data entries with different behaviors based on where data is transferred to. Your
 web application can send and receive the transferred data when listening to incoming events.
 
 This capability can change the way we think about sharing and interoperability in web
 applications on desktop. Transferring data between applications doesn't need to rely on
-tightly coupled integrations anymore. Instead you can give the user the full control to transfer their
+tightly coupled integrations anymore. Instead you can give users full control to transfer their
 data to wherever they would like.
 
 <figure>
   {% YouTube 'EYMgUhn_Zdo' %}
-  <figcaption>An example of interactions that are possible with the DataTransfer API.</figcaption>
+  <figcaption>An example of interactions that are possible with the DataTransfer API. (Video does not include sound.)</figcaption>
 </figure>
 
 ## Transferring data
 
-To get started with transferring data, you'll need to implement drag-drop or copy-paste. The examples
+To get started, you'll need to implement drag-drop or copy-paste. The examples
 below show drag-drop interactions, but the process for copy-paste is similar. If
 you are unfamiliar with the Drag and Drop API, there's a great article
-[explaining HTML5 Drag and Drop](/drag-and-drop/) that details the ins and outs.
+[explaining HTML5 Drag and Drop](/drag-and-drop/), which details the ins and outs.
 
 By providing [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
 Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime-types used in the
 example below.
 
 ```js
-document.querySelector('#dragSource').addEventListener('dragstart', (event) => {
+document.querySelector('#dragSource')
+.addEventListener('dragstart', (event) => {
   event.dataTransfer.setData('text/plain', 'Foo bar');
   event.dataTransfer.setData('text/html', '<h1>Foo bar</h1>');
   event.dataTransfer.setData('text/uri-list', 'https://example.com');
@@ -68,13 +70,15 @@ Receiving the data transfer works almost the same as providing it. Listen to the
 to the `type` keys of the data. The data itself can only be accessed after a drop.
 
 ```js
-document.querySelector('#dropTarget').addEventListener('dragover', (event) => {
+document.querySelector('#dropTarget')
+.addEventListener('dragover', (event) => {
   console.log(event.dataTransfer.types);
   // Accept the drag-drop transfer.
   event.preventDefault();
 });
 
-document.querySelector('#dropTarget').addEventListener('drop', (event) => {
+document.querySelector('#dropTarget')
+.addEventListener('drop', (event) => {
   // Log all the transferred data items to the console.
   for (let type of event.dataTransfer.types) {
     console.log({ type, data: event.dataTransfer.getData(type) });
@@ -91,7 +95,7 @@ Three MIME-types are widely supported across applications:
 - **`text/uri-list`:** Navigates to the URL when dropping on the URL bar or browser page. A URL
   shortcut will be created when dropping on a directory or the desktop.
 
-The widespread adoption of `text/html` by WYSIWYG editors makes it very useful. Like in HTML
+The widespread adoption of `text/html` by WYSIWYG editors makes it very useful. As in HTML
 documents, you can embed resources by using
 [Data URLs](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) or publicly
 accessible URLs. This works well with exporting visuals (for example from a canvas) to editors like
