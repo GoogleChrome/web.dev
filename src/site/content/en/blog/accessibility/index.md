@@ -290,7 +290,7 @@ obvious that if we create something that works well for someone with a cognitive
 impairment, we're going to be creating something which is going to be a pleasant
 experience for everyone.
 
-> *So, how would you summarize how you think about accessibility?*
+So, how would you summarize how you think about accessibility?
 
 When you look at the broad range of abilities and disabilities that people
 might have, you can see that designing and building products only for people who
@@ -299,7 +299,6 @@ It's almost self-defeating, because we're creating a more stressful and less
 usable experience for everyone, and for some users creating an experience which
 actually excludes them altogether.
 
-<hr>
 
 In this interview, Victor identified a range of impairments, and placed them
 into four broad categories: *visual*, *motor*, *hearing*, and *cognitive*. He
@@ -343,7 +342,7 @@ may fall into more than one category or type.
   </tr>
 </table>
 
-\* Repetitive Strain Injury: e.g., carpal tunnel syndrome, tennis elbow, trigger
+Repetitive Strain Injury: e.g., carpal tunnel syndrome, tennis elbow, trigger
 finger
 
 ## Next steps
