@@ -81,7 +81,7 @@ sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
 at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
 porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
 quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
+ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi
 quam sem. Integer et erat ac mi scelerisque suscipit et vitae nulla. Aliquam
 scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
@@ -646,34 +646,6 @@ porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
 quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
-
-{% Instruction 'remix', 'ol' %}
-{% Instruction 'preview', 'ol' %}
-
-To explain how to open the Glitch console, use the `console` argument:
-
-{% Instruction 'console', 'ol' %}
-
-To explain how to create a new file in a Glitch, use the `create` argument:
-
-{% Instruction 'create', 'ol' %}
-
-To explain how to view a Glitch's source code, use the `source` argument:
-
-{% Instruction 'source' %}
-
-If users are reloading an app, use the `reload-app` argument:
-
-{% Instruction 'reload-app' %}
-
-If users are reloading a traditional web page, use the `reload-page` argument:
-
-{% Instruction 'reload-page' %}
-
-If users are reloading a page for the purpose of profiling,
-use the `start-profiling` argument:
-
-{% Instruction 'start-profiling' %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
