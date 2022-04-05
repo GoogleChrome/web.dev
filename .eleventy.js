@@ -22,7 +22,7 @@ const fs = require('fs');
 
 const markdown = require('./src/site/_plugins/markdown');
 
-// Shortcodes udes in prose
+// Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
 const Blockquote = require('webdev-infra/shortcodes/Blockquote');
 const Codepen = require('./src/site/_includes/components/Codepen');
