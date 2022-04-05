@@ -182,9 +182,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 There are a couple of points worth covering in this code:
 
 - The [default
-  action](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event#browser_compatibility)
+  action](https://developer.mozilla.org/docs/Web/API/Document/dragover_event#browser_compatibility)
   for `dragover` event is to set the `dataTransfer.dropEffect` property to
-  `"none"`. This prevents the `drop` event from being fired. To override this
+  `"none"`. The `dropEffect` property is covered later in this article. For now,
+  just know that it prevents the `drop` event from being fired. To override this
   behavior, call `e.preventDefault()`. Another good practice is to return
   `false` in that same handler.
 
