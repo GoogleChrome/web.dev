@@ -10,7 +10,7 @@ subhead: >
   Nishu Goel is a renowned web engineer from India, Google Developer Expert for Angular and web technologies. She told us about her community involvement, career plans and the best ways to learn web development.
 description: >
   One of a series of interviews with members of the Google Developers Experts (GDE) program.
-date: 2022-03-31
+date: 2022-04-05
 tags:
   - blog
 ---
