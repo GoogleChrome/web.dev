@@ -31,7 +31,7 @@ to transfer simple text from A to B. But what is oftentimes overlooked is the ab
 these same interactions to go beyond the browser window.
 
 Both the browser's built-in drag-and-drop as well as the copy-paste interactions can communicate
-with other applications web or otherwise, and are not tied to any origin. The API supports multiple
+with other applications, web or otherwise, and are not tied to any origin. The API supports multiple
 data entries with different behaviors based on where data is transferred to. Your
 web application can send and receive the transferred data when listening to incoming events.
 
