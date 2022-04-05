@@ -43,7 +43,7 @@ Because of this interest in web performance, I got involved in the Web Almanac a
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/2jhiM4MDkLxZP0FzxjN0.png", alt="Print edition of the Web Almanac.", width="800", height="454" %}
 </figure>
 
-**Monika**: You're also very much involved in giving back to the community. Lately you've been volunteering with a Ugandan NGO YIYA - how did it start and what was the main point of that cooperation?
+**Monika**: You're also very much involved in giving back to the community. Lately you've been volunteering with a Ugandan NGO YIYA&mdash;how did it start and what was the main point of that cooperation?
 
 **Nishu**: It started with the GDE team informing us about the volunteering opportunity with YIYA. The Ugandan NGO was looking for engineers to help them with either the content preparation or technical features. The program aims to empower school-aged children in Uganda and offer them education opportunities using the technologies available locally&mdash;not computers or textbooks, but rather basic keypad phones and radios. The children would dial a certain number and receive a set of information, dial another one for more insights, and so on. It became even more useful during the pandemic.
 
