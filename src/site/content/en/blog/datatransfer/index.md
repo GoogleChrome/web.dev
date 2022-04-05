@@ -6,9 +6,9 @@ authors:
   - joriktangelder
   - thomassteiner
 description: >
-  The DataTransfer object holds the data that is being dragged during a drag and drop
+  The DataTransfer object holds data that is being dragged during a drag and drop
   operation. It may hold one or more data items, each of one or more data types. This article
-  explains what developers can do with the DataTransfer API.
+  explains what you can do with the DataTransfer API.
 date: 2021-04-21
 updated: 2022-04-05
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/QDbWuORGDrUkKquHEeAU.jpeg
@@ -23,7 +23,7 @@ You might have heard about the
 part of the
 [HTML5 Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
 and [Clipboard events](https://developer.mozilla.org/docs/Web/API/Element/copy_event). It can
-be used to transfer data between source and receiving targets. This API
+be used to transfer data between source and receiving targets. This API is
 [ready to use](https://caniuse.com/mdn-api_datatransfer_setdata) in all modern desktop browsers.
 
 The drag-drop and copy-paste interactions are often used for interactions within a page
@@ -31,14 +31,14 @@ to transfer simple text from A to B. But what is oftentimes overlooked is the ab
 these same interactions to go beyond the browser window.
 
 Both the browser's built-in drag-and-drop as well as the copy-paste interactions can communicate
-with other (web) applications, not tied to any origin. The API has support for providing multiple
+with other applications web or otherwise, and are not tied to any origin. The API supports multiple
 data entries with different behaviors based on where data is transferred to. Your
 web application can send and receive the transferred data when listening to incoming events.
 
 This capability can change the way we think about sharing and interoperability in web
 applications on desktop. Transferring data between applications doesn't need to rely on
-tightly coupled integrations anymore. Instead you can give users full control to transfer their
-data to wherever they would like.
+tightly coupled integrations anymore. Instead you can give users full control to transfer
+data to wherever they like.
 
 <figure>
   {% YouTube 'EYMgUhn_Zdo' %}
@@ -50,9 +50,10 @@ data to wherever they would like.
 To get started, you'll need to implement drag-drop or copy-paste. The examples
 below show drag-drop interactions, but the process for copy-paste is similar. If
 you are unfamiliar with the Drag and Drop API, there's a great article
-[explaining HTML5 Drag and Drop](/drag-and-drop/), which details the ins and outs.
+[explaining HTML5 Drag and Drop](/drag-and-drop/), which explains the ins and outs.
 
-By providing [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
+By providing [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data,
+you are able to freely interact with external applications.
 Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime-types used in the
 example below.
 
@@ -65,6 +66,10 @@ document.querySelector('#dragSource')
 });
 ```
 
+Notice the `event.dataTransfer` property. This returns an instance of
+[`DataTransfer`](https://developer.mozilla.org/docs/Web/API/DataTransfer). As
+you'll see, this object is sometimes returned by properties with other names.
+
 Receiving the data transfer works almost the same as providing it. Listen to the receiving events
 (`drop`, or `paste`) and read the keys. When dragging over an element, the browser only has access
 to the `type` keys of the data. The data itself can only be accessed after a drop.
@@ -73,7 +78,7 @@ to the `type` keys of the data. The data itself can only be accessed after a dro
 document.querySelector('#dropTarget')
 .addEventListener('dragover', (event) => {
   console.log(event.dataTransfer.types);
-  // Accept the drag-drop transfer.
+  // Without this, the drop event won't fire.
   event.preventDefault();
 });
 
@@ -88,10 +93,10 @@ document.querySelector('#dropTarget')
 ```
 
 Three MIME-types are widely supported across applications:
-- **`text/html`:** Renders the HTML payload in <code>contentEditable</code> elements and rich
+- **`text/html`:** Renders the HTML payload in `contentEditable` elements and rich
   text (WYSIWYG) editors like Google Docs, Microsoft Word, and others.
 - **`text/plain:`** Sets the value of input elements, content of code editors, and the fallback
-  from <code>text/html</code>.
+  from `text/html`.
 - **`text/uri-list`:** Navigates to the URL when dropping on the URL bar or browser page. A URL
   shortcut will be created when dropping on a directory or the desktop.
 
@@ -109,8 +114,8 @@ event.dataTransfer.setData('text/html', html);
 
 ### Transfer using copy and paste
 
-For posterity, using the DataTransfer API with copy-paste interactions looks like the following. Notice that
-the `dataTransfer` property is named `clipboardData` for clipboard events.
+Using the DataTransfer API with copy-paste interactions is shown below. Notice that
+the `DataTransfer` object is returned by a property called `clipboardData` for clipboard events.
 
 ```js
 // Listen to copy-paste events on the document.
@@ -140,19 +145,22 @@ data. This can be useful for cross-browser interactions within your application.
 can transfer more complex data using the `JSON.stringify()` and `JSON.parse()` functions.
 
 ```js
-document.querySelector('#dragSource').addEventListener('dragstart', (event) => {
+document.querySelector('#dragSource')
+.addEventListener('dragstart', (event) => {
   const data = { foo: 'bar' };
   event.dataTransfer.setData('my-custom-type', JSON.stringify(data));
 });
 
-document.querySelector('#dropTarget').addEventListener('dragover', (event) => {
+document.querySelector('#dropTarget')
+.addEventListener('dragover', (event) => {
   // Only allow dropping when our custom data is available.
   if (event.dataTransfer.types.includes('my-custom-type')) {
     event.preventDefault();
   }
 });
 
-document.querySelector('#dropTarget').addEventListener('drop', (event) => {
+document.querySelector('#dropTarget')
+.addEventListener('drop', (event) => {
   if (event.dataTransfer.types.includes('my-custom-type')) {
     event.preventDefault();
     const dataString = event.dataTransfer.getData('my-custom-type');
@@ -215,8 +223,8 @@ to desktop browsers only.
 ### Discoverability
 
 Drag-drop and copy-paste are system-level interactions when working on a desktop computer, with
-roots back to the first GUIs about 40 years ago. Think for example about how many times you have
-used these interactions for organizing files. On the web, this is not very common yet.
+roots back to the first GUIs more than 40 years ago. Think about how many times you have
+used these interactions for organizing files. This isn't yet very common on the web.
 
 You will need to educate users about this new interaction, and come up with UX patterns to make this
 recognizable, especially for people whose experience with computers so far has been confined to mobile devices.
@@ -224,7 +232,7 @@ recognizable, especially for people whose experience with computers so far has b
 ### Accessibility
 
 Drag-drop is not a very accessible interaction, but the DataTransfer API works with copy-paste, too.
-Make sure you listen to copy-paste events! It doesn't take much extra work, and your users
+Make sure you listen to copy-paste events. It doesn't take much extra work, and your users
 will be grateful to you for adding it.
 
 ### Security and privacy
