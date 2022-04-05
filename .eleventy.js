@@ -24,12 +24,12 @@ const markdown = require('./src/site/_plugins/markdown');
 
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
-const Blockquote = require('webdev-infra/shortcodes/Blockquote');
-const Codepen = require('./src/site/_includes/components/Codepen');
+const {Blockquote} = require('webdev-infra/shortcodes/Blockquote');
+const {Codepen} = require('webdev-infra/shortcodes/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
-const Details = require('webdev-infra/shortcodes/Details');
-const DetailsSummary = require('webdev-infra/shortcodes/DetailsSummary');
+const {Details} = require('webdev-infra/shortcodes/Details');
+const {DetailsSummary} = require('webdev-infra/shortcodes/DetailsSummary');
 const Glitch = require('./src/site/_includes/components/Glitch');
 const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
