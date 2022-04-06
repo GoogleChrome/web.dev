@@ -654,3 +654,17 @@ porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
 quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
+
+### Test of Aside nested in an ordered list
+
+See the <a href="https://github.com/GoogleChrome/web.dev/issues/7640">underlying issue</a>.
+
+1. First item.
+   Another line.
+
+2. Second item.
+   {% Aside %}
+   This is an `<aside>`, including [Markdown](https://example.com/).
+   {% endAside %}
+
+3. Third item.
