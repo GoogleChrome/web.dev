@@ -170,7 +170,7 @@ Core Web Vitals に関してはフィールド データの測定が何よりも
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a></td>
+        <td><a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (代わりに <a href="/tbt/">TBT</a> を使用してください)</td>
         <td>✔</td>

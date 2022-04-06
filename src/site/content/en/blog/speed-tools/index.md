@@ -4,7 +4,7 @@ title: How To Think About Speed Tools
 subhead: |
   How To Think About Speed Tools
 date: 2018-02-26
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   How To Think About Speed Tools
 tags:
@@ -187,8 +187,8 @@ data.
         </tr>
         <tr>
             <td>
-                <a href="https://developers.google.com/web/tools/chrome-devtools/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YpBBtcAGyGGTDgB9IC8J.svg", alt="Chrome Developer Tools", width="150", height="150" %}</a>
-                    <h3><a href="https://developers.google.com/web/tools/chrome-devtools/">Chrome Developer Tools</a></h3>
+                <a href="https://developer.chrome.com/docs/devtools/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YpBBtcAGyGGTDgB9IC8J.svg", alt="Chrome Developer Tools", width="150", height="150" %}</a>
+                    <h3><a href="https://developer.chrome.com/docs/devtools/">Chrome Developer Tools</a></h3>
                     <p>Allows you to profile the runtime of a page, as well as identify and debug
                 performance bottlenecks.</p>
             </td>       

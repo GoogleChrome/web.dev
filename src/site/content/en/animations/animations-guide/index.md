@@ -343,4 +343,4 @@ see if a different CSS property will give the same look and feel with better per
 Use the `will-change` property sparingly,
 and only if you encounter a performance issue.
 
-[rendering]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#rendering
+[rendering]: https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#rendering

@@ -268,7 +268,7 @@ environment:
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">
+        <td><a href="https://developer.chrome.com/docs/devtools/">
           Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>

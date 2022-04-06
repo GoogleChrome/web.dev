@@ -14,8 +14,8 @@ tags:
 
 ---
 
-Paint is the process of filling in pixels that eventually get composited to 
-the users' screens. It is often the longest-running of all tasks in the 
+Paint is the process of filling in pixels that eventually get composited to
+the users' screens. It is often the longest-running of all tasks in the
 pipeline, and one to avoid if at all possible.
 
 ## TL;DR
@@ -100,4 +100,4 @@ The paint profiler above will allow you to determine if you need to look at othe
 
 Where you can you always want to avoid paint during animations in particular, as the **10ms** you have per frame is normally not long enough to get paint work done, especially on mobile devices.
 
-[renderingtab]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#rendering
+[renderingtab]: https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#rendering
