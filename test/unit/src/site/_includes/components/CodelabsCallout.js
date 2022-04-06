@@ -17,6 +17,8 @@
 
 const {expect} = require('chai');
 const cheerio = require('cheerio');
+
+const {defaultLanguage} = require('../../../../../../src/lib/utils/language');
 const {memoize} = require('../../../../../../src/site/_filters/find-by-url');
 const CodelabsCallout = require('../../../../../../src/site/_includes/components/CodelabsCallout');
 
@@ -42,12 +44,19 @@ describe('CodelabsCallout', function () {
       expect(li.length).to.equal(3);
     });
 
-    it('returns nothing if URLs not found', async function () {
+    it('returns an empty string if URLs not found', async function () {
       const html = CodelabsCallout(
         collectionAll.map((i) => i.url + '/pop'),
         'en',
       );
-      expect(html).to.equal(undefined);
+      expect(html).to.equal('');
+    });
+
+    it('returns the default-language codelab as a fallback', async function () {
+      const html = CodelabsCallout('foobar', 'zz');
+      const $ = cheerio.load(html);
+      expect($('a').attr('href')).to.equal(`/${defaultLanguage}/foobar/`);
+      expect($('span').text()).to.equal('foobar');
     });
   });
 
