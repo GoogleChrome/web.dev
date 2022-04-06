@@ -71,7 +71,7 @@ available in the following tools:
 ### Lab tools
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 
 ### Measure FCP in JavaScript

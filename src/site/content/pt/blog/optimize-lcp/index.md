@@ -154,7 +154,7 @@ Se você usar um empacotador de módulos ou ferramenta de build, inclua um plug-
 
 ### Adiando o CSS que não for crítico
 
-Use a aba [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) no Chrome DevTools para localizar qualquer CSS não utilizado em sua página web.
+Use a aba [Coverage](https://developer.chrome.com/docs/devtools/coverage/) no Chrome DevTools para localizar qualquer CSS não utilizado em sua página web.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Aba Coverage no Chrome DevTools", width="800", height="559" %}
 
@@ -402,7 +402,7 @@ Uma série de ferramentas estão disponíveis para medir e depurar LCP:
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- A seção de **intervalos** do painel [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) no Chrome DevTools inclui um marcador de LCP e mostra qual elemento está associado com a LCP quando você passar o mouse sobre o campo **Related Node**.
+- A seção de **intervalos** do painel [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) no Chrome DevTools inclui um marcador de LCP e mostra qual elemento está associado com a LCP quando você passar o mouse sobre o campo **Related Node**.
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP no Chrome DevTools", width="800", height="509" %}
 

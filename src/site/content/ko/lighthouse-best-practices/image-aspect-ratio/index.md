@@ -33,7 +33,7 @@ updated: 2020-04-29
 
 ### 이미지의 종횡비에 영향을 미치는 CSS 확인하기
 
-잘못된 종횡비를 일으키는 CSS를 찾는 데 문제가 있다면, Chrome DevTools가 주어진 이미지에 영향을 주는 CSS 선언을 표시할 수 있습니다. 자세한 내용은 [요소에 실제로 적용된 CSS만 보기](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed) 페이지를 참조하세요.
+잘못된 종횡비를 일으키는 CSS를 찾는 데 문제가 있다면, Chrome DevTools가 주어진 이미지에 영향을 주는 CSS 선언을 표시할 수 있습니다. 자세한 내용은 [요소에 실제로 적용된 CSS만 보기](https://developer.chrome.com/docs/devtools/css/reference/#computed) 페이지를 참조하세요.
 
 ### HTML에서 이미지의 `width` 및 `height` 속성 확인하기
 

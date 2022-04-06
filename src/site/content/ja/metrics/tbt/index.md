@@ -88,7 +88,7 @@ TBT は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定
 
 ### ラボ測定を実施するためのツール
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://www.webpagetest.org/)
 

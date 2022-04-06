@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-先日発表された [Web Vitals](/vitals/) イニシアチブでは、すべてのサイトが Web 上で優れたユーザーエクスペリエンスを提供するために不可欠となる品質シグナルに関する統一的なガイダンスを提供させていただきました。そしてこのたび、**Web 開発者向けに提供されている Google の人気ツールのすべてで Core Web Vitals の測定がサポート**されるようになり、ユーザー エクスペリエンスに関する問題をより簡単に診断および修正できるようになりました。これには、[Lighthouse](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)、[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)、[Search Console](https://search.google.com/search-console/about)、[web.dev の測定ツール](/measure/)、[Web Vitals Chrome 拡張機能](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)、そして新しい [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API が含まれています。
+先日発表された [Web Vitals](/vitals/) イニシアチブでは、すべてのサイトが Web 上で優れたユーザーエクスペリエンスを提供するために不可欠となる品質シグナルに関する統一的なガイダンスを提供させていただきました。そしてこのたび、**Web 開発者向けに提供されている Google の人気ツールのすべてで Core Web Vitals の測定がサポート**されるようになり、ユーザー エクスペリエンスに関する問題をより簡単に診断および修正できるようになりました。これには、[Lighthouse](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)、[Chrome DevTools](https://developer.chrome.com/docs/devtools/)、[Search Console](https://search.google.com/search-console/about)、[web.dev の測定ツール](/measure/)、[Web Vitals Chrome 拡張機能](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)、そして新しい [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API が含まれています。
 
 Google 検索には、[ページ エクスペリエンス](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html)を評価するための基盤として Core Web Vitals が含まれるようになりました。これらの指標が可能な限りいつでも利用可能で、実用的であることはとても重要です。
 

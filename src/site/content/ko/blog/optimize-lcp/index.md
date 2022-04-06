@@ -170,7 +170,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 ### 중요하지 않은 CSS 지연
 
-Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) 탭을 사용하여 웹 페이지에서 사용하지 않는 CSS를 찾습니다.
+Chrome DevTools의 [Coverage](https://developer.chrome.com/docs/devtools/coverage/) 탭을 사용하여 웹 페이지에서 사용하지 않는 CSS를 찾습니다.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome DevTools의 Coverage 탭", width="800", height="559" %}
 
@@ -428,7 +428,7 @@ LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- Chrome DevTools의 [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) 패널에 있는 **Timing** 섹션에는 LCP 마커가 포함되어 있으며 **Related Node** 필드 위로 마우스를 가져가면 해당 LCP와 연결된 요소가 표시됩니다.
+- Chrome DevTools의 [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) 패널에 있는 **Timing** 섹션에는 LCP 마커가 포함되어 있으며 **Related Node** 필드 위로 마우스를 가져가면 해당 LCP와 연결된 요소가 표시됩니다.
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
 

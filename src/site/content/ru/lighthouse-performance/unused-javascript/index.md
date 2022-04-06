@@ -24,7 +24,7 @@ date: 2020-07-07
 
 ### Выявите неиспользуемый JavaScript
 
-Вкладка [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools предоставляет построчную разбивку неиспользуемого кода.
+Вкладка [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools предоставляет построчную разбивку неиспользуемого кода.
 
 Класс [`Coverage`](https://pptr.dev/#?product=Puppeteer&version=v4.0.0&show=api-class-coverage) в Puppeteer может помочь автоматизировать процесс обнаружения неиспользуемого кода и извлечения используемого кода.
 
@@ -74,5 +74,5 @@ date: 2020-07-07
 - [Разделение кода](https://bundlers.tooling.report/code-splitting/).
 - [Устранение мертвого кода](https://bundlers.tooling.report/transformations/dead-code/).
 - [Мертвый импортированный код](https://bundlers.tooling.report/transformations/dead-code-dynamic/).
-- [Найдите неиспользуемый код JavaScript и CSS с помощью вкладки Coverage в Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/coverage).
+- [Найдите неиспользуемый код JavaScript и CSS с помощью вкладки Coverage в Chrome DevTools](https://developer.chrome.com/docs/devtools/coverage/).
 - [Класс: `Coverage`](https://pptr.dev/#?product=Puppeteer&version=v4.0.0&show=api-class-coverage).

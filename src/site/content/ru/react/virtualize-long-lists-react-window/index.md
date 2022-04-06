@@ -271,7 +271,7 @@ const Row = ({ index, style }) => {
 
 Если вы не знаете, с чего начать виртуализацию списков и таблиц в приложении, выполните указанные ниже действия.
 
-1. Измерьте производительность рендеринга и прокрутки. В [этой статье](https://addyosmani.com/blog/react-window/) рассказывается, как с помощью [измерителя FPS](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second) в Chrome DevTools оценить эффективность рендеринга элементов в списке.
+1. Измерьте производительность рендеринга и прокрутки. В [этой статье](https://addyosmani.com/blog/react-window/) рассказывается, как с помощью [измерителя FPS](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second) в Chrome DevTools оценить эффективность рендеринга элементов в списке.
 2. Добавьте библиотеку `react-window` для работы с длинными списками или таблицами, снижающими производительность.
 3. Если вам нужны функции, не поддерживаемые в библиотеке `react-window`, и вы не можете самостоятельно реализовать их, попробуйте использовать библиотеку [`react-virtualized`](https://github.com/bvaughn/react-virtualized).
 4. Если нужно выполнять отложенную загрузку элементов по мере прокручивания списка пользователем, вложите виртуализированный список в элемент `react-window-infinite-loader`.

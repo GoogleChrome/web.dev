@@ -43,7 +43,7 @@ O Lighthouse não verifica se o `robots.txt` está no local correto. Para funcio
 
 Se o seu servidor retornar um erro de servidor (um [código de status HTTP](/http-status-code) na casa dos 500) para o `robots.txt`, os mecanismos de pesquisa não saberão quais páginas devem ser rastreadas. Eles podem parar de rastrear todo o seu site, o que impediria que novos conteúdos sejam indexados.
 
-Para verificar o código de status HTTP, abra `robots.txt` no Chrome e [verifique a solicitação no Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze).
+Para verificar o código de status HTTP, abra `robots.txt` no Chrome e [verifique a solicitação no Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference/#analyze).
 
 ### Mantenha o `robots.txt` menor que 500 KiB
 

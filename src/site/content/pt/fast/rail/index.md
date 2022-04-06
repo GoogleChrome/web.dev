@@ -151,31 +151,31 @@ Existem algumas ferramentas para ajudá-lo a automatizar as medições do RAIL. 
 
 ### Chrome DevTools
 
-O [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) fornece análises detalhadas sobre tudo o que acontece enquanto sua página é carregada ou executada. Consulte [Introdução à análise do desempenho do tempo de execução](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) para se familiarizar com a IU do painel **Desempenho**.
+O [Chrome DevTools](https://developer.chrome.com/docs/devtools/) fornece análises detalhadas sobre tudo o que acontece enquanto sua página é carregada ou executada. Consulte [Introdução à análise do desempenho do tempo de execução](https://developer.chrome.com/docs/devtools/evaluate-performance/) para se familiarizar com a IU do painel **Desempenho**.
 
 Os seguintes recursos do DevTools são especialmente relevantes:
 
-- [Acelere sua CPU](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle) para simular um dispositivo menos potente.
+- [Acelere sua CPU](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle) para simular um dispositivo menos potente.
 
-- [Acelere a rede](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle) para simular conexões mais lentas.
+- [Acelere a rede](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle) para simular conexões mais lentas.
 
-- [Visualize a atividade da thread principal](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main) para ver todos os eventos que ocorreram na thread principal enquanto você estava gravando.
+- [Visualize a atividade da thread principal](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main) para ver todos os eventos que ocorreram na thread principal enquanto você estava gravando.
 
-- [Visualize as principais atividades da thread em uma tabela](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities) para classificar as atividades com base naquelas que ocupam mais tempo.
+- [Visualize as principais atividades da thread em uma tabela](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities) para classificar as atividades com base naquelas que ocupam mais tempo.
 
-- [Analise quadros por segundo (FPS)](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps) para medir se suas animações realmente funcionam sem problemas.
+- [Analise quadros por segundo (FPS)](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps) para medir se suas animações realmente funcionam sem problemas.
 
 - [Monitore o uso da CPU, tamanho de heap JS, nós DOM, layouts por segundo e muito mais](https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor) em tempo real com o **Monitor de Desempenho**.
 
-- [Visualize solicitações de rede](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network) que ocorreram enquanto você estava gravando com a seção **Rede.**
+- [Visualize solicitações de rede](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network) que ocorreram enquanto você estava gravando com a seção **Rede.**
 
-- [Capture screenshots durante a gravação](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots) para reproduzir exatamente como a página parecia enquanto a página era carregada ou uma animação era disparada e assim por diante.
+- [Capture screenshots durante a gravação](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots) para reproduzir exatamente como a página parecia enquanto a página era carregada ou uma animação era disparada e assim por diante.
 
-- [Visualize as interações](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions) para identificar rapidamente o que aconteceu em uma página depois que um usuário interagiu com ela.
+- [Visualize as interações](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions) para identificar rapidamente o que aconteceu em uma página depois que um usuário interagiu com ela.
 
-- [Encontre problemas de desempenho de rolagem em tempo real](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues) destacando a página sempre que um ouvinte potencialmente problemático for acionado.
+- [Encontre problemas de desempenho de rolagem em tempo real](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues) destacando a página sempre que um ouvinte potencialmente problemático for acionado.
 
-- [Visualize eventos de pintura em tempo real](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing) para identificar eventos de pintura custosos que podem prejudicar o desempenho de suas animações.
+- [Visualize eventos de pintura em tempo real](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing) para identificar eventos de pintura custosos que podem prejudicar o desempenho de suas animações.
 
 ### Lighthouse
 

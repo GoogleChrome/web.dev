@@ -46,7 +46,7 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 ### ラボ測定を実施するためのツール
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 
 ### JavaScript を使用して FCP を測定する

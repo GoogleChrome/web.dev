@@ -43,7 +43,7 @@ Lighthouse は DOM ツリーのあるページに以下のようなフラグを�
 
 現在、大規模な DOM ツリーを公開している場合は、ページを読み込んで、度のノードを表示するかを手動で指定するようにします。おそらく、表示されていないノードは最初に書見込まれるドキュメントから除去し、スクロールやボタンクリックといった関連するユーザー操作の後にのみ作成するようにすることができます。
 
-ランタイム時に DOM ノードを作成する場合は、[DOM 変更ブレークポイントでサブツリーの変更](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom)を使用すると、ノードが作成されるタイミングをピンポイントするのに役立ちます。
+ランタイム時に DOM ノードを作成する場合は、[DOM 変更ブレークポイントでサブツリーの変更](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)を使用すると、ノードが作成されるタイミングをピンポイントするのに役立ちます。
 
 大規模な DOM ツリーを避けられない場合は、CSS セレクターを単純化することで、レンダリングのパフォーマンスを改善することができます。詳細は、Google の「[スタイル計算の範囲と複雑さを軽減する](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)」をご覧ください。
 

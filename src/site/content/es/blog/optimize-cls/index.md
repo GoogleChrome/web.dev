@@ -268,7 +268,7 @@ Me complace compartir que hay una serie de herramientas disponibles para medir y
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 incluye soporte para medir CLS en la sección de métricas", width="800", height="309" %}
 
-El [panel de Rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) en DevTools resalta los cambios de diseño en la sección **Experiencia a** a partir de Chrome 84. La vista del **Resumen** para un realizar un `Cambio en el diseño` incluye la puntuación de cumulative layout shift, así como una superposición rectangular que muestra las regiones afectadas.
+El [panel de Rendimiento](https://developer.chrome.com/docs/devtools/evaluate-performance/) en DevTools resalta los cambios de diseño en la sección **Experiencia a** a partir de Chrome 84. La vista del **Resumen** para un realizar un `Cambio en el diseño` incluye la puntuación de cumulative layout shift, así como una superposición rectangular que muestra las regiones afectadas.
 
 <figure>   {% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Los registros de cambio de diseño se muestran en el panel de rendimiento de Chrome DevTools cuando se expande la sección Experiencia", width="800", height="438" %}   <figcaption>Después de registrar un nuevo seguimiento en el panel de Rendimiento, la sección <b>Experiencia</b> de los resultados se completa con una barra de color rojo que muestra un registro <code>Layout Shift</code>. Al hacer clic en el registro, se puede profundizar en los elementos impactados (por ejemplo, observar desde/hasta las entradas que se movieron).</figcaption> </figure>
 

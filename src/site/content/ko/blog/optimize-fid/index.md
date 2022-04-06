@@ -106,7 +106,7 @@ JavaScript에 크게 의존하는 웹 앱에서 FID 및 TBT 점수가 좋지 않
 
 기본적으로 모든 JavaScript는 렌더링을 차단합니다. 브라우저가 외부 JavaScript 파일에 연결되는 스크립트 태그를 만나면 수행 중인 작업을 일시 중지하고 해당 JavaScript를 다운로드, 구문 분석, 컴파일 및 실행해야 합니다. 따라서 페이지 또는 사용자 입력에 응답하는 데 필요한 코드만 로드해야 합니다.
 
-Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) 탭을 보면 웹 페이지에서 사용되지 않는 JavaScript가 어느 정도인지 파악할 수 있습니다.
+Chrome DevTools의 [Coverage](https://developer.chrome.com/docs/devtools/coverage/) 탭을 보면 웹 페이지에서 사용되지 않는 JavaScript가 어느 정도인지 파악할 수 있습니다.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Coverage 탭.", width="800", height="559" %}
 

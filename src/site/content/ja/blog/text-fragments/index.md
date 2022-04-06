@@ -209,7 +209,7 @@ if ('fragmentDirective' in document) {
 }
 ```
 
-ご覧のとおり、ブラウザは、適用された強調表示をカスタマイズするために使用できる[`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)という疑似セレクターを公開します。たとえば、テキストフラグメントを赤い背景に黒いテキストになるようにデザインできます。いつものように、オーバーライドのスタイルがアクセシビリティの問題を引き起こさないように[色のコントラストを確認](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast)し、ハイライトが実際に他のコンテンツから視覚的に目立つようにしてください。
+ご覧のとおり、ブラウザは、適用された強調表示をカスタマイズするために使用できる[`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)という疑似セレクターを公開します。たとえば、テキストフラグメントを赤い背景に黒いテキストになるようにデザインできます。いつものように、オーバーライドのスタイルがアクセシビリティの問題を引き起こさないように[色のコントラストを確認](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast)し、ハイライトが実際に他のコンテンツから視覚的に目立つようにしてください。
 
 ```css
 :root::target-text {

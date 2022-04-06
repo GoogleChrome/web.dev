@@ -31,7 +31,7 @@ Si tu objetivo es texto y has utilizado valores relativos como `em` o `rem` para
 
 {% Glitch { id: 'tap-targets-2', path: 'style.css' } %}
 
-Inspecciona la `a` del enlace y, en Chrome DevTools, cambia al [panel de Calculados](https://developers.google.com/web/tools/chrome-devtools/css/overrides#computed) en donde puedes inspeccionar las distintas partes del cuadro y ver a qué tamaño de píxeles se resuelven. En Firefox DevTools hay un panel de diseño. En ese panel obtienes el tamaño real del elemento inspeccionado.
+Inspecciona la `a` del enlace y, en Chrome DevTools, cambia al [panel de Calculados](https://developer.chrome.com/docs/devtools/css/overrides/#computed) en donde puedes inspeccionar las distintas partes del cuadro y ver a qué tamaño de píxeles se resuelven. En Firefox DevTools hay un panel de diseño. En ese panel obtienes el tamaño real del elemento inspeccionado.
 
 <figure style="max-width: 500px">{% Img src="image/admin/vmFzREveRttHVDfLqqCx.jpg", alt="El panel de diseño en Firefox DevTools muestra el tamaño del elemento a", width="800", height="565" %}</figure>
 

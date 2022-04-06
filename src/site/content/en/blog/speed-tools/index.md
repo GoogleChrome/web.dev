@@ -257,7 +257,7 @@ over a bug.", width="366", height="366", class="float-right" %}
 **Developer looking for technical guidance on how to debug/deep dive into the
 performance of your site.**
 
-**[Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/)** (CDT) contains a
+**[Chrome Developer Tools](https://developer.chrome.com/docs/devtools/)** (CDT) contains a
 Performance Panel that allows you to drill down into performance issues with
 your site by profiling your site with customized configurations, allowing you
 to track down performance bottlenecks. You can use CDT on either production or

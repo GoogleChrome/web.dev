@@ -43,7 +43,7 @@ web_lighthouse:
 
 `robots.txt`에 대해 서버 오류(500초의 [HTTP 상태 코드](/http-status-code))를 반환하면 검색 엔진은 어떤 페이지를 크롤링해야 하는지 알 수 없습니다. 전체 사이트 크롤링이 중지되어 새 콘텐츠의 색인이 생성되지 않을 수 있습니다.
 
-HTTP 상태 코드를 확인하려면 Chrome에서 `robots.txt`를 열고 [Chrome DevTools에서 요청을 확인](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze)하십시오.
+HTTP 상태 코드를 확인하려면 Chrome에서 `robots.txt`를 열고 [Chrome DevTools에서 요청을 확인](https://developer.chrome.com/docs/devtools/network/reference/#analyze)하십시오.
 
 ### `robots.txt`를 500 KiB보다 작게 유지
 

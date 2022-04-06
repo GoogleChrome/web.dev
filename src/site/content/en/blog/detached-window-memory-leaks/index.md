@@ -216,7 +216,7 @@ prevent the inspected objects from being garbage collected. To that end, it's us
 tools that specifically avoid introducing this possibility.
 
 A great place to start debugging memory problems is to
-[take a heap snapshot](https://developers.google.com/web/tools/chrome-devtools/memory-problems#discover_detached_dom_tree_memory_leaks_with_heap_snapshots).
+[take a heap snapshot](https://developer.chrome.com/docs/devtools/memory-problems/#discover_detached_dom_tree_memory_leaks_with_heap_snapshots).
 This provides a point-in-time view into the memory currently used by an application - all the
 objects that have been created but not yet garbage-collected. Heap snapshots contain useful
 information about objects, including their size and a list of the variables and closures that

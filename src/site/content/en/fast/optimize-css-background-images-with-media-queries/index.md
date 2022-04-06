@@ -16,7 +16,7 @@ Many sites request heavy resources, like images, that are not optimized for cert
 
 ## Prerequisites
 
-This guide assumes that you're familiar with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools). You can use another browser's DevTools instead if you prefer. You'll just need to map the Chrome DevTools screenshots in this guide back to the relevant features in your browser of choice.
+This guide assumes that you're familiar with [Chrome DevTools](https://developer.chrome.com/docs/devtools/). You can use another browser's DevTools instead if you prefer. You'll just need to map the Chrome DevTools screenshots in this guide back to the relevant features in your browser of choice.
 
 ## Understand responsive background images
 
@@ -27,7 +27,7 @@ First, analyze the network traffic of the unoptimized demo:
 {% Instruction 'reload-page', 'ol' %}
 
 {% Aside %}
-Check out [Inspect Network Activity With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/) if you need more help with DevTools.
+Check out [Inspect Network Activity With Chrome DevTools](https://developer.chrome.com/docs/devtools/network/) if you need more help with DevTools.
 {% endAside %}
 
 You'll see that the only image that's being requested is `background-desktop.jpg`, which has a size of **1006KB**:

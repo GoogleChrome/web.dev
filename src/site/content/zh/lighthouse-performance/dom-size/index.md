@@ -43,7 +43,7 @@ Lighthouse 使用 DOM 树标记页面：
 
 如果您当前正在传送大型 DOM 树，请尝试加载您的页面并注意显示了哪些节点。也许您可以从最初加载的文档中删除未显示的节点，而仅在发生相关的用户交互（例如，滚动或单击按钮）之后创建这些节点。
 
-如果您在运行时创建 DOM 节点， [子树修改 DOM 更改断点](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom)可以帮助您确定创建节点的时间。
+如果您在运行时创建 DOM 节点， [子树修改 DOM 更改断点](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)可以帮助您确定创建节点的时间。
 
 如果无法避免使用大型 DOM 树，另一种提高渲染性能的方法是简化 CSS 选择器。有关更多信息，请参阅 Google 的[减小样式计算的范围和复杂性](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)。
 

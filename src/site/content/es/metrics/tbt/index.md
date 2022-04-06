@@ -88,7 +88,7 @@ TBT es una métrica que debe medirse [en el laboratorio](/user-centric-performan
 
 ### Herramientas de laboratorio
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://www.webpagetest.org/)
 

@@ -159,7 +159,7 @@ an external JavaScript file, it must pause what it's doing and download, parse, 
 that JavaScript. Therefore you should only load the code that's needed for the page or
 responding to user input.
 
-The [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
+The [Coverage](https://developer.chrome.com/docs/devtools/coverage/) tab in Chrome
 DevTools can tell you how much JavaScript is not being used on your web page.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559" %}

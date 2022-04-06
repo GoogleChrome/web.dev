@@ -34,7 +34,7 @@ caching](/http-cache/).
 As detailed in the [Identify resources loaded from the
 network](/identify-resources-via-network-panel/) guide, a navigation request is the first of
 potentially many requests made in the
-["waterfall"](https://developers.google.com/web/tools/chrome-devtools/network/reference#waterfall)
+["waterfall"](https://developer.chrome.com/docs/devtools/network/reference/#waterfall)
 of network traffic. The HTML that you load via a navigation request kicks off the flow of all other
 requests for subresources like images, scripts, and styles.
 

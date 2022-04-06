@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-최근에 발표된 [Web Vitals](/vitals/) 이니셔티브는 모든 사이트가 웹에서 뛰어난 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합적인 지침을 제공합니다. 이제 **웹 개발자가 즐 겨 사용하는 Google의 모든 인기 도구가 Core Web Vitals 측정을 지원**하여 사용자 경험 문제를 보다 쉽게 진단하고 수정할 수 있게 되었습니다. 이러한 도구에는 [Lighthouse](https://github.com/GoogleChrome/lighthouse) , [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) , [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) , [Search Console](https://search.google.com/search-console/about) , [web.dev의 측정 도구](/measure/) , [Web Vitals Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) 및 새로운 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API가 포함됩니다.
+최근에 발표된 [Web Vitals](/vitals/) 이니셔티브는 모든 사이트가 웹에서 뛰어난 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합적인 지침을 제공합니다. 이제 **웹 개발자가 즐 겨 사용하는 Google의 모든 인기 도구가 Core Web Vitals 측정을 지원**하여 사용자 경험 문제를 보다 쉽게 진단하고 수정할 수 있게 되었습니다. 이러한 도구에는 [Lighthouse](https://github.com/GoogleChrome/lighthouse) , [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) , [Chrome DevTools](https://developer.chrome.com/docs/devtools/) , [Search Console](https://search.google.com/search-console/about) , [web.dev의 측정 도구](/measure/) , [Web Vitals Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) 및 새로운 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API가 포함됩니다.
 
 이제 Google 검색에 Core Web Vitals가 [페이지 경험](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 평가의 기초로 포함되므로 이러한 메트릭을 가능한 한 사용 및 실행 가능하게 만드는 것이 중요합니다.
 

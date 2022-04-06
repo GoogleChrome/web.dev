@@ -26,7 +26,7 @@ tags:
 
 브라우저 간에 다른 동작은 일반적으로 상호 운용성 문제로 더 높은 우선순위를 가지는데, 특히 버그가 포함된 브라우저가 이상한 경우에 그렇습니다. [BrowserStack](https://www.browserstack.com/)과 같은 도구를 사용하여 최신 버전의 Chrome, Firefox, Safari 및 Edge에서 테스트해보세요.
 
-가능하다면 사용자 에이전트 스니핑으로 인해 페이지가 의도적으로 다르게 동작하지 않는지 확인하세요. Chrome DevTools에서 [`User-Agent` 문자열을 다른 브라우저로 설정](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent)해보세요.
+가능하다면 사용자 에이전트 스니핑으로 인해 페이지가 의도적으로 다르게 동작하지 않는지 확인하세요. Chrome DevTools에서 [`User-Agent` 문자열을 다른 브라우저로 설정](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/)해보세요.
 
 ### 최근 릴리스에서 중단되었습니까?
 

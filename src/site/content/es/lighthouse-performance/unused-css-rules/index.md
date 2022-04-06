@@ -34,7 +34,7 @@ El CSS no utilizado también ralentiza la construcción del [render tree (árbol
 
 ## Cómo detectar el CSS no utilizado {: #coverage }
 
-La pestaña de Cobertura (Coverage) de Chrome DevTools puede ayudarte a descubrir el CSS crítico y no crítico. Consulta [Ver CSS usado y no usado en la pestaña de Cobertura](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
+La pestaña de Cobertura (Coverage) de Chrome DevTools puede ayudarte a descubrir el CSS crítico y no crítico. Consulta [Ver CSS usado y no usado en la pestaña de Cobertura](https://developer.chrome.com/docs/devtools/css/reference/#coverage).
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: pestaña de Cobertura", width="800", height="407" %} <figcaption> Chrome DevTools: pestaña de Cobertura.</figcaption></figure>
 

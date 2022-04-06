@@ -17,7 +17,7 @@ tags:
 
 TTI 指標は、ページの読み込みが開始されてから主なサブリソースの読み込みが完了するまでの時間を測定するもので、改善することでページがユーザーの入力に対してすばやく確実に応答できるようになります。
 
-Web ページの[パフォーマンス トレース](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)に基づいて TTI を計算するには、以下の手順に従います。
+Web ページの[パフォーマンス トレース](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)に基づいて TTI を計算するには、以下の手順に従います。
 
 1. [First Contentful Paint (FCP)](/fcp/) から開始します。
 2. 少なくとも 5 秒間の落ち着いている期間を時間の経過順に探していきます。この場合の*落ち着いている期間*とは、[長く時間がかかっているタスク](/custom-metrics/#long-tasks-api)がなく、実行中のネットワーク GET リクエストが 2 件以下となる期間として定義されます。

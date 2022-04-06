@@ -21,7 +21,7 @@ for a general overview of how ARIA can provide missing semantics for custom cont
 
 To check that all custom interactive controls have appropriate ARIA roles,
 test the page using either the
-[Chrome DevTools accessibility pane](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+[Chrome DevTools accessibility pane](https://developer.chrome.com/docs/devtools/accessibility/reference/#pane)
 or a screen reader.
 [JAWS](https://www.freedomscientific.com/products/software/jaws/) and
 [NVDA](https://www.nvaccess.org/)
