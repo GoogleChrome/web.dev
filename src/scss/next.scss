@@ -503,6 +503,8 @@ details summary + * {
 
 /// Form fields
 
+// Style inputs without a type attribute the same as type="text", since they
+// are semantically equivalent.
 // See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
 input:not([type]),
 input[type='text'],
@@ -528,6 +530,8 @@ textarea {
   @include apply-utility('leading', 'short');
 }
 
+// Style inputs without a type attribute the same as type="text", since they
+// are semantically equivalent.
 // See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
 input:not([type]),
 input[type='text'],
