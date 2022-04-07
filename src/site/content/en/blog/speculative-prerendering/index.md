@@ -3,7 +3,7 @@ layout: post
 title: Bringing instant page-loads to the browser through speculative prerendering
 subhead: Learn more about speculative prerendering in the browser and how to participate in Chrome origin trial.
 date: 2021-09-24
-updated: 2021-09-27
+updated: 2022-04-07
 authors:
   - leenasohoni
   - addyosmani
@@ -429,6 +429,20 @@ Timer.html without speculation rules
   </figure>
 </div>
 
+## Prerendering from the address bar
+
+Starting with Chrome 101, prerendering will gradually be applied to the most likely navigation when a user triggers autocomplete suggestions by interacting with Chrome’s address bar. We are starting with Chrome for Android but intend to bring this feature to the other platforms we support in follow-up milestones.
+
+Before this launch, Chrome used [No-State Prefetch](#prerender-implementation-using-no-state-prefetch) to prefetch critical resources for the most likely navigations from the address bar. Prerendering takes things a bit further by rendering the page, which includes constructing the DOM tree and executing scripts.
+
+While this is a browser feature, it can have observable effects from the point of view of the prerendered websites. For instance, APIs that may cause unexpected surprises are delayed until the user navigates to the prerendered web page (for example, text to speech from an invisible website). 
+
+The potential impact on server resource usage is low, as prerendering from the [Omnibox](https://www.chromium.org/user-experience/omnibox/) only triggers on high-confidence suggestions. The server load increase should be negligible since the user **will** navigate to a vast majority of the prerendered web pages. Navigation requests triggered for prerendering or prefetch needs are distinguishable from regular navigation requests. Look for the <code>[Sec-Purpose: prefetch](https://chromestatus.com/feature/6247959677108224)</code>; prerender HTTP header or its predecessor <code>Purpose: prefetch</code> sent by Chrome 101 and earlier versions. You can then decide to reduce server load in peak season further or prevent prerendering or prefetching if these cause issues for your website. The server can cancel the prerendering by responding with an HTTP error or without a response body, as described below:
+
+* Responding with 204 No Content implies that the server has acknowledged the prerendering request but is unwilling or unable to serve it for now. This is the recommended option.
+* Responding with 503 Service Unavailable implies that prerendering is not an available service. Any other HTTP response code in the 400s or 500s would have the same outcome of canceling the prerendering.
+
+To try this feature, check out the [demo and instructions](https://docs.google.com/document/d/1sUbxYSu1o5G76tA4UW_xxgcfcOn8j6NlJc_Go0Gwb_Q/edit).
 
 
 ## Feedback welcome
