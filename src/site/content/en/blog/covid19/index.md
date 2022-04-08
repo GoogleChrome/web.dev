@@ -124,7 +124,7 @@ everyone.
   team member (product managers, engineers, designers, QA, and so on) can
   contribute.
 * Do an [Accessibility
-  Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+  Review](/how-to-review/)
   to determine what's working well, and what needs improvement.
   The [WAVE browser extensions](https://wave.webaim.org/extension/) can help
   guide you through a manual accessibility audit of your site.

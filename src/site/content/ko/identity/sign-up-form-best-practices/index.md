@@ -250,7 +250,7 @@ Google의 비밀번호 관리자를 사용하면 [기존 비밀번호가 도용�
 - [모바일 양식 디자인 모범 사례](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [더 많은 기능을 갖춘 양식 컨트롤](/more-capable-form-controls)
 - [액세스 가능한 양식 만들기](https://webaim.org/techniques/forms/)
-- [Credential Management API를 사용하여 가입 과정 간소화](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Credential Management API를 사용하여 가입 과정 간소화](https://developer.chrome.com/blog/credential-management-api/)
 - [WebOTP API로 웹에서 전화번호 확인](/web-otp)
 
 사진 제공: [Unsplash](https://unsplash.com/photos/lUShu7PHIGA)에서 [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess).

@@ -135,7 +135,7 @@ in pretty much [all browsers in use
 today](https://caniuse.com/page-transition-events).
 
 The newer [Page
-Lifecycle](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
+Lifecycle](https://developer.chrome.com/blog/page-lifecycle-api/)
 events—`freeze` and `resume`—are also dispatched when pages go in or out of the
 bfcache, as well as in some other situations. For example when a background tab
 gets frozen to minimize CPU usage. Note, the Page Lifecycle events are currently
@@ -224,7 +224,7 @@ will not continue to exist after the `unload` event has fired. This presents a
 challenge because many of those pages were _also_ built with the assumption that
 the `unload` event would fire any time a user is navigating away, which is no
 longer true (and [hasn't been true for a long
-time](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event)).
+time](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)).
 
 So browsers are faced with a dilemma, they have to choose between something that
 can improve the user experience—but might also risk breaking the page.

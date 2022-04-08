@@ -34,7 +34,7 @@ Além disso, a descoberta de recursos nem sempre funciona conforme o esperado e 
 
 ### A Atividade da Web Confiável é um novo contêiner para aplicativos da Web no Android
 
-Os desenvolvedores agora podem usar uma [Atividade da Web Confiável](https://developers.google.com/web/updates/2019/02/using-twa) como um contêiner para incluir um PWA como uma atividade de inicialização para um aplicativo Android. A tecnologia aproveita o navegador para renderizar o PWA em tela cheia, garantindo que a Atividade da Web Confiável tenha a mesma compatibilidade com os recursos da plataforma da Web e APIs que o navegador subjacente tem. Existem também utilitários de código aberto para tornar a implementação de um aplicativo Android usando uma Atividade da Web Confiável ainda mais fácil.
+Os desenvolvedores agora podem usar uma [Atividade da Web Confiável](https://developer.chrome.com/docs/android/trusted-web-activity/) como um contêiner para incluir um PWA como uma atividade de inicialização para um aplicativo Android. A tecnologia aproveita o navegador para renderizar o PWA em tela cheia, garantindo que a Atividade da Web Confiável tenha a mesma compatibilidade com os recursos da plataforma da Web e APIs que o navegador subjacente tem. Existem também utilitários de código aberto para tornar a implementação de um aplicativo Android usando uma Atividade da Web Confiável ainda mais fácil.
 
 Outra vantagem não disponível em outras soluções é que o contêiner compartilha armazenamento com o navegador. Os estados de login e as preferências dos usuários são compartilhados perfeitamente entre as experiências.
 

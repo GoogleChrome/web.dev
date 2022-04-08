@@ -41,7 +41,7 @@ web_lighthouse:
 ### Стили и верстка
 
 - [Уменьшение объема и сложности расчетов стилей](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
-- [Уход от больших, сложных макетов и перегрузки макетами](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
+- [Уход от больших, сложных макетов и перегрузки макетами](/avoid-large-complex-layouts-and-layout-thrashing/)
 
 ### Рендеринг
 

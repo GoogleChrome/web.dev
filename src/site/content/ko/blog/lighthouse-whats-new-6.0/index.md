@@ -15,7 +15,7 @@ tags:
 
 오늘 Lighthouse 6.0을 출시합니다!
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse/)는 개발자가 사이트의 사용자 경험을 개선할 수 있는 기회와 진단을 제공하는 자동화된 웹사이트 감사 도구입니다. Chrome DevTools, npm(Node 모듈 및 CLI) 또는 브라우저 확장([Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) 및 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/))에서 사용할 수 있습니다. [web.dev/measure](/measure/) 및 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)를 비롯한 많은 Google 서비스를 지원합니다.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse/)는 개발자가 사이트의 사용자 경험을 개선할 수 있는 기회와 진단을 제공하는 자동화된 웹사이트 감사 도구입니다. Chrome DevTools, npm(Node 모듈 및 CLI) 또는 브라우저 확장([Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) 및 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/))에서 사용할 수 있습니다. [web.dev/measure](/measure/) 및 [PageSpeed Insights](https://pagespeed.web.dev/)를 비롯한 많은 Google 서비스를 지원합니다.
 
 Lighthouse 6.0은 npm과 [Chrome Canary](https://www.google.com/chrome/canary/)에서 즉시 사용할 수 있습니다. Lighthouse를 활용하는 다른 Google 서비스는 이달 말까지 업데이트됩니다. Chrome 84(7월 중순)의 Chrome Stable에 상륙합니다.
 

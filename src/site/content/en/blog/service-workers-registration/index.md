@@ -11,7 +11,7 @@ tags:
 ---
 
 [Service
-workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
+workers](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 can meaningfully speed up repeat visits to your web app, but you should take
 steps to ensure that a service worker's initial installation doesn't degrade a
 user's first-visit experience.

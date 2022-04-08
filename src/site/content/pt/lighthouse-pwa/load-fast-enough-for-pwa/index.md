@@ -41,4 +41,4 @@ O Lighthouse calcula qual seria o valor do TTI numa conexão de rede 4G lenta. S
 - [Comece a analisar o desempenho do tempo de execução](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [Registre o desempenho de carga](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
 - [Otimizando a eficiência do conteúdo](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [Desempenho da renderização](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [Desempenho da renderização](/rendering-performance/)

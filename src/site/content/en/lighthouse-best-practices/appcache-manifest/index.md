@@ -39,7 +39,7 @@ To pass this audit,
 remove the manifest from your page,
 and use the
 [Cache API](https://developer.mozilla.org/docs/Web/API/Cache)
-via a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
+via a [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 instead.
 
 To migrate from the Application Cache to service workers,

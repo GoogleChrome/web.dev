@@ -81,7 +81,7 @@ Service Worker는 이벤트 처리가 완료되었기 때문에 레벨 11–20�
 
 **이상적인 대상:** 정리 및 마이그레이션.
 
-새 Service Worker가 설치되고 이전 버전이 사용되지 않으면 새 Service Worker가 활성화되고 `activate` 이벤트가 발생합니다. 이전 버전이 방해가 되기 때문에 [IndexedDB에서 스키마 마이그레이션](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)을 처리하고 사용하지 않는 캐시도 삭제하는 것이 좋습니다.
+새 Service Worker가 설치되고 이전 버전이 사용되지 않으면 새 Service Worker가 활성화되고 `activate` 이벤트가 발생합니다. 이전 버전이 방해가 되기 때문에 [IndexedDB에서 스키마 마이그레이션](/indexeddb-best-practices/)을 처리하고 사용하지 않는 캐시도 삭제하는 것이 좋습니다.
 
 ```js
 self.addEventListener('activate', function (event) {
@@ -244,7 +244,7 @@ self.addEventListener('notificationclick', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="백그라운드 동기화 시.", width="800", height="219" %} <figcaption>백그라운드 동기화 시.</figcaption></figure>
 
-[백그라운드 동기화](https://developers.google.com/web/updates/2015/12/background-sync)는 Service Worker를 기반으로 구축된 또 다른 기능입니다. 이를 통해 일회성 또는 (매우 경험적) 간격으로 백그라운드 데이터 동기화를 요청할 수 있습니다. 이는 사용자가 사이트에 열려 있는 탭이 없는 경우에도 발생합니다. 오직 Service Worker만 깨어납니다. 페이지에서 이 작업을 수행할 수 있는 권한을 요청하면 사용자에게 메시지가 표시됩니다.
+[백그라운드 동기화](https://developer.chrome.com/blog/background-sync/)는 Service Worker를 기반으로 구축된 또 다른 기능입니다. 이를 통해 일회성 또는 (매우 경험적) 간격으로 백그라운드 데이터 동기화를 요청할 수 있습니다. 이는 사용자가 사이트에 열려 있는 탭이 없는 경우에도 발생합니다. 오직 Service Worker만 깨어납니다. 페이지에서 이 작업을 수행할 수 있는 권한을 요청하면 사용자에게 메시지가 표시됩니다.
 
 **이상적인 대상:** 긴급하지 않은 업데이트, 특히 소셜 타임라인 또는 뉴스 기사와 같이 업데이트당 푸시 메시지가 너무 자주 발생하여 사용자에게 너무 자주 발생하는 업데이트.
 

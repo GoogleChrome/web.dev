@@ -75,7 +75,7 @@ state; if a URL/revision combination in the manifest changes, a service worker
 _knows_ that the previous cached entry is no longer valid, and needs to be
 updated. It only takes a single network request, made automatically by the
 browser as part of the service worker
-[update check](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates),
+[update check](/service-worker-lifecycle/#updates),
 to determine which precached URLs need to be refreshed.
 
 ## Updates to precached resources
@@ -89,9 +89,9 @@ precache state at any point in time.
 If there's an existing URL with a new revision field, or if any URLs have been
 added or dropped from the manifest, that's a sign to your service worker that
 updates need to be performed, as part of the
-[`install`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install_1)
+[`install`](/service-worker-lifecycle/#install)
 and
-[`activate`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate_1)
+[`activate`](/service-worker-lifecycle/#activate)
 event handlers. For instance, if you've made some changes to your site and
 rebuilt, your latest precache manifest might have undergone the following
 changes:

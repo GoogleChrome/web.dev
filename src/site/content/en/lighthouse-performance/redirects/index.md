@@ -44,7 +44,7 @@ required for your [Critical Rendering Path](https://developers.google.com/web/fu
 
 If you're using redirects to divert mobile users to the mobile version of your page,
 consider redesigning your site to use
-[Responsive Design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
+[Responsive Design](/responsive-web-design-basics/).
 
 ## Stack-specific guidance
 

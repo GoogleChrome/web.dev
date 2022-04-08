@@ -38,7 +38,7 @@ effectively to support this feature.
 ## Using headings effectively
 
 First, let's reiterate an earlier point: [*DOM order
-matters*](https://developers.google.com/web/fundamentals/accessibility/focus/dom-order-matters), not only for
+matters*](/dom-order-matters/), not only for
 focus order but for screen reader order. As you experiment with screen readers
 like VoiceOver, NVDA, JAWS, and ChromeVox, you'll find the heading list follows
 the DOM order rather than the visual order.

@@ -33,7 +33,7 @@ Uma página falha nesta auditoria quando tem dois ou mais redirecionamentos.
 
 Links de pontos para recursos sinalizados para as localizações atuais dos recursos. É especialmente importante evitar redirecionamentos em recursos necessários para seu [caminho de renderização crítico](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
 
-Se você estiver usando redirecionamentos para desviar os usuários móveis para a versão móvel de sua página, considere projetar seu site novamente para usar [design responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
+Se você estiver usando redirecionamentos para desviar os usuários móveis para a versão móvel de sua página, considere projetar seu site novamente para usar [design responsivo](/responsive-web-design-basics/).
 
 ## Orientação específica de pilha
 

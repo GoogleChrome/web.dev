@@ -23,7 +23,7 @@ practices into their process.
 {% YouTube id="A5XzoDT37iM" %}
 
 
-## Project manager 
+## Project manager
 
 An overriding goal for any project manager is to try to include accessibility
 work in every milestone; making sure it’s just as much a priority as other
@@ -124,7 +124,7 @@ techniques you can try to make your process more inclusive.
 
 The primary goal of most sites is to convey some information to the user, either
 through written text or images. However, if this content is low contrast, it may
-be difficult for some users (particularly those with a vision impairment) to 
+be difficult for some users (particularly those with a vision impairment) to
 read. This may negatively affect their user experience. To address
 this concern, aim for all text and images to have sufficient color contrast.
 
@@ -276,7 +276,7 @@ Not only do custom controls need proper keyboard support, they also need proper
 semantics. After all, a `div`, semantically, is just a generic grouping
 container. If you're using a `div` as the basis for your dropdown menu, you'll
 need to rely on
-[ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/)
+[ARIA](/semantics-aria/)
 to layer in additional semantics so the control type can be conveyed to
 assistive technology. Here again the
 [ARIA Authoring Practices Guide](https://w3.org/TR/wai-aria-practices-1.1)
@@ -295,7 +295,7 @@ and announced to the user.
 
 Unfortunately `<label>` _does not_ support giving an accessible name to custom
 controls (like ones created using [Custom
-Elements](https://developers.google.com/web/fundamentals/web-components/customelements)
+Elements](/custom-elements-v1/)
 or out of simple divs and spans). For these kinds of controls you'll need to use
 the [`aria-label` and `aria-labelledby`
 attributes](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships#labels).
@@ -319,7 +319,7 @@ incorporate aXe into your development process.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) is Google’s
 open source project for auditing the performance of your Progressive Web Apps.
 In addition to checking if your PWA has support for things like [Service
-Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
+Worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 and a [Web App
 Manifest](https://developers.google.com/web/fundamentals/web-app-manifest),
 Lighthouse will also run a series of best practice tests, including tests for

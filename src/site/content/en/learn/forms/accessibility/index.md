@@ -26,8 +26,8 @@ In addition, tapping or clicking the `<label>` focuses the associated form contr
 making it a larger target.
 
 {% Aside %}
-The next time you add a form control, add the `<label>` first. Think about the purpose of the 
-  form control, and describe the purpose to the user. Make it easy for people to enter valid data 
+The next time you add a form control, add the `<label>` first. Think about the purpose of the
+  form control, and describe the purpose to the user. Make it easy for people to enter valid data
   quickly and accurately.
 {% endAside %}
 
@@ -50,7 +50,7 @@ Built-in form elements provide a lot of built-in features. Let's have a look at 
 Visually, the `<input>` (the first one in the example) and the `<div>` look the same.
 You can even insert text for both, as the `<div>` has a
 [`contenteditable`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contenteditable) attribute.
-There are lots of differences, though, between using an appropriate `<input>` element and a `<div>` 
+There are lots of differences, though, between using an appropriate `<input>` element and a `<div>`
   looking like an `<input>`.
 
 A screen reader user doesn't recognize the `<div>` as an input element,
@@ -58,7 +58,7 @@ and isn't able to complete the form.
 All the screen reader user hears is 'Name',
 with no indication that the element is a form control for adding text.
 
-Clicking on `<div>Name</div>` doesn't focus the `<div>` that goes with it, whereas the `<label>` and 
+Clicking on `<div>Name</div>` doesn't focus the `<div>` that goes with it, whereas the `<label>` and
   the `<input>` are connected by using the `for` and `id` attributes.
 
 After submitting the form, the data entered in the `<div>` isn't included in the request.
@@ -67,7 +67,7 @@ an `<input>` does that by default.
 
 Built-in form elements have other features.
 For example, with appropriate form elements and the correct `inputmode` or `type`,
-an on-screen keyboard shows appropriate characters. Using the `inputmode` attribute on a `<div>` 
+an on-screen keyboard shows appropriate characters. Using the `inputmode` attribute on a `<div>`
   cannot do that.
 
 ## Ensure users are aware of the expected data format
@@ -99,7 +99,7 @@ you learned how to show error messages in case of invalid data entry.
 <input type="text" name="name" id="name" required>
 ```
 
-For example, if a field has a `required` attribute, and invalid data is entered, the browser shows 
+For example, if a field has a `required` attribute, and invalid data is entered, the browser shows
 an error message next to the form control when the form is submitted. Screen readers also announce the error message.
 
 You can also define your own error message:
@@ -118,8 +118,8 @@ attribute on the form control that matches the `id` on the error message element
 Then, use [`aria-live="assertive"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) for the error message.
 ARIA live regions announce an error to screen reader users the moment the error is shown.
 
-The problem with this approach for forms with multiple fields, 
-is that `aria-live` will usually only announce the first error in the case of multiple errors. 
+The problem with this approach for forms with multiple fields,
+is that `aria-live` will usually only announce the first error in the case of multiple errors.
 As explained in [this article about multiple `aria-live` announcements on the same action](https://gaurav5430.medium.com/quick-accessibility-wins-multiple-aria-live-on-single-action-caveat-b79a6f41e7cc) you could create a single message by concatenating all the errors. Another approach would be to announce that there are errors, then announce individual errors when the field is focused.
 
 ## Ensure users recognize errors
@@ -182,7 +182,7 @@ or someone using text enlargement software? Ask them to fill out your form.
 Accessibility reviews are great, testing with real users is even better.
 
 Learn more about doing an
-[accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+[accessibility review](/how-to-review/)
 and how to [test with real users](/learn/forms/usability-testing).
 
 ## Resources

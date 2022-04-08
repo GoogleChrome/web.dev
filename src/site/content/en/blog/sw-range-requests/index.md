@@ -24,7 +24,7 @@ feedback:
 
 Some HTTP requests contain a [`Range:` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Range), indicating that only a portion of the full resource should be returned. They're commonly used for streaming audio or video content to allow smaller chunks of media to be loaded on demand, instead of requesting the entirety of the remote file all at once.
 
-A [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) is JavaScript code that sits in between your web app and the network, potentially intercepting outgoing network requests and generating responses for them.
+A [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/) is JavaScript code that sits in between your web app and the network, potentially intercepting outgoing network requests and generating responses for them.
 
 Historically, range requests and service workers haven't played nicely together. It's been necessary to take special steps to avoid bad outcomes in your service worker. Fortunately, this is starting to change. In browsers exhibiting the correct behavior, range requests will "just work" when passing through a service worker.
 

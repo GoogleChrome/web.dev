@@ -106,7 +106,7 @@ single `workbox.config.js` file.
 {% Aside %}
 For more details on all the caching strategies that a service worker can use,
 take a look at the
-[Offline Cookbook](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/).
+[Offline Cookbook](/offline-cookbook/).
 {% endAside %}
 
 ## Handling a cache-first strategy

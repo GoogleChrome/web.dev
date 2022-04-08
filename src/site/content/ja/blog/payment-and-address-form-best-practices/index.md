@@ -501,7 +501,7 @@ Address line 2 (optional)
 - [Best Practices For Mobile Form Design (モバイルフォームデザインのベストプラクティス)](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls (より細かく機能するフォームコントロール)](/more-capable-form-controls)
 - [Creating Accessible Forms (使いやすいフォームの作成)](https://webaim.org/techniques/forms/)
-- [Streamlining the Sign-up Flow Using Credential Management API (認証情報管理 API を使用したサインアップフローの合理化)](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Streamlining the Sign-up Flow Using Credential Management API (認証情報管理 API を使用したサインアップフローの合理化)](https://developer.chrome.com/blog/credential-management-api/)
 - [『Frank's Compulsive Guide to Postal Addresses』](http://www.columbia.edu/~fdc/postal/)は、200 か国以上で使用される住所形式に関する便利なリンクと広範なガイダンスを提供します。
 - [国リスト](http://www.countries-list.info/Download-List)には、国コードと名前を複数の言語かつ複数の形式でダウンロードするためのツールが用意されています。
 

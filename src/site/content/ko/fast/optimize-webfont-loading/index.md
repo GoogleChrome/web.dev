@@ -130,7 +130,7 @@ font.load().then(function() {
 
 글꼴 리소스는 일반적으로 자주 업데이트되지 않는 정적 리소스입니다. 결과적으로 긴 최대 사용 기간 만료에 이상적입니다. [조건부 ETag 헤더](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags)와 모든 글꼴 리소스에 대한 [최적의 캐시 제어 정책](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control)을 모두 지정해야 합니다.
 
-웹 애플리케이션이 [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/)를 사용하는 경우 [캐시 우선 전략](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network)으로 글꼴 리소스를 제공하는 것이 대부분의 사용 사례에 적합합니다.
+웹 애플리케이션이 [Service Worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)를 사용하는 경우 [캐시 우선 전략](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network)으로 글꼴 리소스를 제공하는 것이 대부분의 사용 사례에 적합합니다.
 
 [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 또는 [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)를 사용하여 글꼴을 저장해서는 안 됩니다. 이들 각각에는 고유한 성능 문제 세트가 있습니다. 브라우저의 HTTP 캐시는 브라우저에 글꼴 리소스를 제공하는 가장 강력하고 강력한 메커니즘을 제공합니다.
 

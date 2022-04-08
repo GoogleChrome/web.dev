@@ -1,7 +1,7 @@
 ---
 title: Welcome to the immersive web
 subhead: The immersive web means virtual world experiences hosted through the browser. This entire virtual reality experiences surfaced in the browser or in VR enabled headsets.
-date: 2018-05-08 
+date: 2018-05-08
 updated: 2018-07-30
 description: The immersive web means virtual world experiences hosted through the browser. This entire virtual reality experiences surfaced in the browser or in VR enabled headsets.
 authors:
@@ -85,7 +85,7 @@ a [polyfill](https://github.com/immersive-web/webxr-polyfill).
 When this article was originally published during the Chrome 67 beta period,
 only VR capabilities were enabled. Augmented reality arrived in Chrome 69. Read
 about it in [Augmented reality for the
-web](https://developers.google.com/web/updates/2018/06/ar-for-the-web).
+web](https://developer.chrome.com/blog/ar-for-the-web/).
 
 There's more to this new API than I can go to in an article like this. I want
 to give you enough to start making sense of the [WebXR
@@ -410,4 +410,3 @@ ChromeStatus.com for [WebXR Hit
 Test](https://www.chromestatus.com/features/4755348300759040). You can also
 follow [WebXR Anchors](https://www.chromestatus.com/features/5129925015109632)
 which will improve pose tracking.
-

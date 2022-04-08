@@ -19,7 +19,7 @@ tags:
 
 Google provides a number of tools—[Search
 Console](https://support.google.com/webmasters/answer/9205520), [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI), and
+Insights](https://pagespeed.web.dev/) (PSI), and
 the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 (CrUX)—that let developers see how their sites perform against the [Core Web

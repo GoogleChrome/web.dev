@@ -94,7 +94,7 @@ FIDэто показатель, который измеряет скорость
 
 Другие взаимодействия, такие как прокрутка и масштабирование, являются непрерывными действиями и имеют совершенно другие ограничения производительности (кроме того, браузеры часто могут скрывать задержку, выполняя их в отдельном потоке).
 
-Другими словами, FID фокусируется на R (responsiveness : отзывчивости) в [модели производительности RAIL](https://developers.google.com/web/fundamentals/performance/rail), тогда как прокрутка и масштабирование больше связаны с A (animation : анимацией), и их характеристики производительности следует оценивать отдельно.
+Другими словами, FID фокусируется на R (responsiveness : отзывчивости) в [модели производительности RAIL](/rail/), тогда как прокрутка и масштабирование больше связаны с A (animation : анимацией), и их характеристики производительности следует оценивать отдельно.
 
 ### Что делать, если пользователь никогда не взаимодействует с вашим сайтом?
 
@@ -121,7 +121,7 @@ FIDэто показатель, который измеряет скорость
 ### Инструменты для измерения в полевых условиях
 
 - Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 

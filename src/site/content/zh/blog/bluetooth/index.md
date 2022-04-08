@@ -52,7 +52,7 @@ Chrome OS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 
 
 ### 需要用户手势
 
-作为一项安全功能，使用 `navigator.bluetooth.requestDevice` 发现蓝牙设备必须由[用户手势](https://html.spec.whatwg.org/multipage/interaction.html#activation)（例如触摸或鼠标点击）触发。我们正在谈论对 [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events) 、 `click` 和 `touchend` 事件的侦听。
+作为一项安全功能，使用 `navigator.bluetooth.requestDevice` 发现蓝牙设备必须由[用户手势](https://html.spec.whatwg.org/multipage/interaction.html#activation)（例如触摸或鼠标点击）触发。我们正在谈论对 [`pointerup`](https://developer.chrome.com/blog/pointer-events/) 、 `click` 和 `touchend` 事件的侦听。
 
 ```js
 button.addEventListener('pointerup', function(event) {

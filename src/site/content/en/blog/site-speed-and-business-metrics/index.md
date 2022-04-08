@@ -178,7 +178,7 @@ Additional optimizations to consider can be found at [Fast load times](/fast/)
 and [Frontend Performance
 Checklist](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/).
 You can also use [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/) to run
+Insights](https://pagespeed.web.dev/) to run
 Lighthouse, which identifies opportunities to improve performance.
 
 **Slow down the page**

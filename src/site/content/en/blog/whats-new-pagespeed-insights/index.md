@@ -18,7 +18,7 @@ tags:
 
 
 Over the years, [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI) has
+Insights](https://pagespeed.web.dev/) (PSI) has
 evolved into a one-stop source for both
 [field](https://developers.google.com/web/fundamentals/performance/speed-tools#field_data)
 and

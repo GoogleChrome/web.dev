@@ -62,7 +62,7 @@ where to start optimizing. Fortunately, there are tools that can help you on the
 that allows you to make an audit of your website, and gives you hints on how to make it better.
 
 We recently launched a bunch of
-[new performance audits](https://developers.google.com/web/updates/2018/05/lighthouse)
+[new performance audits](https://developer.chrome.com/blog/lighthouse-load-performance/)
 that are really useful in everyday development workflow.
 
 <figure>
@@ -782,6 +782,3 @@ and more inclusive experience to your users.
 
 With special thanks to: Ward Peeters, Minko Gechev, Kyle Mathews, Katie Hempenius, Dom Farolino,
 Yoav Weiss, Susie Lu, Yusuke Utsunomiya, Tom Ankers, Lighthouse & Google Doodles.
-
-
-

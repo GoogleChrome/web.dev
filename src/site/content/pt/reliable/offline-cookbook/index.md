@@ -81,7 +81,7 @@ O Trabalho de Serviço pode ser eliminado durante o download dos níveis 11–20
 
 **Ideal para:** limpeza e migração.
 
-Depois que um novo Trabalho de Serviço é instalado e uma versão anterior não está sendo usada, a nova é ativada e você obtém um evento `activate`. Como a versão antiga não está atrapalhando, é um bom momento para lidar com [migrações de esquema no IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices) e também excluir caches não utilizados.
+Depois que um novo Trabalho de Serviço é instalado e uma versão anterior não está sendo usada, a nova é ativada e você obtém um evento `activate`. Como a versão antiga não está atrapalhando, é um bom momento para lidar com [migrações de esquema no IndexedDB](/indexeddb-best-practices/) e também excluir caches não utilizados.
 
 ```js
 self.addEventListener('activate', function (event) {
@@ -244,7 +244,7 @@ self.addEventListener('notificationclick', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="Na sincronização em segundo plano.", width="800", height="219" %}<figcaption>Na sincronização em segundo plano.</figcaption></figure>
 
-A [sincronização em segundo plano](https://developers.google.com/web/updates/2015/12/background-sync) é outro recurso criado com base no Trabalho de Serviço. Ele permite que você solicite a sincronização de dados em segundo plano como um intervalo único ou em um intervalo (extremamente heurístico). Isso acontece mesmo quando o usuário não tenha uma guia aberta no seu site. Apenas o Trabalho de Serviço é despertado. Você solicita permissão para fazer isso a partir de uma página e o usuário será solicitado.
+A [sincronização em segundo plano](https://developer.chrome.com/blog/background-sync/) é outro recurso criado com base no Trabalho de Serviço. Ele permite que você solicite a sincronização de dados em segundo plano como um intervalo único ou em um intervalo (extremamente heurístico). Isso acontece mesmo quando o usuário não tenha uma guia aberta no seu site. Apenas o Trabalho de Serviço é despertado. Você solicita permissão para fazer isso a partir de uma página e o usuário será solicitado.
 
 **Ideal para:** atualizações não urgentes, especialmente aquelas que acontecem tão regularmente que uma mensagem por push a cada atualização seria muito frequente para os usuários, como cronogramas sociais ou artigos de notícias.
 

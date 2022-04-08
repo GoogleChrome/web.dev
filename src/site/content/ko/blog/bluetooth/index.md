@@ -48,7 +48,7 @@ Linux 및 이전 버전의 Windows의 경우 `about://flags`에서 `#experimenta
 
 ### 사용자 제스처 필요
 
-보안 조치로서, `navigator.bluetooth.requestDevice`를 사용하여 블루투스 장치를 검색하려면 터치 또는 마우스 클릭과 같은 [사용자 제스처](https://html.spec.whatwg.org/multipage/interaction.html#activation)로 트리거해야 합니다. [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events), `click` 및 `touchend` 이벤트 수신에 대해 이야기하고 있는 것입니다.
+보안 조치로서, `navigator.bluetooth.requestDevice`를 사용하여 블루투스 장치를 검색하려면 터치 또는 마우스 클릭과 같은 [사용자 제스처](https://html.spec.whatwg.org/multipage/interaction.html#activation)로 트리거해야 합니다. [`pointerup`](https://developer.chrome.com/blog/pointer-events/), `click` 및 `touchend` 이벤트 수신에 대해 이야기하고 있는 것입니다.
 
 ```js
 button.addEventListener('pointerup', function(event) {

@@ -20,7 +20,7 @@ origin_trial:
 
 [이전 발표](https://blog.chromium.org/2020/01/appcache-scope-restricted.html)에 이어 Chrome 및 기타 Chromium 기반 브라우저에서 [AppCache에](https://developer.mozilla.org/docs/Web/API/Window/applicationCache) 대한 지원이 제거됩니다. 개발자는 더 이상 기다리지 말고 지금 AppCache로부터 마이그레이션하는 것이 좋습니다.
 
-현재 브라우저에서 광범위하게 지원되는 [서비스 작업자](https://developers.google.com/web/fundamentals/primers/service-workers)는 AppCache가 제공했던 오프라인 경험을 제공하는 대안을 제공합니다. [마이그레이션 전략](#migration-strategies)을 참조하세요.
+현재 브라우저에서 광범위하게 지원되는 [서비스 작업자](https://developer.chrome.com/docs/workbox/service-worker-overview/)는 AppCache가 제공했던 오프라인 경험을 제공하는 대안을 제공합니다. [마이그레이션 전략](#migration-strategies)을 참조하세요.
 
 ## 타임라인
 
@@ -132,7 +132,7 @@ AppCache 매니페스트에 토큰을 추가한 후에는 `about://appcache-inte
 
 ### 상호 배타적인 서비스 작업자와 AppCache
 
-마이그레이션 전략을 수행하는 동안 Chrome은 서비스 작업자의 [제어](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#scope_and_control) 하에 로드된 모든 페이지에서 AppCache 기능을 비활성화한다는 점을 염두에 두시기 바랍니다. 즉, 특정 페이지를 제어하는 서비스 작업자를 배포하는 즉시 해당 페이지에서 AppCache를 더 이상 사용할 수 없습니다.
+마이그레이션 전략을 수행하는 동안 Chrome은 서비스 작업자의 [제어](/service-worker-lifecycle/#scope-and-control) 하에 로드된 모든 페이지에서 AppCache 기능을 비활성화한다는 점을 염두에 두시기 바랍니다. 즉, 특정 페이지를 제어하는 서비스 작업자를 배포하는 즉시 해당 페이지에서 AppCache를 더 이상 사용할 수 없습니다.
 
 이 때문에 서비스 작업자로 하나씩 마이그레이션하지 않는 것이 좋습니다. 캐싱 논리의 일부만 포함하는 서비스 작업자를 배포하는 것은 실수입니다. "차이를 메우기" 위해 AppCache로 물러날 수는 없습니다.
 
@@ -164,8 +164,8 @@ Android 애플리케이션의 일부 개발자는 Chrome [WebView](https://devel
 
 ### 문서
 
-- [서비스 작업자: 소개](https://developers.google.com/web/fundamentals/primers/service-workers)
-- [서비스 작업자 수명 주기](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [서비스 작업자: 소개](https://developer.chrome.com/docs/workbox/service-worker-overview/)
+- [서비스 작업자 수명 주기](/service-worker-lifecycle/)
 - [프로그레시브 웹 앱 교육](https://developers.google.com/web/ilt/pwa)
 - [네트워크 안정성](/reliable/)
 

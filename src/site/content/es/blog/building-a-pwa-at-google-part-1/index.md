@@ -44,7 +44,7 @@ Para Bulletin, usamos [Polymer](https://www.polymer-project.org/), pero cualquie
 
 ## Lo que aprendimos sobre los service workers {: #lesson-learned }
 
-No puede tener una PWA sin un [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Los service workers le brindan mucho poder, como estrategias avanzadas de almacenamiento en caché, capacidades fuera de línea, sincronización en segundo plano, etc. Si bien los service workers agregan cierta complejidad, descubrimos que sus beneficios superan la complejidad agregada.
+No puede tener una PWA sin un [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/). Los service workers le brindan mucho poder, como estrategias avanzadas de almacenamiento en caché, capacidades fuera de línea, sincronización en segundo plano, etc. Si bien los service workers agregan cierta complejidad, descubrimos que sus beneficios superan la complejidad agregada.
 
 ### Genérelo si puede {: #generate }
 

@@ -94,7 +94,7 @@ FID는 로드 중 페이지의 응답성을 측정하는 메트릭입니다. 따
 
 스크롤 및 확대/축소와 같은 다른 상호 작용은 연속 작업이며 완전히 다른 성능 제약 조건을 갖습니다. 또한 브라우저에서는 보통 이를 별도의 스레드에서 실행하여 대기 시간을 숨길 수 있습니다.
 
-즉, FID는 [RAIL 성능 모델](https://developers.google.com/web/fundamentals/performance/rail) 중 R(반응성)에 중점을 두는 반면, 스크롤 및 확대/축소는 A(애니메이션)에 가깝기 때문에 성능 품질도 개별적으로 평가되어야 합니다.
+즉, FID는 [RAIL 성능 모델](/rail/) 중 R(반응성)에 중점을 두는 반면, 스크롤 및 확대/축소는 A(애니메이션)에 가깝기 때문에 성능 품질도 개별적으로 평가되어야 합니다.
 
 ### 사용자가 사이트와 상호 작용하지 않으면 어떻게 되나요?
 
@@ -121,7 +121,7 @@ FID는 실제 사용자가 페이지와 상호 작용해야 하므로 [사이트
 ### 현장 도구
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 

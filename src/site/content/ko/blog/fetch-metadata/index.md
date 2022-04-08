@@ -17,7 +17,7 @@ feedback:
 
 ## 웹 리소스를 격리해야 하는 이유는 무엇인가요?
 
-여러 웹 애플리케이션은 [사이트 간 요청 위조](https://portswigger.net/web-security/csrf) (CSRF), [사이트 간 스크립트 포함](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), 타이밍 공격, [교차 출처 정보 누출](https://arxiv.org/pdf/1908.02204.pdf) 또는 추측성 실행 사이드 채널 ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)) 공격과 같은 [교차 출처](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) 공격에 취약합니다.
+여러 웹 애플리케이션은 [사이트 간 요청 위조](https://portswigger.net/web-security/csrf) (CSRF), [사이트 간 스크립트 포함](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), 타이밍 공격, [교차 출처 정보 누출](https://arxiv.org/pdf/1908.02204.pdf) 또는 추측성 실행 사이드 채널 ([Spectre](https://developer.chrome.com/blog/meltdown-spectre/)) 공격과 같은 [교차 출처](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) 공격에 취약합니다.
 
 [Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) 요청 헤더를 통해 강력한 심층 방어 메커니즘(리소스 격리 정책)을 배포하여 이러한 일반적인 교차 출처 공격으로부터 애플리케이션을 보호할 수 있습니다.
 

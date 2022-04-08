@@ -23,7 +23,7 @@ tags:
 
 JavaScriptバンドルを分割して、ユーザーがアプリケーションを読み込んだときに最初のルートに必要なコードのみを送信します。これにより、解析およびコンパイルする必要のあるスクリプトの量が最小限に抑えられ、ページの読み込み時間が短縮されます。
 
-[webpack](https://webpack.js.org/guides/code-splitting/)、[Parcel](https://parceljs.org/code_splitting.html)、[Rollup](https://rollupjs.org/guide/en#dynamic-import)などの一般的なモジュールバンドラを使用すると、[動的インポート](https://developers.google.com/web/updates/2017/11/dynamic-import)を使用してバンドルを分割できます。たとえば、フォームが送信されたときに実行される`someFunction`メソッドの例を示す次のコードスニペットについて検討します。
+[webpack](https://webpack.js.org/guides/code-splitting/)、[Parcel](https://parceljs.org/code_splitting.html)、[Rollup](https://rollupjs.org/guide/en#dynamic-import)などの一般的なモジュールバンドラを使用すると、[動的インポート](https://v8.dev/features/dynamic-import)を使用してバンドルを分割できます。たとえば、フォームが送信されたときに実行される`someFunction`メソッドの例を示す次のコードスニペットについて検討します。
 
 ```js
 import moduleA from "library";

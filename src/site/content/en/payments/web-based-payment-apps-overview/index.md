@@ -50,7 +50,7 @@ Web-based payment apps are built using the standard web technologies. Every
 web-based payment app must include a service worker.
 
 {% Aside %}
-A [Service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+A [Service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 is an event-driven script that runs in the background even if the registering
 website is not open in the browser. Service workers enable websites to work
 offline and send push notifications, because they can respond to requests with

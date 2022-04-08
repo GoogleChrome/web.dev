@@ -1,9 +1,9 @@
 ---
-title: Best Practices for Using IndexedDB 
+title: Best Practices for Using IndexedDB
 subhead: Learn best practices for syncing application state between IndexedDB an popular state management libraries.
 authors:
   - philipwalton
-date: 2017-06-08 
+date: 2017-06-08
 updated: 2018-09-20
 description: |
   Learn best practices for syncing application state between IndexedDB an popular state management libraries.
@@ -189,7 +189,7 @@ preferable to always writing the entire state tree. Little improvements are
 better than no improvements at all.
 
 Lastly, you should always be [measuring the performance
-impact](https://developers.google.com/web/updates/2017/06/user-centric-performance-metrics) of the code you
+impact](/user-centric-performance-metrics/) of the code you
 write. While it's true that small writes to IndexedDB will perform better than
 large writes, this only matters if the writes to IndexedDB that your application
 is doing actually lead to
@@ -211,4 +211,3 @@ unhappy users.
 Since client storage involves many factors outside of your control, it's
 critical your code is well tested and properly handles errors, even those that
 may initially seem unlikely to occur.
-

@@ -56,7 +56,7 @@ various performance monitoring APIs.
 For example, with AWP, you can set a daily test on your home page to capture the
 field data from [CrUX API](/chrome-ux-report-api/) and lab data
 from a
-[Lighthouse report from PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[Lighthouse report from PageSpeed Insights](https://pagespeed.web.dev/).
 This data can be written and stored over time, for example, in [Google
 Sheets](https://www.google.co.uk/sheets/about/) and then visualised in the
 [Data Studio dashboard](https://datastudio.google.com/c/u/0/navigation/reporting).
@@ -94,7 +94,7 @@ AWP comes with a number of pre-implemented gatherers and connectors:
 ## Automating audits with AWP
 
 AWP automates the performance audits via your preferred audit platforms such as
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+[PageSpeed Insights](https://pagespeed.web.dev/),
 [WebPageTest](https://webpagetest.org/), or
 [CrUX API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference).
 AWP offers the flexibility to choose where to load the list of tests, and where

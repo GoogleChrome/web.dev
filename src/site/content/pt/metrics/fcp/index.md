@@ -38,7 +38,7 @@ A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Ferramentas de campo
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Console de Busca (relatório de velocidade)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -47,7 +47,7 @@ A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Medição da FCP em JavaScript
 

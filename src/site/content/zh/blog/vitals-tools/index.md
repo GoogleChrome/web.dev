@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-近期宣布的 [Web 指标](/vitals/)计划为网络质量信号提供统一指导，这些信号对于所有网站提供出色的网络用户体验至关重要。我们很高兴地宣布，**Google 为网络开发者提供的所有热门工具现在都支持核心 Web 指标的测量**，从而帮助您更轻松地诊断和修复用户体验问题。这些工具包括[灯塔](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)、[Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)、[搜索控制台](https://search.google.com/search-console/about)、[web.dev 测量工具](/measure/)、[Web 指标 Chrome 扩展程序](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)和一个全新的 (!) [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) API。
+近期宣布的 [Web 指标](/vitals/)计划为网络质量信号提供统一指导，这些信号对于所有网站提供出色的网络用户体验至关重要。我们很高兴地宣布，**Google 为网络开发者提供的所有热门工具现在都支持核心 Web 指标的测量**，从而帮助您更轻松地诊断和修复用户体验问题。这些工具包括[灯塔](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://pagespeed.web.dev/)、[Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)、[搜索控制台](https://search.google.com/search-console/about)、[web.dev 测量工具](/measure/)、[Web 指标 Chrome 扩展程序](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)和一个全新的 (!) [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) API。
 
 由于 Google 搜索现在将核心 Web 指标作为评估 [页面体验](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 的基础，因此在最大程度上实现这些指标的可用性和可操作性就变得至关重要。
 
@@ -54,7 +54,7 @@ tags:
 
 ### PageSpeed Insights 网页速度测量工具
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI) 对页面在移动和桌面设备上的实验室性能和实际性能进行报告。该工具提供真实用户的页面体验概览（由 Chrome 用户体验报告提供支持）以及一系列关于网站所有者要如何改善页面体验的可操作建议（由灯塔提供支持）。
+[PageSpeed Insights](https://pagespeed.web.dev/) (PSI) 对页面在移动和桌面设备上的实验室性能和实际性能进行报告。该工具提供真实用户的页面体验概览（由 Chrome 用户体验报告提供支持）以及一系列关于网站所有者要如何改善页面体验的可操作建议（由灯塔提供支持）。
 
 PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) 也已升级为在底层使用灯塔 6.0，而且目前支持在报告的实验室和实际部分测量核心 Web 指标！核心 Web 指标由蓝丝带进行了标识，如下图所示。
 

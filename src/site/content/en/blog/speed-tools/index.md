@@ -130,7 +130,7 @@ experiencing in the wild.
 {% Aside %}
 Public data sets like [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report/) and performance tools like
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) speed score report this type of
+[PageSpeed Insights](https://pagespeed.web.dev/) speed score report this type of
 data.
 {% endAside %}
 
@@ -232,7 +232,7 @@ it.", width="366", height="366", class="float-right" %}
 experienced by real-world Chrome users, and looking for audit recommendations
 against top industry trends and guidelines.**
 
-**[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)** helps you understand the
+**[PageSpeed Insights](https://pagespeed.web.dev/)** helps you understand the
 real-world performance of your site, as experienced by Chrome users, and
 recommends optimization opportunities.
 

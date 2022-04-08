@@ -71,7 +71,7 @@ Busca formas de almacenar contenidos en caché de forma más activa. Si un recur
 
 Los encabezados HTTP como [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires) y [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indican cómo un recurso debe almacenarse en caché mediante un caché HTTP. Auditar y corregir estos encabezados mejorará el almacenamiento en caché.
 
-Aunque [los trabajadores de servicio](https://developers.google.com/web/fundamentals/primers/service-workers) también se pueden utilizar para el almacenamiento en caché, utilizan un [caché](https://developer.mozilla.org/docs/Web/API/Cache) separado y son un complemento, en lugar de un reemplazo, para un adecuado almacenamiento en caché HTTP. Por esta razón, cuando se maneja un servidor sobrecargado, los esfuerzos deben centrarse en optimizar el almacenamiento en caché HTTP.
+Aunque [los trabajadores de servicio](https://developer.chrome.com/docs/workbox/service-worker-overview/) también se pueden utilizar para el almacenamiento en caché, utilizan un [caché](https://developer.mozilla.org/docs/Web/API/Cache) separado y son un complemento, en lugar de un reemplazo, para un adecuado almacenamiento en caché HTTP. Por esta razón, cuando se maneja un servidor sobrecargado, los esfuerzos deben centrarse en optimizar el almacenamiento en caché HTTP.
 
 #### Diagnosticar
 

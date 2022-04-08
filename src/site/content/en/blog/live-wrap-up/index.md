@@ -183,7 +183,7 @@ bring them to the developer's attention. This is most pertinent as we move into 
 To reduce notification fatigue and clutter in the Console, Chrome DevTools launched the [Issues
 tab](https://developer.chrome.com/docs/devtools/issues/) which focuses on three types of
 critical issues to start with: [cookie problems](/samesite-cookies-explained),
-[mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content),
+[mixed content](/what-is-mixed-content/),
 and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and fixing
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 

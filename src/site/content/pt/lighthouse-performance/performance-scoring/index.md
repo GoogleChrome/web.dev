@@ -25,7 +25,7 @@ Grande parte da variabilidade na sua pontuação geral de desempenho e valores d
 
 [A documentação do Lighthouse sobre variabilidade](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md) trata disso com mais profundidade.
 
-Além disso, embora o Lighthouse possa fornecer uma pontuação geral de desempenho única, pode ser mais útil pensar no desempenho do seu site como uma distribuição de pontuações, em vez de um único número. Veja a introdução das [Métricas de desempenho centradas no usuário](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) para entender o porquê.
+Além disso, embora o Lighthouse possa fornecer uma pontuação geral de desempenho única, pode ser mais útil pensar no desempenho do seu site como uma distribuição de pontuações, em vez de um único número. Veja a introdução das [Métricas de desempenho centradas no usuário](/user-centric-performance-metrics/) para entender o porquê.
 
 ## Como a pontuação de desempenho é ponderada {: #weightings}
 

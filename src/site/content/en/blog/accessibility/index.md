@@ -357,12 +357,12 @@ For the rest of the guide, we'll dive into the practical aspects of creating
 accessible web sites. We'll organize this effort around three main subject
 areas:
 
- - [**Focus**](https://developers.google.com/web/fundamentals/accessibility/focus): We'll look at how to
+ - [**Focus**](/focus/): We'll look at how to
    build things that can be operated with a keyboard instead of a mouse. This is
    important for users with motor impairments, of course, but it also ensures
    that your UI is in good shape for all users.
 
- - [**Semantics**](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin): We'll
+ - [**Semantics**](/semantics-builtin/): We'll
    make sure that we express our user interface in a robust way that works with
    a variety of assistive technologies.
 

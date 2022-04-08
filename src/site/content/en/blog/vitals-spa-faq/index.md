@@ -126,7 +126,7 @@ loads experienced on the site's [landing
 page](https://en.wikipedia.org/wiki/Landing_page).
 
 You can check your site's score for different aggregation methods using
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) or
+[PageSpeed Insights](https://pagespeed.web.dev/) or
 the [Chrome User Experience Report
 API](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started),
 which reports scores for both individual page URLs and the entire origin.

@@ -122,7 +122,7 @@ particular, if your web server uses JavaScript (without relying on
 If your web server falls into that category and you would like to explore one approach to moving
 HTML generation off the network and into your service worker, the guidance in [Beyond SPAs:
 alternative architectures for your
-PWA](https://developers.google.com/web/updates/2018/05/beyond-spa) can get you started.
+PWA](https://developer.chrome.com/blog/beyond-spa/) can get you started.
 
 ### Everything else {: #everything-else }
 
@@ -132,9 +132,9 @@ down your navigations. Starting up the service worker without using it to respon
 request will introduce a small amount of latency (as explained in [Building Faster, More Resilient
 Apps with Service Worker](https://youtu.be/25aCD5XL1Jk)). You can mitigate this overhead by enabling
 a feature called [navigation
-preload](https://developers.google.com/web/updates/2017/02/navigation-preload), and then [using the
+preload](https://developer.chrome.com/blog/navigation-preload/), and then [using the
 network
-response](https://developers.google.com/web/updates/2017/02/navigation-preload#using_the_preloaded_response)
+response](https://developer.chrome.com/blog/navigation-preload/#using-the-preloaded-response)
 that's been preloaded inside of your `fetch` event handler.
 
 Workbox [provides a helper

@@ -19,7 +19,7 @@ Con estos datos, los desarrolladores pueden comprender la amplia distribución d
 
 ## Cómo usarlo
 
-Hay cuatro formas principales de extraer información del Informe Chrome UX, que varían en complejidad. Para un análisis rápido y sencillo del rendimiento del sitio web, las herramientas recomendadas son [Panel de control de CrUX](http://g.co/chromeuxdash) y [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/). [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) disminuye la simplicidad del análisis a cambio del poder de la personalización y estadísticas más detalladas. Y la [API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) permite la integración de datos de alto nivel con otras aplicaciones.
+Hay cuatro formas principales de extraer información del Informe Chrome UX, que varían en complejidad. Para un análisis rápido y sencillo del rendimiento del sitio web, las herramientas recomendadas son [Panel de control de CrUX](http://g.co/chromeuxdash) y [PageSpeed Insights](https://pagespeed.web.dev/). [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) disminuye la simplicidad del análisis a cambio del poder de la personalización y estadísticas más detalladas. Y la [API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) permite la integración de datos de alto nivel con otras aplicaciones.
 
 ### Panel de control de CrUX
 
@@ -27,7 +27,7 @@ El [Panel de control de CrUX](http://g.co/chromeuxdash) es una herramienta de vi
 
 ### PageSpeed Insights
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) muestra las distribuciones de rendimiento más recientes desglosadas por usuarios de escritorio y móviles. Los datos de rendimiento están disponibles para páginas web individuales (además de orígenes enteros) y están agregados por los 28 días de datos más recientes (a diferencia del mes natural anterior en BigQuery). Utilizar esta herramienta es tan fácil como introducir una URL o un origen en el cuadro de búsqueda de la interfaz web, y los datos de rendimiento del campo se muestran junto con sugerencias prescriptivas para optimizar la página. Pruebe la guía [PageSpeed Insights](/chrome-ux-report-pagespeed-insights).
+[PageSpeed Insights](https://pagespeed.web.dev/) muestra las distribuciones de rendimiento más recientes desglosadas por usuarios de escritorio y móviles. Los datos de rendimiento están disponibles para páginas web individuales (además de orígenes enteros) y están agregados por los 28 días de datos más recientes (a diferencia del mes natural anterior en BigQuery). Utilizar esta herramienta es tan fácil como introducir una URL o un origen en el cuadro de búsqueda de la interfaz web, y los datos de rendimiento del campo se muestran junto con sugerencias prescriptivas para optimizar la página. Pruebe la guía [PageSpeed Insights](/chrome-ux-report-pagespeed-insights).
 
 ### CrUX en BigQuery
 

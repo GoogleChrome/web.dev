@@ -31,7 +31,7 @@ Practices](https://www.w3.org/TR/wai-aria-practices-1.1/), which is a guide to
 explain and show ARIA, the [Accessible Rich Internet Application
 standard](https://www.w3.org/TR/wai-aria-1.1/). If you are unfamiliar with ARIA,
 [check out our introduction on
-WebFundamentals](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/).
+WebFundamentals](/semantics-aria/).
 Each component links to the relevant section of the Authoring Practices. While
 not strictly necessary, we do recommend reading the section of the Authoring
 Practices before diving into the code.

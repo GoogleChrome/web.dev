@@ -51,7 +51,7 @@ PRPL 是四个英文单词的首字母缩写，它描述了一种可以提高网
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 消除渲染阻塞资源审计", width="800", height="111" %}
 
-为了改进 First Paint，Lighthouse 建议内联关键 JavaScript 并使用 [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript) 推迟其余部分，以及内联首屏使用的关键 CSS。这样可以消除到服务器的往返，从而获取阻塞渲染的资产，提高性能。但是从开发的角度来看，内联代码更难维护，并且无法被浏览器单独缓存。
+为了改进 First Paint，Lighthouse 建议内联关键 JavaScript 并使用 [`async`](/critical-rendering-path-adding-interactivity-with-javascript/) 推迟其余部分，以及内联首屏使用的关键 CSS。这样可以消除到服务器的往返，从而获取阻塞渲染的资产，提高性能。但是从开发的角度来看，内联代码更难维护，并且无法被浏览器单独缓存。
 
 另一种改进 First Paint 的方法是在**服务器端渲染**页面的初始 HTML。这会在仍在获取、解析和执行脚本时立即向用户显示内容。但是，这会显着增加 HTML 文件的有效负载，可能会损害 [**Time to Interactive**](/tti/) ，或者影响到应用程序变得可交互并可以响应用户输入所需的时间。
 

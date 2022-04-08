@@ -157,7 +157,7 @@ page.
 - **[Cumulative layout shift (CLS)](/cls/):** measures the cumulative score of
   all unexpected layout shifts that occur between when the page starts loading
   and when its [lifecycle
-  state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
+  state](https://developer.chrome.com/blog/page-lifecycle-api/)
   changes to hidden. _([lab](#in-the-lab), [field](#in-the-field))_
 
 While this list includes metrics measuring many of the various aspects of

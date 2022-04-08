@@ -51,7 +51,7 @@ lot of [cat pictures](https://en.wikipedia.org/wiki/Cats_and_the_Internet).
 Currently, there are two ways to defer the loading of off-screen images:
 
 - Using the [Intersection Observer
-  API](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+  API](https://developer.chrome.com/blog/intersectionobserver/)
 - Using `scroll`, `resize`, or `orientationchange` [event
   handlers](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
 

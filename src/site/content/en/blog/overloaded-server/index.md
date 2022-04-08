@@ -71,7 +71,7 @@ Look for ways to more aggressively cache content. If a resource can be served fr
 
 HTTP headers like [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
 
-Although [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
+Although [service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
 
 #### Diagnose
 

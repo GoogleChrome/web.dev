@@ -53,7 +53,7 @@ Lighthouse는 사이트에서 픽셀을 화면에 렌더링하는 순간인 [**F
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="Lighthouse: 렌더링 차단 리소스 감사 제거", width="800", height="111" %}
 
-FP를 개선하기 위해 Lighthouse는 중요한 JavaScript를 인라인하고 [`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)를 사용하여 나머지는 연기할 뿐만 아니라 스크롤 없이 볼 수 있는 부분에서 사용되는 중요한 CSS를 인라인할 것을 권장합니다. 이는 렌더링 차단 자산을 가져오기 위한 서버와의 왕복 통신을 제거함으로써 성능을 향상시킵니다. 그러나 인라인 코드는 개발 관점에서 유지 관리하기가 더 어려우며 브라우저에서 별도로 캐시할 수 없습니다.
+FP를 개선하기 위해 Lighthouse는 중요한 JavaScript를 인라인하고 [`async`](/critical-rendering-path-adding-interactivity-with-javascript/)를 사용하여 나머지는 연기할 뿐만 아니라 스크롤 없이 볼 수 있는 부분에서 사용되는 중요한 CSS를 인라인할 것을 권장합니다. 이는 렌더링 차단 자산을 가져오기 위한 서버와의 왕복 통신을 제거함으로써 성능을 향상시킵니다. 그러나 인라인 코드는 개발 관점에서 유지 관리하기가 더 어려우며 브라우저에서 별도로 캐시할 수 없습니다.
 
 FP를 개선하는 또 다른 방법은 페이지의 초기 HTML을 **서버 측에서 렌더링**하는 것입니다.이렇게 하면 스크립트를 계속 가져오고, 구문 분석하고, 실행하는 동안 사용자에게 즉시 콘텐츠가 표시됩니다. 그러나 이렇게 하면 HTML 파일의 페이로드가 크게 증가하여 응용 프로그램이 대화형이 되어 사용자 입력에 응답하는 데 걸리는 시간인 [**상호 작용까지의 시간**](/tti/)이 나빠질 수 있습니다.
 

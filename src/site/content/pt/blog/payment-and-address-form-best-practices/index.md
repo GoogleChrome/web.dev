@@ -496,7 +496,7 @@ Isso, por sua vez, oferece uma base sólida para priorizar esforços, fazer muda
 - [Melhores práticas para design de formulários para celular](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulário mais capazes](/more-capable-form-controls)
 - [Criação de formulários acessíveis](https://webaim.org/techniques/forms/)
-- [Simplificando o fluxo de inscrição usando a API de gerenciamento de credenciais](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Simplificando o fluxo de inscrição usando a API de gerenciamento de credenciais](https://developer.chrome.com/blog/credential-management-api/)
 - [O Guia compulsivo de endereços postais de Frank](http://www.columbia.edu/~fdc/postal/) fornece links úteis e orientação abrangente para formatos de endereço em mais de 200 países.
 - [Listas de países](http://www.countries-list.info/Download-List) tem uma ferramenta para baixar códigos e nomes de países em vários idiomas, em vários formatos.
 

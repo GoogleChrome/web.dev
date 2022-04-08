@@ -63,7 +63,7 @@ framework will work.
 ## What we learned about service workers {: #lessons-learned }
 
 You can't have a PWA without a [service
-worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Service workers
+worker](https://developer.chrome.com/docs/workbox/service-worker-overview/). Service workers
 give you a lot of power, such as advanced caching strategies, offline capabilities, background sync,
 etc. While service workers do add some complexity, we found that their benefits outweighed the added
 complexity.

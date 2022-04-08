@@ -94,12 +94,6 @@ aliceboxhall:
   description:
     en: Alice is a contributor to web.dev
 
-jeremywagner:
-  title:
-    en: Jeremy Wagner
-  description:
-    en: Jeremy is a contributor to web.dev
-
 eligrey:
   title:
     en: Eli Grey
@@ -3803,4 +3797,3 @@ nikilmathew:
     en: Nikil Mathew
   description:
     en: Lead Software engineer at Mishipay
-

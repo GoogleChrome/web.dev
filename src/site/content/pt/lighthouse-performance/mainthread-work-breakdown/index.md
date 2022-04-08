@@ -37,7 +37,7 @@ Veja [Faça menos trabalho no thread principal](https://developer.chrome.com/doc
 ### Estilo e layout
 
 - [Reduza o escopo e a complexidade dos cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
-- [Evite layouts grandes e complexos e alterações de layout](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
+- [Evite layouts grandes e complexos e alterações de layout](/avoid-large-complex-layouts-and-layout-thrashing/)
 
 ### Renderização
 

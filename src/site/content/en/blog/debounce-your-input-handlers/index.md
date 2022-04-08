@@ -44,7 +44,7 @@ In short, you should make sure that any input handlers you run should execute qu
 
 Input handlers, like those for scroll and touch, are scheduled to run just before any `requestAnimationFrame` callbacks.
 
-If you make a visual change inside one of those handlers, then at the start of the `requestAnimationFrame`, there will be style changes pending. If you _then_ read visual properties at the start of the requestAnimationFrame callback, as the advice in “[Avoid large, complex layouts and layout thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)” suggests, you will trigger a forced synchronous layout!
+If you make a visual change inside one of those handlers, then at the start of the `requestAnimationFrame`, there will be style changes pending. If you _then_ read visual properties at the start of the requestAnimationFrame callback, as the advice in “[Avoid large, complex layouts and layout thrashing](/avoid-large-complex-layouts-and-layout-thrashing/)” suggests, you will trigger a forced synchronous layout!
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/qQ2ymRuMt1rdAhhIXyLy.jpg", alt="Heavy scrolling; compositor is blocked on JavaScript.", width="800", height="324" %}

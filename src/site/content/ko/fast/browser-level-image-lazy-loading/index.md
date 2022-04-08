@@ -38,7 +38,7 @@ Chrome 76 이상에서는 사용자 지정 지연 로딩 코드를 작성하거�
 
 현재 오프스크린 이미지 로드를 지연시키는 방법에는 두 가지가 있습니다.
 
-- [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver) 사용
+- [Intersection Observer API](https://developer.chrome.com/blog/intersectionobserver/) 사용
 - `scroll`, `resize` 또는 `orientationchange` [이벤트 핸들러](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way) 사용
 
 어느 옵션이든 개발자는 지연 로딩 기능을 포함할 수 있으며 많은 개발자들이 사용하기 훨씬 쉬운 추상화를 제공하기 위해 타사 라이브러리를 구축했습니다. 그러나 브라우저에서 직접 지원하는 지연 로딩을 사용하면 외부 라이브러리가 필요하지 않습니다. 또한 브라우저 수준의 지연 로딩을 사용하면 클라이언트에서 JavaScript가 비활성화된 경우에도 지연된 이미지 로딩이 계속해서 작동합니다.

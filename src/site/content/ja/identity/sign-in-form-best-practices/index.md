@@ -55,7 +55,7 @@ codelabs:
 また、この記事では取り上げませんが、サインインの体験を向上させるのに役立つ比較的新しい API が 2 つあります。
 
 - [**WebOTP**](/web-otp/): SMS を使って携帯電話にワンタイムパスコードまたは PIN 番号を送信します。これにより、ユーザーは電話番号を識別子として選択できる (メールアドレスを入力する必要はありません！) ほか、サインインの際に使う 2 要素認証と支払いの確認に使うワンタイムコードも利用できるようになります。
-- [**認証情報管理**](https://developers.google.com/web/updates/2016/04/credential-management-api): 開発者がプログラムを使ってパスワードの認証情報と統合された認証情報を保存および取得できるようにします。{% endAside %}
+- [**認証情報管理**](https://developer.chrome.com/blog/credential-management-api/): 開発者がプログラムを使ってパスワードの認証情報と統合された認証情報を保存および取得できるようにします。{% endAside %}
 
 ## 用途がはっきりした HTML を使用する {: #meaningful-html }
 
@@ -425,7 +425,7 @@ UI と UX を適切に設計すれば、サインインフォームからの離�
 - [Best Practices For Mobile Form Design (モバイルフォームデザインのベストプラクティス)](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls (より細かく機能するフォームコントロール)](/more-capable-form-controls)
 - [Creating Accessible Forms (使いやすいフォームの作成)](https://webaim.org/techniques/forms/)
-- [Streamlining the Sign-in Flow Using Credential Management API (認証情報管理 API を使用したサインインフローの合理化)](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Streamlining the Sign-in Flow Using Credential Management API (認証情報管理 API を使用したサインインフローの合理化)](https://developer.chrome.com/blog/credential-management-api/)
 - [WebOTPAPIを使用してWeb上の電話番号を確認する](/web-otp/)
 
 写真は、[Unsplash](https://unsplash.com) の [Meghan Schiereck 氏](https://unsplash.com/photos/_XFObcM_7KU) にご提供いただきました。

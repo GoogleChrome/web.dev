@@ -43,4 +43,4 @@ Lighthouse는 느린 4G 네트워크 연결에서 TTI가 무엇인지 계산합�
 - [런타임 성능 분석 시작하기](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [로드 성능 기록](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
 - [콘텐츠 효율성 최적화](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [렌더링 성능](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [렌더링 성능](/rendering-performance/)

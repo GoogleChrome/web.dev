@@ -27,7 +27,7 @@ Declarative Shadow DOM is a proposed web platform feature that the Chrome team i
 feedback on. Try it out using the [experimental flag](#detection-support) or [polyfill](#polyfill).
 {% endAside %}
 
-[Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom)
+[Shadow DOM](/shadowdom-v1/)
 is one of the three Web Components standards, rounded out by
 [HTML templates](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots)
 and

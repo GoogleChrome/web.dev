@@ -52,7 +52,7 @@ Debido a que esta API experimental es una nueva característica poderosa agregad
 
 ### Requerimiento de gestos de usuario
 
-Como característica de seguridad, el descubrimiento de dispositivos Bluetooth con `navigator.bluetooth.requestDevice` debe activarse mediante [un gesto del usuario](https://html.spec.whatwg.org/multipage/interaction.html#activation), como un toque o un clic del mouse. Estamos hablando de atender a un evento [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events), `click` y `touchend`.
+Como característica de seguridad, el descubrimiento de dispositivos Bluetooth con `navigator.bluetooth.requestDevice` debe activarse mediante [un gesto del usuario](https://html.spec.whatwg.org/multipage/interaction.html#activation), como un toque o un clic del mouse. Estamos hablando de atender a un evento [`pointerup`](https://developer.chrome.com/blog/pointer-events/), `click` y `touchend`.
 
 ```js
 button.addEventListener('pointerup', function(event) {

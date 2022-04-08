@@ -168,7 +168,7 @@ CLS se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 ### Herramientas de campo
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
@@ -244,7 +244,7 @@ Además de estas excepciones, CLS tiene cierta complejidad adicional debido al h
 - Los usuarios pueden mantener una pestaña abierta durante *mucho* tiempo, días, semanas, meses. De hecho, es posible que un usuario nunca cierre una pestaña.
 - En los sistemas operativos móviles, los navegadores normalmente no ejecutan devoluciones de llamadas de descarga en la página para las pestañas en segundo plano, lo que dificulta informar el valor "final".
 
-Para manejar estos casos, se debe informar CLS cada vez que una página está en segundo plano, además de cada vez que se descarga (el [evento `visibilitychange`](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange) cubre ambos escenarios). Y los sistemas de análisis que reciban estos datos deberán calcular el valor CLS final en el backend.
+Para manejar estos casos, se debe informar CLS cada vez que una página está en segundo plano, además de cada vez que se descarga (el [evento `visibilitychange`](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange) cubre ambos escenarios). Y los sistemas de análisis que reciban estos datos deberán calcular el valor CLS final en el backend.
 
 En vez de memorizar y lidiar con todos estos casos usted mismo, los desarrolladores pueden usar la [biblioteca JavaScript de `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir CLS, que da cuenta de todo lo mencionado anteriormente:
 

@@ -32,7 +32,7 @@ Considere alojar su sitio en una CDN. La mayoría de las CDN son seguras de form
 
 Para aprender cómo habilitar HTTPS en sus servidores, consulte el recurso de Google [Habilitar HTTPS en sus servidores](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https). Si está ejecutando su propio servidor y necesita una forma barata y fácil de generar certificados, el recurso [Cifremos](https://letsencrypt.org/) es una buena opción.
 
-Si su página ya se está ejecutando sobre HTTPS pero no pasa esta auditoría, es posible que tenga problemas con el [contenido mixto](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content). Una página tiene contenido mixto cuando la propia página se carga a través de HTTPS, pero solicita un recurso desprotegido (HTTP). Consulte el siguiente documento en el panel de seguridad de Chrome DevTools para aprender cómo depurar estas situaciones: [Comprenda los problemas de seguridad con Chrome DevTools](https://developer.chrome.com/docs/devtools/security/).
+Si su página ya se está ejecutando sobre HTTPS pero no pasa esta auditoría, es posible que tenga problemas con el [contenido mixto](/what-is-mixed-content/). Una página tiene contenido mixto cuando la propia página se carga a través de HTTPS, pero solicita un recurso desprotegido (HTTP). Consulte el siguiente documento en el panel de seguridad de Chrome DevTools para aprender cómo depurar estas situaciones: [Comprenda los problemas de seguridad con Chrome DevTools](https://developer.chrome.com/docs/devtools/security/).
 
 ## Recursos
 
@@ -40,5 +40,5 @@ Si su página ya se está ejecutando sobre HTTPS pero no pasa esta auditoría, e
 - [Por qué debería usar siempre HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
 - [Habilitar HTTPS en sus servidores](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)
 - [Comprenda los problemas de seguridad con Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)
-- [¿Qué es el contenido mixto?](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)
+- [¿Qué es el contenido mixto?](/what-is-mixed-content/)
 - [Cifremos](https://letsencrypt.org/)

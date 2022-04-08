@@ -348,7 +348,7 @@ both cases, the browser fires an `pagehide` event to signal that the document is
 {% Aside 'caution' %}
 There's another event called`unload` which is similar to`pagehide` but is considered harmful and
 should be avoided as much as possible. See
-[Legacy lifecycle APIs to avoid: the unload event](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event)
+[Legacy lifecycle APIs to avoid: the unload event](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)
 for details.
 {% endAside %}
 

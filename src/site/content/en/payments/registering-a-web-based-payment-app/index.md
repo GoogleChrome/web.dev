@@ -108,7 +108,7 @@ if ('serviceWorker' in navigator) {
 
 {% Aside %}
 If you are new to the service worker, learn more at [Service Workers: an
-Introduction](https://developers.google.com/web/fundamentals/primers/service-workers).
+Introduction](https://developer.chrome.com/docs/workbox/service-worker-overview/).
 {% endAside %}
 
 ### Set a payment instrument

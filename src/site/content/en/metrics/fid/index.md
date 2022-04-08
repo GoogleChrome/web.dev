@@ -185,7 +185,7 @@ hide their latency by running them on a separate thread).
 
 To put this another way, FID focuses on the R (responsiveness) in the [RAIL
 performance
-model](https://developers.google.com/web/fundamentals/performance/rail), whereas
+model](/rail/), whereas
 scrolling and zooming are more related to A (animation), and their performance
 qualities should be evaluated separately.
 
@@ -241,7 +241,7 @@ user to interact with your page. You can measure FID with the following tools.
 
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)

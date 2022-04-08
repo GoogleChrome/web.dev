@@ -162,7 +162,7 @@ CLS は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 ### フィールド測定を実施するためのツール
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
 
@@ -238,7 +238,7 @@ new PerformanceObserver((entryList) => {
 - ユーザーは、1 つのタブを (数日間、数週間、数か月など) *かなりの*長期間に渡って開き続ける場合があります。実際に、タブをまったく閉じないユーザーが存在する可能性もあります。
 - モバイル OS では、通常ブラウザーはバックグラウンド タブについてはページ アンロード コールバックを実行しないため、"最終的な" 値のレポートが困難になっています。
 
-こういったケースに対処するためには、ページがアンロードされるタイミングに加えて、バックグラウンドに移行するタイミングでも CLS をレポートする必要があります ([`visibilitychange` イベント](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)は、これらのシナリオの両方をカバーしています)。このデータを受け取ったアナリティクス システムは、最終的な CLS 値をバックエンドで計算する必要があります。
+こういったケースに対処するためには、ページがアンロードされるタイミングに加えて、バックグラウンドに移行するタイミングでも CLS をレポートする必要があります ([`visibilitychange` イベント](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange)は、これらのシナリオの両方をカバーしています)。このデータを受け取ったアナリティクス システムは、最終的な CLS 値をバックエンドで計算する必要があります。
 
 開発者がこれらのケースをすべて記憶して対処する必要はありません。[`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)を使用すれば、上記すべてが考慮された状態で CLS の測定を行うことができます。
 

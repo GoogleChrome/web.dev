@@ -11,7 +11,7 @@ date: 2020-07-07
 
 El JavaScript que no se utiliza puede reducir la velocidad de carga de la página:
 
-- Si el JavaScript es [para bloquear la renderización](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), el navegador debe descargar, analizar, compilar y evaluar el script antes de que pueda proceder con el resto del trabajo que se necesita para renderizar la página.
+- Si el JavaScript es [para bloquear la renderización](/critical-rendering-path-adding-interactivity-with-javascript/), el navegador debe descargar, analizar, compilar y evaluar el script antes de que pueda proceder con el resto del trabajo que se necesita para renderizar la página.
 - Incluso si el JavaScript es asíncrono (es decir, no bloquea la renderización), el código compite por el ancho de banda con otros recursos mientras se descarga, lo cual tiene implicaciones muy importantes para el rendimiento. Asimismo, enviar el código que no se utiliza mediante la red es un derroche para los usuarios de dispositivos móviles que no disponen de planes de datos ilimitados.
 
 ## Cómo falla la auditoría del JavaScript que no se utiliza
@@ -72,7 +72,7 @@ Considere la posibilidad de reducir, o cambiar, el número de [complementos de J
 
 - [Código fuente para **Eliminar el código que no se utiliza** en la auditoría](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js)
 - [Eliminar el código que no se utiliza](/remove-unused-code/)
-- [Agregar interactividad con JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)
+- [Agregar interactividad con JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/)
 - [Dividir el código](https://bundlers.tooling.report/code-splitting/)
 - [Eliminar códigos inactivos](https://bundlers.tooling.report/transformations/dead-code/)
 - [Código importado inactivo](https://bundlers.tooling.report/transformations/dead-code-dynamic/)

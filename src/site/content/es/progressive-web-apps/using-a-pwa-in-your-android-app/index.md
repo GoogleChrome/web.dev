@@ -34,7 +34,7 @@ Además, la capacidad de detección de funciones a menudo no siempre funciona co
 
 ### Trusted Web Activity es un nuevo contenedor para aplicaciones web en Android
 
-Los desarrolladores ahora pueden usar un [Trusted Web Activity](https://developers.google.com/web/updates/2019/02/using-twa) como un contenedor para incluir una PWA como una actividad de lanzamiento para una aplicación de Android. La tecnología aprovecha el navegador para mostrar la PWA en pantalla completa, lo que garantiza que el Trusted Web Activity tenga la misma compatibilidad con las funciones de la plataforma web y las API que el navegador subyacente. También hay utilerías de código abierto para facilitar aún más la implementación de una aplicación de Android mediante un Trusted Web Activity.
+Los desarrolladores ahora pueden usar un [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) como un contenedor para incluir una PWA como una actividad de lanzamiento para una aplicación de Android. La tecnología aprovecha el navegador para mostrar la PWA en pantalla completa, lo que garantiza que el Trusted Web Activity tenga la misma compatibilidad con las funciones de la plataforma web y las API que el navegador subyacente. También hay utilerías de código abierto para facilitar aún más la implementación de una aplicación de Android mediante un Trusted Web Activity.
 
 Otra ventaja que no está disponible en otras soluciones es que el contenedor comparte almacenamiento con el navegador. Los estados de inicio de sesión y las preferencias de los usuarios se comparten sin problemas entre las experiencias.
 

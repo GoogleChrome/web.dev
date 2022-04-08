@@ -34,7 +34,7 @@ feedback:
 - 데스크톱의 Chrome과 마찬가지로 11.0 데스크톱 버전의 Safari는 다양한 동영상을 미리 로드합니다. 버전 11.2부터 비디오 메타데이터만 미리 로드됩니다. [iOS의 Safari에서는 동영상이 미리 로드되지 않습니다](https://developer.apple.com/library/content/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/AudioandVideoTagBasics/AudioandVideoTagBasics.html#//apple_ref/doc/uid/TP40009523-CH2-SW9) .
 - [데이터 절약 모드](https://support.google.com/chrome/answer/2392284)가 활성화되면 `preload`가 기본적으로 `none`으로 설정됩니다.
 
-`preload`와 관련된 브라우저 기본 동작은 고정되어 있지 않기 때문에 명시적인 것이 최선의 방법일 것입니다. 사용자가 재생을 시작하는 경우 `preload="none"`을 사용하는 것이 모든 플랫폼에서 동영상 로드를 연기하는 가장 쉬운 방법입니다. `preload` 속성은 동영상 콘텐츠의 로드를 지연시키는 유일한 방법이 아닙니다. [*동영상 사전 로드를 사용한 빠른 재생*](https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload)은 JavaScript에서 동영상 재생 작업에 대한 몇 가지 아이디어와 통찰력을 제공할 수 있습니다.
+`preload`와 관련된 브라우저 기본 동작은 고정되어 있지 않기 때문에 명시적인 것이 최선의 방법일 것입니다. 사용자가 재생을 시작하는 경우 `preload="none"`을 사용하는 것이 모든 플랫폼에서 동영상 로드를 연기하는 가장 쉬운 방법입니다. `preload` 속성은 동영상 콘텐츠의 로드를 지연시키는 유일한 방법이 아닙니다. [*동영상 사전 로드를 사용한 빠른 재생*](/fast-playback-with-preload/)은 JavaScript에서 동영상 재생 작업에 대한 몇 가지 아이디어와 통찰력을 제공할 수 있습니다.
 
 안타깝게도 다음에 다룰 애니메이션 GIF 대신 동영상을 사용하려는 경우에는 유용하지 않습니다.
 

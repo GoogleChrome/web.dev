@@ -116,7 +116,7 @@ The previous technique can help mitigating the potential UI change in a small pa
 {% endAside %}
 
 {% Aside %}
-In the context of [Trusted Web Actitivies](https://developers.google.com/web/updates/2019/02/using-twa), there's a recommended way of avoiding this issue, by [validating all origins using Digital Asset Links](https://developers.google.com/web/updates/2020/01/twa-multi-origin).
+In the context of [Trusted Web Actitivies](https://developer.chrome.com/docs/android/trusted-web-activity/), there's a recommended way of avoiding this issue, by [validating all origins using Digital Asset Links](https://developers.google.com/web/updates/2020/01/twa-multi-origin).
 {% endAside %}
 
 ### Conclusion

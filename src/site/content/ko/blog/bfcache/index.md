@@ -76,7 +76,7 @@ bfcache는 브라우저가 자동으로 수행하는 최적화이지만 개발�
 
 bfcache를 관찰하는 데 사용되는 주요 이벤트는 [페이지 전환 이벤트](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)(`pageshow` 및 `pagehide`)로, bfcache가 있는 동안 계속 존재했으며 [현재 사용 중인 거의 모든 브라우저](https://caniuse.com/page-transition-events)에서 지원됩니다.
 
-새로운 [페이지 수명 주기](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) 이벤트(`freeze` 및 `resume`)는 페이지가 bfcache에 들어오거나 나갈 때뿐만 아니라 다른 상황에서도 전달됩니다. 예를 들어 CPU 사용량을 최소화하기 위해 백그라운드 탭이 정지되는 경우입니다. 페이지 수명 주기 이벤트는 현재 Chromium 기반 브라우저에서만 지원됩니다.
+새로운 [페이지 수명 주기](https://developer.chrome.com/blog/page-lifecycle-api/) 이벤트(`freeze` 및 `resume`)는 페이지가 bfcache에 들어오거나 나갈 때뿐만 아니라 다른 상황에서도 전달됩니다. 예를 들어 CPU 사용량을 최소화하기 위해 백그라운드 탭이 정지되는 경우입니다. 페이지 수명 주기 이벤트는 현재 Chromium 기반 브라우저에서만 지원됩니다.
 
 #### bfcache에서 페이지가 복원될 때 관찰
 
@@ -124,7 +124,7 @@ window.addEventListener('pagehide', (event) => {
 
 모든 브라우저에서 bfcache를 최적화하는 가장 중요한 방법은 `unload` 이벤트를 사용하지 않는 것입니다. 항상!
 
-`unload` 이벤트는 bfcache보다 앞서고 `unload` 이벤트가 발생한 후 페이지가 계속 존재하지 않을 것이라는 (합리적) 가정 하에 인터넷 상의 많은 페이지가 작동하기 때문에 브라우저에 문제가 있습니다. *또한*, 이러한 페이지의 대부분은 사용자가 탐색할 때마다 `unload` 이벤트가 발생한다는 가정 하에 작성되었기 때문에 더 이상 사실이 아니며 [오랫동안 사실이 아니었습니다](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event).
+`unload` 이벤트는 bfcache보다 앞서고 `unload` 이벤트가 발생한 후 페이지가 계속 존재하지 않을 것이라는 (합리적) 가정 하에 인터넷 상의 많은 페이지가 작동하기 때문에 브라우저에 문제가 있습니다. *또한*, 이러한 페이지의 대부분은 사용자가 탐색할 때마다 `unload` 이벤트가 발생한다는 가정 하에 작성되었기 때문에 더 이상 사실이 아니며 [오랫동안 사실이 아니었습니다](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event).
 
 따라서 브라우저는 딜레마에 직면해 있으며 사용자 경험을 개선할 수 있지만 페이지가 깨질 위험이 있는 것 중에서 선택해야 합니다.
 

@@ -228,7 +228,7 @@ make sure you use relative paths or leave out the protocol like
 
 A problem arises when you serve a page via HTTPS that includes HTTP
 resources, known as
-[mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content).
+[mixed content](/what-is-mixed-content/).
 Browsers warn users that the full strength of HTTPS has been lost. In fact,
 in the case of active mixed content (script, plug-ins, CSS, iframes), browsers
 often simply won't load or execute the content at all, resulting in a
