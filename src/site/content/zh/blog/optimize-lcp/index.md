@@ -143,7 +143,7 @@ tags:
 
 ### 延迟加载非关键 CSS
 
-使用 Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡查找您网页上任何未使用的 CSS。
+使用 Chrome 开发者工具中的[代码覆盖率](https://developer.chrome.com/docs/devtools/coverage/)选项卡查找您网页上任何未使用的 CSS。
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome 开发者工具中的代码覆盖率选项卡", width="800", height="559" %}
 
@@ -346,7 +346,7 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="灯塔 6.0", width="800", height="309" %}
 
-- Chrome 开发者工具中[性能](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)面板的**时间点**部分包括一个 LCP 标记，并会在您将鼠标悬停在**相关节点**字段上时显示哪些元素与 LCP 相关联。
+- Chrome 开发者工具中[性能](https://developer.chrome.com/docs/devtools/evaluate-performance/)面板的**时间点**部分包括一个 LCP 标记，并会在您将鼠标悬停在**相关节点**字段上时显示哪些元素与 LCP 相关联。
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome 开发者工具中的 LCP", width="800", height="509" %}
 

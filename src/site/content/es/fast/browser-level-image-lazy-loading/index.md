@@ -81,7 +81,7 @@ El limite de distancia no es fijo y varía en función de varios factores:
 
 Puede encontrar los valores predeterminados para los diferentes tipos de conexiones efectivas en la [fuente de Chromium](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad). Estos números, e incluso el enfoque de buscar solo cuando se alcanza una cierta distancia desde la ventana gráfica, pueden cambiar en un futuro cercano a medida que el equipo de Chrome mejora la heurística para determinar cuándo comenzar a cargar.
 
-{% Aside %} En Chrome 77+, puede experimentar con estos diferentes limites al [limitar la red](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) en las DevTools. Mientras tanto, deberá anular el tipo de conexión efectiva del navegador mediante el uso de la bandera de `about://flags/#force-effective-connection-type`. {% endAside %}
+{% Aside %} En Chrome 77+, puede experimentar con estos diferentes limites al [limitar la red](https://developer.chrome.com/docs/devtools/network/#throttle) en las DevTools. Mientras tanto, deberá anular el tipo de conexión efectiva del navegador mediante el uso de la bandera de `about://flags/#force-effective-connection-type`. {% endAside %}
 
 ## Ahorro de datos mejorado y limites de distancia desde la ventana gráfica
 

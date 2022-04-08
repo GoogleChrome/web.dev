@@ -28,7 +28,7 @@ In the new tab that just opened, check how the website behaves when going offlin
 
 {% Instruction 'devtools-network', 'ol' %}
 1. Open Chrome DevTools and select the Network panel.
-1. In the [Throttling drop-down list](https://developers.google.com/web/tools/chrome-devtools/network/reference#throttling), select **Offline**.
+1. In the [Throttling drop-down list](https://developer.chrome.com/docs/devtools/network/reference/#throttling), select **Offline**.
 1. In the demo app enter a search query, then click the **Search** button.
 
 The standard browser error page is shown:

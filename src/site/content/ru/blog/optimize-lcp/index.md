@@ -163,7 +163,7 @@ tags:
 
 ### Отложенная загрузка некритичного CSS-кода
 
-Используйте вкладку [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools, чтобы найти неиспользуемый CSS-код на своей веб-странице.
+Используйте вкладку [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools, чтобы найти неиспользуемый CSS-код на своей веб-странице.
 
 {% Img
   src="image/admin/wjS4NrU5EsJeCuvK0zhn.png",
@@ -433,7 +433,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
   height="309"
 %}
 
-- Раздел **Timings** панели [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) в Chrome Devtools включает маркер LCP и показывает, какой элемент связан с LCP при наведении мыши на поле **Related Node**.
+- Раздел **Timings** панели [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) в Chrome Devtools включает маркер LCP и показывает, какой элемент связан с LCP при наведении мыши на поле **Related Node**.
 
 {% Img
   src="image/admin/sxczQPKH0cvMBsNCx5uH.png",

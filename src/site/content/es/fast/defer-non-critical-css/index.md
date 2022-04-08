@@ -50,7 +50,7 @@ Esto significa que el navegador debe esperar a que todo el CSS se cargue y proce
 
 Para optimizar esta página, necesita saber qué clases se consideran "críticas". Utilizará la [herramienta de cobertura](https://developer.chrome.com/docs/devtools/css/reference/#coverage) para eso:
 
-1. En DevTools, abra el [menú de comandos](https://developers.google.com/web/tools/chrome-devtools/command-menu) presionando `Control+Shift+P` o `Command+Shift+P` (Mac).
+1. En DevTools, abra el [menú de comandos](https://developer.chrome.com/docs/devtools/command-menu/) presionando `Control+Shift+P` o `Command+Shift+P` (Mac).
 2. Escriba "Cobertura" y seleccione **Mostrar cobertura**.
 3. Haga clic en el botón **Actualizar** para volver a cargar la página y comenzar a capturar la cobertura.
 

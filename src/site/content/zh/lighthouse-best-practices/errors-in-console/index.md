@@ -8,7 +8,7 @@ date: 2019-05-02
 updated: 2019-08-28
 ---
 
-大多数浏览器都附带内置的开发人员工具。这些工具通常都有[控制台](https://developers.google.com/web/tools/chrome-devtools/console/)。控制台可以提当前运行页面的信息。
+大多数浏览器都附带内置的开发人员工具。这些工具通常都有[控制台](https://developer.chrome.com/docs/devtools/console/)。控制台可以提当前运行页面的信息。
 
 控制台中记录的消息来自构建页面的 Web 开发人员或浏览器。所有控制台消息都有一个严重性级别：`Verbose`、`Info`、`Warning` 或 `Error`。`Error` 消息表示页面中有需要解决的问题。
 
@@ -46,6 +46,6 @@ Chrome DevTools 提供了一些可帮助您跟踪错误原因的工具：
 ## 资源
 
 - [**将浏览器错误记录到控制台**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
-- [控制台概览](https://developers.google.com/web/tools/chrome-devtools/console/)
+- [控制台概览](https://developer.chrome.com/docs/devtools/console/)
 - [堆栈溢出](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

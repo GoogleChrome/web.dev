@@ -43,7 +43,7 @@ Lighthouse 不检查您的 `robots.txt` 文件是否位于正确的位置。该�
 
 如果您的服务器针对 `robots.txt` 返回服务器错误（500 秒内[的 HTTP 状态代码](/http-status-code)），搜索引擎不知道应该抓取哪些页面，而可能会停止抓取您的整个网站，这会阻止将新内容编入索引。
 
-要检查 HTTP 状态代码，在 Chrome 中打开 `robots.txt` 并[在 Chrome DevTools 中检查请求](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze)。
+要检查 HTTP 状态代码，在 Chrome 中打开 `robots.txt` 并[在 Chrome DevTools 中检查请求](https://developer.chrome.com/docs/devtools/network/reference/#analyze)。
 
 ### 保持`robots.txt`小于 500 KiB
 

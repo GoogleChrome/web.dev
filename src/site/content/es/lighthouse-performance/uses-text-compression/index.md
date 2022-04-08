@@ -63,7 +63,7 @@ Para comparar los tamaños comprimidos y descomprimidos de una respuesta:
 
 {% Instruction 'devtools-network', 'ol' %}
 
-1. Habilite filas de solicitud grandes. Consulte [Usar filas de solicitud grandes](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows).
+1. Habilite filas de solicitud grandes. Consulte [Usar filas de solicitud grandes](https://developer.chrome.com/docs/devtools/network/reference/#request-rows).
 2. Busque en la **columna Tamaño** la respuesta que le interesa. El valor superior es el tamaño comprimido. El valor inferior es el tamaño descomprimido.
 
 Consulte también [Minificar y comprimir cargas útiles de red](/reduce-network-payloads-using-text-compression).

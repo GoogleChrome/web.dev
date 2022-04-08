@@ -43,7 +43,7 @@ En general, busca la forma de crear nodos DOM solo cuando se necesiten, y de des
 
 Si actualmente envía un gran árbol DOM, intente cargar su página y anotar manualmente qué nodos se muestran. Quizás pueda eliminar los nodos que no se visualizan del documento cargado inicialmente y solo crearlos después de una interacción relevante del usuario, como un desplazamiento o un botón de clic.
 
-Si crea nodos DOM durante la ejecución, la [Modificación del subárbol DOM cambia puntos de interrupción](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom) puede ayudarle a determinar cuando se crean los nodos.
+Si crea nodos DOM durante la ejecución, la [Modificación del subárbol DOM cambia puntos de interrupción](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom) puede ayudarle a determinar cuando se crean los nodos.
 
 Si no puede evitar un árbol DOM grande, otro enfoque para mejorar el rendimiento de la renderización es simplificar sus selectores de CSS. Consulte el documento de Google [Reducir el alcance y la complejidad de los cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) para obtener más información.
 

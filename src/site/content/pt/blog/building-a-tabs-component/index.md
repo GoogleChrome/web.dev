@@ -286,7 +286,7 @@ Os layouts de rolagem são completos, com snapping, links profundos e acessibili
 
 #### Destaque de recursos
 
-Elementos-filho ajustados com snap de rolagem mantêm sua posição travada durante o redimensionamento. Isto significa que o JavaScript não precisará trazer nada para a viewport ao girar o dispositivo ou redimensionar o navegador. Experimente o [Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) no Chromium DevTools selecionando qualquer modo diferente de **Responsive** e redimensione o frame do dispositivo. Observe que o elemento permanece visível e bloqueado com seu conteúdo. Isto está disponível desde que o Chromium atualizou sua implementação para corresponder às especificações. Aqui está uma [postagem no blog](/snap-after-layout/) sobre isto.
+Elementos-filho ajustados com snap de rolagem mantêm sua posição travada durante o redimensionamento. Isto significa que o JavaScript não precisará trazer nada para a viewport ao girar o dispositivo ou redimensionar o navegador. Experimente o [Device Mode](https://developer.chrome.com/docs/devtools/device-mode/) no Chromium DevTools selecionando qualquer modo diferente de **Responsive** e redimensione o frame do dispositivo. Observe que o elemento permanece visível e bloqueado com seu conteúdo. Isto está disponível desde que o Chromium atualizou sua implementação para corresponder às especificações. Aqui está uma [postagem no blog](/snap-after-layout/) sobre isto.
 
 ### Animação {: #animation}
 

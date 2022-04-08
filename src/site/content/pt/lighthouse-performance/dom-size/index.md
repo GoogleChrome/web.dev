@@ -45,7 +45,7 @@ Em geral, procure maneiras de criar nós DOM apenas quando necessário e destrua
 
 Se você estiver enviando atualmente uma grande árvore DOM, tente carregar a página e observar manualmente quais nós são exibidos. Talvez você possa remover os nós não exibidos do documento carregado inicialmente e apenas criá-los depois de uma interação relevante do usuário, como rolagem ou clique de botão.
 
-Se você criar nós DOM em tempo de execução, os [pontos de interrupção de alteração de DOM para modificação de subárvore](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom) podem ajudar a identificar quando os nós são criados.
+Se você criar nós DOM em tempo de execução, os [pontos de interrupção de alteração de DOM para modificação de subárvore](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom) podem ajudar a identificar quando os nós são criados.
 
 Se você não puder evitar uma grande árvore DOM, outra abordagem para melhorar o desempenho de renderização é simplificar os seletores de CSS. Consulte mais informações no artigo [Reduza o escopo e a complexidade dos cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) do Google.
 

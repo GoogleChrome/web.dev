@@ -193,7 +193,7 @@ Lighthouse 버전 5와 6 사이의 점수 변경 사항에 대한 몇 가지 주
 
 ### 미사용 자바스크립트 {: #unused-javascript }
 
-새로운 감사: [**Unused JavaScript**](/remove-unused-code/)에서 [DevTools 코드 적용 범위](https://developers.google.com/web/tools/chrome-devtools/coverage)를 활용하고 있습니다.
+새로운 감사: [**Unused JavaScript**](/remove-unused-code/)에서 [DevTools 코드 적용 범위](https://developer.chrome.com/docs/devtools/coverage/)를 활용하고 있습니다.
 
 이 감사는 *완전히* 새로운 것은 아닙니다. [2017년 중기](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595)에 추가되었지만 성능 오버헤드 때문에 Lighthouse를 최대한 빠르게 유지하기 위해 기본적으로 비활성화되어 있습니다. 이 범위 데이터를 수집하는 것이 이제 훨씬 더 효율적이므로 기본적으로 활성화하는 것이 좋습니다.
 
@@ -236,7 +236,7 @@ Lighthouse는 접근성 카테고리를 강화하기 위해 멋진 [axe-core](ht
 
 DevTools 창 크기에 따라 패널이 `»` 버튼 뒤에 있을 수 있습니다. 탭을 끌어 순서를 변경할 수 있습니다.
 
-[명령 메뉴](https://developers.google.com/web/tools/chrome-devtools/command-menu)를 사용 하여 패널을 빠르게 표시하려면 다음을 수행하십시오.
+[명령 메뉴](https://developer.chrome.com/docs/devtools/command-menu/)를 사용 하여 패널을 빠르게 표시하려면 다음을 수행하십시오.
 
 1. {% Instruction 'devtools', 'none' %}
 2. {% Instruction 'devtools-command', 'none' %}

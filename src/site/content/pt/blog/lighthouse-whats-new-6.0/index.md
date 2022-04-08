@@ -193,7 +193,7 @@ Publicamos uma [calculadora de pontuação](https://googlechrome.github.io/light
 
 ### JavaScript não usado {: #unused-javascript}
 
-Estamos aproveitando a [cobertura de código do DevTools](https://developers.google.com/web/tools/chrome-devtools/coverage) em uma nova auditoria: [**JavaScript não utilizado**](/remove-unused-code/).
+Estamos aproveitando a [cobertura de código do DevTools](https://developer.chrome.com/docs/devtools/coverage/) em uma nova auditoria: [**JavaScript não utilizado**](/remove-unused-code/).
 
 Esta auditoria não é *inteiramente* nova: ela foi [adicionada em meados de 2017](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595), mas devido à sobrecarga de desempenho, foi desabilitada por padrão para manter o Farol o mais rápido possível. Coletar esses dados de cobertura é muito mais eficiente agora, então nos sentimos confortáveis ativando-o por padrão.
 
@@ -236,7 +236,7 @@ Renomeamos o painel **Audits** para o painel **Lighthouse.** Já disse o suficie
 
 Dependendo do tamanho da janela do DevTools, o painel provavelmente está atrás do botão `»`. Você pode arrastar a guia para alterar a ordem.
 
-Para revelar rapidamente o painel com o [menu Comando](https://developers.google.com/web/tools/chrome-devtools/command-menu):
+Para revelar rapidamente o painel com o [menu Comando](https://developer.chrome.com/docs/devtools/command-menu/):
 
 1. {% Instruction 'devtools', 'none' %}
 2. {% Instruction 'devtools-command', 'none' %}

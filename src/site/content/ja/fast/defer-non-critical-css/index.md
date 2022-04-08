@@ -49,7 +49,7 @@ CSS ファイルは[レンダリングをブロックするリソース](https:/
 
 このページを最適化するには、どのクラスが「クリティカル」と見なされるかを知る必要があります。それには、[Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) (カバレッジツール) を使用します。
 
-1. DevTools で、`Control+Shift+P` または `Command+Shift+P` (Mac の場合) をクリックして、[Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu) (コマンドメニュー) を開きます。
+1. DevTools で、`Control+Shift+P` または `Command+Shift+P` (Mac の場合) をクリックして、[Command Menu](https://developer.chrome.com/docs/devtools/command-menu/) (コマンドメニュー) を開きます。
 2. 「Coverage」と入力し、**Show Coverage** (カバレッジを表示) を選択します。
 3. [**Reload**] (再読み込み) ボタンをクリックして、ページを再読み込みし、カバレッジの取り込みを開始します。
 

@@ -49,7 +49,7 @@ CSS 파일은 [렌더링 차단 리소스](https://developers.google.com/web/too
 
 이 페이지를 최적화하려면 "중요"로 간주되는 클래스를 알아야 합니다. 이를 위해 [Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage)을 사용합니다.
 
-1. DevTools에서 {`Control+Shift+P` 또는 `Command+Shift+P` (Mac)를 눌러 [명령 메뉴](https://developers.google.com/web/tools/chrome-devtools/command-menu)를 엽니다.
+1. DevTools에서 {`Control+Shift+P` 또는 `Command+Shift+P` (Mac)를 눌러 [명령 메뉴](https://developer.chrome.com/docs/devtools/command-menu/)를 엽니다.
 2. "Coverage"를 입력하고 **Show Coverage**를 선택합니다.
 3. 페이지를 다시 로드하고 커버리지 캡처를 시작하려면 **리로드** 버튼을 클릭하십시오.
 

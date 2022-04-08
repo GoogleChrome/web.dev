@@ -174,8 +174,8 @@ Auditorías relevantes de Lighthouse:
 
 Flujo de trabajo de Chrome DevTools:
 
-- [Registrar la actividad de la red](https://developers.google.com/web/tools/chrome-devtools/network#load)
-- Haz clic en **Img** para [filtrar los recursos que no son imágenes](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
+- [Registrar la actividad de la red](https://developer.chrome.com/docs/devtools/network/#load)
+- Haz clic en **Img** para [filtrar los recursos que no son imágenes](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-type)
 - Haz clic en la columna **Tamaño** para ordenar los archivos de imágenes por tamaño
 
 #### Reparar

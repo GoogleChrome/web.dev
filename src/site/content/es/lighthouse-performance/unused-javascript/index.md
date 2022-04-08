@@ -26,7 +26,7 @@ El JavaScript que no se utiliza puede reducir la velocidad de carga de la págin
 
 ### Detectar el JavaScript que no se utiliza
 
-La [pestaña Cobertura](https://developers.google.com/web/tools/chrome-devtools/coverage) en Chrome DevTools puede darle un análisis línea por línea del código que no se utiliza.
+La [pestaña Cobertura](https://developer.chrome.com/docs/devtools/coverage/) en Chrome DevTools puede darle un análisis línea por línea del código que no se utiliza.
 
 La clase [`Coverage`](https://pptr.dev/#?product=Puppeteer&version=v4.0.0&show=api-class-coverage) de Puppeteer puede ayudarle a automatizar el proceso para detectar códigos que no se utilizan y extraer el código utilizado.
 
@@ -76,5 +76,5 @@ Considere la posibilidad de reducir, o cambiar, el número de [complementos de J
 - [Dividir el código](https://bundlers.tooling.report/code-splitting/)
 - [Eliminar códigos inactivos](https://bundlers.tooling.report/transformations/dead-code/)
 - [Código importado inactivo](https://bundlers.tooling.report/transformations/dead-code-dynamic/)
-- [Encontrar el código de JavaScript y CSS que no se utiliza con la pestaña Cobertura en Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/coverage)
+- [Encontrar el código de JavaScript y CSS que no se utiliza con la pestaña Cobertura en Chrome DevTools](https://developer.chrome.com/docs/devtools/coverage/)
 - [clase: `Coverage`](https://pptr.dev/#?product=Puppeteer&version=v4.0.0&show=api-class-coverage)

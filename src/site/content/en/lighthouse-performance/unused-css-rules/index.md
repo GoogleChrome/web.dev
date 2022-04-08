@@ -54,7 +54,7 @@ the more time that a browser might potentially need to spend calculating the sty
 ## How to detect unused CSS {: #coverage }
 
 The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS.
-See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
+See [View used and unused CSS with the Coverage tab](https://developer.chrome.com/docs/devtools/css/reference/#coverage).
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: Coverage tab", width="800", height="407" %}

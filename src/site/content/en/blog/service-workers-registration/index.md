@@ -148,7 +148,7 @@ A great way to simulate a first visit is to open your web app in a [Chrome
 Incognito
 window](https://support.google.com/chromebook/answer/95464?co=GENIE.Platform%3DDesktop),
 and look at the network traffic in [Chrome's
-DevTools](https://developers.google.com/web/tools/chrome-devtools/). As a web
+DevTools](https://developer.chrome.com/docs/devtools/). As a web
 developer, you probably reload a local instance of your web app dozens and
 dozens of times a day. But by revisiting your site when there's already a
 service worker and fully populated caches, you don't get the same experience
@@ -184,7 +184,7 @@ network again.
 
 Bonus points if you run this sort of test from an actual, low-end device on a
 real mobile network. You can take advantage of Chrome's [remote debugging
-capabilities](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/)
+capabilities](https://developer.chrome.com/docs/devtools/remote-debugging/)
 to attach an Android phone to your desktop machine via USB, and ensure that the
 tests you're running actually reflect the real-world experience of many of your
 users.

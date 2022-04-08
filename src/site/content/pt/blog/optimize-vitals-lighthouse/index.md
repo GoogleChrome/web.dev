@@ -18,7 +18,7 @@ tags:
 
 Hoje, abordaremos novos recursos de ferramentas no Lighthouse, PageSpeed e DevTools para ajudar a identificar como seu site pode melhorar no [Web Vitals](/vitals) .
 
-Para relembrar as ferramentas, o [Lighthouse](https://github.com/GoogleChrome/lighthouse) é uma ferramenta automatizada de código aberto para melhorar a qualidade das páginas da web. Você pode encontrá-lo no pacote [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) de ferramentas de depuração e executá-lo em qualquer página da web, pública ou que exija autenticação. Você também pode encontrar o Lighthouse em [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com) , [CI](https://github.com/GoogleChrome/lighthouse-ci) e [WebPageTest](https://www.webpagetest.org/easy) .
+Para relembrar as ferramentas, o [Lighthouse](https://github.com/GoogleChrome/lighthouse) é uma ferramenta automatizada de código aberto para melhorar a qualidade das páginas da web. Você pode encontrá-lo no pacote [Chrome DevTools](https://developer.chrome.com/docs/devtools/) de ferramentas de depuração e executá-lo em qualquer página da web, pública ou que exija autenticação. Você também pode encontrar o Lighthouse em [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com) , [CI](https://github.com/GoogleChrome/lighthouse-ci) e [WebPageTest](https://www.webpagetest.org/easy) .
 
 O Lighthouse 7.x inclui novos recursos, como capturas de tela do elemento, para facilitar a inspeção visual de partes de sua IU que afetam as métricas de experiência do usuário (por exemplo, quais nós estão contribuindo para a mudança de layout).
 

@@ -79,7 +79,7 @@ JavaScript 지연 로딩 라이브러리와 비교하여 보기 내로 스크롤
 
 [Chromium 소스](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad)에서 다양한 유효 연결 유형에 대한 기본값을 찾을 수 있습니다. 이러한 수치, 그리고 뷰포트로부터 특정 거리에 도달한 경우에만 가져오는 접근 방식은 가까운 장래에 변경될 수 있습니다. Chrome 팀이 로딩 시작 시점을 결정하기 위한 휴리스틱을 개선하고 있기 때문입니다.
 
-{% Aside %} Chrome 77 이상에서는 DevTools에서 [네트워크를 스로틀링](https://developers.google.com/web/tools/chrome-devtools/network/#throttle)하여 이러한 다양한 임계값을 실험할 수 있습니다. 한편으로, `about://flags/#force-effective-connection-type` 플래그를 사용하여 브라우저의 유효 연결 유형을 재정의해야 합니다. {% endAside %}
+{% Aside %} Chrome 77 이상에서는 DevTools에서 [네트워크를 스로틀링](https://developer.chrome.com/docs/devtools/network/#throttle)하여 이러한 다양한 임계값을 실험할 수 있습니다. 한편으로, `about://flags/#force-effective-connection-type` 플래그를 사용하여 브라우저의 유효 연결 유형을 재정의해야 합니다. {% endAside %}
 
 ## 향상된 데이터 절약 및 뷰포트로부터 거리 임계값
 

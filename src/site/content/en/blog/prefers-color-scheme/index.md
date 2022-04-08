@@ -497,7 +497,7 @@ issue](https://github.com/w3c/manifest/issues/975).
 Switching the entire operating system's color scheme can get annoying real quick,
 so Chrome DevTools now allows you to emulate the user's preferred color scheme
 in a way that only affects the currently visible tab.
-Open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu), start typing `Rendering`, run the `Show Rendering` command, and then change the **Emulate CSS media feature prefers-color-scheme** option.
+Open the [Command Menu](https://developer.chrome.com/docs/devtools/command-menu/), start typing `Rendering`, run the `Show Rendering` command, and then change the **Emulate CSS media feature prefers-color-scheme** option.
 
 <figure>
   {% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="A screenshot of the 'Emulate CSS media feature prefers-color-scheme' option that is located in the Rendering tab of Chrome DevTools", width="800", height="552" %}

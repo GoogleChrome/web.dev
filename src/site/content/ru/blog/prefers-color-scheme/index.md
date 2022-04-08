@@ -259,7 +259,7 @@ darkModeMediaQuery.addListener((e) => {
 
 ### Эмуляция `prefers-color-scheme` в DevTools
 
-Переключать цветовую схему операционной системы быстро надоедает, поэтому теперь DevTools в Chrome позволяют эмулировать предпочитаемую цветовую схему пользователя так, что это влияет только на текущую вкладку. Откройте [командное меню](https://developers.google.com/web/tools/chrome-devtools/command-menu), начните вводить слово `Отрисовка` (`Rendering`) и запустите команду <code>Показать "Отрисовка"</code> (<code>Show Rendering</code>), а затем измените параметр <strong>Эмулировать медиафункцию CSS prefers-color-scheme</strong> (Emulate CSS media feature prefers-color-scheme).
+Переключать цветовую схему операционной системы быстро надоедает, поэтому теперь DevTools в Chrome позволяют эмулировать предпочитаемую цветовую схему пользователя так, что это влияет только на текущую вкладку. Откройте [командное меню](https://developer.chrome.com/docs/devtools/command-menu/), начните вводить слово `Отрисовка` (`Rendering`) и запустите команду <code>Показать "Отрисовка"</code> (<code>Show Rendering</code>), а затем измените параметр <strong>Эмулировать медиафункцию CSS prefers-color-scheme</strong> (Emulate CSS media feature prefers-color-scheme).
 
 <figure>   {% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Скриншот с параметром «Эмулировать медиафункцию CSS prefers-color-scheme» (Emulate CSS media feature prefers-color-scheme) на вкладке «Отрисовка» (Rendering) в DevTools браузера Chrome", width="800", height="552" %}</figure>
 

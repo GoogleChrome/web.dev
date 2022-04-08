@@ -103,7 +103,7 @@ JavaScript に大きく依存している Web アプリケーションで FID �
 
 デフォルトでは、すべての JavaScript はレンダリングをブロックします。ブラウザーは外部の JavaScript ファイルにリンクされているスクリプト タグに遭遇すると処理を中断し、その JavaScript のダウンロード、解析、コンパイル、実行を行わなければならなくなります。そのため、ページの処理やユーザーの入力に対する応答に必要なコードのみを読み込む必要があります。
 
-Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) (カバレッジ) タブでは、Web ページで使用されていない JavaScript がどの程度存在しているかを確認することができます。
+Chrome DevTools の [Coverage](https://developer.chrome.com/docs/devtools/coverage/) (カバレッジ) タブでは、Web ページで使用されていない JavaScript がどの程度存在しているかを確認することができます。
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Coverage (カバレッジ) タブ。", width="800", height="559" %}
 

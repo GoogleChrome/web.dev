@@ -205,7 +205,7 @@ De forma predeterminada, los navegadores aplican el estilo a los fragmentos de t
 }
 ```
 
-Como puede ver, el navegador expone un pseudo selector [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text) que puede usar para personalizar el resaltado aplicado. Por ejemplo, puede diseñar sus fragmentos de texto para que sean texto negro sobre un fondo rojo. Como siempre, asegúrese de [verificar el contraste de color](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast) para que su estilo sobrepuesto no cause problemas de accesibilidad y compruebe que el resaltado realmente se destaque visualmente del resto del contenido.
+Como puede ver, el navegador expone un pseudo selector [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text) que puede usar para personalizar el resaltado aplicado. Por ejemplo, puede diseñar sus fragmentos de texto para que sean texto negro sobre un fondo rojo. Como siempre, asegúrese de [verificar el contraste de color](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast) para que su estilo sobrepuesto no cause problemas de accesibilidad y compruebe que el resaltado realmente se destaque visualmente del resto del contenido.
 
 ```css
 :root::target-text {

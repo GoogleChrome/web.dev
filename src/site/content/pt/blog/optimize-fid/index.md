@@ -103,7 +103,7 @@ Para reduzir a quantidade de JavaScript executado em sua página:
 
 Por default, todo JavaScript bloqueia a renderização. Quando o navegador encontra uma tag de script que vincula a um arquivo JavaScript externo, ele deve pausar o que está fazendo e fazer o download, processar, compilar e executar esse JavaScript. Portanto, você só deve carregar o código necessário para a página ou para responder à entrada do usuário.
 
-A aba [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) no Chrome DevTools pode informar quanto JavaScript não está sendo usado na sua página da web.
+A aba [Coverage](https://developer.chrome.com/docs/devtools/coverage/) no Chrome DevTools pode informar quanto JavaScript não está sendo usado na sua página da web.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="A aba Coverage.", width="800", height="559" %}
 

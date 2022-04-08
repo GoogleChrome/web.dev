@@ -88,7 +88,7 @@ TBT 指标应该[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 ### 实验室工具
 
-- [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [灯塔](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest 网页性能测试工具](https://www.webpagetest.org/)
 

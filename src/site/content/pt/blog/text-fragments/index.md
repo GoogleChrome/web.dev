@@ -213,7 +213,7 @@ Por padrão, os navegadores estilizam fragmentos de texto da mesma forma que est
 }
 ```
 
-Como você pode ver, o navegador expõe um pseudo seletor [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text) que você pode usar para personalizar o realce aplicado. Por exemplo, você pode projetar seus fragmentos de texto para serem texto preto em um fundo vermelho. Como sempre, certifique-se de [verificar o contraste da cor](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast) para que seu estilo de substituição não cause problemas de acessibilidade e certifique-se de que o realce realmente se destaque visualmente do resto do conteúdo.
+Como você pode ver, o navegador expõe um pseudo seletor [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text) que você pode usar para personalizar o realce aplicado. Por exemplo, você pode projetar seus fragmentos de texto para serem texto preto em um fundo vermelho. Como sempre, certifique-se de [verificar o contraste da cor](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast) para que seu estilo de substituição não cause problemas de acessibilidade e certifique-se de que o realce realmente se destaque visualmente do resto do conteúdo.
 
 ```css
 :root::target-text {

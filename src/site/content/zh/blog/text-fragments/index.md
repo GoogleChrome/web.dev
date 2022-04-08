@@ -203,7 +203,7 @@ if ('fragmentDirective' in document) {
 }
 ```
 
-如您所见，浏览器公开了一个伪选择器 [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)，您可以使用它来自定义应用的突出显示。例如，您可以将文本片段设计为红底黑字。与往常一样，请务必[检查颜色对比度](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast)，这样您的重写样式就不会导致可访问性问题，并确保突出显示实际上在视觉上与其余内容不同。
+如您所见，浏览器公开了一个伪选择器 [`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)，您可以使用它来自定义应用的突出显示。例如，您可以将文本片段设计为红底黑字。与往常一样，请务必[检查颜色对比度](https://developer.chrome.com/docs/devtools/accessibility/reference/#contrast)，这样您的重写样式就不会导致可访问性问题，并确保突出显示实际上在视觉上与其余内容不同。
 
 ```css
 :root::target-text {

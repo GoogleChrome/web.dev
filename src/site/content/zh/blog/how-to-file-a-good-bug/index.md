@@ -26,7 +26,7 @@ tags:
 
 浏览器之间不同的行为通常作为互操作性问题优先考虑，特别是当包含错误的浏览器是旧版的浏览器时。尝试在最新版的 Chrome、Firefox、Safari 和 Edge 上进行测试，可使用 [BrowserStack](https://www.browserstack.com/)等工具。
 
-如果可能，请检查页面是否因用户代理探查而故意表现不同。在 Chrome DevTools 中，尝试[将 `User-Agent` 字符串设置为其他浏览器](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent)。
+如果可能，请检查页面是否因用户代理探查而故意表现不同。在 Chrome DevTools 中，尝试[将 `User-Agent` 字符串设置为其他浏览器](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/)。
 
 ### 错误在最近的版本中发生吗？
 

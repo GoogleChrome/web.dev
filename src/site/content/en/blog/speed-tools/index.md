@@ -4,7 +4,7 @@ title: How To Think About Speed Tools
 subhead: |
   How To Think About Speed Tools
 date: 2018-02-26
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   How To Think About Speed Tools
 tags:
@@ -187,8 +187,8 @@ data.
         </tr>
         <tr>
             <td>
-                <a href="https://developers.google.com/web/tools/chrome-devtools/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YpBBtcAGyGGTDgB9IC8J.svg", alt="Chrome Developer Tools", width="150", height="150" %}</a>
-                    <h3><a href="https://developers.google.com/web/tools/chrome-devtools/">Chrome Developer Tools</a></h3>
+                <a href="https://developer.chrome.com/docs/devtools/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/YpBBtcAGyGGTDgB9IC8J.svg", alt="Chrome Developer Tools", width="150", height="150" %}</a>
+                    <h3><a href="https://developer.chrome.com/docs/devtools/">Chrome Developer Tools</a></h3>
                     <p>Allows you to profile the runtime of a page, as well as identify and debug
                 performance bottlenecks.</p>
             </td>       
@@ -257,7 +257,7 @@ over a bug.", width="366", height="366", class="float-right" %}
 **Developer looking for technical guidance on how to debug/deep dive into the
 performance of your site.**
 
-**[Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/)** (CDT) contains a
+**[Chrome Developer Tools](https://developer.chrome.com/docs/devtools/)** (CDT) contains a
 Performance Panel that allows you to drill down into performance issues with
 your site by profiling your site with customized configurations, allowing you
 to track down performance bottlenecks. You can use CDT on either production or

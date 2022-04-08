@@ -224,7 +224,7 @@ Generic Sensor API는 매우 간단하고 사용하기 쉽습니다! 센서 인�
 
 ### 개발 환경
 
-개발 중에 `localhost`를 통해 센서를 사용할 수 있습니다. 모바일 장치용으로 개발 중인 경우 로컬 서버용 [포트 포워딩](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)을 설정하면 바로 사용할 수 있습니다!
+개발 중에 `localhost`를 통해 센서를 사용할 수 있습니다. 모바일 장치용으로 개발 중인 경우 로컬 서버용 [포트 포워딩](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/)을 설정하면 바로 사용할 수 있습니다!
 
 코드가 준비되면 HTTPS를 지원하는 서버에 배포합니다. [GitHub 페이지](https://pages.github.com/)는 HTTPS를 통해 제공되므로 데모를 공유하기에 훌륭합니다.
 
@@ -282,7 +282,7 @@ this.accel.onreading = () => {
 
 ## Chrome DevTools를 사용한 디버깅 및 센서 재정의
 
-어떤 경우에는 물리적 장치가 없어도 Generic Sensor API를 사용해볼 수 있습니다. Chrome DevTools는 [장치 방향 시뮬레이션](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation)을 훌륭하게 지원합니다.
+어떤 경우에는 물리적 장치가 없어도 Generic Sensor API를 사용해볼 수 있습니다. Chrome DevTools는 [장치 방향 시뮬레이션](https://developer.chrome.com/docs/devtools/device-mode/orientation/)을 훌륭하게 지원합니다.
 
 <figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="가상 전화의 사용자 지정 방향 데이터를 재정의하는 데 사용되는 Chrome DevTools", width="800", height="648" %}<figcaption> Chrome DevTools로 장치 방향 시뮬레이션</figcaption></figure>
 
