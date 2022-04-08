@@ -22,12 +22,17 @@ responsive, and accessible mini and mega modals with the `<dialog>` element.
 source](https://github.com/argyleink/gui-challenges)!
 
 <figure data-size="full">
+  <style style="display: none">
+    .adjusted-aspect-ratio {
+      aspect-ratio: 4/3;
+    }
+  </style>
   {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/rx8k6w5iQnEOwqOoUNNG.mp4",
     autoplay="true",
     loop="true",
     muted="true",
-    style="aspect-ratio: 4/3"
+    class="adjusted-aspect-ratio"
   %}
   <figcaption>
     Demonstration of the mega and mini dialogs in their light and dark themes.
