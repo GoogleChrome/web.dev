@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a dialog component
-subhead: A foundational overview of how to build color-adaptive, responsive, and accessible mini and mega modals with the `<dialog>` element.
+subhead: A foundational overview of how to build color-adaptive, responsive, and accessible mini and mega modals with the <dialog> element.
 authors:
   - adamargyle
 description: A foundational overview of how to build color-adaptive, responsive, and accessible mini and mega modals with the <dialog> element.
