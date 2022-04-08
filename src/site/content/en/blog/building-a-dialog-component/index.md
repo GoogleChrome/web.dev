@@ -361,7 +361,7 @@ see the [building a color scheme](/building-a-color-scheme/) GUI Challenge.
 The dialog defaults to delegating its size to its contents, which is generally
 great. My goal here is to constrain the
 [`max-inline-size`](https://developer.mozilla.org/docs/Web/CSS/max-inline-size)
-to a readable size (--size-content-3 = 60ch) or 90% of the viewport width. This
+to a readable size (`--size-content-3` = `60ch`) or 90% of the viewport width. This
 ensures the dialog won't go edge to edge on a mobile device, and won't be so
 wide on a desktop screen that it's hard to read. Then I add a
 [`max-block-size`](https://developer.mozilla.org/docs/Web/CSS/max-block-size)
@@ -453,7 +453,7 @@ actionsheet, closer to the user's thumbs:
 
 ##### Mini dialog positioning
 
-When using a desktops larger viewport, I chose to position the mini dialogs over
+When using a larger viewport such as on a desktop computer, I chose to position the mini dialogs over
 the element that called them. To do this I need JavaScript. [You can find the
 technique I use
 here](https://github.com/argyleink/gui-challenges/blob/main/dialog/index.js#L92-L102),
@@ -507,7 +507,7 @@ dialog::backdrop {
 
 ### Styling extras
 
-I call this section “extras” because it has more to do with my dialog element
+I call this section "extras" because it has more to do with my dialog element
 demo than it does the dialog element in general. 
 
 #### Scroll containment
