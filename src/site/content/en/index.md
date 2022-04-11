@@ -56,7 +56,7 @@ podcasts:
   buttonUrl: '/podcasts/'
 patterns:
   title: 'Patterns'
-  summary: 'A collection of code snippets to help you optmize your web projects.'
+  summary: 'A collection of code snippets to help you optimize your web projects.'
   buttonText: 'See all'
   buttonUrl: '/patterns/'
 ---
