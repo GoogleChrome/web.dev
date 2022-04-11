@@ -34,7 +34,7 @@ O CSS não utilizado também retarda a construção da [árvore de renderizaçã
 
 ## Como detectar CSS não utilizado {: #coverage}
 
-A aba Cobertura do Chrome DevTools pode ajudá-lo a descobrir qual o CSS que é crítico e qual o que não é crítico. Veja [Exibir CSS usado e não usado com a aba Cobertura](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
+A aba Cobertura do Chrome DevTools pode ajudá-lo a descobrir qual o CSS que é crítico e qual o que não é crítico. Veja [Exibir CSS usado e não usado com a aba Cobertura](https://developer.chrome.com/docs/devtools/css/reference/#coverage).
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: aba Cobertura", width="800", height="407" %}   <figcaption>     Chrome DevTools: aba Cobertura.   </figcaption></figure>
 

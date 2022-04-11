@@ -6,6 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  {# Script loader for sourced scripts, as they cannot be authorized by a CSP hash. #}
+  {% include 'partials/script-loader.njk' %}
+
   <style>
     html, body {
       height: 100%;

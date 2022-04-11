@@ -31,15 +31,15 @@ Complete the following instructions in the new tab that just opened:
 
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
-1. In the [Throttling drop-down list](https://developers.google.com/web/tools/chrome-devtools/network/reference#throttling), select **Fast 3G** to simulate a slow connection type.
+1. In the [Throttling drop-down list](https://developer.chrome.com/docs/devtools/network/reference/#throttling), select **Fast 3G** to simulate a slow connection type.
 {% Instruction 'reload-app', 'ol' %}
-1. Type `chunk` into the [Filter textbox](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-property) to hide any resources that do not include `chunk` in their name.
+1. Type `chunk` into the [Filter textbox](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-property) to hide any resources that do not include `chunk` in their name.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DCl6nkEfsVukurm8gBsy.png", alt="Network panel showing the home page chunks.", width="800", height="194" %}
 
 The site uses [route-based code splitting](/reduce-javascript-payloads-with-code-splitting/), thanks to which only the necessary code is requested at the beginning.
 
-1. [Clear the network requests in DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#clear).
+1. [Clear the network requests in DevTools](https://developer.chrome.com/docs/devtools/network/reference/#clear).
 1. Within the app, click the **Blog** link to navigate to that page.
 
 The JS and CSS chunks for the new route are loaded to render the page.

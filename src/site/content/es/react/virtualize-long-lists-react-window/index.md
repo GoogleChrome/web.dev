@@ -275,7 +275,7 @@ Para `FixedSizeGrid` y `VariableSizeGrid`, use las propiedades `overscanColumnsC
 
 Si no está seguro de dónde comenzar a virtualizar listas y tablas en su aplicación, siga estos pasos:
 
-1. Mida el rendimiento de renderizado y desplazamiento. Este [artículo](https://addyosmani.com/blog/react-window/) muestra cómo [se puede utilizar el medidor FPS](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second) en Chrome DevTools para explorar la eficiencia con la que se renderizan los elementos en una lista.
+1. Mida el rendimiento de renderizado y desplazamiento. Este [artículo](https://addyosmani.com/blog/react-window/) muestra cómo [se puede utilizar el medidor FPS](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second) en Chrome DevTools para explorar la eficiencia con la que se renderizan los elementos en una lista.
 2. Incluya `react-window` para las listas o cuadrículas largas que estén afectando el rendimiento.
 3. Si hay ciertas características que no son compatibles con `react-window`, considere usar [`react-virtualized`](https://github.com/bvaughn/react-virtualized) si no puede agregar esta funcionalidad usted mismo.
 4. Envuelva su lista virtualizada con `react-window-infinite-loader` si necesita cargar elementos de forma diferida mientras el usuario se desplaza.

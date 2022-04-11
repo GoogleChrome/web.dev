@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2019-08-28
-updated: 2021-10-18
+updated: 2022-03-29
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 description: |
@@ -376,25 +376,25 @@ the same index defined in bind group layouts and bind groups declared above.
 ```js
 const shaderModule = device.createShaderModule({
   code: `
-    [[block]] struct Matrix {
-      size : vec2<f32>;
-      numbers: array<f32>;
-    };
+    struct Matrix {
+      size : vec2<f32>,
+      numbers: array<f32>,
+    }
 
-    [[group(0), binding(0)]] var<storage, read> firstMatrix : Matrix;
-    [[group(0), binding(1)]] var<storage, read> secondMatrix : Matrix;
-    [[group(0), binding(2)]] var<storage, write> resultMatrix : Matrix;
+    @group(0) @binding(0) var<storage, read> firstMatrix : Matrix;
+    @group(0) @binding(1) var<storage, read> secondMatrix : Matrix;
+    @group(0) @binding(2) var<storage, write> resultMatrix : Matrix;
 
-    [[stage(compute), workgroup_size(8, 8)]]
-    fn main([[builtin(global_invocation_id)]] global_id : vec3<u32>) {
+    @stage(compute) @workgroup_size(8, 8)
+    fn main(@builtin(global_invocation_id) global_id : vec3<u32>) {
       // Guard against out-of-bounds work group sizes
       if (global_id.x >= u32(firstMatrix.size.x) || global_id.y >= u32(secondMatrix.size.y)) {
         return;
       }
 
-      resultMatrix.size = vec2<f32>(firstMatrix.size.x, secondMatrix.size.y);
+      resultMatrix.size = vec2(firstMatrix.size.x, secondMatrix.size.y);
 
-      let resultCell = vec2<u32>(global_id.x, global_id.y);
+      let resultCell = vec2(global_id.x, global_id.y);
       var result = 0.0;
       for (var i = 0u; i < u32(firstMatrix.size.y); i = i + 1u) {
         let a = i + resultCell.x * u32(firstMatrix.size.y);
@@ -475,10 +475,10 @@ passEncoder.setBindGroup(0, bindGroup);
 const x = Math.ceil(firstMatrix[0] / 8); // X dimension of the grid of workgroups to dispatch.
 const y = Math.ceil(secondMatrix[1] / 8); // Y dimension of the grid of workgroups to dispatch.
 passEncoder.dispatch(x, y);
-passEncoder.endPass();
+passEncoder.end();
 ```
 
-To end the compute pass encoder, call `passEncoder.endPass()`. Then, create a
+To end the compute pass encoder, call `passEncoder.end()`. Then, create a
 GPU buffer to use as a destination to copy the result matrix buffer with
 `copyBufferToBuffer`. Finally, finish encoding commands with
 `copyEncoder.finish()` and submit those to the GPU device queue by calling

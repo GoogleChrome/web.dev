@@ -100,8 +100,8 @@ O navegador DevTools fornece uma visualização dos cálculos do modelo de caixa
 
 Vá em frente e tente isso em seu próprio navegador:
 
-1. [Abra o DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
-2. [Selecione um elemento](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [Abra o DevTools](https://developer.chrome.com/docs/devtools/open/)
+2. [Selecione um elemento](https://developer.chrome.com/docs/devtools/css/reference/#select)
 3. Exiba o depurador de modelo de caixa
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>

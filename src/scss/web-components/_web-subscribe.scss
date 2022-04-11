@@ -13,6 +13,8 @@ web-subscribe {
     margin-inline: auto;
   }
 
+  // See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+  input:not([type]),
   input[type='text'],
   input[type='email'],
   input[type='password'],

@@ -182,8 +182,8 @@ Relevant Lighthouse audits:
 *   [Use video formats for animated content](/efficient-animated-content/)
 
 Chrome DevTools workflow:
-- [Log network activity](https://developers.google.com/web/tools/chrome-devtools/network#load)
-- Click **Img** to [filter out non-image resources](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
+- [Log network activity](https://developer.chrome.com/docs/devtools/network/#load)
+- Click **Img** to [filter out non-image resources](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-type)
 - Click the **Size** column to sort the image files by size
 
 #### Fix

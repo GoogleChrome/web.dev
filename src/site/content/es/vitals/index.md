@@ -170,7 +170,7 @@ Las siguientes herramientas se pueden utilizar para medir los Core Web Vitals en
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">DevTools de Chrome</a></td>
+        <td><a href="https://developer.chrome.com/docs/devtools/">DevTools de Chrome</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> en su lugar)</td>
         <td>✔</td>

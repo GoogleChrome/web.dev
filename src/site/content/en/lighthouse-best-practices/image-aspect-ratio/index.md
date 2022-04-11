@@ -43,7 +43,7 @@ hands-on codelab.
 ### Check the CSS that affects the image's aspect ratio
 If you're having trouble finding the CSS that's causing the incorrect aspect ratio,
 Chrome DevTools can show you the CSS declarations that affect a given image.
-See Google's [View only the CSS that's actually applied to an element](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed)
+See Google's [View only the CSS that's actually applied to an element](https://developer.chrome.com/docs/devtools/css/reference/#computed)
 page for more information.
 
 

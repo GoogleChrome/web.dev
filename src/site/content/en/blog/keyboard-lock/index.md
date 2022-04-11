@@ -10,12 +10,13 @@ authors:
 description: >
   The Keyboard Lock API allows websites to capture keys that are normally reserved by the underlying operating system. It is intended for web applications that provide a full screen immersive experience (like games or remote access apps).
 date: 2020-07-28
+updated: 2022-04-04
 # updated:
 hero: image/admin/UypqCqH1QwndHuE6xFfg.jpg
 feedback:
   - api
 ---
-With more and more users spending most of their time in the browser, richly interactive websites, games, remote desktop streaming, and application streaming strive to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus, or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
+With more and more users spending most of their time in the browser, richly interactive websites, games, remote desktop streaming, and application streaming strive to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus, or gaming. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
 
 By default, these keys are not available to the web application because they are captured by the browser or the underlying operating system. The Keyboard Lock API enables websites to use all available keys allowed by the host OS (see [Browser compatibility](#browser-compatibility)).
 
@@ -29,11 +30,11 @@ By default, these keys are not available to the web application because they are
 
 ## Using the Keyboard Lock API
 
-The [`Keyboard` interface](https://developer.mozilla.org/docs/Web/API/Keyboard) of the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/docs/Web/API/Keyboard/getLayoutMap).
+The [`Keyboard` interface](https://developer.mozilla.org/docs/Web/API/Keyboard) of the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the user's [keyboard layout](https://developer.mozilla.org/docs/Web/API/Keyboard/getLayoutMap).
 
 ### Prerequisite
 
-There are two different types of full screen available in modern browsers: JavaScript-initiated via the [Fullscreen API](https://developer.mozilla.org/docs/Web/API/Fullscreen_API) and user-initiated via a keyboard shortcut. The Keyboard Lock API is only available when [JavaScript-initiated full screen](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen) is active.
+There are two types of full screen available in modern browsers: JavaScript-initiated via the [Fullscreen API](https://developer.mozilla.org/docs/Web/API/Fullscreen_API) and user-initiated via a keyboard shortcut. The Keyboard Lock API is only available when [JavaScript-initiated full screen](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen) is active.
 Here's an example of JavaScript-initiated full screen:
 
 ```js
@@ -42,7 +43,7 @@ await document.documentElement.requestFullscreen();
 
 ### Browser compatibility
 
-You can see browser compatibility on [Can I use](https://caniuse.com/#feat=mdn-api_keyboard_lock). Note that not all system keys can be locked. This varies from operating system to operating system. For example, follow [crbug.com/855738](https://crbug.com/855738) for progress updates on system keyboard lock for macOS.
+You can see browser compatibility on [Can I use](https://caniuse.com/#feat=mdn-api_keyboard_lock). Note that not all system keys can be locked. This varies from operating system to operating system.
 
 ### Feature detection
 

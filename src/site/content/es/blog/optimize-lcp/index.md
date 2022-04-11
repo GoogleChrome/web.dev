@@ -154,7 +154,7 @@ Si utiliza un agrupador de módulos o una herramienta de compilación, incluya u
 
 ### Retrasar CSS no crítico
 
-Utilice la pestaña [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) de Chrome DevTools para encontrar cualquier CSS que no utilice en su página web.
+Utilice la pestaña [Coverage](https://developer.chrome.com/docs/devtools/coverage/) de Chrome DevTools para encontrar cualquier CSS que no utilice en su página web.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Pestaña Coverage de Chrome DevTools", width="800", height="559" %}
 
@@ -304,7 +304,7 @@ Una lista de propiedades útiles que puede utilizar son:
 
 Los service workers se pueden utilizar para muchas tareas útiles, incluyendo publicar respuestas en HTML más pequeñas como se mencionó anteriormente en este artículo. También se pueden utilizar para almacenar en el caché cualquier recurso estático que se pueda publicar en el navegador en vez de desde la red en solicitudes repetidas.
 
-El almacenamiento previo en el caché de recursos críticos mediante un service worker puede reducir sus tiempos de carga de manera significativa, especialmente para los usuarios que recargan la página web con una conexión más débil (o incluso acceden a ella sin conexión). Las librerías como [Workbox](https://developers.google.com/web/tools/workbox/) pueden hacer que el proceso de actualización de activos almacenados previamente en el caché sea más fácil que escribir en un service worker personalizado para que lo maneje usted mismo.
+El almacenamiento previo en el caché de recursos críticos mediante un service worker puede reducir sus tiempos de carga de manera significativa, especialmente para los usuarios que recargan la página web con una conexión más débil (o incluso acceden a ella sin conexión). Las librerías como [Workbox](https://developer.chrome.com/docs/workbox/) pueden hacer que el proceso de actualización de activos almacenados previamente en el caché sea más fácil que escribir en un service worker personalizado para que lo maneje usted mismo.
 
 {% Aside %} Eche un vistazo a la [confiabilidad de la red](/reliable/) para obtener más información sobre los service workers y Workbox. {% endAside %}
 
@@ -358,7 +358,7 @@ Hay varias herramientas disponibles para medir y depurar LCP:
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- La sección de **sincronizaciones** del [rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) en el panel en Chrome DevTools incluye un marcador de LCP y muestra qué elemento se asocia con LCP cuando se pasa sobre el campo **Nodo relacionado**.
+- La sección de **sincronizaciones** del [rendimiento](https://developer.chrome.com/docs/devtools/evaluate-performance/) en el panel en Chrome DevTools incluye un marcador de LCP y muestra qué elemento se asocia con LCP cuando se pasa sobre el campo **Nodo relacionado**.
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP en Chrome DevTools", width="800", height="509" %}
 

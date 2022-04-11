@@ -147,4 +147,4 @@ tags:
 
 ### 使用服务工作程序缓存来自第三方服务器的脚本
 
-自托管的另一种替代方案是[使用服务工作程序缓存来自第三方服务器的脚本](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)，这可以让您更好地控制缓存，同时仍能获得第三方 CDN 的好处。这使您可以控制从网络重新获取脚本的频率，并可以创建一种加载策略，以限制对非必要第三方资源的请求，直到页面到达关键用户时刻。在这种情况下使用 `preconnect` 建立早期连接也可以在一定程度上降低网络成本。
+自托管的另一种替代方案是[使用服务工作程序缓存来自第三方服务器的脚本](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime/#cross-origin-considerations)，这可以让您更好地控制缓存，同时仍能获得第三方 CDN 的好处。这使您可以控制从网络重新获取脚本的频率，并可以创建一种加载策略，以限制对非必要第三方资源的请求，直到页面到达关键用户时刻。在这种情况下使用 `preconnect` 建立早期连接也可以在一定程度上降低网络成本。

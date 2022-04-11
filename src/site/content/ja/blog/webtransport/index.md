@@ -299,7 +299,7 @@ while (true) {
 
 ### ChromeのDevToolsのWebTransport
 
-残念ながら、 WebTransport用の[ChromeのDevTools](https://developers.google.com/web/tools/chrome-devtools)サポートは、オリジントライアルを開始する準備ができていません。[このChromeの問題](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290)に「スター」を付けて、DevToolsインターフェースの更新について通知を受けることができます。
+残念ながら、 WebTransport用の[ChromeのDevTools](https://developer.chrome.com/docs/devtools/)サポートは、オリジントライアルを開始する準備ができていません。[このChromeの問題](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290)に「スター」を付けて、DevToolsインターフェースの更新について通知を受けることができます。
 
 ## プライバシーとセキュリティに関する考慮事項
 

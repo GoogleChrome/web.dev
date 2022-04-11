@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-01-24
+updated: 2022-04-07
 tags:
   - blog
   - capabilities
@@ -590,16 +590,16 @@ The origin private file system provides optional access to a special kind of fil
 optimized for performance, for example, by offering in-place and exclusive write access to a file's
 content. There is an
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
-in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
+in Chromium&nbsp;95 and ending in Chromium&nbsp;101 (May 18, 2022) for simplifying how such
 files can be accessed by exposing two new methods as part of the origin private file system:
 `createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
 (synchronous read and write operations) that are both exposed on `FileSystemFileHandle`.
 
 ```js
 // Asynchronous access in all contexts:
-const handle = await file.createAccessHandle({ mode: 'in-place' });
-await handle.writable.getWriter().write(buffer);
-const reader = handle.readable.getReader({ mode: 'byob' });
+const accessHandle = await fileHandle.createAccessHandle();
+await accessHandle.writable.getWriter().write(buffer);
+const reader = accessHandle.readable.getReader({ mode: 'byob' });
 // Assumes seekable streams, and SharedArrayBuffer support are available
 await reader.read(buffer, { at: 1 });
 ```
@@ -608,9 +608,9 @@ await reader.read(buffer, { at: 1 });
 // (Read and write operations are synchronous,
 // but obtaining the handle is asynchronous.)
 // Synchronous access exclusively in Worker contexts
-const handle = await file.createSyncAccessHandle();
-const writtenBytes = handle.write(buffer);
-const readBytes = handle.read(buffer, { at: 1 });
+const accessHandle = await fileHandle.createSyncAccessHandle();
+const writtenBytes = accessHandle.write(buffer);
+const readBytes = accessHandle.read(buffer, { at: 1 });
 ```
 
 ## Polyfilling

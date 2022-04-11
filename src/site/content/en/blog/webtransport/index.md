@@ -117,7 +117,7 @@ const transport = new WebTransport(url);
 transport.closed.then(() => {
   console.log(`The HTTP/3 connection to ${url} closed gracefully.`);
 }).catch((error) => {
-  console.error('The HTTP/3 connection to ${url} closed due to ${error}.');
+  console.error(`The HTTP/3 connection to ${url} closed due to ${error}.`);
 });
 
 // Once .ready fulfills, the connection can be used.
@@ -273,7 +273,7 @@ The [WebTransport draft specification](https://wicg.github.io/web-transport/) in
 
 ### WebTransport in Chrome's DevTools
 
-Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) do not currently support WebTransport. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
+Unfortunately, [Chrome's DevTools](https://developer.chrome.com/docs/devtools/) do not currently support WebTransport. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
 
 ## Browser support
 

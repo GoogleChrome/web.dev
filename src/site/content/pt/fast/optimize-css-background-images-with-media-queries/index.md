@@ -18,7 +18,7 @@ Muitos sites solicitam recursos pesados, como imagens, que não são otimizados 
 
 ## Pré-requisitos
 
-Este guia pressupõe que você esteja familiarizado com o [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools). Você pode usar DevTools de outro navegador, se preferir. Você só precisa mapear as capturas de tela do Chrome DevTools neste guia de volta aos recursos relevantes no navegador de sua escolha.
+Este guia pressupõe que você esteja familiarizado com o [Chrome DevTools](https://developer.chrome.com/docs/devtools/). Você pode usar DevTools de outro navegador, se preferir. Você só precisa mapear as capturas de tela do Chrome DevTools neste guia de volta aos recursos relevantes no navegador de sua escolha.
 
 ## Compreenda as imagens de fundo responsivas
 
@@ -26,7 +26,7 @@ Primeiro, analise o tráfego de rede da demonstração não otimizada:
 
 1. Abra a [demonstração não otimizada](https://use-media-queries-unoptimized.glitch.me/) em uma nova guia do Chrome. {% Instruction 'devtools-network', 'ol' %} {% Instruction 'reload-page', 'ol' %}
 
-{% Aside %} Confira [Inspecionar atividade de rede com Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/) se precisar de mais ajuda com DevTools. {% endAside %}
+{% Aside %} Confira [Inspecionar atividade de rede com Chrome DevTools](https://developer.chrome.com/docs/devtools/network/) se precisar de mais ajuda com DevTools. {% endAside %}
 
 Você verá que a única imagem solicitada é `background-desktop.jpg`, que tem um tamanho de **1006 KB**:
 

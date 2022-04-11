@@ -100,7 +100,7 @@ Para reducir la cantidad de JavaScript que se ejecuta en su página:
 
 De forma predeterminada, todo JavaScript bloquea el renderizado. Cuando el navegador encuentra una etiqueta del script que está vinculada con un archivo JavaScript externo, debe pausar lo que está haciendo mientras descarga, analiza, compila y ejecuta ese JavaScript. Por lo tanto, solo debe cargar el código que sea necesario para la página o responder a la entrada del usuario.
 
-La pestaña [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) en Chrome DevTools puede indicarle el porcentaje de JavaScript que no está en uso en su página web.
+La pestaña [Coverage](https://developer.chrome.com/docs/devtools/coverage/) en Chrome DevTools puede indicarle el porcentaje de JavaScript que no está en uso en su página web.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="La pestaña Coverage", width="800", height="559" %}
 

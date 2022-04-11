@@ -178,7 +178,7 @@ It's important to Adam that "prefers reduced motion" doesn't get implemented as 
 </figure>
 
 {% Aside %}
-In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefers-color-scheme` by choosing the appropriate settings in the DevTools **Rendering** drawer. To access **Rendering**, [open the Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu) and run the `Show Rendering` command.
+In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefers-color-scheme` by choosing the appropriate settings in the DevTools **Rendering** drawer. To access **Rendering**, [open the Command Menu](https://developer.chrome.com/docs/devtools/command-menu/) and run the `Show Rendering` command.
 {% endAside %}
 
 ## Logical properties

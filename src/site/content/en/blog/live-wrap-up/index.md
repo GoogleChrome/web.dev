@@ -181,7 +181,7 @@ One of the most powerful features of Chrome DevTools is its ability to spot issu
 bring them to the developer's attention. This is most pertinent as we move into the next phase of a
 [privacy-first web](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html).
 To reduce notification fatigue and clutter in the Console, Chrome DevTools launched the [Issues
-tab](https://developers.google.com/web/tools/chrome-devtools/issues) which focuses on three types of
+tab](https://developer.chrome.com/docs/devtools/issues/) which focuses on three types of
 critical issues to start with: [cookie problems](/samesite-cookies-explained),
 [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content),
 and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and fixing

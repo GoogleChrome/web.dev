@@ -328,8 +328,8 @@ Grid также можно использовать для создания об
 
 Чтобы просмотреть свою страницу с разными точками останова:
 
-[Откройте DevTools](https://developers.google.com/web/tools/chrome-devtools#open) и включите [Device Mode (Режим устройства)](https://developers.google.com/web/tools/chrome-devtools/device-mode#toggle). По умолчанию он открывается в [отзывчивом режиме.](https://developers.google.com/web/tools/chrome-devtools/device-mode#responsive)
+[Откройте DevTools](https://developer.chrome.com/docs/devtools/open/) и включите [Device Mode (Режим устройства)](https://developer.chrome.com/docs/devtools/device-mode/#toggle). По умолчанию он открывается в [отзывчивом режиме.](https://developer.chrome.com/docs/devtools/device-mode/#responsive)
 
-Для просмотра медиа-запросов откройте меню Device Mode и выберите [Show media queries (Показать медиа-запросы)](https://developers.google.com/web/tools/chrome-devtools/device-mode#queries), чтобы отобразить точки останова в виде цветных полос над страницей.
+Для просмотра медиа-запросов откройте меню Device Mode и выберите [Show media queries (Показать медиа-запросы)](https://developer.chrome.com/docs/devtools/device-mode/#queries), чтобы отобразить точки останова в виде цветных полос над страницей.
 
 Щелкните одну из полос, чтобы просмотреть страницу при активном медиа-запросе. Щелкните панель правой кнопкой мыши, чтобы перейти к определению медиа-запроса.

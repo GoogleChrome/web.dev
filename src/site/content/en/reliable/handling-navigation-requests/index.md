@@ -34,7 +34,7 @@ caching](/http-cache/).
 As detailed in the [Identify resources loaded from the
 network](/identify-resources-via-network-panel/) guide, a navigation request is the first of
 potentially many requests made in the
-["waterfall"](https://developers.google.com/web/tools/chrome-devtools/network/reference#waterfall)
+["waterfall"](https://developer.chrome.com/docs/devtools/network/reference/#waterfall)
 of network traffic. The HTML that you load via a navigation request kicks off the flow of all other
 requests for subresources like images, scripts, and styles.
 
@@ -103,7 +103,7 @@ has loaded this HTML from the cache, your existing client-side JavaScript takes 
 the correct HTML content for the URL from the original navigation request.
 
 Workbox provides the tools that you need to implement this approach; the <code>[navigateFallback
-option](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)</code>
+option](https://developer.chrome.com/docs/workbox/reference/workbox-build/#method-generateSW)</code>
 allows you to specify which HTML document to use as your app shell, along with an optional allow and
 deny list to limit this behavior to a subset of your URLs.
 
@@ -138,7 +138,7 @@ response](https://developers.google.com/web/updates/2017/02/navigation-preload#u
 that's been preloaded inside of your `fetch` event handler.
 
 Workbox [provides a helper
-library](https://developers.google.com/web/tools/workbox/modules/workbox-navigation-preload) that
+library](https://developer.chrome.com/docs/workbox/modules/workbox-navigation-preload/) that
 feature-detects whether navigation preload is supported, and if so, simplifies the process of
 telling your service worker to use the network response.
 

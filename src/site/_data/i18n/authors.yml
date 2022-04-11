@@ -1,3 +1,111 @@
+sethladd:
+  title:
+    en: Seth Ladd
+  description:
+    en: Seth is a contributor to web.dev
+
+mustafa:
+  title:
+    en: Mustafa Kurtuldu
+  description:
+    en: Design Advocate at Google • Material Design, UX & Design Sprints
+
+mco:
+  title:
+    en: Marc Cohen
+  description:
+    en: Eng Manager, Web Developer Relations
+
+iamakulov:
+  title:
+    en: Ivan Akulov
+  description:
+    en: Contracting software engineer · Blogging, open source, performance, UX
+
+pbakaus:
+  title:
+    en: Paul Bakaus
+  description:
+    en: Open Web Developer Advocate at Google • Tools, Performance, Animation, UX
+
+paulkinlan:
+  title:
+    en: Paul Kinlan
+  description:
+    en: Paul is a Developer Advocate
+
+dalecurtis:
+  title:
+    en: Dale Curtis
+  description:
+    en: Dale is a Senior Software Engineer
+
+mscales:
+  title:
+    en: Mat Scales
+  description:
+    en: Mat is a contributor to web.dev
+
+ewagasperowicz:
+  title:
+    en: Ewa Gasperowicz
+  description:
+    en: Ewa is a contributor to web.dev
+
+alexdanilo:
+  title:
+    en: Alex Danilo
+  description:
+    en: Alex is a contributor to web.dev
+
+taylorsavage:
+  title:
+    en: Taylor Savage
+  description:
+    en: Taylor is a PM on the Chrome Team, focusing on Web Components and Polymer.
+
+umarhansa:
+  title:
+    en: Umar Hansa
+  description:
+    en: Umar is a front-end web developer
+
+ilmariheikkinen:
+  title:
+    en: Ilmari Heikkinen
+  description:
+    en: Ilmari is a contributor to web.dev
+
+mikewest:
+  title:
+    en: Mike West
+  description:
+    en: Mike is a contributor to web.dev
+
+samthorogood:
+  title:
+    en: Sam Thorogood
+  description:
+    en: Evangelises Chrome and the mobile web in the Developer Relations team at Google.
+
+aliceboxhall:
+  title:
+    en: Alice Boxhall
+  description:
+    en: Alice is a contributor to web.dev
+
+jeremywagner:
+  title:
+    en: Jeremy Wagner
+  description:
+    en: Jeremy is a contributor to web.dev
+
+eligrey:
+  title:
+    en: Eli Grey
+  description:
+    en: Eli is a Developer
+
 jakearchibald:
   title:
     en: Jake Archibald
@@ -3464,7 +3572,7 @@ firt:
   title:
     en: Maximiliano Firtman
   description:
-    en:  Author of Hacking Web Performance from O'Reilly
+    en: Author of Hacking Web Performance from O'Reilly
 
 patrickbrosset:
   title:
@@ -3558,15 +3666,15 @@ alexandrawhite:
 
 svenmay:
   title:
-      en: Sven May
+    en: Sven May
   description:
-      en: Privacy Web Ecosystem Consultant at Google
+    en: Privacy Web Ecosystem Consultant at Google
 
 denisstasyev:
   title:
-      en: Denis Stasyev
+    en: Denis Stasyev
   description:
-      en: Software Engineer
+    en: Software Engineer
 
 lozandier:
   title:
@@ -3647,13 +3755,52 @@ chrispalmer:
     en: Software Security Engineer at Google
 
 karldubost:
- title:
-   en: Karl Dubost
- description:
-   en: Web Compatibility Engineering Manager at Mozilla
- 
+  title:
+    en: Karl Dubost
+  description:
+    en: Web Compatibility Engineering Manager at Mozilla
+
 abeyad:
- title:
-   en: Ali Beyad
- description:
-   en: Software Engineer
+  title:
+    en: Ali Beyad
+  description:
+    en: Software Engineer
+
+sdenaro:
+  title:
+    en: Salvatore Denaro
+  description:
+    en: Salvatore Denaro is a Sr. Web Ecosystem Consultant at Google
+
+kbalasub:
+  title:
+    en: Kalyanaraman Balasubramaniam Krishnan
+  description:
+    en: Kalyan is a Sr. Computer Scientist at Adobe
+
+monikajanota:
+  title:
+    en: Monika Janota
+  description:
+    en: Monika is a Community Manager at Google.
+
+patrickhlauke:
+  title:
+    en: Patrick H. Lauke
+  description:
+    en: Patrick is a Web Evangelist
+
+kevinkiklee:
+  title:
+    en: Kevin K. Lee
+    ko: 이경인
+  description:
+    en: Developer Relations Engineer, Google Chrome
+    ko: Google Chrome의 개발자 관계 엔지니어
+
+nikilmathew:
+  title:
+    en: Nikil Mathew
+  description:
+    en: Lead Software engineer at Mishipay
+

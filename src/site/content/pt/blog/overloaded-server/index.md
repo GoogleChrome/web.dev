@@ -174,8 +174,8 @@ Auditorias Farol relevantes:
 
 Fluxo de trabalho do Chrome DevTools:
 
-- [Registrar atividade de rede](https://developers.google.com/web/tools/chrome-devtools/network#load)
-- Clique em **Img** para [filtrar recursos que não sejam de imagem](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
+- [Registrar atividade de rede](https://developer.chrome.com/docs/devtools/network/#load)
+- Clique em **Img** para [filtrar recursos que não sejam de imagem](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-type)
 - Clique na **coluna Tamanho** para classificar os arquivos de imagem por tamanho
 
 #### Consertar

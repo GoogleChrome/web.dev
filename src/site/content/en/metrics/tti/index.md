@@ -29,7 +29,7 @@ loading to when its main sub-resources have loaded and it is capable of reliably
 responding to user input quickly.
 
 To calculate TTI based on a [performance
-trace](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)
+trace](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)
 of a web page, follow these steps:
 
 1. Start at [First Contentful Paint (FCP)](/fcp/).

@@ -1,5 +1,7 @@
 @import '../settings/colors';
 
+// See https://github.com/GoogleChrome/web.dev/issues/7638#issuecomment-1087607518
+input:not([type]),
 input[type='email'],
 input[type='password'],
 input[type='text'] {

@@ -55,11 +55,7 @@
           <option selected value="en-US">en-US</option>
         </select>
       </div>
-      <div class="all-center gap-top-size-1">
-        <div>
-          <div class="g-recaptcha" data-sitekey="{{ site.recaptchaSiteKey }}" data-callback="recaptchaSuccess"></div>
-        </div>
-      </div>
+      <div class="g-recaptcha all-center gap-top-size-1" data-sitekey="{{ site.recaptchaSiteKey }}" data-callback="recaptchaSuccess"></div>
       <div class="gap-top-size-2">
         <div class="subscribe__error hidden-yes">
           {% Aside 'warning' %}

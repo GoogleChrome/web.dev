@@ -239,32 +239,32 @@ prefer.
 
 ### Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 provides in-depth analysis on everything that happens while your page loads or
 runs. See [Get Started With Analyzing Runtime
-Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)
+Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 to get familiar with the **Performance** panel UI.
 
 The following DevTools features are especially relevant:
 
 * [Throttle your
-  CPU](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#cpu-throttle)
+  CPU](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle)
   to simulate a less-powerful device.
 
 * [Throttle the
-  network](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network-throttle)
+  network](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network-throttle)
   to simulate slower connections.
 
 * [View main thread
-  activity](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)
+  activity](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main)
   to view every event that occurred on the main thread while you were recording.
 
 * [View main thread activities in a
-  table](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#activities)
+  table](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#activities)
   to sort activities based on which ones took up the most time.
 
 * [Analyze frames per second
-  (FPS)](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#fps)
+  (FPS)](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#fps)
   to measure whether your animations truly run smoothly.
 
 * [Monitor CPU usage, JS heap size, DOM nodes, layouts per second, and
@@ -272,24 +272,24 @@ The following DevTools features are especially relevant:
   in real-time with the **Performance Monitor**.
 
 * [Visualize network
-  requests](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#network)
+  requests](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#network)
   that occurred while you were recording with the **Network** section.
 
 * [Capture screenshots while
-  recording](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#screenshots)
+  recording](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#screenshots)
   to play back exactly how the page looked while the page loaded, or an
   animation fired, and so on.
 
 * [View
-  interactions](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#interactions)
+  interactions](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#interactions)
   to quickly identify what happened on a page after a user interacted with it.
 
 * [Find scroll performance issues in
-  real-time](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#scrolling-performance-issues)
+  real-time](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#scrolling-performance-issues)
   by highlighting the page whenever a potentially problematic listener fires.
 
 * [View paint events in
-  real-time](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-flashing)
+  real-time](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-flashing)
   to identify costly paint events that may be harming the performance of your
   animations.
 

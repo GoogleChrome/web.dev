@@ -170,7 +170,7 @@ getLCP(sendToAnalytics);
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome 开发者工具</a></td>
+        <td><a href="https://developer.chrome.com/docs/devtools/">Chrome 开发者工具</a></td>
         <td>✔</td>
         <td>✘（使用<a href="/tbt/"> TBT </a>代替）</td>
         <td>✔</td>

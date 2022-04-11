@@ -56,11 +56,11 @@ If you already know where you are using `SharedArrayBuffer`, skip to
 
 ### Using Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)
 allows developers to inspect websites.
 
 1. [Open the Chrome
-   DevTools](https://developers.google.com/web/tools/chrome-devtools/open) on
+   DevTools](https://developer.chrome.com/docs/devtools/open/) on
    the page you suspect might be using `SharedArrayBuffer`.
 2. Select the **Console** panel.
 3. If the page is using `SharedArrayBuffer`, the following message will show up:
@@ -123,7 +123,7 @@ HTTP headers allow you to do just that.
 
 {% Aside %}
 You can also [enable the **Domain**
-column](https://developers.google.com/web/tools/chrome-devtools/network#information)
+column](https://developer.chrome.com/docs/devtools/network/#information)
 in Chrome DevTools **Network** panel to get a general view of which resources
 would be impacted.
 {% endAside %}

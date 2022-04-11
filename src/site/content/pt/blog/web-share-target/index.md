@@ -147,7 +147,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Certifique-se de usar um service worker para [pré-armazenar](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) em cache a página `action` para que ela carregue rapidamente e funcione de forma confiável, mesmo se o usuário estiver offline. [Workbox](https://developers.google.com/web/tools/workbox/) é uma ferramenta que pode ajudá-lo a [implementar o pré-cache](/precache-with-workbox/) em seu service worker.
+Certifique-se de usar um service worker para [pré-armazenar](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) em cache a página `action` para que ela carregue rapidamente e funcione de forma confiável, mesmo se o usuário estiver offline. [Workbox](https://developer.chrome.com/docs/workbox/) é uma ferramenta que pode ajudá-lo a [implementar o pré-cache](/precache-with-workbox/) em seu service worker.
 
 ### Processando compartilhamentos POST
 

@@ -127,7 +127,7 @@ LCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### ラボ測定を実施するためのツール
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://webpagetest.org/)
 

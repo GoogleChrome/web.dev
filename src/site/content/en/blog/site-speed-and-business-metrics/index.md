@@ -160,7 +160,7 @@ options.
 *   Use a tool like [Squoosh](https://squoosh.app/) to manually optimize the
     images on your test page
 *   [Use DevTools code
-    coverage](https://developers.google.com/web/tools/chrome-devtools/coverage)
+    coverage](https://developer.chrome.com/docs/devtools/coverage/)
     to manually eliminate unused JavaScript or CSS just for that one page
 *   [Efficiently load third-party
     scripts](/efficiently-load-third-party-javascript/)

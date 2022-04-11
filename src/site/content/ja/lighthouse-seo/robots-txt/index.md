@@ -43,7 +43,7 @@ Lighthouse は、`robots.txt` ファイルが正しい場所にあることを�
 
 サーバーがサーバーエラーに対してサーバーエラー（500 番代の [HTTP ステータスコード](/http-status-code)）を返した場合、検索エンジンはクロールする必要のあるページを認識しません。サイト全体のクロールが停止し、新しいコンテンツのインデックスが作成されなくなります。
 
-HTTP ステータスコードを確認するには、Chrome で `robots.txt` を開き、[Chrome DevTools でリクエストを確認](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze)します。
+HTTP ステータスコードを確認するには、Chrome で `robots.txt` を開き、[Chrome DevTools でリクエストを確認](https://developer.chrome.com/docs/devtools/network/reference/#analyze)します。
 
 ### `robots.txt` を 500KiB 未満に保つ
 

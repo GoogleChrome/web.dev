@@ -10,7 +10,7 @@ web_lighthouse:
 ---
 
 The Opportunities section of your Lighthouse report lists all key requests
-that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
+that aren't yet prioritizing fetch requests with `<link rel="preconnect">`:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="A screenshot of the Lighthouse Preconnect to required origins audit", width="800", height="226" %}
@@ -18,7 +18,7 @@ that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 
 ## Browser compatibility
 
-`<link rel=preconnect>` is supported on most browsers. See
+`<link rel="preconnect">` is supported on most browsers. See
 [Browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility).
 
 ## Improve page load speed with preconnect

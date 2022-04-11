@@ -30,7 +30,7 @@ web_lighthouse:
 
 Разделы ниже организованы на основе категорий, о которых сообщает Lighthouse. См. [в разделе «Анатомия фрейма»](https://aerotwist.com/blog/the-anatomy-of-a-frame/) обзор того, как Chromium отображает веб-страницы.
 
-См. [раздел «Уменьшите объем работы основного потока»](https://developers.google.com/web/tools/chrome-devtools/speed/get-started#main), чтобы узнать, как использовать Chrome DevTools для подробного анализа работы основного потока при загрузке страницы.
+См. [раздел «Уменьшите объем работы основного потока»](https://developer.chrome.com/docs/devtools/speed/get-started/#main), чтобы узнать, как использовать Chrome DevTools для подробного анализа работы основного потока при загрузке страницы.
 
 ### Оценка скриптов
 

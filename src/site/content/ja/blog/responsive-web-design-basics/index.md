@@ -326,8 +326,8 @@ CSSグリッドレイアウトを使用すると、柔軟なグリッドを簡�
 
 さまざまなブレークポイントでページを表示する場合は、
 
-[DevTools を開き](https://developers.google.com/web/tools/chrome-devtools#open)、[デバイスモード](https://developers.google.com/web/tools/chrome-devtools/device-mode#toggle)をオンにします。デフォルトでは、[レスポンシブモード](https://developers.google.com/web/tools/chrome-devtools/device-mode#responsive)で開きます。
+[DevTools を開き](https://developer.chrome.com/docs/devtools/open/)、[デバイスモード](https://developer.chrome.com/docs/devtools/device-mode/#toggle)をオンにします。デフォルトでは、[レスポンシブモード](https://developer.chrome.com/docs/devtools/device-mode/#responsive)で開きます。
 
-[メディアクエリ](https://developers.google.com/web/tools/chrome-devtools/device-mode#queries)を表示するには、[デバイスモード]メニューを開き、[メディアクエリを表示]を選択して、ブレークポイントを色付きのバーとしてページの上に表示します。
+[メディアクエリ](https://developer.chrome.com/docs/devtools/device-mode/#queries)を表示するには、[デバイスモード]メニューを開き、[メディアクエリを表示]を選択して、ブレークポイントを色付きのバーとしてページの上に表示します。
 
 メディアクエリがアクティブなときにページを表示するには、バーの1つをクリックします。バーを右クリックして、メディアクエリの定義にジャンプします。

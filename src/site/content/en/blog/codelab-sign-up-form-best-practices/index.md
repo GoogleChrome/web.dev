@@ -80,7 +80,7 @@ You could acquire a lot of hardware and set up a
 [device lab](https://www.smashingmagazine.com/2016/11/worlds-best-open-device-labs/), but there are 
 cheaper and simpler ways to try out your form on a range of browsers, platforms and devices:
 
-* [Use Chrome DevTools Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) 
+* [Use Chrome DevTools Device Mode](https://developer.chrome.com/docs/devtools/device-mode/) 
 to simulate mobile devices. 
 * [Send the URL from your computer to your phone](https://support.google.com/chrome/answer/9430554).
 * Use a service such as [BrowserStack](https://www.browserstack.com/open-source) to test on a range 

@@ -38,11 +38,11 @@ tags:
 
 #### 서비스 워커 캐시 제어
 
-[서비스 워커는 이벤트 리스너](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)(일반적으로 `fetch` 이벤트)로 HTTP 요청을 가로챕니다. 이 [코드 조각](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)은 [Cache-First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) 캐싱 전략의 논리를 보여줍니다.
+[서비스 워커는 이벤트 리스너](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)(일반적으로 `fetch` 이벤트)로 HTTP 요청을 가로챕니다. 이 [코드 조각](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19)은 [Cache-First](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network) 캐싱 전략의 논리를 보여줍니다.
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="서비스 워커가 HTTP 요청을 가로채는 방법을 보여주는 다이어그램", width="800", height="516" %}
 
-바퀴를 재발명하지 않으려면 [Workbox](https://developers.google.com/web/tools/workbox)를 사용하는 것이 좋습니다. 예를 들어 [한 줄의 정규식 코드로 리소스 URL 경로를 등록](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route)할 수 있습니다.
+바퀴를 재발명하지 않으려면 [Workbox](https://developer.chrome.com/docs/workbox/)를 사용하는 것이 좋습니다. 예를 들어 [한 줄의 정규식 코드로 리소스 URL 경로를 등록](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route)할 수 있습니다.
 
 ```js
 import {registerRoute} from 'workbox-routing';
