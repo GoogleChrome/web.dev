@@ -130,7 +130,7 @@ You can expand cache storage to view the content that has been cached locally:
 
 It's time to look at the results of your hard work. With just configuration and without coding you have just enhanced your AEM site to become a Progressive Web App.
 
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="385", height="633" style="max-width: 385; margin: 0 auto;" %}
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/kKx6HOoA6z4hXoy4WZn8.gif", alt="An AEM site as a Progressive Web App.", width="385", height="633", style="max-width: 385; margin: 0 auto;" %}
 
 Chrome developer tools provide a lighthouse audit that lets you check how compliant your web application and configuration is with Progressive Web App standards.
 
