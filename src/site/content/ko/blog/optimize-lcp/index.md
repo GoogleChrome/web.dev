@@ -170,7 +170,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 ### 중요하지 않은 CSS 지연
 
-Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) 탭을 사용하여 웹 페이지에서 사용하지 않는 CSS를 찾습니다.
+Chrome DevTools의 [Coverage](https://developer.chrome.com/docs/devtools/coverage/) 탭을 사용하여 웹 페이지에서 사용하지 않는 CSS를 찾습니다.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome DevTools의 Coverage 탭", width="800", height="559" %}
 
@@ -364,7 +364,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 서비스 작업자는 이 글의 앞에서 언급했듯 더 작은 HTML 응답을 제공하는 것을 포함하여 여러 가지 유용한 작업에 사용될 수 있습니다. 또한 반복 요청 시 네트워크에서 대신 브라우저에 제공할 수 있는 정적 리소스를 캐시하는 데 사용할 수도 있습니다.
 
-서비스 작업자를 사용하여 중요한 리소스를 미리 캐싱하면 로드 시간을 크게 줄일 수 있습니다. 연결 상태가 약한 상태에서, 심지어는 오프라인에서 웹 페이지를 다시 로드하는 사용자의 경우 특히 그렇습니다. [Workbox](https://developers.google.com/web/tools/workbox/)와 같은 라이브러리는 사전 캐시된 자산 업데이트 프로세스를 만들 수 있으며 이는 커스텀 서비스 작업자를 작성하는 것보다 쉽습니다.
+서비스 작업자를 사용하여 중요한 리소스를 미리 캐싱하면 로드 시간을 크게 줄일 수 있습니다. 연결 상태가 약한 상태에서, 심지어는 오프라인에서 웹 페이지를 다시 로드하는 사용자의 경우 특히 그렇습니다. [Workbox](https://developer.chrome.com/docs/workbox/)와 같은 라이브러리는 사전 캐시된 자산 업데이트 프로세스를 만들 수 있으며 이는 커스텀 서비스 작업자를 작성하는 것보다 쉽습니다.
 
 {% Aside %} 서비스 작업자 및 Workbox에 대해 자세히 알아보려면 [네트워크 안정성](/reliable/)을 참조하세요. {% endAside %}
 
@@ -428,7 +428,7 @@ LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- Chrome DevTools의 [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) 패널에 있는 **Timing** 섹션에는 LCP 마커가 포함되어 있으며 **Related Node** 필드 위로 마우스를 가져가면 해당 LCP와 연결된 요소가 표시됩니다.
+- Chrome DevTools의 [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) 패널에 있는 **Timing** 섹션에는 LCP 마커가 포함되어 있으며 **Related Node** 필드 위로 마우스를 가져가면 해당 LCP와 연결된 요소가 표시됩니다.
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
 

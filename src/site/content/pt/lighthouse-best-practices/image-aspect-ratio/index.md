@@ -33,7 +33,7 @@ Um CDN de imagem pode facilitar a automatização do processo de criação de ve
 
 ### Verifique o CSS que afeta a proporção da imagem
 
-Se você estiver tendo problemas para encontrar o CSS que está causando a proporção incorreta, o Chrome DevTools pode mostrar as declarações CSS que afetam uma determinada imagem. Consulte a página do Google [Ver apenas o CSS que está realmente aplicado a um elemento](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed) para obter mais informações.
+Se você estiver tendo problemas para encontrar o CSS que está causando a proporção incorreta, o Chrome DevTools pode mostrar as declarações CSS que afetam uma determinada imagem. Consulte a página do Google [Ver apenas o CSS que está realmente aplicado a um elemento](https://developer.chrome.com/docs/devtools/css/reference/#computed) para obter mais informações.
 
 ### Verifique os atributos`width` e `height` da imagem
 

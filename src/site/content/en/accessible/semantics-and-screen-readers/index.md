@@ -108,7 +108,7 @@ to cut down on noise.
 {% endAside %}
 
 Using Chrome's DevTools you can [inspect an element's semantic
-properties](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+properties](https://developer.chrome.com/docs/devtools/accessibility/reference/#pane)
 and explore its position in the accessibility tree.
 
 ## Next steps

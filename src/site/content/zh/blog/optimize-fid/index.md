@@ -103,7 +103,7 @@ tags:
 
 默认情况下，所有 JavaScript 都是阻塞渲染的。当浏览器遇到链接到外部 JavaScript 文件的脚本标签时，就必须暂停正在执行的操作，转而下载、解析、编译和执行该 JavaScript。因此，您应该只加载页面所需的代码或响应用户输入所需的代码。
 
-Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡能够告诉您网页上有多少未在使用的 JavaScript。
+Chrome 开发者工具中的[代码覆盖率](https://developer.chrome.com/docs/devtools/coverage/)选项卡能够告诉您网页上有多少未在使用的 JavaScript。
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="代码覆盖率选项卡。", width="800", height="559" %}
 

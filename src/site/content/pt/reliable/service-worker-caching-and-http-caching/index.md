@@ -38,11 +38,11 @@ Um service worker intercepta solicitações HTTP do tipo de rede e usa uma [estr
 
 #### Controlar o cache do service worker
 
-Um service worker intercepta solicitações HTTP com [ouvintes de eventos](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (geralmente o `fetch` ). Este [trecho de código](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstra a lógica de uma estratégia de cache [Cache-First.](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network)
+Um service worker intercepta solicitações HTTP com [ouvintes de eventos](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) (geralmente o `fetch` ). Este [trecho de código](https://github.com/mdn/sw-test/blob/gh-pages/sw.js#L19) demonstra a lógica de uma estratégia de cache [Cache-First.](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network)
 
 {% Img src="image/admin/INLfnhEpmL4KpMmFXnTL.png", alt="Um diagrama que mostra como os service workers interceptam solicitações HTTP", width="800", height="516" %}
 
-É altamente recomendável usar o [Workbox](https://developers.google.com/web/tools/workbox) para evitar reinventar a roda. Por exemplo, você pode [registrar caminhos de URL de recurso com uma única linha de código regex](https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_regular_expression_route) .
+É altamente recomendável usar o [Workbox](https://developer.chrome.com/docs/workbox/) para evitar reinventar a roda. Por exemplo, você pode [registrar caminhos de URL de recurso com uma única linha de código regex](https://developer.chrome.com/docs/workbox/modules/workbox-routing/#how-to-register-a-regular-expression-route) .
 
 ```js
 import {registerRoute} from 'workbox-routing';

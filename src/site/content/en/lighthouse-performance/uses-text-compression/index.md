@@ -93,7 +93,7 @@ To compare the compressed and de-compressed sizes of a response:
 
 {% Instruction 'devtools-network', 'ol' %}
 1. Enable large request rows.
-See [Use large request rows](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows).
+See [Use large request rows](https://developer.chrome.com/docs/devtools/network/reference/#request-rows).
 1. Look at the **Size** column for the response you're interested in. The
    top value is the compressed size. The bottom value is the de-compressed
    size.

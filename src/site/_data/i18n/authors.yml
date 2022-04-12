@@ -1,3 +1,27 @@
+sethladd:
+  title:
+    en: Seth Ladd
+  description:
+    en: Seth is a contributor to web.dev
+
+mustafa:
+  title:
+    en: Mustafa Kurtuldu
+  description:
+    en: Design Advocate at Google • Material Design, UX & Design Sprints
+
+mco:
+  title:
+    en: Marc Cohen
+  description:
+    en: Eng Manager, Web Developer Relations
+
+iamakulov:
+  title:
+    en: Ivan Akulov
+  description:
+    en: Contracting software engineer · Blogging, open source, performance, UX
+
 pbakaus:
   title:
     en: Paul Bakaus
@@ -3754,6 +3778,12 @@ kbalasub:
   description:
     en: Kalyan is a Sr. Computer Scientist at Adobe
 
+monikajanota:
+  title:
+    en: Monika Janota
+  description:
+    en: Monika is a Community Manager at Google.
+
 patrickhlauke:
   title:
     en: Patrick H. Lauke
@@ -3773,3 +3803,24 @@ nikilmathew:
     en: Nikil Mathew
   description:
     en: Lead Software engineer at Mishipay
+
+jhey:
+  title:
+    en: Jhey Tompkins
+    es: Jhey Tompkins
+    it: Jhey Tompkins
+    ja: Jhey Tompkins
+    ko: Jhey Tompkins
+    pt: Jhey Tompkins
+    ru: Jhey Tompkins
+    zh: Jhey Tompkins
+  description:
+    en: Whimsy Dev Supreme! Developer Relations Engineer @ Google
+    es: ¡Extravagante Dev Supremo! Ingeniero de Relaciones con los Desarrolladores @ Google
+    it: Stravagante Dev Supremo! Ingegnere relazioni con gli sviluppatori @ Google
+    ja: 気まぐれな開発最高！開発者関係エンジニア@Google
+    ko: 변덕스러운 데브 슈프림! 개발자 관계 엔지니어 @ Google
+    pt: Excêntrico Dev Supremo! Engenheiro de relações com desenvolvedores @ Google
+    ru: Причудливый Дев Высший! Инженер по связям с разработчиками @ Google
+    zh: 奇思妙想的开发者至尊！开发者关系工程师 @ Google
+

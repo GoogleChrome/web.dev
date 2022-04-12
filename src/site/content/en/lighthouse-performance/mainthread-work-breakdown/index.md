@@ -44,7 +44,7 @@ The sections below are organized based on the categories that Lighthouse reports
 See [The anatomy of a frame](https://aerotwist.com/blog/the-anatomy-of-a-frame/)
 for an overview of how Chromium renders web pages.
 
-See [Do less main thread work](https://developers.google.com/web/tools/chrome-devtools/speed/get-started#main)
+See [Do less main thread work](https://developer.chrome.com/docs/devtools/speed/get-started/#main)
 to learn how to use Chrome DevTools to investigate exactly what your main thread is doing
 as the page loads.
 

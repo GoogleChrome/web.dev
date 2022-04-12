@@ -46,7 +46,7 @@ If you are storing large, user-generated files such as images or videos, then yo
 them as `File` or `Blob` objects. This will work on some platforms but fail on others. Safari on
 iOS, in particular, cannot store `Blob`s in IndexedDB.
 
-Luckily it is not too difficult to convert a `Blob` into an `ArrayBuffer`, and visa versa. Storing
+Luckily it is not too difficult to convert a `Blob` into an `ArrayBuffer`, and vice versa. Storing
 `ArrayBuffer`s in IndexedDB is very well supported.
 
 Remember, however, that a `Blob` has a MIME type while an `ArrayBuffer` does not. You will need to

@@ -79,7 +79,7 @@ Chrome уже умеет загружать изображения с разны
 
 Значения по умолчанию для различных типов эффективных соединений можно найти в [исходном коде Chromium](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad). Эти цифры и даже подход, при котором выборка выполняется только при достижении определенного расстояния от области просмотра, могут измениться в ближайшем будущем, поскольку команда Chrome совершенствует эвристику для определения момента начала загрузки.
 
-{% Aside %} В Chrome 77+ вы можете поэкспериментировать с различными пороговыми значениями, [изменяя тип сети](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) в DevTools. Переопределите также эффективный тип подключения браузера с помощью флага `about://flags/#force-effective-connection-type`. {% endAside %}
+{% Aside %} В Chrome 77+ вы можете поэкспериментировать с различными пороговыми значениями, [изменяя тип сети](https://developer.chrome.com/docs/devtools/network/#throttle) в DevTools. Переопределите также эффективный тип подключения браузера с помощью флага `about://flags/#force-effective-connection-type`. {% endAside %}
 
 ## Улучшенная экономия данных и пороговые значения расстояния от области просмотра
 

@@ -17,7 +17,7 @@ tags:
 
 TTI 指标测量页面从开始加载到主要子资源完成渲染，并能够快速、可靠地响应用户输入所需的时间。
 
-如需根据网页的[性能跟踪](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)计算 TTI，请执行以下步骤：
+如需根据网页的[性能跟踪](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)计算 TTI，请执行以下步骤：
 
 1. 先进行[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)。
 2. 沿时间轴正向搜索时长至少为 5 秒的安静窗口，其中，*安静窗口*的定义为：没有[长任务](/custom-metrics/#long-tasks-api)且不超过两个正在处理的网络 GET 请求。

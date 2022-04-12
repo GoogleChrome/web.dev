@@ -143,7 +143,7 @@ tags:
 
 ### 延迟加载非关键 CSS
 
-使用 Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡查找您网页上任何未使用的 CSS。
+使用 Chrome 开发者工具中的[代码覆盖率](https://developer.chrome.com/docs/devtools/coverage/)选项卡查找您网页上任何未使用的 CSS。
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome 开发者工具中的代码覆盖率选项卡", width="800", height="559" %}
 
@@ -292,7 +292,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 Service Worker 可用于完成许多有用的任务，其中包括本文前面提到的提供较小的 HTML 响应。Service Worker 还可用于缓存任何静态资源，并在收到重复请求时将资源直接提供给浏览器，而无需通过网络。
 
-使用 Service Worker 预缓存关键资源可以显著减少资源加载时间，特别是对于使用较弱连接重新加载网页（甚至离线访问）的用户。与自己编写自定义 Service Worker 来更新预缓存资产相比，诸如 [Workbox](https://developers.google.com/web/tools/workbox/) 这样的库可以使整个过程更加容易。
+使用 Service Worker 预缓存关键资源可以显著减少资源加载时间，特别是对于使用较弱连接重新加载网页（甚至离线访问）的用户。与自己编写自定义 Service Worker 来更新预缓存资产相比，诸如 [Workbox](https://developer.chrome.com/docs/workbox/) 这样的库可以使整个过程更加容易。
 
 {% Aside %}请查看[网络可靠性](/reliable/)，了解 Service Worker 和 Workbox 的更多相关信息。{% endAside %}
 
@@ -346,7 +346,7 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="灯塔 6.0", width="800", height="309" %}
 
-- Chrome 开发者工具中[性能](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)面板的**时间点**部分包括一个 LCP 标记，并会在您将鼠标悬停在**相关节点**字段上时显示哪些元素与 LCP 相关联。
+- Chrome 开发者工具中[性能](https://developer.chrome.com/docs/devtools/evaluate-performance/)面板的**时间点**部分包括一个 LCP 标记，并会在您将鼠标悬停在**相关节点**字段上时显示哪些元素与 LCP 相关联。
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome 开发者工具中的 LCP", width="800", height="509" %}
 

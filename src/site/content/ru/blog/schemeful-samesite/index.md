@@ -191,7 +191,7 @@ feedback:
 
 В Chrome и Firefox можно использовать инструменты разработчика и передачи сообщений.
 
-В Chrome 86 на [вкладке «Проблемы» (Issues) в DevTools](https://developers.google.com/web/tools/chrome-devtools/issues) будут показаны проблемы, относящиеся к Same-Site с учетом схемы. Возможные проблемы приведены ниже.
+В Chrome 86 на [вкладке «Проблемы» (Issues) в DevTools](https://developer.chrome.com/docs/devtools/issues/) будут показаны проблемы, относящиеся к Same-Site с учетом схемы. Возможные проблемы приведены ниже.
 
 Проблемы с переходами:
 

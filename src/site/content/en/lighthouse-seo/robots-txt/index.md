@@ -59,7 +59,7 @@ crawled. They may stop crawling your entire site, which would prevent new
 content from being indexed.
 
 To check the HTTP status code, open `robots.txt` in Chrome and
-[check the request in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze).
+[check the request in Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference/#analyze).
 
 ### Keep `robots.txt` smaller than 500 KiB
 

@@ -61,7 +61,7 @@ and only create them after a relevant user interaction,
 such as a scroll or a button click.
 
 If you create DOM nodes at runtime,
-[Subtree Modification DOM Change Breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#dom)
+[Subtree Modification DOM Change Breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)
 can help you pinpoint when nodes get created.
 
 If you can't avoid a large DOM tree,

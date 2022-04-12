@@ -23,7 +23,7 @@ thread](https://developer.mozilla.org/docs/Glossary/Main_thread) can update the 
 In this guide we'll explore the different ways of implementing a **two-way** communication between
 the [Window](https://developer.mozilla.org/docs/Web/API/Window) and [service
 worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) context, by exploring
-different APIs, the [Workbox library](https://developers.google.com/web/tools/workbox), as well as
+different APIs, the [Workbox library](https://developer.chrome.com/docs/workbox/), as well as
 some advanced cases.
 
 <figure>
@@ -39,10 +39,10 @@ some advanced cases.
 
 ## Using Workbox {: #using-workbox }
 
-[`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) is a set of
-modules of the [Workbox library](https://developers.google.com/web/tools/workbox) that are intended
+[`workbox-window`](https://developer.chrome.com/docs/workbox/modules/workbox-window/) is a set of
+modules of the [Workbox library](https://developer.chrome.com/docs/workbox/) that are intended
 to run in the window context. The [`Workbox`
-](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
+](https://developer.chrome.com/docs/workbox/reference/workbox-window/#type-Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
 await a response.
 
 The following page code creates a new `Workbox` instance and sends a message to the service worker
@@ -308,7 +308,7 @@ the user via a web push notification:
 
 {% Aside %} Check out [Resilient search experiences
 ](/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
-Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync). {% endAside
+Sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/). {% endAside
 %}
 
 #### Background Fetch {: #background-fetch }

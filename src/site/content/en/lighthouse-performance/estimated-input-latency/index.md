@@ -66,7 +66,7 @@ nor does it does measure that your app's response to the user's input is visuall
 
 To measure Estimated Input Latency manually,
 make a recording with the Chrome DevTools Timeline.
-See [Do less main thread work](https://developers.google.com/web/tools/chrome-devtools/speed/get-started#main)
+See [Do less main thread work](https://developer.chrome.com/docs/devtools/speed/get-started/#main)
 for an example of the workflow.
 The basic idea is to start a recording, perform the user input that you want to measure,
 stop the recording, and then analyze the flame chart to ensure that
@@ -79,4 +79,4 @@ are complete within 50&nbsp;ms.
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Measure Performance with the RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)
 - [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering/)
-- [Optimize Website Speed With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/speed/get-started)
+- [Optimize Website Speed With Chrome DevTools](https://developer.chrome.com/docs/devtools/speed/get-started/)

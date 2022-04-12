@@ -79,7 +79,7 @@ O limite de distância não é fixo e varia dependendo de vários fatores:
 
 Você pode encontrar os valores default para os diferentes tipos de conexão efetiva na [fonte do Chromium](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad). Esses números, e até mesmo a abordagem de buscar apenas quando uma certa distância da viewport é alcançada, podem mudar num futuro próximo, conforme a equipe do Chrome aprimora a heurística para determinar quando começar o carregamento.
 
-{% Aside %} A partir do Chrome 77, você pode experimentar esses diferentes limites [limitando a rede](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) no DevTools. Nesse ínterim, você precisará substituir o tipo de conexão efetiva do navegador usando a flag `about://flags/#force-effective-connection-type`. {% endAside %}
+{% Aside %} A partir do Chrome 77, você pode experimentar esses diferentes limites [limitando a rede](https://developer.chrome.com/docs/devtools/network/#throttle) no DevTools. Nesse ínterim, você precisará substituir o tipo de conexão efetiva do navegador usando a flag `about://flags/#force-effective-connection-type`. {% endAside %}
 
 ## Melhoria nos limites de economia de dados e distance-from-viewport
 

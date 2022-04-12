@@ -1,4 +1,25 @@
 {
+  "sethladd": {
+    "homepage": "https://sethladd.com/",
+    "twitter": "sethladd",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/G0iRvLgivtwPq5cEdk8g.jpeg"
+  },
+  "mustafa": {
+    "homepage": "http://www.designtoday.info/",
+    "twitter": "mustafa_x",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/zL9KZGMmN6NIfAxwSMfx.jpeg"
+  },
+  "mco": {
+    "homepage": "https://about.me/marc1",
+    "twitter": "marcacohen",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/4VNx2OZc6ngQf50LNQz0.jpeg"
+  },
+  "iamakulov": {
+    "homepage": "https://iamakulov.com/",
+    "github": "iamakulov",
+    "twitter": "iamakulov",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wGLbfEs3xyBlmA4lqviX.jpg"
+  },
   "pbakaus": {
     "homepage": "https://paulbakaus.com/",
     "twitter": "pbakaus",
@@ -1260,6 +1281,10 @@
     "country": "US",
     "github": "kbalasub"
   },
+  "monikajanota": {
+    "country": "PL",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/FQzvy4BexCKN6Ip51wsg.jpg"
+  },
   "patrickhlauke": {
     "github": "patrickhlauke",
     "country": "UK",
@@ -1276,5 +1301,13 @@
     "twitter": "nikil_mathew",
     "linkedin": "https://www.linkedin.com/in/nikilmat/",
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/mc2N7pSjT8K7WBi8PR6L.jpeg"
+  },
+  "jhey": {
+    "country": "UK",
+    "twitter": "jh3yy",
+    "github": "jh3y",
+    "linkedin": "https://www.linkedin.com/in/jheytompkins/",
+    "homepage": "https://jhey.dev/links",
+    "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JMkAJAgH01auU1FiapGg.jpeg"
   }
 }

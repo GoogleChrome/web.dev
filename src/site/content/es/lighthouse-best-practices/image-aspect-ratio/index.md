@@ -33,7 +33,7 @@ Un CDN de imagen puede facilitar la automatización del proceso de creación de 
 
 ### Verifique el CSS que afecta la relación de aspecto de la imagen
 
-Si tiene problemas para encontrar el CSS que está causando la relación de aspecto incorrecta, Chrome DevTools puede mostrarle las declaraciones de CSS que afectan a una imagen determinada. Consulte la página de Google [Ver solo el CSS  que se aplica realmente a un elemento](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed) para obtener más información.
+Si tiene problemas para encontrar el CSS que está causando la relación de aspecto incorrecta, Chrome DevTools puede mostrarle las declaraciones de CSS que afectan a una imagen determinada. Consulte la página de Google [Ver solo el CSS  que se aplica realmente a un elemento](https://developer.chrome.com/docs/devtools/css/reference/#computed) para obtener más información.
 
 ### Verifique los atributos `width` y `height` de la imagen en el HTML
 

@@ -61,7 +61,7 @@ In this section we'll explore how [Workbox](/workbox/) can be used to implement 
 
 Workbox provides several [runtime caching strategies](/runtime-caching-with-workbox/) out of the box. They are used to indicate how the service worker generates a response after receiving a `fetch` event.
 
-For example, in a [Cache First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy the [`Request`](https://developer.mozilla.org/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the `Request` will be fulfilled by a network request and the response will be cached.
+For example, in a [Cache First](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/#cache-first-cache-falling-back-to-network) strategy the [`Request`](https://developer.mozilla.org/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the `Request` will be fulfilled by a network request and the response will be cached.
 
 ```javascript
 import {registerRoute} from 'workbox-routing';
@@ -73,7 +73,7 @@ registerRoute(
 );
 ```
 
-Caching strategies can be customized with [Workbox plugins](https://developers.google.com/web/tools/workbox/guides/using-plugins). These allow you to add additional behaviors by manipulating requests and responses during the lifecycle of a request. Workbox has several built-in plugins for common cases and APIs, but you can also define a [custom plugin](https://developers.google.com/web/tools/workbox/guides/using-plugins#custom_plugins), and introduce some custom logic of your choice.
+Caching strategies can be customized with [Workbox plugins](https://developer.chrome.com/docs/workbox/using-plugins/). These allow you to add additional behaviors by manipulating requests and responses during the lifecycle of a request. Workbox has several built-in plugins for common cases and APIs, but you can also define a [custom plugin](https://developer.chrome.com/docs/workbox/using-plugins/#methods-for-custom-plugins), and introduce some custom logic of your choice.
 
 To achieve adapting loading, define a custom plugin, called, for example, `adaptiveLoadingPlugin`:
 
@@ -142,7 +142,7 @@ Cloudinary, a video and image hosting service, has a [Workbox Plugin](https://ww
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iY2R0e4PvimaoVORo8Go.png", alt="Cloudinary and Workbox logos.", width="637", height="269" %}
 </figure>
 
-The plugin is designed to work with the [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). To implement it, use the [`GenerateSW()`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW) class:
+The plugin is designed to work with the [Workbox webpack plugin](https://developer.chrome.com/docs/workbox/modules/workbox-webpack-plugin/). To implement it, use the [`GenerateSW()`](https://developer.chrome.com/docs/workbox/reference/workbox-webpack-plugin/#type-GenerateSW) class:
 
 ```javascript
 new workboxPlugin.GenerateSW({

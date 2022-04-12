@@ -233,7 +233,7 @@ and explore performance using DevTools.
 #### Chrome DevTools {: #layout-chrome }
 
 1. Open the **Performance** panel.
-1. [Record runtime performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#record-runtime)
+1. [Record runtime performance](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-runtime)
    while your animation is happening.
 1. Inspect the **Summary** tab.
 
@@ -321,7 +321,7 @@ If you see the whole screen flashing,
 or areas that you don't think should change highlighted then you can do some investigation.
 
 If you need to dig into whether a particular property is causing performance issues due to painting,
-the [paint profiler](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-profiler)
+the [paint profiler](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#paint-profiler)
 in Chrome DevTools can help.
 
 #### Firefox DevTools {: #paint-firefox }
@@ -343,4 +343,4 @@ see if a different CSS property will give the same look and feel with better per
 Use the `will-change` property sparingly,
 and only if you encounter a performance issue.
 
-[rendering]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#rendering
+[rendering]: https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#rendering

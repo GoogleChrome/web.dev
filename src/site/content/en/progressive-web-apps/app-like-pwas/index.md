@@ -66,8 +66,8 @@ and are displayed with all metadata like artwork and descriptions.
   How to do this on the web
 {% endDetailsSummary %}
   Previously downloaded media content can be served from the cache, for example using the
-  <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Serve cached audio and video</a>
-  recipe from the <a href="https://developers.google.com/web/tools/workbox">Workbox</a> library.
+  <a href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/">Serve cached audio and video</a>
+  recipe from the <a href="https://developer.chrome.com/docs/workbox/">Workbox</a> library.
   Other content can always be stored in the cache, or in IndexedDB. Read the article <a href="/storage-for-the-web/">Storage for the web</a>
   for all details and to know when to use what storage technology.
   If you have data that should be persistently stored without the risk of being purged when the
@@ -473,11 +473,11 @@ The table below shows a compact overview of all features and provides a list of 
           <ul>
             <li>
               <a
-                href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av"
+                href="https://developer.chrome.com/docs/workbox/serving-cached-audio-and-video/"
                 >Serve cached audio and video</a
               >
             </li>
-            <li><a href="https://developers.google.com/web/tools/workbox">Workbox library</a></li>
+            <li><a href="https://developer.chrome.com/docs/workbox/">Workbox library</a></li>
             <li><a href="/storage-for-the-web/">Storage API</a></li>
             <li><a href="/persistent-storage/">Persistent Storage API</a></li>
           </ul>

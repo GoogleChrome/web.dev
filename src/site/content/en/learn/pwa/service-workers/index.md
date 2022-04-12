@@ -127,7 +127,7 @@ Service workers don't live indefinitely. While exact timings differ between brow
 
 With a registered and active service worker, you have a thread with a completely different execution lifecycle than the main one on your PWA. However, by default, the service worker file itself has no behavior. It won't cache or serve any resources, as this has to be done by your code. You'll find out how in the following chapters.
 
-Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities) chapter.
+Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities).
 
 ##  Resources
 

@@ -41,7 +41,7 @@ Lighthouse не проверяет правильность расположен
 
 Если ваш сервер возвращает ошибку сервера ([код состояния HTTP](/http-status-code) 5xx) для `robots.txt`, поисковые системы не будут знать, какие страницы следует сканировать. Они могут перестать сканировать весь ваш сайт, что предотвратит индексацию нового контента.
 
-Чтобы проверить код состояния HTTP, откройте `robots.txt` в Chrome и [проверьте запрос в Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze).
+Чтобы проверить код состояния HTTP, откройте `robots.txt` в Chrome и [проверьте запрос в Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference/#analyze).
 
 ### Размер `robots.txt` не должен превышать 500 КиБ
 

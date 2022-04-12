@@ -27,7 +27,7 @@ promoPanel:
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/KwS4L954TzN3KK3pWmtA.svg'
   imageWidth: '530'
   imageHeight: '483'
-pickedCaseStudyUrl: '/mainline-mensware/'
+pickedCaseStudyUrl: '/mishipay/'
 pickedCaseStudyTheme: 'light'
 pageSpeed:
   eyebrow: 'PageSpeed Insights'
@@ -56,7 +56,7 @@ podcasts:
   buttonUrl: '/podcasts/'
 patterns:
   title: 'Patterns'
-  summary: 'A collection of code snippets to help you optmize your web projects.'
+  summary: 'A collection of code snippets to help you optimize your web projects.'
   buttonText: 'See all'
   buttonUrl: '/patterns/'
 ---

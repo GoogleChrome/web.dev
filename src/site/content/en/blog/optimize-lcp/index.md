@@ -253,7 +253,7 @@ For more details, refer to the [Minify CSS](/minify-css/) guide.
 ### Defer non-critical CSS
 
 Use the
-[Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab
+[Coverage](https://developer.chrome.com/docs/devtools/coverage/) tab
 in Chrome DevTools to find any unused CSS on your web page.
 
 {% Img
@@ -539,7 +539,7 @@ network on repeat requests.
 Precaching critical resources using a service worker can reduce their load times
 significantly, especially for users who reload the web page with a weaker
 connection (or even access it offline). Libraries like
-[Workbox](https://developers.google.com/web/tools/workbox/) can make the process
+[Workbox](https://developer.chrome.com/docs/workbox/) can make the process
 of updating precached assets easier than writing a custom service worker to
 handle this yourself.
 
@@ -649,7 +649,7 @@ A number of tools are available to measure and debug LCP:
   %}
 
 - The **Timings** section of the
-  [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)
+  [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)
   panel in Chrome DevTools includes a LCP marker and shows you which element is
   associated with LCP when you hover over the **Related Node** field.
 

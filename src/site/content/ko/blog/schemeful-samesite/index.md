@@ -181,7 +181,7 @@ Chrome과 Firefox 모두에서 테스트를 위해 이러한 변경을 활성화
 
 개발자 도구 및 메시징은 Chrome 및 Firefox에서 사용할 수 있습니다.
 
-Chrome 86부터 [DevTools의 Issue 탭](https://developers.google.com/web/tools/chrome-devtools/issues)에 Schemeful Same-Site 이슈가 포함됩니다. 사이트에 대해 다음 이슈가 강조 표시되는 것을 볼 수도 있습니다.
+Chrome 86부터 [DevTools의 Issue 탭](https://developer.chrome.com/docs/devtools/issues/)에 Schemeful Same-Site 이슈가 포함됩니다. 사이트에 대해 다음 이슈가 강조 표시되는 것을 볼 수도 있습니다.
 
 이동 문제:
 

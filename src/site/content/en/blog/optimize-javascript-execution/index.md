@@ -6,7 +6,7 @@ subhead: |
 authors:
   - paullewis
 date: 2015-03-20
-updated: 2018-08-17 
+updated: 2018-08-17
 description: |
   JavaScript often triggers visual changes. Sometimes that's directly through style manipulations, and sometimes it's calculations that result in visual changes, like searching or sorting data. Badly-timed or long-running JavaScript is a common cause of performance issues. You should look to minimize its impact where you can.
 tags:
@@ -35,7 +35,7 @@ optimizing it.
 With all that said, however, there are some things you can definitely do to help your apps execute
 JavaScript well.
 
-### TL;DR 
+### TL;DR
 
 * Avoid setTimeout or setInterval for visual updates; always use requestAnimationFrame instead.
 * Move long-running JavaScript off the main thread to Web Workers.
@@ -155,4 +155,4 @@ that case everything helps.
 In short, you should be very wary of micro-optimizations because they won’t typically map to the
 kind of application you’re building.
 
-[GS]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/
+[GS]: https://developer.chrome.com/docs/devtools/evaluate-performance/

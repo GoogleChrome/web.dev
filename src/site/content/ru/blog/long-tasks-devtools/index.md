@@ -30,7 +30,7 @@ tags:
 
 ## Как понять, есть ли на странице длительные задачи, замедляющие реакцию
 
-До сих пор, чтобы выяснить, какие задачи задерживают реакцию на действия пользователя, приходилось вручную искать в [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) «длинные желтые блоки» скриптов длительностью более 50 мс или использовать [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/), что не очень удобно.
+До сих пор, чтобы выяснить, какие задачи задерживают реакцию на действия пользователя, приходилось вручную искать в [Chrome DevTools](https://developer.chrome.com/docs/devtools/) «длинные желтые блоки» скриптов длительностью более 50 мс или использовать [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/), что не очень удобно.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="Скриншот панели «Производительность» (Performance) в DevTools: показана разница между короткими и длительными задачами", width="800", height="450" %}
 
@@ -38,7 +38,7 @@ tags:
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="Панель «Производительность» (Performance) в DevTools: длительные задачи отображаются в виде серых полос с красным флажком", width="800", height="450" %}
 
-- На [панели «Производительность»](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) (Performance) запишите трассировку для загрузки веб-страницы.
+- На [панели «Производительность»](https://developer.chrome.com/docs/devtools/evaluate-performance/) (Performance) запишите трассировку для загрузки веб-страницы.
 - Поищите красные флажки в области основного потока. Задачи показаны серым и помечены как «Задача» (Task).
 - Наведя указатель мыши на полосу, вы увидите, сколько выполнялась задача и считается ли она «длительной».
 

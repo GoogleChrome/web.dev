@@ -100,8 +100,8 @@ CSSを作成するとき、またはWeb全般で作業するときに覚えて�
 
 先に進み、ブラウザで次の手順を試します。
 
-1. [DevToolsを開く](https://developers.google.com/web/tools/chrome-devtools/open)
-2. [要素を選択します](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [DevToolsを開く](https://developer.chrome.com/docs/devtools/open/)
+2. [要素を選択します](https://developer.chrome.com/docs/devtools/css/reference/#select)
 3. ボックスモデルデバッガーを表示する
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>

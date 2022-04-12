@@ -193,10 +193,10 @@ handling, etc. To migrate from the Declarative Link Capturing API to the Launch 
     - To use `"capture_links": "new-client"`,
       add:`"launch_handler": { "route_to": "new-client" }`.
     - To use `"capture_links": "existing-client-navigate"`, add:
-      `"launch_handler": { "route_to": "existing-client" }`.
+      `"launch_handler": { "route_to": "existing-client-navigate" }`.
     - To use `"capture_links": "existing-client-event"` (which was never implemented
       in the Declarative Link Capturing origin trial), add:
-      `{ "launch_handler": { "route_to": "existing-client", "navigate_existing_client": "never" } }`.
+      `"launch_handler": { "route_to": "existing-client-retain" }`.
       With this option, pages in your app scope will no longer navigate automatically when a link
       navigation is captured. You must handle the `LaunchParams` in JavaScript by calling
       `window.launchQueue.setConsumer()` to enable navigation.

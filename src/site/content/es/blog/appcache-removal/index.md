@@ -133,7 +133,7 @@ Los trabajadores de servicio, que son [ampliamente compatibles con los navegador
 
 Hemos proporcionado un [polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior) que utiliza un trabajador de servicio para replicar algunas de las funciones de AppCache, aunque no replica toda su interfaz. En particular, no reemplaza la interfaz `window.applicationCache` ni los eventos relacionados de AppCache.
 
-Para casos más complejos, bibliotecas como [Workbox](https://developers.google.com/web/tools/workbox/) ofrecen una manera fácil de crear un trabajador de servicio moderno para su aplicación web.
+Para casos más complejos, bibliotecas como [Workbox](https://developer.chrome.com/docs/workbox/) ofrecen una manera fácil de crear un trabajador de servicio moderno para su aplicación web.
 
 ### Los trabajadores de servicio y AppCache son mutuamente excluyentes
 
@@ -177,7 +177,7 @@ A continuación, se muestran algunos recursos para los desarrolladores que migra
 ### Herramientas
 
 - [Polyfill de AppCache](https://github.com/GoogleChromeLabs/sw-appcache-behavior)
-- [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Workbox](https://developer.chrome.com/docs/workbox/)
 - [PWA Builder](https://www.pwabuilder.com/)
 
 ## Obtenga ayuda

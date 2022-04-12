@@ -22,7 +22,7 @@ how your site can improve on the [Web Vitals](/vitals).
 
 As a refresher on the tools, [Lighthouse](https://github.com/GoogleChrome/lighthouse) is an
 open-source, automated tool for improving the quality of web pages. You can find it in the [Chrome
-DevTools](https://developers.google.com/web/tools/chrome-devtools) suite of debugging tools and run
+DevTools](https://developer.chrome.com/docs/devtools/) suite of debugging tools and run
 it against any web page, public or requiring authentication. You can also find Lighthouse in
 [PageSpeed
 Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com),

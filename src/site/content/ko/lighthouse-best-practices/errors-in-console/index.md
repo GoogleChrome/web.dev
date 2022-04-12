@@ -10,7 +10,7 @@ date: 2019-05-02
 updated: 2019-08-28
 ---
 
-대부분의 브라우저에는 개발자 도구가 내장되어 있습니다. 이러한 개발자 도구에는 일반적으로 [콘솔](https://developers.google.com/web/tools/chrome-devtools/console/)이 포함됩니다. 콘솔은 현재 실행 중인 페이지에 대한 정보를 제공합니다.
+대부분의 브라우저에는 개발자 도구가 내장되어 있습니다. 이러한 개발자 도구에는 일반적으로 [콘솔](https://developer.chrome.com/docs/devtools/console/)이 포함됩니다. 콘솔은 현재 실행 중인 페이지에 대한 정보를 제공합니다.
 
 콘솔에 기록된 메시지는 페이지를 만든 웹 개발자나 브라우저 자체에서 온 것입니다. 모든 콘솔 메시지의 심각도 수준은 `Verbose` , `Info` , `Warning` 또는 `Error` 입니다. `Error` 메시지는 페이지에 해결해야 하는 문제가 있음을 의미합니다.
 
@@ -48,6 +48,6 @@ Chrome DevTools에는 오류 원인을 추적하는 데 도움이 되는 몇 가
 ## 참고자료
 
 - [**브라우저 오류**에 대한 소스 코드가 콘솔 감사에 기록되었습니다](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
-- [콘솔 개요](https://developers.google.com/web/tools/chrome-devtools/console/)
+- [콘솔 개요](https://developer.chrome.com/docs/devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

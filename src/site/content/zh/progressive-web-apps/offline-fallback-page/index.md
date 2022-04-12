@@ -242,6 +242,6 @@ self.addEventListener("fetch", (event) => {
 
 ### 关于使用 Workbox.js 提供离线后备页面的便笺
 
-您可能听说过 [Workbox.js](https://developers.google.com/web/tools/workbox)。Workbox.js 是一组 JavaScript 库，用于向 Web 应用添加离线支持。如果您希望自己编写较少的 Service Worker 代码，则可以仅将 Workbox.js 用于[离线页面](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only)。
+您可能听说过 [Workbox.js](https://developer.chrome.com/docs/workbox/)。Workbox.js 是一组 JavaScript 库，用于向 Web 应用添加离线支持。如果您希望自己编写较少的 Service Worker 代码，则可以仅将 Workbox.js 用于[离线页面](https://developer.chrome.com/docs/workbox/managing-fallback-responses/#offline-page-only)。
 
 接下来，了解针对您的应用[如何定义安装策略](/define-install-strategy/)。
