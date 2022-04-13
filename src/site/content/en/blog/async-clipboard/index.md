@@ -18,7 +18,7 @@ feedback:
   - api
 ---
 
-Over the past few years, browsers have used
+Once upon a time, browsers used
 [`document.execCommand()`](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)
 for clipboard interactions. Though widely supported, this method of cutting and
 pasting came at a cost: clipboard access was synchronous, and could only read
@@ -34,13 +34,14 @@ clipboard access. At the same time, the permissions put in place around
 `document.execCommand()` for clipboard interaction are loosely defined and vary
 between browsers.
 
-The
-[Async Clipboard API](https://www.w3.org/TR/clipboard-apis/#async-clipboard-api)
-addresses these issues, providing a well-defined permissions model that doesn't
-block the page. Safari recently announced  [support for it in version
-13.1](https://webkit.org/blog/10855/). With that, major browsers have a basic
-level of support in place. As of this writing, Firefox only supports text; and
-image support is limited to PNGs in some browsers. If you're interested in using
+The [Async Clipboard
+API](https://www.w3.org/TR/clipboard-apis/#async-clipboard-api) addresses these
+issues, providing a well-defined permissions model that doesn't block the page.
+In mid 2020, Safari announced  [support for it in version
+13.1](https://webkit.org/blog/10855/). Support in Firefox is rather complicated.
+
+
+If you're interested in using
 the API,
 [consult a browser support table](https://developer.mozilla.org/docs/Web/API/Clipboard#Browser_compatibility)
 before proceeding.
