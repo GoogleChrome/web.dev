@@ -33,6 +33,6 @@ Here's what you'll learn:
 So, are you ready to learn responsive design? 
 
 {% Aside %}
-This course was written by <a href="https://twitter.com/adactio">Jeremy Keith</a>, with input and review from <a href="https://twitter.com/rachelandrew">Rachel Andrew</a>, <a href="https://twitter.com/Una">Una Kravets</a>, <a href="https://twitter.com/argyleink">Adam Argyle</a>, and [Camden Bickel](https://twitter.com/camdenbickel).
+This course was written by [Jeremy Keith](https://twitter.com/adactio), with input and review from [Rachel Andrew](https://twitter.com/rachelandrew), [Una Kravets](https://twitter.com/Una), [Adam Argyle](https://twitter.com/argyleink), and [Camden Bickel](https://twitter.com/camdenbickel).
 {% endAside %}
 
