@@ -1057,8 +1057,8 @@ const dialogDeleteObserver = new MutationObserver((mutations, observer) => {
   mutations.forEach(mutation => {
     mutation.removedNodes.forEach(removedNode => {
       if (removedNode.nodeName === 'DIALOG') {
-        dialog.removeEventListener('click', lightDismiss)
-        dialog.removeEventListener('close', dialogClose)
+        removedNode.removeEventListener('click', lightDismiss)
+        removedNode.removeEventListener('close', dialogClose)
         removedNode.dispatchEvent(dialogRemovedEvent)
       }
     })
@@ -1134,8 +1134,8 @@ const dialogDeleteObserver = new MutationObserver((mutations, observer) => {
   mutations.forEach(mutation => {
     mutation.removedNodes.forEach(removedNode => {
       if (removedNode.nodeName === 'DIALOG') {
-        dialog.removeEventListener('click', lightDismiss)
-        dialog.removeEventListener('close', dialogClose)
+        removedNode.removeEventListener('click', lightDismiss)
+        removedNode.removeEventListener('close', dialogClose)
         removedNode.dispatchEvent(dialogRemovedEvent)
       }
     })
