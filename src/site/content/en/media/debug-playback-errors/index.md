@@ -29,7 +29,6 @@ video.addEventListener('error', () => {
 These properties are most useful for telemetry analysis, and may not always provide enough information to debug playback errors. For privacy reasons, the full error text must sometimes be omitted.
 
 To access complete error information use the Chrome DevTools ["Media Panel"] to view media logs. You will find plenty of information such as events, warnings, and error messages that will give you some good hints of the media playback errors.
-Media Panel in Chrome DevTools.
 
 <figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/rD4O3Aqj42MAMxHbBK4X.png", alt="Screenshot of the Media Panel in Chrome DevTools", width="800", height="375" %}
