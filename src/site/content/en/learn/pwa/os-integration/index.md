@@ -115,6 +115,7 @@ On Android with WebAPKs, PWAs are automatically registered as handlers for the m
 {% endAside %}
 
 ## URL protocol handling
+
 URL handling works with standard `https` protocol URLs, but it is possible to use custom URI-schemes, such as `pwa://`. In several operating systems, installed apps gain this ability by apps registering their schemes.
 
 For PWA, this capability is enabled using the [URL protocol handler API](/url-protocol-handler/), available only on desktop devices. You can only allow custom protocols for mobile devices by distributing your PWA on app stores.
