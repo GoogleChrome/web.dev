@@ -110,7 +110,7 @@ function openNewWindow() {
 	window.open("/", "new-window", "width=600,height=600");
 }
 ```
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/CURym4RD66CqcTw4iPl5.png", alt="The same installed PWA with several windows opened on a desktop operating system", width="800", height="580" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/CURym4RD66CqcTw4iPl5.png", alt="The same installed PWA with several windows opened on a desktop operating system.", width="800", height="580" %}
 Calling `open()` within a PWA window on iOS or iPadOS returns `null` and doesn't open a window. Opening new windows on Android creates a new in-app browser for the URL—even if the URL is within the scope of your PWA—that typically doesn't trigger an external browsing experience.
 
 {% Aside 'warning' %}
