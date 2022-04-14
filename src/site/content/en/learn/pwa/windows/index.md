@@ -57,7 +57,7 @@ Currently on all browsers, if your PWA is installed, when you browse to a URL th
 Some features of the in-app browsers are:
 
 * They appear on top of your content.
-* They have a static URL bar showing the current origin, the window's title, and a menu. Typically, they'reit's themed with the `theme_color` of your manifest.
+* They have a static URL bar showing the current origin, the window's title, and a menu. Typically, they're themed with the `theme_color` of your manifest.
 * From the contextual menu, you can open that URL in the browser.
 * Users can close the browser or go back.
 
