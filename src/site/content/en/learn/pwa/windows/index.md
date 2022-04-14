@@ -71,7 +71,7 @@ While the in-app browser is on the screen, your PWA is waiting in the background
 On iOS and iPadOS, the in-app browser uses SafariViewController, a Safari-rendering engine isolated from your PWA storage. Therefore, if the user has a session in Safari, it won't appear in your PWA, but it will appear within an in-app browser in your PWA.
 {% endAside %}
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/Gr4qJUx6hAFMyPLPyfQY.png", alt="An in-app browser on an iPhone when browsing a URL that is out-of-scope within a standalone PWA", width="800", height="370" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/Gr4qJUx6hAFMyPLPyfQY.png", alt="An in-app browser on an iPhone when browsing a URL that is out-of-scope within a standalone PWA.", width="800", height="370" %}
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/UyohW4R5Sy79ffHri8cz.png", alt="An in-app browser on Android when browsing a URL that is out-of-scope within a standalone PWA", width="800", height="1644" %}
 
