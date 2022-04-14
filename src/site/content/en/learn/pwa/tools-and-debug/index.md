@@ -44,7 +44,7 @@ The Simulator app is only available for macOS computers, and it comes with [Xcod
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/aa4SAqNofV2d1nw3btVF.png", alt="Simulator with Safari rendering websites on iPhones and iPad.", width="800", height="376" %}
 
-To launch the app, once you have installed Xcode, you can open the Simulator in the `Xcode` menu, using `Open Developer Tools` > `Simulator`. Once in the simulator, you can open Safari as if you are in a real iPhone or iPad. You can open other devices from the `File` > `Open Simulator` menu.
+To launch the app, once you have installed Xcode, you can open the Simulator in the `Xcode` menu, by selecting `Open Developer Tools` then `Simulator`. Once in the simulator, you can open Safari as if you are in a real iPhone or iPad. You can open other devices by selecting `File` then `Open Simulator` menu.
 
 Some useful shortcuts for web developers while using Simulator to test PWAs are:
 
@@ -168,7 +168,7 @@ Inside `Application`, `Cache` then `Cache Storage`, you can see all the caches s
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WJ0fBXggrFnhifcAIcBb.png", alt="Cache Inspector in Chromium DevTools", width="800", height="491" %}
 
-Also, selectingfrom `Application` then> `Storage`, you can see the current quota used, simulate custom quota storage, and clear all your data, including the service worker registration, using `Clear site data`.
+Also, selectingfrom `Application` then `Storage`, you can see the current quota used, simulate custom quota storage, and clear all your data, including the service worker registration, using `Clear site data`.
 
 #### Background services
 
@@ -176,9 +176,9 @@ Chromium DevTools also has a set of background services event recording tools, f
 
 ### Web app manifest tools
 
-Chromium DevTools has a section for Web App Manifest and installability criteria under `Application` > `Manifest`. In this section, you can check whether the manifest has loaded correctly, the manifest's values, how the icons look, the [app id](https://web.dev/learn/pwa/web-app-manifest/#basic-fields), and a quick checker for [maskable icons](https://web.dev/learn/pwa/web-app-manifest/#maskable-icons).
+Chromium DevTools has a section for Web App Manifest and installability criteria under `Application`, `Manifest`. In this section, you can check whether the manifest has loaded correctly, the manifest's values, how the icons look, the [app id](/learn/pwa/web-app-manifest/#basic-fields), and a quick checker for [maskable icons](/learn/pwa/web-app-manifest/#maskable-icons).
 
-Warnings and errors around [installability criteria](https://web.dev/learn/pwa/installation/#installation-criteria) issues are also shown in this section.
+Warnings and errors around [installability criteria](/learn/pwa/installation/#installation-criteria) issues are also shown in this section.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/uBOt9BBbF15lX7Cxju6t.png", alt="Debugging Web App Manifest in Chromium DevTools.", width="800", height="713" %}
 
@@ -190,7 +190,7 @@ Chromium-based browsers have some flags that may be useful while testing PWAs. C
 
 ### Installation debugging
 
-On Android devices using [WebAPK installation mode](https://web.dev/learn/pwa/installation/#webapks), you can access a list of installed apps by browsing to `about:webapk` on Chromium browsers.
+On Android devices using [WebAPK installation mode](/learn/pwa/installation/#webapks), you can access a list of installed apps by browsing to `about:webapk` on Chromium browsers.
 
 You will see the current update status and request a WebAPK update from here.
 
