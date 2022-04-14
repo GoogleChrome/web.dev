@@ -21,9 +21,8 @@ Before the [File System Access API](/file-system-access/), web apps couldn't do 
 ### Opening a file
 
 To open a file we use the `window.showOpenFilePicker()` method. Note that this method requires a user gesture, such as a button click. Here is the rest of the setup for opening a file:
-* First, capture the [file handle](https://developer.mozilla.org/docs/Web/API/FileSystemHandle) from the file system access's file picker API. This gives you basic information about the file.
-* Next, using the handle's `getFile()` method, you'll get a special kind of [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob) called a [`File`](https://developer.mozilla.org/docs/Web/API/File) that includes additional read-only properties (such as name and last modified date) about the file.
-* Finally, because it's a Blob, Blob methods can be called on it, such as `text()`, to get its content.
+1. Capture the [file handle](https://developer.mozilla.org/docs/Web/API/FileSystemHandle) from the file system access's file picker API. This gives you basic information about the file.
+2. Using the handle's `getFile()` method, you'll get a special kind of [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob) called a [`File`](https://developer.mozilla.org/docs/Web/API/File) that includes additional read-only properties (such as name and last modified date) about the file. Because it's a Blob, Blob methods can be called on it, such as `text()`, to get its content.
 
 ```js
 // Have the user select a file.
