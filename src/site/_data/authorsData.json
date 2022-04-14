@@ -1126,6 +1126,7 @@
   "jlwagner": {
     "github": "malchata",
     "twitter": "malchata",
+    "linkedin": "https://www.linkedin.com/in/malchata/",
     "homepage": "https://jlwagner.net/",
     "country": "US",
     "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qO19NkWfYnvHe2zLkhG.jpg"
@@ -1304,5 +1305,11 @@
     "linkedin": "https://www.linkedin.com/in/jheytompkins/",
     "homepage": "https://jhey.dev/links",
     "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JMkAJAgH01auU1FiapGg.jpeg"
+  },
+  "andreabreanna": {
+    "country": "US",
+    "twitter": "andreabreannany",
+    "linkedin": "https://www.linkedin.com/in/andreabreanna/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8X4Jxtq931g6qIBH5fNK.jpg"
   }
 }
