@@ -146,7 +146,7 @@ variable3; // Declared with const. Cannot be redeclared or updated
 
 [Blocks](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/block) are used to group a single statement or a set of statements together. You can use the `const` or `let` keywords to declare a block-scope local variable. Note that you can't use the `var` keyword to declare variables with block scope.
 
-For example, in this block, the scope for the `name` variable and its `Elizabeth` value is contained within the curly braces. Variables within a block scope aren't available outside of the block.
+For example, in this block, the scope for the `name` variable and its `"Elizabeth"` value is contained within the curly braces. Variables within a block scope aren't available outside of the block.
 
 ```js
 {
