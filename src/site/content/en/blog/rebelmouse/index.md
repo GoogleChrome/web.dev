@@ -35,8 +35,8 @@ In order to illustrate this, we analyzed the audience behavior of a number of si
 - **Superfans:** Users who had at least five (5) sessions or more.
 
 **References:**
-- https://www.hotjar.com/google-analytics/glossary/users
-- https://databox.com/new-vs-returning-visitors
+- [https://www.hotjar.com/google-analytics/glossary/users](https://www.hotjar.com/google-analytics/glossary/users)
+- [https://databox.com/new-vs-returning-visitors](https://databox.com/new-vs-returning-visitors)
 
 The data from the field, gathered by Google Analytics, was overwhelmingly clear. When focusing on loyal visitors, fans, and superfans categories, we found that users are far more likely to stay longer, consume more content, and return more often on sites that receive excellent marks on their Core Web Vitals. Here's a look at some prominent examples:
 
