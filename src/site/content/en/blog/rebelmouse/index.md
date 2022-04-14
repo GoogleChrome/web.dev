@@ -9,6 +9,7 @@ authors:
   - andreabreanna
 date: 2022-04-14
 alt: The RebelMouse mascot set against a blue backdrop. The mascot is a grey mouse with a red kerchief on its head, and is standing in front of a pride flag.
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Y0KflFCo0GclHd9JK8iE.png
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/PVMV1zKjJs4MsJRFIzJs.png
 tags:
   - blog
