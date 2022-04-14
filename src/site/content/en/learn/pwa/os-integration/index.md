@@ -38,9 +38,9 @@ const content = await file.text();
 ### Saving changes
 
 To save changes to a file, you also need a user gesture; then:
-* Use the file handle to create a [`FileSystemWritableFileStream`](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream).
-* Make changes to the stream. This won't update the file in place; instead, a temporary file is typically created.
-* Finally, when you've finished making changes, you close the stream, which moves the changes from temporary to permanent.
+1. Use the file handle to create a [`FileSystemWritableFileStream`](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream).
+1. Make changes to the stream. This won't update the file in place; instead, a temporary file is typically created.
+1. Finally, when you've finished making changes, you close the stream, which moves the changes from temporary to permanent.
 
 Let's see this in code:
 
