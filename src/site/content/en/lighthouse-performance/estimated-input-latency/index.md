@@ -32,7 +32,7 @@ to the end of the trace, which is roughly 5&nbsp;seconds after
 [Time to Interactive](/tti/).
 If your latency is higher than 50&nbsp;ms, users may perceive your app as laggy.
 
-The [RAIL performance model](https://developers.google.com/web/fundamentals/performance/rail)
+The [RAIL performance model](/rail/)
 recommends that apps respond to user input within 100&nbsp;ms,
 while Lighthouse's Estimated Input Latency target score is 50&nbsp;ms. Why?
 Lighthouse uses a proxy metric—availability of the main thread—to measure
@@ -51,7 +51,7 @@ Approximately 90% of users will encounter Lighthouse's reported amount of input 
 To make your app respond to user input faster,
 optimize how your code runs in the browser.
 Check out the series of techniques outlined on Google's
-[Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering/) page.
+[Rendering Performance](/rendering-performance/) page.
 These tips range from offloading computation to web workers to free up the main thread,
 to refactoring your CSS selectors to perform fewer calculations,
 to using CSS properties that minimize the amount of browser-intensive operations.
@@ -77,6 +77,6 @@ are complete within 50&nbsp;ms.
 
 - [Source code for **Estimated Input Latency** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/estimated-input-latency.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
-- [Measure Performance with the RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)
-- [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [Measure Performance with the RAIL Model](/rail/)
+- [Rendering Performance](/rendering-performance/)
 - [Optimize Website Speed With Chrome DevTools](https://developer.chrome.com/docs/devtools/speed/get-started/)

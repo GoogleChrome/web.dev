@@ -38,7 +38,7 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [搜索控制台（速度报告](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
@@ -47,7 +47,7 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 - [灯塔](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 
 ### 在 JavaScript 中测量 FCP
 

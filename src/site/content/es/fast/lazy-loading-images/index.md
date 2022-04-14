@@ -42,7 +42,7 @@ Para obtener más información, consulta [Carga diferida a nivel del navegador p
 
 Para hacer un polyfill de carga diferida de los elementos de `<img>`, usamos JavaScript para verificar si están en la ventana gráfica. Si es así, los atributos de `src` (y algunas veces los atributos de `srcset`) se completan con los URL para el contenido de imagen deseado.
 
-Si has escrito código de carga diferida antes, es posible que hayas logrado tu tarea mediante el uso de controladores de eventos como `scroll` o `resize`. Si bien este enfoque es el más compatible en todos los navegadores, los navegadores modernos ofrecen una forma más eficaz y eficiente de realizar el trabajo de verificar la visibilidad de los elementos a través de [la API de Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver).
+Si has escrito código de carga diferida antes, es posible que hayas logrado tu tarea mediante el uso de controladores de eventos como `scroll` o `resize`. Si bien este enfoque es el más compatible en todos los navegadores, los navegadores modernos ofrecen una forma más eficaz y eficiente de realizar el trabajo de verificar la visibilidad de los elementos a través de [la API de Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/).
 
 {% Aside %} Intersection Observer no es compatible con todos los navegadores, especialmente con IE11 y versiones anteriores. Si la compatibilidad entre navegadores es crucial, asegúrate de leer [la siguiente sección](#images-inline-event-handlersy), que muestra cómo cargar imágenes de forma diferida utilizando controladores de eventos de menor rendimiento (¡pero más compatibles!) de desplazamiento (scroll) y de reajuste (resize) de tamaño. {% endAside %}
 

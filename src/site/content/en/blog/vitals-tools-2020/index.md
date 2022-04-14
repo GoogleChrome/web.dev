@@ -16,7 +16,7 @@ tags:
   - performance
 ---
 
-The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developer.chrome.com/docs/devtools/), [Search Console](https://search.google.com/search-console/about), [web.dev's measure tool](/measure/), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API.
+The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://pagespeed.web.dev/), [Chrome DevTools](https://developer.chrome.com/docs/devtools/), [Search Console](https://search.google.com/search-console/about), [web.dev's measure tool](/measure/), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API.
 
 With Google Search now including Core Web Vitals as the foundation for evaluating [page experience](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html), it's important that these metrics are as available and actionable as possible.
 
@@ -62,7 +62,7 @@ To learn more about the latest updates to Lighthouse, check out our
 
 ### PageSpeed Insights
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI) reports on the lab and field performance of a page on both mobile and desktop devices. The tool provides an overview of how real-world users experience the page (powered by the Chrome UX Report) and a set of actionable recommendations on how a site owner can improve page experience (provided by Lighthouse).
+[PageSpeed Insights](https://pagespeed.web.dev/) (PSI) reports on the lab and field performance of a page on both mobile and desktop devices. The tool provides an overview of how real-world users experience the page (powered by the Chrome UX Report) and a set of actionable recommendations on how a site owner can improve page experience (provided by Lighthouse).
 
 PageSpeed Insights and the [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) have also been upgraded to use Lighthouse 6.0 under the hood and now support measuring Core Web Vitals in both the lab and field sections of the report! Core Web Vitals are annotated with a blue ribbon as shown below.
 

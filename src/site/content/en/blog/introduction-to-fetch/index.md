@@ -27,7 +27,7 @@ There is also a rather fetching [polyfill by GitHub](https://github.com/github/f
 
 If you've never used
 [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-before, check out [Introduction to JavaScript Promises](https://developers.google.com/web/fundamentals/getting-started/primers/promises).
+before, check out [Introduction to JavaScript Promises](/promises/).
 
 ## Basic Fetch Request
 
@@ -269,5 +269,3 @@ H/T [@Nexii](https://twitter.com/Nexii) for pointing this out.
 ### Why is "no-cors" supported in service workers but not the window?
 
 This is due to a security concern, you can [learn more here](https://bugs.chromium.org/p/chromium/issues/detail?id=457157&q=fetch%20no-cors&colspec=ID%20Pri%20M%20Week%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified).
-
-

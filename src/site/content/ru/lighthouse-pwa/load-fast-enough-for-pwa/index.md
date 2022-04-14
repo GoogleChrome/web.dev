@@ -43,4 +43,4 @@ Lighthouse вычисляет, каким будет TTI при медленно
 - [С чего начать анализ производительности времени выполнения](https://developer.chrome.com/docs/devtools/evaluate-performance/).
 - [Запись данных о производительности во время загрузки](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load).
 - [Оптимизация контента](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/).
-- [Производительность визуализации](https://developers.google.com/web/fundamentals/performance/rendering/).
+- [Производительность визуализации](/rendering-performance/).

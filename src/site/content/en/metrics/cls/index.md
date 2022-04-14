@@ -314,7 +314,7 @@ available in the following tools:
 
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
@@ -414,7 +414,7 @@ that it measures the entire lifespan of a page:
 
 To handle such cases, CLS should be reported any time a page is
 background&mdash;in addition to any time it's unloaded (the [`visibilitychange`
-event](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)
+event](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange)
 covers both of these scenarios). And analytics systems receiving this data will
 then need to calculate the final CLS value on the backend.
 

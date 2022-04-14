@@ -108,7 +108,7 @@ continuously audit performance across businesses in the company.
 
 The team used Chrome DevTools to identify which elements were making layout
 shifts on the page.
-[Layout Shift Regions](https://developers.google.com/web/updates/2019/07/devtools)
+[Layout Shift Regions](https://developer.chrome.com/blog/new-in-devtools-77/)
 in DevTools visualizes elements that contribute to CLS by highlighting them with
 a blue rectangle whenever a layout shift happens.
 

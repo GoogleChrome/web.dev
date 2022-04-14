@@ -121,7 +121,7 @@ LCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 ### フィールド測定を実施するためのツール
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
 

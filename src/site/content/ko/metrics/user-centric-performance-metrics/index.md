@@ -93,7 +93,7 @@ tags:
 - **[First input delay(최초 입력 지연, FID)](/fid/):** 사용자가 링크를 클릭하거나, 버튼을 탭하거나, 사용자 지정 JavaScript 기반 컨트롤을 사용하는 등 처음으로 상호 작용할 때부터 해당 상호 작용에 대한 응답으로 브라우저가 실제로 이벤트 핸들러 처리를 시작하기까지의 시간을 측정합니다. *([현장](#in-the-field))*
 - **[Time to Interactive(상호 작용까지의 시간, TTI)](/tti/):** 페이지가 로드되기 시작한 시점부터 시각적으로 렌더링되고, 있는 경우 초기 스크립트가 로드되고, 사용자 입력에 신속하게 안정적으로 응답할 수 있는 시점까지의 시간을 측정합니다. *([실험실](#in-the-lab))*
 - **[Total blocking time(총 차단 시간, TBT)](/tbt/):** 메인 스레드가 입력 응답을 막을 만큼 오래 차단되었을 때 FCP와 TTI 사이 총 시간을 측정합니다. *([실험실](#in-the-lab))*
-- **[Cumulative layout shift(누적 레이아웃 이동, CLS)](/cls/):** 페이지 로드가 시작될 때와 해당 [수명 주기 상태](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)가 숨김으로 변경될 때 사이에 발생하는 모든 예기치 않은 레이아웃 이동의 누적 점수를 측정합니다. *([실험실](#in-the-lab), [현장](#in-the-field))*
+- **[Cumulative layout shift(누적 레이아웃 이동, CLS)](/cls/):** 페이지 로드가 시작될 때와 해당 [수명 주기 상태](https://developer.chrome.com/blog/page-lifecycle-api/)가 숨김으로 변경될 때 사이에 발생하는 모든 예기치 않은 레이아웃 이동의 누적 점수를 측정합니다. *([실험실](#in-the-lab), [현장](#in-the-field))*
 
 이 목록에는 사용자와 관련된 성능의 다양한 측면을 측정하는 메트릭이 포함되어 있지만 모든 것이 포함되어 있지는 않습니다(예: 런타임 응답성과 원활함은 현재 다루지 않음).
 

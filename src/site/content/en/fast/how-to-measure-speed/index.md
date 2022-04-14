@@ -39,6 +39,6 @@ Real-world performance is highly variable due to differences in users' devices, 
 
 ### Other tools
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) provides both lab and field data about a page. It uses Lighthouse to collect and analyze lab data about the page, while real-world field data is based on the Chrome User Experience Report dataset.
+[PageSpeed Insights](https://pagespeed.web.dev/) provides both lab and field data about a page. It uses Lighthouse to collect and analyze lab data about the page, while real-world field data is based on the Chrome User Experience Report dataset.
 
 [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) is a set of web developer tools built directly into the Google Chrome browser. It allows you to profile the runtime of a page, as well as identify and debug performance bottlenecks.

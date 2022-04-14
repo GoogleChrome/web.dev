@@ -29,7 +29,7 @@ The instructions here assume that you're already familiar with
 service workers and the basics of requesting notification permission and sending notifications.
 If you need a refresher on notifications, see the
 [Get started with the Notifications API](/codelab-notifications-get-started)
-codelab. To learn more about service workers, see Matt Gaunt's [Introduction to service workers](https://developers.google.com/web/fundamentals/primers/service-workers).
+codelab. To learn more about service workers, see Matt Gaunt's [Introduction to service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/).
 
 ## Remix the sample app and view it in a new tab
 
@@ -74,7 +74,7 @@ Now let's take a look at the sample app's code in the embedded Glitch on this pa
 1.  In the embedded Glitch, open `public/service-worker.js`.
 
     As the name suggests, you'll add code to the app to register this file as a
-    [service worker](https://developers.google.com/web/fundamentals/primers/service-workers).
+    [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/).
 
     Although the file is not yet in use by the app, it contains some starting code that will print a message to the console when the service worker is activated.
 

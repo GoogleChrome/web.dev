@@ -131,7 +131,7 @@ We will cover ARIA in more detail later, but for now let's use the guide to help
 us add keyboard support to a new component.
 
 Perhaps you're working on some new [Custom
-Elements](https://developers.google.com/web/fundamentals/web-components/customelements) that
+Elements](/custom-elements-v1/) that
 resemble a set of radio buttons, but with your unique take on appearance and
 behavior.
 

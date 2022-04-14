@@ -86,7 +86,7 @@ check the `README.md` in Glitch examples. {% endAside %}
 {% Aside %} Because `<link rel="preload">` requests resources with high
 priority, the browser expects them to be used right away, which triggers
 Console warnings. [Priority
-hints](https://developers.google.com/web/updates/2019/02/priority-hints) will
+hints](/priority-hints/) will
 soon become available in Chrome, which will allow Next.js to indicate lower
 priority for resources that are not needed immediately with `<link rel="preload"
 importance="low">`. {% endAside %}

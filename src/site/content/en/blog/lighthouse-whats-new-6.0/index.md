@@ -21,7 +21,7 @@ It's available in Chrome DevTools, npm (as a Node module and a CLI), or as a bro
 [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) and
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)). It powers many Google
 services, including [web.dev/measure](/measure/) and [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/).
+Insights](https://pagespeed.web.dev/).
 
 Lighthouse 6.0 is available immediately on npm and in [Chrome
 Canary](https://www.google.com/chrome/canary/). Other Google services that leverage Lighthouse will

@@ -250,7 +250,7 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 - [移动表单设计最佳实践](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [更强大的表单控件](/more-capable-form-controls)
 - [创建无障碍表单](https://webaim.org/techniques/forms/)
-- [使用凭证管理 API 简化注册流程](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [使用凭证管理 API 简化注册流程](https://developer.chrome.com/blog/credential-management-api/)
 - [使用 WebOTP API 验证网络上的电话号码](/web-otp)
 
 照片：[@ecowarrioprincess](https://unsplash.com/@ecowarriorprincess)，来源：[Unsplash](https://unsplash.com/photos/lUShu7PHIGA)。

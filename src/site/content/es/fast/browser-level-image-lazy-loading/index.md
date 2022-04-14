@@ -40,7 +40,7 @@ Según [HTTPArchive](https://httparchive.org/reports/page-weight), las imágenes
 
 Actualmente, hay dos formas de aplazar la carga de imágenes fuera de la pantalla:
 
-- Usando la [API de Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+- Usando la [API de Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)
 - Usando los [controladores de eventos de](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way) `scroll`, `resize` o `orientationchange`
 
 Cualquiera de las opciones puede permitir a los desarrolladores incluir la funcionalidad de carga diferida, y muchos desarrolladores han creado bibliotecas de terceros para proporcionar abstracciones que son aún más fáciles de usar. Sin embargo, con la carga diferida compatible directamente con el navegador, no es necesario una biblioteca externa. La carga diferida a nivel del navegador también garantiza que la carga diferida de imágenes siga funcionando incluso si JavaScript está deshabilitado en el cliente.

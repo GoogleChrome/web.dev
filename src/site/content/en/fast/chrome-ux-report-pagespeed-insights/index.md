@@ -12,7 +12,7 @@ tags:
   - performance
 ---
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+[PageSpeed Insights](https://pagespeed.web.dev/)
 (PSI) is a tool for web developers to understand what a page's performance is
 and how to improve it. It uses [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 to audit the page and identify opportunities to improve performance. It also
@@ -25,7 +25,7 @@ and better understand the user experience.
 
 ## Reading the data
 
-To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
+To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://pagespeed.web.dev/)
 and enter the URL of the page you want to test.
 
 {% Img src="image/admin/5bnx9Xt0LT2XWk8Gpy3s.png", alt="Enter a URL to get started on PageSpeed Insights", width="800", height="203" %}

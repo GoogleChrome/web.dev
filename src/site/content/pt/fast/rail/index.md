@@ -91,7 +91,7 @@ O objetivo é responder à entrada em menos de 100 ms, então por que a nossa re
 
 - Em pontos de alta pressão, como animações, a chave é não fazer nada em que você pode e o mínimo absoluto em que você não pode. Sempre que possível, use a resposta de 100 ms para pré-calcular o trabalho caro, de modo que você maximize suas chances de atingir 60 fps.
 
-- Consulte [Desempenho de renderização](https://developers.google.com/web/fundamentals/performance/rendering) para obter várias estratégias de otimização de animação.
+- Consulte [Desempenho de renderização](/rendering-performance/) para obter várias estratégias de otimização de animação.
 
 {% Aside %} Reconheça todos os tipos de animações. As animações não são apenas efeitos de interface do usuário sofisticados. Cada uma dessas interações são consideradas animações:
 

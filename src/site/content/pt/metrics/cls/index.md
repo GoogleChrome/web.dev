@@ -162,7 +162,7 @@ A CLS pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 ### Ferramentas de campo
 
 - [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
@@ -238,7 +238,7 @@ Além dessas exceções, a CLS introduz uma complexidade adicional devido ao fat
 - Os usuários podem manter uma aba aberta por *muito* tempo: dias, semanas, meses. Na verdade, um usuário pode nunca fechar uma aba.
 - Em sistemas operacionais móveis, os navegadores normalmente não executam callbacks de descarregamento de página para abas em segundo plano, dificultando o relato do valor "final".
 
-Para lidar com esses casos, a CLS deve ser relatada sempre que uma página entrar em segundo plano, além de quando for descarregada (o [evento `visibilitychange`](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange) cobre os dois cenários). E sistemas de análise que recebem esses dados precisarão calcular o valor da CLS final no back-end.
+Para lidar com esses casos, a CLS deve ser relatada sempre que uma página entrar em segundo plano, além de quando for descarregada (o [evento `visibilitychange`](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange) cobre os dois cenários). E sistemas de análise que recebem esses dados precisarão calcular o valor da CLS final no back-end.
 
 Em vez de memorizar e lidar com todos esses casos você mesmo, os desenvolvedores podem usar a [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals) para medir a CLS, que é responsável por tudo o que foi mencionado acima:
 

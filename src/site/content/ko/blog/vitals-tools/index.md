@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-최근에 발표된 [Web Vitals](/vitals/) 이니셔티브는 모든 사이트가 웹에서 뛰어난 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합적인 지침을 제공합니다. 이제 **웹 개발자가 즐 겨 사용하는 Google의 모든 인기 도구가 Core Web Vitals 측정을 지원**하여 사용자 경험 문제를 보다 쉽게 진단하고 수정할 수 있게 되었습니다. 이러한 도구에는 [Lighthouse](https://github.com/GoogleChrome/lighthouse) , [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) , [Chrome DevTools](https://developer.chrome.com/docs/devtools/) , [Search Console](https://search.google.com/search-console/about) , [web.dev의 측정 도구](/measure/) , [Web Vitals Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) 및 새로운 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API가 포함됩니다.
+최근에 발표된 [Web Vitals](/vitals/) 이니셔티브는 모든 사이트가 웹에서 뛰어난 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합적인 지침을 제공합니다. 이제 **웹 개발자가 즐 겨 사용하는 Google의 모든 인기 도구가 Core Web Vitals 측정을 지원**하여 사용자 경험 문제를 보다 쉽게 진단하고 수정할 수 있게 되었습니다. 이러한 도구에는 [Lighthouse](https://github.com/GoogleChrome/lighthouse) , [PageSpeed Insights](https://pagespeed.web.dev/) , [Chrome DevTools](https://developer.chrome.com/docs/devtools/) , [Search Console](https://search.google.com/search-console/about) , [web.dev의 측정 도구](/measure/) , [Web Vitals Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) 및 새로운 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API가 포함됩니다.
 
 이제 Google 검색에 Core Web Vitals가 [페이지 경험](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 평가의 기초로 포함되므로 이러한 메트릭을 가능한 한 사용 및 실행 가능하게 만드는 것이 중요합니다.
 
@@ -52,7 +52,7 @@ Lighthouse의 최신 업데이트에 대해 자세히 알아보려면 [Lighthous
 
 ### PageSpeed Insights
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)(PSI)는 모바일 및 데스크톱 장치 모두에서 페이지의 실험실 및 현장 성능에 대해 보고합니다. 이 도구는 실제 사용자가 페이지를 경험하는 방식에 대한 개요(Chrome UX Report로 제공)와 사이트 소유자가 페이지 경험을 개선하기 위해 실행 가능한 권장 사항(Lighthouse로 제공)을 제공합니다.
+[PageSpeed Insights](https://pagespeed.web.dev/)(PSI)는 모바일 및 데스크톱 장치 모두에서 페이지의 실험실 및 현장 성능에 대해 보고합니다. 이 도구는 실제 사용자가 페이지를 경험하는 방식에 대한 개요(Chrome UX Report로 제공)와 사이트 소유자가 페이지 경험을 개선하기 위해 실행 가능한 권장 사항(Lighthouse로 제공)을 제공합니다.
 
 PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) 역시 내부에서 Lighthouse 6.0을 사용하도록 업그레이드되었으며 이제 보고서의 실험실 및 필드 섹션 모두에서 Core Web Vitals 측정을 지원합니다! Core Web Vitals에는 아래와 같이 파란색 리본이 표시됩니다.
 

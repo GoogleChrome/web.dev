@@ -60,7 +60,7 @@ tools that provide alternative ways to accomplish two things:
 
 Using Workbox when building your service worker is optional—there are a number
 of guides out there that walk through
-[common caching strategies](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/)
+[common caching strategies](/offline-cookbook/)
 from a "vanilla" service worker perspective. If you do decide to use Workbox,
 here are some of its benefits.
 
@@ -101,7 +101,7 @@ missing from certain browsers.
 +  The
     [workbox-background-sync module](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/)
     uses the
-    [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync)
+    [Background Sync API](https://developer.chrome.com/blog/background-sync/)
     if possible, and if not, falls back to retrying queued events each time the
     service worker starts up.
 

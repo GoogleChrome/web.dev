@@ -121,7 +121,7 @@ LCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в полевых условиях
 
 - Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 

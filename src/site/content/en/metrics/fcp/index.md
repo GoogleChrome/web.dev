@@ -61,7 +61,7 @@ available in the following tools:
 
 ### Field tools
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Search Console (Speed
@@ -72,7 +72,7 @@ available in the following tools:
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Measure FCP in JavaScript
 

@@ -41,6 +41,6 @@ El rendimiento en el mundo real es muy variable debido a las diferencias en los 
 
 ### Otras herramientas
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) proporciona datos de laboratorio y de campo sobre una página. Utiliza Lighthouse para recopilar y analizar datos de laboratorio sobre la página, mientras que los datos de campo del mundo real se basan en el conjunto de datos del Informe de experiencia del usuario de Chrome.
+[PageSpeed Insights](https://pagespeed.web.dev/) proporciona datos de laboratorio y de campo sobre una página. Utiliza Lighthouse para recopilar y analizar datos de laboratorio sobre la página, mientras que los datos de campo del mundo real se basan en el conjunto de datos del Informe de experiencia del usuario de Chrome.
 
 [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) son un conjunto de herramientas para desarrolladores web integradas directamente en el navegador Google Chrome. Le permite perfilar el tiempo de ejecución de una página, así como identificar y depurar cuellos de botella de rendimiento.

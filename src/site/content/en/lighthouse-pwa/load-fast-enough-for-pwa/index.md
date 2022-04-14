@@ -54,4 +54,4 @@ If the time to interactive is more than 10&nbsp;seconds, the audit fails.
 - [Get Started With Analyzing Runtime Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [Record load performance](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
 - [Optimizing Content Efficiency](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [Rendering Performance](/rendering-performance/)

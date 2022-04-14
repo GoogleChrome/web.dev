@@ -4,7 +4,7 @@ title: Delivering Fast and Light Applications with Save-Data
 authors:
   - ilyagrigorik
   - dgash
-  - jeremywagner
+  - jlwagner
 description: >
   The Save-Data client hint request header available in Chrome, Opera, and Yandex browsers enables developers to deliver fast and light applications to users who have opted-in to 'data saving' mode in the browser.
 date: 2016-02-18

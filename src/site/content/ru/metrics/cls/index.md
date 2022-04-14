@@ -162,7 +162,7 @@ CLS можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в полевых условиях
 
 - Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (отчет Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
@@ -238,7 +238,7 @@ new PerformanceObserver((entryList) => {
 - Пользователи могут держать вкладку открытой в течение *очень* долгого временидней, недель, месяцев. Фактически пользователь может никогда не закрыть вкладку.
 - В мобильных операционных системах браузеры обычно не запускают обратные вызовы выгрузки страницы для фоновых вкладок, что затрудняет сообщение «окончательного» значения.
 
-Чтобы справиться с такими случаями, CLS следует сообщать каждый раз, когда страница находится в фоновом режиме, в дополнение к любому времени, когда она выгружается ([событие `visibilitychange`](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange) охватывает оба этих сценария). Системы аналитики, получающие эти данные, должны будут затем вычислить окончательное значение CLS на бэкенде.
+Чтобы справиться с такими случаями, CLS следует сообщать каждый раз, когда страница находится в фоновом режиме, в дополнение к любому времени, когда она выгружается ([событие `visibilitychange`](https://developer.chrome.com/blog/page-lifecycle-api/#event-visibilitychange) охватывает оба этих сценария). Системы аналитики, получающие эти данные, должны будут затем вычислить окончательное значение CLS на бэкенде.
 
 Вместо того чтобы запоминать все эти тонкости, разработчики могут использовать для измерения CLS [JavaScript-библиотеку `web-vitals`](https://github.com/GoogleChrome/web-vitals), которая учитывает вышеупомянутые моменты:
 

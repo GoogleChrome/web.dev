@@ -115,7 +115,7 @@ tags:
 
 다른 접근 방식은 사용자가 페이지의 해당 섹션으로 스크롤할 때만 타사 콘텐츠를 로드하는 것입니다.
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)는 요소가 브라우저의 뷰포트에 들어오거나 나갈 때 효율적으로 감지하는 브라우저 API이며 이 기술을 구현하는 데 사용할 수 있습니다. [lazysizes](/use-lazysizes-to-lazyload-images/)는 [`iframes`](http://afarkas.github.io/lazysizes/#examples)을 지연 로드하는 인기 있는 JavaScript 라이브러리입니다. YouTube 임베드 및 [위젯](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)을 지원합니다. IntersectionObserver에 대한 [선택적 지원](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)도 있습니다.
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)는 요소가 브라우저의 뷰포트에 들어오거나 나갈 때 효율적으로 감지하는 브라우저 API이며 이 기술을 구현하는 데 사용할 수 있습니다. [lazysizes](/use-lazysizes-to-lazyload-images/)는 [`iframes`](http://afarkas.github.io/lazysizes/#examples)을 지연 로드하는 인기 있는 JavaScript 라이브러리입니다. YouTube 임베드 및 [위젯](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)을 지원합니다. IntersectionObserver에 대한 [선택적 지원](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)도 있습니다.
 
 {% Aside 'caution' %} 자바스크립트로 리소스를 지연 로드할 때 주의하세요. 불안정한 네트워크 상태로 인해 JavaScript가 로드되지 않으면 리소스가 전혀 로드되지 않습니다. {% endAside %}
 

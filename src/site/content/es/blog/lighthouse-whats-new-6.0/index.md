@@ -15,7 +15,7 @@ tags:
 
 ¡Hoy estamos lanzamos Lighthouse 6.0!
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse/) es una herramienta automatizada de auditoría de sitios web que ayuda a los desarrolladores con oportunidades y diagnósticos para mejorar la experiencia del usuario de sus sitios. Está disponible en Chrome DevTools, npm (como módulo de nodo y como CLI) o como extensión del navegador (en [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) y [Firefox](https://addons.mozilla.org/firefox/addon/google-lighthouse/)). Es la [base](/measure/) de muchos servicios de Google, incluyendo web.dev/measure y [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[Lighthouse](https://github.com/GoogleChrome/lighthouse/) es una herramienta automatizada de auditoría de sitios web que ayuda a los desarrolladores con oportunidades y diagnósticos para mejorar la experiencia del usuario de sus sitios. Está disponible en Chrome DevTools, npm (como módulo de nodo y como CLI) o como extensión del navegador (en [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) y [Firefox](https://addons.mozilla.org/firefox/addon/google-lighthouse/)). Es la [base](/measure/) de muchos servicios de Google, incluyendo web.dev/measure y [PageSpeed Insights](https://pagespeed.web.dev/).
 
 Lighthouse 6.0 está disponible inmediatamente en npm y en [Chrome Canary](https://www.google.com/chrome/canary/). Otros servicios de Google que aprovechan Lighthouse recibirán la actualización a fin de mes. Llegará a Chrome Stable en Chrome 84 (mediados de julio).
 

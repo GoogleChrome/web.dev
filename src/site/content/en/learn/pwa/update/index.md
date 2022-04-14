@@ -108,7 +108,7 @@ Even though it is not recommended, the new service worker can skip that waiting 
 
 {% Aside 'caution' %}
 `skipWaiting()` means that your new service worker is probably controlling pages that were loaded with an older version. This means some of your page's fetches will have been handled by your old service worker, but your new service worker will be handling subsequent fetches. If this might prevent your app from working, don't use `skipWaiting()`.
-This warning comes from [service worker lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle). Check out the article for more best practice advice.
+This warning comes from [service worker lifecycle](/service-worker-lifecycle/). Check out the article for more best practice advice.
 {% endAside %}
 
 ```js
@@ -210,7 +210,7 @@ The Badging API works on a best-effort mechanism; the browser will do its best t
 
 ##  Resources
 
-- [Service Worker Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [Service Worker Lifecycle](/service-worker-lifecycle/)
 - [How Chrome handles updates to the web app manifest](/manifest-updates/)
 - [Synchronize and update a PWA in the Background](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/background-syncs)
 - [Richer offline experiences with the Periodic Background Sync API](/periodic-background-sync/)

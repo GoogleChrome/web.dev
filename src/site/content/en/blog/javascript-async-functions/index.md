@@ -36,7 +36,7 @@ get the value back. If the promise rejects, the rejected value is thrown.
 
 {% Aside %}
 If you're unfamiliar with promises, check out [our
-promises guide](https://developers.google.com/web/fundamentals/getting-started/primers/promises).
+promises guide](/promises/).
 {% endAside %}
 
 ## Example: Logging a fetch

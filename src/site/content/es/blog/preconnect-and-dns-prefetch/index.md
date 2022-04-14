@@ -42,7 +42,7 @@ Informar al navegador de su intención es tan simple como agregar una etiqueta `
 
 {% Img src="image/admin/988BgvmiVEAp2YVKt2jq.png", alt="Un diagrama que muestra cómo la descarga no se inicia durante un tiempo después de que se establece la conexión.", width="800", height="539" %}
 
-Puede acelerar el tiempo de carga entre 100 y 500 ms al establecer conexiones tempranas con importantes orígenes de terceros. Estas cifras pueden parecer pequeñas, pero marcan la diferencia en la forma en que los [usuarios perciben el rendimiento de la página web](https://developers.google.com/web/fundamentals/performance/rail#ux).
+Puede acelerar el tiempo de carga entre 100 y 500 ms al establecer conexiones tempranas con importantes orígenes de terceros. Estas cifras pueden parecer pequeñas, pero marcan la diferencia en la forma en que los [usuarios perciben el rendimiento de la página web](/rail/#focus-on-the-user).
 
 {% Aside %} chrome.com [mejoró el tiempo de interacción](https://twitter.com/addyosmani/status/1090874825286000640) en casi 1 s al preconectarse a orígenes importantes. {% endAside %}
 

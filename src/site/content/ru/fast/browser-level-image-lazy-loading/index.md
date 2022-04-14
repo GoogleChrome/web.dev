@@ -38,7 +38,7 @@ feedback:
 
 В настоящее время есть два способа отложить загрузку скрытых изображений:
 
-- использование [API Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver);
+- использование [API Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/);
 - использование [обработчиков событий](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way) `scroll`, `resize` или `orientationchange`.
 
 Любой из этих вариантов позволяет разработчикам добавить функциональность отложенной загрузки. Кроме того, многие разработчики создали сторонние библиотеки, предоставляющие слои абстракций, которые еще проще использовать. Однако если отложенная загрузка поддерживается непосредственно браузером, то необходимость во внешней библиотеке отпадает. Отложенная загрузка изображений на уровне браузера гарантирует, что эта функция будет работать, даже если JavaScript отключен на клиенте.

@@ -71,7 +71,7 @@ O [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report) é 
 
 Algumas métricas de desempenho podem ser calculadas quando a página termina de carregar, enquanto outras (como CLS) consideram toda a vida útil da página e só produzem um resultado final quando a página começa a ser descarregada.
 
-Isto pode ser problemático, já que os eventos `beforeunload` e `unload` não são confiáveis (especialmente em dispositivos móveis) e seu uso [não](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid) é recomendado (pois podem impedir que uma página seja elegível para o [Cache Back-Forward](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache) ).
+Isto pode ser problemático, já que os eventos `beforeunload` e `unload` não são confiáveis (especialmente em dispositivos móveis) e seu uso [não](https://developer.chrome.com/blog/page-lifecycle-api/#legacy-lifecycle-apis-to-avoid) é recomendado (pois podem impedir que uma página seja elegível para o [Cache Back-Forward](https://developer.chrome.com/blog/page-lifecycle-api/#what-is-the-back-forward-cache) ).
 
 Para métricas que rastreiam toda a vida útil de uma página, é melhor enviar qualquer que seja o valor atual da métrica durante o evento `visibilitychange`, sempre que o estado de visibilidade da página mudar para `hidden`. Isto ocorre porque, tão logo o estado de visibilidade da página mudar para `hidden`, não haverá garantia de que qualquer script nessa página poderá ser executado novamente. Isto é particularmente verdadeiro em sistemas operacionais móveis em que o próprio aplicativo do navegador pode ser fechado sem que nenhum callback de página seja disparado.
 

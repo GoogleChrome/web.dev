@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-先日発表された [Web Vitals](/vitals/) イニシアチブでは、すべてのサイトが Web 上で優れたユーザーエクスペリエンスを提供するために不可欠となる品質シグナルに関する統一的なガイダンスを提供させていただきました。そしてこのたび、**Web 開発者向けに提供されている Google の人気ツールのすべてで Core Web Vitals の測定がサポート**されるようになり、ユーザー エクスペリエンスに関する問題をより簡単に診断および修正できるようになりました。これには、[Lighthouse](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)、[Chrome DevTools](https://developer.chrome.com/docs/devtools/)、[Search Console](https://search.google.com/search-console/about)、[web.dev の測定ツール](/measure/)、[Web Vitals Chrome 拡張機能](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)、そして新しい [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API が含まれています。
+先日発表された [Web Vitals](/vitals/) イニシアチブでは、すべてのサイトが Web 上で優れたユーザーエクスペリエンスを提供するために不可欠となる品質シグナルに関する統一的なガイダンスを提供させていただきました。そしてこのたび、**Web 開発者向けに提供されている Google の人気ツールのすべてで Core Web Vitals の測定がサポート**されるようになり、ユーザー エクスペリエンスに関する問題をより簡単に診断および修正できるようになりました。これには、[Lighthouse](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://pagespeed.web.dev/)、[Chrome DevTools](https://developer.chrome.com/docs/devtools/)、[Search Console](https://search.google.com/search-console/about)、[web.dev の測定ツール](/measure/)、[Web Vitals Chrome 拡張機能](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)、そして新しい [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API が含まれています。
 
 Google 検索には、[ページ エクスペリエンス](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html)を評価するための基盤として Core Web Vitals が含まれるようになりました。これらの指標が可能な限りいつでも利用可能で、実用的であることはとても重要です。
 
@@ -52,7 +52,7 @@ Lighthouse の最新のアップデートについては、「[Lighthouse 6.0 �
 
 ### PageSpeed Insights
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI) は、モバイル デバイスおよびデスクトップ デバイスにおける、ラボ環境や実際のユーザー環境でのパフォーマンスをレポートします。このツールは、特定のページで行われた実際のユーザー エクスペリエンスに関する概要情報 (Chrome UX Report を活用) と、サイトの所有者によるページのユーザー エクスペリエンスの改善に役立つ実用的な推奨事項 (Lighthouse を活用) を提供します。
+[PageSpeed Insights](https://pagespeed.web.dev/) (PSI) は、モバイル デバイスおよびデスクトップ デバイスにおける、ラボ環境や実際のユーザー環境でのパフォーマンスをレポートします。このツールは、特定のページで行われた実際のユーザー エクスペリエンスに関する概要情報 (Chrome UX Report を活用) と、サイトの所有者によるページのユーザー エクスペリエンスの改善に役立つ実用的な推奨事項 (Lighthouse を活用) を提供します。
 
 PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) も内部で Lighthouse 6.0 を使用するようにアップグレードされており、レポートのラボ セクションおよびフィールド セクションの両方で Core Web Vitals の測定をサポートするようになりました。Core Web Vitals は、以下のように青いリボンで表示されています。
 

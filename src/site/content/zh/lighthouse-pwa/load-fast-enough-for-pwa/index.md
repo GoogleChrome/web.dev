@@ -43,4 +43,4 @@ Lighthouse 会计算慢速 4G 网络连接上的 TTI。如果交互时间超过 
 - [分析运行时性能入门](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [记录负载性能](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
 - [优化内容效率](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [渲染性能](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [渲染性能](/rendering-performance/)

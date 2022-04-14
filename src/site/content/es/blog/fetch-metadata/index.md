@@ -19,7 +19,7 @@ feedback:
 
 ## ¿Por qué debería preocuparse por aislar sus recursos web?
 
-Muchas aplicaciones web son vulnerables a ataques de [origen cruzado](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22), como [falsificación de solicitudes entre sitios](https://portswigger.net/web-security/csrf) (CSRF), [inclusión de scripts entre sitios](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), ataques de tiempo, [fugas de información de origen cruzado](https://arxiv.org/pdf/1908.02204.pdf) o ataques de canal lateral de ejecución especulativa [(Spectre)](https://developers.google.com/web/updates/2018/02/meltdown-spectre).
+Muchas aplicaciones web son vulnerables a ataques de [origen cruzado](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22), como [falsificación de solicitudes entre sitios](https://portswigger.net/web-security/csrf) (CSRF), [inclusión de scripts entre sitios](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), ataques de tiempo, [fugas de información de origen cruzado](https://arxiv.org/pdf/1908.02204.pdf) o ataques de canal lateral de ejecución especulativa [(Spectre)](https://developer.chrome.com/blog/meltdown-spectre/).
 
 Los encabezados de solicitud de [Fetch Metadata (obtención de metadatos)](https://www.w3.org/TR/fetch-metadata/) permiten implementar un sólido mecanismo de defensa a profundidad (una política de aislamiento de recursos) para proteger su aplicación contra estos ataques comunes de origen cruzado.
 

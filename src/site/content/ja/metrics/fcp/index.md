@@ -38,7 +38,7 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### フィールド測定を実施するためのツール
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Search Console (Core Web Vitals Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
@@ -47,7 +47,7 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### JavaScript を使用して FCP を測定する
 

@@ -142,7 +142,7 @@ processing time:
   your chances of hitting 60&nbsp;fps.
 
 * See [Rendering
-  Performance](https://developers.google.com/web/fundamentals/performance/rendering)
+  Performance](/rendering-performance/)
   for various animation optimization strategies.
 
 {% Aside %} Recognize all the types of animations. Animations aren't just fancy

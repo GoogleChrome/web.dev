@@ -56,7 +56,7 @@ Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) 
 
 [用户代理客户端提示](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity)使您能够通过更加保护隐私的方式访问相同的信息，进而使浏览器能够最终降低用户代理字符串默认公布所有内容的程度。[客户端提示](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints)会强制执行一个模型，其中，服务器必须向浏览器询问有关客户端的一组数据（提示），而浏览器通过应用自己的政策或用户配置来确定返回哪些数据。这意味着**所有**用户代理信息现在不再会被默认公开，而是会以显式的、可审计的方式得到访问管理。开发者还将得益于一个更简单的 API 而不再需要编写正则表达式！
 
-当前这组客户端提示主要描述了浏览器的显示和连接功能。您可以在[使用客户端提示实现自动化资源选择](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)中探索详细信息，但我先在这里对该过程做一个快速回顾。
+当前这组客户端提示主要描述了浏览器的显示和连接功能。您可以在[使用客户端提示实现自动化资源选择](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/)中探索详细信息，但我先在这里对该过程做一个快速回顾。
 
 服务器通过标头请求特定的客户端提示：
 

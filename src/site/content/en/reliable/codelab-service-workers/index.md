@@ -56,9 +56,9 @@ don't automatically update. So it's a best practice to call
 Second, when you register a service worker, the browser runs the code in your
 `service-worker.js` file, and may potentially start downloading URLs to populate
 caches, depending on the code in your service worker's
-[`install`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install)
+[`install`](/service-worker-lifecycle/#install)
 and
-[`activate`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate)
+[`activate`](/service-worker-lifecycle/#activate)
 event handlers.
 
 Running additional code and downloading assets can use up
@@ -90,7 +90,7 @@ if ('serviceWorker' in navigator) {
 
 Your `service-worker.js` file is where all the logic for your service worker
 implementation would normally go. You'd use a mix of the service worker
-[lifecycle events](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle),
+[lifecycle events](/service-worker-lifecycle/),
 the
 [Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage),
 and knowledge about your web app's network traffic to create a perfectly crafted
@@ -159,7 +159,7 @@ windows and opening a new one.
 
 One of the key concepts to understand when developing with service workers is
 the idea of
-[an update flow](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates).
+[an update flow](/service-worker-lifecycle/#updates).
 
 After your users visit a web app which registers a service worker, they'll end
 up with the code for the current copy of `service-worker.js` installed on their
@@ -199,7 +199,7 @@ This shows that there are two versions of your service worker installed at this
 point. The previous version, which was already activated, is running and in
 control of the current page. The updated version of the service worker is listed
 right below. It's in the
-[`waiting` state](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting),
+[`waiting` state](/service-worker-lifecycle/#waiting),
 and will remain waiting until all of the open tabs that are controlled by the
 old service worker are closed.
 
@@ -211,7 +211,7 @@ previous instances of your web app.
 
 {% Aside %}
 If you don't want to wait, it's possible to
-[call `skipWaiting()`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase)
+[call `skipWaiting()`](/service-worker-lifecycle/#skip-the-waiting-phase)
 inside of your service worker (usually in the `install` handler), or to simulate
 that behave by clicking on the `skipWaiting` link in DevTools.
 {% endAside %}

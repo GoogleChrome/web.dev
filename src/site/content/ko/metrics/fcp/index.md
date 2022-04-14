@@ -38,7 +38,7 @@ FCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Search Console(Speed Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
@@ -47,7 +47,7 @@ FCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### JavaScript에서 FCP 측정
 

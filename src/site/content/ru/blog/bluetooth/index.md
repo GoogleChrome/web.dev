@@ -52,7 +52,7 @@ stack_overflow_tag: web-bluetooth
 
 ### Требуется жест пользователя
 
-В целях безопасности обнаружение Bluetooth-устройств с помощью `navigator.bluetooth.requestDevice` должно запускаться [жестом пользователя](https://html.spec.whatwg.org/multipage/interaction.html#activation), например, касанием или щелчком мыши. Речь идет о прослушивании событий [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events), `click` и `touchend`.
+В целях безопасности обнаружение Bluetooth-устройств с помощью `navigator.bluetooth.requestDevice` должно запускаться [жестом пользователя](https://html.spec.whatwg.org/multipage/interaction.html#activation), например, касанием или щелчком мыши. Речь идет о прослушивании событий [`pointerup`](https://developer.chrome.com/blog/pointer-events/), `click` и `touchend`.
 
 ```js
 button.addEventListener('pointerup', function(event) {

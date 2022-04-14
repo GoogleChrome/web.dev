@@ -38,7 +38,7 @@ De acordo com o [HTTPArchive](https://httparchive.org/reports/page-weight), as i
 
 Atualmente, há duas maneiras de adiar o carregamento de imagens fora da tela:
 
-- Usando a [API Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+- Usando a [API Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)
 - Usando `scroll`, `resize` ou handlers para o evento `orientationchange` [](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
 
 Qualquer uma das opções permite que os desenvolvedores incluam a funcionalidade lazy-loading, e muitos desenvolvedores têm criado bibliotecas de terceiros para fornecer abstrações que são ainda mais fáceis de usar. Com o lazy-loading suportado diretamente pelo navegador, no entanto, não há necessidade de uma biblioteca externa. O lazy-loading no nível do navegador também garante que o carregamento adiado de imagens ainda funcione, mesmo se o JavaScript estiver desabilitado no cliente.

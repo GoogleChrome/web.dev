@@ -81,7 +81,7 @@ El Service Worker puede finalizar mientras se descargan los niveles 11 a 20, ya 
 
 **Ideal para:** limpieza y migración.
 
-Una vez que se ha instalado un nuevo Service Worker y no se está utilizando una versión anterior, se activa la nueva y se obtiene un evento `activate`. Debido a que la versión anterior no está disponible, es un buen momento para manejar las [migraciones de esquemas en IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices) y también eliminar las cachés no utilizadas.
+Una vez que se ha instalado un nuevo Service Worker y no se está utilizando una versión anterior, se activa la nueva y se obtiene un evento `activate`. Debido a que la versión anterior no está disponible, es un buen momento para manejar las [migraciones de esquemas en IndexedDB](/indexeddb-best-practices/) y también eliminar las cachés no utilizadas.
 
 ```js
 self.addEventListener('activate', function (event) {
@@ -244,7 +244,7 @@ self.addEventListener('notificationclick', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tojpjg0cvZZVvZWStG81.png", alt="Al sincronizar en segundo plano.", width="800", height="219" %}<figcaption> Al sincronizar en segundo plano.</figcaption></figure>
 
-[La sincronización en segundo plano](https://developers.google.com/web/updates/2015/12/background-sync) es otra característica construida sobre Service Worker. Le permite solicitar la sincronización de datos en una única instancia o en un intervalo (extremadamente heurístico). Esto sucede incluso cuando el usuario no tiene una pestaña abierta en su sitio. Solo activa al Service Worker. Solicite permiso para hacer esto desde una página y se le enviará una solicitud al usuario.
+[La sincronización en segundo plano](https://developer.chrome.com/blog/background-sync/) es otra característica construida sobre Service Worker. Le permite solicitar la sincronización de datos en una única instancia o en un intervalo (extremadamente heurístico). Esto sucede incluso cuando el usuario no tiene una pestaña abierta en su sitio. Solo activa al Service Worker. Solicite permiso para hacer esto desde una página y se le enviará una solicitud al usuario.
 
 **Ideal para:** actualizaciones no urgentes, especialmente aquellas que ocurren con tanta regularidad que un mensaje push por actualización sería demasiado para los usuarios, como líneas de tiempo de redes sociales o artículos de noticias.
 

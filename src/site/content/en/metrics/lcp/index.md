@@ -257,7 +257,7 @@ available in the following tools:
 
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)

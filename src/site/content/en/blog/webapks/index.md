@@ -158,10 +158,10 @@ Information on how a WebAPK is updated has moved to
 
 ## Frequently asked questions
 
-What icons are used to generate the splash screen? : 
+What icons are used to generate the splash screen? :
 
 : We recommend you provide at least two icons:
-[192px and 512px](https://developers.google.com/web/fundamentals/web-app-manifest/#splash-screen) for the splash screen. 
+[192px and 512px](https://developers.google.com/web/fundamentals/web-app-manifest/#splash-screen) for the splash screen.
 We heard from you that icons
 on the splash screen were too small. WebAPKs generated in Chrome 71 or later
 will show a larger icon on the splash screen. No action is required, as
@@ -178,11 +178,11 @@ Will my installed site's storage be cleared if the user clears Chrome's cache?
 
 : Yes.
 
-Will my app be re-installed when I get a new device? 
+Will my app be re-installed when I get a new device?
 
 : Not at this time, but we think it is an important area and we are
 investigating ways to make it work.
-  
+
 How are permissions handled? Will I see the Chrome prompt or Android's?
 
 : Permissions will still be managed through Chrome. Users will see the Chrome
@@ -198,17 +198,16 @@ Does this use the WebView?
 
 : No, the site opens in the version of Chrome the user added the site from.
 
-Can we upload the APKs that are created to the Play Store? 
+Can we upload the APKs that are created to the Play Store?
 
-: No. If you want to upload your own APK, check out[Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity/).
+: No. If you want to upload your own APK, check out[Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
 Are these listed in the Play Store?
 
 : No. If you want to upload your own APK for listing in the Play Store, check
-out [Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity/).
+out [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
 I am a developer of another browser on Android, can I have this seamless install process? :
 
 : We are working on it. We are committed to making this available to all
 browsers on Android and we will have more details soon.
-

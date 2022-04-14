@@ -9,7 +9,7 @@ date: 2020-07-07
 
 Неиспользуемый JavaScript может замедлить скорость загрузки вашей страницы:
 
-- Если JavaScript [блокирует рендеринг](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript), браузер должен загрузить, проанализировать, скомпилировать и оценить скрипт, прежде чем он сможет продолжить всю остальную работу, необходимую для рендеринга страницы.
+- Если JavaScript [блокирует рендеринг](/critical-rendering-path-adding-interactivity-with-javascript/), браузер должен загрузить, проанализировать, скомпилировать и оценить скрипт, прежде чем он сможет продолжить всю остальную работу, необходимую для рендеринга страницы.
 - Даже если JavaScript является асинхронным (т. е. не блокирует рендеринг), код во время загрузки конкурирует за пропускную способность с другими ресурсами, что значительно снижает производительность. Отправка неиспользованного кода по сети также расточительна для мобильных пользователей, у которых нет безлимитных тарифных планов.
 
 ## Причины плохих результатов проверки неиспользуемого JavaScript
@@ -70,7 +70,7 @@ date: 2020-07-07
 
 - [Исходный код для проверки **Remove unused code** (Удалите неиспользуемый код)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js).
 - [Удалите неиспользуемый код](/remove-unused-code/).
-- [Добавление интерактивности с помощью JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript).
+- [Добавление интерактивности с помощью JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/).
 - [Разделение кода](https://bundlers.tooling.report/code-splitting/).
 - [Устранение мертвого кода](https://bundlers.tooling.report/transformations/dead-code/).
 - [Мертвый импортированный код](https://bundlers.tooling.report/transformations/dead-code-dynamic/).

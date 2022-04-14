@@ -22,7 +22,7 @@ La auditoría falla si `window.innerWidth` no es igual a `window.outerWidth`.
 
 ## Cómo hacer que tu página se ajuste a las pantallas de los dispositivos móviles
 
-Esta auditoría es una forma indirecta de determinar si tu página está optimizada para dispositivos móviles. Consulta los [conceptos básicos del diseño web responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/) de Google para obtener una descripción general de cómo crear una página compatible con dispositivos móviles.
+Esta auditoría es una forma indirecta de determinar si tu página está optimizada para dispositivos móviles. Consulta los [conceptos básicos del diseño web responsivo](/responsive-web-design-basics/) de Google para obtener una descripción general de cómo crear una página compatible con dispositivos móviles.
 
 Puedes ignorar esta auditoría si:
 
@@ -32,4 +32,4 @@ Puedes ignorar esta auditoría si:
 ## Recursos
 
 - [El código fuente para la auditoría de **El contenido no tiene el tamaño correcto para la ventana gráfica**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
-- [Conceptos básicos del diseño web responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/)
+- [Conceptos básicos del diseño web responsivo](/responsive-web-design-basics/)

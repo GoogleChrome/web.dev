@@ -160,9 +160,9 @@ final once the page has started unloading.
 
 This can be problematic, however, since both the `beforeunload` and `unload`
 events are not reliable (especially on mobile) and their use is [not
-recommended](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid)
+recommended](https://developer.chrome.com/blog/page-lifecycle-api/#legacy-lifecycle-apis-to-avoid)
 (since they can prevent a page from being eligible for the [Back-Forward
-Cache](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache)).
+Cache](https://developer.chrome.com/blog/page-lifecycle-api/#what-is-the-back-forward-cache)).
 
 For metrics that track the entire lifespan of a page, it's best to send whatever
 the metric's current value is during the `visibilitychange` event, whenever the

@@ -48,7 +48,7 @@ a user may lose track of what is in focus.
 This can create navigation issues and result in unwanted behaviour if,
 say, the wrong link is followed.
 You can
-[read more on focus and how to manage it in this guide](https://developers.google.com/web/fundamentals/accessibility/focus).
+[read more on focus and how to manage it in this guide](/focus/).
 
 ## How elements get focus
 

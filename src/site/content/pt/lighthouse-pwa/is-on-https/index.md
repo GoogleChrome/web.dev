@@ -32,7 +32,7 @@ Considere hospedar seu site em um CDN. A maioria dos CDNs é segura por padrão.
 
 Para saber como ativar o HTTPS em seus servidores, consulte [Como ativar o HTTPS em seus servidores do Google](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https). Se você está executando seu próprio servidor e precisa de uma maneira fácil e barata de gerar certificados, o [Let's Encrypt](https://letsencrypt.org/) é uma boa opção.
 
-Se sua página já está sendo executada em HTTPS, mas você está falhando nesta auditoria, você pode ter problemas com [conteúdo misto](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content). Uma página possui conteúdo misto quando a própria página é carregada por HTTPS, mas solicita um recurso desprotegido (HTTP). Verifique o seguinte documento no painel do de Segurança do Chrome DevTools para saber como depurar essas situações: [Entenda os problemas de segurança com o Chrome DevTools](https://developer.chrome.com/docs/devtools/security/).
+Se sua página já está sendo executada em HTTPS, mas você está falhando nesta auditoria, você pode ter problemas com [conteúdo misto](/what-is-mixed-content/). Uma página possui conteúdo misto quando a própria página é carregada por HTTPS, mas solicita um recurso desprotegido (HTTP). Verifique o seguinte documento no painel do de Segurança do Chrome DevTools para saber como depurar essas situações: [Entenda os problemas de segurança com o Chrome DevTools](https://developer.chrome.com/docs/devtools/security/).
 
 ## Recursos
 
@@ -40,5 +40,5 @@ Se sua página já está sendo executada em HTTPS, mas você está falhando nest
 - [Por que você deve sempre usar o HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
 - [Como ativar o HTTPS em seus servidores](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)
 - [Entenda os problemas de segurança com o Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)
-- [O que é conteúdo misto?](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)
+- [O que é conteúdo misto?](/what-is-mixed-content/)
 - [Let's Encrypt](https://letsencrypt.org/)

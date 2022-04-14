@@ -41,4 +41,4 @@ Lighthouseは、低速の4Gネットワーク接続でTTIがどうなると計�
 - [ランタイムパフォーマンスの分析から開始する](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [読み込みパフォーマンスの記録](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
 - [コンテンツ効率の最適化](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
-- [レンダリングパフォーマンス](https://developers.google.com/web/fundamentals/performance/rendering/)
+- [レンダリングパフォーマンス](/rendering-performance/)

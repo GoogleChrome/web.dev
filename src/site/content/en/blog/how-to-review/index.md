@@ -39,7 +39,7 @@ aim to have a logical tab order and easily discernable focus styles.
 - Start by tabbing through your site. The order in which elements are focused
 should aim to follow the DOM order. If you’re unsure which elements should
 receive focus, see [Focus
-Fundamentals](https://developers.google.com/web/fundamentals/accessibility/focus/)
+Fundamentals](/focus/)
 for a refresher. The general rule of thumb is that any control a user can
 interact with or provide input to should aim to be focusable and display a focus
 indicator (e.g., a focus ring). It’s common practice to disable focus styles
@@ -108,7 +108,7 @@ Improving general keyboard support lays some groundwork for the next step, which
 is to check the page for proper labeling and semantics and any obstructions to
 screen reader navigation. If you’re unfamiliar with how semantic markup gets
 interpreted by assistive technology, see the [Introduction to
-Semantics](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/)
+Semantics](/semantics-builtin/)
 for a refresher.
 
 ### Key points
@@ -127,7 +127,7 @@ for examples.
 attributes that confer their state. For example, a custom checkbox will need a
 `role="checkbox"` and `aria-checked="true|false"` to properly convey its state.
 See the [Introduction to
-ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/)
+ARIA](/semantics-aria/)
 for a general overview of how ARIA can provide missing semantics for custom
 controls.
 

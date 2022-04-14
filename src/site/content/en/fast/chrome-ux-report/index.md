@@ -31,7 +31,7 @@ competition and industry.
 
 There are four primary ways to extract insights from the Chrome UX Report,
 ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](http://g.co/chromeuxdash) and
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+[PageSpeed Insights](https://pagespeed.web.dev/)
 are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)
 trades some of the simplicity of the analysis for the power of customization
 and more granular insights. And the [API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) enables the integration of high-level data with other applications.
@@ -50,7 +50,7 @@ type and effective connection type change over time. Try the
 
 ### PageSpeed Insights
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+[PageSpeed Insights](https://pagespeed.web.dev/)
 (PSI) shows the most recent performance distributions broken down by desktop and
 mobile users. Performance data is available for individual web pages
 (in addition to entire origins) and is aggregated for the most recent 28 days of

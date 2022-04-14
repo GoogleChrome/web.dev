@@ -63,7 +63,7 @@ The previous section contains a quick summary of DEV's solution. For a more deta
 ## Implement an app shell UX architecture in MPAs with Workbox
 
 In this section we'll cover a summary of the different parts involved in implementing an app shell UX architecture in MPAs.
-For a more detailed post on how to implement this on a real site, check out [Beyond SPAs: alternative architectures for your PWA](https://developers.google.com/web/updates/2018/05/beyond-spa).
+For a more detailed post on how to implement this on a real site, check out [Beyond SPAs: alternative architectures for your PWA](https://developer.chrome.com/blog/beyond-spa/).
 
 ### The server
 

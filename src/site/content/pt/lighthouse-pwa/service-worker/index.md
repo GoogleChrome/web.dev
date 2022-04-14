@@ -47,7 +47,7 @@ O registro de um service worker envolve apenas algumas linhas de código, mas o 
 ## Recursos
 
 - [Código fonte para a auditoria **Não registra um service worker que controla a página e `start_url`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
-- [Service workers: uma introdução](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [Service workers: uma introdução](https://developer.chrome.com/docs/workbox/service-worker-overview/)
 - [Service workers e a API Cache Storage](/service-workers-cache-storage/)
 - [O que é confiabilidade de rede e como você a mede?](/network-connections-unreliable)
 - [Torne-o instalável](/codelab-make-installable/)

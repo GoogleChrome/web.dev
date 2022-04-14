@@ -26,7 +26,7 @@ Workbox ofrece herramientas de [línea de comando](https://developer.chrome.com/
 
 ## ¿Por qué debería utilizar Workbox?
 
-El uso de Workbox al crear su service worker es opcional; existen varias guías que recorren [estrategias comunes de almacenamiento en caché](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/) desde una perspectiva "básica" de service worker. Si decide utilizar Workbox, estos son algunos de sus beneficios.
+El uso de Workbox al crear su service worker es opcional; existen varias guías que recorren [estrategias comunes de almacenamiento en caché](/offline-cookbook/) desde una perspectiva "básica" de service worker. Si decide utilizar Workbox, estos son algunos de sus beneficios.
 
 ### Gestión de caché
 
@@ -45,7 +45,7 @@ SI le hace seguimiento a los mensajes de registro, puede llegar a la raíz de cu
 Workbox se desarrolla contra un conjunto de pruebas de varios navegadores y, cuando es posible, recurre automáticamente a implementaciones alternativas de funciones que faltan en ciertos navegadores.
 
 - El [`workbox-broadcast-cache-update module`](https://developer.chrome.com/docs/workbox/modules/workbox-broadcast-update/) usa la [API de canal de transmisión](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API) cuando está disponible, y regresa a una implementación basada en [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage) en los navegadores que carecen de soporte.
-- El [módulo workbox-background-sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/) usa la [API de sincronización en segundo plano](https://developers.google.com/web/updates/2015/12/background-sync) si es posible, y si no, recurre a reintentar los eventos en cola cada vez que se inicia el service worker.
+- El [módulo workbox-background-sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/) usa la [API de sincronización en segundo plano](https://developer.chrome.com/blog/background-sync/) si es posible, y si no, recurre a reintentar los eventos en cola cada vez que se inicia el service worker.
 
 ## ¿Cómo debería utilizar Workbox?
 

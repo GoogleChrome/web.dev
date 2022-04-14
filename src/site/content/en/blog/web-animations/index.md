@@ -124,7 +124,7 @@ Within CSS, this would be cumbersome to recreate, especially when applying uniqu
 
 ### Example: Play, pause, and reverse
 
-What can open, should close! Luckily, since [Chromium 39](https://developers.google.com/web/updates/2014/12/web-animation-playback), the Web Animations API has provided us the ability to play, pause, and reverse our animations.
+What can open, should close! Luckily, since [Chromium 39](https://developer.chrome.com/blog/web-animation-playback/), the Web Animations API has provided us the ability to play, pause, and reverse our animations.
 
 You can take the above animation, and give it a smooth, reversed animation when clicking the button again using `.reverse()`. This way, you can create a smoother and more contextual interaction for our modal.
 

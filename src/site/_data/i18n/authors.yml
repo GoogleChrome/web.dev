@@ -94,12 +94,6 @@ aliceboxhall:
   description:
     en: Alice is a contributor to web.dev
 
-jeremywagner:
-  title:
-    en: Jeremy Wagner
-  description:
-    en: Jeremy is a contributor to web.dev
-
 eligrey:
   title:
     en: Eli Grey
@@ -3823,4 +3817,3 @@ jhey:
     pt: Excêntrico Dev Supremo! Engenheiro de relações com desenvolvedores @ Google
     ru: Причудливый Дев Высший! Инженер по связям с разработчиками @ Google
     zh: 奇思妙想的开发者至尊！开发者关系工程师 @ Google
-

@@ -52,7 +52,7 @@ Linuxおよび以前のバージョンのWindowsの場合は、`about://flags`�
 
 ### ユーザージェスチャーが必要
 
-セキュリティ機能として、`navigator.bluetooth.requestDevice`でBluetoothデバイスを検出するには、タッチやマウスクリックなどの[ユーザージェスチャ](https://html.spec.whatwg.org/multipage/interaction.html#activation)によるトリガーが必要です。[`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events)、`click`、`touchend`イベントをリスンするということです。
+セキュリティ機能として、`navigator.bluetooth.requestDevice`でBluetoothデバイスを検出するには、タッチやマウスクリックなどの[ユーザージェスチャ](https://html.spec.whatwg.org/multipage/interaction.html#activation)によるトリガーが必要です。[`pointerup`](https://developer.chrome.com/blog/pointer-events/)、`click`、`touchend`イベントをリスンするということです。
 
 ```js
 button.addEventListener('pointerup', function(event) {

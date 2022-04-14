@@ -96,7 +96,7 @@ Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 collects anonymized, real user measurement data for each Core Web Vital. This
 data enables site owners to quickly assess their performance without requiring
 them to manually instrument analytics on their pages, and powers tools like
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+[PageSpeed Insights](https://pagespeed.web.dev/),
 and Search Console's [Core Web Vitals
 report](https://support.google.com/webmasters/answer/9205520).
 

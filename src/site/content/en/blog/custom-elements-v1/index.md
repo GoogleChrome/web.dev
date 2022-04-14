@@ -792,7 +792,7 @@ A **customized built-in element** is a custom element that extends one of the
 browser's built-in HTML tags. The primary benefit of extending an existing
 element is to gain all of its features (DOM properties, methods, accessibility).
 There's no better way to write a [progressive web
-app](https://developers.google.com/web/progressive-web-apps/) than to **progressively enhance existing HTML
+app](/progressive-web-apps/) than to **progressively enhance existing HTML
 elements**.
 
 Note: Only Chrome 67 supports customized built-in elements

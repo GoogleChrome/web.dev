@@ -250,7 +250,7 @@ Pequenas mudanças podem fazer uma grande diferença nas taxas de conclusão dos
 - [Melhores práticas para design de formulários para celular](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulário mais capazes](/more-capable-form-controls)
 - [Criação de formulários acessíveis](https://webaim.org/techniques/forms/)
-- [Simplificando o fluxo de inscrição usando a API de gerenciamento de credenciais](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Simplificando o fluxo de inscrição usando a API de gerenciamento de credenciais](https://developer.chrome.com/blog/credential-management-api/)
 - [Verifique os números de telefone na web com a API WebOTP](/web-otp)
 
 Foto de [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) no [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).
