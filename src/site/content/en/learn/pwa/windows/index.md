@@ -73,7 +73,7 @@ On iOS and iPadOS, the in-app browser uses SafariViewController, a Safari-render
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/Gr4qJUx6hAFMyPLPyfQY.png", alt="An in-app browser on an iPhone when browsing a URL that is out-of-scope within a standalone PWA.", width="800", height="370" %}
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/UyohW4R5Sy79ffHri8cz.png", alt="An in-app browser on Android when browsing a URL that is out-of-scope within a standalone PWA", width="800", height="1644" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/UyohW4R5Sy79ffHri8cz.png", alt="An in-app browser on Android when browsing a URL that is out-of-scope within a standalone PWA.", width="800", height="1644" %}
 
 
 #### Authorization flows
