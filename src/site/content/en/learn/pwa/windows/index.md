@@ -61,7 +61,7 @@ Some features of the in-app browsers are:
 * From the contextual menu, you can open that URL in the browser.
 * Users can close the browser or go back.
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/0SsThiNz4GDkJy6OiTHj.png", alt="An in-app browser on a desktop PWA when browsing a URL that is out-of-scope", width="800", height="497" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/0SsThiNz4GDkJy6OiTHj.png", alt="An in-app browser on a desktop PWA when browsing a URL that is out-of-scope.", width="800", height="497" %}
 
 {% Aside %}
 While the in-app browser is on the screen, your PWA is waiting in the background, as if another window is obscuring it.
