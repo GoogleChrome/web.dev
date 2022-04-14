@@ -168,7 +168,7 @@ You request the share action by calling [`navigator.share(objectToShare)`](https
 {% Glitch 'mlearn-pwa-os-integration-web-share' %}
 
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/wpB9v8QQTw4wB1iEGqvT.png", alt="Chrome on Android and Safari on iOS opening the Share Sheet thanks to Web Share", width="800", height="661" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/wpB9v8QQTw4wB1iEGqvT.png", alt="Chrome on Android and Safari on iOS opening the Share Sheet thanks to Web Share.", width="800", height="661" %}
 
 ## Web Share Target
 
