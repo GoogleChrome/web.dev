@@ -1,7 +1,7 @@
 ---
 title: Tools and debug
 Authors:
-  -
+  - firt
 description: >
   We will explore the tools available to develop, debug, and test your Progressive Web Apps.
 date: 2022-05-15
