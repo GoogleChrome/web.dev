@@ -54,6 +54,7 @@
         "paths" : [
           "src/site/_data/**.yml",
           "src/site/_data/**.yaml",
+          "src/site/_data/**.json",
           "redirects.yaml"
         ]
       }
