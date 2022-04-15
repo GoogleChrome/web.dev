@@ -162,7 +162,7 @@ Tabbed mode and windows control overlay capabilities define new values for the m
 
 You can read more about this capability at [Customize the window controls overlay of your PWA's title bar](/window-controls-overlay/).
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/9azCEwKziNBBxrTOn3pn.avif", alt="With windows control overlay, you can render content in the title bar.", width="800", height="544" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/B5UDAJzKTqCRdSy6B5is.png", alt="With windows control overlay, you can render content in the title bar.", width="800", height="544" %}
 
 ## Multi-screen window placement
 
