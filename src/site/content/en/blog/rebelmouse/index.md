@@ -2,9 +2,9 @@
 layout: post
 title: How Rebelmouse grew loyalty and engagement by optimizing Core Web Vitals
 subhead: |
-  A case study measuring the full impact and benefits of high performance scores on Core Web Vitals
+  A case study measuring the full impact and benefits of high performance scores on Core Web Vitals.
 description: |
-  A case study measuring the full impact and benefits of high performance scores on Core Web Vitals
+  A case study measuring the full impact and benefits of high performance scores on Core Web Vitals.
 authors:
   - andreabreanna
 date: 2022-04-14
@@ -30,10 +30,10 @@ Many publishers doubt whether excellent scores on Core Web Vitals are worth the 
 In order to illustrate this, we analyzed the audience behavior of a number of sites we power, both before and after we optimized for high performance scores on Core Web Vitals. In particular, we defined types of users to separate the audiences into the following key categories:
 
 - **New Visitors:** Users who visited a site for the first time.
-- **Returning Visitors:** Users who had at least two (2) sessions.
-- **Loyal Visitors:** Users who had at least three (3) sessions or more.
-- **Fans:** Users who had at least four (4) sessions or more.
-- **Superfans:** Users who had at least five (5) sessions or more.
+- **Returning Visitors:** Users who had at least two sessions.
+- **Loyal Visitors:** Users who had at least three sessions or more.
+- **Fans:** Users who had at least four sessions or more.
+- **Superfans:** Users who had at least five sessions or more.
 
 **References:**
 - [https://www.hotjar.com/google-analytics/glossary/users](https://www.hotjar.com/google-analytics/glossary/users)
@@ -201,7 +201,7 @@ The good news is that performing well on Core Web Vitals is possible with though
 
 ## Publish with a performance-first mindset
 
-Since the rollout of Core Web Vitals, developers have felt the impact of how their publishing platforms stack up against [Google's recommended thresholds](/defining-core-web-vitals-thresholds).
+Since the rollout of Core Web Vitals, developers have felt the impact of how their publishing platforms stack up against [Google's recommended thresholds](/defining-core-web-vitals-thresholds/).
 
 [HTTP Archive](https://httparchive.org), an open-source project that identifies trends and records historical patterns across millions of URLs, has revealed how top content management systems perform against Google's page experience standards in its [Core Web Vitals Technology Report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC). RebelMouse has [consistently outperformed](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?params=%7B%22df44%22:%22include%25EE%2580%25800%25EE%2580%2580IN%25EE%2580%2580ALL%25EE%2580%2580WordPress%25EE%2580%2580Drupal%25EE%2580%2580Wix%25EE%2580%2580Squarespace%25EE%2580%2580Adobe%2520Experience%2520Manager%25EE%2580%2580Contentful%25EE%2580%2580Sitecore%25EE%2580%2580Arc%2520Publishing%25EE%2580%2580Chorus%25EE%2580%2580RebelMouse%22,%22df46%22:%22include%25EE%2580%25800%25EE%2580%2580IN%25EE%2580%2580mobile%22%7D) major CMS platforms on Google's most critical metrics since its rollout and into 2022:
 
