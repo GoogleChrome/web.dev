@@ -15,7 +15,7 @@ In his talk [Simple Made Easy](https://www.infoq.com/presentations/Simple-Made-E
 
 But emphasizes that simplicity isn't about:
 
-* Having one instance or performing one operation.
+> "Having one instance or performing one operation."
 
 Whether or not something is simple is about how interconnected it is.
 
