@@ -185,7 +185,7 @@ But content consumption and time spent per user weren't the only metrics to spik
 
 The good news is that performing well on Core Web Vitals is possible with thoughtful, strategic changes made to your site's codebase. Here are a few ways RebelMouse powers high-performing websites:
 
-### Progressive web app:
+### Progressive web app
 
 RebelMouse optimizes all third-party calls in a progressive web app that delivers the most important content first, and then sequences the rest of the calls as the reader needs to see them.
 
@@ -201,7 +201,7 @@ To protect Cumulative Layout Shift (CLS) and LCP scores, all social embeds need 
 
 For CLS preservation, you have to dynamically find the size of the embed with server-side technology, and insert it into your own storage of the properties of that embed. Then, the embed needs to be delivered to your front end to prevent the layout from shifting upon load. For those with interest in deeper dives on this topic, we have posts specifically on [Twitter](https://www.rebelmouse.com/optimized-twitter-embeds) and [TikTok](https://www.rebelmouse.com/how-to-embed-a-tiktok) examples with more details.
 
-### Ultra-light, smart HTML and CSS:
+### Ultra-light, smart HTML and CSS
 
 Site HTML and CSS has to be constructed in a way that allows for the delivery of above-the-fold images and text to preload before the rest of the page.
 
