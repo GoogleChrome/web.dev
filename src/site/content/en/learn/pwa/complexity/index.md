@@ -11,7 +11,7 @@ date: 2022-04-15
 
 In his talk [Simple Made Easy](https://www.infoq.com/presentations/Simple-Made-Easy/), Rich Hickey discusses the qualities of simple versus complex things. He describes simple things as focusing on:
 
-* One role, one task, one concept, or one dimension.
+> "One role, one task, one concept, or one dimension."
 
 But emphasizes that simplicity isn't about:
 
