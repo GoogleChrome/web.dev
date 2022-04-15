@@ -7,7 +7,7 @@ description: |
   A case study measuring the full impact and benefits of high performance scores on Core Web Vitals.
 authors:
   - andreabreanna
-date: 2022-04-14
+date: 2022-04-15
 alt: The RebelMouse mascot set against a blue backdrop. The mascot is a grey mouse with a red kerchief on its head, and is standing in front of a pride flag.
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Y0KflFCo0GclHd9JK8iE.png
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/PVMV1zKjJs4MsJRFIzJs.png
@@ -185,19 +185,31 @@ But content consumption and time spent per user weren't the only metrics to spik
 
 The good news is that performing well on Core Web Vitals is possible with thoughtful, strategic changes made to your site's codebase. Here are a few ways RebelMouse powers high-performing websites:
 
-- **Progressive web app:** RebelMouse optimizes all third-party calls in a progressive web app that delivers the most important content first, and then sequences the rest of the calls as the reader needs to see them.
-  - We have [a method that loads JavaScript](https://www.rebelmouse.com/new-javascript-element-in-layout-design-tool) immediately after the Largest Contentful Paint (LCP) event has completed. We give our users the option to load JavaScript through three different priority levels:
-    - **Optimized** is best for users who want the latest cutting-edge approaches. We use it in our own development work. This priority level will pause JavaScript from firing until well after the page has fully loaded, which gives you the highest performance.
-    - **Load Blocking** is used for executing JavaScript right away, and will generally have a negative impact on your performance scores. This priority level will fire the JavaScript immediately after the page has completed loading. This has the potential to drop your performance scores by 10–40 points depending on the extra call.
-    - **Post LCP** is the best option to blend great performance scores with a very fast load. This priority level will cause JavaScript to load immediately after the Largest Contentful Paint event has completed. (This is recommended for ads only, where you have increased revenue in delivering ads to users who are only on the page for five seconds or so.)
-- **Optimize social embeds:** To protect Cumulative Layout Shift (CLS) and LCP scores, all social embeds need to be set to lazy load.
-  - For CLS preservation, you have to dynamically find the size of the embed with server-side technology, and insert it into your own storage of the properties of that embed. Then, the embed needs to be delivered to your front end to prevent the layout from shifting upon load. For those with interest in deeper dives on this topic, we have posts specifically on [Twitter](https://www.rebelmouse.com/optimized-twitter-embeds) and [TikTok](https://www.rebelmouse.com/how-to-embed-a-tiktok) examples with more details.
-- **Ultra-light, smart HTML and CSS:** Site HTML and CSS has to be constructed in a way that allows for the delivery of above-the-fold images and text to preload before the rest of the page.
-  - Bad HTML constructs will force the browser to process many unnecessary site elements that are below the fold in order to render what is above the fold in the first viewport.
-  - We have more in-depth articles on how we achieve this on RebelMouse here:
-    - A breakdown on [how to improve Core Web Vitals](https://www.rebelmouse.com/pagespeed-score).
-    - [A full guide](https://www.rebelmouse.com/how-to-improve-core-web-vitals) on implementing fast page speeds while also including third-party scripts.
-    - An in-depth guide on [optimizing for LCP](https://www.rebelmouse.com/core-web-vitals-2021).
+### Progressive web app:
+
+RebelMouse optimizes all third-party calls in a progressive web app that delivers the most important content first, and then sequences the rest of the calls as the reader needs to see them.
+
+We have [a method that loads JavaScript](https://www.rebelmouse.com/new-javascript-element-in-layout-design-tool) immediately after the Largest Contentful Paint (LCP) event has completed. We give our users the option to load JavaScript through three different priority levels:
+
+- **Optimized** is best for users who want the latest cutting-edge approaches. We use it in our own development work. This priority level will pause JavaScript from firing until well after the page has fully loaded, which gives you the highest performance.
+- **Load Blocking** is used for executing JavaScript right away, and will generally have a negative impact on your performance scores. This priority level will fire the JavaScript immediately after the page has completed loading. This has the potential to drop your performance scores by 10–40 points depending on the extra call.
+- **Post LCP** is the best option to blend great performance scores with a very fast load. This priority level will cause JavaScript to load immediately after the Largest Contentful Paint event has completed. (This is recommended for ads only, where you have increased revenue in delivering ads to users who are only on the page for five seconds or so.)
+
+### Optimize social embeds
+
+To protect Cumulative Layout Shift (CLS) and LCP scores, all social embeds need to be set to lazy load.
+
+For CLS preservation, you have to dynamically find the size of the embed with server-side technology, and insert it into your own storage of the properties of that embed. Then, the embed needs to be delivered to your front end to prevent the layout from shifting upon load. For those with interest in deeper dives on this topic, we have posts specifically on [Twitter](https://www.rebelmouse.com/optimized-twitter-embeds) and [TikTok](https://www.rebelmouse.com/how-to-embed-a-tiktok) examples with more details.
+
+### Ultra-light, smart HTML and CSS:
+
+Site HTML and CSS has to be constructed in a way that allows for the delivery of above-the-fold images and text to preload before the rest of the page.
+
+- Bad HTML constructs will force the browser to process many unnecessary site elements that are below the fold in order to render what is above the fold in the first viewport.
+- We have more in-depth articles on how we achieve this on RebelMouse here:
+  - A breakdown on [how to improve Core Web Vitals](https://www.rebelmouse.com/pagespeed-score).
+  - [A full guide](https://www.rebelmouse.com/how-to-improve-core-web-vitals) on implementing fast page speeds while also including third-party scripts.
+  - An in-depth guide on [optimizing for LCP](https://www.rebelmouse.com/core-web-vitals-2021).
 
 ## Publish with a performance-first mindset
 
