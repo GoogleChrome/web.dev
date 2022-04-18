@@ -943,7 +943,7 @@ const animationsComplete = element =>
 ```
 
 The `animationsComplete` function, which is also used in the [Building a toast
-component](http://building-a-toast-component/), returns a promise based on the
+component](/building-a-toast-component/), returns a promise based on the
 completion of the animation and transition promises. This is why `dialogClose`
 is an [async
 function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function);
