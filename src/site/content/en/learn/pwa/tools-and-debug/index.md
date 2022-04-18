@@ -217,7 +217,7 @@ From Safari on macOS, the `Develop`, `Service Workers` menu will list all the cu
 
 If you select one of them, Safari will open a new window with a restricted inspector, including only `Consoles`, `Sources`, and `Network Tabs`.
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/jho0nKOzPq9XPH8g24Hk.png", alt="A Service Worker Web Inspector from a PWA in Safari", width="800", height="427" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/jho0nKOzPq9XPH8g24Hk.png", alt="A Service Worker Web Inspector from a PWA in Safari.", width="800", height="427" %}
 
 {% Aside %}
 [Service Worker Detector](https://apps.apple.com/app/service-worker-detector/id1530808337) is a free Safari extension available in AppStore that will let you see service worker registration status and the cache storages available under the current origin, abilities which are not available on WebKit's Inspector.
