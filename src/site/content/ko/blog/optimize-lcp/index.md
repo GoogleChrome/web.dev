@@ -255,7 +255,7 @@ CSS 또는 JavaScript 차단 시간이 증가는 성능 저하에 직접적 영�
 - `<img>` 요소
 - `<svg>` 요소 내부의 `<image>`
 - `<video>` 요소([포스터](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) 이미지는 LCP 측정에 사용됨)
-- [`url()`](<https://developer.mozilla.org/docs/Web/CSS/url()>) 함수를 통해 로드된 배경 이미지가 있는 요소<a>(CSS 그라데이션</a>과는 대조적임)
+- [`url()`](https://developer.mozilla.org/docs/Web/CSS/url) 함수를 통해 로드된 배경 이미지가 있는 요소<a>(CSS 그라데이션</a>과는 대조적임)
 - 텍스트 노드 또는 기타 인라인 수준 텍스트 요소를 포함하는 [블록 수준 요소](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
 
 스크롤 없이 볼 수 있는 상태로 렌더링된 경우 이러한 요소를 로드하는 데 걸리는 시간은 LCP에 직접적인 영향을 미칩니다. 이러한 파일이 가능한 한 빨리 로드되도록 하는 몇 가지 방법이 있습니다.
