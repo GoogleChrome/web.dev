@@ -196,7 +196,7 @@ You will see the current update status and request a WebAPK update from here.
 
 On desktop computers, you can see a user-friendly list of installed PWAs by browsing to `about:apps`, and a debug version by browsing to `about:app-service-internals`.
 
-{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/exwzkevoGROml8uH5ZxL.png", alt="Google Chrome WebAPK debug screen on Android", width="800", height="400" %}
+{% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/exwzkevoGROml8uH5ZxL.png", alt="Google Chrome WebAPK debug screen on Android.", width="800", height="400" %}
 
 ## Safari
 
