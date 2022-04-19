@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Make your site picture perfect with image.tooling.report"
-subhead: Check out the state of image tooling
+subhead: Check out the state of image tooling.
 authors:
   - TODO
-date: 2022-04-15
-description: Check out the state of image tooling
+date: 2022-04-20
+description: Check out the state of image tooling.
 tags:
   - blog
-  - case-study
-  - web-vitals
+  - images
+  - performance
 ---
 
 It is one thing to put an image on the web&mdash;but it is hard to do it well. Picking the right format, compression, dots per inch (DPI), and hundreds of other settings can otherwise easily be forgotten when we do all this ourselves.
@@ -27,7 +27,7 @@ Serving optimized images is more than just clicking “Save for Web”. That is 
 We don't stop there, though. We searched out more advanced options, like support for [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data), [`ECT`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ECT), and other [client hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints), to look for automated psychovisual analysis that can use data models to repeatedly compress images, to find the version that takes the fewest bytes without changing the way our eyes perceive it. Are you squeezing every last non-visual bit from your images before sending down the wire?
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/bVeDRKAcBBCcZvcxxHYs.png", alt="ALT_TEXT_HERE", width="800", height="431" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/bVeDRKAcBBCcZvcxxHYs.png", alt="A screenshot of the landing page for images.tooling.report in dark mode.", width="800", height="431" %}
 </figure>
 
 Of course, every site is a snowflake&mdash;no one tool or service did absolutely everything we were looking for. That is expected! So we broke out what we tested into different categories.  We cover Content Delivery Networks (CDNs), self-hosted projects, Content Management System (CMS) plugins, and site builders. These are fairly loose definitions that are really there to try to make comparing different options more relevant:
