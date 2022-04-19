@@ -28,7 +28,7 @@ Understanding and implementing security measures|23%|25%|20%|19%|
 As mentioned in Paul's blog post we need to address those points and, as part of a larger effort to address those pain points, my colleague [Kadir Topal][3] and I have interviewed over 18 developers to investigate and start making sense of the path to fixing those pain points.
 
 ## Developer Discussions
-**Disclaimer:** *those insights are based on a small number of conversations with developers. When using "all" or "some", this refers to the developers interviewed, not the entire community. More research is needed to extrapolate those insights to the entire community.*.
+**Disclaimer:** *those insights are based on a small number of conversations with developers. When using "all" or "some", this refers to the developers interviewed, not the entire community. More research is needed to extrapolate those insights to the entire community.*
 
 These conversations were a great reminder of how amazing and diverse the web developer community is, and I'd like to thank all the developers who talked to us. Some developers had over 25 years of experience, while others started as recently as 2020. Some developers started their careers via a formal computer science degree, while others started their careers independently. Some developers actively seek what is new and keep up by reading browser release notes, while others learn about new things via colleagues and friends. Some think complexity is part of the job and enjoy being challenged, while others just want to get their job done. When thinking about solving those pain points, it's important to keep this diversity in our minds!
 
