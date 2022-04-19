@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Make your site picture perfect with image.tooling.report"
+title: "Make your site picture perfect with images.tooling.report"
 subhead: Check out the state of image tooling.
 authors:
   - TODO
@@ -22,7 +22,7 @@ Images [make up a huge part of a site's bytes transferred](https://httparchive.o
 
 ## What is it?
 
-Serving optimized images is more than just clicking “Save for Web”. That is why image.tooling.report checks for a wide variety of features. We cover the basics, like how much compression the different tools and services provide, and network optimizations such as long-lived cache headers.
+Serving optimized images is more than just clicking “Save for Web”. That is why images.tooling.report checks for a wide variety of features. We cover the basics, like how much compression the different tools and services provide, and network optimizations such as long-lived cache headers.
 
 We don't stop there, though. We searched out more advanced options, like support for [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data), [`ECT`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ECT), and other [client hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints), to look for automated psychovisual analysis that can use data models to repeatedly compress images, to find the version that takes the fewest bytes without changing the way our eyes perceive it. Are you squeezing every last non-visual bit from your images before sending down the wire?
 
