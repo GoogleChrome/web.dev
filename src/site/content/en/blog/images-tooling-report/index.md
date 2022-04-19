@@ -3,7 +3,7 @@ layout: post
 title: "Make your site picture perfect with images.tooling.report"
 subhead: Check out the state of image tooling.
 authors:
-  - TODO
+  - patrickkettner
 date: 2022-04-20
 description: Check out the state of image tooling.
 tags:
