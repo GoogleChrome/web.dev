@@ -18,7 +18,9 @@
 
 const {html} = require('common-tags');
 const fs = require('fs');
-const md = require('markdown-it')();
+// We need html: true since folks embed HTML inside of {% Aside %}.
+// See https://markdown-it.github.io/markdown-it/#MarkdownIt.new
+const md = require('markdown-it')({html: true});
 const path = require('path');
 
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');

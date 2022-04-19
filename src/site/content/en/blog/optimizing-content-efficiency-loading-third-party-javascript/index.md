@@ -31,7 +31,7 @@ about third-party scripts?
 - They can be **unpredictable** and change without you knowing
 - They can have **unintended consequences**
 
-Ideally, you’ll want to ensure third-party script is not impacting the [critical rendering path](/web/fundamentals/performance/critical-rendering-path/). In this
+Ideally, you’ll want to ensure third-party script is not impacting the [critical rendering path](/critical-rendering-path/). In this
 guide, we’ll walk through how to find and fix issues related to loading
 third-party JavaScript.
 

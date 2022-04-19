@@ -136,14 +136,14 @@ var shrinkRay = require('shrink-ray');
 
 And add it as a middleware before `express.static` is mounted:
 
-```js/6
+```js/4
 //...
 var app = express();
 
-app.use(express.static('public'));
-
 // compress all requests
 app.use(shrinkRay());
+
+app.use(express.static('public'));
 ```
 
 Now reload the app, and take a look at the bundle size in the Network panel:
@@ -209,18 +209,18 @@ var BrotliPlugin = require('brotli-webpack-plugin');
 
 And include it within the plugins array:
 
-<pre>
+```js/4-7
 module.exports = {
   // ...
   plugins: [
     // ...
-    <strong>new BrotliPlugin({
+    new BrotliPlugin({
       asset: '[file].br',
       test: /\.(js)$/
-    })</strong>
+    })
   ]
 },
-</pre>
+```
 
 The following arguments are used in the plugin array:
 +  `asset`: The target asset name.
@@ -256,20 +256,20 @@ Next, tell the server to send these brotli-compressed files whenever their
 original JS versions are being requested. This can be done by defining a new
 route in `server.js` before the files are served with `express.static`.
 
-<pre>
+```js/4-9
 var express = require('express');
 
 var app = express();
 
-<strong>app.get('*.js', (req, res, next) => {
+app.get('*.js', (req, res, next) => {
   req.url = req.url + '.br';
   res.set('Content-Encoding', 'br');
   res.set('Content-Type', 'application/javascript; charset=UTF-8');
   next();
-});</strong>
+});
 
 app.use(express.static('public'));
-</pre>
+```
 
 `app.get` is used to tell the server how to respond to a `GET` request for a
 specific endpoint. A callback function is then used to define how to handle this
