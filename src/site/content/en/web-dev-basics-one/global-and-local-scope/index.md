@@ -120,7 +120,7 @@ When you create variables in a JavaScript function with the `var`, `let` or `con
 This example declares the `total` variable in the `addNumbers()` function. You can only access the `a`, `b,` and `total` variables within the `addNumbers()` function. 
 
 ```js
-function addNumbers(a, b){
+function addNumbers(a, b) {
 	const total = a + b;
 }
 
