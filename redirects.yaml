@@ -287,6 +287,8 @@ redirects:
   # Redirects for Media content
   - source: /media-cheat-sheet
     destination: /media-conversion
+  - source: /media-eme-basics
+    destination: /media-eme
 
   # Redirects to https://developer.chrome.com/.
   - source: /browser-flags/
