@@ -29,7 +29,7 @@ To enable auto sign-in:
 ### Get credential information
 
 To get credential information, invoke
-[`navigator.credential.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get).
+[`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get).
 Specify the type of credentials to request
 by giving it a `password` or `federated`.
 
