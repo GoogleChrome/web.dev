@@ -6,6 +6,9 @@ authors:
   - patrickkettner
 date: 2022-04-20
 description: Check out the state of image tooling.
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/cBgayncaj3dc3gtQreAK.jpg
+alt: A zoomed-in photograph of the individual pixels on an LCD display. The photograph is so close that the individual red, blue, and green components of each pixel are distinguishable.
+thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZFDRpDGW5pb5tJAQshdw.jpg
 tags:
   - blog
   - images
@@ -42,3 +45,5 @@ You can't be everything to everyone all the time, but you should check out the t
 ## What's next?
 
 Do you think we have missed an image tool or service? Let us know! Both the tools and services, and the tests themselves, are a living, updating thing. Whenever you need a quick place to check out the state of the art in shipping images, make sure your first stop is [images.tooling.report](https://images.tooling.report/).
+
+_[Hero image](https://unsplash.com/photos/AkYGy_ymFqo) by [Michael Maasen](https://unsplash.com/@mgmaasen) on Unsplash._
