@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Capabilities
 Authors:
   - firt
@@ -44,6 +43,7 @@ Let's split the PWA capabilities APIs into four groups:
 
 {% Aside %}
 Some capabilities require user permission: in most cases, the permission dialog appears on first usage. Today, you can request a single permission at a time, but in the future, it may be possible to request many permissions in one dialog on some platforms, using the [Permissions API](https://w3c.github.io/permissions/).
+{% endAside %}
 
 ### Green capabilities
 
