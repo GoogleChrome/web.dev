@@ -57,7 +57,7 @@ Below is a list of the most important capabilities you can use in your PWA.
 - *2D and 3D high-performance Canvas*, or [WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API), for rendering 3D graphics.
 - *WebAssembly*, or [WASM](https://developer.mozilla.org/docs/WebAssembly), for executing low-level compiled code for performance.
 - *Real-Time communication*, using the [WebRTC API](https://developer.mozilla.org/docs/Web/API/WebRTC_API).
-- *Web Performance* APIs to measure and help provide a better experience. See [this guide](https://developer.mozilla.org/docs/Web/API/Performance_API) for more information.
+- *Web Performance* APIs to measure and help provide a better experience. See [the Performance API guide](https://developer.mozilla.org/docs/Web/API/Performance_API) for more information.
 - *Store data locally* with IndexedDB and storage management to query quota and request persistent storage, as seen in the [Offline data chapter](/learn/pwa/offline-data).
 - *Low-level audio* thanks to the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API).
 - *Foreground detection* using the [Page Visibility API](​​https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
