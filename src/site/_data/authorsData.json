@@ -612,11 +612,6 @@
     "country": "UK",
     "image": "image/admin/FqkHLK1y5d0ob6JJAQkR.jpg"
   },
-  "patrickkettner": {
-    "twitter": "patrickkettner",
-    "country": "US",
-    "image": "image/admin/ODlAdqZG7UsfQlYO7D37.jpg"
-  },
   "patmeenan": {
     "twitter": "patmeenan",
     "country": "US",
@@ -1305,6 +1300,13 @@
     "linkedin": "https://www.linkedin.com/in/jheytompkins/",
     "homepage": "https://jhey.dev/links",
     "image": "image/Dyx9FwYgMyNqy1kMGx8Orz6q0qC3/JMkAJAgH01auU1FiapGg.jpeg"
+  },
+  "patrickkettner": {
+    "country": "US",
+    "twitter": "patrickkettner",
+    "github": "patrickkettner",
+    "homepage": "https://patrickkettner.com/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/O2raVJadIJBVue1fK85Z.png"
   },
   "andreabreanna": {
     "country": "US",
