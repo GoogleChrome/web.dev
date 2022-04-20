@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2022-01-30
+updated: 2022-04-20
 tags:
   - blog
   - capabilities
@@ -37,13 +37,13 @@ Examples of sites that may use this API include:
 
 <div>
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | Complete                 |
-| 4. Origin trial                          | Complete                 |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                           |
+| ---------------------------------------- | -------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]            |
+| 2. Create initial draft of specification | Not started                      |
+| 3. Gather feedback & iterate on design   | Complete                         |
+| 4. Origin trial                          | Complete                         |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;102) |
 
 </div>
 
@@ -85,6 +85,12 @@ an object with two properties:
   icons. Some operating systems allow a file type association to display an icon that is not just
   the associated application icon, but rather a special icon related to the use of that file type
   with the application.
+- A `"launch_type"` property that defines whether multiple files should be opened in a single
+  client or in multiple clients. The default is `"single-client"`. If the user
+  opens multiple files and if the file handler has been annotated with `"multiple-clients"` as
+  its `"launch_type"`, more than one app launch will occur, and for each launch, the
+  `LaunchParams.files` array (see [further down](#the-imperative-part-of-the-file-handling-api))
+   will have just one element.
 
 The example below, showing only the relevant excerpt of the web app manifest, should make it
 clearer:
@@ -103,7 +109,8 @@ clearer:
           "sizes": "256x256",
           "type": "image/png"
         }
-      ]
+      ],
+      "launch_type": "single-client"
     },
     {
       "action": "/open-svg",
@@ -116,7 +123,8 @@ clearer:
           "sizes": "256x256",
           "type": "image/png"
         }
-      ]
+      ],
+      "launch_type": "single-client"
     },
     {
       "action": "/open-graf",
@@ -130,7 +138,8 @@ clearer:
           "sizes": "256x256",
           "type": "image/png"
         }
-      ]
+      ],
+      "launch_type": "multiple-clients"
     }
   ]
 }
@@ -138,7 +147,8 @@ clearer:
 
 This is for a hypothetical application that handles comma-separated value (`.csv`) files at
 `/open-csv`, scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format
-with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
+with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`. The first two will open
+in a single client, the last one in multiple clients if multiple files are being handled.
 
 {% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
