@@ -86,7 +86,7 @@ an object with two properties:
   the associated application icon, but rather a special icon related to the use of that file type
   with the application.
 - A `"launch_type"` property that defines whether multiple files should be opened in a single
-  client or in multiple clients. If omitted, this defaults to `"single-client"`. If the user
+  client or in multiple clients. The default is `"single-client"`. If the user
   opens multiple files and if the file handler has been annotated with `"multiple-clients"` as
   its `"launch_type"`, more than one app launch will occur, and for each launch, the
   `LaunchParams.files` array (see [further down](#the-imperative-part-of-the-file-handling-api))
