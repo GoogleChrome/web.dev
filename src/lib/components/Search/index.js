@@ -2,7 +2,7 @@
  * @fileoverview An Algolia search box.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {debounce} from '../../utils/debounce';

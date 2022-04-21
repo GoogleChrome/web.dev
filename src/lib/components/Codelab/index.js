@@ -3,7 +3,7 @@
  * instructions and an embedded Glitch iframe.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 
 /**
@@ -55,7 +55,7 @@ class Codelab extends BaseElement {
    * Because we don't use slots, and we _do_ want to preserve this element's
    * light DOM children (they hold the codelab instructions) we create a new
    * renderRoot for LitElement.
-   * https://lit-element.polymer-project.org/guide/templates#renderroot
+   * https://lit.dev/docs/components/shadow-dom/#implementing-createrenderroot
    * This will render the glitch element as a sibling to the existing light
    * DOM children.
    */
