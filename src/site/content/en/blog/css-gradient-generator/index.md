@@ -4,7 +4,8 @@ subhead: >
   This tool by Josh W Comeau makes it super simple to create nice looking gradients.
 date: 2022-04-21
 hero: image/rq1kLlxRBubsZSyX0gs2nghLSZc2/k2mYKB7AKDJdRjCbsc09.png
-authors: paulkinlan
+authors: 
+  - paulkinlan
 description: >
   This tool by Josh W Comeau makes it super simple to create nice looking gradients.
 tags:
