@@ -100,7 +100,7 @@ const recognizer = await navigator.createHandwritingRecognizer({
 });
 ```
 
-{% Aside 'caution' %} The current implementation on Chrome&nbsp;OS can only recognize one language
+{% Aside 'caution' %} The current implementation on ChromeOS can only recognize one language
 at a time. It only supports English (`en`), and a gesture model (`zxx-x-gesture`) to recognize
 gestures such as crossing out words. {% endAside %}
 
@@ -188,7 +188,7 @@ canvas.addEventListener('pointerdown', (event) => {
 });
 ```
 
-{% Aside 'caution' %} The current implementation on Chrome&nbsp;OS does not support grapheme sets
+{% Aside 'caution' %} The current implementation on ChromeOS does not support grapheme sets
 yet, they are silently ignored. {% endAside %}
 
 #### Add a stroke

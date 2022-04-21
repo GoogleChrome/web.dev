@@ -428,7 +428,7 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ## Поддержка браузера {: #browser-support}
 
-Web Serial API доступен на всех настольных платформах (Chrome OS, Linux, macOS и Windows) в Chrome 89.
+Web Serial API доступен на всех настольных платформах (ChromeOS, Linux, macOS и Windows) в Chrome 89.
 
 ## Полифилл {: #polyfill}
 

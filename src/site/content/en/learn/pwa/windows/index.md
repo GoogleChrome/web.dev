@@ -12,7 +12,7 @@ date: 2022-04-15
 
 Running on your own window, managed by your PWA, has all the advantages and responsibilities of any window in that operating system, such as:
 
-* The ability to resize and move the window around on multi-window operating systems, like Windows or Chrome OS.
+* The ability to resize and move the window around on multi-window operating systems, like Windows or ChromeOS.
 * Sharing the screen with other app windows, as in iPadOS split mode or Android split-screen mode.
 * Appearing in docks, taskbars, and in the alt-tab menu on desktop, and multi-task window lists on mobile devices.
 * The ability to minimize, move the window across screens and desktops, and close it at any time.

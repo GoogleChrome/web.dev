@@ -68,7 +68,7 @@ Exemplos de sites que podem usar essa API incluem:
 </table>
 <div data-md-type="block_html"></div>
 
-A App Badging API funciona no Windows e macOS, no Chrome 81 ou posterior. Também foi confirmado que funciona no Edge 84 ou posterior. O suporte para o Chrome OS está em desenvolvimento e estará disponível em uma versão futura do Chrome. No Android, a Badging API não é compatível. Em vez disso, o Android mostra automaticamente um emblema no ícone do aplicativo para o aplicativo da web instalado quando há uma notificação não lida, assim como para aplicativos Android.
+A App Badging API funciona no Windows e macOS, no Chrome 81 ou posterior. Também foi confirmado que funciona no Edge 84 ou posterior. O suporte para o ChromeOS está em desenvolvimento e estará disponível em uma versão futura do Chrome. No Android, a Badging API não é compatível. Em vez disso, o Android mostra automaticamente um emblema no ícone do aplicativo para o aplicativo da web instalado quando há uma notificação não lida, assim como para aplicativos Android.
 
 ## Tente
 

@@ -296,7 +296,7 @@ and so developers should be encouraged to check for precisely the capability
 
 ## Operating system support {: #os-support}
 
-Barcode detection is available on macOS, Chrome OS, and Android. [Google Play
+Barcode detection is available on macOS, ChromeOS, and Android. [Google Play
 Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
 are required on Android.
 

@@ -179,7 +179,7 @@ self.addEventListener('fetch', event => {
 2021년 초부터 Web Share Target API는 다음에서 지원됩니다.
 
 - Android의 Chrome 및 Edge 76 이상.
-- Chrome OS의 Chrome 89 이상.
+- ChromeOS의 Chrome 89 이상.
 
 모든 플랫폼에서, 웹 앱이 공유 데이터를 수신할 수 있는 잠재적 대상으로 표시되려면 그 전에 해당 웹 앱이 [설치](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)된 상태여야 합니다.
 

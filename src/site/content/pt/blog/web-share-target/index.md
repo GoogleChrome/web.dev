@@ -185,7 +185,7 @@ Por exemplo, no Android, o campo [`url` ficará vazio](https://bugs.chromium.org
 Desde o início de 2021, a API Web Share Target é compatível com:
 
 - Chrome e Edge 76 ou posterior no Android.
-- Chrome 89 ou posterior no Chrome OS.
+- Chrome 89 ou posterior no ChromeOS.
 
 Em todas as plataformas, seu aplicativo da web deve ser [instalado](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) antes de aparecer como um alvo potencial para receber dados compartilhados.
 

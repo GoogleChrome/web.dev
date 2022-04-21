@@ -31,7 +31,7 @@ A Web Share tem os seguintes recursos e limitações:
 - Só pode ser usado em um site [acessado via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
 - Precisa ser invocado em resposta a uma ação do usuário, como um clique. Invocá-lo por meio do `onload` é impossível.
 - Pode compartilhar, URLs, texto ou arquivos.
-- Em janeiro de 2021, ele estava disponível nos forks do Safari, Android em Chromium, Chrome OS e Chrome no Windows. O Chrome no MacOS ainda está em desenvolvimento. Consulte [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility) para obter detalhes.
+- Em janeiro de 2021, ele estava disponível nos forks do Safari, Android em Chromium, ChromeOS e Chrome no Windows. O Chrome no MacOS ainda está em desenvolvimento. Consulte [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility) para obter detalhes.
 
 ### Compartilhando links e texto
 
@@ -97,12 +97,12 @@ O suporte do navegador para a API Web Share tem nuances e é recomendável usar 
 Desde o início de 2021, o uso da API para compartilhar títulos, textos e URLs é suportado por:
 
 - Safari 12 ou posterior no macOS e iOS.
-- Chrome 75 ou posterior no Android e 89 ou posterior no Chrome OS e Windows.
+- Chrome 75 ou posterior no Android e 89 ou posterior no ChromeOS e Windows.
 
 O uso da API para compartilhar arquivos é compatível com:
 
 - Safari 15 ou posterior no macOS e iOS.
-- Chrome 75 ou posterior no Android e 89 ou posterior no Chrome OS e Windows.
+- Chrome 75 ou posterior no Android e 89 ou posterior no ChromeOS e Windows.
 
 (A maioria dos navegadores baseados em Chromium, como o Edge, tem o mesmo suporte para esse recurso que a versão correspondente do Chrome.)
 
