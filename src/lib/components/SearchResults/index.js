@@ -107,7 +107,8 @@ export class SearchResults extends BaseElement {
    * overflown the container.
    */
   scrollHitIntoView() {
-    this.requestUpdate().then(() => {
+    this.requestUpdate();
+    this.updateComplete.then(() => {
       const selected = this.renderRoot.querySelector('[aria-selected="true"]');
       selected.scrollIntoView({block: 'nearest'});
       this.dispatchEvent(new CustomEvent('resultselect', {detail: {selected}}));

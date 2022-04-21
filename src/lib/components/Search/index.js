@@ -302,7 +302,8 @@ class Search extends BaseStateElement {
     // Set state here even though it'll happen again during onFocusIn.
     // If we wait until onFocusIn the animation has a bit of jank to it.
     store.setState({isSearchExpanded: true});
-    this.requestUpdate().then(() => {
+    this.requestUpdate();
+    this.updateComplete.then(() => {
       this.inputEl.focus();
     });
   }
