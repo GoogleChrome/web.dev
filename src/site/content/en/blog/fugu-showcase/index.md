@@ -38,3 +38,7 @@ in the Project Fugu API Showcase</a>. Happy browsing!
 <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
   <iframe title="Fugu showcase" name="showcase" style="min-height: 800px; width: 100%; border: 0;" src="https://tomayac.github.io/fugu-showcase/data/" allow="web-share"></iframe>
 </div>
+
+## Acknowledgements
+
+Hero image based on a [photo](https://unsplash.com/photos/QURU8IY-RaI) from [Sarah Lee](https://unsplash.com/@hisarahlee).
