@@ -23,11 +23,16 @@ This work, among many other examples, allowed
 [Excalidraw to deprecate their Electron app](/deprecating-excalidraw-electron/), and
 [Betty Crocker to increase purchase intent indicators by 300%](/betty-crocker/).
 
-You can see the full list of new and potential capabilities and the stage each proposal
+You can see the list of new and potential capabilities and the stage each proposal
 is in on the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
-It is worth noting that many ideas never make it past the explainer or origin trial stage.
+It's worth noting that many ideas never make it past the explainer or origin trial stage.
 The goal of the process is to ship the right features. That means we need to learn and
-iterate quickly. Not shipping a feature because it does not solve the developer need is OK.
+iterate quickly. Not shipping a feature because it doesn't solve the developer need is OK.
+
+{% Aside 'codelab' %}
+Be sure to try out some of the apps the community has built with Fugu APIs
+by heading over to our [Project Fugu API Showcase](/fugu-showcase/) and exploring it.
+{% endAside %}
 
 ## Capabilities available in stable {: #in-stable }
 
@@ -96,8 +101,8 @@ the problem you're trying to solve, suggested use cases, and anything else
 that might be helpful.
 
 {% Aside %}
-  Want to try some of these new capabilities? Check out the
-  [Web Capabilities Codelab](https://developers.google.com/codelabs/project-fugu#0).
+Want to try some of these new capabilities? Check out the
+[Web Capabilities Codelab](https://developers.google.com/codelabs/project-fugu#0).
 {% endAside %}
 
 [ot-dashboard]: https://developers.chrome.com/origintrials/#/trials/active
