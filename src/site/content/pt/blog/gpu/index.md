@@ -119,7 +119,7 @@ WebGPU é uma API de baixo nível, como WebGL. É muito poderoso, bastante proli
 
 ## Suporte do navegador {: #browser-support }
 
-O WebGPU está disponível em dispositivos selecionados no Chrome OS, macOS e Windows 10 no Chrome 94, com mais dispositivos sendo suportados no futuro. O suporte experimental para Linux está disponível executando o Chrome com `--enable-features=Vulkan`. Mais suporte para mais plataformas virá em seguida.
+O WebGPU está disponível em dispositivos selecionados no ChromeOS, macOS e Windows 10 no Chrome 94, com mais dispositivos sendo suportados no futuro. O suporte experimental para Linux está disponível executando o Chrome com `--enable-features=Vulkan`. Mais suporte para mais plataformas virá em seguida.
 
 A lista completa de problemas conhecidos está disponível no [documento Origin Trial Caveats](https://hackmd.io/QcdsK_g7RVKRCIIBqgs5Hw) .
 

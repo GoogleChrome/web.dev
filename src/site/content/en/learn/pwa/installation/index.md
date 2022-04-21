@@ -176,7 +176,7 @@ Most app catalogs and stores support technologies that let you publish a package
 
 The app catalogs and stores that support publishing a PWA are:
 
-- [Google Play Store for Android and Chrome OS](https://chromeos.dev/en/publish/pwa-in-play), using a [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/).
+- [Google Play Store for Android and ChromeOS](https://chromeos.dev/en/publish/pwa-in-play), using a [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/).
 - Apple App Store for iOS, macOS, and iPadOS, using WKWebView and [App-Bound Domains](https://webkit.org/blog/10882/app-bound-domains/).
 - [Microsoft Store for Windows 10 and 11](https://docs.microsoft.com/en-us/windows/uwp/publish/pwa/overview), using APPX packages.
 - [Samsung Galaxy Store](https://samsunginternet.github.io/introducing-progressive-web-apps-to-samsung-galaxy-store/), using the Samsung WebAPK minting server.

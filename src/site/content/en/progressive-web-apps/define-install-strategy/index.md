@@ -42,7 +42,7 @@ If the size of this segment is considerable, that's a good indication that you n
 
 ## Promoting the installing of your PWA through the browser
 
-If you have a high quality PWA, it may be better to promote its installation over your platform-specific app. For example, if the platform-specific app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the platform-specific app wasn't optimized for bigger screens, such as on Chrome OS.
+If you have a high quality PWA, it may be better to promote its installation over your platform-specific app. For example, if the platform-specific app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the platform-specific app wasn't optimized for bigger screens, such as on ChromeOS.
 
 For some apps, driving platform-specific app installations is a key part of the business model, in that case, it makes business sense to show a platform-specific app install promotion. But, some users might be more comfortable staying on the web. If that segment can be identified, the PWA prompt can be shown only to them (what we call "PWA as fallback").
 

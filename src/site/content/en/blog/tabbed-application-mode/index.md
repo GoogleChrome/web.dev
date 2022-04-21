@@ -117,7 +117,7 @@ To use tabbed application mode, developers need to opt their apps in by setting 
 
 ### Trying tabbed application mode
 
-You can try tabbed application mode on Chrome&nbsp;OS devices running Chrome&nbsp;83 and up today:
+You can try tabbed application mode on ChromeOS devices running Chrome&nbsp;83 and up today:
 
 1. Set the `#enable-desktop-pwas-tab-strip` flag.
 1. Install any web app that runs in `standalone` mode, for example,

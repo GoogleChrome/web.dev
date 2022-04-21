@@ -215,7 +215,7 @@ if (('BarcodeDetector' in window) &&
 
 ## 운영 체제 지원 {: #os-support}
 
-바코드 감지는 macOS, Chrome OS 및 Android에서 사용할 수 있습니다. Android에는 [Google Play 서비스](https://play.google.com/store/apps/details?id=com.google.android.gms)가 필요합니다.
+바코드 감지는 macOS, ChromeOS 및 Android에서 사용할 수 있습니다. Android에는 [Google Play 서비스](https://play.google.com/store/apps/details?id=com.google.android.gms)가 필요합니다.
 
 ## 모범 사례 {: #bestpractices}
 

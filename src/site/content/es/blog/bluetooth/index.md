@@ -32,13 +32,13 @@ Este artículo asume que tiene conocimientos básicos sobre cómo funcionan el B
 
 Aunque la [especificación de la API Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth/) aún no está finalizada, los autores de las especificaciones están buscando activamente desarrolladores entusiastas para probar esta API y dar [comentario sobre las especificaciones](https://github.com/WebBluetoothCG/web-bluetooth/issues) y [retroalimentación sobre la implementación](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth).
 
-Un subconjunto de la API Web Bluetooth está disponible en Chrome OS, Chrome para Android 6.0, Mac (Chrome 56) y Windows 10 (Chrome 70). Esto significa que debería poder [solicitar](#request) y [conectarse](#connect) a dispositivos Bluetooth de baja energía cercanos, [leer](#read)/[escribir](#write) características de Bluetooth, [recibir notificaciones GATT](#notifications), saber cuándo [se desconecta](#disconnect) un dispositivo Bluetooth e incluso [leer y escribir descriptores de Bluetooth](#descriptors). Consulte la tabla de [compatibilidad de navegadores](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) de MDN para obtener más información.
+Un subconjunto de la API Web Bluetooth está disponible en ChromeOS, Chrome para Android 6.0, Mac (Chrome 56) y Windows 10 (Chrome 70). Esto significa que debería poder [solicitar](#request) y [conectarse](#connect) a dispositivos Bluetooth de baja energía cercanos, [leer](#read)/[escribir](#write) características de Bluetooth, [recibir notificaciones GATT](#notifications), saber cuándo [se desconecta](#disconnect) un dispositivo Bluetooth e incluso [leer y escribir descriptores de Bluetooth](#descriptors). Consulte la tabla de [compatibilidad de navegadores](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) de MDN para obtener más información.
 
 Para Linux y versiones anteriores de Windows, habilite `#experimental-web-platform-features` en `about://flags`.
 
 ### Disponible para pruebas de origen
 
-Para obtener la mayor retroalimentación posible de los desarrolladores que utilizan la API Web Bluetooth en el campo, Chrome ha agregado previamente esta función en Chrome 53 como una [prueba de origen](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) para Chrome OS, Android y Mac.
+Para obtener la mayor retroalimentación posible de los desarrolladores que utilizan la API Web Bluetooth en el campo, Chrome ha agregado previamente esta función en Chrome 53 como una [prueba de origen](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) para ChromeOS, Android y Mac.
 
 La prueba terminó con éxito en enero de 2017.
 

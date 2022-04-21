@@ -79,7 +79,7 @@ There were a number of other
 {% BrowserCompat 'api.Window.showOpenFilePicker' %}
 
 The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
-Chrome OS, and Linux. A notable exception is Brave
+ChromeOS, and Linux. A notable exception is Brave
 ([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)). Android support
 is planned; you can track progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 

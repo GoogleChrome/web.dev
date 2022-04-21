@@ -43,7 +43,7 @@ Si el tamaño de este segmento es considerable, es una buena indicación de que 
 
 ## Promoviendo la instalación de tu PWA a través del navegador
 
-Si tienes una PWA de alta calidad, puede ser mejor promover su instalación sobre la aplicación específica de tu plataforma. Por ejemplo, si la aplicación específica de la plataforma le falta la funcionalidad que ofrece tu PWA o si es que no se ha actualizado por un tiempo. También puede ser útil promover la instalación de tu PWA si la aplicación específica de la plataforma no está optimizada para pantallas más grandes, como lo puede ser en Chrome OS.
+Si tienes una PWA de alta calidad, puede ser mejor promover su instalación sobre la aplicación específica de tu plataforma. Por ejemplo, si la aplicación específica de la plataforma le falta la funcionalidad que ofrece tu PWA o si es que no se ha actualizado por un tiempo. También puede ser útil promover la instalación de tu PWA si la aplicación específica de la plataforma no está optimizada para pantallas más grandes, como lo puede ser en ChromeOS.
 
 Para algunas aplicaciones, impulsar la instalación de aplicaciones específicas de la plataforma es una parte clave del modelo comercial; en ese caso, tiene sentido comercial mostrar una promoción de instalación de aplicaciones específica de plataforma. Sin embargo, es posible que algunos usuarios se sientan más cómodos permaneciendo en la web. Si ese segmento se puede identificar, el indicador de la PWA se puede mostrar solo a ellos (lo que llamamos "PWA como respaldo").
 

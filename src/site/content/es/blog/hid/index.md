@@ -294,7 +294,7 @@ La depuración de HID en Chrome es fácil con la página interna, `about://devic
 
 ## Compatibilidad con navegadores {: #browser-support }
 
-La API WebHID está disponible en todas las plataformas de escritorio (Chrome OS, Linux, macOS y Windows) en Chrome 89.
+La API WebHID está disponible en todas las plataformas de escritorio (ChromeOS, Linux, macOS y Windows) en Chrome 89.
 
 ## Demostraciones {: #demos }
 

@@ -525,7 +525,7 @@ with a [BBC micro:bit] board to show images on its 5x5 LED matrix.
 
 ## Browser support {: #browser-support }
 
-The Web Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The Web Serial API is available on all desktop platforms (ChromeOS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Polyfill {: #polyfill }

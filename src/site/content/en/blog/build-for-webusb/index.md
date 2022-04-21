@@ -638,9 +638,9 @@ because fewer drivers are included by default. A notable omission, for example,
 is the USB CDC-ACM class commonly implemented by USB-to-serial adapters as there
 is no API in the Android SDK for communicating with a serial device.
 
-### Chrome OS
+### ChromeOS
 
-Chrome OS is based on Linux as well and also does not require any modification
+ChromeOS is based on Linux as well and also does not require any modification
 to system configuration. The permission_broker service controls access to USB
 devices and will allow the browser to access them as long as there is at least
 one unclaimed interface.

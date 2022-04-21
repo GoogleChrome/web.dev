@@ -428,7 +428,7 @@ ChromeでWebシリアルAPIをデバッグするには、Chrome内部の`about:/
 
 ## ブラウザのサポート {: #browser-support }
 
-WebシリアルAPIは、Chrome 89のすべてのデスクトッププラットフォーム（Chrome OS、Linux、macOS、およびWindows）で使用できます。
+WebシリアルAPIは、Chrome 89のすべてのデスクトッププラットフォーム（ChromeOS、Linux、macOS、およびWindows）で使用できます。
 
 ## ポリフィル {: #polyfill }
 

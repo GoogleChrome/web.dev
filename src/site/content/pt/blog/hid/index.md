@@ -292,7 +292,7 @@ Depurar o HID no Chrome é fácil com a página interna, `about://device-log`, o
 
 ## Compatibilidade com o navegador {: #browser-support }
 
-A API WebHID está disponível em todas as plataformas para desktop (Chrome OS, Linux, macOS e Windows) no Chrome 89.
+A API WebHID está disponível em todas as plataformas para desktop (ChromeOS, Linux, macOS e Windows) no Chrome 89.
 
 ## Demonstrações {: #demos }
 

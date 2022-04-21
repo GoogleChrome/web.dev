@@ -188,11 +188,11 @@ You should annotate app shortcuts `url` entries like you would do with
 ## Browser support
 
 App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
-Edge 85), Chrome OS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
+Edge 85), ChromeOS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
 
 <figure>
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450" %}
-  <figcaption>App shortcuts menu opened on Chrome OS</figcaption>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on ChromeOS", width="800", height="450" %}
+  <figcaption>App shortcuts menu opened on ChromeOS</figcaption>
 </figure>
 
 ## Trusted Web Activity support

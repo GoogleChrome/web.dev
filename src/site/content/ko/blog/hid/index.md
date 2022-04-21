@@ -290,7 +290,7 @@ Chrome에서 HID를 디버깅하는 작업은 내부 페이지 `about://device-l
 
 ## 브라우저 지원 {: #browser-support }
 
-WebHID API는 Chrome 89의 모든 데스크톱 플랫폼(Chrome OS, Linux, macOS 및 Windows)에서 사용할 수 있습니다.
+WebHID API는 Chrome 89의 모든 데스크톱 플랫폼(ChromeOS, Linux, macOS 및 Windows)에서 사용할 수 있습니다.
 
 ## 데모 {: #demos }
 

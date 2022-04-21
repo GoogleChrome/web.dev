@@ -179,7 +179,7 @@ Por ejemplo, en Android, el [campo `url` estará vacío](https://bugs.chromium.o
 Desde principios de 2021, la API de destino de recurso compartido web es compatible con:
 
 - Chrome y Edge 76 o posterior en Android.
-- Chrome 89 o posterior en Chrome OS.
+- Chrome 89 o posterior en ChromeOS.
 
 En todas las plataformas, su aplicación web debe estar [instalada](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) antes de que aparezca como un objetivo potencial para recibir datos compartidos.
 

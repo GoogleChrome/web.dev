@@ -215,7 +215,7 @@ Isso é melhor do que ocultar as interfaces porque, mesmo entre as plataformas, 
 
 ## Suporte para sistema operacional {: #os-support}
 
-A detecção de código de barras está disponível no macOS, Chrome OS e Android. [O Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) é necessário no Android.
+A detecção de código de barras está disponível no macOS, ChromeOS e Android. [O Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) é necessário no Android.
 
 ## Práticas recomendadas {: #bestpractices}
 
