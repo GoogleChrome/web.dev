@@ -41,4 +41,4 @@ in the Project Fugu API Showcase</a>. Happy browsing!
 
 ## Acknowledgements
 
-Hero image based on a [photo](https://unsplash.com/photos/QURU8IY-RaI) from [Sarah Lee](https://unsplash.com/@hisarahlee).
+Hero image based on a [photo](https://unsplash.com/photos/QURU8IY-RaI) by [Sarah Lee](https://unsplash.com/@hisarahlee).
