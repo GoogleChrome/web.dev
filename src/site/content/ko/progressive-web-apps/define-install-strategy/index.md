@@ -43,7 +43,7 @@ tags:
 
 ## 브라우저를 통해 PWA 설치 촉진
 
-고품질 PWA가 있는 경우 플랫폼별 앱보다 설치를 홍보하는 것이 더 나을 수 있습니다. 예를 들어 플랫폼별 앱에 PWA에서 제공하는 기능이 없거나 한동안 업데이트되지 않은 경우입니다. 플랫폼별 앱이 Chrome OS와 같이 더 큰 화면에 최적화되지 않은 경우 PWA 설치를 홍보하는 것도 도움이 될 수 있습니다.
+고품질 PWA가 있는 경우 플랫폼별 앱보다 설치를 홍보하는 것이 더 나을 수 있습니다. 예를 들어 플랫폼별 앱에 PWA에서 제공하는 기능이 없거나 한동안 업데이트되지 않은 경우입니다. 플랫폼별 앱이 ChromeOS와 같이 더 큰 화면에 최적화되지 않은 경우 PWA 설치를 홍보하는 것도 도움이 될 수 있습니다.
 
 일부 앱의 경우 플랫폼별 앱 설치를 유도하는 것이 비즈니스 모델의 핵심 부분입니다. 이 경우 플랫폼별 앱 설치 프로모션을 표시하는 것이 비즈니스에 합리적입니다. 그러나 일부 사용자는 웹에 머무르는 것이 더 편할 수 있습니다. 해당 세그먼트를 식별할 수 있는 경우 PWA 프롬프트는 해당 세그먼트에만 표시될 수 있습니다("폴백으로서의 PWA"라고 함).
 
@@ -120,16 +120,13 @@ const deviceCategory = req.get('Device-Memory') < 1 ? 'lite' : 'full';`
 먼저, 모든 자사 요청에 대한 HTTP 응답 헤더에서 장치 메모리 힌트를 수신하는 데 관심이 있다고 브라우저에 알립니다.
 
 ```html
-HTTP/1.1 200 OK
-Content-Type: text/html
-Accept-CH: Device-Memory
+HTTP/1.1 200 OK Content-Type: text/html Accept-CH: Device-Memory
 ```
 
 그런 다음 HTTP 요청의 요청 헤더에서 Device-Memory 정보를 수신하기 시작합니다.
 
 ```html
-GET /main.js HTTP/1.1
-Device-Memory: 0.5
+GET /main.js HTTP/1.1 Device-Memory: 0.5
 ```
 
 백엔드에서 이 정보를 사용하여 사용자 기기 카테고리와 함께 쿠키를 저장할 수 있습니다.
@@ -150,7 +147,7 @@ app.get('/route', (req, res) => {
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // show "Lite app" install banner or PWA A2HS prompt
+  // show "Lite app" install banner or PWA A2HS prompt
 } else {
   // show "Core app" install banner
 }

@@ -155,7 +155,7 @@ properties, including app shortcuts. It makes it easy to verify that all of the
 shortcut icons, if provided, are loading properly.
 
 App shortcuts may not be available right away to all users because Progressive
-Web App updates are capped to once a day.  Find out more about
+Web App updates are capped to once a day. Find out more about
 [how Chrome handles updates to the web app manifest].
 
 ## Best practices
@@ -182,17 +182,16 @@ shortcuts menu. Use distinct names for each app shortcut.
 ### Measure app shortcuts usage
 
 You should annotate app shortcuts `url` entries like you would do with
-`start_url` for analytics purposes (e.g. `url:
-"/my-shortcut?utm_source=homescreen"`).
+`start_url` for analytics purposes (e.g. `url: "/my-shortcut?utm_source=homescreen"`).
 
 ## Browser support
 
 App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
-Edge 85), Chrome OS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
+Edge 85), ChromeOS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
 
 <figure>
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450" %}
-  <figcaption>App shortcuts menu opened on Chrome OS</figcaption>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on ChromeOS", width="800", height="450" %}
+  <figcaption>App shortcuts menu opened on ChromeOS</figcaption>
 </figure>
 
 ## Trusted Web Activity support
@@ -228,15 +227,15 @@ Check out the [app shortcuts sample] and its [source].
 
 ## Helpful links
 
-* [Explainer][explainer]
-* [Spec][spec]
-* [App shortcuts sample][app shortcuts sample] | [App shortcuts sample source][source]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: [`UI>Browser>WebAppInstalls`]
+- [Explainer][explainer]
+- [Spec][spec]
+- [App shortcuts sample][app shortcuts sample] | [App shortcuts sample source][source]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: [`UI>Browser>WebAppInstalls`]
 
-[Progressive Web Apps]: /progressive-web-apps/
-[What does it take to be installable?]: /install-criteria/
+[progressive web apps]: /progressive-web-apps/
+[what does it take to be installable?]: /install-criteria/
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons
@@ -246,13 +245,13 @@ Check out the [app shortcuts sample] and its [source].
 [source]: https://glitch.com/edit/#!/app-shortcuts
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=955497
 [cr-status]: https://chromestatus.com/feature/5706099464339456
-[`UI>Browser>WebAppInstalls`]: https://crbug.com/?q=component:UI>Browser>WebAppInstalls
+[`ui>browser>webappinstalls`]: https://crbug.com/?q=component:UI>Browser>WebAppInstalls
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
 [required]: https://github.com/GoogleChromeLabs/bubblewrap/issues/116
-[Trusted Web Activity]: /using-a-pwa-in-your-android-app/
-[PWABuilder]: https://www.pwabuilder.com/
+[trusted web activity]: /using-a-pwa-in-your-android-app/
+[pwabuilder]: https://www.pwabuilder.com/
 [caveats]: https://github.com/pwa-builder/CloudAPK/issues/25
-[Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
+[android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
-[how Chrome handles updates to the web app manifest]: /manifest-updates
+[how chrome handles updates to the web app manifest]: /manifest-updates

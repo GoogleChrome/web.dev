@@ -110,7 +110,7 @@ Un uso de HID es un valor numérico que se refiere a una entrada o salida estand
 Para comprobar si la API WebHID es compatible, utilice:
 
 ```js
-if ("hid" in navigator) {
+if ('hid' in navigator) {
   // The WebHID API is supported.
 }
 ```
@@ -130,16 +130,16 @@ Los múltiples objetos `HIDDevice` devueltos por esta función representan múlt
 const filters = [
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2006 // Joy-Con Left
+    productId: 0x2006, // Joy-Con Left
   },
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2007 // Joy-Con Right
-  }
+    productId: 0x2007, // Joy-Con Right
+  },
 ];
 
 // Prompt user to select a Joy-Con device.
-const [device] = await navigator.hid.requestDevice({ filters });
+const [device] = await navigator.hid.requestDevice({filters});
 ```
 
 ```js
@@ -192,8 +192,8 @@ Una vez que se ha establecido la conexión HID, puede manejar los informes de en
 Continuando con el ejemplo anterior, el código a continuación le muestra cómo detectar qué botón ha presionado el usuario en un dispositivo Joy-Con Right para que, con suerte, pueda probarlo en casa.
 
 ```js
-device.addEventListener("inputreport", event => {
-  const { data, device, reportId } = event;
+device.addEventListener('inputreport', (event) => {
+  const {data, device, reportId} = event;
 
   // Handle only the Joy-Con Right device and a specific report ID.
   if (device.productId !== 0x2007 && reportId !== 0x3f) return;
@@ -201,7 +201,7 @@ device.addEventListener("inputreport", event => {
   const value = data.getUint8(0);
   if (value === 0) return;
 
-  const someButtons = { 1: "A", 2: "X", 4: "B", 8: "Y" };
+  const someButtons = {1: 'A', 2: 'X', 4: 'B', 8: 'Y'};
   console.log(`User pressed button ${someButtons[value]}.`);
 });
 ```
@@ -222,7 +222,9 @@ await device.sendReport(0x01, new Uint8Array(enableVibrationData));
 
 // Then, send a command to make the Joy-Con device rumble.
 // Actual bytes are available in the sample below.
-const rumbleData = [ /* ... */ ];
+const rumbleData = [
+  /* ... */
+];
 await device.sendReport(0x10, new Uint8Array(rumbleData));
 ```
 
@@ -239,11 +241,11 @@ Para enviar un informe de características a un dispositivo HID, pase el ID de i
 El siguiente ejemplo ilustra el uso de informes de características mostrándole cómo enviar solicitud a un dispositivo de retroiluminación de teclado de Apple, abrirlo y hacer que parpadee.
 
 ```js
-const waitFor = duration => new Promise(r => setTimeout(r, duration));
+const waitFor = (duration) => new Promise((r) => setTimeout(r, duration));
 
 // Prompt user to select an Apple Keyboard Backlight device.
 const [device] = await navigator.hid.requestDevice({
-  filters: [{ vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00 }]
+  filters: [{vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00}],
 });
 
 // Wait for the HID connection to open.
@@ -277,11 +279,11 @@ const dataView = await device.receiveFeatureReport(/* reportId= */ 1);
 Cuando el sitio web tiene permiso para acceder a un dispositivo HID, puede recibir activamente eventos de conexión y desconexión escuchando eventos `"connect"` y `"disconnect"`.
 
 ```js
-navigator.hid.addEventListener("connect", event => {
+navigator.hid.addEventListener('connect', (event) => {
   // Automatically open event.device or warn user a device is available.
 });
 
-navigator.hid.addEventListener("disconnect", event => {
+navigator.hid.addEventListener('disconnect', (event) => {
   // Remove |event.device| from the UI.
 });
 ```
@@ -294,7 +296,7 @@ La depuración de HID en Chrome es fácil con la página interna, `about://devic
 
 ## Compatibilidad con navegadores {: #browser-support }
 
-La API WebHID está disponible en todas las plataformas de escritorio (Chrome OS, Linux, macOS y Windows) en Chrome 89.
+La API WebHID está disponible en todas las plataformas de escritorio (ChromeOS, Linux, macOS y Windows) en Chrome 89.
 
 ## Demostraciones {: #demos }
 
@@ -318,13 +320,13 @@ Al equipo de Chrome le encantaría conocer sus pensamientos y experiencias con l
 
 ¿Hay algo en la API que no funcione como se esperaba? ¿O faltan métodos o propiedades que necesita para implementar su idea?
 
-Reporte un problema de especificaciones en el [repositorio  GitHub de la API WebHID](https://github.com/wicg/webhid/issues) o agregue sus comentarios a un reporte existente.
+Reporte un problema de especificaciones en el [repositorio GitHub de la API WebHID](https://github.com/wicg/webhid/issues) o agregue sus comentarios a un reporte existente.
 
 ### Reporte problemas con la implementación
 
 ¿Encontró un error con la implementación en Chrome? ¿O la implementación es diferente de la especificación?
 
-Reporte un error en [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID). Asegúrese de incluir todos los detalles que pueda, dé instrucciones sencillas para reproducir el error y configure los *Componentes* como `Blink>HID`. [Glitch](https://glitch.com) funciona muy bien para compartir reproducciones rápidas y fáciles.
+Reporte un error en [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID). Asegúrese de incluir todos los detalles que pueda, dé instrucciones sencillas para reproducir el error y configure los _Componentes_ como `Blink>HID`. [Glitch](https://glitch.com) funciona muy bien para compartir reproducciones rápidas y fáciles.
 
 ### Muestre apoyo
 

@@ -84,7 +84,7 @@ Web Serial API предоставляет веб-сайтам способ ос�
 Чтобы проверить, поддерживается ли Web Serial API, используйте:
 
 ```js
-if ("serial" in navigator) {
+if ('serial' in navigator) {
   // The Web Serial API is supported.
 }
 ```
@@ -112,14 +112,14 @@ const ports = await navigator.serial.getPorts();
 ```js
 // Filter on devices with the Arduino Uno USB Vendor/Product IDs.
 const filters = [
-  { usbVendorId: 0x2341, usbProductId: 0x0043 },
-  { usbVendorId: 0x2341, usbProductId: 0x0001 }
+  {usbVendorId: 0x2341, usbProductId: 0x0043},
+  {usbVendorId: 0x2341, usbProductId: 0x0001},
 ];
 
 // Prompt user to select an Arduino Uno device.
-const port = await navigator.serial.requestPort({ filters });
+const port = await navigator.serial.requestPort({filters});
 
-const { usbProductId, usbVendorId } = port.getInfo();
+const {usbProductId, usbVendorId} = port.getInfo();
 ```
 
 <figure>{% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Скриншот веб-формы с выбором последовательного порта", width="800", height="513" %} <figcaption>Указание пользователю выбрать BBC micro:bit</figcaption></figure>
@@ -131,7 +131,7 @@ const { usbProductId, usbVendorId } = port.getInfo();
 const port = await navigator.serial.requestPort();
 
 // Wait for the serial port to open.
-await port.open({ baudRate: 9600 });
+await port.open({baudRate: 9600});
 ```
 
 Вы также можете указать любую из опций ниже при открытии последовательного порта. Эти параметры не являются обязательными и имеют удобные [значения по умолчанию](https://wicg.github.io/serial/#serialoptions-dictionary) .
@@ -157,7 +157,7 @@ const reader = port.readable.getReader();
 
 // Listen to data coming from the serial device.
 while (true) {
-  const { value, done } = await reader.read();
+  const {value, done} = await reader.read();
   if (done) {
     // Allow the serial port to be closed later.
     reader.releaseLock();
@@ -222,7 +222,6 @@ const writer = port.writable.getWriter();
 const data = new Uint8Array([104, 101, 108, 108, 111]); // hello
 await writer.write(data);
 
-
 // Allow the serial port to be closed later.
 writer.releaseLock();
 ```
@@ -235,7 +234,7 @@ const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
 
 const writer = textEncoder.writable.getWriter();
 
-await writer.write("hello");
+await writer.write('hello');
 ```
 
 ### Закройте последовательный порт {: #close-port}
@@ -259,7 +258,7 @@ async function readUntilClosed() {
     reader = port.readable.getReader();
     try {
       while (true) {
-        const { value, done } = await reader.read();
+        const {value, done} = await reader.read();
         if (done) {
           // reader.cancel() has been called.
           break;
@@ -327,11 +326,11 @@ await port.close();
 Если последовательный порт предоставляется устройством USB, это устройство может быть подключено или отключено от системы. Когда веб-сайту было предоставлено разрешение на доступ к последовательному порту, он должен отслеживать события `connect` и `disconnect`
 
 ```js
-navigator.serial.addEventListener("connect", (event) => {
+navigator.serial.addEventListener('connect', (event) => {
   // TODO: Automatically open event.target or warn user a port is available.
 });
 
-navigator.serial.addEventListener("disconnect", (event) => {
+navigator.serial.addEventListener('disconnect', (event) => {
   // TODO: Remove |event.target| from the UI.
   // If the serial port was opened, a stream error would be observed as well.
 });
@@ -347,13 +346,13 @@ navigator.serial.addEventListener("disconnect", (event) => {
 
 ```js
 // Turn off Serial Break signal.
-await port.setSignals({ break: false });
+await port.setSignals({break: false});
 
 // Turn on Data Terminal Ready (DTR) signal.
-await port.setSignals({ dataTerminalReady: true });
+await port.setSignals({dataTerminalReady: true});
 
 // Turn off Request To Send (RTS) signal.
-await port.setSignals({ requestToSend: false });
+await port.setSignals({requestToSend: false});
 ```
 
 ```js
@@ -380,14 +379,14 @@ console.log(`Ring Indicator:      ${signals.ringIndicator}`);
 class LineBreakTransformer {
   constructor() {
     // A container for holding stream data until a new line.
-    this.chunks = "";
+    this.chunks = '';
   }
 
   transform(chunk, controller) {
     // Append new chunks to existing chunks.
     this.chunks += chunk;
     // For each line breaks in chunks, send the parsed lines out.
-    const lines = this.chunks.split("\r\n");
+    const lines = this.chunks.split('\r\n');
     this.chunks = lines.pop();
     lines.forEach((line) => controller.enqueue(line));
   }
@@ -428,7 +427,7 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ## Поддержка браузера {: #browser-support}
 
-Web Serial API доступен на всех настольных платформах (Chrome OS, Linux, macOS и Windows) в Chrome 89.
+Web Serial API доступен на всех настольных платформах (ChromeOS, Linux, macOS и Windows) в Chrome 89.
 
 ## Полифилл {: #polyfill}
 
@@ -454,7 +453,7 @@ Web Serial API доступен на всех настольных платфо�
 
 Вы нашли ошибку в реализации Chrome? Или реализация отличается от спецификации?
 
-Сообщите об ошибке на [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESerial) . Обязательно укажите как можно больше подробностей, предоставьте простые инструкции по воспроизведению ошибки и установите для *Компонентов* `Blink>Serial` . [Glitch](https://glitch.com) отлично подходит для быстрого и легкого обмена репродукциями.
+Сообщите об ошибке на [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESerial) . Обязательно укажите как можно больше подробностей, предоставьте простые инструкции по воспроизведению ошибки и установите для _Компонентов_ `Blink>Serial` . [Glitch](https://glitch.com) отлично подходит для быстрого и легкого обмена репродукциями.
 
 ### Показать поддержку
 

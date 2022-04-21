@@ -32,13 +32,13 @@ stack_overflow_tag: web-bluetooth
 
 尽管 [Web Bluetooth API 规范](https://webbluetoothcg.github.io/web-bluetooth/)尚未最终确定，但规范的作者们正在积极寻找热情的开发人员来试用此 API，并就[规范](https://github.com/WebBluetoothCG/web-bluetooth/issues)和[实施](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth)提供反馈。
 
-Chrome OS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 中有一个可用的 Web Bluetooth API 子集。这意味着您应该能够[请求](#request)并[连接](#connect)到附近的低功耗蓝牙设备、[读取](#read)/[写入](#write)蓝牙特性、[接收 GATT 通知](#notifications)、了解[蓝牙设备何时断开连接](#disconnect)，甚至[读取和写入蓝牙描述符](#descriptors)。有关更多信息，请参阅 MDN 的[浏览器兼容性](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility)表。
+ChromeOS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 中有一个可用的 Web Bluetooth API 子集。这意味着您应该能够[请求](#request)并[连接](#connect)到附近的低功耗蓝牙设备、[读取](#read)/[写入](#write)蓝牙特性、[接收 GATT 通知](#notifications)、了解[蓝牙设备何时断开连接](#disconnect)，甚至[读取和写入蓝牙描述符](#descriptors)。有关更多信息，请参阅 MDN 的[浏览器兼容性](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility)表。
 
 对于 Linux 和更早版本的 Windows，请在 `about://flags` 中启用 `#experimental-web-platform-features` 标志。
 
 ### 初步试用
 
-为了尽可能多地获得开发人员对使用 Web Bluetooth API 的一手反馈，Chrome 此前已在 Chrome 53 中添加了此功能，以供在 Chrome OS、Android 和 Mac 中[初步试用。](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
+为了尽可能多地获得开发人员对使用 Web Bluetooth API 的一手反馈，Chrome 此前已在 Chrome 53 中添加了此功能，以供在 ChromeOS、Android 和 Mac 中[初步试用。](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 
 试用已于 2017 年 1 月顺利结束。
 
@@ -55,7 +55,7 @@ Chrome OS、Chrome for Android 6.0、Mac (Chrome 56) 和 Windows 10 (Chrome 70) 
 作为一项安全功能，使用 `navigator.bluetooth.requestDevice` 发现蓝牙设备必须由[用户手势](https://html.spec.whatwg.org/multipage/interaction.html#activation)（例如触摸或鼠标点击）触发。我们正在谈论对 [`pointerup`](https://developer.chrome.com/blog/pointer-events/) 、 `click` 和 `touchend` 事件的侦听。
 
 ```js
-button.addEventListener('pointerup', function(event) {
+button.addEventListener('pointerup', function (event) {
   // Call navigator.bluetooth.requestDevice
 });
 ```
@@ -85,21 +85,33 @@ Web Bluetooth API 严重依赖于 JavaScript [Promises](https://developer.mozill
 例如，要请求公布[蓝牙 GATT 电池服务](https://www.bluetooth.com/specifications/gatt/)的蓝牙设备：
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 如果您的蓝牙 GATT 服务不在[标准化蓝牙 GATT 服务](https://www.bluetooth.com/specifications/assigned-numbers/)列表中，您可以提供完整的蓝牙 UUID 或简短的 16 位或 32 位形式。
 
 ```js
-navigator.bluetooth.requestDevice({
-  filters: [{
-    services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb']
-  }]
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb'],
+      },
+    ],
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 #### 名称筛选器
@@ -107,14 +119,21 @@ navigator.bluetooth.requestDevice({
 您还可以根据使用 `name` 筛选键公布的设备名称请求蓝牙设备，甚至可以使用 `namePrefix` 筛选键根据此名称的前缀来请求蓝牙设备。请注意，在这种情况下，您还需要定义 `optionalServices` 键才能访问未包含在服务筛选器中的任何服务。否则，稍后在尝试访问它们时会出现错误。
 
 ```js
-navigator.bluetooth.requestDevice({
-  filters: [{
-    name: 'Francois robot'
-  }],
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        name: 'Francois robot',
+      },
+    ],
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 #### 制造商数据筛选器
@@ -124,17 +143,26 @@ navigator.bluetooth.requestDevice({
 ```js
 // Filter Bluetooth devices from Google company with manufacturer data bytes
 // that start with [0x01, 0x02].
-navigator.bluetooth.requestDevice({
-  filters: [{
-    manufacturerData: [{
-      companyIdentifier: 0x00e0,
-      dataPrefix: new Uint8Array([0x01, 0x02])
-    }]
-  }],
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        manufacturerData: [
+          {
+            companyIdentifier: 0x00e0,
+            dataPrefix: new Uint8Array([0x01, 0x02]),
+          },
+        ],
+      },
+    ],
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 掩码还可以与数据前缀一起使用，以匹配制造商数据中的某些模式。请查看[蓝牙数据筛选器解释器](https://github.com/WebBluetoothCG/web-bluetooth/blob/main/data-filters-explainer.md)以了解更多信息。
@@ -146,12 +174,17 @@ navigator.bluetooth.requestDevice({
 最后，您可以使用 `acceptAllDevices` 键代替 `filters` 来显示附近的所有蓝牙设备。您还需要定义 `optionalServices` 键才能访问某些服务。否则，稍后在尝试访问它们时会出现错误。
 
 ```js
-navigator.bluetooth.requestDevice({
-  acceptAllDevices: true,
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    acceptAllDevices: true,
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 {% Aside 'caution' %} 这可能会导致选择器中显示一堆不相关的设备，并且由于没有筛选器而浪费能源。请谨慎使用。{% endAside %}
@@ -161,16 +194,21 @@ navigator.bluetooth.requestDevice({
 那么现在有一个 `BluetoothDevice` 该怎么办？让我们将其连接到包含服务和特征定义的蓝牙远程 GATT 服务器。
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {
-  // Human-readable name of the device.
-  console.log(device.name);
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => {
+    // Human-readable name of the device.
+    console.log(device.name);
 
-  // Attempts to connect to remote GATT Server.
-  return device.gatt.connect();
-})
-.then(server => { /* … */ })
-.catch(error => { console.error(error); });
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then((server) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 ### 读取蓝牙特征 {: #read }
@@ -180,24 +218,27 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 在下面的示例中，`battery_level` 是[标准的电池电量特征](https://www.bluetooth.com/specifications/gatt/) 。
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => device.gatt.connect())
-.then(server => {
-  // Getting Battery Service…
-  return server.getPrimaryService('battery_service');
-})
-.then(service => {
-  // Getting Battery Level Characteristic…
-  return service.getCharacteristic('battery_level');
-})
-.then(characteristic => {
-  // Reading Battery Level…
-  return characteristic.readValue();
-})
-.then(value => {
-  console.log(`Battery percentage is ${value.getUint8(0)}`);
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => {
+    // Getting Battery Service…
+    return server.getPrimaryService('battery_service');
+  })
+  .then((service) => {
+    // Getting Battery Level Characteristic…
+    return service.getCharacteristic('battery_level');
+  })
+  .then((characteristic) => {
+    // Reading Battery Level…
+    return characteristic.readValue();
+  })
+  .then((value) => {
+    console.log(`Battery percentage is ${value.getUint8(0)}`);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 如果您在使用自定义蓝牙 GATT 特征，则可以向 `service.getCharacteristic` 提供完整的蓝牙 UUID 或简短的 16 位或 32 位形式。
@@ -228,19 +269,22 @@ function handleBatteryLevelChanged(event) {
 我保证这里没有魔法。这一切都在[心率控制点特征页面](https://www.bluetooth.com/specifications/gatt/)中进行了解释。
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_control_point'))
-.then(characteristic => {
-  // Writing 1 is the signal to reset energy expended.
-  const resetEnergyExpended = Uint8Array.of(1);
-  return characteristic.writeValue(resetEnergyExpended);
-})
-.then(_ => {
-  console.log('Energy expended has been reset.');
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['heart_rate']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => server.getPrimaryService('heart_rate'))
+  .then((service) => service.getCharacteristic('heart_rate_control_point'))
+  .then((characteristic) => {
+    // Writing 1 is the signal to reset energy expended.
+    const resetEnergyExpended = Uint8Array.of(1);
+    return characteristic.writeValue(resetEnergyExpended);
+  })
+  .then((_) => {
+    console.log('Energy expended has been reset.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 ### 接收 GATT 通知 {: #notifications }
@@ -248,17 +292,22 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
 现在，让我们看看当设备上的[心率测量](https://www.bluetooth.com/specifications/gatt/)特征发生变化时如何得到通知：
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_measurement'))
-.then(characteristic => characteristic.startNotifications())
-.then(characteristic => {
-  characteristic.addEventListener('characteristicvaluechanged',
-                                  handleCharacteristicValueChanged);
-  console.log('Notifications have been started.');
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['heart_rate']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => server.getPrimaryService('heart_rate'))
+  .then((service) => service.getCharacteristic('heart_rate_measurement'))
+  .then((characteristic) => characteristic.startNotifications())
+  .then((characteristic) => {
+    characteristic.addEventListener(
+      'characteristicvaluechanged',
+      handleCharacteristicValueChanged,
+    );
+    console.log('Notifications have been started.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function handleCharacteristicValueChanged(event) {
   const value = event.target.value;
@@ -275,16 +324,21 @@ function handleCharacteristicValueChanged(event) {
 为了提供更好的用户体验，您可能需要侦听断开连接事件并邀请用户重新连接：
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ name: 'Francois robot' }] })
-.then(device => {
-  // Set up event listener for when device gets disconnected.
-  device.addEventListener('gattserverdisconnected', onDisconnected);
+navigator.bluetooth
+  .requestDevice({filters: [{name: 'Francois robot'}]})
+  .then((device) => {
+    // Set up event listener for when device gets disconnected.
+    device.addEventListener('gattserverdisconnected', onDisconnected);
 
-  // Attempts to connect to remote GATT Server.
-  return device.gatt.connect();
-})
-.then(server => { /* … */ })
-.catch(error => { console.error(error); });
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then((server) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function onDisconnected(event) {
   const device = event.target;
@@ -412,4 +466,4 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer']
 
 ## 致谢
 
-非常感谢 [Kayce Basques](https://github.com/kaycebasques) 审阅本文。首图提供者：[美国博尔德的 SparkFun Electronics](https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg)。
+非常感谢 [Kayce Basques](https://github.com/kaycebasques) 审阅本文。首图提供者：[美国博尔德的 SparkFun Electronics](<https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg>)。

@@ -156,18 +156,19 @@ Se seu `method` for `"POST"` , como seria se seu aplicativo de destino aceitasse
 A página de primeiro plano não pode processar esses dados diretamente. Como a página vê os dados como uma solicitação, ela os repassa para o service worker, onde você pode interceptá-los com um listener de evento de `fetch`. A partir daqui, você pode passar os dados de volta para a página de primeiro plano usando `postMessage()` ou passá-los para o servidor:
 
 ```js
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   // Se esta for uma solicitação POST de entrada para a
   // URL de "ação" registrada, responda a ela.
-  if (event.request.method === 'POST' &&
-      url.pathname === '/bookmark') {
-    event.respondWith((async () => {
-      const formData = await event.request.formData();
-      const link = formData.get('link') || '';
-      const responseUrl = await saveBookmark(link);
-      return Response.redirect(responseUrl, 303);
-    })());
+  if (event.request.method === 'POST' && url.pathname === '/bookmark') {
+    event.respondWith(
+      (async () => {
+        const formData = await event.request.formData();
+        const link = formData.get('link') || '';
+        const responseUrl = await saveBookmark(link);
+        return Response.redirect(responseUrl, 303);
+      })(),
+    );
   }
 });
 ```
@@ -185,7 +186,7 @@ Por exemplo, no Android, o campo [`url` ficará vazio](https://bugs.chromium.org
 Desde o início de 2021, a API Web Share Target é compatível com:
 
 - Chrome e Edge 76 ou posterior no Android.
-- Chrome 89 ou posterior no Chrome OS.
+- Chrome 89 ou posterior no ChromeOS.
 
 Em todas as plataformas, seu aplicativo da web deve ser [instalado](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) antes de aparecer como um alvo potencial para receber dados compartilhados.
 

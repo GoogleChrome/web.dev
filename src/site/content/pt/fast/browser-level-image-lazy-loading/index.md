@@ -50,7 +50,7 @@ Hoje, o Chrome já carrega imagens com prioridades diferentes, dependendo de ond
 A partir do Chrome 76, você pode usar o atributo `loading` para adiar completamente o carregamento de imagens offscreen (as que só podem ser acessadas ao rolar):
 
 ```html
-<img src="image.png" loading="lazy" alt="…" width="200" height="200">
+<img src="image.png" loading="lazy" alt="…" width="200" height="200" />
 ```
 
 Aqui estão os valores suportados para o atributo `loading`
@@ -109,13 +109,18 @@ Estamos empenhados em trabalhar junto com a comunidade de padrões da web para e
 Quando o navegador carrega uma imagem, ele não sabe imediatamente as dimensões da imagema menos que elas sejam explicitamente especificadas. Para permitir que o navegador reserve espaço suficiente numa página para imagens, é recomendável que todas as tags `<img>` incluam atributos `width` e `height`. Sem as dimensões especificadas, [podem ocorrer deslocamentos de layout](/cls), que são mais perceptíveis nas páginas que demoram para carregar.
 
 ```html
-<img src="image.png" loading="lazy" alt="…" width="200" height="200">
+<img src="image.png" loading="lazy" alt="…" width="200" height="200" />
 ```
 
 Como alternativa, pode-se especificar esses valores diretamente num estilo inline:
 
 ```html
-<img src="image.png" loading="lazy" alt="…" style="height:200px; width:200px;">
+<img
+  src="image.png"
+  loading="lazy"
+  alt="…"
+  style="height:200px; width:200px;"
+/>
 ```
 
 As melhores práticas de definir dimensões se aplicam a `<img>` independentemente de estarem ou não sendo carregados com lazy loading. Com o lazy loading, isto se torna ainda mais relevante. Definir `width` e `height` em imagens em navegadores modernos também permite que os navegadores deduzam seu tamanho intrínseco.
@@ -132,8 +137,8 @@ Imagens que são definidas usando o elemento `<picture>` também podem ser carre
 
 ```html
 <picture>
-  <source media="(min-width: 800px)" srcset="large.jpg 1x, larger.jpg 2x">
-  <img src="photo.jpg" loading="lazy">
+  <source media="(min-width: 800px)" srcset="large.jpg 1x, larger.jpg 2x" />
+  <img src="photo.jpg" loading="lazy" />
 </picture>
 ```
 
@@ -151,14 +156,14 @@ Geralmente, qualquer imagem na viewport deve ser carregada de forma imediata (ea
 
 ```html
 <!-- visible in the viewport -->
-<img src="product-1.jpg" alt="..." width="200" height="200">
-<img src="product-2.jpg" alt="..." width="200" height="200">
-<img src="product-3.jpg" alt="..." width="200" height="200">
+<img src="product-1.jpg" alt="..." width="200" height="200" />
+<img src="product-2.jpg" alt="..." width="200" height="200" />
+<img src="product-3.jpg" alt="..." width="200" height="200" />
 
 <!-- offscreen images -->
-<img src="product-4.jpg" loading="lazy" alt="..." width="200" height="200">
-<img src="product-5.jpg" loading="lazy" alt="..." width="200" height="200">
-<img src="product-6.jpg" loading="lazy" alt="..." width="200" height="200">
+<img src="product-4.jpg" loading="lazy" alt="..." width="200" height="200" />
+<img src="product-5.jpg" loading="lazy" alt="..." width="200" height="200" />
+<img src="product-6.jpg" loading="lazy" alt="..." width="200" height="200" />
 ```
 
 ## Degradação graciosa
@@ -191,7 +196,7 @@ Apenas as imagens que estão abaixo da viewport do dispositivo pela [distância 
 
 O atributo `loading` não deve, de forma alguma, afetar o código que atualmente carrega de forma lazy seus ativos, mas existem algumas coisas importantes a serem consideradas:
 
-1. Se o seu lazy-loader personalizado tentar carregar imagens ou frames antes do momento em que o Chrome os carrega normalmente, ou seja, a uma distância maior do que os [limites de distance-from-viewport](#distance-from-viewport-thresholds), eles ainda são adiados e carregados com base no comportamento normal do navegador.
+1. Se o seu lazy-loader personalizado tentar carregar imagens ou frames antes do momento em que o ChromeOS carrega normalmente, ou seja, a uma distância maior do que os [limites de distance-from-viewport](#distance-from-viewport-thresholds), eles ainda são adiados e carregados com base no comportamento normal do navegador.
 2. Se o seu lazy-loader personalizado usa uma distância menor para determinar quando carregar uma imagem específica, do que o navegador, então o comportamento estaria de acordo com suas configurações personalizadas.
 
 Um dos motivos importantes para continuar a usar uma biblioteca de terceiros junto com `loading="lazy"` é fornecer um polyfill para navegadores que ainda não suportam o atributo.
@@ -215,17 +220,17 @@ Por exemplo, [lazysizes](https://github.com/aFarkas/lazysizes) é uma biblioteca
 
 ```html
 <!-- Let's load this in-viewport image normally -->
-<img src="hero.jpg" alt="…">
+<img src="hero.jpg" alt="…" />
 
 <!-- Let's lazy-load the rest of these images -->
-<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
-<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
-<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload" />
+<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload" />
+<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload" />
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
+    images.forEach((img) => {
       img.src = img.dataset.src;
     });
   } else {
@@ -252,7 +257,7 @@ O atributo `loading` afeta os iframes de maneira diferente das imagens, dependen
 - `display: none` ou `visibility: hidden` é aplicado.
 - O iframe é posicionado offscreen usando posicionamento X ou Y negativos.
 
-Se um iframe atender a qualquer uma dessas condições, o Chrome vai considerá-lo oculto e não fará o lazy loading na maioria dos casos. Iframes que *não estão* ocultos são carregados apenas quando estiverem dentro dos limites de [distância da viewport](#distance-from-viewport-thresholds). Um espaço reservado é mostrado para iframes carregados de forma lazy que ainda estão sendo baixados.
+Se um iframe atender a qualquer uma dessas condições, o Chrome vai considerá-lo oculto e não fará o lazy loading na maioria dos casos. Iframes que _não estão_ ocultos são carregados apenas quando estiverem dentro dos limites de [distância da viewport](#distance-from-viewport-thresholds). Um espaço reservado é mostrado para iframes carregados de forma lazy que ainda estão sendo baixados.
 
 ### Como o lazy-loading no nível do navegador afeta os anúncios em uma página da web?
 

@@ -42,7 +42,7 @@ If the size of this segment is considerable, that's a good indication that you n
 
 ## Promoting the installing of your PWA through the browser
 
-If you have a high quality PWA, it may be better to promote its installation over your platform-specific app. For example, if the platform-specific app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the platform-specific app wasn't optimized for bigger screens, such as on Chrome OS.
+If you have a high quality PWA, it may be better to promote its installation over your platform-specific app. For example, if the platform-specific app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the platform-specific app wasn't optimized for bigger screens, such as on ChromeOS.
 
 For some apps, driving platform-specific app installations is a key part of the business model, in that case, it makes business sense to show a platform-specific app install promotion. But, some users might be more comfortable staying on the web. If that segment can be identified, the PWA prompt can be shown only to them (what we call "PWA as fallback").
 
@@ -61,14 +61,13 @@ Once a PWA meets the [installability criteria](/install-criteria/), most browser
 
 While that may be enough for some experiences, if your goal is to drive installations of your PWA, we highly recommend you listen for the [`BeforeInstallPromptEvent`](https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent), and follow the [patterns for promoting the installation](/promote-install/) of your PWA.
 
-
 ## Prevent your PWA from cannibalizing your platform-specific app install rate
 
 In some cases, you may choose to promote the installation of your platform-specific app over your PWA, but in this case, we still recommend you provide a mechanism to allow users to install your PWA. This fallback option makes it possible for users who can't, or don't want to install your platform-specific app to get a similar, installed experience.
 
 The first step to implement this strategy is to define a heuristic for when you'll show the user an install promotion for your PWA, for example:
 
-__"A PWA user is a user that has seen the platform-specific app install prompt and not installed the platform-specific app. They have returned to the site at least five times, or they have clicked the app banner, but have continued using the website instead."__
+**"A PWA user is a user that has seen the platform-specific app install prompt and not installed the platform-specific app. They have returned to the site at least five times, or they have clicked the app banner, but have continued using the website instead."**
 
 Then, the heuristic can be implemented in the following way:
 
@@ -93,7 +92,7 @@ According to a [Google Play study](https://medium.com/googleplaydev/shrinking-ap
 
 To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using Trusted Web Activities. [Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity) make it possible to deliver your PWA in the Play Store, and because it's built using the web, the app size is usually only a few megabytes.
 
-Oyo, one of India's largest hospitality companies, built a [Lite version of their app](/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
+Oyo, one of India's largest hospitality companies, built a [Lite version of their app](/oyo-lite-twa/), and made it available in the Play Store using TWA. It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
 
 <figure>
   <video controls autoplay loop muted>
@@ -128,16 +127,13 @@ Device signals can be also inferred in HTTP request headers, through [client hin
 First, tell the browser you are interested in receiving device memory hints in the header of the HTTP response for any first-party request:
 
 ```html
-HTTP/1.1 200 OK
-Content-Type: text/html
-Accept-CH: Device-Memory
+HTTP/1.1 200 OK Content-Type: text/html Accept-CH: Device-Memory
 ```
 
 Then, you'll start receiving Device-Memory information in the request header of HTTP requests:
 
 ```html
-GET /main.js HTTP/1.1
-Device-Memory: 0.5
+GET /main.js HTTP/1.1 Device-Memory: 0.5
 ```
 
 You can use this information in your backends to store a cookie with the category of the user's device:
@@ -158,14 +154,14 @@ Finally, create your own logic to map this information to device categories, and
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // show "Lite app" install banner or PWA A2HS prompt
+  // show "Lite app" install banner or PWA A2HS prompt
 } else {
   // show "Core app" install banner
 }
 ```
 
 {% Aside %}
-Covering in depth techniques on how to map device signals to device categories is out of the scope of this guide, but you can check out Addy Osmani's [adaptive loading guide](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69), Philip Walton's [The Device Memory API](https://developers.google.com/web/updates/2017/12/device-memory)  and Jeremy Wagner's [Adapting to Users with Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) for more information on best practices around this.
+Covering in depth techniques on how to map device signals to device categories is out of the scope of this guide, but you can check out Addy Osmani's [adaptive loading guide](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69), Philip Walton's [The Device Memory API](https://developers.google.com/web/updates/2017/12/device-memory) and Jeremy Wagner's [Adapting to Users with Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) for more information on best practices around this.
 {% endAside %}
 
 ## Conclusion

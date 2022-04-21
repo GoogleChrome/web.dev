@@ -69,14 +69,14 @@ Algunos ejemplos de sitios que pueden utilizar esta API son:
 </table>
 <div data-md-type="block_html"></div>
 
-La API de identificación de aplicaciones funciona en Windows y macOS, en Chrome 81 o posterior. También se ha confirmado que funciona en Edge 84 o posterior. La compatibilidad con Chrome OS está en desarrollo y estará disponible en una versión futura de Chrome. En Android, la API no es compatible. En cambio, este sistema operativo muestra automáticamente un distintivo en el icono de la aplicación web instalada cuando hay una notificación no leída, al igual que para las aplicaciones de Android.
+La API de identificación de aplicaciones funciona en Windows y macOS, en Chrome 81 o posterior. También se ha confirmado que funciona en Edge 84 o posterior. La compatibilidad con ChromeOS está en desarrollo y estará disponible en una versión futura de Chrome. En Android, la API no es compatible. En cambio, este sistema operativo muestra automáticamente un distintivo en el icono de la aplicación web instalada cuando hay una notificación no leída, al igual que para las aplicaciones de Android.
 
 ## Pruébalo
 
 1. Con Chrome 81 o posterior en Windows o Mac, abre la [demo de la API de identificación de aplicaciones](https://badging-api.glitch.me/).
 2. Cuando se te solicite, haz clic en **Instalar** para instalar la aplicación o usa el menú de Chrome para proceder con la instalación.
 3. Ábrela como una PWA instalada. Ten en cuenta que debe ejecutarse como una PWA instalada (en la barra de tareas o en el dock).
-4. Haz clic en el botón **Establecer** o **Borrar** para configurar o borrar el distintivo del icono de la aplicación. También puedes proporcionar un número para el *valor del Distintivo*.
+4. Haz clic en el botón **Establecer** o **Borrar** para configurar o borrar el distintivo del icono de la aplicación. También puedes proporcionar un número para el _valor del Distintivo_.
 
 ## Cómo utilizar la API de identificación de aplicaciones {: #use }
 
@@ -84,7 +84,7 @@ Para utilizar la API de identificación de aplicaciones, tu aplicación web debe
 
 La API consta de dos métodos en el `navigator`:
 
-- `setAppBadge(` *`number`* `)`: establece el distintivo de la aplicación. Si se proporciona un valor, establece el distintivo en el valor proporcionado; de lo contrario, muestra un punto blanco simple (u otra bandera según la plataforma). Establecer el *`number`* en `0` es lo mismo que llamar a `clearAppBadge()`.
+- `setAppBadge(` _`number`_ `)`: establece el distintivo de la aplicación. Si se proporciona un valor, establece el distintivo en el valor proporcionado; de lo contrario, muestra un punto blanco simple (u otra bandera según la plataforma). Establecer el _`number`_ en `0` es lo mismo que llamar a `clearAppBadge()`.
 - `clearAppBadge()`: elimina el distintivo de la aplicación.
 
 Ambos devuelven promesas vacías que puedes utilizar para el manejo de errores.
@@ -108,7 +108,7 @@ En algunos casos, es posible que el sistema operativo no permita la representaci
 
 No asumas nada sobre cómo el agente de usuario muestra el distintivo. Algunos de ellos pueden tomar un número como "4000" y reescribirlo como "99+". Si saturas el distintivo tu mismo (por ejemplo, configurándola en "99"), el "+" no aparecerá. No importa el número real, simplemente llama a `setAppBadge(unreadCount)` y deja que el agente de usuario se encargue de mostrarlo como corresponde.
 
-Si bien la API de identificación de aplicaciones *en Chrome* requiere una aplicación instalada, no debes realizar llamadas a la API de identificación en función del estado de instalación. Simplemente llama a la API cuando exista, ya que otros navegadores pueden mostrar el distintivo en otros lugares. Si funciona, funciona. Si no es así, simplemente no lo hace.
+Si bien la API de identificación de aplicaciones _en Chrome_ requiere una aplicación instalada, no debes realizar llamadas a la API de identificación en función del estado de instalación. Simplemente llama a la API cuando exista, ya que otros navegadores pueden mostrar el distintivo en otros lugares. Si funciona, funciona. Si no es así, simplemente no lo hace.
 
 ## Configurar y borrar el distintivo en segundo plano de un trabajador de servicio
 

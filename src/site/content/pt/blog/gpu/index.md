@@ -18,7 +18,7 @@ description: |2-
 
   da web.
 origin_trial:
-  url: "https://developer.chrome.com/origintrials/#/view_trial/118219490218475521"
+  url: 'https://developer.chrome.com/origintrials/#/view_trial/118219490218475521'
 tags:
   - blog
   - capabilities
@@ -99,7 +99,7 @@ A partir do Chrome 94, o WebGPU está disponível como um teste original no Chro
 Para verificar se WebGPU é compatível, use:
 
 ```js
-if ("gpu" in navigator) {
+if ('gpu' in navigator) {
   // WebGPU é suportado! 🎉
 }
 ```
@@ -119,7 +119,7 @@ WebGPU é uma API de baixo nível, como WebGL. É muito poderoso, bastante proli
 
 ## Suporte do navegador {: #browser-support }
 
-O WebGPU está disponível em dispositivos selecionados no Chrome OS, macOS e Windows 10 no Chrome 94, com mais dispositivos sendo suportados no futuro. O suporte experimental para Linux está disponível executando o Chrome com `--enable-features=Vulkan`. Mais suporte para mais plataformas virá em seguida.
+O WebGPU está disponível em dispositivos selecionados no ChromeOS, macOS e Windows 10 no Chrome 94, com mais dispositivos sendo suportados no futuro. O suporte experimental para Linux está disponível executando o Chrome com `--enable-features=Vulkan`. Mais suporte para mais plataformas virá em seguida.
 
 A lista completa de problemas conhecidos está disponível no [documento Origin Trial Caveats](https://hackmd.io/QcdsK_g7RVKRCIIBqgs5Hw) .
 

@@ -14,12 +14,12 @@ tags:
 hero: image/admin/pcEIwc0D09iF7BPo3TT1.jpg
 alt: Código QR sendo lido por um telefone celular
 origin-trial:
-  url: "https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919"
+  url: 'https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919'
 feedback:
   - api
 ---
 
-{% Aside %} Esta API faz parte do [projeto de  novos recursos](https://developers.google.com/web/updates/capabilities). A detecção de código de barras foi lançada no Chrome 83. A detecção de rosto e texto está disponível atrás de uma bandeira. Esta postagem será atualizada conforme a API de detecção de formas evolui. {% endAside %}
+{% Aside %} Esta API faz parte do [projeto de novos recursos](https://developers.google.com/web/updates/capabilities). A detecção de código de barras foi lançada no Chrome 83. A detecção de rosto e texto está disponível atrás de uma bandeira. Esta postagem será atualizada conforme a API de detecção de formas evolui. {% endAside %}
 
 ## O que é a API de detecção de formas? {: #what }
 
@@ -122,12 +122,12 @@ const barcodeDetector = new BarcodeDetector({
     'pdf417',
     'qr_code',
     'upc_a',
-    'upc_e'
-  ]
+    'upc_e',
+  ],
 });
 try {
   const barcodes = await barcodeDetector.detect(image);
-  barcodes.forEach(barcode => searchProductDatabase(barcode));
+  barcodes.forEach((barcode) => searchProductDatabase(barcode));
 } catch (e) {
   console.error('Barcode detection failed:', e);
 }
@@ -144,11 +144,11 @@ const faceDetector = new FaceDetector({
   maxDetectedFaces: 5,
   // (Optional) Hint to try and prioritize speed over accuracy
   // by, e.g., operating on a reduced scale or looking for large features.
-  fastMode: false
+  fastMode: false,
 });
 try {
   const faces = await faceDetector.detect(image);
-  faces.forEach(face => drawMustache(face));
+  faces.forEach((face) => drawMustache(face));
 } catch (e) {
   console.error('Face detection failed:', e);
 }
@@ -164,7 +164,7 @@ O `TextDetector` sempre retorna as caixas delimitadoras dos textos detectados e,
 const textDetector = new TextDetector();
 try {
   const texts = await textDetector.detect(image);
-  texts.forEach(text => textToSpeech(text));
+  texts.forEach((text) => textToSpeech(text));
 } catch (e) {
   console.error('Text detection failed:', e);
 }
@@ -172,13 +172,15 @@ try {
 
 ## Detecção de recurso {: #featuredetection}
 
-Verificar puramente a existência de construtores para detectar o recurso da API de detecção de formas não é suficiente. A presença de uma interface não informa se a plataforma subjacente oferece suporte ao recurso. Isso está funcionando [conforme o planejado](https://crbug.com/920961). É por isso que recomendamos uma *abordagem de programação defensiva*, fazendo a detecção de recursos como este:
+Verificar puramente a existência de construtores para detectar o recurso da API de detecção de formas não é suficiente. A presença de uma interface não informa se a plataforma subjacente oferece suporte ao recurso. Isso está funcionando [conforme o planejado](https://crbug.com/920961). É por isso que recomendamos uma _abordagem de programação defensiva_, fazendo a detecção de recursos como este:
 
 ```js
-const supported = await (async () => 'FaceDetector' in window &&
-    await new FaceDetector().detect(document.createElement('canvas'))
-    .then(_ => true)
-    .catch(e => e.name === 'NotSupportedError' ? false : true))();
+const supported = await (async () =>
+  'FaceDetector' in window &&
+  (await new FaceDetector()
+    .detect(document.createElement('canvas'))
+    .then((_) => true)
+    .catch((e) => (e.name === 'NotSupportedError' ? false : true))))();
 ```
 
 O `BarcodeDetector` interface foi atualizada para incluir um método `getSupportedFormats()` e interfaces similares têm sido propostas [para `FaceDetector`](https://github.com/WICG/shape-detection-api/issues/53) e [para `TextDetector`](https://github.com/WICG/shape-detection-api/issues/57).
@@ -205,8 +207,10 @@ await BarcodeDetector.getSupportedFormats();
 Isso permite que você detecte o recurso específico de que precisa, por exemplo, leitura de código QR:
 
 ```js
-if (('BarcodeDetector' in window) &&
-    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+if (
+  'BarcodeDetector' in window &&
+  (await BarcodeDetector.getSupportedFormats()).includes('qr_code')
+) {
   console.log('QR code scanning is supported.');
 }
 ```
@@ -215,7 +219,7 @@ Isso é melhor do que ocultar as interfaces porque, mesmo entre as plataformas, 
 
 ## Suporte para sistema operacional {: #os-support}
 
-A detecção de código de barras está disponível no macOS, Chrome OS e Android. [O Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) é necessário no Android.
+A detecção de código de barras está disponível no macOS, ChromeOS e Android. [O Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) é necessário no Android.
 
 ## Práticas recomendadas {: #bestpractices}
 
@@ -241,7 +245,7 @@ Existe algo na API que não funciona como você esperava? Ou faltam métodos ou 
 
 Você encontrou um bug com a implementação do Chrome? Ou a implementação é diferente da especificação?
 
-- Registre um bug em [https://new.crbug.com](https://new.crbug.com). Certifique-se de incluir o máximo de detalhes que puder, instruções simples para reproduzir e definir *Componentes* como `Blink>ImageCapture`. [Glitch](https://glitch.com) funciona muito bem para compartilhar reproduções rápidas e fáceis.
+- Registre um bug em [https://new.crbug.com](https://new.crbug.com). Certifique-se de incluir o máximo de detalhes que puder, instruções simples para reproduzir e definir _Componentes_ como `Blink>ImageCapture`. [Glitch](https://glitch.com) funciona muito bem para compartilhar reproduções rápidas e fáceis.
 
 ### Planejando usar a API? {: .hide-from-toc}
 

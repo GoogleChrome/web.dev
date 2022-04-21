@@ -150,18 +150,19 @@ Si su `method` es `"POST"`, como lo sería si su aplicación de destino aceptase
 La página de primer plano no puede procesar estos datos directamente. Dado que la página ve los datos como una solicitud, la página los pasa al service worker, donde usted puede interceptarlos con un detector de eventos `fetch`. Desde aquí, puede pasar los datos a la página de primer plano mediante `postMessage()` o pasarlos al servidor:
 
 ```js
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   // Si esta es una solicitud POST entrante para la
   // URL de "action" registrada, se responde.
-  if (event.request.method === 'POST' &&
-      url.pathname === '/bookmark') {
-    event.respondWith((async () => {
-      const formData = await event.request.formData();
-      const link = formData.get('link') || '';
-      const responseUrl = await saveBookmark(link);
-      return Response.redirect(responseUrl, 303);
-    })());
+  if (event.request.method === 'POST' && url.pathname === '/bookmark') {
+    event.respondWith(
+      (async () => {
+        const formData = await event.request.formData();
+        const link = formData.get('link') || '';
+        const responseUrl = await saveBookmark(link);
+        return Response.redirect(responseUrl, 303);
+      })(),
+    );
   }
 });
 ```
@@ -179,7 +180,7 @@ Por ejemplo, en Android, el [campo `url` estará vacío](https://bugs.chromium.o
 Desde principios de 2021, la API de destino de recurso compartido web es compatible con:
 
 - Chrome y Edge 76 o posterior en Android.
-- Chrome 89 o posterior en Chrome OS.
+- Chrome 89 o posterior en ChromeOS.
 
 En todas las plataformas, su aplicación web debe estar [instalada](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) antes de que aparezca como un objetivo potencial para recibir datos compartidos.
 

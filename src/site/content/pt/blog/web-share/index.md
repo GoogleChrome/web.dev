@@ -31,7 +31,7 @@ A Web Share tem os seguintes recursos e limitações:
 - Só pode ser usado em um site [acessado via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
 - Precisa ser invocado em resposta a uma ação do usuário, como um clique. Invocá-lo por meio do `onload` é impossível.
 - Pode compartilhar, URLs, texto ou arquivos.
-- Em janeiro de 2021, ele estava disponível nos forks do Safari, Android em Chromium, Chrome OS e Chrome no Windows. O Chrome no MacOS ainda está em desenvolvimento. Consulte [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility) para obter detalhes.
+- Em janeiro de 2021, ele estava disponível nos forks do Safari, Android em Chromium, ChromeOS e Chrome no Windows. O Chrome no MacOS ainda está em desenvolvimento. Consulte [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility) para obter detalhes.
 
 ### Compartilhando links e texto
 
@@ -39,11 +39,12 @@ Para compartilhar links e texto, use o método `share()`, que é um método base
 
 ```js
 if (navigator.share) {
-  navigator.share({
-    title: 'web.dev',
-    text: 'Check out web.dev.',
-    url: 'https://web.dev/',
-  })
+  navigator
+    .share({
+      title: 'web.dev',
+      text: 'Check out web.dev.',
+      url: 'https://web.dev/',
+    })
     .then(() => console.log('Successful share'))
     .catch((error) => console.log('Error sharing', error));
 }
@@ -55,7 +56,7 @@ Se o seu site tiver múltiplas URLs para o mesmo conteúdo, compartilhe a URL ca
 let url = document.location.href;
 const canonicalElement = document.querySelector('link[rel=canonical]');
 if (canonicalElement !== null) {
-    url = canonicalElement.href;
+  url = canonicalElement.href;
 }
 navigator.share({url});
 ```
@@ -84,7 +85,7 @@ Observe que o exemplo lida com a detecção de recursos testando `navigator.canS
 
 <figure data-float="right">   {% Img src="image/admin/2I5iOXaOpzEJlEbM694n.png", alt="O aplicativo Santa Tracker mostrando um botão de compartilhamento.", width="343", height="600" %}   <figcaption>    Botão de compartilhamento do Santa Tracker  </figcaption></figure>
 
-O  [Santa Tracker](https://santatracker.google.com/), um projeto de código aberto, é uma tradição de férias no Google. Todo mês de dezembro, você pode comemorar a temporada com jogos e experiências educacionais.
+O [Santa Tracker](https://santatracker.google.com/), um projeto de código aberto, é uma tradição de férias no Google. Todo mês de dezembro, você pode comemorar a temporada com jogos e experiências educacionais.
 
 Em 2016, a equipe do Santa Tracker usou a API Web Share no Android. Esta API foi uma solução perfeita para dispositivos móveis. Em anos anteriores, a equipe removeu os botões de compartilhamento no celular porque o espaço é reduzido e eles não podiam justificar ter vários alvos de compartilhamento.
 
@@ -97,12 +98,12 @@ O suporte do navegador para a API Web Share tem nuances e é recomendável usar 
 Desde o início de 2021, o uso da API para compartilhar títulos, textos e URLs é suportado por:
 
 - Safari 12 ou posterior no macOS e iOS.
-- Chrome 75 ou posterior no Android e 89 ou posterior no Chrome OS e Windows.
+- Chrome 75 ou posterior no Android e 89 ou posterior no ChromeOS e Windows.
 
 O uso da API para compartilhar arquivos é compatível com:
 
 - Safari 15 ou posterior no macOS e iOS.
-- Chrome 75 ou posterior no Android e 89 ou posterior no Chrome OS e Windows.
+- Chrome 75 ou posterior no Android e 89 ou posterior no ChromeOS e Windows.
 
 (A maioria dos navegadores baseados em Chromium, como o Edge, tem o mesmo suporte para esse recurso que a versão correspondente do Chrome.)
 

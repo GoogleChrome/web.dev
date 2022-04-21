@@ -26,10 +26,10 @@ share links, text, and files to other apps installed on the device in the same
 way as platform-specific apps.
 
 {% Aside %}
-  Sharing is only half of the magic. Web apps can also be share
-  targets, meaning they can receive data, links, text, and files from
-  platform-specific or web apps. Read [Receive shared data](/web-share-target/)
-  to learn how to register your app as a share target.
+Sharing is only half of the magic. Web apps can also be share
+targets, meaning they can receive data, links, text, and files from
+platform-specific or web apps. Read [Receive shared data](/web-share-target/)
+to learn how to register your app as a share target.
 {% endAside %}
 
 <figure data-float="right">
@@ -42,12 +42,13 @@ way as platform-specific apps.
 ## Capabilities and limitations
 
 Web share has the following capabilities and limitations:
-* It can only be used on a site that is [accessed via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
-* It must be invoked in response to a user action such as a click. Invoking it
+
+- It can only be used on a site that is [accessed via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
+- It must be invoked in response to a user action such as a click. Invoking it
   through the `onload` handler is impossible.
-* It can share, URLs, text, or files.
-* As of January 2021, it is available on Safari, Android in Chromium forks,
-  Chrome OS, and Chrome on Windows. Chrome on MacOS is still in development. See
+- It can share, URLs, text, or files.
+- As of January 2021, it is available on Safari, Android in Chromium forks,
+  ChromeOS, and Chrome on Windows. Chrome on MacOS is still in development. See
   [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)
   for details.
 
@@ -66,11 +67,12 @@ attachments.
 
 ```js
 if (navigator.share) {
-  navigator.share({
-    title: 'web.dev',
-    text: 'Check out web.dev.',
-    url: 'https://web.dev/',
-  })
+  navigator
+    .share({
+      title: 'web.dev',
+      text: 'Check out web.dev.',
+      url: 'https://web.dev/',
+    })
     .then(() => console.log('Successful share'))
     .catch((error) => console.log('Error sharing', error));
 }
@@ -89,7 +91,7 @@ you should see a desktop version:
 let url = document.location.href;
 const canonicalElement = document.querySelector('link[rel=canonical]');
 if (canonicalElement !== null) {
-    url = canonicalElement.href;
+  url = canonicalElement.href;
 }
 navigator.share({url});
 ```

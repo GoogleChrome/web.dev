@@ -173,7 +173,7 @@ Here are some practical issues common to both same-origin approaches:
 - **Storage:** Cookies, local storage, and all forms of device-local storage are
   shared between apps. For that reason, if the user decides to wipe local data
   for one app, it will wipe all the data from the origin; there's no way
- to do this for a single app. Note that Chrome and some other
+  to do this for a single app. Note that Chrome and some other
   browsers will actively prompt users to wipe local data when uninstalling one
   of the apps, and this will affect data for the other apps on the origin as
   well. Another issue is that apps will also have to share their [storage
@@ -203,7 +203,7 @@ of why using overlapping/nested paths is the least recommended strategy.
 ## Additional challenges for overlapping/nested paths
 
 The additional issue with overlapping/nested paths approach (where
-`https://example.com/` is the outer app and  `https://example.com/app/` is the
+`https://example.com/` is the outer app and `https://example.com/app/` is the
 inner app), is that all URLs in the inner app will actually be considered
 part of both the outer app and the inner app.
 
@@ -230,7 +230,7 @@ In practice this presents the following issues:
   especially likely if the outer app is installed but the inner app isn't.
   Similarly, links within the outer app that link to the inner app will not
   link capture into the inner app, since they are considered to be within the
-  outer app's scope. Additionally, on Chrome OS and Android, if these apps are
+  outer app's scope. Additionally, on ChromeOS and Android, if these apps are
   added to the Play Store (as [Trusted Web
   Activities](https://developer.chrome.com/docs/android/trusted-web-activity/overview/)),
   the outer app will capture all links. Even if the inner app is installed,

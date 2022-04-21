@@ -53,13 +53,13 @@ of specific devices.
 
 <div>
 
-| Step                                         | Status                       |
-| -------------------------------------------- | ---------------------------- |
-| 1. Create explainer                          | [Complete][explainer]        |
-| 2. Create initial draft of specification     | [Complete][spec]             |
-| 3. Gather feedback & iterate on design       | [Complete](#feedback)        |
-| 4. Origin trial                              | [Complete][ot]               |
-| **5. Launch**                                | **Complete**                 |
+| Step                                     | Status                |
+| ---------------------------------------- | --------------------- |
+| 1. Create explainer                      | [Complete][explainer] |
+| 2. Create initial draft of specification | [Complete][spec]      |
+| 3. Gather feedback & iterate on design   | [Complete](#feedback) |
+| 4. Origin trial                          | [Complete][ot]        |
+| **5. Launch**                            | **Complete**          |
 
 </div>
 
@@ -122,7 +122,7 @@ indication of the high-level category of the device or report.
 To check if the WebHID API is supported, use:
 
 ```js
-if ("hid" in navigator) {
+if ('hid' in navigator) {
   // The WebHID API is supported.
 }
 ```
@@ -153,16 +153,16 @@ HID interfaces on the same physical device.
 const filters = [
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2006 // Joy-Con Left
+    productId: 0x2006, // Joy-Con Left
   },
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2007 // Joy-Con Right
-  }
+    productId: 0x2007, // Joy-Con Right
+  },
 ];
 
 // Prompt user to select a Joy-Con device.
-const [device] = await navigator.hid.requestDevice({ filters });
+const [device] = await navigator.hid.requestDevice({filters});
 ```
 
 ```js
@@ -175,7 +175,7 @@ const devices = await navigator.hid.getDevices();
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
-You can also use the optional `exclusionFilters` key in 
+You can also use the optional `exclusionFilters` key in
 `navigator.hid.requestDevice()` to exclude some devices from the browser picker
 that are known to be malfunctioning for instance.
 
@@ -184,8 +184,8 @@ that are known to be malfunctioning for instance.
 // a collection with usage page Consumer (0x000C) and usage ID Consumer
 // Control (0x0001). The device with product ID 0x1234 is malfunctioning.
 const [device] = await navigator.hid.requestDevice({
-  filters: [{ vendorId: 0xabcd, usagePage: 0x000c, usage: 0x0001 }],
-  exclusionFilters: [{ vendorId: 0xabcd, productId: 0x1234 }],
+  filters: [{vendorId: 0xabcd, usagePage: 0x000c, usage: 0x0001}],
+  exclusionFilters: [{vendorId: 0xabcd, productId: 0x1234}],
 });
 ```
 
@@ -244,8 +244,8 @@ which button the user has pressed on a Joy-Con Right device so that you can
 hopefully try it at home.
 
 ```js
-device.addEventListener("inputreport", event => {
-  const { data, device, reportId } = event;
+device.addEventListener('inputreport', (event) => {
+  const {data, device, reportId} = event;
 
   // Handle only the Joy-Con Right device and a specific report ID.
   if (device.productId !== 0x2007 && reportId !== 0x3f) return;
@@ -253,7 +253,7 @@ device.addEventListener("inputreport", event => {
   const value = data.getUint8(0);
   if (value === 0) return;
 
-  const someButtons = { 1: "A", 2: "X", 4: "B", 8: "Y" };
+  const someButtons = {1: 'A', 2: 'X', 4: 'B', 8: 'Y'};
   console.log(`User pressed button ${someButtons[value]}.`);
 });
 ```
@@ -278,7 +278,9 @@ await device.sendReport(0x01, new Uint8Array(enableVibrationData));
 
 // Then, send a command to make the Joy-Con device rumble.
 // Actual bytes are available in the sample below.
-const rumbleData = [ /* ... */ ];
+const rumbleData = [
+  /* ... */
+];
 await device.sendReport(0x10, new Uint8Array(rumbleData));
 ```
 
@@ -305,11 +307,11 @@ The example below illustrates the use of feature reports by showing you how to
 request an Apple keyboard backlight device, open it, and make it blink.
 
 ```js
-const waitFor = duration => new Promise(r => setTimeout(r, duration));
+const waitFor = (duration) => new Promise((r) => setTimeout(r, duration));
 
 // Prompt user to select an Apple Keyboard Backlight device.
 const [device] = await navigator.hid.requestDevice({
-  filters: [{ vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00 }]
+  filters: [{vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00}],
 });
 
 // Wait for the HID connection to open.
@@ -330,7 +332,7 @@ for (let i = 0; i < 10; i++) {
 {% Glitch { id: 'webhid-apple-keyboard-backlight', path: 'script.js', height: 480, allow: 'hid' } %}
 
 To receive a feature report from an HID device, pass the 8-bit report ID
-associated with the feature report (`reportId`)  to
+associated with the feature report (`reportId`) to
 `device.receiveFeatureReport()`. The returned promise resolves with a
 [`DataView`] object that contains the contents of the feature report. If the HID
 device does not use report IDs, set `reportId` to 0.
@@ -349,11 +351,11 @@ actively receive connection and disconnection events by listening to `"connect"`
 and `"disconnect"` events.
 
 ```js
-navigator.hid.addEventListener("connect", event => {
+navigator.hid.addEventListener('connect', (event) => {
   // Automatically open event.device or warn user a device is available.
 });
 
-navigator.hid.addEventListener("disconnect", event => {
+navigator.hid.addEventListener('disconnect', (event) => {
   // Remove |event.device| from the UI.
 });
 ```
@@ -378,7 +380,7 @@ As `forget()` is available in Chrome 100 or later, check if this feature is
 supported with the following:
 
 ```js
-if ("hid" in navigator && "forget" in HIDDevice.prototype) {
+if ('hid' in navigator && 'forget' in HIDDevice.prototype) {
   // forget() is supported.
 }
 ```
@@ -413,7 +415,7 @@ reconnect your device.
 
 ## Browser support {: #browser-support }
 
-The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The WebHID API is available on all desktop platforms (ChromeOS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Demos {: #demos }
@@ -441,7 +443,6 @@ Note that security-sensitive HID devices (such as FIDO HID devices used for
 stronger authentication) are also blocked in Chrome. See the [USB blocklist] and
 [HID blocklist] files.
 
-
 ## Feedback {: #feedback }
 
 The Chrome team would love to hear about your thoughts and experiences with the
@@ -462,7 +463,7 @@ different from the spec?
 
 File a bug at [https://new.crbug.com][new-bug]. Be sure to include as much
 detail as you can, provide simple instructions for reproducing the bug, and have
-*Components* set to `Blink>HID`. [Glitch](https://glitch.com) works great for
+_Components_ set to `Blink>HID`. [Glitch](https://glitch.com) works great for
 sharing quick and easy repros.
 
 ### Show support
@@ -477,10 +478,10 @@ where and how you're using it.
 
 ## Helpful links {: #helpful }
 
-* [Specification][spec]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: [`Blink>HID`](https://chromestatus.com/features#component%3ABlink%3EHID)
+- [Specification][spec]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: [`Blink>HID`](https://chromestatus.com/features#component%3ABlink%3EHID)
 
 ## Acknowledgements
 
@@ -488,34 +489,34 @@ Thanks to [Matt Reynolds] and [Joe Medley] for their reviews of this article.
 Red and blue Nintendo Switch photo by [Sara Kurfeß], and black and silver laptop
 computer photo by [Athul Cyriac Ajay] on Unsplash.
 
-[Capabilities project]: /fugu-status/
-[HID protocol]: https://www.usb.org/hid
-[Elgato Stream Deck]: https://www.elgato.com/en/gaming/stream-deck
-[Jabra headsets]: https://www.jabra.com/business/office-headsets
-[X-keys]: https://xkeys.com/xkeys.html
+[capabilities project]: /fugu-status/
+[hid protocol]: https://www.usb.org/hid
+[elgato stream deck]: https://www.elgato.com/en/gaming/stream-deck
+[jabra headsets]: https://www.jabra.com/business/office-headsets
+[x-keys]: https://xkeys.com/xkeys.html
 [explainer]: https://github.com/WICG/webhid/blob/main/EXPLAINER.md
 [spec]: https://wicg.github.io/webhid/
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
-[the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
-[HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
-[`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
-[`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
+[the usb id repository]: http://www.linux-usb.org/usb-ids.html
+[hid usage tables document]: https://usb.org/document-library/hid-usage-tables-12
+[`dataview`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[`buffersource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [hid-explorer]: https://nondebug.github.io/webhid-explorer/
 [web.dev/hid-examples]: /hid-examples/
 [udev rule]: https://www.freedesktop.org/software/systemd/man/udev.html
 [member]: https://wiki.debian.org/SystemGroups
-[Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
+[controlling access to powerful web platform features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[security and privacy considerations]: https://wicg.github.io/webhid/#security-and-privacy
 [publicly available]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_usage_and_page.cc
-[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
-[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
+[usb blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
+[hid blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/register_trial/1074108511127863297
 [cr-bug]: https://crbug.com/890096
 [cr-status]: https://chromestatus.com/feature/5172464636133376
-[Matt Reynolds]: https://github.com/nondebug
-[Joe Medley]: https://github.com/jpmedley
-[Sara Kurfeß]: https://unsplash.com/photos/jqpRECmiNEU
-[Athul Cyriac Ajay]: https://unsplash.com/photos/ndokCrfQWrI
+[matt reynolds]: https://github.com/nondebug
+[joe medley]: https://github.com/jpmedley
+[sara kurfeß]: https://unsplash.com/photos/jqpRECmiNEU
+[athul cyriac ajay]: https://unsplash.com/photos/ndokCrfQWrI

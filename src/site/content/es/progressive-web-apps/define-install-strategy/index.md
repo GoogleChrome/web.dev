@@ -35,7 +35,7 @@ Pero tener una aplicación web instalable y una aplicación específica de plata
 - **Restricciones de almacenamiento:** Instalar una nueva aplicación puede significar eliminar otras o limpiar espacio al eliminar contenido valioso. Esto es especialmente desventajoso para los usuarios de dispositivos de gama baja.
 - **Ancho de banda disponible:** Descargar una aplicación puede ser un proceso lento y costoso, incluso más para los usuarios con conexiones lentas y planes de datos costosos.
 - **Fricción:** Abandonar un sitio web y trasladarse a una tienda para descargar una aplicación crea fricciones adicionales y retrasa una acción del usuario que podría realizarse directamente en la web.
-- **Ciclo de actualización:**  Para realizar cambios en aplicaciones específicas de plataforma, es posible que sea necesario pasar por un proceso de revisión de la aplicación, lo que puede ralentizar los cambios y los experimentos (por ejemplo, las pruebas A/B).
+- **Ciclo de actualización:** Para realizar cambios en aplicaciones específicas de plataforma, es posible que sea necesario pasar por un proceso de revisión de la aplicación, lo que puede ralentizar los cambios y los experimentos (por ejemplo, las pruebas A/B).
 
 En algunos casos, el porcentaje de usuarios que no descargarán la aplicación específica de tu plataforma puede ser grande, por ejemplo: aquellos que piensan que no usarán la aplicación con mucha frecuencia o que no pueden justificar gastar varios megabytes de almacenamiento o de datos. Puedes determinar el tamaño de este segmento de varias formas, por ejemplo, mediante el uso de una configuración de análisis para realizar un seguimiento del porcentaje de usuarios de "solo web móvil".
 
@@ -43,7 +43,7 @@ Si el tamaño de este segmento es considerable, es una buena indicación de que 
 
 ## Promoviendo la instalación de tu PWA a través del navegador
 
-Si tienes una PWA de alta calidad, puede ser mejor promover su instalación sobre la aplicación específica de tu plataforma. Por ejemplo, si la aplicación específica de la plataforma le falta la funcionalidad que ofrece tu PWA o si es que no se ha actualizado por un tiempo. También puede ser útil promover la instalación de tu PWA si la aplicación específica de la plataforma no está optimizada para pantallas más grandes, como lo puede ser en Chrome OS.
+Si tienes una PWA de alta calidad, puede ser mejor promover su instalación sobre la aplicación específica de tu plataforma. Por ejemplo, si la aplicación específica de la plataforma le falta la funcionalidad que ofrece tu PWA o si es que no se ha actualizado por un tiempo. También puede ser útil promover la instalación de tu PWA si la aplicación específica de la plataforma no está optimizada para pantallas más grandes, como lo puede ser en ChromeOS.
 
 Para algunas aplicaciones, impulsar la instalación de aplicaciones específicas de la plataforma es una parte clave del modelo comercial; en ese caso, tiene sentido comercial mostrar una promoción de instalación de aplicaciones específica de plataforma. Sin embargo, es posible que algunos usuarios se sientan más cómodos permaneciendo en la web. Si ese segmento se puede identificar, el indicador de la PWA se puede mostrar solo a ellos (lo que llamamos "PWA como respaldo").
 
@@ -120,16 +120,13 @@ Las señales del dispositivo también se pueden inferir en los encabezados de so
 Primero, dile al navegador que estás interesado en recibir sugerencias de memoria del dispositivo mediante la cabecera de respuesta HTTP para cualquier solicitud de origen:
 
 ```html
-HTTP/1.1 200 OK
-Content-Type: text/html
-Accept-CH: Device-Memory
+HTTP/1.1 200 OK Content-Type: text/html Accept-CH: Device-Memory
 ```
 
 Luego, comenzarás a recibir información de la memoria del dispositivo en la cabecera de solicitud de las consultas HTTP:
 
 ```html
-GET /main.js HTTP/1.1
-Device-Memory: 0.5
+GET /main.js HTTP/1.1 Device-Memory: 0.5
 ```
 
 Puedes utilizar esta información en tus backends para almacenar una cookie con la categoría del dispositivo del usuario:
@@ -150,7 +147,7 @@ Finalmente, crea tu propia lógica para asignar esta información a las categor�
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // Mostrar el banner de instalación para "Lite app" o el mensaje PWA A2HS
+  // Mostrar el banner de instalación para "Lite app" o el mensaje PWA A2HS
 } else {
   // Mostrar el banner de instalación la "app de insignia"
 }

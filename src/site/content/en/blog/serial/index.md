@@ -67,13 +67,13 @@ communication between the website and the device that it is controlling.
 
 <div>
 
-| Step                                         | Status                       |
-| -------------------------------------------- | ---------------------------- |
-| 1. Create explainer                          | [Complete][explainer]        |
-| 2. Create initial draft of specification     | [Complete][spec]             |
-| 3. Gather feedback & iterate on design       | [Complete](#feedback)        |
-| 4. Origin trial                              | [Complete][ot]               |
-| **5. Launch**                                | **Complete**                 |
+| Step                                     | Status                |
+| ---------------------------------------- | --------------------- |
+| 1. Create explainer                      | [Complete][explainer] |
+| 2. Create initial draft of specification | [Complete][spec]      |
+| 3. Gather feedback & iterate on design   | [Complete](#feedback) |
+| 4. Origin trial                          | [Complete][ot]        |
+| **5. Launch**                            | **Complete**          |
 
 </div>
 
@@ -84,7 +84,7 @@ communication between the website and the device that it is controlling.
 To check if the Web Serial API is supported, use:
 
 ```js
-if ("serial" in navigator) {
+if ('serial' in navigator) {
   // The Web Serial API is supported.
 }
 ```
@@ -121,14 +121,14 @@ identifiers (`usbProductId`).
 ```js
 // Filter on devices with the Arduino Uno USB Vendor/Product IDs.
 const filters = [
-  { usbVendorId: 0x2341, usbProductId: 0x0043 },
-  { usbVendorId: 0x2341, usbProductId: 0x0001 }
+  {usbVendorId: 0x2341, usbProductId: 0x0043},
+  {usbVendorId: 0x2341, usbProductId: 0x0001},
 ];
 
 // Prompt user to select an Arduino Uno device.
-const port = await navigator.serial.requestPort({ filters });
+const port = await navigator.serial.requestPort({filters});
 
-const { usbProductId, usbVendorId } = port.getInfo();
+const {usbProductId, usbVendorId} = port.getInfo();
 ```
 
 <figure>
@@ -151,7 +151,7 @@ emulation.
 const port = await navigator.serial.requestPort();
 
 // Wait for the serial port to open.
-await port.open({ baudRate: 9600 });
+await port.open({baudRate: 9600});
 ```
 
 You can also specify any of the options below when opening a serial port. These
@@ -190,7 +190,7 @@ const reader = port.readable.getReader();
 
 // Listen to data coming from the serial device.
 while (true) {
-  const { value, done } = await reader.read();
+  const {value, done} = await reader.read();
   if (done) {
     // Allow the serial port to be closed later.
     reader.releaseLock();
@@ -265,7 +265,6 @@ const writer = port.writable.getWriter();
 const data = new Uint8Array([104, 101, 108, 108, 111]); // hello
 await writer.write(data);
 
-
 // Allow the serial port to be closed later.
 writer.releaseLock();
 ```
@@ -279,7 +278,7 @@ const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
 
 const writer = textEncoder.writable.getWriter();
 
-await writer.write("hello");
+await writer.write('hello');
 ```
 
 ### Close a serial port {: #close-port }
@@ -309,7 +308,7 @@ async function readUntilClosed() {
     reader = port.readable.getReader();
     try {
       while (true) {
-        const { value, done } = await reader.read();
+        const {value, done} = await reader.read();
         if (done) {
           // reader.cancel() has been called.
           break;
@@ -342,7 +341,7 @@ document.querySelector('button').addEventListener('click', async () => {
 
 Closing a serial port is more complicated when using [transform streams] (like
 `TextDecoderStream` and `TextEncoderStream`). Call `reader.cancel()` as before.
-Then call `writer.close()` and `port.close()`.  This propagates errors through
+Then call `writer.close()` and `port.close()`. This propagates errors through
 the transform streams to the underlying serial port. Because error propagation
 doesn't happen immediately, you need to use the `readableStreamClosed` and
 `writableStreamClosed` promises created earlier to detect when `port.readable`
@@ -386,11 +385,11 @@ or disconnected from the system. When the website has been granted permission to
 access a serial port, it should monitor the `connect` and `disconnect` events.
 
 ```js
-navigator.serial.addEventListener("connect", (event) => {
+navigator.serial.addEventListener('connect', (event) => {
   // TODO: Automatically open event.target or warn user a port is available.
 });
 
-navigator.serial.addEventListener("disconnect", (event) => {
+navigator.serial.addEventListener('disconnect', (event) => {
   // TODO: Remove |event.target| from the UI.
   // If the serial port was opened, a stream error would be observed as well.
 });
@@ -399,8 +398,7 @@ navigator.serial.addEventListener("disconnect", (event) => {
 {% Aside %}
 Prior to Chrome 89 the `connect` and `disconnect` events fired a custom
 `SerialConnectionEvent` object with the affected `SerialPort` interface
-available as the `port` attribute. You may want to use `event.port ||
-event.target` to handle the transition.
+available as the `port` attribute. You may want to use `event.port || event.target` to handle the transition.
 {% endAside %}
 
 ### Handle signals {: #signals }
@@ -416,13 +414,13 @@ calling `port.setSignals()` and `port.getSignals()`. See usage examples below.
 
 ```js
 // Turn off Serial Break signal.
-await port.setSignals({ break: false });
+await port.setSignals({break: false});
 
 // Turn on Data Terminal Ready (DTR) signal.
-await port.setSignals({ dataTerminalReady: true });
+await port.setSignals({dataTerminalReady: true});
 
 // Turn off Request To Send (RTS) signal.
-await port.setSignals({ requestToSend: false });
+await port.setSignals({requestToSend: false});
 ```
 
 ```js
@@ -468,14 +466,14 @@ need to call `pipeThrough()` to pipe it through our new `LineBreakTransformer`.
 class LineBreakTransformer {
   constructor() {
     // A container for holding stream data until a new line.
-    this.chunks = "";
+    this.chunks = '';
   }
 
   transform(chunk, controller) {
     // Append new chunks to existing chunks.
     this.chunks += chunk;
     // For each line breaks in chunks, send the parsed lines out.
-    const lines = this.chunks.split("\r\n");
+    const lines = this.chunks.split('\r\n');
     this.chunks = lines.pop();
     lines.forEach((line) => controller.enqueue(line));
   }
@@ -525,7 +523,7 @@ with a [BBC micro:bit] board to show images on its 5x5 LED matrix.
 
 ## Browser support {: #browser-support }
 
-The Web Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The Web Serial API is available on all desktop platforms (ChromeOS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Polyfill {: #polyfill }
@@ -567,7 +565,7 @@ different from the spec?
 
 File a bug at [https://new.crbug.com][new-bug]. Be sure to include as much
 detail as you can, provide simple instructions for reproducing the bug, and have
-*Components* set to `Blink>Serial`. [Glitch](https://glitch.com) works great for
+_Components_ set to `Blink>Serial`. [Glitch](https://glitch.com) works great for
 sharing quick and easy repros.
 
 ### Show support
@@ -582,42 +580,42 @@ and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
-* [Specification][spec]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: [`Blink>Serial`](https://chromestatus.com/features#component%3ABlink%3ESerial)
+- [Specification][spec]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: [`Blink>Serial`](https://chromestatus.com/features#component%3ABlink%3ESerial)
 
 ## Demos {: #demos }
 
-* [Serial Terminal](https://googlechromelabs.github.io/serial-terminal/)
-* [Espruino Web IDE](https://www.espruino.com/ide/)
+- [Serial Terminal](https://googlechromelabs.github.io/serial-terminal/)
+- [Espruino Web IDE](https://www.espruino.com/ide/)
 
 ## Acknowledgements
 
 Thanks to [Reilly Grant] and [Joe Medley] for their reviews of this article.
 Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 
-[Capabilities project]: https://developers.google.com/web/updates/capabilities
-[Unlocking new capabilities for the web]: /fugu-status/
-[WebUSB]: https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web
-[Arduino Create]: https://create.arduino.cc/
-[Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
-[Espruino Web IDE]: http://espruino.com/ide
-[Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
+[capabilities project]: https://developers.google.com/web/updates/capabilities
+[unlocking new capabilities for the web]: /fugu-status/
+[webusb]: https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web
+[arduino create]: https://create.arduino.cc/
+[betaflight configurator]: https://github.com/betaflight/betaflight-configurator
+[espruino web ide]: http://espruino.com/ide
+[microsoft makecode]: https://www.microsoft.com/en-us/makecode
 [explainer]: https://github.com/WICG/serial/blob/main/EXPLAINER.md
 [spec]: https://github.com/WICG/serial
 [default values]: https://wicg.github.io/serial/#serialoptions-dictionary
-[Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
-[ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
-[WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
+[streams api concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
+[readablestream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
+[writablestream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
 [output signals]: https://wicg.github.io/serial/#serialoutputsignals-dictionary
 [input signals]: https://wicg.github.io/serial/#serialinputsignals-dictionary
-[BBC micro:bit]: https://microbit.org/
-[Google Developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
-[Serial API polyfill]: https://github.com/google/web-serial-polyfill
-[Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[bbc micro:bit]: https://microbit.org/
+[google developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
+[serial api polyfill]: https://github.com/google/web-serial-polyfill
+[controlling access to powerful web platform features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [security]: https://wicg.github.io/serial/#security
 [privacy]: https://wicg.github.io/serial/#privacy
 [transform stream]: https://developer.mozilla.org/docs/Web/API/TransformStream
@@ -628,7 +626,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/2992641952387694593
 [cr-bug]: https://crbug.com/884928
 [cr-status]: https://chromestatus.com/feature/6577673212002304
-[Reilly Grant]: https://twitter.com/reillyeon
-[Joe Medley]: https://github.com/jpmedley
-[Birmingham Museums Trust]: https://unsplash.com/@birminghammuseumstrust
-[Unsplash]: https://unsplash.com/photos/E1PSU-7aWcY
+[reilly grant]: https://twitter.com/reillyeon
+[joe medley]: https://github.com/jpmedley
+[birmingham museums trust]: https://unsplash.com/@birminghammuseumstrust
+[unsplash]: https://unsplash.com/photos/E1PSU-7aWcY

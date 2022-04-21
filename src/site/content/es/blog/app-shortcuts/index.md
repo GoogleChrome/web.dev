@@ -112,7 +112,7 @@ Es posible que los accesos directos a las aplicaciones no estén disponibles de 
 
 ### Ordenar los accesos directos de aplicaciones por prioridad
 
-Te recomendamos que ordenes los accesos directos a las aplicaciones por prioridad y los accesos directos a las aplicaciones más importantes aparecerán primero en la matriz de  `shortcuts` ya que el límite en la cantidad de accesos directos a las aplicaciones que se muestran varía según la plataforma. Chrome y Edge en Windows, por ejemplo, limitan la cantidad de accesos directos a aplicaciones a 10, mientras que Chrome para Android solo toma en cuenta los primeros 4 accesos directos a las aplicaciones.
+Te recomendamos que ordenes los accesos directos a las aplicaciones por prioridad y los accesos directos a las aplicaciones más importantes aparecerán primero en la matriz de `shortcuts` ya que el límite en la cantidad de accesos directos a las aplicaciones que se muestran varía según la plataforma. Chrome y Edge en Windows, por ejemplo, limitan la cantidad de accesos directos a aplicaciones a 10, mientras que Chrome para Android solo toma en cuenta los primeros 4 accesos directos a las aplicaciones.
 
 {% Aside %} Chrome 92 para Android 7 ahora permite solo 3 accesos directos a aplicaciones. Se agregó un acceso directo a la configuración del sitio, tomando uno de los espacios de acceso directo disponibles para la aplicación. {% endAside %}
 
@@ -126,9 +126,9 @@ Deberías de anotar los accesos directos a las aplicaciones de `url` como lo hac
 
 ## Compatibilidad del navegador
 
-Los accesos directos a aplicaciones están disponibles en Android (Chrome 84), Windows (Chrome 85 y Edge 85), Chrome OS (Chrome 92), macOS y Linux (Chrome 96 y Edge 96).
+Los accesos directos a aplicaciones están disponibles en Android (Chrome 84), Windows (Chrome 85 y Edge 85), ChromeOS (Chrome 92), macOS y Linux (Chrome 96 y Edge 96).
 
-<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Captura de pantalla de un menú de accesos directos abierto de aplicaciones en Chrome OS", width="800", height="450" %}<figcaption> Menú de accesos directos abierto de aplicaciones en Chrome OS</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Captura de pantalla de un menú de accesos directos abierto de aplicaciones en ChromeOS", width="800", height="450" %}<figcaption> Menú de accesos directos abierto de aplicaciones en ChromeOS</figcaption></figure>
 
 ## Soporte de Trusted Web Activity
 

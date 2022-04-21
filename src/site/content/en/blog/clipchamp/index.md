@@ -2,7 +2,7 @@
 layout: post
 title: Clipchamp's video editor PWA installs see a 97% monthly growth
 subhead: >
-  How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
+  How PWAs, WebAssembly, and ChromeOS are helping a web-based video editor
   deliver better performance and a more engaging experience to 12M users.
 date: 2020-12-08
 updated: 2022-02-10
@@ -10,7 +10,7 @@ hero: image/admin/i9GBgCAOS5eWVBXvOT84.jpg
 thumbnail: image/admin/1tHJ6FI8tOIIgRocFkCm.jpg
 alt: Clipchamp's logo.
 description: >
-  How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
+  How PWAs, WebAssembly, and ChromeOS are helping a web-based video editor
   deliver better performance and a more engaging experience to 12M users.
 tags:
   - blog
@@ -81,7 +81,7 @@ experience.
 That made us switch to a fully in-browser solution, where all the "heavy
 lifting" of video processing is done locally using hardware resources available
 on the end user's device. We strategically bet on the Chrome browser and, by
-extension, the Chrome OS platform to help us overcome the inevitable challenges
+extension, the ChromeOS platform to help us overcome the inevitable challenges
 of building an in-browser video creation platform.
 
 Video processing is enormously resource hungry, affecting computer and storage
@@ -142,7 +142,7 @@ Clipchamp user retention benefited because the PWA is installed and easier to
 get to. We also noted the PWA performs better for the editor, which makes it
 more compelling and keeps people coming back.
 
-Looking to the future, we're excited about the opportunity Chrome OS provides
+Looking to the future, we're excited about the opportunity ChromeOS provides
 for even more users to get more done with less fuss. Specifically, we're excited
 about some of the convenience integrations with the local OS when working with
 files. We think this will help speed up workflows for our busy everyday editors,

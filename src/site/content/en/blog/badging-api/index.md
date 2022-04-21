@@ -44,17 +44,17 @@ because they don't interrupt the user, they don't need the user's permission.
 
 Examples of apps that might use this API include:
 
-* Chat, email, and social apps, to signal that new messages have arrived, or to
+- Chat, email, and social apps, to signal that new messages have arrived, or to
   show the number of unread items.
-* Productivity apps, to signal that a long-running background task (such as
+- Productivity apps, to signal that a long-running background task (such as
   rendering an image or video) has completed.
-* Games, to signal that a player action is required (e.g., in Chess, when it
+- Games, to signal that a player action is required (e.g., in Chess, when it
   is the player's turn).
 
 ### Support
 
 The App Badging API works on Windows, and macOS, in Chrome 81 and Edge 81 or later.
-Support for Chrome OS is in development and will be available in a future
+Support for ChromeOS is in development and will be available in a future
 release. On Android, the Badging API is not supported. Instead,
 Android automatically shows a badge on app icon for the installed web app
 when there is an unread notification, just as for Android apps.
@@ -68,7 +68,7 @@ when there is an unread notification, just as for Android apps.
 3. Open it as an installed PWA. Note, it must be running as an installed PWA
    (in your task bar or dock).
 4. Click the **Set** or **Clear** button to set or clear the badge from the app
-   icon. You can also provide a number for the *Badge value*.
+   icon. You can also provide a number for the _Badge value_.
 
 ## How to use the App Badging API {: #use }
 
@@ -78,11 +78,11 @@ and users must add it to their home screens.
 
 The Badge API consists of two methods on `navigator`:
 
-* `setAppBadge(`*`number`*`)`: Sets the app's badge. If a value is provided, set the
+- `setAppBadge(`_`number`_`)`: Sets the app's badge. If a value is provided, set the
   badge to the provided value otherwise, display a plain white dot (or other
-  flag as appropriate to the platform). Setting *`number`* to `0` is the same as
+  flag as appropriate to the platform). Setting _`number`_ to `0` is the same as
   calling `clearAppBadge()`.
-* `clearAppBadge()`: Removes the app's badge.
+- `clearAppBadge()`: Removes the app's badge.
 
 Both return empty promises you can use for error handling.
 
@@ -115,7 +115,7 @@ then the "+" won't appear. No matter the actual number, just call
 `setAppBadge(unreadCount)` and let the user agent deal with
 displaying it accordingly.
 
-While the App Badging API *in Chrome* requires an installed app, you shouldn't
+While the App Badging API _in Chrome_ requires an installed app, you shouldn't
 make calls to the Badging API dependent on the install state. Just call the
 API when it exists, as other browsers may show the badge in other places.
 If it works, it works. If not, it simply doesn't.
@@ -168,7 +168,7 @@ Is there something in the API that doesn't work as you expected? Or are
 there missing methods or properties that you need to implement your idea?
 Do you have a question or comment on the security model?
 
-* File a spec issue on the [Badging API GitHub repo][issues], or add your
+- File a spec issue on the [Badging API GitHub repo][issues], or add your
   thoughts to an existing issue.
 
 ### Report a problem with the implementation
@@ -176,7 +176,7 @@ Do you have a question or comment on the security model?
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
 
-* File a bug at <https://new.crbug.com>. Be sure to include as much detail as
+- File a bug at <https://new.crbug.com>. Be sure to include as much detail as
   you can, simple instructions for reproducing, and set **Components** to
   `UI>Browser>WebAppInstalls`. [Glitch](https://glitch.com) works great for
   sharing quick and easy reproductions.
@@ -187,17 +187,17 @@ Planning to use the App Badging API on your site? Your public support helps the
 Chrome team to prioritize features, and shows other browser vendors how critical
 it is to support them.
 
-* Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
   [`#BadgingAPI`](https://twitter.com/search?q=%23BadgingAPI&src=typed_query&f=live)
   and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
-* [Public explainer][explainer]
-* [Badging API Demo][demo] | [Badging API Demo source][demo-source]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: `UI>Browser>WebAppInstalls`
+- [Public explainer][explainer]
+- [Badging API Demo][demo] | [Badging API Demo source][demo-source]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: `UI>Browser>WebAppInstalls`
 
 Hero [photo](https://unsplash.com/photos/xv7-GlvBLFw) by
 [Prateek Katyal](https://unsplash.com/@prateekkatyal) on

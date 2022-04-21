@@ -79,7 +79,7 @@ There were a number of other
 {% BrowserCompat 'api.Window.showOpenFilePicker' %}
 
 The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
-Chrome OS, and Linux. A notable exception is Brave
+ChromeOS, and Linux. A notable exception is Brave
 ([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)). Android support
 is planned; you can track progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
@@ -337,7 +337,7 @@ The code example below shows storing and retrieving a file handle and a director
 the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
 
 ```js
-import { get, set } from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
+import {get, set} from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
 
 const pre1 = document.querySelector('pre.file');
 const pre2 = document.querySelector('pre.directory');
@@ -439,7 +439,9 @@ butDir.addEventListener('click', async () => {
     if (entry.kind !== 'file') {
       break;
     }
-    promises.push(entry.getFile().then((file) => `${file.name} (${file.size})`));
+    promises.push(
+      entry.getFile().then((file) => `${file.name} (${file.size})`),
+    );
   }
   console.log(await Promise.all(promises));
 });
@@ -454,11 +456,16 @@ method. By passing in an optional `options` object with a key of `create` and a 
 
 ```js
 // In an existing directory, create a new directory named "My Documents".
-const newDirectoryHandle = await existingDirectoryHandle.getDirectoryHandle('My Documents', {
+const newDirectoryHandle = await existingDirectoryHandle.getDirectoryHandle(
+  'My Documents',
+  {
+    create: true,
+  },
+);
+// In this new directory, create a file named "My Notes.txt".
+const newFileHandle = await newDirectoryHandle.getFileHandle('My Notes.txt', {
   create: true,
 });
-// In this new directory, create a file named "My Notes.txt".
-const newFileHandle = await newDirectoryHandle.getFileHandle('My Notes.txt', { create: true });
 ```
 
 ### Resolving the path of an item in a directory
@@ -483,7 +490,7 @@ all subfolders and the therein contained files.
 // Delete a file.
 await directoryHandle.removeEntry('Abandoned Projects.txt');
 // Recursively delete a folder.
-await directoryHandle.removeEntry('Old Stuff', { recursive: true });
+await directoryHandle.removeEntry('Old Stuff', {recursive: true});
 ```
 
 ### Deleting a file or folder directly
@@ -577,11 +584,11 @@ private file system once you have access to the root `FileSystemDirectoryHandle`
 ```js
 const root = await navigator.storage.getDirectory();
 // Create a new file handle.
-const fileHandle = await root.getFileHandle('Untitled.txt', { create: true });
+const fileHandle = await root.getFileHandle('Untitled.txt', {create: true});
 // Create a new directory handle.
-const dirHandle = await root.getDirectoryHandle('New Folder', { create: true });
+const dirHandle = await root.getDirectoryHandle('New Folder', {create: true});
 // Recursively remove a directory.
-await root.removeEntry('Old Stuff', { recursive: true });
+await root.removeEntry('Old Stuff', {recursive: true});
 ```
 
 ## Accessing files optimized for performance from the origin private file system
@@ -599,9 +606,9 @@ files can be accessed by exposing two new methods as part of the origin private 
 // Asynchronous access in all contexts:
 const accessHandle = await fileHandle.createAccessHandle();
 await accessHandle.writable.getWriter().write(buffer);
-const reader = accessHandle.readable.getReader({ mode: 'byob' });
+const reader = accessHandle.readable.getReader({mode: 'byob'});
 // Assumes seekable streams, and SharedArrayBuffer support are available
-await reader.read(buffer, { at: 1 });
+await reader.read(buffer, {at: 1});
 ```
 
 ```js
@@ -610,7 +617,7 @@ await reader.read(buffer, { at: 1 });
 // Synchronous access exclusively in Worker contexts
 const accessHandle = await fileHandle.createSyncAccessHandle();
 const writtenBytes = accessHandle.write(buffer);
-const readBytes = accessHandle.read(buffer, { at: 1 });
+const readBytes = accessHandle.read(buffer, {at: 1});
 ```
 
 ## Polyfilling
@@ -766,18 +773,15 @@ The File System Access API spec was written by
 [explainer]: https://github.com/WICG/file-system-access/blob/main/EXPLAINER.md
 [spec-security]: https://wicg.github.io/file-system-access/#privacy-considerations
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EStorage%3EFileSystem
-[nfs-cr-sec-model]:
-  https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
+[nfs-cr-sec-model]: https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
 [wicg-discourse]: https://discourse.wicg.io/t/writable-file-api/1433
 [file-api-spec]: https://w3c.github.io/FileAPI/
 [blob-methods]: https://developer.mozilla.org/docs/Web/API/Blob
 [showopenfilepicker]: https://wicg.github.io/file-system-access/#api-showopenfilepicker
 [showsavefilepicker]: https://wicg.github.io/file-system-access/#api-showsavefilepicker
 [showdirectorypicker]: https://wicg.github.io/file-system-access/#api-showdirectorypicker
-[getfilehandle]:
-  https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getfilehandle
-[getdirectoryhandle]:
-  https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getdirectoryhandle
+[getfilehandle]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getfilehandle
+[getdirectoryhandle]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getdirectoryhandle
 [removeentry]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-removeentry
 [resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [fs-writer]: https://wicg.github.io/file-system-access/#filesystemwriter
@@ -785,8 +789,7 @@ The File System Access API spec was written by
 [buffersource]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [fs-file-handle]: https://wicg.github.io/file-system-access/#api-filesystemfilehandle
 [fs-dir-handle]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [spec-issues]: https://github.com/wicg/file-system-access/issues/
 [api-surface]: https://docs.google.com/document/d/11rcS0FdwM8w-s2esacEQxFfp3g2AAI9uD7drH8ARKPA/edit#
@@ -794,18 +797,14 @@ The File System Access API spec was written by
 [writablestream]: https://streams.spec.whatwg.org/#ws-class
 [text-editor]: https://googlechromelabs.github.io/text-editor/
 [text-editor-source]: https://github.com/GoogleChromeLabs/text-editor/
-[text-editor-fs-helper]:
-  https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/fs-helpers.js
-[text-editor-app-js]:
-  https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/app.js
-[download-file]:
-  https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
+[text-editor-fs-helper]: https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/fs-helpers.js
+[text-editor-app-js]: https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/app.js
+[download-file]: https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [fs-writablestream]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream
 [writable-stream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [spec-resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [spec-issameentry]: https://wicg.github.io/file-system-access/#api-filesystemhandle-issameentry
 [spec-seek]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-seek
-[spec-truncate]:
-  https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-truncate
+[spec-truncate]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-truncate
 [typescript]: https://www.npmjs.com/package/@types/wicg-file-system-access

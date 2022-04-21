@@ -176,7 +176,7 @@ management settings page.
 
 {% Img src="image/ttTommHYbJXsEL29zNB1wXBvH4z1/WJ2KPqFUjqJABNYQUEN9.png", alt="Example of an installed app's settings page.", width="800", height="449" %}
 
-Link capturing is a Chrome&nbsp;OS-only feature for now; support for Windows, macOS, and Linux is
+Link capturing is a ChromeOS-only feature for now; support for Windows, macOS, and Linux is
 in progress.
 
 ### Launch Handler API
@@ -255,6 +255,5 @@ Cutter, and [Shunya Shishido](https://github.com/sisidovski). Hero image by
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md
 [issues]: https://github.com/WICG/sw-launch/issues/
 [spec]: https://github.com/w3c/manifest/issues/764
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev

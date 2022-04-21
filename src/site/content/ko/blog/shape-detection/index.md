@@ -14,7 +14,7 @@ tags:
 hero: image/admin/pcEIwc0D09iF7BPo3TT1.jpg
 alt: 휴대폰으로 QR 코드를 스캔하는 중
 origin-trial:
-  url: "https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919"
+  url: 'https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919'
 feedback:
   - api
 ---
@@ -122,12 +122,12 @@ const barcodeDetector = new BarcodeDetector({
     'pdf417',
     'qr_code',
     'upc_a',
-    'upc_e'
-  ]
+    'upc_e',
+  ],
 });
 try {
   const barcodes = await barcodeDetector.detect(image);
-  barcodes.forEach(barcode => searchProductDatabase(barcode));
+  barcodes.forEach((barcode) => searchProductDatabase(barcode));
 } catch (e) {
   console.error('Barcode detection failed:', e);
 }
@@ -144,11 +144,11 @@ const faceDetector = new FaceDetector({
   maxDetectedFaces: 5,
   // (Optional) Hint to try and prioritize speed over accuracy
   // by, e.g., operating on a reduced scale or looking for large features.
-  fastMode: false
+  fastMode: false,
 });
 try {
   const faces = await faceDetector.detect(image);
-  faces.forEach(face => drawMustache(face));
+  faces.forEach((face) => drawMustache(face));
 } catch (e) {
   console.error('Face detection failed:', e);
 }
@@ -164,7 +164,7 @@ try {
 const textDetector = new TextDetector();
 try {
   const texts = await textDetector.detect(image);
-  texts.forEach(text => textToSpeech(text));
+  texts.forEach((text) => textToSpeech(text));
 } catch (e) {
   console.error('Text detection failed:', e);
 }
@@ -172,13 +172,15 @@ try {
 
 ## 기능 감지 {: #featuredetection }
 
-Shape Detection API를 감지하는 생성자의 존재 여부를 순수하게 확인하는 것만으로는 충분하지 않습니다. 인터페이스의 존재는 기본 플랫폼이 기능을 지원하는지 여부를 알려주지 않습니다. 이것은 [의도한 대로](https://crbug.com/920961) 작동합니다. 이것이 우리가 다음과 같이 기능 감지를 수행 *하여 방어적 프로그래밍* 접근 방식을 권장하는 이유입니다.
+Shape Detection API를 감지하는 생성자의 존재 여부를 순수하게 확인하는 것만으로는 충분하지 않습니다. 인터페이스의 존재는 기본 플랫폼이 기능을 지원하는지 여부를 알려주지 않습니다. 이것은 [의도한 대로](https://crbug.com/920961) 작동합니다. 이것이 우리가 다음과 같이 기능 감지를 수행 _하여 방어적 프로그래밍_ 접근 방식을 권장하는 이유입니다.
 
 ```js
-const supported = await (async () => 'FaceDetector' in window &&
-    await new FaceDetector().detect(document.createElement('canvas'))
-    .then(_ => true)
-    .catch(e => e.name === 'NotSupportedError' ? false : true))();
+const supported = await (async () =>
+  'FaceDetector' in window &&
+  (await new FaceDetector()
+    .detect(document.createElement('canvas'))
+    .then((_) => true)
+    .catch((e) => (e.name === 'NotSupportedError' ? false : true))))();
 ```
 
 `BarcodeDetector` 인터페이스는 `getSupportedFormats()` 메소드를 포함하도록 업데이트되었으며 유사한 인터페이스가 [`FaceDetector`용](https://github.com/WICG/shape-detection-api/issues/53) 및 [`TextDetector`용](https://github.com/WICG/shape-detection-api/issues/57)에 제안되었습니다.
@@ -205,8 +207,10 @@ await BarcodeDetector.getSupportedFormats();
 이를 통해 QR 코드 스캔과 같이 필요한 특정 기능을 감지할 수 있습니다.
 
 ```js
-if (('BarcodeDetector' in window) &&
-    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+if (
+  'BarcodeDetector' in window &&
+  (await BarcodeDetector.getSupportedFormats()).includes('qr_code')
+) {
   console.log('QR code scanning is supported.');
 }
 ```
@@ -215,7 +219,7 @@ if (('BarcodeDetector' in window) &&
 
 ## 운영 체제 지원 {: #os-support}
 
-바코드 감지는 macOS, Chrome OS 및 Android에서 사용할 수 있습니다. Android에는 [Google Play 서비스](https://play.google.com/store/apps/details?id=com.google.android.gms)가 필요합니다.
+바코드 감지는 macOS, ChromeOS 및 Android에서 사용할 수 있습니다. Android에는 [Google Play 서비스](https://play.google.com/store/apps/details?id=com.google.android.gms)가 필요합니다.
 
 ## 모범 사례 {: #bestpractices}
 

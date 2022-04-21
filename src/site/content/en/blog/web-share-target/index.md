@@ -101,8 +101,7 @@ and text, add the following to the `manifest.json` file:
 
 If your application already has a share URL scheme, you can replace the `param`
 values with your existing query parameters. For example, if your share URL
-scheme uses `body` instead of `text`, you could replace `"text": "text"` with `"text":
-"body"`.
+scheme uses `body` instead of `text`, you could replace `"text": "text"` with `"text": "body"`.
 
 The `method` value defaults to `"GET"` if not provided. The `enctype` field, not
 shown in this example, indicates the [type of encoding][encoding] for the data.
@@ -175,15 +174,15 @@ they prefer.
 How you deal with the incoming shared data is up to you and depends on your
 app. For example:
 
-* An email client could draft a new email using `title` as the subject of an
+- An email client could draft a new email using `title` as the subject of an
   email, with `text` and `url` concatenated together as the body.
-* A social networking app could draft a new post ignoring `title`, using
+- A social networking app could draft a new post ignoring `title`, using
   `text` as the body of the message, and adding `url` as a link. If `text` is
   missing, the app might use `url` in the body as well. If `url` is missing,
   the app might scan `text` looking for a URL and add that as a link.
-* A photo sharing app could create a new slideshow using `title` as the
+- A photo sharing app could create a new slideshow using `title` as the
   slideshow title, `text` as a description, and `files` as the slideshow images.
-* A text messaging app could draft a new message using `text` and `url`
+- A text messaging app could draft a new message using `text` and `url`
   concatenated together and dropping `title`.
 
 ### Processing GET shares
@@ -223,18 +222,19 @@ a request, the page passes it to the service worker, where you can intercept it 
 page using `postMessage()` or pass it on to the server:
 
 ```js
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   // If this is an incoming POST request for the
   // registered "action" URL, respond to it.
-  if (event.request.method === 'POST' &&
-      url.pathname === '/bookmark') {
-    event.respondWith((async () => {
-      const formData = await event.request.formData();
-      const link = formData.get('link') || '';
-      const responseUrl = await saveBookmark(link);
-      return Response.redirect(responseUrl, 303);
-    })());
+  if (event.request.method === 'POST' && url.pathname === '/bookmark') {
+    event.respondWith(
+      (async () => {
+        const formData = await event.request.formData();
+        const link = formData.get('link') || '';
+        const responseUrl = await saveBookmark(link);
+        return Response.redirect(responseUrl, 303);
+      })(),
+    );
   }
 });
 ```
@@ -261,7 +261,7 @@ the `text` field, or occasionally in the `title` field.
 As of early 2021, the Web Share Target API is supported by:
 
 - Chrome and Edge 76 or later on Android.
-- Chrome 89 or later on Chrome OS.
+- Chrome 89 or later on ChromeOS.
 
 On all platforms, your web app has to be [installed][installability] before it will show up as a
 potential target for receiving shared data.
@@ -289,6 +289,6 @@ and let us know where and how you're using it.
 [explainer]: https://github.com/WICG/web-share-target/blob/master/docs/explainer.md
 [issues]: https://github.com/WICG/web-share-target/issues
 [wicg-discourse]: https://discourse.wicg.io/t/web-share-target-api-for-websites-to-receive-shared-content/1854
-[manifest]:/add-manifest/
-[installability]:https://developers.google.com/web/fundamentals/app-install-banners/#criteria
-[encoding]:https://developer.mozilla.org/docs/Web/HTML/Element/form#attr-enctype
+[manifest]: /add-manifest/
+[installability]: https://developers.google.com/web/fundamentals/app-install-banners/#criteria
+[encoding]: https://developer.mozilla.org/docs/Web/HTML/Element/form#attr-enctype

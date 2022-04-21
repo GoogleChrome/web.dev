@@ -28,13 +28,13 @@ stack_overflow_tag: web-bluetooth
 
 [Web Bluetooth API 사양](https://webbluetoothcg.github.io/web-bluetooth/)은 아직 확정되지 않았지만 사양 작성자들이 열정적인 개발자를 대상으로 이 API를 사용해 보고 [사양에 대한 피드백](https://github.com/WebBluetoothCG/web-bluetooth/issues)과 [구현에 대한 피드백](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth)을 제공할 것을 적극적으로 권하고 있습니다.
 
-Web Bluetooth API의 하위 요소는 Chrome OS, Android 6.0용 Chrome, Mac(Chrome 56) 및 Windows 10(Chrome 70)에서 사용할 수 있습니다. 즉, 가까운 BLE(Bluetooth Low Energy) 장치를 [요청](#request)하여 여기에 [연결](#connect)하고, 블루투스 특성을 [읽고](#read) [쓰며](#write), [GATT 알림을 수신](#notifications)하고 [블루투스 장치의 연결이 끊긴 시점](#disconnect)을 인식하고, 심지어 [블루투스 설명자를 읽고 쓸](#descriptors) 수 있게 될 것입니다. 자세한 내용은 MDN의 [브라우저 호환성](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) 표를 참조하세요.
+Web Bluetooth API의 하위 요소는 ChromeOS, Android 6.0용 Chrome, Mac(Chrome 56) 및 Windows 10(Chrome 70)에서 사용할 수 있습니다. 즉, 가까운 BLE(Bluetooth Low Energy) 장치를 [요청](#request)하여 여기에 [연결](#connect)하고, 블루투스 특성을 [읽고](#read) [쓰며](#write), [GATT 알림을 수신](#notifications)하고 [블루투스 장치의 연결이 끊긴 시점](#disconnect)을 인식하고, 심지어 [블루투스 설명자를 읽고 쓸](#descriptors) 수 있게 될 것입니다. 자세한 내용은 MDN의 [브라우저 호환성](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) 표를 참조하세요.
 
 Linux 및 이전 버전의 Windows의 경우 `about://flags`에서 `#experimental-web-platform-features` 플래그를 활성화합니다.
 
 ### 원본 평가에 사용 가능
 
-현장에서 Web Bluetooth API를 사용하는 개발자로부터 최대한 많은 피드백을 얻기 위해 Chrome은 이전에 Chrome OS, Android 및 Mac에 대한 [원본 평가](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)로 Chrome 53에 이 기능을 추가했습니다.
+현장에서 Web Bluetooth API를 사용하는 개발자로부터 최대한 많은 피드백을 얻기 위해 Chrome은 이전에 ChromeOS, Android 및 Mac에 대한 [원본 평가](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)로 Chrome 53에 이 기능을 추가했습니다.
 
 이 평가는 2017년 1월에 성공적으로 종료되었습니다.
 
@@ -51,7 +51,7 @@ Linux 및 이전 버전의 Windows의 경우 `about://flags`에서 `#experimenta
 보안 조치로서, `navigator.bluetooth.requestDevice`를 사용하여 블루투스 장치를 검색하려면 터치 또는 마우스 클릭과 같은 [사용자 제스처](https://html.spec.whatwg.org/multipage/interaction.html#activation)로 트리거해야 합니다. [`pointerup`](https://developer.chrome.com/blog/pointer-events/), `click` 및 `touchend` 이벤트 수신에 대해 이야기하고 있는 것입니다.
 
 ```js
-button.addEventListener('pointerup', function(event) {
+button.addEventListener('pointerup', function (event) {
   // Call navigator.bluetooth.requestDevice
 });
 ```
@@ -81,21 +81,33 @@ Web Bluetooth API는 JavaScript [Promise](https://developer.mozilla.org/docs/Web
 예를 들어, [Bluetooth GATT 배터리 서비스](https://www.bluetooth.com/specifications/gatt/)를 광고하는 블루투스 장치를 요청하려면 다음과 같이 합니다.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 하지만 해당 Bluetooth GATT 서비스가 [표준화된 Bluetooth GATT 서비스](https://www.bluetooth.com/specifications/assigned-numbers/) 목록에 없으면 전체 블루투스 UUID 또는 짧은 16비트 또는 32비트 형식을 제공할 수 있습니다.
 
 ```js
-navigator.bluetooth.requestDevice({
-  filters: [{
-    services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb']
-  }]
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb'],
+      },
+    ],
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 #### 이름 필터
@@ -103,14 +115,21 @@ navigator.bluetooth.requestDevice({
 `name` 필터 키를 사용하여 광고된 장치 이름, 또는 경우에 따라 `namePrefix`로 이 이름의 접두사를 기반으로 블루투스 장치를 요청할 수 있습니다. 이 경우 서비스 필터에 포함되지 않은 서비스에 액세스할 수 있도록 `optionalServices` 키도 정의해야 합니다. 그렇지 않으면 나중에 액세스하려고 할 때 오류가 발생합니다.
 
 ```js
-navigator.bluetooth.requestDevice({
-  filters: [{
-    name: 'Francois robot'
-  }],
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        name: 'Francois robot',
+      },
+    ],
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 #### 제조업체 데이터 필터
@@ -120,17 +139,26 @@ navigator.bluetooth.requestDevice({
 ```js
 // Filter Bluetooth devices from Google company with manufacturer data bytes
 // that start with [0x01, 0x02].
-navigator.bluetooth.requestDevice({
-  filters: [{
-    manufacturerData: [{
-      companyIdentifier: 0x00e0,
-      dataPrefix: new Uint8Array([0x01, 0x02])
-    }]
-  }],
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        manufacturerData: [
+          {
+            companyIdentifier: 0x00e0,
+            dataPrefix: new Uint8Array([0x01, 0x02]),
+          },
+        ],
+      },
+    ],
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 마스크는 제조업체 데이터의 일부 패턴과 일치시키기 위해 데이터 접두사와 함께 사용할 수도 있습니다. 자세한 내용은 [블루투스 데이터 필터 설명](https://github.com/WebBluetoothCG/web-bluetooth/blob/main/data-filters-explainer.md)을 확인하세요.
@@ -142,12 +170,17 @@ navigator.bluetooth.requestDevice({
 마지막으로, `filters` 대신 `acceptAllDevices` 키를 사용하여 근처의 모든 블루투스 장치를 표시할 수 있습니다. 또한 일부 서비스에 액세스하기 위해 `optionalServices` 키도 정의해야 합니다. 그렇지 않으면 나중에 액세스하려고 할 때 오류가 발생합니다.
 
 ```js
-navigator.bluetooth.requestDevice({
-  acceptAllDevices: true,
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    acceptAllDevices: true,
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 {% Aside 'caution' %} 이로 인해 선택기에 관련 없는 여러 장치가 표시되고 필터가 없기 때문에 에너지가 낭비될 수 있습니다. 주의해서 사용하세요. {% endAside %}
@@ -157,16 +190,21 @@ navigator.bluetooth.requestDevice({
 그렇다면 이제 `BluetoothDevice`를 가지고 무엇을 해야 할까요? 서비스 및 특성 정의를 가지고 있는 블루투스 원격 GATT 서버에 연결해 보겠습니다.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {
-  // Human-readable name of the device.
-  console.log(device.name);
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => {
+    // Human-readable name of the device.
+    console.log(device.name);
 
-  // Attempts to connect to remote GATT Server.
-  return device.gatt.connect();
-})
-.then(server => { /* … */ })
-.catch(error => { console.error(error); });
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then((server) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 ### 블루투스 특성 읽기 {: #read }
@@ -176,24 +214,27 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 아래 예에서 `battery_level`은 [표준화된 배터리 수준 특성](https://www.bluetooth.com/specifications/gatt/)입니다.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => device.gatt.connect())
-.then(server => {
-  // Getting Battery Service…
-  return server.getPrimaryService('battery_service');
-})
-.then(service => {
-  // Getting Battery Level Characteristic…
-  return service.getCharacteristic('battery_level');
-})
-.then(characteristic => {
-  // Reading Battery Level…
-  return characteristic.readValue();
-})
-.then(value => {
-  console.log(`Battery percentage is ${value.getUint8(0)}`);
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => {
+    // Getting Battery Service…
+    return server.getPrimaryService('battery_service');
+  })
+  .then((service) => {
+    // Getting Battery Level Characteristic…
+    return service.getCharacteristic('battery_level');
+  })
+  .then((characteristic) => {
+    // Reading Battery Level…
+    return characteristic.readValue();
+  })
+  .then((value) => {
+    console.log(`Battery percentage is ${value.getUint8(0)}`);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 사용자 지정 블루투스 GATT 특성을 사용하는 경우 전체 블루투스 UUID 또는 짧은 16비트 또는 32비트 형식을 `service.getCharacteristic`에 제공할 수 있습니다.
@@ -224,19 +265,22 @@ function handleBatteryLevelChanged(event) {
 여기에 마법 같은 것은 없습니다. [Heart Rate Control Point 특성 페이지](https://www.bluetooth.com/specifications/gatt/)에 모두 설명되어 있습니다.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_control_point'))
-.then(characteristic => {
-  // Writing 1 is the signal to reset energy expended.
-  const resetEnergyExpended = Uint8Array.of(1);
-  return characteristic.writeValue(resetEnergyExpended);
-})
-.then(_ => {
-  console.log('Energy expended has been reset.');
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['heart_rate']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => server.getPrimaryService('heart_rate'))
+  .then((service) => service.getCharacteristic('heart_rate_control_point'))
+  .then((characteristic) => {
+    // Writing 1 is the signal to reset energy expended.
+    const resetEnergyExpended = Uint8Array.of(1);
+    return characteristic.writeValue(resetEnergyExpended);
+  })
+  .then((_) => {
+    console.log('Energy expended has been reset.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 ### GATT 알림 수신 {: #notifications }
@@ -244,17 +288,22 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
 이제 장치에서 [심박수 측정](https://www.bluetooth.com/specifications/gatt/) 특성이 변경될 때 알림을 받는 방법을 살펴보겠습니다.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_measurement'))
-.then(characteristic => characteristic.startNotifications())
-.then(characteristic => {
-  characteristic.addEventListener('characteristicvaluechanged',
-                                  handleCharacteristicValueChanged);
-  console.log('Notifications have been started.');
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['heart_rate']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => server.getPrimaryService('heart_rate'))
+  .then((service) => service.getCharacteristic('heart_rate_measurement'))
+  .then((characteristic) => characteristic.startNotifications())
+  .then((characteristic) => {
+    characteristic.addEventListener(
+      'characteristicvaluechanged',
+      handleCharacteristicValueChanged,
+    );
+    console.log('Notifications have been started.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function handleCharacteristicValueChanged(event) {
   const value = event.target.value;
@@ -271,16 +320,21 @@ function handleCharacteristicValueChanged(event) {
 더 나은 사용자 경험을 제공하기 위해 연결 중단 이벤트에 수신 대기하고 사용자를 다시 연결하도록 초대할 수 있습니다.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ name: 'Francois robot' }] })
-.then(device => {
-  // Set up event listener for when device gets disconnected.
-  device.addEventListener('gattserverdisconnected', onDisconnected);
+navigator.bluetooth
+  .requestDevice({filters: [{name: 'Francois robot'}]})
+  .then((device) => {
+    // Set up event listener for when device gets disconnected.
+    device.addEventListener('gattserverdisconnected', onDisconnected);
 
-  // Attempts to connect to remote GATT Server.
-  return device.gatt.connect();
-})
-.then(server => { /* … */ })
-.catch(error => { console.error(error); });
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then((server) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function onDisconnected(event) {
   const device = event.target;
@@ -408,4 +462,4 @@ Web Bluetooth API를 사용할 계획이십니까? Chrome 팀이 기능의 우�
 
 ## 감사의 말
 
-이 글을 검토한 [Kayce Basques](https://github.com/kaycebasques)에게 감사의 말을 전합니다. [미국 볼더에 위치한 SparkFun Electronics](https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg)에서 이미지를 제공했습니다.
+이 글을 검토한 [Kayce Basques](https://github.com/kaycebasques)에게 감사의 말을 전합니다. [미국 볼더에 위치한 SparkFun Electronics](<https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg>)에서 이미지를 제공했습니다.

@@ -18,10 +18,10 @@ tags:
 ---
 
 {% Aside %}
-  Tabbed application mode is part of the
-  [capabilities project](/fugu-status/) and is currently in development. This post
-  will be updated as the implementation progresses. Tabbed application mode is an early-stage
-  exploration of the Chrome team. It is not ready for production yet.
+Tabbed application mode is part of the
+[capabilities project](/fugu-status/) and is currently in development. This post
+will be updated as the implementation progresses. Tabbed application mode is an early-stage
+exploration of the Chrome team. It is not ready for production yet.
 {% endAside %}
 
 In the world of computing, the [desktop metaphor](https://en.wikipedia.org/wiki/Desktop_metaphor) is
@@ -48,10 +48,10 @@ users a tabbed document interface, for example, to enable editing different file
 window. Tabbed application mode closes this gap.
 
 {% Aside %}
-  This feature is about having a standalone app window with multiple tabs (containing
-  separate documents inside the app scope) inside it. It is not to be confused with
-  the existing `"display": "browser"`, which has a separate meaning (specifically, that
-  the app is opened in a regular browser tab).
+This feature is about having a standalone app window with multiple tabs (containing
+separate documents inside the app scope) inside it. It is not to be confused with
+the existing `"display": "browser"`, which has a separate meaning (specifically, that
+the app is opened in a regular browser tab).
 {% endAside %}
 
 ### Suggested use cases for tabbed application mode
@@ -117,7 +117,7 @@ To use tabbed application mode, developers need to opt their apps in by setting 
 
 ### Trying tabbed application mode
 
-You can try tabbed application mode on Chrome&nbsp;OS devices running Chrome&nbsp;83 and up today:
+You can try tabbed application mode on ChromeOS devices running Chrome&nbsp;83 and up today:
 
 1. Set the `#enable-desktop-pwas-tab-strip` flag.
 1. Install any web app that runs in `standalone` mode, for example,

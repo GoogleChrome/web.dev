@@ -1,7 +1,6 @@
 ---
 title: Control camera pan, tilt, and zoom
-subhead:
-  Pan, tilt, and zoom features on cameras are finally controllable on the web.
+subhead: Pan, tilt, and zoom features on cameras are finally controllable on the web.
 authors:
   - beaufortfrancois
 date: 2020-10-05
@@ -68,11 +67,11 @@ try {
   const stream = await navigator.mediaDevices.getUserMedia({
     // Website asks to control camera PTZ as well without altering the
     // current pan, tilt, and zoom settings.
-    video: { pan: true, tilt: true, zoom: true }
+    video: {pan: true, tilt: true, zoom: true},
   });
 
   // Show camera video stream to user.
-  document.querySelector("video").srcObject = stream;
+  document.querySelector('video').srcObject = stream;
 } catch (error) {
   // User denies prompt or matching media is not available.
   console.log(error);
@@ -88,15 +87,15 @@ status of PTZ permission.
 ```js
 try {
   const panTiltZoomPermissionStatus = await navigator.permissions.query({
-    name: "camera",
-    panTiltZoom: true
+    name: 'camera',
+    panTiltZoom: true,
   });
 
-  if (panTiltZoomPermissionStatus.state == "granted") {
+  if (panTiltZoomPermissionStatus.state == 'granted') {
     // User has granted access to the website to control camera PTZ.
   }
 
-  panTiltZoomPermissionStatus.addEventListener("change", () => {
+  panTiltZoomPermissionStatus.addEventListener('change', () => {
     // User has changed PTZ permission status.
   });
 } catch (error) {
@@ -113,7 +112,7 @@ and "Zoom (Relative)" UVC controls are not supported in Chromium-based browsers.
 <figure>
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4EDS8fYYifXAUY6SBaiV.png",
-    alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.",
+    alt="Screenshot of the internal page in ChromeOS to debug PTZ camera support.",
     width="800",
     height="481" %}
   <figcaption>Internal page to debug PTZ camera support.</figcaption>
@@ -141,6 +140,7 @@ Call `videoTrack.applyConstraints()` with the appropriate [PTZ advanced
 constraints] to control camera pan, tilt, and zoom as shown in the example below.
 The returned promise will resolve if successful. Otherwise it will reject if
 either:
+
 - the camera with PTZ permission is not granted.
 - the camera hardware does not support the PTZ constraint.
 - the page is not visible to the user. Use the [Page Visibility API] to detect
@@ -154,22 +154,22 @@ const settings = videoTrack.getSettings();
 
 // Let the user control the camera pan motion if the camera supports it
 // and PTZ access is granted.
-if ("pan" in settings) {
-  const input = document.querySelector("input[type=range]");
+if ('pan' in settings) {
+  const input = document.querySelector('input[type=range]');
   input.min = capabilities.pan.min;
   input.max = capabilities.pan.max;
   input.step = capabilities.pan.step;
   input.value = settings.pan;
 
-  input.addEventListener("input", async () => {
-    await videoTrack.applyConstraints({ advanced: [{ pan: input.value }] });
+  input.addEventListener('input', async () => {
+    await videoTrack.applyConstraints({advanced: [{pan: input.value}]});
   });
 }
 
-if ("tilt" in settings) {
+if ('tilt' in settings) {
   // similar for tilt...
 }
-if ("zoom" in settings) {
+if ('zoom' in settings) {
   // similar for zoom...
 }
 ```
@@ -182,11 +182,11 @@ that [mandatory constraints] (min, max, exact) are not allowed here.
 ```js
 const stream = await navigator.mediaDevices.getUserMedia({
   // Website asks to reset known camera pan.
-  video: { pan: 0, deviceId: { exact: "myCameraDeviceId" } }
+  video: {pan: 0, deviceId: {exact: 'myCameraDeviceId'}},
 });
 ```
 
-## Playground  {: #playground }
+## Playground {: #playground }
 
 You can play with the API by running the [demo] on Glitch. Be sure to [check out
 the source code].
@@ -200,7 +200,7 @@ Enjoy!
   path: 'script.js'
 } %}
 
-## Security Considerations  {: #security }
+## Security Considerations {: #security }
 
 The spec authors have designed and implemented this API using the core
 including user control, transparency, and ergonomics. The ability to use this
@@ -224,19 +224,19 @@ spec and the implementation.
 Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 
 [mandatory constraints]: https://developer.mozilla.org/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
-[`MediaStream`]: https://developer.mozilla.org/docs/Web/API/MediaStream
-[Permissions API]: https://developer.mozilla.org/docs/Web/API/Permissions_API
-[UVC controls]: https://www.usb.org/document-library/video-class-v15-document-set
-[PTZ advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
-[Page Visibility API]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
+[`mediastream`]: https://developer.mozilla.org/docs/Web/API/MediaStream
+[permissions api]: https://developer.mozilla.org/docs/Web/API/Permissions_API
+[uvc controls]: https://www.usb.org/document-library/video-class-v15-document-set
+[ptz advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
+[page visibility api]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
 [demo]: https://ptz.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/ptz?path=public%2Fscript.js
-[run Chrome with the switch]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags
-[Media Capture and Streams API]: https://w3c.github.io/mediacapture-main
-[Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[Joe Medley]: https://github.com/jpmedley
-[Thomas Steiner]: https://github.com/tomayac
-[Eero Häkkinen]: https://github.com/eehakkin
-[Rijubrata Bhaumik]: https://github.com/riju
-[Christina @ wocintechchat.com]: https://unsplash.com/@wocintechchat
-[Unsplash]: https://unsplash.com/photos/lqPLmYD_MO8
+[run chrome with the switch]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags
+[media capture and streams api]: https://w3c.github.io/mediacapture-main
+[controlling access to powerful web platform features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[joe medley]: https://github.com/jpmedley
+[thomas steiner]: https://github.com/tomayac
+[eero häkkinen]: https://github.com/eehakkin
+[rijubrata bhaumik]: https://github.com/riju
+[christina @ wocintechchat.com]: https://unsplash.com/@wocintechchat
+[unsplash]: https://unsplash.com/photos/lqPLmYD_MO8

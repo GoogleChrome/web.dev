@@ -51,12 +51,12 @@ A pointer lock is the canonical term for when a desktop application hides the
 pointer icon and interprets mouse motion for something else, e.g. looking around
 in a 3D world.
 
-The  `movementX` and `movementY` attributes from the `mousemove` document events
+The `movementX` and `movementY` attributes from the `mousemove` document events
 tell you how much the mouse pointer moved since the last move event. However,
 those are not updated when the pointer moves outside of the web page.
 
 ```js
-document.addEventListener("mousemove", (event) => {
+document.addEventListener('mousemove', (event) => {
   console.log(`movementX: ${event.movementX} movementY: ${event.movementY}`);
 });
 ```
@@ -78,22 +78,22 @@ function requestPointerLock() {
   myTargetElement.requestPointerLock();
 }
 
-document.addEventListener("pointerlockchange", () => {
+document.addEventListener('pointerlockchange', () => {
   if (document.pointerLockElement) {
     console.log(`pointer is locked on ${document.pointerLockElement}`);
   } else {
-    console.log("pointer is unlocked");
+    console.log('pointer is unlocked');
   }
 });
 
-document.addEventListener("pointerlockerror", () => {
-  console.log("pointer lock error");
+document.addEventListener('pointerlockerror', () => {
+  console.log('pointer lock error');
 });
 ```
 
 ### Disable mouse acceleration {: #disable-mouse-acceleration }
 
-Call `requestPointerLock()` with  `{ unadjustedMovement: true }` to disable
+Call `requestPointerLock()` with `{ unadjustedMovement: true }` to disable
 OS-level adjustment for mouse acceleration, and access raw mouse input.
 This way, mouse movement data from `mousemove` events won't include mouse
 acceleration when the pointer is locked.
@@ -108,14 +108,14 @@ function requestPointerLockWithUnadjustedMovement() {
   });
 
   if (!promise) {
-    console.log("disabling mouse acceleration is not supported");
+    console.log('disabling mouse acceleration is not supported');
     return;
   }
 
   return promise
-    .then(() => console.log("pointer is locked"))
+    .then(() => console.log('pointer is locked'))
     .catch((error) => {
-      if (error.name === "NotSupportedError") {
+      if (error.name === 'NotSupportedError') {
         // Some platforms may not support unadjusted movement.
         // You can request again a regular pointer lock.
         return myTargetElement.requestPointerLock();
@@ -139,10 +139,10 @@ See MDN's [Browser compatibility] table for updates.
 
 ### Operating system support {: #os-support }
 
-Disabling OS-level adjustment for mouse acceleration is supported on Chrome OS,
+Disabling OS-level adjustment for mouse acceleration is supported on ChromeOS,
 macOS Catalina 10.15.1, and Windows. Linux will follow.
 
-## Sample  {: #sample }
+## Sample {: #sample }
 
 You can play with the Pointer Lock API by running the [sample] on Glitch. Be
 sure to [check out the source code].
@@ -166,15 +166,15 @@ Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
 [Vincent Scheib] for their reviews of this article.
 
 [first-party perspective]: https://en.wikipedia.org/wiki/First-person_(video_games)
-[updated Pointer Lock API]: https://github.com/w3c/pointerlock/pull/49
-[Google Stadia]: https://en.wikipedia.org/wiki/Google_Stadia
-[Nvidia GeForce Now]: https://en.wikipedia.org/wiki/GeForce_Now
+[updated pointer lock api]: https://github.com/w3c/pointerlock/pull/49
+[google stadia]: https://en.wikipedia.org/wiki/Google_Stadia
+[nvidia geforce now]: https://en.wikipedia.org/wiki/GeForce_Now
 [well supported across browsers]: https://caniuse.com/?search=pointerlock
-[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API#Browser_compatibility
+[browser compatibility]: https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API#Browser_compatibility
 [sample]: https://unadjusted-movement.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/unadjusted-movement?path=script.js
-[James Hollyer]: https://github.com/jameshollyergoogle
-[Thomas Steiner]: https://github.com/tomayac
-[Joe Medley]: https://github.com/jpmedley
-[Kayce Basques]: https://github.com/kaycebasques
-[Vincent Scheib]: https://github.com/scheib
+[james hollyer]: https://github.com/jameshollyergoogle
+[thomas steiner]: https://github.com/tomayac
+[joe medley]: https://github.com/jpmedley
+[kayce basques]: https://github.com/kaycebasques
+[vincent scheib]: https://github.com/scheib

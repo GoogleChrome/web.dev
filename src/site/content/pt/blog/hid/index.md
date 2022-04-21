@@ -108,7 +108,7 @@ O uso do dispositivo HID é um valor numérico que se refere a uma entrada ou sa
 Para verificar se a API WebHID é compatível, use:
 
 ```js
-if ("hid" in navigator) {
+if ('hid' in navigator) {
   // The WebHID API is supported.
 }
 ```
@@ -128,16 +128,16 @@ Os múltiplos objetos `HIDDevice` retornados por essa função representam vári
 const filters = [
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2006 // Joy-Con Left
+    productId: 0x2006, // Joy-Con Left
   },
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2007 // Joy-Con Right
-  }
+    productId: 0x2007, // Joy-Con Right
+  },
 ];
 
 // Solicite ao usuário selecionar um dispositivo Joy-Con.
-const [device] = await navigator.hid.requestDevice({ filters });
+const [device] = await navigator.hid.requestDevice({filters});
 ```
 
 ```js
@@ -190,8 +190,8 @@ Depois que a conexão HID for estabelecida, será possível lidar com os relató
 Continuando com o exemplo anterior, o código abaixo mostra como detectar qual botão o usuário pressionou em um dispositivo Joy-Con Right para que você possa tentar em casa.
 
 ```js
-device.addEventListener("inputreport", event => {
-  const { data, device, reportId } = event;
+device.addEventListener('inputreport', (event) => {
+  const {data, device, reportId} = event;
 
   // Lide apenas com o dispositivo Joy-Con Right e o ID de relatório específico.
   if (device.productId !== 0x2007 && reportId !== 0x3f) return;
@@ -199,7 +199,7 @@ device.addEventListener("inputreport", event => {
   const value = data.getUint8(0);
   if (value === 0) return;
 
-  const someButtons = { 1: "A", 2: "X", 4: "B", 8: "Y" };
+  const someButtons = {1: 'A', 2: 'X', 4: 'B', 8: 'Y'};
   console.log(`User pressed button ${someButtons[value]}.`);
 });
 ```
@@ -220,7 +220,9 @@ await device.sendReport(0x01, new Uint8Array(enableVibrationData));
 
 // Em seguida, envie um comando para fazer o dispositivo Joy-Con vibrar.
 // Os bytes reais estão disponíveis na amostra abaixo.
-const rumbleData = [ /* ... */ ];
+const rumbleData = [
+  /* ... */
+];
 await device.sendReport(0x10, new Uint8Array(rumbleData));
 ```
 
@@ -237,11 +239,11 @@ Para enviar um relatório de recurso a um dispositivo HID, transmita o ID de rel
 O exemplo abaixo ilustra o uso dos relatórios de recursos ao mostrar como solicitar, abrir e fazer piscar um dispositivo de luz de fundo do teclado Apple.
 
 ```js
-const waitFor = duration => new Promise(r => setTimeout(r, duration));
+const waitFor = (duration) => new Promise((r) => setTimeout(r, duration));
 
 // Solicite que o usuário selecione um dispositivo de luz de fundo do teclado Apple.
 const [device] = await navigator.hid.requestDevice({
-  filters: [{ vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00 }]
+  filters: [{vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00}],
 });
 
 // Aguarde até que a conexão HID seja aberta.
@@ -275,11 +277,11 @@ const dataView = await device.receiveFeatureReport(/* reportId= */ 1);
 Quando o site recebe a permissão para acessar um dispositivo HID, ele pode receber ativamente eventos de conexão e desconexão, escutando os eventos `"connect"` e `"disconnect"`.
 
 ```js
-navigator.hid.addEventListener("connect", event => {
+navigator.hid.addEventListener('connect', (event) => {
   // Abra event.device automaticamente ou avise ao usuário sobre a disponibilidade do dispositivo.
 });
 
-navigator.hid.addEventListener("disconnect", event => {
+navigator.hid.addEventListener('disconnect', (event) => {
   // Remova |event.device| da IU.
 });
 ```
@@ -292,7 +294,7 @@ Depurar o HID no Chrome é fácil com a página interna, `about://device-log`, o
 
 ## Compatibilidade com o navegador {: #browser-support }
 
-A API WebHID está disponível em todas as plataformas para desktop (Chrome OS, Linux, macOS e Windows) no Chrome 89.
+A API WebHID está disponível em todas as plataformas para desktop (ChromeOS, Linux, macOS e Windows) no Chrome 89.
 
 ## Demonstrações {: #demos }
 
@@ -322,7 +324,7 @@ Registre um problema de especificação no [repositório GitHub da API WebHID](h
 
 Você encontrou um bug na implementação do Chrome? Ou a implementação é diferente da especificação?
 
-Registre um bug em [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID). Inclua o máximo de detalhes possível, forneça instruções simples para reproduzir o bug e defina os *Componentes* como `Blink>HID`. O [Glitch](https://glitch.com) é ótimo para compartilhar reproduções rápidas e fáceis.
+Registre um bug em [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID). Inclua o máximo de detalhes possível, forneça instruções simples para reproduzir o bug e defina os _Componentes_ como `Blink>HID`. O [Glitch](https://glitch.com) é ótimo para compartilhar reproduções rápidas e fáceis.
 
 ### Mostre apoio
 

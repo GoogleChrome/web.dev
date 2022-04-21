@@ -14,7 +14,7 @@ tags:
 hero: image/admin/pcEIwc0D09iF7BPo3TT1.jpg
 alt: Código QR escaneado por un teléfono móvil
 origin-trial:
-  url: "https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919"
+  url: 'https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919'
 feedback:
   - api
 ---
@@ -122,12 +122,12 @@ const barcodeDetector = new BarcodeDetector({
     'pdf417',
     'qr_code',
     'upc_a',
-    'upc_e'
-  ]
+    'upc_e',
+  ],
 });
 try {
   const barcodes = await barcodeDetector.detect(image);
-  barcodes.forEach(barcode => searchProductDatabase(barcode));
+  barcodes.forEach((barcode) => searchProductDatabase(barcode));
 } catch (e) {
   console.error('Barcode detection failed:', e);
 }
@@ -144,11 +144,11 @@ const faceDetector = new FaceDetector({
   maxDetectedFaces: 5,
   // (Optional) Hint to try and prioritize speed over accuracy
   // by, e.g., operating on a reduced scale or looking for large features.
-  fastMode: false
+  fastMode: false,
 });
 try {
   const faces = await faceDetector.detect(image);
-  faces.forEach(face => drawMustache(face));
+  faces.forEach((face) => drawMustache(face));
 } catch (e) {
   console.error('Face detection failed:', e);
 }
@@ -164,7 +164,7 @@ try {
 const textDetector = new TextDetector();
 try {
   const texts = await textDetector.detect(image);
-  texts.forEach(text => textToSpeech(text));
+  texts.forEach((text) => textToSpeech(text));
 } catch (e) {
   console.error('Text detection failed:', e);
 }
@@ -172,13 +172,15 @@ try {
 
 ## Detección de características {: #featuredetection }
 
-Verificar exclusivamente la existencia de los constructores para detectar características de la API de detección de formas no es suficiente. La presencia de una interfaz no le dice si la plataforma subyacente es compatible con la función. Esto está funcionando [según lo previsto](https://crbug.com/920961). Es por eso que recomendamos un enfoque de *programación defensiva* al realizar una detección de características como esta:
+Verificar exclusivamente la existencia de los constructores para detectar características de la API de detección de formas no es suficiente. La presencia de una interfaz no le dice si la plataforma subyacente es compatible con la función. Esto está funcionando [según lo previsto](https://crbug.com/920961). Es por eso que recomendamos un enfoque de _programación defensiva_ al realizar una detección de características como esta:
 
 ```js
-const supported = await (async () => 'FaceDetector' in window &&
-    await new FaceDetector().detect(document.createElement('canvas'))
-    .then(_ => true)
-    .catch(e => e.name === 'NotSupportedError' ? false : true))();
+const supported = await (async () =>
+  'FaceDetector' in window &&
+  (await new FaceDetector()
+    .detect(document.createElement('canvas'))
+    .then((_) => true)
+    .catch((e) => (e.name === 'NotSupportedError' ? false : true))))();
 ```
 
 La interfaz del `BarcodeDetector` se ha actualizado para incluir un método `getSupportedFormats()` y se han propuesto interfaces similares [para `FaceDetector`](https://github.com/WICG/shape-detection-api/issues/53) y [`TextDetector`](https://github.com/WICG/shape-detection-api/issues/57).
@@ -205,8 +207,10 @@ await BarcodeDetector.getSupportedFormats();
 Esto le permite detectar la función específica que necesita, por ejemplo, escaneo de códigos QR:
 
 ```js
-if (('BarcodeDetector' in window) &&
-    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+if (
+  'BarcodeDetector' in window &&
+  (await BarcodeDetector.getSupportedFormats()).includes('qr_code')
+) {
   console.log('QR code scanning is supported.');
 }
 ```
@@ -215,7 +219,7 @@ Esto es mejor que ocultar las interfaces porque, incluso entre plataformas, las 
 
 ## Compatibilidad con el sistema operativo {: #os-support }
 
-La detección de códigos de barras está disponible en macOS, Chrome OS y Android. Se requiere [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) para Android.
+La detección de códigos de barras está disponible en macOS, ChromeOS y Android. Se requiere [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms) para Android.
 
 ## Prácticas recomendadas {: #bestpractices }
 
@@ -241,7 +245,7 @@ El equipo de Chrome y la comunidad de estándares web desean conocer sus experie
 
 ¿Encontraste un error con la implementación de Chrome? ¿O la implementación es diferente de la especificación?
 
-- Presenta un error en [https://new.crbug.com](https://new.crbug.com). Asegúrese de incluir todos los detalles que pueda, instrucciones sencillas para reproducir y configure *Componentes* en `Blink>ImageCapture`. [Glitch](https://glitch.com) funciona muy bien para compartir repros rápidos y fáciles.
+- Presenta un error en [https://new.crbug.com](https://new.crbug.com). Asegúrese de incluir todos los detalles que pueda, instrucciones sencillas para reproducir y configure _Componentes_ en `Blink>ImageCapture`. [Glitch](https://glitch.com) funciona muy bien para compartir repros rápidos y fáciles.
 
 ### ¿Planea utilizar la API? {: .hide-from-toc }
 

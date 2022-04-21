@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Breaking down barriers using the DataTransfer API
-subhead: "Enable the user to share data beyond the browser window."
+subhead: 'Enable the user to share data beyond the browser window.'
 authors:
   - joriktangelder
   - thomassteiner
@@ -58,8 +58,7 @@ Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime
 example below.
 
 ```js
-document.querySelector('#dragSource')
-.addEventListener('dragstart', (event) => {
+document.querySelector('#dragSource').addEventListener('dragstart', (event) => {
   event.dataTransfer.setData('text/plain', 'Foo bar');
   event.dataTransfer.setData('text/html', '<h1>Foo bar</h1>');
   event.dataTransfer.setData('text/uri-list', 'https://example.com');
@@ -75,24 +74,23 @@ Receiving the data transfer works almost the same as providing it. Listen to the
 to the `type` keys of the data. The data itself can only be accessed after a drop.
 
 ```js
-document.querySelector('#dropTarget')
-.addEventListener('dragover', (event) => {
+document.querySelector('#dropTarget').addEventListener('dragover', (event) => {
   console.log(event.dataTransfer.types);
   // Without this, the drop event won't fire.
   event.preventDefault();
 });
 
-document.querySelector('#dropTarget')
-.addEventListener('drop', (event) => {
+document.querySelector('#dropTarget').addEventListener('drop', (event) => {
   // Log all the transferred data items to the console.
   for (let type of event.dataTransfer.types) {
-    console.log({ type, data: event.dataTransfer.getData(type) });
+    console.log({type, data: event.dataTransfer.getData(type)});
   }
   event.preventDefault();
 });
 ```
 
 Three MIME-types are widely supported across applications:
+
 - **`text/html`:** Renders the HTML payload in `contentEditable` elements and rich
   text (WYSIWYG) editors like Google Docs, Microsoft Word, and others.
 - **`text/plain:`** Sets the value of input elements, content of code editors, and the fallback
@@ -107,7 +105,8 @@ accessible URLs. This works well with exporting visuals (for example from a canv
 Google Docs.
 
 ```js
-const redPixel = 'data:image/gif;base64,R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs=';
+const redPixel =
+  'data:image/gif;base64,R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs=';
 const html = '<img src="' + redPixel + '" width="100" height="100" alt="" />';
 event.dataTransfer.setData('text/html', html);
 ```
@@ -145,22 +144,19 @@ data. This can be useful for cross-browser interactions within your application.
 can transfer more complex data using the `JSON.stringify()` and `JSON.parse()` functions.
 
 ```js
-document.querySelector('#dragSource')
-.addEventListener('dragstart', (event) => {
-  const data = { foo: 'bar' };
+document.querySelector('#dragSource').addEventListener('dragstart', (event) => {
+  const data = {foo: 'bar'};
   event.dataTransfer.setData('my-custom-type', JSON.stringify(data));
 });
 
-document.querySelector('#dropTarget')
-.addEventListener('dragover', (event) => {
+document.querySelector('#dropTarget').addEventListener('dragover', (event) => {
   // Only allow dropping when our custom data is available.
   if (event.dataTransfer.types.includes('my-custom-type')) {
     event.preventDefault();
   }
 });
 
-document.querySelector('#dropTarget')
-.addEventListener('drop', (event) => {
+document.querySelector('#dropTarget').addEventListener('drop', (event) => {
   if (event.dataTransfer.types.includes('my-custom-type')) {
     event.preventDefault();
     const dataString = event.dataTransfer.getData('my-custom-type');
@@ -216,7 +212,7 @@ While the DataTransfer API is available today, there are some things to be aware
 
 Desktop browsers all have great support for the technique described above, while mobile devices do
 not. The technique has been tested on all major browsers (Chrome, Edge, Firefox, Safari) and
-operating systems (Android, Chrome OS, iOS, macOS, Ubuntu Linux, and Windows), but unfortunately Android
+operating systems (Android, ChromeOS, iOS, macOS, Ubuntu Linux, and Windows), but unfortunately Android
 and iOS didn't pass the test. While browsers continue to develop, for now the technique is limited
 to desktop browsers only.
 
@@ -253,14 +249,14 @@ highlighting drop-areas, and lets you integrate the data transfer operations amo
 implementations.
 
 ```js
-import { Transmat, TransmatObserver, addListeners } from 'transmat';
+import {Transmat, TransmatObserver, addListeners} from 'transmat';
 
 // Send data on drag/copy.
 addListeners(myElement, 'transmit', (event) => {
   const transmat = new Transmat(event);
   transmat.setData({
     'text/plain': 'Foobar',
-    'application/json': { foo: 'bar' },
+    'application/json': {foo: 'bar'},
   });
 });
 

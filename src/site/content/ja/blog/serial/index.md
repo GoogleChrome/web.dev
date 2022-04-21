@@ -19,30 +19,30 @@ feedback:
   - api
 ---
 
-{% Aside 'success' %}[機能プロジェクト](/fugu-status/)の一部であるWebSerial APIは、Chrome89でリリースされました。{% endAside %}
+{% Aside 'success' %}[機能プロジェクト](/fugu-status/)の一部である WebSerial API は、Chrome89 でリリースされました。{% endAside %}
 
-## WebシリアルAPIとは何ですか？ {: #what }
+## Web シリアル API とは何ですか？ {: #what }
 
 シリアルポートは、データをバイト単位で送受信できる双方向通信インターフェースです。
 
-WebシリアルAPIは、WebサイトがJavaScriptを使用してシリアルデバイスとの間で読み取りおよび書き込みを行うための方法を提供します。シリアルデバイスは、ユーザーのシステムのシリアルポートを介して、またはシリアルポートをエミュレートする取り外し可能なUSBおよびBluetoothデバイスを介して接続されます。
+Web シリアル API は、Web サイトが JavaScript を使用してシリアルデバイスとの間で読み取りおよび書き込みを行うための方法を提供します。シリアルデバイスは、ユーザーのシステムのシリアルポートを介して、またはシリアルポートをエミュレートする取り外し可能な USB および Bluetooth デバイスを介して接続されます。
 
-言い換えると、WebシリアルAPIは、Webサイトがマイクロコントローラーや3Dプリンターなどのシリアルデバイスと通信できるようにすることで、Webと物理的な世界を橋渡しします。
+言い換えると、Web シリアル API は、Web サイトがマイクロコントローラーや 3D プリンターなどのシリアルデバイスと通信できるようにすることで、Web と物理的な世界を橋渡しします。
 
-オペレーティングシステムは、一部のシリアルポートとの通信において、アプリケーションの低レベルのUSB APIではなく高レベルのシリアルAPIを使用する必要があるため、このAPIは[WebUSB](https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web)の優れたコンパニオンでもあります。
+オペレーティングシステムは、一部のシリアルポートとの通信において、アプリケーションの低レベルの USB API ではなく高レベルのシリアル API を使用する必要があるため、この API は[WebUSB](https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web)の優れたコンパニオンでもあります。
 
 ## 推奨されるユースケース {: #use-cases }
 
-教育、ホビイスト、および産業部門では、ユーザーは周辺機器をコンピューターに接続します。これらのデバイスは、多くの場合、カスタムソフトウェアで使用されるシリアル接続を介してマイクロコントローラーによって制御されます。これらのデバイスを制御するためのいくつかのカスタムソフトウェアは、Webテクノロジーで構築されています。
+教育、ホビイスト、および産業部門では、ユーザーは周辺機器をコンピューターに接続します。これらのデバイスは、多くの場合、カスタムソフトウェアで使用されるシリアル接続を介してマイクロコントローラーによって制御されます。これらのデバイスを制御するためのいくつかのカスタムソフトウェアは、Web テクノロジーで構築されています。
 
 - [Arduino Create](https://create.arduino.cc/)
 - [Betaflight Configurator](https://github.com/betaflight/betaflight-configurator)
 - [Espruino Web IDE](http://espruino.com/ide)
 - [Microsoft MakeCode](https://www.microsoft.com/makecode)
 
-一部のケースでは、Webサイトは、ユーザーが手動でインストールしたエージェントアプリケーションを介してデバイスと通信します。また他のケースでは、アプリケーションは、Electronなどのフレームワークを介してパッケージ化されたアプリケーションで提供される場合もあります。さらに他のケースでは、コンパイルされたアプリケーションをUSBフラッシュドライブを介してデバイスにコピーするなど、追加の手順を実行する必要ももあります。
+一部のケースでは、Web サイトは、ユーザーが手動でインストールしたエージェントアプリケーションを介してデバイスと通信します。また他のケースでは、アプリケーションは、Electron などのフレームワークを介してパッケージ化されたアプリケーションで提供される場合もあります。さらに他のケースでは、コンパイルされたアプリケーションを USB フラッシュドライブを介してデバイスにコピーするなど、追加の手順を実行する必要ももあります。
 
-これらすべての場合において、ユーザーエクスペリエンスは、Webサイトとそれが制御するデバイスとの間にダイレクトな通信を提供することによって改善されます。
+これらすべての場合において、ユーザーエクスペリエンスは、Web サイトとそれが制御するデバイスとの間にダイレクトな通信を提供することによって改善されます。
 
 ## 現在のステータス {: #status }
 
@@ -77,23 +77,23 @@ WebシリアルAPIは、WebサイトがJavaScriptを使用してシリアルデ�
 </table>
 <div data-md-type="block_html"></div>
 
-## WebシリアルAPIの使用 {: #use }
+## Web シリアル API の使用 {: #use }
 
 ### 機能検出 {: #feature-detection }
 
-WebシリアルAPIがサポートされているかどうかを確認するには、次を使用します。
+Web シリアル API がサポートされているかどうかを確認するには、次を使用します。
 
 ```js
-if ("serial" in navigator) {
+if ('serial' in navigator) {
   // The Web Serial API is supported.
 }
 ```
 
 ### シリアルポートを開く {: #open-port }
 
-WebシリアルAPIは、設計上、非同期型です。このため、入力を待機するときにWebサイトのUIがブロックされるのが防止されます。これは、シリアルデータの受信がいつでも行われる可能性があり、それをリスンする方法が必要になるため重要です。
+Web シリアル API は、設計上、非同期型です。このため、入力を待機するときに Web サイトの UI がブロックされるのが防止されます。これは、シリアルデータの受信がいつでも行われる可能性があり、それをリスンする方法が必要になるため重要です。
 
-シリアルポートを開くには、最初に`SerialPort`オブジェクトにアクセスします。このためには、タッチやマウスクリックなどのユーザージェスチャに応答して `navigator.serial.requestPort()`を呼び出して単一のシリアルポートを選択するか、Webサイトがアクセスを付与するシリアルポートのリストを返す`navigator.serial.getPorts()`から1つ選択するようにユーザーにプロンプトできます。
+シリアルポートを開くには、最初に`SerialPort`オブジェクトにアクセスします。このためには、タッチやマウスクリックなどのユーザージェスチャに応答して `navigator.serial.requestPort()`を呼び出して単一のシリアルポートを選択するか、Web サイトがアクセスを付与するシリアルポートのリストを返す`navigator.serial.getPorts()`から 1 つ選択するようにユーザーにプロンプトできます。
 
 ```js
 document.querySelector('button').addEventListener('click', async () => {
@@ -107,57 +107,57 @@ document.querySelector('button').addEventListener('click', async () => {
 const ports = await navigator.serial.getPorts();
 ```
 
-`navigator.serial.requestPort()`関数は、フィルターを定義するオブジェクトリテラルを任意に取ります。これらは、USB経由で接続されている任意のシリアルデバイスを必須のUSBベンダー（`usbVendorId`）とオプションのUSB製品識別子（ `usbProductId` ）に照合するために使用されます。
+`navigator.serial.requestPort()`関数は、フィルターを定義するオブジェクトリテラルを任意に取ります。これらは、USB 経由で接続されている任意のシリアルデバイスを必須の USB ベンダー（`usbVendorId`）とオプションの USB 製品識別子（ `usbProductId` ）に照合するために使用されます。
 
 ```js
 // Filter on devices with the Arduino Uno USB Vendor/Product IDs.
 const filters = [
-  { usbVendorId: 0x2341, usbProductId: 0x0043 },
-  { usbVendorId: 0x2341, usbProductId: 0x0001 }
+  {usbVendorId: 0x2341, usbProductId: 0x0043},
+  {usbVendorId: 0x2341, usbProductId: 0x0001},
 ];
 
 // Prompt user to select an Arduino Uno device.
-const port = await navigator.serial.requestPort({ filters });
+const port = await navigator.serial.requestPort({filters});
 
-const { usbProductId, usbVendorId } = port.getInfo();
+const {usbProductId, usbVendorId} = port.getInfo();
 ```
 
 <figure>{% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Webサイトのシリアルポートプロンプトのスクリーンショット", width="800", height="513" %} <figcaption>BBC micro:bitを選択するためのユーザープロンプト</figcaption></figure>
 
-`requestPort()`呼び出すと、ユーザーはデバイスを選択するように求められ、`SerialPort`オブジェクトが返されます。`SerialPort`オブジェクトを取得したら、目的のボーレートで`port.open()`を呼び出すことで、シリアルポートが開きます。`baudRate`ディクショナリメンバーは、データがシリアル回線を介して送信される速度を指定します。これは、ビット/秒（bps）の単位で表されます。これが正しく指定されていない場合、送受信するすべてのデータが意味のないものになるため、デバイスのドキュメントが正しい値で作成されていることを確認してください。シリアルポートをエミュレートする一部のUSBおよびBluetoothデバイスでは、この値はエミュレーションによって無視されるため、任意の値に安全に設定できます。
+`requestPort()`呼び出すと、ユーザーはデバイスを選択するように求められ、`SerialPort`オブジェクトが返されます。`SerialPort`オブジェクトを取得したら、目的のボーレートで`port.open()`を呼び出すことで、シリアルポートが開きます。`baudRate`ディクショナリメンバーは、データがシリアル回線を介して送信される速度を指定します。これは、ビット/秒（bps）の単位で表されます。これが正しく指定されていない場合、送受信するすべてのデータが意味のないものになるため、デバイスのドキュメントが正しい値で作成されていることを確認してください。シリアルポートをエミュレートする一部の USB および Bluetooth デバイスでは、この値はエミュレーションによって無視されるため、任意の値に安全に設定できます。
 
 ```js
 // Prompt user to select any serial port.
 const port = await navigator.serial.requestPort();
 
 // Wait for the serial port to open.
-await port.open({ baudRate: 9600 });
+await port.open({baudRate: 9600});
 ```
 
 シリアルポートを開くときに、以下のオプションのいずれかを指定することもできます。これらのオプションは任意であり、便利な[デフォルト値](https://wicg.github.io/serial/#serialoptions-dictionary)を使用できます。
 
-- `dataBits`: フレームあたりのデータビット数（7または8）。
-- `stopBits`: フレームの終わりのストップビットの数（1または2）。
+- `dataBits`: フレームあたりのデータビット数（7 または 8）。
+- `stopBits`: フレームの終わりのストップビットの数（1 または 2）。
 - `parity`: パリティモード（`"none"`、`"even"`、`"odd"`のいずれか）。
-- `bufferSize`: 作成する必要のある読み取りおよび書き込みバッファーのサイズ（16MB未満である必要があります）。
+- `bufferSize`: 作成する必要のある読み取りおよび書き込みバッファーのサイズ（16MB 未満である必要があります）。
 - `flowControl`: フロー制御モード（`"none"`または`"hardware"`のいずれか）。
 
 ### シリアルポートからの読み取り {: #read-port }
 
-WebシリアルAPIの入力ストリームと出力ストリームは、Streams APIによって処理されます。
+Web シリアル API の入力ストリームと出力ストリームは、Streams API によって処理されます。
 
-{% Aside %} ストリームに詳しくない場合は、Streams APIの[概念](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts)を確認してください。この記事では、ストリームとストリーム処理についてあまり詳しく説明していません。 {% endAside %}
+{% Aside %} ストリームに詳しくない場合は、Streams API の[概念](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts)を確認してください。この記事では、ストリームとストリーム処理についてあまり詳しく説明していません。 {% endAside %}
 
-シリアルポート接続が確立された後、`SerialPort`オブジェクトの`readable`および`writable`プロパティは[ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream)と[WritableStreamを](https://developer.mozilla.org/docs/Web/API/WritableStream)返します。これらは、シリアルデバイスとの間でデータを送受信するために使用されます。どちらもデータ転送に`Uint8Array`インスタンスを使用します。
+シリアルポート接続が確立された後、`SerialPort`オブジェクトの`readable`および`writable`プロパティは[ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream)と[WritableStream を](https://developer.mozilla.org/docs/Web/API/WritableStream)返します。これらは、シリアルデバイスとの間でデータを送受信するために使用されます。どちらもデータ転送に`Uint8Array`インスタンスを使用します。
 
-シリアルデバイスから新しいデータが届くと、 `port.readable.getReader().read()`は、`value`と`done`ブール型の2つのプロパティを非同期的に返します。`done`がtrueである場合、シリアルポートが閉じられているか、データが入力されていません。`port.readable.getReader()`を呼び出すと、リーダーが作成され、`readable`にロックされます。`readable`が[ロック](https://streams.spec.whatwg.org/#lock)されている間は、シリアルポートを閉じることはできません。
+シリアルデバイスから新しいデータが届くと、 `port.readable.getReader().read()`は、`value`と`done`ブール型の 2 つのプロパティを非同期的に返します。`done`が true である場合、シリアルポートが閉じられているか、データが入力されていません。`port.readable.getReader()`を呼び出すと、リーダーが作成され、`readable`にロックされます。`readable`が[ロック](https://streams.spec.whatwg.org/#lock)されている間は、シリアルポートを閉じることはできません。
 
 ```js
 const reader = port.readable.getReader();
 
 // Listen to data coming from the serial device.
 while (true) {
-  const { value, done } = await reader.read();
+  const {value, done} = await reader.read();
   if (done) {
     // Allow the serial port to be closed later.
     reader.releaseLock();
@@ -168,7 +168,7 @@ while (true) {
 }
 ```
 
-一部の重大ではないシリアルポート読み取りのエラーは、バッファオーバーフロー、フレーミングエラー、パリティエラーなどの特定の条件で発生する可能性があります。これらは例該当してスローされ、`port.readable`をチェックする前のループの上に別のループを追加することでキャッチできます。これは、エラーが重大でない限り、新しい[ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream)が自動的に作成されるため機能します。シリアルデバイスが取り外されるなどの重大なエラーが発生した場合、`port.readable`はnullになります。
+一部の重大ではないシリアルポート読み取りのエラーは、バッファオーバーフロー、フレーミングエラー、パリティエラーなどの特定の条件で発生する可能性があります。これらは例該当してスローされ、`port.readable`をチェックする前のループの上に別のループを追加することでキャッチできます。これは、エラーが重大でない限り、新しい[ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream)が自動的に作成されるため機能します。シリアルデバイスが取り外されるなどの重大なエラーが発生した場合、`port.readable`は null になります。
 
 ```js/0,3,15-18
 while (port.readable) {
@@ -222,7 +222,6 @@ const writer = port.writable.getWriter();
 const data = new Uint8Array([104, 101, 108, 108, 111]); // hello
 await writer.write(data);
 
-
 // Allow the serial port to be closed later.
 writer.releaseLock();
 ```
@@ -235,7 +234,7 @@ const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
 
 const writer = textEncoder.writable.getWriter();
 
-await writer.write("hello");
+await writer.write('hello');
 ```
 
 ### シリアルポートを閉じる {: #close-port }
@@ -259,7 +258,7 @@ async function readUntilClosed() {
     reader = port.readable.getReader();
     try {
       while (true) {
-        const { value, done } = await reader.read();
+        const {value, done} = await reader.read();
         if (done) {
           // reader.cancel() has been called.
           break;
@@ -324,36 +323,36 @@ await port.close();
 
 ### 接続と切断をリスンする {: #connection-disconnection }
 
-シリアルポートがUSBデバイスによって提供されている場合、そのデバイスはシステムに接続されている可能性もあれば、切断されている可能性もあります。Webサイトに、シリアルポートにアクセスするための権限を付与されている場合、`connect`と`disconnect`のイベントはWebサイトによって監視されています。
+シリアルポートが USB デバイスによって提供されている場合、そのデバイスはシステムに接続されている可能性もあれば、切断されている可能性もあります。Web サイトに、シリアルポートにアクセスするための権限を付与されている場合、`connect`と`disconnect`のイベントは Web サイトによって監視されています。
 
 ```js
-navigator.serial.addEventListener("connect", (event) => {
+navigator.serial.addEventListener('connect', (event) => {
   // TODO: Automatically open event.target or warn user a port is available.
 });
 
-navigator.serial.addEventListener("disconnect", (event) => {
+navigator.serial.addEventListener('disconnect', (event) => {
   // TODO: Remove |event.target| from the UI.
   // If the serial port was opened, a stream error would be observed as well.
 });
 ```
 
-{% Aside %}Chrome 89の前は、`connect`イベントと`disconnect`イベントによって、`port`属性として使用できる影響のある`SerialPort`インターフェースとともに、カスタム`SerialConnectionEvent`オブジェクトが起動されていました。この移行に対応するには、`event.port || event.target`を使用することをお勧めします。{% endAside %}
+{% Aside %}Chrome 89 の前は、`connect`イベントと`disconnect`イベントによって、`port`属性として使用できる影響のある`SerialPort`インターフェースとともに、カスタム`SerialConnectionEvent`オブジェクトが起動されていました。この移行に対応するには、`event.port || event.target`を使用することをお勧めします。{% endAside %}
 
 ### 信号を処理する {: #signals }
 
-シリアルポート接続を確立したら、デバイスの検出とフロー制御のためにシリアルポートが公開する信号を明示的にクエリして設定することができます。これらの信号はブール値として定義されます。たとえば、Arduinoなどのデバイスは、データ端末レディ（DTR）信号が切り替えられるとプログラミングモードになります。
+シリアルポート接続を確立したら、デバイスの検出とフロー制御のためにシリアルポートが公開する信号を明示的にクエリして設定することができます。これらの信号はブール値として定義されます。たとえば、Arduino などのデバイスは、データ端末レディ（DTR）信号が切り替えられるとプログラミングモードになります。
 
 [出力信号](https://wicg.github.io/serial/#serialoutputsignals-dictionary)の設定と[入力信号](https://wicg.github.io/serial/#serialinputsignals-dictionary)の取得はそれぞれ`port.setSignals()`と`port.getSignals()`の呼び出しによって行われます。以下の使用例を参照してください。
 
 ```js
 // Turn off Serial Break signal.
-await port.setSignals({ break: false });
+await port.setSignals({break: false});
 
 // Turn on Data Terminal Ready (DTR) signal.
-await port.setSignals({ dataTerminalReady: true });
+await port.setSignals({dataTerminalReady: true});
 
 // Turn off Request To Send (RTS) signal.
-await port.setSignals({ requestToSend: false });
+await port.setSignals({requestToSend: false});
 ```
 
 ```js
@@ -366,7 +365,7 @@ console.log(`Ring Indicator:      ${signals.ringIndicator}`);
 
 ### ストリームの変換 {: #transforming-streams }
 
-シリアルデバイスからデータを受信する場合、必ずしもすべてのデータを一度に取得するとは限らず、任意にチャンク化される可能性があります。詳細については、 [Streams APIの概念](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts)を参照してください。
+シリアルデバイスからデータを受信する場合、必ずしもすべてのデータを一度に取得するとは限らず、任意にチャンク化される可能性があります。詳細については、 [Streams API の概念](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts)を参照してください。
 
 これに対処するには、`TextDecoderStream`などの組み込みの変換ストリームを使用するか、着信ストリームを解析して解析されたデータを返すことができる独自の変換ストリームを作成することができます。変換ストリームは、シリアルデバイスとそのストリームを消費している読み取りループの間にあります。データが消費される前に、任意の変換を適用できます。組み立てラインのようにイメージするとよいでしょう。ウィジェットがラインに入ると、ラインの各工程がウィジェットを変更するため、最終的な目的地に到達するまでに、ウィジェットは完全に機能するウィジェットになります。
 
@@ -374,20 +373,20 @@ console.log(`Ring Indicator:      ${signals.ringIndicator}`);
 
 たとえば、ストリームを消費し、改行に基づいてストリームをチャンク化する変換ストリームクラスを作成する方法を考察してみましょう。その`transform()`メソッドは、ストリームが新しいデータを受信するたびに呼び出されます。データをキューに入れるか、後で使用できるように保存することができます。`flush()`メソッドは、ストリームが閉じられたときに呼び出され、まだ処理されていないデータを処理します。
 
-変換ストリームクラスを使用するには、着信ストリームをパイプで渡す必要があります。「[シリアルポートからの読み取り](#read-port)」の3番目のコード例では、元の入力ストリームは　`TextDecoderStream`のみをパイプしていただけであるため、新しい`LineBreakTransformer`を介してパイプするように`pipeThrough()`を呼び出す必要があります。
+変換ストリームクラスを使用するには、着信ストリームをパイプで渡す必要があります。「[シリアルポートからの読み取り](#read-port)」の 3 番目のコード例では、元の入力ストリームは　`TextDecoderStream`のみをパイプしていただけであるため、新しい`LineBreakTransformer`を介してパイプするように`pipeThrough()`を呼び出す必要があります。
 
 ```js
 class LineBreakTransformer {
   constructor() {
     // A container for holding stream data until a new line.
-    this.chunks = "";
+    this.chunks = '';
   }
 
   transform(chunk, controller) {
     // Append new chunks to existing chunks.
     this.chunks += chunk;
     // For each line breaks in chunks, send the parsed lines out.
-    const lines = this.chunks.split("\r\n");
+    const lines = this.chunks.split('\r\n');
     this.chunks = lines.pop();
     lines.forEach((line) => controller.enqueue(line));
   }
@@ -407,7 +406,7 @@ const reader = textDecoder.readable
   .getReader();
 ```
 
-シリアルデバイスの通信の問題をデバッグするには、`port.readable`の`tee()`メソッドを使用して、シリアルデバイスに送信されるストリームとシリアルデバイスから送信されるストリームを分割します。作成された2つのストリームは個別に使用できるため、1つをコンソールに出力して検査できます。
+シリアルデバイスの通信の問題をデバッグするには、`port.readable`の`tee()`メソッドを使用して、シリアルデバイスに送信されるストリームとシリアルデバイスから送信されるストリームを分割します。作成された 2 つのストリームは個別に使用できるため、1 つをコンソールに出力して検査できます。
 
 ```js
 const [appReadable, devReadable] = port.readable.tee();
@@ -418,56 +417,56 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ## 開発のヒント {: #dev-tips }
 
-ChromeでWebシリアルAPIをデバッグするには、Chrome内部の`about://device-log`ページで簡単に行えます。このページでは、すべてのシリアルデバイス関連イベントをまとめて表示することができます。
+Chrome で Web シリアル API をデバッグするには、Chrome 内部の`about://device-log`ページで簡単に行えます。このページでは、すべてのシリアルデバイス関連イベントをまとめて表示することができます。
 
 <figure>{% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="WebシリアルAPIのデバッグに使用できる内部ページのスクリーンショット。", width="800", height="547" %} <figcaption>WebシリアルAPIのデバッグに使用できるChromeの内部ページ。</figcaption></figure>
 
 ## Codelab {: #codelab }
 
-[Google Developerコードラボ](https://codelabs.developers.google.com/codelabs/web-serial)では、WebシリアルAPIを使用して[BBC micro:bit](https://microbit.org/)ボードとやり取りし、5x5 LED行列に画像を表示します。
+[Google Developer コードラボ](https://codelabs.developers.google.com/codelabs/web-serial)では、Web シリアル API を使用して[BBC micro:bit](https://microbit.org/)ボードとやり取りし、5x5 LED 行列に画像を表示します。
 
 ## ブラウザのサポート {: #browser-support }
 
-WebシリアルAPIは、Chrome 89のすべてのデスクトッププラットフォーム（Chrome OS、Linux、macOS、およびWindows）で使用できます。
+Web シリアル API は、Chrome 89 のすべてのデスクトッププラットフォーム（ChromeOS、Linux、macOS、および Windows）で使用できます。
 
 ## ポリフィル {: #polyfill }
 
-Androidでは、WebUSB APIと[シリアルAPIポリフィル](https://github.com/google/web-serial-polyfill)を使用して、USBベースのシリアルポートをサポートできます。このポリフィルは、デバイスが組み込みデバイスドライバーによって引き受けられていないため、WebUSB APIを通じてデバイスにアクセス可能なハードウェアとプラットフォームに制限されています。
+Android では、WebUSB API と[シリアル API ポリフィル](https://github.com/google/web-serial-polyfill)を使用して、USB ベースのシリアルポートをサポートできます。このポリフィルは、デバイスが組み込みデバイスドライバーによって引き受けられていないため、WebUSB API を通じてデバイスにアクセス可能なハードウェアとプラットフォームに制限されています。
 
 ## セキュリティとプライバシー {: #security-privacy }
 
-仕様の作成者は、ユーザー制御、透過性、人間工学など、[強力なWebプラットフォーム機能へのアクセスの制御](https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md)で定義されたコア原則を使用してWebシリアルAPIを設計し実装しています。このAPIを使用する機能は、主に、一度に1つのシリアルデバイスのみへのアクセスを付与する権限モデルによって制御されています。ユーザープロンプトに応答し、ユーザーは積極的な手順を踏んで特定のシリアルデバイスを選択する必要があります。
+仕様の作成者は、ユーザー制御、透過性、人間工学など、[強力な Web プラットフォーム機能へのアクセスの制御](https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md)で定義されたコア原則を使用して Web シリアル API を設計し実装しています。この API を使用する機能は、主に、一度に 1 つのシリアルデバイスのみへのアクセスを付与する権限モデルによって制御されています。ユーザープロンプトに応答し、ユーザーは積極的な手順を踏んで特定のシリアルデバイスを選択する必要があります。
 
-セキュリティのトレードオフを理解するには、WebシリアルAPIの説明文書の[セキュリティ](https://wicg.github.io/serial/#security)と[プライバシー](https://wicg.github.io/serial/#privacy)のセクションをご覧ください。
+セキュリティのトレードオフを理解するには、Web シリアル API の説明文書の[セキュリティ](https://wicg.github.io/serial/#security)と[プライバシー](https://wicg.github.io/serial/#privacy)のセクションをご覧ください。
 
 ## フィードバック {: #feedback }
 
-Chromeチームは、WebシリアルAPIに関する意見や体験についてのフィードバックをお待ちしています。
+Chrome チームは、Web シリアル API に関する意見や体験についてのフィードバックをお待ちしています。
 
-### APIの設計についてお聞かせください
+### API の設計についてお聞かせください
 
-期待どおりに動作しないAPIについてのご意見をお持ちですか？または、アイデアを実装するために必要なメソッドやプロパティが不足していませんか？
+期待どおりに動作しない API についてのご意見をお持ちですか？または、アイデアを実装するために必要なメソッドやプロパティが不足していませんか？
 
-[WebシリアルAPIのGitHubリポジトリ](https://github.com/wicg/serial/issues)に仕様の問題を提出するか、既存の問題についてのご意見を追加してください。
+[Web シリアル API の GitHub リポジトリ](https://github.com/wicg/serial/issues)に仕様の問題を提出するか、既存の問題についてのご意見を追加してください。
 
 ### 実装に関する問題を報告する
 
-Chromeの実装にバグを見つけましたか？または、実装が仕様と異なりますか？
+Chrome の実装にバグを見つけましたか？または、実装が仕様と異なりますか？
 
 [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESerial)にバグをご報告ください。できる限り詳しい情報を含め、バグを再現するための単純な手順をご説明の上、*Components*を`Blink>Serial`に設定してください。すばやく簡単に再現を共有するには、[Glitch](https://glitch.com)が最適です。
 
 ### サポートの表明
 
-WebシリアルAPIを使用することをお考えですか？あなたのパブリックサポートは、Chromeチームが機能に優先順位を付け、他のブラウザベンダーにそれらをサポートすることがいかに重要であるかを示す上でとても役立ちます。
+Web シリアル API を使用することをお考えですか？あなたのパブリックサポートは、Chrome チームが機能に優先順位を付け、他のブラウザベンダーにそれらをサポートすることがいかに重要であるかを示す上でとても役立ちます。
 
-[@ChromiumDev](https://twitter.com/chromiumdev)にツイートして、このAPIをどこで、どのように使用されているのかお知らせください。ハッシュタグは[`#SerialAPI`](https://twitter.com/search?q=%23SerialAPI&src=typed_query&f=live)をお使いください。
+[@ChromiumDev](https://twitter.com/chromiumdev)にツイートして、この API をどこで、どのように使用されているのかお知らせください。ハッシュタグは[`#SerialAPI`](https://twitter.com/search?q=%23SerialAPI&src=typed_query&f=live)をお使いください。
 
 ## 便利なリンク {: #helpful }
 
 - [仕様](https://github.com/WICG/serial)
 - [バグ追跡](https://crbug.com/884928)
-- [ChromeStatus.comエントリ](https://chromestatus.com/feature/6577673212002304)
-- Blinkコンポーネント: [`Blink>Serial`](https://chromestatus.com/features#component%3ABlink%3ESerial)
+- [ChromeStatus.com エントリ](https://chromestatus.com/feature/6577673212002304)
+- Blink コンポーネント: [`Blink>Serial`](https://chromestatus.com/features#component%3ABlink%3ESerial)
 
 ## デモ {: #demos }
 

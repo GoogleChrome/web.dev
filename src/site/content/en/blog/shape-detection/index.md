@@ -1,5 +1,5 @@
 ---
-title: "The Shape Detection API: a picture is worth a thousand words, faces, and barcodes"
+title: 'The Shape Detection API: a picture is worth a thousand words, faces, and barcodes'
 subhead: The Shape Detection API detects faces, barcodes, and text in images.
 authors:
   - thomassteiner
@@ -21,11 +21,11 @@ feedback:
 ---
 
 {% Aside %}
-  This API is part of the new
-  [capabilities project](https://developers.google.com/web/updates/capabilities).
-  Barcode detection has launched in Chrome 83.
-  Face and text detection are available behind a flag. This post will be updated as
-  the Shape Detection API evolves.
+This API is part of the new
+[capabilities project](https://developers.google.com/web/updates/capabilities).
+Barcode detection has launched in Chrome 83.
+Face and text detection are available behind a flag. This post will be updated as
+the Shape Detection API evolves.
 {% endAside %}
 
 ## What is the Shape Detection API? {: #what }
@@ -58,11 +58,11 @@ detection through the `FaceDetector` interface, barcode detection through the
 Recognition, (OCR)) through the `TextDetector` interface.
 
 {% Aside 'caution' %}
-  Text detection, despite being an interesting field, is not considered stable
-  enough across either computing platforms or character sets to be
-  standardized at the moment, which is why text detection has been moved to
-  a separate
-  [informative specification](https://wicg.github.io/shape-detection-api/text.html).
+Text detection, despite being an interesting field, is not considered stable
+enough across either computing platforms or character sets to be
+standardized at the moment, which is why text detection has been moved to
+a separate
+[informative specification](https://wicg.github.io/shape-detection-api/text.html).
 {% endAside %}
 
 ### Suggested use cases {: #use-cases }
@@ -92,7 +92,7 @@ of use cases for all three features.
 - Shopping apps can allow their users to scan
   [EAN](https://en.wikipedia.org/wiki/International_Article_Number) or
   [UPC](https://en.wikipedia.org/wiki/Universal_Product_Code) barcodes of
-  items in a physical   store to compare prices online.
+  items in a physical store to compare prices online.
 - Airports can provide web kiosks where passengers can scan their boarding
   passes' [Aztec codes](https://en.wikipedia.org/wiki/Aztec_Code) to show
   personalized information related to their flights.
@@ -111,12 +111,12 @@ of use cases for all three features.
 
 <div>
 
-| Step                                       | Status                       |
-| ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In Progress][spec]          |
-| **3. Gather feedback & iterate on design** | [**In progress**](#feedback) |
-| 4. Origin trial                            | [Complete](https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919) |
+| Step                                       | Status                                                                                                                                                                                                       |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1. Create explainer                        | [Complete][explainer]                                                                                                                                                                                        |
+| 2. Create initial draft of specification   | [In Progress][spec]                                                                                                                                                                                          |
+| **3. Gather feedback & iterate on design** | [**In progress**](#feedback)                                                                                                                                                                                 |
+| 4. Origin trial                            | [Complete](https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919)                                                                                                                     |
 | **5. Launch**                              | Barcode detection **Complete**<br>Face Detection [In Progress](https://www.chromestatus.com/feature/5678216012365824)<br>Text Detection [In Progress](https://www.chromestatus.com/feature/5644087665360896) |
 
 </div>
@@ -124,10 +124,10 @@ of use cases for all three features.
 ## How to use the Shape Detection API {: #use }
 
 {% Aside 'warning' %}
-  So far only barcode detection is available by default, starting in Chrome 83,
-  but face and text detection are available behind a flag.
-  You can always use the Shape Detection API for local experiments by enabling the
-  `#enable-experimental-web-platform-features` flag.
+So far only barcode detection is available by default, starting in Chrome 83,
+but face and text detection are available behind a flag.
+You can always use the Shape Detection API for local experiments by enabling the
+`#enable-experimental-web-platform-features` flag.
 {% endAside %}
 
 If you want to experiment with the Shape Detection API locally,
@@ -152,14 +152,14 @@ Please carefully check the support matrix in the
 overview of the different platforms.
 
 {% Aside 'gotchas' %}
-  If your `ImageBitmapSource` has an
-  [effective script origin](https://html.spec.whatwg.org/multipage/#concept-origin)
-  which is not the same as the   document's effective script origin, then
-  attempts to call `detect()` will fail with a new
-  `SecurityError` [`DOMException`](https://heycam.github.io/webidl/#idl-DOMException).
-  If your image origin supports CORS, you can use the
-  [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/CORS_settings_attributes)
-  attribute to request CORS access.
+If your `ImageBitmapSource` has an
+[effective script origin](https://html.spec.whatwg.org/multipage/#concept-origin)
+which is not the same as the document's effective script origin, then
+attempts to call `detect()` will fail with a new
+`SecurityError` [`DOMException`](https://heycam.github.io/webidl/#idl-DOMException).
+If your image origin supports CORS, you can use the
+[`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/CORS_settings_attributes)
+attribute to request CORS access.
 {% endAside %}
 
 ### Working with the `BarcodeDetector` {: #barcodedetector}
@@ -185,12 +185,12 @@ const barcodeDetector = new BarcodeDetector({
     'pdf417',
     'qr_code',
     'upc_a',
-    'upc_e'
-  ]
+    'upc_e',
+  ],
 });
 try {
   const barcodes = await barcodeDetector.detect(image);
-  barcodes.forEach(barcode => searchProductDatabase(barcode));
+  barcodes.forEach((barcode) => searchProductDatabase(barcode));
 } catch (e) {
   console.error('Barcode detection failed:', e);
 }
@@ -211,11 +211,11 @@ const faceDetector = new FaceDetector({
   maxDetectedFaces: 5,
   // (Optional) Hint to try and prioritize speed over accuracy
   // by, e.g., operating on a reduced scale or looking for large features.
-  fastMode: false
+  fastMode: false,
 });
 try {
   const faces = await faceDetector.detect(image);
-  faces.forEach(face => drawMustache(face));
+  faces.forEach((face) => drawMustache(face));
 } catch (e) {
   console.error('Face detection failed:', e);
 }
@@ -227,14 +227,14 @@ The `TextDetector` always returns the bounding boxes of the detected texts,
 and on some platforms the recognized characters.
 
 {% Aside 'caution' %}
-  Text recognition is not universally available.
+Text recognition is not universally available.
 {% endAside %}
 
 ```js
 const textDetector = new TextDetector();
 try {
   const texts = await textDetector.detect(image);
-  texts.forEach(text => textToSpeech(text));
+  texts.forEach((text) => textToSpeech(text));
 } catch (e) {
   console.error('Text detection failed:', e);
 }
@@ -246,14 +246,16 @@ Purely checking for the existence of the constructors to feature detect the
 Shape Detection API doesn't suffice.
 The presence of an interface doesn't tell you whether the underlying platform supports the feature.
 This is working [as intended](https://crbug.com/920961).
-It's why we recommend a *defensive programming* approach by doing feature detection
+It's why we recommend a _defensive programming_ approach by doing feature detection
 like this:
 
 ```js
-const supported = await (async () => 'FaceDetector' in window &&
-    await new FaceDetector().detect(document.createElement('canvas'))
-    .then(_ => true)
-    .catch(e => e.name === 'NotSupportedError' ? false : true))();
+const supported = await (async () =>
+  'FaceDetector' in window &&
+  (await new FaceDetector()
+    .detect(document.createElement('canvas'))
+    .then((_) => true)
+    .catch((e) => (e.name === 'NotSupportedError' ? false : true))))();
 ```
 
 The `BarcodeDetector` interface has been updated to include a `getSupportedFormats()` method
@@ -284,8 +286,10 @@ await BarcodeDetector.getSupportedFormats();
 This allows you to detect the specific feature you need, for example, QR code scanning:
 
 ```js
-if (('BarcodeDetector' in window) &&
-    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+if (
+  'BarcodeDetector' in window &&
+  (await BarcodeDetector.getSupportedFormats()).includes('qr_code')
+) {
   console.log('QR code scanning is supported.');
 }
 ```
@@ -296,7 +300,7 @@ and so developers should be encouraged to check for precisely the capability
 
 ## Operating system support {: #os-support}
 
-Barcode detection is available on macOS, Chrome OS, and Android. [Google Play
+Barcode detection is available on macOS, ChromeOS, and Android. [Google Play
 Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
 are required on Android.
 
@@ -319,10 +323,10 @@ per se, but not face landmark detection (eyes, nose, mouth, etc.); or the
 existence and the location of text may be recognized, but not text contents.
 
 {% Aside 'caution' %}
-  This API is an optimization and not something guaranteed to be available
-  from the platform for every user. Developers are expected to combine this
-  with their own [image recognition code](https://github.com/mjyc/opencv) and
-  take advantage of the platform optimization when it is available.
+This API is an optimization and not something guaranteed to be available
+from the platform for every user. Developers are expected to combine this
+with their own [image recognition code](https://github.com/mjyc/opencv) and
+take advantage of the platform optimization when it is available.
 {% endAside %}
 
 ## Feedback {: #feedback }
@@ -336,7 +340,7 @@ Is there something about the API that doesn't work like you expected? Or
 are there missing methods or properties that you need to implement your
 idea? Have a question or comment on the security model?
 
-* File a spec issue on the [Shape Detection API GitHub repo][issues],
+- File a spec issue on the [Shape Detection API GitHub repo][issues],
   or add your thoughts to an existing issue.
 
 ### Problem with the implementation? {: .hide-from-toc }
@@ -344,9 +348,9 @@ idea? Have a question or comment on the security model?
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
 
-* File a bug at <https://new.crbug.com>. Be sure to include as
+- File a bug at <https://new.crbug.com>. Be sure to include as
   much detail as you can, simple instructions for reproducing, and set
-  *Components* to `Blink>ImageCapture`. [Glitch](https://glitch.com)
+  _Components_ to `Blink>ImageCapture`. [Glitch](https://glitch.com)
   works great for sharing quick and easy repros.
 
 ### Planning to use the API? {: .hide-from-toc }
@@ -355,18 +359,18 @@ Planning to use the Shape Detection API on your site? Your public support
 helps us to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
-* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
-* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
   [`#ShapeDetection`](https://twitter.com/search?q=%23ShapeDetection&src=typed_query&f=live)
   and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
-* [Public explainer][explainer]
-* [API Demo][demo] | [API Demo source][demo-source]
-* [Tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: `Blink>ImageCapture`
+- [Public explainer][explainer]
+- [API Demo][demo] | [API Demo source][demo-source]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: `Blink>ImageCapture`
 
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [spec]: https://wicg.github.io/shape-detection-api

@@ -150,18 +150,19 @@ window.addEventListener('DOMContentLoaded', () => {
 포그라운드 페이지는 이 데이터를 직접 처리할 수 없습니다. 페이지는 데이터를 리퀘스트로 보기 때문에, 페이지는 서비스 워커에게 데이터를 전달하고, 여기서 `fetch` 이벤트 리스너로 데이터를 가로챌 수 있습니다. 여기서 `postMessage()`를 사용하여 데이터를 포그라운드 페이지로 다시 전달하거나 서버로 전달할 수 있습니다.
 
 ```js
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   // If this is an incoming POST request for the
   // registered "action" URL, respond to it.
-  if (event.request.method === 'POST' &&
-      url.pathname === '/bookmark') {
-    event.respondWith((async () => {
-      const formData = await event.request.formData();
-      const link = formData.get('link') || '';
-      const responseUrl = await saveBookmark(link);
-      return Response.redirect(responseUrl, 303);
-    })());
+  if (event.request.method === 'POST' && url.pathname === '/bookmark') {
+    event.respondWith(
+      (async () => {
+        const formData = await event.request.formData();
+        const link = formData.get('link') || '';
+        const responseUrl = await saveBookmark(link);
+        return Response.redirect(responseUrl, 303);
+      })(),
+    );
   }
 });
 ```
@@ -179,7 +180,7 @@ self.addEventListener('fetch', event => {
 2021년 초부터 Web Share Target API는 다음에서 지원됩니다.
 
 - Android의 Chrome 및 Edge 76 이상.
-- Chrome OS의 Chrome 89 이상.
+- ChromeOS의 Chrome 89 이상.
 
 모든 플랫폼에서, 웹 앱이 공유 데이터를 수신할 수 있는 잠재적 대상으로 표시되려면 그 전에 해당 웹 앱이 [설치](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)된 상태여야 합니다.
 

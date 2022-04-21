@@ -12,21 +12,23 @@ Web apps have a big reach. They run on multiple platforms. They are easy to shar
 ## Working with the file system
 
 A typical user workflow using files looks like this:
-* Pick a file or folder from the device and open it directly.
-* Make changes to those files or folders, and save the changes back directly.
-* Make new files and folders.
+
+- Pick a file or folder from the device and open it directly.
+- Make changes to those files or folders, and save the changes back directly.
+- Make new files and folders.
 
 Before the [File System Access API](/file-system-access/), web apps couldn't do this. Opening files required a file upload, saving changes required users to download them, and the web had no access at all to make new files and folders in the user's filesystem.
 
 ### Opening a file
 
 To open a file we use the `window.showOpenFilePicker()` method. Note that this method requires a user gesture, such as a button click. Here is the rest of the setup for opening a file:
+
 1. Capture the [file handle](https://developer.mozilla.org/docs/Web/API/FileSystemHandle) from the file system access's file picker API. This gives you basic information about the file.
 2. Using the handle's `getFile()` method, you'll get a special kind of [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob) called a [`File`](https://developer.mozilla.org/docs/Web/API/File) that includes additional read-only properties (such as name and last modified date) about the file. Because it's a Blob, Blob methods can be called on it, such as `text()`, to get its content.
 
 ```js
 // Have the user select a file.
-const [ handle ] = await window.showOpenFilePicker();
+const [handle] = await window.showOpenFilePicker();
 // Get the File object from the handle.
 const file = await handle.getFile();
 // Get the file content.
@@ -37,6 +39,7 @@ const content = await file.text();
 ### Saving changes
 
 To save changes to a file, you also need a user gesture; then:
+
 1. Use the file handle to create a [`FileSystemWritableFileStream`](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream).
 1. Make changes to the stream. This won't update the file in place; instead, a temporary file is typically created.
 1. Finally, when you've finished making changes, you close the stream, which moves the changes from temporary to permanent.
@@ -65,6 +68,7 @@ Register as a file handler on a user's device, specifying the MIME type and file
 
 Once registered, your installed PWA will show up as an option from the user's file system, allowing them to open the file directly into it.
 Here is an example of the manifest setup for a PWA to read text files:
+
 ```json
 ...
 "file_handlers": [
@@ -77,7 +81,6 @@ Here is an example of the manifest setup for a PWA to read text files:
 ]
 ...
 ```
-
 
 ## URL handling
 
@@ -93,18 +96,19 @@ For example, if your PWA's manifest is hosted on the web.dev, and you want to ad
     {"origin": "https://app.web.dev"},
 ]
 ```
+
 In this case, the browser will check if a file exists at `app.web.dev/.well-known/web-app-origin-association`, accepting the URL handling from the PWA scope URL. The developer has to create this file. In the following example, the file looks like this:
 
 ```json
 {
-    "web_apps": [
-        {
-            "manifest": "/mypwa/app.webmanifest",
-            "details": {
-                "paths": [ "/*" ]
-            }
-        }
-    ]
+  "web_apps": [
+    {
+      "manifest": "/mypwa/app.webmanifest",
+      "details": {
+        "paths": ["/*"]
+      }
+    }
+  ]
 }
 ```
 
@@ -156,9 +160,9 @@ With the [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_AP
 The API is only available on operating systems with a `share` mechanism, including Android, iOS, iPadOS, Windows, and ChromeOS.
 You can share an object containing:
 
-* Text (`title` and `text` properties)
-* A URL (`url` property)
-* Files (`files` property).
+- Text (`title` and `text` properties)
+- A URL (`url` property)
+- Files (`files` property).
 
 To check if the current device can share, for simple data, like text, you check for the presence of the `navigator.share()` method, to share files you check for the presence of the `navigator.canShare()` method.
 
@@ -166,14 +170,13 @@ You request the share action by calling [`navigator.share(objectToShare)`](https
 
 {% Glitch 'mlearn-pwa-os-integration-web-share' %}
 
-
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/wpB9v8QQTw4wB1iEGqvT.png", alt="Chrome on Android and Safari on iOS opening the Share Sheet thanks to Web Share.", width="800", height="661" %}
 
 ## Web Share Target
 
 [Web Share Target API](/web-share-target/) lets your PWA be a target of a share operation from another app on that device whether it is a PWA or not. Your PWA receives the data shared by another app.
 
-It's currently available on Android with WebAPK and Chrome OS, and it works only after the user has installed your PWA. The browser registers the share target within the operating system when the app is installed.
+It's currently available on Android with WebAPK and ChromeOS, and it works only after the user has installed your PWA. The browser registers the share target within the operating system when the app is installed.
 
 You set up web share target in the manifest with the `share_target` member defined in the [Web Share Target draft spec](https://w3c.github.io/web-share-target/).`share_target` is set to an object with some properties:
 
@@ -185,7 +188,6 @@ You set up web share target in the manifest with the `share_target` member defin
 : (Optional) Encoding type for the parameters, by default is `application/x-www-form-urlencoded`, but it can also be set as `multipart/form-data` for methods such as `POST`.
 `params`
 : An object that will map share data (from the keys: `title`, `text`, `url` and `files` from Web Share) to arguments that the browser will pass in the URL (on `method: 'GET'`) or in the body of the request using the selected encoding.
-
 
 {% Aside %}
 You can parse a `POST` request server-side or within your service worker if you want to avoid a trip to the network. Check [this sample](/web-share-target/#processing-post-shares) for further details.
@@ -205,6 +207,7 @@ For example, you can define for your PWA that you want to receive shared data (t
 }
 ...
 ```
+
 From the previous sample, if any app in the system is sharing a URL with a title, and the user picks your PWA from the dialog, the browser will create a new navigation to your origin's `/receive-share/?shared_title=AAA&shared_url=BBB`, where AAA is the shared title, and BBB is the shared URL. You can use JavaScript to read that data from the `window.location` string by parsing it with the [`URL` constructor](https://developer.mozilla.org/docs/Web/API/URL/URL).
 
 The browser will use the PWA name and icon from your manifest to feed the operating system's share entry. You can't pick a different set for that purpose.
@@ -233,20 +236,20 @@ The following sample will list the contacts received by the picker.
 
 ```js
 async function getContacts() {
-   const properties = ['name', 'email', 'tel'];
-   const options = { multiple: true };
-   try {
-     const contacts = await navigator.contacts.select(properties, options);
-     console.log(contacts);
-   } catch (ex) {
-     // Handle any errors here.
-   }
+  const properties = ['name', 'email', 'tel'];
+  const options = {multiple: true};
+  try {
+    const contacts = await navigator.contacts.select(properties, options);
+    console.log(contacts);
+  } catch (ex) {
+    // Handle any errors here.
+  }
 }
 ```
 
 {% Glitch 'mlearn-pwa-os-integration-contacts' %}
 
-##  Resources
+## Resources
 
 - [The File System Access API: simplifying access to local files](/file-system-access/)
 - [Let installed web applications be file handlers](/file-handling/)

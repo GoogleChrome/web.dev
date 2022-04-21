@@ -638,9 +638,9 @@ because fewer drivers are included by default. A notable omission, for example,
 is the USB CDC-ACM class commonly implemented by USB-to-serial adapters as there
 is no API in the Android SDK for communicating with a serial device.
 
-### Chrome OS
+### ChromeOS
 
-Chrome OS is based on Linux as well and also does not require any modification
+ChromeOS is based on Linux as well and also does not require any modification
 to system configuration. The permission_broker service controls access to USB
 devices and will allow the browser to access them as long as there is at least
 one unclaimed interface.
@@ -1005,23 +1005,22 @@ descriptors.
 Example code implementing WebUSB-aware devices that include both WebUSB
 descriptors and Microsoft OS descriptors can be found in these projects:
 
- * [WebLight]
- * [WebUSB Arduino Library]
+- [WebLight]
+- [WebUSB Arduino Library]
 
-[WebUSB API]: https://wicg.github.io/webusb
-[Access USB Devices on the Web]: /usb
-[`getUserMedia()`]: https://html5rocks.com/en/tutorials/getusermedia/intro/
-[KeyboardEvents]: https://developer.mozilla.org/docs/Web/API/KeyboardEvent
-[PointerEvents]: https://developer.mozilla.org/docs/Web/API/Pointer_events
-[Gamepad]: /gamepad
-[WebHID]: /hid
-[WebUSB Platform Capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
-[URL descriptor]: https://wicg.github.io/webusb/#url-descriptor
-[Zadig tool]: https://zadig.akeo.ie/
-[`requestDevice()`]: https://wicg.github.io/webusb/#dom-usb-requestdevice
+[webusb api]: https://wicg.github.io/webusb
+[access usb devices on the web]: /usb
+[`getusermedia()`]: https://html5rocks.com/en/tutorials/getusermedia/intro/
+[keyboardevents]: https://developer.mozilla.org/docs/Web/API/KeyboardEvent
+[pointerevents]: https://developer.mozilla.org/docs/Web/API/Pointer_events
+[gamepad]: /gamepad
+[webhid]: /hid
+[webusb platform capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
+[url descriptor]: https://wicg.github.io/webusb/#url-descriptor
+[zadig tool]: https://zadig.akeo.ie/
+[`requestdevice()`]: https://wicg.github.io/webusb/#dom-usb-requestdevice
 [`open()`]: https://wicg.github.io/webusb/#dom-usbdevice-open
-[a list of USB Device Registry Entries]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
+[a list of usb device registry entries]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
 [blog post]: https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-to-install-winusb-sys-without-a-custom-inf/ba-p/270769
-[WebLight]: https://github.com/sowbug/weblight
-[WebUSB Arduino Library]: https://github.com/webusb/arduino
-
+[weblight]: https://github.com/sowbug/weblight
+[webusb arduino library]: https://github.com/webusb/arduino

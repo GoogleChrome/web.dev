@@ -43,7 +43,7 @@ Se o tamanho desse segmento for considerável, é uma boa indicação de que voc
 
 ## Promover a instalação do seu PWA através do navegador
 
-Se você tiver um PWA de alta qualidade, pode ser melhor promover sua instalação em relação ao aplicativo específico de sua plataforma. Por exemplo, se o aplicativo específico da plataforma não tiver a funcionalidade oferecida pelo seu PWA ou se não tiver sido atualizado há algum tempo. Também pode ser útil promover a instalação de seu PWA se o aplicativo específico da plataforma não foi otimizado para telas maiores, como no Chrome OS.
+Se você tiver um PWA de alta qualidade, pode ser melhor promover sua instalação em relação ao aplicativo específico de sua plataforma. Por exemplo, se o aplicativo específico da plataforma não tiver a funcionalidade oferecida pelo seu PWA ou se não tiver sido atualizado há algum tempo. Também pode ser útil promover a instalação de seu PWA se o aplicativo específico da plataforma não foi otimizado para telas maiores, como no ChromeOS.
 
 Para alguns aplicativos, a condução de instalações de aplicativos específicos da plataforma é uma parte fundamental do modelo de negócios; nesse caso, faz sentido para os negócios promover a instalação de aplicativos específicos da plataforma. Porém, alguns usuários podem se sentir mais confortáveis permanecendo na web. Se esse segmento puder ser identificado, o prompt do PWA pode ser mostrado apenas para eles (o que chamamos de "PWA como fallback").
 
@@ -120,16 +120,13 @@ Os sinais do dispositivo também podem ser inferidos em cabeçalhos de solicita�
 Primeiro, diga ao navegador que você está interessado em receber dicas de memória do dispositivo no cabeçalho da resposta HTTP para qualquer solicitação primária:
 
 ```html
-HTTP/1.1 200 OK
-Content-Type: text/html
-Accept-CH: Device-Memory
+HTTP/1.1 200 OK Content-Type: text/html Accept-CH: Device-Memory
 ```
 
 Em seguida, você começará a receber informações de memória do dispositivo no cabeçalho da solicitação de HTTP:
 
 ```html
-GET /main.js HTTP/1.1
-Device-Memory: 0.5
+GET /main.js HTTP/1.1 Device-Memory: 0.5
 ```
 
 Você pode usar essas informações em seus backends para armazenar um cookie com a categoria do dispositivo do usuário:
@@ -150,7 +147,7 @@ Por fim, crie sua própria lógica para mapear essas informações para categori
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // show "Lite app" install banner or PWA A2HS prompt
+  // show "Lite app" install banner or PWA A2HS prompt
 } else {
   // show "Core app" install banner
 }

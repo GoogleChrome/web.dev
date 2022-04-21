@@ -106,7 +106,7 @@ HID 사용법은 표준화된 입력 또는 출력을 나타내는 숫자 값입
 WebHID API가 지원되는지 확인하려면 다음을 사용하세요.
 
 ```js
-if ("hid" in navigator) {
+if ('hid' in navigator) {
   // The WebHID API is supported.
 }
 ```
@@ -126,16 +126,16 @@ HID 연결을 열려면 먼저 `HIDDevice` 개체에 액세스합니다. 이를 
 const filters = [
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2006 // Joy-Con Left
+    productId: 0x2006, // Joy-Con Left
   },
   {
     vendorId: 0x057e, // Nintendo Co., Ltd
-    productId: 0x2007 // Joy-Con Right
-  }
+    productId: 0x2007, // Joy-Con Right
+  },
 ];
 
 // Prompt user to select a Joy-Con device.
-const [device] = await navigator.hid.requestDevice({ filters });
+const [device] = await navigator.hid.requestDevice({filters});
 ```
 
 ```js
@@ -188,8 +188,8 @@ HID 연결이 수립되면 장치에서 `"inputreport"` 이벤트에 수신 대�
 이전 예제를 계속 이어서, 아래 코드는 사용자가 Joy-Con Right 장치에서 어떤 버튼을 눌렀는지 감지하는 방법을 보여줍니다. 아마 여러분도 집에서 시도해 볼 수 있을 겁니다.
 
 ```js
-device.addEventListener("inputreport", event => {
-  const { data, device, reportId } = event;
+device.addEventListener('inputreport', (event) => {
+  const {data, device, reportId} = event;
 
   // Handle only the Joy-Con Right device and a specific report ID.
   if (device.productId !== 0x2007 && reportId !== 0x3f) return;
@@ -197,7 +197,7 @@ device.addEventListener("inputreport", event => {
   const value = data.getUint8(0);
   if (value === 0) return;
 
-  const someButtons = { 1: "A", 2: "X", 4: "B", 8: "Y" };
+  const someButtons = {1: 'A', 2: 'X', 4: 'B', 8: 'Y'};
   console.log(`User pressed button ${someButtons[value]}.`);
 });
 ```
@@ -218,7 +218,9 @@ await device.sendReport(0x01, new Uint8Array(enableVibrationData));
 
 // Then, send a command to make the Joy-Con device rumble.
 // Actual bytes are available in the sample below.
-const rumbleData = [ /* ... */ ];
+const rumbleData = [
+  /* ... */
+];
 await device.sendReport(0x10, new Uint8Array(rumbleData));
 ```
 
@@ -235,11 +237,11 @@ await device.sendReport(0x10, new Uint8Array(rumbleData));
 다음은 기능 보고서의 예로서, Apple 키보드 백라이트 장치를 요청하고 열어서 깜박이게 하는 방법을 보여줍니다.
 
 ```js
-const waitFor = duration => new Promise(r => setTimeout(r, duration));
+const waitFor = (duration) => new Promise((r) => setTimeout(r, duration));
 
 // Prompt user to select an Apple Keyboard Backlight device.
 const [device] = await navigator.hid.requestDevice({
-  filters: [{ vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00 }]
+  filters: [{vendorId: 0x05ac, usage: 0x0f, usagePage: 0xff00}],
 });
 
 // Wait for the HID connection to open.
@@ -273,11 +275,11 @@ const dataView = await device.receiveFeatureReport(/* reportId= */ 1);
 웹사이트가 HID 장치에 액세스할 권한을 부여 받은 경우, `"connect"` 및 `"disconnect"` 이벤트에 수신 대기하여 연결 및 연결 해제 이벤트를 능동적으로 수신할 수 있습니다.
 
 ```js
-navigator.hid.addEventListener("connect", event => {
+navigator.hid.addEventListener('connect', (event) => {
   // Automatically open event.device or warn user a device is available.
 });
 
-navigator.hid.addEventListener("disconnect", event => {
+navigator.hid.addEventListener('disconnect', (event) => {
   // Remove |event.device| from the UI.
 });
 ```
@@ -290,7 +292,7 @@ Chrome에서 HID를 디버깅하는 작업은 내부 페이지 `about://device-l
 
 ## 브라우저 지원 {: #browser-support }
 
-WebHID API는 Chrome 89의 모든 데스크톱 플랫폼(Chrome OS, Linux, macOS 및 Windows)에서 사용할 수 있습니다.
+WebHID API는 Chrome 89의 모든 데스크톱 플랫폼(ChromeOS, Linux, macOS 및 Windows)에서 사용할 수 있습니다.
 
 ## 데모 {: #demos }
 

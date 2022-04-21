@@ -167,7 +167,7 @@ Handler API.
 
 <!--lint disable no-literal-urls -->
 
-1. Install the _Musicr 2.0_ app on a Chrome OS device.
+1. Install the _Musicr 2.0_ app on a ChromeOS device.
 1. Send yourself a link in a chat application of the form
    <code>https://launch-handler.glitch.me?track=<strong>https://example.com/music.mp3</strong></code>.
    (You can customize

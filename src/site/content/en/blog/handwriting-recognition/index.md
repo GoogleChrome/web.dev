@@ -1,7 +1,6 @@
 ---
 title: Recognize your users' handwriting
-subhead:
-  The Handwriting Recognition API allows you to recognize text from handwritten input as it happens.
+subhead: The Handwriting Recognition API allows you to recognize text from handwritten input as it happens.
 description: |
   The Handwriting Recognition API allows web applications to use advanced handwriting recognition services to recognize text from handwritten input in real time.
 authors:
@@ -47,12 +46,12 @@ Example uses include:
 
 <div>
 
-| Step                                     | Status                           |
-| ---------------------------------------- | -------------------------------- |
-| 1. Create explainer                      | [Complete][explainer]            |
-| 2. Create initial draft of specification | [Complete][spec]                 |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)         |
-| 4. Origin trial                          | Complete                         |
+| Step                                     | Status                          |
+| ---------------------------------------- | ------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]           |
+| 2. Create initial draft of specification | [Complete][spec]                |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)        |
+| 4. Origin trial                          | Complete                        |
 | 5. **Launch**                            | **Complete** (Chromium&nbsp;99) |
 
 </div>
@@ -100,7 +99,7 @@ const recognizer = await navigator.createHandwritingRecognizer({
 });
 ```
 
-{% Aside 'caution' %} The current implementation on Chrome&nbsp;OS can only recognize one language
+{% Aside 'caution' %} The current implementation on ChromeOS can only recognize one language
 at a time. It only supports English (`en`), and a gesture model (`zxx-x-gesture`) to recognize
 gestures such as crossing out words. {% endAside %}
 
@@ -121,7 +120,7 @@ developer:
   strokes that make them up
 
 ```js
-const { languages, alternatives, segmentationResults } =
+const {languages, alternatives, segmentationResults} =
   await navigator.queryHandwritingRecognizerSupport({
     languages: ['en'],
     alternatives: true,
@@ -178,7 +177,9 @@ canvas.addEventListener('pointerdown', (event) => {
   if (!drawing) {
     drawing = recognizer.startDrawing({
       recognitionType: 'text', // email, number, per-character
-      inputType: ['mouse', 'touch', 'pen'].find((type) => type === event.pointerType),
+      inputType: ['mouse', 'touch', 'pen'].find(
+        (type) => type === event.pointerType,
+      ),
       textContext: 'Hello, ',
       alternatives: 2,
       graphemeSet: ['f', 'i', 'z', 'b', 'u'], // for a fizz buzz entry form
@@ -188,7 +189,7 @@ canvas.addEventListener('pointerdown', (event) => {
 });
 ```
 
-{% Aside 'caution' %} The current implementation on Chrome&nbsp;OS does not support grapheme sets
+{% Aside 'caution' %} The current implementation on ChromeOS does not support grapheme sets
 yet, they are silently ignored. {% endAside %}
 
 #### Add a stroke
@@ -258,11 +259,14 @@ canvas.addEventListener('pointerup', async (event) => {
   drawing.addStroke(activeStroke.stroke);
   activeStroke = null;
 
-  const [mostLikelyPrediction, ...lessLikelyAlternatives] = await drawing.getPrediction();
+  const [mostLikelyPrediction, ...lessLikelyAlternatives] =
+    await drawing.getPrediction();
   if (mostLikelyPrediction) {
     console.log(mostLikelyPrediction.text);
   }
-  lessLikelyAlternatives?.forEach((alternative) => console.log(alternative.text));
+  lessLikelyAlternatives?.forEach((alternative) =>
+    console.log(alternative.text),
+  );
 });
 ```
 
@@ -285,11 +289,13 @@ user-identifiable character (`grapheme`) along with its position in the recogniz
 ```js
 if (mostLikelyPrediction.segmentationResult) {
   mostLikelyPrediction.segmentationResult.forEach(
-    ({ grapheme, beginIndex, endIndex, drawingSegments }) => {
+    ({grapheme, beginIndex, endIndex, drawingSegments}) => {
       console.log(grapheme, beginIndex, endIndex);
-      drawingSegments.forEach(({ strokeIndex, beginPointIndex, endPointIndex }) => {
-        console.log(strokeIndex, beginPointIndex, endPointIndex);
-      });
+      drawingSegments.forEach(
+        ({strokeIndex, beginPointIndex, endPointIndex}) => {
+          console.log(strokeIndex, beginPointIndex, endPointIndex);
+        },
+      );
     },
   );
 }
@@ -324,7 +330,11 @@ outside, including `languages` and `recognitiontype`. You can set the content of
 `value` attribute:
 
 ```html
-<handwriting-textarea languages="en" recognitiontype="text" value="Hello"></handwriting-textarea>
+<handwriting-textarea
+  languages="en"
+  recognitiontype="text"
+  value="Hello"
+></handwriting-textarea>
 ```
 
 To be informed about any changes to the value, you can listen to the `input` event.
@@ -407,8 +417,7 @@ This article was reviewed by [Joe Medley], Honglin Yu and Jiewei Qian. Hero imag
 [github]: https://github.com/WICG/handwriting-recognition
 [issues]: https://github.com/WICG/handwriting-recognition/issues
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-handwriting-recognition-api/4935
 [i2p]: https://groups.google.com/a/chromium.org/g/blink-dev/c/VXUq1UY4m7Y
 [joe medley]: https://github.com/jpmedley

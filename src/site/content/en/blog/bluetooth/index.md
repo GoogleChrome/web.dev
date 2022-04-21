@@ -37,7 +37,7 @@ Even though the [Web Bluetooth API specification] is not finalized yet, the spec
 authors are actively looking for enthusiastic developers to try out this API and
 give [feedback on the spec] and [feedback on the implementation].
 
-A subset of the Web Bluetooth API is available in Chrome OS, Chrome for Android
+A subset of the Web Bluetooth API is available in ChromeOS, Chrome for Android
 6.0, Mac (Chrome 56) and Windows 10 (Chrome 70). This means you should be able
 to [request] and [connect to] nearby Bluetooth Low Energy devices,
 [read]/[write] Bluetooth characteristics, [receive GATT Notifications], know
@@ -52,7 +52,7 @@ For Linux and earlier versions of Windows, enable the
 
 In order to get as much feedback as possible from developers using the Web
 Bluetooth API in the field, Chrome has previously added this feature in Chrome
-53 as an [origin trial] for Chrome OS, Android, and Mac.
+53 as an [origin trial] for ChromeOS, Android, and Mac.
 
 The trial has successfully ended in January 2017.
 
@@ -76,7 +76,7 @@ as a touch or a mouse click. We're talking about listening to
 [`pointerup`], `click`, and `touchend` events.
 
 ```js
-button.addEventListener('pointerup', function(event) {
+button.addEventListener('pointerup', function (event) {
   // Call navigator.bluetooth.requestDevice
 });
 ```
@@ -106,7 +106,6 @@ chooser where they can pick one device or simply cancel the request.
   </figcaption>
 </figure>
 
-
 The `navigator.bluetooth.requestDevice()` function takes a mandatory object that
 defines filters. These filters are used to return only devices that match some
 advertised Bluetooth GATT services and/or the device name.
@@ -117,9 +116,14 @@ For instance, to request Bluetooth devices advertising the [Bluetooth GATT
 Battery Service]:
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 If your Bluetooth GATT Service is not on the list of [the standardized Bluetooth
@@ -127,13 +131,20 @@ GATT services] though, you may provide either the full Bluetooth UUID or a short
 16- or 32-bit form.
 
 ```js
-navigator.bluetooth.requestDevice({
-  filters: [{
-    services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb']
-  }]
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb'],
+      },
+    ],
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 #### Name filter
@@ -146,14 +157,21 @@ service filter. If you don't, you'll get an error later when trying to access
 them.
 
 ```js
-navigator.bluetooth.requestDevice({
-  filters: [{
-    name: 'Francois robot'
-  }],
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        name: 'Francois robot',
+      },
+    ],
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 #### Manufacturer data filter
@@ -170,17 +188,26 @@ trying to access them.
 ```js
 // Filter Bluetooth devices from Google company with manufacturer data bytes
 // that start with [0x01, 0x02].
-navigator.bluetooth.requestDevice({
-  filters: [{
-    manufacturerData: [{
-      companyIdentifier: 0x00e0,
-      dataPrefix: new Uint8Array([0x01, 0x02])
-    }]
-  }],
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    filters: [
+      {
+        manufacturerData: [
+          {
+            companyIdentifier: 0x00e0,
+            dataPrefix: new Uint8Array([0x01, 0x02]),
+          },
+        ],
+      },
+    ],
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 A mask can also be used with a data prefix to match some patterns in
@@ -202,12 +229,17 @@ key to be able to access some services. If you don't, you'll get an error later
 when trying to access them.
 
 ```js
-navigator.bluetooth.requestDevice({
-  acceptAllDevices: true,
-  optionalServices: ['battery_service'] // Required to access service later.
-})
-.then(device => { /* … */ })
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({
+    acceptAllDevices: true,
+    optionalServices: ['battery_service'], // Required to access service later.
+  })
+  .then((device) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 {% Aside 'caution' %}
@@ -222,16 +254,21 @@ Bluetooth remote GATT Server which holds the service and characteristic
 definitions.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {
-  // Human-readable name of the device.
-  console.log(device.name);
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => {
+    // Human-readable name of the device.
+    console.log(device.name);
 
-  // Attempts to connect to remote GATT Server.
-  return device.gatt.connect();
-})
-.then(server => { /* … */ })
-.catch(error => { console.error(error); });
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then((server) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 ### Read a Bluetooth Characteristic {: #read }
@@ -244,26 +281,28 @@ device's battery.
 In the example below, `battery_level` is the [standardized Battery Level
 Characteristic].
 
-
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => device.gatt.connect())
-.then(server => {
-  // Getting Battery Service…
-  return server.getPrimaryService('battery_service');
-})
-.then(service => {
-  // Getting Battery Level Characteristic…
-  return service.getCharacteristic('battery_level');
-})
-.then(characteristic => {
-  // Reading Battery Level…
-  return characteristic.readValue();
-})
-.then(value => {
-  console.log(`Battery percentage is ${value.getUint8(0)}`);
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['battery_service']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => {
+    // Getting Battery Service…
+    return server.getPrimaryService('battery_service');
+  })
+  .then((service) => {
+    // Getting Battery Level Characteristic…
+    return service.getCharacteristic('battery_level');
+  })
+  .then((characteristic) => {
+    // Reading Battery Level…
+    return characteristic.readValue();
+  })
+  .then((value) => {
+    console.log(`Battery percentage is ${value.getUint8(0)}`);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 If you use a custom Bluetooth GATT characteristic, you may provide either the
@@ -302,19 +341,22 @@ I promise there is no magic here. It's all explained in the [Heart Rate Control
 Point Characteristic page].
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_control_point'))
-.then(characteristic => {
-  // Writing 1 is the signal to reset energy expended.
-  const resetEnergyExpended = Uint8Array.of(1);
-  return characteristic.writeValue(resetEnergyExpended);
-})
-.then(_ => {
-  console.log('Energy expended has been reset.');
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['heart_rate']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => server.getPrimaryService('heart_rate'))
+  .then((service) => service.getCharacteristic('heart_rate_control_point'))
+  .then((characteristic) => {
+    // Writing 1 is the signal to reset energy expended.
+    const resetEnergyExpended = Uint8Array.of(1);
+    return characteristic.writeValue(resetEnergyExpended);
+  })
+  .then((_) => {
+    console.log('Energy expended has been reset.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 ### Receive GATT notifications {: #notifications }
@@ -323,17 +365,22 @@ Now, let's see how to be notified when the [Heart Rate Measurement]
 characteristic changes on the device:
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
-.then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_measurement'))
-.then(characteristic => characteristic.startNotifications())
-.then(characteristic => {
-  characteristic.addEventListener('characteristicvaluechanged',
-                                  handleCharacteristicValueChanged);
-  console.log('Notifications have been started.');
-})
-.catch(error => { console.error(error); });
+navigator.bluetooth
+  .requestDevice({filters: [{services: ['heart_rate']}]})
+  .then((device) => device.gatt.connect())
+  .then((server) => server.getPrimaryService('heart_rate'))
+  .then((service) => service.getCharacteristic('heart_rate_measurement'))
+  .then((characteristic) => characteristic.startNotifications())
+  .then((characteristic) => {
+    characteristic.addEventListener(
+      'characteristicvaluechanged',
+      handleCharacteristicValueChanged,
+    );
+    console.log('Notifications have been started.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function handleCharacteristicValueChanged(event) {
   const value = event.target.value;
@@ -353,16 +400,21 @@ To provide a better user experience, you may want to listen for disconnection ev
 and invite the user to reconnect:
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ name: 'Francois robot' }] })
-.then(device => {
-  // Set up event listener for when device gets disconnected.
-  device.addEventListener('gattserverdisconnected', onDisconnected);
+navigator.bluetooth
+  .requestDevice({filters: [{name: 'Francois robot'}]})
+  .then((device) => {
+    // Set up event listener for when device gets disconnected.
+    device.addEventListener('gattserverdisconnected', onDisconnected);
 
-  // Attempts to connect to remote GATT Server.
-  return device.gatt.connect();
-})
-.then(server => { /* … */ })
-.catch(error => { console.error(error); });
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then((server) => {
+    /* … */
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 function onDisconnected(event) {
   const device = event.target;
@@ -409,7 +461,7 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer']
   console.log(`User Description: ${decoder.decode(value)}`);
 })
 .catch(error => { console.error(error); });
-````
+```
 
 Now that we've read the user description of the measurement interval of the
 device's health thermometer, let's see how to update it and write a custom
@@ -543,55 +595,55 @@ Thanks to [Kayce Basques] for reviewing this article.
 Hero image by [SparkFun Electronics from Boulder, USA].
 
 [turtles]: https://www.youtube.com/watch?v=1LV1Fk5ZXwA
-[Generic Attribute Profile]: https://www.bluetooth.com/specifications/gatt/
-[Web Bluetooth API specification]: https://webbluetoothcg.github.io/web-bluetooth/
+[generic attribute profile]: https://www.bluetooth.com/specifications/gatt/
+[web bluetooth api specification]: https://webbluetoothcg.github.io/web-bluetooth/
 [feedback on the spec]: https://github.com/WebBluetoothCG/web-bluetooth/issues
 [feedback on the implementation]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth
 [request]: #request
 [connect to]: #connect
 [read]: #read
 [write]: #write
-[receive GATT Notifications]: #notifications
-[Bluetooth device gets disconnected]: #disconnect
-[read and write to Bluetooth descriptors]: #descriptors
-[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
+[receive gatt notifications]: #notifications
+[bluetooth device gets disconnected]: #disconnect
+[read and write to bluetooth descriptors]: #descriptors
+[browser compatibility]: https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
 [origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
-[Web Bluetooth Security Model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
+[web bluetooth security model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
 [secure contexts]: https://w3c.github.io/webappsec-secure-contexts/#intro
-[TLS]: https://en.wikipedia.org/wiki/Transport_Layer_Security
+[tls]: https://en.wikipedia.org/wiki/Transport_Layer_Security
 [a user gesture]: https://html.spec.whatwg.org/multipage/interaction.html#activation
 [`pointerup`]: https://developers.google.com/web/updates/2016/10/pointer-events
-[Promises]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-[Promises tutorial]: /promises
-[Arrow functions]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-[Bluetooth GATT Battery Service]: https://www.bluetooth.com/specifications/gatt/
-[the standardized Bluetooth GATT services]: https://www.bluetooth.com/specifications/assigned-numbers/
-[standardized Battery Level Characteristic]: https://www.bluetooth.com/specifications/gatt/
-[Read Characteristic Value Changed Sample]: https://googlechrome.github.io/samples/web-bluetooth/read-characteristic-value-changed.html
-[Heart Rate Control Point Characteristic page]: https://www.bluetooth.com/specifications/gatt/
-[Heart Rate Measurement]: https://www.bluetooth.com/specifications/gatt/
-[Notifications Sample]: https://googlechrome.github.io/samples/web-bluetooth/notifications.html
-[Device Disconnect Sample]: https://googlechrome.github.io/samples/web-bluetooth/device-disconnect.html
-[Automatic Reconnect Sample]: https://googlechrome.github.io/samples/web-bluetooth/automatic-reconnect.html
-[Health Thermometer service]: https://www.bluetooth.com/specifications/gatt/
-[Measurement Interval characteristic]: https://www.bluetooth.com/specifications/gatt/
-[Characteristic User Description descriptor]: https://www.bluetooth.com/specifications/assigned-numbers/
-[Web Bluetooth samples]: https://googlechrome.github.io/samples/web-bluetooth/index.html
-[BLE Peripheral Simulator Android App]: https://play.google.com/store/apps/details?id=io.github.webbluetoothcg.bletestperipheral
-[curated Web Bluetooth Demos]: https://github.com/WebBluetoothCG/demos
-[official Web Bluetooth Codelabs]: https://github.com/search?q=org%3Agooglecodelabs+bluetooth
+[promises]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[promises tutorial]: /promises
+[arrow functions]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+[bluetooth gatt battery service]: https://www.bluetooth.com/specifications/gatt/
+[the standardized bluetooth gatt services]: https://www.bluetooth.com/specifications/assigned-numbers/
+[standardized battery level characteristic]: https://www.bluetooth.com/specifications/gatt/
+[read characteristic value changed sample]: https://googlechrome.github.io/samples/web-bluetooth/read-characteristic-value-changed.html
+[heart rate control point characteristic page]: https://www.bluetooth.com/specifications/gatt/
+[heart rate measurement]: https://www.bluetooth.com/specifications/gatt/
+[notifications sample]: https://googlechrome.github.io/samples/web-bluetooth/notifications.html
+[device disconnect sample]: https://googlechrome.github.io/samples/web-bluetooth/device-disconnect.html
+[automatic reconnect sample]: https://googlechrome.github.io/samples/web-bluetooth/automatic-reconnect.html
+[health thermometer service]: https://www.bluetooth.com/specifications/gatt/
+[measurement interval characteristic]: https://www.bluetooth.com/specifications/gatt/
+[characteristic user description descriptor]: https://www.bluetooth.com/specifications/assigned-numbers/
+[web bluetooth samples]: https://googlechrome.github.io/samples/web-bluetooth/index.html
+[ble peripheral simulator android app]: https://play.google.com/store/apps/details?id=io.github.webbluetoothcg.bletestperipheral
+[curated web bluetooth demos]: https://github.com/WebBluetoothCG/demos
+[official web bluetooth codelabs]: https://github.com/search?q=org%3Agooglecodelabs+bluetooth
 [web-bluetooth-utils]: https://www.npmjs.com/package/web-bluetooth-utils
 [noble]: https://github.com/sandeepmistry/noble
 [angular-web-bluetooth]: https://github.com/manekinekko/angular-web-bluetooth
-[Angular]: https://angularjs.org
-[Polymer]: https://www.polymer-project.org/
-[Get Started with Web Bluetooth]: https://beaufortfrancois.github.io/sandbox/web-bluetooth/generator
-[Web Bluetooth Developer Studio Plugin]: https://github.com/beaufortfrancois/sandbox/tree/gh-pages/web-bluetooth/bluetooth-developer-studio-plugin
-[How to file Web Bluetooth bugs]: https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs
+[angular]: https://angularjs.org
+[polymer]: https://www.polymer-project.org/
+[get started with web bluetooth]: https://beaufortfrancois.github.io/sandbox/web-bluetooth/generator
+[web bluetooth developer studio plugin]: https://github.com/beaufortfrancois/sandbox/tree/gh-pages/web-bluetooth/bluetooth-developer-studio-plugin
+[how to file web bluetooth bugs]: https://sites.google.com/a/chromium.org/dev/developers/how-tos/file-web-bluetooth-bugs
 [browser and platform implementation status]: https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md
-[Kayce Basques]: https://github.com/kaycebasques
-[SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
+[kayce basques]: https://github.com/kaycebasques
+[sparkfun electronics from boulder, usa]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
-[Bluetooth company identifier]: https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/
-[Bluetooth data filters explainer]: https://github.com/WebBluetoothCG/web-bluetooth/blob/main/data-filters-explainer.md
+[bluetooth company identifier]: https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/
+[bluetooth data filters explainer]: https://github.com/WebBluetoothCG/web-bluetooth/blob/main/data-filters-explainer.md
 [example]: https://groups.google.com/a/chromium.org/g/blink-dev/c/5Id2LANtFko/m/5SIig7ktAgAJ

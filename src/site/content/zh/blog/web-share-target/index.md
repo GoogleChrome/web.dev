@@ -150,18 +150,19 @@ window.addEventListener('DOMContentLoaded', () => {
 前台页面无法直接处理此数据。由于页面将数据视为请求，因此会将其传递给服务工作进程，您可以在那里使用`fetch`事件侦听器拦截它。在这里，您可以使用`postMessage()`将数据传递回前台页面或将其传递给服务器：
 
 ```js
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   // If this is an incoming POST request for the
   // registered "action" URL, respond to it.
-  if (event.request.method === 'POST' &&
-      url.pathname === '/bookmark') {
-    event.respondWith((async () => {
-      const formData = await event.request.formData();
-      const link = formData.get('link') || '';
-      const responseUrl = await saveBookmark(link);
-      return Response.redirect(responseUrl, 303);
-    })());
+  if (event.request.method === 'POST' && url.pathname === '/bookmark') {
+    event.respondWith(
+      (async () => {
+        const formData = await event.request.formData();
+        const link = formData.get('link') || '';
+        const responseUrl = await saveBookmark(link);
+        return Response.redirect(responseUrl, 303);
+      })(),
+    );
   }
 });
 ```
@@ -172,14 +173,14 @@ self.addEventListener('fetch', event => {
 
 请务必验证传入的数据。遗憾的是，我们无法保证其他应用会以正确的参数分享适当的内容。
 
-例如，在Android 上， [`url`字段将为空](https://bugs.chromium.org/p/chromium/issues/detail?id=789379)，因为Android 的分享系统不支持该字段。相反，URL 经常出现在`text`字段中，或者偶尔出现在`title`字段中。
+例如，在 Android 上， [`url`字段将为空](https://bugs.chromium.org/p/chromium/issues/detail?id=789379)，因为 Android 的分享系统不支持该字段。相反，URL 经常出现在`text`字段中，或者偶尔出现在`title`字段中。
 
 ## 浏览器支持
 
 截至 2021 年初，下列浏览器支持 Web Share Target API：
 
 - Android 上的 Chrome 和 Edge 76 或更高版本。
-- Chrome OS 上的 Chrome 89 或更高版本。
+- ChromeOS 上的 Chrome 89 或更高版本。
 
 在所有平台上，您的 Web 应用程序必须先[安装](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)，然后它才会显示为接收分享数据的潜在目标。
 

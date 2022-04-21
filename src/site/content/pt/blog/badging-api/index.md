@@ -68,14 +68,14 @@ Exemplos de sites que podem usar essa API incluem:
 </table>
 <div data-md-type="block_html"></div>
 
-A App Badging API funciona no Windows e macOS, no Chrome 81 ou posterior. Também foi confirmado que funciona no Edge 84 ou posterior. O suporte para o Chrome OS está em desenvolvimento e estará disponível em uma versão futura do Chrome. No Android, a Badging API não é compatível. Em vez disso, o Android mostra automaticamente um emblema no ícone do aplicativo para o aplicativo da web instalado quando há uma notificação não lida, assim como para aplicativos Android.
+A App Badging API funciona no Windows e macOS, no Chrome 81 ou posterior. Também foi confirmado que funciona no Edge 84 ou posterior. O suporte para o ChromeOS está em desenvolvimento e estará disponível em uma versão futura do Chrome. No Android, a Badging API não é compatível. Em vez disso, o Android mostra automaticamente um emblema no ícone do aplicativo para o aplicativo da web instalado quando há uma notificação não lida, assim como para aplicativos Android.
 
 ## Tente
 
 1. Usando o Chrome 81 ou posterior no Windows ou Mac, abra a [demonstração da API App Badging](https://badging-api.glitch.me/) .
 2. Quando solicitado, clique em **Instalar** para instalar o aplicativo ou use o menu do Chrome para instalá-lo.
 3. Abra-o como um PWA instalado. Observe que ele deve ser executado como um PWA instalado (na barra de tarefas ou dock).
-4. Clique no botão **Definir** ou **Limpar** para definir ou limpar o emblema do ícone do aplicativo. Você também pode fornecer um número para o *valor do emblema*.
+4. Clique no botão **Definir** ou **Limpar** para definir ou limpar o emblema do ícone do aplicativo. Você também pode fornecer um número para o _valor do emblema_.
 
 ## Como usar a App Badging API {: #use }
 
@@ -83,7 +83,7 @@ Para usar a API App Badging, seu aplicativo da web precisa atender aos [critéri
 
 A Badge API consiste em dois métodos no `navigator`:
 
-- `setAppBadge(` *`number`* `)`: define o emblema do aplicativo. Se um valor for fornecido, defina o emblema com o valor fornecido, caso contrário, exiba um ponto branco simples (ou outro sinalizador conforme apropriado para a plataforma). Definir o *`number`* como `0` é o mesmo que chamar `clearAppBadge()`.
+- `setAppBadge(` _`number`_ `)`: define o emblema do aplicativo. Se um valor for fornecido, defina o emblema com o valor fornecido, caso contrário, exiba um ponto branco simples (ou outro sinalizador conforme apropriado para a plataforma). Definir o _`number`_ como `0` é o mesmo que chamar `clearAppBadge()`.
 - `clearAppBadge()` : Remove o emblema do aplicativo.
 
 Ambos retornam valores vazios que você pode usar para tratamento de erros.
@@ -107,7 +107,7 @@ Em alguns casos, o SO pode não permitir a representação exata do emblema. Nes
 
 Não presuma nada sobre como o agente do usuário exibe o emblema. Alguns agentes de usuário podem pegar um número como "4000" e regravá-lo como "99+". Se você mesmo saturar o emblema (por exemplo, definindo-o para "99"), o "+" não aparecerá. Não importa o número real, apenas chame `setAppBadge(unreadCount)` e deixe o agente do usuário lidar com a exibição de acordo.
 
-Embora a App Badging API *no Chrome* exija um aplicativo instalado, você não deve fazer chamadas para a API de emblemas dependendo do estado da instalação. Basta chamar a API quando ela existir, pois outros navegadores podem mostrar o emblema em outros locais. Se funcionar, funciona. Do contrário, simplesmente não funciona.
+Embora a App Badging API _no Chrome_ exija um aplicativo instalado, você não deve fazer chamadas para a API de emblemas dependendo do estado da instalação. Basta chamar a API quando ela existir, pois outros navegadores podem mostrar o emblema em outros locais. Se funcionar, funciona. Do contrário, simplesmente não funciona.
 
 ## Definir e limpar o emblema em segundo plano de um service worker
 

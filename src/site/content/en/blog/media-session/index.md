@@ -43,7 +43,7 @@ The Media session API provides several benefits and capabilities:
 - Hardware media keys are supported.
 - Media notifications are customized on mobile, desktop, and paired wearable device.
 - The [media hub] is available on desktop.
-- Lock screen media controls are available on [Chrome OS] and mobile.
+- Lock screen media controls are available on [ChromeOS] and mobile.
 - Picture-in-Picture window controls are available for both [audio playback]
   and [video conferencing].
 - Assistant integration on mobile is available.
@@ -96,21 +96,45 @@ such as dings don't show notifications.
 
 ```js
 // After media (video or audio) starts playing
-await document.querySelector("video").play();
+await document.querySelector('video').play();
 
-if ("mediaSession" in navigator) {
+if ('mediaSession' in navigator) {
   navigator.mediaSession.metadata = new MediaMetadata({
     title: 'Never Gonna Give You Up',
     artist: 'Rick Astley',
     album: 'Whenever You Need Somebody',
     artwork: [
-      { src: 'https://via.placeholder.com/96',   sizes: '96x96',   type: 'image/png' },
-      { src: 'https://via.placeholder.com/128', sizes: '128x128', type: 'image/png' },
-      { src: 'https://via.placeholder.com/192', sizes: '192x192', type: 'image/png' },
-      { src: 'https://via.placeholder.com/256', sizes: '256x256', type: 'image/png' },
-      { src: 'https://via.placeholder.com/384', sizes: '384x384', type: 'image/png' },
-      { src: 'https://via.placeholder.com/512', sizes: '512x512', type: 'image/png' },
-    ]
+      {
+        src: 'https://via.placeholder.com/96',
+        sizes: '96x96',
+        type: 'image/png',
+      },
+      {
+        src: 'https://via.placeholder.com/128',
+        sizes: '128x128',
+        type: 'image/png',
+      },
+      {
+        src: 'https://via.placeholder.com/192',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: 'https://via.placeholder.com/256',
+        sizes: '256x256',
+        type: 'image/png',
+      },
+      {
+        src: 'https://via.placeholder.com/384',
+        sizes: '384x384',
+        type: 'image/png',
+      },
+      {
+        src: 'https://via.placeholder.com/512',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
   });
 
   // TODO: Update playback state.
@@ -166,18 +190,73 @@ use a `try…catch` block when setting them.
 
 ```js
 const actionHandlers = [
-  ['play',          () => { /* ... */ }],
-  ['pause',         () => { /* ... */ }],
-  ['previoustrack', () => { /* ... */ }],
-  ['nexttrack',     () => { /* ... */ }],
-  ['stop',          () => { /* ... */ }],
-  ['seekbackward',  (details) => { /* ... */ }],
-  ['seekforward',   (details) => { /* ... */ }],
-  ['seekto',        (details) => { /* ... */ }],
+  [
+    'play',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'pause',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'previoustrack',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'nexttrack',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'stop',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'seekbackward',
+    (details) => {
+      /* ... */
+    },
+  ],
+  [
+    'seekforward',
+    (details) => {
+      /* ... */
+    },
+  ],
+  [
+    'seekto',
+    (details) => {
+      /* ... */
+    },
+  ],
   /* Video conferencing actions */
-  ['togglemicrophone', () => { /* ... */ }],
-  ['togglecamera',     () => { /* ... */ }],
-  ['hangup',           () => { /* ... */ }],
+  [
+    'togglemicrophone',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'togglecamera',
+    () => {
+      /* ... */
+    },
+  ],
+  [
+    'hangup',
+    () => {
+      /* ... */
+    },
+  ],
 ];
 
 for (const [action, handler] of actionHandlers) {
@@ -349,8 +428,8 @@ position state is a combination of the media playback rate, duration, and
 current time.
 
 <figure>
-  {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS.", width="800", height="450" %}
-  <figcaption>Lock screen media controls in Chrome OS.</figcaption>
+  {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in ChromeOS.", width="800", height="450" %}
+  <figcaption>Lock screen media controls in ChromeOS.</figcaption>
 </figure>
 
 The duration must be provided and positive. The position must be positive and
@@ -501,7 +580,7 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
   [crbug.com](https://crbug.com/?q=component:Internals>Media>Session)
 
 [media hub]: https://blog.google/products/chrome/manage-audio-and-video-in-chrome/
-[chrome os]: https://www.blog.google/products/chromebooks/whats-new-december2019/
+[chromeos]: https://www.blog.google/products/chromebooks/whats-new-december2019/
 [at least 5 seconds]: https://chromium.googlesource.com/chromium/src/+/5d8eab739eb23c4fd27ba6a18b0e1afc15182321/media/base/media_content_type.cc#10
 [cache api]: /web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
 [media session samples]: https://googlechrome.github.io/samples/media-session/
