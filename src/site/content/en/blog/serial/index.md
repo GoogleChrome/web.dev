@@ -517,7 +517,7 @@ user experience.
 
 ```js
 // Voluntarily revoke access to this serial port.
-await serial.forget();
+await port.forget();
 ```
 
 As `forget()` is available in Chrome 103 or later, check if this feature is
