@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-11-18
+updated: 2022-04-21
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -505,6 +505,28 @@ const [appReadable, devReadable] = port.readable.tee();
 
 // You may want to update UI with incoming data from appReadable
 // and log incoming data in JS console for inspection from devReadable.
+```
+
+### Revoke access to a serial port {: #revoke-access }
+
+The website can clean up permissions to access a serial port it is no longer
+interested in retaining by calling `forget()` on the `SerialPort` instance. For
+example, for an educational web application used on a shared computer with many
+devices, a large number of accumulated user-generated permissions creates a poor
+user experience.
+
+```js
+// Voluntarily revoke access to this serial port.
+await port.forget();
+```
+
+As `forget()` is available in Chrome 103 or later, check if this feature is
+supported with the following:
+
+```js
+if ("serial" in navigator && "forget" in SerialPort.prototype) {
+  // forget() is supported.
+}
 ```
 
 ## Dev Tips {: #dev-tips }
