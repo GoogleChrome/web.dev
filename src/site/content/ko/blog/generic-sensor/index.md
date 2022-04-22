@@ -296,7 +296,7 @@ Generic Sensor API는 강력한 기능이므로 브라우저는 보안 컨텍스
 
 ### 권한 정책 통합
 
-Generic Sensor API의 [권한 정책 통합](https://w3c.github.io/webappsec-permissions-policy/)은 프레임의 센서 데이터에 대한 액세스를 제어합니다.
+Generic Sensor API의 [권한 정책 통합](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/)은 프레임의 센서 데이터에 대한 액세스를 제어합니다.
 
 기본적으로 `Sensor` 개체는 메인 프레임 또는 동일 출처 서브프레임 내에서만 생성될 수 있으므로 교차 출처 iframe이 승인 없이 센서 데이터를 읽는 것을 방지합니다. 이 기본 동작은 해당 [정책 제어 기능](https://w3c.github.io/webappsec-permissions-policy/#features)을 명시적으로 활성화하거나 비활성화하여 수정할 수 있습니다.
 

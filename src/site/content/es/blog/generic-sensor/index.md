@@ -295,7 +295,7 @@ Debido a que la API Generic Sensor es una característica poderosa, el navegador
 
 ### Integración de la política de permisos
 
-La [integración de la política de permisos](https://w3c.github.io/webappsec-permissions-policy/) en la API Generic Sensor controla el acceso a los datos de los sensores para una trama.
+La [integración de la política de permisos](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) en la API Generic Sensor controla el acceso a los datos de los sensores para una trama.
 
 De forma predeterminada, los objetos `Sensor` se pueden crear solo dentro de una trama principal o subtramas del mismo origen, evitando así que haya iframes de origen cruzado leyendo datos del sensor de forma no autorizada. Este comportamiento predeterminado se puede modificar habilitando o deshabilitando explícitamente las [funciones controladas por políticas](https://w3c.github.io/webappsec-permissions-policy/#features) correspondientes.
 

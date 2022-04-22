@@ -281,7 +281,7 @@ removed. Negative financial status and mental health are among the sensitive cat
 this analysis.
 
 Websites [can exclude a page from the FLoC calculation](https://github.com/WICG/floc#opting-out-of-computation)
-by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header
+by setting a [Permissions-Policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) header
 `interest-cohort=()` for that page. For pages that haven't been excluded, a page visit will be included
 in the browser's FLoC calculation if `document.interestCohort()` is used on the page. During the current
 [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561), a
@@ -324,7 +324,7 @@ for any frame that is not allowed the `interest-cohort` permission.
 
 ## Can websites opt out of being included in the FLoC computation?
 
-The `interest-cohort` permissions policy enables a site to declare that it does not want to be
+The `interest-cohort` [permissions policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) enables a site to declare that it does not want to be
 included in the user's list of sites for cohort calculation. The policy will be `allow` by default.
 The promise returned by `document.interestCohort()` will reject for any frame that is not allowed
 `interest-cohort` permission. If the main frame does not have the `interest-cohort` permission, then the
