@@ -54,36 +54,56 @@ either of:
 All types have a `name` property, so logging it is fine and will always work.
 
 ```js
+// Run feature detection.
 const supportsFileSystemAccessAPI =
   'getAsFileSystemHandle' in DataTransferItem.prototype;
 const supportsWebkitGetAsEntry =
   'webkitGetAsEntry' in DataTransferItem.prototype;
+
+// This is the drag and drop zone.
 const elem = document.querySelector('main');
+
+// Prevent navigation.
 elem.addEventListener('dragover', (e) => {
-  // Prevent navigation.
   e.preventDefault();
 });
+
+// Visually highlight the drop zone.
 elem.addEventListener('dragenter', (e) => {
   elem.style.outline = 'solid red 1px';
 });
+
+// Visually unhighlight the drop zone.
 elem.addEventListener('dragleave', (e) => {
   elem.style.outline = '';
 });
+
+// This is where the drop is handled.
 elem.addEventListener('drop', async (e) => {
+  // Prevent navigation.
   e.preventDefault();
   if (!supportsFileSystemAccessAPI && !supportsWebkitGetAsEntry) {
     // Cannot handle directories.
     return;
   }
+  // Unhighlight the drop zone.
   elem.style.outline = '';
+
+  // Prepare an array of promises…
   const fileHandlesPromises = [...e.dataTransfer.items]
+    // …by including only files (where file means actual file or directory)…
     .filter((item) => item.kind === 'file')
+    // …and, depending on previous feature detection…
     .map((item) =>
       supportsFileSystemAccessAPI
+        // …either get a modern `FileSystemHandle`…
         ? item.getAsFileSystemHandle()
+        // …or a classic `FileSystemFileEntry`.
         : item.webkitGetAsEntry(),
     );
+  // Loop over the array of promises.
   for await (const handle of fileHandlesPromises) {
+    // This is where we can actually exclusively act on the directories.
     if (handle.kind === 'directory' || handle.isDirectory) {
       console.log(`Directory: ${handle.name}`);
     }
