@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to drag and drop directories
-date: 2022-04-05
+date: 2022-04-22
 description: |
   Learn how to drag and drop directories into the browser.
 ---
@@ -91,7 +91,8 @@ elem.addEventListener('drop', async (e) => {
 
   // Prepare an array of promises…
   const fileHandlesPromises = [...e.dataTransfer.items]
-    // …by including only files (where file means actual file or directory)…
+    // …by including only files (where file misleadingly means actual file _or_
+    // directory)…
     .filter((item) => item.kind === 'file')
     // …and, depending on previous feature detection…
     .map((item) =>

@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: How to drag and drop files
-date: 2022-04-05
+date: 2022-04-22
 description: |
   Learn how to drag and drop files into the browser.
 ---
@@ -53,30 +53,50 @@ either of:
 All types have a `name` property, so logging it is fine and will always work.
 
 ```js
+// Run feature detection.
 const supportsFileSystemAccessAPI =
   'getAsFileSystemHandle' in DataTransferItem.prototype;
+
+// This is the drag and drop zone.
 const elem = document.querySelector('main');
-elem.addEventListener('dragover', (e) => {
+
   // Prevent navigation.
+elem.addEventListener('dragover', (e) => {
   e.preventDefault();
 });
+
+// Visually highlight the drop zone.
 elem.addEventListener('dragenter', (e) => {
   elem.style.outline = 'solid red 1px';
 });
+
+// Visually unhighlight the drop zone.
 elem.addEventListener('dragleave', (e) => {
   elem.style.outline = '';
 });
+
+// This is where the drop is handled.
 elem.addEventListener('drop', async (e) => {
+  // Prevent navigation.
   e.preventDefault();
+  // Unhighlight the drop zone.
   elem.style.outline = '';
+  // Prepare an array of promises…
   const fileHandlesPromises = [...e.dataTransfer.items]
+    // …by including only files (where file misleadingly means actual file _or_
+    // directory)…
     .filter((item) => item.kind === 'file')
+    // …and, depending on previous feature detection…
     .map((item) =>
       supportsFileSystemAccessAPI
+        // …either get a modern `FileSystemHandle`…
         ? item.getAsFileSystemHandle()
+        // …or a classic `File`.
         : item.getAsFile(),
     );
+  // Loop over the array of promises.
   for await (const handle of fileHandlesPromises) {
+    // This is where we can actually exclusively act on the files.
     if (handle.kind === 'file' || handle.isFile) {
       console.log(`File: ${handle.name}`);
     }
