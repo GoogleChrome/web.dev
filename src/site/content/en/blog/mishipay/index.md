@@ -159,7 +159,6 @@ function fetchVideoStream() {
       .getUserMedia(constraints)
       .then((stream) => {
         videoEle.srcObject = stream;
-        videoStream = stream;
         videoEle.play();
         // Initiate frame capture - Processing Layer.
       })
@@ -260,7 +259,7 @@ method which helps switch between the Shape Detection API and the fallback solut
 
 ```js
 // Feature detection.
-if (!('BarceodeDetector' in window)) {
+if (!('BarcodeDetector' in window)) {
   return;
 }
 // Check supported barcode formats.
