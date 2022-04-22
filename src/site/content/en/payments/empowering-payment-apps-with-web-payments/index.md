@@ -48,7 +48,7 @@ payment app:
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </video>
-  <figcaption>Checkout flow with Google Pay and Web Payments.</a>.
+  <figcaption>Checkout flow with Google Pay and Web Payments.
   </figcaption>
 </figure>
 
