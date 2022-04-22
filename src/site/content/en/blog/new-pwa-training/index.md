@@ -6,10 +6,15 @@ authors:
   - samrichard
 description: A new, six part Progressive Web App training is now available, complete with a new series of codelabs to teach you how to build reliable, installable, and capable PWAs.
 date: 2021-05-20
+updated: 2022-04-22
 tags:
   - blog
   - progressive-web-apps
 ---
+
+{% Aside %}
+The training described below is designed as material to teach to others in a workshop format. For a self-guided course check out [Learn PWA](/learn/pwa/). This course is based on the below material, but designed for individuals to work through rather than a course to teach others.
+{% endAside %}
 
 A lot has changed in the world of [Progressive Web Apps](/progressive-web-apps/) since we released our last set of PWA training over four years ago: CSS Grid achieved widespread implementation, PWAs came to desktops, and the [capabilities project](/fugu-status/) has launched more than 25 new device-integration focused APIs, opening up brand new app segments that can be built entirely on the web. Today, we're excited to share the first iteration of our newly updated PWA training to teach you how to build reliable, installable, and capable Progressive Web Apps for all devices.
 
