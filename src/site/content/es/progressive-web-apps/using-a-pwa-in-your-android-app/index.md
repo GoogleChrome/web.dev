@@ -26,7 +26,7 @@ Trusted Web Activity es un estándar abierto que permite a los navegadores ofrec
 
 Siempre ha sido posible incluir experiencias web en una aplicación de Android, utilizando tecnologías como [Android WebView](https://developer.android.com/reference/android/webkit/WebView) o frameworks como [Cordova](https://cordova.apache.org/).
 
-La limitación de Android WebView es que no está diseñado para reemplazar al navegador. Android WebView es una herramienta de desarrollo para usar la interfaz de usuario web en una aplicación de Android y no da acceso completo a las funciones de la plataforma web moderna, como el [selector de contactos](/contact-picker/) o el [sistema de archivos](/file-system-access/), [entre otras](/fugu-status/).
+La limitación de Android WebView es que no está diseñado para reemplazar al navegador. Android WebView es una herramienta de desarrollo para usar la interfaz de usuario web en una aplicación de Android y no da acceso completo a las funciones de la plataforma web moderna, como el [selector de contactos](/contact-picker/) o el [sistema de archivos](/file-system-access/), [entre otras](https://developer.chrome.com/blog/fugu-status/).
 
 Cordova fue diseñado para superar las deficiencias de WebView, pero las API se limitan al entorno de Cordova. Eso significa que necesita mantener una base de código adicional para usar las API de Cordova para su aplicación de Android, separada de su PWA en la web abierta.
 

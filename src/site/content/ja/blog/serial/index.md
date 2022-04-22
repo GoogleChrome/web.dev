@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside 'success' %}[機能プロジェクト](/fugu-status/)の一部であるWebSerial APIは、Chrome89でリリースされました。{% endAside %}
+{% Aside 'success' %}[機能プロジェクト](https://developer.chrome.com/blog/fugu-status/)の一部であるWebSerial APIは、Chrome89でリリースされました。{% endAside %}
 
 ## WebシリアルAPIとは何ですか？ {: #what }
 

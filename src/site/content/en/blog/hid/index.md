@@ -22,7 +22,7 @@ stack_overflow_tag: webhid
 ---
 
 {% Aside 'success' %}
-The WebHID API, part of the [capabilities project](/fugu-status/), launched in
+The WebHID API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched in
 Chrome&nbsp;89.
 {% endAside %}
 

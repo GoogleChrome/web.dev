@@ -25,7 +25,7 @@ tags:
 ---
 
 {% Aside 'caution' %} Declarative Link Capturing was part of the
-[capabilities project](/fugu-status/). The engineering team has decided that Declarative Link
+[capabilities project](https://developer.chrome.com/blog/fugu-status/). The engineering team has decided that Declarative Link
 Capturing will _not_ launch with its current design. Instead, the feature has been redesigned as
 described in [Control how your app is launched](/launch-handler/). If your app implements the
 Declarative Link Capturing API, you should

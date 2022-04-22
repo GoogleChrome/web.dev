@@ -18,7 +18,7 @@ feedback:
 ---
 
 {% Aside %} The Multi-Screen Window Placement API is part of the
-[capabilities project](/fugu-status/) and is currently in development. This post will be updated as
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post will be updated as
 the implementation progresses. {% endAside %}
 
 The Multi-Screen Window Placement API allows you to enumerate the displays connected to your machine

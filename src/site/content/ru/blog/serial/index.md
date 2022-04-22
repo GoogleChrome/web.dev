@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside 'success' %} Web Serial API — это часть [проекта возможностей](/fugu-status/), запущенного в Chrome 89. {% endAside %}
+{% Aside 'success' %} Web Serial API — это часть [проекта возможностей](https://developer.chrome.com/blog/fugu-status/), запущенного в Chrome 89. {% endAside %}
 
 ## Что такое Web Serial API? {: #what }
 

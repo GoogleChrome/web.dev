@@ -20,7 +20,7 @@ feedback:
 ---
 
 {% Aside 'success' %}
-The Web Serial API, part of the [capabilities project](/fugu-status/), launched
+The Web Serial API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched
 in Chrome&nbsp;89.
 {% endAside %}
 

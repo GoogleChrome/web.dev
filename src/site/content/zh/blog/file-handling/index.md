@@ -13,7 +13,7 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: 多种颜色的绑定器。
 ---
 
-{% Aside %} 文件处理 API 是[功能项目的](/fugu-status/)一部分，目前正在开发中。本博文将根据实施进展随时更新。{% endAside %}
+{% Aside %} 文件处理 API 是[功能项目的](https://developer.chrome.com/blog/fugu-status/)一部分，目前正在开发中。本博文将根据实施进展随时更新。{% endAside %}
 
 现在，Web 应用程序[能够读写文件](/file-system-access/)，下一个逻辑步骤是让开发人员将这些 Web 应用程序声明为他们的应用程序可以创建和处理的文件的文件处理程序。利用文件处理 API 即可实现。将文本编辑器应用程序注册为文件处理程序并安装后，您可以在 macOS 上右键单击 `.txt` 文件并选择“获取信息”，然后指示操作系统始终将该应用程序作为打开 `.txt` 文件的默认应用程序。
 

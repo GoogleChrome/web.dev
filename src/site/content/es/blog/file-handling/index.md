@@ -13,7 +13,7 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Carpetas de muchos colores.
 ---
 
-{% Aside %} La API para administrar archivos forma parte del [proyecto funciones](/fugu-status/) y actualmente está en desarrollo. Esta publicación se actualizará conforme avance la implementación. {% endAside %}
+{% Aside %} La API para administrar archivos forma parte del [proyecto funciones](https://developer.chrome.com/blog/fugu-status/) y actualmente está en desarrollo. Esta publicación se actualizará conforme avance la implementación. {% endAside %}
 
 Ahora que las aplicaciones web son [capaces de leer y escribir archivos](/file-system-access/), el siguiente paso lógico es permitir que los desarrolladores declaren estas mismas aplicaciones web como administradores de archivos para los archivos que sus aplicaciones pueden crear y procesar. La API de administración de archivos le permite hacer exactamente esto. Después de registrar una aplicación de editor de texto como administrador de archivos y después de instalarla, puede hacer clic con el botón derecho en un archivo `.txt` en macOS y seleccionar "Obtener información" para indicar al sistema operativo que siempre debe abrir los archivos `.txt` con esta aplicación de forma predeterminada.
 

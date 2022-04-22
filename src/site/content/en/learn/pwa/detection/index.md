@@ -16,7 +16,7 @@ You can detect if the user is using your PWA in the browser or in standalone mod
 * PWA installation status.
 * Related app installed from an app store.
 
-You can use this data for analytics, to understand your user's preferences, and to customize their experience. To capture these events, you can use tools such as media queries, events from the `window`, or using the capabilities APIs that you can find [listed here](/fugu-status/).
+You can use this data for analytics, to understand your user's preferences, and to customize their experience. To capture these events, you can use tools such as media queries, events from the `window`, or using the capabilities APIs that you can find [listed here](https://developer.chrome.com/blog/fugu-status/).
 
 ## Detecting display mode
 

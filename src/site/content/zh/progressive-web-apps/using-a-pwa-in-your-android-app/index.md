@@ -24,7 +24,7 @@ Trusted Web Activity 是一个开放标准，它允许浏览器提供一个完�
 
 一直可以在 Android 应用程序中包含 Web 体验，方法是使用 [Android WebView](https://developer.android.com/reference/android/webkit/WebView) 之类的技术或 [Cordova](https://cordova.apache.org/) 等框架。
 
-Android WebView 的局限性在于它并非是浏览器的替代。Android WebView 是用于在 Android 应用程序中使用 Web UI 的开发者工具，不提供对现代 Web 平台功能（如[联系人选取器](/contact-picker/)或[文件系统](/file-system-access/)[等](/fugu-status/)）的完整访问。
+Android WebView 的局限性在于它并非是浏览器的替代。Android WebView 是用于在 Android 应用程序中使用 Web UI 的开发者工具，不提供对现代 Web 平台功能（如[联系人选取器](/contact-picker/)或[文件系统](/file-system-access/)[等](https://developer.chrome.com/blog/fugu-status/)）的完整访问。
 
 Cordova 旨在弥补 WebView 的缺点，但 API 仅限于 Cordova 环境。这意味着需要维护一个额外的代码库才能将 Cordova API 用于 Android 应用程序，与开放 Web 上的 PWA 分离。
 

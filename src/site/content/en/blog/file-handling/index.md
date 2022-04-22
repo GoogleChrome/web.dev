@@ -15,7 +15,7 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
 
-{% Aside %} The File Handling API is part of the [capabilities project](/fugu-status/) and is
+{% Aside %} The File Handling API is part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is
 currently in development. This post will be updated as the implementation progresses. {% endAside %}
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical

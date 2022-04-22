@@ -23,7 +23,7 @@ tags:
   - capabilities
 ---
 
-{% Aside %} The Launch Handler API is part of the [capabilities project](/fugu-status/) and is
+{% Aside %} The Launch Handler API is part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is
 currently in development. This post will be updated as the implementation progresses. {% endAside %}
 
 ## What is the Launch Handler API? {: #what }
