@@ -411,7 +411,7 @@ Permissions-Policy: otp-credentials=(self "https://bank.example")
 ```
 
 See [more examples on how to specify a permission policy
-](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/).
+](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/#example-permissions-policy-setups/).
 
 {% Aside %}
 

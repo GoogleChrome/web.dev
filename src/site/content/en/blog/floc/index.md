@@ -324,7 +324,7 @@ for any frame that is not allowed the `interest-cohort` permission.
 
 ## Can websites opt out of being included in the FLoC computation?
 
-The `interest-cohort` [permissions policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) enables a site to declare that it does not want to be
+The `interest-cohort` permissions policy enables a site to declare that it does not want to be
 included in the user's list of sites for cohort calculation. The policy will be `allow` by default.
 The promise returned by `document.interestCohort()` will reject for any frame that is not allowed
 `interest-cohort` permission. If the main frame does not have the `interest-cohort` permission, then the
