@@ -163,7 +163,7 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 | 2. Create initial draft of specification | [In progress][spec]                                                                             |
 | 3. Gather feedback & iterate on design   | [Complete](#feedback).                                                                          |
 | 4. Origin trial                          | Complete                                                                                        |
-| 5. **Launch**                            | **Complete** (Chromium&nbsp;102)                                                                |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;103)                                                                |
 
 </div>
 
