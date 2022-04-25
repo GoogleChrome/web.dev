@@ -8,6 +8,7 @@ hero: image/S838B7UEsdXmwrD8q5gvNlWTHHP2/yXASsFeUg39y0K7aFJIY.jpg
 alt: A labyrinth.
 description: Learn about the latest optimizations implemented in JavaScript frameworks in collaboration with project Aurora.
 tags:
+  - aurora-project
   - blog
   # - angular
   - web-vitals

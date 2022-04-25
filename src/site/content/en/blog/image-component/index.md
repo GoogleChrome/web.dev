@@ -13,6 +13,7 @@ description: |
 hero: image/IypihH3o5cSpEMVp5i08dp69otp2/Orid6fbbep03o45XkRis.jpeg
 alt: Assembling the pieces of a puzzle
 tags:
+  - aurora-project
   - blog
 ---
 
