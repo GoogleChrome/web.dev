@@ -19,7 +19,7 @@ tags:
 
 {% Aside %}
   Tabbed application mode is part of the
-  [capabilities project](/fugu-status/) and is currently in development. This post
+  [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post
   will be updated as the implementation progresses. Tabbed application mode is an early-stage
   exploration of the Chrome team. It is not ready for production yet.
 {% endAside %}

@@ -22,7 +22,7 @@ alt: A generic game controller
 ---
 
 {% Aside 'success' %}
-The [WebHID API](/hid), part of the [capabilities project](/fugu-status/),
+The [WebHID API](/hid), part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/),
 launched in Chrome&nbsp;89.
 {% endAside %}
 

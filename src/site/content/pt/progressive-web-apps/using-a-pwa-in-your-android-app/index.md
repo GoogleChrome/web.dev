@@ -26,7 +26,7 @@ A Atividade da Web Confiável é um padrão aberto que permite aos navegadores f
 
 Sempre foi possível incluir experiências da web em um aplicativo Android, usando tecnologias como o [Android WebView](https://developer.android.com/reference/android/webkit/WebView) ou estruturas como [Cordova](https://cordova.apache.org/) .
 
-A limitação do Android WebView é que ele não pretende ser um substituto do navegador. O Android WebView é uma ferramenta de desenvolvedor para usar a interface do usuário da web em um aplicativo Android e não fornece acesso completo aos recursos da plataforma web moderna, como [seletor de contatos](/contact-picker/) ou [sistema de arquivos](/file-system-access/) , [entre outros](/fugu-status/) .
+A limitação do Android WebView é que ele não pretende ser um substituto do navegador. O Android WebView é uma ferramenta de desenvolvedor para usar a interface do usuário da web em um aplicativo Android e não fornece acesso completo aos recursos da plataforma web moderna, como [seletor de contatos](/contact-picker/) ou [sistema de arquivos](/file-system-access/) , [entre outros](https://developer.chrome.com/blog/fugu-status/) .
 
 Cordova foi projetado para aumentar as deficiências do WebView, mas as APIs são então limitadas ao ambiente Cordova. Isso significa que você precisa manter uma base de código adicional para usar as APIs do Cordova para seu aplicativo Android, separada de seu PWA na web aberta.
 

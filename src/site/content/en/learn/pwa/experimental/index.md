@@ -19,7 +19,7 @@ Filling these capabilities gaps is the key to fixing this and thereby enabling t
 ## Project Fugu
 
 This is where the capabilities project, known as [Project Fugu](https://www.chromium.org/teams/web-capabilities-fugu), comes in.
-The [capabilities project](/fugu-status/), or Project Fugu, is a cross-company effort to make it possible for web apps to have the same capabilities as platform-specific apps by exposing the capabilities of these platforms to the web, while maintaining user security, privacy, trust, and other core tenets of the web.
+The [capabilities project](https://developer.chrome.com/blog/fugu-status/), or Project Fugu, is a cross-company effort to make it possible for web apps to have the same capabilities as platform-specific apps by exposing the capabilities of these platforms to the web, while maintaining user security, privacy, trust, and other core tenets of the web.
 
 ### Track capabilities
 
@@ -83,7 +83,7 @@ Firefox offers [experimental features](https://developer.mozilla.org/docs/Mozill
 ##  Resources
 
 - [The capabilities project](https://developers.google.com/web/updates/capabilities)
-- [New capabilities status](/fugu-status/)
+- [New capabilities status](https://developer.chrome.com/blog/fugu-status/)
 - [Fugu Public Tracker](https://goo.gle/fugu-api-tracker)
 - [Getting started with Chrome origin trials](https://developer.chrome.com/blog/origin-trials/)
 - [Microsoft Edge Origin Trials Guide](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/OriginTrialsGuide/explainer.md)

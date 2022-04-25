@@ -35,7 +35,7 @@ and technically rigorous layers of presentation and features on top of the conte
 While in 2003, progressive enhancement was about using—at the time—modern
 CSS features, unobtrusive JavaScript, and even just Scalable Vector Graphics.
 Progressive enhancement in 2020 and beyond is about using
-[modern browser capabilities](/fugu-status/).
+[modern browser capabilities](https://developer.chrome.com/blog/fugu-status/).
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IEOd4MT9BqnbeXQ7z0vC.png", alt="Inclusive web design for the future with progressive enhancement. Title slide from Finck and Champeon's original presentation.", width="800", height="597" %}
@@ -111,7 +111,7 @@ For this article, I work with a simple PWA, called
 The name of this app is a tip of the hat to Project Fugu 🐡, an effort to give the web all
 the powers of Android/iOS/desktop applications.
 You can read more about the project on its
-[landing page](/fugu-status).
+[landing page](https://developer.chrome.com/blog/fugu-status).
 
 Fugu Greetings is a drawing app that lets you create virtual greeting cards, and send
 them to your loved ones. It exemplifies

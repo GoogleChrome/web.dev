@@ -23,7 +23,7 @@ feedback:
 stack_overflow_tag: webhid
 ---
 
-{% Aside 'success' %} La API WebHID, parte del [proyecto de capacidades](/fugu-status/), se lanzó en Chrome 89. {% endAside %}
+{% Aside 'success' %} La API WebHID, parte del [proyecto de capacidades](https://developer.chrome.com/blog/fugu-status/), se lanzó en Chrome 89. {% endAside %}
 
 Existe una larga lista de dispositivos de interfaz humana (HID), como teclados alternativos o controles de juego exóticos, que son demasiado nuevos, demasiado antiguos o poco comunes para que los controladores de dispositivos de los sistemas puedan acceder a ellos. La API WebHID resuelve esto dando una forma de implementar la lógica específica del dispositivo en JavaScript.
 

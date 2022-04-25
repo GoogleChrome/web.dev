@@ -484,7 +484,7 @@ La siguiente tabla muestra una descripción general compacta de todas las funcio
 
 ## Conclusión
 
-Las PWA han recorrido un largo camino desde su introducción en 2015. En el contexto del [Proyecto Fugu 🐡](/fugu-status), el equipo de Chromium entre empresas está trabajando para cerrar las brechas restantes. Si sigue solo algunos de los consejos de este artículo, puede acercarse poco a poco a esa sensación similar a la de una aplicación y hacer que sus usuarios olviden que están tratando con "solo un sitio web", porque, sinceramente, a la mayoría de ellos no le importa cómo se construye su aplicación (y por qué debería hacerlo), siempre que se sienta como una aplicación *real*.
+Las PWA han recorrido un largo camino desde su introducción en 2015. En el contexto del [Proyecto Fugu 🐡](https://developer.chrome.com/blog/fugu-status), el equipo de Chromium entre empresas está trabajando para cerrar las brechas restantes. Si sigue solo algunos de los consejos de este artículo, puede acercarse poco a poco a esa sensación similar a la de una aplicación y hacer que sus usuarios olviden que están tratando con "solo un sitio web", porque, sinceramente, a la mayoría de ellos no le importa cómo se construye su aplicación (y por qué debería hacerlo), siempre que se sienta como una aplicación *real*.
 
 ## Agradecimientos
 
