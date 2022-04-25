@@ -301,7 +301,7 @@ Permissions-Policy: otp-credentials=(self "https://bank.example")
 <iframe src="https://bank.example/…" allow="otp-credentials"></iframe>
 ```
 
-Veja [mais exemplos de como especificar uma política de permissões](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
+Veja [mais exemplos de como especificar uma política de permissões](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/).
 
 {% Aside %}
 

@@ -295,7 +295,7 @@ Como a API Generic Sensor é um recurso poderoso, ela só é permitida pelo nave
 
 ### Integração com as políticas de permissão
 
-A [integração com as políticas de permissão](https://w3c.github.io/webappsec-permissions-policy/) na API Generic Sensor controla o acesso aos dados dos sensores para um frame.
+A [integração com as políticas de permissão](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) na API Generic Sensor controla o acesso aos dados dos sensores para um frame.
 
 Por padrão, os objetos `Sensor` podem ser criados apenas dentro de um frame principal ou subframes de mesma origem, evitando que iframes de origem cruzada não autorizados leiam os dados dos sensores. Esse comportamento padrão pode ser modificado ativando ou desativando explicitamente os [recursos controlados pelas políticas](https://w3c.github.io/webappsec-permissions-policy/#features) correspondentes.
 
