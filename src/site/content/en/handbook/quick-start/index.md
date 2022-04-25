@@ -60,9 +60,9 @@ If applicable, launch translation process for this content by emailing web.dev@.
 ### Tags
 
 Tags are used to categorize articles and also to generate [web.dev/tags](/tags/) pages.
-The canonical list of tags is published in [tagsData.json](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/tagsData.json) on GitHub.
+The canonical list of tags is published in [tags.yml](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/i18n/tags.yml) on GitHub.
 
-- to add a new tag, add it first to `tagsData.json`
+- to add a new tag, add it first to `tags.yml`
 - to use an existing tag, add it to your article's `frontmatter`:
 ```bash
 tags:
