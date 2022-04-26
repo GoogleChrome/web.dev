@@ -1,15 +1,15 @@
 ---
 layout: post
-title: 'Announcing the Advanced Web Apps Fund'
+title: 'Advanced Web Apps Fund'
 authors: 
   - rkochman
 hero: image/8L1ESx211yWBm8uNAgqvUc2GwNk1/end5BHCjEhUWbdnGOfIk.png
 alt: ''
 thumbnail: image/8L1ESx211yWBm8uNAgqvUc2GwNk1/naTgz5i1Afl8X2ImXP5C.png
 subhead: >
-  Supporting those who make the web more powerful.
+  Announcing the Advanced Web Apps fund, supporting those who make the web more powerful.
 description: >
-  Supporting those who make the web more powerful.
+  Announcing the Advanced Web Apps fund, supporting those who make the web more powerful.
 date: 2022-05-31
 tags:
   - blog
@@ -18,9 +18,9 @@ tags:
   - progressive-web-apps
 ---
 
-Over the years, Chrome has been adding more capabilities to the web, such as File System Access, WebTransport, and making further investments in technologies like WebAssembly. The web is now more capable than ever, enabling developers to bring to the web highly capable applications like [Photoshop]().
+Over the years, Chrome has been adding new capabilities to the web, such as File System Access and WebTransport, and has made further investments in technologies like WebAssembly. The web is now more capable than ever, enabling developers to bring to the web highly capable applications like [Photoshop](/ps-on-the-web).
 
-Though the Chrome team has been working hard to build new capabilities, we represent only a small fraction of the work. Web app developers depend on the work of countless others in the community who have built a strong ecosystem of APIs, tools, demonstration apps, and other materials. That’s why we’re thrilled to announce today the launch of the Advanced Web Apps Fund: a new fund to support the web as a platform for advanced apps. 
+Though the Chrome team has been working hard to build new capabilities, we're responsible for only a small fraction of the work. Web app developers depend on countless others in the community who have built a strong ecosystem of APIs, tools, demonstration apps, and other materials. To help recognize the importance of this work and to enable more people to spend time on these projects, we're thrilled to announce today the launch of the Advanced Web Apps Fund: a new fund to support the web as a platform for advanced apps. 
 
 ## What kind of projects are you looking for?
 
@@ -37,4 +37,4 @@ Anyone can apply, but you need an Open Collective account. You can apply for a p
 
 To apply, create a short document describing what you’re proposing. For existing projects, you can also file a GitHub issue in your project. Then, fill out [this submission form](https://forms.gle/GnTuCvDW3YhzSnBQ8). There’s no deadline; we’ll evaluate proposals on a rolling basis. 
 
-_Image credit [#WOCinTech](https://wocintechchat.com).
+Image credit [#WOCinTech](https://wocintechchat.com).
