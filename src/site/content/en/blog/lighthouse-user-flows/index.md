@@ -70,7 +70,7 @@ async function captureReport() {
 
   await browser.close();
 
-  const report = flow.generateReport();
+  const report = await flow.generateReport();
   fs.writeFileSync('flow.report.html', report);
   open('flow.report.html', {wait: false});
 }
@@ -110,7 +110,7 @@ async function captureReport() {
 
   await browser.close();
 
-  const report = flow.generateReport();
+  const report = await flow.generateReport();
   fs.writeFileSync('flow.report.html', report);
   open('flow.report.html', {wait: false});
 }
@@ -169,7 +169,7 @@ async function captureReport() {
 
   browser.close();
 
-  const report = flow.generateReport();
+  const report = await flow.generateReport();
   fs.writeFileSync('flow.report.html', report);
   open('flow.report.html', {wait: false});
 }
@@ -231,7 +231,7 @@ async function captureReport() {
 
   await browser.close();
 
-  const report = flow.generateReport();
+  const report = await flow.generateReport();
   fs.writeFileSync('flow.report.html', report);
   open('flow.report.html', {wait: false});
 }
