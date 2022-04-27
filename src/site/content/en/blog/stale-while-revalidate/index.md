@@ -51,7 +51,7 @@ fulfill a browser's request. From the perspective of `stale-while-revalidate`,
 there's nothing to do in this scenario.
 
 But if the cached response is stale, then another age-based check is performed:
-is the age of the cached response within the window of time covered by the
+is the age of the cached response within the additional time window provided by the
 `stale-while-revalidate` setting?
 
 If the age of a stale response falls into this window, then it will be used to
