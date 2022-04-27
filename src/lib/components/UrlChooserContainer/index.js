@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {requestRunPSI, setLighthouseError} from '../../actions';
 import '../UrlChooser';

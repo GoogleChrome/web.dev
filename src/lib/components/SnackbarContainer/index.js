@@ -18,7 +18,7 @@
  * @fileoverview A Snackbar container for handling Redux state and actions.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import {setUserAcceptsCookies, checkIfUserAcceptsCookies} from '../../actions';

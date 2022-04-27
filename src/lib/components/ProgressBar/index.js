@@ -2,7 +2,7 @@
  * @fileoverview An indeterminate progress bar.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import './_styles.scss';
 
