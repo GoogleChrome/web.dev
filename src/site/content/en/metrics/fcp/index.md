@@ -41,17 +41,29 @@ Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
-<picture>
-  <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300" %}
-</picture>
-
 ### What is a good FCP score?
 
 To provide a good user experience, sites should strive to have a First
 Contentful Paint of **1.8 seconds** or less. To ensure you're hitting this
 target for most of your users, a good threshold to measure is the **75th
 percentile** of page loads, segmented across mobile and desktop devices.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg",
+        alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 ## How to measure FCP
 

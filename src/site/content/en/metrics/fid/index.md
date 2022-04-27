@@ -52,17 +52,29 @@ they click a link, tap on a button, or use a custom, JavaScript-powered control)
 to the time when the browser is actually able to begin processing event handlers
 in response to that interaction.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300" %}
-</picture>
-
 ### What is a good FID score?
 
 To provide a good user experience, sites should strive to have a First Input
 Delay of **100 milliseconds** or less. To ensure you're hitting this target for
 most of your users, a good threshold to measure is the **75th percentile** of
 page loads, segmented across mobile and desktop devices.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg",
+        alt="Good FID values are 2.5 seconds or less, poor values are greater than 4.0 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,

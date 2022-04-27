@@ -115,10 +115,22 @@ To provide a good user experience, sites should strive to have a CLS score of
 good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300" %}
-</picture>
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg",
+        alt="Good CLS values are 0.1 or less, poor values are greater than 0.25, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
