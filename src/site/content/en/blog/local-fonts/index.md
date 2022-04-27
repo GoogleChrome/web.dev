@@ -14,18 +14,17 @@ description: >
   The Local Fonts API enumerates the user's installed local fonts and provides low-level access to
   the various TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2021-07-30
+updated: 2022-04-22
 hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
   - api
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775
 ---
 
-{% Aside %} The Local Font Access API is part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities) and is currently in
-development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %}
+The Local Font Access API was part of the
+[capabilities project](https://developers.google.com/web/updates/capabilities) and is now shipped.
+{% endAside %}
 
 ## Web safe fonts
 
@@ -162,18 +161,13 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 1. Create explainer                      | [Complete][explainer]                                                                           |
 | 2. Create initial draft of specification | [In progress][spec]                                                                             |
-| 3. **Gather feedback & iterate on design**   | [**In progress**](#feedback)                                                                        |
-| 4. Origin trial                     | Complete |
-| 5. Launch                                | Not started                                                                                     |
+| 3. Gather feedback & iterate on design   | [Complete](#feedback).                                                                          |
+| 4. Origin trial                          | Complete                                                                                        |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;103)                                                                |
 
 </div>
 
 ### How to use the Local Font Access API
-
-#### Enabling via about://flags
-
-To experiment with the Local Font Access API locally, enable the `#font-access` flag in
-`about://flags`.
 
 #### Feature detection
 
@@ -366,7 +360,6 @@ us know where and how you're using it.
 - [GitHub repo][issues]
 - [TAG review][tag-review]
 - [Mozilla standards position][mozilla]
-- [Origin Trial](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)
 
 ## Acknowledgements
 
