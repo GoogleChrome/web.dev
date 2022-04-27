@@ -1,10 +1,10 @@
 ---
 layout: post
 title: State of CSS 2022
-subhead: Web styling features of today and tomorrow, as seen at Google IO 2022.
+subhead: Web styling features of today and tomorrow, as seen at Google IO 2022, plus some extras.
 authors:
   - adamargyle
-description: Web styling features of today and tomorrow, as seen at Google IO 2022.
+description: Web styling features of today and tomorrow, as seen at Google IO 2022, plus some extras.
 date: 2022-05-11
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/iOfuipzyniP6aec4cOss.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uT454OnumDCJbV0PWmvu.png
@@ -24,7 +24,7 @@ features!
 This post is the article form of the talk given at Google IO 2022. It's not
 meant to be an in-depth guide on each feature, rather an introduction and brief
 overview to pique your interest, providing breadth instead of depth. If your
-interest is piqued, check the end of the section for links to more information.
+interest is piqued, check the end of a section for resource links to more information.
 
 ### Table of contents
 
@@ -40,69 +40,120 @@ Use the list below to jump to topics of interest:
     </thead>
     <tbody>
       <tr>
-        <td>2022 Browser compatibility</td>
-        <td>@scope</td>
+        <td>
+          <a href="#browser-compatibility">2022 Browser compatibility</a>
+        </td>
+        <td>
+          <a href="#scoping-styles-is-really-hard">@scope</a>
+        </td>
       </tr>
       <tr>
-        <td>@layer</td>
-        <td>@nest</td>
+        <td>
+          <a href="#cascade-layers">@layer</a>
+        </td>
+        <td>
+          <a href="#nesting-selectors-is-so-nice">@nest</a>
+        </td>
       </tr>
       <tr>
-        <td>subgrid</td>
-        <td>@media (prefers-reduced-data)</td>
+        <td>
+          <a href="#subgrid">subgrid</a>
+        </td>
+        <td>
+          <a href="#css-can't-help-users-reduce-data">@media (prefers-reduced-data)</a>
+        </td>
       </tr>
       <tr>
-        <td>@container</td>
-        <td>@custom-media</td>
+        <td>
+          <a href="#container-queries">@container</a>
+        </td>
+        <td>
+          <a href="#no-media-query-variables">@custom-media</a>
+        </td>
       </tr>
       <tr>
-        <td>hwb()</td>
-        <td>Media query ranges</td>
+        <td>
+          <a href="#hwb()">hwb()</a>
+        </td>
+        <td>
+          <a href="#was-in-min-width-or-max-width">Media query ranges</a>
+        </td>
       </tr>
       <tr>
-        <td>lch, oklch, lab, oklab, display-p3, etc</td>
-        <td>@property</td>
+        <td>
+          <a href="#color-spaces">lch, oklch, lab, oklab, display-p3, etc</a>
+        </td>
+        <td>
+          <a href="#loosely-typed-custom-properties">@property</a>
+        </td>
       </tr>
       <tr>
-        <td>color-mix()</td>
-        <td>scroll-start</td>
+        <td>
+          <a href="#color-mix()">color-mix()</a>
+        </td>
+        <td>
+          <a href="#scroll-start">scroll-start</a>
+        </td>
       </tr>
       <tr>
-        <td>color-contrast()</td>
-        <td>:snap-target</td>
+        <td>
+          <a href="#color-contrast()">color-contrast()</a>
+        </td>
+        <td>
+          <a href="#:snap-target">:snap-target</a>
+        </td>
       </tr>
       <tr>
-        <td>Relative color syntax</td>
-        <td>snapChanging() and snapChanged()</td>
+        <td>
+          <a href="#relative-color-syntax">Relative color syntax</a>
+        </td>
+        <td>
+          <a href="#snapchanging()">snapChanging() and snapChanged()</a>
+        </td>
       </tr>
       <tr>
-        <td>Gradient color spaces</td>
-        <td>toggle()</td>
+        <td>
+          <a href="#gradient-color-spaces">Gradient color spaces</a>
+        </td>
+        <td>
+          <a href="#cycling-between-known-states">toggle()</a>
+        </td>
       </tr>
       <tr>
-        <td>accent-color</td>
-        <td>anchor()</td>
+        <td>
+          <a href="#accent-color">accent-color</a>
+        </td>
+        <td>
+          <a href="#anchoring-an-element-to-another">anchor()</a>
+        </td>
       </tr>
       <tr>
-        <td>inert</td>
-        <td>&#60;selectmenu&#62;</td>
+        <td>
+          <a href="#inert">inert</a>
+        </td>
+        <td>
+          <a href="#customizing-select-elements">&#60;selectmenu&#62;</a>
+        </td>
       </tr>
       <tr>
-        <td>Color fonts v1</td>
+        <td>
+          <a href="#colrv1-fonts">Color fonts v1</a>
+        </td>
         <td></td>
       </tr>
       <tr>
-        <td>Viewport unit variants</td>
+        <td>
+          <a href="#viewport-units">Viewport unit variants</a>
+        </td>
         <td></td>
       </tr>
       <tr>
-        <td>:has()</td>
+        <td>
+          <a href="#:has()">:has()</a>
+        </td>
         <td></td>
       </tr>
     </tbody>
-    <caption>
-      Imagemin plugins for filetypes.
-    </caption>
   </table>
 </div>
 
@@ -1365,7 +1416,7 @@ PostCSS plugin: [https://github.com/postcss/postcss-media-minmax](https://github
 
 ### No media query variables
 
-{% BrowserCompat 'css.at-rules.media.custom %}
+{% BrowserCompat 'css.at-rules.media.custom' %}
 
 Before `@custom-media`, media queries had to repeat themselves over and over, or
 rely on preprocessors to generate the proper output based on static variables
@@ -1489,7 +1540,7 @@ PostCSS plugin: [https://github.com/csstools/postcss-plugins/tree/main/plugins/p
 
 ### Scoping styles is really hard
 
-{% BrowserCompat 'css.at-rules.scope %}
+{% BrowserCompat 'css.at-rules.scope' %}
 
 Before `@scope`, many strategies existed because styles in CSS cascade, inherit,
 and are globally scoped by default. These features of CSS are very convenient
