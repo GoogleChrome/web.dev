@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseModalElement} from '../BaseModalElement';
 
 /**
