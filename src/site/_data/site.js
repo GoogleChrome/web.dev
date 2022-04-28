@@ -51,8 +51,9 @@ module.exports = {
       SIGNED_IN: 'dimension1',
       TRACKING_VERSION: 'dimension5',
       NAVIGATION_TYPE: 'dimension6',
+      COLOR_SCHEME_PREFERENCE: 'dimension7',
     },
-    version: 9,
+    version: 10,
   },
   firebase: {
     prod: {
