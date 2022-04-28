@@ -132,12 +132,11 @@ try {
 In the case where a user initiates a clipboard copy, the
 [`copy` event](https://developer.mozilla.org/docs/Web/API/Document/copy_event)
 includes a `clipboardData` property with the items already in the right format.
-
 If you want to implement your own logic, you need to call `preventDefault()` to
 prevent the default behavior in favor of your own implementation.
 Consider a page with text and an image, and when the user selects all and
 initiates a clipboard copy, your custom solution should discard text and only
-copy the image. You can achieve this as outlined in the code sample below.
+copy the image. You can achieve this as shown in the code sample below.
 What's not covered in this example is how to fall back to earlier
 APIs when the Clipboard API isn't supported. I'll cover that under
 [Feature detection](#feature-detection), later in this article.
