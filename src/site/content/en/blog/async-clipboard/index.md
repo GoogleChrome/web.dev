@@ -157,7 +157,7 @@ document.addEventListener("copy", async (e) => {
   try {
     // Prepare an array for the clipboard items.
     let clipboardItems = [];
-    const blob = await fetch("kitten.webp").then((response) => response.blob());
+    // Assume `blob` is the blob representation of `kitten.webp`.
     clipboardItems.push(
       new ClipboardItem({
         [blob.type]: blob,
