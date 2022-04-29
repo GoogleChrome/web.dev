@@ -1054,70 +1054,60 @@ used without worry.
 Here's a complete list of all the new viewport unit options made available with
 the new viewport variants:
 
-<div class="table-wrapper scrollbar">
-  <table>
-    <tbody>
-      <tr>
-        <td>
-          ```css
-          ​​.new-height-viewport-units {
-            height: 100vh;
-            height: 100dvh;
-            height: 100svh;
-            height: 100lvh;
-            block-size: 100vb;
-            block-size: 100dvb;
-            block-size: 100svb;
-            block-size: 100lvb;
-          }
-          ```
-        </td>
-        <td>
-          ```css
-          .new-width-viewport-units {
-            width: 100vw;
-            width: 100dvw;
-            width: 100svw;
-            width: 100lvw;
-            inline-size: 100vi;
-            inline-size: 100dvi;
-            inline-size: 100svi;
-            inline-size: 100lvi;
-          }
-          ```
-        </td>
-      </tr>
-      <tr>
-        <td>
-          ```css
-          .new-min-viewport-units {
-            --size: 100vmin;
-            --size: 100dvmin;
-            --size: 100svmin;
-            --size: 100lvmin;
-          }
-          ```
-        </td>
-        <td>
-          ```css
-          .new-max-viewport-units {
-            --size: 100vmax;
-            --size: 100dvmax;
-            --size: 100svmax;
-            --size: 100lvmax;
-          }
-          ```
-        </td>
-      </tr>
-      <tr>
-        <td>GIF</td>
-        <td><a href="#">imagemin-giflossy</a></td>
-      </tr>
-    </tbody>
-    <caption>
-      Imagemin plugins for filetypes.
-    </caption>
-  </table>
+<div class="switcher">
+{% Compare 'better', 'Height viewport units' %}
+```css
+​​.new-height-viewport-units {
+  height: 100vh;
+  height: 100dvh;
+  height: 100svh;
+  height: 100lvh;
+  block-size: 100vb;
+  block-size: 100dvb;
+  block-size: 100svb;
+  block-size: 100lvb;
+}
+```
+{% endCompare %}
+
+{% Compare 'better', 'Width viewport units' %}
+```css
+.new-width-viewport-units {
+  width: 100vw;
+  width: 100dvw;
+  width: 100svw;
+  width: 100lvw;
+  inline-size: 100vi;
+  inline-size: 100dvi;
+  inline-size: 100svi;
+  inline-size: 100lvi;
+}
+```
+{% endCompare %}
+</div>
+
+<div class="switcher">
+{% Compare 'better', 'Smallest viewport side units' %}
+```css
+.new-min-viewport-units {
+  --size: 100vmin;
+  --size: 100dvmin;
+  --size: 100svmin;
+  --size: 100lvmin;
+}
+```
+{% endCompare %}
+
+{% Compare 'better', 'Largest viewport side units' %}
+```css
+.new-max-viewport-units {
+  --size: 100vmax;
+  --size: 100dvmax;
+  --size: 100svmax;
+  --size: 100lvmax;
+}
+```
+{% endCompare %}
 </div>
 
 Hopefully these will give developers and designers the flexibility needed to
