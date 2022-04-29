@@ -994,7 +994,7 @@ it's swapped out for a higher quality asset. With COLRv1 fonts, the emojis are
 vector and beautiful:
 
 {% Glitch {
-  id: '~colrv1-emoji-grid'
+  id: 'colrv1-emoji-grid'
 } %}
 
 Icon fonts could do some amazing things with this format, offering custom
