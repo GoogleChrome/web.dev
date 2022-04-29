@@ -63,7 +63,7 @@ Chrome 102 includes the new value `until-found` for the HTML `hidden` attribute.
 
 {% BrowserCompat 'html.global_attributes.hidden.until-found_value' %}
 
-Chrome 102 also includes the [Local Font Access API](https://web.dev/local-fonts/), which allows access to the user's locally installed fonts.
+Chrome 102 also includes the [Local Font Access API](/local-fonts/), which allows access to the user's locally installed fonts.
 
 These beta features will land in stable browsers soon.
 
