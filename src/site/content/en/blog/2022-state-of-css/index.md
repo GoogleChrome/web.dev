@@ -713,7 +713,7 @@ is built into the CSS language itself.
 
 #### Relative color syntax
 
-<!-- {% BrowserCompat 'css.types.color' %} -->
+{% BrowserCompat 'css.types.color.color' %}
 
 Before relative color syntax, to compute on color and make adjustments, the
 color channels needed to be individually placed into custom properties. This
