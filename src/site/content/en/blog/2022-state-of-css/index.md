@@ -8,7 +8,7 @@ description: Web styling features of today and tomorrow, as seen at Google IO 20
 date: 2022-05-11
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/iOfuipzyniP6aec4cOss.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uT454OnumDCJbV0PWmvu.png
-alt: Colorful lettering using a Colr Font saying State of CSS 2022
+alt: Colorful lettering using a Colr Font saying State of CSS 2022.
 tags:
   - blog
   - css
@@ -185,7 +185,7 @@ This year, browsers met together to discuss the features and priorities they
 intended to work on, uniting their efforts. They planned to deliver the
 following web features for developers:
 
-1. @layer
+1. `@layer`
 1. Color spaces and functions
 1. Containment
 1. `<dialog>`
@@ -256,7 +256,7 @@ single grid over their whole design and constantly align items within it, which
 couldn't be done in CSS.
 
 After `subgrid`, a child of a grid can adopt its parents’ columns or rows as its
-own, and align itself or children to them! 
+own, and align itself or children to them.
 
 In the following demo, the body element creates a classic grid of three columns:
 the middle column is called `main`, and the left and right columns [name their
@@ -310,7 +310,7 @@ resembles how designers were thinking about the layout.
   height="765" 
 %}
 
-In the elements panel of devtools you can see which elements are grids and
+In the elements panel of DevTools you can see which elements are grids and
 subgrids, which is very helpful for debugging or validating layout.
 
 <figure data-size="full">
@@ -321,7 +321,7 @@ subgrids, which is very helpful for debugging or validating layout.
     height="509" 
   %}
   <figcaption>
-    Screenshot from Firefox Devtools
+    Screenshot from Firefox Devtools.
   </figcaption>
 </figure>
 
@@ -558,7 +558,7 @@ lighter or darker colors for hover styles. Here's what that looks like with
 }
 ```
 
-and if you wanted to mix those colors in a different color space, like srgb,
+To mix those colors in a different color space, like srgb,
 change it:
 
 ```css
@@ -1704,7 +1704,7 @@ Smashing Magazine: [https://www.smashingmagazine.com/2021/12/core-web-vitals-cas
 
 ### Scroll snap features are too limited
 
-Before these scroll snap proposals, writing your own JavaScript to manage a
+Before the following scroll snap proposals, writing your own JavaScript to manage a
 carousel, slider, or gallery could quickly get complex, with all the observers
 and state management. Also, if not careful, the natural scrolling speeds could
 get normalized by script, making user interaction feel a bit unnatural and
