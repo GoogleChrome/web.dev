@@ -1,9 +1,9 @@
 ---
 title: Building components
-subhead: Components are the building blocks of modern web applications. What best practices should you foll
+subhead: Components are the building blocks of modern web applications. What best practices should you follow when building your own components so they can stand the test of time?
 date: 2017-08-14
 updated: 2018-09-20
-description: Components are the building blocks of modern web applications. What best practices should you foll
+description: Components are the building blocks of modern web applications. What best practices should you follow when building your own components so they can stand the test of time?
 tags:
   - blog
 ---
