@@ -1547,6 +1547,13 @@ article {
 }
 ```
 
+{% Aside %} 
+Use the syntax today with [PostCSS](https://postcss.org/) and the
+[PostCSS
+Nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)
+plugin. 
+{% endAside %} 
+
 What's most important about nesting to me, besides not repeating `article` in
 the nested selector, is the styling context remains within one style block.
 Instead of bouncing from one selector, and its styles, to another selector with
