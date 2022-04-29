@@ -1713,9 +1713,8 @@ The preceding demo is achieved with the following CSS:
 }
 ```
 
-It's still under debate whether or not CSS grid is the best place for this
-layout method, but it's comforting to know that this is still on the radar of
-the web as a missing layout strategy.
+It's comforting to know that this is on the radar as a missing layout
+strategy.
 
 #### Resources
 
