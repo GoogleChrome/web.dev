@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2022-04-20
+updated: 2022-04-30
 tags:
   - blog
   - capabilities
@@ -15,8 +15,9 @@ hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 ---
 
-{% Aside %} The File Handling API is part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is
-currently in development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %}
+The File Handling API was part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and has now shipped.
+{% endAside %}
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
