@@ -77,7 +77,7 @@ The first two initiatives aimed at existing users, while passwordless registrati
 
 Yahoo! JAPAN offers the following alternatives to passwords.
 
-1.  [SMS authentication](https://web.dev/sms-otp-form/)
+1.  [SMS authentication](/sms-otp-form/)
 2.  [FIDO with WebAuthn](https://developers.google.com/identity/fido)
 
 In addition, we also offer authentication methods such as e-mail authentication, password combined with SMS OTP (one time password), and password combined with email OTP.
@@ -91,7 +91,7 @@ SMS authentication is a system in which a six-digit authentication code is sent 
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/h08m9uzVJg9uNzM3LE5k.jpg", width="668", height="437"
 %}
 
-iOS has long allowed the operating system to read SMS messages and suggest authentication codes from the text body. Recently, it’s become possible to use suggestions by specifying "one-time-code" in the `autocomplete` attribute of the input element. Chrome on Android, Windows, and Mac can provide the same experience using the [WebOTP API](https://developer.mozilla.org/en-US/docs/Web/API/WebOTP_API).
+iOS has long allowed the operating system to read SMS messages and suggest authentication codes from the text body. Recently, it’s become possible to use suggestions by specifying "one-time-code" in the `autocomplete` attribute of the input element. Chrome on Android, Windows, and Mac can provide the same experience using the [WebOTP API](https://developer.mozilla.org/docs/Web/API/WebOTP_API).
 
 For example:
 
@@ -129,7 +129,7 @@ if ('OTPCredential' in window) {
 
 Both approaches are designed to prevent phishing by including the domain in the SMS body and providing suggestions only for the specified domain.
 
-For more information about the We OTP API and `autocomplete="one-time-code"`, check out [SMS OTP form best practices](https://web.dev/sms-otp-form/).
+For more information about the We OTP API and `autocomplete="one-time-code"`, check out [SMS OTP form best practices](/sms-otp-form/).
 
 {% Img class="screenshot",
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/Szaf3C0hfjLNkTWAVf9B.png", width="387", height="523"
@@ -252,7 +252,7 @@ Yahoo! JAPAN is taking various steps to address these problems.
 
 The most important solution is to encourage users to set up multiple authentication methods. This provides alternative account access when devices are lost. Since FIDO keys are device-dependent, it is also good practice to register FIDO private keys on multiple devices.
 
-Alternatively, users can use the WebOTP API to pass SMS verification codes from an Android phone to Chrome on a PC. For more information, read [SMS OTP form best practices](https://web.dev/sms-otp-form/).
+Alternatively, users can use the WebOTP API to pass SMS verification codes from an Android phone to Chrome on a PC. For more information, read [SMS OTP form best practices](/sms-otp-form/).
 
 {% Aside %}
 Apple recently announced a feature called [PassKeys](https://developer.apple.com/documentation/authenticationservices/public-private_key_authentication/supporting_passkeys). This feature uses iCloud KeyChain to share the private key stored on the device among devices that are signed in with the same Apple ID, eliminating the need for registration for each device. The FIDO Alliance also recognizes the importance of account recovery issues and has published a [white paper](https://fidoalliance.org/white-paper-multiple-authenticators-for-reducing- account-recovery-needs-for-fido-enabled-consumer-accounts/).
@@ -296,7 +296,7 @@ Since FIDO is so easy to set up, it has a particularly high conversion rate. In 
 </div>
 </ul>
 
-FIDO has a higher success rate than SMS authentication, and faster average and median authentication times. As for passwords, some groups have short authentication times, and we suspect that this is due to the browser's [`autocomplete="current-password"`](https://web.dev/sign-in-form-best-practices /#current-password).
+FIDO has a higher success rate than SMS authentication, and faster average and median authentication times. As for passwords, some groups have short authentication times, and we suspect that this is due to the browser's [`autocomplete="current-password"`](/sign-in-form-best-practices /#current-password).
 
 {% Img
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/KhkGTZgYgmUM9pJGrg5h.png",
