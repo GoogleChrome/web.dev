@@ -84,7 +84,7 @@ In addition, we also offer authentication methods such as e-mail authentication,
 
 #### SMS authentication
 
-SMS authentication is a system in which a six-digit authentication code is sent via SMS to the registered phone number of the user who is trying to log in. When users receive the SMS, they must open the app and enter the authentication code.
+SMS authentication is a system which allows a registered user to receive a six-digit authentication code through SMS. Once the user receives the SMS, they can enter the authentication code in the app or website.
 
 {% Img
    class="screenshot",
@@ -95,7 +95,7 @@ iOS has long allowed the operating system to read SMS messages and suggest authe
 
 For example:
 
-**index.html**
+**`index.html`**
 
 ```html
 <form>
@@ -104,7 +104,7 @@ For example:
 </form>
 ```
 
-**otp-suggetion.js**
+**`otp-suggetion.js`**
 ```javascript
 if ('OTPCredential' in window) {
   const input = document.getElementById('code');
