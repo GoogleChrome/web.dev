@@ -342,7 +342,7 @@ the device among devices that are signed in with the same Apple ID,
 eliminating the need for registration for each device.
 
 The FIDO Alliance also recognizes the importance of account recovery issues
-and has published a [white paper](https://fidoalliance.org/white-paper-multiple-authenticators-for-reducing- account-recovery-needs-for-fido-enabled-consumer-accounts/).
+and has published a [white paper](https://fidoalliance.org/white-paper-multiple-authenticators-for-reducing-account-recovery-needs-for-fido-enabled-consumer-accounts/).
 {% endAside %}
 
 We believe that addressing these issues will become even more important as
