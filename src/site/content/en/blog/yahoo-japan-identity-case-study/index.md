@@ -115,14 +115,12 @@ they can enter the authentication code in the app or website.
 %}
 
 Apple has long allowed iOS to read SMS messages and suggest authentication
-codes from the text body. Recently, it’s become possible to use suggestions by
+codes from the text body. Recently, it's become possible to use suggestions by
 specifying "one-time-code" in the `autocomplete` attribute of the input
 element. Chrome on Android, Windows, and Mac can provide the same experience
 using the [WebOTP API](https://developer.mozilla.org/docs/Web/API/WebOTP_API).
 
 For example:
-
-**`index.html`**
 
 ```html
 <form>
@@ -130,8 +128,6 @@ For example:
   <button type="submit">sign in</button>
 </form>
 ```
-
-**`otp-suggetion.js`**
 
 ```javascript
 if ('OTPCredential' in window) {
@@ -282,7 +278,7 @@ up alternative authentication, disabling password authentication (therefore
 making it impossible to sign in with only a password) helps protect users from
 list-based attacks.
 
-We’ve taken the following steps to encourage users to disable their
+We've taken the following steps to encourage users to disable their
 passwords.
 
 *  Promoting alternative authentication methods when users reset their passwords.
