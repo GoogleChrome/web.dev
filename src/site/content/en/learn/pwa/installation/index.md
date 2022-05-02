@@ -76,7 +76,13 @@ After installing an app on the desktop, users can navigate to `about:apps`, righ
 
 ### iOS and iPadOS installation
 
-A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your Web App Manifest. Safari will use information to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the home screen will be a screenshot of your PWA when the user installed it.
+A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your html.
+To define the icon, include the path to your icon to your HTML `<head>` section, like this:
+
+```html
+<link rel="apple-touch-icon" href="/icons/ios.png">
+```
+ Safari will use that information to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the home screen will be a screenshot of your PWA when the user installed it.
 
 It's important to understand that PWA installation is only available if the user browses your website from Safari. Other browsers available in the App Store, such as Google Chrome, Firefox, Opera, or Microsoft Edge, cannot install a PWA on the home screen.
 
