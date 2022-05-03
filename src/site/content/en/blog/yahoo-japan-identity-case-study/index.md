@@ -11,7 +11,7 @@ authors:
   - alexandrawhite
 date: 2022-05-10
 hero: image/VbsHyyQopiec0718rMq2kTE1hke2/tqK2Tb4rUrxheagyYbDj.png
-alt:
+alt: Many identical keys.
 tags:
   - blog
   - case-study
