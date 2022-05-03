@@ -192,7 +192,7 @@ used with signed exchanges.
     **Optional**
 
     If you want to enable or disable [subresource
-    preloading](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md),
+    preloading](https://github.com/WICG/webpackage/blob/main/explainers/signed-exchange-subresource-substitution.md),
     the following `webpkgserver.toml` configuration options are relevant:
 
     *   To have `webpkgserver` insert directives for preloading stylesheet
@@ -215,7 +215,7 @@ used with signed exchanges.
         `#KeepNonSXGPreloads (default = false)` to `KeepNonSXGPreloads = true`.
         Keep in mind that enabling this option may make the SXG ineligible for
         the Google SXG cache per these
-        [requirements](https://github.com/google/webpackager/blob/master/docs/cache_requirements.md).
+        [requirements](https://github.com/google/webpackager/blob/main/docs/cache_requirements.md).
 
 4. Start `webpkgserver`.
 
@@ -372,7 +372,7 @@ used with signed exchanges.
     the SXG certificate (which are served by the `/webpkg/cert/` endpoint). The
     URL rewriting rules for each of these request types varies slightly. For
     more information, see [Running behind front end edge
-    server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
+    server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
 
     **Note:**
 
