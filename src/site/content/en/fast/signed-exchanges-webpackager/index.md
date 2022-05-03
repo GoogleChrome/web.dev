@@ -318,10 +318,10 @@ used with signed exchanges.
      [page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
      lists the CAs that offer this type of certificate.
    
-*  If you don't have a certificate but have access to automated certificate renewal using
-   ACME, then you can configure your webpkgserver to automatically retrieve
-   certificates from your CA. You can follow the directions for what goes in 
-   `webpkgserver.toml` in this [page](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#configuration).
+*  If you don't have a certificate, then you can configure your webpkgserver to
+   automatically retrieve certificates from your CA. You can follow the
+   directions for what goes in `webpkgserver.toml` in this
+   [page](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#configuration).
 
 *  Although not a requirement, it is strongly recommended that you run
    `webpkgserver` behind an edge server. If you do not use an edge server, you
