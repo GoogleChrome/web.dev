@@ -6,7 +6,8 @@ description: >
   Sharing a practical guide to variable fonts, with lots of examples.
 authors:
   - rachelandrew
-date: 2022-04-29
+date: 2022-05-06
+scheduled: true
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/SMvXC1vR6rVMFCllGHYn.jpg
 alt: The word typography.
 tags:
