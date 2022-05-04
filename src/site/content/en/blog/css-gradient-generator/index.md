@@ -3,6 +3,7 @@ title: Quickly create nice CSS gradients with the CSS Gradient Creator
 subhead: >
   This tool by Josh W Comeau makes it super simple to create nice looking gradients.
 date: 2022-05-04
+scheduled: true
 hero: image/rq1kLlxRBubsZSyX0gs2nghLSZc2/k2mYKB7AKDJdRjCbsc09.png
 alt: "A subtle orange linear gradient."
 authors: 
