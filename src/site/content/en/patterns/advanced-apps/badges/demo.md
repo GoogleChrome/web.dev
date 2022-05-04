@@ -8,7 +8,7 @@ patternId: advanced-apps/badges
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <link rel="manifest" href="https://app-badge-pwa.glitch.me/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <title>App Badge PWA</title>
     <style>
       html {
