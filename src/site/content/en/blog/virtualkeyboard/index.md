@@ -110,7 +110,7 @@ console.log('Virtual keyboard geometry:', x, y, width, height);
 ### Being informed of geometry changes
 
 Whenever the virtual keyboard appears or disappears, the `geometrychange` event is dispatched. The
-event's `target` property contains the virtualKeyboard which (as discussed above) contains the new geometry of the virtual keyboard inset as a
+event's `target` property contains the `virtualKeyboard` object which (as discussed above) contains the new geometry of the virtual keyboard inset as a
 [`DOMRect`](https://www.w3.org/TR/geometry-1/#domrect).
 
 ```js
