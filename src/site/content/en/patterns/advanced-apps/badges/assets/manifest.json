@@ -1,0 +1,19 @@
+{
+  "name": "App Badge PWA",
+  "short_name": "App Badge",
+  "start_url": "./",
+  "id": "./",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "display": "standalone"
+}
