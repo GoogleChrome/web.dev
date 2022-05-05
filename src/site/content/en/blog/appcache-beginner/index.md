@@ -1,5 +1,5 @@
 ---
-layou: post
+layout: post
 title: A beginner's guide to using the application cache
 authors:
   - ericbidelman

@@ -1,5 +1,5 @@
 ---
-layou: post
+layout: post
 title: A tale of two clocks
 subhead: Scheduling web audio with precision
 authors:

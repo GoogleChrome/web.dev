@@ -1,5 +1,5 @@
 ---
-layou: post
+layout: post
 title: High DPI Canvas
 authors:
   - paullewis

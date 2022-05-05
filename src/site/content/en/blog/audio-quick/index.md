@@ -1,5 +1,5 @@
 ---
-layou: post
+layout: post
 title: Quick guide to implementing the HTML5 audio tag
 authors:
   - ernestd

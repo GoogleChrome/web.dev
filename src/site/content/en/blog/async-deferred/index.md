@@ -1,5 +1,5 @@
 ---
-layou: post
+layout: post
 title: Asynch JS - The power of $.Deferred
 authors:
   - jeremychone
