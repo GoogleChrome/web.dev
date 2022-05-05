@@ -1,8 +1,9 @@
 ---
 layout: pattern
 title: Stories pattern
-description: Use this pattern if you'd like to show different HTML in the source viewer from what is actually rendered.
+description: Describe the stories pattern, can it <a href="#">link</a> to stuff
 date: 2022-05-05
+height: 600
 draft: true
 noindex: true
 ---
@@ -12,3 +13,6 @@ in the code pattern tabs. To achieve this, include the full HTML for the page
 in the demo.md file in the patterns directory, and ommit the layout property
 in the frontmatter. You still neeed to include the patternId in the
 frontmatter.
+
+ToDo:
+Links to videos, post, code on github and hosted demo
