@@ -238,6 +238,12 @@ chrome-dev-summit:
     ru: Последние новости и статьи о конференции Chrome Dev Summit.
     zh: 我们关于 Chrome 开发者峰会的最新资讯、动态和故事。
 
+community:
+  title:
+    en: Community
+  description:
+    en: Interviews, features, and stories, from the wider web community.
+
 content-security-policy:
   title:
     en: Content Security Policy
