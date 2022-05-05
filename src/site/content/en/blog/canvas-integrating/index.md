@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Integrating Canvas into your Web App
 date: 2011-08-05
 updated: 2013-10-29

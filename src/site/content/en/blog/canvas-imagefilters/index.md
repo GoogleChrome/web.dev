@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Image filters with canvas
 date: 2011-05-25
 authors:

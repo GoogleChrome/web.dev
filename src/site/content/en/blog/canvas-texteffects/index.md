@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Typographic effects in canvas
 date: 2011-03-01
 authors:

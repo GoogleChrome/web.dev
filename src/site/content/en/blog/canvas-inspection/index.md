@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Canvas inspection using Chrome DevTools
 date: 2013-09-16
 authors:

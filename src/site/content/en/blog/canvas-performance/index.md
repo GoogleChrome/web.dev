@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Improving HTML5 Canvas performance
 date: 2011-08-16
 updated: 2013-10-29

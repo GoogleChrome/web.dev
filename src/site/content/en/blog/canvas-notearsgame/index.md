@@ -1,4 +1,5 @@
 ---
+layout: post
 title: No tears guide to HTML5 games
 date: 2011-02-01
 authors:
