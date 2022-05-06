@@ -1,6 +1,6 @@
 ---
 layout: pattern-set
-title: Components
+title: Animation
 description: Components explored from the show
 date: 2022-05-05
 ---
