@@ -263,7 +263,7 @@ module.exports = function (config) {
   // https://github.com/11ty/eleventy/issues/379
   // We make exception for CodePattern files used as standalone scripts in demos.
   const standaloneJSCodePatterns = [
-    'advanced-apps/badges'
+    'advanced-apps/badges',
     // Add more pattern ids on as-needed basis.
   ];
   standaloneJSCodePatterns.forEach((pattern) => {
