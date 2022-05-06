@@ -1,7 +1,7 @@
 {
   "name": "App Badge PWA",
   "short_name": "App Badge",
-  "start_url": "./",
+  "start_url": "./demo/",
   "id": "./",
   "icons": [
     {
