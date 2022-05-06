@@ -1,7 +1,7 @@
 ---
 layout: pattern-set
 title: GUI Challenges patterns
-description: Patterns as found from GUI Challenges.
+description: Components and techniques for UI development.
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/PRyD1Ad1GtT6IZLqWtu1.svg
 ---
 

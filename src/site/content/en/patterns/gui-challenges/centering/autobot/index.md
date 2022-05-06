@@ -1,11 +1,9 @@
 ---
 layout: pattern
-title: Stories pattern
-description: Describe the stories pattern, can it <a href="#">link</a> to stuff
+title: Autobot
+description: todo
 date: 2022-05-05
-height: 600
-draft: true
-noindex: true
+height: 300
 ---
 
 The HTML for the demo page can differ from the code samples displayed

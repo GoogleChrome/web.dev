@@ -1,0 +1,85 @@
+---
+patternId: gui-challenges/centering
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --surface1: #101010;
+        --surface2: #3b3b3b;
+        --text1: hsl(200 20% 80%);
+
+        --pink: hsl(330 60% 71%);
+        --purple: hsl(267 90% 70%);
+        --blue: hsl(188 90% 70%);
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --surface1:#fffffe;
+          --surface2: #c6c6c6;
+          --text1: hsl(200 20% 20%);
+        }
+      }
+
+      html {
+        block-size: 100%
+      }
+
+      body {
+        min-block-size: 100%;
+        background: var(--surface1);
+        color: var(--text1);
+        font-family: system-ui;
+        display: grid;
+        place-content: center;
+      }
+
+      body,h1 {
+        background: var(--surface1)
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: lighter;
+        padding: 1ch 2ch;
+        border-radius: 1rem
+      }
+
+      article {
+        background: var(--surface2);
+        border-radius: 1rem 1rem 0 1rem;
+        color: var(--text1);
+        
+        overflow: auto;
+        resize: both;
+      }
+
+      [resize-prompt] {
+        text-align: end;
+        margin-block-start: .5ch;
+      }
+
+      [has-centering-styles] {
+        border: 2px solid hotpink;
+      }
+
+      article {
+        display: grid;
+        place-content: center;
+      }
+
+      .fluffy-center {
+        padding: 8vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <article style="inline-size: 40ch; block-size: 30ch;">
+      <h1 class="fluffy-center" has-centering-styles>Fluffy Center</h1>
+    </article>
+    <div resize-prompt>Resize ⤴</div>
+  </body>
+</html>
