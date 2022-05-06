@@ -36,7 +36,7 @@ This article explains how INP works, how to measure it, and offers suggestions f
 INP is a metric that aims to represent a page's overall _interaction latency_ by selecting one of the single longest interactions that occur when a user visits a page. For pages with less than 50 interactions in total, INP is the interaction with the worst latency. For pages with many interactions, INP is most often the 98th percentile of interaction latency.
 
 {% Aside 'important' %}
-For more information on why the longest interaction isn't selected for every page, read the ["Why not the worst interaction latency?"](/inp/#why-not-the-worst-interaction-latency) section for more details.
+For more information on why the longest interaction isn't selected for every page, read the [Why not the worst interaction latency?](/inp/#why-not-the-worst-interaction-latency) section for more details.
 {% endAside %}
 
 An _interaction_ is a set of related input events that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`, all of which may contribute to the overall interaction's _latency_.
@@ -48,7 +48,7 @@ A single interaction's latency consists of the single longest duration of any ev
 - The _presentation delay_, which is the time between when event handlers have finished executing, and when the browser presents the next frame.
 
 {% Aside 'important' %}
-For more information on exactly how INP is measured, read the ["What's in an interaction?"](/inp/#what's-in-an-interaction) section for more details.
+For more information on exactly how INP is measured, read the [What's in an interaction?](/inp/#what's-in-an-interaction) section for more details.
 {% endAside %}
 
 ## What's a "good" INP value?
