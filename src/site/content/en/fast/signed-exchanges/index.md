@@ -33,6 +33,7 @@ As its primary use case, SXG uses a cache to prefetch and serve content that has
 Google Search is an early adopter of SXG prefetching capabilities and for sites that receive a large portion of their traffic from Google Search, SXG can be an important tool for delivering faster page loads to users. Over time, we hope this impact will expand to additional referrers. 
 
 ### How it Works
+
 A site signs a request/response pair (an "HTTP exchange") in a way that makes it possible for
 the browser to verify the origin and integrity of the content independently of
 how the content was distributed. As a result, the browser can display the URL of
@@ -212,6 +213,7 @@ Implementing SXGs consists of generating the SXG corresponding to a given URL
 and then serving that SXG to requestors (usually crawlers). 
 
 ### Certificates
+
 To generate a SXG you will need a certificate that can sign SXGs, although some tools acquire these automatically. [This page](https://github.com/google/webpackager/wiki/Certificate-Authorities) lists the certificate authorities that can issue this type of certificate.
 Certificates can be obtained automatically from the Google certificate authority using any ACME client. Web Packager Server has built-in support, and sxg-rs will soon add support.
 
@@ -302,6 +304,7 @@ These libraries could be used to build your own SXG generator:
   and the more featureful Web Packager tools.
   
 ### Content negotiation
+
 Servers should serve SXG when the Accept header indicates that the q-value for application/signed-exchange is greater than or equal to the q-value for text/html. In practice, this means that an origin server will serve SXG to crawlers, but not browsers. Many of the above tools do this by default, but for other tools, the following regular expression can be used to match the Accept header of requests that should be served as SXG:
 ```http
 Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$)/
@@ -313,7 +316,8 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 SXG can deliver superior performance when used with caching or prefetching. However, for content that is loaded directly from the origin server without the benefit of these optimizations, text/html delivers better performance than SXG. Serving content as SXG allows crawlers and other intermediaries to cache SXGs for faster delivery to users.
 {% endAside %}
 
-### Linking to SXG 
+### Linking to SXG
+
 Any site can cache, serve, and prefetch SXGs of the pages that it links to, where available, using the <link> and <a> tags:
 ```html
 <a href="https://example.com/article.html.sxg">
