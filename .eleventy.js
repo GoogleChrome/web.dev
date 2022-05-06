@@ -272,6 +272,7 @@ module.exports = function (config) {
     const rewrite = {};
     rewrite[path.join(src, '*.js')] = path.join('patterns', pattern);
     rewrite[path.join(src, '*.json')] = path.join('patterns', pattern);
+    rewrite[path.join(src, '*.svg')] = path.join('patterns', pattern);
     config.addPassthroughCopy(rewrite);
   });
 
