@@ -134,10 +134,10 @@ format that allows sites to be shared in their entirety for offline consumption.
 
 ## Speeding up Page Loads with Signed Exchanges
 
-Enabling Signed Exchanges can help speed up web page performance and thereby impact your site’s Core Web Vitals, in Particular [Largest Contentful Paint (LCP)](https://web.dev/lcp/). As an early adopter, Google Search uses SXG to provide users with a faster page load experience for pages loaded from the search results page. 
+Enabling Signed Exchanges can help speed up web page performance and thereby impact your site’s Core Web Vitals, in Particular [Largest Contentful Paint (LCP)](/lcp/). As an early adopter, Google Search uses SXG to provide users with a faster page load experience for pages loaded from the search results page. 
 
 
-Google Search crawls and, caches SXGs when available,, and prefetches SXG that the user is likely to visit—for example, the page corresponding to the first search result.
+Google Search crawls and, caches SXGs when available, and prefetches SXG that the user is likely to visit—for example, the page corresponding to the first search result.
 
 SXG works best in tandem with other performance optimizations such as use of CDNs and reduction of render-blocking subresources. After implementing, follow [these recommendations](https://developer.chrome.com/blog/optimizing-lcp-using-signed-exchanges/) to maximize the LCP benefit from prefetching SXGs. In many cases, such optimization can result in nearly instant page loads coming from Google Search:
 
@@ -323,7 +323,7 @@ Any site can cache, serve, and prefetch SXGs of the pages that it links to, wher
 <a href="https://example.com/article.html.sxg">
 <link rel="prefetch" as="document" href="https://example.com/article.html.sxg">
 ```
-[This article](https://web.dev/how-to-distribute-signed-http-exchanges/) illustrates how to use nginx to distribute SXGs.
+[This article](/how-to-distribute-signed-http-exchanges/) illustrates how to use nginx to distribute SXGs.
 
 
 ## Conclusion
