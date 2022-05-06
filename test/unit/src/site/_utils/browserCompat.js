@@ -20,6 +20,6 @@ describe('browserCompat', function () {
   });
 
   it('includes an entry with dashes', function () {
-    assert.ok(data['css.properties.-moz-context-properties']);
+    assert.ok(data['css.properties.-webkit-border-before']);
   });
 });

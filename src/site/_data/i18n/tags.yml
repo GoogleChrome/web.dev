@@ -1060,6 +1060,12 @@ rendering:
     ru: Последние новости и статьи о рендеринге.
     zh: 我们关于呈现的最新资讯、动态和故事。
 
+resources:
+  title:
+    en: Resources
+  description:
+    en: Useful links shared by the people of Chrome Developer Relations.
+
 scale-on-web:
   title:
     en: Scale on web
