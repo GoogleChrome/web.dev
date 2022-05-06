@@ -19,9 +19,7 @@
   scroll-padding-inline: var(--gap);
 
   @media (prefers-reduced-motion: no-preference) {
-    & {
-      scroll-behavior: smooth;
-    }
+    scroll-behavior: smooth;
   }
 
   & > li {
@@ -59,9 +57,7 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      & {
-        transition: outline-offset .25s ease;
-      }
+      transition: outline-offset .25s ease;
     }
   }
 }
