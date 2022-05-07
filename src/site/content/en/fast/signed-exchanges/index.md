@@ -20,7 +20,7 @@ tags:
 
 Signed exchanges (SXG) are a delivery mechanism that makes it possible to authenticate the origin of a resource independently of how it was delivered. Implementing SXG can improve Largest Contentful Paint (LCP) by enabling [privacy-preserving cross-origin prefetch](#speeding-up-page-loads-with-signed-exchanges). Additionally, this decoupling advances a variety of use cases such as offline internet experiences and serving from third-party caches.
 
-This article provides a comprehensive overview of SXG: how it work, use cases, and tooling.
+This article provides a comprehensive overview of SXG: how it works, use cases, and tooling.
 
 ## Browser compatibility {: #browser-compatibility }
 
