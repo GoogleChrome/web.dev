@@ -1,5 +1,7 @@
 ---
 patternId: advanced-apps/badges
+pageScripts:
+  - https://unpkg.com/favicon-badge@2.0.0/dist/FavIconBadge.js
 ---
 
 <!DOCTYPE html>
@@ -28,21 +30,24 @@ patternId: advanced-apps/badges
         display: block;
       }
     </style>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', async () => {
-          const registration = await navigator.serviceWorker.register(
-            './sw.js',
-          );
-          console.log(
-            'Service worker registered for scope',
-            registration.scope,
-          );
-        });
-      }
-    </script>
-    <script type="module">
-      import 'https://unpkg.com/favicon-badge@2.0.0/dist/FavIconBadge.js';
+
+    {% set script_1 %}
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        const registration = await navigator.serviceWorker.register(
+          './sw.js',
+        );
+        console.log(
+          'Service worker registered for scope',
+          registration.scope,
+        );
+      });
+    }
+    {% endset %}
+    <script>{{ script_1 | minifyJs | cspHash | safe }}</script>
+
+    {% set script_2 %}
+
       const favicon = document.querySelector('favicon-badge');
       const installButton = document.querySelector('button');
       const supportsAppBadge = 'setAppBadge' in navigator;
@@ -100,7 +105,8 @@ patternId: advanced-apps/badges
           onInstall();
         });
       }
-    </script>
+    {% endset %}
+    <script type="module">{{ script_2 | minifyJs | cspHash | safe }}</script>
   </head>
   <body>
     <h1>App Badge PWA</h1>
