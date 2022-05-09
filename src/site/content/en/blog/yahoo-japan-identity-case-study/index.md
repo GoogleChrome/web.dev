@@ -109,7 +109,7 @@ six-digit authentication code through SMS. Once the user receives the SMS,
 they can enter the authentication code in the app or website.
 
 {% Img
-   class="screenshot",
+   class="screenshot", alt="",
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/h08m9uzVJg9uNzM3LE5k.jpg", width="668", height="437"
 %}
 
@@ -157,7 +157,7 @@ For more information about the We OTP API and `autocomplete="one-time-code"`,
 check out [SMS OTP form best practices](/sms-otp-form/).
 
 {% Img
-   class="screenshot",
+   class="screenshot", alt="",
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/Szaf3C0hfjLNkTWAVf9B.png", width="387", height="523"
 %}
 
@@ -244,7 +244,7 @@ option for promoting passwordless authentication.
 </div>
 
 <figure class="alignright">
-  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/iq0dODcbp3WcPUGTwHkl.png", width="520", height="497", class="screenshot" %}
+  {% Img src="image/VbsHyyQopiec0718rMq2kTE1hke2/iq0dODcbp3WcPUGTwHkl.png", width="520", height="497", class="screenshot", alt="" %}
   <figcaption>Sample Yahoo! JAPAN prompt to authenticate with FIDO.</figcaption>
 </figure>
 
