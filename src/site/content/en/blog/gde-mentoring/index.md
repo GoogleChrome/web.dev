@@ -51,7 +51,7 @@ Working with mentors who have successfully built an audience for their own chann
 
 ## Learning while teaching 
 
-From the other side of the mentor—mentee relationship, Debbie O'Brien says the *best thing about mentoring is seeing the mentees grow and succeed**: "We see in them something they can't see in themselves, we believe in them, and help guide them to achieve their goals. The funny thing is that sometimes the advice we give them is also useful for ourselves, so as mentors we end up learning a lot from the experience too." 
+From the other side of the mentor—mentee relationship, Debbie O'Brien says the best thing about mentoring is seeing the mentees grow and succeed: "We see in them something they can't see in themselves, we believe in them, and help guide them to achieve their goals. The funny thing is that sometimes the advice we give them is also useful for ourselves, so as mentors we end up learning a lot from the experience too." 
 
 <figure>
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/zY4aDIspm31q0C9vGogv.jpeg", alt="A speaker presenting remotely with a headset.", width="800", height="534" %}
