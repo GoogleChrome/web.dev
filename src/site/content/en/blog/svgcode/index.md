@@ -292,8 +292,8 @@ For more information, see [Let installed web applications be file handlers](/fil
 
 Another example of blending in with the operating system is the app's share feature. Assuming I want
 to make edits to an SVG created with SVGcode, one way to deal with this would be to save the file,
-launch the SVG editing app, and then to open the SVG file from there. A smooother flow, though, is to
-use the [Web Share API](/web-share/#sharing-files) that allows for files to be shared directly, so if
+launch the SVG editing app, and then open the SVG file from there. A smoother flow, though, is to
+use the [Web Share API](/web-share/#sharing-files), which allows for files to be shared directly. So if
 the SVG editing app is a share target, it can directly receive the file without deviation.
 
 ```js
