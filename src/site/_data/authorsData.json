@@ -1,4 +1,18 @@
 {
+  "smus": {
+    "homepage": "https://smus.com/",
+    "twitter": "borismus",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/qjz6fGVI9DfXFbR2n4KC.png"
+  },
+  "paulirish": {
+    "homepage": "https://www.paulirish.com/",
+    "twitter": "paul_irish",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/JXkQW8rjYvJENCvLs50w.png"
+  },
+  "taligarsiel": {
+    "homepage": "http://taligarsiel.com/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rru104iNkswszsRD1fW1.png"
+  },
   "sethladd": {
     "homepage": "https://sethladd.com/",
     "twitter": "sethladd",

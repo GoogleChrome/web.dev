@@ -1,3 +1,21 @@
+smus:
+  title:
+    en: Boris Smus
+  description:
+    en: Google Developer Relations
+    
+paulirish:
+  title:
+    en: Paul Irish
+  description:
+    en: Developer Relations at Google
+
+taligarsiel:
+  title:
+    en: Tali Garsiel
+  description:
+    en: Developer at Incapsula
+
 sethladd:
   title:
     en: Seth Ladd
