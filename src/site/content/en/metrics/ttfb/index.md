@@ -4,7 +4,7 @@ title: Time to First Byte (TTFB)
 authors:
   - jlwagner
 date: 2021-10-26
-updated: 2021-03-30
+updated: 2022-03-30
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -13,7 +13,6 @@ tags:
   - metrics
   - web-vitals
 ---
-
 
 {% Aside %}
 Time to First Byte (TTFB) is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. It helps identify when a web server is too slow to respond to requests. In the case of navigation requests&mdash;that is, requests for an HTML document&mdash;it precedes every other meaningful loading performance metric.
