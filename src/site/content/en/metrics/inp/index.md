@@ -259,12 +259,12 @@ See the [`onINP()`](https://github.com/GoogleChrome/web-vitals/tree/next#oninp) 
 Gathering INP metrics in the field will only work on browsers that [fully support the Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming), including its `interactionId` property.
 {% endAside %}
 
-You can also measure INP in browsers that support the Event Timing API without a library using vanilla JavaScript available in the expandable section below.
+Measuring INP on your own in JavaScript is tricky. To get the best results, it's strongly recommended that you use the `web-vitals` JavaScript library. However, if you want to get a sense of what the longest interactions may look like on your page, you can copy and paste the JavaScript snippet below in the console of your browser's developer tools and tweak as needed.
 
 {% Details %}
 
 {% DetailsSummary %}
-Snippet to measure INP in vanilla JavaScript
+JavaScript snippet for logging interaction latency to the console.
 {% endDetailsSummary %}
 
 ```js
@@ -276,17 +276,17 @@ new PerformanceObserver(list => {
     if (!entry.interactionId) continue;
 
     if (entry.duration > maxDuration) {
-      // New longest Interaction to Next Paint (duration), ouch!
+      // New longest Interaction to Next Paint (duration).
       maxDuration = entry.duration;
       console.log(`[INP] duration: ${entry.duration}, type: ${entry.name}`, entry);
     } else {
-      // Not the longest Interaction.  May still want to log it to see everything.
+      // Not the longest Interaction, but uncomment the next line if you still want to see it.
       // console.log(`[Interaction] duration: ${entry.duration}, type: ${entry.name}`, entry);
     }
   }
 }).observe({
-  type: "event",
-  durationThreshold: 16, // minimum supported by spec
+  type: 'event',
+  durationThreshold: 16, // Minimum supported by the spec.
   buffered: true
 });
 ```
