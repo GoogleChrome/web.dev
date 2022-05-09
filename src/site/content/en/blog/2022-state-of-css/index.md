@@ -185,7 +185,7 @@ This year, browsers met together to discuss the features and priorities they
 intended to work on, uniting their efforts. They planned to deliver the
 following web features for developers:
 
-1. @layer
+1. `@layer`
 1. Color spaces and functions
 1. Containment
 1. `<dialog>`
@@ -242,14 +242,10 @@ layers:
 
 #### Resources
 
-- Spec:
-  [https://www.w3.org/TR/css-cascade-5/#layering](https://www.w3.org/TR/css-cascade-5/#layering)  
-- Explainer:
-  [https://css.oddbird.net/layers/explainer/](https://css.oddbird.net/layers/explainer/)   
-- MDN:
-  [https://developer.mozilla.org/docs/Web/CSS/@layer](https://developer.mozilla.org/docs/Web/CSS/@layer)   
-- Post by [Una Kravets](https://twitter.com/Una):
-  [https://developer.chrome.com/blog/cascade-layers/](https://developer.chrome.com/blog/cascade-layers/)  
+- [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering](https://www.w3.org/TR/css-cascade-5/#layering)  
+- [Cascade layers explainer](https://css.oddbird.net/layers/explainer/](https://css.oddbird.net/layers/explainer/)   
+- [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)(https://developer.mozilla.org/docs/Web/CSS/@layer)   
+- Post by [Una Kravets](https://twitter.com/Una), [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/)  
 - Post by [Bramus](https://twitter.com/bramus): [Hello, CSS Cascade Layers](https://www.bram.us/2022/02/13/hello-css-cascade-layers/)
 
 ### Subgrid
@@ -361,7 +357,7 @@ targets, which is a small requirement for a large benefit.
 }
 ```
 
-These styles are what make the Mon, Tues, Wed, Thurs and Fri columns in the
+These styles are what make the Mon, Tues, Wed, Thurs, and Fri columns in the
 following video able to be queried by the event elements.
 
 <figure data-size="full">
@@ -548,8 +544,8 @@ but it may make some tasks easier for fans of the syntax and mental model.
   [https://www.w3.org/TR/css-color-4/#the-hwb-notation](https://www.w3.org/TR/css-color-4/#the-hwb-notation)   
 - MDN:
   [https://developer.mozilla.org/docs/Web/CSS/color_value/hwb()](https://developer.mozilla.org/docs/Web/CSS/color_value/hwb())  
-- Post by [Bramus](https://twitter.com/bramus): [hwb() – a color notation for
-  humans?](https://www.bram.us/2021/12/30/hwb-a-color-notation-for-humans/)
+- Post by [Stefan Judis](https://twitter.com/stefanjudis/): [hwb() – a color notation for
+  humans?](https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/)
 
 #### Color spaces
 
@@ -1108,7 +1104,14 @@ used without worry.
 
 {% Img 
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KtZ9bXwtzmo7hguwQOWO.png", 
-  alt="ALT_TEXT_HERE", 
+  alt="A graphic with three phones to help illustrate DVH, LVH and SVH. The DVH
+   example phone has two vertical lines, one between the bottom of the search bar 
+   and the bottom of the viewport and one between above the search bar (under the 
+   system status bar) to the bottom of the viewport; showing how DVH can be either 
+   of these two lengths. LVH is shown in the middle with one line between the 
+   bottom of the device status bar and the button of the phone viewport. The last is 
+   the SVH unit example, showing a line from the bottom of the browser search bar 
+   to the bottom of the viewport", 
   width="800", 
   height="664" 
 %}
@@ -1660,7 +1663,7 @@ To complete the story here, `@scope` also allows the establishing of where the
 style scope ends. This can't be done with any naming convention or preprocessor;
 it's special and only something CSS built-in to the browser can do. In the
 following example, `img` and `.content` styles are exclusively applied when a
-child of a `.media-block`isand a sibling or parent of `.content`:
+child of a `.media-block` is a sibling or parent of `.content`:
 
 ```css
 @scope (.media-block) to (.content) {
@@ -1713,7 +1716,7 @@ The preceding demo is achieved with the following CSS:
 }
 ```
 
-It's comforting to know that this is on the radar as a missing layout strategy.
+It's comforting to know that this is on the radar as a missing layout strategy, plus you can [try it today in Firefox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout).
 
 #### Resources
 
