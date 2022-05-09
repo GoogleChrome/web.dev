@@ -242,9 +242,9 @@ layers:
 
 #### Resources
 
-- [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering](https://www.w3.org/TR/css-cascade-5/#layering)  
-- [Cascade layers explainer](https://css.oddbird.net/layers/explainer/](https://css.oddbird.net/layers/explainer/)   
-- [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)(https://developer.mozilla.org/docs/Web/CSS/@layer)   
+- [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)  
+- [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)   
+- [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)   
 - Post by [Una Kravets](https://twitter.com/Una), [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/)  
 - Post by [Bramus](https://twitter.com/bramus): [Hello, CSS Cascade Layers](https://www.bram.us/2022/02/13/hello-css-cascade-layers/)
 
@@ -492,7 +492,8 @@ Not in 2022 though—CSS has a number of new color functions and spaces:
 - Colors that reach into the HD color capabilities of displays.
 - Color spaces that match an intent, such as perceptual uniformity.
 - Color spaces for gradients that drastically change the interpolation outcomes.
-- Color functions to help you mix and contrast, and choose which space you do the work in.
+- Color functions to help you mix and contrast, and choose which space you do
+  the work in.
 
 Before all these color features, design systems needed to precalculate proper
 contrasting colors, and ensure appropriately vibrant palettes, all while
@@ -1716,7 +1717,9 @@ The preceding demo is achieved with the following CSS:
 }
 ```
 
-It's comforting to know that this is on the radar as a missing layout strategy, plus you can [try it today in Firefox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout).
+It's comforting to know that this is on the radar as a missing layout strategy,
+plus you can [try it today in
+Firefox](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout).
 
 #### Resources
 
