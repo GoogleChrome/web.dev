@@ -411,9 +411,10 @@ authentication times, and we suspect that this is due to the browser's
 <figure class="screenshot">
 {% Img
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/KhkGTZgYgmUM9pJGrg5h.png",
-   alt="On average, FIDO takes 8 seconds to authenticate, while passwords take 21 seconds, and SMS verification takes 27.",
+   alt="Graph comparison of authentication time for passwords, SMS, and FIDO.",
    width="799", height="478"
 %}
+<figcaption>On average, FIDO takes 8 seconds to authenticate, while passwords take 21 seconds, and SMS verification takes 27.</figcaption>
 </figure>
 
 The greatest difficulty for offering passwordless accounts is not the addition
