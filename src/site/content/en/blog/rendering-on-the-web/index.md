@@ -319,7 +319,7 @@ JavaScript](/discoverable/how-search-works), but there are often
 [limitations](https://developers.google.com/search/docs/guides/rendering) worth being aware of in how they
 render. Client-side rendering can work but often not without additional testing
 and leg-work. More recently [dynamic
-rendering](/search/docs/guides/dynamic-rendering) has also become an option
+rendering](https://developers.google.com/search/docs/guides/rendering) has also become an option
 worth considering if your architecture is heavily driven by client-side
 JavaScript.
 
