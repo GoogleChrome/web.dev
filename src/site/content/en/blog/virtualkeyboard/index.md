@@ -95,29 +95,29 @@ a `geometrychange` event if the virtual keyboard previously was shown.
 navigator.virtualKeyboard.hide();
 ```
 
-### Being informed of geometry changes
-
-Whenever the virtual keyboard appears or disappears, the `geometrychange` event is dispatched. The
-event's `target` property contains the new geometry of the virtual keyboard inset as a
-[`DOMRect`](https://www.w3.org/TR/geometry-1/#domrect).
-The inset corresponds to the top, right, bottom, and/or left properties.
-
-```js
-navigator.virtualKeyboard.addEventListener('geometrychange', (event) => {
-  const { x, y, width, height } = event.target;
-  console.log('Virtual keyboard geometry changed:', x, y, width, height);
-});
-```
-
 ### Getting the current geometry
 
 You can get the current geometry of the virtual keyboard by looking at the `boundingRect` property.
 It exposes the current dimensions of the virtual keyboard as a
 [`DOMRect`](https://www.w3.org/TR/geometry-1/#domrect) object.
+The inset corresponds to the top, right, bottom, and/or left properties.
 
 ```js
 const { x, y, width, height } = navigator.virtualKeyboard.boundingRect;
 console.log('Virtual keyboard geometry:', x, y, width, height);
+```
+
+### Being informed of geometry changes
+
+Whenever the virtual keyboard appears or disappears, the `geometrychange` event is dispatched. The
+event's `target` property contains the `virtualKeyboard` object which (as discussed above) contains the new geometry of the virtual keyboard inset as a
+[`DOMRect`](https://www.w3.org/TR/geometry-1/#domrect).
+
+```js
+navigator.virtualKeyboard.addEventListener('geometrychange', (event) => {
+  const { x, y, width, height } = event.target.boundingRect;
+  console.log('Virtual keyboard geometry changed:', x, y, width, height);
+});
 ```
 
 ### The CSS environment variables
