@@ -113,10 +113,12 @@ SMS authentication is a system which allows a registered user to receive a
 six-digit authentication code through SMS. Once the user receives the SMS,
 they can enter the authentication code in the app or website.
 
+<figure class="screenshot">
 {% Img
-   class="screenshot", alt="",
+   alt="",
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/h08m9uzVJg9uNzM3LE5k.jpg", width="668", height="437"
 %}
+</figure>
 
 Apple has long allowed iOS to read SMS messages and suggest authentication
 codes from the text body. Recently, it's become possible to use suggestions by
@@ -161,10 +163,12 @@ the SMS body and providing suggestions only for the specified domain.
 For more information about the We OTP API and `autocomplete="one-time-code"`,
 check out [SMS OTP form best practices](/sms-otp-form/).
 
+<figure class="screenshot">
 {% Img
-   class="screenshot", alt="",
+   alt="",
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/Szaf3C0hfjLNkTWAVf9B.png", width="387", height="523"
 %}
+</figure>
 
 #### FIDO with WebAuthn
 
@@ -184,12 +188,13 @@ or similar location. A service provider that uses FIDO is called an RP
 (relying party). 
 
 <figure>
-   {% Img class="screenshot", src="image/VbsHyyQopiec0718rMq2kTE1hke2/PkFYWnOZABjPu7Zc7rXN.png", alt="", width="800", height="400" %}
-<figcaption>
-Once the user performs the authentication (commonly with a biometric scan or PIN), the authenticator uses a private key to send a signed verification signal to the browser, which then shares that signal with the RP's website. The RP website then sends the signed verification signal to the RP's server, which verifies the signature against the public key to complete the authentication.
+   {% Img
+      src="image/VbsHyyQopiec0718rMq2kTE1hke2/PkFYWnOZABjPu7Zc7rXN.png", alt="", width="800", height="400"
+   %}
+<figcaption style="text-align:left">
+<p>Once the user performs the authentication (commonly with a biometric scan or PIN), the authenticator uses a private key to send a signed verification signal to the browser. The browser then shares that signal with the RP's website.</p><p>The RP website then sends the signed verification signal to the RP's server, which verifies the signature against the public key to complete the authentication.</p>
 </figcaption>
 </figure>
-
 
 For more information, read
 [authentication guidelines from the FIDO Alliance](https://fidoalliance.org/fido-authentication/).
@@ -341,11 +346,11 @@ codes](/sms-otp-form/) from an Android phone to Chrome on a PC.
 
 {% Aside %}
 Apple recently announced the [passkeys](https://developer.apple.com/documentation/authenticationservices/public-private_key_authentication/supporting_passkeys)
-feature. This feature uses iCloud Keychain to share the private key stored on
-the device among devices that are signed in with the same Apple ID,
-eliminating the need for registration for each device.
+feature. Apple uses iCloud Keychain to share the private key (stored on
+the device) among devices that are signed in with the same Apple ID,
+which eliminates the need for registration for each device.
 
-The FIDO Alliance also recognizes the importance of account recovery issues
+The FIDO Alliance recognizes the importance of account recovery issues
 and has published a [white paper](https://fidoalliance.org/white-paper-multiple-authenticators-for-reducing-account-recovery-needs-for-fido-enabled-consumer-accounts/).
 {% endAside %}
 
@@ -357,10 +362,12 @@ passwordless authentication spreads.
 Yahoo! JAPAN has been working on these passwordless initiatives since 2015.
 This began with the acquisition of FIDO server certification in May 2015,
 followed by the introduction of SMS authentication, a password deactivation
-feature, and FIDO support for each device. Today, more than 30 million monthly
-active users have already disabled their passwords and are using non-password
-authentication methods. Yahoo! JAPAN's support for FIDO started with Chrome on
-Android, and now more than 10 million users have set up FIDO authentication.
+feature, and FIDO support for each device.
+
+Today, more than 30 million monthly active users have already disabled their
+passwords and are using non-password authentication methods. Yahoo! JAPAN's
+support for FIDO started with Chrome on Android, and now more than 10 million
+users have set up FIDO authentication.
 
 As a result of Yahoo! JAPAN's initiatives, the percentage of inquiries
 involving forgotten login IDs or passwords has decreased by 25% compared to the
@@ -401,11 +408,13 @@ median authentication times. As for passwords, some groups have short
 authentication times, and we suspect that this is due to the browser's
 [`autocomplete="current-password"`](/sign-in-form-best-practices /#current-password).
 
+<figure class="screenshot">
 {% Img
    src="image/VbsHyyQopiec0718rMq2kTE1hke2/KhkGTZgYgmUM9pJGrg5h.png",
    alt="On average, FIDO takes 8 seconds to authenticate, while passwords take 21 seconds, and SMS verification takes 27.",
    width="799", height="478"
 %}
+</figure>
 
 The greatest difficulty for offering passwordless accounts is not the addition
 of authentication methods, but ****popularizing the use of authenticators****.
