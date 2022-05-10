@@ -227,7 +227,7 @@ From now on, for a good INP score, developers will have to focus on reviewing th
 
 Aurora works with frameworks by incorporating best practices to provide baked-in solutions to common problems. We have worked with Next.js, Nuxt.js, Gatsby, and Angular on [solutions](/introducing-aurora/#what-has-our-work-unlocked-so-far) that offer strong defaults within the framework to optimize performance. Following are the highlights of our work in this context:
 
-* **React/Next.js:** The [Next.js Script component](/script-component/) helps to address issues caused due to inefficient loading of third-party scripts. [Granular chunking](/granular-chunking-nextjs/) was introduced in Next.js to allow for smaller-sized chunks for shared code. This helps to reduce the amount of unused common code that is downloaded on all pages. We are also working with Next.js to make INP data available as part of their [Analytics](https://nextjs.org/analytics) service.
+* **React and Next.js:** The [Next.js Script component](/script-component/) helps to address issues caused due to inefficient loading of third-party scripts. [Granular chunking](/granular-chunking-nextjs/) was introduced in Next.js to allow for smaller-sized chunks for shared code. This helps to reduce the amount of unused common code that is downloaded on all pages. We are also working with Next.js to make INP data available as part of their [Analytics](https://nextjs.org/analytics) service.
 
 * **Angular:** Aurora is [partnering with the Angular](https://angular.io/guide/roadmap#explore-hydration-and-server-side-rendering-usability-improvements) team to explore server-side rendering and hydration improvements. We also plan to look into refinements in event handling and change detection to improve INP.
 
