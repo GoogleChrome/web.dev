@@ -182,7 +182,7 @@ Here are some examples where the LCP resource cannot be discovered from scanning
 - The LCP element is an `<img>` that is dynamically added to the page via JavaScript.
 - The LCP element requires a CSS background image.
 
-In both of the last two cases, the browser needs to run the script or apply the stylesheet—which  usually involves waiting for network requests to finish—before it can discover the LCP resource and could start loading it. This is never optimal.
+In both of the last two cases, the browser needs to run the script or apply the stylesheet—which usually involves waiting for network requests to finish—before it can discover the LCP resource and could start loading it. This is never optimal.
 
 To eliminate unnecessary resource load delay, your LCP resource should _always_ be discoverable from the HTML source. In cases where the resource is only referenced from an external CSS or JavaScript file, then the LCP resource should be preloaded; for example:
 
