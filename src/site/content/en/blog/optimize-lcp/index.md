@@ -18,7 +18,7 @@ tags:
 
 [Largest Contentful Paint (LCP)](/lcp/) is one of the three [Core Web Vitals](/vitals/#core-web-vitals) metrics, and it represents how quickly the main content of a web page is loaded. Specifically, LCP measures the time from when the user initiates loading the page until the largest image or text block is rendered within the viewport.
 
-To provide a good user experience, sites should strive to have an LCP of 2.5 seconds or less for at least 75% of page visits.
+To provide a good user experience, **sites should strive to have an LCP of 2.5 seconds or less for at least 75% of page visits.**
 
 <figure>
   <picture>
