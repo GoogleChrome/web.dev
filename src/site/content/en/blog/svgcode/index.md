@@ -318,6 +318,13 @@ shareSVGButton.addEventListener('click', async () => {
 });
 ```
 
+<figure>
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/p3Dn9FXrNLPtb4syXnfl.mp4" %}
+  <figcaption>
+    Sharing an SVG image to Gmail.
+  </figcaption>
+</figure>
+
 ### Web Share Target (Files)
 
 The other way round, SVGcode can also act as a share target and receive files from other apps. To
@@ -367,6 +374,13 @@ self.addEventListener('fetch', (fetchEvent) => {
   }
 });
 ```
+
+<figure>
+  {% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/SVtll3ShgNigvkVLu7cn.mp4" %}
+  <figcaption>
+    Sharing a screenshot to SVGcode.
+  </figcaption>
+</figure>
 
 ## Conclusion
 
