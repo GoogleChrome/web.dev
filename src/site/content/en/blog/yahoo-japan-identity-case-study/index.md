@@ -406,7 +406,7 @@ authentication.
 FIDO has a higher success rate than SMS authentication, and faster average and
 median authentication times. As for passwords, some groups have short
 authentication times, and we suspect that this is due to the browser's
-[`autocomplete="current-password"`](/sign-in-form-best-practices /#current-password).
+[`autocomplete="current-password"`](/sign-in-form-best-practices/#current-password).
 
 <figure class="screenshot">
 {% Img
