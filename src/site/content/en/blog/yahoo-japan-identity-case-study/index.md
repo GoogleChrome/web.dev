@@ -103,8 +103,7 @@ authentication, password combined with SMS OTP (one time password), and
 password combined with email OTP.
 
 {% Aside 'important' %}
-In general, phone numbers are known to be recycled and can be hijacked with
-social engineering. Yahoo! JAPAN restricts their service to phone carriers
+Yahoo! JAPAN restricts their service to phone carriers
 operating inside Japan and prohibits VoIP SMS.
 {% endAside %}
 
