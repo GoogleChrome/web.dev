@@ -191,7 +191,7 @@ To eliminate unnecessary resource load delay, your LCP resource should _always_ 
 <link rel="stylesheet" href="/path/to/styles.css">
 
 <!-- Preload the LCP image so it starts loading with the stylesheet. -->
-<link rel="preload" as="image" href="/path/to/hero-image.webp">
+<link rel="preload" as="image" href="/path/to/hero-image.webp" type="image/webp">
 ```
 
 {% Aside 'warning' %}
