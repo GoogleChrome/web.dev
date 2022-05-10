@@ -1,0 +1,222 @@
+.gui-split-button {
+  --theme:        hsl(220 75% 50%);
+  --theme-hover:  hsl(220 75% 45%);
+  --theme-active: hsl(220 75% 40%);
+  --theme-text:   hsl(220 75% 25%);
+  --theme-border: hsl(220 50% 75%);
+  --ontheme:      hsl(220 90% 98%);
+  --popupbg:      hsl(220 0% 100%);
+
+  --border: 1px solid var(--theme-border);
+  --radius: 6px;
+  --in-speed: 500ms;
+  --out-speed: 100ms;
+
+  display: inline-flex;
+  border-radius: var(--radius);
+  background: var(--theme);
+  color: var(--ontheme);
+  fill: var(--ontheme);
+
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (--dark) {
+    --theme:        hsl(220 50% 60%);
+    --theme-hover:  hsl(220 50% 65%);
+    --theme-active: hsl(220 75% 70%);
+    --theme-text:   hsl(220 10% 85%);
+    --theme-border: hsl(220 20% 70%);
+    --ontheme:      hsl(220 90% 5%);
+    --popupbg:      hsl(220 10% 30%);
+  }
+
+  & button {
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    border: none;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 1ch;
+    white-space: nowrap;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+
+    padding-block: 1.25ch;
+    padding-inline: 2.5ch;
+
+    color: var(--ontheme);
+    outline-color: var(--theme);
+    outline-offset: -5px;
+
+    &:is(:hover, :focus-visible) {
+      background: var(--theme-hover);
+      color: var(--ontheme);
+
+      & > svg {
+        stroke: currentColor;
+        fill: none;
+      }
+    }
+
+    &:active {
+      background: var(--theme-active);
+    }
+  }
+
+  & > button {
+    border-radius: var(--radius) 0 0 var(--radius);
+
+    @supports (border-start-start-radius: 1px) {
+      border-end-start-radius: var(--radius);
+      border-start-start-radius: var(--radius);
+    }
+  }
+
+  @media (--light) {
+    & > button,
+    & button:is(:focus-visible, :hover) {
+      text-shadow: 0 1px 0 var(--theme-active);
+    }
+    & > .gui-popup-button > svg,
+    & button:is(:focus-visible, :hover) > svg {
+      filter: drop-shadow(0 1px 0 var(--theme-active));
+    }
+  }
+  
+  & svg {
+    inline-size: 2ch;
+    box-sizing: content-box;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+  }
+}
+
+.gui-popup-button {
+  inline-size: 4ch;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-inline-start: var(--border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+
+  @supports (border-start-start-radius: 1px) {
+    border-inline-start: var(--border);
+    border-start-end-radius: var(--radius);
+    border-end-end-radius: var(--radius);
+  }
+
+  &:is(:hover,:focus-within) {
+    background: var(--theme-hover);
+  }
+
+  /* fixes iOS trying to be helpful */
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background: var(--theme-active);
+  }
+  
+  &:focus-within {
+    & > svg {
+      transition-duration: var(--in-speed);
+      transform: rotateZ(.5turn);
+    }
+    & > .gui-popup {
+      transition-duration: var(--in-speed);
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  @media (--motionOK) {
+    & > svg {
+      transition: transform var(--out-speed) ease;
+    }
+    & > .gui-popup {
+      transform: translateY(5px);
+
+      transition: 
+        opacity var(--out-speed) ease,
+        transform var(--out-speed) ease;
+    }
+  }
+}
+
+.gui-popup {
+  --shadow: 220 70% 15%;
+  --shadow-strength: 1%;
+
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  inset-block-end: 80%;
+  inset-inline-start: -1.5ch;
+  
+  list-style-type: none;
+  background: var(--popupbg);
+  color: var(--theme-text);
+  padding-inline: 0;
+  padding-block: .5ch;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: .9em;
+  transition: opacity var(--out-speed) ease;
+
+  box-shadow:
+    0 -2px 5px 0 hsl(var(--shadow) / calc(var(--shadow-strength) + 5%)),
+    0 1px 1px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 10%)),
+    0 2px 2px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 12%)),
+    0 5px 5px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 13%)),
+    0 9px 9px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 14%)),
+    0 16px 16px -2px hsl(var(--shadow) / calc(var(--shadow-strength) + 20%))
+  ;
+
+  /* fixes iOS trying to be helpful */
+  &:focus {outline: none}
+
+  @media (--dark) {
+    --shadow-strength: 5%;
+    --shadow: 220 3% 2%;
+
+    & button:not(:focus-visible, :hover) {
+      text-shadow: 0 1px 0 var(--ontheme);
+    }
+
+    & button:not(:focus-visible, :hover) > svg {
+      filter: drop-shadow(0 1px 0 var(--ontheme));
+    }
+  }
+
+  @media (width <= 400px) {
+    inset-inline-start: -200%;
+  }
+
+  & svg {
+    fill: var(--popupbg);
+    stroke: var(--theme);
+
+    @media (prefers-color-scheme: dark) {
+      stroke: var(--theme-border);
+    }
+  }
+
+  & button {
+    color: var(--theme-text);
+    width: 100%;
+  }
+}
