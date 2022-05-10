@@ -267,6 +267,3 @@ else {
 }
 ```
 
-## Further Reading
-
-[HTML5Rocks](http://html5rocks.com) has many <[tutorials on offline technologies](http://www.html5rocks.com/en/tutorials#technology:offline), where you can get hands-on with code examples.
