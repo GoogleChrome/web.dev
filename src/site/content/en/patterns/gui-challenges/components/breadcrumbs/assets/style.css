@@ -1,0 +1,116 @@
+.breadcrumbs {
+  --nav-gap: 2ch;
+
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+
+  gap: var(--nav-gap);
+  padding: calc(var(--nav-gap) / 2);
+  scroll-padding-inline: calc(var(--nav-gap) / 2);
+
+  & > a:first-of-type:not(.crumb) {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--nav-gap) / 4);
+
+    @media (width <= 480px) { & > .home-label {
+      display: none;
+    }}
+  }
+
+  & a {
+    text-underline-offset: .25em;
+    outline-offset: 3px;
+
+    /* fix Safari inaccessible dark color scheme links */
+    /* https://bugs.webkit.org/show_bug.cgi?id=226893 */
+    @media (prefers-color-scheme: dark) {
+      @supports (-webkit-hyphens:none) { &[href] {
+        color: hsl(240 100% 81%);
+      }}
+    }
+  }
+
+  & > .crumb:last-of-type {
+    scroll-snap-align: end;
+  }
+
+  @supports (-webkit-hyphens:none) {
+    scroll-snap-type: none;
+  }
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--nav-gap) / 4);
+
+  & > a {
+    white-space: nowrap;
+
+    &[aria-current="page"] {
+      font-weight: bold;
+    }
+  }
+
+  &.tree-changed ~ * {
+    display: none;
+  }
+}
+
+.crumb-separator {
+  color: ButtonText;
+}
+
+.disguised-select {
+  inline-size: 100%;
+  block-size: 100%;
+  opacity: .01;
+  font-size: min(100%, 16px);
+}
+
+.crumbicon {
+  --size: 3ch;
+
+  display: grid;
+  grid: [stack] var(--size) / [stack] var(--size);
+  place-items: center;
+  border-radius: 50%;
+
+  --icon-shadow-size: 0px;
+  box-shadow: inset 0 0 0 var(--icon-shadow-size) currentColor;
+  
+  @media (--motionOK) { & {
+    transition: box-shadow .2s ease;
+  }}
+
+  @nest .crumb:is(:focus-within, :hover) > & {
+    --icon-shadow-size: 1px;
+  }
+
+  @nest .crumb > &:is(:focus-within, :hover) {
+    --icon-shadow-size: 2px;
+
+    & svg {
+      stroke-width: 2px;
+    }
+  }
+
+  & > * {
+    grid-area: stack;
+  }
+
+  & > svg {
+    max-block-size: 100%;
+    margin: calc(var(--nav-gap) / 4);
+
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1px;
+  }
+}
