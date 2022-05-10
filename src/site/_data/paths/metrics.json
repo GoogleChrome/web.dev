@@ -20,7 +20,8 @@
         "fid",
         "tti",
         "tbt",
-        "cls"
+        "cls",
+        "inp"
       ]
     },
     {
