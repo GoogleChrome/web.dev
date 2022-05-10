@@ -23,7 +23,14 @@
     {
       "title": "i18n.paths.identity.topics.strenghten_security_with_two-factor_authentication",
       "pathItems": [
-        "sms-otp-form"
+      {
+        "title": "SMS OTP form for two-step verification",
+        "url": "sms-otp-form"
+      },
+      {
+        "title": "Enable two-factor authentication with WebAuthn",
+        "url": "https://developers.google.com/codelabs/webauthn-2fa-key/"
+      }
       ]
     },
     {
@@ -31,7 +38,7 @@
       "pathItems": [
       {
         "title": "Set up a biometric re-authentication functionality with WebAuthn",
-        "url": "https://codelabs.developers.google.com/codelabs/webauthn-reauth/"
+        "url": "https://developers.google.com/codelabs/webauthn-reauth/"
       }
       ]
     },
