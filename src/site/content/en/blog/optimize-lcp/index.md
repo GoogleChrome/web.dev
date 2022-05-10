@@ -202,7 +202,7 @@ On most pages, ensuring that the LCP resource starts loading at the same time as
 
 In some cases, the LCP resource is discoverable from the HTML markup, but it _still_ doesn't start loading as early as the first resource.
 
-This can happen if the browser preload scanner's priority heuristics do not recognize that the resource is important, or if it determines that other resources are more important. It can also happen if your markup instructs the browser to delay loading, for example, if you set <code>[loading="lazy"](/browser-level-image-lazy-loading/)</code> on your image tag.
+This can happen if the browser preload scanner's priority heuristics do not recognize that the resource is important, or if it determines that other resources are more important. It can also happen if your markup instructs the browser to delay loading, for example, if you set [`loading="lazy"`](/browser-level-image-lazy-loading/) on your image tag.
 
 To avoid this problem, you can provide a hint to the browser as to which resources are most important via the <code>[fetchpriority](/priority-hints/)</code> attribute.
 
