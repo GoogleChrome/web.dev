@@ -10,13 +10,13 @@ authors:
 description: |
   This post discusses the relevance of the new INP metric to framework-based websites and Aurora's work to support frameworks in optimizing this metric.
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/EK3nTunaRZbP96S2zwM2.jpeg
-alt: Person about to touch the calm water
+alt: Person about to touch the calm water.
 tags:
   - aurora-project
   - blog
 ---
 
-Chrome recently introduced a new [experimental responsiveness metric](https://groups.google.com/a/chromium.org/g/chrome-ux-report-announce/c/F7S4_emZkcw) in the [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) report. This metric, which we now know as **[Interaction to Next Paint (INP)](/inp/),** measures overall responsiveness to user interactions on the page. Today we want to share insights on where websites built using modern JavaScript frameworks stand in relation to this metric. We want to discuss why INP is relevant to frameworks and how [Aurora](/introducing-aurora/) is helping frameworks to optimize responsiveness, irrespective of the metric used.
+Chrome recently introduced a new [experimental responsiveness metric](https://groups.google.com/a/chromium.org/g/chrome-ux-report-announce/c/F7S4_emZkcw) in the [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) report. This metric, which we now know as [Interaction to Next Paint (INP)](/inp/) measures overall responsiveness to user interactions on the page. Today we want to share insights on where websites built using modern JavaScript frameworks stand in relation to this metric. We want to discuss why INP is relevant to frameworks and how [Aurora](/introducing-aurora/) is helping frameworks to optimize responsiveness, irrespective of the metric used.
 
 
 # Background
@@ -34,7 +34,7 @@ Since many websites rely on JavaScript to provide interactivity, the INP score w
 
 Frameworks may have taken steps for better responsiveness by improving FID for websites earlier. However, they would now have to analyze the available responsiveness metric data and work towards addressing any gaps identified. In general, INP tends to be poorer than FID, and the difference in the measurement process requires additional code optimization. The following table summarizes why.
 
-<div>
+<div class="table-wrapper scrollbar">
 <table>
   <thead>
     <tr>
@@ -45,39 +45,35 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
   </thead>
   <tbody>
   <tr>
-   <td><strong>Measurement</strong>
-   </td>
+   <th>Measurement</th>
    <td>Measures the duration between the first user input and the time when the corresponding event handler runs.
    </td>
    <td>Aggregates the delay for up to the last 500 interactions in the page lifecycle, from user interaction to response paint.
    </td>
   </tr>
   <tr>
-   <td><strong>Depends on</strong>
-   </td>
+   <th>Depends on</th>
    <td>Main thread availability to run the event handler required for the first interaction. The main thread could be blocked because it is processing other resources as part of the initial page load.
    </td>
    <td>Main thread availability and size of the script executed by the event handlers for different interactions, including the first interaction.
    </td>
   </tr>
   <tr>
-   <td><strong>Primary cause for poor scores</strong>
-   </td>
+   <th>Primary cause for poor scores</th>
    <td>Poor FID is mainly caused due to <a href="https://web.dev/optimize-fid/#heavy-javascript-execution">heavy JavaScript execution</a> on the main thread.
    </td>
    <td>Heavy event-handling JavaScript for interactions can result in poor INP.
    </td>
   </tr>
   <tr>
-   <td><strong>Optimization</strong>
-   </td>
+   <th>Optimization</th>
    <td>FID can be optimized by improving resource loading on page load and optimizing JavaScript code.
    </td>
    <td>To optimize INP, optimize the JavaScript code executed after each event, including the page load event. 
    </td>
   </tr>
    </tbody>
-   <caption>FID Vs INP - Measurement and optimization</caption>
+   <caption>FID versus INP: Measurement and optimization</caption>
 </table>
 </div>
 
@@ -86,27 +82,27 @@ The [Aurora](/introducing-aurora/) team in Chrome works with open-source web fra
 
 # Experimental responsiveness metric data
 
-An INP below or equal to **200** milliseconds indicates good responsiveness. The CrUX report data and the [CWV technology report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=k-3cPh_K1xg&params=%7B%22df44%22:%22include%25EE%2580%25800%25EE%2580%2580IN%25EE%2580%2580React%25EE%2580%2580Vue.js%25EE%2580%2580Nuxt.js%25EE%2580%2580Next.js%25EE%2580%2580Preact%25EE%2580%2580Angular%25EE%2580%2580lit-element%25EE%2580%2580SvelteKit%22%7D) for April 2022 give us the following information about responsiveness for popular JavaScript frameworks.
+An INP below or equal to 200 milliseconds indicates good responsiveness. The CrUX report data and the [CWV technology report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=k-3cPh_K1xg&params=%7B%22df44%22:%22include%25EE%2580%25800%25EE%2580%2580IN%25EE%2580%2580React%25EE%2580%2580Vue.js%25EE%2580%2580Nuxt.js%25EE%2580%2580Next.js%25EE%2580%2580Preact%25EE%2580%2580Angular%25EE%2580%2580lit-element%25EE%2580%2580SvelteKit%22%7D) for April 2022 give us the following information about responsiveness for popular JavaScript frameworks.
 
-<div>
+<div class="table-wrapper scrollbar">
 <table>
 <thead>
   <tr>
-   <th rowspan="2" >Technology
+   <th rowspan="2">Technology
    </th>
-   <th colspan="2" >Mobile
+   <th colspan="2">Mobile
    </th>
-   <th colspan="2" >Desktop
+   <th colspan="2">Desktop
    </th>
   </tr>
   <tr>
-   <th>% Passing
+   <th>% passing
    </th>
-   <th># Origins
+   <th>No. of origins
    </th>
-   <th>% Passing
+   <th>% passing
    </th>
-   <th># Origins
+   <th>No. of origins
    </th>
   </tr>
 </thead>
@@ -214,15 +210,15 @@ The table shows the percentage of origins on each framework with a good responsi
 
 INP values in the field correlate well with the Total Blocking Time (TBT) observed in the lab. This could imply that any script that blocks the main thread for a long duration would be bad for INP. Heavy JavaScript execution after any interaction could block the main thread for an extended period and delay the response to that interaction. Some of the common causes that lead to blocking scripts are:
 
-* <strong>Unoptimized JavaScript:</strong> Redundant code or poor code-splitting and loading strategies can cause JavaScript bloat and block the main thread for long periods. Code-splitting, progressive loading, and [breaking up long tasks](/long-tasks-devtools/) can improve response times considerably.
+* **Unoptimized JavaScript:** Redundant code or poor code-splitting and loading strategies can cause JavaScript bloat and block the main thread for long periods. Code-splitting, progressive loading, and [breaking up long tasks](/long-tasks-devtools/) can improve response times considerably.
 
-* <strong>Third-party scripts:</strong> [Third-party scripts](/optimizing-content-efficiency-loading-third-party-javascript/), which are sometimes not required to process an interaction (for example, ad scripts), can block the main thread and cause unnecessary delays. Prioritizing essential scripts can help to reduce the negative impact of third-party scripts. 
+* **Third-party scripts:** [Third-party scripts](/optimizing-content-efficiency-loading-third-party-javascript/), which are sometimes not required to process an interaction (for example, ad scripts), can block the main thread and cause unnecessary delays. Prioritizing essential scripts can help to reduce the negative impact of third-party scripts. 
 
-* <strong>Multiple event handlers:</strong> Multiple event handlers associated with every interaction, each running a different script, could interfere with each other and add up to cause long delays. Some of these tasks may be non-essential and could be scheduled on a web worker or when the browser is idle.
+* **Multiple event handlers:** Multiple event handlers associated with every interaction, each running a different script, could interfere with each other and add up to cause long delays. Some of these tasks may be non-essential and could be scheduled on a web worker or when the browser is idle.
 
-* <strong>Framework overhead on event handling:</strong> Frameworks may have additional features/syntax for event handling. For example, Vue uses [v-on](https://v2.vuejs.org/v2/api/#v-on) to attach event listeners to elements, while Angular wraps user event handlers. Implementing these features requires additional framework code above vanilla JavaScript.
+* **Framework overhead on event handling:** Frameworks may have additional features/syntax for event handling. For example, Vue uses [v-on](https://v2.vuejs.org/v2/api/#v-on) to attach event listeners to elements, while Angular wraps user event handlers. Implementing these features requires additional framework code above vanilla JavaScript.
 
-* <strong>Rehydration code:</strong> Execution of rehydration code after repainting frames can cause delays. Generating some content statically during build time and routing to this content on events can help to render the content quickly.
+* **Rehydration code:** Execution of rehydration code after repainting frames can cause delays. Generating some content statically during build time and routing to this content on events can help to render the content quickly.
 
 From now on, for a good INP score, developers will have to focus on reviewing the code that executes after every interaction on the page and optimize their chunking, rehydration, and loading strategies for both first-party and third-party scripts,  
 
@@ -231,11 +227,11 @@ From now on, for a good INP score, developers will have to focus on reviewing th
 
 Aurora works with frameworks by incorporating best practices to provide baked-in solutions to common problems. We have worked with Next.js, Nuxt.js, Gatsby, and Angular on [solutions](/introducing-aurora/#what-has-our-work-unlocked-so-far) that offer strong defaults within the framework to optimize performance. Following are the highlights of our work in this context:
 
-* <strong>React/Next.js:</strong> The [Next.js Script component](/script-component/) helps to address issues caused due to inefficient loading of third-party scripts. [Granular chunking](/granular-chunking-nextjs/) was introduced in Next.js to allow for smaller-sized chunks for shared code. This helps to reduce the amount of unused common code that is downloaded on all pages. We are also working with Next.js to make INP data available as part of their [Analytics](https://nextjs.org/analytics) service.
+* **React/Next.js:** The [Next.js Script component](/script-component/) helps to address issues caused due to inefficient loading of third-party scripts. [Granular chunking](/granular-chunking-nextjs/) was introduced in Next.js to allow for smaller-sized chunks for shared code. This helps to reduce the amount of unused common code that is downloaded on all pages. We are also working with Next.js to make INP data available as part of their [Analytics](https://nextjs.org/analytics) service.
 
-* <strong>Angular:</strong> Aurora is [partnering with the Angular](https://angular.io/guide/roadmap#explore-hydration-and-server-side-rendering-usability-improvements) team to explore server-side rendering and hydration improvements. We also plan to look into refinements in event handling and change detection to improve INP.
+* **Angular:** Aurora is [partnering with the Angular](https://angular.io/guide/roadmap#explore-hydration-and-server-side-rendering-usability-improvements) team to explore server-side rendering and hydration improvements. We also plan to look into refinements in event handling and change detection to improve INP.
 
-* <strong>Vue/Nuxt.js:</strong> We are exploring avenues for collaboration, mainly in relation to script loading and rendering.
+* **Vue and Nuxt.js:** We are exploring avenues for collaboration, mainly in relation to script loading and rendering.
 
 Through these enhancements, Aurora can address different issues that lead to poor responsiveness and user experience, and boost the CWV metrics and the new INP metric for framework-based websites.
 
