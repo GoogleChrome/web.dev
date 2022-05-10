@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-05-11
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -184,6 +184,10 @@ recommend measuring the first input delay for a few reasons:
   the same solutions for fixing slow input delays after page load. By separating
   out these metrics we'll be able to provide more specific performance
   guidelines to web developers.
+
+{% Aside %}
+While FID is one of the Core Web Vitals, we have recognized the importance of measuring interaction latency throughout the entire page lifecycle. This has lead to ongoing work that resulting in the [Interaction to Next Paint (INP)](/inp/) metric, which is a more holistic measurement of overall page responsiveness, not just load responsiveness.
+{% endAside %}
 
 ### What counts as a first input?
 
