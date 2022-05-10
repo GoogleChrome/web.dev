@@ -44,7 +44,7 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
   </thead>
   <tbody>
   <tr>
-   <td><strong>Measurement </strong>
+   <td><strong>Measurement</strong>
    </td>
    <td>Measures the duration between the first user input and the time when the corresponding event handler runs.
    </td>
@@ -214,8 +214,8 @@ The table shows the percentage of origins on each framework with a good responsi
 INP values in the field correlate well with the Total Blocking Time (TBT) observed in the lab. This could imply that any script that blocks the main thread for a long duration would be bad for INP. Heavy JavaScript execution after any interaction could block the main thread for an extended period and delay the response to that interaction. Some of the common causes that lead to blocking scripts are:
 
 * <strong>Unoptimized JavaScript:</strong> Redundant code or poor code-splitting and loading strategies can cause JavaScript bloat and block the main thread for long periods. Code-splitting, progressive loading, and [breaking up long tasks](/long-tasks-devtools/) can improve response times considerably.
-* <strong>Third-party scripts:</strong>[Third-party scripts](/optimizing-content-efficiency-loading-third-party-javascript/), which are sometimes not required to process an interaction (for example, ad scripts), can block the main thread and cause unnecessary delays. Prioritizing essential scripts can help to reduce the negative impact of third-party scripts. 
-* <strong>Multiple event handlers:</strong>Multiple event handlers associated with every interaction, each running a different script, could interfere with each other and add up to cause long delays. Some of these tasks may be non-essential and could be scheduled on a web worker or when the browser is idle.
+* <strong>Third-party scripts:</strong> [Third-party scripts](/optimizing-content-efficiency-loading-third-party-javascript/), which are sometimes not required to process an interaction (for example, ad scripts), can block the main thread and cause unnecessary delays. Prioritizing essential scripts can help to reduce the negative impact of third-party scripts. 
+* <strong>Multiple event handlers:</strong> Multiple event handlers associated with every interaction, each running a different script, could interfere with each other and add up to cause long delays. Some of these tasks may be non-essential and could be scheduled on a web worker or when the browser is idle.
 * <strong>Framework overhead on event handling:</strong> Frameworks may have additional features/syntax for event handling. For example, Vue uses [v-on](https://v2.vuejs.org/v2/api/#v-on) to attach event listeners to elements, while Angular wraps user event handlers. Implementing these features requires additional framework code above vanilla JavaScript.
 * <strong>Rehydration code:</strong> Execution of rehydration code after repainting frames can cause delays. Generating some content statically during build time and routing to this content on events can help to render the content quickly.
 
