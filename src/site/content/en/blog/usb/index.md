@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2022-02-25
+updated: 2022-05-06
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
@@ -119,7 +119,7 @@ are simply ECMAScript 2015 [Arrow functions].
 
 You can either prompt the user to select a single connected USB device using
 `navigator.usb.requestDevice()` or call `navigator.usb.getDevices()` to get a
-list of all connected USB devices the origin has access to.
+list of all connected USB devices the website has been granted access to.
 
 The `navigator.usb.requestDevice()` function takes a mandatory JavaScript object
 that defines `filters`. These filters are used to match any USB device with the
@@ -153,6 +153,16 @@ maximum packet size, vendor, and product IDs, the number of possible
 configurations the device can have. Basically it contains all fields in the
 [device USB Descriptor].
 
+```js
+// Get all connected USB devices the website has been granted access to.
+navigator.usb.getDevices().then(devices => {
+  devices.forEach(device => {
+    console.log(device.productName);      // "Arduino Micro"
+    console.log(device.manufacturerName); // "Arduino LLC"
+  });
+})
+```
+
 By the way, if a USB device announces its [support for WebUSB], as well as
 defining a landing page URL, Chrome will show a persistent notification when the
 USB device is plugged in. Clicking this notification will open the landing page.
@@ -161,18 +171,6 @@ USB device is plugged in. Clicking this notification will open the landing page.
   {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450" %}
   <figcaption>WebUSB notification.</figcaption>
 </figure>
-
-From there, you can simply call `navigator.usb.getDevices()` and access your
-Arduino device as shown below.
-
-```js
-navigator.usb.getDevices().then(devices => {
-  devices.forEach(device => {
-    console.log(device.productName);      // "Arduino Micro"
-    console.log(device.manufacturerName); // "Arduino LLC"
-  });
-})
-```
 
 ### Talk to an Arduino USB board
 
