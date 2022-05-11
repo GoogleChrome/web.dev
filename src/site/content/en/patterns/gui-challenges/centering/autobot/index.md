@@ -1,16 +1,15 @@
 ---
 layout: pattern
 title: Autobot
-description: todo
+description: |
+  A centering technique where an element pushes equally from all edges of a flex container.
+  <br><br>
+  <a href="/centering-in-css/">Full article</a> · <a href="https://www.youtube.com/watch?v=ncYzTvEMCyE">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/centering">Source on Github</a>
 date: 2022-05-05
 height: 300
 ---
 
-The HTML for the demo page can differ from the code samples displayed
-in the code pattern tabs. To achieve this, include the full HTML for the page
-in the demo.md file in the patterns directory, and ommit the layout property
-in the frontmatter. You still neeed to include the patternId in the
-frontmatter.
+A centering technique where an element pushes equally from all edges of a flex
+container.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/centering-in-css/">Full article</a> · <a href="https://www.youtube.com/watch?v=ncYzTvEMCyE">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/centering">Source on Github</a>
