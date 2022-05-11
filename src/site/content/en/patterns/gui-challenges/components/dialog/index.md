@@ -1,14 +1,15 @@
 ---
 layout: pattern
 title: Dialog
-description: Describe the settings pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to create color-adaptive, responsive, and accessible mini and mega modals with the dialog element.
+  <br><br>
+  <a href="/building-a-dialog-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=GDzzIlRhEzM">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/dialog">Source on Github</a>
 date: 2022-05-05
 height: 600
-draft: true
-noindex: true
 ---
 
-This is the blog post detail page.
+This pattern shows how to create color-adaptive, responsive, and accessible mini
+and mega modals with the `<dialog>` element.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/building-a-dialog-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=GDzzIlRhEzM">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/dialog">Source on Github</a>

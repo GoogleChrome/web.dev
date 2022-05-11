@@ -1,14 +1,14 @@
 ---
 layout: pattern
 title: Game Menu
-description: Describe the settings pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to create a mouse and keyboard accessible 3D game menu.
+  <br><br>
+  <a href="https://web.dev/building-a-3d-game-menu-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=HCsV8u-KYUw">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/game-menu">Source on Github</a>
 date: 2022-05-05
 height: 600
-draft: true
-noindex: true
 ---
 
-This is the blog post detail page.
+This pattern shows how to create a mouse and keyboard accessible 3D game menu.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="https://web.dev/building-a-3d-game-menu-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=HCsV8u-KYUw">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/game-menu">Source on Github</a>

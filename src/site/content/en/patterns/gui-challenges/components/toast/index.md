@@ -1,14 +1,14 @@
 ---
 layout: pattern
 title: Toast
-description: Describe the settings pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to build an adaptive and accessible toast component.
+  <br><br>
+  <a href="/building-a-toast-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=R75ZVW4LW5o">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/toast">Source on Github</a>
 date: 2022-05-05
 height: 600
-draft: true
-noindex: true
 ---
 
-This is the blog post detail page.
+This pattern shows how to build an adaptive and accessible toast component.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/building-a-toast-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=R75ZVW4LW5o">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/toast">Source on Github</a>

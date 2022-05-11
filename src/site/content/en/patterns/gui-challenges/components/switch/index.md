@@ -1,14 +1,14 @@
 ---
 layout: pattern
 title: Switch
-description: Describe the settings pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to create a responsive, adaptive and accessible switch component.
+  <br><br>
+  <a href="/building-a-switch-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=_KqccADghcA">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/switch">Source on Github</a>
 date: 2022-05-05
 height: 600
-draft: true
-noindex: true
 ---
 
-This is the blog post detail page.
+This pattern shows how to create a responsive, adaptive and accessible switch component.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/building-a-switch-component/">Full article</a> · <a href="https://www.youtube.com/watch?v=_KqccADghcA">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/switch">Source on Github</a>

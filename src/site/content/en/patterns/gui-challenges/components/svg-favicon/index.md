@@ -1,14 +1,15 @@
 ---
 layout: pattern
 title: SVG Favicon
-description: Describe the settings pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to build an adaptive favicon with SVG.
+  <br><br>
+  <a href="/building-an-adaptive-favicon/">Full article</a> · <a href="https://www.youtube.com/watch?v=4pJahmCR8kQ">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/svg-favicon">Source on Github</a>
 date: 2022-05-05
 height: 600
-draft: true
-noindex: true
 ---
 
-This is the blog post detail page.
+This pattern shows how to build a dark and light theme adaptive favicon with
+SVG.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/building-an-adaptive-favicon/">Full article</a> · <a href="https://www.youtube.com/watch?v=4pJahmCR8kQ">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/svg-favicon">Source on Github</a>

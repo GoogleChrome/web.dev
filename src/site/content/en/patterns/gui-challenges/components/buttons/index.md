@@ -1,14 +1,14 @@
 ---
 layout: pattern
 title: Buttons
-description: Describe the settings pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to style the different buttons types of the web.
+  <br><br>
+  <a href="/building-a-button-component/">Full article</a> · <a href="#">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/buttons">Source on Github</a>
 date: 2022-05-05
 height: 600
-draft: true
-noindex: true
 ---
 
-This is the blog post detail page.
+This pattern shows how to style the different buttons types of the web.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/building-a-button-component/">Full article</a> · <a href="#">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/buttons">Source on Github</a>
