@@ -206,7 +206,7 @@ try {
 
 #### Enumerating local fonts
 
-Once the permission has been granted, you can then call `self.queryLocalFonts`
+Once the permission has been granted, you can then call `self.queryLocalFonts()`
 to ask the browser for the locally installed fonts, which it
 will display in a picker for the user to select all or a subset from to be shared with the page.
 This results in an array that you can loop over. Each font is represented as a `FontData` object
