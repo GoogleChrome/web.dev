@@ -269,7 +269,14 @@ module.exports = function (config) {
   for (const patternId in patterns) {
     const pattern = patterns[patternId];
     if (pattern.static?.length) {
-      const src = path.join('src','site','content','en','patterns', pattern.id);
+      const src = path.join(
+        'src',
+        'site',
+        'content',
+        'en',
+        'patterns',
+        pattern.id,
+      );
       const rewrite = {};
       pattern.static.forEach((staticFile) => {
         rewrite[path.join(src, staticFile)] = path.join(
