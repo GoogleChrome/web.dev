@@ -268,8 +268,8 @@ module.exports = function (config) {
   // We make exception for CodePattern files used as standalone scripts in demos.
   for (const patternId in patterns) {
     const pattern = patterns[patternId];
-    if (pattern.static && pattern.static.length) {
-      const src = path.join('src/site/content/en/patterns/', pattern.id);
+    if (pattern.static?.length) {
+      const src = path.join('src','site','content','en','patterns', pattern.id);
       const rewrite = {};
       pattern.static.forEach((staticFile) => {
         rewrite[path.join(src, staticFile)] = path.join(
