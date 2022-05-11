@@ -41,7 +41,7 @@ Most features will be prototyped in one browser. For example, the grid layout sp
 
 While one browser may take the lead on prototyping, representatives of all browsers (and other organizations) in the CSS Working Group discuss CSS features. It’s very important that a feature can be implemented in all browsers, and that it isn’t designed in such a way as to make it impossible to implement in one browser. That would lead to a permanent gap in support, and lack of adoption of the feature.
 
-When it comes to implementing a feature however, it needs to be prioritized alongside all the other possible features for that browser. And, sometimes things are held up behind other work that needs to be done to make the browser better. A great example of this is the RenderingNG work in Chromium. This has paved the way for the implementation of subgrid; however, the long gap between Firefox and Chromium shipping subgrid is due to the need for grid layout to be reimplemented in the new rendering engine first.
+When it comes to implementing a feature however, it needs to be prioritized alongside all the other possible features for that browser. And, sometimes things are held up behind other work that needs to be done to make the browser better. A great example of this is the [RenderingNG](https://developer.chrome.com/blog/renderingng/) work in Chromium. This has paved the way for the implementation of subgrid; however, the long gap between Firefox and Chromium shipping subgrid is due to the need for grid layout to be reimplemented in the new rendering engine first.
 
 ## The problems
 
@@ -70,7 +70,7 @@ We’re working to focus our content on this site on those things that you can s
 
 We also contribute to open web documentation through our support of the [Open Web Docs](https://opencollective.com/open-web-docs) project. This ensures we have first-class documentation on [MDN](https://developer.mozilla.org/), along with up-to-date [browser compatibility data](https://github.com/mdn/browser-compat-data). We then use this data here on web.dev to show support for features. Here’s the current support of `gap` in flex layout.
 
-{% BrowserCompat 'css.properties.gap' %}
+{% BrowserCompat 'css.properties.gap.flex_context' %}
 
 If you want to know more about Chrome’s vision for the web, the things we are experimenting with in Origin and Developer trials, then you’ll increasingly find that content on our sister site—[developer.chrome.com](https://developer.chrome.com/). The content there may well be experimental, or only supported in Chrome right now, but we’d love you to explore it and offer feedback.
 
