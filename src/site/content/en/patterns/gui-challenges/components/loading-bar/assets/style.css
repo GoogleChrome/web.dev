@@ -1,0 +1,97 @@
+progress {
+  --_track: hsl(228 100% 90%);
+  --_track-size: min(10px, 1ex);
+  --_progress: hsl(228 100% 50%);
+  --_radius: 1e3px;
+  --_indeterminate-track: linear-gradient(to right,
+    var(--_track) 45%,
+    var(--_progress) 0%,
+    var(--_progress) 55%,
+    var(--_track) 0%
+  );
+  --_indeterminate-track-size: 225% 100%;
+  --_indeterminate-track-animation: progress-loading 2s infinite ease;
+  
+  /*  reset  */
+  appearance: none;
+  border: none;
+  
+  /*  custom style  */
+  position: relative;
+  height: var(--_track-size);
+  border-radius: var(--_radius);
+  overflow: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    --_track: hsl(228 20% 30%);
+    --_progress: hsl(228 100% 75%);
+  }
+
+  &:focus-visible {
+    outline-color: var(--_progress);
+  }
+  
+  /*  Safari/Chromium  */
+  &[value]::-webkit-progress-bar {
+    background-color: var(--_track);
+  }
+  
+  &[value]::-webkit-progress-value {
+    background-color: var(--_progress);
+    transition: inline-size .25s ease-out;
+  }
+  
+  /*  Firefox  */
+  &[value]::-moz-progress-bar {
+    background-color: var(--_progress);
+  }
+  
+  /*  indeterminate  */
+  &:indeterminate::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: var(--_indeterminate-track);
+    background-size: var(--_indeterminate-track-size);
+    background-position: right; 
+    animation: var(--_indeterminate-track-animation);
+  }
+  
+  /*  indeterminate Safari  */
+  &:indeterminate::-webkit-progress-bar {
+    background: var(--_indeterminate-track);
+    background-size: var(--_indeterminate-track-size);
+    background-position: right; 
+    animation: var(--_indeterminate-track-animation);
+  }
+  
+  /*  indeterminate Firefox  */
+  &:indeterminate::-moz-progress-bar {
+    background: var(--_indeterminate-track);
+    background-size: var(--_indeterminate-track-size);
+    background-position: right; 
+    animation: var(--_indeterminate-track-animation);
+  }
+  
+  /*  complete  */
+  &:not([max])[value="1"]::before,
+  &[max="100"][value="100"]::before {
+    content: "✓";
+    
+    position: absolute;
+    inset-block: 0;
+    inset-inline: auto 0;
+    display: flex;
+    align-items: center;
+    padding-inline-end: max(calc(var(--_track-size) / 4), 3px);
+
+    color: white;
+    font-size: calc(var(--_track-size) / 1.25);
+  }
+}
+
+@keyframes progress-loading {
+  50% {
+    background-position: left; 
+  }
+}
