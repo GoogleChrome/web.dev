@@ -47,7 +47,7 @@ The following figures are the results of a survey conducted by Yahoo! JAPAN.
 50
 <sub>%</sub>
 </p>
-<p>use the same ID and password on 6 or more site</p>
+<p>use the same ID and password on six or more sites</p>
 </div>
 <div class="stats__item">
 <p class="stats__figure">
@@ -160,7 +160,7 @@ if ('OTPCredential' in window) {
 Both approaches are designed to prevent phishing by including the domain in
 the SMS body and providing suggestions only for the specified domain.
 
-For more information about the We OTP API and `autocomplete="one-time-code"`,
+For more information about the WebOTP API and `autocomplete="one-time-code"`,
 check out [SMS OTP form best practices](/sms-otp-form/).
 
 <figure class="screenshot">
@@ -406,7 +406,7 @@ authentication.
 FIDO has a higher success rate than SMS authentication, and faster average and
 median authentication times. As for passwords, some groups have short
 authentication times, and we suspect that this is due to the browser's
-[`autocomplete="current-password"`](/sign-in-form-best-practices /#current-password).
+[`autocomplete="current-password"`](/sign-in-form-best-practices/#current-password).
 
 <figure class="screenshot">
 {% Img
@@ -418,7 +418,7 @@ authentication times, and we suspect that this is due to the browser's
 </figure>
 
 The greatest difficulty for offering passwordless accounts is not the addition
-of authentication methods, but ****popularizing the use of authenticators****.
+of authentication methods, but **popularizing the use of authenticators**.
 If the experience of using a passwordless service is not user-friendly, the
 transition will not be easy. 
 
