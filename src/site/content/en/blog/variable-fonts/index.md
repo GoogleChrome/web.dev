@@ -328,7 +328,7 @@ static web fonts, but with two new enhancements:
 @font-face {
 	font-family: 'Roboto Flex';
 	src: url('RobotoFlex-VF.woff2') format('woff2') tech('variations'),
-       url('RobotoFlex-VF.woff2') format('woff2-variations');
+	     url('RobotoFlex-VF.woff2') format('woff2-variations');
 	font-weight: 100 1000;
 	font-stretch: 25% 151%;
 }
