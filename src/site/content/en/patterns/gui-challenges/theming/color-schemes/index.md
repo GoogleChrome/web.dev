@@ -1,16 +1,14 @@
 ---
 layout: pattern
 title: Color Schemes
-description: Describe the sidenav pattern, can it <a href="#">link</a> to stuff
+description: |
+  This pattern shows how to go beyond light and dark themes with CSS custom properties.
+  <br><br>
+  <a href="/building-a-color-scheme/">Full article</a> · <a href="https://www.youtube.com/watch?v=oHcTn83M1ls">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/color-schemes">Source on Github</a>
 date: 2022-05-05
 height: 600
 ---
 
-The HTML for the demo page can differ from the code samples displayed
-in the code pattern tabs. To achieve this, include the full HTML for the page
-in the demo.md file in the patterns directory, and ommit the layout property
-in the frontmatter. You still neeed to include the patternId in the
-frontmatter.
+This pattern shows how to go beyond light and dark themes with CSS custom properties.
 
-ToDo:
-Links to videos, post, code on github and hosted demo
+<a href="/building-a-color-scheme/">Full article</a> · <a href="https://www.youtube.com/watch?v=oHcTn83M1ls">Video on YouTube</a> · <a href="https://github.com/argyleink/gui-challenges/tree/main/color-schemes">Source on Github</a>
