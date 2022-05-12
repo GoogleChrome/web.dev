@@ -45,6 +45,11 @@ It's rare that a quick fix to a single part of a page will result in a meaningfu
 
 Optimizing for LCP is a complex task, and with complex tasks it's generally better to break them down into smaller, more manageable tasks and address each separately. This guide will present a methodology for how to break down LCP into its most critical sub-parts and then present specific recommendations and best practices for how to optimize each part.
 
+{% Aside %}
+  For a visual overview of the context presented in this guide, see [A Deep Dive into Optimizing LCP](https://youtu.be/fWoI9DXmpdk) from Google I/O '22:
+  {% YouTube "fWoI9DXmpdk" %}
+{% endAside %}
+
 ## LCP breakdown
 
 Most page loads typically include a number of network requests, but for the purposes of identifying opportunities to improve LCP, you should start by looking at just two:
@@ -255,7 +260,7 @@ Some recommendations to reduce the size of the stylesheet are:
 
 - [Remove unused CSS](/unused-css-rules/): use Chrome DevTools to find CSS rules that aren't being used and can potentially be removed (or deferred).
 - [Defer non-critical CSS](/defer-non-critical-css/): split your stylesheet out into styles that are required for initial page load and then styles that can be loaded lazily.
-- [Minify and compress CSS](/reduce-network-payloads-using-text-compression/): for styles that are critical, make sure you're reducing their [transfer size](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize) as much as possible.
+- [Minify and compress CSS](/reduce-network-payloads-using-text-compression/): for styles that are critical, make sure you're reducing their [transfer size](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/transferSize) as much as possible.
 
 #### Defer or inline render-blocking JavaScript
 
@@ -326,13 +331,17 @@ While image CDNs are a great way to reduce resource load times, using a third-pa
 
 The best way to reduce resource load times is to eliminate the network entirely from the process. If you serve your resources with an [efficient cache-control policy](/uses-long-cache-ttl/), then visitors who request those resources a second time will have them served from the cache—bringing the _resource load time_ to essentially zero!
 
+<<<<<<< Updated upstream
 And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a <code>[font-display](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)</code> value of anything other than <code>auto</code> or <code>block</code>, then text will [always be visible during load](/font-display/), and LCP will not be blocked on an additional network request.
+=======
+And if your LCP resource is a web font, in addition to [reducing web font size](/reduce-webfont-size/), you should also consider whether you need to block rendering on the web font resource load. If you set a <code>[font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)</code> value of anything other than <code>auto</code> or <code>block</code>, then text will [always be visible during load](/font-display/), and LCP will not be blocked on an additional network request.
+>>>>>>> Stashed changes
 
 {% Aside 'warning' %}
 One important exception to the previous statement is if your web font glyphs are bigger than the glyphs in your fallback font, then the swap from the fallback font may result in a new LCP candidate. In these cases the web font resource is still a critical part of LCP.
 {% endAside %}
 
-Finally, if your LCP resource is small, it may make sense to inline the resources as a [data URL](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs), which will also eliminate the additional network request. However, using data URLs [comes with caveats](https://calendar.perfplanet.com/2018/performance-anti-patterns-base64-encoding/) because then the resources cannot be cached and in some cases can lead to longer render delays because of the additional [decode cost](https://www.catchpoint.com/blog/data-uri).
+Finally, if your LCP resource is small, it may make sense to inline the resources as a [data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs), which will also eliminate the additional network request. However, using data URLs [comes with caveats](https://calendar.perfplanet.com/2018/performance-anti-patterns-base64-encoding/) because then the resources cannot be cached and in some cases can lead to longer render delays because of the additional [decode cost](https://www.catchpoint.com/blog/data-uri).
 
 ### 4. Reduce _time to first byte_
 
