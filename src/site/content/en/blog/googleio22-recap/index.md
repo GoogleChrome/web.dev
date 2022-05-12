@@ -5,6 +5,8 @@ subhead: >
   A roundup of the announcements from Google I/O this year. 
 description: >
   A roundup of the announcements from Google I/O this year.
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/spDtq47VLuwNmSKB19tl.jpg
+alt: A bike in front of a large tent.
 date: 2022-05-13
 authors:
   - paulkinlan
@@ -12,9 +14,7 @@ tags:
   - blog
 ---
 
-At [Google IO 2022](https://io.google/2022/products/web/) we shared updates on our progress to help create a web that is instant, and connects people, no matter their device or bandwidth. A powerful platform that delivers experiences that we once never thought possible in a browser. And one that people can trust to keep their data safe. 
-
-Our goal is to make it as easy as possible for you to build experiences that people will love.
+At [Google IO 2022](https://io.google/2022/products/web/) we shared updates on our progress to help create a web that is instant, and connects people, no matter their device or bandwidth. A powerful platform that delivers experiences that we once never thought possible in a browser. And one that people can trust to keep their data safe. Here's a recap on how we're making it easy for you to build experiences that people will love.
 
 ## An instant web
 
@@ -22,7 +22,9 @@ Great web performance is a partnership between the browser and web developers. T
 
 [Largest Contentful Paint (LCP)](/lcp/) is an important, user-centric metric for measuring perceived load speed. A fast LCP helps reassure the user that the page is useful, because it marks the point in the page load timeline when the main content has loaded. To learn more about this complex metric, check out our session, [A deep dive into optimizing LCP](https://io.google/2022/program/3d49f700-4e86-4a50-9f8a-1a2742bc4c22/).
 
-Another new performance metric is something we are calling [Interaction to Next Paint](http://web.dev/inp) (INP). Unlike First Input Delay, it considers not just the first interaction, but all interactions on a page. INP therefore does a better job of capturing the interaction latency as experienced by the user. Learn more by checking out [The State of Responsiveness on the Web](https://io.google/2022/program/62e33209-bd18-48c5-801f-d6d1cc442e4b/) session. For help with your performance journey, be sure to [check out the new Performance Insights panel in Chrome DevTools along with many more updates](https://io.google/2022/program/6213f6fd-c940-4e80-b011-beec59d610f8/) based on your feedback.
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/LB8NbfL2Fg0nmh1hGf22.jpg", alt="LCP of 52.7% with a caption explaining that LCP is the Core Web Vitals metric that sites struggle with the most.", width="800", height="450" %}
+
+Another new performance metric is something we are calling [Interaction to Next Paint](http://web.dev/inp/) (INP). Unlike First Input Delay, it considers not just the first interaction, but all interactions on a page. INP therefore does a better job of capturing the interaction latency as experienced by the user. Learn more by checking out [The State of Responsiveness on the Web](https://io.google/2022/program/62e33209-bd18-48c5-801f-d6d1cc442e4b/) session. For help with your performance journey, be sure to [check out the new Performance Insights panel in Chrome DevTools along with many more updates](https://io.google/2022/program/6213f6fd-c940-4e80-b011-beec59d610f8/) based on your feedback.
 
 ## Powerful capabilities
 
