@@ -6,6 +6,7 @@ authors:
   - adamargyle
 description: Web styling features of today and tomorrow, as seen at Google IO 2022, plus some extras.
 date: 2022-05-11
+updated: 2022-05-12
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/iOfuipzyniP6aec4cOss.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uT454OnumDCJbV0PWmvu.png
 alt: Colorful lettering using a Colr Font saying State of CSS 2022
@@ -19,9 +20,14 @@ The year 2022 is set to be one of CSS's greatest years, in both features and
 cooperative browser feature releases, with a collaborative goal to implement 14
 features!
 
+{% Aside %}
+  Watch the talk [The State of CSS](https://www.youtube.com/watch?v=Xy9ZXRRgpLk) from Google I/O '22:
+  {% YouTube "Xy9ZXRRgpLk" %}
+{% endAside %}
+
 ## Overview
 
-This post is the article form of the talk given at Google IO 2022. It's not
+This post is the article form of [the talk](https://www.youtube.com/watch?v=Xy9ZXRRgpLk) given at Google IO 2022. It's not
 meant to be an in-depth guide on each feature, rather an introduction and brief
 overview to pique your interest, providing breadth instead of depth. If your
 interest is piqued, check the end of a section for resource links to more information.
