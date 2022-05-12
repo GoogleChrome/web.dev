@@ -32,7 +32,7 @@ Since FID measures only the input delay of the first interaction, it is likely t
 
 Since many websites rely on JavaScript to provide interactivity, the INP score would primarily be affected by the amount of JavaScript processed on the main thread. [JavaScript frameworks](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks) are an essential part of modern front-end web development and provide developers with valuable abstractions for routing, event handling, and compartmentalization of JavaScript code. Thus, they have a central role in optimizing the responsiveness and user experience of websites that use them.
 
-Frameworks may have taken steps for better responsiveness by improving FID for websites earlier. However, they would now have to analyze the available responsiveness metric data and work towards addressing any gaps identified. In general, INP tends to be poorer than FID, and the difference in the measurement process requires additional code optimization. The following table summarizes why.
+Frameworks may have taken steps for better responsiveness by improving FID for websites earlier. However, they would now have to analyze the available responsiveness metric data and work towards addressing any gaps identified. In general, INP tends to have lower pass rates, and the difference in the measurement process requires additional code optimization. The following table summarizes why.
 
 <div class="table-wrapper scrollbar">
 <table>
@@ -48,7 +48,11 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
    <th>Measurement</th>
    <td>Measures the duration between the first user input and the time when the corresponding event handler runs.
    </td>
-   <td>Aggregates the delay for up to the last 500 interactions in the page lifecycle, from user interaction to response paint.
+   <td>Measures the overall interaction latency by using the delay of the 
+    <ul>
+      <li>single largest interaction for less than 50 transactions 
+      <li><a href="https://web.dev/inp/#why-not-the-worst-interaction-latency">one of the largest interactions</a> for more than 50 transactions.</li>
+    </ul>
    </td>
   </tr>
   <tr>
@@ -62,14 +66,14 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
    <th>Primary cause for poor scores</th>
    <td>Poor FID is mainly caused due to <a href="https://web.dev/optimize-fid/#heavy-javascript-execution">heavy JavaScript execution</a> on the main thread.
    </td>
-   <td>Heavy event-handling JavaScript for interactions can result in poor INP.
+   <td>Heavy event-handling JavaScript and other rendering tasks after running handlers can result in poor INP.
    </td>
   </tr>
   <tr>
    <th>Optimization</th>
    <td>FID can be optimized by improving resource loading on page load and optimizing JavaScript code.
    </td>
-   <td>To optimize INP, optimize the JavaScript code executed after each event, including the page load event. 
+   <td>Similar to FID for every interaction plus usage of rendering patterns that prioritize key UX updates over other rendering tasks. 
    </td>
   </tr>
    </tbody>
@@ -218,9 +222,11 @@ INP values in the field correlate well with the Total Blocking Time (TBT) observ
 
 * **Framework overhead on event handling:** Frameworks may have additional features/syntax for event handling. For example, Vue uses [v-on](https://v2.vuejs.org/v2/api/#v-on) to attach event listeners to elements, while Angular wraps user event handlers. Implementing these features requires additional framework code above vanilla JavaScript.
 
-* **Rehydration code:** Execution of rehydration code after repainting frames can cause delays. Generating some content statically during build time and routing to this content on events can help to render the content quickly.
+* **Hydration:** When using a JavaScript framework, it's not uncommon for a server to generate the initial HTML for a page which then needs to be augmented with event handlers and application state so that it can be interactive in a web browser. We call this process hydration. This can be a heavy process during load, depending on how long JavaScript takes to load and for hydration to finish. It can also lead to pages looking like they are interactive when they are not. Often hydration occurs automatically during page load or lazily (for example, on user interaction) and can impact INP or processing time due to task scheduling. In libraries such as React, you can leverage `useTransition` so that part of a component render is in the next frame and any more costly side-effects are left to future frames. Given this, updates in a transition that yield to more urgent updates like clicks can be a pattern that can be good for INP. 
 
-From now on, for a good INP score, developers will have to focus on reviewing the code that executes after every interaction on the page and optimize their chunking, rehydration, and loading strategies for both first-party and third-party scripts,  
+* **Prefetching:** Aggressively prefetching the resources needed for subsequent navigations can be a performance win when done right. If however, you prefetch and render SPA routes synchronously, you can end up negatively impacting INP as all of this expensive rendering attempts to complete in a single frame. Contrast this to not prefetching your route and instead kicking off the work needed (for example, `fetch()`) and unblocking paint. We recommend re-examining if your framework's approach to prefetching is delivering the optimal UX and how (if at all) this may impact INP.
+
+From now on, for a good INP score, developers will have to focus on reviewing the code that executes after every interaction on the page and optimize their chunking, rehydration, loading strategies, and the size of each render() update  for both first-party and third-party scripts,  
 
 
 # How is Aurora addressing INP issues?
@@ -243,4 +249,4 @@ We expect the INP score to provide a better compass for websites to improve resp
 * Creating channels for easy access to field data on INP for frameworks and web developers.
 * Work with frameworks to build features that will improve INP by default.
 
-We welcome feedback from framework users as they begin their INP optimization journeys.
+We welcome [feedback](mailto:web-vitals-feedback@googlegroups.com) from framework users as they begin their INP optimization journeys.
