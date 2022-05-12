@@ -245,8 +245,10 @@ layers:
 - [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)  
 - [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)   
 - [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)   
-- Post by [Una Kravets](https://twitter.com/Una), [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/)  
-- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade Layers](https://ishadeed.com/article/cascade-layers/)
+- Post by [Una Kravets](https://twitter.com/Una), [Cascade
+  Layers](https://developer.chrome.com/blog/cascade-layers/)  
+- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade
+  Layers](https://ishadeed.com/article/cascade-layers/)
 
 ### Subgrid
 
@@ -427,7 +429,8 @@ are many exciting and meaningful design decisions to make when using
 - Awesome container queries:
   [https://github.com/sturobson/Awesome-Container-Queries](https://github.com/sturobson/Awesome-Container-Queries)   
 - Designcember: - [/how-we-built-designcember/](/how-we-built-designcember/)  
-- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS Container
+- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
+  Container
   Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
 
 ### `accent-color`
