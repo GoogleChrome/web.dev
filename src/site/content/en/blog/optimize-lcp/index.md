@@ -45,6 +45,11 @@ It's rare that a quick fix to a single part of a page will result in a meaningfu
 
 Optimizing for LCP is a complex task, and with complex tasks it's generally better to break them down into smaller, more manageable tasks and address each separately. This guide will present a methodology for how to break down LCP into its most critical sub-parts and then present specific recommendations and best practices for how to optimize each part.
 
+{% Aside %}
+  For a visual overview of the context presented in this guide, see [A Deep Dive into Optimizing LCP](https://youtu.be/fWoI9DXmpdk) from Google I/O '22:
+  {% YouTube "fWoI9DXmpdk" %}
+{% endAside %}
+
 ## LCP breakdown
 
 Most page loads typically include a number of network requests, but for the purposes of identifying opportunities to improve LCP, you should start by looking at just two:
