@@ -137,7 +137,7 @@ format that allows sites to be shared in their entirety for offline consumption.
 Enabling Signed Exchanges can help speed up web page performance and thereby impact your site’s Core Web Vitals, in Particular [Largest Contentful Paint (LCP)](/lcp/). As an early adopter, Google Search uses SXG to provide users with a faster page load experience for pages loaded from the search results page. 
 
 
-Google Search crawls and, caches SXGs when available, and prefetches SXG that the user is likely to visit—for example, the page corresponding to the first search result.
+Google Search crawls and caches SXGs when available and prefetches SXG that the user is likely to visit—for example, the page corresponding to the first search result.
 
 SXG works best in tandem with other performance optimizations such as use of CDNs and reduction of render-blocking subresources. After implementing, follow [these recommendations](https://developer.chrome.com/blog/optimizing-lcp-using-signed-exchanges/) to maximize the LCP benefit from prefetching SXGs. In many cases, such optimization can result in nearly instant page loads coming from Google Search:
 
@@ -307,36 +307,26 @@ Any site can cache, serve, and prefetch SXGs of the pages that it links to, wher
 
 ## Unique Advantages
 
-SXG is one of many possible technologies to enable [cross-origin prefetching](https://developer.chrome.com/blog/cross-origin-prefetch/). When deciding which technology to use, you may need to trade off between optimizing different aspects. The following sections illustrate a few of the unique values that SXG provides in the space of possible solutions.
+SXG is one of many possible technologies to enable cross-origin prefetching. When deciding which technology to use, you may need to trade off between optimizing different aspects. The following sections illustrate a few of the unique values that SXG provides in the space of possible solutions. These factors may change over time as the space of available solutions evolves.
 
 ### Fewer requests to serve
 
-With cross-site prefetching, your server may need to serve additional requests. This corresponds to cases where a page was prefetched, but either the user didn't visit the page, or the prefetched bytes couldn't be shown to the user. For SXG, this additional traffic can be significantly reduced:
+With cross-site prefetching, your server may need to serve additional requests. This corresponds to cases where a page was prefetched, but either the user didn't visit the page, or the prefetched bytes couldn't be shown to the user. For SXG, these additional unused requests can be significantly reduced:
 
-- SXGs are cached and may be sent to users until they expire.
-- SXGs can be shown to users with cookies on your site.
+- SXGs are cached and may be sent to users until they expire. Thus, many prefetches can be handled solely by the cache server.
+- SXGs can be shown to users both with and without cookies on your site. Thus, there are fewer times when the page will need to be fetched again after navigation.
 
 ### Page speed improvement
 
-You may see additional page speed improvement from the following factors:
+You may see additional page speed improvement due to the prefetch surfaces and capabilities it currently supports:
 
 - SXGs can be shown to users with cookies for your site.
-- SXG can also prefetch subresources for your pages, such as JavaScript, CSS, fonts, and images.
+- SXG also prefetches subresources for your pages, such as JavaScript, CSS, fonts, and images, when specified using a `Link` header.
 - In the near future, SXG prefetching from Google Search will be available on more surfaces, including desktop form factors and all Chromium browsers.
-
-{% Details %}
-{% DetailsSummary %}
-Long-term
-In the long term, other factors may influence which technology will provide the biggest improvement to page speed.
-{% endDetailsSummary %}
-
-- As more referrers implement cross-site prefetching for their outlinks, they may choose to implement only one technology, or multiple.
-- The reduced request serving for publishers could enable referrers to prefetch SXGs for links with lower predicted clickthrough rate.
-{% endDetails %}
 
 ## Roadmap
 
-Google Search is continuing to improve the functionality of its SXG cache. Here are a couple upcoming improvements that address common limitations for sites looking to implement SXG.
+We are continuing to invest in SXG with new features and capabilities. Here is a preview of some improvements coming over the next few months, which address common limitations for sites looking to implement SXG.
 
 ### Update Cache API
 
