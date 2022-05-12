@@ -623,9 +623,9 @@ Enjoy mixing colors in various color spaces in your stylesheets in 2022!
   [https://codepen.io/argyleink/pen/WNoWadG](https://codepen.io/argyleink/pen/WNoWadG)  
 - Another theming demo:
   [https://codepen.io/argyleink/pen/YzZQYMq](https://codepen.io/argyleink/pen/YzZQYMq)  
-- Post by [Bramus](https://twitter.com/bramus): [Create a color theme with CSS
-  Relative Color Syntax, CSS color-mix(), and CSS
-  color-contrast()](https://www.bram.us/2021/04/28/create-a-color-theme-with-css-relative-color-syntax-css-color-mix-and-css-color-contrast/)
+- Post by [Fabio Giolito](https://twitter.com/fabiogiolito): [Create a color
+  theme with these upcoming CSS
+  features](https://dev.to/fabiogiolito/create-a-color-theme-with-these-upcoming-css-features-4o83)
 
 #### `color-contrast()`
 
