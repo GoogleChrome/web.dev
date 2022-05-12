@@ -6,6 +6,7 @@ authors:
   - philipwalton
   - yoavweiss
 date: 2021-09-14
+updated: 2022-05-11
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/FITOGeO0PDyPrBveixB7.jpeg
 alt: "Exterior view of the Walt Disney Concert Hall"
 tags:
@@ -184,8 +185,7 @@ in-page navigation experience is excellent.
 In the future we plan to develop metrics that encourage great, post-load
 experiences, and we believe this is the best path to incentivize high-quality
 SPAs in a way that doesn't compromise the initial load experience. We have
-already published our plans to develop [a new responsiveness
-metric](/better-responsiveness-metric/), and we're actively working on other
+already delivered a new metric named [Interaction to Next Paint (INP)](/inp/) that measures interaction latency throughout the entire page lifecycle, and we're actively working on other
 post-load metrics as well, including metrics that measure SPA route transitions
 ([see below](#design-new-apis-that-enable-better-spa-measurement)).
 

@@ -51,7 +51,7 @@ A single interaction's latency consists of the single longest duration of any ev
 For more information on exactly how INP is measured, read the [What's in an interaction?](/inp/#what's-in-an-interaction) section for more details.
 {% endAside %}
 
-## What's a "good" INP value?
+## What is a good INP value?
 
 Pinning labels such as "good" or "poor" on a responsiveness metric is tough. On one hand, you want to encourage development of user experiences that deliver good responsiveness. On the other hand, you must account for the fact that there's considerable variability in the capabilities of devices people use, and set achievable expectations by selecting a target that's not impossible to meet on low-end devices.
 
@@ -324,4 +324,4 @@ Because INP is calculated from inputs sampled during the entire page lifecycle, 
 
 ## CHANGELOG
 
-No changes have occurred to this metric since it has shipped. If changes occur, they will be noted in this CHANGELOG. If you have feedback for this metric, you can provide it in the [web-vitals-feedback Google group](https://groups.google.com/g/web-vitals-feedback).
+No changes have occurred to this metric since it has shipped. If changes occur, they will be noted in this [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog). If you have feedback for this metric, you can provide it in the [web-vitals-feedback Google group](https://groups.google.com/g/web-vitals-feedback).
