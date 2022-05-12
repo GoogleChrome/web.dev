@@ -251,8 +251,10 @@ layers:
 - [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)  
 - [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)   
 - [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)   
-- Post by [Una Kravets](https://twitter.com/Una), [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/)  
-- Post by [Bramus](https://twitter.com/bramus): [Hello, CSS Cascade Layers](https://www.bram.us/2022/02/13/hello-css-cascade-layers/)
+- Post by [Una Kravets](https://twitter.com/Una), [Cascade
+  Layers](https://developer.chrome.com/blog/cascade-layers/)  
+- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade
+  Layers](https://ishadeed.com/article/cascade-layers/)
 
 ### Subgrid
 
@@ -432,10 +434,10 @@ are many exciting and meaningful design decisions to make when using
   [https://codepen.io/una/pen/RwodQZw](https://codepen.io/una/pen/RwodQZw)    
 - Awesome container queries:
   [https://github.com/sturobson/Awesome-Container-Queries](https://github.com/sturobson/Awesome-Container-Queries)   
-- Designcember: - [/how-we-built-designcember/](/how-we-built-designcember/)  
-- Post by [Bramus](https://twitter.com/bramus): [Container Queries are Actually
-  Coming / Say Hello To CSS Container
-  Queries](https://www.bram.us/2021/04/14/container-queries-are-actually-coming-say-hello-to-css-container-queries/)
+- Designcember: - [How we built Designcember](/how-we-built-designcember/)  
+- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
+  Container
+  Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
 
 ### `accent-color`
 
@@ -627,9 +629,9 @@ Enjoy mixing colors in various color spaces in your stylesheets in 2022!
   [https://codepen.io/argyleink/pen/WNoWadG](https://codepen.io/argyleink/pen/WNoWadG)  
 - Another theming demo:
   [https://codepen.io/argyleink/pen/YzZQYMq](https://codepen.io/argyleink/pen/YzZQYMq)  
-- Post by [Bramus](https://twitter.com/bramus): [Create a color theme with CSS
-  Relative Color Syntax, CSS color-mix(), and CSS
-  color-contrast()](https://www.bram.us/2021/04/28/create-a-color-theme-with-css-relative-color-syntax-css-color-mix-and-css-color-contrast/)
+- Post by [Fabio Giolito](https://twitter.com/fabiogiolito): [Create a color
+  theme with these upcoming CSS
+  features](https://dev.to/fabiogiolito/create-a-color-theme-with-these-upcoming-css-features-4o83)
 
 #### `color-contrast()`
 
