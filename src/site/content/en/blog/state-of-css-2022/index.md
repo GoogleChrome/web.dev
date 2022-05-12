@@ -428,7 +428,7 @@ are many exciting and meaningful design decisions to make when using
   [https://codepen.io/una/pen/RwodQZw](https://codepen.io/una/pen/RwodQZw)    
 - Awesome container queries:
   [https://github.com/sturobson/Awesome-Container-Queries](https://github.com/sturobson/Awesome-Container-Queries)   
-- Designcember: - [/how-we-built-designcember/](/how-we-built-designcember/)  
+- Designcember: - [How we built Designcember](/how-we-built-designcember/)  
 - Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
   Container
   Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
