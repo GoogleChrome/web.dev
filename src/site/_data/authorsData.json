@@ -1,4 +1,24 @@
 {
+  "michaelchang": {
+    "homepage": "http://ghost-hack.com/",
+    "twitter": "mflux",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZgEOjGWE13Mq77PmQuy2.png"
+  },
+  "hakimelhattab": {
+    "homepage": "http://hakim.se/experiments",
+    "twitter": "hakimel",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cNfAWdx2YLptERfhfevM.png"
+  },
+  "hanseklund": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "boolhaze",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/E6s2qr8J7nxIfGwuGHVk.png"
+  },
+  "derekdetweiler": {
+    "homepage": "http://gopherwoodstudios.com/",
+    "twitter": "gopherwood",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7vUD1Qw3zif8kJidsFXr.png"
+  },
   "johnmccutchan": {
     "homepage": "http://www.johnmccutchan.com/",
     "twitter": "johnmccutchan",
