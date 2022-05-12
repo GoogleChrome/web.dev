@@ -147,7 +147,7 @@ SXG works best in tandem with other performance optimizations such as use of CDN
 
 From past experiments we have observed an average of 300ms to 400ms reduction in LCP from SXG-enabled prefetches. This helps sites make a better first-impression on users and often has a positive impact on business metrics. 
 
-Several global brands and sites have already benefited from Signed Exchanges. As a case study, lets look at how implementing Signed Exchanges helped [RebelMouse](https://www.rebelmouse.com/signed-exchange?utm_medium=post&utm_source=google&utm_campaign=signed-exchange-co-marketing&utm_content=signed-exchange), a prominent Content Management System (CMS), improve their customers’ performance and business metrics:
+Several global brands and sites have already benefited from Signed Exchanges. As a case study, lets look at how implementing Signed Exchanges helped [RebelMouse](https://www.rebelmouse.com/signed-exchange?utm_medium=post&utm_source=google&utm_campaign=signed-exchange-co-marketing&utm_content=signed-exchange), a prominent Content Management System (CMS), improve their customers' performance and business metrics:
 
 - Narcity **improved LCP by 41%**
 - Paper Magazine noticed a **27% increase in Sessions per user** 
