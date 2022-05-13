@@ -163,7 +163,7 @@ bottom: 120px;
 background-image: url(sea2.png);
 width: 1280px;
 height: 283px;
-{% mixin transform: translate3d(-100px, 225px, -30px) scale(2.3) <b>rotateX(60deg)</b>; %}
+{ % mixin transform: translate3d(-100px, 225px, -30px) scale(2.3) <b>rotateX(60deg)</b>; % }
 }
 ```
 
