@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2022-04-27
+updated: 2022-05-10
 tags:
   - blog
   - capabilities
@@ -415,8 +415,10 @@ event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
-You can play with the Async Clipboard API in the demos below or
-[directly on Glitch](https://async-clipboard-api.glitch.me/).
+You can play with the Async Clipboard API in the demos below. On Glitch you
+can remix [the text demo](https://glitch.com/edit/#!/async-clipboard-text)
+or [the image demo](https://glitch.com/edit/#!/async-clipboard-api) to
+experiment with them.
 
 The first example demonstrates moving text on and off the clipboard.
 
