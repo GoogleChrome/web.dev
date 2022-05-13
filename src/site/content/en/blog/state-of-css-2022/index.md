@@ -1446,7 +1446,7 @@ articulate over and under conditions. It may look like this:
 After media query ranges, the same media query could look like this:
 
 ```css
-@media (320px >= width) {
+@media (width >= 320px) {
   …
 }
 ```
