@@ -16,7 +16,7 @@ tags:
   - web-vitals
 ---
 
-One overlooked aspect of optimizing page speed involves knowing a bit about browser internals. Browsers make certain optimizations for us to improve performance in ways that we as developers can't—but only so long as we don't thwart those optimizations unintentionally.
+One overlooked aspect of optimizing page speed involves knowing a bit about browser internals. Browsers make certain optimizations to improve performance in ways that we as developers can't—but only so long as we don't thwart those optimizations unintentionally.
 
 One internal browser optimization to understand is the browser preload scanner. In this post, we'll talk a bit about how the preload scanner works—and more importantly, how you can avoid getting in its way.
 
@@ -25,7 +25,7 @@ One internal browser optimization to understand is the browser preload scanner. 
 Every browser has a primary HTML parser that [tokenizes](https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization) raw markup and processes it into [an object model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model). This all merrily goes on until the parser pauses when it finds a [blocking resource](/render-blocking-resources/), such as a stylesheet loaded with a `<link>` element, or script loaded with a `<script>` element without an `async` or `defer` attribute.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mXRoJneD6CbMAqaTqNZW.svg", alt="A diagram of how the browser's primary HTML parser parses and tokenizes markup into the DOM. The parser is blocked from doing any further work when it encounters a &lt;link&gt; element pointing to a stylesheet, and can only resume its work until the stylesheet is downloaded and processed.", width="111", height="150" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mXRoJneD6CbMAqaTqNZW.svg", alt="HTML parser diagram.", width="111", height="150" %}
   <figcaption>
     <strong>Fig. 1:</strong> A diagram of how the browser's primary HTML parser can be blocked. In this case, the parser runs into a <code>&lt;link&gt;</code> element for an external CSS file, which blocks the browser from parsing the rest of the document—or even rendering any of it—until the CSS is downloaded and parsed.
   </figcaption>
@@ -34,9 +34,9 @@ Every browser has a primary HTML parser that [tokenizes](https://en.wikipedia.or
 In the case of CSS files, both parsing and rendering are blocked in order to prevent a [flash of unstyled content (FOUC)](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), which is when an unstyled version of a page can be seen briefly before styles are applied to it.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8LkMd46pUlwgfYvmTBrO.png", alt="A comparison of the web.dev home page in an unstyled state (left) and the styled state (right). The unstyled state can occur in a flash if the browser doesn't block rendering while a stylesheet is being downloaded and processed.", width="800", height="748", loading="lazy" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8LkMd46pUlwgfYvmTBrO.png", alt="The web.dev home page in an unstyled state (left) and the styled state (right).", width="800", height="748", loading="lazy" %}
   <figcaption>
-    <strong>Fig. 2:</strong> A simulated example of FOUC. At left is the front page of web.dev without styles. At right is the same page with styles applied.
+    <strong>Fig. 2:</strong> A simulated example of FOUC. At left is the front page of web.dev without styles. At right is the same page with styles applied. The unstyled state can occur in a flash if the browser doesn't block rendering while a stylesheet is being downloaded and processed.
   </figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ The reason for this is that the browser can't know for sure if any given script 
 These are good reasons for why the browser _should_ block both parsing and rendering, but blocking either of these important steps are desirable, as they can hold up the show by delaying the discovery of other important resources. Thankfully, browsers do their best to mitigate this problem by way of a secondary HTML parser called a _preload scanner_.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6lccoVh4f6IJXA8UBKxH.svg", alt="A diagram of both the primary HTML parser (at left) and the preload scanner (at right), which is the secondary HTML parser. At left, the primary HTML parser is blocked processing a stylesheet before it can get to rendering an image, whereas the preload scanner can discover the image resource and begin fetching it while the primary HTML parser is blocked.", width="219", height="150", loading="lazy" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6lccoVh4f6IJXA8UBKxH.svg", alt="A diagram of both the primary HTML parser (left) and the preload scanner (right), which is the secondary HTML parser.", width="219", height="150", loading="lazy" %}
   <figcaption>
     <strong>Fig. 3:</strong> A diagram depicting how the preload scanner works in parallel with the primary HTML parser to speculatively load assets. Here, the primary HTML parser is blocked as it loads and processes CSS before it can begin processing image markup in the <code>&lt;body&gt;</code> element, but the preload scanner can look ahead in the raw markup to find that image resource and begin loading it before the primary HTML parser is unblocked.
   </figcaption>
@@ -66,7 +66,7 @@ The preload scanner exists _because_ of blocked rendering and parsing. If these 
 Let's take [a page](https://preload-scanner-fights.glitch.me/artifically-delayed-requests.html) of basic text and images with a stylesheet. Because CSS files block both rendering and parsing, we can introduce an artificial delay of two seconds for the stylesheet through a proxy service. This delay makes it easier to see in the network waterfall where the preload scanner is working.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Gtw08XaoFETKEauBBbBl.png", alt="A WebPageTest network waterfall chart illustrating the effect of the preload scanner. The stylesheet has an artificial delay of two seconds imposed on it before it can load. Even though the delay is large, the preload scanner still finds the image after the stylesheet and begins loading it while the stylesheet blocks the primary HTML parser.", width="800", height="219", loading="lazy" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Gtw08XaoFETKEauBBbBl.png", alt="The WebPageTest network waterfall chart illustrates an artificial delay of 2 seconds imposed on the styleesheet.", width="800", height="219", loading="lazy" %}
   <figcaption>
     <strong>Fig. 4:</strong> A <a href="https://www.webpagetest.org/" rel="nofollow noopener">WebPageTest</a> <a href="https://developer.chrome.com/docs/devtools/network/reference/#waterfall" rel="noopener">network waterfall chart</a> of <a href="https://preload-scanner-fights.glitch.me/artifically-delayed-requests.html" rel="noopener">a web page</a> run on Chrome on a mobile device over a simulated 3G connection. Even though the stylesheet is artificially delayed through a proxy by two seconds before it begins to load, the image located later in the markup payload is discovered by the preload scanner.
   </figcaption>
@@ -96,7 +96,7 @@ Let's say you've got HTML in your `<head>` that includes some inline JavaScript 
 Injected scripts are [`async`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-async) by default, so when this script is injected, it will behave as if the `async` attribute was applied to it. That means it will run as soon as possible and not block rendering. Sounds optimal, right? Yet, if we presume that this inline `<script>` comes after a `<link>` element that loads an external CSS file, we get a suboptimal result:
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/L9ltNSHa6D4FI6YPw1vF.png", alt="A WebPageTest network waterfall chart showing how the preload scanner is defeated in discovering a script that is injected with inline JavaScript. The browser can't detect the script while the stylesheet blocks the primary HTML parser, and delays script discovery by about 600 milliseconds.", width="800", height="219", loading="lazy" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/L9ltNSHa6D4FI6YPw1vF.png", alt="This WebPageTest chart shows the preload scan defeated when a script is injected.", width="800", height="219", loading="lazy" %}
   <figcaption>
     <strong>Fig. 5:</strong> A WebPageTest network waterfall chart of <a href="https://preload-scanner-fights.glitch.me/injected-async-script.html" rel="noopener">a web page</a> run on Chrome on a mobile device over a simulated 3G connection. The page contains a single stylesheet and an injected <code>async</code> script. The preload scanner can't discover the script during the render blocking phase, because it's injected on the client.
   </figcaption>
