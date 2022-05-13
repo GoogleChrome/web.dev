@@ -16,9 +16,9 @@ tags:
   - web-vitals
 ---
 
-One overlooked aspect of optimizing page speed involves knowing a bit about browser internals. Browsers make certain optimizations to improve performance in ways that we as developers can't—but only so long as we don't thwart those optimizations unintentionally.
+One overlooked aspect of optimizing page speed involves knowing a bit about browser internals. Browsers make certain optimizations to improve performance in ways that we as developers can't&mdash;but only so long as we don't thwart those optimizations unintentionally.
 
-One internal browser optimization to understand is the browser preload scanner. In this post, we'll talk a bit about how the preload scanner works—and more importantly, how you can avoid getting in its way.
+One internal browser optimization to understand is the browser preload scanner. In this post, we'll talk a bit about how the preload scanner works&mdash;and more importantly, how you can avoid getting in its way.
 
 ## What's a preload scanner?
 
@@ -27,7 +27,7 @@ Every browser has a primary HTML parser that [tokenizes](https://en.wikipedia.or
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mXRoJneD6CbMAqaTqNZW.svg", alt="HTML parser diagram.", width="111", height="150" %}
   <figcaption>
-    <strong>Fig. 1:</strong> A diagram of how the browser's primary HTML parser can be blocked. In this case, the parser runs into a <code>&lt;link&gt;</code> element for an external CSS file, which blocks the browser from parsing the rest of the document—or even rendering any of it—until the CSS is downloaded and parsed.
+    <strong>Fig. 1:</strong> A diagram of how the browser's primary HTML parser can be blocked. In this case, the parser runs into a <code>&lt;link&gt;</code> element for an external CSS file, which blocks the browser from parsing the rest of the document&mdash;or even rendering any of it&mdash;until the CSS is downloaded and parsed.
   </figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ Let's take [a page](https://preload-scanner-fights.glitch.me/artifically-delayed
 
 As you can see in the waterfall, the preload scanner discovers the `<img>` element _even while rendering and document parsing is blocked_. Without this optimization, the browser can't fetch things opportunistically during the blocking period, and more resource requests would be consecutive rather than concurrent.
 
-With that toy example out of the way, let's take a look at some real-world patterns where the preload scanner can be defeated—and what can be done to fix them.
+With that toy example out of the way, let's take a look at some real-world patterns where the preload scanner can be defeated&mdash;and what can be done to fix them.
 
 {% Aside %}
   This smattering of patterns isn't an exhaustive list, just some common ones.
@@ -135,13 +135,13 @@ There may be some temptation to suggest that these issues could be remedied by u
   </figcaption>
 </figure>
 
-Preloading "fixes" the problem here, but it introduces a new problem: the `async` script in the first two demos—despite being loaded in the `<head>`—are loaded at "Low" priority, whereas the stylesheet is loaded at "Highest" priority. In the last demo where the `async` script is preloaded, the stylesheet is still loaded at "Highest" priority, but the script's priority has been promoted to "High".
+Preloading "fixes" the problem here, but it introduces a new problem: the `async` script in the first two demos&mdash;despite being loaded in the `<head>`&mdash;are loaded at "Low" priority, whereas the stylesheet is loaded at "Highest" priority. In the last demo where the `async` script is preloaded, the stylesheet is still loaded at "Highest" priority, but the script's priority has been promoted to "High".
 
 {% Aside %}
   Resource priority can be discovered in the network tab in modern browsers. For Chrome DevTools in particular, [you can right click on the column headers](https://developer.chrome.com/docs/devtools/network/reference/#columns) to ensure the priority column is visible. Be sure to test in multiple browsers, as resource priority varies by browser and other factors.
 {% endAside %}
 
-When a resource's priority is raised, the browser allocates more bandwidth to it. This means that—even though the stylesheet has the highest priority—the script's raised priority may cause bandwidth contention. That could be a factor on slow connections, or in cases where resources are quite large.
+When a resource's priority is raised, the browser allocates more bandwidth to it. This means that&mdash;even though the stylesheet has the highest priority&mdash;the script's raised priority may cause bandwidth contention. That could be a factor on slow connections, or in cases where resources are quite large.
 
 The answer here is straightforward: if a script is needed during startup, don't defeat the preload scanner by injecting it into the DOM. Experiment as needed with `<script>` element placement, as well as with attributes such as `defer` and `async`.
 
@@ -170,7 +170,7 @@ This pattern isn't problematic until it's applied to images that are in the view
   </figcaption>
 </figure>
 
-Depending on the size of the image—which may depend on the size of the viewport—it may be a candidate element for [Largest Contentful Paint (LCP)](/lcp/). When the preload scanner cannot speculatively fetch the image resource ahead of time—possibly during the point at which the page's stylesheet(s) block rendering—LCP suffers.
+Depending on the size of the image&mdash;which may depend on the size of the viewport&mdash;it may be a candidate element for [Largest Contentful Paint (LCP)](/lcp/). When the preload scanner cannot speculatively fetch the image resource ahead of time&mdash;possibly during the point at which the page's stylesheet(s) block rendering&mdash;LCP suffers.
 
 {% Aside 'important' %}
   For more information on optimizing LCP beyond the scope of this article, read [Optimizing Largest Contentful Paint](/optimize-lcp/).
@@ -252,7 +252,7 @@ When markup payloads are contained in and rendered entirely by JavaScript in the
 
 This veers a bit from the focus of this article, but the effects of rendering markup on the client go far beyond defeating the preload scanner. For one, introducing JavaScript to power an experience that doesn't require it introduces unnecessary processing time that can affect [Interaction to Next Paint (INP)](/inp/).
 
-Additionally, rendering extremely large amounts of markup on the client is more likely to generate [long tasks](/long-tasks-devtools/) compared to the same amount of markup being sent by the server. The reason for this—aside from the extra processing that JavaScript involves—is that browsers stream markup from the server and chunk up rendering in such a way that avoids long tasks. Client-rendered markup, on the other hand, is handled as a single, monolithic task, which may affect page responsiveness metrics such as [Total Blocking Time (TBT)](/tbt/) or [First Input Delay (FID)](/fid/) in addition to INP.
+Additionally, rendering extremely large amounts of markup on the client is more likely to generate [long tasks](/long-tasks-devtools/) compared to the same amount of markup being sent by the server. The reason for this&mdash;aside from the extra processing that JavaScript involves&mdash;is that browsers stream markup from the server and chunk up rendering in such a way that avoids long tasks. Client-rendered markup, on the other hand, is handled as a single, monolithic task, which may affect page responsiveness metrics such as [Total Blocking Time (TBT)](/tbt/) or [First Input Delay (FID)](/fid/) in addition to INP.
 
 The remedy for this scenario depends on the answer to this question: **Is there a reason why your page's markup can't be provided by the server as opposed to being rendered on the client?** If the answer to this is "no", server-side rendering (SSR) or statically generated markup should be considered where possible, as it will help the preload scanner to discover and opportunistically fetch important resources ahead of time.
 
@@ -269,7 +269,7 @@ To recap, here's the following things you'll want to take away from this post:
   - Injecting resources into the DOM with JavaScript, be they scripts, images, stylesheets, or anything else that would be better off in the initial markup payload from the server.
   - Lazy-loading above-the-fold images or iframes using a JavaScript solution.
   - Rendering markup on the client that may contain references to document subresources using JavaScript.
-- The preload scanner only scans HTML. It does not examine the contents of other resources—particularly CSS—that may include references to important assets, including LCP candidates.
+- The preload scanner only scans HTML. It does not examine the contents of other resources&mdash;particularly CSS&mdash;that may include references to important assets, including LCP candidates.
 
 If, for whatever reason, you _can't_ avoid a pattern that negatively affects the preload scanner's ability to speed up loading performance, consider the [`rel=preload`](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) resource hint. If you _do_ use `rel=preload`, test in lab tools to ensure that it's giving you the desired effect. Finally, don't preload too many resources, because when you prioritize everything, nothing will be.
 
