@@ -6,6 +6,7 @@ subhead: >
 description: >
   Making it easier to build for the web.
 date: 2022-05-11
+updated: 2022-05-12
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/Yh6JWjnkiMnPtXGZOAPE.jpg
 alt: A bridge stretching over a wide gap.
 authors:
@@ -13,6 +14,11 @@ authors:
 tags:
   - blog
 ---
+
+{% Aside %}
+  Watch the talk [Bridging the Gap](https://www.youtube.com/watch?v=fGlhRnp5M-g) from Google I/O '22:
+  {% YouTube "fGlhRnp5M-g" %}
+{% endAside %}
 
 When we talk to developers, be that individually or via surveys such as the [State of CSS](https://stateofcss.com/), we repeatedly hear the same things. Developers find it hard to make websites and applications that work well across browsers, and find it hard to know when exciting new features are safe to use.
 

@@ -7,7 +7,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-10-14
-updated: 2021-04-21
+updated: 2021-05-12
 hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
@@ -137,7 +137,7 @@ format that allows sites to be shared in their entirety for offline consumption.
 Enabling Signed Exchanges can help speed up web page performance and thereby impact your site’s Core Web Vitals, in Particular [Largest Contentful Paint (LCP)](/lcp/). As an early adopter, Google Search uses SXG to provide users with a faster page load experience for pages loaded from the search results page. 
 
 
-Google Search crawls and, caches SXGs when available, and prefetches SXG that the user is likely to visit—for example, the page corresponding to the first search result.
+Google Search crawls and caches SXGs when available and prefetches SXG that the user is likely to visit—for example, the page corresponding to the first search result.
 
 SXG works best in tandem with other performance optimizations such as use of CDNs and reduction of render-blocking subresources. After implementing, follow [these recommendations](https://developer.chrome.com/blog/optimizing-lcp-using-signed-exchanges/) to maximize the LCP benefit from prefetching SXGs. In many cases, such optimization can result in nearly instant page loads coming from Google Search:
 
@@ -147,31 +147,15 @@ SXG works best in tandem with other performance optimizations such as use of CDN
 
 From past experiments we have observed an average of 300ms to 400ms reduction in LCP from SXG-enabled prefetches. This helps sites make a better first-impression on users and often has a positive impact on business metrics. 
 
-Several global brands and sites have already benefited from Signed Exchanges. As a case study, lets look at how implementing Signed Exchanges helped [RebelMouse](https://www.rebelmouse.com/signed-exchange), a prominent Content Management System (CMS), improve their customer’s performance and business metrics:
+Several global brands and sites have already benefited from Signed Exchanges. As a case study, lets look at how implementing Signed Exchanges helped [RebelMouse](https://www.rebelmouse.com/signed-exchange?utm_medium=post&utm_source=google&utm_campaign=signed-exchange-co-marketing&utm_content=signed-exchange), a prominent Content Management System (CMS), improve their customers' performance and business metrics:
 
 - Narcity **improved LCP by 41%**
 - Paper Magazine noticed a **27% increase in Sessions per user** 
 - MLT Blog **decreased Page Load time by 21%**
 
 {% Aside %}
-SXG is particularly well suited to prefetching because of its privacy benefits over non-SXG formats.
-
-There is a certain amount of user information inherent to all network requests
-regardless of how or why they were made: this includes information like IP
-address, the presence or absence of cookies, and the value of headers like
-`Accept-Language`. This information is "disclosed" to the destination server
-when a request is made. Because SXG is prefetched from a cache, rather than
-the origin server, a user's interest in a site will only be disclosed to the
-origin server once the user navigates to the site, rather than at the time of
-prefetching. In addition, content prefetched via SXG does not set cookies or
-access `localStorage` unless the content is loaded by the user. Furthermore,
-this reveals no new user information to the SXG referrer. The use of SXG for
-prefetching is an example of the concept of privacy-preserving prefetching.
-
-This is a technique that is applicable to any site that wishes to provide its outlinks with a faster user experience or greater resiliency to limited network access. This not only includes search engines and social media platforms, but also information portals that serve content for offline consumption.
-
+SXG enables [cross-origin prefetching](https://developer.chrome.com/blog/cross-origin-prefetch/) because it allows prefetch requests via an SXG cache server operated by the referrer, ensuring that the user's potentially identifying information is not revealed to the origin server until they navigate. This technique is available to any site that wishes to make its outlinks faster or more resilient to limited network access.
 {% endAside %}
-
 
 #### Indexing
 
@@ -189,8 +173,7 @@ and displayed using its canonical URL, rather than its AMP URL.AMP has its own s
 
 ## Debugging SXGs with Chrome DevTools {: #debugging }
 
-Signed Exchanges can be identified by looking for `signed-exchange` in the
-**Type** column of the **Network** panel in Chrome DevTools.
+To see a SXG firsthand, use a Chromium browser, open DevTools, enable mobile emulation, open the Network panel, and visit this [example search page](https://www.google.com/search?q=site%3Asigned-exchange-testing.dev+valid). Signed Exchanges can be identified by looking for `signed-exchange` in the **Type** column.
 
 <figure>
   {% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Screenshot showing a SXG request within the 'Network' panel in DevTools", width="696", height="201" %}
@@ -204,9 +187,6 @@ The **Preview** tab provides more information about the contents of a SXG.
   <figcaption>The <b>Preview</b> tab in DevTools</figcaption>
 </figure>
 
-To see a SXG firsthand, use a Chromium browser, enable mobile emulation in DevTools, and visit this [example search page](https://www.google.com/search?q=site%3Asigned-exchange-testing.dev+valid).
-
-
 ## Tooling
 
 Implementing SXGs consists of generating the SXG corresponding to a given URL
@@ -215,7 +195,7 @@ and then serving that SXG to requestors (usually crawlers).
 ### Certificates
 
 To generate a SXG you will need a certificate that can sign SXGs, although some tools acquire these automatically. [This page](https://github.com/google/webpackager/wiki/Certificate-Authorities) lists the certificate authorities that can issue this type of certificate.
-Certificates can be obtained automatically from the Google certificate authority using any ACME client. Web Packager Server has built-in support, and sxg-rs will soon add support.
+Certificates can be obtained automatically from the Google certificate authority using any ACME client. Web Packager Server has a built-in ACME client, and sxg-rs will soon.
 
 {% Aside %}
 Production use of SXGs requires a certificate that supports the
@@ -325,6 +305,36 @@ Any site can cache, serve, and prefetch SXGs of the pages that it links to, wher
 ```
 [This article](/how-to-distribute-signed-http-exchanges/) illustrates how to use nginx to distribute SXGs.
 
+## Unique Advantages
+
+SXG is one of many possible technologies to enable cross-origin prefetching. When deciding which technology to use, you may need to trade off between optimizing different aspects. The following sections illustrate a few of the unique values that SXG provides in the space of possible solutions. These factors may change over time as the space of available solutions evolves.
+
+### Fewer requests to serve
+
+With cross-site prefetching, your server may need to serve additional requests. This corresponds to cases where a page was prefetched, but either the user didn't visit the page, or the prefetched bytes couldn't be shown to the user. For SXG, these additional unused requests can be significantly reduced:
+
+- SXGs are cached and may be sent to users until they expire. Thus, many prefetches can be handled solely by the cache server.
+- SXGs can be shown to users both with and without cookies on your site. Thus, there are fewer times when the page will need to be fetched again after navigation.
+
+### Page speed improvement
+
+You may see additional page speed improvement due to the prefetch surfaces and capabilities it currently supports:
+
+- SXGs can be shown to users with cookies for your site.
+- SXG also prefetches subresources for your pages, such as JavaScript, CSS, fonts, and images, when specified using a `Link` header.
+- In the near future, SXG prefetching from Google Search will be available on more surfaces, including desktop form factors and all Chromium browsers.
+
+## Roadmap
+
+We are continuing to invest in SXG with new features and capabilities. Here is a preview of some improvements coming over the next few months, which address common limitations for sites looking to implement SXG.
+
+### Update Cache API
+
+The Google SXG Cache will soon launch an API that site owners can use to remove SXGs from the cache. This can help ensure freshness in cases where `max-age` isn't enough.
+
+### `Vary: Cookie`
+
+The Google SXG Cache will soon support SXGs with `Vary: Cookie`. These SXGs will be served to cookieless users only. This enables prefetching for sites that use dynamic HTML to render logged-in experiences, for example.
 
 ## Conclusion
  
