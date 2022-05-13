@@ -1,3 +1,81 @@
+plan8:
+  title:
+    en: Plan 8
+  description:
+    en: Audio Agency
+
+unit9com:
+  title:
+    en: unit9 com
+  description:
+    en: Production Company
+
+geoffblair:
+  title:
+    en: Geoff Blair
+  description:
+    en: Programmer, Designer at Lost Decade Games
+
+matthackett:
+  title:
+    en: Matt Hackett
+  description:
+    en: Programmer, Designer at Lost Decade Games
+
+christophergammon:
+  title:
+    en: Christopher Gammon
+  description:
+    en: Web Platform Adobe
+
+ericrk:
+  title:
+    en: Eric Karl
+  description:
+    en: Developer at Munkadoo Games LLC
+
+thomasreynolds:
+  title:
+    en: Thomas Reynolds
+  description:
+    en: Agency Instrument
+    
+einaroberg:
+  title:
+    en: Einar Öberg
+  description:
+    en: Developer at North Kingdom
+
+danielisaksson:
+  title:
+    en: Daniel Isaksson
+  description:
+    en: Technical Director at North Kingdom
+
+michaelchang:
+  title:
+    en: Michael Chang
+  description:
+    en: Developer
+
+hakimelhattab:
+  title:
+    en: Hakim El Hattab
+  description:
+    en: Senior Interactive Developer
+
+hanseklund:
+  title:
+    en: Hans Eklund
+  description:
+    en: Technical Director at North Kingdom
+
+derekdetweiler:
+  title:
+    en: Derek Detweiler
+  description:
+    en: Game Designer at Gopherwood Studios
+
 johnmccutchan:
   title:
     en: John McCutchan

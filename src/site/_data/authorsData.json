@@ -1,4 +1,69 @@
 {
+  "plan8": {
+    "homepage": "http://plan8.se/",
+    "twitter": "http://twitter.com/Plan8_Music",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZIZgvlAA5NnDA5EQexpB.png"
+  },
+  "unit9com": {
+    "homepage": "http://unit9.com/",
+    "twitter": "unit9",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cyO3s1wDVx9DcPfFLTfT.png"
+  },
+  "geoffblair": {
+    "homepage": "http://www.lostdecadegames.com/",
+    "twitter": "geoffblair",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/gSUNYY4W3dJE9tYlp4ZG.png"
+  },
+  "matthackett": {
+    "homepage": "http://www.lostdecadegames.com/",
+    "twitter": "richtaur",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/UH9IVsVygWpMOqtPsVrQ.png"
+  },
+  "christophergammon": {
+    "homepage": "http://www.cjgammon.com/",
+    "twitter": "cjgammon",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/tRs6b787z7gcczj3sZt8.png"
+  },
+  "ericrk": {
+    "homepage": "http://allthecodes.tumblr.com/",
+    "twitter": "ericrkarlSF",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/9iO5gZZ7T89hpyTaKn0x.png"
+  },
+  "thomasreynolds": {
+    "homepage": "http://awardwinningfjords.com/",
+    "twitter": "tdreyno",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/9a6bZAoux8hlKtPGQdG5.png"
+  },
+  "einaroberg": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "inear",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/A5LlokBwOGhxuOd2g0g0.png"
+  },
+  "danielisaksson": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "northkingdom",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/rOydjtEeVxCf2G0gLuKA.png"
+  },
+  "michaelchang": {
+    "homepage": "http://ghost-hack.com/",
+    "twitter": "mflux",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/ZgEOjGWE13Mq77PmQuy2.png"
+  },
+  "hakimelhattab": {
+    "homepage": "http://hakim.se/experiments",
+    "twitter": "hakimel",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/cNfAWdx2YLptERfhfevM.png"
+  },
+  "hanseklund": {
+    "homepage": "http://www.northkingdom.com/",
+    "twitter": "boolhaze",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/E6s2qr8J7nxIfGwuGHVk.png"
+  },
+  "derekdetweiler": {
+    "homepage": "http://gopherwoodstudios.com/",
+    "twitter": "gopherwood",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/7vUD1Qw3zif8kJidsFXr.png"
+  },
   "johnmccutchan": {
     "homepage": "http://www.johnmccutchan.com/",
     "twitter": "johnmccutchan",
