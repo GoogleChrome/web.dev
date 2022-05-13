@@ -6,6 +6,7 @@ title:
   pt: React
   ru: React
   zh: React
+  uk: React
 
 description:
   en: Build performant and progressive React applications.
@@ -15,6 +16,7 @@ description:
   pt: Crie aplicações React progressivas e de alto desempenho.
   ru: Создавайте прогрессивные и производительные приложения на основе React.
   zh: 构建高性能与渐进式 React 应用。
+  uk: Створюйте швидкі та прогресивні додатки завдяки React.
 
 overview:
   en: In this section you'll learn how to use built-in APIs and third-party libraries to improve the performance of your React applications.
@@ -24,6 +26,7 @@ overview:
   pt: Nesta seção, você aprenderá a usar APIs internas e bibliotecas de terceiros para melhorar o desempenho de suas aplicações React.
   ru: В этом разделе вы узнаете, как повысить производительность приложений на основе React с помощью встроенных API и сторонних библиотек.
   zh: 在本部分中，您将了解如何使用内置 API 和第三方库来提升您的 React 应用的性能。
+  uk: В цьому розділі ви дізнаєтесь, як покращити продуктивність додатків на основі React завдяки вбудованим API та стороннім бібліотекам.
 
 topics:
   next_js:
@@ -34,6 +37,7 @@ topics:
     pt: Next.js
     ru: Next.js
     zh: Next.js
+    uk: Next.js
 
   create_react_app:
     en: Create React App
@@ -43,3 +47,4 @@ topics:
     pt: Criação de uma aplicação React
     ru: Создание приложения на основе React
     zh: 创建 React 应用
+    uk: Create React App

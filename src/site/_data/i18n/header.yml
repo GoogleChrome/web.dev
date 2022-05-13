@@ -6,6 +6,7 @@ learn:
   pt: Aprender
   ru: Обучение
   zh: 学习
+  uk: Навчання
 
 measure:
   en: Measure
@@ -15,6 +16,7 @@ measure:
   pt: Medir
   ru: Измерение
   zh: 衡量
+  uk: Вимірювання
 
 blog:
   en: Blog
@@ -24,6 +26,7 @@ blog:
   pt: Blog
   ru: Блог
   zh: 博客
+  uk: Блог
 
 about:
   en: About
@@ -33,6 +36,7 @@ about:
   pt: Sobre
   ru: О сайте
   zh: 关于
+  uk: Про сайт
 
 live:
   en: Live
@@ -42,6 +46,7 @@ live:
   pt: Produção
   ru: Live
   zh: 直播
+  uk: Наживо
 
 open_menu:
   en: Open menu
@@ -51,6 +56,8 @@ open_menu:
   pt: Abrir menu
   ru: Открыть меню
   zh: 打开菜单
+  uk: Відкрити меню
 
 case_studies:
   en: Case studies
+  uk: Практичні приклади
