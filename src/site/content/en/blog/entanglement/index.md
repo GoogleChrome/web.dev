@@ -201,8 +201,8 @@ tile something like this:
 ### Rotating the Canvas
 
 Once we have our tile, we want to be able to turn it so different paths can
-be taken in the game. To accomplish this using canvas, we use ctx.translate()
-and ctx.rotate(). We want the tile to rotate about it's center, so our first
+be taken in the game. To accomplish this using canvas, we use `ctx.translate()`
+and `ctx.rotate()`. We want the tile to rotate about it's center, so our first
 step is to move the canvas reference point to the center of the hexagonal tile.
 To do this we use:
 

@@ -41,7 +41,7 @@ of the rudimentary code, such as variable declarations and event listener
 subscription, has been left out of the snippets in this article so remember
 to reference the working example.
 
-Before we get started it's a good idea to [check out the demo](https://www.html5rocks.com/static/demos/20things_pageflip/example/index.html) so that you know what we`re aiming to build.
+Before we get started it's a good idea to [check out the demo](https://www.html5rocks.com/static/demos/20things_pageflip/example/index.html) so that you know what we're aiming to build.
 
 ## Markup
 
@@ -58,7 +58,7 @@ The markup required for this is minimal:
 <section>
     <div> <!-- Any type of contents here --> </div>
 </section>
-<!-- More <section>`s here -->
+<!-- More <section>s here -->
 </div>
 </div>
 ```
@@ -206,7 +206,7 @@ The page number is also update to reflect this navigation.
 
 ## Rendering
 
-Now that most of our logic is in place we`ll go through how to
+Now that most of our logic is in place we'll go through how to
 render the folding paper onto the canvas element. Most of this happens
 inside of the `render()` function, which is called 60 times
 per second to update and draw the current state of all active flips.
@@ -240,7 +240,7 @@ Before we start rendering the `flips`, we reset the
 canvas by using the `clearRect(x,y,w,h)` method. Clearing the whole canvas
 comes at a big performance expense and it would be much more effecient
 to clear only the regions that we are drawing on. For the sake of
-keeping this tutorial on topic, we`ll leave it at clearing the whole
+keeping this tutorial on topic, we'll leave it at clearing the whole
 canvas.
 
 If a flip is being dragged we update its `target` value to match the
@@ -392,11 +392,7 @@ place.
 ## Page Flip Demo
 
 The page flip effect is all about communicating the right interactive
-feel so looking at images of it doesn`t exactly do it justice. Use the
-links below to play around with the final result!
-
-[View the working example](https://www.html5rocks.com/static/demos/20things_pageflip/example/index.html)
-[Download the source code (75k .zip)](https://www.html5rocks.com/static/demos/20things_pageflip/20Things_PageFlip_Example.zip)
+feel so looking at images of it doesn't exactly do it justice. 
 
 ## Next Steps
 
