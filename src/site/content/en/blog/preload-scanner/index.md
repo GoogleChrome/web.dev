@@ -5,6 +5,7 @@ subhead: |
 authors:
   - jlwagner
 date: 2022-05-13
+updated: 2022-05-14
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZYfhboCPqPWawQ5LzWKO.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/irM6kTXZoP0MmXGtHOSa.jpg
 alt: A close-up photograph of a screen with various bits of HTML markup shown in a text editor.
@@ -25,7 +26,7 @@ One internal browser optimization to understand is the browser preload scanner. 
 Every browser has a primary HTML parser that [tokenizes](https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization) raw markup and processes it into [an object model](https://developer.mozilla.org/docs/Web/API/Document_Object_Model). This all merrily goes on until the parser pauses when it finds a [blocking resource](/render-blocking-resources/), such as a stylesheet loaded with a `<link>` element, or script loaded with a `<script>` element without an `async` or `defer` attribute.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mXRoJneD6CbMAqaTqNZW.svg", alt="HTML parser diagram.", width="111", height="150" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mXRoJneD6CbMAqaTqNZW.svg", alt="HTML parser diagram.", width="333", height="450" %}
   <figcaption>
     <strong>Fig. 1:</strong> A diagram of how the browser's primary HTML parser can be blocked. In this case, the parser runs into a <code>&lt;link&gt;</code> element for an external CSS file, which blocks the browser from parsing the rest of the document&mdash;or even rendering any of it&mdash;until the CSS is downloaded and parsed.
   </figcaption>
@@ -51,7 +52,7 @@ The reason for this is that the browser can't know for sure if any given script 
 These are good reasons for why the browser _should_ block both parsing and rendering, but blocking either of these important steps are desirable, as they can hold up the show by delaying the discovery of other important resources. Thankfully, browsers do their best to mitigate this problem by way of a secondary HTML parser called a _preload scanner_.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6lccoVh4f6IJXA8UBKxH.svg", alt="A diagram of both the primary HTML parser (left) and the preload scanner (right), which is the secondary HTML parser.", width="219", height="150", loading="lazy" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6lccoVh4f6IJXA8UBKxH.svg", alt="A diagram of both the primary HTML parser (left) and the preload scanner (right), which is the secondary HTML parser.", width="657", height="450", loading="lazy" %}
   <figcaption>
     <strong>Fig. 3:</strong> A diagram depicting how the preload scanner works in parallel with the primary HTML parser to speculatively load assets. Here, the primary HTML parser is blocked as it loads and processes CSS before it can begin processing image markup in the <code>&lt;body&gt;</code> element, but the preload scanner can look ahead in the raw markup to find that image resource and begin loading it before the primary HTML parser is unblocked.
   </figcaption>
