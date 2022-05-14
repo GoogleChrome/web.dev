@@ -2,7 +2,7 @@
 layout: post
 title: How do modern frameworks perform on the new INP metric
 subhead: Understand how the new INP metric affects the CWV of websites built using JavaScript frameworks and libraries.
-date: 2022-05-10
+date: 2022-05-14
 authors:
   - leenasohoni
   - addyosmani
