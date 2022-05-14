@@ -73,27 +73,31 @@ This table explains each of these LCP sub-parts in more detail:
 
 <div class="table-wrapper scrollbar">
   <table>
-    <tr>
-      <th>LCP sub-part</td>
-      <th>Description</td>
-    </tr>
-    <tr>
-      <td>Time to first byte (TTFB)</td>
-      <td>The time from when the user initiates loading the page until when the browser receives the first byte of the HTML document response. (See the <a href="https://web.dev/ttfb/">TTFB</a> metric doc for more details.)</td>
-    </tr>
-    <tr>
-      <td>Resource load delay</td>
-      <td>The delta between TTFB and when the browser starts loading the LCP resource. <em>*</em></td>
-    </tr>
-    <tr>
-      <td>Resource load time</td>
-      <td>The time it takes to load the LCP resource itself. <em>*</em></td>
-    </tr>
-    <tr>
-      <td>Element render delay</td>
-      <td>The delta between when the LCP resource finishes loading until the LCP element is fully rendered.</td>
-    </tr>
-    <caption>* If the LCP element does not require a resource load to render (for example, if the element is a text node rendered with a system font), this time will be 0.</caption>
+    <thead>
+      <tr>
+        <th>LCP sub-part</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Time to first byte (TTFB)</td>
+        <td>The time from when the user initiates loading the page until when the browser receives the first byte of the HTML document response. (See the <a href="https://web.dev/ttfb/">TTFB</a> metric doc for more details.)</td>
+      </tr>
+      <tr>
+        <td>Resource load delay</td>
+        <td>The delta between TTFB and when the browser starts loading the LCP resource. <em>*</em></td>
+      </tr>
+      <tr>
+        <td>Resource load time</td>
+        <td>The time it takes to load the LCP resource itself. <em>*</em></td>
+      </tr>
+      <tr>
+        <td>Element render delay</td>
+        <td>The delta between when the LCP resource finishes loading until the LCP element is fully rendered.</td>
+      </tr>
+      <caption>* If the LCP element does not require a resource load to render (for example, if the element is a text node rendered with a system font), this time will be 0.</caption>
+    </tbody>
   </table>
 </div>
 
@@ -117,30 +121,34 @@ Of the four sub-parts, two have the word "delay" in their names. That is a clue 
 
 <div class="table-wrapper scrollbar">
   <table>
-    <tr>
-      <th>LCP sub-part</td>
-      <th>% of LCP</td>
-    </tr>
-    <tr>
-      <td>Time to first byte (TTFB)</td>
-      <td>~40%</td>
-    </tr>
-    <tr>
-      <td>Resource load delay</td>
-      <td>&lt;10%</td>
-    </tr>
-    <tr>
-      <td>Resource load time</td>
-      <td>~40%</td>
-    </tr>
-    <tr>
-      <td>Element render delay</td>
-      <td>&lt;10%</td>
-    </tr>
-    <tr>
-      <td><strong>TOTAL</strong></td>
-      <td><strong>100%</strong></td>
-    </tr>
+    <thead>
+      <tr>
+        <th>LCP sub-part</th>
+        <th>% of LCP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Time to first byte (TTFB)</td>
+        <td>~40%</td>
+      </tr>
+      <tr>
+        <td>Resource load delay</td>
+        <td>&lt;10%</td>
+      </tr>
+      <tr>
+        <td>Resource load time</td>
+        <td>~40%</td>
+      </tr>
+      <tr>
+        <td>Element render delay</td>
+        <td>&lt;10%</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL</strong></td>
+        <td><strong>100%</strong></td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
