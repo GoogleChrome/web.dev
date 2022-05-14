@@ -88,7 +88,9 @@ The [Aurora](/introducing-aurora/) team in Chrome works with open-source web fra
 
 An INP below or equal to 200 milliseconds indicates good responsiveness. The CrUX report data and the [CWV Technology Report](https://www.google.com/url?q=https://datastudio.google.com/s/gPxRJmoivLA&sa=D&source=docs&ust=1652475737927418&usg=AOvVaw3ZQ0WOZu2ZGjCuJb23dQYg) for April 2022 give us the following information about responsiveness for popular JavaScript frameworks.
 
-Note: This measurement includes data from all versions of the frameworks listed. For more mature frameworks, this can include data from versions many years out-of-date.
+{% Aside %}
+This measurement includes data from all versions of the frameworks listed. For more mature frameworks, this can include data from versions many years out-of-date.
+{% endAside %}
 
 <div class="table-wrapper scrollbar">
 <table>
@@ -163,7 +165,7 @@ Note: This measurement includes data from all versions of the frameworks listed.
 
 {% Aside 'important' %}
 
-We recommend not solely making decisions on the frameworks you are choosing based on the numbers above, without being aware of additional nuance. Many different variables contribute to making a framework suitable for your web apps, and the table only reflects INP. Additionally, the used dataset only looks into landing pages which is not the typical use case for some of the listed frameworks. Besides the framework used, several other reasons could affect performance metrics. It is also worth noting that frameworks are often used for different application holotypes, which may play a factor here. The purpose of the data is to indicate the extent of effort required to meet INP goals if your site uses a specific framework.
+We recommend not solely making decisions on the frameworks you are choosing based on the numbers above, without being aware of additional nuance. Many different variables contribute to making a framework suitable for your web apps, and the table only reflects INP. Additionally, the used dataset only looks into landing pages which is not the typical use case for some of the listed frameworks. Besides the framework used, several other factors could affect performance metrics. It is also worth noting that frameworks are often used for different application holotypes, which may play a factor here. The purpose of the data is to indicate the extent of effort required to meet INP goals if your site uses a specific framework.
 
 {% endAside %}
 
@@ -203,25 +205,25 @@ Aurora works with frameworks by incorporating best practices to provide baked-in
 ### How are frameworks thinking about improving INP?
 
 
-#### React & Next.js
+#### React and Next.js
 
-React.js **time slicing**, implemented through **[startTransition](https://github.com/reactwg/react-18/discussions/41)** and **Suspense**, allows you to opt-in to selective or progressive hydration. This means that hydration isn't a synchronous block. It's done in small slices that are interruptible at any point.
+React.js _time slicing_, implemented through [startTransition](https://github.com/reactwg/react-18/discussions/41) and _Suspense_, allows you to opt-in to selective or progressive hydration. This means that hydration isn't a synchronous block. It's done in small slices that are interruptible at any point.
 
 This should help improve INP and enable you to respond more quickly to keystrokes, hover effects during the transition, and clicks. It also helps to keep React apps responsive even for large transitions such as auto-complete. 
 
-Next.js is working on a **[new routing framework](https://twitter.com/leeerob/status/1521659624516030466)** that will use startTransition by default for route transitions. This goal is to allow Next.js site owners to adopt React time-slicing and improve the responsiveness of route transitions.
+Next.js is working on a [new routing framework](https://twitter.com/leeerob/status/1521659624516030466) that will use startTransition by default for route transitions. This goal is to allow Next.js site owners to adopt React time-slicing and improve the responsiveness of route transitions.
 
 
 #### Angular
 
 The Angular team is exploring several ideas that should also help with INP:
 
-* **Zoneless**: cuts down on initial bundle size, required code that must load before an app can render anything
-* **Hydration**: island-style hydration to limit how much of the app needs to be woken up for interaction
-* **Reduce overhead of CD**: make change detection less expensive, find ways to check less of the app, leverage reactive signals about what's changed, etc.
-* **More granular code-splitting**: make the initial bundle smaller
-* **Better support for loading indicators**: during SSR re-render, during route navigation, lazy loading operations, etc.
-* **Profiling tools**: better dev tools to understand interaction cost, particularly around change detection cost for specific interactions
+* **Zoneless:** Cuts down on initial bundle size, and required code that must load before an app can render anything.
+* **Hydration:** Island-style hydration to limit how much of the app needs to be woken up for interaction.
+* **Reduce overhead of CD:** For example, make change detection less expensive, find ways to check less of the app, and leverage reactive signals about what's changed.
+* **More granular code-splitting:** Make the initial bundle smaller.
+* **Better support for loading indicators:**: For example, during SSR re-render, during route navigation, and in lazy loading operations.
+* **Profiling tools:** Better dev tools to understand interaction cost, particularly around change detection cost for specific interactions.
 
 Through these enhancements, we can address different issues that lead to poor responsiveness and user experience, and boost the CWV metrics and the new INP metric for framework-based websites.
 
