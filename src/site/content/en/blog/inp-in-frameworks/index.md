@@ -5,8 +5,8 @@ subhead: Understand how the new INP metric affects the CWV of websites built usi
 date: 2022-05-10
 authors:
   - leenasohoni
-  - keenyeeliau
   - addyosmani
+  - keenyeeliau
 description: |
   This post discusses the relevance of the new INP metric to framework-based websites and Aurora's work to support frameworks in optimizing this metric.
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/EK3nTunaRZbP96S2zwM2.jpeg
@@ -16,10 +16,10 @@ tags:
   - blog
 ---
 
-Chrome recently introduced a new [experimental responsiveness metric](https://groups.google.com/a/chromium.org/g/chrome-ux-report-announce/c/F7S4_emZkcw) in the [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) report. This metric, which we now know as [Interaction to Next Paint (INP)](/inp/) measures overall responsiveness to user interactions on the page. Today we want to share insights on where websites built using modern JavaScript frameworks stand in relation to this metric. We want to discuss why INP is relevant to frameworks and how [Aurora](/introducing-aurora/) is helping frameworks to optimize responsiveness, irrespective of the metric used.
+Chrome recently introduced a new [experimental responsiveness metric](https://groups.google.com/a/chromium.org/g/chrome-ux-report-announce/c/F7S4_emZkcw) in the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) report. This metric, which we now know as [Interaction to Next Paint (INP)](/inp/) measures overall responsiveness to user interactions on the page. Today we want to share insights on where websites built using modern JavaScript frameworks stand in relation to this metric. We want to discuss why INP is relevant to frameworks and how [Aurora](/introducing-aurora/) and frameworks are working to optimize responsiveness.
 
 
-# Background
+## Background
 
 Chrome uses First Input Delay ([FID](/fid/#why-only-consider-the-input-delay)) as part of Core Web Vitals ([CWV](/learn-web-vitals/)) to measure the [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) of websites. FID measures the waiting time from the first user interaction to the moment the browser is able to process the event handlers connected to the interaction. It does not include the time to process the event handlers, process subsequent interactions on the same page, or paint the next frame after the event callbacks run. However, responsiveness is crucial to the user experience throughout the page lifecycle because users spend roughly 90% of the time on a page after it loads. 
 
@@ -28,7 +28,7 @@ Chrome uses First Input Delay ([FID](/fid/#why-only-consider-the-input-delay)) a
 Since FID measures only the input delay of the first interaction, it is likely that web developers have not proactively optimized the subsequent interactions as part of their CWV improvement process. Sites, especially those with a high degree of interactivity, would therefore have to start working hard to do well on this metric.
 
 
-## The role of frameworks
+### The role of frameworks
 
 Since many websites rely on JavaScript to provide interactivity, the INP score would primarily be affected by the amount of JavaScript processed on the main thread. [JavaScript frameworks](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks) are an essential part of modern front-end web development and provide developers with valuable abstractions for routing, event handling, and compartmentalization of JavaScript code. Thus, they have a central role in optimizing the responsiveness and user experience of websites that use them.
 
@@ -84,9 +84,11 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
 The [Aurora](/introducing-aurora/) team in Chrome works with open-source web frameworks to help developers improve different aspects of the user experience, including performance and CWV metrics. With the introduction of INP, we want to be prepared for the change in CWV metrics for framework-based websites. We have collected data based on the experimental responsiveness metric in CrUX reports. We will share insights and action items to ease the transition to the INP metric for framework-based websites. 
 
 
-# Experimental responsiveness metric data
+## Experimental responsiveness metric data
 
-An INP below or equal to 200 milliseconds indicates good responsiveness. The CrUX report data and the [CWV technology report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=k-3cPh_K1xg&params=%7B%22df44%22:%22include%25EE%2580%25800%25EE%2580%2580IN%25EE%2580%2580React%25EE%2580%2580Vue.js%25EE%2580%2580Nuxt.js%25EE%2580%2580Next.js%25EE%2580%2580Preact%25EE%2580%2580Angular%25EE%2580%2580lit-element%25EE%2580%2580SvelteKit%22%7D) for April 2022 give us the following information about responsiveness for popular JavaScript frameworks.
+An INP below or equal to 200 milliseconds indicates good responsiveness. The CrUX report data and the [CWV Technology Report](https://www.google.com/url?q=https://datastudio.google.com/s/gPxRJmoivLA&sa=D&source=docs&ust=1652475737927418&usg=AOvVaw3ZQ0WOZu2ZGjCuJb23dQYg) for April 2022 give us the following information about responsiveness for popular JavaScript frameworks.
+
+Note: This measurement includes data from all versions of the frameworks listed. For more mature frameworks, this can include data from versions many years out-of-date.
 
 <div class="table-wrapper scrollbar">
 <table>
@@ -94,33 +96,23 @@ An INP below or equal to 200 milliseconds indicates good responsiveness. The CrU
   <tr>
    <th rowspan="2">Technology
    </th>
-   <th colspan="2">Mobile
-   </th>
-   <th colspan="2">Desktop
+   <th colspan="2" align="center">% Passing
    </th>
   </tr>
   <tr>
-   <th>% passing
+   <th>% Mobile
    </th>
-   <th>No. of origins
-   </th>
-   <th>% passing
-   </th>
-   <th>No. of origins
+   <th>Desktop
    </th>
   </tr>
 </thead>
   <tbody>
   <tr>
-   <td>Angular
+   <td>Angular (v2.0.0+)
    </td>
    <td>19.0
    </td>
-   <td>40,116
-   </td>
    <td>65.5
-   </td>
-   <td>33,835
    </td>
   </tr>
   <tr>
@@ -128,11 +120,7 @@ An INP below or equal to 200 milliseconds indicates good responsiveness. The CrU
    </td>
    <td>20.2
    </td>
-   <td>67,300
-   </td>
    <td>73.4
-   </td>
-   <td>54,992
    </td>
   </tr>
   <tr>
@@ -140,11 +128,7 @@ An INP below or equal to 200 milliseconds indicates good responsiveness. The CrU
    </td>
    <td>25.4
    </td>
-   <td>93,268
-   </td>
    <td>84.5
-   </td>
-   <td>72,668
    </td>
   </tr>
   <tr>
@@ -152,35 +136,15 @@ An INP below or equal to 200 milliseconds indicates good responsiveness. The CrU
    </td>
    <td>36.6
    </td>
-   <td>152,491
-   </td>
    <td>90.6
    </td>
-   <td>126,909
-   </td>
   </tr>
   <tr>
-   <td>React
-   </td>
-   <td>34.6
-   </td>
-   <td>456,607
-   </td>
-   <td>83.7
-   </td>
-   <td>338,736
-   </td>
-  </tr>
-  <tr>
-   <td>Vue
+   <td>Vue (v2.0.0+)
    </td>
    <td>41.7
    </td>
-   <td>160,878
-   </td>
    <td>90.0
-   </td>
-   <td>129,172
    </td>
   </tr>
   <tr>
@@ -188,11 +152,7 @@ An INP below or equal to 200 milliseconds indicates good responsiveness. The CrU
    </td>
    <td>36.4
    </td>
-   <td>16,263
-   </td>
    <td>75.7
-   </td>
-   <td>14,409
    </td>
   </tr>
   </tbody>
@@ -203,14 +163,15 @@ An INP below or equal to 200 milliseconds indicates good responsiveness. The CrU
 
 {% Aside 'important' %}
 
-Do not use these numbers for comparing the frameworks listed. Besides the framework used, several other reasons could affect performance metrics. The purpose of the data is to indicate the extent of effort required to meet INP goals if your site uses a specific framework.
+We recommend not solely making decisions on the frameworks you are choosing based on the numbers above, without being aware of additional nuance. Many different variables contribute to making a framework suitable for your web apps, and the table only reflects INP. Additionally, the used dataset only looks into landing pages which is not the typical use case for some of the listed frameworks. Besides the framework used, several other reasons could affect performance metrics. It is also worth noting that frameworks are often used for different application holotypes, which may play a factor here. The purpose of the data is to indicate the extent of effort required to meet INP goals if your site uses a specific framework.
+
 {% endAside %}
 
 
 The table shows the percentage of origins on each framework with a good responsiveness score. The numbers are encouraging but tell us that there is much room for improvement. 
 
 
-# How does JavaScript affect INP?
+## How does JavaScript affect INP?
 
 INP values in the field correlate well with the Total Blocking Time (TBT) observed in the lab. This could imply that any script that blocks the main thread for a long duration would be bad for INP. Heavy JavaScript execution after any interaction could block the main thread for an extended period and delay the response to that interaction. Some of the common causes that lead to blocking scripts are:
 
@@ -229,7 +190,7 @@ INP values in the field correlate well with the Total Blocking Time (TBT) observ
 From now on, for a good INP score, developers will have to focus on reviewing the code that executes after every interaction on the page and optimize their chunking, rehydration, loading strategies, and the size of each render() update  for both first-party and third-party scripts,  
 
 
-# How is Aurora addressing INP issues?
+## How are Aurora and frameworks addressing INP issues?
 
 Aurora works with frameworks by incorporating best practices to provide baked-in solutions to common problems. We have worked with Next.js, Nuxt.js, Gatsby, and Angular on [solutions](/introducing-aurora/#what-has-our-work-unlocked-so-far) that offer strong defaults within the framework to optimize performance. Following are the highlights of our work in this context:
 
@@ -239,10 +200,33 @@ Aurora works with frameworks by incorporating best practices to provide baked-in
 
 * **Vue and Nuxt.js:** We are exploring avenues for collaboration, mainly in relation to script loading and rendering.
 
-Through these enhancements, Aurora can address different issues that lead to poor responsiveness and user experience, and boost the CWV metrics and the new INP metric for framework-based websites.
+### How are frameworks thinking about improving INP?
 
 
-# Conclusion
+#### React & Next.js
+
+React.js **time slicing**, implemented through **[startTransition](https://github.com/reactwg/react-18/discussions/41)** and **Suspense**, allows you to opt-in to selective or progressive hydration. This means that hydration isn't a synchronous block. It's done in small slices that are interruptible at any point.
+
+This should help improve INP and enable you to respond more quickly to keystrokes, hover effects during the transition, and clicks. It also helps to keep React apps responsive even for large transitions such as auto-complete. 
+
+Next.js is working on a **[new routing framework](https://twitter.com/leeerob/status/1521659624516030466)** that will use startTransition by default for route transitions. This goal is to allow Next.js site owners to adopt React time-slicing and improve the responsiveness of route transitions.
+
+
+#### Angular
+
+The Angular team is exploring several ideas that should also help with INP:
+
+* **Zoneless**: cuts down on initial bundle size, required code that must load before an app can render anything
+* **Hydration**: island-style hydration to limit how much of the app needs to be woken up for interaction
+* **Reduce overhead of CD**: make change detection less expensive, find ways to check less of the app, leverage reactive signals about what's changed, etc.
+* **More granular code-splitting**: make the initial bundle smaller
+* **Better support for loading indicators**: during SSR re-render, during route navigation, lazy loading operations, etc.
+* **Profiling tools**: better dev tools to understand interaction cost, particularly around change detection cost for specific interactions
+
+Through these enhancements, we can address different issues that lead to poor responsiveness and user experience, and boost the CWV metrics and the new INP metric for framework-based websites.
+
+
+## Conclusion
 
 We expect the INP score to provide a better compass for websites to improve responsiveness and performance in the future. We will take steps to provide more actionable guidance on the metric in 2022-23. We hope to achieve this by:
 
