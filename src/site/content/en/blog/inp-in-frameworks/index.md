@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How do modern frameworks perform on the new INP metric
-subhead: Understand how the new INP metric affects the CWV of websites built using JavaScript frameworks and libraries.
+subhead: Understand how the new INP metric affects the experience of sites built using JavaScript frameworks and libraries.
 date: 2022-05-14
 authors:
   - leenasohoni
@@ -165,7 +165,7 @@ This measurement includes data from all versions of the frameworks listed. For m
 
 {% Aside 'important' %}
 
-We recommend not solely making decisions on the frameworks you are choosing based on the numbers above, without being aware of additional nuance. Many different variables contribute to making a framework suitable for your web apps, and the table only reflects INP. Additionally, the used dataset only looks into landing pages which is not the typical use case for some of the listed frameworks. Besides the framework used, several other factors could affect performance metrics. It is also worth noting that frameworks are often used for different application holotypes, which may play a factor here. The purpose of the data is to indicate the extent of effort required to meet INP goals if your site uses a specific framework.
+We recommend not solely making decisions on the frameworks you are choosing based on the numbers above, without being aware of additional nuance. Many different variables contribute to making a framework suitable for your web apps, and the table only reflects INP. Additionally, the used dataset only looks into landing pages which is not the typical use case for some of the listed frameworks. Besides the framework used, several other factors could affect performance metrics. It is also worth noting that frameworks are often used for different application [holotypes](https://jasonformat.com/application-holotypes/), which may play a factor here. The purpose of the data is to indicate the extent of effort required to meet INP goals if your site uses a specific framework.
 
 {% endAside %}
 
