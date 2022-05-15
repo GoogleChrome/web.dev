@@ -17,7 +17,7 @@ feedback:
 [`react-snap`](https://github.com/stereobooster/react-snap) is a third-party
 library that pre-renders pages on your site into static HTML files. This can
 improve
-[First Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)
+[First Paint](/user-centric-performance-metrics/#important-metrics-to-measure)
 times in your application.
 
 Here's a comparison of the same application with and without pre-rendering

@@ -112,7 +112,7 @@ interface.
 {% Aside 'warning' %}
 
 To call the `show()` method, you must add a [user
-activation](https://developers.google.com/web/updates/2019/01/user-activation).
+activation](https://developer.chrome.com/blog/user-activation/).
 This means the call must be inside an event listener, such as
 `click`. Note that Chrome currently bypasses this constraint, but plans to enforce
 it sometime in the future.

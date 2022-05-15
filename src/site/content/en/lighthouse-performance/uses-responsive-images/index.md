@@ -43,7 +43,7 @@ You can think of image CDNs like web service APIs for transforming images.
 
 Another strategy is to use vector-based image formats, like SVG.
 With a finite amount of code, an SVG image can scale to any size.
-See [Replace complex icons with SVG](https://developers.google.com/web/fundamentals/design-and-ux/responsive/images#replace_complex_icons_with_svg) to learn more.
+See [Replace complex icons with SVG](/responsive-images/#replace-complex-icons-with-svg) to learn more.
 
 Tools like
 [gulp-responsive](https://www.npmjs.com/package/gulp-responsive) or

@@ -737,7 +737,7 @@ Well designed UI and UX can reduce sign-in form abandonment:
 
 ## Keep learning {: #resources }
 
-* [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+* [Create Amazing Forms](/learn/forms/)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)

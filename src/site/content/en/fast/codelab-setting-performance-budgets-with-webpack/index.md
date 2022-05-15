@@ -13,7 +13,7 @@ tags:
   - performance
 ---
 
-[Webpack](https://developers.google.com/web/fundamentals/performance/webpack/)
+[Webpack](/webpack/)
 combines all your imported files and packages them into one or more output
 files known as bundles. Bundling is neat, but as your app grows your bundles
 will grow too. You need to monitor bundle sizes to ensure that they don't grow
@@ -82,7 +82,7 @@ An appropriate performance budget will depend on the nature of your project.
 It's always best to [do your own research](/your-first-performance-budget).
 A [good rule](/your-first-performance-budget#budget-for-quantity-based-metrics)
 of thumb is to deliver under 170 KB of compressed/minified
-[critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+[critical-path](/critical-rendering-path/)
 resources.
 
 {% Aside %}

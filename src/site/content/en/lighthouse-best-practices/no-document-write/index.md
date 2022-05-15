@@ -41,7 +41,7 @@ For the most problematic uses,
 Chrome will either block calls to `document.write()`
 or emit a console warning about them, depending on the user's connection speed.
 Either way, the affected calls appear in the DevTools Console.
-See Google's [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
+See Google's [Intervening against `document.write()`](https://developer.chrome.com/blog/removing-document-write/)
 article for more information.
 
 Lighthouse reports any remaining calls to `document.write()`
@@ -64,6 +64,6 @@ ask the provider to support asynchronous loading.
 ## Resources
 
 - [Source code for **Uses `document.write()`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
-- [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
+- [Intervening against `document.write()`](https://developer.chrome.com/blog/removing-document-write/)
 - [Parser blocking versus asynchronous JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [Speculative parsing](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

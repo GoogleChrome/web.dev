@@ -48,4 +48,4 @@ Outros navegadores têm critérios de instalação semelhantes, embora possa hav
 - [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
 - [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
-{% Aside %} No Android, se o manifesto do aplicativo da web incluir `related_applications` e `"prefer_related_applications": true` , o usuário será direcionado para a Google Play Store e [solicitado a instalar o aplicativo Android especificado](https://developers.google.com/web/fundamentals/app-install-banners/native). {% endAside %}
+{% Aside %} No Android, se o manifesto do aplicativo da web incluir `related_applications` e `"prefer_related_applications": true` , o usuário será direcionado para a Google Play Store e [solicitado a instalar o aplicativo Android especificado](https://developer.chrome.com/blog/app-install-banners-native/). {% endAside %}

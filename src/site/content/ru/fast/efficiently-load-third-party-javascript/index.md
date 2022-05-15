@@ -135,7 +135,7 @@ tags:
 
 - Уменьшение времени поиска DNS и кругового пути.
 - Улучшение [HTTP-кэширования](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) заголовков.
-- Использование [операций push сервера HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/).
+- Использование [операций push сервера HTTP/2](/performance-http2/).
 
 Например, веб-сайту Casper удалось [уменьшить время загрузки на 1,7 секунды](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec), разместив скрипт A/B-тестирования на собственном ресурсе.
 

@@ -12,7 +12,7 @@ tags:
 
 CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources)：它们必须在浏览器渲染页面之前加载和处理。包含不必要的大样式的网页需要更长的渲染时间。
 
-在本指南中，您将了解如何以优化[关键渲染路径](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)和改善 [First Contentful Paint (FCP)](/fcp/) 为目标来延迟加载非关键 CSS。
+在本指南中，您将了解如何以优化[关键渲染路径](/critical-rendering-path/)和改善 [First Contentful Paint (FCP)](/fcp/) 为目标来延迟加载非关键 CSS。
 
 ## 以次优方式加载 CSS
 

@@ -34,7 +34,7 @@ Já mencionamos algumas coisas que você pode incluir em um orçamento de desemp
 - Tamanho máximo de scripts, incluindo estruturas
 - Número total de recursos externos, como scripts de terceiros
 
-No entanto, esses números não dizem muito sobre a experiência do usuário. Duas páginas com o mesmo número de solicitações ou mesmo peso podem ser renderizadas de maneira diferente dependendo da ordem em que os recursos são solicitados. Se um [recurso crítico,](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) como uma imagem principal ou uma folha de estilo em uma das páginas, for carregado no final do processo, os usuários irão esperar mais para ver algo útil e perceber a página como mais lenta. Se na outra página as partes mais importantes carregarem rapidamente, eles podem nem perceber se o resto da página carregou ou não.
+No entanto, esses números não dizem muito sobre a experiência do usuário. Duas páginas com o mesmo número de solicitações ou mesmo peso podem ser renderizadas de maneira diferente dependendo da ordem em que os recursos são solicitados. Se um [recurso crítico,](/critical-rendering-path/) como uma imagem principal ou uma folha de estilo em uma das páginas, for carregado no final do processo, os usuários irão esperar mais para ver algo útil e perceber a página como mais lenta. Se na outra página as partes mais importantes carregarem rapidamente, eles podem nem perceber se o resto da página carregou ou não.
 
 <figure>{% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Imagem de renderização progressiva de página com base no caminho crítico", width="611", height="300" %}</figure>
 
@@ -61,7 +61,7 @@ A única maneira de saber realmente o que funciona melhor para o seu site é exp
 Se você não tem tempo para isso, aqui estão alguns bons números padrão para você começar:
 
 - Menos de **5 segundos** de Time to Interactive
-- Menos de **170 KB** de [recursos de caminho crítico](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) (compactado/reduzido)
+- Menos de **170 KB** de [recursos de caminho crítico](/critical-rendering-path/) (compactado/reduzido)
 
 Esses [números](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/) são calculados com base em dispositivos de linha de base do mundo real e na **velocidade da rede 3G** . [Mais da metade do tráfego da Internet](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/) hoje acontece em redes móveis, então você deve usar a velocidade da rede 3G como ponto de partida.
 

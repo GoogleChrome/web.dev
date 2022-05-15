@@ -33,7 +33,7 @@ embed resources from a different origin. This policy is mostly a historical
 artifact and can expose your site to vulnerabilities such as [clickjacking using
 iframes](#how-to-prevent-clickjacking). You can restrict cross-origin reading
 of these tags using a [Content Security
-Policy](https://developers.google.com/web/fundamentals/security/csp/).
+Policy](/csp/).
 
 ## What's considered same-origin?
 

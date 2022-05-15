@@ -20,7 +20,7 @@ tags:
 您可以通过不同的方式实现这一点：
 
 - [从浏览器](/customize-install/)安装 PWA。
-- [从应用商店](https://developers.google.com/web/android/trusted-web-activity)安装 PWA。
+- [从应用商店](https://developer.chrome.com/docs/android/trusted-web-activity/)安装 PWA。
 
 拥有不同分销渠道是接触大量用户的有效方式，但选择正确的推广策略很有挑战性。
 
@@ -86,7 +86,7 @@ tags:
 
 根据 [Google Play 研究](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2)，APK 的大小每增加 6 MB，安装转化率就会降低 1%。这意味着 10 MB 应用程序的下载完成率可能比 **100 MB 应用程序的下载完成率高大约 30%！**
 
-为了解决这个问题，一些公司利用其 PWA，以使用受信任网络活动在 Play Store 中提供轻量级版本的应用程序。 使用[受信任网络活动](https://developers.google.com/web/android/trusted-web-activity)，可以在 Play Store 中提供您的 PWA，并且因为它是使用网络构建的，所以应用程序大小通常只有几兆字节。
+为了解决这个问题，一些公司利用其 PWA，以使用受信任网络活动在 Play Store 中提供轻量级版本的应用程序。 使用[受信任网络活动](https://developer.chrome.com/docs/android/trusted-web-activity/)，可以在 Play Store 中提供您的 PWA，并且因为它是使用网络构建的，所以应用程序大小通常只有几兆字节。
 
 Oyo 是印度最大的酒店公司之一，开发了其[精简版应用程序](/oyo-lite-twa/)，并使用 TWA 在 Play Store 中予以提供。它只有 850 KB，仅在其 Android 应用程序大小的 7%。安装后，与它们的 Android 应用程序别无二致：
 
@@ -156,7 +156,7 @@ if (isDeviceMidOrLowEnd()) {
 }
 ```
 
-{% Aside %}本指南未深入介绍如何将设备信号映射到设备类别的技术，但您可以查阅 Addy Osmani 所著的[自适应加载指南](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69)、Philip Walton 所著的[设备内存 API](https://developers.google.com/web/updates/2017/12/device-memory) 和 Jeremy Wagner 所著的[使用客户端提示适应用户](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/)，了解有关此方面最佳实践的更多信息。{% endAside %}
+{% Aside %}本指南未深入介绍如何将设备信号映射到设备类别的技术，但您可以查阅 Addy Osmani 所著的[自适应加载指南](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69)、Philip Walton 所著的[设备内存 API](https://developer.chrome.com/blog/device-memory/) 和 Jeremy Wagner 所著的[使用客户端提示适应用户](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/)，了解有关此方面最佳实践的更多信息。{% endAside %}
 
 ## 结论
 

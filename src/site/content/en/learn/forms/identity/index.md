@@ -72,7 +72,7 @@ passwords—and [don't try to invent your own hashing algorithm](https://www.sch
 Offer [multi-factor authentication](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html), 
 especially if you store personal or sensitive data. 
 [SMS OTP best practices](/sms-otp-form) and 
-[Enabling Strong Authentication with WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) 
+[Enabling Strong Authentication with WebAuthn](https://developer.chrome.com/blog/webauthn/) 
 explain how to implement multi-factor authentication.
 
 Ensure users don't use compromised passwords. 

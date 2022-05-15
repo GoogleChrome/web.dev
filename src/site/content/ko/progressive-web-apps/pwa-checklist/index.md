@@ -163,7 +163,7 @@ Jeremy Keith의 [탄력적인 웹 디자인](https://resilientwebdesign.com/)은
 
 #### 방법
 
-사용자가 오프라인에서 작동할 것으로 기대하는 기능을 결정한 후에는 콘텐츠를 사용할 수 있고 오프라인 컨텍스트에 적용할 수 있도록 해야 합니다. 또한 브라우저 내 NoSQL 스토리지 시스템인 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)를 사용하여 데이터를 저장 및 검색하고 사용자가 오프라인 상태에서 작업을 수행하고 사용자가 다시 안정적인 연결을 가질 때까지 서버 통신을 연기할 수 있도록 [백그라운드 동기화](https://developer.chrome.com/blog/background-sync/)를 사용할 수 있습니다. 서비스 워커를 사용하여 오프라인 사용을 위한 이미지, 비디오 파일 및 오디오 파일과 같은 다른 종류의 콘텐츠를 저장하고 사용자 인증을 유지하기 위해 [안전하고 수명이 긴 세션](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)을 구현하는 데 사용할 수도 있습니다. 사용자 경험 관점에서 로드하는 동안 사용자에게 속도와 콘텐츠에 대한 인식을 제공한 다음 필요에 따라 캐시된 콘텐츠 또는 오프라인 표시기로 대체할 수 있는 [스켈레톤 화면](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)을 사용할 수 있습니다.
+사용자가 오프라인에서 작동할 것으로 기대하는 기능을 결정한 후에는 콘텐츠를 사용할 수 있고 오프라인 컨텍스트에 적용할 수 있도록 해야 합니다. 또한 브라우저 내 NoSQL 스토리지 시스템인 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)를 사용하여 데이터를 저장 및 검색하고 사용자가 오프라인 상태에서 작업을 수행하고 사용자가 다시 안정적인 연결을 가질 때까지 서버 통신을 연기할 수 있도록 [백그라운드 동기화](https://developer.chrome.com/blog/background-sync/)를 사용할 수 있습니다. 서비스 워커를 사용하여 오프라인 사용을 위한 이미지, 비디오 파일 및 오디오 파일과 같은 다른 종류의 콘텐츠를 저장하고 사용자 인증을 유지하기 위해 [안전하고 수명이 긴 세션](https://developer.chrome.com/blog/2-cookie-handoff/)을 구현하는 데 사용할 수도 있습니다. 사용자 경험 관점에서 로드하는 동안 사용자에게 속도와 콘텐츠에 대한 인식을 제공한 다음 필요에 따라 캐시된 콘텐츠 또는 오프라인 표시기로 대체할 수 있는 [스켈레톤 화면](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)을 사용할 수 있습니다.
 
 {% endDetails %}
 

@@ -64,7 +64,7 @@ and [FCP](/fcp/). Specific optimizations included:
     network](/content-delivery-networks/).
 +   [Lazy loading images](/browser-level-image-lazy-loading/)
     with `loading="lazy"`.
-+   [Server-side rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
++   [Server-side rendering](/rendering-on-the-web/)
     of
     [critical rendering path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
     content.

@@ -492,7 +492,7 @@ Address line 2 (optional)
 - [Рекомендации по формам входа в систему](/sign-in-form-best-practices)
 - [Рекомендации по формам регистрации](/sign-up-form-best-practices)
 - [Подтвердите номера телефонов в Интернете с помощью API WebOTP](/web-otp)
-- [Как создавать потрясающие формы](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Как создавать потрясающие формы](/learn/forms/)
 - Рекомендации по разработке форм для мобильных устройств
 - Функциональные элементы управления в формах
 - [Создание доступных форм](https://webaim.org/techniques/forms/)

@@ -423,7 +423,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
   </figcaption>
 </figure>
 
-{% Aside %} 다양한 서버 렌더링 아키텍처에 대해 자세히 알아보려면 [웹에서 렌더링하기](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)를 참조하세요. {% endAside %}
+{% Aside %} 다양한 서버 렌더링 아키텍처에 대해 자세히 알아보려면 [웹에서 렌더링하기](/rendering-on-the-web/)를 참조하세요. {% endAside %}
 
 ## 개발자 도구
 
