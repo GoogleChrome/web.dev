@@ -1693,7 +1693,7 @@ child of a `.media-block` is a sibling or parent of `.content`:
 - Explainer:
   [https://css.oddbird.net/scope/explainer/](https://css.oddbird.net/scope/explainer/)  
 
-### No CSS way for a masonry layout
+### No JavaScript way for a masonry layout
 
 Before CSS masonry with grid, JavaScript was the best way to achieve a masonry
 layout, as any of the CSS methods with columns or flexbox would inaccurately
