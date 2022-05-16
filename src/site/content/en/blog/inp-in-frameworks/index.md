@@ -2,7 +2,7 @@
 layout: post
 title: How do modern frameworks perform on the new INP metric
 subhead: Understand how the new INP metric affects the experience of sites built using JavaScript frameworks and libraries.
-date: 2022-05-14
+date: 2022-05-16
 authors:
   - leenasohoni
   - addyosmani
