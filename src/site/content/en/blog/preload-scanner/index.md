@@ -49,7 +49,7 @@ The browser also blocks parsing and rendering of the page when it encounters `<s
 
 The reason for this is that the browser can't know for sure if any given script will modify the DOM while the primary HTML parser is still doing its job. This is why it's been a common practice to load your JavaScript at the end of the document so that the effects of blocked parsing and rendering become marginal.
 
-These are good reasons for why the browser _should_ block both parsing and rendering, but blocking either of these important steps are desirable, as they can hold up the show by delaying the discovery of other important resources. Thankfully, browsers do their best to mitigate this problem by way of a secondary HTML parser called a _preload scanner_.
+These are good reasons for why the browser _should_ block both parsing and rendering. Yet, blocking either of these important steps is undesirable, as they can hold up the show by delaying the discovery of other important resources. Thankfully, browsers do their best to mitigate these problems by way of a secondary HTML parser called a _preload scanner_.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6lccoVh4f6IJXA8UBKxH.svg", alt="A diagram of both the primary HTML parser (left) and the preload scanner (right), which is the secondary HTML parser.", width="657", height="450", loading="lazy" %}
