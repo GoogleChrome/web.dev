@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Case Study: Real-time Updates in Stream Congress
+title: Case Study - Real-time Updates in Stream Congress
 authors:
   - luigimontanez
 date: 2011-03-17
