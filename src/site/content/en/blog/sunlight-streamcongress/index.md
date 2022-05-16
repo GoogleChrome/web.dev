@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Case Study - Real-time Updates in Stream Congress
+title: Case Study: Real-time Updates in Stream Congress
 authors:
   - luigimontanez
 date: 2011-03-17
@@ -15,12 +15,13 @@ Through [WebSockets](http://www.html5rocks.com/tutorials/websockets/basics/) and
 
 ## Starting with WebSockets
 
-The WebSockets spec has gotten quite a bit of attention for what it enables: a stable, bi-directional [TCP socket](http://www.csc.villanova.edu/~mdamian/Sockets/TcpSockets.htm) between the browser and server. There is no data format imposed on the TCP socket; the developer is free to define  a messaging protocol. In practice, passing JSON objects around as strings is most convenient. The client-side JavaScript code to listen for live updates is clean and simple:
+The WebSockets spec has gotten quite a bit of attention for what it enables: a stable, bi-directional [TCP socket](http://www.csc.villanova.edu/~mdamian/Sockets/TcpSockets.htm) between the browser and server. There is no data format imposed on the TCP socket; the developer is free to define a messaging protocol. In practice, passing JSON objects around as strings is most convenient. The client-side JavaScript code to listen for live updates is clean and simple:
 
 ```js
 var liveSocket = new WebSocket("ws://streamcongress.com:8080/live");
-liveSocket.onmessage = function(payload) {
-addToStream(JSON.parse(payload.data).reverse());
+
+liveSocket.onmessage = function (payload) {
+  addToStream(JSON.parse(payload.data).reverse());
 };
 ```
 
@@ -28,9 +29,9 @@ While browser support for WebSockets is straightforward, server-side support is 
 
 ### Introducing Cramp
 
-[Cramp](https://github.com/lifo/cramp) is an asynchronous Ruby web framework that runs on top of EventMachine. It's written by [Pratik Naik](http://m.onkey.org/), a member of the Ruby on Rails core team. Providing a simple domain specific language (DSL) for real-time web apps, Cramp is an ideal choice for Ruby web developers. Those familiar with writing controllers in Ruby on Rails will recognize Cramp's style:
+[Cramp](https://github.com/lifo/cramp) is an asynchronous Ruby web framework that runs on top of EventMachine. It's written by [Pratik Naik](http://m.onkey.org/), a member of the Ruby on Rails core team. Providing a domain specific language (DSL) for real-time web apps, Cramp is an ideal choice for Ruby web developers. Those familiar with writing controllers in Ruby on Rails will recognize Cramp's style:
 
-```js
+```ruby
 require "rubygems"
 require "bundler"
 Bundler.require
@@ -66,7 +67,7 @@ Because Cramp sits on top of the non-blocking EventMachine, there are several co
 
 ### Current Limitations
 
-WebSockets suffered a setback on December 8, 2010 when a security vulnerability was publicized. Both [Firefox and Opera](http://hacks.mozilla.org/2010/12/websockets-disabled-in-firefox-4/) removed browser support for WebSockets. While no pure JavaScript polyfill exists, there is a [Flash fallback](https://github.com/gimite/web-socket-js/) that has  been widely adopted. However, relying on Flash is far from ideal. Even though Chrome and Safari continue to support WebSockets, it became clear that to support all modern browsers without relying on Flash, WebSockets would need to be replaced.
+WebSockets suffered a setback on December 8, 2010 when a security vulnerability was publicized. Both [Firefox and Opera](http://hacks.mozilla.org/2010/12/websockets-disabled-in-firefox-4/) removed browser support for WebSockets. While no pure JavaScript polyfill exists, there is a [Flash fallback](https://github.com/gimite/web-socket-js/) that has been widely adopted. However, relying on Flash is far from ideal. Even though Chrome and Safari continue to support WebSockets, it became clear that to support all modern browsers without relying on Flash, WebSockets would need to be replaced.
 
 ## Rolling back to AJAX polling
 
@@ -74,18 +75,20 @@ The decision was made to move away from WebSockets and back to "old-school" AJAX
 
 ```js
 var fillStream = function(mostRecentActivity) {
-$.getJSON(requestURL, function(data) {
-addToStream(data.reverse());
-setTimeout(function() {fillStream(recentActivities.last());}, 15000);
-});
+  $.getJSON(requestURL, function(data) {
+    addToStream(data.reverse());
+
+    setTimeout(function() {
+      fillStream(recentActivities.last());
+    }, 15000);
+  });
 };
-```
 
 AJAX polling, though, is not without its downsides. Relying on the HTTP request/response cycle means that the server sees constant load even when there aren't any new updates. And of course, AJAX polling doesn't take advantage of what HTML5 has to offer.
 
 ## EventSource: The right tool for the job
 
-Up to this point, a key factor was  ignored about the nature of Stream Congress: the app only needs to stream updates one way, from server to client - downstream. It didn't need to be real-time, upstream client-to-server communication. 
+Up to this point, a key factor was ignored about the nature of Stream Congress: the app only needs to stream updates one way, from server to client - downstream. It didn't need to be real-time, upstream client-to-server communication. 
 
 In this sense, WebSockets is overkill for Stream Congress. Server-to-client communication is so common that it's been given a general term: push. In fact, many existing solutions for WebSockets, from the hosted [PusherApp](http://pusherapp.com) to the Rails library [Socky](https://github.com/socky), optimize for push and don't support client-to-server communication at all.
 
@@ -99,7 +102,7 @@ Enter EventSource, also called Server-Sent Events. The specification compares fa
 
 In recent months, Cramp has added support for EventSource. The code is very similar to the WebSockets implementation:
 
-```js
+```ruby
 class LiveEvents < Cramp::Action
 self.transport = :sse
 
@@ -121,33 +124,34 @@ run routes
 
 A significant issue to keep in mind with EventSource is that cross-domain connections are not allowed. This means that the Cramp app must be served from the same streamcongress.com domain as the main Rails app. This can be accomplished with proxying at the web server. Assuming the Cramp app is powered by Thin and running on port 8000, the Apache configuration looks like so:
 
-```js
-LoadModule  proxy_module         /usr/lib/apache2/modules/mod_proxy.so
-LoadModule  proxy_http_module    /usr/lib/apache2/modules/mod_proxy_http.so
+```apache
+LoadModule  proxy_module             /usr/lib/apache2/modules/mod_proxy.so
+LoadModule  proxy_http_module        /usr/lib/apache2/modules/mod_proxy_http.so
 LoadModule  proxy_balancer_module    /usr/lib/apache2/modules/mod_proxy_balancer.so
 
 <VirtualHost *:80>
-ServerName streamcongress.com
-DocumentRoot /projects/streamcongress/www/current/public
-RailsEnv production
-RackEnv production
-<Directory /projects/streamcongress/www/current/public>
-Order allow,deny
-Allow from all
-Options -MultiViews
-</Directory>
+  ServerName streamcongress.com
+  DocumentRoot /projects/streamcongress/www/current/public
+  RailsEnv production
+  RackEnv production
 
-<Proxy balancer://thin>
-BalancerMember http://localhost:8000
-</Proxy>
-ProxyPass /live balancer://thin/
-ProxyPassReverse /live balancer://thin/
-ProxyPreserveHost on
+  <Directory /projects/streamcongress/www/current/public>
+    Order allow,deny
+    Allow from all
+    Options -MultiViews
+  </Directory>
 
+  <Proxy balancer://thin>
+    BalancerMember http://localhost:8000
+  </Proxy>
+
+  ProxyPass /live balancer://thin/
+  ProxyPassReverse /live balancer://thin/
+  ProxyPreserveHost on
 </VirtualHost>
 ```
 
-This configuration sets an EventSource endpoint  at `streamcongress.com/live`.
+This configuration sets an EventSource endpoint at `streamcongress.com/live`.
 
 ### Stable Polyfill
 
