@@ -124,7 +124,7 @@ run routes
 
 A significant issue to keep in mind with EventSource is that cross-domain connections are not allowed. This means that the Cramp app must be served from the same streamcongress.com domain as the main Rails app. This can be accomplished with proxying at the web server. Assuming the Cramp app is powered by Thin and running on port 8000, the Apache configuration looks like so:
 
-```apache
+```apacheconf
 LoadModule  proxy_module             /usr/lib/apache2/modules/mod_proxy.so
 LoadModule  proxy_http_module        /usr/lib/apache2/modules/mod_proxy_http.so
 LoadModule  proxy_balancer_module    /usr/lib/apache2/modules/mod_proxy_balancer.so
