@@ -50,7 +50,7 @@ for (var i:int = 0; i < 225; i++) {
 LayoutUtil.grid(spaces, 15);
 ```
 
-In HTML5, it's a bit more complicated. We use the <a href="">[`<canvas>` element](http://diveintohtml5.info/canvas.html)</a>, a bitmap drawing surface, to paint the gameboard one square at a time. The first step is to load the image sprite. Once it's loaded, we iterate through the layout notation, drawing a different portion of the image with each iteration:
+In HTML5, it's a bit more complicated. We use the [`<canvas>` element](http://diveintohtml5.info/canvas.html), a bitmap drawing surface, to paint the gameboard one square at a time. The first step is to load the image sprite. Once it's loaded, we iterate through the layout notation, drawing a different portion of the image with each iteration:
 
 ```js
 var x = 0;  // x coordinate
