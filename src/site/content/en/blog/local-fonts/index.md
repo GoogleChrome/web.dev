@@ -181,7 +181,7 @@ if ('queryLocalFonts' in self) {
 
 {% Aside %}
 The Local Font Access API is currently only available on desktop versions of Chromium, but not on
-Android.
+mobile operating systems like Android or iOS.
 {% endAside %}
 
 #### Asking for permission
