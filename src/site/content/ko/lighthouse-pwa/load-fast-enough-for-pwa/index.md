@@ -39,8 +39,8 @@ Lighthouse는 느린 4G 네트워크 연결에서 TTI가 무엇인지 계산합�
 
 - [**모바일 네트워크에서 페이지 로드가 충분히 빠르지 않습니다.** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
 - [베이스라인 프로그레시브 웹 앱 체크리스트](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [중요 렌더링 경로](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [중요 렌더링 경로](/critical-rendering-path/)
 - [런타임 성능 분석 시작하기](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [로드 성능 기록](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
-- [콘텐츠 효율성 최적화](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
+- [콘텐츠 효율성 최적화](/performance-optimizing-content-efficiency/)
 - [렌더링 성능](/rendering-performance/)

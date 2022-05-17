@@ -16,7 +16,7 @@ CSS files are [render-blocking resources](https://developers.google.com/web/tool
 they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles
 take longer to render.
 
-In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/fcp/).
+In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/fcp/).
 
 ## Loading CSS in a suboptimal way
 

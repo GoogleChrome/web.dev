@@ -421,7 +421,7 @@ HTML 表单元素和属性具有用于基本验证的内置功能，但您还应
 
 ## 继续学习 {: #resources }
 
-- [创建惊人的表格](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [创建惊人的表格](/learn/forms/)
 - [移动表单设计的最佳实践](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [更强大的表单控件](/more-capable-form-controls)
 - [创建可访问表单](https://webaim.org/techniques/forms/)

@@ -348,7 +348,7 @@ Con la renderización previa, la TTI sigue teniendo un impacto negativo, pero lo
 
 <figure>{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa", width="800", height="139" %} <figcaption> Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa </figcaption></figure>
 
-{% Aside %} Para profundizar en las diferentes arquitecturas de renderización de servidores, eche un vistazo a la [Renderización en la web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Para profundizar en las diferentes arquitecturas de renderización de servidores, eche un vistazo a la [Renderización en la web](/rendering-on-the-web/). {% endAside %}
 
 ## Herramientas para desarrolladores
 

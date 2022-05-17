@@ -775,7 +775,7 @@ That, in turn, gives you a solid basis for prioritizing effort, making changes, 
 * [Sign-in form best practices](/sign-in-form-best-practices)
 * [Sign-up form best practices](/sign-up-form-best-practices)
 * [Verify phone numbers on the web with the WebOTP API](/web-otp)
-* [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+* [Create Amazing Forms](/learn/forms/)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)

@@ -23,7 +23,7 @@ feedback:
 
 {% Aside 'success' %}
 The Local Font Access API was part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities) and is now shipped.
+[capabilities project](https://developer.chrome.com/blog/capabilities/) and is now shipped.
 {% endAside %}
 
 ## Web safe fonts

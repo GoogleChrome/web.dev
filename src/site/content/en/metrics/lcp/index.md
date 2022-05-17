@@ -374,7 +374,7 @@ performance techniques that can also improve LCP, see:
 * [Apply instant loading with the PRPL
   pattern](/apply-instant-loading-with-prpl)
 * [Optimizing the Critical Rendering
-  Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+  Path](/critical-rendering-path/)
 * [Optimize your CSS](/fast#optimize-your-css)
 * [Optimize your Images](/fast#optimize-your-images)
 * [Optimize web Fonts](/fast#optimize-web-fonts)

@@ -15,7 +15,7 @@ feedback:
   - api
 ---
 
-{% Aside 'warning' %} O desenvolvimento da API dos acionadores de notificação, parte do [projeto de recursos](https://developers.google.com/web/updates/capabilities) do Google, não é mais buscado. O cenário de notificação entre os sistemas operacionais está se movendo com bastante rapidez e não está claro se seríamos capazes de fornecer uma experiência sólida, consistente e confiável entre as plataformas.
+{% Aside 'warning' %} O desenvolvimento da API dos acionadores de notificação, parte do [projeto de recursos](https://developer.chrome.com/blog/capabilities/) do Google, não é mais buscado. O cenário de notificação entre os sistemas operacionais está se movendo com bastante rapidez e não está claro se seríamos capazes de fornecer uma experiência sólida, consistente e confiável entre as plataformas.
 
 Além disso, para criar uma boa experiência, é necessário que haja um mecanismo que consiga eliminar notificações programadas obsoletas ou invalidadas, por exemplo, eventos de calendário cancelados, sem depender da aba estar aberta. Ouvimos comentários de que a frequência com que a <a href="/periodic-background-sync/">sincronização periódica em segundo plano</a> pode ser usada não é suficiente para isso e que, por ser obrigada a mostrar uma notificação, a API Push também não é uma boa solução. {% endAside %}
 

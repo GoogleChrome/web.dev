@@ -421,7 +421,7 @@ IU e UX bem projetadas podem reduzir o abandono do formulário de login:
 
 ## Continue aprendendo {: #resources}
 
-- [Crie formulários incríveis](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Crie formulários incríveis](/learn/forms/)
 - [Melhores práticas para design de formulários para celular](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulário mais capazes](/more-capable-form-controls)
 - [Criação de formulários acessíveis](https://webaim.org/techniques/forms/)

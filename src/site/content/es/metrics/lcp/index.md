@@ -189,7 +189,7 @@ LCP se ve afectado principalmente por cuatro factores:
 Para profundizar en cómo mejorar LCP, consulte [Optimizar LCP](/optimize-lcp/). Para obtener orientación adicional sobre las técnicas de rendimiento individual que también pueden mejorar LCP, consulte:
 
 - [Aplicar carga instantánea con el patrón PRPL](/apply-instant-loading-with-prpl)
-- [Optimización de la ruta de renderización crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Optimización de la ruta de renderización crítica](/critical-rendering-path/)
 - [Optimizar su CSS](/fast#optimize-your-css)
 - [Optimizar sus imágenes](/fast#optimize-your-images)
 - [Optimizar las fuentes web](/fast#optimize-web-fonts)

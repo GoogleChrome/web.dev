@@ -73,7 +73,7 @@ tags:
 
 ### 内容安全策略
 
-[内容安全策略](https://developers.google.com/web/fundamentals/security/csp/) (CSP) 是一种多用途浏览器功能，可用于批量管理混合内容。CSP 报告机制可用于跟踪您网站上的混合内容，并提供执行策略，通过升级或阻止混合内容来保护用户。
+[内容安全策略](/csp/) (CSP) 是一种多用途浏览器功能，可用于批量管理混合内容。CSP 报告机制可用于跟踪您网站上的混合内容，并提供执行策略，通过升级或阻止混合内容来保护用户。
 
 您可以通过在服务器发送的响应中加入 `Content-Security-Policy` 或 `Content-Security-Policy-Report-Only` 标头来为网页启用这些功能。此外，您还可以使用网页 `<head>` 部分的 `<meta>` 标签来设置 `Content-Security-Policy`（**不是** `Content-Security-Policy-Report-Only`）。
 
@@ -96,7 +96,7 @@ tags:
 - 用户必须在能够识别 CSP 标头的浏览器中访问您的网页。大多数现代浏览器都符合此要求。
 - 您只能获得用户访问过的网页的报告。因此，如果您的网页流量不太多，则可能需要一段时间才能获得整个网站的报告。
 
-[内容安全策略](https://developers.google.com/web/fundamentals/security/csp/)指南包含更多信息和示例端点。
+[内容安全策略](/csp/)指南包含更多信息和示例端点。
 
 ### 使用 CSP 报告的替代方法
 

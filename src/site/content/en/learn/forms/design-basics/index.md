@@ -204,7 +204,7 @@ You can learn about this in [the next module](/learn/forms/accessibility).
 
 ## Resources
 
-- [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Create Amazing Forms](/learn/forms/)
 - [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Baymard Institute: E-Commerce UX Research](https://baymard.com/blog)
 - [Don't Make Me Think](https://en.wikipedia.org/wiki/Don%27t_Make_Me_Think) 

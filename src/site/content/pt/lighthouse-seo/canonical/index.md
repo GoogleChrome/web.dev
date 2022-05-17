@@ -69,7 +69,7 @@ Para obter uma lista dos prós e contras de cada abordagem, consulte a página [
 ### Diretrizes Gerais
 
 - Certifique-se de que o URL canônico seja válido.
-- [Use URLs canônicos HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https) seguros em vez de HTTP sempre que possível.
+- [Use URLs canônicos HTTPS](/why-https-matters/) seguros em vez de HTTP sempre que possível.
 - Se você usar [links `hreflang`](/hreflang) para veicular diferentes versões de uma página, dependendo do idioma ou país do usuário, certifique-se de que o URL canônico aponta para a página apropriada para o respectivo idioma ou país.
 - Não aponte o URL canônico para um domínio diferente. Yahoo e Bing não permitem isso.
 - Não aponte as páginas de nível inferior para a página raiz do site, a menos que seu conteúdo seja o mesmo.

@@ -61,7 +61,7 @@ El enrutador también registró las declaraciones de ruta de los módulos para q
 
 `PreloadAllModules` es útil en muchos casos. Sin embargo, cuando tiene docenas de módulos, su precarga agresiva puede aumentar el uso de la red. Además, dado que el enrutador necesita registrar las rutas en todos los módulos precargados, puede causar cálculos intensivos en el hilo de la interfaz de usuario y llevar a una experiencia de usuario lenta.
 
-La [biblioteca de enlaces rápidos](https://github.com/GoogleChromeLabs/quicklink) proporciona una mejor estrategia para aplicaciones más grandes. Utilice la [API IntersectionObserver](https://developers.google.com/web/updates/2019/02/intersectionobserver-v2) para cargar previamente solo los módulos asociados con los enlaces que están actualmente visibles en la página.
+La [biblioteca de enlaces rápidos](https://github.com/GoogleChromeLabs/quicklink) proporciona una mejor estrategia para aplicaciones más grandes. Utilice la [API IntersectionObserver](/intersectionobserver-v2/) para cargar previamente solo los módulos asociados con los enlaces que están actualmente visibles en la página.
 
 Puede agregar un enlace rápido a una aplicación Angular utilizando el paquete [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink). Comience instalando el paquete desde npm:
 

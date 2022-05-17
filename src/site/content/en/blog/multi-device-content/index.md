@@ -131,7 +131,7 @@ Here are some suggestions:
 For more information see [Image Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) and [Eliminating and replacing images](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization#eliminating-and-replacing-images).
 
 
-## Design content to work well across different viewport sizes 
+## Design content to work well across different viewport sizes
 
 {% Blockquote 'Mobile Design and Development, Brian Fling' %}
 "Create a product, don't re-imagine one for small screens. Great mobile
@@ -172,8 +172,8 @@ When building for a range of viewports, consider content as well as layout and g
 Whatever you do — **test**!
 {% endAside %}
 
-* Check readability on smaller viewports using Chrome DevTools and other [emulation tools](https://developers.google.com/web/fundamentals/performance/poor-connectivity/).
-* [Test your content under conditions of low bandwidth and high latency](https://developers.google.com/web/fundamentals/performance/poor-connectivity/); try out content in a variety of connectivity scenarios.
+* Check readability on smaller viewports using Chrome DevTools and other [emulation tools](/performance-poor-connectivity/).
+* [Test your content under conditions of low bandwidth and high latency](/performance-poor-connectivity/); try out content in a variety of connectivity scenarios.
 * Try reading and interacting with your content on a low-cost phone.
 * Ask friends and colleagues to try out your app or site.
 * Build a simple device test lab. The [GitHub repo](https://github.com/GoogleChrome/MiniMobileDeviceLab) for Google's Mini Mobile Device Lab has instructions on how to build your own. [OpenSTF](https://github.com/openstf/stf) is a simple web application for testing websites on multiple Android devices.
@@ -266,5 +266,4 @@ Bear in mind that this doesn't take into account affordability relative to incom
 
 Page weight isn't just a problem for emerging markets. In many countries, people use mobile plans with limited data, and will avoid your site or app if they perceive it to be heavy and expensive. Even "unlimited" cell and wifi data plans generally have a data limit beyond which they are blocked or throttled. For these reasons, it's best to be as transparent as possible about how much data your page consumes. The following blog post provides specific best practices: [Nurture trust through cost transparency](https://medium.com/google-design/nurture-trust-through-cost-transparency-b61a5947d2fc)
 
-The bottom line: page weight affects performance and costs money. [Optimizing content efficiency](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/) shows how to reduce that cost.
-
+The bottom line: page weight affects performance and costs money. [Optimizing content efficiency](/performance-optimizing-content-efficiency/) shows how to reduce that cost.

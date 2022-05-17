@@ -39,8 +39,8 @@ Lighthouse calcula lo que sería el TTI en una conexión de red 4G lenta. Si el 
 
 - [Código fuente para la **Page load is not fast enough on mobile networks** (carga de la página no es lo suficientemente rápido) en la auditoría de redes móviles](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
 - [Lista de verificación de la aplicación web progresiva base](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [Ruta de renderización crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Ruta de renderización crítica](/critical-rendering-path/)
 - [Empiece a analizar el rendimiento en tiempo de ejecución](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [Registro de rendimiento de carga](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
-- [Optimización de la eficiencia del contenido](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
+- [Optimización de la eficiencia del contenido](/performance-optimizing-content-efficiency/)
 - [Rendimiento de renderizado](/rendering-performance/)
