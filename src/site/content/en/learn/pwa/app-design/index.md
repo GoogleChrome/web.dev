@@ -5,6 +5,7 @@ description: >
 authors:
   - firt
 date: 2021-11-18
+updated: 2022-05-17
 ---
 
 This chapter focuses on some critical aspects of rendering content outside of the browser tab.
@@ -12,7 +13,7 @@ This chapter focuses on some critical aspects of rendering content outside of th
 ## The window
 
 Different operating systems have different ideas about what an application window is.
-For example, on iPhones, an application always takes up 100% of the screen. On Android and iPads applications usually run fullscreen but it is possible to share the screen between two apps, however there is only one app instance open at a time.
+For example, on iPhones, an application always takes up 100% of the screen. On Android and iPads applications usually run fullscreen but it is possible to share the screen between two apps; however there is only one app instance open at a time.
 In contrast, on a desktop device, an application can have more than one instance open at a time.
 It shares the available screen real estate with all other open applications.
 Each application instance can be resized and positioned anywhere on the screen, even overlapping other applications.
@@ -29,7 +30,7 @@ These include:
 - Dock, TaskBar, or Multi-task panels (all operating systems).
 
 When creating the icon for your Progressive Web App
-make sure its icon is platform-agnostic, as each operating system can render icons and apply different shape masks to them, like the ones in the image below.
+make sure they're platform-agnostic, as each operating system can apply different shape masks to them, such as the ones in the image below.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/geo6MZwaWvNDRFJe6cvF.png", alt="PWA icons in different shapes for different platforms.", width="800", height="207" %}
 
@@ -88,7 +89,7 @@ The title bar may also show permissions and hardware usage replacing the omnibox
   <figcaption>The images above show how a PWA displays in standalone mode on the desktop in Microsoft Edge, and Chrome.</figcaption>
 </figure>
 
-On mobile devices, a standalone PWA experience will create a standard screen that keeps the status bar visible, so the user can still see notifications, time, and battery level. It often does not have any browser-controlled menu like desktop standalone experiences may include.
+On mobile devices, a standalone PWA will create a standard screen that keeps the status bar visible, so the user can still see notifications, time, and battery level. It often does not have any browser-controlled menus such as desktop standalone experiences may include.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/sNa6aVY2ZayRqPZhpfIl.png", alt="An iOS device rendering a standalone app.", width="800", height="476" %}
 
@@ -129,12 +130,12 @@ If you are developing your app using a client-side library, such as React or Vue
 All your experience with [CSS layout, design, and animation](/learn/css) is valid when your content is rendered in its standalone experience. However, there are a couple of tips and tricks to making the experience better for a standalone window.
 
 {% Aside 'gotchas' %}
-Remember that CSS only defines styles for the content of the PWA; later in this course, we will see how to specify style declarations for the window around your content, such as properties in the [web app manifest](/learn/pwa/web-app-manifest/).
+Remember that CSS only defines styles for the content of the PWA. Later in this course, we will see how to specify style declarations for the window around your content, such as properties in the [web app manifest](/learn/pwa/web-app-manifest/).
 {% endAside %}
 
 ### Media Queries
 
-The first [media query](/learn/design/media-queries/) that you can take advantage of in your PWA is the `display-mode` property accepting the values `browser`, `standalone`, `minimal-ui`, or `fullscreen`.
+The first [media query](/learn/design/media-queries/) that you can take advantage of in your PWA is `display-mode`, which accepts the values `browser`, `standalone`, `minimal-ui`, or `fullscreen`.
 
 This media query applies different styles to each mode.
 For example, you could render an [installation invitation](/learn/pwa/installation/) only when in browser mode, or render one particular piece of information only when the user uses your app from the system icon. This might include adding a back button to use when your app launches in standalone mode.
@@ -161,7 +162,7 @@ When the users are using an installed PWA, they expect app behavior. While it's 
 
 ### User selection
 
-Content is generally selectable with a mouse or pointer, or a press and hold touch gesture. While helpful for content, it doesn't provide the best experience for navigation items, menus, and buttons within your PWA.
+Content is generally selectable with a mouse or pointer, or a press and hold touch gesture. While helpful for content, selection doesn't provide the best experience for navigation items, menus, and buttons within your PWA.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/F9HCkRrmPyGFjlpTJhNz.png", alt="A calculator PWA where you can select every interactive button, such as the numbers.", width="800", height="739" %}
 
@@ -170,6 +171,7 @@ Therefore, it's a good idea to disable user selection on these elements using `u
 ```css
 .unselectable {
    user-select: none;
+   -webkit-user-select: none;
 }
 ```
 
