@@ -14,7 +14,7 @@ description: >
   The Local Fonts API enumerates the user's installed local fonts and provides low-level access to
   the various TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2022-05-11
+updated: 2022-05-17
 hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
@@ -163,7 +163,7 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 | 2. Create initial draft of specification | [In progress][spec]                                                                             |
 | 3. Gather feedback & iterate on design   | [Complete](#feedback).                                                                          |
 | 4. Origin trial                          | Complete                                                                                        |
-| 5. **Launch**                            | **Complete** (Chromium&nbsp;103)                                                                |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;103 on desktop)                                                     |
 
 </div>
 
@@ -178,6 +178,11 @@ if ('queryLocalFonts' in self) {
   // The Local Font Access API is supported
 }
 ```
+
+{% Aside %}
+The Local Font Access API is currently only available on desktop versions of Chromium, but not on
+mobile operating systems like Android or iOS.
+{% endAside %}
 
 #### Asking for permission
 
