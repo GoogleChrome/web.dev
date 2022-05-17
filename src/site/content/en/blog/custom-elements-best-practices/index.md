@@ -39,7 +39,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element.
       </td>
     </tr>
@@ -66,7 +66,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element.
       </td>
     </tr>
@@ -91,7 +91,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-tabs">
+  The <a href="https://web.dev/components-howto-tabs/">
   <code>&lt;howto-tabs&gt;</code></a> element.
       </td>
     </tr>
@@ -114,7 +114,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-tabs">
+  The <a href="/components-howto-tabs/">
   <code>&lt;howto-tabs&gt;</code></a> element.
       </td>
     </tr>
@@ -145,7 +145,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element.
       </td>
     </tr>
@@ -178,7 +178,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element.
       </td>
     </tr>
@@ -211,7 +211,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element. This is further explained in
   <a href="#dont-override">Don't override the page author.
       </td>
@@ -241,7 +241,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element.
       </td>
     </tr>
@@ -277,7 +277,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element. This is further explained in
   <a href="#avoid-reentrancy">Avoid reentrancy issues</a>.
       </td>
@@ -353,7 +353,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element. Further explained in
   <a href="#lazy-properties">Make properties lazy</a>.
       </td>
@@ -428,7 +428,7 @@ well behaved custom element.
     <tr>
       <td><b>Example</b></td>
       <td>
-  The <a href="https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox">
+  The <a href="/components-howto-checkbox/">
   <code>&lt;howto-checkbox&gt;</code></a> element.
       </td>
     </tr>
@@ -469,7 +469,7 @@ the checked property before the element has upgraded.
 ```
 
 A custom element should handle this scenario by checking if any properties have
-already been set on its instance. The [`<howto-checkbox>`](https://developers.google.com/web/fundamentals/architecture/building-components/examples/howto-checkbox)
+already been set on its instance. The [`<howto-checkbox>`](/components-howto-checkbox/)
 demonstrates this pattern using a method called `_upgradeProperty()`.
 
 ```js
