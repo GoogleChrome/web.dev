@@ -121,13 +121,13 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 ### 实测工具
 
 - [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
 
 ### 实验室工具
 
-- [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
+- [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [灯塔](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 

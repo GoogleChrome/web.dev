@@ -26,7 +26,7 @@ Para ajudá-lo a identificar as fontes de carregamento do thread principal, o Li
 
 As seções abaixo são organizadas com base nas categorias que o Lighthouse relata. Veja [The anatomy of a frame](https://aerotwist.com/blog/the-anatomy-of-a-frame/) para ter uma visão geral de como o Chromium renderiza páginas web.
 
-Veja [Faça menos trabalho no thread principal](https://developers.google.com/web/tools/chrome-devtools/speed/get-started#main) para aprender como usar o Chrome DevTools para investigar exatamente o que seu thread principal está fazendo enquanto a página carrega.
+Veja [Faça menos trabalho no thread principal](https://developer.chrome.com/docs/devtools/speed/get-started/#main) para aprender como usar o Chrome DevTools para investigar exatamente o que seu thread principal está fazendo enquanto a página carrega.
 
 ### Computação de scripts
 
@@ -37,7 +37,7 @@ Veja [Faça menos trabalho no thread principal](https://developers.google.com/we
 ### Estilo e layout
 
 - [Reduza o escopo e a complexidade dos cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
-- [Evite layouts grandes e complexos e alterações de layout](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
+- [Evite layouts grandes e complexos e alterações de layout](/avoid-large-complex-layouts-and-layout-thrashing/)
 
 ### Renderização
 

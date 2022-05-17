@@ -26,7 +26,7 @@ Consulte los documentos API relevantes en [MDN](https://developer.mozilla.org/) 
 
 El comportamiento que difiere entre los navegadores generalmente se prioriza más como un problema de interoperabilidad, especialmente cuando el navegador que contiene el error es el extraño. Intente probarlo en las últimas versiones de Chrome, Firefox, Safari y Edge, posiblemente mediante una herramienta como [BrowserStack](https://www.browserstack.com/).
 
-Si es posible, verifique que la página no se comporte intencionalmente de manera diferente debido al rastreo del agente de usuario. En Chrome DevTools, intente [configurar la cadena `User-Agent` para otro navegador](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent).
+Si es posible, verifique que la página no se comporte intencionalmente de manera diferente debido al rastreo del agente de usuario. En Chrome DevTools, intente [configurar la cadena `User-Agent` para otro navegador](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/).
 
 ### ¿Dejó de funcionar en un lanzamiento reciente?
 

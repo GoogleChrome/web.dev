@@ -29,7 +29,7 @@ HTMLドキュメントの`<head>`で抽出されたスタイルをインライ�
 
 <figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="クリティカルCSSが先頭でインライン化されたHTMLファイル", width="800", height="325" %} <figcaption>インライン化されたクリティカルCSS</figcaption></figure>
 
-レンダリング時間を改善すると、特にネットワークの状態が悪い[場合に、知覚されるパフォーマンスに](https://developers.google.com/web/fundamentals/performance/rail#ux)大きな違いが生じる可能性があります。モバイルネットワークでは、帯域幅に関係なく、高遅延が問題になります。
+レンダリング時間を改善すると、特にネットワークの状態が悪い[場合に、知覚されるパフォーマンスに](/rail/#focus-on-the-user)大きな違いが生じる可能性があります。モバイルネットワークでは、帯域幅に関係なく、高遅延が問題になります。
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) を読み込んだフィルムストリップビューの比較。上のフィルムストリップは、最終的にコンテンツを表示する前の6つの空白フレームを表示します。下のフィルムストリップは、最初のフレームに意味のあるコンテンツを表示します。", width="800", height="363" %} <figcaption>3G接続でレンダリングブロックCSSを使用したページ (上) とインライン化されたクリティカルCSSを使用した同じページ (下) の読み込みの比較</figcaption></figure>
 

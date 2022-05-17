@@ -8,6 +8,7 @@ authors:
   - anniesullie
   - hbsong
 date: 2021-06-21
+updated: 2022-05-11
 hero: image/kns0INkO77RkiEStzHWYrugyWj32/TwRpOuLV9Z5GEZkGmAXi.jpeg
 alt: Hand about to press a key in a keyboard
 tags:
@@ -15,6 +16,10 @@ tags:
   - performance
   - web-vitals
 ---
+
+{% Aside 'important' %}
+This article was written during a period of time in which a new responsiveness metric was being developed to measure end-to-end latency on web pages. That new metric has been released, and is named [Interaction to Next Paint (INP)](/inp/).
+{% endAside %}
 
 On the Chrome Speed Metrics team, we're working on deepening our understanding of how quickly web
 pages respond to user input. We'd like to share some ideas for improving responsiveness metrics and

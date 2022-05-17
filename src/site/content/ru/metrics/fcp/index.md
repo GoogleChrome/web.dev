@@ -38,7 +38,7 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 
 ### Инструменты для измерения в полевых условиях
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Search Console (отчет о скорости загрузки)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [JavaScript-библиотека `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -46,8 +46,8 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в лабораторных условиях
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 
 ### Измерение FCP в JavaScript
 

@@ -107,7 +107,7 @@ browser jumps to just do compositing.
 This final version is the cheapest and most desirable for high pressure points
 in an app's lifecycle, like animations or scrolling.
 
-Note: If you want to know which of the three versions above changing any given CSS property will trigger head to [CSS Triggers](https://csstriggers.com). And if you want the fast track to high performance animations, read the section on [changing compositor-only properties](stick-to-compositor-only-properties-and-manage-layer-count).
+Note: If you want to know which of the three versions above changing any given CSS property will trigger head to [CSS Triggers](https://csstriggers.com). And if you want the fast track to high performance animations, read the section on [changing compositor-only properties](/stick-to-compositor-only-properties-and-manage-layer-count/).
 
 Performance is the art of avoiding work, and making any work you do as
 efficient as possible. In many cases it's about working with the browser, not

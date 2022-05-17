@@ -530,12 +530,12 @@ under different breakpoints.
 
 To view your page under different breakpoints:
 
-[Open DevTools](https://developers.google.com/web/tools/chrome-devtools#open)
-and then turn on [Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode#toggle).
-This opens in [responsive mode](https://developers.google.com/web/tools/chrome-devtools/device-mode#responsive) by default.
+[Open DevTools](https://developer.chrome.com/docs/devtools/open/)
+and then turn on [Device Mode](https://developer.chrome.com/docs/devtools/device-mode/#toggle).
+This opens in [responsive mode](https://developer.chrome.com/docs/devtools/device-mode/#responsive) by default.
 
 To see your media queries, open the Device Mode menu and select
-[Show media queries](https://developers.google.com/web/tools/chrome-devtools/device-mode#queries)
+[Show media queries](https://developer.chrome.com/docs/devtools/device-mode/#queries)
 to display your breakpoints as colored bars above your page.
 
 Click on one of the bars to view your page while that media query is active.

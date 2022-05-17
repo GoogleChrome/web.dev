@@ -19,7 +19,7 @@ feedback:
 stack_overflow_tag: webhid
 ---
 
-{% Aside 'success' %} [기능 프로젝트](/fugu-status/)의 일부인 WebHID API는 Chrome 89에서 출시되었습니다. {% endAside %}
+{% Aside 'success' %} [기능 프로젝트](https://developer.chrome.com/blog/fugu-status/)의 일부인 WebHID API는 Chrome 89에서 출시되었습니다. {% endAside %}
 
 시스템의 장치 드라이버에서 액세스할 수 없을 만큼 너무 새롭거나 너무 오래되었거나 너무 희귀한 대체 키보드 또는 이색적 게임패드와 같은 휴먼 인터페이스 장치(HID)는 모두 열거할 수 없을 정도로 많습니다. WebHID API는 JavaScript에서 장치별 로직을 구현하는 수단을 제공함으로써 이 문제를 해결합니다.
 
@@ -290,7 +290,7 @@ Chrome에서 HID를 디버깅하는 작업은 내부 페이지 `about://device-l
 
 ## 브라우저 지원 {: #browser-support }
 
-WebHID API는 Chrome 89의 모든 데스크톱 플랫폼(Chrome OS, Linux, macOS 및 Windows)에서 사용할 수 있습니다.
+WebHID API는 Chrome 89의 모든 데스크톱 플랫폼(ChromeOS, Linux, macOS 및 Windows)에서 사용할 수 있습니다.
 
 ## 데모 {: #demos }
 

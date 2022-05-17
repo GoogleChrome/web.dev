@@ -42,7 +42,7 @@ Chrome과 Firefox는 모두 `loading` 속성으로 지연 로딩을 지원합니
 
 `<img>` 요소의 지연 로딩을 폴리필하기 위해 JavaScript를 사용하여 해당 요소가 뷰포트에 있는지 확인합니다. 그렇다면 `src`(종종 `srcset`) 속성이 원하는 이미지 콘텐츠에 대한 URL로 채워집니다.
 
-이전에 지연 로딩 코드를 작성한 경우, `scroll` 또는 `resize`와 같은 이벤트 핸들러를 사용하여 작업을 완료했을 수 있습니다. 이 접근 방식은 여러 브라우저에서 가장 호환되지만 최신 브라우저는 [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver)를 통해 요소 가시성을 확인하는 작업을 수행하는 더 성능적이고 효율적인 방법을 제공합니다.
+이전에 지연 로딩 코드를 작성한 경우, `scroll` 또는 `resize`와 같은 이벤트 핸들러를 사용하여 작업을 완료했을 수 있습니다. 이 접근 방식은 여러 브라우저에서 가장 호환되지만 최신 브라우저는 [Intersection Observer API](https://developer.chrome.com/blog/intersectionobserver/)를 통해 요소 가시성을 확인하는 작업을 수행하는 더 성능적이고 효율적인 방법을 제공합니다.
 
 {% Aside %} Intersection Observer는 모든 브라우저, 특히 IE11 이하에서는 지원되지 않습니다. 브라우저 간 호환성이 중요한 경우 성능은 떨어지지만 호환성은 더 높은 스크롤 및 크기 조정 이벤트 핸들러를 사용하여 이미지를 지연 로드하는 방법을 보여주는 [다음 섹션](#images-inline-event-handlersy)을 읽으십시오. {% endAside %}
 

@@ -115,7 +115,7 @@ You can then do whatever you'd like with these files. You can cache them. You
 can send them somewhere with a fetch request. You can even use the other
 manifest options, maybe serving a page with some query parameters for the other
 shared items or storing the data and pointers to the media in the [Cache Storage
-API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)
+API](/cache-api-quick-guide/)
 or [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 
 You can try it out on the sample app [Fugu

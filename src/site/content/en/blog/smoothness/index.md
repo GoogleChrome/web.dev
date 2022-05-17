@@ -82,7 +82,7 @@ Because these stages are sequential, it is important to define animations in
 terms of properties that are further down the pipeline. The earlier the update
 happens in the process, the greater are the costs and it's less likely to be
 smooth. (See [Rendering
-performance](https://developers.google.com/web/fundamentals/performance/rendering)
+performance](/rendering-performance/)
 for more details.)
 
 While it can be convenient to animate layout properties, there are costs to

@@ -20,7 +20,6 @@ glitch_path: index.html
 related_post: payment-and-address-form-best-practices
 ---
 
-
 How can you design a form that works well for a variety of names and address formats? Minor form
 glitches irritate users and can cause them to leave your site or give up on completing a purchase
 or sign-up.
@@ -135,6 +134,7 @@ To test how the form works with and without these attributes, try entering data:
 * Try entering values that don't fit the `pattern` attribute.
 * Try submitting the form with an empty input. You'll see built-in browser functionality warning of
 the empty required field and setting focus on it.
+
 ## Step 3: Add a flexible address field to your form
 
 To add an address field, add the following code to your form:
@@ -198,6 +198,7 @@ especially if the two addresses are the same? The article that goes with this co
 Whatever you do, make sure to use the correct `autocomplete` values!
 
 ## Step 5: Add a telephone number field
+
 To add a telephone number input, add the following code to the form:
 
 ```html
@@ -248,7 +249,7 @@ the form be improved?
 
 There are several ways to test your form on different devices: {: #different-devices}
 
-* [Use Chrome DevTools Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode)
+* [Use Chrome DevTools Device Mode](https://developer.chrome.com/docs/devtools/device-mode/)
 to simulate mobile devices.
 * [Send the URL from your computer to your phone](https://support.google.com/chrome/answer/9430554).
 * Use a service such as [BrowserStack](https://www.browserstack.com/open-source) to test on a range

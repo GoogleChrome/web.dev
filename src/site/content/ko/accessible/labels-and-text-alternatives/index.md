@@ -21,7 +21,7 @@ Chrome의 DevTools를 사용하여 요소의 액세스 가능한 이름을 쉽�
 
 <figure>{% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471" %} <figcaption> 버튼의 계산된 이름을 보여주는 DevTools 접근 가능성 창. </figcaption></figure>
 
-{% Aside %} 자세히 알아보려면 [DevTools 접근 가능성 참조](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)를 확인하세요. {% endAside %}
+{% Aside %} 자세히 알아보려면 [DevTools 접근 가능성 참조](https://developer.chrome.com/docs/devtools/accessibility/reference/)를 확인하세요. {% endAside %}
 
 `alt{/code1 텍스트가 있는 <code data-md-type="codespan">img` 또는 `label`이 있는 `input`을 찾고 있든지 관계 없이 이러한 모든 시나리오에서 동일한 결과가 나타납니다. 요소에 액세스 가능한 이름을 부여합니다.
 

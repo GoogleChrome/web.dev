@@ -14,7 +14,7 @@ tags:
 
 So, speed matters, but what exactly do we mean by it? What does it mean to have a fast site?
 
-It's common to hear people talk in terms of their website loading in x.xx seconds or similar, but a [load is not a single moment in time](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics); it's an experience that no single metric can fully capture. There are multiple moments during the load experience that can affect whether a user perceives it as 'fast', and if you just focus solely on one, you might miss bad experiences that happen during the rest of the time.
+It's common to hear people talk in terms of their website loading in x.xx seconds or similar, but a [load is not a single moment in time](/user-centric-performance-metrics/); it's an experience that no single metric can fully capture. There are multiple moments during the load experience that can affect whether a user perceives it as 'fast', and if you just focus solely on one, you might miss bad experiences that happen during the rest of the time.
 
 Rather than measuring load with just one metric, you should time each moment during the experience that affects the user's perception of load speed. When a user navigates to a web page, they're typically looking for certain types of feedback:
 

@@ -30,7 +30,7 @@ Verifique os documentos API relevantes no [MDN](https://developer.mozilla.org/) 
 
 O comportamento que difere entre os navegadores geralmente é priorizado como um problema de interoperabilidade, especialmente quando o navegador que contém o bug é o único diferente. Tente testar nas versões mais recentes do Chrome, Firefox, Safari e Edge, possivelmente usando uma ferramenta como o [BrowserStack](https://www.browserstack.com/).
 
-Se possível, verifique se a página não está se comportando de maneira diferente intencionalmente devido à detecção do agente do usuário. No Chrome DevTools, tente definir a [`User-Agent` do usuário para outro navegador](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent).
+Se possível, verifique se a página não está se comportando de maneira diferente intencionalmente devido à detecção do agente do usuário. No Chrome DevTools, tente definir a [`User-Agent` do usuário para outro navegador](https://developer.chrome.com/docs/devtools/device-mode/override-user-agent/).
 
 ### Quebrou em um lançamento recente?
 

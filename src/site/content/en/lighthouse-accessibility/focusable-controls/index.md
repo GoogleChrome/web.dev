@@ -14,7 +14,7 @@ Manually check that all custom controls are keyboard focusable
 and display a focus indicator.
 The order in which elements are focused should aim to follow the DOM order.
 If you're unsure which elements should receive focus,
-see [Introduction to Focus](https://developers.google.com/web/fundamentals/accessibility/focus/).
+see [Introduction to Focus](/focus/).
 
 ## How to manually test
 

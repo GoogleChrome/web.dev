@@ -53,10 +53,10 @@ application to how it actually performs.
 
 While all applications have different needs, the performance audits in
 Lighthouse are based on the
-[RAIL user-centric performance model](https://developers.google.com/web/fundamentals/performance/rail),
+[RAIL user-centric performance model](/rail/),
 and scoring high on those audits will make it more likely that your users have
 an enjoyable experience. You can also use
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+[PageSpeed Insights](https://pagespeed.web.dev/)
 or the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
 to get real-world performance data for your web app.
 
@@ -282,7 +282,7 @@ need to make your content available and adaptable to offline contexts. In
 addition, you can use
 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb),
 an in-browser NoSQL storage system, to store and retrieve data, and
-[background sync](https://developers.google.com/web/updates/2015/12/background-sync)
+[background sync](https://developer.chrome.com/blog/background-sync/)
 to allow users to take actions while offline and defer server communications
 until the user has a stable connection again. You can also use service
 workers to store other kinds of content, such as images, video files, and
@@ -395,7 +395,7 @@ input-specific controls as well (such as pull-to-refresh).
 
 #### How
 
-The [Pointer Events API](https://developers.google.com/web/updates/2016/10/pointer-events)
+The [Pointer Events API](https://developer.chrome.com/blog/pointer-events/)
 provides a unified interface for working with various input options, and is
 especially good for adding stylus support. For supporting both touch and
 keyboard, ensure that you're using the correct semantic elements (anchors,

@@ -71,7 +71,7 @@ Procure maneiras de armazenar conteúdo de forma mais agressiva. Se um recurso p
 
 Cabeçalhos HTTP como [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires) e [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indicam como um recurso deve ser armazenado em cache por um cache HTTP. Auditar e corrigir esses cabeçalhos melhorará o armazenamento em cache.
 
-Embora os [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) também possam ser usados para armazenamento em cache, eles utilizam um [cache](https://developer.mozilla.org/docs/Web/API/Cache) separado e são um suplemento, e não uma substituição, para o armazenamento em cache HTTP adequado. Por esse motivo, ao lidar com um servidor sobrecarregado, os esforços devem se concentrar na otimização do cache HTTP.
+Embora os [service workers](https://developer.chrome.com/docs/workbox/service-worker-overview/) também possam ser usados para armazenamento em cache, eles utilizam um [cache](https://developer.mozilla.org/docs/Web/API/Cache) separado e são um suplemento, e não uma substituição, para o armazenamento em cache HTTP adequado. Por esse motivo, ao lidar com um servidor sobrecarregado, os esforços devem se concentrar na otimização do cache HTTP.
 
 #### Diagnosticar
 
@@ -174,8 +174,8 @@ Auditorias Farol relevantes:
 
 Fluxo de trabalho do Chrome DevTools:
 
-- [Registrar atividade de rede](https://developers.google.com/web/tools/chrome-devtools/network#load)
-- Clique em **Img** para [filtrar recursos que não sejam de imagem](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
+- [Registrar atividade de rede](https://developer.chrome.com/docs/devtools/network/#load)
+- Clique em **Img** para [filtrar recursos que não sejam de imagem](https://developer.chrome.com/docs/devtools/network/reference/#filter-by-type)
 - Clique na **coluna Tamanho** para classificar os arquivos de imagem por tamanho
 
 #### Consertar

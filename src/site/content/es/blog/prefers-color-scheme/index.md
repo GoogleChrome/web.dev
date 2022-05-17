@@ -256,7 +256,7 @@ A partir de Chromium 93 y Safari 15, puede ajustar este color basándose en una 
 
 ### La emulación de `prefers-color-scheme` en DevTools
 
-Cambiar el esquema de colores de todo el sistema operativo puede ser molesto muy rápidamente, por lo que Chrome DevTools ahora le permite emular el esquema de colores preferido por el usuario de una manera que solo afecta a la pestaña que se encuentra visible en ese momento. Abra el [Menú Comandos](https://developers.google.com/web/tools/chrome-devtools/command-menu), comience a escribir `Rendering`, ejecute el comando `Show Rendering` y, a continuación, cambie la opción prefers-color-scheme correspondiente a la función de medios CSS.
+Cambiar el esquema de colores de todo el sistema operativo puede ser molesto muy rápidamente, por lo que Chrome DevTools ahora le permite emular el esquema de colores preferido por el usuario de una manera que solo afecta a la pestaña que se encuentra visible en ese momento. Abra el [Menú Comandos](https://developer.chrome.com/docs/devtools/command-menu/), comience a escribir `Rendering`, ejecute el comando `Show Rendering` y, a continuación, cambie la opción prefers-color-scheme correspondiente a la función de medios CSS.
 
 <figure>{% Img src="image/admin/RIq2z6Ja1zSzfNTHic5z.png", alt="Una captura de pantalla de la opción 'La función de emulación de medios CSS favorece el esquema de color' que se encuentra en la pestaña Renderización de Chrome DevTools", width="800", height="552" %}</figure>
 

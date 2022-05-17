@@ -19,40 +19,45 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 const fs = require('fs');
+const path = require('path');
+const patterns = require('./src/lib/patterns').patterns();
 
 const markdown = require('./src/site/_plugins/markdown');
 
+// Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
-const Assessment = require('./src/site/_includes/components/Assessment');
-const Author = require('./src/site/_includes/components/Author');
-const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
-const Banner = require('./src/site/_includes/components/Banner');
-const Blockquote = require('./src/site/_includes/components/Blockquote');
-const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
-const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
-const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
-const CodePattern = require('./src/site/_includes/components/CodePattern');
-const Codepen = require('./src/site/_includes/components/Codepen');
+const {Blockquote} = require('webdev-infra/shortcodes/Blockquote');
+const {Codepen} = require('webdev-infra/shortcodes/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
-const Details = require('./src/site/_includes/components/Details');
-const DetailsSummary = require('./src/site/_includes/components/DetailsSummary');
+const {Details} = require('webdev-infra/shortcodes/Details');
+const {DetailsSummary} = require('webdev-infra/shortcodes/DetailsSummary');
 const Glitch = require('./src/site/_includes/components/Glitch');
-const Hero = require('./src/site/_includes/components/Hero');
-const includeRaw = require('./src/site/_includes/components/includeRaw');
 const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
 const Label = require('./src/site/_includes/components/Label');
+const {Video} = require('./src/site/_includes/components/Video');
+const {YouTube} = require('webdev-infra/shortcodes/YouTube');
+const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
+const CodePattern = require('./src/site/_includes/components/CodePattern');
+const Widget = require('./src/site/_includes/components/Widget');
+
+// Other shortcodes
+const Assessment = require('./src/site/_includes/components/Assessment');
+const Author = require('./src/site/_includes/components/Author');
+const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
+const Banner = require('./src/site/_includes/components/Banner');
+const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
+const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
+const Hero = require('./src/site/_includes/components/Hero');
+const includeRaw = require('./src/site/_includes/components/includeRaw');
 const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const Tooltip = require('./src/site/_includes/components/Tooltip');
-const Widget = require('./src/site/_includes/components/Widget');
-const {Video} = require('./src/site/_includes/components/Video');
-const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
 // Collections
@@ -257,6 +262,33 @@ module.exports = function (config) {
     });
   }
 
+  // Because eleventy's passthroughFileCopy does not work with permalinks
+  // we need to manually copy general assets ourselves using gulp.
+  // https://github.com/11ty/eleventy/issues/379
+  // We make exception for CodePattern files used as standalone scripts in demos.
+  for (const patternId in patterns) {
+    const pattern = patterns[patternId];
+    if (pattern.static?.length) {
+      const src = path.join(
+        'src',
+        'site',
+        'content',
+        'en',
+        'patterns',
+        pattern.id,
+      );
+      const rewrite = {};
+      pattern.static.forEach((staticFile) => {
+        rewrite[path.join(src, staticFile)] = path.join(
+          'patterns',
+          pattern.id,
+          staticFile,
+        );
+      });
+      config.addPassthroughCopy(rewrite);
+    }
+  }
+
   return {
     dir: {
       input: 'src/site/content/', // we use a string path with the forward slash since windows doesn't like the paths generated from path.join
@@ -267,9 +299,5 @@ module.exports = function (config) {
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    // Because eleventy's passthroughFileCopy does not work with permalinks
-    // we need to manually copy assets ourselves using gulp.
-    // https://github.com/11ty/eleventy/issues/379
-    passthroughFileCopy: false,
   };
 };

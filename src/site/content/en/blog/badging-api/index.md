@@ -54,7 +54,7 @@ Examples of apps that might use this API include:
 ### Support
 
 The App Badging API works on Windows, and macOS, in Chrome 81 and Edge 81 or later.
-Support for Chrome OS is in development and will be available in a future
+Support for ChromeOS is in development and will be available in a future
 release. On Android, the Badging API is not supported. Instead,
 Android automatically shows a badge on app icon for the installed web app
 when there is an unread notification, just as for Android apps.

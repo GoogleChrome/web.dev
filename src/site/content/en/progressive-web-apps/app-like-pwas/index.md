@@ -736,7 +736,7 @@ The table below shows a compact overview of all features and provides a list of 
 ## Conclusion
 
 PWAs have come a long way since their introduction in 2015.
-In the context of [Project Fugu 🐡](/fugu-status), the cross-company Chromium team is working on closing the last remaining gaps.
+In the context of [Project Fugu 🐡](https://developer.chrome.com/blog/fugu-status), the cross-company Chromium team is working on closing the last remaining gaps.
 By following even only some of the pieces of advice in this article,
 you can piece by piece get closer to that app-like feeling and make your users forget
 that they are dealing with "just a website", because, honestly, most of them do not care

@@ -100,8 +100,8 @@ p {
 
 Попробуйте это в своем браузере:
 
-1. [Откройте DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
-2. [Выберите элемент](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
+1. [Откройте DevTools](https://developer.chrome.com/docs/devtools/open/)
+2. [Выберите элемент](https://developer.chrome.com/docs/devtools/css/reference/#select)
 3. Включите отладчик блочной модели
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>

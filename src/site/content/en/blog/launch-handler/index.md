@@ -23,7 +23,7 @@ tags:
   - capabilities
 ---
 
-{% Aside %} The Launch Handler API is part of the [capabilities project](/fugu-status/) and is
+{% Aside %} The Launch Handler API is part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is
 currently in development. This post will be updated as the implementation progresses. {% endAside %}
 
 ## What is the Launch Handler API? {: #what }
@@ -167,7 +167,7 @@ Handler API.
 
 <!--lint disable no-literal-urls -->
 
-1. Install the _Musicr 2.0_ app on a Chrome OS device.
+1. Install the _Musicr 2.0_ app on a ChromeOS device.
 1. Send yourself a link in a chat application of the form
    <code>https://launch-handler.glitch.me?track=<strong>https://example.com/music.mp3</strong></code>.
    (You can customize

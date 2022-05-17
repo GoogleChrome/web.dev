@@ -24,7 +24,7 @@ Trusted Web Activity 是一个开放标准，它允许浏览器提供一个完�
 
 一直可以在 Android 应用程序中包含 Web 体验，方法是使用 [Android WebView](https://developer.android.com/reference/android/webkit/WebView) 之类的技术或 [Cordova](https://cordova.apache.org/) 等框架。
 
-Android WebView 的局限性在于它并非是浏览器的替代。Android WebView 是用于在 Android 应用程序中使用 Web UI 的开发者工具，不提供对现代 Web 平台功能（如[联系人选取器](/contact-picker/)或[文件系统](/file-system-access/)[等](/fugu-status/)）的完整访问。
+Android WebView 的局限性在于它并非是浏览器的替代。Android WebView 是用于在 Android 应用程序中使用 Web UI 的开发者工具，不提供对现代 Web 平台功能（如[联系人选取器](/contact-picker/)或[文件系统](/file-system-access/)[等](https://developer.chrome.com/blog/fugu-status/)）的完整访问。
 
 Cordova 旨在弥补 WebView 的缺点，但 API 仅限于 Cordova 环境。这意味着需要维护一个额外的代码库才能将 Cordova API 用于 Android 应用程序，与开放 Web 上的 PWA 分离。
 
@@ -32,7 +32,7 @@ Cordova 旨在弥补 WebView 的缺点，但 API 仅限于 Cordova 环境。这�
 
 ### Trusted Web Activity 是 Android 上的 Web 应用程序的新容器
 
-开发人员现在可以使用 [Trusted Web Activity](https://developers.google.com/web/updates/2019/02/using-twa) 作为容器，包含 PWA 作为 Android 应用程序的启动活动。该技术利用浏览器来全屏渲染 PWA，确保 Trusted Web Activity 与底层浏览器兼容相同的 Web 平台功能和 API。还有一些开源实用程序，可以更轻松地使用 Trusted Web Activity 来实现 Android 应用程序。
+开发人员现在可以使用 [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/) 作为容器，包含 PWA 作为 Android 应用程序的启动活动。该技术利用浏览器来全屏渲染 PWA，确保 Trusted Web Activity 与底层浏览器兼容相同的 Web 平台功能和 API。还有一些开源实用程序，可以更轻松地使用 Trusted Web Activity 来实现 Android 应用程序。
 
 其他解决方案不具备的另一个优势是容器与浏览器共享存储。登录状态和用户首选项可跨体验无缝共享。
 

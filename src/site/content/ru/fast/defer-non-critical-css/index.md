@@ -53,7 +53,7 @@ CSS-файлы [блокируют отрисовку](https://developers.google
 
 Чтобы оптимизировать страницу, надо знать, какие классы считаются критичными. Для этого используем [Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) (инструмент «Покрытие»):
 
-1. В DevTools откройте [командное меню](https://developers.google.com/web/tools/chrome-devtools/command-menu), нажав `Control+Shift+P` или `Command+Shift+P` (Mac).
+1. В DevTools откройте [командное меню](https://developer.chrome.com/docs/devtools/command-menu/), нажав `Control+Shift+P` или `Command+Shift+P` (Mac).
 2. Введите «coverage» (область действия) и выберите **Show Coverage** (Показать область действия).
 3. Нажмите кнопку **перезагрузки** — страница будет обновлена и начнется сбор данных.
 

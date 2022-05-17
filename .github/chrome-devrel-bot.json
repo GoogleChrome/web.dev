@@ -1,0 +1,63 @@
+{
+  "pr_checks": {
+    "approvals": [
+      {
+        "check_name" : "Content team approval",
+        "teams" : [],
+        "users" : [
+          "malchata",
+          "rachelandrew",
+          "heyawhite",
+          "jpmedley",
+          "mihajlija",
+          "sofiayem"
+        ],
+        "paths" : [
+          "src/site/content/**/*.md"
+        ]
+      },
+      {
+        "check_name" : "Eng team approval",
+        "teams" : [],
+        "users" : [
+          "PaulKinlan",
+          "jeffposnick",
+          "devnook"
+        ],
+        "paths" : [
+          "*.js",
+          "*.json",
+          "*.css",
+          "*.scss",
+          "*.html",
+          "*.htm",
+          "*.njk",
+          "*.toml",
+          "*.sh",
+          "src/site/content/en/newsletter/"
+        ]
+      },
+      {
+        "check_name" : "Eng or Content team approval",
+        "teams" : [],
+        "users" : [
+          "PaulKinlan",
+          "jeffposnick",
+          "devnook",
+          "malchata",
+          "rachelandrew",
+          "heyawhite",
+          "jpmedley",
+          "mihajlija",
+          "sofiayem"
+        ],
+        "paths" : [
+          "src/site/_data/**.yml",
+          "src/site/_data/**.yaml",
+          "src/site/_data/**.json",
+          "redirects.yaml"
+        ]
+      }
+    ]
+  }
+}

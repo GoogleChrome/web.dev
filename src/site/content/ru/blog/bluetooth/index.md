@@ -32,13 +32,13 @@ stack_overflow_tag: web-bluetooth
 
 Несмотря на то, что [спецификация Web Bluetooth API](https://webbluetoothcg.github.io/web-bluetooth/) еще не окончательно доработана, авторы спецификации активно ищут энтузиастов-разработчиков, чтобы опробовать этот API и дать [отзывы о спецификации](https://github.com/WebBluetoothCG/web-bluetooth/issues) и [отзывы о реализации](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth).
 
-Сокращенная версия Web Bluetooth API доступна в Chrome OS, Chrome для Android 6.0, Mac (Chrome 56) и Windows 10 (Chrome 70). Это означает, что вы должны иметь возможность [запрашивать](#request) и [подключаться к](#connect) ближайшим устройствам Bluetooth с низким энергопотреблением, [читать](#read) и [записывать](#write) характеристики Bluetooth, [получать уведомления GATT](#notifications), знать, когда [устройство Bluetooth отключается](#disconnect), а также [читать и записывать дескрипторы Bluetooth](#descriptors). Для получения дополнительной информации см. [таблицу совместимости браузера](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) в MDN.
+Сокращенная версия Web Bluetooth API доступна в ChromeOS, Chrome для Android 6.0, Mac (Chrome 56) и Windows 10 (Chrome 70). Это означает, что вы должны иметь возможность [запрашивать](#request) и [подключаться к](#connect) ближайшим устройствам Bluetooth с низким энергопотреблением, [читать](#read) и [записывать](#write) характеристики Bluetooth, [получать уведомления GATT](#notifications), знать, когда [устройство Bluetooth отключается](#disconnect), а также [читать и записывать дескрипторы Bluetooth](#descriptors). Для получения дополнительной информации см. [таблицу совместимости браузера](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility) в MDN.
 
 Для Linux и более ранних версий Windows включите флаг `#experimental-web-platform-features` в `about://flags`.
 
 ### Доступно для испытаний по схеме Origin Trial
 
-Чтобы получить как можно больше отзывов от разработчиков, использующих Web Bluetooth API на практике, Chrome ранее добавил эту функцию в Chrome 53 для [испытаний по схеме Origin Trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) на Chrome OS, Android и Mac.
+Чтобы получить как можно больше отзывов от разработчиков, использующих Web Bluetooth API на практике, Chrome ранее добавил эту функцию в Chrome 53 для [испытаний по схеме Origin Trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) на ChromeOS, Android и Mac.
 
 Испытания успешно завершились в январе 2017 года.
 
@@ -52,7 +52,7 @@ stack_overflow_tag: web-bluetooth
 
 ### Требуется жест пользователя
 
-В целях безопасности обнаружение Bluetooth-устройств с помощью `navigator.bluetooth.requestDevice` должно запускаться [жестом пользователя](https://html.spec.whatwg.org/multipage/interaction.html#activation), например, касанием или щелчком мыши. Речь идет о прослушивании событий [`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events), `click` и `touchend`.
+В целях безопасности обнаружение Bluetooth-устройств с помощью `navigator.bluetooth.requestDevice` должно запускаться [жестом пользователя](https://html.spec.whatwg.org/multipage/interaction.html#activation), например, касанием или щелчком мыши. Речь идет о прослушивании событий [`pointerup`](https://developer.chrome.com/blog/pointer-events/), `click` и `touchend`.
 
 ```js
 button.addEventListener('pointerup', function(event) {

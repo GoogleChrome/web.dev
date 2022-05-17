@@ -42,7 +42,7 @@ Para saber mais, verifique o [carregamento lento no nível do navegador para a w
 
 Para preencher o carregamento lento de `<img>`, usamos JavaScript para verificar se eles estão na janela de visualização. Se estiverem, seus `src` (e às vezes `srcset` ) são preenchidos com URLs para o conteúdo de imagem desejado.
 
-Se você já escreveu código de carregamento lento antes, pode ter realizado sua tarefa usando manipuladores de eventos, como `scroll` ou `resize`. Embora essa abordagem seja a mais compatível entre os navegadores, os navegadores modernos oferecem uma maneira mais eficiente e performante de fazer o trabalho de verificação da visibilidade do elemento por meio da [API Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver).
+Se você já escreveu código de carregamento lento antes, pode ter realizado sua tarefa usando manipuladores de eventos, como `scroll` ou `resize`. Embora essa abordagem seja a mais compatível entre os navegadores, os navegadores modernos oferecem uma maneira mais eficiente e performante de fazer o trabalho de verificação da visibilidade do elemento por meio da [API Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/).
 
 {% Aside %} O observador de interseção não é compatível com todos os navegadores, principalmente IE11 e anteriores. Se a compatibilidade entre os navegadores for crucial, certifique-se de ler a [próxima seção](#images-inline-event-handlersy), que mostra como fazer o carregamento lento de imagens usando manipuladores de eventos de rolar e redimensionar com desempenho menor, mas mais compatíveis! {% endAside %}
 

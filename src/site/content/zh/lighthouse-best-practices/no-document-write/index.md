@@ -37,7 +37,7 @@ Lighthouse 会报告对 `document.write()` 的任何其他调用，因为无论�
 
 ## 避免使用 `document.write()`
 
-删除代码中对 `document.write()` 的所有使用。如果已将其注入第三方脚，请尝试使用[异步加载](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)。
+删除代码中对 `document.write()` 的所有使用。如果已将其注入第三方脚，请尝试使用[异步加载](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)。
 
 如果第三方代码正在使用 `document.write()`，请要求提供程序支持异步加载。
 
@@ -45,5 +45,5 @@ Lighthouse 会报告对 `document.write()` 的任何其他调用，因为无论�
 
 - [**使用 `document.write()`**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
 - [干预 `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
-- [解析器阻止与异步 JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)
+- [解析器阻止与异步 JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [预解析](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

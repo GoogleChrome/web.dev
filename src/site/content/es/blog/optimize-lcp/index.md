@@ -154,7 +154,7 @@ Si utiliza un agrupador de módulos o una herramienta de compilación, incluya u
 
 ### Retrasar CSS no crítico
 
-Utilice la pestaña [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) de Chrome DevTools para encontrar cualquier CSS que no utilice en su página web.
+Utilice la pestaña [Coverage](https://developer.chrome.com/docs/devtools/coverage/) de Chrome DevTools para encontrar cualquier CSS que no utilice en su página web.
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Pestaña Coverage de Chrome DevTools", width="800", height="559" %}
 
@@ -358,7 +358,7 @@ Hay varias herramientas disponibles para medir y depurar LCP:
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- La sección de **sincronizaciones** del [rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) en el panel en Chrome DevTools incluye un marcador de LCP y muestra qué elemento se asocia con LCP cuando se pasa sobre el campo **Nodo relacionado**.
+- La sección de **sincronizaciones** del [rendimiento](https://developer.chrome.com/docs/devtools/evaluate-performance/) en el panel en Chrome DevTools incluye un marcador de LCP y muestra qué elemento se asocia con LCP cuando se pasa sobre el campo **Nodo relacionado**.
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP en Chrome DevTools", width="800", height="509" %}
 

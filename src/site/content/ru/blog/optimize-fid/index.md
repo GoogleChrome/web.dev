@@ -103,7 +103,7 @@ tags:
 
 По умолчанию весь JavaScript блокирует рендеринг. Когда браузер встречает тег скрипта, который ссылается на внешний файл JavaScript, он должен приостановить свои действия и загрузить, проанализировать, скомпилировать и выполнить этот JavaScript. Поэтому вам следует загружать только тот код, который необходим для страницы или ответа на ввод пользователя.
 
-На вкладке [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) в Chrome DevTools можно узнать, сколько неиспользуемого кода JavaScript находится на вашей странице.
+На вкладке [Coverage](https://developer.chrome.com/docs/devtools/coverage/) в Chrome DevTools можно узнать, сколько неиспользуемого кода JavaScript находится на вашей странице.
 
 {% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="Вкладка Coverage.", width="800", height="559" %}
 

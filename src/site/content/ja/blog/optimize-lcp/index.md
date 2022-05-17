@@ -143,7 +143,7 @@ CSS ファイルには、読みやすくするために、スペース、イン�
 
 ### 重要でない CSS を先送りする
 
-Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) (カバレッジ) タブを使用し、Web ページで使用されていない CSS を見つけます。
+Chrome DevTools の [Coverage](https://developer.chrome.com/docs/devtools/coverage/) (カバレッジ) タブを使用し、Web ページで使用されていない CSS を見つけます。
 
 {% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Chrome DevTools の Coverage (カバレッジ) タブ", width="800", height="559" %}
 
@@ -403,7 +403,7 @@ LCP を測定またはデバッグするためのツールは、以下のよう�
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- Chrome DevTools の [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) (パフォーマンス) パネルの **Timings** (タイミング) セクションには LCP マーカーが含まれており、**Related Node** (関連するノード) フィールドにカーソルを置くことで LCP に関連する要素を表示することができます。
+- Chrome DevTools の [Performance](https://developer.chrome.com/docs/devtools/evaluate-performance/) (パフォーマンス) パネルの **Timings** (タイミング) セクションには LCP マーカーが含まれており、**Related Node** (関連するノード) フィールドにカーソルを置くことで LCP に関連する要素を表示することができます。
 
     {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools での LCP", width="800", height="509" %}
 

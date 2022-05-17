@@ -61,7 +61,7 @@ mobile web platform. This included:
 +   A performance optimized website including a UX revamped [home
     page](https://www.blibli.com).
 +   A lite version of the home page for new users with a
-    [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+    [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)
     to cache critical assets for subsequent navigation.
 +   A [Progressive Web App](/progressive-web-apps/) (PWA) for
     returning users.

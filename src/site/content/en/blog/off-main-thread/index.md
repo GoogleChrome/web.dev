@@ -42,7 +42,7 @@ from hyper-constrained feature phones to high-powered,
 high-refresh-rate flagship machines.
 
 If we want sophisticated web apps to reliably meet performance guidelines
-like the [RAIL model](https://developers.google.com/web/fundamentals/performance/rail)—which
+like the [RAIL model](/rail/)—which
 is based on empirical data about human perception and psychology—we
 need ways to execute our code **off the main thread (OMT)**.
 

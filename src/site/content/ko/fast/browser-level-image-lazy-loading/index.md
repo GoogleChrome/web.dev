@@ -38,7 +38,7 @@ Chrome 76 이상에서는 사용자 지정 지연 로딩 코드를 작성하거�
 
 현재 오프스크린 이미지 로드를 지연시키는 방법에는 두 가지가 있습니다.
 
-- [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver) 사용
+- [Intersection Observer API](https://developer.chrome.com/blog/intersectionobserver/) 사용
 - `scroll`, `resize` 또는 `orientationchange` [이벤트 핸들러](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way) 사용
 
 어느 옵션이든 개발자는 지연 로딩 기능을 포함할 수 있으며 많은 개발자들이 사용하기 훨씬 쉬운 추상화를 제공하기 위해 타사 라이브러리를 구축했습니다. 그러나 브라우저에서 직접 지원하는 지연 로딩을 사용하면 외부 라이브러리가 필요하지 않습니다. 또한 브라우저 수준의 지연 로딩을 사용하면 클라이언트에서 JavaScript가 비활성화된 경우에도 지연된 이미지 로딩이 계속해서 작동합니다.
@@ -79,7 +79,7 @@ JavaScript 지연 로딩 라이브러리와 비교하여 보기 내로 스크롤
 
 [Chromium 소스](https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/frame/settings.json5?l=971-1003&rcl=e8f3cf0bbe085fee0d1b468e84395aad3ebb2cad)에서 다양한 유효 연결 유형에 대한 기본값을 찾을 수 있습니다. 이러한 수치, 그리고 뷰포트로부터 특정 거리에 도달한 경우에만 가져오는 접근 방식은 가까운 장래에 변경될 수 있습니다. Chrome 팀이 로딩 시작 시점을 결정하기 위한 휴리스틱을 개선하고 있기 때문입니다.
 
-{% Aside %} Chrome 77 이상에서는 DevTools에서 [네트워크를 스로틀링](https://developers.google.com/web/tools/chrome-devtools/network/#throttle)하여 이러한 다양한 임계값을 실험할 수 있습니다. 한편으로, `about://flags/#force-effective-connection-type` 플래그를 사용하여 브라우저의 유효 연결 유형을 재정의해야 합니다. {% endAside %}
+{% Aside %} Chrome 77 이상에서는 DevTools에서 [네트워크를 스로틀링](https://developer.chrome.com/docs/devtools/network/#throttle)하여 이러한 다양한 임계값을 실험할 수 있습니다. 한편으로, `about://flags/#force-effective-connection-type` 플래그를 사용하여 브라우저의 유효 연결 유형을 재정의해야 합니다. {% endAside %}
 
 ## 향상된 데이터 절약 및 뷰포트로부터 거리 임계값
 

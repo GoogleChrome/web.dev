@@ -168,7 +168,7 @@ This will help prioritize action items,
 to ensure everybody in your team is aware of the most important tasks.
 
 Learn more about
-[sharing test results](https://developers.google.com/web/fundamentals/performance/audit/share).
+[sharing test results](/performance-audit-share/).
 
 {% Assessment 'cross-platform-testing' %}
 
@@ -176,4 +176,4 @@ Learn more about
 
 - [WebPageTest](https://webpagetest.org/easy): Website Performance and Optimization Tests
 - [Testing with low bandwidth and high latency](https://developers.google.com/web/fundamentals/performance/poor-connectivity#testing)
-- [Sharing test results](https://developers.google.com/web/fundamentals/performance/audit/share)
+- [Sharing test results](/performance-audit-share/)

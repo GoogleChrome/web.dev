@@ -126,9 +126,9 @@ Deberías de anotar los accesos directos a las aplicaciones de `url` como lo hac
 
 ## Compatibilidad del navegador
 
-Los accesos directos a aplicaciones están disponibles en Android (Chrome 84), Windows (Chrome 85 y Edge 85), Chrome OS (Chrome 92), macOS y Linux (Chrome 96 y Edge 96).
+Los accesos directos a aplicaciones están disponibles en Android (Chrome 84), Windows (Chrome 85 y Edge 85), ChromeOS (Chrome 92), macOS y Linux (Chrome 96 y Edge 96).
 
-<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Captura de pantalla de un menú de accesos directos abierto de aplicaciones en Chrome OS", width="800", height="450" %}<figcaption> Menú de accesos directos abierto de aplicaciones en Chrome OS</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Captura de pantalla de un menú de accesos directos abierto de aplicaciones en ChromeOS", width="800", height="450" %}<figcaption> Menú de accesos directos abierto de aplicaciones en ChromeOS</figcaption></figure>
 
 ## Soporte de Trusted Web Activity
 

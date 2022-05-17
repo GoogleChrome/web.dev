@@ -94,7 +94,7 @@ A FID é uma métrica que mede a capacidade de resposta de uma página durante o
 
 Outras interações, como rolagem e zoom, são ações contínuas e têm restrições de desempenho completamente diferentes (além disso, os navegadores são geralmente capazes de ocultar sua latência executando-as em um thread separado).
 
-Em outras palavras, a FID se concentra no R (responsividade) do [modelo de desempenho RAIL](https://developers.google.com/web/fundamentals/performance/rail) , enquanto que a rolagem e o zoom estão mais relacionados ao A (animação), e suas qualidades de desempenho devem ser avaliadas separadamente.
+Em outras palavras, a FID se concentra no R (responsividade) do [modelo de desempenho RAIL](/rail/) , enquanto que a rolagem e o zoom estão mais relacionados ao A (animação), e suas qualidades de desempenho devem ser avaliadas separadamente.
 
 ### E se um usuário nunca interagir com seu site?
 
@@ -121,7 +121,7 @@ A FID é uma métrica que só pode ser medida [em campo](/user-centric-performan
 ### Ferramentas de campo
 
 - [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 

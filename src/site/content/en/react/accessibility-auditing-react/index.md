@@ -131,7 +131,7 @@ if (process.env.NODE_ENV !== 'production') {
 ```
 
 A
-[dynamic import](https://developers.google.com/web/updates/2017/11/dynamic-import)
+[dynamic import](https://v8.dev/features/dynamic-import)
 is used here to only load the library when it is not in production mode before
 rendering and booting up the root `App` component. This ensures that it is not
 unnecessarily included in the final production bundle.

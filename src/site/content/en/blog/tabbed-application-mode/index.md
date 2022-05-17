@@ -19,7 +19,7 @@ tags:
 
 {% Aside %}
   Tabbed application mode is part of the
-  [capabilities project](/fugu-status/) and is currently in development. This post
+  [capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post
   will be updated as the implementation progresses. Tabbed application mode is an early-stage
   exploration of the Chrome team. It is not ready for production yet.
 {% endAside %}
@@ -117,7 +117,7 @@ To use tabbed application mode, developers need to opt their apps in by setting 
 
 ### Trying tabbed application mode
 
-You can try tabbed application mode on Chrome&nbsp;OS devices running Chrome&nbsp;83 and up today:
+You can try tabbed application mode on ChromeOS devices running Chrome&nbsp;83 and up today:
 
 1. Set the `#enable-desktop-pwas-tab-strip` flag.
 1. Install any web app that runs in `standalone` mode, for example,

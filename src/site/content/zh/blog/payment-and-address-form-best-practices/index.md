@@ -496,7 +496,7 @@ Address line 2 (optional)
 - [移动表单设计最佳实践](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [更强大的表单控件](/more-capable-form-controls)
 - [创建可访问表单](https://webaim.org/techniques/forms/)
-- [利用凭据管理 API 简化注册流程](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [利用凭据管理 API 简化注册流程](https://developer.chrome.com/blog/credential-management-api/)
 - [Frank 的邮政地址必修指南](http://www.columbia.edu/~fdc/postal/)为 200 多个国家/地区的地址格式提供了有用的链接和广泛的指导。
 - [Country Lists](http://www.countries-list.info/Download-List) 提供了一个以多种语言和多种格式下载国家/地区代码和名称的工具。
 

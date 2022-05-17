@@ -307,7 +307,7 @@ The duration of a layout shift has no impact on its layout shift score.
 
 For more information on using the **Performance** panel, refer to [Performance
 Analysis
-Reference](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference).
+Reference](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/).
 
 
 #### Highlight layout shift regions

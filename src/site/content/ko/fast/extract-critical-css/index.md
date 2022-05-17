@@ -29,7 +29,7 @@ tags:
 
 <figure>{% Img src="image/admin/RVU3OphqtjlkrlAtKLEn.png", alt="머리에 인라인된 중요한 CSS가 있는 HTML 파일", width="800", height="325" %}<figcaption> 인라인 중요 CSS</figcaption></figure>
 
-렌더링 시간을 개선하면 특히 열악한 네트워크 조건에서 [인지된 성능](https://developers.google.com/web/fundamentals/performance/rail#ux)에 큰 차이를 만들 수 있습니다. 모바일 네트워크에서는 대역폭에 관계없이 높은 대기 시간이 문제입니다.
+렌더링 시간을 개선하면 특히 열악한 네트워크 조건에서 [인지된 성능](/rail/#focus-on-the-user)에 큰 차이를 만들 수 있습니다. 모바일 네트워크에서는 대역폭에 관계없이 높은 대기 시간이 문제입니다.
 
 <figure>{% Img src="image/admin/NdQz49RVgdHoh3Fff0yr.png", alt="3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단)를 로드하는 필름 스트립 보기 비교. 맨 위로 필름 스트립은 최종적으로 콘텐츠를 표시하기 전에 6개의 빈 프레임을 표시합니다. 하단 필름 스트립은 첫 번째 프레임에 의미 있는 콘텐츠를 표시합니다.", width="800", height="363" %}<figcaption> 3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단) 로드 비교</figcaption></figure>
 

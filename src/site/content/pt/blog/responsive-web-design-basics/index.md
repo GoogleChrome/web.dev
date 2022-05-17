@@ -326,8 +326,8 @@ Depois de configurar seus breakpoints de media query, você vai querer ver como 
 
 Para visualizar sua página em diferentes breakpoints:
 
-[Abra DevTools](https://developers.google.com/web/tools/chrome-devtools#open) e ative o [Modo de Dispositivo](https://developers.google.com/web/tools/chrome-devtools/device-mode#toggle). Isto abre no [modo responsivo](https://developers.google.com/web/tools/chrome-devtools/device-mode#responsive) por default.
+[Abra DevTools](https://developer.chrome.com/docs/devtools/open/) e ative o [Modo de Dispositivo](https://developer.chrome.com/docs/devtools/device-mode/#toggle). Isto abre no [modo responsivo](https://developer.chrome.com/docs/devtools/device-mode/#responsive) por default.
 
-Para ver suas media queries, abra o menu Modo de Dispositivo e selecione [Mostrar media queries](https://developers.google.com/web/tools/chrome-devtools/device-mode#queries) para exibir seus breakpoints como barras coloridas acima de sua página.
+Para ver suas media queries, abra o menu Modo de Dispositivo e selecione [Mostrar media queries](https://developer.chrome.com/docs/devtools/device-mode/#queries) para exibir seus breakpoints como barras coloridas acima de sua página.
 
 Clique numa das barras para visualizar sua página enquanto a media query está ativa. Clique com o botão direito numa barra para ir para a definição da media query.

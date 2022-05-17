@@ -32,13 +32,13 @@ stack_overflow_tag: web-bluetooth
 
 [Web Bluetooth API仕様](https://webbluetoothcg.github.io/web-bluetooth/)はまだ完成していませんが、仕様の作成者は、このAPIを試して、[仕様に関するフィードバック](https://github.com/WebBluetoothCG/web-bluetooth/issues)と[実装に関するフィードバック](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EBluetooth)を提供する意気込みのある開発者を積極的に探しています。
 
-Web Bluetooth APIのサブセットは、Chrome OS、Chrome for Android 6.0、Mac（Chrome 56）、およびWindows 10（Chrome 70）で利用できます。つまり、近くのBluetooth Low Energyデバイスを[リクエスト](#request)して[接続](#connect)し、Bluetoothの特性を[読み](#read)/[書き](#write)し、[GATT通知を受信](#notifications)して[Bluetoothデバイスの切断](#disconnect)を認識し、[Bluetooth記述子の読み書き](#descriptors)さえも行うことができということです。詳細については、MDNの[ブラウザ互換性](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility)テーブルを参照してください。
+Web Bluetooth APIのサブセットは、ChromeOS、Chrome for Android 6.0、Mac（Chrome 56）、およびWindows 10（Chrome 70）で利用できます。つまり、近くのBluetooth Low Energyデバイスを[リクエスト](#request)して[接続](#connect)し、Bluetoothの特性を[読み](#read)/[書き](#write)し、[GATT通知を受信](#notifications)して[Bluetoothデバイスの切断](#disconnect)を認識し、[Bluetooth記述子の読み書き](#descriptors)さえも行うことができということです。詳細については、MDNの[ブラウザ互換性](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility)テーブルを参照してください。
 
 Linuxおよび以前のバージョンのWindowsの場合は、`about://flags`で`#experimental-web-platform-features`フラグを有効にしてください。
 
 ### オリジントライアルに利用可能
 
-現場でWeb Bluetooth APIを使用している開発者から可能な限り多くのフィードバックを得るために、Chromeは以前、この機能をChrome OS、Android、およびMacの[オリジントライアル](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)としてChrome53に追加しました。
+現場でWeb Bluetooth APIを使用している開発者から可能な限り多くのフィードバックを得るために、Chromeは以前、この機能をChromeOS、Android、およびMacの[オリジントライアル](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)としてChrome53に追加しました。
 
 このトライアルは2017年1月に成功して終了しました。
 
@@ -52,7 +52,7 @@ Linuxおよび以前のバージョンのWindowsの場合は、`about://flags`�
 
 ### ユーザージェスチャーが必要
 
-セキュリティ機能として、`navigator.bluetooth.requestDevice`でBluetoothデバイスを検出するには、タッチやマウスクリックなどの[ユーザージェスチャ](https://html.spec.whatwg.org/multipage/interaction.html#activation)によるトリガーが必要です。[`pointerup`](https://developers.google.com/web/updates/2016/10/pointer-events)、`click`、`touchend`イベントをリスンするということです。
+セキュリティ機能として、`navigator.bluetooth.requestDevice`でBluetoothデバイスを検出するには、タッチやマウスクリックなどの[ユーザージェスチャ](https://html.spec.whatwg.org/multipage/interaction.html#activation)によるトリガーが必要です。[`pointerup`](https://developer.chrome.com/blog/pointer-events/)、`click`、`touchend`イベントをリスンするということです。
 
 ```js
 button.addEventListener('pointerup', function(event) {

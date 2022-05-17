@@ -41,7 +41,7 @@ Components spec - v0 - was [shipped in Chrome
 Today, thanks to broad collaboration between browser vendors, the
 next-generation of the Web Components spec - v1 - is gaining wide support.
 Chrome supports the two major specs that make up Web Components - [Shadow
-DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom) and [Custom
+DOM](/shadowdom-v1/) and [Custom
 Elements](https://developers.google.com/web/fundamentals/getting-started/primers/customelements)
 - as of [Chrome 53](https://www.chromestatus.com/feature/4667415417847808) and
 [Chrome 54](https://www.chromestatus.com/feature/4696261944934400) respectively.
@@ -69,7 +69,7 @@ window.customElements.define('my-element', MyElement);
 
 The new v1 specs are extremely powerful - we’ve put together tutorials on using
 [Custom Elements v1](https://developers.google.com/web/fundamentals/getting-started/primers/customelements)
-and [Shadow DOM v1](https://developers.google.com/web/fundamentals/web-components/shadowdom) to help
+and [Shadow DOM v1](/shadowdom-v1/) to help
 you get started.
 
 ## webcomponents.org

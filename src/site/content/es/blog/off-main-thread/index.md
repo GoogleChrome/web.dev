@@ -15,7 +15,7 @@ En los últimos 20 años, la web ha evolucionado drásticamente de documentos es
 
 Como resultado, el hilo principal se ha visto increíblemente sobrecargado de trabajo y a medida que aumenta la complejidad de las aplicaciones web, esto se convierte en un obstáculo importante para el rendimiento. Para empeorar las cosas, la cantidad de tiempo que lleva ejecutar el código en el hilo principal para un usuario dado, es **casi completamente impredecible**, porque las capacidades del dispositivo tienen un efecto masivo en el rendimiento. Esa imprevisibilidad solo aumentará a medida que los usuarios accedan a la web desde un conjunto cada vez más diverso de dispositivos, desde teléfonos con funciones hiperrestringidas hasta máquinas representativas de alta potencia y frecuencia de actualización.
 
-Si queremos que las aplicaciones web sofisticadas cumplan con las pautas de rendimiento como el [modelo RAIL,](https://developers.google.com/web/fundamentals/performance/rail) que se basa en datos empíricos sobre la percepción humana y la psicología, necesitamos formas de ejecutar nuestro código **desde el thread principal (OMT)**.
+Si queremos que las aplicaciones web sofisticadas cumplan con las pautas de rendimiento como el [modelo RAIL,](/rail/) que se basa en datos empíricos sobre la percepción humana y la psicología, necesitamos formas de ejecutar nuestro código **desde el thread principal (OMT)**.
 
 {% Aside %} Si quiere saber más sobre el caso de una arquitectura OMT, a continuación, puede ver mi charla en el CDS 2019. {% endAside %}
 

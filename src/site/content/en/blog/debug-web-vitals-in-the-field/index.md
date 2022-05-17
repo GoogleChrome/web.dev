@@ -28,7 +28,7 @@ Google currently provides two categories of tools to measure and debug Web Vital
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
   (CrUX), which is based on aggregate, real-user data from Chrome. (Note that the
   field data reported by tools such as [PageSpeed
-  Insights](https://developers.google.com/speed/pagespeed/insights/) and [Search
+  Insights](https://pagespeed.web.dev/) and [Search
   Console](https://support.google.com/webmasters/answer/9205520) is sourced from
   CrUX data.)
 

@@ -268,7 +268,7 @@ CSS 속성 값을 변경하면 브라우저가 이러한 변경 사항에 반응
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0은 메트릭 섹션에서 CLS 측정을 위한 지원도 포함합니다.", width="800", height="309" %}
 
-DevTools의 [Performance 패널](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)은 Chrome 84부터 **Experience** 섹션에 레이아웃 이동을 강조 표시해줍니다. `Layout Shift` 기록의 **Summary** 보기에는 영향을 받는 부분을 보여주는 직사각형 오버레이와 함께 누적 레이아웃 이동 점수를 표시합니다.
+DevTools의 [Performance 패널](https://developer.chrome.com/docs/devtools/evaluate-performance/)은 Chrome 84부터 **Experience** 섹션에 레이아웃 이동을 강조 표시해줍니다. `Layout Shift` 기록의 **Summary** 보기에는 영향을 받는 부분을 보여주는 직사각형 오버레이와 함께 누적 레이아웃 이동 점수를 표시합니다.
 
 <figure>{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Experience 섹션 확장 시 Chrome DevTools Performance 패널에 표시되는 Layout Shift 기록", width="800", height="438" %} <figcaption>Performance 패널에 새로운 흔적이 기록되면 결과의 <b>Experience</b> 섹션에 <code>Layout Shift</code> 기록이 붉은색 막대와 함께 표시됩니다. 해당 기록을 클릭하면 영향을 받는 요소(예: Moved from/to 항목 참조)가 드릴다운됩니다.</figcaption></figure>
 

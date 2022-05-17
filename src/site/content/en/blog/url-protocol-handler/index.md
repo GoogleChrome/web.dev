@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2022-02-21
+updated: 2022-04-29
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -19,7 +19,7 @@ tags:
 ---
 
 {% Aside %} URL protocol handler registration for PWAs is part of the
-[capabilities project](/fugu-status/) and is currently in development. This post will
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
 
 ## Background on schemes (aka. protocols)
@@ -107,7 +107,7 @@ allowing the possibility for complementary user-experiences:
 | 2. Create initial draft of specification | [In progress][specification]                 |
 | 3. Gather feedback & iterate on design   | Complete                                     |
 | 4. Origin trial.                         | Complete                                     |
-| 5. **Launch**                            | Complete<br/>Chromium&nbsp;96 (desktop only) |
+| 5. **Launch**                            | Complete<br/>Chromium&nbsp;96 (on Windows, macOS, and Linux) |
 
 </div>
 

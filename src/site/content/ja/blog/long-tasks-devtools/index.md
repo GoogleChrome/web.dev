@@ -24,11 +24,11 @@ Lighthouse を使用してページを監査している場合は、ユーザー
 
 Web ページの読み込み中、長いタスクがメインスレッドを拘束してしまい、ページの準備ができているように見えてもユーザー入力に応答できない状況を作り出してしまいます。イベントリスナーやクリックハンドラーなどがまだ接続されていないため、クリックやタップが機能しないことがよくあります。
 
-CPU を多用する長いタスクは、50 ミリ秒以上かかる複雑な作業が原因で発生します。なぜ 50 ミリ秒なのでしょうか？[The RAIL model](https://developers.google.com/web/fundamentals/performance/rail) では、100 ミリ秒以内に視覚的な応答を得るには、ユーザー入力イベントを [50 ミリ秒](https://developers.google.com/web/fundamentals/performance/rail#response)で処理することを推奨しています。そうでない場合、アクションとリアクションの関係が崩れてしまうためです。
+CPU を多用する長いタスクは、50 ミリ秒以上かかる複雑な作業が原因で発生します。なぜ 50 ミリ秒なのでしょうか？[The RAIL model](/rail/) では、100 ミリ秒以内に視覚的な応答を得るには、ユーザー入力イベントを [50 ミリ秒](/rail/#response:-process-events-in-under-50ms)で処理することを推奨しています。そうでない場合、アクションとリアクションの関係が崩れてしまうためです。
 
 ## 対話性を遅らせる可能性のある長いタスクが私のページにありますか？
 
-これまでは、[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) で 50 ミリ秒を超える長さのスクリプトを示す「長い黄色のブロック」を手動で探すか、[Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) を使用して対話性を遅らせているタスクを特定する必要がありました。これでは少し面倒かもしれません。
+これまでは、[Chrome DevTools](https://developer.chrome.com/docs/devtools/) で 50 ミリ秒を超える長さのスクリプトを示す「長い黄色のブロック」を手動で探すか、[Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) を使用して対話性を遅らせているタスクを特定する必要がありました。これでは少し面倒かもしれません。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="短いタスクと長いタスクの違いを示す DevTools Performance パネルのスクリーンショット", width="800", height="450" %}
 
@@ -36,7 +36,7 @@ CPU を多用する長いタスクは、50 ミリ秒以上かかる複雑な作�
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="Performance パネルで灰色のバーで示される長いタスクに赤いフラグを付けて視覚化する DevTools", width="800", height="450" %}
 
-- [Performance パネル](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)で、読み込み中の Web ページのトレースを記録します。
+- [Performance パネル](https://developer.chrome.com/docs/devtools/evaluate-performance/)で、読み込み中の Web ページのトレースを記録します。
 - メインスレッドビューで赤いフラグを探します。タスクは灰色で表示されています（「Task」）。
 - バーにカーソルを合わせると、タスクに掛かる時間と、それが「長い」と見なされたかどうかがわかります。
 

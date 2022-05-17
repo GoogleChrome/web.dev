@@ -168,7 +168,7 @@ When working to improve the user experience, it's best to think of the process a
 
 1. Interpret field data provided by [CrUX Dashboard](http://g.co/chromeuxdash) and/or your own field data to assess website health.
 2. Use [Search Console](https://search.google.com/search-console/about) to identify pages which need improvement. **Note:** If you're already collecting your own field data, it may be easier to rely on that rather than using Search Console.
-3. Use [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) to get specific information on user experience metrics for those pages as well as opportunities for improvement.
+3. Use [PageSpeed Insights](https://pagespeed.web.dev/) to get specific information on user experience metrics for those pages as well as opportunities for improvement.
 
 Whether you analyze field data you collect yourself or CrUX data, the first step is vital. If you're not gathering field data, CrUX data may be enough to guide you&mdash;again, provided your website is represented in the dataset.
 

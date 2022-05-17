@@ -54,7 +54,7 @@ Lab data for a first load can be easily acquired through
 while field data (at least for Chrome) is readily available through [Chrome UX
 reports](/fast/chrome-ux-report). A convenient combination of
 both can be found in
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+[PageSpeed Insights](https://pagespeed.web.dev/).
 You should also track relevant metrics from the field yourself:
 [Measuring these metrics on real users' devices](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices)
 provides a good overview.

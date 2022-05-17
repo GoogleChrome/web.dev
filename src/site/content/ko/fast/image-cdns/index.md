@@ -55,7 +55,7 @@ tags:
 
 성능 변환에 대해 객관적으로 최상의 설정이 있는 경향이 있으므로 일부 이미지 CDN은 이러한 변환에 대해 "자동" 모드를 지원합니다. 예를 들어, 이미지가 WebP 형식으로 변환되도록 지정하는 대신 CDN이 자동으로 최적의 형식을 선택하고 제공하도록 할 수 있습니다. 이미지 CDN이 이미지를 변환하는 가장 좋은 방법을 결정하는 데 사용할 수 있는 신호는 다음과 같습니다.
 
-- [클라이언트 힌트](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)(예: 뷰포트 너비, DPR 및 이미지 너비)
+- [클라이언트 힌트](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/)(예: 뷰포트 너비, DPR 및 이미지 너비)
 - [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data) 헤더
 - [사용자 에이전트](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) 요청 헤더
 - [네트워크 정보 API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)

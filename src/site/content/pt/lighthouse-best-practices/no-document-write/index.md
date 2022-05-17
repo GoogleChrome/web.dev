@@ -39,7 +39,7 @@ O Lighthouse relata todas as solicitações restantes para `document.write()` po
 
 ## Evite `document.write()`
 
-Remova todos os usos de `document.write()` em seu código. Se estiver sendo usado para injetar scripts de terceiros, tente usar o [carregamento assíncrono](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript) .
+Remova todos os usos de `document.write()` em seu código. Se estiver sendo usado para injetar scripts de terceiros, tente usar o [carregamento assíncrono](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript) .
 
 Se o código de terceiros estiver usando `document.write()` , peça ao fornecedor para oferecer suporte ao carregamento assíncrono.
 
@@ -47,5 +47,5 @@ Se o código de terceiros estiver usando `document.write()` , peça ao fornecedo
 
 - [Código-fonte para auditoria de **Usos de `document.write()`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
 - [Intervenção contra `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
-- [Bloqueio do analisador versus JavaScript assíncrono](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)
+- [Bloqueio do analisador versus JavaScript assíncrono](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [Análise especulativa](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

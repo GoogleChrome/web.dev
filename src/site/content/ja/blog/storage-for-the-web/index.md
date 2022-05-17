@@ -23,7 +23,7 @@ feedback:
 
 以下は、リソースを保管するのに便利なおすすめの手段です。
 
-- アプリとファイルベースのコンテンツを読み込むために必要なネットワークリソースについては、[**Cache Storage API**](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api) ([サービスワーカー](https://developers.google.com/web/fundamentals/primers/service-workers)の一部)を使用する。
+- アプリとファイルベースのコンテンツを読み込むために必要なネットワークリソースについては、[**Cache Storage API**](/cache-api-quick-guide/) ([サービスワーカー](https://developer.chrome.com/docs/workbox/service-worker-overview/)の一部)を使用する。
 - その他のデータについては、[**IndexedDB**](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)を使用する ([promiseラッパー付き](https://www.npmjs.com/package/idb))。
 
 IndexedDBとCacheStorage APIは、最新のすべてのブラウザーでサポートされています。両方とも非同期であり、メインスレッドをブロックしません。これらは、`window`オブジェクト、ウェブワーカー、およびサービスワーカーからアクセスできるため、コード内の好きな場所から簡単に使用できます。
@@ -129,7 +129,7 @@ try {
 
 ウェブストレージは、「ベストエフォート型」と「パーシステント型」という2種類のバケットに分類されます。ベストエフォートとは、ユーザーの邪魔をせずにブラウザでストレージを消去できることを意味しますが、長期データや重大なデータに対する耐久性は低くなります。ストレージの容量が少ない場合、パーシステント型 (永続的) のストレージは自動的に消去されません。このストレージを消去するには、ブラウザの設定から手動で行う必要があります。
 
-サイトのデータ (IndexedDB、Cache APIなどを含む) は、デフォルトでは、ベストエフォート型に分類されます。つまり、サイトが [パーシステント型のストレージを要求](https://developers.google.com/web/updates/2016/06/persistent-storage)していない限り、ブラウザは、独自の判断でサイトのデータを削除します (デバイスのストレージ容量が少ない場合など)。
+サイトのデータ (IndexedDB、Cache APIなどを含む) は、デフォルトでは、ベストエフォート型に分類されます。つまり、サイトが [パーシステント型のストレージを要求](/persistent-storage/)していない限り、ブラウザは、独自の判断でサイトのデータを削除します (デバイスのストレージ容量が少ない場合など)。
 
 ベストエフォート型における削除のポリシーは以下のとおりです。
 
@@ -148,11 +148,11 @@ IndexedDBは低レベルのAPIであり、使用する前に細かいセット�
 
 ## 結論
 
-ストレージに制限があり、ユーザーにもっと多くのデータを保存するよう促すというのはもう過去の話です。サイトは、実行に必要なすべてのリソースとデータを効果的に保存できます。 [StorageManager API](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)を使用すると、使用可能な量と使用した量を割り出せます。また、[パーシステント型ストレージ](https://developers.google.com/web/updates/2016/06/persistent-storage)を使用すれば、ユーザーが削除しない限り、データが削除されることはありません。
+ストレージに制限があり、ユーザーにもっと多くのデータを保存するよう促すというのはもう過去の話です。サイトは、実行に必要なすべてのリソースとデータを効果的に保存できます。 [StorageManager API](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)を使用すると、使用可能な量と使用した量を割り出せます。また、[パーシステント型ストレージ](/persistent-storage/)を使用すれば、ユーザーが削除しない限り、データが削除されることはありません。
 
 ### 他のリソース
 
-- [IndexedDBのベストプラクティス](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+- [IndexedDBのベストプラクティス](/indexeddb-best-practices/)
 - [ChromeWebストレージとクォータの概念](https://docs.google.com/document/d/19QemRTdIxYaJ4gkHYf2WWBNPbpuZQDNMpUVf8dQxj4U/preview)
 
 ### 関係者への感謝の言葉

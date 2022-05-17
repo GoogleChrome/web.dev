@@ -37,7 +37,7 @@ Even though the [Web Bluetooth API specification] is not finalized yet, the spec
 authors are actively looking for enthusiastic developers to try out this API and
 give [feedback on the spec] and [feedback on the implementation].
 
-A subset of the Web Bluetooth API is available in Chrome OS, Chrome for Android
+A subset of the Web Bluetooth API is available in ChromeOS, Chrome for Android
 6.0, Mac (Chrome 56) and Windows 10 (Chrome 70). This means you should be able
 to [request] and [connect to] nearby Bluetooth Low Energy devices,
 [read]/[write] Bluetooth characteristics, [receive GATT Notifications], know
@@ -52,7 +52,7 @@ For Linux and earlier versions of Windows, enable the
 
 In order to get as much feedback as possible from developers using the Web
 Bluetooth API in the field, Chrome has previously added this feature in Chrome
-53 as an [origin trial] for Chrome OS, Android, and Mac.
+53 as an [origin trial] for ChromeOS, Android, and Mac.
 
 The trial has successfully ended in January 2017.
 

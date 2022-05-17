@@ -40,7 +40,7 @@ Chrome 和 Firefox 都支持通过 `loading` 属性实现延迟加载。此属�
 
 为填充 `<img>` 元素的延迟加载，我们使用 JavaScript 来检查它们是否位于视区。若位于视区，则会向它们的 `src` （有时是`srcset` ）属性填充那些指向所需图像内容的 URL。
 
-如果您之前写过延迟加载代码，那么可能已经通过使用诸如 `scroll` 或 `resize` 之类的事件处理程序来完成任务。虽然这种方法在各大浏览器之间的兼容性最好，但现代浏览器提供了一种性能更高、效率更高的方法，通过 [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver) 来完成检查元素可见性的工作。
+如果您之前写过延迟加载代码，那么可能已经通过使用诸如 `scroll` 或 `resize` 之类的事件处理程序来完成任务。虽然这种方法在各大浏览器之间的兼容性最好，但现代浏览器提供了一种性能更高、效率更高的方法，通过 [Intersection Observer API](https://developer.chrome.com/blog/intersectionobserver/) 来完成检查元素可见性的工作。
 
 {% Aside %} 并非所有浏览器都支持 Intersection Observer，尤其是 IE11 及更低版本。如果跨浏览器的兼容性至关重要，请务必阅读[下一节](#images-inline-event-handlersy)，它将向您展示如何使用性能较低（但兼容性更好）的滚动和调整大小事件处理程序延迟加载图像。 {% endAside %}
 

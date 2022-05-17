@@ -400,7 +400,7 @@ A tabela abaixo mostra uma visão geral compacta de todos os recursos e fornece 
 
 ## Conclusão
 
-Os PWAs já percorreram um longo caminho desde sua introdução em 2015. No contexto do [Projeto Fugu 🐡](/fugu-status), a equipe multiempresarial do Chromium está trabalhando para preencher as últimas lacunas restantes. Seguindo apenas alguns dos conselhos deste artigo, você pode chegar mais perto de oferecer uma sensação de app e fazer com que seus usuários esqueçam que estão lidando com "apenas um site", porque, sinceramente, a maioria deles não se preocupe como seu aplicativo é construído (e por que deveria?), contanto que pareça um aplicativo *de verdade.*
+Os PWAs já percorreram um longo caminho desde sua introdução em 2015. No contexto do [Projeto Fugu 🐡](https://developer.chrome.com/blog/fugu-status), a equipe multiempresarial do Chromium está trabalhando para preencher as últimas lacunas restantes. Seguindo apenas alguns dos conselhos deste artigo, você pode chegar mais perto de oferecer uma sensação de app e fazer com que seus usuários esqueçam que estão lidando com "apenas um site", porque, sinceramente, a maioria deles não se preocupe como seu aplicativo é construído (e por que deveria?), contanto que pareça um aplicativo *de verdade.*
 
 ## Agradecimentos
 

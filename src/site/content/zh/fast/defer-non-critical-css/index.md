@@ -49,7 +49,7 @@ CSS 文件是[渲染阻塞资源](https://developers.google.com/web/tools/lighth
 
 要优化此页面，您需要知道哪些类被视为“关键”类。为此，您将使用[Coverage Tool：](https://developer.chrome.com/docs/devtools/css/reference/#coverage)
 
-1. 在 DevTools 中，按下 `Control+Shift+P` 或`Command+Shift+P` (Mac) 打开[命令菜单](https://developers.google.com/web/tools/chrome-devtools/command-menu)。
+1. 在 DevTools 中，按下 `Control+Shift+P` 或`Command+Shift+P` (Mac) 打开[命令菜单](https://developer.chrome.com/docs/devtools/command-menu/)。
 2. 输入“Coverage”并选择 **Show Coverage** 。
 3. 单击 **Reload** 按钮，重新加载页面并开始捕获覆盖范围。
 

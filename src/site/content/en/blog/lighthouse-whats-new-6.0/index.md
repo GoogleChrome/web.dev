@@ -21,7 +21,7 @@ It's available in Chrome DevTools, npm (as a Node module and a CLI), or as a bro
 [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) and
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)). It powers many Google
 services, including [web.dev/measure](/measure/) and [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/).
+Insights](https://pagespeed.web.dev/).
 
 Lighthouse 6.0 is available immediately on npm and in [Chrome
 Canary](https://www.google.com/chrome/canary/). Other Google services that leverage Lighthouse will
@@ -271,7 +271,7 @@ with your results populated.
 ### Unused JavaScript {: #unused-javascript }
 
 We are leveraging [DevTools code
-coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) in a new audit: [**Unused
+coverage](https://developer.chrome.com/docs/devtools/coverage/) in a new audit: [**Unused
 JavaScript**](/remove-unused-code/).
 
 This audit isn't _entirely_ new: it was [added in
@@ -343,7 +343,7 @@ Depending on your DevTools window size, the panel is probably behind the `»` bu
 the tab to change the order.
 
 To quickly reveal the panel with the [Command
-menu](https://developers.google.com/web/tools/chrome-devtools/command-menu):
+menu](https://developer.chrome.com/docs/devtools/command-menu/):
 
 1. {% Instruction 'devtools', 'none' %}
 1. {% Instruction 'devtools-command', 'none' %}

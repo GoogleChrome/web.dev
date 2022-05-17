@@ -38,7 +38,7 @@ AVIF offers significant compression gains over other image formats like JPEG and
 While the exact savings will depend on the content, encoding settings, and quality target,
 [we](https://jakearchibald.com/2020/avif-has-landed/) and
 [others](https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4)
-have seen >50% savings vs. JPEG.
+have seen greater than 50% savings vs. JPEG.
 
 <div class="switcher">
 <figure>
@@ -46,14 +46,15 @@ have seen >50% savings vs. JPEG.
     <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/kVqh1xli2O6mqKF3fQNx.avif" width="1120" height="840" alt="The image using AVIF">
   </a>
   <figcaption>
-  1120 x 840 AVIF at 18,769 bytes (click to enlarge)
+  1120 by 840 AVIF at 18,769 bytes (click to enlarge)
+  </figcaption>
 </figure>
 <figure>
   <a href="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" target="_blank">
     <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" width="1120" height="840" alt="The image using JPEG">
   </a>
   <figcaption>
-  1120 x 840 JPEG at 20,036 bytes (click to enlarge)
+  1120 by 840 JPEG at 20,036 bytes (click to enlarge)
   </figcaption>
 </figure>
 </div>
@@ -73,7 +74,7 @@ Quality scalability offers a similar progression by steadily improving visual qu
 
 ## What's New
 
-Since landing AVIF support in Chrome M85 last summer,
+Since landing AVIF support in Chrome M85,
 AVIF support in the open source ecosystem has improved on a number of fronts.
 
 ### Libaom

@@ -25,7 +25,7 @@ tags:
 ---
 
 {% Aside 'caution' %} Declarative Link Capturing was part of the
-[capabilities project](/fugu-status/). The engineering team has decided that Declarative Link
+[capabilities project](https://developer.chrome.com/blog/fugu-status/). The engineering team has decided that Declarative Link
 Capturing will _not_ launch with its current design. Instead, the feature has been redesigned as
 described in [Control how your app is launched](/launch-handler/). If your app implements the
 Declarative Link Capturing API, you should
@@ -176,7 +176,7 @@ management settings page.
 
 {% Img src="image/ttTommHYbJXsEL29zNB1wXBvH4z1/WJ2KPqFUjqJABNYQUEN9.png", alt="Example of an installed app's settings page.", width="800", height="449" %}
 
-Link capturing is a Chrome&nbsp;OS-only feature for now; support for Windows, macOS, and Linux is
+Link capturing is a ChromeOS-only feature for now; support for Windows, macOS, and Linux is
 in progress.
 
 ### Launch Handler API
@@ -193,10 +193,10 @@ handling, etc. To migrate from the Declarative Link Capturing API to the Launch 
     - To use `"capture_links": "new-client"`,
       add:`"launch_handler": { "route_to": "new-client" }`.
     - To use `"capture_links": "existing-client-navigate"`, add:
-      `"launch_handler": { "route_to": "existing-client" }`.
+      `"launch_handler": { "route_to": "existing-client-navigate" }`.
     - To use `"capture_links": "existing-client-event"` (which was never implemented
       in the Declarative Link Capturing origin trial), add:
-      `{ "launch_handler": { "route_to": "existing-client", "navigate_existing_client": "never" } }`.
+      `"launch_handler": { "route_to": "existing-client-retain" }`.
       With this option, pages in your app scope will no longer navigate automatically when a link
       navigation is captured. You must handle the `LaunchParams` in JavaScript by calling
       `window.launchQueue.setConsumer()` to enable navigation.

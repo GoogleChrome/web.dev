@@ -115,7 +115,7 @@ supported on Chromium forks.
 Once a new Service Worker has installed and a previous version isn't being used, the new one
 activates, and you get an `activate` event. Because the old version is out of the way, it's a good
 time to handle
-[schema migrations in IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+[schema migrations in IndexedDB](/indexeddb-best-practices/)
 and also delete unused caches.
 
 ```js
@@ -318,7 +318,7 @@ self.addEventListener('notificationclick', function (event) {
   <figcaption>On background-sync.</figcaption>
 </figure>
 
-[Background sync](https://developers.google.com/web/updates/2015/12/background-sync) is another feature built on top of
+[Background sync](https://developer.chrome.com/blog/background-sync/) is another feature built on top of
 Service Worker. It allows you to request background data synchronization as a one-off, or on an
 (extremely heuristic) interval. This happens even when the user doesn't have a tab open to your
 site. Only the Service Worker is woken up. You request permission to do this from a page and the user

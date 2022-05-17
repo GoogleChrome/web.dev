@@ -31,7 +31,7 @@ Se seu destino for texto e você tiver usado valores relativos como `em` ou `rem
 
 {% Glitch {id: 'tap-targets-2', path: 'style.css'}%}
 
-Inspecione o `a` do link e, no Chrome DevTools, mude para o [painel Computado,](https://developers.google.com/web/tools/chrome-devtools/css/overrides#computed) onde você pode inspecionar as várias partes da caixa e ver para qual tamanho de pixel elas resolvem. No Firefox DevTools existe um painel de layout. Nesse painel você obtém o tamanho real do elemento inspecionado.
+Inspecione o `a` do link e, no Chrome DevTools, mude para o [painel Computado,](https://developer.chrome.com/docs/devtools/css/overrides/#computed) onde você pode inspecionar as várias partes da caixa e ver para qual tamanho de pixel elas resolvem. No Firefox DevTools existe um painel de layout. Nesse painel você obtém o tamanho real do elemento inspecionado.
 
 <figure style="max-width: 500px">{% Img src="image/admin/vmFzREveRttHVDfLqqCx.jpg", alt="O painel de layout no Firefox DevTools mostrando o tamanho de um elemento", width="800", height="565" %}</figure>
 

@@ -24,7 +24,7 @@ Play Store는 Android 앱을 위한 스토어이며 개발자는 종종 Android 
 
 [Android WebView](https://developer.android.com/reference/android/webkit/WebView)와 같은 기술 또는 [Cordova](https://cordova.apache.org/)와 같은 프레임워크를 사용하여 Android 앱에 웹 경험을 포함하는 것은 항상 가능했습니다.
 
-Android WebView의 한계점은 브라우저 대체품을 의도한 것이 아니라는 것입니다. Android WebView는 Android 앱에서 웹 UI를 사용하기 위한 개발자 도구이며 [contact picker](/contact-picker/), 또는 [filesystem](/file-system-access/), [among others](/fugu-status/)와 같은 최신 웹 플랫폼 기능에 대한 완전한 액세스 기능을 제공하지 않습니다.
+Android WebView의 한계점은 브라우저 대체품을 의도한 것이 아니라는 것입니다. Android WebView는 Android 앱에서 웹 UI를 사용하기 위한 개발자 도구이며 [contact picker](/contact-picker/), 또는 [filesystem](/file-system-access/), [among others](https://developer.chrome.com/blog/fugu-status/)와 같은 최신 웹 플랫폼 기능에 대한 완전한 액세스 기능을 제공하지 않습니다.
 
 Cordova는 WebView의 단점을 보완하도록 설계되었지만 API는 Cordova 환경으로 제한됩니다. 즉, 개방형 웹의 PWA와 별도로 Android 앱용 Cordova API를 사용하기 위한 추가 코드베이스를 유지해야 합니다.
 
@@ -32,7 +32,7 @@ Cordova는 WebView의 단점을 보완하도록 설계되었지만 API는 Cordov
 
 ### 신뢰할 수 있는 웹 활동은 Android의 웹 앱을 위한 새로운 컨테이너입니다
 
-이제 개발자는 [신뢰할 수 있는 웹 활동](https://developers.google.com/web/updates/2019/02/using-twa)을 컨테이너로 사용하여 Android 앱의 시작 활동으로 PWA를 포함할 수 있습니다. 이 기술은 브라우저를 활용하여 PWA를 전체 화면으로 렌더링 하여 신뢰할 수 있는 웹 활동이 기본 브라우저와 동일한 웹 플랫폼 기능 및 API와 호환되도록 합니다. 신뢰할 수 있는 웹 활동을 사용하여 Android 앱을 훨씬 쉽게 구현할 수 있는 오픈 소스 유틸리티도 있습니다.
+이제 개발자는 [신뢰할 수 있는 웹 활동](https://developer.chrome.com/docs/android/trusted-web-activity/)을 컨테이너로 사용하여 Android 앱의 시작 활동으로 PWA를 포함할 수 있습니다. 이 기술은 브라우저를 활용하여 PWA를 전체 화면으로 렌더링 하여 신뢰할 수 있는 웹 활동이 기본 브라우저와 동일한 웹 플랫폼 기능 및 API와 호환되도록 합니다. 신뢰할 수 있는 웹 활동을 사용하여 Android 앱을 훨씬 쉽게 구현할 수 있는 오픈 소스 유틸리티도 있습니다.
 
 다른 솔루션에서는 사용할 수 없는 또 다른 이점은 컨테이너가 브라우저와 스토리지를 공유한다는 것입니다. 로그인 상태와 사용자 기본 설정은 여러 경험에서 원활하게 공유됩니다.
 

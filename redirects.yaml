@@ -287,6 +287,8 @@ redirects:
   # Redirects for Media content
   - source: /media-cheat-sheet
     destination: /media-conversion
+  - source: /media-eme-basics
+    destination: /media-eme
 
   # Redirects to https://developer.chrome.com/.
   - source: /browser-flags/
@@ -295,6 +297,8 @@ redirects:
     destination: https://developer.chrome.com/blog/origin-trials/
   - source: /third-party-origin-trials/
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
+  - source: /fugu-status/
+    destination: https://developer.chrome.com/blog/fugu-status/
   - source: /conversion-measurement/
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
   - source: /using-conversion-measurement/

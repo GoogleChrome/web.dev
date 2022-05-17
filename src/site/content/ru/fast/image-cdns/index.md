@@ -51,7 +51,7 @@ CDN для изображений предоставляют десятки, а 
 
 Как правило, существует некий оптимальный набор параметров оптимизации, поэтому некоторые CDN могут выполнять такие преобразования в «автоматическом» режиме. Например, вместо того чтобы явно указывать формат WebP, можно позволить CDN автоматически выбирать оптимальный формат для выдачи. При выборе оптимальных параметров оптимизации CDN может руководствоваться данными из следующих источников:
 
-- [подсказки клиента](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints) (такие, как ширина области просмотра, DPR и ширина изображения);
+- [подсказки клиента](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/) (такие, как ширина области просмотра, DPR и ширина изображения);
 - заголовок [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data);
 - заголовок запроса [User-Agent](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent);
 - [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API).

@@ -31,7 +31,7 @@ Web Share API имеет следующие возможности и огран
 - Его можно использовать только на сайте, [доступ к которому осуществляется через HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
 - Он должен вызываться в ответ на действие пользователя, например, клик. Вызвать его через обработчик `onload` невозможно.
 - С его помощью можно делиться URL-адресами, текстом или файлами.
-- С января 2021 года он доступен в Safari, Android в форках Chromium, Chrome OS и Chrome для Windows. Chrome для MacOS все еще находится в разработке. См. подробности в [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility).
+- С января 2021 года он доступен в Safari, Android в форках Chromium, ChromeOS и Chrome для Windows. Chrome для MacOS все еще находится в разработке. См. подробности в [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility).
 
 ### Обмен ссылками и текстом
 
@@ -97,12 +97,12 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 По состоянию на начало 2021 года использование API для обмена заголовком, текстом и URL-адресом поддерживается в:
 
 - Safari 12 или новее в macOS и iOS.
-- Chrome 75 или новее для Android и 89 или новее в Chrome OS и Windows.
+- Chrome 75 или новее для Android и 89 или новее в ChromeOS и Windows.
 
 Использование API для обмена файлами поддерживается в:
 
 - Safari 15 или новее в macOS и iOS.
-- Chrome 75 или новее для Android и 89 или новее в Chrome OS и Windows.
+- Chrome 75 или новее для Android и 89 или новее в ChromeOS и Windows.
 
 (Большинство браузеров на основе Chromium, например Edge, имеют ту же поддержку этой функции, что и соответствующая версия Chrome.)
 

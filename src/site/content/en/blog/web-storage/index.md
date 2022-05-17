@@ -1,5 +1,5 @@
 ---
-title: Web storage overview 
+title: Web storage overview
 date: 2016-09-28
 updated: 2018-09-20
 authors:
@@ -96,17 +96,16 @@ Check out the following docs to learn more about using Chrome DevTools to
 inspect and debug your web storage API of choice. APIs not mentioned
 here are either not supported in DevTools or are not applicable.
 
-* [Local Storage](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage)
-* [Session Storage](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#session-storage)
-* [Cookies](https://developers.google.com/web/tools/chrome-devtools/manage-data/cookies)
-* [Web SQL](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#web-sql)
-* [Cache](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps#caches)
-* [IndexedDB](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#indexeddb)
+* [Local Storage](https://developer.chrome.com/docs/devtools/storage/localstorage/)
+* [Session Storage](https://developer.chrome.com/docs/devtools/storage/sessionstorage/)
+* [Cookies](https://developer.chrome.com/docs/devtools/storage/cookies/)
+* [Cache](https://developer.chrome.com/docs/devtools/storage/cache/)
+* [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb/)
 
 If you're using multiple storage APIs, check out the Clear Storage feature of
 DevTools. This feature lets you clear multiple stores with a single button
 click. See [Clear service workers, storage, databases, and
-caches](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#clear-storage) for
+caches](https://developer.chrome.com/docs/devtools/progressive-web-apps/#clear-storage) for
 more information.
 
 ## Where to go next…

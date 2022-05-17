@@ -19,7 +19,7 @@ tags:
   - progressive-web-apps
 ---
 
-{% Aside 'warning' %} PWAs as URL Handlers was part of the [capabilities project](/fugu-status/)
+{% Aside 'warning' %} PWAs as URL Handlers was part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/)
 and support for the experimental `url_handlers` manifest member, documented below, is being
 phased out. The `url_handlers` manifest member is being replaced by the new `handle_links`
 manifest member, which is currently being standardized and implemented. See the

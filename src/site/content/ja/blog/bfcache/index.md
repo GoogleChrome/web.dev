@@ -75,7 +75,7 @@ bfcacheはブラウザーが自動的に行う最適化ですが、開発者が[
 
 bfcacheを監視するために使用される主なイベントは、[ページ遷移イベント](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent) (`pageshow`および`pagehide`) です。これらは、bfcacheが存在し、[現在使用されているほとんどすべてのブラウザー](https://caniuse.com/page-transition-events)でサポートされている限り存在します。
 
-新しい[ページライフサイクル](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)イベント (`freeze`と`resume`) も、ページがbfcacheに入出力されるとき、およびその他の状況で配信されます。たとえば、CPU使用率を最小限に抑えるために、背景タブがフリーズした場合です。現在、ページライフサイクルイベントはChromiumベースのブラウザでのみサポートされていることに注意してください。
+新しい[ページライフサイクル](https://developer.chrome.com/blog/page-lifecycle-api/)イベント (`freeze`と`resume`) も、ページがbfcacheに入出力されるとき、およびその他の状況で配信されます。たとえば、CPU使用率を最小限に抑えるために、背景タブがフリーズした場合です。現在、ページライフサイクルイベントはChromiumベースのブラウザでのみサポートされていることに注意してください。
 
 #### ページがbfcacheから復元されるタイミングを監視する
 
@@ -123,7 +123,7 @@ window.addEventListener('pagehide', (event) => {
 
 すべてのブラウザーでbfcacheを最適化する最も重要な方法は、`unload`イベントを使用しないことです。
 
-`unload` `unload`イベントが発生した後はページが存在し続けないという（合理的な）仮定の下で動作するため、ブラウザにとって問題があります。このプレゼント、これらのページの多くは*また、*ことを前提に構築されたので、挑戦`unload`イベントはもはや真でユーザーが離れてナビゲートされるたびに、火災う（と[長い時間のために、真されていません](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event)）。
+`unload` `unload`イベントが発生した後はページが存在し続けないという（合理的な）仮定の下で動作するため、ブラウザにとって問題があります。このプレゼント、これらのページの多くは*また、*ことを前提に構築されたので、挑戦`unload`イベントはもはや真でユーザーが離れてナビゲートされるたびに、火災う（と[長い時間のために、真されていません](https://developer.chrome.com/blog/page-lifecycle-api/#the-unload-event)）。
 
 そのため、ブラウザーはジレンマに直面しており、ユーザーエクスペリエンスを向上させることができるものから選択する必要がありますが、ページを壊すリスクもあります。
 

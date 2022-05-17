@@ -113,7 +113,7 @@ tags:
 
 別のアプローチは、ユーザーがページのそのセクションまでスクロールしたときにのみサードパーティのコンテンツを読み込む方法です。
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver)は、要素がブラウザーのビューポートに入出力されるタイミングを効率的に検出するブラウザAPIであり、この手法を実装するために使用できます。[lazysizes](/use-lazysizes-to-lazyload-images/)は画像と[`iframes`](http://afarkas.github.io/lazysizes/#examples)を遅延読み込みするための一般的なJavaScriptライブラリです。 YouTubeの埋め込みと[ウィジェット](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)をサポートしています。また、IntersectionObserverの[オプションのサポート](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)もあります。
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/)は、要素がブラウザーのビューポートに入出力されるタイミングを効率的に検出するブラウザAPIであり、この手法を実装するために使用できます。[lazysizes](/use-lazysizes-to-lazyload-images/)は画像と[`iframes`](http://afarkas.github.io/lazysizes/#examples)を遅延読み込みするための一般的なJavaScriptライブラリです。 YouTubeの埋め込みと[ウィジェット](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)をサポートしています。また、IntersectionObserverの[オプションのサポート](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)もあります。
 
 {% Aside 'caution' %} JavaScriptを使用してリソースを遅延ロードするときには注意が必要です。不安定なネットワーク状態が原因でJavaScriptの読み込みに失敗した場合、リソースはまったく読み込まれません。 {% endAside %}
 

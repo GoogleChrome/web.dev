@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {initialize, signIn} from '../../fb';
 import {store} from '../../store';
 import {BaseStateElement} from '../BaseStateElement';

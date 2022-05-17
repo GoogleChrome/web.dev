@@ -24,11 +24,11 @@ Una [Tarea larga](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) es 
 
 Mientras se carga una página web, las tareas largas pueden ocupar el hilo principal y hacer que la página no responda a la entrada del usuario, incluso si parece estar lista. Los clics y los toques con frecuencia no funcionan porque los asistentes de eventos, los controladores de clics, etc., aún no se han adjuntado.
 
-Las tareas largas que consumen muchos recursos del CPU ocurren debido a un trabajo complejo que toma más de 50ms. ¿Por qué 50ms? [El modelo RAIL](https://developers.google.com/web/fundamentals/performance/rail) sugiere que procese los eventos de entrada del usuario en [50ms](https://developers.google.com/web/fundamentals/performance/rail#response) para asegurar una respuesta visible en 100ms. Si no lo hace, la conexión entre la acción y la reacción se interrumpe.
+Las tareas largas que consumen muchos recursos del CPU ocurren debido a un trabajo complejo que toma más de 50ms. ¿Por qué 50ms? [El modelo RAIL](/rail/) sugiere que procese los eventos de entrada del usuario en [50ms](/rail/#response:-process-events-in-under-50ms) para asegurar una respuesta visible en 100ms. Si no lo hace, la conexión entre la acción y la reacción se interrumpe.
 
 ## ¿Hay tareas largas en mi página que podrían retrasar la interactividad?
 
-Hasta ahora, era necesario buscar manualmente los "bloques amarillos largos" del script de más de 50ms de duración en [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) o utilizar la [API de tareas largas](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) para averiguar qué tareas estaban retrasando la interactividad. Esto podría ser un poco engorroso.
+Hasta ahora, era necesario buscar manualmente los "bloques amarillos largos" del script de más de 50ms de duración en [Chrome DevTools](https://developer.chrome.com/docs/devtools/) o utilizar la [API de tareas largas](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) para averiguar qué tareas estaban retrasando la interactividad. Esto podría ser un poco engorroso.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mSKnMWBcEBHWkXzTGCAH.png", alt="Una captura de pantalla del panel de rendimiento de  DevTools muestra las diferencias entre las tareas cortas y las largas", width="800", height="450" %}
 
@@ -36,7 +36,7 @@ Para facilitar el flujo de trabajo en la auditoría de rendimiento, [DevTools ah
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fyDPyO4XbSINMVpSSY9E.png", alt="DevTools visualiza las tareas largas como barras grises en el panel de rendimiento con una bandera roja para las tareas largas", width="800", height="450" %}
 
-- Registre un seguimiento en el [panel de rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) al cargar una página web.
+- Registre un seguimiento en el [panel de rendimiento](https://developer.chrome.com/docs/devtools/evaluate-performance/) al cargar una página web.
 - Busque una bandera roja en la visualización del hilo principal. Debería ver que las tareas ahora son grises ("Tarea").
 - Si desliza el cursor sobre una barra, sabrá la duración de la tarea y si se considera como "larga".
 

@@ -223,7 +223,7 @@ const sensorRelScreen = new RelativeOrientationSensor({ referenceFrame: 'screen'
 
 ### Entorno de desarrollo
 
-Durante el desarrollo, podrá utilizar sensores a través de `localhost`. Si está desarrollando para dispositivos móviles, configure el [reenvío de puertos](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server) para su servidor local, ¡y manos a la obra!
+Durante el desarrollo, podrá utilizar sensores a través de `localhost`. Si está desarrollando para dispositivos móviles, configure el [reenvío de puertos](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/) para su servidor local, ¡y manos a la obra!
 
 Cuando su código esté listo, impleméntelo en un servidor que admita HTTPS. Las [páginas de GitHub](https://pages.github.com/) se sirven a través de HTTPS, lo que lo hace en un excelente lugar para compartir sus demostraciones.
 
@@ -281,7 +281,7 @@ La velocidad actual se calcula como una aproximación a la integral de la funci�
 
 ## Depuración y anulación de sensores con Chrome DevTools
 
-En algunos casos, no necesita un dispositivo físico para jugar con la API Generic Sensor. Chrome DevTools tiene un gran soporte para [simular la orientación del dispositivo](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
+En algunos casos, no necesita un dispositivo físico para jugar con la API Generic Sensor. Chrome DevTools tiene un gran soporte para [simular la orientación del dispositivo](https://developer.chrome.com/docs/devtools/device-mode/orientation/).
 
 <figure>{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Chrome DevTools utilizadas para anular los datos de orientación personalizados de un teléfono virtual", width="800", height="648" %}<figcaption> Simular la orientación del dispositivo con Chrome DevTools</figcaption></figure>
 
@@ -295,7 +295,7 @@ Debido a que la API Generic Sensor es una característica poderosa, el navegador
 
 ### Integración de la política de permisos
 
-La [integración de la política de permisos](https://w3c.github.io/webappsec-permissions-policy/) en la API Generic Sensor controla el acceso a los datos de los sensores para una trama.
+La [integración de la política de permisos](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) en la API Generic Sensor controla el acceso a los datos de los sensores para una trama.
 
 De forma predeterminada, los objetos `Sensor` se pueden crear solo dentro de una trama principal o subtramas del mismo origen, evitando así que haya iframes de origen cruzado leyendo datos del sensor de forma no autorizada. Este comportamiento predeterminado se puede modificar habilitando o deshabilitando explícitamente las [funciones controladas por políticas](https://w3c.github.io/webappsec-permissions-policy/#features) correspondientes.
 

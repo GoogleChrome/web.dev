@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside %} La API de colocación de ventanas multipantalla es parte del [proyecto de capacidades](/fugu-status/) y está actualmente en desarrollo. Esta publicación se actualizará a medida que avance la implementación. {% endAside %}
+{% Aside %} La API de colocación de ventanas multipantalla es parte del [proyecto de capacidades](https://developer.chrome.com/blog/fugu-status/) y está actualmente en desarrollo. Esta publicación se actualizará a medida que avance la implementación. {% endAside %}
 
 La API de colocación de ventanas multipantalla le permite enumerar las pantallas conectadas a su máquina y colocar ventanas en pantallas específicas.
 

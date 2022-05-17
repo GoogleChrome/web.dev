@@ -73,7 +73,7 @@ FMP와 FCP가 같을 때 점수는 같다. FCP 이후에 FMP가 발생하는 경
 
 ## 실제 사용자의 장치에서 FMP 추적
 
-FMP가 실제로 사용자의 기기에서 발생하는 시점을 측정하는 방법을 알아보려면 Google의 [사용자 중심 성능 메트릭](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) 페이지를 참조하세요. [영웅 요소를 사용하여 FMP 추적](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements) 섹션에서는 프로그래밍 방식으로 FCP 데이터에 액세스하고 이를 Google 애널리틱스에 제출하는 방법을 설명합니다.
+FMP가 실제로 사용자의 기기에서 발생하는 시점을 측정하는 방법을 알아보려면 Google의 [사용자 중심 성능 메트릭](/user-centric-performance-metrics/) 페이지를 참조하세요. [영웅 요소를 사용하여 FMP 추적](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements) 섹션에서는 프로그래밍 방식으로 FCP 데이터에 액세스하고 이를 Google 애널리틱스에 제출하는 방법을 설명합니다.
 
 실제 사용자 측정항목 수집에 대한 자세한 내용은 [탐색 및 리소스 타이밍을 사용하여 실생활에서 로드 성능 평가](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/)를 참조하세요. [사용자 시간 표시 및 측정 Lighthouse 감사](/user-timings)를 사용하면 보고서에서 사용자 시간 데이터를 볼 수 있습니다.
 

@@ -34,7 +34,7 @@ feedback:
 - 与桌面版 Chrome 一样，Safari 11.0 桌面版将预加载一系列视频。从版本 11.2 开始，则仅预加载视频元数据。[在 iOS 上的 Safari 中，视频从不会预加载](https://developer.apple.com/library/content/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/AudioandVideoTagBasics/AudioandVideoTagBasics.html#//apple_ref/doc/uid/TP40009523-CH2-SW9)。
 - 启用 [Data Saver 模式](https://support.google.com/chrome/answer/2392284)后，`preload` 默认为 `none`。
 
-因为关于 `preload` 的浏览器默认行为并非一成不变，所以直接操作可能是您最好的选择。在用户启动回放的情况下，在所有平台上延迟加载视频的最简单方法是使用 `preload="none"`。`preload` 属性并不是延迟加载视频内容的唯一方法。[*使用视频预加载进行快速回放*](https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload)可能会为您提供一些在 JavaScript 中使用视频回放的想法和见解。
+因为关于 `preload` 的浏览器默认行为并非一成不变，所以直接操作可能是您最好的选择。在用户启动回放的情况下，在所有平台上延迟加载视频的最简单方法是使用 `preload="none"`。`preload` 属性并不是延迟加载视频内容的唯一方法。[*使用视频预加载进行快速回放*](/fast-playback-with-preload/)可能会为您提供一些在 JavaScript 中使用视频回放的想法和见解。
 
 遗憾的是，当您想用视频代替动画 GIF 时，它并没有什么用，这将在接下来的内容中介绍。
 

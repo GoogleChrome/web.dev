@@ -126,9 +126,9 @@ Você deve anotar as `url` de atalhos do aplicativo como faria com `start_url` p
 
 ## Suporte de navegador
 
-Os atalhos de aplicativos estão disponíveis no Android (Chrome 84), Windows (Chrome 85 e Edge 85), Chrome OS (Chrome 92), macOS e Linux (Chrome 96 e Edge 96).
+Os atalhos de aplicativos estão disponíveis no Android (Chrome 84), Windows (Chrome 85 e Edge 85), ChromeOS (Chrome 92), macOS e Linux (Chrome 96 e Edge 96).
 
-<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png", alt="Captura de tela de um menu de atalhos de aplicativo aberto no Chrome OS", width="800", height="450" %}<figcaption> Menu de atalhos do aplicativo aberto no Chrome OS</figcaption></figure>
+<figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png", alt="Captura de tela de um menu de atalhos de aplicativo aberto no ChromeOS", width="800", height="450" %}<figcaption> Menu de atalhos do aplicativo aberto no ChromeOS</figcaption></figure>
 
 ## Suporte para atividades confiáveis na web
 

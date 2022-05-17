@@ -12,11 +12,11 @@ intro:
   imageWidth: '333'
   imageHeight: '240'
 featureCard:
-  theme: 'dark'
-  title: 'Explore structured learning paths to learn new skills'
-  eyebrow: 'Learn'
-  url: '/learn'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg'
+  theme: 'light'
+  title: "Check out what's new for the web platform at Google IO"
+  eyebrow: 'Event'
+  url: 'https://io.google/2022/products/web/'
+  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/leNmaxWbgSav9BvKHEQM.jpg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
@@ -27,7 +27,7 @@ promoPanel:
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/KwS4L954TzN3KK3pWmtA.svg'
   imageWidth: '530'
   imageHeight: '483'
-pickedCaseStudyUrl: '/mainline-mensware/'
+pickedCaseStudyUrl: '/mishipay/'
 pickedCaseStudyTheme: 'light'
 pageSpeed:
   eyebrow: 'PageSpeed Insights'
@@ -56,7 +56,7 @@ podcasts:
   buttonUrl: '/podcasts/'
 patterns:
   title: 'Patterns'
-  summary: 'A collection of code snippets to help you optmize your web projects.'
+  summary: 'A collection of code snippets to help you optimize your web projects.'
   buttonText: 'See all'
   buttonUrl: '/patterns/'
 ---

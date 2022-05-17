@@ -24,7 +24,7 @@ A auditoria falhará se `window.innerWidth` não for igual a `window.outerWidth`
 
 ## Como ajustar sua página em telas de celular
 
-Esta auditoria é uma forma indireta de determinar se sua página está otimizada para dispositivos móveis. Consulte os [Princípios básicos do design responsivo da Web](https://developers.google.com/web/fundamentals/design-and-ux/responsive/) do Google para obter uma visão geral de como criar uma página compatível com dispositivos móveis.
+Esta auditoria é uma forma indireta de determinar se sua página está otimizada para dispositivos móveis. Consulte os [Princípios básicos do design responsivo da Web](/responsive-web-design-basics/) do Google para obter uma visão geral de como criar uma página compatível com dispositivos móveis.
 
 Você pode ignorar esta auditoria se:
 
@@ -34,4 +34,4 @@ Você pode ignorar esta auditoria se:
 ## Recursos
 
 - [O código-fonte do **conteúdo não está dimensionado corretamente para a** auditoria da janela de visualização](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
-- [Noções básicas de web design responsivo](https://developers.google.com/web/fundamentals/design-and-ux/responsive/)
+- [Noções básicas de web design responsivo](/responsive-web-design-basics/)

@@ -390,7 +390,7 @@ application, follow these steps:
 
 1. Measure rendering and scrolling performance. This
    [article](https://addyosmani.com/blog/react-window/) shows how the [FPS
-   meter](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second)
+   meter](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second)
    in Chrome DevTools can be used to explore how efficiently items are rendered
    on a list.
 2. Include `react-window` for any long lists or grids that are affecting

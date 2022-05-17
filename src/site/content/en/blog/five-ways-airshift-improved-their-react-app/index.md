@@ -115,8 +115,8 @@ Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU sl
 ## 2. Audit with User Timing API
 
 Next, the AirSHIFT team refactored the scripts that run on user input.
-The [flame chart](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)
-of [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+The [flame chart](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#main)
+of [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 makes it possible to analyze what's actually happening in the main thread.
 But the AirSHIFT team found it easier to analyze application activity based
 on React's lifecycle.

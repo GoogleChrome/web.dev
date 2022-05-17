@@ -31,7 +31,7 @@ Web共有には、次の機能と制限があります。
 - [HTTPS経由でアクセス](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features)するサイトでのみ使用できます。
 - クリックなどのユーザーアクションに応答して呼び出す必要があります。 `onload`ハンドラ経由で呼び出すことはできません。
 - URL、テキスト、またはファイルを共有できます。
-- 2021年1月の時点で、Safari、ChromiumフォークのAndroid、Chrome OS、WindowsのChromeで利用できます。 MacOS上のChromeはまだ開発中です。詳細については、 [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)を参照してください。
+- 2021年1月の時点で、Safari、ChromiumフォークのAndroid、ChromeOS、WindowsのChromeで利用できます。 MacOS上のChromeはまだ開発中です。詳細については、 [MDN](https://developer.mozilla.org/docs/Web/API/Navigator/share#Browser_compatibility)を参照してください。
 
 ### リンクとテキストの共有
 

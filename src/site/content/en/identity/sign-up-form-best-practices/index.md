@@ -411,7 +411,7 @@ exposed by local testing.
 - [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [More capable form controls](/more-capable-form-controls)
 - [Creating Accessible Forms](https://webaim.org/techniques/forms/)
-- [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Streamlining the Sign-up Flow Using Credential Management API](https://developer.chrome.com/blog/credential-management-api/)
 - [Verify phone numbers on the web with the WebOTP API](/web-otp)
 
 Photo by [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) on [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).

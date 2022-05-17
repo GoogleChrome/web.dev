@@ -44,17 +44,17 @@ If you're running your own server and need a cheap and easy way to generate
 certificates, [Let's Encrypt](https://letsencrypt.org/) is a good option.
 
 If your page is already running on HTTPS but you're failing this audit,
-you may have problems with [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content).
+you may have problems with [mixed content](/what-is-mixed-content/).
 A page has mixed content when the page itself is loaded over HTTPS,
 but it requests an unprotected (HTTP) resource. Check out the following doc on the
 Chrome DevTools Security panel to learn how to debug these situations:
-[Understand Security Issues With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/security).
+[Understand Security Issues With Chrome DevTools](https://developer.chrome.com/docs/devtools/security/).
 
 ## Resources
 
 - [Source code for **Does not use HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js)
 - [Why You Should Always Use HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
 - [Enabling HTTPS on Your Servers](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)
-- [Understand Security Issues With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/security)
-- [What Is Mixed Content?](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)
+- [Understand Security Issues With Chrome DevTools](https://developer.chrome.com/docs/devtools/security/)
+- [What Is Mixed Content?](/what-is-mixed-content/)
 - [Let's Encrypt](https://letsencrypt.org/)

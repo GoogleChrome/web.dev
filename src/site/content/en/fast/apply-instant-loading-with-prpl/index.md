@@ -66,7 +66,7 @@ the moment when your site renders pixels to the screen:
 
 To improve First Paint, Lighthouse recommends inlining critical JavaScript and
 deferring the rest using
-[`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript),
+[`async`](/critical-rendering-path-adding-interactivity-with-javascript/),
 as well as inlining critical CSS used above-the-fold. This improves performance
 by eliminating round-trips to the server to fetch render-blocking assets.
 However, inline code is harder to maintain from a development perspective and

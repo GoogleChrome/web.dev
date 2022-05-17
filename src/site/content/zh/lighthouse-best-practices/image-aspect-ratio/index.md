@@ -31,7 +31,7 @@ updated: 2020-04-29
 
 ### 检查影响图像纵横比的 CSS
 
-如果您找不到导致纵横比不正确的 CSS，Chrome DevTools 可以为您显示影响给定图像的 CSS 声明。有关详细信息，请参阅 Google 的[《仅查看实际应用于元素的 CSS》](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed)页面。
+如果您找不到导致纵横比不正确的 CSS，Chrome DevTools 可以为您显示影响给定图像的 CSS 声明。有关详细信息，请参阅 Google 的[《仅查看实际应用于元素的 CSS》](https://developer.chrome.com/docs/devtools/css/reference/#computed)页面。
 
 ### 检查图像在 HTML 中的`width`和`height`属性
 

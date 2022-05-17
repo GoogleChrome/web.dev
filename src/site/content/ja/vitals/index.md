@@ -47,7 +47,7 @@ Google では、Core Web Vitals をあらゆる Web エクスペリエンスに�
 
 #### Core Web Vitals のフィールド測定を実施するためのツール
 
-[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、非特定化された実際のユーザーによる測定データを Core Web Vitals の各指標ごとに収集するツールです。このデータを活用すれば、サイト所有者はページに手動でアナリティクス ツールを設置しなくてもパフォーマンスをすばやく評価できるようになり、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) や Search Console の [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520)などのツールを強化することもできるようになります。
+[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) は、非特定化された実際のユーザーによる測定データを Core Web Vitals の各指標ごとに収集するツールです。このデータを活用すれば、サイト所有者はページに手動でアナリティクス ツールを設置しなくてもパフォーマンスをすばやく評価できるようになり、[PageSpeed Insights](https://pagespeed.web.dev/) や Search Console の [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520)などのツールを強化することもできるようになります。
 
 <div class="table-wrapper">
   <table>
@@ -170,7 +170,7 @@ Core Web Vitals に関してはフィールド データの測定が何よりも
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a></td>
+        <td><a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (代わりに <a href="/tbt/">TBT</a> を使用してください)</td>
         <td>✔</td>

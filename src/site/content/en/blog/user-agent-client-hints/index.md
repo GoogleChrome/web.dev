@@ -107,7 +107,7 @@ expressions!
 The current set of Client Hints primarily describes the browser's display and
 connection capabilities. You can explore the details in [Automating Resource
 Selection with Client
-Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints),
+Hints](https://developer.chrome.com/blog/automating-resource-selection-with-client-hints/),
 but here's a quick refresher on the process.
 
 The server asks for specific Client Hints via a header:

@@ -73,7 +73,7 @@ This way, you can compare the results, measure the impact of your change, and de
 
 PSI measures the performance of your site and gives you hints on how to improve it.
 
-[Try it out](https://developers.google.com/speed/pagespeed/insights/):
+[Try it out](https://pagespeed.web.dev/):
 PageSpeed provides a performance report using
 [lab and field data](https://developers.google.com/speed/docs/insights/v5/about/).
 A fast site is the first sign that your form is usable.

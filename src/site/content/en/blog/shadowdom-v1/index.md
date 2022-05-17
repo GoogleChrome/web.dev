@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shadow DOM v1 - Self-Contained Web Components
-subhead: 
+subhead:
   Shadow DOM allows web developers to create compartmentalized DOM and CSS for web components
 authors:
   - ericbidelman
@@ -45,15 +45,15 @@ to see what's new or check out the section on [History and browser support](#his
 Shadow DOM is one of the three Web Component standards:
 [HTML Templates](https://www.html5rocks.com/en/tutorials/webcomponents/template/),
 [Shadow DOM][sd_spec_whatwg] and
-[Custom elements](https://developers.google.com/web/fundamentals/web-components/customelements).
+[Custom elements](/custom-elements-v1/).
 [HTML Imports](https://www.html5rocks.com/en/tutorials/webcomponents/imports/)
-used to be part of the list but now are considered 
+used to be part of the list but now are considered
 [deprecated](https://developers.google.com/web/updates/2018/09/chrome-70-deps-rems#deprecate_html_imports).
 
 You don't have to author web components that use shadow DOM. But when you do,
 you take advantage of its benefits (CSS scoping, DOM encapsulation,
 composition) and build reusable
-[custom elements](https://developers.google.com/web/fundamentals/web-components/customelements),
+[custom elements](/custom-elements-v1/),
 which are resilient, highly configurable, and extremely reusable. If custom
 elements are the way to create a new HTML (with a JS API), shadow DOM is the
 way you provide its HTML and CSS. The two APIs combine to make a component
@@ -187,7 +187,7 @@ For example, this doesn't work:
 ### Creating shadow DOM for a custom element
 
 Shadow DOM is particularly useful when creating
-[custom elements](https://developers.google.com/web/fundamentals/web-components/customelements).
+[custom elements](/custom-elements-v1/).
 Use shadow DOM to compartmentalize an element's HTML, CSS, and JS, thus
 producing a "web component".
 
@@ -815,7 +815,7 @@ To monitor other types of changes to light DOM, you can setup a
 [`MutationObserver`](https://developer.mozilla.org/docs/Web/API/MutationObserver)
 in your element's constructor.
 
-#### What elements are being rendering in a slot? 
+#### What elements are being rendering in a slot?
 
 Sometimes it's useful to know what elements are associated with a slot. Call
 `slot.assignedNodes()` to find which elements the slot is rendering. The
@@ -1128,7 +1128,7 @@ Instead of populating a shadow root using `.innerHTML`, we can use a declarative
 a web component.
 
 See the example in
-["Custom elements: building reusable web components"](https://developers.google.com/web/fundamentals/web-components/customelements).
+["Custom elements: building reusable web components"](/custom-elements-v1/).
 
 ## History & browser support
 
@@ -1151,7 +1151,7 @@ There's also a great comparison of the
 ### Browser support
 
 Shadow DOM v1 is shipped in Chrome 53 ([status](https://www.chromestatus.com/features/4667415417847808)),
-Opera 40, Safari 10, and Firefox 63. Edge 
+Opera 40, Safari 10, and Firefox 63. Edge
 [has started development](https://developer.microsoft.com/microsoft-edge/platform/status/shadowdom/).
 
 To feature detect shadow DOM, check for the existence of `attachShadow`:
@@ -1226,7 +1226,7 @@ worth learning. Spend some time with it. Learn it and ask questions!
   from the WebKit Blog.
 - [Web Components and the future of Modular CSS](https://philipwalton.github.io/talks/2015-10-26/)
   by [Philip Walton](https://twitter.com/@philwalton)
-- ["Custom elements: building reusable web components"](https://developers.google.com/web/fundamentals/web-components/customelements)
+- ["Custom elements: building reusable web components"](/custom-elements-v1/)
   from Google's WebFundamentals.
 - [Shadow DOM v1 spec][sd_spec_whatwg]
 - [Custom elements v1 spec][ce_spec]

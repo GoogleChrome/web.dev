@@ -251,7 +251,7 @@ Report](https://developers.google.com/web/tools/chrome-user-experience-report) p
 experience metrics for how real-world Chrome users experience popular destinations on the web. The
 data from the report can be obtained by [running queries in
 BigQuery](/chrome-ux-report-bigquery/),
-[PageSpeedInsights](https://developers.google.com/speed/pagespeed/insights/), or the [CrUX
+[PageSpeedInsights](https://pagespeed.web.dev/), or the [CrUX
 API](/chrome-ux-report-api/).
 
 The [CrUX

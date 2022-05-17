@@ -39,7 +39,7 @@ Lighthouse는 사용 방식에 상관없이 성능에 부정적인 영향을 미
 
 ## `document.write()` 피하기
 
-코드에서 `document.write()`을 모두 제거하십시오. 타사 스크립트를 삽입하는 데 사용되는 경우 대신 [비동기식 로딩](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)을 사용해 보세요.
+코드에서 `document.write()`을 모두 제거하십시오. 타사 스크립트를 삽입하는 데 사용되는 경우 대신 [비동기식 로딩](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)을 사용해 보세요.
 
 타사 코드가 `document.write()`를 사용하는 경우 공급자에게 비동기 로드를 지원하도록 요청하세요.
 
@@ -47,5 +47,5 @@ Lighthouse는 사용 방식에 상관없이 성능에 부정적인 영향을 미
 
 - [**`document.write()`를 사용합니다** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
 - [`document.write()`에 대한 개입](https://developers.google.com/web/updates/2016/08/removing-document-write)
-- [파서 차단과 비동기 자바스크립트 비교](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)
+- [파서 차단과 비동기 자바스크립트 비교](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [추측 파싱](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

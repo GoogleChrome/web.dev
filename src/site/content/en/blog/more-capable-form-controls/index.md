@@ -82,7 +82,7 @@ Standardized form controls participate in many parts of the form lifecycle besid
 
 That's a lot of features! This article won't touch on all of them, but will describe the basics needed to integrate your custom element with a form.
 
-{% Aside %}This section assumes a basic familiarity with custom elements. For an introduction to custom elements, see [Custom Elements v1: Reusable Web Components](https://developers.google.com/web/fundamentals/web-components/customelements) on Web Fundamentals.{% endAside %}
+{% Aside %}This section assumes a basic familiarity with custom elements. For an introduction to custom elements, see [Custom Elements v1: Reusable Web Components](/custom-elements-v1/) on Web Fundamentals.{% endAside %}
 
 ### Defining a form-associated custom element
 

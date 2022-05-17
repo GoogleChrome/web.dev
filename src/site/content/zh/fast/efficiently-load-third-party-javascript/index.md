@@ -113,7 +113,7 @@ tags:
 
 另一种方法是仅当用户向下滚动到页面的相应部分时才加载第三方内容。
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) 是一种浏览器 API，可高效检测元素何时进入或退出浏览器视口，并可用于实现此技术。[lazysizes](/use-lazysizes-to-lazyload-images/) 是一个流行的 JavaScript 库，用于延迟加载图像和 [`iframes`](http://afarkas.github.io/lazysizes/#examples) 。它支持 YouTube 嵌入和[小部件](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)。它还具有针对 IntersectionObserver 的[可选支持。](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)
+[Intersection Observer](https://developer.chrome.com/blog/intersectionobserver/) 是一种浏览器 API，可高效检测元素何时进入或退出浏览器视口，并可用于实现此技术。[lazysizes](/use-lazysizes-to-lazyload-images/) 是一个流行的 JavaScript 库，用于延迟加载图像和 [`iframes`](http://afarkas.github.io/lazysizes/#examples) 。它支持 YouTube 嵌入和[小部件](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks)。它还具有针对 IntersectionObserver 的[可选支持。](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js)
 
 {% Aside 'caution' %} 使用 JavaScript 延迟加载资源时要小心。如果 JavaScript 无法加载，可能是由于不稳定的网络条件，您的资源将根本无法加载。 {% endAside %}
 

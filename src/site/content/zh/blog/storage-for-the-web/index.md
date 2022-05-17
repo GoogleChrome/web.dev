@@ -23,7 +23,7 @@ Internet 连接在旅途中可能不稳定或不存在，因此离线支持和�
 
 以下是对存储资源的一般建议：
 
-- 对于加载应用程序和基于文件的内容所需的网络资源，请使用[**缓存存储 API**](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)（[service worker](https://developers.google.com/web/fundamentals/primers/service-workers) 的一部分）。
+- 对于加载应用程序和基于文件的内容所需的网络资源，请使用[**缓存存储 API**](/cache-api-quick-guide/)（[service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/) 的一部分）。
 - 对于其他数据，请使用 [**IndexedDB**](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)（带有 [Promise 包装器](https://www.npmjs.com/package/idb)）。
 
 每个现代浏览器都支持 IndexedDB 和缓存存储 API。它们都是异步的，不会阻塞主线程。可以从`window`对象、Web worker 和 service worker 访问它们，从而轻松地在代码中的任何位置使用。
@@ -129,7 +129,7 @@ try {
 
 Web 存储分为两个存储桶：“最大努力”和“永久”。最大努力意味着浏览器可以在不中断用户的情况下清除存储，但对于长期或关键数据的持久性较差。当存储较少时，不会自动清除永久存储。用户需要手动清除此存储（通过浏览器设置）。
 
-默认情况下，站点的数据（包括 IndexedDB、缓存 API 等）属于最大努力类别，这意味着除非站点已[请求永久存储](https://developers.google.com/web/updates/2016/06/persistent-storage)，否则浏览器可能会自行决定逐出站点数据，例如，当设备存储较少时。
+默认情况下，站点的数据（包括 IndexedDB、缓存 API 等）属于最大努力类别，这意味着除非站点已[请求永久存储](/persistent-storage/)，否则浏览器可能会自行决定逐出站点数据，例如，当设备存储较少时。
 
 最大努力的逐出策略如下：
 
@@ -148,11 +148,11 @@ IndexedDB 为低级 API，在使用前需要进行大量设置，这对于存储
 
 ## 结论
 
-有限存储和促使用户存储越来越多数据的日子已经一去不复返了。站点可以有效地存储它们运行所需的所有资源和数据。使用 [StorageManager API](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)，您可以确定有多少空间可供您使用，以及您已经使用了多少。使用[永久存储](https://developers.google.com/web/updates/2016/06/persistent-storage)时，除非用户将其删除，否则您可以保护它免遭逐出。
+有限存储和促使用户存储越来越多数据的日子已经一去不复返了。站点可以有效地存储它们运行所需的所有资源和数据。使用 [StorageManager API](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)，您可以确定有多少空间可供您使用，以及您已经使用了多少。使用[永久存储](/persistent-storage/)时，除非用户将其删除，否则您可以保护它免遭逐出。
 
 ### 其他资源
 
-- [IndexedDB 最佳实践](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+- [IndexedDB 最佳实践](/indexeddb-best-practices/)
 - [Chrome Web 存储和配额概念](https://docs.google.com/document/d/19QemRTdIxYaJ4gkHYf2WWBNPbpuZQDNMpUVf8dQxj4U/preview)
 
 ### 鸣谢

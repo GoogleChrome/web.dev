@@ -163,7 +163,7 @@ FLoC를 사용하면 사용자의 브라우저가 수천 개의 다른 사용자
 
 웹사이트는 FLoC를 선택하거나 선택 해제할 수 있으므로 민감한 주제에 대한 사이트는 해당 사이트 방문이 FLoC 계산에 포함되는 것을 방지할 수 있습니다. 추가적인 보호조치로 FLoC 서비스의 분석은 해당 집단이 민감한 이유를 알지 못한 채 사용자에 대한 민감한 정보를 집단이 공개할 수 있는지 여부를 평가합니다. 집단이 민감한 범주의 사이트를 방문하는 일반 사용자 수보다 많을 수 있는 경우 해당 집단 전체가 제거됩니다. 부정적인 재정 상태와 정신 건강은 이 분석에서 다루는 민감한 범주에 속합니다.
 
-웹사이트는 해당 페이지에 대한 [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 헤더 `interest-cohort=()`를 설정하여 [FLoC 계산에서 페이지를 제외할 수 있습니다.](https://www.w3.org/TR/permissions-policy-1/#introduction) 제외되지 않은 페이지의 경우 `document.interestCohort()`가 페이지에서 사용되면 페이지 방문이 브라우저의 FLoC 계산에 포함됩니다. 현재 [FLoC 원본 평가판](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 동안 Chrome에서 페이지가 [광고 또는 광고 관련 리소스를 로드](https://github.com/WICG/floc/issues/82)하는 것을 감지하면 페이지도 계산에 포함됩니다. ([Chromium의 광고 태그 지정은](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) Chrome의 광고 감지 메커니즘이 작동하는 방식을 설명합니다.)
+웹사이트는 해당 페이지에 대한 [Permissions-Policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) 헤더 `interest-cohort=()`를 설정하여 [FLoC 계산에서 페이지를 제외할 수 있습니다.](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) 제외되지 않은 페이지의 경우 `document.interestCohort()`가 페이지에서 사용되면 페이지 방문이 브라우저의 FLoC 계산에 포함됩니다. 현재 [FLoC 원본 평가판](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 동안 Chrome에서 페이지가 [광고 또는 광고 관련 리소스를 로드](https://github.com/WICG/floc/issues/82)하는 것을 감지하면 페이지도 계산에 포함됩니다. ([Chromium의 광고 태그 지정은](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) Chrome의 광고 감지 메커니즘이 작동하는 방식을 설명합니다.)
 
 인트라넷 페이지와 같은 개인 IP 주소에서 제공되는 페이지는 FLoC 계산의 일부가 아닙니다.
 

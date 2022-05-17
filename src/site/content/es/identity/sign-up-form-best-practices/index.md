@@ -250,7 +250,7 @@ Los pequeños cambios pueden marcar una gran diferencia en las tasas de finaliza
 - [Prácticas recomendadas para el diseño de formularios móviles](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulario más capaces](/more-capable-form-controls)
 - [Crear formularios accesibles](https://webaim.org/techniques/forms/)
-- [Optimización del flujo de registro mediante la API de gestión de credenciales](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Optimización del flujo de registro mediante la API de gestión de credenciales](https://developer.chrome.com/blog/credential-management-api/)
 - [Verifique los números de teléfono en la web con la API WebOTP](/web-otp)
 
 Foto de [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) en [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).

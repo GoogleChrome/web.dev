@@ -15,7 +15,7 @@ tags:
 
 오늘 Lighthouse 6.0을 출시합니다!
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse/)는 개발자가 사이트의 사용자 경험을 개선할 수 있는 기회와 진단을 제공하는 자동화된 웹사이트 감사 도구입니다. Chrome DevTools, npm(Node 모듈 및 CLI) 또는 브라우저 확장([Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) 및 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/))에서 사용할 수 있습니다. [web.dev/measure](/measure/) 및 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)를 비롯한 많은 Google 서비스를 지원합니다.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse/)는 개발자가 사이트의 사용자 경험을 개선할 수 있는 기회와 진단을 제공하는 자동화된 웹사이트 감사 도구입니다. Chrome DevTools, npm(Node 모듈 및 CLI) 또는 브라우저 확장([Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) 및 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/))에서 사용할 수 있습니다. [web.dev/measure](/measure/) 및 [PageSpeed Insights](https://pagespeed.web.dev/)를 비롯한 많은 Google 서비스를 지원합니다.
 
 Lighthouse 6.0은 npm과 [Chrome Canary](https://www.google.com/chrome/canary/)에서 즉시 사용할 수 있습니다. Lighthouse를 활용하는 다른 Google 서비스는 이달 말까지 업데이트됩니다. Chrome 84(7월 중순)의 Chrome Stable에 상륙합니다.
 
@@ -193,7 +193,7 @@ Lighthouse 버전 5와 6 사이의 점수 변경 사항에 대한 몇 가지 주
 
 ### 미사용 자바스크립트 {: #unused-javascript }
 
-새로운 감사: [**Unused JavaScript**](/remove-unused-code/)에서 [DevTools 코드 적용 범위](https://developers.google.com/web/tools/chrome-devtools/coverage)를 활용하고 있습니다.
+새로운 감사: [**Unused JavaScript**](/remove-unused-code/)에서 [DevTools 코드 적용 범위](https://developer.chrome.com/docs/devtools/coverage/)를 활용하고 있습니다.
 
 이 감사는 *완전히* 새로운 것은 아닙니다. [2017년 중기](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595)에 추가되었지만 성능 오버헤드 때문에 Lighthouse를 최대한 빠르게 유지하기 위해 기본적으로 비활성화되어 있습니다. 이 범위 데이터를 수집하는 것이 이제 훨씬 더 효율적이므로 기본적으로 활성화하는 것이 좋습니다.
 
@@ -236,7 +236,7 @@ Lighthouse는 접근성 카테고리를 강화하기 위해 멋진 [axe-core](ht
 
 DevTools 창 크기에 따라 패널이 `»` 버튼 뒤에 있을 수 있습니다. 탭을 끌어 순서를 변경할 수 있습니다.
 
-[명령 메뉴](https://developers.google.com/web/tools/chrome-devtools/command-menu)를 사용 하여 패널을 빠르게 표시하려면 다음을 수행하십시오.
+[명령 메뉴](https://developer.chrome.com/docs/devtools/command-menu/)를 사용 하여 패널을 빠르게 표시하려면 다음을 수행하십시오.
 
 1. {% Instruction 'devtools', 'none' %}
 2. {% Instruction 'devtools-command', 'none' %}

@@ -38,7 +38,7 @@ and then attempts to retrieve the page using [`XMLHttpRequest`](https://develope
 
 {% include 'content/reliable/workbox.njk' %}
 
-1. Add a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) to your app.
+1. Add a [service worker](https://developer.chrome.com/docs/workbox/service-worker-overview/) to your app.
 2. Use the service worker to cache files locally.
 3. When offline, use the service worker as a network proxy to return the
    locally cached version of the file.
@@ -51,4 +51,4 @@ with the [Working with service workers](/codelab-service-workers) codelab.
 ## Resources
 
 - [What is network reliability and how do you measure it?](/network-connections-unreliable/)
-- [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [Service Workers: an Introduction](https://developer.chrome.com/docs/workbox/service-worker-overview/)
