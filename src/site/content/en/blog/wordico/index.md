@@ -11,7 +11,7 @@ tags:
 ---
 ## Introduction
 
-When we converted our <a href="">[Wordico](http://www.wordico.com)</a> crossword game from Flash to HTML5, our first task was to unlearn everything we knew about creating a rich user experience in the browser. While Flash offered a single, comprehensive API for all aspects of application development - from vector drawing to polygon hit detection to XML parsing - HTML5 offered a jumble of specifications with varying browser support. We also wondered if HTML, a document-specific language, and CSS, a box-centric language, were suitable for building a game. Would the game display uniformly across browsers, as it did in Flash, and would it look and behave as nicely? For Wordico, the answer was <i>yes.</i>
+When we converted our [Wordico](http://www.wordico.com) crossword game from Flash to HTML5, our first task was to unlearn everything we knew about creating a rich user experience in the browser. While Flash offered a single, comprehensive API for all aspects of application development - from vector drawing to polygon hit detection to XML parsing - HTML5 offered a jumble of specifications with varying browser support. We also wondered if HTML, a document-specific language, and CSS, a box-centric language, were suitable for building a game. Would the game display uniformly across browsers, as it did in Flash, and would it look and behave as nicely? For Wordico, the answer was <i>yes.</i>
 
 ## What's your vector, Victor?
 
@@ -78,7 +78,7 @@ Here's the result in the web browser. Note that the canvas itself has a CSS drop
 <figcaption>In HTML5, the gameboard is a single canvas element.</figcaption>
 </figure>
 
-Converting the tile object was a similar exercise. In Flash, we used <a href="">[text fields](http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/flash/text/TextField.html)</a> and vector shapes:
+Converting the tile object was a similar exercise. In Flash, we used [text fields](http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/flash/text/TextField.html) and vector shapes:
 
 <figure>
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/WD1gT3k3AwTwnrZ9JCgA.png", alt="The Flash tile was a combination of text fields and vector shapes", width="165", height="168" %}
@@ -363,11 +363,11 @@ Note that this works for MP3 files only - we never bothered to support OGG. We h
 
 ## Poll position
 
-We use the same technique in HTML5 as we did in Flash to refresh the game state: every 10 seconds, the client asks the server for updates. If the game state has changed since the last poll, the client receives and handles the changes; otherwise, nothing happens. This traditional polling technique is acceptable, if not quite elegant. However, we'd like to switch to <a href="">[long polling](http://en.wikipedia.org/wiki/Long_polling#Long_polling)</a> or <a href="">[WebSockets](http://en.wikipedia.org/wiki/Web_Sockets)</a> as the game matures and users come to expect real-time interaction over the network. WebSockets, in particular, would present many opportunities to enhance the game play.
+We use the same technique in HTML5 as we did in Flash to refresh the game state: every 10 seconds, the client asks the server for updates. If the game state has changed since the last poll, the client receives and handles the changes; otherwise, nothing happens. This traditional polling technique is acceptable, if not quite elegant. However, we'd like to switch to [long polling](http://en.wikipedia.org/wiki/Long_polling#Long_polling) or [WebSockets](http://en.wikipedia.org/wiki/Web_Sockets) as the game matures and users come to expect real-time interaction over the network. WebSockets, in particular, would present many opportunities to enhance the game play.
 
 ## What a tool!
 
-We used <a href="">[Google Web Toolkit](http://code.google.com/webtoolkit/)</a> (GWT) to develop both the front-end user interface and back-end control logic (authentication, validation, persistence, and so on). The JavaScript itself is compiled from Java source code. For example, the Point function is adapted from `Point.java`:
+We used [Google Web Toolkit](http://code.google.com/webtoolkit/) (GWT) to develop both the front-end user interface and back-end control logic (authentication, validation, persistence, and so on). The JavaScript itself is compiled from Java source code. For example, the Point function is adapted from `Point.java`:
 
 ```js
 package com.wordico.client.view.layout;
