@@ -8,7 +8,7 @@ patternId: advanced-apps/badges
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="assets/manifest.json" />
     <title>App Badge PWA</title>
     <style>
       html {
@@ -31,13 +31,19 @@ patternId: advanced-apps/badges
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', async () => {
-          const registration = await navigator.serviceWorker.register(
-            './sw.js',
-          );
-          console.log(
-            'Service worker registered for scope',
-            registration.scope,
-          );
+          try {
+            const registration = await navigator.serviceWorker.register(
+              'assets/sw.js', {
+                scope: '.',
+              }
+            );
+            console.log(
+              'Service worker registered for scope',
+              registration.scope,
+            );
+          } catch (err) {
+            console.error(err.name, err.message);
+          }
         });
       }
     </script>
@@ -109,7 +115,7 @@ patternId: advanced-apps/badges
         Watch the favicon. You should see a counter that updates each second
         integrated into the favicon.
         <img
-          src="https://cdn.glitch.global/d89b68f5-8448-437c-9655-e0b131c7d6c0/Screen%20Shot%202022-05-04%20at%2011.25.14.png?v=1651656333436"
+          src="assets/favicon.png"
           style="width: 250px; height: auto"
           width="528"
           height="74"
@@ -127,7 +133,7 @@ patternId: advanced-apps/badges
         Watch the app icon in your operating system's task bar. You should see a
         counter that updates each second as an app badge.
         <img
-          src="https://cdn.glitch.global/d89b68f5-8448-437c-9655-e0b131c7d6c0/Screen%20Shot%202022-05-04%20at%2011.32.22.png?v=1651656760694"
+          src="assets/app-icon.png"
           style="width: 80px; height: auto"
           width="282"
           height="388"
