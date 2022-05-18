@@ -110,14 +110,13 @@ The Google Fonts CSS API can create very small font files (called subsets), gene
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=RobtMn" rel="stylesheet" />
 ```
 
-<image here>
-Caption: An example of characters in basic Latin, basic Greek, and extended Greek
+{% Img src="image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/BN1zUrSNercuY4xk7QZF.png", alt="A chart with a character count of basic Latin, basic Greek, and extended Greek", width="512", height="81" %}
 
 The CSS API also provides additional web font optimizations to your users automatically, without any API parameters. The API will serve your users CSS files with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range">`unicode-range`</a> already enabled (<a href="https://caniuse.com/font-unicode-range">if supported by their web browser</a>), so they load the fonts for only the specific characters your website needs.
 
 The unicode-range CSS descriptor is one tool that can now be used to combat large font downloads. This CSS property sets a range of unicode characters that the @font-face declaration contains. If one of these characters is rendered on the page, that font is downloaded. This works well for all kinds of languages, so you can take a font that includes Latin, Greek, or Cyrillic characters and make smaller subsets. In the preceding chart, you can see that if you had to load all three of these character sets, it would be over 600 glyphs.
 
-<image here>
+{% Img src="image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/YMv1QeWBB5q6DztDfAt3.png", alt="A chart with a character count of basic Latin, extended Latin, Korean and Japanese", width="512", height="83" %}
 
 This also enables <a href="https://en.wikipedia.org/wiki/CJK_characters">Chinese, Japanese, and Korean (CJK) fonts</a> for the web. In the preceding chart, you can see that a CJK font covers 15-20 times the number of characters that a Latin character font does. These fonts are typically very large and many of the characters in those languages are not used as frequently as others.
 
@@ -129,7 +128,7 @@ Example: If you wanted to set only the word “<a href="https://translate.google
 - Use the CSS API to retrieve the WOFF2.
 - Use the CSS API with the text= parameter set to “こんにちは.”
 
-<image here>
+{% Img src="image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/boWEdslFSeDUQAUw7m6o.png", alt="graph with comparison of different methods of downloading Noto Sans JP", width="512", height="317" %}
 
 In this example, you can see that by using the CSS API you are already saving 97.5% over self-hosting the WOFF2 font, thanks to the API’s built-in support for separating large fonts into unicode-range. By taking it a step further and specifying exactly the text you want to display, you can further reduce the size of the font to only 95.3% of the CSS API font – that’s 99.9% smaller than the self-hosted font.
 
