@@ -1,14 +1,14 @@
 ---
-title: An example blog post
+title: An API for fast, beautiful web fonts
 subhead: A catchy subhead that previews the content.
 description: |
-  A description of the article that will appear in search results.
+  A 2022 update on the Google Fonts API — how it works and how to use it.
 
 # A list of authors. Supports more than one.
 authors:
-  - robdodson
+  - jimmymooney
 
-date: 2019-10-31
+date: 2022-05-18
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-11-01
 
@@ -22,7 +22,7 @@ date: 2019-10-31
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
 # Hero images should be 3200 x 960.
-hero: image/admin/jAI014ZfN96soXr2QZRQ.jpg
+hero: Hero-001.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain
@@ -36,7 +36,7 @@ hero: image/admin/jAI014ZfN96soXr2QZRQ.jpg
 # the hero.
 # thumbnail: thumbnail.jpg
 
-alt: A description of the hero image for screen reader users.
+alt: Google Fonts API with description of Roboto Flex and an example code snippet
 
 # You can provide a custom thumbnail and description for social media cards.
 # Thumbnail images should be 896 x 480.
@@ -61,7 +61,7 @@ alt: A description of the hero image for screen reader users.
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - accessibility
+  - webfonts
   - ux
 
 # You can provide an optional Stack Overflow tag to be used at the end of the
@@ -69,6 +69,14 @@ tags:
 # Find the official list of tags at https://stackoverflow.com/tags.
 # stack_overflow_tag: service-worker
 ---
+
+Over the years, a lot has changed with <a href="https://fonts.google.com/knowledge/glossary/web_font">web fonts</a> technology. What used to be a niche practice that required an image of text or a <a href="https://en.wikipedia.org/wiki/Scalable_Inman_Flash_Replacement">Flash</a> plug-in (and that compromised your website’s search engine optimization) is now a standard practice across the web. Once upon a time, you had to load an entire font before the page loaded—with styles and characters you may not have even used—but even that has become a thing of the past.
+
+The Google Fonts CSS API has also evolved over the years to keep up with changes in web fonts technology. It has come a long way from its original value proposition—to make the web faster by allowing your browser to cache commonly used fonts across all the websites that used the API. This is no longer true, but the API still provides additional and important optimizations so that websites load quickly and the fonts work well. 
+
+Using the Google Fonts CSS API, your website can request only the font data it needs to keep its CSS loading time to a minimum, ensuring your website visitors can load your content as quickly as possible. The API will respond to each request with the best font for that web browser.
+
+All this happens by including a single line of HTML in your code.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -520,4 +528,4 @@ quam sem.
 This article was reviewed by [reviewer #1](#) and [reviewer #2](#).
 Thanks to [external contributor #1](#) and [external contributor #2](#) for
 their work on TODO.
-Hero image by [unsplash author](#) on [Unsplash](#).
+Hero image by [leesehee](#) on [Unsplash](#).
