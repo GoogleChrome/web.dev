@@ -69,7 +69,7 @@ if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
 
 ## Polyfill
 
-A [polyfill for the `requestVideoFrameCallback()` API](https://github.com/ThaUnknown/rvfc-polyfill)
+A [polyfill for the `requestVideoFrameCallback()` method](https://github.com/ThaUnknown/rvfc-polyfill)
 based on
 [`Window.requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame)
 and
