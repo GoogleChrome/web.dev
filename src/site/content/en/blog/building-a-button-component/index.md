@@ -88,7 +88,7 @@ buttons.
 <figure>
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/RHjiEG4X1lAQiLtCA105.png", 
-    alt="Preview of the final set of all button types, shown in a form and not in a form, with nice additions for icon buttons and customized buttons",
+    alt="Preview of the final set of all button types, shown in a form and not in a form, with nice additions for icon buttons and customized buttons.",
     width="800", 
     height="539" 
   %}
@@ -177,7 +177,7 @@ to ensure both work equally well.
 ```
 
 The matrix of combinations is pretty overwhelming at this point. Between button
-types, pseudo classes, and being in or out of a form, there are  over 20
+types, pseudo-classes, and being in or out of a form, there are  over 20
 combinations of buttons. It’s a good thing CSS can help us articulate each of
 them clearly!
 
@@ -189,7 +189,7 @@ enhancements.
 ### Hover and focus together
 
 I like to group `:hover` and `:focus` together with the `:is()` functional
-pseudo selector. This helps ensure my interfaces are always considering keyboard
+pseudo selector. This helps ensure my interfaces always consider keyboard
 and assistive technology styles.
 
 ```css
@@ -262,7 +262,7 @@ images:
 <figure>
   {% Img 
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/WCww9HPVdcaoJNLQB8Sq.png", 
-    alt="Chrome DevTools showing the accessibility tree for the button. The tree ignores the button image because it has aria-hidden set to true",
+    alt="Chrome DevTools showing the accessibility tree for the button. The tree ignores the button image because it has aria-hidden set to true.",
     width="800", 
     height="515" 
   %}
