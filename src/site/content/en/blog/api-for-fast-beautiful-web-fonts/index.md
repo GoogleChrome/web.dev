@@ -22,7 +22,7 @@ date: 2022-05-18
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
 # Hero images should be 3200 x 960.
-hero: Hero-001.png
+hero: images/Hero-001.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain
@@ -72,460 +72,92 @@ tags:
 
 Over the years, a lot has changed with <a href="https://fonts.google.com/knowledge/glossary/web_font">web fonts</a> technology. What used to be a niche practice that required an image of text or a <a href="https://en.wikipedia.org/wiki/Scalable_Inman_Flash_Replacement">Flash</a> plug-in (and that compromised your website’s search engine optimization) is now a standard practice across the web. Once upon a time, you had to load an entire font before the page loaded—with styles and characters you may not have even used—but even that has become a thing of the past.
 
-The Google Fonts CSS API has also evolved over the years to keep up with changes in web fonts technology. It has come a long way from its original value proposition—to make the web faster by allowing your browser to cache commonly used fonts across all the websites that used the API. This is no longer true, but the API still provides additional and important optimizations so that websites load quickly and the fonts work well. 
+The Google Fonts <a href="https://developers.google.com/fonts/docs/getting_started">CSS API</a> has also evolved over the years to keep up with changes in web fonts technology. It has come a long way from its original value proposition—to make the web faster by allowing your browser to cache commonly used fonts across all the websites that used the API. This is <a href="https://developer.chrome.com/blog/http-cache-partitioning/#how-will-cache-partitioning-affect-chromes-http-cache">no longer true</a>, but the API still provides additional and important optimizations so that websites load quickly and the fonts work well. 
 
 Using the Google Fonts CSS API, your website can request only the font data it needs to keep its CSS loading time to a minimum, ensuring your website visitors can load your content as quickly as possible. The API will respond to each request with the best font for that web browser.
 
 All this happens by including a single line of HTML in your code.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Integer et erat ac mi scelerisque suscipit et vitae nulla. Aliquam
-scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
-sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
-tempus enim.
+## How to use the Google Fonts CSS API
 
-{% Aside 'codelab' %}
-  [Using Imagemin with Grunt](#)
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Integer et erat ac mi scelerisque suscipit et vitae nulla. Aliquam
-scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
-sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
-tempus enim.
-
-<figure data-size="full">
-  <img src="a.jpg" alt="">
-  <figcaption>
-    Large image.
-  </figcaption>
-</figure>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<figure>
-  <img src="image-small.png" alt="" width="400">
-  <figcaption>
-    Small image.
-  </figcaption>
-</figure>
-
-{% Aside %}
-  Lorem ipsum dolor sit amet, [consectetur adipiscing elit](#). Proin dictum a
-  massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-  varius at. `Cras ligula lacus`, porta vitae maximus a, ultrices a mauris.
-  [`Vestibulum porta`](#) dolor erat, vel molestie dolor posuere in. Nam vel
-  elementum augue.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-## Image, Inline
-
-<figure data-float="right">
-  <img src="image-inline.png" alt="" width="200">
-  <figcaption>
-    Inline right, outlined image.
-  </figcaption>
-</figure>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum
-augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
-aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
-velit. Morbi at quam sem.
-
-<figure data-float="left">
-  <img src="image-inline.png" alt="" width="200">
-  <figcaption>
-    Inline left, outlined image.
-  </figcaption>
-</figure>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum
-augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
-aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
-velit. Morbi at quam sem.
-
-<figure>
-  <img src="image-screenshot.png" alt="">
-  <figcaption>
-    Filled screenshot.
-  </figcaption>
-</figure>
-
-{% Aside 'caution' %}
-  [This type of callout](#) suggests proceeding with caution.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<div class="table-wrapper scrollbar">
-  <table>
-    <thead>
-      <tr>
-        <th>Image Format</th>
-        <th>Lossy Plugin(s)</th>
-        <th>Lossless Plugin(s)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>JPEG</td>
-        <td><a href="#">imagemin-mozjpeg</a></td>
-        <td><a href="#">imagemin-jpegtran</a></td>
-      </tr>
-      <tr>
-        <td>PNG</td>
-        <td><a href="#">imagemin-pngquant</a></td>
-        <td><a href="#">imagemin-optipng</a></td>
-      </tr>
-      <tr>
-        <td>GIF</td>
-        <td><a href="#">imagemin-giflossy</a></td>
-        <td><a href="#">imagemin-gifsicle</a></td>
-      </tr>
-      <tr>
-        <td>SVG</td>
-        <td><a href="#">Imagemin-svgo</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>WebP</td>
-        <td><a href="#">imagemin-webp</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-    <caption>Table 1 — Imagemin plugins for filetypes.</caption>
-  </table>
-</div>
-
-{% Aside 'warning' %}
-  This type of callout is stronger than a Caution; it means "Don't do this."
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-## Ordered list
-
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<ol>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  <figure>
-    <img src="image-screenshot.png" alt="">
-    <figcaption>
-      Filled screenshot.
-    </figcaption>
-  </figure>
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-</ol>
-
-{% Aside 'success' %}
-  This type of callout describes a successful action or an error-free status.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-## Unordered list
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<ul>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  <figure>
-    <img src="image-screenshot.png" alt="">
-    <figcaption>
-      Filled screenshot.
-    </figcaption>
-  </figure>
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-</ul>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-```js
-const imagemin = require("imagemin");
-const imageminMozjpeg = require("imagemin-mozjpeg");
-
-(async () => {
-  const files = await imagemin(
-    ["source_dir/*.jpg", "another_dir/*.jpg"],
-    "destination_dir",
-    { plugins: [imageminMozjpeg({ quality: 50 })] }
-  );
-  console.log(files);
-})();
-```
-
-{% Aside 'objective' %}
-  This type of callout defines the goal of a procedure.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-```js/1
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-
-{% Aside 'gotchas' %}
-  The value of the `type` attribute should be the MIME type corresponding to the
-  image format. An image's MIME type and its file extension are often similar,
-  but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-```js//1
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-```js/6/5
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg'],
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+The <a href="https://developers.google.com/fonts/docs/getting_started">Google Fonts CSS API documentation</a> sums it up nicely:
 
 <blockquote>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-    a massa sit amet ullamcorper.
+    You don't need to do any programming; all you have to do is add a special stylesheet link to your HTML document, then refer to the font in a CSS style.
   </p>
-  <cite>
-    by Jon Doe
-  </cite>
+  <cite></cite>
 </blockquote>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+The minimum you need to do is include a single line in your HTML, like this:
 
-{% Glitch {
-  id: 'fav-kitties-starter',
-  path: 'src/index.js',
-  previewSize: 0
-} %}
+```html
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+```
 
-{% Aside 'key-term' %}
-  This type of callout defines important terminology.
-{% endAside %}
+When you request a font from the API, you specify which family or families you would like and, optionally, their weights, styles, subsets, and <a href="https://developers.google.com/fonts/docs/getting_started">many other options</a>. The API will then handle your request in one of two ways:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+1. If your request uses common parameters that the API already has files for, it will immediately return CSS to your user, directing them to these files.
+2. If you requested a font with parameters that the API doesn’t currently have cached, it will subset your fonts on the fly, using <a href="https://harfbuzz.github.io/harfbuzz-hb-subset.html">HarfBuzz</a> to do it quickly, and return CSS pointing to them.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+## Font files can be large, but they don’t have to be
 
-<div class="stats">
-  <div class="stats__item">
-    <p class="stats__figure">30<sub>%</sub></p>
-    <p>Lower cost per conversion</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">13<sub>%</sub></p>
-    <p>Higher CTR</p>
-  </div>
-  <div class="stats__item">
-    <p class="stats__figure">4<sub>x</sub></p>
-    <p>Faster load times</p>
-  </div>
-</div>
+Web fonts can be large; it’s true. Just a single weight of <a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP">Noto Sans Japanese</a> in WOFF2 is almost 3.4MB—and downloading this to each and every one of your users would be a drag on your page load time. When every millisecond counts and every byte is precious, you want to be sure you’re only loading the data your users need.
 
-<div class="w-text--center">
-  <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
-    Download case study
-  </a>
-</div>
+The Google Fonts CSS API can create very small font files (called subsets), generated in real time, to serve your users only the text and styles required by your website. Instead of serving up an entire font, you can request specific characters using the <a href="https://developers.google.com/fonts/docs/getting_started#optimizing_your_font_requests">`text`</a> parameter.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+```html
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=RobtMn" rel="stylesheet" />
+```
+
+<image here>
+Caption: An example of characters in basic Latin, basic Greek, and extended Greek
+
+The CSS API also provides additional web font optimizations to your users automatically, without any API parameters. The API will serve your users CSS files with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range">`unicode-range`</a> already enabled (<a href="https://caniuse.com/font-unicode-range">if supported by their web browser</a>), so they load the fonts for only the specific characters your website needs.
+
+The unicode-range CSS descriptor is one tool that can now be used to combat large font downloads. This CSS property sets a range of unicode characters that the @font-face declaration contains. If one of these characters is rendered on the page, that font is downloaded. This works well for all kinds of languages, so you can take a font that includes Latin, Greek, or Cyrillic characters and make smaller subsets. In the preceding chart, you can see that if you had to load all three of these character sets, it would be over 600 glyphs.
+
+<image here>
+
+This also enables <a href="https://en.wikipedia.org/wiki/CJK_characters">Chinese, Japanese, and Korean (CJK) fonts</a> for the web. In the preceding chart, you can see that a CJK font covers 15-20 times the number of characters that a Latin character font does. These fonts are typically very large and many of the characters in those languages are not used as frequently as others.
+
+Using the CSS API and unicode-range can reduce file transfers by <a href="https://www.w3.org/TR/PFE-evaluation/">approximately 90%</a>. Using the `unicode-range` descriptor, you can define each portion separately, and each slice is only downloaded once your content contains one of the characters in these character ranges.
+
+Example: If you wanted to set only the word “<a href="https://translate.google.com/?sl=ja&tl=en&text=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF&op=translate">こんにちは</a>” in <a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP">Noto Sans JP</a>, you could:
+
+- Self-host your own WOFF2 files.
+- Use the CSS API to retrieve the WOFF2.
+- Use the CSS API with the text= parameter set to “こんにちは.”
+
+<image here>
+
+In this example, you can see that by using the CSS API you are already saving 97.5% over self-hosting the WOFF2 font, thanks to the API’s built-in support for separating large fonts into unicode-range. By taking it a step further and specifying exactly the text you want to display, you can further reduce the size of the font to only 95.3% of the CSS API font – that’s 99.9% smaller than the self-hosted font.
+
+The Google Fonts CSS API will automatically deliver fonts in the smallest and most compatible format supported by your user’s browser. If your user is on a browser with WOFF2 support, the API will supply the fonts in WOFF2, but if they are using an older browser, the API will deliver the fonts in a format supported by that browser. To reduce the file size for each user, the API also removes data from the fonts when it’s not needed. For example, hinting data will be removed for users whose browsers do not need it.
+
+## Future-proofing your web fonts with the Google Fonts CSS API
+
+The Google Fonts team also contributes to new W3C standards that continue innovating web font technologies, such as <a href="https://www.w3.org/TR/WOFF2/">WOFF2</a>. One current project is <a href="https://www.w3.org/TR/PFE-evaluation/">Incremental Font Transfer</a>, which allows users to load very small parts of font files as they’re used on screen and stream in the rest on demand, surpassing the performance of unicode-range. When you use our web fonts API, your users get these underlying font transfer technology improvements when they become available in their browser.
+
+This is the beauty of a fonts API: your users have the benefit of each new technology improvement without any changes to your website. New web font format? No problem. New browser or operating system support? It's taken care of. So instead of being bogged down with the maintenance of your web fonts, you are free to focus on your users and your content. 
+
+## Variable fonts support built-in
+
+<a href="https://fonts.google.com/knowledge/glossary/variable_fonts">Variable fonts</a> are font files that can store a range of design variation amongst multiple <a href="https://fonts.google.com/knowledge/glossary/axis_in_type_design">axes</a>, and the <a href="https://developers.google.com/fonts/docs/css2">new version</a> of our CSS API includes support for them. Adding an additional axis of variation enables new flexibility with a font—but it can almost double the size of the font file.
+
+When you are more specific in your CSS API request, the Google Fonts CSS API can serve only the portion of the variable font your website needs, in order to reduce download size for users. This enables the use of variable fonts for the web without incurring long page loading times.  You can do this by specifying a single value on an axis, or specifying a range; you can even specify multiple axes and multiple font families all in one request. The API is flexible to meet your needs. 
+
+## Simple to implement, optimized for you
+
+The Google Fonts CSS API helps you deliver fonts that are:
+
+- More compatible with web browsers
+- As small as possible
+- Delivered quickly
+- Easier for you to use
+
+For more information on Google Fonts, visit <a href="https://fonts.google.com/">fonts.google.com</a>. To learn more about our CSS API, please review our <a href="https://developers.google.com/fonts/">API Documentation</a>.
 
 ## Acknowledgements
 
-This article was reviewed by [reviewer #1](#) and [reviewer #2](#).
-Thanks to [external contributor #1](#) and [external contributor #2](#) for
-their work on TODO.
-Hero image by [leesehee](#) on [Unsplash](#).
+Hero image by [leesehee](https://twitter.com/seheely).
