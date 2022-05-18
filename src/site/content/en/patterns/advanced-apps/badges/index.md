@@ -5,8 +5,8 @@ date: 2022-05-18
 description: |
   Learn how to create an app badge.
 static:
+  - sw.js
   - assets/manifest.json
-  - assets/sw.js
   - assets/app-badge.png
   - assets/app-icon.png
   - assets/favicon.png
