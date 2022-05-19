@@ -7,7 +7,7 @@ alt: An airport terminal sign.
 authors:
   - rachelandrew
 description: This resource can help you quickly find your way around the terminal.
-date: 2022-04-21
+date: 2022-05-20
 tags:
   - blog
 ---
