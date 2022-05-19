@@ -5,7 +5,7 @@ subhead: |
   guess what happened. (Yes, you will.)
 authors:
   - jlwagner
-date: 2022-05-17
+date: 2022-05-19
 description: |
   GOV.UK dropped their jQuery dependency from their front end. You'll never
   guess what happened. (Yes, you will.)
