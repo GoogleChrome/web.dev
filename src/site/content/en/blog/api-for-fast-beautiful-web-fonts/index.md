@@ -155,7 +155,7 @@ The Google Fonts CSS API helps you deliver fonts that are:
 - Delivered quickly
 - Easier for you to use
 
-For more information on Google Fonts, visit <a href="https://fonts.google.com/">fonts.google.com</a>. To learn more about our CSS API, please review our <a href="https://developers.google.com/fonts/">API Documentation</a>.
+For more information on Google Fonts, visit <a href="https://fonts.google.com/">fonts.google.com</a>. To learn more about our CSS API, review our <a href="https://developers.google.com/fonts/">API Documentation</a>.
 
 ## Acknowledgements
 
