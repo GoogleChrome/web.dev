@@ -1,6 +1,6 @@
 ---
 title: An API for fast, beautiful web fonts
-subhead: A catchy subhead that previews the content.
+subhead: 
 description: |
   A 2022 update on the Google Fonts API — how it works and how to use it.
 
@@ -22,7 +22,7 @@ date: 2022-05-18
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
 # Hero images should be 3200 x 960.
-hero: images/Hero-001.png
+hero: image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/m9vEMs7VIwwsRX4PJdLt.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain
