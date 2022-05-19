@@ -2,7 +2,7 @@
 title: An API for fast, beautiful web fonts
 subhead: 
 description: |
-  A 2022 update on the Google Fonts API — how it works and how to use it.
+  An update on the Google Fonts CSS API — how it works, how to use it, and how it can efficiently deliver your web fonts.
 
 # A list of authors. Supports more than one.
 authors:
