@@ -62,19 +62,6 @@ if ('clipboard' in navigator) {
   });
 }
 ```
-## Demo
-
-You can see the above snippet in action in the [demo](https://webdev-copy-text.glitch.me/) embedded below and explore the [source code](https://glitch.com/edit/#!/webdev-copy-text) on
-Glitch.
-
-<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
-  <iframe
-    src="https://webdev-copy-text.glitch.me/"
-    style="height: 100%; width: 100%; border: 0;"
-    allow="clipboard-read; clipboard-write"
-  >
-  </iframe>
-</div>
 
 ## Further reading
 
