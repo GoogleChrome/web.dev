@@ -214,7 +214,7 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 
 ## 考虑提供多重身份验证 {: #multi-factor-authentication}
 
-多重身份验证意味着确保用户以不止一种方式提供身份验证。例如，除了要求用户设置密码外，您还可以使用通过电子邮件或 SMS 文本消息发送的一次性密码，或使用基于应用的一次性密码、安全密钥或指纹传感器。[SMS OTP 最佳实践](/sms-otp-form)和[使用 WebAuthn 启用强身份验证](https://developers.google.com/web/updates/2018/05/webauthn)解释了如何实现多重身份验证。
+多重身份验证意味着确保用户以不止一种方式提供身份验证。例如，除了要求用户设置密码外，您还可以使用通过电子邮件或 SMS 文本消息发送的一次性密码，或使用基于应用的一次性密码、安全密钥或指纹传感器。[SMS OTP 最佳实践](/sms-otp-form)和[使用 WebAuthn 启用强身份验证](https://developer.chrome.com/blog/webauthn/)解释了如何实现多重身份验证。
 
 如果您的站点处理个人或敏感信息，您当然应该提供（或强制执行）多重身份验证。
 
@@ -246,7 +246,7 @@ Google 的密码管理器还允许您[检查您现有的任何密码是否已泄
 
 - [登录表单最佳实践](/sign-in-form-best-practices)
 - [付款和地址表单最佳实践](/payment-and-address-form-best-practices)
-- [创建出色的表单](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [创建出色的表单](/learn/forms/)
 - [移动表单设计最佳实践](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [更强大的表单控件](/more-capable-form-controls)
 - [创建无障碍表单](https://webaim.org/techniques/forms/)

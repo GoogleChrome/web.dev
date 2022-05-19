@@ -96,4 +96,4 @@ window.addEventListener('appinstalled', (event) => {
 Что можно сделать еще:
 
 - [Определить, запущено ли приложение с главного экрана](/customize-install/#detect-mode).
-- [Показать запрос об установке приложения средствами операционной системы](https://developers.google.com/web/fundamentals/app-install-banners/native).
+- [Показать запрос об установке приложения средствами операционной системы](https://developer.chrome.com/blog/app-install-banners-native/).

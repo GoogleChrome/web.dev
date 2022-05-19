@@ -137,7 +137,7 @@ Some examples:
 - Using content that is too large or resource-intensive to decode quickly on the
   target device.
 - [Using too many
-  layers](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+  layers](/stick-to-compositor-only-properties-and-manage-layer-count/)
   requiring too much GPU memory.
 - Defining overly complex CSS styles or web animations.
 - Using design anti-patterns that disable fast rendering optimizations.

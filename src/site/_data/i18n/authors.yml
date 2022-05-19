@@ -1,8 +1,68 @@
+malteubl:
+  title:
+    en: Malte Ubl
+  description:
+    en: Customer Solutions Engineering at Google
+
+raymondcamden:
+  title:
+    en: Raymond Camden
+  description:
+    en: Developer Relations at Adobe
+
+brianford:
+  title:
+    en: Brian Ford
+  description:
+    en: Software Engineer Intern at Google
+
+tjvantoll:
+  title:
+    en: TJ VanToll
+  description:
+    en: Web Develope at Liquid Web
+
+bradfrost:
+  title:
+    en: Brian Ford
+  description:
+    en: Front-end designer at R/GA
+
+lillithompson:
+  title:
+    en: Lilli Thompson
+  description:
+    en: Game Developer
+
+saqoosha:
+  title:
+    en: Saqoosha
+  description:
+    en: Programmer at Katamari Inc.
+
+adriangould:
+  title:
+    en: Adrian Gould
+  description:
+    en: Programmer, Designer at Pagoda Software
+
+adammark:
+  title:
+    en: Adam Mark
+  description:
+    en: Programmer, Designer at Pagoda Software
+
+gskinnerdotcom:
+  title:
+    en: Sean Middleditch
+  description:
+    en: Agency
+    
 seanmiddleditch:
   title:
     en: Sean Middleditch
   description:
-    en: Develope at Subsonic LLC
+    en: Developer at Subsonic LLC
 
 justingitlin:
   title:
@@ -39,7 +99,7 @@ fredchasen:
     en: Fred Chasen
   description:
     en: Lead Developer at Tool Of North America
-    
+
 plan8:
   title:
     en: Plan 8

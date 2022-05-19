@@ -72,7 +72,7 @@ As etapas manuais acima funcionam bem para sites menores; mas, para grandes site
 
 ### Política de segurança de conteúdo
 
-[A política de segurança de conteúdo](https://developers.google.com/web/fundamentals/security/csp/) (CSP) é um recurso de navegador multifuncional que você pode usar para gerenciar conteúdo misto em escala. O mecanismo de relatório CSP pode ser usado para rastrear o conteúdo misto em seu site e oferecer políticas de aplicação para proteger os usuários através de atualização ou bloqueio de conteúdo misto.
+[A política de segurança de conteúdo](/csp/) (CSP) é um recurso de navegador multifuncional que você pode usar para gerenciar conteúdo misto em escala. O mecanismo de relatório CSP pode ser usado para rastrear o conteúdo misto em seu site e oferecer políticas de aplicação para proteger os usuários através de atualização ou bloqueio de conteúdo misto.
 
 Você pode habilitar esses recursos para uma página incluindo o `Content-Security-Policy` ou `Content-Security-Policy-Report-Only` na resposta enviada de seu servidor. Além disso, você pode definir `Content-Security-Policy` (embora **não** `Content-Security-Policy-Report-Only` ) usando uma `<meta>` na seção `<head>` de sua página.
 
@@ -95,7 +95,7 @@ As duas ressalvas são:
 - Os usuários devem visitar sua página em um navegador que entenda o cabeçalho CSP. Isso é verdade para a maioria dos navegadores modernos.
 - Você só obtém relatórios para páginas visitadas por seus usuários. Portanto, se você tiver páginas que não recebam muito tráfego, pode levar algum tempo até que você obtenha relatórios para todo o site.
 
-O [guia de política de segurança de conteúdo](https://developers.google.com/web/fundamentals/security/csp/) contém mais informações e um exemplo de terminal.
+O [guia de política de segurança de conteúdo](/csp/) contém mais informações e um exemplo de terminal.
 
 ### Alternativas para relatar com CSP
 

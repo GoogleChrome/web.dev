@@ -37,8 +37,8 @@ Lighthouseは、低速の4Gネットワーク接続でTTIがどうなると計�
 
 - [**モバイルである程度で早めに読み込まないページ**用のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/load-fast-enough-for-pwa.js)
 - [基本プログレッシブWeb Appのチェックリスト](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
-- [重要なレンダリングパス](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [重要なレンダリングパス](/critical-rendering-path/)
 - [ランタイムパフォーマンスの分析から開始する](https://developer.chrome.com/docs/devtools/evaluate-performance/)
 - [読み込みパフォーマンスの記録](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#record-load)
-- [コンテンツ効率の最適化](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
+- [コンテンツ効率の最適化](/performance-optimizing-content-efficiency/)
 - [レンダリングパフォーマンス](/rendering-performance/)

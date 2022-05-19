@@ -492,7 +492,7 @@ Isso, por sua vez, oferece uma base sólida para priorizar esforços, fazer muda
 - [Práticas recomendadas para formulários de login](/sign-in-form-best-practices)
 - [Práticas recomendadas para formulários de inscrição](/sign-up-form-best-practices)
 - [Verifique os números de telefone na web com a API WebOTP](/web-otp)
-- [Crie formulários incríveis](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Crie formulários incríveis](/learn/forms/)
 - [Melhores práticas para design de formulários para celular](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Controles de formulário mais capazes](/more-capable-form-controls)
 - [Criação de formulários acessíveis](https://webaim.org/techniques/forms/)

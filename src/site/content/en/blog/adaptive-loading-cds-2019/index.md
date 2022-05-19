@@ -107,7 +107,7 @@ network effective type changes.
 React Adaptive Loading Hooks & Utilities are implemented using web platform APIs
 ([Network
 Information](https://developer.mozilla.org/docs/Web/API/Network_Information_API),
-[Device Memory](https://developers.google.com/web/updates/2017/12/device-memory)
+[Device Memory](https://developer.chrome.com/blog/device-memory/)
 and [Hardware
 Concurrency](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
 You can use the same APIs to apply adaptive loading concepts to other frameworks

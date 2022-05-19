@@ -25,7 +25,7 @@ tags:
 
 This means that the web app doesn't perform an actual page reload. The [History API](https://developer.mozilla.org/docs/Web/API/History_API) is used instead to navigate back and forth through the user's history and manipulate the contents of the history stack.
 
-Using this type of architecture can provide an [app shell UX](https://developers.google.com/web/fundamentals/architecture/app-shell) that's fast, reliable, and usually consumes less data when navigating.
+Using this type of architecture can provide an [app shell UX](/learn/pwa/architecture/) that's fast, reliable, and usually consumes less data when navigating.
 
 In multi-page apps (MPAs) each time a user navigates to a new URL, the browser progressively renders HTML specific to that page. This means a full page refresh every time you visit a new page.
 

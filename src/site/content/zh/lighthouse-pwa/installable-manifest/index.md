@@ -28,7 +28,7 @@ updated: 2019-09-19
 - 包含 192x192 像素和 512x512 像素图标的 [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons) 属性
 - [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url) 属性
 - 设置为 `fullscreen` 、`standalone` 或 `minimal-ui` 的 [`display`](https://developer.mozilla.org/docs/Web/Manifest/display) 属性
-- 设置为非 `true` 值的 [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) 属性。
+- 设置为非 `true` 值的 [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) 属性。
 
 {% Aside 'caution' %}要使您的应用可安装，Web 应用清单是*必需**的，但这还不够*。要了解如何满足可安装性的所有要求，请参阅[了解可安装性](/discover-installable)帖子。 {% endAside %}
 

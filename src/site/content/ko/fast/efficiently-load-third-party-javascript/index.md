@@ -137,7 +137,7 @@ tags:
 
 - DNS 조회 및 왕복 시간을 줄입니다.
 - [HTTP 캐싱](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) 헤더를 개선합니다.
-- [HTTP/2 서버 푸시](https://developers.google.com/web/fundamentals/performance/http2/)를 활용합니다.
+- [HTTP/2 서버 푸시](/performance-http2/)를 활용합니다.
 
 예를 들어 Casper는 A/B 테스트 스크립트를 자체 호스팅하여 로드 시간을 [1.7초 단축](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec)했습니다.
 

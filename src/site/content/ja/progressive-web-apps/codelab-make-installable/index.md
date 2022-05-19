@@ -95,4 +95,4 @@ window.addEventListener('appinstalled', (event) => {
 以下に、これから実行できる追加内容を紹介します。
 
 - [アプリがホーム画面から起動されたかどうかを検出する](/customize-install/#detect-mode)
-- [代わりに、OS のアプリインストールプロンプトを表示する](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- [代わりに、OS のアプリインストールプロンプトを表示する](https://developer.chrome.com/blog/app-install-banners-native/)

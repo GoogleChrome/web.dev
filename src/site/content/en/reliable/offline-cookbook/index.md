@@ -260,7 +260,7 @@ This is very similar to HTTP's [stale-while-revalidate](https://www.mnot.net/blo
   <figcaption>On push message.</figcaption>
 </figure>
 
-The [Push API](https://developers.google.com/web/fundamentals/push-notifications) is another feature built on top of
+The [Push API](/push-notifications/) is another feature built on top of
 Service Worker. This allows the Service Worker to be awoken in response to a message from the OS's
 messaging service. This happens even when the user doesn't have a tab open to your site. Only the
 Service Worker is woken up. You request permission to do this from a page and the user will be

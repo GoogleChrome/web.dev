@@ -47,7 +47,7 @@ Chrome DevToolsを使用して、アイコンのどの部分がセーフゾー�
 
 <figure>{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.appエディタのスクリーンショット", width="670", height="569" %} <figcaption> Maskable.appエディタでアイコンを作成する</figcaption></figure>
 
-マスカブルアイコン画像を作成して、DevToolsでテストしたら、新しいアセットを参照するように[Webアプリマニフェスト](https://developers.google.com/web/fundamentals/web-app-manifest)を更新する必要があります。 Webアプリマニフェストは、Webアプリに関する情報をJSONファイルで提供し、[`icons`配列](https://developers.google.com/web/fundamentals/web-app-manifest#icons)を含みます。
+マスカブルアイコン画像を作成して、DevToolsでテストしたら、新しいアセットを参照するように[Webアプリマニフェスト](/add-manifest/)を更新する必要があります。 Webアプリマニフェストは、Webアプリに関する情報をJSONファイルで提供し、[`icons`配列](/add-manifest/#icons)を含みます。
 
 マスカブルアイコンが追加され、Webアプリマニフェストにリストされている画像リソースに新しいプロパティ値が追加されました。 `purpose`フィールドは、アイコンの使用方法をブラウザに指示します。デフォルトでは、アイコンの目的は`"any"`です。これらのアイコンは、Androidの白い背景の上でサイズ変更されます。
 

@@ -84,7 +84,7 @@ page.
 ### General guidelines
 
 - Make sure that the canonical URL is valid.
-- Use secure [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https) canonical URLs rather than HTTP whenever possible.
+- Use secure [HTTPS](/why-https-matters/) canonical URLs rather than HTTP whenever possible.
 - If you use [`hreflang` links](/hreflang) to serve different versions of a page
   depending on a user's language or country, make sure that the canonical URL
   points to the   proper page for that respective language or country.

@@ -143,7 +143,7 @@ This is a particular problem for e-commerce, often due to trackers and widgets.
 Some ways to handle third party content with respect to performance:
 
 -   Always keep third party content out of the
-    [critical rendering path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
+    [critical rendering path](/critical-rendering-path/).
     If the third party has server problems and times out, it will impact your
     website heavily. You can test and simulate this via
     [WebPageTest Single-Point-of-Failure](https://css-tricks.com/use-webpagetest-api/#single-point-of-failure)
@@ -159,7 +159,7 @@ Some ways to handle third party content with respect to performance:
 -   Try to stay on one stack from one vendor if possible. For example, if
     you have a tag manager and analytics on one stack, you may only need a
     single script, and may be able to
-    [take advantage of HTTP2 synergies](https://developers.google.com/web/fundamentals/performance/http2/)
+    [take advantage of HTTP2 synergies](/performance-http2/)
      as there is only one host involved.
 -   Make sure not to use the same functionality from two different vendors.
     You shouldn't need two tag managers or two analytics platforms.
@@ -199,7 +199,7 @@ to do this:
 -   [Facebook](https://www.theverge.com/2015/10/28/9625062/facebook-2g-tuesdays-slow-internet-developing-world)
     and Google do this by providing slow networks across the company for testing.
 -   Make average, low-spec devices with low
-    [bandwidth or high latencies](https://developers.google.com/web/fundamentals/performance/poor-connectivity/) available
+    [bandwidth or high latencies](/performance-poor-connectivity/) available
     to management and other stakeholders.
 -   Consider adding overlays showing performance metrics on your development
     or staging servers. Connections to these servers from mobile can
