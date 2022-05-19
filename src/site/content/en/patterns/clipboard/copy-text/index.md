@@ -6,8 +6,6 @@ authors:
   - joemedley
 description: Learn how to copy text to the clipboard.
 date: 2022-05-13
-tags:
-  - how-to
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 ---
