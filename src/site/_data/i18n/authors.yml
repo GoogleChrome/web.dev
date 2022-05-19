@@ -141,7 +141,7 @@ thomasreynolds:
     en: Thomas Reynolds
   description:
     en: Agency Instrument
-    
+
 einaroberg:
   title:
     en: Einar Öberg
@@ -236,7 +236,7 @@ jeremychone:
   title:
     en: Jeremy Chone
   description:
-    en: Developer 
+    en: Developer
 
 ernestd:
   title:
@@ -249,7 +249,7 @@ chriswilson:
     en: Chris Wilson
   description:
     en: Google Developer Relations
-  
+
 sethladd:
   title:
     en: Seth Ladd
@@ -1190,13 +1190,7 @@ jlwagner:
     ru: Jeremy Wagner
     zh: Jeremy Wagner
   description:
-    en: Our latest news, updates, and stories by Jeremy Wagner.
-    es: Consulte las últimas noticias, actualizaciones e historias publicadas por Jeremy Wagner.
-    ja: Jeremy Wagner による最新のニュース、アップデート情報、記事などをご紹介します。
-    ko: Jeremy Wagner의 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas últimas notícias, atualizações e histórias por Jeremy Wagner.
-    ru: Последние новости и статьи от Jeremy Wagner.
-    zh: Jeremy Wagner 撰写我们的最新资讯、动态和故事。
+    en: Tech writin', doc slingin' reprobate.
 
 gmimani:
   title:
@@ -4105,7 +4099,7 @@ keenyeeliau:
     pt: Engenheiro de software da equipe Aurora no Chrome.
     ru: Инженер-программист в команде Aurora в Chrome.
     zh: Chrome 公司 Aurora 团队的软件工程师。
-    
+
 yuyaito:
   title:
     en: Yuya Ito
