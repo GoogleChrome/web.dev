@@ -303,6 +303,14 @@ redirects:
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
   - source: /using-conversion-measurement/
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
+  - source: /origin-trials/
+    destination: https://developer.chrome.com/docs/web-platform/origin-trials/
+  - source: /launch-handler/
+    destination: https://developer.chrome.com/docs/web-platform/launch-handler/
+  - source: /gpu/
+    destination: https://developer.chrome.com/docs/web-platform/webgpu/
+  - source: /storage-foundation/
+    destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
 
   # Redirect for Aurora
   - source: /aurora
