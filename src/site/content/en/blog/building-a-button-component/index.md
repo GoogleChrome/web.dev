@@ -206,7 +206,7 @@ button:is(:hover, :focus) {
     muted="true"
   %}
   <figcaption>
-    Try a [demo](https://codepen.io/argyleink/pen/powMQgx)
+    Try a <a href="https://codepen.io/argyleink/pen/powMQgx">demo</a>!
   </figcaption>
 </figure>
 
