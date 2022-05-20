@@ -61,7 +61,6 @@ alt: Google Fonts API with description of Roboto Flex and an example code snippe
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - webfonts
   - ux
 
 # You can provide an optional Stack Overflow tag to be used at the end of the
