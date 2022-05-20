@@ -23,16 +23,21 @@ const browsers = ['chrome', 'firefox', 'edge', 'safari'];
  * @returns {string}
  */
 const compatVersion = (support) => {
-  if (!support.version_removed && support.version_added === 'preview') {
-    return '\uD83D\uDC41'; // 👁 eye
-  } else if (
-    !support.version_removed &&
-    typeof support.version_added === 'string'
-  ) {
-    return support.version_added;
-  } else {
-    return '\u00D7'; // × small x
+  if (!support.version_removed) {
+    if (support.version_added === 'preview') {
+      return '👁';
+    }
+
+    if (support.flags?.length > 0) {
+      return '⚐';
+    }
+
+    if (typeof support.version_added === 'string') {
+      return support.version_added;
+    }
   }
+
+  return '×';
 };
 
 /**
