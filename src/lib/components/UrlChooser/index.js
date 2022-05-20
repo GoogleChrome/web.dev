@@ -159,7 +159,7 @@ class UrlChooser extends BaseElement {
 
     const currentURL = new URL(location.href);
     currentURL.searchParams.set('url', this._urlInput.value);
-    history.pushState({}, '', currentURL.href);
+    history.replaceState({}, '', currentURL.href);
   }
 
   onSwitchUrl() {
