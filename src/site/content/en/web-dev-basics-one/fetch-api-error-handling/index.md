@@ -176,7 +176,7 @@ Note from the author: I was recently scrolling through an infinite scrolling lis
 
 This code example demonstrates another type of error that can arise with parsing a response body. The [Response](https://developer.mozilla.org/docs/Web/API/Response) interface offers convenient methods to parse different types of data, such as text or JSON. In the following code, a network request is made to an HTTP testing service that returns an HTML string as the response body. However, an attempt is made to parse the response body as [JSON](https://developer.mozilla.org/docs/Web/API/Response/json), throwing an error.
 
-```
+```js
 let json;
 
 try {
