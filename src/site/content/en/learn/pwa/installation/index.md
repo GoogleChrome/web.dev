@@ -194,7 +194,7 @@ If you want to learn more about how to publish a PWA to app catalogs and stores,
 Some app catalogs and stores have technical or business requirements that before your PWA is accepted for publication. Check each store's requirements before starting.
 {% endAside %}
 
-##  Resources
+## Resources
 
 - [What does it take to be installable](/install-criteria/)
 - [WebAPKs on Android](https://developers.google.com/web/fundamentals/integration/webapks)
