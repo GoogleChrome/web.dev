@@ -291,25 +291,23 @@ redirects:
     destination: /media-eme
 
   # Redirects to https://developer.chrome.com/.
-  - source: /browser-flags/
+  - source: /browser-flags
     destination: https://developer.chrome.com/blog/browser-flags/
-  - source: /origin-trials/
-    destination: https://developer.chrome.com/blog/origin-trials/
-  - source: /third-party-origin-trials/
+  - source: /third-party-origin-trials
     destination: https://developer.chrome.com/blog/third-party-origin-trials/
-  - source: /fugu-status/
+  - source: /fugu-status
     destination: https://developer.chrome.com/blog/fugu-status/
-  - source: /conversion-measurement/
+  - source: /conversion-measurement
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
-  - source: /using-conversion-measurement/
+  - source: /using-conversion-measurement
     destination: https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/
-  - source: /origin-trials/
+  - source: /origin-trials
     destination: https://developer.chrome.com/docs/web-platform/origin-trials/
-  - source: /launch-handler/
+  - source: /launch-handler
     destination: https://developer.chrome.com/docs/web-platform/launch-handler/
-  - source: /gpu/
+  - source: /gpu
     destination: https://developer.chrome.com/docs/web-platform/webgpu/
-  - source: /storage-foundation/
+  - source: /storage-foundation
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
 
   # Redirect for Aurora
