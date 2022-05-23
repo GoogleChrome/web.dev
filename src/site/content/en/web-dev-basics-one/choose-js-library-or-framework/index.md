@@ -79,7 +79,7 @@ There are some non client-side JavaScript environments, such as on the server (r
 
 ## Performance
 
-The performance effect of a JavaScript library on a client-side web application should not be ignored. A large JavaScript library can disrupt the loading performance of your page;  remember, [milliseconds make millions](https://web.dev/milliseconds-make-millions/). 
+The performance effect of a JavaScript library on a client-side web application should not be ignored. A large JavaScript library can disrupt the loading performance of your page;  remember, [milliseconds make millions](/milliseconds-make-millions/). 
 
 {% Aside %}
 Many JavaScript libraries are open source, and the efforts of the library maintainers cannot be overstated—open source is not easy.
