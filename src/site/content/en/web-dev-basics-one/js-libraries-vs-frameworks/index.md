@@ -70,7 +70,7 @@ new Vue({
 If you compare this framework example to the earlier library example, you might notice these differences:
 
 -  The framework code encompasses multiple techniques and abstracts them away into its own opinionated API.
--  Developers don't have full control over how and when operations occur. For example, how and when Vue writes the `‘Hello, world'` string to the page is abstracted away from you.
+-  Developers don't have full control over how and when operations occur. For example, how and when Vue writes the `Hello, world'` string to the page is abstracted away from you.
 -  The instantiation of the `Vue` class carries some [side effects](https://simple.wikipedia.org/wiki/Side_effect_(computer_science)), which are common when you use frameworks, whereas a library may offer [pure functions](https://en.wikipedia.org/wiki/Pure_function).
 -  The framework prescribes a particular HTML template system rather than using your own.
 -  If you read further into the Vue framework documentation or most other framework documentations, you can see how frameworks prescribe architectural patterns that you can use. JavaScript frameworks take some cognitive burden away from you because you don't have to figure this out yourself.
@@ -175,7 +175,7 @@ In general, frameworks can affect performance more than libraries, although ther
 
 Bundling is only one facet of web performance, but it has a big performance effect, especially with larger libraries. The use of tree shaking during import and export helps performance because it finds and prunes code that's unnecessary to the app.
 
-When you bundle JavaScript code, there's a useful step known as tree shaking that's a valuable performance [optimization](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) that you can make to your code, although it's easier to do with libraries than frameworks. 
+When you bundle JavaScript code, there's a useful step known as tree shaking that's a valuable performance [optimization](https://developer.mozilla.org//docs/Glossary/Tree_shaking) that you can make to your code, although it's easier to do with libraries than frameworks. 
 
 When you import third-party code into your source code, you typically bundle the code into one or a few output files. For example, the `header.js`, `footer.js`, and `sidebar.js` files are all combined into the `output.js` file, which is the output file that you load in your web app. 
 
