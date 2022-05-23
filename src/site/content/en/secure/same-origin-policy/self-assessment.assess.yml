@@ -74,8 +74,7 @@ questions:
     stem: Can this image be drawn on the canvas?
     options:
       - rationale: |
-          **It depends!** 😅 The image is on a different origin.
-          If the origin's owner gave the image the appropriate
-          [CORS header](/cross-origin-resource-sharing),
-          the image can be safely drawn. If not, the image will
-          [cause an error](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image#What_is_a_.22tainted.22_canvas.3F).
+          **Yes.** Although the image is on a different origin, loading it as an
+          `img` source does not require CORS. However, accessing the binary of
+          the image using JavaScript such as `getImageData`, `toBlob` or
+          `toDataURL` requires an explicit permission by CORS.
