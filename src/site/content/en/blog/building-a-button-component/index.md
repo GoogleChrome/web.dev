@@ -109,10 +109,8 @@ feel of the button: [`:hover`](/learn/css/pseudo-classes/#:hover)
 for when a mouse is over the button,
 [`:active`](/learn/css/pseudo-classes/#:active) for when a mouse
 or keyboard is pressing, and
-[`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
-[`:focus-visible`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
-and
-[`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible)
+[`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible) or 
+[`:focus-visible`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible)
 for assisting in assistive technology styling. 
 
 ```css
@@ -120,7 +118,6 @@ button:hover {}
 button:active {}
 button:focus {}
 button:focus-visible {}
-button:focus-within {}
 ```
 
 <figure>
