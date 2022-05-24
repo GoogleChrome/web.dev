@@ -292,7 +292,7 @@ style.
 button {
   --_bg-light: white;
   --_bg-dark: black;
-  --_bg: var(--_example-light);
+  --_bg: var(--_bg-light);
 
   background-color: var(--_bg);
 }
