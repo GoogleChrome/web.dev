@@ -299,7 +299,7 @@ button {
 
 @media (prefers-color-scheme: dark) {
   button {
-    --_example: var(--_bg-dark);
+    --_bg: var(--_bg-dark);
   }
 }
 ```
