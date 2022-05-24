@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside %} Esta API faz parte do [projeto de  novos recursos](https://developers.google.com/web/updates/capabilities). A detecção de código de barras foi lançada no Chrome 83. A detecção de rosto e texto está disponível atrás de uma bandeira. Esta postagem será atualizada conforme a API de detecção de formas evolui. {% endAside %}
+{% Aside %} Esta API faz parte do [projeto de  novos recursos](https://developer.chrome.com/blog/capabilities/). A detecção de código de barras foi lançada no Chrome 83. A detecção de rosto e texto está disponível atrás de uma bandeira. Esta postagem será atualizada conforme a API de detecção de formas evolui. {% endAside %}
 
 ## O que é a API de detecção de formas? {: #what }
 

@@ -22,3 +22,6 @@ topics:
     
   build_authentication_with_identity_federation:
     en: Build authentication with identity federation
+
+  case_studies:
+    en: Case studies

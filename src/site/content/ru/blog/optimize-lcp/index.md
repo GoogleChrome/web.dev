@@ -418,7 +418,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
   </figcaption>
 </figure>
 
-{% Aside %} Чтобы глубже погрузиться в различные архитектуры серверного рендеринга, ознакомьтесь со статьей [«Рендеринг в Интернете»](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Чтобы глубже погрузиться в различные архитектуры серверного рендеринга, ознакомьтесь со статьей [«Рендеринг в Интернете»](/rendering-on-the-web/). {% endAside %}
 
 ## Инструменты разработчика
 

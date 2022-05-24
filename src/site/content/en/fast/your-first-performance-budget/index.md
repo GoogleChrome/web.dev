@@ -221,7 +221,7 @@ A solid performance budget combines different types of metrics. We've already de
 
 ### Budget for quantity-based metrics
 
-Whatever total page weight number you come up with, try to **deliver** under 170 KB of **[critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) resources** (compressed/minified). This guarantees your website will be fast even on [inexpensive devices and slow 3G](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/).
+Whatever total page weight number you come up with, try to **deliver** under 170 KB of **[critical-path](/critical-rendering-path/) resources** (compressed/minified). This guarantees your website will be fast even on [inexpensive devices and slow 3G](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/).
 
 You can have a bigger budget for the desktop experience, but don't go wild. The median page weight on both desktop and mobile is over 1MB according to the [HTTP Archive](https://httparchive.org/reports/page-weight) data for the last year. To get a performant website you have to aim well below these median numbers.
 

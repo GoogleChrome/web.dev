@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-29
-updated: 2020-08-17
+updated: 2022-05-18
 hero: image/admin/gpmA4LxerS1wqYgY19W7.jpg
 alt: Film roll.
 description: |
@@ -55,21 +55,27 @@ but I'm happy with the new name,
 after a [lengthy discussion](https://github.com/WICG/video-rvfc/issues/44).
 Yay, [bikeshedding](https://css-tricks.com/what-is-bikeshedding/) for the win!
 
-## Browser support and feature detection
-
-The method is
-[implemented in Chromium](https://chromestatus.com/feature/6335927192387584)
-already, and
-[Mozilla folks like it](https://mozilla.github.io/standards-positions/#requestVideoFrameCallback).
-For what it's worth, I have also filed a
-[WebKit bug](https://bugs.webkit.org/show_bug.cgi?id=211945) asking for it.
-Feature detection of the API works like this:
+## Feature detection
 
 ```js
 if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
   // The API is supported! 
 }
 ```
+
+## Browser support
+
+{% BrowserCompat 'api.HTMLVideoElement.requestVideoFrameCallback' %}
+
+## Polyfill
+
+A [polyfill for the `requestVideoFrameCallback()` method](https://github.com/ThaUnknown/rvfc-polyfill)
+based on
+[`Window.requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame)
+and
+[`HTMLVideoElement.getVideoPlaybackQuality()`](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality)
+is available. Before using this, be aware of the
+[limitations mentioned in the `README`](https://github.com/ThaUnknown/rvfc-polyfill#requestvideoframecallback-polyfill).
 
 ## Using the requestVideoFrameCallback() method
 

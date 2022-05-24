@@ -28,7 +28,7 @@ Si el manifiesto de una página no incluye las siguientes propiedades, la audito
 - Una propiedad [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons) que incluya un icono de 192x192 px y uno de 512x512 px
 - Una propiedad [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url)
 - Una propiedad [`display`](https://developer.mozilla.org/docs/Web/Manifest/display) establecida en `fullscreen`, `standalone` o `minimal-ui`
-- Una propiedad [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) establecida en un valor distinto de `true`.
+- Una propiedad [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) establecida en un valor distinto de `true`.
 
 {% Aside 'caution' %} Un manifiesto de aplicación web es *necesario* para que su aplicación sea instalable, pero no es *suficiente*. Para saber cómo cumplir con todos los requisitos de instalación, consulte la publicación [Descubra lo que se necesita para sea instalable](/discover-installable). {% endAside %}
 

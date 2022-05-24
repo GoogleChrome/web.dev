@@ -5,7 +5,7 @@ authors:
   - philipwalton
 description: How to measure Web Vitals with your current analytics tool
 date: 2020-05-27
-updated: 2021-11-30
+updated: 2022-05-11
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: How to measure Web Vitals with your current analytics tool
 tags:
@@ -264,7 +264,7 @@ Analytics code often runs in response to user input, but if your analytics code
 is conducting a lot of DOM measurements or using other processor-intensive APIs
 the analytics code itself can cause poor input responsiveness. In addition, if
 the JavaScript file containing your analytics code is large, executing that file
-can block the main thread and negatively affect FID.
+can block the main thread and negatively affect [First Input Delay (FID)](/fid/) or [Interaction to Next Paint (INP)](/inp/).
 
 ### Use non-blocking APIs
 

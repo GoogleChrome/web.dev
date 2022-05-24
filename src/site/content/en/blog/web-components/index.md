@@ -25,9 +25,7 @@ the test of time?
   Web's built-in component model. The result is more modular code that can be
   reused in many different contexts.
 
-  <button class="button" data-type="secondary">
-      <a href="https://developers.google.com/web/fundamentals/web-components/customelements" >Learn more</a>
-  </button>
+  <a href="/custom-elements-v1/" >Learn more</a>
 </div>
 
 <div>
@@ -42,9 +40,8 @@ the test of time?
   story as it ensures that a component will work in any environment 
   even if other CSS or JavaScript is at play on the page.
 
-  <button class="button" data-type="secondary">
-  <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom">Learn more</a>
-  </button>  
+  <a href="/shadowdom-v1/">Learn more</a>
+  
 </div>
 </div>
 
@@ -62,9 +59,8 @@ and works well in many different environments. While you really can do just
 about anything with these APIs, here are a few best practices to help ensure
 your components work well anywhere.
 
-<button class="button" data-type="secondary">
-  <a href="https://developers.google.com/web/fundamentals/web-components/best-practices">Learn more</a>
-</button>  
+  <a href="/custom-elements-best-practices/">Learn more</a>
+
 </div>
 <div>
   <figure>
@@ -78,8 +74,6 @@ your components work well anywhere.
   in production, but are instead presented as a teaching aide to help map
   best practice suggestions to actual implementations.
 
-  <button class="button" data-type="secondary">
-  <a href="https://developers.google.com/web/fundamentals/web-components/examples/">Learn more</a>
-  </button>
+  <a href="/components-examples-overview/">Learn more</a>
 </div>
 </div>

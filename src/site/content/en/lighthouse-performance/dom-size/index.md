@@ -66,7 +66,7 @@ can help you pinpoint when nodes get created.
 
 If you can't avoid a large DOM tree,
 another approach for improving rendering performance is simplifying your CSS selectors.
-See Google's [Reduce the Scope and Complexity of Style Calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+See Google's [Reduce the Scope and Complexity of Style Calculations](/reduce-the-scope-and-complexity-of-style-calculations/)
 for more information.
 
 ## Stack-specific guidance
@@ -92,4 +92,4 @@ with the Component Dev Kit (CDK).
 ## Resources
 
 - [Source code for **Avoid an excessive DOM size** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [Reduce the Scope and Complexity of Style Calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [Reduce the Scope and Complexity of Style Calculations](/reduce-the-scope-and-complexity-of-style-calculations/)

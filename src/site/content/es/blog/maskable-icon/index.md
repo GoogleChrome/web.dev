@@ -47,7 +47,7 @@ Si deseas crear un ícono enmascarable basado en un ícono existente, puedes usa
 
 <figure>{% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569" %}<br>Creación de íconos en Maskable.app Editor</figure>
 
-Una vez que hayas creado una imagen de ícono enmascarable y la hayas probado en DevTools, deberás actualizar el [manifiesto de tu aplicación web](https://developers.google.com/web/fundamentals/web-app-manifest) para que apunte a los nuevos recursos. El manifiesto de la aplicación web proporciona información sobre tu aplicación web en un archivo JSON e incluye una[matriz de `icons`](https://developers.google.com/web/fundamentals/web-app-manifest#icons).
+Una vez que hayas creado una imagen de ícono enmascarable y la hayas probado en DevTools, deberás actualizar el [manifiesto de tu aplicación web](/add-manifest/) para que apunte a los nuevos recursos. El manifiesto de la aplicación web proporciona información sobre tu aplicación web en un archivo JSON e incluye una[matriz de `icons`](/add-manifest/#icons).
 
 Con la inclusión de íconos enmascarables, se ha agregado un nuevo valor de propiedad para los recursos de imagen enumerados en un manifiesto de aplicación web. El campo `purpose` le dice al navegador cómo debe usarse tu ícono. De forma predeterminada, los íconos tendrán el propósito de `"any"`. Estos íconos cambiarán de tamaño sobre un fondo blanco en Android.
 

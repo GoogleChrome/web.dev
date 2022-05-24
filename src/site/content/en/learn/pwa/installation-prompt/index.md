@@ -137,13 +137,14 @@ Try it yourself with the [Make it installable](/codelab-make-installable/) codel
 ## Libraries
 
 Check out these libraries for help with rendering a custom install prompt:
+
 - [PWA Builder <pwa-install>](https://github.com/pwa-builder/pwa-install)
 - [PWA Installer Prompt for React](https://github.com/shnaveen25/react-pwa-installer-prompt)
 - [React PWA Install](https://www.npmjs.com/package/react-pwa-install)
 - [Vue PWA Install](https://github.com/Bartozzz/vue-pwa-install)
 - [Add to Home Screen](https://github.com/docluv/add-to-homescreen)
 
-##  Resources
+## Resources
 
 - [Patterns for Promoting PWA installation](/promote-install/)
 - [How to provide your own in-app install experience](/customize-install/)

@@ -23,7 +23,7 @@ pageScripts:
         <div class="flow">
           <a class="feature-card" href="{{ featureCard.url }}" data-theme="{{ featureCard.theme }}" data-treatment="illustration">
             <span class="feature-card__eyebrow">{{ featureCard.eyebrow }}</span>
-            <h3 class="{{ 'visually-hidden' if featureCard.hiddenTitle else 'feature-card__title' }}">{{ featureCard.title }}</h3>
+            <h3 class="{{ 'visually-hidden' if featureCard.hiddenTitle else 'feature-card__title' }}" style="width: 230px;">{{ featureCard.title }}</h3>
             <img importance="high" class="feature-card__background" alt="" aria-hidden="true" src="{{ featureCard.background }}" />
           </a>
           {% include "partials/picked-case-study.njk" %}

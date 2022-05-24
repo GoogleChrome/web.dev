@@ -29,5 +29,5 @@ HTTP/2를 통해 리소스를 제공합니다.
 ## 리소스
 
 - [**모든 리소스에 HTTP/2를 사용하지 않음** 감사의 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
-- [HTTP/2 소개](https://developers.google.com/web/fundamentals/performance/http2/)
+- [HTTP/2 소개](/performance-http2/)
 - [HTTP/2 자주 묻는 질문](https://http2.github.io/faq/)

@@ -28,7 +28,7 @@ Se o manifesto de uma página não incluir as seguintes propriedades, ele falhar
 - Uma [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons) que inclui um ícone de 192x192 px e um ícone de 512x512 px
 - Uma propriedade [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url)
 - Uma propriedade [`display`](https://developer.mozilla.org/docs/Web/Manifest/display) ajustada para `fullscreen`, `standalone` ou `minimal-ui`
-- Uma propriedade [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) definida com um valor diferente de `true`.
+- Uma propriedade [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) definida com um valor diferente de `true`.
 
 {% Aside 'caution' %} Um manifesto de aplicativo da web é *necessário* para que seu aplicativo seja instalável, mas não é *suficiente*. Para saber como atender a todos os requisitos de instalabilidade, consulte a postagem [Descubra o que é preciso para ser instalável.](/discover-installable) {% endAside %}
 

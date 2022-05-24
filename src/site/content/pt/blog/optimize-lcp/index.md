@@ -392,7 +392,7 @@ Com a pré-renderização, a TTI ainda é impactada negativamente, mas os tempos
   </figcaption>
 </figure>
 
-{% Aside %} Para um mergulho mais profundo em diferentes arquiteturas de renderização de servidor, dê uma olhada em [Renderização na web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Para um mergulho mais profundo em diferentes arquiteturas de renderização de servidor, dê uma olhada em [Renderização na web](/rendering-on-the-web/). {% endAside %}
 
 ## Ferramentas de desenvolvimento
 

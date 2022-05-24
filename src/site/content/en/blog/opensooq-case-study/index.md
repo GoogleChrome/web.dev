@@ -69,7 +69,7 @@ These improvements increased the monthly active users of OpenSooq's web experien
 
 After just a few weeks of effort, OpenSooq created a 23 KB, full-featured PWA that delivers a consistent experience to users across all platforms and browsers. And because it's easy to update features on the web, the team has gone PWA-first by launching and testing new features and user flows on their PWA before rolling them out to other platforms.
 
-OpenSooq is now working on adding a [platform-specific install prompt](https://developers.google.com/web/fundamentals/app-install-banners/native) and integrating the PWA with [accelerated mobile pages (AMP)](https://amp.dev/). These enhancements will further speed up page loads and make the transition to the platform-specific app as seamless as possible. By building on the foundation of their initial development effort, the OpenSooq team will continue giving their users the best possible experience.
+OpenSooq is now working on adding a [platform-specific install prompt](https://developer.chrome.com/blog/app-install-banners-native/) and integrating the PWA with [accelerated mobile pages (AMP)](https://amp.dev/). These enhancements will further speed up page loads and make the transition to the platform-specific app as seamless as possible. By building on the foundation of their initial development effort, the OpenSooq team will continue giving their users the best possible experience.
 
 <blockquote>
   <p>

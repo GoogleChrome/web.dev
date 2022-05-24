@@ -287,7 +287,7 @@ to allow users to take actions while offline and defer server communications
 until the user has a stable connection again. You can also use service
 workers to store other kinds of content, such as images, video files, and
 audio files for offline use, as well as use them to implement
-[safe, long-lived sessions](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)
+[safe, long-lived sessions](https://developer.chrome.com/blog/2-cookie-handoff/)
 to keep users authenticated. From a user experience perspective, you can use
 [skeleton screens](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)
 that give users a perception of speed and content while loading that can

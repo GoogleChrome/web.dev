@@ -19,7 +19,7 @@ In the past, app installs were only possible in the context of platform-specific
 You can achieve this in different ways:
 
 - Installing the PWA [from the browser](/customize-install/).
-- Installing the PWA [from the app store](https://developers.google.com/web/android/trusted-web-activity).
+- Installing the PWA [from the app store](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
 Having different distribution channels is a powerful way of reaching a broad number of users, but choosing the right strategy to promote them can be challenging.
 
@@ -91,7 +91,7 @@ In this section we'll classify apps in the store in two groups:
 
 According to a [Google Play study](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2), for every 6 MB increase to an APK's size, the install conversion rate decreases by 1%. This means that the download completion rate of an app of 10 MB could be approximately **30% higher than an app of 100 MB!**
 
-To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using Trusted Web Activities. [Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity) make it possible to deliver your PWA in the Play Store, and because it's built using the web, the app size is usually only a few megabytes.
+To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using Trusted Web Activities. [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/) make it possible to deliver your PWA in the Play Store, and because it's built using the web, the app size is usually only a few megabytes.
 
 Oyo, one of India's largest hospitality companies, built a [Lite version of their app](/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
 
@@ -165,7 +165,7 @@ if (isDeviceMidOrLowEnd()) {
 ```
 
 {% Aside %}
-Covering in depth techniques on how to map device signals to device categories is out of the scope of this guide, but you can check out Addy Osmani's [adaptive loading guide](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69), Philip Walton's [The Device Memory API](https://developers.google.com/web/updates/2017/12/device-memory)  and Jeremy Wagner's [Adapting to Users with Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) for more information on best practices around this.
+Covering in depth techniques on how to map device signals to device categories is out of the scope of this guide, but you can check out Addy Osmani's [adaptive loading guide](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69), Philip Walton's [The Device Memory API](https://developer.chrome.com/blog/device-memory/)  and Jeremy Wagner's [Adapting to Users with Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) for more information on best practices around this.
 {% endAside %}
 
 ## Conclusion

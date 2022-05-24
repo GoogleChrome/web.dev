@@ -99,4 +99,4 @@ window.addEventListener('appinstalled', (event) => {
 以下是您可以执行的一些其他操作：
 
 - [检测您的应用程序是否从主屏幕启动](/customize-install/#detect-mode)
-- [改为显示操作系统的应用程序安装提示](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- [改为显示操作系统的应用程序安装提示](https://developer.chrome.com/blog/app-install-banners-native/)

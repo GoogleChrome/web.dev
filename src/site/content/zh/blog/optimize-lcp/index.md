@@ -336,7 +336,7 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
 <figure>{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="LCP 改进示例：预渲染前后对比", width="800", height="139" %}<figcaption>LCP 改进示例：预渲染前后对比</figcaption></figure>
 
-{% Aside %} 如需更深入地了解不同的服务端渲染架构，请查看[网络中的渲染](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)。{% endAside %}
+{% Aside %} 如需更深入地了解不同的服务端渲染架构，请查看[网络中的渲染](/rendering-on-the-web/)。{% endAside %}
 
 ## 开发者工具
 

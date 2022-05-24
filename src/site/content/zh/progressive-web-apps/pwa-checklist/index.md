@@ -161,7 +161,7 @@ Jeremy Keith 的[弹性 Web 设计](https://resilientwebdesign.com/)是非常好
 
 #### 方法
 
-确定用户希望在离线使用哪些功能后，您需要让您的内容可用且适应离线环境。此外，您可以使用 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)（一种浏览器内的 NoSQL 存储系统）来存储和检索数据，还可以使用[后台同步](https://developer.chrome.com/blog/background-sync/)来允许用户在离线时执行操作和推迟服务器通信，直到再次建立稳定的连接。您还可以使用服务工作进程来存储其他类型的内容，例如供离线时使用的图像、视频文件和音频文件，以及使用它们来实现[安全且长期活动的会话](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)，从而保持用户的身份验证。从用户体验的角度来看，您可以使用[骨架屏](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)，让用户在加载时感知速度和内容，然后根据需要回退到缓存的内容或离线指示器。
+确定用户希望在离线使用哪些功能后，您需要让您的内容可用且适应离线环境。此外，您可以使用 [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)（一种浏览器内的 NoSQL 存储系统）来存储和检索数据，还可以使用[后台同步](https://developer.chrome.com/blog/background-sync/)来允许用户在离线时执行操作和推迟服务器通信，直到再次建立稳定的连接。您还可以使用服务工作进程来存储其他类型的内容，例如供离线时使用的图像、视频文件和音频文件，以及使用它们来实现[安全且长期活动的会话](https://developer.chrome.com/blog/2-cookie-handoff/)，从而保持用户的身份验证。从用户体验的角度来看，您可以使用[骨架屏](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)，让用户在加载时感知速度和内容，然后根据需要回退到缓存的内容或离线指示器。
 
 {% endDetails %}
 

@@ -112,7 +112,7 @@ background-image: image-set( "cat.png" 1x, "cat-2x.png" 2x);
 
 {% Aside %}
 
-The above syntax ignores the fact that vendor prefixes are needed for this feature in both Chromium and WebKit based browsers. If you're planning to use this feature, you should consider using [Autoprefixer](https://github.com/postcss/autoprefixer) to address that automatically.
+The above syntax ignores the fact that vendor prefixes are needed for this feature in both Chromium and WebKit based browsers. If you're planning to use this feature, you should consider using [Autoprefixer](https://github.com/postcss/autoprefixer) ([available as an online tool](https://goonlinetools.com/autoprefixer/)) to address that automatically.
 
 {% endAside %}
 

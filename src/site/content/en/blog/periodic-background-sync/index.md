@@ -26,11 +26,11 @@ feedback:
 
 {% Aside %}
   Web apps should be able to do anything iOS/Android/desktop apps can. The
-  [Capabilities project](https://developers.google.com/web/updates/capabilities),
+  [Capabilities project](https://developer.chrome.com/blog/capabilities/),
   of which Periodic Background Sync is only a part, aims
   to do just that. To learn about other capabilities and to keep up with their
   progress, follow [Unlocking new capabilities for the
-  web](https://developers.google.com/web/updates/capabilities).
+  web](https://developer.chrome.com/blog/capabilities/).
 {% endAside %}
 
 Have you ever been in any of the following situations?

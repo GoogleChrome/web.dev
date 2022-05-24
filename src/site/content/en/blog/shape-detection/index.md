@@ -22,7 +22,7 @@ feedback:
 
 {% Aside %}
   This API is part of the new
-  [capabilities project](https://developers.google.com/web/updates/capabilities).
+  [capabilities project](https://developer.chrome.com/blog/capabilities/).
   Barcode detection has launched in Chrome 83.
   Face and text detection are available behind a flag. This post will be updated as
   the Shape Detection API evolves.

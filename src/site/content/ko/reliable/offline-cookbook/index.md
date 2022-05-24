@@ -198,7 +198,7 @@ HTTP의 [오래된 재검증](https://www.mnot.net/blog/2007/12/12/stale)과 매
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="푸시 메시지.", width="800", height="498" %}<figcaption> 푸시 메시지.</figcaption></figure>
 
-[푸시 API](https://developers.google.com/web/fundamentals/push-notifications)는 Service Worker 위에 구축된 또 다른 기능입니다. 이를 통해 OS의 메시징 서비스에서 메시지에 대한 응답으로 Service Worker를 깨울 수 있습니다. 이는 사용자가 사이트에 열려 있는 탭이 없는 경우에도 발생합니다. 오직 Service Worker만 깨어납니다. 페이지에서 이 작업을 수행할 수 있는 권한을 요청하면 사용자에게 메시지가 표시됩니다.
+[푸시 API](/push-notifications/)는 Service Worker 위에 구축된 또 다른 기능입니다. 이를 통해 OS의 메시징 서비스에서 메시지에 대한 응답으로 Service Worker를 깨울 수 있습니다. 이는 사용자가 사이트에 열려 있는 탭이 없는 경우에도 발생합니다. 오직 Service Worker만 깨어납니다. 페이지에서 이 작업을 수행할 수 있는 권한을 요청하면 사용자에게 메시지가 표시됩니다.
 
 **이상적인 대상:** 채팅 메시지, 속보 또는 이메일과 같은 알림과 관련된 콘텐츠. 또한 할 일 목록 업데이트 또는 캘린더 변경과 같이 즉각적인 동기화의 이점을 제공하는 자주 변경하는 콘텐츠.
 

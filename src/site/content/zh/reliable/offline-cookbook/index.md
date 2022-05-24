@@ -198,7 +198,7 @@ self.addEventListener('fetch', function (event) {
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="推送消息时。", width="800", height="498" %} <figcaption>推送消息时。</figcaption></figure>
 
-[Push API](https://developers.google.com/web/fundamentals/push-notifications) 是构建在服务工作进程之上的另一个功能。它允许唤醒服务工作进程以响应来自操作系统消息服务的消息。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
+[Push API](/push-notifications/) 是构建在服务工作进程之上的另一个功能。它允许唤醒服务工作进程以响应来自操作系统消息服务的消息。即使用户没有标签页打开您的网站，此功能仍然有效。只有服务工作进程被唤醒。执行此操作的权限将从页面请求，系统将提示用户。
 
 **适合：**与通知相关的内容，例如聊天消息、突发新闻或电子邮件。也适合不频繁变化但受益于即时同步的内容，例如待办事项列表更新或日历变化。
 

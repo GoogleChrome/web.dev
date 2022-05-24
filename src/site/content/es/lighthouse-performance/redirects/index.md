@@ -31,7 +31,7 @@ Una página falla en esta auditoría cuando tiene dos o más redireccionamientos
 
 ## Cómo eliminar redireccionamientos
 
-Señale los enlaces a los recursos marcados con las ubicaciones actuales de los recursos. Es especialmente importante evitar las redirecciones en los recursos necesarios para su [ruta de procesamieno crítica](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
+Señale los enlaces a los recursos marcados con las ubicaciones actuales de los recursos. Es especialmente importante evitar las redirecciones en los recursos necesarios para su [ruta de procesamieno crítica](/critical-rendering-path/).
 
 Si está utilizando redireccionamientos para desviar a los usuarios de dispositivos móviles, a la versión móvil de su página, considere rediseñar su sitio para usar un [diseño adaptable](/responsive-web-design-basics/).
 
