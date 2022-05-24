@@ -31,6 +31,7 @@ patternId: gui-challenges/centering
 
       body {
         min-block-size: 100%;
+        margin: 0;
         background: var(--surface1);
         color: var(--text1);
         font-family: system-ui;
@@ -53,14 +54,30 @@ patternId: gui-challenges/centering
         background: var(--surface2);
         border-radius: 1rem 1rem 0 1rem;
         color: var(--text1);
-        
+
         overflow: auto;
         resize: both;
       }
 
-      [resize-prompt] {
-        text-align: end;
+      footer {
+        display: flex;
+        justify-content: space-between;
         margin-block-start: .5ch;
+      }
+
+      footer > button {
+        appearance: none;
+        background: transparent;
+        border: 1px solid hsl(0 0% 85%);
+        display: inline-block;
+        inline-size: max-content;
+        padding: 1ch 2ch;
+        border-radius: 0.5ch;
+        cursor: pointer;
+      }
+
+      footer > button:active {
+        background: hsl(0 0% 90%);
       }
 
       .autobot {
@@ -80,6 +97,22 @@ patternId: gui-challenges/centering
     <article class="autobot" has-centering-styles style="inline-size: 30ch; block-size: 15ch;">
       <h1 has-centering-styles>Autobot</h1>
     </article>
-    <div resize-prompt>Resize ⤴</div>
+    <footer>
+      <button onclick="addEl()">Add element</button>
+      <div>Resize ⤴</div>
+    </footer>
+
+    <script>
+      const examples = ['Sibling', 'Sibling with a long name', 'Maybe a whole paragraph of content, you never know!', 'Short']
+      let position = 0
+
+      function addEl() {
+        let newNode = document.createElement('h1')
+        newNode.textContent = examples[position++] || 'Sibling'
+        newNode.setAttribute('has-centering-styles', true)
+
+        document.querySelector('article').appendChild(newNode)
+      }
+    </script>
   </body>
 </html>
