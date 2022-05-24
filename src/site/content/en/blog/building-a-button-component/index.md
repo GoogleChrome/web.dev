@@ -289,14 +289,14 @@ style.
 button {
   --_bg-light: white;
   --_bg-dark: black;
-  --_bg: var(--_example-light);
+  --_bg: var(--_bg-light);
 
   background-color: var(--_bg);
 }
 
 @media (prefers-color-scheme: dark) {
   button {
-    --_example: var(--_bg-dark);
+    --_bg: var(--_bg-dark);
   }
 }
 ```
