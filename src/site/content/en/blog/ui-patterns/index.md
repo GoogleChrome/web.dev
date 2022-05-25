@@ -15,13 +15,13 @@ tags:
   - html
   - javascript
   - layout
+  - animation
   - intl
 ---
 
-I'm excited to share [this collection of UI patterns](/patterns/gui-challenges/)
-I've been building in the show GUI Challenges. The [web.dev
-patterns](/patterns/) were such a great fit for presenting and sharing the
-content. See!
+I'm excited to share [this collection of UI patterns](/patterns/ui/) I've been
+building in the show GUI Challenges. The [web.dev patterns](/patterns/) were
+such a great fit for presenting and sharing the content. See!
 
 {% CodePattern 'gui-challenges/animation/interactive-words' %}
 
@@ -29,5 +29,32 @@ content. See!
 
 Four pattern categories have been created to share patterns from [GUI
 Challenges](https://github.com/argyleink/gui-challenges):
-[components](/patterns/gui-challenges/#:~:text=Layout%20Patterns-,Animation,-Animated%20Letters),
-animations, centering and theming.
+
+1. [Components](/patterns/ui/#:~:text=Layout%20Patterns-,Animation,-Animated%20Letters)
+1. Animations
+1. Centering
+1. Theming
+
+### Components
+
+todo
+
+{% CodePattern 'gui-challenges/buttons' %}
+
+### Animations
+
+todo
+
+{% CodePattern 'gui-challenges/animation/animated-letters' %}
+
+### Centering
+
+todo
+
+{% CodePattern 'gui-challenges/centering/gentle-flex' %}
+
+### Theming
+
+todo
+
+{% CodePattern 'gui-challenges/theming/color-schemes' %}
