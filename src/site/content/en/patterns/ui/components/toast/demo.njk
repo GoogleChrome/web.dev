@@ -1,7 +1,5 @@
 ---
 patternId: gui-challenges/toast
-draft: true
-noindex: true
 ---
 
 <!DOCTYPE html>
@@ -22,7 +20,7 @@ noindex: true
 
     <script type="module">
       import $ from 'https://cdn.skypack.dev/blingblingjs'
-      
+
       const init = () => {
         const node = document.createElement('section')
         node.classList.add('gui-toast-group')
@@ -33,7 +31,7 @@ noindex: true
 
       const createToast = text => {
         const node = document.createElement('output')
-        
+
         node.innerText = text
         node.classList.add('gui-toast')
         node.setAttribute('role', 'status')
@@ -58,12 +56,12 @@ noindex: true
 
         return new Promise(async (resolve, reject) => {
           await Promise.allSettled(
-            toast.getAnimations().map(animation => 
+            toast.getAnimations().map(animation =>
               animation.finished
             )
           )
           Toaster.removeChild(toast)
-          resolve() 
+          resolve()
         })
       }
 
@@ -94,7 +92,7 @@ noindex: true
       }
 
       const Toaster = init()
-      
+
       $('#spells').on('click', async () => {
         await Toast(randomSpell())
         console.log('poof')

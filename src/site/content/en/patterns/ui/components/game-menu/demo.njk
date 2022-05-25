@@ -1,7 +1,5 @@
 ---
 patternId: gui-challenges/game-menu
-draft: true
-noindex: true
 ---
 
 <!DOCTYPE html>
@@ -23,7 +21,7 @@ noindex: true
 
     <script type="module">
       import {rovingIndex} from 'https://cdn.skypack.dev/roving-ux'
-   
+
       const menu = document.querySelector('.threeD-button-set')
       const menuRect = menu.getBoundingClientRect()
 
@@ -46,11 +44,11 @@ noindex: true
       }
 
       const getAngles = (clientX, clientY) => {
-        const { x, y, width, height } = menuRect 
-        
+        const { x, y, width, height } = menuRect
+
         const dx = clientX - (x + 0.5 * width)
         const dy = clientY - (y + 0.5 * height)
-        
+
         return {dx,dy}
       }
     </script>
