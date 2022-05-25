@@ -22,7 +22,7 @@ The `outputLatency` property of an `AudioContext` instance provides an estimate 
 
 The process of synchronizing video and audio streams together is called [AV synchronization](https://en.wikipedia.org/wiki/Audio-to-video_synchronization).
 
-In this [WebCodecs demo](https://wc-talk.netlify.app/simple_video_player.html) ([source](https://github.com/chcunningham/wc-talk)), the [WebCodecs API](https://developer.mozilla.org/docs/Web/API/WebCodecs_API) is used to decode a `MediaStream` into raw video and audio data, and then played back into a HTML `<canvas>` element with audio data coming from an [Audio Worklet](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet). The `outputLatency` property allows the demo to determine when a given audio timestamp is reaching the user's ears and then properly paint video frames to match that.
+In this [WebCodecs demo](https://wc-talk.netlify.app/simple_video_player.html) ([source](https://github.com/chcunningham/wc-talk)), the [WebCodecs API](https://developer.mozilla.org/docs/Web/API/WebCodecs_API) is used to decode a `MediaStream` into raw video and audio data, and then played back into a HTML `<canvas>` element with audio data coming from an [Audio Worklet](https://developer.mozilla.org/docs/Web/API/AudioWorklet). The `outputLatency` property allows the demo to determine when a given audio timestamp is reaching the user's ears and then properly paint video frames to match that.
 
 <figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/p61K2S4Wye34OJn4XZOj.png", alt="A screenshot of the demo", width="800", height="533" %}
