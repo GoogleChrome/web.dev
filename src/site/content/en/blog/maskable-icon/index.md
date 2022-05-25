@@ -94,9 +94,9 @@ then export the image.
 </figure>
 
 Once you've created a maskable icon image and tested it out in DevTools, you'll need to update your
-[web app manifest](https://developers.google.com/web/fundamentals/web-app-manifest) to point to the
+[web app manifest](/add-manifest/) to point to the
 new assets. The web app manifest provides information about your web app in a JSON file, and
-includes an [`icons` array](https://developers.google.com/web/fundamentals/web-app-manifest#icons).
+includes an [`icons` array](/add-manifest/#icons).
 
 With the inclusion of maskable icons, a new property value has been added for image resources listed
 in a web app manifest. The `purpose` field tells the browser how your icon should be used. By

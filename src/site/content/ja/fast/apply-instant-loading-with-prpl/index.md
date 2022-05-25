@@ -47,7 +47,7 @@ Lighthouseは、特定のリソースが解析されて遅れて取得された�
 
 ## できるだけ早く最初のルートをレンダリングする
 
-サイトが画面にピクセルをレンダリングする瞬間に、[**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)を遅らせるリソースがある場合、Lighthouseによって警告が表示されます。
+サイトが画面にピクセルをレンダリングする瞬間に、[**First Paint**](/user-centric-performance-metrics/#important-metrics-to-measure)を遅らせるリソースがある場合、Lighthouseによって警告が表示されます。
 
 {% Img src="image/admin/gvj0jlCYbMdpLNtHu0Ji.png", alt="レンダリングをブロックするリソースの監査を排除する", width="800", height="111" %}
 

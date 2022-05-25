@@ -161,7 +161,7 @@ Service Worker の `install` イベント中に、後で使用するためのカ
 
 #### 方法
 
-ユーザーがオフラインで作業できることを期待している機能を決定したら、コンテンツを利用可能にしてオフラインのコンテキストに適応できるようにする必要があります。さらに、ブラウザ内の NoSQL ストレージシステムである [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb) を使用してデータを保存および取得し、[バックグラウンド同期](https://developer.chrome.com/blog/background-sync/)を使用して、ユーザーがオフライン中にアクションを実行し、ユーザーが再び安定した接続を確立するまでサーバー通信を延期できるようにすることができます。また、Service Worker を使用して、オフラインで使用する画像、動画ファイル、音声ファイルなどの他の種類のコンテンツを保存したり、それらを使用して[安全で長期間有効なセッション](https://developers.google.com/web/updates/2016/06/2-cookie-handoff)を実装し、ユーザーの認証を維持したりすることもできます。ユーザーエクスペリエンスの観点から、読み込み中に速度とコンテンツをユーザーに認識させる[スケルトン画面](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)を使用して、必要に応じてキャッシュされたコンテンツまたはオフラインインジケーターにフォールバックできます。
+ユーザーがオフラインで作業できることを期待している機能を決定したら、コンテンツを利用可能にしてオフラインのコンテキストに適応できるようにする必要があります。さらに、ブラウザ内の NoSQL ストレージシステムである [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb) を使用してデータを保存および取得し、[バックグラウンド同期](https://developer.chrome.com/blog/background-sync/)を使用して、ユーザーがオフライン中にアクションを実行し、ユーザーが再び安定した接続を確立するまでサーバー通信を延期できるようにすることができます。また、Service Worker を使用して、オフラインで使用する画像、動画ファイル、音声ファイルなどの他の種類のコンテンツを保存したり、それらを使用して[安全で長期間有効なセッション](https://developer.chrome.com/blog/2-cookie-handoff/)を実装し、ユーザーの認証を維持したりすることもできます。ユーザーエクスペリエンスの観点から、読み込み中に速度とコンテンツをユーザーに認識させる[スケルトン画面](https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a)を使用して、必要に応じてキャッシュされたコンテンツまたはオフラインインジケーターにフォールバックできます。
 
 {% endDetails %}
 

@@ -48,7 +48,7 @@ is therefore more expensive than animating something that only changes compositi
 {% Aside %}
 For an in-depth look at exactly how this process happens in the browser
 read [From Braces to Pixels](https://alistapart.com/article/braces-to-pixels/) and
-[Inside look at modern browser browser](https://developers.google.com/web/updates/2018/09/inside-browser-part3).
+[Inside look at modern browser browser](https://developer.chrome.com/blog/inside-browser-part3/).
 {% endAside %}
 
 ### Animating layout properties {: #layout }

@@ -144,7 +144,7 @@ The design lends itself well to largely static sites like web.dev: your browser 
 And antiquated browsers just ignore Web Components altogether and render whatever is left in the DOM.
 
 Each Web Component is a class with methods including `connectedCallback()`, `disconnectedCallback()`, and `attributeChangedCallback()`.
-web.dev's custom elements mostly inherit from [LitElement](https://lit-element.polymer-project.org/), which provides a simple base for complex components.
+web.dev's custom elements mostly inherit from [LitElement](https://lit.dev/), which provides a simple base for complex components.
 
 While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](/measure) page.
 Two elements provide the bulk of the functionality you see on this page:

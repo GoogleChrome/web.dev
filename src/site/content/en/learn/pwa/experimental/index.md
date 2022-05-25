@@ -82,7 +82,7 @@ Firefox offers [experimental features](https://developer.mozilla.org/docs/Mozill
 
 ##  Resources
 
-- [The capabilities project](https://developers.google.com/web/updates/capabilities)
+- [The capabilities project](https://developer.chrome.com/blog/capabilities/)
 - [New capabilities status](https://developer.chrome.com/blog/fugu-status/)
 - [Fugu Public Tracker](https://goo.gle/fugu-api-tracker)
 - [Getting started with Chrome origin trials](https://developer.chrome.com/blog/origin-trials/)

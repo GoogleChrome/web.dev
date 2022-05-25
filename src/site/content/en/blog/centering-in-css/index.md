@@ -27,7 +27,7 @@ If you prefer video, here's a YouTube version of this post:
 
 ## The challenge
 
-**There are difference types of centering.** From differing use cases, number of things
+**There are different types of centering.** From differing use cases, number of things
 to center, etc. In order to demonstrate a rationale behind "a winning" centering technique, I
 created The Resilience Ringer. It's a series of stress tests for each centering
 strategy to balance within and you to observe their performance.

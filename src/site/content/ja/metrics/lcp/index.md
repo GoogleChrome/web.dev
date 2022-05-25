@@ -189,7 +189,7 @@ LCPは、主に次の 4 つの要因の影響を受けます。
 LCP の改善方法の詳細については、「[LCP を最適化する](/optimize-lcp/)」を参照してください。LCP の改善にもつながる個別のパフォーマンス改善手法に関するその他のガイダンスについては、以下を参照してください。
 
 - [PRPL パターンを使用して読み込みを高速化する](/apply-instant-loading-with-prpl)
-- [クリティカル レンダリング パスの最適化](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [クリティカル レンダリング パスの最適化](/critical-rendering-path/)
 - [CSS を最適化する](/fast#optimize-your-css)
 - [画像を最適化する](/fast#optimize-your-images)
 - [Web フォントを最適化する](/fast#optimize-web-fonts)

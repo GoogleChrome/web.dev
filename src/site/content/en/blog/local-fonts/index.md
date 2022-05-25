@@ -14,18 +14,17 @@ description: >
   The Local Fonts API enumerates the user's installed local fonts and provides low-level access to
   the various TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2021-07-30
+updated: 2022-05-17
 hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
   - api
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775
 ---
 
-{% Aside %} The Local Font Access API is part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities) and is currently in
-development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside 'success' %}
+The Local Font Access API was part of the
+[capabilities project](https://developer.chrome.com/blog/capabilities/) and is now shipped.
+{% endAside %}
 
 ## Web safe fonts
 
@@ -162,28 +161,28 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 1. Create explainer                      | [Complete][explainer]                                                                           |
 | 2. Create initial draft of specification | [In progress][spec]                                                                             |
-| 3. **Gather feedback & iterate on design**   | [**In progress**](#feedback)                                                                        |
-| 4. Origin trial                     | Complete |
-| 5. Launch                                | Not started                                                                                     |
+| 3. Gather feedback & iterate on design   | [Complete](#feedback).                                                                          |
+| 4. Origin trial                          | Complete                                                                                        |
+| 5. **Launch**                            | **Complete** (Chromium&nbsp;103 on desktop)                                                     |
 
 </div>
 
 ### How to use the Local Font Access API
-
-#### Enabling via about://flags
-
-To experiment with the Local Font Access API locally, enable the `#font-access` flag in
-`about://flags`.
 
 #### Feature detection
 
 To check if the Local Font Access API is supported, use:
 
 ```js
-if ('fonts' in navigator) {
+if ('queryLocalFonts' in self) {
   // The Local Font Access API is supported
 }
 ```
+
+{% Aside %}
+The Local Font Access API is currently only available on desktop versions of Chromium, but not on
+mobile operating systems like Android or iOS.
+{% endAside %}
 
 #### Asking for permission
 
@@ -212,44 +211,56 @@ try {
 
 #### Enumerating local fonts
 
-Once the permission has been granted, you can then, from the `FontManager` interface that is exposed
-on `navigator.fonts`, call `query()` to ask the browser for the locally installed fonts, which it
+Once the permission has been granted, you can then call `self.queryLocalFonts()`
+to ask the browser for the locally installed fonts, which it
 will display in a picker for the user to select all or a subset from to be shared with the page.
-This results in an array that you can loop over. Each font is represented as a `FontMetadata` object
+This results in an array that you can loop over. Each font is represented as a `FontData` object
 with the properties `family` (for example, `"Comic Sans MS"`), `fullName` (for example,
-`"Comic Sans MS"`), and `postscriptName` (for example, `"ComicSansMS"`).
+`"Comic Sans MS"`), `postscriptName` (for example, `"ComicSansMS"`), and `style` (for example, `"Regular"`).
 
 ```js
 // Query for all available fonts and log metadata.
 try {
-  const pickedFonts = await navigator.fonts.query();
-  for (const metadata of pickedFonts) {
-    console.log(metadata.postscriptName);
-    console.log(metadata.fullName);
-    console.log(metadata.family);
+  const pickedFonts = await self.queryLocalFonts();
+  for (const fontData of pickedFonts) {
+    console.log(fontData.postscriptName);
+    console.log(fontData.fullName);
+    console.log(fontData.family);
+    console.log(fontData.style);
   }
 } catch (err) {
   console.error(err.name, err.message);
 }
 ```
 
+If you are only interested in a subset of fonts, you can also filter them
+based on the PostScript names by adding a `postscriptNames` parameter.
+
+```js
+const pickedFonts = await self.queryLocalFonts({
+  postscriptNames: [
+    'Verdana',
+    'Verdana-Bold',
+    'Verdana-Italic',
+  ],
+});
+```
+
 #### Accessing SFNT data
 
 Full [SFNT](https://en.wikipedia.org/wiki/SFNT) access is available via the `blob()` method of the
-`FontMetadata` object. SFNT is a font file format which can contain other fonts, such as PostScript,
+`FontData` object. SFNT is a font file format which can contain other fonts, such as PostScript,
 TrueType, OpenType, Web Open Font Format (WOFF) fonts and others.
 
 ```js
 try {
-  const pickedFonts = await navigator.fonts.query();
-  for (const metadata of pickedFonts) {
-    // We're only interested in a particular font.
-    if (metadata.family !== 'Comic Sans MS') {
-      continue;
-    }
+  const pickedFonts = await self.queryLocalFonts({
+    postscriptNames: ['Comic Sans MS'],
+  });
+  for (const fontData of pickedFonts) {
     // `blob()` returns a Blob containing valid and complete
     // SFNT-wrapped font data.
-    const sfnt = await metadata.blob();
+    const sfnt = await fontData.blob();
 
     const sfntVersion = new TextDecoder().decode(
       // Slice out only the bytes we need: the first 4 bytes are the SFNT
@@ -366,7 +377,6 @@ us know where and how you're using it.
 - [GitHub repo][issues]
 - [TAG review][tag-review]
 - [Mozilla standards position][mozilla]
-- [Origin Trial](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)
 
 ## Acknowledgements
 

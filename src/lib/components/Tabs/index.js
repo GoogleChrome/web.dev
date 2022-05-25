@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseElement} from '../BaseElement';
 import {checkOverflow} from '../../utils/check-overflow';
 import {generateIdSalt} from '../../utils/generate-salt';

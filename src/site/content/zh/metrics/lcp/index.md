@@ -189,7 +189,7 @@ LCP 主要受四个因素影响：
 如需深入了解如何改进 LCP，请参阅[优化 LCP](/optimize-lcp/)。有关其他能够改进 LCP 的单个性能技巧的进一步指导，请参阅：
 
 - [使用 PRPL 模式做到即时加载](/apply-instant-loading-with-prpl)
-- [优化关键渲染路径](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [优化关键渲染路径](/critical-rendering-path/)
 - [优化您的 CSS](/fast#optimize-your-css)
 - [优化您的图像](/fast#optimize-your-images)
 - [优化网页字体](/fast#optimize-web-fonts)

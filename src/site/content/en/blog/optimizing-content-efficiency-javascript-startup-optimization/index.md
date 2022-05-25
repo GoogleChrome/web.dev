@@ -6,7 +6,7 @@ authors:
 description: >
   Keep your network transmission and parse/compile cost for JavaScript low to ensure pages get interactive quickly.
 date: 2017-11-30
-updated: 2018-07-02
+updated: 2022-05-11
 ---
 
 As we build sites more heavily reliant on JavaScript, we sometimes pay for what
@@ -99,7 +99,7 @@ DevTools](/web/tools/chrome-devtools/), parse and compile are part of the yellow
 
 The Bottom-Up and Call Tree tabs show you exact Parse/compile timings:
 
-<figure> 
+<figure>
   {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/idCp6NvAEITLFHkQgJUq.png", alt="ALT_TEXT_HERE", width="800", height="228" %}
  <figcaption> Chrome
 DevTools Performance panel > Bottom-Up. With V8’s Runtime Call Stats enabled, we
@@ -227,7 +227,7 @@ JavaScript can impact page performance in other ways:
   href="/web/fundamentals/performance/rendering/optimize-javascript-execution#use_requestanimationframe_for_visual_changes">requestAnimationFrame()</a></code>
   or <code><a
   href="/web/updates/2015/08/using-requestidlecallback">requestIdleCallback()</a></code>
-  for scheduling) can minimize responsiveness issues.
+  for scheduling) can minimize responsiveness issues which can help improve [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/).
 
 ## Patterns for reducing JavaScript delivery cost
 

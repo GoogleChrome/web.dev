@@ -29,5 +29,5 @@ HTTP/2を経由でリソースを提供します。
 ## リソース
 
 - [**すべてのリソース監査にHTTP/2を使用していない**のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
-- [HTTP/2の概要](https://developers.google.com/web/fundamentals/performance/http2/)
+- [HTTP/2の概要](/performance-http2/)
 - [HTTP/2のよくある質問](https://http2.github.io/faq/)

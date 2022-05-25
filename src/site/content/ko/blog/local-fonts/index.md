@@ -19,7 +19,7 @@ origin_trial:
   url: "https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775"
 ---
 
-{% Aside %} Local Font Access API는 [기능 프로젝트](https://developers.google.com/web/updates/capabilities)의 일부이며 현재 개발 중입니다. 이 게시물은 구현이 진행되는 대로 업데이트됩니다. {% endAside %}
+{% Aside %} Local Font Access API는 [기능 프로젝트](https://developer.chrome.com/blog/capabilities/)의 일부이며 현재 개발 중입니다. 이 게시물은 구현이 진행되는 대로 업데이트됩니다. {% endAside %}
 
 ## 웹 안전 글꼴
 
