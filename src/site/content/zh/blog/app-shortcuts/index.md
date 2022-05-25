@@ -126,7 +126,7 @@ feedback:
 
 ## 浏览器支持
 
-应用程序快捷方式可在 Android (Chrome 84)、Windows（Chrome 85 和 Edge 85）、Chrome OS（Chrome 92）、macOS 和 Linux（Chrome 96 和 Edge 96）上可用。
+应用程序快捷方式可在 Android (Chrome 84)、Windows（Chrome 85 和 Edge 85）、ChromeOS（Chrome 92）、macOS 和 Linux（Chrome 96 和 Edge 96）上可用。
 
 <figure>{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Chrome 操作系统上打开的应用快捷菜单截图", width="800", height="450" %}<figcaption>在 Chrome 操作系统上打开的应用程序快捷方式菜单</figcaption></figure>
 

@@ -216,7 +216,7 @@ While the DataTransfer API is available today, there are some things to be aware
 
 Desktop browsers all have great support for the technique described above, while mobile devices do
 not. The technique has been tested on all major browsers (Chrome, Edge, Firefox, Safari) and
-operating systems (Android, Chrome OS, iOS, macOS, Ubuntu Linux, and Windows), but unfortunately Android
+operating systems (Android, ChromeOS, iOS, macOS, Ubuntu Linux, and Windows), but unfortunately Android
 and iOS didn't pass the test. While browsers continue to develop, for now the technique is limited
 to desktop browsers only.
 

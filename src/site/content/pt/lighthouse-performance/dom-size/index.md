@@ -47,7 +47,7 @@ Se você estiver enviando atualmente uma grande árvore DOM, tente carregar a p�
 
 Se você criar nós DOM em tempo de execução, os [pontos de interrupção de alteração de DOM para modificação de subárvore](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom) podem ajudar a identificar quando os nós são criados.
 
-Se você não puder evitar uma grande árvore DOM, outra abordagem para melhorar o desempenho de renderização é simplificar os seletores de CSS. Consulte mais informações no artigo [Reduza o escopo e a complexidade dos cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) do Google.
+Se você não puder evitar uma grande árvore DOM, outra abordagem para melhorar o desempenho de renderização é simplificar os seletores de CSS. Consulte mais informações no artigo [Reduza o escopo e a complexidade dos cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/) do Google.
 
 ## Orientação específica para pilha
 
@@ -64,4 +64,4 @@ Se você estiver renderizando listas grandes, use a [rolagem virtual](/virtualiz
 ## Recursos
 
 - [Código-fonte da auditoria **Evitar tamanho excessivo do DOM**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [Reduza o escopo e a complexidade dos cálculos de estilo](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [Reduza o escopo e a complexidade dos cálculos de estilo](/reduce-the-scope-and-complexity-of-style-calculations/)

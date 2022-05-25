@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside 'success' %}[機能プロジェクト](/fugu-status/)の一部であるWebSerial APIは、Chrome89でリリースされました。{% endAside %}
+{% Aside 'success' %}[機能プロジェクト](https://developer.chrome.com/blog/fugu-status/)の一部であるWebSerial APIは、Chrome89でリリースされました。{% endAside %}
 
 ## WebシリアルAPIとは何ですか？ {: #what }
 
@@ -428,7 +428,7 @@ ChromeでWebシリアルAPIをデバッグするには、Chrome内部の`about:/
 
 ## ブラウザのサポート {: #browser-support }
 
-WebシリアルAPIは、Chrome 89のすべてのデスクトッププラットフォーム（Chrome OS、Linux、macOS、およびWindows）で使用できます。
+WebシリアルAPIは、Chrome 89のすべてのデスクトッププラットフォーム（ChromeOS、Linux、macOS、およびWindows）で使用できます。
 
 ## ポリフィル {: #polyfill }
 

@@ -99,4 +99,4 @@ Parabéns, seu aplicativo agora pode ser instalado!
 Aqui estão mais coisas que você pode fazer:
 
 - [Detecte se seu aplicativo é iniciado na tela inicial](/customize-install/#detect-mode)
-- [Mostrar em vez disso o prompt de instalação do aplicativo do sistema operacional](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- [Mostrar em vez disso o prompt de instalação do aplicativo do sistema operacional](https://developer.chrome.com/blog/app-install-banners-native/)

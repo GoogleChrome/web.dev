@@ -189,7 +189,7 @@ getLCP(console.log);
 Подробные сведения о том, как улучшить LCP, см. в статье [«Оптимизация LCP»](/optimize-lcp/). Дополнительные рекомендации по отдельным методам повышения производительности, которые также могут улучшить LCP, смотрите в следующих статьях:
 
 - [Применение мгновенной загрузки с помощью шаблона PRPL](/apply-instant-loading-with-prpl)
-- [Оптимизация критического пути рендеринга](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+- [Оптимизация критического пути рендеринга](/critical-rendering-path/)
 - [Оптимизация CSS](/fast#optimize-your-css)
 - [Оптимизация изображений](/fast#optimize-your-images)
 - [Оптимизация веб-шрифтов](/fast#optimize-web-fonts)

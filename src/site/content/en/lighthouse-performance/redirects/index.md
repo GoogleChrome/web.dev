@@ -40,7 +40,7 @@ A page fails this audit when it has two or more redirects.
 Point links to flagged resources
 to the resources' current locations.
 It's especially important to avoid redirects in resources
-required for your [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
+required for your [Critical Rendering Path](/critical-rendering-path/).
 
 If you're using redirects to divert mobile users to the mobile version of your page,
 consider redesigning your site to use

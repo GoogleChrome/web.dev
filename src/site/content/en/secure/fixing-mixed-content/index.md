@@ -109,7 +109,7 @@ to instruct the browser to notify you about mixed content and ensure that your p
 
 ### Content security policy
 
-[Content security policy](https://developers.google.com/web/fundamentals/security/csp/) (CSP)
+[Content security policy](/csp/) (CSP)
 is a multi-purpose browser feature that you can use to manage mixed content at scale.
 The CSP reporting mechanism can be used to track mixed content on your site,
 and provide enforcement policies to protect users by upgrading or blocking mixed content.
@@ -159,7 +159,7 @@ The two caveats to this are:
 So if you have pages that don't get much traffic,
 it might be some time before you get reports for your entire site.
 
-The [Content security policy](https://developers.google.com/web/fundamentals/security/csp/)
+The [Content security policy](/csp/)
 guide has more information and an example endpoint.
 
 ### Alternatives to reporting with CSP

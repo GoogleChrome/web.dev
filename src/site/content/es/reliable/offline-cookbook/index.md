@@ -198,7 +198,7 @@ Esto es muy similar al [stale-while-revalidate](https://www.mnot.net/blog/2007/1
 
 <figure>{% Img src= "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bshuBXOyD2A4zveXQMul.png", alt="Al recibir un mensaje push.", width="800", height="498" %}<figcaption> Al recibir un mensaje push.</figcaption></figure>
 
-[Push API](https://developers.google.com/web/fundamentals/push-notifications) es otra característica construida sobre Service Worker. Esto permite activar al Service Worker en respuesta a un mensaje del servicio de mensajería del sistema operativo. Esto sucede incluso cuando el usuario no tiene una pestaña abierta en su sitio. Solo activa al Service Worker. Solicite permiso para hacer esto desde una página y se enviará una solicitud al usuario.
+[Push API](/push-notifications/) es otra característica construida sobre Service Worker. Esto permite activar al Service Worker en respuesta a un mensaje del servicio de mensajería del sistema operativo. Esto sucede incluso cuando el usuario no tiene una pestaña abierta en su sitio. Solo activa al Service Worker. Solicite permiso para hacer esto desde una página y se enviará una solicitud al usuario.
 
 **Ideal para:** contenido relacionado con una notificación, como un mensaje de chat, una noticia de última hora o un correo electrónico. También para contenido que cambia con poca frecuencia que se beneficia de la sincronización inmediata, como una actualización de la lista de tareas pendientes o una modificación del calendario.
 

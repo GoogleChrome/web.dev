@@ -44,6 +44,6 @@ Si el código de terceros utiliza `document.write()`, solicite al proveedor que 
 ## Recursos
 
 - [Código fuente para la auditoría de **Usos de `document.write()`**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
-- [Cómo intervenir contra `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
+- [Cómo intervenir contra `document.write()`](https://developer.chrome.com/blog/removing-document-write/)
 - [Bloqueo del analizador sintáctico frente a JavaScript asíncrono](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [Análisis especulativo](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

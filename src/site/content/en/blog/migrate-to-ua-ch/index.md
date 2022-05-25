@@ -194,7 +194,7 @@ If you are requesting cross-origin or cross-site subresources that require
 User-Agent Client Hints to be sent on their requests then you will need to
 explicitly specify the desired hints using a Permissions Policy.
 
-{% Aside %} [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) is
+{% Aside %} [Permissions Policy](https://developer.chrome.com/docs/privacy-sandbox/permissions-policy/) is
 the new form of Feature Policy {%  endAside %}
 
 For example, let's say that `https://blog.site` hosts resources on

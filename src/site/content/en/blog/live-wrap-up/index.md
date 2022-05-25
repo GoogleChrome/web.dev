@@ -140,7 +140,7 @@ learn more.
 
 Chrome wants you to be free to create the highest quality web apps that give you the biggest reach
 to users across devices. Combining the installability and reliability of PWAs, with the
-[capabilities project](/fugu-status/) (Project Fugu), Chrome is focusing on three
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) (Project Fugu), Chrome is focusing on three
 things to close the gap between platform-specific apps and the web, to help you build and deliver great
 experiences.
 

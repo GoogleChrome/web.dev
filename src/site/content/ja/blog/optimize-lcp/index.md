@@ -393,7 +393,7 @@ Service Worker を使用して重要なリソースを事前にキャッシュ�
   </figcaption>
 </figure>
 
-{% Aside %}さまざまな種類のサーバーサイド レンダリング アーキテクチャの詳細については、「[Web 上でのレンダリング](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)」を参照してください。{% endAside %}
+{% Aside %}さまざまな種類のサーバーサイド レンダリング アーキテクチャの詳細については、「[Web 上でのレンダリング](/rendering-on-the-web/)」を参照してください。{% endAside %}
 
 ## 開発者ツール
 

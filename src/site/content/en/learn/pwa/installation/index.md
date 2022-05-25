@@ -76,7 +76,13 @@ After installing an app on the desktop, users can navigate to `about:apps`, righ
 
 ### iOS and iPadOS installation
 
-A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your Web App Manifest. Safari will use information to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the home screen will be a screenshot of your PWA when the user installed it.
+A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](/apple-touch-icon/) to your html.
+To define the icon, include the path to your icon to your HTML `<head>` section, like this:
+
+```html
+<link rel="apple-touch-icon" href="/icons/ios.png">
+```
+ Safari will use that information to create the shortcut and if you don't provide a specific icon for Apple devices, the icon on the home screen will be a screenshot of your PWA when the user installed it.
 
 It's important to understand that PWA installation is only available if the user browses your website from Safari. Other browsers available in the App Store, such as Google Chrome, Firefox, Opera, or Microsoft Edge, cannot install a PWA on the home screen.
 
@@ -176,7 +182,7 @@ Most app catalogs and stores support technologies that let you publish a package
 
 The app catalogs and stores that support publishing a PWA are:
 
-- [Google Play Store for Android and Chrome OS](https://chromeos.dev/en/publish/pwa-in-play), using a [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/).
+- [Google Play Store for Android and ChromeOS](https://chromeos.dev/en/publish/pwa-in-play), using a [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/).
 - Apple App Store for iOS, macOS, and iPadOS, using WKWebView and [App-Bound Domains](https://webkit.org/blog/10882/app-bound-domains/).
 - [Microsoft Store for Windows 10 and 11](https://docs.microsoft.com/en-us/windows/uwp/publish/pwa/overview), using APPX packages.
 - [Samsung Galaxy Store](https://samsunginternet.github.io/introducing-progressive-web-apps-to-samsung-galaxy-store/), using the Samsung WebAPK minting server.
@@ -188,7 +194,7 @@ If you want to learn more about how to publish a PWA to app catalogs and stores,
 Some app catalogs and stores have technical or business requirements that before your PWA is accepted for publication. Check each store's requirements before starting.
 {% endAside %}
 
-##  Resources
+## Resources
 
 - [What does it take to be installable](/install-criteria/)
 - [WebAPKs on Android](https://developers.google.com/web/fundamentals/integration/webapks)

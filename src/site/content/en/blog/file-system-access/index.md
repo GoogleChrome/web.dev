@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-04-07
+updated: 2022-04-27
 tags:
   - blog
   - capabilities
@@ -79,7 +79,7 @@ There were a number of other
 {% BrowserCompat 'api.Window.showOpenFilePicker' %}
 
 The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
-Chrome OS, and Linux. A notable exception is Brave
+ChromeOS, and Linux. A notable exception is Brave
 ([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)). Android support
 is planned; you can track progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
@@ -409,6 +409,13 @@ async function verifyPermission(fileHandle, readWrite) {
 
 By requesting write permission with the read request, I reduced the number of permission prompts:
 the user sees one prompt when opening the file, and grants permission to both read and write to it.
+
+{% Aside %}
+While `FileSystemHandle` objects can be
+[serialized and stored in IndexedDB](#storing-file-handles-or-directory-handles-in-indexeddb),
+the permissions currently need to be re-granted each time, which is suboptimal. Star
+[crbug.com/1011533](https://crbug.com/1011533) to be notified of work on persisting granted permissions.
+{% endAside %}
 
 ### Opening a directory and enumerating its contents
 

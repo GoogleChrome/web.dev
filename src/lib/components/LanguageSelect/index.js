@@ -18,7 +18,7 @@
  * @fileoverview A select for choosing language option.
  */
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import {BaseStateElement} from '../BaseStateElement';
 import {setLanguage} from '../../actions';
 import lang from '../../utils/language';

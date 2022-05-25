@@ -37,7 +37,7 @@ it will fail the audit:
 - A [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url) property
 - A [`display`](https://developer.mozilla.org/docs/Web/Manifest/display)
   property set to `fullscreen`, `standalone`, or `minimal-ui`
-- A [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- A [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/)
   property set to a value other than `true`.
 
 {% Aside 'caution' %}

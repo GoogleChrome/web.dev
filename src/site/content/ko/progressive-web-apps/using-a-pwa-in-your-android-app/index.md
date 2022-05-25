@@ -24,7 +24,7 @@ Play Store는 Android 앱을 위한 스토어이며 개발자는 종종 Android 
 
 [Android WebView](https://developer.android.com/reference/android/webkit/WebView)와 같은 기술 또는 [Cordova](https://cordova.apache.org/)와 같은 프레임워크를 사용하여 Android 앱에 웹 경험을 포함하는 것은 항상 가능했습니다.
 
-Android WebView의 한계점은 브라우저 대체품을 의도한 것이 아니라는 것입니다. Android WebView는 Android 앱에서 웹 UI를 사용하기 위한 개발자 도구이며 [contact picker](/contact-picker/), 또는 [filesystem](/file-system-access/), [among others](/fugu-status/)와 같은 최신 웹 플랫폼 기능에 대한 완전한 액세스 기능을 제공하지 않습니다.
+Android WebView의 한계점은 브라우저 대체품을 의도한 것이 아니라는 것입니다. Android WebView는 Android 앱에서 웹 UI를 사용하기 위한 개발자 도구이며 [contact picker](/contact-picker/), 또는 [filesystem](/file-system-access/), [among others](https://developer.chrome.com/blog/fugu-status/)와 같은 최신 웹 플랫폼 기능에 대한 완전한 액세스 기능을 제공하지 않습니다.
 
 Cordova는 WebView의 단점을 보완하도록 설계되었지만 API는 Cordova 환경으로 제한됩니다. 즉, 개방형 웹의 PWA와 별도로 Android 앱용 Cordova API를 사용하기 위한 추가 코드베이스를 유지해야 합니다.
 

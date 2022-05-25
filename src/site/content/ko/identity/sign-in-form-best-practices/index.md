@@ -421,7 +421,7 @@ HTML 양식 요소 및 속성에는 기본 유효성 검사를 위한 기본 제
 
 ## 학습 계속 {: #resources }
 
-- [놀라운 양식 만들기](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [놀라운 양식 만들기](/learn/forms/)
 - [모바일 양식 디자인 모범 사례](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [더 많은 기능을 갖춘 양식 컨트롤](/more-capable-form-controls)
 - [액세스 가능한 양식 만들기](https://webaim.org/techniques/forms/)

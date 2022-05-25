@@ -20,7 +20,7 @@ No passado, as instalações de aplicativos só eram possíveis no contexto de a
 Você pode conseguir isso de diferentes maneiras:
 
 - Instalando o PWA a [partir do navegador](/customize-install/) .
-- Instalando o PWA [da app store](https://developers.google.com/web/android/trusted-web-activity) .
+- Instalando o PWA [da app store](https://developer.chrome.com/docs/android/trusted-web-activity/) .
 
 Ter diferentes canais de distribuição é uma maneira poderosa de alcançar um grande número de usuários, mas escolher a estratégia certa para promovê-los pode ser um desafio.
 
@@ -43,7 +43,7 @@ Se o tamanho desse segmento for considerável, é uma boa indicação de que voc
 
 ## Promover a instalação do seu PWA através do navegador
 
-Se você tiver um PWA de alta qualidade, pode ser melhor promover sua instalação em relação ao aplicativo específico de sua plataforma. Por exemplo, se o aplicativo específico da plataforma não tiver a funcionalidade oferecida pelo seu PWA ou se não tiver sido atualizado há algum tempo. Também pode ser útil promover a instalação de seu PWA se o aplicativo específico da plataforma não foi otimizado para telas maiores, como no Chrome OS.
+Se você tiver um PWA de alta qualidade, pode ser melhor promover sua instalação em relação ao aplicativo específico de sua plataforma. Por exemplo, se o aplicativo específico da plataforma não tiver a funcionalidade oferecida pelo seu PWA ou se não tiver sido atualizado há algum tempo. Também pode ser útil promover a instalação de seu PWA se o aplicativo específico da plataforma não foi otimizado para telas maiores, como no ChromeOS.
 
 Para alguns aplicativos, a condução de instalações de aplicativos específicos da plataforma é uma parte fundamental do modelo de negócios; nesse caso, faz sentido para os negócios promover a instalação de aplicativos específicos da plataforma. Porém, alguns usuários podem se sentir mais confortáveis permanecendo na web. Se esse segmento puder ser identificado, o prompt do PWA pode ser mostrado apenas para eles (o que chamamos de "PWA como fallback").
 
@@ -86,7 +86,7 @@ Nesta seção, classificaremos os aplicativos da loja em dois grupos:
 
 De acordo com um [estudo do Google Play](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2) , para cada 6 MB de aumento no tamanho de um APK, a taxa de conversão de instalação diminui em 1%. Isso significa que a taxa de conclusão do download de um aplicativo de 10 MB pode ser aproximadamente **30% maior do que um aplicativo de 100 MB!**
 
-Para resolver isso, algumas empresas estão aproveitando seu PWA para fornecer uma versão leve de seu aplicativo na Play Store usando Trusted Web Activities. [As atividades da Web confiáveis](https://developers.google.com/web/android/trusted-web-activity) possibilitam a entrega de seu PWA na Play Store e, como ele é criado na web, o tamanho do aplicativo geralmente é de apenas alguns megabytes.
+Para resolver isso, algumas empresas estão aproveitando seu PWA para fornecer uma versão leve de seu aplicativo na Play Store usando Trusted Web Activities. [As atividades da Web confiáveis](https://developer.chrome.com/docs/android/trusted-web-activity/) possibilitam a entrega de seu PWA na Play Store e, como ele é criado na web, o tamanho do aplicativo geralmente é de apenas alguns megabytes.
 
 A Oyo, uma das maiores empresas de hospedagem da Índia, criou uma [versão Lite de seu aplicativo](/oyo-lite-twa/) e a disponibilizou na Play Store usando PWA. Tem apenas 850 KB, apenas 7% do tamanho de seu aplicativo Android. E uma vez instalado, é indistinguível de seu aplicativo Android:
 
@@ -156,7 +156,7 @@ if (isDeviceMidOrLowEnd()) {
 }
 ```
 
-{% Aside %} Cobrir em profundidade técnicas sobre como mapear sinais de dispositivos para categorias de dispositivos está fora do escopo deste guia, mas você pode verificar o [adaptive loading guide](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69) de Addy Osmani, [The Device Memory API](https://developers.google.com/web/updates/2017/12/device-memory) de Philip Walton e [Adapting to Users with Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) de Jeremy Wagner para obter mais informações sobre as melhores práticas a respeito disto. {% endAside %}
+{% Aside %} Cobrir em profundidade técnicas sobre como mapear sinais de dispositivos para categorias de dispositivos está fora do escopo deste guia, mas você pode verificar o [adaptive loading guide](https://dev.to/addyosmani/adaptive-loading-improving-web-performance-on-low-end-devices-1m69) de Addy Osmani, [The Device Memory API](https://developer.chrome.com/blog/device-memory/) de Philip Walton e [Adapting to Users with Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) de Jeremy Wagner para obter mais informações sobre as melhores práticas a respeito disto. {% endAside %}
 
 ## Conclusão
 

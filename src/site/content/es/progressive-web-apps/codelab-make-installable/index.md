@@ -97,4 +97,4 @@ window.addEventListener('appinstalled', (event) => {
 Aquí hay algunas cosas adicionales que puede hacer:
 
 - [Detecte si su aplicación se inicia desde la pantalla de inicio](/customize-install/#detect-mode)
-- [En su lugar, muestre el mensaje de instalación de la aplicación del sistema operativo](https://developers.google.com/web/fundamentals/app-install-banners/native)
+- [En su lugar, muestre el mensaje de instalación de la aplicación del sistema operativo](https://developer.chrome.com/blog/app-install-banners-native/)

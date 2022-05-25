@@ -45,7 +45,7 @@ Lighthouse 使用 DOM 树标记页面：
 
 如果您在运行时创建 DOM 节点， [子树修改 DOM 更改断点](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#dom)可以帮助您确定创建节点的时间。
 
-如果无法避免使用大型 DOM 树，另一种提高渲染性能的方法是简化 CSS 选择器。有关更多信息，请参阅 Google 的[减小样式计算的范围和复杂性](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)。
+如果无法避免使用大型 DOM 树，另一种提高渲染性能的方法是简化 CSS 选择器。有关更多信息，请参阅 Google 的[减小样式计算的范围和复杂性](/reduce-the-scope-and-complexity-of-style-calculations/)。
 
 ## 针对堆栈的具体指导
 
@@ -62,4 +62,4 @@ Lighthouse 使用 DOM 树标记页面：
 ## 资源
 
 - [**避免 DOM 过大审核**的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
-- [减小样式计算的范围和复杂性](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+- [减小样式计算的范围和复杂性](/reduce-the-scope-and-complexity-of-style-calculations/)

@@ -28,7 +28,7 @@ updated: 2019-09-19
 - 192x192 ピクセルと 512x512 ピクセルのアイコンを含む [`icons`](https://developer.mozilla.org/docs/Web/Manifest/icons) プロパティ
 - [`start_url`](https://developer.mozilla.org/docs/Web/Manifest/start_url) プロパティ
 - `fullscreen`、`standalone`、または `minimal-ui` に設定された [`display`](https://developer.mozilla.org/docs/Web/Manifest/display) プロパティ
-- `true` 以外の値に設定された [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native) プロパティ。
+- `true` 以外の値に設定された [`prefer_related_applications`](https://developer.chrome.com/blog/app-install-banners-native/) プロパティ。
 
 {% Aside 'caution' %} アプリをインストール可能にするには、ウェブアプリマニフェストが*必要*ですが、それだけでは*不十分*です。インストール可能性の全要件を満たす方法については、[Discover what it takes to be installable (インストール可能にする方法について)](/discover-installable) と題した記事を参照してください。{% endAside %}
 

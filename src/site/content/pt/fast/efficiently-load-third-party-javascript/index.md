@@ -137,7 +137,7 @@ A auto-hospedagem de scripts de terceiros é uma opção que oferece mais contro
 
 - Reduzir a consulta de DNS e os tempos de ida e volta.
 - Melhorar os cabeçalhos de [cache HTTP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
-- Aproveitar as vantagens do [push de servidor HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/).
+- Aproveitar as vantagens do [push de servidor HTTP/2](/performance-http2/).
 
 Por exemplo, Casper conseguiu [reduzir em 1,7 segundo o tempo de carregamento](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) ao hospedar por conta própria um script de teste A/B.
 

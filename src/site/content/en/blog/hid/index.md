@@ -22,7 +22,7 @@ stack_overflow_tag: webhid
 ---
 
 {% Aside 'success' %}
-The WebHID API, part of the [capabilities project](/fugu-status/), launched in
+The WebHID API, part of the [capabilities project](https://developer.chrome.com/blog/fugu-status/), launched in
 Chrome&nbsp;89.
 {% endAside %}
 
@@ -175,7 +175,7 @@ const devices = await navigator.hid.getDevices();
   <figcaption>User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
-You can also use the optional `exclusionFilters` key in 
+You can also use the optional `exclusionFilters` key in
 `navigator.hid.requestDevice()` to exclude some devices from the browser picker
 that are known to be malfunctioning for instance.
 
@@ -413,7 +413,7 @@ reconnect your device.
 
 ## Browser support {: #browser-support }
 
-The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The WebHID API is available on all desktop platforms (ChromeOS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Demos {: #demos }

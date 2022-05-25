@@ -27,7 +27,7 @@ Location: /path/to/new/location
 
 ## 리디렉션을 제거하는 방법
 
-플래그가 지정된 리소스에 대한 링크를 리소스의 현재 위치로 지정합니다. [중요한 렌더링 경로](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)에 필요한 리소스의 리디렉션을 피하는 것이 특히 중요합니다.
+플래그가 지정된 리소스에 대한 링크를 리소스의 현재 위치로 지정합니다. [중요한 렌더링 경로](/critical-rendering-path/)에 필요한 리소스의 리디렉션을 피하는 것이 특히 중요합니다.
 
 리디렉션을 사용하여 모바일 사용자를 페이지의 모바일 버전으로 전환하는 경우 [반응형 디자인](/responsive-web-design-basics/)을 사용하도록 사이트를 다시 디자인하는 것이 좋습니다.
 

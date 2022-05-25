@@ -158,7 +158,7 @@ protect this sensitive user data at all costs and convince people that their
 information](https://en.wikipedia.org/wiki/Personal_data) (PII) is safe.
 
 * Understand [why all websites should be protected with
-  HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https),
+  HTTPS](/why-https-matters/),
   not just those that handle sensitive PII data.
 * Switch to a hosting provider that uses HTTPS by default, or use [Let's
   Encrypt](https://letsencrypt.org/getting-started/) or similar services to
@@ -201,7 +201,7 @@ possible.
 * Ensure that your forms are
   [efficient](https://www.smashingmagazine.com/2017/06/designing-efficient-web-forms/)
   and
-  [well-designed](https://developers.google.com/web/fundamentals/design-and-ux/input/forms).
+  [well-designed](/learn/forms/).
 
 ### SEO {: #seo }
 

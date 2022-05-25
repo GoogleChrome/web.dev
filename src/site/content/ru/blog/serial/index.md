@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-{% Aside 'success' %} Web Serial API — это часть [проекта возможностей](/fugu-status/), запущенного в Chrome 89. {% endAside %}
+{% Aside 'success' %} Web Serial API — это часть [проекта возможностей](https://developer.chrome.com/blog/fugu-status/), запущенного в Chrome 89. {% endAside %}
 
 ## Что такое Web Serial API? {: #what }
 
@@ -428,7 +428,7 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ## Поддержка браузера {: #browser-support}
 
-Web Serial API доступен на всех настольных платформах (Chrome OS, Linux, macOS и Windows) в Chrome 89.
+Web Serial API доступен на всех настольных платформах (ChromeOS, Linux, macOS и Windows) в Chrome 89.
 
 ## Полифилл {: #polyfill}
 

@@ -11,6 +11,7 @@ alt: Night sky
 
 description: This article introduces Aurora, a Chrome initiative to collaborate closely with open-source frameworks
 tags:
+  - aurora-project
   - blog # blog is a required tag for the article to show up in the blog.
   # - aurora
 ---
@@ -218,7 +219,8 @@ The Aurora team ([Shubhie](https://github.com/spanicker),
 [Alex](https://github.com/atcastle), [Gerald](https://github.com/devknoll),
 [Ralph](https://github.com/janicklas-ralph),
 [Addy](https://github.com/addyosmani), [Kara](https://github.com/kara),
-[Keen](https://github.com/kyliau)) look forward to continuing to work
+[Keen](https://github.com/kyliau),
+[Katie](https://github.com/khempenius)) look forward to continuing to work
 closely with the open-source framework community on improving user experience
 defaults in Next.js, Nuxt and Angular. We'll be growing our engagement to cover
 even more frameworks and tools over time. Watch this space for more blog posts,

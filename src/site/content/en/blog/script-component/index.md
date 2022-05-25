@@ -11,6 +11,7 @@ description: |
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/I71rvvFlEORPhGILHsZX.jpg
 alt: A child arranging Jenga blocks.
 tags:
+  - aurora-project
   - blog
 ---
 

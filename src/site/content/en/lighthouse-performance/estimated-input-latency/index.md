@@ -70,7 +70,7 @@ See [Do less main thread work](https://developer.chrome.com/docs/devtools/speed/
 for an example of the workflow.
 The basic idea is to start a recording, perform the user input that you want to measure,
 stop the recording, and then analyze the flame chart to ensure that
-[all stages of the pixel pipeline](https://developers.google.com/web/fundamentals/performance/rendering/#the_pixel_pipeline)
+[all stages of the pixel pipeline](/rendering-performance/#the-pixel-pipeline)
 are complete within 50&nbsp;ms.
 
 ## Resources

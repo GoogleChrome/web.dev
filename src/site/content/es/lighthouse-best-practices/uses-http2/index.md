@@ -33,5 +33,5 @@ Para saber cómo habilitar HTTP / 2 en sus servidores, consulte [Configuración 
 ## Recursos
 
 - [Código fuente de **No usa HTTP / 2 para todas sus** auditorías de recursos](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
-- [Introducción a HTTP / 2](https://developers.google.com/web/fundamentals/performance/http2/)
+- [Introducción a HTTP / 2](/performance-http2/)
 - [Preguntas frecuentes sobre HTTP / 2](https://http2.github.io/faq/)
