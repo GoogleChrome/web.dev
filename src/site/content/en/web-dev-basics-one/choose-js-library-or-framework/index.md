@@ -2,6 +2,8 @@
 layout: post
 title: Choose a JavaScript library or framework
 description: Understand the decisions around using a JavaScript library or framework. 
+authors:
+  - umarhansa
 date: 2022-05-23
 ---
 
@@ -35,7 +37,7 @@ When the [`lodash.capitalize`](https://www.npmjs.com/package/lodash.capitalize) 
 
 A JavaScript framework is a predefined code template within which you construct your application's behavior. That is, when you use a framework, the framework controls the application flow. To use a framework, you write your custom application code, and then the framework calls your application code. 
 
-The following example shows a code snippet that uses the [preact](https://preactjs.com/) JavaScript framework:
+The following example shows a code snippet that uses the [Preact](https://preactjs.com/) JavaScript framework:
 
 ```js
 import { createElement } from 'preact';
@@ -53,7 +55,7 @@ In the example, notice that the framework has a lot more control over the code y
 
 Using a JavaScript library can help to avoid unnecessary [code repetition](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Libraries can abstract away complex logic, such as date manipulation or financial calculations. A library can also help get your [initial product](https://en.wikipedia.org/wiki/Minimum_viable_product) out, rather than having to write all the code from scratch, which can take time.
 
-Some client-side JavaScript libraries help abstract away quirks of the web platform. A library can also serve as a learning tool. For example, if you're unfamiliar with animation easing [functions](https://easings.net/), the source code of a library can teach you how such easings work.
+Some client-side JavaScript libraries help abstract away quirks of the web platform. A library can also serve as a learning tool. For example, if you're unfamiliar with [animation easing functions](https://easings.net/), the source code of a library can teach you how such easings work.
 
 Some libraries are backed by large companies that invest time and money into keeping libraries up to date and secure. Many libraries are accompanied by extensive documentation, which offers you and your team a quick way to familiarize yourself with the library's usage.
 
@@ -71,7 +73,7 @@ Technically, you can develop your web application from scratch, but why go to th
 
 As you might suspect, different characteristics can affect your web application in different ways. Sometimes, the decision is just not that deep, and you can safely swap out a library if you don't like it. However, sometimes a library can have a significant effect on your work and your web application, which suggests a more informed approach could be necessary.
 
-{% Aside %}
+{% Aside 'important' %}
 Many of the points raised in the following performance section—and also points raised throughout this article—are applicable to client-side environments. Client-side code is run on the end user's device, such as through their web browser.
 {% endAside %}
 
@@ -106,7 +108,7 @@ Consider a library published to the NPM ecosystem. Such a package may be legitim
 
 Here are some security tips to consider when using or evaluating third-party code:
 
--  If you use GitHub, then consider the code's security [offerings](https://github.com/features/security), such as [dependabot](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates). Or, consider alternative services that scan for vulnerabilities in your code, such as [snyk.io](https://snyk.io/).
+-  If you use GitHub, then consider the code's security [offerings](https://github.com/features/security), such as [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates). Or, consider alternative services that scan for vulnerabilities in your code, such as [snyk.io](https://snyk.io/).
 -  Consider using code-auditing services, a team of engineers who can manually audit the third-party code you're using.
 -  Evaluate whether you should lock your dependencies to a specific version, or commit your third-party code within your version control. This can help lock your dependency to one particular version—that is presumably deemed safe. Ironically, this can have a counter-effect within security, as you may miss out on vital updates to the library.
 -  Scan the project home page, or GitHub page, if one exists. Research whether outstanding security issues exist, and whether previous security issues were resolved within a reasonable timeframe.
@@ -149,7 +151,7 @@ Conventions play a big role with ease of use. A library that includes an intuiti
 
 ## Updates
 
-As an example, for a fully working library that performs a few mathematical calculations, such a library may rarely need updates. In fact, a feature-complete library is a rare find in the ever-changing world of web development! However, there are times where you want the library author to be responsive and willing to make updates, especially. New research and findings can reveal better ways of doing things, so the techniques used in libraries and frameworks are always subject to change.
+As an example, for a fully working library that performs a few mathematical calculations, such a library may rarely need updates. In fact, a feature-complete library is a rare find in the ever-changing world of web development! However, there are times where you want the library author to be responsive and willing to make updates. New research and findings can reveal better ways of doing things, so the techniques used in libraries and frameworks are always subject to change.
 
 When you pick a library or framework, pay attention to how updates are handled, and be aware that such decisions can affect you:
 
@@ -163,7 +165,9 @@ Library authors and maintainers invest huge amounts of time supporting web devel
 
 ## Licensing 
 
+{% Aside 'warning' %}
 This is not legal advice.
+{% endAside %}
 
 [Software licensing](https://en.wikipedia.org/wiki/Software_license) is an important aspect of using third-party software libraries. A library author may assign a license to their library. If you are considering using the library, then their [choice of license](https://choosealicense.com/) may affect you.
 
