@@ -2,17 +2,19 @@
 layout: post
 title: Implement error handling when using the Fetch API
 description: Catching errors when working with the Fetch API. 
+authors:
+  - umarhansa
 date: 2022-05-23
 ---
 
-This article demonstrates some error handling approaches when working with the [Fetch API](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api?hl=en). The Fetch API lets you make a request to a remote network resource. When you make a remote network call, your web page becomes subject to a variety of potential network errors. 
+This article demonstrates some error handling approaches when working with the [Fetch API](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api). The Fetch API lets you make a request to a remote network resource. When you make a remote network call, your web page becomes subject to a variety of potential network errors. 
 
-The following sections describe potential errors and prescribe how to write code that provides a sensible level of functionality that is resilient to errors and unexpected network conditions. Resilient code keeps your users happy and maintains a standard level of service for your website. 
+The following sections describe potential errors and describe how to write code that provides a sensible level of functionality that is resilient to errors and unexpected network conditions. Resilient code keeps your users happy and maintains a standard level of service for your website. 
 
 ## Anticipate potential network errors
 
 This section describes a scenario in which the user creates a new video named   
-"My Travels.mp4" and then attempts to upload the video to a video-sharing website.
+`"My Travels.mp4"` and then attempts to upload the video to a video-sharing website.
 
 When working with Fetch, it's easy to consider the [happy path](https://en.wikipedia.org/wiki/Happy_path) where the user successfully uploads the video. However, there are other paths that are not as smooth, but for which web developers must plan. Such (unhappy) paths can happen due to user error, through unexpected environmental conditions, or because of a bug on the video-sharing website.
 
@@ -30,7 +32,7 @@ When working with Fetch, it's easy to consider the [happy path](https://en.wikip
 
 ### Examples of errors with the video-sharing website
 
--  The video-sharing website cannot handle a filename with a space. Instead of "My Travels.mp4", it expects a name such as "My_Travels.mp4" or "MyTravels.mp4".
+-  The video-sharing website cannot handle a filename with a space. Instead of `"My Travels.mp4"`, it expects a name such as `"My_Travels.mp4"` or `"MyTravels.mp4"`.
 -  The video-sharing website cannot upload a video that exceeds the maximum acceptable file size.
 -  The video-sharing website does not support the video codec in the uploaded video.
 
@@ -50,15 +52,15 @@ These examples can and do happen in the real world. You may have encountered suc
   </thead>
   <tbody>
     <tr>
-      <th>What happens by default</th>
+      <td>What happens by default</td>
       <td>The original file continues to upload in the background while the new file uploads at the same time.</td>
     </tr>
     <tr>
-      <th>What the user expects</th>
+      <td>What the user expects</td>
       <td>The user expects the original upload to stop so that no extra internet bandwidth is wasted.</td>
     </tr>
     <tr>
-      <th>What can be improved</th>
+      <td>What can be improved</td>
       <td>JavaScript cancels the Fetch request for the original file before the new file begins to upload.</td>
     </tr>
   </tbody>
@@ -75,15 +77,15 @@ These examples can and do happen in the real world. You may have encountered suc
   </thead>
   <tbody>
     <tr>
-      <th>What happens by default</th>
+      <td>What happens by default</td>
       <td>The upload progress bar appears to be stuck on 50%. Eventually, the Fetch API experiences a timeout and the uploaded data is discarded. When internet connectivity returns, the user has to reupload their file.</td>
     </tr>
     <tr>
-      <th>What the user expects</th>
+      <td>What the user expects</td>
       <td>The user expects to be notified when their file cannot be uploaded, and they expect their upload to automatically resume at 50% when they are back online.</td>
     </tr>
     <tr>
-      <th>What can be improved</th>
+      <td>What can be improved</td>
       <td>The upload page informs the user of internet connectivity issues, and reassures the user that the upload will resume when internet connectivity has resumed.</td>
     </tr>
   </tbody>
@@ -100,15 +102,15 @@ These examples can and do happen in the real world. You may have encountered suc
   </thead>
   <tbody>
     <tr>
-      <th>What happens by default</th>
+      <td>What happens by default</td>
       <td>The user must wait for the upload to completely finish. Once the file is uploaded, and the progress bar reads "100%", the progress bar displays the message: "Please try again."</td>
     </tr>
     <tr>
-      <th>What the user expects</th>
+      <td>What the user expects</td>
       <td>The user expects to be told of filename limitations before upload begins, or at least within the first second of uploading.</td>
     </tr>
     <tr>
-      <th>What can be improved</th>
+      <td>What can be improved</td>
       <td>Ideally, the video-sharing service supports filenames with spaces. Alternative options are to notify the user of filename limitations before uploading begins. Or, the video-sharing service should reject the upload with a detailed error message.</td>
     </tr>
   </tbody>
@@ -117,11 +119,11 @@ These examples can and do happen in the real world. You may have encountered suc
 
 ## Handle errors with the Fetch API
 
-Note that the following code examples use [top-level await](https://v8.dev/features/top-level-await) ([browser support](https://caniuse.com/mdn-javascript_operators_await_top_level)) because this feature can simplify your code. 
+Note that the following code examples use [top-level `await`](https://v8.dev/features/top-level-await) ([browser support](https://caniuse.com/mdn-javascript_operators_await_top_level)) because this feature can simplify your code. 
 
 ### When the Fetch API throws errors
 
-This example uses a [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) statement to catch any errors thrown within the `try` block. For example, if the Fetch API cannot fetch the specified resource, then an error is thrown. Within a `catch` block like this, take care to provide a [meaningful](https://developer.mozilla.org/docs/Glossary/Graceful_degradation) user experience. If a spinner, a common user interface that represents some sort of progress, is shown to the user, then you could take the following actions within a `catch` block:
+This example uses a [`try`/`catch` block](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) statement to catch any errors thrown within the `try` block. For example, if the Fetch API cannot fetch the specified resource, then an error is thrown. Within a `catch` block like this, take care to provide a [meaningful](https://developer.mozilla.org/docs/Glossary/Graceful_degradation) user experience. If a spinner, a common user interface that represents some sort of progress, is shown to the user, then you could take the following actions within a `catch` block:
 
 1. Remove the spinner from the page.
 1. Provide helpful messaging that explains what went wrong, and what options the user can take.
@@ -141,13 +143,13 @@ At a later stage, while you diagnose the error that you logged, you can write a 
 
 ### When the network status code represents an error
 
-This code example makes a request to an HTTP testing service that always responds with the HTTP status code [429 Too Many Requests](https://developer.mozilla.org/docs/Web/HTTP/Status/429). Interestingly, the response does not reach the `catch` block. A 404 status, amongst certain other status codes, does return [a network error](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful) but instead resolves normally.
+This code example makes a request to an HTTP testing service that always responds with the HTTP status code [`429 Too Many Requests`](https://developer.mozilla.org/docs/Web/HTTP/Status/429). Interestingly, the response does not reach the `catch` block. A 404 status, amongst certain other status codes, does return [a network error](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful) but instead resolves normally.
 
 To check that the HTTP status code was successful, you can use any of the following options:
 
--  Use the [Response.ok](https://developer.mozilla.org/docs/Web/API/Response/ok) property to determine whether the status code was in the range from 200 to 299.
--  Use the [Response.status](https://developer.mozilla.org/docs/Web/API/Response/status) property to determine whether the response was successful.
--  Use any other metadata, such as [Response.headers](https://developer.mozilla.org/docs/Web/API/Response/headers), to assess whether the response was successful.
+-  Use the [`Response.ok`](https://developer.mozilla.org/docs/Web/API/Response/ok) property to determine whether the status code was in the range from `200` to `299`.
+-  Use the [`Response.status`](https://developer.mozilla.org/docs/Web/API/Response/status) property to determine whether the response was successful.
+-  Use any other metadata, such as [`Response.headers`](https://developer.mozilla.org/docs/Web/API/Response/headers), to assess whether the response was successful.
 
 ```js
 let response;
@@ -162,7 +164,7 @@ try {
 if (response?.ok) {
   console.log('Use the response here!');
 } else {
-  console.log('HTTP Response Code: ' + response?.status)
+  console.log(`HTTP Response Code: ${response?.status}`)
 }
 ```
 
@@ -174,7 +176,7 @@ Note from the author: I was recently scrolling through an infinite scrolling lis
 
 ### When there is an error parsing the network response
 
-This code example demonstrates another type of error that can arise with parsing a response body. The [Response](https://developer.mozilla.org/docs/Web/API/Response) interface offers convenient methods to parse different types of data, such as text or JSON. In the following code, a network request is made to an HTTP testing service that returns an HTML string as the response body. However, an attempt is made to parse the response body as [JSON](https://developer.mozilla.org/docs/Web/API/Response/json), throwing an error.
+This code example demonstrates another type of error that can arise with parsing a response body. The [`Response`](https://developer.mozilla.org/docs/Web/API/Response) interface offers convenient methods to parse different types of data, such as text or JSON. In the following code, a network request is made to an HTTP testing service that returns an HTML string as the response body. However, an attempt is made to parse the response body as [JSON](https://developer.mozilla.org/docs/Web/API/Response/json), throwing an error.
 
 ```js
 let json;
@@ -198,13 +200,13 @@ if (json) {
 
 You must prepare your code to take in a variety of response formats, and verify that an unexpected response doesn't break the web page for the user.
 
-Consider the following scenario: You have a remote resource that returns a valid JSON response, and it is parsed successfully with the `Response.json()` method. It may happen that the service goes down. Once down, a [500 Internal Server Error](https://developer.mozilla.org/docs/Web/HTTP/Status/500) is returned. If appropriate error-handling techniques are not used during the parsing of JSON, this could break the page for the user because an unhandled error is thrown.
+Consider the following scenario: You have a remote resource that returns a valid JSON response, and it is parsed successfully with the `Response.json()` method. It may happen that the service goes down. Once down, a [`500 Internal Server Error`](https://developer.mozilla.org/docs/Web/HTTP/Status/500) is returned. If appropriate error-handling techniques are not used during the parsing of JSON, this could break the page for the user because an unhandled error is thrown.
 
 ### When the network request must be canceled before it completes
 
-This code example uses an [AbortController](https://developer.mozilla.org/docs/Web/API/AbortController) to cancel an in-flight request. An in-flight request is a network request that has started but has not completed.
+This code example uses an [`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController) to cancel an in-flight request. An in-flight request is a network request that has started but has not completed.
 
-The scenarios where you may need to cancel an in-flight request can vary, but it ultimately depends on your use case and environment. The following code demonstrates how to pass an [AbortSignal](https://developer.mozilla.org/docs/Web/API/AbortSignal) to the Fetch API. The AbortSignal is attached to an AbortController, and the AbortController includes an [abort()](https://developer.mozilla.org/docs/Web/API/AbortController/abort) method, which signifies to the browser that the network request should be canceled.
+The scenarios where you may need to cancel an in-flight request can vary, but it ultimately depends on your use case and environment. The following code demonstrates how to pass an [`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal) to the Fetch API. The `AbortSignal` is attached to an `AbortController`, and the `AbortController` includes an [`abort()`](https://developer.mozilla.org/docs/Web/API/AbortController/abort) method, which signifies to the browser that the network request should be canceled.
 
 ```js
 const controller = new AbortController();
