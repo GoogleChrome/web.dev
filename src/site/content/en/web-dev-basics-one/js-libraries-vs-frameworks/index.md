@@ -2,6 +2,8 @@
 layout: post
 title: The difference between JavaScript libraries and frameworks
 description: Understand the differences between frameworks and libraries in the context of a client-side JavaScript environment. 
+authors:
+  - umarhansa
 date: 2022-05-23
 ---
 
@@ -31,7 +33,7 @@ You might notice third-party code by other names, such as widgets, plugins, poly
 
 Libraries tend to be simpler than frameworks and offer a narrow scope of functionality. If you pass an input to a method and receive an output, you probably used a library.
 
-Look at this example of the `[lodash](https://lodash.com/)` library:
+Look at this example of the [`lodash`](https://lodash.com/) library:
 
 ```js
 import lodash from 'lodash'; // [1]
@@ -48,13 +50,15 @@ As is the case with many libraries, it's practical to read through this code and
 
 ### Framework
 
-Frameworks are bigger than libraries and contribute more to overall page weight. In fact, a framework can include a library. 
+Frameworks tend to be bigger than libraries and contribute more to overall page weight. In fact, a framework can include a library. 
 
 This example shows a plain framework without a library and uses [Vue](https://vuejs.org/), which is a [popular](https://2021.stateofjs.com/en-US/libraries/front-end-frameworks/#front_end_frameworks_experience_ranking) JavaScript framework:
 
 ```html
 <!-- index.html -->
+<div id="main">
   {{ message }}
+</div>
 
 <script type="module">
 import Vue from './node_modules/vue/dist/vue.esm.browser.js';
@@ -65,12 +69,13 @@ new Vue({
     message: 'Hello, world'
   }
 });
+</script>
 ```
 
 If you compare this framework example to the earlier library example, you might notice these differences:
 
 -  The framework code encompasses multiple techniques and abstracts them away into its own opinionated API.
--  Developers don't have full control over how and when operations occur. For example, how and when Vue writes the `Hello, world'` string to the page is abstracted away from you.
+-  Developers don't have full control over how and when operations occur. For example, how and when Vue writes the `'Hello, world'` string to the page is abstracted away from you.
 -  The instantiation of the `Vue` class carries some [side effects](https://simple.wikipedia.org/wiki/Side_effect_(computer_science)), which are common when you use frameworks, whereas a library may offer [pure functions](https://en.wikipedia.org/wiki/Pure_function).
 -  The framework prescribes a particular HTML template system rather than using your own.
 -  If you read further into the Vue framework documentation or most other framework documentations, you can see how frameworks prescribe architectural patterns that you can use. JavaScript frameworks take some cognitive burden away from you because you don't have to figure this out yourself.
@@ -163,7 +168,7 @@ Frameworks can mitigate against these challenges through common best practices, 
 -  The framework has an active community of developers who collaborate on free documentation, guides, tutorials, and videos. After you consume this content, you're productive with the framework.
 -  The framework offers an API that follows common [coding conventions](https://en.wikipedia.org/wiki/Coding_conventions). You're productive with the framework because you learned such conventions previously and have an increased familiarity with coding styles.
 
-While these points are commonly attributed to frameworks, they can also be attributed to libraries. For example, the `[D3.js](https://d3js.org/)` JavaScript library is powerful and has a large ecosystem that offers workshops, guides, and documentation among other resources, all of which impact its ease of use.
+While these points are commonly attributed to frameworks, they can also be attributed to libraries. For example, the [D3.js](https://d3js.org/) JavaScript library is powerful and has a large ecosystem that offers workshops, guides, and documentation among other resources, all of which impact its ease of use.
 
 Additionally, a framework typically prescribes an architecture for your web app while a library is typically compatible with your existing architecture, whatever it might be.
 
@@ -239,9 +244,9 @@ Bundling is only one facet of web performance, but it has a big performance effe
 
 For many libraries and frameworks, software updates add functionality, fix bugs, and ultimately grow in size over time. It's not always necessary to download updates, but if the updates include bug fixes, desired feature enhancements, or security fixes, then you should probably update. However, the more data you send over the wire, the less performant your app and the greater the performance effect on your user experience.
 
-If a library grows in size, you can use tree shaking to mitigate the growth. Alternatively, you can use a smaller alternative to the JavaScript library. For more information, see [Swapability](#heading=h.qxbwrslmb3bz).
+If a library grows in size, you can use tree shaking to mitigate the growth. Alternatively, you can use a smaller alternative to the JavaScript library. For more information, see [Swapability](#swapability).
 
-If a framework grows in size, not only is tree shaking more of a challenge, but it can be harder to swap out one framework for another. For more information, see [Swapability](#heading=h.qxbwrslmb3bz). 
+If a framework grows in size, not only is tree shaking more of a challenge, but it can be harder to swap out one framework for another. For more information, see [Swapability](#swapability). 
 
 {% Aside %}
 Framework authors and maintainers invest large efforts to optimize their code so you and your users can benefit. For many popular frameworks and libraries, performance fixes and improvements are often shipped with the software updates. Performance doesn't always get worse over time!</th>
