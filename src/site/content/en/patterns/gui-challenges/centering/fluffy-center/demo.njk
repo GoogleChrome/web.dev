@@ -110,6 +110,7 @@ patternId: gui-challenges/centering
       function addEl() {
         let newNode = document.createElement('h1')
         newNode.textContent = examples[position++] || 'Sibling'
+        newNode.setAttribute('has-centering-styles', true)
         newNode.classList.add('fluffy-center')
 
         document.querySelector('article').appendChild(newNode)
