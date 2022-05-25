@@ -60,7 +60,7 @@ Below is a list of the most important capabilities you can use in your PWA.
 - *Web Performance* APIs to measure and help provide a better experience. See [the Performance API guide](https://developer.mozilla.org/docs/Web/API/Performance_API) for more information.
 - *Store data locally* with IndexedDB and storage management to query quota and request persistent storage, as seen in the [Offline data chapter](/learn/pwa/offline-data).
 - *Low-level audio* thanks to the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API).
-- *Foreground detection* using the [Page Visibility API](​​https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
+- *Foreground detection* using the [Page Visibility API](https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
 - *Network communication* using the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) and the [WebSocket API](https://developer.mozilla.org/docs/Web/API/WebSockets_API).
 
 #### Hardware and sensors
