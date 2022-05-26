@@ -15,7 +15,9 @@ tags:
   - html
   - javascript
   - layout
-  - animation
+  - animations
+  - svg
+  - ux
   - intl
 ---
 
