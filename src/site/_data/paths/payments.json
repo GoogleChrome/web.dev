@@ -45,11 +45,11 @@
            ]
         },
         {
-          "title": "i18n.paths.payments.topics.secure_payment_confirmation",
-	    "urls": [
-		   "https://developer.chrome.com/articles/secure-payment-confirmation",
-		   "https://developer.chrome.com/articles/register-secure-payment-confirmation",
-		   "https://developer.chrome.com/articles/authenticate-secure-payment-confirmation",
+           "title": "i18n.paths.payments.topics.secure_payment_confirmation",
+           "urls": [
+            "https://developer.chrome.com/articles/secure-payment-confirmation",
+            "https://developer.chrome.com/articles/register-secure-payment-confirmation",
+            "https://developer.chrome.com/articles/authenticate-secure-payment-confirmation",
 	    ]
         }
       ]
