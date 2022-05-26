@@ -5,8 +5,7 @@ description: A collection of animation techniques built using CSS or JavaScript 
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/PRyD1Ad1GtT6IZLqWtu1.svg
 ---
 
-todo
-
-{% Aside 'objective' %}
-Enhance user experiences with accessible and appropriate animation.
-{% endAside %}
+Welcome to our growing collection of animation patterns. These patterns try to
+demonstrate how you can create engaging animations and interactions while still
+respecting user's preferences for motion. They also support all modern browsers,
+so you can use them with confidence.

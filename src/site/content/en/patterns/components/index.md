@@ -5,9 +5,6 @@ description: A collection of cross browser UI components for use in accelerating
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/PRyD1Ad1GtT6IZLqWtu1.svg
 ---
 
-todo
-
-{% Aside 'objective' %}
-Inspiration and snippets for creating accessible,
-adaptive and internationally available UI components.
-{% endAside %}
+Welcome to our growing collection of component patterns. These can provide
+inspiration, accessibility requirements, adaptive strategies for viewport and
+user preferences, and more.
