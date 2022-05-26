@@ -9,3 +9,4 @@ Welcome to our growing collection of animation patterns. These patterns try to
 demonstrate how you can create engaging animations and interactions while still
 respecting user's preferences for motion. They also support all modern browsers,
 so you can use them with confidence.
+<br><br>

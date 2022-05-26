@@ -8,3 +8,4 @@ hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/PRyD1Ad1GtT6IZLqWtu1.svg
 Welcome to our growing collection of component patterns. These can provide
 inspiration, accessibility requirements, adaptive strategies for viewport and
 user preferences, and more.
+<br><br>
