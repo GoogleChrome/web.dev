@@ -36,13 +36,30 @@
           ]
         },
         {
-          "title": "i18n.paths.payments.topics.build_a_web_based_payment_app",
-          "pathItems": [
-            "web-based-payment-apps-overview",
-            "registering-a-web-based-payment-app",
-            "orchestrating-payment-transactions",
-            "handling-optional-payment-information"
-          ]
+           "title": "i18n.paths.payments.topics.build_a_web_based_payment_app",
+           "pathItems": [
+             "web-based-payment-apps-overview",
+             "registering-a-web-based-payment-app",
+             "orchestrating-payment-transactions",
+             "handling-optional-payment-information"
+           ]
+        },
+        {
+           "title": "i18n.paths.payments.topics.secure_payment_confirmation",
+           "pathItems": [
+             {
+               "title": "Secure Payment Confirmation (developer.chrome.com)",
+               "url": "https://developer.chrome.com/articles/secure-payment-confirmation"
+             },
+             {
+               "title": "Register a Secure Payment Confirmation (developer.chrome.com)",
+               "url": "https://developer.chrome.com/articles/register-secure-payment-confirmation"
+             },
+             {
+               "title": "Authenticate with Secure Payment Confirmation (developer.chrome.com)",
+               "url": "https://developer.chrome.com/articles/authenticate-secure-payment-confirmation"
+             }
+	        ]
         }
       ]
     }
