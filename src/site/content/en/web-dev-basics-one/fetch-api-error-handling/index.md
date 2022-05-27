@@ -52,15 +52,15 @@ These examples can and do happen in the real world. You may have encountered suc
   </thead>
   <tbody>
     <tr>
-      <td>What happens by default</td>
+      <th>What happens by default</th>
       <td>The original file continues to upload in the background while the new file uploads at the same time.</td>
     </tr>
     <tr>
-      <td>What the user expects</td>
+      <th>What the user expects</th>
       <td>The user expects the original upload to stop so that no extra internet bandwidth is wasted.</td>
     </tr>
     <tr>
-      <td>What can be improved</td>
+      <th>What can be improved</th>
       <td>JavaScript cancels the Fetch request for the original file before the new file begins to upload.</td>
     </tr>
   </tbody>
@@ -77,15 +77,15 @@ These examples can and do happen in the real world. You may have encountered suc
   </thead>
   <tbody>
     <tr>
-      <td>What happens by default</td>
+      <th>What happens by default</th>
       <td>The upload progress bar appears to be stuck on 50%. Eventually, the Fetch API experiences a timeout and the uploaded data is discarded. When internet connectivity returns, the user has to reupload their file.</td>
     </tr>
     <tr>
-      <td>What the user expects</td>
+      <th>What the user expects</th>
       <td>The user expects to be notified when their file cannot be uploaded, and they expect their upload to automatically resume at 50% when they are back online.</td>
     </tr>
     <tr>
-      <td>What can be improved</td>
+      <th>What can be improved</th>
       <td>The upload page informs the user of internet connectivity issues, and reassures the user that the upload will resume when internet connectivity has resumed.</td>
     </tr>
   </tbody>
@@ -102,15 +102,15 @@ These examples can and do happen in the real world. You may have encountered suc
   </thead>
   <tbody>
     <tr>
-      <td>What happens by default</td>
+      <th>What happens by default</th>
       <td>The user must wait for the upload to completely finish. Once the file is uploaded, and the progress bar reads "100%", the progress bar displays the message: "Please try again."</td>
     </tr>
     <tr>
-      <td>What the user expects</td>
+      <th>What the user expects</th>
       <td>The user expects to be told of filename limitations before upload begins, or at least within the first second of uploading.</td>
     </tr>
     <tr>
-      <td>What can be improved</td>
+      <th>What can be improved</th>
       <td>Ideally, the video-sharing service supports filenames with spaces. Alternative options are to notify the user of filename limitations before uploading begins. Or, the video-sharing service should reject the upload with a detailed error message.</td>
     </tr>
   </tbody>
