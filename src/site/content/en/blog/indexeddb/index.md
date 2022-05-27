@@ -36,7 +36,7 @@ Each IndexedDB database is unique to an origin (typically, this is the site doma
 
 Because IndexedDB isn't supported by all browsers, we need to check that the  [user's browser supports it](http://caniuse.com/#search=indexeddb) before using it. The easiest way is to check the window object:
 
-```
+```js
 if (!('indexedDB' in window)) {
   console.log('This browser doesn\'t support IndexedDB');
   return;
@@ -269,7 +269,7 @@ We can then open the "store" object store on this transaction and assign it to t
 
 ### Reading data
 
-To read data, call the  [`get`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/get) method on the object store. The `get` method takes the primary key of the object you want to retrieve from the store. Here is a basic example:
+To read data, call the  [`get`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get) method on the object store. The `get` method takes the primary key of the object you want to retrieve from the store. Here is a basic example:
 
 ```js
 someObjectStore.get(primaryKey);
@@ -329,7 +329,7 @@ To update an existing item in the object store, use the `put` method on an objec
 
 ### Deleting data
 
-To delete data, call the  [`delete`](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/delete) method on the object store.
+To delete data, call the  [`delete`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete) method on the object store.
 
 ```js
 someObjectStore.delete(primaryKey);
@@ -380,7 +380,7 @@ Here we are calling `getAll` on the "store" object store. This returns all of th
 
 Another way to retrieve all of the data is to use a cursor. A cursor selects each object in an object store or index one by one, letting you do something with the data as it is selected. Cursors, like the other database operations, work within transactions.
 
-We create the cursor by calling the  [openCursor](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/openCursor) method on the object store, like this:
+We create the cursor by calling the  [openCursor](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor) method on the object store, like this:
 
 ```js
 someObjectStore.openCursor(optionalKeyRange, optionalDirection);
