@@ -23,7 +23,7 @@ The `outputLatency` property of an `AudioContext` instance provides an estimate 
 In this [WebCodecs demo](https://wc-talk.netlify.app/simple_video_player.html) ([source](https://github.com/chcunningham/wc-talk)), the [WebCodecs API](https://developer.mozilla.org/docs/Web/API/WebCodecs_API) is used to decode a `MediaStream` into raw video and audio data, and then played back into a HTML `<canvas>` element with audio data coming from an [Audio Worklet](https://developer.mozilla.org/docs/Web/API/AudioWorklet). The `outputLatency` property allows the demo to determine when a given audio timestamp is reaching the user's ears and then properly paint video frames to match that.
 
 <figure>
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/p61K2S4Wye34OJn4XZOj.png", alt="A screenshot of the demo", width="800", height="533" %}
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/p61K2S4Wye34OJn4XZOj.png", alt="A screenshot of the demo, which is of an embedded video with audio controls for volume, audio buffer health, total output latency, and a checkbox to use AudioContext.outputLatency.", width="800", height="533" %}
 </figure>
 
 Try it out for yourself, play the video with your favorite Bluetooth headset (🎧), wait for the bird (🐦) (see above), and toggle the checkbox (☑️) to observe audio playback changes. The total output latency value is updated in real time.
