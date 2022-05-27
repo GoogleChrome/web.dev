@@ -57,7 +57,7 @@ This example shows a plain framework without a library and uses [Vue](https://vu
 ```html
 <!-- index.html -->
 <div id="main">
-  {{ message }}
+  {{ '{{ message }}' }}
 </div>
 
 <script type="module">
