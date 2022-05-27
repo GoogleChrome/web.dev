@@ -13,9 +13,9 @@ This text guides you through the basics of the  [IndexedDB API](https://develope
 
 IndexedDB is a large-scale, NoSQL storage system. It lets you store just about anything in the user's browser. In addition to the usual search, get, and put actions, IndexedDB also supports transactions. Here is the definition of IndexedDB on MDN:
 
-"IndexedDB is a low-level API for client-side storage of significant amounts of structured data, including files/blobs. This API uses indexes to enable high performance searches of this data. While DOM Storage is useful for storing smaller amounts of data, it is less useful for storing larger amounts of structured data. IndexedDB provides a solution."
+> "IndexedDB is a low-level API for client-side storage of significant amounts of structured data, including files/blobs. This API uses indexes to enable high performance searches of this data. While DOM Storage is useful for storing smaller amounts of data, it is less useful for storing larger amounts of structured data. IndexedDB provides a solution."
 
-Each IndexedDB database is unique to an origin (typically, this is the site domain or subdomain), meaning it cannot access or be accessed by any other origin.  [Data storage limits](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria) are usually quite large, if they exist at all, but different browsers handle limits and data eviction differently. See the  [Further reading](#resources) section for more information.
+Each IndexedDB database is unique to an origin (typically, this is the site domain or subdomain), meaning it cannot access or be accessed by any other origin.  [Data storage limits](/storage-for-the-web/) are usually quite large, if they exist at all, but different browsers handle limits and data eviction differently. See the  [Further reading](#resources) section for more information.
 
 ## IndexedDB terms {: #terms }
 
@@ -38,7 +38,7 @@ Because IndexedDB isn't supported by all browsers, we need to check that the  [u
 
 ```js
 if (!('indexedDB' in window)) {
-  console.log('This browser doesn\'t support IndexedDB');
+  console.log("This browser doesn't support IndexedDB");
   return;
 }
 ```
@@ -531,7 +531,7 @@ Assuming the database we created in the previous example still exists in the bro
 
 ### Data storage limits
 
-*  [Working with quota on mobile browsers](http://www.html5rocks.com/en/tutorials/offline/quota-research/)
+*  [Storage for the web](/storage-for-the-web/)
 *  [Browser storage limits and eviction criteria](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria)
 
 
