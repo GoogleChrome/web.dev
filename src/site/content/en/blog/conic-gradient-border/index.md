@@ -2,7 +2,7 @@
 title: Use conic gradients to create a cool border
 subhead: >
   Conic gradients can be used to create some interesting effects, such as this nice border example. 
-date: 2022-04-11
+date: 2022-05-27
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/xK2kXKqAmfaofSEN5XJ3.jpg
 author: rachelandrew
 tags:
