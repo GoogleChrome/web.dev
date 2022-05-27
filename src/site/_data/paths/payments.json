@@ -46,11 +46,20 @@
         },
         {
            "title": "i18n.paths.payments.topics.secure_payment_confirmation",
-           "urls": [
-            "https://developer.chrome.com/articles/secure-payment-confirmation",
-            "https://developer.chrome.com/articles/register-secure-payment-confirmation",
-            "https://developer.chrome.com/articles/authenticate-secure-payment-confirmation",
-	    ]
+           "pathItems": [
+             {
+               "title": "Secure Payment Confirmation (developer.chrome.com)",
+               "url": "https://developer.chrome.com/articles/secure-payment-confirmation"
+             },
+             {
+               "title": "Register a Secure Payment Confirmation (developer.chrome.com)",
+               "url": "https://developer.chrome.com/articles/register-secure-payment-confirmation"
+             },
+             {
+               "title": "Authenticate with Secure Payment Confirmation (developer.chrome.com)",
+               "url": "https://developer.chrome.com/articles/authenticate-secure-payment-confirmation"
+             }
+	        ]
         }
       ]
     }
