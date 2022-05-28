@@ -6,6 +6,7 @@ file_a_bug:
   pt: Registrar um bug
   ru: Сообщить об ошибке
   zh: 提交错误
+  vi: Tìm kiếm lỗi
 
 view_source:
   en: View source
@@ -15,6 +16,7 @@ view_source:
   pt: Visualizar código-fonte
   ru: Просмотреть исходный код
   zh: 查看源代码
+  vi: Mã nguồn
 
 related_content:
   en: Related content
@@ -24,6 +26,7 @@ related_content:
   pt: Conteúdo relacionado
   ru: Дополнительная информация
   zh: 相关内容
+  vi: Liên kết hữu ích
 
 chrome_updates:
   en: Chrome updates
@@ -33,6 +36,7 @@ chrome_updates:
   pt: Atualizações do Chrome
   ru: Новости Chrome
   zh: Chrome 动态
+  vi: Cập nhật Chrome
 
 web_fundamentals:
   en: Web Fundamentals
@@ -42,6 +46,7 @@ web_fundamentals:
   pt: Web Fundamentals
   ru: Web Fundamentals
   zh: 网站开发基础
+  vi: Web Fundamentals
 
 case_studies:
   en: Case studies
@@ -51,6 +56,7 @@ case_studies:
   pt: Estudos de caso
   ru: Разборы конкретных случаев
   zh: 案例研究
+  vi: Case studies
 
 podcasts:
   en: Podcasts
@@ -60,6 +66,7 @@ podcasts:
   pt: Podcasts
   ru: Подкасты
   zh: 播客
+  vi: Podcasts
 
 connect:
   en: Connect
@@ -69,6 +76,7 @@ connect:
   pt: Conectar
   ru: Соцсети
   zh: 连接
+  vi: Kết nối
 
 all_products:
   en: All products
@@ -78,6 +86,7 @@ all_products:
   pt: Todos os produtos
   ru: Все продукты
   zh: 所有产品
+  vi: Tất cả sản phẩm
 
 terms_and_privacy:
   en: Terms & Privacy
@@ -87,6 +96,7 @@ terms_and_privacy:
   pt: Termos e privacidade
   ru: Условия и конфиденциальность
   zh: 条款和隐私权
+  vi: Điều khoản & Quyền riêng tư
 
 community_guidelines:
   en: Community Guidelines
@@ -95,7 +105,8 @@ community_guidelines:
   ko: 커뮤니티 가이드라인
   pt: Diretrizes da comunidade
   ru: Правила сообщества
-  zh: 社区准则
+  zh: 社区准则,
+  vi: Hướng dẫn cộng đồng
 
 shows:
   en: Shows
@@ -105,6 +116,7 @@ shows:
   pt: Shows
   ru: Шоу
   zh: 节目
+  vi: Shows
 
 developer_chrome_com:
   en: developer.chrome.com
