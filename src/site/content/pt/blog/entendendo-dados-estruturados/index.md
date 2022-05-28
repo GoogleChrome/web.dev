@@ -36,18 +36,20 @@ Quais maneiras de criar dados estruturados ?
 
 Vamos explorar um pouco cada um e vamos iniciar pelo JSON-LD o qual é mais recomendado pela própria Google a usar.
 
-  ## JSON-LD
+## JSON-LD
 
 JSON-LD e uma notação que incorporamos dentro de uma tag `<script></script>` iremos usar ela logo após, a vantagem deste e que o Google consegue entender e ler os dados podendo ser injetados dinamicamente na página facilitando assim o entendimento, vale ressaltar que o usuário não consegue visualizar o JSON-LD então para usá-lo e muito prático pois você consegue demarcar e ficar mais simples o entendimento ao Google..
 
- ## Microdados
+## Microdados
 
 Microdados como o JSON-LD o microdata é de comunidade aberta, ela é uma especificação do HTML usada para definir dados estruturados assim como o RDFa que iremos falar logo mais ele usa atributos de tags para alinhar os dados.
 
- ## RDFa
+## RDFa
+
 RDFa ele é uma extensão do HTML é compatível com dados vinculados ou seja diferente do JSON-LD que o usuário não iria enxergar a marcação aqui já seria mais visível a ele, costumamos usar o RDFa em cabeçalho mas também pode ser usado no corpo depende de como vai trabalhar.
 
- ## Exemplo
+## Exemplo
+
 Vou mostrar alguns modos de uso, mas quero deixar aqui a documentação e galeria de resultados da Google para vocês poderem acessar, lembrando que no schema.org vocês podem ver um pouco mais sobre cada atributos que vamos usar.
 
 
@@ -68,7 +70,7 @@ Quero mostrar um exemplo de como seria um dado estruturado de um artigo, mas ant
 
 
 Agora que temos as informações como isso seria em um dado estruturado usando a marcação JSON-LD?
-```
+```js
 
    <script type="application/ld+json">
        {
