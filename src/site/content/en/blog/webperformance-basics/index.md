@@ -13,7 +13,7 @@ tags:
 
 People like web pages that load quickly. Google [experiments](http://googleresearch.blogspot.com/2009/06/speed-matters.html) show that a delay as small as a hundred milliseconds can have an adverse effect. But how do we measure web page load speed? And what does "page load" actually mean?
 
-[Navigation Timing](http://www.w3.org/TR/navigation-timing/) is a JavaScript API for accurately measuring performance on the web. The API provides a simple way to get accurate and detailed timing statistics-natively-for page navigation and load events.  It's available now in [Internet Explorer 9](http://msdn.microsoft.com/en-us/library/ie/hh673552(v=vs.85).aspx), [Google Chrome](http://www.google.com/chrome) and in [Firefox](http://www.mozilla.org/en-US/firefox/).
+[Navigation Timing](http://www.w3.org/TR/navigation-timing/) is a JavaScript API for accurately measuring performance on the web. The API provides a simple way to get accurate and detailed timing statistics-natively-for page navigation and load events.  It's available now in [Internet Explorer 9](http://msdn.microsoft.com/library/ie/hh673552(v=vs.85).aspx), [Google Chrome](http://www.google.com/chrome) and in [Firefox](http://www.mozilla.org/firefox/).
 
 This article describes the API and shows ways to make use of the timing data it exposes.
 
