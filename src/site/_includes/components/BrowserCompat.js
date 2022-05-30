@@ -15,19 +15,22 @@
  */
 const bcd = require('../../_utils/browserCompat');
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
+const defaultBcd = require('@mdn/browser-compat-data');
 
 const browsers = ['chrome', 'firefox', 'edge', 'safari'];
 
 /**
  * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
+ * @param {import('@mdn/browser-compat-data/types').ReleaseStatement} release
  * @returns {string}
  */
-const compatVersion = (support) => {
+const compatVersion = (support, release) => {
   if (!support.version_removed && support.version_added === 'preview') {
     return '\uD83D\uDC41'; // 👁 eye
   } else if (
     !support.version_removed &&
-    typeof support.version_added === 'string'
+    typeof support.version_added === 'string' &&
+    (release.status === 'current' || release.status === 'retired')
   ) {
     return support.version_added;
   } else {
@@ -37,12 +40,17 @@ const compatVersion = (support) => {
 
 /**
  * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
+ * @param {import('@mdn/browser-compat-data/types').ReleaseStatement} release
  * @returns {string}
  */
-const compatProperty = (support) => {
+const compatProperty = (support, release) => {
   if (!support.version_removed && support.version_added === 'preview') {
     return 'preview';
-  } else if (!support.version_removed && support.version_added) {
+  } else if (
+    !support.version_removed &&
+    support.version_added &&
+    (release.status === 'current' || release.status === 'retired')
+  ) {
     return 'yes';
   } else {
     return 'no';
@@ -51,13 +59,18 @@ const compatProperty = (support) => {
 
 /**
  * @param {import('@mdn/browser-compat-data/types').SimpleSupportStatement} support
+ * @param {import('@mdn/browser-compat-data/types').ReleaseStatement} release
  * @param {string} locale
  * @returns {string}
  */
-const compatAria = (support, locale) => {
+const compatAria = (support, release, locale) => {
   if (!support.version_removed && support.version_added === 'preview') {
     return i18n('i18n.browser_compat.preview', locale);
-  } else if (!support.version_removed && support.version_added) {
+  } else if (
+    !support.version_removed &&
+    support.version_added &&
+    (release.status === 'current' || release.status === 'retired')
+  ) {
     return i18n('i18n.browser_compat.supported', locale);
   } else {
     return i18n('i18n.browser_compat.not_supported', locale);
@@ -72,6 +85,8 @@ function BrowserCompat(feature) {
   const locale = getLocaleFromPath(this.page && this.page.filePathStem);
   const data = bcd();
   let compatIcons = [];
+  /** @type {import('@mdn/browser-compat-data/types').ReleaseStatement} */
+  let release;
 
   if (data[feature] && data[feature].support) {
     compatIcons = browsers.map((browser) => {
@@ -82,19 +97,23 @@ function BrowserCompat(feature) {
 
       const isSupported = support.version_added && !support.version_removed;
 
+      if (isSupported && typeof support.version_added === 'string') {
+        release = defaultBcd.browsers[browser].releases[support.version_added];
+      }
+
       const ariaLabel = [
         browser,
         isSupported ? ` ${support.version_added}, ` : ', ',
-        compatAria(support, locale),
+        compatAria(support, release, locale),
       ].join('');
 
       return `<span class="browser-compat__icon" data-browser="${browser}">
           <span class="visually-hidden">${ariaLabel}</span>
       </span>
       <span class="browser-compat__version"
-        data-compat="${compatProperty(support)}"
+        data-compat="${compatProperty(support, release)}"
       >
-        ${compatVersion(support)}
+        ${compatVersion(support, release)}
       </span>
       `;
     });
