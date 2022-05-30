@@ -46,21 +46,21 @@ These examples can and do happen in the real world. You may have encountered suc
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th>The user begins uploading the wrong video file. Then, part way through the upload, the user specifies the correct video file for upload.</th>
+      <th scope="row">Action</th>
+      <td>The user begins uploading the wrong video file. Then, part way through the upload, the user specifies the correct video file for upload.</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>What happens by default</th>
+      <th scope="row">What happens by default</th>
       <td>The original file continues to upload in the background while the new file uploads at the same time.</td>
     </tr>
     <tr>
-      <th>What the user expects</th>
+      <th scope="row">What the user expects</th>
       <td>The user expects the original upload to stop so that no extra internet bandwidth is wasted.</td>
     </tr>
     <tr>
-      <th>What can be improved</th>
+      <th scope="row">What can be improved</th>
       <td>JavaScript cancels the Fetch request for the original file before the new file begins to upload.</td>
     </tr>
   </tbody>
@@ -71,21 +71,21 @@ These examples can and do happen in the real world. You may have encountered suc
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th scope="row">Action</th>
       <th>The user loses their internet connection part way through uploading the video.</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>What happens by default</th>
+      <th scope="row">What happens by default</th>
       <td>The upload progress bar appears to be stuck on 50%. Eventually, the Fetch API experiences a timeout and the uploaded data is discarded. When internet connectivity returns, the user has to reupload their file.</td>
     </tr>
     <tr>
-      <th>What the user expects</th>
+      <th scope="row">What the user expects</th>
       <td>The user expects to be notified when their file cannot be uploaded, and they expect their upload to automatically resume at 50% when they are back online.</td>
     </tr>
     <tr>
-      <th>What can be improved</th>
+      <th scope="row">What can be improved</th>
       <td>The upload page informs the user of internet connectivity issues, and reassures the user that the upload will resume when internet connectivity has resumed.</td>
     </tr>
   </tbody>
@@ -96,21 +96,21 @@ These examples can and do happen in the real world. You may have encountered suc
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th scope="row">Action</th>
       <th>The video-sharing website cannot handle a filename with a space. Instead of "My Travels.mp4", it expects names such as "My_Travels.mp4" or "MyTravels.mp4".</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>What happens by default</th>
+      <th scope="row">What happens by default</th>
       <td>The user must wait for the upload to completely finish. Once the file is uploaded, and the progress bar reads "100%", the progress bar displays the message: "Please try again."</td>
     </tr>
     <tr>
-      <th>What the user expects</th>
+      <th scope="row">What the user expects</th>
       <td>The user expects to be told of filename limitations before upload begins, or at least within the first second of uploading.</td>
     </tr>
     <tr>
-      <th>What can be improved</th>
+      <th scope="row">What can be improved</th>
       <td>Ideally, the video-sharing service supports filenames with spaces. Alternative options are to notify the user of filename limitations before uploading begins. Or, the video-sharing service should reject the upload with a detailed error message.</td>
     </tr>
   </tbody>
