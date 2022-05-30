@@ -13,7 +13,7 @@ A key aspects of Progressive Web Apps is that they're reliable; they can load as
 
 The [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event lets us intercept every network request made by the PWA in the service worker's scope, for both same-origin and cross-origin requests. In addition to navigation and asset requests, fetching from an installed service worker allows page visits after a site's first load to be rendered without network calls.
 
-The `fetch` handler receives all requests from an app, including URLs and HTTP headers, and lets the app developer decided how to process them.
+The `fetch` handler receives all requests from an app, including URLs and HTTP headers, and lets the app developer decide how to process them.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WExZeP8vV28bPDBlpxuG.png", alt="The service worker sits between the client and the network.", width="800", height="439" %}
 
