@@ -2,12 +2,12 @@
 layout: post
 title: "New to the web platform in May"
 subhead: >
-  Discover some of the interesting features that landed in stable and beta web browsers during April 2022. 
+  Discover some of the interesting features that landed in stable and beta web browsers during May 2022. 
 description: >
-  Discover some of the interesting features that landed in stable and beta web browsers during April 2022.
+  Discover some of the interesting features that landed in stable and beta web browsers during May 2022.
 date: 2022-05-31
-hero: image/kheDArv5csY6rvQUJDbWRscckLr1/0fQKPX21U9INqtEspLze.jpg
-alt: Colorful stripes.
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/eZEXEaB9RiOw8fB7OUtD.jpg
+alt: A balloon ascending into a bright blue sky.
 authors:
   - rachelandrew
 tags:
@@ -31,17 +31,17 @@ Chrome 102 ships the [Navigation API](https://developer.chrome.com/docs/web-plat
 
 {% BrowserCompat 'api.Navigation' %}
 
-Firefox 101 supports [constructable stylesheets](/constructable-stylesheets/). Support includes the CSSStyleSheet() constructor, and the replace(), and replaceSync() methods. Constructable stylesheets make it easier to create stylesheets for use with the Shadow DOM. In the following example, a stylesheet is created using the CSSStyleSheet constructor, a CSS rule is added with the replaceSync() method, and the resulting rule is printed to the console.
+Firefox 101 supports [constructable stylesheets](/constructable-stylesheets/). Support includes the `CSSStyleSheet()` constructor, and the `replace()`, and `replaceSync()` methods. Constructable stylesheets make it easier to create stylesheets for use with the Shadow DOM. In the following example, a stylesheet is created using the `CSSStyleSheet()` constructor, a CSS rule is added with the `replaceSync()` method, and the resulting rule is printed to the console.
 
 ```js
 const stylesheet = new CSSStyleSheet();
-
 stylesheet.replaceSync('body { color: red; }');
-
 console.log(stylesheet.rules[0].cssText);
 ```
 
-Also in Firefox 101 is the `prefers-contrast` media feature, making this feature available cross-browser.
+{% BrowserCompat 'api.CSSStyleSheet.CSSStyleSheet' %}
+
+Also in Firefox 101 is the [`prefers-contrast`](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast) media feature, making this feature available cross-browser.
 
 {% BrowserCompat 'css.at-rules.media.prefers-contrast' %}
 
@@ -51,7 +51,7 @@ Beta browser versions give you a preview of things that will be in the next stab
 
 New betas in April were [Chrome 103](https://blog.chromium.org/2022/05/chrome-103-beta-early-navigation-hints.html) and [Firefox 102](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/102). 
 
-Firefox 102 includes the `update` media feature. This is used to query whether the output device can modify the appearance of content once it has been rendered. It accepts the following values:
+Firefox 102 includes the [`update`](https://developer.mozilla.org/docs/Web/CSS/@media/update-frequency) media feature. This is used to query whether the output device can modify the appearance of content once it has been rendered. It accepts the following values:
 
 `none`
 : Once rendered the content cannot be updated. For example, a printed document.
@@ -62,12 +62,13 @@ Firefox 102 includes the `update` media feature. This is used to query whether t
 `fast`
 : The content can change dynamically, and quickly enough to render animations. For example, a computer or phone screen.
 
-{% BrowserCompat 'css.at-rules.media.prefers-contrast.update' %}
+{% BrowserCompat 'css.at-rules.media.update' %}
+
+Chrome 103 includes the [`Element.isVisible()`](https://chromestatus.com/feature/5163102852087808) method. This method returns true is an element is visible, and false if not. To decide if an element is visible it checks factors including `display: none`, `visibility`, `content-visibility`, and `opacity`.
+
+{% BrowserCompat 'api.Element.isVisible' %}
 
 Chrome 103 also includes the [Local Font Access API](/local-fonts/), which allows access to the user's locally installed fonts.
 
 These beta features will land in stable browsers soon.
-
-_Hero image by [Jason Leung](https://unsplash.com/@ninjason)_
-  
   
