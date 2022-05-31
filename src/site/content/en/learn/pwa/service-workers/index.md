@@ -79,7 +79,7 @@ Safari has more complex scope management, known as partitions, affecting how sco
 ## Lifecycle
 
 Service workers have a lifecycle that dictates how they are installed, this is separate from your PWA installation.
-The service worker lifecycle starts with registering the service worker. The browser then attempts to download and parse the service worker file. If parsing succeeds, it's `install` event is fired. The `install` event only fires once.
+The service worker lifecycle starts with registering the service worker. The browser then attempts to download and parse the service worker file. If parsing succeeds, its `install` event is fired. The `install` event only fires once.
 
 Service worker installation happens silently, without requiring user permission, even if the user doesn't install the PWA. The Service Worker API is even available on platforms that do not support PWA installation, such as Safari and Firefox on desktop devices.
 
