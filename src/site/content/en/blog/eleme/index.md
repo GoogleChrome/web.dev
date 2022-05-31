@@ -7,7 +7,7 @@ date: 2017-09-27
 updated: 2018-01-12
 tags:
   - blog
-  - case-studies
+  - case-study
 
 ---
 

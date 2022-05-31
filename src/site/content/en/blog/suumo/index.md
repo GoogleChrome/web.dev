@@ -5,7 +5,7 @@ date: 2016-05-11
 updated: 2016-05-11
 tags:
   - blog
-  - case-studies
+  - case-study
 
 ---
 
