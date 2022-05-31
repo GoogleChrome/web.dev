@@ -309,6 +309,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/webgpu/
   - source: /storage-foundation
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
+  - source: /app-history-api
+    destination: https://developer.chrome.com/docs/web-platform/navigation-api/
 
   # Redirect for Aurora
   - source: /aurora

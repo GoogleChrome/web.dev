@@ -58,3 +58,6 @@ topics:
     pt: Crie uma aplicação de pagamento baseada na web
     ru: Создание платежного веб-приложения
     zh: 构建一个 Web 付款应用
+
+  secure_payment_confirmation:
+    en: Find out about the Secure Payment Confirmation proposal
