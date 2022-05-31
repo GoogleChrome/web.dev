@@ -182,7 +182,7 @@ You can also check if persistent storage is already granted in the current origi
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/W89sHSgKqkh9xV8nVD0C.png", alt="Mozilla Firefox asking the user for storage persistence permission.", width="800", height="279" %}
 
 {% Aside 'caution' %}
-The `StorageManager` interface has `persist()` and `persisted()` methods that both return Promisesd that resolve with a boolean. The `persist()` function asks for enabling persistent storage and returns the result, and `persisted()` returns the current state without affecting it.
+The `StorageManager` interface has `persist()` and `persisted()` methods that both return Promises that resolve with a boolean. The `persist()` function asks for enabling persistent storage and returns the result, and `persisted()` returns the current state without affecting it.
 {% endAside %}
 
 {% Aside %}
