@@ -50,7 +50,7 @@ You must call `respondWith()` synchronously and you must return a [Response](htt
 
 Thanks to the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API), you can create HTTP responses in your JavaScript code, and those responses can be cached using the Cache Storage API and returned as if they were coming from a web server.
 
-To create a response, create a new `Response` object, setting its body and options such as status and headers:.
+To create a response, create a new `Response` object, setting its body and options such as status and headers:
 
 ```js
 const simpleResponse = new Response("Body of the HTTP response");
