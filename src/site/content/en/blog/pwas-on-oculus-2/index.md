@@ -18,7 +18,7 @@ description: >
   of Oculus Quest 2's multitasking feature. This article describes the experience and how to build,
   sideload, and test your PWA on the Oculus Quest 2.
 date: 2022-01-10
-updated: 2022-05-30
+updated: 2022-05-31
 tags:
   - blog
   - capabilities
@@ -403,7 +403,7 @@ that, everything else was performant and responsive, as you can see in the embed
 PWA support on Oculus Quest is not limited to flat 2D apps. Developers can build immersive 3D
 experiences for VR using [WebXR API](/tags/webxr/).
 
-Wondering how various prompts (PWA install, permission requests, notifications) handled
+Wondering how various prompts (PWA install, permission requests, notifications) are handled
 from within XR, if at all?
 
 Here's a screencast of
