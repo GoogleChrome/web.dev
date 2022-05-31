@@ -17,7 +17,7 @@ tags:
 
 ## Stable browser releases
 
-In May, Chrome 102, [Safari 15.5](https://developer.apple.com/documentation/safari-release-notes/safari-15_5-release-notes), [Firefox 100](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/100), and [Firefox 101](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/101) became stable.
+In May, Chrome 102, [Safari 15.5](https://developer.apple.com/documentation/safari-release-notes/safari-15_5-release-notes), [Firefox 100](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/100), and [Firefox 101](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/101) became stable.
 
 Chrome 102 and Safari 15.5 include [the `inert` attribute](https://developer.chrome.com/blog/inert/). This removes elements from the tab order and accessibility tree if they are non-interactive. For example, an element that is currently offscreen or hidden. 
 
