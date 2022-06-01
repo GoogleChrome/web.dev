@@ -115,7 +115,7 @@ If the browser doesn't support the `beforeinstallprompt` or the event does not f
 
 You should only render these instructions in browser mode; other display options, such as `standalone` or `fullscreen` mean the user has already installed the app.
 
-To render the element only in browser mode, use the`display-mode` media query:
+To render the element only in browser mode, use the `display-mode` media query:
 
 ```css
 #installInstructions {
