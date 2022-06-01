@@ -421,8 +421,8 @@ Requesting permissions leaves the immersive mode. Notifications are currently no
 ### Hand tracking
 
 You can use your hands to interact with PWAs in immersive mode thanks to the
-[WebXR Hand Input API](https://immersive-web.github.io/webxr-hand-input/) and some Meta's
-[AI magic](https://ai.facebook.com/blog/hand-tracking-deep-neural-networks/).
+[WebXR Hand Input API](https://immersive-web.github.io/webxr-hand-input/) and Meta's
+[AI-based hand-tracking system](https://ai.facebook.com/blog/hand-tracking-deep-neural-networks/).
 
 Here's a screencast of
 [Hand Tracking Sample](https://immersive-web.github.io/webxr-samples/immersive-hands.html)
