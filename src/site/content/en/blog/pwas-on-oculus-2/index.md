@@ -355,7 +355,7 @@ available. The Oculus team will share more on when and how you can submit a PWA 
 {% endAside %}
 
 Uploading and submitting PWAs to the Oculus Store is
-[covered](https://developer.oculus.com/documentation/web/pwa-submit-app/) in details in the Oculus
+[covered](https://developer.oculus.com/documentation/web/pwa-submit-app/) in detail in the Oculus
 Developer Center docs.
 
 Apart from submitting apps to the Oculus Store, developers can also distribute their apps via platforms
