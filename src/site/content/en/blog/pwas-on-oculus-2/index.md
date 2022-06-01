@@ -413,7 +413,7 @@ Here's a screencast of
 from the [Immersive Web Working Group](https://immersive-web.github.io/)'s
 [WebXR Tests](https://immersive-web.github.io/webxr-samples/tests/).
 
-{% YouTube "OCNDbIf9G9w" %}
+{% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/4fvDWOo2XxF67M8r3W3O.mp4" %}
 
 As you can see, entering VR mode requires user's permission. Permissions are asked once per origin.
 Requesting permissions leaves the immersive mode. Notifications are currently not supported.
