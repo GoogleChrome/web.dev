@@ -304,7 +304,7 @@ Microsoft, that allows developers to package and sign their PWAs for publishing 
 including Microsoft Store, Google Play, App Store, and Oculus Store.
 
 Packaging PWAs with PWABuilder is as easy as entering the URL of a PWA, selecting the platform
-(the **Meta Quest** in this case), entering/editing metadata for the app, and clicking the **Generate**
+(**Meta Quest** in this case), entering/editing metadata for the app, and clicking the **Generate**
 button.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="Packaging PWAs for Oculus Quest with PWABuilder.", width="800", height="450" %}
