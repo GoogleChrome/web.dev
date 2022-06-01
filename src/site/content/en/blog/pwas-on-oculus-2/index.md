@@ -148,7 +148,7 @@ experiences without having to grant the same permissions again.
 
 Albeit many permissions are implemented, not all features are supported. For example, while
 requesting the geolocation permission succeeds, the device never actually gets a location.
-Similarly, the various hardware APIs like [Web HID](/hid/), [Web Bluetooth](/bluetooth/), etc. all
+Similarly, the various hardware APIs like [WebHID](/hid/), [Web Bluetooth](/bluetooth/), etc. all
 pass feature detection, but don't actually show a picker that would let the user pair the Oculus
 with a hardware device. I suppose feature detectability of APIs will be refined once the browser
 matures.
