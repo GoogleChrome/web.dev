@@ -251,9 +251,9 @@ layers:
 - [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)
 - [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)
 - [Cascade layers on MDN](https://developer.mozilla.org/docs/Web/CSS/@layer)
-- Post by [Una Kravets](https://twitter.com/Una), [Cascade
+- [Una Kravets](https://twitter.com/Una): [Cascade
   Layers](https://developer.chrome.com/blog/cascade-layers/)
-- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade
+- [Ahmad Shadeed](https://twitter.com/shadeed9): [Hello, CSS Cascade
   Layers](https://ishadeed.com/article/cascade-layers/)
 
 ### Subgrid
@@ -337,9 +337,9 @@ subgrids, which is very helpful for debugging or validating layout.
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/css-grid-2/#subgrids)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
-- Post by [Bramus](https://twitter.com/bramus): [Practical CSS Subgrid Video
+- [Subgrid specification](https://www.w3.org/TR/css-grid-2/#subgrids)
+- [Subgrid on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+- [Bramus](https://twitter.com/bramus): [Practical CSS Subgrid Video
   Tutorials](https://www.bram.us/2021/11/04/practical-css-subgrid-video-tutorials/)
 
 ### Container queries
@@ -420,17 +420,14 @@ are many exciting and meaningful design decisions to make when using
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/css-contain-3/#container-queries)
-- [Explainer](https://css.oddbird.net/rwd/query/explainer/)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries)
-- The new responsive:
-  [/new-responsive/#responsive-to-the-container](/new-responsive/#responsive-to-the-container)
-- Calendar demo by Una:
-  [https://codepen.io/una/pen/RwodQZw](https://codepen.io/una/pen/RwodQZw)
-- Awesome container queries:
-  [https://github.com/sturobson/Awesome-Container-Queries](https://github.com/sturobson/Awesome-Container-Queries)
-- Designcember: - [How we built Designcember](/how-we-built-designcember/)
-- Post by [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
+- [Container Queries specification](https://www.w3.org/TR/css-contain-3/#container-queries)
+- [Container Queries explainer](https://css.oddbird.net/rwd/query/explainer/)
+- [Container Queries on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries)
+- [The new responsive on web.dev](/new-responsive/#responsive-to-the-container)
+- [Calendar demo by Una](https://codepen.io/una/pen/RwodQZw)
+- [Awesome container queries collection](https://github.com/sturobson/Awesome-Container-Queries)
+- [How we built Designcember on web.dev](/how-we-built-designcember/)
+- [Ahmad Shadeed](https://twitter.com/shadeed9): [Say Hello To CSS
   Container
   Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
 
@@ -474,11 +471,10 @@ this useful CSS property.
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/css-ui-4/#widget-accent)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/accent-color)
-- web.dev: [/accent-color/](/accent-color/)
-- Post by [Bramus](https://twitter.com/bramus): [Tint User-Interface Controls
-  with CSS
+- [accent-color specification](https://www.w3.org/TR/css-ui-4/#widget-accent)
+- [accent-color on MDN](https://developer.mozilla.org/docs/Web/CSS/accent-color)
+- [accent-color on web.dev](/accent-color/)
+- [Bramus](https://twitter.com/bramus): [Tint User-Interface Controls with CSS
   accent-color](https://www.bram.us/2021/08/23/tint-user-interface-controls-with-css-accent-color/)
 
 ### Color level 4 and 5
@@ -542,9 +538,9 @@ but it may make some tasks easier for fans of the syntax and mental model.
 
 ##### Resources
 
-- [Spec](https://www.w3.org/TR/css-color-4/#the-hwb-notation)
-- [MDN)](https://developer.mozilla.org/docs/Web/CSS/color_value/hwb())
-- Post by [Stefan Judis](https://twitter.com/stefanjudis/): [hwb() – a color notation for
+- [HWB specification](https://www.w3.org/TR/css-color-4/#the-hwb-notation)
+- [HWB on MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/hwb())
+- [Stefan Judis](https://twitter.com/stefanjudis/): [hwb() – a color notation for
   humans?](https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/)
 
 #### Color spaces
@@ -612,14 +608,12 @@ Enjoy mixing colors in various color spaces in your stylesheets in 2022!
 
 ##### Resources
 
-- [Spec](https://www.w3.org/TR/css-color-5/#color-mix)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix())
-- Theming demo:
-  [https://codepen.io/argyleink/pen/WNoWadG](https://codepen.io/argyleink/pen/WNoWadG)
-- Another theming demo:
-  [https://codepen.io/argyleink/pen/YzZQYMq](https://codepen.io/argyleink/pen/YzZQYMq)
-- Post by [Fabio Giolito](https://twitter.com/fabiogiolito): [Create a color
-  theme with these upcoming CSS
+- [color-mix() specification](https://www.w3.org/TR/css-color-5/#color-mix)
+- [color-mix() on MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix())
+- [Theming demo](https://codepen.io/argyleink/pen/WNoWadG)
+- [Another theming demo](https://codepen.io/argyleink/pen/YzZQYMq)
+- [Fabio Giolito](https://twitter.com/fabiogiolito): [Create a color theme with
+  these upcoming CSS
   features](https://dev.to/fabiogiolito/create-a-color-theme-with-these-upcoming-css-features-4o83)
 
 #### `color-contrast()`
@@ -698,10 +692,11 @@ is built into the CSS language itself.
 
 ##### Resources
 
-- [Spec](https://www.w3.org/TR/css-color-5/#colorcontrast)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast())
-- Demo:
-  [https://codepen.io/web-dot-dev/pen/qBpzwZW](https://codepen.io/web-dot-dev/pen/qBpzwZW)
+- [color-contrast()
+  specification](https://www.w3.org/TR/css-color-5/#colorcontrast)
+- [color-contrast() on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast())
+- [Demo](https://codepen.io/web-dot-dev/pen/qBpzwZW)
 
 #### Relative color syntax
 
@@ -801,11 +796,12 @@ all be used for different purposes, based on their strengths and weaknesses.
 
 ##### Resources
 
-- [Spec](https://www.w3.org/TR/css-color-5/#relative-color-function)
-- Palettes:
-  [https://codepen.io/web-dot-dev/pen/GRybLvm](https://codepen.io/web-dot-dev/pen/GRybLvm)
-- Variants:
-  [https://codepen.io/web-dot-dev/pen/dyJBLWG](https://codepen.io/web-dot-dev/pen/dyJBLWG)
+- [Relative color syntax
+  specification](https://www.w3.org/TR/css-color-5/#relative-color-function)
+- [Building color palettes with relative color
+  syntax](https://codepen.io/web-dot-dev/pen/GRybLvm)
+- [Building color variants with relative color
+  syntax](https://codepen.io/web-dot-dev/pen/dyJBLWG)
 
 #### Gradient color spaces
 
@@ -875,11 +871,11 @@ thread](https://twitter.com/argyleink/status/1490376117064065025?s=20&t=r1JAaqTw
 
 ##### Resources
 
-- [Spec](https://drafts.csswg.org/css-images-4/#linear-gradients)
-- Codepen comparing gradients:
-  [https://codepen.io/argyleink/pen/OJObWEW](https://codepen.io/argyleink/pen/OJObWEW)
-- [Observable
-  notebook](https://observablehq.com/@argyleink/colorjs-notebook-fade-to-white)
+- [Gradient interpolation
+  specification](https://drafts.csswg.org/css-images-4/#linear-gradients)
+- [Demo comparing gradients in spaces](https://codepen.io/argyleink/pen/OJObWEW)
+- [Observable notebook comparing
+  gradients](https://observablehq.com/@argyleink/colorjs-notebook-fade-to-white)
 
 ### `inert`
 
@@ -945,9 +941,10 @@ ever find themselves lost somewhere else in the page with an open menu.
 
 #### Resources
 
-- [Spec](https://html.spec.whatwg.org/multipage/interaction.html#inert)
-- [MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
-- Chrome Developers: [Introducing
+- [Inert
+  specification](https://html.spec.whatwg.org/multipage/interaction.html#inert)
+- [Inert on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
+- [Chrome Developers: Introducing
   inert](https://developer.chrome.com/blog/inert/)
 
 ### COLRv1 Fonts
@@ -1044,11 +1041,12 @@ expression.
 
 #### Resources
 
-- [Github Spec](https://github.com/googlefonts/colr-gradients-spec)
-- Chrome Developers:
-  [https://developer.chrome.com/blog/colrv1-fonts/](https://developer.chrome.com/blog/colrv1-fonts/)
-- BlinkOn developer explainer video:
-  [https://www.youtube.com/watch?v=BmqYm5Wwz8M](https://www.youtube.com/watch?v=BmqYm5Wwz8M)
+- [Colrv1 specification on
+  Github](https://github.com/googlefonts/colr-gradients-spec)
+- [Chrome Developers: Colrv1
+  Fonts](https://developer.chrome.com/blog/colrv1-fonts/)
+- [BlinkOn developer explainer
+  video](https://www.youtube.com/watch?v=BmqYm5Wwz8M)
 
 ### Viewport units
 
@@ -1171,8 +1169,9 @@ achieve their viewport responsive designs.
 
 #### Resources
 
-- [Spec](https://drafts.csswg.org/css-values-4/#viewport-relative-lengths)
-- Post by [Bramus](https://twitter.com/bramus): [The Large, Small, and Dynamic
+- [Viewport relative units
+  specification](https://drafts.csswg.org/css-values-4/#viewport-relative-lengths)
+- [Bramus](https://twitter.com/bramus): [The Large, Small, and Dynamic
   Viewports](https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/)
 
 ### `:has()`
@@ -1253,8 +1252,8 @@ function, which tests if the browser understands the syntax before using it:
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/selectors-4/#relational)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/:has)
+- [:has() specification](https://www.w3.org/TR/selectors-4/#relational)
+- [:has() on MDN](https://developer.mozilla.org/docs/Web/CSS/:has)
 - [The CSS `:has()` selector is way more than a "parent
   selector"](https://www.bram.us/2021/12/21/the-css-has-selector-is-way-more-than-a-parent-selector/)
 
@@ -1399,12 +1398,13 @@ browser can intelligently interpolate the lengths.
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/css-properties-values-api-1/#at-property-rule)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/@property)
-- web.dev: [https://web.dev/at-property/](/at-property/)
-- Zoom demo:
-  [https://codepen.io/argyleink/pen/rNwWwor](https://codepen.io/argyleink/pen/rNwWwor)
-- [CSS Tricks](https://css-tricks.com/exploring-property-and-its-animating-powers/)
+- [@property
+  specification](https://www.w3.org/TR/css-properties-values-api-1/#at-property-rule)
+- [@property on MDN](https://developer.mozilla.org/docs/Web/CSS/@property)
+- [@property on web.dev](/at-property/)
+- [Zoom focus demo](https://codepen.io/argyleink/pen/rNwWwor)
+- [CSS Tricks: Exploring @property and its animating
+  powers](https://css-tricks.com/exploring-property-and-its-animating-powers/)
 
 ### Was in `min-width` or `max-width`
 
@@ -1449,10 +1449,12 @@ which they prefer, or even use them interchangeably.
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/mediaqueries-5/#mq-range-context)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4)
-- PostCSS plugin:
-  [https://github.com/postcss/postcss-media-minmax](https://github.com/postcss/postcss-media-minmax)
+- [Media query range syntax
+  specification](https://www.w3.org/TR/mediaqueries-5/#mq-range-context)
+- [Media query range syntax on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4)
+- [Media query range syntax PostCSS
+  plugin](https://github.com/postcss/postcss-media-minmax)
 
 ### No media query variables
 
@@ -1496,9 +1498,10 @@ property library [Open Props](https://open-props.style).
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
-- PostCSS plugin:
-  [https://github.com/postcss/postcss-custom-media](https://github.com/postcss/postcss-custom-media)
+- [Custom media queries
+  specification](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
+- [Custom media queries PostCSS
+  plugin](https://github.com/postcss/postcss-custom-media)
 
 ### Nesting selectors is so nice
 
@@ -1583,9 +1586,10 @@ begin a new selector blog and nest within it.
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/css-nesting-1/)
-- [PostCSS plugin](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)
-- Post by [Bramus](https://twitter.com/bramus): [The future of CSS: Nesting
+- [@nest specification](https://www.w3.org/TR/css-nesting-1/)
+- [@nest PostCSS
+  plugin](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting)
+- [Bramus](https://twitter.com/bramus): [The future of CSS: Nesting
   Selectors](https://www.bram.us/2019/03/17/the-future-of-css-nesting-selectors/)
 
 ### Scoping styles is really hard
@@ -1659,8 +1663,8 @@ child of a `.media-block` is a sibling or parent of `.content`:
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/css-scoping-1/)
-- [Explainer](https://css.oddbird.net/scope/explainer/)
+- [@scope specification](https://www.w3.org/TR/css-scoping-1/)
+- [@scope explainer](https://css.oddbird.net/scope/explainer/)
 
 ### No CSS way for a masonry layout
 
@@ -1700,10 +1704,12 @@ Firefox](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layo
 
 #### Resources
 
-- [Spec](https://drafts.csswg.org/css-grid-3/#masonry-layout-algorithm)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout)
-- [Smashing
-  Magazine](https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/)
+- [Masonry layout
+  specification](https://drafts.csswg.org/css-grid-3/#masonry-layout-algorithm)
+- [Masonry layout on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout)
+- [Smashing Magazine: Native CSS Masonry Layout with CSS
+  Grid](https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/)
 
 ### CSS can't help users reduce data
 
@@ -1767,11 +1773,14 @@ megabyte of data—it's really nice to see CSS able to help out here.
 
 #### Resources
 
-- [Spec](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)
-- GUI Challenges:
-  [https://gui-challenges.web.app/media-scroller/dist/](https://gui-challenges.web.app/media-scroller/dist/)
-- [Smashing Magazine](https://www.smashingmagazine.com/2021/12/core-web-vitals-case-study-smashing-magazine/#savedata-and-prefers-reduced-data)
+- [prefers-reduced-data
+  specification](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data)
+- [prefers-reduced-data on
+  MDN](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)
+- [prefers-reduced-data in a GUI
+  Challenge](https://gui-challenges.web.app/media-scroller/dist/)
+- [Smashing Magazine: Improving Core Web Vitals, A Smashing Magazine Case
+  Study](https://www.smashingmagazine.com/2021/12/core-web-vitals-case-study-smashing-magazine/#savedata-and-prefers-reduced-data)
 
 ### Scroll snap features are too limited
 
@@ -1848,10 +1857,11 @@ for polyfills that can help adoption, and testing, of them soon.
 
 #### Resources
 
-- [Draft spec](https://drafts.csswg.org/css-scroll-snap-2/)
-- [Explainers](https://github.com/argyleink/ScrollSnapExplainers/blob/main/css-snap-target/readme.md)
-- Snap demos:
-  [https://snap-gallery.netlify.app/](https://snap-gallery.netlify.app/)
+- [Scroll Snap 2 draft
+  specification](https://drafts.csswg.org/css-scroll-snap-2/)
+- [Scroll Snap 2
+  explainers](https://github.com/argyleink/ScrollSnapExplainers/blob/main/css-snap-target/readme.md)
+- [Snap demos](https://snap-gallery.netlify.app/)
 
 ### Cycling between known states
 
@@ -1893,8 +1903,8 @@ interaction and state.
 
 #### Resources
 
-- [Draft](https://tabatkins.github.io/css-toggle/)
-- Post by [Bramus](https://twitter.com/bramus): [The Future of CSS: CSS
+- [toggle() draft specification](https://tabatkins.github.io/css-toggle/)
+- [Bramus](https://twitter.com/bramus): [The Future of CSS: CSS
   Toggles](https://www.bram.us/2022/04/20/the-future-of-css-css-toggles/)
 
 ### Customizing select elements
@@ -1958,8 +1968,8 @@ menu elements.
 
 #### Resources
 
-- [Spec](https://open-ui.org/prototypes/selectmenu)
-- [Demo](https://microsoftedge.github.io/Demos/selectmenu/)
+- [Selectmenu specification](https://open-ui.org/prototypes/selectmenu)
+- [Selectmenu demo](https://microsoftedge.github.io/Demos/selectmenu/)
 
 ### Anchoring an element to another
 
@@ -1977,4 +1987,5 @@ interested in learning more.
 
 #### Resources
 
-- [Explainer](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/CSSAnchoredPositioning/explainer.md)
+- [anchor()
+  explainer](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/CSSAnchoredPositioning/explainer.md)
