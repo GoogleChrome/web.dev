@@ -20,7 +20,7 @@ relevant to their search.
 
 ## How the Lighthouse title audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages
 without a `<title>` element in the page's `<head>`:
 
 <figure>

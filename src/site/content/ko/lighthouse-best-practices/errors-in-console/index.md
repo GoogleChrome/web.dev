@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 ## Lighthouse 브라우저 오류 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 콘솔에 기록된 모든 브라우저 오류에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 콘솔에 기록된 모든 브라우저 오류에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="콘솔에서 브라우저 오류를 보여주는 Lighthouse 감사", width="800", height="247" %}</figure>
 

@@ -58,9 +58,9 @@ PWA 提供系列最佳实践和现代 Web API，旨在让您的网站快速、�
 
 [Deloitte Digital](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html) 最近开展的一项研究表明，页面速度对业务指标有重大影响。
 
-您可以做很多事情来优化网站的速度，从而优化所有用户的关键体验。如果您不知道从哪里开始，请查看我们的[快速](/fast/)部分，并使用 [Lighthouse](https://developers.google.com/web/tools/lighthouse) 确定要修复的最重要的事情的优先级。
+您可以做很多事情来优化网站的速度，从而优化所有用户的关键体验。如果您不知道从哪里开始，请查看我们的[快速](/fast/)部分，并使用 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 确定要修复的最重要的事情的优先级。
 
-进行速度优化时，首先使用适当的工具和指标经常测量您的网站速度以监控您的进度。例如，使用[Lighthouse](https://developers.google.com/web/tools/lighthouse) 测量您的指标，确定明确的目标，例如拥有[“良好”的 Core Web Vitals 分数](/vitals/#core-web-vitals)，并[将性能预算纳入您的构建过程](/incorporate-performance-budgets-into-your-build-tools/)。由于您的日常测量和[“速度值”方法](/value-of-speed/)，您可以隔离增量速度变化的影响并计算您的工作产生了多少额外收入。
+进行速度优化时，首先使用适当的工具和指标经常测量您的网站速度以监控您的进度。例如，使用[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 测量您的指标，确定明确的目标，例如拥有[“良好”的 Core Web Vitals 分数](/vitals/#core-web-vitals)，并[将性能预算纳入您的构建过程](/incorporate-performance-budgets-into-your-build-tools/)。由于您的日常测量和[“速度值”方法](/value-of-speed/)，您可以隔离增量速度变化的影响并计算您的工作产生了多少额外收入。
 
 {% Img src="image/admin/yyRfQaDL3NcGhB0f79RN.jpg", alt="测量速度值并将其与转化相关联", width="800", height="306" %}
 

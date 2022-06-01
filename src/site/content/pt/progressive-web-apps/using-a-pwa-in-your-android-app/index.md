@@ -104,7 +104,7 @@ Para evitar mostrar um aplicativo quebrado aos usuários, implante o aplicativo 
 
 Um Progressive Web App é uma experiência da web de alta qualidade. A Atividade da Web Confiável é uma nova maneira de abrir experiências de alta qualidade de um aplicativo Android quando atendem aos critérios mínimos de qualidade.
 
-Se estiver começando a usar Progressive Web Apps, leia [nossa orientação sobre como criar um ótimo PWA](/progressive-web-apps/). Para desenvolvedores que já têm um PWA, use o [Lighthouse](https://developers.google.com/web/tools/lighthouse) para verificar se ele atende aos critérios de qualidade.
+Se estiver começando a usar Progressive Web Apps, leia [nossa orientação sobre como criar um ótimo PWA](/progressive-web-apps/). Para desenvolvedores que já têm um PWA, use o [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) para verificar se ele atende aos critérios de qualidade.
 
 Em seguida, use [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) ou [PWABuilder](https://pwabuilder.com/) para gerar o aplicativo Android, [carregue o aplicativo em um canal de teste fechado na Play Store](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en-GB) e emparelhe-o com o PWA usando [Peter's Asset Link Tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool).
 

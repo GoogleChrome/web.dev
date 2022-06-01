@@ -14,7 +14,7 @@ Muchos motores de búsqueda clasifican las páginas en función de su compatibil
 
 ## Cómo fallar la auditoría de objetivos táctiles de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas con objetivos táctiles que son demasiado pequeños o están demasiado juntos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca páginas con objetivos táctiles que son demasiado pequeños o están demasiado juntos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoría de Lighthouse que muestra objetivos táctiles de tamaño inadecuado", width="800", height="206" %}</figure>
 

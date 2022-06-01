@@ -166,7 +166,7 @@ import('module.js').then((module) => {
 
 FID를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도구가 있습니다.
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse)은 필드 메트릭인 FID에 대한 지원을 포함하지 않습니다. 그러나 [총 차단 시간](/tbt/)(TBT)를 그 대체제로 사용할 수 있습니다. TBT를 개선하는 최적화는 필드에서 FID도 개선합니다.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/)은 필드 메트릭인 FID에 대한 지원을 포함하지 않습니다. 그러나 [총 차단 시간](/tbt/)(TBT)를 그 대체제로 사용할 수 있습니다. TBT를 개선하는 최적화는 필드에서 FID도 개선합니다.
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 

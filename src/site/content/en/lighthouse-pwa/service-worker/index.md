@@ -26,7 +26,7 @@ All major browsers except Internet Explorer support service workers. See
 
 ## How the Lighthouse service worker audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't register a service worker:
 
 <figure>

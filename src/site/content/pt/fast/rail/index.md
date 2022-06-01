@@ -179,7 +179,7 @@ Os seguintes recursos do DevTools são especialmente relevantes:
 
 ### Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse) está disponível no Chrome DevTools, em [web.dev/measure](/measure/), como uma extensão do Chrome, como um módulo Node.js e dentro do WebPageTest. Você fornece uma URL, ele simula um dispositivo de médio alcance com uma conexão 3G lenta, executa uma série de auditorias na página e, em seguida, fornece um relatório sobre o desempenho de carregamento, além de sugestões de como melhorar.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) está disponível no Chrome DevTools, em [web.dev/measure](/measure/), como uma extensão do Chrome, como um módulo Node.js e dentro do WebPageTest. Você fornece uma URL, ele simula um dispositivo de médio alcance com uma conexão 3G lenta, executa uma série de auditorias na página e, em seguida, fornece um relatório sobre o desempenho de carregamento, além de sugestões de como melhorar.
 
 As seguintes auditorias são especialmente relevantes:
 

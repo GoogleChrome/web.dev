@@ -26,7 +26,7 @@ Un árbol DOM grande puede ralentizar el rendimiento de tu página de varias man
 
 ## Cómo falla la auditoría sobre el tamaño del DOM de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) reporta el total de elementos que conforman el DOM, la profundidad máxima del DOM de la página y el máximo de elementos hijos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reporta el total de elementos que conforman el DOM, la profundidad máxima del DOM de la página y el máximo de elementos hijos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Una captura de pantalla de Lighthouse evita una auditoría de tamaño excesivo del DOM", width="800", height="363" %}</figure>
 

@@ -20,7 +20,7 @@ tags:
 
 As a developer, you often don't have control over [which third-party scripts](/third-party-javascript/#network) your site loads. Before you can optimize third-party content you have to do some detective work to find out what's making your site slow. 🕵️
 
-In this post, you'll learn how to use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) to identify slow third-party resources. The post walks through increasingly robust techniques which are best used in combination.
+In this post, you'll learn how to use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) to identify slow third-party resources. The post walks through increasingly robust techniques which are best used in combination.
 
 ## If you only have 5 minutes
 

@@ -102,7 +102,7 @@ Bubblewrap 和 PWABuilder 处理 Android 应用程序上的必要配置，但还
 
 渐进式 Web 应用程序提供高质量 Web 体验。Trusted Web Activity 是在满足最低质量标准的情况下从 Android 应用程序开启这些高质量体验的新方法。
 
-如果您刚刚入门渐进式 Web 应用程序，请阅读[有关如何构建优秀的 PWA 的指南](/progressive-web-apps/)。对于已经有 PWA 的开发人员，请使用 [Lighthouse](https://developers.google.com/web/tools/lighthouse) 验证它是否符合质量标准。
+如果您刚刚入门渐进式 Web 应用程序，请阅读[有关如何构建优秀的 PWA 的指南](/progressive-web-apps/)。对于已经有 PWA 的开发人员，请使用 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 验证它是否符合质量标准。
 
 然后，使用 [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) 或 [PWABuilder](https://pwabuilder.com/) 生成 Android 应用程序，[将该应用程序上传到 Play 商店的封闭式测试通道](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en-GB)，并使用 [Peter 的资产链接工具](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool) 将其与 PWA 配对。
 

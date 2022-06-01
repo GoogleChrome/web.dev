@@ -16,7 +16,7 @@ Muitos mecanismos de pesquisa classificam as páginas com base no grau de compat
 
 ## Como a auditoria dos pontos de toque do Lighthouse falha
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas com pontos de toque muito pequenos ou muito próximos:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas com pontos de toque muito pequenos ou muito próximos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Auditoria do Lighthouse mostrando pontos de toque de tamanho inadequado", width="800", height="206" %}</figure>
 

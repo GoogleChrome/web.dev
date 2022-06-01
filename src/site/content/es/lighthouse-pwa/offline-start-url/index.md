@@ -14,7 +14,7 @@ Si el navegador no recibe una [respuesta HTTP 200](https://developer.mozilla.org
 
 ## Cómo falla la auditoría Lighthouse de `start_url`
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las aplicaciones web cuya URL de inicio no responde con un 200 cuando está sin conexión:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las aplicaciones web cuya URL de inicio no responde con un 200 cuando está sin conexión:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="La auditoría Lighthouse que muestra que la URL de inicio no responde con 200 cuando está sin conexión", width="800", height="76" %}</figure>
 

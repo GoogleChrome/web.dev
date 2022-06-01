@@ -19,7 +19,7 @@ for the `<html>` element.
 
 ## How the Lighthouse invalid `<html>` `lang` value audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages whose `<html>` element doesn't have a valid value
 for its `lang` attribute:
 

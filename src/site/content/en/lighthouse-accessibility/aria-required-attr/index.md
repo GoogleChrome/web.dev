@@ -21,7 +21,7 @@ assistive technology users won't be able to successfully interact with them.
 
 ## How Lighthouse identifies missing required states and properties
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags ARIA roles that don't have the required states and properties:
 
 <figure>

@@ -95,7 +95,7 @@ Here's the general approach they took:
 
 - Use [WebPageTest](https://www.webpagetest.org/) to determine exactly which scripts were keeping
   the main thread busy on a real device.
-- Use [Lighthouse](https://developers.google.com/web/tools/lighthouse) to determine the impact of
+- Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to determine the impact of
   the changes in [Max Potential First Input Delay (Max Potential
   FID)](/lighthouse-max-potential-fid/).
 

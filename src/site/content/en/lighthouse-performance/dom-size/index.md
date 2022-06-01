@@ -35,7 +35,7 @@ A large DOM tree can slow down your page performance in multiple ways:
 
 ## How the Lighthouse DOM size audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 reports the total DOM elements for a page, the page's maximum DOM depth,
 and its maximum child elements:
 <figure>

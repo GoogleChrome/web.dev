@@ -104,7 +104,7 @@ Search Console may not be a fit for projects that use different third-party tool
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) is a lab tool that provides specific opportunities for improving page performance. [Lighthouse user flows](/lighthouse-user-flows/) also allow developers to script interaction flows for performance testing beyond page startup.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is a lab tool that provides specific opportunities for improving page performance. [Lighthouse user flows](/lighthouse-user-flows/) also allow developers to script interaction flows for performance testing beyond page startup.
 
 {% Aside %}
 Because Lighthouse is a lab tool and [First Input Delay (FID)](/fid/) is a field metric, it reports [Total Blocking Time](/tbt/) instead.

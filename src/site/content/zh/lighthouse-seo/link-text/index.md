@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 链接文本审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记没有描述性文本的链接：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 标记没有描述性文本的链接：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="显示链接没有描述性文本的 Lighthouse 审计", width="800", height="191" %}</figure>
 

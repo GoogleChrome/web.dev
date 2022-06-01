@@ -177,7 +177,7 @@ RAIL 代表 Web 应用生命周期的四个不同方面：响应、动画、空�
 
 ### Lighthouse
 
-[web.dev/measure](/measure/) 下的 Chrome DevTools 中以 Chrome 扩展和 Node.js 模块的形式提供了 [Lighthouse](https://developers.google.com/web/tools/lighthouse)，WebPageTest 中也提供了此工具。只要您提供一个 URL，它就会模拟使用速度较慢的 3G 连接的中端设备在页面上运行一系列审核，然后提供关于加载性能的报告以及如何改进的建议。
+[web.dev/measure](/measure/) 下的 Chrome DevTools 中以 Chrome 扩展和 Node.js 模块的形式提供了 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)，WebPageTest 中也提供了此工具。只要您提供一个 URL，它就会模拟使用速度较慢的 3G 连接的中端设备在页面上运行一系列审核，然后提供关于加载性能的报告以及如何改进的建议。
 
 以下审核密切相关：
 

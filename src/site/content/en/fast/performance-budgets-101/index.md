@@ -42,7 +42,7 @@ This is why it's important to keep track of another type of metric.
 
 ### Milestone timings ⏱️
 
-Milestone timings mark events that happen during page load, such as [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) or [load](https://developer.mozilla.org/docs/Web/Events/load) event. The most useful timings are [user-centric performance metrics](/user-centric-performance-metrics/) that tell you something about the experience of loading a page. These metrics are available through [browser APIs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) and as part of [Lighthouse](https://developers.google.com/web/tools/lighthouse/) reports.
+Milestone timings mark events that happen during page load, such as [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) or [load](https://developer.mozilla.org/docs/Web/Events/load) event. The most useful timings are [user-centric performance metrics](/user-centric-performance-metrics/) that tell you something about the experience of loading a page. These metrics are available through [browser APIs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) and as part of [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports.
 
 [First Contentful Paint (FCP)](/fcp/) measures when the browser displays the first bit of content from the DOM, like text or images.
 
@@ -50,7 +50,7 @@ Milestone timings mark events that happen during page load, such as [DOMContentL
 
 ### Rule-based metrics 💯
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [WebPageTest](https://www.webpagetest.org/) calculate [performance scores](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) based on general best practice rules, that you can use as guidelines. As a bonus, Lighthouse also offers you hints for simple optimizations.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [WebPageTest](https://www.webpagetest.org/) calculate [performance scores](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) based on general best practice rules, that you can use as guidelines. As a bonus, Lighthouse also offers you hints for simple optimizations.
 
 You'll get the best results if you keep track of a combination of quantity-based and user-centric performance metrics. Focus on asset sizes in the early phases of a project and start tracking FCP and TTI as soon as possible.
 

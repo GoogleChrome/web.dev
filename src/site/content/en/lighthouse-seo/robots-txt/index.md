@@ -19,7 +19,7 @@ crawl. An invalid `robots.txt` configuration can cause two types of problems:
 
 ## How the Lighthouse `robots.txt` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags invalid
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags invalid
 `robots.txt` files:
 
 <figure>

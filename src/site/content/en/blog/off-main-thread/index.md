@@ -318,7 +318,7 @@ Also, OMT has secondary benefits:
     That might reduce [First Contentful Paint](/fcp/)
     or even [Time to Interactive](/tti/),
     which can in turn increase your
-    [Lighthouse](https://developers.google.com/web/tools/lighthouse) score.
+    [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) score.
 
 Web workers don't have to be scary.
 Tools like Comlink are taking the work out of workers

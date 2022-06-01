@@ -14,7 +14,7 @@ A janela de visualização é a parte da janela do navegador na qual o conteúdo
 
 ## Como a auditoria de largura de conteúdo do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas cuja largura não é igual à largura da janela de visualização:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas cuja largura não é igual à largura da janela de visualização:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y8JKlbJTu7ERetHUGuaA.png", alt="Auditoria do Lighthouse mostrando conteúdo não dimensionado corretamente para a janela de visualização", width="800", height="98" %}</figure>
 

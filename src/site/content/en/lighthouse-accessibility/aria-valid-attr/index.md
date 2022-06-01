@@ -23,7 +23,7 @@ to interact with it as the developer intended.
 
 ## How Lighthouse checks for invalid ARIA attributes
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags invalid ARIA attributes:
 
 <figure>

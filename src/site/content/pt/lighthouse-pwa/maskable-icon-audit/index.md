@@ -13,7 +13,7 @@ Os [ícones mascaráveis](/maskable-icon/) são um novo formato de ícone que ga
 
 ## Como a auditoria do ícone mascarável do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não têm suporte para ícones mascaráveis:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não têm suporte para ícones mascaráveis:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="A auditoria do ícone mascarável na IU do relatório Lighthouse.", width="800", height="110" %}</figure>
 

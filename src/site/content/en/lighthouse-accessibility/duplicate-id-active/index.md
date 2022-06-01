@@ -16,7 +16,7 @@ all of your page's functionality.
 
 ## How Lighthouse identifies focusable elements with duplicate IDs
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags focusable elements that have duplicate IDs:
 
 <figure>

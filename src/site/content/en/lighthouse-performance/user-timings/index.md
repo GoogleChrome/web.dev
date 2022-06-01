@@ -30,7 +30,7 @@ for a quick introduction to using it.
 When your app uses the User Timing API to add marks (that is, time stamps)
 and measures (that is, measurements of the elapsed time between marks),
 you'll see them in your
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) report:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) report:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PWzo7o0AN7SpBeGKG2OD.png", alt="A screenshot of the Lighthouse User Timing marks and measures audit", width="800", height="408" %}

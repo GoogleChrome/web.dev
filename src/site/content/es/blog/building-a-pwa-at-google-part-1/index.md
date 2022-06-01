@@ -85,7 +85,7 @@ Un componente importante de los service workers es el almacenamiento local en ca
 
 ### Lighthouse {: #lighthouse}
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) proporciona una serie de herramientas de depuración útiles para las PWA. Para ello, escanea un sitio y genera informes que cubren las PWA, rendimiento, accesibilidad, SEO y otras mejores prácticas. Recomendamos [ejecutar Lighthouse en integración continua](https://github.com/GoogleChrome/lighthouse-ci) para alertarle si incumple uno de los criterios para ser una PWA. En realidad, esto nos sucedió una vez, donde el service worker no estaba instalando y no nos dimos cuenta antes de un impulso de producción. Tener Lighthouse como parte de nuestro CI lo habría evitado.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) proporciona una serie de herramientas de depuración útiles para las PWA. Para ello, escanea un sitio y genera informes que cubren las PWA, rendimiento, accesibilidad, SEO y otras mejores prácticas. Recomendamos [ejecutar Lighthouse en integración continua](https://github.com/GoogleChrome/lighthouse-ci) para alertarle si incumple uno de los criterios para ser una PWA. En realidad, esto nos sucedió una vez, donde el service worker no estaba instalando y no nos dimos cuenta antes de un impulso de producción. Tener Lighthouse como parte de nuestro CI lo habría evitado.
 
 ### Adoptar la entrega continua {: #continuous-delivery }
 

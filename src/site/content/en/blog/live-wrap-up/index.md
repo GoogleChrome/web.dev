@@ -209,7 +209,7 @@ DevTools](https://youtu.be/6yrJZHqJe2k) session.
 
 ### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source automated tool
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is an open-source automated tool
 that helps developers improve their site's performance. In its latest version, the Lighthouse team
 focused on providing insights based on metrics that give you a balanced view of the quality of your
 user experience against critical dimensions.

@@ -24,7 +24,7 @@ to interact with it as the developer intended.
 
 ## How Lighthouse determines an ARIA attribute's value is invalid
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags ARIA attributes with invalid values:
 
 <figure>

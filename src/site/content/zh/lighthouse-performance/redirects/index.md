@@ -19,7 +19,7 @@ Location: /path/to/new/location
 
 ## Lighthouse 多个重定向审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记具有多个重定向的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记具有多个重定向的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 

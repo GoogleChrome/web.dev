@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Какие URL-адреса помечаются как ресурсы, блокирующие рендеринг?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает два типа URL-адресов, блокирующих рендеринг: скрипты и таблицы стилей.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает два типа URL-адресов, блокирующих рендеринг: скрипты и таблицы стилей.
 
 Скрипт `<script>` помечается, если он:
 

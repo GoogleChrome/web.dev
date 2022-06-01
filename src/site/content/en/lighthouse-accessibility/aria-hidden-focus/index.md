@@ -20,7 +20,7 @@ which can cause confusion.
 
 ## How Lighthouse identifies partially hidden focusable elements
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags focusable elements that have parents with the `aria-hidden="true"` attribute:
 
 <figure>

@@ -12,7 +12,7 @@ Con frecuencia, las fuentes son archivos grandes que tardan en cargarse. En algu
 
 ## Cómo falla la auditoría de visualización para fuentes de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) etiqueta cualquier fuente de una URL donde pueda destellar texto invisible:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) etiqueta cualquier fuente de una URL donde pueda destellar texto invisible:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="Una captura de pantalla de Lighthouse. Asegúrese de que el texto permanece visible durante la auditoría de cargas para fuentes web", width="800", height="430" %}</figure>
 

@@ -141,7 +141,7 @@ Você não deve armazenar fontes usando [`localStorage`](https://developer.mozil
 
 ## Teste automatizado para comportamento de carregamento de WebFont com Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse) pode ajudar a automatizar o processo de garantir que você esteja seguindo as melhores práticas de otimização de fontes da web.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) pode ajudar a automatizar o processo de garantir que você esteja seguindo as melhores práticas de otimização de fontes da web.
 
 As auditorias a seguir podem ajudá-lo a garantir que suas páginas continuem a seguir as práticas recomendadas de otimização de fontes da web ao longo do tempo:
 
