@@ -104,7 +104,7 @@ On Apple devices, you can install the same PWA multiple times; each installation
 
 PWAs installed on iOS and iPadOS:
 
-- Appears in the home screen, Spotlight's search, Siri Suggestions, and App Library search.
+- Appear in the home screen, Spotlight's search, Siri Suggestions, and App Library search.
 - Don't appear in App Gallery's categories folders.
 - Lack support for capabilities such as badging and app shortcuts.
 
