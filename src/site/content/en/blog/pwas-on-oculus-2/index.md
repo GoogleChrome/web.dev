@@ -403,7 +403,7 @@ that, everything else was performant and responsive, as you can see in the embed
 ## Immersive 3D WebXR PWAs
 
 PWA support on Oculus Quest is not limited to flat 2D apps. Developers can build immersive 3D
-experiences for VR using [WebXR API](/tags/webxr/).
+experiences for VR using the [WebXR API](/tags/webxr/).
 
 Wondering how various prompts (PWA install, permission requests, notifications) are handled
 from within VR, if at all?
