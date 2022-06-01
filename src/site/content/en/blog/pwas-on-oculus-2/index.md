@@ -23,6 +23,8 @@ tags:
   - blog
   - capabilities
   - progressive-web-apps
+  - virtual-reality
+  - webxr
 ---
 
 ## The Oculus Quest&nbsp;2
