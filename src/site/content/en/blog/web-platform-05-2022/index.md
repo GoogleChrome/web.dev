@@ -6,6 +6,7 @@ subhead: >
 description: >
   Discover some of the interesting features that landed in stable and beta web browsers during May 2022.
 date: 2022-05-31
+updated: 2022-06-01
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/eZEXEaB9RiOw8fB7OUtD.jpg
 alt: A balloon ascending into a bright blue sky.
 authors:
@@ -64,11 +65,8 @@ Firefox 102 includes the [`update`](https://developer.mozilla.org/docs/Web/CSS/@
 
 {% BrowserCompat 'css.at-rules.media.update' %}
 
-Chrome 103 includes the [`Element.isVisible()`](https://chromestatus.com/feature/5163102852087808) method. This method returns true is an element is visible, and false if not. To decide if an element is visible it checks factors including `display: none`, `visibility`, `content-visibility`, and `opacity`.
-
-{% BrowserCompat 'api.Element.isVisible' %}
-
-Chrome 103 also includes the [Local Font Access API](/local-fonts/), which allows access to the user's locally installed fonts.
+Chrome 103 includes the [Local Font Access API](/local-fonts/), which allows access to the user's locally installed fonts.
 
 These beta features will land in stable browsers soon.
-  
+
+_Edit: A previous version of this post included mention of the [`Element.isVisible()`](https://chromestatus.com/feature/5163102852087808) method, which is not shipping in this release._
