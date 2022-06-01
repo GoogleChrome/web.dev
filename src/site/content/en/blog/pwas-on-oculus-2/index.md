@@ -428,7 +428,7 @@ Here's a screencast of
 [Hand Tracking Sample](https://immersive-web.github.io/webxr-samples/immersive-hands.html)
 from the Immersive Web Working Group's [WebXR Samples](https://immersive-web.github.io/webxr-samples/).
 
-{% YouTube "wH8PYsSZhYc" %}
+{% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/nDm0rY5DvtyTbDgUqFTS.mp4" %}
 
 ## Conclusions
 
