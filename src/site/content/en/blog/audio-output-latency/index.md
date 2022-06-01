@@ -2,7 +2,7 @@
 title: Synchronize audio and video playback on the web
 subhead: >
   The Web Audio API makes it possible to properly achieve AV synchronization.
-date: 2022-05-27
+date: 2022-06-01
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/9nYDoT45VHvNAtTfLciY.jpeg
 alt: A photo of a video editing timeline in Adobe Premiere Pro
 authors: 
