@@ -350,7 +350,9 @@ installation or drivers are required thanks to the [Web USB API](/usb/). {% endA
 ### App submission
 
 {% Aside %} Submission and consideration for the Oculus Store is only available if you have been
-approved as an Oculus Quest Store developer. Distribution of PWAs via App Lab is not currently
+approved as an Oculus Quest Store developer. Distribution of PWAs via
+[App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/)
+is not currently
 available. The Oculus team will share more on when and how you can submit a PWA to App Lab soon.
 {% endAside %}
 
