@@ -240,9 +240,10 @@ if (maxVisibleActions < 4) {
   options.body =
     `This notification can display up to ` + `${maxVisibleActions} actions.`;
 }
-```
 
 registration.showNotification(title, options);
+```
+
 At the time of writing only Chrome and Opera for Android support actions.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/GI8sj9krxVtxWVeHGuvs.png", alt="Notification with actions on Chrome for Android.", width="800", height="296" %}
