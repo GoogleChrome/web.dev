@@ -3,7 +3,7 @@ title: Displaying a Notification
 authors:
   - mattgaunt
 date: 2016-06-30
-updated: 2019-06-08
+updated: 2022-05-31
 ---
 
 I've split up notification options into two sections, one that deals with the visual aspects
@@ -240,6 +240,7 @@ if (maxVisibleActions < 4) {
   options.body =
     `This notification can display up to ` + `${maxVisibleActions} actions.`;
 }
+```
 
 registration.showNotification(title, options);
 At the time of writing only Chrome and Opera for Android support actions.
