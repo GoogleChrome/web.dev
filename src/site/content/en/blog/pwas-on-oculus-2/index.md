@@ -315,7 +315,7 @@ can open it in the Oculus Browser and perform all the steps right on your Oculus
 ### Packaging PWAs with the command line tool
 
 If you don't have a manifest on your live PWA or wish to override the live manifest, you can still
-generate APK for your PWA using a local manifest file and
+generate an APK for your PWA using a local manifest file and
 [command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/#download-the-cli)
 called `ovr-platform-util` with the `create-pwa` command. Set the output file name via
 the `-o` parameter. The Android SDK to use needs to be set via the `--android-sdk` parameter.
