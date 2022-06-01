@@ -409,7 +409,7 @@ Wondering how various prompts (PWA install, permission requests, notifications) 
 from within VR, if at all?
 
 Here's a screencast of
-[User Agent Prompts Test](https://immersive-web.github.io/webxr-samples/tests/permission-request.html)
+[User Agent Prompts test](https://immersive-web.github.io/webxr-samples/tests/permission-request.html)
 from the [Immersive Web Working Group](https://immersive-web.github.io/)'s
 [WebXR Tests](https://immersive-web.github.io/webxr-samples/tests/).
 
