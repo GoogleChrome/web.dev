@@ -8,6 +8,7 @@ description: Learn how to copy text to the clipboard.
 date: 2022-05-13
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
+height: 800
 ---
 
 Cutting and pasting text is one of the most commonly used features of apps in general and desktop applications in particular. How do I copy text on the web? There's an old way and a new way. And it depends on which browser is used.
