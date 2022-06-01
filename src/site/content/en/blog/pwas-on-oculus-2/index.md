@@ -303,7 +303,7 @@ PWABuilder is an [open source](https://github.com/pwa-builder), community guided
 Microsoft, that allows developers to package and sign their PWAs for publishing to various stores,
 including Microsoft Store, Google Play, App Store, and Oculus Store.
 
-Packaging PWAs with PWABuilder as easy as entering the URL of your PWA, selecting the platform
+Packaging PWAs with PWABuilder is as easy as entering the URL of a PWA, selecting the platform
 (the **Meta Quest** in our case), entering/editing metadata for your app, and clicking **Generate**
 button.
 
