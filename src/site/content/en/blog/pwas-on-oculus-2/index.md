@@ -345,7 +345,7 @@ adb install output.apk
 {% Aside %} Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install)
 to sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that allows
 you to access all ADB functionality right from the browser even from another Android device. No
-installation or drivers required thanks to [Web USB API](/usb/). {% endAside %}
+installation or drivers are required thanks to the [Web USB API](/usb/). {% endAside %}
 
 ### App submission
 
