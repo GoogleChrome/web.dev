@@ -310,7 +310,7 @@ button.
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="Packaging PWAs for Oculus Quest with PWABuilder.", width="800", height="450" %}
 
 {% Aside %} Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you
-can open it in the Oculus Browser and do all the steps right on your Oculus Quest. {% endAside %}
+can open it in the Oculus Browser and perform all the steps right on your Oculus Quest. {% endAside %}
 
 ### Packaging PWAs with the command line tool
 
