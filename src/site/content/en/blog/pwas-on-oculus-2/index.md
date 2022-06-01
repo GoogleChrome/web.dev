@@ -10,7 +10,7 @@ alt:
   controllers in both hands.'
 subhead: >
   The Oculus Quest 2 is a virtual reality (VR) headset created by Oculus, a division of Meta.
-  Developers can now build and distribute 2D and 3D progressive web apps (PWA) that take advantage
+  Developers can now build and distribute 2D and 3D Progressive Web Apps (PWA) that take advantage
   of Oculus Quest 2's multitasking feature.
 description: >
   The Oculus Quest 2 is a virtual reality (VR) headset created by Oculus, a division of Meta.
