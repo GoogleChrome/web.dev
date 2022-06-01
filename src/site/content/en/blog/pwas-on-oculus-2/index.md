@@ -41,7 +41,7 @@ panel with 1,832&nbsp;×&nbsp;1,920 pixels per eye resolution that runs at a ref
 
 ## The Oculus Browser
 
-Currently there are two browsers available for the Oculus Quest&nbsp;2:
+Currently there are three browsers available for the Oculus Quest&nbsp;2:
 [Wolvic](https://www.oculus.com/experiences/quest/4812663595466206/), a successor to
 [Firefox Reality](https://www.oculus.com/experiences/quest/2180252408763702/), and the built-in
 [Oculus Browser](https://www.oculus.com/experiences/quest/1916519981771802). This article focuses on
