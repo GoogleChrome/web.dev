@@ -106,7 +106,7 @@ and re-engage more often.
 {% endBlockquote %}
  
  
-### Additional results {: .hide-from-toc }
+### Additional results 
 
 - 2X faster load times with AMP Ads
 - 30% higher CTR and revenue with AMP Ads
