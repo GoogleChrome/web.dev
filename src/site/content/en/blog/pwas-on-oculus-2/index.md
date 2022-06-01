@@ -418,7 +418,9 @@ from the [Immersive Web Working Group](https://immersive-web.github.io/)'s
 As you can see, entering VR mode requires the user's permission. Permissions are asked once per origin.
 Requesting permissions leaves the immersive mode. Notifications are currently not supported.
 
-Also, you can use hands to interact with PWAs in immersive mode thanks to
+### Hand tracking
+
+You can use hands to interact with PWAs in immersive mode thanks to
 [WebXR Hand Input API](https://immersive-web.github.io/webxr-hand-input/) and some Meta's
 [AI magic](https://ai.facebook.com/blog/hand-tracking-deep-neural-networks/).
 
