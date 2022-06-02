@@ -1,5 +1,5 @@
 file_a_bug:
-  en: File a bug
+  en: File A Bug
   es: Presentar un error
   ja: バグを報告する
   ko: 버그 신고
@@ -8,7 +8,7 @@ file_a_bug:
   zh: 提交错误
 
 view_source:
-  en: View source
+  en: View Source
   es: Ver fuente
   ja: ソースを表示する
   ko: 소스 보기
@@ -17,7 +17,7 @@ view_source:
   zh: 查看源代码
 
 related_content:
-  en: Related content
+  en: Related Content
   es: Contenido relevante
   ja: 関連性のあるコンテンツ
   ko: 관련된 콘텐츠
@@ -26,7 +26,7 @@ related_content:
   zh: 相关内容
 
 chrome_updates:
-  en: Chrome updates
+  en: Chrome Updates
   es: Chrome Actualizaciones
   ja: Chrome のアップデート
   ko: Chrome 업데이트
@@ -44,7 +44,7 @@ web_fundamentals:
   zh: 网站开发基础
 
 case_studies:
-  en: Case studies
+  en: Case Studies
   es: Case studies
   ja: ケーススタディ
   ko: 사례 연구
@@ -71,7 +71,7 @@ connect:
   zh: 连接
 
 all_products:
-  en: All products
+  en: All Products
   es: Todos los productos
   ja: すべての製品
   ko: 전체 제품
@@ -107,4 +107,4 @@ shows:
   zh: 节目
 
 developer_chrome_com:
-  en: developer.chrome.com
+  en: Chrome For Developers
