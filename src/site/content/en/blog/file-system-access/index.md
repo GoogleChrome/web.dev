@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-04-27
+updated: 2022-06-02
 tags:
   - blog
   - capabilities
@@ -597,7 +597,7 @@ The origin private file system provides optional access to a special kind of fil
 optimized for performance, for example, by offering in-place and exclusive write access to a file's
 content. There is an
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
-in Chromium&nbsp;95 and ending in Chromium&nbsp;101 (May 18, 2022) for simplifying how such
+in Chromium&nbsp;95 and ending in Chromium&nbsp;101 (June 22, 2022) for simplifying how such
 files can be accessed by exposing two new methods as part of the origin private file system:
 `createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
 (synchronous read and write operations) that are both exposed on `FileSystemFileHandle`.
