@@ -2,10 +2,10 @@
 title: Profiling Web Audio apps in Chrome
 subhead: >
   Learn how to profile the performance of Web Audio apps in Chrome using
-  `about://tracing` and the **WebAudio** tab in DevTools.
+  `about://tracing`, the **WebAudio** panel, and the extension in DevTools.
 description: >
   Learn how to profile the performance of Web Audio apps in Chrome using
-  `about://tracing` and the **WebAudio** panel in DevTools.
+  `about://tracing`, the **WebAudio** panel, and the extension in DevTools.
 date: 2020-05-04
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
