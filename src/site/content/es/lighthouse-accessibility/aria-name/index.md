@@ -21,7 +21,7 @@ tags:
 
 ## Cómo Lighthouse identifica los atributos ARIA sin nombres accesibles
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca los artículos ARIA personalizados cuyos nombres no son accesibles para las tecnologías asistenciales:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca los artículos ARIA personalizados cuyos nombres no son accesibles para las tecnologías asistenciales:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Auditoría de Lighthouse que muestra elementos de alternancia personalizados sin nombres accesibles", width="800", height="259" %}</figure>
 

@@ -11,7 +11,7 @@ date: 2020-05-06
 
 ## Lighthouse によるマスカブルアイコンの監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、マスカブルアイコンをサポートしていないページをフラグします。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、マスカブルアイコンをサポートしていないページをフラグします。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0lXCcsZdOeLZuAw3wbY.jpg", alt="Lighthouse レポートの UI に表示されているマスカブルアイコンの監査。", width="800", height="110" %}</figure>
 

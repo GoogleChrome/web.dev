@@ -357,4 +357,4 @@ formats. Make sure to apply GZIP compression to the EOT and TTF formats, because
 compressed by default.
 - **Give precedence to `local()` in your `src` list:** listing `local('Font Name')` first in your
 `src` list ensures that HTTP requests aren't made for fonts that are already installed.
-- **Use [Lighthouse](https://developers.google.com/web/tools/lighthouse)** to test for [text compression](/uses-text-compression/).
+- **Use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** to test for [text compression](/uses-text-compression/).

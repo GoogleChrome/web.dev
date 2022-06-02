@@ -209,7 +209,7 @@ worker, a cache-first strategy is appropriate.
 
 ## Automated testing for WebFont loading behavior with Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 can help automate the process of making sure that you're following web font optimization best practices.
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:

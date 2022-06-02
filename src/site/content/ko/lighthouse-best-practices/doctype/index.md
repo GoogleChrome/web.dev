@@ -14,7 +14,7 @@ doctype을 지정하면 브라우저가 페이지가 [예기치 않은 방식으
 
 ## Lighthouse 문서 유형 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 `<!DOCTYPE html>` 선언이 없는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 `<!DOCTYPE html>` 선언이 없는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Lighthouse 감사에서 누락된 문서 유형이 표시됨", width="800", height="76" %}</figure>
 

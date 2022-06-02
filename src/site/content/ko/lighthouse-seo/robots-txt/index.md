@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## `robots.txt` 감사가 실패하는 이유
 
-[Lighthouse는](https://developers.google.com/web/tools/lighthouse/) `robots.txt` 파일에 플래그를 지정합니다.
+[Lighthouse는](https://developer.chrome.com/docs/lighthouse/overview/) `robots.txt` 파일에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse 감사에서 잘못된 robots.txt가 표시됨", width="800", height="203" %}</figure>
 

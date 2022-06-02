@@ -176,7 +176,7 @@ As seguintes ferramentas podem ser usadas para medir as Core Web Vitals num ambi
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a></td>
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a>)</td>
         <td>✔</td>

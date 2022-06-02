@@ -63,7 +63,7 @@ service worker you implement really does help your web app avoid the network?
 How do you prevent a small change to your caching strategy from breaking your
 carefully crafted offline experience?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides one
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) provides one
 specific test that is of particular interest when building a reliable web app:
 **Responds with a 200 OK while offline**:
 

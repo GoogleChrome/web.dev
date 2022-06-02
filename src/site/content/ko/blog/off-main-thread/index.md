@@ -179,6 +179,6 @@ PROXX 예에서 볼 수 있듯이 OMT는 앱이 더 넓은 범위의 기기에�
 또한 OMT에는 다음과 같은 부차적인 이점이 있습니다.
 
 - JavaScript 실행 비용을 별도의 스레드로 전가합니다.
-- *구문 분석* 비용이 전가되므로 UI 부팅이 더 빨라집니다. 그러면 [First Contentful Paint](/fcp/) 또는 [Time to Interactive](/tti/)가 줄어 역으로 [Lighthouse](https://developers.google.com/web/tools/lighthouse) 점수가 증가할 수 있습니다.
+- *구문 분석* 비용이 전가되므로 UI 부팅이 더 빨라집니다. 그러면 [First Contentful Paint](/fcp/) 또는 [Time to Interactive](/tti/)가 줄어 역으로 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 점수가 증가할 수 있습니다.
 
 웹 작업자는 두려워할 필요가 없습니다. Comlink와 같은 도구는 작업자로부터 작업을 빼앗고 다양한 웹 애플리케이션을 위한 실용적인 선택이 될 수 있습니다.

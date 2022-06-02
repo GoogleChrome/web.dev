@@ -15,7 +15,7 @@ and with less data moving over the wire.
 
 ## How the Lighthouse HTTP/2 audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) lists all resources not served over HTTP/2:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) lists all resources not served over HTTP/2:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse audit shows resources not served over HTTP/2 ", width="800", height="191" %}

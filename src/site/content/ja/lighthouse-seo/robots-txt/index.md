@@ -17,7 +17,7 @@ web_lighthouse:
 
 ## Lighthouse の `robots.txt` 監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、無効な `robots.txt` ファイルにフラグを立てます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、無効な `robots.txt` ファイルにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="無効な robots.txt を示す Lighthouse の監査", width="800", height="203" %}</figure>
 

@@ -12,7 +12,7 @@ HTTP/2는 유선을 통해 이동하는 데이터를 줄여 페이지 리소스�
 
 ## Lighthouse HTTP/2 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 HTTP/2를 통해 제공되지 않는 모든 리소스를 나열합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 HTTP/2를 통해 제공되지 않는 모든 리소스를 나열합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse 감사는 HTTP/2를 통해 제공되지 않는 리소스를 보여줍니다", width="800", height="191" %}</figure>
 

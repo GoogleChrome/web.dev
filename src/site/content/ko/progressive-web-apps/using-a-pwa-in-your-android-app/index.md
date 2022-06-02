@@ -102,7 +102,7 @@ Bubblewrap 및 PWABuilder는 Android 애플리케이션에서 필요한 구성�
 
 프로그레시브 웹 앱은 고품질 웹 경험입니다. 신뢰할 수 있는 웹 활동은 Android 앱이 최소 품질 기준을 충족할 때 이러한 고품질 경험을 여는 새로운 방법입니다.
 
-Progressive Web Apps를 시작하는 경우 [훌륭한 PWA를 구축하는 방법에 대한 지침](/progressive-web-apps/)을 읽어보세요. 이미 PWA가 있는 개발자의 경우 [Lighthouse](https://developers.google.com/web/tools/lighthouse)를 사용하여 품질 기준을 충족하는지 확인하세요.
+Progressive Web Apps를 시작하는 경우 [훌륭한 PWA를 구축하는 방법에 대한 지침](/progressive-web-apps/)을 읽어보세요. 이미 PWA가 있는 개발자의 경우 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)를 사용하여 품질 기준을 충족하는지 확인하세요.
 
 그런 다음, [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) 또는 [PWABuilder](https://pwabuilder.com/)를 사용하여 Android 애플리케이션을 생성하고 [애플리케이션을 Play 스토어의 비공개 테스트 채널에 업로드](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en-GB)하고 [Peter's Asset Link Tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool)을 사용하여 PWA와 페어링 합니다.
 

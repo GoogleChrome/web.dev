@@ -14,7 +14,7 @@ updated: 2019-08-28
 
 ## Почему не удается выполнить аудит типа документа Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает страницы без объявления `<!DOCTYPE html>`:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает страницы без объявления `<!DOCTYPE html>`:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Аудит Lighthouse показывает отсутствие типа документа", width="800", height="76" %}</figure>
 

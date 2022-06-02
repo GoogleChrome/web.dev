@@ -15,7 +15,7 @@ after they're removed causes errors on your site.
 
 ## How the Lighthouse deprecated API audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that call deprecated APIs:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages that call deprecated APIs:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zsb1AOPs5Bua46tKX8Ot.png", alt="Lighthouse audit shows usage of deprecated APIs", width="800", height="247" %}

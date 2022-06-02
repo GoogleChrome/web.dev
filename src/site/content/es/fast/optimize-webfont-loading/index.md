@@ -141,7 +141,7 @@ No debe almacenar fuentes mediante [`localStorage`](https://developer.mozilla.or
 
 ## Pruebas automatizadas para el comportamiento de carga de fuentes web con Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) puede ayudar a automatizar el proceso de asegurar que está siguiendo las prácticas recomendables de optimización de fuentes web.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) puede ayudar a automatizar el proceso de asegurar que está siguiendo las prácticas recomendables de optimización de fuentes web.
 
 Las siguientes auditorías pueden ayudarlo a asegurar que sus páginas sigan continuamente las mejores prácticas de optimización de fuentes web a lo largo del tiempo:
 

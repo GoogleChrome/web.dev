@@ -89,7 +89,7 @@ TBT é uma métrica que deve ser medida [em laboratório](/user-centric-performa
 ### Ferramentas de laboratório
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %} Embora seja possível medir o TBT em campo, isto não é recomendado, pois a interação com o usuário pode afetar a TBT da sua página de maneiras que podem levar a muitas variações nos seus relatórios. Para entender a interatividade de uma página em campo, você deve medir a [First Input Delay (FID)](/fid/). {% endAside %}

@@ -16,7 +16,7 @@ web_lighthouse:
 
 ## Lighthouse 제목 레벨 감사가 실패하는 방법
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 제목이 하나 이상의 레벨을 건너뛰는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 제목이 하나 이상의 레벨을 건너뛰는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="레벨을 건너뛰는 제목을 표시하는 Lighthouse 감사", width="800", height="206" %}</figure>
 

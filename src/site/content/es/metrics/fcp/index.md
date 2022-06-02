@@ -45,7 +45,7 @@ FCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Herramientas de laboratorio
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 

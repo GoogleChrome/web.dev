@@ -16,7 +16,7 @@ Las grandes cargas útiles de red están altamente correlacionadas con tiempos d
 
 ## Cómo falla la auditoría Lighthouse de carga útil de la red
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) muestra el tamaño total en [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) de todos los recursos solicitados por tu página. Las solicitudes más grandes se presentan primero:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) muestra el tamaño total en [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) de todos los recursos solicitados por tu página. Las solicitudes más grandes se presentan primero:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Una captura de pantalla de la auditoría Lighthouse Evita enormes cargas útiles de red", width="800", height="518" %}</figure>
 

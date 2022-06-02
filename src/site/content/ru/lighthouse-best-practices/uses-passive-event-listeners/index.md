@@ -16,7 +16,7 @@ updated: 2019-08-28
 
 ## Причины плохих результатов проверки пассивных прослушивателей событий в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает прослушиватели событий, которые могут задерживать прокрутку страницы:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает прослушиватели событий, которые могут задерживать прокрутку страницы:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Проверка Lighthouse показывает, что страница не использует пассивные прослушиватели событий для повышения производительности при прокрутке (Does not use passive event listeners to improve scrolling performance)", width="800", height="213" %}</figure>
 

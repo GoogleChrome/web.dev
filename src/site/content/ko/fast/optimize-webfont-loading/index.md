@@ -141,7 +141,7 @@ font.load().then(function() {
 
 ## Lighthouse를 사용한 WebFont 로딩 동작에 대한 자동화된 테스트
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)는 웹 글꼴 최적화 모범 사례를 따르고 있는지 확인하는 프로세스를 자동화하는 데 도움이 될 수 있습니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 웹 글꼴 최적화 모범 사례를 따르고 있는지 확인하는 프로세스를 자동화하는 데 도움이 될 수 있습니다.
 
 다음 감사는 페이지가 시간이 지남에 따라 웹 글꼴 최적화 모범 사례를 계속 따르고 있는지 확인하는 데 도움이 될 수 있습니다.
 

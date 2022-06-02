@@ -337,7 +337,7 @@ Para saber mais sobre quais propriedades CSS causam alterações no layout, veja
 
 Há uma série de ferramentas disponíveis para medir e depurar a Cumulative Layout Shift (CLS).
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) e superior inclui suporte a medição de CLS em ambiente de laboratório. Esta versão também destaca os nós que causam a maior parte dos deslocamentos no layout.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) e superior inclui suporte a medição de CLS em ambiente de laboratório. Esta versão também destaca os nós que causam a maior parte dos deslocamentos no layout.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="O Lighthouse 6.0 inclui suporte à medição de CLS na seção de métricas", width="800", height="309" %}
 

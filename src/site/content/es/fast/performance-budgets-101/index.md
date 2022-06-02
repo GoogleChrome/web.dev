@@ -38,7 +38,7 @@ Por eso es importante realizar un seguimiento de otro tipo de métrica.
 
 ### Tiempos de hito ⏱️
 
-Los tiempos de hito marcan eventos que suceden durante la carga de la página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) o un evento de [carga.](https://developer.mozilla.org/docs/Web/Events/load) Los tiempos más útiles sonlas  [métricas de rendimiento centradas en el usuario](/user-centric-performance-metrics/) que le dicen algo sobre la experiencia al cargar una página. Estas métricas están disponibles a través de las [API del navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) y como parte de los informes [Lighthouse](https://developers.google.com/web/tools/lighthouse/).
+Los tiempos de hito marcan eventos que suceden durante la carga de la página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) o un evento de [carga.](https://developer.mozilla.org/docs/Web/Events/load) Los tiempos más útiles sonlas  [métricas de rendimiento centradas en el usuario](/user-centric-performance-metrics/) que le dicen algo sobre la experiencia al cargar una página. Estas métricas están disponibles a través de las [API del navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) y como parte de los informes [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/).
 
 La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/fcp/) mide el momento en que el navegador muestra el primer fragmento de contenido del DOM, como texto o imágenes.
 
@@ -46,7 +46,7 @@ La métrica [First Contentful Paint o primer despliegue de contenido (FCP)](/fcp
 
 ### Métricas basadas en reglas 💯
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) y [WebPageTest](https://www.webpagetest.org/) calculan [las puntuaciones de rendimiento](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) en función de las reglas generales de mejores prácticas, que puede utilizar como directrices. Como beneficio adicional, Lighthouse también le ofrece sugerencias para optimizaciones simples.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) y [WebPageTest](https://www.webpagetest.org/) calculan [las puntuaciones de rendimiento](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) en función de las reglas generales de mejores prácticas, que puede utilizar como directrices. Como beneficio adicional, Lighthouse también le ofrece sugerencias para optimizaciones simples.
 
 Obtendrá los mejores resultados si realiza un seguimiento de una combinación de métricas de rendimiento basadas en la cantidad y centradas en el usuario. Concéntrese en el tamaño de los activos en las primeras fases de un proyecto y comience a rastrear FCP y TTI en cuanto sea posible.
 

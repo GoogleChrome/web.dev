@@ -16,7 +16,7 @@ La configuración de la metaetiqueta de la ventana gráfica te permite controlar
 
 ## Cómo falla la auditoría de metaetiqueta de la ventana gráfica de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas sin una metaetiqueta de ventana gráfica:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca páginas sin una metaetiqueta de ventana gráfica:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="La auditoría de Lighthouse muestra que a la página le falta una ventana gráfica", width="800", height="76" %}</figure>
 

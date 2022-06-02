@@ -14,7 +14,7 @@ Algunas funciones ARIA requieren roles hijos específicos. Por ejemplo, el rol `
 
 ## Cómo identifica Lighthouse las funciones de los hijos faltantes
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> marca los roles ARIA que no tienen los roles hijos requeridos:
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a> marca los roles ARIA que no tienen los roles hijos requeridos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoría de Lighthouse que muestra la función ARIA que falta en el rol hijo requerido", width="800", height="205" %}</figure>
 

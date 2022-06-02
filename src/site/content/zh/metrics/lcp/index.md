@@ -128,7 +128,7 @@ LCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 ### 实验室工具
 
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
 ### 在 JavaScript 中测量 LCP

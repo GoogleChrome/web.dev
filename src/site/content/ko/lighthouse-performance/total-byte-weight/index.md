@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 네트워크 페이로드 감사 실패 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 페이지에서 요청한 모든 리소스의 전체 크기를 [KiB(kibibytes)](https://en.wikipedia.org/wiki/Kibibyte) 단위로 표시합니다. 가장 큰 요청이 먼저 표시됩니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 페이지에서 요청한 모든 리소스의 전체 크기를 [KiB(kibibytes)](https://en.wikipedia.org/wiki/Kibibyte) 단위로 표시합니다. 가장 큰 요청이 먼저 표시됩니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cCFb8MJkwnYquq3K9UmX.png", alt="Lighthouse의 막대한 네트워크 페이로드 방지 감사에 대한 스크린샷", width="800", height="518" %}</figure>
 

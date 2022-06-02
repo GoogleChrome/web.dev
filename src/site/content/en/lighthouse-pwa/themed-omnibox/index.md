@@ -21,7 +21,7 @@ for updates.
 
 ## How the Lighthouse theme color audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't apply a theme to the address bar:
 
 <figure>
