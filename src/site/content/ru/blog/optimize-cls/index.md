@@ -264,7 +264,7 @@ img {
 
 Я рад сообщить, что существует ряд инструментов для измерения и отладки CLS (Совокупного смещения макета)
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) и более поздние версии включают поддержку измерения CLS в лабораторных условиях. В этом релизе также будут выделены узлы, вызывающие наибольшее смещение макета.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) и более поздние версии включают поддержку измерения CLS в лабораторных условиях. В этом релизе также будут выделены узлы, вызывающие наибольшее смещение макета.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 включает поддержку измерения CLS в разделе метрик", width="800", height="309" %}
 

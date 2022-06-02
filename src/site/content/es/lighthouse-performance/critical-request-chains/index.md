@@ -14,7 +14,7 @@ web_lighthouse:
 
 [Las cadenas de solicitudes críticas](https://developers.google.com/web/fundamentals/performance/critical-rendering-path) son una serie de solicitudes de red dependientes importantes para la representación de páginas. Cuanto mayor sea la longitud de las cadenas y los tamaños de descarga, más significativo será el impacto en el rendimiento de carga de la página.
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) informa sobre las solicitudes críticas cargadas con una prioridad alta:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) informa sobre las solicitudes críticas cargadas con una prioridad alta:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="Una captura de pantalla de la auditoría de Minimización de profundidad de solicitudes críticas de Lighthouse", width="800", height="452" %}</figure>
 

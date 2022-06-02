@@ -20,7 +20,7 @@ which may not be what you intended.
 
 ## How Lighthouse identifies ARIA elements that refer to duplicate IDs
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags elements that share an ID referred to
 by another element's `aria-labelledby` attribute:
 

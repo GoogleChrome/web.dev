@@ -176,7 +176,7 @@ getLCP(sendToAnalytics);
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a></td>
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (대신 <a href="/tbt/">TBT</a> 사용)</td>
         <td>✔</td>

@@ -27,6 +27,9 @@ const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
 const config = htmlMinifier.createConfiguration({
   // See https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html
+  do_not_minify_doctype: true,
+  ensure_spec_compliant_unquoted_attribute_values: true,
+  keep_spaces_between_attributes: true,
 });
 
 const minifyHtml = (content, outputPath) => {

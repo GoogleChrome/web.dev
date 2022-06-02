@@ -21,7 +21,7 @@ updated: 2019-08-28
 
 ## Lighthouse 跨源目的地审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 标记指向跨源目的地的不安全链接：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 标记指向跨源目的地的不安全链接：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="显示指向跨源目的地的不安全链接的 Lighthouse 审计", width="800", height="213" %}</figure>
 

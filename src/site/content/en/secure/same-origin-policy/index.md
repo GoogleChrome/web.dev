@@ -4,6 +4,7 @@ title: Same-origin policy
 authors:
   - kosamari
 date: 2018-11-05
+updated: 2022-05-23
 description: |
   A browser can load and display resources from multiple sites. If there is no
   restriction on interactions between those resources, and if a script is
@@ -78,7 +79,7 @@ cross-origin resource is blocked.
     <tr>
       <td>images</td>
       <td>
-        Embedding cross-origin images is permitted. However, reading cross-origin images (such as loading a cross-origin image into a <code>canvas</code> element using JavaScript) is blocked.
+        Embedding cross-origin images is permitted. However, reading cross-origin image data (such as retrieving binary data from a cross-origin image using JavaScript) is blocked.
       </td>
     </tr>
     <tr>

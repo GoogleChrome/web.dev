@@ -12,7 +12,7 @@ updated: 2020-04-29
 
 ## Lighthouse 图像纵横比审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出其渲染尺寸与以自然比例渲染时的预期尺寸相差超过几个像素的图像：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出其渲染尺寸与以自然比例渲染时的预期尺寸相差超过几个像素的图像：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse 审计显示展示的图像纵横比不正确", width="800", height="198" %}</figure>
 

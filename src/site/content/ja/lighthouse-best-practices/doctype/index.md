@@ -12,7 +12,7 @@ Doctype を指定すると、ブラウザが [Quirks モード](https://develope
 
 ## Lighthouse の Doctype 監査が失敗する原因
 
-`<!DOCTYPE html>` 宣言が存在しない場合、[Lighthouse](https://developers.google.com/web/tools/lighthouse/) はページにフラグを設定します。
+`<!DOCTYPE html>` 宣言が存在しない場合、[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) はページにフラグを設定します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="Doctype がないことを示す Lighthouse 監査", width="800", height="76" %}</figure>
 

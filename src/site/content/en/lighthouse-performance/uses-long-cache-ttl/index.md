@@ -20,7 +20,7 @@ the browser uses its local copy rather than getting it from the network.
 
 ## How the Lighthouse cache policy audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags all static resources that aren't cached:
 
 <figure>

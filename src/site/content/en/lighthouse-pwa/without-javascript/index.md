@@ -22,7 +22,7 @@ functionality should not rely on CSS or JavaScript.
 
 ## How the Lighthouse fallback content audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't contain _some_ content
 when JavaScript is unavailable:
 

@@ -225,4 +225,4 @@ WebFont 优化是整体性能策略的关键部分。每个字体都是一个额
 - **子集化您的字体资源：**许多字体可以是子集，或拆分为多个 unicode 范围以仅提供特定页面所需的字形。这可减小文件大小并提高资源的下载速度。但是，在定义子集时，请注意进行优化以便重用字体。例如，请勿在每个页面上下载不同但重叠的字符集。好的做法是基于脚本进行子集化：例如，拉丁文和西里尔文。
 - **为每个浏览器提供优化的字体格式：**以 WOFF 2.0、WOFF、EOT 和 TTF 格式提供每种字体。确保将 GZIP 压缩应用于 EOT 和 TTF 格式，因为默认情况下它们不会被压缩。
 - **`src` 列表中优先考虑 `local()`：**在 `src` 列表中首先列出 `local('Font Name')` 可确保不会对已安装的字体进行 HTTP 请求。
-- **使用 [Lighthouse](https://developers.google.com/web/tools/lighthouse)** 测试[文本压缩](/uses-text-compression/)。
+- **使用 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** 测试[文本压缩](/uses-text-compression/)。

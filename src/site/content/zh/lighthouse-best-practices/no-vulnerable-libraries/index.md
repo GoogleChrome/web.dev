@@ -14,7 +14,7 @@ updated: 2020-06-04
 
 ## 此 Lighthouse 审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 可以标记具有已知安全漏洞的前端 JavaScript 库：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 可以标记具有已知安全漏洞的前端 JavaScript 库：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Lighthouse 审计显示页面使用的具有已知安全漏洞的前端 JavaScript 库", width="800", height="190" %}</figure>
 

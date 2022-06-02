@@ -109,10 +109,8 @@ feel of the button: [`:hover`](/learn/css/pseudo-classes/#:hover)
 for when a mouse is over the button,
 [`:active`](/learn/css/pseudo-classes/#:active) for when a mouse
 or keyboard is pressing, and
-[`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
-[`:focus-visible`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
-and
-[`:focus-within`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible)
+[`:focus`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible) or 
+[`:focus-visible`](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible)
 for assisting in assistive technology styling. 
 
 ```css
@@ -120,7 +118,6 @@ button:hover {}
 button:active {}
 button:focus {}
 button:focus-visible {}
-button:focus-within {}
 ```
 
 <figure>
@@ -206,7 +203,7 @@ button:is(:hover, :focus) {
     muted="true"
   %}
   <figcaption>
-    Try a [demo](https://codepen.io/argyleink/pen/powMQgx)
+    Try a <a href="https://codepen.io/argyleink/pen/powMQgx">demo</a>!
   </figcaption>
 </figure>
 
@@ -292,14 +289,14 @@ style.
 button {
   --_bg-light: white;
   --_bg-dark: black;
-  --_bg: var(--_example-light);
+  --_bg: var(--_bg-light);
 
   background-color: var(--_bg);
 }
 
 @media (prefers-color-scheme: dark) {
   button {
-    --_example: var(--_bg-dark);
+    --_bg: var(--_bg-dark);
   }
 }
 ```

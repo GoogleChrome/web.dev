@@ -13,7 +13,7 @@ A key aspects of Progressive Web Apps is that they're reliable; they can load as
 
 The [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event lets us intercept every network request made by the PWA in the service worker's scope, for both same-origin and cross-origin requests. In addition to navigation and asset requests, fetching from an installed service worker allows page visits after a site's first load to be rendered without network calls.
 
-The `fetch` handler receives all requests from an app, including URLs and HTTP headers, and lets the app developer decided how to process them.
+The `fetch` handler receives all requests from an app, including URLs and HTTP headers, and lets the app developer decide how to process them.
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WExZeP8vV28bPDBlpxuG.png", alt="The service worker sits between the client and the network.", width="800", height="439" %}
 
@@ -50,7 +50,7 @@ You must call `respondWith()` synchronously and you must return a [Response](htt
 
 Thanks to the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API), you can create HTTP responses in your JavaScript code, and those responses can be cached using the Cache Storage API and returned as if they were coming from a web server.
 
-To create a response, create a new `Response` object, setting its body and options such as status and headers:.
+To create a response, create a new `Response` object, setting its body and options such as status and headers:
 
 ```js
 const simpleResponse = new Response("Body of the HTTP response");

@@ -43,7 +43,7 @@ Third-party embeds are typically loaded in [`<iframe>`](https://developer.mozill
 
 ## Performance impact of third-party embeds
 
-Many popular embeds include over 100&nbsp;KB of JavaScript, sometimes even going up to 2&nbsp;MB. They take more time to load and keep the main thread busy when executing. Performance monitoring tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) help to [measure the impact of third-party embeds on performance](/identify-slow-third-party-javascript/).
+Many popular embeds include over 100&nbsp;KB of JavaScript, sometimes even going up to 2&nbsp;MB. They take more time to load and keep the main thread busy when executing. Performance monitoring tools such as [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) help to [measure the impact of third-party embeds on performance](/identify-slow-third-party-javascript/).
 
 [Reduce the impact of third-party code](/third-party-summary/) Lighthouse audit shows the list of third-party providers a page uses, with size and main-thread blocking time. The audit is available through Chrome DevTools under the Lighthouse tab.
 

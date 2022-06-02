@@ -16,7 +16,7 @@ Os invasores têm rastreadores da web automatizados que podem varrer seu site em
 
 ## Como esta auditoria Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7xN0qVP92s6g1XrNru1f.png", alt="Auditoria de Lighthouse mostrando quaisquer bibliotecas JavaScript front-end com vulnerabilidades de segurança conhecidas usadas pela página", width="800", height="190" %}</figure>
 

@@ -42,7 +42,7 @@ No entanto, esses números não dizem muito sobre a experiência do usuário. Du
 
 ### Cronometragem dos marcos ⏱️
 
-Os tempos de marcos marcam eventos que acontecem durante o carregamento da página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) ou evento de [carregamento.](https://developer.mozilla.org/docs/Web/Events/load) Os tempos mais úteis são [métricas de desempenho centradas no usuário](/user-centric-performance-metrics/) que informam algo sobre a experiência de carregar uma página. Essas métricas estão disponíveis por meio de [APIs de navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) e como parte dos relatórios do [Lighthouse.](https://developers.google.com/web/tools/lighthouse/)
+Os tempos de marcos marcam eventos que acontecem durante o carregamento da página, como [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) ou evento de [carregamento.](https://developer.mozilla.org/docs/Web/Events/load) Os tempos mais úteis são [métricas de desempenho centradas no usuário](/user-centric-performance-metrics/) que informam algo sobre a experiência de carregar uma página. Essas métricas estão disponíveis por meio de [APIs de navegador](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) e como parte dos relatórios do [Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 [First Contentful Paint (FCP)](/fcp/) mede quando o navegador exibe o primeiro bit de conteúdo do DOM, como texto ou imagens.
 
@@ -50,7 +50,7 @@ Os tempos de marcos marcam eventos que acontecem durante o carregamento da pági
 
 ### Métricas baseadas em regras 💯
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) e o [WebPageTest](https://www.webpagetest.org/) calculam [as pontuações de desempenho](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) com base nas regras de melhores práticas gerais, que podem ser usadas como diretrizes. Como bônus, o Lighthouse também oferece dicas para otimizações simples.
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) e o [WebPageTest](https://www.webpagetest.org/) calculam [as pontuações de desempenho](https://developers.google.com/web/tools/lighthouse/scoring#perf-scoring) com base nas regras de melhores práticas gerais, que podem ser usadas como diretrizes. Como bônus, o Lighthouse também oferece dicas para otimizações simples.
 
 Você obterá os melhores resultados se acompanhar uma combinação de métricas de desempenho baseadas em quantidade e centradas no usuário. Concentre-se nos tamanhos dos ativos nas fases iniciais de um projeto e comece a acompanhar o FCP e o TTI o mais rápido possível.
 

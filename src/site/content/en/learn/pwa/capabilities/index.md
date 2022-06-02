@@ -60,7 +60,7 @@ Below is a list of the most important capabilities you can use in your PWA.
 - *Web Performance* APIs to measure and help provide a better experience. See [the Performance API guide](https://developer.mozilla.org/docs/Web/API/Performance_API) for more information.
 - *Store data locally* with IndexedDB and storage management to query quota and request persistent storage, as seen in the [Offline data chapter](/learn/pwa/offline-data).
 - *Low-level audio* thanks to the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API).
-- *Foreground detection* using the [Page Visibility API](​​https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
+- *Foreground detection* using the [Page Visibility API](https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
 - *Network communication* using the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) and the [WebSocket API](https://developer.mozilla.org/docs/Web/API/WebSockets_API).
 
 #### Hardware and sensors
@@ -120,7 +120,7 @@ Here is a list of the most important capabilities you can use in your PWA, with 
 - *Virtual reality* enables you to use a headset and other devices in your PWA, thanks to the [WebXR Device API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API).
 - *Augmented reality* can be achieved in your PWA in many ways, such as using the [WebXR Device API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API) or the [Safari Quick Look app for AR content](https://webkit.org/blog/8421/viewing-augmented-reality-assets-in-safari-for-ios/).
 - *Detect inactive users* with the [Idle Detection API](/idle-detection/).
-- *Orientation lock* locks the orientation to portrait or landscape while the PWA is on the screen, thanks to the (Screen Orientation API)[https://developer.mozilla.org/docs/Web/API/Screen_Orientation_API], or the `orientation` property of the [Web App Manifest](/learn/pwa/web-app-manifest) for installed apps.
+- *Orientation lock* locks the orientation to portrait or landscape while the PWA is on the screen, thanks to the [Screen Orientation API](https://developer.mozilla.org/docs/Web/API/Screen_Orientation_API), or the `orientation` property of the [Web App Manifest](/learn/pwa/web-app-manifest) for installed apps.
 - *Present content* on projectors and secondary displays, thanks to the [Presentation API](https://developer.mozilla.org/docs/Web/API/Presentation_API).
 - *Lock a pointer* to receive delta movement information from pointers (mice, trackpads, and pointers) instead of position values—useful for some games—thanks to the [Pointer Lock API](https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API).
 

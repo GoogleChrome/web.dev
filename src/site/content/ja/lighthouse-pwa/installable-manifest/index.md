@@ -18,7 +18,7 @@ updated: 2019-09-19
 
 ## Lighthouse によるウェブアプリマニフェスト監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、インストール可能性の最低要件を満たす[ウェブアプリマニフェスト](/add-manifest/)がないページをフラグします。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、インストール可能性の最低要件を満たす[ウェブアプリマニフェスト](/add-manifest/)がないページをフラグします。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/039DlaixA4drrswBzSra.png", alt="ユーザーがホーム画面からウェブアプリをインストールできないことを示す Lighthouse 監査", width="800", height="98" %}</figure>
 

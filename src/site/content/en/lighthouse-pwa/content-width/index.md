@@ -18,7 +18,7 @@ content may be scaled down to fit, making text difficult to read.
 
 ## How the Lighthouse content width audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages whose width isn't equal to the width of the viewport:
 
 <figure>

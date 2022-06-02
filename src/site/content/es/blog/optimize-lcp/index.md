@@ -354,7 +354,7 @@ Con la renderización previa, la TTI sigue teniendo un impacto negativo, pero lo
 
 Hay varias herramientas disponibles para medir y depurar LCP:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) incluye soporte para medir LCP en un entorno de laboratorio.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) incluye soporte para medir LCP en un entorno de laboratorio.
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 

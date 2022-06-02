@@ -3,34 +3,29 @@ layout: post
 title: 'PWAs on Oculus Quest 2'
 authors:
   - thomassteiner
+  - alexeyrodionov
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/B7zNhOVvzK3O71sQyLKe.jpg
 alt:
   'Person wearing an Oculus Quest 2 with a PWA sticker on it spreading their arms with Quest
   controllers in both hands.'
 subhead: >
   The Oculus Quest 2 is a virtual reality (VR) headset created by Oculus, a division of Meta.
-  Developers can now build and distribute 2D Progressive Web Apps that take advantage of Oculus
-  Quest 2's multitasking feature.
+  Developers can now build and distribute 2D and 3D Progressive Web Apps (PWA) that take advantage
+  of Oculus Quest 2's multitasking feature.
 description: >
   The Oculus Quest 2 is a virtual reality (VR) headset created by Oculus, a division of Meta.
-  Developers can now build and distribute 2D Progressive Web Apps that take advantage of Oculus
-  Quest 2's multitasking feature. This article describes the experience and how to build, sideload,
-  and test your PWA on the Oculus Quest 2.
+  Developers can now build and distribute 2D and 3D Progressive Web Apps (PWA) that take advantage
+  of Oculus Quest 2's multitasking feature. This article describes the experience and how to build,
+  sideload, and test your PWA on the Oculus Quest 2.
 date: 2022-01-10
-updated: 2022-01-11
+updated: 2022-06-01
 tags:
   - blog
   - capabilities
   - progressive-web-apps
+  - virtual-reality
+  - webxr
 ---
-
-{% Aside %} This article is _not_ focused on apps making use of [WebXR](/tags/webxr/), a group of
-standards that are used together to support rendering 3D scenes to hardware designed for presenting
-virtual worlds (VR), or for adding graphical imagery to the real world (AR).
-
-Instead, this article is focused on 2D Progressive Web Apps, that is, PWAs that are primarily aimed
-at being consumed on regular screens, but that the user can also experience on their Oculus
-Quest&nbsp;2 device. {% endAside %}
 
 ## The Oculus Quest&nbsp;2
 
@@ -48,8 +43,9 @@ panel with 1,832&nbsp;×&nbsp;1,920 pixels per eye resolution that runs at a ref
 
 ## The Oculus Browser
 
-Currently there are two browsers available for the Oculus Quest&nbsp;2,
-[Firefox Reality](https://www.oculus.com/experiences/quest/2180252408763702/) and the built-in
+Currently there are three browsers available for the Oculus Quest&nbsp;2:
+[Wolvic](https://www.oculus.com/experiences/quest/4812663595466206/), a successor to
+[Firefox Reality](https://www.oculus.com/experiences/quest/2180252408763702/), and the built-in
 [Oculus Browser](https://www.oculus.com/experiences/quest/1916519981771802). This article focuses on
 the latter. The Oculus website
 [introduces](https://developer.oculus.com/documentation/web/browser-intro/) the Oculus Browser as
@@ -137,7 +133,7 @@ Browser windows and windows of installed PWAs can be freely resized by the user.
 between 625&nbsp;px and 1,200&nbsp;px. The width can be set between 400&nbsp;px and 2,000&nbsp;px.
 The default dimensions are 1,000&nbsp;×&nbsp;625 px.
 
-### Controlling PWAs
+### Interacting with PWAs
 
 PWAs can be controlled with the Oculus left and right controllers, Bluetooth mice and keyboards, and
 via hand tracking. Scrolling works via the thumb sticks on the Oculus controllers, or by pinching
@@ -190,17 +186,6 @@ will _not_ fire in Oculus Browser, despite feature detection reporting it to be 
 {% endAside %}
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/YNM3CfMKqnLuCJLw3I0U.png", alt="Oculus Browser inviting the user in a prompt to install the MyEmail app.", width="512", height="343" %}
-
-### App submission
-
-Apart from
-[submitting apps to the Oculus Store](https://developer.oculus.com/documentation/web/pwa-submit-app/),
-developers can also
-[submit their apps to App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/),
-a way for developers to distribute apps directly to consumers safely and securely, via direct links
-or platforms like [SideQuest](https://sidequestvr.com/), without requiring store approval and
-without sideloading. This allows them to get an app directly to end users, even if it is early in
-development, experimental, or aimed at a unique audience.
 
 ## Exemplary PWAs on the Oculus Quest&nbsp;2
 
@@ -311,11 +296,30 @@ customize the PWA experience.
 </table>
 </div>
 
+### Packaging PWAs with PWABuilder
+
+Using [PWABuilder](https://pwabuilder.com) is the easiest and recommended way to package PWAs for
+Oculus Quest at the moment.
+
+PWABuilder is an [open source](https://github.com/pwa-builder), community guided project founded by
+Microsoft, that allows developers to package and sign their PWAs for publishing to various stores,
+including Microsoft Store, Google Play, App Store, and Oculus Store.
+
+Packaging PWAs with PWABuilder is as easy as entering the URL of a PWA, selecting the platform
+(**Meta Quest** in this case), entering/editing metadata for the app, and clicking the **Generate**
+button.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/sWjB34HjwjatCMUz39Q3.png", alt="Packaging PWAs for Oculus Quest with PWABuilder.", width="800", height="450" %}
+
+{% Aside %} Pro tip: since PWABuilder is a PWA itself that works everywhere there is a browser, you
+can open it in the Oculus Browser and perform all the steps right on your Oculus Quest. {% endAside %}
+
 ### Packaging PWAs with the command line tool
 
-To sideload PWAs onto the Oculus Quest&nbsp;2, developers must use a
-[command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/) called
-`ovr-platform-util` with the `create-pwa` command to generate the APK. Set the output file name via
+If you don't have a manifest on your live PWA or wish to override the live manifest, you can still
+generate an APK for your PWA using a local manifest file and a
+[command line tool](https://developer.oculus.com/documentation/web/pwa-packaging/#download-the-cli)
+called `ovr-platform-util` with the `create-pwa` command. Set the output file name via
 the `-o` parameter. The Android SDK to use needs to be set via the `--android-sdk` parameter.
 Assuming a manifest file called `manifest.json` in the current working directory, the
 `--manifest-content-file` parameter helps the tool determine the relevant configuration fields from
@@ -328,7 +332,9 @@ the `--web-manifest-url` parameter. To leave the manifest as pure as possible, u
 ovr-platform-util create-pwa -o output.apk --android-sdk ~/bin/android-10 --manifest-content-file manifest.json --package-name com.company.app.pwa
 ```
 
-### Installing PWAs with `adb`
+By the way, PWABuilder uses the `ovr-platform-util` under the hood to package PWAs for Oculus Quest.
+
+### Installing PWAs with ADB
 
 After creating the APK, developers can sideload the PWA with the `adb` command when the Oculus
 Quest&nbsp;2 device is connected via USB and when the connected computer is trusted. Sideloaded apps
@@ -338,7 +344,30 @@ appear in an **Unknown Sources** section in the app drawer.
 adb install output.apk
 ```
 
-### Testing multi-tab apps
+{% Aside %} Pro tip: you can use [Android Web Toolbox](https://yume-chan.github.io/ya-webadb/install)
+to sideload the APK. It's an [open source](https://github.com/yume-chan/ya-webadb/) web app that allows
+you to access all ADB functionality right from the browser even from another Android device. No
+installation or drivers are required thanks to the [Web USB API](/usb/). {% endAside %}
+
+### App submission
+
+{% Aside %} Submission and consideration for the Oculus Store is only available if you have been
+approved as an Oculus Quest Store developer. Distribution of PWAs via
+[App Lab](https://developer.oculus.com/blog/introducing-app-lab-a-new-way-to-distribute-oculus-quest-apps/)
+is not currently
+available. The Oculus team will share more on when and how you can submit a PWA to App Lab soon.
+{% endAside %}
+
+Uploading and submitting PWAs to the Oculus Store is
+[covered](https://developer.oculus.com/documentation/web/pwa-submit-app/) in detail in the Oculus
+Developer Center docs.
+
+Apart from submitting apps to the Oculus Store, developers can also distribute their apps via platforms
+like [SideQuest](https://sidequestvr.com/) directly to consumers safely and securely, without requiring
+store approval. This allows them to get an app directly to end users, even if it is early in development,
+experimental, or aimed at a unique audience.
+
+## Testing multi-tab apps
 
 To test multi-tab apps, I created a little [test PWA](https://tomayac.github.io/oculus-pwa-test/)
 that demonstrates the various link features: namely opening a new in-PWA tab, staying on the current
@@ -372,6 +401,36 @@ trigger button on both controllers and then moving the controllers in opposed di
 that, everything else was performant and responsive, as you can see in the embedded screencast.
 
 {% YouTube "Gjc0IR17kAk" %}
+
+## Immersive 3D WebXR PWAs
+
+PWA support on Oculus Quest is not limited to flat 2D apps. Developers can build immersive 3D
+experiences for VR using the [WebXR API](/tags/webxr/).
+
+Wondering how various prompts (PWA install, permission requests, notifications) are handled
+from within VR, if at all?
+
+Here's a screencast of
+[User Agent Prompts test](https://immersive-web.github.io/webxr-samples/tests/permission-request.html)
+from the [Immersive Web Working Group](https://immersive-web.github.io/)'s
+[WebXR Tests](https://immersive-web.github.io/webxr-samples/tests/).
+
+{% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/4fvDWOo2XxF67M8r3W3O.mp4" %}
+
+As you can see, entering VR mode requires the user's permission. Permissions are asked once per origin.
+Requesting permissions leaves the immersive mode. Notifications are currently not supported.
+
+### Hand tracking
+
+You can use your hands to interact with PWAs in immersive mode thanks to the
+[WebXR Hand Input API](https://immersive-web.github.io/webxr-hand-input/) and Meta's
+[AI-based hand-tracking system](https://ai.facebook.com/blog/hand-tracking-deep-neural-networks/).
+
+Here's a screencast of
+[Hand Tracking Sample](https://immersive-web.github.io/webxr-samples/immersive-hands.html)
+from the Immersive Web Working Group's [WebXR Samples](https://immersive-web.github.io/webxr-samples/).
+
+{% Video autoplay=true, muted=true, loop=true, playsinline=true, src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/nDm0rY5DvtyTbDgUqFTS.mp4" %}
 
 ## Conclusions
 

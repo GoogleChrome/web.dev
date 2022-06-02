@@ -26,7 +26,7 @@ Todos os principais navegadores, exceto o Internet Explorer, oferecem suporte a 
 
 ## Como a auditoria do service worker do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não registram um service worker:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não registram um service worker:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoria do Lighthouse mostrando que o site não registra um service worker", width="800", height="95" %}</figure>
 

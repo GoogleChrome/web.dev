@@ -132,7 +132,7 @@ Learn more about
 
 Test your sign-in and sign-up forms regularly with real people to make sure that authentication works as expected. 
 Use analytics and [real user measurement (RUM)](/user-centric-performance-metrics/) to collect field data, 
-and tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 
+and tools such as [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 
 and [PageSpeed Insights](https://pagespeed.web.dev/) to run tests yourself. 
 Learn more about [testing for usability](/learn/forms/usability-testing) and 
 [gathering analytics data](/learn/forms/data).

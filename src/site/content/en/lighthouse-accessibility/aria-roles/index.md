@@ -19,7 +19,7 @@ or interact with it as the developer intended.
 
 ## How Lighthouse determines an ARIA role has an invalid value
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags ARIA roles with invalid values:
 
 <figure>

@@ -22,7 +22,7 @@ Internet Explorer를 제외한 모든 주요 브라우저는 서비스 워커를
 
 ## Lighthouse 서비스 워커 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 서비스 워커를 등록하지 않은 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 서비스 워커를 등록하지 않은 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Lighthouse 감사 표시 사이트에서 서비스 워커를 등록하지 않음", width="800", height="95" %}</figure>
 

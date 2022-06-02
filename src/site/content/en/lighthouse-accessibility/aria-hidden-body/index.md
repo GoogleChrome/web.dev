@@ -17,7 +17,7 @@ element hides your entire web page from assistive technology users.
 
 ## How Lighthouse identifies hidden body elements
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
 
 <figure>

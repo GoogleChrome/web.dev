@@ -272,7 +272,7 @@ it's not always easy to get engineering and business teams to prioritize non-fun
 development. Part of the challenge is that some of these performance optimizations
 can't be planned. They require experimentation and a trial-and-error mindset.
 
-AirSHIFT is now conducting internal 1-day performance hackathons to let engineers focus only on performance related work. In these hackathons they remove all constraints and respect the engineers' creativity, meaning any implementation that contributes to speed is worth considering. To accelerate the hackathon, AirSHIFT splits the group into small teams and each team competes to see who can get the biggest [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score improvement.
+AirSHIFT is now conducting internal 1-day performance hackathons to let engineers focus only on performance related work. In these hackathons they remove all constraints and respect the engineers' creativity, meaning any implementation that contributes to speed is worth considering. To accelerate the hackathon, AirSHIFT splits the group into small teams and each team competes to see who can get the biggest [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) performance score improvement.
 The teams get very competitive! 🔥
 
 {% Img src="image/admin/A1nus9lmROXOGm9rpCsO.png", alt="Photos of the hackathon.", width="800", height="462" %}
