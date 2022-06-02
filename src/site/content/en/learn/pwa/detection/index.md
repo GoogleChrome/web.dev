@@ -60,7 +60,7 @@ The [Installation Prompt chapter](/learn/pwa/installation-prompt) explains how t
 
 {% Aside 'warning' %}
 The `appinstalled` event is available only in Chromium-based browsers, and it's part of an [incubator for the manifest spec](https://wicg.github.io/manifest-incubations/#onappinstalled-attribute)
-{% endAside %}.
+{% endAside %}
 
 ## Session transfer
 
