@@ -70,7 +70,7 @@ The event will not fire if:
 
 {% Aside 'gotchas' %}
 Chrome and Edge on iOS and iPadOS do not support PWA installation, so the `beforeinstallprompt` event can't fire. In this case, the only option is to open the PWA using Safari, where it is installable from the [share, add to the home screen menu](/learn/pwa/installation/#installation-criteria).
-{% endAside %}.
+{% endAside %}
 
 ### The best place to prompt
 
