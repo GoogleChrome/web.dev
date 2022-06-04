@@ -79,7 +79,7 @@ Safari also supports [Gesture events](https://developer.apple.com/library/archiv
 
 #### Operating system integration
 
-*Speech synthesis and voice recognition* use the platform's installed voices to speak to the user and to recognize what the user is saying, thanks to the [Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API).
+- *Speech synthesis and voice recognition* use the platform's installed voices to speak to the user and to recognize what the user is saying, thanks to the [Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API).
 - *Share content* from your PWA to other apps and places on the device, thanks to the [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_API), as we'll see in the [OS integration chapter](/learn/pwa/os-integration).
 - *Access the clipboard* to save and retrieve content from the clipboard in different formats, thanks to the [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API), as I showed in the [OS integration chapter](/learn/pwa/os-integration).
 - *Manage user's credentials and passwords* using the [Credential Management API](https://developer.mozilla.org/docs/Web/API/Credential_Management_API).
