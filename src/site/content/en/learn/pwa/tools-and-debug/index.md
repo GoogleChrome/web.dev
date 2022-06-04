@@ -131,7 +131,7 @@ There are commercial tools available, but all the browsers also offer ways to do
 
 When testing PWAs available on `localhost` on Android physical devices or emulators, you will have a problem, as `localhost` will point to the Android TCP stack and not your development machine.
 
-You may want to use your local IP address as a replacement to `localhost`, but that's not a good idea as service workers and many abilities will only work without HTTPS connections, with the exception of `localhost`, so your PWA won't work offline or pass PWA criteria.
+You may want to use your local IP address as a replacement to `localhost`, but that's not a good idea as service workers and many abilities will only work with HTTPS connections, with the exception of `localhost`, so your PWA won't work offline or pass PWA criteria.
 
 
 You can solve the problem by enabling port forwarding on a Chromium browser on your desktop computer. In that case, you can bridge a port on `localhost` on the Android device to any origin and port from your host computer, including your development computer's `localhost`. Check [this guide](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/) for more information.
