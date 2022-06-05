@@ -55,7 +55,7 @@ Some useful shortcuts for web developers while using Simulator to test PWAs are:
 Simulator is not a virtual machine, but an app running on top of your macOS that looks like an iPhone or iPad, so it doesn't have its own TCP stack. Therefore, if you use `localhost` within Simulator, Safari will point to your macOS `localhost` device.
 
 
-By default, Xcode only installs the latest version of iOS , but you can go to Xcode, use the `Preferences` menu, and download older Simulators from the `Components` tab.
+By default, Xcode only installs the latest version of iOS, but you can go to Xcode, use the `Preferences` menu, and download older Simulators from the `Components` tab.
 
 It's good practice to test your PWA on the latest version of iOS, the previous minor version, and at least one previous major version.
 
