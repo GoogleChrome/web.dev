@@ -168,7 +168,7 @@ Inside `Application`, `Cache` then `Cache Storage`, you can see all the caches s
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WJ0fBXggrFnhifcAIcBb.png", alt="Cache Inspector in Chromium DevTools", width="800", height="491" %}
 
-Also, selectingfrom `Application` then `Storage`, you can see the current quota used, simulate custom quota storage, and clear all your data, including the service worker registration, using `Clear site data`.
+Also, selecting from `Application` then `Storage`, you can see the current quota used, simulate custom quota storage, and clear all your data, including the service worker registration, using `Clear site data`.
 
 #### Background services
 
