@@ -9,6 +9,8 @@ description: >
   web push protocol requests to a push service.
 date: 2016-06-30
 updated: 2022-05-27
+tags:
+  - notifications
 ---
 
 We've seen how a library can be used to trigger push messages, but what
@@ -679,3 +681,23 @@ href="https://tools.ietf.org/html/draft-ietf-webpush-protocol-10#section-7.2">40
 (or 4kb).</td>
   </tr>
 </table>
+
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* Web Push Protocol
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

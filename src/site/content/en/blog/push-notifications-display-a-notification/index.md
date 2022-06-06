@@ -4,6 +4,8 @@ authors:
   - mattgaunt
 date: 2016-06-30
 updated: 2019-06-08
+tags:
+  - notifications
 ---
 
 I've split up notification options into two sections, one that deals with the visual aspects
@@ -242,6 +244,8 @@ if (maxVisibleActions < 4) {
 }
 
 registration.showNotification(title, options);
+```
+
 At the time of writing only Chrome and Opera for Android support actions.
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/GI8sj9krxVtxWVeHGuvs.png", alt="Notification with actions on Chrome for Android.", width="800", height="296" %}
@@ -285,7 +289,7 @@ it'll be some time before anything is agreed upon.
 
 ### Direction
 
-The "dir" parameter allows you to define which direction the text should be displayed,
+The `dir` parameter allows you to define which direction the text should be displayed,
 right-to-left or left-to-right.
 
 In testing, it seemed that the direction was largely determined by the text rather than this
@@ -409,4 +413,22 @@ With this, we could change the notification we display to our users.
 With the other options, just do the same as above, replacing `'actions'` with the desired
 parameter name.
 
-## Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* Displaying a Notification
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)
