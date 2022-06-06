@@ -85,7 +85,7 @@ Different versions of the launch image can be set with a media query inside the 
       media="orientation: landscape">
 ```
 {% Aside 'warning' %}
-If you want to provide all possible options combining screen definitions, orientations, and multitask mode, you will end up with more than 25 different images you need to create and link in your HTML.If you don't provide a startup image for your user's iOS or iPadOS context, a white screen will appear instead in the opening animation, and while your PWA is loading
+If you want to provide all possible options combining screen definitions, orientations, and multitask mode, you will end up with more than 25 different images you need to create and link in your HTML. If you don't provide a startup image for your user's iOS or iPadOS context, a white screen will appear instead in the opening animation, and while your PWA is loading
 {% endAside %}
 
 #### Design patterns for iOS startup images
