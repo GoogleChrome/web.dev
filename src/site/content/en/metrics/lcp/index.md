@@ -387,7 +387,7 @@ Lazy loading is a common performance optimization in which images and other elem
 
 However, lazy loading can affect LCP negatively when used improperly. As a general rule, these is one rule of lazy loading to follow if your LCP candidate is an image: If an LCP candidate is above the fold (or reasonably close), do _not_ lazy load it. The reason for this depends on how you're lazy loading images:
 
-- **If you're using JavaScript to lazy load images**, lazy loading your LCP candidate will delay LCP because the image will be dependent on a script in order to display. This not only causes a delay in that the necessary JavaScript requires time to parse, compile, and execute, but [such a pattern defeats the browser preload scanner](https://web.dev/preload-scanner/#lazy-loading-with-javascript).
+- **If you're using JavaScript to lazy load images**, lazy loading your LCP candidate will delay LCP because the image will be dependent on a script in order to display. This not only causes a delay in that the necessary JavaScript requires time to parse, compile, and execute, but [such a pattern defeats the browser preload scanner](/preload-scanner/#lazy-loading-with-javascript).
 - **If you're using [browser-level lazy loading]()**, specifying `loading=lazy` on your LCP candidate image will cause the browser to deprioritize the request for the image, allocating it _less_ bandwidth during startup.
 
 Both of these will result in a slower LCP, so avoid these patterns. Regardless of your lazy loading method, it's worth pointing out that lazy loading below-the-fold imagery will result in less bandwidth contention, meaning that your LCP candidate image could load faster.
