@@ -152,18 +152,18 @@ You can read more about this experimental capability at [Tabbed application mode
 In the [Experimental chapter](/learn/pwa/experimental), you will see how you can start using experimental capabilities.
 {% endAside %}
 
-### Windows control overlay
+### Window controls overlay
 
 We've mentioned that you can change the window's title by defining the value of the `<title>` element or the `document.title` property. But it's always a string value. What if we could design the title bar as we wish, with HTML, CSS, and images?
-That's where Windows Control Overlay comes in, a new experimental capability in Microsoft Edge and Google Chrome for desktop PWAs.
+That's where Window Controls Overlay comes in, a new experimental capability in Microsoft Edge and Google Chrome for desktop PWAs.
 
 {% Aside %}
-Tabbed mode and windows control overlay capabilities define new values for the manifest's `display` member. To create compatibility with all devices, the manifest group has created a way to replace the [fallback `display` chain](/learn/pwa/app-design/#display-modes), so you can specify what `display` value to use if your first option is not available. Read more about it at [Preparing for the display modes of tomorrow](/display-override/).
+Tabbed mode and window controls overlay capabilities define new values for the manifest's `display` member. To create compatibility with all devices, the manifest group has created a way to replace the [fallback `display` chain](/learn/pwa/app-design/#display-modes), so you can specify what `display` value to use if your first option is not available. Read more about it at [Preparing for the display modes of tomorrow](/display-override/).
 {% endAside %}
 
 You can read more about this capability at [Customize the window controls overlay of your PWA's title bar](/window-controls-overlay/).
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/B5UDAJzKTqCRdSy6B5is.png", alt="With windows control overlay, you can render content in the title bar.", width="800", height="544" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/B5UDAJzKTqCRdSy6B5is.png", alt="With window controls overlay, you can render content in the title bar.", width="800", height="544" %}
 
 ## Multi-screen window placement
 
