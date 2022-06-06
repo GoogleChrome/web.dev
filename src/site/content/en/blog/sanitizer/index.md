@@ -82,7 +82,7 @@ $div.setHTML(user_input, sanitizer) // <div><em>hello world</em><img src=""></di
 
 It is worth noting that `setHTML()` is defined on [`Element`](https://developer.mozilla.org/docs/Web/API/Element). Being a method of `Element`, the context to parse is self-explanatory (`<div>` in this case), the parsing is done once internally, and the result is directly expanded into the DOM.
 
-If you want to get the result of sanitization as a string, you can use `.innerHTML` from the `setHTML()` results.
+To get the result of sanitization as a string, you can use `.innerHTML` from the `setHTML()` results.
 
 ```js
 $div.setHTML(user_input, sanitizer).innerHTML // <em>hello world</em><img src="">
