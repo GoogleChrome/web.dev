@@ -208,25 +208,25 @@ clicking “Web Audio” on the top menu.
 The Web Audio panel has 4 components: context selector, property inspector,
 graph visualizer, and performance monitor.
 
-#### Context Selector
+### Context Selector
 
 Since a page can have multiple BaseAudioContexts, this drop-down menu allows you
 to choose the context you want to inspect. You can also manually trigger garbage
 collection by clicking the trash can icon on the left. 
 
-#### Property Inspector
+### Property Inspector
 
 This side panel shows various properties of a user-selected context or
 `AudioNode`. Inspecting dynamic values in `AudioParam` is not supported.
 
-#### Graph Visualizer
+### Graph Visualizer
 
 This view renders the current graph topology of a user-selected context. This
 visualization changes dynamically in real time. By clicking an element in the
 visualization, you can inspect the detailed information on the property
 inspector.
 
-#### Performance Monitor
+### Performance Monitor
 
 This status bar at the bottom is only active when the selected BaseAudioContext
 is an AudioContext, which runs in real-time. This bar shows the instantaneous
