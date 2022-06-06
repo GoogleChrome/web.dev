@@ -82,13 +82,13 @@ Many web authentication and authorization flows involve redirecting the user to 
 
 In these cases, the in-app browser follows the following process:
 
-1- The user opens your PWA and clicks login.
-1- Your PWA redirects the user to a URL that is out of the scope of the PWA so that the rendering engine will open an in-app browser within your PWA.
-1- The user can cancel the in-app browser and go back to your PWA at any time.
-1- The user logs into the in-app browser. The authentication server redirects the user to your PWA origin, sending the token as an argument.
-1- The in-app browser closes itself when it detects a URL that is part of the scope of the PWA.
-1- The engine redirects the main PWA window navigation to the URL that the authentication server went to while in the in-app browser.
-1- Your PWA gets the token, stores the token, and renders the PWA.
+1. The user opens your PWA and clicks login.
+1. Your PWA redirects the user to a URL that is out of the scope of the PWA so that the rendering engine will open an in-app browser within your PWA.
+1. The user can cancel the in-app browser and go back to your PWA at any time.
+1. The user logs into the in-app browser. The authentication server redirects the user to your PWA origin, sending the token as an argument.
+1. The in-app browser closes itself when it detects a URL that is part of the scope of the PWA.
+1. The engine redirects the main PWA window navigation to the URL that the authentication server went to while in the in-app browser.
+1. Your PWA gets the token, stores the token, and renders the PWA.
 
 #### Forcing a browser's navigation
 
