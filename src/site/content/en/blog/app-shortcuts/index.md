@@ -117,9 +117,8 @@ optional.
 It is not used at the time of writing but may be exposed to assistive technology
 in the future.
 
-### url
-
-The URL opened when a user activates the app
+`url`
+:   The URL opened when a user activates the app
 shortcut. This URL must exist within the scope of the web app manifest. If it is
 a relative URL, the base URL will be the URL of the web app manifest.
 
