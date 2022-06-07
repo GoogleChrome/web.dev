@@ -344,7 +344,7 @@ for await (const chunk of stream) {
 A workaround to use asynchronous iteration today is to implement the behavior with a polyfill.
 
 ```js
-if (ReadableStream.prototype[Symbol.asyncIterator]) {
+if (!ReadableStream.prototype[Symbol.asyncIterator]) {
   ReadableStream.prototype[Symbol.asyncIterator] = async function* () {
     const reader = this.getReader();
     try {
