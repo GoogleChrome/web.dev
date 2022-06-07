@@ -232,15 +232,27 @@ as a notification.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2pLZ4T0vVrG3nqitaAeH.svg", alt="Message arrives on device. Browser wakes up service worker. Push event is dispatched.", width="800", height="238" %}
 
-## Next steps {: #next-steps }
+## Where to go next
 
-* Check out [Codelab: Build a push notification client](/push-notifications-client-codelab/)
-  to learn how to build a client that requests notification permission, subscribes
-  the device to receive push notifications, and uses a service worker to receive
-  push messages and display the messages as notifications.
-* Check out [Codelab: Build a push notification server](/push-notifications-server-codelab/)
-  to learn how to build a server that manages subscriptions and sends web push protocol
-  requests.
+* Web Push Notification Overview
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)
+
+
 
 [1]: https://developer.mozilla.org/docs/Web/API/Push_API
 [3]: https://developer.mozilla.org/docs/Web/API/Service_Worker_API
