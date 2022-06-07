@@ -38,7 +38,7 @@ The following configuration is best practice, ensuring security and cross-browse
 
 ### The recipe
 
-```
+```text
 Set-Cookie:
 __Host-cookie-name=cookie-value;
 Secure;
@@ -68,7 +68,7 @@ The `Domain` attribute specifies which hosts can receive a cookie. Omitting it r
 
 `Path` indicates the path that must exist in the requested URL for the browser to send the `Cookie` header. Setting ``Path=/`` means that the cookie is sent to all URL paths on that domain. The combination of no `Domain` and `Path=/` makes the cookie bound to the origin as closely as possible, so it behaves similarly to other client-side storage such as `LocalStorage`—there's no confusion that `example.com/a` might receive different values to `example.com/b`.
 
-The `HttpOnly` attribute adds some protection against malicious third-party scripts on your sites by [restricting JavaScript access](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies). It allows a cookie to be sent only in request headers and makes them unavailable to JavaScript via `document.cookie`.
+The `HttpOnly` attribute adds some protection against malicious third-party scripts on your sites by [restricting JavaScript access](https://developer.mozilla.org/docs/Web/HTTP/Cookies#restrict_access_to_cookies). It allows a cookie to be sent only in request headers and makes them unavailable to JavaScript via `document.cookie`.
 
 {% Aside %}
 Even with `HttpOnly`, you can still trigger requests from JavaScript, like fetch or XML HTTP requests⁠—and if you've specified including credentials, cookies (including HTTP only cookies) will be sent⁠ on those requests—they're just not visible to those client-side scripts in any way. If any of those scripts on your site have been compromised or are malicious, their access to potentially sensitive cookie data is limited.
@@ -80,7 +80,7 @@ Even with `HttpOnly`, you can still trigger requests from JavaScript, like fetch
 The maximum value of [`Max-Age` must not be greater than 400 days](https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-max-age-attribute) (34560000 seconds).  Another way to limit the life of a cookie is specifying the `Expires` attribute which sets an expiration date in the future, instead of an expiration duration. Note that the date and time set in the `Expires` attribute are relative to the client the cookie is being set on, not the server.
 {% endAside %}
 
-[`SameSite=Lax`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#lax) restricts the cookie to only be sent on same-site requests. That is, where the request matches the current browsing context–the top level site the user is currently visiting which is displayed in their location bar. `SameSite=Lax` is the default in modern browsers but it's good practice to specify it for compatibility across browsers which may have different defaults. By explicitly marking the cookie as same-site only, you are restricting it to your first-party contexts, and you should not have to make changes to that cookie when third-party cookies go away.
+[`SameSite=Lax`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite#lax) restricts the cookie to only be sent on same-site requests. That is, where the request matches the current browsing context–the top level site the user is currently visiting which is displayed in their location bar. `SameSite=Lax` is the default in modern browsers but it's good practice to specify it for compatibility across browsers which may have different defaults. By explicitly marking the cookie as same-site only, you are restricting it to your first-party contexts, and you should not have to make changes to that cookie when third-party cookies go away.
 
 To learn more about different cookie attributes, check out [`Set-Cookie` documentation on MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie).
 
@@ -93,7 +93,7 @@ If you have a site with subdomains and want to have one session across all of th
 
 ### The recipe
 
-```
+```text
 Set-Cookie:
 __Secure-cookie-name=cookie-value;
 Secure;
@@ -127,7 +127,7 @@ You can further restrict cookies access and disallow sending them along with req
 
 ### The recipe
 
-```
+```text
 Set-Cookie:
 __Host-cookie-name=cookie-value;
 Secure;
