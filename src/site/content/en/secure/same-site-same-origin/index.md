@@ -204,7 +204,7 @@ cross-site because the schemes don't match.
 ## How to check if a request is "same-site", "same-origin", or "cross-site"
 
 All modern browsers (except Safari) send requests along with a 
-[Sec-Fetch-Site` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site).
+[`Sec-Fetch-Site` HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site).
 The header has one of the following values:
 
 * `cross-site`
