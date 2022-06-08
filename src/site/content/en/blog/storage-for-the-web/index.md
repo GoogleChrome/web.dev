@@ -1,11 +1,11 @@
 ---
 title: Storage for the web
-subhead: There are many different options for storing data in the browser. Which one is best for your needs?
+subhead: There are many options for storing data in the browser. Which one is best for your needs?
 authors:
   - petelepage
-description: There are many different options for storing data in the browser. Which one is best for your needs?
+description: There are many options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2022-03-08
+updated: 2022-06-09
 tags:
   - blog
   - progressive-web-apps
@@ -19,7 +19,7 @@ feedback:
 
 Internet connections can be flakey or non-existent on the go, which is why
 offline support and reliable performance are common features in
-[progressive web apps](/progressive-web-apps/). Even in perfect wireless
+[Progressive Web Apps](/progressive-web-apps/). Even in perfect wireless
 environments, judicious use of caching and other storage techniques can
 substantially improve the user experience. There are several ways to cache
 your static application resources (HTML, JavaScript, CSS, images, etc.), and
