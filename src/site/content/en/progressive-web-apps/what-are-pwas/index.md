@@ -68,7 +68,7 @@ While some capabilities are still out of the web's reach, new and upcoming APIs
 are looking to change that, expanding what the web can do with features like
 file system access, media controls, app badging, and full clipboard support. All
 of these capabilities are built with the web's secure, user-centric permission
-model, ensuring that going to a website is safe for users.
+model, ensuring that going to a website is never scary for users.
 
 Between modern APIs, WebAssembly, and new and upcoming APIs, web applications
 are more capable than ever, and those capabilities are only growing.
