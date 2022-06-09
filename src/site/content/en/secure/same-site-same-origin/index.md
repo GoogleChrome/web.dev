@@ -220,11 +220,13 @@ captured in `Sec-Fetch-Site`).
 
 {% Aside 'important' %}
 
-You can reasonably trust the value of `Sec-Fetch-Site` header because [HTTP
-headers starting with `Sec-` can not be modified by
-JavaScript](https://www.w3.org/TR/fetch-metadata/#sec-prefix) and is always set
-by the browser. Even if a server receives a manipulated value of
-`Sec-Fetch-Site` header sent by a random HTTP client, there is no user or a
-browser that will be harmed by breaking the same-origin policy.
+You can reasonably trust the value of `Sec-Fetch-Site` header because:
+*  [HTTP headers starting with `Sec-` can not be modified by
+   JavaScript](https://www.w3.org/TR/fetch-metadata/#sec-prefix)
+*  These headers are always set by the browser.
+
+Even if a server receives a manipulated value for the `Sec-Fetch-Site`
+header, sent by a random HTTP client, no user or browser will be
+harmed by breaking the same-origin policy.
 
 {% endAside %}
