@@ -89,7 +89,7 @@ In this section we'll classify apps in the store in two groups:
 
 According to a [Google Play study](https://medium.com/googleplaydev/shrinking-apks-growing-installs-5d3fcba23ce2), for every 6 MB increase to an APK's size, the install conversion rate decreases by 1%. This means that the download completion rate of an app of 10 MB could be approximately **30% higher than an app of 100 MB!**
 
-To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA), which makes this possible. Because TWAs are built using the web, the app size is usually only a few megabytes.
+To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/) (TWA). TWAs wrap your PWA in a webview like component, and the resulting app size is usually only a few megabytes.
 
 Oyo, one of India's largest hospitality companies, built a [Lite version of their app](/oyo-lite-twa/), and made it available in the Play Store using a TWA. At the time this article was written, the Oyo app was only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
 
