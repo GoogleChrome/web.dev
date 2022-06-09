@@ -76,8 +76,13 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) is used in the follow
 ```js
 const $div = document.querySelector('div')
 const user_input = `<em>hello world</em><img src="" onerror=alert(0)>`
-const sanitizer = new Sanitizer()
-$div.setHTML(user_input, sanitizer) // <div><em>hello world</em><img src=""></div>
+$div.setHTML(user_input, { sanitizer: new Sanitizer() }) // <div><em>hello world</em><img src=""></div>
+```
+
+However, the `{ sanitizer: new Sanitizer() }` is the default argument. So it can be just like below.
+
+```js
+$div.setHTML(user_input) // <div><em>hello world</em><img src=""></div>
 ```
 
 It is worth noting that `setHTML()` is defined on [`Element`](https://developer.mozilla.org/docs/Web/API/Element). Being a method of `Element`, the context to parse is self-explanatory (`<div>` in this case), the parsing is done once internally, and the result is directly expanded into the DOM.
@@ -85,9 +90,10 @@ It is worth noting that `setHTML()` is defined on [`Element`](https://developer.
 To get the result of sanitization as a string, you can use `.innerHTML` from the `setHTML()` results.
 
 ```js
-$div.setHTML(user_input, sanitizer).innerHTML // <em>hello world</em><img src="">
+const $div = document.createElement('div')
+$div.setHTML(user_input)
+$div.innerHTML // <em>hello world</em><img src="">
 ```
-
 
 ### Customize via configuration
 
@@ -120,16 +126,16 @@ The following options specify how the sanitization result should treat the speci
 ```js
 const str = `hello <b><i>world</i></b>`
 
-$div.setHTML(new Sanitizer(), str)
+$div.setHTML(str)
 // <div>hello <b><i>world</i></b></div>
 
-$div.setHTML(new Sanitizer({allowElements: [ "b" ]}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowElements: [ "b" ]}) })
 // <div>hello <b>world</b></div>
 
-$div.setHTML(new Sanitizer({blockElements: [ "b" ]}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({blockElements: [ "b" ]}) })
 // <div>hello <i>world</i></div>
 
-$div.setHTML(new Sanitizer({allowElements: []}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowElements: []}) })
 // <div>hello world</div>
 ```
 
@@ -144,22 +150,22 @@ You can also control whether the sanitizer will allow or deny specified attribut
 ```js
 const str = `<span id=foo class=bar style="color: red">hello</span>`
 
-$div.setHTML(new Sanitizer(), str)
+$div.setHTML(str)
 // <div><span id="foo" class="bar" style="color: red">hello</span></div>
 
-$div.setHTML(new Sanitizer({allowAttributes: {"style": ["span"]}}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {"style": ["span"]}}) })
 // <div><span style="color: red">hello</span></div>
 
-$div.setHTML(new Sanitizer({allowAttributes: {"style": ["p"]}}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {"style": ["p"]}}) })
 // <div><span>hello</span></div>
 
-$div.setHTML(new Sanitizer({allowAttributes: {"style": ["*"]}}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {"style": ["*"]}}) })
 // <div><span style="color: red">hello</span></div>
 
-$div.setHTML(new Sanitizer({dropAttributes: {"id": ["span"]}}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({dropAttributes: {"id": ["span"]}}) })
 // <div><span class="bar" style="color: red">hello</span></div>
 
-$div.setHTML(new Sanitizer({allowAttributes: {}}), str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {}}) })
 // <div>hello</div>
 ```
 
@@ -169,13 +175,14 @@ $div.setHTML(new Sanitizer({allowAttributes: {}}), str)
 ```js
 const str = `<custom-elem>hello</custom-elem>`
 
-$div.setHTML(new Sanitizer(), str)
+$div.setHTML(str)
 // <div></div>
 
-$div.setHTML(new Sanitizer({
+const sanitizer = new Sanitizer({
   allowCustomElements: true,
   allowElements: ["div", "custom-elem"]
-}, str)
+})
+$div.setHTML(str, { sanitizer })
 // <div><custom-elem>hello</custom-elem></div>
 ```
 
