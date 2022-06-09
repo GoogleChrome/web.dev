@@ -83,7 +83,7 @@ Apps for App stores can be built with different technologies, including PWA tech
 In this section we'll classify apps in the store in two groups:
 
 - **Platform-specific apps:** these apps are mostly built with platform-specific code. Their sizes depend on the platform, but they're usually above 10MB on Android, and 30MB on iOS. You might want to promote your platform-specific app if you don't have a PWA, or if the platform-specific app presents a more complete feature set.
-- **Lightweight apps:** these apps can be built with platform-specific code as well, but they are commonly built with web technology, packaged in a platform-specific wrapper. Full PWAs can be uploaded to the stores as well. (This is discussed later in this article.) Some companies opt to provide these as "lite" experiences, and others have used this approach for their flagship (core) apps as well.
+- **Lightweight apps:** these apps can be built with platform-specific code as well, but they are commonly built with web technology, packaged in a platform-specific wrapper. Full PWAs can be uploaded to the stores as well. (This is discussed [later](#promoting-lightweight-apps) in this article.) Some companies opt to provide these as "lite" experiences, and others have used this approach for their flagship (core) apps as well.
 
 ### Promoting Lightweight Apps
 
