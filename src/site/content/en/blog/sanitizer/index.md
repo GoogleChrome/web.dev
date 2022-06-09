@@ -95,6 +95,7 @@ $div.setHTML(user_input)
 $div.innerHTML // <em>hello world</em><img src="">
 ```
 
+
 ### Customize via configuration
 
 The Sanitizer API is configured by default to remove strings that would trigger script execution. However, you can also add your own customizations to the sanitization process via a configuration object.
