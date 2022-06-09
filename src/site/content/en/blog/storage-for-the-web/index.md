@@ -31,10 +31,10 @@ much can you store? How do you prevent it from being evicted?
 Here's a general recommendation for storing resources:
 
 * For the network resources necessary to load your app and file-based content,
-  use the [**Cache Storage API**][cache-primer] (part of
-  [service workers][sw-primer]).
-* For other data, use [**IndexedDB**][mdn-indexeddb] (with a
-  [promises wrapper][idb-wrapper]).
+  use the [**Cache Storage API**][mdn-cache-storage] (part of
+  [service workers][mdn-service-worker]).
+* For other data, use [**IndexedDB**][mdn-indexeddb] with a
+  [promises wrapper][idb-wrapper]. (I'll eplain why shortly.)
 
 IndexedDB and the Cache Storage API are supported in every modern browser.
 They're both asynchronous, and will not block the main thread. They're
@@ -46,12 +46,13 @@ it easy to use them anywhere in your code.
 There are several other storage mechanisms available in the browser, but they
 have limited use and may cause significant performance issues.
 
-[SessionStorage][mdn-sessionstorage] is tab specific, and scoped to the
-lifetime of the tab. It may be useful for storing small amounts of session
-specific information, for example an IndexedDB key. It should be used with
-caution because it is synchronous and will block the main thread. It is
-limited to about 5MB and can contain only strings. Because it is tab specific,
-it is not accessible from web workers or service workers.
+[SessionStorage][mdn-sessionstorage] is tab specific, and scoped to the lifetime
+of the tab. It may be useful for storing small amounts of session specific
+information, for example an IndexedDB key. It is limited to about 5MB and can
+contain only strings. Because it is tab specific, it is not accessible from web
+workers or service workers.
+
+Use it with caution. It is synchronous and will block the main thread.
 
 [LocalStorage][mdn-localstorage] should be avoided because it is synchronous
 and will block the main thread. It is limited to about 5MB and can contain
@@ -65,9 +66,7 @@ They are synchronous, and are not accessible from web workers. Like
 LocalStorage and SessionStorage, cookies are limited to only strings.
 
 The [File System API][mdn-fileapi] and FileWriter API provide methods for
-reading and writing files to a sandboxed file system. While it is asynchronous,
-it is not recommended because it is
-[only available in Chromium-based browsers][caniuse-fs].
+reading and writing files to a sandboxed file system.
 
 The [File System Access API](/file-system-access/) was designed to make it
 easy for users to read and edit files on their local file system. The user
@@ -77,7 +76,7 @@ permissions are not persisted across sessions.
 WebSQL should **not** be used, and existing usage should be migrated to
 IndexedDB. Support has [been removed][caniuse-websql] from almost all major
 browsers. The W3C [stopped maintaining the Web SQL spec][w3c-websql] in 2010,
-with no plans to further updates planned.
+with no plans for further updates.
 
 Application Cache should **not** be used, and existing usage should be
 migrated to service workers and the Cache API. It has been
@@ -91,34 +90,34 @@ hundreds of gigabytes or more. Browser implementations vary, but the amount
 of storage available is usually based on the amount of storage available on the
 device.
 
-* Chrome allows the browser to use up to 80% of total disk space. An origin can
-  use up to 60% of the total disk space. You can use the [StorageManager
-  API](#check) to determine the maximum quota available. Other Chromium-based
-  browsers may be different.
-  * In incognito mode, Chrome reduces the amount of storage an origin can use
-    to approximately 5% of the total disk space.
-  * If the user has enabled "Clear cookies and site data when you close all
-    windows" in Chrome, the storage quota is significantly reduced to a
-    maximum of approximately 300MB.
-  * See [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for
-    details about Chrome's implementation.
-* Internet Explorer 10 and later can store up to 250MB and will prompt the
-  user when more than 10MB has been used.
-* Firefox allows the browser to use up to 50% of free disk space. An
-  [eTLD+1](https://godoc.org/golang.org/x/net/publicsuffix)
-  group (e.g., `example.com`, `www.example.com` and `foo.bar.example.com`)
-  [may use up to 2GB][ff-usage-limits]. You can use the
-  [StorageManager API](#check-available) to determine how much space is still
-  available.
-* Safari (both desktop and mobile) appears to allow about 1GB. When the limit
-  is reached, Safari will prompt the user, increasing the limit in 200MB
-  increments. I was unable to find any official documentation on this.
+**Chrome:** up to 80% of total disk space can be used. An origin can use up to
+60% of the total disk space. You can use the [StorageManager API](#check) to
+determine the maximum quota available. Other Chromium-based browsers may be
+different.
+* In incognito mode, Chrome reduces the amount of storage an origin can use
+  to approximately 5% of the total disk space.
+* If the user has enabled "Clear cookies and site data when you close all
+  windows" in Chrome, the storage quota is significantly reduced to a maximum of
+  approximately 300MB.
+
+**Internet Explorer 10 and later:** up to 250MB is available and the user is
+prompted when more than 10MB has been used.
+
+**Firefox:** up to 50% percent of free disk space can be used. An
+[eTLD+1](https://godoc.org/golang.org/x/net/publicsuffix) group (e.g.,
+`example.com`, `www.example.com` and `foo.bar.example.com`) [may use up to
+2GB][ff-usage-limits]. You can use the [StorageManager API](#check-available) to
+determine how much space is still available.
+
+**Safari (both desktop and mobile):** about 1GB appears to be available. When
+the limit is reached, Safari prompts the user, increasing the limit in 200MB
+increments. I was unable to find any official documentation on this.
   * If a PWA is added to the home screen on mobile Safari, it appears to
     create a new storage container, and nothing is shared between the PWA
     and mobile Safari. Once the quota has been hit for an installed PWA, there
     doesn't appear to be any way to request additional storage.
 
-In the past, if a site exceeded a certain threshold of data stored, the
+In the past, if a site exceeded a certain threshold of stored data, the
 browser would prompt the user to grant permission to use more data. For
 example, if the origin used more than 50MB, the browser would prompt the user
 to allow it to store up to 100MB, then ask again at 50MB increments.
@@ -150,10 +149,9 @@ if (navigator.storage && navigator.storage.estimate) {
 }
 ```
 
-The StorageManager isn't [implemented][caniuse-sm] in all browsers yet, so you
-must feature detect it before using it. Even when it is available, you must
-still catch over-quota errors (see below). In some cases, it's possible for
-the available quota to exceed the actual amount of storage available.
+To use StorageManager, you must still catch over-quota errors (see below). In
+some cases, it's possible for the available quota to exceed the actual amount of
+storage available.
 
 {% Aside %}
 Other Chromium-based browsers may factor in the amount of free space when
@@ -167,14 +165,19 @@ of stored cross origin resources.
 During development, you can use your browser's DevTools to inspect the
 different storage types, and easily clear all stored data.
 
-A new feature was added in Chrome 88 that lets you override the site's storage
+Chrome DevTools lets you override the site's storage
 quota in the Storage Pane. This feature gives you the ability to simulate
 different devices and test the behavior of your apps in low disk availability
-scenarios. Go to **Application** then **Storage**, enable the
+scenarios. Go to **Application** then **Storage**. Enable the
 **Simulate custom storage quota** checkbox, and enter any valid number to
 simulate the storage quota.
 
-{% Img src="image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/tYlbklNwF6DFKNV2cY0D.png", alt="DevTools Storage pane.", width="800", height="567" %}
+<figure>
+  {% Img src="image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/tYlbklNwF6DFKNV2cY0D.png", alt="DevTools Storage pane.", width="800", height="567" %}
+  <figcaption>
+    DevTools Storage pane.
+  </figcaption>
+</figure>
 
 While working on this article, I wrote a [simple tool][glitch-storage] to
 attempt to quickly use as much storage as possible. It's a quick and easy way
@@ -189,7 +192,7 @@ something else. Then, depending on your app design, decide how to handle it.
 For example delete content that hasn't been accessed in a long time, remove
 data based on size, or provide a way for users to choose what they want to delete.
 
-Both IndexedDB and the Cache API both throw a `DOMError` named
+Both IndexedDB and the Cache API throw a `DOMError` named
 `QuotaExceededError` when you've exceeded the quota available.
 
 ### IndexedDB
@@ -243,8 +246,8 @@ The eviction policy for best effort is:
 * Chromium-based browsers will begin to evict data when the browser runs out
   of space, clearing all site data from the least recently used origin first,
   then the next, until the browser is no longer over the limit.
-* Internet Explorer 10+ will not evict data, but will prevent the origin from
-  writing any more.
+* Internet Explorer 10 or later will not evict data, but will prevent the origin
+  from writing any more.
 * Firefox will begin to evict data when the available disk space is filled up,
   clearing all site data from the least recently used origin first, then the
   next, until the browser is no longer over the limit.
@@ -258,7 +261,7 @@ content from the cache after seven days of Safari use if the user does not
 interact with the site. This eviction policy **does not apply to installed
 PWAs** that have been added to the home screen. See
 [Full Third-Party Cookie Blocking and More][webkit-itp-blog] on the WebKit
-blog for complete details.
+blog for details.
 
 {% Aside %}
   You can request [persistent storage](/persistent-storage/) for your site to
@@ -277,7 +280,7 @@ that comes with the IndexedDB library.
 ## Conclusion
 
 Gone are the days of limited storage and prompting the user to store more and
-more data. Sites can store effectively all of the resources and data they
+more data. Sites can effectively store all of the resources and data they
 need to run. Using the [StorageManager API][mdn-storagemanager] you can
 determine how much is available to you, and how much you've used. And with
 [persistent storage][persistent-storage], unless the user removes it, you
@@ -309,8 +312,8 @@ The hero image is by Guillaume Bolduc on
 [mdn-fileapi]: https://developer.mozilla.org/docs/Web/API/File_and_Directory_Entries_API/Introduction
 [mdn-appcache]: https://developer.mozilla.org/docs/Web/API/Window/applicationCache
 [mdn-cookies]: https://developer.mozilla.org/docs/Web/HTTP/Cookies
-[cache-primer]: https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
-[sw-primer]: https://developers.google.com/web/fundamentals/primers/service-workers
+[mdn-cache-storage]: https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
+[mdn-service-worker]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 [idb-wrapper]: https://www.npmjs.com/package/idb
 [w3c-websql]: https://www.w3.org/TR/webdatabase/
 [caniuse-fs]: https://caniuse.com/#feat=filesystem
@@ -321,5 +324,5 @@ The hero image is by Guillaume Bolduc on
 [webkit-itp-blog]: https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/
 [caniuse-websql]: https://caniuse.com/#feat=sql-storage
 [glitch-storage]: https://storage-quota.glitch.me/
-[idb-best-practices]: https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices
+[idb-best-practices]: https://web.dev/indexeddb-best-practices/
 [chrome-storage-doc]: https://docs.google.com/document/d/19QemRTdIxYaJ4gkHYf2WWBNPbpuZQDNMpUVf8dQxj4U/preview
