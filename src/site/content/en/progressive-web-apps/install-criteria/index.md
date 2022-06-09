@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2022-01-11
+updated: 2022-06-09
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -19,7 +19,7 @@ it easier for users to find and use them.
 Most users are familiar with installing applications, and the benefits of an
 installed experience. Installed applications appear on operating system
 launch surfaces, such as the Applications folder on Mac OS X, the Start menu
-on Windows, and the homescreen on Android and iOS. Installed applications
+on Windows, and the home screen on Android and iOS. Installed applications
 also show up in the activity switcher, device search engines such as
 Spotlight and in content sharing sheets.
 
