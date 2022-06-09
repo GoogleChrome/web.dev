@@ -232,10 +232,9 @@ Installation is a great way to encourage people return to your site and improve
 your customer loyalty. You can also think of personalizing the experience for
 premium users.
 
-If you have a platform-specific app that users decline a prompt to install, you
-can push the PWA later. Users that are "semi-engaged" may not meet the threshold
-for an app store-based install. This cohort can be addressed with PWA
-installability, which is often perceived as lighter, and with less friction.
+Even if you have a platform-specific app, users may feel they don't want to, or
+don't need to install it. These semi-engaged users may feel a PWA is right for
+them as it is often perceived as lighter, and can be installed with less friction.
 
 <figure>
   {% Img src="image/admin/iNQalNPhjdBueuqPHiad.jpg", alt="PWAs can reach semi-engaged users.", width="800", height="229" %}
