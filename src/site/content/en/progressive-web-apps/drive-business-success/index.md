@@ -187,7 +187,7 @@ To maximize the number of users installing your site, you may want to
 [test different][pwabook-ch4] promotion messages ("install in one
 second", or "add our shortcut to follow your order" for example), different
 placements (header banner, in-feed), and try proposing it at different steps
-of the marketing funnel (on the second page visited, or after a booking).
+of the installation funnel (on the second page visited, or after a booking).
 
 To understand where your users are leaving and how to improve retention, the
 installation funnel can be [measured][pwabook-ch8] in four ways:
