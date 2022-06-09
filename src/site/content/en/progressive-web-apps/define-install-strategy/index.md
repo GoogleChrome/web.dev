@@ -19,7 +19,7 @@ You can achieve this in different ways:
 - Installing the PWA [from the browser](/customize-install/).
 - Installing the PWA [from the app store](https://developer.chrome.com/docs/android/trusted-web-activity/).
 
-Having different distribution channels is a powerful way of reaching a broad number of users, but choosing the right strategy to promote your installations can be challenging.
+Having different distribution channels is a powerful way of reaching a broad number of users, but choosing the right strategy to promote your the installation of your PWA can be challenging.
 
 This guide explores best practices for combining different installation options to increase installation rates and avoid platform competition and cannibalization. The installation offerings covered include PWAs installed from both the browser and the App Store, as well as platform-specific apps.
 
