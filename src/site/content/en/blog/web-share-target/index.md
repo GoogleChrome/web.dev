@@ -79,7 +79,7 @@ entry:
 {% Aside %}
 You can only have one `share_target` per manifest, if you want to share to
 different places within your app, provide that as an option on the share
-target landing page (in other words on the page specified by the `url` entry).
+target landing page (the page specified by the `url` entry).
 {% endAside %}
 
 ### Accepting basic information
