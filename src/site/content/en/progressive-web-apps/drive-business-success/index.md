@@ -228,7 +228,7 @@ were more than twice as likely to book a stay through their PWA!
   </figcaption>
 </figure>
 
-Installation is a great way to make people return to your site and improve
+Installation is a great way to encourage people return to your site and improve
 your customer loyalty. You can also think of personalizing the experience for
 premium users.
 
