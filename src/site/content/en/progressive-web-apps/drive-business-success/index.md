@@ -216,10 +216,10 @@ Then use these as variables or dimensions for your analytics tracking.
   </figcaption>
 </figure>
 
-The [case study of Weekendesk][twg-weekendest] is interesting; they prompt users
-to install on the second page visited to maximize the install rate, and they
-observed that customers coming back via the icon on the home screen were more
-than twice as likely to book a stay with them.
+The [case study of Weekendesk][twg-weekendest] is interesting; to increase
+the chance a user would install their PWA, they promote installation on the
+second page visited. Users who launched the PWA from their home screen
+were more than twice as likely to book a stay through their PWA!
 
 <figure>
   {% Img src="image/admin/eR23C2o1adHq5tATNw34.jpg", alt="Installed users had a 2.5 times higher conversion rate.", width="800", height="201" %}
