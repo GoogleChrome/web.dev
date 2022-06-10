@@ -416,5 +416,5 @@ When designing for unstable network connections, remember these guidelines:
 - Try to provide offline by default if your app doesn't require much data.
 - If the app is data-heavy, educate users about how they can download for offline use.
 - Make experiences transferable between devices.
-- Use language, icons, imagery, typography, and color toghether to express ideas to the user.
+- Use language, icons, imagery, typography, and color together to express ideas to the user.
 - Provide reassurance and feedback to help the user.
