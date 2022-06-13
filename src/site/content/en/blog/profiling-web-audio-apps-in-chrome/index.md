@@ -203,14 +203,16 @@ This extension needs to be installed from
 After the installation, you access the panel by opening Chrome DevTools and
 clicking “Web Audio” on the top menu.
 
-{% Img src="", alt="", width="800", height="" %}
+{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/JUXLwtX83TOXqRHD2CGU.png", alt="Screenshot showing how to open Web Audio panel in Chrome DevTools.", width="800", height="201" %}
 
 The Web Audio panel has 4 components: context selector, property inspector,
 graph visualizer, and performance monitor.
 
+{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4xQhLJBdDWW3X2nIssIS.png", alt="Screenshot of the Web Audio panel in Chrome DevTools", width="800", height="416" %}
+
 ### Context Selector
 
-Since a page can have multiple BaseAudioContexts, this drop-down menu allows you
+Since a page can have multiple `BaseAudioContext`s, this drop-down menu allows you
 to choose the context you want to inspect. You can also manually trigger garbage
 collection by clicking the trash can icon on the left. 
 
@@ -261,7 +263,7 @@ Debugging audio is hard. Debugging audio in the browser is even harder. However,
 these tools can ease the pain by providing you with useful insights on how the
 web audio code performs. In some cases, however, you may find problems in Chrome
 or the extension. Then do not be afraid to
-[file a bug on crbug.com][r-file-a-bug] or on the
+[file a bug on crbug.com][cr-file-a-bug] or on the
 [extension issue tracker](https://github.com/GoogleChrome/audion/issues).
 
 Photo by Jonathan Velasquez on [Unsplash](https://unsplash.com/photos/c1ZN57GfDB0)
