@@ -13,7 +13,7 @@ intro:
   imageHeight: '240'
 featureCard:
   theme: 'light'
-  title: "Check out what's new for the web platform at Google IO"
+  title: "See what's new for the web at Google IO"
   eyebrow: 'Event'
   url: 'https://io.google/2022/products/web/'
   background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/leNmaxWbgSav9BvKHEQM.jpg'
