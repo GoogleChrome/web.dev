@@ -295,7 +295,6 @@ class Search extends BaseStateElement {
 
   /**
    * Expand the search box.
-   * Only used on mobile viewports where we hide the search box behind an icon.
    */
   onOpenSearch() {
     this.expanded = true;
@@ -306,14 +305,23 @@ class Search extends BaseStateElement {
     this.updateComplete.then(() => {
       this.inputEl.focus();
     });
+
+    // See https://github.com/GoogleChrome/web.dev/issues/8131
+    /** @type {HTMLElement|object} */
+    const navDrawer = document.querySelector('web-navigation-drawer') || {};
+    navDrawer.inert = true;
   }
 
   /**
    * Collapse the search box.
-   * Only used on mobile viewports.
    */
   onCloseSearch() {
     this.expanded = false;
+
+    // See https://github.com/GoogleChrome/web.dev/issues/8131
+    /** @type {HTMLElement|object} */
+    const navDrawer = document.querySelector('web-navigation-drawer') || {};
+    navDrawer.inert = false;
   }
 
   /**
