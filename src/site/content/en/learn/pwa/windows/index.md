@@ -82,13 +82,13 @@ Many web authentication and authorization flows involve redirecting the user to 
 
 In these cases, the in-app browser follows the following process:
 
-1- The user opens your PWA and clicks login.
-1- Your PWA redirects the user to a URL that is out of the scope of the PWA so that the rendering engine will open an in-app browser within your PWA.
-1- The user can cancel the in-app browser and go back to your PWA at any time.
-1- The user logs into the in-app browser. The authentication server redirects the user to your PWA origin, sending the token as an argument.
-1- The in-app browser closes itself when it detects a URL that is part of the scope of the PWA.
-1- The engine redirects the main PWA window navigation to the URL that the authentication server went to while in the in-app browser.
-1- Your PWA gets the token, stores the token, and renders the PWA.
+1. The user opens your PWA and clicks login.
+1. Your PWA redirects the user to a URL that is out of the scope of the PWA so that the rendering engine will open an in-app browser within your PWA.
+1. The user can cancel the in-app browser and go back to your PWA at any time.
+1. The user logs into the in-app browser. The authentication server redirects the user to your PWA origin, sending the token as an argument.
+1. The in-app browser closes itself when it detects a URL that is part of the scope of the PWA.
+1. The engine redirects the main PWA window navigation to the URL that the authentication server went to while in the in-app browser.
+1. Your PWA gets the token, stores the token, and renders the PWA.
 
 #### Forcing a browser's navigation
 
@@ -152,18 +152,18 @@ You can read more about this experimental capability at [Tabbed application mode
 In the [Experimental chapter](/learn/pwa/experimental), you will see how you can start using experimental capabilities.
 {% endAside %}
 
-### Windows control overlay
+### Window controls overlay
 
 We've mentioned that you can change the window's title by defining the value of the `<title>` element or the `document.title` property. But it's always a string value. What if we could design the title bar as we wish, with HTML, CSS, and images?
-That's where Windows Control Overlay comes in, a new experimental capability in Microsoft Edge and Google Chrome for desktop PWAs.
+That's where Window Controls Overlay comes in, a new experimental capability in Microsoft Edge and Google Chrome for desktop PWAs.
 
 {% Aside %}
-Tabbed mode and windows control overlay capabilities define new values for the manifest's `display` member. To create compatibility with all devices, the manifest group has created a way to replace the [fallback `display` chain](/learn/pwa/app-design/#display-modes), so you can specify what `display` value to use if your first option is not available. Read more about it at [Preparing for the display modes of tomorrow](/display-override/).
+Tabbed mode and window controls overlay capabilities define new values for the manifest's `display` member. To create compatibility with all devices, the manifest group has created a way to replace the [fallback `display` chain](/learn/pwa/app-design/#display-modes), so you can specify what `display` value to use if your first option is not available. Read more about it at [Preparing for the display modes of tomorrow](/display-override/).
 {% endAside %}
 
 You can read more about this capability at [Customize the window controls overlay of your PWA's title bar](/window-controls-overlay/).
 
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/B5UDAJzKTqCRdSy6B5is.png", alt="With windows control overlay, you can render content in the title bar.", width="800", height="544" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/B5UDAJzKTqCRdSy6B5is.png", alt="With window controls overlay, you can render content in the title bar.", width="800", height="544" %}
 
 ## Multi-screen window placement
 

@@ -7,7 +7,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-02-19
-updated: 2022-01-11
+updated: 2022-06-01
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -341,37 +341,24 @@ for await (const chunk of stream) {
   Asynchronous iteration is not yet implemented in any browser.
 {% endAside %}
 
-A workaround to use asynchronous iteration today is to implement the behavior with a helper
-function. This allows you to use the feature in your code as shown in the snippet below.
+A workaround to use asynchronous iteration today is to implement the behavior with a polyfill.
 
 ```js
-function streamAsyncIterator(stream) {
-  // Get a lock on the stream:
-  const reader = stream.getReader();
-
-  return {
-    next() {
-      // Stream reads already resolve with {done, value}, so
-      // we can just call read:
-      return reader.read();
-    },
-    return() {
-      // Release the lock if the iterator terminates.
+if (!ReadableStream.prototype[Symbol.asyncIterator]) {
+  ReadableStream.prototype[Symbol.asyncIterator] = async function* () {
+    const reader = this.getReader();
+    try {
+      while (true) {
+        const {done, value} = await reader.read();
+        if (done) {
+          return;
+          }
+        yield value;
+      }
+    }
+    finally {
       reader.releaseLock();
-      return {};
-    },
-    // for-await calls this on whatever it's passed, so
-    // iterators tend to return themselves.
-    [Symbol.asyncIterator]() {
-      return this;
-    },
-  };
-}
-
-async function example() {
-  const response = await fetch(url);
-  for await (const chunk of streamAsyncIterator(response.body)) {
-    console.log(chunk);
+    }
   }
 }
 ```

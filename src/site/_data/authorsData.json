@@ -1,4 +1,36 @@
 {
+  "danristic": {
+    "homepage": "http://www.danristic.com/",
+    "twitter": "dristic101",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/b6v4qq26t6NWHAIm0SbV.png"
+  },
+  "gman": {
+    "homepage": "http://games.greggman.com/game/",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/1BBm3UlHXE5rTYgdFr7e.png"
+  },
+  "dominiccooney": {
+    "homepage": "http://dcooney.com/",
+    "twitter": "coonsta",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/LZY3l6Yk6Nfj2whuB15r.png"
+  },
+  "zgoddard": {
+    "homepage": "http://gradientstudios.com/",
+    "twitter": "ZofGames",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/eYqcqTbc2Lgfn9013boG.png"
+  },
+  "tomwiltzius": {
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/pfj6ogyKu63pn6IOoJEA.png"
+  },
+  "coltmcanlis": {
+    "homepage": "http://mainroach.blogspot.com/",
+    "twitter": "duhroach",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/YT88zCOqYHewnehPUatW.png"
+  },
+  "marcinwichary": {
+    "homepage": "http://www.aresluna.org/",
+    "twitter": "mwichary",
+    "image": "image/T4FyVKpzu4WKF1kBNvXepbi08t52/xUepvN9NAbPTBl8gZNkS.png"
+  },
   "razvancaliman": {
     "homepage": "http://razvancaliman.com/",
     "twitter": "razvancaliman",
@@ -1556,5 +1588,16 @@
     "linkedin": "https://www.linkedin.com/in/jimmymooney/",
     "country": "US",
     "image": "image/Xyvh8LLq27V5yRjH5iS1dbf64pE2/M2E7ke6rO6ZpIabYeizX.jpg"
+  },
+  "alexeyrodionov": {
+    "country": "RU",
+    "twitter": "alexey_rodionov",
+    "github": "FluorescentHallucinogen",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/n6mW0LtLb2NtYAoQSCx7.png"
+  },
+  "twifkak": {
+    "twitter": "twifkak",
+    "github": "twifkak",
+    "image": "image/rULxC7pPw3PFS4o9xr7v8isFmCv1/fDaDWpuKLKDm4mjnt0jV.jpg"
   }
 }

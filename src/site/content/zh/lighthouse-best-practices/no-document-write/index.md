@@ -25,7 +25,7 @@ data from the network to be reparsed.
 
 ## Lighthouse `document.write()` 审核为何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 对未被 Chrome 阻止的 `document.write()` 的调用：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 对未被 Chrome 阻止的 `document.write()` 的调用：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="显示 document.write 使用的 Lighthouse 审核", width="800", height="213" %}</figure>
 

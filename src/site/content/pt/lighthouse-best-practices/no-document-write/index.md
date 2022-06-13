@@ -27,7 +27,7 @@ data from the network to be reparsed.
 
 ## Como a auditoria Lighthouse sobre `document.write()` falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza solicitações para `document.write()` que não foram bloqueadas pelo Chrome:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza solicitações para `document.write()` que não foram bloqueadas pelo Chrome:
 
 <figure>{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt = "Auditoria do Lighthouse mostrando o uso de document.write", width = "800", height = "213"%}</figure>
 

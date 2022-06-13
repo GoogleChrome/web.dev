@@ -265,7 +265,7 @@ CSS プロパティの値が変更されると、ブラウザーがその変更�
 
 喜ばしいことに、Cumulative Layout Shift (CLS) の測定やデバッグを行うためのツールは、以下に示すようにたくさんのものが存在します。
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) 以降では、ラボ設定での CLS の測定がサポートされています。また、このリリースにおいては、レイアウト シフトを最も多く発生させているノードが強調表示されます。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) 以降では、ラボ設定での CLS の測定がサポートされています。また、このリリースにおいては、レイアウト シフトを最も多く発生させているノードが強調表示されます。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 では、Metrics (指標) セクションで CLS を測定することが可能です", width="800", height="309" %}
 

@@ -55,7 +55,7 @@ Some useful shortcuts for web developers while using Simulator to test PWAs are:
 Simulator is not a virtual machine, but an app running on top of your macOS that looks like an iPhone or iPad, so it doesn't have its own TCP stack. Therefore, if you use `localhost` within Simulator, Safari will point to your macOS `localhost` device.
 
 
-By default, Xcode only installs the latest version of iOS , but you can go to Xcode, use the `Preferences` menu, and download older Simulators from the `Components` tab.
+By default, Xcode only installs the latest version of iOS, but you can go to Xcode, use the `Preferences` menu, and download older Simulators from the `Components` tab.
 
 It's good practice to test your PWA on the latest version of iOS, the previous minor version, and at least one previous major version.
 
@@ -131,7 +131,7 @@ There are commercial tools available, but all the browsers also offer ways to do
 
 When testing PWAs available on `localhost` on Android physical devices or emulators, you will have a problem, as `localhost` will point to the Android TCP stack and not your development machine.
 
-You may want to use your local IP address as a replacement to `localhost`, but that's not a good idea as service workers and many abilities will only work without HTTPS connections, with the exception of `localhost`, so your PWA won't work offline or pass PWA criteria.
+You may want to use your local IP address as a replacement to `localhost`, but that's not a good idea as service workers and many abilities will only work with HTTPS connections, with the exception of `localhost`, so your PWA won't work offline or pass PWA criteria.
 
 
 You can solve the problem by enabling port forwarding on a Chromium browser on your desktop computer. In that case, you can bridge a port on `localhost` on the Android device to any origin and port from your host computer, including your development computer's `localhost`. Check [this guide](https://developer.chrome.com/docs/devtools/remote-debugging/local-server/) for more information.
@@ -168,7 +168,7 @@ Inside `Application`, `Cache` then `Cache Storage`, you can see all the caches s
 
 {% Img src="image/RK2djpBgopg9kzCyJbUSjhEGmnw1/WJ0fBXggrFnhifcAIcBb.png", alt="Cache Inspector in Chromium DevTools", width="800", height="491" %}
 
-Also, selectingfrom `Application` then `Storage`, you can see the current quota used, simulate custom quota storage, and clear all your data, including the service worker registration, using `Clear site data`.
+Also, selecting from `Application` then `Storage`, you can see the current quota used, simulate custom quota storage, and clear all your data, including the service worker registration, using `Clear site data`.
 
 #### Background services
 

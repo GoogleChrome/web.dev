@@ -31,7 +31,7 @@ Real-world performance is highly variable due to differences in users' devices, 
 
 ### Lab data
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) takes a URL and runs a series of audits against the page, generating a report on how well the page did. There are multiple ways to run Lighthouse, including an option to easily audit a page from within Chrome DevTools.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) takes a URL and runs a series of audits against the page, generating a report on how well the page did. There are multiple ways to run Lighthouse, including an option to easily audit a page from within Chrome DevTools.
 
 ### Field data
 

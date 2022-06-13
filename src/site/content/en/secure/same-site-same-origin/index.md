@@ -4,7 +4,7 @@ title: Understanding "same-site" and "same-origin"
 authors:
   - agektmr
 date: 2020-04-15
-updated: 2020-06-10
+updated: 2022-06-09
 description: |
   "same-site" and "same-origin" are frequently cited but often misunderstood
   terms. This article helps you understand what they are and how they are
@@ -203,10 +203,11 @@ cross-site because the schemes don't match.
 
 ## How to check if a request is "same-site", "same-origin", or "cross-site"
 
-Chrome sends requests along with a `Sec-Fetch-Site` HTTP header. No other
-browsers support `Sec-Fetch-Site` as of April 2020. This is part of a larger [Fetch Metadata
-Request Headers](https://www.w3.org/TR/fetch-metadata/)
-proposal. The header will have one of the following values:
+All modern browsers ([except
+Safari](https://bugs.webkit.org/show_bug.cgi?id=238265)) send requests along
+with a [`Sec-Fetch-Site` HTTP
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site). The
+header has one of the following values:
 
 * `cross-site`
 * `same-site`
@@ -216,3 +217,16 @@ proposal. The header will have one of the following values:
 By examining the value of `Sec-Fetch-Site`, you can determine if the request is
 "same-site", "same-origin", or "cross-site" ("schemeful-same-site" is not
 captured in `Sec-Fetch-Site`).
+
+{% Aside 'important' %}
+
+You can reasonably trust the value of `Sec-Fetch-Site` header because:
+*  [HTTP headers starting with `Sec-` can not be modified by
+   JavaScript](https://www.w3.org/TR/fetch-metadata/#sec-prefix)
+*  These headers are always set by the browser.
+
+Even if a server receives a manipulated value for the `Sec-Fetch-Site`
+header, sent by a random HTTP client, no user or browser will be
+harmed by breaking the same-origin policy.
+
+{% endAside %}

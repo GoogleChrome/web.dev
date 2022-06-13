@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Почему не удается пройти аудит уровней заголовков в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, в заголовках которых пропущен один или несколько уровней:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, в заголовках которых пропущен один или несколько уровней:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="Аудит Lighthouse, в котором отображены заголовки с пропущенными уровнями", width="800", height="206" %}</figure>
 

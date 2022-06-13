@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse 탭 대상 감사에 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 너무 작거나 너무 가까운 탭 대상이 있는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 너무 작거나 너무 가까운 탭 대상이 있는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="부적절한 크기의 탭 대상을 나타낸 Lighthouse 감사", width="800", height="206" %}</figure>
 

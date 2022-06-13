@@ -76,34 +76,23 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) is used in the follow
 ```js
 const $div = document.querySelector('div')
 const user_input = `<em>hello world</em><img src="" onerror=alert(0)>`
-const sanitizer = new Sanitizer()
-$div.setHTML(user_input, sanitizer) // <div><em>hello world</em><img src=""></div>
+$div.setHTML(user_input, { sanitizer: new Sanitizer() }) // <div><em>hello world</em><img src=""></div>
+```
 
+However, the `{ sanitizer: new Sanitizer() }` is the default argument. So it can be just like below.
+
+```js
+$div.setHTML(user_input) // <div><em>hello world</em><img src=""></div>
 ```
 
 It is worth noting that `setHTML()` is defined on [`Element`](https://developer.mozilla.org/docs/Web/API/Element). Being a method of `Element`, the context to parse is self-explanatory (`<div>` in this case), the parsing is done once internally, and the result is directly expanded into the DOM.
 
-If you don't want to expand directly into the DOM, you can also get the result as an `HTMLElement`.
-
-
-```js
-const user_input = `<em>hello world</em><img src="" onerror=alert(0)>`
-const sanitizer = new Sanitizer()
-sanitizer.sanitizeFor("div", user_input) // HTMLDivElement <div>
-```
-
-If you want to get the result of sanitization as a string, you can use `.innerHTML` from the `HTMLElement` you got here. (You still need to specify the appropriate context to parse.)
-
+To get the result of sanitization as a string, you can use `.innerHTML` from the `setHTML()` results.
 
 ```js
-sanitizer.sanitizeFor("div", user_input).innerHTML // <em>hello world</em><img src="">
-```
-
-If you already have a user-controlled `DocumentFragment` and you want to remove only the harmful stuff from it, use `sanitize()`.
-
-
-```js
-$div.replaceChildren(s.sanitize($userDiv));
+const $div = document.createElement('div')
+$div.setHTML(user_input)
+$div.innerHTML // <em>hello world</em><img src="">
 ```
 
 
@@ -138,16 +127,16 @@ The following options specify how the sanitization result should treat the speci
 ```js
 const str = `hello <b><i>world</i></b>`
 
-new Sanitizer().sanitizeFor("div", str)
+$div.setHTML(str)
 // <div>hello <b><i>world</i></b></div>
 
-new Sanitizer({allowElements: [ "b" ]}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowElements: [ "b" ]}) })
 // <div>hello <b>world</b></div>
 
-new Sanitizer({blockElements: [ "b" ]}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({blockElements: [ "b" ]}) })
 // <div>hello <i>world</i></div>
 
-new Sanitizer({allowElements: []}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowElements: []}) })
 // <div>hello world</div>
 ```
 
@@ -162,22 +151,22 @@ You can also control whether the sanitizer will allow or deny specified attribut
 ```js
 const str = `<span id=foo class=bar style="color: red">hello</span>`
 
-new Sanitizer().sanitizeFor("div", str)
+$div.setHTML(str)
 // <div><span id="foo" class="bar" style="color: red">hello</span></div>
 
-new Sanitizer({allowAttributes: {"style": ["span"]}}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {"style": ["span"]}}) })
 // <div><span style="color: red">hello</span></div>
 
-new Sanitizer({allowAttributes: {"style": ["p"]}}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {"style": ["p"]}}) })
 // <div><span>hello</span></div>
 
-new Sanitizer({allowAttributes: {"style": ["*"]}}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {"style": ["*"]}}) })
 // <div><span style="color: red">hello</span></div>
 
-new Sanitizer({dropAttributes: {"id": ["span"]}}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({dropAttributes: {"id": ["span"]}}) })
 // <div><span class="bar" style="color: red">hello</span></div>
 
-new Sanitizer({allowAttributes: {}}).sanitizeFor("div", str)
+$div.setHTML(str, { sanitizer: new Sanitizer({allowAttributes: {}}) })
 // <div>hello</div>
 ```
 
@@ -187,12 +176,14 @@ new Sanitizer({allowAttributes: {}}).sanitizeFor("div", str)
 ```js
 const str = `<custom-elem>hello</custom-elem>`
 
-new Sanitizer().sanitizeFor("div", str);
+$div.setHTML(str)
 // <div></div>
 
-new Sanitizer({ allowCustomElements: true,
-                allowElements: ["div", "custom-elem"]
-              }).sanitizeFor("div", str);
+const sanitizer = new Sanitizer({
+  allowCustomElements: true,
+  allowElements: ["div", "custom-elem"]
+})
+$div.setHTML(str, { sanitizer })
 // <div><custom-elem>hello</custom-elem></div>
 ```
 
@@ -255,15 +246,15 @@ The Sanitizer API is under discussion in the standardization process and Chrome 
       </tr>
       <tr>
         <td>3. Gather feedback and iterate on design</td>
-        <td><a href="https://docs.google.com/document/d/1kBpk-dhCukPphfH_8vkOgdUDcM9bqVuhsK0pRZzwapM/edit?resourcekey=0-4tFsd4s6aLbvvr2ys_9F4A#Feedback">In progress</a></td>
+        <td><a href="https://github.com/w3ctag/design-reviews/issues/619">Complete</a></td>
       </tr>
       <tr>
         <td>4. Chrome origin trial</td>
-        <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/OrWQnXVQJ0A/m/TbF-0Dw3BQAJ">Ready for trial</a></td>
+        <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/OrWQnXVQJ0A/m/TbF-0Dw3BQAJ">Complete</a></td>
       </tr>
       <tr>
         <td>5. Launch</td>
-        <td>Not started</td>
+        <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/KOpwkS-bgl0/m/hmJ6gfU7AQAJ">Intent to Ship on M105</a></td>
       </tr>
     </tbody>
   </table>

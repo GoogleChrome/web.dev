@@ -27,7 +27,7 @@ data from the network to be reparsed.
 
 ## Lighthouse `document.write()` 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 Chrome에서 차단하지 않은 `document.write()` 호출에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 Chrome에서 차단하지 않은 `document.write()` 호출에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="document.write 사용을 보여주는 Lighthouse 감사", width="800", height="213" %}</figure>
 

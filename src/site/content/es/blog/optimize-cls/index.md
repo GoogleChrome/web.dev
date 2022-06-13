@@ -264,7 +264,7 @@ Para obtener más información sobre las propiedades de CSS que activan el dise�
 
 Me complace compartir que hay una serie de herramientas disponibles para medir y depurar el Cumulative Layout Shift (CLS).
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) y posteriores incluyen soporte para medir CLS en un entorno de laboratorio. Esta versión también destacará los nodos que causan más cambios de diseño.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) [6.0](https://github.com/GoogleChrome/lighthouse/releases) y posteriores incluyen soporte para medir CLS en un entorno de laboratorio. Esta versión también destacará los nodos que causan más cambios de diseño.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 incluye soporte para medir CLS en la sección de métricas", width="800", height="309" %}
 

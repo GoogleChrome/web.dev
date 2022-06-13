@@ -22,7 +22,7 @@ and removing anything unused.
 
 ## Which URLs get flagged as render-blocking resources?
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags two types of render-blocking URLs: scripts and stylesheets.
 
 A `<script>` tag that:

@@ -189,6 +189,6 @@ Para garantir que nossos aplicativos sejam tão confiáveis e acessíveis quanto
 Além disso, OMT tem benefícios secundários:
 
 - Ele move os custos de execução do JavaScript para um thread separado.
-- Ele move os *custos de análise*, o que significa que a IU pode inicializar mais rápido. Isso pode reduzir o [First Contentful Paint](/fcp/) ou mesmo o [Time to Interactive](/tti/), o que pode, por sua vez, aumentar sua pontuação no [Lighthouse.](https://developers.google.com/web/tools/lighthouse)
+- Ele move os *custos de análise*, o que significa que a IU pode inicializar mais rápido. Isso pode reduzir o [First Contentful Paint](/fcp/) ou mesmo o [Time to Interactive](/tti/), o que pode, por sua vez, aumentar sua pontuação no [Lighthouse.](https://developer.chrome.com/docs/lighthouse/overview/)
 
 Os web workers não precisam ser assustadores. Ferramentas como o Comlink estão tirando o trabalho dos workers e tornando-os uma escolha viável para uma ampla gama de aplicativos da Web.

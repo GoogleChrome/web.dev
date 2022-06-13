@@ -10,7 +10,7 @@ web_lighthouse:
   - resource-summary
 ---
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 reports how many network requests were made and
 how much data was transferred while your page loaded:
 

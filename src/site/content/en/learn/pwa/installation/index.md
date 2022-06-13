@@ -64,7 +64,7 @@ PWAs installed on desktops:
 - Have an icon in the Start menu or Start screen on Windows PCs, in the dock or desktop in Linux GUIs, in the macOS launchpad, or a Chromebook's app launcher.
 - Have an icon in app switchers and docks when the app is active, was recently used, or is opened in the background.
 - Appear in the app search, for example, search on Windows or Spotlight on macOS.
-- Can set a badge number their icons, to indicate new notifications. This is done with the [Badging API](https://developer.mozilla.org/docs/Web/API/Badging_API).
+- Can set a badge number on their icons, to indicate new notifications. This is done with the [Badging API](https://developer.mozilla.org/docs/Web/API/Badging_API).
 - Can set a contextual menu for the icon with [App Shortcuts](https://developer.mozilla.org/docs/Web/Manifest/shortcuts).
 - Can't be installed twice with the same browser.
 
@@ -104,7 +104,7 @@ On Apple devices, you can install the same PWA multiple times; each installation
 
 PWAs installed on iOS and iPadOS:
 
-- Appears in the home screen, Spotlight's search, Siri Suggestions, and App Library search.
+- Appear in the home screen, Spotlight's search, Siri Suggestions, and App Library search.
 - Don't appear in App Gallery's categories folders.
 - Lack support for capabilities such as badging and app shortcuts.
 

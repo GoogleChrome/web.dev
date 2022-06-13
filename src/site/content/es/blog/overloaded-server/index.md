@@ -75,7 +75,7 @@ Aunque [los trabajadores de servicio](https://developer.chrome.com/docs/workbox/
 
 #### Diagnosticar
 
-Ejecuta [Lighthouse](https://developers.google.com/web/tools/lighthouse) y observa los [activos estáticos de servicio con una auditoría de política de caché eficiente](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) para ver una lista de recursos con un [tiempo de vida](https://en.wikipedia.org/wiki/Time_to_live) corto o medio (TTL). Para cada recurso enumerado, considera si se debe aumentar el TTL. A título orientativo:
+Ejecuta [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) y observa los [activos estáticos de servicio con una auditoría de política de caché eficiente](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) para ver una lista de recursos con un [tiempo de vida](https://en.wikipedia.org/wiki/Time_to_live) corto o medio (TTL). Para cada recurso enumerado, considera si se debe aumentar el TTL. A título orientativo:
 
 - Los recursos estáticos deben almacenarse en caché con un TTL largo (1 año).
 - Los recursos dinámicos deben almacenarse en caché con un TTL breve (3 horas).

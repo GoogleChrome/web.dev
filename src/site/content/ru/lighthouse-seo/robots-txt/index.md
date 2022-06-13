@@ -15,7 +15,7 @@ web_lighthouse:
 
 ## Причины плохих результатов аудита `robots.txt` в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает недопустимые файлы `robots.txt`:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает недопустимые файлы `robots.txt`:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Аудит Lighthouse показывает недопустимый файл robots.txt", width="800", height="203" %}</figure>
 

@@ -7,6 +7,7 @@ date: 2016-06-30
 updated: 2019-06-06
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
+  - notifications
 ---
 
 One of the pain points when working with web push is that triggering a push message is extremely
@@ -327,3 +328,23 @@ Regardless of your backend (Node, PHP, Python, …), the steps for implementing 
 to be the same.
 
 Next up, what exactly are these web-push libraries doing for us?
+
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* Sending Messages with Web Push Libraries
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

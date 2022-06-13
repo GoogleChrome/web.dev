@@ -176,7 +176,7 @@ Core Web Vitals に関してはフィールド データの測定が何よりも
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a></td>
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (代わりに <a href="/tbt/">TBT</a> を使用してください)</td>
         <td>✔</td>

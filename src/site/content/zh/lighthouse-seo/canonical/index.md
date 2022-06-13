@@ -24,7 +24,7 @@ web_lighthouse:
 
 ## Lighthouse 规范链接审核失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记任何具有无效 canonical 链接的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记任何具有无效 canonical 链接的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Lighthouse 审计显示文档具有无效的 canonical 链接", width="800", height="76" %}</figure>
 

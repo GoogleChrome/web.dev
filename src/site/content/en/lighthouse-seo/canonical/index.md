@@ -32,7 +32,7 @@ Using canonical links has many advantages:
 
 ## How the Lighthouse canonical links audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any page
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags any page
 with an invalid canonical link:
 
 <figure>

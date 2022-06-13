@@ -163,7 +163,7 @@ import('module.js').then((module) => {
 
 许多工具都可以用于测量和调试 FID：
 
-- [灯塔 6.0](https://developers.google.com/web/tools/lighthouse) 不支持 FID，因为 FID 是一个实际指标。但是，可以用[总阻塞时间](/tbt/) (TBT) 作为代理。能够改进 TBT 的优化也应该能改进实际情况下的 FID。
+- [灯塔 6.0](https://developer.chrome.com/docs/lighthouse/overview/) 不支持 FID，因为 FID 是一个实际指标。但是，可以用[总阻塞时间](/tbt/) (TBT) 作为代理。能够改进 TBT 的优化也应该能改进实际情况下的 FID。
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="灯塔 6.0.", width="800", height="309" %}
 

@@ -115,13 +115,10 @@ const disablePage = () => {
   /** @type {HTMLElement|object} */
   const main = document.querySelector('main') || {};
   /** @type {HTMLElement|object} */
-  const header = document.querySelector('web-header') || {};
-  /** @type {HTMLElement|object} */
   const footer = document.querySelector('.w-footer') || {};
 
   document.body.classList.add('overflow-hidden');
   main.inert = true;
-  header.inert = true;
   footer.inert = true;
 };
 
@@ -132,13 +129,10 @@ const enablePage = () => {
   /** @type {HTMLElement|object} */
   const main = document.querySelector('main') || {};
   /** @type {HTMLElement|object} */
-  const header = document.querySelector('web-header') || {};
-  /** @type {HTMLElement|object} */
   const footer = document.querySelector('.w-footer') || {};
 
   document.body.classList.remove('overflow-hidden');
   main.inert = false;
-  header.inert = false;
   footer.inert = false;
 };
 

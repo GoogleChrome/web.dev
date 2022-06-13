@@ -14,7 +14,7 @@ Muitos usuários acessam sua página através de uma conexão de rede celular le
 
 ## Como a auditoria de velocidade de carregamento de página do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca páginas que não carregam rápido o suficiente em dispositivos móveis:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca páginas que não carregam rápido o suficiente em dispositivos móveis:
 
 <figure> {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Auditoria Lighthouse mostrando que página não carrega rápido o suficiente em dispositivos móveis", width="800", height="98" %}</figure>
 

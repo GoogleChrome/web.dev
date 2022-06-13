@@ -18,7 +18,7 @@ updated: 2020-06-17
 
 ## Аудит цвета темы в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, которые не применяют тему к адресной строке:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, которые не применяют тему к адресной строке:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Аудит Lighthouse показывает, что для адресной строки не установлена тема согласно цветам страницы", width="800", height="98" %}</figure>
 

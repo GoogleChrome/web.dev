@@ -12,7 +12,7 @@ Especificar un doctype evita que el navegador cambie al [modo quirks](https://de
 
 ## Cómo puede fallar la auditoría del doctype de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) etiqueta las páginas sin la declaración `<!DOCTYPE html>`:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) etiqueta las páginas sin la declaración `<!DOCTYPE html>`:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l6IEjHdtgCa45QimENjb.png", alt="En la auditoría de Lighthouse se muestra que falta el doctype", width="800", height="76" %}</figure>
 

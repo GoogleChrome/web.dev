@@ -16,7 +16,7 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 
 ## How the Lighthouse font-display audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags any font URLs that may flash invisible text:
 
 <figure>

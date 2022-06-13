@@ -102,7 +102,7 @@ Para adoptar un CSP estricto, debes:
 4. Agregar alternativas para admitir Safari y navegadores más antiguos.
 5. Implementar tu CSP.
 
-Puedes utilizar la **auditoría de prácticas** [recomendadas Lighthouse](https://developers.google.com/web/tools/lighthouse) (v7.3.0 y superior con flag `--preset=experimental` ) a lo largo de este proceso para comprobar si tu sitio tiene un CSP y si es lo suficientemente estricto como para ser eficaz contra XSS.
+Puedes utilizar la **auditoría de prácticas** [recomendadas Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) (v7.3.0 y superior con flag `--preset=experimental` ) a lo largo de este proceso para comprobar si tu sitio tiene un CSP y si es lo suficientemente estricto como para ser eficaz contra XSS.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png", alt="Lighthouse report warning that no CSP is found in enforcement mode.", width="730", height="78" %}
 

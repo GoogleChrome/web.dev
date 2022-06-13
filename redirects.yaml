@@ -199,6 +199,9 @@ redirects:
   - source: /progressive-web-apps/#installable
     destination: /progressive-web-apps/#make-it-installable
 
+  - source: /push-notifications/
+    destination: /push-notifications-overview/
+
   # Redirect for spec name changes
 
   - source: /sms-receiver-api-announcement
@@ -309,6 +312,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/webgpu/
   - source: /storage-foundation
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
+  - source: /app-history-api
+    destination: https://developer.chrome.com/docs/web-platform/navigation-api/
 
   # Redirect for Aurora
   - source: /aurora

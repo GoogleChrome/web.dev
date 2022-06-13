@@ -16,7 +16,7 @@ tags:
     - devtools
 ---
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a tool that
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is a tool that
 helps you measure and find ways to improve a page's performance. Here's the
 general workflow for how you use Lighthouse:
 

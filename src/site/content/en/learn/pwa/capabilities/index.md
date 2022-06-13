@@ -60,7 +60,7 @@ Below is a list of the most important capabilities you can use in your PWA.
 - *Web Performance* APIs to measure and help provide a better experience. See [the Performance API guide](https://developer.mozilla.org/docs/Web/API/Performance_API) for more information.
 - *Store data locally* with IndexedDB and storage management to query quota and request persistent storage, as seen in the [Offline data chapter](/learn/pwa/offline-data).
 - *Low-level audio* thanks to the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API).
-- *Foreground detection* using the [Page Visibility API](​​https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
+- *Foreground detection* using the [Page Visibility API](https://developer.mozilla.org/docs/Web/API/Page_Visibility_API).
 - *Network communication* using the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) and the [WebSocket API](https://developer.mozilla.org/docs/Web/API/WebSockets_API).
 
 #### Hardware and sensors
@@ -79,7 +79,7 @@ Safari also supports [Gesture events](https://developer.apple.com/library/archiv
 
 #### Operating system integration
 
-*Speech synthesis and voice recognition* use the platform's installed voices to speak to the user and to recognize what the user is saying, thanks to the [Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API).
+- *Speech synthesis and voice recognition* use the platform's installed voices to speak to the user and to recognize what the user is saying, thanks to the [Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API).
 - *Share content* from your PWA to other apps and places on the device, thanks to the [Web Share API](https://developer.mozilla.org/docs/Web/API/Web_Share_API), as we'll see in the [OS integration chapter](/learn/pwa/os-integration).
 - *Access the clipboard* to save and retrieve content from the clipboard in different formats, thanks to the [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API), as I showed in the [OS integration chapter](/learn/pwa/os-integration).
 - *Manage user's credentials and passwords* using the [Credential Management API](https://developer.mozilla.org/docs/Web/API/Credential_Management_API).
@@ -120,7 +120,7 @@ Here is a list of the most important capabilities you can use in your PWA, with 
 - *Virtual reality* enables you to use a headset and other devices in your PWA, thanks to the [WebXR Device API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API).
 - *Augmented reality* can be achieved in your PWA in many ways, such as using the [WebXR Device API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API) or the [Safari Quick Look app for AR content](https://webkit.org/blog/8421/viewing-augmented-reality-assets-in-safari-for-ios/).
 - *Detect inactive users* with the [Idle Detection API](/idle-detection/).
-- *Orientation lock* locks the orientation to portrait or landscape while the PWA is on the screen, thanks to the (Screen Orientation API)[https://developer.mozilla.org/docs/Web/API/Screen_Orientation_API], or the `orientation` property of the [Web App Manifest](/learn/pwa/web-app-manifest) for installed apps.
+- *Orientation lock* locks the orientation to portrait or landscape while the PWA is on the screen, thanks to the [Screen Orientation API](https://developer.mozilla.org/docs/Web/API/Screen_Orientation_API), or the `orientation` property of the [Web App Manifest](/learn/pwa/web-app-manifest) for installed apps.
 - *Present content* on projectors and secondary displays, thanks to the [Presentation API](https://developer.mozilla.org/docs/Web/API/Presentation_API).
 - *Lock a pointer* to receive delta movement information from pointers (mice, trackpads, and pointers) instead of position values—useful for some games—thanks to the [Pointer Lock API](https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API).
 

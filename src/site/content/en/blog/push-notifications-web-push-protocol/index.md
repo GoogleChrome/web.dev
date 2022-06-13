@@ -8,7 +8,9 @@ description: >
   server that manages push notification subscriptions and sends
   web push protocol requests to a push service.
 date: 2016-06-30
-updated: 2018-09-20
+updated: 2022-05-27
+tags:
+  - notifications
 ---
 
 We've seen how a library can be used to trigger push messages, but what
@@ -142,40 +144,40 @@ spec](https://tools.ietf.org/html/rfc7519), ES256 is short for "ECDSA using the 
 the SHA-256 hash algorithm". Using web crypto you can create the signature like so:
 
 ```js
-    // Utility function for UTF-8 encoding a string to an ArrayBuffer.
-    const utf8Encoder = new TextEncoder('utf-8');
+// Utility function for UTF-8 encoding a string to an ArrayBuffer.
+const utf8Encoder = new TextEncoder('utf-8');
 
-    // The unsigned token is the concatenation of the URL-safe base64 encoded
-    // header and body.
-    const unsignedToken = .....;
+// The unsigned token is the concatenation of the URL-safe base64 encoded
+// header and body.
+const unsignedToken = .....;
 
-    // Sign the |unsignedToken| using ES256 (SHA-256 over ECDSA).
-    const key = {
-      kty: 'EC',
-      crv: 'P-256',
-      x: window.uint8ArrayToBase64Url(
-        applicationServerKeys.publicKey.subarray(1, 33)),
-      y: window.uint8ArrayToBase64Url(
-        applicationServerKeys.publicKey.subarray(33, 65)),
-      d: window.uint8ArrayToBase64Url(applicationServerKeys.privateKey),
-    };
+// Sign the |unsignedToken| using ES256 (SHA-256 over ECDSA).
+const key = {
+  kty: 'EC',
+  crv: 'P-256',
+  x: window.uint8ArrayToBase64Url(
+    applicationServerKeys.publicKey.subarray(1, 33)),
+  y: window.uint8ArrayToBase64Url(
+    applicationServerKeys.publicKey.subarray(33, 65)),
+  d: window.uint8ArrayToBase64Url(applicationServerKeys.privateKey),
+};
 
-    // Sign the |unsignedToken| with the server's private key to generate
-    // the signature.
-    return crypto.subtle.importKey('jwk', key, {
-      name: 'ECDSA', namedCurve: 'P-256',
-    }, true, ['sign'])
-    .then((key) => {
-      return crypto.subtle.sign({
-        name: 'ECDSA',
-        hash: {
-          name: 'SHA-256',
-        },
-      }, key, utf8Encoder.encode(unsignedToken));
-    })
-    .then((signature) => {
-      console.log('Signature: ', signature);
-    });
+// Sign the |unsignedToken| with the server's private key to generate
+// the signature.
+return crypto.subtle.importKey('jwk', key, {
+  name: 'ECDSA', namedCurve: 'P-256',
+}, true, ['sign'])
+.then((key) => {
+  return crypto.subtle.sign({
+    name: 'ECDSA',
+    hash: {
+      name: 'SHA-256',
+    },
+  }, key, utf8Encoder.encode(unsignedToken));
+})
+.then((signature) => {
+  console.log('Signature: ', signature);
+});
 ```
 
 A push service can validate a JWT using the public application server key
@@ -185,16 +187,16 @@ as the "unsigned token" (i.e. the first two strings in the JWT).
 The signed JWT (i.e. all three strings joined by dots), is sent to the web
 push service as the `Authorization` header with `WebPush ` prepended, like so:
 
-```js
-Authorization: 'WebPush <JWT Info>.<JWT Data>.<Signature>';
+```text
+Authorization: 'WebPush [JWT Info].[JWT Data].[Signature]';
 ```
 
 The Web Push Protocol also states the public application server key must be
 sent in the `Crypto-Key` header as a URL safe base64 encoded string with
 `p256ecdsa=` prepended to it.
 
-```js
-    Crypto-Key: p256ecdsa=<URL Safe Base64 Public Application Server Key>
+```text
+Crypto-Key: p256ecdsa=[URL Safe Base64 Public Application Server Key]
 ```
 
 ### The Payload Encryption
@@ -524,7 +526,7 @@ The 'Encryption' header must contain the _salt_ used for encrypting the payload.
 The 16 byte salt should be base64 URL safe encoded and added to the Encryption header, like so:
 
 ```text
-    Encryption: salt=<URL Safe Base64 Encoded Salt>
+Encryption: salt=[URL Safe Base64 Encoded Salt]
 ```
 
 #### Crypto-Key header
@@ -538,8 +540,7 @@ the payload.
 The resulting header looks like this:
 
 ```text
-    Crypto-Key: dh=<URL Safe Base64 Encoded Local Public Key String>; p256ecdsa=<URL Safe Base64
-    Encoded Public Application Server Key>
+Crypto-Key: dh=[URL Safe Base64 Encoded Local Public Key String]; p256ecdsa=[URL Safe Base64 Encoded Public Application Server Key]
 ```
 
 #### Content type, length & encoding headers
@@ -549,9 +550,9 @@ payload. 'Content-Type' and 'Content-Encoding' headers are fixed values.
 This is shown below.
 
 ```text
-    Content-Length: <Number of Bytes in Encrypted Payload>
-    Content-Type: 'application/octet-stream'
-    Content-Encoding: 'aesgcm'
+Content-Length: [Number of Bytes in Encrypted Payload]
+Content-Type: 'application/octet-stream'
+Content-Encoding: 'aesgcm'
 ```
 
 With these headers set, we need to send the encrypted payload as the body
@@ -562,9 +563,9 @@ sent as a stream of bytes.
 In NodeJS we would do this like so:
 
 ```js
-    const pushRequest = https.request(httpsOptions, function(pushResponse) {
-    pushRequest.write(encryptedPayload);
-    pushRequest.end();
+const pushRequest = https.request(httpsOptions, function(pushResponse) {
+pushRequest.write(encryptedPayload);
+pushRequest.end();
 ```
 
 #### More headers?
@@ -586,7 +587,7 @@ delivered. When the `TTL` expires, the message will be removed from the
 push service queue and it won't be delivered.
 
 ```text
-    TTL: <Time to live in seconds>
+TTL: [Time to live in seconds]
 ```
 
 If you set a `TTL` of zero, the push service will attempt to deliver the
@@ -620,7 +621,7 @@ The header value is defined as shown below. The default
 value is `normal`.
 
 ```text
-    Urgency: <very-low | low | normal | high>
+Urgency: [very-low | low | normal | high]
 ```
 
 #### Everything together
@@ -681,4 +682,22 @@ href="https://tools.ietf.org/html/draft-ietf-webpush-protocol-10#section-7.2">40
   </tr>
 </table>
 
-#### Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* Web Push Protocol
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* [Common Issues and Reporting Bugs](/push-notifications-common-issues-and-reporting-bugs/)
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

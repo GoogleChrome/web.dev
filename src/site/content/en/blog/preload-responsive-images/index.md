@@ -170,8 +170,8 @@ Given the following scenario:
 
 ```html
 <picture>
-    <source src="small_cat.jpg" media="(max-width: 400px)">
-    <source src="medium_cat.jpg" media="(max-width: 800px)">
+    <source srcset="small_cat.jpg" media="(max-width: 400px)">
+    <source srcset="medium_cat.jpg" media="(max-width: 800px)">
     <img src="huge_cat.jpg">
 </picture>
 ```

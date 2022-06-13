@@ -45,7 +45,7 @@ FCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 실험실 도구
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 

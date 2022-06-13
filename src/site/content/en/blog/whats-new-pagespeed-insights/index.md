@@ -25,7 +25,7 @@ and
 [lab data](https://developers.google.com/web/fundamentals/performance/speed-tools#lab_data).
 It integrates information from the
 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-(CrUX) and [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+(CrUX) and [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 diagnostics to provide insights that help improve the performance of your
 website. 
 
@@ -206,7 +206,7 @@ following:
 
 **Performance Score:** The performance score appears at the top of the PSI
 report and summarizes the overall page performance. This score is determined by
-running [Lighthouse](https://developers.google.com/web/tools/lighthouse) to
+running [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to
 collect and analyze [lab
 data](https://developers.google.com/speed/docs/insights/v5/about#lab) about the
 page. A score of 90 or above is considered good, 50-90 needs improvement, and
