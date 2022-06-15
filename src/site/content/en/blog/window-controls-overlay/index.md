@@ -27,7 +27,7 @@ showing the macOS Podcasts app.
 <figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/o5gZ3GSKyUZOPhFxX7js.png", alt="A macOS Podcasts app title bar showing media control buttons and metadata about the currently playing podcast.", width="800", height="63" %}
   <figcaption>
-     A custom title bar makes your PWA feel more like a O.S. app.
+     A custom title bar makes your PWA feel more like a platform-specific app.
   </figcaption>
 </figure>
 
