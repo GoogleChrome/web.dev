@@ -60,8 +60,8 @@ API to ensure that people can easily manage their files. See the
 The File System Access API is currently supported on most Chromium browsers on
 Windows, macOS, ChromeOS, and Linux. A notable exception is Brave where it is
 [currently available behind a
-flag](https://github.com/brave/brave-browser/issues/18979). Android support for
-Chrome is planned; you can track progress by starring
+flag](https://github.com/brave/brave-browser/issues/18979). Android support is
+not immediately planned, but you can track potential progress by starring
 [crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
