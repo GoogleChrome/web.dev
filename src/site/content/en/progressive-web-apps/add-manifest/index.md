@@ -164,8 +164,8 @@ application is first launched on mobile.
 #### `display` {: #display }
 
 You can customize what browser UI is shown when your app is launched. For
-example, you can hide the address bar and [browser
-chrome](https://www.pcmag.com/encyclopedia/term/browser-chrome). Games can even
+example, you can hide the address bar and browser
+user interface elements. Games can even
 be made to launch full screen. The `display` property takes one of the following values:
 
 <div class="table-wrapper">
