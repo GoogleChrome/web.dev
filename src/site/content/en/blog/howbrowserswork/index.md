@@ -145,7 +145,7 @@ For example, parsing the expression `2 + 3 - 1` could return this tree:
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/xNQUG9emGd8FzuOpumP7.png", alt="Mathematical expression tree node.", width="400", height="155" %}
-  <figcaption> Figure :  mathematical expression tree node</figcaption>
+  <figcaption>Figure :  mathematical expression tree node</figcaption>
 </figure>
 
 ### Grammars
