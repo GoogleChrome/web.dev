@@ -7,7 +7,7 @@ authors:
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
-updated: 2020-07-16
+updated: 2022-06-16
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
