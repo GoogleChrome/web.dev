@@ -333,9 +333,8 @@ like any other image or iframe.
 
 ### How are images handled when a web page is printed?
 
-Although the functionality isn't in Chrome currently, there's an [open
-issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
-iframes are immediately loaded if a page is printed.
+All images and iframes are immediately loaded if the page is printed. See [issue
+#875403](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) for details.
 
 ### Does Lighthouse recognize browser-level lazy-loading?
 
