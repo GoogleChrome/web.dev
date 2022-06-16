@@ -555,8 +555,8 @@ origin private file system to disk somewhere, it is _not_ intended that the cont
 accessible. Similarly, there is _no_ expectation that files or directories with names matching the
 names of children of the origin private file system exist. While the browser might make it seem that
 there are files, internally—since this is an origin private file system—the browser might store
-these "files" in a database or any other data structure. Essentially, if you create with this API,
-do _not_ expect to find it matched one-to-one somewhere on the hard disk. You can operate as usual on
+these "files" in a database or any other data structure. Essentially, if you use this API,
+do _not_ expect to find the created files matched one-to-one somewhere on the hard disk. You can operate as usual on
 the origin private file system once you have access to the root `FileSystemDirectoryHandle`.
 
 ```js
