@@ -505,8 +505,8 @@ await file.move(directory);
 await file.move(directory, 'newer_name');
 ```
 
-{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` was unavailable for folders and moves outside of the
-[origin private file system](#accessing-the-origin-private-file-system) before Chrome 102.{% endAside %}
+{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is unavailable for folders and moves outside of the
+[origin private file system](#accessing-the-origin-private-file-system).{% endAside %}
 
 ### Drag and drop integration
 
