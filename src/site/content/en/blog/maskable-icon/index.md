@@ -29,7 +29,7 @@ white backgrounds.
 
 <figure>
   {% Img src="image/admin/jzjx6dGkXN9EdqnUzAeg.png", alt="PWA icons in white circles on Android", width="400", height="100" %}
-  <figcaption>Transparent PWA icons appear inside white circles on Android</figcaption>
+  <figcaption>Transparent PWA icons appear inside white circles on Android.</figcaption>
 </figure>
 
 Maskable icons are a new icon format that give you more control and let your Progressive Web App use
@@ -39,14 +39,14 @@ can adopt it in your apps.
 
 <figure>
   {% Img src="image/admin/J7gkg9ylP2ANlFawblze.png", alt="PWA icons covering the entire circle on Android", width="400", height="100" %}
-  <figcaption>Maskable icons cover the entire circle instead</figcaption>
+  <figcaption>Maskable icons cover the entire circle instead.</figcaption>
 </figure>
 
 ## Are my current icons ready?
 
 Since maskable icons need to support a variety of shapes, you supply an opaque image with some
-padding that the browser can later crop into the desired shape and size. It's best not to rely on
-any particular shape, since the ultimately chosen shape can vary by browser and per platform.
+padding that the browser can crop to the desired shape and size. It's best not to rely on
+any particular shape, since the ultimately chosen shape can vary by browser and platform.
 
 <figure data-float="right">
   {% Video
@@ -57,7 +57,7 @@ any particular shape, since the ultimately chosen shape can vary by browser and 
     playsinline=true
   %}
   <figcaption>
-    Different platform specific shapes
+    Different platform specific shapes.
   </figcaption>
 </figure>
 
@@ -74,23 +74,23 @@ safe area, you're good to go.
 
 <figure>
   {% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Applications panel in DevTools displaying PWA icons with edges cropped", width="762", height="423" %}
-  <figcaption>The Applications panel</figcaption>
+  <figcaption>The Applications panel.</figcaption>
 </figure>
 
 To test your maskable icon with the variety of Android shapes, use the
-[Maskable.app](https://maskable.app/) tool I've created.
+[Maskable.app](https://maskable.app/) tool Tiger created.
 Open an icon, then Maskable.app will let you
-try out various shapes and sizes, and you can share the preview with others on your team.
+try various shapes and sizes, and you can share the preview with others on your team.
 
 ## How do I adopt maskable icons?
 
-If you want to create a maskable icon based on your existing icon, you can use the
+If you want to create a maskable icon based on an existing icon, you can use the
 [Maskable.app Editor](https://maskable.app/editor). Upload your icon, adjust the color and size,
 then export the image.
 
 <figure>
   {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569" %}
-  <figcaption>Creating icons in Maskable.app Editor</figcaption>
+  <figcaption>Creating icons in Maskable.app Editor.</figcaption>
 </figure>
 
 Once you've created a maskable icon image and tested it out in DevTools, you'll need to update your
@@ -109,9 +109,9 @@ have a white background. You can also specify multiple space-separated purposes 
 `"any maskable"`), if you want your maskable icon to be used without a mask on other devices.
 
 {% Aside %}
-  While you _can_ specify multiple space-separated purposes like `"any maskable"`, in
+  While you _can_ specify multiple space-separated purposes such as `"any maskable"`, in
   practice you _shouldn't_. Using `"maskable"` icons as `"any"` icons is suboptimal as the icon
-  is going to be used as-is, resulting in excess padding and making the core icon content smaller.
+  is going to be used as-is, resulting in excess padding, making the core icon content smaller.
   Ideally, icons for the `"any"` purpose should have transparent regions and no extra padding, like your site's favicons,
   since the browser isn't going to add that for them.
 {% endAside %}
@@ -139,7 +139,7 @@ have a white background. You can also specify multiple space-separated purposes 
 }
 ```
 
-With this, you can go forth and create your own maskable icons, making sure you app looks great
+With this, you can go forth and create your own maskable icons, making sure your app looks great
 edge-to-edge (and for what it's worth, circle-to-circle, oval-to-oval 😄).
 
 ## Acknowledgements
