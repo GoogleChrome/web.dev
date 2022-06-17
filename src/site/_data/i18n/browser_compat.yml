@@ -42,3 +42,9 @@ preview:
   pt: Visualizar
   ru: Предварительный просмотр
   zh: 预览
+
+flag:
+  en: Behind a flag
+
+deprecated:
+  en: Deprecated
