@@ -80,7 +80,7 @@ For example, the following three card components have a header and footer aligne
 
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/yYDiYpyyTkH9IJK4KxvA.png", alt="A three card component where the headers and footers are aligned between the cards.", width="800", height="209" %}
 
-  <figcaption><a href="https://codepen.io/web-dot-dev/pen/XWzqrLR">See this on CodePen</a>.</figcaption>
+  <figcaption><a href="https://codepen.io/web-dot-dev/pen/XWzqrLR">See this on CodePen</a> with Firefox.</figcaption>
 </figure>
 
 
