@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-12-21
+updated: 2022-06-20
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -178,12 +178,12 @@ cross-origin resources:
    `<img src="example.jpg" crossorigin>`).
 4. If you want to use powerful features such as `SharedArrayBuffer` inside a
    loaded iframe, append `allow="cross-origin-isolated"` to the `<iframe>`.
-4. If cross-origin resources loaded into iframes involve another layer of
-   iframes, recursively apply steps described in this section before moving
-   forward.
+4. If cross-origin resources loaded into iframes or worker scripts involve
+   another layer of iframes or worker scripts, recursively apply steps described
+   in this section before moving forward.
 5. Once you confirm that all cross-origin resources are opted-in, set the
-   `Cross-Origin-Embedder-Policy: require-corp` header on the cross-origin
-   resources loaded into iframes.
+   `Cross-Origin-Embedder-Policy: require-corp` header on iframes and worker
+   scripts (This is required regardless of same-origin or cross-origin).
 6. Make sure there are no cross-origin popup windows that require communication
    through `postMessage()`. There's no way to keep them working when
    cross-origin isolation is enabled. You can move the communication to another
