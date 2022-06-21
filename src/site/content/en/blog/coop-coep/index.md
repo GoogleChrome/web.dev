@@ -39,6 +39,8 @@ and Desktop Chrome
 
 **Updates**
 
+- **June 21, 2022**: Worker scripts also need care when cross-origin isolation
+  is enabled. Added some explanations.
 - **Aug 5, 2021**: JS Self-Profiling API has been mentioned as one of APIs that
   require cross-origin isolation, but reflecting [recent change of the
   direction](https://github.com/shhnjk/shhnjk.github.io/tree/main/investigations/js-self-profiling#conclusion),
@@ -262,13 +264,10 @@ Before fully enabling COEP, you can do a dry run by using the
 `Cross-Origin-Embedder-Policy-Report-Only` header to examine whether the policy
 actually works. You will receive reports without blocking embedded content.
 
-Recursively apply this to all documents. For information on the Report-Only HTTP
-header, see [Observe issues using the Reporting
+Recursively apply this to **all** documents including the top-level document,
+iframes and worker scripts. For information on the Report-Only HTTP header, see
+[Observe issues using the Reporting
 API](#observe-issues-using-the-reporting-api).
-
-For iframes and worker scripts, don't forget to send a
-`Cross-Origin-Embedder-Policy-Report-Only` header with the same value as the
-parent document in addition to a CORP header.
 
 #### 4. Enable COEP {: #enable-coep }
 

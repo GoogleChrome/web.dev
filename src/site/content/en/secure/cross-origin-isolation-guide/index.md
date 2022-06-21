@@ -173,10 +173,11 @@ cross-origin resources:
    cross-origin`](https://resourcepolicy.fyi/#cross-origin) header. On same-site
    resources, set [`Cross-Origin-Resource-Policy:
    same-site`](https://resourcepolicy.fyi/#same-origin) header.
-2. Set the `crossorigin` attribute in the HTML tag on top-level document if the
-   resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
-   `<img src="example.jpg" crossorigin>`).
-4. If you want to use powerful features such as `SharedArrayBuffer` inside a
+2. For resources loadable using [CORS](/cross-origin-resource-sharing/), make
+   sure it is enabled, by setting the `crossorigin` attribute in its HTML tag
+   (for example, `<img src="example.jpg" crossorigin>`). For JavaScript fetch
+   request, make sure `request.mode` is set to `cors`.
+3. If you want to use powerful features such as `SharedArrayBuffer` inside a
    loaded iframe, append `allow="cross-origin-isolated"` to the `<iframe>`.
 4. If cross-origin resources loaded into iframes or worker scripts involve
    another layer of iframes or worker scripts, recursively apply steps described
