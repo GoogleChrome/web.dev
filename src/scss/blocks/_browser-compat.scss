@@ -69,6 +69,16 @@
     color: get-utility-value('color', 'state-warn-text');
   }
 
+  &[data-compat='flag'] {
+    background: get-utility-value('bg', 'state-warn-bg');
+    color: get-utility-value('color', 'state-warn-text');
+  }
+
+  &[data-compat='deprecated'] {
+    background: get-utility-value('bg', 'state-bad-bg');
+    color: get-utility-value('color', 'state-bad-text');
+  }
+
   &[data-compat='no'] {
     background: get-utility-value('bg', 'state-bad-bg');
     color: get-utility-value('color', 'state-bad-text');
