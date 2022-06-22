@@ -42,16 +42,16 @@ gives you insights on:
 
 It usually shows missed audio callback deadlines or big garbage collection that
 might cause unexpected audio glitches. This information is useful for
-understanding a underlying problem, so Chromium engineers will often ask it
+understanding an underlying problem, so Chromium engineers will often ask it
 especially when the local reproduction is not feasible. The general
-instructions for tracing is available [here](chromium-tracing).
+instructions for tracing are available [here](chromium-tracing).
 
 ### When do you use Web Audio DevTools extension?
 
 When you want to visualize the audio graph and monitor how the audio renderer
-performs in real time. The audio graph, a network of AudioNode objects to
+performs in real time. The audio graph, a network of `AudioNode` objects to
 generate and synthesize an audio stream, often gets complex but the graph
-topology is opaque by design. (Web Audio API doesn’t have features for
+topology is opaque by design. (The Web Audio API doesn’t have features for
 node/graph introspection.) Some changes happen in your graph and now you hear
 silence. Then it’s time for debugging by listening. It is never easy, and it
 becomes more difficult when you have a bigger audio graph. The Web Audio
@@ -188,16 +188,16 @@ between each callback varies significantly.
 * Increase the system audio callback buffer size by adjusting the
   [`latencyHint`](https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-latencyhint)
   option.
-* If you find this problem, [file an issue on crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWebAudio) 
+* If you find a problem, [file an issue on crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWebAudio) 
   with the tracing data.
 
-## Use Web Audio DevTools Extension
+## Use the Web Audio DevTools extension
 
-You also can use the DevTools extension specifically designed for Web Audio API.
+You can also use the DevTools extension specifically designed for the Web Audio API.
 Unlike the tracing tool, this provides real time inspection of graphs and
 performance metrics.
 
-This extension needs to be installed from
+This extension needs to be installed from the
 [Chrome Web Store](https://chrome.google.com/webstore/detail/audion/cmhomipkklckpomafalojobppmmidlgl).
 
 After the installation, you access the panel by opening Chrome DevTools and
@@ -205,20 +205,20 @@ clicking “Web Audio” on the top menu.
 
 {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/JUXLwtX83TOXqRHD2CGU.png", alt="Screenshot showing how to open Web Audio panel in Chrome DevTools.", width="800", height="201" %}
 
-The Web Audio panel has 4 components: context selector, property inspector,
+The Web Audio panel has four components: context selector, property inspector,
 graph visualizer, and performance monitor.
 
-{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4xQhLJBdDWW3X2nIssIS.png", alt="Screenshot of the Web Audio panel in Chrome DevTools", width="800", height="416" %}
+{% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/4xQhLJBdDWW3X2nIssIS.png", alt="Screenshot of the Web Audio panel in Chrome DevTools.", width="800", height="416" %}
 
 ### Context Selector
 
-Since a page can have multiple `BaseAudioContext`s, this drop-down menu allows you
-to choose the context you want to inspect. You can also manually trigger garbage
+Since a page can have multiple `BaseAudioContext` objects, this drop-down menu allows you
+choosing the context you want to inspect. You can also manually trigger garbage
 collection by clicking the trash can icon on the left. 
 
 ### Property Inspector
 
-This side panel shows various properties of a user-selected context or
+The side panel shows various properties of a user-selected context or
 `AudioNode`. Inspecting dynamic values in `AudioParam` is not supported.
 
 ### Graph Visualizer
@@ -230,20 +230,20 @@ inspector.
 
 ### Performance Monitor
 
-This status bar at the bottom is only active when the selected BaseAudioContext
-is an AudioContext, which runs in real-time. This bar shows the instantaneous
-audio stream quality of a selected AudioContext and is updated every second. It
+The status bar at the bottom is only active when the selected `BaseAudioContext`
+is an `AudioContext`, which runs in real-time. This bar shows the instantaneous
+audio stream quality of a selected `AudioContext` and is updated every second. It
 provides the following information: 
 
 * **Callback interval** (ms): Displays the weighted mean/variance of callback
   interval. Ideally the mean should be stable and the variance should be close
   to zero. If you see a large variance, it means that the system-level audio
   callback function has unstable timing that can lead to poor audio stream
-  quality. (See the example 3 above)
+  quality. (See example 3, above.)
 
 * **Render Capacity** (percent): When the capacity gets close to 100 percent, it
   means that the renderer is doing too much for a given render budget, so you
-  should consider doing less (e.g. using fewer `AudioNodes` in the
+  should consider doing less (e.g. using fewer `AudioNodes` objects in the
   graph).
 
 You can manually trigger a garbage collector by clicking the trash can icon.
@@ -252,8 +252,8 @@ You can manually trigger a garbage collector by clicking the trash can icon.
 
 The extension is now a recommended method by the Chrome Web Audio team, but the
 legacy WebAudio DevTools panel is also available. You can access this panel by
-clicking the "three dots" menu in the top right corner of DevTools, then go to
-**More tools** then **WebAudio**.
+clicking the "three dots" menu in the top right corner of DevTools, then going to
+**More tools**, then **WebAudio**.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t2eX431PTio5oOFkmOtR.jpg", alt="Screen shot showing how to open WebAudio panel in Chrome DevTools.", width="800", height="423" %}
 
