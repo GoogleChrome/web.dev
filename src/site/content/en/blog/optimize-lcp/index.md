@@ -424,7 +424,7 @@ new PerformanceObserver((list) => {
 
   // Clear previous measures before making new ones.
   // Note: due to a bug this does not work in Chrome DevTools.
-  LCP_SUB_PARTS.forEach(performance.clearMeasures);
+  LCP_SUB_PARTS.forEach((part) => performance.clearMeasures(part));
 
   // Create measures for each LCP sub-part for easier
   // visualization in the Chrome DevTools Performance panel.
@@ -449,7 +449,7 @@ new PerformanceObserver((list) => {
 
   // Log helpful debug information to the console.
   console.log('LCP value: ', lcpRenderTime);
-  console.log('LCP element: ', lcpEntry.element);
+  console.log('LCP element: ', lcpEntry.element, lcpEntry.url);
   console.table(
     lcpSubPartMeasures.map((measure) => ({
       'LCP sub-part': measure.name,
