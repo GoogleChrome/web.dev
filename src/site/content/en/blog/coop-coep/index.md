@@ -18,7 +18,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2022-06-20
+updated: 2022-06-23
 tags:
   - blog
   - security
@@ -206,11 +206,11 @@ terminate the origin trial until this issue is safely resolved.
 
 {% endAside %}
 
-A browsing context group is a set of window that can reference each other. For
-example, the top-level document and its child documents embedded via `<iframe>`.
+A browsing context group is a set of windows that can reference each other. For
+example, a top-level document and its child documents embedded via `<iframe>`.
 If a website (`https://a.example`) opens a popup window (`https://b.example`),
-the opener window and the popup window share the same browsing context and they
-have access to each other via DOM APIs such as `window.opener`.
+the opener window and the popup window share the same browsing context, therefore
+they have access to each other via DOM APIs such as `window.opener`.
 
 {% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
