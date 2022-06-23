@@ -18,7 +18,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-12-21
+updated: 2022-06-23
 tags:
   - blog
   - security
@@ -39,6 +39,8 @@ and Desktop Chrome
 
 **Updates**
 
+- **June 21, 2022**: Worker scripts also need care when cross-origin isolation
+  is enabled. Added some explanations.
 - **Aug 5, 2021**: JS Self-Profiling API has been mentioned as one of APIs that
   require cross-origin isolation, but reflecting [recent change of the
   direction](https://github.com/shhnjk/shhnjk.github.io/tree/main/investigations/js-self-profiling#conclusion),
@@ -204,11 +206,11 @@ terminate the origin trial until this issue is safely resolved.
 
 {% endAside %}
 
-A browsing context group is a group of tabs, windows or iframes which share the
-same context. For example, if a website (`https://a.example`) opens a popup
-window (`https://b.example`), the opener window and the popup window share the
-same browsing context and they have access to each other via DOM APIs such as
-`window.opener`.
+A browsing context group is a set of windows that can reference each other. For
+example, a top-level document and its child documents embedded via `<iframe>`.
+If a website (`https://a.example`) opens a popup window (`https://b.example`),
+the opener window and the popup window share the same browsing context, therefore
+they have access to each other via DOM APIs such as `window.opener`.
 
 {% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
@@ -217,7 +219,7 @@ context groups [from DevTools](#devtools-coop).
 
 {% Aside 'codelab' %}
 [See the impact of different COOP
-parameters](https://first-party-test.glitch.me/coop).
+parameters](https://cross-origin-isolation.glitch.me/coop).
 {% endAside %}
 
 #### 2. Ensure resources have CORP or CORS enabled
@@ -237,16 +239,17 @@ Here is what you need to do depending on the nature of the resource:
     * Use the `crossorigin` attribute in the loading HTML tag if the resource is
       served with CORS. (For example, `<img src="***" crossorigin>`.)
     * Ask the owner of the resource to support either CORS or CORP.
-* For iframes, use CORP and COEP headers as follows:
-  `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
-  depending on the context) and `Cross-Origin-Embedder-Policy: require-corp`.
+* For iframes and worker scripts, set the `Cross-Origin-Resource-Policy:
+  same-origin` (or `same-site`, `cross-origin` depending on the context).
 
 {% Aside 'gotchas' %}
+
 You can enable cross-origin isolation on a document embedded within an iframe by
 applying `allow="cross-origin-isolated"` feature policy to the `<iframe>` tag
 and meeting the same conditions described in this document. Note that entire
 chain of the documents including parent frames and child frames must be
 cross-origin isolated as well.
+
 {% endAside %}
 
 {% Aside 'key-term' %}
@@ -260,19 +263,22 @@ same-origin](/same-site-same-origin).
 Before fully enabling COEP, you can do a dry run by using the
 `Cross-Origin-Embedder-Policy-Report-Only` header to examine whether the policy
 actually works. You will receive reports without blocking embedded content.
-Recursively apply this to all documents. For information on the Report-Only HTTP
-header, see [Observe issues using the Reporting
+
+Recursively apply this to **all** documents including the top-level document,
+iframes and worker scripts. For information on the Report-Only HTTP header, see
+[Observe issues using the Reporting
 API](#observe-issues-using-the-reporting-api).
 
 #### 4. Enable COEP {: #enable-coep }
 
 Once you've confirmed that everything works, and that all resources can be
-successfully loaded, apply the `Cross-Origin-Embedder-Policy: require-corp` HTTP
-header to all documents including those that are embedded via iframes.
+successfully loaded, switch the `Cross-Origin-Embedder-Policy-Report-Only`
+header to the `Cross-Origin-Embedder-Policy` header with the same value to all
+documents including those that are embedded via iframes and worker scripts.
 
 {% Aside 'codelab' %}
 [See the impact of different COEP / CORP
-parameters](https://first-party-test.glitch.me/coep).
+parameters](https://cross-origin-isolation.glitch.me/coep).
 {% endAside %}
 
 {% Aside %}
@@ -393,7 +399,7 @@ payload when cross-origin resource is blocked looks like this:
     "type": "corp"
   },
   "type": "coep",
-  "url": "https://first-party-test.glitch.me/?coep=require-corp&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/?coep=require-corp&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4249.0 Safari/537.36"
 }]
 ```
@@ -419,7 +425,7 @@ when a pop-up window is opened isolated looks like this:
     "type": "navigation-from-response"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
@@ -437,11 +443,11 @@ When different browsing context groups try to access each other (only on
     "effectivePolicy": "same-origin",
     "lineNumber": 83,
     "property": "postMessage",
-    "sourceFile": "https://first-party-test.glitch.me/popup.js",
+    "sourceFile": "https://cross-origin-isolation.glitch.me/popup.js",
     "type": "access-from-coop-page-to-openee"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?report-only&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 },
 {
@@ -453,7 +459,7 @@ When different browsing context groups try to access each other (only on
     "type": "access-to-coop-page-from-openee"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?report-only&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
