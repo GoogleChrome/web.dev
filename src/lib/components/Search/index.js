@@ -305,11 +305,6 @@ class Search extends BaseStateElement {
     this.updateComplete.then(() => {
       this.inputEl.focus();
     });
-
-    // See https://github.com/GoogleChrome/web.dev/issues/8131
-    /** @type {HTMLElement|object} */
-    const navDrawer = document.querySelector('web-navigation-drawer') || {};
-    navDrawer.inert = true;
   }
 
   /**
@@ -317,11 +312,6 @@ class Search extends BaseStateElement {
    */
   onCloseSearch() {
     this.expanded = false;
-
-    // See https://github.com/GoogleChrome/web.dev/issues/8131
-    /** @type {HTMLElement|object} */
-    const navDrawer = document.querySelector('web-navigation-drawer') || {};
-    navDrawer.inert = false;
   }
 
   /**
