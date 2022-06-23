@@ -206,11 +206,11 @@ terminate the origin trial until this issue is safely resolved.
 
 {% endAside %}
 
-A browsing context group is a group of tabs, windows, iframes or worker scripts
-which share the same context. For example, if a website (`https://a.example`)
-opens a popup window (`https://b.example`), the opener window and the popup
-window share the same browsing context and they have access to each other via
-DOM APIs such as `window.opener`.
+A browsing context group is a set of window that can reference each other. For
+example, the top-level document and its child documents embedded via `<iframe>`.
+If a website (`https://a.example`) opens a popup window (`https://b.example`),
+the opener window and the popup window share the same browsing context and they
+have access to each other via DOM APIs such as `window.opener`.
 
 {% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
