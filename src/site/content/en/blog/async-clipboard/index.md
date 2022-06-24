@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-07-29
+updated: 2021-06-27
 tags:
   - blog
   - capabilities
@@ -47,8 +47,8 @@ the API,
 before proceeding.
 
 {% Aside %}
-The Async Clipboard API is limited to handling text and images. Chrome&nbsp;84
-introduces an experimental feature that allows the clipboard to handle any
+The Async Clipboard API is limited to handling text and images. Chrome&nbsp;104
+introduces a feature that allows the clipboard to handle any
 arbitrary data type.
 {% endAside %}
 
@@ -103,7 +103,7 @@ try {
   const blob = await data.blob();
   await navigator.clipboard.write([
     new ClipboardItem({
-      [blob.type]: blob
+      blob.type: blob
     })
   ]);
   console.log('Image copied.');
@@ -112,21 +112,19 @@ try {
 }
 ```
 
-{% Aside 'warning' %}
-  Safari (WebKit) treats user activation differently than Chromium (Blink)
-  (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
-  For Safari, run all asynchronous operations in a promise
-  whose result you assign to the `ClipboardItem`:
+Safari (WebKit) treats user activation differently than Chromium (Blink)
+(see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
+For Safari, run all asynchronous operations in a promise
+whose result you assign to the `ClipboardItem`:
 
-  ```js
-  new ClipboardItem({
-    'foo/bar': new Promise(async (resolve) => {
-        // Prepare `blobValue` of type `foo/bar`
-        resolve(new Blob([blobValue], { type: 'foo/bar' }));
-      }),
-    })
-  ```
-{% endAside %}
+```js
+new ClipboardItem({
+  'foo/bar': new Promise(async (resolve) => {
+      // Prepare `blobValue` of type `foo/bar`
+      resolve(new Blob([blobValue], { type: 'foo/bar' }));
+    }),
+  })
+```
 
 ### The copy event
 
@@ -151,7 +149,7 @@ document.addEventListener('copy', async (e) => {
         }
         clipboardItems.push(
           new ClipboardItem({
-            [item.type]: item,
+            item.type: item,
           })
         );
         await navigator.clipboard.write(clipboardItems);
@@ -312,7 +310,7 @@ do by trying to read data from the clipboard. The code below shows the latter:
 ```js
 const queryOpts = { name: 'clipboard-read', allowWithoutGesture: false };
 const permissionStatus = await navigator.permissions.query(queryOpts);
-// Will be 'granted', 'denied' or 'prompt':
+// Will be 'granted', 'denied', or 'prompt':
 console.log(permissionStatus.state);
 
 // Listen for changes to the permission state
@@ -354,8 +352,8 @@ or both of `clipboard-read` or `clipboard-write`, depending on the needs of your
 
 ```html/2
 <iframe
-    src="index.html"
-    allow="clipboard-read; clipboard-write"
+  src="index.html"
+  allow="clipboard-read; clipboard-write"
 >
 </iframe>
 ```
@@ -363,8 +361,8 @@ or both of `clipboard-read` or `clipboard-write`, depending on the needs of your
 ## Feature detection
 
 To use the Async Clipboard API while supporting all browsers, test for
-`navigator.clipboard` and fall back to earlier methods. For example, here's how
-you might implement pasting to include other browsers.
+`navigator.clipboard` and fall back to earlier methods when it's not present.
+For example, here's how you might implement pasting to include other browsers.
 
 ```js
 document.addEventListener('paste', async (e) => {
@@ -400,10 +398,6 @@ button.addEventListener('click', (e) => {
   }
 });
 ```
-
-In Internet Explorer, you can also access the clipboard through
-`window.clipboardData`. If accessed within a user gesture such as a click
-event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
@@ -443,8 +437,9 @@ Because of potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, watch this article
 and our [blog](/blog/) for updates.
 
-For now, support for the Clipboard API is available in
-[a number of browsers](https://developer.mozilla.org/docs/Web/API/Clipboard#Browser_compatibility).
+For now, support for the Clipboard API is available as follows:
+
+{% BrowserCompat 'api.Clipboard' %}
 
 Happy copying and pasting!
 
