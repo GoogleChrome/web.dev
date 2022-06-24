@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-06-02
+updated: 2022-06-24
 tags:
   - blog
   - capabilities
@@ -475,6 +475,10 @@ await directoryHandle.removeEntry('Abandoned Projects.txt');
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ```
 
+{% aside %}
+The `FileSystemDirectoryHandle.removeEntry()` method is currently still behind a flag. 
+{% endAside %}
+
 ### Deleting a file or folder directly
 
 If you have access to a file or directory handle, call `remove()` on a `FileSystemFileHandle` or
@@ -506,7 +510,7 @@ await file.move(directory, 'newer_name');
 ```
 
 {% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is unavailable for folders and moves outside of the
-[origin private file system](#accessing-the-origin-private-file-system).{% endAside %}
+[origin private file system](#accessing-the-origin-private-file-system) and still behind a flag.{% endAside %}
 
 ### Drag and drop integration
 
