@@ -488,7 +488,7 @@ await directoryHandle.remove();
 ```
 
 {% Aside %}
-The `FileSystemHandle.remove()` method is currently still behind a flag. 
+The `FileSystemHandle.remove()` method is currently behind a flag. 
 {% endAside %}
 
 ### Renaming and moving files and folders
@@ -510,9 +510,9 @@ await file.move(directory, 'newer_name');
 ```
 
 {% Aside %}
-The `FileSystemHandle.move()` method is shipped for files within the origin private file system (OPFS),
-behind a flag for files if the source or destination is outside of the OPFS,
-and not [yet](https://crbug.com/1250534) supported for directories.
+The `FileSystemHandle.move()` method has shipped for files within the origin private file system (OPFS),
+is behind a flag for files if the source or destination is outside of the OPFS,
+and is not [yet](https://crbug.com/1250534) supported for directories.
 {% endAside %}
 
 ### Drag and drop integration
