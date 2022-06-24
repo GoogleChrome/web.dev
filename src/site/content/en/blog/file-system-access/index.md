@@ -475,10 +475,6 @@ await directoryHandle.removeEntry('Abandoned Projects.txt');
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ```
 
-{% aside %}
-The `FileSystemDirectoryHandle.removeEntry()` method is currently still behind a flag. 
-{% endAside %}
-
 ### Deleting a file or folder directly
 
 If you have access to a file or directory handle, call `remove()` on a `FileSystemFileHandle` or
@@ -490,6 +486,10 @@ await fileHandle.remove();
 // Delete a directory.
 await directoryHandle.remove();
 ```
+
+{% Aside %}
+The `FileSystemHandle.remove()` method is currently still behind a flag. 
+{% endAside %}
 
 ### Renaming and moving files and folders
 
@@ -509,8 +509,11 @@ await file.move(directory);
 await file.move(directory, 'newer_name');
 ```
 
-{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is unavailable for folders and moves outside of the
-[origin private file system](#accessing-the-origin-private-file-system) and still behind a flag.{% endAside %}
+{% Aside %}
+The `FileSystemHandle.move()` method is shipped for files within the origin private file system (OPFS),
+behind a flag for files if the source or destination is outside of the OPFS,
+and not [yet](https://crbug.com/1250534) supported for directories.
+{% endAside %}
 
 ### Drag and drop integration
 
