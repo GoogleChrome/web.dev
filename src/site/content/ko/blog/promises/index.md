@@ -133,8 +133,8 @@ Promise는 다음과 같을 수 있습니다.
 
 Promise는 다음과 같은 라이브러리 형태로 한동안 사용되었습니다.
 
-- [NS](https://github.com/kriskowal/q)
-- [언제](https://github.com/cujojs/when)
+- [Q](https://github.com/kriskowal/q)
+- [when](https://github.com/cujojs/when)
 - [WinJS](https://msdn.microsoft.com/library/windows/apps/br211867.aspx)
 - [RSVP.js](https://github.com/tildeio/rsvp.js)
 
