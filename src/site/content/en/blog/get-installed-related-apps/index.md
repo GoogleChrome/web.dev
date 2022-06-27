@@ -7,11 +7,11 @@ subhead: |
 authors:
   - petelepage
 description: |
-  The getInstalledRelatedApps() API is a web platform API that allows you
+  The getInstalledRelatedApps() method allows you
   to check whether your iOS/Android/desktop app or PWA is installed on the
   user's device.
 date: 2018-12-20
-updated: 2021-09-16
+updated: 2022-06-28
 tags:
   - blog
   - capabilities
@@ -31,24 +31,33 @@ feedback:
   </figcaption>
 </figure>
 
-The [`getInstalledRelatedApps()`][spec] makes it possible for *your* page to
+The [`getInstalledRelatedApps()`][spec] method makes it possible for *your* page to
 check if *your* mobile or desktop app, or in some cases, if your Progressive
 Web App (PWA) is already installed on a user's device, and allows you to
 customize the user experience if it is.
 
-For example, if your app is already installed:
+For example, if your app is already installed you can:
 
-* Redirecting the user from a product marketing page directly into your app.
-* Centralizing some functionality like notifications in the other app to
+* Redirect the user from a product marketing page directly into your app.
+* Centralize some functionality like notifications in the other app to
   prevent duplicate notifications.
-* Not [promoting the installation](/customize-install/) of your PWA if your
+* Avoid [promoting the installation](/customize-install/) of your PWA if your
   other app is already installed.
 
-To use the `getInstalledRelatedApps()` API, you need to tell your app about
+To use the `getInstalledRelatedApps()` method, you need to tell your app about
 your site, then tell your site about your app. Once you've defined the
 relationship between the two, you can check if the app is installed.
 
-### Supported app types you can check
+## Platform and browser support
+
+As of mid 2022, Chromium-based browsers, including Edge, support this method on
+both desktop and mobile.
+
+{% BrowserCompat 'api.Navigator.getInstalledRelatedApps' %}
+
+This requires more than browser support. The table below desribes the current
+state of support on various platforms. The rest of this article explains how to
+use this information.
 
 <div>
   <table data-alignment="top">
@@ -94,16 +103,14 @@ relationship between the two, you can check if the app is installed.
 </div>
 
 {% Aside %}
-  The `getInstalledRelatedApps()` API only allows you to check if *your* apps
+  The `getInstalledRelatedApps()` method only allows you to check if *your* apps
   are installed. You cannot get a list of all installed apps, or check if other
-  3rd party apps are installed.
+  third party apps are installed.
 {% endAside %}
 
 <!--  Android App -->
 
 ## Check if your Android app is installed {: #check-android }
-
-Your website can check if your Android app is installed.
 
 {% Compare 'better', 'Supported on' %}
 Android: Chrome 80 or later
@@ -176,13 +183,18 @@ Try the [demo](https://get-installed-apps.glitch.me/)
 
 ## Check if your Windows (UWP) app is installed {: #check-windows }
 
-Your website can check if your Windows app (built using UWP) is installed.
+Your website can check if your Windows app, built using [Universal Windows
+Platform
+(UWP)](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide)
+app is installed.
 
 {% Compare 'better', 'Supported on' %}
 Windows: Chrome 85 or later, Edge 85 or later
 {% endCompare %}
 
 ### Tell your Windows app about your website
+
+"The declaration above registers your app to handle links from the specified host. "
 
 You'll need to update your Windows app to define the relationship between your
 website and Windows application using [URI Handlers][win-uri-handlers]. This
@@ -194,7 +206,7 @@ file `Package.appxmanifest`. For example, if your website's address is
 
 ```xml
 <Applications>
-  <Application Id="App" ... >
+  <Application Id="YourApp" ... >
       ...
       <Extensions>
          <uap3:Extension Category="windows.appUriHandler">
