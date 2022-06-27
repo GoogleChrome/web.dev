@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-06-02
+updated: 2022-06-24
 tags:
   - blog
   - capabilities
@@ -487,6 +487,10 @@ await fileHandle.remove();
 await directoryHandle.remove();
 ```
 
+{% Aside %}
+The `FileSystemHandle.remove()` method is currently behind a flag. 
+{% endAside %}
+
 ### Renaming and moving files and folders
 
 Files and folders can be renamed or moved to a new location by calling `move()` on the
@@ -505,8 +509,11 @@ await file.move(directory);
 await file.move(directory, 'newer_name');
 ```
 
-{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is unavailable for folders and moves outside of the
-[origin private file system](#accessing-the-origin-private-file-system).{% endAside %}
+{% Aside %}
+The `FileSystemHandle.move()` method has shipped for files within the origin private file system (OPFS),
+is behind a flag for files if the source or destination is outside of the OPFS,
+and is not [yet](https://crbug.com/1250534) supported for directories.
+{% endAside %}
 
 ### Drag and drop integration
 
