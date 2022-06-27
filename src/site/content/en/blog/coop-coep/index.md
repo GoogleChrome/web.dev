@@ -18,7 +18,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2022-06-23
+updated: 2022-06-27
 tags:
   - blog
   - security
@@ -239,8 +239,15 @@ Here is what you need to do depending on the nature of the resource:
     * Use the `crossorigin` attribute in the loading HTML tag if the resource is
       served with CORS. (For example, `<img src="***" crossorigin>`.)
     * Ask the owner of the resource to support either CORS or CORP.
-* For iframes and worker scripts, set the `Cross-Origin-Resource-Policy:
-  same-origin` (or `same-site`, `cross-origin` depending on the context).
+* For iframes, follow the same principles above and set the
+  `Cross-Origin-Resource-Policy: cross-origin` (or `same-site`, `same-origin`
+  depending on the context).
+* For a script loaded via a `WebWorker`, because it must be served from
+  same-origin, you don't need a CORP or CORS headers.
+* From a document or a worker served with `COEP: require-corp`, cross-origin
+  subresources loaded without CORS must set `Cross-Origin-Resource-Policy:
+  cross-origin` header to opt-in being embedded. For example, this applies to
+  `<script>`, `importScripts`, `<link>`, `<video>`, `<iframe>`, etc.
 
 {% Aside 'gotchas' %}
 
