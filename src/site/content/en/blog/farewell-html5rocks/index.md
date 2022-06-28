@@ -4,14 +4,13 @@ subhead: >
   So long HTML5Rocks, it's been nice knowing you.
 date: 2022-06-28
 hero: image/rq1kLlxRBubsZSyX0gs2nghLSZc2/Mf8f01NYUBJBs9AwrJYe.jpg
-alt: A picture of rocks
+alt: A picture of rocks.
 authors: 
   - paulkinlan
 description: >
     So long HTML5Rocks, it's been nice knowing you.
 tags:
   - blog
-  - html5
 ---
 
 After 10 years and 100 million pageviews this 
