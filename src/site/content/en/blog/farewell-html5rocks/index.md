@@ -57,7 +57,7 @@ translated the content so that it could be read everywhere, and all the readers
 and commenters who made the site the place to go and learn about what's new on 
 the web.
 
-I'm off to register HTMLLivingStandardRocks.com...
+I'm off to register HTMLLivingStandardRocks.com…
 
 ♥️ Paul
 
