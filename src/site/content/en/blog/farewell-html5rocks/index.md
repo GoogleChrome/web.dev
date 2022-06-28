@@ -18,7 +18,7 @@ After 10 years and 100 million pageviews this
 [commit](https://github.com/html5rocks/www.html5rocks.com/pull/1548) completes 
 our transition of content of HTML5Rocks to homes that are maintained on 
 [developer.chrome.com](https://developer.chrome.com/) and 
-[web.dev](https://web.dev/). It feels like a bit of an end of an era.
+[web.dev](/). It feels like a bit of an end of an era.
 
 I was around for the founding of HTML5Rocks. We had so much fun building the 
 serving infrastructure (several times) and creating a lot of the content—from 
