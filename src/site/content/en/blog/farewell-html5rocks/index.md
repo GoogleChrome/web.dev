@@ -46,8 +46,8 @@ With this transition it was important for us to maintain the content (it's still
 valuable), but more importantly maintain the in-bound links. People found our 
 content interesting enough for them to share with their audiences, so I'd like 
 to maintain that trust given to us and ensure that all the links will still 
-resolve to the content. If you do see an issue with any of the content, please 
-reach out to us and file an issue on 
+resolve to the content. If you do see an issue with any of the content, reach out
+to us and file an issue on 
 [web.dev](https://github.com/googlechrome/web.dev/issues) or 
 [developer.chrome.com](https://github.com/googlechrome/developer.chrome.com/issues) 
 issue trackers.
