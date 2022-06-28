@@ -3,7 +3,7 @@ title: Farewell to HTML5Rocks
 subhead: >
   So long HTML5Rocks, it's been nice knowing you.
 date: 2022-06-28
-hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/9nYDoT45VHvNAtTfLciY.jpeg
+hero: image/rq1kLlxRBubsZSyX0gs2nghLSZc2/Mf8f01NYUBJBs9AwrJYe.jpg
 alt: A picture of rocks
 authors: 
   - paulkinlan
@@ -60,3 +60,7 @@ the web.
 I'm off to register HTMLLivingStandardRocks.com...
 
 ♥️ Paul
+
+--- 
+Photo by [Oliver Paaske](https://unsplash.com/@photolli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 
+on [Unsplash](https://unsplash.com/s/photos/rocks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
