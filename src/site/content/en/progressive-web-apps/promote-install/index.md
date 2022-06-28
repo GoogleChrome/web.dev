@@ -317,7 +317,7 @@ Make sure you:
 ## Inline promotional patterns
 
 Inline promotional techniques interweave promotions with site content. This
-is often more subtle than promotion in the user inerface, which has tradeoffs.
+is often more subtle than promotion in the user interface, which has tradeoffs.
 You want your promotion to stand out enough that interested users will notice
 it, but not so much that it detracts from the quality of your user experience.
 
