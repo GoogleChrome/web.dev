@@ -2,7 +2,7 @@
 title: Farewell to HTML5Rocks
 subhead: >
   So long HTML5Rocks, it's been nice knowing you.
-date: 2022-06-28
+date: 2022-06-29
 hero: image/rq1kLlxRBubsZSyX0gs2nghLSZc2/Mf8f01NYUBJBs9AwrJYe.jpg
 alt: A picture of rocks.
 authors: 
