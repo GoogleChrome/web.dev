@@ -33,7 +33,7 @@ module.exports = {
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
   isBannerEnabled: true,
-  banner: 
+  banner:
     'The PWA community is coming together for #PWASummit22. Have a great story about developing a web app? [Submit your talk today](https://sessionize.com/pwa-summit-2022)',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
