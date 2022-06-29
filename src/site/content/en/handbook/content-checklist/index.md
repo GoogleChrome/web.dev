@@ -28,6 +28,11 @@ If the content does not seem helpful for web developers, or
 the content seems to be primarily written for an audience other than
 web developers, it's probably not a good fit for web.dev.
 
+### The content is about techniques or APIs that are available cross-browser {: #support }
+
+If the content is about an API in origin trial, or only available in Chrome, it is likely that 
+[developer.chrome.com](https://developer.chrome.com) is the better location.
+
 ### The guidance is usable {: #usable }
 
 If the content provides step-by-step instructions on completing a task, make sure
@@ -48,7 +53,8 @@ as much as possible. For example, a single page of content should not try to be 
 tutorial and an explainer.
 
 Reference documentation pages are not allowed on web.dev. Reference
-documentation is better suited for a site like [MDN](https://developer.mozilla.org/).
+documentation is better suited for [MDN](https://developer.mozilla.org/), 
+or our [web platform documentation](https://developer.chrome.com/docs/web-platform/) section.
 
 ### The content is unique {: #unique }
 
@@ -75,8 +81,8 @@ for gaining that background knowledge.
 
 Here are the common strategies for helping readers gain background knowledge:
 
-* Expand the content to explain the topic in more depth
-* Link to other, existing content on the topic
+* Expand the content to explain the topic in more depth.
+* Link to other, existing content on the topic.
 
 The one exception to this rule is basic web development knowledge. web.dev
 assumes that its readers understand the basics of CSS, HTML, and JavaScript.
@@ -301,14 +307,15 @@ the following strategies can be used to explain the idea more effectively:
 ### Browser compatibility is mentioned near the start of the content {: #compatibility }
 
 When content is focused around specific web platform features or APIs,
-make sure that the browser compatibility of the APIs is specifically mentioned. This is
-especially important if the features/APIs aren't supported in all browsers,
-but it should also be done even if the features/APIs are supported in all browsers.
+make sure that the browser compatibility of the APIs is specifically mentioned by including the 
+[BrowserCompat component](/handbook/web-dev-components/#browsercompat).
 
-Examples:
+If a solid polyfill is available to complete support in all three engines, 
+include details along with the BrowserCompat component.
 
-* [CSS masking](/css-masking/#browser-compatibility)
-* [`content-visibility`](/content-visibility/#support)
+If the post refers to a number of APIs, or CSS properties, add the component for those features near the first mention of them.
+
+Example: [New to the web platform in May](/web-platform-05-2022/).
 
 {% Aside %}
   Rationale: We know from the [MDN Developer Needs Assessment 2019
