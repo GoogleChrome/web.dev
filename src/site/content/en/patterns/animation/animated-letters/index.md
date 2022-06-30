@@ -1,6 +1,6 @@
 ---
 layout: pattern
-title: Animated Letters
+title: Split Text - Animated Letters
 description: |
   This pattern shows how to create infinitely animated letter effects that respect user's motion preferences.
   <br><br>

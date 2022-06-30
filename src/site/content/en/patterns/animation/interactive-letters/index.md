@@ -1,6 +1,6 @@
 ---
 layout: pattern
-title: Interactive Letters
+title: Split Text - Hover Letters
 description: |
   This pattern shows how to create interactive letter effects that respect user's motion preferences.
   <br><br>

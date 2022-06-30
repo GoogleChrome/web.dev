@@ -1,6 +1,6 @@
 ---
 layout: pattern
-title: Interactive Words
+title: Split Text - Hover Words
 description: |
   This pattern shows how to create interactive word effects that respect user's motion preferences.
   <br><br>

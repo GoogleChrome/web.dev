@@ -1,6 +1,6 @@
 ---
 layout: pattern
-title: Animated Words
+title: Split Text - Animated Words
 description: |
   This pattern shows how to create infinitely animated word effects that respect user's motion preferences.
   <br><br>
