@@ -74,7 +74,7 @@ Can now be written like this:
 
 {% BrowserCompat 'css.at-rules.media.range_syntax' %}
 
-Chrome 103 on desktop also includes the [Region Capture API](https://developer.chrome.com/docs/web-platform/region-capture/). This enables cropping and removing content from captured video before sharing it.
+Chrome 104 on desktop also includes the [Region Capture API](https://developer.chrome.com/docs/web-platform/region-capture/). This enables cropping and removing content from captured video before sharing it.
 
 Safari 16 looks to be another exciting release from the Safari team. This release adds many of the features that are included in [Interop 2022](/interop-2022/), it's great to see so much landing at this mid-year point. I'm highlighting a few of my favorite features here, but do check out the [release notes](https://developer.apple.com/documentation/safari-release-notes/safari-16-release-notes) for more.
 
