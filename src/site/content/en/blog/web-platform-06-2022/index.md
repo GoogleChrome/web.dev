@@ -6,8 +6,8 @@ subhead: >
 description: >
   Discover some of the interesting features that landed in stable and beta web browsers during June 2022.
 date: 2022-06-30
-hero: image/kheDArv5csY6rvQUJDbWRscckLr1/xPDclET3NIAnmeBygeTW.jpg
-alt: The word new on a red brick wall.
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/gsCJhyYRooIGDjTpOK09.jpg
+alt: A typewriter with the word news on the paper.
 authors:
   - rachelandrew
 tags:
