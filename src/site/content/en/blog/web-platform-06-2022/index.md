@@ -52,7 +52,7 @@ Firefox 102 includes the [`update`](https://developer.mozilla.org/docs/Web/CSS/@
 
 ### A new HTTP status code—103 early hints
 
-Chrome 103 adds a new status code HTTP 103 Early Hints. If the server knows that a certain set of subresources is required to load a page, it can preload those resources as the page that requires them comes in. This requires updates to your server to take advanage of the feature, [find out more](https://developer.chrome.com/blog/early-hints/). 
+Chrome 103 adds a new status code HTTP 103 Early Hints. If the server or CDN knows that a certain set of subresources is required to load a page, it can advise the browser to preconnect to origins or even preload resources as the page that requires them comes in. This requires updates to your server or CDN to take advantage of the feature, [find out more about Early Hints](https://developer.chrome.com/blog/early-hints/). 
 
 ## Beta browser releases
 
