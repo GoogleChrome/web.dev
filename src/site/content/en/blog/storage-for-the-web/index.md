@@ -109,7 +109,7 @@ prompted when more than 10MB has been used.
 2GB][ff-usage-limits]. You can use the [StorageManager API](#check-available) to
 determine how much space is still available.
 
-**Safari (both desktop and mobile):** about 1GB appears to be available. When
+**Safari (both desktop and mobile):** about 1GB appears to be the limit. When
 the limit is reached, Safari prompts the user, increasing the limit in 200MB
 increments. I was unable to find any official documentation on this.
   * If a PWA is added to the home screen on mobile Safari, it appears to
