@@ -60,7 +60,7 @@ Beta browser versions give you a preview of things that will be in the next stab
 
 New betas in April were [Chrome 104](https://blog.chromium.org/2022/06/chrome-104-beta-new-media-query-syntax.html), [Firefox 103](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/103), and [Safari 16](https://developer.apple.com/documentation/safari-release-notes/safari-16-release-notes). 
 
-Chrome 103 includes the new syntax for [range media queries](https://developer.chrome.com/blog/media-query-range-syntax/), from the Media Queries Level 4 specification. For example, a media query previously written like this:
+Chrome 104 includes the new syntax for [range media queries](https://developer.chrome.com/blog/media-query-range-syntax/), from the Media Queries Level 4 specification. For example, a media query previously written like this:
 
 ```css
 @media (min-width: 400px) { … }
