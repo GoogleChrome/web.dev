@@ -455,7 +455,7 @@ It doesn't look like much, but, when porting libraries to a new platform, gettin
 
 As mentioned [above](#build-system-and-the-first-test), the port depends on a few Emscripten features that currently need to be enabled at the linking stage of the application. If you want to use this libusb port in your own application, here's what you'll need to do:
 
-1. Download [libusb fork](https://github.com/RReverser/libusb) either as an archive as part of your build or add it as a git submodule in your project.
+1. Download the latest [libusb](https://github.com/libusb/libusb) either as an archive as part of your build or add it as a git submodule in your project.
 2. Run `autoreconf -fiv` in the `libusb` folder.
 3. Run `emconfigure ./configure –host=wasm32 –prefix=/some/installation/path` to initialize the project for cross-compilation and to set a path where you want to put the built artifacts.
 4. Run `emmake make install`.
