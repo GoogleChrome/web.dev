@@ -17,7 +17,7 @@
 
   /* dark */
   --brand-dark: hsl(
-    var(--brand-hue) 
+    var(--brand-hue)
     calc(var(--brand-saturation) / 2)
     calc(var(--brand-lightness) / 1.5)
   );
@@ -32,7 +32,7 @@
 
   /* dim */
   --brand-dim: hsl(
-    var(--brand-hue) 
+    var(--brand-hue)
     calc(var(--brand-saturation) / 1.25)
     calc(var(--brand-lightness) / 1.25)
   );
@@ -93,7 +93,7 @@
 
 [color-scheme="dark"] {
   color-scheme: dark;
-  
+
   --brand: var(--brand-dark);
   --text1: var(--text1-dark);
   --text2: var(--text2-dark);
@@ -147,9 +147,10 @@
 
 .text1 {
   color: var(--text1);
-  @nest p& {
-    font-weight: 200;
-  }
+}
+
+p.text1 {
+  font-weight: 200;
 }
 
 .text2 {

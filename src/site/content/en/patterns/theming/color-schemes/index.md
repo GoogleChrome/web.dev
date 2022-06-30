@@ -1,6 +1,6 @@
 ---
 layout: pattern
-title: Color Schemes
+title: Color Schemes with HSL
 description: |
   This pattern shows how to go beyond light and dark themes with CSS custom properties.
   <br><br>
