@@ -21,11 +21,11 @@ In June, [Chrome 103](https://developer.chrome.com/blog/new-in-chrome-103/) and 
 
 ### Transform streams and readable byte streams
 
-Firefox 102 includes support for [Transform Streams](https://developer.mozilla.org/docs/Web/API/TransformStream). This enables piping from ReadableStream to a WritableStream, executing a transformation on the chunks. It's great to see this feature become available in all three engines, making this a very good time to learn about [Streams](/streams/).
+Firefox 102 includes support for [Transform Streams](https://developer.mozilla.org/docs/Web/API/TransformStream). This enables piping from `ReadableStream` to a `WritableStream`, executing a transformation on the chunks. It's great to see this feature become available in all three engines, making this a very good time to learn about [Streams](/streams/).
 
 {% BrowserCompat 'api.TransformStream' %}
 
-[Readable byte streams](https://developer.mozilla.org/docs/Web/API/Streams_API#bytestream-related_interfaces) are also now supported in Firefox 102, enabling a BYOB (bring your own buffer) reader with the [ReadableStreamBYOBReader](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader) interface. This can be used to stream data supplied by the developer. 
+[Readable byte streams](https://developer.mozilla.org/docs/Web/API/Streams_API#bytestream-related_interfaces) are also now supported in Firefox 102, enabling a BYOB (bring your own buffer) reader with the [`ReadableStreamBYOBReader`](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader) interface. This can be used to stream data supplied by the developer. 
 
 {% BrowserCompat 'api.ReadableStreamBYOBReader' %}
 
@@ -44,7 +44,7 @@ for (const fontData of pickedFonts) {
 }
 ```
 
-### The update media feature
+### The `update` media feature
 
 Firefox 102 includes the [`update`](https://developer.mozilla.org/docs/Web/CSS/@media/update-frequency) media feature. This is used to query whether the output device can modify the appearance of content once it has been rendered.
 
