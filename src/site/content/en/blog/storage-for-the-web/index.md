@@ -50,9 +50,8 @@ have limited use and may cause significant performance issues.
 of the tab. It may be useful for storing small amounts of session specific
 information, for example an IndexedDB key. It is limited to about 5MB and can
 contain only strings. Because it is tab specific, it is not accessible from web
-workers or service workers.
-
-Use it with caution. It is synchronous and will block the main thread.
+workers or service workers. It is synchronous and will block the main thread.
+Use it with caution. 
 
 [LocalStorage][mdn-localstorage] should be avoided because it is synchronous
 and will block the main thread. It is limited to about 5MB and can contain
