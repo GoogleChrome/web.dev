@@ -9,10 +9,8 @@ authors:
   - ruisantos
   - manuelgarcia
   - patriciacoutoneto
-date: 2022-06-30
-alt: TODO
-hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Y0KflFCo0GclHd9JK8iE.png
-thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/PVMV1zKjJs4MsJRFIzJs.png
+  - msdikla
+date: 2022-07-01
 tags:
   - blog
   - web-vitals

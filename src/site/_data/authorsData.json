@@ -1599,5 +1599,21 @@
     "twitter": "twifkak",
     "github": "twifkak",
     "image": "image/rULxC7pPw3PFS4o9xr7v8isFmCv1/fDaDWpuKLKDm4mjnt0jV.jpg"
+  },
+  "ruisantos": {
+    "twitter": "ruijssantos",
+    "linkedin": "https://www.linkedin.com/in/ruijssantos/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/AVrqFlCqg3j6Rp03tPco.jpg"
+  },
+  "manuelgarcia": {
+    "homepage": "https://farfetchtechblog.com/en/blog/authors/manuel-garcia/",
+    "twitter": "corrosion_pt",
+    "github": "soulcorrosion",
+    "linkedin": "https://www.linkedin.com/in/manuel-garcia-12b6928/",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/KZ5GI42sni0kphabO7ut.jpg"
+  },
+  "patriciacoutoneto": {
+    "linkedin": "https://www.linkedin.com/in/pccneto",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/rZFsmMBh2R3d0MCV6gLE.jpg"
   }
 }
