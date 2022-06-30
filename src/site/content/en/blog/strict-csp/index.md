@@ -163,7 +163,7 @@ To adopt a strict CSP, you need to:
 1. Add fallbacks to support Safari and older browsers.
 1. Deploy your CSP.
 
-You can use [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+You can use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 (v7.3.0 and above with flag `--preset=experimental`) **Best Practices** audit throughout this process to check
 whether your site has a CSP, and whether it's strict enough to be effective
 against XSS.

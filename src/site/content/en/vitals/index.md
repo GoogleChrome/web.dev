@@ -275,7 +275,7 @@ environment:
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/">
           Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>

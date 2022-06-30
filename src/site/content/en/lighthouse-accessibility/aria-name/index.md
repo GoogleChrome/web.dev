@@ -23,7 +23,7 @@ tags:
 
 ## How Lighthouse identifies ARIA items without accessible names
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags custom ARIA items whose names
 aren't accessible to assistive technologies:
 

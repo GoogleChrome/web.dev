@@ -45,7 +45,7 @@ FCP можно измерить в [лабораторных](/user-centric-perf
 
 ### Инструменты для измерения в лабораторных условиях
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 

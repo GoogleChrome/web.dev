@@ -33,7 +33,7 @@ El rendimiento en el mundo real es muy variable debido a las diferencias en los 
 
 ### Datos de laboratorio
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) toma una URL y ejecuta una serie de auditorías en la página, generando un informe sobre qué tan bien le fue a la página. Hay varias formas de ejecutar Lighthouse, incluida una opción para auditar fácilmente una página desde Chrome DevTools.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) toma una URL y ejecuta una serie de auditorías en la página, generando un informe sobre qué tan bien le fue a la página. Hay varias formas de ejecutar Lighthouse, incluida una opción para auditar fácilmente una página desde Chrome DevTools.
 
 ### Datos de campo
 

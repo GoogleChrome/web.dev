@@ -399,7 +399,7 @@ Service Worker を使用して重要なリソースを事前にキャッシュ�
 
 LCP を測定またはデバッグするためのツールは、以下のように様々なものが用意されています。
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) では、ラボ設定での LCP の測定がサポートされています。
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) では、ラボ設定での LCP の測定がサポートされています。
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 

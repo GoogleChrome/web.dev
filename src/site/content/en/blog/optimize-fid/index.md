@@ -252,7 +252,7 @@ loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about
 
 A number of tools are available to measure and debug FID:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) does not include
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) does not include
   support for FID since it is a field metric. However, [Total Blocking
   Time](/tbt/) (TBT) can be used as a proxy. Optimizations that improve TBT should
   also improve FID in the field.

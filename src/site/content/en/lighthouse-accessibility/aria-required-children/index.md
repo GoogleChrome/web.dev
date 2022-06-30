@@ -22,7 +22,7 @@ like announcing a tab set with no tabs.
 
 ## How Lighthouse identifies missing child roles
 
-<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a>
 flags ARIA roles that don't have the required child roles:
 
 <figure>

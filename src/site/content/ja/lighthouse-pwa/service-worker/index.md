@@ -22,7 +22,7 @@ updated: 2020-06-10
 
 ## Lighthouse のサービスワーカー監査が失敗する原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) は、サービスワーカーを登録しないページをフラグします。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) は、サービスワーカーを登録しないページをフラグします。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="サイトがサービスワーカーを登録しないことを示す Lighthouse 監査", width="800", height="95" %}</figure>
 

@@ -16,7 +16,7 @@ web_lighthouse:
 
 ## Аудит целей касания в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) помечает страницы, на которых цели касания слишком малы или расположены слишком близко друг к другу.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) помечает страницы, на которых цели касания слишком малы или расположены слишком близко друг к другу.
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Dhlxe7vkj7gX3e5rX4B.png", alt="Аудит Lighthouse, показывающий цели касания неправильного размера", width="800", height="206" %}</figure>
 

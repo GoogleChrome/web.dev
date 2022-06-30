@@ -14,7 +14,7 @@ updated: 2020-06-10
 
 ## Lighthouseページの読み込み速度の監査がどうのように失敗します
 
-[Lighthouseは](https://developers.google.com/web/tools/lighthouse/)、モバイルである程度で早めに読み込まないページにフラグを立てます。
+[Lighthouseは](https://developer.chrome.com/docs/lighthouse/overview/)、モバイルである程度で早めに読み込まないページにフラグを立てます。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse監査はモバイルである程度で早めに読み込まないページを表示します", width="800", height="98" %}</figure>
 

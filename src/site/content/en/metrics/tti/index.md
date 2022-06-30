@@ -75,7 +75,7 @@ TTI](/tti/) for usage details.
 
 ### Lab tools
 
-* [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 * [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}

@@ -21,7 +21,7 @@ updated: 2019-08-28
 
 ## Lighthouseのクロスオリジン宛先監査が失敗する理由
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)は、安全でないクロスオリジン宛先へのリンクにフラグを設定します。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)は、安全でないクロスオリジン宛先へのリンクにフラグを設定します。
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="安全でないクロスオリジン宛先へリンクを示すLighthouse監査", width="800", height="213" %}</figure>
 

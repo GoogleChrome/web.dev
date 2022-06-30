@@ -18,7 +18,7 @@ Also, most mobile devices don't support plugins, which
 
 ## How the Lighthouse plugins audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages
 that use plugins:
 
 <figure>

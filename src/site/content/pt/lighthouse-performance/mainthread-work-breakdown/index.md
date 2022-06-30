@@ -14,7 +14,7 @@ O thread principal também processa eventos do usuário. Portanto, sempre que o 
 
 ## Como falha a auditoria do trabalho do thread principal do Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que mantêm o thread principal ocupado por mais de 4 segundos durante o carregamento:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que mantêm o thread principal ocupado por mais de 4 segundos durante o carregamento:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="Uma captura de tela da auditoria Lighthouse Minimize main thread work audit", width="800", height="408" %}</figure>
 

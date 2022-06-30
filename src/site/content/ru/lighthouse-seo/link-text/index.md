@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Причины плохих результатов аудита текста ссылок в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) отмечает ссылки без описательного текста:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) отмечает ссылки без описательного текста:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hiv184j4TFNCsmqTCTNY.png", alt="Аудит Lighthouse показывает, что у ссылок нет описательного текста", width="800", height="191" %}</figure>
 

@@ -20,7 +20,7 @@ Algumas funções ARIA requerem funções secundárias específicas. Por exemplo
 
 ## Como o Lighthouse identifica funções filhas ausentes
 
-O <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a> sinaliza funções ARIA que não têm as funções filho necessárias:
+O <a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a> sinaliza funções ARIA que não têm as funções filho necessárias:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/meMpRNGub2polfC7ysFf.png", alt="Auditoria Lighthouse mostrando função ARIA sem função(ões) filho(s) necessária(s)", width="800", height="205" %}</figure>
 

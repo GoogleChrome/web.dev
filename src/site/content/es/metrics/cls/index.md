@@ -175,7 +175,7 @@ CLS se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 ### Herramientas de laboratorio
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Medir CLS en JavaScript

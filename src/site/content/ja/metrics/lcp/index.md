@@ -128,7 +128,7 @@ LCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 ### ラボ測定を実施するためのツール
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### JavaScript を使用して LCP を測定する

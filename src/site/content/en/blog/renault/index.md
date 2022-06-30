@@ -85,7 +85,7 @@ Here is how they've approached it.
 
 ### A central optimization of the SPA
 
-From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) and [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
+From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
 
 +   [Server side rendering (SSR)](/rendering-on-the-web/) to ensure a fast First Contentful Paint (FCP).
 +   [Code splitting](/codelab-code-splitting/) to deliver only the JS and CSS chunks needed for the landing page (for better LCP and FID).

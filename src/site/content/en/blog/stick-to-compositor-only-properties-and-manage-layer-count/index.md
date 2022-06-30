@@ -61,6 +61,7 @@ Or, for older browsers, or those that don't support will-change:
 .moving-element {
   transform: translateZ(0);
 }
+```
 
 ## Manage layers and avoid layer explosions
 

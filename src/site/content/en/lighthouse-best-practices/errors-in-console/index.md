@@ -22,7 +22,7 @@ An `Error` message means there's a problem on your page that you need to resolve
 
 ## How the Lighthouse browser error audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags all browser errors logged to the console:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags all browser errors logged to the console:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/AjfKRZm8E4ZUi2QvQtL3.png", alt="Lighthouse audit showing browser errors in the console", width="800", height="247" %}

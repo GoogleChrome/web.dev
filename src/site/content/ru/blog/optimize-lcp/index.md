@@ -424,7 +424,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 Для измерения и отладки LCP доступен ряд инструментов:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) включает поддержку измерения LCP в лабораторных условиях.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) включает поддержку измерения LCP в лабораторных условиях.
 
 {% Img
   src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg",

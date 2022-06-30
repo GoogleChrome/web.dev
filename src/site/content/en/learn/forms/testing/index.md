@@ -91,7 +91,7 @@ search engine optimization (SEO),
 best practice, and accessibility issues.
 
 There are different ways to use
-[Lighthouse](https://developers.google.com/web/tools/lighthouse).
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/).
 One option is to run it directly in
 [DevTools](https://developers.google.com/web/tools/lighthouse#devtools).
 Open the URL with your form in Chrome,

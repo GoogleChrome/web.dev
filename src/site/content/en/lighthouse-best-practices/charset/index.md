@@ -22,7 +22,7 @@ specification solves this problem.
 
 ## How the Lighthouse `charset` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that do not specify their character encoding:
 
 <figure>

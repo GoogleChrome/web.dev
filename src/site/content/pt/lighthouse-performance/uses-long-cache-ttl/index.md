@@ -14,7 +14,7 @@ Quando um navegador solicita um recurso, o servidor que fornece o recurso pode d
 
 ## Como falha a auditoria da política de cache do Lighthouse
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todos os recursos estáticos que não são armazenados em cache:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza todos os recursos estáticos que não são armazenados em cache:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="Uma captura de tela da auditoria Lighthouse Sirva ativos estáticos com uma política de cache eficiente", width="800", height="490" %}</figure>
 

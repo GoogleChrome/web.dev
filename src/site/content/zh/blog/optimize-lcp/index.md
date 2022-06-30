@@ -342,7 +342,7 @@ Service Worker 可用于完成许多有用的任务，其中包括本文前面�
 
 许多工具都可以用于测量和调试 LCP：
 
-- [灯塔 6.0](https://developers.google.com/web/tools/lighthouse) 支持在实验室环境中测量 LCP。
+- [灯塔 6.0](https://developer.chrome.com/docs/lighthouse/overview/) 支持在实验室环境中测量 LCP。
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="灯塔 6.0", width="800", height="309" %}
 

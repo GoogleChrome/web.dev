@@ -18,7 +18,7 @@ Para obter mais informações sobre por que todos os sites devem ser protegidos 
 
 ## Como a auditoria Lighthouse HTTPS falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que não estão em HTTPS:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que não estão em HTTPS:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="A auditoria do Lighthouse mostrando que a página não está em HTTPS", width="800", height="139" %}</figure>
 

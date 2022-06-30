@@ -139,7 +139,7 @@ font.load().then(function() {
 
 ## 使用 Lighthouse 自动测试 WebFont 加载行为
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) 可以帮助自动执行相关过程，确保您遵循 Web 字体优化的最佳实践。
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 可以帮助自动执行相关过程，确保您遵循 Web 字体优化的最佳实践。
 
 以下审计可以帮助您确保您的页面随着时间的推移继续遵循 Web 字体优化最佳实践：
 

@@ -19,7 +19,7 @@ might appear in a list of top stories relevant to something the user searched
 for.
 
 {% Aside 'note' %}
-The [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+The [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 structured data audit is manual, so it does not affect your Lighthouse SEO
 score.
 {% endAside %}

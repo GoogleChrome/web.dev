@@ -24,7 +24,7 @@ O uso de links canônicos tem muitas vantagens:
 
 ## Como a auditoria de links canônicos do Lighthouse falha
 
-O [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza qualquer página com um link canônico inválido:
+O [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza qualquer página com um link canônico inválido:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Auditoria do Lighthouse mostrando documento com link canônico inválido", width="800", height="76" %}</figure>
 

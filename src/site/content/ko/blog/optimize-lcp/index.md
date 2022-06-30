@@ -429,7 +429,7 @@ if (navigator.connection && navigator.connection.effectiveType) {
 
 LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도구가 있습니다.
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse)은 실험실 설정에서 LCP를 측정할 수 있도록 지원합니다.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/)은 실험실 설정에서 LCP를 측정할 수 있도록 지원합니다.
 
   {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 

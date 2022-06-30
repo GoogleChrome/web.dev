@@ -23,7 +23,7 @@ Después, el navegador debe realizar otra solicitud HTTP en la nueva ubicación 
 
 ## Cómo fallar la auditoría de redireccionamientos múltiples de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que tienen múltiples redireccionamientos:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que tienen múltiples redireccionamientos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 

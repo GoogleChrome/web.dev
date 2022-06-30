@@ -95,7 +95,7 @@ debugging capabilities to help identify, isolate, and fix performance issues.
 {% endCompare %}
 
 {% Aside %}
-Tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and
+Tools like [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and
 [WebPageTest](https://www.webpagetest.org/) collect this type of data.
 {% endAside %}
 
@@ -141,8 +141,8 @@ data.
     <tbody>
         <tr>
             <td>
-                <a href="https://developers.google.com/web/tools/lighthouse/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/1A9MXRXmgqfxmCFGHN80.svg", alt="Lighthouse", width="150", height="150" %}</a>
-                <h3><a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a></h3>
+                <a href="https://developer.chrome.com/docs/lighthouse/overview/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/1A9MXRXmgqfxmCFGHN80.svg", alt="Lighthouse", width="150", height="150" %}</a>
+                <h3><a href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a></h3>
                 <p>Gives you personalized advice on how to improve your website across performance,
             accessibility, PWA, SEO, and other best practices.</p>
             </td>
@@ -244,7 +244,7 @@ result page.", width="366", height="366", class="float-right" %}
 **Developer trying to understand and audit a website against modern web
 performance best practices.**
 
-**[Lighthouse](https://developers.google.com/web/tools/lighthouse/)** contains a comprehensive set of
+**[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** contains a comprehensive set of
 performance opportunities; it provides you with a list of performance
 opportunities missing from your page and the time saved by implementing each
 optimization, which can help you understand what you should do.

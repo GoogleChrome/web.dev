@@ -19,7 +19,7 @@ updated: 2019-08-28
 
 ## Lighthouse 교차 출처 대상 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 교차 출처 대상에 대한 안전하지 않은 링크를 표시합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 교차 출처 대상에 대한 안전하지 않은 링크를 표시합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="교차 출처 대상에 대한 안전하지 않은 링크를 표시하는 Lighthouse 감사", width="800", height="213" %}</figure>
 

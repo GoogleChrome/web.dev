@@ -612,6 +612,7 @@ and let us know where and how you're using it.
 ## Demos {: #demos }
 
 * [Serial Terminal](https://googlechromelabs.github.io/serial-terminal/)
+* [WebSerial](https://webserial.io/)
 * [Espruino Web IDE](https://www.espruino.com/ide/)
 
 ## Acknowledgements

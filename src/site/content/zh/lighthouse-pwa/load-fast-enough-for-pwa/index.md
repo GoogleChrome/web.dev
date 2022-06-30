@@ -16,7 +16,7 @@ updated: 2020-06-10
 
 ## Lighthouse 页面加载速度审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出在移动设备上加载速度不够快的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出在移动设备上加载速度不够快的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="Lighthouse 审计显示在移动设备上加载速度不够快的页面", width="800", height="98"%}</figure>
 

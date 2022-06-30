@@ -128,7 +128,7 @@ LCP можно измерить в [лабораторных](/user-centric-perf
 ### Инструменты для измерения в лабораторных условиях
 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://webpagetest.org/)
 
 ### Измерение LCP в JavaScript

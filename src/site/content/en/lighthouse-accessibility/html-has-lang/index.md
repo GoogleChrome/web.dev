@@ -19,7 +19,7 @@ often making it impossible to understand the content.
 
 ## How the Lighthouse missing `<html>` `lang` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages whose `<html>` element doesn't have a `lang` attribute:
 
 <figure>

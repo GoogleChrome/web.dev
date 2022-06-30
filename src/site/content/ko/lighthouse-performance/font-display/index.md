@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Lighthouse 글꼴 표시 감사가 실패하는 방식
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 보이지 않는 텍스트를 플래시시킬 수 있는 모든 글꼴 URL에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 보이지 않는 텍스트를 플래시시킬 수 있는 모든 글꼴 URL에 플래그를 지정합니다.
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="웹폰트 로드 중에 텍스트가 계속 표시되도록 하기 Lighthouse 감사의 스크린샷", width="800", height="430" %}</figure>
 

@@ -1,3 +1,45 @@
+danristic:
+  title:
+    en: Dan Ristic
+  description:
+    en: Developer at PubNub
+
+gman:
+  title:
+    en: Gregg Tavares
+  description:
+    en: Software Engineer at Google
+
+dominiccooney:
+  title:
+    en: Dominic Cooney
+  description:
+    en: Software Engineer at Google
+
+zgoddard:
+  title:
+    en: Z Goddard
+  description:
+    en: Game Developer at Gradient Studios, Inc.
+
+tomwiltzius:
+  title:
+    en: Tom Wiltzius
+  description:
+    en: Chrome Product Manager at Google
+
+coltmcanlis:
+  title:
+    en: Colt McAnlis
+  description:
+    en: Developer Relations at Google
+
+marcinwichary:
+  title:
+    en: Marcin Wichary
+  description:
+    en: Sr. User Experience Designer at Google
+
 razvancaliman:
   title:
     en: Razvan Caliman
@@ -27,7 +69,7 @@ loreenalee:
     en: Loreena Lee
   description:
     en: Software Engineer at Google
-    
+
 malteubl:
   title:
     en: Malte Ubl
@@ -800,7 +842,7 @@ agektmr:
   title:
     en: Eiji Kitamura
     es: Eiji Kitamura
-    ja: Eiji Kitamura
+    ja: えーじ
     ko: Eiji Kitamura
     pt: Eiji Kitamura
     ru: Eiji Kitamura
@@ -808,7 +850,7 @@ agektmr:
   description:
     en: Developer Advocate in Tokyo
     es: Desarrollador partidario en Tokio
-    ja: 東京を拠点に活動する Developer Advocate
+    ja: 東京を拠点に活動するデベロッパー アドボケート
     ko: 도쿄의 개발자 애드버킷
     pt: Developer Advocate em Tóquio
     ru: Developer Advocate в Токио
@@ -4153,3 +4195,17 @@ jimmymooney:
     pt: Gerente de Produto Sênior, Google Fonts.
     ru: Старший менеджер по продукту, Google Fonts.
     zh: Google Fonts 高级产品经理。
+
+alexeyrodionov:
+  title:
+    en: Alexey Rodionov
+    ru: Алексей Родионов
+  description:
+    en: PWA developer. UI/UX engineer. Web platform advocate. PWA, Web Components, GraphQL evangelist. PWA Russian-speaking community organizer. Chromium contributor. Lead front-end developer at Mercury Development.
+    ru: Разработчик PWA. UI/UX-инженер. Адвокат веб-платформы. Евангелист PWA, Web Components, GraphQL. Организатор русскоязычного сообщества PWA. Контрибьютор Chromium. Ведущий фронтенд-разработчик в Mercury Development.
+
+twifkak:
+  title:
+    en: Devin Mullins
+  description:
+    en: Software engineer at Google, signed exchanges integration lead in Search

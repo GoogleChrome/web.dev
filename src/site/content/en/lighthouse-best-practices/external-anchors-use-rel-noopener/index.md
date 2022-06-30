@@ -31,7 +31,7 @@ including Edge Legacy and Internet Explorer.
 
 ## How the Lighthouse cross-origin destination audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags unsafe links to cross-origin destinations:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags unsafe links to cross-origin destinations:
 
 <figure>
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Lighthouse audit showing unsafe links to cross-origin destinations", width="800", height="213" %}

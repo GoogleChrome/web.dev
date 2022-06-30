@@ -25,7 +25,7 @@ Location: /путь/к/новому/местоположению
 
 ## Аудит множественной переадресации в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 помечает страницы с множественной переадресацией:
 
 <figure>

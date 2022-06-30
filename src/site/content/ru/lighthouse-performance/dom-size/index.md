@@ -28,7 +28,7 @@ tags:
 
 ## Причины плохих результатов аудита размера DOM в Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) сообщает об общем количестве элементов DOM для страницы, максимальной глубине DOM и максимуме дочерних элементов:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) сообщает об общем количестве элементов DOM для страницы, максимальной глубине DOM и максимуме дочерних элементов:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="Снимок экрана аудита предотвращения чрезмерного размера DOM Lighthouse", width="800", height="363" %}</figure>
 

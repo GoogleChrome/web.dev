@@ -197,7 +197,7 @@ could account for some of the change.
 
 A quick way to check would be to test both an MPA and SPA version of one of your
 landing pages with
-[Lighthouse](https://developers.google.com/web/tools/lighthouse). If the
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). If the
 Lighthouse score is lower on any of the Core Web Vitals metric for the SPA
 version, then it's likely that the load experience did get worse after the
 update.

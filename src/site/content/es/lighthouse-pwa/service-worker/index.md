@@ -22,7 +22,7 @@ Todos los navegadores principales, excepto Internet Explorer, son compatibles co
 
 ## Cómo fallar la auditoría del service worker de Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no registran un service worker:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que no registran un service worker:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/URqaGD5akD2LNczr0jjQ.png", alt="Auditoría de Lighthouse que muestra que el sitio no registra un service worker", width="800", height="95" %}</figure>
 

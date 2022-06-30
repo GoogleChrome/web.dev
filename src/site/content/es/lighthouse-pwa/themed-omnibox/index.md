@@ -18,7 +18,7 @@ En el momento de redactar este artículo, el uso de temas para la barra de direc
 
 ## Cómo falla la auditoría de color del tema Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) marca las páginas que no aplican un tema a la barra de direcciones:
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) marca las páginas que no aplican un tema a la barra de direcciones:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="La auditoría de Lighthouse que muestra que la barra de direcciones no está relacionada con los colores de la página", width="800", height="98" %}</figure>
 

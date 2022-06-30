@@ -12,7 +12,7 @@ web_lighthouse:
 
 ## Lighthouse 标题级别审计如何失败
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记标题跳过一级或多级的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记标题跳过一级或多级的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4dd4TvMxSF6tYJ0wGM64.png", alt="显示标题跳级的 Lighthouse 审计", width="800", height="206" %}</figure>
 

@@ -163,7 +163,7 @@ import('module.js').then((module) => {
 
 FID を測定またはデバッグするためのツールは、以下のように様々なものが用意されています。
 
-- FID はフィールド指標であるため、[Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) には FID のサポートは含まれていません。ただし、その代替指標として [Total Blocking Time](/tbt/) (TBT) を使用することができます。TBT を改善することができる最適化手法であれば、実際のユーザー環境での FID も改善することができるはずです。
+- FID はフィールド指標であるため、[Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) には FID のサポートは含まれていません。ただし、その代替指標として [Total Blocking Time](/tbt/) (TBT) を使用することができます。TBT を改善することができる最適化手法であれば、実際のユーザー環境での FID も改善することができるはずです。
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 

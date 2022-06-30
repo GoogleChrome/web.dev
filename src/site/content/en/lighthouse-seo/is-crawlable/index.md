@@ -17,7 +17,7 @@ Only block indexing for content that you don't want to appear in search results.
 
 ## How the Lighthouse indexing audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags pages
 that search engines can't index:
 
 <figure>

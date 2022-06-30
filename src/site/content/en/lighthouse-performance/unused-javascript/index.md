@@ -22,7 +22,7 @@ Unused JavaScript can slow down your page load speed:
 
 ## How the unused JavaScript audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags every JavaScript file with more than 20 kibibytes of unused code:
 
 <figure>

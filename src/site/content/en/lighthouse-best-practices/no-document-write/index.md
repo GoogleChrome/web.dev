@@ -30,7 +30,7 @@ data from the network to be reparsed.
 
 ## How the Lighthouse `document.write()` audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) flags
 calls to `document.write()` that weren't blocked by Chrome:
 
 <figure>

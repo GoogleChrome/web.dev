@@ -121,7 +121,7 @@ TBT](/lighthouse-total-blocking-time) for usage details.
 ### Lab tools
 
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-* [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 * [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}

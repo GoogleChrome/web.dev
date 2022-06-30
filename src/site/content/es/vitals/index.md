@@ -176,7 +176,7 @@ Las siguientes herramientas se pueden utilizar para medir los Core Web Vitals en
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse" class="_active_edit_href"> Lighthouse</a></td>
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/" class="_active_edit_href"> Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> en su lugar)</td>
         <td>✔</td>

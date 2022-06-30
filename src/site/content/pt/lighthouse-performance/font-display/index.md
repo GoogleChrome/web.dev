@@ -12,7 +12,7 @@ As fontes geralmente são arquivos grandes que demoram um pouco para carregar. A
 
 ## Como falha a auditoria de exibição de fontes do Lighthouse
 
-[O Lighthouse](https://developers.google.com/web/tools/lighthouse/) sinaliza todas as URLs de fonte que podem ocultar texto invisível:
+[O Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza todas as URLs de fonte que podem ocultar texto invisível:
 
 <figure>   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="Uma captura de tela da auditoria Lighthouse Garanta que o texto permanece visível durante a carga de fontes de web", width="800", height="430" %}</figure>
 

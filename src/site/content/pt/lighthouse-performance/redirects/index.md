@@ -23,7 +23,7 @@ O navegador deve então fazer outra solicitação HTTP no novo local para recupe
 
 ## Como a auditoria de múltiplos redirecionamentos do Lighthouse falha
 
-[O farol](https://developers.google.com/web/tools/lighthouse/) sinaliza páginas que têm vários redirecionamentos:
+[O farol](https://developer.chrome.com/docs/lighthouse/overview/) sinaliza páginas que têm vários redirecionamentos:
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276" %}</figure>
 

@@ -160,7 +160,7 @@ Para optimizar el uso de polyfill en su sitio:
 
 Hay una gran variedad de herramientas disponibles para medir y depurar FID:
 
-- [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) no incluye soporte para FID ya que es una métrica de campo. Sin embargo, el [Total Blocking Time](/tbt/) (TBT) se puede utilizar como un proxy. Las optimizaciones que mejoran el TBT también deberían mejorar la FID en el campo.
+- [Lighthouse 6.0](https://developer.chrome.com/docs/lighthouse/overview/) no incluye soporte para FID ya que es una métrica de campo. Sin embargo, el [Total Blocking Time](/tbt/) (TBT) se puede utilizar como un proxy. Las optimizaciones que mejoran el TBT también deberían mejorar la FID en el campo.
 
 {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 

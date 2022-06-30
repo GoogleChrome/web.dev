@@ -21,7 +21,7 @@ to be considered a Progressive Web App. See the
 
 ## How the Lighthouse page load speed audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 flags pages that don't load fast enough on mobile:
 
 <figure>

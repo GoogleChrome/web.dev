@@ -58,7 +58,7 @@ where to start optimizing. Fortunately, there are tools that can help you on the
 
 ## Lighthouse - a base for performance workflow
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a part of Chrome DevTools
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is a part of Chrome DevTools
 that allows you to make an audit of your website, and gives you hints on how to make it better.
 
 We recently launched a bunch of

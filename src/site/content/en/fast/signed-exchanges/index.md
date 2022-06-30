@@ -6,8 +6,9 @@ subhead: |
   origin of a resource independently of how it was delivered.
 authors:
   - katiehempenius
+  - twifkak
 date: 2020-10-14
-updated: 2021-05-12
+updated: 2022-06-09
 hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
@@ -173,7 +174,7 @@ and displayed using its canonical URL, rather than its AMP URL.AMP has its own s
 
 ## Debugging SXGs with Chrome DevTools {: #debugging }
 
-To see a SXG firsthand, use a Chromium browser, open DevTools, enable mobile emulation, open the Network panel, and visit this [example search page](https://www.google.com/search?q=site%3Asigned-exchange-testing.dev+valid). Signed Exchanges can be identified by looking for `signed-exchange` in the **Type** column.
+To see a SXG firsthand, use a Chromium browser, open DevTools, open the Network panel, and visit this [example search page](https://www.google.com/search?q=site%3Asigned-exchange-testing.dev+valid). Signed Exchanges can be identified by looking for `signed-exchange` in the **Type** column.
 
 <figure>
   {% Img src="image/admin/cNdohSaeXqGHFBwD7L3B.png", alt="Screenshot showing a SXG request within the 'Network' panel in DevTools", width="696", height="201" %}
@@ -322,7 +323,7 @@ You may see additional page speed improvement due to the prefetch surfaces and c
 
 - SXGs can be shown to users with cookies for your site.
 - SXG also prefetches subresources for your pages, such as JavaScript, CSS, fonts, and images, when specified using a `Link` header.
-- In the near future, SXG prefetching from Google Search will be available on more surfaces, including desktop form factors and all Chromium browsers.
+- In the near future, SXG prefetching from Google Search will be available on more search result types.
 
 ## Roadmap
 
@@ -331,10 +332,6 @@ We are continuing to invest in SXG with new features and capabilities. Here is a
 ### Update Cache API
 
 The Google SXG Cache will soon launch an API that site owners can use to remove SXGs from the cache. This can help ensure freshness in cases where `max-age` isn't enough.
-
-### `Vary: Cookie`
-
-The Google SXG Cache will soon support SXGs with `Vary: Cookie`. These SXGs will be served to cookieless users only. This enables prefetching for sites that use dynamic HTML to render logged-in experiences, for example.
 
 ## Conclusion
  

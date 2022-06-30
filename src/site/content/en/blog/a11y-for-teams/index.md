@@ -316,7 +316,7 @@ incorporate aXe into your development process.
 {% YouTube id="jC_7NnRdYb0" %}
 
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is Google’s
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is Google’s
 open source project for auditing the performance of your Progressive Web Apps.
 In addition to checking if your PWA has support for things like [Service
 Worker](https://developer.chrome.com/docs/workbox/service-worker-overview/)

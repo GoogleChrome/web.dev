@@ -14,7 +14,7 @@ web_lighthouse:
 
 ## Lighthouse  viewport meta 标记审计失败的原因
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) 会标记出没有  viewport meta 标记的页面：
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 会标记出没有  viewport meta 标记的页面：
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g9La56duNlpHZntDnzY9.png", alt="Lighthouse 审计显示页面缺少 viewport", width="800", height="76" %}</figure>
 

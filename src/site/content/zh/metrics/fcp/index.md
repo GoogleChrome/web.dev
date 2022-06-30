@@ -45,7 +45,7 @@ FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实验室工具
 
-- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [灯塔](https://developer.chrome.com/docs/lighthouse/overview/)
 - [Chrome 开发者工具](https://developer.chrome.com/docs/devtools/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 

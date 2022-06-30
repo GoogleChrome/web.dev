@@ -16,7 +16,7 @@ updated: 2020-06-10
 
 ## Lighthouse 페이지 로드 속도 감사가 실패하는 이유
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/)는 모바일에서 충분히 빠르게 로드되지 않는 페이지에 플래그를 지정합니다.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)는 모바일에서 충분히 빠르게 로드되지 않는 페이지에 플래그를 지정합니다.
 
 <figure>{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cg0UJ1Lykj672ygYYeXo.png", alt="페이지가 모바일에서 충분히 빠르게 로드되지 않음을 보여주는 Lighthouse 감사", width="800", height="98" %}</figure>
 

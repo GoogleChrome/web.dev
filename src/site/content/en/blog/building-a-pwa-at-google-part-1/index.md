@@ -146,7 +146,7 @@ caching any assets](/http-cache/#unversioned-urls).
 
 ### Lighthouse {: #lighthouse }
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides a number of debugging
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) provides a number of debugging
 tools useful for PWAs. It scans a site and generates reports covering PWAs, performance,
 accessibility, SEO, and other best practices.
 We recommend [running Lighthouse on continuous

@@ -177,7 +177,7 @@ getLCP(sendToAnalytics);
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse"> Lighthouse</a></td>
+        <td><a href="https://developer.chrome.com/docs/lighthouse/overview/"> Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (используйте для этого <a href="/tbt/">TBT)</a>
 </td>
