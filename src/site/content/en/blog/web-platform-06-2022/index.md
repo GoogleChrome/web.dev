@@ -60,6 +60,8 @@ Beta browser versions give you a preview of things that will be in the next stab
 
 New betas in April were [Chrome 104](https://blog.chromium.org/2022/06/chrome-104-beta-new-media-query-syntax.html), [Firefox 103](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/103), and [Safari 16](https://developer.apple.com/documentation/safari-release-notes/safari-16-release-notes). 
 
+### New syntax for range media queries
+
 Chrome 104 includes the new syntax for [range media queries](https://developer.chrome.com/blog/media-query-range-syntax/), from the Media Queries Level 4 specification. For example, a media query previously written like this:
 
 ```css
@@ -74,7 +76,11 @@ Can now be written like this:
 
 {% BrowserCompat 'css.at-rules.media.range_syntax' %}
 
+### Region Capture API
+
 Chrome 104 on desktop also includes the [Region Capture API](https://developer.chrome.com/docs/web-platform/region-capture/). This enables cropping and removing content from captured video before sharing it.
+
+### Safari 16 brings several key features to the browser
 
 Safari 16 looks to be another exciting release from the Safari team. This release adds many of the features that are included in [Interop 2022](/interop-2022/), it's great to see so much landing at this mid-year point. I'm highlighting a few of my favorite features here, but do check out the [release notes](https://developer.apple.com/documentation/safari-release-notes/safari-16-release-notes) for more.
 
