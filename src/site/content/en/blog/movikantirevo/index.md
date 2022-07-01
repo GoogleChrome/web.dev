@@ -13,19 +13,19 @@ tags:
 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/btqFngSls9zPrOREEqAU.png", alt="Movi Kanti Revo logo.", width="640", height="280" %}
 </figure>
 
-[Movi.Kanti.Revo](http://www.movikantirevo.com") is 
-a new sensory Chrome experiment crafted by Cirque du Soleil and developed by 
-Subatomic Systems that brings the wonder of Cirque du Soleil to the web through 
-modern web technologies.  
+[Movi.Kanti.Revo](http://www.movikantirevo.com) is
+a new sensory Chrome experiment crafted by Cirque du Soleil and developed by
+Subatomic Systems that brings the wonder of Cirque du Soleil to the web through
+modern web technologies.
 
 ## Building the 3D World
 
-The experiment was created using just HTML5, and the environment is built 
-entirely with markup and CSS.  Like set pieces on 
-stage, `div`s, `img`s, small `video`s and 
-other elements are positioned in a 3D space using CSS.  Using the new 
-`getUserMedia` API enabled a whole new way of interacting with the 
-experiment, instead of using the keyboard or mouse, a JavaScript facial 
+The experiment was created using just HTML5, and the environment is built
+entirely with markup and CSS.  Like set pieces on
+stage, `div`s, `img`s, small `video`s and
+other elements are positioned in a 3D space using CSS.  Using the new
+`getUserMedia` API enabled a whole new way of interacting with the
+experiment, instead of using the keyboard or mouse, a JavaScript facial
 detection library tracks your head and moves the environment along with you.
 
 ## All the Web's a Stage
@@ -34,24 +34,24 @@ To build this experiment, it’s best to imagine the browser as a stage, and the
 elements like `<div>`s, images, videos and other elements as
 set pieces positioned in 3D space using CSS.  Each element, or set piece is
 positioned on the stage by applying a 3D transform.  If you’re unfamiliar with
-the `translate3d` transform, it takes 3 parameters, X, Y and Z.  X 
-moves the element along a horizontal line, Y moves the element up and down, 
-and Z moves the element closer or further away.  For example, applying a 
-`transform: translate3d(100px, -200px, 300px)` will move the element 
-100 pixels to the right, 200 pixels down and 300 pixels closer towards the 
-viewer. 
+the `translate3d` transform, it takes 3 parameters, X, Y and Z.  X
+moves the element along a horizontal line, Y moves the element up and down,
+and Z moves the element closer or further away.  For example, applying a
+`transform: translate3d(100px, -200px, 300px)` will move the element
+100 pixels to the right, 200 pixels down and 300 pixels closer towards the
+viewer.
 
 ### Building the Auditorium
 
-Let’s take a look at the [last 
-scene](http://www.movikantirevo.com/#sea,) and to see how it’s put together.  All scenes are broken down into 
-three primary containers, the world container, a perspective container and 
-the stage.  The world container effectively setups up the viewers camera, and 
-uses the CSS `perspective` property to tell the browser where the 
-viewer will be looking at the element from.  The 
-`#perspective-container` is used to change our perspective by 
-applying 3D transforms to it.  Finally, the stage contains the actual set 
-pieces that will be visible on screen. 
+Let’s take a look at the [last
+scene](http://www.movikantirevo.com/#sea,) and to see how it’s put together.  All scenes are broken down into
+three primary containers, the world container, a perspective container and
+the stage.  The world container effectively setups up the viewers camera, and
+uses the CSS `perspective` property to tell the browser where the
+viewer will be looking at the element from.  The
+`#perspective-container` is used to change our perspective by
+applying 3D transforms to it.  Finally, the stage contains the actual set
+pieces that will be visible on screen.
 
 
 ```html
@@ -79,13 +79,13 @@ overflow: hidden;
 
 ### Visualizing the Stage
 
-Within the stage, there are seven elements in the final scene.  Moving from 
-back to front, they include the sky background, a fog layer, the doors, the 
-water, reflections, an additional fog layer, and finally the cliffs in front.   
-Each item is placed on stage with a 
-`transform: translate3d(x, y, z)` CSS property that indicates where 
-it fits in 3D space. We used the z value in a similar way that we’d use 
-`z-index`, but with the `translate3d` property, we can 
+Within the stage, there are seven elements in the final scene.  Moving from
+back to front, they include the sky background, a fog layer, the doors, the
+water, reflections, an additional fog layer, and finally the cliffs in front.
+Each item is placed on stage with a
+`transform: translate3d(x, y, z)` CSS property that indicates where
+it fits in 3D space. We used the z value in a similar way that we’d use
+`z-index`, but with the `translate3d` property, we can
 also provide a unit with the value.
 
 <figure>
@@ -102,7 +102,7 @@ doors, water and finally the cliffs.
 
 ### Placing the Background on Stage
 
-Let’s start with the background image.  Since it’s the furthest back, we 
+Let’s start with the background image.  Since it’s the furthest back, we
 applied a -990px transform on the Z-axis to push it back in our perspective
 (see Figure 2).
 
@@ -113,9 +113,9 @@ applied a -990px transform on the Z-axis to push it back in our perspective
 </figcaption>
 </figure>
 
-As it moves back in space, physics demands that it gets smaller, so it needs 
-to be resized via a `scale(3.3)` property to fit the viewport and 
-aligned the top edge with the top of the viewport with a 
+As it moves back in space, physics demands that it gets smaller, so it needs
+to be resized via a `scale(3.3)` property to fit the viewport and
+aligned the top edge with the top of the viewport with a
 `translate3d` on the y-axis (see Figure 3).
 
 ```css
@@ -135,9 +135,9 @@ background-image: url(stars.png);
 </figcaption>
 </figure>
 
-The fog, doors, and the cliffs in the same way, each by applying a 
-`translate3d` with an appropriate z position and scale factor 
-(see Figure 4).  Notice how the fog is stacked behind the doors, and behind 
+The fog, doors, and the cliffs in the same way, each by applying a
+`translate3d` with an appropriate z position and scale factor
+(see Figure 4).  Notice how the fog is stacked behind the doors, and behind
 the cliffs.
 
 <figure>
@@ -149,12 +149,12 @@ the cliffs.
 
 ### Adding the Sea
 
-To create as realistic an environment as possible, we knew we couldn’t simply 
-put the water on a vertical plane, it’s typically doesn’t exist that way in 
-the real world.  In addition to applying the `translate3d` to 
-position the water on stage, we also apply an x-axis (horizontal) rotation of 
-60 degrees (`rotateX(60deg)`) to make it appear flat and textured.  
-A similar rotation was added to the door reflection and secondary fog to make 
+To create as realistic an environment as possible, we knew we couldn’t simply
+put the water on a vertical plane, it’s typically doesn’t exist that way in
+the real world.  In addition to applying the `translate3d` to
+position the water on stage, we also apply an x-axis (horizontal) rotation of
+60 degrees (`rotateX(60deg)`) to make it appear flat and textured.
+A similar rotation was added to the door reflection and secondary fog to make
 it appear in the correct plane (see Figure 5).
 
 ```css
@@ -174,7 +174,7 @@ height: 283px;
 </figcaption>>
 </figure>
 
-Each scene was built in a similar fashion, elements were visualized within the 
+Each scene was built in a similar fashion, elements were visualized within the
 3D space of a stage, and an appropriate transform was applied to each.
 
 ## Further Reading

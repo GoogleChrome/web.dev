@@ -90,7 +90,7 @@ best for it.
 the guide [here](/serve-responsive-images).)
 
 An image that works across all devices will be unnecessarily large for
-smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset")
+smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset)
 and [sizes](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes), allow you to specify multiple image versions and for the device to choose
 the size that works best for it.
 
