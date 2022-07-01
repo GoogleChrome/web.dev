@@ -87,7 +87,7 @@ Chrome usage data shows that 1 in 10 navigations on desktop and 1 in 5 on mobile
 are either back or forward. With bfcache enabled, browsers could eliminate the
 data transfer and time spent loading for billions of web pages every single day!
 
-### How the "cache" works {: #how-the-cache-works }
+### How the "cache" works
 
 The "cache" used by bfcache is different from the [HTTP cache](/http-cache/)
 (which is also useful in speeding up repeat navigations). The bfcache is a
