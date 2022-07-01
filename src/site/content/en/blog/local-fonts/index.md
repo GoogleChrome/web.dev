@@ -289,6 +289,12 @@ The Chrome team has designed and implemented the Local Font Access API using the
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 
+### User control
+
+Access to a user's fonts is fully under their control and will not be allowed unless the
+`"local-fonts"` permission, as listed in the
+[permission registry](https://w3c.github.io/permissions/#permission-registry), is granted.
+
 ### Transparency
 
 Whether a site has been granted access to the user's local fonts will be visible in the
