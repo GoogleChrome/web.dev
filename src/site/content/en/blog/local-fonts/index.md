@@ -193,8 +193,8 @@ example, `"ComicSansMS"`), and `style` (for example, `"Regular"`).
 ```js
 // Query for all available fonts and log metadata.
 try {
-  const pickedFonts = await window.queryLocalFonts();
-  for (const fontData of pickedFonts) {
+  const availableFonts = await window.queryLocalFonts();
+  for (const fontData of availableFonts) {
     console.log(fontData.postscriptName);
     console.log(fontData.fullName);
     console.log(fontData.family);
@@ -209,7 +209,7 @@ If you are only interested in a subset of fonts, you can also filter them based 
 names by adding a `postscriptNames` parameter.
 
 ```js
-const pickedFonts = await window.queryLocalFonts({
+const availableFonts = await window.queryLocalFonts({
   postscriptNames: ['Verdana', 'Verdana-Bold', 'Verdana-Italic'],
 });
 ```
@@ -222,21 +222,18 @@ TrueType, OpenType, Web Open Font Format (WOFF) fonts and others.
 
 ```js
 try {
-  const pickedFonts = await window.queryLocalFonts({
+  const availableFonts = await window.queryLocalFonts({
     postscriptNames: ['ComicSansMS'],
   });
-  for (const fontData of pickedFonts) {
+  for (const fontData of availableFonts) {
     // `blob()` returns a Blob containing valid and complete
     // SFNT-wrapped font data.
     const sfnt = await fontData.blob();
-
-    const sfntVersion = new TextDecoder().decode(
-      // Slice out only the bytes we need: the first 4 bytes are the SFNT
-      // version info.
-      // Spec: https://docs.microsoft.com/en-us/typography/opentype/spec/otff#organization-of-an-opentype-font
-      await sfnt.slice(0, 4).arrayBuffer(),
-    );
-
+    // Slice out only the bytes we need: the first 4 bytes are the SFNT
+    // version info.
+    // Spec: https://docs.microsoft.com/en-us/typography/opentype/spec/otff#organization-of-an-opentype-font
+    const sfntVersion = await sfnt.slice(0, 4).text();
+    
     let outlineFormat = 'UNKNOWN';
     switch (sfntVersion) {
       case '\x00\x01\x00\x00':
