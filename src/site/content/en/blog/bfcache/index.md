@@ -500,34 +500,24 @@ window.addEventListener('pageshow', (event) => {
 
 ### Measuring your bfcache hit ratio
 
-As well as pageview measurements for bfcache page navigations, you may also
-wish to track whether the bfcache was used, to help identify pages that are not
-utilizing the bfcache. For example:
+You may also wish to track whether the bfcache was used, to help identify pages
+that are not utilizing the bfcache. For example, with an event:
 
 ```js
-// Send a pageview when the page is first loaded.
-gtag('event', 'page_view');
-
 window.addEventListener('pageshow', (event) => {
-
-  // Send another pageview if the page is restored from bfcache.
-  if (event.persisted) {
-    gtag('event', 'page_view');
-  }
-
-  // For bfcache restores (note navigation type may be the original)
-  // or other Back/Forward navigations, track whether bfcache was used:
-  if (event.persisted || performance.getEntriesByType('navigation')[0].type == "back_forward") {
-    gtag('event', 'bfcache', {
-      'event_category': 'page_load_details',
-      'value': event.persisted
+  // You can measure bfcache hit rate by tracking all bfcache restores and
+  // other back/forward navigations via a seperate event.
+  const navigationType = performance.getEntriesByType('navigation')[0].type;
+  if (event.persisted || navigationType == 'back_forward' ) {
+    gtag('event', 'back_forward_navigation', {
+      'isBFCache': event.persisted,
     });
   }
 });
 ```
 
 It is important to realize that there are a number of scenarios, outside
-of the site owners control, when a `back_forward` navigation will not use
+of the site owners control, when a Back/Forward navigation will not use
 the bfcache, including:
 - when the user quits the browser and starts it again
 - when the user duplicates a tab
