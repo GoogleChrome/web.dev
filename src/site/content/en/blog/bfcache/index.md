@@ -519,7 +519,6 @@ window.addEventListener('pageshow', (event) => {
   if (performance.getEntriesByType('navigation')[0].type == "back_forward") {
     gtag('event', 'bfcache', {
       'event_category': 'page_load_details',
-      'event_label': window.location.pathname,
       'value': event.persisted
     });
   }
