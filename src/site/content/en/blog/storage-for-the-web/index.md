@@ -148,15 +148,15 @@ if (navigator.storage && navigator.storage.estimate) {
 }
 ```
 
-To use StorageManager, you must still catch over-quota errors (see below). In
-some cases, it's possible for the available quota to exceed the actual amount of
-storage available.
-
 The `StorageManager.estimate()` [isn't implemented in
 Safari](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate#browser_compatibility)
 yet, so you must feature detect it before using it. Even when it is available,
 you must still catch over-quota errors (see below). In some cases, it's possible
 for the available quota to exceed the actual amount of storage available.
+
+To use StorageManager, you must still catch over-quota errors (see below). In
+some cases, it's possible for the available quota to exceed the actual amount of
+storage available.
 
 {% Aside %}
 Other Chromium-based browsers may factor in the amount of free space when
