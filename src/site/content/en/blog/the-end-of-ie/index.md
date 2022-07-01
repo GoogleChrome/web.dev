@@ -14,7 +14,7 @@ tags:
   - blog
 ---
 
-I'm Steve Workman and I'm the Lead Engineer for Maersk.com. Maersk is the global leader in integrated supply chain logistics, helping customers to move goods around the world for 118 years, with bookings online for over twenty years. At the start of May 2022, [@Maersk](https://twitter.com/Maersk) officially stopped supporting Internet Explorer (IE) on its customer-facing systems, off the back of Microsoft formally ending support for IE in June, 2022. This is the end of one important era of the web, and the start of a new one.
+I'm Steve Workman and I'm the Lead Engineer for [Maersk.com](https://maersk.com). Maersk is the global leader in integrated supply chain logistics, helping customers to move goods around the world for 118 years, with bookings online for over twenty years. At the start of May 2022, [@Maersk](https://twitter.com/Maersk) officially stopped supporting Internet Explorer (IE) on its customer-facing systems, off the back of Microsoft formally ending support for IE in June, 2022. This is the end of one important era of the web, and the start of a new one.
 
 I joined Maersk in 2018, and my first project was to build a new global navigation bar. It had to be fully testable, easy to deploy and update globally without downtime, be mobile-first, responsive, support multiple brands, be configurable, localised into 11 languages… and support IE9.
 
@@ -22,7 +22,7 @@ In 2018, Windows 7, and its default browser IE9, were still very popular, with W
 
 If the navigation menu doesn't work, it's hard to find the login button. If login doesn't work, they can't book containers, and suddenly you have a big problem, caused by legacy browsers.
 
-To solve this we took a progressive enhancement stance with the navigation component and all future web apps. We'd make it "work" but there may be significant polyfills and restrictions to do that - for example, IE doesn't support the [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) API, but there are polyfills that go back to IE10 that we include for those browsers. For IE9, we coded XMLHttpRequest calls in a separate file, to be loaded only in cases where `fetch` couldn't be polyfilled.
+To solve this we took a progressive enhancement stance with the navigation component and all future web apps. We'd make it "work" but there may be significant polyfills and restrictions to do that—for example, IE doesn't support the [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) API, but there are polyfills that go back to IE10 that we include for those browsers. For IE9, we coded XMLHttpRequest calls in a separate file, to be loaded only in cases where `fetch` couldn't be polyfilled.
 
 When it came time to drop IE9 support, when only a handful of customers remained, we were able to simply drop this code from our applications, with minimal effort and maximum benefit to our users on modern browsers.
 
