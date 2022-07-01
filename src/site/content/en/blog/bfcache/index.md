@@ -6,6 +6,7 @@ description: |
   Learn how to optimize your pages for instant loads when using the browser's back and forward buttons.
 authors:
   - philipwalton
+  - tunetheweb
 date: 2020-11-10
 updated: 2022-07-01
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
