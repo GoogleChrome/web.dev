@@ -500,9 +500,9 @@ window.addEventListener('pageshow', (event) => {
 
 ### Measuring your bfcache hit ratio
 
-As well as measuring pageview measurements for bfcache page navigations, you
-may wish to also track whether the bfcache was used to help identify pages
-that are not utilising the bfcache. For example:
+As well as pageview measurements for bfcache page navigations, you may also
+wish to track whether the bfcache was used, to help identify pages that are not
+utilizing the bfcache. For example:
 
 ```js
 // Send a pageview when the page is first loaded.
@@ -526,7 +526,7 @@ window.addEventListener('pageshow', (event) => {
 });
 ```
 
-It is important to realise that there are a number of scenarios, outside
+It is important to reali`e that there are a number of scenarios, outside
 of the site owners control, when a `back_forward` navigation will not use
 the bfcache, including:
 - when the user quits the browser and starts it again
