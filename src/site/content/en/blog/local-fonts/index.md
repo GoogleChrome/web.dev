@@ -185,8 +185,7 @@ but not on mobile operating systems like Android or iOS. {% endAside %}
 
 To obtain a list of the locally installed fonts, you need to call `window.queryLocalFonts()`. The
 first time, this will trigger a permission prompt, which the user can approve or deny. If the user
-approves their local fonts to be queried, the browser will display the list in a picker for the user
-to select all or a subset of all local fonts to be shared with the page. This results in an array
+approves their local fonts to be queried, the browser will return an array with fonts data
 that you can loop over. Each font is represented as a `FontData` object with the properties `family`
 (for example, `"Comic Sans MS"`), `fullName` (for example, `"Comic Sans MS"`), `postscriptName` (for
 example, `"ComicSansMS"`), and `style` (for example, `"Regular"`).
@@ -224,7 +223,7 @@ TrueType, OpenType, Web Open Font Format (WOFF) fonts and others.
 ```js
 try {
   const pickedFonts = await window.queryLocalFonts({
-    postscriptNames: ['Comic Sans MS'],
+    postscriptNames: ['ComicSansMS'],
   });
   for (const fontData of pickedFonts) {
     // `blob()` returns a Blob containing valid and complete
