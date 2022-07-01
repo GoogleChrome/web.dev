@@ -515,7 +515,7 @@ window.addEventListener('pageshow', (event) => {
     gtag('event', 'page_view');
   }
 
-  // For Back/Forward navigations, send track bfcache usage.
+  // For Back/Forward navigations, send another event to track bfcache usage.
   if (performance.getEntriesByType('navigation')[0].type == "back_forward") {
     gtag('event', 'bfcache', {
       'event_category': 'page_load_details',
@@ -526,7 +526,7 @@ window.addEventListener('pageshow', (event) => {
 });
 ```
 
-It is important to reali`e that there are a number of scenarios, outside
+It is important to realize that there are a number of scenarios, outside
 of the site owners control, when a `back_forward` navigation will not use
 the bfcache, including:
 - when the user quits the browser and starts it again
