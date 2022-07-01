@@ -533,10 +533,10 @@ the bfcache, including:
 - when the user duplicates a tab
 - when the user closes a tab and uncloses it
 
-So, website owners are not aiming for 100% bfcache hit ratio on all
-`back_forward` navigations, but measuring their ratio can be useful to identify
-pages where the page itself is preventing bfcache usage for a high proportion
-of navigations.
+So, website owners should not be expecting a 100% bfcache hit ratio for all
+`back_forward` navigations. However, measuring their ratio can be useful to
+identify pages where the page itself is preventing bfcache usage for a high
+proportion of back and forward navigations.
 
 The Chrome team is working on a
 (`NotRestoredReason API`)[https://github.com/rubberyuzu/bfcache-not-retored-reason/blob/main/NotRestoredReason.md]
