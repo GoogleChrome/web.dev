@@ -51,6 +51,6 @@ And you know what's happened since we dropped IE support? Very, very little. The
 
 From a customer perspective, usage of IE continues to decline slowly. IE has not been shut off from the site, but as progressive enhancement turns into graceful degradation, features and applications will stop working. Customers will gain from the advances in our technology—getting a more consistent experience from the site as best practices, accessibility and design are baked into an evolving [Lit](https://lit.dev/)-based design system, with full interoperability to any framework that is around now, or in the future.
 
-I'm excited to see how the new web platform features can be used within the company—from making use of dark mode so that vessel systems are easier to use at night, to Web Bluetooth, WebXR and PWAs so that our web apps can interact with the physical world around us in any conditions. Thank you, Internet Explorer, for many things; we're now free to catch up with the web platform.
+I'm excited to see how the new web platform features can be used within the company—from making use of dark mode so that vessel systems are easier to use at night, to [Web Bluetooth](/bluetooth/), [WebXR](/tags/webxr/) and [PWAs](/progressive-web-apps/) so that our web apps can interact with the physical world around us in any conditions. Thank you, Internet Explorer, for many things; we're now free to catch up with the web platform.
 
 _Hero image by [Matt Botsford](https://unsplash.com/@mattbotsford)._
