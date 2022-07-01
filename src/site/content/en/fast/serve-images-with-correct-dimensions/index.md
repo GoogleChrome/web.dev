@@ -66,7 +66,10 @@ displayed at.
 
 ### The "Better" approach
 
-For images with both absolute and relative sizing, use [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/serve-responsive-images).)
+For images with both absolute and relative sizing, use [`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset)
+and [`sizes`](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes)
+attributes to serve different images to different display densities.
+Read the [guide on responsive images](/serve-responsive-images).
 
 "Display density" refers to the fact that different displays have different
 densities of pixels. All other things being equal, a high pixel density
