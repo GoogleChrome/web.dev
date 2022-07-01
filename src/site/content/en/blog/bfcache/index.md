@@ -501,7 +501,7 @@ window.addEventListener('pageshow', (event) => {
 ### Measuring your bfcache hit ratio
 
 As well as measuring pageview measurements for bfcache page navigations, you
-may wish to also track whether the bfcached was used to help identify pages
+may wish to also track whether the bfcache was used to help identify pages
 that are not utilising the bfcache. For example:
 
 ```js
@@ -520,7 +520,8 @@ window.addEventListener('pageshow', (event) => {
     gtag('event', 'bfcache', {
       'event_category': 'page_load_details',
       'event_label': window.location.pathname,
-      'value': event.persisted });
+      'value': event.persisted
+    });
   }
 });
 ```
