@@ -515,8 +515,9 @@ window.addEventListener('pageshow', (event) => {
     gtag('event', 'page_view');
   }
 
-  // For Back/Forward navigations, send another event to track bfcache usage.
-  if (performance.getEntriesByType('navigation')[0].type == "back_forward") {
+  // For bfcache restores (note navigation type may be the original)
+  // or other Back/Forward navigations, track whether bfcache was used:
+  if (event.persisted || performance.getEntriesByType('navigation')[0].type == "back_forward") {
     gtag('event', 'bfcache', {
       'event_category': 'page_load_details',
       'value': event.persisted
