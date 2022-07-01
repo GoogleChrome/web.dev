@@ -17,8 +17,8 @@ which means [`TransformStream`](https://developer.mozilla.org/docs/Web/API/Trans
 finally usable across browsers. Transform streams allow you to pipe from a
 [`ReadableStream`](https://developer.mozilla.org/docs/Web/API/ReadableStream) to a
 [`WritableStream`](https://developer.mozilla.org/docs/Web/API/WritableStream), executing a
-transformation on the chunks, or you can also just directly consume the transformed result directly,
-as I show in the example below.
+transformation on the chunks, or consume the transformed result directly,
+as shown in the following example.
 
 ```js
 class UpperCaseTransformStream {
