@@ -16,109 +16,109 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const fs = require('fs');
+const { html } = require("common-tags");
+const fs = require("fs");
 // We need html: true since folks embed HTML inside of {% Aside %}.
 // See https://markdown-it.github.io/markdown-it/#MarkdownIt.new
-const md = require('markdown-it')({html: true});
-const path = require('path');
+const md = require("markdown-it")({ html: true });
+const path = require("path");
 
-const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
+const { i18n, getLocaleFromPath } = require("../../_filters/i18n");
 
 /**
  * @this {EleventyPage}
  */
-function Aside(content, type = 'note') {
+function Aside(content, type = "note") {
   const locale = getLocaleFromPath(this.page && this.page.filePathStem);
 
   // CSS utility classes that vary per aside type
   const utilities = {
-    main: '',
-    title: '',
-    icon: '',
-    body: '',
+    main: "",
+    title: "",
+    icon: "",
+    body: "",
   };
 
   // These two get populated based on type
-  let title = '';
-  let icon = '';
+  let title = "";
+  let icon = "";
 
   // If an icon is required, it grabs the SVG source with fs
   // because in a shortcode, we have no access to includes etc
   const getIcon = () => {
     if (!icon.length) {
-      return '';
+      return "";
     }
 
     return fs.readFileSync(
-      path.join(__basedir, 'src', 'site', '_includes', 'icons', icon),
-      'utf8',
+      path.join(__basedir, "src", "site", "_includes", "icons", icon),
+      "utf8"
     );
   };
 
   // Generate all the configurations per aside type
   switch (type) {
-    case 'note':
+    case "note":
     default:
-      utilities.title = 'color-state-info-text';
-      utilities.main = 'bg-state-info-bg color-state-info-text';
+      utilities.title = "color-state-info-text";
+      utilities.main = "bg-state-info-bg color-state-info-text";
       break;
 
-    case 'caution':
-      utilities.title = 'color-state-bad-text';
-      utilities.main = 'bg-state-bad-bg color-state-bad-text';
-      icon = 'error.svg';
+    case "caution":
+      utilities.title = "color-state-bad-text";
+      utilities.main = "bg-state-bad-bg color-state-bad-text";
+      icon = "error.svg";
       title = i18n(`i18n.common.${type}`, locale);
       break;
 
-    case 'warning':
-      utilities.icon = 'color-state-warn-text';
-      utilities.main = 'bg-state-warn-bg color-state-warn-text';
-      icon = 'warning.svg';
+    case "warning":
+      utilities.icon = "color-state-warn-text";
+      utilities.main = "bg-state-warn-bg color-state-warn-text";
+      icon = "warning.svg";
       title = i18n(`i18n.common.${type}`, locale);
       break;
 
-    case 'success':
-      utilities.main = 'bg-state-good-bg color-state-good-text';
-      icon = 'done.svg';
+    case "success":
+      utilities.main = "bg-state-good-bg color-state-good-text";
+      icon = "done.svg";
       title = i18n(`i18n.common.${type}`, locale);
       break;
 
-    case 'objective':
-      utilities.main = 'bg-state-good-bg color-state-good-text';
-      icon = 'done.svg';
+    case "objective":
+      utilities.main = "bg-state-good-bg color-state-good-text";
+      icon = "done.svg";
       title = i18n(`i18n.common.${type}`, locale);
       break;
 
-    case 'gotchas':
-      icon = 'lightbulb.svg';
+    case "gotchas":
+      icon = "lightbulb.svg";
       title = i18n(`i18n.common.gotchas`, locale);
-      utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
+      utilities.main = "bg-tertiary-box-bg color-tertiary-box-text";
       break;
 
-    case 'important':
-      icon = 'lightbulb.svg';
+    case "important":
+      icon = "lightbulb.svg";
       title = i18n(`i18n.common.important`, locale);
-      utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
+      utilities.main = "bg-tertiary-box-bg color-tertiary-box-text";
       break;
 
-    case 'key-term':
-      icon = 'highlighter.svg';
+    case "key-term":
+      icon = "highlighter.svg";
       title = i18n(`i18n.common.key_term`, locale);
-      utilities.main = 'color-secondary-box-text bg-secondary-box-bg';
+      utilities.main = "color-secondary-box-text bg-secondary-box-bg";
       break;
 
-    case 'codelab':
-      icon = 'code.svg';
+    case "codelab":
+      icon = "code.svg";
       title = i18n(`i18n.common.try_it`, locale);
-      utilities.main = 'bg-quaternary-box-bg color-quaternary-box-text';
+      utilities.main = "bg-quaternary-box-bg color-quaternary-box-text";
       break;
-      
-    case 'celebration':
-      utilities.main = 'bg-state-good-bg color-state-good-text';
-      icon = 'celebration.svg';
+
+    case "celebration":
+      utilities.main = "bg-state-good-bg color-state-good-text";
+      icon = "celebration.svg";
       title = i18n(`i18n.common.${type}`, locale);
-      break;      
+      break;
   }
 
   // Make sure that we don't insert multiple newlines when this component is
@@ -131,7 +131,7 @@ function Aside(content, type = 'note') {
         utilities.icon
       }">${getIcon()}</span>` +
       `<strong>${title}</strong></p>`
-    : '';
+    : "";
   const asideHTML =
     `<aside class="aside flow ${utilities.main}">` +
     titleHTML +
