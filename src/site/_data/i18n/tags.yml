@@ -298,24 +298,6 @@ cors:
     ru: Последние новости и статьи о CORS.
     zh: 我们关于 CORS 的最新资讯、动态和故事。
 
-cross-browser:
-  title:
-    en: Cross-browser
-    es: Multi-navegador
-    ja: クロスブラウザ
-    ko: 브라우저 간
-    pt: Vários navegadores
-    ru: кроссбраузерный
-    zh: 跨浏览器
-  description:
-    en: Our latest news, updates, and stories about features that are supported cross-browser.
-    es: Nuestras últimas noticias, actualizaciones e historias sobre funciones compatibles con todos los navegadores.
-    ja: クロスブラウザでサポートされている機能に関する最新のニュース、アップデート、ストーリー。
-    ko: 브라우저 간 지원되는 기능에 대한 최신 뉴스, 업데이트 및 스토리.
-    pt: Nossas notícias, atualizações e histórias mais recentes sobre recursos compatíveis com vários navegadores.
-    ru: Наши последние новости, обновления и истории о функциях, поддерживаемых в разных браузерах.
-    zh: 我们关于跨浏览器支持的功能的最新新闻、更新和故事。
-
 css:
   title:
     en: CSS
@@ -885,6 +867,24 @@ new-to-the-web:
     en: New to the web platform
   description:
     en: A series of posts to keep you updated with what's landing in web browsers each month.
+
+newly-interopaerable:
+  title:
+    en: Newly interoperable
+    es: Interoperable recientemente
+    ja: 新しく相互運用可能
+    ko: 새롭게 상호 운용 가능
+    pt: Recentemente interoperável
+    ru: Новый интероперабельный
+    zh: 新的互操作性
+  description:
+    en: Our latest news, updates, and stories about features that are supported cross-browser.
+    es: Nuestras últimas noticias, actualizaciones e historias sobre funciones compatibles con todos los navegadores.
+    ja: クロスブラウザでサポートされている機能に関する最新のニュース、アップデート、ストーリー。
+    ko: 브라우저 간 지원되는 기능에 대한 최신 뉴스, 업데이트 및 스토리.
+    pt: Nossas notícias, atualizações e histórias mais recentes sobre recursos compatíveis com vários navegadores.
+    ru: Наши последние новости, обновления и истории о функциях, поддерживаемых в разных браузерах.
+    zh: 我们关于跨浏览器支持的功能的最新新闻、更新和故事。
 
 node:
   title:
