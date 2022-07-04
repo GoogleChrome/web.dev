@@ -138,7 +138,7 @@
         "title": "Celebration",
         "icon": "celebration.svg",
         "utilities": {
-          "main": "bg-quaternary-box-bg color-quaternary-box-text"
+          "main": "bg-state-good-bg color-state-good-text"
         }
       }
     }
