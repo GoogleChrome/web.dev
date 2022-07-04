@@ -127,8 +127,9 @@
         "utilities": {
           "main": "bg-quaternary-box-bg color-quaternary-box-text"
         }
-      },
-      {
+      }
+    },
+    {
       "name": "celebration",
       "title": "Celebration",
       "context": {
