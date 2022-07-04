@@ -868,7 +868,7 @@ new-to-the-web:
   description:
     en: A series of posts to keep you updated with what's landing in web browsers each month.
 
-newly-interopaerable:
+newly-interoperable:
   title:
     en: Newly interoperable
     es: Interoperable recientemente
@@ -878,7 +878,7 @@ newly-interopaerable:
     ru: Новый интероперабельный
     zh: 新的互操作性
   description:
-    en: Our latest news, updates, and stories about features that are supported cross-browser.
+    en: Features that have recently become supported in all three engines.
     es: Nuestras últimas noticias, actualizaciones e historias sobre funciones compatibles con todos los navegadores.
     ja: クロスブラウザでサポートされている機能に関する最新のニュース、アップデート、ストーリー。
     ko: 브라우저 간 지원되는 기능에 대한 최신 뉴스, 업데이트 및 스토리.
