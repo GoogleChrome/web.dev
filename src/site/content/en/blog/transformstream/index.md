@@ -9,7 +9,12 @@ alt: Transformer toy figurine.
 author: thomassteiner
 tags:
   - blog
+  - newly-interoperable
 ---
+
+{% Aside 'celebration' %}
+Woohoo, this web feature is now usable on all browsers.
+{% endAside %}
 
 The [Streams API](/streams/) allows you to break down a resource that you want to receive, send, or transform into small chunks, and then process these chunks bit by bit. Recently, Firefox 102
 [started to support `TransformStream`](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/102#apis),
