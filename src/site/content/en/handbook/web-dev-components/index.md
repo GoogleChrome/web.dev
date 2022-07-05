@@ -105,6 +105,18 @@ Use the success aside to describe a successful action or an error-free status.
 Use the success aside to describe a successful action or an error-free status.
 {% endAside %}
 
+### Celebration asides
+
+```text
+{% raw %}&#123;% Aside 'celebration' %&#125;
+Use the celebration aside to celebrate events like a cross-browser launch.
+&#123;% endAside %&#125;{% endraw %}
+```
+
+{% Aside 'celebration' %}
+Use the celebration aside to celebrate events like a cross-browser launch.
+{% endAside %}
+
 ### Objective asides
 
 ```text
