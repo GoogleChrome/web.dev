@@ -26,7 +26,7 @@ Since the launch of Websites + Marketing, performance has been an important part
 
 ## Tracking performance with Lighthouse
 
-We have relied on Lighthouse data for performance tracking. Every time a website is published on the platform, we measure its performance using our internal tool named "Lighthouse4u", which provides [Google Lighthouse](https://github.com/GoogleChrome/lighthouse) as a service (https://github.com/godaddy/lighthouse4u). This gave us a good indication of how sites were generally performing in a [lab setting](https://web.dev/lab-and-field-data-differences/#lab-data).
+We have relied on Lighthouse data for performance tracking. Every time a website is published on the platform, we measure its performance using our internal tool named "Lighthouse4u", which provides [Google Lighthouse](https://github.com/GoogleChrome/lighthouse) as a service (https://github.com/godaddy/lighthouse4u). This gave us a good indication of how sites were generally performing in a [lab setting](/lab-and-field-data-differences/#lab-data).
 
 Because the millions of sites we host on our platform have a wide range of features and content, it was important to combine performance data with metadata about each site being tested (template used, type of widgets rendered, etc.). This allowed us to draw conclusions on what website features had lower performance, while also providing insight for where to look for improvements. 
 
@@ -37,7 +37,7 @@ For instance, this helped us identify that the "popup modal" was having a negati
 <figcaption>Chart representing performance score for sites with and without a "pop up modal" (blue and green lines respectively). </figcaption>
 </figure>
 
-Beyond looking at problematic sites based on features, we conducted an analysis of our JS bundle and realized that a large portion of our common JS bundle size came from external dependencies (immutable.js and draft.js). We were able to remove this weight by restructuring consumers to lazy load dependencies on demand. This exercise yielded over a 50% drop in common JS bundle size (minified ~200+kb to currently ~90kb). The smaller bundle size allowed the browser to load external assets and execute critical scripts earlier in the initial site loading lifecycle, leading to gains in [Largest Contentful Paint (LCP)](https://web.dev/lcp/) and [First Input Delay (FID)](https://web.dev/fid/).
+Beyond looking at problematic sites based on features, we conducted an analysis of our JS bundle and realized that a large portion of our common JS bundle size came from external dependencies (immutable.js and draft.js). We were able to remove this weight by restructuring consumers to lazy load dependencies on demand. This exercise yielded over a 50% drop in common JS bundle size (minified ~200+kb to currently ~90kb). The smaller bundle size allowed the browser to load external assets and execute critical scripts earlier in the initial site loading lifecycle, leading to gains in [Largest Contentful Paint (LCP)](/lcp/) and [First Input Delay (FID)](/fid/).
 
 <figure>
 **TODO: PLACE FIGURE**
@@ -52,7 +52,7 @@ After adding the [`web-vitals` library](https://github.com/GoogleChrome/web-vita
 
 ### Focusing on our weakest link: Cumulative Layout Shift (CLS)
 
-Analyzing new data gave us a new perspective on what had to be done to improve website speed. Because of work done to improve the Lighthouse score, our 75th percentile LCP was 860 ms and our FID at the same threshold was below 10 ms, so we enjoyed a high pass rate for these metrics on our customer's sites: 78% and 98%, respectively. However, the [Cumulative Layout Shift (CLS)](https://web.dev/cls/) numbers look _quite different_ from what we were used to with Lighthouse. Our CLS at the 75th percentile was 0.17 - above the 0.1 threshold to "pass" - and our pass rate was thus only 47% over all of our sites.
+Analyzing new data gave us a new perspective on what had to be done to improve website speed. Because of work done to improve the Lighthouse score, our 75th percentile LCP was 860 ms and our FID at the same threshold was below 10 ms, so we enjoyed a high pass rate for these metrics on our customer's sites: 78% and 98%, respectively. However, the [Cumulative Layout Shift (CLS)](/cls/) numbers look _quite different_ from what we were used to with Lighthouse. Our CLS at the 75th percentile was 0.17 - above the 0.1 threshold to "pass" - and our pass rate was thus only 47% over all of our sites.
 
 That metric dragged down our overall pass rate to 40%, so we decided to set an ambitious goal to move that number to above 60% by the end of August 2021. To do that, we would **have to focus on CLS**.
 
@@ -78,7 +78,7 @@ When building their sites, customers add various sections which might have inlin
 
 ## Results 
 
-Focusing our effort on CLS paid off, our Core Web Vitals pass rate went from ~40% to almost 70%: an improvement of 75%!
+Focusing our effort on CLS paid off, our Core Web Vitals pass rate went from \~40% to almost 70%: an improvement of 75%!
 
 <figure>
 **TODO: PLACE FIGURE**
