@@ -30,7 +30,7 @@ When you navigate to a site that uses a service worker to handle fetch events, t
 
 The bootup time depends on the device and conditions. It's usually around 50ms. On mobile it's more like 250ms. In extreme cases (slow devices, CPU in distress) it can be over 500ms. However, since the service worker stays awake for a browser-determined time between events, you only get this delay occasionally, such as when the user navigates to your site from a fresh tab, or another site.
 
-The boot-up time isn't a problem if you're responding from the cache, as the benefit of skipping the network is greater than the boot-up delay. But if you're responding using the network...
+The boot-up time isn't a problem if you're responding from the cache, as the benefit of skipping the network is greater than the boot-up delay. But if you're responding using the network…
 
 
 <style>
