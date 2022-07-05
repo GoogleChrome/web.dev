@@ -4234,3 +4234,21 @@ steveworkman:
     en: steveworkman
   description:
     en: Lead Engineer at Maersk.com
+
+bramus:
+  title:
+    en: Bramus
+    es: Bramus
+    ja: Bramus
+    ko: Bramus
+    pt: Bramus
+    ru: Bramus
+    zh: Bramus
+  description:
+    en: Developer Advocate for CSS, UI & DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
