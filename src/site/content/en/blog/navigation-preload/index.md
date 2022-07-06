@@ -18,6 +18,8 @@ tags:
 Service Worker Navigation Preload is [now supported by all major browser engines](https://caniuse.com/mdn-api_navigationpreloadmanager).
 {% endAside %}
 
+{% BrowserCompat 'api.NavigationPreloadManager' %}
+
 ## TL;DR
 
 * In some situations, [service worker boot-up time can delay a network response](#the-problem).
