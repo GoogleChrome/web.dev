@@ -10,9 +10,9 @@ thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
 tags:
   - blog
-  - privacy
+  # - privacy
   # - privacy-sandbox
-  - security
+  # - security
 feedback:
   - api
 ---
