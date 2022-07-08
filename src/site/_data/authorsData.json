@@ -1610,5 +1610,13 @@
   "steveworkman": {
     "twitter": "steveworkman",
     "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/ZQJOeFPFZCQrWmWfFGeH.jpeg"
+  },
+  "dbaron": {
+    "country": "US",
+    "twitter": "davidbaron",
+    "github": "dbaron",
+    "linkedin": "https://www.linkedin.com/in/ldavidbaron/",
+    "homepage": "https://dbaron.org/",
+    "image": "image/ORyRmnnHXAbyJZvAGcyoT2oKi2o2/1Npv2NPkO3ht3vWAqkGv.jpg"
   }
 }
