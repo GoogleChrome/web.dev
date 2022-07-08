@@ -61,10 +61,10 @@ The Privacy Sandbox is a series of proposals to satisfy third-party use cases wi
 cookies or other tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
-**This proposal needs your feedback.** If you have comments, please [create an
+**This proposal needs your feedback.** If you have comments, [create an
 issue](https://github.com/WICG/floc/issues/new) on the [FLoC Explainer](https://github.com/WICG/floc)
-repository.  If you have feedback on Chrome's experiment with this proposal, please post a reply on
-the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
+repository.  If you have feedback on Chrome's experiment with this proposal,
+post a reply on the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
 
 ## Why do we need FLoC?
 
@@ -348,7 +348,7 @@ the user's cohort when asked for it via JavaScript: the promise returned by
 
 ## How can I make suggestions or provide feedback?
 
-If you have comments on the API, please [create an issue](https://github.com/WICG/floc/issues/new)
+If you have comments on the API, [create an issue](https://github.com/WICG/floc/issues/new)
 on the [FLoC Explainer](https://github.com/WICG/floc) repository.
 
 ## Find out more
