@@ -19,6 +19,12 @@ feedback:
 
 {% Aside %}
 This post outlined the API design implemented in Chrome for the first origin trial of FLoC. The development of FLoC stopped in 2021.
+
+In January 2022, the Privacy Sandbox released the [Topics API
+proposal](https://github.com/jkarlin/topics) to address interest-based
+advertising, without having to resort to tracking the sites a user visits. The
+design of the API was informed by community feedback from our earlier FLoC
+trials, and supersedes the FLoC proposal.
 {% endAside %}
 
 FLoC provides a privacy-preserving mechanism for interest-based ad selection.
