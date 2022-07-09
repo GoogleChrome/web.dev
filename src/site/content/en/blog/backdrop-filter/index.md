@@ -84,7 +84,7 @@ You can combine filters for rich and clever effects, or use just one filter for 
 
 ## Feature detection and fallback
 
-As with many features of the modern web, you'll want to know whether the user's browser supports `backdrop-filter` before using it. Do this with `@supports()`. For performance reasons, fall back to an image instead of a polyfill when `backdrop-image` isn't supported. The example below shows this.
+As with many features of the modern web, you'll want to know whether the user's browser supports `backdrop-filter` before using it. Do this with `@supports()`. For performance reasons, fall back to an image instead of a polyfill when `backdrop-filter` isn't supported. The example below shows this.
 
 ```css
 @supports (backdrop-filter: none) {
