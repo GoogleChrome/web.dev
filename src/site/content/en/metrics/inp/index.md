@@ -21,7 +21,7 @@ Chrome usage data shows that 90% of a user's time on a page is spent _after_ it 
 
 Good responsiveness means that a page responds quickly to interactions made with it. When a page responds to interactions, the changes in the user interface that result are _visual feedback_ provided in the next frame the browser presents. Visual feedback tells us if, for example, an item we've asked to add to an online shopping cart is indeed being added, if a login form's contents are being authenticated by the server, whether a mobile menu has opened, and so on.
 
-The goal of INP is to ensure the time from when a user interacts until the next frame is painted is as short as possible, for all or most interactions the user makes.
+The goal of INP is to ensure the time from when a user initiates an interaction until the next frame is painted is as short as possible, for all or most interactions the user makes.
 
 In the following video, the example on the right gives immediate visual feedback that an accordion is opening. It also demonstrates how poor responsiveness can cause multiple unintended responses to input because the user thinks the experience is broken.
 
@@ -53,9 +53,9 @@ A note on how INP is calculated
 As stated above, INP is calculated by observing all the interactions made with a page. The chosen value is then a [percentile](https://en.wikipedia.org/wiki/Percentile) of those interactions. A formula is then used to choose a high percentile value of those interactions. For pages with few interactions, the interaction with the worst latency (the 100th percentile) is chosen. For pages with many interactions, the 99th or 98th percentile is chosen.
 {% endDetails %}
 
-An _interaction_ is a set of related event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
+An _interaction_ is a group of event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
 
-An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of any event handler that is part of the interaction. The _duration_ of the interaction is measured from the point at which the user interacted with the page to when the next frame is presented after all related event handlers have run.
+An interaction's latency consists of the single longest [duration](https://w3c.github.io/event-timing/#ref-for-dom-performanceentry-duration%E2%91%A1:~:text=The%20Event%20Timing%20API%20exposes%20a%20duration%20value%2C%20which%20is%20meant%20to%20be%20the%20time%20from%20when%20user%20interaction%20occurs%20(estimated%20via%20the%20Event%27s%20timeStamp)%20to%20the%20next%20time%20the%20rendering%20of%20the%20Event%27s%20relevant%20global%20object%27s%20associated%20Document%E2%80%99s%20is%20updated) of a group of event handlers that drives the interaction, from the time the user begins the interaction to the moment the next frame is presented with visual feedback.
 
 {% Aside 'important' %}
 For more details on how INP is measured, read the ["What's in an interaction?"](#what's-in-an-interaction) section.
