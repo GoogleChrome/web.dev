@@ -164,7 +164,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 - Lighthouse Panel in DevTools, available in "Timespan Mode".
 - [Lighthouse npm module](https://www.npmjs.com/package/lighthouse).
-- [Lighthouse User Flows](https://web.dev/lighthouse-user-flows/).
+- [Lighthouse User Flows](/lighthouse-user-flows/).
 - [Web Vitals extension for Chrome](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma).
 
 ### Measure INP In JavaScript
