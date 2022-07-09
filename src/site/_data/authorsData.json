@@ -1618,5 +1618,12 @@
     "linkedin": "https://www.linkedin.com/in/ldavidbaron/",
     "homepage": "https://dbaron.org/",
     "image": "image/ORyRmnnHXAbyJZvAGcyoT2oKi2o2/1Npv2NPkO3ht3vWAqkGv.jpg"
+  },
+  "bramus": {
+    "homepage": "https://www.bram.us/",
+    "twitter": "bramus",
+    "github": "bramus",
+    "country": "BE",
+    "image": "image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/CQMqvg5UkY4weDnJij3b.jpeg"
   }
 }
