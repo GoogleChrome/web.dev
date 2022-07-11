@@ -27,6 +27,8 @@ improve_article:
 
 appears_in:
   en: Appears in
+  pt-BR: Aparece em
 
 available_in:
   en: Available in  # Refers to language, e.g. in "available in English"
+  pt-BR: Disponível em  # Refers to language, e.g. in "available in English"
