@@ -15,7 +15,7 @@ do not submit PRs for new content without following these instructions.
 
 ## Planning
 
-1. Decide if you want your post on [web.dev](/) or [developer.chrome.com](https://developer.chrome.com). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
+1. Decide if you want your post on [web.dev](/) or [developer.chrome.com](https://developer.chrome.com/). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the content issue template for
    [web.dev](https://github.com/GoogleChrome/web.dev/issues/new?template=propose-new-content.md) or [developer.chrome.com](https://github.com/GoogleChrome/developer.chrome.com/issues/new?assignees=rachelandrew&labels=new+content&template=propose-new-content.md&title=content%3A+TODO).
@@ -52,6 +52,10 @@ Your content will be edited and reviewed in Google docs, this will include:
 1. Check out the [web.dev markup section](/handbook/#web.dev-markup) to learn how to make your markdown squeaky clean.
    In particular, check out the [web.dev components](/handbook/web-dev-components/) or 
    [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/) guide
+
+{% Aside 'warning' %}
+Following step 2 is very important, as changes to approved copy while a PR is in progress will result in the PR being closed until the copy is finalized.
+{% endAside %}
    to discover UI elements that can make your content more engaging or aesthetically pleasing.
 1. Once your PR is merged, the content will be deployed to the site immediately, and appear live after around an hour.
 
