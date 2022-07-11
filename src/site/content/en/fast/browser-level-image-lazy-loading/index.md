@@ -77,7 +77,7 @@ From Chrome 76+, you can use the `loading` attribute to completely defer the loa
 Here are the supported values for the `loading` attribute:
 
 - `lazy`: Defer loading of the resource until it reaches a [calculated distance](#distance-from-viewport-thresholds) from the viewport.
-- `eager`: Default loading behavior of the browser, which is the same as not including the attribute and means the image is loaded as soon as possible, regardless of where it's located on the page. While this is the default, it can be useful to explicitly set this if your tooling automatically adds `loading="lazy"` without being explicit, or if your linter complains if it is not set.
+- `eager`: Default loading behavior of the browser, which is the same as not including the attribute and means the image is loaded as soon as possible, regardless of where it's located on the page. While this is the default, it can be useful to explicitly set this if your tooling automatically adds `loading="lazy"` if there is no explicit value, or if your linter complains if it is not explicitly set.
 
 {% Aside 'caution' %}
   Images that are highly likely to be in-viewport, and in particular [LCP](./lcp) images, [should not be lazy-loaded](./#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport).
@@ -87,7 +87,7 @@ Here are the supported values for the `loading` attribute:
 
 The `eager` value is simply an instruction to load the image as usual, without delaying the load further if it is off-screen. It does not imply that the image is loaded any quicker than another image without the `loading="eager"` attribute.
 
-Browsers prioritise resources based on various heuristics, and the `loading` attribute just states _when_ the image resource is queued, not _how_ it is prioritised in that queue. `eager` just implies the usual eager queueing browsers use by default.
+Browsers prioritize resources based on various heuristics, and the `loading` attribute just states _when_ the image resource is queued, not _how_ it is prioritized in that queue. `eager` just implies the usual eager queueing browsers use by default.
 
 If you want to increase the fetch priority of an important image (for example the LCP image), then [Priority Hints](/priority-hints/) should be used with `fetchpriority="high"`.
 
@@ -128,7 +128,7 @@ the meantime, you will need to override the effective connection type of the bro
 
 As of July 2020, Chrome has made significant improvements to align the image lazy-loading distance-from-viewport thresholds to better meet developer expectations.
 
-On fast connections (e.g 4G), we reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (e.g 3G), changed the threshold from `4000px` to `2500px`. This change achieves two things:
+On fast connections (4G), we reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (3G or lower), changed the threshold from `4000px` to `2500px`. This change achieves two things:
 
 * `<img loading=lazy>` behaves closer to the experience offered by JavaScript lazy-loading libraries.
 * The new distance-from-viewport thresholds still allow us to guarantee images have probably loaded by the time a user has scrolled to them.
@@ -244,17 +244,11 @@ whether they're immediately visible, load normally.
 
 ### What if I'm already using a third-party library or a script to lazy-load images?
 
-The `loading` attribute should not affect code that currently lazy-loads your assets in any way, but
-there are a few important things to consider:
+With full support of native lazy-loading now available in modern browsers, you may wish to reconsider if you still need a third-party library or script to lazy-load images.
 
-1. If your custom lazy-loader attempts to load images or frames sooner than when Chrome loads them
-   normally—that is, at a distance greater than the [distance-from-viewport thresholds](#distance-from-viewport-thresholds)—
-   they are still deferred and load based on normal browser behavior.
-2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image than the browser, then the behavior would conform to your custom settings.
+One reason to continue to use a third-party library along with `loading="lazy"` is to provide a polyfill for browsers that do not support the attribute, or to have more control over when lazy loading is triggered.
 
-One reason to continue to use a third-party library along with `loading="lazy"` is to provide a polyfill for browsers that do not yet support the attribute, or to have more control over when lazy loading is triggered.
-
-### How do I handle browsers that don't yet support lazy-loading?
+### How do I handle browsers that don't support lazy-loading?
 
 Create a polyfill or use a third-party library to lazy-load images on your site. The `loading`
 property can be used to detect if the feature is supported in the browser:
