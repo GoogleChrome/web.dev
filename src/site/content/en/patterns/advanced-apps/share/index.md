@@ -1,13 +1,14 @@
 ---
 layout: pattern
-title: How to let the user share a website
+title: How to let the user share the website they are on
 date: 2022-07-11
 description: |
-  Learn how to let the user share a website.
+  Learn how to let the user share the website they are on.
 height: 800
 static:
   - share.svg
   - sharemac.svg
+  - sharewindows.svg
 ---
 
 Letting the user share the website they are on is a common advanced apps pattern
