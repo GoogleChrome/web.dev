@@ -77,12 +77,13 @@ patternId: advanced-apps/share
     <button type="button"><span class="icon"></span>Share</button>
     <script>
       const IS_MAC = /Mac|iPhone/.test(navigator.platform);
+      const IS_WINDOWS = /Win/.test(navigator.platform);
 
       const button = document.querySelector('button');
       const icon = button.querySelector('.icon');
       const canonical = document.querySelector('link[rel="canconical"]');
 
-      icon.classList.add(`share${IS_MAC? 'mac' : ''}`);
+      icon.classList.add(`share${IS_MAC? 'mac' : (IS_WINDOWS? 'windows' : '')}`);
 
       button.addEventListener('click', async () => {
         const title = document.title;
