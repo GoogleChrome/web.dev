@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2022-03-21
+updated: 2022-06-09
 tags:
   - blog
   - capabilities
@@ -17,12 +17,16 @@ feedback:
   - api
 ---
 
-{% Aside %} The Multi-Screen Window Placement API is part of the
-[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is currently in development. This post will be updated as
-the implementation progresses. {% endAside %}
+{% Aside 'success' %} The Multi-Screen Window Placement API was part of the
+[capabilities project](https://developer.chrome.com/blog/fugu-status/) and is now launched. {% endAside %}
 
 The Multi-Screen Window Placement API allows you to enumerate the displays connected to your machine
 and to place windows on specific screens.
+
+{% Aside %} The Multi-Screen Window Placement API is distinct from the proposed
+[Viewport Segments Property](https://github.com/WICG/visual-viewport/blob/gh-pages/segments-explainer/SEGMENTS-EXPLAINER.md),
+which is concerned with the representation of the regions of the window that reside on separate
+(adjacent) displays, for example, on foldable devices. {% endAside %}
 
 ### Suggested use cases {: #use-cases }
 

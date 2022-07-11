@@ -37,7 +37,7 @@ files, links, or text using the Web Share API. See
 {% endAside %}
 
 <figure data-float="right">
-  {% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/mOLhCVAigwTWGEiAo3Rc.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="433" %}
   <figcaption>
     System-level share target picker with an installed PWA as an option.
   </figcaption>
@@ -78,8 +78,8 @@ entry:
 
 {% Aside %}
 You can only have one `share_target` per manifest, if you want to share to
-different places within your app, provide that as an option within the share
-target landing page.
+different places within your app, provide that as an option on the share
+target landing page (the page specified by the `url` entry).
 {% endAside %}
 
 ### Accepting basic information
@@ -99,7 +99,7 @@ and text, add the following to the `manifest.json` file:
 }
 ```
 
-If your application already has a share URL scheme, you can replace the `param`
+If your application already has a share URL scheme, you can replace the `params`
 values with your existing query parameters. For example, if your share URL
 scheme uses `body` instead of `text`, you could replace `"text": "text"` with `"text":
 "body"`.
@@ -242,7 +242,7 @@ self.addEventListener('fetch', event => {
 ### Verifying shared content
 
 <figure data-float="right">
-  {% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="280" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/RochGVxJcieU4aAoc0H0.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="329" %}
   <figcaption>
     The sample sharing target app.
   </figcaption>
@@ -258,7 +258,7 @@ the `text` field, or occasionally in the `title` field.
 
 ## Browser support
 
-As of early 2021, the Web Share Target API is supported by:
+Since early 2021, the Web Share Target API is supported by:
 
 - Chrome and Edge 76 or later on Android.
 - Chrome 89 or later on ChromeOS.

@@ -6,6 +6,8 @@ authors:
   - mattgaunt
 date: 2017-03-30
 updated: 2019-06-15
+tags:
+  - notifications
 ---
 
 When you hit an issue with web push, it can be difficult to debug the issue or
@@ -261,7 +263,7 @@ problem could be, please raise an issue against the browser you are having an
 issue with:
 
 For Chrome, you'd raise the issue here:
-[https://bugs.chromium.org/p/chromium/issues/list](https://bugs.chromium.org/p/chromium/issues/list)  
+[https://bugs.chromium.org/p/chromium/issues/list](https://bugs.chromium.org/p/chromium/issues/list)
 For Firefox, you should raise the issue on:
 [https://bugzilla.mozilla.org/](https://bugzilla.mozilla.org/)
 
@@ -277,4 +279,22 @@ To provide a good bug report, you should provide the following details:
 If you can provide a reproducible example, either source code or a hosted web
 site, it often speeds up diagnosing and solving the problem.
 
-## Feedback {: #feedback }
+## Where to go next
+
+* [Web Push Notification Overview](/push-notifications-overview/)
+* [How Push Works](/push-notifications-how-push-works/)
+* [Subscribing a User](/push-notifications-subscribing-a-user/)
+* [Permission UX](/push-notifications-permissions-ux/)
+* [Sending Messages with Web Push Libraries](/sending-messages-with-web-push-libraries/)
+* [Web Push Protocol](/push-notifications-web-push-protocol/)
+* [Handling Push Events](/push-notifications-handling-messages/)
+* [Displaying a Notification](/push-notifications-display-a-notification/)
+* [Notification Behavior](/push-notifications-notification-behaviour/)
+* [Common Notification Patterns](/push-notifications-common-notification-patterns/)
+* [Push Notifications FAQ](/push-notifications-faq/)
+* Common Issues and Reporting Bugs
+
+### Code labs
+
+* [Build a push notification client](/push-notifications-client-codelab/)
+* [Build a push notification server](/push-notifications-server-codelab/)

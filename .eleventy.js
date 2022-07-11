@@ -68,7 +68,6 @@ const shows = require('./src/site/_collections/shows');
 const tags = require('./src/site/_collections/tags');
 
 // Filters
-const consoleDump = require('./src/site/_filters/console-dump');
 const {i18n} = require('./src/site/_filters/i18n');
 const {getDefaultUrl, getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
@@ -162,7 +161,6 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
-  config.addFilter('consoleDump', consoleDump);
   config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('getDefaultUrl', getDefaultUrl);

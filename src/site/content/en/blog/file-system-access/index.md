@@ -8,11 +8,11 @@ authors:
   - thomassteiner
 description:
   The File System Access API enables developers to build powerful web apps that interact with files
-  on the user's local device, like IDEs, photo and video editors, text editors, and more. After a
+  on the user's local device, such as IDEs, photo and video editors, text editors, and more. After a
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2022-04-27
+updated: 2022-06-24
 tags:
   - blog
   - capabilities
@@ -29,7 +29,7 @@ stack_overflow_tag: native-file-system-api-js
 
 The [File System Access API][spec] (formerly known as Native File System API and prior to that it
 was called Writeable Files API) enables developers to build powerful web apps that interact with
-files on the user's local device, like IDEs, photo and video editors, text editors, and more. After
+files on the user's local device, such as IDEs, photo and video editors, text editors, and more. After
 a user grants a web app access, this API allows them to read or save changes directly to files and
 folders on the user's device. Beyond reading and writing files, the File System Access API provides
 the ability to open a directory and enumerate its contents.
@@ -53,35 +53,16 @@ familiar to you. I encourage you to read it anyway, because not all systems are 
 API to ensure that people can easily manage their files. See the
 [security and permissions](#security-considerations) section for more information. {% endAside %}
 
-## Current status {: #status }
-
-<div>
-
-| Step                                     | Status                |
-| ---------------------------------------- | --------------------- |
-| 1. Create explainer                      | [Complete][explainer] |
-| 2. Create initial draft of specification | [Complete][spec]      |
-| 3. Gather feedback & iterate on design   | [Complete][spec]      |
-| 4. Origin trial                          | Complete              |
-| **5. Launch**                            | **Complete**          |
-
-</div>
-
-{% Aside %} During the origin trial phase, there was a universal method named
-`Window.chooseFileSystemEntries()` that has been replaced with the three specialized methods
-`Window.showOpenFilePicker()`, `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`.
-There were a number of other
-[changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up on.
-{% endAside %}
-
 ## Browser support
 
 {% BrowserCompat 'api.Window.showOpenFilePicker' %}
 
-The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
-ChromeOS, and Linux. A notable exception is Brave
-([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)). Android support
-is planned; you can track progress by starring [crbug.com/1011535](https://crbug.com/1011535).
+The File System Access API is currently supported on most Chromium browsers on
+Windows, macOS, ChromeOS, and Linux. A notable exception is Brave where it is
+[currently available behind a
+flag](https://github.com/brave/brave-browser/issues/18979). Android support is
+not immediately planned, but you can track potential progress by starring
+[crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
 
@@ -97,7 +78,7 @@ See the File System Access API in action in the
 
 ### Read a file from the local file system {: #read-file }
 
-The first use case I wanted to tackle was to ask the user to choose a file, then open and read that
+The first use case I want to tackle is to ask the user to choose a file, then open and read that
 file from disk.
 
 #### Ask the user to pick a file to read
@@ -126,8 +107,8 @@ Once the user selects a file, `showOpenFilePicker()` returns an array of handles
 one-element array with one [`FileSystemFileHandle`][fs-file-handle] that contains the properties and
 methods needed to interact with the file.
 
-It's helpful to keep a reference to the file handle around so that it can be used later. It'll be
-needed to save changes back to the file, or to perform any other file operations.
+It's helpful to keep a reference to the file handle so that it can be used later. It'll be
+needed to save changes to the file, or to perform any other file operations.
 
 #### Read a file from the file system
 
@@ -176,7 +157,7 @@ As** creates a new file, and thus requires a new file handle.
 
 #### Create a new file
 
-To save a file, call [`showSaveFilePicker()`][showsavefilepicker], which will show the file picker
+To save a file, call [`showSaveFilePicker()`][showsavefilepicker], which shows the file picker
 in "save" mode, allowing the user to pick a new file they want to use for saving. For the text
 editor, I also wanted it to automatically add a `.txt` extension, so I provided some additional
 parameters.
@@ -213,6 +194,7 @@ You can find all the code for saving changes to a file in my [text editor][text-
 I'll walk through each step and explain it.
 
 ```js
+// fileHandle is an instance of FileSystemFileHandle..
 async function writeFile(fileHandle, contents) {
   // Create a FileSystemWritableFileStream to write to.
   const writable = await fileHandle.createWritable();
@@ -223,13 +205,13 @@ async function writeFile(fileHandle, contents) {
 }
 ```
 
-Writing data to disk uses a [`FileSystemWritableFileStream`][fs-writablestream] object, essentially
-a [`WritableStream`][writable-stream]. Create the stream by calling `createWritable()` on the file
+Writing data to disk uses a [`FileSystemWritableFileStream`][fs-writablestream] object, a subclass
+of [`WritableStream`][writable-stream]. Create the stream by calling `createWritable()` on the file
 handle object. When `createWritable()` is called, the browser first checks if the user has granted
-write permission to the file. If permission to write hasn't been granted, the browser will prompt
-the user for permission. If permission isn't granted, `createWritable()` will throw a
-`DOMException`, and the app will not be able to write to the file. In the text editor, these
-`DOMException`s are handled in the [`saveFile()`][text-editor-app-js] method.
+write permission to the file. If permission to write hasn't been granted, the browser prompts
+the user for permission. If permission isn't granted, `createWritable()` throws a
+`DOMException`, and the app will not be able to write to the file. In the text editor, the
+`DOMException` objects are handled in the [`saveFile()`][text-editor-app-js] method.
 
 The `write()` method takes a string, which is what's needed for a text editor. But it can also take
 a [BufferSource][buffersource], or a [Blob][blob]. For example, you can pipe a stream directly to
@@ -296,7 +278,7 @@ Apart from well-known system directories, you can also pass an existing file or 
 a value for `startIn`. The dialog would then open in the same directory.
 
 ```js/2
-// Assume `directoryHandle` were a handle to a previously opened directory.
+// Assume `directoryHandle` is a handle to a previously opened directory.
 const fileHandle = await self.showOpenFilePicker({
   startIn: directoryHandle
 });
@@ -307,8 +289,8 @@ const fileHandle = await self.showOpenFilePicker({
 Sometimes applications have different pickers for different purposes. For example, a rich text
 editor may allow the user to open text files, but also to import images. By default, each file
 picker would open at the last-remembered location. You can circumvent this by storing `id` values
-for each type of picker. If an `id` is specified, the file picker implementation will remember a
-separate last-used directory for pickers with that same `id`.
+for each type of picker. If an `id` is specified, the file picker implementation remembers a
+separate last-used directory for that `id`.
 
 ```js
 const fileHandle1 = await self.showSaveFilePicker({
@@ -333,8 +315,8 @@ directory, and more. In the text editor, I store a list of the five most recent 
 opened, making it easy to access those files again.
 
 The code example below shows storing and retrieving a file handle and a directory handle. You can
-[see this in action](https://filehandle-directoryhandle-indexeddb.glitch.me/) over on Glitch (I use
-the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
+[see this in action](https://filehandle-directoryhandle-indexeddb.glitch.me/) over on Glitch. (I use
+the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity.)
 
 ```js
 import { get, set } from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
@@ -380,7 +362,7 @@ button2.addEventListener('click', async () => {
 ### Stored file or directory handles and permissions
 
 Since permissions currently are not persisted between sessions, you should verify whether the user
-has granted permission to the file or directory using `queryPermission()`. If they haven't, use
+has granted permission to the file or directory using `queryPermission()`. If they haven't, call
 `requestPermission()` to (re-)request it. This works the same for file and directory handles. You
 need to run `fileOrDirectoryHandle.requestPermission(descriptor)` or
 `fileOrDirectoryHandle.queryPermission(descriptor)` respectively.
@@ -407,7 +389,7 @@ async function verifyPermission(fileHandle, readWrite) {
 }
 ```
 
-By requesting write permission with the read request, I reduced the number of permission prompts:
+By requesting write permission with the read request, I reduced the number of permission prompts;
 the user sees one prompt when opening the file, and grants permission to both read and write to it.
 
 {% Aside %}
@@ -484,7 +466,7 @@ const path = await newDirectoryHandle.resolve(newFileHandle);
 
 If you have obtained access to a directory, you can delete the contained files and folders with the
 [`removeEntry()`][removeentry] method. For folders, deletion can optionally be recursive and include
-all subfolders and the therein contained files.
+all subfolders and the files contained therein.
 
 ```js
 // Delete a file.
@@ -505,6 +487,10 @@ await fileHandle.remove();
 await directoryHandle.remove();
 ```
 
+{% Aside %}
+The `FileSystemHandle.remove()` method is currently behind a flag. 
+{% endAside %}
+
 ### Renaming and moving files and folders
 
 Files and folders can be renamed or moved to a new location by calling `move()` on the
@@ -523,12 +509,11 @@ await file.move(directory);
 await file.move(directory, 'newer_name');
 ```
 
-{% Aside 'warning' %} Due to some open questions regarding cross-file-system moves, `move()` is
-temporarily disabled for folders and moves outside of the
-[origin private file system](#accessing-the-origin-private-file-system). This feature is currently
-only available in the origin private file system to those with the
-[`AccessHandles origin trial`](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625)
-enabled. {% endAside %}
+{% Aside %}
+The `FileSystemHandle.move()` method has shipped for files within the origin private file system (OPFS),
+is behind a flag for files if the source or destination is outside of the OPFS,
+and is not [yet](https://crbug.com/1250534) supported for directories.
+{% endAside %}
 
 ### Drag and drop integration
 
@@ -541,10 +526,10 @@ with file entries and directory entries respectively. The `DataTransferItem.getA
 method returns a promise with a `FileSystemFileHandle` object if the dragged item is a file, and a
 promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory. The listing
 below shows this in action. Note that the Drag and Drop interface's
-[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind) will be
+[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind) is
 `"file"` for both files _and_ directories, whereas the File System Access API's
-[`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
-be `"file"` for files and `"directory"` for directories.
+[`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) is
+`"file"` for files and `"directory"` for directories.
 
 ```js
 elem.addEventListener('dragover', (e) => {
@@ -572,14 +557,14 @@ elem.addEventListener('drop', async (e) => {
 ### Accessing the origin private file system
 
 The origin private file system is a storage endpoint that, as the name suggests, is private to the
-origin of the page. While browsers will typically implement this by persisting the contents of this
+origin of the page. While browsers typically implement this by persisting the contents of this
 origin private file system to disk somewhere, it is _not_ intended that the contents be easily user
 accessible. Similarly, there is _no_ expectation that files or directories with names matching the
 names of children of the origin private file system exist. While the browser might make it seem that
 there are files, internally—since this is an origin private file system—the browser might store
-these "files" in a database or any other data structure. Essentially: what you create with this API,
-do _not_ expect to find it 1:1 somewhere on the hard disk. You can operate as usual on the origin
-private file system once you have access to the root `FileSystemDirectoryHandle`.
+these "files" in a database or any other data structure. Essentially, if you use this API,
+do _not_ expect to find the created files matched one-to-one somewhere on the hard disk. You can operate as usual on
+the origin private file system once you have access to the root `FileSystemDirectoryHandle`.
 
 ```js
 const root = await navigator.storage.getDirectory();
@@ -595,12 +580,10 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 The origin private file system provides optional access to a special kind of file that is highly
 optimized for performance, for example, by offering in-place and exclusive write access to a file's
-content. There is an
-[origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
-in Chromium&nbsp;95 and ending in Chromium&nbsp;101 (May 18, 2022) for simplifying how such
-files can be accessed by exposing two new methods as part of the origin private file system:
-`createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
-(synchronous read and write operations) that are both exposed on `FileSystemFileHandle`.
+content. In Chrome 102 and later, there are two new methods on the origin private file system for
+simplifying file access: `createAccessHandle()` (for asynchronous read and write operations) and
+`createSyncAccessHandle()` (for synchronous read and write operations). Both are exposed on
+`FileSystemFileHandle`.
 
 ```js
 // Asynchronous access in all contexts:
@@ -626,7 +609,7 @@ It is not possible to completely polyfill the File System Access API methods.
 
 - The `showOpenFilePicker()` method can be approximated with an `<input type="file">` element.
 - The `showSaveFilePicker()` method can be simulated with a `<a download="file_name">` element,
-  albeit this will trigger a programmatic download and not allow for overwriting existing files.
+  albeit this triggers a programmatic download and not allow for overwriting existing files.
 - The `showDirectoryPicker()` method can be somewhat emulated with the non-standard
   `<input type="file" webkitdirectory>` element.
 
@@ -662,7 +645,7 @@ picker and the site does not get access to anything. This is the same behavior a
   </figcaption>
 </figure>
 
-Similarly, when a web app wants to save a new file, the browser will show the save file picker,
+Similarly, when a web app wants to save a new file, the browser shows the save file picker,
 allowing the user to specify the name and location of the new file. Since they are saving a new file
 to the device (versus overwriting an existing file), the file picker grants the app permission to
 write to the file.
@@ -671,7 +654,7 @@ write to the file.
 
 To help protect users and their data, the browser may limit the user's ability to save to certain
 folders, for example, core operating system folders like Windows, the macOS Library folders, etc.
-When this happens, the browser will show a modal prompt and ask the user to choose a different
+When this happens, the browser shows a modal prompt and ask the user to choose a different
 folder.
 
 ### Modifying an existing file or directory
@@ -680,24 +663,24 @@ A web app cannot modify a file on disk without getting explicit permission from 
 
 #### Permission prompt
 
+If a person wants to save changes to a file that they previously granted read access to, the browser
+shows a modal permission prompt, requesting permission for the site to write changes to disk.
+The permission request can only be triggered by a user gesture, for example, by clicking a Save
+button.
+
 <figure data-float="right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", linkTo=true %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/UqV1XM8XaVCero82OHO0.png", alt="Permission prompt shown prior to saving a file.", width="800", height="269", linkTo=true %}
   <figcaption>
     Prompt shown to users before the browser is granted write
     permission on an existing file.
   </figcaption>
 </figure>
 
-If a person wants to save changes to a file that they previously granted read access to, the browser
-will show a modal permission prompt, requesting permission for the site to write changes to disk.
-The permission request can only be triggered by a user gesture, for example, by clicking a Save
-button.
-
-Alternatively, a web app that edits multiple files, like an IDE, can also ask for permission to save
+Alternatively, a web app that edits multiple files, such as an IDE, can also ask for permission to save
 changes at the time of opening.
 
 If the user chooses Cancel, and does not grant write access, the web app cannot save changes to the
-local file. It should provide an alternative method to allow the user to save their data, for
+local file. It should provide an alternative method for the user to save their data, for
 example by providing a way to ["download" the file][download-file], saving data to the cloud, etc.
 
 ### Transparency
@@ -710,13 +693,13 @@ example by providing a way to ["download" the file][download-file], saving data 
   </figcaption>
 </figure>
 
-Once a user has granted permission to a web app to save a local file, the browser will show an icon
+Once a user has granted permission to a web app to save a local file, the browser shows an icon
 in the URL bar. Clicking on the icon opens a pop-over showing the list of files the user has given
 access to. The user can easily revoke that access if they choose.
 
 ### Permission persistence
 
-The web app can continue to save changes to the file without prompting until all tabs for that
+The web app can continue to save changes to the file without prompting until all tabs for its
 origin are closed. Once a tab is closed, the site loses all access. The next time the user uses the
 web app, they will be re-prompted for access to the files.
 
@@ -757,7 +740,6 @@ features, and shows other browser vendors how critical it is to support them.
 - [File System Access specification][spec] & [File specification][file-api-spec]
 - [Tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
-- Request an [origin trial token]({{origin_trial.url}})
 - [TypeScript definitions][typescript]
 - [File System Access API - Chromium Security Model][nfs-cr-sec-model]
 - Blink Component: `Blink>Storage>FileSystem`

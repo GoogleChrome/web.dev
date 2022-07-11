@@ -119,11 +119,11 @@ wanted to expand its online presence by focusing on performance and a network-in
 With this enhanced experience, they increased their overall mobile conversion rate by 53%,
 200% for installed users, and increased their daily active users by 26%.
 
-[Clipchamp](/gravit-designer/) is an in-browser,
+[Clipchamp](/clipchamp/) is an in-browser,
 desktop-class online video editor that empowers anyone to tell stories worth sharing through video.
 They saw 9% higher user retention with their PWA versus their standard desktop app users and have seen their PWA installations increasing at a rate of 97% each month in its first five months launched.
 
-Corel Corporation's Gravit Designer is a powerful,
+Corel Corporation's [Gravit Designer](/gravit-designer/) is a powerful,
 desktop-class vector design tool that serves tens of thousands of daily active users demanding rich,
 affordable, accessible vector illustration software.
 Since adding a PWA as an install option for users,

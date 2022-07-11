@@ -90,7 +90,7 @@ contributed to the overall score.
 
 <figure>
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zfpYNnnpwtcG7YAmf7E5.jpg", alt="The front page of Telegraph with an ad in the header highlughted with a blue overlay.", width="800", height="465" %}
-    <figcaption>Identifying a layout shift caused by the advert loading client-side above the header using the Experience section of Chrome DevTools.<figcaption>
+    <figcaption>Identifying a layout shift caused by the advert loading client-side above the header using the Experience section of Chrome DevTools.</figcaption>
 </figure>
 
 [WebPageTest](https://www.webpagetest.org/) helpfully highlights where the

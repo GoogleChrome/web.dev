@@ -173,7 +173,7 @@ One of the key aspects of an origin in a web-browsing context is how storage and
 When you move from one origin to another, all the previous access is revoked, so permissions have to be granted again, and your PWA can't access all the data saved in the storage.
 
 {% Aside 'caution' %}
-having different subdomains for different parts of a website or different TLDs for other locales, such as `admin.example.com` or `example.co.uk`, makes building PWAs harder, each subdomain will have isolated storage, its own service worker registration, and web app manifest. It may also lead to a disjointed experience if the subdomains are designed to look like the same app, as one will be displayed in the in-app browser while the main PWA won't.
+Having different subdomains for different parts of a website or different TLDs for other locales, such as `admin.example.com` or `example.co.uk`, makes building PWAs harder, each subdomain will have isolated storage, its own service worker registration, and web app manifest. It may also lead to a disjointed experience if the subdomains are designed to look like the same app, as one will be displayed in the in-app browser while the main PWA won't.
 {% endAside %}
 
 {% Video src="video/RK2djpBgopg9kzCyJbUSjhEGmnw1/V1OWWZnCGpwVcaZE152Z.mp4", autoplay=true, controls=true, loop=true %}

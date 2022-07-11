@@ -12,6 +12,9 @@ pageScripts:
 
 {% from 'macros/code-pattern.njk' import codePattern with context %}
 
+
+{% set tocTitle = "On this page" %}
+
 {% if page.url %}
   {% set patternSetId = page.url | getRelativePath('/patterns/') %}
 {% else %}

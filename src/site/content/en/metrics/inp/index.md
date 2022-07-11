@@ -4,6 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
+updated: 2022-06-21
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -19,15 +20,6 @@ Interaction to Next Paint (INP) is an experimental field metric that assesses [r
 Responsiveness—that is, how fast a page responds to user input—is crucial to the user experience. Chrome usage data shows that roughly 90% of a user's time on a page is spent _after_ it loads, thus, careful measurement of responsiveness is important especially as more websites rely increasingly on JavaScript to provide interactivity. This is what INP measures, and it encompasses the entire lifecycle of a page.
 
 When responsiveness is good, pages respond quickly to the interactions made with it. When an app responds to interactions, the changes in the user interface that result are _visual feedback_. Visual feedback is what tells us if—for example—an item we've asked to add to an online shopping cart is indeed being added, if a login form's contents are being authenticated by the server, whether a mobile menu has opened, and so on.
-
-In the following video, the example on the right gives immediate visual feedback that an image is being fetched from the network. This visual feedback underscores the importance of communicating a result of an interaction.
-
-<figure>
-  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vPC97OKo8wX4RtYZDtMQ.mp4", autoplay=true, controls=true, loop=true %}
-  <figcaption>
-    A visual representation of both poor and good responsiveness where a full-sized image is loaded from a thumbnail gallery. On the left, responsiveness is poor because the image has to be downloaded before it is displayed, which involves a considerable delay. On the right, responsiveness is good because a loading indicator appears immediately after requesting the image, and the requested image eventually replaces it.
-  </figcaption>
-</figure>
 
 This article explains how INP works, how to measure it, and offers suggestions for improving it, as good responsiveness is imperative to a good user experience.
 

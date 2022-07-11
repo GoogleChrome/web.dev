@@ -7,7 +7,7 @@ authors:
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
-updated: 2020-07-16
+updated: 2022-06-16
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
@@ -142,7 +142,7 @@ and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
 
 
 {% Aside %}
-  To ensure Chrome users on recent versions also benefit from the new thresholds, we have backported these changes so that Chrome 79 - 85 inclusive also uses them. Please keep this in mind if attempting to compare data-savings from older versions of Chrome to newer ones.
+  To ensure Chrome users on recent versions also benefit from the new thresholds, we have backported these changes so that Chrome 79 - 85 inclusive also uses them. Keep this in mind if attempting to compare data savings from older versions of Chrome to newer ones.
 {% endAside %}
 
 We are committed to working with the web standards community to explore better alignment in how distance-from-viewport thresholds are approached across different browsers.
@@ -333,9 +333,8 @@ like any other image or iframe.
 
 ### How are images handled when a web page is printed?
 
-Although the functionality isn't in Chrome currently, there's an [open
-issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
-iframes are immediately loaded if a page is printed.
+All images and iframes are immediately loaded if the page is printed. See [issue
+#875403](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) for details.
 
 ### Does Lighthouse recognize browser-level lazy-loading?
 

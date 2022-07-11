@@ -184,7 +184,7 @@ Generally speaking, there are two factors that affect how quickly an LCP resourc
 
 #### Optimize when the resource is discovered
 
-To ensure your LCP resource starts loading as early as possible, it's critical that the resource is discoverable by the browser from the initial HTML document response. For example, in the following cases, the browser can discover the LCP resource by scanning the HTML document response:
+To ensure your LCP resource starts loading as early as possible, it's critical that the resource is discoverable in the initial HTML document response by the browser's [preload scanner](/preload-scanner/). For example, in the following cases, the browser can discover the LCP resource by scanning the HTML document response:
 
 - The LCP element is an `<img>` element, and its `src` or `srcset` attributes are present in the initial HTML markup.
 - The LCP element requires a CSS background image, but that image is preloaded via `<link rel="preload">` in the HTML markup (or via a `Link` header).
@@ -193,9 +193,10 @@ To ensure your LCP resource starts loading as early as possible, it's critical t
 Here are some examples where the LCP resource cannot be discovered from scanning the HTML document response:
 
 - The LCP element is an `<img>` that is dynamically added to the page via JavaScript.
+- The LCP element is lazily loaded with a JavaScript library that hides its `src` or `srcset` attributes (often as `data-src` or `data-srcset`).
 - The LCP element requires a CSS background image.
 
-In both of the last two cases, the browser needs to run the script or apply the stylesheet—which usually involves waiting for network requests to finish—before it can discover the LCP resource and could start loading it. This is never optimal.
+In each of these cases, the browser needs to run the script or apply the stylesheet—which usually involves waiting for network requests to finish—before it can discover the LCP resource and could start loading it. This is never optimal.
 
 To eliminate unnecessary resource load delay, your LCP resource should _always_ be discoverable from the HTML source. In cases where the resource is only referenced from an external CSS or JavaScript file, then the LCP resource should be preloaded; for example:
 
@@ -213,20 +214,26 @@ On most pages, ensuring that the LCP resource starts loading at the same time as
 
 #### Optimize the priority the resource is given
 
-In some cases, the LCP resource is discoverable from the HTML markup, but it _still_ doesn't start loading as early as the first resource.
+In some cases, the LCP resource is discoverable from the HTML markup, but it _still_ doesn't start loading as early as the first resource. This can happen if the browser preload scanner's priority heuristics do not recognize that the resource is important, or if it determines that other resources are more important.
 
-This can happen if the browser preload scanner's priority heuristics do not recognize that the resource is important, or if it determines that other resources are more important. It can also happen if your markup instructs the browser to delay loading, for example, if you set [`loading="lazy"`](/browser-level-image-lazy-loading/) on your image tag.
+For example, you can deprioritize your LCP image via HTML if you set [`loading="lazy"`](/browser-level-image-lazy-loading/) on your `<img>` element. The reduced priority means that the resource may begin loading later than it otherwise would.
 
-To avoid this problem, you can provide a hint to the browser as to which resources are most important via the <code>[fetchpriority](/priority-hints/)</code> attribute.
+Beyond avoiding patterns such as specifying `loading="lazy"` on your LCP image, you can hint to the browser as to which resources are most important via the <code>[fetchpriority](/priority-hints/)</code> attribute for resources that could benefit from a higher priority:
 
 ```html
 <img fetchpriority="high" src="/path/to/hero-image.webp">
 ```
 
-It's a good idea to set `fetchpriority="high"` on an `<img>` element if you think it's likely to be your page's LCP element—but limit this to just one or two images (based on common desktop and mobile viewport sizes), otherwise the signal becomes meaningless.
+It's a good idea to set `fetchpriority="high"` on an `<img>` element if you think it's likely to be your page's LCP element—but limit this to just one or two images (based on common desktop and mobile viewport sizes), otherwise the signal becomes meaningless. You can also lower the priority of images that may be early in the document response, but isn't visible due to styling, such as images in carousel slides that are not visible at startup:
+
+```html
+<img fetchpriority="low" src="/path/to/carousel-slide-3.webp">
+```
+
+Deprioritizing certain resources can afford more bandwidth to resources that need it more—but be careful. Always check resource priority in DevTools and test changes with lab and field tools.
 
 {% Aside 'warning' %}
-Never lazy-load your LCP image, as that will always lead to unnecessary resource load delay and will usually have a negative impact on LCP.
+Never lazy-load your LCP image, as that will always lead to unnecessary resource load delay, and will have a negative impact on LCP.
 {% endAside %}
 
 After you have optimized your LCP resource priority and discovery time, your network waterfall should look like this (with the LCP resource starting at the same time as the first resource):
@@ -417,7 +424,7 @@ new PerformanceObserver((list) => {
 
   // Clear previous measures before making new ones.
   // Note: due to a bug this does not work in Chrome DevTools.
-  LCP_SUB_PARTS.forEach(performance.clearMeasures);
+  LCP_SUB_PARTS.forEach((part) => performance.clearMeasures(part));
 
   // Create measures for each LCP sub-part for easier
   // visualization in the Chrome DevTools Performance panel.
@@ -442,7 +449,7 @@ new PerformanceObserver((list) => {
 
   // Log helpful debug information to the console.
   console.log('LCP value: ', lcpRenderTime);
-  console.log('LCP element: ', lcpEntry.element);
+  console.log('LCP element: ', lcpEntry.element, lcpEntry.url);
   console.table(
     lcpSubPartMeasures.map((measure) => ({
       'LCP sub-part': measure.name,

@@ -128,6 +128,19 @@
           "main": "bg-quaternary-box-bg color-quaternary-box-text"
         }
       }
+    },
+    {
+      "name": "celebration",
+      "title": "Celebration",
+      "context": {
+        "content": "Use the celebration aside to celebrate events like a cross-browser launch.",
+        "type": "celebration",
+        "title": "Celebration",
+        "icon": "celebration.svg",
+        "utilities": {
+          "main": "bg-state-good-bg color-state-good-text"
+        }
+      }
     }
   ]
 }

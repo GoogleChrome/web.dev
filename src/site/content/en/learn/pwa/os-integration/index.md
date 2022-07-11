@@ -175,7 +175,7 @@ You request the share action by calling [`navigator.share(objectToShare)`](https
 
 It's currently available on Android with WebAPK and ChromeOS, and it works only after the user has installed your PWA. The browser registers the share target within the operating system when the app is installed.
 
-You set up web share target in the manifest with the `share_target` member defined in the [Web Share Target draft spec](https://w3c.github.io/web-share-target/).`share_target` is set to an object with some properties:
+You set up web share target in the manifest with the `share_target` member defined in the [Web Share Target draft spec](https://w3c.github.io/web-share-target/). `share_target` is set to an object with some properties:
 
 `action`
 : URL that will be loaded in a PWA window that is expected to receive the shared data.

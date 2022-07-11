@@ -63,7 +63,7 @@ joemarini:
     en: Joe Marini
   description:
     en: Chrome Developer Advocate at Google
-    
+
 loreenalee:
   title:
     en: Loreena Lee
@@ -129,7 +129,7 @@ gskinnerdotcom:
     en: Sean Middleditch
   description:
     en: Agency
-    
+
 seanmiddleditch:
   title:
     en: Sean Middleditch
@@ -1161,6 +1161,25 @@ philipwalton:
     pt: Engenheiro na empresa Google trabalhando na plataforma web
     ru: Инженер в компании Google, участвующий в разработке веб-платформы
     zh: 研究网络平台的 Google 工程师
+
+tunetheweb:
+  title:
+    en: Barry Pollard
+    es: Barry Pollard
+    ja: Barry Pollard
+    ko: Barry Pollard
+    pt: Barry Pollard
+    ru: Barry Pollard
+    zh: Barry Pollard
+  description:
+    en: Web Performance Developer Advocate for Google
+    es: Rendimiento web aesarrollador partidario para Google
+    ja: Google を対象とした Developer Advocate
+    ko: Google의 개발자 애드버킷
+    pt: Developer Advocate para o Google
+    ru: Developer Advocate по вопросам Google
+    zh: 负责 Google 的开发技术推广工程师
+
 
 ekharvey:
   title:
@@ -4203,3 +4222,33 @@ alexeyrodionov:
   description:
     en: PWA developer. UI/UX engineer. Web platform advocate. PWA, Web Components, GraphQL evangelist. PWA Russian-speaking community organizer. Chromium contributor. Lead front-end developer at Mercury Development.
     ru: Разработчик PWA. UI/UX-инженер. Адвокат веб-платформы. Евангелист PWA, Web Components, GraphQL. Организатор русскоязычного сообщества PWA. Контрибьютор Chromium. Ведущий фронтенд-разработчик в Mercury Development.
+
+twifkak:
+  title:
+    en: Devin Mullins
+  description:
+    en: Software engineer at Google, signed exchanges integration lead in Search
+
+steveworkman:
+  title:
+    en: steveworkman
+  description:
+    en: Lead Engineer at Maersk.com
+
+bramus:
+  title:
+    en: Bramus
+    es: Bramus
+    ja: Bramus
+    ko: Bramus
+    pt: Bramus
+    ru: Bramus
+    zh: Bramus
+  description:
+    en: Developer Advocate for CSS, UI, and DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师

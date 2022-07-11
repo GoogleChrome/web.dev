@@ -30,7 +30,7 @@ but this allows the browser to update its interface as soon as the page is loadi
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/kN9Un2PoYIKdVzH9I2Ac.png", alt="Resilient Web Design dot com.", width="800", height="520" %}
 {% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/b8AUE0DLJX5uLhJH9kaE.png", alt="The Session dot org.", width="800", height="520" %}
  <figcaption>
-   Three websites viewed in the Safari browser. Each one has its own theme color that extends into the browser interface. 
+   Three websites are viewed in the Safari browser. Each one has its own theme color that extends into the browser interface. 
  </figcaption>
 </figure>
 

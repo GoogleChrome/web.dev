@@ -130,7 +130,7 @@ try {
 ### The copy event
 
 In the case where a user initiates a clipboard copy
-and does _not_ call `preventDefault(), the
+and does _not_ call `preventDefault()`, the
 [`copy` event](https://developer.mozilla.org/docs/Web/API/Document/copy_event)
 includes a `clipboardData` property with the items already in the right format.
 If you want to implement your own logic, you need to call `preventDefault()` to
