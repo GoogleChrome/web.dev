@@ -2,10 +2,8 @@
 layout: pattern
 title: How to copy text
 subhead: Learn how to copy text to the clipboard.
-authors:
-  - joemedley
 description: Learn how to copy text to the clipboard.
-date: 2022-05-13
+date: 2022-07-11
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 height: 800

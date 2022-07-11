@@ -104,8 +104,8 @@ patternId: advanced-apps/share
         }
         const shareURL = new URL('https://twitter.com/intent/tweet');
         const params = new URLSearchParams();
-        params.append('text', text);
-        params.append('url', url);
+        params.append('text', encodeURIComponent(text));
+        params.append('url', encodeURIComponent(url));
         shareURL.search = params;
         window.open(shareURL, '_blank', 'popup,noreferrer,noopener');
       });
