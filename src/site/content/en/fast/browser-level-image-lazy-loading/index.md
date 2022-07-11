@@ -311,7 +311,7 @@ it out in an older browser to see the fallback in action.
 
 ### Is lazy-loading for iframes also supported in Chrome?
 
-`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. See [this dedicated article about iframe lazy-loading](https://web.dev/iframe-lazy-loading/) for more information.
+`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. See [this dedicated article about iframe lazy-loading](./iframe-lazy-loading/) for more information.
 
 The `loading` attribute affects iframes differently than images, depending on whether the iframe is
 hidden. (Hidden iframes are often used for analytics or communication purposes.) Chrome uses the
