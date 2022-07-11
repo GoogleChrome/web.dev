@@ -6,8 +6,9 @@ authors:
   - houssein
   - addyosmani
   - mathiasbynens
+  - tunetheweb
 date: 2019-08-06
-updated: 2022-06-16
+updated: 2022-07-11
 hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
@@ -35,9 +36,9 @@ without the need to write custom lazy-loading code or use a separate JavaScript 
 
 ## Browser compatibility
 
-`<img loading=lazy>` is supported by most popular Chromium-powered browsers (Chrome, Edge, Opera)
-and [Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/75#HTML).
-The implementation for WebKit (Safari) [is in progress](https://bugs.webkit.org/show_bug.cgi?id=200764).
+`<img loading=lazy>` is supported by most popular Chromium-powered browsers (Chrome, Edge, Opera),
+[Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/75#HTML) and
+[WebKit (Safari)](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes#HTML)
 [caniuse.com](https://caniuse.com/#feat=loading-lazy-attr) has detailed information on cross-browser
 support. Browsers that do not support the `loading` attribute simply ignore it without side-effects.
 
@@ -48,7 +49,7 @@ requested asset type for most websites and usually take up more bandwidth than a
 resource. At the 90th percentile, sites send about 4.7 MB of images on desktop and mobile. That's a
 lot of [cat pictures](https://en.wikipedia.org/wiki/Cats_and_the_Internet).
 
-Currently, there are two ways to defer the loading of off-screen images:
+Previously, there were two ways to defer the loading of off-screen images:
 
 - Using the [Intersection Observer
   API](https://developer.chrome.com/blog/intersectionobserver/)
@@ -67,7 +68,7 @@ Today, Chrome already loads images at different priorities depending on where th
 respect to the device viewport. Images below the viewport are loaded with a lower priority, but they're
 still fetched as soon as possible.
 
-In Chrome 76+, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
+From Chrome 76+, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
@@ -75,14 +76,22 @@ In Chrome 76+, you can use the `loading` attribute to completely defer the loadi
 
 Here are the supported values for the `loading` attribute:
 
-- `auto`: Default lazy-loading behavior of the browser, which is the same as not
-  including the attribute.
 - `lazy`: Defer loading of the resource until it reaches a [calculated distance](#distance-from-viewport-thresholds) from the viewport.
-- `eager`: Load the resource immediately, regardless of where it's located on the page.
+- `eager`: Default loading behavior of the browser, which is the same as not including the attribute and means the image is loaded as soon as possible, regardless of where it's located on the page. While this is the default, it can be useful to explicitly set this if your tooling automatically adds `loading="lazy"` without being explicit, or if your linter complains if it is not set.
 
 {% Aside 'caution' %}
-  Although available in Chromium, the `auto` value is not mentioned in the [specification](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes). Since it may be subject to change, we recommend not to use it until it gets included.
+  Images that are highly likely to be in-viewport, and in particular [LCP](./lcp) images, [should not be lazy-loaded](./#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport).
 {% endAside %}
+
+### Relationship between the `loading` attribute and fetch priority
+
+The `eager` value is simply an instruction to load the image as usual, without delaying the load further if it is off-screen. It does not imply that the image is loaded any quicker than another image without the `loading="eager"` attribute.
+
+Browsers prioritise resources based on various heuristics, and the `loading` attribute just states _when_ the image resource is queued, not _how_ it is prioritised in that queue. `eager` just implies the usual eager queueing browsers use by default.
+
+If you want to increase the fetch priority of an important image (for example the LCP image), then [Priority Hints](/priority-hints/) should be used with `fetchpriority="high"`.
+
+Note that an image with `loading="lazy"` and `fetchpriority="high"` will still be delayed while it is off-screen, and then fetched with a high priority when it is nearly within the viewport. It would likely be fetched with a high priority in this case anyway, so this combination should not really be needed nor used.
 
 ### Distance-from-viewport thresholds
 
@@ -100,8 +109,6 @@ Experiments conducted using Chrome on Android suggest that on 4G, 97.5% of below
 The distance threshold is not fixed and varies depending on several factors:
 
 - The type of image resource being fetched
-- Whether [Lite mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled
-  on Chrome for Android
 - The [effective connection type](https://googlechrome.github.io/samples/network-information/)
 
 You can find the default values for the different effective connection types in the [Chromium
@@ -188,13 +195,9 @@ attribute only needs to be included to the fallback `<img>` element.
 
 ## Avoid lazy-loading images that are in the first visible viewport
 
-You should avoid setting `loading=lazy` for any images that are in the first visible viewport.
+You should avoid setting `loading=lazy` for any images that are in the first visible viewport. This is particularly relevant for LCP images. See the article [The performance effects of too much lazy-loading](./lcp-lazy-loading/) for more information.
 
-It is recommended to only add `loading=lazy` to images which are positioned below the fold, if possible. Images that are eagerly loaded can be fetched right away, while images which are loaded lazily the browser currently needs to wait until it knows where the image is positioned on the page, which relies on the IntersectionObserver to be available.
-
-{% Aside %}
-  In Chromium, the impact of images in the initial viewport being marked with `loading=lazy` on Largest Contentful Paint is fairly small, with a regression of <1% at the 75th and 99th percentiles compared to eagerly loaded images.
-{% endAside %}
+It is recommended to only add `loading=lazy` to images which are positioned below the fold, if possible. Images that are eagerly loaded can be fetched right away, while images which are loaded lazily the browser currently needs to wait until it knows where the image is positioned on the page, which relies on the `IntersectionObserver` to be available.
 
 Generally, any images within the viewport should be loaded eagerly using the browser's defaults. You do not need to specify `loading=eager` for this to be the case for in-viewport images.
 
@@ -218,9 +221,7 @@ Browsers that do not yet support the `loading` attribute will ignore its presenc
 
 ### Are there plans to automatically lazy-load images in Chrome?
 
-Chromium already automatically
-lazy-loads any images that are well suited to being deferred if [Lite
-mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled on Chrome for Android. This is primarily aimed at users who are conscious about data-savings.
+Previously, Chromium automatically lazy-loaded any images that were well suited to being deferred if [Lite mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) was enabled on Chrome for Android. However, [Lite mode has been deprecated](https://support.google.com/chrome/thread/151853370/sunsetting-chrome-lite-mode-in-m100-and-older?hl=en) and there are currently no plans to provide automatically lazy-load of images in Chrome.
 
 ### Can I change how close an image needs to be before a load is triggered?
 
@@ -233,7 +234,7 @@ No, it can currently only be used with `<img>` tags.
 
 ### Is there a downside to lazy-loading images that are within the device viewport?
 
-It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner.
+It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner. See the [Avoid lazy-loading images that are in the first visible viewport](#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport) for more information.
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
@@ -251,9 +252,7 @@ there are a few important things to consider:
    they are still deferred and load based on normal browser behavior.
 2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image than the browser, then the behavior would conform to your custom settings.
 
-One of the important reasons to continue to use a third-party library along with `loading="lazy"` is
-to provide a polyfill for browsers that do not yet support the attribute.
-
+One reason to continue to use a third-party library along with `loading="lazy"` is to provide a polyfill for browsers that do not yet support the attribute, or to have more control over when lazy loading is triggered.
 
 ### How do I handle browsers that don't yet support lazy-loading?
 
@@ -303,7 +302,7 @@ library only when `loading` isn't supported. This works as follows:
 ```
 
 Here's a [demo](https://lazy-loading.firebaseapp.com/lazy_loading_lib.html) of this pattern. Try
-it out in a browser like Firefox or Safari to see the fallback in action.
+it out in an older browser to see the fallback in action.
 
 {% Aside %}
   The lazysizes library also provides a [loading plugin](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/native-loading)
@@ -312,7 +311,7 @@ it out in a browser like Firefox or Safari to see the fallback in action.
 
 ### Is lazy-loading for iframes also supported in Chrome?
 
-`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. A dedicated article about iframe lazy-loading will be published on web.dev shortly.
+`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. See [this dedicated article about iframe lazy-loading](https://web.dev/iframe-lazy-loading/) for more information.
 
 The `loading` attribute affects iframes differently than images, depending on whether the iframe is
 hidden. (Hidden iframes are often used for analytics or communication purposes.) Chrome uses the
