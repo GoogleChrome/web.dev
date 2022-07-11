@@ -31,7 +31,7 @@ web developers, it's probably not a good fit for web.dev.
 ### The content is about techniques or APIs that are available cross-browser {: #support }
 
 If the content is about an API in origin trial, or only available in Chrome, it is likely that 
-[developer.chrome.com](https://developer.chrome.com) is the better location.
+[developer.chrome.com](https://developer.chrome.com/) is the better location.
 
 ### The guidance is usable {: #usable }
 
@@ -314,6 +314,8 @@ If a solid polyfill is available to complete support in all three engines,
 include details along with the BrowserCompat component.
 
 If the post refers to a number of APIs, or CSS properties, add the component for those features near the first mention of them.
+
+If the post mentions an API that is supported by all major modern browser engines without a polyfill, include the BrowserCompat component to clearly communicate that fact.
 
 Example: [New to the web platform in May](/web-platform-05-2022/).
 
