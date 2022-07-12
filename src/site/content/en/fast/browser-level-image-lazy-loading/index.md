@@ -217,7 +217,7 @@ Browsers that do not yet support the `loading` attribute will ignore its presenc
 
 ### Are there plans to automatically lazy-load images in Chrome?
 
-Previously, Chromium automatically lazy-loaded any images that were well suited to being deferred if [Lite mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) was enabled on Chrome for Android. However, [Lite mode has been deprecated](https://support.google.com/chrome/thread/151853370/sunsetting-chrome-lite-mode-in-m100-and-older?hl=en) and there are currently no plans to provide automatically lazy-load of images in Chrome.
+Previously, Chromium automatically lazy-loaded any images that were well suited to being deferred if [Lite mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) was enabled on Chrome for Android and the `loading` attribute was either not provided or set as `loading="auto"`. However, [Lite mode has been deprecated](https://support.google.com/chrome/thread/151853370/sunsetting-chrome-lite-mode-in-m100-and-older?hl=en) (as was the non-standard `loading="auto"`) and there are currently no plans to provide automatically lazy-load of images in Chrome.
 
 ### Can I change how close an image needs to be before a load is triggered?
 
