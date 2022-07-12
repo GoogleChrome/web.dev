@@ -118,7 +118,7 @@
         {% StackOverflow stack_overflow_tag %}
       {% endif %}
 
-      <div class="cluster gutter-base flow-space-size-2" role="list" aria-label="tags">
+      <div class="cluster gutter-base flow-space-size-2" aria-label="tags">
         {% for tagKey in tags or [] %}
           {% if tagKey in collections.tags %}
             {% set tag = collections.tags[tagKey] %}
