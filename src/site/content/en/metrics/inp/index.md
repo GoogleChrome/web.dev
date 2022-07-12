@@ -26,13 +26,13 @@ The goal of INP is to ensure the time from when a user initiates an interaction 
 In the following video, the example on the right gives immediate visual feedback that an accordion is opening. It also demonstrates how poor responsiveness can cause multiple unintended responses to input because the user thinks the experience is broken.
 
 <style>
-  video.responsiveness-video {
+  #responsiveness-video {
     height: auto;
     aspect-ratio: 1445 / 370;
   }
 </style>
 <figure>
-  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WSmcjiQC4lyLxGoES4dd.mp4", autoplay="true", loop="true", muted="true", playsinline="true", width="1445", height="370", class="responsiveness-video" %}
+  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WSmcjiQC4lyLxGoES4dd.mp4", autoplay="true", loop="true", muted="true", playsinline="true", width="1445", height="370", id="responsiveness-video" %}
   <figcaption>
     An example of poor versus good responsiveness. At left, long tasks block the accordion from opening. This causes the user to click multiple times, thinking the experience is broken. When the main thread catches up, it processes the delayed inputs, resulting in the accordion opening and closing unexpectedly.
   </figcaption>
@@ -129,7 +129,7 @@ INP is calculated when the user leaves the page, resulting in a single value tha
 
 ## How is INP different from First Input Delay (FID)?
 
-Where INP samples _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the first interaction's _input delay_, not the time it takes to run event handlers, or the delay in presenting the next frame.
+Where INP considers _all_ page interactions, [First Input Delay (FID)](/fid/) only accounts for the _first_ interaction. It also only measures the first interaction's _input delay_, not the time it takes to run event handlers, or the delay in presenting the next frame.
 
 Given that FID is also a [load responsiveness metric](/user-centric-performance-metrics/#types-of-metrics), the rationale behind it is that if the first interaction made with a page in the loading phase has little to no perceptible input delay, the page has made a good first impression.
 
@@ -225,4 +225,4 @@ Because INP is calculated from inputs sampled during the entire page lifecycle, 
 
 ## CHANGELOG
 
-No changes have occurred to this metric since it has shipped. If changes occur, they will be noted in this CHANGELOG. If you have feedback for this metric, you can provide it in the [web-vitals-feedback Google group](https://groups.google.com/g/web-vitals-feedback).
+No changes have occurred to this metric since it has shipped. If changes occur, they will be noted in this [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog). If you have feedback for this metric, you can provide it in the [web-vitals-feedback Google group](https://groups.google.com/g/web-vitals-feedback).
