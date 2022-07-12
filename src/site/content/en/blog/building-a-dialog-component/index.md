@@ -665,7 +665,7 @@ will be custom presentation styles:
 
 ```css
 dialog > form > article {
-  overflow-y: scroll; 
+  overflow-y: auto; 
   max-block-size: 100%; /* safari */
   overscroll-behavior-y: contain;
   display: grid;

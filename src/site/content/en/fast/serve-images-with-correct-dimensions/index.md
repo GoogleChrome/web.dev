@@ -66,8 +66,10 @@ displayed at.
 
 ### The "Better" approach
 
-For images with sizing based on…
-- **Absolute units:** Use [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/serve-responsive-images).)
+For images with both absolute and relative sizing, use [`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset)
+and [`sizes`](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes)
+attributes to serve different images to different display densities.
+Read the [guide on responsive images](/serve-responsive-images).
 
 "Display density" refers to the fact that different displays have different
 densities of pixels. All other things being equal, a high pixel density
@@ -85,9 +87,6 @@ does not.
 Responsive image techniques make this possible by allowing you to list
 multiple image versions and for the device to choose the image that works
 best for it.
-
-- **Relative units:** Use responsive images to serve different images to display sizes. (Read
-the guide [here](/serve-responsive-images).)
 
 An image that works across all devices will be unnecessarily large for
 smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset")
