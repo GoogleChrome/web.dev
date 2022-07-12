@@ -251,7 +251,7 @@ the [demo above](#demo), where you try to stream some data without closing the
 stream. If the server receives the data, it can respond via a different fetch.
 Once this happens, you know the client supports streaming requests end-to-end.
 
-### Feature detection
+## Feature detection
 
 ```js
 const supportsRequestStreams = (() => {
