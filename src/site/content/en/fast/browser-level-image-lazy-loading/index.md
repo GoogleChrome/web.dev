@@ -80,7 +80,7 @@ Here are the supported values for the `loading` attribute:
 - `eager`: Default loading behavior of the browser, which is the same as not including the attribute and means the image is loaded as soon as possible, regardless of where it's located on the page. While this is the default, it can be useful to explicitly set this if your tooling automatically adds `loading="lazy"` if there is no explicit value, or if your linter complains if it is not explicitly set.
 
 {% Aside 'caution' %}
-  Images that are highly likely to be in-viewport, and in particular [LCP](./lcp) images, [should not be lazy-loaded](./#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport).
+  Images that are highly likely to be in-viewport, and in particular [LCP](/lcp/) images, [should not be lazy-loaded](#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport).
 {% endAside %}
 
 ### Relationship between the `loading` attribute and fetch priority
@@ -195,7 +195,7 @@ attribute only needs to be included to the fallback `<img>` element.
 
 ## Avoid lazy-loading images that are in the first visible viewport
 
-You should avoid setting `loading=lazy` for any images that are in the first visible viewport. This is particularly relevant for LCP images. See the article [The performance effects of too much lazy-loading](./lcp-lazy-loading/) for more information.
+You should avoid setting `loading=lazy` for any images that are in the first visible viewport. This is particularly relevant for LCP images. See the article [The performance effects of too much lazy-loading](/lcp-lazy-loading/) for more information.
 
 It is recommended to only add `loading=lazy` to images which are positioned below the fold, if possible. Images that are eagerly loaded can be fetched right away, while images which are loaded lazily the browser currently needs to wait until it knows where the image is positioned on the page, which relies on the `IntersectionObserver` to be available.
 
@@ -234,7 +234,7 @@ No, it can currently only be used with `<img>` tags.
 
 ### Is there a downside to lazy-loading images that are within the device viewport?
 
-It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner. See the [Avoid lazy-loading images that are in the first visible viewport](#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport) for more information.
+It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner. See [Avoid lazy-loading images that are in the first visible viewport](#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport) for more information.
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
@@ -305,7 +305,7 @@ it out in an older browser to see the fallback in action.
 
 ### Is lazy-loading for iframes also supported in Chrome?
 
-`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. See [this dedicated article about iframe lazy-loading](./iframe-lazy-loading/) for more information.
+`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. See [this dedicated article about iframe lazy-loading](/iframe-lazy-loading/) for more information.
 
 The `loading` attribute affects iframes differently than images, depending on whether the iframe is
 hidden. (Hidden iframes are often used for analytics or communication purposes.) Chrome uses the
