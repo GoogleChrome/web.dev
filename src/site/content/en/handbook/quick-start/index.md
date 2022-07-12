@@ -51,13 +51,12 @@ Your content will be edited and reviewed in Google docs, this will include:
 1. Make no changes to the approved copy when creating your PR. 
 1. Check out the [web.dev markup section](/handbook/#web.dev-markup) to learn how to make your markdown squeaky clean.
    In particular, check out the [web.dev components](/handbook/web-dev-components/) or 
-   [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/) guide
+   [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/) guide to discover UI elements that can make your content more engaging or aesthetically pleasing.
+1. Once your PR is merged, the content will be deployed to the site immediately, and appear live after around an hour.
 
 {% Aside 'warning' %}
 Following step 2 is very important, as changes to approved copy while a PR is in progress will result in the PR being closed until the copy is finalized.
 {% endAside %}
-   to discover UI elements that can make your content more engaging or aesthetically pleasing.
-1. Once your PR is merged, the content will be deployed to the site immediately, and appear live after around an hour.
 
 ## Organizing content
 
