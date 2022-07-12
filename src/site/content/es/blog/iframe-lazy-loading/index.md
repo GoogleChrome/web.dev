@@ -5,6 +5,7 @@ subhead: "¡Llegó la carga diferida incorporada al navegador para iframes!"
 authors:
   - addyosmani
 date: 2020-07-24
+updated: 2022-07-12
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Esquema del teléfono con carga de imagen y recursos
 description: Esta publicación cubre el atributo loading y cómo se puede utilizar para controlar la carga de los iframes.

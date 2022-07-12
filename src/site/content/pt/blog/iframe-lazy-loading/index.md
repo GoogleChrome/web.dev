@@ -5,6 +5,7 @@ subhead: O carregamento lazy integrado no navegador para iframes já chegou
 authors:
   - addyosmani
 date: 2020-07-24
+updated: 2022-07-12
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: Contorno de telefone com carregamento de imagem e recursos
 description: Este artigo trata o atributo loading e como ele pode ser usado para controlar o carregamento de iframes.

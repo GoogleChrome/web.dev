@@ -5,6 +5,7 @@ subhead: iframe用のブラウザレベルのビルトイン遅延読み込み�
 authors:
   - addyosmani
 date: 2020-07-24
+updated: 2022-07-12
 hero: image/admin/dMCW2Qqi5Qp2DB3w4DyE.png
 alt: 画像とアセットを読み込んでいるスマートフォンのアウトライン
 description: この投稿では、loading属性と、それを使用してiframeの読み込みを制御する方法について説明します。
