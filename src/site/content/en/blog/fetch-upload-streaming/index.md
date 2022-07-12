@@ -290,7 +290,7 @@ Safari _does_ support streams in request objects, but _doesn't_ allow them to be
 used with `fetch`, so the `duplex` option is tested, which Safari doesn't
 currently support.
 
-### Writable streams
+## Using with writable streams
 
 Sometimes it's easier to work with streams when you have a `WritableStream`. You
 can do this using an 'identity' stream, which is a readable/writable pair that
