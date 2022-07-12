@@ -1,0 +1,122 @@
+---
+layout: default-next
+---
+{% from 'macros/tag-pills.njk' import tagPills with context %}
+
+<style>
+
+
+
+</style>
+
+<div class="landing-page spaces">
+
+  <header>
+    <div class="hero wrapper">
+      <div class="hero__columns switcher">
+        <div>
+          <div class="flow">
+              <h1 class="text-size-6">Title Goes Here</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="flow">
+          {% Img src="image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/Rm7d6KWe3gabmU9IqZeq.png", alt="Globe", width="800", height="650" %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% set spaces = collections['twitter-space'] %}
+<div class="spaces wrapper region all-center">
+  <h2 class="text-size-4  gap-bottom-size-2">Upcoming spaces</h2>
+  <div class="auto-grid">
+
+  {% for space in spaces %}
+
+    {% if space | isUpcoming('event_date') %}
+      <article class="card flow">
+        <div class="card__header">
+          <div class="avatars">
+          {% for host in space.data.hosts %}
+            <img class="avatar" src="{{ host.image }}" alt="alt" decoding="async" height="40" loading="lazy" width="40">
+          {% endfor %}
+          </div>
+        </div>
+        <div class="card__content flow">
+          <h2 class="card__heading text-size-3">
+            {{ space.data.title }}
+          </h2>
+          <ul class="hosts">
+            {% for host in space.data.hosts %}
+              <li>
+                  {{ host.name }}
+                {% if host.host %} <span class="pill">HOST</span> {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
+          <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
+        </div>
+        {% if space.tags %}
+          <div class="card__tags cluster gap-top-base" aria-label="tags for this post">
+            {{ tagPills(space.tags) }}
+          </div>
+        {% endif %}
+        <a class="button" href="{{ space.data.twitter_link }}">
+          {% include "icons/calendar.svg" %}
+          <span>add to calendar</span>
+        </a>
+      </article>
+    {% endif %}
+  {% endfor %}
+
+  </div>
+</div>
+
+<div class="spaces spaces--past wrapper region all-center">
+  <h2 class="text-size-4  gap-bottom-size-2">Past spaces</h2>
+  <table>
+    {% for space in spaces %}
+      {% if not space | isUpcoming('event_date') %}
+        <tr>
+          <td class="eyebrow all-center">
+            <p>
+              {{ space.data.event_date | prettyDate('') }}
+            </p>
+          </td>
+          <td class="pad-block-size-1 pad-inline-size-1">
+            <div class="avatars">
+              {% for host in space.data.hosts %}
+                <img class="avatar" src="{{ host.image }}" alt="alt" decoding="async" height="40" loading="lazy" width="40">
+              {% endfor %}
+            </div>
+            <p class="gap-top-size-1 eyebrow sm-only">
+              {{ space.data.event_date | prettyDate('DATE_SHORTER') }}
+            </p>
+          </td>
+          <td class="flow pad-block-size-1">
+            <h2 class="text-size-2">
+              {{ space.data.title }}
+            </h2>
+            <p>
+              {% for host in space.data.hosts %}
+                <span class="host">{{ host.name }} {% if host.host %} <span class="pill">HOST</span> {% endif %}</span>
+              {% endfor %}
+            <details class="ellipsis">
+              <summary><span>{{ space.data.description }}</span><span>see more</span></summary>
+            </details>
+            {# <p class="ellipsis">
+              <span>{{ space.data.description }}</span><span>see more</span>
+            </p> #}
+            <p><audio src="{{ space.data.audio }}" class="audio-player__element" controls="" id="audio-player"></audio></p>
+          </td>
+        </tr>
+      {% endif %}
+
+    {% endfor %}
+    </table>
+</div>
+
+</div>
+
