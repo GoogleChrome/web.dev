@@ -116,7 +116,7 @@ As far as INP goes, **only the following interaction types are observed:**
 - Tapping on a device with a touchscreen.
 - Pressing a key on either a physical or onscreen keyboard.
 
-Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The group of events with the longest duration is chosen as the interaction's latency.
+Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vNosnKDYgBRnFmEvwm0c.svg", alt="A depiction of more complex interaction containing two interactions. The first is a mousedown event, which produces a frame before the mouse button is let up, which kicks off more work until yet another frame is presented as the result.", width="736", height="164.37333333333" %}
