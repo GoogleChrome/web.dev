@@ -69,9 +69,10 @@ const canonical = document.querySelector('link[rel="canonical"]');
 
 // Find out if the user is on a device made by Apple.
 const IS_MAC = /Mac|iPhone/.test(navigator.platform);
-
-// For Apple devices, use the platform-specific share icon.
-icon.classList.add(`share${IS_MAC? 'mac' : ''}`);
+// Find out if the user is on a Windows device.
+const IS_WINDOWS = /Win/.test(navigator.platform);
+// For Apple devices or Windows, use the platform-specific share icon.
+icon.classList.add(`share${IS_MAC? 'mac' : (IS_WINDOWS? 'windows' : '')}`);
 
 button.addEventListener('click', async () => {
   // Title and text are identical, since the title may actually be ignored.
