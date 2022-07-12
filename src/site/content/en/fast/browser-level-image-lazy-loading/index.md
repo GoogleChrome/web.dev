@@ -37,7 +37,7 @@ without the need to write custom lazy-loading code or use a separate JavaScript 
 ## Browser compatibility
 
 `<img loading=lazy>` is supported by most popular Chromium-powered browsers (Chrome, Edge, Opera),
-[Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/75#HTML) and
+[Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/75#HTML), and
 [WebKit (Safari)](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes#HTML)
 [caniuse.com](https://caniuse.com/#feat=loading-lazy-attr) has detailed information on cross-browser
 support. Browsers that do not support the `loading` attribute simply ignore it without side-effects.
