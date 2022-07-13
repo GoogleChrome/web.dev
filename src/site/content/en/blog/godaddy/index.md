@@ -33,15 +33,15 @@ Because the millions of sites we host on our platform have a wide range of featu
 For instance, this helped us identify that the "popup modal" was having a negative impact on page speed; sites with the feature performed 12 points lower than without. After making updates to the code to defer loading of JavaScript, we improved our Lighthouse score by 2 points. We were able to apply this learning to other features such as the "cookie banner" that renders soon after page load. 
 
 <figure>
-**TODO: PLACE FIGURE**
-<figcaption>Chart representing performance score for sites with and without a "pop up modal" (blue and green lines respectively). </figcaption>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pmoSmUIy1fYtxHOdBWvs.png", alt="A chart depicting Lighthouse scores for sites with and without a pop-up modal. The sites without a pop-up modal are consistently faster.", width="800", height="466" %}
+  <figcaption>Chart showing performance score for sites with and without a "pop up modal"  (blue and green lines respectively) before and after performance improvement.</figcaption>
 </figure>
 
-Beyond looking at problematic sites based on features, we conducted an analysis of our JS bundle and realized that a large portion of our common JS bundle size came from external dependencies (immutable.js and draft.js). We were able to remove this weight by restructuring consumers to lazy load dependencies on demand. This exercise yielded over a 50% drop in common JS bundle size (minified ~200+kb to currently ~90kb). The smaller bundle size allowed the browser to load external assets and execute critical scripts earlier in the initial site loading lifecycle, leading to gains in [Largest Contentful Paint (LCP)](/lcp/) and [First Input Delay (FID)](/fid/).
+Beyond looking at problematic sites based on features, we conducted an analysis of our JS bundle and realized that a large portion of our common JS bundle size came from external dependencies (immutable.js and draft.js). We were able to remove this weight by restructuring consumers to lazy load dependencies on demand. This exercise yielded over a 50% drop in common JS bundle size (minified ~200+ kb to currently ~90 kb). The smaller bundle size allowed the browser to load external assets and execute critical scripts earlier in the initial site loading lifecycle, leading to gains in [Largest Contentful Paint (LCP)](/lcp/) and [First Input Delay (FID)](/fid/).
 
 <figure>
-**TODO: PLACE FIGURE**
-<figcaption>Average Lighthouse score for newly published sites over time. Major optimizations are overlaid on the graph to show impact.</figcaption>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/HCEA1M9s2S3xOOZFFoCc.jpg", alt="A chart showing average Lighthouse scores over time. The average score improves after events such as reducing the JavaScript bundle, deferring JavaScript components, and image optimizations.", width="800", height="831" %}
+  <figcaption>Average Lighthouse score for newly published sites over time. Major optimizations are overlaid on the graph to show impact.</figcaption>
 </figure>
 
 Thanks to our continued efforts, the average customer site Lighthouse score moved from around 40 pts in Nov 2020 to above 70 pts in May 2021. However, not all our attempts worked and we were sometimes surprised when the results were not always consistent between what was tested in local/test environments and the results we got in the field. Lab results had been really helpful, but it was time to focus on real user experiences observed in the field.
@@ -81,15 +81,15 @@ When building their sites, customers add various sections which might have inlin
 Focusing our effort on CLS paid off, our Core Web Vitals pass rate went from \~40% to almost 70%: an improvement of 75%!
 
 <figure>
-**TODO: PLACE FIGURE**
-<figcaption>Percentage of live Website+Marketing websites with "passing Core Web Vitals" over time (overall & sub-metric)</figcaption>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/6hnztHWgtUPHI6fwPqq6.jpg", alt="A chart depicting Core Web Vitals over time. All Core Web Vitals (except for FID) consistently improve over time.", width="800", height="660" %}
+  <figcaption>Percentage of live Website+Marketing websites with "passing Core Web Vitals" over time (overall and sub-metric).</figcaption>
 </figure>
 
 As users come back to our platform to make updates and republish their sites, they get the latest performance improvements and as a result the number of sites with "passing Core Web Vitals" has been steadily growing as the next chart can attest:
 
 <figure>
-**TODO: PLACE FIGURE**
-<figcaption>Chart representing GoDaddy Website Builder sites with "good Core Web Vitals". Source: <a href="https://datastudio.google.com/s/jo34JdqzrRU" rel="noopener">Google Data Studio</a></figcaption>
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/TYq98NlFCurWFDjfWpsN.png", alt="A chart depicting Good Core Web Vitals over time segmented into mobile and desktop segments. The trend improves over time.", width="800", height="360" %}
+  <figcaption>Chart representing GoDaddy Website Builder sites with "good Core Web Vitals". Source: <a href="https://datastudio.google.com/s/jo34JdqzrRU" rel="noopener">Google Data Studio</a></figcaption>
 </figure>
 
 ## Conclusions
