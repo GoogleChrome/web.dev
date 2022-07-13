@@ -55,7 +55,7 @@ Finally, Farfetch established time-based [performance budgets](/performance-budg
 
 With performance data now available in Farfetch's internal business intelligence datasets, the analytics team started exploring mathematical models and patterns in the data that could indicate a correlation between performance metrics and business KPIs (for example, conversion rate and percentage of single-page visits), allowing a new view of the financial impact of site speed and UX for the business. This enabled performance to be discussed in a common language with the business decision makers. The analysis included all Core Web Vitals and the other metrics Farfetch defined and revealed truly impactful insights.
 
-Farfetch web conversion rate would increase by 1.3% with each 100ms less of [Largest Contentful Paint (LCP)](/lcp/). LCP showed a very strong correlation with business metrics across all page types, but especially on mobile product pages, proving the usefulness of having the main product image loading fast.
+Farfetch web conversion rate would increase by 1.3% with each 100ms reduction in [Largest Contentful Paint (LCP)](/lcp/). LCP showed a very strong correlation with business metrics across all page types, but especially on mobile product pages, proving the usefulness of having the main product image loading fast.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/bdmOd1MUc6Wt4EUFRzUG.png", alt="A graph of LCP, where the Y-axis is conversion rate and percentage of page visits and the X-axis is LCP time. As LCP is faster, percentage of single page visits decreases, and conversion rate increases.", width="800", height="386" %}
