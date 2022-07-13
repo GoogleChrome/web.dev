@@ -47,7 +47,7 @@ On the data analytics side, Farfetch have their own multi-channel tracking solut
 - Macro and micro conversions
 - Cross channel and funnel analysis
 
-The idea was then to add the performance data of each pageview on farfetch.com, captured by JS, to this data layer. Following this model guaranteed a match between performance data and the main conversion funnel metrics for each session and the base for an analytical exploration on the topic.
+The idea was then to add the performance data of each pageview on farfetch.com, captured by JavaScript, to this data layer. Following this model guaranteed a match between performance data and the main conversion funnel metrics for each session and the base for an analytical exploration on the topic.
 
 Finally, Farfetch established time-based [performance budgets](/performance-budgets-101/) for each metric across the main journey pages and a governance process to handle budget breaches. They've also started incorporating performance metrics on CI pipelines to understand budget deviations as soon as possible in the development flow.
 
