@@ -29,7 +29,7 @@ You could use this to:
   wait until the user presses 'send' before sending the data they entered.
 - Gradually send data generated on the client, such as audio, video, or input
   data.
-- Recreate web sockets over HTTP/2.
+- Recreate web sockets over HTTP/2 or HTTP/3.
 
 But since this is a low-level web platform feature, don't be limited by _my_
 ideas. Maybe you can think of a much more exciting use-case for request
@@ -200,9 +200,9 @@ preflight.
 
 Streaming `no-cors` requests are not allowed.
 
-### HTTP/2 only
+### Doesn't work on HTTP/1.x
 
-The fetch will be rejected if the connection isn't HTTP/2.
+The fetch will be rejected if the connection is HTTP/1.x.
 
 This is because, according to HTTP/1.1 rules, request and response bodies either
 need to send a `Content-Length` header, so the other side knows how much data
@@ -214,7 +214,7 @@ Chunked encoding is pretty common when it comes to HTTP/1.1 _responses_, but
 very rare when it comes to _requests_, so it's too much of a compatibility risk.
 
 {% Aside %}
-This isn't an issue for HTTP/2, as HTTP/2 data is always 'chunked', although it
+This isn't an issue for HTTP/2 or 3, as data is always 'chunked', although it
 calls the chunks
 [frames](https://developers.google.com/web/fundamentals/performance/http2#streams_messages_and_frames).
 {% endAside %}
