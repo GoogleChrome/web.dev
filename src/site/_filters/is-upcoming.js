@@ -39,7 +39,7 @@ function isUpcoming(post, dateFieldName) {
  * @return {EleventyCollectionObject} Posts filtered by date.
  */
 function filterInUpcoming(posts, dateFieldName) {
-  return posts.filter(post => isUpcoming(post, dateFieldName));
+  return posts.filter((post) => isUpcoming(post, dateFieldName));
 }
 
 /**
@@ -47,8 +47,8 @@ function filterInUpcoming(posts, dateFieldName) {
  * @param {string} dateFieldName Name of the field containing the date.
  * @return {EleventyCollectionObject} Posts filtered by date.
  */
- function filterOutUpcoming(posts, dateFieldName) {
-  return posts.filter(post => isUpcoming(post, dateFieldName));
+function filterOutUpcoming(posts, dateFieldName) {
+  return posts.filter((post) => isUpcoming(post, dateFieldName));
 }
 
 module.exports = {isUpcoming, filterInUpcoming, filterOutUpcoming};
