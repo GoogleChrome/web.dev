@@ -16,8 +16,8 @@ layout: default-next
       <div class="hero__columns switcher">
         <div>
           <div class="flow">
-              <h1 class="text-size-6">Title Goes Here</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h1 class="text-size-6">{{ title }}</h1>
+              <p>{{ description }}</p>
           </div>
         </div>
         <div class="flow">
@@ -29,7 +29,7 @@ layout: default-next
 
 {% set spaces = collections['twitter-space'] %}
 <div class="spaces wrapper region all-center">
-  <h2 class="text-size-4  gap-bottom-size-2">Upcoming spaces</h2>
+  <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.upcoming_spaces' | i18n(locale) }}</h2>
   <div class="auto-grid">
 
   {% for space in spaces %}
@@ -51,7 +51,7 @@ layout: default-next
             {% for host in space.data.hosts %}
               <li>
                   {{ host.name }}
-                {% if host.host %} <span class="pill">HOST</span> {% endif %}
+                {% if host.host %} <span class="pill">{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
               </li>
             {% endfor %}
           </ul>
@@ -65,7 +65,7 @@ layout: default-next
         {% endif %}
         <a class="button" href="{{ space.data.twitter_link }}">
           {% include "icons/calendar.svg" %}
-          <span>add to calendar</span>
+          <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
         </a>
       </article>
     {% endif %}
@@ -75,7 +75,7 @@ layout: default-next
 </div>
 
 <div class="spaces spaces--past wrapper region all-center">
-  <h2 class="text-size-4  gap-bottom-size-2">Past spaces</h2>
+  <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.past_spaces' | i18n(locale) }}</h2>
   <table>
     {% for space in spaces %}
       {% if not space | isUpcoming('event_date') %}
@@ -101,10 +101,10 @@ layout: default-next
             </h2>
             <p>
               {% for host in space.data.hosts %}
-                <span class="host">{{ host.name }} {% if host.host %} <span class="pill">HOST</span> {% endif %}</span>
+                <span class="host">{{ host.name }} {% if host.host %} <span class="pill">{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}</span>
               {% endfor %}
             <details class="ellipsis">
-              <summary><span>{{ space.data.description }}</span><span>see more</span></summary>
+              <summary><span>{{ space.data.description }}</span><span>{{ 'i18n.spaces.see_more' | i18n(locale) }}</span></summary>
             </details>
             {# <p class="ellipsis">
               <span>{{ space.data.description }}</span><span>see more</span>
