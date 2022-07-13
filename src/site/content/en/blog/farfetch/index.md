@@ -53,7 +53,7 @@ Finally, Farfetch established time-based [performance budgets](/performance-budg
 
 ## Step 2: Communicating via business language
 
-With performance data now available in Farfetch's internal business intelligence datasets, the analytics team started exploring mathematical models and patterns in the data that could indicate a correlation between performance metrics and business KPIs (e.g. conversion rate, percentage of single-page visits, etc.), allowing a new view of the financial impact of site speed and UX for the business. This would enable performance to be discussed in a common language with the business decision makers. The analysis included all Core Web Vitals and the other metrics Farfetch defined and revealed truly impactful insights.
+With performance data now available in Farfetch's internal business intelligence datasets, the analytics team started exploring mathematical models and patterns in the data that could indicate a correlation between performance metrics and business KPIs (for example, conversion rate and percentage of single-page visits), allowing a new view of the financial impact of site speed and UX for the business. This enabled performance to be discussed in a common language with the business decision makers. The analysis included all Core Web Vitals and the other metrics Farfetch defined and revealed truly impactful insights.
 
 Farfetch web conversion rate would increase by 1.3% with each 100ms less of [Largest Contentful Paint (LCP)](/lcp/). LCP showed a very strong correlation with business metrics across all page types, but especially on mobile product pages, proving the usefulness of having the main product image loading fast.
 
