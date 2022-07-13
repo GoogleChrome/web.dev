@@ -10,7 +10,7 @@ authors:
   - manuelgarcia
   - patriciacoutoneto
   - msdikla
-date: 2022-07-01
+date: 2022-07-12
 tags:
   - blog
   - web-vitals
