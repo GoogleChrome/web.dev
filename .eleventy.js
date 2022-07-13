@@ -94,7 +94,7 @@ const navigation = require('./src/site/_filters/navigation');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
-const {isUpcoming} = require('./src/site/_filters/is-upcoming');
+const {isUpcoming, filterInUpcoming, filterOutUpcoming} = require('./src/site/_filters/is-upcoming');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
@@ -193,6 +193,8 @@ module.exports = function (config) {
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
   config.addFilter('isUpcoming', isUpcoming);
+  config.addFilter('filterInUpcoming', filterInUpcoming);
+  config.addFilter('filterOutUpcoming', filterOutUpcoming);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES

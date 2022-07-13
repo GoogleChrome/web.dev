@@ -33,4 +33,22 @@ function isUpcoming(post, dateFieldName) {
   return postDate.getTime() > now.getTime();
 }
 
-module.exports = {isUpcoming};
+/**
+ * @param {EleventyCollectionObject} posts An eleventy posts object.
+ * @param {string} dateFieldName Name of the field containing the date.
+ * @return {EleventyCollectionObject} Posts filtered by date.
+ */
+function filterInUpcoming(posts, dateFieldName) {
+  return posts.filter(post => isUpcoming(post, dateFieldName));
+}
+
+/**
+ * @param {EleventyCollectionObject} posts An eleventy posts object.
+ * @param {string} dateFieldName Name of the field containing the date.
+ * @return {EleventyCollectionObject} Posts filtered by date.
+ */
+ function filterOutUpcoming(posts, dateFieldName) {
+  return posts.filter(post => isUpcoming(post, dateFieldName));
+}
+
+module.exports = {isUpcoming, filterInUpcoming, filterOutUpcoming};

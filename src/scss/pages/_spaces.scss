@@ -226,6 +226,22 @@
     display: none;
   }
 
+  .hidden {
+    display: none;
+  }
+
+  #see-more-upcoming-label {
+    grid-column: 1 / span 3;
+  }
+
+  #see-more-upcoming:checked ~ .hidden{
+    display: block;
+  }
+
+  #see-more-upcoming:checked + #see-more-upcoming-label {
+    display: none;
+  }
+
   // Mobile
 
   td.eyebrow {
