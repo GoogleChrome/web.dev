@@ -1,16 +1,16 @@
 ---
 layout: post
 title: How GoDaddy's Websites + Marketing sites improved customer Core Web Vitals by 75%
-#authors:
-#  - simonleparc
+authors:
+  - simonleparc
 subhead: >
   A case study of changes GoDaddy implemented to improve website performance for millions of sites, helping them to achieve good PageSpeed Insights and Core Web Vitals scores.
 description: >
   A case study of changes GoDaddy implemented to improve website performance for millions of sites, helping them to achieve good PageSpeed Insights and Core Web Vitals scores.
-date: 2022-07-07
-# hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/EEaOcO1E9B4ZI4hHgJAb.png
-# thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
-# alt: An illustration of an A/B test.
+date: 2022-07-14
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/v5DPan0l6c9gOercxr3p.jpg
+thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/dUBhcdiLqE1OCDUV7ZYm.jpg
+alt: A time-lapse photo of a highway at night.
 tags:
   - blog
   - case-study
