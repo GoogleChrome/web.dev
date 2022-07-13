@@ -17,9 +17,9 @@ tags:
   - case-study
 ---
 
-Inside many companies, website speed performance and Core Web Vitals are still mostly seen as the responsibility of the engineering teams. Not knowing the business and customer experience worth of site speed often makes it invisible to other areas of the business, so it can be overlooked when key decisions are made and roadmaps are defined.
+Inside many companies, website speed performance and Core Web Vitals are still mostly seen as the responsibility of the engineering teams. Site speed can become invisible to other areas of the business if the business and customer experience worth is not understood. This can cause performance to be overlooked when key decisions are made and roadmaps are defined.
 
-Seeking to improve the performance culture across teams and drive significant improvements to their web experience, luxury e-commerce fashion retailer Farfetch launched a project to define and use true customer-centric performance metrics. They then aimed to correlate these to business metrics as a way of illuminating how performance affects the company's KPIs.
+To improve the performance culture across teams and drive significant improvements to their web experience, luxury e-commerce fashion retailer Farfetch launched a project to define and use true customer-centric performance metrics. They aimed to correlate these to business metrics as a way of illuminating how performance affects the company's KPIs.
 
 Their ambitions didn't end there, though. Ultimately, the project's objective was cultural change at scale&mdash;breaking down silos within the organization and introducing a new business-oriented language to give everyone a shared way to talk about what used to be considered technical topics. Farfetch wanted to have website speed performance as a shared responsibility, facilitate informed decision making and establish it as a main pillar of what makes a good web experience.
 
@@ -35,7 +35,7 @@ First of all, Farfetch needed to have the right monitoring tools in place to und
 
 They used both lab data and real user monitoring (field data) to track Core Web Vitals and additional [user-centric performance metrics](/user-centric-performance-metrics/) to analyze the current state of speed performance. They used JavaScript and the [`web-vitals.js` library](https://github.com/GoogleChrome/web-vitals) to capture the data, which allowed the product analytics team to gain visibility of performance metrics alongside business metrics in the same session and thereby start examining how one affects the other.
 
-The multidisciplinary group set out to understand which metrics mattered most for the business. To do so, they looked at the critical journey path of Farfetch users and tried to link that journey with performance markers. In addition to the Core Web Vitals metrics that Google has outlined, each representing a distinct facet of the user experience, they also used custom JS to track [Time to First Byte (TTFB)](/ttfb/), [First Contentful Paint (FCP)](/fcp/), First Paint and [Time to Interactive (TTI)](/tti/).
+The multidisciplinary group set out to understand which metrics mattered most for the business. To do so, they looked at the critical journey path of Farfetch users and tried to link that journey with performance markers. In addition to the Core Web Vitals metrics that Google has outlined, each representing a distinct facet of the user experience, they also used custom JavaScript to track [Time to First Byte (TTFB)](/ttfb/), [First Contentful Paint (FCP)](/fcp/), First Paint and [Time to Interactive (TTI)](/tti/).
 
 The metrics are collected using several methods of the [Performance API](https://developer.mozilla.org/docs/Web/API/Performance), [Long Tasks API](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API) and Google's polyfills. More details can be found in [this mid 2020 Farfetch Tech Blog post](https://www.farfetchtechblog.com/en/blog/post/one-less-second-for-the-page-one-giant-leap-for-the-business/) by Manuel Garcia, Senior Principal Engineer for the Web.
 
@@ -61,13 +61,13 @@ Farfetch web conversion rate would increase by 1.3% with each 100ms reduction in
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/bdmOd1MUc6Wt4EUFRzUG.png", alt="A graph of LCP, where the Y-axis is conversion rate and percentage of page visits and the X-axis is LCP time. As LCP is faster, percentage of single page visits decreases, and conversion rate increases.", width="800", height="386" %}
 </figure>
 
-Farfetch exit rate showed a decrease of 3.1% for each 0.01 less on the Cumulative Layout Shift (CLS) score, reaffirming the impact of page stability to keep users on a website.
+Farfetch exit rate showed a decrease of 3.1% for each 0.01 reduction on the Cumulative Layout Shift (CLS) score, reaffirming the impact of page stability to keep users on a website.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ijjXV4FFD5lyBYVFEBH2.png", alt="A graph of CLS, where the Y-axis is conversion rate and percentage of page visits, and the X-axis is the CLS score. The lowest CLS scores show the highest percentage of single page visits, whereas conversions raise at lower CLS scores.", width="800", height="357" %}
 </figure>
 
-Regarding page interactivity and fluidity, although [First Input Delay (FID)](/fid/``) is tracked and analyzed continuously, Farfetch also measures TTI, which proved to be a considerably impactful metric for the Farfetch business conversion funnel. 
+Regarding page interactivity and fluidity, although [First Input Delay (FID)](/fid/) is tracked and analyzed continuously, Farfetch also measures TTI, which proved to be a considerably impactful metric for the Farfetch business conversion funnel. 
 
 For this, they injected [Google's TTI polyfill](https://github.com/GoogleChromeLabs/tti-polyfill) into the website to store this metric. Using the Long Tasks API to report long tasks (tasks taking longer than 50 milliseconds on the browser's main thread).
 
@@ -75,7 +75,7 @@ For this, they injected [Google's TTI polyfill](https://github.com/GoogleChromeL
 It's no longer recommended to measure TTI in the field, as user interaction can affect your page's TTI in ways that lead to variance in your reports!
 {% endAside %}
 
-The analytics team was then able to find that the conversion rate increased 2.8% for each second less on TTI, making a strong case for better code efficiency and unclogging the browser's main thread.
+The analytics team was then able to find that the conversion rate increased 2.8% for each second reduction on TTI, making a strong case for better code efficiency and unclogging the browser's main thread.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/p9tLq7SN6rGmJpvnoaoT.png", alt="A graph of TTI, where the Y-axis is conversion rate and percentage of single page visits, and the X-axis is TTI time. As the TTI time goes up, conversion rate decreases and percentage of single page visits increases.", width="800", height="381" %}
@@ -87,7 +87,7 @@ In the end, this analysis was also able to show that some metrics didn't have a 
 
 Showcasing the insights above alongside qualitative user research on user perception of site speed was paramount to establish alignment with company goals, secure executive-level awareness and buy-in for performance based decision making across product roadmaps. It was now possible to prove how much performance was worth for Farfetch.
 
-To operationalise and facilitate prioritization processes, Farfetch created a self-service tool they named the Site Speed Business Case Calculator, taking inspiration from [Google's Speed Impact Calculator](https://www.thinkwithgoogle.com/feature/testmysite/]). It allows any product manager to create a business case out of performance improvements by calculating the business impact on the fly. With a data model using the correlation between conversion rate and user experience metrics, it's flexible to adapt to different product scopes, devices and user journey touch points.
+To streamline prioritization, Farfetch created a self-service tool they named the Site Speed Business Case Calculator, taking inspiration from [Google's Speed Impact Calculator](https://www.thinkwithgoogle.com/feature/testmysite/]). It allows any product manager to create a business case out of performance improvements by calculating the business impact on the fly. With a data model using the correlation between conversion rate and user experience metrics, it's flexible to adapt to different product scopes, devices and user journey touch points.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/59OGLmMJ2rubTie45u5K.png", alt="A screenshot of Farfetch's Site Speed Business Case Calculator.", width="800", height="779" %}
@@ -107,8 +107,8 @@ One of the main opportunities detected in 2021 was the need to improve LCP on th
 
 The teams addressed how they were loading the main content of those pages. Armed with a business case that showed the impact of chasing this opportunity, they were able to:
 
-- Adapt the product image loading component from a JS-based solution to a native implementation.
-- Define the priority of the images and divide them into critical and non-critical assets
+- Adapt the product image loading component from a JavaScript-based solution to a native implementation.
+- Define the priority of the images and divide them into critical and non-critical assets.
 - Load critical images early, with the source already inline in the HTML and using `<link rel="preload">` so they download as soon as possible.
 - Use the `<img loading="lazy">` attribute for non-critical images, with a polyfill using Intersection Observer on unsupported browsers, such as Safari.
 
