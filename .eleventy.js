@@ -101,7 +101,6 @@ const {
 } = require('./src/site/_filters/is-upcoming');
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
-
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
 const {minifyHtml} = require('./src/site/_transforms/minify-html');

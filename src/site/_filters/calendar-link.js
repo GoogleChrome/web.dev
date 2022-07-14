@@ -28,10 +28,13 @@ const {DateTime} = require('luxon');
  */
 function calendarLink(date, title, description) {
   const end = DateTime.fromJSDate(date);
-  const start = end.minus({ days: 1 })
+  const start = end.minus({days: 1});
   const url = new URL('https://calendar.google.com/calendar/render');
   url.searchParams.set('action', 'TEMPLATE');
-  url.searchParams.set('dates', [start.toFormat('yyyyMMdd'), end.toFormat('yyyyMMdd')].join('/'));
+  url.searchParams.set(
+    'dates',
+    [start.toFormat('yyyyMMdd'), end.toFormat('yyyyMMdd')].join('/'),
+  );
   url.searchParams.set('text', title);
   url.searchParams.set('details', description);
   return url.toString();
