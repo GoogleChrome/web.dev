@@ -118,14 +118,14 @@
         {% StackOverflow stack_overflow_tag %}
       {% endif %}
 
-      <div class="cluster gutter-base flow-space-size-2" aria-label="tags">
+      <nav class="cluster gutter-base flow-space-size-2" aria-label="tags">
         {% for tagKey in tags or [] %}
           {% if tagKey in collections.tags %}
             {% set tag = collections.tags[tagKey] %}
             <a class="pill" href="{{tag.url}}">{{tag.overrideTitle or tag.title | i18n(locale)}}</a>
           {% endif %}
         {% endfor %}
-      </div>
+      </nav>
 
       <div class="text-size-0 color-mid-text">
         <span>
