@@ -219,7 +219,7 @@ provided in the manifest.
 
 The foreground page cannot process this data directly. Since the page sees the data as
 a request, the page passes it to the service worker, where you can intercept it with a
-[`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#:~:text=Content%20Index.-,fetch,-Occurs%20when%20a)
+[`fetch`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope#:~:text=Content%20Index.-,fetch,-Occurs%20when%20a)
 event listener. From here, you can pass the data back to the foreground
 page using `postMessage()` or pass it on to the server:
 
