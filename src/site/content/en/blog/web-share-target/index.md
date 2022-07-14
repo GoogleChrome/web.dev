@@ -286,7 +286,7 @@ and let us know where and how you're using it.
 [demo-source]: https://glitch.com/edit/#!/web-share?path=index.html
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=668389
 [cr-status]: https://www.chromestatus.com/feature/5662315307335680
-[explainer]: https://github.com/WICG/web-share-target/blob/master/docs/explainer.md
+[explainer]: https://github.com/WICG/web-share-target/blob/main/docs/explainer.md
 [issues]: https://github.com/WICG/web-share-target/issues
 [wicg-discourse]: https://discourse.wicg.io/t/web-share-target-api-for-websites-to-receive-shared-content/1854
 [manifest]:/add-manifest/
