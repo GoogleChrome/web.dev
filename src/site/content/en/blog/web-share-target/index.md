@@ -192,7 +192,7 @@ If the user selects your application, and your `method` is `"GET"` (the
 default), the browser opens a new window at the `action` URL. The browser then
 generates a query string using the URL-encoded values supplied in the manifest.
 For example, if the sharing app provides `title` and `text`, the query string is
-`?title=hello&text=world`. To process this, use a [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
+`?title=hello&text=world`. To process this, use a [`DOMContentLoaded`](https://developer.mozilla.org/docs/Web/API/Window/DOMContentLoaded_event)
 event listener in your foreground page and parse the query string:
 
 ```js
