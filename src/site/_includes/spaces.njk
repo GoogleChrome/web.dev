@@ -1,14 +1,6 @@
 ---
 layout: default-next
 ---
-{% from 'macros/tag-pills.njk' import tagPills with context %}
-
-<style>
-
-
-
-</style>
-
 <div class="landing-page spaces">
 
   <header>
@@ -40,7 +32,7 @@ layout: default-next
   {% endif %}
 
   {% for space in upcomingSpaces %}
-    {% if loop.index0 < 3 %}
+    {% if loop.index0 < 6 %}
     <article class="card flow">
       <div class="card__header">
         <div class="avatars">
@@ -57,31 +49,33 @@ layout: default-next
           {% for host in space.data.hosts %}
             <li>
                 {{ host.name }}
-              {% if host.host %} <span class="pill">{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
+              {% if host.host %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
             </li>
           {% endfor %}
         </ul>
         <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
         <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
       </div>
-      {% if space.tags %}
-        <div class="card__tags cluster gap-top-base" aria-label="tags for this post">
-          {{ tagPills(space.tags) }}
-        </div>
+      {% if space.data.twitter_link %}
+        <a class="button" href="{{ space.data.twitter_link }}" target="_blank">
+          {% include "icons/calendar.svg" %}
+          <span>{{ 'i18n.spaces.see_on_twitter' | i18n(locale) }}</span>
+        </a>
+      {% else %}
+        <a class="button" href="{{ space.data.event_date | calendarLink(space.data.title, space.data.description) }}" target="_blank">
+          {% include "icons/calendar.svg" %}
+          <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
+        </a>
       {% endif %}
-      <a class="button" href="{{ space.data.twitter_link }}">
-        {% include "icons/calendar.svg" %}
-        <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
-      </a>
     </article>
     {% endif %}
   {% endfor %}
 
-  <input type="checkbox" id="see-more-upcoming" hidden>
-  <label id="see-more-upcoming-label" for="see-more-upcoming" class="button">see more</label>
-
   {% for space in upcomingSpaces %}
-    {% if loop.index0 > 2 %}
+    {% if loop.index0 > 5 %}
+    <input type="checkbox" id="see-more-upcoming" hidden>
+    <label id="see-more-upcoming-label" for="see-more-upcoming" class="button">see more</label>
+
     <article class="card flow hidden">
       <div class="card__header">
         <div class="avatars">
@@ -98,19 +92,14 @@ layout: default-next
           {% for host in space.data.hosts %}
             <li>
                 {{ host.name }}
-              {% if host.host %} <span class="pill">{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
+              {% if host.host %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
             </li>
           {% endfor %}
         </ul>
         <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
         <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
       </div>
-      {% if space.tags %}
-        <div class="card__tags cluster gap-top-base" aria-label="tags for this post">
-          {{ tagPills(space.tags) }}
-        </div>
-      {% endif %}
-      <a class="button" href="{{ space.data.twitter_link }}">
+      <a class="button" href="{{ space.data.event_date | calendarLink(space.data.title, space.data.description) }}">
         {% include "icons/calendar.svg" %}
         <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
       </a>
@@ -121,46 +110,46 @@ layout: default-next
   </div>
 </div>
 
+
 <div class="spaces spaces--past wrapper region all-center">
   <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.past_spaces' | i18n(locale) }}</h2>
-  <table>
-    {% for space in spaces %}
-      {% if not space | isUpcoming('event_date') %}
-        <tr>
-          <td class="eyebrow all-center">
-            <p>
-              {{ space.data.event_date | prettyDate('') }}
-            </p>
-          </td>
-          <td class="pad-block-size-1 pad-inline-size-1">
-            <div class="avatars">
-              {% for host in space.data.hosts %}
-                <img class="avatar" src="{{ host.image }}" alt="alt" decoding="async" height="40" loading="lazy" width="40">
-              {% endfor %}
-            </div>
-            <p class="gap-top-size-1 eyebrow sm-only">
-              {{ space.data.event_date | prettyDate('DATE_SHORTER') }}
-            </p>
-          </td>
-          <td class="flow pad-block-size-1">
-            <h2 class="text-size-2">
-              {{ space.data.title }}
-            </h2>
-            <p>
-              {% for host in space.data.hosts %}
-                <span class="host">{{ host.name }} {% if host.host %} <span class="pill">{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}</span>
-              {% endfor %}
-            <details class="ellipsis">
-              <summary><span>{{ space.data.description }}</span><span>{{ 'i18n.spaces.see_more' | i18n(locale) }}</span></summary>
-            </details>
-            {# <p class="ellipsis">
-              <span>{{ space.data.description }}</span><span>see more</span>
-            </p> #}
-            <p><audio src="{{ space.data.audio }}" class="audio-player__element" controls="" id="audio-player"></audio></p>
-          </td>
-        </tr>
-      {% endif %}
 
+  {% if not pastSpaces.length %}
+  <p>A friendly message reminding that the recordings will appear here</p>
+  {% endif %}
+
+  <table>
+    {% for space in pastSpaces %}
+      <tr>
+        <td class="eyebrow all-center">
+          <p>
+            {{ space.data.event_date | prettyDate('') }}
+          </p>
+        </td>
+        <td class="pad-block-size-1 pad-inline-size-1">
+          <div class="avatars">
+            {% for host in space.data.hosts %}
+              <img class="avatar" src="{{ host.image }}" alt="alt" decoding="async" height="40" loading="lazy" width="40">
+            {% endfor %}
+          </div>
+          <p class="gap-top-size-1 eyebrow sm-only">
+            {{ space.data.event_date | prettyDate('DATE_SHORTER') }}
+          </p>
+        </td>
+        <td class="flow pad-block-size-1">
+          <h2 class="text-size-2">
+            {{ space.data.title }}
+          </h2>
+          <p>
+            {% for host in space.data.hosts %}
+              <span class="host">{{ host.name }} {% if host.host %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}</span>
+            {% endfor %}
+          <details class="ellipsis">
+            <summary><span class="ellipsis__full">{{ space.data.description }}</span><span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span></summary>
+          </details>
+          <p><audio src="{{ space.data.audio }}" class="audio-player__element" controls="" id="audio-player"></audio></p>
+        </td>
+      </tr>
     {% endfor %}
     </table>
 </div>
