@@ -99,6 +99,8 @@ const {
   filterInUpcoming,
   filterOutUpcoming,
 } = require('./src/site/_filters/is-upcoming');
+const {calendarLink} = require('./src/site/_filters/calendar-link');
+
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
 const {purifyCss} = require('./src/site/_transforms/purify-css');
@@ -199,6 +201,7 @@ module.exports = function (config) {
   config.addFilter('isUpcoming', isUpcoming);
   config.addFilter('filterInUpcoming', filterInUpcoming);
   config.addFilter('filterOutUpcoming', filterOutUpcoming);
+  config.addFilter('calendarLink', calendarLink);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
