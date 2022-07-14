@@ -48,7 +48,7 @@ function filterInUpcoming(posts, dateFieldName) {
  * @return {EleventyCollectionObject} Posts filtered by date.
  */
 function filterOutUpcoming(posts, dateFieldName) {
-  return posts.filter((post) => isUpcoming(post, dateFieldName));
+  return posts.filter((post) => !isUpcoming(post, dateFieldName));
 }
 
 module.exports = {isUpcoming, filterInUpcoming, filterOutUpcoming};
