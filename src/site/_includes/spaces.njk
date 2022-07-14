@@ -49,7 +49,7 @@ layout: default-next
           {% for host in space.data.hosts %}
             <li>
                 {{ host.name }}
-              {% if host.host %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
+              {% if host.primary %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
             </li>
           {% endfor %}
         </ul>
@@ -92,7 +92,7 @@ layout: default-next
           {% for host in space.data.hosts %}
             <li>
                 {{ host.name }}
-              {% if host.host %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
+              {% if host.primary %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
             </li>
           {% endfor %}
         </ul>
@@ -142,7 +142,7 @@ layout: default-next
           </h2>
           <p>
             {% for host in space.data.hosts %}
-              <span class="host">{{ host.name }} {% if host.host %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}</span>
+              <span class="host">{{ host.name }} {% if host.primary %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}</span>
             {% endfor %}
           <details class="ellipsis">
             <summary><span class="ellipsis__full">{{ space.data.description }}</span><span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span></summary>
