@@ -90,7 +90,10 @@ However, if you already have a working WebRTC client/server setup that you're ha
 
 ## Try it out
 
-The best way to experiment with WebTransport is to start up a compatible HTTP/3 server locally. (Unfortunately, a public reference server compatible with the latest specification is not currently available.) You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/webtransport/client.html) to try out client/server communications.
+The best way to experiment with WebTransport is to start up a compatible HTTP/3 server.
+You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/webtransport/client.html) to try out client/server communications.
+
+Additionally, a community-maintained echo server is available at [webtransport.day](https://webtransport.day/).
 
 ## Using the API
 
