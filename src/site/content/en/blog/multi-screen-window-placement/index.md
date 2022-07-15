@@ -195,7 +195,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: true
     isPrimary: true
-    label: "Internal Display 1"
+    label: "Built-in Retina Display"
     left: 0
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
@@ -215,7 +215,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: false
     isPrimary: false
-    label: "External Display 1"
+    label: "Thomas Steiner's iPad Pro"
     left: 1680
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
