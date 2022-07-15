@@ -4229,8 +4229,51 @@ twifkak:
   description:
     en: Software engineer at Google, signed exchanges integration lead in Search
 
+ruisantos:
+  title:
+    en: Rui Santos
+  description:
+    en: Senior Head of Product Strategy & Operations at Farfetch
+
+manuelgarcia:
+  title:
+    en: Manuel Garcia
+  description:
+    en: Senior Principal Engineer at Farfetch
+
+patriciacoutoneto:
+  title:
+    en: Patrícia Couto Neto
+  description:
+    en: Senior Analytics Manager
+
 steveworkman:
   title:
     en: steveworkman
   description:
     en: Lead Engineer at Maersk.com
+
+dbaron:
+  title:
+    en: L. David Baron
+  description:
+    en: Software engineer at Google and contributor to Web standards
+
+bramus:
+  title:
+    en: Bramus
+    es: Bramus
+    ja: Bramus
+    ko: Bramus
+    pt: Bramus
+    ru: Bramus
+    zh: Bramus
+  description:
+    en: Developer Advocate for CSS, UI, and DevTools at Chrome
+    es: Desarrollador partidario para CSS, UI y DevTools en Chrome
+    ja: Chrome の CSS、UI、DevTools を対象とした Developer Advocate
+    ko: Chrome의 CSS, UI 및 DevTools 개발자 애드버킷
+    pt: Developer Advocate para CSS, UI e DevTools no Chrome
+    ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
+    zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
+
