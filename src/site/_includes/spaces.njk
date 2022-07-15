@@ -60,6 +60,9 @@ layout: default-next
 <div class="spaces wrapper region all-center">
   <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.upcoming_spaces' | i18n(locale) }}</h2>
   <div class="auto-grid all-center">
+    {% if not spaces %}
+      {% set spaces = [] %}
+    {% endif %}
     {% set upcomingSpaces = spaces | livePosts | filterInUpcoming('event_date') %}
     {% set pastSpaces = spaces | livePosts | filterOutUpcoming('event_date') %}
 
