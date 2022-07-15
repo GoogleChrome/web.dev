@@ -30,6 +30,8 @@ an integer which will be used as the value of the badge. Setting the number to 0
 clears the app badge. Not providing an argument results in a generic badge, commonly
 displayed as a colored dot.
 
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Niy9c011GzoVQmPbSEF5.png", alt="App icon showing the actual icon with the number 3 as the badge value.", width="282", height="388" %}
+
 {% BrowserCompat 'api.Navigator.setAppBadge' %}
 
 ## The classic way
@@ -40,6 +42,8 @@ If the app is not installed yet, you can add a number to the favicon. There are 
 ways of doing so, for example, by drawing the favicon dynamically to a canvas with
 the badge info added and displaying it as a Blob URL, or to craft an SVG image with
 the badge info as a data URL.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/lGNsfETYtEFncrktRX6F.png", alt="Favicon showing the actual icon with the number 5 as the badge value.", width="760", height="86" %}
 
 ## Progressive enhancement
 
