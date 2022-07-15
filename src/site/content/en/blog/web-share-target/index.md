@@ -1,6 +1,6 @@
 ---
 title: Receiving shared data with the Web Share Target API
-subhead: Sharing on mobile and desktop made simple with the Web Share Target API
+subhead: Sharing on mobile and desktop simplified with the Web Share Target API
 authors:
   - petelepage
   - joemedley
@@ -134,7 +134,7 @@ so it uses `"POST"` for the `method` and `"multipart/form-data"` for the
 ### Accepting files
 
 As with application changes, accepting files requires that `method` be `"POST"`
-and that `enctype` be present. Additionally, `enctype` must be
+and that the `enctype` be present. Additionally, `enctype` must be
 `"multipart/form-data"`, and a `files` entry must be added.
 
 You must also add a `files` array defining the types of files your app accepts. The
@@ -192,8 +192,8 @@ If the user selects your application, and your `method` is `"GET"` (the
 default), the browser opens a new window at the `action` URL. The browser then
 generates a query string using the URL-encoded values supplied in the manifest.
 For example, if the sharing app provides `title` and `text`, the query string is
-`?title=hello&text=world`. To process this, use a `DOMContentLoaded` event
-listener in your foreground page and parse the query string:
+`?title=hello&text=world`. To process this, use a [`DOMContentLoaded`](https://developer.mozilla.org/docs/Web/API/Window/DOMContentLoaded_event)
+event listener in your foreground page and parse the query string:
 
 ```js
 window.addEventListener('DOMContentLoaded', () => {
@@ -206,7 +206,7 @@ window.addEventListener('DOMContentLoaded', () => {
 ```
 
 Be sure to use a service worker to [precache](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) the `action`
-page so that it will load quickly and work reliably, even if the user is offline.
+page so that it loads quickly and works reliably, even if the user is offline.
 [Workbox](https://developer.chrome.com/docs/workbox/) is a tool that can help you
 [implement precaching](/precache-with-workbox/) in your service worker.
 
@@ -219,7 +219,8 @@ provided in the manifest.
 
 The foreground page cannot process this data directly. Since the page sees the data as
 a request, the page passes it to the service worker, where you can intercept it with a
-`fetch` event listener. From here, you can pass the data back to the foreground
+[`fetch`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope#:~:text=Content%20Index.-,fetch,-Occurs%20when%20a)
+event listener. From here, you can pass the data back to the foreground
 page using `postMessage()` or pass it on to the server:
 
 ```js
@@ -258,10 +259,9 @@ the `text` field, or occasionally in the `title` field.
 
 ## Browser support
 
-Since early 2021, the Web Share Target API is supported by:
+The Web Share Target API is supported as described below:
 
-- Chrome and Edge 76 or later on Android.
-- Chrome 89 or later on ChromeOS.
+{% BrowserCompat 'html.manifest.share_target' %}
 
 On all platforms, your web app has to be [installed][installability] before it will show up as a
 potential target for receiving shared data.
@@ -286,7 +286,7 @@ and let us know where and how you're using it.
 [demo-source]: https://glitch.com/edit/#!/web-share?path=index.html
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=668389
 [cr-status]: https://www.chromestatus.com/feature/5662315307335680
-[explainer]: https://github.com/WICG/web-share-target/blob/master/docs/explainer.md
+[explainer]: https://github.com/WICG/web-share-target/blob/main/docs/explainer.md
 [issues]: https://github.com/WICG/web-share-target/issues
 [wicg-discourse]: https://discourse.wicg.io/t/web-share-target-api-for-websites-to-receive-shared-content/1854
 [manifest]:/add-manifest/
