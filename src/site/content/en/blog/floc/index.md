@@ -61,7 +61,7 @@ The Privacy Sandbox is a series of proposals to satisfy third-party use cases wi
 cookies or other tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
-**This proposal needs your feedback.** If you have comments, [create an
+If you have comments on this proposal, [create an
 issue](https://github.com/WICG/floc/issues/new) on the [FLoC Explainer](https://github.com/WICG/floc)
 repository.  If you have feedback on Chrome's experiment with this proposal,
 post a reply on the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
