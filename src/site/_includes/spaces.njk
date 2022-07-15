@@ -64,7 +64,7 @@ layout: default-next
     {% set pastSpaces = spaces | livePosts | filterOutUpcoming('event_date') %}
 
     {% if not upcomingSpaces.length %}
-    <p>A friendly message reminding to check for new upcomig spaces soon</p>
+    <p>{{ 'i18n.spaces.no_upcoming_spaces' | i18n(locale) }}</p>
     {% endif %}
 
     {% for space in upcomingSpaces %}
@@ -91,7 +91,7 @@ layout: default-next
   <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.past_spaces' | i18n(locale) }}</h2>
 
   {% if not pastSpaces.length %}
-  <p>A friendly message reminding that the recordings will appear here</p>
+  <p>{{ 'i18n.spaces.no_past_spaces' | i18n(locale) }}</p>
   {% endif %}
 
   <table>
