@@ -73,7 +73,7 @@ above: convert bytes to characters, identify tokens, convert tokens to nodes,
 and build the DOM tree. This entire process can take some time, especially if
 we have a large amount of HTML to process.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/nAI6iO8vsAf03EUs4nWZ.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RHpJTxB4gBYuhzILaB7Y.png", alt="Tracing DOM construction in DevTools", width="766", height="180" %}
 
 {% Aside %}
 We're assuming that you have basic familiarity with Chrome DevTools - that
@@ -162,7 +162,7 @@ timeline doesn’t show a separate "Parse CSS" entry, and instead captures
 parsing and CSSOM tree construction, plus the recursive calculation of
 computed styles under this one event.
 
-{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/RHpJTxB4gBYuhzILaB7Y.png", alt="Tracing CSSOM construction in DevTools", width="766", height="180" %}
+{% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/nAI6iO8vsAf03EUs4nWZ.png", alt="Tracing CSSOM construction in DevTools", width="766", height="180" %}
 
 Our trivial stylesheet takes ~0.6ms to process and affects eight elements on
 the page&mdash;not much, but once again, not free. However, where did the
