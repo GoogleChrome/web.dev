@@ -123,9 +123,9 @@ method on it.
 
 ```html/2-3
 <div role="toolbar">
-  <button tabindex="-1">Undo</div>
-  <button tabindex="0">Redo</div>
-  <button tabindex="-1">Cut</div>
+  <button tabindex="-1">Undo</button>
+  <button tabindex="0">Redo</button>
+  <button tabindex="-1">Cut</button>
 </div>
 ```
 
