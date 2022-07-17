@@ -9,7 +9,7 @@ description: |
   There's a good reason for that. Animated GIFs can be downright huge! By
   converting large GIFs to videos, you can save big on users' bandwidth.
 date: 2018-11-05
-updated: 2019-08-29
+updated: 2022-07-18
 codelabs:
   - codelab-replace-gifs-with-video
 tags:
@@ -122,3 +122,9 @@ Browsers don't speculate about which `<source>` is optimal, so the order of
 browser supports WebM, browsers will skip the WebM `<source>` and use the MPEG-4
 instead. If you prefer a WebM `<source>` be used first, specify it first!
 {% endAside %}
+
+## Effect on Largest Contentful Paint (LCP)
+
+It should be noted that while `<img>` elements are candidates for LCP, `<video>` elements are not [LCP candidates](/lcp/#what-elements-are-considered) in all cases. When using videos as a replacement for animated GIFs provides better content efficiency, `<video>` elements without a [`poster` image](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) are not considered for LCP. This will be the case if you're using videos to replace animated GIFs.
+
+What does this mean for your website? For one, if your largest element on screen is an autoplaying video that acts as an animated GIF replacement, the next largest node that qualifies as an LCP candidate will be selected instead. This may change in the future as LCP evolves.
