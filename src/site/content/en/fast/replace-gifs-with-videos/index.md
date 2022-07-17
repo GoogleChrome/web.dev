@@ -127,4 +127,4 @@ instead. If you prefer a WebM `<source>` be used first, specify it first!
 
 It should be noted that while `<img>` elements are candidates for LCP, `<video>` elements are not [LCP candidates](/lcp/#what-elements-are-considered) in all cases. When using videos as a replacement for animated GIFs provides better content efficiency, `<video>` elements without a [`poster` image](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) are not considered for LCP. This will be the case if you're using videos to replace animated GIFs.
 
-What does this mean for your website? For one, if your largest element on screen is an autoplaying video that acts as an animated GIF replacement, the next largest node that qualifies as an LCP candidate will be selected instead. This may change in the future as LCP evolves.
+What does this mean for your website? For one, if your largest element on screen is an autoplaying video that acts as an animated GIF replacement, the next largest node that qualifies as an LCP candidate will be selected instead. This may change in the future as LCP evolves. Consult the [LCP documentation](/lcp/) for the most up-to-date information.
