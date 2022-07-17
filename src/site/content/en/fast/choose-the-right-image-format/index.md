@@ -3,10 +3,11 @@ layout: post
 title: Choose the right image format
 authors:
   - ilyagrigorik
+  - jlwagner
 description: |
   Selecting the right image format is the first step in delivering optimized images on your website. This post helps you to make the right choice.
 date: 2018-08-30
-updated: 2020-06-18
+updated: 2022-07-18
 tags:
   - performance
   - images
@@ -186,17 +187,25 @@ In terms of older image formats, consider the following:
     * What about GIF? GIF limits the color palette to at most 256 colors,
       and creates significantly larger file sizes than `<video>` elements. See
       [Replace animated GIFs with video](/replace-gifs-with-videos/).
-1. **Do you need to preserve fine detail with highest resolution? Use PNG.**
+1. **Do you need to preserve fine detail with highest resolution? Use PNG or lossless WebP.**
     * PNG does not apply any lossy compression algorithms beyond the choice of the size of the color palette.
     As a result, it will produce the highest quality image,
     but at a cost of significantly higher filesize than other formats. Use judiciously.
+    * WebP has a lossless encoding mode that is usually more efficient than PNG. Use lossless WebP when possible.
     * If the image asset contains imagery composed of geometric shapes, consider converting it to a vector (SVG) format!
     * If the image asset contains text, stop and reconsider. Text in images is not selectable, searchable, or "zoomable".
     If you need to convey a custom look (for branding or other reasons), use a web font instead.
-1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG.**
+1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG or lossy WebP.**
     * JPEG uses a combination of lossy and lossless optimization to reduce filesize of the image asset. Try several JPEG quality levels to find the best quality versus filesize tradeoff for your asset.
+    * Lossy WebP may be an acceptable JPEG alternative, but be aware that WebP's lossy mode discards some chroma information in order to achieve smaller images. This means that select colors may not be the same as an equivalent JPEG.
 
 Finally, note that if you are using a WebView to render content in your platform-specific application,
 then you have full control of the client and can use WebP exclusively!
 Facebook and many others use WebP to deliver all of their images within their applications&mdash;
 the savings are definitely worth it.
+
+## Impact on Largest Contentful Paint (LCP)
+
+Images may be [LCP candidates](/lcp/#what-elements-are-considered). That means the size of an image affects its [load time](/optimize-lcp/#3.-reduce-resource-load-time). When an image is an LCP candidate, efficiently encoding that image is crucial to improving LCP.
+
+You should strive to apply the advice given in this article so that the perceptual performance of a page is as fast as it can possibly be for all users. LCP is part of perceptual performance, as it measures how fast the largest (and therefore most perceivable) element on the page loads.
