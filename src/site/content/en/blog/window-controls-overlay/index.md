@@ -7,7 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2022-06-16
+updated: 2022-06-24
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -61,13 +61,13 @@ developers to place custom content in what was previously the browser-controlled
 
 <div>
 
-| Step                                     | Status                             |
-| ---------------------------------------- | ---------------------------------- |
-| 1. Create explainer                      | [Complete][explainer]              |
-| 2. Create initial draft of specification | [Complete][spec]                   |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)           |
-| 4. Origin trial                          | Complete                           |
-| 5. **Launch**                            | **Complete** (in Chromium&nbsp;99) |
+| Step                                     | Status                              |
+| ---------------------------------------- | ----------------------------------- |
+| 1. Create explainer                      | [Complete][explainer]               |
+| 2. Create initial draft of specification | [Complete][spec]                    |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)            |
+| 4. Origin trial                          | Complete                            |
+| 5. **Launch**                            | **Complete** (in Chromium&nbsp;104) |
 
 </div>
 

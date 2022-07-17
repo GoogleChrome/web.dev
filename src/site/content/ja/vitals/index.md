@@ -199,7 +199,7 @@ Core Web Vitals の測定によって改善点を見つけたら、次のステ�
 - [FID を最適化する](/optimize-fid/)
 - [CLS を最適化する](/optimize-cls/)
 
-## Web Vitals に含まれているその他の指標
+## Other Web Vitals
 
 Core Web Vitals は優れたユーザー エクスペリエンスについての理解を深め、それらをユーザーに対して提供する際に重要な意味を持つ指標ですが、重要な指標はこれ以外にも存在します。
 
@@ -209,7 +209,7 @@ Core Web Vitals は優れたユーザー エクスペリエンスについての
 
 同様に、[Total Blocking Time (合計ブロック時間、TBT)](/tbt/) や [Time to Interactive (操作可能になるまでの時間、TTI)](/tti/) などの指標は、FID に影響を及ぼす潜在的な*インタラクティブ性*に関する問題を察知して診断を実施するために不可欠な、ラボ環境での指標です。これらの指標は実際のユーザー環境では測定できず、また[ユーザーを中心とした](/user-centric-performance-metrics/#how-metrics-are-measured)結果も反映していないため、Core Web Vitals には含まれません。
 
-## 進化を続ける Web Vitals
+## Evolving Web Vitals
 
 Web Vitals および Core Web Vitals は、Web 上でのユーザー エクスペリエンス品質の測定に関して現在利用可能な最高品質のシグナルを開発者に提供していますが、これらのシグナルも完璧なものではなく、将来的な改善や機能追加が期待されています。
 
