@@ -90,7 +90,7 @@ Today we're happy to announce the [CrUX API](http://developers.google.com/web/to
 
 Developers can query for an origin or URL and segment results by different form factors. The API updates daily and summarizes the previous 28 days worth of data (unlike the BigQuery dataset, which is aggregated monthly). The API also has the same relaxed public API quotas we place on our other API, the PageSpeed Insights API (25,000 requests per day).
 
-Below is a [demo](/chrome-ux-report-api/) using the CrUX API to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
+Below is a demo using the [CrUX API](https://developer.chrome.com/docs/crux/api/) to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
 
 <figure>
   {% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Chrome User Experience Report API demo showing Core Web Vitals metrics", width="800", height="523" %}
