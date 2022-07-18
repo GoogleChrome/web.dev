@@ -152,7 +152,7 @@ After June 1st, CrUX API requests will return the "old CLS" metric:
 ```
 
 After June 8, the following
-[CrUX BigQuery](/chrome-ux-report-bigquery/)
+[CrUX BigQuery](https://developer.chrome.com/docs/crux/bigquery/)
 will compare old and new CLS:
 
 ```sql
