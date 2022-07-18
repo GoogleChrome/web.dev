@@ -237,6 +237,11 @@ and whether it is an `isPrimary` one. Note that the built-in screen
 The `currentScreen` field is a live object corresponding to the current `window.screen`. The object
 is updated on cross-screen window placements or device changes.
 
+{% Aside %}
+Earlier versions of the API would not return detailed screen labels like `"Built-in Retina
+Display"`, but only less descriptive ones like `Internal Display 1`.
+{% endAside %}
+
 ### The `screenschange` event
 
 The only thing missing now is a way to detect when my screen setup changes. A new event,
@@ -372,7 +377,8 @@ new information about the screens connected to a device, increasing the fingerpr
 users, especially those with multiple screens consistently connected to their devices. As one
 mitigation of this privacy concern, the exposed screen properties are limited to the minimum needed
 for common placement use cases. User permission is required for sites to get multi-screen
-information and place windows on other screens.
+information and place windows on other screens. While Chromium returns detailed screen labels,
+browsers are free to return less descriptive (or even empty labels).
 
 ### User control
 
