@@ -52,6 +52,6 @@ document.addEventListener('paste', async (e) => {
 ## Further reading
 
 - [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API)
-- [Unblocking clipboard access](https://web.dev/async-clipboard/)
+- [Unblocking clipboard access](/async-clipboard/)
 
 [Demo]
