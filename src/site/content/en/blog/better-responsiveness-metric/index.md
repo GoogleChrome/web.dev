@@ -196,7 +196,7 @@ scrolling, and dragging as accurately as possible. So we're introducing the conc
 #### Interaction types
 
 {% Aside 'important' %}
-This content in this section was written during a time when Interaction to Next Paint (INP) was still being developed. The [finalized metric](/inp/) _only_ considers keyboard, mouse, and touch events, and does _not_ consider hover or scrolling when calculating INP.
+This content in this section was written during a time when Interaction to Next Paint (INP) was still being developed. The [current metric](/inp/) _only_ considers keyboard, mouse, and touch events, and does _not_ consider hover or scrolling when calculating INP.
 {% endAside %}
 
 The following table lists the four interactions we want to define along with the DOM events that
