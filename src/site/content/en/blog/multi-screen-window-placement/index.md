@@ -239,8 +239,8 @@ is updated on cross-screen window placements or device changes.
 
 {% Aside %}
 Earlier versions of the API would not return detailed screen labels like `"Built-in Retina
-Display"` given the underlying platform provides them, but only less descriptive ones like `Internal
-Display 1`.
+Display"` given the underlying platform provides them, but only less descriptive ones like `"Internal
+Display 1"`.
 {% endAside %}
 
 ### The `screenschange` event
