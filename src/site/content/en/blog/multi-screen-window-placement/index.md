@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2022-06-09
+updated: 2022-07-18
 tags:
   - blog
   - capabilities
@@ -239,7 +239,8 @@ is updated on cross-screen window placements or device changes.
 
 {% Aside %}
 Earlier versions of the API would not return detailed screen labels like `"Built-in Retina
-Display"`, but only less descriptive ones like `Internal Display 1`.
+Display"` given the underlying platform provides them, but only less descriptive ones like `Internal
+Display 1`.
 {% endAside %}
 
 ### The `screenschange` event
