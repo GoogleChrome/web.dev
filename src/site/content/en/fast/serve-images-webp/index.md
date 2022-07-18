@@ -8,11 +8,12 @@ description: |
   magnitude of a 25–35% reduction in filesize. This decreases page sizes and
   improves performance.
 date: 2018-11-05
-updated: 2020-04-06
+updated: 2022-07-18
 codelabs:
   - codelab-serve-images-webp
 tags:
   - performance
+  - web-vitals
 feedback:
   - api
 ---
@@ -172,6 +173,16 @@ RewriteCond %{HTTP:Accept} image/webp [NC]
 RewriteCond %{HTTP:Content-Disposition} !attachment [NC]
 RewriteCond %{DOCUMENT_ROOT}/$1.webp -f [NC]
 RewriteRule (.+)\.(png|jpe?g)$ $1.webp [T=image/webp,L]
+```
+
+If you go this route, you'll need to set the [HTTP `Vary` response header]() to ensure caches will understand that the image may be served with varying content types:
+
+```apacheconf
+<FilesMatch ".(jpe?g|png)$">
+  <IfModule mod_headers.c>
+    Header set Vary "Content-Type"
+  </ifModule>
+</FilesMatch>
 ```
 
 The rewrite rule above will look for a WebP version of any requested JPEG or PNG image. If a WebP alternate is found, it will be served with the proper `Content-Type`  header. This will allow you to use image markup similar to the following with automatic WebP support:
