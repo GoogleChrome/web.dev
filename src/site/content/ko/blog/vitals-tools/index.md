@@ -62,7 +62,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 ### CrUX
 
-[Chrome UX Report](https://developer.chrome.com/docs/crux/)(CrUX)는 수백만 개의 웹사이트에 대한 실제 사용자 경험 데이터의 공개 데이터 세트로 모든 Core Web Vitals의 필드 버전을 측정합니다. 실험실 데이터와 달리 CrUX 데이터는 필드에서 [옵트인된 사용자](https://developer.chrome.com/docs/crux/methodology/)가 제공합니다. 개발자는 이러한 데이터를 사용하여 자신 또는 경쟁업체의 웹사이트에서 실제 사용자 경험의 분포를 이해할 수 있습니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다. [BigQuery의 CrUX 데이터 세트](/chrome-ux-report-bigquery/)에는 모든 Core Web Vital에 대한 세분화된 성능 데이터가 포함되어 있으며 원본 수준의 월별 스냅샷에서 사용할 수 있습니다.
+[Chrome UX Report](https://developer.chrome.com/docs/crux/)(CrUX)는 수백만 개의 웹사이트에 대한 실제 사용자 경험 데이터의 공개 데이터 세트로 모든 Core Web Vitals의 필드 버전을 측정합니다. 실험실 데이터와 달리 CrUX 데이터는 필드에서 [옵트인된 사용자](https://developer.chrome.com/docs/crux/methodology/#user-eligibility)가 제공합니다. 개발자는 이러한 데이터를 사용하여 자신 또는 경쟁업체의 웹사이트에서 실제 사용자 경험의 분포를 이해할 수 있습니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다. [BigQuery의 CrUX 데이터 세트](https://developer.chrome.com/docs/crux/bigquery/)에는 모든 Core Web Vital에 대한 세분화된 성능 데이터가 포함되어 있으며 원본 수준의 월별 스냅샷에서 사용할 수 있습니다.
 
 사이트가 사용자를 위해 어떻게 작동하는지 제대로 알 수 있는 유일한 방법은 해당 사용자가 사이트를 로드하고 상호 작용할 때 필드에서 사이트의 성능을 실제로 측정하는 것입니다. 이러한 측정 유형을 일반적으로 Real User Monitoring(실제 사용자 모니터링, RUM)이라고 합니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다.
 

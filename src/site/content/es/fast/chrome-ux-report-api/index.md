@@ -153,7 +153,7 @@ Para depurar este error, primero verifica que el origen solicitado sea navegable
 
 {% CompareCaption %} Este origen es navegable públicamente. {% endCompareCaption %} {% endCompare %}
 
-Si el origen solicitado *es* la versión navegable, este error también puede ocurrir si el origen tiene un número insuficiente de muestras. Todos los orígenes y URL incluidos en el conjunto de datos deben tener una cantidad suficiente de muestras para anonimizar a los usuarios individuales. Además, los orígenes y las URL deben ser [rastreables públicamente](https://developers.google.com/search/reference/robots_txt). Consulta la [CrUX methodology (metodología CrUX)](https://developer.chrome.com/docs/crux/methodology/) para obtener más información sobre cómo se incluyen los sitios web en el conjunto de datos.
+Si el origen solicitado *es* la versión navegable, este error también puede ocurrir si el origen tiene un número insuficiente de muestras. Todos los orígenes y URL incluidos en el conjunto de datos deben tener una cantidad suficiente de muestras para anonimizar a los usuarios individuales. Además, los orígenes y las URL deben ser [públicamente indexable](https://developers.google.com/search/docs/advanced/crawling/block-indexing). Consulta la [CrUX methodology (metodología CrUX)](https://developer.chrome.com/docs/crux/methodology/#origin-eligibility) para obtener más información sobre cómo se incluyen los sitios web en el conjunto de datos.
 
 ## Consulta de datos de URL
 

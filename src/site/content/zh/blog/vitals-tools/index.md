@@ -64,7 +64,7 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 
 ### CrUX
 
-[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/) (CrUX) 是数百万个网站上的真实用户体验数据的公共数据集。该工具测量所有核心 Web 指标的实际版本。与实验室数据不同，CrUX 数据来自实际情况下[主动选择加入的用户](https://developer.chrome.com/docs/crux/methodology/)。通过这些数据，开发者能够了解真实世界用户体验在自己的网站，甚至是竞争对手的网站上的分布。即使您的网站上还没有 RUM，CrUX 也可以提供一种快速简便的方法来评估您的核心 Web 指标。[BigQuery 上的 CrUX 数据集](/chrome-ux-report-bigquery/)包含所有核心 Web 指标的细粒度性能数据，并在域级的每月快照中提供。
+[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/) (CrUX) 是数百万个网站上的真实用户体验数据的公共数据集。该工具测量所有核心 Web 指标的实际版本。与实验室数据不同，CrUX 数据来自实际情况下[主动选择加入的用户](https://developer.chrome.com/docs/crux/methodology/#user-eligibility)。通过这些数据，开发者能够了解真实世界用户体验在自己的网站，甚至是竞争对手的网站上的分布。即使您的网站上还没有 RUM，CrUX 也可以提供一种快速简便的方法来评估您的核心 Web 指标。[BigQuery 上的 CrUX 数据集](https://developer.chrome.com/docs/crux/bigquery/)包含所有核心 Web 指标的细粒度性能数据，并在域级的每月快照中提供。
 
 要想真正了解您的网站为用户呈现的性能表现，唯一的方法就是在这些用户进行页面加载和页面交互时对页面性能进行实测。这种类型的测量通常被称为真实用户监控，或简称为 RUM。即使您的网站上还没有 RUM，CrUX 也可以提供一种快速简便的方法来评估您的核心 Web 指标。
 
