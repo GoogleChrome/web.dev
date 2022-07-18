@@ -62,7 +62,7 @@ Si bien [Search Console](https://search.google.com/search-console/) ofrece a los
 
 ### CrUX
 
-[Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX) es un conjunto de datos públicos sobre la experiencia real del usuario en millones de sitios web. Mide las versiones de campo de todas las Core Web Vitals. A diferencia de los datos de laboratorio, los datos de CrUX provienen de [usuarios que han optado por participar](https://developer.chrome.com/docs/crux/methodology/) en el campo. Con estos datos, los desarrolladores pueden comprender la distribución de las experiencias de los usuarios del mundo real en sus propios sitios web o incluso en los de la competencia. Incluso si no tiene RUM en su sitio, CrUX puede proporcionar una manera rápida y fácil de evaluar sus Core Web Vitals. El [conjunto de datos de CrUX en BigQuery](https://web.dev/chrome-ux-report-bigquery/) incluye datos de rendimiento detallados para todos los Core Web Vitals y está disponible en instantáneas mensuales a nivel de origen.
+[Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX) es un conjunto de datos públicos sobre la experiencia real del usuario en millones de sitios web. Mide las versiones de campo de todas las Core Web Vitals. A diferencia de los datos de laboratorio, los datos de CrUX provienen de [usuarios que han optado por participar](https://developer.chrome.com/docs/crux/methodology/) en el campo. Con estos datos, los desarrolladores pueden comprender la distribución de las experiencias de los usuarios del mundo real en sus propios sitios web o incluso en los de la competencia. Incluso si no tiene RUM en su sitio, CrUX puede proporcionar una manera rápida y fácil de evaluar sus Core Web Vitals. El [conjunto de datos de CrUX en BigQuery](/chrome-ux-report-bigquery/) incluye datos de rendimiento detallados para todos los Core Web Vitals y está disponible en instantáneas mensuales a nivel de origen.
 
 La única manera de saber realmente cómo funciona su sitio para los usuarios es medir su rendimiento en el campo mientras esos usuarios lo cargan e interactúan con él. Este tipo de medición se conoce comúnmente como Monitoreo de usuarios reales, o RUM por sus siglas en inglés. Incluso si no tiene RUM en su sitio, CrUX puede proporcionar una manera rápida y fácil de evaluar sus Core Web Vitals.
 
@@ -77,7 +77,7 @@ Hoy nos complace anunciar la [API de CrUX](http://developers.google.com/web/tool
 
 Los desarrolladores pueden consultar un origen o una URL y segmentar los resultados por diferentes factores de forma. La API se actualiza diariamente y resume los datos de los 28 días anteriores (a diferencia del conjunto de datos de BigQuery, que se agrega mensualmente). La API también tiene las mismas cuotas públicas reducidas que ponemos en nuestra otra API, la API de PageSpeed Insights (25,000 solicitudes al día).
 
-A continuación se muestra una [demostración](https://web.dev/chrome-ux-report-api/) que utiliza la API de CrUX para visualizar las métricas de Core Web Vitals con distribuciones **buenas**, **que necesitan mejoras** y **deficientes**:
+A continuación se muestra una [demostración](/chrome-ux-report-api/) que utiliza la API de CrUX para visualizar las métricas de Core Web Vitals con distribuciones **buenas**, **que necesitan mejoras** y **deficientes**:
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Demostración de la API Informe de experiencia del usuario de Chrome que muestra las métricas de Core Web Vitals", width="800", height="523" %}</figure>
 

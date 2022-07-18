@@ -62,7 +62,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 ### CrUX
 
-[Chrome UX Report](https://developer.chrome.com/docs/crux/)(CrUX)는 수백만 개의 웹사이트에 대한 실제 사용자 경험 데이터의 공개 데이터 세트로 모든 Core Web Vitals의 필드 버전을 측정합니다. 실험실 데이터와 달리 CrUX 데이터는 필드에서 [옵트인된 사용자](https://developer.chrome.com/docs/crux/methodology/)가 제공합니다. 개발자는 이러한 데이터를 사용하여 자신 또는 경쟁업체의 웹사이트에서 실제 사용자 경험의 분포를 이해할 수 있습니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다. [BigQuery의 CrUX 데이터 세트](https://web.dev/chrome-ux-report-bigquery/)에는 모든 Core Web Vital에 대한 세분화된 성능 데이터가 포함되어 있으며 원본 수준의 월별 스냅샷에서 사용할 수 있습니다.
+[Chrome UX Report](https://developer.chrome.com/docs/crux/)(CrUX)는 수백만 개의 웹사이트에 대한 실제 사용자 경험 데이터의 공개 데이터 세트로 모든 Core Web Vitals의 필드 버전을 측정합니다. 실험실 데이터와 달리 CrUX 데이터는 필드에서 [옵트인된 사용자](https://developer.chrome.com/docs/crux/methodology/)가 제공합니다. 개발자는 이러한 데이터를 사용하여 자신 또는 경쟁업체의 웹사이트에서 실제 사용자 경험의 분포를 이해할 수 있습니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다. [BigQuery의 CrUX 데이터 세트](/chrome-ux-report-bigquery/)에는 모든 Core Web Vital에 대한 세분화된 성능 데이터가 포함되어 있으며 원본 수준의 월별 스냅샷에서 사용할 수 있습니다.
 
 사이트가 사용자를 위해 어떻게 작동하는지 제대로 알 수 있는 유일한 방법은 해당 사용자가 사이트를 로드하고 상호 작용할 때 필드에서 사이트의 성능을 실제로 측정하는 것입니다. 이러한 측정 유형을 일반적으로 Real User Monitoring(실제 사용자 모니터링, RUM)이라고 합니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다.
 
@@ -77,7 +77,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 개발자는 원본 또는 URL을 쿼리하고 다양한 폼 팩터로 결과를 분류할 수 있습니다. API는 매일 업데이트되며 이전 28일 동안의 데이터를 요약합니다(월별로 집계되는 BigQuery 데이터세트와 다름). 또한 해당 API에는 다른 API인 PageSpeed Insights API(하루 25,000개 요청)에 적용하는 것과 동일한 완화된 공개 API 할당량을 적용합니다.
 
-다음은 CrUX API를 사용하여 **양호(good)**, **개선 필요(needs improvement)** 또는 **나쁨(poor)** 상태의 분포를 통해 Core Web Vitals 메트릭을 시각화해주는 [데모](https://web.dev/chrome-ux-report-api/)입니다.
+다음은 CrUX API를 사용하여 **양호(good)**, **개선 필요(needs improvement)** 또는 **나쁨(poor)** 상태의 분포를 통해 Core Web Vitals 메트릭을 시각화해주는 [데모](/chrome-ux-report-api/)입니다.
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals 메트릭을 보여주는 Chrome User Experience Report API 데모", width="800", height="523" %}</figure>
 

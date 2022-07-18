@@ -102,7 +102,7 @@ as well as which tools still provide the ability to benchmark against the origin
         <td>Available in the <code>lighthouseResult</code> as <code>totalCumulativeLayoutShift</code>. Not available in the field <code>loadingExperience</code> data</td>
       </tr>
       <tr>
-        <td><a href="https://web.dev/chrome-ux-report-bigquery/">
+        <td><a href="/chrome-ux-report-bigquery/">
         Chrome UX Report (CrUX) - BigQuery</a></td>
         <td>202105 dataset, published 8 June 2021</td>
         <td>Available as <code>experimental.uncapped_cumulative_layout_shift</code> through 202111</td>
@@ -152,7 +152,7 @@ After June 1st, CrUX API requests will return the "old CLS" metric:
 ```
 
 After June 8, the following
-[CrUX BigQuery](https://web.dev/chrome-ux-report-bigquery/)
+[CrUX BigQuery](/chrome-ux-report-bigquery/)
 will compare old and new CLS:
 
 ```sql
