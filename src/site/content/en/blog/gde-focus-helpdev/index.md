@@ -17,7 +17,7 @@ tags:
 ---
 
 <figure>
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/r7N5P2I6MujzS6Dwseod.jpeg", alt="Two people sat with laptops smiling at the camera.", width="800", height="592" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/PD45CkrdOsFz3xyB5gJ8.jpeg", alt="Enrique on stage wearing a headset mic.", width="800", height="558" %}
 </figure>
 
 **Monika:** Let's start by learning a bit about you. What was your journey as a developer? What are you up to now?
