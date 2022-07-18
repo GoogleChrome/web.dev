@@ -126,6 +126,6 @@ instead. If you prefer a WebM `<source>` be used first, specify it first!
 
 ## Effect on Largest Contentful Paint (LCP)
 
-It should be noted that while `<img>` elements are candidates for LCP, `<video>` elements are not [LCP candidates](/lcp/#what-elements-are-considered) in all cases. When using videos as a replacement for animated GIFs provides better content efficiency, `<video>` elements without a [`poster` image](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) are not considered for LCP. This will be the case if you're using videos to replace animated GIFs.
+It should be noted that while `<img>` elements are candidates for LCP, `<video>` elements without a [`poster` image](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) are not [LCP candidates](/lcp/#what-elements-are-considered). The solution in the case of emulating animated GIFs is _not_ to add `poster` attribute to your `<video>` elements, because that image will go unused.
 
-What does this mean for your website? For one, if your largest element on screen is an autoplaying video that acts as an animated GIF replacement, the next largest node that qualifies as an LCP candidate will be selected instead. This may change in the future as LCP evolves. Consult the [LCP documentation](/lcp/) for the most up-to-date information.
+The solution here is to stick with using a `<video>` instead of an animated GIF, but with the understanding that such media will not be a candidate for LCP, and the next largest candidate will be used instead.
