@@ -14,7 +14,7 @@ tags:
   - chrome-ux-report
 ---
 
-The [Chrome UX Report](https://developer.chrome.com/docs/crux/) (informally known as CrUX) is a public dataset of real user experience data on millions of websites. Unlike lab data, CrUX data actually comes from [opted-in users](https://developer.chrome.com/docs/crux/methodology/) in the field. It measures the [Core Web Vitals](/vitals/) metrics, including Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS), as well as diagnostic metrics like Time to First Byte (TTFB) and First Contentful Paint (FCP).
+The [Chrome UX Report](https://developer.chrome.com/docs/crux/) (informally known as CrUX) is a public dataset of real user experience data on millions of websites. Unlike lab data, CrUX data actually comes from [opted-in users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) in the field. It measures the [Core Web Vitals](/vitals/) metrics, including Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS), as well as diagnostic metrics like Time to First Byte (TTFB) and First Contentful Paint (FCP).
 
 The dataset also contains qualitative dimensions
 about the user experience, for example, the device and connection types, which

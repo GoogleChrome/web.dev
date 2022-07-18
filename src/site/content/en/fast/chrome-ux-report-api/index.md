@@ -157,7 +157,7 @@ This origin is publicly navigable.
 {% endCompareCaption %}
 {% endCompare %}
 
-If the requested origin _is_ the navigable version, this error may also occur if the origin has an insufficient number of samples. All origins and URLs included in the dataset must have a sufficient number of samples to anonymize individual users. Additionally, origins and URLs must be [publicly crawlable](https://developers.google.com/search/reference/robots_txt). Refer to the [CrUX methodology](https://developer.chrome.com/docs/crux/methodology/) to learn more about how websites are included in the dataset.
+If the requested origin _is_ the navigable version, this error may also occur if the origin has an insufficient number of samples. All origins and URLs included in the dataset must have a sufficient number of samples to anonymize individual users. Additionally, origins and URLs must be [publicly indexable](https://developers.google.com/search/docs/advanced/crawling/block-indexing). Refer to the [CrUX methodology](https://developer.chrome.com/docs/crux/methodology/#origin-eligibility) to learn more about how websites are included in the dataset.
 
 ## Querying URL data
 
