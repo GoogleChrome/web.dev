@@ -175,7 +175,7 @@ RewriteCond %{DOCUMENT_ROOT}/$1.webp -f [NC]
 RewriteRule (.+)\.(png|jpe?g)$ $1.webp [T=image/webp,L]
 ```
 
-If you go this route, you'll need to set the [HTTP `Vary` response header]() to ensure caches will understand that the image may be served with varying content types:
+If you go this route, you'll need to set the [HTTP `Vary` response header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary) to ensure caches will understand that the image may be served with varying content types:
 
 ```apacheconf
 <FilesMatch ".(jpe?g|png)$">
