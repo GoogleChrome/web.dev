@@ -39,7 +39,7 @@ curl "https://chromeuxreport.googleapis.com/v1/records:queryRecord?key=$API_KEY"
 ```
 
 {% Aside %}
-Todas las solicitudes de API deben proporcionar un valor para el parámetro `key` usando el `[YOUR_API_KEY]` donde en el ejemplo anterior se deja como marcador de posición (placeholder). Obtén tu propia llave API de CrUX privada con solo hacer clic en un botón en la [documentación oficial de la API de CrUX](https://goo.gle/crux-api-key).
+Todas las solicitudes de API deben proporcionar un valor para el parámetro `key` usando el `[YOUR_API_KEY]` donde en el ejemplo anterior se deja como marcador de posición (placeholder). Obtén tu propia llave API de CrUX privada en la [documentación oficial de la API de CrUX](https://developer.chrome.com/docs/crux/api/#crux-api-key).
 {% endAside %}
 
 El `curl` se compone de tres partes:

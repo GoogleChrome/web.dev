@@ -19,7 +19,7 @@ The raw data of the Chrome UX Report
 is available on
 [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report), a
 database on the Google Cloud Platform (GCP). Using BigQuery requires a
-[GCP project](https://console.cloud.google.com/bigquery?p=chrome-ux-report&d=all&page=dataset)
+[GCP project](https://developer.chrome.com/docs/crux/bigquery/#accessing-the-dataset-in-gcp)
 and basic knowledge of SQL.
 
 In this guide, learn how to use BigQuery to write queries against the CrUX
