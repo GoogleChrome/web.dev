@@ -3,7 +3,7 @@ title: Web Vitals の測定を開始する
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: 月単位のグラフと、LCP、FID、CLS と表示されているストップウォッチ。
 description: 実際の環境とラボ環境の両方でサイトのWebバイタルを測定する方法を学びます。
@@ -21,7 +21,7 @@ tags:
 
 ### はじめに
 
-RUM を設定していない場合には、以下のツールを使用することで実際の環境でのサイトのパフォーマンスに関するデータをすばやく収集することができます。これらのツールはすべて同じ基本的なデータ セット ([Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)) をベースにしていますが、ユース ケースは若干異なります。
+RUM を設定していない場合には、以下のツールを使用することで実際の環境でのサイトのパフォーマンスに関するデータをすばやく収集することができます。これらのツールはすべて同じ基本的なデータ セット ([Chrome User Experience Report](https://developer.chrome.com/docs/crux/)) をベースにしていますが、ユース ケースは若干異なります。
 
 - **PageSpeed Insights (PSI)**: [PageSpeed Insights](https://pagespeed.web.dev/) は、過去 28 日間に渡るパフォーマンスをページレベルやオリジンレベルで集約し、レポートします。また、パフォーマンスの改善につながる提案もご確認いただけます。運営するサイトの Web Vitals の測定および改善を開始する方法を 1 つに絞ってお勧めするとすれば、PSI を使用したサイトの監査をお勧めします。PSI は、[Web](https://pagespeed.web.dev/) サイト上でご利用いただくか、[API](https://developers.google.com/speed/docs/insights/v5/get-started) としてご利用いただくことができます。
 - **Search Console**: [Search Console](https://search.google.com/search-console/welcome) は、パフォーマンス データをページ単位でレポートします。そのため、改善が必要なページを特定する場合に適しています。PageSpeed Insights とは異なり、Search Console のレポートには過去のパフォーマンス データが含まれています。Search Console は、ご自身が運営する所有権が確認されたサイトでのみご利用いただけます。

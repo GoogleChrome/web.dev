@@ -40,7 +40,7 @@ A seção "Métricas" do relatório Lighthouse inclui versões de laboratório d
 
 <figure>{% Img src = "image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt = "trilha Web Vitals no painel performance do devtools", width = "800", height = "476"%}<figcaption> A nova opção Web Vitals no painel DevTools Performance exibe uma trilha que destaca os momentos métricos, como Layout Shift (LS) mostrado acima.</figcaption></figure>
 
-[As métricas de campo](/vitals-field-measurement-best-practices/) , como as encontradas no [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) ou [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic) , não têm essa limitação e são um complemento valioso para os dados de laboratório, pois refletem a experiência dos usuários reais. Os dados de campo não podem oferecer os tipos de informações de diagnóstico que você obtém no laboratório, então os dois andam de mãos dadas.
+[As métricas de campo](/vitals-field-measurement-best-practices/) , como as encontradas no [Chrome UX Report](https://developer.chrome.com/docs/crux/) ou [RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic) , não têm essa limitação e são um complemento valioso para os dados de laboratório, pois refletem a experiência dos usuários reais. Os dados de campo não podem oferecer os tipos de informações de diagnóstico que você obtém no laboratório, então os dois andam de mãos dadas.
 
 ## Identifique onde você pode melhorar no Web Vitals
 

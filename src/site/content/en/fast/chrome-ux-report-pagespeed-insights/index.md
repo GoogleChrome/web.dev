@@ -8,15 +8,17 @@ description: |
   page's performance is and how to improve it. In this guide, learn how to use
   PSI to extract insights from CrUX and better understand the user experience.
 date: 2020-05-28
+updated: 2022-07-18
 tags:
   - performance
+  - chrome-ux-report
 ---
 
 [PageSpeed Insights](https://pagespeed.web.dev/)
 (PSI) is a tool for web developers to understand what a page's performance is
 and how to improve it. It uses [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 to audit the page and identify opportunities to improve performance. It also
-integrates with the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX)
+integrates with the [Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX)
 to show how real users experience the page and the origin in
 aggregate. In this guide, learn how to use PSI to extract insights from CrUX
 and better understand the user experience.

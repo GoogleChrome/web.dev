@@ -3,6 +3,7 @@ layout: post
 title: How do modern frameworks perform on the new INP metric
 subhead: Understand how the new INP metric affects the experience of sites built using JavaScript frameworks and libraries.
 date: 2022-05-16
+updated: 2022-07-18
 authors:
   - leenasohoni
   - addyosmani
@@ -16,12 +17,12 @@ tags:
   - blog
 ---
 
-Chrome recently introduced a new [experimental responsiveness metric](https://groups.google.com/a/chromium.org/g/chrome-ux-report-announce/c/F7S4_emZkcw) in the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) report. This metric, which we now know as [Interaction to Next Paint (INP)](/inp/) measures overall responsiveness to user interactions on the page. Today we want to share insights on where websites built using modern JavaScript frameworks stand in relation to this metric. We want to discuss why INP is relevant to frameworks and how [Aurora](/introducing-aurora/) and frameworks are working to optimize responsiveness.
+Chrome recently introduced a new [experimental responsiveness metric](https://groups.google.com/a/chromium.org/g/chrome-ux-report-announce/c/F7S4_emZkcw) in the [Chrome UX Report](https://developer.chrome.com/docs/crux/) report. This metric, which we now know as [Interaction to Next Paint (INP)](/inp/) measures overall responsiveness to user interactions on the page. Today we want to share insights on where websites built using modern JavaScript frameworks stand in relation to this metric. We want to discuss why INP is relevant to frameworks and how [Aurora](/introducing-aurora/) and frameworks are working to optimize responsiveness.
 
 
 ## Background
 
-Chrome uses First Input Delay ([FID](/fid/#why-only-consider-the-input-delay)) as part of Core Web Vitals ([CWV](/learn-web-vitals/)) to measure the [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) of websites. FID measures the waiting time from the first user interaction to the moment the browser is able to process the event handlers connected to the interaction. It does not include the time to process the event handlers, process subsequent interactions on the same page, or paint the next frame after the event callbacks run. However, responsiveness is crucial to the user experience throughout the page lifecycle because users spend roughly 90% of the time on a page after it loads. 
+Chrome uses First Input Delay ([FID](/fid/#why-only-consider-the-input-delay)) as part of Core Web Vitals ([CWV](/learn-web-vitals/)) to measure the [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) of websites. FID measures the waiting time from the first user interaction to the moment the browser is able to process the event handlers connected to the interaction. It does not include the time to process the event handlers, process subsequent interactions on the same page, or paint the next frame after the event callbacks run. However, responsiveness is crucial to the user experience throughout the page lifecycle because users spend roughly 90% of the time on a page after it loads.
 
 [INP](/inp) measures the time it takes a web page to respond to user interactions from when the user starts the interaction until the moment the next frame is painted on the screen. With INP, we hope to enable an aggregate measure for the perceived latency of all interactions in the page's lifecycle. We believe that INP will provide a more accurate estimate of web pages' load and runtime responsiveness.
 
@@ -48,9 +49,9 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
    <th>Measurement</th>
    <td>Measures the duration between the first user input and the time when the corresponding event handler runs.
    </td>
-   <td>Measures the overall interaction latency by using the delay of the 
+   <td>Measures the overall interaction latency by using the delay of the
     <ul>
-      <li>single largest interaction for less than 50 transactions 
+      <li>single largest interaction for less than 50 transactions
       <li><a href="https://web.dev/inp/#why-not-the-worst-interaction-latency">one of the largest interactions</a> for more than 50 transactions.</li>
     </ul>
    </td>
@@ -73,7 +74,7 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
    <th>Optimization</th>
    <td>FID can be optimized by improving resource loading on page load and optimizing JavaScript code.
    </td>
-   <td>Similar to FID for every interaction plus usage of rendering patterns that prioritize key UX updates over other rendering tasks. 
+   <td>Similar to FID for every interaction plus usage of rendering patterns that prioritize key UX updates over other rendering tasks.
    </td>
   </tr>
    </tbody>
@@ -81,7 +82,7 @@ Frameworks may have taken steps for better responsiveness by improving FID for w
 </table>
 </div>
 
-The [Aurora](/introducing-aurora/) team in Chrome works with open-source web frameworks to help developers improve different aspects of the user experience, including performance and CWV metrics. With the introduction of INP, we want to be prepared for the change in CWV metrics for framework-based websites. We have collected data based on the experimental responsiveness metric in CrUX reports. We will share insights and action items to ease the transition to the INP metric for framework-based websites. 
+The [Aurora](/introducing-aurora/) team in Chrome works with open-source web frameworks to help developers improve different aspects of the user experience, including performance and CWV metrics. With the introduction of INP, we want to be prepared for the change in CWV metrics for framework-based websites. We have collected data based on the experimental responsiveness metric in CrUX reports. We will share insights and action items to ease the transition to the INP metric for framework-based websites.
 
 
 ## Experimental responsiveness metric data
@@ -170,7 +171,7 @@ We recommend not solely making decisions on the frameworks you are choosing base
 {% endAside %}
 
 
-The table shows the percentage of origins on each framework with a good responsiveness score. The numbers are encouraging but tell us that there is much room for improvement. 
+The table shows the percentage of origins on each framework with a good responsiveness score. The numbers are encouraging but tell us that there is much room for improvement.
 
 
 ## How does JavaScript affect INP?
@@ -179,17 +180,17 @@ INP values in the field correlate well with the Total Blocking Time (TBT) observ
 
 * **Unoptimized JavaScript:** Redundant code or poor code-splitting and loading strategies can cause JavaScript bloat and block the main thread for long periods. Code-splitting, progressive loading, and [breaking up long tasks](/long-tasks-devtools/) can improve response times considerably.
 
-* **Third-party scripts:** [Third-party scripts](/optimizing-content-efficiency-loading-third-party-javascript/), which are sometimes not required to process an interaction (for example, ad scripts), can block the main thread and cause unnecessary delays. Prioritizing essential scripts can help to reduce the negative impact of third-party scripts. 
+* **Third-party scripts:** [Third-party scripts](/optimizing-content-efficiency-loading-third-party-javascript/), which are sometimes not required to process an interaction (for example, ad scripts), can block the main thread and cause unnecessary delays. Prioritizing essential scripts can help to reduce the negative impact of third-party scripts.
 
 * **Multiple event handlers:** Multiple event handlers associated with every interaction, each running a different script, could interfere with each other and add up to cause long delays. Some of these tasks may be non-essential and could be scheduled on a web worker or when the browser is idle.
 
 * **Framework overhead on event handling:** Frameworks may have additional features/syntax for event handling. For example, Vue uses [v-on](https://v2.vuejs.org/v2/api/#v-on) to attach event listeners to elements, while Angular wraps user event handlers. Implementing these features requires additional framework code above vanilla JavaScript.
 
-* **Hydration:** When using a JavaScript framework, it's not uncommon for a server to generate the initial HTML for a page which then needs to be augmented with event handlers and application state so that it can be interactive in a web browser. We call this process hydration. This can be a heavy process during load, depending on how long JavaScript takes to load and for hydration to finish. It can also lead to pages looking like they are interactive when they are not. Often hydration occurs automatically during page load or lazily (for example, on user interaction) and can impact INP or processing time due to task scheduling. In libraries such as React, you can leverage `useTransition` so that part of a component render is in the next frame and any more costly side-effects are left to future frames. Given this, updates in a transition that yield to more urgent updates like clicks can be a pattern that can be good for INP. 
+* **Hydration:** When using a JavaScript framework, it's not uncommon for a server to generate the initial HTML for a page which then needs to be augmented with event handlers and application state so that it can be interactive in a web browser. We call this process hydration. This can be a heavy process during load, depending on how long JavaScript takes to load and for hydration to finish. It can also lead to pages looking like they are interactive when they are not. Often hydration occurs automatically during page load or lazily (for example, on user interaction) and can impact INP or processing time due to task scheduling. In libraries such as React, you can leverage `useTransition` so that part of a component render is in the next frame and any more costly side-effects are left to future frames. Given this, updates in a transition that yield to more urgent updates like clicks can be a pattern that can be good for INP.
 
 * **Prefetching:** Aggressively prefetching the resources needed for subsequent navigations can be a performance win when done right. If however, you prefetch and render SPA routes synchronously, you can end up negatively impacting INP as all of this expensive rendering attempts to complete in a single frame. Contrast this to not prefetching your route and instead kicking off the work needed (for example, `fetch()`) and unblocking paint. We recommend re-examining if your framework's approach to prefetching is delivering the optimal UX and how (if at all) this may impact INP.
 
-From now on, for a good INP score, developers will have to focus on reviewing the code that executes after every interaction on the page and optimize their chunking, rehydration, loading strategies, and the size of each render() update  for both first-party and third-party scripts,  
+From now on, for a good INP score, developers will have to focus on reviewing the code that executes after every interaction on the page and optimize their chunking, rehydration, loading strategies, and the size of each render() update  for both first-party and third-party scripts,
 
 
 ## How are Aurora and frameworks addressing INP issues?
@@ -209,7 +210,7 @@ Aurora works with frameworks by incorporating best practices to provide baked-in
 
 React.js _time slicing_, implemented through [startTransition](https://github.com/reactwg/react-18/discussions/41) and _Suspense_, allows you to opt-in to selective or progressive hydration. This means that hydration isn't a synchronous block. It's done in small slices that are interruptible at any point.
 
-This should help improve INP and enable you to respond more quickly to keystrokes, hover effects during the transition, and clicks. It also helps to keep React apps responsive even for large transitions such as auto-complete. 
+This should help improve INP and enable you to respond more quickly to keystrokes, hover effects during the transition, and clicks. It also helps to keep React apps responsive even for large transitions such as auto-complete.
 
 Next.js is working on a [new routing framework](https://twitter.com/leeerob/status/1521659624516030466) that will use startTransition by default for route transitions. This goal is to allow Next.js site owners to adopt React time-slicing and improve the responsiveness of route transitions.
 

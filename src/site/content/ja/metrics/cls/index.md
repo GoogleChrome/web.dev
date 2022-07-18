@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: この投稿では、Cumulative Layout Shift (累積レイアウト シフト数、CLS) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
@@ -161,7 +161,7 @@ CLS は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### フィールド測定を実施するためのツール
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript ライブラリ](https://github.com/GoogleChrome/web-vitals)
@@ -219,7 +219,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-このコードは CLS を計算してログとして記録するための基本的な方法を示していますが、[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) での測定結果と一致するように CLS を正確に測定する方法はより複雑です。詳細については、以下を参照してください。
+このコードは CLS を計算してログとして記録するための基本的な方法を示していますが、[Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX) での測定結果と一致するように CLS を正確に測定する方法はより複雑です。詳細については、以下を参照してください。
 
 {% endAside %}
 

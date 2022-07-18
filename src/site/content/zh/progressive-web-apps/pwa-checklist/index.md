@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: 什么是优秀或出色的渐进式 Web 应用程序？
 tags:
   - progressive-web-apps
@@ -35,7 +35,7 @@ tags:
 
 为了让用户*使用*您的应用程序，速度至关重要。实际上，随着页面加载时间从 1 秒变为 10 秒，用户的跳出率会增加 123%。不是说只要完成 <code>load</code> 事件，就不再需要考虑性能。不能让用户对他们的交互（例如，点击按钮）是否已注册产生疑问。滚动和动画要让用户感觉平滑顺畅。性能会影响用户的整体体验，不论是用户如何看待您的应用程序，还是应用程序的实际表现，都会受到影响。
 
-虽然所有应用程序都有不同的需求，但 Lighthouse 中的性能审核基于 [RAIL 以用户为中心的性能模型](/rail/)，如果在这些审核中得到高分，则说明您的用户更有可能获得愉快的体验。您还可以使用 [PageSpeed Insights](https://pagespeed.web.dev/) 或 [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report/)来获取 Web 应用程序的实际性能数据。
+虽然所有应用程序都有不同的需求，但 Lighthouse 中的性能审核基于 [RAIL 以用户为中心的性能模型](/rail/)，如果在这些审核中得到高分，则说明您的用户更有可能获得愉快的体验。您还可以使用 [PageSpeed Insights](https://pagespeed.web.dev/) 或 [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)来获取 Web 应用程序的实际性能数据。
 
 #### 方法
 

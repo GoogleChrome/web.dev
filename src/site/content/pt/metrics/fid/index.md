@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: Este artigo apresenta a métrica First Input Delay (FID) e explica como medi-la
 tags:
   - performance
@@ -120,7 +120,7 @@ A FID é uma métrica que só pode ser medida [em campo](/user-centric-performan
 
 ### Ferramentas de campo
 
-- [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Relatório de experiência do usuário Chrome](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)

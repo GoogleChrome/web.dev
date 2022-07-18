@@ -8,16 +8,18 @@ description: |
   dataset to extract insightful results about the state of user experiences on
   the web.
 date: 2020-06-12
+updated: 2022-07-18
 tags:
   - performance
+  - chrome-ux-report
 ---
 
 The raw data of the Chrome UX Report
-([CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/))
+([CrUX](https://developer.chrome.com/docs/crux/))
 is available on
 [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report), a
 database on the Google Cloud Platform (GCP). Using BigQuery requires a
-[GCP project](https://developers.google.com/web/tools/chrome-user-experience-report/getting-started#getting-started)
+[GCP project](https://console.cloud.google.com/bigquery?p=chrome-ux-report&d=all&page=dataset)
 and basic knowledge of SQL.
 
 In this guide, learn how to use BigQuery to write queries against the CrUX

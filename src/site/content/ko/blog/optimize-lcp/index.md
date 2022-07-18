@@ -437,6 +437,6 @@ LCP를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
   {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="Chrome DevTools의 LCP", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) 는 원본 수준에서 집계된 실제 LCP 값을 제공합니다.
 
 _Philip Walton, Katie Hempenius, Kayce Basques, Ilya Grigorik의 리뷰에 감사드립니다._

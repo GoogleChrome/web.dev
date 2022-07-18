@@ -10,7 +10,7 @@ description: |
 authors:
   - philipwalton
 date: 2021-04-01
-updated: 2021-04-01
+updated: 2022-07-18
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/pOHexwZOflz5RGf6FT4P.jpg
 alt: Laptop screen showing an analytics interface
 tags:
@@ -25,7 +25,7 @@ Google currently provides two categories of tools to measure and debug Web Vital
   simulated environment that can mimic various conditions (for example, a slow
   network and a low-end mobile device).
 - **Field tools:** Tools such as [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
   (CrUX), which is based on aggregate, real-user data from Chrome. (Note that the
   field data reported by tools such as [PageSpeed
   Insights](https://pagespeed.web.dev/) and [Search

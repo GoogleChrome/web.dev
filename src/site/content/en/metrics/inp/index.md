@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-07-08
+updated: 2022-07-18
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -154,7 +154,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 ### Field tools
 
 - [PageSpeed Insights](https://pagespeed.web.dev).
-- [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
+- [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/).
   - Via BigQuery in the CrUX dataset's `experimental.interaction_to_next_paint` table.
   - CrUX API via `experimental_interaction_to_next_paint`.
   - CrUX Dashboard.

@@ -327,7 +327,7 @@ bfcache 탐색은 새 페이지 로드를 시작하지 않고 기존 페이지�
 
 [Core Web Vitals](/vitals/)는 다양한 차원(로딩 속도, 상호 작용, 시각적 안정성)에 걸쳐 웹 페이지에 대한 사용자 경험을 측정하고 사용자는 bfcache 복원을 기존 페이지 로드보다 더 빠른 탐색으로 경험하기 때문에 Core Web Vitals 메트릭이 이를 반영하는 것이 중요합니다. 결국 사용자는 bfcache가 활성화되었는지 여부를 신경 쓰지 않고 탐색이 빠르기만 하면 됩니다!
 
-Core Web Vitals 측정항목을 수집하고 보고하는 [Chrome 사용자 경험 보고서](https://developers.google.com/web/tools/chrome-user-experience-report)와 같은 도구는 bfcache 복원을 데이터세트에서 별도의 페이지 방문으로 처리합니다.
+Core Web Vitals 측정항목을 수집하고 보고하는 [Chrome 사용자 경험 보고서](https://developer.chrome.com/docs/crux/)와 같은 도구는 bfcache 복원을 데이터세트에서 별도의 페이지 방문으로 처리합니다.
 
 bfcache 복원 후 이러한 메트릭을 측정하기 위한 전용 웹 성능 API는 (아직) 없지만 기존 웹 API를 사용하여 해당 값을 근사화할 수 있습니다.
 

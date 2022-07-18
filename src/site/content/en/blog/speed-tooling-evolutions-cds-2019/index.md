@@ -4,6 +4,7 @@ subhead: New performance metrics, updates to PageSpeed Insights and Chrome User 
 authors:
   - egsweeny
 date: 2019-12-16
+updated: 2022-07-18
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
 hero: image/admin/lWKSX0b7pvSUX1BDd3IH.jpg
@@ -86,7 +87,7 @@ address that problem by measuring how often it's occurring for your users.
 
 <figure>
   <video autoplay controls loop muted
-   
+
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
@@ -120,7 +121,7 @@ Check out [Lighthouse performance scoring](/performance-scoring/) and the new
 
 Over the past year we have been analyzing [web performance from the
 field](/user-centric-performance-metrics/#in-the-field) via [Chrome User
-Experience](https://developers.google.com/web/tools/chrome-user-experience-report)
+Experience](https://developer.chrome.com/docs/crux/)
 (CrUX) data. With insights from that data we reassessed the thresholds that we
 use to label a website "slow", "moderate", or "fast" in field performance.
 

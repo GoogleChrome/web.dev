@@ -10,6 +10,7 @@ description: |
   tools that can help you collect lab or field data to assess page performance.
 web_lighthouse: N/A
 date: 2019-05-01
+updated: 2022-07-18
 tags:
   - performance
 ---
@@ -35,7 +36,7 @@ Real-world performance is highly variable due to differences in users' devices, 
 
 ### Field data
 
-[Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report/) provides metrics showing how real-world Chrome users experience popular destinations on the web.
+[Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) provides metrics showing how real-world Chrome users experience popular destinations on the web.
 
 ### Other tools
 

@@ -4,7 +4,7 @@ title: Time to First Byte (TTFB)
 authors:
   - jlwagner
 date: 2021-10-26
-updated: 2022-03-30
+updated: 2022-07-18
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -49,7 +49,7 @@ TTFB can be measured in [the lab](/user-centric-performance-metrics/#in-the-lab)
 
 ### Field tools
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools

@@ -442,6 +442,6 @@ if (navigator.connection && navigator.connection.effectiveType) {
   height="509"
 %}
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) предоставляет реальные значения LCP, агрегированные на уровне источника.
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) предоставляет реальные значения LCP, агрегированные на уровне источника.
 
 *Выражаем благодарность Филиппу Уолтону, Кэти Хемпениус, Кейси Баскесу и Илье Григорику за их обзоры.*
