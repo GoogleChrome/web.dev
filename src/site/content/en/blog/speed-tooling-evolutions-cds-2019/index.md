@@ -86,17 +86,15 @@ movement of content can be very frustrating and this new metric helps you
 address that problem by measuring how often it's occurring for your users.
 
 <figure>
-  <video autoplay controls loop muted
-
-    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
-    width="658" height="510">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"
-      type="video/webm; codecs=vp8">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
+    {% Video
+      src=["../web-dev-assets/layout-instability-api/layout-instability2.webm", "../web-dev-assets/layout-instability-api/layout-instability2.mp4"],
+      poster="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/rlKRnotLRXcqmirMCkIa.png",
+      width=658,
+      height=510,
+      autoplay=true,
+      controls=true,
+      loop=true,
+      muted=true %}
   <figcaption>
     A screencast illustrating how layout instability can negatively affect
     users.
