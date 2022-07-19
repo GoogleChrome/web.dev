@@ -5,7 +5,6 @@ hosts:
   - anniesullie
   - tunetheweb
   - rviscomi
-  - jlwagner
   - patmeenan
   - philipwalton
 primary_host:
