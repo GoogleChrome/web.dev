@@ -4,7 +4,6 @@ description: Ask these web performance experts your questions on optimizing your
 hosts:
   - anniesullie
   - tunetheweb
-  - yoavweiss
   - rviscomi
   - jlwagner
   - patmeenan
