@@ -42,6 +42,11 @@ layout: default-next
       {% include "icons/twitter.svg" %}
       <span>{{ 'i18n.spaces.see_on_twitter' | i18n(locale) }}</span>
     </a>
+  {% elif space.data.cal_link %}
+    <a class="button" href="{{ space.data.cal_link }}" target="_blank">
+      {% include "icons/calendar.svg" %}
+      <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
+    </a>
   {% else %}
     <a class="button" href="{{ space.data.event_date | calendarLink(space.data.title, space.data.description) }}" target="_blank">
       {% include "icons/calendar.svg" %}

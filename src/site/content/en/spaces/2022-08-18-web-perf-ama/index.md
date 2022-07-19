@@ -11,6 +11,7 @@ primary_host:
   - philipwalton
 event_date: 2022-08-18
 event_time: 9AM PST
+cal_link: "https://www.google.com/calendar/render?action=TEMPLATE&text=Ask+me+anything%2C+web+performance+edition&details=Ask+these+web+performance+experts+your+questions+on+optimizing+your+web+experiences.&location=Twitter+Spaces&dates=20220818T160000Z%2F20220818T170000Z"
 audio: tbd
 tags: twitter-space
 permalink: false
