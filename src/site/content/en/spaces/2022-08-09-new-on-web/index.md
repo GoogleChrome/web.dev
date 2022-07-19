@@ -2,7 +2,6 @@
 title: What's new on the web
 description: Learn about changes to the web platform and new APIs that you can use today.
 hosts:
-  - jakearchibald
   - rachelandrew
 primary_host:
   - rachelandrew
