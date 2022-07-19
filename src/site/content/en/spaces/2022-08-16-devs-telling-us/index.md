@@ -8,7 +8,7 @@ hosts:
 primary_host:
   - paulkinlan
 event_date: 2022-08-16
-event_time: 9AM PST
+event_time: 9AM PT
 cal_link: "https://www.google.com/calendar/render?action=TEMPLATE&text=What+are+developers+telling+us%3F&details=Let%27s+talk+data%21+Listen+to+the+Chrome+team+talk+about+what+we%27re+learning+from+developer+feedback.&location=Twitter+Spaces&dates=20220816T160000Z%2F20220816T170000Z"
 audio: tbd
 tags: twitter-space
