@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How GoDaddy's Websites + Marketing improved customer Core Web Vitals by 75%
+title: How GoDaddy's Websites + Marketing service improved customer Core Web Vitals by 75%
 authors:
   - simonleparc
 subhead: >
