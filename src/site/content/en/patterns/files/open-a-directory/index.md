@@ -18,7 +18,7 @@ and decide if they need write access or not.
 
 To open a directory, call
 [`showDirectoryPicker()`](https://developer.mozilla.org/docs/Web/API/Window/showDirectoryPicker),
-which returns a promise with the picked directory. If you need write access, you can pass `{ mode: 'readwrite', }` to the method.
+which returns a promise with the picked directory. If you need write access, you can pass `{ mode: 'readwrite' }` to the method.
 
 {% BrowserCompat 'api.Window.showDirectoryPicker' %}
 

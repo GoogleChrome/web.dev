@@ -1,9 +1,9 @@
 ---
 layout: pattern
-title: How to open one or multiple files
+title: How to save a file
 date: 2022-07-13
 description: >
-  Learn how to open one or multiple files in the browser.
+  Learn how to save a file in the browser.
 height: 800
 ---
 
@@ -50,7 +50,7 @@ const openFileOrFiles = async (multiple = false) => {
   // Feature detection. The API needs to be supported
   // and the app not run in an iframe.
   const supportsFileSystemAccess =
-    "showOpenFilePicker" in window &&
+    'showOpenFilePicker' in window &&
     (() => {
       try {
         return window.self === window.top;

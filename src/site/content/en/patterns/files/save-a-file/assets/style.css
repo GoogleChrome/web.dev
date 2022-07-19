@@ -17,6 +17,16 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-button {
+img {
+  max-width: 320px;
+  height: auto;
+}
+
+label,
+button,
+textarea,
+input,
+img {
   display: block;
+  margin-block: 1rem;
 }

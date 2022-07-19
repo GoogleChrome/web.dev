@@ -3,8 +3,17 @@ const buttonMultiple = document.querySelector('button.multiple');
 const pre = document.querySelector('pre');
 
 const openFileOrFiles = async (multiple = false) => {
-  // Feature detection.
-  const supportsFileSystemAccess = 'showOpenFilePicker' in window;
+  // Feature detection. The API needs to be supported
+  // and the app not run in an iframe.
+  const supportsFileSystemAccess =
+    "showOpenFilePicker" in window &&
+    (() => {
+      try {
+        return window.self === window.top;
+      } catch {
+        return false;
+      }
+    })();
 
   // If the File System Access API is supported…
   if (supportsFileSystemAccess) {

@@ -2,39 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>How to Copy Text</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>"
+    />
+    <title>Copy text</title>
     <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js" defer></script>
+    <script>
+      if (!isSecureContext) location.protocol = 'https:';
+    </script>
+    <script src="/script.js" type="module"></script>
   </head>
   <body>
-    <h1>How to Copy Text</h1>
-
-    <section>
-      <p id="instructions">
-<!--         The current browser engine supports The Clipboard API, which is the
-        modern way of copying text to the clipboard. To see the classic way,
-        view this demo in a
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#browser_compatibility"
-          >Non-supporting browser.</a
-        > -->
-      </p>
-    </section>
-
-    <section>
-      <button id="copy">
-        <strong>Copy</strong><br /><em>(write to clipboard)</em>
-      </button>
-    </section>
-
-    <textarea id="out" placeholder="Text to copy"></textarea>
-
-    <h3>Permissions:</h3>
-
-    <section id="permbuttons"></section>
-
-    <div id="toast" hidden></div>
+    <h1>Copy text</h1>
+    <textarea rows="3">
+Some sample text for you to copy. Feel free to edit this.</textarea
+    >
+    <button type="button">Copy</button>
   </body>
 </html>
