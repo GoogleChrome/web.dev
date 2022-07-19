@@ -2,9 +2,8 @@
 title: What are developers telling us?
 description: Let's talk data! Listen to the Chrome team talk about what we're learning from developer feedback.
 hosts:
-  - paulkinlan
   - andreban
-  - crivero
+  - paulkinlan
 primary_host:
   - paulkinlan
 event_date: 2022-08-16
