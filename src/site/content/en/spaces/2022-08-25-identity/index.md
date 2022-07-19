@@ -7,6 +7,7 @@ hosts:
 primary_host:
   - rowan_m
 event_date: 2022-08-25
+event_time: 6AM PST
 audio: tbd
 tags: twitter-space
 permalink: false

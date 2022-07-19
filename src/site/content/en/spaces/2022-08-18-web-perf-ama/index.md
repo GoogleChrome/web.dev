@@ -12,6 +12,7 @@ hosts:
 primary_host:
   - philipwalton
 event_date: 2022-08-18
+event_time: 9AM PST
 audio: tbd
 tags: twitter-space
 permalink: false

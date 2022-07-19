@@ -8,6 +8,7 @@ hosts:
 primary_host:
   - una
 event_date: 2022-08-04
+event_time: 9AM PST
 audio: tbd
 tags: twitter-space
 permalink: false

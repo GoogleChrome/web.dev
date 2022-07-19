@@ -34,6 +34,7 @@ layout: default-next
       {% endfor %}
     </ul>
     <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
+    <p class="eyebrow"> {{ space.data.event_time }} </p>
     <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
   </div>
   {% if space.data.twitter_link %}

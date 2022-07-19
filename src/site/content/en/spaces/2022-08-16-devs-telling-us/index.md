@@ -7,6 +7,7 @@ hosts:
 primary_host:
   - paulkinlan
 event_date: 2022-08-16
+event_time: 9AM PST
 audio: tbd
 tags: twitter-space
 permalink: false
