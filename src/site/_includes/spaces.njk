@@ -1,0 +1,165 @@
+---
+layout: default-next
+---
+
+{% macro twitterSpaceCard(space) %}
+  <div class="card__header">
+    <div class="avatars">
+    {% for host in space.data.hosts %}
+      {% set alt = "Profile image for " + collections.authors[host].title | i18n(locale) %}
+      {% Img
+        src=collections.authors[host].image,
+        class="avatar",
+        width="96",
+        height="96",
+        alt=alt,
+        decoding="async",
+        loading="lazy"
+      %}
+    {% endfor %}
+    </div>
+  </div>
+  <div class="card__content flow">
+    <h2 class="card__heading text-size-3">
+      {{ space.data.title }}
+    </h2>
+    <ul class="hosts">
+      {% for host in space.data.hosts %}
+        <li>
+            {{ collections.authors[host].title | i18n(locale) }}
+            {% if space.data.primary_host == host %}
+              <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span>
+            {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
+    <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
+  </div>
+  {% if space.data.twitter_link %}
+    <a class="button" href="{{ space.data.twitter_link }}" target="_blank">
+      {% include "icons/twitter.svg" %}
+      <span>{{ 'i18n.spaces.see_on_twitter' | i18n(locale) }}</span>
+    </a>
+  {% else %}
+    <a class="button" href="{{ space.data.event_date | calendarLink(space.data.title, space.data.description) }}" target="_blank">
+      {% include "icons/calendar.svg" %}
+      <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
+    </a>
+  {% endif %}
+{% endmacro %}
+
+<div class="landing-page spaces">
+  <header>
+    <div class="hero wrapper pad-inline-size-3">
+      <div class="hero__columns switcher">
+        <div>
+          <div class="flow">
+              <h1 class="text-size-6">{{ title }}</h1>
+              <p>{{ description }}</p>
+          </div>
+        </div>
+        <div class="flow">
+          {% Img src="image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/LKn1zx3kYtce65rHnnIj.svg", alt="Globe", width="600", height="488" %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% set spaces = collections['twitter-space'] %}
+<div class="spaces wrapper region all-center">
+  <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.upcoming_spaces' | i18n(locale) }}</h2>
+  <div class="auto-grid all-center">
+    {% if not spaces %}
+      {% set spaces = [] %}
+    {% endif %}
+    {% set upcomingSpaces = spaces | livePosts | filterInUpcoming('event_date') %}
+    {% set pastSpaces = spaces | livePosts | filterOutUpcoming('event_date') %}
+
+    {% if not upcomingSpaces.length %}
+    <p>{{ 'i18n.spaces.no_upcoming_spaces' | i18n(locale) }}</p>
+    {% endif %}
+
+    {% for space in upcomingSpaces %}
+      {% if loop.index0 < 6 %}
+        <article class="card flow">
+          {{ twitterSpaceCard(space) }}
+        </article>
+      {% endif %}
+    {% endfor %}
+
+    {% for space in upcomingSpaces %}
+      {% if loop.index0 > 5 %}
+      <input type="checkbox" id="see-more-upcoming" hidden>
+      <label id="see-more-upcoming-label" for="see-more-upcoming" class="button">see more</label>
+      <article class="card flow hidden">
+        {{ twitterSpaceCard(space) }}
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="spaces spaces--past wrapper region all-center">
+  <h2 class="text-size-4  gap-bottom-size-2">{{ 'i18n.spaces.past_spaces' | i18n(locale) }}</h2>
+
+  {% if not pastSpaces.length %}
+  <p>{{ 'i18n.spaces.no_past_spaces' | i18n(locale) }}</p>
+  {% endif %}
+
+  <table>
+    {% for space in pastSpaces %}
+      <tr>
+        <td class="eyebrow all-center">
+          <p>
+            {{ space.data.event_date | prettyDate('') }}
+          </p>
+        </td>
+        <td class="pad-block-size-1 pad-inline-size-1">
+          <div class="avatars">
+            {% for host in space.data.hosts %}
+              {% set alt = "Profile image for " + collections.authors[host].title | i18n(locale) %}
+              {% Img
+                src=collections.authors[host].image,
+                class="avatar",
+                width="96",
+                height="96",
+                alt=alt,
+                decoding="async",
+                loading="lazy"
+              %}
+            {% endfor %}
+          </div>
+          <p class="gap-top-size-1 eyebrow sm-only">
+            {{ space.data.event_date | prettyDate('DATE_SHORTER') }}
+          </p>
+        </td>
+        <td class="flow pad-block-size-1">
+          <h2 class="text-size-2">
+            {{ space.data.title }}
+          </h2>
+          <p>
+            {% for host in space.data.hosts %}
+              <span class="host">
+                {{ collections.authors[host].title | i18n(locale) }}
+                {% if space.data.primary_host == host %}
+                  <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span>
+                {% endif %}
+              </span>
+            {% endfor %}
+            <details class="ellipsis">
+              <summary>
+                <span class="ellipsis__full">{{ space.data.description }}</span>
+                <span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span>
+              </summary>
+            </details>
+            <p>
+              <audio src="{{ space.data.audio }}" class="audio-player__element" controls=""></audio>
+            </p>
+          </p>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+

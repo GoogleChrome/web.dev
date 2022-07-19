@@ -314,6 +314,8 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/storage-foundation/
   - source: /app-history-api
     destination: https://developer.chrome.com/docs/web-platform/navigation-api/
+  - source: /fetch-upload-streaming
+    destination: https://developer.chrome.com/articles/fetch-streaming-requests/
 
   # Redirect for Aurora
   - source: /aurora
