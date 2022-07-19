@@ -3,6 +3,7 @@ title: What are developers telling us?
 description: Let's talk data! Listen to the Chrome team talk about what we're learning from developer feedback.
 hosts:
   - andreban
+  - crivero
   - paulkinlan
 primary_host:
   - paulkinlan
