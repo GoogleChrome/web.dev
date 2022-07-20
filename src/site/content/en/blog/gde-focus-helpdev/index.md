@@ -20,6 +20,8 @@ tags:
 {% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/PD45CkrdOsFz3xyB5gJ8.jpeg", alt="Enrique on stage wearing a headset mic.", width="800", height="558" %}
 </figure>
 
+**Jake:** Yo yo yo yo!
+
 **Monika:** Let's start by learning a bit about you. What was your journey as a developer? What are you up to now?
 
 **Enrique:** I'm [Enrique](https://twitter.com/CKGrafico), but everyone calls me Quique. I've been a developer ever since I can remember. I was probably around 13 years old when me and my friend started to program very basic websites, we called them [Homer Simpson-like websites](https://simpsons.fandom.com/wiki/Homer%27s_Web_Page#:~:text=Homer%27s%20Web%20Page%20is%20a,didn%27t%20gain%20many%20hits.)—just for fun and for the sake of learning. Step by step, I continued programming on my own. In the end I decided to study engineering, but instead of computer science, I chose telecommunication.   
