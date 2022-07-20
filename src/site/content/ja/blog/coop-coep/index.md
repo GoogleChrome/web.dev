@@ -122,7 +122,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 [DevToolsで](#devtools-coop)ウィンドウオープナーとそのopeneeが別々の閲覧コンテキストグループに属しているかどうかをチェックすることができます。
 
-{% Aside 'codelab' %}[様々のCOOPパラメータの影響をご確認ください](https://first-party-test.glitch.me/coop). {% endAside %}
+{% Aside 'codelab' %}[様々のCOOPパラメータの影響をご確認ください](https://cross-origin-isolation.glitch.me/coop). {% endAside %}
 
 #### 2.リソースのCORPまたはCORSが有効になっていることを確認すること
 
@@ -151,7 +151,7 @@ COEPを完全に有効にする前に、 `Cross-Origin-Embedder-Policy-Report-On
 
 全てが機能し、すべてのリソースを正常にロードできることを確認したら、`Cross-Origin-Embedder-Policy: require-corp`HTTP headerを、iframeを介して埋め込まれているドキュメントを含むすべてのドキュメントに適用します。
 
-{% Aside 'codelab' %}[さまざまなCOEP / CORPパラメータの影響を確認してください](https://first-party-test.glitch.me/coep)。 {% endAside %}
+{% Aside 'codelab' %}[さまざまなCOEP / CORPパラメータの影響を確認してください](https://cross-origin-isolation.glitch.me/coep)。 {% endAside %}
 
 {% Aside %} [Squoosh](https://squoosh.app)（画像最適化PWA） [は、COOP / COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23)を使用して、Android ChromeもWasmスレッド（とShared Array Buffer）にアクセスできるようになりました。 {% endAside %}
 
@@ -216,7 +216,7 @@ Reporting APIを構成し、レポートを受信するようにサーバーを�
     "type": "corp"
   },
   "type": "coep",
-  "url": "https://first-party-test.glitch.me/?coep=require-corp&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/?coep=require-corp&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4249.0 Safari/537.36"
 }]
 ```
@@ -237,7 +237,7 @@ Reporting APIを構成し、レポートを受信するようにサーバーを�
     "type": "navigation-from-response"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
@@ -253,11 +253,11 @@ Reporting APIを構成し、レポートを受信するようにサーバーを�
     "effectivePolicy": "same-origin",
     "lineNumber": 83,
     "property": "postMessage",
-    "sourceFile": "https://first-party-test.glitch.me/popup.js",
+    "sourceFile": "https://cross-origin-isolation.glitch.me/popup.js",
     "type": "access-from-coop-page-to-openee"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?report-only&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 },
 {
@@ -269,7 +269,7 @@ Reporting APIを構成し、レポートを受信するようにサーバーを�
     "type": "access-to-coop-page-from-openee"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?report-only&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
