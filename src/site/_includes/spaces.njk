@@ -87,21 +87,9 @@ layout: default-next
     {% endif %}
 
     {% for space in upcomingSpaces %}
-      {% if loop.index0 < 6 %}
         <article class="card flow">
           {{ twitterSpaceCard(space) }}
         </article>
-      {% endif %}
-    {% endfor %}
-
-    {% for space in upcomingSpaces %}
-      {% if loop.index0 > 5 %}
-      <input type="checkbox" id="see-more-upcoming" hidden>
-      <label id="see-more-upcoming-label" for="see-more-upcoming" class="button">see more</label>
-      <article class="card flow hidden">
-        {{ twitterSpaceCard(space) }}
-      </article>
-      {% endif %}
     {% endfor %}
   </div>
 </div>
