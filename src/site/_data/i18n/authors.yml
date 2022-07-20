@@ -4253,6 +4253,12 @@ steveworkman:
   description:
     en: Lead Engineer at Maersk.com
 
+simonleparc:
+  title:
+    en: Simon Le Parc
+  description:
+    en: Senior Manager Software Development at GoDaddy
+
 dbaron:
   title:
     en: L. David Baron
@@ -4276,4 +4282,3 @@ bramus:
     pt: Developer Advocate para CSS, UI e DevTools no Chrome
     ru: Developer Advocate по вопросам CSS, UI и DevTools в команде Chrome
     zh: Chrome 的 CSS、UI 和 DevTools 开发技术推广工程师
-

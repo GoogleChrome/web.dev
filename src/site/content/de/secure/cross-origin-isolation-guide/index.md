@@ -58,7 +58,7 @@ Einige Browser verfügen über [eine Funktion zur Berichterstattung über veralt
     ```
 3. Sobald der Header ausgegeben wird, sollte der von ihnen festgelegte Endpunkt mit dem Sammeln von Berichten über veraltete Software (Deprecation Reports) beginnen.
 
-Sehen Sie sich hier eine Beispielimplementierung an: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Sehen Sie sich hier eine Beispielimplementierung an: [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 

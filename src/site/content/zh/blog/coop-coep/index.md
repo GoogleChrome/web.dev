@@ -124,7 +124,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 您可以[从 DevTools](#devtools-coop) 检查窗口打开程序及其 openee 是否位于单独的浏览器上下文组中。
 
-{% Aside 'codelab' %}[查看不同 COOP 参数的影响](https://first-party-test.glitch.me/coop)。{% endAside %}
+{% Aside 'codelab' %}[查看不同 COOP 参数的影响](https://cross-origin-isolation.glitch.me/coop)。{% endAside %}
 
 #### 2. 确保资源已启用 CORP 或 CORS
 
@@ -152,7 +152,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 确认一切正常且可以成功加载所有资源后，请将 `Cross-Origin-Embedder-Policy: require-corp` HTTP 标头应用到所有文档（包括通过 iframe 嵌入的文档）。
 
-{% Aside 'codelab' %} [查看不同 COEP/CORP 参数的影响](https://first-party-test.glitch.me/coep)。{% endAside %}
+{% Aside 'codelab' %} [查看不同 COEP/CORP 参数的影响](https://cross-origin-isolation.glitch.me/coep)。{% endAside %}
 
 {% Aside %} [Squoosh](https://squoosh.app)（一种图像优化 PWA）[现在，使用 COOP/COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23) 来访问 Wasm 线程（和共享数组缓冲区）以及 Android Chrome。{% endAside %}
 
@@ -217,7 +217,7 @@ Cross-Origin-Opener-Policy: same-origin
     "type": "corp"
   },
   "type": "coep",
-  "url": "https://first-party-test.glitch.me/?coep=require-corp&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/?coep=require-corp&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4249.0 Safari/537.36"
 }]
 ```
@@ -238,7 +238,7 @@ Cross-Origin-Opener-Policy: same-origin
     "type": "navigation-from-response"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
@@ -254,11 +254,11 @@ Cross-Origin-Opener-Policy: same-origin
     "effectivePolicy": "same-origin",
     "lineNumber": 83,
     "property": "postMessage",
-    "sourceFile": "https://first-party-test.glitch.me/popup.js",
+    "sourceFile": "https://cross-origin-isolation.glitch.me/popup.js",
     "type": "access-from-coop-page-to-openee"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?report-only&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 },
 {
@@ -270,7 +270,7 @@ Cross-Origin-Opener-Policy: same-origin
     "type": "access-to-coop-page-from-openee"
   },
   "type": "coop",
-  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "url": "https://cross-origin-isolation.glitch.me/coop?report-only&coop=same-origin&",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```

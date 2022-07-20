@@ -34,8 +34,11 @@ const config = htmlMinifier.createConfiguration({
 
 const minifyHtml = (content, outputPath) => {
   if (
-    (isProd && outputPath && outputPath.endsWith('.html')) ||
-    (isStaging && stagingUrls.includes(outputPath))
+    // A V8 bug causes a crash if minify is called twice with the empty string.
+    // This appears to be fixed in Node 18.
+    content !== '' &&
+    ((isProd && outputPath && outputPath.endsWith('.html')) ||
+      (isStaging && stagingUrls.includes(outputPath)))
   ) {
     try {
       content = htmlMinifier.minify(content, config);
