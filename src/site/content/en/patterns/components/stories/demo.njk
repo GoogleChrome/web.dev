@@ -33,6 +33,13 @@ patternId: gui-challenges/stories
             0 180px 80px hsla(200, 95%, 3%, .13)
         }
 
+        @media (hover: hover) {
+
+body > .stories {
+      border-radius: 3ch
+  }
+    }
+
       body > .stories {
 
           /* desktop constraint */
@@ -42,7 +49,7 @@ patternId: gui-challenges/stories
 
       body > .stories {
             max-width: 480px;
-            max-height: 848px
+            max-height: min(848px, 80vh)
         }
           }
 
@@ -86,8 +93,8 @@ patternId: gui-challenges/stories
         grid-area: story;
 
         background-size: cover;
-        background-image: 
-          var(--bg), 
+        background-image:
+          var(--bg),
           linear-gradient(to top, rgb(249, 249, 249), rgb(226, 226, 226));
 
         -webkit-user-select: none;
@@ -143,9 +150,9 @@ patternId: gui-challenges/stories
     </style>
   </head>
   <body>
-    <div class="stories"> 
+    <div class="stories">
       <section class="user">
-        <article class="story" style="--bg: url(https://picsum.photos/480/840);"></article> 
+        <article class="story" style="--bg: url(https://picsum.photos/480/840);"></article>
         <article class="story" style="--bg: url(https://picsum.photos/480/841);"></article>
       </section>
       <section class="user">
