@@ -383,9 +383,9 @@ const shaderModule = device.createShaderModule({
 
     @group(0) @binding(0) var<storage, read> firstMatrix : Matrix;
     @group(0) @binding(1) var<storage, read> secondMatrix : Matrix;
-    @group(0) @binding(2) var<storage, write> resultMatrix : Matrix;
+    @group(0) @binding(2) var<storage, read_write> resultMatrix : Matrix;
 
-    @stage(compute) @workgroup_size(8, 8)
+    @compute @workgroup_size(8, 8)
     fn main(@builtin(global_invocation_id) global_id : vec3<u32>) {
       // Guard against out-of-bounds work group sizes
       if (global_id.x >= u32(firstMatrix.size.x) || global_id.y >= u32(secondMatrix.size.y)) {
@@ -443,12 +443,12 @@ that will perform the matrix multiplication. Set its pipeline with
 
 Now, let's talk about how this compute shader is going to run on the GPU. Our
 goal is to execute this program in parallel for each cell of the result matrix,
-step by step. For a result matrix of size 2 by 4 for instance, we'd call
-`passEncoder.dispatchWorkgroups(2, 4)` to encode the command of execution. The
-first argument "x" is the first dimension, the second one "y" is the second
-dimension, and the latest one "z" is the third dimension that defaults to 1 as
-we don't need it here. In the GPU compute world, encoding a command to execute
-a kernel function on a set of data is called dispatching.
+step by step. For a result matrix of size 16 by 32 for instance, to encode
+the command of execution, on a `@workgroup_size(8, 8)`, we'd call
+`passEncoder.dispatchWorkgroups(2, 4)` or `passEncoder.dispatchWorkgroups(16 / 8, 32 / 8)`.
+The first argument "x" is the first dimension, the second one "y" is the second dimension,
+and the latest one "z" is the third dimension that defaults to 1 as we don't need it here.
+In the GPU compute world, encoding a command to execute a kernel function on a set of data is called dispatching.
 
 <figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg", alt="Execution in parallel for each result matrix cell", width="800", height="530" %}
