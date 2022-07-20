@@ -147,9 +147,11 @@ layout: default-next
                 <span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span>
               </summary>
             </details>
+            {% if space.data.audio %}
             <p>
               <audio src="{{ space.data.audio }}" class="audio-player__element" controls=""></audio>
             </p>
+            {% endif %}
           </p>
         </td>
       </tr>
