@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-최근에 발표된 [Web Vitals](/vitals/) 이니셔티브는 모든 사이트가 웹에서 뛰어난 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합적인 지침을 제공합니다. 이제 **웹 개발자가 즐 겨 사용하는 Google의 모든 인기 도구가 Core Web Vitals 측정을 지원**하여 사용자 경험 문제를 보다 쉽게 진단하고 수정할 수 있게 되었습니다. 이러한 도구에는 [Lighthouse](https://github.com/GoogleChrome/lighthouse) , [PageSpeed Insights](https://pagespeed.web.dev/) , [Chrome DevTools](https://developer.chrome.com/docs/devtools/) , [Search Console](https://search.google.com/search-console/about) , [web.dev의 측정 도구](/measure/) , [Web Vitals Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) 및 새로운 [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API가 포함됩니다.
+최근에 발표된 [Web Vitals](/vitals/) 이니셔티브는 모든 사이트가 웹에서 뛰어난 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합적인 지침을 제공합니다. 이제 **웹 개발자가 즐 겨 사용하는 Google의 모든 인기 도구가 Core Web Vitals 측정을 지원**하여 사용자 경험 문제를 보다 쉽게 진단하고 수정할 수 있게 되었습니다. 이러한 도구에는 [Lighthouse](https://github.com/GoogleChrome/lighthouse) , [PageSpeed Insights](https://pagespeed.web.dev/) , [Chrome DevTools](https://developer.chrome.com/docs/devtools/) , [Search Console](https://search.google.com/search-console/about) , [web.dev의 측정 도구](/measure/) , [Web Vitals Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) 및 새로운 [Chrome UX Report](https://developer.chrome.com/docs/crux/) API가 포함됩니다.
 
 이제 Google 검색에 Core Web Vitals가 [페이지 경험](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 평가의 기초로 포함되므로 이러한 메트릭을 가능한 한 사용 및 실행 가능하게 만드는 것이 중요합니다.
 
@@ -62,7 +62,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 ### CrUX
 
-[Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)(CrUX)는 수백만 개의 웹사이트에 대한 실제 사용자 경험 데이터의 공개 데이터 세트로 모든 Core Web Vitals의 필드 버전을 측정합니다. 실험실 데이터와 달리 CrUX 데이터는 필드에서 [옵트인된 사용자](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology)가 제공합니다. 개발자는 이러한 데이터를 사용하여 자신 또는 경쟁업체의 웹사이트에서 실제 사용자 경험의 분포를 이해할 수 있습니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다. [BigQuery의 CrUX 데이터 세트](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started)에는 모든 Core Web Vital에 대한 세분화된 성능 데이터가 포함되어 있으며 원본 수준의 월별 스냅샷에서 사용할 수 있습니다.
+[Chrome UX Report](https://developer.chrome.com/docs/crux/)(CrUX)는 수백만 개의 웹사이트에 대한 실제 사용자 경험 데이터의 공개 데이터 세트로 모든 Core Web Vitals의 필드 버전을 측정합니다. 실험실 데이터와 달리 CrUX 데이터는 필드에서 [옵트인된 사용자](https://developer.chrome.com/docs/crux/methodology/#user-eligibility)가 제공합니다. 개발자는 이러한 데이터를 사용하여 자신 또는 경쟁업체의 웹사이트에서 실제 사용자 경험의 분포를 이해할 수 있습니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다. [BigQuery의 CrUX 데이터 세트](https://developer.chrome.com/docs/crux/bigquery/)에는 모든 Core Web Vital에 대한 세분화된 성능 데이터가 포함되어 있으며 원본 수준의 월별 스냅샷에서 사용할 수 있습니다.
 
 사이트가 사용자를 위해 어떻게 작동하는지 제대로 알 수 있는 유일한 방법은 해당 사용자가 사이트를 로드하고 상호 작용할 때 필드에서 사이트의 성능을 실제로 측정하는 것입니다. 이러한 측정 유형을 일반적으로 Real User Monitoring(실제 사용자 모니터링, RUM)이라고 합니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다.
 
@@ -77,7 +77,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 개발자는 원본 또는 URL을 쿼리하고 다양한 폼 팩터로 결과를 분류할 수 있습니다. API는 매일 업데이트되며 이전 28일 동안의 데이터를 요약합니다(월별로 집계되는 BigQuery 데이터세트와 다름). 또한 해당 API에는 다른 API인 PageSpeed Insights API(하루 25,000개 요청)에 적용하는 것과 동일한 완화된 공개 API 할당량을 적용합니다.
 
-다음은 CrUX API를 사용하여 **양호(good)**, **개선 필요(needs improvement)** 또는 **나쁨(poor)** 상태의 분포를 통해 Core Web Vitals 메트릭을 시각화해주는 [데모](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started)입니다.
+다음은 CrUX API를 사용하여 **양호(good)**, **개선 필요(needs improvement)** 또는 **나쁨(poor)** 상태의 분포를 통해 Core Web Vitals 메트릭을 시각화해주는 [데모](/chrome-ux-report-api/)입니다.
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals 메트릭을 보여주는 Chrome User Experience Report API 데모", width="800", height="523" %}</figure>
 

@@ -7,6 +7,7 @@ authors:
   - antoinebisch
   - cédricbazureau
 date: 2021-10-08
+updated: 2022-07-18
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/PHqBoMdg3WgcQWWIIkWj.jpg
 alt: Renault Group logo.
 description: |
@@ -85,7 +86,7 @@ Here is how they've approached it.
 
 ### A central optimization of the SPA
 
-From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
+From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) and [Chrome UX Report API](https://developer.chrome.com/docs/crux/api/)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
 
 +   [Server side rendering (SSR)](/rendering-on-the-web/) to ensure a fast First Contentful Paint (FCP).
 +   [Code splitting](/codelab-code-splitting/) to deliver only the JS and CSS chunks needed for the landing page (for better LCP and FID).

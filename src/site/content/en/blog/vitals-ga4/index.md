@@ -9,6 +9,7 @@ authors:
   - philipwalton
   - mkazi
 date: 2021-05-18
+updated: 2022-07-18
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: Web Vitals logo
 tags:
@@ -21,7 +22,7 @@ Google provides a number of tools—[Search
 Console](https://support.google.com/webmasters/answer/9205520), [PageSpeed
 Insights](https://pagespeed.web.dev/) (PSI), and
 the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+Report](https://developer.chrome.com/docs/crux/)
 (CrUX)—that let developers see how their sites perform against the [Core Web
 Vitals](/vitals/#core-web-vitals) metrics for their real users [in the
 field](/user-centric-performance-metrics/#in-the-field).

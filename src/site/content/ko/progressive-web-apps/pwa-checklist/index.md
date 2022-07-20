@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-02-24
+updated: 2022-07-18
 description: |2
 
   무엇이 좋은 또는 훌륭한 프로그레시브 웹 앱을 만드는가?
@@ -37,7 +37,7 @@ tags:
 
 사용자가 앱을 *사용*하도록 하려면 속도가 중요합니다. 실제로 페이지 로드 시간이 1초에서 10초로 늘어나면 사용자가 이탈할 확률은 123% 증가합니다. 성능은 `load` 이벤트에서 그치지 않습니다. 사용자는 버튼 클릭과 같은 상호 작용이 입력되었는지 여부를 궁금해해서는 안 됩니다. 스크롤과 애니메이션이 부드럽게 느껴져야 합니다. 성능은 사용자가 애플리케이션을 인식하는 방식에서 실질적인 성능에 이르기까지 전체 경험에 영향을 줍니다.
 
-모든 응용 프로그램의 요구 사항은 다르지만 Lighthouse의 성능 감사는 [RAIL 사용자 중심 성능 모델을](/rail/) 기반으로 하며 이러한 감사에서 높은 점수를 받으면 사용자가 즐거운 경험을 할 가능성이 높아집니다. [PageSpeed Insights](https://pagespeed.web.dev/) 또는 [Chrome 사용자 경험 보고서](https://developers.google.com/web/tools/chrome-user-experience-report/)를 사용하여 웹 앱에 대한 실제 성능 데이터를 얻을 수도 있습니다.
+모든 응용 프로그램의 요구 사항은 다르지만 Lighthouse의 성능 감사는 [RAIL 사용자 중심 성능 모델을](/rail/) 기반으로 하며 이러한 감사에서 높은 점수를 받으면 사용자가 즐거운 경험을 할 가능성이 높아집니다. [PageSpeed Insights](https://pagespeed.web.dev/) 또는 [Chrome 사용자 경험 보고서](https://developer.chrome.com/docs/crux/)를 사용하여 웹 앱에 대한 실제 성능 데이터를 얻을 수도 있습니다.
 
 #### 방법
 
