@@ -34,12 +34,18 @@ layout: default-next
       {% endfor %}
     </ul>
     <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
+    <p class="eyebrow"> {{ space.data.event_time }} </p>
     <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
   </div>
   {% if space.data.twitter_link %}
     <a class="button" href="{{ space.data.twitter_link }}" target="_blank">
       {% include "icons/twitter.svg" %}
       <span>{{ 'i18n.spaces.see_on_twitter' | i18n(locale) }}</span>
+    </a>
+  {% elif space.data.cal_link %}
+    <a class="button" href="{{ space.data.cal_link }}" target="_blank">
+      {% include "icons/calendar.svg" %}
+      <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
     </a>
   {% else %}
     <a class="button" href="{{ space.data.event_date | calendarLink(space.data.title, space.data.description) }}" target="_blank">
@@ -81,21 +87,9 @@ layout: default-next
     {% endif %}
 
     {% for space in upcomingSpaces %}
-      {% if loop.index0 < 6 %}
         <article class="card flow">
           {{ twitterSpaceCard(space) }}
         </article>
-      {% endif %}
-    {% endfor %}
-
-    {% for space in upcomingSpaces %}
-      {% if loop.index0 > 5 %}
-      <input type="checkbox" id="see-more-upcoming" hidden>
-      <label id="see-more-upcoming-label" for="see-more-upcoming" class="button">see more</label>
-      <article class="card flow hidden">
-        {{ twitterSpaceCard(space) }}
-      </article>
-      {% endif %}
     {% endfor %}
   </div>
 </div>
@@ -153,9 +147,11 @@ layout: default-next
                 <span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span>
               </summary>
             </details>
+            {% if space.data.audio %}
             <p>
               <audio src="{{ space.data.audio }}" class="audio-player__element" controls=""></audio>
             </p>
+            {% endif %}
           </p>
         </td>
       </tr>

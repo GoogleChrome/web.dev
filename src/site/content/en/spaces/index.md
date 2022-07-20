@@ -1,5 +1,5 @@
 ---
 layout: spaces
 title: Connect with us on Twitter Spaces
-description: Connect with the Chrome team through live discussion on Twitter Spaces. Listen live by adding the upcoming events to your calendar, or catch up later with the recorded audio. You'll see all of the upcoming and previous spaces below.
+description: Hear about what the Chrome team is working on and ask your burning questions through live discussion on Twitter Spaces. Add upcoming events to your calendar to join us live, or catch up later with the recorded audio. See upcoming and previous spaces below.
 ---
