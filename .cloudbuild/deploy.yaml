@@ -20,6 +20,7 @@ steps:
     args: ['run', 'build']
     env:
       - 'ELEVENTY_ENV=prod'
+      - 'NODE_OPTIONS="--max_old_space_size=16384 --trace-backing-store"'
 
   - name: 'gcr.io/$PROJECT_ID/firebase'
     id: 'Deploy site to Firebase'
