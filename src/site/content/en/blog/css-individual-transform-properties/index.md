@@ -87,7 +87,9 @@ The main reason these properties were added is to make animations easier. Say yo
 
 {% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/Pn0t3nrqfBg6JhmYFslm.svg", alt="Keyframes Graph", width="800", height="745" %}
 
-To write this using `transform`, you’d have to calculate all in-between values for all defined transformations, and include those in each keyframe. For example, to do a rotation at the 10% mark, the values for the other transformations must be calculated as well, because the `transform` property needs all of them.
+### Using `transform`
+
+To implement this animation using `transform`, you’d have to calculate all in-between values for all defined transformations, and include those in each keyframe. For example, to do a rotation at the 10% mark, the values for the other transformations must be calculated as well, because the `transform` property needs all of them.
 
 {% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/AF5n6UlhcuQ5UNKemX8M.svg", alt="Keyframes Graph with intermediate values calculated", width="800", height="745" %}
 
@@ -104,7 +106,7 @@ The resulting CSS code becomes this:
 }
 
 .target {
-  animation: combined 2s;
+  animation: anim 2s;
   animation-fill-mode: forwards;
 }
 ```
@@ -117,7 +119,40 @@ The resulting CSS code becomes this:
   tab: 'result'
 } %}
 
+### Using individual transform properties
+
 With individual transform properties this becomes much easier to write. Instead of dragging all transformations from keyframe to keyframe, you can target each transform individually. You also no longer need to calculate all those in-between values.
+
+```css
+@keyframes anim {
+  0% { translate: 0% 0; }
+  100% { translate: 100% 0; }
+
+  0%, 100% { scale: 1; }
+  5%, 95% { scale: 1.2; }
+
+  0% { rotate: 0deg; }
+  10%, 90% { rotate: 180deg; }
+  100% { rotate: 360deg; }
+}
+
+.target {
+  animation: anim 2s;
+  animation-fill-mode: forwards;
+}
+```
+
+{% Codepen {
+  user: 'bramus',
+  id: 'MWVbObG',
+  height: 360,
+  theme: 'dark',
+  tab: 'result'
+} %}
+
+### Using individual transform properties and several keyframes
+
+To make your code modular you can split up each sub-animation into its own set of keyframes.
 
 ```css
 @keyframes move {
@@ -139,7 +174,6 @@ With individual transform properties this becomes much easier to write. Instead 
 .target {
   animation: move 2s, scale 2s, rotate 2s;
   animation-fill-mode: forwards;
-
 }
 ```
 
@@ -151,38 +185,7 @@ With individual transform properties this becomes much easier to write. Instead 
   tab: 'result'
 } %}
 
-{% Aside %}
-This demo underlines that it becomes really easy to compose animations because the `transform` properties–which now have become individual properties–no longer overwrite each other.
-{% endAside %}
-
-If you want, you can combine all animation steps into one set of keyframes
-
-```css
-@keyframes combined {
-  0% { translate: 0% 0; }
-  100% { translate: 100% 0; }
-
-  0%, 100% { scale: 1; }
-  5%, 95% { scale: 1.2; }
-
-  0% { rotate: 0deg; }
-  10%, 90% { rotate: 180deg; }
-  100% { rotate: 360deg; }
-}
-
-.target {
-  animation: combined 2s;
-  animation-fill-mode: forwards;
-}
-```
-
-{% Codepen {
-  user: 'bramus',
-  id: 'MWVbObG',
-  height: 360,
-  theme: 'dark',
-  tab: 'result'
-} %}
+Thanks to this split you can apply each separate set of keyframes as you like because the `transform` properties–which now have become individual properties–no longer overwrite each other. Above that you can give each transformation a different timing without needing to rewrite the whole lot.
 
 ## Performance
 
