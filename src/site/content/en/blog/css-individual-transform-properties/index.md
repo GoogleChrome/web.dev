@@ -7,6 +7,9 @@ authors:
 description: >
   Learn how you can use the individual translate, rotate, and scale CSS properties to approach transforms in an intuitive way.
 date: 2022-08-02
+tags:
+  - blog
+  - newly-interoperable
 ---
 
 ## The CSS `transform` property
