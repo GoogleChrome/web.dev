@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Luxury Retailer Farfetch Sees Higher Conversion Rates For Better Core Web Vitals
+title: Luxury retailer Farfetch sees higher conversion rates for better Core Web Vitals
 subhead: |
   How the e-commerce fashion retailer correlated Core Web Vitals and performance metrics with business metrics, saw an increase in KPIs and built a "Performance Business Case Calculator" to drive product decisions and a performance culture.
 description: |
