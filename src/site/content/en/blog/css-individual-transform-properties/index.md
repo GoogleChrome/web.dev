@@ -88,7 +88,7 @@ If one of the individual transform properties are declared along with a `transfo
 
 The main reason these properties were added is to make animations easier. Say you want to animate an element as follows:
 
-{% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/Pn0t3nrqfBg6JhmYFslm.svg", alt="Keyframes Graph", width="800", height="745" %}
+{% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/Pn0t3nrqfBg6JhmYFslm.svg", alt="Keyframes graph.", width="800", height="745" %}
 
 ### Using `transform`
 
