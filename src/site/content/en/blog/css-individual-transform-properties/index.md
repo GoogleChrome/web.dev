@@ -56,7 +56,7 @@ Rewriting the preceding `transform` example with the individual properties, your
 }
 ```
 
-## Order Matters
+## Order matters
 
 One key difference between the original CSS `transform` property and the new properties is the order in which the declared transformations get applied.
 
