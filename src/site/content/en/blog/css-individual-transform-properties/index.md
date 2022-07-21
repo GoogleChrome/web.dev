@@ -94,7 +94,7 @@ The main reason these properties were added is to make animations easier. Say yo
 
 To implement this animation using `transform`, you’d have to calculate all in-between values for all defined transformations, and include those in each keyframe. For example, to do a rotation at the 10% mark, the values for the other transformations must be calculated as well, because the `transform` property needs all of them.
 
-{% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/AF5n6UlhcuQ5UNKemX8M.svg", alt="Keyframes Graph with intermediate values calculated", width="800", height="745" %}
+{% Img src="image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/AF5n6UlhcuQ5UNKemX8M.svg", alt="Keyframes graph with intermediate values calculated.", width="800", height="745" %}
 
 The resulting CSS code becomes this:
 
