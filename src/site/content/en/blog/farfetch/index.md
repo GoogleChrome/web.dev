@@ -6,6 +6,7 @@ subhead: |
 description: |
   How luxury retailer Farfetch's investment in improving Core Web Vitals led to better business outcomes.
 hero: image/OcYv93SYnIg1kfTihK6xqRDebvB2/h3mza3j8moM7N9lGGg15.png
+alt: An image of a phone displaying a Farfetch web page.
 authors:
   - ruisantos
   - manuelgarcia
