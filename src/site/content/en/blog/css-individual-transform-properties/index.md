@@ -64,7 +64,7 @@ With `transform`, the transformation functions get applied in the order they’r
 
 With the individual transformation properties, the order is not the order in which they are declared.  The order is always the same: first `translate` (outside), then `rotate`, and then `scale` (inside).
 
-That means both code snippets below yield the same result:
+That means both of the following code snippets give the same result:
 
 ```css
 .transform--individual {
