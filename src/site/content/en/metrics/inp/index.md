@@ -117,7 +117,7 @@ As far as INP goes, **only the following interaction types are observed:**
 - Pressing a key on either a physical or onscreen keyboard.
 
 {% Aside 'important' %}
-Hovering and scrolling does not factor into INP. However, scrolling with the space bar counts as a keystroke and _is_ factored into INP, as the main thread may block key inputs in the presence of long tasks.
+Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
 {% endAside %}
 
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
@@ -144,7 +144,7 @@ INP is more than about first impressions. By sampling all interactions, responsi
 It's possible that a page can return no INP value. This can happen for a number of reasons:
 
 - The page was loaded, but the user never clicked, tapped, or pressed a key on their keyboard.
-- The page was loaded, but the user interacted with the page using gestures that did not involve clicking, tapping, or using the keyboard. For example, scrolling or hovering over elements does not factor into how INP is calculated (unless the space bar was used to scroll the page).
+- The page was loaded, but the user interacted with the page using gestures that did not involve clicking, tapping, or using the keyboard. For example, scrolling or hovering over elements does not factor into how INP is calculated.
 - The page is being accessed by a bot such as a search crawler or headless browser that has not been scripted to interact with the page.
 
 ## How to measure INP
