@@ -117,7 +117,7 @@ As far as INP goes, **only the following interaction types are observed:**
 - Pressing a key on either a physical or onscreen keyboard.
 
 {% Aside 'important' %}
-Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down... etc.) involves a keystroke, which may trigger other events that INP _does_ measure. The scrolling behavior by itself is not factored into how INP is calculated.
+Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
 {% endAside %}
 
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
