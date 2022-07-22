@@ -18,7 +18,7 @@ tags:
 
 HTTPS adoption has been steadily increasing in recent years. Per the HTTP Archive's 2021 Web Almanac, [around 91% of all requests for both desktop and mobile were served over HTTPS](https://almanac.httparchive.org/en/2021/security#transport-security). HTTPS isn't just here to stay, it's a necessary prerequisite to use features such as [Service Worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) and modern protocols such as [HTTP/2](/performance-http2/) and [HTTP/3](https://www.cloudflare.com/learning/performance/what-is-http3/).
 
-Recently Neil Craig&mdash;a lead technical Architect at the BBC&mdash;tweeted that [HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) is being slowly rolled out for [bbc.com](https://www.bbc.com/). Let's find out what that means for the BBC, and what it could mean for you.
+Recently Neil Craig&mdash;a lead technical Architect at the BBC&mdash;tweeted that [HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) is being slowly rolled out for [bbc.com](https://www.bbc.com/). Let's find out what that means for the BBC, and what it could mean for you.
 
 ## The problem
 
