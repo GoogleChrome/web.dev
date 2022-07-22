@@ -8,6 +8,8 @@ authors:
   - dbaron
 description: >
   Learn how you can use the individual translate, rotate, and scale CSS properties to approach transforms in an intuitive way.
+thumbnail: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/IzfmyutXOJG8DQLTxka7.svg
+hero: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/AtVvxkLmxdp0Mso8Mnnc.svg
 date: 2022-08-02
 tags:
   - blog
