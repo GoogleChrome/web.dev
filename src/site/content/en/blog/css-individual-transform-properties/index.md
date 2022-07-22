@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Finer grained control over CSS transforms with individual transform properties
+subhead: >
+  Transform elements with the `translate`, `rotate`, and `scale` properties
 authors:
   - bramus
   - dbaron
