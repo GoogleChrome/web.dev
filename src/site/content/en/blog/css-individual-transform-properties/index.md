@@ -123,8 +123,8 @@ The resulting CSS code becomes this:
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'GRxNyBG',
+  user: 'web-dot-dev',
+  id: 'gOeRMZV',
   height: 360,
   theme: 'dark',
   tab: 'result'
@@ -154,8 +154,8 @@ With individual transform properties this becomes much easier to write. Instead 
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'MWVbObG',
+  user: 'web-dot-dev',
+  id: 'NWYgrox',
   height: 360,
   theme: 'dark',
   tab: 'result'
@@ -189,8 +189,8 @@ To make your code modular you can split up each sub-animation into its own set o
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'wvmopEN',
+  user: 'web-dot-dev',
+  id: 'poLwbGR',
   height: 360,
   theme: 'dark',
   tab: 'result'
