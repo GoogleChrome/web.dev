@@ -207,7 +207,7 @@ If your website is reporting INP values that fall outside of the "good" threshol
 INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event handlers that provide the interactivity required for a page to work.
 
 {% Aside %}
-Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) correlates twice as well with INP than with FID. TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
+Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) has [a much stronger correlation with INP than it does with FID](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb). TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
 {% endAside %}
 
 To improve responsiveness during page load, look into the following solutions:
