@@ -56,8 +56,8 @@ button:focus {
 
 If you click on the `<button>` with a mouse in Chrome on macOS you should see
 its custom focus style. However, you will not see the custom focus style if you
-click on the `<button>` in Firefox or Safari on macOS. This is because in
-Firefox and Safari the element does not receive focus when you click on it.
+click on the `<button>` in Safari on macOS. This is because in
+Safari the element does not receive focus when you click on it.
 
 {% Glitch {
   id: 'focus-style2',
