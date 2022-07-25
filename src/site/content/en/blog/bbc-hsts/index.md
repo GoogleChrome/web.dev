@@ -37,10 +37,10 @@ While redirects work fine, they can be misconfigured in ways that still allow ac
 
 {% BrowserCompat 'http.headers.Strict-Transport-Security' %}
 
-[HSTS](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) is dictated by the `Strict-Transport-Security` HTTP response header for HTTPS requests. When set, return visits to a website will trigger a special redirect known as a "307 Internal Redirect", which is when the browser handles the redirect logic, rather than the server. This prevents the request being intercepted, since it never leaves the browser, so is more secure. As and added bonus, as there is no network request needed to get the redirect, these types of redirect are extremely fast, and so prevent noticeable latency during an HTTP-to-HTTPS hop.
+[HSTS](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) is dictated by the `Strict-Transport-Security` HTTP response header for HTTPS requests. When set, return visits to a website will trigger a special redirect known as a "307 Internal Redirect", which is when the browser handles the redirect logic, rather than the server. This prevents the request being intercepted, since it never leaves the browser, so is more secure. As an added bonus, these types of redirect are extremely fast, so any noticeable latency during an HTTP-to-HTTPS hop is eliminated.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/J9vQLJCLmnHQPb6spsRe.png", alt="A 307 internal redirect from HTTP to HTTPS, triggered by an HSTS header. The 307 redirect only takes 2 milliseconds.", width="800", height="97" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/RCCZMoqNd4aLb91Uj1hx.png", alt="A 307 internal redirect from HTTP to HTTPS, triggered by an HSTS header. The 307 redirect only takes 2 milliseconds.", width="800", height="84" %}
 </figure>
 
 Similar in syntax to `Cache-Control`'s `max-age` directive, an HSTS header specifies a `max-age` directive. This directive takes a value in seconds that specifies how long the policy is effective for:
