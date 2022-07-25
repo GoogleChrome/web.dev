@@ -703,6 +703,11 @@ video,
   aspect-ratio: 16/9;
 }
 
+video {
+  height: auto;
+  aspect-ratio: var(--vid-width) / var(--vid-height);
+}
+
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/breakout';
