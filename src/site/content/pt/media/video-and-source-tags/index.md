@@ -8,7 +8,7 @@ authors:
 description: |2-
 
   Você preparou adequadamente um arquivo de vídeo para a web. Você lhe atribuiu as dimensões e a resolução corretas. Você até criou arquivos WebM e MP4 separados para navegadores diferentes. Para que qualquer um possa vê-lo, você ainda precisa adicioná-lo a uma página da web.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media
