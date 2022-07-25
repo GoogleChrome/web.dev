@@ -7,19 +7,21 @@ description: |2-
 
   El informe Chrome UX (conocido informalmente como CrUX) es un conjunto de datos públicos de datos de la experiencia del usuario en millones de sitios web. A diferencia de los datos de laboratorio, los datos de CrUX realmente provienen de usuarios  en la vida real que han optado por participar en el estudio.
 date: 2020-07-13
+updated: 2022-07-18
 tags:
   - performance
+  - chrome-ux-report
 ---
 
-El [informe Chrome UX](https://developers.google.com/web/tools/chrome-user-experience-report/) (conocido informalmente como CrUX) es un conjunto de datos públicos de datos reales de la experiencia del usuario en millones de sitios web. A diferencia de los datos de laboratorio, los datos de CrUX en realidad provienen de [usuarios que han optado por participar](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) en el estudio. Mide las [métricas de Core Web Vitals](/vitals/), incluidas la Largest Contentful Paint:  Despliegue del contenido más extenso (LCP), First Input Delay: Demora de la primera entrada (FID) y Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS), así como métricas de diagnóstico como el Time to First Byte: Tiempo hasta el primer byte (TTFB) y First Contentful Paint: Primer Despliegue de contenido (FCP).
+El [informe Chrome UX](https://developer.chrome.com/docs/crux/) (conocido informalmente como CrUX) es un conjunto de datos públicos de datos reales de la experiencia del usuario en millones de sitios web. A diferencia de los datos de laboratorio, los datos de CrUX en realidad provienen de [usuarios que han optado por participar](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) en el estudio. Mide las [métricas de Core Web Vitals](/vitals/), incluidas la Largest Contentful Paint:  Despliegue del contenido más extenso (LCP), First Input Delay: Demora de la primera entrada (FID) y Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS), así como métricas de diagnóstico como el Time to First Byte: Tiempo hasta el primer byte (TTFB) y First Contentful Paint: Primer Despliegue de contenido (FCP).
 
-El conjunto de datos también contiene dimensiones cualitativas sobre la experiencia del usuario, por ejemplo, el dispositivo y los tipos de conexión, lo que permite profundizar en las experiencias del usuario agrupadas por tecnologías similares. Consulte la [documentación de CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) para obtener la lista completa de métricas.
+El conjunto de datos también contiene dimensiones cualitativas sobre la experiencia del usuario, por ejemplo, el dispositivo y los tipos de conexión, lo que permite profundizar en las experiencias del usuario agrupadas por tecnologías similares. Consulte la [documentación de CrUX](https://developer.chrome.com/docs/crux/methodology/#metrics) para obtener la lista completa de métricas.
 
 Con estos datos, los desarrolladores pueden comprender la amplia distribución de las experiencias de los usuarios del mundo real entre sitios web, segmentos de la web o la web en su conjunto. ¡Este es muy importante! El conjunto de datos del Informe de Chrome UX es el primero de su tipo que permite a los desarrolladores web comparar el rendimiento de sus usuarios reales con el de la competencia y la industria.
 
 ## Cómo usarlo
 
-Hay cuatro formas principales de extraer información del Informe Chrome UX, que varían en complejidad. Para un análisis rápido y sencillo del rendimiento del sitio web, las herramientas recomendadas son [Panel de control de CrUX](http://g.co/chromeuxdash) y [PageSpeed Insights](https://pagespeed.web.dev/). [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) disminuye la simplicidad del análisis a cambio del poder de la personalización y estadísticas más detalladas. Y la [API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) permite la integración de datos de alto nivel con otras aplicaciones.
+Hay cuatro formas principales de extraer información del Informe Chrome UX, que varían en complejidad. Para un análisis rápido y sencillo del rendimiento del sitio web, las herramientas recomendadas son [Panel de control de CrUX](http://g.co/chromeuxdash) y [PageSpeed Insights](https://pagespeed.web.dev/). [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) disminuye la simplicidad del análisis a cambio del poder de la personalización y estadísticas más detalladas. Y la [API](https://developer.chrome.com/docs/crux/api/) permite la integración de datos de alto nivel con otras aplicaciones.
 
 ### Panel de control de CrUX
 

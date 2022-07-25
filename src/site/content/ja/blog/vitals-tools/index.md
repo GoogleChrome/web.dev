@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-先日発表された [Web Vitals](/vitals/) イニシアチブでは、すべてのサイトが Web 上で優れたユーザーエクスペリエンスを提供するために不可欠となる品質シグナルに関する統一的なガイダンスを提供させていただきました。そしてこのたび、**Web 開発者向けに提供されている Google の人気ツールのすべてで Core Web Vitals の測定がサポート**されるようになり、ユーザー エクスペリエンスに関する問題をより簡単に診断および修正できるようになりました。これには、[Lighthouse](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://pagespeed.web.dev/)、[Chrome DevTools](https://developer.chrome.com/docs/devtools/)、[Search Console](https://search.google.com/search-console/about)、[web.dev の測定ツール](/measure/)、[Web Vitals Chrome 拡張機能](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)、そして新しい [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API が含まれています。
+先日発表された [Web Vitals](/vitals/) イニシアチブでは、すべてのサイトが Web 上で優れたユーザーエクスペリエンスを提供するために不可欠となる品質シグナルに関する統一的なガイダンスを提供させていただきました。そしてこのたび、**Web 開発者向けに提供されている Google の人気ツールのすべてで Core Web Vitals の測定がサポート**されるようになり、ユーザー エクスペリエンスに関する問題をより簡単に診断および修正できるようになりました。これには、[Lighthouse](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://pagespeed.web.dev/)、[Chrome DevTools](https://developer.chrome.com/docs/devtools/)、[Search Console](https://search.google.com/search-console/about)、[web.dev の測定ツール](/measure/)、[Web Vitals Chrome 拡張機能](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)、そして新しい [Chrome UX Report](https://developer.chrome.com/docs/crux/) API が含まれています。
 
 Google 検索には、[ページ エクスペリエンス](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html)を評価するための基盤として Core Web Vitals が含まれるようになりました。これらの指標が可能な限りいつでも利用可能で、実用的であることはとても重要です。
 
@@ -62,7 +62,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 ### CrUX
 
-[Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) は、何百万もの Web サイトでの実際のユーザー エクスペリエンス データを集約したパブリック データセットです。これは、すべての Core Web Vitals の実際のユーザー環境でのバージョンを測定します。ラボ データとは異なり、CrUX のデータは実際のユーザー環境で[オプトインしたユーザー](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology)から取得されます。このデータを使用することで、開発者は自身または競合他社の Web サイトにおける実際のユーザー エクスペリエンスの分布を理解することができます。サイトに RUM がない場合でも、CrUX を使用すれば Core Web Vitals をすばやく簡単に評価できます。[BigQuery の CrUX データセット](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started)にはすべての Core Web Vitals についての詳細なパフォーマンス データが含まれており、月間スナップショットにてオリジンレベルでご覧いただけます。
+[Chrome UX Report](https://developer.chrome.com/docs/crux/) (CrUX) は、何百万もの Web サイトでの実際のユーザー エクスペリエンス データを集約したパブリック データセットです。これは、すべての Core Web Vitals の実際のユーザー環境でのバージョンを測定します。ラボ データとは異なり、CrUX のデータは実際のユーザー環境で[オプトインしたユーザー](https://developer.chrome.com/docs/crux/methodology/#user-eligibility)から取得されます。このデータを使用することで、開発者は自身または競合他社の Web サイトにおける実際のユーザー エクスペリエンスの分布を理解することができます。サイトに RUM がない場合でも、CrUX を使用すれば Core Web Vitals をすばやく簡単に評価できます。[BigQuery の CrUX データセット](https://developer.chrome.com/docs/crux/bigquery/)にはすべての Core Web Vitals についての詳細なパフォーマンス データが含まれており、月間スナップショットにてオリジンレベルでご覧いただけます。
 
 サイト パフォーマンスをユーザー目線で真に理解するための唯一の方法は、ユーザーがサイトを読み込み、操作を行っている実際の環境でパフォーマンスを測定することです。このタイプの測定方法は、一般的にリアル ユーザー モニタリング (または RUM) と呼ばれています。サイトに RUM を導入していなくても、CrUX を使用すれば Core Web Vitals をすばやく簡単に評価することができます。
 
@@ -77,7 +77,7 @@ PageSpeed Insights や [PageSpeed Insights API](https://developers.google.com/sp
 
 開発者はオリジンや URL でクエリを行なったり、様々な規格ごとに結果をセグメント化したりすることができます。API は毎日更新され、過去 28 日分のデータが集約されます (月単位で集計される BigQuery のデータセットとは異なります)。また、この API には Google が提供するもう 1 つの API である PageSpeed Insights API と同様の緩やかなパブリック API クォータ (1 日あたり 25,000 リクエスト) が設定されています。
 
-以下は、CrUX API を使用して Core Web Vitals の指標を**良い**、**改善が必要**、**悪い**の分布で可視化した[デモ](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started)です。
+以下は、CrUX API を使用して Core Web Vitals の指標を**良い**、**改善が必要**、**悪い**の分布で可視化した[デモ](/chrome-ux-report-api/)です。
 
 <figure>{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals の指標を表示している Chrome User Experience Report API のデモ", width="800", height="523" %}</figure>
 

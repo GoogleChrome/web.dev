@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2022-07-08
+updated: 2022-07-18
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -116,6 +116,10 @@ As far as INP goes, **only the following interaction types are observed:**
 - Tapping on a device with a touchscreen.
 - Pressing a key on either a physical or onscreen keyboard.
 
+{% Aside 'important' %}
+Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
+{% endAside %}
+
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
 
 <figure>
@@ -154,7 +158,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 ### Field tools
 
 - [PageSpeed Insights](https://pagespeed.web.dev).
-- [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report).
+- [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/).
   - Via BigQuery in the CrUX dataset's `experimental.interaction_to_next_paint` table.
   - CrUX API via `experimental_interaction_to_next_paint`.
   - CrUX Dashboard.
@@ -203,7 +207,7 @@ If your website is reporting INP values that fall outside of the "good" threshol
 INP can be a factor during page load, because users may attempt to interact with a page as it's fetching JavaScript to set up event handlers that provide the interactivity required for a page to work.
 
 {% Aside %}
-Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) correlates twice as well with INP than with FID. TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
+Per the HTTP Archive, [Total Blocking Time (TBT)](/tbt/) has [a much stronger correlation with INP than it does with FID](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb). TBT is a lab metric, but if you're observing high TBT values in lab tools, that could be a signal that higher INP values in the field will be observed.
 {% endAside %}
 
 To improve responsiveness during page load, look into the following solutions:

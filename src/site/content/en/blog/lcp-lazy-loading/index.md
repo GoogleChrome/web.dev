@@ -7,6 +7,7 @@ authors:
   - rviscomi
   - felixarntz
 date: 2021-07-15
+updated: 2022-07-18
 hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/Hdl5V6rz7DOLmC7LkYaX.jpg
 alt: Photograph of a prickly pear cactus, whose sharp thorns guard a succulent fruit.
 tags:
@@ -78,7 +79,7 @@ WordPress alone has since grown to over 1 million websites (14% of total).
 [Digging deeper](https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-crux-lcp-sql)
 into HTTP Archive, we can compare how pages with and without native image lazy loading perform with
 the [Largest Contentful Paint](/lcp/) (LCP) metric. The LCP data comes from real-user
-experiences from the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) as opposed to synthetic testing in the lab. The chart
+experiences from the [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX) as opposed to synthetic testing in the lab. The chart
 below uses a box-and-whisker plot to visualize the distributions of each pages' 75th percentile LCP:
 the lines represent the 10th and 90th percentiles and the boxes represent the 25th and 75th
 percentiles.

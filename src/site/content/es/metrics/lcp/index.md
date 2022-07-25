@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: Esta publicación presenta la métrica de Largest Contentful Paint (LCP) y explica como medirla
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Herramientas de campo
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)

@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Luxury Retailer Farfetch Sees Higher Conversion Rates For Better Core Web Vitals
+title: Luxury retailer Farfetch sees higher conversion rates for better Core Web Vitals
 subhead: |
   How the e-commerce fashion retailer correlated Core Web Vitals and performance metrics with business metrics, saw an increase in KPIs and built a "Performance Business Case Calculator" to drive product decisions and a performance culture.
 description: |
   How luxury retailer Farfetch's investment in improving Core Web Vitals led to better business outcomes.
+hero: image/OcYv93SYnIg1kfTihK6xqRDebvB2/h3mza3j8moM7N9lGGg15.png
+alt: An image of a phone displaying a Farfetch web page.
 authors:
   - ruisantos
   - manuelgarcia
@@ -87,10 +89,10 @@ In the end, this analysis was also able to show that some metrics didn't have a 
 
 Showcasing the insights above alongside qualitative user research on user perception of site speed was paramount to establish alignment with company goals, secure executive-level awareness and buy-in for performance based decision making across product roadmaps. It was now possible to prove how much performance was worth for Farfetch.
 
-To streamline prioritization, Farfetch created a self-service tool they named the Site Speed Business Case Calculator, taking inspiration from [Google's Speed Impact Calculator](https://www.thinkwithgoogle.com/feature/testmysite/]). It allows any product manager to create a business case out of performance improvements by calculating the business impact on the fly. With a data model using the correlation between conversion rate and user experience metrics, it's flexible to adapt to different product scopes, devices and user journey touch points.
+To streamline prioritization, Farfetch created a self-service tool they named the Site Speed Business Case Calculator, taking inspiration from [Google's Speed Impact Calculator](https://www.thinkwithgoogle.com/feature/testmysite/). It allows any product manager to create a business case out of performance improvements by calculating the business impact on the fly. With a data model using the correlation between conversion rate and user experience metrics, it's flexible to adapt to different product scopes, devices and user journey touch points.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/59OGLmMJ2rubTie45u5K.png", alt="A screenshot of Farfetch's Site Speed Business Case Calculator.", width="800", height="779" %}
+  {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/23elcWwZJW50ZSB9s5CB.png", alt="A screenshot of Farfetch's Site Speed Business Case Calculator.", width="800", height="779" %}
 </figure>
 
 Meanwhile, a set of self-service analytical dashboards have created business-wide visibility of real-time performance indicators and their impact on the business. Performance is now becoming fully embedded in product development, and product teams enjoy easy access to metrics, auditing tools, and performance budget monitoring. Furthermore, because of the data layer integration, performance metrics are also available on Farfetch A/B testing tooling, giving product managers yet another powerful vector of insights.

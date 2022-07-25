@@ -89,7 +89,7 @@ As users come back to our platform to make updates and republish their sites, th
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/TYq98NlFCurWFDjfWpsN.png", alt="A chart depicting Good Core Web Vitals over time segmented into mobile and desktop segments. The trend improves over time.", width="800", height="360" %}
-  <figcaption>Chart representing GoDaddy Website Builder sites with "good Core Web Vitals". Source: <a href="https://datastudio.google.com/s/jo34JdqzrRU" rel="noopener">Google Data Studio</a></figcaption>
+  <figcaption>Chart representing GoDaddy Website Builder sites with "good Core Web Vitals". Source: <a href="https://datastudio.google.com/s/jo34JdqzrRU" rel="noopener">cwvtech.report</a></figcaption>
 </figure>
 
 ## Conclusions

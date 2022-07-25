@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: 本篇文章介绍了累积布局偏移 (CLS) 指标并说明了该指标的测量方式。
 tags:
   - performance
@@ -172,7 +172,7 @@ CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
@@ -230,7 +230,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-上述代码说明了计算和记录 CLS 的基本方法。但是，要想准确测量 CLS，使之与[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) 中的测量值相匹配，那么测量方式要更为复杂。详情请见下文：
+上述代码说明了计算和记录 CLS 的基本方法。但是，要想准确测量 CLS，使之与[Chrome 用户体验报告](https://developer.chrome.com/docs/crux/) (CrUX) 中的测量值相匹配，那么测量方式要更为复杂。详情请见下文：
 
 {% endAside %}
 

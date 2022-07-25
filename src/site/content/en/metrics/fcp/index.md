@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2021-01-18
+updated: 2022-07-18
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -75,7 +75,7 @@ available in the following tools:
 
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Chrome User Experience
-  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  Report](https://developer.chrome.com/docs/crux/)
 - [Search Console (Speed
   Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)

@@ -6,7 +6,16 @@ layout: default-next
   <div class="card__header">
     <div class="avatars">
     {% for host in space.data.hosts %}
-      <img class="avatar" src="{{ host.image }}" alt="alt" decoding="async" height="40" loading="lazy" width="40">
+      {% set alt = "Profile image for " + collections.authors[host].title | i18n(locale) %}
+      {% Img
+        src=collections.authors[host].image,
+        class="avatar",
+        width="96",
+        height="96",
+        alt=alt,
+        decoding="async",
+        loading="lazy"
+      %}
     {% endfor %}
     </div>
   </div>
@@ -17,18 +26,26 @@ layout: default-next
     <ul class="hosts">
       {% for host in space.data.hosts %}
         <li>
-            {{ host.name }}
-          {% if host.primary %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}
+            {{ collections.authors[host].title | i18n(locale) }}
+            {% if space.data.primary_host == host %}
+              <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span>
+            {% endif %}
         </li>
       {% endfor %}
     </ul>
     <time class="eyebrow">{{ space.data.event_date | prettyDate('DATE_FULL') }}</time>
+    <p class="eyebrow"> {{ space.data.event_time }} </p>
     <p class="gap-top-size-1 gap-bottom-size-2">{{ space.data.description }}</p>
   </div>
   {% if space.data.twitter_link %}
     <a class="button" href="{{ space.data.twitter_link }}" target="_blank">
       {% include "icons/twitter.svg" %}
       <span>{{ 'i18n.spaces.see_on_twitter' | i18n(locale) }}</span>
+    </a>
+  {% elif space.data.cal_link %}
+    <a class="button" href="{{ space.data.cal_link }}" target="_blank">
+      {% include "icons/calendar.svg" %}
+      <span>{{ 'i18n.spaces.add_to_calendar' | i18n(locale) }}</span>
     </a>
   {% else %}
     <a class="button" href="{{ space.data.event_date | calendarLink(space.data.title, space.data.description) }}" target="_blank">
@@ -39,7 +56,6 @@ layout: default-next
 {% endmacro %}
 
 <div class="landing-page spaces">
-
   <header>
     <div class="hero wrapper pad-inline-size-3">
       <div class="hero__columns switcher">
@@ -71,21 +87,9 @@ layout: default-next
     {% endif %}
 
     {% for space in upcomingSpaces %}
-      {% if loop.index0 < 6 %}
         <article class="card flow">
           {{ twitterSpaceCard(space) }}
         </article>
-      {% endif %}
-    {% endfor %}
-
-    {% for space in upcomingSpaces %}
-      {% if loop.index0 > 5 %}
-      <input type="checkbox" id="see-more-upcoming" hidden>
-      <label id="see-more-upcoming-label" for="see-more-upcoming" class="button">see more</label>
-      <article class="card flow hidden">
-        {{ twitterSpaceCard(space) }}
-      </article>
-      {% endif %}
     {% endfor %}
   </div>
 </div>
@@ -108,7 +112,16 @@ layout: default-next
         <td class="pad-block-size-1 pad-inline-size-1">
           <div class="avatars">
             {% for host in space.data.hosts %}
-              <img class="avatar" src="{{ host.image }}" alt="alt" decoding="async" height="40" loading="lazy" width="40">
+              {% set alt = "Profile image for " + collections.authors[host].title | i18n(locale) %}
+              {% Img
+                src=collections.authors[host].image,
+                class="avatar",
+                width="96",
+                height="96",
+                alt=alt,
+                decoding="async",
+                loading="lazy"
+              %}
             {% endfor %}
           </div>
           <p class="gap-top-size-1 eyebrow sm-only">
@@ -121,17 +134,29 @@ layout: default-next
           </h2>
           <p>
             {% for host in space.data.hosts %}
-              <span class="host">{{ host.name }} {% if host.primary %} <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span> {% endif %}</span>
+              <span class="host">
+                {{ collections.authors[host].title | i18n(locale) }}
+                {% if space.data.primary_host == host %}
+                  <span class="pill" data-inactive>{{ 'i18n.spaces.host' | i18n(locale) }}</span>
+                {% endif %}
+              </span>
             {% endfor %}
-          <details class="ellipsis">
-            <summary><span class="ellipsis__full">{{ space.data.description }}</span><span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span></summary>
-          </details>
-          <p><audio src="{{ space.data.audio }}" class="audio-player__element" controls=""></audio></p>
+            <details class="ellipsis">
+              <summary>
+                <span class="ellipsis__full">{{ space.data.description }}</span>
+                <span class="ellipsis__more">{{ 'i18n.spaces.see_more' | i18n(locale) }}</span>
+              </summary>
+            </details>
+            {% if space.data.audio %}
+            <p>
+              <audio src="{{ space.data.audio }}" class="audio-player__element" controls=""></audio>
+            </p>
+            {% endif %}
+          </p>
         </td>
       </tr>
     {% endfor %}
-    </table>
+  </table>
 </div>
-
 </div>
 

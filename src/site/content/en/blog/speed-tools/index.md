@@ -4,7 +4,7 @@ title: How To Think About Speed Tools
 subhead: |
   How To Think About Speed Tools
 date: 2018-02-26
-updated: 2018-08-17
+updated: 2022-07-18
 description: |
   How To Think About Speed Tools
 tags:
@@ -129,7 +129,7 @@ experiencing in the wild.
 
 {% Aside %}
 Public data sets like [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report/) and performance tools like
+Report](https://developer.chrome.com/docs/crux/) and performance tools like
 [PageSpeed Insights](https://pagespeed.web.dev/) speed score report this type of
 data.
 {% endAside %}
@@ -161,7 +161,7 @@ data.
                     <p>Allows you to diagnose webpage performance across devices and provides a
                 list of fixes for improving the experience from Webpagetest and PageSpeed
                 Insights.</p>
-            </td>       
+            </td>
             <td>
                 <a href="https://developers.google.com/speed/pagespeed/insights/">
                 {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/3Tf74Rv0nbvrWzqXM56E.svg", alt="PageSpeed Insights", width="150", height="150" %}</a>
@@ -177,7 +177,7 @@ data.
                     <p>Allows you to compare your mobile site speed against your peers in over 10
                 countries. Mobile site speed is based on real-world data from the Chrome
                 User Experience Report.</p>
-            </td>       
+            </td>
             <td>
                 <a href="https://www.thinkwithgoogle.com/feature/mobile/">{% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/rYMHLU8uySirxfmwgzij.svg", alt="Impact Calculator", width="150", height="150" %}</a>
                     <h3><a href="https://www.thinkwithgoogle.com/feature/mobile/">Impact Calculator</a></h3>
@@ -191,7 +191,7 @@ data.
                     <h3><a href="https://developer.chrome.com/docs/devtools/">Chrome Developer Tools</a></h3>
                     <p>Allows you to profile the runtime of a page, as well as identify and debug
                 performance bottlenecks.</p>
-            </td>       
+            </td>
             <td>
             </td>
         </tr>
