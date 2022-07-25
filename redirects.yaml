@@ -316,6 +316,14 @@ redirects:
     destination: https://developer.chrome.com/docs/web-platform/navigation-api/
   - source: /fetch-upload-streaming
     destination: https://developer.chrome.com/articles/fetch-streaming-requests/
+  - source: /compute-pressure
+    destination: https://developer.chrome.com/docs/web-platform/compute-pressure/
+  - source: /declarative-link-capturing
+    destination: https://developer.chrome.com/docs/web-platform/declarative-link-capturing/
+  - source: /handwriting-recognition
+    destination: https://developer.chrome.com/docs/web-platform/handwriting-recognition/
+  - source: /virtualkeyboard
+    destination: https://developer.chrome.com/docs/web-platform/virtual-keyboard/
 
   # Redirect for Aurora
   - source: /aurora
