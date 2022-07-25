@@ -6,7 +6,7 @@ authors:
   - joemedley
   - derekherman
 description: 웹용 비디오 파일을 제대로 준비하고, 정확한 치수와 해상도를 주고, 다양한 브라우저를 위해 별도의 WebM 및 MP4 파일도 생성하셨네요. 그렇지만 모두가 보려면 웹 페이지에 추가해야 합니다.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media
