@@ -61,7 +61,7 @@ The main drawback of deploying HSTS is if you're not ready to treat your origin 
 
 The BBC took the right approach to deploying HSTS. As [Neil Craig](https://twitter.com/tdp_org) mentioned in his tweet, the initial value that was set for bbc.com was `max-age=10`.
 
-This approach means that the policy was only initially effective for ten seconds. This doesn't provide much of a benefit, but the idea is to feel out whether there may be issues with applying HSTS at all. As time goes on, you can increase the policy incrementally and see if issues occur. At the time of this writing, bbc.com is specifying an HSTS policy of `max-age=3600`, and that will almost certainly increase over time.
+This approach means that the policy was only initially effective for ten seconds. This doesn't provide much of a benefit, but the idea is to feel out whether there may be issues with applying HSTS at all. As time goes on, you can increase the policy incrementally and see if issues occur. At the time of this writing, bbc.com is specifying an HSTS policy of `max-age=86400`, and that will almost certainly increase over time.
 
 You certainly don't want to come out of the gate with a long `max-age` value when deploying HSTS. You could find yourself suddenly scrambling to fix issues while users experience problems. **Start small, and increment over time!** When you're confident all is well, you can set your `max-age` directive to a much longer period of time. It is [recommended to set `max-age` to one or two years](https://hstspreload.org/#deployment-recommendations) when it is fully rolled out.
 
