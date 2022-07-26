@@ -135,7 +135,7 @@ data: second line\n\n</pre>
 will produce "first line\nsecond line" in `e.data`. One could then use `e.data.split('\n').join('')`
 to reconstruct the message sans "\n" characters.
 
-### Send JSON Data
+### Send JSON data
 
 Using multiple lines makes it easy to send JSON without breaking syntax:
 
@@ -155,7 +155,7 @@ console.log(data.id, data.msg);
 }, false);
 ```
 
-### Associating an ID with an Event
+### Associating an ID with an event
 
 You can send a unique id with an stream event by including a line starting with `id:`:
 
@@ -170,7 +170,7 @@ connection to the server is dropped, a special HTTP header (`Last-Event-ID`) is
 set with the new request. This lets the browser determine which event is appropriate to fire.
 The `message` event contains a `e.lastEventId` property.
 
-### Controlling the Reconnection-timeout
+### Controlling the reconnection-timeout
 
 The browser attempts to reconnect to the source roughly 3 seconds
 after each connection is closed. You can change that timeout by including a
@@ -221,9 +221,9 @@ console.log(data.username + ' is now ' + data.emotion);
 }, false);
 ```
 
-## Server Examples
+## Server examples
 
-A simple server implementation in PHP:
+A basic server implementation in PHP:
 
 ```php
 <?php
@@ -325,7 +325,7 @@ sys.puts('\n\n');
 </html>
 ```
 
-## Cancel an Event Stream
+## Cancel an event stream
 
 Normally, the browser auto-reconnects to the event source when the connection
 is closed, but that behavior can be canceled from either the client or server.
@@ -342,14 +342,14 @@ To cancel a stream from the server, respond with a non `text/event-stream`
 
 Both methods will prevent the browser from re-establishing the connection.
 
-## A Word on Security
+## A word on security
 
 From the WHATWG's section on [Cross-document messaging security](http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#authors):
 
 {% Aside %}
-Authors should check the origin attribute to ensure that messages are only accepted from domains that
-they expect to receive messages from. Otherwise, bugs in the author's message handling code could
-be exploited by hostile sites.
+Authors should check the origin attribute to ensure that messages are only
+accepted from domains that they expect to receive messages from. Otherwise,
+bugs in the author's message handling code could be exploited by hostile sites.
 {% endAside %}
 
 So, as an extra level of precaution, be sure to verify `e.origin` in
@@ -365,12 +365,10 @@ return;
 }, false);
 ```
 
-Another good idea is to check the integrity of the data you receive:
+Another good idea is to check the integrity of the data you receive.
 
-{% Aside %}
-Furthermore, even after checking the origin attribute, authors should also check that the data in
-question is of the expected format.
-{% endAside %}
+Even after checking the origin attribute, authors should also check that the
+data in question is of the expected format.
 
 ## References
 
