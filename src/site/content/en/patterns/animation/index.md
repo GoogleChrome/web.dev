@@ -2,7 +2,7 @@
 layout: pattern-set
 title: Animation patterns
 description: A collection of animation techniques built using CSS or JavaScript with considerations for accessibility and user preferences.
-hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/PRyD1Ad1GtT6IZLqWtu1.svg
+hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KL7dFk9XKx5PVUzXT2hb.svg
 ---
 
 Welcome to our growing collection of animation patterns. These patterns try to
