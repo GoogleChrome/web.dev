@@ -62,7 +62,7 @@ Due to the wide variation of network and application backend stacks, an arbitrar
 </figure>
 
 {% Aside %}
-  The above thresholds are guideline thresholds. Sites can still receive good Core Web Vitals with TTFB timings that exceed this depending on the network and application stack.
+  TTFB is not a [Core Web Vitals](/vitals) metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.
 {% endAside %}
 
 ## How to measure TTFB
