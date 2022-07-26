@@ -3,8 +3,9 @@ layout: post
 title: Time to First Byte (TTFB)
 authors:
   - jlwagner
+  - barrypollard
 date: 2021-10-26
-updated: 2022-07-18
+updated: 2022-07-26
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
