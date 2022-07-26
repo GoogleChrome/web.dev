@@ -3,7 +3,7 @@ layout: post
 title: Time to First Byte (TTFB)
 authors:
   - jlwagner
-  - barrypollard
+  - tunetheweb
 date: 2021-10-26
 updated: 2022-07-26
 description: |
