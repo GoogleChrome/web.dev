@@ -16,7 +16,7 @@ featureCard:
   title: 'Connect with us on Twitter Spaces'
   eyebrow: 'Event'
   url: 'https://web.dev/spaces/'
-  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/2FomflLaCzJJpMiptKK3.svg'
+  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/X49lrIUVWJr3OTkKX21n.svg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
