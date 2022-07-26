@@ -510,7 +510,7 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
 [HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
-[how-to-file]: [how-to-file](https://www.chromium.org/developers/how-tos/file-web-hid-bugs/)
+[how-to-file]: https://www.chromium.org/developers/how-tos/file-web-hid-bugs/
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/register_trial/1074108511127863297
 [cr-bug]: https://crbug.com/890096
