@@ -49,6 +49,10 @@ Plus, five new patterns added to the existing
 
 ### Components
 
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/J2QtGMJ3e1cJkHFrQ2K3.svg",
+alt="Supporting graphic which has colorful prototyped components in a grid
+layout.", width="360", height="240" %}
+
 View [the component patterns landing page](/patterns/components/) or check each
 out individually:
 
@@ -74,6 +78,10 @@ Here's a preview of the buttons pattern:
 
 ### Animations
 
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KL7dFk9XKx5PVUzXT2hb.svg",
+alt="Supporting graphic which has a ball in motion down a curve.", width="360",
+height="240" %}
+
 View [the animation patterns landing page](/patterns/animation/) or check each
 out individually:
 
@@ -93,6 +101,10 @@ motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion
 {% endAside %}
 
 ### Theming
+
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/X2nU3op9YZAqzox7FDgN.svg",
+alt="Supporting graphic with two layers of a dashboard, one is pink and the
+other is blue.", width="360", height="240" %}
 
 View [the theming patterns landing page](/patterns/theming/) or check each out
 individually:
