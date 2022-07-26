@@ -42,7 +42,7 @@ Reducing latency in connection setup time and on the backend will contribute to 
 
 ### What is a good TTFB score?
 
-Due to the wide variation of network and application backend stacks, an arbitrary number can't be placed on what consists of a "good" TTFB score. Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/) such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (LCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score). However, as a rough guide, most sites should strive to have Time To First Byte of **0.8 seconds** or less.
+Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/) such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (LCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score). As a rough guide, most sites should strive to have Time To First Byte of **0.8 seconds** or less.
 
 <figure>
   <picture>
