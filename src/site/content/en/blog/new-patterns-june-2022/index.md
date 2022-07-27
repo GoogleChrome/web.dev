@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New patterns
-subhead: Animations, theming, components,and more layout patterns are live and ready to help kick start or inspire your UI and UX.
+subhead: Animations, theming, components, and more layout patterns are live and ready to help kick start or inspire your UI and UX.
 authors:
   - adamargyle
 description: Animations, theming, components, and more layout patterns are live and ready to help kick start or inspire your UI and UX.
