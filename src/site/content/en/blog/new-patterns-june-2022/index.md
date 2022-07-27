@@ -1,10 +1,10 @@
 ---
 layout: post
-title: New Patterns
-subhead: Animations, theming, components and more layout patterns are live and ready to help kick start or inspire your UI and UX.
+title: New patterns
+subhead: Animations, theming, components,and more layout patterns are live and ready to help kick start or inspire your UI and UX.
 authors:
   - adamargyle
-description: Animations, theming, components and more layout patterns are live and ready to help kick start or inspire your UI and UX.
+description: Animations, theming, components, and more layout patterns are live and ready to help kick start or inspire your UI and UX.
 date: 2022-06-13
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/mBXnYVdru7dzNVaQlh5M.png
 alt: Colorful circle and block pattern by George Francis in this Codepen https://codepen.io/georgedoescode/pen/OJjoymK
@@ -113,7 +113,7 @@ individually:
 1. [Theme Switch](/patterns/theming/theme-switch/)
 
 One pattern is for building a client side [theme
-switch](/building-a-theme-switch-component/) so user's can indicate their
+switch](/building-a-theme-switch-component/) so users can indicate their
 preference without it being directly tied to their system preference. The other
 is for creating a [theming design system](/building-a-color-scheme/) with CSS
 custom properties.
