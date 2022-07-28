@@ -19,7 +19,7 @@ directly, make modifications, and save back the changes to the original file.
 
 To save a file, call
 [`showSaveFilePicker()`](https://developer.mozilla.org/docs/Web/API/Window/showSaveFilePicker),
-which returns a promise with [`FileSystemFileHandle`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle). You can pass the desired file name to the method as `{ suggestedName: 'example.txt' }`.
+which returns a promise with [`FileSystemFileHandle`](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle). You can pass the desired file name to the method as `{ suggestedName: 'example.txt' }`.
 
 {% BrowserCompat 'api.Window.showSaveFilePicker' %}
 
