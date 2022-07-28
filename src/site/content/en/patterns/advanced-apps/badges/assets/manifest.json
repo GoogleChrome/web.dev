@@ -5,12 +5,12 @@
   "id": "../demo.html",
   "icons": [
     {
-      "src": "../favicon.png",
+      "src": "../assets/favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "../favicon.svg",
+      "src": "../assets/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "any"
     }

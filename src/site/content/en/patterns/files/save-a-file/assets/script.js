@@ -18,26 +18,37 @@ const saveFile = async (blob, suggestedName) => {
         return false;
       }
     })();
-  if (false && supportsFileSystemAccess) {
+  // If the File System Access API is supported…
+  if (supportsFileSystemAccess) {
     try {
+      // Show the file save dialog.
       const handle = await showSaveFilePicker({
         suggestedName,
       });
+      // Write the blob to the file.
       const writable = await handle.createWritable();
       await writable.write(blob);
-      writable.close();
+      await writable.close();
       return;
     } catch (err) {
-      console.error(err.name, err.message);
+      // Fail silently if the user has simply canceled the dialog.
+      if (err.name !== 'AbortError') {
+        console.error(err.name, err.message);
+      }
     }
   }
-  const a = document.createElement('a');
+  // Fallback if the File System Access API is not supported…
+  // Create the blob URL.
   const blobURL = URL.createObjectURL(blob);
+  // Create the `<a download>` element and append it invisibly.
+  const a = document.createElement('a');
   a.href = blobURL;
   a.download = suggestedName;
-  a.click();
   document.body.append(a);
   a.style.display = 'none';
+  // Click the element.
+  a.click();
+  // Revoke the blob URL and remove the element.
   setTimeout(() => {
     URL.revokeObjectURL(blobURL);
     a.remove();

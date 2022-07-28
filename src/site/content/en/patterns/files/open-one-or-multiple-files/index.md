@@ -29,7 +29,7 @@ the picked file or files. If you need multiple files, you can pass `{ multiple: 
 ### Using the `<input type="file">` element
 
 The `<input type="file">` element on a page allows the user to click it and open
-one or multiple files. The trick now consists of inserting the element invisibly into a page with JavaScript and click it programmatically.
+one or multiple files. The trick now consists of inserting the element invisibly into a page with JavaScript and clicking it programmatically.
 
 {% BrowserCompat 'html.elements.input' %}
 
@@ -42,10 +42,6 @@ is supported, each file object also has a `FileSystemFileHandle` stored in
 the `handle` property, so you can optionally serialize the handle to disk.
 
 ```js
-const button = document.querySelector('button');
-const buttonMultiple = document.querySelector('button.multiple');
-const pre = document.querySelector('pre');
-
 const openFileOrFiles = async (multiple = false) => {
   // Feature detection. The API needs to be supported
   // and the app not run in an iframe.
