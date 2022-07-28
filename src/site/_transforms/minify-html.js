@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const htmlMinifier = require('@minify-html/js');
+const htmlMinifier = require('@minify-html/node');
 const path = require('path');
 const {URL} = require('url');
 const stagingUrls =
@@ -25,23 +25,20 @@ const stagingUrls =
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
-const config = htmlMinifier.createConfiguration({
-  // See https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html
-  do_not_minify_doctype: true,
-  ensure_spec_compliant_unquoted_attribute_values: true,
-  keep_spaces_between_attributes: true,
-});
-
 const minifyHtml = (content, outputPath) => {
   if (
-    // A V8 bug causes a crash if minify is called twice with the empty string.
-    // This appears to be fixed in Node 18.
-    content !== '' &&
-    ((isProd && outputPath && outputPath.endsWith('.html')) ||
-      (isStaging && stagingUrls.includes(outputPath)))
+    (isProd && outputPath && outputPath.endsWith('.html')) ||
+    (isStaging && stagingUrls.includes(outputPath))
   ) {
     try {
-      content = htmlMinifier.minify(content, config);
+      content = htmlMinifier
+        .minify(Buffer.from(content, 'utf8'), {
+          // See https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html
+          do_not_minify_doctype: true,
+          ensure_spec_compliant_unquoted_attribute_values: true,
+          keep_spaces_between_attributes: true,
+        })
+        .toString('utf-8');
     } catch (err) {
       console.warn(err, 'while minifying', outputPath);
     }
