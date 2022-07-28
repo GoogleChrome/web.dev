@@ -4,17 +4,20 @@ title: A simple TODO list using HTML5 WebDatabases
 authors:
 - paulkinlan
 date: 2010-02-17
+updated: 2022-07-25
 tags:
 - blog
 ---
 
-{% Aside %}
-On November 18, 2010, the [W3C announced](http://www.w3.org/TR/webdatabase/) that Web SQL database is a deprecated specification. This is a
+{% Aside 'warning' %}
+On November 18, 2010, the [W3C announced](http://www.w3.org/TR/webdatabase/)
+that Web SQL database is a deprecated specification. This is a
 recommendation for web developers to no longer use the technology as
 effectively the spec will receive no new updates and browser vendors aren't
-encouraged to support this technology. Many major browsers including Chrome,
-Safari, Opera and nearly all Webkit based mobile devices support WebSQL and
-will likely maintain support for the foreseeable future.
+encouraged to support this technology.
+
+Instead, developers are encouraged to use [IndexedDB](/indexeddb/), the
+replacement technology.
 {% endAside%}
 
 ## Introduction
@@ -24,11 +27,6 @@ in HTML5. Web Databases are hosted and persisted inside a user's browser.
 By allowing developers to create applications with rich query abilities 
 it is envisioned that a new breed of web applications will emerge that
 have the ability to work online and off-line.
-
-{% Aside %}
-This tutorial is also [available written using "IndexedDB](https://www.html5rocks.com/tutorials/indexeddb/todo/)", the replacement offline storage 
-technology.
-{% endAside %}
 
 The example code in this article demonstrates how to create a very simple
 todo list manager.  It is a very high level tour of some of the features

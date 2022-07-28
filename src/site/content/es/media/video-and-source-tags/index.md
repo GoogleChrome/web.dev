@@ -6,7 +6,7 @@ authors:
   - joemedley
   - derekherman
 description: Usted preparó correctamente un archivo de video para la web. Le dio las dimensiones y la resolución correctas. Incluso creó archivos WebM y MP4 separados para diferentes navegadores. Para que cualquiera lo vea, aún deberá agregarlo a una página web.
-date: 2014-14-15
+date: 2014-02-15
 updated: 2021-07-05
 tags:
   - media

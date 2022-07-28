@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2022-07-18
+updated: 2022-07-19
 tags:
   - blog
   - capabilities
@@ -215,7 +215,7 @@ await window.getScreenDetails();
     isExtended: true
     isInternal: false
     isPrimary: false
-    label: "Thomas Steiner's iPad Pro"
+    label: "Sidecar Display (AirPlay)"
     left: 1680
     onchange: null
     orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}

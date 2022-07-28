@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2022-03-31
+updated: 2022-07-26
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -460,7 +460,7 @@ to an existing issue.
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
 
-File a bug at [https://new.crbug.com][new-bug]. Be sure to include as much
+Check out [How to file WebHID bugs][how-to-file]. Be sure to include as much
 detail as you can, provide simple instructions for reproducing the bug, and have
 *Components* set to `Blink>HID`. [Glitch](https://glitch.com) works great for
 sharing quick and easy repros.
@@ -510,7 +510,7 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/usb/usb_blocklist.cc
 [HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/main:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
-[new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
+[how-to-file]: https://www.chromium.org/developers/how-tos/file-web-hid-bugs/
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/register_trial/1074108511127863297
 [cr-bug]: https://crbug.com/890096
