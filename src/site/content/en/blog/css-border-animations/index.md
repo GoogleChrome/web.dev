@@ -74,8 +74,8 @@ background-image:
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'NWYaJrB',
+  user: 'web-dot-dev',
+  id: 'dymZzyZ',
   height: 485,
   tab: 'result'
 } %}
@@ -91,8 +91,8 @@ background-size: calc(var(--border-size) * 2 + 100%) calc(var(--border-size) * 2
 
 
 {% Codepen {
-  user: 'bramus',
-  id: 'rNdGRMB',
+  user: 'web-dot-dev',
+  id: 'MWVOvYa',
   height: 485,
   tab: 'result'
 } %}
@@ -111,8 +111,8 @@ background-clip:
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'eYMGrdv',
+  user: 'web-dot-dev',
+  id: 'JjLOyoJ',
   height: 785,
   tab: 'result'
 } %}
@@ -124,8 +124,8 @@ border: 0.3rem dotted transparent;
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'PoRJLGQ',
+  user: 'web-dot-dev',
+  id: 'mdxqMyj',
   height: 485,
   tab: 'result'
 } %}
@@ -166,8 +166,8 @@ Thanks to [@property](/at-property) this becomes a breeze in browsers that suppo
 All combined, the code becomes this:
 
 {% Codepen {
-  user: 'bramus',
-  id: 'VwXMvbM',
+  user: 'web-dot-dev',
+  id: 'BarmdyM',
   height: 485,
   tab: 'result'
 } %}
@@ -197,8 +197,8 @@ border-image:
 ```
 
 {% Codepen {
-  user: 'bramus',
-  id: 'ZExXVMJ',
+  user: 'web-dot-dev',
+  id: 'oNqoeXo',
   height: 485,
   tab: 'result'
 } %}
