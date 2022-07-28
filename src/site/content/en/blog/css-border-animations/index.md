@@ -80,15 +80,29 @@ background-image:
   tab: 'result'
 } %}
 
-### Sizing the backgrounds
+### Sizing the backgrounds with `background-origin`
 
-As you can see there is something funny going on with those backgrounds here: they are painted into the border, but the `conic-gradient` one is all wrong. That’s because it is not sized appropriately. To solve this problem, you need to stretch out the backgrounds so they take up all the space.
+As you can see there is something funny going on with the backgrounds here: they are painted into the border, but the `conic-gradient` seems to be all wrong. This is actually intended behavior: by default background images do not draw into the border as their origin is the `padding-box` of the element. To create a border after all, the set background images are repeated in the border itself, yielding the weird visual effect.
 
+To solve this problem, you need to stretch out the background so it also occupies the size of the border. You could do this manually by stretching and repositioning the background, but best is to use the [`background-origin`](https://developer.mozilla.org/docs/Web/CSS/background-origin) property to size the background against the `border-box`.
+
+{% BrowserCompat 'css.properties.background-origin' %}
+
+{% Compare 'worse' %}
 ```css
+/* Manually add or offset the size of the border where needed */
 background-position: calc(var(--border-size) * -1) calc(var(--border-size) * -1);
 background-size: calc(var(--border-size) * 2 + 100%) calc(var(--border-size) * 2 + 100%);
 ```
+{% endCompare %}
 
+{% Compare 'better' %}
+```css
+background-origin: border-box;
+```
+{% endCompare %}
+
+This one addition makes everything look much better:
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -97,7 +111,7 @@ background-size: calc(var(--border-size) * 2 + 100%) calc(var(--border-size) * 2
   tab: 'result'
 } %}
 
-### Shrinking the white background layer
+### Shrinking the white background layer with `background-clip`
 
 With the backgrounds taking up all the space now, the semi-transparent layer needs to be shrunk down again. Instead of fiddling with `background-size` again, there is an easier way to do so: use [`background-clip`](https://developer.mozilla.org/docs/Web/CSS/background-clip) and set it to `padding-box`. That way the background is no longer drawn underneath the area of the border.
 
