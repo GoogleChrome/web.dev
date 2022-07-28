@@ -9,6 +9,7 @@ authors:
   - bramus
 tags:
   - blog
+hero: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/kVAIT4nxP83ePx2QhEgW.png
 date: 2022-07-29
 ---
 
