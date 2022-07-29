@@ -58,6 +58,7 @@ out individually:
 
 1. [Breadcrumbs](/patterns/components/breadcrumbs/)
 1. [Buttons](/patterns/components/buttons/)
+1. [Carousel](/patterns/components/carousel/)
 1. [Dialog](/patterns/components/dialog/)
 1. [Game Menu](/patterns/components/game-menu/)
 1. [Loading Bar](/patterns/components/loading-bar/)
