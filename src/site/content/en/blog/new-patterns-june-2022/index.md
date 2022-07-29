@@ -73,9 +73,9 @@ out individually:
 1. [Tabs](/patterns/components/tabs/)
 1. [Toast](/patterns/components/toast/)
 
-Here's a preview of the buttons pattern:
+Here's a preview of the split button pattern:
 
-{% CodePattern 'gui-challenges/buttons' %}
+{% CodePattern 'components/split-buttons' %}
 
 ### Animations
 
@@ -93,7 +93,7 @@ out individually:
 
 Here's a preview of the animated letters pattern:
 
-{% CodePattern 'gui-challenges/animation/animated-letters' %}
+{% CodePattern 'animation/animated-letters' %}
 
 {% Aside %}
 These patterns only split the text and animate if a user's system hasn't
@@ -121,7 +121,7 @@ custom properties.
 
 Here's a preview of the color schemes pattern:
 
-{% CodePattern 'gui-challenges/theming/color-schemes' %}
+{% CodePattern 'theming/color-schemes' %}
 
 ### New layout patterns on centering
 
@@ -142,7 +142,7 @@ techniques the web offers. Plus, they have fun names.
 Here is the article determined "winner" of the centering exploration, the Gentle
 Flex:
 
-{% CodePattern 'gui-challenges/centering/gentle-flex' %}
+{% CodePattern 'layout/gentle-flex' %}
 
 ## Wrap up
 
