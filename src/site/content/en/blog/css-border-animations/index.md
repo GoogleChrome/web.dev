@@ -15,7 +15,7 @@ date: 2022-08-01
 
 ## Setting borders
 
-There are a few methods available to set a border on an element: `border`, `outline`, and `box-shadow`. As detailed in [The 3 CSS Methods for Adding Element Borders](https://moderncss.dev/the-3-css-methods-for-adding-element-borders/) by Stephanie Eckles, each approach comes with its own advantages and disadvantages–especially when it comes to animating the borders.
+There are a few methods available to set a border on an element: `border`, `outline`, and `box-shadow`. As detailed in [The 3 CSS Methods for Adding Element Borders](https://moderncss.dev/the-3-css-methods-for-adding-element-borders/) by Stephanie Eckles, each approach comes with its own advantages and disadvantages–especially when it comes to animating the borders. The main reason to not use a proper CSS `border` is for animation purposes.
 
 <figure>
   {% Codepen {
@@ -41,7 +41,7 @@ What stands out the most to me are the supporting animated visualizations used i
   <figcaption>Border Animations using generated content by Coco</figcaption>
 </figure>
 
-By fading the white layer in and out, it becomes clear how the colored lines are animated.
+Both the white layer and colored lines are generated content. By fading the white layer in and out, it becomes clear how they stack and how the animation works.
 
 ## Retaining the box model
 
