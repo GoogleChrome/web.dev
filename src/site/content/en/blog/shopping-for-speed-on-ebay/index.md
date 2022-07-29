@@ -5,6 +5,7 @@ subhead: Optimizing the performance of eBay's sites and apps for a faster user e
 authors:
   - addyosmani
 date: 2020-01-22
+updated: 2022-07-18
 hero: image/admin/UMFt6kc3YZIaF2Qzqd0d.png
 thumbnail: image/admin/58uctmJLRxZK0KKV2igl.png
 # You can adjust the position of your hero image with this property.
@@ -40,7 +41,7 @@ search page loading time, eBay saw a 0.5% increase in "Add to Cart" count.**
 
 Through the adoption of [Performance Budgets](/performance-budgets-101/) (derived
 after doing a competitive study with the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)) and a focus on key
+Report](https://developer.chrome.com/docs/crux/)) and a focus on key
 [user-centric performance metrics](/user-centric-performance-metrics/), eBay was able to make
 significant improvements to site speed.
 

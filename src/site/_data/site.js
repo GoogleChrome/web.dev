@@ -32,9 +32,8 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
-  isBannerEnabled: true,
-  banner:
-    'Join and donate to <a href="https://devfest.gdg.org.ua/?utm_source=web_dev&utm_medium=banner&utm_content=emea">🇺🇦 DevFest for Ukraine</a>, a charitable tech conference happening June 14–15 supported by Google Developers and Google Cloud.',
+  isBannerEnabled: false,
+  banner: '',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',

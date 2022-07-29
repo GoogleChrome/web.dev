@@ -172,7 +172,7 @@ Given the following scenario:
 <picture>
     <source srcset="small_cat.jpg" media="(max-width: 400px)">
     <source srcset="medium_cat.jpg" media="(max-width: 800px)">
-    <img src="huge_cat.jpg">
+    <img src="large_cat.jpg">
 </picture>
 ```
 

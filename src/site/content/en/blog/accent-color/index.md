@@ -7,6 +7,7 @@ authors:
   - jarhar
 description: Bring your brand color to built-in HTML form inputs with one line of code.
 date: 2021-08-11
+updated: 2022-07-25
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/WOcuCLCwMr0M2lF17bmm.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/huEpiCoJQ6dAo8rHGsZT.png
 tags:
@@ -32,6 +33,8 @@ CSS `accent-color` from the [CSS UI
 specification](https://www.w3.org/TR/css-ui-4/#widget-accent) is here to tint
 elements with one line of CSS, saving you from customization efforts by
 providing a way to bring your brand into elements.
+
+{% BrowserCompat 'css.properties.accent-color' %}
 
 <figure>
   {% Img
@@ -65,10 +68,6 @@ themed hotpink tinted controls.
     <a href="https://codepen.io/web-dot-dev/pen/PomBZdy">Demo</a>
   </figcaption>
 </figure>
-
-### Browser support
-
-As of this writing, Chromium 93+ and Firefox 92+ support `accent-color`.
 
 ## Supported elements
 

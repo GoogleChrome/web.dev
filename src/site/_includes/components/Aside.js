@@ -113,6 +113,12 @@ function Aside(content, type = 'note') {
       title = i18n(`i18n.common.try_it`, locale);
       utilities.main = 'bg-quaternary-box-bg color-quaternary-box-text';
       break;
+
+    case 'celebration':
+      utilities.main = 'bg-state-good-bg color-state-good-text';
+      icon = 'celebration.svg';
+      title = i18n(`i18n.common.${type}`, locale);
+      break;
   }
 
   // Make sure that we don't insert multiple newlines when this component is

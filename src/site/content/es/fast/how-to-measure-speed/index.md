@@ -13,6 +13,7 @@ description: |2
   herramientas que pueden ayudarlo a recopilar datos de laboratorio o de campo para evaluar el rendimiento de la página.
 web_lighthouse: N / A
 date: 2019-05-01
+updated: 2022-07-18
 tags:
   - performance
 ---
@@ -37,7 +38,7 @@ El rendimiento en el mundo real es muy variable debido a las diferencias en los 
 
 ### Datos de campo
 
-[El Informe de experiencia del usuario de Chrome (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report/) proporciona métricas que muestran cómo los usuarios de Chrome en el mundo real experimentan los destinos populares en la web.
+[El Informe de experiencia del usuario de Chrome (CrUX)](https://developer.chrome.com/docs/crux/) proporciona métricas que muestran cómo los usuarios de Chrome en el mundo real experimentan los destinos populares en la web.
 
 ### Otras herramientas
 

@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: Una mano tocando la pantalla de un teléfono inteligente
 description: First Input Delay (FID) mide el tiempo que transcurre desde que un usuario interactúa por primera vez con su sitio hasta el momento en que el navegador es capaz de responder a esa interacción. Descubra cómo optimizar la FID al minimizar los procesos de JavaScript que no se utilicen dividiendo las tareas largas y mejorando la preparación para la interacción.
@@ -164,6 +165,6 @@ Hay una gran variedad de herramientas disponibles para medir y depurar FID:
 
 {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- El [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) proporciona los valores FID del mundo real agrupados a nivel del origen.
+- El [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) proporciona los valores FID del mundo real agrupados a nivel del origen.
 
 *Agradecemos a Philip Walton, Kayce Basques, Ilya Grigorik y Annie Sullivan por sus valiosos comentarios.*

@@ -3,8 +3,9 @@ layout: post
 title: Time to First Byte (TTFB)
 authors:
   - jlwagner
+  - tunetheweb
 date: 2021-10-26
-updated: 2022-03-30
+updated: 2022-07-26
 description: |
   This post introduces the Time to First Byte (TTFB) metric and explains
   how to measure it.
@@ -41,7 +42,28 @@ Reducing latency in connection setup time and on the backend will contribute to 
 
 ### What is a good TTFB score?
 
-Due to the wide variation of network and application backend stacks, an arbitrary number can't be placed on what consists of a "good" TTFB score. Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/) such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (LCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score).
+Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/) such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (LCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score). As a rough guide, most sites should strive to have Time To First Byte of **0.8 seconds** or less.
+
+<figure>
+  <picture>
+    <source
+      srcset="{{ "image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/ILJ1xKjzVisqOPPyHYVA.svg" | imgix }}"
+      media="(min-width: 640px)"
+      width="800"
+      height="200">
+    {%
+      Img
+        src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/eNXaxPi9NdUVSTDRJFkV.svg",
+        alt="Good TTFB values are 0.8 seconds or less, poor values are greater than 1.8 seconds, and anything in between needs improvement",
+        width="640",
+        height="480"
+    %}
+  </picture>
+</figure>
+
+{% Aside %}
+  TTFB is not a [Core Web Vitals](/vitals) metric, so it's not absolutely necessary that sites meet the "good" TTFB threshold, provided that it doesn't impede their ability to score well on the metrics that matter.
+{% endAside %}
 
 ## How to measure TTFB
 
@@ -49,7 +71,7 @@ TTFB can be measured in [the lab](/user-centric-performance-metrics/#in-the-lab)
 
 ### Field tools
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools

@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2021-06-01
+updated: 2022-07-18
 description: |
   Esta publicación presenta la métrica Cumulative Layout Shift (CLS) y explica cómo medirlo.
 tags:
@@ -167,7 +167,7 @@ CLS se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Herramientas de campo
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console (Core Web Vitals report)](https://support.google.com/webmasters/answer/9205520)
 - [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
@@ -225,7 +225,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-Este código muestra la forma básica de calcular y registrar CLS. Sin embargo, medir CLS con precisión de una manera que coincida con lo que se mide en el [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) es más complicado. Consulte a continuación para obtener más información
+Este código muestra la forma básica de calcular y registrar CLS. Sin embargo, medir CLS con precisión de una manera que coincida con lo que se mide en el [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) (CrUX) es más complicado. Consulte a continuación para obtener más información
 
 {% endAside %}
 

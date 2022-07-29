@@ -66,7 +66,7 @@ and the ability to __send arbitrary events__.
 To subscribe to an event stream, create an `EventSource` object and pass it the
 URL of your stream:
 
-```js
+```javascript
 if (!!window.EventSource) {
 var source = new EventSource('stream.php');
 } else {
@@ -82,7 +82,7 @@ is an absolute URL, its origin (scheme, domain, port) must match that of the cal
 Next, set up a handler for the `message` event. You can optionally
 listen for `open` and `error`:
 
-```js
+```javascript
 source.addEventListener('message', function(e) {
 console.log(e.data);
 }, false);
@@ -107,7 +107,7 @@ in the next section.
 
 That's it. Your client is now ready to process events from `stream.php`.
 
-## Event Stream Format
+## Event stream format
 
 Sending an event stream from the source is a matter of constructing a
 plaintext response, served with a `text/event-stream` Content-Type,
@@ -115,11 +115,11 @@ that follows the SSE format.
 In its basic form, the response should contain a `data:` line, followed by your message, followed by
 two "\n" characters to end the stream:
 
-```js
+```javascript
 data: My message\n\n
 ```
 
-## Multiline Data
+## Multiline data
 
 If your message is longer, you can break it up by using multiple `data:` lines. Two
 or more consecutive lines beginning with `data:` will be treated as a
@@ -127,7 +127,7 @@ single piece of data, meaning only one `message` event will be fired.
 Each line should end in a single "\n" (except for the last, which should end with two).
 The result passed to your `message` handler is a single string concatenated by newline characters. For example:
 
-```js
+```javascript
 data: first line\n
 data: second line\n\n</pre>
 ```
@@ -135,11 +135,11 @@ data: second line\n\n</pre>
 will produce "first line\nsecond line" in `e.data`. One could then use `e.data.split('\n').join('')`
 to reconstruct the message sans "\n" characters.
 
-### Send JSON Data
+### Send JSON data
 
 Using multiple lines makes it easy to send JSON without breaking syntax:
 
-```js
+```javascript
 data: {\n
 data: "msg": "hello world",\n
 data: "id": 12345\n
@@ -148,18 +148,18 @@ data: }\n\n
 
 and possible client-side code to handle that stream:
 
-```js
+```javascript
 source.addEventListener('message', function(e) {
 var data = JSON.parse(e.data);
 console.log(data.id, data.msg);
 }, false);
 ```
 
-### Associating an ID with an Event
+### Associating an ID with an event
 
 You can send a unique id with an stream event by including a line starting with `id:`:
 
-```js
+```javascript
 id: 12345\n
 data: GOOG\n
 data: 556\n\n
@@ -170,7 +170,7 @@ connection to the server is dropped, a special HTTP header (`Last-Event-ID`) is
 set with the new request. This lets the browser determine which event is appropriate to fire.
 The `message` event contains a `e.lastEventId` property.
 
-### Controlling the Reconnection-timeout
+### Controlling the reconnection-timeout
 
 The browser attempts to reconnect to the source roughly 3 seconds
 after each connection is closed. You can change that timeout by including a
@@ -179,7 +179,7 @@ to wait before trying to reconnect.
 
 The following example attempts a reconnect after 10 seconds:
 
-```js
+```javascript
 retry: 10000\n
 data: hello world\n\n
 ```
@@ -194,7 +194,7 @@ On the client, an event listener can be setup to listen to that particular event
 For example, the following server output sends three types of events,
 a generic 'message' event, 'userlogon', and 'update' event:
 
-```js
+```javascript
 data: {"msg": "First message"}\n\n
 event: userlogon\n
 data: {"username": "John123"}\n\n
@@ -204,7 +204,7 @@ data: {"username": "John123", "emotion": "happy"}\n\n
 
 With event listeners setup on the client:
 
-```js
+```javascript
 source.addEventListener('message', function(e) {
 var data = JSON.parse(e.data);
 console.log(data.msg);
@@ -221,9 +221,9 @@ console.log(data.username + ' is now ' + data.emotion);
 }, false);
 ```
 
-## Server Examples
+## Server examples
 
-A simple server implementation in PHP:
+A basic server implementation in PHP:
 
 ```php
 <?php
@@ -235,23 +235,25 @@ header('Cache-Control: no-cache'); // recommended to prevent caching of event da
 *
 * @param string $id Timestamp/id of this connection.
 * @param string $msg Line of text that should be transmitted.
-*/
+**/
+
 function sendMsg($id, $msg) {
-echo "id: $id" . PHP_EOL;
-echo "data: $msg" . PHP_EOL;
-echo PHP_EOL;
-ob_flush();
-flush();
+  echo "id: $id" . PHP_EOL;
+  echo "data: $msg" . PHP_EOL;
+  echo PHP_EOL;
+  ob_flush();
+  flush();
 }
 
 $serverTime = time();
 
 sendMsg($serverTime, 'server time: ' . date("h:i:s", time()));
+?>
 ```
 
 Here's a similiar implementation using [Node JS](http://nodejs.org):
 
-```js
+```javascript
 var http = require('http');
 var sys = require('sys');
 var fs = require('fs');
@@ -323,14 +325,14 @@ sys.puts('\n\n');
 </html>
 ```
 
-## Cancel an Event Stream
+## Cancel an event stream
 
 Normally, the browser auto-reconnects to the event source when the connection
 is closed, but that behavior can be canceled from either the client or server.
 
 To cancel a stream from the client, simply call:
 
-```js
+```javascript
 source.close();
 ```
 
@@ -340,20 +342,20 @@ To cancel a stream from the server, respond with a non `text/event-stream`
 
 Both methods will prevent the browser from re-establishing the connection.
 
-## A Word on Security
+## A word on security
 
 From the WHATWG's section on [Cross-document messaging security](http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#authors):
 
 {% Aside %}
-Authors should check the origin attribute to ensure that messages are only accepted from domains that
-they expect to receive messages from. Otherwise, bugs in the author's message handling code could
-be exploited by hostile sites.
+Authors should check the origin attribute to ensure that messages are only
+accepted from domains that they expect to receive messages from. Otherwise,
+bugs in the author's message handling code could be exploited by hostile sites.
 {% endAside %}
 
 So, as an extra level of precaution, be sure to verify `e.origin` in
 your `message` handler matches your app's origin:
 
-```js
+```javascript
 source.addEventListener('message', function(e) {
 if (e.origin != 'http://example.com') {
 alert('Origin was not http://example.com');
@@ -363,12 +365,10 @@ return;
 }, false);
 ```
 
-Another good idea is to check the integrity of the data you receive:
+Another good idea is to check the integrity of the data you receive.
 
-{% Aside %}
-Furthermore, even after checking the origin attribute, authors should also check that the data in
-question is of the expected format.
-{% endAside %}
+Even after checking the origin attribute, authors should also check that the
+data in question is of the expected format.
 
 ## References
 

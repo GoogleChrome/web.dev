@@ -47,7 +47,7 @@ Google верит, что показатели Core Web Vitals критичес�
 
 #### Инструменты для измерения Core Web Vitals в полевых условиях
 
-Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) собирает анонимные, реальные данные пользователей для каждого показателя Core Web Vital. Эти данные позволяют владельцам сайтов быстро оценивать производительность страниц, исключая ручной сбор аналитики и позволяя использовать такие мощные инструменты, как [PageSpeed Insights](https://pagespeed.web.dev/) и отчет [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520) в Search Console.
+Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) собирает анонимные, реальные данные пользователей для каждого показателя Core Web Vital. Эти данные позволяют владельцам сайтов быстро оценивать производительность страниц, исключая ручной сбор аналитики и позволяя использовать такие мощные инструменты, как [PageSpeed Insights](https://pagespeed.web.dev/) и отчет [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520) в Search Console.
 
 <div class="table-wrapper">
   <table>
@@ -58,7 +58,7 @@ Google верит, что показатели Core Web Vitals критичес�
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></td>
+      <td><a href="https://developer.chrome.com/docs/crux/">Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>

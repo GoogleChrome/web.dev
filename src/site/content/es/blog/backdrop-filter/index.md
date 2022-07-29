@@ -65,7 +65,7 @@ Puede combinar filtros para obtener efectos enriquecidos e inteligentes, o usar 
 
 ## Detección de funciones y plan B
 
-Al igual que con muchas funciones de la web moderna, querrá saber si el navegador del usuario admite `backdrop-filter` antes de usarlo. Hágalo con `@supports()`. Por motivos de rendimiento, recurra a una imagen en lugar de un polyfill cuando `backdrop-image` no sea compatible. El siguiente ejemplo lo ilustra.
+Al igual que con muchas funciones de la web moderna, querrá saber si el navegador del usuario admite `backdrop-filter` antes de usarlo. Hágalo con `@supports()`. Por motivos de rendimiento, recurra a una imagen en lugar de un polyfill cuando `backdrop-filter` no sea compatible. El siguiente ejemplo lo ilustra.
 
 ```css
 @supports (backdrop-filter: none) {

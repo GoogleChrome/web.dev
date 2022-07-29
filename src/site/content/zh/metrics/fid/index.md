@@ -4,7 +4,7 @@ title: First Input Delay 首次输入延迟 (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-19
+updated: 2022-07-18
 description: 这篇文章介绍了首次输入延迟 (FID) 指标并说明了该指标的测量方式
 tags:
   - performance
@@ -120,7 +120,7 @@ FID 是一个只能进行[实际](/user-centric-performance-metrics/#in-the-fiel
 
 ### 实测工具
 
-- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights 网页速度测量工具](https://pagespeed.web.dev/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)

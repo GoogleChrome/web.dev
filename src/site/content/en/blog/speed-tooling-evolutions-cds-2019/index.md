@@ -4,6 +4,7 @@ subhead: New performance metrics, updates to PageSpeed Insights and Chrome User 
 authors:
   - egsweeny
 date: 2019-12-16
+updated: 2022-07-18
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
 hero: image/admin/lWKSX0b7pvSUX1BDd3IH.jpg
@@ -85,17 +86,15 @@ movement of content can be very frustrating and this new metric helps you
 address that problem by measuring how often it's occurring for your users.
 
 <figure>
-  <video autoplay controls loop muted
-   
-    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
-    width="658" height="510">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"
-      type="video/webm; codecs=vp8">
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
-      type="video/mp4; codecs=h264">
-  </video>
+    {% Video
+      src=["../web-dev-assets/layout-instability-api/layout-instability2.webm", "../web-dev-assets/layout-instability-api/layout-instability2.mp4"],
+      poster="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/rlKRnotLRXcqmirMCkIa.png",
+      width=658,
+      height=510,
+      autoplay=true,
+      controls=true,
+      loop=true,
+      muted=true %}
   <figcaption>
     A screencast illustrating how layout instability can negatively affect
     users.
@@ -120,7 +119,7 @@ Check out [Lighthouse performance scoring](/performance-scoring/) and the new
 
 Over the past year we have been analyzing [web performance from the
 field](/user-centric-performance-metrics/#in-the-field) via [Chrome User
-Experience](https://developers.google.com/web/tools/chrome-user-experience-report)
+Experience](https://developer.chrome.com/docs/crux/)
 (CrUX) data. With insights from that data we reassessed the thresholds that we
 use to label a website "slow", "moderate", or "fast" in field performance.
 

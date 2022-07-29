@@ -7,6 +7,7 @@ authors:
 description: Learn about the latest in PageSpeed Insights to help you better measure and optimize your page and site quality.
 subhead: Learn about the latest in PageSpeed Insights to help you better measure and optimize your page and site quality.
 date: 2021-11-03
+updated: 2022-07-18
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6zX4bWZp46B9dGbMHhb4.jpeg
 alt: A photo of a Chevrolet Corvette Speedometer.
 tags:
@@ -24,10 +25,10 @@ evolved into a one-stop source for both
 and
 [lab data](https://developers.google.com/web/fundamentals/performance/speed-tools#lab_data).
 It integrates information from the
-[Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+[Chrome UX Report](https://developer.chrome.com/docs/crux/)
 (CrUX) and [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 diagnostics to provide insights that help improve the performance of your
-website. 
+website.
 
 Today, we are excited to announce an updated version of PSI! While it is a
 critical element in our [speed tooling suite](/vitals-tools/),
@@ -38,12 +39,12 @@ report. Our primary goals were to:
 
 +   Make the UI more intuitive by clearly differentiating between data
     derived from a synthetic environment and data collected from users in the
-    field.  
+    field.
 +   Clearly communicate how the [Core Web Vitals](/vitals/) assessment is calculated in the UI.
 +   Modernize the look and feel of PSI, leveraging [Material Design](https://material.io/design).
 
 This post introduces the new features in PSI which will be released later this
-year. 
+year.
 
 ## What's new?
 
@@ -86,7 +87,7 @@ out the [explainer on web.dev](/how-to-measure-speed/).
 
 The Core Web Vitals assessment result, which earlier appeared as a single word
 "passed" or "failed" in Field Data, now stands out as a separate subsection with
-a distinct icon. 
+a distinct icon.
 
 Note that there is no change in the assessment process for Core Web Vitals. The
 Core Web Vitals metrics FID, LCP, and CLS, may be aggregated at either the page
@@ -97,7 +98,7 @@ If the aggregation has insufficient FID data, it will pass the assessment if
 both the 75th percentiles of LCP and CLS are Good. If either LCP or CLS has
 insufficient data, the page or origin-level aggregation cannot be assessed.
 
-### Labels for mobile and desktop performance 
+### Labels for mobile and desktop performance
 
 We changed the navigation menu at the top and included links for mobile and
 desktop centrally on the report page. The links are now easily visible and
@@ -137,11 +138,11 @@ and lab card sharing the following details about the sampled data:
 +   Devices
 +   Network connections
 +   Sample size
-+   Chrome versions 
++   Chrome versions
 
 This information should enhance the distinction between lab and field data and
 help users who have previously been uncertain how the two data sources (lab and
-field) might differ. 
+field) might differ.
 
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/jVxqisC0x6I5viUGgjAD.png", alt="Enhanced section of information sharing data about field and lab sampling and configuration data", width="800", height="368" %}
 
@@ -149,7 +150,7 @@ field) might differ.
 
 We have a new "Expand view" feature that adds a drill-down function to the field
 data section and allows you to view granular details for the Core Web Vitals
-metrics. 
+metrics.
 
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/UFVgoK1gJBYk5DLhFwIn.png", alt="Newly expanded view with a drill-down for field data metrics.", width="800", height="515" %}
 
@@ -164,20 +165,20 @@ will both be available in the lab data section.
 For up to date product documentation, visit
 [https://developers.google.com/speed/docs/insights/.](https://developers.google.com/speed/docs/insights/v5/about)
 
-## Updates to web.dev/measure 
+## Updates to web.dev/measure
 
-To reduce inconsistency between the different tools in our performance toolbox, 
+To reduce inconsistency between the different tools in our performance toolbox,
 we are also updating [web.dev/measure](/measure) to be directly powered by the [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started).
 
-Previously, developers would run reports via both the PSI tool and /measure 
-and see different Lighthouse numbers. One of the main reasons for differences 
-was because /measure originated all tests from the U.S. (due to it previously 
+Previously, developers would run reports via both the PSI tool and /measure
+and see different Lighthouse numbers. One of the main reasons for differences
+was because /measure originated all tests from the U.S. (due to it previously
 having a cloud backend that was US-based).
 
 With /measure calling the same API directly as the PSI UI, developers will get
- a more consistent experience when using PSI and /measure. We have also made 
- a few tweaks to /measure based on how users use the tool. This means that the 
- signed-in experience for /measure will be going away, but the most used 
+ a more consistent experience when using PSI and /measure. We have also made
+ a few tweaks to /measure based on how users use the tool. This means that the
+ signed-in experience for /measure will be going away, but the most used
  functionality—seeing multiple categories—will still be available for use.
 
 
@@ -213,7 +214,7 @@ page. A score of 90 or above is considered good, 50-90 needs improvement, and
 below 50 is poor.
 
 **Field Data:** Field data, sourced from the
-[CrUX report](https://developers.google.com/web/tools/chrome-user-experience-report)
+[CrUX report](https://developer.chrome.com/docs/crux/)
 dataset, provides insights into the real-world user experience. The data
 includes metrics such as [First Contentful Paint](/fcp/) (FCP),
 and measures Core Web Vitals  ([First Input Delay](/fid/) (FID),
@@ -230,7 +231,7 @@ available.
 
 **Origin Summary:** Users can click on the _Show Origin Summary_ checkbox to
 view the aggregated score for the metrics for all pages served from the same
-origin over the last 28 days.  
+origin over the last 28 days.
 
 **Lab Data:** Lab performance score, calculated using Lighthouse, helps debug
 performance issues, as it is collected in a controlled environment. The report
@@ -243,7 +244,7 @@ Time](/tbt/). Each metric is
 [scored](/performance-scoring/) and labeled with an icon
 indicating Good, Needs improvement, or Poor. This section provides a good
 indication of performance bottlenecks pre-release and can help to diagnose
-problems, but may not capture real-world issues.   
+problems, but may not capture real-world issues.
 
 **Audits:** This section lists all the audits run by Lighthouse and lists down
 the passed audits along with opportunities for improvement and additional
@@ -254,7 +255,7 @@ diagnostic information.
 As seen in the screenshot above, the different data points from lab and field
 data are not isolated clearly, and developers who are new to PSI may not easily
 understand the context of the data and what to do next. This confusion has
-resulted in many "How to" blog posts on deciphering the PSI report. 
+resulted in many "How to" blog posts on deciphering the PSI report.
 
 With the redesign, we hope to make interpreting the report easier for developers
 so that they move quickly from generating the PSI report to acting upon the
@@ -263,9 +264,9 @@ insights included in it.
 ## Learn more
 
 For more details on performance tooling updates, watch the keynote for [Chrome
-Dev Summit 2021](https://developer.chrome.com/devsummit/schedule/keynote/). 
+Dev Summit 2021](https://developer.chrome.com/devsummit/schedule/keynote/).
 We will keep you posted on the release date for PSI and the changes to web.dev/measure.
 
-*With thanks to Milica Mihajlija, Philip Walton, Brendan Kenny and 
+*With thanks to Milica Mihajlija, Philip Walton, Brendan Kenny and
 Ewa Gasperowicz for their feedback on this article*
 

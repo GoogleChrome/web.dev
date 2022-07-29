@@ -6,7 +6,7 @@ description: Aprenda a atribuir sus datos de Web Vitals con información de depu
 authors:
   - philipwalton
 date: 2021-04-01
-updated: 2021-04-01
+updated: 2022-07-18
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/pOHexwZOflz5RGf6FT4P.jpg
 alt: Pantalla de portátil que muestra una interfaz de análisis
 tags:
@@ -18,7 +18,7 @@ tags:
 Google ofrece actualmente dos categorías de herramientas para medir y depurar Web Vitals:
 
 - **Herramientas de laboratorio:** herramientas como Lighthouse, donde su página se carga en un entorno simulado que puede imitar varias condiciones (por ejemplo, una red lenta y un dispositivo móvil de gama baja).
-- **Herramientas de campo:** herramientas como el [Informe de experiencia del usuario de Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX), que se basa en datos agregados de usuarios reales de Chrome. (Tenga en cuenta que los datos de campo informados por herramientas como [PageSpeed Insights](https://pagespeed.web.dev/) y [Search Console](https://support.google.com/webmasters/answer/9205520) se obtienen de los datos de CrUX).
+- **Herramientas de campo:** herramientas como el [Informe de experiencia del usuario de Chrome](https://developer.chrome.com/docs/crux/) (CrUX), que se basa en datos agregados de usuarios reales de Chrome. (Tenga en cuenta que los datos de campo informados por herramientas como [PageSpeed Insights](https://pagespeed.web.dev/) y [Search Console](https://support.google.com/webmasters/answer/9205520) se obtienen de los datos de CrUX).
 
 Si bien las herramientas de campo ofrecen datos más precisos, datos que en realidad representan lo que experimentan los usuarios reales, las herramientas de laboratorio suelen ser mejores para ayudarlo a identificar y solucionar problemas.
 

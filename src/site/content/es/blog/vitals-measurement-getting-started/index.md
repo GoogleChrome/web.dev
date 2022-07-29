@@ -3,7 +3,7 @@ title: Cómo empezar a medir Web Vitals
 authors:
   - katiehempenius
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2022-07-18
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Gráfico mensual superpuesto con cronómetros etiquetados como LCP, FID y CLS.
 description: Aprenda a medir los Web Vitals de su sitio tanto en el mundo real como en entornos de laboratorio.
@@ -21,7 +21,7 @@ El [Real User Monitoring: Monitoreo de Usuarios Reales](https://en.wikipedia.org
 
 ### Cómo comenzar
 
-Si no tiene una configuración del RUM, las siguientes herramientas le proporcionarán rápidamente datos sobre el rendimiento de su sitio en el mundo real. Todas estas herramientas se basan en el mismo conjunto de datos subyacente ([Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)), pero tienen casos de uso ligeramente diferentes:
+Si no tiene una configuración del RUM, las siguientes herramientas le proporcionarán rápidamente datos sobre el rendimiento de su sitio en el mundo real. Todas estas herramientas se basan en el mismo conjunto de datos subyacente ([Chrome User Experience Report](https://developer.chrome.com/docs/crux/)), pero tienen casos de uso ligeramente diferentes:
 
 - **PageSpeed Insights (PSI)**: [PageSpeed Insights](https://pagespeed.web.dev/) informa sobre el rendimiento agregado a nivel de página y a nivel de origen durante los últimos 28 días. Además, proporciona sugerencias sobre cómo mejorar el rendimiento. Si busca una única acción para comenzar a medir y mejorar los Web Vitals de su sitio web, le recomendamos que utilice PSI para auditar su sitio. PSI está disponible en la [web](https://pagespeed.web.dev/) y como [API](https://developers.google.com/speed/docs/insights/v5/get-started).
 - **Search Console**: [Search Console](https://search.google.com/search-console/welcome) informa los datos de rendimiento por página. Esto lo hace adecuado para identificar páginas específicas que necesitan mejoras. A diferencia de PageSpeed Insights, los informes de Search Console incluyen datos históricos de rendimiento. Search Console solo se puede utilizar con sitios de los que seas propietario y cuya propiedad ha sido verificada.

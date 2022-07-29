@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: 스마트폰 화면을 만지는 손
 description: First Input Delay(최초 입력 지연, FID)는 사용자가 사이트에 처음 상호 작용한 시간부터 브라우저가 실제로 해당 상호 작용에 응답할 수 있었던 시간까지를 측정합니다. 사용하지 않는 JavaScript를 최소화하고, 긴 작업을 분리하고, 상호 작용 준비를 개선하여 FID를 최적화하는 방법을 알아봅니다.
@@ -170,6 +171,6 @@ FID를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 FID 값을 제공합니다.
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) 는 원본 수준에서 집계된 실제 FID 값을 제공합니다.
 
 *Philip Walton, Kayce Basques, Ilya Grigorik 및 Annie Sullivan의 리뷰에 감사드립니다.*

@@ -6,8 +6,9 @@ description: |
   Learn how to optimize your pages for instant loads when using the browser's back and forward buttons.
 authors:
   - philipwalton
+  - tunetheweb
 date: 2020-11-10
-updated: 2021-11-15
+updated: 2022-07-18
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -190,7 +191,7 @@ that make it impossible to cache.
 
 ```js
 window.addEventListener('pagehide', (event) => {
-  if (event.persisted === true) {
+  if (event.persisted) {
     console.log('This page *might* be entering the bfcache.');
   } else {
     console.log('This page will unload normally and be discarded.');
@@ -491,12 +492,48 @@ should be similar for other analytics tools:
 gtag('event', 'page_view');
 
 window.addEventListener('pageshow', (event) => {
-  if (event.persisted === true) {
-    // Send another pageview if the page is restored from bfcache.
+  // Send another pageview if the page is restored from bfcache.
+  if (event.persisted) {
     gtag('event', 'page_view');
   }
 });
 ```
+
+### Measuring your bfcache hit ratio
+
+You may also wish to track whether the bfcache was used, to help identify pages
+that are not utilizing the bfcache. For example, with an event:
+
+```js
+window.addEventListener('pageshow', (event) => {
+  // You can measure bfcache hit rate by tracking all bfcache restores and
+  // other back/forward navigations via a seperate event.
+  const navigationType = performance.getEntriesByType('navigation')[0].type;
+  if (event.persisted || navigationType == 'back_forward' ) {
+    gtag('event', 'back_forward_navigation', {
+      'isBFCache': event.persisted,
+    });
+  }
+});
+```
+
+It is important to realize that there are a number of scenarios, outside
+of the site owners control, when a Back/Forward navigation will not use
+the bfcache, including:
+- when the user quits the browser and starts it again
+- when the user duplicates a tab
+- when the user closes a tab and uncloses it
+
+So, website owners should not be expecting a 100% bfcache hit ratio for all
+`back_forward` navigations. However, measuring their ratio can be useful to
+identify pages where the page itself is preventing bfcache usage for a high
+proportion of back and forward navigations.
+
+The Chrome team is working on a
+(`NotRestoredReason API`)[https://github.com/rubberyuzu/bfcache-not-retored-reason/blob/main/NotRestoredReason.md]
+to help expose the reasons why the bfcache was not used to help developers
+understand the reasoning the cache was not used and if this is something they
+can work on to improve for their sites.
 
 ### Performance measurement
 
@@ -546,7 +583,7 @@ all, a user doesn't care whether or not bfcache was enabled, they just care that
 the navigation was fast!
 
 Tools like the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report),
+Report](https://developer.chrome.com/docs/crux/),
 that collect and report on the Core Web Vitals metrics treat bfcache restores as
 separate page visits in their dataset.
 
@@ -594,3 +631,5 @@ library](https://github.com/GoogleChrome/web-vitals/pull/87).
 *   [bfcache
     tester](https://back-forward-cache-tester.glitch.me/?persistent_logs=1)
     _(test how different APIs and events affect bfcache in browsers)_
+*   [Performance Game Changer: Browser Back/Forward Cache](https://www.smashingmagazine.com/2022/05/performance-game-changer-back-forward-cache/)
+    _(a case study from Smashing Magazine showing dramatic Core Web Vitals improvements by enabling bfcache)_

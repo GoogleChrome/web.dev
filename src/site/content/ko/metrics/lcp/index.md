@@ -4,7 +4,7 @@ title: Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-17
+updated: 2022-07-18
 description: 이 게시물에서는 최대 콘텐츠풀 페인트(LCP) 메트릭을 소개하고 이를 측정하는 방법을 설명합니다.
 tags:
   - performance
@@ -120,7 +120,7 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### 현장 도구
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome User Experience Report](https://developer.chrome.com/docs/crux/)
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
 - [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)

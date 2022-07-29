@@ -58,7 +58,7 @@ Certains navigateurs disposent d'[une fonctionnalité de rapport d'obsolescence 
     ```
 3. Une fois que l'en-tête commence à se propager, le point de terminaison que vous avez inscrit doit commencer à collecter des rapports d'obsolescence.
 
-Pour voir un exemple d'implémentation, accédez au lien suivant : [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Pour voir un exemple d'implémentation, accédez au lien suivant : [https://cross-origin-isolation.glitch.me](https://cross-origin-isolation.glitch.me).
 
 {% endDetails %}
 

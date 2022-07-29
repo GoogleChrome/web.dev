@@ -5,6 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
+updated: 2022-07-18
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
 alt: Рука, касающаяся экрана смартфона
 description: Метрика FID (Время ожидания до первого взаимодействия с контентом) измеряет время с момента первого взаимодействия пользователя с сайтом до момента, когда браузер фактически способен ответить на это взаимодействие. Узнайте, как оптимизировать FID путем минимизации неиспользуемого JavaScript, разбиения длительных задач и улучшения готовности к взаимодействию.
@@ -167,6 +168,6 @@ import('module.js').then((module) => {
 
     {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309" %}
 
-- Отчет [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) предоставляет реальные значения FID, агрегированные на уровне источника.
+- Отчет [Chrome User Experience Report](https://developer.chrome.com/docs/crux/) предоставляет реальные значения FID, агрегированные на уровне источника.
 
 *Выражаем благодарность Филиппу Уолтону, Кейси Баскесу, Илье Григорику и Энни Салливан за их обзоры.*
