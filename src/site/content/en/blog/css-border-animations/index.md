@@ -31,12 +31,15 @@ An article that recently caught my attention is [Fantastic CSS border animation]
 
 What stands out the most to me are the supporting animated visualizations used in the article. They really help explain what exactly is being done to achieve the desired effect.
 
+<figure>
 {% Codepen {
   user: 'Chokcoco',
   id: 'YzGdEMZ',
   height: 485,
   tab: 'result'
 } %}
+  <figcaption>Border Animations using generated content by Coco</figcaption>
+</figure>
 
 By fading the white layer in and out, it becomes clear how the colored lines are animated.
 
