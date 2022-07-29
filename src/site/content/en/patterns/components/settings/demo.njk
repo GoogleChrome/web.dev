@@ -1,5 +1,5 @@
 ---
-patternId: gui-challenges/settings
+patternId: components/settings
 ---
 
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ patternId: gui-challenges/settings
     <link rel="icon" href="https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/PGTSinGx9liHBuzggHNC.svg" type="image/svg+xml">
     <style>
       :root{--surface1:rgb(27, 27, 27);--surface2:rgb(37, 37, 37);--surface3:rgb(48, 48, 48);--surface4:rgb(59, 59, 59);--text1:rgb(240, 240, 240);--text2:rgb(184, 184, 184);--brand:rgb(118, 161, 184);--brand-bg1:rgb(255, 117, 195);--brand-bg2:rgb(157, 119, 255);--brand-bg-gradient:linear-gradient(
-    to bottom, 
-    var(--brand-bg1), 
+    to bottom,
+    var(--brand-bg1),
     var(--brand-bg2)
   );--thumb-highlight-color:rgba(255, 255, 254, 0.2);--space-xxs:.25rem;--space-xs:.5rem;--space-sm:1rem;--space-md:1.5rem;--space-lg:2rem;--space-xl:3rem;--space-xxl:6rem;--isLTR:1;--isRTL:-1}[dir=rtl]:root{--isLTR:-1;--isRTL:1}@media (prefers-color-scheme:light){:root{--surface1:rgb(226, 226, 226);--surface2:rgb(255, 255, 254);--surface3:rgb(249, 249, 249);--surface4:rgb(212, 212, 212);--text1:rgb(48, 48, 48);--text2:rgb(94, 94, 94);--brand:rgb(47, 167, 214);--brand-bg1:rgb(205, 58, 142);--brand-bg2:rgb(98, 69, 216);--thumb-highlight-color:rgba(0, 0, 0, 0.2)}}html{height:100%;width:100%}body{min-height:100%;min-width:100%;box-sizing:border-box;margin:0;padding-top:var(--space-xl);padding-bottom:var(--space-xl);background:var(--surface1);color:var(--text1);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}h1,h2,h3{margin:0;font-weight:500}main{display:grid;gap:var(--space-xl);align-content:center;justify-content:center;place-content:center;padding:var(--space-sm)}@media (min-width:540px){main{padding:var(--space-lg)}}@media (min-width:800px){main{padding:var(--space-xl)}}form{max-width:89vw;display:grid;gap:var(--space-xl) var(--space-xxl);--repeat:auto-fit;grid-template-columns:repeat(var(--repeat),minmax(min(10ch,100%),35ch));align-items:flex-start}@media (orientation:landscape) and (min-width:640px){form{--repeat:2}}section{display:grid;gap:var(--space-md)}header{display:grid;gap:var(--space-xxs)}fieldset{border:1px solid var(--surface4);background:var(--surface4);padding:0;margin:0;display:grid;gap:1px;border-radius:var(--space-sm);overflow:hidden;transition:box-shadow .3s ease}fieldset[focus-within]{box-shadow:0 5px 20px -10px hsla(0,0%,0%,.5)}fieldset:focus-within{box-shadow:0 5px 20px -10px hsla(0,0%,0%,.5)}input[type=range]{--track-height:.5ex;--track-fill:0%;--thumb-size:3ex;--thumb-offset:-1.25ex;--thumb-highlight-size:0px;display:block;width:100%;margin:1ex 0;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:0 0;outline-offset:5px}@media (hover:none){input[type=range]{--thumb-size:30px;--thumb-offset:-14px}}input[type=range]::-webkit-slider-runnable-track{-webkit-appearance:none;appearance:none;height:var(--track-height);border-radius:5ex;background:linear-gradient(to right,transparent var(--track-fill),var(--surface1) 0),var(--brand-bg-gradient) fixed}input[type=range]::-moz-range-track{-moz-appearance:none;appearance:none;height:var(--track-height);border-radius:5ex;background:linear-gradient(to right,transparent var(--track-fill),var(--surface1) 0),var(--brand-bg-gradient) fixed}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;cursor:ew-resize;border:3px solid var(--surface3);height:var(--thumb-size);width:var(--thumb-size);margin-top:var(--thumb-offset);border-radius:50%;background:var(--brand-bg-gradient) fixed;box-shadow:0 0 0 var(--thumb-highlight-size) var(--thumb-highlight-color)}@media (prefers-reduced-motion:no-preference){input[type=range]::-webkit-slider-thumb{-webkit-transition:box-shadow .1s ease;transition:box-shadow .1s ease}}.fieldset-item[focus-within] input[type=range]::-webkit-slider-thumb{border-color:var(--surface2)}.fieldset-item:focus-within input[type=range]::-webkit-slider-thumb{border-color:var(--surface2)}input[type=range]::-moz-range-thumb{-moz-appearance:none;appearance:none;cursor:ew-resize;border:3px solid var(--surface3);height:var(--thumb-size);width:var(--thumb-size);margin-top:var(--thumb-offset);border-radius:50%;background:var(--brand-bg-gradient) fixed;box-shadow:0 0 0 var(--thumb-highlight-size) var(--thumb-highlight-color)}@media (prefers-reduced-motion:no-preference){input[type=range]::-moz-range-thumb{-moz-transition:box-shadow .1s ease;transition:box-shadow .1s ease}}.fieldset-item[focus-within] input[type=range]::-moz-range-thumb{border-color:var(--surface2)}.fieldset-item:focus-within input[type=range]::-moz-range-thumb{border-color:var(--surface2)}input[type=range]:is(:hover,:active){--thumb-highlight-size:10px}input[type=checkbox]{width:var(--space-sm);height:var(--space-sm);margin:0;outline-offset:5px;accent-color:var(--brand);position:relative;transform-style:preserve-3d;cursor:pointer}input[type=checkbox]:hover::before{--thumb-scale:1}@media (hover:none){input[type=checkbox]{width:var(--space-md);height:var(--space-md)}}[dir=ltr] input[type=checkbox]::before{left:50%}[dir=rtl] input[type=checkbox]::before{right:50%}input[type=checkbox]::before{--thumb-scale:.01;--thumb-highlight-size:var(--space-xl);content:"";width:var(--thumb-highlight-size);height:var(--thumb-highlight-size);-webkit-clip-path:circle(50%);clip-path:circle(50%);position:absolute;top:50%;background:var(--thumb-highlight-color);transform-origin:center center;transform:translateX(calc(var(--isRTL) * 50%)) translateY(-50%) translateZ(-1px) scale(var(--thumb-scale));will-change:transform}@media (prefers-reduced-motion:no-preference){input[type=checkbox]::before{transition:transform .2s ease}}.fieldset-item{background:var(--surface3);transition:background .2s ease;display:grid;grid-template-columns:var(--space-lg) 1fr;gap:var(--space-md);padding-top:var(--space-sm);padding-bottom:var(--space-sm);padding-left:var(--space-md);padding-right:var(--space-md)}@media (min-width:540px){[dir=ltr] .fieldset-item{padding-left:0;padding-right:var(--space-xl)}[dir=rtl] .fieldset-item{padding-right:0;padding-left:var(--space-xl)}.fieldset-item{grid-template-columns:var(--space-xxl) 1fr;gap:var(--space-xs);padding-top:var(--space-md);padding-bottom:var(--space-md)}}.fieldset-item[focus-within]{background:var(--surface2)}.fieldset-item:focus-within{background:var(--surface2)}.fieldset-item[focus-within] svg{fill:#fff}.fieldset-item:focus-within svg{fill:#fff}.fieldset-item[focus-within] picture{-webkit-clip-path:circle(50%);clip-path:circle(50%);background:var(--brand-bg-gradient) fixed}.fieldset-item:focus-within picture{-webkit-clip-path:circle(50%);clip-path:circle(50%);background:var(--brand-bg-gradient) fixed}.fieldset-item>:is(.input-stack,label){display:grid;gap:var(--space-xs)}.fieldset-item>.input-stack>label{display:contents}.fieldset-item>picture{height:var(--space-xl);width:var(--space-xl);-webkit-clip-path:circle(40%);clip-path:circle(40%);display:inline-grid;align-content:center;justify-content:center;place-content:center;background:var(--surface3) fixed}@media (prefers-reduced-motion:no-preference){.fieldset-item>picture{transition:-webkit-clip-path .3s ease;transition:clip-path .3s ease;transition:clip-path .3s ease,-webkit-clip-path .3s ease}}.fieldset-item svg{fill:var(--text2);height:var(--space-md)}.fieldset-item>:is(picture,input[type=checkbox]){align-self:center;justify-self:center;place-self:center}small{color:var(--text2);line-height:1.5}.github-corner{color:var(--surface1);fill:var(--surface3)}.github-corner:hover .octo-arm{-webkit-animation:octocat-wave 560ms ease-in-out;animation:octocat-wave 560ms ease-in-out}@-webkit-keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
     </style>
@@ -17,7 +17,7 @@ patternId: gui-challenges/settings
   <body>
      <main>
       <h1>Settings</h1>
-      
+
       <form>
 
         <section>
@@ -25,9 +25,9 @@ patternId: gui-challenges/settings
             <h2>Sound & vibration</h2>
             <small>Adjust system volume channels</small>
           </header>
-          
+
           <fieldset>
-            
+
             <div class="fieldset-item">
               <picture aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -36,18 +36,18 @@ patternId: gui-challenges/settings
                 </svg>
               </picture>
               <div class="input-stack">
-                <label 
-                  for="media-volume" 
-                  id="media-volume" 
+                <label
+                  for="media-volume"
+                  id="media-volume"
                   aria-hidden="true">
                     Media volume
                 </label>
-                <input 
-                  name="media-volume" 
-                  aria-labelledby="media-volume" 
-                  type="range" 
-                  value="3" 
-                  max="10" 
+                <input
+                  name="media-volume"
+                  aria-labelledby="media-volume"
+                  type="range"
+                  value="3"
+                  max="10"
                   style="--track-fill: 30%"
                 >
               </div>
@@ -62,12 +62,12 @@ patternId: gui-challenges/settings
               </picture>
               <div class="input-stack">
                 <label for="call-volume" id="call-volume" aria-hidden="true">Call volume</label>
-                <input 
-                  name="call-volume" 
-                  aria-labelledby="call-volume" 
-                  type="range" 
-                  value="7" 
-                  max="10" 
+                <input
+                  name="call-volume"
+                  aria-labelledby="call-volume"
+                  type="range"
+                  value="7"
+                  max="10"
                   style="--track-fill: 70%"
                 >
               </div>
@@ -82,12 +82,12 @@ patternId: gui-challenges/settings
               </picture>
               <div class="input-stack">
                 <label for="ring-volume" id="ring-volume" aria-hidden="true">Ring volume</label>
-                <input 
-                  name="ring-volume" 
-                  aria-labelledby="ring-volume" 
-                  type="range" 
-                  value="5" 
-                  max="10" 
+                <input
+                  name="ring-volume"
+                  aria-labelledby="ring-volume"
+                  type="range"
+                  value="5"
+                  max="10"
                   style="--track-fill: 50%"
                 >
               </div>
@@ -102,17 +102,17 @@ patternId: gui-challenges/settings
               </picture>
               <div class="input-stack">
                 <label for="alarm-volume" id="alarm-volume" aria-hidden="true">Alarm volume</label>
-                <input 
-                  name="alarm-volume" 
-                  aria-labelledby="alarm-volume" 
-                  type="range" 
-                  value="8" 
-                  max="10" 
+                <input
+                  name="alarm-volume"
+                  aria-labelledby="alarm-volume"
+                  type="range"
+                  value="8"
+                  max="10"
                   style="--track-fill: 80%"
                 >
               </div>
             </div>
-            
+
           </fieldset>
         </section>
 
@@ -121,11 +121,11 @@ patternId: gui-challenges/settings
             <h2>Notifications</h2>
             <small>Turn specific channels on/off</small>
           </header>
-          
+
           <fieldset>
 
             <div class="fieldset-item">
-              <input 
+              <input
                 type="checkbox"
                 checked
                 id="text-notifications"
@@ -140,7 +140,7 @@ patternId: gui-challenges/settings
             </div>
 
             <div class="fieldset-item">
-              <input 
+              <input
                 type="checkbox"
                 id="voice-notifications"
                 name="voice-notifications"
@@ -154,7 +154,7 @@ patternId: gui-challenges/settings
             </div>
 
             <div class="fieldset-item">
-              <input 
+              <input
                 type="checkbox"
                 id="email-notifications"
                 name="email-notifications"
