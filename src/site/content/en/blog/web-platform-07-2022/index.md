@@ -50,7 +50,7 @@ Due to release dates falling just outside the month, the only new beta in June w
 
 Included in Firefox 104 is the [CSS Font Loading API](https://developer.mozilla.org/docs/Web/API/CSS_Font_Loading_API) in Web Workers, and the CSS `animation-composition` property, that defines the composition operation used when multiple animations affect the same property simultaneously.
 
-The Safari 16 beta [mentioned last month](/web-platform-06-2022/#safari-16-brings-several-key-features-to-the-browser) is also still ongoing, so we can look forward to those features landing soon. 
+The Safari 16 beta [mentioned last month](/web-platform-06-2022/#safari-16-brings-several-key-features-to-the-browser) is also still ongoing. 
 
 These beta features will land in stable browsers soon.
 
