@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS Border Animations
+title: CSS border animations
 subhead: >
   Looking at several ways to animate a border in CSS
 description: >
