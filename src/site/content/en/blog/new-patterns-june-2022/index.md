@@ -5,7 +5,7 @@ subhead: Animations, theming, components, and more layout patterns are live and 
 authors:
   - adamargyle
 description: Animations, theming, components, and more layout patterns are live and ready to help kick start or inspire your UI and UX.
-date: 2022-06-13
+date: 2022-07-29
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/mBXnYVdru7dzNVaQlh5M.png
 alt: Colorful circle and block pattern by George Francis in this Codepen https://codepen.io/georgedoescode/pen/OJjoymK
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qopbUHltS7bY1k9z3JWZ.png
