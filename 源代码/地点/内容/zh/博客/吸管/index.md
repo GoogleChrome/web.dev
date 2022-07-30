@@ -154,7 +154,7 @@ API 是否有一些不像您预期的那样工作？还是缺少方法或实现�
 您是否发现 Chromium 的实现存在错误？还是实现与规范不同？
 在 [new.crbug.com](https://new.crbug.com) 提交错误。确保包含尽可能多的细节，
 复现的简单说明，并在 **Components** 框中输入 `Blink>Forms>Color`。
-[Glitch](https://glitch.c​om/) 非常适合分享快速简单的重现。
+[Glitch](https://glitch.com/) 非常适合分享快速简单的重现。
 
 
 ### 显示对 API 的支持
@@ -175,7 +175,7 @@ API 是否有一些不像您预期的那样工作？还是缺少方法或实现�
 
 ## 致谢
 
-EyeDropper API 由[Ionel Popescu](https://www.linkedin.com/in/ionelpopescu/) 来自 Microsoft Edge 团队指定和实现。这个帖子由 [Joe Medley](https://github.com/jpmedley) 审核。​
+EyeDropper API 由[Ionel Popescu](https://www.linkedin.com/in/ionelpopescu/) 来自 Microsoft Edge 团队指定和实现。这个帖子由 [Joe Medley](https://github.com/jpmedley) 审核。
 
 [规格]：https://wigg.github.io/eyedropper-api/
 [问题]：https://github.com/wigg/eyedropper-api/issues
