@@ -110,14 +110,19 @@ Since INP is experimental, the guidance around thresholds may change over time a
 
 The primary driver of interactivity is often JavaScript, though browsers do provide interactivity through controls _not_ powered by JavaScript, such as checkboxes, radio buttons, and controls powered by CSS.
 
-As far as INP goes, **only the following interaction types are observed:**
+As far as INP goes, **only the following _synchronous_ interaction types are observed:**
 
 - Clicking with a mouse.
 - Tapping on a device with a touchscreen.
 - Pressing a key on either a physical or onscreen keyboard.
 
 {% Aside 'important' %}
+<p>
 Hovering and scrolling does not factor into INP. However, scrolling with the keyboard (space bar, page up, page down, and so forth) involves a keystroke, which may trigger other events that INP _does_ measure. Any resulting scrolling is _not_ factored into how INP is calculated.
+</p>
+<p>
+Additionally, only synchronous work is considered by INP. Asynchronous work from a previous interaction _may_ factor into the latency observed in a later interaction if the result of that asynchronous work kicks off a task that blocks the main thread.
+</p>
 {% endAside %}
 
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
