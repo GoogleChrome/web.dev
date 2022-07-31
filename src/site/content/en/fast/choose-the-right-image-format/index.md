@@ -192,11 +192,11 @@ In terms of older image formats, consider the following:
     * What about GIF? GIF limits the color palette to at most 256 colors,
       and creates significantly larger file sizes than `<video>` elements. See
       [Replace animated GIFs with video](/replace-gifs-with-videos/).
-1. **Do you need to preserve fine detail with highest resolution? Use PNG or lossless WebP, or lossless AVIF.**
+1. **Do you need to preserve fine detail with highest resolution? Use PNG or lossless WebP.**
     * PNG does not apply any lossy compression algorithms beyond the choice of the size of the color palette.
     As a result, it will produce the highest quality image,
     but at a cost of significantly higher filesize than other formats. Use judiciously.
-    * Both WebP and AVIF have lossless encoding modes that may be more efficient than PNG. Use either of these lossless image codecs where possible.
+    * WebP has a lossless encoding mode that may be more efficient than PNG. Use either of these lossless image codecs where possible.
     * If the image asset contains imagery composed of geometric shapes, consider converting it to a vector (SVG) format!
     * If the image asset contains text, stop and reconsider. Text in images is not selectable, searchable, or "zoomable".
     If you need to convey a custom look (for branding or other reasons), use a web font instead.
@@ -213,4 +213,4 @@ the savings are definitely worth it.
 
 Images may be [LCP candidates](/lcp/#what-elements-are-considered). That means the size of an image affects its [load time](/optimize-lcp/#3.-reduce-resource-load-time). When an image is an LCP candidate, efficiently encoding that image is crucial to improving LCP.
 
-You should strive to apply the advice given in this article so that the perceptual performance of a page is as fast as it can possibly be for all users. LCP is part of perceptual performance, as it measures how fast the largest (and therefore most perceivable) element on the page loads.
+You should strive to apply the advice given in this article so that the perceptual performance of a page is as fast as it can possibly be for all users. LCP is part of perceptual performance, as it measures how fast the largest (and therefore most perceivable) element on the page displays.
