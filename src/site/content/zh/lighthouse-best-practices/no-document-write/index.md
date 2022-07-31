@@ -43,7 +43,7 @@ Lighthouse 会报告对 `document.write()` 的任何其他调用，因为无论�
 
 ## 资源
 
-- [**使用 `document.write()`**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
+- [**使用 `document.write()`**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-document-write.js)
 - [干预 `document.write()`](https://developer.chrome.com/blog/removing-document-write/)
 - [解析器阻止与异步 JavaScript](/critical-rendering-path-adding-interactivity-with-javascript/#parser-blocking-versus-asynchronous-javascript)
 - [预解析](https://developer.mozilla.org/docs/Glossary/speculative_parsing)

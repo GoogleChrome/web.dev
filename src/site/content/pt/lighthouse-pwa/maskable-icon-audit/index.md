@@ -53,7 +53,7 @@ Para passar na auditoria:
 
 ## Recursos
 
-- [O código-fonte para a auditoria **O manifesto não tem um ícone mascarável**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/maskable-icon.js)
+- [O código-fonte para a auditoria **O manifesto não tem um ícone mascarável**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/maskable-icon.js)
 - [Suporte de ícone adaptável em PWAs com ícones mascaráveis](/maskable-icon/)
 - [Editor Maskable.app](https://maskable.app/editor)
 - [Adicionar um manifesto de aplicativo da web](/add-manifest/)

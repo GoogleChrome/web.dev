@@ -61,5 +61,5 @@ Consulta la sección de Google de [Utiliza enlaces de forma adecuada](https://su
 
 ## Recursos
 
-- [El código fuente para la auditoría **Los enlaces no tienen texto descriptivo**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [El código fuente para la auditoría **Los enlaces no tienen texto descriptivo**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [Guía de optimización en buscadores (SEO) para principiantes](https://support.google.com/webmasters/answer/7451184)

@@ -40,4 +40,4 @@ Lighthouse использует сетевой приоритет в качес�
 
 ## Ресурсы
 
-[Исходный код проверки **Minimize critical request depth** («Минимизируйте глубину критических запросов»)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[Исходный код проверки **Minimize critical request depth** («Минимизируйте глубину критических запросов»)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/critical-request-chains.js)

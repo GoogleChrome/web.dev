@@ -54,5 +54,5 @@ When a fix involves multiple steps, provide a codelab instead of sample code.
   audit always comes first. If there are no links other than the source code,
   present it as a paragraph rather than an unordered list.
 -->
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/…/audit-name.js" rel="noopener">Source code for **Audit name** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/…/audit-name.js" rel="noopener">Source code for **Audit name** audit</a>
 - [Link to another resource](#)

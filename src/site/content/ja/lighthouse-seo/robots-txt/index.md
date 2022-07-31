@@ -138,7 +138,7 @@ sitemap: https://example.com/sitemap-file.xml
 
 ## リソース
 
-- [「**`robots.txt` が無効です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [「**`robots.txt` が無効です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/robots-txt.js)
 - [`robots.txt file` を作成する](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
 - [Robots メタタグと X-Robots-Tag HTTP ヘッダーの仕様](https://developers.google.com/search/reference/robots_meta_tag)

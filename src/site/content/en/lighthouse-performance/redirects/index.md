@@ -55,6 +55,6 @@ If you are using React Router, minimize usage of the `<Redirect>` component for
 
 ## Resources
 
-- [Source code for **Avoid multiple page redirects** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [Source code for **Avoid multiple page redirects** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/redirects.js)
 - [Redirections in HTTP](https://developer.mozilla.org/docs/Web/HTTP/Redirections)
 - [Avoid Landing Page Redirects](https://developers.google.com/speed/docs/insights/AvoidRedirects)

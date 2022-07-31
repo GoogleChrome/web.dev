@@ -45,7 +45,7 @@ Por fim, confira a postagem [Exibir imagens com dimensões corretas](/serve-imag
 
 ## Recursos
 
-- [Código-fonte para a auditoria **Exibe imagens com proporção incorreta**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [Código-fonte para a auditoria **Exibe imagens com proporção incorreta**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [Proporção CSS](https://www.npmjs.com/package/css-aspect-ratio)
 - [Caixas de proporção de aspecto](https://css-tricks.com/aspect-ratio-boxes/)
 - [Sirva imagens com dimensões corretas](/serve-images-with-correct-dimensions)

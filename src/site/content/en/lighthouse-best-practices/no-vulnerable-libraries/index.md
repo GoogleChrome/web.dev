@@ -46,5 +46,5 @@ each library's vulnerabilities.
 
 ## Resources
 
-- [Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)

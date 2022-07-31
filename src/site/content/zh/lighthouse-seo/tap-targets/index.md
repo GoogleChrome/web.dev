@@ -54,4 +54,4 @@ web_lighthouse:
 ## 资源
 
 - [可访问的点击目标](/accessible-tap-targets)：有关如何确保您的点击目标可供所有用户访问的更多信息。
-- [**点击目标大小不当**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [**点击目标大小不当**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/tap-targets.js)

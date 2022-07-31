@@ -35,4 +35,4 @@ Consulte [Adicionando uma tela inicial para aplicativos da Web instalados no Chr
 
 ## Recursos
 
-[Código-fonte da auditoria **Não está configurado para uma tela inicial personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[Código-fonte da auditoria **Não está configurado para uma tela inicial personalizada**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/splash-screen.js)

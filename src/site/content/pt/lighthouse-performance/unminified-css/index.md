@@ -74,6 +74,6 @@ Vários [plug-ins do WordPress](https://wordpress.org/plugins/search/minify+css/
 
 ## Recursos
 
-- [Código-fonte para auditoria **Minify CSS**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-css.js)
+- [Código-fonte para auditoria **Minify CSS**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unminified-css.js)
 - [Minificar CSS](/minify-css)
 - [Minificar e comprimir payloads de rede](/reduce-network-payloads-using-text-compression)

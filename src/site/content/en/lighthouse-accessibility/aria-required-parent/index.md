@@ -62,6 +62,6 @@ to see which parent roles are required for the elements that Lighthouse flagged.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js" rel="noopener">Source code for **`[role]`s are not contained by their required parent element** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-required-parent.js" rel="noopener">Source code for **`[role]`s are not contained by their required parent element** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-parent" rel="noopener">Certain ARIA roles must be contained by particular parent elements (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

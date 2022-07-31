@@ -45,7 +45,7 @@ Chrome DevTools 提供了一些可帮助您跟踪错误原因的工具：
 
 ## 资源
 
-- [**将浏览器错误记录到控制台**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [**将浏览器错误记录到控制台**审核的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/errors-in-console.js)
 - [控制台概览](https://developer.chrome.com/docs/devtools/console/)
 - [堆栈溢出](https://stackoverflow.com/)
 - [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

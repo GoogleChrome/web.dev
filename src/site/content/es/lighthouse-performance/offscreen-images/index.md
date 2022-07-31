@@ -40,4 +40,4 @@ Instala un [complemento de WordPress de carga diferida](https://wordpress.org/pl
 
 ## Recursos
 
-- [Código fuente para la auditoría de **Aplazar  imágenes fuera de la pantalla**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/offscreen-images.js)
+- [Código fuente para la auditoría de **Aplazar  imágenes fuera de la pantalla**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/offscreen-images.js)

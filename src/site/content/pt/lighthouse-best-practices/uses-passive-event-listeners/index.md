@@ -45,7 +45,7 @@ Se você [oferece suporte a navegadores mais antigos que não suportam ouvintes 
 
 ## Recursos
 
-- [Código-fonte da auditoria **Não usa ouvintes passivos para melhorar o desempenho da rolagem**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js)
+- [Código-fonte da auditoria **Não usa ouvintes passivos para melhorar o desempenho da rolagem**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-passive-event-listeners.js)
 - [Melhorando o desempenho da rolagem com ouvintes de eventos passivos](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
 - [Explicação sobre ouvintes de evento passivos](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
 - [EventTarget.addEventListener()](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)

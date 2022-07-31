@@ -77,4 +77,4 @@ Lighthouse ищет сторонние продукты, которые можн
 
 ## Ресурсы
 
-Исходный код для [аудита отложенной загрузки сторонних ресурсов с использованием фасадов](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js).
+Исходный код для [аудита отложенной загрузки сторонних ресурсов с использованием фасадов](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js).

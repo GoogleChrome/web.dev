@@ -45,7 +45,7 @@ document.addEventListener('touchstart', onTouchStart, {passive: true});
 
 ## 资源
 
-- [**不使用被动监听器来提高滚动性能**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js)
+- [**不使用被动监听器来提高滚动性能**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/uses-passive-event-listeners.js)
 - [使用被动事件监听器提高滚动性能](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
 - [被动事件监听器说明文档](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
 - [EventTarget.addEventListener()](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)

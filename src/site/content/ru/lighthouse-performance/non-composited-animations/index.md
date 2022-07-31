@@ -33,7 +33,7 @@ web_lighthouse:
 
 ## Ресурсы
 
-- [Исходный код проверки *Avoid non-composited animations*](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/non-composited-animations.js)
+- [Исходный код проверки *Avoid non-composited animations*](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/non-composited-animations.js)
 - [Используйте свойства, вызывающие только компоновку, и контролируйте количество слоев](/stick-to-compositor-only-properties-and-manage-layer-count/)
 - [Высокопроизводительная анимация](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 - [Упрощение и сокращение областей прорисовки](/simplify-paint-complexity-and-reduce-paint-areas/)

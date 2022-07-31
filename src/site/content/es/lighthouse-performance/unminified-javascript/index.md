@@ -44,4 +44,4 @@ Varios [complementos](https://wordpress.org/plugins/search/minify+javascript/) d
 
 ## Recursos
 
-- [Código fuente para la auditorí **Minify JavaScript**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-javascript.js)
+- [Código fuente para la auditorí **Minify JavaScript**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/unminified-javascript.js)

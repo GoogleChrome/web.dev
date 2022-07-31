@@ -39,5 +39,5 @@ extend the time between refreshes, or even disable refreshes.
 
 ## Resources
 
-- [Source code for **The document uses `<meta http-equiv="refresh">`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)
+- [Source code for **The document uses `<meta http-equiv="refresh">`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-refresh.js)
 - [Timed refresh must not exist (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-refresh)

@@ -81,7 +81,7 @@ FMP가 실제로 사용자의 기기에서 발생하는 시점을 측정하는 �
 
 ## 리소스
 
-- [**첫 번째 의미 있는 페인트** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
+- [**첫 번째 의미 있는 페인트** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 스코어링 가이드](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [첫 번째 의미 있는 페인트까지의 시간: 레이아웃 기반 접근 방식](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
 - [가장 큰 콘텐츠가 포함된 페인트](/lcp/)

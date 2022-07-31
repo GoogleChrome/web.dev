@@ -40,5 +40,5 @@ Consulte também [Botões e links de rótulos](/labels-and-text-alternatives#lab
 
 ## Recursos
 
-- [O código-fonte da auditoria **Botões não têm nome acessível**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
+- [O código-fonte da auditoria **Botões não têm nome acessível**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/button-name.js)
 - [Os botões devem ter texto discernível (Deque University)](https://dequeuniversity.com/rules/axe/3.3/button-name)

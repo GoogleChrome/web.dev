@@ -49,6 +49,6 @@ Learn more in
 
 ## Resources
 
-- [Source code for **`<frame>` or `<iframe>` elements do not have a title** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
+- [Source code for **`<frame>` or `<iframe>` elements do not have a title** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/frame-title.js)
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
 - [Frames must have title attribute (Deque University)](https://dequeuniversity.com/rules/axe/3.3/frame-title)

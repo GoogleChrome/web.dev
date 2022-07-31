@@ -77,4 +77,4 @@ HTML에 직접 타사 임베드를 추가하는 대신 실제 포함된 타사�
 
 ## 참고 자료
 
-[파사드 감사를 사용하여 타사 리소스를 지연 로드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js)하는 소스 코드.
+[파사드 감사를 사용하여 타사 리소스를 지연 로드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js)하는 소스 코드.

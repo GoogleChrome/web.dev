@@ -79,7 +79,7 @@ Check their respective sites for full details:
 
 ## Resources
 
-- [Source code for **Web app manifest does not meet the installability requirements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [Source code for **Web app manifest does not meet the installability requirements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [Add a web app manifest](/add-manifest/)
 - [Discover what it takes to be installable](/discover-installable)
 - [Web App Manifest](https://developer.mozilla.org/docs/Web/Manifest)

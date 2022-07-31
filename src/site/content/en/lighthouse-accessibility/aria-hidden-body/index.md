@@ -63,5 +63,5 @@ which precedes the dialog in the HTML:
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for **`[aria-hidden="true"]` is present on the document `<body>`** audit</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for **`[aria-hidden="true"]` is present on the document `<body>`** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-body" rel="noopener">aria-hidden="true" must not be present on the document &#60;body&#62; (Deque University)</a>

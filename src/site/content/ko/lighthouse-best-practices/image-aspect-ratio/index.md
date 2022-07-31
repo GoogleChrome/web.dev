@@ -45,7 +45,7 @@ updated: 2020-04-29
 
 ## 리소스
 
-- [**이미지가 잘못된 종횡비로 나타납니다** 검사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [**이미지가 잘못된 종횡비로 나타납니다** 검사에 대한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/image-aspect-ratio.js)
 - [CSS 종횡비](https://www.npmjs.com/package/css-aspect-ratio)
 - [종횡비 상자](https://css-tricks.com/aspect-ratio-boxes/)
 - [이미지를 올바른 크기로 제공하기](/serve-images-with-correct-dimensions)

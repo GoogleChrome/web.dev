@@ -61,5 +61,5 @@ See also [`<video>` elements do not contain a `<track>` element with `[kind="des
 
 ## Resources
 
-- [Source code for **`<video>` elements do not contain a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-caption.js)
+- [Source code for **`<video>` elements do not contain a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/video-caption.js)
 - [`<video>` elements must have a `<track>` for captions (Deque University)](https://dequeuniversity.com/rules/axe/3.3/video-caption)

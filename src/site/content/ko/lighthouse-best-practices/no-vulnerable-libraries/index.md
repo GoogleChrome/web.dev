@@ -35,5 +35,5 @@ Lighthouse에서 플래그를 지정하는 각 라이브러리 사용을 중지�
 
 ## 참고자료
 
-- [**알려진 보안 취약점 감사를 포함한 프런트 엔드 JavaScript 라이브러리**를 포함하는 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [**알려진 보안 취약점 감사를 포함한 프런트 엔드 JavaScript 라이브러리**를 포함하는 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/no-vulnerable-libraries.js)
 - [snyk의 취약점 DB](https://snyk.io/vuln?packageManager=all)

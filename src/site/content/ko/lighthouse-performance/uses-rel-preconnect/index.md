@@ -59,7 +59,7 @@ Lighthouse 보고서의 기회 섹션에는 `<link rel=preconnect>`로 아직 �
 
 ## 리소스
 
-- [**필수 원본에 대한 사전 연결** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preconnect.js)
+- [**필수 원본에 대한 사전 연결** 감사를 위한 소스 코드](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/uses-rel-preconnect.js)
 - [리소스 우선 순위 지정 - 브라우저에서 도움 받기](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect)
 - [조기에 네트워크 연결을 설정하여 인지된 페이지 속도 개선](/preconnect-and-dns-prefetch/)
 - [링크 유형: 사전 연결](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility)

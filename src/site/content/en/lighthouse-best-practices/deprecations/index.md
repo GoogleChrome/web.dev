@@ -35,5 +35,5 @@ to learn why the APIs are deprecated and how to replace them.
 
 ## Resources
 
-- [Source code for **Uses deprecated APIs** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)
+- [Source code for **Uses deprecated APIs** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/deprecations.js)
 - [Chrome Platform Status](https://www.chromestatus.com/features#deprecated)

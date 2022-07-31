@@ -58,7 +58,7 @@ updated: 2019-09-19
 
 ## 참고 자료
 
-- [**웹 앱 매니페스트의 소스 코드가 설치 가능성 요구 사항** 감사를 충족하지 않음](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+- [**웹 앱 매니페스트의 소스 코드가 설치 가능성 요구 사항** 감사를 충족하지 않음](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/installable-manifest.js)
 - [웹 앱 매니페스트 추가](/add-manifest/)
 - [설치에 필요한 사항 알아보기](/discover-installable)
 - [웹 앱 매니페스트](https://developer.mozilla.org/docs/Web/Manifest)

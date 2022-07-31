@@ -59,5 +59,5 @@ Lighthouse отмечает следующий типовой текст ссы�
 
 ## Ресурсы
 
-- [Исходный код для аудита **Links do not have descriptive text** («В ссылках отсутствует содержательный текст»)](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [Исходный код для аудита **Links do not have descriptive text** («В ссылках отсутствует содержательный текст»)](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [Руководство для начинающих по поисковой оптимизации (SEO)](https://support.google.com/webmasters/answer/7451184)

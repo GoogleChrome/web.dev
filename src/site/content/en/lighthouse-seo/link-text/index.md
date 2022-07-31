@@ -79,5 +79,5 @@ for more tips.
 
 ## Resources
 
-- [Source code for **Links do not have descriptive text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [Source code for **Links do not have descriptive text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/seo/link-text.js)
 - [Search Engine Optimization (SEO) Starter Guide](https://support.google.com/webmasters/answer/7451184)

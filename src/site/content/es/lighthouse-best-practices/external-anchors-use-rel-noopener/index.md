@@ -51,6 +51,6 @@ Consulte la publicación [Compartir recursos de origen cruzado de forma segura](
 
 ## Recursos
 
-- [Código fuente para la auditoría **Enlaces a destinos de origen cruzado inseguros**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+- [Código fuente para la auditoría **Enlaces a destinos de origen cruzado inseguros**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
 - [Comparta recursos de origen cruzado de forma segura](/cross-origin-resource-sharing/)
 - [Aislamiento del sitio para desarrolladores web](https://developers.google.com/web/updates/2018/07/site-isolation)

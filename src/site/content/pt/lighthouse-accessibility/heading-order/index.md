@@ -56,5 +56,5 @@ Consulte a postagem [títulos e pontos de referência](/headings-and-landmarks) 
 
 ## Recursos
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Código-fonte para auditoria de <strong>níveis de salto de títulos</strong></a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/heading-order.js" rel="noopener">Código-fonte para auditoria de <strong>níveis de salto de títulos</strong></a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Os níveis de título devem aumentar apenas em um (Deque University)</a>

@@ -68,7 +68,7 @@ Chrome DevToolsのパフォーマンスパネルを使用して長いタスク�
 
 ## リソース
 
-- [**Total BlockingTime**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
+- [**Total BlockingTime**監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/metrics/total-blocking-time.js)
 - [Are long JavaScript tasks delaying your Time to Interactive? (JavaScriptの長いタスクがインタラクティブになるまでの時間を遅らせていませんか？)](/long-tasks-devtools)
 - [Optimize First Input Delay (最初の入力の遅延を最適化する)](/optimize-fid)
 - [First Contentful Paint (最初のコンテンツ描画にかかるまでの時間)](/fcp/)

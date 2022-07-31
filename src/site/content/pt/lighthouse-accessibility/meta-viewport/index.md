@@ -33,5 +33,5 @@ Remova o `user-scalable="no"` da metatag da janela de visualização e certifiqu
 
 ## Recursos
 
-- [O código-fonte para a auditoria **`[user-scalable="no"]` é usado no elemento `<meta name="viewport">` ou o `[maximum-scale]` é inferior a 5**](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [O código-fonte para a auditoria **`[user-scalable="no"]` é usado no elemento `<meta name="viewport">` ou o `[maximum-scale]` é inferior a 5**](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [O zoom e o dimensionamento não devem ser desativados (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

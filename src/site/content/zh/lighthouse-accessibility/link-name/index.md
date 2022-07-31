@@ -31,5 +31,5 @@ Check out <a href="…">our guide to creating accessible web pages</a>.
 
 ## 资源
 
-- [**链接没有可辨别的名称**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [**链接没有可辨别的名称**审计的源代码](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/link-name.js)
 - [链接必须有可辨别的文本（Deque University）](https://dequeuniversity.com/rules/axe/3.3/link-name)

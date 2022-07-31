@@ -29,5 +29,5 @@ Lighthouse は、ブラウザのズーム機能を無効にするページにフ
 
 ## リソース
 
-- [「**`[user-scalable="no"]` が `<meta name="viewport">` 要素で使用されているか、`[maximum-scale]` 属性が 5 未満です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [「**`[user-scalable="no"]` が `<meta name="viewport">` 要素で使用されているか、`[maximum-scale]` 属性が 5 未満です**」監査のソースコード](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/accessibility/meta-viewport.js)
 - [Zooming and scaling must not be disabled（Deque University）](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)
