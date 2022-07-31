@@ -7,7 +7,7 @@ authors:
 description: |
   Selecting the right image format is the first step in delivering optimized images on your website. This post helps you to make the right choice.
 date: 2018-08-30
-updated: 2022-07-29
+updated: 2022-07-31
 tags:
   - performance
   - images
@@ -196,7 +196,7 @@ In terms of older image formats, consider the following:
     * PNG does not apply any lossy compression algorithms beyond the choice of the size of the color palette.
     As a result, it will produce the highest quality image,
     but at a cost of significantly higher filesize than other formats. Use judiciously.
-    * WebP has a lossless encoding mode that may be more efficient than PNG. Use either of these lossless image codecs where possible.
+    * WebP has a lossless encoding mode that may be more efficient than PNG.
     * If the image asset contains imagery composed of geometric shapes, consider converting it to a vector (SVG) format!
     * If the image asset contains text, stop and reconsider. Text in images is not selectable, searchable, or "zoomable".
     If you need to convey a custom look (for branding or other reasons), use a web font instead.
