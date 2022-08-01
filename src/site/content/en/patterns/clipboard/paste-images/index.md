@@ -12,7 +12,7 @@ description: >
 
 ### Using the Async Clipboard API
 
-To read images from the user's clipboard programmatically, i.e., after a button click, you can use the [`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) method of the [Async Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). If permission to read from the clipboard have not been granted yet, the call to `navigator.clipboard.read()` will request it upon the first call of the method.
+To read images from the user's clipboard programmatically, i.e., after a button click, you can use the [`read()`](https://developer.mozilla.org/docs/Web/API/Clipboard/read) method of the [Async Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API). If permission to read from the clipboard have not been granted yet, the call to `navigator.clipboard.read()` will request it upon the first call of the method.
 
 ```js
 const pasteButton = document.querySelector('#paste-button');
