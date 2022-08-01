@@ -223,7 +223,7 @@ border-image:
 
 However, you’ll notice a few things no longer work with this approach:
 
-- The `border-image` does not follow the `border-radius`; it will always remain rectangular
+- The `border-image` does not follow the `border-radius`; it will always remain rectangular.
 - When setting `border-image-slice` to fill, the `border-image` is not painted underneath the set `background` but on top. This can be troublesome if you want the background to be semi-transparent.
 
 ## In closing
