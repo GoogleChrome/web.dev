@@ -98,7 +98,7 @@
     "nunjucks": "^3.2.3",
     "postcss": "^8.2.10",
     "prettier": "^2.3.2",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.28.0",
     "purgecss": "^4.0.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.64.0",
