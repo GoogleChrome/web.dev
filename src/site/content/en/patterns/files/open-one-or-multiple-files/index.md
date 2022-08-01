@@ -2,6 +2,8 @@
 layout: pattern
 title: How to open one or multiple files
 date: 2022-07-13
+authors:
+  - thomassteiner
 description: >
   Learn how to open one or multiple files in the browser.
 height: 800

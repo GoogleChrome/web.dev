@@ -2,6 +2,8 @@
 layout: pattern
 title: How to drag and drop directories
 date: 2022-04-22
+authors:
+  - thomassteiner
 description: >
   Learn how to drag and drop directories into the browser.
 height: 800

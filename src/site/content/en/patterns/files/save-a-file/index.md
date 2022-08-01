@@ -2,6 +2,8 @@
 layout: pattern
 title: How to save a file
 date: 2022-07-13
+authors:
+  - thomassteiner
 description: >
   Learn how to save a file in the browser.
 height: 800

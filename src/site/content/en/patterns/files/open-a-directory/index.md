@@ -2,6 +2,8 @@
 layout: pattern
 title: How to open a directory
 date: 2022-07-19
+authors:
+  - thomassteiner
 description: >
   Learn how to open a directory in the browser.
 height: 800
