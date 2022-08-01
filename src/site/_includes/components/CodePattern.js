@@ -55,7 +55,7 @@ module.exports = (patternId, height) => {
         asset.content,
         Prism.languages[type],
         type,
-      ).replace(/\n(\s*)\n/g, '\n<span></span>$1\n');
+      ).replace(/^(\s*?)$/gm, '<span></span>$1');
 
       return `<web-tab title="${asset.type}" data-label="${asset.type}">
           <pre><code class="language-${asset.type}">${content}</code></pre>
