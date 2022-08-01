@@ -27,7 +27,7 @@ There are a few methods available to set a border on an element: `border`, `outl
   <figcaption>Border Animations using <code>outline-offset</code> by Kevin J. Powell</figcaption>
 </figure>
 
-An article that recently caught my attention is [Fantastic CSS border animation](​​https://dev.to/chokcoco/fantastic-css-border-animation-5166), where author Coco explored more options. By injecting [generated content](https://developer.mozilla.org/docs/Web/CSS/CSS_Generated_Content) using `::before` and `::after` they create a faux border which is then animated.
+An article that recently caught my attention is [Fantastic CSS border animation](https://dev.to/chokcoco/fantastic-css-border-animation-5166), where author Coco explored more options. By injecting [generated content](https://developer.mozilla.org/docs/Web/CSS/CSS_Generated_Content) using `::before` and `::after` they create a faux border which is then animated.
 
 What stands out the most to me are the supporting animated visualizations used in the article. They really help explain what exactly is being done to achieve the desired effect.
 
