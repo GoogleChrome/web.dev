@@ -3,7 +3,7 @@ layout: pattern
 title: How to paste images
 date: 2022-08-01
 authors:
-  - charistheodoulou
+  - harrytheodoulou
 description: >
   Pasting images into the browser consists of using the read() method of the Async Clipboard API.
 ---

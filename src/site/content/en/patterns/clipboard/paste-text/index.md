@@ -3,7 +3,7 @@ layout: pattern
 title: How to paste text
 date: 2022-07-28
 authors:
-  - charistheodoulou
+  - harrytheodoulou
 description: |
   Pasting text into the browser consists of using the readText() method of the Async Clipboard API.
 ---

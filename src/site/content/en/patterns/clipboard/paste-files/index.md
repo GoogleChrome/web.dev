@@ -3,7 +3,7 @@ layout: pattern
 title: How to paste files
 date: 2022-07-18
 authors:
-  - charistheodoulou
+  - harrytheodoulou
 description: |
   Learn how to handle pasted files into the browser.
 ---
