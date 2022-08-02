@@ -344,3 +344,7 @@ redirects:
   # Redirects Extending Workbox post to the Using Plugins doc on d.c.c.
   - source: /extending-workbox
     destination: https://developer.chrome.com/docs/workbox/using-plugins/
+
+  # Redirects lazysizes post to the browser-level lazy loading post
+  - source: /use-lazysizes-to-lazyload-images
+    destination: /browser-level-image-lazy-loading/
