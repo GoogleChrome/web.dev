@@ -153,8 +153,10 @@ ignore the tags it doesn't support. Thus, it only "sees" the
 `<img src="flower.jpg" alt="">` tag and loads that image.
 
 {% Aside 'gotchas' %}
-- The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.
-- The resource specified by the `<img>` tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.
+<ul>
+  <li>The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.</li>
+  <li>The resource specified by the `<img>` tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.</li>
+</ul>
 {% endAside %}
 
 ### Reading the HTTP `Accept` header
@@ -181,7 +183,7 @@ If you go this route, you'll need to set the [HTTP `Vary` response header](https
 <FilesMatch ".(jpe?g|png)$">
   <IfModule mod_headers.c>
     Header set Vary "Content-Type"
-  </ifModule>
+  </IfModule>
 </FilesMatch>
 ```
 
