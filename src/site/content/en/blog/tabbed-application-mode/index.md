@@ -111,7 +111,7 @@ To use tabbed application mode, developers need to opt their apps in by setting 
 
 Next, the property `"tab_strip"` can optionally be used to fine-tune the tab behavior. It has two
 allowed sub-properties, `"home_tab"` and `"new_tab_button"`. If the `"tab_strip"` property is not
-present, the particular properties' `"auto"` values are used. The browser can decide what values to
+present, the particular properties' `"auto"` values are used. The browser determines what values to
 use for `"auto"`.
 
 ### Home tab
