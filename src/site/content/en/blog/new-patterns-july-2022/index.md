@@ -125,7 +125,7 @@ Here's a preview of the color schemes pattern:
 
 ### New layout patterns on centering
 
-View [the layout patterns landing page](/patterns/layouts/) or check each out
+View [the layout patterns landing page](/patterns/layout/) or check each out
 individually:
 
 1. [Autobot](/patterns/layout/autobot/)
