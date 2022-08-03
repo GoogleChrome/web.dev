@@ -3,10 +3,12 @@ title: Establish network connections early to improve perceived page speed
 subhead: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 date: 2019-07-30
+updated: 2022-08-03
 hero: image/admin/Dyccd1RLN0fzhjPXswmL.jpg
 alt: Adam's Creation by Michelangelo on Sistine Chapel ceiling
 authors:
   - mihajlija
+  - jlwagner
 description: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 tags:
@@ -146,5 +148,14 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 
 {% endCompare %}
 
+## Effect on Largest Contentful Paint (LCP)
+
+The goal of `dns-prefetch` and `preconnect` is to lessen the amount of time it takes to connect to another origin. The ultimate result is that the time to discover a resource loaded from another origin should be reduced, even if only somewhat.
+
+Where [Largest Contentful Paint (LCP)](/lcp/) is concerned, the least you can do to load a cross-origin resource faster is to use `preconnect`&mdash;but a well-placed [`preload`](/preload-critical-assets/) would most likely be better, as an [LCP candidate](/lcp/#what-elements-are-considered) is a crucial part of the user experience. That said, a `preconnect` can only help, even if not as much as a `preload`.
+
+All that said, `preconnect` is less expensive than `preload` in terms of bandwidth usage. While multiple `preload` hints can cause bandwidth contention, the same is less true for `preconnect`. Use it to reduce resource discovery time, which can have a positive effect on LCP. 
+
 ## Conclusion
+
 These two resource hints are helpful for improving page speed when you know you'll download something from a third-party domain soon, but you don't know the exact URL for the resource. Examples include CDNs that distribute JavaScript libraries, images or fonts. Be mindful of constraints, use `preconnect` only for the most important resources, rely on `dns-prefetch` for the rest, and always measure the impact in the real-world.
