@@ -140,7 +140,7 @@ The allowed values for `"new_tab_button"` are:
 - `"auto"` to let the browser determine what to do.
 - `"absent"` to tell the browser to not show a new tab button.
 - An object with two sub-properties:
-  - `"url"` with the allowed values of `"auto"` or a URL to open new tabs on.
+  - `"url"` with the allowed values of `"auto"` or an in-scope URL to open new tabs on.
   - `"icons"` with the allowed values of `"auto"` or an array of icons as in the main
     [`"icons"` property](/add-manifest/#icons).
 
